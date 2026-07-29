@@ -17576,3 +17576,588 @@ second is logically weakest but currently restates the hard endpoint
 selection; the third has the richest structural evidence but still requires
 two separate theorems.  The mixed conference channel remains a bounded
 falsification project, not a leading positive route.
+
+### 10.72 Hidden selector gaps, puncture cocycles, and wrong-way Gibbs stability
+
+The nineteenth wave starts from the strategic distinction between the
+power-saving endpoint target and the stronger pointwise cavity target.  The
+optimized-restriction problem has an exact finite zero-sum formulation: a
+hidden randomized selector already has the favorable scalar coefficient, and
+the entire missing content is the advantage gained when the ground state sees
+the selected subset.  A rational order-nine certificate shows that exact
+global minimality does not remove this advantage at finite order.  The
+fixed-state selector variance is governed exactly by `A^2`, but its second
+moment does not control the adaptive maximum.
+
+The puncture route produces a separate exact cocycle.  Extending one ground
+from every principal child gives a nonnegative matrix of cross-puncture
+deficits, but each of its row sums is forced by the original scalar defects.
+Thus linear compatibility averaging is only a rewriting of mean puncture
+excess.  Finally, minimizing finite-temperature pressure over signings gives
+power-saving near-minimizers, but edge, row, and Hamming-noise replacement
+stability all bound the cavity reward in the wrong direction.
+
+All identities, inequalities, LP certificates, and finite enumerations in
+this section are **Verified**.  The second-moment conclusion is scoped to raw
+variance/union-bound arguments.  The `A_9` selector gap is a finite wall, not
+an asymptotic counterexample.  The Gibbs calculation closes one variational
+mechanism, not condition (10.617).  Nothing below proves convergence.
+
+#### 10.72.1 Optimized restriction is a revealed-selector gap
+
+Use the ordered matrix pairing
+
+```math
+\langle B,C\rangle=\operatorname{tr}(B^{\mathsf T}C)
+```
+
+and let `\mathcal D_n` be the oriented projective cut matrices
+`d=\sigma xx^{\mathsf T}`, with the diagonal ignored.  For an `m`-set `S`,
+put
+
+```math
+c_A(S,d)=\langle A[S],d[S]\rangle.
+```
+
+Every oriented cut on `S` extends to `[n]`, so the optimized restriction is
+the pure selector game
+
+```math
+\boxed{
+V_{\rm ad}(A,m)
+=\min_{|S|=m}\max_{d\in\mathcal D_n}c_A(S,d)
+=\min_{|S|=m}Q(A[S]).
+}
+\tag{10.643}
+```
+
+Hide a randomized selector from the cut player and define
+
+```math
+V_{\rm hid}(A,m)
+=\min_{\pi\in\Delta(\binom{[n]}m)}
+\max_{d\in\mathcal D_n}\mathbb E_{S\sim\pi}c_A(S,d).
+```
+
+Finite LP duality, with no minimax interchange left implicit, gives
+
+```math
+\boxed{
+V_{\rm hid}(A,m)
+=\max_{\lambda\in\Delta(\mathcal D_n)}
+\min_{|S|=m}\mathbb E_{d\sim\lambda}c_A(S,d).
+}
+\tag{10.644}
+```
+
+For the uniform selector, every ordered off-diagonal pair survives with
+probability
+
+```math
+p_2=\frac{(m)_2}{(n)_2}.
+```
+
+Consequently, if `Q(A)=q_n`, then
+
+```math
+\boxed{V_{\rm hid}(A,m)\le p_2q_n.}
+\tag{10.645}
+```
+
+This is already below the desired coefficient because
+`p_2=(m/n)^2+O(n^{-1})<(m/n)^{3/2}` at every fixed nontrivial ratio.  Put
+
+```math
+I(A,m)=V_{\rm ad}(A,m)-V_{\rm hid}(A,m)\ge0.
+```
+
+A concrete sufficient rounding theorem for the steering lemma is
+
+```math
+\boxed{
+I(A,m)
+\le
+\left[
+\left(\frac mn\right)^{3/2}-p_2
+\right]q_n
++O(n^{3/2-c})
+}
+\tag{10.646}
+```
+
+for some `c>0`, uniformly in the required fixed-ratio window after choosing
+a target-specific exact minimizer.  Thus the leading route is not missing a
+scalar average; it is missing a structured rounding bound for information
+revealed to the maximizing cut.
+
+The natural aggregate subgradient does not supply that bound.  For every
+`S`, choose an oriented ground `d_S` of `A[S]`, extend it by zero, and for a
+selector law `\pi` set
+
+```math
+H_\pi
+=\mathbb E_{S\sim\pi}
+\left[\mathbf1_S\mathbf1_S^{\mathsf T}\odot d_S\right].
+```
+
+Random independent signs outside `S` show that every zero extension lies in
+the full cut polytope.  Hence
+
+```math
+\boxed{
+H_\pi\in\operatorname{conv}\mathcal D_n,
+\qquad
+\langle A,H_\pi\rangle
+=\mathbb E_{S\sim\pi}Q(A[S])
+\le Q(A).
+}
+\tag{10.647}
+```
+
+For uniform `\pi`, also `|(H_\pi)_{ij}|\le p_2`.  These facts see only the
+parent cap.  The lost correlation is exact: extend each selected `d_S` by
+independent uniform outside signs to a full cut `D`, and let `S'` be an
+independent uniform `m`-set.  Then
+
+```math
+\boxed{
+\mathbb E c_A(S,D)=\mathbb E_SQ(A[S]),
+\qquad
+\mathbb E c_A(S',D)=p_2\mathbb E_SQ(A[S]).
+}
+\tag{10.648}
+```
+
+Thus canonical convexification discards exactly the advantage coming from
+correlating the cut with the revealed selector.
+
+There is also an exact fixed-cut variance formula.  Fix `x`, use unordered
+weights `w_{ij}=a_{ij}x_ix_j`, and write
+
+```math
+Y_S=\sum_{i<j}w_{ij}\mathbf1_{\{i,j\subset S\}},
+\quad
+W=\sum_{i<j}w_{ij},
+\quad
+r_i=\sum_{j\ne i}w_{ij},
+\quad
+N=\binom n2,
+```
+
+with `p_k=(m)_k/(n)_k`.  Separating equal, adjacent, and disjoint edge
+pairs gives
+
+```math
+\boxed{
+\operatorname{Var}_S Y_S
+=(p_3-p_4)\sum_i r_i^2
++N(p_2-2p_3+p_4)
++(p_4-p_2^2)W^2.
+}
+\tag{10.649}
+```
+
+Here `\sum_i r_i^2=x^{\mathsf T}A^2x`, `2W=x^{\mathsf T}Ax`, and the
+ordered matrix payoff has four times the displayed variance.  Polarization
+also gives a useful universal ceiling.  For Boolean `x,y`, split their
+agreement and disagreement supports; symmetry makes the cross terms cancel,
+so `|y^{\mathsf T}Ax|\le2Q(A)`.  Therefore
+
+```math
+\boxed{
+x^{\mathsf T}A^2x
+=\|Ax\|_2^2
+\le\|Ax\|_\infty\|Ax\|_1
+\le2(n-1)Q(A).
+}
+\tag{10.650}
+```
+
+For a competitive signing, (10.649) therefore permits variance
+`O(n^{5/2})` and standard deviation `O(n^{5/4})` for one fixed cut.
+Second moments alone give no exponential tail with which to union over the
+`2^n` oriented projective cuts.  Precisely, if `\mu_d=p_2\langle A,d\rangle`
+and `v_d` is the ordered-payoff variance from (10.649), one-sided Chebyshev
+does prove the conditional selector criterion
+
+```math
+\boxed{
+\sum_{d\in\mathcal D_n}
+\frac{v_d}{v_d+(L-\mu_d)^2}<1
+\quad\Longrightarrow\quad
+\min_{|S|=m}Q(A[S])<L
+}
+\tag{10.651}
+```
+
+when `L>p_2Q(A)`.  Present bounds do not control this exponential sum.  This
+is a no-go for raw second moments and a raw union bound, not for correlated
+chaining or minimizer-specific compression of the effective cut family.
+
+The exact order-nine minimizer (10.550) gives a sharp finite audit.  Every
+order-eight child has doubled norm 24, so `V_{\rm ad}(A_9,8)=24`.  Exact
+rational primal and dual certificates give
+
+```math
+\boxed{
+V_{\rm hid}(A_9,8)=\frac{464}{25},
+\qquad
+I(A_9,8)=\frac{136}{25}.
+}
+\tag{10.652}
+```
+
+For the upper bound, the deleted-vertex distribution is
+
+```math
+\pi=\frac1{25}(4,2,4,0,4,4,2,5,0).
+```
+
+For the dual lower bound, the following eight `(\sigma,x)` atoms have
+weights with denominator 1400:
+
+| `\sigma` | `x` | numerator |
+|---:|:---|---:|
+| `-1` | `(+,-,+,-,-,-,+,-,-)` | `388` |
+| `-1` | `(+,-,+,-,+,-,+,-,+)` | `64` |
+| `+1` | `(+,-,+,+,+,+,-,-,-)` | `149` |
+| `+1` | `(+,-,+,+,+,+,-,+,-)` | `173` |
+| `-1` | `(+,+,+,-,-,+,-,+,+)` | `160` |
+| `-1` | `(+,+,+,+,-,-,-,+,+)` | `340` |
+| `+1` | `(+,+,+,+,+,+,+,-,-)` | `51` |
+| `+1` | `(+,+,+,+,+,+,+,+,-)` | `75` |
+
+Their nine expected row payoffs are `464/25`, except at zero-based deleted
+vertex 3, where the payoff is `488/25`.  Exhaustion of all 512 oriented
+projective columns verifies the primal bound.  The target
+`24(8/9)^{3/2}=20.11325955\ldots` still fails, even though the hidden value
+is smaller.  This proves that exact global minimality does not remove the
+finite adaptivity gap; it does not amplify to an asymptotic obstruction.
+
+#### 10.72.2 Indexed puncture deficits form a linear cocycle
+
+Use the one-copy normalization in this subsection:
+
+```math
+M(A)=\max_{q\in\mathcal C_n}\langle A,q\rangle,
+\qquad q_n=2M_n.
+```
+
+Let `A` be an exact order-`n` minimizer, put `M=M_n`, and retain
+
+```math
+B_j=A[-j],
+\qquad
+d_j=M-M(B_j),
+\qquad
+e_j=M(B_j)-M_{n-1},
+\qquad
+\delta_n=d_j+e_j.
+```
+
+For each `i`, choose any oriented child ground `c_i` of `B_i`.  Restore the
+missing spin so that its signed star field contributes positively, and call
+the resulting full cut word `q_i`.  If `r_j(q)` is the incident contribution
+at vertex `j`, then parent optimality gives an extension slack `s_i` with
+
+```math
+\boxed{
+0\le s_i\le d_i,
+\qquad
+\langle A,q_i\rangle=M-s_i,
+\qquad
+r_i(q_i)=d_i-s_i.
+}
+\tag{10.653}
+```
+
+For every ordered pair define its cross-puncture deficit
+
+```math
+u_{ij}
+=M(B_j)-\langle A[-j],q_i[-j]\rangle.
+```
+
+Since `q_i[-j]` is an admissible child cut, and deleting `j` subtracts
+`r_j(q_i)`, one has the pointwise identity
+
+```math
+\boxed{
+u_{ij}=s_i+r_j(q_i)-d_j\ge0,
+\qquad
+u_{ii}=0.
+}
+\tag{10.654}
+```
+
+Every edge occurs in two incident fields.  Therefore every row, for every
+choice of the child ground, obeys
+
+```math
+\boxed{
+\sum_{j=1}^n u_{ij}
+=2M-\sum_{j=1}^n d_j+(n-2)s_i.
+}
+\tag{10.655}
+```
+
+Writing `E=\sum_j e_j` and `\sum_jd_j=n\delta_n-E`, this is equivalently
+
+```math
+\boxed{
+E
+=n\delta_n-2M
++\sum_j u_{ij}-(n-2)s_i
+\qquad(i=1,\ldots,n).
+}
+\tag{10.656}
+```
+
+The weighted version is equally exact.  For every probability vector `p`
+on the deleted coordinate,
+
+```math
+\boxed{
+\sum_jp_je_j
+=\delta_n-s_i-\sum_jp_jr_j(q_i)+\sum_jp_ju_{ij}.
+}
+\tag{10.657}
+```
+
+Thus a linear rule that credits visible incident fields and debits their
+cross-puncture errors collapses to the original deletion decrement; it is
+not a new terminal-excess potential.
+
+The matrix `u` does retain nonlinear information.  For `i\ne j`, common
+edges cancel after symmetrizing the two deficits:
+
+```math
+\boxed{
+\begin{aligned}
+u_{ij}+u_{ji}
+={}&\sum_{k\ne i,j}a_{ik}(q_{j,ik}-q_{i,ik})\\
+&-\sum_{k\ne i,j}a_{jk}(q_{j,jk}-q_{i,jk}),
+\end{aligned}
+\qquad
+0\le u_{ij}+u_{ji}\le4(n-2).
+}
+\tag{10.658}
+```
+
+Consequently
+
+```math
+\sum_{i,j}u_{ij}\le2n(n-1)(n-2).
+```
+
+This `O(n^3)` ceiling is one square-root scale too weak: the natural total
+mass in (10.655) is `\Theta(n^{5/2})`.  Any useful refinement must exploit
+tails, directed cycles, or the cut/complement support of the differences,
+not just two-coordinate cancellation.
+
+Exhaustive integer audits give
+
+```math
+\boxed{
+\begin{array}{c|c|c|c|c}
+&M&M(B_i)&\{u_{ij}\}&\sum_j u_{ij}\\ \hline
+A_8&10&9&\{0,2,4\}&12\\
+A_9&12&12&\{0,2,4,6,8\}&24
+\end{array}
+}
+\tag{10.659}
+```
+
+for every audited optimal extension; all extension slacks are zero.  In
+`A_9`, `d_i=0`, `e_i=2`, and zero off-diagonal `u_{ij}` coexist with the
+full row mass 24.  Equations (10.655)--(10.657) therefore close linear row
+summation and averaging as a route to mean puncture stability.  They do not
+rule out nonlinear cut/complement tails, cycle exchanges, or a
+deterministic-landing rule.
+
+#### 10.72.3 Signing stability bounds cavity reward the wrong way
+
+Let `\mu_{\beta,A}` be the oriented Gibbs law of an order-`r` signing at
+raw inverse temperature `\beta`.  For an edge `e=\{i,j\}`, put
+`s_e=\sigma a_{ij}x_ix_j`.  Flipping that edge changes the oriented doubled
+energy by `-4s_e`, and hence
+
+```math
+\boxed{
+P_\beta(A^e)-P_\beta(A)
+=\frac1\beta
+\log\mathbb E_{\mu_{\beta,A}}e^{-4\beta s_e}.
+}
+\tag{10.660}
+```
+
+If `A` minimizes `P_\beta` over all order-`r` signings and
+`p_e=\mu_{\beta,A}(s_e=-1)`, the variation is nonnegative and gives
+
+```math
+\boxed{
+p_e\ge\frac1{1+e^{4\beta}},
+\qquad
+\mathbb E_{\mu_{\beta,A}}s_e\le\tanh(2\beta).
+}
+\tag{10.661}
+```
+
+This is only a one-edge marginal condition.  For an exact `Q`-minimizer,
+the variation (10.660) has no sign: `Q`-minimality and
+`0\le Q-P_\beta\le r\log2/\beta` give only
+
+```math
+P_\beta(A^e)-P_\beta(A)\ge-\frac{r\log2}{\beta}.
+```
+
+The full row variation is even more explicit.  Fix `i`, write `C=A[-i]`
+and let `b` be the deleted row.  For any replacement sign row `c`, define
+
+```math
+F(c)=\mathbb E_{\mu_{\beta,C}}
+\cosh(2\beta c^{\mathsf T}y),
+\qquad
+\kappa(c)=\frac1\beta\log F(c).
+```
+
+The child partition function cancels exactly:
+
+```math
+\boxed{
+P_\beta(A^{i\to c})-P_\beta(A)
+=\kappa(c)-\kappa(b)
+=\frac1\beta\log\frac{F(c)}{F(b)}.
+}
+\tag{10.662}
+```
+
+Thus a pressure-minimizing signing makes its actual row minimize, rather
+than maximize, the cavity reward.  Uniformly averaging `c` gives
+`\mathbb E_cF(c)=(\cosh2\beta)^{r-1}` and therefore
+
+```math
+\boxed{
+0\le\kappa_{\beta,i}(A)
+\le\frac{r-1}{\beta}\log\cosh(2\beta).
+}
+\tag{10.663}
+```
+
+The complete Hamming-noise row transform contains no hidden reverse
+inequality.  Independently flip every entry of `b` with probability `p`.
+In a parent state put
+
+```math
+s_j=\sigma b_jx_ix_j,
+\qquad
+h_i=\sum_{j\ne i}s_j,
+```
+
+and define
+
+```math
+a_p=\sqrt{1+2p(1-p)(\cosh4\beta-1)},
+\qquad
+\lambda_p=\frac12\log
+\frac{1-p+pe^{4\beta}}{1-p+pe^{-4\beta}}.
+```
+
+If `R_t` is the partition-function ratio for the random row, coordinate
+factorization gives
+
+```math
+\boxed{
+\mathbb E_tR_t
+=a_p^{r-1}\mathbb E_{\mu_{\beta,A}}e^{-\lambda_ph_i},
+}
+\tag{10.664}
+```
+
+where
+
+```math
+\mathbb E_{\mu_{\beta,A}}e^{-\lambda_ph_i}
+=
+\frac{
+\mathbb E_{\mu_{\beta,C}}
+\cosh((2\beta-\lambda_p)b^{\mathsf T}y)
+}{
+\mathbb E_{\mu_{\beta,C}}
+\cosh(2\beta b^{\mathsf T}y)
+}.
+```
+
+Pressure minimality makes every `R_t\ge1`, so
+
+```math
+\boxed{
+\mathbb E_{\mu_{\beta,C}}
+\cosh(2\beta b^{\mathsf T}y)
+\le
+a_p^{r-1}
+\mathbb E_{\mu_{\beta,C}}
+\cosh((2\beta-\lambda_p)b^{\mathsf T}y).
+}
+\tag{10.665}
+```
+
+At `p=1/2`, `a_p=\cosh2\beta` and `\lambda_p=2\beta`, recovering
+(10.663).  At `p=0` and `p=1` there is equality.  Every intermediate `p`
+still upper-bounds the denominator defining the cavity reward.  Direct
+edge, row, or noisy-row replacement stability therefore cannot prove the
+lower bound (10.617).
+
+Pressure minimization nevertheless leaves one useful endpoint option.  If
+`A_\beta` minimizes `P_\beta` over order-`n` signings and `A_*` is an exact
+`Q`-minimizer, then the pressure approximation gives
+
+```math
+\boxed{
+Q(A_\beta)
+\le q_n+\frac{n\log2}{\beta}.
+}
+\tag{10.666}
+```
+
+For raw `\beta_n=n^{c-1/2}`, `0<c<1/2`, this is
+`q_n+O(n^{3/2-c})`.  Thus a pressure minimizer is a legitimate
+power-saving near-minimizer for a separate target-specific endpoint
+theorem.  Its temperature changes with `n`, it is not an exact minimizer,
+and none of (10.660)--(10.665) supplies a favorable endpoint or proves the
+literal fixed-temperature criterion (10.617).
+
+#### 10.72.4 Updated frontier
+
+This wave sharpens the leading route without changing it:
+
+- optimized principal restriction is now exactly a hidden-versus-revealed
+  selector problem.  Uniform hidden mixing already has coefficient
+  `(m)_2/(n)_2`, so the missing theorem is a minimizer-specific bound on the
+  revealed-selector advantage (10.646), not another scalar averaging
+  identity.  Aggregate cut-polytope geometry loses precisely this
+  correlation.  The exact `A_9` LP is a finite wall, while the `A^2`
+  variance formula shows why raw second moments and an exponential union
+  bound do not close the gap;
+
+- mean puncture stability remains a possible engine for the leading route,
+  but linear cross-puncture compatibility is now closed.  The nonnegative
+  indexed deficits have the exact row cocycle (10.655)--(10.657), including
+  on the flat `A_9` example.  A continuation must control a nonlinear tail,
+  directed cycle, cut/complement pattern, or deterministic landing event;
+
+- direct pressure-minimizer stability does not support the local Hellinger
+  route: the actual row minimizes its cavity reward, and every Hamming-noise
+  transform preserves the wrong inequality direction.  This is not a
+  counterexample to (10.617).  The useful residue is (10.666): changing raw
+  temperature produces power-saving near-minimizers that may be admissible
+  roots for an endpoint theorem;
+
+- the strategic ranking therefore remains: first seek a power-saving
+  optimized-restriction comparison, with a correlated selector-complexity
+  or nonlinear puncture mechanism; retain (10.617) as a stronger
+  falsifiable alternative, and retain the spatial route only when both
+  global-minimizer forcing and temporal service are addressed.  Scalar
+  pressure variation, aggregate subgradients, linear puncture sums, and raw
+  state-by-state variance should not be recycled as if they supplied the
+  missing correlation.
