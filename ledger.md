@@ -11558,3 +11558,457 @@ exclude the recurrence embeddings above or to force compatibility
 between the exposing spins on different levels.  Here `K=O(1)` would
 give constant-loss path control; the literal single-probability,
 single-`3Q` use of (10.341) requires `K\le1`.
+
+### 10.60 Minimax congestion and an exact endpoint stopping target
+
+The eighth wave jointly optimizes the conserved allocation and the
+endpoint tree, rather than testing an arbitrary allocation.  It finds
+two stronger realizable congestion obstructions, culminating in an
+exact order-eight value `10/3`.  It also sharpens the endpoint geometry:
+both cross-exposure norms are exactly one quarter of the parent range.
+This gives an unconditional half-imbalance stopping theorem and reduces
+a universal `K\le4` theorem to one explicit local inequality.  The local
+inequality remains **Open**.  All LP values called exact below have
+matching rational primal and dual certificates; finite searches without
+such certificates are labelled **Numerical**.
+
+#### 10.60.1 The joint allocation--path minimax LP
+
+Fix an endpoint tree, let `c_{vX}^{\sigma}>0` denote its nonzero layer
+capacities, and put
+`d_X=|P(X)-N(X)|`.  For root obligation `W`, choose allocations and
+obligations satisfying
+```math
+\boxed{
+w_v=\sum_{X,\sigma}a_{vX}^{\sigma}+\sum_Xw_X,
+\qquad
+w_{\rm root}=W,
+\qquad
+0\le a_{vX}^{\sigma}\le c_{vX}^{\sigma},
+\quad 0\le w_X\le d_X.
+}
+\tag{10.426}
+```
+After eliminating the obligations, this says that the total allocated
+mass is `W` and that the mass allocated in every proper subtree `X` is
+at most `d_X`.  Minimize the path-cover mass in (10.412) over this
+polytope.  Denote the result by `K_*(\mathcal T,W)`, and also minimize
+over every endpoint tie when the tree is not prescribed.
+
+There is a useful exact dual certificate.  Let nonnegative edge weights
+`q_e` lie in the fractional edge-antichain polytope
+```math
+q_e\ge0,
+\qquad
+\sum_{e\in\pi}q_e\le1
+\quad
+\text{for every root-to-leaf path }\pi.
+\tag{10.427}
+```
+For unrestricted node potentials `y_v\in\mathbb R`, bucket slacks
+`z_{vX\sigma}\ge0`, and obligation-cap slacks `s_X\ge0`, the dual is
+```math
+\boxed{
+\begin{aligned}
+\text{maximize}\quad&
+W y_{\rm root}
+-\sum_{v,X,\sigma}c_{vX}^{\sigma}z_{vX\sigma}
+-\sum_{X\ne\mathrm{root}}d_Xs_X,\\
+\text{subject to}\quad&
+y_v-z_{vX\sigma}\le\frac{q_{vX}}{c_{vX}^{\sigma}},\\
+&y_v-y_X-s_X\le0.
+\end{aligned}
+}
+\tag{10.428}
+```
+This follows by exchanging the allocation minimum with the antichain
+maximum in (10.412) and dualizing the resulting tree flow.  It is also a
+convenient way to certify a lower bound without trusting a floating-point
+LP value.
+
+The following values are exact.
+
+| matrix and tree convention | root obligation | `K_*` |
+|---|---:|---:|
+| positive triangle | `8=\mathcal R` | `2` |
+| matrix (10.420), unique tree | `32=\mathcal R` | `5/2` |
+| family (10.416), `m=4` | `64=\mathcal R` | `12/5` |
+| family (10.416), `m\ge16` | `4m^2` | `\displaystyle\frac{12m^2}{5m^2+3m-8}` |
+| reset matrix (10.403), lexicographic tree | `84=\mathcal R` | `22/7` |
+| reset matrix, all endpoint ties | `84` | `28/13` |
+| reset matrix, lexicographic tree | carried gap `40` | `58/51` |
+| reset matrix, all endpoint ties | `40` | `19/23` |
+| prescribed fresh reset endpoint, later ties optimized | `40` | `104/119` |
+| same prescribed endpoint | `84` | `22/9` |
+
+For the reset matrix, all twelve positive and fifteen negative
+projective root endpoints and all recursive ties reduce to `250`
+LP-distinct full-tree signatures.  Twelve attain `28/13`, and every
+signature has an exact dual certificate at least that large.  Fixing the
+fresh positive endpoint from the displayed reset chain leaves `43`
+distinct signatures.  Thus the large raw reset total in (10.404) does
+not itself force large optimized path congestion for its actual first
+carried gap.
+
+One optimized range allocation for (10.403) has root branch data
+```math
+((14,34),d=4),
+\qquad
+((26,42),d=0).
+\tag{10.429}
+```
+Pass four units into the first child and allocate root masses `34,42,4`.
+The two root edge maxima are `1` and `15/13`; the first child congestion
+is smaller.  This gives the primal value `28/13`.
+
+The family (10.416) also does not produce growing minimized congestion.
+For a clique block of size `s\ge4`, the largest usable layer on either
+child edge is `s^2/2`, its imbalance is `s(s-2)`, and the size-two
+imbalance vanishes.  The total capacity usable along one canonical
+chain is therefore
+```math
+\boxed{
+B_m
+=m^2+m+\frac12\sum_{s=m,m/2,\ldots,4}s^2
+=\frac{5m^2+3m-8}{3}.
+}
+\tag{10.430}
+```
+Assigning antichain weight proportional to the largest capacity on each
+edge gives the matching lower certificate.  A symmetric chain measure
+attains it for `m\ge16`; the imbalance caps are respected because
+`4m(s+2)\le5m^2+3m-8` at every encountered size.  Hence
+```math
+\boxed{
+K_*(A_m)
+=\frac{12m^2}{5m^2+3m-8}
+\longrightarrow\frac{12}{5}.
+}
+\tag{10.431}
+```
+At `m=4`, an imbalance cap binds and the exact value is separately
+`12/5`.
+
+#### 10.60.2 Exact exposure and unconditional half-imbalance stopping
+
+Return to one endpoint node `U`.  Gauge its positive endpoint to
+`\mathbf1`, let the negative endpoint be the cut `U=S\sqcup T`, and
+write
+```math
+c=\sum_{i\in S,j\in T}a_{ij}=\frac{\mathcal R(U)}4.
+```
+For `i\in S`, let `r_i` be its internal row sum in `S` and `e_i` its
+cross row sum into `T`.  Flipping `i` at the positive endpoint gives
+`r_i+e_i\ge0`; flipping it at the negative endpoint gives
+`r_i-e_i\le0`.  Thus
+```math
+e_i\ge|r_i|\ge0.
+```
+Every cross row sum is nonnegative, and the symmetric argument in `T`
+makes every cross column sum nonnegative.  Their totals are `c`, so the
+inequality `L_X\ge c` used previously is in fact an equality:
+```math
+\boxed{
+L_S=L_T=c=\frac{\mathcal R(U)}4.
+}
+\tag{10.432}
+```
+
+Put `H=h_S+h_T`, so
+```math
+P(U)=2c+H,
+\qquad
+N(U)=2c-H,
+\qquad
+I(U):=|P(U)-N(U)|=2|H|.
+```
+For a shore `X`, let its best single-orientation capacity be
+```math
+b_X:=\max_{\sigma=\pm}(\mu_X^\sigma)_+.
+```
+The orientation attaining `Q(X)` has `\mu=\lambda\ge0` by (10.423), so
+the positive part does not alter the maximum.  Equation (10.432) gives
+the exact formula
+```math
+\boxed{
+b_X=2c-Q(X)+|h_X|.
+}
+\tag{10.433}
+```
+
+This already proves a nontrivial stopping theorem.  Since
+`Q(X)\le\mathcal R(X)` and separate `P/N` superadditivity gives
+`\mathcal R(S)+\mathcal R(T)\le4c`,
+```math
+\boxed{
+b_S+b_T
+=4c-Q(S)-Q(T)+|h_S|+|h_T|
+\ge |h_S|+|h_T|
+\ge |H|
+=\frac{I(U)}2.
+}
+\tag{10.434}
+```
+Thus at least half of every inherited imbalance is always available in
+the two best local orientation buckets.  This statement is
+**Verified** and uses no global-minimality assumption.
+
+#### 10.60.3 The precise missing local inequality and conditional `K\le4`
+
+The finite evidence supports the exact factor-two upgrade
+```math
+\boxed{
+\mathcal B(U):=b_S+b_T\ge I(U).
+}
+\tag{10.435}
+```
+By (10.433), this is equivalent to
+```math
+\boxed{
+\sum_{X=S,T}\bigl(Q(X)-|h_X|\bigr)
+\le 2\min\{P(U),N(U)\}
+=4c-2|H|.
+}
+\tag{10.436}
+```
+Both (10.435) and (10.436) are **Open targets**, not proved claims.  A
+stronger sufficient inequality, also supported by all current tests, is
+```math
+\boxed{
+Q(S)+Q(T)\le4c-|H|.
+}
+\tag{10.437}
+```
+It is important that (10.437) is stronger, not merely a rewriting of
+(10.436), when `h_S` and `h_T` have opposite signs.
+
+There is a complete conditional consequence.  Assume (10.435) at every
+endpoint node.  At the root put
+```math
+C=\sum_{X,\sigma}(\mu_X^\sigma)_+,
+\qquad
+B=C+I(S)+I(T),
+\qquad
+t=\frac{\mathcal R(A)}B\le1,
+\tag{10.438}
+```
+where `B\ge\mathcal R(A)` is (10.407).  Allocate `t` times every root
+capacity and pass obligations `w_X=tI(X)`.  At a child `X`, use only the
+best orientation on each of its two shores.  If `I(X)=0`, set `s_X=0`
+and allocate or pass nothing.  Otherwise allocate `s_Xb_Y` there, where
+`s_X=w_X/\mathcal B(X)\le t`, and pass nothing farther.
+
+Each root directed-edge load is at most `2t`, while every child subtree
+has `\theta_X\le2s_X\le2t`.  The recursion (10.412) therefore gives
+```math
+\boxed{
+K\le
+\sum_{X=S,T}\max\{2t,2t\}
+\le4.
+}
+\tag{10.439}
+```
+More directly, each of the two root summands is at most `2t`; no depth
+sum or LCA estimate occurs.  Hence (10.435) would produce a conserved
+allocation with universal path-cover mass four and would turn (10.341)
+into a `12Q(A)` bound.
+
+There is a sharp cut formulation of the unresolved hard case.  In the
+positive-endpoint gauge, use undoubled edge weights.  Let `a_X` be the
+total internal edge weight of `X`, and let `m_X,M_X` be its minimum and
+maximum internal cut weights.  If `a=a_S+a_T\ge0` and both children
+are positive-dominant, positive dominance says
+`M_X\le a_X-m_X`, and (10.437) becomes exactly
+```math
+\boxed{
+a_S+a_T-(m_S+m_T)\le c.
+}
+\tag{10.440}
+```
+For cuts `W\subseteq S`, `Z\subseteq T`, put
+`k=k_S(W)+k_T(Z)` and let `q(W,Z)` be the separated cross weight.
+The full parent endpoint conditions are
+```math
+0\le k+q\le c,
+\qquad
+0\le k+c-q\le c,
+\qquad
+|k|\le q\le c-|k|.
+\tag{10.441}
+```
+One-shore use of (10.422) loses information; the simultaneous
+constraints in (10.441) are essential.  For child maximum-cut spins
+`x,y`, define the undoubled cross bilinear
+`z=\sum_{i\in S,j\in T}a_{ij}x_i y_j`.  Their favorable relative sign
+has parent energy
+`2a-4(M_S+M_T)-2|z|`.  It is therefore sufficient to choose `x,y`
+so that
+```math
+\boxed{
+2(M_S+M_T)+|z|
+\ge a_S+a_T-(m_S+m_T).
+}
+\tag{10.442}
+```
+Their favorable relative sign would then give a parent energy at most
+`2(m_S+m_T)`, proving (10.440).  No valid averaging or cut-cone proof of
+(10.440) or (10.442) is currently known.
+
+**Numerical audit.**  The identities (10.432) and the two candidate
+inequalities were checked for every switching class and every endpoint
+pair through order seven.  At order seven this is `32,768` matrices and
+`288,064` endpoint pairs; the minimum doubled-normalization slack in
+both (10.435) and (10.437) is twelve.  An independent order-six audit
+covered `1,024` switching classes and `2,242` endpoint pairs.  A further
+`20,000` random order-eight draws contributed `41,278` endpoint
+pairs without a failure.  Weighted cut-cone LPs also verify (10.437)
+through shore size `4+4`.  These counts are evidence, not a proof.
+
+#### 10.60.4 Exact optimized congestion `8/3` and `10/3`
+
+The local obstruction can be stronger than (10.420), even after every
+endpoint tie and allocation are jointly optimized.  At order seven,
+let
+```math
+A_7=
+\begin{pmatrix}
+0&1&1&1&1&1&1\\
+1&0&1&-1&1&1&-1\\
+1&1&0&1&1&1&-1\\
+1&-1&1&0&1&1&1\\
+1&1&1&1&0&-1&1\\
+1&1&1&1&-1&0&-1\\
+1&-1&-1&1&1&-1&0
+\end{pmatrix}.
+\tag{10.443}
+```
+Exact enumeration gives
+`(P,N,\mathcal R)=(22,18,40)`.  There are two projective endpoints of
+each sign.  All four endpoint pairs have one shore with capacities
+`(16,12)`, imbalance four, and child `(P,N)=(2,6)`; the other shore has
+capacities `(12,12)`, zero imbalance, and child `P=N=8`.
+
+At most four units can pass down the first branch, so at least `36`
+units are root-local.  If the two edge maxima in (10.412) are `q_1,q_2`,
+the first edge carries at most `12q_1+4` local units and the second at
+most `12q_2`.  Hence
+```math
+36\le12(q_1+q_2)+4=12K+4,
+\qquad
+K\ge\frac83.
+```
+Equality passes four units to the first child, fills its capacity
+sixteen, and allocates twenty units on the second edge.  The child
+congestion is one.  Therefore
+```math
+\boxed{K_{\min}(A_7)=\frac83.}
+\tag{10.444}
+```
+
+There is an even cleaner order-eight witness:
+```math
+A_8=
+\begin{pmatrix}
+0&1&1&1&1&1&1&1\\
+1&0&1&-1&1&1&-1&-1\\
+1&1&0&1&-1&1&-1&-1\\
+1&-1&1&0&-1&-1&-1&1\\
+1&1&-1&-1&0&-1&1&-1\\
+1&1&1&-1&-1&0&1&1\\
+1&-1&-1&-1&1&1&0&1\\
+1&-1&-1&1&-1&1&1&0
+\end{pmatrix}.
+\tag{10.445}
+```
+Here `P=N=20` and `\mathcal R=40`.  There are four projective
+endpoints of each sign.  Every one of the sixteen endpoint pairs splits
+into two four-vertex shores, and every directed shore has
+```math
+(c^+,c^-)=(12,12),
+\qquad
+|P_X-N_X|=0,
+\qquad
+P_X=N_X=8,
+\qquad
+h_X=0,
+\qquad
+L_X=10.
+```
+No mass can pass recursively.  Every allocation coordinate therefore
+has denominator twelve in (10.411), and every feasible allocation has
+```math
+\boxed{
+K_{\min}(A_8)=\frac{40}{12}=\frac{10}{3}.
+}
+\tag{10.446}
+```
+These lower bounds are elementary integer certificates and do not rely
+on solver tolerances.  In particular, every universal optimized-tree
+theorem must allow `K\ge10/3`.
+
+#### 10.60.5 Search scope and updated frontier
+
+The exact optimized values on named finite examples are
+
+| matrix | `K_{\min}` |
+|---|---:|
+| (10.409) | `2` |
+| (10.420) | `5/2` |
+| reset matrix (10.403) | `28/13` |
+| (10.416), `m=4` | `12/5` |
+| (10.443) | `8/3` |
+| (10.445) | `10/3` |
+
+The switching-gauge search is exhaustive through order six: its maximum
+is two at order five and `5/2` at order six.  Among random draws, the
+largest solver values found were `8/3` in `1,000` order-seven draws,
+`10/3` in `11,000` order-eight draws, `8/3` in `500` order-nine
+draws, and `26/9` in `500` order-ten draws.  No search found
+`K>10/3`, `K>4`, or a realizable family with growing congestion.
+
+A second structured attempt used
+```math
+C=ss^{\mathsf T}-I,
+\qquad
+B=J-I-\operatorname{diag}(s),
+\qquad
+\widetilde A_m=
+\begin{pmatrix}C&B\\B^{\mathsf T}&-C\end{pmatrix},
+\qquad
+\mathbf1^{\mathsf T}s=\sqrt m.
+\tag{10.447}
+```
+At `m=4` it has `P=N=20` and exact optimized `K=3`.  At `m=9`
+(order eighteen), exact endpoint enumeration gives `P=N=138` and
+unique projective endpoints.  A 600-second MILP stopped with the
+following nonmatching **Numerical solver bounds**:
+```math
+\frac{74}{33}\lesssim K_{\min}\lesssim\frac{130}{57}.
+```
+No exact order-eighteen congestion claim is made.  This route currently
+offers no evidence of growth.
+
+The frontier is now narrower:
+
+- optimized endpoint choice does not remove congestion: the exact
+  realizable lower bound is `10/3`; bounds such as two or `5/2` are
+  false;
+
+- the rank-two family (10.416) tends to `12/5`, and the severe raw reset
+  tower becomes mild after joint endpoint/allocation optimization.  No
+  growing realizable family is known;
+
+- endpoint geometry gives the exact identity (10.432) and the verified
+  half-imbalance capacity (10.434).  The sole local upgrade needed for
+  the depth-two construction is (10.435), equivalently (10.436);
+
+- proving (10.435) would give `K\le4` and a `12Q` harvesting bound.
+  Falsifying it should target the simultaneous cut system (10.441), not
+  one shore in isolation.  A counterexample with `K>4`, or a family
+  with `K\to\infty`, remains the independent alternative.
+
+The highest-priority next target is therefore the endpoint stopping
+inequality (10.435), with the hard same-positive reduction (10.440).
+Independent routes are a conic/averaging proof of (10.442), an exact
+MILP search for a violation of (10.435), and a structured construction
+that drives the local four-bucket obstruction toward or past four.
