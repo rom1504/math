@@ -9048,3 +9048,359 @@ exact successor grounds.
 
 These are the three highest-priority independent routes for the next
 wave.  None of the present results proves convergence by itself.
+
+### 10.54 Crossing closure, SDP curvature, and grouped replenishment
+
+The second wave tested the three successors in Section 10.53.4.  It
+produced two general lemmas and three sharp walls.  All statements in
+this section are verified analytically; none relies on numerical
+optimization.
+
+#### 10.54.1 Triple endpoint defect and an exact residue-class wall
+
+Let $`q_1,\ldots,q_m`$ be oriented augmented-cut endpoint words for a
+signing $`A`$, so
+```math
+\langle A,q_i\rangle=M(A).
+```
+For every edge $`e`$, put $`s_e=\sum_iq_i(e)`$.  Since augmented-cut
+words form a group under entrywise multiplication, every
+$`q_iq_jq_k`$ is again a valid augmented-cut word.  Direct expansion
+gives the exact cubic identity
+```math
+\boxed{
+\sum_{i,j,k}
+\bigl(M(A)-\langle A,q_iq_jq_k\rangle\bigr)
+=
+\sum_e a_es_e(m^2-s_e^2).
+}
+\tag{10.333}
+```
+Every summand on the left is nonnegative.  The corresponding full
+pairwise Hamming mass is
+```math
+\boxed{
+\sum_{i<j}d(q_i,q_j)
+=\frac14\sum_e(m^2-s_e^2).
+}
+\tag{10.334}
+```
+Thus (10.333) is the exact candidate for converting endpoint
+disagreement into crossing payment.  It can vanish despite arbitrarily
+large (10.334): this happens when the endpoint family is closed under
+ternary products.
+
+There is an exact flat signing showing that this wall survives at
+orders $`1\bmod4`$ and at the competitive scale.  Let $`k`$ be an even
+Hadamard order, $`N=k^2`$, and let $`A_0`$ be the square residual
+signing from Section 10.52.  It has spectral values $`k-1`$ and
+$`-k-1`$.  Add one universally positive vertex:
+```math
+A=
+\begin{pmatrix}
+A_0&1\\
+1^{\mathsf T}&0
+\end{pmatrix},
+\qquad n=N+1\equiv1\pmod4.
+```
+If $`s_a`$ are the spin sums on the $`k`$ old vertex classes and
+$`S=\sum_as_a`$, projection onto the class-constant positive
+eigenspace gives
+```math
+x^{\mathsf T}A_0x
+\ge-N(k+1)+2\sum_as_a^2.
+```
+Every $`s_a`$ is even, hence $`\sum_as_a^2\ge|S|`$.  Together with the
+spectral upper bound this yields
+```math
+-N(k+1)
+\le x^{\mathsf T}A_0x+2\varepsilon S
+\le N(k+1).
+```
+A fixed perfect matching of the classes supplies Boolean vectors
+attaining the lower endpoint, so
+```math
+\boxed{
+Q(A)=N(k+1),\qquad
+M(A)=\frac{N(k+1)}2
+=\left(\frac12+o(1)\right)n^{3/2}.
+}
+\tag{10.335}
+```
+
+More explicitly, for every matched pair $`\{a,b\}`$, take
+```math
+x|_{V_a}=\eta_{ab}v_{a,b},\qquad
+x|_{V_b}=-\eta_{ab}v_{b,a},
+```
+and fix the new spin.  The $`k/2`$ independent signs $`\eta_{ab}`$
+give an affine family of $`2^{k/2}`$ exact negative absolute grounds.
+It is ternary-closed.  For all large $`k`$, a standard random-code
+selection gives $`n`$ members whose pairwise sign-code distances lie
+between $`k/8`$ and $`3k/8`$.  Their difference shores therefore have
+between $`N/4`$ and $`3N/4`$ old vertices.  Even after omitting the two
+puncture stars, each pair contributes $`\Theta(n^2)`$, so an arbitrary
+indexing of these endpoints has
+```math
+\Gamma=\Omega(n^4),
+```
+while every triple deficit in (10.333) is zero.
+
+This **falsifies** any crossing-energy aggregation based only on
+flatness, $`n\equiv1\bmod4`$, exact absolute endpoint cuts, and an
+$`O(n^{3/2})`$ cap.  The example is not known to be an exact
+order-$`n`$ minimizer, need not occur at prime $`n`$, and its indexed
+endpoint restrictions are not proved to be closest child words.
+Those global-minimizer, prime-order, and puncture-compatibility inputs
+are exactly what a surviving theorem must use.
+
+#### 10.54.2 The SDP dual slack controls every near-ground frame
+
+First, generic isotropic thickening is too expensive.  Let $`G`$ have
+any law on exact positive grounds of an $`m`$-vertex signing $`B`$,
+and independently let exchangeable Boolean noise $`Y`$ satisfy
+```math
+\mathbb E(Y_iY_j)=\rho\qquad(i\ne j).
+```
+For $`X=G\circ Y`$,
+```math
+\boxed{
+R_X=(1-\rho)I+\rho R_G,\qquad
+\mathbb E[p(B)-H_B(X)]=(1-\rho)p(B).
+}
+\tag{10.336}
+```
+When $`0\le\rho\le1`$, an isotropic frame floor $`1-\rho`$ therefore
+costs exactly $`(1-\rho)p(B)`$.  At
+$`p(B)=\Theta(m^{3/2})`$, deficit $`o(m)`$ buys only
+$`o(m^{-1/2})`$ isotropic floor.  Sampling many exact grounds before
+adding the noise does not change this identity.
+
+There is a general anisotropic replacement.  Define
+```math
+\operatorname{SDP}_+(B)
+=
+\frac12\max\{
+\operatorname{tr}(BX):X\succeq0,\ \operatorname{diag}X=1
+\},
+\qquad
+s_B=\operatorname{SDP}_+(B)-p(B).
+```
+Let
+```math
+L_B=\operatorname{Diag}(y)-B\succeq0,\qquad
+\frac12\sum_i y_i=\operatorname{SDP}_+(B)
+```
+be an optimal dual slack.  Every Boolean vector obeys the exact
+identity
+```math
+\boxed{
+\frac12x^{\mathsf T}L_Bx
+=s_B+p(B)-H_B(x).
+}
+\tag{10.337}
+```
+Hence any law of mean positive-endpoint deficit at most $`\tau`$, with
+covariance $`R`$, satisfies
+```math
+\operatorname{tr}(L_BR)\le2(s_B+\tau).
+```
+If $`E_\gamma`$ is the spectral subspace of $`L_B`$ on
+$`[\gamma,\infty)`$, and $`R\succeq\kappa P_L`$, then
+```math
+\boxed{
+\operatorname{tr}(P_{E_\gamma}R)
+\le\frac{2(s_B+\tau)}{\gamma},
+\qquad
+\kappa[\dim E_\gamma-\operatorname{codim}L]_+
+\le\frac{2(s_B+\tau)}{\gamma}.
+}
+\tag{10.338}
+```
+Thus a nondegenerate near-ground frame must lie almost entirely in the
+approximate kernel of the child SDP dual slack.
+
+The square Hadamard residual model makes this obstruction sharp for
+every law, not only isotropic ones.  Split its $`k`$ types into
+$`a+b=k`$, with children $`B,D`$ and cross block $`C`$.  The cross
+block has singular value $`k`$ on $`ab`$ orthogonal channels.  The
+child SDPs are exact, and their dual slacks have eigenvalue $`k`$ on
+the corresponding left and right channel spaces $`E_B,E_D`$.
+Therefore laws of mean deficits $`\tau_B,\tau_D`$ obey
+```math
+\operatorname{tr}(P_{E_B}R_B)\le\frac{2\tau_B}{k},
+\qquad
+\operatorname{tr}(P_{E_D}R_D)\le\frac{2\tau_D}{k},
+```
+and the partial-isometry form $`C=kU:E_D\to E_B`$ gives
+```math
+\boxed{
+\operatorname{tr}(R_BCR_DC^{\mathsf T})
+\le4\tau_B\tau_D.
+}
+\tag{10.339}
+```
+Consequently $`\tau_B+\tau_D=o(n)`$ forces the cross second moment to
+be $`o(n^2)`$ for every possible pair of laws.  Competitiveness,
+spectral flatness, exact zero traffic, and thick sublinear caps do not
+force the frame hypothesis from (10.327).
+
+The construction is not known to be globally minimizing.  The new
+**open target** is a block-exchange theorem: in an exact minimizer, a
+balanced low-traffic cut cannot have most of $`C`$ coupling
+$`\Omega(\sqrt n)`$-curvature subspaces of two nearly tight child SDP
+slacks.  Equivalently, global minimality must force substantial cross
+mass through both approximate kernels, after which a Boolean
+near-ground realization theorem is still required.
+
+#### 10.54.3 Exact grouped replenishment identities
+
+Consider a nested random field-proportional peeling process.  At step
+$`t`$, the current matrix has order $`m_t`$, a positive ground is
+switched to $`1`$, and
+```math
+p_{t,i}
+=\frac{r_{t,i}}{m_t-1}1_{\{i\in H_t\}},\qquad
+a_t=p_t^{\mathsf T}r_t,\qquad
+c_t=p_t^{\mathsf T}A_tp_t.
+```
+Delete vertices independently with probabilities $`p_{t,i}`$.  The
+conditional identity (10.329) is
+```math
+2a_t=\mathbb E_t(d_t+g_t)+c_t.
+```
+Start from an exact order-$`n`$ minimizer and stop at random order
+$`m_L`$.  With doubled minima $`q_m=2M_m`$ and terminal excess
+```math
+\varepsilon_L=Q(A_L)-q_{m_L}\ge0,
+```
+the decrements telescope pathwise.  Therefore
+```math
+\boxed{
+\mathbb E\sum_{t<L}g_t
+=
+2\mathbb E\sum_{t<L}a_t
+-\mathbb E\sum_{t<L}c_t
+-q_n+\mathbb E q_{m_L}
++\mathbb E\varepsilon_L.
+}
+\tag{10.340}
+```
+All intermediate optimality excesses cancel.  Thus global minimality
+contributes only the scalar endpoint term; it does not itself charge
+leader switches.  The uncontrolled quantity is now the cumulative
+signed internal term $`\sum_tc_t`$.
+
+There is also a universal theorem using all successor energy layers.
+For a disjoint block tower
+```math
+A_t=
+\begin{pmatrix}
+D_t&B_t\\
+B_t^{\mathsf T}&A_{t+1}
+\end{pmatrix},
+```
+let an oriented successor state $`z=(\sigma,y)`$ have deficit
+```math
+\delta_t(z)
+=Q(A_{t+1})-\sigma y^{\mathsf T}A_{t+1}y,
+```
+and put
+```math
+\mathcal L_t
+=
+\sup_z[2\|B_ty\|_1-\delta_t(z)]_+.
+```
+Choosing the peeled-block signs to expose $`B_ty`$ proves
+```math
+\mathcal L_t\le d_t+Q(D_t).
+```
+The decrement and diagonal-block bounds telescope as before, giving
+```math
+\boxed{
+\sum_t\mathcal L_t\le3Q(A_0).
+}
+\tag{10.341}
+```
+This already includes every near-ground layer, but it still does not
+control replenishment.  For the predecessor restriction, the exact
+signed relation is
+```math
+2b_t-g_t=d_t-h_t,
+```
+so the deficit penalty cancels $`g_t`$.  In the exact order-nine
+minimizer from (10.332), a singleton step has
+```math
+d_t=h_t=0,\qquad g_t=16,\qquad \|B_ty\|_1=8,
+```
+and hence $`2\|B_ty\|_1-g_t=0`$.  The coefficient one on
+$`\delta_t`$ in (10.341) is sharp even under global minimality.
+
+Finally, Gibbs regularization gives an exact interpretation but no
+automatic telescope.  Let $`\mu_A^\beta`$ be the Gibbs law on
+oriented augmented states with score $`\sigma x^{\mathsf T}Ax`$.
+For a split $`H\sqcup T`$, let $`\nu_H^\beta`$ be its core marginal,
+$`\mu_E^\beta`$ the fresh-core Gibbs law, and
+```math
+K_H(\sigma,y)
+=
+\sum_u
+\exp\!\left(
+\beta\sigma(u^{\mathsf T}Du+2u^{\mathsf T}By)
+\right).
+```
+Then
+```math
+\boxed{
+\frac{d\nu_H^\beta}{d\mu_E^\beta}
+=
+\frac{K_H}{\mathbb E_{\mu_E^\beta}K_H},
+\qquad
+g_H(z)
+=
+\lim_{\beta\to\infty}
+\frac1\beta
+\log\frac{d\nu_H^\beta}{d\mu_E^\beta}(z)
+}
+\tag{10.342}
+```
+for the restriction $`z`$ of a parent absolute ground.  Replenishment
+is exactly the zero-temperature information gain from the fresh-core
+law to the parent restriction marginal.
+
+Along a tower, the log partition functions and conditional entropies
+in the associated KL divergences telescope.  The remaining term is
+the expected soft block reward under the changing parent Gibbs laws;
+at zero temperature it is precisely the FTL/mosaic payoff
+$`\sum_t(d_t+g_t)`$.  Gibbs regularization therefore restates the
+adaptivity gap rather than bounding it.
+
+The surviving **open target** is a grouped layer-descent theorem:
+produce successor states different from the predecessor such that
+```math
+2\|B_ty_t\|_1-\delta_t(y_t)
+\ge\eta g_t-e_t,\qquad
+\eta>0,\qquad
+\sum_te_t=o(n^{3/2}).
+```
+Equation (10.341) would then bound cumulative replenishment at the
+correct scale.  The order-nine equality shows that thickness,
+inter-step coherence, or large-order exchange is indispensable.
+
+#### 10.54.4 Updated frontier
+
+This wave stops three generic mechanisms:
+
+- endpoint disagreement does not aggregate without prime/global
+  exchange and literal puncture compatibility;
+
+- thick caps do not produce frames unless global exchange forces cross
+  mass through child SDP-dual approximate kernels;
+
+- all-layer visibility and scalar Gibbs entropy do not by themselves
+  control replenishment.
+
+The next wave should attack the common missing input directly:
+global-minimizer block exchange.  Independent formulations are
+cross-mass transfer through SDP kernels, grouped layer descent, and
+prime puncture compatibility inside the endpoint affine coset.
