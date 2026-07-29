@@ -103,3 +103,19 @@ Run artifact scripts with the activated environment or explicitly with
 `.venv/bin/python`. Do not install project dependencies into the system Python.
 The `.venv/` directory and generated Python caches are intentionally excluded
 from Git.
+
+## Temporary workspace
+
+Never use the system `/tmp` directory for this project. Put every temporary
+script, scratch calculation, compiler output, log, rendered preview, and
+intermediate dataset under the repository-local directory
+`/home/math/quadra/tmp/` instead. The relative path from the repository root is
+`tmp/`.
+
+Create the directory when necessary with:
+
+```bash
+mkdir -p /home/math/quadra/tmp
+```
+
+The `tmp/` directory is disposable working space and must not be committed.
