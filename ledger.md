@@ -9404,3 +9404,368 @@ The next wave should attack the common missing input directly:
 global-minimizer block exchange.  Independent formulations are
 cross-mass transfer through SDP kernels, grouped layer descent, and
 prime puncture compatibility inside the endpoint affine coset.
+
+### 10.55 Exact exchange and compatibility walls
+
+The third block-exchange wave produced three exact statements.  Each
+one narrows the missing input, but none yet yields the asymptotic
+upper bound.  All claims in this section are **Verified** unless
+explicitly labelled otherwise.
+
+#### 10.55.1 Cross-only replacement is vacuous at an active zero cut
+
+Write
+```math
+A(C)=
+\begin{pmatrix}
+B&C\\
+C^{\mathsf T}&D
+\end{pmatrix}.
+```
+Let `u` and `v` be positive grounds of `B` and `D`.  Changing the
+relative sign of these two vectors proves, for every flat replacement
+`C'`,
+```math
+\boxed{
+p(A(C'))
+\ge p(B)+p(D)+|u^{\mathsf T}C'v|
+\ge p(B)+p(D).
+}
+\tag{10.343}
+```
+Consequently, if an active positive zero cut of a global minimizer has
+`p(B)+p(D)=p(A)=M_n`, then every cross-only replacement already
+satisfies `M(A(C'))\ge M_n`.  Global minimality imposes no further
+condition on `C'`.  Away from exact activity, this comparison can
+exploit at most the endpoint margin
+`e_+=M_n-p(B)-p(D)`.
+
+There is an exact SDP form of the same obstruction.  For
+`\sigma\in\{+,-\}`, take optimal child SDP dual slacks
+`L_{B,\sigma},L_{D,\sigma}` and put
+```math
+\begin{aligned}
+S_\sigma
+&=\operatorname{SDP}_+(\sigma B)
+  +\operatorname{SDP}_+(\sigma D),\\
+\Phi_\sigma(C)
+&=\max_{u,v\in\{\pm1\}}
+\left[
+u^{\mathsf T}Cv
+-\frac12u^{\mathsf T}L_{B,\sigma}u
+-\frac12v^{\mathsf T}L_{D,\sigma}v
+\right].
+\end{aligned}
+```
+The dual identity (10.337), together with `v\mapsto-v`, gives
+```math
+\boxed{
+p(A(C))=S_++\Phi_+(C),\qquad
+\nu(A(C))=S_-+\Phi_-(C).
+}
+\tag{10.344}
+```
+Thus global minimality says only that every flat `C'` obeys
+```math
+M_n\le
+\max\{S_++\Phi_+(C'),\,S_-+\Phi_-(C')\}.
+```
+A sufficient positive-endpoint completion would be
+```math
+\begin{pmatrix}
+L_{B,+}&-C'\\
+-C'^{\mathsf T}&L_{D,+}
+\end{pmatrix}\succeq0,
+```
+because it forces `\Phi_+(C')\le0`.  But a positive semidefinite block
+completion necessarily satisfies
+```math
+\boxed{
+C'\ker L_{D,+}=0,\qquad
+C'^{\mathsf T}\ker L_{B,+}=0.
+}
+\tag{10.345}
+```
+The analogous condition holds at the negative endpoint with the
+appropriate sign.  Optimal SDP slacks are singular by complementary
+slackness, so this kernel condition cannot be discarded.
+
+The globally optimal order-nine signing from
+`artifacts/prime_face_cover_quotient.md` gives an exact finite
+obstruction.  After switching by positive-ground mask `247` and
+using the zero cut
+`U=\{0,1,2,4\}`, `V=\{3,5,6,7,8\}`, its blocks are
+```math
+B=J_4-I_4,\qquad
+D=
+\begin{pmatrix}
+0&1&-1&1&1\\
+1&0&1&1&-1\\
+-1&1&0&1&1\\
+1&1&1&0&1\\
+1&-1&1&1&0
+\end{pmatrix},
+```
+and
+```math
+C=
+\begin{pmatrix}
+1&1&-1&1&-1\\
+-1&1&1&-1&-1\\
+1&-1&1&-1&1\\
+-1&-1&1&1&-1
+\end{pmatrix}.
+```
+Here `p(B)=p(D)=6`, `1^{\mathsf T}C1=0`, and
+`M(A)=M_9=12`.  Both child positive SDPs are exact.  Their canonical
+slacks have spectra
+```math
+\operatorname{spec}(L_B)=\{0,4,4,4\},\qquad
+\operatorname{spec}(L_D)=\{0,1,1,5,5\},
+```
+with all-one kernel lines.  Nevertheless
+```math
+C1_5=(1,-1,1,-1)^{\mathsf T},\qquad
+1_4^{\mathsf T}C=(0,0,2,0,-2),
+```
+and, for `P_B=I-J_4/4` and `P_D=I-J_5/5`,
+```math
+\boxed{
+\|P_BCP_D\|_F^2=\frac{86}{5}
+=\frac{43}{50}\|C\|_F^2.
+}
+\tag{10.346}
+```
+Thus `86\%` of the cross mass couples the positive-curvature
+subspaces despite exact child SDPs, global optimality, and zero
+traffic.  More decisively, no flat `4\times5` matrix `C'` can satisfy
+the positive completion: (10.345) would require `C'1_5=0`, whereas
+every five-entry `\{\pm1\}` row has odd nonzero sum.
+
+This falsifies a cross-only SDP completion or replacement proof.
+A viable exchange must modify an internal block together with the
+cross block, or exploit a quantitatively nonzero endpoint margin.
+
+#### 10.55.2 Literal puncture compatibility has an exact criterion
+
+Let `q` be an oriented endpoint word with
+`\langle A,q\rangle=M(A)=M`.  Define its incident field and the
+`i`th child defect by
+```math
+r_i(q)=\sum_{j\ne i}a_{ij}q_{ij},\qquad
+d_i=M-M(A[-i]).
+```
+Since the punctured score is `M-r_i(q)`, one always has
+```math
+\boxed{
+r_i(q)\ge d_i,
+}
+\tag{10.347}
+```
+with equality exactly when `q[-i]` is a closest oriented word for the
+`i`th child.  Also every edge is counted twice, so
+`\sum_i r_i(q)=2M`.  It follows that
+```math
+\boxed{
+\text{a full endpoint word is closest on every puncture}
+\quad\Longleftrightarrow\quad
+\sum_i d_i=2M.
+}
+\tag{10.348}
+```
+Indeed, necessity follows by summing the equalities.  Conversely, if
+the defect sum is `2M`, then the nonnegative quantities
+`r_i(q)-d_i` sum to zero for every endpoint word `q`; hence every
+endpoint word is simultaneously closest on every puncture.  The
+equivalent compatibility identity is
+```math
+\sum_i M(A[-i])=(n-2)M.
+```
+
+For an affine endpoint coset `F=q_0L`, choosing a literal closest word
+for puncture `i` is therefore exactly the minimization problem
+```math
+q_i\in\operatorname*{arg\,min}_{q\in F}r_i(q).
+\tag{10.349}
+```
+After switching, the `r_i` are nonnegative Fourier sums on `L` and
+their nonconstant Fourier coefficients cancel after summing over
+`i`.  These facts do not force the coordinatewise minimizers to
+intersect.
+
+There is already a counterexample at the genuinely prime order
+`n=5`:
+```math
+A=
+\begin{pmatrix}
+0&-1&1&-1&1\\
+-1&0&-1&1&1\\
+1&-1&0&1&1\\
+-1&1&1&0&1\\
+1&1&1&1&0
+\end{pmatrix}.
+\tag{10.350}
+```
+Its energies are `-4,0,4`, so `M(A)=4=M_5`.  The lower bound is
+analytic: for a uniform Boolean spin `X`,
+`\mathbb E H_A(X)^2=10`, while every energy is even, forcing
+`M_5\ge4`.  Direct evaluation of the five displayed children gives
+`M(A[-i])=4=M_4` for every `i`, hence every defect `d_i` is zero.
+
+The endpoint face contains the affine plane
+`q^{t,x}_{uv}=t x_ux_v` represented by
+```math
+\begin{array}{c|c}
+t&x\\ \hline
+-1&(1,1,1,1,-1)\\
+-1&(1,1,-1,1,-1)\\
+ 1&(1,-1,1,-1,-1)\\
+ 1&(1,-1,-1,-1,-1).
+\end{array}
+```
+The first three edge words multiply coordinatewise to the fourth.
+Their incident-field profiles are
+```math
+\begin{pmatrix}
+2&2&0&0&4\\
+4&0&0&2&2\\
+2&4&0&2&0\\
+0&2&0&4&2
+\end{pmatrix}.
+\tag{10.351}
+```
+The zero sets cover all five punctures, so each child has a literal
+closest representative in this same affine plane.  But
+`\sum_i d_i=0<8=2M`, and (10.348) proves that no single representative
+works for all punctures.
+
+Thus prime order, global optimality, optimal children, literal
+closeness, and a bounded affine endpoint face still do not give a
+common compatible word.  The order-nine face used earlier has an
+analogous puncture-covering plane, but `9` is composite and all of its
+child defects equal `2`.  The surviving arithmetic target must use
+large primes (beginning at `13`), growing affine dimension, bounded
+endpoint reuse, or some additional large-order rigidity.
+
+#### 10.55.3 A two-shore descent dichotomy
+
+Use doubled normalization.  Let a positive ground of an order-`m`
+signing `C` be switched to `1`, put `r=C1\ge0`, and let
+`v=1^S` be the spin obtained by flipping the shore `S`.  Set
+`T=S^c` and write
+```math
+C=
+\begin{pmatrix}
+D&B\\
+B^{\mathsf T}&E
+\end{pmatrix},\qquad
+g=Q(C)-v^{\mathsf T}Cv.
+```
+Define
+```math
+H_D=1^{\mathsf T}D1,\quad
+H_E=1^{\mathsf T}E1,\quad
+\gamma=Q(E)-H_E,\quad
+d=Q(C)-Q(E),
+```
+and let
+`c_C(S)=1_S^{\mathsf T}B1_T` and
+`R_S=\sum_{i\in S}r_i`.  Direct expansion gives the exact identities
+```math
+\boxed{
+c_C(S)=\frac g4,\qquad
+R_S=H_D+\frac g4,\qquad
+d=H_D+\frac g2-\gamma.
+}
+\tag{10.352}
+```
+Use the predecessor restriction `y=1_T` as an all-layer successor.
+Its layer payoff is
+```math
+\ell=2\|By\|_1-\gamma.
+```
+Since `\|By\|_1\ge1_S^{\mathsf T}By=g/4` and `d\ge0`,
+```math
+\boxed{
+\ell\ge\frac g2-\gamma
+=d-H_D
+=d+\frac g4-R_S.
+}
+\tag{10.353}
+```
+Consequently, for every `\theta<1/4`,
+```math
+\boxed{
+\ell<\theta g
+\quad\Longrightarrow\quad
+R_S>\left(\frac14-\theta\right)g.
+}
+\tag{10.354}
+```
+In particular, either `\ell\ge g/8` or `R_S>g/8`.  This is a genuine
+descent dichotomy: a poorly visible predecessor gap must put positive
+field mass on the flipped shore.
+
+Field-proportional sampling exposes the remaining covariance problem.
+With `p_i=r_i/(m-1)` on `S`,
+```math
+\sum_{i\in S}p_i=\frac{R_S}{m-1},\qquad
+a_S=\frac1{m-1}\sum_{i\in S}r_i^2
+\ge\frac{R_S^2}{(m-1)|S|}.
+\tag{10.355}
+```
+Write
+```math
+\beta_i=\sum_{j\in T}C_{ij},\qquad
+\alpha_i=\sum_{j\in S\setminus\{i\}}C_{ij},
+```
+so `r_i=\alpha_i+\beta_i\ge0` and
+`\sum_{i\in S}\beta_i=g/4`.  The expected signed boundary removed
+when sampling only `S` is
+```math
+\frac1{m-1}\sum_{i\in S}r_i\beta_i.
+```
+Neither `r_i\ge0` nor the positive total of the `\beta_i` controls
+this covariance: vertices with positive `r_i` can have negative
+`\beta_i`, while positive cross field can be cancelled internally so
+that `r_i=0`.  The two-shore weight
+`p_i+p_j-p_ip_j` has the same unresolved correlation.
+
+There is also a recursive form of the wall.  If
+`\ell<\eta g`, then (10.353) gives
+`\gamma>(1/2-\eta)g`, while `d\ge0` gives
+`\gamma\le g/2+Q(D)`.  Hence the gap can migrate to the next core at
+roughly half size without ever paying a fixed visible fraction.  The
+statement concerns the same augmented orientation; an
+opposite-orientation transition is a complemented-cut problem.
+
+The sharpened **open target** is a global-minimizer exchange estimate
+on every bad shore, for some absolute `\kappa>0`:
+```math
+\boxed{
+\sum_{i\in S}r_i\beta_i
+\ge \kappa(m-1)c_C(S)-\operatorname{Err}_S,
+\qquad
+\sum_t\operatorname{Err}_{S_t}=o(n^{3/2}),
+}
+\tag{10.356}
+```
+or a two-shore analogue.  Such an estimate must exchange matched
+positive cross edges together with internal edges; cross-only
+minimality is vacuous by Section 10.55.1.
+
+#### 10.55.4 Updated frontier
+
+The common obstruction is now precise.  A global minimizer can have
+an active zero cut whose cross block lies mostly in the curved child
+SDP subspaces; a prime optimal signing can have compatible punctures
+only one at a time; and a large cut gap can hide behind negative
+field-boundary covariance.
+
+The next proof wave should therefore prioritize genuinely coupled
+internal/cross exchanges.  Independent secondary targets are a
+large-prime puncture rigidity theorem (not a bounded-face theorem
+already refuted at `n=5`), and an exchange using nonzero endpoint
+margin or opposite orientation.  Any proposed lemma must survive the
+exact order-nine zero-cut obstruction and the prime order-five affine
+plane above.
