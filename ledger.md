@@ -20841,3 +20841,631 @@ useful concrete target:
   control as the more general fallback.  The fifth-wave boundary has now
   been reached: `STEERING.md` must be regenerated from the full ledger before
   selecting Wave 24.
+
+### 10.77 Global overlap collapse, soft row costs, and complete-signing cycles
+
+The twenty-fourth wave materially weakens the leading restriction interface.
+The hard row cap in (10.741) can be replaced by an output-weighted row-square
+moment, and the reference law in the information inequality can be optimized
+exactly.  Once the selector marginal is allowed to move and its KL cost is
+retained, conditioning one product law on the global near-ground event removes
+the capped worst-selector game altogether.  The resulting joint overlap
+problem is a one-constraint LP whose optimizer uses at most two
+positive-coverage parent grounds.
+
+The parent-Gibbs route admits the same selector collapse and a single
+normalized interpolation from a biased child-Gibbs law to the uniform-selector
+parent endpoint.  Its remaining transport functional is exponential, so the
+quadratic gradient estimates from Wave 23 still do not close it.  Finally,
+retaining every shared edge in the competitor family gives an exact
+Walsh--MacWilliams formula on even Eulerian subgraphs.  Complete two-spin
+plaquette curvature has the desired upper-affinity direction, but yields only
+a constant cavity reward.
+
+All analytic identities, entropy optimizations, LP duals, switching formulas,
+Fourier formulas, and plaquette inequalities below are **Verified**.  Exact
+rational `A_6,A_8,A_9` incidence data and the full `A_5` edge transform are
+checked exhaustively.  The finite-temperature decimals are **Numerical**
+checks of proved formulas.  The generic failure of positive-temperature
+overlap monotonicity has a rational Taylor-interval sign certificate.  No
+convergence proof or asymptotic signing counterexample is obtained.
+
+#### 10.77.1 Domain-free row-square mgfs and the exact output reference
+
+Retain the unordered fixed-cut notation of (10.690):
+
+```math
+T_\xi-p^2W
+=p\sum_i r_i(\xi_i-p)
++\sum_{i<j}w_{ij}(\xi_i-p)(\xi_j-p)
+=L+Q.
+```
+
+Hoeffding's lemma bounds `L` for every real parameter, with no
+`R_\infty` domain.  Combining it by Cauchy--Schwarz with the proved
+random-bipartition/Gaussian estimate for `Q` gives
+
+```math
+\boxed{
+\log\mathbb E e^{t(T_\xi-p^2W)}
+\le
+\frac{t^2p^2R_2}{4}
++\frac{t^2F_\times(\mathsf W)}
+{4(1-t^2\|A\|_{\rm op}^2)}.
+}
+\tag{10.758}
+```
+
+The only domain is `|t|<\|A\|_{\rm op}^{-1}`.  Conditioning on the
+`m`-slice and taking `t=2\lambda` proves
+
+```math
+\boxed{
+\Lambda_d^U(\lambda)
+\le
+\chi_{n,m}
++\lambda\epsilon_{n,m}|\langle A,d\rangle|
++\lambda^2p^2R_2(d)
++\frac{\lambda^2F_\times(\mathsf W_d)}
+{1-4\lambda^2\|A\|_{\rm op}^2}.
+}
+\tag{10.759}
+```
+
+This is weaker than the Bernstein term for one uniformly regular cut, but it
+can be averaged over cuts without a common maximum-row bound.
+
+There is also an exact improvement in the information step.  Let `P` be any
+joint selector--cut channel, with selector marginal `\pi`, output marginal
+`p_D`, and average distortion `\delta`.  Entropy duality relative to
+`U_m\otimes\nu` and optimization over the reference `\nu` give
+
+```math
+\boxed{
+\begin{aligned}
+&\inf_\nu\left\{
+D_{\rm KL}(P\Vert U_m\otimes\nu)
++\log\mathbb E_{d\sim\nu}e^{\Lambda_d^U(\lambda)}
+\right\}\\
+&\qquad=
+I_{\rm Sh}(S;D)+D_{\rm KL}(\pi\Vert U_m)
++\mathbb E_{d\sim p_D}\Lambda_d^U(\lambda).
+\end{aligned}
+}
+\tag{10.760}
+```
+
+Indeed, if
+`w_d\propto\nu_d e^{\Lambda_d^U}`, the reference-dependent part becomes
+`D_{\rm KL}(p_D\Vert w)+\mathbb E_{p_D}\Lambda_d^U`, minimized at
+`w=p_D`.  For a deterministic channel, the information term is exactly its
+output entropy; `\log|\mathcal C|+\sup_{\mathcal C}\Lambda` was therefore a
+convenient upper bound, not the intrinsic cost.
+
+On the halved spectral domain define
+
+```math
+J=I_{\rm Sh}(S;D)+D_{\rm KL}(\pi\Vert U_m)+\chi_{n,m},
+\qquad
+V_{\rm soft}=p^2\mathbb E R_2(D)+\frac{n^2}{2}.
+```
+
+Equations (10.759)--(10.760), `F_\times\le n^2/4`, and
+`\langle A,d\rangle\le q_n` prove
+
+```math
+\boxed{
+V_{\rm ad}(A,m)-p_2q_n
+\le
+\delta+\epsilon_{n,m}q_n
++\frac{J}{\lambda}+\lambda V_{\rm soft},
+\quad
+0<\lambda\le\frac1{2\sqrt2\|A\|_{\rm op}}.
+}
+\tag{10.761}
+```
+
+If `\sqrt{J/V_{\rm soft}}` is in the domain, the last two terms optimize to
+`2\sqrt{JV_{\rm soft}}`.  In particular, at fixed selector ratios, for any
+fixed `0<c<1/4`, the sufficient channel conditions are
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E\ell(S,D)&=O(n^{3/2-c}),\\
+I_{\rm Sh}(S;D)+D_{\rm KL}(\pi\Vert U_m)
+&=O(n^{3/4-c}),\\
+\mathbb E R_2(D)&=O(n^{9/4-c}).
+\end{aligned}
+}
+\tag{10.762}
+```
+
+Taking `\lambda=\eta n^{-3/4}` proves an
+`O(n^{3/2-c})` restriction edge.  The old hard-cap hypothesis implies
+(10.762), because a parent ground has nonnegative rows and
+`R_2\le R_\infty q_n`.  The converse fails for abstract channels: spiky
+grounds may be used with small output mass.
+
+#### 10.77.2 Global conditioning and the two-ground cost LP
+
+Let `\nu` be any law on exact parent grounds, define
+
+```math
+G=\{(S,d):\ell(S,d)\le t\},
+\qquad
+Z=(U_m\otimes\nu)(G),
+```
+
+and condition the product law on `G`.  The resulting joint law `P` has
+distortion at most `t` and the exact chain rule
+
+```math
+\boxed{
+-\log Z
+=I_P(S;D)+D_{\rm KL}(P_S\Vert U_m)
++D_{\rm KL}(P_D\Vert\nu),
+\qquad
+\mathbb E_PR_2(D)=\mathbb E[R_2(D)\mid G].
+}
+\tag{10.763}
+```
+
+Consequently it is enough to find a target-specific exact minimizer and
+parent-ground prior such that
+
+```math
+\boxed{
+\begin{aligned}
+t&=O(n^{3/2-c}),\\
+-\log Z&=O(n^{3/4-c}),\\
+\mathbb E[R_2(D)\mid G]&=O(n^{9/4-c}).
+\end{aligned}
+}
+\tag{10.764}
+```
+
+This is strictly weaker than (10.741): only global average overlap is needed,
+because concentration of the selected subset is already charged by
+`D_{\rm KL}(P_S\Vert U_m)`.  There is no hidden capped lower-tail condition.
+
+The joint target is an elementary exact LP.  For every parent ground put
+
+```math
+u_g=U_m\{S:\ell(S,g)\le t\},
+\qquad
+c_g=R_2(g).
+```
+
+For a captured row-square budget `C`, adjoin a dummy `(u,c)=(0,0)` and define
+
+```math
+\boxed{
+\begin{aligned}
+Z_*(C)=\max_{\nu\in\Delta(\Gamma\cup\{0\})}\quad
+&\sum_g\nu_gu_g\\
+\text{subject to}\quad
+&\sum_g\nu_gu_g(c_g-C)\le0.
+\end{aligned}
+}
+\tag{10.765}
+```
+
+Strong LP duality gives the priced learner form
+
+```math
+\boxed{
+Z_*(C)
+=\min_{\theta\ge0}\max_{g\in\Gamma\cup\{0\}}
+u_g[1+\theta(C-c_g)].
+}
+\tag{10.766}
+```
+
+Thus `Z_*(C)\ge z` exactly when every row-square price admits one parent
+ground with priced captured mass at least `z`.  A spiky ground is charged
+only through the selector mass it captures.
+
+If `Z_*(C)>0`, no optimizer uses a zero-coverage action.  For its captured
+output law `\mu_g=\nu_gu_g/Z_*`,
+
+```math
+\boxed{
+\frac1{Z_*}=\sum_{g:u_g>0}\frac{\mu_g}{u_g},
+\qquad
+\sum_g\mu_gc_g\le C.
+}
+\tag{10.767}
+```
+
+Conversely these relations reconstruct `\nu`.  Minimizing the first linear
+functional under one moment constraint shows that an optimizer needs at most
+two positive-coverage grounds.  Boosting and a large codebook are unnecessary
+for this weaker endpoint objective.
+
+The exact switching identities do not prove the required coverage.  Gauge a
+parent ground to `1`, delete `T=[n]\setminus S`, and retain the notation of
+(10.328).  Then
+
+```math
+\boxed{
+\ell(S,g)=g_T=R_T(g)+b_T(g)-d_T,
+\quad
+r_i\ge0,
+\quad
+\sum_i r_i=q_n,
+\quad
+0\le b_T\le q_n/2,
+\quad
+0\le d_T\le q_n-q_m.
+}
+\tag{10.768}
+```
+
+These formulas rewrite each LP column but give no lower tail.  Their uniform
+mean is exactly the unknown restriction excess.  Simultaneous edge-flip and
+block-replacement witnesses may have positive parent deficit, so they need not
+populate the exact-ground columns.
+
+There is a matching conditional converse.  Averaging (10.759) under the
+captured law in (10.767), for every common admissible `\lambda`, gives
+
+```math
+\boxed{
+\begin{aligned}
+-\log Z\ge{}&
+\lambda[q_m-t-(p_2+\epsilon_{n,m})q_n]
+-\chi_{n,m}\\
+&-\lambda^2p^2C-O(\lambda^2n^2).
+\end{aligned}
+}
+\tag{10.769}
+```
+
+Hence a fixed-ratio leading gap
+`q_m-p_2q_n\ge g n^{3/2}`, together with
+`C=O(n^{9/4-c})`, forces `-\log Z_*(C)=\Omega(n^{3/4})`, contradicting
+the target exponent in (10.764).  Current global constants activate this only
+below density `0.452911...`, not in the strategic `\rho\ge1/2` window.
+
+The exact one-deletion, zero-tolerance ground types are
+
+| minimizer | `(u_g,R_2(g))` | multiplicity |
+|:---:|:---:|---:|
+| `A_6` | `(5/6,30)` | `12` |
+| `A_8` | `(3/8,64)` | `8` |
+| `A_9` | `(1/9,80)` | `2` |
+| `A_9` | `(2/9,96)` | `12` |
+| `A_9` | `(1/3,112)` | `4` |
+| `A_9` | `(2/9,112)` | `3` |
+| `A_9` | `(1/3,128)` | `4` |
+
+The last two `A_9` types are dominated.  Writing
+`L(C)=1/Z_*^{A_9}(C)`, exact convexification gives
+
+```math
+\boxed{
+L(C)=
+\begin{cases}
++\infty,&C<80,\\
+9-\dfrac9{32}(C-80),&80\le C\le96,\\
+\dfrac92-\dfrac3{32}(C-96),&96\le C\le112,\\
+3,&C\ge112.
+\end{cases}
+}
+\tag{10.770}
+```
+
+For example `Z_*(88)=4/27` and `Z_*(104)=4/15`.  The soft LP therefore
+bypasses the finite hard-cap separation exactly; this is not asymptotic
+evidence.
+
+#### 10.77.3 Selector collapse and the full parent interpolation
+
+For the parent Gibbs prior `\nu_\beta`, tolerance `a`, and overlap
+`\Omega_{\beta,S}(a)` from (10.719), put
+
+```math
+\overline\Omega
+=\mathbb E_{S\sim U_m}\Omega_{\beta,S}(a)
+=\Pr_{S\sim U_m,D\sim\nu_\beta}\{\Delta_S(D)\le a\}.
+```
+
+Gibbs variational duality collapses the selector optimization exactly:
+
+```math
+\boxed{
+\inf_\pi\left\{
+\mathbb E_\pi[-\log\Omega_{\beta,S}(a)]
++D_{\rm KL}(\pi\Vert U_m)
+\right\}
+=-\log\overline\Omega.
+}
+\tag{10.771}
+```
+
+The optimizer is
+`\pi_*(S)=U_m(S)\Omega_{\beta,S}(a)/\overline\Omega`, including the usual
+extended-value convention when the overlap vanishes.  Equivalently, condition
+the single product law `U_m\otimes\nu_\beta` on the global good event.
+Therefore the original target (10.727) is precisely the global tail
+
+```math
+\overline\Omega\ge
+\exp\{-O(n^{1/2-2c})\},
+\qquad
+a=O(n^{3/2-c}).
+```
+
+No separate selector law has to be guessed.  With the soft row-square
+interface, (10.764) permits the weaker overlap exponent `n^{3/4-c}` but adds
+the captured `R_2` moment.
+
+There is also one normalized interpolation for the soft child-Gibbs channel.
+Let
+
+```math
+Z_0=\mathbb E_{S\sim U_m}Z_S(\gamma),
+\qquad
+\pi_0(S)=\frac{U_m(S)Z_S(\gamma)}{Z_0},
+```
+
+and on pairs `(S,y)` define
+
+```math
+\boxed{
+\begin{aligned}
+Z_t&=\mathbb E_{S\sim U_m}\sum_y
+e^{[(1-t)\gamma+t\beta]c_S(y)}K_{\beta,S}(y)^t,\\
+M_t(S,y)&=\frac{U_m(S)
+e^{[(1-t)\gamma+t\beta]c_S(y)}K_{\beta,S}(y)^t}{Z_t}.
+\end{aligned}
+}
+\tag{10.772}
+```
+
+Then `M_0(S,y)=\pi_0(S)\mu_{\gamma,S}(y)`, while
+`M_1(S,y)=U_m(S)\nu_{\beta,S}(y)`.  With
+`\ell_S=\log K_{\beta,S}+(\beta-\gamma)c_S`, twice integrating the log
+partition function gives
+
+```math
+\boxed{
+\begin{aligned}
+D_{\rm KL}(M_0\Vert M_1)
+&=D_{\rm KL}(\pi_0\Vert U_m)
++\mathbb E_{\pi_0}
+D_{\rm KL}(\mu_{\gamma,S}\Vert\nu_{\beta,S})\\
+&=\int_0^1(1-t)\operatorname{Var}_{M_t}(\ell_S)\,dt.
+\end{aligned}
+}
+\tag{10.773}
+```
+
+Thus an `O(n^{1/2-2c})` bound on this one full-path integral is sufficient
+for the original interface and retains every rare tilted state.
+
+The endpoint lift isolates the missing transport theorem.  Put
+
+```math
+C=Z_A(\beta)/Z_0,
+\qquad
+a(d)=\mathbb E_{S\sim U_m}e^{-\ell_S(d[S])},
+\qquad
+\rho_d(S)=\frac{U_m(S)e^{-\ell_S(d[S])}}{a(d)}.
+```
+
+Since `\mathbb E_{\nu_\beta}Ca=1`, entropy chain rule gives
+
+```math
+\boxed{
+D_{\rm KL}(M_0\Vert M_1)
+=\operatorname{Ent}_{\nu_\beta}(Ca)
++\mathbb E_{d\sim Ca\nu_\beta}
+D_{\rm KL}(\rho_d\Vert U_m).
+}
+\tag{10.774}
+```
+
+Johnson modified log-Sobolev bounds the second term by the exact exponential
+Dirichlet functional
+
+```math
+\boxed{
+\mathcal D_{\rm sel}
+=\tau_{\rm mls}\frac{m(n-m)}{2n}\,C
+\mathbb E_{d\sim\nu_\beta,\,S\sim S'}
+[(e^{-\ell_{S'}}-e^{-\ell_S})(\ell_S-\ell_{S'})].
+}
+\tag{10.775}
+```
+
+Consequently
+`\operatorname{Ent}_{\nu_\beta}(Ca)+\mathcal D_{\rm sel}
+=O(n^{1/2-2c})` is an exact endpoint sufficient lemma.  The integrand is
+nonnegative.  Equations (10.746)--(10.750) control an unweighted quadratic
+gradient or the wrong conditional marginal; they do not control either the
+exponential weight in (10.775) or `\operatorname{Ent}_{\nu_\beta}(Ca)`.
+
+Two tempting shortcuts close exactly.  Under the endpoint product law,
+
+```math
+\boxed{
+\mathbb E\Delta_S(D)
+=\mathbb E_{U_m}Q(A[S])
+-p_2\mathbb E_{\nu_\beta}\langle A,D\rangle.
+}
+\tag{10.776}
+```
+
+The thermal parent deficit is subleading at the target temperature, but the
+remaining term is exactly the unknown uniform restriction excess.  Markov or
+mean truncation is circular.  Also, if
+`p(\beta)=(U_m\otimes\nu_\beta)(G)`, then
+
+```math
+\boxed{
+\frac d{d\beta}\log p(\beta)
+=\mathbb E[\langle A,D\rangle\mid G]
+-\mathbb E\langle A,D\rangle.
+}
+\tag{10.777}
+```
+
+This derivative is nonnegative at `\beta=0`, but not generically afterward.
+A certified order-five signing with `Q=12>q_5=8`, selector
+`S=\{0,1,4\}`, tolerance `4`, and `\beta=1/2` has covariance
+`-0.0867533751...`.  This falsifies generic temperature monotonicity, not an
+exact-minimizer-specific theorem.  Exact minimizers through order six and the
+audited `A_9` cases show no failure, but monotonicity alone would not supply
+the required quantitative overlap.
+
+#### 10.77.4 The full competitor transform and plaquette ceiling
+
+Let `B` be any order-`r` complete signing, let `N=\binom r2`, and use the
+`2^r` oriented-projective states.  For every edge perturbation
+`T\subseteq E(K_r)`, put
+
+```math
+D_T=\sum_\omega
+\exp\left\{-\beta\left[
+\Delta_\omega+4\sum_{e\in T}s_e(\omega)
+\right]\right\}.
+```
+
+Let `\mathcal E_{\rm even}` contain the edge sets having even degree at every
+vertex and even cardinality.  The normalized full Walsh transform is
+
+```math
+\boxed{
+\widehat D(F)=
+\begin{cases}
+2^r e^{-\beta q}
+\cosh(2\beta)^{N-|F|}\sinh(2\beta)^{|F|}b_F,
+&F\in\mathcal E_{\rm even},\\
+0,&F\notin\mathcal E_{\rm even}.
+\end{cases}
+}
+\tag{10.778}
+```
+
+The orientation sum forces `|F|` even, and the projective spin sum forces
+every degree even.  This identity holds for every complete signing and any
+baseline `q`.  Exact global minimality is used only to infer
+`\Delta_\omega\ge0` at the root and `D_T\ge1` for every perturbed signing.
+
+With `\rho=\tanh(2\beta)` define the signed even-cycle polynomial
+
+```math
+\mathcal P_B(\rho)
+=\sum_{F\in\mathcal E_{\rm even}}b_F\rho^{|F|}.
+```
+
+Averaging all perturbations in the star of vertex `i` kills exactly the
+cycles using that vertex.  Comparison with (10.735) gives
+
+```math
+\boxed{
+\operatorname{BC}_i
+=\frac{\mathcal P_{B[-i]}(\rho)}
+{\cosh(2\beta)^{r-1}\mathcal P_B(\rho)}.
+}
+\tag{10.779}
+```
+
+Thus a one-step constant-shortfall conclusion is exactly
+
+```math
+\boxed{
+\frac{\mathcal P_{B[-i]}(\rho)}{\mathcal P_B(\rho)}
+\le
+\cosh(2\beta)^{r-1}
+e^{-\beta(T_r-K)},
+\quad
+T_r=\alpha[r^{3/2}-(r-1)^{3/2}].
+}
+\tag{10.780}
+```
+
+The floors `D_T\ge1` average in the wrong direction.  Absolute coefficients
+destroy severe frustration cancellation: the signed/unsigned polynomial
+ratios for `A_8,A_9` range from `1.71\cdot10^{-7}` down to
+`3.57\cdot10^{-20}` at `\beta=0.5,1`.  Parseval likewise loses the
+quadratic-size complementary edge space.  The new exact target is
+minimizer-specific stability of this signed cancellation under vertex
+deletion.
+
+Complete plaquette curvature does yield a valid upper affinity.  Condition on
+all spins except `i,j` and write the four square-root Gibbs weights as
+`a,b,c,d`.  Their cross ratio obeys
+`|\log(ad/bc)|=4\beta`.  Sharp four-variable optimization gives
+
+```math
+\boxed{
+\operatorname{BC}_i+\operatorname{BC}_j\le C_\beta,
+\qquad
+C_\beta=
+\begin{cases}
+2\operatorname{sech}(2\beta),&e^{4\beta}\le3,\\
+\sqrt{\dfrac2{1-e^{-4\beta}}},&e^{4\beta}\ge3.
+\end{cases}
+}
+\tag{10.781}
+```
+
+Summing over coordinate pairs proves, for every complete signing,
+
+```math
+\boxed{
+\max_i\kappa_{\beta,i}
+\ge\frac1\beta\log\frac2{C_\beta}.
+}
+\tag{10.782}
+```
+
+This is a genuine upper-affinity result even when zero fields are
+parity-allowed, but its right side is constant at fixed temperature and hence
+`o(\sqrt r)`.  Linear aggregation of the sharp pair inequalities cannot
+amplify it: the scalar profile `\operatorname{BC}_i=C_\beta/2` saturates all
+of them.
+
+#### 10.77.5 Updated frontier
+
+Wave 24 keeps adaptive optimized principal restriction in front but replaces
+its leading concrete target:
+
+- the hard regular capped weak learner (10.741) is no longer the weakest
+  useful interface.  Domain-free Hoeffding, exact output-reference
+  optimization, and global conditioning reduce the sufficient statement to
+  (10.764), equivalently the cost LP (10.765).  Only global average overlap
+  and captured row-square matter; an optimal prior uses at most two
+  positive-coverage parent grounds.  This removes both boosting and the
+  worst-selector tail from the leading target;
+
+- the exact positive lemma now sought is (10.764), or the priced form
+  (10.766), uniformly at one active fixed-ratio window for target-specific
+  exact minimizers.  Switching identities expose its loss as replenishment
+  but do not force the needed tail.  The aggregate converse (10.769) is
+  exponent-matched and would falsify the lemma under a genuine leading
+  restriction gap; current constants still leave every active
+  `\rho\ge1/2` window open;
+
+- parent selector adaptation is no longer an independent issue:
+  (10.771) turns (10.727) into one global endpoint probability.  The soft
+  interpolation and endpoint decomposition (10.773)--(10.775) identify a
+  second exact route, but its missing theorem must control exponential
+  rare-tail transport, not base variance or unweighted selector gradients;
+
+- complete-signing structure improves the constant-shortfall audit without
+  promoting that route.  The full competitor family is the signed even-cycle
+  transform (10.778), and the missing upper ratio is exactly (10.780).
+  Plaquette curvature proves only the constant reward (10.782), while
+  coefficientwise cycle bounds erase the decisive cancellation.  No
+  asymptotic falsifier of (10.617) is obtained;
+
+- no convergence proof or asymptotic counterexample has appeared.  Because
+  the strongest concrete implementation of the leading route has changed,
+  `STEERING.md` should be refreshed at this boundary.  Wave 25 should attack
+  the two-ground captured-mass LP using exact-minimizer geometry, keep one
+  full-interpolation endpoint-transport attack, and test signed-cycle deletion
+  only through a mechanism that genuinely controls cancellation.
