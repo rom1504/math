@@ -21927,3 +21927,570 @@ route but again weakens its exact implementation:
   low-row-square cut construction and fixed-slice reverse-tail structure,
   while retaining one parent-cut entropy/Hellinger attempt and one genuinely
   complete-signing cancellation or falsification attack.
+
+### 10.79 Retained-noise scaling, parent bottlenecks, and cavity susceptibility
+
+The twenty-sixth wave attacks the single-cut target through noise and
+degree-two reverse tails, audits the separate parent-cut entropy, and returns
+to signed-cycle deletion without taking absolute coefficients. It does not
+prove convergence or construct an asymptotic counterexample. It does correct
+the old noisy-ground obstruction, sharply limits scalar reverse-tail work,
+gives two generic endpoint-transport counterexamples, and gives the
+constant-shortfall route an exact cavity second-moment sufficient lemma.
+
+#### 10.79.1 Retained-deficit noise meets both budgets but not a leading gap
+
+Fix an `m`-set `S` and deterministically choose an oriented child ground
+of `A[S]`. Flip each child spin independently with probability `s`, flip
+the orientation with probability `u`, and fill all outside relative spins
+uniformly. Write
+
+```math
+\theta=1-2s,
+\qquad
+\eta=1-2u,
+\qquad
+a=\eta\theta^2,
+\qquad
+Q_S=Q(A[S]).
+```
+
+The child payoff identity (R21.1) has a stronger parent counterpart. Every
+term using an outside spin has zero mean, so, conditionally on `S`,
+
+```math
+\boxed{
+\mathbb E[c_A(S,D)\mid S]
+=\mathbb E[\langle A,D\rangle\mid S]
+=aQ_S.
+}
+\tag{10.802}
+```
+
+Consequently the full retained effective loss satisfies
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E[\widehat\ell(S,D)\mid S]
+&=[1-a(1-p_2)]Q_S-p^{3/2}q_n,\\
+\mathbb E\widehat\ell
+&=\overline Q-p^{3/2}q_n-a(1-p_2)\overline Q,
+\end{aligned}
+}
+\tag{10.803}
+```
+
+where `overline Q=E_{U_m}Q(A[S])`. Thus the new deficit term retains a
+real selector-correlation gain which the old raw-loss calculation discarded.
+
+There is also an exact row-square formula. If `y_S` represents the chosen
+child ground and is extended by zero outside `S`, then
+
+```math
+\boxed{
+\mathbb E[R_2(D)\mid S]
+=n(n-1)+\theta^2
+\left(\lVert A[:,S]y_S\rVert_2^2-m(n-1)\right).
+}
+\tag{10.804}
+```
+
+The minimizer bound `||A||_op^2<=2q_n` gives
+
+```math
+\mathbb E R_2(D)\le n(n-1)+2\theta^2mq_n.
+```
+
+Use no orientation noise and take
+
+```math
+a=\theta^2=n^{-1/4-c},
+\qquad 0<c<1/4.
+```
+
+Equations (R21.10)--(R21.12), with `f(a)=a/2+O(a^2)`, and (10.804)
+then give simultaneously
+
+```math
+\boxed{
+I(S;D)\le mf(a)+O(1)=O(n^{3/4-c}),
+\qquad
+\mathbb E R_2(D)=O(n^{9/4-c}).
+}
+\tag{10.805}
+```
+
+These are exactly the two budgets in (10.794). Therefore the old statement
+that coefficient matching necessarily forces a fixed retained coefficient
+and a linear universal capacity is no longer valid at the retained-deficit
+interface.
+
+The gain in (10.803), however, is only
+`O(aq_n)=O(n^{5/4-c})`, smaller by `n^{1/4}` than the allowed residual.
+This noisy channel closes (10.794) only if
+
+```math
+\overline Q-p^{3/2}q_n=O(n^{3/2-c})
+```
+
+already holds. That stronger mean lemma proves the restriction edge by
+itself. Cancelling a positive leading mean gap through (10.803) needs `a`
+bounded away from zero; the available universal certificates then have
+scales `I=O(n)` and `E R_2=O(n^{5/2})`, producing `O(n^{7/4})`
+terms at `lambda` of order `n^{-3/4}`.
+
+This is deliberately a **scoped certificate wall**. The capacity expression
+is an upper bound, not a lower bound on actual minimizer-specific mutual
+information. Exceptional overlap among child ground labels could still
+help. Noise around one fixed full parent ground is even sharper: the output
+is independent of `S`, so averaging (10.796) makes
+`E widehat ell=overline Q-p^{3/2}q_n` at every noise level. It can
+regularize row square but cannot change the effective restriction mean.
+
+The identities and all constants in this subsection were independently
+enumerated on `A_6,A_8,A_9`.
+
+#### 10.79.2 A degree-two sign lemma does not align the adaptive envelope
+
+Define
+
+```math
+Y_A(S)=Q(A[S])-p^{3/2}q_n,
+\qquad
+X_d(S)=c_A(S,d)-p_2\langle A,d\rangle.
+```
+
+Then the arbitrary-cut effective loss is simply
+
+```math
+\boxed{
+\widehat\ell(S,d)=Y_A(S)-X_d(S),
+\qquad
+\mathbb E_{U_m}X_d=0.
+}
+\tag{10.806}
+```
+
+For a fixed cut, `X_d` is a degree-two Johnson-slice polynomial. There is
+a general one-sided sign theorem. If a finite transitive space carries an
+invariant `D`-dimensional function space, its reproducing kernel has
+constant diagonal `D`, and hence
+
+```math
+\lVert f\rVert_\infty\le\sqrt D\,\lVert f\rVert_2.
+```
+
+For nonzero centered `f`, put `M=||f||_infty`. Since
+`f^2<=M|f|` and `E|f|=2E f_+`,
+
+```math
+\boxed{
+\Pr\{f>0\},\Pr\{f<0\}
+\ge\frac{\lVert f\rVert_2^2}{2M^2}
+\ge\frac1{2D}.
+}
+\tag{10.807}
+```
+
+Degree-at-most-two slice polynomials lie in a space of dimension at most
+`1+n+binom(n,2)`. Thus every nonzero `X_d` has both signs on a
+polynomial fraction of the slice. No rational-lattice estimate is needed.
+
+This does not approach (10.795), because the required event is
+
+```math
+X_d(S)\ge Y_A(S)-O(n^{3/2-c}),
+```
+
+and (10.807) contains no alignment with the nonlinear envelope `Y_A`.
+The exact order-nine minimizer gives a finite wall. Cuts of minimum row
+square `R_2=16` have
+
+| `m` | slice size | selectors with `X_d>0` | selectors with `widehat ell<=0` | `max X_d` | range of `Y_A` |
+|---:|---:|---:|---:|---:|:---|
+| 8 | 9 | 5 | 0 | `16/9` | constant `3.886740446...` |
+| 7 | 36 | 22 | 0 | `16/3` | `[1.537547398...,5.537547398...]` |
+
+At `m=7`, even `max X_d>min Y_A`; the failure is genuinely one of
+selector alignment.
+
+The exact useful reformulation is a low-row envelope codebook. If
+`|C|<=exp{O(n^{3/4-c})}`, every `d in C` has
+`R_2(d)=O(n^{9/4-c})`, and
+
+```math
+\boxed{
+\max_{d\in\mathcal C}X_d(S)
+\ge Y_A(S)-O(n^{3/2-c})
+\quad\text{for every }S,
+}
+\tag{10.808}
+```
+
+then the codewords' coverage sets cover the slice, and one codeword has
+coverage at least `1/|C|`. This proves (10.795) by pigeonhole. No such
+codebook was constructed. A scalar reverse-tail or slice-mgf argument for
+one already chosen `X_d` does not supply (10.808), so that line should not
+remain active without a new alignment mechanism.
+
+#### 10.79.3 The parent entropy is a barycenter bias, with generic transport walls
+
+In the endpoint notation of (10.797), set
+
+```math
+L(S,d)=Ce^{-\ell_S(d[S])},
+\qquad
+f(d)=Ca(d),
+\qquad
+w_S=\mathbb E_{\nu_\beta}L(S,D).
+```
+
+Under `R=U_m tensor nu_beta`, the exact likelihood identities are
+
+```math
+\boxed{
+f(D)=\mathbb E_R[L\mid D],
+\qquad
+w_S=\mathbb E_R[L\mid S],
+\qquad
+\frac{q_S(d)}{\nu_\beta(d)}=\frac{L(S,d)}{w_S}.
+}
+\tag{10.809}
+```
+
+With `\pi_0(S)=U_m(S)w_S`, the endpoint cut law is the barycenter
+
+```math
+f\nu_\beta=\sum_S\pi_0(S)q_S.
+```
+
+Convexity has an exact gap rather than an unquantified loss:
+
+```math
+\boxed{
+\mathbb E_{S\sim\pi_0}D(q_S\Vert\nu_\beta)
+=\operatorname{Ent}_{\nu_\beta}(f)
++I_{\widehat M_0}(S;D).
+}
+\tag{10.810}
+```
+
+Equivalently, the parent entropy is the average child-to-parent marginal KL
+minus the endpoint mutual information. Bounding the first term alone merely
+returns the full original endpoint cost; a theorem must exploit the
+barycenter or prove near-cancellation.
+
+For the parent Gibbs heat-bath cube, let `e={d,d'}` range over unordered
+coordinate-flip edges and put
+
+```math
+s_e=\nu(d)+\nu(d'),
+\qquad
+c_e=\frac{\nu(d)\nu(d')}{s_e},
+\qquad
+\bar f_e=\frac{\nu(d)f(d)+\nu(d')f(d')}{s_e}.
+```
+
+The sum of conditional entropies `\mathfrak A_\nu(f)` and the heat-bath
+Jeffreys form `\mathfrak J_\nu(f)` obey the exact two-point decomposition
+
+```math
+\boxed{
+c_e(f-f')(\log f-\log f')
+=s_e\bar f_e
+\left[D(r_e\Vert p_e)+D(p_e\Vert r_e)\right],
+\qquad
+\mathfrak A_\nu(f)\le\mathfrak J_\nu(f),
+}
+\tag{10.811}
+```
+
+where `p_e` is the conditional Gibbs law on the edge and `r_e` is its
+`f`-tilt. A precise sufficient parent theorem is
+
+```math
+\operatorname{Ent}_{\nu_\beta}(f)
+\le K\mathfrak J_{\nu_\beta}(f),
+\qquad
+K\mathfrak J_{\nu_\beta}(f)=O(n^{1/2-2c}),
+```
+
+or the analogous pair using `\mathfrak A`. It need hold only for the
+specific endpoint likelihood, not for every function.
+
+Two verified obstructions prevent a generic proof.
+
+First, for one deletion, `\gamma=0`, and any fixed exact signing,
+finite-space Gibbs asymptotics give
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(Ca)
+=\beta\left[Q(A)-\overline E_\infty\right]+O_A(1)
+\quad(\beta\to\infty),
+}
+\tag{10.812}
+```
+
+where `\overline E_\infty` is the mean best parent-extension energy of a
+uniform child cut. The selector entropy is at most `\log n` and its mean
+Hellinger edge at most one. Exact slopes are
+
+| signing | `Q(A)` | `overline E_infty` | slope |
+|:---|---:|---:|---:|
+| `A_4` | 8 | 3 | 5 |
+| `A_6` | 10 | `15/4` | `25/4` |
+| `A_8` | 20 | `35/8` | `125/8` |
+| `A_9` | 24 | `35/8` | `157/8` |
+
+This defeats every temperature-uniform constant absorption into selector
+entropy or selector Hellinger, but `\gamma=0` is outside the intended
+matched target regime.
+
+Second, the endpoint likelihood structure alone admits a strictly positive
+two-bit bottleneck. Put
+
+```math
+\nu_\varepsilon(00)=\nu_\varepsilon(11)=\frac{1-2\varepsilon}{2},
+\qquad
+\nu_\varepsilon(01)=\nu_\varepsilon(10)=\varepsilon,
+```
+
+and, for `0<delta<1`, let `L_1` equal `2-delta` or `delta`
+according as the first bit is zero or one; define `L_2` from the second
+bit and `f=(L_1+L_2)/2`. These are positive normalized
+leave-one-coordinate likelihoods. With
+`K_delta=(2-delta)log(2-delta)+delta log delta`, direct calculation gives
+
+```math
+\boxed{
+\begin{aligned}
+\operatorname{Ent}_{\nu_\varepsilon}(f)
+&=\frac{1-2\varepsilon}{2}K_\delta,\\
+H^2(\nu L_1,\nu L_2)
+&=\varepsilon(\sqrt{2-\delta}-\sqrt\delta)^2,\\
+\mathfrak J_{\nu_\varepsilon}(f)
+&=2\varepsilon(1-2\varepsilon)(1-\delta)
+\log\frac{2-\delta}{\delta}.
+\end{aligned}
+}
+\tag{10.813}
+```
+
+The parent conditional entropy, parent Hellinger form, and selector entropy
+are also `Theta_delta(epsilon)`. Hence generic dimension-free parent
+approximate tensorization, LSI, modified LSI, and selector absorption all
+fail even with positive support. This example is not a complete-signing
+endpoint, so a minimizer- and parameter-specific theorem remains open.
+
+The finite matched-temperature audits do not falsify that narrow theorem.
+In particular, the old `A_4` point
+`(beta,gamma)=(1/2,1/10)` has parent entropy `0.627697022731`,
+conditional-entropy form `0.689538798181`, and heat-bath Jeffreys form
+`1.097205021938`; it was a selector-coefficient obstruction, not a
+parent-flip obstruction. The separate Johnson Hellinger estimate in
+(10.800) remains open even if the parent term is controlled.
+
+#### 10.79.4 Signed-cycle deletion is an exact cavity susceptibility
+
+The signed even-cycle polynomial has a multivariate extension which preserves
+all cancellation. For `\rho=\tanh(2\beta)`, put
+
+```math
+\boxed{
+\mathscr P_B(z_1,\ldots,z_r)
+=\sum_{F\in\mathcal E_{\rm even}}
+b_F\rho^{|F|}\prod_v z_v^{\deg_F(v)}.
+}
+\tag{10.814}
+```
+
+It is positive on the whole cube `0<=z_v<=1`: with
+`K_{uv}(z)=arctanh(rho z_u z_v)`, it is the normalized partition function
+
+```math
+\mathscr P_B(z)
+=\frac{2^{-r}\sum_{(\sigma,x)}
+\exp\{\sum_{u<v}K_{uv}(z)\sigma b_{uv}x_ux_v\}}
+{\prod_{u<v}\cosh K_{uv}(z)}.
+```
+
+If only `z_i=t` varies, `\mathscr P_i(0)=\mathcal P_{B[-i]}` and
+`\mathscr P_i(1)=\mathcal P_B`. Moreover, if every star edge at `i`
+is switched independently with probability `(1-t)/2`, then
+
+```math
+\boxed{
+\mathscr P_i(t)=\mathbb E_S\mathcal P_{B^S}(\rho).
+}
+\tag{10.815}
+```
+
+Thus this is an average of actual complete-signing competitors, not an
+unsigned coefficient majorant. The competitor floors still point in the
+wrong direction for the required deletion-ratio upper bound.
+
+Let `C_i=B[-i]`, `L_i(y)=b_i^T y`, and
+
+```math
+F_i(K)=\mathbb E_{\mu_{\beta,C_i}}\cosh(KL_i),
+\qquad
+K(t)=\operatorname{arctanh}(\rho t).
+```
+
+Directly integrating the deleted spin gives
+
+```math
+\boxed{
+\frac{\mathscr P_i(t)}{\mathcal P_{C_i}(\rho)}
+=\frac{F_i(K(t))}{\cosh(K(t))^{r-1}},
+\qquad
+e^{\beta\kappa_{\beta,i}(B)}=F_i(2\beta).
+}
+\tag{10.816}
+```
+
+Extend the child law by a symmetric deleted spin, tilt it by the star field
+`H_i`, and denote the tilted expectation by `E_K`. Log-partition
+differentiation yields the exact susceptibility formulas
+
+```math
+\boxed{
+\begin{aligned}
+\beta\kappa_{\beta,i}(B)
+&=\int_0^{2\beta}\mathbb E_KH_i\,dK\\
+&=\int_0^{2\beta}(2\beta-K)
+\operatorname{Var}_K(H_i)\,dK,\\
+\left.\frac{d^2}{dt^2}\log\mathscr P_i(t)\right|_{t=0}
+&=\rho^2[v_i(\beta;B)-(r-1)],
+\end{aligned}
+}
+\tag{10.817}
+```
+
+where `v_i(beta;B)=E_{mu_{beta,C_i}} L_i^2`.
+
+Since `x mapsto cosh(a sqrt(x))` is convex, Jensen and
+`\log\cosh x>=x-\log2` prove
+
+```math
+\boxed{
+\kappa_{\beta,i}(B)
+\ge\frac1\beta\log\cosh(2\beta\sqrt{v_i})
+\ge2\sqrt{v_i}-\frac{\log2}{\beta}.
+}
+\tag{10.818}
+```
+
+Freeze `\alpha=q_n/n^{3/2}` along a restriction window. The exact new
+sufficient lemma is
+
+```math
+\boxed{
+v_i(\beta;B_r)\ge\frac9{16}\alpha^2r
+\quad\Longrightarrow\quad
+\kappa_{\beta,i}(B_r)
+\ge\alpha[r^{3/2}-(r-1)^{3/2}]
+-\frac{\log2}{\beta}.
+}
+\tag{10.819}
+```
+
+Indeed the premise makes `2sqrt(v_i)>=(3/2)alpha sqrt(r)`, while
+`r^{3/2}-(r-1)^{3/2}<=(3/2)sqrt(r)`. No positive margin beyond
+`9/16` is needed. A path-selectable version of this cavity moment premise
+would prove (10.617) with `K=(log2)/beta`, and hence convergence.
+
+The premise is not automatic from finite exact minimality. For `A_9` at
+`beta=1`, its right side is exactly `4`, while
+
+```math
+0.149207895\ldots\le v_i\le0.292951948\ldots.
+```
+
+The initial log curvatures in (10.817) range from `-7.2961` to
+`-7.1625`, falsifying any generic log-convexity or uniform moment-floor
+argument. This is a finite obstruction, not an asymptotic falsifier.
+
+Finally, with
+
+```math
+d_i=Q(B)-Q(B[-i]),
+\qquad
+D_\beta(B)=\sum_\omega e^{-\beta[Q(B)-e_B(\omega)]},
+```
+
+the exact positive deficit recurrence is
+
+```math
+\boxed{
+\kappa_{\beta,i}(B)
+=d_i+\frac1\beta
+\log\frac{D_\beta(B)}{2D_\beta(B[-i])}.
+}
+\tag{10.820}
+```
+
+It gives a sharp testable falsifier. If, at one fixed `beta`, an unbounded
+exact-minimizer family satisfies
+
+```math
+\max_i d_i=o(\sqrt r),
+\qquad
+\max_i\left[
+\log\frac{D_\beta(B_r)}{2D_\beta(B_r[-i])}
+\right]_+=o(\sqrt r),
+```
+
+then `max_i kappa_{beta,i}=o(sqrt(r))`, literally falsifying the
+fixed-temperature version of (10.617) on those roots. Defeating the
+target-specific convergence weakening still requires all eligible roots or
+every required deletion cutset to be bad. No unbounded family satisfying
+this criterion is known.
+
+The polynomial, interpolation, susceptibility, Jensen, curvature, and
+deficit identities were checked on `A_5,A_6,A_8,A_9` at
+`beta in {1/4,1/2,1}`.
+
+#### 10.79.5 Updated frontier
+
+Wave 26 leaves the single arbitrary-cut lemma (10.795) as the leading route
+and clarifies what does and does not attack it:
+
+- retained-deficit child noise can now meet the information and row-square
+  budgets simultaneously. At that budget-compatible noise level its gain is
+  sub-residual, so it closes only under the already sufficient mean
+  restriction lemma. Constant retention exceeds the available universal
+  certificates, but minimizer-specific child-label overlap remains open;
+
+- every nonzero centered degree-two slice payoff has polynomial mass on both
+  signs, yet `A_9` shows that even majority positive payoff at minimum row
+  cost need not align with a single effective-loss selector. Scalar reverse
+  tails should be retired unless coupled to the adaptive envelope. The exact
+  surviving formulation is the low-row approximate codebook (10.808), for
+  which no construction is known;
+
+- the parent endpoint term is exactly a barycenter KL. Generic parent-cube
+  LSI and temperature-uniform selector absorption are now sharply blocked by
+  positive and exact-signing examples. The alternative remains viable only
+  as a minimizer-specific, matched-parameter theorem for the particular
+  likelihood `f=Ca`; the adjacent Johnson Hellinger target is still
+  separate;
+
+- constant shortfall gains the exact cavity criterion (10.819): one
+  path-selectable deleted row with Gibbs second moment at least
+  `(9/16)alpha^2 r` per step would prove it with a fixed constant loss.
+  `A_9` defeats any claim that exact minimality forces this pointwise at
+  all finite orders, and the signed-cycle competitor floors still give the
+  wrong direction. The deficit recurrence (10.820) supplies a clean
+  asymptotic falsification test but no such family is known;
+
+- no convergence proof or asymptotic counterexample has appeared. The Wave
+  25 strategic assessment remains current, so the next mandatory
+  `STEERING.md` regeneration is Wave 30 unless an earlier decisive result
+  changes the leading route. Wave 27 should keep two attacks directly on
+  joint low-row coverage or the envelope codebook, and use the third either
+  for matched parent-barycenter transport or for a genuine cavity-moment
+  theorem--not for scalar sign tails, generic parent LSI, or unsigned cycle
+  estimates.
