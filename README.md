@@ -39,6 +39,16 @@ sequence of agent runs.
     successors, and start another three-agent wave. Continue this cycle until
     the problem is solved or a genuine external blocker is identified.
 
+## External research
+
+Web search is available for gathering new mathematical ideas.  When the
+current routes stall or would benefit from outside theory, search arXiv and
+other primary mathematical sources for relevant techniques, analogous
+problems, and reusable theorems.  Record useful citations and check every
+hypothesis, normalization, and dependency before importing a result into the
+ledger.  Literature search should broaden the proof strategy, not replace
+independent verification.
+
 ## Ledger discipline
 
 Keep the ledger as the durable source of truth. Clearly label statements as:
