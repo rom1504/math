@@ -15226,3 +15226,522 @@ route is to amplify the `A_9` selector wall or another cross-mosaic wall while
 preserving global minimality.  On the temporal side, the surviving target is
 still a lower, matrix-derived compatibility bound for the maximum-antichain
 deficiency, possibly after contracting carefully chosen order windows.
+
+### 10.68 Random partitions are tautological, and captured excess is not scalar credit
+
+The fifteenth wave tests both parts of the corrected cross-mosaic frontier.
+A uniform balanced partition has an exact fixed-state variance of order
+`ns`, with no operator-norm loss, but known concentration has the wrong
+large-deviation scale for a supremum over all Boolean states.  Random
+principal-submatrix theory does produce critical-scale partitions with small
+total internal norm; precisely for that reason they capture only subleading
+internal excess and are useless in (10.524).  More decisively, an exhaustive
+order-nine example shows that perfect cross control, large captured excess,
+and an exactly minimizing hybrid can coexist: the captured excess raises the
+common-mosaic response and cannot be subtracted as a scalar credit.  Finally,
+four natural amplifications of the order-nine wall all lose global minimality.
+
+All algebraic identities, finite examples, and no-go statements below are
+**Verified**.  The random-principal-submatrix corollary is a direct
+specialization of the cited theorem, including its sampling-model transfer.
+The response-to-temporal and mixed-product targets remain **Open**.  Nothing
+in this section proves convergence.
+
+#### 10.68.1 Exact equipartition variance and the self-defeating norm bound
+
+Assume first that `s\mid n`, and choose a uniform equipartition `\mathcal P`
+into blocks of order `s`.  Write
+
+```math
+D_{\mathcal P}=\bigoplus_{V\in\mathcal P}A[V],
+\qquad
+C_{\mathcal P}=A-D_{\mathcal P},
+\qquad
+p=\frac{s-1}{n-1}.
+```
+
+Every pair lies in one block with probability `p`.  Hence, for every fixed
+Boolean state `z`,
+
+```math
+\mathbb E_{\mathcal P}
+z^{\mathsf T}D_{\mathcal P}z
+=p z^{\mathsf T}Az.
+```
+
+Putting `E_{\mathcal P}=D_{\mathcal P}-pA` gives the exact centered
+reduction
+
+```math
+\boxed{
+C_{\mathcal P}=(1-p)A-E_{\mathcal P},
+\qquad
+Q(C_{\mathcal P})
+\le(1-p)Q(A)+Q(E_{\mathcal P}).
+}
+\tag{10.569}
+```
+
+At first sight, `Q(E_{\mathcal P})=o(n^{3/2})` appears to prove the desired
+cross-only estimate while allowing the uncentered internal norm to remain
+leading.  An exact block-range inequality shows that this is impossible.
+For each block let
+
+```math
+P_i=\max_x x^{\mathsf T}D_i x,
+\qquad
+N_i=-\min_x x^{\mathsf T}D_i x.
+```
+
+Both are nonnegative because the uniform mean energy is zero.  Independence
+of the Boolean states on distinct diagonal blocks gives
+
+```math
+Q(D_{\mathcal P})
+=\max\left\{\sum_iP_i,\sum_iN_i\right\}.
+```
+
+Therefore
+
+```math
+\boxed{
+\begin{aligned}
+\sum_iQ(D_i)
+&=\sum_i\max\{P_i,N_i\}
+\le\sum_i(P_i+N_i)\\
+&\le2Q(D_{\mathcal P})
+\le2\left[pQ(A)+Q(E_{\mathcal P})\right].
+\end{aligned}
+}
+\tag{10.570}
+```
+
+If `s=o(n)`, then `p=o(1)`.  For a competitive signing
+`Q(A)=O(n^{3/2})`, the centered bound in (10.569) would consequently force
+the entire internal norm, and hence the captured internal excess, to be
+`o(n^{3/2})`.  Centered `Q`-cancellation closes only the tautological branch;
+it cannot be combined with leading internal harvest.
+
+There is an exact second moment.  For fixed `z`, put
+
+```math
+N=\binom n2,
+\qquad
+S=\sum_{i<j}a_{ij}z_iz_j=\frac12z^{\mathsf T}Az,
+\qquad
+L=\lVert Az\rVert_2^2.
+```
+
+If `I_{ij}` records that `i,j` share a block, then the covariances for two
+edges sharing one vertex and for two disjoint edges are respectively
+
+```math
+c_a=-\frac{p(n-s)}{(n-1)(n-2)},
+\qquad
+c_d=\frac{2p(n-s)}{(n-1)(n-2)(n-3)}.
+```
+
+Using
+
+```math
+\sum_{e<f:\ e\cap f\ne\varnothing}b_eb_f
+=\frac{L-2N}{2},
+\qquad
+\sum_{e<f}b_eb_f=\frac{S^2-N}{2},
+\qquad b_{ij}=a_{ij}z_iz_j,
+```
+
+gives
+
+```math
+\boxed{
+\operatorname{Var}_{\mathcal P}
+(z^{\mathsf T}D_{\mathcal P}z)
+=4\left{
+p(1-p)N+(c_a-c_d)(L-2N)+c_d(S^2-N)
+\right}.
+}
+\tag{10.571}
+```
+
+The coefficient of the potentially dangerous row-square term is negative.
+Indeed, with
+`\alpha=c_d-c_a=p(n-s)/((n-2)(n-3))`, the bound
+`Q(A)=O(n^{3/2})` implies, uniformly over fixed `z` and
+`1<s\le n/2`,
+
+```math
+\operatorname{Var}_{\mathcal P}
+(z^{\mathsf T}D_{\mathcal P}z)
+\le4\left{pN+2\alpha N+\frac{c_dQ(A)^2}{4}\right}
+=O(ns).
+```
+
+This second moment is at exactly the desired scale, but it is not a uniform
+tail theorem.  Exchanging two vertices can change the statistic by `O(s)`.
+Even an optimistic Bernstein bound with denominator `ns+st`, evaluated at
+`t=n\sqrt s`, has exponent only `\Theta(n/\sqrt s)` rather than
+`\Theta(n)`, so it cannot pay for `2^{n-1}` projective states.  In a
+categorical-simplex Hanson--Wright formulation, the same obstruction appears
+as the large-deviation term; the rescaled simplex row is not
+dimension-free subgaussian.
+
+The distinction between fixed and adaptive states is real.  For the
+all-positive matrix, when the number of blocks is even, choose `z` constant
+on each block and give half the blocks each sign.  Then every partition has
+
+```math
+\boxed{
+\left|z^{\mathsf T}(D_{\mathcal P}-pA)z\right|
+=\frac{n^2(s-1)}{n-1}
+=\Theta(ns).
+}
+\tag{10.572}
+```
+
+This matrix is not a global minimizer; the example shows only that the
+supremum cannot be inferred from fixed-state variance without using global
+minimality.
+
+There is a rigorous random restriction theorem, but it proves the wrong kind
+of partition.  A specialization of Tropp's
+[random-principal-submatrix theorem](https://tropp.caltech.edu/papers/Tro08-Norms-Random-v3.pdf),
+built on the Rudelson--Vershynin sampling argument, gives for a uniform
+order-`s` subset `V` of a zero-diagonal signing
+
+```math
+\mathbb E\lVert A[V]\rVert_{\rm op}
+\le C\left[
+\log n+\sqrt{s\log n}+\frac{s}{n}\lVert A\rVert_{\rm op}
+\right].
+```
+
+To pass from Bernoulli sampling to fixed size, sample at mean `2s`, condition
+on obtaining at least `s` vertices, and then choose a uniform `s`-subset.
+The conditioning event has probability bounded away from zero, the final
+subset is uniform by symmetry, and principal operator norm is monotone.
+Every block of a uniform equipartition has this marginal law.  Since
+`Q(A[V])\le s\lVert A[V]\rVert_{\rm op}`, linearity of expectation proves
+the existence of an equipartition with
+
+```math
+\boxed{
+\sum_{V\in\mathcal P}Q(A[V])
+\le C\left[
+n\log n+n\sqrt{s\log n}+s\lVert A\rVert_{\rm op}
+\right].
+}
+\tag{10.573}
+```
+
+For a global minimizer, (10.67) gives
+`\lVert A\rVert_{\rm op}\le\sqrt{2q_n}=O(n^{3/4})`.  At
+`s\asymp\sqrt n`, the right side of (10.573) is
+`O(n^{5/4}\sqrt{\log n})=o(n^{3/2})`.  Almost-equal blocks and a leftover
+block obey the same conclusion.
+
+This controls the cross mosaic by the elementary triangle inequality, but it
+also gives
+
+```math
+0\le
+\sum_{V\in\mathcal P}[Q(A[V])-q_{|V|}]
+\le\sum_{V\in\mathcal P}Q(A[V])
+=o(n^{3/2}).
+```
+
+It therefore throws away the leading internal excess that (10.524) was meant
+to harvest.  Uniform random restriction and the stronger centered target
+(10.569) both close only the already-tautological branch, by (10.570).  Any
+useful partition theorem must control a response-sensitive quantity weaker
+than the global `Q`-distance `Q(D_{\mathcal P}-pA)`.
+
+#### 10.68.2 The exact bicriterion does not imply a scalar recurrence
+
+For a fixed nondegenerate block-size profile, define
+
+```math
+S(\mathcal P)=\sum_iQ(D_i),
+\qquad
+B=\sum_iq_{m_i},
+\qquad
+X(\mathcal P)=S(\mathcal P)-B,
+```
+
+```math
+d(\mathcal P)=Q(C)-q_n,
+\qquad
+O(\mathcal P)=[d(\mathcal P)]_+.
+```
+
+The natural pure Pareto envelope is
+
+```math
+\boxed{
+X^*_{A,\mathbf m}(\eta)
+=\max\left\{
+X(\mathcal P):
+\mathcal P\text{ has profile }\mathbf m,
+\ O(\mathcal P)\le\eta
+\right\}.
+}
+\tag{10.574}
+```
+
+Fix local minimizers `G_i`, put `H_{\mathbf G}=C+\bigoplus_iG_i`, and let
+`E_{\mathbf G}=Q(H_{\mathbf G})-q_n\ge0`.  Equations (10.524) and
+(10.565) give
+
+```math
+\boxed{
+\begin{aligned}
+\max\{0,d-B\}
+&\le E_{\mathbf G}\le d+B,\\
+\Phi_{\mathbf G}-\Phi_{\mathbf D}
+&=X(\mathcal P)+E_{\mathbf G}.
+\end{aligned}
+}
+\tag{10.575}
+```
+
+In particular, if
+
+```math
+R^*_{A,\mathbf m}(\eta)
+=\max_{\mathcal P:\ O(\mathcal P)\le\eta}
+\min_{\mathbf G}
+(\Phi_{\mathbf G}-\Phi_{\mathbf D}),
+```
+
+then
+
+```math
+\boxed{
+X^*_{A,\mathbf m}(\eta)
+\le R^*_{A,\mathbf m}(\eta)
+\le X^*_{A,\mathbf m}(\eta)+\eta+B.
+}
+\tag{10.576}
+```
+
+Thus the bicriterion is meaningful for forcing a common-mosaic **response**.
+Captured excess enters that response with a plus sign; it is not a credit
+that lowers the hybrid norm.  The only direct scalar consequence of global
+minimality and triangle is
+
+```math
+\boxed{
+[q_n-Q(C)]_+\le B.
+}
+\tag{10.577}
+```
+
+This is the wrong directed comparison, and `X` cancels completely.  For
+`k=n/m` equal blocks, the desired inequality
+
+```math
+q_m\le\left(\frac mn\right)^{3/2}q_n+E_{n,m}
+```
+
+is, since `B=S-X=kq_m`, exactly equivalent to
+
+```math
+\boxed{
+X(\mathcal P)
+\ge S(\mathcal P)
+-\sqrt{\frac mn}\,q_n-kE_{n,m}.
+}
+\tag{10.578}
+```
+
+But `S-X=kq_m` is independent of the partition, so (10.578) is merely the
+desired recurrence rewritten.  A partition-existence theorem stated only in
+terms of `(O,X)` cannot prove it without an additional response-to-scalar or
+temporal theorem.
+
+The order-nine minimizer (10.550) gives a sharp finite wall.  Use the
+zero-based partition
+
+```math
+V_1=\{0,1,2,4,5,6\},
+\qquad
+V_2=\{3\},
+\quad V_3=\{7\},
+\quad V_4=\{8\}.
+```
+
+Exact enumeration gives
+
+```math
+\boxed{
+q_9=24,
+\quad Q(C)=22,
+\quad O=0,
+\quad Q(D_1)=22,
+\quad B=q_6=10,
+\quad X=12.
+}
+\tag{10.579}
+```
+
+Among all 384 labelled order-six minimizers,
+
+```math
+\boxed{
+\min_{G_1\in\mathcal M_6}Q(C\oplus G_1)=24=q_9,
+}
+\tag{10.580}
+```
+
+with 40 choices attaining equality.  The best hybrid has zero excess, while
+the common-mosaic response rises by exactly twelve.  The tempting
+captured-excess subtraction is false:
+
+```math
+\boxed{
+q_9=24
+>Q(C)+B-X=22+10-12=20.
+}
+\tag{10.581}
+```
+
+Exhaustion of all 21,147 set partitions of `A_9` finds maximal captured
+excess `X=12` even under `O=0`; this occurs for several profiles, including
+`6+1+1+1`, `3+6`, and `4+5`.  The singleton and one-block partitions have
+`(O,X)=(0,0)`, and every minimum-overshoot `3+3+3` partition also has
+`X=0`.  Perfect cross control and the amount of captured excess therefore
+vary independently even within one global minimizer.
+
+#### 10.68.3 Four natural amplifications of the `A_9` wall fail
+
+First, replicate `t` fixed `3+6` walls and allow arbitrary signs between
+different copies.  Relative to the cross-only mosaic, every tuple of local
+minimizers has block-diagonal norm at most
+
+```math
+\boxed{
+t(q_3+q_6)=16t=o((9t)^{3/2}).
+}
+\tag{10.582}
+```
+
+Thus fixed-size selector effects cannot become leading, independently of the
+inter-copy coupling.  A leading cross-only wall could still come from that
+coupling, but it would not amplify the finite selector obstruction.
+
+Second, replace each seed vertex by `k` clones with constant signs between
+fibres.  Across the enlarged `3k+6k` split, multilinearity in the fibre
+magnetizations gives
+
+```math
+\boxed{
+Q(C_9\otimes J_k)=24k^2.
+}
+\tag{10.583}
+```
+
+Every within-shore completion has norm at least this cross norm.  For `k=2`,
+the order-18 Paley conference bound gives `q_{18}\le18\sqrt{17}<96`; for
+`k=3`, restricting the order-30 conference gives
+`q_{27}\le27\sqrt{29}<216`; and for every `k\ge4`, the random-sign bound
+gives `q_{9k}<24k^2`.  Hence no nontrivial regular clone blow-up is globally
+minimizing.  Filling every fibre internally with positive edges gives the
+exact still-larger norm `33k^2-9k`.
+
+Third, couple intact copies lexicographically.  For any order-`t` signing
+`R`, put
+
+```math
+L_t=R\otimes J_9+I_t\otimes A_9.
+```
+
+The all-one seed state has magnetization nine and energy eight, so an outer
+ground state proves
+
+```math
+\boxed{
+Q(L_t)\ge81Q(R)-8t\ge81q_t-8t.
+}
+\tag{10.584}
+```
+
+Exact values of `q_t` for `2\le t\le9`, and the finite Gaussian lower bound
+for `t\ge10`, make (10.584) strictly larger than the random-sign upper bound
+for `q_{9t}`.  Thus this construction is nonminimal for every `t\ge2`.
+
+Finally, every same-seed tensor square fails, even after optimizing the seed
+diagonal.  Let `D` be any diagonal sign matrix, put `P=A_9+D`, and form the
+valid order-81 signing
+
+```math
+T_D=P\otimes P-\operatorname{diag}(P\otimes P),
+\qquad
+\delta=\operatorname{tr}D.
+```
+
+A symmetric conference matrix of order 82 gives `q_{81}\le729`.  If
+`|\delta|\ge5`, a same-sign product of two `A_9` grounds has energy
+
+```math
+(24\operatorname{sgn}\delta+\delta)^2-\delta^2
+=576+48|\delta|
+\ge816.
+```
+
+If `|\delta|\le3`, the Boolean state `\operatorname{vec}(P)` has energy
+
+```math
+\operatorname{tr}(P^4)-\delta^2.
+```
+
+Every diagonal entry of `P^2` is nine, and every off-diagonal entry is a
+nonzero odd integer.  Therefore
+
+```math
+\boxed{
+\operatorname{tr}(P^4)-\delta^2
+\ge 9\cdot9^2+9\cdot8-9
+=792>729.
+}
+\tag{10.585}
+```
+
+All 512 diagonal completions are consequently nonminimal; exact enumeration
+raises the smallest of the two displayed witnesses to 896, but that numerical
+sharpening is unnecessary.
+
+These no-go results do not cover a mixed product of `A_9` with a growing
+conference or Hadamard-like factor, a nonuniform gadget substitution, or an
+enlarged construction whose order-`3m` and order-`6m` minimizers have a new
+tensor-compatible description.
+
+#### 10.68.4 Updated frontier
+
+This wave leaves three precise conclusions:
+
+- uniform critical-scale partitions can be made spectrally benign, but then
+  their entire internal norm and hence their captured excess are subleading.
+  More generally, (10.570) proves that centered `Q`-cancellation at any
+  sublinear block scale is itself incompatible with leading internal excess;
+  fixed-state variance cannot evade this exact range wall;
+
+- small cross overshoot and large captured excess force a large increase of
+  the common-mosaic response, not a scalar improvement.  Equation (10.581)
+  rules out subtracting that excess even when the best hybrid is exactly
+  globally minimizing.  A positive proof needs an independent theorem that
+  converts the response increase into localized temporal service or another
+  separately signed scalar quantity;
+
+- fixed replication, regular blow-up, uniform lexicographic coupling, and
+  same-seed tensor squares cannot amplify the `A_9` wall while preserving
+  global minimality.  Mixed growing-factor gadgets remain a legitimate
+  falsification route.
+
+The highest-priority next target is therefore a **response-to-temporal
+bridge**: starting from a nontrivial partition with large `X`, express the
+forced response increase in (10.576) as endpoint/successor resources and
+prove a lower compatibility bound on the temporal antichain cuts.  This
+target must explicitly survive the order-nine wall (10.579)--(10.581) and the
+timing obstructions in A5, A7, and A8.  Independent routes are a categorical
+response-profile theorem weaker than centered `Q`-distance and a mixed
+`A_9`--conference amplification audit.
