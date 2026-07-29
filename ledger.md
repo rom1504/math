@@ -20131,3 +20131,713 @@ more exact:
   mechanism.  There is no decisive proof, counterexample, or leading-route
   change requiring an early steering rewrite; the mandatory
   `STEERING.md` regeneration is due after Wave 23.
+
+### 10.76 Selector boosting, free-energy gradients, and optimal wrong-way duals
+
+The twenty-third wave turns the small-codebook proposal into an exact
+weak-learning game.  Finite minimax and residual boosting show that a
+selector-coverage lower tail is sufficient for a codebook and, up to
+logarithmic overhead and exceptional-mass slack, necessary.  Restricting the
+codebook to row-regular parent grounds improves the admissible entropy
+exponent from `n^{1/2-2c}` to `n^{3/4-c}`.  This is the strongest current
+concrete implementation of the leading route, but its weak-learner premise
+remains open.
+
+The parent conditional free energy admits exact child-flip and
+selector-neighbor identities.  They give a genuine square-root improvement
+over a raw bounded-difference estimate, but still miss the required overlap
+scale.  An exact `A_9` limit shows why: variance under the original child
+Gibbs law can vanish while rare states retain a positive exponentially
+tilted Jensen gap.
+
+Finally, optimizing nonuniform weights over every edge-flip competitor does
+not repair the cavity route.  Uniform weighting is uniquely minimax for
+extracting coordinate affinity, every nonnegative fractional dual retains
+the wrong direction, and a sharp two-center star marginal satisfies all
+such moment inequalities with only a parity-scale reward.
+
+All minimax identities, boosting and converse theorems, conditional
+free-energy identities, nonnegative transform results, and rational finite
+certificates below are **Verified**.  The displayed finite-temperature
+`A_8/A_9` decimals are **Numerical** checks of the exact formulas.  The
+two-center star model is an abstract row marginal, explicitly not a
+complete-signing counterexample to (10.617).  Nothing in this wave proves
+convergence.
+
+#### 10.76.1 Threshold minimax is equivalent to average codebooks
+
+For the uniform `m`-slice `X=\Omega_{n,m}`, define the ordered selector loss
+
+```math
+\ell(S,d)=Q(A[S])-c_A(S,d),
+\qquad
+0\le\ell(S,d)\le L_m:=2m(m-1),
+```
+
+and the threshold coverage set
+
+```math
+G_t(d)=\{S:\ell(S,d)\le t\}.
+```
+
+Finite minimax gives the exact weak-learner value
+
+```math
+\boxed{
+\alpha_t
+=\min_{w\in\Delta(X)}\max_{d\in\mathcal D_n}w(G_t(d))
+=\max_{\nu\in\Delta(\mathcal D_n)}
+\min_{S\in X}\nu\{d:\ell(S,d)\le t\}.
+}
+\tag{10.737}
+```
+
+Thus every selector weighting has one cut covering an `\alpha_t` fraction
+of its mass if and only if one common randomized cut prior covers every
+selector with probability at least `\alpha_t`.
+
+Apply this statement to the uniform law on the currently uncovered
+selectors.  Greedily choosing one weak learner at each round leaves at most
+`(1-\alpha_t)^K` of the slice after `K` rounds.  Hence, for every
+`\varepsilon\in(0,1)`, there is a codebook `\mathcal C` with
+
+```math
+\boxed{
+|\mathcal C|
+\le
+\max\left\{
+1,
+\left\lceil
+\frac{\log(1/\varepsilon)}{-\log(1-\alpha_t)}
+\right\rceil
+\right\},
+\qquad
+\mathbb E_{U_m}\min_{d\in\mathcal C}\ell(S,d)
+\le t+L_m\varepsilon.
+}
+\tag{10.738}
+```
+
+In particular, `\alpha_t\ge e^{-R}` implies
+
+```math
+\log|\mathcal C|
+\le R+\log(1+\log(1/\varepsilon)).
+```
+
+The pointwise game is stronger than an average codebook needs.  Restrict the
+adversary to
+
+```math
+\mathcal W_\varepsilon
+=\left\{
+w:X\to[0,1/\varepsilon]:
+\mathbb E_{U_m}w=1
+\right\}
+```
+
+and define
+
+```math
+\boxed{
+\begin{aligned}
+\alpha_{t,\varepsilon}^{\rm cap}
+&=\min_{w\in\mathcal W_\varepsilon}
+\max_d\mathbb E_{U_m}
+[w(S)\mathbf1_{G_t(d)}]\\
+&=\max_{\nu}
+\min_{w\in\mathcal W_\varepsilon}
+\mathbb E_{U_m}[w(S)p_\nu(S)],
+\qquad
+p_\nu(S)=\nu\{d:\ell(S,d)\le t\}.
+\end{aligned}
+}
+\tag{10.739}
+```
+
+The inner minimum on the second line is exactly the mean of the lowest
+`\varepsilon`-fraction of the coverage probabilities, with fractional mass
+at the boundary.  As long as the residual slice mass is at least
+`\varepsilon`, its conditional density belongs to
+`\mathcal W_\varepsilon`; therefore the same greedy theorem stops with
+residual mass below `\varepsilon`.
+
+This capped game is also necessary at the exponent level.  If a `K`-word
+codebook leaves at most `\eta\varepsilon` of the uniform slice
+`t`-uncovered, every `w\in\mathcal W_\varepsilon` puts at most `\eta` mass
+there.  Some codeword must therefore cover at least `(1-\eta)/K` of the
+`w`-mass, and
+
+```math
+\boxed{
+\alpha_{t,\varepsilon}^{\rm cap}
+\ge\frac{1-\eta}{K}.
+}
+\tag{10.740}
+```
+
+Equations (10.738)--(10.740) make the capped weak-learner statement
+equivalent to average threshold codebooks up to `O(\log\log n)` in the
+log-cardinality and a constant exceptional-mass factor.  With
+`\Delta=O(n^{3/2-c})`, take `t\le\Delta/2` and
+`\varepsilon=\Delta/(2L_m)\asymp n^{-1/2-c}`.  The original Wave 22 target
+would follow from
+
+```math
+\alpha_{t,\varepsilon}^{\rm cap}
+\ge\exp\{-O(n^{1/2-2c})\}.
+```
+
+There is a stronger support-dependent version.  For a parent ground `d`,
+put
+
+```math
+r_i(d)=\sum_{j\ne i}\sigma a_{ij}x_ix_j,
+\qquad
+R_\infty(d)=\max_i r_i(d),
+```
+
+and define
+
+```math
+\mathcal H_B^{\rm gr}(A)
+=\{d:\langle A,d\rangle=q_n,\ R_\infty(d)\le B\}.
+```
+
+Every parent-ground field is nonnegative, because flipping coordinate `i`
+changes the payoff by `-4r_i`, and
+
+```math
+\sum_i r_i=q_n,
+\qquad
+\sum_i r_i^2\le R_\infty q_n.
+```
+
+Restrict (10.739) to `\mathcal H_B^{\rm gr}(A)` and denote the value by
+`\alpha_{t,\varepsilon}^{\rm gr,cap}(B)`.  The following is an exact
+sufficient lemma:
+
+```math
+\boxed{
+\begin{aligned}
+0<c&<\frac14,
+\qquad
+B=O(n^{3/4-c}),\\
+t&=O(n^{3/2-c}),
+\qquad
+\varepsilon\asymp n^{-1/2-c},\\
+\alpha_{t,\varepsilon}^{\rm gr,cap}(B)
+&\ge\exp\{-O(n^{3/4-c})\}.
+\end{aligned}
+}
+\tag{10.741}
+```
+
+Boosting produces a parent-ground codebook with average loss
+`O(n^{3/2-c})` and log-size `O(n^{3/4-c})`.  To see why this larger
+codebook suffices, retain the output marginal instead of taking the
+all-cut supremum in (10.671).  For the deterministic best-codeword channel,
+(10.691) gives
+
+```math
+\boxed{
+\begin{aligned}
+V_{\rm ad}(A,m)-p_2q_n
+\le{}&
+\delta+\epsilon_{n,m}q_n\\
+&+\frac{\log|\mathcal C|+\chi_{n,m}}{\lambda}
++O\!\left(\lambda[Bq_n+n^2]\right).
+\end{aligned}
+}
+\tag{10.742}
+```
+
+Take `\lambda=\eta n^{-3/4}` with a sufficiently small fixed `\eta`.
+The exact-minimizer bound
+`\|A\|_{\rm op}^2\le2q_n=O(n^{3/2})` keeps the quadratic denominator
+positive, while `\lambda B=O(n^{-c})`.  The four nontrivial scales in
+(10.742) are
+
+```text
+n^(3/2-c), n^(3/2-c), n^(3/2-c), n^(5/4),
+```
+
+coming respectively from distortion, entropy, parent-ground row squares,
+and the cut block.  Since `c<1/4`, (10.741) proves a power-saving
+restriction edge.
+
+The `3/4` row exponent is not automatic.  Thresholding a parent ground at
+field `T` gives only `|\{i:r_i>T\}|\le q_n/T`.  Conditioning the selector
+to include or exclude that set costs its cardinality, while the surviving
+Bernstein boundary is at best the reciprocal of
+`T+q_n/T`.  Their elementary product remains at the critical
+`O(q_n)=O(n^{3/2})` scale.  Genuine row regularity or additional
+cancellation is needed.
+
+There is also an exact circularity warning.  For a selector law `w`, let
+`R_w=(\Pr_w\{i,j\in S\})`.  Expected-loss weak learning has value
+
+```math
+\boxed{
+\min_d\mathbb E_w\ell(S,d)
+=\mathbb E_wQ(A[S])-Q(A\circ R_w).
+}
+\tag{10.743}
+```
+
+At `w=U_m`, the right side is
+`\mathbb E_{U_m}Q(A[S])-p_2q_n`, precisely the restriction excess being
+bounded.  Replacing threshold coverage by a small expected loss therefore
+assumes the conclusion at the first boosting round.
+
+Fixed-slice concentration supplies a converse, not the missing learner.
+Let `\lambda_0` be the safe domain in (10.692), and define
+
+```math
+\Psi_{n,m}(t)
+=\left[
+\sup_{0<\lambda\le\lambda_0}
+\left\{
+\lambda[q_m-t-(p_2+\epsilon_{n,m})q_n]
+-\lambda^2\overline V_{n,m}
+\right\}
+-\chi_{n,m}
+\right]_+.
+```
+
+Chernoff and (10.692) give
+`U_m(G_t(d))\le e^{-\Psi_{n,m}(t)}` for every cut.  If a codebook has
+average loss at most `\Delta`, Markov and the union bound therefore imply
+
+```math
+\boxed{
+\log|\mathcal C|
+\ge\Psi_{n,m}(2\Delta)-\log2.
+}
+\tag{10.744}
+```
+
+If `q_m-p_2q_n\ge g n^{3/2}` at a fixed density and
+`t=o(n^{3/2})`, then `\Psi=\Omega(\sqrt n)`.  In the regular-ground class,
+the same calculation at `\lambda=\Theta(n^{-3/4})` gives maximum coverage
+`\exp\{-\Omega(n^{3/4})\}`, matching the new exponent boundary.
+Using the current global constants, the leading gap is unconditional only
+for
+
+```math
+0<\rho<
+(0.672986728862\ldots)^2
+=0.452911137224\ldots .
+```
+
+Thus the codebook target is rigorously impossible in that low-density
+range.  This does not touch the strategically active choice
+`\rho\ge1/2`.
+
+The exact `A_9,m=8` game remains compressible:
+
+| ordered tolerance `t` | `\alpha_t` | minimum deterministic cover |
+|---:|---:|---:|
+| `0` | `4/13` | `4` |
+| `4` | `5/8` | `2` |
+| `8` | `1` | `1` |
+
+Its 25 parent grounds have maximum row-field multiplicities
+`4:2`, `6:16`, and `8:7`.  Restricting the learner gives
+
+| row cap `B` | `\alpha_0^{\rm gr}` | `\alpha_4^{\rm gr}` | `\alpha_8^{\rm gr}` |
+|---:|---:|---:|---:|
+| `4` | `0` | `0` | `1` |
+| `6` | `2/7` | `1/2` | `1` |
+| `8` | `4/13` | `5/8` | `1` |
+
+Very regular grounds can therefore miss some selectors entirely; boosting
+does not manufacture regularity.  This is a finite separation, not an
+asymptotic falsifier.
+
+#### 10.76.2 Conditional free energy is locally smoother but tail-sensitive
+
+Keep the parent Gibbs law `\nu_\beta` and the outside partition sum from
+(10.719).  Write
+
+```math
+F_S(y)=\log K_{\beta,S}(y),
+\qquad
+G_S(y)=\beta c_S(y)+F_S(y)
+=\log Z_A(\beta)+\log\nu_{\beta,S}(y).
+```
+
+If `i\in S`, let `y^i` flip the child spin and put
+
+```math
+h_{i,S^c}(d)=\sum_{v\notin S}a_{iv}d_{iv}.
+```
+
+For the parent conditional law `P_y=\nu_\beta(\cdot\mid D[S]=y)`,
+exact exponential tilting gives
+
+```math
+\boxed{
+F_S(y^i)-F_S(y)
+=\log\mathbb E_{P_y}e^{-4\beta h_{i,S^c}},
+}
+\tag{10.745}
+```
+
+and
+
+```math
+D_{\rm KL}(P_y\Vert P_{y^i})
+=4\beta\mathbb E_{P_y}h_{i,S^c}
++F_S(y^i)-F_S(y).
+```
+
+The full coordinate-flip KL decomposes still more cleanly:
+
+```math
+\boxed{
+4\beta\mathbb E_{\nu_\beta}H_i
+=D_{\rm KL}(\nu_{\beta,S}\Vert T_i\nu_{\beta,S})
++\mathbb E_{y\sim\nu_{\beta,S}}
+D_{\rm KL}(P_y\Vert P_{y^i}).
+}
+\tag{10.746}
+```
+
+Both terms are nonnegative.  Averaging over a uniform retained coordinate
+gives a conditional-outside KL budget at most
+
+```math
+\frac{4\beta}{n}
+\mathbb E_{\nu_\beta}\langle A,D\rangle
+\le\frac{4\beta q_n}{n}.
+```
+
+At `\beta=\Theta(n^{-1/2+c})` this is `O(n^c)`: a real minimizer-scale
+gain, but under the parent marginal rather than the child Gibbs law used in
+(10.723).
+
+There is a dimension-free selector-neighbor identity.  For adjacent
+`S=C\cup\{u\}` and `S'=C\cup\{v\}`, Bayes' rule under
+`D\sim\nu_\beta` gives
+
+```math
+\boxed{
+G_S(D[S])-G_{S'}(D[S'])
+=\log\Pr(D_u\mid D[C])
+-\log\Pr(D_v\mid D[C]),
+}
+```
+
+and binary conditional entropy implies
+
+```math
+\boxed{
+\mathbb E_{\nu_\beta,\rm adj}
+[G_S(D[S])-G_{S'}(D[S'])]^2
+\le\frac{32}{e^2}.
+}
+\tag{10.747}
+```
+
+The target is `F`, so the child-energy difference must be restored.  Put
+`s_{ij}=a_{ij}D_{ij}`, `k=m-1`, and `N=n-2`.  For a uniform
+`k`-set `C\subset[n]\setminus\{u,v\}`,
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E_C(c_{C+u}-c_{C+v})^2
+=4\bigg[&
+\frac{k(N-k)}{N(N-1)}
+\sum_{i\ne u,v}(s_{ui}-s_{vi})^2\\
+&+\frac{k(k-1)}{N(N-1)}(H_u-H_v)^2
+\bigg].
+\end{aligned}
+}
+\tag{10.748}
+```
+
+Pairing full Gibbs states under coordinate flip gives
+
+```math
+\boxed{
+\mathbb E_{\nu_\beta}\sum_iH_i^2
+\le
+\frac{n-1}{\tanh(2\beta(n-1))}
+\mathbb E_{\nu_\beta}\langle A,D\rangle
+\le
+\frac{(n-1)q_n}{\tanh(2\beta(n-1))}.
+}
+\tag{10.749}
+```
+
+At fixed density with `\beta n\to\infty`, averaging (10.748) over `u,v`
+and combining it with (10.747) yields
+
+```math
+\boxed{
+\mathbb E_{\nu_\beta,\rm adj}
+[F_S(D[S])-F_{S'}(D[S'])]^2
+=O\!\left(1+\beta^2[n+q_n]\right).
+}
+\tag{10.750}
+```
+
+For the target temperature this is `O(n^{1/2+2c})`, a square-root gain over
+the raw `O(n^{1+2c})` bounded-difference scale.  It is nevertheless larger
+by `n^{1+4c}` than the adjacent scale in (10.729).
+
+The decisive issue is exponential tilting.  For
+
+```math
+\ell_S(y)=F_S(y)+(\beta-\gamma)c_S(y),
+\qquad
+\mu_t(y)\propto\mu_{\gamma,S}(y)e^{t\ell_S(y)},
+```
+
+twice integrating the log-mgf gives
+
+```math
+\boxed{
+\log\mathbb E_{\mu_{\gamma,S}}e^{\ell_S}
+-\mathbb E_{\mu_{\gamma,S}}\ell_S
+=\int_0^1(1-t)
+\operatorname{Var}_{\mu_t}(\ell_S)\,dt.
+}
+\tag{10.751}
+```
+
+Thus variance at `t=0` is not enough.  The exact parent cap gives only
+
+```math
+(n-m)\log2
+\le F_S(y)
+\le(n-m)\log2+\beta[Q(A)-c_S(y)],
+```
+
+which permits a rare child state's outside weight to cancel its child-Gibbs
+penalty.  Equivalently, for the near-ground event `N_{S,a}`,
+
+```math
+\boxed{
+\Omega_{\beta,S}(a)
+=
+\frac{
+\mathbb E_{\mu_{\gamma,S}}
+[e^{\ell_S}\mathbf1_{N_{S,a}}]
+}{
+\mathbb E_{\mu_{\gamma,S}}e^{\ell_S}
+}.
+}
+\tag{10.752}
+```
+
+High un-tilted child-Gibbs probability is insufficient; the event must
+contain almost all tilted mass.
+
+The `A_9` wall makes this exact.  At matched temperature, every exact child
+ground has two parent extensions and `F_S=\log2`, so
+`\operatorname{Var}_{\mu_{\beta,S}}F_S\to0`.  Yet only
+
+```text
+(4,8,4,8,4,4,8,8,8)
+```
+
+of the 25 positive parent grounds restrict to a child ground at the nine
+deleted coordinates.  Therefore
+
+```math
+\boxed{
+\lim_{\beta\to\infty}
+\left[
+\log\mathbb E_{\mu_{\beta,S}}e^{F_S}
+-\mathbb E_{\mu_{\beta,S}}F_S
+\right]
+=\log\frac{25}{k_i},
+}
+\tag{10.753}
+```
+
+whose hidden-optimal selector average is
+`1.5830484787467298...`.  At `\beta=4`, the average gap is already
+`1.58304246` while the base variance is `0.00008648`.  This falsifies every
+universal Jensen-gap bound by a function of the base variance which vanishes
+at zero.  A positive proof must control the whole interpolation in
+(10.751), or equivalently the tilted tail in (10.752).
+
+Hard overlap does not imply the row cap in (10.741).  For a parent ground,
+
+```math
+Q(A[-i])-c_A([n]\setminus\{i\},d)
+=2r_i-[q_n-Q(A[-i])],
+```
+
+so one-deletion overlap controls only the deleted row.  The other heavy row
+can migrate, exactly as in the finite `A_9` cap table.
+
+#### 10.76.3 Nonuniform flip weights are sharply wrong-way
+
+Retain the block-perturbation notation of (10.735).  For a probability law
+`p` on subsets `S\subseteq H`, define
+
+```math
+F_p(s_H)
+=\mathbb E_{S\sim p}
+\exp\left(-4\beta\sum_{e\in S}s_e\right).
+```
+
+The strongest direct nonnegative aggregation of the separate inequalities
+`D_\beta(B^S;q)\ge1` is
+
+```math
+\boxed{
+\mathbb E_{S\sim p}D_\beta(B^S;q)
+=D_\beta(B)
+\mathbb E_{\nu_{\beta,B}}F_p(s_H)
+\ge1.
+}
+\tag{10.754}
+```
+
+On a coordinate star of size `h=r-1`, put
+`g(s)=e^{-2\beta\sum_Hs_e}`, so
+`\mathbb E_\nu g=\operatorname{BC}_i`.  Encode a perturbation by
+`a_S\in\{-1,1\}^h`.  Then
+
+```math
+\frac{F_p(s)}{g(s)}
+=\mathbb E_{S\sim p}e^{2\beta\langle a_S,s\rangle}.
+```
+
+Uniformly averaging this ratio over `s` proves
+
+```math
+\boxed{
+\min_p\max_s\frac{F_p(s)}{g(s)}
+=\cosh(2\beta)^h.
+}
+\tag{10.755}
+```
+
+Uniform `p` attains equality for every `s`, and invertibility of the tensor
+exponential kernel makes it the unique minimizer for `\beta>0`.  Thus
+(10.735) is already the sharp nonnegative pointwise extraction, and it
+still supplies only a lower bound on affinity.
+
+Even the exact witness-cover LP has that direction.  Let
+`A_i(S,\omega)` record whether state `\omega` certifies star perturbation
+`S`, and put
+
+```math
+a_i(\omega)
+=e^{-\beta[\Delta_\omega+2h_i(\omega)]},
+\qquad
+G_i=\sum_\omega a_i(\omega)
+=D_\beta(B)\operatorname{BC}_i.
+```
+
+Weighted covering duality gives
+
+```math
+\boxed{
+\tau_i
+=\max\left\{
+\sum_S\lambda_S:
+\lambda_S\ge0,\quad
+\sum_SA_i(S,\omega)\lambda_S\le a_i(\omega)
+\right\}
+\le G_i.
+}
+\tag{10.756}
+```
+
+This is the strongest linear consequence of the exact cover with those
+state costs, and it lower-bounds `G_i`.  Joint coordinate weights can only
+lower-bound a nonnegative average of affinities.  Negative perturbation
+coefficients cannot be multiplied into `D_S\ge1`, while retaining the exact
+unknown `D_S` makes the uniform transform an identity and is circular.
+
+The full row-marginal wall is sharp.  Impose every subset moment from
+(10.754), complement symmetry, and the coordinate-flip detailed balance.
+The maximal permitted affinity is
+
+```math
+\boxed{
+\sup\operatorname{BC}
+=\operatorname{sech}(2\beta\varepsilon),
+\qquad
+\varepsilon=(r-1)\bmod2.
+}
+\tag{10.757}
+```
+
+To attain it abstractly, choose an `h`-bit pattern `y` with
+`\sum y_e=\varepsilon`, give it deficit zero, and give `-y` deficit
+`4\varepsilon`.  Both restricted radii equal `\lfloor h/2\rfloor`, so their
+antipodal balls cover the entire star cube.  For every perturbation `S`,
+with `a=\sum_{e\in S}y_e`,
+
+```math
+\frac{D_\beta(B^S;q)}{D_\beta(B)}
+=
+\frac{\cosh(2\beta(2a-\varepsilon))}
+{\cosh(2\beta\varepsilon)}
+\ge1.
+```
+
+The affinity is one when `r` is odd and `\operatorname{sech}(2\beta)` when
+`r` is even, giving at most a constant parity reward.  This two-center
+object is not asserted to be realizable by a complete signing; it exactly
+closes proofs using only the star cover, all nonnegative competitor
+moments, and coordinate pair balance.
+
+Exhaustive `A_8/A_9` LPs at `\beta=0.5,1` verify that uniform perturbation
+weighting is minimax.  The optimized weighted-cover lower bound captures
+only `0.9%--6.0%` of `D\operatorname{BC}` on `A_8` and
+`0.1%--12.3%` on `A_9`; the all-moment upper LP returns exactly the parity
+ceiling (10.757), far above the actual affinities.
+
+#### 10.76.4 Updated frontier
+
+Wave 23 keeps optimized principal restriction in front but changes its most
+useful concrete target:
+
+- the capped threshold game (10.739) is exponent-level equivalent to
+  average codebooks, so it is now the exact combinatorial overlap object.
+  With unrestricted cuts it requires the old
+  `\exp\{-O(n^{1/2-2c})\}` coverage.  With row-regular parent grounds,
+  (10.741)--(10.742) relax this materially to
+  `\exp\{-O(n^{3/4-c})\}`.  This regular capped weak-learner lemma is the
+  strongest present implementation of the power-saving restriction route;
+
+- neither available analytic input proves the learner.  Expected-loss
+  boosting is circular, and fixed-slice concentration gives the matching
+  upper-coverage/codebook converse.  A pre-existing leading restriction gap
+  would force coverage exponents `\sqrt n` or `n^{3/4}` respectively.
+  Current constants make the obstruction unconditional only below density
+  `0.452911...`, outside the active `\rho\ge1/2` range.  The `A_9`
+  regularity table shows that row regularity and selector coverage cannot be
+  established separately;
+
+- parent conditional free energy is smoother than a generic function:
+  (10.747)--(10.750) save a square root, and (10.746) gives an exact
+  conditional-channel KL budget.  These estimates remain under the wrong
+  marginal or at the wrong scale.  The `A_9` limit (10.753) decisively
+  closes every base-variance-only proof; the surviving overlap theorem must
+  control the entire exponential interpolation or tilted tail;
+
+- the constant-shortfall alternative receives another precise negative
+  result.  Uniform block-perturbation weighting is uniquely minimax, the
+  exact weighted-cover dual has the wrong direction, and all nonnegative
+  star moments permit only a parity reward.  This neither proves nor
+  asymptotically falsifies (10.617), but any continuation now needs genuinely
+  complete-signing structure which upper-bounds competitor partition sums
+  or enforces Gibbs-weighted congestion;
+
+- no convergence proof or asymptotic counterexample has appeared.  The next
+  wave should attack the regular capped weak-learner statement using
+  minimizer-specific parent-ground geometry, while keeping parent tilted-tail
+  control as the more general fallback.  The fifth-wave boundary has now
+  been reached: `STEERING.md` must be regenerated from the full ledger before
+  selecting Wave 24.

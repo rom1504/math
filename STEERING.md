@@ -1,149 +1,149 @@
 # Strategic steering
 
-Evidence cutoff: `ledger.md` through Wave 18, §10.71 (2026-07-29). Next
-mandatory regeneration: no later than the boundary after Wave 23, and earlier
-after a decisive proof, counterexample, or change of leading route.
+Evidence cutoff: Wave 23, §10.76 (2026-07-29). Regenerate by Wave 28, or earlier after a decisive result or route change.
 
 ## User-stated research objective
 
-Determine whether $`\lim_{n\to\infty}M_n/n^{3/2}`$ exists. The conjectural
-value $`1/2`$ is not presently proved and is not being treated as an additional
-user objective.
+Determine whether $`\lim_{n\to\infty}M_n/n^{3/2}`$ exists. The conjectural value
+$`1/2`$ is not proved and is not an additional user objective.
 
-## Present assessment
+## Present judgment
 
-No route currently proves convergence. The rigorous interval remains
+No route proves convergence. The rigorous interval remains
 $`0.336493364431\ldots\le\liminf\le\limsup\le1/2`$.
 
-The leading route is **adaptive optimized principal restriction**, expressed
-through the directed comparison tail (10.529). It is the weakest concrete
-scale-transfer framework that directly matches the objective: it permits a
-different exact minimizer and endpoint for each requested order, tolerates bad
-local deletions, and asks only that the accumulated normalized cost vanish.
+The leading route remains **adaptive optimized principal restriction**. Its best
+engine is now the regular capped weak-learner/codebook criterion
+(10.741)--(10.742), tolerating `O(n^{3/4-c})` selector complexity rather than
+`O(n^{1/2-2c})`. This strongest proved interface still has an open premise.
 
-The constant-shortfall pressure criterion (10.617) is **not** the leading
-route. It is the cleanest and most falsifiable local sufficient condition now
-available, but it is substantially stronger than the endpoint statement
-needed for convergence and currently has a severe generic-geometry barrier.
-It remains the first ranked alternative and a useful source of tests.
+The constant-shortfall criterion (10.617) is **not** the strongest route. It is
+stronger than convergence requires, and Waves 19--23 show generic Gibbs, cover,
+and edge-flip arguments pointing the wrong way. It remains the cleanest sharply
+falsifiable local alternative if a proof uses complete-signing/minimizer structure.
 
-## Leading route: adaptive optimized restriction
+## Leading route and exact sufficient lemma
 
-Write $`q_n=\min_A Q(A)=2M_n`$ and $`a_n=q_n/n^{3/2}`$. A concrete sufficient
-lemma to seek is:
-
-> **Power-saving restriction lemma.** There are constants
-> $`0<\rho<1`$, $`c>0`$, $`C<\infty`$, and $`n_0`$ such that, for every
-> $`n\ge n_0`$ and every integer $`m\in[\rho n,n)`$, some exact order-$`n`$
-> minimizer $`A=A_{n,m}`$ and some $`m`$-vertex set $`S`$ satisfy
+Put $`q_n=2M_n`$ and $`a_n=q_n/n^{3/2}`$. The route would close if there are
+fixed $`\rho\in[1/2,1)`$, $`c>0`$, and $`C<\infty`$ such that, for all large
+`n` and every $`m\in[\rho n,n)`$, some exact order-`n` minimizer `A` and some
+`m`-set `S` satisfy
 
 ```math
-Q(A[S])\le\left(\frac mn\right)^{3/2}q_n+C n^{3/2-c}.
+Q(A[S])\le (m/n)^{3/2}q_n+Cn^{3/2-c}.
 ```
 
-Different targets may use different minimizers and subsets. Requiring one root
-or one nested deletion chain for all targets would be unnecessarily stronger.
+Different targets may use different minimizers and subsets. This gives
+$`a_m\le a_n+O_\rho(n^{-c})`$. Fixed-ratio iterations have a geometrically
+summable total error, and target-specific landing gives the adaptive tail
+(10.529), hence convergence.
 
-This lemma gives $`a_m\le a_n+O_\rho(n^{-c})`$. Repeated fixed-ratio steps,
-with the last step landing at the requested order, have a geometric total
-$`O(N^{-c})`$. Thus the adaptive distance in (10.529) satisfies
-$`\Omega_{\rm ad}(N)\to0`$, which compares every tail order to a liminf
-subsequence and proves convergence.
-
-Candidate engines are the selected terminal-excess potential
-(10.530)--(10.531), mean puncture stability (10.304)--(10.306), and a
-matrix-specific upper bound for optimized restricted pressure (10.628)--(10.630).
-
-Known obstructions:
-
-- random restriction does not control the ground state selected after seeing
-  the subset, and raw near-ground entropy is too large;
-- the order-nine minimizer has no improving child, and excess can remain flat
-  through two deletion levels;
-- $`S\mapsto Q(A[S])`$ is neither submodular nor supermodular;
-- fixed-temperature cavity rewards are an exact subset-lattice gradient, so
-  reordering or banking rewards cannot beat endpoint optimization;
-- Finner gives a lower bound on average child pressure, the wrong direction;
-- a uniform $`o(n^{3/2})`$ error without a rate need not be summable over an
-  arbitrarily long comparison path.
-
-Falsification criterion for a proposed $`\rho`$: for some fixed
-$`\rho_0\in[\rho,1)`$ and infinitely many $`n`$, prove that at
-$`m\sim\rho_0n`$ every exact order-$`n`$ minimizer obeys
+The strongest exact implementation is this joint statement: for fixed
+$`0<c<1/4`$ and ratio window, choose an exact minimizer `A` whose row-regular
+parent-ground game satisfies, with constants independent of `n,m`,
 
 ```math
-\min_{|S|=m}\left[Q(A[S])-\left(\frac mn\right)^{3/2}q_n\right]
-\ge c_0 n^{3/2}
+\begin{aligned}
+B&=O(n^{3/4-c}), & t&=O(n^{3/2-c}),\\
+\varepsilon&\asymp n^{-1/2-c}, &
+\alpha_{t,\varepsilon}^{\mathrm{gr,cap}}(B)
+&\ge \exp\{-O(n^{3/4-c})\}.
+\end{aligned}
 ```
 
-for a constant $`c_0>0`$. Ruling out every possible $`\rho`$ requires such
-barriers at ratios arbitrarily close to one. Even then, a sparser comparison
-graph could satisfy (10.529); fully falsifying the adaptive route requires a
-nonvanishing lower bound on every available directed comparison path.
+The capped minimax theorem then produces a parent-ground codebook of log-size
+`O(n^{3/4-c})` and average distortion `O(n^{3/2-c})`. Substitution in (10.742)
+with $`\lambda\asymp n^{-3/4}`$ proves the displayed restriction lemma.
 
-## Audit of the constant-shortfall criterion (10.617)
+The general fallback is parent tilted-tail overlap (10.727): find a selector law
+whose KL cost plus average $`-\log\Omega_{\beta,S}(t)`$ is `O(n^{1/2-2c})`, with
+$`t=O(n^{3/2-c})`. It avoids a row cap but demands much stronger overlap.
 
-To prove (10.617) literally, one must find fixed
-$`\rho\in(0,1)`$, $`\beta>0`$, $`K<\infty`$, and $`n_0`$ such that every exact
-order-$`n`$ minimizer, for every target $`m\in[\rho n,n)`$, has a deletion path
-$`B_n,\ldots,B_m`$ on which at each order $`r`$ some deleted coordinate obeys
+## Obstructions and falsification
+
+Known obstructions to the leading engine are:
+
+- the expected-loss weak learner is exactly the unknown optimized-restriction
+  excess, so ordinary boosting is circular;
+- fixed-slice concentration is a converse to coverage: a pre-existing leading
+  gap forces exponentially small coverage. Present constants make this
+  unconditional only below density `0.452911...`, outside the active window;
+- overlap for one deletion controls only the deleted row. Heavy rows can
+  migrate, and simple trimming loses the full critical `n^{3/2}` scale;
+- the finite `A_9` table shows row regularity and selector coverage cannot be
+  proved separately and then combined;
+- conditional free energy is smoother by a square root, but under the wrong
+  marginal and at an insufficient scale. The exact `A_9` limit has vanishing
+  base variance with a positive tilted Jensen gap, so only full interpolation
+  or tilted-tail control can work;
+- a comparison must cover every target order with summable costs; one good
+  subset, root, deletion chain, or uncontrolled landing order is insufficient.
+
+For fixed proposed constants, this engine is falsified by infinitely many
+active-ratio pairs where every exact minimizer has no admissible regular grounds
+or has
+$`\alpha_{t,\varepsilon}^{\mathrm{gr,cap}}(B)
+=\exp\{-\omega(n^{3/4-c})\}`$ throughout the permitted parameter scales.
+That would not falsify all optimized restriction. A direct falsifier of its
+power-saving form is a fixed ratio and infinitely many `n` for which every
+exact minimizer has minimum restriction excess at least $`c_0n^{3/2}`$.
+Falsifying the full adaptive route requires a nonvanishing cost on every
+available directed comparison path, not merely failure of this engine.
+
+## Audit of constant shortfall (10.617)
+
+The exact result needed is fixed $`\rho,\beta>0`$, finite `K`, and, for every
+large exact minimizer and every $`m\in[\rho n,n)`$, a deletion path landing at
+`m` on which each order-`r` step has
 
 ```math
-\kappa_{\beta,i}(B_r)
-\ge\frac{q_n}{n^{3/2}}\left[r^{3/2}-(r-1)^{3/2}\right]-K.
+\kappa_{\beta,i}(B_r)\ge
+\frac{q_n}{n^{3/2}}[r^{3/2}-(r-1)^{3/2}]-K.
 ```
 
-For convergence alone, “every minimizer” may be weakened to a target-specific
-choice of exact root minimizer. The temperature and shortfall must remain
-uniform, and the path must land at the requested order.
+For convergence, “every minimizer” may be weakened to a target-specific exact
+root. The temperature, shortfall, fixed-ratio window, and landing statement
+must remain uniform. Equation (10.618) then costs only `O(n^{-1/2})` per
+window, a summable geometric tail. Equivalently, the selected coordinate needs
+Gibbs Hellinger affinity $`e^{-\Theta(\sqrt r)}`$.
 
-By (10.623)--(10.624), this is exactly a coordinate Hellinger near-isolation
-bound with affinity $`e^{-\Theta(\sqrt r)}`$. Telescoping gives (10.618), an
-$`O(n^{-1/2})`$ normalized cost per fixed-ratio window, hence convergence.
+Evidence now weighs against proofs based only on generic local geometry:
+pressure stability, Hölder aggregation, witness incidence, simultaneous-flip
+covers, nonuniform nonnegative weights, and the exact weighted-cover dual all
+give the wrong inequality direction. All nonnegative star moments and pair
+detailed balance permit only a constant parity reward. This is not a complete
+signing counterexample, so (10.617) remains open.
 
-Generic cube log-Sobolev, support entropy, antipodality, and layer projection
-cannot reach that scale. The $`A_9`$ wall only forces $`K>0.886740446\ldots`$;
-it is finite and does not falsify a universal constant.
-
-For the literal every-minimizer criterion, a decisive root falsifier is, for
-each fixed $`\beta>0`$, an unbounded sequence containing an exact minimizer
-with $`\max_i\kappa_{\beta,i}=o(\sqrt n)`$. Falsifying the convergence-weakened
-version requires all exact minimizers at those orders to be bad. Equivalently,
-their coordinate affinities are $`e^{-o(\sqrt n)}`$. For a proposed
-$`(\beta,K)`$, a mandatory cutset with no outgoing edge meeting (10.617) also
-falsifies the required path statement.
+For the literal criterion, an asymptotic falsifier is a fixed `beta` and an
+unbounded sequence containing an exact minimizer with
+$`\max_i\kappa_{\beta,i}=o(\sqrt n)`$. For the convergence-weakened version,
+all exact minimizers at those orders must be bad. For a proposed `(beta,K)`, a
+mandatory deletion cutset with no qualifying outgoing edge also falsifies the
+required path.
 
 ## Ranked alternatives
 
-1. **Constant-shortfall Hellinger/cavity route.** Stronger than needed but
-   exact, scalar, tail-summable, and sharply falsifiable. It needs genuinely
-   quadratic, exact-minimizer ancestry beyond generic Gibbs geometry.
-2. **Spatial partition plus temporal service.** The target (10.600) is
-   algebraically feasible at critical scale, but the symplectic witness is
-   nonminimal and has zero raw resource. It still needs two theorems: force a
-   useful partition from global minimality, then convert correlated response
-   into causal allocation/Hall service.
-3. **Universal sharp lower bound.** Proving
-   $`Q(A)\ge(1-o(1))n^{3/2}`$ for every signing would combine with conference
-   upper bounds to give the limit and its value. The verified field-plus-spin,
-   capped-field, and $`A^2`$ gains are real, but one-probe rounding ceilings,
-   manufactured heavy rows, and unresolved positive-heavy tails block the
-   current machinery.
-4. **Global signing-space entropy or thermodynamic compactness.** A full
-   planted-direction-sensitive pressure/LDP or uniform amplification theorem
-   would settle convergence. Fixed replicas, spectral moments, scalar pressure
-   axioms, finite boundary states, and ordinary graphon/traffic summaries have
-   all proved too coarse, so this remains a long-range route.
+1. **Constant-shortfall Hellinger/cavity route.** Direct, tail-summable, and
+   sharply falsifiable, but it now requires a new complete-signing congestion
+   or competitor-partition upper bound rather than another star aggregation.
+2. **Terminal external surplus with spatial/temporal service.** Exact
+   replacement and Hall formulations exist; the missing input is an
+   exact-minimizer upper tail that localizes surplus and makes service causal.
+3. **Universal sharp lower bound.** A proof
+   $`q_n\ge(1-o(1))n^{3/2}`$ would combine with conference upper bounds and
+   settle the limit. Existing field, spectral, and capped gains remain below
+   the positive-heavy-tail barrier.
+4. **Global thermodynamic or signing-space compactness.** A planted-sensitive
+   pressure/LDP or amplification theorem could settle convergence, but scalar
+   pressure, fixed replicas, finite boundary states, and ordinary graphon or
+   traffic summaries are already known to be too coarse.
 
-Mixed conference products, finite flat-child examples, and further small-order
-searches should be used primarily to falsify proposed lemmas. They are not
-currently positive routes unless they reveal an asymptotic minimizer-specific
-mechanism.
+## Decision rule
 
-## Decision rule for the next wave
-
-Prioritize attempts that prove, weaken, or asymptotically falsify the
-power-saving restriction lemma. Keep one independent probe of (10.617) or the
-spatial route when it tests a genuinely minimizer-specific mechanism. Do not
-reopen generic entropy, scalar telescoping, random-restriction, or purely
-spatial arguments without a stated way around the obstructions above.
+Attack row-regular parent-ground existence and capped coverage jointly, not as
+independent lemmas. Keep a parent tilted-tail attempt active as the general
+fallback. Test constant shortfall only through complete-signing structure that
+could reverse the established wrong-way inequalities. Do not recycle generic
+entropy, scalar pressure, random restriction, base variance, star-cover, or
+purely spatial arguments without an explicit mechanism overcoming their
+recorded obstruction.
