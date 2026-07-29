@@ -81,3 +81,25 @@ from pending or numerical work.
 
 Do not begin a new wave from memory alone: return to this README and the ledger
 first.
+
+## Python environment
+
+Use the repository-local virtual environment for every Python computation:
+
+```bash
+source .venv/bin/activate
+```
+
+The direct dependencies and tested versions are recorded in
+[`requirements.txt`](requirements.txt). To recreate the environment:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip setuptools wheel
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+Run artifact scripts with the activated environment or explicitly with
+`.venv/bin/python`. Do not install project dependencies into the system Python.
+The `.venv/` directory and generated Python caches are intentionally excluded
+from Git.
