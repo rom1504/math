@@ -19486,3 +19486,648 @@ strategic ranking:
   migration.  No early `STEERING.md` regeneration is required: there is no
   proof of convergence, asymptotic falsifier, or change of leading route, and
   the mandatory refresh remains the boundary after Wave 23.
+
+### 10.75 Shared parent priors, Johnson overlap, and edge-cube covers
+
+The twenty-second wave attacks the remaining information half of the leading
+restriction route in three increasingly structured ways.  A finite codebook
+gives the cleanest operational target.  A parent Gibbs prior then turns that
+target into an exact parent--child overlap or conditional-free-energy
+statement.  Johnson functional inequalities quantify how much local overlap
+would suffice, but the canonical child Gibbs channel has an exact adjacent
+divergence identity which makes that certificate impossible at the needed
+scale.
+
+The independent cavity probe also reaches a sharp wall.  Minimality under
+every simultaneous edge flip is exactly the covering-radius property of one
+augmented-cut-code coset.  Its canonical Gibbs aggregation again bounds
+affinity from below, not above.  This is a precise closure of that direct
+aggregation, not a counterexample to (10.617).
+
+All new algebraic identities, convex optimality certificates, and finite
+enumerations below are **Verified**.  The Johnson modified log-Sobolev and
+log-Sobolev constants are imported with their normalizations audited against
+the cited primary papers.  Decimal `A_9` channel data are **Numerical**.
+The asymptotic codebook, parent-overlap, sharp-LDP, and weighted-congestion
+statements are **Open targets**.  Nothing in this wave proves convergence.
+
+#### 10.75.1 A small selector codebook is sufficient
+
+Let `S\sim U_m`, retain the ordered selector payoff `c_A(S,d)` from
+(10.643), and let `\mathcal C\subseteq\mathcal D_n` be a finite family of
+full oriented cuts.  Suppose
+
+```math
+\boxed{
+\mathbb E_{S\sim U_m}
+\left[
+Q(A[S])-\max_{d\in\mathcal C}c_A(S,d)
+\right]\le\delta.
+}
+\tag{10.712}
+```
+
+Choose a maximizing codeword with fixed tie breaking.  The resulting
+deterministic channel has average distortion at most `\delta` and
+
+```math
+\boxed{
+R_{U_m}(\delta)
+\le I_{\rm Sh}(S;D)
+\le H(D)
+\le\log|\mathcal C|.
+}
+\tag{10.713}
+```
+
+Here the first displayed inequality means that the constructed channel is a
+feasible witness for the infimum defining `R_{U_m}`; in particular the
+useful conclusion is `R_{U_m}(\delta)\le\log|\mathcal C|`.
+Combining (10.713) with the proved fixed-slice estimate (10.693)--(10.694)
+shows that, at a fixed selector density, it is enough to construct
+
+```math
+\boxed{
+\log|\mathcal C|=O(n^{1/2-2c}),
+\qquad
+\delta=O(n^{3/2-c}),
+\qquad 0<c<\frac14.
+}
+\tag{10.714}
+```
+
+The conditioning cost `\chi_{n,m}=O(\log n)` is already smaller than the
+displayed information scale.  Thus (10.714) is a concrete combinatorial
+shared-prior lemma: a subexponential family of full cuts must approximate the
+optimized principal sections on average.
+
+The one-deletion case has an exact finite incidence program.  For a full cut
+`d`, put
+
+```math
+P(d)=
+\{i:d[-i]\text{ is an exact ground of }A[-i]\},
+\qquad
+z_i=\nu\{d:i\in P(d)\}.
+```
+
+For the uniform deletion law, (10.673) becomes
+
+```math
+\boxed{
+R_{U_{n-1}}(0)
+=\min_\nu-\frac1n\sum_{i=1}^n\log z_i.
+}
+\tag{10.715}
+```
+
+The exact simplex KKT certificate is
+
+```math
+\boxed{
+h(P):=\sum_{i\in P}\frac{1/n}{z_i}\le1
+\quad\text{for every realizable }P,
+\qquad
+h(P)=1\quad(P\in\operatorname{supp}\nu).
+}
+\tag{10.716}
+```
+
+Exhaustive rational checks give:
+
+| minimizer | nonempty patterns | optimal event masses `z_i` | exact rate |
+|:---:|---:|:---|---:|
+| `A_6` | `26` | all `5/6` | `\log(6/5)=0.1823215568\ldots` |
+| `A_8` | `20` | all `3/8` | `\log(8/3)=0.9808292530\ldots` |
+| `A_9` | `22` | five `2/5`, four `1/4` | `1.1251812338\ldots` |
+
+For `A_6`, uniform mass on the six parent grounds whose coverage patterns
+omit one coordinate certifies optimality.  For `A_8`, eight size-three
+parent-ground patterns of mass `1/8` do so.  For `A_9`, one rational optimum
+is supported on
+
+| coverage pattern | mass |
+|:---:|---:|
+| `(3,6,8)` | `1/10` |
+| `(3,5,7)` | `1/20` |
+| `(0,4,8)` | `1/4` |
+| `(1,3,8)` | `1/20` |
+| `(2,3,5)` | `1/5` |
+| `(1,2,7)` | `1/5` |
+| `(0,6,7)` | `3/20` |
+
+It gives
+
+```math
+\boxed{
+R_{U_8}(0)
+=-\frac19\left(5\log\frac25+4\log\frac14\right)
+=1.125181233761\ldots .
+}
+\tag{10.717}
+```
+
+Every support pattern is realized by a full `A_9` ground, and (10.716) holds
+on all 22 realizable patterns.  These constant finite values show that exact
+optimized-child landing can be highly compressible.  They do not provide
+the fixed-density asymptotic family in (10.714).
+
+#### 10.75.2 Parent Gibbs priors isolate the missing overlap
+
+For an order-`n` signing define the full parent prior
+
+```math
+\nu_\beta(d)
+=\frac{e^{\beta\langle A,d\rangle}}{Z_A(\beta)}.
+```
+
+For arbitrary selector-indexed channels `P_S` and output marginal `P_D`,
+the common-prior chain rule is
+
+```math
+\boxed{
+\mathbb E_{S\sim\pi}
+D_{\rm KL}(P_S\Vert\nu_\beta)
+=I_{\rm Sh}(S;D)+D_{\rm KL}(P_D\Vert\nu_\beta).
+}
+\tag{10.718}
+```
+
+It therefore suffices to make many selector channels close to one parent
+prior; no separate output-entropy estimate is needed.
+
+For a child cut `y\in\mathcal D_S`, put
+
+```math
+c_S(y)=c_A(S,y),
+\qquad
+\Delta_S(y)=Q(A[S])-c_S(y),
+```
+
+and define the conditional outside partition sum
+
+```math
+K_{\beta,S}(y)
+=\sum_{d:d[S]=y}
+e^{\beta[\langle A,d\rangle-c_S(y)]}.
+```
+
+For `N_{S,t}=\{y:\Delta_S(y)\le t\}` the exact parent overlap is
+
+```math
+\boxed{
+\Omega_{\beta,S}(t)
+=\nu_\beta\{d:d[S]\in N_{S,t}\}
+=\frac{
+\sum_{y\in N_{S,t}}e^{\beta c_S(y)}K_{\beta,S}(y)
+}{Z_A(\beta)}.
+}
+\tag{10.719}
+```
+
+Conditioning `\nu_\beta` on this event has distortion at most `t` and is the
+least-KL law supported there.  Hence
+
+```math
+\boxed{
+D_{\rm KL}\!\left(
+\nu_\beta(\,\cdot\mid d[S]\in N_{S,t})
+\middle\Vert\nu_\beta
+\right)
+=-\log\Omega_{\beta,S}(t),
+\qquad
+R_\pi(t)
+\le\mathbb E_{S\sim\pi}[-\log\Omega_{\beta,S}(t)].
+}
+\tag{10.720}
+```
+
+There is a useful soft form.  Draw the child from
+`\mu_{\gamma,S}(y)\propto e^{\gamma c_S(y)}` and then use the parent
+conditional distribution outside `S`.  With
+
+```math
+L_{\beta,\gamma,S}(y)
+=e^{(\beta-\gamma)c_S(y)}K_{\beta,S}(y),
+```
+
+the channel-to-prior KL is exactly the arithmetic--geometric mean gap
+
+```math
+\boxed{
+D_{\rm KL}(P_S^{\beta,\gamma}\Vert\nu_\beta)
+=
+\log\mathbb E_{\mu_{\gamma,S}}L_{\beta,\gamma,S}
+-\mathbb E_{\mu_{\gamma,S}}\log L_{\beta,\gamma,S}.
+}
+\tag{10.721}
+```
+
+At matched temperatures this is the Jensen gap of
+`K_{\beta,S}(Y)`.  The separate parent and child partition functions
+determine the arithmetic mean in (10.721), but not the geometric mean.  A
+fixed arithmetic mean permits the Jensen gap to range from zero to
+arbitrarily large values; this abstract observation is not a signing
+counterexample, but it proves that separate scalar pressures alone do not
+control this rate.
+
+The child-Gibbs distortion obeys
+
+```math
+\boxed{
+Q(A[S])-\mathbb E_{\mu_{\gamma,S}}c_S(Y)
+\le\frac{m\log2}{\gamma}.
+}
+\tag{10.722}
+```
+
+Thus the desired distortion scale can be obtained with
+`\gamma=\Theta(n^{-1/2+c})`.  One exact sufficient continuation is the
+conditional-free-energy flatness estimate
+
+```math
+\boxed{
+\mathbb E_{S\sim\pi}
+\left[
+\log\mathbb E_{\mu_{\gamma,S}}L_{\beta,\gamma,S}
+-\mathbb E_{\mu_{\gamma,S}}\log L_{\beta,\gamma,S}
+\right]
++D_{\rm KL}(\pi\Vert U_m)
+=O(n^{1/2-2c}).
+}
+\tag{10.723}
+```
+
+A polynomial mixture of parent temperatures costs only `O(\log n)` in
+(10.718), so it permits selector-dependent temperature tuning but does not
+remove (10.723).
+
+Parent pressure alone gives a stronger, sharply stated sufficient lemma.
+Uniformly averaging the external energy over the `2^{n-m}` extensions of a
+fixed child cut and applying Jensen gives
+
+```math
+\boxed{
+K_{\beta,S}(y)\ge2^{n-m}.
+}
+\tag{10.724}
+```
+
+Let
+
+```math
+\phi_A(\beta)=\log(2^{-n}Z_A(\beta)),
+\qquad
+\phi_A^*(x)=\sup_{\beta\ge0}\{\beta x-\phi_A(\beta)\}.
+```
+
+Using one exact child ground in (10.719), and then
+`Q(A[S])\ge q_m`, yields for every selector law
+
+```math
+\boxed{
+R_\pi(0)
+\le m\log2-\phi_A^*(q_m).
+}
+\tag{10.725}
+```
+
+Consequently the precise pressure-only sufficient statement is
+
+```math
+\boxed{
+\phi_A^*(q_m)
+\ge m\log2-O(n^{1/2-2c}).
+}
+\tag{10.726}
+```
+
+This says that the parent energy large-deviation cost at the universal
+child minimum nearly saturates the entire `m\log2` fiber ceiling.  Ordinary
+pressure convergence does not imply such a sharp near-ceiling estimate.
+The weaker and more natural exact target is
+
+```math
+\boxed{
+\mathbb E_{S\sim\pi}[-\log\Omega_{\beta,S}(t)]
++D_{\rm KL}(\pi\Vert U_m)
+=O(n^{1/2-2c}),
+\qquad
+t=O(n^{3/2-c}).
+}
+\tag{10.727}
+```
+
+Equations (10.720) and (10.694) show directly that (10.727) proves the
+power-saving restriction edge.
+
+For the hidden-optimal `A_9` deletion law (10.652), exhaustive enumeration
+shows that within every energy level the `t`-event fraction is nondecreasing
+with parent energy for `t=0,4,8,12`.  Hence `\beta=\infty` exactly optimizes
+this one-temperature parent family.  The corresponding average costs are
+
+| tolerance `t` | average `-\log\Omega_{\infty,S}(t)` |
+|---:|---:|
+| `0` | `1.5830484787467...` |
+| `4` | `0.6304036289976...` |
+| `8` | `0.1888318865847...` |
+| `12` | `0.0408219945203...` |
+
+At `t=0` the unrestricted optimum (10.676) is smaller,
+`1.022686788870...`, so the parent-ground prior is useful but not optimal.
+At `\beta=1`, the common-prior chain is numerically
+`1.583853764561459=1.330682170797721+0.253171593763739`, independently
+checking (10.718).
+
+#### 10.75.3 Johnson entropy quantifies overlap, but direct child Gibbs fails
+
+Let `S\sim U_m` and let `S'=S-u+v` be a uniform directed Johnson neighbor.
+In the normalization of Salez's
+[sharp multislice log-Sobolev inequality](https://doi.org/10.5802/ahl.99),
+
+```math
+\mathcal E_J(f,g)
+=\frac1{2n}\sum_{i<j}
+\mathbb E[(\nabla_{ij}f)(\nabla_{ij}g)]
+=\frac{m(n-m)}{2n}
+\mathbb E_{\rm adj}[(f'-f)(g'-g)].
+\tag{10.728}
+```
+
+The exact Poincare constant is one and
+`1/2\le\tau_{\rm mls}\le1`.  Applying the modified log-Sobolev inequality
+outputwise to `f_d(S)=K_S(d)/\overline K(d)` gives
+
+```math
+\boxed{
+I_{\rm Sh}(S;D)
+\le
+\tau_{\rm mls}\frac{m(n-m)}{2n}
+\mathbb E_{\rm adj}J(K_S,K_{S'}),
+}
+```
+
+where `J(P,Q)=D_{\rm KL}(P\Vert Q)+D_{\rm KL}(Q\Vert P)`.  The ordinary
+log-Sobolev inequality similarly gives
+
+```math
+\boxed{
+I_{\rm Sh}(S;D)
+\le
+\tau_{\rm ls}\frac{m(n-m)}n
+\mathbb E_{\rm adj}H^2(K_S,K_{S'}),
+\qquad
+\tau_{\rm ls}
+\le\frac2{\log2}
+\log\frac{n^2}{m(n-m)}.
+}
+\tag{10.729}
+```
+
+The last explicit two-color constant is the Lee--Yau Bernoulli--Laplace
+bound, as stated with the same normalization in Salez's Theorem 1.6.  At
+fixed density, either inequality would meet the Wave 21 information target
+if the mean adjacent Jeffreys or squared Hellinger distance were
+`O(n^{-1/2-2c})`.
+
+For the canonical child Gibbs channel
+
+```math
+K_S(d)\propto e^{\beta c_A(S,d)}
+```
+
+with uniform outside extension, adjacent
+`S=C\cup\{u\}`, `T=C\cup\{v\}` have
+
+```math
+g=c_A(S,\cdot)-c_A(T,\cdot)
+=2\sigma(x_uh_u^C-x_vh_v^C),
+```
+
+and exponential-family calculus gives
+
+```math
+\boxed{
+J(K_S,K_T)
+=\beta^2\int_0^1\operatorname{Var}_{K_t}(g)\,dt,
+\qquad
+\operatorname{BC}(K_S,K_T)
+=\frac{Z_{(c_S+c_T)/2}}{\sqrt{Z_SZ_T}}.
+}
+\tag{10.730}
+```
+
+More decisively, reversibility of the directed edge law and uniformity of
+the new outside spin give the exact average identities
+
+```math
+\boxed{
+\mathbb E_{\rm adj}
+D_{\rm KL}(K_S\Vert K_{S'})
+=\frac{2\beta}{m}\overline E_\beta,
+\qquad
+\mathbb E_{\rm adj}J(K_S,K_{S'})
+=\frac{4\beta}{m}\overline E_\beta,
+}
+\tag{10.731}
+```
+
+where
+`\overline E_\beta=\mathbb E_S\mathbb E_{K_S}c_A(S,D)`.  Indeed, averaging
+the removed vertex deletes exactly `2/m` of the ordered child energy, while
+the introduced outside star has conditional mean zero.
+
+If the channel has the required subleading distortion at fixed density,
+then `\overline E_\beta=\Theta(n^{3/2})`.  For (10.731) to reach the local
+scale required by (10.729), it would need
+`\beta=O(n^{-1-2c})`.  That temperature cannot be near-ground.  A
+self-contained decoupled Rademacher-chaos estimate gives, for every
+symmetric zero-diagonal `B`,
+
+```math
+\log\mathbb E_xe^{t x^\mathsf TBx}
+\le16t^2\lVert B\rVert_F^2
+\quad\text{if}\quad
+|t|\le\frac1{\sqrt{32}\lVert B\rVert_{\rm op}}.
+```
+
+Convexity of the log-mgf, after shrinking the range by two, therefore yields
+
+```math
+\boxed{
+\mathbb E_{K_S}c_A(S,D)
+\le64\beta\lVert A_S\rVert_F^2
+\le64\beta m(m-1).
+}
+\tag{10.732}
+```
+
+At `\beta=O(n^{-1-2c})`, this is only `O(n^{1-2c})`.  Thus the direct
+combination of the canonical child Gibbs law, uniform outside extension, and
+Johnson MLSI cannot certify the needed rate.  This does not exclude a
+different near-ground channel which varies much more smoothly across a
+typical selector exchange, nor does it exclude the parent-conditional
+channel in §10.75.2.
+
+The `A_9,m=8` audit illustrates the mismatch:
+
+| `\beta` | distortion | `I(S;D)` | mean `H^2` | mean `J` |
+|---:|---:|---:|---:|---:|
+| `0.10` | `13.845448` | `0.109850` | `0.061672` | `0.507728` |
+| `0.50` | `1.723287` | `0.867729` | `0.492830` | `5.569178` |
+| `1.00` | `0.220752` | `1.253406` | `0.716891` | `11.889624` |
+| `2.00` | `0.004026` | `1.372158` | `0.814450` | `23.995974` |
+
+As distortion vanishes, adjacent Hellinger distance becomes order one and
+Jeffreys divergence grows.  These decimals are a finite diagnostic only.
+
+#### 10.75.4 All simultaneous flips recover one covering-radius condition
+
+Let `B` be an order-`r` exact minimizer, write
+`N=\binom r2`, `q=Q(B)`, and use the lifted state notation
+
+```math
+s_e(\omega)=\sigma b_{ij}x_ix_j,
+\qquad
+\Delta_\omega=q-2\sum_es_e(\omega).
+```
+
+Put
+
+```math
+C_\omega=\{e:s_e(\omega)=-1\},
+\qquad
+R=\frac N2-\frac q4.
+```
+
+Then
+
+```math
+\boxed{
+|C_\omega|=R+\frac{\Delta_\omega}{4},
+\qquad
+\forall S\subseteq E(K_r)\ \exists\omega:
+|S\mathbin\triangle C_\omega|\le R.
+}
+\tag{10.733}
+```
+
+To prove the second statement, flip exactly the edges in `S`.  The energy of
+state `\omega` in the new signing is
+`2N-4|S\mathbin\triangle C_\omega|`; global minimality says its maximum is
+at least `q=2N-4R`.  Conversely, this inequality is precisely the
+simultaneous-flip certificate.  Thus an exact minimizer is a deepest coset
+of the augmented cut code, and all edge-set flip certificates together are
+exactly its radius-`R` cover of the full edge cube.
+
+For an edge block `H` of size `h`, define
+
+```math
+z_H(\omega)=\sum_{e\in H}s_e(\omega),
+\qquad
+\rho_H(\omega)
+=|C_\omega\cap H|-\frac{\Delta_\omega}{4}.
+```
+
+Restricting (10.733) to `S\subseteq H` covers the `h`-cube by balls centered
+at `C_\omega\cap H` with radii `\rho_H(\omega)`, and
+
+```math
+\boxed{
+\Delta_\omega+2z_H(\omega)=2h-4\rho_H(\omega).
+}
+\tag{10.734}
+```
+
+This makes heavy-field migration explicit: different perturbations may use
+different centers, and centers with large original deficit remain available
+as unweighted witnesses even though the original Gibbs law suppresses them.
+
+The exact Gibbs transform retains the unfavorable direction.  With
+
+```math
+D_\beta(B^S;q)
+=\sum_\omega
+\exp\left\{-\beta\left[
+\Delta_\omega+4\sum_{e\in S}s_e(\omega)
+\right]\right\},
+```
+
+minimality gives `D_\beta(B^S;q)\ge1`, while statewise averaging over all
+subsets of `H` gives
+
+```math
+\boxed{
+2^{-h}\sum_{S\subseteq H}D_\beta(B^S;q)
+=D_\beta(B)\cosh(2\beta)^h
+\mathbb E_{\nu_{\beta,B}}e^{-2\beta z_H}.
+}
+\tag{10.735}
+```
+
+Therefore
+
+```math
+\boxed{
+\mathbb E_{\nu_{\beta,B}}e^{-2\beta z_H}
+\ge\frac1{D_\beta(B)\cosh(2\beta)^h}.
+}
+\tag{10.736}
+```
+
+For a coordinate star, `z_H=h_i` and the left side is
+`\operatorname{BC}_i`.  Equation (10.736) is a lower affinity bound, the
+opposite of (10.624).  For a perturbation of size `k`, any certifying state
+does satisfy the useful localization `\Delta_\omega\le4k`, but the
+existential witnesses can still migrate and their direct aggregation still
+has the sign in (10.736).  A positive continuation would require a genuinely
+weighted congestion or common-coordinate theorem, not merely the unweighted
+cover.
+
+Exhaustive `A_8/A_9` audits verify (10.733)--(10.736) on every star
+replacement and on sample triangles, four-cliques, and matchings at
+`\beta=0.5,1`.  For `A_8`, `(N,q,R)=(28,20,9)` and every star replacement
+has a witness of deficit at most four.  For `A_9`,
+`(N,q,R)=(36,24,12)` and every star replacement already has an exact-ground
+witness.  In both minimizers, the coordinate carrying the largest ground
+field migrates across every vertex.  This is a finite wall, not an
+asymptotic falsifier of (10.617).
+
+#### 10.75.5 Updated frontier
+
+Wave 22 preserves the leading route but makes its missing half considerably
+more exact:
+
+- a fixed-density codebook satisfying (10.714) would close the rate half of
+  the selector interface and, with the Wave 21 fixed-slice mgf theorem, prove
+  a power-saving optimized restriction edge.  The exact one-deletion
+  programs show real constant-information compression in `A_6,A_8,A_9`, but
+  provide no asymptotic fixed-density cover;
+
+- the strongest current analytic formulation is the parent--child overlap
+  lemma (10.727), equivalently the conditional-free-energy Jensen-gap bound
+  (10.723).  The sharp parent-energy LDP (10.726) is a simpler scalar
+  sufficient lemma but is stronger: ordinary pressure limits do not approach
+  its near-ceiling precision.  The next positive attack should use
+  minimizer-specific alignment of outside extensions, near-ground
+  multiplicity, or a direct small codebook;
+
+- Johnson entropy gives the exact local overlap scale, but the canonical
+  child Gibbs law with uniform outside extension is now ruled out as a
+  Johnson-MLSI certificate by (10.731)--(10.732).  A continuation must change
+  the channel/common prior rather than try another bound on the same adjacent
+  Gibbs divergence;
+
+- simultaneous edge-flip minimality is exactly the augmented-cut-code cover
+  (10.733).  Its direct blockwise Gibbs transform has the wrong direction and
+  finite minimizers exhibit complete heavy-coordinate migration.  This
+  closes that aggregation mechanism but neither proves nor asymptotically
+  falsifies the constant-shortfall criterion (10.617);
+
+- optimized principal restriction therefore remains the leading route, with
+  (10.727) the most precise next lemma.  Wave 23 should prioritize
+  minimizer-specific parent--child overlap or codebook compression, while
+  keeping one independent test of a weighted-congestion/external-surplus
+  mechanism.  There is no decisive proof, counterexample, or leading-route
+  change requiring an early steering rewrite; the mandatory
+  `STEERING.md` regeneration is due after Wave 23.
