@@ -16257,3 +16257,772 @@ and prove the required subset and temporal antichain inequalities while
 counting internal excess only once.  Independent routes are the
 selected-child potential (10.531), a sparse order-window cocycle with
 tail-summable boundary error, and the mixed-product amplification audit.
+
+### 10.70 Paired near states expose raw shores, and pressure needs constant slack
+
+The seventeenth wave attacks the three surviving routes independently.  Two
+actual opposite-oriented near-cross states obey an exact polarization theorem
+which converts their deficit-adjusted mutual cross-Gram into raw
+decrement-tolled shore residual.  This passes through the Section 10.69 endpoint
+wall only by selecting a new non-endpoint cut; the old one-state response
+does not select the useful pair, and no allocation or temporal service follows
+automatically.  A switching-subgroup projection gives a separate correlated
+sufficient condition for the active defect in (10.600).  At the temporal
+level, finite-temperature pressure has an exact one-deletion cavity identity,
+but Section 10.68's `A_9` wall defeats zero-error descent at every temperature.
+Some positive slack is therefore necessary for this pressure criterion, while
+a universal constant cavity shortfall would be sufficient for a tail-summable
+normalized comparison.  Finally, every
+diagonal completion in the natural mixed `A_9`--Sylvester family is
+asymptotically nonminimal by an explicit Boolean witness.
+
+All algebraic identities, constants, finite enumerations, and implications
+below are **Verified**, including independent cross-audits.  The
+constant-shortfall selection lemma, the required asymptotic subgroup
+partition, allocation/temporal compatibility, and the mixed conference
+problem are explicitly **Open**.  Conference local-search data remain
+**Numerical** only.  Nothing in this section proves convergence.
+
+#### 10.70.1 Two near states give a paired raw-shore theorem
+
+Let `M` be symmetric and zero diagonal, put `q=Q(M)`, and take two Boolean
+states with opposite orientation labels,
+
+```math
+\omega=(\sigma,z),
+\qquad
+\bar\omega=(-\sigma,w).
+```
+
+They need not be grounds of `M`.  Define their full-matrix deficits
+
+```math
+\alpha=q-\sigma z^{\mathsf T}Mz,
+\qquad
+\beta=q+\sigma w^{\mathsf T}Mw.
+```
+
+Let `S=\{i:z_i=w_i\}` and `T=\{i:z_i=-w_i\}`.  In the `z` gauge, set
+
+```math
+h_X=\sigma z_X^{\mathsf T}M[X]z_X\quad(X=S,T),
+\qquad
+c=\sigma z_S^{\mathsf T}M[S,T]z_T,
+\qquad
+b=\sigma z^{\mathsf T}Mw.
+```
+
+Expanding the two states at the four corners gives, with
+`H=(\beta-\alpha)/2`,
+
+```math
+\boxed{
+4c=2q-\alpha-\beta,
+\qquad
+h_S+h_T=H,
+\qquad
+h_S-h_T=b.
+}
+\tag{10.601}
+```
+
+For a retained shore `X` and complement `Y`, put
+
+```math
+L_X=\lVert M[Y,X]z_X\rVert_1,
+\qquad
+\ell_X=L_X-c\ge0.
+```
+
+The raw decrement-tolled all-successor bucket from (10.532) is
+
+```math
+r_X^\tau=
+\left[
+2L_X+\tau z_X^{\mathsf T}M[X]z_X-q
+\right]_+,
+\qquad \tau\in\{\sigma,-\sigma\}.
+```
+
+Substitution into the four shore/orientation buckets is exact:
+
+```math
+\boxed{
+\begin{aligned}
+r_S^\sigma&=[2\ell_S-h_T-\alpha]_+,
+&
+r_S^{-\sigma}&=[2\ell_S+h_T-\beta]_+,\\
+r_T^\sigma&=[2\ell_T-h_S-\alpha]_+,
+&
+r_T^{-\sigma}&=[2\ell_T+h_S-\beta]_+.
+\end{aligned}
+}
+\tag{10.602}
+```
+
+Writing
+`\mathscr S_M=r_S^\sigma+r_S^{-\sigma}+r_T^\sigma+r_T^{-\sigma}`,
+drop the nonnegative exposure slacks and pair the two positive parts.  This
+proves
+
+```math
+\boxed{
+\begin{aligned}
+\mathscr S_M(\omega,\bar\omega)
+&\ge\frac12\left(
+[|b-H|-\alpha-\beta]_+
++[|b+H|-\alpha-\beta]_+
+\right)\\
+&\ge[|b|-\alpha-\beta]_+.
+\end{aligned}
+}
+\tag{10.603}
+```
+
+The last line is convexity at `b-H,b+H`.  When the two states are opposite
+exact grounds of a balanced matrix, the exposure slacks vanish and this
+reduces to the old exact endpoint cross-Gram formula.  No ground assumption
+is used in the general statement.
+
+Now write `A=C+D`, put
+
+```math
+\Delta=Q(A)-Q(C),
+```
+
+and choose opposite-oriented states with cross deficits
+`u=\delta_C(\omega)\le t` and
+`v=\delta_C(\bar\omega)\le t`.  Their actual deficit-corrected scores are
+
+```math
+s(\omega)=e_D(\omega)-u,
+\qquad
+s(\bar\omega)=e_D(\bar\omega)-v.
+```
+
+Direct cancellation and (10.601) give
+
+```math
+\boxed{
+\begin{gathered}
+\alpha=\Delta-s(\omega),
+\qquad
+\beta=\Delta-s(\bar\omega),\\
+c_A=\frac{Q(C)}2+
+\frac{s(\omega)+s(\bar\omega)}4,\\
+\mathscr S_A(\omega,\bar\omega)
+\ge
+\left[
+|\sigma z^{\mathsf T}Aw|-2\Delta
++s(\omega)+s(\bar\omega)
+\right]_+.
+\end{gathered}
+}
+\tag{10.604}
+```
+
+Thus the missing datum is a mutual cross-Gram of two actual correlated
+global states after both full `A` deficits are paid.  A useful paired
+functional is
+
+```math
+\boxed{
+\mathcal B_{C,t}(A)
+=
+\max_{\substack{
+\omega=(\sigma,z),\ \bar\omega=(-\sigma,w)\\
+\delta_C(\omega),\delta_C(\bar\omega)\le t
+}}
+\left[
+|z^{\mathsf T}Aw|
+-\delta_A(\omega)-\delta_A(\bar\omega)
+\right]_+.
+}
+\tag{10.605}
+```
+
+For nondegenerate agreement/disagreement cuts, the best raw root-shore total
+is at least `\mathcal B_{C,t}(A)`.  This uses no Cartesian product of local
+block states.  It is still raw, unallocated, and static.
+
+There is a necessary orientation margin.  If
+
+```math
+P(C)=\max_z z^{\mathsf T}Cz,
+\qquad
+N(C)=-\min_z z^{\mathsf T}Cz,
+\qquad
+I(C)=|P(C)-N(C)|,
+```
+
+then
+
+```math
+\boxed{
+\text{both orientation classes meet }\mathcal A_C(t)
+\quad\Longleftrightarrow\quad
+t\ge I(C).
+}
+\tag{10.606}
+```
+
+The old `\mathcal R/\Gamma` records neither this coverage nor the paired
+cross-Gram.
+
+The `A_8` response partition makes the selection failure exact.  At `t=0`
+there are twelve projective cross grounds in each orientation, and
+
+```math
+\mathcal R^+_{C,0}(D)
+=\mathcal R^-_{C,0}(D)=4,
+\qquad
+\Delta=4.
+```
+
+All sixteen pairs of orientationwise response maximizers are the neutral
+`A_8` endpoint pairs and have
+
+```math
+\boxed{
+\alpha=\beta=0,
+\qquad
+z^{\mathsf T}A_8w=0,
+\qquad
+\mathscr S_{A_8}=0.
+}
+\tag{10.607}
+```
+
+Four different, nonmaximizing projective pairs have scores zero on both
+sides, full deficits `\alpha=\beta=4`, mutual cross-Gram sixteen, and raw
+total eight.  Their two shores are exact order-four minimizers, and their
+four buckets are a permutation of `(4,4,0,0)`.  These cuts are not endpoint
+cuts and carry no pre-existing conserved allocation.
+
+For every one of the forty `A_9` completions, the cross mosaic has
+`(P,N,I)=(18,22,4)`.  At `t=0` only the negative orientation occurs.  At
+the first usable margin `t=4`, both orientation-specific response maxima are
+two, yet the best raw total over all sixty projective near-state pairs is
+eight, strictly below the common-mosaic response rise twelve.  Among
+response-maximizing pairs the exact `(|b|,\mathscr S)` histogram over all
+completions is
+
+```text
+(0,0): 336,  (4,4): 192,  (8,8): 144.
+```
+
+At `t=8` the best raw total becomes sixteen, but the active symmetric gauge
+has already reached `Q(G)=10` as in (10.597).  Consequently (10.604) is a
+genuine new raw resource theorem, while response maximization alone cannot
+select the resource and nothing here supplies allocation, descendant
+service, terminal credit, or a causal Hall inequality.
+
+#### 10.70.2 Switching orbits give a correlated active-defect criterion
+
+Let `G\le\{\pm1\}^V` be a finite group under coordinatewise multiplication
+and put
+
+```math
+A^g=\operatorname{diag}(g)A\operatorname{diag}(g).
+```
+
+Partition the coordinates by their characters on `G`:
+`i\sim j` exactly when `g_i=g_j` for every `g\in G`.  Let `D` be the
+block-diagonal part of `A` on these character classes and `C=A-D`.
+Character orthogonality gives the exact Reynolds projection
+
+```math
+\boxed{
+D=\frac1{|G|}\sum_{g\in G}A^g,
+\qquad
+z^{\mathsf T}Dz
+=\frac1{|G|}\sum_{g\in G}
+(z\odot g)^{\mathsf T}A(z\odot g).
+}
+\tag{10.608}
+```
+
+Hence `Q(D)\le Q(A)`.  On each orbit `zG`, the `D` energy is the constant
+orbit mean of the `A` energy, while the `C` energies are the centered orbit
+energies and sum to zero.
+
+For rank one, `G=\{\mathbf1,g\}` and
+
+```math
+D=\frac{A+A^g}{2},
+\qquad
+C=\frac{A-A^g}{2},
+\qquad
+D^g=D,
+\qquad
+C^g=-C.
+```
+
+Every absolute `C` ground is paired with an exactly opposite `C` ground
+having the same `D` energy.  Therefore
+
+```math
+\boxed{
+\mathcal R_{C,0}(D)
+=
+\max_{|z^{\mathsf T}Cz|=Q(C)}
+|z^{\mathsf T}Dz|
+\ge0,
+\qquad
+\Gamma_{C,0}(D)=0,
+\qquad
+Q(C)\le Q(A).
+}
+\tag{10.609}
+```
+
+Thus the active defect is automatically zero for every bipartition.  The
+hard part of (10.600) begins when many critical-scale blocks must coexist.
+
+There is a quantitative many-block substitute.  Choose an oriented exact
+cross ground, `\sigma z^{\mathsf T}Cz=Q(C)`, and define its best
+opposite-orbit deficit
+
+```math
+\delta_G(\sigma,z)
+=
+Q(C)+\min_{g\in G}
+\sigma(z\odot g)^{\mathsf T}C(z\odot g).
+```
+
+The `D` responses of the original state and the oppositely oriented orbit
+state are `a` and `-a`.  The latter has cross deficit `\delta_G`, so
+
+```math
+\boxed{
+\mathcal R_{C,\delta_G}(D)
+\ge\max\{a,-a-\delta_G\}
+\ge-\frac{\delta_G}{2},
+\qquad
+\Gamma_{C,\delta_G}(D)
+\le\frac{\delta_G}{2}.
+}
+\tag{10.610}
+```
+
+This is an actual correlated orbit pair, not a rectangular relaxation.
+
+For `Q(C)>0`, put
+
+```math
+Y_g=\sigma(z\odot g)^{\mathsf T}C(z\odot g),
+\qquad
+v_G(z)=\frac1{|G|}\sum_gY_g^2.
+```
+
+The orbit variable has mean zero, maximum `Q(C)`, and minimum
+`-(Q(C)-\delta_G)`.  The elementary bounded-variance inequality gives
+
+```math
+\boxed{
+v_G(z)\le Q(C)[Q(C)-\delta_G],
+\qquad
+\delta_G
+\le Q(C)-\frac{v_G(z)}{Q(C)}.
+}
+\tag{10.611}
+```
+
+Consequently `t=Q(C)-v_G(z)/Q(C)` implies
+`\Gamma_{C,t}(D)\le t/2`.  If `Q(C)=0`, then
+`\Gamma_{C,0}(D)=0` directly.  At leading cross scale, the exact useful
+variance condition is
+
+```math
+Q(C)^2-v_G(z)
+=o\!\left(Q(C)n^{3/2}\right).
+```
+
+When `Q(C)=\Theta(n^{3/2})` this is
+`v_G(z)=Q(C)^2-o(n^3)`; when `Q(C)=o(n^{3/2})`, the tolerance is already
+subleading without that stronger statement.
+
+The finite `A_9` wall realizes the nonrectangular mechanism exactly.  Let
+`G` be generated by
+
+```math
+g_1=(1,1,1,1,-1,1,-1,1,1),
+\qquad
+g_2=(1,1,1,1,1,1,1,1,-1).
+```
+
+Its character cells are
+
+```math
+\{0,1,2,3,5,7\},
+\qquad
+\{4,6\},
+\qquad
+\{8\}.
+```
+
+Exact enumeration gives
+
+```math
+\boxed{
+X=12,
+\qquad
+Q(C)=24,
+\qquad
+\Gamma_{C,t}(D)=0\quad(t=0,4,8).
+}
+\tag{10.612}
+```
+
+On the particular orbit of `\mathbf1`, the `A_9` energies are
+`(8,-24,24,-8)`, their mean and hence the `D` energy are zero, while the
+separate block norms sum to twenty-four.  This is finite structural
+evidence only.  The open asymptotic task is to find about `\sqrt n`
+controlled character cells with leading incompatible block norms and
+subleading antipodal gap, then still prove temporal compatibility.
+
+#### 10.70.3 Exact soft deletion and the constant-shortfall target
+
+For an order-`r` matrix `B` and child `C_i=B[-i]`, let
+
+```math
+d_i=Q(B)-Q(C_i),
+\qquad
+\varepsilon(B)=Q(B)-q_r.
+```
+
+The zero-temperature identity remains
+
+```math
+\varepsilon(C_i)
+=\varepsilon(B)+(q_r-q_{r-1})-d_i.
+```
+
+There is a useful exact degeneracy refinement.  Let `g(C_i)` count oriented
+projective absolute grounds and let `N_B(t)` count oriented states of
+`B`-deficit at most `t`.  Extending a child ground by the two possible
+deleted spins gives
+
+```math
+\boxed{
+N_B(2d_i)\ge2g(C_i).
+}
+\tag{10.613}
+```
+
+Thus a flat step `d_i=0` injects twice the child ground set into the parent
+ground set.  This explains an entropy payment but does not change the exact
+excess drift.
+
+For `\beta>0`, let `\Omega_r` be the `2^r` oriented projective states and
+define normalized pressure
+
+```math
+\mathcal Z_\beta(B)
+=2^{-r}\sum_{\omega\in\Omega_r}
+e^{\beta e_B(\omega)},
+\qquad
+P_\beta(B)=\frac1\beta\log\mathcal Z_\beta(B).
+```
+
+If `b_i` is the deleted row and `\mu_{\beta,C_i}` is the oriented child
+Gibbs law, put
+
+```math
+\kappa_{\beta,i}(B)
+=
+\frac1\beta\log
+\mathbb E_{\mu_{\beta,C_i}}
+\cosh(2\beta b_i^{\mathsf T}y).
+```
+
+Summing the two parent extensions of every child state proves
+
+```math
+\boxed{
+\begin{gathered}
+Q(B)-\frac{r\log2}{\beta}
+\le P_\beta(B)\le Q(B),\\
+\mathcal Z_\beta(B)
+=\mathcal Z_\beta(C_i)
+\mathbb E_{\mu_{\beta,C_i}}
+\cosh(2\beta b_i^{\mathsf T}y),\\
+P_\beta(B)-P_\beta(C_i)
+=\kappa_{\beta,i}(B),
+\qquad
+\kappa_{\beta,i}\longrightarrow d_i
+\quad(\beta\to\infty).
+\end{gathered}
+}
+\tag{10.614}
+```
+
+Centering either at the finite minimum or at a root scale `\alpha` gives the
+two exact drifts
+
+```math
+\boxed{
+\begin{aligned}
+[P_\beta(C_i)-q_{r-1}]
+-[P_\beta(B)-q_r]
+&=q_r-q_{r-1}-\kappa_{\beta,i},\\
+H_{\alpha,\beta}(C_i)-H_{\alpha,\beta}(B)
+&=\alpha[r^{3/2}-(r-1)^{3/2}]
+-\kappa_{\beta,i},
+\end{aligned}
+}
+\tag{10.615}
+```
+
+where `H_{\alpha,\beta}(B)=P_\beta(B)-\alpha r^{3/2}`.  Only the second
+centering directly addresses convergence.
+
+Finite temperature does not remove the `A_9` flat wall.  With
+`s=e^{-\beta}`, the oriented deficit polynomial is
+
+```math
+Z_{A_9}(s)
+=25+60s^8+111s^{16}+120s^{24}
++111s^{32}+60s^{40}+25s^{48}.
+```
+
+For every one of the nine children, exact conversion of
+`2Z_{C_i}(s)-s^3Z_{A_9}(s)` to its degree-51 Bernstein basis gives
+nonnegative coefficients and a strictly positive zeroth coefficient.
+Accounting for the parent/child state counts `512` and `256` proves
+
+```math
+\boxed{
+\kappa_{\beta,i}(A_9)<3
+\quad
+\text{for every }i\text{ and every }\beta>0,
+\qquad
+\frac89[9^{3/2}-8^{3/2}]
+=24-\frac{128}{9}\sqrt2
+=3.886740446\ldots>3.
+}
+\tag{10.616}
+```
+
+Thus both the simple exact `q`-gap criterion and the
+convergence-relevant root-scale zero-error criterion fail at every
+temperature.
+
+The corrected target allows a universal constant shortfall.  Start from
+every order-`n` minimizer, fix
+
+```math
+\alpha=\frac{q_n}{n^{3/2}},
+```
+
+and require that, for one fixed `\beta>0` and universal `K`, a child can be
+selected at every restriction along a path to every fixed-proportion target
+`m\in[\rho n,n)` so that
+
+```math
+\boxed{
+\kappa_{\beta,i}(B_r)
+\ge
+\alpha[r^{3/2}-(r-1)^{3/2}]-K.
+}
+\tag{10.617}
+```
+
+Telescoping (10.615), then using the pressure bounds in (10.614), gives
+
+```math
+\boxed{
+\frac{q_m}{m^{3/2}}
+\le
+\frac{q_n}{n^{3/2}}
++\frac{K(n-m)}{m^{3/2}}
++\frac{\log2}{\beta\sqrt m}.
+}
+\tag{10.618}
+```
+
+For `m\ge\rho n` this costs `O_{\rho,K,\beta}(m^{-1/2})`.  The costs are
+summable over geometric windows, so the uniform selection statement
+(10.617) would imply the adaptive tail (10.529) and convergence.  A lemma
+for only one root, one path, an uncontrolled landing order, changing
+temperature, or nonuniform `K` would not suffice.  The `A_9` certificate
+only forces the coarse lower bound
+
+```math
+K>24-\frac{128}{9}\sqrt2-3
+=0.886740446\ldots;
+```
+
+it does not obstruct a universal constant.  Establishing (10.617) is the
+sharpest surviving selected-child target.
+
+#### 10.70.4 The natural mixed Sylvester amplification is nonminimal
+
+Let `R` be an order-`m` zero-diagonal signing, choose diagonal sign matrices
+`D,E`, and put
+
+```math
+P=A_9+D,
+\qquad
+H=R+E.
+```
+
+The natural genuinely separable product is
+
+```math
+\boxed{
+\mathcal T(R,E;D)
+=H\otimes P-\operatorname{diag}(H\otimes P)
+=R\otimes P+E\otimes A_9.
+}
+\tag{10.619}
+```
+
+This classifies the Kronecker-separable rule only; fixing entries with both
+coordinates distinct would still leave nonseparable same-coordinate
+choices.  For a product state `v\otimes u` in the displayed tensor order,
+
+```math
+(v\otimes u)^{\mathsf T}\mathcal T(v\otimes u)
+=(u^{\mathsf T}A_9u+\operatorname{tr}D)
+(v^{\mathsf T}Rv+\operatorname{tr}E)
+-\operatorname{tr}D\,\operatorname{tr}E.
+```
+
+The exact `3+6` seed replacement performed separately in each intact
+nine-vertex fibre changes the norm by at most
+
+```math
+m\{q_3+Q(A_3)+q_6+Q(A_6)\}=36m.
+```
+
+Its within-fibre replicated excess is only `4m=o((9m)^{3/2})`.  A leading
+effect would have to change `\Theta(m^2)` inter-fibre edges inside the
+enlarged shores, and the resulting order-`3m` and order-`6m` products would
+themselves need to be global minimizers.  This is the missing tensor
+compatibility, not a consequence of the finite seed certificate.
+
+The Sylvester branch admits a stronger no-go.  Let
+
+```math
+H_2=
+\begin{pmatrix}
+1&1\\
+1&-1
+\end{pmatrix},
+\qquad
+B_D=H_2\otimes(A_9+D)
+-\operatorname{diag}(H_2\otimes(A_9+D)).
+```
+
+The `A_9` positive and negative projective ground sets have sizes ten and
+fifteen.  Complete enumeration of their `512\cdot10\cdot15=76{,}800`
+completed cross-Grams proves
+
+```math
+\boxed{
+\min_D
+\max_{\substack{
+p^{\mathsf T}A_9p=24\\
+n^{\mathsf T}A_9n=-24
+}}
+|p^{\mathsf T}(A_9+D)n|
+=15,
+\qquad
+Q(B_D)\ge78.
+}
+\tag{10.620}
+```
+
+Indeed, the two states `(p,n)` and `(p,-n)` have energies
+`48\pm2p^{\mathsf T}(A_9+D)n`.  Full exhaustion of all order-eighteen
+Boolean states independently confirms that the minimum over `D` is exactly
+78.  Since `q_{18}\le18\sqrt{17}<78`, even the order-two mixed products are
+nonminimal.
+
+For the growing theorem, let
+
+```math
+s=4^r,
+\qquad
+H_s=H_4^{\otimes r},
+\qquad
+H_4=H_2\otimes H_2,
+\qquad
+w=(1,1,1,-1).
+```
+
+Then `y=w^{\otimes r}` satisfies
+`H_sy=\sqrt s\,y`.  Set
+
+```math
+H_m=H_s\otimes H_2,
+\qquad
+m=2s,
+\qquad
+\mathcal T_m
+=H_m\otimes(A_9+D)
+-\operatorname{diag}(H_m\otimes(A_9+D)).
+```
+
+Because
+`\operatorname{tr}(H_2\otimes(A_9+D))=0`, tensoring `y` with the
+order-eighteen witness in (10.620) gives
+
+```math
+\boxed{
+Q(\mathcal T_m)
+\ge78s\sqrt s,
+\qquad
+|\mathcal T_m|=18s,
+\qquad
+\frac{Q(\mathcal T_m)}{(18s)^{3/2}}
+\ge
+\frac{78}{18\sqrt{18}}
+=1.0213764617\ldots>1.
+}
+\tag{10.621}
+```
+
+Since `q_N\le(1+o(1))N^{3/2}`, every one of the 512 seed diagonal
+completions is nonminimal for all sufficiently large `r`.  This closes the
+natural `A_9`--Sylvester family by a Boolean witness.  It does not cover all
+symmetric Hadamard families, nonseparable gadgets, or growing conference
+factors.  The latter reduce exactly to a correlated 256-state channel model;
+current coordinate-ascent ratios above one are only numerical, and the
+existing finite-channel constant is too small to prove nonminimality.
+
+#### 10.70.5 Updated frontier
+
+This wave leaves four sharp conclusions:
+
+- two actual opposite-oriented near-cross states can expose raw
+  decrement-tolled shore residual through their deficit-adjusted mutual
+  cross-Gram.  The `A_8` and `A_9` censuses show that neither
+  `\mathcal R/\Gamma` nor its two orientation-specific maxima select the
+  useful pair.  Allocation, causal timing, and Hall cuts remain separate;
+
+- switching-subgroup partitions give an exact nonrectangular framework for
+  (10.600).  A subleading antipodal orbit gap suffices for a subleading
+  active defect.  Existence of a critical-scale, large-excess subgroup
+  partition and any response-to-temporal theorem remain open;
+
+- soft pressure gives the first selected-child target with an explicitly
+  tail-summable correction.  Zero slack is false on `A_9` for every
+  temperature, but a universal constant shortfall in (10.617) would prove
+  convergence.  This is now the highest-priority positive scalar route;
+
+- fixed replication, clone, lexicographic, same-seed tensor, fibrewise mixed,
+  and the natural growing Sylvester amplifications of the `A_9` wall are all
+  closed.  The separable conference channel and nonuniform gadgets remain
+  open, but they no longer outrank the constant-shortfall pressure lemma.
+
+The next wave should first attack (10.617): derive a lower bound for one
+cavity reward at fixed positive temperature, allowing a universal constant
+loss and uniformly covering every restriction on a selected path.  An
+independent spatial route is to construct a switching subgroup with
+critical-size character cells, leading incompatible block norms, and
+subleading antipodal gap, then combine its paired raw shores with a genuine
+allocation and the causal deficiency (10.543).  The remaining mixed
+conference channel is a clean falsification route rather than the primary
+proof target.
