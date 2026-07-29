@@ -12012,3 +12012,319 @@ inequality (10.435), with the hard same-positive reduction (10.440).
 Independent routes are a conic/averaging proof of (10.442), an exact
 MILP search for a violation of (10.435), and a structured construction
 that drives the local four-bucket obstruction toward or past four.
+
+### 10.61 The stopping inequality is false: a strict obstruction and a sign blow-up
+
+The ninth wave falsifies the local stopping route from Section 10.60.
+There is a strict rational weighted counterexample on nine vertices, and
+a biased random clone construction lifts it to genuine complete
+`\{\pm1\}` sign matrices.  Thus (10.435)--(10.437), the hard reduction
+(10.440), and the universal proposed selection statement (10.442) are
+all **Falsified**.  The unconditional half-imbalance bound (10.434)
+remains **Verified**.  This result invalidates the particular depth-two
+proof of `K\le4`; it does not disprove `K\le4` itself.
+
+#### 10.61.1 An exact strict weighted certificate
+
+Use the undoubled cut normalization.  Let
+`S=\{0,1,2,3\}`, `T=\{4,5,6,7,8\}`, and `B=\{4,5,6\}`.  Put
+`w_{ij}=M_{ij}/672`, where
+
+```math
+M=
+\begin{pmatrix}
+0&54&54&54&28&28&28&55&29\\
+54&0&54&54&28&28&28&55&29\\
+54&54&0&54&28&28&28&55&29\\
+54&54&54&0&28&28&28&55&29\\
+28&28&28&28&0&83&83&-55&-55\\
+28&28&28&28&83&0&83&-55&-55\\
+28&28&28&28&83&83&0&-55&-55\\
+55&55&55&55&-55&-55&-55&0&113\\
+29&29&29&29&-55&-55&-55&113&0
+\end{pmatrix}.
+\tag{10.448}
+```
+
+For `R\subseteq[9]`, write
+`g(R)=\sum_{i\in R,j\notin R}w_{ij}`.  Exact enumeration of the 256
+projective cuts gives
+
+```math
+g(\varnothing)=0,
+\qquad
+g(S)=g(T)=1,
+\qquad
+\frac1{112}\le g(R)\le\frac{111}{112}
+\tag{10.449}
+```
+
+for every other projective cut.  Hence the constant spin and the
+`S\mid T` spin are the unique projective parent endpoints, with `c=1`.
+The strict gaps in (10.449) are important for the blow-up below.
+
+Let `a_X` be the total internal edge weight of a shore, and let
+`m_X,M_X` be its minimum and maximum internal cut weights.  A second
+exact enumeration gives
+
+| shore | `a_X` | `m_X` | `M_X` | `a_X-m_X-M_X` |
+|---|---:|---:|---:|---:|
+| `S` | `27/56` | `0` | `9/28` | `9/56` |
+| `T` | `1/21` | `-55/112` | `19/112` | `31/84` |
+
+Both last-column entries are positive, so both children are strictly
+positive-dominant.  Nevertheless,
+
+```math
+\boxed{
+a_S+a_T-(m_S+m_T)
+=\frac{49}{48}
+>1=c.
+}
+\tag{10.450}
+```
+
+This is already a strict weighted failure of (10.440).  To check the
+quadratic-energy normalization directly, the child data are
+
+```math
+\begin{aligned}
+h_S&=\frac{27}{28},&
+(P(S),N(S),Q(S))&=
+\left(\frac{27}{28},\frac9{28},\frac{27}{28}\right),\\
+h_T&=\frac2{21},&
+(P(T),N(T),Q(T))&=
+\left(\frac{173}{84},\frac7{12},\frac{173}{84}\right).
+\end{aligned}
+\tag{10.451}
+```
+
+At the parent,
+
+```math
+P=\frac{257}{84},
+\qquad
+N=\frac{79}{84},
+\qquad
+I=|P-N|=\frac{89}{42}.
+\tag{10.452}
+```
+
+The exact capacity identity (10.433) gives
+
+```math
+b_S=2,
+\qquad
+b_T=\frac1{28},
+\qquad
+\boxed{I-(b_S+b_T)=\frac1{12}.}
+\tag{10.453}
+```
+
+Thus (10.435), and therefore its equivalent form (10.436), fail.
+The stronger candidate (10.437) fails by the same amount:
+
+```math
+Q(S)+Q(T)-\bigl(4c-|h_S+h_T|\bigr)=\frac1{12}.
+\tag{10.454}
+```
+
+The maximum-cut averaging target fails on the same certificate.  There
+are three projective maximum-cut spins on `S` and six on `T`.  All rows
+of the `S`--`T` block are identical, while every maximizing `S` spin is
+balanced.  Hence `z=x^{\mathsf T}By=0` for all eighteen maximizing
+pairs, and
+
+```math
+\boxed{
+2(M_S+M_T)+|z|
+=\frac{55}{56}
+<\frac{49}{48}
+=a_S+a_T-(m_S+m_T).
+}
+\tag{10.455}
+```
+
+The exact gap is `13/336`.  In the doubled favorable-energy check the
+gap is `13/168`, confirming the factor of two in (10.442).
+
+#### 10.61.2 Lifting the obstruction to complete sign matrices
+
+The unequal magnitudes in (10.448) do not explain away the failure.
+Fix `\kappa=5`; then
+
+```math
+\max_{i<j}|\kappa w_{ij}|=\frac{565}{672}<1.
+\tag{10.456}
+```
+
+Replace every macro vertex `i` by a clone class `V_i` of size `L`.
+Independently give every edge between `V_i` and `V_j` a sign with mean
+`\kappa w_{ij}`, and give edges inside a clone class independent
+unbiased signs.  Equivalently,
+
+```math
+\Pr(A_{uv}=1)=\frac{1+\kappa w_{ij}}2
+\qquad(u\in V_i, v\in V_j, i\ne j).
+\tag{10.457}
+```
+
+This assigns exactly one sign in `\{\pm1\}` to every unordered pair of
+the `9L` vertices.
+
+For a micro cut `R`, put `x_i=|R\cap V_i|/L`.  If independent Bernoulli
+variables `Z_i` have parameters `x_i`, the expected undoubled cut value
+is exactly
+
+```math
+\mathbb E C_L(R)
+=\kappa L^2G(x),
+\qquad
+G(x)=\mathbb E\,g(\{i:Z_i=1\}).
+\tag{10.458}
+```
+
+Thus `G` is the multilinear extension of the macro cut function.  The
+following shell argument is what preserves exact endpoints; a bare
+`o(L^2)` cut-norm estimate would not control cuts differing from an
+endpoint in only a few clones.
+
+Choose the complement of `R` if necessary, let
+`d=\min\{|R|,9L-|R|\}`, and put `s=d/L\le9/2`.  The expected number of
+disagreeing pairs among the nine Bernoulli variables satisfies
+
+```math
+\begin{aligned}
+D(x)
+&=8s-s^2+\sum_i x_i^2\\
+&\ge8s-\frac89s^2
+\ge4s.
+\end{aligned}
+\tag{10.459}
+```
+
+A nonconstant nine-bit vector has at most twenty disagreeing pairs.
+With `\delta=1/112`, (10.449) therefore implies
+
+```math
+\mathbb E C_L(R)
+\ge\frac{\kappa\delta}{5}Ld.
+\tag{10.460}
+```
+
+Let `E=V_4\cup\cdots\cup V_8`.  Applying the same argument to
+`1-g` after XOR with `E` gives, for projective Hamming distance `d_E`
+from `E`,
+
+```math
+\mathbb E\bigl[C_L(E)-C_L(R)\bigr]
+\ge\frac{\kappa\delta}{5}Ld_E.
+\tag{10.461}
+```
+
+The difference between cuts at Hamming distance `d` uses at most
+`9Ld` independent edge signs, with coefficients in `\{-1,0,1\}`.
+Hoeffding's inequality, retaining half the mean margin, bounds either
+failure probability by
+
+```math
+\exp\!\left(-\frac{\kappa^2\delta^2}{1800}Ld\right).
+\tag{10.462}
+```
+
+There are at most two copies of each projective shell.  A union bound
+for both endpoint inequalities is at most
+
+```math
+4\sum_{d=1}^{\lfloor9L/2\rfloor}
+{9L\choose d}
+\exp\!\left(-\frac{\kappa^2\delta^2}{1800}Ld\right)
+=o(1).
+\tag{10.463}
+```
+
+Indeed, `\binom{9L}{d}\le(9eL/d)^d`; the negative exponent is linear
+in `Ld`, whereas the shell entropy is `O(d\log L)`.  With probability
+tending to one, every other cut lies strictly between the two intended
+endpoint cut values.  Hence the finite sign matrix has exactly the
+required parent endpoints, not merely approximate ones.
+
+It remains to transfer the child quantities.  For a fixed child cut,
+Hoeffding gives an `\exp(-\Omega(L^2))` tail for an error of order
+`L^2`.  A union bound over at most `2^{5L}` child cuts still tends to
+zero.  Since a multilinear function attains its extrema at cube
+vertices, simultaneously
+
+```math
+\frac{(a_X^{(L)},m_X^{(L)},M_X^{(L)})}{\kappa L^2}
+\longrightarrow(a_X,m_X,M_X)
+\qquad(X=S,T)
+\tag{10.464}
+```
+
+in probability.  The strict positive-dominance gaps in the table above
+therefore persist.  Also `c_L/(\kappa L^2)\to1`, and the exact formulas
+`P_X=2a_X-4m_X` and `N_X=4M_X-2a_X` transfer all child benchmarks.
+The intended parent endpoint energies retain opposite signs, since
+`P_L/(\kappa L^2)\to257/84` and
+`N_L/(\kappa L^2)\to79/84`.
+Intersecting these events with the exact endpoint event from (10.463)
+gives
+
+```math
+\boxed{
+\frac{\mathcal B_L-I_L}{\kappa L^2}
+\longrightarrow-\frac1{12},
+\qquad
+\frac{a_S^{(L)}+a_T^{(L)}-m_S^{(L)}-m_T^{(L)}-c_L}
+     {\kappa L^2}
+\longrightarrow\frac1{48}.
+}
+\tag{10.465}
+```
+
+Consequently, for every sufficiently large `L`, there exists a complete
+zero-diagonal `\{\pm1\}` matrix of order `9L` that violates (10.435),
+(10.437), and (10.440).  Any maximum-cut pair satisfying (10.442) would
+imply (10.440), so its proposed universal existence form also fails on
+these eventual blow-ups.  This is an existence proof; the crude shell
+constants make no claim about the first order at which failure occurs.
+
+#### 10.61.3 Audit scope and corrected frontier
+
+Three independent exact scripts reconstructed the rational certificate,
+the capacity values, and all eighteen maximum-cut pairs.  A separate
+strictification of another weighted optimum gives the same `1/48` hard
+cut gap and `1/12` stopping gap.  The probabilistic lifting argument was
+also derived independently in both forms.
+
+Small actual signings still conceal the obstruction.  Exhaustive
+switching-gauge audits of (10.442) pass at order six (`1,024` classes and
+`322` hard endpoint pairs) and order seven (`32,768` classes and `73,297`
+hard endpoint pairs), with minimum undoubled slacks three and one.
+Random audits of `2,000` matrices at each order eight through twelve also
+found no failure; order nine reached equality.  These random counts are
+**Numerical** only and do not conflict with the asymptotic existence
+proof.
+
+The corrected frontier is:
+
+- (10.435)--(10.437), (10.440), and the universal selection proposal
+  (10.442) are **Falsified**.  They must not be reused as proof targets;
+
+- the exact exposure identity (10.432), the unconditional
+  half-imbalance theorem (10.434), the coverage recursion (10.407), and
+  all previously verified path-congestion results remain valid;
+
+- the implication “(10.435) at every node implies `K\le4`” is still a
+  correct conditional statement, but its hypothesis is false.  The
+  blow-up does not supply `K_{\min}>4`, does not disprove a different
+  `K\le4` argument, and does not settle the quadratic signing limit;
+
+- the highest-priority next task is to optimize the full allocation and
+  endpoint tree on the weighted obstruction and its blow-ups.  Either a
+  different two-orientation or deeper stopping rule absorbs the missing
+  `1/12`, or this family can be amplified into a genuine congestion lower
+  bound.  Independent routes are a global tree dual, a graphon limit of
+  (10.426), and new structured families whose optimized `K_{\min}` passes
+  the current exact lower bound `10/3`.
