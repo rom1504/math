@@ -12328,3 +12328,213 @@ The corrected frontier is:
   bound.  Independent routes are a global tree dual, a graphon limit of
   (10.426), and new structured families whose optimized `K_{\min}` passes
   the current exact lower bound `10/3`.
+
+### 10.62 Complemented half-stopping proves `K\le4`
+
+The tenth wave finds the missing deeper stopping rule.  The false local
+claim `\mathcal B(U)\ge I(U)` is unnecessary: the deficit is paid by
+half-sized child-imbalance reservoirs.  This gives an unconditional
+conserved allocation with path-cover mass at most four on every endpoint
+tree.  The proof below is **Verified** and uses only (10.407),
+(10.412), (10.432)--(10.434), and separate `P/N`
+superadditivity.
+
+#### 10.62.1 The exact complement inequality
+
+At an endpoint node `U` with shores `S,T`, write
+
+```math
+I(X)=|P(X)-N(X)|,
+\qquad
+D(U)=I(S)+I(T),
+\qquad
+\mathcal B(U)=b_S+b_T.
+```
+
+For every block `X`, the definitions give
+
+```math
+Q(X)=\frac{\mathcal R(X)+I(X)}2.
+```
+
+The exact capacity formula (10.433) therefore becomes
+
+```math
+\begin{aligned}
+\mathcal B(U)
+&=\mathcal R(U)-Q(S)-Q(T)+|h_S|+|h_T|\\
+&=\mathcal R(U)
+-\frac{\mathcal R(S)+\mathcal R(T)+D(U)}2
++|h_S|+|h_T|.
+\end{aligned}
+\tag{10.466}
+```
+
+Separate `P/N` superadditivity gives
+`\mathcal R(S)+\mathcal R(T)\le\mathcal R(U)`.  Also
+`I(U)=2|h_S+h_T|`, so
+`|h_S|+|h_T|\ge I(U)/2`.  Hence
+
+```math
+\boxed{
+\mathcal B(U)
+\ge\frac{\mathcal R(U)+I(U)-D(U)}2,
+\qquad
+\mathcal B(U)+\frac{D(U)}2
+\ge\frac{\mathcal R(U)+I(U)}2
+=Q(U)
+\ge I(U).
+}
+\tag{10.467}
+```
+
+This is compatible with Section 10.61.  The strict weighted witness has
+`\mathcal B<I`; its missing local capacity is supplied by the `D/2`
+term.  Thus (10.467) complements rather than rehabilitates (10.435).
+
+#### 10.62.2 The recursive reservoir lemma
+
+Fix any endpoint tree below `U`.  Suppose `0\le t\le1` and `U`
+receives an obligation
+
+```math
+0\le w_U\le tI(U).
+\tag{10.468}
+```
+
+At `U`, make four continuous reservoirs of sizes
+
+```math
+tb_S,
+\qquad
+tb_T,
+\qquad
+\frac t2 I(S),
+\qquad
+\frac t2 I(T).
+\tag{10.469}
+```
+
+For the first two, use one orientation attaining the best capacity
+`b_X`; the last two are child-obligation reservoirs.  Their total is at
+least `tI(U)` by (10.467), so amounts bounded by (10.469) can be chosen
+to sum exactly to `w_U`.  In particular,
+
+```math
+w_X\le\frac t2I(X).
+\tag{10.470}
+```
+
+Recurse into `X` with parameter `t/2`.  On the edge from `U` to `X`,
+only one local orientation is used, so its normalized load is at most
+`t`.  By induction, the child path-cover mass is at most
+`2(t/2)=t`.  The exact recursion (10.412) now gives
+
+```math
+\boxed{
+\theta_U
+=\sum_{X=S,T}\max\{\ell_{UX},\theta_X\}
+\le2t.
+}
+\tag{10.471}
+```
+
+This includes all boundary cases.  If `b_X=0`, its local reservoir and
+allocation are zero and its load is zero.  If `I(X)=0`, its incoming
+obligation is zero.  Singletons are therefore the induction base, and
+every nonzero-range endpoint split strictly decreases block size.
+
+#### 10.62.3 Root scaling and the universal bound
+
+At the root `A`, put
+
+```math
+C_0=\sum_{X=S,T}\sum_{\sigma=\pm}(\mu_X^\sigma)_+,
+\qquad
+D_0=I(S)+I(T).
+```
+
+Coverage (10.407) says `C_0+D_0\ge\mathcal R(A)`.  For nonzero root
+range, set
+
+```math
+t_0=\frac{\mathcal R(A)}{C_0+D_0}\le1.
+\tag{10.472}
+```
+
+Allocate `t_0` times every root capacity and pass obligations
+`w_X=t_0I(X)`.  The root allocations plus obligations total exactly
+`\mathcal R(A)`, so this is a conserved root distribution.  Each root
+edge has at most two nonzero orientation buckets and hence load at most
+`2t_0`.  Applying (10.471) to each child with parameter `t_0` gives
+`\theta_X\le2t_0`.  Therefore
+
+```math
+\boxed{
+K=\theta_A
+\le\sum_{X=S,T}\max\{2t_0,2t_0\}
+=4t_0
+\le4.
+}
+\tag{10.473}
+```
+
+If the root range is zero, the zero allocation handles the omitted
+`0/0` case.  No endpoint-tie optimization is needed: (10.473) holds
+for every fixed endpoint partition tree.
+
+By (10.412), the chosen allocation is dominated coordinatewise by a
+finite measure on oriented root-to-leaf chains of mass at most four.
+Integrating the all-successor bound (10.341) therefore gives the
+unconditional path-cover harvesting estimate
+
+```math
+\boxed{3KQ(A)\le12Q(A).}
+\tag{10.474}
+```
+
+This closes the constant-congestion target from Sections 10.58--10.60.
+It does not prove that four is sharp: the exact matrix (10.445) gives
+the current lower bound `10/3`.  It also does not by itself settle the
+original limit; the fourfold harvesting loss must still be connected
+to a scale-sensitive globally minimizing deletion or insertion
+recurrence.
+
+#### 10.62.4 Exact audit and updated frontier
+
+The construction was implemented independently with rational arithmetic,
+checking every capacity, conservation identity, complement slack, and
+path recursion.  It also passed all `1,024` switching classes at order
+six; the largest constructed path mass there is `10/3`.  A separate
+audit covered all `1,099` labelled signings through order five and all
+`7,482` of their root endpoint-tie pairs, including zero capacities,
+ties, and zero child imbalances.  Named fixed trees give:
+
+| tree | `t_0` | constructed `\theta_A` |
+|---|---:|---:|
+| positive triangle | `2/3` | `2` |
+| matrix (10.420) | `8/11` | `32/11` |
+| `A_7` (10.443) | `5/7` | `20/7` |
+| `A_8` (10.445) | `5/6` | `10/3` |
+| reset matrix (10.403), lexicographic tree | `7/8` | `7/2` |
+| family (10.416), `m=4` | `2/3` | `8/3` |
+
+The endpoint-tree congestion interval is now
+
+```math
+\boxed{
+\frac{10}{3}
+\le \sup_A K_{\min}(A)
+\le4.
+}
+\tag{10.475}
+```
+
+The lower bound is attained by the exact order-eight matrix (10.445);
+the upper bound is (10.473).  The highest-priority next target is no
+longer a local stopping inequality or a constant Carleson estimate.
+It is to insert the verified fourfold chain harvest into the grouped
+replenishment identities (10.340)--(10.342) and prove a
+scale-preserving descent for globally minimizing matrices.  Improving
+`4` toward `10/3` is secondary unless the constant loss becomes the
+specific obstruction in that recurrence.
