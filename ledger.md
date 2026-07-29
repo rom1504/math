@@ -10365,3 +10365,425 @@ non-cut internal triangle residual whose global flip certificate pays
 for it.  Independent alternatives are to exclude the rank-two
 puncture family under *global* minimality, or to prove a laminar
 allocated-capacity theorem for the reset tree.
+
+### 10.57 Fixed-block charging, residual no-go, and affine resonance
+
+The fifth wave closes the clipped estimate on every compatible
+fixed-orientation path.  It also shows that the proposed pointwise
+triangle explanation is false, and that the matched-degree extension
+of the affine puncture family cannot have competitive norm.  All
+algebraic statements below are **Verified**.  Finite searches are
+labelled **Numerical**.
+
+#### 10.57.1 The clipped residual has an exact fixed-block charge
+
+Let
+`A_t=A_0[R_t]`.  At step `t`, let `y_t` be the inherited state and
+let `x_t` be a fresh endpoint in one fixed positive orientation.  Put
+```math
+D_t=\{i:x_{t,i}=-y_{t,i}\},\qquad
+R_{t+1}=\{i:x_{t,i}=y_{t,i}\},\qquad
+y_{t+1}=x_t|_{R_{t+1}}.
+```
+In the `x_t` gauge, write
+```math
+c_t
+=
+x_t(D_t)^{\mathsf T}A[D_t,R_{t+1}]x_t(R_{t+1})
+=\frac{g_t}{4},
+\qquad
+L_{F,t}=\|B_t1\|_1.
+```
+With
+```math
+\gamma_{D,t}=Q(D_t)-H_{D,t},\qquad
+\gamma_{E,t}=Q(A_{t+1})-H_{E,t},
+```
+the definition (10.379) simplifies exactly to
+```math
+\boxed{
+h_t=
+\left[
+g_t-\gamma_{D,t}
+-\max\{\gamma_{E,t},2L_{F,t}\}
+\right]_+.
+}
+\tag{10.383}
+```
+Indeed,
+`\zeta_t=\gamma_{D,t}+\gamma_{E,t}-g_t/2`.
+Since `L_{F,t}\ge c_t\ge0`, this immediately gives
+```math
+\boxed{
+h_t
+\le[4c_t-2L_{F,t}]_+
+\le2c_t.
+}
+\tag{10.384}
+```
+The clipping is essential here: raw backward capacity need not vanish
+when `c_t=0`.
+
+There is a single global Boolean state which charges all the `c_t`.
+The blocks
+```math
+D_0,D_1,\ldots,D_{L-1},D_L=R_L
+```
+partition `R_0`.  Define `s` by
+```math
+s|_{D_t}=x_t|_{D_t}\quad(t<L),
+\qquad
+s|_{D_L}=-y_L.
+```
+Compatibility gives, by induction, that `x_t=s` on `D_t` and
+`x_t=-s` on every later block.  Consequently
+```math
+\boxed{
+c_t
+=-
+\sum_{j>t}
+s_{D_t}^{\mathsf T}A[D_t,D_j]s_{D_j}.
+}
+\tag{10.385}
+```
+Put
+`H_j=s_{D_j}^{\mathsf T}A[D_j]s_{D_j}`.  Summing (10.385)
+over all ordered block pairs yields the exact identity
+```math
+\boxed{
+2\sum_t c_t
+=
+\sum_{j=0}^{L}H_j-s^{\mathsf T}A_0s.
+}
+\tag{10.386}
+```
+Independently randomizing the global sign on every fixed block state
+has expected full energy `\sum_jH_j`.  Thus
+`\sum_jH_j\le P(A_0)`, while
+`-s^{\mathsf T}A_0s\le N(A_0)`.  Equations (10.384)--(10.386)
+prove
+```math
+\boxed{
+\sum_t h_t
+\le2\sum_t c_t
+\le P(A_0)+N(A_0)
+\le2Q(A_0).
+}
+\tag{10.387}
+```
+This proves the open target (10.382) in its stated compatible
+same-positive-orientation setting.  Combining (10.387) with (10.381)
+gives the explicit bound
+```math
+\boxed{
+\sum_tg_t
+\le2\bigl(P(A_0)+N(A_0)\bigr)+8Q(A_0)
+\le12Q(A_0).
+}
+\tag{10.388}
+```
+No global minimality, flatness, or asymptotics enter this argument.
+
+There is a useful extension across orientation changes along one
+path.  Write
+```math
+\mathcal R(A)=P(A)+N(A).
+```
+Suppose a fixed-orientation run `[a,b]` is followed at
+`r=b+1` by an opposite-orientation reset.  If `q_r=Q(A_r)` and
+`g_r` is the inherited augmented gap, let
+```math
+a_r=2q_r-g_r
+```
+be the reset's ordinary cut deficit.  Reserve an old-orientation
+ground on the terminal core in the block-sign averaging argument.
+Its improvement over the inherited terminal state is exactly
+`\mathcal R(A_r)-a_r`.  Therefore
+```math
+\boxed{
+2\sum_{t=a}^{b}c_t
+\le
+\mathcal R(A_a)-\mathcal R(A_r)+a_r.
+}
+\tag{10.389}
+```
+Both `P` and `N` are monotone under principal restriction, so the
+range terms telescope between consecutive runs.  Along any compatible
+path with resets,
+```math
+\boxed{
+\sum_{\sigma_t=+}h_t
+\le
+\mathcal R(A_0)
++\sum_{\sigma_t=-}a_t.
+}
+\tag{10.390}
+```
+A pure orientation mismatch has `a_t=0`, as it should.  What remains
+open is a bound for the cumulative nonzero reset layers and a
+tensorization across the branches of the reset tree; (10.390) does
+not by itself close that problem.
+
+**Numerical audit.**  Exact brute force checked (10.383)--(10.387) on
+2,100 random signings and compatible tower starts of orders `3`--`9`.
+A separate audit deliberately encouraged orientation changes on 3,500
+random paths, totaling 5,975 steps, and checked (10.389)--(10.390).
+These computations only audit the normalization and implementation;
+the proofs above are exact.
+
+#### 10.57.2 Triangle parity cannot explain clipped mass pointwise
+
+For one node, retain
+```math
+c=1_S^{\mathsf T}B1_T,\qquad
+N_S=\sum_{i\in S}\bigl(-(B1_T)_i\bigr)_+.
+```
+Since `g=4c` and `\|B1_T\|_1=c+2N_S`, (10.383) becomes
+```math
+\boxed{
+h=
+\left[
+4c-\gamma_D-
+\max\{\gamma_E,2c+4N_S\}
+\right]_+
+\le[2c-\gamma_D-4N_S]_+.
+}
+\tag{10.391}
+```
+This does not force any non-cut internal exchange.  In fact, for
+every singleton shore `S=\{i\}` in a positive-ground gauge,
+```math
+\boxed{h=2r_i.}
+\tag{10.392}
+```
+To see this, put `d=Q(C)-Q(C[-i])\ge0`.  Then
+```math
+c=r_i,\qquad \gamma_D=0,\qquad
+\gamma_E=2r_i-d,\qquad
+\ell_F=d,\qquad \zeta=-d,
+```
+and (10.392) follows.  Yet a singleton has no internal edge, and the
+internal quotient of a two-vertex shore is also zero.  Thus the
+pointwise triangle-residual route proposed at the end of Section
+10.56 is **Falsified**; any such exchange must first group many
+nodes.
+
+For completeness, the coupled-flip quotient has the following exact
+normal form.  Choose a root in each shore.  After switching away all
+root-incident internal flip bits, an arbitrary flip set is uniquely
+represented by
+```math
+F^\circ=R_S\sqcup R_T\sqcup G,
+```
+where `G` is cross-shore and, for `i,j` away from the root `s_0`,
+```math
+1_{R_S}(ij)
+=
+1_F(ij)+1_F(s_0i)+1_F(s_0j)\pmod2.
+```
+Thus the internal coordinates are exactly odd parities on rooted
+triangles.  Let `H` be their support graph and
+`\beta(H)=|E(H)|-|V(H)|+\operatorname{comp}(H)`.  The codimension of
+the augmented-cut restrictions on `H` is
+```math
+\boxed{
+q(H)=
+\begin{cases}
+\beta(H),&H\text{ bipartite},\\
+\beta(H)-1,&H\text{ nonbipartite}.
+\end{cases}
+}
+\tag{10.393}
+```
+In particular, a forest and a single triangle both have codimension
+zero.  The first locally coercive supports are a four-cycle or two
+independent odd cycles.  Since an arbitrary edge pattern is within
+`q(H)` changes of an allowed restriction, parity alone can change a
+doubled residual reward by at most `8q(H)`.  One odd triangle is not
+a quantitative payment certificate.
+
+There is nevertheless an exact conditional certificate worth
+retaining.  For an oriented augmented-cut word `z`, put
+```math
+\Delta_A(z)=Q(A)-\sigma x^{\mathsf T}Ax,
+\qquad z_{ij}=\sigma x_ix_j.
+```
+For `R=R_S\sqcup R_T`, define
+```math
+Y_R(y)=-4\sum_{e\in R}a_ey_e,
+```
+and, with cross residual `G`,
+```math
+\Gamma_{G,H}(y)
+=
+\min_{z:z|_H=y}
+\left[
+\Delta_A(z)+4\sum_{e\in G}a_ez_e
+\right].
+```
+Directly regrouping the exact edge-flip certificate gives
+```math
+\boxed{
+Q(A^{G\sqcup R})-Q(A)
+=
+\max_{y\in\mathcal C_n|_H}
+\bigl[Y_R(y)-\Gamma_{G,H}(y)\bigr].
+}
+\tag{10.394}
+```
+This isolates the genuine target: control the cheaply extensible
+patterns of `\Gamma_{G,H}`.  Triangle parity determines its domain,
+but not its values.
+
+The small exact minimizers show that this is a real obstruction.
+For (10.350), switch by `(-1,1,1,1,1)` and take `S=\{3\}`;
+then
+```math
+q=8,\quad c=4,\quad\gamma_E=8,\quad
+\ell_F=\zeta=0,\quad h=8,
+```
+with no internal residual.  In the all-one gauge of the order-nine
+minimizer (5.1), `S=\{1,4\}` gives
+```math
+q=24,\quad c=10,\quad\gamma_E=20,\quad
+\ell_F=\zeta=0,\quad h=20,
+```
+while its only internal edge is itself a cut.
+
+**Numerical, exhaustive audit.**  At `n=5`, 66 of the 150 endpoint
+gauge/rooted-shore nodes have positive `h`, and 54 of those have shore
+size at most two.  At `n=9`, the corresponding counts are 3,636 of
+5,355 and 624.  All 949 positive-`h` rooted three-shores at `n=9`
+have every non-cut internal `K_3` flip certified by an original
+zero-deficit endpoint.  For `S=\{0,1,4\}`, one has `h=20`, but the
+best forced doubled endpoint payment is only `4`.
+
+#### 10.57.3 The matched-degree affine extension is necessarily quadratic
+
+The natural attempt to deform (10.365) toward competitive scale has
+an exact Boolean resonance.  Work in the one-copy normalization of
+Section 10.56.2.  Let `m` be even, let balanced
+`s,t\in\{\pm1\}^m` index shores `X,Y`, and let `G,H` be simple
+graphs on the two shores.  Let `K` be bipartite from `X` to `Y`, with
+```math
+\deg_K^{\rm row}(i)=\deg_G(i),\qquad
+\deg_K^{\rm col}(j)=\deg_H(j).
+```
+Put
+```math
+B=J-I-2G,\qquad
+D=I-J+2H,\qquad
+C=J-2K,
+```
+and
+```math
+A=
+\begin{pmatrix}
+B&s&C\\
+s^{\mathsf T}&0&t^{\mathsf T}\\
+C^{\mathsf T}&t&D
+\end{pmatrix}.
+```
+Degree matching gives
+`|E(G)|=|E(H)|=:e` and `|E(K)|=2e`.  The four affine-plane
+words from (10.365) have common oriented score
+```math
+\boxed{M_0=m^2-4e.}
+\tag{10.395}
+```
+If `g_i=\deg_G(i)`, `h_j=\deg_H(j)`, and
+```math
+b_i=m-1-2g_i,\qquad a_j=m-1-2h_j,
+```
+their four field profiles are
+```math
+\begin{aligned}
+X_i:&\quad
+(2b_i+1+s_i,\ 2b_i+1-s_i,\ 1-s_i,\ 1+s_i),\\
+z:&\quad(0,0,0,0),\\
+Y_j:&\quad
+(1+t_j,\ 1-t_j,\ 2a_j+1+t_j,\ 2a_j+1-t_j).
+\end{aligned}
+\tag{10.396}
+```
+Assume the proposed plane words are actual endpoints.  In an endpoint
+gauge, if two vertices have zero field, flipping both changes the
+score by four times their oriented edge.  Endpoint maximality forces
+that edge to be `-1`.  Applying this to the two zero-field classes in
+(10.396) shows that `G` is bipartite across `s^+\mid s^-` and `H`
+is bipartite across `t^+\mid t^-`.  A forbidden within-class edge
+would explicitly improve one plane word by `4`.
+
+Every `G` edge therefore has `s_is_j=-1`, and balance gives
+```math
+H_B(s)
+=
+\sum_{i<j}B_{ij}s_is_j
+=-\frac m2+2e.
+```
+Fix the singleton spin to `+1`, set `x=s`, and average the other
+shore state `y` uniformly.  The `D` quadratic, `C` cross, and
+`t`-linear terms all have mean zero, while `s^{\mathsf T}x=m`.
+Hence
+```math
+\boxed{
+\mathbb E_y H_A(s,1,y)
+=
+\frac m2+2e
+=
+\frac{m^2+m-M_0}{2}.
+}
+\tag{10.397}
+```
+Some Boolean `y` attains at least this average.  Therefore actual
+endpoint status `M(A)=M_0` requires
+```math
+\boxed{
+M_0\ge\frac{m^2+m-M_0}{2},
+\qquad
+M_0\ge\frac{m(m+1)}{3}.
+}
+\tag{10.398}
+```
+This rules out the entire matched-degree ansatz at competitive scale,
+without regularity or pseudorandomness.  In the `d`-regular case,
+`M_0=m(m-2d)`, so
+```math
+m-2d\ge\frac{m+1}{3},
+\qquad
+d\le\frac{2m-1}{6}.
+```
+In particular, `d=(m-C\sqrt m)/2` is impossible.  Equivalently, the
+necessary bipartite closure creates the exact Boolean eigenvector
+`Bs=(2d-1)s`; secondary spectral pseudorandomness cannot remove it.
+
+**Numerical audit.**  Exhaustive enumeration at
+`(m,d)=(4,1),(6,1),(8,2)` gives `(M_0,M(A))` equal to
+`(8,16),(24,24),(32,44)`, respectively.  This is a normalization
+check only; (10.398) is exact.
+
+#### 10.57.4 Updated frontier
+
+This wave changes the priority order:
+
+- the clipped triangular target (10.382) is solved on every
+  compatible fixed-orientation path by one fixed Boolean mosaic.  On
+  paths with resets, the only remaining scalar cost is the sum of the
+  ordinary reset layers in (10.390);
+
+- clipped mass cannot pointwise force a triangle residual: singleton
+  and two-vertex shores already falsify that implication.  A residual
+  exchange would need grouped cycle excess and control of the
+  conditional extension profile (10.394);
+
+- the most natural matched-degree deformation of the rank-two affine
+  puncture family is necessarily quadratic.  Any competitive affine
+  obstruction must evade either degree matching or the zero-field
+  pair-flip closure.
+
+The highest-priority open problem is now a reset-layer or branch
+tensorization theorem: charge
+`\sum_{\sigma_t=-}(2q_t-g_t)` and the reset-tree allocation without
+paying the same parent range on many branches.  Independent routes
+are a grouped conditional-extension theorem for (10.394), and a
+global-minimality argument outside the matched-degree affine ansatz.
