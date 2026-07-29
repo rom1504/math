@@ -23089,3 +23089,534 @@ closing it:
   should put two independent attacks on (10.837)/(10.838)—one probabilistic
   and one `A`-adapted structural—and keep a third route on shared
   child-completion collisions or matched parent transport.
+
+### 10.81 Random-coset walls, planted hashing, and completion collisions
+
+The twenty-eighth wave separates the local and global content of the
+block-coset route. Uniform random diagonals have too little aligned mass
+above the exact power-saving boundary. Conversely, any one low-row aligned
+cut can be planted in a balanced coset whose entire support is row-good.
+The remaining global requirement is a correlated witness family with few
+coordinate signatures and low-row ternary closure; independent completion
+does not supply it.
+
+A parallel completion audit proves that every successful pointwise
+low-information completion channel, with the selector KL included in its
+budget, already contains a fixed-cut certificate.
+Microcanonical entropy and row-Gibbs pressure give exact reformulations but
+not the missing collision theorem. A seemingly weaker mean child-entropy
+channel is finally shown to be circular by the same Hanson--Wright transport
+bound. No convergence proof or asymptotic counterexample is obtained.
+
+#### 10.81.1 Uniform random cosets stop above the target boundary
+
+Fix a selector `S`, a threshold `T\ge0`, write `H=H_S`, and for
+a `k`-block partition `P` put
+
+```math
+K_P=\{Pz:z\in\{\pm1\}^k\},
+\qquad
+E_T=\{x:|x^{\mathsf T}Hx|\ge T\},
+\qquad
+\pi_T=2^{-n}|E_T|.
+```
+
+Coordinatewise multiplication makes `K_P` a subgroup of the sign cube.
+A uniform diagonal `D=\operatorname{diag}(\epsilon)` selects a uniform
+coset. Hence the hit event has the exact saturation formula
+
+```math
+\boxed{
+\Pr_D\!\left\{
+Q(P^{\mathsf T}DH_SDP)\ge T
+\right\}
+=\frac{|E_TK_P|}{2^n},
+\qquad
+\pi_T\le\Pr_D(\mathrm{hit})
+\le\min\{1,2^{k-1}\pi_T\}.
+}
+\tag{10.848}
+```
+
+The effective factor is `2^{k-1}`, because `E_T=-E_T` and global
+sign gives the same translate. Randomizing the partition cannot improve
+this universal amplification bound.
+
+The row-good event in (10.833) is itself constant on `K_P` cosets and
+has uniform-diagonal probability at least one half. Thus
+`\Pr(\mathrm{hit}\mid\mathrm{row\ good})\le2\Pr(\mathrm{hit})`, while
+the general lower bound is only
+`\max\{0,2\Pr(\mathrm{hit})-1\}`. The half-mass row theorem therefore
+cannot exclude complete erasure of a rare hit set.
+
+The selector matrix has exact norms
+
+```math
+\boxed{
+\lVert H_S\rVert_F^2
+=n(n-1)p_2(1-p_2),
+\qquad
+\lVert H_S\rVert_{\mathrm{op}}
+\le(1+p_2)\lVert A\rVert_{\mathrm{op}}
+\le(1+p_2)\sqrt{2q_n}.
+}
+\tag{10.849}
+```
+
+The first identity just counts selected and unselected ordered pairs; the
+second uses
+`H_S=J_SAJ_S-p_2A`. The Rademacher
+[Hanson--Wright inequality](https://arxiv.org/abs/1306.2872), followed by
+the union bound over the coset, gives
+
+```math
+\boxed{
+\Pr_D(\mathrm{hit})
+\le
+2^k\exp\!\left[
+-c_{\mathrm{HW}}\min\left\{
+\frac{T^2}{n(n-1)p_2(1-p_2)},
+\frac{T}{(1+p_2)\sqrt{2q_n}}
+\right\}\right].
+}
+\tag{10.850}
+```
+
+Let `L_n=n^{3/4-c}` and use
+`k=O(L_n/\log n)` from (10.835). Uniformly in a fixed-ratio window,
+
+```math
+\boxed{
+T=\omega(n^{3/2-c})
+\quad\Longrightarrow\quad
+\Pr_D(\mathrm{hit})
+\le\exp\{-\omega(L_n)\}.
+}
+\tag{10.851}
+```
+
+For the quadratic exponent this uses
+`1-2c>3/4-c`; for the linear exponent it is immediate. In particular,
+a macroscopic `T\ge\eta n^{3/2}` gives only
+`\exp\{-\Omega(n^{3/4})\}`, too small for every fixed power-saving
+target. At `T=\Theta(n^{3/2-c})`, however, the upper bound is exactly
+scale-matched; throughout `T=O(n^{3/2-c})` it does not rule out
+success. This **falsifies the uniform random-diagonal law above the
+boundary**, not an adapted common law in (10.838).
+
+#### 10.81.2 A planted cut can be row-regularized, but families require low-row closure
+
+There is no additional local block-row obstruction once one aligned cut is
+already low-row. Fix `x\in\{\pm1\}^n`, set
+`D_x=\operatorname{diag}(x)`, and hash vertices independently into
+`k` blocks. With `\bar e=k^{-1}\mathbf1_k`,
+`v_i=x_iAe_i`, and block label `g(i)`,
+
+```math
+\boxed{
+\begin{aligned}
+AD_xP&=(Ax)\bar e^{\mathsf T}+\sum_iZ_i,\\
+Z_i&=v_i(e_{g(i)}-\bar e)^{\mathsf T},\\
+\sum_i\mathbb EZ_iZ_i^{\mathsf T}
+&=(1-k^{-1})A^2,\\
+\sum_i\mathbb EZ_i^{\mathsf T}Z_i
+&=n(n-1)(k^{-1}I-k^{-2}J).
+\end{aligned}
+}
+\tag{10.852}
+```
+
+Put
+
+```math
+\nu=\max\{(1-k^{-1})\lVert A\rVert_{\mathrm{op}}^2,n(n-1)/k\},
+\quad
+u=\log(8(n+k)),
+\quad
+L=\sqrt{(n-1)(1-k^{-1})}.
+```
+
+Rectangular matrix Bernstein and block-size Chernoff bounds show that,
+when `n/k\ge12\log(16k)`, some nonempty partition with every block
+between `n/(2k)` and `2n/k` satisfies
+
+```math
+\boxed{
+\max_z\lVert AD_xPz\rVert_2^2
+\le
+2R_2(x)+8k\nu u+\frac{16}{9}kL^2u^2.
+}
+\tag{10.853}
+```
+
+The proof uses
+`\lVert\mathbb E(AD_xP)\rVert_{\mathrm{op}}^2=R_2(x)/k` and the
+standard inverted Bernstein tail. For an exact minimizer and the parameters
+in (10.835),
+
+```math
+\boxed{
+R_2(x)=O(n^{9/4-c})
+\quad\Longrightarrow\quad
+\max_zR_2(D_xPz)=O(n^{9/4-c}).
+}
+\tag{10.854}
+```
+
+The all-ones block word is `x`. If `(\sigma,x)` extends an oriented
+exact child optimizer for `S`, then
+
+```math
+\boxed{
+Q(P^{\mathsf T}D_xH_SD_xP)
+\ge|x^{\mathsf T}H_Sx|
+\ge\sigma x^{\mathsf T}H_Sx
+=Q(A[S])-p_2\sigma x^{\mathsf T}Ax
+\ge Q(A[S])-p_2q_n
+=Y_A(S)+B_{n,m}.
+}
+\tag{10.855}
+```
+
+Thus a low-row exact-child completion gives perfect local alignment inside
+an entirely row-good entropy-sized coset. Here `P,D_x` depend on the
+selector, so this is not (10.837).
+
+The global obstruction can be stated exactly. For a witness family
+`\mathcal F=\{x^{(0)},\ldots,x^{(r-1)}\}`, attach to coordinate `i`
+the relative signature
+
+```math
+\tau_i=(x_i^{(1)}x_i^{(0)},\ldots,
+x_i^{(r-1)}x_i^{(0)})\in\{\pm1\}^{r-1}.
+```
+
+If its nonempty signature classes have sizes
+`N_1,\ldots,N_J`, then for a partition `P` there exists a diagonal
+`D` whose spin coset contains the family exactly when every block lies
+inside one signature class. After absorbing the base word's block signs,
+one may take `D=\operatorname{diag}(x^{(0)})`. With maximum block size
+`b`, the minimum number of blocks is
+
+```math
+\boxed{
+K_b(\mathcal F)
+=\sum_{j=1}^J\left\lceil\frac{N_j}{b}\right\rceil.
+}
+\tag{10.856}
+```
+
+Every other containing partition refines the coarsest signature partition,
+and its spin coset contains the minimal signature coset. Moreover the
+underlying spin cosets are ternary closed:
+
+```math
+\boxed{
+x,y,w\in DP\{\pm1\}^k
+\quad\Longrightarrow\quad
+x\odot y\odot w\in DP\{\pm1\}^k.
+}
+\tag{10.857}
+```
+
+Individual row bounds on the planted witnesses therefore do not control
+their coset closure. There is also a deterministic necessary field bound.
+For any containing partition with at most `k` blocks, take
+`D=\operatorname{diag}(x^{(0)})` and let `C_j` be the signature
+classes. Averaging over block signs and applying Cauchy--Schwarz gives
+
+```math
+\boxed{
+\max_zR_2(DPz)
+\ge\frac1k
+\left(
+\sum_j\lVert AD\mathbf1_{C_j}\rVert_2
+\right)^2.
+}
+\tag{10.858}
+```
+
+An exact finite wall occurs in `A_8`. The three words
+
+```text
+x^(0) = +------+
+x^(1) = +-----+-
+x^(2) = +-+---+-
+```
+
+are exact-child completions on respectively
+`\{0,1,2,6\}`, `\{0,1,2,7\}`, and `\{0,1,2,3\}`.
+Their row squares are `64,64,40`, but
+
+```math
+\boxed{
+R_2(x^{(0)}\odot x^{(1)}\odot x^{(2)})=72.
+}
+\tag{10.859}
+```
+
+Therefore no cap-`64` block coset contains all three, although each cut
+is individually eligible. This falsifies separate completion followed by
+automatic sign-profile grouping, not correlated completion or (10.837).
+
+Independent completion has the wrong signature geometry as well. For
+`r` independent uniform full spins, the `n` coordinate signatures
+are iid uniform among `N=2^{r-1}` values. If `J` is the number
+occupied, then
+
+```math
+\Pr\{J\le k\}
+\le{N\choose k}(k/N)^n.
+\tag{10.860}
+```
+
+Choosing `r=1+\lceil\log_2(2k)\rceil` makes this
+`\exp\{-\Omega(n)\}` for `k=o(n)`. Only `O(\log n)`
+independent witnesses already exceed the block budget with overwhelming
+probability. Actual child completions are not independent uniform spins,
+so this is a scoped mechanism wall.
+
+#### 10.81.3 Pointwise completion channels reduce back to one fixed cut
+
+For any oriented child state let
+
+```math
+\delta_S(d)=Q(A[S])-\sigma x_S^{\mathsf T}A[S]x_S.
+```
+
+Expanding (10.792) and using
+`\sigma x^{\mathsf T}Ax\le q_n` gives the generalization of (10.825):
+
+```math
+\boxed{
+\widehat\ell(S,d)
+=\delta_S(d)+p_2\sigma x^{\mathsf T}Ax-p^{3/2}q_n
+\le\delta_S(d)-B_{n,m}.
+}
+\tag{10.861}
+```
+
+Thus every outside completion is threshold-`t` favorable whenever
+`\delta_S(d)\le B_{n,m}+t`.
+
+Let `\mathcal C_t(d)` be the selectors satisfying this incidence,
+`r_t(d)=|\mathcal C_t(d)|`, and
+`N=\binom nm`. For any channel supported on the incidence relation,
+the posterior-support bound is
+
+```math
+\boxed{
+I(S;D)+D(P_S\Vert U_m)
+=\mathbb E_DD(P_{S\mid D}\Vert U_m)
+\ge
+\mathbb E\log\frac{N}{r_t(D)}.
+}
+\tag{10.862}
+```
+
+If `I(S;D)+D(P_S\Vert U_m)\le K`,
+`\mathbb ER_2(D)\le C`, and `K,C>0`, then for every
+`\alpha>1` one output satisfies
+
+```math
+\boxed{
+\frac{r_t(d)}N\ge e^{-\alpha K},
+\qquad
+R_2(d)\le\frac{\alpha}{\alpha-1}C.
+}
+\tag{10.863}
+```
+
+Indeed average
+`\log(N/r_t(D))+(\alpha-1)KR_2(D)/C` and take one output no larger
+than its mean `\alpha K`. If `K=0`, full incidence holds almost
+surely; if `C=0`, row square vanishes almost surely. At the target scales
+`K=O(n^{3/4-c})`, `C=O(n^{9/4-c})`, and
+`t=O(n^{3/2-c})`, taking `\alpha=2` produces the single fixed cut
+in (10.795), up to constant factors. Randomized completions cannot bypass
+collision.
+
+There is a complete microcanonical diagnostic. Let
+`\mathcal F_S(t)` be the oriented projective child states with
+`\delta_S\le B_{n,m}+t`, put `f_S(t)=|\mathcal F_S(t)|`, and define
+
+```math
+\boxed{
+\mathcal K_t
+=\mathbb E_{S\sim U_m}
+\log\frac{2^m}{f_S(t)}.
+}
+\tag{10.864}
+```
+
+Choose a state uniformly from `\mathcal F_S(t)` and extend it uniformly
+outside. Then `I(S;D)\le\mathcal K_t`. Entropy duality and the
+Hanson--Wright mgf, applied to
+`A[:,S]^{\mathsf T}A[:,S]`, give
+
+```math
+\boxed{
+\mathbb ER_2(D)
+\le n(n-1)
++O\left(n^{7/4}\sqrt{\mathcal K_t}
++n^{3/2}\mathcal K_t\right).
+}
+\tag{10.865}
+```
+
+Consequently
+
+```math
+\boxed{
+0\le t=O(n^{3/2-c}),
+\qquad
+\mathcal K_t=O(n^{3/4-c})
+}
+\tag{10.866}
+```
+
+is sufficient for the restriction edge, but (10.863) shows that it already
+forces a fixed-cut certificate. It is a collision criterion, not an escape.
+
+Its conditional power-scale wall is exact. Put
+`h_S(t)=Q(A[S])-B_{n,m}-t`. If
+`h_S(t)\ge\gamma n^{3/2}` on a fixed positive fraction of selectors,
+Hanson--Wright on `A[S]` gives
+
+```math
+\boxed{\mathcal K_t=\Omega(n^{3/4}).}
+\tag{10.867}
+```
+
+This is too large for every fixed power saving. The statement is conditional
+on the macroscopic threshold; no such threshold is asserted without a
+restriction-gap hypothesis.
+
+A row-tilted version is exact but equivalent in difficulty. With
+
+```math
+Z(\lambda)=\sum_de^{-\lambda R_2(d)},\quad
+Z_S(\lambda)=\sum_{d:S\sim_td}e^{-\lambda R_2(d)},\quad
+\pi_\lambda(d)=\frac{e^{-\lambda R_2(d)}}{Z(\lambda)},\quad
+\mathcal P_t(\lambda)
+=\mathbb E_S\!\left[-\log\frac{Z_S(\lambda)}{Z(\lambda)}\right],
+```
+
+conditioning the row-Gibbs prior on incidence gives
+
+```math
+\boxed{
+I(S;D)\le\mathcal P_t(\lambda),
+\qquad
+\mathbb ER_2(D)
+=\mathbb E_{\pi_\lambda}R_2(D)+\mathcal P_t'(\lambda).
+}
+\tag{10.868}
+```
+
+There is no universal sign for the derivative, and (10.863) still extracts
+one fixed cut from any successful parameter.
+
+#### 10.81.4 Mean child entropy makes row cost automatic but is circular
+
+For completeness, take arbitrary child laws `\mu_S`, extend uniformly
+outside, and set
+
+```math
+K_S=D_{\mathrm{KL}}(\mu_S\Vert U_{\mathcal D_S}),
+\qquad K=\mathbb E_SK_S.
+```
+
+The exact channel identities are
+
+```math
+\boxed{
+I(S;D)\le K,
+\qquad
+\mathbb E[\widehat\ell\mid S,d_S]
+=Y_A(S)-(1-p_2)c_S(d_S).
+}
+\tag{10.869}
+```
+
+The same entropy-to-row calculation proves
+
+```math
+\boxed{
+\mathbb ER_2(D)
+\le n(n-1)
++O\left(n^{7/4}\sqrt K+n^{3/2}K\right).
+}
+\tag{10.870}
+```
+
+It is tempting to seek `K=O(n^{3/4-c})` and enough mean child energy
+to cancel the restriction excess. The final audit closes this apparent
+escape. Under the uniform oriented child law the signed energy is centered;
+entropy transport and Hanson--Wright give
+
+```math
+\boxed{
+\mathbb E_{S,d_S}c_S(d_S)
+\le O\left(n\sqrt K+n^{3/4}K\right).
+}
+\tag{10.871}
+```
+
+At the target information budget, the right side is
+`O(n^{3/2-c})`. Hence any such channel with the one-sided loss bound
+`\mathbb E\widehat\ell\le O(n^{3/2-c})` necessarily has
+
+```math
+\boxed{
+\mathbb E_{U_m}Y_A(S)\le O(n^{3/2-c}),
+}
+\tag{10.872}
+```
+
+the already sufficient mean restriction lemma (10.796). Conversely, under
+(10.872), the uniform child law has `K=0`, zero mean child energy, and
+meets the channel criterion. Thus the general entropy--reward route is
+**equivalent at this scale to the circular mean lemma** and is retired as
+an independent mechanism.
+
+#### 10.81.5 Updated frontier
+
+Wave 28 keeps compressed fixed-cut alignment in front and makes its missing
+global content more precise:
+
+- uniform random diagonals cannot establish (10.838) when the aligned
+  threshold exceeds `n^{3/2-c}`: their complete coset hit probability is
+  `\exp\{-\omega(n^{3/4-c})\}`, and row-good conditioning supplies no
+  rare-event intersection. The exact target boundary remains open and
+  requires a minimizer-specific lower tail or a genuinely adapted common
+  law;
+
+- locally, block architecture costs nothing further. Every aligned
+  low-row cut can be planted in a balanced entropy-sized coset whose whole
+  support remains row-good. For the deterministic target (10.837), a
+  globally chosen witness family must satisfy the balanced signature count
+  `K_b(\mathcal F)\le k`, and its minimal signature coset together with
+  every required balanced refinement must stay low-row. The exact `A_8`
+  example shows that individually eligible completions need not satisfy
+  this closure. This condition does not apply verbatim to the multi-coset
+  law in (10.838);
+
+- every pointwise favorable low-information, low-row completion channel
+  with uniform selector—or with selector KL charged in the total budget—
+  contains one fixed cut with the required coverage. Microcanonical entropy
+  and row-Gibbs pressure are exact ways to state the missing collision, but
+  their macroscopic thresholds meet the `n^{3/4}` Hanson--Wright wall;
+
+- the more permissive mean child-entropy channel automatically meets the row
+  budget, but its possible energy reward is only
+  `O(n^{3/2-c})`. It is scale-equivalent to the already sufficient mean
+  restriction lemma and should not be retried as an independent route;
+
+- no convergence proof or asymptotic counterexample has appeared. The Wave
+  25 strategic assessment remains directionally current, with mandatory
+  regeneration at Wave 30. Wave 29 should attack a **correlated common
+  coset law** or a low-signature witness family directly, keep a separate
+  attempt on the joint aligned-and-low-row scalar density exposed after
+  (10.854), and use the third route for matched parent Hellinger transport
+  rather than uniform random cosets or independent completion.
