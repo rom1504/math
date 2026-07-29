@@ -59,8 +59,13 @@ falsifying computation.
 
 Use GitHub-compatible Markdown throughout the active files:
 
-- write inline mathematics as `$...$`;
-- write display mathematics as `$$...$$` on separate lines;
+- use GitHub's backtick-protected inline-math form when an expression contains
+  Markdown-sensitive TeX characters such as underscores, asterisks, escaped
+  braces, spacing commands, or norm bars;
+- use fenced `math` blocks for display mathematics;
+- inside a list item, keep short formulas inline and use a protected
+  `\displaystyle` expression when a separate indented math fence would be
+  interpreted as a code block;
 - keep blank lines around display equations, headings, tables, and lists;
 - verify that equations, links, tables, and lists render correctly before a
   checkpoint is committed.
