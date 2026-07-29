@@ -15745,3 +15745,515 @@ target must explicitly survive the order-nine wall (10.579)--(10.581) and the
 timing obstructions in A5, A7, and A8.  Independent routes are a categorical
 response-profile theorem weaker than centered `Q`-distance and a mixed
 `A_9`--conference amplification audit.
+
+### 10.69 Response duality has no location, but correlated active states survive
+
+The sixteenth wave attacks the proposed response-to-temporal bridge at three
+levels.  The exact response problem has a finite support-function dual, but
+convexifying local minimizers changes the pure problem and returns only signed
+block totals with no endpoint or temporal location.  A new order-eight
+partition has positive pure and mixed response while every root endpoint
+residual vanishes; under the existing conserved endpoint allocation, no
+descendant service is available either.  At the finer state level, exact
+cross grounds can miss a positive finite increment, but a deficit-truncated
+active response satisfies a sharp deterministic sandwich.  This functional
+is genuinely weaker than global `Q`-distance, although every Cartesian
+relaxation containing opposite block-extremal corners is again
+self-defeating.
+
+All identities, LP duals, finite matrices, counts, and inequalities below are
+**Verified**, including independent cross-audits.  The surviving correlated
+partition/temporal theorem is explicitly **Open**.  Nothing in this section
+proves convergence.
+
+#### 10.69.1 The exact response dual and a persistent-ground wall
+
+Fix a partition of an order-`n` global minimizer,
+
+```math
+A=C+\bigoplus_{i=1}^kD_i,
+\qquad Q(A)=q_n.
+```
+
+Put
+
+```math
+s_i=Q(D_i),\qquad b_i=q_{|V_i|},\qquad
+x_i=s_i-b_i,
+```
+
+and `S=\sum_i s_i`, `B=\sum_i b_i`, `X=S-B`.  On the signed
+projective state space `\Omega`, write
+
+```math
+a_\omega=q_n-\sigma z^{\mathsf T}Az,
+\qquad
+\delta_M(\sigma,y)=Q(M)-\sigma y^{\mathsf T}My.
+```
+
+For a tuple of local minimizers `\mathbf G=(G_i)`, let
+`H_{\mathbf G}=C+\bigoplus_iG_i`.  Direct cancellation gives
+
+```math
+\boxed{
+\begin{aligned}
+f_{\mathbf G}(\omega)
+&=\sum_i[\delta_{D_i}(\omega)-\delta_{G_i}(\omega)]-a_\omega\\
+&=X+\sigma z^{\mathsf T}H_{\mathbf G}z-q_n,\\
+\rho_{\rm pure}
+&:=\min_{\mathbf G}\max_\omega f_{\mathbf G}(\omega)
+=X+\min_{\mathbf G}[Q(H_{\mathbf G})-q_n].
+\end{aligned}
+}
+\tag{10.586}
+```
+
+For each tuple, a maximizing state is an exact certificate, but it may depend
+on the entire tuple.  There need not be one common state distribution.
+
+Convexify each local minimizer class and let the state player respond only to
+the expected profile.  Finite minimax gives a genuine LP.  Its exact dual is
+
+```math
+\boxed{
+\begin{aligned}
+\rho_{\rm mix}
+&=\max_{p\in\Delta(\Omega)}
+\left[\sum_i r_i(p)-\mathbb E_pa_\omega\right],\\
+r_i(p)
+&=x_i+\min_{G\in\mathcal M_i}
+\mathbb E_p\!\left[
+\sigma z_i^{\mathsf T}(G-D_i)z_i
+\right].
+\end{aligned}
+}
+\tag{10.587}
+```
+
+Equivalently, the primal minimizes
+`X+Q(C+\bigoplus_iK_i)-q_n` over
+`K_i\in\operatorname{conv}\mathcal M_i`.  The block marginals `r_i` can
+have either sign.  Even when they are nonnegative, (10.587) supplies neither
+a retained vertex set, an endpoint pair, a timestamp, nor a proper Hall cut.
+If `r_i=x_i`, it has merely returned the captured excess already present in
+the input.
+
+The distinction between pure and mixed response is strict on the `A_9`
+capture wall (10.579).  Exact enumeration and matching rational primal/dual
+certificates give
+
+```math
+\boxed{
+\rho_{\rm pure}=12,
+\qquad
+\rho_{\rm mix}=8,
+\qquad
+r_V=12=X,
+\qquad
+\mathbb E_pa=4.
+}
+\tag{10.588}
+```
+
+The mixed primal averages two order-six minimizers and has fractional hybrid
+norm twenty.  Its dual gives mass one-half to two signed states whose
+six-block spins agree and whose orientations are opposite.  Every local
+quadratic energy therefore cancels, so the margin `r_V=12` is independent of
+the replacement and literally restates `X`.  A common distribution loses
+four units of the pure response through global slack.
+
+There is a stronger pure obstruction.  Each of the 40 norm-24 completions of
+the `6+1+1+1` wall shares at least one signed `+24` ground with the original
+`A_9`; the exact number is between four and thirteen.  At every persistent
+ground the signed profile is
+
+```math
+(C,D,G)=(14,10,10)
+\quad\text{or}\quad
+(18,6,6).
+```
+
+Consequently, for every such completion,
+
+```math
+\boxed{
+Q(C+(1-t)D+tG)=24,
+\qquad
+\Phi_t=24-[(1-t)22+t10]=2+12t
+\quad(0\le t\le1).
+}
+\tag{10.589}
+```
+
+Convexity gives the norm upper bound, and the persistent ground gives the
+reverse inequality.  The old/new internal energies agree at that state; its
+deficit falls by twelve solely because the local baseline changes from 22 to
+10.  Thus the full response rise can occur with zero variation of the global
+support function.  A derivative or subgradient of `Q` along the replacement
+path cannot by itself become temporal service.
+
+#### 10.69.2 Positive response does not imply endpoint service
+
+The balanced matrix `A_8` from (10.445) gives a smaller and sharper wall.
+Use
+
+```math
+V_1=\{0,3,4,5\},
+\qquad
+V_2=\{1,2,6,7\}.
+```
+
+Both induced blocks have norm twelve.  Since `q_4=8`, while the cross-only
+matrix has norm sixteen,
+
+```math
+\boxed{
+Q(A_8)=20,
+\quad Q(C)=16,
+\quad S=24,
+\quad B=16,
+\quad X=8.
+}
+\tag{10.590}
+```
+
+All `48^2` labelled local-minimizer pairs were exhausted.  The best pure
+hybrid has norm twenty, with sixteen pairs attaining it.  The zero matrices
+belong to the two convexified minimizer hulls, and an exact dual certifies the
+mixed value.  Hence
+
+```math
+\boxed{
+\rho_{\rm pure}=8,
+\qquad
+\rho_{\rm mix}=4,
+\qquad
+(r_1,r_2)=(4,4),
+\qquad
+\mathbb E_pa=4.
+}
+\tag{10.591}
+```
+
+The nonnegative mixed marginals are again exactly the two internal block
+excesses.  They do not create a temporal terminal credit: these response
+blocks are not endpoint shores of `A_8`.  In fact, every actual root endpoint
+shore has norm `q_4=8` and hence zero terminal excess.
+
+All four positive and four negative projective grounds of `A_8` have zero
+cross-Gram entry.  On each of their 32 directed root shores,
+
+```math
+Q(X)=8,
+\qquad h_X=0,
+\qquad L_X=10,
+\qquad \partial=12,
+\qquad c=12,
+\qquad[c-\partial]_+=0.
+\tag{10.592}
+```
+
+Thus the best original root resource
+
+```math
+R_{\rm end}(A)
+=\max_{p\in\mathcal G_+(A),\ n\in\mathcal G_-(A)}
+|p^{\mathsf T}An|
+```
+
+satisfies
+
+```math
+\boxed{
+8=\rho_{\rm pure}>R_{\rm end}(A_8)=0.
+}
+\tag{10.593}
+```
+
+This falsifies a direct response-to-root-endpoint inequality.  It also
+falsifies localization through the existing conserved endpoint allocation:
+all allocation remains at the root, so every allocation-weighted descendant
+residual is zero, as in (10.538).  This statement must not be strengthened to
+all raw descendant residuals; some unused descendant buckets have positive
+raw residual.
+
+There is a complementary statewise wall on `A_9`.  Across the 40 optimal
+completions there are 904 completion--active-state incidences, representing
+46 distinct oriented states.  For an active state `z`, let `r_*(z)` be the
+largest **total root residual upper bound** `|z^{\mathsf T}Hw|` over
+opposite-orientation grounds `w`.  It ignores shore allocation and temporal
+compatibility.  Nevertheless, 712 incidences have `r_*=8<12`, including 248
+of the 312 persistent incidences, and every completion has a bad persistent
+state.  Hence response cannot be charged pointwise to the active witness.
+Each completion also has exceptional pairs with total residual sixteen, so
+existential active-state selection is not falsified; it would require a new
+mixing and compatibility theorem.
+
+The timing walls remain independent.  A5 has a positive prefix demand with
+zero resource on its matching root pair.  The A7 `7\to6\to5` chain has a
+negative first atom followed by a positive suffix atom with zero suffix
+resource, so its root sum succeeds while a proper descendant cut fails.  In
+`A_8`, endpoint-shore outcomes have positive raw centered demand and zero
+root residual; this is outcome-by-outcome only, while the separate
+singleton-eligible calculation in Section 10.66.1 supplies the positive
+parent-average wall.  Of 2,856 neutral positive-raw-demand shores in the
+`A_9` completion census, 1,944 remain positive after their terminal excess
+is paid.  A static response scalar has neither the sign nor the time
+information needed for these cuts.
+
+#### 10.69.3 Exact active-state localization and its Cartesian wall
+
+The failed scalar bridge motivates retaining the actual correlated cross
+profile.  For oriented states `\omega=(\sigma,z)`, define
+
+```math
+e_M(\omega)=\sigma z^{\mathsf T}Mz,
+\qquad
+\delta_C(\omega)=Q(C)-e_C(\omega),
+\qquad
+\mathcal A_C(t)=\{\omega:\delta_C(\omega)\le t\}.
+```
+
+Use the signed support, one-sided sublinear gauge, symmetric seminorm, and
+deficit-corrected response
+
+```math
+\begin{aligned}
+h_{C,t}(K)&=\max_{\mathcal A_C(t)}e_K,\\
+\mathfrak a^+_{C,t}(K)&=[h_{C,t}(K)]_+,\\
+\mathfrak a_{C,t}(K)&=\max_{\mathcal A_C(t)}|e_K|,\\
+\mathcal R_{C,t}(K)&=
+\max_{\mathcal A_C(t)}[e_K-\delta_C].
+\end{aligned}
+```
+
+Only `\mathfrak a_{C,t}` is a seminorm in the usual symmetric sense;
+`\mathfrak a^+` is a degenerate one-sided sublinear gauge, and
+`\mathcal R` is nonhomogeneous.  Subtracting `Q(C)` inside its finite support
+function and splitting at deficit `t` proves
+
+```math
+\boxed{
+\begin{aligned}
+\Delta_C(K)
+&:=Q(C+K)-Q(C)
+=\max_\omega[e_K(\omega)-\delta_C(\omega)],\\
+\mathcal R_{C,t}(K)
+&\le\Delta_C(K)
+\le\max\{\mathcal R_{C,t}(K),Q(K)-t\},\\
+h_{C,t}(K)-t
+&\le\Delta_C(K)
+\le\max\{h_{C,t}(K),Q(K)-t\}.
+\end{aligned}
+}
+\tag{10.594}
+```
+
+There is also the one-sided gauge bound
+
+```math
+\boxed{
+-\mathfrak a^+_{C,t}(-K)-t
+\le\Delta_C(K)
+\le\max\{\mathfrak a^+_{C,t}(K),Q(K)-t\}.
+}
+\tag{10.595}
+```
+
+The tail term is necessary: a near-active state can overtake every old
+ground.  For infinitesimal positive perturbations it disappears, and the
+directional derivative is exactly `h_{C,0}(K)`.
+
+For `A=C+D`, put
+
+```math
+\Gamma_{C,t}(D)=[-\mathcal R_{C,t}(D)]_+.
+```
+
+Equations (10.594)--(10.595) give the exact compatibility comparison
+
+```math
+\boxed{
+[Q(C)-Q(A)]_+
+\le\Gamma_{C,t}(D)
+\le\mathfrak a^+_{C,t}(-D)+t.
+}
+\tag{10.596}
+```
+
+Unlike a uniform norm, `\Gamma` asks whether at least one actual near-cross
+ground is compatible with high parent energy.  It is a nonhomogeneous
+best-state response defect, not a gauge or seminorm.
+
+The `A_9` capture wall shows the exact finite margin needed.  For every one
+of the 40 optimal completions `G`, `Q(G)=10` and
+`\Delta_C(G)=2`, but
+
+```math
+\begin{array}{c|rrrr}
+t&h_{C,t}(G)&\mathcal R_{C,t}(G)&
+\mathfrak a^+_{C,t}(G)&\mathfrak a^+_{C,t}(-G)\\ \hline
+0&-6&-6&0&6\\
+4& 6& 2&6&10\\
+8&10& 2&10&10
+\end{array}
+\tag{10.597}
+```
+
+Exact cross grounds therefore miss the positive increment entirely.  Deficit
+four first sees it; deficit eight is where the universal tail bound closes,
+and by then the symmetric active seminorm equals `Q(G)=10`.  By contrast, on
+the older `3+6` wall the best replacement has
+`\Delta_C(G)=h_{C,0}(G)=4` already at an exact cross ground.
+
+The active functional is not algebraically comparable with the centered
+global norm in (10.570).  For the all-positive matrix and an equal partition
+into even-many blocks, use
+
+```math
+p=\frac{s-1}{n-1},
+\qquad E=D-pA,
+\qquad C=A-D.
+```
+
+Exact calculation gives
+
+```math
+\boxed{
+\mathfrak a^+_{C,0}(E)
+=\mathfrak a^+_{C,0}(-E)=0,
+\qquad
+\Delta_C(E)=0,
+\qquad
+Q(E)=\frac{n^2(s-1)}{n-1},
+\qquad
+\sum_iQ(D_i)=n(s-1).
+}
+\tag{10.598}
+```
+
+At `s\asymp\sqrt n`, the last two quantities are leading while the exact
+active gauge vanishes.  This is only a logical noncomparability result: the
+all-positive matrix is neither competitive nor globally minimizing.  It does
+not construct the required partition for a minimizer.
+
+Correlation is essential.  Write
+
+```math
+P_i=\max_x x^{\mathsf T}D_i x,
+\qquad
+N_i=-\min_x x^{\mathsf T}D_i x.
+```
+
+Suppose that, at one common orientation, an enlarged active family contains
+both opposite global corners obtained by concatenating all blockwise positive
+extremizers and all blockwise negative extremizers.  In particular this holds
+for the full two-point Cartesian product.  Then
+
+```math
+\boxed{
+\mathfrak a^+_{C,t}(D)+\mathfrak a^+_{C,t}(-D)
+\ge\sum_i(P_i+N_i)
+\ge\sum_iQ(D_i),
+\qquad
+\mathfrak a_{C,t}(D)
+\ge\frac12\sum_iQ(D_i).
+}
+\tag{10.599}
+```
+
+Thus product-cover, independent-block, or rectangular-hull relaxations are
+self-defeating whenever they contain those two corners: a subleading
+symmetric active seminorm would force the entire internal norm subleading.
+This does not apply merely because local extrema occur somewhere in
+orientation-dependent families, and it does not defeat the correlated
+best-state defect `\Gamma`.
+
+The precise surviving partition target is therefore
+
+```math
+\boxed{
+\begin{gathered}
+s\asymp\sqrt n,
+\qquad
+X(\mathcal P)=\Omega(n^{3/2}),
+\qquad
+t=o(n^{3/2}),\\
+\Gamma_{C_{\mathcal P},t}(D_{\mathcal P})
+=o(n^{3/2}).
+\end{gathered}
+}
+\tag{10.600}
+```
+
+By (10.596), this would control cross-only overshoot without invoking global
+centered `Q`-distance and without algebraically forcing `X` small.  Existence
+for global minimizers is **Open**.  Even if proved, Sections 10.68.2 and
+10.69.2 show that the resulting forced response still needs a separate
+temporal compatibility theorem.
+
+#### 10.69.4 External scale audit and updated frontier
+
+External search found the recent theorem of Balla--Hambardzumyan--Tomon,
+[*Factorization norms and an inverse theorem for
+MaxCut*](https://arxiv.org/abs/2506.23989).  Its hypotheses and quantitative
+dependence were checked, but they do not reach the present scale.  Let `G` be
+the graph of negative edges of a signing, put `N=\binom n2`, `m=|E(G)|`,
+and `T=\sum_{i<j}a_{ij}=N-2m`.  If `C_A(S)` is the signed sum across a cut,
+then
+
+```math
+|T|\le\frac{Q(A)}2,
+\qquad
+|C_A(S)|\le\frac{Q(A)}2,
+```
+
+and exactly
+
+```math
+e_G(S,S^c)-\frac m2
+=\frac{2|S||S^c|-N}{4}+\frac T4-\frac{C_A(S)}2
+\le\frac n8+\frac{3Q(A)}8.
+```
+
+For a competitive signing this is `O(n^{3/2})`, while `m=\Theta(n^2)`.
+The inverse theorem's parameter is therefore only
+`\alpha=O(\sqrt n)`, and its clique guarantee
+`2^{-O(\alpha^9)}\sqrt m` becomes
+`n2^{-O(n^{9/2})}`, which is vacuous.  Likewise
+`\gamma_2(A)\le\sqrt n`; after converting to the Boolean adjacency matrix
+of the negative edges, the factorization norm is still only bounded by
+`O(\sqrt n)`.  Its homogeneous-rectangle theorem then gives merely a
+`2^{-O(n^{3/2})}` relative size.  No theorem in that paper turns
+`Q(A)=O(n^{3/2})` into bounded factorization norm.  This promising external
+theory therefore needs a new minimizer-specific input before it can supply a
+macroscopic response block.
+
+This wave leaves four precise conclusions:
+
+- response duality supplies signed block totals minus global slack, not a
+  compatibility relation.  Convexification can be strictly weaker than pure
+  replacement, and persistent grounds show that pure response itself can be
+  only a falling local baseline;
+
+- positive pure or mixed response does not dominate original root endpoint
+  residual or the existing conserved endpoint allocation.  Pointwise active
+  charging also fails.  A5, A7, and A8 still force proper temporal cuts and
+  careful treatment of internal versus terminal excess;
+
+- the deficit-corrected active response is the first partition functional in
+  this branch that is provably noncomparable with global `Q`-distance.  It
+  survives only with the actual correlated cross profile; Cartesianizing the
+  block states recreates a leading internal-norm wall;
+
+- current factorization-norm and inverse-MaxCut structure theorems operate at
+  the wrong quantitative scale.  Mixed `A_9`--growing-factor amplification
+  remains unaudited.
+
+The highest-priority positive target is now a **correlated
+response--temporal theorem**: obtain a partition satisfying (10.600), select
+or mix actual near-cross grounds with a matrix-derived compatibility kernel,
+and prove the required subset and temporal antichain inequalities while
+counting internal excess only once.  Independent routes are the
+selected-child potential (10.531), a sparse order-window cocycle with
+tail-summable boundary error, and the mixed-product amplification audit.
