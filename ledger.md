@@ -13523,3 +13523,564 @@ endpoint allocation (10.491), or choose hybrid minimizers satisfying
 (10.506), with an error obeying the multiplicative tail condition
 (10.500).  Independent routes are mean puncture stability with the terminal
 excess retained, and approximate negative-moment boundary interpolation.
+
+### 10.65 Decrement-tolled harvesting, replacement walls, and deletion cocycles
+
+The twelfth wave attacks the same-window target in three independent ways.
+It finds a residual endpoint harvest with no leading `Q(A)` term, but the
+temporal-to-endpoint Hall coupling remains conditional and has an exact
+finite wall.  It proves that the uniform hybrid stability error is a directed
+`Q`-distance and that even the best boundary-aware minimizing replacement
+can fail.  Finally, it gives an exact two-level deletion cocycle and a
+strictly weaker adaptive tail criterion for convergence.  All identities,
+finite certificates, and abstract implications below are **Verified**.
+The Hall hypothesis and the new structural targets are explicitly **Open**.
+Nothing in this section proves convergence.
+
+#### 10.65.1 Exact centered temporal demand
+
+Let a finite random peeling process start from an exact order-`n` minimizer
+`A`, with `Q(A)=q_n`, and stop at deterministic order `m\ge\rho n`.  A
+temporal node `v` is reached with probability `\pi_v` and has current order
+`r_v`.  Conditional deletion outcome `H` gives a child `A_{v,H}` of order
+`r_{v,H}`.  Put
+
+```math
+d_{v,H}=Q(A_v)-Q(A_{v,H}),
+\qquad
+\lambda_{v,H}
+=\frac{q_n}{n^{3/2}}
+\left(r_v^{3/2}-r_{v,H}^{3/2}\right).
+```
+
+If `\varepsilon_L=Q(A_L)-q_m` at a leaf, both quantities telescope on
+every realized path:
+
+```math
+\boxed{
+q_m-\left(\frac mn\right)^{3/2}q_n
+=
+\sum_v\pi_v\mathbb E_v(\lambda_{v,H}-d_{v,H})
+-\mathbb E\varepsilon_L.
+}
+\tag{10.511}
+```
+
+For the field-proportional step in (10.329), the safe replenishment
+interpretation is conditional-expectation level:
+
+```math
+\boxed{
+\pi_v\mathbb E_v(\lambda-d)
+=\pi_v\left[
+\mathbb E_v\lambda+\mathbb E_vg-(2a_v-c_v)
+\right].
+}
+\tag{10.512}
+```
+
+The expectation cannot be removed: `2a_v-c_v=\mathbb E_v(d+g)`, not
+`d_H+g_H` outcome by outcome.
+
+Define positive demand and negative credit by
+
+```math
+z_v=[\pi_v\mathbb E_v(\lambda-d)]_+,
+\qquad
+u_v=[-\pi_v\mathbb E_v(\lambda-d)]_+,
+\qquad
+C=\sum_v u_v+\mathbb E\varepsilon_L.
+```
+
+Then
+
+```math
+\boxed{
+q_m-\left(\frac mn\right)^{3/2}q_n
+=\sum_vz_v-C.
+}
+\tag{10.513}
+```
+
+One may instead keep outcome atoms
+`z_{v,H}=\pi_v\Pr_v(H)[\lambda_{v,H}-d_{v,H}]_+`.  Jensen shows that
+this finer geometric demand dominates the parent-level demand.  The single
+credit `C` in (10.513) is nonlocal and atemporal; an honest local transport
+theorem must either atomize its negative credits with their own compatibility
+relations or deliberately state that it is using this relaxed global sink.
+
+#### 10.65.2 Decrement-tolled residual harvesting
+
+Fix an endpoint tree and the allocation from Section 10.62.  For an oriented
+bucket `b` on
+
+```math
+e(b):\quad U_b=D_b\sqcup X_b\longrightarrow X_b,
+```
+
+write `c_b` for its capacity, `a_b` for its allocation, and
+`\partial_b=Q(U_b)-Q(X_b)`.  Define
+
+```math
+\widehat a_b
+=\frac{a_b}{c_b}[c_b-\partial_b]_+,
+```
+
+with value zero when `c_b=0`.  The path-cover measure from (10.489)
+immediately gives, for all nonnegative weights `\omega_b`,
+
+```math
+\boxed{
+\sum_b\omega_b\widehat a_b
+\le
+4\sup_\pi\sum_{b\in\pi}
+\omega_b[c_b-\partial_b]_+
+\le
+4\sup_\pi\sum_{b\in\pi}\omega_bQ(D_b).
+}
+\tag{10.514}
+```
+
+Indeed, the chain marginal at `b` is at least `a_b/c_b`, and the local
+layer bound is `c_b\le\partial_b+Q(D_b)`.  A chain uses only one
+orientation bucket on a visited edge, so there is no extra factor two.
+
+Retain edges with `|U_b|\ge\rho n` and `|D_b|\le s`.  The siblings on
+a chain are disjoint, while `Q(D)\le|D|(|D|-1)`.  Therefore
+
+```math
+\boxed{
+\sum_{\substack{b:\ |U_b|\ge\rho n\\ |D_b|\le s}}
+\widehat a_b
+\le4(s-1)n,
+\qquad
+\sum_{\substack{b:\ |U_b|\ge\rho n\\ |D_b|\le s}}
+\frac{\widehat a_b}{|U_b|^{3/2}}
+\le\frac{4(s-1)n}{(\rho n)^{3/2}}.
+}
+\tag{10.515}
+```
+
+This is the key positive result of the wave.  After the endpoint decrement is
+paid as a toll, the `Q(A)` term in (10.491) disappears.  In particular,
+`s=o(\sqrt n)` makes the unnormalized residual `o(n^{3/2})`.
+
+What remains is an exact transport question.  Let `I` be temporal demand
+atoms, `B` retained residual buckets, and
+`R\subseteq I\times B` a proposed matrix-derived compatibility relation.
+For dilation `\kappa\ge0`, max-flow/min-cut says that the minimum uncovered
+demand in the relaxed model with the one global credit sink `C` is
+
+```math
+\boxed{
+E_\kappa
+=
+\max_{J\subseteq I}
+\left[
+z(J)-C-\kappa\widehat a(N(J))
+\right]_+.
+}
+\tag{10.516}
+```
+
+Here `N(J)=\{b:\ iRb\text{ for some }i\in J\}`.  Combining
+(10.513)--(10.516) gives the conditional scalar comparison
+
+```math
+\boxed{
+q_m-\left(\frac mn\right)^{3/2}q_n
+\le4\kappa(s-1)n+E_\kappa.
+}
+\tag{10.517}
+```
+
+Thus any uniformly bounded `\kappa` would suffice after tolling if
+`s=o(\sqrt n)` and the combined normalized errors obey the tail condition
+(10.500).  Uniformity is required over every order pair used in the descent.
+The full-set cut `J=I` is essentially the desired scalar comparison
+restated; all Hall cuts are the additional content needed for a genuine
+endpoint-bucket transport within this relaxed global-credit model.
+
+An exact order-five minimizer shows why the transport cannot be pointwise or
+error-free.  Take
+
+```math
+A=
+\begin{pmatrix}
+0&-1&1&-1&1\\
+-1&0&-1&1&1\\
+1&-1&0&1&1\\
+-1&1&1&0&1\\
+1&1&1&1&0
+\end{pmatrix},
+\qquad Q(A)=q_5=8.
+```
+
+For the positive ground `p=1` and negative ground
+`(1,1,1,1,-1)`, the endpoint split is `1+4`.  Every allocated bucket
+in this prescribed tree has zero residual: the order-four edge has
+`c=\partial=0`, while both singleton buckets have
+`c=\partial=8`.  Field-proportional deletion of the singleton is
+deterministic and has
+
+```math
+d=0,\qquad g=8,\qquad a=4,\qquad c=0,\qquad\varepsilon_L=0,
+```
+
+so its centered demand is
+
+```math
+\boxed{
+z=8\left[1-\left(\frac45\right)^{3/2}\right]
+=8-\frac{64\sqrt5}{25}>0,
+\qquad
+\sum_b\widehat a_b=0.
+}
+\tag{10.518}
+```
+
+This defeats every finite dilation on that matching endpoint pair/tree.
+It is not an optimized-tie obstruction: exactly five of the twenty-five
+root endpoint pairs have zero total residual capacity, while the other
+twenty `2+3` splits have total residual capacity four, where capacity means
+`\sum_b[c_b-\partial_b]_+`.  No asymptotic globally minimizing blow-up is
+known.  The surviving **Open target** is a grouped Hall-deficiency bound with
+matrix-derived compatibility, localized negative credits, and a
+tail-summable error.
+
+#### 10.65.3 Uniform replacement stability is the wrong metric
+
+For same-order symmetric zero-diagonal matrices `X,Y`, set
+`\delta_X(\sigma,z)=Q(X)-\sigma z^{\mathsf T}Xz`.  The error in
+(10.506) has the exact closed form
+
+```math
+\boxed{
+\varepsilon(X,Y)
+:=\sup_{\sigma,z}
+[\delta_X(\sigma,z)-\delta_Y(\sigma,z)]_+
+=Q(X)-Q(Y)+Q(X-Y).
+}
+\tag{10.519}
+```
+
+Triangle inequality makes the right side nonnegative.  Equivalently,
+
+```math
+Q(Y)+\varepsilon(X,Y)=Q(X)+Q(X-Y).
+```
+
+Paying uniform deficit stability therefore erases the norm reduction and
+adds the full `Q`-distance.  Uniform switching cannot help: if `R` is a
+uniform vertex switching of a fixed signing `G`, then
+`\mathbb E RGR^{\mathsf T}=0` and convexity gives
+
+```math
+\mathbb E\varepsilon(X,RGR^{\mathsf T})
+\ge2Q(X)-Q(G).
+```
+
+The exact boundary-aware quantity is weaker.  For a fixed cross mosaic `C`,
+write
+
+```math
+\mathcal L_C(X)
+=\max_{\sigma,z}
+\left[2\|Cz\|_1-\delta_X(\sigma,z)\right]_+,
+\qquad
+J_C(X)=Q(X)+\mathcal L_C(X).
+```
+
+A `Q(X)`-ground removes the outer positive-part issue, giving
+
+```math
+\boxed{
+J_C(X)=\max_z
+\left\{2\|Cz\|_1+|z^{\mathsf T}Xz|\right\},
+\qquad
+\mathcal L_C(Y)-\mathcal L_C(X)
+=Q(X)-Q(Y)+J_C(Y)-J_C(X).
+}
+\tag{10.520}
+```
+
+For a singleton extension by row `c`, global minimality gives a universal
+wall.  If the original child is `X` and `G` is any order-`m` minimizer,
+then `q_{m+1}=J_c(X)` and `J_c(G)\ge q_{m+1}`, hence
+
+```math
+\boxed{
+\mathcal L_c(G)-\mathcal L_c(X)
+\ge Q(X)-q_m.
+}
+\tag{10.521}
+```
+
+Cross-aware selection really is weaker than uniform distance.  In the
+order-six example (10.505), the signed-permutation orbit of `D'` has 192
+members.  Eleven have `Q(D-G)=16` but
+`\mathcal L_C(G)=\mathcal L_C(D)=2`.  Nevertheless uniform orbit
+averaging worsens the layer to mean `33/4`.
+
+Even the best boundary selector fails in a global minimizer.  Exact
+enumeration gives `q_7=18` and the minimizer
+
+```math
+A_7=
+\begin{pmatrix}
+0&1&1&1&1&1&1\\
+1&0&1&1&-1&-1&1\\
+1&1&0&1&-1&1&-1\\
+1&1&1&0&1&-1&-1\\
+1&-1&-1&1&0&-1&-1\\
+1&-1&1&-1&-1&0&-1\\
+1&1&-1&-1&-1&-1&0
+\end{pmatrix}.
+```
+
+Split off vertex four, so the order-six tail is
+`(1,2,3,5,6,7)` and `C=(1,1,1,1,-1,-1)`.  Then
+
+```math
+\boxed{
+Q(D_6)=18,\qquad
+\mathcal L_C(D_6)=0,\qquad
+\min_{Q(G)=q_6=10}\mathcal L_C(G)=8.
+}
+\tag{10.522}
+```
+
+The best minimizing replacement shifts the whole child excess into the
+boundary layer, attaining equality in (10.521).  More strongly, take tail
+`(1,2,3,4,5)` and head `(6,7)`.  Its cross block is
+
+```math
+C=
+\begin{pmatrix}
+1&-1&1&-1&-1\\
+1&1&-1&-1&-1
+\end{pmatrix}.
+```
+
+Exact enumeration of all 192 labelled order-five minimizers gives
+
+```math
+\boxed{
+Q(D_5)=12,\quad
+\mathcal L_C(D_5)=4,\quad
+J_C(D_5)=16,
+\qquad
+\min_{Q(G)=q_5=8}\mathcal L_C(G)=12,
+\quad
+\min_{Q(G)=8}J_C(G)=20.
+}
+\tag{10.523}
+```
+
+Thus even the centered functional `J_C` must rise by four.  This falsifies
+universal greedy, lexicographic, and local orbit-selection rules.
+
+There is a final exact global identity.  Partition a minimizer into diagonal
+blocks `D_i` and fixed cross blocks `C_{ij}`.  Define the signed common-mosaic
+response, with no positive part, by
+
+```math
+\Phi_{\mathbf D}
+=
+\max_{\sigma,(z_i)}
+\left\{
+2\sigma\sum_{i<j}z_i^{\mathsf T}C_{ij}z_j
+-\sum_i\delta_{D_i}(\sigma,z_i)
+\right\}
+=q_n-\sum_iQ(D_i).
+```
+
+Replace every `D_i` by a minimizer `G_i` and call the hybrid
+`\widetilde A`.  Then
+
+```math
+\boxed{
+\Phi_{\mathbf G}-\Phi_{\mathbf D}
+=
+\sum_i\bigl(Q(D_i)-q_{|D_i|}\bigr)
++\bigl(Q(\widetilde A)-q_n\bigr).
+}
+\tag{10.524}
+```
+
+This is not a local-`\mathcal L_C` identity and not a pointwise comparison
+at one shared maximizer.  “Common mosaic” means the same cross blocks and
+state space.  The right side is at least the full internal block excess.
+The surviving replacement target is therefore global: jointly choose the
+blocks so that `Q(\widetilde A)-q_n=o(n^{3/2})`, or compare a centered
+signed response while retaining the compulsory excess in (10.524).
+
+#### 10.65.4 Two-level deletion is an exact cocycle
+
+For a fixed order-`n` signing `A`, define
+
+```math
+F_A(k)=\mathbb E_{|S|=k}Q(A[S]),
+\qquad
+\beta_{r,k}=\frac{(k)_2}{(r)_2},
+\qquad
+R^A_{r\to k}=F_A(k)-\beta_{r,k}F_A(r).
+```
+
+The restriction of a positive ground shows `R^A_{r\to k}\ge0`.
+Nested uniform sampling and
+`\beta_{n,\ell}=\beta_{m,\ell}\beta_{n,m}` give
+
+```math
+\boxed{
+R^A_{n\to\ell}
+=R^A_{m\to\ell}
++\beta_{m,\ell}R^A_{n\to m}
+\qquad(2\le\ell\le m\le n).
+}
+\tag{10.525}
+```
+
+If `\varepsilon_k^A=F_A(k)-q_k`, substitution yields
+
+```math
+\boxed{
+R^A_{m\to\ell}
+-\varepsilon_\ell^A
++\beta_{m,\ell}\varepsilon_m^A
+=q_\ell-\beta_{m,\ell}q_m.
+}
+\tag{10.526}
+```
+
+Thus every linear two-level jackknife identity is a partition of the same
+fresh-ground slack; it supplies no second scalar equation.
+
+There is a simple uniform near-top estimate.  If `A` is an order-`n`
+minimizer and `T` is uniform of order `m=n-h`, principal monotonicity and
+arbitrary filling of the deleted incident edges give
+
+```math
+\boxed{
+0\le
+\mathbb E[Q(A[T])-q_m]
+\le q_n-q_m
+\le n(n-1)-m(m-1)
+=h(2n-h-1).
+}
+\tag{10.527}
+```
+
+This is `o(n^{3/2})` for `h=o(\sqrt n)`.  Repetition does not make it
+tail-summable: the normalized error per step is `O(h/\sqrt n)` while
+there are order `dn/h` steps, so the block size cancels.
+
+The order-nine minimizer (10.298) has an exact flat two-level obstruction.
+All nine order-eight children have norm 24.  If zero-based vertex seven is
+first deleted, the resulting `B` satisfies
+
+```math
+\boxed{
+Q(B)=24=q_8+4,
+\qquad
+Q(B[-i])=22=q_7+4
+\quad(i\in V(B)).
+}
+\tag{10.528}
+```
+
+The excess four persists with zero range and variance at both levels.
+This rules out corrections whose only nonlinear input vanishes with those
+dispersions.  Separately, `S\mapsto Q(A[S])` is neither submodular nor
+supermodular already by order four, so generic set-function curvature has
+no usable sign.
+
+The useful positive conclusion is a weaker convergence bridge.  Put
+`a_n=q_n/n^{3/2}`.  A proved directed comparison
+`n\to m`, `\lceil n/2\rceil\le m<n`, has cost `\eta_{n,m}\ge0` if
+
+```math
+a_m\le a_n+\eta_{n,m}.
+```
+
+Let `d(M,N)` be the infimum of total cost over all proved directed paths
+from `M` to `N`, with value infinity when none exists.  Then
+
+```math
+\boxed{
+\Omega_{\rm ad}(N)
+:=\sup_{M\ge N}d(M,N)\longrightarrow0
+\quad\Longrightarrow\quad
+\frac{q_n}{n^{3/2}}\ \text{converges}.
+}
+\tag{10.529}
+```
+
+To prove this, take a liminf subsequence `M_j`.  Telescoping a cheapest
+path gives `a_N\le a_{M_j}+\Omega_{\rm ad}(N)`; first let `j\to\infty`
+and then `N\to\infty`.  Condition (10.529) is strictly weaker than the
+all-pairs canonical tail (10.500), because it optimizes over whatever sparse
+comparison graph has actually been proved.
+
+A checkable sufficient condition is a potential drop.  If `V(n)\ge0`,
+`V(n)\to0`, and for every `M\ge N` a path from `M` to `N` can be
+selected with
+
+```math
+\boxed{
+\eta_{n,m}\le V(m)-V(n)
+}
+\tag{10.530}
+```
+
+on each used edge, then its total cost is at most `V(N)-V(M)\le V(N)`.
+No monotonicity of `V` is needed for the telescope.
+
+For inherited nonoptimal restrictions define
+`e(B)=[Q(B)-q_{|B|}]/|B|^{3/2}`.  Start with an exact order-`n`
+minimizer `B_0`, so `r_0=n` and `e(B_0)=0`.  The corresponding precise
+terminal target is
+
+```math
+\boxed{
+\mathbb E[e(B_{t+1})-V(r_{t+1})\mid B_t]
+\le e(B_t)-V(r_t).
+}
+\tag{10.531}
+```
+
+Then `e(B_t)-V(r_t)` is a supermartingale.  At a bounded landing time
+`L`,
+
+```math
+\mathbb Ee(B_L)\le\mathbb EV(r_L)-V(n).
+```
+
+Only for deterministic terminal order `r_L=N` may the right side be
+written `V(N)-V(n)`.  This controls terminal excess only; it does not by
+itself imply (10.529) or convergence.
+
+#### 10.65.5 Updated frontier
+
+This wave leaves a narrower set of viable mechanisms:
+
+- decrement-tolled endpoint allocations have only discarded-block residual
+  cost, but temporal demands still need a grouped, matrix-derived Hall
+  coupling with localized negative credits and tail-uniform error;
+
+- uniform hybrid stability is exactly a directed `Q`-distance, while an
+  exact order-seven minimizer defeats even the best local boundary selector.
+  Replacement must be chosen jointly at the global mosaic level;
+
+- two-level deletion identities are cocycles, and terminal excess can be
+  perfectly flat through two levels.  The useful replacement is an adaptive
+  shortest-path tail or a one-sided terminal-excess potential drop.
+
+The highest-priority next target is a **macroscopic grouped compatibility
+theorem**: in one order window, either transport the centered temporal
+demands into decrement-tolled residual buckets, or force enough compatible
+negative credit/terminal excess to make the deficiency `E_\kappa` in
+(10.516) small, with the resulting normalized comparison costs satisfying
+the adaptive tail (10.529).  Independent routes are a jointly
+near-minimizing global hybrid satisfying (10.524) and a selected-child
+potential satisfying (10.531).
