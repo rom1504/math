@@ -12908,3 +12908,618 @@ repaired by a bare `Q=O(n^{3/2})` hypothesis.  Yet the full tree allocation
 absorbs that failure with congestion below two.  The active frontier
 remains the global use of the universal `K\le4` harvest, not amplification
 of this particular local certificate.
+
+### 10.64 Weighted harvesting, replacement stability, and boundary-state rank
+
+The eleventh wave tests three ways to turn the universal path cover into a
+scale-sensitive recurrence.  It produces one genuinely weighted harvesting
+theorem, two exact global-minimality replacement identities, and an exact
+coding-theoretic boundary-rank calculation.  It also identifies a sharp wall
+for each route.  All algebraic statements and finite certificates below are
+**Verified**.  None of them proves convergence of `M_n/n^{3/2}`.
+
+#### 10.64.1 Arbitrarily weighted endpoint harvesting
+
+Fix an endpoint tree and the allocation from Section 10.62.  For an oriented
+bucket `b=(v,X,\sigma)`, write
+
+```math
+c_b=(\mu_{vX}^{\sigma})_+,
+\qquad 0\le a_b\le c_b.
+```
+
+The path-cover theorem supplies a measure `\nu` of mass at most four on
+oriented root-to-leaf chains, with
+`\nu\{\pi:b\in\pi\}\ge a_b/c_b` for every positive-capacity bucket.  Thus,
+for every choice of nonnegative weights `\omega_b`, coordinatewise
+domination and Tonelli give
+
+```math
+\boxed{
+\sum_b\omega_ba_b
+\le
+\int\sum_{b\in\pi}\omega_bc_b\,d\nu(\pi)
+\le
+4\sup_\pi\sum_{b\in\pi}\omega_bc_b.
+}
+\tag{10.489}
+```
+
+This is stronger than the unweighted `12Q` consequence.  If the weights
+depend only on the tree edge, write a chain split as
+`U_t=D_t\sqcup X_t`, where `X_t=U_{t+1}`, and put
+
+```math
+d_t=Q(U_t)-Q(X_t)\ge0.
+```
+
+The selected capacity is bounded by the all-successor layer, and the local
+step behind (10.341) gives
+
+```math
+c_b\le\mathcal L_t\le d_t+Q(D_t).
+```
+
+Consequently
+
+```math
+\boxed{
+\sum_b\omega_{e(b)}a_b
+\le4\sup_\pi
+\sum_{t\in\pi}\omega_t\bigl(d_t+Q(D_t)\bigr).
+}
+\tag{10.490}
+```
+
+There is a useful exact scale-local form.  Retain only edges with parent
+order at least `r` and peeled sibling order at most `s`, and give such an
+edge weight `|U_t|^{-3/2}`.  Along a chain the decrements telescope, the
+siblings are disjoint, and `Q(D)\le |D|(|D|-1)`.  Hence
+
+```math
+\boxed{
+\sum_{b:\ |U_b|\ge r,\ |D_b|\le s}
+\frac{a_b}{|U_b|^{3/2}}
+\le
+\frac4{r^{3/2}}
+\bigl(Q(A)+(s-1)n\bigr).
+}
+\tag{10.491}
+```
+
+For `r=\rho n`, the diagonal-block contribution is `o(1)` when
+`s=o(\sqrt n)`.  An intrinsic variant is logarithmic.  Fix
+`0<q_*\le Q(A)` and retain only the initial chain edges for which both the
+parent and child norms are at least `q_*`.  Since
+`1-x\le-\log x`, (10.490) with weight `1/Q(U_t)` gives
+
+```math
+\boxed{
+\sum_{b:\,Q(U_b),Q(X_b)\ge q_*}\frac{a_b}{Q(U_b)}
+\le4\sup_\pi\left[
+\log\frac{Q(A)}{q_*}
++\sum_{t:\,Q(U_t),Q(X_t)\ge q_*}
+\frac{Q(D_t)}{Q(U_t)}
+\right].
+}
+\tag{10.492}
+```
+
+Equations (10.489)--(10.492) control the selected endpoint allocations.
+They do not identify the temporal replenishment gaps from
+(10.340) with those allocations.  That same-window coupling, not the
+absence of a weighted path theorem, is now the missing step.
+
+#### 10.64.2 The exact grouped coefficient is a scalar tautology
+
+Let `A` be an exact order-`n` minimizer in doubled normalization,
+`Q(A)=q_n`.  Orient `A` so that an absolute ground has energy `+q_n`, and
+switch that ground to `1`.  Choose a uniform
+`h`-vertex set `H`, put `T=H^c` and `m=n-h`, and define
+
+```math
+\begin{aligned}
+e_H&=1_T^{\mathsf T}A[T]1_T,
+&d_H&=q_n-Q(A[T]),\\
+g_H&=Q(A[T])-e_H,
+&\varepsilon_H&=Q(A[T])-q_m.
+\end{aligned}
+```
+
+Here `n\ge2` and `1\le h\le n-1`.  Uniform averaging of (10.328) gives
+
+```math
+\boxed{
+q_n-q_m
+=\alpha_{n,h}q_n-\mathbb E(g_H-\varepsilon_H),
+\qquad
+\alpha_{n,h}
+=\frac{2h}{n}-\frac{h(h-1)}{n(n-1)}.
+}
+\tag{10.493}
+```
+
+There is a decisive simplification.  Pointwise,
+`g_H-\varepsilon_H=q_m-e_H`, while
+
+```math
+\mathbb Ee_H=\beta_{n,h}q_n,
+\qquad
+\beta_{n,h}=\frac{m(m-1)}{n(n-1)},
+\qquad
+\alpha_{n,h}+\beta_{n,h}=1.
+```
+
+Therefore
+
+```math
+\boxed{
+\mathbb E(g_H-\varepsilon_H)
+=q_m-\beta_{n,h}q_n.
+}
+\tag{10.494}
+```
+
+So the excess-corrected grouped identity is exact bookkeeping, not a new
+replenishment estimate.  Put `\rho=m/n` and `p=h/n`.  The exact permissible
+coefficient at the `3/2` scale is
+
+```math
+\Delta_{n,h}
+=\rho^{3/2}-\rho^2+\frac{p\rho}{n-1}
+=\rho^{3/2}(1-\sqrt\rho)+\frac{p\rho}{n-1}.
+```
+
+For any nonnegative terminal-order error `E_{n,m}`, (10.494) gives the
+equivalence
+
+```math
+\boxed{
+\mathbb E(g_H-\varepsilon_H)
+\le\Delta_{n,h}q_n+E_{n,m}
+\quad\Longleftrightarrow\quad
+\frac{q_m}{m^{3/2}}
+\le\frac{q_n}{n^{3/2}}+\frac{E_{n,m}}{m^{3/2}}.
+}
+\tag{10.495}
+```
+
+The continuum part
+`\Delta(\rho)=\rho^{3/2}-\rho^2` has exact maximum
+
+```math
+\boxed{
+\max_{0\le\rho\le1}\Delta(\rho)
+=\frac{27}{256}
+\quad\text{at}\quad \rho=\frac9{16}.
+}
+\tag{10.496}
+```
+
+When `n` is even, at `h=n/2` it is `(\sqrt2-1)/4`, plus the finite
+correction `1/[4(n-1)]`.  For `h=o(n)`, the continuum part is
+`h/(2n)-5h^2/(8n^2)+O((h/n)^3)`; the exact `\Delta_{n,h}` additionally
+contains the finite-population term
+`h(n-h)/[n^2(n-1)]`.
+
+The terminal excess cannot simply be discarded.  For the order-nine
+minimizer (10.298), every order-eight child has norm `24`, while
+`q_8=20` and `q_9=24`.  Thus
+
+```math
+\boxed{
+\mathbb Eg_H=\frac{16}{3},
+\qquad
+\mathbb E\varepsilon_H=4,
+\qquad
+\mathbb E(g_H-\varepsilon_H)=\frac43,
+}
+\tag{10.497}
+```
+
+whereas the raw singleton budget is only
+`\Delta_{9,1}q_9=\frac89(16\sqrt2-21)=1.446\ldots`.
+Hence a sharp raw bound on `\mathbb Eg_H` is already false.
+
+There is also a continuum coefficient no-go for a naive use of path
+congestion.  Suppose optimistically that a macroscopic group obeyed
+`G\le\kappa D` with no internal error, while
+`D+G=(1-\rho^2)q_n`.  The required decrement is
+`(1-\rho^{3/2})q_n`, so necessarily
+
+```math
+\boxed{
+\kappa
+\le
+\frac{1-\rho^2}{1-\rho^{3/2}}-1
+<\frac13.
+}
+\tag{10.498}
+```
+
+Thus even congestion one would miss the sharp scalar coefficient;
+congestion four is not the issue that can be repaired by a smaller constant.
+In the continuum comparison, the global `12Q` bound divided by the largest
+budget (10.496) is at least `1024/9`.  At finite `n`, the exact coefficient
+in `D+G` is
+`\alpha_{n,h}=1-\rho^2+p\rho/(n-1)`.
+
+For a general peeling segment ending at deterministic order
+`m=\rho n`, (10.340) shows that the exact net target is
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E\left[\sum_{t<L}g_t-\varepsilon_L\right]
+&\le
+2\mathbb E\sum_{t<L}a_t
+-\mathbb E\sum_{t<L}c_t\\
+&\quad-(1-\rho^{3/2})q_n+E_{n,m}.
+\end{aligned}
+}
+\tag{10.499}
+```
+
+This is equivalent to the normalized comparison in (10.495), so a useful
+structural lemma must derive it by coupling the temporal gaps to
+(10.489) in the same order/size window, while retaining
+`\varepsilon_L` and the centered baseline.
+
+Error uniformity also matters.  Assume comparisons are available for every
+`m\in[\lceil n/2\rceil,n-1]`.  Given `M\ge N`, prescribe the canonical
+chain `n_0=M` and
+`n_{j+1}=\max\{N,\lceil n_j/2\rceil\}` until it reaches `N`.  A sufficient
+condition for bridging an arbitrarily sparse liminf subsequence is
+
+```math
+\boxed{
+\Omega(N)
+:=\sup_{M\ge N}
+\sum_j\frac{E_{n_j,n_{j+1}}}{n_{j+1}^{3/2}}
+\longrightarrow0.
+}
+\tag{10.500}
+```
+
+A bare uniform `o(n^{3/2})` error need not satisfy (10.500), because it can
+accumulate over arbitrarily many dyadic steps.  Either uniform bound
+`E_{n,m}/m^{3/2}\le C m^{-\delta}` or
+`E_{n,m}/m^{3/2}\le C(\log m)^{-1-\delta}` over all allowed pairs does
+suffice.  For singleton comparisons the familiar sufficient condition is
+`\sum_n E_{n,n-1}/(n-1)^{3/2}<\infty`.
+
+#### 10.64.3 Global block replacement telescopes only in a hybrid landscape
+
+There is an exact non-vacuous consequence of global minimality.  Split an
+order-`n` minimizer as
+
+```math
+A=\begin{pmatrix}B&C\\ C^{\mathsf T}&D\end{pmatrix},
+\qquad |B|=s,
+```
+
+and replace `B` by any order-`s` minimizer `B_*`.  For oriented states set
+
+```math
+\begin{aligned}
+\Xi_{B_*\to D}(C)
+=\max_{\sigma,x,y}\{&2\sigma x^{\mathsf T}Cy
+-[q_s-\sigma x^{\mathsf T}B_*x]\\
+&-[Q(D)-\sigma y^{\mathsf T}Dy]\}.
+\end{aligned}
+```
+
+For the replacement signing `A_*`, expansion gives the exact identity
+`Q(A_*)=q_s+Q(D)+\Xi_{B_*\to D}(C)`.  Since `Q(A_*)\ge q_n`, and dropping
+the first nonnegative deficit can only increase the response,
+
+```math
+\boxed{
+\mathcal L_{B\to D}
+\ge[q_n-q_s-Q(D)]_+.
+}
+\tag{10.501}
+```
+
+Equivalently, if
+
+```math
+e_B=Q(B)-q_s,
+\qquad
+\alpha=Q(B)+Q(D)-Q(A),
+```
+
+then separate range superadditivity gives
+
+```math
+\boxed{
+\mathcal L_{B\to D}\ge[e_B-\alpha]_+,
+\qquad
+\alpha\le\frac{I(B)+I(D)-I(A)}2.
+}
+\tag{10.502}
+```
+
+In particular, at an orientation-compatible active cut with `\alpha=0`,
+all internal optimality excess in `B` must reappear in a genuine successor
+layer.  This is an internal-block exchange, not the cross-only comparison
+already shown vacuous in Section 10.55.1.
+
+The comparison tensorizes exactly, but in a hybrid matrix.  Let
+`U_t=H_t\sqcup U_{t+1}` be a nested tower.  Keep every original cross block
+`C_t=A[H_t,U_{t+1}]`, replace each diagonal `A[H_t]` by an order-`|H_t|`
+minimizer `G_t`, and replace the terminal block by a minimizer `G_L`.  Write
+`\widetilde A_t` for the resulting hybrid suffix and
+`\widetilde{\mathcal L}_t` for its all-successor layer capacity.  The
+one-step coupled responses telescope, while
+`Q(\widetilde A_0)\ge q_n`, giving
+
+```math
+\boxed{
+\sum_{t<L}\widetilde{\mathcal L}_t
+\ge
+q_n-q_{|U_L|}-\sum_{t<L}q_{|H_t|}.
+}
+\tag{10.503}
+```
+
+There is also one common, not independently chosen, nested witness.  If
+`x_t` is its spin on `H_t`, `y_L` its terminal spin, and
+`y_{t+1}` the concatenated tail spin on `U_{t+1}`, then direct expansion of
+the single variational formula for `Q(\widetilde A_0)` gives
+
+```math
+\boxed{
+\max_{\sigma,(x_t),y_L}
+\left[
+2\sum_{t<L}\sigma x_t^{\mathsf T}C_ty_{t+1}
+-\sum_{t<L}\delta_{G_t}(\sigma,x_t)
+-\delta_{G_L}(\sigma,y_L)
+\right]
+\ge
+q_n-q_{|U_L|}-\sum_{t<L}q_{|H_t|}.
+}
+\tag{10.504}
+```
+
+Here `\delta_G(\sigma,x)=Q(G)-\sigma x^{\mathsf T}Gx`.
+
+The hybrid deficit landscape cannot be replaced monotonically by the
+original one, even when every block involved is optimal.  An exact order-six
+minimizer is
+
+```math
+A_6=
+\begin{pmatrix}
+0&1&1&1&1&1\\
+1&0&-1&-1&1&1\\
+1&-1&0&1&-1&1\\
+1&-1&1&0&1&-1\\
+1&1&-1&1&0&-1\\
+1&1&1&-1&-1&0
+\end{pmatrix},
+\qquad Q(A_6)=q_6=10.
+```
+
+The endpoint pair
+`(1,1,1,-1,-1,1)` and `(-1,-1,-1,1,1,1)` splits off vertex five, with
+cross row `C=(1,1,1,-1,-1)`.  For the original principal five-block
+`D=A_6[0,\ldots,4]`,
+
+```math
+Q(D)=q_5=8,
+\qquad
+\mathcal L(C,D)=2.
+```
+
+Replace it by the equally optimal signing
+
+```math
+D'=
+\begin{pmatrix}
+0&-1&-1&1&1\\
+-1&0&1&1&-1\\
+-1&1&0&-1&1\\
+1&1&-1&0&-1\\
+1&-1&1&-1&0
+\end{pmatrix},
+\qquad Q(D')=8.
+```
+
+Exact enumeration gives
+
+```math
+\boxed{
+\mathcal L(C,D')=10>2=\mathcal L(C,D),
+\qquad
+Q\!\begin{pmatrix}D'&C^{\mathsf T}\\ C&0\end{pmatrix}=18.
+}
+\tag{10.505}
+```
+
+Thus arbitrary minimizing replacements have neither monotone layers nor
+automatically negligible replacement cost.  This finite witness does not
+exclude a compatible or asymptotically controlled choice.  A precise
+intermediate stability target is
+
+```math
+\boxed{
+\varepsilon_t
+:=\sup_{\sigma,y}
+[\delta_{A_{t+1}}(\sigma,y)
+-\delta_{\widetilde A_{t+1}}(\sigma,y)]_+,
+\qquad
+\widetilde{\mathcal L}_t
+\le\mathcal L_t+\varepsilon_t.
+}
+\tag{10.506}
+```
+
+A compatible replacement scheme with
+`\sum_t\varepsilon_t=o(n^{3/2})` would transfer (10.503) to the original
+all-successor layers.  Further same-window control would still be needed to
+recover the centered recurrence (10.499).
+
+#### 10.64.4 Exact cut-code recursion has exponential boundary rank
+
+External search found a directly relevant recent theorem:
+[Sheshadri, *Trellis State Complexity as an Exact Tropical Factorization
+Rank* (arXiv:2607.23471v1)](https://arxiv.org/abs/2607.23471).
+Because this is a very recent first version, its complete short argument was
+reconstructed rather than imported as a black box.
+
+For a binary code `C\subseteq\mathbb F_2^E` and coordinate split
+`E=L\sqcup R`, let `C_L,C_R` be the subcodes supported on the two sides and
+put
+
+```math
+W(a_L,a_R)=d((a_L,a_R),C),
+\qquad
+s=\dim C-\dim C_L-\dim C_R.
+```
+
+The theorem says that the min-plus factorization rank, tropical rank, and
+Kapranov rank of the full conditional table `W` are all exactly
+
+```math
+\boxed{2^s.}
+\tag{10.507}
+```
+
+The proof is elementary.  The quotient
+`\mathcal T=P_R(C)/C_R` has `2^s` elements, and grouping decoding by its
+class gives the exact door identity
+
+```math
+W(a_L,a_R)
+=\min_{\tau\in\mathcal T}
+\{D(a_L,\tau)+d(a_R,\tau)\}.
+```
+
+Conversely, choose one lifted codeword for every class.  The corresponding
+`2^s\times2^s` submatrix has zero diagonal and positive off-diagonal
+entries.  A min-plus rank-one term cannot be tight at two diagonal cells,
+and the identity is the unique zero-weight tropical permutation.  This
+proves all three ranks without an unverified structural assumption.
+
+Apply the theorem to the augmented cut code `\mathcal C_n` from Section
+1.4.  Split vertices as `S\sqcup T`, with both shore sizes at least three,
+and split edge coordinates into internal and cross sets
+
+```math
+I=E(S)\sqcup E(T),
+\qquad
+X=E(S,T).
+```
+
+The code has dimension `n`.  A codeword supported on `I` is either zero or
+all-one on `I`, and the same statement holds for `X`; hence both supported
+subcodes have dimension one.  Therefore
+
+```math
+\boxed{
+s=n-2,
+\qquad
+\operatorname{rank}_{\min,+}W
+=\operatorname{rank}_{\rm trop}W
+=2^{n-2}.
+}
+\tag{10.508}
+```
+
+The states are exactly pairs of projective shore-spin patterns.  Write the
+received signing as `\begin{psmallmatrix}B&C\\C^{\mathsf T}&D\end{psmallmatrix}`
+across `S\sqcup T`.  In this sign notation the two door costs are
+
+```math
+\frac{|I|-|H_B(x)+H_D(y)|}{2},
+\qquad
+\frac{|X|-|x^{\mathsf T}Cy|}{2}.
+```
+
+Thus the door identity becomes
+
+```math
+\boxed{
+W(a_I,a_X)
+=\frac{\binom n2}{2}
+-\frac12\max_{x,y}
+\left(
+|H_B(x)+H_D(y)|+|x^{\mathsf T}Cy|
+\right),
+}
+\tag{10.509}
+```
+
+which is exactly the block-gluing identity in Section 1.6.  The exponential
+rank therefore proves that no universal constant-state or polynomial-state
+exact separable min-plus recursion represents the full conditional table.
+It is a representation statement, not a computational lower bound, and it
+does not rule out approximation at the relevant asymptotic scale or a
+compression restricted to globally minimizing signings.
+
+There is an exact finite-temperature interpretation.  Put
+`N=\binom n2`, `\lambda=2\beta\sqrt n`, and let
+`c_\tau(a)` be the sum of the two door costs.  Since
+`M(a)=N-2W(a)`, define
+
+```math
+S_a=\sum_{\tau\in\mathcal T}e^{-\lambda c_\tau(a)}.
+```
+
+One term attains the minimum and there are `2^{n-2}` terms, so
+
+```math
+\boxed{
+\frac{e^{\lambda W(a)}}{2^{n-2}}
+\le\frac1{S_a}\le e^{\lambda W(a)}.
+}
+\tag{10.510}
+```
+
+Replacing the canonical weight `e^{\lambda W(a)}` by `S_a^{-1}` therefore
+changes `\log\mathfrak Z_n` by only `O(n)=o(n^2)`.  The state entropy is
+harmless on the pressure scale, but the reciprocal destroys the usual
+sum-product factorization: the problem asks for a negative moment of the
+boundary partition function.  Reading an `m`-vertex child with the parent
+fugacity sends `\beta` to `\beta\sqrt{n/m}`; the Shearer restriction in
+(10.285) instead sends it asymptotically to
+`\beta(m/n)^{3/2}`.  Neither preserves fixed temperature.  The classical
+[Guerra--Toninelli interpolation for Gaussian
+disorder](https://arxiv.org/abs/cond-mat/0204280) has a signed overlap
+derivative at fixed temperature; no analogous sign is supplied for this
+reciprocal boundary moment.
+
+The exact rank calculation therefore closes the finite-state boundary route,
+not the broader entropy route.  The remaining external-theory target is an
+approximate state compression with `o(n^{3/2})` energy error, or a
+negative-moment interpolation whose logarithmic error is `o(n^2)`.
+
+#### 10.64.5 Updated frontier
+
+The four lessons of this wave are complementary:
+
+- endpoint allocations admit arbitrary scale weights and the exact local
+  bounds (10.489)--(10.492), but no theorem yet maps temporal replenishment
+  into those allocations in the same scale window;
+
+- the excess-corrected uniform deletion term is literally
+  `q_m-\beta_{n,h}q_n`, so its sharp scalar bound is normalized monotonicity
+  in disguise.  Raw replenishment is too strong and congestion four is far
+  too coarse at the required coefficient;
+
+- global internal-block replacement gives the exact hybrid telescope
+  (10.503), but arbitrary optimal replacements can change a layer from two
+  to ten.  Any useful comparison must choose replacements compatibly with
+  the fixed cross mosaic and control the full deficit landscape;
+
+- exact cut-code boundary dynamic programming has `2^{n-2}` indispensable
+  min-plus states.  Only approximate or optimizer-restricted compression can
+  evade this barrier.
+
+The highest-priority next target is now a **same-window compatibility
+theorem**: couple the temporal obligations in (10.499) to the weighted
+endpoint allocation (10.491), or choose hybrid minimizers satisfying
+(10.506), with an error obeying the multiplicative tail condition
+(10.500).  Independent routes are mean puncture stability with the terminal
+excess retained, and approximate negative-moment boundary interpolation.
