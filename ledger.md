@@ -12538,3 +12538,373 @@ replenishment identities (10.340)--(10.342) and prove a
 scale-preserving descent for globally minimizing matrices.  Improving
 `4` toward `10/3` is secondary unless the constant loss becomes the
 specific obstruction in that recurrence.
+
+### 10.63 Critical-scale falsification and benign macro congestion
+
+Two independent scope checks sharpen the interpretation of Sections
+10.61--10.62.  First, regular pseudorandom blocks lift the strict
+weighted obstruction to actual sign matrices with
+`Q(A)=O(n^{3/2})`; the local stopping inequality remains false at the
+critical scale, not only in dense biased blow-ups.  Second, the full
+allocation/path minimax on the obstruction is mild: its exact macro
+value is `175/99`, and even every fractional endpoint face stays below
+`1.826`.  The regular-block proof and the rational macro certificates
+are **Verified**.  Recursive amplification data are explicitly labelled
+**Numerical**.
+
+#### 10.63.1 A regular-block lift at `n^{3/2}` scale
+
+Let `W=(w_{ij})` be (10.448), with strict projective endpoint gap
+`\delta=1/112`.  Fix `\alpha=1/2` and `m=2` in Theorems A and B of
+[Tikhomirov--Youssef, *The spectral gap of dense random regular
+graphs*](https://arxiv.org/abs/1610.01765), and let `\Gamma` absorb
+their two spectral constants and the fixed factors below.
+
+Take `L\equiv1\pmod4`.  For every macro edge choose an odd integer
+
+```math
+r_{ij}=\kappa w_{ij}\sqrt L+O(1),
+\qquad
+d_{ij}=\frac{L-|r_{ij}|}{2}.
+```
+
+The cited directed theorem supplies an `L\times L` zero--one matrix
+`H_{ij}` with every row and column sum `d_{ij}` and second singular
+value `O(\sqrt L)`.  Put
+
+```math
+B_{ij}=\operatorname{sgn}(r_{ij})(J-2H_{ij}),
+\qquad
+E_{ij}=B_{ij}-\frac{r_{ij}}LJ.
+\tag{10.476}
+```
+
+Then `B_{ij}` is a sign block with every row and column sum `r_{ij}`,
+while `E_{ij}` annihilates constants and
+`\|E_{ij}\|_{\rm op}\le\Gamma\sqrt L`.  Inside clone class `i`, use
+
+```math
+B_{ii}=J-I-2G_i,
+```
+
+where `G_i` is an `(L-1)/2`-regular simple graph supplied by the cited
+undirected theorem.  The congruence on `L` makes this degree even;
+`B_{ii}` has zero row sums and the same `O(\sqrt L)` norm.  These
+theorems apply uniformly because every degree is
+`L/2-O(\sqrt L)` and lies between `L^{1/2}` and `L/2` for large `L`.
+
+Assemble the symmetric zero-diagonal sign matrix `A_L`.  If `P` is
+orthogonal projection onto the nine block-constant vectors, write
+`A_L=D_L+E_L`, where the off-diagonal block of `D_L` is
+`(r_{ij}/L)J`.  Blockwise regularity gives
+
+```math
+E_LP=PE_L=0,
+\qquad
+\|E_L\|_{\rm op}\le9\Gamma\sqrt L.
+\tag{10.477}
+```
+
+This exact annihilation is what removes the distance-one obstruction
+that defeats independent critical biases.
+
+Put `\beta_{ij}=r_{ij}/\sqrt L`; then
+`\beta_{ij}=\kappa w_{ij}+O(L^{-1/2})`.  Let a micro cut be at
+projective Hamming distance `k` from the constant spin.  The same
+Bernoulli-multilinear argument as (10.458)--(10.460), now for the block
+matrix `D_L`, gives
+
+```math
+C_{D_L}(R)
+\ge\frac{\kappa\delta}{10}\sqrt L\,k
+\tag{10.478}
+```
+
+for all sufficiently large `L`; the extra factor two leaves room for
+rounding the `r_{ij}`.  If `x` is the cut spin and `u=x-Px`, then
+
+```math
+C_{A_L}(R)
+=C_{D_L}(R)-\frac14u^{\mathsf T}E_Lu,
+\qquad
+\|u\|_2^2\le4k.
+\tag{10.479}
+```
+
+Thus the centered error is at most `9\Gamma\sqrt L\,k`.  Choosing, for
+example,
+
+```math
+\kappa>\frac{90\Gamma}{\delta}=10080\Gamma
+\tag{10.480}
+```
+
+makes the constant spin the exact projective positive endpoint.  For
+the intended `S\mid T` spin `\nu`, apply the same argument to
+`-\operatorname{diag}(\nu)A_L\operatorname{diag}(\nu)`.  Its macro cut
+function is
+
+```math
+g_{\beta^-}(Y)=c_\beta-g_\beta(T\mathbin\triangle Y),
+```
+
+so the strict upper gap in (10.449) makes `\nu` the exact negative
+endpoint with the correct sign.
+
+The child transfer is uniform.  If `X` contains `t\le5` macro types,
+then `\|E_L[X]\|_{\rm op}\le t\Gamma\sqrt L`; hence, with
+`\eta=25\Gamma/4`,
+
+```math
+\begin{aligned}
+L^{3/2}(m_X(\beta)-\eta)
+&\le m_X^{(L)}\le L^{3/2}m_X(\beta),\\
+L^{3/2}M_X(\beta)
+&\le M_X^{(L)}\le L^{3/2}(M_X(\beta)+\eta),\\
+a_X^{(L)}&=L^{3/2}a_X(\beta).
+\end{aligned}
+\tag{10.481}
+```
+
+The macro positive-dominance gaps `9/56` and `31/84`, multiplied by
+the fixed large `\kappa`, dominate `\eta`.  Both actual children are
+therefore positive-dominant.  A group-constant macro minimum is an
+available micro cut, so the hard gap can only improve:
+
+```math
+\begin{aligned}
+&a_S^{(L)}+a_T^{(L)}-m_S^{(L)}-m_T^{(L)}-c_L\\
+&\qquad\ge
+L^{3/2}\bigl[
+a_S(\beta)+a_T(\beta)-m_S(\beta)-m_T(\beta)-c_\beta
+\bigr]
+=\left(\frac{\kappa}{48}+o(1)\right)L^{3/2}>0.
+\end{aligned}
+\tag{10.482}
+```
+
+The parent sign margins are also strict:
+
+```math
+c_\beta-a_S(\beta)-a_T(\beta)
+\longrightarrow\frac{79\kappa}{168}>0,
+\qquad
+c_\beta+a_S(\beta)+a_T(\beta)
+\longrightarrow\frac{257\kappa}{168}>0.
+\tag{10.483}
+```
+
+Thus `I_L=4(a_S^{(L)}+a_T^{(L)})`, and positive dominance plus
+`a_X^{(L)}>0` gives the exact stopping deficit
+
+```math
+\boxed{
+I_L-(b_S+b_T)
+=4\bigl[
+a_S^{(L)}+a_T^{(L)}-m_S^{(L)}-m_T^{(L)}-c_L
+\bigr]>0.
+}
+\tag{10.484}
+```
+
+Finally, `D_L` is represented on the block-constant subspace by the
+nine-by-nine matrix `(r_{ij})`.  Equations (10.476)--(10.477) give
+
+```math
+\|A_L\|_{\rm op}=O(\sqrt L),
+\qquad
+Q(A_L)\le9L\|A_L\|_{\rm op}=O((9L)^{3/2}).
+\tag{10.485}
+```
+
+Therefore (10.435), (10.437), and (10.440) remain false even under the
+scale hypothesis `Q(A)=O(n^{3/2})`.  The implicit constant here is
+large and the matrices are not known to be global minimizers.  This
+does not show failure for a minimizing sequence or conflict with the
+unconditional complemented construction in Section 10.62.
+
+#### 10.63.2 Exact macro congestion and all flat endpoint faces
+
+Scale (10.448) by `672`.  The root data are
+
+```math
+(P,N,\mathcal R,I)=(2056,632,2688,1424),
+```
+
+with unique projective endpoints.  All discrete descendant endpoint
+ties yield one LP signature.  Its exact joint allocation/path optimum is
+
+```math
+\boxed{K_*^{\rm macro}=\frac{175}{99}=1+\frac{76}{99}.}
+\tag{10.486}
+```
+
+Here is a compact rational primal certificate.  The root capacities and
+child imbalances on the five-type and four-type shores are respectively
+
+```math
+((0,24),992),
+\qquad
+((48,1344),432).
+```
+
+On the five-type shore, allocate `608/33` in capacity `24` and pass
+`29488/33`; then allocate `22496/33` in capacity `888`, pass
+`6992/33`, and allocate the latter in capacity `276`.  Every active load
+on this spine is `76/99`.  On the four-type shore, allocate `1344`, pass
+`432`, and allocate that in capacity `432`, giving load one.  All
+conservation and imbalance caps are equalities or immediate inequalities,
+so (10.412) gives `1+76/99`.
+
+A matching dual uses edge-antichain weights
+
+```math
+\begin{array}{c|ccccc}
+\text{location}
+&\text{root--five}&\text{root--four}&\text{five children}
+&\text{active three children}&\text{four children}\\ \hline
+q&2/99&7/11&74/99&23/99&4/11.
+\end{array}
+```
+
+Every root-to-leaf sum is at most one.  Put node potential `1/1188`
+on the active spine, bucket slack `7/19008` only on the root capacity
+`1344`, and zero-cost obligation slacks `1/1188` at the four intervening
+zero-imbalance nodes.  All dual inequalities hold, and its objective is
+
+```math
+2688\frac1{1188}-1344\frac7{19008}
+=\frac{175}{99},
+```
+
+proving (10.486) without solver tolerances.
+
+Dense clone blow-ups have additional continuous endpoint ties inside a
+flat macro face.  Exact cube enumeration shows that the six negative
+endpoints induce a six-cycle: six symmetry-equivalent one-dimensional
+projective faces and no higher-dimensional face.  At `u=0`, the surviving
+`F_1` triangle with weights `(83,-55,-55)` has one further projective
+endpoint edge, but both child high capacities remain `276` along it, so
+`H_1(z)=\min\{220,276z\}` and `K` are unchanged.  Thus it remains only to
+let `u\in[0,1/2]` be the smaller fraction of the split clone class.  Exact
+elimination of the allocation LP gives child service
+
+```math
+H_s(z)=\min\{220s,(110+166s)z\},
+```
+
+and the one-variable equation
+
+```math
+888\theta+
+\max_{z_1+z_2=\theta}
+\bigl(H_u(z_1)+H_{1-u}(z_2)\bigr)
+=912-24\theta,
+\qquad
+K(u)=1+\theta.
+\tag{10.487}
+```
+
+Ordering the two piecewise-linear slopes gives the explicit solution.  If
+
+```math
+u_0=\frac{18311-\sqrt{313271161}}{9130},
+```
+
+then
+
+```math
+\theta(u)=
+\begin{cases}
+\displaystyle\frac{912}{1188-166u},&0\le u\le u_0,\\[6pt]
+\displaystyle\frac{215192-41832u-73040u^2}
+{(276-166u)(1022+166u)},&u_0\le u\le1/2.
+\end{cases}
+```
+
+The first branch is increasing.  After clearing the positive squared
+denominator, the derivative numerator of the second is
+`14848880608-29345416256u+7892258848u^2`, which is positive on
+`[0,1/2]`.  Thus `K(u)` is increasing.
+Exact primal and dual certificates at both endpoints give
+
+```math
+\boxed{
+\frac{175}{99}
+\le K(u)
+\le\frac{2017}{1105}
+=1.825339\ldots .
+}
+\tag{10.488}
+```
+
+The independently strictified witness from Section 10.61 has corrected
+values `1861/1053` at a vertex endpoint and `3575/1959` at its half-split
+face.  The correction matters: its internal `C`--`D` edge is
+`245/6000=49/1200`, not `251/6000`; the `1/1000` strictifying addition
+applies only across the parent shores.  For the vertex value, an exact
+dual certificate has edge-antichain weights
+
+```math
+\frac8{351},\ \frac{661}{1053}
+```
+
+on the two root edges, `784/1053` on both edges below the flat child,
+`245/1053` on both edges below its active three-type child, and
+`392/1053` on both edges below the other child.  Put node potential
+`1/10530` on the five active nodes, the same zero-cost obligation slack
+on the four intervening zero-imbalance nodes, and sole positive-cost
+bucket slack
+
+```math
+z_{\mathrm{root},\,\mathrm{other},\,\mathrm{high}}
+=\frac{539}{12636000}.
+```
+
+The two longest antichains sum to one, and the objective is
+
+```math
+24000\frac1{10530}
+-12000\frac{539}{12636000}
+=\frac{1861}{1053}.
+```
+
+Together with the exact primal certificate this proves the stated vertex
+value; the denominator `12636000` explains why a first generic rational
+reconstruction with cutoff `10^7` missed the dual.
+
+For completeness, double the half-split tree so its root capacities are
+`(0,480)` and `(480,24000)`.  A primal certificate allocates
+`258560/653` in the first high bucket and passes `10293920/653`; on the
+other root edge it allocates `24000` and passes `7840`.  The two flat
+children then receive high-bucket allocations `8960` and
+`7786240/1959`, pass respectively `1960` and `1703240/1959`, and those
+passed obligations are allocated in capacity `3430`; the other branch
+allocates `7840` in capacity `7840`.  Its congestion is `3575/1959`.
+A matching dual has root weights `16/653,1175/1959`, flat-child weights
+`1568/1959` on both edges, their next weights `343/1959`, and other-child
+weights `784/1959`.  Put potential `1/19590` on the seven active nodes,
+the same zero-cost obligation slack at the four intervening nodes, and
+sole positive-cost bucket slack `49/1880640` on the root capacity
+`24000`.  The long path sums equal one and the objective is
+
+```math
+48000\frac1{19590}-24000\frac{49}{1880640}
+=\frac{4800-1225}{1959}
+=\frac{3575}{1959}.
+```
+
+**Numerical amplification diagnostic.**  Formal recursive leaf grafts
+of the primary macro signature have depths one, two, and three values
+`175/99,401/228,401/228`.  A more detailed block-uniform hierarchy gives
+approximately `1.7677,1.5925,1.5906`; endpoint dominance in this second
+model is assumed rather than proved.  Both diagnostics decrease instead
+of amplify congestion.  The rigorous conclusions are (10.486)--(10.488),
+not a recursive realizability theorem.
+
+The nine-type obstruction therefore teaches two separate lessons.  Local
+stopping can fail even at the correct quadratic scale, so it cannot be
+repaired by a bare `Q=O(n^{3/2})` hypothesis.  Yet the full tree allocation
+absorbs that failure with congestion below two.  The active frontier
+remains the global use of the universal `K\le4` harvest, not amplification
+of this particular local certificate.
