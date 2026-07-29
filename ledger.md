@@ -21469,3 +21469,461 @@ its leading concrete target:
   the two-ground captured-mass LP using exact-minimizer geometry, keep one
   full-interpolation endpoint-transport attack, and test signed-cycle deletion
   only through a mechanism that genuinely controls cancellation.
+
+### 10.78 Retained deficit, integer extraction, and Hellinger endpoint transport
+
+The twenty-fifth wave finds a second strict weakening of the leading
+restriction interface.  The arbitrary-cut information inequality already
+contains two favorable terms which (10.764) discarded: the deficit of the
+output cut below the parent optimum and the leading coefficient slack between
+`p_2` and `(m/n)^{3/2}`.  Retaining both terms removes the exact-parent-ground
+requirement.  Moreover, because row-square costs are integers, every captured
+mixture with controlled mean cost contains one low-cost cut with only a
+polynomial loss of coverage.  The leading target is therefore one arbitrary
+full cut, not a two-ground mixture.
+
+The exact-ground price geometry and exchange formulas remain useful audits,
+but a continuous normal-cone argument cannot force the missing column.  On the
+parent-Gibbs alternative, ordinary Johnson log-Sobolev replaces the
+low-temperature-divergent Jeffreys endpoint form by a finite-measure
+Hellinger form.  Absent a new comparison theorem, its parent-cut entropy
+remains a separate open term.
+
+All algebraic identities, LP formulas, extraction and coarea lemmas,
+information/mgf inequalities, endpoint entropy bounds, and finite
+`A_4,A_6,A_8,A_9` enumerations below are **Verified**.  The displayed
+asymptotic overlap and endpoint estimates are **Open targets**.  The
+continuous-cost example is an **Abstract falsifier** only, not a signing.
+No convergence proof or asymptotic signing counterexample is obtained.
+
+#### 10.78.1 Exact price geometry and the limit of ground exchanges
+
+For exact parent-ground columns `(u_g,c_g)`, with
+`c_g=R_2(g)`, the dummy action makes the exact dual
+
+```math
+\boxed{
+Z_*(C)=\min_{\theta\ge0}\max_g
+\bigl[u_g(1+\theta(C-c_g))\bigr]_+.
+}
+\tag{10.783}
+```
+
+Thus a negative price bracket is exactly irrelevant, not a valid learner.
+If `c_a<C<c_b` and `u_a,u_b>0`, the captured law on a crossing pair has value
+
+```math
+\boxed{
+Z_{a,b}(C)=
+\left[
+\frac{c_b-C}{c_b-c_a}\frac1{u_a}
++\frac{C-c_a}{c_b-c_a}\frac1{u_b}
+\right]^{-1},
+}
+\tag{10.784}
+```
+
+and `Z_*(C)` is the maximum of all under-budget singleton coverages and all
+such crossing-pair values, with empty maxima and pairs containing zero
+coverage assigned value zero.  This handles zero-coverage actions, the dummy,
+and endpoints exactly.  Equivalently, failure at a level `z>0` is certified
+by one price `\theta` for which every positive bracket in (10.783) is below
+`z`.
+
+Ground-to-ground switching supplies exact but sign-indefinite formulas.
+Gauge a positive ground `g` to `1`.  For a second oriented positive ground
+`h`, write `h/g=(\varepsilon,z)`, let `H=\{i:z_i=-1\}`, put
+`a_i(H)=\sum_{j:z_j\ne z_i}w_{ij}`, and use unordered shore weights.  Then
+
+```math
+\boxed{
+\begin{aligned}
+b_g(H)&=
+\begin{cases}0,&\varepsilon=1,\\q_n/2,&\varepsilon=-1,\end{cases}\\
+r_i(h)&=\varepsilon[r_i(g)-2a_i(H)],\\
+R_2(h)-R_2(g)&=4\sum_i[a_i(H)^2-r_i(g)a_i(H)],\\
+\ell(S,h)-\ell(S,g)
+&=2(1-\varepsilon)E_g(S)+4\varepsilon b_g(H;S).
+\end{aligned}
+}
+\tag{10.785}
+```
+
+The full shore is extremal, but its restriction to `S` has no sign; neither
+row-square improvement nor coverage improvement forces the other.  These
+identities were exhausted over every ordered ground pair and every
+one-deletion selector of `A_6,A_8,A_9`.
+
+There is also a precise first-order obstruction.  In unordered coordinates,
+every subgradient supported on exact positive grounds has
+
+```math
+\boxed{
+G=\mathbb E d^g,
+\qquad
+\langle A,G\rangle=q_n/2>0.
+}
+\tag{10.786}
+```
+
+A continuous-box minimum at the signing vertex would require
+`a_eG_e\le0` on every edge, contradicting (10.786).  Hence a first-order
+normal-cone proof using only the old exact-ground face cannot encode discrete
+signing minimality; changed positive-deficit witnesses or genuinely discrete
+higher-order structure are necessary.  This is scoped to that relaxation,
+not a no-go for discrete separation.
+
+#### 10.78.2 Integer extraction and loss-Laplace coarea
+
+For a positive parent ground, uniform deletion of a `k`-set gives the exact
+row-mass moments
+
+```math
+\boxed{
+\mathbb E R_T=\frac{kq_n}{n},
+\qquad
+\mathbb E R_T^2
+=\frac{k}{n}R_2(g)
++\frac{k(k-1)}{n(n-1)}[q_n^2-R_2(g)].
+}
+\tag{10.787}
+```
+
+Together with `\ell=R_T+b_T-d_T`, these identities expose the proposed
+scale but do not control the loss lower tail: the correction can correlate
+with `R_T`, and the mean loss is the unknown restriction excess.
+
+The cost lattice gives a stronger general fact.  Let arbitrary actions have
+coverage `u_g`, nonnegative integer cost `c_g`, prior `\nu`, overlap `Z>0`,
+and captured law `\mu_g=\nu_gu_g/Z` with
+`\mathbb E_\mu c_g\le C`.  If `B=\lfloor C\rfloor`, then
+
+```math
+\boxed{
+\mu\{c_g\le B\}\ge\frac{B+1-C}{B+1},
+\qquad
+\max_{c_g\le B}u_g
+\ge Z\frac{B+1-C}{B+1}.
+}
+\tag{10.788}
+```
+
+After rounding upward to `N=\lceil C\rceil`, some action has
+`c_g\le N` and `u_g\ge Z/(N+1)`.  Thus a mixture at polynomial cost can
+improve the best coverage under the rounded budget by at most a polynomial
+factor.  The one-unit enlargement is harmless at the target scale, so the
+two-ground escape in (10.784) is asymptotically unnecessary.  Without a cost
+lattice this is false: the
+abstract columns `(e^{-L},0)` and `(1,1+e^{-L})` at budget one mix to
+`(1+e^{-L})/2`.
+
+There is a useful soft-to-hard conversion.  For nonnegative loss `L_g`, put
+`u_g(t)=\Pr\{L_g\le t\}`, `v_g(\lambda)=\mathbb E e^{-\lambda L_g}`,
+and suppose
+
+```math
+K=\sum_g\nu_gv_g>0,
+\qquad
+KC_L=\sum_g\nu_gv_gc_g,
+\qquad C_L\le C.
+```
+
+Layer cake gives
+
+```math
+\boxed{
+K=\lambda\int_0^\infty e^{-\lambda t}Z_\nu(t)\,dt,
+\qquad
+KC_L=\lambda\int_0^\infty e^{-\lambda t}N_\nu(t)\,dt.
+}
+\tag{10.789}
+```
+
+For every `a>2`, deleting the upper `t`-tail and levels with captured cost
+above `aC` proves that some
+`0\le t\le\lambda^{-1}\log(a/K)` satisfies
+
+```math
+\boxed{
+Z_\nu(t)\ge K(1-2/a),
+\qquad
+\frac{N_\nu(t)}{Z_\nu(t)}\le aC.
+}
+\tag{10.790}
+```
+
+Integer extraction then produces one action with cost at most
+`\lceil aC\rceil` and coverage at least
+`K(1-2/a)/(\lceil aC\rceil+1)`.  Consequently the exact-ground soft premise
+
+```math
+\boxed{
+K_*(C;\lambda)=
+\max_{\nu\in\Delta(\Gamma\cup\{0\})}\left\{
+\sum_g\nu_gv_g:
+\sum_g\nu_gv_g(c_g-C)\le0
+\right\}
+\ge e^{-O(n^{3/4-c})}
+}
+\tag{10.791}
+```
+
+at `\lambda\asymp n^{-3/4}` would recover the old hard target without a
+loss-mean argument.  It remains open.  A cost tilt has no universal
+monotonicity: its overlap derivative is the negative coverage--cost
+covariance, whose sign already changes across thresholds in `A_9`.
+
+#### 10.78.3 The all-cut centered effective-loss lemma
+
+Now let `d` be any full oriented cut, not necessarily a parent ground.  Put
+
+```math
+\boxed{
+\begin{aligned}
+\Delta_A(d)&=q_n-\langle A,d\rangle,\\
+X(S,d)&=c_A(S,d)-p_2\langle A,d\rangle,\\
+B_{n,m}&=\left[\left(\frac mn\right)^{3/2}-p_2\right]q_n,\\
+\widehat\ell(S,d)
+&=Q(A[S])-c_A(S,d)-p_2\Delta_A(d)-B_{n,m}.
+\end{aligned}
+}
+\tag{10.792}
+```
+
+The retained-deficit decomposition is pointwise:
+
+```math
+\boxed{
+Q(A[S])-p_2q_n
+=X(S,d)+\ell(S,d)-p_2\Delta_A(d).
+}
+\tag{10.793}
+```
+
+Equations (10.759)--(10.760) apply to arbitrary cuts.  Signed row fields
+enter only through `R_2(d)`, and
+`|\langle A,d\rangle|\le q_n`.  Hence, on the halved spectral domain, every
+joint selector--cut law obeys
+
+```math
+\boxed{
+\begin{aligned}
+V_{\rm ad}(A,m)-\left(\frac mn\right)^{3/2}q_n
+\le{}&\mathbb E\widehat\ell(S,D)+\epsilon_{n,m}q_n\\
+&+\frac{I(S;D)+D(P_S\Vert U_m)+\chi_{n,m}}{\lambda}\\
+&+\lambda\left[p^2\mathbb E R_2(D)+\frac{n^2}{2}\right].
+\end{aligned}
+}
+\tag{10.794}
+```
+
+This proves the new exact sufficient lemma.  Fix
+`\rho\in[1/2,1)`, `0<c<1/4`, and uniform finite constants.  For every
+sufficiently large `n` and every integer `m\in[\rho n,n)`, it is enough to
+choose a target-specific exact minimizer `A=A_{n,m}`, cut `d=d_{n,m}`, and
+threshold satisfying
+
+```math
+\boxed{
+\begin{aligned}
+R_2(d)&=O(n^{9/4-c}),\\
+u_d:=U_m\{S:\widehat\ell(S,d)\le t\}
+&\ge\exp\{-O(n^{3/4-c})\},\\
+t&=O(n^{3/2-c}).
+\end{aligned}
+}
+\tag{10.795}
+```
+
+Condition `U_m` on the displayed event and use the constant output `d`.
+Then `I(S;D)=0`, the selector KL is `-\log u_d`, and (10.794) at
+`\lambda\asymp n^{-3/4}` gives a power-saving restriction edge.  A captured
+mixture over all cuts is equivalent at this scale by (10.788).  For a parent
+ground, the event is the much weaker
+`\ell(S,g)\le B_{n,m}+t`, not `\ell\le t` as in (10.764).
+
+For every fixed cut, the mean remains exactly the unknown endpoint excess:
+
+```math
+\boxed{
+\mathbb E_{S\sim U_m}\widehat\ell(S,d)
+=\mathbb E_{S\sim U_m}Q(A[S])
+-\left(\frac mn\right)^{3/2}q_n.
+}
+\tag{10.796}
+```
+
+Thus the advance is a strictly weaker tail/compression interface, not a
+scalar solution.  An asymptotic proof must create a fixed-cut upper tail for
+the centered selector payoff while controlling that cut's row square.
+
+At one deletion and residual threshold zero, the exact LP audit is:
+
+| signing and budget | ground, no slack | all cuts, deficit only | all cuts, full slack |
+|:---|---:|---:|---:|
+| `A_6`, `C=30` | `5/6` | `5/6` | `5/6`, `(R_2,\Delta)=(30,0)` |
+| `A_8`, `C=64` | `3/8` | `1/2` | `5/8`, `(40,20)` |
+| `A_9`, `C=80` | `1/9` | `8/21` | `4/9`, `(40,24)` |
+| `A_9`, `C=88` | `4/27` | `32/81` | `4/9`, `(40,24)` |
+| `A_9`, `C=96` | `2/9` | `16/39` | `4/9`, `(40,24)` |
+| `A_9`, `C=104` | `4/15` | `32/75` | `4/9`, `(40,24)` |
+| `A_9`, `C=112` | `1/3` | `4/9` | `4/9`, `(40,24)` |
+
+The full-slack values for `A_8,A_9` are attained by one non-ground cut.
+This is exact finite evidence that both retained terms are operational, not
+an asymptotic coverage theorem.
+
+#### 10.78.4 A tail-sharper endpoint transport and a coefficient obstruction
+
+Retain the full interpolation notation of (10.772)--(10.775).  Put
+`h_S(d)=e^{-\ell_S(d[S])}`, `w_S=Z_S(\gamma)/Z_0`, and let `q_S` be the
+normalized full-cut lift of the child Gibbs law followed by the parent
+conditional law.  Direct cancellation gives the finite-measure identity
+
+```math
+\boxed{
+w_Sq_S(d)=C\nu_\beta(d)h_S(d),
+\qquad C=Z_A(\beta)/Z_0.
+}
+\tag{10.797}
+```
+
+For finite measures use
+
+```math
+H^2(\mu,\eta)=\frac12\sum_x(\sqrt{\mu_x}-\sqrt{\eta_x})^2.
+```
+
+Ordinary Johnson log-Sobolev, applied for each fixed parent cut and then
+summed, yields
+
+```math
+\boxed{
+\mathbb E_{Ca\nu_\beta}D(\rho_d\Vert U_m)
+\le
+\tau_{\rm ls}\frac{m(n-m)}n
+\mathbb E_{S\sim S'}H^2(w_Sq_S,w_{S'}q_{S'}),
+}
+\tag{10.798}
+```
+
+where
+`\tau_{\rm ls}\le(2/\log2)\log[n^2/(m(n-m))]`.  The finite-measure edge
+splits exactly into partition-weight and channel parts:
+
+```math
+H^2(w_Sq_S,w_Tq_T)
+=\frac12(\sqrt{w_S}-\sqrt{w_T})^2
++\sqrt{w_Sw_T}\,H^2(q_S,q_T).
+```
+
+Combining (10.798) with the endpoint chain rule (10.774) proves
+
+```math
+\boxed{
+D(M_0\Vert M_1)
+\le
+\operatorname{Ent}_{\nu_\beta}(Ca)
++\tau_{\rm ls}\frac{m(n-m)}n
+\mathbb E_{S\sim S'}H^2(w_Sq_S,w_{S'}q_{S'}).
+}
+\tag{10.799}
+```
+
+At fixed density it is enough to establish the two separate open estimates
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(Ca)=O(n^{1/2-2c}),
+\qquad
+\mathbb E_{S\sim S'}H^2(w_Sq_S,w_{S'}q_{S'})
+=O(n^{-1/2-2c}).
+}
+\tag{10.800}
+```
+
+This closes the full-interpolation information exponent if proved.  It is
+strictly more robust to exponentially small endpoint weights than (10.775):
+pointwise,
+
+```math
+\boxed{
+(x-y)(\log x-\log y)
+\ge4(\sqrt x-\sqrt y)^2.
+}
+\tag{10.801}
+```
+
+Thus the raw Jeffreys functional is at least four times the raw Hellinger
+functional.  In the exact `A_6,A_8,A_9` audits from `\beta=4` to `8`, the
+former approximately doubles while the latter and the actual selector
+entropy saturate.
+
+This orders only the raw functionals; it does not order the certified
+ordinary and modified log-Sobolev bounds because their constants differ.
+The parent-cut entropy in (10.800) is not controlled by either displayed
+selector-edge certificate with its stated coefficient.  An exact order-four
+minimizer at
+`(\beta,\gamma)=(1/2,1/10)` has
+
+```math
+\operatorname{Ent}_{\nu_\beta}(Ca)=0.627697022731,
+\quad
+\mathcal D_{\rm sel}^{\rm raw}=0.363652934734,
+\quad
+\tau_{\rm LY}\mathcal H_{\rm sel}^{\rm raw}=0.388520927162,
+```
+
+where `\tau_{\rm LY}` is the explicit Lee--Yau upper constant in (10.798).
+The two coefficient-specific absorption inequalities therefore fail even
+for an exact minimizer.  This does not rule out a universal constant-factor
+or asymptotic minimizer-specific comparison; absent one, the first estimate
+in (10.800) remains a separate parent-cut transport target.
+
+#### 10.78.5 Updated frontier
+
+Wave 25 preserves adaptive optimized principal restriction as the leading
+route but again weakens its exact implementation:
+
+- the leading sufficient statement is now the single arbitrary-cut lemma
+  (10.795).  It retains both the negative parent deficit and the entire
+  leading coefficient allowance `B_{n,m}`.  Exact parent grounds are not
+  required, and integer row-square extraction shows that two-cut mixing can
+  improve coverage by only a polynomial factor at the relevant scale;
+
+- the missing theorem is therefore a minimizer-specific fixed-cut upper-tail
+  statement: for one active ratio window and every target order, find one cut
+  with `R_2=O(n^{9/4-c})` whose centered selector payoff covers
+  `\exp\{-O(n^{3/4-c})\}` of the slice at residual tolerance
+  `O(n^{3/2-c})`.  Its mean (10.796) is exactly the unknown restriction
+  excess, so scalar averaging remains circular.  For fixed proposed
+  constants, failure means that every eligible minimizer and cut lies below
+  the proposed exponential coverage along infinitely many active pairs;
+  failure for all finite constants is the corresponding
+  `\exp\{-\omega(n^{3/4-c})\}` maximal-coverage statement;
+
+- exact-ground price and exchange geometry remains correct but no longer
+  defines the weakest target.  Integer extraction collapses its putative
+  two-ground rescue, the coarea theorem converts a joint loss-Laplace premise
+  into one hard column, and the continuous normal cone cannot encode discrete
+  signing minimality from the old ground face alone;
+
+- full parent interpolation remains the strongest independent alternative
+  inside optimized restriction.  Ordinary Johnson log-Sobolev gives the
+  tail-sharper Hellinger package (10.799)--(10.800), but the `A_4` certificate
+  defeats the two displayed coefficient-specific absorptions.  Absent a new
+  minimizer-specific comparison, parent-cut entropy remains a separate open
+  term;
+
+- constant shortfall remains open but is not promoted.  Wave 24 already
+  reduced it to signed-cycle cancellation stability and showed generic
+  plaquette curvature gives only constant reward.  No result in this wave
+  changes that assessment, and no convergence proof or asymptotic
+  counterexample has appeared;
+
+- because the leading concrete implementation changed decisively,
+  `STEERING.md` must be refreshed now rather than waiting until Wave 29.
+  Wave 26 should attack (10.795) directly through minimizer-specific
+  low-row-square cut construction and fixed-slice reverse-tail structure,
+  while retaining one parent-cut entropy/Hellinger attempt and one genuinely
+  complete-signing cancellation or falsification attack.
