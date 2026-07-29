@@ -1,6 +1,6 @@
 # Quadratic Signing Limit — Research Ledger
 
-Last updated: 2026-07-25 (America/Los_Angeles)
+Last updated: 2026-07-29 (UTC)
 
 ## Purpose
 
@@ -9769,3 +9769,599 @@ already refuted at `n=5`), and an exchange using nonzero endpoint
 margin or opposite orientation.  Any proposed lemma must survive the
 exact order-nine zero-cut obstruction and the prime order-five affine
 plane above.
+
+### 10.56 Cut-space exchange, affine puncture families, and reset descent
+
+The fourth wave found that two of the proposed exchanges were still
+too close to gauge symmetries.  It also found the correct
+orientation-safe way to distribute a leader gap.  All algebraic and
+finite claims below are **Verified**; explicitly identified
+enumeration counts are **Numerical**.
+
+#### 10.56.1 Internal stars do not make a coupled exchange
+
+Let `A^F` denote the signing obtained by flipping an edge set `F`,
+and split the vertices as `S\sqcup T`.  For `R\subseteq S` and
+`U\subseteq T`, let
+```math
+K_S=\delta_{A[S]}(R),\qquad
+K_T=\delta_{A[T]}(U),
+```
+and define the cross rectangle
+```math
+X_{R,U}
+=
+\bigl[R\times(T\setminus U)\bigr]
+\sqcup
+\bigl[(S\setminus R)\times U\bigr].
+```
+The full cut `\delta_A(R\cup U)` is the disjoint union
+`K_S\sqcup K_T\sqcup X_{R,U}`.  Hence, for every cross-edge set `G`,
+```math
+F=K_S\mathbin\triangle K_T\mathbin\triangle G
+\quad\Longrightarrow\quad
+F\mathbin\triangle\delta_A(R\cup U)
+=G\mathbin\triangle X_{R,U}\subseteq E(S,T).
+```
+Flipping a full vertex cut is a switching equivalence, so
+```math
+\boxed{
+M(A^F)
+=
+M\!\left(A^{\,G\mathbin\triangle X_{R,U}}\right).
+}
+\tag{10.357}
+```
+Thus arbitrary internal stars on both shores, even when coupled to
+arbitrary cross rectangles, are exactly cross-only exchanges in
+disguise.  At an active positive block cut
+```math
+p(A[S])+p(A[T])=M(A),
+```
+every signing on the right of (10.357) is already stable by
+(10.343).  This whole exchange class is therefore vacuous.
+
+Conversely, a coupled flip set has a cross-only representative modulo
+switching if and only if both of its internal pieces are cuts.  In a
+complete graph an edge set is a cut exactly when it meets every
+triangle evenly.  Therefore every genuinely informative internal
+residual has an odd-parity triangle witness.  On a shore of size `s`,
+the residual quotient has dimension
+```math
+\boxed{
+\binom{s}{2}-(s-1)=\binom{s-1}{2}.
+}
+\tag{10.358}
+```
+The next coupled exchange must operate in this triangle/cycle
+quotient; internal stars cannot supply the missing covariance.
+
+The prime order-five minimizer (10.350) also gives the exact wall for
+an *unconditional* covariance inequality.  In doubled normalization,
+use its all-one ground and `S=\{0,1\}`.  Then
+```math
+\begin{gathered}
+q=8,\qquad
+r=(0,0,2,2,4),\qquad
+\beta=(1,1),\\
+c=2,\quad g=8,\quad
+H_D=-2,\quad H_E=6,\quad
+\gamma=0,\quad d=2,\quad R_S=0,
+\end{gathered}
+```
+while
+```math
+\boxed{
+\sum_{i\in S}r_i\beta_i=0,\qquad
+(m-1)c=8,\qquad
+\ell=4=\frac g2.
+}
+\tag{10.359}
+```
+Consequently no positive `\kappa` can make
+`\sum r_i\beta_i\ge\kappa(m-1)c` hold on every shore of every global
+minimizer.  This does **not** falsify the narrowed bad-shore target:
+the zero covariance in (10.359) occurs at maximal predecessor
+visibility.
+
+A useful opposite-endpoint-margin inequality survives.  In a
+positive-ground gauge let
+```math
+c=c_A(S),\qquad
+\Delta=\frac q2-c=\frac{2q-g}{4},\qquad
+K=\sum_{i\in S}r_i\beta_i,\qquad
+D=A[S].
+```
+Choose `R\subseteq S` independently with
+`\Pr(i\in R)=t r_i`, where
+`0<t\le1/\max_{i\in S}r_i`.  Direct edge expansion gives
+```math
+\boxed{
+\mathbb E\,c_A(S\setminus R)
+=
+c+t\bigl(\|r_S\|_2^2-2K\bigr)
+-t^2r_S^{\mathsf T}Dr_S.
+}
+\tag{10.360}
+```
+The absolute-ground cap says
+`0\le c_A(H)\le q/2` for every `H`.  Applying its upper half to
+(10.360) yields
+```math
+\boxed{
+K\ge
+\frac12\left(
+\|r_S\|_2^2
+-t\,r_S^{\mathsf T}Dr_S
+-\frac{\Delta}{t}
+\right).
+}
+\tag{10.361}
+```
+At an exact opposite endpoint, `\Delta=0`, letting `t\downarrow0`
+proves
+```math
+K\ge\frac12\|r_S\|_2^2.
+```
+Equivalently, the pointwise cut comparison
+`c_A(S\setminus\{i\})\le c_A(S)=q/2` gives
+`\beta_i\ge r_i/2`.  Since
+`r_S^{\mathsf T}Dr_S\le(|S|-1)\|r_S\|_2^2`, taking
+`t=1/(m-1)` gives the stable form
+```math
+\boxed{
+K\ge
+\frac{|T|}{2(m-1)}\|r_S\|_2^2
+-\frac{(m-1)(2q-g)}8.
+}
+\tag{10.362}
+```
+Its margin error is generally too large and is not known to
+telescope, but it identifies the correct favorable regime: cuts
+close to the opposite endpoint force positive field-boundary
+covariance.
+
+**Numerical exact audit.**  Across every oriented absolute-ground
+gauge and rooted shore of the order-nine minimizer (5.1), no negative
+`K` occurs.  There are `18` positive-traffic zero-covariance shores,
+all with `\ell/g=1/2`.  Among the `636` shores with `\ell<g/8`,
+```math
+\min\frac{K}{(m-1)c}=\frac14;
+```
+among the four with `\ell<0`, the minimum is `5/8`.  These finite
+counts support a clipped bad-shore theorem but do not prove an
+asymptotic constant.
+
+#### 10.56.2 Rank-two puncture obstructions persist at every prime residue order
+
+There is a convenient normal form for an affine endpoint plane.
+After switching one word to `q_0=1`, write
+```math
+q_h(i,j)
+=
+(-1)^{\langle h,\tau_i+\tau_j+\omega\rangle},
+\qquad
+h\in\mathbb F_2^2,
+\tag{10.363}
+```
+where `\tau_i\in\mathbb F_2^2` is the vertex type and `\omega` is the
+orientation character.  Put
+```math
+W_z
+=
+\sum_{\tau_i+\tau_j+\omega=z}a_{ij}.
+```
+Fourier inversion gives the exact endpoint criterion
+```math
+\boxed{
+\langle A,q_h\rangle=M\quad(h\in\mathbb F_2^2)
+\quad\Longleftrightarrow\quad
+W_0=M,\quad W_z=0\ (z\ne0).
+}
+\tag{10.364}
+```
+For a vertex `i` of type `a`, let
+```math
+T_{i,z}
+=
+\sum_{\tau_j=a+\omega+z}a_{ij}.
+```
+Then its four fields are the Walsh transform
+```math
+r_i(h)=\sum_zT_{i,z}(-1)^{\langle h,z\rangle}.
+```
+The closest-puncture condition within this plane is exactly
+`\min_h r_i(h)=0` for every `i`.  Once the four words are actual
+endpoints, that condition automatically gives `d_i=0`: a zero field
+retains score `M` after deletion, while a principal child cannot have
+norm larger than its parent.
+
+Prime arithmetic cannot rule out this configuration.  Let `m` be
+even, put `n=2m+1`, and partition the vertices as
+```math
+X\sqcup\{z\}\sqcup Y,\qquad |X|=|Y|=m.
+```
+Choose balanced `s,t\in\{\pm1\}^m` and define
+```math
+A_m=
+\begin{pmatrix}
+J_m-I_m&s&J_m\\
+s^{\mathsf T}&0&t^{\mathsf T}\\
+J_m&t&I_m-J_m
+\end{pmatrix}.
+\tag{10.365}
+```
+Assign types
+```math
+\tau(X)=0,\qquad\tau(z)=1,\qquad\tau(Y)=2,\qquad
+\omega=2.
+```
+The four oriented words are represented by
+```math
+\begin{array}{c|c}
+\text{orientation}&\text{spin on }(X,z,Y)\\ \hline
++&(1_X, 1, 1_Y)\\
++&(1_X,-1, 1_Y)\\
+-&(1_X, 1,-1_Y)\\
+-&(1_X,-1,-1_Y).
+\end{array}
+```
+They form an affine plane and all have oriented score `m^2`.
+
+For a general spin `(x,\varepsilon,y)`, set
+```math
+S=1^{\mathsf T}x,\quad T=1^{\mathsf T}y,\quad
+U=s^{\mathsf T}x,\quad V=t^{\mathsf T}y.
+```
+Its one-copy energy is
+```math
+H
+=
+\frac12(S^2-T^2)+ST+\varepsilon(U+V).
+\tag{10.366}
+```
+Balance implies
+`|S|+|U|\le m` and `|T|+|V|\le m`.  Put
+`a=|S|`, `b=|T|` and write
+```math
+\max(a,b)=m-p,\qquad
+\min(a,b)=m-q,\qquad q=p+2r.
+```
+Because `m` is even, `p,q` are even.  The exact gap computation is
+```math
+\begin{aligned}
+m^2
+&-
+\left[
+\frac12|a^2-b^2|+ab+2m-a-b
+\right]\\
+&=
+p(2m-p-2)+2r(r-1)\ge0.
+\end{aligned}
+```
+Type-constant states attain both signs, and hence
+```math
+\boxed{
+M(A_m)=m^2=\frac{(n-1)^2}{4}.
+}
+\tag{10.367}
+```
+
+The complete field table is
+```math
+\begin{array}{c|c|c|c}
+h&r_X(h)&r_z(h)&r_Y(h)\\ \hline
+0&2m-1+s_i&0&1+t_j\\
+1&2m-1-s_i&0&1-t_j\\
+2&1-s_i&0&2m-1+t_j\\
+3&1+s_i&0&2m-1-t_j.
+\end{array}
+\tag{10.368}
+```
+Every entry is nonnegative and every vertex column contains a zero.
+Therefore
+```math
+\boxed{
+M(A_m[-i])=m^2\qquad(i\in[n]).
+}
+```
+This produces the puncture-covering rank-two obstruction at every
+order `n\equiv1\pmod4`, including arbitrarily large primes.  Its norm
+is quadratic, so it does not refute a theorem using global
+minimality or an asymptotic `O(n^{3/2})` cap.
+
+There is nevertheless an exact competitive-scale finite example at
+the prime `n=13`:
+```math
+A=
+\begin{pmatrix}
+0&1&-1&1&1&-1&-1&1&1&-1&1&1&-1\\
+1&0&1&1&1&1&-1&1&1&1&1&1&1\\
+-1&1&0&1&1&1&1&1&1&1&1&-1&1\\
+1&1&1&0&-1&1&-1&1&1&-1&1&1&1\\
+1&1&1&-1&0&1&1&1&1&1&1&1&-1\\
+-1&1&1&1&1&0&1&1&1&1&-1&1&1\\
+-1&-1&1&-1&1&1&0&1&-1&1&1&-1&-1\\
+1&1&1&1&1&1&1&0&-1&-1&-1&-1&-1\\
+1&1&1&1&1&1&-1&-1&0&-1&-1&-1&-1\\
+-1&1&1&-1&1&1&1&-1&-1&0&-1&1&1\\
+1&1&1&1&1&-1&1&-1&-1&-1&0&-1&1\\
+1&1&-1&1&1&1&-1&-1&-1&1&-1&0&-1\\
+-1&1&1&1&-1&1&-1&-1&-1&1&1&-1&0
+\end{pmatrix}.
+\tag{10.369}
+```
+Use type list
+```math
+(0,0,0,0,0,0,1,2,2,2,2,2,2)
+```
+and `\omega=2`.  The four field profiles are
+```math
+\begin{pmatrix}
+2&10&8&6&8&8&0&2&0&2&2&0&0\\
+4&12&6&8&6&6&0&0&2&0&0&2&2\\
+2&2&0&2&0&0&0&12&10&4&8&6&2\\
+0&0&2&0&2&2&0&10&12&2&6&8&4
+\end{pmatrix}.
+```
+Every column contains zero.  Exact enumeration of the `2^{12}`
+projective spins and the thirteen `2^{11}` child spin spaces gives
+```math
+\boxed{
+\min H_A=-24,\quad
+\max H_A=24,\quad
+M(A[-i])=24\ \text{for every }i.
+}
+\tag{10.370}
+```
+This example is not globally minimizing.  The quadratic-residue
+circulant signing with `P_{ii}=0` and, for `i\ne j`,
+```math
+P_{ij}=1
+\quad\Longleftrightarrow\quad
+i-j\pmod {13}\in\{1,3,4,9,10,12\}
+```
+has exact enumerated norm `20`.  Thus `M_{13}\le20<24`.  The example
+nevertheless falsifies every finite theorem based only on prime
+order, flatness, four exact endpoints, puncture-zero coverage, and
+`d_i=0`, even at ratio
+`24/13^{3/2}=0.512\ldots`.  Global minimality or a genuinely
+asymptotic competitive hypothesis is indispensable.
+
+#### 10.56.3 Orientation reset and the clipped backward residual
+
+Return to doubled normalization and the two-shore notation of
+Section 10.55.3.  In addition to the forward core `E`, retain the
+backward or peeled core `D`.  Put
+```math
+q_D=Q(D),\qquad q_E=Q(E),\qquad
+\zeta=q_D+q_E-q,
+```
+and define the two same-orientation raw payoffs
+```math
+\ell_F
+=2\|B1_T\|_1-(q_E-H_E),\qquad
+\ell_B
+=2\|B^{\mathsf T}1_S\|_1-(q_D-H_D).
+```
+Since each cross norm is at least `g/4` and
+```math
+(q_D-H_D)+(q_E-H_E)=\zeta+\frac g2,
+```
+one obtains
+```math
+\boxed{
+\ell_F+\ell_B\ge\frac g2-\zeta.
+}
+\tag{10.371}
+```
+Consequently,
+```math
+\boxed{
+\max\{(\ell_F)_+,(\ell_B)_+\}\ge\frac g8
+\quad\text{or}\quad
+\zeta>\frac g4.
+}
+\tag{10.372}
+```
+If `\zeta>0`, the two child absolute norms must occur in opposite
+exclusive orientations.  If they shared a maximizing orientation,
+the two child grounds and a choice of relative global sign would give
+`Q(C)\ge q_D+q_E`.
+
+There is also an orientation-safe small-shore estimate.  Let `X` be
+either shore, of size `s`, choose an orientation `\tau_X` attaining
+`Q(X)`, and put
+```math
+g_X=Q(X)-\tau_XH_X,\qquad
+\lambda_X=2L_X-g_X,
+```
+where `L_X` is the corresponding cross `\ell_1` norm.  Since
+`2L_X\ge g/2` and `g_X\le2Q(X)`,
+```math
+\boxed{
+g\le2(\lambda_X)_++4Q(X)
+\le2(\lambda_X)_++4s(s-1).
+}
+\tag{10.373}
+```
+Thus a gap invisible from the smaller shore forces that shore to
+have size `\Omega(\sqrt g)`.
+
+The augmented orientation cannot simply be ignored.  For a carried
+`\sigma\in\{\pm1\}`, define
+```math
+g=q-\sigma v^{\mathsf T}Cv,\qquad
+a=q-v^{\mathsf T}Cv.
+```
+Then
+```math
+a=
+\begin{cases}
+g,&\sigma=+,\\
+2q-g,&\sigma=-.
+\end{cases}
+\tag{10.374}
+```
+With carried child gaps
+`g_D=q_D-\sigma H_D` and `g_E=q_E-\sigma H_E`, the two directed
+payoffs satisfy
+```math
+\boxed{
+\begin{aligned}
+\sigma=+:\quad&
+\ell_D^++\ell_E^+
+\ge\frac g2-\zeta,\\
+\sigma=-:\quad&
+\ell_D^-+\ell_E^-
+\ge q-\frac{3g}{2}-\zeta.
+\end{aligned}
+}
+\tag{10.375}
+```
+A pure orientation mismatch has `g=2q` but `a=0`.  It carries no
+ordinary cut layer, so no scalar potential depending only on `g` can
+survive arbitrary orientation changes.
+
+There is a clean repair.  At every positive-oriented node, choose
+independently in each child `X` an exact endpoint
+`(\tau_X,w_X)` with
+```math
+\tau_Xw_X^{\mathsf T}Xw_X=Q(X).
+```
+Normalize the child by this endpoint, define its inherited gap `g_X`
+and directed payoff `\lambda_X=2L_X-g_X`, and recurse on both
+children.  At one node,
+```math
+g\le2L_D+2L_E
+\le
+(\lambda_D)_++(\lambda_E)_++g_D+g_E.
+\tag{10.376}
+```
+All internal child gaps cancel on recursion, while singleton and
+zero-gap leaves contribute nothing.  Therefore
+```math
+\boxed{
+g_{\rm root}
+\le
+\sum_{\text{reset-tree edges}}(\lambda_e)_+.
+}
+\tag{10.377}
+```
+This is a fully orientation-safe binary distribution theorem.  It
+does not yet bound the allocated tree capacity.
+
+The smallest exact obstruction to a naive same-channel recursion is
+```math
+C=
+\begin{pmatrix}
+0&1&1&1&1\\
+1&0&1&-1&1\\
+1&1&0&1&-1\\
+1&-1&1&0&-1\\
+1&1&-1&-1&0
+\end{pmatrix}.
+\tag{10.378}
+```
+Its doubled energies are `-8,0,8`.  For
+`v=(-1,-1,-1,1,1)` and the split
+`D=\{0,1,2\}`, `E=\{3,4\}`,
+```math
+g=8,\quad
+q_D=H_D=6,\quad
+q_E=2,\quad H_E=-2,\quad\zeta=0.
+```
+The same-positive payoffs are `4` and `0`, with child gaps `0` and
+`4`; the latter is a pure orientation mismatch and has no later cut
+layer.  Thus the naive same-channel tree sees only `4<g`.
+Orientation reset chooses the positive endpoint in `D` and the
+negative endpoint in `E`; both reset gaps vanish and the payoffs are
+`4+4=g`.
+
+Finally, along a nested path on which the inherited orientation is
+the positive channel, define
+```math
+f_t=(\ell_{F,t})_+,\qquad
+h_t=
+\left[
+\frac{g_t}{2}-\zeta_t-f_t
+\right]_+.
+\tag{10.379}
+```
+Equation (10.371) gives
+`h_t\le(\ell_{B,t})_+` and
+```math
+\frac{g_t}{2}\le f_t+h_t+\zeta_t.
+```
+The surplus telescopes *with its sign*:
+```math
+\sum_t\zeta_t
+=
+\sum_tQ(D_t)+Q(A_L)-Q(A_0).
+\tag{10.380}
+```
+The peeled blocks together with `A_L` form one disjoint partition.
+Put each block in a class according to an orientation attaining its
+norm.  Multiblock endpoint superadditivity (choose the corresponding
+block grounds and average over their independent relative signs)
+shows that the positive-class norms sum to at most `P(A_0)` and the
+negative-class norms to at most `N(A_0)`.  Hence
+```math
+\sum_tQ(D_t)+Q(A_L)
+\le P(A_0)+N(A_0)\le2Q(A_0),
+```
+and so `\sum_t\zeta_t\le Q(A_0)`.  Combining this with the forward
+path bound `\sum_t f_t\le3Q(A_0)` from (10.341) gives
+```math
+\boxed{
+\sum_tg_t
+\le
+2\sum_th_t+8Q(A_0).
+}
+\tag{10.381}
+```
+This is the sharpest current reduction of gap migration.  Raw
+backward capacity is the wrong object: in (10.378), the singleton
+shore `S=\{3\}` has
+```math
+g=\zeta=\ell_F=0,\qquad\ell_B=8,
+```
+but (10.379) correctly assigns `h=0`.
+
+The surviving **open target** is therefore the clipped triangular
+estimate
+```math
+\boxed{
+\sum_t h_t=O(Q(A_0)),
+}
+\tag{10.382}
+```
+or an asymptotically sharper version sufficient for the insertion
+recurrence.  It must control only backward payoff not already paid by
+forward visibility or signed child-norm surplus.
+
+#### 10.56.4 Updated frontier
+
+This wave makes the next three routes substantially narrower:
+
+- a coupled exchange must contain a genuine triangle/cycle residual
+  inside a shore; internal stars and rectangles are gauge-equivalent
+  to the already-vacuous cross-only problem;
+
+- prime order, a rank-two exact endpoint plane, literal puncture
+  coverage, and zero child defects coexist at every relevant residue
+  order.  Global minimality or an asymptotic competitive cap must do
+  the work;
+
+- leader gaps admit an exact orientation-reset binary distribution,
+  and same-channel path migration reduces to the clipped residual
+  (10.379).  Charging all backward or all tree capacity to the gaps
+  is false at zero-gap nodes, while bounding it wholesale is
+  unnecessarily strong.
+
+The highest-priority next step is to combine the first and third
+points: prove that a large clipped backward allocation forces a
+non-cut internal triangle residual whose global flip certificate pays
+for it.  Independent alternatives are to exclude the rank-two
+puncture family under *global* minimality, or to prove a laminar
+allocated-capacity theorem for the reset tree.
