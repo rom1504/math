@@ -22494,3 +22494,598 @@ and clarifies what does and does not attack it:
   for matched parent-barycenter transport or for a genuine cavity-moment
   theorem--not for scalar sign tails, generic parent LSI, or unsigned cycle
   estimates.
+
+### 10.80 Row-regular block cosets, exact child completion, and signed deletion decks
+
+The twenty-seventh wave resolves the entropy and row-square sides of one
+structured envelope codebook for every exact minimizer. Its only missing
+piece is now an explicit compressed Boolean-norm inequality aligned with the
+adaptive selector envelope. Exact child completion yields several independent
+row bounds but no shared-output theorem. Linear row-penalized minimax remains
+exactly circular, while the cavity route acquires a signed deletion-deck
+criterion and a sharp wrong-way deficit identity. No convergence proof or
+asymptotic counterexample is obtained.
+
+#### 10.80.1 Every linear row-penalized all-cut learner is circular
+
+For an arbitrary selector law `w`, put
+
+```math
+r_{ij}(w)=\Pr_{S\sim w}\{i,j\in S\},
+\qquad
+H_w=A\circ(R_w-p_2\mathbf1_{\ne}),
+```
+
+and
+
+```math
+Y_w=\mathbb E_{S\sim w}Q(A[S])-p^{3/2}q_n.
+```
+
+Then (10.806) gives, for every oriented cut `d`,
+
+```math
+\boxed{
+\mathbb E_w\widehat\ell(S,d)
+=Y_w-\langle H_w,d\rangle.
+}
+\tag{10.821}
+```
+
+Writing `d=sigma xx^T` off the diagonal,
+
+```math
+\langle H_w,d\rangle=\sigma x^{\mathsf T}H_wx,
+\qquad
+R_2(d)=x^{\mathsf T}A^2x.
+```
+
+Thus the exact pure constrained response is
+
+```math
+\boxed{
+\min_{d:R_2(d)\le C}\mathbb E_w\widehat\ell(S,d)
+=Y_w-\max_{x:x^{\mathsf T}A^2x\le C}
+|x^{\mathsf T}H_wx|.
+}
+\tag{10.822}
+```
+
+Allowing a cut law and dualizing its row moment gives
+
+```math
+\boxed{
+\begin{aligned}
+&\min_{\nu:\mathbb E_\nu R_2\le C}
+\mathbb E_{w\otimes\nu}\widehat\ell(S,D)\\
+&\quad=Y_w-\inf_{\theta\ge0}
+\left\{\theta C+\max_x
+\left[|x^{\mathsf T}H_wx|
+-\theta x^{\mathsf T}A^2x\right]\right\}.
+\end{aligned}
+}
+\tag{10.823}
+```
+
+For `w=U_m`, all off-diagonal inclusion probabilities equal `p_2`,
+so `H_w=0`. Every fixed cut, low-row cut, and feasible mixture then has
+the same mean
+
+```math
+\boxed{
+\mathbb E_{U_m}\widehat\ell(S,d)
+=\mathbb E_{U_m}Q(A[S])-p^{3/2}q_n.
+}
+\tag{10.824}
+```
+
+The exact price dual chooses `theta=0`; apparent credit from unused row
+budget disappears. Therefore any for-all-selector expected-loss learner,
+with any linear row constraint, price, or SDP relaxation, already assumes
+the stronger mean restriction lemma at its uniform input. This subroute is
+**falsified as an independent proof mechanism**. A viable penalized
+functional must be nonlinear in the loss, such as hard coverage or a
+positive-part Laplace transform.
+
+#### 10.80.2 Every exact-child completion is loss-favorable; row completion is separate
+
+Fix an exact order-`n` minimizer `A` with `Q(A)=q_n`, take
+`1\le m<n`, fix an `m`-set `S`, write `T=[n]\setminus S`, and
+choose an exact oriented child ground `(sigma,y)`. For any outside spin
+`z`, let `x=(y,z)` and `H(z)=sigma x^T A x`. Since the child loss
+is zero,
+
+```math
+\boxed{
+\widehat\ell(S,d)
+=p_2H(z)-p^{3/2}q_n
+\le(p_2-p^{3/2})q_n=-B_{n,m}<0.
+}
+\tag{10.825}
+```
+
+Thus **every** completion is favorable for retained effective loss; choosing
+outside signs can focus entirely on `R_2`.
+
+Put
+
+```math
+b=A[:,S]y,
+\qquad
+V=A[:,T],
+\qquad
+h=V^{\mathsf T}b,
+\qquad
+K=V^{\mathsf T}V.
+```
+
+Independently round the outside coordinates with
+`E z_j=u_j`, `v_j=1-u_j^2`, and define
+`alpha_j=h_j+\sum_{l\ne j}K_{jl}u_l`. Direct Walsh expansion gives
+
+```math
+\boxed{
+\begin{aligned}
+\Phi(u):=\mathbb E_uR_2
+&=\lVert b+Vu\rVert_2^2+(n-1)\sum_jv_j,\\
+\operatorname{Var}_uR_2
+&=4\sum_jv_j\alpha_j^2
++4\sum_{j<l}v_jv_lK_{jl}^2.
+\end{aligned}
+}
+\tag{10.826}
+```
+
+For uniform outside spins, with `k=n-m`,
+
+```math
+\boxed{
+\begin{aligned}
+\mu&=\lVert A[:,S]y\rVert_2^2+k(n-1),\\
+v&=4\lVert(A^2)[T,S]y\rVert_2^2
++4\sum_{j<l\in T}(A^2)_{jl}^2.
+\end{aligned}
+}
+\tag{10.827}
+```
+
+Four deterministic consequences were verified.
+
+1. Conditional expectation, or its exact greedy derandomization, gives
+   `min_z R_2(y,z)<=Phi(u)`.
+2. If `u_*` minimizes `\lVert b+Vu\rVert_2` over
+   `u\in[-1,1]^T` and
+   `delta(S,y)=dist_2(-b,V[-1,1]^T)`, box least-squares rounding gives
+
+   ```math
+   \min_zR_2(y,z)
+   \le\delta(S,y)^2+(n-1)(k-\lVert u_*\rVert_2^2)
+   \le\delta(S,y)^2+k(n-1).
+   \tag{10.828}
+   ```
+
+   Exact zonotope membership is equivalent to a vector
+   `w in ker A` with `w_S=y` and `||w_T||_infty<=1`.
+3. Since every full-cut row square is at most
+   `M=2(n-1)q_n`, Bhatia--Davis gives, when `Phi(u)<M`,
+
+   ```math
+   \min_zR_2(y,z)
+   \le\Phi(u)
+   -\frac{\operatorname{Var}_uR_2}{M-\Phi(u)}.
+   \tag{10.829}
+   ```
+
+4. For uniform outside spins, Bonami--Beckner for the centered degree-two
+   polynomial `R_2-mu` gives the one-sided extraction
+
+   ```math
+   \boxed{\min_zR_2(y,z)\le\mu-\frac1{10}\sqrt v.}
+   \tag{10.830}
+   ```
+
+These are per-selector theorems. They do not force collisions among the
+completions chosen for different selectors and therefore do not establish
+the fixed-cut coverage in (10.795).
+
+The finite obstruction is sharp. At one deletion, using one projective
+child-spin representative `y\sim-y` and fixing its orientation by the
+child energy, the exact child-ground fibers have the following
+`(mu,v,min R_2,max R_2)` types:
+
+| signing | types, with multiplicity |
+|:---|:---|
+| `A_6` | `(30,0,30,30)` (60) |
+| `A_8` | `(68,16,64,72)` (24) |
+| `A_9` | `(88,64,80,96)` (2), `(96,0,96,96)` (6), `(104,64,96,112)` (4), `(112,0,112,112)` (6), `(112,256,96,128)` (6), `(120,64,112,128)` (2), `(128,0,128,128)` (2) |
+
+The last `A_9` fibers have every completion fixed at row square `128`.
+Thus exact child optimality alone forces neither nonzero completion variance
+nor an improvement below the conditional mean. Moreover
+
+```math
+\det A_6=-125,\qquad\det A_8=729,\qquad\det A_9=808,
+```
+
+so exact zonotope membership fails for every nonempty partial spin in all
+three matrices. These are finite scoped walls, not asymptotic failures of
+the target row exponent.
+
+#### 10.80.3 A block-coset codebook solves row regularity and entropy simultaneously
+
+Partition `[n]` into `k` nonempty blocks `B_1,\ldots,B_k`, with
+maximum size `b`, and let `P` be the corresponding `n`-by-`k`
+incidence matrix. For a diagonal signing `D`, define the oriented
+block-coset codebook
+
+```math
+\mathcal C(D,P)
+=\{d_{\sigma,z}:x=DPz,\ \sigma\in\{\pm1\},\
+z\in\{\pm1\}^k\}/(z\sim-z),
+\qquad |\mathcal C(D,P)|\le 2^k.
+\tag{10.831}
+```
+
+For a selector `S`, with indicator `\xi_S`, put
+
+```math
+H_S=A\circ
+\left(\xi_S\xi_S^{\mathsf T}
+-p_2\mathbf1\mathbf1^{\mathsf T}\right).
+```
+
+The zero diagonal of `A` makes the diagonal convention immaterial.
+Direct substitution gives the exact compressed-envelope identity
+
+```math
+\boxed{
+\max_{d\in\mathcal C(D,P)}X_d(S)
+=Q\!\left(P^{\mathsf T}DH_SDP\right),
+}
+\tag{10.832}
+```
+
+where `Q(B)=\max_z|z^{\mathsf T}Bz|` also when the compressed matrix
+has a nonzero diagonal.
+
+**Row-regular block-coset theorem.** For every symmetric zero-diagonal
+sign matrix `A` and every such partition, some diagonal sign matrix
+`D` satisfies
+
+```math
+\boxed{
+\max_z\lVert ADPz\rVert_2^2
+\le
+2k\log(4(n+k))
+\max\{\lVert A\rVert_{\mathrm{op}}^2,b(n-1)\}.
+}
+\tag{10.833}
+```
+
+Indeed, with independent Rademacher signs `\epsilon_i`, block map
+`g(i)`, and
+`Z_i=(Ae_i)e_{g(i)}^{\mathsf T}`,
+
+```math
+ADP=\sum_i\epsilon_iZ_i,\qquad
+\sum_iZ_iZ_i^{\mathsf T}=A^2,\qquad
+\sum_iZ_i^{\mathsf T}Z_i
+=\operatorname{diag}_a\{|B_a|(n-1)\}.
+\tag{10.834}
+```
+
+The rectangular matrix Rademacher-series tail, via self-adjoint dilation,
+therefore has variance
+`v=\max\{\lVert A\rVert_{\mathrm{op}}^2,b(n-1)\}` and gives
+
+```math
+\Pr\{\lVert ADP\rVert_{\mathrm{op}}\ge t\}
+\le2(n+k)e^{-t^2/(2v)}.
+```
+
+Taking `t^2=2v\log(4(n+k))` leaves probability at most one half, and
+`\lVert z\rVert_2^2=k` proves (10.833). This is the standard
+[matrix Rademacher-series inequality](https://arxiv.org/abs/1004.4389)
+applied with both rectangular variances retained.
+
+For an exact minimizer, fix `0<c<1/4` and use a balanced partition with
+
+```math
+k=\left\lfloor
+\frac{n^{3/4-c}}{C_0\log n}
+\right\rfloor,
+\qquad
+b=O(n^{1/4+c}\log n)=o(\sqrt n).
+\tag{10.835}
+```
+
+Since `\lVert A\rVert_{\mathrm{op}}^2\le2q_n=O(n^{3/2})`,
+(10.833) supplies one whole codebook satisfying
+
+```math
+\boxed{
+|\mathcal C|\le\exp\{O(n^{3/4-c})\},
+\qquad
+\max_{d\in\mathcal C}R_2(d)=O(n^{9/4-c}).
+}
+\tag{10.836}
+```
+
+Thus the entropy and row-square parts of (10.808) are now proved
+simultaneously and require neither post hoc row pruning nor extraction of
+rare low-cost cuts. The exact remaining lemma is selector alignment:
+
+```math
+\boxed{
+Q\!\left(P^{\mathsf T}DH_SDP\right)
+\ge Y_A(S)-t
+\quad\text{for every }S\in\binom{[n]}m,
+\qquad t=O(n^{3/2-c}),
+}
+\tag{10.837}
+```
+
+for the fixed pair `(A,m)`, using one `A`-adapted balanced partition
+and a row-good `D`. To imply the strategic restriction target, this
+must hold with uniform constants for every sufficiently large `n` and
+every `m` in one fixed active ratio window; the target-specific exact
+minimizer, partition, and diagonal may depend on `(n,m)`.
+
+There is a useful probabilistic relaxation. Let `\mu` be supported on
+row-good diagonals. If every selector satisfies
+
+```math
+\mu\!\left\{D:
+Q(P^{\mathsf T}DH_SDP)\ge Y_A(S)-t
+\right\}\ge\delta,
+\tag{10.838}
+```
+
+then the ordinary greedy set-cover argument uses at most
+
+```math
+L=\left\lceil
+\frac{\log\binom nm+1}{\delta}
+\right\rceil
+\tag{10.839}
+```
+
+cosets to cover the slice. If
+`-\log\delta=O(n^{3/4-c})`, their union still has the size and row
+budgets of (10.808). Hence either (10.837) or the uniform hit bound
+(10.838), with the preceding ratio-window uniformity, is an exact
+sufficient successor.
+
+Arbitrary Hamming projection onto a coset does not prove alignment. If
+`x'=x\odot h`, `H=\{i:h_i=-1\}`, and
+`W_H(T)=\sum_{i\in H\cap T,\,j\in T\setminus H}A_{ij}x_ix_j`, exact
+expansion gives
+
+```math
+\boxed{
+\begin{aligned}
+X_{d'}(S)-X_d(S)
+&=-4\sigma\{W_H(S)-p_2W_H([n])\},\\
+R_2(x')-R_2(x)
+&=-4\sum_{i\in H}x_i(A^2x)_i
++4\lVert A[:,H]x_H\rVert_2^2.
+\end{aligned}
+}
+\tag{10.840}
+```
+
+The worst-case first line costs at most `8|H|n`. Therefore a proof using
+only this Lipschitz bound and no retained `B_{n,m}` slack would impose
+the sufficient radius `|H|=O(n^{1/2-c})`; cancellation can allow more,
+and with retained slack the crude radius is
+`O((B_{n,m}+t)/n)`. The second line shows that nearest-block projection
+need not preserve row cost.
+
+Exact finite enumeration supports the less compressed architecture:
+
+- an eight-word pair-block coset for `A_6` has `R_2=30` throughout
+  and zero-tolerance coverage for `m=3,4,5`;
+- suitable `A_8` pair-block cosets at cap `64` give zero-tolerance
+  coverage for `m=4,6,7`;
+- suitable eligible subsets of `A_9` pair-plus-singleton cosets at cap
+  `80` give zero-tolerance coverage for `m=5,7,8`, retaining
+  respectively `26,30,20` of the `32` words.
+
+There is also a scoped overcompression wall: among every `3+3+3`
+partition of `A_9`, at `m=5`, the `R_2\le112` eligible subset of
+its eight-word coset needs tolerance at least
+
+```math
+\boxed{
+\frac{92-40\sqrt5}{9}
+=0.284142322223\ldots>0.
+}
+\tag{10.841}
+```
+
+This finite positive gap does not oppose the growing tolerance in
+(10.837).
+
+#### 10.80.4 The signed deletion deck selects cavity moments but does not force them
+
+Let `B` have order `r`, put `h=r-1` and
+`\rho=\tanh(2\beta)`, and retain the signed even-Eulerian expansion of
+(10.814). For an even Eulerian edge set `F`, let `b_F` be its signed
+coefficient and `n_j(F)` its number of vertices of degree `j`.
+Writing `P_i=P_{B[-i]}(\rho)`, coefficient extraction in the star
+interpolation gives
+
+```math
+\boxed{
+P_i\{v_i(\beta;B)-h\}
+=\frac2{\rho^2}
+\sum_{F:\deg_F(i)=2}b_F\rho^{|F|}.
+}
+\tag{10.842}
+```
+
+Define the signed deletion decks
+
+```math
+N_0(\rho)=\sum_Fn_0(F)b_F\rho^{|F|}
+=\sum_iP_i>0,
+\qquad
+N_2(\rho)=\sum_Fn_2(F)b_F\rho^{|F|}.
+```
+
+Their exact weighted moment is
+
+```math
+\boxed{
+\frac{\sum_iP_iv_i}{\sum_iP_i}
+=r-1+\frac2{\rho^2}\frac{N_2(\rho)}{N_0(\rho)}.
+}
+\tag{10.843}
+```
+
+Consequently some deletion vertex satisfies the cavity premise in
+(10.819) whenever
+
+```math
+\boxed{
+\frac{N_2(\rho)}{N_0(\rho)}
+\ge\frac{\rho^2}{2}
+\left\{\frac9{16}\alpha^2r-(r-1)\right\}.
+}
+\tag{10.844}
+```
+
+This is an exact path-selectable sufficient criterion, but it must hold
+along the restrictions actually visited; a theorem only for isolated
+exact roots would not suffice.
+
+The parent-to-child change of measure also checks the sign and
+normalization directly. With
+`h_i(\sigma,x)=\sigma x_i(Bx)_i` and
+`A_i=e^{-\beta\kappa_{\beta,i}(B)}`,
+
+```math
+\boxed{
+A_i=\mathbb E_{\nu_{\beta,B}}e^{-2\beta h_i},
+\qquad
+A_iv_i=\mathbb E_{\nu_{\beta,B}}
+\left[h_i^2e^{-2\beta h_i}\right].
+}
+\tag{10.845}
+```
+
+The exponential tilt can suppress precisely the large positive fields
+carrying the parent energy. Even using the full list of star-flipped
+competitor norms through the exact degree-two Krawtchouk kernel gives a
+bound far below the needed linear moment on the audited minimizers.
+Using the one-step root normalization
+`\alpha=Q(A_r)/r^{3/2}`, at `\beta=1/4`, (10.844) passes on
+`A_5,A_6,A_8,A_9`; at `\beta=1/2` and `\beta=1`, all four fail.
+At `\beta=1`, the values of `N_2/N_0` versus the required right side
+are respectively
+`-1.7906/-1.1896`, `-1.8567/-1.5973`,
+`-2.7000/-1.6191`, and `-3.6241/-1.8587`.
+Thus exact finite minimality does not force this fixed-temperature signed
+deck condition.
+
+There is a sharper wrong-way identity. Let
+`C_i=B[-i]`, `d_i=Q(B)-Q(C_i)`,
+`\delta_i=Q(C_i)-e_{C_i}(\omega)`,
+`D_i(\gamma)=\sum_\omega e^{-\gamma\delta_i(\omega)}`, and
+`\ell_i=\log D_i`. If `\Delta_{i,\pm}` are the deficits of the two
+extensions of a child state, then, with the derivatives evaluated at
+`\gamma=\beta`,
+
+```math
+\boxed{
+4v_i
+=(d_i-\ell_i')^2+\ell_i''
+-\mathbb E_{\mu_{\beta,C_i}}
+\left[\Delta_{i,+}\Delta_{i,-}\right]
+\le(d_i-\ell_i')^2+\ell_i''.
+}
+\tag{10.846}
+```
+
+This is an upper, not lower, moment envelope. On `A_9` at
+`\beta=1`, its exactness ratio lies between `0.9305` and `0.9554`.
+An unbounded realizable family with, for every eligible deletion,
+
+```math
+d_i=o(\sqrt r),\qquad
+-\ell_i'(\beta)=o(\sqrt r),\qquad
+\ell_i''(\beta)=o(r)
+```
+
+would therefore falsify the pointwise moment premise on those roots at fixed
+temperature. Defeating the target-specific path weakening requires this for
+every eligible exact root, or throughout every required deletion cutset,
+along infinitely many target pairs. No such exact-minimizer family is known.
+
+Finally, the extension cap yields the child-only profile inequality
+
+```math
+\boxed{
+e^{\beta\kappa_{\beta,i}(B)}
+\le
+\frac{e^{\beta d_i}D_i(0)
++e^{-\beta d_i}D_i(2\beta)}
+{2D_i(\beta)}.
+}
+\tag{10.847}
+```
+
+Equivalently,
+`D_\beta(B)\le D_i(0)+e^{-2\beta d_i}D_i(2\beta)`.
+At fixed `\beta`, this becomes an asymptotic falsifier on the same
+eligible roots or deletion cutsets if, uniformly there,
+
+```math
+\log\!\left(
+\frac{e^{\beta d_i}D_i(0)+e^{-\beta d_i}D_i(2\beta)}
+{2D_i(\beta)}
+\right)=o(\sqrt r).
+```
+
+It requires only the child's three-temperature deficit profile, but the
+finite matrices do not supply the needed family.
+
+#### 10.80.5 Updated frontier
+
+Wave 27 materially sharpens the leading low-row coverage route without
+closing it:
+
+- the single arbitrary-cut lemma (10.795) remains sufficient. Its structured
+  successor is no longer an unspecified codebook: (10.831)--(10.836)
+  universally construct an entropy-sized block coset whose **entire**
+  support has the required row-square scale. The exact open statement is
+  compressed selector alignment (10.837), or the uniform row-good coset hit
+  probability (10.838). This is now the leading concrete target;
+
+- an exact oriented child ground has favorable retained loss under every
+  outside completion, so child completion has no loss-versus-row tradeoff.
+  The remaining difficulty is collision or compression across selectors.
+  The biased-rounding, variance, zonotope, and greedy bounds are
+  per-selector only. The zero-variance `A_9` fibers block any
+  all-orders/all-fibers strictly positive variance rebate based only on
+  child exactness; they are not an asymptotic or existential obstruction;
+
+- every linear row-penalized mean learner is circular at the uniform
+  selector law by (10.824). This includes mixtures and their exact Lagrange
+  dual, so this line should not be retried without a nonlinear
+  coverage/Laplace objective;
+
+- the signed deletion deck gives the exact cavity selector (10.844), but
+  the four audited exact minimizers fail it at both tested temperatures
+  `\beta=1/2` and `\beta=1`. On `A_9` at `\beta=1`, the
+  derivative identity (10.846) is a nearly sharp upper envelope, and
+  (10.847) is a cleaner child-profile falsifier. Neither supplies an
+  asymptotic family, so constant shortfall is not promoted above compressed
+  coverage;
+
+- no convergence proof or asymptotic counterexample has appeared. The Wave
+  25 strategic assessment remains directionally current; its next mandatory
+  full regeneration is Wave 30 unless a decisive result intervenes. Wave 28
+  should put two independent attacks on (10.837)/(10.838)—one probabilistic
+  and one `A`-adapted structural—and keep a third route on shared
+  child-completion collisions or matched parent transport.
