@@ -11165,3 +11165,396 @@ gain, while preserving the single global `3Q` capacity bound from
 long strict-reset mosaics such as (10.403), or to prove an
 endpoint-constrained triangular theorem stronger than the generic
 cut-norm setting.
+
+### 10.59 Path congestion, branching rounding, and a half-factor no-go
+
+The seventh wave identifies the exact difference between the
+conserved allocation (10.408) and an actual successor chain.  The
+difference is a normalized Carleson congestion, not integrality of
+the allocation flow.  Lossless chain purification is false in a
+genuine fixed-orientation recurrence, and even a universal factor
+`1/2` for the most liberal chain is false.  On the positive side,
+opposite directed layers admit an exact factor-two *branching*
+rounding.  All algebraic statements and displayed finite witnesses
+below are **Verified**.  Exhaustive and broader tree searches are
+labelled **Numerical**.
+
+#### 10.59.1 The exact path-cover norm
+
+Fix one finite endpoint partition tree.  At node `v`, for child
+`X` and orientation `\sigma`, write
+```math
+c_{vX}^{\sigma}=(\mu_{vX}^{\sigma})_+,
+\qquad 0\le a_{vX}^{\sigma}\le c_{vX}^{\sigma}
+```
+for the available capacity and its chosen allocation.  An actual
+successor chain chooses one pair `(X,\sigma)` at every visited node
+and then continues only inside `X`.  Define the directed-edge load
+```math
+\ell_{vX}
+=
+\sum_{\sigma=\pm}\frac{a_{vX}^{\sigma}}{c_{vX}^{\sigma}},
+\tag{10.411}
+```
+with a zero summand when `a=c=0` and value `+\infty` when
+`a>0=c`.
+
+The minimum total mass `K` of a finite measure on oriented
+root-to-leaf chains whose integrated reward dominates every
+allocation coordinate has two exact descriptions:
+```math
+\boxed{
+\begin{aligned}
+\theta_{\rm leaf}&=0,\\
+\theta_v&=
+\sum_{X\text{ child of }v}
+\max\{\ell_{vX},\theta_X\},\\
+K&=\theta_{\rm root}
+=
+\sup_{\mathcal F\text{ edge antichain}}
+\sum_{e\in\mathcal F}\ell_e.
+\end{aligned}
+}
+\tag{10.412}
+```
+Necessity of the antichain bound is immediate: one chain meets at
+most one edge of an edge antichain.  For sufficiency, recursively
+send `\max\{\ell_{vX},\theta_X\}` units of chain mass into `X`,
+split enough of that mass between its two orientation labels to meet
+the two lower bounds in (10.411), and pass the remaining mass through
+the already constructed child flow.  This also proves the recursive
+formula.
+
+Thus `K\le1` is precisely the condition under which the allocations
+can be averaged through (10.341) once.  In general, integrating
+(10.341) against a chain measure of mass `K` gives only the multiplied
+bound `3KQ(A)`.  Both the allocation polytope and the path polytope
+have node--arc incidence matrices and are totally unimodular, but
+they are different polytopes: for integral right-hand sides and
+capacity bounds, integrality of (10.408) gives integral *energy units
+which may branch*, not one
+integral successor chain.
+
+The scalar inequalities in (10.407)--(10.408) alone cannot control
+`K`.  In an abstract depth-`d` binary system, internal nodes have
+depths `0,\ldots,d-1`; give every depth-`j` internal node range and
+obligation `2^{-j}`.  At depth `j<d-1`, give each child imbalance
+`2^{-(j+1)}` and use zero local layer capacity.  At depth `d-1`,
+give the two singleton children zero range and imbalance, and allocate
+`2^{-d}` into one orientation layer on each of the two outgoing
+edges.  Every coverage and conservation identity is exact.  There are
+`2^d` bottom edges, so total allocated mass is one, but every path
+receives only `2^{-d}`.  The bottom-edge antichain has unit normalized
+load on every edge, and (10.412) gives `K=2^d`.  This is an abstract
+capacity system, **not** a matrix realization.  It proves that any
+constant theorem must use endpoint-matrix geometry.
+
+#### 10.59.2 A genuine order-five recurrence defeats one path
+
+Let `C=J_3-I_3`.  In doubled normalization,
+```math
+P(C)=6,\qquad N(C)=2,\qquad\mathcal R(C)=8.
+```
+Take positive endpoint `p=(1,1,1)` and negative endpoint
+`n=(-1,-1,1)`.  Their cut has a two-vertex shore and a singleton.
+The two oriented capacities toward the pair are `(4,0)`, and those
+toward the singleton are `(4,4)`.  Both child imbalances are zero.
+Consequently every conserved allocation of obligation eight is
+entirely at the root, all its nonzero capacities equal four, and
+```math
+\boxed{K=2.}
+\tag{10.413}
+```
+
+Even if unallocated descendant capacities are allowed for free, one
+chain cannot recover the range.  Define the liberal Bellman value
+```math
+V(U)=
+\max_{p,n,X,\sigma}
+\left\{(\mu_X^\sigma)_++V(X)\right\},
+\qquad V(\text{singleton})=0,
+\tag{10.414}
+```
+where every child may optimize all fresh endpoint ties.  The pair
+branch earns `4+2`, while the singleton branch earns `4`, so
+```math
+V(C)=6<8=\mathcal R(C).
+```
+Randomization cannot improve `V`, since expected path reward is a
+linear average of deterministic path rewards.
+
+This is not merely an abstract tree or an orientation tie.  Attach a
+positive two-clique and use `n` as both cross rows:
+```math
+B=
+\begin{pmatrix}
+0&1&-1&-1&1\\
+1&0&-1&-1&1\\
+-1&-1&0&1&1\\
+-1&-1&1&0&1\\
+1&1&1&1&0
+\end{pmatrix}.
+\tag{10.415}
+```
+Exact enumeration gives `P(B)=N(B)=12`, and
+`(1,1,-1,-1,1)` is a positive endpoint.  Equivalently, if `m` is
+the two-clique spin sum, `s` the core spin sum, and `t=n\cdot y`,
+every energy is
+```math
+m^2+s^2-5+2mt,
+```
+whose absolute value is at most twelve on the finite feasible set.
+Deleting the two-clique leaves inherited core energy `-2`, while the
+strictly dominant positive core endpoint has energy `6`.  The
+same-orientation successor gap is exactly eight, but every liberal
+chain has value only six.
+
+#### 10.59.3 An exact family below the one-half path factor
+
+The failure is asymptotic, not only finite.  Let
+`m=k^2=4^r`, choose `s\in\{\pm1\}^m` with
+`\mathbf1^{\mathsf T}s=k`, and put
+```math
+C_m=ss^{\mathsf T}-I_m,
+\qquad
+A_m=
+\begin{pmatrix}
+C_m&J_m\\
+J_m&-C_m
+\end{pmatrix}.
+\tag{10.416}
+```
+This is a complete signing of order `2m`.  For a state `(x,y)`, set
+```math
+u=\mathbf1^{\mathsf T}x,\quad a=s^{\mathsf T}x,\quad
+v=\mathbf1^{\mathsf T}y,\quad b=s^{\mathsf T}y.
+```
+Its energy is
+```math
+x^{\mathsf T}C_mx-y^{\mathsf T}C_my
++2(\mathbf1^{\mathsf T}x)(\mathbf1^{\mathsf T}y)
+=a^2-b^2+2uv.
+```
+Simultaneous negation of `x,y` permits `u\ge0`.  The Boolean box
+constraints give the exact fixed-`u` optimizations
+```math
+\max a^2=[m-|u-k|]^2,
+\qquad
+\max_y(-b^2+2uv)=
+\begin{cases}
+u^2+2u(m-k),&0\le u\le k,\\
+-m+2mu,&k\le u\le m.
+\end{cases}
+\tag{10.417}
+```
+On the first interval their sum is increasing, and on the second it
+is convex.  It is therefore enough to compare `u=k` and `u=m`.
+The corresponding values are
+```math
+m^2+2mk-m
+\quad\text{and}\quad
+2m^2,
+```
+whose difference is `m(k-1)^2`.  For `k>1`, the positive endpoint is
+therefore uniquely `(\mathbf1,\mathbf1)` modulo global sign.
+Moreover the map `(x,y)\mapsto(y,-x)` negates every energy, so
+```math
+\boxed{P(A_m)=N(A_m)=2m^2,\qquad\mathcal R(A_m)=4m^2.}
+\tag{10.418}
+```
+
+The unique endpoint cut is the displayed two-shore split.  On each
+shore, `h=0`, `L=m^2`, and `Q(C_m)=m(m-1)`, so both root orientation
+capacities equal `m^2+m`.  Switching and sign reversal reduce either
+child Bellman value to that of the positive clique `K_m`.  For powers
+of two its endpoint cut is balanced and
+```math
+V(K_m)=\frac{m^2}{2}+V(K_{m/2})
+=\frac{2(m^2-1)}3.
+```
+Consequently
+```math
+\boxed{
+V(A_m)=\frac{5m^2+3m-2}{3},
+\qquad
+\frac{V(A_m)}{\mathcal R(A_m)}
+\longrightarrow\frac5{12}.
+}
+\tag{10.419}
+```
+At `m=4`, this is an order-eight signing with
+`P=N=32` and `V=30<32=\mathcal R/2`.  Thus even the universal
+one-half chain conjecture is **Falsified**.  This family does not tend
+to zero; whether any positive universal chain factor exists remains
+open.
+
+#### 10.59.4 Orientation rounding is local, branching is global
+
+There is a separate obstruction before any path choice.  Let
+```math
+D=
+\begin{pmatrix}
+0&1&-1&1&-1&-1\\
+1&0&1&-1&-1&-1\\
+-1&1&0&-1&-1&-1\\
+1&-1&-1&0&-1&-1\\
+-1&-1&-1&-1&0&-1\\
+-1&-1&-1&-1&-1&0
+\end{pmatrix}.
+\tag{10.420}
+```
+Exact enumeration gives unique projective endpoints,
+```math
+P(D)=14,\qquad N(D)=18,\qquad\mathcal R(D)=32.
+```
+Their two shores both have zero imbalance.  The two oriented
+`Q`-benchmarked capacities are `(12,16)` on one shore and `(8,8)`
+on the other.  Hence fractional capacity is `44`, but selecting at
+most one orientation on each directed shore gives only
+```math
+\boxed{16+8=24<32.}
+\tag{10.421}
+```
+There is nothing to pass recursively.  This too occurs in an actual
+strict-channel recurrence.  If
+`p=(-1,-1,-1,-1,1,1)` is the positive endpoint, attach a negative
+five-clique and use `-p` for every cross row.  The resulting order-
+eleven parent has `(P,N)=(54,66)`, and `(\mathbf1_5,p)` has energy
+`-66`.  After deleting the five-clique, the inherited negative-
+oriented score is `-14`, whereas the fresh negative core endpoint has
+score `18`; the exact carried gap is `32`.
+
+There is nevertheless a sharp local branching repair.  Gauge a
+positive endpoint of a node `U` to `\mathbf1`, so its negative
+endpoint is the cut `U=S\sqcup T`.  Put
+```math
+c=\sum_{i\in S,j\in T}a_{ij}=\frac{\mathcal R(U)}4.
+```
+For `W\subseteq S`, let
+```math
+k_W=\sum_{i\in W,j\in S\setminus W}a_{ij},
+\qquad
+e_W=\sum_{i\in W,j\in T}a_{ij}.
+```
+Flipping `W` at the positive endpoint and at the negative endpoint
+gives respectively `k_W+e_W\ge0` and `k_W-e_W\le0`.
+Applying the same two inequalities to `S\setminus W` yields
+```math
+\boxed{
+e_W\ge|k_W|,\qquad c-e_W\ge|k_W|,\qquad
+c\ge2|k_W|.
+}
+\tag{10.422}
+```
+Also `L_S\ge c`.  Since every child spin is a cut flip and has
+energy `h_S-4k_W`, (10.422) proves
+```math
+P(S)-h_S\le2L_S,qquad
+N(S)+h_S\le2L_S.
+```
+Thus both one-sided payoffs are nonnegative:
+```math
+\boxed{
+\lambda_S^+=2L_S-(P(S)-h_S)\ge0,qquad
+\lambda_S^-=2L_S-(N(S)+h_S)\ge0,
+}
+\tag{10.423}
+```
+and likewise on `T`.  The `(\lambda_X^\sigma)_+` positive-part
+operations in (10.406) were therefore unnecessary; this does not
+remove the positive parts from the `\mu`-payoffs.
+
+There is also a clipping-safe opposite-pair bound.  With
+`C_+=P,C_-=N`, exposing the cross field and bounding the opposite
+shore by its opposite one-sided extremum gives
+```math
+\lambda_X^\sigma
+\le
+C_\sigma(U)+C_{-\sigma}(Y)-C_\sigma(X),
+\qquad \{X,Y\}=\{S,T\}.
+```
+Adding the two opposite directions, using
+`(\mu_X^\sigma)_+\le\lambda_X^\sigma`, yields
+```math
+\boxed{
+(\mu_S^\sigma)_+
++(\mu_T^{-\sigma})_+
+\le\mathcal R(U).
+}
+\tag{10.424}
+```
+
+Now group the four allocations at every node as
+`\{(S,+),(T,-)\}` and `\{(S,-),(T,+)\}`.  Keep the group carrying
+more allocated mass and recurse into both children.  Conservation
+and induction give the exact branching guarantee
+```math
+\boxed{
+\text{retained allocated mass}
+\ge\frac12\,w_{\rm root}.
+}
+\tag{10.425}
+```
+The selected capacity at node `U` is at most `\mathcal R(U)` by
+(10.424).  This is not one actual successor tower: it selects two
+directed witnesses at every lowest common ancestor, and their
+exposing spins need not be nested-compatible.  Thus (10.341) cannot
+be applied once.  The immediate estimate on the sum of selected
+available capacities is only
+```math
+\sum_{U\text{ internal}}\mathcal R(U).
+```
+Separate `P/N` superadditivity bounds the range sum on every block
+antichain by the root range, but it does not bound the sum over all
+depths.  LCA uniqueness prevents repetition of original cross-block
+edges; it does not supply this missing depth estimate.
+
+#### 10.59.5 Exhaustive scope and updated frontier
+
+**Numerical exhaustive audit.**  Every labelled signing, every
+endpoint tie, and every recursive child choice were enumerated
+through order six.  Among strict-dominance matrices, the minimum
+liberal ratios `V/\mathcal R` at orders `3,4,5,6` are respectively
+```math
+\frac34,\qquad\frac58,\qquad\frac34,\qquad\frac59.
+```
+Every signing through order five has an endpoint choice for which
+one orientation per shore plus the two child imbalances covers the
+root range.  Matrix (10.420) is the first failure at order six, with
+ratio `24/32`.  These finite statements were independently rerun in
+exact integer arithmetic.
+
+For a numerical upper-envelope audit, let `T(U)` optimize endpoint
+ties independently at every node, select the better `\mu` orientation
+independently on each shore, add both selected capacities, and recurse
+into both children.  This is more liberal than the opposite-pair
+selection in (10.425).  The exact computations found `T/Q=2` for
+positive and negative cliques through order twelve, `4.4` for the
+matrix in (10.409), and `188/44` for the strict-reset matrix (10.403).
+These data neither prove nor disprove a universal branching constant.
+
+The frontier is now exact:
+
+- lossless path purification and even a one-half path factor are
+  false.  No realizable matrix family with path factor tending to
+  zero is known;
+
+- for coordinatewise path domination of a fixed allocation, the
+  missing hypothesis is precisely the antichain/Carleson norm
+  (10.412).  Conservation controls raw energy mass, not normalized
+  path congestion;
+
+- opposite orientations admit the factor-two branching theorem
+  (10.425).  LCA uniqueness prevents cross-edge repetition, but range
+  superadditivity controls only one block antichain at a time.  A
+  depth-summed endpoint-matrix Carleson estimate or nested exposing-
+  spin theorem is still missing.
+
+The highest-priority target is therefore to prove `K=O(1)` in
+(10.412) for a suitably chosen conserved allocation arising from
+actual endpoint matrices, or to construct a realizable family with
+`K\to\infty`.  An independent route is to use global minimality to
+exclude the recurrence embeddings above or to force compatibility
+between the exposing spins on different levels.  Here `K=O(1)` would
+give constant-loss path control; the literal single-probability,
+single-`3Q` use of (10.341) requires `K\le1`.
