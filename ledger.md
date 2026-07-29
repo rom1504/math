@@ -14795,3 +14795,434 @@ maximum-antichain error (10.543) on a sparse family of order windows whose
 normalized costs satisfy (10.529).  Independent routes are the critical-scale
 entropy criterion (10.549), a matrix theorem relating internal excess to
 distance from local minimizers, and the selected-child potential (10.531).
+
+### 10.67 Cross-Gram rigidity, a sibling sign wall, and cross-only reduction
+
+The fourteenth wave tests the three priorities at the end of Section 10.66.
+It gives an exact cross-Gram formula for endpoint residual, including a sharp
+dimension theorem, but the neutral order-eight example saturates that theorem
+with two thick, well-conditioned endpoint frames.  It aggregates the negative
+sibling witnesses exactly along endpoint paths, but this is an upper bound on
+available supply rather than the lower bound required by causal Hall cuts;
+moreover, an order-five field-proportional deletion sharply falsifies their
+interpretation as negative temporal credits.  Finally, a two-sided triangle
+inequality makes local-minimizer selection asymptotically irrelevant at every
+sublinear block scale.  This last result corrects the frontier stated in
+Section 10.66.3: at the `o(n^{3/2})` scale, the only hybrid issue is cross-only
+overshoot, not low-margin entropy.
+
+All identities, linear-algebra statements, finite examples, and asymptotic
+reductions below are **Verified**.  The cited Littlewood--Offord theorems were
+checked against their stated hypotheses.  Nothing in this section proves
+convergence.
+
+#### 10.67.1 Balanced endpoint residual is an exact cross-Gram entry
+
+Let `p` be a positive ground and `n` a negative ground of a signing `A`, so
+
+```math
+p^{\mathsf T}Ap=P(A),
+\qquad
+n^{\mathsf T}An=-N(A).
+```
+
+Switch `p` to `\mathbf1`, and let `S` and `T` be the shores on which the
+switched `n` is respectively `+1` and `-1`.  Put
+
+```math
+h_S=\mathbf1_S^{\mathsf T}A[S]\mathbf1_S,
+\qquad
+h_T=\mathbf1_T^{\mathsf T}A[T]\mathbf1_T,
+```
+
+```math
+H=\frac{P(A)-N(A)}2,
+\qquad
+b=p^{\mathsf T}An,
+\qquad
+I=|P(A)-N(A)|=2|H|.
+```
+
+Direct expansion of the two endpoint energies gives
+
+```math
+h_S+h_T=H,
+\qquad
+h_S-h_T=b.
+```
+
+Summing (10.534) over both shores and both orientations, and then considering
+the relative sizes of `|H|` and `|b|`, gives the exact total root residual
+
+```math
+\boxed{
+\mathfrak r(p,n)
+=\frac12\left(
+\left[|p^{\mathsf T}An|-\frac I2\right]_+
++\left[|p^{\mathsf T}An|-\frac{3I}2\right]_+
+\right).
+}
+\tag{10.555}
+```
+
+In particular,
+
+```math
+\boxed{
+P(A)=N(A)
+\quad\Longrightarrow\quad
+\mathfrak r(p,n)=|p^{\mathsf T}An|.
+}
+\tag{10.556}
+```
+
+At balance, `p^{\mathsf T}An=2h_S` is a multiple of four.  Thus every
+nonzero root residual is at least four.  Away from balance, neutrality means
+only `|p^{\mathsf T}An|\le I/2`; cross annihilation is specifically a
+balanced-parent conclusion.
+
+Let `L_+` and `L_-` be the spans of the positive and negative ground clouds,
+with dimensions `d_+` and `d_-`.  Put
+
+```math
+K=\ker A,
+\qquad
+k_\pm=\dim(L_\pm\cap K),
+\qquad
+r=\operatorname{rank}A,
+```
+
+and let `\rho` be the rank of the restricted pairing
+`(u,v)\mapsto u^{\mathsf T}Av` on `L_+\times L_-`.  Passing to the
+nondegenerate form on `\mathbb R^n/K` proves
+
+```math
+\boxed{
+\rho\ge
+(d_+-k_+)+(d_--k_-)-r.
+}
+\tag{10.557}
+```
+
+For a balanced matrix, every endpoint pair is neutral exactly when
+`L_+^{\mathsf T}AL_-=0`, equivalently `\rho=0`.  Therefore
+
+```math
+\boxed{
+(d_+-k_+)+(d_--k_-)
+\le\operatorname{rank}A.
+}
+\tag{10.558}
+```
+
+In the invertible case this is `d_++d_-\le n`.  Every even-order signing is
+invertible: modulo two it is `J+I`, whose kernel is zero when the order is
+even.  The arithmetic and rank statements also give a matching of `\rho`
+positive grounds to `\rho` negative grounds with total residual at least
+`4\rho`.  This is at most linear in the order and therefore does not by
+itself supply a leading-scale harvest.
+
+The balanced matrix `A_8` in (10.445) is a sharp wall.  Exact integer
+calculation gives
+
+```math
+\boxed{
+\begin{gathered}
+d_+=d_-=4,
+\qquad
+G_+^{\mathsf T}A_8G_-=0,
+\qquad
+G_+^{\mathsf T}G_-=0,\\
+\det A_8=729,
+\qquad
+\operatorname{spec}(A_8)=(-3)^3,-1,1,3^3.
+\end{gathered}
+}
+\tag{10.559}
+```
+
+The two endpoint spans are complementary reducing subspaces, with restricted
+spectra `(-1,3,3,3)` and `(-3,-3,-3,1)`.  Each uniform endpoint covariance
+has nonzero eigenvalues `3,3,1,1`, so both endpoint clouds are quantitatively
+thick frames.  Hence the neutral equality `d_++d_-=n` can hold with no
+kernel, no small singular value, and no frame defect.  Stable Frobenius/frame
+versions of (10.557) are valid, but they reproduce the scale wall of Section
+10.53.2 and do not overcome this example.
+
+Exhaustion of every first-row-positive switching representative through
+order seven checks (10.555) on 2,721 general endpoint pairs through order six
+and on 739 balanced-minimizer pairs through order seven.  The named `A_8`
+calculation is exact but is not an exhaustive classification of order-eight
+minimizers.
+
+#### 10.67.2 Sibling completion is exact but has the wrong temporal sign
+
+Return to the split and oriented child state in Section 10.66.1.  When
+`r_b>0`, choose the cross-aligned sibling `u` used in (10.533), and define
+its full-completion deficit
+
+```math
+e_b
+=Q(U)-\sigma(u,y)^{\mathsf T}A[U](u,y)
+\ge0.
+```
+
+The positive parts in (10.532) are then inactive.  Expanding the completed
+parent state gives the exact strengthening
+
+```math
+\boxed{
+-\sigma u^{\mathsf T}Du=r_b+e_b.
+}
+\tag{10.560}
+```
+
+Sibling blocks on one endpoint chain are disjoint.  For any chosen family of
+positive-residual buckets on that chain, let `W_+` and `W_-` be the unions of
+the sibling blocks with orientations `+` and `-`.  Independently flipping
+the whole witness on each block cancels all inter-block terms in expectation.
+The definitions of positive and negative energy therefore give
+
+```math
+\boxed{
+\sum_{\sigma_b=+}(r_b+e_b)\le N(A[W_+]),
+\qquad
+\sum_{\sigma_b=-}(r_b+e_b)\le P(A[W_-]).
+}
+\tag{10.561}
+```
+
+Separate monotonicity of `P` and `N` then bounds their sum by the range on
+`W_+\cup W_-`.  This does not assert superadditivity of `Q`.
+
+There is a profile-weighted version of the path-cover theorem.  Restrict to
+the bucket set `B^+=\{b:r_b>0\}`.  For allocated loads
+`\ell_b=a_b/c_b` on `B^+` (with value zero when `c_b=0`), let `\nu_\pi`
+range over fractional covers by oriented endpoint paths, so
+`\sum_{\pi\ni b}\nu_\pi\ge\ell_b` for `b\in B^+`, and put
+
+```math
+\gamma_\pi
+=N(A[W_{\pi,+}])+P(A[W_{\pi,-}]),
+```
+
+where the two unions include only buckets in `\pi\cap B^+`.  Then (10.561),
+integrated against a cover, proves
+
+```math
+\boxed{
+\sum_{b\in B^+}\ell_b(r_b+e_b)
+\le
+\min_{\nu}
+\sum_\pi\gamma_\pi\nu_\pi
+\le4\max_\pi\gamma_\pi.
+}
+\tag{10.562}
+```
+
+The last inequality uses the exact path-cover mass at most four from Section
+10.62.  This simultaneously controls the completion deficits and retains
+the signed induced-submatrix profile.  But it is an **upper** bound on
+compatible residual supply.  The causal Hall deficiency (10.543) requires a
+lower bound on that supply, so (10.562) has the wrong direction unless a
+separate temporal-to-endpoint matching theorem is first proved.
+
+Nor can `r_b+e_b` be reclassified as a negative temporal atom.  In the
+order-five minimizer (10.518), take
+
+```math
+p=(1,-1,-1,-1,-1),
+\qquad
+n=(1,-1,-1,1,1),
+```
+
+retain `X=\{0,1,2\}`, delete `D=\{3,4\}`, and use orientation `\sigma=-`.
+Exact calculation gives
+
+```math
+\boxed{
+Q(U)=8,
+\quad Q(X)=6,
+\quad h=-2,
+\quad L=4,
+\quad c=4,
+\quad\partial=2,
+\quad r=2,
+\quad e=0.
+}
+\tag{10.563}
+```
+
+The sibling `u=(1,1)` has energy `u^{\mathsf T}Du=2`, and its completion
+is an actual negative ground of energy `-8`.  Nevertheless the same deletion
+has strictly positive centered temporal demand
+
+```math
+\boxed{
+\lambda-\partial
+=6-\frac{24\sqrt{15}}{25}>0.
+}
+\tag{10.564}
+```
+
+This is not an abstract deletion.  In the `p` gauge the row-field profile is
+`(0,2,0,4,2)`.  With eligible set `D`, the two deletion probabilities are
+`1` and `1/2`, so deletion of all of `D` occurs with probability `1/2`.
+The only other outcome deletes vertex three and has positive demand
+`8-64\sqrt5/25`.  Thus the whole parent conditional average has positive
+demand and no negative atom, even though the full-deletion bucket has a
+zero-deficit negative-ground completion.  Equation (10.560) cannot be
+converted into localized negative temporal credit by a sign-only argument.
+
+This does not obstruct treating residual as positive service under a valid
+compatibility relation.  The complementary walls remain: the matching
+order-six-to-five suffix in (10.544) has zero residual in both orientations,
+and every endpoint pair of `A_8` is neutral.
+
+#### 10.67.3 Hybrid selection reduces exactly to cross-only overshoot
+
+Let an order-`n` global minimizer be partitioned as in Section 10.66.3,
+write `C` for its cross-only matrix, and replace every diagonal block by an
+arbitrary minimizer `G_i` of order `m_i`.  Put
+
+```math
+K_{\mathbf G}=\bigoplus_iG_i,
+\qquad
+B_0=\sum_iq_{m_i},
+\qquad
+s=\max_i m_i.
+```
+
+Triangle and reverse triangle, first pointwise on Boolean states and then at
+a maximizing state, prove for **every** tuple of local minimizers
+
+```math
+\boxed{
+\left|Q(C+K_{\mathbf G})-Q(C)\right|
+\le Q(K_{\mathbf G})
+\le B_0.
+}
+\tag{10.565}
+```
+
+Since `C+K_{\mathbf G}` is an order-`n` signing and hence has norm at least
+`q_n`, (10.565) has the exactly recentered form
+
+```math
+\boxed{
+\left|
+Q(C+K_{\mathbf G})-q_n
+-[Q(C)-q_n]_+
+\right|
+\le B_0-[q_n-Q(C)]_+.
+}
+\tag{10.566}
+```
+
+The right side is nonnegative: applying (10.565) to any hybrid signing gives
+`q_n\le Q(C)+B_0`.  Dropping its final nonnegative subtraction yields the
+occasionally more convenient upper bound by `B_0` alone.
+
+The random-sign upper bound from Section 10.18, converted from the
+`M_m` normalization to `q_m=2M_m`, is
+
+```math
+q_m
+\le2\sqrt{m(m-1)(m+2)\log2}
+\le\kappa m^{3/2},
+\qquad
+\kappa=\frac{3\sqrt{\log2}}{\sqrt2}<1.767.
+```
+
+Consequently,
+
+```math
+\boxed{
+B_0
+\le\kappa\sum_i m_i^{3/2}
+\le\kappa n\sqrt s.
+}
+\tag{10.567}
+```
+
+If `s=o(n)`, then `B_0=o(n^{3/2})`; in particular, for every tuple of
+local minimizers,
+
+```math
+\boxed{
+Q(C+K_{\mathbf G})-q_n=o(n^{3/2})
+\quad\Longleftrightarrow\quad
+[Q(C)-q_n]_+=o(n^{3/2}).
+}
+\tag{10.568}
+```
+
+At the formerly critical scale `s\asymp\sqrt n`, the entire uncertainty is
+only `O(n^{5/4})`.  Thus local-minimizer entropy, pure-versus-mixed selection,
+and correlated rounding are irrelevant to the leading `n^{3/2}` target.
+Condition (10.549) is valid but unnecessary.  When `B_0>0`, taking
+`t=[Q(C)-q_n]_++B_0` makes every margin at least `B_0`, so its strict
+low-margin family is empty and the criterion reproduces the triangle bound.
+The `B_0=0` all-singleton case is immediate (or follows with `t\downarrow0`).
+Conversely, no selector can cancel a leading cross-only overshoot, because
+the reverse half of (10.565) applies to every tuple.
+
+The order-nine `3+6` wall remains an exact finite obstruction: `Q(C)=q_9`
+while the best hybrid norm is 28 rather than 24.  Its excess four is bounded
+by `B_0=q_3+q_6=16` and is necessarily subleading in any sublinear-block
+asymptotic regime.  The exact cross-only energy histogram is
+`(-24:1,-20:4,-16:8,-12:16,-8:31,-4:44,0:48,4:44,8:31,12:16,16:8,20:4,24:1)`;
+all 3,072 local-minimizer pairs satisfy (10.565), with hybrid-norm
+distribution `(28:672,32:1392,36:864,40:144)`.
+
+Two quadratic Littlewood--Offord papers were checked as possible sources of
+the low-margin entropy statement:
+
+- Kwan--Sauermann, [Resolution of the quadratic Littlewood--Offord
+  problem](https://arxiv.org/abs/2312.13826), gives an
+  `O((n-s)^{-1/2})` upper bound on the mass of one exact energy level for a
+  complete multipartite cross form whose largest part has order `s`;
+
+- Kwan--Sauermann, [An algebraic inverse theorem for the quadratic
+  Littlewood--Offord problem, and an application to Ramsey
+  graphs](https://arxiv.org/abs/1909.02089), gives polynomial atom
+  suppression or a fixed-rank structural alternative under its stated
+  hypotheses.
+
+The first bound still permits `O(2^n/\sqrt n)` states on one level, and the
+fixed-rank inverse theorem likewise saves only `O(\log n)` in the logarithm
+of a fibre.  Neither is a subexponential upper-tail complexity theorem.
+More importantly, (10.568) shows that no such theorem is needed for the
+leading hybrid question.
+
+#### 10.67.4 Corrected frontier
+
+This wave leaves three precise conclusions:
+
+- balanced endpoint residual is exactly a cross-Gram entry, but the neutral
+  `A_8` saturates the resulting dimension bound with complementary thick
+  endpoint frames.  Cross-Gram rank can force only a linear arithmetic
+  payment without a new temporal amplification mechanism;
+
+- sibling completion deficits aggregate exactly in a signed induced-block
+  profile, but the result upper-bounds service rather than Hall deficiency.
+  Even a zero-deficit negative-ground completion can accompany a strictly
+  positive field-proportional temporal atom, so the missing input is a true
+  lower bound on compatible service, not a reinterpretation of sibling
+  sign;
+
+- for every sublinear block scale, all minimizing replacement tuples are
+  asymptotically equivalent.  The hybrid route now has one exact missing
+  theorem: control `[Q(C)-q_n]_+` for a nontrivial critical or adaptive
+  partition whose internal blocks capture the excess needed in (10.524).
+  Singleton partitions make `C=A` but capture nothing, while the elementary
+  triangle bound is leading-order at block size `\sqrt n`.
+
+The highest-priority next route is therefore an **adaptive cross-mosaic
+theorem**: choose or randomize a partition of a global minimizer so its
+internal blocks retain useful excess while deletion of those blocks raises
+the cross-only norm by only `o(n^{3/2})`.  A complementary falsification
+route is to amplify the `A_9` selector wall or another cross-mosaic wall while
+preserving global minimality.  On the temporal side, the surviving target is
+still a lower, matrix-derived compatibility bound for the maximum-antichain
+deficiency, possibly after contracting carefully chosen order windows.
