@@ -8701,3 +8701,350 @@ The generic rank/uncrossing route is now stopped at a sharp infinite
 model.  A continuation must use global-minimizer exchange, prove a
 strict upper gap below centered constant $`1/2`$, or establish stable
 near-ground frame bounds.  See `mesoscopic_zero_cut_rigidity.md`.
+
+### 10.53 Endpoint slack, stable frames, and replenishment
+
+This wave tested three independent continuations of the frontier in
+Sections 10.47--10.52.  The endpoint-slack and frame calculations below
+are verified analytically.  The displayed finite minima for
+compatibility disagreement are numerical and are not used in any
+proof.
+
+#### 10.53.1 Extension slack controls signed cut weight, not agreement
+
+Represent an augmented-cut word by
+```math
+q^{t,x}_{uv}=t x_ux_v,\qquad t\in\{\pm1\},
+```
+so that $`\langle A,q^{t,x}\rangle=tH_A(x)`$.  For a globally
+optimal parent $`A`$, choose a closest word $`c_i=q^{t_i,x^{(i)}}`$
+to each child $`B_i=A[-i]`$, and put
+```math
+h_i=t_i\sum_{j\ne i}a_{ij}x_j^{(i)},\qquad
+d_i=M_n-M(B_i),\qquad
+s_i=d_i-|h_i|.
+```
+Extending $`c_i`$ with the better deleted spin gives a full word
+$`q_i`$.  Parent optimality implies $`|h_i|\le d_i`$, and the exact
+extension identity is
+```math
+\boxed{
+\langle A,q_i\rangle=M_n-s_i,\qquad s_i\ge0.
+}
+\tag{10.320}
+```
+
+Switch $`A`$ by $`q_j`$, write $`S_{ij}`$ for the difference shore
+between $`q_i`$ and $`q_j`$, and let $`C_j(S)`$ be its signed cut
+weight in that gauge.  Direct subtraction in (10.320) gives
+```math
+\boxed{
+C_j(S_{ij})=
+\begin{cases}
+(s_i-s_j)/2,&t_i=t_j,\\[2mm]
+M_n-(s_i+s_j)/2,&t_i=-t_j.
+\end{cases}
+}
+\tag{10.321}
+```
+Relative to a minimum-slack reference, same-orientation differences
+are small nonnegative signed cuts and opposite-orientation differences
+are near-maximal signed cuts.
+
+This identity does not control their cardinalities.  On the common
+$`K_{n-2}`$, put $`k_{ij}=|S_{ij}\setminus\{i,j\}|`$ and $`r=n-2`$.
+The pairwise contribution to the compatibility defect is exactly
+```math
+\boxed{
+\Gamma_{ij}=
+\begin{cases}
+k_{ij}(r-k_{ij}),&t_i=t_j,\\[2mm]
+\binom r2-k_{ij}(r-k_{ij}),&t_i=-t_j.
+\end{cases}
+}
+\tag{10.322}
+```
+Thus $`s_i`$ controls a signed $`A`$-weighted cut sum, while
+$`\Gamma_{ij}`$ counts unweighted overlap edges.  Cancellation can
+make the former zero while the latter is large.
+
+The order-nine minimizer from Section 10.51 makes this obstruction
+analytic.  Every closest child word has
+```math
+d_i=h_i=s_i=0.
+```
+Nevertheless $`\Gamma`$ cannot vanish.  Otherwise the local words
+would glue to a global augmented-cut word $`c`$.  Each child distance
+is eight, so edge counting would give
+```math
+72=\sum_i d(A[-i],c[-i])=7d(A,c),
+```
+whereas $`d(A,c)\ge\rho_9=12`$ makes the right side at least $`84`$.
+In fact a nonzero ordinary cut on the common $`K_7`$ has at least six
+edges, and a complemented cut has at least nine, so
+```math
+\boxed{\Gamma\ge6.}
+\tag{10.323}
+```
+Consequently every universal estimate
+$`\Gamma\le F(s_1,\ldots,s_n)`$ with $`F(0,\ldots,0)=0`$ is
+**falsified**.  Any surviving compatibility theorem must control the
+cardinalities or crossing patterns of the exact zero/max cuts, not
+only their extension slacks.
+
+**Numerical.**  Two independent exact-integer exhaustive evaluators
+found child-choice counts
+```math
+(2,4,2,4,2,2,4,4,4),
+```
+hence $`16{,}384`$ closest-word families, with
+```math
+\min\Gamma=228,\qquad \min\mathcal R=58.
+```
+The two minima need not occur for the same family, and neither value
+is needed for (10.323).
+
+#### 10.53.2 A stable endpoint-frame inequality and its scale wall
+
+For
+```math
+A=\begin{pmatrix}B&C\\C^{\mathsf T}&D\end{pmatrix},
+```
+define
+```math
+e_+=p(A)-p(B)-p(D),\qquad
+e_-=\nu(A)-\nu(B)-\nu(D).
+```
+Both endpoint excesses are nonnegative.  For $`\sigma\in\{+,-\}`$,
+let $`\mu_{B,\sigma}`$ and $`\mu_{D,\sigma}`$ be independent laws on
+arbitrary Boolean endpoint clouds.  Write
+```math
+R_{E,\sigma}=\mathbb E(xx^{\mathsf T})
+\succeq\kappa_{E,\sigma}P_{E,\sigma},
+```
+where $`P_{E,\sigma}`$ projects onto the span of the law's support.
+For the endpoint deficits
+```math
+d_E^+(x)=p(E)-H_E(x),\qquad
+d_E^-(x)=\nu(E)+H_E(x),
+```
+put
+```math
+\eta_\sigma^2=
+\mathbb E\bigl(e_\sigma+d_B^\sigma(u)+d_D^\sigma(v)\bigr)^2.
+```
+
+Changing the relative sign of $`u`$ and $`v`$ gives, with no hidden
+factor of two,
+```math
+|u^{\mathsf T}Cv|
+\le e_\sigma+d_B^\sigma(u)+d_D^\sigma(v).
+```
+Independence and the frame inequalities therefore imply
+```math
+\boxed{
+\eta_\sigma^2
+\ge
+\kappa_{B,\sigma}\kappa_{D,\sigma}
+\|P_{B,\sigma}CP_{D,\sigma}\|_F^2.
+}
+\tag{10.324}
+```
+If $`s_j(C)`$ are the singular values and
+```math
+a_\sigma=\operatorname{codim}L_{B,\sigma}
++\operatorname{codim}L_{D,\sigma},
+```
+then $`\operatorname{rank}(C-P_BCP_D)\le a_\sigma`$, so singular-value
+interlacing sharpens (10.324) to
+```math
+\boxed{
+\eta_\sigma^2
+\ge
+\kappa_{B,\sigma}\kappa_{D,\sigma}
+\sum_{j>a_\sigma}s_j(C)^2
+\ge
+\kappa_{B,\sigma}\kappa_{D,\sigma}
+[rs-\|C\|_{\mathrm{op}}^2a_\sigma]_+.
+}
+\tag{10.325}
+```
+
+For laws on exact endpoint grounds all deficits vanish.  Since
+```math
+W(A)-W(B)-W(D)=\frac{e_++e_-}{2},
+```
+one obtains the verified conditional superadditivity bound
+```math
+\boxed{
+W(A)-W(B)-W(D)
+\ge
+\frac12\sum_{\sigma=\pm}
+\sqrt{\kappa_{B,\sigma}\kappa_{D,\sigma}}
+\sqrt{[rs-\|C\|_{\mathrm{op}}^2a_\sigma]_+}.
+}
+\tag{10.326}
+```
+For laws supported on $`\tau_B`$- and $`\tau_D`$-near clouds, replace
+$`e_\sigma^2`$ by $`(e_\sigma+\tau_B+\tau_D)^2`$.
+
+There is a useful near-zero-cut form.  Switch a positive full ground
+to $`1`$ and let $`\alpha=1^{\mathsf T}C1`$.  The flipped full state
+has endpoint deficit $`2\alpha`$, while $`0\le e_+\le\alpha`$.  Hence
+```math
+\boxed{
+(\alpha+\tau_B+\tau_D)^2
+\ge
+\kappa_{B,+}\kappa_{D,+}
+\sum_{j>a_+}s_j(C)^2.
+}
+\tag{10.327}
+```
+
+This theorem exposes a sharp scale limitation.  On a balanced split
+with $`\|C\|_{\mathrm{op}}=O(\sqrt n)`$, frame product bounded below,
+and $`a=o(n)`$, it forces only
+```math
+e_\sigma+\tau_B+\tau_D=\Omega(n),
+```
+not an $`n^{3/2}`$ payment.  This is intrinsic to second moments:
+$`\operatorname{tr}R_E=|E|`$ forces $`\kappa_E=O(1)`$ on a
+linear-dimensional span.
+
+**Numerical finite audit.**  The globally optimal order-nine example
+has a $`4+5`$ endpoint zero cut with cross rank four, but both child
+positive-ground spans are only antipodal lines, of dimensions one and
+one.  Thus global minimality does not itself force a useful exact-ground
+frame.  The viable **open target** is a thick near-ground law with
+```math
+\tau_B+\tau_D=o(n),\qquad
+\kappa_B\kappa_D\ge\kappa_0>0,\qquad
+\sum_{j>a}s_j(C)^2\ge cn^2
+```
+for every balanced $`o(n)`$-traffic cut.  Equation (10.327) would then
+give an immediate contradiction.
+
+#### 10.53.3 Field-proportional peeling isolates replenishment
+
+Use doubled normalization
+```math
+Q(A)=\max_x|x^{\mathsf T}Ax|=2M(A).
+```
+Switch a positive absolute ground to $`1`$, so
+```math
+q=1^{\mathsf T}A1=Q(A),\qquad r=A1\ge0.
+```
+For a deleted set $`H`$ with complement $`T`$, define
+```math
+\begin{aligned}
+R_H&=\sum_{i\in H}r_i,&
+h_H&=1_H^{\mathsf T}A[H]1_H,&
+b_H&=1_H^{\mathsf T}A[H,T]1_T,\\
+e_H&=1_T^{\mathsf T}A[T]1_T,&
+d_H&=q-Q(A[T]),&
+g_H&=Q(A[T])-e_H.
+\end{aligned}
+```
+Random extension of a core ground proves $`d_H\ge0`$, and trivially
+$`g_H\ge0`$.  Expanding $`q`$ and $`R_H`$ gives the exact identities
+```math
+\boxed{
+2R_H=d_H+h_H+g_H,\qquad
+d_H+g_H=R_H+b_H.
+}
+\tag{10.328}
+```
+Flipping $`H`$ in the parent ground gives $`0\le b_H\le q/2`$.
+Thus positive heavy-field mass must appear as decrement or
+replenishment, but (10.328) does not decide which.
+
+Let $`S`$ delete vertices independently with probabilities $`p_i`$.
+Averaging (10.328) yields
+```math
+\boxed{
+2\sum_i p_ir_i
+=\mathbb E d_S+p^{\mathsf T}Ap+\mathbb E g_S,\qquad
+\mathbb E(d_S+g_S)
+=\sum_i p_ir_i+\mathbb E b_S.
+}
+\tag{10.329}
+```
+Here $`0\le\mathbb E b_S\le q/2`$ and $`|p^{\mathsf T}Ap|\le q`$,
+the latter by independent Boolean rounding with mean $`p`$.
+
+For a fixed heavy set $`H`$, take
+```math
+p_i=\frac{r_i}{n-1}1_{\{i\in H\}}.
+```
+Then the row-square tail appears without loss:
+```math
+\boxed{
+\mathbb E(d_S+g_S)
+=\frac1{n-1}\sum_{i\in H}r_i^2+\mathbb E b_S
+\ge\frac1{n-1}\sum_{i\in H}r_i^2.
+}
+\tag{10.330}
+```
+If $`A`$ is an exact order-$`n`$ minimizer and $`q_m=2M_m`$, then
+```math
+d_S=q_n-Q(A[S^c])\le q_n-q_{n-|S|}.
+```
+Consequently the exact minimality dichotomy is
+```math
+\boxed{
+\frac1{n-1}\sum_{i\in H}r_i^2
+\le
+\mathbb E\bigl(q_n-q_{n-|S|}\bigr)+\mathbb E g_S.
+}
+\tag{10.331}
+```
+The sole uncontrolled positive term is successor replenishment.
+
+Global signing minimality does not remove it pointwise.  For the
+order-nine minimizer in Section 10.51, the absolute endpoint
+```math
+x=(1,-1,1,-1,-1,-1,-1,-1,1),\qquad x^{\mathsf T}Ax=-24,
+```
+has, after negative orientation and switching, row profile
+```math
+(6,4,8,2,0,2,2,0,0).
+```
+Every principal child has doubled norm $`24`$.  Deleting vertex three
+therefore gives
+```math
+\boxed{
+r_3=8,\qquad d_{\{3\}}=h_{\{3\}}=0,\qquad
+e_{\{3\}}=8,\qquad g_{\{3\}}=16.
+}
+\tag{10.332}
+```
+Moreover the deleted star annihilates every absolute child ground:
+otherwise the better extension would have parent norm greater than
+$`24`$.  Hence exact successor-ground visibility is zero while the
+replenishment gap is sixteen.
+
+This **falsifies** every universal pointwise estimate such as
+$`g_H\le C(d_H+|h_H|)`$, $`g_H\le CV_H`$, or a positive decrement
+lower bound depending only on one heavy field, even for an exact
+global minimizer.  It does not falsify a grouped asymptotic theorem.
+The remaining **open target** is an excess-sensitive cumulative bound
+on $`\mathbb E\sum_t g_t`$ for field-proportional deletions, using
+successor near-ground layers up to deficit $`g_t`$ rather than only
+exact successor grounds.
+
+#### 10.53.4 Disposition of the three routes
+
+- The slack-only compatibility route is stopped by (10.323).  Its
+  successor is a prime-order crossing-energy theorem for the exact
+  zero/max cut family forced by large $`\Gamma`$.
+
+- Exact-ground frames and bare second moments are stopped at their
+  scale wall.  Their successor is a common thick near-ground law with
+  quantitative frame bounds at $`o(n)`$ deficit.
+
+- Pointwise heavy-field peeling is stopped by (10.332).  Its successor
+  is grouped multiscale replenishment charged to thick successor
+  near-ground layers.
+
+These are the three highest-priority independent routes for the next
+wave.  None of the present results proves convergence by itself.

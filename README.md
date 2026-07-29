@@ -70,6 +70,12 @@ Use GitHub-compatible Markdown throughout the active files:
 - verify that equations, links, tables, and lists render correctly before a
   checkpoint is committed.
 
+Do not spend research time polishing GitHub rendering.  Mathematical progress
+is the priority: apply these conventions on a best-effort basis, run only a
+quick structural check for broken fences or delimiters, and then commit and
+push.  Revisit presentation only when a formatting problem materially obscures
+the mathematical content.
+
 ## Git checkpoints
 
 Commit and push regularly so the remote repository preserves the research
