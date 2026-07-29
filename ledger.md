@@ -18161,3 +18161,627 @@ This wave sharpens the leading route without changing it:
   pressure variation, aggregate subgradients, linear puncture sums, and raw
   state-by-state variance should not be recycled as if they supplied the
   missing correlation.
+
+### 10.73 Selector rate--distortion, assignment cycles, and witness overlap
+
+The twentieth wave tests three mechanisms left open by the preceding
+frontier.  The selector route admits an exact information-theoretic
+decomposition: revelation can be separated into the information needed to
+encode a near-ground cut and the fixed-cut fluctuation under the selector
+law.  For exact grounds, the information term is a convex hypergraph
+functional with an exact KKT certificate.  This is a genuine reformulation,
+but the missing asymptotic overlap and moment-generating-function estimates
+remain substantial.
+
+The two nonlinear local probes close more sharply.  Directed puncture cycles
+are exactly reduced-cost cycles of an assignment problem whose diagonal is
+already optimal; cut-ratio holonomy is identically trivial.  Edge-flip
+witnesses form a low-deficit cover, but their natural incidence loads point
+toward large coordinate affinity, the opposite of (10.624).  Complementary
+scoped models identify the joint complete-signing structure that any further
+Hellinger argument must use.
+
+All identities, variational formulas, algebraic certificates, and finite
+enumerations below are **Verified**.  Statements which assume a subgaussian
+log-mgf proxy are explicitly conditional.  The hard-ball and block-diagonal
+models in §10.73.3 deliberately omit stated signing axioms and are no-go
+tests, not counterexamples to (10.617).  Nothing in this wave proves
+convergence.
+
+#### 10.73.1 Revelation has a rate--distortion decomposition
+
+Keep the selector payoff `c_A(S,d)` from (10.643).  For a selector law `\pi`
+and a channel `P(D\mid S)` on full oriented cuts, put
+
+```math
+m_\pi(d)=\mathbb E_{S\sim\pi}c_A(S,d),
+\qquad
+M_\pi=\max_d m_\pi(d),
+\qquad
+\nu=P_D.
+```
+
+Write `I_{\rm Sh}(S;D)` for Shannon mutual information, to distinguish it
+from the selector LP gap `I(A,m)` in (10.646).  The channel's revelation gain
+has the exact decomposition
+
+```math
+\boxed{
+G_\pi(P):=\mathbb E_Pc_A(S,D)-M_\pi
+=\mathbb E_P[c_A(S,D)-m_\pi(D)]-\Delta_\pi(\nu),
+}
+\tag{10.667}
+```
+
+where
+
+```math
+\Delta_\pi(\nu)=M_\pi-\mathbb E_{d\sim\nu}m_\pi(d)\ge0.
+```
+
+Define the fixed-cut centered log-mgf
+
+```math
+\Lambda_d^\pi(\lambda)
+=\log\mathbb E_{S\sim\pi}
+\exp\{\lambda[c_A(S,d)-m_\pi(d)]\}.
+```
+
+Applying the entropy variational inequality to `P_{SD}` relative to
+`\pi\otimes\nu` gives, for every `\lambda>0`,
+
+```math
+\boxed{
+G_\pi(P)
+\le
+\frac{
+I_{\rm Sh}(S;D)
++\log\mathbb E_{d\sim\nu}e^{\Lambda_d^\pi(\lambda)}
+}{\lambda}
+-\Delta_\pi(\nu)
+\le
+\frac{I_{\rm Sh}(S;D)+\sup_d\Lambda_d^\pi(\lambda)}{\lambda}.
+}
+\tag{10.668}
+```
+
+The negative marginal term is important: replacing the average fixed-cut
+payoff by its maximum decreases the revelation gain.
+
+For a channel define its ground-state distortion
+
+```math
+\operatorname{dist}(P)
+=\mathbb E_P[Q(A[S])-c_A(S,D)]\ge0
+```
+
+and the selector rate--distortion profile
+
+```math
+\boxed{
+R_\pi(\delta)
+=\inf\left\{
+I_{\rm Sh}(S;D):\operatorname{dist}(P)\le\delta
+\right\}.
+}
+\tag{10.669}
+```
+
+Let `\pi_*` be any optimizer in the hidden-selector problem, so
+`M_{\pi_*}=V_{\rm hid}`.  Since
+`V_{\rm ad}\le\mathbb E_{\pi_*}Q(A[S])`, (10.668) proves
+
+```math
+\boxed{
+I(A,m)
+\le
+\delta+
+\inf_{\lambda>0}
+\frac{R_{\pi_*}(\delta)+\psi_{\pi_*}(\lambda)}{\lambda},
+\qquad
+\psi_\pi(\lambda)=\sup_d\Lambda_d^\pi(\lambda).
+}
+\tag{10.670}
+```
+
+This has non-tautological content: `R_\pi` measures how economically the
+near-ground-set hypergraph can encode the revealed selector, whereas
+`\psi_\pi` concerns the fluctuation of one fixed cut.
+
+There is a second form which targets the restriction inequality directly
+and does not pretend that `\pi_*` is uniform.  Let `U_m` be the uniform
+`m`-set law, `p_2=(m)_2/(n)_2`, and
+
+```math
+\Lambda_d^U(\lambda)
+=\log\mathbb E_{S\sim U_m}
+\exp\{\lambda[c_A(S,d)-p_2\langle A,d\rangle]\}.
+```
+
+The identity
+
+```math
+D_{\rm KL}(P_{SD}\Vert U_m\otimes\nu)
+=I_{\rm Sh}(S;D)+D_{\rm KL}(\pi\Vert U_m)
+```
+
+and `\langle A,d\rangle\le q_n` give, for every selector law `\pi`,
+
+```math
+\boxed{
+V_{\rm ad}(A,m)-p_2q_n
+\le
+\delta+
+\inf_{\lambda>0}
+\frac{
+R_\pi(\delta)+D_{\rm KL}(\pi\Vert U_m)
++\sup_d\Lambda_d^U(\lambda)
+}{\lambda}.
+}
+\tag{10.671}
+```
+
+Unlike an upper bound on `I(A,m)`, (10.671) can prove the desired
+restriction coefficient directly.  Its right-hand side must be at most
+
+```math
+B_{n,m}
+=\left[\left(\frac mn\right)^{3/2}-p_2\right]q_n
++O(n^{3/2-c}).
+```
+
+If one separately establishes the genuine log-mgf estimate
+`\psi_\pi(\lambda)\le v_n\lambda^2/2`, then (10.670) specializes to
+
+```math
+\boxed{
+I(A,m)\le\delta+\sqrt{2v_nR_{\pi_*}(\delta)}.
+}
+\tag{10.672}
+```
+
+Thus `\delta+\sqrt{2v_nR_{\pi_*}(\delta)}\le B_{n,m}` proves (10.646).
+For a robust subleading error, a hypothetical `v_n=O(n^{5/2})` proxy would
+require `\delta=o(n^{3/2})` and `R_{\pi_*}(\delta)=o(\sqrt n)`; a
+minimizer-specific `v_n=O(n^2)` proxy would reduce this to
+`R_{\pi_*}(\delta)=o(n)`.  The variance identity (10.649) does **not** by
+itself prove either log-mgf estimate, and its fixed-size uniform law is not
+automatically the nonuniform law `\pi_*`.
+
+For exact-ground channels the information term has a closed convex form.
+Put
+
+```math
+\mathcal G_S=\{d:c_A(S,d)=Q(A[S])\}.
+```
+
+Then
+
+```math
+\boxed{
+R_\pi(0)
+=\min_{\nu\in\Delta(\mathcal D_n)}
+\sum_S\pi_S[-\log\nu(\mathcal G_S)].
+}
+\tag{10.673}
+```
+
+Indeed, for fixed `\nu`, the least divergence of a law supported on
+`\mathcal G_S` is `-\log\nu(\mathcal G_S)`, attained by conditioning
+`\nu` on that event.  At an optimum, the KKT conditions are
+
+```math
+\boxed{
+h(d):=\sum_{S:d\in\mathcal G_S}
+\frac{\pi_S}{\nu(\mathcal G_S)}\le1,
+\qquad
+h(d)=1\quad(d\in\operatorname{supp}\nu).
+}
+\tag{10.674}
+```
+
+Consequently the conditioned channel has output marginal
+`\nu(d)h(d)=\nu(d)`, which verifies the consistency required by mutual
+information.  Formula (10.673) is a shared-prior problem: a useful theorem
+must put appreciable prior mass on many selectors' near-ground sets.
+
+The order-nine wall admits an exact algebraic audit.  For the hidden-optimal
+law from (10.652),
+
+```math
+\pi_*={1\over25}(4,2,4,0,4,4,2,5,0),
+\qquad r=\sqrt{17},
+```
+
+put
+
+```math
+a=\frac{21-4r}{130},
+\qquad
+b=\frac{1+r}{20},
+\qquad
+c=\frac{15-r}{52}.
+```
+
+An optimizing full-cut marginal has the following six nonzero coverage
+patterns.  A bit in position `i` means that the cut grounds the child formed
+by deleting `i`.
+
+| coverage pattern | mass |
+|:---:|---:|
+| `000010011`, `000101010` | `a` each |
+| `011000010`, `100000110` | `b` each |
+| `001101000`, `100010001` | `c` each |
+
+All six patterns are realized by oriented full cuts which are themselves
+`A_9` grounds.  With
+
+```math
+u=b+c=\frac{2(11+r)}{65},
+\qquad
+v=a+c=\frac{9-r}{20},
+\qquad
+w=2(a+b)=\frac{11+r}{26},
+```
+
+the nine ground-event masses are
+
+```math
+\boxed{
+(\nu(\mathcal G_i))_{i=0}^8=(u,b,u,v,v,v,b,w,v).
+}
+\tag{10.675}
+```
+
+Exact arithmetic in `\mathbb Q(\sqrt{17})` verifies (10.674) on all 22
+realized nonempty coverage patterns, with equality precisely on the six
+displayed patterns.  Hence
+
+```math
+\boxed{
+R_{\pi_*}(0)
+=-\frac1{25}
+\left(8\log u+4\log b+8\log v+5\log w\right)
+=1.022686788870\ldots\ \text{nats}.
+}
+\tag{10.676}
+```
+
+The conditioned exact-ground channel has
+`G_{\pi_*}=24-464/25=136/25`, exactly the selector gap.  A separate
+**Numerical** evaluation of the law-adapted entropy bound gives
+`5.492750238\ldots`, close to the exact `5.44`; no certified optimizer is
+claimed for that last decimal calculation.
+
+Finite-temperature child Gibbs laws provide an approximate-ground channel:
+
+```math
+\boxed{
+Q(A[S])-\mathbb E[c_A(S,D)\mid S]
+\le\frac{H(D\mid S)}\beta
+\le\frac{m\log2}{\beta}.
+}
+\tag{10.677}
+```
+
+At fixed `\beta` this is only `O(n)`, already subleading.  Scalar pressure,
+however, controls separate partition functions rather than overlap among the
+Gibbs laws for different selectors, so it gives no present bound on
+`R_\pi(\delta)`.  The concrete missing pair is a shared cut prior with a
+subcritical rate--distortion profile and a true fixed-cut slice log-mgf or
+metric estimate.
+
+#### 10.73.2 Puncture cycles are assignment reduced costs
+
+Return to the one-copy normalization `M=Q/2` and the notation
+(10.653)--(10.659).  Thus `q_i` is an optimally extended ground of `A[-i]`,
+
+```math
+\langle A,q_i\rangle=M-s_i,
+\qquad
+r_i(q_i)=d_i-s_i,
+\qquad
+u_{ij}=s_i+r_j(q_i)-d_j\ge0.
+```
+
+Define the incident-field cost matrix `c_{ij}=r_j(q_i)`.  Then
+
+```math
+\boxed{
+u_{ij}=c_{ij}-(-s_i)-d_j,
+\qquad
+c_{ii}=d_i-s_i.
+}
+\tag{10.678}
+```
+
+The potentials `\alpha_i=-s_i`, `\beta_j=d_j` are feasible for the dual of
+the minimum-cost assignment problem with costs `c_{ij}`, and the diagonal
+assignment attains equality.  Therefore it is optimal, `u` is exactly its
+reduced-cost matrix, and every permutation `\pi` obeys
+
+```math
+\boxed{
+\sum_i u_{i,\pi(i)}
+=\sum_i[r_{\pi(i)}(q_i)-r_i(q_i)]\ge0.
+}
+\tag{10.679}
+```
+
+The same identity holds for any doubly stochastic assignment.  In
+particular, a directed cycle total is the cost of the corresponding cyclic
+reassignment.  A zero cycle is merely an alternative optimal assignment;
+negative augmenting cycles are impossible by construction.
+
+Cut structure gives a local interpretation but no additional holonomy.
+Gauge `B_j=A[-j]` by its oriented ground `q_j[-j]`, set
+`w_e=a_eq_{j,e}`, and write the augmented-cut ratio
+`q_iq_j=\epsilon y_uy_v`.  If `S` is the negative shore of `y` inside
+`B_j`, then
+
+```math
+\boxed{
+\frac{u_{ij}}2
+=
+\begin{cases}
+\displaystyle\sum_{e\in\delta(S)}w_e,&\epsilon=+1,\\[2mm]
+\displaystyle M(B_j)-\sum_{e\in\delta(S)}w_e,&\epsilon=-1.
+\end{cases}
+}
+\tag{10.680}
+```
+
+Thus `u_{ij}=0` says exactly that `q_i[-j]` is another ground of `B_j`.
+Around every directed cycle `C=(i_1,\ldots,i_k)`, however,
+
+```math
+\boxed{
+\prod_{\ell=1}^k(q_{i_\ell}q_{i_{\ell+1}})=1,
+\qquad
+0\le U(C):=\sum_{\ell=1}^ku_{i_\ell,i_{\ell+1}}
+\le2k(n-1),
+}
+\tag{10.681}
+```
+
+with `i_{k+1}=i_1`.  The product is identically one because the connection
+is pure gauge.  The full-matrix terms in `U(C)` telescope, leaving only
+edges incident to the cycle vertices.  This is another boundary cocycle,
+not a rigidity theorem.
+
+The first missing data already appear after two deletions.  For
+`T=V\setminus\{i,j\}`, define the terminal refresh
+
+```math
+v_{i;ij}=M(A[T])-\langle A[T],q_i[T]\rangle\ge0.
+```
+
+Removing the two incident stars and restoring their common edge once gives
+
+```math
+\boxed{
+M(A[T])
+=M-d_i-d_j+s_i-u_{ij}+a_{ij}q_{i,ij}+v_{i;ij}.
+}
+\tag{10.682}
+```
+
+If `e_i=M(A[-i])-M_{n-1}`, `\delta_n=M_n-M_{n-1}`, and
+`\varepsilon_{ij}=M(A[T])-M_{n-2}`, this becomes
+
+```math
+\boxed{
+\varepsilon_{ij}
+=e_i+e_j+(\delta_{n-1}-\delta_n)
++s_i-u_{ij}+a_{ij}q_{i,ij}+v_{i;ij}.
+}
+\tag{10.683}
+```
+
+A large `u_{ij}`, rather than a small one, lowers the carried baseline, and
+the fresh deficit can refund the gain.  More generally, if `S` is a deleted
+set, `i\in S`,
+
+```math
+R_i(S)=\sum_{e:e\cap S\ne\varnothing}a_eq_{i,e},
+\qquad
+v_i(S)=M(A[V\setminus S])-\langle A[V\setminus S],q_i[V\setminus S]\rangle,
+```
+
+then
+
+```math
+\boxed{
+M(A[V\setminus S])-M_{n-|S|}
+=M-M_{n-|S|}-s_i-R_i(S)+v_i(S).
+}
+\tag{10.684}
+```
+
+The removed baseline and terminal refresh are genuinely endpoint data;
+cycle totals determine neither.
+
+Exact enumeration supplies finite falsifiers:
+
+| minimizer | zero cycle | terminal norm | global minimum | terminal excess |
+|:---:|:---:|---:|---:|---:|
+| `A_8` | `(0,3)` | `M=7` at order 6 | `M_6=5` | `2` |
+| `A_8` | `(0,3,4)` | `M=6` at order 5 | `M_5=4` | `2` |
+| `A_9` | `(0,2)` | `M=11` at order 7 | `M_7=9` | `2` |
+| `A_9` | `(0,2,3)` | `M=9` at order 6 | `M_6=5` | `4` |
+
+In the last row all three carried words already ground the terminal matrix,
+so their refresh deficits vanish; the terminal matrix itself is nevertheless
+globally nonoptimal by four.  An exact order-six minimizer also has a zero
+two-cycle for which both codimension-two refresh deficits equal two.  These
+examples falsify every universal bound
+`\varepsilon(C)\le f(U(C))` with `f(0)=0`.  A continuation must control the
+macroscopic removal/refresh pair in (10.684), rather than recycle cycle
+holonomy or zero reduced cost as a landing certificate.
+
+#### 10.73.3 Edge-flip witnesses do not control Hellinger overlap
+
+Let `B` be an order-`r` exact minimizer, `q=Q(B)`, and on the lifted oriented
+state space write
+
+```math
+s_e(\omega)=\sigma b_{ij}x_ix_j,
+\qquad
+e_B(\omega)=2\sum_es_e(\omega),
+\qquad
+\Delta_\omega=q-e_B(\omega).
+```
+
+One-edge flip minimality says exactly that for every complete edge `e` there
+is a witness
+
+```math
+\boxed{
+W_e=\{\omega:\Delta_\omega\le4,\ s_e(\omega)=-1\}\ne\varnothing.
+}
+\tag{10.685}
+```
+
+The natural fractional cover of all edges by the low layer is
+
+```math
+\tau_4(B)=\min\left\{
+\sum_\omega\lambda_\omega:
+\lambda_\omega\ge0,
+\ \sum_{\omega\in W_e}\lambda_\omega\ge1\ (e\in E)
+\right\}.
+```
+
+If `N=\binom r2` and
+`N_\omega=\{e:s_e(\omega)=-1\}`, exact energy accounting gives
+
+```math
+\boxed{
+|N_\omega|=\frac N2-\frac q4+\frac{\Delta_\omega}4,
+\qquad
+\tau_4(B)\ge
+\frac{N}{N/2-q/4+1}=2+O(r^{-1/2}).
+}
+\tag{10.686}
+```
+
+Thus the certificate alone forces only constant fractional multiplicity.
+
+For coordinate `i`, put
+
+```math
+d_i^-(\omega)=|\{j:s_{ij}(\omega)=-1\}|,
+\qquad
+h_i(\omega)=(r-1)-2d_i^-(\omega).
+```
+
+The coordinate flip `\tau_i` satisfies
+
+```math
+\boxed{
+\Delta_{\tau_i\omega}=\Delta_\omega+4h_i(\omega),
+\qquad
+\operatorname{BC}_i
+=\frac1{D_\beta(B)}
+\sum_\omega e^{-\beta[\Delta_\omega+2h_i(\omega)]}.
+}
+\tag{10.687}
+```
+
+Choose a fractional witness for each edge and let
+`\ell_i(\omega)` be the resulting load of edges incident to `i`.  Then
+`\ell_i(\omega)\le d_i^-(\omega)`, while the summand in (10.687) is
+increasing in `d_i^-`.  Incidence load therefore has the direction of a
+lower bound on geometric mass, not the exponentially small upper bound
+needed in (10.624).  It also omits the denominator and all nonwitness
+coordinate partners.  This is the exact witness-overlap gap.
+
+Two complementary asymptotic tests isolate the omitted hypotheses.
+
+1. Put hard normalized mass on both orientation copies of a radius-`k`
+   Hamming ball of genuine augmented-cut words.  The negative-orientation
+   center witnesses every edge, yet
+
+   ```math
+   \operatorname{BC}_i
+   =\frac{2\sum_{j=0}^{k-1}\binom{r-1}j}
+          {\sum_{j=0}^k\binom rj}
+   \sim\frac2{\sqrt r}
+   \qquad(k=\lfloor\sqrt r\rfloor).
+   ```
+
+   The words and coordinate involutions are genuine, but the assigned
+   deficits violate `\Delta=q-2\sum_es_e` for any one signing.  This closes
+   incidence/support-count proofs only.
+
+2. The sparse quadratic model `B_t=\bigoplus_{a=1}^tA_9` has genuine
+   energies and `Q(B_t)=24t`.  Every present-edge witness extends across the
+   other exact-ground blocks, and exact partition factorization gives
+
+   ```math
+   \boxed{
+   \kappa_{\beta,i}(B_t)=\kappa_{\beta,i}(A_9)<3
+   \quad(i\in[t]\times[9],\ t\ge1,\ \beta>0).
+   }
+   \tag{10.688}
+   ```
+
+   This model has zero interblock entries, so it is not a complete signing
+   and has no certificates for the missing edges.
+
+The actual complete `A_9` minimizer gives an exact finite audit:
+
+```math
+\boxed{\tau_4(A_9)=4.}
+\tag{10.689}
+```
+
+A rational primal of total four and a dual supported with unit weight on
+`(0,2),(0,4),(2,5),(4,5)` certify equality; every one of the 25
+oriented-projective low states is unfavorable on exactly one dual edge.
+Nevertheless `\kappa_{\beta,i}(A_9)<3` for every coordinate and every
+`\beta>0` by (10.616).
+
+Neither asymptotic model nor `A_9` falsifies (10.617).  They show that a
+positive edge-witness proof must jointly exploit **all** complete-graph
+edges, their realization by one signing, the whole Gibbs denominator, and a
+common coordinate.  Raw witness multiplicity, fractional coverage, and
+coordinate-cube geometry are insufficient.
+
+#### 10.73.4 Updated frontier
+
+This wave preserves the strategic ranking but makes the leading route and
+two local obstructions more precise:
+
+- optimized restriction now has an exact selector rate--distortion
+  formulation.  The strongest positive target is either (10.670), using a
+  low-information near-ground channel plus a law-adapted log-mgf, or the
+  direct uniform-reference inequality (10.671).  Exact-ground information is
+  the shared-prior convex program (10.673), not a relabeling of the original
+  selector LP.  The algebraic `A_9` value is constant and the entropy bound
+  is nearly sharp there, so finite information compression is real; no
+  asymptotic bound on `R_\pi(\delta)` or the required slice log-mgf is known;
+
+- directed puncture cycles do not supply the nonlinear compatibility left
+  open in Wave 19.  They are assignment reduced costs and have trivial cut
+  holonomy.  Zero cycles can land on restrictions with positive excess even
+  when the carried cuts are already terminal grounds.  A viable puncture
+  continuation must control the macroscopic removed-baseline/refresh pair
+  (10.684) from exact global minimality;
+
+- one-edge minimality witnesses do not presently support the
+  constant-shortfall Hellinger route.  Their natural loads favor larger
+  affinity, and separate no-go models show that energy realizability and
+  complete coupling are both essential.  This is not an asymptotic signing
+  counterexample: (10.617) remains the strongest local alternative, but a
+  continuation must use the joint complete-signing energy law rather than
+  witness incidence alone;
+
+- the leading route therefore remains the power-saving optimized principal
+  restriction lemma from `STEERING.md`, now with a concrete information
+  interface.  The next useful attacks are a minimizer-specific shared-prior
+  bound, a genuine fixed-slice mgf/chaining theorem with usable constants, or
+  a global-minimality bound preventing terminal refresh from refunding
+  favorable removed energy.  Assignment cycles, raw witness covers, scalar
+  pressure overlap, and variance without exponential control should not be
+  restarted as if they close those gaps.
