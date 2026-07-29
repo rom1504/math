@@ -18785,3 +18785,704 @@ two local obstructions more precise:
   favorable removed energy.  Assignment cycles, raw witness covers, scalar
   pressure overlap, and variance without exponential control should not be
   restarted as if they close those gaps.
+
+### 10.74 Fixed-slice mgfs, channel capacity, and complete-energy walls
+
+The twenty-first wave attacks both sides of the information interface from
+Wave 20 and keeps an independent probe of the constant-shortfall route.  Its
+main positive result is a self-contained log-mgf theorem for the quadratic
+selector payoff on a fixed Hamming slice.  The theorem pays only the explicit
+conditioning defect `O(\log n)` and turns a low-information near-ground
+channel into a power-saving restriction comparison.  Thus the fixed-cut mgf
+half of the leading route is no longer merely conjectural.
+
+The channel half remains open.  Exact noisy-ground and child-Gibbs channels
+give useful rate--distortion formulas, but their universal alphabet/capacity
+bounds are linear at every retention level compatible with the restriction
+coefficient.  Independent noise cannot supply the required sub-square-root
+information; minimizer-specific overlap among selector ground laws must do
+so.  Separately, block replacement turns terminal excess into an exact
+max-plus translate cover, but the `A_9` hybrid wall satisfies it with room to
+spare.  Complete-energy Hölder identities for coordinate affinities have the
+wrong direction, while the genuine universal lower reward is only
+`O(r^{-1/2})`.
+
+All identities, inequalities, entropy calculations, and finite audits below
+are **Verified**.  The noisy-channel obstruction is scoped to the universal
+capacity certificate, not the actual mutual information of minimizer ground
+laws.  The Hellinger calculations neither prove nor falsify (10.617).
+Nothing in this wave proves convergence.
+
+#### 10.74.1 A defective fixed-slice Hanson--Wright theorem
+
+Fix a full oriented cut `d=(\sigma,x)` and use unordered weights
+
+```math
+w_{ij}=\sigma a_{ij}x_ix_j,
+\qquad
+T_S=\sum_{i<j}w_{ij}\mathbf1_{\{i,j\in S\}},
+\qquad
+W=\sum_{i<j}w_{ij}.
+```
+
+Thus `c_A(S,d)=2T_S` and `\langle A,d\rangle=2W`.  Put
+
+```math
+r_i=\sum_{j\ne i}w_{ij},
+\qquad
+R_2=\sum_i r_i^2,
+\qquad
+R_\infty=\max_i|r_i|,
+```
+
+let `\mathsf W=(w_{ij})`, and define
+
+```math
+F_\times(\mathsf W)
+=\max_{L\subset[n]}\|\mathsf W[L,L^c]\|_F^2
+\le\left\lfloor\frac{n^2}{4}\right\rfloor.
+```
+
+First take independent Bernoulli-`p` selectors `\xi_i`, write
+`\eta_i=\xi_i-p` and `s=p(1-p)`.  The exact Hoeffding decomposition is
+
+```math
+T_\xi-p^2W
+=p\sum_ir_i\eta_i+\sum_{i<j}w_{ij}\eta_i\eta_j
+=:L+Q.
+```
+
+Elementary Bernstein for `L`, a random fair bipartition for `Q`, Gaussian
+linearization of the resulting rectangular bilinear form, and one final
+Cauchy--Schwarz step give
+
+```math
+\boxed{
+\log\mathbb E e^{t(T_\xi-p^2W)}
+\le
+\frac{t^2p^2sR_2}{1-2|t|pR_\infty/3}
++\frac{t^2F_\times(\mathsf W)}
+       {4(1-t^2\|\mathsf W\|_{\rm op}^2)}.
+}
+\tag{10.690}
+```
+
+This holds for
+
+```math
+|t|<\min\left\{
+\frac3{2pR_\infty},\frac1{\|\mathsf W\|_{\rm op}}
+\right\}.
+```
+
+For completeness, the quadratic step uses a fair random set `L_0` and
+
+```math
+Q=2\mathbb E_{L_0}
+\sum_{i\in L_0,j\notin L_0}w_{ij}\eta_i\eta_j.
+```
+
+Jensen moves the random partition outside the exponential.  Conditional
+Hoeffding bounds the opposite shore by
+`\exp\{u^2\|\mathsf W[L_0,L_0^c]^{\mathsf T}\eta\|_2^2/2\}`;
+Gaussian linearization and the exact Gaussian quadratic mgf then give the
+second term in (10.690).  No inference from variance alone is made.
+
+Now let `S` be uniform among `m`-sets and put
+
+```math
+p=\frac mn,
+\qquad
+p_2=\frac{(m)_2}{(n)_2},
+\qquad
+\epsilon_{n,m}=p^2-p_2
+=\frac{m(n-m)}{n^2(n-1)}.
+```
+
+Conditioning the Bernoulli selectors on `\sum_i\xi_i=m` gives the exact
+slice law.  Define
+
+```math
+\chi_{n,m}
+=-\log\Pr\{\operatorname{Bin}(n,m/n)=m\}
+\le\log(n+1),
+```
+
+where the last inequality uses that `m` is a mode.  Applying (10.690) with
+`t=2\lambda` and retaining the deterministic centering correction proves
+
+```math
+\boxed{
+\begin{aligned}
+\Lambda_d^U(\lambda)
+&\le\chi_{n,m}
++\lambda\epsilon_{n,m}|\langle A,d\rangle|\\
+&\quad+
+\frac{4\lambda^2p^2sR_2}
+     {1-4\lambda pR_\infty/3}
++\frac{\lambda^2F_\times(\mathsf W)}
+     {1-4\lambda^2\|A\|_{\rm op}^2}.
+\end{aligned}
+}
+\tag{10.691}
+```
+
+The domain is
+
+```math
+0<\lambda<\min\left\{
+\frac3{4pR_\infty},\frac1{2\|A\|_{\rm op}}
+\right\}.
+```
+
+The coefficient `p^2s=p^3(1-p)` agrees to leading fixed-ratio order with
+`p_3-p_4` in the exact variance formula (10.649).  The price for the short
+self-contained conditioning proof is the additive defect `\chi_{n,m}`.
+
+For an exact order-`n` minimizer, (10.650), (10.67), and trivial row bounds
+give
+
+```math
+R_2\le2(n-1)q_n,
+\qquad
+R_\infty\le n-1,
+\qquad
+\|A\|_{\rm op}^2\le2q_n,
+\qquad
+|\langle A,d\rangle|\le q_n.
+```
+
+On the halved domain
+
+```math
+\lambda\le
+\min\left\{
+\frac3{8pR_\infty},
+\frac1{2\sqrt2\|A\|_{\rm op}}
+\right\},
+```
+
+both denominators in (10.691) are at least `1/2`, so uniformly in `d`,
+
+```math
+\boxed{
+\Lambda_d^U(\lambda)
+\le\chi_{n,m}+\lambda\epsilon_{n,m}q_n
++\lambda^2\overline V_{n,m},
+\qquad
+\overline V_{n,m}
+=16p^2s(n-1)q_n+\frac{n^2}{2}.
+}
+\tag{10.692}
+```
+
+Combine this with the uniform-reference inequality (10.671), and write
+
+```math
+J_{n,m}(\delta,\pi)
+=R_\pi(\delta)+D_{\rm KL}(\pi\Vert U_m)+\chi_{n,m}.
+```
+
+Whenever
+`\lambda_*=(J_{n,m}/\overline V_{n,m})^{1/2}` lies in the displayed
+domain, exact optimization gives
+
+```math
+\boxed{
+V_{\rm ad}(A,m)-p_2q_n
+\le
+\delta+\epsilon_{n,m}q_n
++2\sqrt{\overline V_{n,m}J_{n,m}(\delta,\pi)}.
+}
+\tag{10.693}
+```
+
+At fixed ratios bounded away from zero and one,
+`\overline V_{n,m}=O(n^{5/2})`,
+`\epsilon_{n,m}q_n=O(n^{1/2})`, and
+`\chi_{n,m}=O(\log n)`.  Consequently
+
+```math
+\boxed{
+\begin{gathered}
+0<c<\frac14,
+\qquad
+\delta=O(n^{3/2-c}),\\
+R_\pi(\delta)+D_{\rm KL}(\pi\Vert U_m)
+=O(n^{1/2-2c})
+\end{gathered}
+\quad\Longrightarrow\quad
+V_{\rm ad}(A,m)-p_2q_n=O(n^{3/2-c}).
+}
+\tag{10.694}
+```
+
+The optimizer is then `O(n^{-1-c})`, safely inside the domain.  This proves
+the fixed-slice mgf half of a power-saving restriction edge.  It does not
+produce the rate--distortion estimate, does not control the nonuniform
+law-adapted mgf in (10.670), and does not by itself handle ratios tending to
+one.  A full steering lemma still needs uniform target coverage or an
+adaptive comparison graph with an exact landing mechanism.
+
+#### 10.74.2 Universal noisy-ground channels retain linear capacity
+
+Fix a selector law `\pi` and choose one oriented ground `d_S^*` of every
+`A[S]`.  Independently flip its selected spins with probability
+`p\in[0,1/2]`, flip its orientation with probability `q\in[0,1/2]`, and
+extend it by uniform outside relative spins.  Set
+
+```math
+\theta=1-2p,
+\qquad
+\eta=1-2q,
+\qquad
+a=\eta\theta^2,
+\qquad
+\overline Q_\pi=\mathbb E_\pi Q(A[S]).
+```
+
+Pairwise noise independence gives the exact payoff and distortion
+
+```math
+\boxed{
+\mathbb E[c_A(S,D)\mid S]=aQ(A[S]),
+\qquad
+\delta(p,q)=(1-a)\overline Q_\pi.
+}
+\tag{10.695}
+```
+
+Let `H_m^{\rm proj}(p)` be the entropy of `m` independent flip bits modulo
+global complementation.  If
+
+```math
+z_k=p^k(1-p)^{m-k}+p^{m-k}(1-p)^k,
+```
+
+then
+
+```math
+\boxed{
+H_m^{\rm proj}(p)
+=-\frac12\sum_{k=0}^m\binom mk z_k\log z_k,
+\qquad
+(m-1)h(p)\le H_m^{\rm proj}(p)\le mh(p).
+}
+\tag{10.696}
+```
+
+The outside extension contributes exactly `(n-m)\log2` conditional entropy.
+Since a full oriented projective cut has `n\log2` nats of alphabet entropy,
+
+```math
+\boxed{
+\begin{aligned}
+H(D\mid S)
+&=(n-m)\log2+H_m^{\rm proj}(p)+h(q),\\
+I_{\rm Sh}(S;D)
+&\le C_m(p,q)
+:=m\log2-H_m^{\rm proj}(p)-h(q).
+\end{aligned}
+}
+\tag{10.697}
+```
+
+Thus `R_\pi((1-a)\overline Q_\pi)\le C_m(p,q)`.  Uniform rather than
+deterministic outside extension improves this universal certificate by
+exactly `(n-m)\log2` without changing distortion.
+
+For fixed retention `a\in(0,1)`, define
+
+```math
+f(a)
+=\log2-h\!\left(\frac{1-\sqrt a}{2}\right).
+```
+
+Optimizing spin and orientation noise gives
+
+```math
+\boxed{
+mf(a)-\log2
+\le
+C_m^*(a):=\inf_{\eta\theta^2=a}C_m(p,q)
+\le mf(a)+\log2.
+}
+\tag{10.698}
+```
+
+The leading optimizer uses no orientation noise and
+`p=(1-\sqrt a)/2`.  Indeed orientation noise can save only one bit, whereas
+moving `\theta` away from `\sqrt a` changes a linear spin entropy.  Erasure
+or time sharing does not improve the leading curve because
+
+```math
+f(a)=\sum_{k\ge1}\frac{a^k}{2k(2k-1)}
+```
+
+makes `f(a)/a` increasing.
+
+The separate child-Gibbs channel has an equally exact entropy description.
+For
+
+```math
+\mu_{\beta,S}(d)
+\propto e^{\beta c_A(S,d)},
+\qquad
+\delta_{\beta,S}
+=Q(A[S])-\mathbb E_{\mu_{\beta,S}}c_A(S,d),
+```
+
+and the deficit partition sum
+
+```math
+\mathcal Z^{\rm def}_{\beta,S}
+=\sum_de^{-\beta[Q(A[S])-c_A(S,d)]},
+```
+
+one has
+
+```math
+\boxed{
+H(\mu_{\beta,S})
+=\beta\delta_{\beta,S}
++\log\mathcal Z^{\rm def}_{\beta,S},
+\qquad
+0\le\delta_{\beta,S}\le\frac{m\log2}{\beta}.
+}
+\tag{10.699}
+```
+
+After uniform outside extension,
+
+```math
+\boxed{
+I_{\rm Sh}(S;D)
+=H(D)-(n-m)\log2-\mathbb E_SH(\mu_{\beta,S}).
+}
+\tag{10.700}
+```
+
+Scalar child pressures determine the final conditional-entropy term but not
+the mixture entropy `H(D)`.  This is the exact shared-output-overlap gap.
+
+The coefficient audit is unfavorable for universal independent noise.  At
+`m=\rho n+O(1)`, `\rho\in[1/2,1)`, put
+
+```math
+b_\rho=\rho^{3/2}-\rho^2
+\le\frac{27}{256}.
+```
+
+The restriction allowance is `b_\rho q_n+o(n^{3/2})`.  Since
+`\overline Q_\pi\ge q_m`, the verified asymptotic lower and upper bounds
+force the necessary retention
+
+```math
+\boxed{
+a\ge a_\rho-o(1),
+\qquad
+a_\rho
+=1-\frac{1-\sqrt\rho}{0.672986728862\ldots}>0.
+}
+\tag{10.701}
+```
+
+Consequently the universal capacity certificate in (10.698) is
+`\Omega_\rho(n)`.  It cannot meet (10.694), which needs
+`O(n^{1/2-2c})`.  This does **not** lower-bound the channel's actual mutual
+information: an abstract uniform-label model attains the capacity, while
+quadratic minimizers might have highly overlapping ground labels.  The
+surviving target is precisely a minimizer-specific common prior or output
+overlap theorem, not more independent noise or separate scalar pressure.
+
+#### 10.74.3 Terminal replacement is a max-plus translate cover
+
+Let `A` be an exact order-`n` minimizer, let `T` have order `m`, and put
+`B=A[T]`.  The oriented projective cuts `\mathcal D_T` form an abelian group
+of order `2^m` under entrywise multiplication.  For `d\in\mathcal D_T`,
+define the best response of all edges not internal to `T` by
+
+```math
+Z(d)
+=\max\{\langle A,d'\rangle-\langle B,d\rangle:
+d'\in\mathcal D_n,\ d'[T]=d\}.
+```
+
+Then `Q(A)=\max_d[Z(d)+\langle B,d\rangle]`.  Fix any exact order-`m`
+minimizer `C`, put
+
+```math
+q=Q(A),
+\quad q_B=Q(B),
+\quad\varepsilon=q_B-q_m,
+```
+
+and define
+
+```math
+s(d)=Z(d)-(q-q_B),
+\qquad
+b_B(d)=q_B-\langle B,d\rangle,
+\qquad
+b_C(d)=q_m-\langle C,d\rangle.
+```
+
+The parent cap is exactly
+
+```math
+s(d)\le b_B(d),
+\qquad
+\max_d[s(d)-b_B(d)]=0.
+```
+
+For every `h\in\mathcal D_T`, replace the block `B` by the
+switched/complemented optimal signing `C\odot h`.  Global minimality of `A`
+forces the replacement to have norm at least `q`, which is equivalent to
+
+```math
+\boxed{
+\forall h\in\mathcal D_T,
+\qquad
+\max_d\{s(d)-b_C(hd)\}\ge\varepsilon.
+}
+\tag{10.702}
+```
+
+Thus every translate of the optimal terminal deficit profile must meet
+enough external surplus to pay the whole terminal excess.  If
+
+```math
+N_t=\{u:b_C(u)\le t\},
+\qquad
+R_t=\{d:s(d)\ge\varepsilon+t\},
+```
+
+over the realized deficit levels of `C`, then witness selection in (10.702)
+gives the exact covering and its cardinal consequence
+
+```math
+\boxed{
+\mathcal D_T=\bigcup_tN_tR_t^{-1},
+\qquad
+2^m\le\sum_t|N_t||R_t|.
+}
+\tag{10.703}
+```
+
+Exponentiating (10.702), summing over `d`, and averaging the translate gives
+the soft version
+
+```math
+\boxed{
+e^{\lambda\varepsilon}
+\le
+\left(2^{-m}\sum_de^{\lambda s(d)}\right)
+\left(\sum_ue^{-\lambda b_C(u)}\right)
+\qquad(\lambda>0).
+}
+\tag{10.704}
+```
+
+This is a genuine global-minimality constraint, but it needs a new upper tail
+bound for the external surplus.  The parent cap `s\le b_B` permits a
+leading-scale exponential moment.
+
+The `3+6` partition of `A_9` in (10.550)--(10.551) is an exact wall.  On the
+six-vertex terminal block,
+
+```math
+q=24,
+\qquad q_B=14,
+\qquad q_6=10,
+\qquad\varepsilon=4.
+```
+
+Among the 64 terminal cuts, equality `s=b_B` holds at 17, the external
+surplus has range `[-4,20]`, and, for the displayed exact order-six
+minimizer used in the audit, exhaustive enumeration gives
+
+```math
+\boxed{
+\min_h\max_d[s(d)-b_C(hd)]=8>\varepsilon.
+}
+\tag{10.705}
+```
+
+Thus every optimal switched replacement has full norm at least
+`24-4+8=28` within this orbit, matching the value of the stronger all-block
+audit (10.551).  The layer pairs
+`(|N_t|,|R_t|)` at `t=0,4,16,20` are
+
+```text
+(12,35), (32,17), (52,1), (64,0).
+```
+
+The translate cover can therefore hold with room to spare while the
+restriction has positive terminal excess.  A useful continuation must derive
+new minimizer-specific control of `s`, rather than treating block replacement
+or (10.703) alone as a refresh bound.
+
+#### 10.74.4 Complete-energy Hölder has the wrong direction
+
+For an order-`r` signing `B`, retain the lifted deficit and row field
+
+```math
+\Delta_\omega=q-e_B(\omega),
+\qquad
+h_i(\omega)=\sigma x_i(Bx)_i,
+\qquad
+D_\gamma(B)=\sum_\omega e^{-\gamma\Delta_\omega}.
+```
+
+Let `A_i=\operatorname{BC}_i=e^{-\beta\kappa_{\beta,i}}`.  Formula
+(10.687) says
+
+```math
+A_i
+=\mathbb E_{\nu_{\beta,B}}e^{-2\beta h_i}.
+```
+
+The complete-signing energy law enters through
+
+```math
+\boxed{
+\sum_{i=1}^rh_i(\omega)=e_B(\omega)=q-\Delta_\omega.
+}
+\tag{10.706}
+```
+
+Generalized Hölder and pointwise AM--GM now give
+
+```math
+\boxed{
+\left(\prod_{i=1}^rA_i\right)^{1/r}
+\ge
+e^{-2\beta q/r}
+\frac{D_{\beta(1-2/r)}(B)}{D_\beta(B)},
+\qquad
+\frac1r\sum_iA_i
+\ge
+e^{-2\beta q/r}
+\frac{D_{\beta(1-2/r)}(B)}{D_\beta(B)}.
+}
+\tag{10.707}
+```
+
+Since the deficit partition sum increases as temperature decreases,
+
+```math
+\boxed{
+\frac1r\sum_i\kappa_{\beta,i}(B)
+\le
+\frac{2q}{r}
+-\frac1\beta
+\log\frac{D_{\beta(1-2/r)}(B)}{D_\beta(B)}
+\le\frac{2q}{r}.
+}
+\tag{10.708}
+```
+
+Completeness therefore forces at least one large affinity and controls
+average reward from **above**, the opposite of (10.624).  The exact child
+product is consistent with the same direction:
+
+```math
+\boxed{
+\prod_{i=1}^rA_i
+=2^re^{-\beta\sum_i d_i}
+\frac{\prod_iD_\beta(B[-i])}{D_\beta(B)^r},
+\qquad
+d_i=q-Q(B[-i]).
+}
+\tag{10.709}
+```
+
+There is a valid lower bound on the best reward, but it is far too small.
+Pair every state with its coordinate flip and orient the pair so its field is
+`u\ge0`.  Under the normalized pair law `\pi_i`, exact two-point algebra gives
+
+```math
+\boxed{
+A_i=\mathbb E_{\pi_i}\operatorname{sech}(2\beta u),
+\qquad
+m_i:=\mathbb E_{\nu_{\beta,B}}h_i
+=\mathbb E_{\pi_i}[u\tanh(2\beta u)].
+}
+\tag{10.710}
+```
+
+Using
+`1-\operatorname{sech}(2x)=\tanh(2x)\tanh x`, concavity of `\tanh`,
+and `0\le u\le r-1`, one obtains
+
+```math
+1-A_i
+\ge
+\frac{\tanh(\beta(r-1))}{r-1}m_i.
+```
+
+Since `\sum_im_i=\mathbb E_\nu e_B` and the Gibbs variational identity gives
+`\mathbb E_\nu e_B\ge(q-r\log2/\beta)_+`,
+
+```math
+\boxed{
+\max_i\kappa_{\beta,i}(B)
+\ge
+-\frac1\beta\log\left[
+1-
+\frac{\tanh(\beta(r-1))}{r(r-1)}
+\left(q-\frac{r\log2}{\beta}\right)_+
+\right].
+}
+\tag{10.711}
+```
+
+For fixed `\beta` and `q=\alpha r^{3/2}+o(r^{3/2})`, this is only
+`(\alpha/\beta+o(1))r^{-1/2}`, rather than `\Theta(\sqrt r)`.  The loss is
+sharp for the information used: a pair law may put probability
+`\Theta(r^{-1/2})` at a field of order `r` and the rest at zero.  The heavy
+coordinate may also migrate among states.  Exact `A_8/A_9` enumeration
+checks (10.706)--(10.711) at three temperatures.  No complete-signing
+counterexample to (10.617) is produced.
+
+#### 10.74.5 Updated frontier
+
+This wave makes a real advance on the leading route but does not change the
+strategic ranking:
+
+- the fixed-slice mgf half of the selector information interface is now
+  proved.  At fixed ratios, (10.693) turns distortion
+  `O(n^{3/2-c})` and total selector information
+  `O(n^{1/2-2c})`, for any `0<c<1/4`, into a power-saving optimized
+  restriction edge.  The exact leading target is therefore a
+  minimizer-specific near-ground channel or shared prior meeting that rate,
+  plus target coverage/landing sufficient for the adaptive tail;
+
+- universal independent spin/orientation noise cannot certify the needed
+  information scale: every retention coefficient compatible with the
+  restriction budget leaves its capacity bound linear.  Child Gibbs laws
+  have subleading distortion at fixed temperature, but separate pressures do
+  not control their mixture entropy.  The missing theorem is overlap among
+  selector-indexed near-ground laws, not another fixed-cut variance or
+  independent-noise calculation;
+
+- exact global minimality under every switched optimal block replacement is
+  the translate-cover condition (10.702)--(10.704).  The `A_9` hybrid wall
+  satisfies it strictly while retaining positive terminal excess.  Terminal
+  refresh can advance the leading route only through new control of the
+  external surplus tail; max-plus covering alone restates the compatibility
+  gap;
+
+- complete energy accounting does not rescue the constant-shortfall route by
+  aggregation.  Hölder bounds average reward from above, and the valid
+  pair-field lower bound is only `O(r^{-1/2})`.  A surviving proof of
+  (10.617) must exclude rare order-`r` positive fields and heavy-coordinate
+  migration using genuinely stronger exact-minimizer structure;
+
+- optimized principal restriction remains the leading route, now with one
+  analytic half closed.  The next wave should prioritize shared-prior overlap
+  or entropy compression at the `O(n^{1/2-2c})` scale, while testing a
+  structurally independent way to control external surplus or heavy-field
+  migration.  No early `STEERING.md` regeneration is required: there is no
+  proof of convergence, asymptotic falsifier, or change of leading route, and
+  the mandatory refresh remains the boundary after Wave 23.
