@@ -10787,3 +10787,381 @@ tensorization theorem: charge
 paying the same parent range on many branches.  Independent routes
 are a grouped conditional-extension theorem for (10.394), and a
 global-minimality argument outside the matched-degree affine ansatz.
+
+### 10.58 Strict-reset walls and a conserved two-channel allocation
+
+The sixth wave falsifies the natural constant-two bound for raw reset
+layers, even when orientation changes are forced and ties preserve the
+old channel.  It also gives a different orientation-safe construction:
+one-sided endpoint capacities plus recursively conserved imbalance
+obligations.  All algebraic claims and displayed finite certificates
+below are **Verified**.  Broader finite searches are labelled
+**Numerical**.
+
+#### 10.58.1 Exact reset algebra and the bounded imbalance tax
+
+At a forced reset, let `\rho` be the old carried orientation and put
+`p=P(\rho A_t)` and `q=N(\rho A_t)>p`.  If `y_t` is the inherited
+spin, write
+```math
+h=\rho\,y_t^{\mathsf T}A_ty_t,\qquad
+b=q-p,\qquad u=p-h,\qquad \mathcal R=p+q.
+```
+There are two different gaps, and conflating them reverses the useful
+sign.  The carried old-channel gap and the fresh-orientation ordinary
+cut layer are respectively
+```math
+\boxed{
+g=q-h=b+u,\qquad
+a=q+h=2q-g=\mathcal R-u.
+}
+\tag{10.399}
+```
+Thus a small dominance imbalance `b` does not make the reset layer
+`a` small: `a` is the *complement* of the old-channel replenishment
+`u` inside the full range.
+
+Let the fresh endpoint have orientation `\rho'=-\rho`, disagree with
+`y_t` on `D_t`, and agree on `E_t`.  Direct cut expansion gives
+```math
+\boxed{
+a_t
+=
+-4\rho'\,
+y_t(D_t)^{\mathsf T}A[D_t,E_t]y_t(E_t).
+}
+\tag{10.400}
+```
+All internal terms cancel.  Raw reset accumulation is therefore an
+alternating triangular cross-traffic problem.
+
+The imbalance part is nevertheless completely controlled.  Along a
+nested path, `P(A_t)` and `N(A_t)` separately decrease, while the
+signs of strict dominance alternate at successive resets.  If a reset
+entering the negative side at `r` is followed by one entering the
+positive side at `s`, then
+```math
+\begin{aligned}
+b_r+b_s
+&=(N_r-P_r)+(P_s-N_s)\\
+&=(N_r-N_s)-(P_r-P_s)
+\le N_r-N_s.
+\end{aligned}
+```
+Pairing consecutive resets, and charging a possible final unpaired
+term to the terminal extremum, proves
+```math
+\boxed{
+\sum_{\mathrm{forced\ resets}}b_t\le Q(A_0).
+}
+\tag{10.401}
+```
+
+The same fact tensorizes on a binary partition tree.  Orient every
+node by its larger one-sided extremum, preserving its parent's
+orientation on a tie.  Below a positive node `U`, the sum of
+strict-reset imbalances is at most `N(U)`.  Indeed, a positive child
+contributes at most `N(X)` by induction, while a negative child
+contributes
+```math
+N(X)-P(X)+(\text{subtree contribution})\le N(X).
+```
+Now sum over the children and use `N`-superadditivity.  The negative
+case is symmetric.  Hence the full tree also obeys (10.401), with the
+sharper opposite-root one-sided extremum on its right-hand side.
+
+There is a sharp one-step relation for the unbounded complement `u`.
+Suppose the preceding step had fresh endpoint
+`x=(x_D,x_E)` in the current old orientation, and let `z` attain the
+best old-channel score on the retained core `E`.  Parent maximality,
+applied with both `z` and `-z` while holding `x_D` fixed, gives
+```math
+\boxed{
+u_t+
+2\left|
+\rho\,x_D^{\mathsf T}A[D,E]z
+\right|
+\le\frac{\alpha_{t-1}}2,
+}
+\tag{10.402}
+```
+where `\alpha_{t-1}` is the preceding step's ordinary cut deficit.
+Thus `u_t\le\alpha_{t-1}/2`.  If that preceding step did not reset,
+`\alpha_{t-1}` is its carried gap; if it did reset, it is its
+potentially large reset layer.  This last distinction prevents
+(10.402) from closing the raw reset recursion.
+
+#### 10.58.2 A strict order-twelve reset tower beats two ranges
+
+The following signing is an exact counterexample to the most natural
+remaining scalar conjecture:
+```math
+A=
+\begin{pmatrix}
+0&-1&-1&-1&-1&-1&-1&1&-1&1&-1&-1\\
+-1&0&-1&-1&-1&-1&1&-1&1&-1&-1&-1\\
+-1&-1&0&1&-1&1&1&-1&1&1&1&-1\\
+-1&-1&1&0&-1&1&1&1&1&1&1&1\\
+-1&-1&-1&-1&0&1&1&1&1&-1&1&1\\
+-1&-1&1&1&1&0&1&-1&-1&-1&-1&-1\\
+-1&1&1&1&1&1&0&-1&1&-1&-1&-1\\
+1&-1&-1&1&1&-1&-1&0&-1&1&1&1\\
+-1&1&1&1&1&-1&1&-1&0&1&1&1\\
+1&-1&1&1&-1&-1&-1&1&1&0&1&-1\\
+-1&-1&1&1&1&-1&-1&1&1&1&0&-1\\
+-1&-1&-1&1&1&-1&-1&1&1&-1&-1&0
+\end{pmatrix}.
+\tag{10.403}
+```
+Use the ordered blocks `(2,3,2,2,2,1)`, start in orientation
+`\rho_0=-1`, and successively retain the suffix blocks.  Exact
+enumeration gives
+
+| step | `P` | `N` | inherited `H` | `\rho` | fresh `\tau` | reset `a` |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0 | 44 | 40 | -4 | -1 | +1 | 48 |
+| 1 | 34 | 38 | 22 | +1 | -1 | 60 |
+| 2 | 26 | 22 | -6 | -1 | +1 | 32 |
+| 3 | 8 | 16 | 8 | +1 | -1 | 24 |
+| 4 | 6 | 2 | -2 | -1 | +1 | 8 |
+
+At every row the fresh channel strictly dominates the carried channel,
+and the prescribed block-cut spin is an absolute endpoint.  No reset
+is a tie choice.  The root has
+```math
+P(A)=44,\qquad N(A)=40,\qquad Q(A)=44,\qquad\mathcal R(A)=84,
+```
+but
+```math
+\boxed{
+\sum_ta_t=172
+>168=2\mathcal R(A)
+>132=3Q(A).
+}
+\tag{10.404}
+```
+The corresponding soft totals are
+`\sum b_t=24`, `\sum u_t=64`, and `\sum g_t=88`.  Thus the bounded
+imbalance theorem does not control the complementary reset layers.
+
+This certificate also defeats the local coefficient-two estimate:
+at the first step the range falls only from `84` to `72`, while
+`a_0=48>2(84-72)`.  Smaller local examples exist, but are unnecessary
+for the global falsification.
+
+**Numerical search scope.**  Exact dynamic programming exhaustively
+checked all signings, inherited orientations, and compatible shores
+through order six.  The maximum tie-preserving ratios
+`\sum a/\mathcal R` at orders `3,4,5,6` were `1,1,4/3,3/2`.
+Exact-endpoint mixed-integer searches found `13/7` at order nine and
+the verified `43/21` in (10.404) at order twelve.  These data do
+**not** prove unbounded growth or disprove every constant-times-`Q`
+theorem.
+
+#### 10.58.3 A conserved two-channel successor allocation
+
+Raw exact resets are avoidable at the algebraic allocation stage.  For
+a nontrivial block `U`, choose spins `p,n` attaining `P(U)` and
+`-N(U)`.  Split `U=S\sqcup T` according to the two values of
+`p_i n_i`.  After gauging by `p`, the negative endpoint is exactly the
+cut flip.  If
+```math
+c=p_S^{\mathsf T}A[S,T]p_T,
+```
+then
+```math
+\boxed{\mathcal R(U)=P(U)+N(U)=4c.}
+\tag{10.405}
+```
+On either shore `X`, the restrictions of `p` and `n` differ only by a
+global sign, so they have one common internal energy
+```math
+h_X=p_X^{\mathsf T}A[X]p_X=n_X^{\mathsf T}A[X]n_X.
+```
+Let `L_X` be the cross `\ell_1` norm obtained by fixing `p_X` and
+exposing the opposite shore.  Then
+`L_X\ge c=\mathcal R(U)/4`.
+
+Write `C_+(X)=P(X)`, `C_-(X)=N(X)` and define the one-sided directed
+payoffs
+```math
+\lambda_X^\sigma
+=
+2L_X-\bigl(C_\sigma(X)-\sigma h_X\bigr),
+\qquad \sigma\in\{+,-\}.
+```
+For each shore,
+```math
+\lambda_X^++\lambda_X^-
+=4L_X-\mathcal R(X)
+\ge\mathcal R(U)-\mathcal R(X).
+```
+Since `P` and `N` are separately block-superadditive,
+`\mathcal R(S)+\mathcal R(T)\le\mathcal R(U)`.  Hence
+```math
+\boxed{
+\sum_{X\in\{S,T\}}\sum_{\sigma=\pm}
+(\lambda_X^\sigma)_+
+\ge\mathcal R(U).
+}
+\tag{10.406}
+```
+
+The payoffs required by the all-successor theorem (10.341) must use
+the absolute child benchmark.  Put
+```math
+\mu_X^\sigma
+=
+2L_X-\bigl(Q(X)-\sigma h_X\bigr),
+\qquad
+b_X^\sigma=Q(X)-C_\sigma(X).
+```
+Then `\lambda_X^\sigma=\mu_X^\sigma+b_X^\sigma` and
+```math
+b_X^++b_X^-
+=2Q(X)-\mathcal R(X)
+=|P(X)-N(X)|.
+```
+Using `(v+b)_+\le v_++b` for `b\ge0` in (10.406) gives the exact
+corrected coverage inequality
+```math
+\boxed{
+\sum_{X,\sigma}(\mu_X^\sigma)_+
++|P(S)-N(S)|+|P(T)-N(T)|
+\ge\mathcal R(U).
+}
+\tag{10.407}
+```
+Every `\mu_X^\sigma` is a valid oriented all-successor payoff:
+```math
+\mu_X^\sigma
+=2L_X-\delta_X(\sigma,p_X),
+\qquad
+\delta_X(\sigma,p_X)=Q(X)-\sigma h_X.
+```
+
+Equation (10.407) has an exact conserved recursion.  Give `U` an
+obligation `0\le w_U\le\mathcal R(U)`.  Distribute it among layer
+allocations and two child obligations so that
+```math
+w_U
+=
+\sum_{X,\sigma}a_X^\sigma+w_S+w_T,
+```
+with
+```math
+0\le a_X^\sigma\le(\mu_X^\sigma)_+,\qquad
+0\le w_X\le|P(X)-N(X)|.
+```
+The nonnegative buckets in (10.407) have enough total capacity for
+this choice, and `w_X\le\mathcal R(X)` permits recursion on the child.
+Use its own positive/negative endpoint cut.  Every nontrivial block
+strictly splits; singleton imbalance is zero.  Summing the
+conservation identities over the finite tree yields
+```math
+\boxed{
+\sum_{\text{all chosen layers}}a_X^\sigma
+=w_{\rm root}
+\le\mathcal R(A)
+\le2Q(A).
+}
+\tag{10.408}
+```
+If zero-obligation branches are completed by the same endpoint cuts,
+every original edge lies in the cross block of exactly one lowest
+common ancestor in the resulting full two-channel tree.
+
+This is a genuine orientation-safe allocation theorem, but its scope
+must remain explicit.  It bounds the **chosen fractional
+allocations**, not the sum of all positive raw capacities and not the
+exact-reset-tree sum falsified by (10.404).  It does not follow by
+applying (10.341) independently to every branch.  The next step is a
+sampling or purification theorem which harvests the conserved chosen
+layers without reintroducing branch overcount.
+
+#### 10.58.4 The imbalance obligations cannot be omitted
+
+Immediate four-layer coverage fails if one replaces both one-sided
+benchmarks by `Q`.  The smallest audited obstruction is
+```math
+A=
+\begin{pmatrix}
+0&-1&1&-1&-1&-1\\
+-1&0&1&-1&1&1\\
+1&1&0&-1&1&-1\\
+-1&-1&-1&0&1&-1\\
+-1&1&1&1&0&-1\\
+-1&1&-1&-1&-1&0
+\end{pmatrix}.
+\tag{10.409}
+```
+Exact enumeration gives `P(A)=N(A)=10`.  Take endpoints
+```math
+p=(-1,-1,-1,1,-1,1),\qquad
+n=(-1,-1,1,-1,1,1)
+```
+of energies `10` and `-10`.  Their endpoint cut is
+```math
+S=\{2,3,4\},\qquad T=\{0,1,5\}.
+```
+In the `p` gauge its cross block is
+```math
+B=
+\begin{pmatrix}
+1&1&1\\
+1&1&-1\\
+-1&1&1
+\end{pmatrix},
+```
+and
+```math
+(P_S,N_S,P_T,N_T,h_S,h_T,L_S,L_T)
+=(2,6,6,2,2,-2,5,5).
+```
+The four one-sided payoffs in (10.406) are `(10,2,2,10)`, but the
+four `Q`-benchmarked payoffs are only `(6,2,2,6)`.  Therefore
+```math
+\boxed{
+\sum_{X,\sigma}(\mu_X^\sigma)_+
+=16<20=\mathcal R(A).
+}
+\tag{10.410}
+```
+Both child imbalances equal `4`, and they are precisely the recursive
+obligations missing from the failed shortcut.
+
+#### 10.58.5 External warning and updated frontier
+
+The reset mosaic is triangular, so a generic matrix-norm shortcut
+would be especially tempting.  It cannot be the whole proof:
+[Mishura's triangular-truncation theorem
+(arXiv:2110.06984)](https://arxiv.org/abs/2110.06984) proves that
+triangular truncation on symmetric matrices has operator norm growing
+without bound for the cut norm.  This theorem does **not** include the
+endpoint-dominance constraints here, so it neither proves nor
+disproves a reset bound.  It does verify that those extra constraints
+must be used in any constant argument.
+
+The frontier is now:
+
+- dominance imbalance is harmless: its total is at most one opposite
+  root extremum on a path or a full partition tree;
+
+- raw ordinary reset layers are not harmless.  Even strict,
+  tie-preserving resets beat `2(P+N)`, and no universal constant is
+  currently proved or disproved;
+
+- the conserved two-channel construction (10.408) replaces raw reset
+  capacity by selected valid successor layers of total mass at most
+  `2Q`.  Its remaining gap is no longer orientation algebra but
+  harvesting/purification of those fractional layers in the original
+  insertion or peeling recurrence.
+
+The highest-priority next target is therefore a conserved-layer
+harvesting theorem: turn the allocations in (10.408) into actual
+successor choices, or a randomized choice with the correct expected
+gain, while preserving the single global `3Q` capacity bound from
+(10.341).  Independent routes are to use global minimality to exclude
+long strict-reset mosaics such as (10.403), or to prove an
+endpoint-constrained triangular theorem stronger than the generic
+cut-norm setting.
