@@ -14084,3 +14084,714 @@ negative credit/terminal excess to make the deficiency `E_\kappa` in
 the adaptive tail (10.529).  Independent routes are a jointly
 near-minimizing global hybrid satisfying (10.524) and a selected-child
 potential satisfying (10.531).
+
+### 10.66 Endpoint-neutral walls, causal Hall cuts, and global hybrid selection
+
+The thirteenth wave attacks all three surviving compatibility questions.  It
+identifies the exact negative-energy witness behind every positive residual
+bucket, but an order-eight minimizer has zero residual for every endpoint
+pair.  It replaces the relaxed global credit sink by an exact laminar causal
+flow, but the resulting proper subtree cuts are genuinely stronger than the
+root telescope.  Finally, arbitrary minimizing block replacements are
+automatically harmless below the critical `\sqrt n` scale, while an exact
+order-nine minimizer defeats even joint global selection at finite order.
+
+All algebraic identities, max-flow/minimax statements, finite matrices, and
+exhaustive certificates below are **Verified**.  The entropy and asymptotic
+compatibility hypotheses are explicitly **Open**.  Nothing in this section
+proves convergence.
+
+#### 10.66.1 Residual capacity is witnessed by negative sibling energy
+
+Consider a split
+
+```math
+A[U]=
+\begin{pmatrix}
+D&B\\
+B^{\mathsf T}&X
+\end{pmatrix}
+```
+
+and an oriented child state `(\sigma,y)`.  Put
+`h=y^{\mathsf T}Xy`, `L=\lVert By\rVert_1`, and
+`\partial=Q(U)-Q(X)\ge0`.  Its all-successor capacity and tolled residual
+are
+
+```math
+c_b=[2L-(Q(X)-\sigma h)]_+,
+\qquad
+r_b=[c_b-\partial]_+.
+```
+
+The identity `[[t]_+-d]_+=[t-d]_+` for `d\ge0` removes the child norm
+exactly:
+
+```math
+\boxed{
+r_b=
+[2\lVert By\rVert_1+\sigma y^{\mathsf T}Xy-Q(U)]_+.
+}
+\tag{10.532}
+```
+
+Choose sibling signs `u_i` so that
+`u_i(\sigma By)_i=|(By)_i|`, with either sign at a zero coordinate.  The
+parent norm bound on `(u,y)` gives
+
+```math
+\sigma u^{\mathsf T}Du
+\le Q(U)-2\lVert By\rVert_1-\sigma y^{\mathsf T}Xy.
+```
+
+Consequently,
+
+```math
+\boxed{
+r_b>0
+\quad\Longrightarrow\quad
+\sigma u^{\mathsf T}Du\le-r_b<0.
+}
+\tag{10.533}
+```
+
+The implication is deliberately restricted to `r_b>0`; when `r_b=0`, the
+untruncated right side need not be nonpositive.  Equation (10.533) strengthens
+`r_b\le Q(D)` by specifying the sibling orientation and signing that witness
+the negative energy.
+
+At an endpoint node, switch the positive endpoint to `\mathbf1`, let
+`U=S\sqcup T` be the positive/negative endpoint cut, and write
+
+```math
+I(U)=|P(U)-N(U)|,
+\qquad
+h_X=\mathbf1_X^{\mathsf T}A[X]\mathbf1_X.
+```
+
+The exact exposure identity `L_X=\mathcal R(U)/4`, together with
+`Q(U)=[\mathcal R(U)+I(U)]/2`, turns (10.532) into
+
+```math
+\boxed{
+r_X^\sigma
+=\left[\sigma h_X-\frac{I(U)}2\right]_+,
+\qquad
+\sum_{\sigma=\pm}r_X^\sigma
+=\left[|h_X|-\frac{I(U)}2\right]_+.
+}
+\tag{10.534}
+```
+
+Thus endpoint-tie optimization is exactly the search for internal endpoint
+energy above the parent half-imbalance threshold; the child norm has
+disappeared.
+
+There is also an exact joint allocation/transport formulation.  For a fixed
+complete endpoint tree `\tau`, let `\mathcal H_\tau` be the polytope of all
+conserved allocations from (10.426) whose path-cover mass (10.412) is at most
+four.  For a bucket `b`, set
+
+```math
+\kappa_b=\frac{[c_b-\partial_b]_+}{c_b},
+```
+
+with value zero at `c_b=0`, and define its weighted residual support function
+
+```math
+H_\tau(\omega)
+=\max_{a\in\mathcal H_\tau}
+\sum_b\omega_b\kappa_ba_b.
+```
+
+For temporal demands `z_i` and any stated compatibility relation
+`i\sim_\tau b`, put
+`\omega_b(\alpha)=\max_{i:i\sim_\tau b}(1-\alpha_i)`, with empty maximum
+zero.  Finite LP duality and minimax give the exact maximum service
+
+```math
+\boxed{
+S_\tau(z)
+=\min_{0\le\alpha_i\le1}
+\left\{
+\sum_i z_i\alpha_i+H_\tau(\omega(\alpha))
+\right\}.
+}
+\tag{10.535}
+```
+
+This optimizes the conserved allocation and the transport simultaneously;
+it is stronger than fixing the particular allocation constructed in Section
+10.62.  If `\mathcal T` is the finite family of endpoint trees, deterministic
+optimization and randomized-tree averaging have the distinct exact orders
+
+```math
+\boxed{
+\begin{aligned}
+S_{\rm det}(z)
+&=\max_{\tau\in\mathcal T}\min_\alpha
+\{z\!\cdot\!\alpha+H_\tau(\omega_\tau(\alpha))\},\\
+S_{\rm av}(z)
+&=\min_\alpha
+\{z\!\cdot\!\alpha+
+\max_{\tau\in\mathcal T}H_\tau(\omega_\tau(\alpha))\}.
+\end{aligned}
+}
+\tag{10.536}
+```
+
+The second formula is the dual of the perspective LP that chooses a tree at
+random and then chooses its allocation conditionally.  Averaging can help a
+multi-atom problem, but cannot manufacture service when every pure tree has
+zero residual.
+
+The order-five minimizer in (10.518) illustrates why set compatibility must
+be retained.  Of its twenty-five endpoint pairs, five are `1+4` splits with
+zero residual and twenty are `2+3` splits with raw residual four.  On every
+good pair the canonical Section 10.62 allocation has residual capacity
+`16/5`; optimizing over the full `K\le4` allocation polytope realizes all
+four raw residual units with exact path mass two.  Uniform averaging therefore
+has expected residual capacity `64/25` canonically and `16/5` after allocation
+optimization.  But the unique endpoint pair whose cut matches the
+deterministic singleton deletion in (10.518) is a zero pair.  Its demand is
+
+```math
+\boxed{
+z_5=8-\frac{64\sqrt5}{25}>0.
+}
+\tag{10.537}
+```
+
+Since `64/25>z_5` (equivalently `64\sqrt5>136`), the uniform canonical
+average serves all of `z_5` under fully relaxed compatibility.  Endpoint ties
+therefore rescue this example only under the relaxed rule that a demand may
+use buckets with the wrong retained vertex set.
+
+The balanced order-eight matrix (10.445) is a stronger wall.  It has four
+projective endpoints of each sign.  Every one of the sixteen pairs is a
+`4+4` split, and on both shores
+
+```math
+P(X)=N(X)=Q(X)=q_4=8,
+\qquad h_X=0.
+```
+
+All four root capacities equal twelve, all decrements equal twelve, and all
+residuals vanish.  Both child imbalance caps are zero, so conservation forces
+all forty range units to remain at the root and leaves no descendant
+allocation.  Hence, even under fully relaxed compatibility,
+
+```math
+\boxed{
+S_\tau(z)=S_{\rm det}(z)=S_{\rm av}(z)=0
+\quad\text{for every endpoint tree of }A_8.
+}
+\tag{10.538}
+```
+
+Retaining either endpoint shore is a valid deterministic deletion in the
+general temporal identity.  It has `d=12` and positive centered demand
+
+```math
+\boxed{
+\lambda-d=8-5\sqrt2>0.
+}
+\tag{10.539}
+```
+
+This four-vertex deletion is not deterministic in one field-proportional
+Bernoulli step.  In every positive-ground gauge the row fields are a
+permutation of `(1,1,1,3,3,3,3,5)`.  If an endpoint shore is used as the
+eligible set, every deletion probability on it is positive, so deletion of
+the entire shore is a positive-probability field-proportional outcome.  Thus
+(10.539) already defeats outcome-by-outcome charging, but the other
+partial-shore outcomes may supply grouped negative credits.  It does not
+defeat a parent-averaged claim.
+
+There is also a positive parent-level obstruction.  Choosing a singleton
+eligible set `{i}` gives only the empty and singleton outcomes: the empty
+outcome contributes zero, every singleton child has `Q=q_7=18`, and the
+parent expected demand is
+
+```math
+\frac{r_i}{7}
+\left(18-\frac{35\sqrt{14}}8\right)>0.
+```
+
+This is a local/random-terminal-order wall, not a finite deterministic-order
+peeling theorem.  Likewise, (10.538) rules out error-free positive-coefficient
+endpoint charging, but not grouped negative credits or an asymptotically
+tail-summable additive error.  No globally minimizing blow-up of `A_8` is
+known.
+
+Exact enumeration of every switching-normalized global minimizer through
+order seven found nonzero optimized residual at orders four through seven.
+The named `A_8` is the first competitive matrix checked for which every
+endpoint pair is neutral; this is not an exhaustive classification of all
+order-eight minimizers.
+
+#### 10.66.2 Honest temporal credit is an exact laminar Hall flow
+
+Let `T` be a finite rooted temporal tree.  Put demand `z_v\ge0` and resource
+`s_v\ge0` at every node, and first impose the descendant-resource convention:
+a demand at `v` may use resource only in the rooted subtree `T_v`.  Ordinary
+max-flow/min-cut reduces exactly to a laminar family.  If the empty antichain
+is allowed, the minimum uncovered demand is
+
+```math
+\boxed{
+\begin{aligned}
+E_{\rm caus}
+&=\max_{J\subseteq T}
+\left[
+z(J)-s\!\left(\bigcup_{v\in J}T_v\right)
+\right]_+\\
+&=\max_{\mathcal A\ {\rm antichain}}
+\sum_{v\in\mathcal A}
+\bigl[z(T_v)-s(T_v)\bigr].
+\end{aligned}
+}
+\tag{10.540}
+```
+
+Indeed, replace an arbitrary `J` by all demand nodes in the disjoint rooted
+subtrees of its ancestry-minimal elements.  Exact service is therefore
+equivalent to
+
+```math
+z(T_v)\le s(T_v)
+\quad\text{for every }v.
+```
+
+The fractional dual is the causal envelope
+
+```math
+\boxed{
+E_{\rm caus}
+=\max_{0\le\theta_v\le1}
+\left{
+\sum_vz_v\theta_v
+-\sum_ws_w\max_{v\preceq w}\theta_v
+\right\}.
+}
+\tag{10.541}
+```
+
+The running maximum is nondecreasing down each history.  Layer-cake
+decomposition recovers (10.540), so no continuous-time causal-transport
+theorem is needed.
+
+Apply this to the centered temporal atoms of Section 10.65.  Suppose every
+leaf has order `m`, and define
+
+```math
+\alpha=\frac{q_n}{n^{3/2}},
+\qquad
+V(v)=Q(A_v)-\alpha r_v^{3/2},
+\qquad
+G=q_m-\alpha m^{3/2}.
+```
+
+For a state node reached with probability `\pi_v`, put
+
+```math
+x_v
+=\pi_v\mathbb E_v(\lambda-d)
+=\sum_{w\text{ child of }v}\pi_w[V(w)-V(v)].
+```
+
+Place the negative credit `u_v=(-x_v)_+` at `v`, terminal excess
+`\pi_\ell\varepsilon_\ell` at a leaf, and actual tolled endpoint resource
+`\kappa R_v` at the temporal node where it is available.  Probability-flow
+conservation telescopes on every rooted subtree:
+
+```math
+\boxed{
+\begin{aligned}
+\sum_{w\in T_v\ {\rm internal}}x_w
+&=\sum_{\ell\in L_v}\pi_\ell V(\ell)-\pi_vV(v),\\
+H_v
+&:=z(T_v)-s(T_v)
+=\pi_v[G-V(v)]-\kappa R(T_v).
+\end{aligned}
+}
+\tag{10.542}
+```
+
+Consequently the exact honest-credit replacement for the global sink in
+(10.516) is
+
+```math
+\boxed{
+E_{\rm caus}
+=\max_{\mathcal A\ {\rm antichain}}
+\sum_{v\in\mathcal A}
+\left\{
+\pi_v[G-V(v)]-\kappa R(T_v)
+\right\},
+}
+\tag{10.543}
+```
+
+again with the empty antichain allowed.  At the root, `V=0` and `\pi=1`, so
+the cut is precisely the relaxed scalar comparison.  Every proper cut is the
+additional conditional inequality
+
+```math
+Q(A_v)-\alpha r_v^{3/2}
+\ge q_m-\alpha m^{3/2}-\frac{\kappa R(T_v)}{\pi_v}.
+```
+
+Telescoping computes this cut but gives it no sign.  Replacing `Q(A_v)` by
+`q_{r_v}` merely restates another normalized comparison.  A bound
+`E_{\rm caus}\le E_{n,m}`, together with (10.515), would give
+
+```math
+q_m-\left(\frac mn\right)^{3/2}q_n
+\le4\kappa(s-1)n+E_{n,m},
+```
+
+which is useful only when the resulting normalized costs satisfy the
+adaptive tail criterion (10.529).
+
+There is an exact deterministic field-proportional suffix wall.  Use the
+order-seven minimizer in (10.522).  Its negative ground
+`(1,-1,-1,-1,-1,-1,-1)`, after orienting by `-A_7`, has row profile
+`(6,0,0,0,4,4,4)`.  Choosing only vertex zero as eligible deletes it with
+probability one and leaves an exact order-six minimizer.  That child has a
+negative ground with row profile `(1,1,1,1,1,5)`; choosing its last vertex
+deletes it with probability one and leaves an exact order-five minimizer.
+With `\alpha=18/(7\sqrt7)`, the two centered atoms are
+
+```math
+\boxed{
+\begin{aligned}
+x_1
+&=10-\frac{108\sqrt{42}}{49}<0,\\
+x_2
+&=\frac{108\sqrt{42}-90\sqrt{35}}{49}-2>0,\\
+x_1+x_2
+&=8-\frac{90\sqrt{35}}{49}<0.
+\end{aligned}
+}
+\tag{10.544}
+```
+
+The root cut succeeds, but the proper subtree beginning at order six contains
+the positive demand `x_2`, no descendant negative credit, and zero terminal
+excess.  The relaxed global sink pays it with the earlier credit `-x_1`;
+descendant-resource compatibility cannot.  Thus proper causal cuts are new
+matrix information even on a deterministic induced chain starting from a
+global minimizer.
+
+The reverse convention is different, not equivalent: if a demand may use
+only already available resource at its ancestors, Hall reduces to every
+ancestor-closed rooted set `S`,
+
+```math
+\boxed{
+z(S)\le s(S)
+\quad(S\text{ ancestor-closed}).
+}
+\tag{10.545}
+```
+
+On a chain these are prefix inequalities.  The positive first prefix
+`8-64\sqrt5/25` from (10.518), while the complete order-five to order-two
+normalized gap is `2-16\sqrt{10}/25<0`, shows the symmetric timing issue:
+a later credit can make the global sum harmless without paying an earlier
+prefix demand.
+
+Contracting a consecutive same-order window simply contracts its history
+cell in the flow tree.  On a chain, the remaining cuts are suffixes or
+prefixes at window boundaries; taking one global window recovers the relaxed
+sink.  Allowing transfers between incomparable histories destroys laminarity
+and returns the general Hall formula rather than one inequality per node.
+
+Finally, (10.533) supplies promising localized negative energy at every
+positive residual bucket, but not yet a negative temporal atom.  Buckets may
+reuse the same sibling block with incompatible signs, and their witnesses
+need not enter the temporal telescope.  The missing theorem is a
+disjoint/fractional realization of these sibling certificates strong enough
+to bound the antichain deficiency (10.543).
+
+#### 10.66.3 Global hybrid selection is automatic only below the critical scale
+
+Partition an order-`n` minimizer into blocks `V_i` of orders `m_i`, write
+
+```math
+A=C+\bigoplus_iD_i,
+```
+
+and keep the common cross mosaic `C` fixed.  Let
+`\mathcal M_m` be the set of order-`m` signings `G` with `Q(G)=q_m`, and put
+`A_{\mathbf G}=C+\bigoplus_iG_i`.  The exact pure joint-selection value is
+
+```math
+\boxed{
+E(A,\mathcal P)
+=\min_{\mathbf G\in\prod_i\mathcal M_{m_i}}
+\max_{\sigma,z_i}
+\left{
+\sigma z^{\mathsf T}Cz
++\sum_i\sigma z_i^{\mathsf T}G_iz_i-q_n
+\right\}.
+}
+\tag{10.546}
+```
+
+It is a `\min\max`, not a statewise `\max\min`: one tuple of minimizing
+blocks must serve every global state.  Minimizing the common-mosaic identity
+(10.524) over all tuples gives
+
+```math
+\boxed{
+\min_{\mathbf G}(\Phi_{\mathbf G}-\Phi_{\mathbf D})
+=\sum_i[Q(D_i)-q_{m_i}]+E(A,\mathcal P).
+}
+\tag{10.547}
+```
+
+There is a simple unconditional theorem.  With
+`H=\bigoplus_i(G_i-D_i)` and `s=\max_i m_i`, every tuple satisfies
+
+```math
+\boxed{
+\begin{aligned}
+0\le Q(A_{\mathbf G})-q_n
+&\le Q(H)
+\le\sum_iQ(G_i-D_i)\\
+&\le\sum_i[q_{m_i}+Q(D_i)]
+\le2\sum_im_i(m_i-1)
+\le2n(s-1).
+\end{aligned}
+}
+\tag{10.548}
+```
+
+If `d_i` is the edge-Hamming distance from `D_i` to a chosen minimizer,
+the sharper instance-dependent bound is
+
+```math
+Q(A_{\mathbf G})-q_n\le4\sum_i d_i.
+```
+
+Thus arbitrary replacements have `o(n^{3/2})` hybrid excess whenever
+`\sum_i m_i^2=o(n^{3/2})`, in particular when `s=o(\sqrt n)`.  But in the
+same range the entire internal excess is already bounded by
+
+```math
+\sum_i[Q(D_i)-q_{m_i}]
+\le\sum_im_i(m_i-1)
+\le n(s-1)=o(n^{3/2}).
+```
+
+The subcritical theorem is therefore asymptotically tautological for the
+replacement identity.  The first nontrivial scale is `s\asymp\sqrt n`, where
+(10.548) has leading order.  No theorem presently bounds the total Hamming
+distance to the local minimizer sets by `o(n^{3/2})`.
+
+There is an exact conditional entropy criterion at that scale.  Fix one
+minimizer in each block and switch them independently and uniformly.  Put
+`B_0=\sum_iq_{m_i}` and `V_0=\sum_iq_{m_i}^2`.  For an oriented global state
+`\omega=(\sigma,z)`, define the cross margin
+
+```math
+r_\omega=q_n+t-\sigma z^{\mathsf T}Cz.
+```
+
+The random internal energies are independent, centered, and bounded by
+`q_{m_i}`.  Hoeffding and a union bound prove that some deterministic tuple
+has excess at most `t` whenever every margin is positive and
+
+```math
+\boxed{
+\sum_{\omega:\ 0<r_\omega<B_0}
+\exp\!\left(-\frac{r_\omega^2}{2V_0}\right)<1.
+}
+\tag{10.549}
+```
+
+At equal critical blocks `m_i\asymp\sqrt n`, this becomes
+`o(n^{3/2})` if the relevant low-margin cross-profile family has
+`\log N=o(n)` and `Q(C)-q_n=o(n^{3/2})`.  Neither condition is known; the
+full `2^{\Theta(n)}` state family gives only a leading-order bound.
+
+Joint selection can fail even when the cross-only overshoot is zero.  The
+order-nine minimizer from (10.298), now recorded explicitly, is
+
+```math
+A_9=
+\begin{pmatrix}
+0&1&-1&1&1&1&1&-1&-1\\
+1&0&1&-1&-1&-1&1&-1&-1\\
+-1&1&0&1&1&1&1&1&-1\\
+1&-1&1&0&1&1&1&-1&1\\
+1&-1&1&1&0&1&-1&1&-1\\
+1&-1&1&1&1&0&-1&-1&-1\\
+1&1&1&1&-1&-1&0&1&1\\
+-1&-1&1&-1&1&-1&1&0&-1\\
+-1&-1&-1&1&-1&-1&1&-1&0
+\end{pmatrix}.
+\tag{10.550}
+```
+
+Partition the first three vertices from the last six.  Exact evaluation gives
+
+```math
+\boxed{
+Q(A_9)=q_9=24,
+\quad(Q(D_3),Q(D_6))=(6,14),
+\quad(q_3,q_6)=(6,10),
+\quad Q(C)=24,
+}
+```
+
+but nevertheless
+
+```math
+\boxed{
+\min_{G_3\in\mathcal M_3,\ G_6\in\mathcal M_6}
+Q(C\oplus_{\rm diag}(G_3,G_6))=28.
+}
+\tag{10.551}
+```
+
+The lower certificate needs only six signed global states.  Put
+
+```math
+x_a=(1,-1,1),\quad x_b=(1,1,1),
+```
+
+```math
+y_a=(1,1,1,1,1,-1),\quad
+y_b=(1,1,1,1,-1,-1).
+```
+
+The cross quadratic is `\pm24` on `(x_a,\pm y_a)` and `\pm20` on each
+of `(x_a,\pm y_b)` and `(x_b,\pm y_b)`.  If
+
+```math
+a=x_a^{\mathsf T}G_3x_a,
+\quad b=x_b^{\mathsf T}G_3x_b,
+\quad u=y_a^{\mathsf T}G_6y_a,
+\quad v=y_b^{\mathsf T}G_6y_b,
+```
+
+then hybrid norm at most twenty-four would force
+
+```math
+\boxed{
+a+u=0,
+\qquad |a+v|\le4,
+\qquad |b+v|\le4.
+}
+\tag{10.552}
+```
+
+All eight labelled order-three minimizers have profiles
+
+| `(a,b)` | multiplicity |
+|---|---:|
+| `(-6,2)` | 1 |
+| `(-2,-2)` | 2 |
+| `(-2,6)` | 1 |
+| `(2,-6)` | 1 |
+| `(2,2)` | 2 |
+| `(6,-2)` | 1 |
+
+and all 384 labelled order-six minimizers have
+
+| `(u,v)` | multiplicity |
+|---|---:|
+| `(-10,-6)` | 60 |
+| `(-10,10)` | 12 |
+| `(-6,-10)` | 60 |
+| `(-6,6)` | 60 |
+| `(6,-6)` | 60 |
+| `(6,10)` | 60 |
+| `(10,-10)` | 12 |
+| `(10,6)` | 60 |
+
+If `a=\pm2`, the equality in (10.552) is impossible.  If
+`(a,b)=(-6,2)`, equality forces `(u,v)=(6,-6)` or `(6,10)`, and one of
+the remaining inequalities has left side twelve and therefore fails by
+eight; the `a=6` case is symmetric.
+Thus all `8\cdot384=3,072` choices exceed twenty-four.  Order-nine energies
+are multiples of four, so their norm is at least twenty-eight.
+
+Equality is attained by
+
+```math
+G_3=
+\begin{pmatrix}
+0&-1&-1\\
+-1&0&-1\\
+-1&-1&0
+\end{pmatrix},
+\qquad
+G_6=
+\begin{pmatrix}
+0&-1&-1&1&-1&1\\
+-1&0&-1&1&1&-1\\
+-1&-1&0&-1&-1&-1\\
+1&1&-1&0&-1&-1\\
+-1&1&-1&-1&0&1\\
+1&-1&-1&-1&1&0
+\end{pmatrix}.
+\tag{10.553}
+```
+
+Its hybrid energy histogram is
+`(-28:5,-20:20,-12:47,-4:49,4:63,12:50,20:21,28:1)`.
+Exactly 672 of the 3,072 replacement pairs attain twenty-eight.  Exhausting
+all first-row-positive gauge matrices, retaining every gauge minimizer, and
+then expanding all vertex switchings covers every labelled minimizer.  Each
+switching orbit has a unique first-row-positive representative, and
+permutations are already included.  For this example,
+
+```math
+\boxed{
+E_{\rm int}=4,
+\qquad E_{\rm hyb}=4,
+\qquad
+\min_{\mathbf G}(\Phi_{\mathbf G}-\Phi_{\mathbf D})=8.
+}
+\tag{10.554}
+```
+
+This is a simultaneous-state obstruction, not a local selector failure.
+It falsifies exact joint nonincrease, even with every minimizing class
+available and `Q(C)=q_9`.  Its fixed excess four does not falsify
+`o(n^{3/2})` asymptotic selection; no globally minimizing critical-scale
+amplification is known.
+
+#### 10.66.4 Updated frontier
+
+This wave leaves three precise lessons:
+
+- decrement-tolled residual is exactly a negative sibling-energy
+  certificate, but endpoint choice and even randomized endpoint averaging
+  can be completely neutral.  Any positive theorem needs grouped temporal
+  credits, an additive error, or a structural exclusion of endpoint-neutral
+  mosaics;
+
+- localizing temporal credits replaces one scalar Hall cut by the exact
+  maximum-antichain deficiency (10.543).  The root telescope supplies only
+  the root cut, and deterministic field-proportional minimizers already
+  violate a proper suffix cut;
+
+- arbitrary global block replacement is harmless below `\sqrt n`, where it
+  is also too small to expose leading internal excess.  Exact nonincrease is
+  already false at finite order.  At the critical scale, a viable asymptotic
+  theorem needs low-margin profile entropy, small cross-only overshoot, a
+  Hamming-near minimizer selection, or another genuinely simultaneous-state
+  mechanism.
+
+The highest-priority next target is a **windowed signed compatibility
+theorem**: use the oriented sibling witnesses in (10.533), together with
+localized temporal negative credits and terminal excess, to bound the
+maximum-antichain error (10.543) on a sparse family of order windows whose
+normalized costs satisfy (10.529).  Independent routes are the critical-scale
+entropy criterion (10.549), a matrix theorem relating internal excess to
+distance from local minimizers, and the selected-child potential (10.531).
