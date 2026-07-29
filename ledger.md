@@ -17026,3 +17026,553 @@ subleading antipodal gap, then combine its paired raw shores with a genuine
 allocation and the causal deficiency (10.543).  The remaining mixed
 conference channel is a clean falsification route rather than the primary
 proof target.
+
+### 10.71 Cavity affinity, cumulative pressure, and a critical symplectic partition
+
+The eighteenth wave tests the constant-shortfall pressure route at its two
+natural levels.  At one deletion, the soft cavity reward is exactly the
+negative logarithm of a coordinate-flip Hellinger affinity.  Standard cube
+entropy controls this affinity only at constant scale, not at the required
+square-root scale.  Across a whole order window, the pointwise condition
+(10.617) can be weakened to a cumulative endpoint condition; however, the
+cavity rewards form an exact subset-lattice gradient, so reward banking is
+just optimized principal restriction and finite temperature supplies no
+independent terminal credit.  The spatial route produces an exact
+symplectic family with critical character cells, leading captured excess,
+zero antipodal gap, and zero active defect.  That family is provably
+nonminimal and its canonical opposite pair has zero raw shore resource,
+thereby separating the spatial target from both minimality and temporal
+service.
+
+All identities, inequalities, asymptotic calculations, and finite
+enumerations in this section are **Verified**.  The Hamming-ball example is
+a scoped counterexample for generic cube geometry, not for quadratic Gibbs
+measures.  The symplectic family is an exact nonminimal test case, not a
+counterexample under the global-minimizer hypothesis.  Nothing below proves
+convergence.
+
+#### 10.71.1 Cavity reward is a coordinate Hellinger barrier
+
+For an order-`r` matrix `B`, a coordinate `i`, and `C_i=B[-i]`, retain
+
+```math
+d_i=Q(B)-Q(C_i),
+\qquad
+D_\beta(B)=\sum_{\omega\in\Omega_r}
+e^{-\beta[Q(B)-e_B(\omega)]}.
+```
+
+Lift the oriented-projective states twofold to independent
+`(\sigma,x)\in\{\pm1\}\times\{\pm1\}^r`; this doubles both deficit sums and
+does not change any ratio.  If a child state has deficit `\delta` and signed
+row field `h=\sigma b_i^{\mathsf T}y`, its two extensions have deficits
+
+```math
+d_i+\delta-2h,
+\qquad
+d_i+\delta+2h.
+```
+
+Nonnegativity gives `2|h|\le d_i+\delta`, while the geometric mean of their
+weights is exactly `e^{-\beta(d_i+\delta)}`.  If `E_i(B)` is the set of
+unordered coordinate-`i` edges and
+`w_\omega=e^{-\beta[Q(B)-e_B(\omega)]}`, summing over child states gives
+
+```math
+\boxed{
+\sum_{\{u,\tau_i u\}\in E_i(B)}
+\sqrt{w_u w_{\tau_i u}}
+=e^{-\beta d_i}D_\beta(C_i).
+}
+\tag{10.622}
+```
+
+Normalize the lifted weights to the parent Gibbs law `\nu_B`.  Counting the
+two directed endpoints of every edge and using (10.614) proves
+
+```math
+\boxed{
+e^{-\beta\kappa_{\beta,i}(B)}
+=\operatorname{BC}(\nu_B,\nu_B\circ\tau_i)
+=\frac{2e^{-\beta d_i}D_\beta(C_i)}{D_\beta(B)}.
+}
+\tag{10.623}
+```
+
+Thus (10.617) is exactly a minimizer-specific coordinate near-isolation
+claim:
+
+```math
+\kappa_{\beta,i}(B)\ge T-K
+\quad\Longleftrightarrow\quad
+\operatorname{BC}_i(\nu_B)
+\le e^{-\beta(T-K)},
+\qquad
+T=\alpha[r^{3/2}-(r-1)^{3/2}].
+\tag{10.624}
+```
+
+In particular, its leading assertion is an affinity of order
+`e^{-\Theta(\sqrt r)}`, not merely a positive influence.
+
+The same extension calculation works at every deficit layer.  If `N_B(t)`
+counts oriented-projective states of deficit at most `t`, then
+
+```math
+\boxed{
+N_B(d_i+t)\ge N_{C_i}(t),
+\qquad
+N_B(2(d_i+t))\ge2N_{C_i}(t)
+\quad(t\ge0).
+}
+\tag{10.625}
+```
+
+The second inequality at `t=0` recovers (10.613).  It also embeds every
+child layer as internal coordinate edges of a parent layer at twice the
+deficit, but the cube edge-isoperimetric upper bound then loses a logarithm
+and does not imply (10.624).
+
+The direct tensorized cube log-Sobolev inequality has a precise limitation.
+Let `\mathcal H_x(\nu_B)` be the average, over the orientation marginal, of
+the conditional spin relative entropy from the uniform cube.  Applying the
+two-point inequality to the square root of each conditional density gives
+
+```math
+\boxed{
+\mathcal H_x(\nu_B)
+\le\sum_{i=1}^r
+\left(1-e^{-\beta\kappa_{\beta,i}(B)}\right),
+\qquad
+\max_i\kappa_{\beta,i}(B)
+\ge-\frac1\beta
+\log\left(1-\frac{\mathcal H_x(\nu_B)}r\right).
+}
+\tag{10.626}
+```
+
+Even the formal maximal entropy input gives only a constant lower bound.
+This is sharp in scope.  Let `S_{r,k}` be the union of the two Hamming balls
+of radius `k<r/2` around antipodal corners, and let `\nu` be uniform on it.
+Every coordinate has affinity
+
+```math
+\boxed{
+\operatorname{BC}_i(\nu)
+=\frac{2\sum_{j=0}^{k-1}\binom{r-1}{j}}
+       {\sum_{j=0}^{k}\binom rj}.
+}
+\tag{10.627}
+```
+
+For `k=\lfloor\sqrt r\rfloor` this is asymptotic to `2/\sqrt r`, so the
+reward is only `(\log r)/(2\beta)+O_\beta(1)=o(\sqrt r)`, although the
+support is antipodal, coordinate-transitive, and has logarithm
+`O(\sqrt r\log r)=o(r)`.  This measure is not asserted to be a quadratic
+Gibbs law or to descend from a minimizer.  It proves only that antipodality,
+support entropy, projection entropy, and generic cube geometry cannot by
+themselves establish (10.624).
+
+Exact enumeration checked (10.622)--(10.625) on every principal
+restriction of `A_8` and `A_9` at three temperatures, totaling 3,048 and
+6,885 coordinate-temperature instances.  The all-temperature `A_9`
+certificate (10.616) becomes
+
+```math
+\operatorname{BC}_i(\nu_{A_9})>e^{-3\beta},
+```
+
+which is precisely `\kappa_{\beta,i}(A_9)<3`.
+
+#### 10.71.2 The weakest window condition and the gradient no-go
+
+Let `A` be an order-`n` minimizer,
+`\alpha=q_n/n^{3/2}`, and freeze one inverse temperature `\beta` throughout
+a deletion chain ending at an order-`m` restriction `B_m`.  Define the
+cumulative root-scale shortfall
+
+```math
+\boxed{
+\Delta_{n,m}
+=\alpha(n^{3/2}-m^{3/2})
+-[P_\beta(A)-P_\beta(B_m)].
+}
+\tag{10.628}
+```
+
+The exact cavity telescope and the pressure bounds give
+
+```math
+\boxed{
+\frac{q_m}{m^{3/2}}
+\le\frac{q_n}{n^{3/2}}
++\frac{\Delta_{n,m}}{m^{3/2}}
++\frac{\log2}{\beta\sqrt m}.
+}
+\tag{10.629}
+```
+
+Consequently (10.617) is sufficient but much stronger than necessary.  For
+one fixed-proportion pair it is enough to find an endpoint with
+`\Delta_{n,m}=o(m^{3/2})` and `\beta\sqrt m\to\infty`.  For convergence, a
+uniform power saving
+`\Delta_{n,m}=O(n^{3/2-c})`, `c>0`, across the directed comparison windows
+has a geometrically summable normalized cost.  More generally, the costs
+only need to satisfy the adaptive path condition (10.529).
+
+The quantifier hierarchy is important.  For scalar comparisons of `q_n`
+and `q_m`, each requested `m` may use a different minimizer and a different
+order-`m` endpoint.  One root working for all `m` is stronger; one nested
+chain whose every prefix works is stronger again.  Thus a stepwise theorem
+is not logically required merely to compare the minima.
+
+Put
+
+```math
+L_\beta(B)=Q(B)-P_\beta(B)
+=\frac{|B|\log2-\log D_\beta(B)}\beta.
+```
+
+The terminal cancellation is exact:
+
+```math
+\boxed{
+Q(B_m)-\alpha m^{3/2}
+=\Delta_{n,m}+L_\beta(B_m)-L_\beta(A),
+\qquad
+\kappa_{\beta,i}(B)
+=d_i+L_\beta(B[-i])-L_\beta(B).
+}
+\tag{10.630}
+```
+
+Equivalently, for
+
+```math
+F_{\alpha,\beta}(S)
+=P_\beta(A[S])-\alpha|S|^{3/2},
+```
+
+every edge shortfall is the increment of `F`.  Hence
+
+```math
+\boxed{
+\sum_{S\to S\setminus\{i\}}
+\left\{
+\alpha[|S|^{3/2}-(|S|-1)^{3/2}]
+-\kappa_{\beta,i}(A[S])
+\right\}
+=F(T)-F(V)
+}
+\tag{10.631}
+```
+
+for every deletion order with endpoint `T`.  Reordering, shortest paths,
+and reward banking cannot improve a fixed endpoint.  Minimizers of `F` at
+different cardinalities need not be nested, so simultaneous prefix control
+remains a real extra compatibility problem.
+
+The useful frozen-temperature regimes follow directly from (10.629).  A
+fixed `\beta>0` costs `O(n^{-1/2})` at `m\ge\rho n`.  If
+`\beta_n=b_n/\sqrt n`, frozen across the root window, the normalized entropy
+cost is `O_\rho(1/b_n)`; it vanishes when `b_n\to\infty` and has a summable
+geometric tail, for example, when `b_n=n^c`.  Fixed `b` leaves a nonzero
+error.  Changing the temperature at every deletion requires the additional
+exact drift
+
+```math
+\tau_r
+=P_{\beta_r}(B_{r-1})-P_{\beta_{r-1}}(B_{r-1}),
+\qquad
+\partial_\beta P_\beta(B)
+=\frac{D_{\rm KL}(\mu_{\beta,B}\Vert\mathrm{unif})}{\beta^2}.
+\tag{10.632}
+```
+
+For `\beta_r=b/\sqrt r`, omitting these drifts can lose
+`\Theta((n^{3/2}-m^{3/2})/b)`, a leading error.
+
+Finner has the wrong direction for endpoint selection.  For fixed
+orientation `\sigma`, let `d=\binom{n-1}{m-1}`.  Fractional covering gives
+
+```math
+Z_A^\sigma(\beta)
+\le
+\prod_{|T|=m}
+Z_{A[T]}^\sigma
+\!\left(\beta\frac{n-1}{m-1}\right)^{1/d}.
+\tag{10.633}
+```
+
+Including the shared orientation variable requires smaller weights and an
+even hotter child temperature:
+
+```math
+\boxed{
+\mathcal Z_\beta(A)
+\le
+\prod_{|T|=m}
+\mathcal Z_{\beta n(n-1)/(m(m-1))}(A[T])^{1/\binom nm},
+}
+\tag{10.634}
+```
+
+so
+
+```math
+\mathbb E_T
+P_{\beta n(n-1)/(m(m-1))}(A[T])
+\ge
+\frac{m(m-1)}{n(n-1)}P_\beta(A).
+```
+
+This lower-bounds average child pressure; the proof needs an upper bound
+ensuring a small child.  A reverse contraction is false already because all
+nine children of `A_9` have norm 24, exceeding
+`(8/9)^{3/2}Q(A_9)=20.11325955\ldots`.  On the exact flat chain
+`A_9\to A_8\to A_7`, direct pressure enumeration confirms at six
+temperatures that every apparent soft reward is paid back by the terminal
+`L_\beta` gap in (10.630).
+
+#### 10.71.3 Critical character cells are algebraically compatible
+
+First record two general subgroup facts.  For an elementary abelian
+switching group `G`, let `V_chi` be its nonempty character cells and group
+the cross energy of an oriented state by difference characters:
+
+```math
+W_\eta(z)
+=2\sigma\!\sum_{\substack{\chi<\psi\\\chi\psi=\eta}}
+z_\chi^{\mathsf T}A[V_\chi,V_\psi]z_\psi.
+```
+
+Then the switching-orbit polynomial and its variance are exactly
+
+```math
+\boxed{
+Y_g
+=\sigma(z\odot g)^{\mathsf T}C(z\odot g)
+=\sum_{\eta\ne1}W_\eta(z)\eta(g),
+\qquad
+\frac1{|G|}\sum_gY_g^2
+=\sum_{\eta\ne1}W_\eta(z)^2.
+}
+\tag{10.635}
+```
+
+Mean zero alone permits an arbitrarily one-sided Walsh polynomial.  Exact
+matrix antipodality `C^g=-C` is also impossible with three nonempty cells:
+the cell signs would have to obey `\epsilon_\chi\epsilon_\psi=-1` for every
+distinct pair.  This does not obstruct state-specific antipodality.
+
+There is a precise quotient-mixing sufficient condition.  In the
+projective state group `\Omega`, fix an orientation, let `P` be the positive
+exact `C` grounds, and let `N_t` be the states with cross energy at most
+`-Q(C)+t`.  For the `L=|\Omega/G|` quotient cosets, write their counts as
+`p_j,n_j` and define `E_G(P)=\sum p_j^2`,
+`E_G(N_t)=\sum n_j^2`.  Cauchy--Schwarz gives
+
+```math
+\boxed{
+\sum_jp_jn_j
+\ge\frac{|P||N_t|}{L}
+-\sqrt{
+\left(E_G(P)-\frac{|P|^2}{L}\right)
+\left(E_G(N_t)-\frac{|N_t|^2}{L}\right)}.
+}
+\tag{10.636}
+```
+
+Strict positivity produces an actual pair in one `G`-orbit with opposite
+deficit at most `t`, hence `\Gamma_{C,t}(D)\le t/2` by (10.610).  Cardinality
+alone does not guarantee the collision.
+
+The universally available low-field cloud cannot construct critical cells
+at small rank.  Switch a positive ground of a matrix with
+`P(M)\le K n^{3/2}` to `1`.  At least `n/2` vertices have nonnegative row
+sum at most `2K\sqrt n`; flipping any `k` of them has deficit at most
+
+```math
+\boxed{
+8Kk\sqrt n+4k(k-1).
+}
+\tag{10.637}
+```
+
+Differences of two such radius-`k` states have support at most `2k`.  If
+`R` such differences generate a subgroup, one character cell therefore has
+size at least `n-2Rk`.  In particular, `R=O(\log n)` and
+`k=o(n/\log n)` leave a cell of size `n-o(n)`.  This no-go concerns only the
+guaranteed sparse cloud, not dense near grounds or high-rank structured
+groups.
+
+The exact critical-scale test family uses `k=2^r`, `n=k^2`, and vertices
+`(u,v)\in\mathbb F_2^r\times\mathbb F_2^r`.  Define
+
+```math
+K_{(u,v),(x,y)}=(-1)^{v\cdot x+u\cdot y},
+\qquad
+A=K-I.
+```
+
+Let the switching group contain all fibre signs, so its `k` character cells
+are `V_u=\{u\}\times\mathbb F_2^r`.  With
+`r_u(v)=(-1)^{u\cdot v}` and
+
+```math
+P=\bigoplus_u r_ur_u^{\mathsf T},
+\qquad
+D=P-I,
+\qquad
+C=K-P,
+```
+
+character orthogonality gives
+
+```math
+\boxed{
+K^2=nI,
+\qquad
+P^2=kP,
+\qquad
+KP=PK=kP.
+}
+\tag{10.638}
+```
+
+Consequently
+
+```math
+\boxed{
+Q(A)=n(k+1),
+\qquad
+Q(C)=nk=n^{3/2},
+\qquad
+Q(D)=n(k-1).
+}
+\tag{10.639}
+```
+
+Every fibre block has norm `k(k-1)`.  Since `q_k=O(k^{3/2})`, its captured
+excess is
+
+```math
+\boxed{
+X=n(k-1)-kq_k
+=(1-o(1))n^{3/2}.
+}
+\tag{10.640}
+```
+
+For `b\ne0`, put
+
+```math
+z_{a,b}(u,v)
+=(-1)^{u\cdot v+a\cdot u+b\cdot v}.
+```
+
+Then `Pz_{a,b}=0` and
+`Kz_{a,b}=k(-1)^{a\cdot b}z_{a,b}`.  Choose
+`a\cdot b=0` and `c\cdot b=1`.  The pair
+
+```math
+z=z_{a,b},
+\qquad
+w=z_{a+c,b}=z\odot g_c
+```
+
+has exact opposite `C` energies `\pm nk` in one switching orbit.  Its
+antipodal gap is zero, `Dz=Dw=-z,-w`, and the opposite orientations have
+`D` responses `-n,+n`.  Therefore
+
+```math
+\boxed{
+s=\sqrt n,
+\qquad
+X=(1-o(1))n^{3/2},
+\qquad
+t=0,
+\qquad
+\Gamma_{C,0}(D)=0.
+}
+\tag{10.641}
+```
+
+Thus every spatial condition in (10.600) is algebraically compatible.  The
+global-minimizer hypothesis is essential: this `A` is provably nonminimal.
+Indeed, the ordinary symmetric Walsh matrix `W` of order `n=2^{2r}` has
+`W^2=nI` and `\operatorname{tr}W=0`.  The signing
+`B=W-\operatorname{diag}W` obeys
+
+```math
+Q(B)\le n\sqrt n=nk<n(k+1)=Q(A),
+```
+
+because `x^{\mathsf T}Bx=x^{\mathsf T}Wx` for every Boolean `x`.
+
+The same orbit pair supplies no shore resource.  Positive and negative
+exact `C` grounds lie in orthogonal `\pm k` eigenspaces inside
+`\ker P`, where `D=-I`; hence every opposite pair has
+`z^{\mathsf T}Aw=0`, full-`A` deficits `2n,0`, and
+
+```math
+\boxed{\mathcal B_{C,0}(A)=0.}
+\tag{10.642}
+```
+
+For the displayed pair, its agreement and disagreement shores both have
+order `n/2`; on either shore
+
+```math
+h_X=-\frac n2,
+\qquad
+L_X=\frac{nk}{2}.
+```
+
+Substitution into (10.602) makes all four actual decrement-tolled buckets
+zero.  Exact matrix checks pass for `k=2,4,8,16`, and exhaustive Boolean
+enumeration independently confirms all norm, orbit, response, and paired
+claims for `k=2,4`.
+
+#### 10.71.4 Updated frontier
+
+This wave changes the ranking of the pressure route rather than solving it:
+
+- the pointwise constant-shortfall condition (10.617) remains a clean
+  sufficient lemma.  It is now exactly the coordinate near-isolation
+  statement (10.624).  Generic log-Sobolev, support entropy, antipodality,
+  and layer projection do not approach its `e^{-\Theta(\sqrt r)}` scale.
+  Any proof must use the quadratic Gibbs form together with exact-minimizer
+  ancestry; a large-minimizer family with all relevant affinities
+  `e^{-o(\sqrt r)}` would falsify the criterion;
+
+- (10.617) is not the weakest pressure route.  The exact sufficient target
+  is cumulative: obtain restrictions at the required landing orders with a
+  geometrically summable normalized `\Delta_{n,m}` in (10.628).  Fixed
+  temperature makes this an endpoint optimization, and (10.630) shows that
+  soft entropy provides no separate terminal credit.  Finner points in the
+  wrong direction.  A successful pressure proof therefore needs a genuinely
+  matrix-specific upper bound on a selected restricted pressure or norm;
+
+- the complete spatial target (10.600) is feasible at exact critical scale,
+  but the symplectic example is nonminimal and its strongest natural
+  opposite orbit has zero raw resource.  This isolates two independent
+  missing inputs: force the partition from global minimality, and then prove
+  a response-to-allocation/temporal theorem rather than relying on spatial
+  scaling or orbit antipodality alone;
+
+- the quotient collision (10.636) is a precise alternative to raw
+  ground-count heuristics.  The guaranteed sparse low-field cloud cannot
+  create the needed cells at small rank, so future subgroup work should test
+  dense structured near grounds, high-rank groups with controlled cells, or
+  a direct minimizer-specific quotient-mixing theorem.
+
+The next strategic choice should compare, rather than conflate, three
+routes: the strong local Hellinger lemma (10.624), the weaker cumulative
+optimized-restriction condition (10.628)--(10.629), and the spatial
+minimizer-plus-temporal bridge built around (10.600).  The first is the most
+explicit scalar lemma but now has a severe generic-geometry barrier; the
+second is logically weakest but currently restates the hard endpoint
+selection; the third has the richest structural evidence but still requires
+two separate theorems.  The mixed conference channel remains a bounded
+falsification project, not a leading positive route.
