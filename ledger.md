@@ -26031,3 +26031,574 @@ and (iii) minimizer-specific control of the resonant energy or restoring
 defect in (10.957)--(10.961).  Exact terminal-min-cut screening remains the
 best geometric fallback; Johnson-entry trees should not be restarted without
 a mechanism that avoids their uniform-law exponent.
+
+### 10.87 Wave 34: uniform rare centers, a conditional-transfer wall, and harmonic migration
+
+Wave 34 finds a strategic quantifier correction in the leading restriction
+route.  The adversarial selector law in (10.907) is sufficient but not
+necessary: the restriction theorem only needs one row-good coset with enough
+mass under the **uniform** selector law.  At the center-star level, the
+uniform high moment is in turn controlled, at the exact project exponent, by
+one exceptional low-row center.  This is a genuine weakening of the Wave 33
+common-weight implementation, although the one-coset endpoint largely
+recombines the already verified arbitrary-cut lemma (10.795); it supplies no
+new signing estimate by itself.
+
+The proposed direct bridge from global block replacement to prescribed
+favorable child fibers is false.  Exact `A_9` has a block response game in
+which every optimal law gives zero mass to the chosen favorable fiber, and
+exact `A_6` has the corresponding bad-only certificate for every proper
+selector at zero slack.  A penalized minimax identity isolates the extra
+response gap that a positive theorem would need.
+
+Independently, the harmonic route acquires an exact fixed-edge Bernoulli-KL
+integral and an exact covariance correction for movement of edge-context
+mass.  Vertex resonance forces posterior selector inclusion, but the
+orientation edge remains separate.  All minimax, incidence, center, and
+harmonic identities below are **Verified**.  The reported finite harmonic
+decimals are **Numerical**.  No convergence proof or asymptotic counterexample
+is obtained.
+
+#### 10.87.1 A uniform partial coset is enough
+
+For an eligible row-good block coset `a`, let `C_a` be its oriented cut
+support and retain `H_a` from (10.873).  Put
+
+```math
+E_d(t)=\{S:\widehat\ell(S,d)\le t\}.
+```
+
+The compressed-envelope identity (10.832) gives, with orientation included,
+
+```math
+\boxed{
+H_a=\bigcup_{d\in C_a}E_d(t),
+\qquad
+\max_{d\in C_a}U_m(E_d(t))
+\ge\frac{U_m(H_a)}{|C_a|}.
+}
+\tag{10.963}
+```
+
+If `a` has `k` blocks then `|C_a|<=2^k`.  At
+`k=O(L_0/log n)` this costs `o(L_0)` in the logarithm.  Hence, for any integer
+choice `T=T(n,m)` with `1<=T<=n^eta`, fixed `eta<c_0`, and uniform constants,
+the uniform target
+
+```math
+\boxed{
+\max_{a\in\mathscr A_C}U_m(H_a)\ge e^{-O(TL_0)}
+}
+\tag{10.964}
+```
+
+produces one cut satisfying (10.795) with saving `c'=c_0-eta>0`.  The row
+cap `O(n^(9/4-c_0))` and tolerance `O(n^(3/2-c_0))` are stronger than those
+required at `c'`; exact landing and geometric-window summability are inherited
+unchanged from (10.795).  This must hold uniformly over all target pairs in
+one fixed active ratio window.
+
+Conversely, (10.853)--(10.854) plant any cut satisfying (10.795) into an
+eligible balanced row-good coset whose hit set contains `E_d(t)`.  Thus
+(10.964) with `T=1` is exponent-equivalent to the arbitrary-cut lemma, up to
+the harmless codebook factor.  In particular,
+`inf_w max_a w(H_a)` and the all-law power sum (10.907) are stronger than the
+restriction theorem needs.
+
+The collision reduction also needs only uniform selectors.  If
+`h_U=max_a U_m(H_a)` and `M=|\mathscr A_C|`, the upper half of (10.904) gives
+
+```math
+\boxed{
+\Pr_{U_m^{\otimes r}}(J_{r,s})
+\le\binom rs\sum_aU_m(H_a)^s
+\le\binom rs M h_U^s.
+}
+\tag{10.965}
+```
+
+Here `log M=O(n log k)=O(rL_0)`, `r/s<=T`, and
+`s^(-1)log binom(r,s)<=log(eT)`.  Therefore a uniform-law lower bound
+`Pr(J_(r,s))>=e^{-O(rL_0)}` forces (10.964).  The center-star event (10.926)
+need only be proved for `w=U_m` for this purpose.
+
+#### 10.87.2 The uniform center moment is a one-center problem
+
+For `d=floor(D/s)` define the hard center degree
+
+```math
+p_d(z)=U_m\{S:a_z(S)\le d\},
+\qquad p_*=\max_{z\in\mathcal C_2}p_d(z).
+```
+
+For the soft kernel put
+
+```math
+q_\lambda(z)=\mathbb E_{S\sim U_m}e^{-\lambda a_z(S)},
+\qquad q_*=\max_{z\in\mathcal C_2}q_\lambda(z).
+```
+
+Writing `N=|\mathcal C_2|`, uniformity of `nu_2` gives the two exact sandwiches
+
+```math
+\boxed{
+\begin{aligned}
+N^{-1}p_*^s&\le\mathbb E_{\nu_2}p_d(z)^s\le p_*^s,\\
+N^{-1}q_*^s&\le L_\lambda(U_m)\le q_*^s.
+\end{aligned}
+}
+\tag{10.966}
+```
+
+Since `N<=2^n`,
+
+```math
+rL_0=n\log(2k_0)+O(L_0),
+\qquad \frac n{rL_0}=o(1),
+\qquad \frac ns=o(TL_0),
+\qquad \frac{sT}{r}\longrightarrow1.
+```
+
+One center's atom is therefore affordable.  The uniform hard moment is
+exponent-equivalent to the single-center sufficient lemma
+
+```math
+\boxed{
+\max_{z\in\mathcal C_2}
+U_m\{S:a_z(S)\le \lfloor D/s\rfloor\}
+\ge e^{-O(TL_0)}.
+}
+\tag{10.967}
+```
+
+Such a center makes `s` iid uniform selectors share a star of total length
+at most `D`; (10.965), (10.963), and (10.795) prove convergence.
+
+The soft formulation reduces to the same hard target when it has the strict
+tail margin.  For every center and integer `d>=0`,
+
+```math
+\boxed{
+e^{-\lambda d}p_d(z)\le q_\lambda(z)
+\le p_d(z)+e^{-\lambda(d+1)}[1-p_d(z)].
+}
+\tag{10.968}
+```
+
+Take `lambda=Lambda rL_0/(D+1)`.  If uniform constants satisfy
+`0<A<Lambda` and
+
+```math
+q_*\ge e^{-ATL_0},
+```
+
+then `lambda(d+1)=(Lambda+o(1))TL_0`, and (10.968) supplies one center with
+`p_d(z)>=e^{-(A+o(1))TL_0}`.  The hard condition already proves the star
+event directly.  The converse need not recover the same soft margin at the
+prescribed `lambda`, so the hard and strict-soft statements are not asserted
+to be bidirectionally equivalent.
+
+The former Jensen first-moment route is stronger: a rare center can make the
+high moment large while the average center degree is small.  Equivalently,
+the Renyi identity (10.949) may pay the exceptional center only once.  Thus
+neither center abundance nor near-maximal average favorable-label
+multiplicity is part of the sharp target.
+
+There is an exact one-sided distance-deficit obstruction for any proposed
+center.  Let
+
+```math
+\delta_S^{\rm abs}(z)
+=Q(A[S])-|z_S^{\mathsf T}A[S]z_S|.
+```
+
+One child-spin flip changes the absolute quadratic energy by at most
+`4(m-1)`.  A shortest path to a favorable label therefore gives
+
+```math
+\boxed{
+a_z(S)\ge
+\frac{[\delta_S^{\rm abs}(z)-B_{n,m}-t]_+}{4(m-1)},
+\quad
+q_\lambda(z)\le
+\mathbb E_{U_m}\exp\left\{
+-\frac{\lambda[\delta_S^{\rm abs}(z)-B_{n,m}-t]_+}{4(m-1)}
+\right\}.
+}
+\tag{10.969}
+```
+
+Conversely, selectors with `delta_S^abs(z)<=B_(n,m)+t` contribute one to
+`q_lambda(z)`.  Thus (10.969) supplies a necessary positive-part-Laplace
+obstruction, not a characterization of `q_lambda`; the missing positive
+estimate remains a nonlinear fixed-center selector tail.
+
+Parent-slack reweighting cannot improve its uniform first moment.  For any
+oriented parent state `omega`, put
+`G=E_(U_m)Q(A[S])-p^(3/2)q_n`.  Uniform pair inclusion gives
+
+```math
+\boxed{
+\mathbb E_{U_m}\delta_S(\omega)
+=B_{n,m}+G+p_2\Delta_A(\omega),
+\qquad
+\mathbb E_{U_m}\widehat\ell(S,\omega)=G.
+}
+\tag{10.970}
+```
+
+These identities survive every selector-independent mixture, including a
+parent-slack or replacement-surplus tilt.  Such a construction must prove
+the nonlinear rare-center tail, not another mean estimate.
+
+#### 10.87.3 Penalized replacement isolates—and fails to supply—conditional transfer
+
+Fix a block `U`, let `E=E(U)`, and retain the local response `Z(u)` and
+oriented edge word `d(u)` from (10.945).  For `z in [-1,1]^E`, set
+
+```math
+R_z(u)=Z(u)+2\sum_{e\in E}z_ed_e(u).
+```
+
+For a nonnegative penalty `p(u)` and `tau>=0`, finite minimax gives
+
+```math
+\boxed{
+\begin{aligned}
+V_p(\tau)
+&=\min_{z\in[-1,1]^E}\max_u\{R_z(u)-\tau p(u)\}\\
+&=\max_\mu\left\{
+\mathbb E_\mu Z-2\sum_{e\in E}|m_e|-\tau\mathbb E_\mu p
+\right\},
+\qquad m_e=\mathbb E_\mu d_e.
+\end{aligned}
+}
+\tag{10.971}
+```
+
+Let `a` be the actual block and
+`Delta(u)=q_n-R_a(u)`.  Every optimizing law obeys the exact nonnegative
+accounting identity
+
+```math
+\boxed{
+q_n-V_p(\tau)
+=\mathbb E_\mu\Delta
++4\sum_{e\in E}(a_em_e)_+
++\tau\mathbb E_\mu p.
+}
+\tag{10.972}
+```
+
+For the bad-fiber indicator `p=1_(F_D^c)`, `tau>0`, and `t>0`, this yields
+
+```math
+\boxed{
+\mu\{u\in F_D:\Delta(u)\le t\}
+\ge1-[q_n-V_p(\tau)]\left(\frac1\tau+\frac1t\right).
+}
+\tag{10.973}
+```
+
+Thus retention of the penalized value would prove conditional transfer, but
+the unconditional rounding consequence of global minimality controls only
+the unpenalized value up to the rounding loss.
+
+The missing quantity has exact equivalent forms.  The convex response
+profile satisfies
+
+```math
+\boxed{
+V'_{p,+}(0)
+=-\min_{\mu\in\operatorname{argmax}J}\mathbb E_\mu p,
+\qquad
+\max_{\mu\in\operatorname{argmax}J}\mu(F_D)
+=1+V'_{p,+}(0),
+}
+\tag{10.974}
+```
+
+where `J(mu)=E_mu Z-2||E_mu d||_1`.  Alternatively, when both the favorable
+and bad sets are nonempty, let `V_B` be the same minimax value restricted to
+bad states and let
+
+```math
+W_F^+=\max_{\nu:\operatorname{supp}\nu\subset F_D}
+\{\mathbb E_\nu Z+2\|\mathbb E_\nu d\|_1\}.
+```
+
+If `g=V_0-V_B>0`, then `W_F^+-V_B>0`, and, for every `t>0`, every full-game
+optimal law has
+
+```math
+\boxed{
+\mu(F_D)\ge\frac{V_0-V_B}{W_F^+-V_B},
+\qquad
+\mu(F_D\cap\{\Delta\le t\})
+\ge\frac{V_0-V_B}{W_F^+-V_B}-\frac{q_n-V_0}{t}.
+}
+\tag{10.975}
+```
+
+The bad-state response gap is a concrete sufficient extra hypothesis.  It is
+not supplied by block minimality.
+
+The exact `A_9` terminal block `U={3,4,5,6,7,8}` proves this sharply.  Here
+`q_9=24`, `q_U=14`, and the zero-slack favorable fiber `F_0` has four
+oriented states.  The fractional block
+
+```text
+(-1,1,1,1,-1,1,0,0,1,-1,1,-1,-1,0,0)
+```
+
+has maximum response `24` over all states but at most `16` on `F_0`.  The
+two opposite orientations of the local spin `++++--` have
+
+```text
+(child deficit, internal energy, outside response, parent score)
+(16, -2, 26, 24), (12, 2, 22, 24).
+```
+
+Their edge words cancel and their mean outside response is `24`.  Hence
+
+```math
+\boxed{
+V_0=V_B=24,
+\qquad
+\max_{\mu\in\operatorname{argmax}J}\mu(F_0)=0,
+\qquad
+V_p(\tau)=24-\tau\quad(0\le\tau\le8).
+}
+\tag{10.976}
+```
+
+Every optimal law is supported on states active at the displayed fractional
+block, none of which is favorable.  Across all 64 switched optimal `A_6`
+replacements in the terminal orbit, the full norms have histogram
+`28^6,32^20,36^26,40^12`; every maximizing state is outside `F_0`, with gap
+at least eight.  This is exact witness migration.
+
+Opposite-orientation cancellation is not the only wall.  For
+`A_9,U={0,1,2,6}`, two `sigma=+1` bad parent grounds have child deficit `12`,
+internal energy `-4`, and outside response `28`; their mean response is at
+least `24` for every fractional block.  On exact `A_6`, for every proper
+selector `U` of sizes three, four, and five,
+
+```math
+\boxed{V_B=V_0=q_6=10}
+\tag{10.977}
+```
+
+at zero target slack, in both the continuous and integral games.  These are
+finite/no-slack mechanism walls, not asymptotic falsifiers.  They show that
+neither orientation bookkeeping nor selector averaging alone creates the
+conditional response gap; a softened project-scale gap and cross-selector
+overlap remain open.
+
+#### 10.87.4 Harmonic energy is endpoint binary cost plus migration
+
+Fix an unordered coordinate edge `e={x,y}` and put
+
+```math
+\omega_e=\log\frac{\nu_\beta(y)}{\nu_\beta(x)},
+\qquad
+\chi_e=g(y)-g(x),
+\qquad
+p_e(t)=\frac{e^{\omega_e+t\chi_e}}{1+e^{\omega_e+t\chi_e}}.
+```
+
+For the full normalized conditional two-state log partition
+
+```math
+A_e(t)
+=\log\frac{\nu_\beta(x)e^{tg(x)}+\nu_\beta(y)e^{tg(y)}}
+             {\nu_\beta(x)+\nu_\beta(y)}
+=tg(x)+\log\frac{1+e^{\omega_e+t\chi_e}}{1+e^{\omega_e}},
+```
+
+direct differentiation and exponential-family calculus give
+
+```math
+\boxed{
+A_e''(t)=\frac{\chi_e^2}{4\cosh^2((\omega_e+t\chi_e)/2)},
+\quad
+k_e(t):=tA_e'(t)-A_e(t)
+=D(\operatorname{Ber}(p_e(t))\Vert\operatorname{Ber}(p_e(0))),
+\quad k_e'(t)=tA_e''(t).
+}
+\tag{10.978}
+```
+
+In particular the fixed-edge weighted resonant integral is exactly
+
+```math
+\boxed{
+K_e:=\int_0^1
+\frac{t\chi_e^2}{4\cosh^2((\omega_e+t\chi_e)/2)}\,dt
+=D(\operatorname{Ber}(p_e(1))\Vert\operatorname{Ber}(p_e(0)))
+=\frac{\chi_e}{2}\tanh\frac{\omega_e+\chi_e}{2}
+-\log\frac{\cosh((\omega_e+\chi_e)/2)}{\cosh(\omega_e/2)}.
+}
+\tag{10.979}
+```
+
+Let `M_e(t)=mu_t(x)+mu_t(y)` and sum over the edge partition for one
+coordinate `j`.  Movement of this context mass cannot be discarded.  With
+
+```math
+C_j=\sum_{e\in E_j}M_e(1)K_e,
+```
+
+the exact identity is
+
+```math
+\boxed{
+\int_0^1t\,\mathcal E_{t,j}(g)\,dt
+=C_j-\int_0^1
+\operatorname{Cov}_{M_{t,j}}(A_e'(t),k_e(t))\,dt.
+}
+\tag{10.980}
+```
+
+Here `C_j` is the endpoint conditional KL of the `j`th bit relative to its
+base conditional.  Negative covariance is precisely adverse edge-context
+migration.
+
+There is a signing-specific vertex identity.  If
+`r_i(d)=pi_d\{S:i notin S\}` and `y=T_i x`, then all omitted-`i` mixture
+components are unchanged, so
+
+```math
+\boxed{
+\chi_i(x,y)=\log\frac{r_i(x)}{r_i(y)}.
+}
+\tag{10.981}
+```
+
+If the endpoint response reverses the sign of the base odds
+`omega_i=-4beta h_i`, the exclusion probability at the newly favored
+endpoint is at most `e^(-|omega_i|)`.  Thus a vertex crossing forces posterior
+selector inclusion at least `1-e^(-|omega_i|)`.  The global orientation edge
+has no omitted-selector anchor and must remain separately in (10.980).
+
+The restoring comparison also has a sharp scalar form.  Put
+
+```math
+X_t=g-\mathbb E_{\mu_t}g,
+\quad B_t=-L_tg,
+\quad V_t=\mathbb E X_t^2,
+\quad W_t=\mathbb E B_t^2,
+\quad E_t=\mathcal E_t(g)=\mathbb E X_tB_t.
+```
+
+Whenever `E_t>0`, define
+
+```math
+\widehat\kappa_t=\sqrt{W_t/V_t},
+\qquad
+\rho_t=\frac{E_t}{\sqrt{V_tW_t}}.
+```
+
+Optimizing the normalized squared defect gives
+
+```math
+\boxed{
+\frac{\mathbb E(B_t-\widehat\kappa_tX_t)^2}
+     {\widehat\kappa_tE_t}
+=2(\rho_t^{-1}-1),
+\qquad
+C_{\rm scr}(t)=\frac1{\widehat\kappa_t\rho_t}.
+}
+\tag{10.982}
+```
+
+The zero-energy case is separately trivial on the connected cube.  A fully
+quantified sufficient parent package requires, for every positive-energy
+`t in [0,1]`, the first two bounds uniformly over `n`, relevant exact
+minimizers, fixed-density target sizes, and the prescribed temperature, and
+requires the two integrated bounds with constants uniform over those same
+project pairs:
+
+```math
+\boxed{
+\widehat\kappa_t\ge\kappa_0>0,
+\qquad \rho_t\ge\rho_0>0,
+\qquad \sum_jC_j=O(n^{1/2-2c}),
+\qquad
+\int_0^1\sum_j[-\operatorname{Cov}_{M_{t,j}}(A_e',k_e)]_+dt
+=O(n^{1/2-2c}).
+}
+\tag{10.983}
+```
+
+Equations (10.980), (10.982), and (10.900) then prove the parent entropy
+target with the exact `t` weight.  The defect condition (10.961) is an
+alternative sufficient replacement for the first two bounds.
+Adjacent-selector Hellinger control remains separate.
+
+Finite exact-state numerical audits delimit shortcuts.  On
+`A_9,m=3,beta=2`, the sampled maximum `C_scr` is `6.9168`, the sampled minimum
+Rayleigh rate `E_t/V_t` is `0.1446`, and the sampled maximum fixed-`kappa=1`
+defect ratio is `6.0026`; about `99.17%` of the integrated vertex energy is
+on crossing edges.  On `A_9,m=7,beta=2`,
+
+```math
+\boxed{
+\int_0^1t\mathcal E_t(g)dt\approx0.05233614,
+\qquad
+\sum_jC_j\approx0.05086819,
+\qquad
+\int_0^1\sum_j\operatorname{Cov}\,dt\approx-0.00146794.
+}
+\tag{10.984}
+```
+
+Thus resonance need not be rare, the migration covariance need not have the
+favorable sign, and the small `A_4/A_6` constants from Wave 33 are not stable
+across known exact minimizers.  These are finite numerical walls only; no
+scalable obstruction to (10.983) is known.
+
+#### 10.87.5 Updated frontier
+
+Wave 34 keeps adaptive optimized principal restriction as the leading route,
+but removes the fractional all-selector implementation from the front:
+
+- the sharp bare sufficient lemma is again the arbitrary-cut tail (10.795).
+  Equivalently, one eligible row-good coset may hit only an
+  `e^{-O(TL_0)}` fraction of the **uniform** selector slice, as in (10.964).
+  The adversarial power sum (10.907) remains sufficient but is not necessary;
+  failure of its all-law version no longer falsifies the leading route;
+
+- the strongest structured successor now visible is the exceptional-center
+  degree (10.967).  One low-row center, even with ambient mass `2^{-n}`, may
+  cover an `e^{-O(TL_0)}` uniform-selector set of nearby favorable fibers.
+  A strict-margin soft theorem reduces to this hard statement.  The exact
+  necessary obstruction is the positive-part selector bound (10.969).
+  Uniform parent means are circular by (10.970), so a proof must create a
+  nonlinear rare center rather than center abundance or uniform degrees;
+
+- unconditional global replacement cannot provide the required child-fiber
+  transfer.  The penalized slope and bad-fiber gap in (10.973)--(10.975) are
+  the precise extra inputs, while (10.976)--(10.977) are exact finite walls.
+  A viable project-scale route must add structure beyond unconditional
+  minimax and must eventually supply cross-selector overlap;
+
+- the harmonic route remains the strongest independent alternative.  Its
+  exact weighted energy is endpoint binary KL minus the migration covariance
+  (10.980); vertex crossings force posterior inclusion, but the orientation
+  term has no such reduction.  The quantified remaining package is (10.983),
+  plus adjacent-selector Hellinger.  Finite data rule out treating resonance,
+  migration, or the restoring constant as automatically benign;
+
+- constant shortfall, quadratic susceptibility, and terminal min-cut receive
+  no new positive asymptotic evidence.  No convergence proof or asymptotic
+  counterexample is known, and the rigorous interval is unchanged.
+
+Because removal of the adversarial selector quantifier changes the leading
+implementation, `STEERING.md` is refreshed at this boundary; the next
+mandatory refresh is Wave 39.  Wave 35 should prioritize (i) a direct
+minimizer-specific nonlinear tail proving or falsifying (10.967)/(10.969),
+(ii) a softened selector-averaged penalized response gap that survives the
+finite walls, and (iii) endpoint binary-cost and migration control for
+(10.983).  The all-law capacity, uniform normalized degrees, and
+Johnson-entry trees should not be restarted as if they were necessary.
