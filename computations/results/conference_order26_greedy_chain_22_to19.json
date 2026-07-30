@@ -1,0 +1,193 @@
+{
+  "classification": "exact exhaustive choice at each local step; greedy chain not a globally exhaustive restriction search",
+  "evaluator_source": "computations/exact_fixed_signing_gray.cpp",
+  "initial_deleted_vertices": [
+    0,
+    1,
+    2,
+    18
+  ],
+  "input": "computations/results/conference_order26_gf25.json",
+  "original_order": 26,
+  "records": [
+    {
+      "kept_vertices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "matrix_sha256": "cdb0c13edc2e96d24b03c20ad7e76e600351280288adcb748ea84206222f7de0",
+      "order": 22,
+      "profile": {
+        "argmax_gray": 210225,
+        "argmin_gray": 4092,
+        "cap": 49,
+        "elapsed_seconds": 0.058983879163861275,
+        "matrix_sha256": "cdb0c13edc2e96d24b03c20ad7e76e600351280288adcb748ea84206222f7de0",
+        "max_count": 30,
+        "max_energy": 49,
+        "min_count": 30,
+        "min_energy": -49,
+        "n": 22,
+        "projective_assignments": 2097152
+      },
+      "selection": "supplied initial restriction"
+    },
+    {
+      "candidate_cap_counts": {
+        "44": 6,
+        "46": 12,
+        "48": 4
+      },
+      "deleted_vertex_at_step": 7,
+      "kept_vertices": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "matrix_sha256": "95d7bf0fa2f4f15a441a1036251e63bcbbbab7c582fd0d6ea1fb08c048410f0d",
+      "order": 21,
+      "profile": {
+        "argmax_gray": 104854,
+        "argmin_gray": 2044,
+        "cap": 44,
+        "elapsed_seconds": 0.028043173253536224,
+        "matrix_sha256": "95d7bf0fa2f4f15a441a1036251e63bcbbbab7c582fd0d6ea1fb08c048410f0d",
+        "max_count": 203,
+        "max_energy": 44,
+        "min_count": 203,
+        "min_energy": -44,
+        "n": 21,
+        "projective_assignments": 1048576
+      },
+      "selection": "minimum-cap one-vertex child; smallest original vertex breaks ties"
+    },
+    {
+      "candidate_cap_counts": {
+        "42": 4,
+        "44": 17
+      },
+      "deleted_vertex_at_step": 6,
+      "kept_vertices": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "matrix_sha256": "fe4a622ee5436452425a264077baadb2aa9d74d7187ab640d96a4adfb4dc4195",
+      "order": 20,
+      "profile": {
+        "argmax_gray": 52426,
+        "argmin_gray": 1020,
+        "cap": 42,
+        "elapsed_seconds": 0.014365456998348236,
+        "matrix_sha256": "fe4a622ee5436452425a264077baadb2aa9d74d7187ab640d96a4adfb4dc4195",
+        "max_count": 75,
+        "max_energy": 42,
+        "min_count": 36,
+        "min_energy": -42,
+        "n": 20,
+        "projective_assignments": 524288
+      },
+      "selection": "minimum-cap one-vertex child; smallest original vertex breaks ties"
+    },
+    {
+      "candidate_cap_counts": {
+        "41": 20
+      },
+      "deleted_vertex_at_step": 3,
+      "kept_vertices": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "matrix_sha256": "0477e3613707f0b5e3abf15caf92a15d0cb99ac8e8f327be65c8398ed24ed7e5",
+      "order": 19,
+      "profile": {
+        "argmax_gray": 26215,
+        "argmin_gray": 510,
+        "cap": 41,
+        "elapsed_seconds": 0.007839113473892212,
+        "matrix_sha256": "0477e3613707f0b5e3abf15caf92a15d0cb99ac8e8f327be65c8398ed24ed7e5",
+        "max_count": 30,
+        "max_energy": 41,
+        "min_count": 50,
+        "min_energy": -39,
+        "n": 19,
+        "projective_assignments": 262144
+      },
+      "selection": "minimum-cap one-vertex child; smallest original vertex breaks ties"
+    }
+  ],
+  "schema": "quadratic-signing-greedy-restriction-chain-v1",
+  "target_order": 19
+}

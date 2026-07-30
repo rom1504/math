@@ -38689,3 +38689,142 @@ order-26 restriction profile farther down and test whether deletion can
 create a genuinely favorable low-cap child before selecting a bridge state.
 The mathematical obligation remains a bounded-complexity rule with summable
 defect; merely inheriting a conference eigenvector is not enough.
+
+### 10.121 Complement-cap transfer inside `PC(26)`
+
+#### 10.121.1 Exact shallow-deletion law
+
+`search_fixed_restrictions_gray.py` extends the exhaustive restriction audit.
+All `binom(26,3)=2,600` order-23 restrictions have cap 53. At deletion depth
+four, all `binom(26,4)=14,950` complements split as
+
+~~~text
+order-22 complement cap   count
+49                        11,700
+51                         3,250
+~~~
+
+The deleted four-vertex blocks split into exactly 11,700 cap-4 minimizers and
+3,250 cap-6 signings. `audit_complement_cap_relation.py` then exactly checked
+all 3,250 cap-6 cases. Combining that conditional audit with both exhaustive
+count distributions proves the **finite pointwise law**
+
+~~~math
+\operatorname{cap}(A)=4\iff\operatorname{cap}(B)=49,
+\qquad
+\operatorname{cap}(A)=6\iff\operatorname{cap}(B)=51, \tag{10.1447}
+~~~
+
+whenever `A` is a four-vertex principal block of `PC(26)` and `B` is its
+22-vertex complement. Thus, at this one scale, the smallest possible child
+cap is an exact compact predictor of the better large complement. For the
+favorable `4+22` partition, the `2/3`-power witness defect is
+
+~~~math
+65^{2/3}-4^{2/3}-49^{2/3}=0.2558752465\ldots.         \tag{10.1448}
+~~~
+
+Equations (10.1447)--(10.1448) are **exhaustive exact finite results**. No
+uniform-in-order analogue has been proved.
+
+#### 10.121.2 Comparable halves expose the optimizer-embedding gap
+
+`sample_equal_split_gray.py` used a fixed seed to select 10,000 of the
+`binom(25,12)=5,200,300` rooted `13+13` partitions of `PC(26)`, and evaluated
+both children exactly. The unordered cap-pair counts were
+
+~~~text
+(24,24): 2,400   (24,28): 124   (26,26): 4,708
+(28,28): 2,635   (30,30): 133
+~~~
+
+No sampled half attained `M_13=20`; the best pair was `(24,24)`. The search
+over partitions is **heuristic/non-exhaustive**, while every reported child
+cap is exact. The structured pair itself composes with negative witness
+defect,
+
+~~~math
+65^{2/3}-2\,24^{2/3}=-0.4744349586\ldots,             \tag{10.1449}
+~~~
+
+but replacing its halves by the actual optimum changes the finite defect to
+`65^(2/3)-2*20^(2/3)=1.4301096312...`. The salient obstruction is therefore
+not bridge composition inside the conference family; it is landing that
+family on near-optimal signings at comparable orders. The observed four-unit
+child gap is not proved universal, but it quantifies the issue directly.
+
+#### 10.121.3 A certified restriction chain through order 19
+
+Starting with a cap-49 order-22 restriction, the greedy chain script checks
+every one-vertex child at each step and selects a minimum-cap child. This is
+locally exhaustive but not globally exhaustive over all deeper restrictions.
+Together with the preceding full deletion levels, it gives explicit,
+exhaustively evaluated witnesses
+
+~~~text
+n:              19 20 21 22 23 24 25 26
+witness cap:    41 42 44 49 53 56 60 65
+~~~
+
+Consequently monotonicity and energy parity give the rigorous intervals
+
+~~~math
+23\le M_{19}\le41,\quad24\le M_{20}\le42,\quad
+24\le M_{21}\le44,\quad25\le M_{22}\le49,            \tag{10.1450}
+~~~
+
+~~~math
+25\le M_{23}\le53,\quad26\le M_{24}\le56,\quad
+26\le M_{25}\le60,\quad27\le M_{26}\le65.            \tag{10.1451}
+~~~
+
+These are **proved bounds from certified fixed witnesses**; they are not
+claims of optimality.
+
+#### 10.121.4 Updated frontier
+
+The most concrete version of the leading restriction-profile target is now a
+**conference complement-cap transfer theorem**: identify a bounded-complexity
+state of a principal child that controls the cap of its complementary child
+with sublinear `2/3`-power defect, for deletion sizes growing with the parent.
+Equation (10.1447) is the first exact nontrivial instance in which a tiny
+state (the four-vertex cap/class) completely controls the complement cap.
+
+The balanced data prevent overinterpretation. Child cap alone already takes
+several values at `13+13`, and the sampled structured children remain above
+the true optimum. A useful theorem must both generalize complement transfer
+to comparable blocks and supply sufficiently dense orders whose children are
+within `o(n^(3/2))` of `M_n`. Without those two bridges this remains a finite
+conference identity, not a reduction of convergence. The selected-prior and
+common-active-face routes remain inactive.
+
+### 10.122 An imported Paley descendant theorem
+
+Et-Taoui and Fruchard's [*On switching classes of
+graphs*](https://hal.science/hal-01147457v1/preview/Et-Taoui%20Fruchard_On%20switching%20classes%20of%20graphs.pdf),
+Theorem 3, applies to the same Paley Seidel matrices. For every odd prime
+power `q=1 mod 4`, it proves that all one-vertex descendants of the
+order-`q+1` Paley conference graph are switching equivalent, and all
+two-vertex descendants are switching equivalent; both descendant classes are
+also switching self-complementary.
+
+Switching sends a signing matrix to `DSD` for a diagonal Boolean matrix `D`,
+permutation conjugates it, and graph complementation globally negates it.
+Each operation preserves
+
+~~~math
+\max_{x\in\{+/-1\}^n}\frac12|x^{\mathsf T}Sx|.        \tag{10.1452}
+~~~
+
+Thus the imported theorem has an **exact verified mapping** to this project:
+one exact profile represents every one-vertex Paley restriction, and one
+represents every two-vertex restriction. It removes an `O(q^2)` family of
+fixed-signing evaluations at every Paley order. The exhaustive checks at
+orders 10, 14, 18, and 26 independently agree with it.
+
+The theorem stops after two deletions. The uniform cap 53 over all 2,600
+three-deletion restrictions of `PC(26)` and the two-class law (10.1447) at
+four deletions are additional finite facts, not consequences claimed from the
+source. Switching class is consequently a genuine compact state for the first
+two restriction levels, but no theorem yet controls its Boolean cap at
+comparable block sizes or its distance from `M_n`.
