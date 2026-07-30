@@ -32190,3 +32190,390 @@ It sharpens the surviving frontier as follows:
   high-slack/mass interface, a minimizer-specific proof or falsifier of tight
   principal decomposition, and a genuinely nonlocal route to the normalized
   hard coarea inequality.
+
+### 10.100 Wave 47: a near-diagonal slack wall, structured coarea laws, and block-game duality
+
+Wave 47 attacked the three exact targets isolated in §10.99. The complement
+calculation found a scalable obstruction to high slack when the omitted block
+is submesoscopic, while preserving the fixed-density route. The hard-tail
+calculation found an exact port-regret decomposition and showed that the
+coarea answer depends sharply on the center law. The tropical calculation
+derived the exact fractional block-game dual, found an abstract obstruction
+to every one-block separation proof, and substantially extended the finite
+evidence while falsifying nested-chain strengthenings. The three exact
+checkers were independently rerun; one abstract completion profile was
+corrected to respect nonnegativity of completion maxima.
+
+#### 10.100.1 Complement slack is impossible uniformly near the diagonal
+
+Let
+
+~~~math
+B_S=-A+2P_SAP_S,\qquad T=S^c,\qquad r=|T|.
+~~~
+
+Write $A^{E(T)}$ for the signing obtained by flipping precisely the internal
+edges of $T$, and let $D_T$ switch all vertices of $T$. Inspecting the three
+edge classes gives the **Verified exact factorization**
+
+~~~math
+\boxed{B_S=D_TA^{E(T)}D_T.}
+\tag{10.1206}
+~~~
+
+Switching invariance and the triangle inequality therefore give
+
+~~~math
+Q(B_S)=Q(A^{E(T)})
+\le q_n+2Q(A[T])
+\le q_n+2r(r-1).
+~~~
+
+For every active incidence
+$L_S(d)=\langle B_S,d\rangle=q_n+\Gamma_S$, exact minimality supplies the
+lower endpoint and the preceding display supplies the upper endpoint:
+
+~~~math
+\boxed{
+0\le\Gamma_S
+\le Q(B_S)-q_n
+\le2Q(A[T])
+\le2r(r-1).}
+\tag{10.1207}
+~~~
+
+This is pointwise, so conditioning on a scalar optimizer cannot evade it.
+Since $q_n\ge c_0n^{3/2}$ for a verified universal $c_0>0$, every fixed
+switching multiplier $0<\theta<1$ obeys
+
+~~~math
+\boxed{
+r=o(n^{3/4})
+\quad\Longrightarrow\quad
+\Pr_{S\mid\mathcal I_d}
+\{\theta\Gamma_S>(1-\theta)q_n\}=0
+}
+\tag{10.1208}
+~~~
+
+for every nonempty column and all sufficiently large $n$. Sending the
+switching-block ratio to zero so that $\theta$ tends to one merely makes the
+row-contraction factor $1-\theta$ degenerate.
+
+At $m=n-1$, $E(T)$ is empty, so $B_S$ is switching-equivalent to $A$ and
+every active slack is exactly zero. This is not a mass obstruction:
+every nonempty column has $\alpha_d\ge1/n$. The generic row estimate remains
+only
+
+~~~math
+R_2(d)\le n\lVert A\rVert_{\rm op}^2\le2nq_n=O(n^{5/2}),
+~~~
+
+which misses the project target. Thus arithmetic high-slack retention cannot
+supply the row near the diagonal even when mass is free.
+
+This does **not** retire fixed-density arithmetic restriction. The
+convergence iteration may use a compact ratio window
+$[p_0,p_1]\subset(1/\sqrt2,1)$ with $p_1<1$. There $r=\Theta(n)$ and
+(10.1207) is only an $O(n^2)$ cap, vacuous at the
+$q_n=\Theta(n^{3/2})$ scale. Project-scale mass and high slack remain open
+in that window.
+
+The proposed minimality dichotomy also has an exact quantifier wall. For a
+signing $C$, oriented energy $E_C(d)=2\sum_e s_e^C(d)$, and an allowed edge
+block $H$, the integral all-response improvement margin is
+
+~~~math
+\boxed{
+\begin{aligned}
+\eta_{\rm int}(C,H)
+&=\max_{F\subseteq H}\min_d
+\left\{\sum_{e\in F}s_e^C(d)+\frac{q_n-E_C(d)}4\right\}\\
+&=\frac14\left[q_n-\min_{F\subseteq H}Q(C^F)\right]\le0.
+\end{aligned}}
+\tag{10.1209}
+~~~
+
+Fractionally flipping edge $e$ with parameter $p_e\in[0,1]$ changes the
+game. Finite minimax gives
+
+~~~math
+\boxed{
+\eta_{\rm frac}(C,H)
+=\min_{\mu\in\Delta(\Omega)}
+\left\{
+\frac14\mathbb E_\mu[q_n-E_C(d)]
++\sum_{e\in H}(\mathbb E_\mu s_e^C(d))_+
+\right\}.}
+\tag{10.1210}
+~~~
+
+On the full edge set, $p_e=1/2$ produces the zero matrix and
+$\eta_{\rm frac}=q_n/4$, while $\eta_{\rm int}\le0$ because every integral
+corner is a signing. Low-slack selected responses therefore cannot be
+convexified into one improving replacement: the extremal response migrates
+after the replacement is revealed.
+
+Exact $A_8,A_9$ audits display this migration. Combining all missing-pair
+flips attached to one Pareto column sends the selected $A_8$ responses to
+energy $16$ or $8$, but the new caps are respectively $28$ and $24$ while
+$q_8=20$. On $A_9$, selected responses at the two main Pareto types move to
+$24$ and $20$, while the new caps are $32$ and $36$ with $q_9=24$.
+Exhausting every subcollection of those flips always leaves minimum cap
+exactly $q_n$. These are finite adaptive-witness walls; (10.1208) is the
+scalable wall.
+
+#### 10.100.2 Coarea has an exact port decomposition but is center-law sensitive
+
+For an adjacent selector written $U+v$, a port orientation $\tau$, and a
+center $z$, put
+
+~~~math
+h_v(z_U)=\sum_{i\in U}a_{vi}z_i,
+~~~
+
+~~~math
+Q_v^\tau=\max_{y_U}
+\{\tau y_U^{\mathsf T}A[U]y_U+2|h_v(y_U)|\},
+\qquad Q_v=\max_{\tau=\pm1}Q_v^\tau.
+~~~
+
+Define the nonnegative orientation, common-core-response, and port-spin
+regrets
+
+~~~math
+\begin{aligned}
+o_v^\tau&=Q_v-Q_v^\tau,\\
+g_v^\tau(z_U)
+&=Q_v^\tau-\{\tau z_U^{\mathsf T}A[U]z_U+2|h_v(z_U)|\},\\
+r_v^\tau(z)&=2\{|h_v(z_U)|-\tau z_vh_v(z_U)\}.
+\end{aligned}
+~~~
+
+Direct expansion cancels the full common-core energy and gives the
+**Verified exact identity**
+
+~~~math
+\boxed{
+D_z(U+v)
+=\min_{\tau=\pm1}
+\{o_v^\tau+g_v^\tau(z_U)+r_v^\tau(z)\}.}
+\tag{10.1211}
+~~~
+
+At an active port the minimizing orientation makes all three regrets small.
+The missing one-sided theorem is that their clipped sum cannot grow too much
+at the other port. Equation (10.1211) does not provide that: the optimized
+orientation and common-core response can change at the inactive endpoint.
+
+The actual finite caps for $A_6,A_8,A_9$ lie strictly between zero and four,
+while all deficits are in $4\mathbb Z$. Hence
+$u_z(S)=H\mathbf1\{D_z(S)=0\}$, and the normalized coarea ratio is exactly
+
+~~~math
+\boxed{
+\frac{\frac12\mathbb E|u(S)-u(T)|}
+{(1-\lambda_1)\mathbb E u}
+=\frac{\epsilon_\ell}{1-\lambda_1}.}
+\tag{10.1212}
+~~~
+
+Uniform-center exact values include
+
+| instance | common core | normalized ratio |
+|:--|:--|:--|
+| $A_8,m=6$ | $\ell=4$ | $239/250$ |
+| $A_8,m=6$ | $\ell=5$ | $111/100$ |
+| $A_9,m=7$ | $\ell=4$ | $8413/9072$ |
+| $A_9,m=7$ | $\ell=5$ | $13609/13608$ |
+| $A_9,m=7$ | $\ell=6$ | $433/378$ |
+
+Thus a universal uniform-law coarea theorem is finitely false at one
+replacement on $A_8,A_9$ and at two replacements on $A_9$. The
+$A_9,\ell=5$ failure is strict despite being only $1/13608$.
+
+There is a canonical structured law. Let
+
+~~~math
+a_z=U_m\{S:D_z(S)=0\},\qquad
+B_z=\langle\mathbf1_{\{D_z=0\}},(I-K_\ell)
+\mathbf1_{\{D_z=0\}}\rangle,
+~~~
+
+and size-bias the center by zero-deficit incidence:
+$\nu_{\rm lift}(z)=a_z/\mathbb E a_z$. This is selector-independent. Its
+exact normalized boundary is
+
+~~~math
+\boxed{
+\frac{B_{\nu_{\rm lift}}}{J_{\nu_{\rm lift}}}
+=\frac{\mathbb E[a_zB_z]}{\mathbb E[a_z^2]}.}
+\tag{10.1213}
+~~~
+
+Consequently the precise structured sufficient lemma is
+
+~~~math
+\mathbb E[a_zB_z]
+\le(1-\lambda_1)(1-\eta)\mathbb E[a_z^2].
+~~~
+
+Size bias repairs the $A_8$ one-replacement ratio
+($1209/1232$) and the $A_9$ two-replacement ratio
+($80845/89019$), but still fails on $A_9$ at one replacement
+($10154/9891$). Uniform parent grounds give ratios $35/44$,
+$6919/7776$, and $433/432$ in those same three cases. The center law and
+the nonlocal scale both matter.
+
+Neither structured law is known to be supported on the project-row class.
+A parent ground gives only
+
+~~~math
+R_2(z)=\sum_i\ell_i^2\le(n-1)\sum_i\ell_i
+=(n-1)q_n=O(n^{5/2}),
+~~~
+
+and a generic ground lift has the same inadequate scale. Row truncation
+preserves selector independence, but after truncation both the denominator
+and the degree--escape correlation (10.1213) are open. Thus the surviving
+hard theorem is (10.1213) after project-row truncation, or a positive-cap
+version derived from (10.1211), together with project-scale nonzero mass.
+
+#### 10.100.3 One-block minimality has an exact antipodal dual obstruction
+
+Fix a maximal selector, write its current internal signing as $a$, and let
+$v_y(e)=\sigma y_i y_j$ be the oriented child edge features. With completion
+profile $k_y$, define
+
+~~~math
+s_y=q_n-[k_y+c_a(y)]\ge0,\qquad
+g_y=q_*-c_a(y)\ge0.
+~~~
+
+Tight decomposition at this selector is exactly intersection of the two
+coordinate faces
+
+~~~math
+\mathcal P_s=\{p:\mathbb E_ps=0\},\qquad
+\mathcal P_g=\{p:\mathbb E_pg=0\}.
+\tag{10.1214}
+~~~
+
+Failure means no state has both zero parent slack and zero child deficit;
+equivalently $\min_y(s_y+g_y)>0$. This separates the faces, but the
+separating functional need not be generated by internal edge flips.
+
+Put $M_{y,e}=a_ev_y(e)$. The exact Boolean improvement margin and its
+fractional relaxation are
+
+~~~math
+\gamma_{\rm bool}
+=\max_{f\in\{0,1\}^{E(S)}}\min_y\{s_y+4(Mf)_y\}=0,
+~~~
+
+~~~math
+\boxed{
+\gamma_{\rm frac}
+=\min_{p\in\Delta(Y)}
+\left\{\mathbb E_ps+
+4\sum_e(\mathbb E_pM_{y,e})_+\right\}.}
+\tag{10.1215}
+~~~
+
+The first equality is exactly the family of block-game inequalities forced
+by global minimality. The dual shows
+
+~~~math
+\gamma_{\rm frac}=0
+\quad\Longleftrightarrow\quad
+\exists p\in\mathcal P_s:
+\mathbb E_p[a_ev_y(e)]\le0\quad\text{for every edge }e.
+~~~
+
+An explicit abstract triangle profile realizes this obstruction. For the
+all-positive child block, activate the antipodal nonground features
+
+~~~math
+(1,1,-1),\qquad(-1,-1,1),
+~~~
+
+whose child energies are $2,-2$ rather than $q_*=6$. Give them zero slack,
+all other states slack $40$, and take an ambient parent cap $q=100$; then
+every completion maximum $k_y=q-c_a(y)-s_y$ is at least $54$. For every
+Boolean flip set, one antipodal active margin is nonpositive, so all block
+games hold although tight decomposition fails. The half--half active law is
+the exact zero dual certificate. This is not a realizable exact-minimizer
+counterexample; it proves that one-block minimality alone is insufficient.
+
+A second abstract order-five audit blocks the lexicographic shortcut. Its
+child block has norm $12$ although the order-five optimum is $8$; among
+$210$ flips preserving the parent cap, every new child norm is $12$ or
+$20$. Hence choosing a minimizer with lexicographically smallest principal
+profile still needs a simultaneous cross-block exchange theorem.
+
+Finite evidence for the signing-specific conjecture becomes stronger:
+
+| order | exact switching representatives | no all-size common parent | no nested chain |
+|---:|---:|---:|---:|
+| 2 | 1 | 0 | 0 |
+| 3 | 2 | 0 | 0 |
+| 4 | 6 | 0 | 0 |
+| 5 | 12 | 0 | 0 |
+| 6 | 12 | 0 | 0 |
+| 7 | 3240 | 0 | 840 |
+| 8 | 4200 | 0 | 2520 |
+
+Here “all-size common parent” means one parent ground works separately at
+every $m$, with an $m$-dependent maximal selector. It is stronger than
+(10.1203), and every one of the $7473$ representatives passes. It must not
+be confused with a nested chain. All eight parent grounds of the stored
+$A_8$ fail nestedness first at $5\to6$: their reachable good five-sets do
+not lie inside the unique good six-set. Fixed-parent greedoid exchange is
+already false on every exact order-five representative. The stored $A_9$
+has $20/25$ parent grounds satisfying both all-size and nested properties.
+
+The surviving tight-decomposition conjecture (10.1203) is not falsified.
+A proof must use joint realizability of external profiles across several
+overlapping blocks to exclude the antipodal dual law or round the associated
+collection integrally. It cannot rely on one block game, lexicographic
+choice alone, a nested selector chain, or a fixed-parent greedoid.
+
+#### 10.100.4 Updated frontier
+
+Wave 47 again leaves the convergence interval unchanged and proves no
+asymptotic restriction estimate. It makes the route boundaries sharper:
+
+- the bare arbitrary-cut tail (10.795) remains the leading exact target.
+  Its arithmetic complement implementation is now restricted to a compact
+  fixed-density window. The pointwise cap (10.1207) makes fixed-strength
+  high slack impossible for $n-m=o(n^{3/4})$, including the polynomial-mass
+  endpoint $m=n-1$. At fixed density, the exact missing pair is still
+  project-scale scalar-column mass and a conditional fraction of
+  $\Theta(q_n)$ slack. Any low-slack contradiction additionally needs an
+  integral all-response congestion theorem, not a convex replacement;
+
+- hard common-core coarea is law-sensitive. Uniform centers fail on exact
+  minimizers at the nearest scales, while incidence size bias repairs some
+  but not all finite failures. The best exact formulation is the
+  project-row-truncated degree--escape correlation (10.1213), or the
+  one-sided port-regret growth inequality suggested by (10.1211). Neither
+  project-row mass nor correlation is known;
+
+- tight principal decomposition retains unusually strong finite support:
+  one parent works at every size through order eight. But the exact
+  antipodal dual shows that one-block minimality cannot prove it, and nested
+  chains, greedoids, and the lexicographic one-block shortcut are retired.
+  A viable proof must couple overlapping block games or exploit a new
+  signing-specific constraint on completion profiles;
+
+- direct bare-tail counting outside complement incidence remains live.
+  Near-diagonal high slack, geometric Harnack, uniform/nearest-core coarea,
+  fractional replacement, nested chains, and vocabulary-only reformulations
+  are retired;
+
+- no convergence proof or scalable exact-minimizer falsifier has appeared.
+  The near-diagonal obstruction (10.1208) is a decisive scalable correction
+  to the leading implementation, so refresh STEERING.md before Wave 48.
+  Then compare fixed-density complement excess, row-truncated ground-lift
+  correlation, and simultaneous cross-block dual consistency against a
+  direct bare-tail alternative.
