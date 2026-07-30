@@ -32577,3 +32577,372 @@ asymptotic restriction estimate. It makes the route boundaries sharper:
   Then compare fixed-density complement excess, row-truncated ground-lift
   correlation, and simultaneous cross-block dual consistency against a
   direct bare-tail alternative.
+
+### 10.101 Wave 48: a fixed-density row--mass wall, coarea rigidity, and projective block profiles
+
+Wave 48 tested the three implementations selected after the Wave 47
+strategic refresh. The fixed-density complement calculation found a direct
+large-deviation obstruction which retires the entire row-good complement
+column, not only its high-slack implementation. The hard common-core
+calculation removed the strict spectral-margin requirement and, using a
+published slice FKN theorem, upgraded non-strict coarea to a constant-degree
+center. The tight-decomposition calculation found exact projective and
+overlap constraints, a universal small-selector theorem, and a jointly
+realizable slack-migration wall. All three checkers were independently rerun.
+
+#### 10.101.1 Every fixed-density project-row complement column pays the unsaved exponent
+
+Fix any compact selector window
+$p=m/n\in[p_0,p_1]\subset(0,1)$ and put
+
+~~~math
+p_2=\frac{(m)_2}{(n)_2},\qquad a_{n,m}=2p_2-1.
+~~~
+
+For an oriented cut $d$, retain
+$E_d=\langle A,d\rangle$,
+$X_d(S)=c_A(S,d)-p_2E_d$, and
+
+~~~math
+L_S(d)=2c_A(S,d)-E_d=2X_d(S)+a_{n,m}E_d,
+\qquad
+\mathcal I_d=\{S:L_S(d)\ge q_n\}.
+~~~
+
+On every active incidence, $|E_d|\le q_n$, and therefore
+
+~~~math
+X_d(S)\ge\frac{1-|a_{n,m}|}{2}q_n
+=\min\{p_2,1-p_2\}q_n\ge\delta_0q_n,
+~~~
+
+for a fixed $\delta_0=\delta_0(p_0,p_1)>0$ and all sufficiently large
+$n$.
+
+Applying the verified fixed-slice upper tail (10.1022), including its
+$o(q_n)$ centering correction, proves the **Verified direct row--mass wall**
+
+~~~math
+\boxed{
+\alpha_d:=U_m(\mathcal I_d)
+\le3(n+1)\exp\left\{-c\min\left(
+\frac{q_n^2}{R_2(d)},\ n,\ n^{3/4}
+\right)\right\}.}
+\tag{10.1216}
+~~~
+
+The constant is uniform on the compact ratio window. The established lower
+bound $q_n\ge c_0n^{3/2}$ and exact-minimizer estimate
+$\lVert A\rVert_{\rm op}\le\sqrt{2q_n}$ were used in reducing the three
+tail exponents. In particular, for every fixed $c>0$,
+
+~~~math
+R_2(d)=O(n^{9/4-c})
+\quad\Longrightarrow\quad
+-\log\alpha_d=\Omega(n^{3/4}).
+~~~
+
+This contradicts the required project-saving mass
+$-\log\alpha_d=O(n^{3/4-c})$. Thus the entire fixed-density row-good
+complement-column implementation is **Falsified**, without scalar
+optimality, high slack, or arithmetic switching.
+
+The omitted-block mapping is nevertheless exact. If $T=S^c$ and $d^T$ is
+the physical-spin switch on $T$, then (10.1206) gives
+
+~~~math
+\boxed{
+\Gamma_S
+=-\{q_n-\langle A,d^T\rangle\}-2c_A(T,d),
+\qquad Q(A[T])\ge\Gamma_S/2.}
+\tag{10.1217}
+~~~
+
+It does not rescue the route: a large omitted principal norm can use a
+ground direction unrelated to the fixed column $d$.
+
+There is also an exponent-matched audit of the former arithmetic package.
+For a scalar optimizer in the former high-ratio arithmetic package let
+
+~~~math
+\beta_d=\Pr_{S\mid\mathcal I_d}
+\{\theta\Gamma_S>(1-\theta)q_n\}.
+~~~
+
+The positive Cantelli margin in (10.1186) is a nonzero rational with
+denominator dividing $n(n-1)$, while
+$Q(B_S)\le q_n+2Q(A[T])\le3q_n$. Hence
+$\overline p_k(d)\ge c n^{-8}\beta_d$. Combining (10.1190) with
+(10.1022) gives the **Verified product wall**
+
+~~~math
+\boxed{-\log(\alpha_d\beta_d)\ge c_*n^{3/4}.}
+\tag{10.1218}
+~~~
+
+This explains why high-slack retention cannot first regularize the same cut
+and then evade (10.1216), but (10.1216) is the stronger obstruction.
+
+#### 10.101.2 Non-strict truncated coarea forces a constant-degree center
+
+Let $f=\mathbf1_F$ be any Boolean family on the $m$-slice, let
+$a=\mathbb Ef$, and write $W_j=\lVert P_jf\rVert_2^2$ for its Johnson
+harmonic weights. If
+$\mu_i=\Pr(i\in S\mid F)$, exact projection onto level one gives
+
+~~~math
+W_1=\frac{(n-1)a^2}{p(1-p)n}
+\sum_i(\mu_i-p)^2.
+~~~
+
+The vector $\mu$ lies in the hypersimplex
+$[0,1]^n\cap\{\sum_i\mu_i=np\}$, whose convex extreme points give the
+**Verified sharp bound**
+
+~~~math
+\boxed{W_1\le(n-1)a^2.}
+\tag{10.1219}
+~~~
+
+For the common-core kernel $K_\ell$, put
+
+~~~math
+\delta=1-\lambda_1,\qquad
+\kappa=\frac{\lambda_1-\lambda_2}{1-\lambda_1}.
+~~~
+
+The exact spectrum and (10.1219) imply, for
+$B=\langle f,(I-K_\ell)f\rangle$,
+
+~~~math
+\boxed{
+\frac{B}{\delta a}
+\ge1+\kappa-(1+\kappa n)a.}
+\tag{10.1220}
+~~~
+
+Let $C$ be any selector-independent center class, in particular the project
+row class, and put
+
+~~~math
+D_C=\mathbb E[\mathbf1_Ca_z^2],\qquad
+\mathcal R_C=
+\frac{\mathbb E[\mathbf1_Ca_zB_z]}
+{\delta\mathbb E[\mathbf1_Ca_z^2]}.
+~~~
+
+Averaging (10.1220) under the double-incidence law proportional to
+$\mathbf1_Ca_z^2$ proves
+
+~~~math
+\boxed{
+D_C>0,\quad\mathcal R_C\le1-\eta
+\quad\Longrightarrow\quad
+\max_{z\in C}a_z\ge
+\frac{\kappa+\eta}{1+\kappa n}.}
+\tag{10.1221}
+~~~
+
+Thus even $\eta=0$ gives polynomial degree when $\kappa$ is bounded below.
+There is a stronger literature-based consequence. The aggregate inequality
+$\mathcal R_C\le1$ selects one positive-degree center satisfying
+$B_z\le\delta a_z$. Exact spectral cancellation then gives
+
+~~~math
+\sum_{j\ge2}W_j\le\frac{a_z^2}{\kappa}.
+~~~
+
+On a balanced fixed-density slice with $\kappa\ge\kappa_0>0$,
+[Filmus's balanced-multislice FKN theorem](https://arxiv.org/abs/1809.03089)
+approximates this Boolean family by a Boolean dictator with error
+$O(a_z^2)$. The possible dictator means are $0,1,p,1-p$; approximation to
+zero would require $a_z=O(a_z^2)$, while every nonzero dictator has mean
+bounded away from zero. Checking these alternatives proves the **Verified
+application**
+
+~~~math
+\boxed{
+D_C>0,\quad\mathcal R_C\le1,\quad\kappa\ge\kappa_0
+\quad\Longrightarrow\quad
+\max_{z\in C}a_z\ge c(p_0,p_1,\kappa_0)>0.}
+\tag{10.1222}
+~~~
+
+For $\ell=m-s$, direct cancellation gives
+
+~~~math
+\kappa=
+\frac{(m-s)(n-m)(n-2)}
+{n(m-1)(n-m+s-1)}=1-o(1)
+~~~
+
+at fixed selector density whenever $s=o(n)$. Therefore the live hard-coarea
+target needs only nonzero project-row double-incidence mass and the
+**non-strict** boundary inequality; a strict $e^{-O(L_0)}$ margin is no
+longer needed.
+
+Project mass remains substantive. For a child ground $y$ on $S$, with
+$T=S^c$ and $k=|T|$, uniform outside completion $z=(y,w)$ satisfies the
+**Verified identities**
+
+~~~math
+\boxed{
+\mathbb E_wR_2(z)=\lVert A[:,S]y\rVert_2^2+k(n-1),}
+\tag{10.1223}
+~~~
+
+~~~math
+\boxed{
+Q(A[S])^2+4\lVert A[T,S]y\rVert_2^2+2k(k-1)
+\le q_n^2.}
+\tag{10.1224}
+~~~
+
+Consequently a child ground with internal Gram $O(R_*)$ and shortfall
+$q_n-Q(A[S])=O(R_*/q_n)$ has a completion of row $O(R_*)$. At
+$R_*=n^{9/4-c}$ the shortfall scale is $n^{3/4-c}$. Current one-spin
+stability and operator bounds give only $O(n^{5/2})$, missing the row target
+by $n^{1/4+c}$.
+
+This mass clause is not law-free. For the nonminimal signing $A^+=J-I$ and
+fixed $m/n=p>1/2$, any positive-degree ground lift has spin imbalance at
+least $(2p-1)n$ and
+
+~~~math
+R_2(z)=n+(n-2)(2k-n)^2=\Omega(n^3).
+~~~
+
+Hence its project-row $D_C$ is exactly zero. This is a scalable
+**non-minimizer obstruction**, not a falsifier for exact minimizers.
+
+#### 10.101.3 Completion profiles compose, but ground-face pressure migrates
+
+For nested selectors $R\subset S$, optimizing a parent completion in two
+stages gives the **Verified Bellman identities**
+
+~~~math
+\boxed{
+k_R(y_R)=\max_{y_S|_R=y_R}
+\{k_S(y_S)+c_S(y_S)\}-c_R(y_R),
+\qquad
+s_R(y_R)=\min_{y_S|_R=y_R}s_S(y_S).}
+\tag{10.1225}
+~~~
+
+Thus every active block support is a projection of the common global ground
+relation. This is a genuine joint-realizability constraint missing from the
+abstract Wave 47 profile, but it does not align probability laws on those
+supports.
+
+There is an exact multi-selector sufficient condition. Let
+$\mathcal F_m$ be the maximal $m$-selectors and choose weights
+$\lambda_S\ge0$ of total $\Lambda$ with constant edge load
+$\sum_{S\ni e}\lambda_S=r$. Double counting gives
+
+~~~math
+\sum_S\lambda_Sc_S(d[S])=rq_n
+~~~
+
+for every parent ground. The modulo-four energy lattice therefore proves
+
+~~~math
+\boxed{
+rq_n>\Lambda(q_*-4)
+\quad\Longrightarrow\quad
+\text{a tight parent-ground/maximal-child pair exists}.}
+\tag{10.1226}
+~~~
+
+It certifies the exact $A_6,m=5$ and $A_8,m=7$ cases, misses $A_9,m=8$,
+and has no edge-uniform maximal-selector cover on $A_8,m=4$. At fixed
+density its forced coefficient $r/\Lambda=(m)_2/(n)_2$ has the old
+$p^2$ versus $p^{3/2}$ scale gap.
+
+Tight decomposition is nevertheless universal at selector sizes two and
+three. For any signing, put $q=Q(A)$. For any oriented parent ground write
+$P=\sum_{i<j}a_{ij}v_d(ij)=q/2$ and $N=\binom n2$. Orthogonality gives
+$P\ge\sqrt N$. Hence its positive-edge graph has
+
+~~~math
+\frac{N+P}{2}>\frac{n^2}{4}
+~~~
+
+edges for $n>2$. Mantel's theorem supplies an all-positive triangle, whose
+inherited oriented energy is the universal triangle norm six. A positive
+edge proves the size-two case. This **Verified theorem** uses no signing
+minimality.
+
+The one-block fractional margin also has a new universal lower bound. Lift
+each child state in a dual law to a completion attaining $k_S$, put
+$t=\mathbb E s$, and let
+$K=\binom n2-\binom m2$ be the number of outside edges. The internal positive
+edge expectations obey
+
+~~~math
+\sum_{e\in E(S)}(\mathbb EM_e)_+
+\ge\left(\frac{q_n-t}{2}-K\right)_+.
+~~~
+
+Minimizing the exact dual (10.1215) gives
+
+~~~math
+\boxed{\gamma_{\rm frac}(S)\ge(q_n-2K)_+.}
+\tag{10.1227}
+~~~
+
+Thus a zero-dual antipodal obstruction is impossible when
+$n-m=o(\sqrt n)$, using $q_n=\Omega(n^{3/2})$. This does not close the
+positive fractional-versus-Boolean integrality gap.
+
+An exact $A_8$ calculation shows why full slack is indispensable. Its two
+bad maximal four-blocks are complementary. Each separately has a zero dual
+on four parent grounds, but the supports are disjoint; their common
+ground-face minimax is exactly $1/2$. Four certified edges have signed sum
+two on every old ground, so flipping them lowers every old ground from 20
+to 12. Eight old slack-eight states simultaneously rise from 12 to 20, and
+the new norm remains 20. Thus active-ground cross-block pressure alone is
+**Falsified as a descent mechanism**. A viable theorem must control positive
+slack layers in the all-state margin, not only projected ground faces.
+
+Finally, twelve deterministic random-objective MILP samples at the proved
+order-ten cap $q_{10}=26$ produced twelve distinct exact minimizers. Every
+sample has an all-size common parent; this is reproducible **nonexhaustive
+finite evidence**, not an order-ten classification.
+
+#### 10.101.4 Updated frontier
+
+Wave 48 leaves the convergence interval unchanged and proves no asymptotic
+restriction estimate. It decisively changes the implementation ranking:
+
+- the bare arbitrary-cut tail (10.795) remains the sharp sufficient lemma,
+  but its fixed-density complement-column implementation is now retired.
+  Equation (10.1216) shows that every complement cut with the required row
+  already pays $e^{-\Omega(n^{3/4})}$ mass. Neither scalar optimization,
+  arithmetic retention, omitted-block excess, nor different fixed constants
+  can restore the required power saving;
+
+- hard project-row coarea is now the strongest concrete structured route.
+  At a balanced nonlocal scale, nonzero project-row double-incidence mass and
+  the non-strict inequality $\mathcal R_C\le1$ already give a
+  constant-degree center by (10.1222), hence the bare restriction tail. The
+  exact mass bridge (10.1223)--(10.1224) isolates principal shortfall and
+  internal child Gram, but known bounds miss the latter by $n^{1/4+c}$;
+
+- direct profile-conditioned counting for (10.795), without complement
+  incidence, becomes the leading fallback. Any new cut construction must
+  exploit the retained deficit/tolerance in $\widehat\ell$; imposing the
+  stronger complement threshold recreates (10.1216);
+
+- tight principal decomposition retains strong finite support and gains
+  Bellman composition, the overlap-cover lemma, the universal $m=2,3$
+  theorem, and new order-ten samples. But the exact $A_8$ migration retires
+  ground-face-only dual pressure. The next live statement must control full
+  slack profiles across several blocks, and even a proof remains only one
+  component of the harmonic convergence route;
+
+- no convergence proof or scalable exact-minimizer falsifier has appeared.
+  The fixed-density complement obstruction is a decisive change of the
+  leading implementation, so refresh `STEERING.md` at this boundary. Wave 49
+  should compare project-row mass plus non-strict coarea, a genuinely direct
+  profile-conditioned attack on (10.795), and full-slack cross-block
+  consistency rather than restarting complement incidence.
