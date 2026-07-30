@@ -31730,3 +31730,463 @@ strengthenings and promotes two exact conditional formulations:
   this wave.  Refresh `STEERING.md` before selecting Wave 46, then rerank
   noncentral complement switching, hard common-core excess, and harmonic
   crossing geometry against the complete ledger.
+
+### 10.99 Wave 46: arithmetic block retention, normalized core escape, and tight principal decomposition
+
+Wave 46 tested the three routes selected after the Wave 45 steering refresh.
+The complement calculation found a valid arithmetic replacement for the
+falsified logarithmic Harnack step, but left the rare-column mass and a strong
+incidence-slack lemma open.  The hard-tail calculation corrected the spectral
+normalization and exposed an exact coarea target.  The harmonic calculation
+corrected the matched endpoint normalization and reduced tropical affineness
+to a concrete parent/child ground-state conjecture with exhaustive finite
+support.  All finite computations below were rerun independently.
+
+#### 10.99.1 Noncentral switching has an arithmetic row theorem, not a logarithmic Harnack theorem
+
+Fix an active complement incidence `(d,S)`.  Write
+
+```math
+L=L_S(d)=q+\Gamma_S,\qquad R_B=\lVert B_Sd\rVert_2^2,
+```
+
+and let `U` be uniform on the `k`-subsets of `[n]`.  Put
+
+```math
+z=n-2k,\qquad
+\theta=\frac{z^2-n}{n(n-1)},\qquad
+\mu_4=\frac{z^4-(6n-8)z^2+3n^2-6n}
+{n(n-1)(n-2)(n-3)}.
+```
+
+Separating equal, adjacent, and disjoint edge pairs gives the **Verified exact
+fixed-layer law**
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E_U L_S(d^U)&=\theta L,\\
+\operatorname {Var}_U L_S(d^U)
+&=(\mu_4-\theta^2)L^2+4(\theta-\mu_4)R_B\\
+&\quad+2(1-2\theta+\mu_4)n(n-1).
+\end{aligned}}
+\tag{10.1185}
+```
+
+If `delta_S(k)=theta(q+Gamma_S)-q>0`, Cantelli therefore gives
+
+```math
+\boxed{
+\Pr_U\{L_S(d^U)\ge q\}
+\ge\frac{\delta_S(k)^2}
+{\operatorname {Var}_U L_S(d^U)+\delta_S(k)^2}.}
+\tag{10.1186}
+```
+
+This is an arithmetic survival statement.  If `alpha_d=U_m(I_d)`, averaging
+(10.1186) over `S` conditioned on `I_d` gives an explicit number
+`\overline p_k(d)` for which
+
+```math
+\boxed{
+\mathbb E_{|U|=k}\alpha_{d^U}
+\ge\alpha_d\overline p_k(d).}
+\tag{10.1187}
+```
+
+It gives no upper bound on
+`E_U[-log alpha_(d^U)]`: Jensen points in the opposite direction, and one
+empty orbit point makes that average infinite.  On every scalar Pareto column
+of the stored `A_8,m=6` and `A_9,m=7`, every nontrivial layer contains such an
+empty point.  Thus the literal geometric premise (10.1159) is **Falsified as
+a finite mechanism on every layer**, not just at the central layer.
+
+Arithmetic retention nevertheless has a different exact use.  Let `d`
+minimize
+
+```math
+F_\lambda(d)=-\log\alpha_d+\lambda R_2(d)
+```
+
+over nonempty columns, and put `D_0=n(n-1)`.  Scalar optimality, followed by
+(10.1187), proves
+
+```math
+\boxed{
+\lambda(1-\theta)(R_2(d)-D_0)
+\le \Psi_k(\lambda;d)+\log\frac1{\overline p_k(d)},}
+\tag{10.1188}
+```
+
+where
+
+```math
+\Psi_k(\lambda;d)=
+\log\mathbb E_{|U|=k}
+\exp\{\lambda(R_2(d^U)-\mathbb ER_2(d^U))\}.
+```
+
+Indeed, pointwise
+`alpha_(d^U)/alpha_d <= exp{lambda(R_2(d^U)-R_2(d))}`, including when the
+left side vanishes.  This is the correct arithmetic replacement for the old
+Harnack step.
+
+The centered fixed-slice moment-generating function can be bounded at the
+project price.  With
+
+```math
+C=\operatorname {diag}(d)A^2\operatorname {diag}(d),\quad
+C^\circ=C-(n-1)I,\quad u=C^\circ\mathbf1,
+```
+
+`p=k/n`, and `a=1-2p`, conditioning independent Bernoulli flips on their sum
+and applying the centered quadratic-form estimate gives, for
+`lambda<=c/||C^circ||_op`,
+
+```math
+\boxed{
+\begin{aligned}
+\Psi_k(\lambda;d)
+&\le \log(n+1)+\lambda(a^2-\theta)|R_2(d)-D_0|\\
+&\quad+\frac{C_1\lambda^2
+\{a^2\lVert u\rVert_2^2+\lVert C^\circ\rVert_F^2\}}
+{1-C_1\lambda\lVert C^\circ\rVert_{\rm op}}.
+\end{aligned}}
+\tag{10.1189}
+```
+
+Exact-minimizer operator control supplies
+
+```math
+\lVert C^\circ\rVert_{\rm op}\le2q+n-1,
+\quad \lVert C^\circ\rVert_F^2\le2qn(n-1),
+\quad \lVert u\rVert_2^2\le4qR_2(d)+2n(n-1)^2.
+```
+
+The first-chaos estimate here is
+`d^T A^4d <= ||A||_op^2 R_2(d) <= 2qR_2(d)`; it is essential away from the
+central slice.  Fix
+`0<kappa<(1-1/sqrt(3))/2` and `k/n -> kappa`.  Choosing a sufficiently small
+fixed `b_kappa>0` and `lambda=b_kappa n^(-3/2)`, the `R_2` terms in
+(10.1189) are absorbed in (10.1188), proving the **Verified conditional row
+bound**
+
+```math
+\boxed{
+R_2(d)\le C_\kappa\left[n^2+n^{3/2}
+\log\frac1{\overline p_k(d)}\right].}
+\tag{10.1190}
+```
+
+For `H=n^(3/4-c)`, `0<c<1/4`, it is therefore enough for the row estimate to
+prove
+
+```math
+\boxed{
+\Pr_{S\mid I_d}
+\{\theta\Gamma_S>(1-\theta)q\}
+\ge\exp\{-O(H)\}.}
+\tag{10.1191}
+```
+
+The Cantelli factor on this event costs only a polynomial.  This
+high-slack incidence theorem is **Open**, and it must hold at a scalar
+optimizer having the separately required mass.  It does not prove
+`-log alpha_d=O(H)`.
+
+The slack tax is severe: since `Gamma_S<=2q`, mean survival requires
+`theta>1/3`, hence the stated noncentral range.  Conversely the Wave 45
+average-incidence obstruction extends throughout
+
+```math
+|k-n/2|=o(n^{7/8}),
+\qquad
+\mathbb E_{|U|=k}[-\log\alpha_{d^U}]
+\ge cn^{3/4}-nD(k/n\Vert1/2)-O(\log n).
+\tag{10.1192}
+```
+
+The exact `A_8` Pareto slacks are all zero and the `A_9` Pareto slacks are
+all four; neither pays (10.1191) on any nontrivial layer.  These finite
+examples rule out a formal consequence of scalar optimality and minimality,
+but are not an asymptotic obstruction to a special high-slack column.
+
+#### 10.99.2 Common-core extraction is a normalized boundary problem
+
+For the hard project family, write
+
+```math
+f_z(S)=\mathbf1\{D_z(S)\le H\},\qquad
+a_z=\mathbb E_Sf_z(S),\qquad J_1=\mathbb E_z a_z,
+```
+
+and let `K_ell` be the Johnson down-up kernel through a common `ell`-set.  Put
+
+```math
+B_\ell=\mathbb E_z\langle f_z,(I-K_\ell)f_z\rangle,
+\quad \epsilon_\ell=B_\ell/J_1,
+\quad \rho_\ell=1-\epsilon_\ell.
+```
+
+If `b_z(R)=Pr{f_z(S)=1 | R subset S}`, then reversibility and common-core
+factorization give the **Verified exact identities**
+
+```math
+\boxed{
+B_\ell=\mathbb E_{z,R}b_z(R)(1-b_z(R)),
+\qquad \rho_\ell=1-\frac{B_\ell}{J_1}.}
+\tag{10.1193}
+```
+
+Let
+
+```math
+\lambda=\lambda_1(\ell)=\frac{\ell(n-m)}{m(n-\ell)},
+\quad \delta=1-\lambda,
+\quad J_2=\mathbb E_z a_z^2,
+```
+
+and let `P_j` be the Johnson harmonic projections.  The full-spectrum
+remainder
+
+```math
+\Xi_\ell=\mathbb E_z\sum_{j\ge2}
+(\lambda-\lambda_j)\lVert P_jf_z\rVert_2^2
+```
+
+is nonnegative, and exact spectral accounting gives
+
+```math
+\boxed{
+B_\ell=\delta(J_1-J_2)+\Xi_\ell,
+\qquad
+\frac{J_2}{J_1}
+=\frac{\rho_\ell-\lambda+\Xi_\ell/J_1}{1-\lambda}.}
+\tag{10.1194}
+```
+
+Therefore the Wave 45 bound was missing the normalization by the spectral
+gap.  The corrected one-step extraction is
+
+```math
+\boxed{
+\max_z a_z\ge\frac{J_2}{J_1}
+\ge\frac{\rho_\ell-\lambda}{1-\lambda}
+=1-\frac{\epsilon_\ell}{1-\lambda}.}
+\tag{10.1195}
+```
+
+For a target degree `eta`, the exact sufficient inequality is
+`B_ell <= (1-lambda)(1-eta)J_1`.  At `ell=m-s`,
+
+```math
+1-\lambda_1(m-s)=\frac{sn}{m(n-m+s)}.
+```
+
+Thus a strict normalized one-step rate gap already gives constant degree;
+powers cannot create a missing gap.  Nonnegative mixtures of the `K_ell`
+also cannot help, because
+
+```math
+\boxed{
+\frac{\rho_w-\lambda_w}{1-\lambda_w}
+=\sum_\ell
+\frac{w_\ell(1-\lambda_\ell)}{\sum_r w_r(1-\lambda_r)}
+\frac{\rho_\ell-\lambda_\ell}{1-\lambda_\ell}.}
+\tag{10.1196}
+```
+
+There is an exact coarea version of the missing theorem.  Let `J(h)` and
+`B_ell(h)` be `J_1` and `B_ell` for the threshold family
+`1{D_z(S)<=h}`.  For `u_z(S)=(H-D_z(S))_+`, layer cake and reversibility
+give
+
+```math
+\boxed{
+\int_0^H J(h)\,dh=\mathbb E_{z,S}u_z(S),\qquad
+\int_0^H B_\ell(h)\,dh
+=\frac12\mathbb E_{z,S,T}|u_z(S)-u_z(T)|.}
+\tag{10.1197}
+```
+
+Consequently
+
+```math
+\boxed{
+\frac12\mathbb E_{z,S,T}|u_z(S)-u_z(T)|
+\le(1-\lambda)(1-\eta)\mathbb E_{z,S}u_z(S)}
+\tag{10.1198}
+```
+
+would, provided `E u>0`, give some threshold `h<=H` and a center of
+degree at least `eta`.  The harmless zero-slack lattice case can instead use
+a one-unit enlargement of `H`.  Taking `eta=exp{-O(L_0)}` proves the hard
+exceptional-center target.  Equation (10.1198) is an **Open
+minimizer-specific coarea lemma**, not a generic expansion estimate.
+
+Known smoothness is too weak.  If two selectors differ by `r` replacements,
+
+```math
+|D_z(S)-D_z(T)|\le3\{2r(m-r)+r(r-1)\}\le6rn.
+\tag{10.1199}
+```
+
+The resulting Johnson ball still has `exp{-Theta(n)}` mass.  The known
+principal-cap `L^2` estimate misses (10.1198) by
+`n^(1/8-c/2)` even under an optimistic maximal slack mean.
+
+Generic project mass cannot imply normalized excess.  For a fixed-coordinate
+cylinder `F_W={S:W subset S}` with `|W|~kappa L`, its density is
+`exp{-Theta(L)}`.  At `s~alpha n/L`, its common-core retention satisfies
+
+```math
+\boxed{
+\rho\longrightarrow e^{-\kappa\alpha/p}<1,
+\qquad
+\lambda_1(m-s)=1-\frac{\alpha+o(1)}{p(1-p)L}.}
+\tag{10.1200}
+```
+
+Thus its spectral excess is eventually negative despite exactly the desired
+mass scale.  This cylinder is not asserted to be a minimizer incidence
+family; it proves that any positive theorem must use special minimizer
+geometry rather than slice concentration, low description complexity, or
+mass alone.
+
+#### 10.99.3 The matched tropical endpoint is a tight principal-decomposition problem
+
+Use oriented parent states `d` with energy `E_d`, oriented child energy
+`c_S(d[S])`, and optimal external completion energy
+
+```math
+k_S(y)=\max_{d:d[S]=y}\{E_d-c_S(y)\}.
+```
+
+Put `q_*=max_(|S|=m) Q(A[S])` and `a_d=min_S k_S(d[S])`.  In the matched
+selector/completion construction, the normalized selector factor cancels
+exactly before taking temperature to infinity:
+
+```math
+\boxed{
+f_\beta(d)=\frac{\sum_S b_S(d)}{\sum_Tz_T},
+\qquad
+\beta^{-1}\log f_\beta(d)\longrightarrow q_n-q_*-a_d.}
+\tag{10.1201}
+```
+
+Hence the endpoint law has exponent `E_d-a_d-q_*`, and the tropical
+interpolation lines are `E_d-sa_d`.  The earlier expression retaining a
+separate `q_S` inside the maximum double-counted the selector exponent.
+
+For every `d,S`,
+`E_d-k_S(d[S])<=c_S(d[S])<=q_*`, and equality is attainable.  It follows
+that
+
+```math
+\boxed{
+\max_d(E_d-a_d)=q_*,
+\quad
+\max_d(E_d-sa_d)=(1-s)q_n+sq_*\ (0\le s\le1)}
+\tag{10.1202}
+```
+
+holds in its affine form if and only if there is a parent ground `d` and a
+selector `S` satisfying
+
+```math
+\boxed{
+E_d=q_n,\qquad Q(A[S])=c_S(d[S])=q_*.}
+\tag{10.1203}
+```
+
+External optimality is then automatic.  Thus the no-transient-phase question
+has the following exact, temperature-free **Open minimizer conjecture**:
+
+> For every exact order-`n` minimizer and every `1<=m<n`, the parent ground
+> face intersects the union of ground-child cylinders belonging to selectors
+> attaining the largest principal norm.
+
+Its exact falsifier is a minimizer and an `m` for which
+
+```math
+q_*-\max_{\substack{E_d=q_n,\ |S|=m\\Q(A[S])=q_*}}c_S(d[S])>0.
+```
+
+Exhaustion found no such falsifier among all `7473`
+switching-normalized exact minimizers through order eight, at any selector
+size; the stored order-nine minimizer also passes.  The stronger assertion
+that every maximal child ground lifts is false, including on `A_8,m=4,5`.
+
+The direct block-replacement consequence of exact minimality is precise.  If
+`B` replaces the signing on `S`, then
+
+```math
+\boxed{
+Q(A^{S\leftarrow B})=\max_y\{k_S(y)+c_B(y)\}\ge q_n
+\quad\text{for every signing }B.}
+\tag{10.1204}
+```
+
+If the intersection in (10.1203) is empty, these inequalities do not yet
+supply one internal edge set whose flip decreases every active state; the
+required simultaneous separation inequalities can point in incompatible
+directions.  Proving such a separation, or producing a scalable exact
+minimizer that violates it, is the cleanest test of the conjecture.
+
+Finally, the posterior selector-exclusion identity locates tropical crossing
+charge but does not control it.  For adjacent parent states `x,y=x^i`, let
+`r_i(d)` be the endpoint posterior probability that a selector omits `i`.
+Then
+
+```math
+\boxed{
+\log\frac{f(y)}{f(x)}=\log\frac{r_i(x)}{r_i(y)},
+\qquad \sum_i r_i(d)=n-m.}
+\tag{10.1205}
+```
+
+Every positive leading crossing has a low-side endpoint at which `r_i` is
+exponentially suppressed, and a state has at most `m` such charged labels.
+But a high-base active state can be the uncharged endpoint of many crossings;
+the tropical-star reverse fan-in remains.  Therefore (10.1205) alone does not
+bound the weighted overlap `D` in (10.1182).
+
+#### 10.99.4 Updated frontier
+
+Wave 46 leaves the convergence interval unchanged and no route is complete.
+It sharpens the surviving frontier as follows:
+
+- the bare arbitrary-cut tail (10.795), implemented by one rare row-good
+  complement column, remains the leading route.  The old geometric block
+  Harnack mechanism is now finitely false on every layer of `A_8,A_9` scalar
+  columns.  Its valid successor is the arithmetic scalar-optimality theorem
+  (10.1188)--(10.1190).  The exact missing complement input is a scalar column
+  with project-scale mass together with the high-slack conditional fraction
+  (10.1191).  Neither scalar optimality nor known average incidence supplies
+  those facts;
+
+- the hard common-core route is governed by the normalized boundary, not the
+  unnormalized excess recorded in Wave 45.  Its clean sufficient statements
+  are (10.1195) and the clipped-deficit coarea inequality (10.1198).  Powers,
+  nonnegative scale mixtures, Lipschitz balls, and generic mass arguments are
+  now retired.  The fixed-coordinate cylinder (10.1200) requires any positive
+  result to be genuinely minimizer-specific;
+
+- harmonic transport gains a sharply testable first structural lemma:
+  tight principal decomposition (10.1203).  It has exhaustive support through
+  order eight but no proof from minimality.  Even if proved, it supplies only
+  affine endpoint geometry; weighted high-side crossing fan-in, the zero-slope
+  case, restoring, orientation, and selector transport remain separate;
+
+- the direct bare-tail route outside complement incidence remains a live
+  fallback.  Strict positive pressure, high replicas, central or geometric
+  block Harnack, spectral iteration, and vocabulary-only reformulations stay
+  retired;
+
+- no convergence proof or scalable exact-minimizer falsifier has appeared.
+  The all-layer Harnack counterexamples, corrected core normalization, and
+  corrected tropical endpoint are decisive enough to refresh `STEERING.md`
+  before selecting Wave 47.  The next wave should compare the complement
+  high-slack/mass interface, a minimizer-specific proof or falsifier of tight
+  principal decomposition, and a genuinely nonlocal route to the normalized
+  hard coarea inequality.
