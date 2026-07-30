@@ -31009,3 +31009,366 @@ convergence target, but corrects the ranking of its implementations:
   agents, perform the scheduled blank-slate abstraction audit from the
   original problem alone, then compare its candidates with the complete
   ledger.  Only after that audit should the next three attacks be selected.
+
+### 10.97 Wave 44: hard-column switching, a strict-pressure inverse theorem, and harmonic phase separation
+
+This wave attacked the three routes selected after the scheduled Wave 44
+steering audit.  The complement route gains an exact hard-column switching
+calculus and a conditional orbit-Harnack row theorem, but an actual
+order-nine minimizer falsifies generic row-descending neighbor retention.
+The exceptional-center route has a more decisive outcome: low row and the
+universal child floor imply a pointwise upper bound on strict pressure, so a
+fixed positive pressure margin already contains a much stronger restriction
+edge.  High replicas cannot bypass that inverse bound and are retired as an
+independent proof mechanism.  The hard exceptional-center tail is not
+retired.  Finally, the harmonic route gains exact load-increment and deletion
+Hessian formulas.  A low-temperature phase bottleneck on `A_8` falsifies
+local Poincare control of the intrinsic load, while an integrated endpoint
+domination target survives with an exact positive finite-order limit.
+
+All algebraic identities and finite enumerations below were independently
+reconstructed and checked.  The displayed finite-temperature decimals are
+**Numerical** unless an exact limit is stated.  No convergence proof or
+asymptotic counterexample is obtained.
+
+#### 10.97.1 Hard complement columns have an exact switching Euler system, but no local Harnack principle
+
+For a full oriented cut `d=(sigma,x)`, gauge
+
+```math
+s_{ij}=\sigma a_{ij}x_ix_j,qquad
+r_i=\sum_{j\ne i}s_{ij},qquad
+E_d=\sum_i r_i,qquad R_2(d)=\sum_i r_i^2.
+```
+
+Retain `L_S(d)=2c_S(d)-E_d`,
+`\mathcal I_d=\{S:L_S(d)\ge q_n\}`,
+`\alpha_d=U_m(\mathcal I_d)`, and `h_d=-\log\alpha_d`.  For a vertex block
+`U`, let `d^U` flip the physical spins in `U`, and put
+
+```math
+C_d(U)=\sum_{i\in U,j\notin U}s_{ij},qquad
+C_d^S(U)=\sum_{i\in U\cap S,j\in S\setminus U}s_{ij}.
+```
+
+Specializing the old cube Euler identity (10.991) to the hard complement
+threshold gives the **Verified** exact transport
+
+```math
+\boxed{
+\begin{aligned}
+L_S(d^U)-L_S(d)&=4C_d(U)-8C_d^S(U),\\
+\alpha_{d^U}
+&=\mathbb E_{S\sim U_m}
+\mathbf 1\{L_S(d)+4C_d(U)-8C_d^S(U)\ge q_n\}.
+\end{aligned}}
+\tag{10.1157}
+```
+
+For a uniform `k`-block, pair counting in `x^TA^2x` gives
+
+```math
+\boxed{
+\mathbb E_{|U|=k}R_2(d^U)
+=n(n-1)+\vartheta_k\{R_2(d)-n(n-1)\},qquad
+\vartheta_k=1-\frac{4k(n-k)}{n(n-1)}.}
+\tag{10.1158}
+```
+
+The one-vertex sum in (10.1158) is the already recorded
+`\sum_i\Delta_iR_2=4[n(n-1)-R_2]` from (10.992).  Let `d_\lambda` minimize
+the exact scalar column objective
+
+```math
+F_\lambda(d)=h_d+\lambda R_2(d)
+```
+
+over nonempty columns.  Scalar optimality and (10.1158) yield the exact
+conditional implication
+
+```math
+\boxed{
+\mathbb E_{|U|=k}[h_{d_\lambda^U}-h_{d_\lambda}]
+\le G_k
+\quad\Longrightarrow\quad
+R_2(d_\lambda)
+\le n(n-1)+\frac{G_k}{\lambda(1-\vartheta_k)}.}
+\tag{10.1159}
+```
+
+Here the conclusion is relevant when the row is above its baseline.  For
+`k=Theta(n)` and the project price `\lambda\asymp n^{-3/2}`, an orbit
+geometric-mean estimate `G_k=O(n^{3/4-c})` forces the desired
+`R_2=O(n^{9/4-c})`.  It does not bound the scalar value or
+`h_(d_\lambda)`; that separate mass estimate is still necessary.
+
+Ordinary neighbor retention is false even on exact minimizers.  On `A_9`
+with `m=7`, the oriented column
+
+```text
+sigma=-1, x=(1,-1,-1,1,-1,-1,-1,1,1)
+```
+
+has `(R_2,|I_d|,E_d)=(80,2,8)`, above the baseline row `72`.  Its three
+row-descending vertex flips lower `R_2` by `40,32,24`, respectively, and
+all three resulting columns are empty.  On the `A_8,m=6` Pareto column
+`(R_2,|I_d|,E_d)=(72,6,0)`, four of eight row-descending neighbors are
+empty.  These are exact finite walls to a generic local Harnack step, not
+scalable obstructions to the project column.  A positive continuation must
+use genuinely global, minimizer-specific orbit expansion and also control
+
+```math
+\min_d\{-\log U_m(\mathcal I_d)+\lambda R_2(d)\}
+```
+
+at project scale.  The selector variance used in the audit is exactly the
+previous identity (10.1123), not a new moment theorem.
+
+#### 10.97.2 Strict positive pressure and every high replica obey the inverse restriction gap
+
+First, the high moment has an exact common-center interpretation.  On the
+full child cube define
+
+```math
+w_S(y)=e^{-\theta[Q(A[S])-|y^TA[S]y|]},qquad
+\zeta_S=2^{-m}\sum_yw_S(y),qquad
+\mu_S(y)=\frac{w_S(y)}{2^m\zeta_S}.
+```
+
+For selectors `S_1,...,S_r`, put `V=\bigcup_aS_a`, independently draw
+`Y_a\sim\mu_(S_a)`, and let `Cons` mean exact agreement on every overlap.
+On `Cons`, stitch the words on `V` and extend uniformly outside `V` to a
+word `Z`.  Direct summation proves
+
+```math
+\boxed{
+\mathbb E_{z\sim\nu_2}\prod_{a=1}^r w_{S_a}(z_{S_a})
+=\frac{2^{rm-|V|}\prod_a\zeta_{S_a}}
+{U_z(\mathcal C_2)}
+\Pr\{\mathrm{Cons},\ R_2(Z)\le2n(n-1)\}.}
+\tag{10.1160}
+```
+
+This identifies a genuine soft stitching probability; it does not lower
+bound it.
+
+The decisive input is instead an upper bound.  Put
+
+```math
+C_S(z)=z_S^TA[S]z_S,qquad
+E(z)=z^TAz,qquad X_S(z)=C_S(z)-p_2E(z).
+```
+
+Integrating the signed slice tail (10.1124), uniformly for
+`|\lambda|\le c_0/\lVert A\rVert_(op)`, gives
+
+```math
+\log\mathbb E_{U_m}e^{\lambda X_S(z)}
+\le C\left[\log n+|\lambda|\frac{q_n}{n}
++\lambda^2\{R_2(z)+n^2\}\right].
+```
+
+At `\theta=bL_0/H=Theta(n^{-3/4-c})` this is
+`O(\log n+n^{1/2-2c})=o(L_0)` on the old class `\mathcal C_2`, and
+`O(\log n+n^{3/4-3c})=o(L_0)` under the larger project row cap.  Hence
+
+```math
+\boxed{
+\sup_{R_2(z)=O(n^{9/4-c}),\ \sigma=\pm1}
+\log\mathbb E_{U_m}e^{\theta\sigma X_S(z)}=o(L_0).}
+\tag{10.1161}
+```
+
+Now use the pointwise child floor `Q(A[S])\ge q_m`, the inequality
+`e^{\theta|u|}\le e^{\theta u}+e^{-\theta u}`, and `|E(z)|\le q_n`.
+For
+
+```math
+q(z)=\mathbb E_Se^{-\theta[Q(A[S])-|C_S(z)|]},qquad
+K_z^{\rm abs}(\theta)=\theta H+\log q(z),qquad
+G_{n,m}=q_m-p^{3/2}q_n,
+```
+
+equation (10.1161) gives the **Verified inverse theorem**
+
+```math
+\boxed{
+K_z^{\rm abs}(\theta)
+\le\theta\{t-G_{n,m}\}+o(L_0),}
+\tag{10.1162}
+```
+
+uniformly over every eligible center.  It follows for every replica count,
+including `r=Theta(n/L_0)`, that
+
+```math
+\boxed{
+\mathcal P_r(b)\le\theta\{t-G_{n,m}\}+o(L_0),qquad
+\mathcal P_r(b)\ge aL_0
+\Longrightarrow
+G_{n,m}\le t-\frac abH+o(H).}
+\tag{10.1163}
+```
+
+The conclusion is a constant-leading negative restriction edge, much
+stronger than the desired power-saving upper edge.  In the near-equality
+regime every eligible center has only `K_z^abs=o(L_0)`.  Thus the fixed
+positive strict-pressure premise, and its high-replica restatement
+(10.1152), cannot be an independent proof mechanism: the premise already
+contains a stronger conclusion.  This retires strict positive pressure, not
+the hard exceptional-center tail (10.967) or the bare tail (10.795).
+
+An optional finer diagnosis writes the upper bound as
+
+```math
+K_z^{\rm abs}(\theta)
+\le\theta(t-\overline G_{n,m})+\Pi_Q(\theta)+o(L_0),qquad
+\Pi_Q=\log\mathbb E e^{-\theta(Q(A[S])-\mathbb EQ(A[S]))}.
+```
+
+Hölder supplies this form, and `\Pi_Q\le\theta(\mathbb EQ(A[S])-q_m)`
+recovers (10.1162).  It identifies the residual as the principal-norm lower
+tail, not a center-overlap surplus.
+
+Exact hard fibers also rule out a uniform Helly shortcut.  At the finite
+threshold `d_S(z)\le H`, `A_8,m=6` has empty intersections for `22/378`
+selector pairs and `1700/3276` triples; `A_9,m=7` has `362/630` empty pairs
+and `6070/7140` triples.  Both still have positive finite best-center
+pressure.  This falsifies uniform hard pairwise/list agreement only; it does
+not falsify soft stitching, averaged overlap, or the asymptotic hard tail.
+
+#### 10.97.3 Intrinsic harmonic load has a phase bottleneck, not a local-gradient bound
+
+For a directed vertex edge, retain
+
+```math
+\omega_i(d)=\log\frac{\nu(d^i)}{\nu(d)},qquad
+\chi_i(d)=g(d^i)-g(d),qquad
+v_i(t,d)=\frac{\chi_i(d)^2}
+{4\cosh^2((\omega_i(d)+t\chi_i(d))/2)}.
+```
+
+Binary exponential-family calculus and edge symmetry give
+
+```math
+\boxed{
+k_i(s,d_{-i})=\int_0^s t v_i(t,d)\,dt,qquad
+L_s(d^j)-L_s(d)
+=\sum_{i\ne j}\int_0^s t\{v_i(t,d^j)-v_i(t,d)\}\,dt.}
+\tag{10.1164}
+```
+
+The `i=j` term is exactly zero.  For the quadratic Gibbs base,
+
+```math
+\omega_i(d^j)-\omega_i(d)=8\beta a_{ij}d_{ij},qquad
+\chi_i(d^j)-\chi_i(d)=\Delta_j\Delta_i g(d).
+```
+
+Thus local load variation is controlled by a known base interaction and a
+mixed score Hessian, but no project estimate follows.
+
+There is a separate exact deletion calculus.  For
+`F_s(B)=D((\mu_s)_B\Vert\nu_B)` and
+`R=V\setminus\{i,j\}`, its symmetric deletion Hessian is
+
+```math
+\boxed{
+\begin{aligned}
+H_{ij}(s)
+&=F_s(V)-F_s(V\setminus i)-F_s(V\setminus j)
++F_s(V\setminus\{i,j\})\\
+&=I_{\mu_s}(D_i;D_j\mid D_R)
+-\mathbb E_{\mu_s}\log
+\frac{\nu(D_i\mid D_j,D_R)}{\nu(D_i\mid D_R)}.
+\end{aligned}}
+\tag{10.1165}
+```
+
+The base-interaction term is sign-indefinite.  Exact `A_9` audits have both
+signs in `H_(ij)` and in the total leave-one-coordinate load change, so
+submodularity, supermodularity, and monotone deletion self-bounding are all
+false without an additional signed correction.
+
+The stronger local-gradient wall occurs on the exact minimizer `A_8,m=4` as
+`\beta\to\infty`.  Twenty endpoint-active states split into a positive-load
+phase of mass `49/60`, with `L_1/\beta\to4/7`, and a zero-load phase of mass
+`11/60`.  Every cube edge joining different load phases is suppressed by an
+energy-line gap at least four.  Therefore
+
+```math
+\operatorname{Var}_{\mu_1}(L_1)\sim\frac{11}{225}\beta^2,
+```
+
+while its heat-bath Dirichlet energy is `o(\beta^2)`.  This **Verified**
+phase certificate falsifies every temperature-uniform pointwise Poincare or
+Efron--Stein estimate for `L_s`, even after orientation edges are included.
+
+The integrated norm survives.  A complete finite-state boundary-layer
+calculation gives the exact limits
+
+```math
+\boxed{
+\begin{aligned}
+\frac{\mathcal J_L^2}{\beta}
+&\longrightarrow
+7\log\frac76+\frac{217}{36}\log\frac45+\frac{49}{180}
+=0.0062172411468\ldots,\\
+\frac{C_V(1)}\beta&\longrightarrow\frac7{15},
+\qquad
+\frac{\mathcal J_L^2}{C_V(1)}
+\longrightarrow0.0133226596003\ldots .
+\end{aligned}}
+\tag{10.1166}
+```
+
+The narrow surviving harmonic theorem is therefore the minimizer-specific,
+phase-aware endpoint domination
+
+```math
+\boxed{\mathcal J_L^2\le C\,C_V(1).}
+\tag{10.1167}
+```
+
+This is an **Open target**, not a consequence of (10.1164)--(10.1165).  It
+passes the current `A_6,A_8,A_9` audits and, with (10.1153), would close
+vertex migration from the existing endpoint input.  Restoring, orientation,
+and adjacent-selector Hellinger remain separate.  The abstract Wave-36
+transient family has `J_L^2/C_V(1)` increasing from `0.0391` to `0.3571` as
+its parameter runs from `100` to `10000`, so any proof must use actual
+minimizer/completion structure rather than generic matched interpolation.
+
+#### 10.97.4 Updated frontier
+
+Wave 44 keeps the bare arbitrary-cut tail (10.795) and its direct row-good
+complement column as the leading route, but changes the alternatives
+decisively:
+
+- the hard-column scalarization now has an exact switching interface.
+  A project-scale geometric-mean orbit bound would regularize its row by
+  (10.1159), but finite exact-minimizer cliffs falsify every generic
+  row-descending-neighbor argument.  The missing statement is a global,
+  minimizer-specific hard-column expansion theorem together with a bound on
+  the scalar value in (10.1149).  Agreement conflict and decoding remain
+  redundant;
+
+- strict positive exceptional-center pressure and the high-replica
+  formulation (10.1152) are retired as independent proof mechanisms.
+  Equation (10.1162) shows that their premise already forces the stronger
+  restriction edge (10.1163).  Preserve the hard exceptional-center tail,
+  which this inverse theorem does not falsify, but do not spend another wave
+  trying to manufacture a fixed positive pressure margin;
+
+- integrated harmonic transport becomes the strongest distinct alternative.
+  Local Poincare/Efron--Stein and monotone deletion are now falsified on exact
+  minimizers.  The precise live theorem is the phase-aware endpoint
+  domination (10.1167), with restoring, orientation, and selector transport
+  still explicit;
+
+- no convergence proof or asymptotic falsifier has appeared, and the rigorous
+  interval is unchanged.  The pressure inverse theorem is a decisive
+  strategic result immediately after the scheduled Wave 44 refresh.  Before
+  selecting Wave 45, perform the required early `STEERING.md` refresh and a
+  fresh blank-slate abstraction audit.  Reassess the ranking without strict
+  pressure as a live route; the next regular refresh remains five waves after
+  this early refresh unless another decisive result intervenes.
