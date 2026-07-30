@@ -24112,3 +24112,411 @@ ranking of its structured implementations:
   adversarial-selector dual in (10.873), keep one independent attack on
   higher-order coset/refinement structure or a directly nonlinear cover,
   and retain one matched-endpoint common-mode route.
+
+### 10.83 Mesoscopic coset collisions, constrained refinement, and harmonic parent cost
+
+The thirtieth wave turns the fractional-cover formulation into an exact
+mesoscopic collision problem and removes one previously stated obstruction
+from its completion-based implementation. It is enough to control one
+row-good refinement of a favorable witness batch, not every refinement. A
+new constrained-hashing theorem produces that refinement once two explicit
+batch statistics—the coordinate-signature count and the coarsest
+signature-coset cap—are controlled. What remains is a genuinely
+minimizer-specific higher-order completion theorem.
+
+A separate matched-temperature attack gives a nonperturbative harmonic-cost
+representation of the parent likelihood for every deletion size and proves
+the desired parent-entropy scale at one deletion for `c<=1/12`. It does not
+yet treat a fixed-density restriction window. All identities and refinement
+bounds below are **Verified**; the two finite coset computations are exact.
+The mesoscopic completion statement and fixed-density harmonic bounds remain
+**Open targets**. No convergence proof or asymptotic counterexample is
+obtained.
+
+#### 10.83.1 Fractional cover is equivalent to a mesoscopic common-coset event
+
+Retain the candidate hit sets `H_a` and value `delta_*=1/tau_*` from
+(10.873), and let `M` be the number of eligible row-good cosets. For an
+integer `r>=1`, let `J_r` be the event that `r` selectors share at least one
+hit coset. If the selectors are iid from an arbitrary law `w`, and
+`h_w=max_a w(H_a)`, then the maximizing coset and the union bound give the
+exact pointwise sandwich
+
+```math
+\boxed{
+h_w^r\le \Pr_{w^{\otimes r}}(J_r)
+\le \sum_a w(H_a)^r\le M h_w^r.
+}
+\tag{10.889}
+```
+
+Taking roots and infima yields
+
+```math
+\boxed{
+M^{-1/r}\inf_w\Pr_{w^{\otimes r}}(J_r)^{1/r}
+\le\delta_*
+\le\inf_w\Pr_{w^{\otimes r}}(J_r)^{1/r}.
+}
+\tag{10.890}
+```
+
+For cosets with at most `k` blocks, labelled block maps and diagonal
+translates give `M<=(2k)^n`. Put `L=n^{3/4-c}` and choose
+
+```math
+\boxed{
+r=\left\lceil\frac{n\log(2k)}L\right\rceil.
+}
+\tag{10.891}
+```
+
+Then `M^{1/r}<=e^L`. At the entropy-matched scale
+`k=Theta(L/log n)`, this batch size is
+`r=Theta(n^{1/4+c}log n)`, the same order as a balanced block size.
+Consequently, uniformly over all selector laws,
+
+```math
+\boxed{
+\Pr_{w^{\otimes r}}(J_r)\ge e^{-K rL}
+\quad\Longrightarrow\quad
+\delta_*\ge e^{-(K+1)L},\qquad
+\tau_*\le e^{(K+1)L}.
+}
+\tag{10.892}
+```
+
+Conversely, `delta_*>=e^{-KL}` implies the displayed collision bound with
+constant `K`. Thus the fractional-cover exponent and the mesoscopic
+common-coset exponent are equivalent up to the candidate-count term. It is
+not necessary to glue the whole selector slice into one coset. A sharp
+falsifier for this implementation is a sequence of selector laws with
+`Pr(J_r)=e^{-omega(rL)}`.
+
+Fixed-order common cover does not suffice. Extending the exact `A_9`
+enumeration of (10.873), at both `(m,C)=(5,80)` and `(6,80)` every selector
+pair and every selector triple shares a row-good `3+3+3` coset. Hence
+`Pr(J_2)=Pr(J_3)=1` for every law, although no coset covers the whole slice
+and `delta_*` is respectively `839/995` and `21/22`. The mesoscopic order
+in (10.891), rather than pairwise or triple agreement, is essential to the
+exponent reduction.
+
+#### 10.83.2 Coarsest-cap control produces one row-good balanced refinement
+
+Let `x^(0),...,x^(q-1)` be full witness spins, orient them relative to
+`x^(0)`, put `D=diag(x^(0))`, and let `C_1,...,C_J` be their coordinate
+signature classes. Define
+
+```math
+u_j=AD\mathbf1_{C_j},qquad
+\boxed{
+C_{\rm sig}=\max_{\epsilon\in\{\pm1\}^J}
+\left\|\sum_{j=1}^J\epsilon_ju_j\right\|_2^2.
+}
+\tag{10.893}
+```
+
+This is exactly the largest row square on the coarsest signature coset. It
+is a necessary lower bound for every containing block refinement, since
+every such coset contains the coarsest coset.
+
+Fix a maximum block size `b>=2`. For `N_j=|C_j|`, set
+
+```math
+r_j=\begin{cases}
+1,&N_j\le b,\\
+\lceil2N_j/b\rceil,&N_j>b,
+\end{cases}
+\qquad
+K_0=\sum_jr_j\le J+\frac{2n}{b}.
+```
+
+If `b>=9 log(4K_0)`, there is a partition refining all signature classes,
+with at most `K_0` nonempty blocks and maximum block size `b`, such that
+
+```math
+\boxed{
+\max_{z\in\{\pm1\}^{K_0}}\|ADPz\|_2^2
+\le
+\left[
+\sqrt{C_{\rm sig}}+\sqrt{K_0}
+\left\{\sqrt{2\nu u}+\frac23\sqrt{n-1}\,u\right\}
+\right]^2,
+}
+\tag{10.894}
+```
+
+where
+
+```math
+\nu=\max\{\|A\|_{\rm op}^2,b(n-1)/2\},
+\qquad u=\log(4(n+K_0)).
+```
+
+To prove this, hash each large signature class independently into its own
+`r_j` bins and leave each small class as one block. Writing `ADP=M_0+Z`,
+the centered rectangular fluctuation has variance matrices bounded by
+`A^2` and `b(n-1)I/2`, and summand norm at most `sqrt(n-1)`. Rectangular
+matrix Bernstein gives the fluctuation term in (10.894) outside an event of
+probability `1/4`. Each large-bin mean lies in `(b/3,b/2]`; Chernoff and a
+union bound make every load at most `b` outside another event of probability
+`1/4`. Finally, for a block sign `z`, the mean part is
+`M_0z=sum_j a_ju_j` with `a_j in [-1,1]`; convexity puts its maximum at a
+cube vertex and bounds it by `sqrt(C_sig)`.
+
+For an exact minimizer, take
+
+```math
+b=\Theta(n^{1/4+c}\log n),
+\qquad J=O(L/\log n).
+```
+
+Then `K_0=O(L/log n)` and `||A||_op^2=O(n^{3/2})`. Expanding the right side
+of (10.894) gives
+
+```math
+\boxed{
+C_{\rm sig}=O(n^{9/4-c})
+\quad\Longrightarrow\quad
+\text{some containing size-capped refinement has }
+\max_z\|ADPz\|_2^2=O(n^{9/4-c}).
+}
+\tag{10.895}
+```
+
+Allowing at most a constant multiple of `k` blocks and maximum size `b`
+preserves the codebook entropy and row exponents, so these size-capped
+refinements are eligible after a harmless adjustment of the fixed constants.
+
+The theorem permits constant and additive slack, so it respects the `A_9`
+cap-`80` triangle: its coarsest signature cap is `80`, while the best
+displayed maximum-size-two refinement has cap `88`. The earlier frontier's
+requirement to control **every** balanced refinement was unnecessarily
+strong; one selected refinement is enough.
+
+For an oriented completion `(sigma,x)` of selector `S`, retain
+
+```math
+\delta_S(\sigma,x)=Q(A[S])-\sigma x_S^{\mathsf T}A[S]x_S.
+```
+
+The expansion behind (10.861) gives
+
+```math
+\sigma x^{\mathsf T}H_Sx
+\ge Y_A(S)+B_{n,m}-\delta_S(\sigma,x).
+\tag{10.896}
+```
+
+Thus `delta_S<=B_(n,m)+t` makes every containing block coset hit `S` at
+tolerance `t`. Combining (10.892), (10.895), and (10.896) leaves the exact
+structured open target:
+
+> **Mesoscopic favorable-completion lemma.** For every selector law `w`, an
+> iid batch of size (10.891) has probability at least `e^{-O(rL)}` of
+> admitting favorable completions with `J=O(L/log n)` coordinate signatures
+> and `C_sig=O(n^{9/4-c})`.
+
+This statement is sufficient for (10.875), hence for the power-saving
+restriction edge and convergence. The refinement step is proved; the
+minimizer-specific batch coherence is not.
+
+The closest agreement and list-agreement literature does not supply this
+hypothesis. The primary results concern prescribed local assignments and
+start from an overlap-test success premise; they provide neither an
+adversarial selector-law conclusion nor the quadratic `C_sig` bound. See
+[Dinur--Filmus--Harsha](https://arxiv.org/abs/1711.09426),
+[Dinur--Steurer](https://eccc.weizmann.ac.il/report/2013/179/), and
+[Gotlib--Kaufman](https://arxiv.org/abs/2210.15714). Even perfect list
+gluing is insufficient: a base spin plus the `ceil(log_2 n)` binary
+coordinate words is globally consistent on every overlap but has `J=n`.
+
+#### 10.83.3 An abstract random-label wall isolates the missing structure
+
+The completion lemma cannot follow only from the existence of a favorable
+completion cylinder for every selector. Fix `m=floor(pn)` and independently
+give each selector `S` a uniform projective label
+$`y_S\in\{\pm1\}^S/\{\pm1\}`$. Declare all outside completions of `y_S` favorable
+and all cosets row-good; denote these abstract hit sets by `\widetilde H_a`.
+A fixed at-most-`k`-block coset exposes at most
+`2^k` projective restrictions on `S`, so its hit probability over the label
+is at most
+
+```math
+p_0=2^{k-m+1}=e^{-p(\log2)n+o(n)}.
+```
+
+The hit indicators are independent over selectors. If
+`0<alpha<min{p log2,h(p)}`, `delta=e^{-alpha n}`, and
+`N=binom(n,m)`, a binomial Chernoff bound and a union bound over at most
+`(2k)^n` cosets give
+
+```math
+\boxed{
+\Pr\{\text{some coset hits at least }\delta N\text{ selectors}\}
+\le(2k)^n\left(\frac{ep_0}{\delta}\right)^{\delta N}=o(1).
+}
+\tag{10.897}
+```
+
+Hence some deterministic local-label system has, for the uniform selector
+law,
+
+```math
+\boxed{
+\max_a w(\widetilde H_a)\le e^{-\alpha n}=e^{-\omega(L)},
+\qquad
+\Pr(J_r)\le(2k)^ne^{-\alpha nr}=e^{-\omega(rL)}.
+}
+\tag{10.898}
+```
+
+This is deliberately an **abstract mechanism wall**: the independently
+prescribed labels need not be principal-submatrix grounds of one exact
+minimizer. It does not falsify (10.875). It proves that local planting and
+hashing alone cannot establish it; a proof must import correlations forced
+by exact minimization, or create common hits without containing the planted
+completions.
+
+#### 10.83.4 Matching gives an exact harmonic parent-cost representation
+
+Set the endpoint temperatures equal, `gamma=beta`, and let `k=n-m`. For a
+child cut `y` define
+
+```math
+F_{\beta,S}(y)=\log\frac{K_{\beta,S}(y)}{2^k}\ge0,
+\qquad
+U_\beta(d)=\mathbb E_S e^{-F_{\beta,S}(d[S])},
+\qquad
+\Phi_\beta(d)=-\log U_\beta(d).
+```
+
+The inequality follows from Jensen because the external energy has zero
+mean under uniform outside completion. Exact cancellation in the matched
+endpoint likelihood gives
+
+```math
+\boxed{
+f_\beta(d)=
+\frac{e^{-\Phi_\beta(d)}}
+{\mathbb E_{\nu_\beta}e^{-\Phi_\beta}}.
+}
+\tag{10.899}
+```
+
+For
+`nu_(beta,t) proportional to exp(-t Phi_beta)nu_beta`, differentiation of
+the log partition function gives the nonperturbative identity
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+=\int_0^1t\,
+\operatorname{Var}_{\nu_{\beta,t}}(\Phi_\beta)\,dt.
+}
+\tag{10.900}
+```
+
+Therefore a uniform `O(n^{1/2-2c})` bound on this integrated variance, or
+on the corresponding order-two Rényi ratio
+
+```math
+\log\frac{\mathbb E_{\nu_\beta}U_\beta^2}
+{(\mathbb E_{\nu_\beta}U_\beta)^2},
+```
+
+would prove the parent half of (10.800) for all deletion sizes. This is an
+exact fixed-density target, not a Taylor expansion.
+
+At one deletion, if $`h_i(d)=\sum_{j\ne i}A_{ij}d_{ij}`$, then the two
+outside extensions give
+
+```math
+\boxed{
+U_\beta(d)=\frac1n\sum_{i=1}^n\operatorname{sech}(2\beta h_i(d)).
+}
+\tag{10.901}
+```
+
+Using `sech(t)>=e^{-|t|}`, `sech(t)>=e^{-t^2/2}`, and Jensen yields
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+\le\min\left\{
+2\beta\sqrt{\frac{\mathbb E_{\nu_\beta}R_2}{n}},
+\frac{2\beta^2}{n}\mathbb E_{\nu_\beta}R_2
+\right\}
+\le2\beta\|A\|_{\rm op}.
+}
+\tag{10.902}
+```
+
+For an exact minimizer and `beta=Theta(n^{-1/2+c})`, this is
+`O(n^{1/4+c})`, meeting the first target in (10.800) at the one-deletion
+landing when `c<=1/12`. Summing the estimate through `Theta(n)` one-deletion
+steps is far too costly, so it is not a fixed-density convergence edge.
+
+Centered row square is not the whole harmonic cost. The exact minimizer
+`A_6` has `A_6^2=5I`, hence `R_2(d)=30` for every cut, but at one deletion
+`U_beta` has two distinct values. At `beta=1/2`, exact enumeration gives
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_{1/2}}(f_{1/2})
+=0.008845026487227\ldots>0.
+}
+\tag{10.903}
+```
+
+Thus the centered `R_2` tangent is only the first common mode; a
+fixed-density proof must also control field-profile variation inside a
+row-square level. This is a finite mechanism wall, not an asymptotic
+falsifier. A sharp asymptotic falsifier for the parent bound would be a row
+event `G` with endpoint mass bounded below but
+`-log nu_beta(G)=omega(n^{1/2-2c})`; data processing would force the parent
+entropy above the target scale.
+
+#### 10.83.5 Updated frontier
+
+Wave 30 keeps adaptive optimized principal restriction as the leading route
+and makes its fractional implementation substantially more precise:
+
+- the fractional target (10.875) is now exponent-equivalent to the
+  mesoscopic collision bound (10.892), with batch size
+  `r=Theta(n^{1/4+c}log n)`. This is the exact higher-order overlap scale to
+  prove or falsify; whole-slice deterministic coherence is unnecessary, and
+  fixed pair/triple agreement is too weak;
+
+- for completion-based common hits, full-refinement control is no longer an
+  open input. The constrained-hashing theorem (10.894)--(10.895) produces
+  one row-good size-capped refinement from the necessary coarsest-coset cap.
+  The remaining structured lemma is precisely to obtain, with probability
+  `e^{-O(rL)}` against every selector law, favorable completions having
+  `J=O(L/log n)` and `C_sig=O(n^{9/4-c})`;
+
+- the abstract random-label construction (10.897)--(10.898) shows that local
+  completion cylinders, independent planting, and hashing cannot force this
+  overlap. The missing theorem must use exact-minimizer correlations. It
+  remains possible that the bare common-coset event can be proved without
+  selecting coherent child completions;
+
+- matched parent interpolation remains the strongest independent route.
+  Its all-deletion parent term is exactly the harmonic-cost variance in
+  (10.900), and its one-deletion parent bound reaches the target for
+  `c<=1/12`. Fixed density and the selector-Hellinger half of (10.800) remain
+  open; the `A_6` wall rules out reducing the parent term solely to centered
+  row square;
+
+- conditional row-Laplace alignment and constant shortfall receive no new
+  positive asymptotic input and remain lower-ranked. The constant-shortfall
+  pressure criterion is still a sharp sufficient condition, but not the
+  strongest current route. No convergence proof or asymptotic counterexample
+  is known.
+
+Because the leading implementation has acquired a decisive mesoscopic
+criterion and a proved refinement theorem, `STEERING.md` is refreshed at
+this boundary rather than waiting for Wave 35. Wave 31 should attack the
+minimizer-specific `J` and `C_sig` statistics directly, retain an independent
+attempt on the bare collision probability that does not presuppose planted
+completions, and continue the fixed-density harmonic parent route.
