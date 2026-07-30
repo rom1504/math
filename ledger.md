@@ -33332,3 +33332,379 @@ asymptotic restriction estimate.  It sharpens all three live interfaces:
   boundary.  Wave 50 should compare a minimizer-specific lower bound for
   (10.1232), the box-mass plus adaptive triple-retention pair, and a global
   all-bad anti-migration theorem or exact falsifier.
+
+### 10.103 Wave 50: a two-moment completion floor, a same-cap coarea wall, and switching-orbit pressure
+
+Wave 50 tested the three implementations selected at the preceding boundary.
+The direct attack gives the first explicit lower envelope for the completion
+CDF in (10.1232), with distinct positive- and negative-threshold mechanisms.
+The structured attack proves that an optimal box witness need not satisfy
+triple retention at any pure positive-core scale at its attained row cap.  The Bellman attack
+shows more decisively that the canonical fractional point in (10.1240) is
+exactly a convex mixture of norm-preserving switching symmetries.  All three
+finite checkers were rerun independently and reproduced their saved outputs.
+
+#### 10.103.1 The completion CDF has an exact two-moment lower envelope
+
+Fix $2\le m<n$ and a selector $S$, put $T=S^c$, $k=|T|$, and abbreviate
+
+~~~math
+q=Q(A),\qquad Q=Q(A[S]),\qquad
+Y=Q-p^{3/2}q,\qquad
+p_2=\frac{m(m-1)}{n(n-1)}.
+~~~
+
+For a uniform oriented local projective state $a=(\sigma,y)$, set
+$e=\sigma y^{\mathsf T}A[S]y$.  A uniform outside completion has oriented
+energy $e+Z$, where $\mathbb E_wZ=0$.  Orthogonality of the linear and
+quadratic outside-spin levels and the parent cap give the **Verified
+identities**
+
+~~~math
+\boxed{
+V:=\mathbb E_wZ^2
+=4\lVert A[T,S]y\rVert_2^2+2k(k-1),\qquad
+e^2+V\le q^2.}
+\tag{10.1243}
+~~~
+
+Write
+
+~~~math
+D=q^2-e^2-V,\qquad h=Y-t,\qquad g=(1-p_2)e-h.
+~~~
+
+Direct rearrangement of (10.1232) gives the **Verified normal form**
+
+~~~math
+\boxed{
+F_{S,a}\left(q+\frac{B+t-\delta_S(a)}{p_2}\right)
+=\Pr_w\left\{Z\le\frac{g}{p_2}\right\}.}
+\tag{10.1244}
+~~~
+
+There are two rigorous lower bounds.  If $g>0$, one-sided Cantelli gives
+
+~~~math
+\Pr\left\{Z\le\frac g{p_2}\right\}
+\ge\frac{g^2}{g^2+p_2^2V}.
+~~~
+
+If $g\le0$, put $r=-g/p_2$.  The full-energy cap gives
+$Z\in[-(q+e),q-e]$.  For $0\le r<q+e$, the polynomial
+$(z+r)(z-q+e)$ is nonpositive on $[-r,q-e]$ and at most
+$(q+e-r)2q$ on the remaining interval.  Taking expectations proves the
+**Verified reverse bound**
+
+~~~math
+\boxed{
+\Pr\{Z\le-r\}\ge
+\frac{[V-r(q-e)]_+}{(q+e-r)2q}
+=
+\frac{\big[(q-e)(p_2q+e-h)-p_2D\big]_+}
+{2q(p_2q+e-h)}.}
+\tag{10.1245}
+~~~
+
+The second expression is used only under
+$g\le0$ and $h<p_2q+e$; all zero-denominator or out-of-support cases receive
+the lower bound zero.  Thus the negative-margin mechanism is precisely a
+conditional second moment sufficiently close to the Parseval cap, not a
+generic assertion that variance helps.
+
+Let $\mathcal C_t(S,a)$ be the Cantelli expression when $g>0$, the reverse
+expression in its stated range when $g\le0$, and zero otherwise.  Averaging
+(10.1244)--(10.1245) yields the **Verified scalar reduction**
+
+~~~math
+\boxed{
+Z_t\ge\mathcal H_t(A,m):=
+\mathbb E_{S\sim U_m,\ a}\mathcal C_t(S,a).}
+\tag{10.1246}
+~~~
+
+Consequently, for a compact fixed-density window and $0<c<1/4$,
+
+~~~math
+t=O(n^{3/2-c}),\qquad
+\mathcal H_t(A,m)\ge\exp\{-O(n^{3/4-c})\}
+~~~
+
+is an **Open sufficient lemma** for (10.795) and convergence when it holds
+uniformly for the required exact minimizers and density window.  More
+concretely, it is enough to have saved mass of positive-margin states with
+$g^2/V$ losing at most $\exp\{O(n^{3/4-c})\}$, or saved mass of
+negative-margin states on which the right side of (10.1245) has the same
+loss.
+
+This is not merely the retired local-deficit event.  If
+$\delta=Q-e$ and $B=(p^{3/2}-p_2)q$, then
+
+~~~math
+\boxed{
+g=B+t+p_2(q-Q)-(1-p_2)\delta,\qquad
+g>0\iff
+\delta<\frac{B+t+p_2(q-Q)}{1-p_2}.}
+\tag{10.1247}
+~~~
+
+When $q-Q+B+t>0$, the old condition $\delta\le B+t$ is strictly stronger.
+Nevertheless, the positive branch is still a local-energy tail and proves no
+saved mass by itself.
+
+Exhaustive **Numerical** checks on all sixteen tested
+$(A_6,A_8,A_9,A_{10})$ selector pairs give
+$\mathcal H_0/Z_0\in[0.06968,0.63887]$.  At $A_9,m=8$,
+$Z_0=0.2526042$, but $88.66\%$ of favorable incidence has $g\le0$ and the
+two-moment envelope captures only $6.97\%$ of $Z_0$.  Thus the reverse
+branch is real, while the finite data rule out the heuristic that the
+positive/local branch explains nearly all of the exact completion CDF.
+They supply no asymptotic lower bound.
+
+#### 10.103.2 One optimal box witness need not carry a pure positive-core coarea scale
+
+For the zero-deficit family, let
+
+~~~math
+F_z=\{S:D_z(S)=0\},\qquad r_z=|F_z|,\qquad
+d_\ell=\binom m\ell\binom{n-\ell}{m-\ell}.
+~~~
+
+If $C_R=\{z:R_2(z)\le R\}$, exact counting in the common-core kernel gives
+the triple retention
+
+~~~math
+\boxed{
+P_\ell(R)=
+\frac{\displaystyle
+\sum_{z\in C_R}r_z\sum_{S,T\in F_z}
+\binom{|S\cap T|}{\ell}}
+{\displaystyle d_\ell\sum_{z\in C_R}r_z^2}.}
+\tag{10.1248}
+~~~
+
+Provided the denominator is positive, (10.1235) is exactly
+$P_\ell(R)\ge\lambda_1(\ell)$.  Thus a box witness proves only positivity of
+the denominator; it gives no overlap moment in the numerator.
+
+For a positive-degree center, write
+$p_\ell(z)=(r_zd_\ell)^{-1}\sum_{S,T\in F_z}
+\binom{|S\cap T|}{\ell}$.  This pressure is exactly linear under scale
+mixing.  For
+$G_\ell(R)=\sum_{z\in C_R}a_z^2\{p_\ell(z)-\lambda_1(\ell)\}$ and any
+probability weights $w_\ell$ on positive common-core scales,
+
+~~~math
+\boxed{
+K_w=\sum_\ell w_\ell K_\ell
+\quad\Longrightarrow\quad
+G_w(R)=\sum_\ell w_\ell G_\ell(R).}
+\tag{10.1249}
+~~~
+
+Hence strict failure at every component scale also defeats every mixture
+supported on those positive-core scales.  The independent-resampling
+endpoint $\ell=0$ is excluded, and its inclusion can matter even though
+$K_0$ alone has $\kappa=0$.
+
+There is an exact fixed-ratio obstruction.  The normalized signing
+
+~~~text
+ 0  1  1  1  1  1  1  1  1  1
+ 1  0 -1  1 -1  1  1  1 -1 -1
+ 1 -1  0  1  1  1 -1  1  1  1
+ 1  1  1  0  1  1 -1 -1 -1 -1
+ 1 -1  1  1  0 -1  1 -1 -1  1
+ 1  1  1  1 -1  0  1  1  1 -1
+ 1  1 -1 -1  1  1  0 -1  1 -1
+ 1  1  1 -1 -1  1 -1  0 -1  1
+ 1 -1  1 -1 -1  1  1 -1  0  1
+ 1 -1  1 -1  1 -1 -1  1  1  0
+~~~
+
+has $Q(A)=q_{10}=26$ and is therefore an exact order-ten minimizer.  At
+$m=6$, exhaustive completion proves
+
+~~~math
+\boxed{
+\min_{S,\ y\ {\rm child\ ground}}\mathcal V(S,y)=10.}
+\tag{10.1250}
+~~~
+
+One witness is
+
+~~~text
+S=012678,  y=(1,1,-1,-1,-1,1),
+S^c=3459,  w=(1,-1,-1,1).
+~~~
+
+Parity gives $R_2(z)\ge10$ for every full cut, so the witness is globally
+row-optimal.  Yet $C_{10}$ has only two projective centers, both with the
+same five-member ground family
+
+~~~text
+012678, 014679, 034579, 123568, 234589.
+~~~
+
+Its ordered-pair intersection counts are ten at size two, ten at size four,
+and five at size six.  Here
+$D_{C_{10}}=1/451584>0$, but exact substitution into (10.1248) gives
+
+| $\ell$ | $\lambda_1$ | $P_\ell$ | $P_\ell/\lambda_1$ | $\kappa$ |
+|---:|---:|---:|---:|---:|
+| 1 | $2/27$ | $1/42$ | $9/28$ | $2/25$ |
+| 2 | $1/6$ | $29/1050$ | $29/175$ | $32/175$ |
+| 3 | $2/7$ | $1/25$ | $7/50$ | $8/25$ |
+| 4 | $4/9$ | $17/225$ | $17/100$ | $64/125$ |
+| 5 | $2/3$ | $1/5$ | $3/10$ | $4/5$ |
+
+Every pure positive-core scale, and therefore every mixture supported only
+on them, fails at cap ten.  This scope is sharp: at the same cap,
+
+~~~math
+K_w=\frac34K_0+\frac14K_1
+\quad\text{has}\quad
+p_w=\frac1{42},\quad
+\lambda_{1,w}=\frac1{54},\quad
+p_w-\lambda_{1,w}=\frac1{189},\quad
+\kappa_w=\frac1{53}.
+~~~
+
+Thus an independent-resampling admixture repairs this finite overlap
+profile while retaining positive $\kappa$.  The active row levels are
+$10,42,74,106,138$: pure scale one first
+passes at cap $106$, scale two at cap $138$, and scales three through five
+never pass.  This **Falsifies only** the implication that a lowest-row box
+witness automatically supplies a useful pure positive-core scale at the
+same cap.  It does not falsify mixed kernels, project-scale cap enlargement,
+or the asymptotic route.
+
+There is an exact warning against overinterpreting the repair.  For a general
+row class, the aggregate $K_0$ retention is
+
+~~~math
+r_C=\frac{\sum_{z\in C_R}a_z^3}{\sum_{z\in C_R}a_z^2}
+\le\max_{z\in C_R}a_z.
+~~~
+
+For $K_\theta=(1-\theta)K_0+\theta K_\ell$, the mixed criterion and spectral
+ratio are exactly
+
+~~~math
+(1-\theta)r_C\ge\theta\{\lambda_1(\ell)-P_\ell(R)\},
+\qquad
+\kappa_\theta=
+\frac{\theta\{\lambda_1(\ell)-\lambda_2(\ell)\}}
+{1-\theta\lambda_1(\ell)}.
+~~~
+
+Thus if $\theta$ must stay bounded below to keep $\kappa_\theta$ constant
+and the pure-kernel deficit is constant, the repair already assumes constant
+degree through $r_C$.  The mixed route is independently useful only if the
+pure deficit shrinks at a matching rate without collapsing $\kappa$.
+
+The sharply reduced **Open target** is therefore a cap-inflated overlap
+lemma: a box witness of row $R_0=O(n^{9/4-c})$ should force some
+$R_0\le R\le C(R_0+n^2)$ and either a balanced nonlocal $\ell$ or a kernel
+mixture with $\kappa\ge\kappa_0>0$ for which the associated retention is at
+least its level-one eigenvalue.  Together with the asymptotic box bound, this
+would still give project-row coarea, (10.795), and convergence.
+
+#### 10.103.3 Canonical Bellman pressure is exactly a switching-orbit average
+
+Fix a selector $S$, put $T=S^c$, and define a random edge-flip set as
+follows.  With probability one half take $U=\varnothing$; with probability
+one half take $U$ uniformly from all subsets of $T$; then put
+$F_S=\delta(U)$.  Directly considering internal, cross, and outside edges
+gives
+
+~~~math
+\boxed{
+\Pr\{e\in F_S\mid S\}
+=\frac{1-\mathbf1_{\{e\subset S\}}}{4}.}
+\tag{10.1251}
+~~~
+
+For any selector law $\lambda$, averaging (10.1251) gives exactly
+$p_e=(1-w_e)/4$, the canonical fractional point of (10.1240).
+
+Let $M_{d,ij}=a_{ij}\sigma x_ix_j$ and
+$E_A(d)=2\sum_eM_{d,e}$.  Every outcome is a vertex switching:
+
+~~~math
+A^{F_S}=D_UAD_U,\qquad
+E_{A^{F_S}}(d)=E_A(d^U).
+~~~
+
+Consequently it preserves $Q(A)=q_n$, and all factors in the pressure
+identity have the exact interpretation
+
+~~~math
+\boxed{
+\begin{aligned}
+\mathbb E[q_n-E_{A^{F_S}}(d)\mid S]
+&=s_A(d)+4\sum_e
+\frac{1-\mathbf1_{\{e\subset S\}}}{4}M_{d,e}\\
+&=\frac12\{s_A(d)+q_n-c_S(d[S])\}\\
+&=\frac12\{q_n-q_*+s_A(d)-s_S(d[S])+j_S(d[S])\}.
+\end{aligned}}
+\tag{10.1252}
+~~~
+
+Averaging the last line over $\lambda$ is exactly (10.1240).  Thus the
+full state-dependent Bellman pressure is literally expected slack along a
+switching orbit, not a latent integral descent direction.
+
+The adaptive witness migration is explicit.  If
+$g=(\sigma,x)$ is a parent ground of $A$, then
+$g_U=(\sigma,D_Ux)$ is a parent ground of $D_UAD_U$.  Since $U\subseteq
+S^c$, both the principal signing on $S$ and the child restriction
+$x[S]$ are unchanged.  A bad child gap therefore travels with the ground.
+This proves a universal **Falsification with scope**: the canonical point,
+its edge marginals, the complete maximal-selector law, and all the
+state-dependent budgets in (10.1240) cannot by themselves yield rounding or
+anti-migration.  Their integral realizations may all have norm exactly
+$q_n$.
+
+This does **not** falsify tight principal decomposition.  It rules out only
+the last canonical-pressure implementation.  Any surviving proof of tight
+decomposition must construct a genuinely non-switching certificate or use a
+higher-order incompatibility absent from (10.1240).
+
+#### 10.103.4 Updated frontier
+
+Wave 50 leaves the rigorous convergence interval unchanged and proves no
+asymptotic restriction estimate.  It changes the live boundary as follows:
+
+- the bare arbitrary-cut tail (10.795) remains the leading exact sufficient
+  lemma.  Its annealed implementation now has the explicit two-moment lower
+  envelope (10.1243)--(10.1246).  The exact missing statement is saved mass
+  of positive local-margin states, near-cap negative-margin states, or a
+  higher-moment completion mechanism.  High-ratio finite data show that the
+  positive branch alone loses most of the true incidence;
+
+- project-row coarea remains the strongest structured alternative, but box
+  mass and triple retention cannot be coupled at the attained minimum row
+  cap.  The surviving package is an asymptotic box bound plus controlled
+  overlap repair: either an allowed $O(n^2)$ row enlargement or an
+  independent-resampling admixture with uniformly positive $\kappa$.
+  Positive-core-only mixtures do not repair a negative overlap profile;
+  the exact $r_C$ tradeoff can make the endpoint admixture degree-circular;
+
+- the canonical global all-bad anti-migration route based on (10.1240) is
+  retired.  Its pressure is exactly a convex mixture of norm-preserving
+  switchings with an explicit migrating ground.  Tight decomposition itself
+  remains open, but it is no longer a ranked implementation unless a
+  genuinely non-switching invariant or certificate is found;
+
+- the direct annealed and controlled-repair coarea routes remain distinct.  The
+  former asks for total completion-tail entropy and obtains the row bound
+  afterward; the latter first obtains a low-row completion population and
+  then needs an overlap theorem after controlled cap inflation;
+
+- the switching-orbit identification decisively removes the third ranked
+  implementation, so refresh STEERING.md at this boundary.  Wave 51
+  should compare positive-margin versus near-Parseval abundance for
+  (10.1246), a higher-moment or direct lower bound for the negative
+  completion tail, and cap-inflated versus independent-resampling-mixed
+  overlap repair.
