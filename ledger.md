@@ -31372,3 +31372,361 @@ decisively:
   fresh blank-slate abstraction audit.  Reassess the ranking without strict
   pressure as a live route; the next regular refresh remains five waves after
   this early refresh unless another decisive result intervenes.
+
+### 10.98 Wave 45: abundance walls, hard common-core branching, and harmonic phase accounting
+
+This wave tested the three routes selected after the early Wave 45 steering
+refresh.  Two natural strengthenings of the complement column are now
+falsified: its incidence cannot be abundant at the project-saving exponent,
+and a central block orbit cannot both contain a project-mass column and obey
+the proposed geometric-mean Harnack bound.  The hard exceptional-center route
+gains an exact common-core spectral criterion which permits empty selector
+pairs, although nearest-core versions fail on exact minimizers.  The harmonic
+branch is recorded separately below.
+
+#### 10.98.1 Incidence abundance and central block Harnack are too strong
+
+For an exact minimizer `A`, write `q=Q(A)=q_n` and
+`B_S=-A+2P_SAP_S`.  Uniformly in `S`,
+
+```math
+\lVert B_S\rVert_F^2=n(n-1),\qquad
+\lVert B_S\rVert_{\rm op}\le3\lVert A\rVert_{\rm op}
+\le3\sqrt{2q}.
+```
+
+Hanson--Wright for a uniform oriented cut `d` and the verified lower bound
+`q_n=Omega(n^{3/2})` therefore give
+
+```math
+\boxed{
+\mathbb E_{S,d}\mathbf1_{\{\langle B_S,d\rangle\ge q\}}
+\le C\exp\{-c n^{3/4}\}.}
+\tag{10.1168}
+```
+
+This is an abundance bound, not a maximum-column bound.  In particular, for
+every `lambda>=0`,
+
+```math
+Z_\lambda
+=\mathbb E_d\!\left[U_m(\mathcal I_d)e^{-\lambda R_2(d)}\right]
+\le C e^{-c n^{3/4}},
+\qquad
+\mathcal I_d=\{S:\langle B_S,d\rangle\ge q\}.
+\tag{10.1169}
+```
+
+Thus the proposed lower bound `Z_lambda>=exp{-O(n^{3/4-c})}` is impossible
+for fixed positive `c`.  It was stronger than the existential scalar target:
+if
+
+```math
+F_\lambda^*=\min_d\{-\log U_m(\mathcal I_d)+\lambda R_2(d)\},
+```
+
+then the exact state-count dilution is
+
+```math
+\boxed{2^{-n}e^{-F_\lambda^*}\le Z_\lambda\le e^{-F_\lambda^*}.}
+\tag{10.1170}
+```
+
+Consequently (10.1149) may still be witnessed by one exponentially rare
+column.
+
+There is also a global obstruction to the central block-orbit implementation
+of (10.1159).  For every base cut `d` and `k=floor(n/2)`, conditioning an iid
+vertex-flip word on its central Hamming layer in (10.1168) yields
+
+```math
+\boxed{
+\mathbb E_{|U|=k}U_m(\mathcal I_{d^U})
+\le C\sqrt n\,e^{-c n^{3/4}},
+\qquad
+\mathbb E_{|U|=k}[-\log U_m(\mathcal I_{d^U})]
+\ge c n^{3/4}-O(\log n).}
+\tag{10.1171}
+```
+
+The convention is `-log 0=+infinity`.  Hence a base column already having
+project surprise `O(n^{3/4-c})` has an average central-orbit surprise increase
+`Omega(n^{3/4})`, contradicting the project-scale Harnack premise.  The same
+wall holds for `|k-n/2|=O(sqrt n)`.
+
+Away from the center, the exact first-chaos multiplier is
+
+```math
+\mathbb E_{|U|=k}L_S(d^U)
+=\vartheta_kL_S(d),\qquad
+\vartheta_k=1-\frac{4k(n-k)}{n(n-1)}.
+\tag{10.1172}
+```
+
+The fixed-layer tail still contains the signing-specific row
+`R_{B_S}(d)` and can retain high starting slack when
+`(1-2k/n)^2>=1/3`.  Noncentral macroscopic blocks therefore remain open;
+neither (10.1168) nor (10.1171) falsifies the existential scalar column.
+
+There is one useful exact averaging identity.  If
+`p_j=(m)_j/(n)_j`, then
+
+```math
+\boxed{
+\mathbb E_{S\sim U_m}R_{B_S}(d)
+=\{1-4(p_2-p_3)\}R_A(d)+4(p_2-p_3)n(n-1).}
+\tag{10.1173}
+```
+
+It controls only an unconditional row average and gives no information on the
+exponentially rare favorable incidence.
+
+#### 10.98.2 A hard common-core spectral criterion
+
+Let `nu` be uniform on a selector-independent project-row class of oriented
+centers.  For the hard favorable indicator and its selector degree write
+
+```math
+f_z(S)=\mathbf1\{Q(A[S])-|z_S^{\mathsf T}A[S]z_S|\le H\},
+\qquad a_z=\mathbb E_{S\sim U_m}f_z(S),
+\qquad J_1=\mathbb E_{z\sim\nu}a_z.
+```
+
+For `0<=ell<m`, let `K_ell` choose a uniform `ell`-core `R` of `S` and
+then a uniform `m`-superset `T` of `R`.  If `D_{ell,m}` is conditional
+averaging to the `ell`-slice, then
+
+```math
+K_\ell=D_{\ell,m}^{*}D_{\ell,m},\qquad
+\lambda_j(K_\ell)
+=\frac{(\ell)_j(n-m)_j}{(m)_j(n-\ell)_j},
+```
+
+so `K_ell` is positive semidefinite and its nonconstant norm is
+
+```math
+\boxed{\lambda_\ell=\frac{\ell(n-m)}{m(n-\ell)}.}
+\tag{10.1174}
+```
+
+Put
+
+```math
+b_z(R)=\Pr\{f_z(S)=1\mid S\supset R\},
+\qquad
+\rho_\ell
+=\frac{\mathbb E_z\langle f_z,K_\ell f_z\rangle}{J_1}.
+```
+
+The factorization gives the exact common-core collision identity
+
+```math
+\boxed{
+\mathbb E_z\langle f_z,K_\ell f_z\rangle
+=\mathbb E_{z,R}b_z(R)^2.}
+\tag{10.1175}
+```
+
+Spectral Jensen, followed by Jensen under the center law size-biased by
+`a_z`, proves for every integer `t>=1`
+
+```math
+\boxed{
+\max_z a_z\ge\rho_\ell^t-\lambda_\ell^t.}
+\tag{10.1176}
+```
+
+Indeed, if `r_t(z)=<f_z,K_ell^t f_z>/a_z`, positivity gives
+`r_t(z)>=r_1(z)^t`, whereas writing `f_z=a_z+g_z` gives
+`r_t(z)<=a_z+lambda_ell^t`.  Thus the exact hard sufficient lemma is
+
+```math
+\boxed{\rho_\ell-\lambda_\ell\ge e^{-O(L_0)}.}
+\tag{10.1177}
+```
+
+It allows arbitrary empty selector pairs and triples, but is stronger than
+the desired existential degree and remains open for minimizers.  Powers do
+not create positivity.  In the near-identity scale `ell=m-s`,
+
+```math
+1-\lambda_{m-s}=\frac{sn}{m(n-m+s)}.
+\tag{10.1178}
+```
+
+For `s=Theta(n/L_0)`, a strict `Theta(1/L_0)` escape-rate gap gives a
+constant lower bound from `t=Theta(L_0)`, or an `exp{-O(L_0)}` lower bound
+from `t=Theta(L_0^2)`.  This amplifies only a pre-existing excess.
+
+Exact finite audits show that a useful criterion cannot be generically
+nearest-core.  For `A_8,m=6`, the gap `rho_ell-lambda_ell` equals `11/375`
+at `ell=4` but `-11/225` at `ell=5`.  For `A_9,m=7`, it equals
+`659/11760` at `ell=4`, then `-1/21168` and `-55/882` at `ell=5,6`.
+These examples have positive maximum hard degrees despite the negative local
+gaps.  They falsify one- and two-replacement regeneration only; a nonlocal,
+minimizer-specific common-core excess remains a live hard-tail theorem.
+
+#### 10.98.3 Low-temperature endpoint domination reduces to phase geometry
+
+There is a precise fixed-state version of the harmonic endpoint theorem.
+Let a finite coordinate graph carry low-temperature laws
+
+```math
+\nu_\beta(d)\propto e^{\beta E_d+o(1)},\qquad
+\mu_{1,\beta}(d)\propto c_d e^{\beta(E_d-a_d)}(1+o(1)),
+```
+
+with uniform remainders, and use the exponential interpolation.  Assume its
+tropical envelope is affine:
+
+```math
+\boxed{
+\max_d(E_d-sa_d)
+=(1-s)\max_dE_d+s\max_d(E_d-a_d),\qquad0\le s\le1.}
+\tag{10.1179}
+```
+
+For finitely many lines this is equivalent to the existence of a common
+base and endpoint maximizer, and so excludes a transient interior phase.
+Let
+
+```math
+\mathcal A=\operatorname*{argmax}_d(E_d-a_d),\qquad
+\mathcal G=\{d\in\mathcal A:E_d=\max_xE_x\},
+```
+
+and define the endpoint boundary-layer law
+
+```math
+Z(u)=\sum_{d\in\mathcal A}c_de^{-u(E_*-E_d)},\qquad
+\pi_u(d)=\frac{c_de^{-u(E_*-E_d)}}{Z(u)},\qquad
+\eta=\frac{Z(\infty)}{Z(0)}.
+```
+
+The leading base-surprise load `kappa_e(u)` of an active coordinate edge is
+explicit.  If both endpoints are active, with base-energy gap `h>0` and
+leading coefficients `A,B` at the high and low endpoints, then
+
+```math
+\kappa_e(u)=h\frac{Be^{-hu}}{A+Be^{-hu}}.
+```
+
+If only the active endpoint survives and its inactive neighbor has base
+energy higher by `h`, then `kappa_e(u)=h`; all other edges have zero leading
+load.  Put
+
+```math
+\ell_u(d)=\sum_{e\ni d}\kappa_e(u).
+```
+
+Changing variables `u=beta(1-s)` and applying finite-state Laplace
+asymptotics gives the **Verified fixed-state limits**
+
+```math
+\boxed{
+\frac{\mathcal J_L^2}{\beta}\longrightarrow
+I:=\int_0^\infty\operatorname{Var}_{\pi_u}(\ell_u)\,du,
+\qquad
+\frac{C_V(1)}{\beta}\longrightarrow
+\mathbb E_{\pi_0}\ell_0.}
+\tag{10.1180}
+```
+
+Let `Delta` be the largest number of positive leading edges incident to an
+active state.  Edgewise integration, using `Z(u)>=Z(infinity)`, proves
+
+```math
+\boxed{
+I\le\frac{\Delta}{\eta}\,\mathbb E_{\pi_0}\ell_0.}
+\tag{10.1181}
+```
+
+More sharply, `Delta` may be replaced by any weighted overlap constant `D`
+such that
+
+```math
+\mathbb E_{\pi_u}\ell_u(d)^2
+\le D\sum_e\sum_{d\in e\cap\mathcal A}
+\pi_u(d)\kappa_e(u)^2
+\qquad(u\ge0).
+\tag{10.1182}
+```
+
+Indeed, an active--active edge contributes at most `hB/Z(infinity)` to the
+integrated right side and exactly `hB/Z(0)` to the endpoint mean.  For an
+active--inactive reversal, if the active state has base deficit `r`, then
+`r>=h`; its integrated contribution is at most `hc/Z(infinity)` and its
+endpoint contribution is `hc/Z(0)`.  Summing proves (10.1181)--(10.1182).
+When `E_(pi_0) ell_0>0`, this gives
+
+```math
+\limsup_{\beta\to\infty}
+\frac{\mathcal J_L^2}{C_V(1)}
+\le\frac D\eta\le\frac{\Delta}{\eta}.
+\tag{10.1183}
+```
+
+If the leading endpoint coefficient vanishes, (10.1180)--(10.1181) assert
+only that both leading `O(beta)` coefficients vanish; they do not by
+themselves compare the lower-order terms.  This qualification is necessary
+for a uniform project theorem.
+
+The exact `A_8,m=4` phase wall passes this result: `eta=4/5`, `Delta=1`,
+and `E_(pi_0)ell_0=7/15`, while its exact ratio is only
+`0.0133226596...`.  Every audited selector size for `A_6,A_8,A_9`, and every
+exact minimizer through order six, has an affine envelope.  A non-minimizing
+order-six signing has a genuine interior facet at `s=1/2`, so affineness is
+not generic.
+
+Nor is affineness plus `eta` bounded below enough.  An explicit abstract
+tropical star with one high center, `k` low leaves, and an isolated high
+state has
+
+```math
+\eta\longrightarrow\frac12,\qquad
+\Delta=k,\qquad
+\frac{\mathcal J_L^2}{C_V(1)}\sim\frac k4.
+\tag{10.1184}
+```
+
+Thus a crossing-overlap dependence of the order in (10.1181) is necessary
+for generic phase data.  The star is not asserted to arise from an exact
+minimizer.  The project-scale harmonic target is now: control interior-facet
+charge, `D/eta`, and the lower-order zero-slope case from actual
+minimizer/completion structure.  Restoring, orientation, and
+adjacent-selector transport remain separate.
+
+#### 10.98.4 Updated frontier
+
+Wave 45 leaves the bare arbitrary-cut tail (10.795) and the existential
+direct complement column as the leading route, but removes two tempting
+strengthenings and promotes two exact conditional formulations:
+
+- the partition lower bound (10.1169) is rigorously impossible, because
+  average incidence already has the no-saving exponent.  The central
+  half-cube Harnack implementation is also impossible by (10.1171).  The
+  complement route must locate one rare scalar column and, if it uses block
+  switching, work in a noncentral high-slack regime with incidence-conditioned
+  row control.  The scalar target (10.1149) itself is not falsified;
+
+- the hard exceptional-center route now has the exact common-core criterion
+  (10.1177).  It tolerates the empty arbitrary pairs and triples found in
+  Wave 44, but powers cannot manufacture spectral excess, and exact
+  minimizers falsify nearest-core excess.  The missing result is a nonlocal,
+  minimizer-specific lower bound on `rho_ell-lambda_ell`; this is presently
+  the cleanest distinct hard-tail implementation;
+
+- integrated harmonic transport has a valid fixed-state endpoint theorem.
+  Affine/no-transient phase geometry is supported by every finite minimizer
+  audited, but is not generic, and the tropical star proves that a uniform
+  weighted crossing-overlap bound is essential.  A scalable theorem must
+  control interior facets, `D/eta`, and zero leading slope before (10.1167)
+  can be claimed, in addition to restoring, orientation, and selector
+  transport;
+
+- no convergence proof or asymptotic falsifier has appeared, and the
+  rigorous interval is unchanged.  The abundance and central-orbit walls
+  decisively prune the two leading complement implementations proposed for
+  this wave.  Refresh `STEERING.md` before selecting Wave 46, then rerank
+  noncentral complement switching, hard common-core excess, and harmonic
+  crossing geometry against the complete ledger.
