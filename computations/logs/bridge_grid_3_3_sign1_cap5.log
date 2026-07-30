@@ -1,0 +1,51 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 300 log_search_progress: true num_search_workers: 4 log_to_stdout: true
+
+Initial satisfaction model '': (model_fingerprint: 0xc3b500f21d40ec2d)
+#Variables: 10 (9 primary variables)
+  - 9 Booleans in [0,1]
+  - 1 constants in {5}
+#kLinear1: 1
+#kLinearN: 32 (#terms: 320)
+
+Starting presolve at 0.00s
+  2.69e-05s  0.00e+00d  [DetectDominanceRelations]
+  3.06e-04s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1
+  1.53e-06s  0.00e+00d  [ExtractEncodingFromLinear]
+  1.72e-05s  0.00e+00d  [DetectDuplicateColumns]
+INFEASIBLE: 'duplicate: false after merging'
+  1.66e-05s  0.00e+00d  [DetectDuplicateConstraints] #duplicates=16
+[Symmetry] Graph for symmetry has 49 nodes and 263 arcs.
+[Symmetry] Symmetry computation done. time: 7.5383e-05 dtime: 3.255e-05
+[Symmetry] #generators: 1, average support size: 6
+[Symmetry] 3 orbits on 6 variables with sizes: 2,2,2
+  1.86e-06s  0.00e+00d  [Probe]
+  7.49e-07s  0.00e+00d  [DetectEncodedComplexDomains]
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'duplicate: merged rhs of linear constraint' was applied 1 time.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear: divide by GCD' was applied 32 times.
+  - rule 'presolve: iteration' was applied 1 time.
+Problem closed by presolve.
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 0
+booleans: 0
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+walltime: 0.00224044
+usertime: 0.00224048
+deterministic_time: 0
+gap_integral: 0
+
+status=INFEASIBLE objective=0.0 bound=0.0 branches=0 wall=0.002240s
+wrote computations/results/bridge_grid_3_3_sign1_cap5.json

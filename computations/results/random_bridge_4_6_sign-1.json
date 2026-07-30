@@ -1,0 +1,49 @@
+{
+  "audit_rows": [
+    {
+      "cap": 11,
+      "certifies_existence": false,
+      "union_bound": 35.44664478302002,
+      "union_numerator": "594696016"
+    },
+    {
+      "cap": 13,
+      "certifies_existence": false,
+      "union_bound": 16.37590503692627,
+      "union_numerator": "274742096"
+    },
+    {
+      "cap": 15,
+      "certifies_existence": false,
+      "union_bound": 6.615541934967041,
+      "union_numerator": "110990376"
+    }
+  ],
+  "bridge_random_variables": 24,
+  "child_a": "computations/results/exact_m4.json",
+  "child_b": "computations/results/exact_m6.json",
+  "child_caps": [
+    4,
+    5
+  ],
+  "classification": "proved finite existence bound by exact integer union-bound arithmetic",
+  "ideal_allowed_cap": 13,
+  "ideal_two_thirds_energy_target": 12.701657636084745,
+  "internal_absolute_histogram": {
+    "1": 72,
+    "3": 64,
+    "5": 64,
+    "7": 44,
+    "9": 12
+  },
+  "minimum_certified_cap": 19,
+  "minimum_union_bound": 0.6818733215332031,
+  "minimum_union_numerator": "11439936",
+  "orders": [
+    4,
+    6
+  ],
+  "schema": "quadratic-signing-random-bridge-union-v1",
+  "sign_b": -1,
+  "union_denominator": "16777216"
+}

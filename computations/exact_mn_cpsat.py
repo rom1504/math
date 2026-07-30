@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+"""CP-SAT decision/optimization model for the exact quadratic-signing cap.
+
+This is an independent backend for the same rooted, symmetry-reduced model as
+`exact_mn_milp.py`.  Its most useful mode is a fixed-cap infeasibility test:
+
+    exact_mn_cpsat.py 11 --decision-cap 15
+
+An INFEASIBLE solver status certifies computationally that no signing reaches
+the proposed cap within the encoded symmetry-complete search space.  OR-Tools
+does not emit a standalone proof certificate here, so the classification is
+solver-certified computation rather than a formal proof.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import platform
+import time
+from itertools import combinations
+from pathlib import Path
+
+import numpy as np
+import ortools
+from ortools.sat.python import cp_model
+
+from exact_mn_milp import exact_profile, stable_matrix_hash
+
+
+def build_model(n: int, decision_cap: int | None) -> tuple[
+    cp_model.CpModel,
+    tuple[tuple[int, int], ...],
+    list[cp_model.IntVar],
+    cp_model.IntVar | None,
+]:
+    if n < 3:
+        raise ValueError("n must be at least 3")
+    model = cp_model.CpModel()
+    edges = tuple(combinations(range(1, n), 2))
+    edge_index = {edge: k for k, edge in enumerate(edges)}
+    z = [model.new_bool_var(f"z_{i}_{j}") for i, j in edges]
+
+    # Symmetry-complete rooted constraints, identical to the MILP backend.
+    model.add(z[edge_index[(1, 2)]] == 0)
+    for j in range(2, n - 1):
+        model.add(z[edge_index[(1, j)]] <= z[edge_index[(1, j + 1)]])
+    incident_1 = [z[edge_index[(1, j)]] for j in range(2, n)]
+    for i in range(2, n):
+        incident_i = []
+        for j in range(1, n):
+            if i == j:
+                continue
+            edge = (j, i) if j < i else (i, j)
+            incident_i.append(z[edge_index[edge]])
+        model.add(sum(incident_1) <= sum(incident_i))
+
+    if decision_cap is None:
+        cap = model.new_int_var(0, n * (n - 1) // 2, "cap")
+        model.minimize(cap)
+    else:
+        cap = None
+
+    for mask in range(1 << (n - 1)):
+        tail = [1 - 2 * ((mask >> j) & 1) for j in range(n - 1)]
+        constant = sum(tail)
+        coefficients = []
+        for i, j in edges:
+            product = tail[i - 1] * tail[j - 1]
+            constant += product
+            coefficients.append(-2 * product)
+        energy = constant + sum(c * variable for c, variable in zip(coefficients, z))
+        bound = decision_cap if decision_cap is not None else cap
+        model.add(energy <= bound)
+        model.add(energy >= -bound)
+    return model, edges, z, cap
+
+
+def matrix_from_values(
+    n: int,
+    edges: tuple[tuple[int, int], ...],
+    values: list[int],
+) -> np.ndarray:
+    matrix = np.zeros((n, n), dtype=np.int8)
+    matrix[0, 1:] = matrix[1:, 0] = 1
+    for (i, j), value in zip(edges, values):
+        sign = 1 - 2 * int(value)
+        matrix[i, j] = matrix[j, i] = sign
+    return matrix
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("n", type=int)
+    parser.add_argument("--decision-cap", type=int)
+    parser.add_argument("--time-limit", type=float, default=1800.0)
+    parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+
+    model, edges, variables, cap = build_model(args.n, args.decision_cap)
+    solver = cp_model.CpSolver()
+    solver.parameters.max_time_in_seconds = args.time_limit
+    solver.parameters.num_search_workers = args.workers
+    solver.parameters.log_search_progress = True
+    solver.parameters.log_to_stdout = True
+    started = time.time()
+    status = solver.solve(model)
+    elapsed = time.time() - started
+    status_name = solver.status_name(status)
+    print(
+        f"status={status_name} objective={solver.objective_value} "
+        f"best_bound={solver.best_objective_bound} "
+        f"conflicts={solver.num_conflicts} branches={solver.num_branches} "
+        f"wall={solver.wall_time:.6f}s elapsed={elapsed:.6f}s",
+        flush=True,
+    )
+
+    payload: dict[str, object] = {
+        "schema": "quadratic-signing-exact-cpsat-v1",
+        "classification": "solver-certified computation; no standalone proof object",
+        "n": args.n,
+        "normalization": "M_n=max_x |sum_{i<j} a_ij x_i x_j|",
+        "mode": "decision" if args.decision_cap is not None else "optimization",
+        "decision_cap": args.decision_cap,
+        "model": {
+            "root_gauge": True,
+            "basic_permutation_and_complement_symmetry": True,
+            "internal_binary_variables": len(edges),
+            "projective_spin_constraints": 2 * (1 << (args.n - 1)),
+        },
+        "solver": {
+            "ortools_version": ortools.__version__,
+            "python_version": platform.python_version(),
+            "status": status_name,
+            "objective": solver.objective_value,
+            "best_bound": solver.best_objective_bound,
+            "conflicts": solver.num_conflicts,
+            "branches": solver.num_branches,
+            "wall_time_seconds": solver.wall_time,
+            "elapsed_seconds": elapsed,
+            "workers": args.workers,
+            "time_limit_seconds": args.time_limit,
+            "response_stats": solver.response_stats(),
+        },
+    }
+
+    if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+        values = [solver.value(variable) for variable in variables]
+        matrix = matrix_from_values(args.n, edges, values)
+        profile = exact_profile(matrix)
+        if args.decision_cap is not None and profile["M"] > args.decision_cap:
+            raise AssertionError((profile["M"], args.decision_cap))
+        if cap is not None and profile["M"] > round(solver.value(cap)):
+            raise AssertionError((profile["M"], solver.value(cap)))
+        payload["matrix"] = [[int(v) for v in row] for row in matrix]
+        payload["matrix_sha256"] = stable_matrix_hash(matrix)
+        payload["profile"] = profile
+        print(
+            f"verified profile M={profile['M']} P={profile['P']} Q={profile['Q']} "
+            f"sha256={payload['matrix_sha256']}",
+            flush=True,
+        )
+
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+        print(f"wrote {args.output}", flush=True)
+    return 0 if status in (cp_model.OPTIMAL, cp_model.FEASIBLE, cp_model.INFEASIBLE) else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

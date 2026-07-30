@@ -1,0 +1,40 @@
+{
+  "audit_rows": [
+    {
+      "cap": 7,
+      "certifies_existence": false,
+      "union_bound": 1.09375,
+      "union_numerator": "560"
+    },
+    {
+      "cap": 9,
+      "certifies_existence": true,
+      "union_bound": 0.23828125,
+      "union_numerator": "122"
+    }
+  ],
+  "bridge_random_variables": 9,
+  "child_a": "computations/results/exact_m3.json",
+  "child_b": "computations/results/exact_m3.json",
+  "child_caps": [
+    3,
+    3
+  ],
+  "classification": "proved finite existence bound by exact integer union-bound arithmetic",
+  "ideal_allowed_cap": 9,
+  "ideal_two_thirds_energy_target": 8.48528137423857,
+  "internal_absolute_histogram": {
+    "2": 15,
+    "6": 1
+  },
+  "minimum_certified_cap": 9,
+  "minimum_union_bound": 0.23828125,
+  "minimum_union_numerator": "122",
+  "orders": [
+    3,
+    3
+  ],
+  "schema": "quadratic-signing-random-bridge-union-v1",
+  "sign_b": 1,
+  "union_denominator": "512"
+}

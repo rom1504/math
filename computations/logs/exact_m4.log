@@ -1,0 +1,30 @@
+model n=4 internal_binary=3 projective_spins=8 linear_rows=19 symmetry=basic
+Running HiGHS 1.2.0 [date: 2021-07-09, git hash: n/a]
+Copyright (c) 2022 ERGO-Code under MIT licence terms
+Presolving model
+6 rows, 3 cols, 17 nonzeros
+0 rows, 0 cols, 0 nonzeros
+Presolve: Optimal
+
+Solving report
+  Status            Optimal
+  Primal bound      4
+  Dual bound        4
+  Gap               0%
+  Solution status   feasible
+                    4 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            0.00 (total)
+                    0.00 (presolve)
+                    0.00 (postsolve)
+  Nodes             0
+  LP iterations     0 (total)
+                    0 (strong br.)
+                    0 (separation)
+                    0 (heuristics)
+status=0 success=True message=Optimization terminated successfully. (HiGHS Status 7: Optimal)
+fun=4.0 dual=4.0 gap=0.0 nodes=0 elapsed=0.009557s
+verified profile M=4 P=4 Q=4 sha256=ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f
+wrote computations/results/exact_m4.json

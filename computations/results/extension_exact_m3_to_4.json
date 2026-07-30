@@ -1,0 +1,99 @@
+{
+  "best_extension_cap": 4,
+  "best_row_count_saved": 3,
+  "best_rows": [
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1
+    ]
+  ],
+  "candidate_rows_checked": 4,
+  "child": "computations/results/exact_m3.json",
+  "child_order": 3,
+  "classification": "proved exhaustive finite optimization for extensions of the supplied child",
+  "extension_cap_histogram": {
+    "4": 3,
+    "6": 1
+  },
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "94b4810f3d92ec73fcc52f3c7ef19c809a104c15a7c745bd99edfaa5b7e8cb79",
+  "parent_profile": {
+    "M": 4,
+    "P": 4,
+    "Q": 4,
+    "bottom_spins": [
+      [
+        1,
+        -1,
+        1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -2.23606797749979,
+      -1.0,
+      0.9999999999999999,
+      2.236067977499789
+    ],
+    "energy_histogram": {
+      "-2": 2,
+      "-4": 1,
+      "0": 2,
+      "2": 2,
+      "4": 1
+    },
+    "projective_bottom_count": 1,
+    "projective_top_count": 1,
+    "row_sums": [
+      3,
+      1,
+      3,
+      1
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-exact-vertex-extension-v1"
+}

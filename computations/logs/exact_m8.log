@@ -1,0 +1,56 @@
+model n=8 internal_binary=21 projective_spins=128 linear_rows=267 symmetry=basic
+Running HiGHS 1.2.0 [date: 2021-07-09, git hash: n/a]
+Copyright (c) 2022 ERGO-Code under MIT licence terms
+Presolving model
+266 rows, 21 cols, 5439 nonzeros
+138 rows, 21 cols, 2751 nonzeros
+138 rows, 21 cols, 2751 nonzeros
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   138 rows
+   21 cols (20 binary, 1 integer, 0 implied int., 0 continuous)
+   2751 nonzeros
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work
+     Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+         0       0         0   0.00%   0               inf                  inf        0      0      0         0     0.0s
+ R       0       0         0   0.00%   7               16                56.25%        0      0      0        33     0.0s
+ C       0       0         0   0.00%   8               15                46.67%      150      6      0       114     0.0s
+ L       0       0         0   0.00%   8               10                20.00%      372     12     20       160     0.1s
+
+9.5% inactive integer columns, restarting
+Model after restart has 136 rows, 19 cols (19 bin., 0 int., 0 impl., 0 cont.), and 2353 nonzeros
+
+         0       0         0   0.00%   8               10                20.00%        6      0      0       516     0.1s
+         0       0         0   0.00%   8               10                20.00%        6      0      3       529     0.1s
+
+10.5% inactive integer columns, restarting
+Model after restart has 70 rows, 16 cols (16 bin., 0 int., 0 impl., 0 cont.), and 1059 nonzeros
+
+         0       0         0   0.00%   8               10                20.00%        2      0      0       701     0.1s
+         0       0         0   0.00%   8               10                20.00%        2      1      4       717     0.1s
+
+Solving report
+  Status            Optimal
+  Primal bound      10
+  Dual bound        10
+  Gap               0%
+  Solution status   feasible
+                    10 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            0.15 (total)
+                    0.01 (presolve)
+                    0.00 (postsolve)
+  Nodes             34
+  LP iterations     1158 (total)
+                    0 (strong br.)
+                    220 (separation)
+                    623 (heuristics)
+status=0 success=True message=Optimization terminated successfully. (HiGHS Status 7: Optimal)
+fun=10.0 dual=10.0 gap=0.0 nodes=34 elapsed=0.155928s
+verified profile M=10 P=10 Q=10 sha256=ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9
+wrote computations/results/exact_m8.json

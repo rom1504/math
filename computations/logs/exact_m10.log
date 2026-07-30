@@ -1,0 +1,45 @@
+model n=10 internal_binary=36 projective_spins=512 linear_rows=1039 symmetry=basic
+Running HiGHS 1.2.0 [date: 2021-07-09, git hash: n/a]
+Copyright (c) 2022 ERGO-Code under MIT licence terms
+Presolving model
+1038 rows, 36 cols, 36981 nonzeros
+526 rows, 36 cols, 18549 nonzeros
+526 rows, 36 cols, 18549 nonzeros
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   526 rows
+   36 cols (35 binary, 1 integer, 0 implied int., 0 continuous)
+   18549 nonzeros
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work
+     Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+         0       0         0   0.00%   0               inf                  inf        0      0      0         0     0.1s
+ R       0       0         0   0.00%   9               19                52.63%        0      0      0        99     0.1s
+ C       0       0         0   0.00%   9               18                50.00%      303      7      0       189     0.1s
+ H       0       0         0   0.00%   9               13                30.77%      775     16     24       339     0.3s
+      2291     210      1004  70.27%   10              13                23.08%     2043      8   2449     30311     5.3s
+
+Solving report
+  Status            Optimal
+  Primal bound      13
+  Dual bound        13
+  Gap               0%
+  Solution status   feasible
+                    13 (objective)
+                    0 (bound viol.)
+                    1.71707092989e-12 (int. viol.)
+                    0 (row viol.)
+  Timing            6.08 (total)
+                    0.05 (presolve)
+                    0.00 (postsolve)
+  Nodes             2693
+  LP iterations     35305 (total)
+                    3811 (strong br.)
+                    1241 (separation)
+                    3010 (heuristics)
+status=0 success=True message=Optimization terminated successfully. (HiGHS Status 7: Optimal)
+fun=13.000000000000318 dual=13.000000000000318 gap=0.0 nodes=2693 elapsed=6.086344s
+verified profile M=13 P=13 Q=13 sha256=96da214caa8aaf7bd70d9d0bc99b76e8741ac9c433bde20628a6f65dc0442620
+wrote computations/results/exact_m10.json

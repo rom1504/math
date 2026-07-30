@@ -1,0 +1,166 @@
+{
+  "best_extension_cap": 4,
+  "best_row_count_saved": 2,
+  "best_rows": [
+    [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1
+    ]
+  ],
+  "candidate_rows_checked": 8,
+  "child": "computations/results/exact_m4.json",
+  "child_order": 4,
+  "classification": "proved exhaustive finite optimization for extensions of the supplied child",
+  "extension_cap_histogram": {
+    "4": 2,
+    "6": 4,
+    "8": 2
+  },
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+  "parent_profile": {
+    "M": 4,
+    "P": 4,
+    "Q": 4,
+    "bottom_spins": [
+      [
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -2.23606797749979,
+      -2.2360679774997894,
+      3.469446951953614e-16,
+      2.2360679774997894,
+      2.23606797749979
+    ],
+    "energy_histogram": {
+      "-4": 5,
+      "0": 6,
+      "4": 5
+    },
+    "projective_bottom_count": 5,
+    "projective_top_count": 5,
+    "row_sums": [
+      4,
+      2,
+      0,
+      2,
+      0
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-exact-vertex-extension-v1"
+}

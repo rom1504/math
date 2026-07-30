@@ -1,0 +1,350 @@
+{
+  "bridge": [
+    [
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1
+    ]
+  ],
+  "child_a": "computations/results/exact_m4.json",
+  "child_b": "computations/results/exact_m4.json",
+  "child_profiles": [
+    {
+      "M": 4,
+      "P": 4,
+      "Q": 4,
+      "bottom_spins": [
+        [
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "eigenvalues": [
+        -2.2360679774997894,
+        -0.9999999999999998,
+        0.9999999999999996,
+        2.2360679774997894
+      ],
+      "energy_histogram": {
+        "-2": 2,
+        "-4": 1,
+        "0": 2,
+        "2": 2,
+        "4": 1
+      },
+      "projective_bottom_count": 1,
+      "projective_top_count": 1,
+      "row_sums": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "top_spins": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "M": 4,
+      "P": 4,
+      "Q": 4,
+      "bottom_spins": [
+        [
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "eigenvalues": [
+        -2.2360679774997894,
+        -0.9999999999999998,
+        0.9999999999999996,
+        2.2360679774997894
+      ],
+      "energy_histogram": {
+        "-2": 2,
+        "-4": 1,
+        "0": 2,
+        "2": 2,
+        "4": 1
+      },
+      "projective_bottom_count": 1,
+      "projective_top_count": 1,
+      "row_sums": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "top_spins": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "classification": "solver-certified computation; no standalone proof object",
+  "decision_cap": 10,
+  "mode": "decision",
+  "orders": [
+    4,
+    4
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "6c701659e51c590ec697faed1f5107f37ce0445505b5a6437c22ef55369858d9",
+  "parent_profile": {
+    "M": 10,
+    "P": 10,
+    "Q": 10,
+    "bottom_spins": [
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -3.0000000000000013,
+      -3.000000000000001,
+      -3.0,
+      -1.0000000000000002,
+      0.9999999999999996,
+      3.0,
+      3.0000000000000004,
+      3.0000000000000004
+    ],
+    "energy_histogram": {
+      "-10": 4,
+      "-2": 16,
+      "-4": 16,
+      "-6": 12,
+      "-8": 10,
+      "0": 12,
+      "10": 4,
+      "2": 16,
+      "4": 16,
+      "6": 12,
+      "8": 10
+    },
+    "projective_bottom_count": 4,
+    "projective_top_count": 4,
+    "row_sums": [
+      5,
+      5,
+      3,
+      1,
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-bridge-cpsat-v1",
+  "sign_b": -1,
+  "solver": {
+    "best_bound": 0.0,
+    "branches": 91,
+    "conflicts": 19,
+    "elapsed_seconds": 0.016950607299804688,
+    "objective": 0.0,
+    "ortools_version": "9.15.6755",
+    "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 15\nbooleans: 15\nconflicts: 19\nbranches: 91\npropagations: 53\ninteger_propagations: 98\nrestarts: 0\nlp_iterations: 45\nwalltime: 0.0165632\nusertime: 0.0165633\ndeterministic_time: 0.00187877\ngap_integral: 0\nsolution_fingerprint: 0x82f0e9493a323c30\n",
+    "status": "OPTIMAL",
+    "time_limit_seconds": 300.0,
+    "wall_time_seconds": 0.016563186,
+    "workers": 4
+  },
+  "two_thirds_power": {
+    "child_sum": 5.039684199579493,
+    "defect": -0.39809536596671435,
+    "parent": 4.641588833612778
+  }
+}

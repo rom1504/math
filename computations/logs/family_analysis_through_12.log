@@ -1,0 +1,20 @@
+n=3 M=3 normalized=0.577350269 grounds=1 delete_range=None..None optimal_deletions=None
+n=4 M=4 normalized=0.500000000 grounds=2 delete_range=3..3 optimal_deletions=4
+n=5 M=4 normalized=0.357770876 grounds=10 delete_range=4..4 optimal_deletions=5
+n=6 M=5 normalized=0.340206909 grounds=12 delete_range=4..4 optimal_deletions=6
+n=7 M=9 normalized=0.485954322 grounds=4 delete_range=5..9 optimal_deletions=1
+n=8 M=10 normalized=0.441941738 grounds=8 delete_range=9..9 optimal_deletions=8
+n=9 M=12 normalized=0.444444444 grounds=21 delete_range=12..12 optimal_deletions=0
+n=10 M=13 normalized=0.411096096 grounds=40 delete_range=12..12 optimal_deletions=10
+n=11 M=17 normalized=0.465972078 grounds=5 delete_range=13..15 optimal_deletions=1
+n=12 M=18 normalized=0.433012702 grounds=20 delete_range=17..17 optimal_deletions=12
+positive two-thirds defects: 8
+  3+5: defect=+0.041662910771
+  3+6: defect=+0.237381227153
+  4+5: defect=+0.201798588838
+  4+6: defect=+0.084914975676
+  5+5: defect=+0.489090614099
+  5+6: defect=+1.167629180455
+  5+7: defect=+0.021694644608
+  6+6: defect=+1.020249978894
+wrote computations/results/family_analysis_through_12.json

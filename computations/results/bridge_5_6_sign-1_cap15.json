@@ -1,0 +1,26 @@
+{
+  "child_a": "computations/results/exact_m5.json",
+  "child_b": "computations/results/exact_m6.json",
+  "classification": "solver-certified computation; no standalone proof object",
+  "decision_cap": 15,
+  "mode": "decision",
+  "orders": [
+    5,
+    6
+  ],
+  "schema": "quadratic-signing-bridge-cpsat-v1",
+  "sign_b": -1,
+  "solver": {
+    "best_bound": 0.0,
+    "branches": 116384,
+    "conflicts": 16661,
+    "elapsed_seconds": 76.47465586662292,
+    "objective": 0.0,
+    "ortools_version": "9.15.6755",
+    "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 91\nbooleans: 29\nconflicts: 16661\nbranches: 116384\npropagations: 51747\ninteger_propagations: 1242185\nrestarts: 91\nlp_iterations: 387687\nwalltime: 76.474\nusertime: 76.474\ndeterministic_time: 26.9287\ngap_integral: 0\n",
+    "status": "INFEASIBLE",
+    "time_limit_seconds": 600.0,
+    "wall_time_seconds": 76.473950062,
+    "workers": 1
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "matrix_sha256": "ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968",
+  "model": {
+    "internal_binary_variables": 10,
+    "projective_spin_constraints": 64,
+    "total_integer_variables": 11,
+    "total_linear_rows": 71
+  },
+  "n": 6,
+  "normalization": "M_n=max_x |sum_{i<j} a_ij x_i x_j|",
+  "profile": {
+    "M": 5,
+    "P": 5,
+    "Q": 5,
+    "bottom_spins": [
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -2.23606797749979,
+      -2.23606797749979,
+      -2.236067977499789,
+      2.23606797749979,
+      2.23606797749979,
+      2.23606797749979
+    ],
+    "energy_histogram": {
+      "-3": 10,
+      "-5": 6,
+      "3": 10,
+      "5": 6
+    },
+    "projective_bottom_count": 6,
+    "projective_top_count": 6,
+    "row_sums": [
+      5,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-exact-milp-v1",
+  "solver": {
+    "dual_bound": 5.0,
+    "elapsed_seconds": 0.004840850830078125,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "node_count": 1,
+    "node_limit": null,
+    "objective": 5.0,
+    "python_version": "3.9.2",
+    "relative_gap": 0.0,
+    "scipy_version": "1.13.1",
+    "status": 0,
+    "success": true,
+    "time_limit_seconds": null
+  },
+  "symmetry": "basic"
+}

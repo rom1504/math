@@ -37709,3 +37709,312 @@ subsections will label claims as proved, certified computationally, heuristic,
 or open, and the agent-authored steering assessment will be updated only at a
 material target change, major obstruction, or substantial campaign
 checkpoint.
+
+### 10.115 Computational--composition checkpoint I: certified orders 11 and 12
+
+This is a substantial campaign checkpoint, not the four-to-six-hour global
+assessment.  It integrates the first exact-computation, structural, and
+composition results.  Claims below are explicitly classified.
+
+#### 10.115.1 Reproducible exact models and symmetry
+
+The new programs in `computations/` use the project normalization
+
+~~~math
+M_n=\min_{a_{ij}\in\{\pm1\}}\max_{x\in\{\pm1\}^n}
+\left|\sum_{i<j}a_{ij}x_ix_j\right|.                 \tag{10.1400}
+~~~
+
+Switching puts every candidate in the root gauge `a_(0j)=1`.  The remaining
+internal edge signs are binary variables.  One upper and one lower linear
+constraint is imposed for every projective spin `x_0=1`.  The basic symmetry
+reduction is complete: global negation followed by regauging complements the
+rooted internal signed graph; choose the orientation in which a
+minimum-negative-degree vertex has a positive neighbour, call them vertices
+1 and 2, and sort the remaining neighbours of vertex 1 by sign.  This proves
+the validity of the fixed edge, minimum-degree, and sorted-incidence
+constraints used by both independent backends.
+
+**Certified computation.**  SciPy/HiGHS independently reproduced
+
+~~~math
+(M_3,\ldots,M_{10})=(3,4,4,5,9,10,12,13)            \tag{10.1401}
+~~~
+
+with zero solver gaps and exhaustive recomputation of every saved witness.
+The symmetry reduction lowered the order-10 HiGHS search from the earlier
+reported 51,759 nodes to 2,693 nodes.  OR-Tools CP-SAT independently declared
+the order-10 cap-11 model infeasible, validating the second formulation
+against the known value.  These lower conclusions are solver-certified; the
+solvers emit no standalone formal proof object.  Every saved upper matrix is
+checked independently over all projective spins and hashed.
+
+**Certified computation: two new exact values.**  CP-SAT declared the
+symmetry-complete order-11 cap-15 model infeasible after 1,250.37 seconds.
+A separately generated explicit order-11 matrix has exhaustively verified cap
+17.  Hence
+
+~~~math
+M_{11}=17.                                             \tag{10.1402}
+~~~
+
+An exhaustive one-row optimization then produced an explicit order-12
+extension with cap 18.  Monotonicity follows from
+
+~~~math
+\max_{t\in\{\pm1\}}|H_A(x)+tL(x)|
+=|H_A(x)|+|L(x)|\ge |H_A(x)|,                         \tag{10.1403}
+~~~
+
+so `M_12>=M_11=17`.  Every order-12 energy has the parity of
+`binom(12,2)=66` and is even.  The explicit cap-18 upper witness therefore
+gives
+
+~~~math
+M_{12}=18.                                             \tag{10.1404}
+~~~
+
+The complete machine-checkable implication chain is in
+`computations/certify_m11_m12.py` and
+`computations/results/certified_m11_m12.json`.  Equations (10.1402)--(10.1404)
+are solver-certified exact values, not formal lower-bound proofs independent
+of CP-SAT.
+
+#### 10.115.2 Exact convergence criterion for a composition law
+
+Set
+
+~~~math
+b_n=M_n^{2/3},\qquad c_n=\frac{b_n}{n}
+=\left(\frac{M_n}{n^{3/2}}\right)^{2/3}.              \tag{10.1405}
+~~~
+
+**Proved sufficient theorem.**  Suppose a nondecreasing defect `e(N)>=0`
+satisfies, for all sufficiently large orders,
+
+~~~math
+b_{m+n}\le b_m+b_n+e(m+n),                            \tag{10.1406}
+~~~
+
+and its geometric accumulated cost obeys
+
+~~~math
+E(k):=\sum_{j\ge1}\frac{e(2^j k)}{2^j k}\longrightarrow0
+\quad(k\longrightarrow\infty).                       \tag{10.1407}
+~~~
+
+Then `c_n` converges, and therefore `M_n/n^(3/2)` converges.  To prove this,
+merge `q` blocks of order `k` in a balanced binary tree.  At level `j` there
+are at most `q/2^j` merges of total order at most `2^j k`; after division by
+`qk`, their total defect is bounded by a constant multiple of (10.1407).
+One residual block of order below `k` contributes `o_n(1)` for fixed `k`.
+Thus
+
+~~~math
+\limsup_{n\to\infty}c_n\le c_k+O(E(k)).                \tag{10.1408}
+~~~
+
+Choose `k` along a sequence attaining `liminf c_n` and use (10.1407).  In
+particular `e(N)=O(N^(1-delta))` for any fixed `delta>0` suffices.  Bare
+`e(N)=o(N)` does not suffice because its geometric per-vertex costs need not
+be summable; this matches the slow-oscillation obstruction from the blank-slate
+audit.
+
+Finite exact arithmetic through order 12 shows that literal zero-defect
+subadditivity is false.  The positive values of
+
+~~~math
+d(m,n)=M_{m+n}^{2/3}-M_m^{2/3}-M_n^{2/3}              \tag{10.1409}
+~~~
+
+include `d(5,5)=0.489090614099`, `d(5,6)=1.167629180455`, and
+`d(6,6)=1.020249978894`.  This does not falsify (10.1406)--(10.1407); it
+fixes the scale that any bridge theorem must address.
+
+#### 10.115.3 Exact fixed-child bridge objective
+
+For fixed child matrices `A,B` and a sign bridge `C`, write the parent as
+
+~~~math
+P=\begin{pmatrix}A&C\\C^{\mathsf T}&B\end{pmatrix}.
+~~~
+
+Flipping all spins in the second block preserves `H_B` and reverses the cross
+term.  Hence the exact parent cap is
+
+~~~math
+\max_{x,y}\left(
+ |H_A(x)+H_B(y)|+|x^{\mathsf T}Cy|
+\right).                                               \tag{10.1410}
+~~~
+
+This identity is **proved** and is the objective implemented by
+`bridge_block_cpsat.py`.  It shows precisely why a standalone bipartite
+Gale--Berlekamp norm is insufficient: the bridge must be small by a
+state-dependent amount when the two internal energies align.
+
+**Certified computation.**  For the saved exact order-5 and order-6 children,
+both relative child orientations are infeasible at parent cap 15, while an
+explicit bridge has cap 17.  Their exact fixed-child bridge value is therefore
+17, equal to `M_11` but 4.298342... above the ideal energy target associated
+with zero defect in (10.1409).  For two saved exact order-6 children, CP-SAT
+finds a cap-18 bridge, again attaining the exact parent value `M_12`.
+
+The exhaustive fixed-representative grid through total order 12 is generated
+by `run_bridge_grid.py`.  Feasibility at `M_(m+n)` proves an optimal bridge for
+those representatives; infeasibility only falsifies that representative and
+relative orientation, not all exact minimizers.
+
+The completed grid has 27 feasible and 5 infeasible cases among 32
+pair/orientation tests.  The failures are `3+3` at relative sign `+`, `3+7`
+at `+`, `3+9` at `-`, and `4+8` at both relative signs.  Thus optimal
+fixed-child composition is common in this finite range but is neither
+orientation-blind nor universal for saved representatives.  In particular,
+finite success supports searching for bridge structure, while the five exact
+failures rule out a theorem asserting that arbitrary exact representatives
+always compose to the optimal parent.
+
+#### 10.115.4 Nearby-order nesting and the algebraic order-12 composition
+
+**Proved finite facts about fixed witnesses.**  For a fixed child `A`, exact
+optimization of one new row uses
+
+~~~math
+\min_{r\in\{\pm1\}^n}\max_x
+\left(|H_A(x)|+|r\mathbin{\cdot}x|\right).             \tag{10.1411}
+~~~
+
+The first heuristic order-11 cap-17 witness has no exact order-10 deletion
+and its best extension has cap 20.  In contrast, a joint CP-SAT model found an
+order-11 cap-17 witness containing an exact order-10 cap-13 principal child.
+It has exactly one optimal deletion.  Its unique best added row gives the
+order-12 cap-18 witness, and **all 12** vertex deletions of that witness have
+cap 17 and are therefore exact order-11 minimizers.  Thus optimizer nesting is
+real but strongly representative-dependent.  Extending this particular
+order-12 witness by one vertex has exact fixed-child optimum 24, so the simple
+one-row chain does not continue at the same quality.
+
+The order-12 witness contains a stronger `6+6` composition.  After an explicit
+permutation it has blocks
+
+~~~math
+A_{12}=\begin{pmatrix}S&C\\C^{\mathsf T}&T\end{pmatrix},
+~~~
+
+where both diagonal blocks have Boolean cap 5 and the following are exact
+integer identities:
+
+~~~math
+\begin{aligned}
+S^2&=T^2=5I, & SC+CT&=0,\\
+CC^{\mathsf T}&=6I+2S,
+&C^{\mathsf T}C&=6I-2T.                               \tag{10.1412}
+\end{aligned}
+~~~
+
+Consequently
+
+~~~math
+(A_{12}^2-11I)^2=20I,
+\qquad
+\chi_{A_{12}}(lambda)
+=(lambda^4-22lambda^2+101)^3.                          \tag{10.1413}
+~~~
+
+The bridge singular values are
+`sqrt(6+2sqrt(5))` and `sqrt(6-2sqrt(5))`, each three times.  These claims are
+**proved for the explicit witness** by exact integer matrix multiplication
+and exhaustive energy evaluation in `algebraic_m12_structure.py`.  They
+identify a conference/anti-intertwining bridge mechanism; they do not yet
+give a scalable family or an asymptotic cap theorem.
+
+#### 10.115.5 A rigorous random-bridge lemma and its finite obstruction
+
+Let `C` be an iid random sign bridge with `K=mn` entries and let `S_K` be a sum
+of `K` independent signs.  For fixed children and relative matrix sign
+`sigma`, a union bound applied to (10.1410) gives the **proved existence
+criterion**
+
+~~~math
+\sum_{x,y}
+\Pr\!\left(
+ |S_K|+|H_A(x)+sigma H_B(y)|>T
+\right)<1.                                             \tag{10.1414}
+~~~
+
+If (10.1414) holds, some deterministic bridge has parent cap at most `T`.
+`random_bridge_union_bound.py` evaluates the left side exactly as an integer
+over denominator `2^K`, after aggregating the child energy histograms.
+
+**Proved finite negative evidence.**  This raw union bound is far from the
+optimized bridges: for the saved `5+6` children it first certifies cap 23,
+whereas exact bridge optimization gives 17; at the ideal allowed cap 13 its
+union bound is 56.5664... .  Thus independence plus an ordinary union bound
+does not explain the finite mechanism.  A useful entropy-profile theorem
+would have to exploit event dependence, algebraic bridge structure, or much
+stronger control of high-energy level counts.  This is a concrete new lemma
+target, not a claim that generic energy-tail control is already easier than
+the original problem.
+
+#### 10.115.6 Coding-theoretic mapping audit
+
+Let `C_n` be the binary cut/cocycle code of `K_n` in its `N=binom(n,2)` edge
+coordinates and augment it by its complement:
+
+~~~math
+C_n^{\pm}=C_n\cup(\mathbf1+C_n).
+~~~
+
+For the edge word `a` of a signing,
+
+~~~math
+\max_x|H_a(x)|
+=N-2d(a,C_n^{\pm}),
+\qquad
+M_n=N-2\rho(C_n^{\pm}),                                \tag{10.1415}
+~~~
+
+where `rho` is covering radius.  This exact mapping is **proved** by writing
+the energy as agreements minus disagreements and maximizing over both signs.
+It distinguishes the project from ordinary one-sided frustration, which uses
+distance only to `C_n`.
+
+[Solé--Zaslavsky's signed-graph coding paper](https://people.math.binghamton.edu/zaslav/Tpapers/cas.sidma1994.pdf)
+identifies switching classes with cocycle-code cosets and one-sided maximum
+frustration with covering radius.  [Graham--Sloane's normal-code paper](https://neilsloane.com/doc/Me114.pdf)
+proves covering-radius bounds for amalgamated direct sums, and
+[Bowlin's bipartite frustration paper](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v19i4p10)
+studies the rectangular Gale--Berlekamp case.  After checking coordinates,
+none removes a present obligation: the `K_(m+n)` cut code couples its two
+internal words to the `mn` cross coordinates, so it is not the direct or
+amalgamated sum used by the normal-code theorem; the bipartite results are
+one-sided and do not impose the state-dependent budget (10.1410).
+
+#### 10.115.7 Updated frontier and current target
+
+**Primary progress has occurred:** two new solver-certified exact values were
+obtained, and a genuine exact `6+6` algebraic composition was found.  The
+asymptotic interval is unchanged:
+
+~~~math
+0.336493364431\ldots
+\le\liminf\frac{M_n}{n^{3/2}}
+\le\limsup\frac{M_n}{n^{3/2}}
+\le\frac12.                                             \tag{10.1416}
+~~~
+
+The leading agent-authored target is to decide whether (10.1412) belongs to a
+scalable conference/orthogonal-design closure whose **Boolean cap** satisfies
+(10.1406)--(10.1407).  The exact sufficient missing result is a construction
+for comparable growing orders, or a geometric landing family, with summable
+`b`-defect.  Spectral closure alone is insufficient because
+`M(A)<=n||A||/2` loses the energy-level information visible in the exact cap.
+
+Falsification criteria are explicit: the order-12 identities may be sporadic;
+every scalable realization may retain `Theta(N)` defect in `b`; or the
+identities may control only spectrum while the Boolean maximum has a
+leading-order loss.  The raw random-bridge theorem is retained as a secondary
+energy-entropy route, exact/nested computation continues to test the
+algebraic hypothesis, and genuine nonconvergence remains a standing but
+currently unsupported alternative.  The selected-prior and common-active-face
+routes remain inactive.

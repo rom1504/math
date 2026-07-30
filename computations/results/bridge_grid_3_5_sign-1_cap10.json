@@ -1,0 +1,408 @@
+{
+  "bridge": [
+    [
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "child_a": "computations/results/exact_m3.json",
+  "child_b": "computations/results/exact_m5.json",
+  "child_profiles": [
+    {
+      "M": 3,
+      "P": 3,
+      "Q": 1,
+      "bottom_spins": [
+        [
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "eigenvalues": [
+        -1.0000000000000004,
+        -1.0,
+        1.9999999999999998
+      ],
+      "energy_histogram": {
+        "-1": 3,
+        "3": 1
+      },
+      "projective_bottom_count": 3,
+      "projective_top_count": 1,
+      "row_sums": [
+        2,
+        2,
+        2
+      ],
+      "top_spins": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "M": 4,
+      "P": 4,
+      "Q": 4,
+      "bottom_spins": [
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "eigenvalues": [
+        -2.23606797749979,
+        -2.2360679774997894,
+        3.469446951953614e-16,
+        2.2360679774997894,
+        2.23606797749979
+      ],
+      "energy_histogram": {
+        "-4": 5,
+        "0": 6,
+        "4": 5
+      },
+      "projective_bottom_count": 5,
+      "projective_top_count": 5,
+      "row_sums": [
+        4,
+        2,
+        0,
+        2,
+        0
+      ],
+      "top_spins": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ]
+    }
+  ],
+  "classification": "solver-certified computation; no standalone proof object",
+  "decision_cap": 10,
+  "mode": "decision",
+  "orders": [
+    3,
+    5
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "d2530e8d28c6b76f19ec0e9f699af9120e3dccda068cd093463d8c5efc617ae3",
+  "parent_profile": {
+    "M": 10,
+    "P": 10,
+    "Q": 10,
+    "bottom_spins": [
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -3.605551275463988,
+      -2.236067977499791,
+      -2.23606797749979,
+      -2.2360679774997894,
+      2.2360679774997894,
+      2.23606797749979,
+      2.23606797749979,
+      3.605551275463989
+    ],
+    "energy_histogram": {
+      "-10": 4,
+      "-2": 16,
+      "-4": 16,
+      "-6": 12,
+      "-8": 10,
+      "0": 12,
+      "10": 4,
+      "2": 16,
+      "4": 16,
+      "6": 12,
+      "8": 10
+    },
+    "projective_bottom_count": 4,
+    "projective_top_count": 4,
+    "row_sums": [
+      3,
+      3,
+      5,
+      -3,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-bridge-cpsat-v1",
+  "sign_b": -1,
+  "solver": {
+    "best_bound": 0.0,
+    "branches": 103,
+    "conflicts": 40,
+    "elapsed_seconds": 0.015839099884033203,
+    "objective": 0.0,
+    "ortools_version": "9.15.6755",
+    "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 14\nbooleans: 14\nconflicts: 40\nbranches: 103\npropagations: 152\ninteger_propagations: 106\nrestarts: 0\nlp_iterations: 0\nwalltime: 0.0154019\nusertime: 0.015402\ndeterministic_time: 0.00112942\ngap_integral: 0\nsolution_fingerprint: 0xbfeb55038bc25670\n",
+    "status": "OPTIMAL",
+    "time_limit_seconds": 300.0,
+    "wall_time_seconds": 0.015401855,
+    "workers": 4
+  },
+  "two_thirds_power": {
+    "child_sum": 4.599925922841651,
+    "defect": 0.04166291077112749,
+    "parent": 4.641588833612778
+  }
+}

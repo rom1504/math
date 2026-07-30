@@ -1,0 +1,164 @@
+{
+  "matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+  "model": {
+    "internal_binary_variables": 6,
+    "projective_spin_constraints": 32,
+    "total_integer_variables": 7,
+    "total_linear_rows": 37
+  },
+  "n": 5,
+  "normalization": "M_n=max_x |sum_{i<j} a_ij x_i x_j|",
+  "profile": {
+    "M": 4,
+    "P": 4,
+    "Q": 4,
+    "bottom_spins": [
+      [
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    ],
+    "eigenvalues": [
+      -2.23606797749979,
+      -2.2360679774997894,
+      3.469446951953614e-16,
+      2.2360679774997894,
+      2.23606797749979
+    ],
+    "energy_histogram": {
+      "-4": 5,
+      "0": 6,
+      "4": 5
+    },
+    "projective_bottom_count": 5,
+    "projective_top_count": 5,
+    "row_sums": [
+      4,
+      2,
+      0,
+      2,
+      0
+    ],
+    "top_spins": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "schema": "quadratic-signing-exact-milp-v1",
+  "solver": {
+    "dual_bound": 4.0,
+    "elapsed_seconds": 0.0038793087005615234,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "node_count": 1,
+    "node_limit": null,
+    "objective": 4.0,
+    "python_version": "3.9.2",
+    "relative_gap": 0.0,
+    "scipy_version": "1.13.1",
+    "status": 0,
+    "success": true,
+    "time_limit_seconds": null
+  },
+  "symmetry": "basic"
+}

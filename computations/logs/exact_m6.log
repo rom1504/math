@@ -1,0 +1,42 @@
+model n=6 internal_binary=10 projective_spins=32 linear_rows=71 symmetry=basic
+Running HiGHS 1.2.0 [date: 2021-07-09, git hash: n/a]
+Copyright (c) 2022 ERGO-Code under MIT licence terms
+Presolving model
+70 rows, 10 cols, 665 nonzeros
+38 rows, 10 cols, 345 nonzeros
+38 rows, 10 cols, 345 nonzeros
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   38 rows
+   10 cols (9 binary, 1 integer, 0 implied int., 0 continuous)
+   345 nonzeros
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work
+     Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+         0       0         0   0.00%   0               inf                  inf        0      0      0         0     0.0s
+ T       0       0         0   0.00%   0               5                100.00%        0      0      0         6     0.0s
+
+Solving report
+  Status            Optimal
+  Primal bound      5
+  Dual bound        5
+  Gap               0%
+  Solution status   feasible
+                    5 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            0.00 (total)
+                    0.00 (presolve)
+                    0.00 (postsolve)
+  Nodes             1
+  LP iterations     6 (total)
+                    0 (strong br.)
+                    0 (separation)
+                    0 (heuristics)
+status=0 success=True message=Optimization terminated successfully. (HiGHS Status 7: Optimal)
+fun=5.0 dual=5.0 gap=0.0 nodes=1 elapsed=0.004841s
+verified profile M=5 P=5 Q=5 sha256=ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968
+wrote computations/results/exact_m6.json

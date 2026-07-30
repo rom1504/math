@@ -1,0 +1,918 @@
+{
+  "classification": "exact exhaustive statistics for the saved witnesses; not an enumeration of all minimizers",
+  "known_exact_M": {
+    "10": 13,
+    "3": 3,
+    "4": 4,
+    "5": 4,
+    "6": 5,
+    "7": 9,
+    "8": 10,
+    "9": 12
+  },
+  "schema": "quadratic-signing-family-analysis-v1",
+  "two_thirds_composition_defects": [
+    {
+      "defect": -1.2361499078909421,
+      "defect_over_total": -0.20602498464849037,
+      "m": 3,
+      "n": 3,
+      "total": 6
+    },
+    {
+      "defect": -0.273177211919426,
+      "defect_over_total": -0.03902531598848943,
+      "m": 3,
+      "n": 4,
+      "total": 7
+    },
+    {
+      "defect": 0.04166291077112794,
+      "defect_over_total": 0.005207863846390992,
+      "m": 3,
+      "n": 5,
+      "total": 8
+    },
+    {
+      "defect": -0.39809536596671435,
+      "defect_over_total": -0.049761920745839294,
+      "m": 4,
+      "n": 4,
+      "total": 8
+    },
+    {
+      "defect": 0.23738122715302268,
+      "defect_over_total": 0.02637569190589141,
+      "m": 3,
+      "n": 6,
+      "total": 9
+    },
+    {
+      "defect": 0.20179858883830004,
+      "defect_over_total": 0.02242206542647778,
+      "m": 4,
+      "n": 5,
+      "total": 9
+    },
+    {
+      "defect": -0.8780577202952573,
+      "defect_over_total": -0.08780577202952573,
+      "m": 3,
+      "n": 7,
+      "total": 10
+    },
+    {
+      "defect": 0.08491497567625883,
+      "defect_over_total": 0.008491497567625883,
+      "m": 4,
+      "n": 6,
+      "total": 10
+    },
+    {
+      "defect": 0.4890906140993785,
+      "defect_over_total": 0.04890906140993785,
+      "m": 5,
+      "n": 5,
+      "total": 10
+    }
+  ],
+  "witnesses": [
+    {
+      "M": 3,
+      "P": 3,
+      "Q": 1,
+      "absolute_projective_ground_count": 1,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 6,
+      "eigenvalues": [
+        -1.0000000000000004,
+        -1.0,
+        1.9999999999999998
+      ],
+      "n": 3,
+      "normalized_M": 0.5773502691896257,
+      "operator_norm": 1.9999999999999998,
+      "partitions": {},
+      "restrictions": {},
+      "row_square_sum": 12,
+      "row_sums_sorted": [
+        2,
+        2,
+        2
+      ],
+      "source": "computations/results/exact_m3.json",
+      "trace_A4": 18
+    },
+    {
+      "M": 4,
+      "P": 4,
+      "Q": 4,
+      "absolute_projective_ground_count": 2,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 16,
+      "eigenvalues": [
+        -2.2360679774997894,
+        -0.9999999999999998,
+        0.9999999999999996,
+        2.2360679774997894
+      ],
+      "n": 4,
+      "normalized_M": 0.5,
+      "operator_norm": 2.2360679774997894,
+      "partitions": {},
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 4
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 4
+        }
+      },
+      "row_square_sum": 20,
+      "row_sums_sorted": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "source": "computations/results/exact_m4.json",
+      "trace_A4": 52
+    },
+    {
+      "M": 4,
+      "P": 4,
+      "Q": 4,
+      "absolute_projective_ground_count": 10,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 20,
+      "eigenvalues": [
+        -2.23606797749979,
+        -2.2360679774997894,
+        3.469446951953614e-16,
+        2.2360679774997894,
+        2.23606797749979
+      ],
+      "n": 5,
+      "normalized_M": 0.35777087639996635,
+      "operator_norm": 2.23606797749979,
+      "partitions": {},
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 10
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 10
+        },
+        "4": {
+          "histogram": {
+            "4": 5
+          },
+          "known_M": 4,
+          "maximum": 4,
+          "minimum": 4,
+          "optimal_restriction_count": 5
+        }
+      },
+      "row_square_sum": 24,
+      "row_sums_sorted": [
+        0,
+        0,
+        2,
+        2,
+        4
+      ],
+      "source": "computations/results/exact_m5.json",
+      "trace_A4": 100
+    },
+    {
+      "M": 5,
+      "P": 5,
+      "Q": 5,
+      "absolute_projective_ground_count": 12,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 0,
+      "eigenvalues": [
+        -2.23606797749979,
+        -2.23606797749979,
+        -2.236067977499789,
+        2.23606797749979,
+        2.23606797749979,
+        2.23606797749979
+      ],
+      "n": 6,
+      "normalized_M": 0.34020690871988585,
+      "operator_norm": 2.23606797749979,
+      "partitions": {
+        "3+3": {
+          "child_cap_pairs": {
+            "3,3": 20
+          },
+          "minimum_cap_sum": 6,
+          "minimum_two_thirds_sum": 4.160167646103808,
+          "partition_count": 20,
+          "tight_optimal_child_partition_count": 20
+        }
+      },
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 20
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 20
+        },
+        "4": {
+          "histogram": {
+            "4": 15
+          },
+          "known_M": 4,
+          "maximum": 4,
+          "minimum": 4,
+          "optimal_restriction_count": 15
+        },
+        "5": {
+          "histogram": {
+            "4": 6
+          },
+          "known_M": 4,
+          "maximum": 4,
+          "minimum": 4,
+          "optimal_restriction_count": 6
+        }
+      },
+      "row_square_sum": 30,
+      "row_sums_sorted": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "source": "computations/results/exact_m6.json",
+      "trace_A4": 150
+    },
+    {
+      "M": 9,
+      "P": 7,
+      "Q": 9,
+      "absolute_projective_ground_count": 4,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 90,
+      "eigenvalues": [
+        -3.561552812808832,
+        -2.23606797749979,
+        -2.236067977499789,
+        0.5615528128088312,
+        2.236067977499789,
+        2.2360679774997902,
+        2.9999999999999996
+      ],
+      "n": 7,
+      "normalized_M": 0.48595432244043496,
+      "operator_norm": 3.561552812808832,
+      "partitions": {
+        "3+4": {
+          "child_cap_pairs": {
+            "3,4": 30,
+            "3,6": 5
+          },
+          "minimum_cap_sum": 7,
+          "minimum_two_thirds_sum": 4.599925922841651,
+          "partition_count": 35,
+          "tight_optimal_child_partition_count": 30
+        }
+      },
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 35
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 35
+        },
+        "4": {
+          "histogram": {
+            "4": 30,
+            "6": 5
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 30
+        },
+        "5": {
+          "histogram": {
+            "4": 9,
+            "6": 9,
+            "8": 3
+          },
+          "known_M": 4,
+          "maximum": 8,
+          "minimum": 4,
+          "optimal_restriction_count": 9
+        },
+        "6": {
+          "histogram": {
+            "5": 1,
+            "7": 3,
+            "9": 3
+          },
+          "known_M": 5,
+          "maximum": 9,
+          "minimum": 5,
+          "optimal_restriction_count": 1
+        }
+      },
+      "row_square_sum": 52,
+      "row_sums_sorted": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        6
+      ],
+      "source": "computations/results/exact_m7.json",
+      "trace_A4": 342
+    },
+    {
+      "M": 10,
+      "P": 10,
+      "Q": 10,
+      "absolute_projective_ground_count": 8,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 96,
+      "eigenvalues": [
+        -3.60555127546399,
+        -2.23606797749979,
+        -2.2360679774997894,
+        -2.236067977499788,
+        2.236067977499787,
+        2.2360679774997894,
+        2.23606797749979,
+        3.60555127546399
+      ],
+      "n": 8,
+      "normalized_M": 0.44194173824159216,
+      "operator_norm": 3.60555127546399,
+      "partitions": {
+        "3+5": {
+          "child_cap_pairs": {
+            "3,4": 24,
+            "3,6": 24,
+            "3,8": 8
+          },
+          "minimum_cap_sum": 7,
+          "minimum_two_thirds_sum": 4.599925922841651,
+          "partition_count": 56,
+          "tight_optimal_child_partition_count": 24
+        },
+        "4+4": {
+          "child_cap_pairs": {
+            "4,4": 60,
+            "6,6": 10
+          },
+          "minimum_cap_sum": 8,
+          "minimum_two_thirds_sum": 5.039684199579493,
+          "partition_count": 70,
+          "tight_optimal_child_partition_count": 60
+        }
+      },
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 56
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 56
+        },
+        "4": {
+          "histogram": {
+            "4": 60,
+            "6": 10
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 60
+        },
+        "5": {
+          "histogram": {
+            "4": 24,
+            "6": 24,
+            "8": 8
+          },
+          "known_M": 4,
+          "maximum": 8,
+          "minimum": 4,
+          "optimal_restriction_count": 24
+        },
+        "6": {
+          "histogram": {
+            "5": 4,
+            "7": 12,
+            "9": 12
+          },
+          "known_M": 5,
+          "maximum": 9,
+          "minimum": 5,
+          "optimal_restriction_count": 4
+        },
+        "7": {
+          "histogram": {
+            "9": 8
+          },
+          "known_M": 9,
+          "maximum": 9,
+          "minimum": 9,
+          "optimal_restriction_count": 8
+        }
+      },
+      "row_square_sum": 80,
+      "row_sums_sorted": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        7
+      ],
+      "source": "computations/results/exact_m8.json",
+      "trace_A4": 488
+    },
+    {
+      "M": 12,
+      "P": 12,
+      "Q": 12,
+      "absolute_projective_ground_count": 21,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 200,
+      "eigenvalues": [
+        -3.828427124746191,
+        -3.5756269364778017,
+        -2.6263439881386765,
+        -1.972964054910857,
+        0.8500531352776101,
+        1.8284271247461907,
+        2.5708470578578475,
+        3.0,
+        3.7540347863918764
+      ],
+      "n": 9,
+      "normalized_M": 0.4444444444444444,
+      "operator_norm": 3.828427124746191,
+      "partitions": {
+        "3+6": {
+          "child_cap_pairs": {
+            "3,11": 1,
+            "3,5": 5,
+            "3,7": 29,
+            "3,9": 49
+          },
+          "minimum_cap_sum": 8,
+          "minimum_two_thirds_sum": 5.00410156126477,
+          "partition_count": 84,
+          "tight_optimal_child_partition_count": 5
+        },
+        "4+5": {
+          "child_cap_pairs": {
+            "4,4": 34,
+            "4,6": 52,
+            "4,8": 18,
+            "6,4": 6,
+            "6,6": 10,
+            "6,8": 6
+          },
+          "minimum_cap_sum": 8,
+          "minimum_two_thirds_sum": 5.039684199579493,
+          "partition_count": 126,
+          "tight_optimal_child_partition_count": 34
+        }
+      },
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 84
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 84
+        },
+        "4": {
+          "histogram": {
+            "4": 104,
+            "6": 22
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 104
+        },
+        "5": {
+          "histogram": {
+            "4": 40,
+            "6": 62,
+            "8": 24
+          },
+          "known_M": 4,
+          "maximum": 8,
+          "minimum": 4,
+          "optimal_restriction_count": 40
+        },
+        "6": {
+          "histogram": {
+            "11": 1,
+            "5": 5,
+            "7": 29,
+            "9": 49
+          },
+          "known_M": 5,
+          "maximum": 11,
+          "minimum": 5,
+          "optimal_restriction_count": 5
+        },
+        "7": {
+          "histogram": {
+            "11": 21,
+            "9": 15
+          },
+          "known_M": 9,
+          "maximum": 11,
+          "minimum": 9,
+          "optimal_restriction_count": 15
+        },
+        "8": {
+          "histogram": {
+            "12": 9
+          },
+          "known_M": 10,
+          "maximum": 12,
+          "minimum": 12,
+          "optimal_restriction_count": 0
+        }
+      },
+      "row_square_sum": 80,
+      "row_sums_sorted": [
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        8
+      ],
+      "source": "computations/results/exact_m9.json",
+      "trace_A4": 776
+    },
+    {
+      "M": 13,
+      "P": 13,
+      "Q": 13,
+      "absolute_projective_ground_count": 40,
+      "classification": "solver-certified exact optimization",
+      "conference_defect_frobenius_squared": 320,
+      "eigenvalues": [
+        -4.1231056256176615,
+        -3.3870541706621093,
+        -3.387054170662109,
+        -1.5899257985831983,
+        -1.5899257985831967,
+        1.5899257985831994,
+        1.5899257985831998,
+        3.3870541706621076,
+        3.38705417066211,
+        4.123105625617661
+      ],
+      "n": 10,
+      "normalized_M": 0.41109609582188933,
+      "operator_norm": 4.1231056256176615,
+      "partitions": {
+        "3+7": {
+          "child_cap_pairs": {
+            "3,11": 90,
+            "3,9": 30
+          },
+          "minimum_cap_sum": 12,
+          "minimum_two_thirds_sum": 6.4068325339741286,
+          "partition_count": 120,
+          "tight_optimal_child_partition_count": 30
+        },
+        "4+6": {
+          "child_cap_pairs": {
+            "4,5": 10,
+            "4,7": 45,
+            "4,9": 115,
+            "6,11": 10,
+            "6,7": 20,
+            "6,9": 10
+          },
+          "minimum_cap_sum": 9,
+          "minimum_two_thirds_sum": 5.443859838002613,
+          "partition_count": 210,
+          "tight_optimal_child_partition_count": 10
+        },
+        "5+5": {
+          "child_cap_pairs": {
+            "10,10": 2,
+            "4,4": 40,
+            "4,8": 30,
+            "6,6": 130,
+            "8,4": 30,
+            "8,8": 20
+          },
+          "minimum_cap_sum": 8,
+          "minimum_two_thirds_sum": 5.039684199579493,
+          "partition_count": 252,
+          "tight_optimal_child_partition_count": 40
+        }
+      },
+      "restrictions": {
+        "3": {
+          "histogram": {
+            "3": 120
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 120
+        },
+        "4": {
+          "histogram": {
+            "4": 170,
+            "6": 40
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 170
+        },
+        "5": {
+          "histogram": {
+            "10": 2,
+            "4": 70,
+            "6": 130,
+            "8": 50
+          },
+          "known_M": 4,
+          "maximum": 10,
+          "minimum": 4,
+          "optimal_restriction_count": 70
+        },
+        "6": {
+          "histogram": {
+            "11": 10,
+            "5": 10,
+            "7": 65,
+            "9": 125
+          },
+          "known_M": 5,
+          "maximum": 11,
+          "minimum": 5,
+          "optimal_restriction_count": 10
+        },
+        "7": {
+          "histogram": {
+            "11": 90,
+            "9": 30
+          },
+          "known_M": 9,
+          "maximum": 11,
+          "minimum": 9,
+          "optimal_restriction_count": 30
+        },
+        "8": {
+          "histogram": {
+            "12": 45
+          },
+          "known_M": 10,
+          "maximum": 12,
+          "minimum": 12,
+          "optimal_restriction_count": 0
+        },
+        "9": {
+          "histogram": {
+            "12": 10
+          },
+          "known_M": 12,
+          "maximum": 12,
+          "minimum": 12,
+          "optimal_restriction_count": 10
+        }
+      },
+      "row_square_sum": 106,
+      "row_sums_sorted": [
+        -3,
+        -3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        9
+      ],
+      "source": "computations/results/exact_m10.json",
+      "trace_A4": 1130
+    },
+    {
+      "M": 17,
+      "P": 17,
+      "Q": 15,
+      "absolute_projective_ground_count": 24,
+      "classification": "heuristic upper bound; exhaustive spin evaluation only",
+      "conference_defect_frobenius_squared": 526,
+      "eigenvalues": [
+        -3.9949370200498686,
+        -3.74675587868906,
+        -3.0000000000000018,
+        -3.0000000000000004,
+        -1.6293188046993627,
+        -0.23606797749978972,
+        0.6807884089923449,
+        2.2579765187928853,
+        3.8738550983203317,
+        4.236067977499787,
+        4.558391677332727
+      ],
+      "n": 11,
+      "normalized_M": 0.4659720779838165,
+      "operator_norm": 4.558391677332727,
+      "partitions": {
+        "3+8": {
+          "child_cap_pairs": {
+            "3,10": 2,
+            "3,12": 66,
+            "3,14": 94,
+            "3,16": 3
+          },
+          "minimum_cap_sum": 13,
+          "minimum_two_thirds_sum": 6.7216726566646825,
+          "partition_count": 165,
+          "tight_optimal_child_partition_count": 2
+        },
+        "4+7": {
+          "child_cap_pairs": {
+            "4,11": 160,
+            "4,13": 40,
+            "4,9": 62,
+            "6,11": 48,
+            "6,13": 8,
+            "6,9": 12
+          },
+          "minimum_cap_sum": 13,
+          "minimum_two_thirds_sum": 6.846590810711971,
+          "partition_count": 330,
+          "tight_optimal_child_partition_count": 62
+        },
+        "5+6": {
+          "child_cap_pairs": {
+            "10,5": 1,
+            "10,7": 1,
+            "10,9": 3,
+            "4,11": 18,
+            "4,13": 1,
+            "4,5": 4,
+            "4,7": 28,
+            "4,9": 70,
+            "6,11": 21,
+            "6,5": 6,
+            "6,7": 56,
+            "6,9": 138,
+            "8,11": 11,
+            "8,5": 4,
+            "8,7": 34,
+            "8,9": 66
+          },
+          "minimum_cap_sum": 9,
+          "minimum_two_thirds_sum": 5.443859838002613,
+          "partition_count": 462,
+          "tight_optimal_child_partition_count": 4
+        }
+      },
+      "restrictions": {
+        "10": {
+          "histogram": {
+            "17": 11
+          },
+          "known_M": 13,
+          "maximum": 17,
+          "minimum": 17,
+          "optimal_restriction_count": 0
+        },
+        "3": {
+          "histogram": {
+            "3": 165
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 165
+        },
+        "4": {
+          "histogram": {
+            "4": 262,
+            "6": 68
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 262
+        },
+        "5": {
+          "histogram": {
+            "10": 5,
+            "4": 121,
+            "6": 221,
+            "8": 115
+          },
+          "known_M": 4,
+          "maximum": 10,
+          "minimum": 4,
+          "optimal_restriction_count": 121
+        },
+        "6": {
+          "histogram": {
+            "11": 50,
+            "13": 1,
+            "5": 15,
+            "7": 119,
+            "9": 277
+          },
+          "known_M": 5,
+          "maximum": 13,
+          "minimum": 5,
+          "optimal_restriction_count": 15
+        },
+        "7": {
+          "histogram": {
+            "11": 208,
+            "13": 48,
+            "9": 74
+          },
+          "known_M": 9,
+          "maximum": 13,
+          "minimum": 9,
+          "optimal_restriction_count": 74
+        },
+        "8": {
+          "histogram": {
+            "10": 2,
+            "12": 66,
+            "14": 94,
+            "16": 3
+          },
+          "known_M": 10,
+          "maximum": 16,
+          "minimum": 10,
+          "optimal_restriction_count": 2
+        },
+        "9": {
+          "histogram": {
+            "14": 28,
+            "16": 27
+          },
+          "known_M": 12,
+          "maximum": 16,
+          "minimum": 14,
+          "optimal_restriction_count": 0
+        }
+      },
+      "row_square_sum": 68,
+      "row_sums_sorted": [
+        -4,
+        -4,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        4
+      ],
+      "source": "computations/results/heuristic_m11.json",
+      "trace_A4": 1626
+    }
+  ]
+}
