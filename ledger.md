@@ -38208,3 +38208,92 @@ failure away from conference orders, or a proof that bridge selection is
 equivalent to the original minimization would falsify the present lead.
 Selected-prior and common-active-face remain inactive; genuine
 nonconvergence remains a standing but unsupported alternative.
+
+### 10.117 Third computational--composition checkpoint: exact orders 13 and 14
+
+#### 10.117.1 Symmetry-complete cap-18 decision at order 13
+
+**Solver-certified exact result.** The revised CP-SAT program
+`exact_mn_cpsat.py` gauges all edges incident with vertex 0 to `+1`. Let `G`
+be the graph of negative edges on the other 12 vertices. Global negation of
+the signing followed by re-gauging vertex 0 replaces `G` by its complement.
+Consequently one may choose the complementary representative with at most 33
+negative edges. Its minimum degree is at most 5; permutation symmetry moves a
+minimum-degree vertex to vertex 1. The six disjoint cases
+
+~~~math
+\deg_G(1)=0,1,2,3,4,5                                      \tag{10.1427}
+~~~
+
+are therefore exhaustive. Sorting degrees separately inside the positive and
+negative neighborhoods of vertex 1 removes only residual permutation symmetry.
+
+CP-SAT returned `INFEASIBLE` for cap 18 in every case. Solver wall times for
+degrees 0 through 5 were respectively
+
+~~~text
+0.6385, 0.7716, 1.3468, 20.0948, 97.5377, 98.9618 seconds.
+~~~
+
+The six decision JSON files and logs are preserved, and
+`certify_m13_m14_degree_split.py` checks their scope, statuses, exhaustive
+case set, and both explicit upper witnesses. CP-SAT supplies no standalone
+proof object, so this is classified as **solver-certified**, not as a formal
+proof certificate. Since order-13 energies are even and the cap-20 witness of
+Section 10.116.3 is exhaustively evaluated,
+
+~~~math
+M_{13}=20.                                                   \tag{10.1428}
+~~~
+
+Monotonicity gives `M_14>=20`; every order-14 energy is odd because there are
+91 edges. The exhaustively evaluated conference completion has cap 21, so
+
+~~~math
+M_{14}=21.                                                   \tag{10.1429}
+~~~
+
+These are the first exact values beyond the earlier range ending at order 12.
+They satisfy a primary campaign success criterion but do not improve the
+rigorous asymptotic interval.
+
+#### 10.117.2 A deterministic transported `7+7` bridge
+
+The program `transport_conference_7_7.py` exhaustively finds signed-permutation
+equivalences from the two cap-9 blocks of the conference split to the saved
+order-7 exact representative `E`. One block is equivalent to `E` and the other
+to `-E`. Transporting the bridge gives an explicit signing
+
+~~~math
+\begin{pmatrix}E&C\\C^{\mathsf T}&-E\end{pmatrix}
+\quad\text{of cap }21.                                      \tag{10.1430}
+~~~
+
+This removes any dependence on the bridge optimizer for that example. Its
+4096 state pairs have 156 active constraints and internal/cross Pearson
+correlation `-0.290194...`; an iid random bridge at the same cap has expected
+violation count `156.4397...`. These are **proved transport identities and
+exhaustive finite measurements**. They show that the conference bridge encodes
+substantial state-dependent anticorrelation, but not how to construct such a
+bridge uniformly at growing arbitrary orders.
+
+A conference-seeded local search at order 14, using 1000 restarts and radius-5
+perturbations, did not improve cap 21. This is only **heuristic negative
+evidence** and is not part of either exact-value proof.
+
+#### 10.117.3 Updated frontier
+
+The exact finite frontier is now
+
+~~~math
+M_{11}=17,\qquad M_{12}=18,\qquad M_{13}=20,\qquad M_{14}=21. \tag{10.1431}
+~~~
+
+The asymptotic frontier remains (10.1416). The campaign has delivered a new
+exact value beyond the previous range, while its principal mathematical target
+remains the existential state-dependent bridge theorem (10.1426). The order-14
+conference decomposition is the sharpest structured test case: it now has both
+an optimizer-independent transport description and unusually favorable defect,
+but no scalable selection lemma. The next composition work must isolate a
+deterministic invariant that predicts the anticorrelation in (10.1430), rather
+than merely re-solving the original parent optimization.

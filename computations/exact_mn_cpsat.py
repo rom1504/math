@@ -30,7 +30,7 @@ from ortools.sat.python import cp_model
 from exact_mn_milp import exact_profile, stable_matrix_hash
 
 
-def build_model(n: int, decision_cap: int | None) -> tuple[
+def build_model(n: int, decision_cap: int | None, root_degree: int | None = None) -> tuple[
     cp_model.CpModel,
     tuple[tuple[int, int], ...],
     list[cp_model.IntVar],
@@ -42,6 +42,10 @@ def build_model(n: int, decision_cap: int | None) -> tuple[
     edges = tuple(combinations(range(1, n), 2))
     edge_index = {edge: k for k, edge in enumerate(edges)}
     z = [model.new_bool_var(f"z_{i}_{j}") for i, j in edges]
+
+    # The same complement symmetry permits choosing the rooted internal graph
+    # with no more than half of its possible negative edges.
+    model.add(sum(z) <= len(z) // 2)
 
     # Symmetry-complete rooted constraints, identical to the MILP backend.
     model.add(z[edge_index[(1, 2)]] == 0)
@@ -58,6 +62,17 @@ def build_model(n: int, decision_cap: int | None) -> tuple[
             incident_i.append(z[edge_index[edge]])
         negative_degrees[i] = sum(incident_i)
         model.add(negative_degrees[1] <= negative_degrees[i])
+
+    # Complementing every rooted internal edge is induced by globally
+    # negating the signing and re-gauging the root.  For a graph on n-1
+    # vertices, either it or its complement has minimum degree at most
+    # floor((n-2)/2).  Choose that representative.  Optional equality permits
+    # an exact disjoint case split across the remaining root degrees.
+    model.add(negative_degrees[1] <= (n - 2) // 2)
+    if root_degree is not None:
+        if not 0 <= root_degree <= (n - 2) // 2:
+            raise ValueError("root degree is outside the symmetry-complete range")
+        model.add(negative_degrees[1] == root_degree)
 
     # The vertices after 1 have already been split into its positive and
     # negative neighbors.  Permutations inside either group remain free, so
@@ -111,12 +126,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("n", type=int)
     parser.add_argument("--decision-cap", type=int)
+    parser.add_argument("--root-degree", type=int)
     parser.add_argument("--time-limit", type=float, default=1800.0)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
-    model, edges, variables, cap = build_model(args.n, args.decision_cap)
+    model, edges, variables, cap = build_model(
+        args.n, args.decision_cap, args.root_degree
+    )
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = args.time_limit
     solver.parameters.num_search_workers = args.workers
@@ -144,6 +162,7 @@ def main() -> int:
         "model": {
             "root_gauge": True,
             "basic_permutation_and_complement_symmetry": True,
+            "root_negative_degree_case": args.root_degree,
             "internal_binary_variables": len(edges),
             "projective_spin_constraints": 2 * (1 << (args.n - 1)),
         },

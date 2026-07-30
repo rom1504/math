@@ -1,0 +1,29 @@
+{
+  "classification": "solver-certified computation; no standalone proof object",
+  "decision_cap": 18,
+  "mode": "decision",
+  "model": {
+    "basic_permutation_and_complement_symmetry": true,
+    "internal_binary_variables": 66,
+    "projective_spin_constraints": 8192,
+    "root_gauge": true,
+    "root_negative_degree_case": 0
+  },
+  "n": 13,
+  "normalization": "M_n=max_x |sum_{i<j} a_ij x_i x_j|",
+  "schema": "quadratic-signing-exact-cpsat-v1",
+  "solver": {
+    "best_bound": 0.0,
+    "branches": 0,
+    "conflicts": 0,
+    "elapsed_seconds": 0.6391167640686035,
+    "objective": 0.0,
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 0\nbooleans: 0\nconflicts: 0\nbranches: 0\npropagations: 0\ninteger_propagations: 0\nrestarts: 0\nlp_iterations: 0\nwalltime: 0.6385\nusertime: 0.6385\ndeterministic_time: 0\ngap_integral: 0\n",
+    "status": "INFEASIBLE",
+    "time_limit_seconds": 7200.0,
+    "wall_time_seconds": 0.638499557,
+    "workers": 1
+  }
+}

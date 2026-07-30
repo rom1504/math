@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: the second substantial computational--composition checkpoint
-(2026-07-30), including certified intervals through order 14. Status:
+Evidence cutoff: the third substantial computational--composition checkpoint
+(2026-07-30), including exact certified values through order 14. Status:
 **computational--composition campaign active**. This is a new sustained
 campaign architecture, not a return to the prior short-wave sequence.
 
@@ -35,13 +35,20 @@ b_{m+n}\le b_m+b_n+e(m+n),
 \qquad \sum_{j\ge1}\frac{e(2^jk)}{2^jk}\longrightarrow0.
 ~~~
 
-Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge.  The
-new cap-20 `6+7` bridge has `2/3`-defect `0.117296...`; its conference
+Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge. The
+cap-20 `6+7` bridge has `2/3`-defect `0.117296...`; its conference
 completion has 624 exact `7+7` child partitions and defect `-1.041835...`.
 Across all 27 earlier feasible witnesses, optimized cross terms are negatively
 correlated with aligned internal energy even where an iid bridge has many
 expected violations.  This makes the missing deterministic anticorrelation
 mechanism concrete, but not proved uniformly.
+
+The exact finite frontier has advanced to `M_13=20` and `M_14=21` by an
+exhaustive six-case CP-SAT symmetry split and explicit witnesses. The conference
+`7+7` bridge transports deterministically to the saved blocks `E,-E`; its 156
+active constraints coexist with about 156.44 expected iid violations. This is
+strong finite evidence for structured anticorrelation, but it does not change
+the preferred theorem or the asymptotic frontier.
 
 Conference doubling/completion is the strongest structured testbed, not the
 leading theorem by itself.  It gives exact or bounded members through parent
@@ -71,8 +78,7 @@ The interval remains
 The newly certified finite information is
 
 ~~~math
-M_{11}=17,\qquad M_{12}=18,\qquad
-18\le M_{13}\le20,\qquad19\le M_{14}\le21.
+M_{11}=17,\qquad M_{12}=18,\qquad M_{13}=20,\qquad M_{14}=21.
 ~~~
 
 They do not change the asymptotic interval. No fixed-density restriction

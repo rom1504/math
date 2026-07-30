@@ -26,6 +26,8 @@ def search(
     kick_size: int,
     seed: int,
     target: int | None,
+    initial_matrix: np.ndarray | None = None,
+    initial_radius: int = 0,
 ) -> tuple[np.ndarray, dict[str, object]]:
     rng = np.random.default_rng(seed)
     spins = projective_spins(n).astype(np.int16)
@@ -37,9 +39,26 @@ def search(
     best_signs: np.ndarray | None = None
     trajectory: list[dict[str, int]] = []
     started = time.time()
+    initial_signs = None
+    if initial_matrix is not None:
+        if initial_matrix.shape != (n, n):
+            raise ValueError("initial matrix has the wrong order")
+        initial_signs = np.asarray(
+            [initial_matrix[i, j] for i, j in edges], dtype=np.int16
+        )
+        if not np.all(np.isin(initial_signs, (-1, 1))):
+            raise ValueError("initial matrix is not a signing")
 
     for restart in range(restarts):
-        signs = rng.choice(np.asarray([-1, 1], dtype=np.int16), size=len(edges))
+        if initial_signs is None:
+            signs = rng.choice(np.asarray([-1, 1], dtype=np.int16), size=len(edges))
+        else:
+            signs = initial_signs.copy()
+            if restart > 0 and initial_radius:
+                chosen = rng.choice(
+                    len(edges), size=min(initial_radius, len(edges)), replace=False
+                )
+                signs[chosen] *= -1
         energies = products @ signs
         local_kicks = 0
         while local_kicks <= kicks:
@@ -94,6 +113,8 @@ def search(
         "kicks_per_restart": kicks,
         "kick_size": kick_size,
         "target": target,
+        "initial_matrix_used": initial_matrix is not None,
+        "initial_radius": initial_radius,
         "elapsed_seconds": time.time() - started,
         "trajectory": trajectory,
         "matrix": [[int(v) for v in row] for row in matrix],
@@ -111,8 +132,23 @@ def main() -> int:
     parser.add_argument("--kick-size", type=int, default=3)
     parser.add_argument("--seed", type=int, default=20260730)
     parser.add_argument("--target", type=int)
+    parser.add_argument("--initial", type=Path)
+    parser.add_argument("--initial-radius", type=int, default=0)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+    initial_matrix = None
+    if args.initial:
+        initial_payload = json.loads(args.initial.read_text())
+        initial_key = (
+            "matrix"
+            if "matrix" in initial_payload
+            else (
+                "parent_matrix"
+                if "parent_matrix" in initial_payload
+                else "conference_matrix"
+            )
+        )
+        initial_matrix = np.asarray(initial_payload[initial_key], dtype=np.int8)
     _, payload = search(
         args.n,
         args.restarts,
@@ -120,6 +156,8 @@ def main() -> int:
         args.kick_size,
         args.seed,
         args.target,
+        initial_matrix,
+        args.initial_radius,
     )
     print(
         f"final n={args.n} cap={payload['profile']['M']} "
