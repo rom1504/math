@@ -30188,3 +30188,423 @@ composition or selector-posterior analogue of the one-deletion anti-resonance
 bound.  Keep terminal distance and direct signed migration as ranked
 alternatives, but do not revive unweighted center moments, generic canonical
 cycles, or single-component harmonic shape constraints.
+
+### 10.95 Wave 42: strict mixed pressure, colored consensus, and a fixed-density reveal wall
+
+This wave replaced the two-input exceptional-center criterion by a sharper
+one-input strict-soft criterion at a smaller tilt, derived the honest convex
+and shared-race formulations of incidence-preserving consensus, and found an
+exact-minimizer counterexample to every uniform pointwise fixed-density
+extension of the one-deletion harmonic bound.  The counterexample is
+exponentially rare under the interpolation, so integrated signed migration
+remains open.  No convergence proof or asymptotic falsifier appears.
+
+#### 10.95.1 Mixed pressure has a direct soft-to-hard conversion, but selector smoothness misses its scale
+
+For one low-row center, retain
+
+```math
+D_S=Q(A[S])-\sigma C_S\ge0,
+\qquad
+M_S=H-D_S,
+\qquad
+H=B_{n,m}+t,
+```
+
+and put
+
+```math
+K(\theta)=\log\mathbb E_{U_m}e^{\theta M_S},
+\qquad
+\pi_\theta(S)=
+\frac{e^{-\theta D_S}}{\sum_Te^{-\theta D_T}}.
+```
+
+The Wave 41 replica term has the exact interpretations
+
+```math
+\boxed{
+\begin{aligned}
+K(2\theta)-2K(\theta)
+&=D_2(\pi_\theta\Vert U_m)
+=\log\left\{\binom nm\sum_S\pi_\theta(S)^2\right\}\\
+&=\int_0^\theta u\,\operatorname{Var}_{\pi_u}(D_S)\,du
++\int_\theta^{2\theta}(2\theta-u)
+\operatorname{Var}_{\pi_u}(D_S)\,du.
+\end{aligned}
+}
+\tag{10.1131}
+```
+
+There is a simpler alternative sufficient criterion.  Since
+`W=e^(theta M_S)` is at most `e^(theta H)` and is below one on `M_S<0`,
+
+```math
+\boxed{
+U_m\{M_S\ge0\}
+\ge\frac{e^{K(\theta)}-1}{e^{\theta H}-1},
+\qquad
+K(2\theta)-2K(\theta)\le\theta H-K(\theta).
+}
+\tag{10.1132}
+```
+
+Thus, for `H>0`, `L_0=n^(3/4-c)`, fixed `0<a<b`, and
+
+```math
+\theta=\frac{bL_0}{H}=\Theta(n^{-3/4-c}),
+\qquad K(\theta)\ge aL_0,
+```
+
+(10.1132) gives
+
+```math
+\boxed{
+U_m\{\delta_S^{\rm abs}(z)\le H\}
+\ge\exp\{-(b-a+o(1))L_0\}.
+}
+\tag{10.1133}
+```
+
+This is **Verified as a one-pressure sufficient criterion** and removes the
+need for a separate replica hypothesis when pressure is proved at this
+smaller tilt.  It does not derive that pressure from the larger-tilt premise
+in (10.1125), and no minimizer theorem proves it.  It is the strict
+soft-to-hard exceptional-center target (10.968) in mixed-deficit notation.
+For `H<0` the event is empty; for `H=0`, positive pressure is impossible and
+zero-deficit atoms require separate orientation handling.
+
+Principal cap does have a new exact selector regularity.  If
+`(epsilon,y)` is an absolute ground of `A[S]`, put
+`ell_i=epsilon y_i(A[S]y)_i` and
+`delta_i=Q(A[S])-Q(A[S\{i}])`.  Monotonicity under adding a vertex and
+single-flip stability give
+
+```math
+\boxed{
+\ell_i\ge0,
+\quad\sum_i\ell_i=Q_S,
+\quad0\le\delta_i\le2\ell_i,
+\quad\sum_i\delta_i\le2Q_S,
+\quad\sum_i\delta_i^2\le4(m-1)Q_S.
+}
+\tag{10.1134}
+```
+
+For a uniform adjacent swap this implies
+
+```math
+\boxed{
+\mathbb E_{S\to T}(Q_S-Q_T)^2\le8\mathbb E Q_S,
+\qquad
+\operatorname{Var}_{U_m}(Q_S)
+\le\frac{4m(n-m)}n\mathbb E Q_S=O(n^{5/2}).
+}
+\tag{10.1135}
+```
+
+Even an optimistic slice entropy conversion from this carre du champ costs
+`theta^2 n q_n=O(n^(1-2c))` at the tilt in (10.1133), exceeding `L_0` by
+`n^(1/4-c)`.  It also controls upper curvature and cannot create positive
+pressure without a boundary value; linearizing that value is the circular
+mean (10.970).
+
+The full mixed deficit lacks the principal cap's monotone deletion proof.  On
+the exact `A_8` minimizer there are `m=6,z,sigma,S` with `D_S=4` and deletion
+increments
+
+```text
+(-4,4,-4,4,4,4),
+```
+
+so their positive sum is `4D_S`; `A_9` contains the same ratio.  This finite
+wall rules out the tempting constant-two extension of (10.1134), not every
+possible deficit self-bound.  The exact adjacent port formula
+
+```math
+D_{U+a}=D_U+[Q(A[U+a])-Q(A[U])]
+-2\sigma\sum_{i\in U}a_{ai}z_az_i
+```
+
+shows the obstruction: the monotone principal increment and signed center
+field have no known alignment.  Strict mixed pressure, not generic selector
+smoothness, remains the sole open input.
+
+#### 10.95.2 Incidence consensus is a global-map LP with a weighted colored-codegree implementation
+
+On an anchored selector family `G`, let
+
+```math
+\mathcal I_S=\{d:\langle B_S,d\rangle\ge q_n\}
+```
+
+be the nonempty actual complement-incidence fiber.  For a local kernel, if
+`m_i=E[y_i^D|i in S]`, independent selector--certificate draws have exact
+conflict
+
+```math
+\boxed{
+\mathcal C_v(\pi)=\frac12\sum_{i\ne v}p_i(1-m_i^2).
+}
+\tag{10.1136}
+```
+
+This is concave, not convex, in the local marginals.  The honest convex
+object is therefore the simplex over whole incidence-preserving maps
+`f in product_(S in G) I_S`.  Write `R(f)`, `H(f)=I(S;f(S))`, and `C(f)` for
+their row, deterministic information, and conflict costs.  For positive
+budgets, finite minimax gives the exact three-price dual
+
+```math
+\boxed{
+\min_{\eta\in\Delta(\mathcal F)}
+\max_{j\in\{R,H,C\}}\mathbb E_\eta\frac{c_j(f)}{B_j}
+=\max_{\lambda\in\Delta_3}
+\min_{f\in\prod_S\mathcal I_S}
+\sum_{j\in\{R,H,C\}}\lambda_j\frac{c_j(f)}{B_j}.
+}
+\tag{10.1137}
+```
+
+Moreover
+`H(f(S))=min_r E_S log(1/r(f(S)))`, so the inner oracle is an actual
+incidence-constrained row/code-length/consensus problem, not a collection of
+inconsistent pair couplings.
+
+A concrete global coupling is weighted MinHash.  Give each cut an independent
+clock `T_d~Exp(w_d)` and choose the first cut in `I_S`.  Put
+`Z_S=sum_(d in I_S)w_d`.  For two fibers `I,J`, let
+`A=I\J`, `B=J\I`, `U=sum_(d in I union J)w_d`, and let
+`Delta_(S,T)(d,e)` be their corrected overlap disagreement.  Memorylessness
+gives the exact colored-codegree cost
+
+```math
+\boxed{
+\begin{aligned}
+\chi(S,T;w)=\frac1U\bigg[&
+\frac1{Z_T}\sum_{d\in A,e\in J}w_dw_e\Delta_{S,T}(d,e)\\
+&+\frac1{Z_S}\sum_{d\in I,e\in B}w_dw_e\Delta_{S,T}(d,e)
+\bigg].
+\end{aligned}
+}
+\tag{10.1138}
+```
+
+The common-witness probability is the usual weighted Jaccard ratio, but
+(10.1138) is strictly sharper because distinct witnesses may agree on most
+overlap coordinates.
+
+Shared clocks do not combine that consensus with cheap marginal information
+for free.  If `J` denotes the clock realization and `D=f_J(S)`, then
+
+```math
+\boxed{
+\mathbb E_J I(S;D\mid J)=I(S;D)+I(S;J\mid D).
+}
+\tag{10.1139}
+```
+
+The marginal race channel satisfies the old fractional identity
+`E_S D(pi_S||w/W)=E_S log(W/Z_S)`, but fixing one consensus map pays the
+extra conditional term.  A sufficient race-averaged code length is
+
+```math
+\boxed{
+\mathsf L_{\rm race}(w)
+=\mathbb E_S\sum_{d\in\mathcal I_S}
+\frac{w_d}{Z_S}\log\frac W{w_d}
+=\mathbb E_S\log\frac W{Z_S}+\mathbb E_SH(\pi_S).
+}
+\tag{10.1140}
+```
+
+Together with the exact race row average and the average of (10.1138), the
+concrete sufficient theorem is
+
+```math
+\frac{\mathsf R_{\rm race}}{R_*}
++\frac{\mathsf L_{\rm race}}{H_*}
++\frac{\mathsf C_{\rm race}}{C_*}\le1.
+\tag{10.1141}
+```
+
+Then one clock realization satisfies all three clauses of (10.1089).
+This is **Verified as a sufficient weighted colored-codegree criterion**;
+no rates meeting it are known asymptotically.
+
+Uniform-priority exact audits give `(independent conflict, shared conflict,
+Jaccard bound)`
+
+```text
+A5:           (36/25, 116/135, 16/9),
+A6:           (2, 6/5, 12/5),
+A8 incidence: (10949/4500, 83253679/37705500, 1706708/377055),
+A8 grounds:   (242/105, 683/315, 866/189),
+A9:           (141621383/53343360,
+               56595209687329/22693598928000,
+               93358253/16676660).
+```
+
+Thus shared priorities improve conflict by about `40%` on `A_5,A_6` but only
+`6--9%` on `A_8,A_9`; uncolored Jaccard is roughly twice the exact colored
+cost.  Hard incidence-preserving row pruning lowers finite mean row but
+slightly worsens consensus and numerical information.  These data neither
+prove nor falsify (10.1141); they isolate row mass, global code length, and
+colored codegree as three genuinely distinct inputs.
+
+#### 10.95.3 Reveal factorization is exact, but pointwise fixed-density anti-resonance is false
+
+For `b_S=e^{-F_S}`, let `S` omit `i`, put `R=S union {i}`, and denote the two
+`R`-boundary states by `d^+,d^-`.  The completion composition (10.916)
+rearranges exactly to
+
+```math
+\boxed{
+b_S(e)=\sqrt{b_R(d^+)b_R(d^-)}\,
+\operatorname{sech}B_{S,i},
+\qquad
+B_{S,i}=\beta a+\frac{F_R(d^+)-F_R(d^-)}2.
+}
+\tag{10.1142}
+```
+
+Here `B` is the coarse Gibbs half-log-odds of the revealed outside spin and
+
+```math
+\log\cosh B=D(U_{\{+,-\}}\Vert Q_{S,i}).
+```
+
+Iterating (10.1142) in any reveal order gives
+
+```math
+F_S=\sum_\ell\mathbb E_{\rm uniform\ prefix}\log\cosh B_\ell,
+\qquad
+\sum_\ell\mathbb E_{\rm uniform\ prefix}\tanh^2B_\ell\le2F_S.
+\tag{10.1143}
+```
+
+This is a reverse-KL reveal chain under uniform earlier reveals; martingale
+orthogonality under the Gibbs reveal law cannot be inserted without a
+change-of-measure cost.
+
+The fixed-density common omitted mass has an exact three-factor form.  Put
+`Z_m(d)=sum_(|S|=m)b_S(d)`, define normalized weights `alpha_i^+` and
+`alpha_i^-` on `(m+1)`-sets containing `i`, let `H_i` be their Hellinger
+affinity, and let `rho_i` be their normalized geometric mean.  Then
+
+```math
+\boxed{
+\sqrt{r_i(d^+)r_i(d^-)}
+=\Gamma_{m,i}H_i\mathbb E_{\rho_i}\operatorname{sech}B,
+\quad
+\Gamma_{m,i}=\frac{n-m}{n}
+\sqrt{\frac{U_{m+1\mid i}(d^+)U_{m+1\mid i}(d^-)}
+{U_m(d^+)U_m(d^-)}}.
+}
+\tag{10.1144}
+```
+
+Writing the three negative logarithms as cross-level, affinity, and reveal
+costs gives their exact sum
+`-(1/2)log(r_i(d^+)r_i(d^-))`.  Hence every interpolation-crossing edge
+satisfies
+
+```math
+\boxed{
+C_{\rm lev}+C_{\rm aff}+C_{\rm rev}
+\ge\frac12|\omega_i|.
+}
+\tag{10.1145}
+```
+
+The cross-level cost has no sign.  Also `H_i` compares selector posteriors at
+neighboring **states**, whereas the pending adjacent-selector Hellinger input
+compares state laws at neighboring **selectors**.  They are transposed axes
+of the joint law; no Bayes bridge between them has been proved.
+
+There is a sharp exact-minimizer wall.  In `A_9,m=4`, two cuts differing only
+at vertex four both have parent energy `-8`, so their base odds are identically
+zero.  Exact tropical enumeration of the matched likelihood gives minimal
+external-completion maxima `16` and `8`, with leading reciprocal coefficients
+`1318/105` and `1/8`.  Therefore
+
+```math
+\boxed{
+\chi_\beta
+=8\beta+\log\frac{105}{10544}+o(1)\longrightarrow\infty.
+}
+\tag{10.1146}
+```
+
+At `beta=8`, the exact value and leading expression agree within `7e-14`.
+The three costs in (10.1145) have respective slopes
+`C_rev~4 beta`, `C_aff~4 beta`, and `C_lev~-4 beta`.  Thus genuine completion
+structure, simultaneous selectors, the parent Gibbs base, and exact
+minimality do not imply any uniform pointwise fixed-density analogue of
+(10.1129).
+
+The bad edge is nevertheless exponentially rare.  The exact tropical
+envelope over all 512 oriented states is
+
+```math
+\max_d\{E_d-s a(d)\}=24-12s,
+\qquad0\le s\le1,
+```
+
+while the bad endpoint lines are `-8-16s` and `-8-8s`.  Consequently
+
+```math
+\boxed{
+\mu_s\{d^+,d^-\}=O(e^{-28\beta})
+\quad\text{uniformly in }s,
+\qquad
+\text{edge energy and migration}=O(\beta^2e^{-28\beta}).
+}
+\tag{10.1147}
+```
+
+This is a finite low-temperature pointwise/composition counterexample, not a
+project-temperature asymptotic falsifier and not a counterexample to the
+integrated signed-migration target (10.1083).  Any harmonic continuation must
+weight reveal, affinity, and cross-level costs by actual context mass and
+prove costly edges rare; pointwise control is impossible.
+
+#### 10.95.4 Updated frontier
+
+Wave 42 preserves the bare arbitrary-cut tail (10.795) and the
+low-information complement kernel (10.1089) as the strategic leader, with the
+following revised implementation frontier:
+
+- the exceptional-center route is now a one-input strict mixed-pressure
+  problem at `theta=Theta(n^(-3/4-c))`.  Principal-cap deletion self-bounding
+  is exact but misses the entropy exponent and controls the wrong direction;
+  the signed port destroys its monotone proof.  Continue only with a genuinely
+  nonlinear minimizer-alignment lower bound for (10.1133), recognizing that
+  this is the strict-soft center target rather than a free consequence of
+  selector smoothness;
+
+- incidence-preserving complement consensus has an exact convex global-map
+  dual and a concrete shared-race implementation.  Its sharp new sufficient
+  target is the weighted colored-codegree package (10.1141), which must pay
+  row, full deterministic code length including fiber entropy, and colored
+  exclusive-fiber disagreement simultaneously.  Marginal fractional-cover
+  information or uncolored Jaccard overlap alone cannot supply it;
+
+- the one-deletion harmonic anti-resonance theorem is genuinely exceptional.
+  Pointwise fixed-density composition is falsified even on `A_9`, and
+  adjacent-selector Hellinger does not directly control the state-edge
+  affinity in (10.1144).  The exact bad edge is exponentially rare, so direct
+  integrated signed migration remains viable and is now the only faithful
+  harmonic continuation; do not pursue pointwise reveal-factor bounds;
+
+- no convergence proof or asymptotic falsifier has appeared, and the leading
+  strategy has not changed.  The finite harmonic wall does not trigger an
+  early strategic refresh.  The next mandatory `STEERING.md` refresh and
+  blank-slate audit remain due at the Wave 44 boundary.
+
+Wave 43 should compare: a direct nonlinear lower bound or inverse theorem for
+the strict pressure in (10.1133); optimization or falsification of the
+weighted colored-codegree/code-length package (10.1141); and an integrated
+context-mass theorem for the reveal/affinity costs in (10.1144)--(10.1147).
+A genuinely independent fourth direction is the favorable-distance scaffold,
+not another pointwise harmonic or unweighted selector-moment argument.
