@@ -23620,3 +23620,495 @@ global content more precise:
   attempt on the joint aligned-and-low-row scalar density exposed after
   (10.854), and use the third route for matched parent Hellinger transport
   rather than uniform random cosets or independent completion.
+
+### 10.82 Fractional coset minimax, coherence walls, and matched endpoints
+
+The twenty-ninth wave attacks the common-coset law directly, tests whether
+scalar alignment survives a row-square cap, and returns to the matched
+parent endpoint. The common-law problem has an exact fractional-cover dual.
+Finite enumeration shows that mixing cosets can be dramatically stronger
+than one deterministic coset, while a separate adjacent-selector example
+shows that pairwise coherent exact-child choices need not glue at a fixed
+row cap. Thus the fractional multi-coset version, not local deterministic
+gluing, is now the sharpest structured implementation of the leading
+restriction route.
+
+The joint-tail audit proves an exact conditional row-Laplace criterion, but
+also shows that a scalar aligned tail need not survive row pruning from the
+known coarse matrix bounds. At the parent endpoint, matching the child and
+parent temperatures removes the old linear low-temperature wall on every
+audited minimizer and exposes a separate common row-square mode.
+
+All analytic identities and finite enumerations below are **Verified**. The
+target-scale quadratic example is an **Abstract falsifier** to coarse
+scalar-to-joint arguments, not a complete-signing counterexample. All
+displayed asymptotic lemmas remain **Open targets**. No convergence proof or
+asymptotic counterexample is obtained.
+
+#### 10.82.1 The common-coset law is exactly a fractional cover
+
+Fix `A,m,t` and a finite family `\mathscr A_C` of block cosets whose entire
+spin supports obey a row cap `C`. For a coset `a=(D_a,P_a)`, put
+
+```math
+H_a=\left\{S:
+Q(P_a^{\mathsf T}D_aH_SD_aP_a)\ge Y_A(S)-t
+\right\}.
+```
+
+Finite minimax and the fractional set-cover rescaling give
+
+```math
+\boxed{
+\begin{aligned}
+\delta_*
+&=\max_{\mu\in\Delta(\mathscr A_C)}
+  \min_S\mu\{a:S\in H_a\}\\
+&=\min_{w\in\Delta(\binom{[n]}m)}
+  \max_{a\in\mathscr A_C}w(H_a)
+=\frac1{\tau_*},\\
+\tau_*&=\min\left\{
+\sum_au_a:u_a\ge0,\quad
+\sum_{a:S\in H_a}u_a\ge1\ \text{for every }S
+\right\}.
+\end{aligned}
+}
+\tag{10.873}
+```
+
+The first equality is the finite zero-sum game dual. For the last, normalize
+a fractional cover by its total mass; conversely divide any common law by
+its minimum hit probability.
+
+This identifies the exact adversarial content missing from uniform-coset
+averaging. For **every** selector law `w`, one row-good coset must capture
+large `w`-mass. Pointwise planting alone gives only the trivial scale. If
+each selector has one assigned hit coset `a_S`, the law obtained from a
+uniform selector satisfies
+
+```math
+\boxed{
+\min_T\mu\{a:T\in H_a\}\ge\binom nm^{-1},
+\qquad
+\tau_*\le\binom nm.
+}
+\tag{10.874}
+```
+
+At fixed density this costs `\Theta(n)` in the logarithm, rather than the
+required `O(n^{3/4-c})`. Self-incidence or independent completion therefore
+cannot prove the desired common law without genuine overlap.
+
+Exact finite enumeration nevertheless shows that fractional mixing can
+overcome a deterministic compressed-alignment failure. For `A_9`, take all
+translates of all `3+3+3` block subgroups, retain only cosets whose whole
+projective spin support has `R_2\le80`, and use threshold `t=0`. There are
+`4342` distinct retained cosets among the `280` partitions. Exact algebraic
+hit comparisons and rational primal-dual certificates give:
+
+| slice | full deterministic cosets | best one-coset coverage | minimum hit under the uniform coset law | `\delta_*` |
+|---:|---:|---:|---:|---:|
+| `m=5` | `0` | `124/126` | `1816/4342` | `839/995` |
+| `m=6` | `0` | `83/84` | `1472/4342` | `21/22` |
+
+These are small-order facts, not asymptotic evidence for a uniform constant.
+They do show that the deterministic target (10.837) can fail inside an
+architecture while its multi-coset game remains very strong.
+
+For balanced row-good cosets at the scales (10.835)--(10.836), the precise
+successor target is now
+
+```math
+\boxed{
+\tau_*(A,m;t,C)\le
+\exp\{K n^{3/4-c}\},
+\quad
+t\le K_tn^{3/2-c},\quad
+C\le K_Rn^{9/4-c}.
+}
+\tag{10.875}
+```
+
+It must hold with fixed `rho in [1/2,1)`, `0<c<1/4`, and uniform constants,
+for every large `n` and every `m in [rho n,n)`, after choosing a
+target-specific exact minimizer and allowing all eligible balanced cosets.
+Then (10.873), greedy set cover (10.839), and pigeonhole give (10.808) and
+hence the fixed-cut lemma (10.795). Equivalently, prove the middle minimax
+quantity in (10.873) is at least `exp{-O(n^{3/4-c})}` for every adversarial
+selector law.
+
+#### 10.82.2 Local coherent witnesses do not glue through row-good refinements
+
+There is an exact global-variation description of the signature budget.
+Index coherently oriented witnesses `x^v` by a connected graph, choose a
+rooted spanning tree `T`, and for an edge `e=uv` let
+`F_e={i:x_i^u\ne x_i^v}`. The coordinate signature classes in (10.856) are
+exactly the level sets of
+
+```math
+\eta_i=(\mathbf1_{i\in F_e})_{e\in T}.
+```
+
+If `U_T=\bigcup_eF_e`, `u_T=|U_T|`, and
+`D_T=\sum_e|F_e|`, then
+
+```math
+\boxed{
+J\le1+u_T\le1+D_T,
+\qquad
+K_b(\mathcal F)
+\le\left\lceil\frac{n-u_T}{b}\right\rceil+u_T
+\le\left\lceil\frac nb\right\rceil+D_T.
+}
+\tag{10.876}
+```
+
+The proof follows relative signs along the unique root paths; conversely,
+the endpoint change on each tree edge recovers every bit of `eta_i`.
+Projective children can be oriented successively so `|F_e|` is the
+projective Hamming distance. This is a valid sufficient criterion, but it is
+global. For example, for `n\ge3`, the family with
+`x_i^S=1` on `S` and `-1` outside has Hamming distance two on every Johnson
+edge while all `n` coordinate signatures are distinct. Local Lipschitz
+selection alone gives no sublinear signature budget.
+
+There is a stronger exact row-closure wall in `A_9`. At `m=6`, cap `80`,
+and maximum block size two, let
+
+```math
+\begin{aligned}
+S_0&=\{0,1,2,3,4,5\},\\
+S_1&=\{0,1,3,4,5,6\},\\
+S_2&=\{0,1,3,4,5,7\}.
+\end{aligned}
+```
+
+All three child optima equal `18`, and their projective exact-child
+completion sets under the cap are
+
+| selector | low-row exact-child completions, with row square |
+|:---|:---|
+| `S_0` | `+-+++++++` (`72`), `+-+---++-` (`80`) |
+| `S_1` | `+--+++-++` (`80`), `+--+++--+` (`80`) |
+| `S_2` | `+--++++-+` (`72`), `+--+++--+` (`80`) |
+
+Every pair is contained in some five-block `1+2+2+2+2` coset whose entire
+support has row square at most `80`. But exhaustive enumeration of all
+`945\cdot16=15120` such cosets gives only `452` row-good cosets, and none
+hits all three sets. Among the `504` Johnson star triangles with a common
+five-set, `122` are pair-covered and six fail triple coverage. The exact
+common-cap optimum for the displayed triangle is
+
+```math
+\boxed{
+\min_{\substack{\text{five-block, max-size-two cosets}\\
+\text{hitting exact grounds on }S_0,S_1,S_2}}
+\ \max_{x\text{ in the coset}}R_2(x)=88.
+}
+\tag{10.877}
+```
+
+This is not merely excess signature count. One witness choice has two
+signature classes of sizes six and three, hence `K_2=5`, and its projective
+ternary span contains only the two chosen low-row words. Every necessary
+maximum-size-two refinement still introduces a word of row square at least
+`88`. Thus pairwise Hall compatibility, adjacency control, the exact
+signature budget, and low-row ternary span do not separately guarantee
+low-row full-coset closure.
+
+The wall is deliberately scoped. It uses exact child grounds, a finite cap,
+and one finite minimizer. It does not rule out the retained-slack alignment
+in (10.837), cap `88` already removes it, and it says nothing against the
+fractional law (10.838). A deterministic successor would need both a global
+small-variation witness selection and a direct row theorem for every
+balanced refinement of its signature classes.
+
+#### 10.82.3 Scalar alignment needs conditional row-Laplace control
+
+Let `R\ge0` on a finite probability space, let `E` have probability `p>0`,
+and define
+
+```math
+Z(\theta)=\mathbb Ee^{-\theta R},
+\qquad
+d\mathbb P_\theta=Z(\theta)^{-1}e^{-\theta R}d\mathbb P,
+\qquad
+p_\theta=\mathbb P_\theta(E).
+```
+
+Splitting the conditional Laplace transform at `C` gives the exact transfer
+
+```math
+\boxed{
+\mathbb P(E,R\le C)
+\ge p\,
+\frac{Z(\theta)p_\theta/p-e^{-\theta C}}
+{1-e^{-\theta C}}.
+}
+\tag{10.878}
+```
+
+This avoids the failed subtraction of unconditional row-bad mass. Put
+
+```math
+\kappa(\theta)=\int_0^\theta
+\{\mathbb E_s[R\mid E]-\mathbb E_sR\}\,ds.
+```
+
+Then
+
+```math
+\boxed{
+\log\frac{p_\theta}{p}=-\kappa(\theta),
+\qquad
+\frac d{d\theta}\log p_\theta
+=-\frac{\operatorname{Cov}_\theta(\mathbf1_E,R)}{p_\theta}.
+}
+\tag{10.879}
+```
+
+Writing `mu=\mathbb ER`, Jensen gives `Z(theta)\ge e^{-theta mu}`.
+Consequently
+
+```math
+\boxed{
+\theta(C-\mu)-\kappa(\theta)\ge\log2
+\quad\Longrightarrow\quad
+\mathbb P(E,R\le C)
+\ge\frac p2e^{-\theta\mu-\kappa(\theta)}.
+}
+\tag{10.880}
+```
+
+For uniform spins, `mu=n(n-1)`. Put `L=n^{3/4-c}`, take
+`C=Theta(n^{9/4-c})`, and `theta=L/C=Theta(n^{-3/2})`. Then
+`theta mu=Theta(n^{1/2})=o(L)`. Conditional on the still-unproved scalar
+bound `p\ge e^{-O(L)}`, any fixed-margin estimate
+`kappa(theta)\le(1-epsilon)L` preserves joint mass `e^{-O(L)}`. The sharp
+direct ratio condition is
+
+```math
+\log(p_\theta/p)\ge-\theta(C-\mu)+\log2,
+```
+
+together with `theta mu+kappa(theta)=O(L)`. Thus this route now has two
+separate missing inputs: a scalar reverse tail and an integrated
+row/alignment covariance bound.
+
+Neither input follows from the known coarse norms. Fix `0<c<1/4`, set
+`L=n^{3/4-c}`, and along fourth-power orders put
+
+```math
+H=n^{-1/4}(\mathbf1\mathbf1^{\mathsf T}-I),
+\qquad
+B=(n-1-n^{1/2})I+n^{1/2}\mathbf1\mathbf1^{\mathsf T}.
+```
+
+Then `B` is positive semidefinite with diagonal `n-1`, trace `n(n-1)`,
+and operator norm `Theta(n^{3/2})`, while `H` is zero diagonal with the
+correct Frobenius and operator scales. For `Z=\mathbf1^{\mathsf T}x`,
+
+```math
+\boxed{
+x^{\mathsf T}Hx=n^{-1/4}(Z^2-n),
+\qquad
+x^{\mathsf T}Bx=n(n-1)+n^{3/4}x^{\mathsf T}Hx.
+}
+\tag{10.881}
+```
+
+Choosing `r=2\sqrt{nL}+O(1)`, threshold
+`T=n^{-1/4}(r^2-n)=Theta(n^{3/2-c})`, and a cap one below the row value at
+`|Z|=r` gives, by one binomial atom,
+
+```math
+\boxed{
+\mathbb P\{|x^{\mathsf T}Hx|\ge T\}=e^{-O(L)},
+\qquad
+\mathbb P\{|x^{\mathsf T}Hx|\ge T,\ x^{\mathsf T}Bx\le C\}=0,
+}
+\tag{10.882}
+```
+
+with `C=Theta(n^{9/4-c})`. Here `B` is not asserted to be the square of a
+complete signing; this falsifies only arguments using the coarse PSD,
+diagonal, trace, and norm data.
+
+An actual finite minimizer has the same correlation mechanism. For `A_8`,
+`m=4`, `S={2,3,5,7}`, and
+`T=Y_A(S)=12-5\sqrt2`, exact enumeration gives
+
+```math
+\boxed{
+\mathbb P(E_T)=\frac{13}{64},
+\qquad
+\mathbb P(R_2\le40)=\frac{15}{64},
+\qquad
+\mathbb P(E_T,R_2\le40)=0.
+}
+\tag{10.883}
+```
+
+On the hit set, row squares `56,64,72` have multiplicities `8,12,6`, so
+`\mathbb E[R_2\mid E_T]=824/13>56=\mathbb ER_2` and
+`(d/dtheta)\log p_\theta|_0=-96/13`. The finite cap is below the
+asymptotic target ratio, so this is a mechanism wall, not an asymptotic
+falsifier of (10.795).
+
+#### 10.82.4 Matching temperatures exposes the parent common mode
+
+Retain the endpoint notation (10.797)--(10.813), set `gamma=beta`, and let
+`f_beta=C_beta a` be the parent likelihood. Then
+
+```math
+L_\beta(S,d)=\frac{C_\beta}{K_{\beta,S}(d[S])},
+\qquad
+f_\beta(d)=\mathbb E_SL_\beta(S,d),
+\qquad
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+=D(f_\beta\nu_\beta\Vert\nu_\beta).
+```
+
+There is an exact fixed-signing zero-temperature formula. Let
+`Q_*=\max_SQ(A[S])`, let `\mathcal P_*` contain all pairs `(S,y)` with
+`c_S(y)=Q(A[S])=Q_*`, and, for such a pair, let `e_S(y)` be its best parent
+extension energy and `k_S(y)` the number of best extensions. Define
+
+```math
+\boxed{
+P_\infty(d)=\frac1{|\mathcal P_*|}
+\sum_{(S,y)\in\mathcal P_*}
+\frac{\mathbf1\{d[S]=y,\ \langle A,d\rangle=e_S(y)\}}{k_S(y)}.
+}
+\tag{10.884}
+```
+
+If `\mathcal G` is the oriented parent-ground set, `G=|\mathcal G|`, and
+`\bar e_*=\mathbb E_{P_\infty}\langle A,D\rangle`, finite-space Gibbs
+asymptotics give
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+=\beta[Q(A)-\bar e_*]+\log G-H(P_\infty)+o_A(1).
+}
+\tag{10.885}
+```
+
+The slope vanishes exactly when every maximal child ground has a
+parent-ground best extension. In that case the constant is
+`D(P_infty\Vert U_{\mathcal G})`. All audited exact minimizers
+`A_4,A_5,A_6,A_8,A_9` have zero slope. The first four constants vanish;
+for `A_9`, the limiting masses are eight copies of `3/56`, fifteen of
+`1/28`, and two of `1/56`, giving parent entropy
+`0.035686818862212...`. The corresponding limiting mean finite-measure
+Hellinger squares are `2/3,3/4,1/5,5/7,185/224`. Thus the linear
+`gamma=0` wall (10.812) genuinely disappears under matching on these
+examples, but no uniform scaling estimate follows.
+
+The high-temperature tangent identifies why selector transport alone
+misses the parent term. With `k=n-m`, put
+
+```math
+B_S(d)=\sum_{u\notin S}
+\left(\sum_{i\in S}A_{ui}x_i\right)^2,
+\qquad
+g_S(d)=mk-B_S(d),
+\qquad
+\theta_{n,m}=\frac{(n-m)m(m-1)}{n(n-1)(n-2)}.
+```
+
+For fixed `A` as `beta=gamma` tends to zero,
+
+```math
+\boxed{
+\begin{aligned}
+L_\beta(S,d)&=1+2\beta^2g_S(d)+O_A(\beta^3),\\
+\mathbb E_Sg_S(d)
+&=\theta_{n,m}[n(n-1)-R_2(d)],\\
+f_\beta(d)&=1+2\beta^2\theta_{n,m}
+\bigl[n(n-1)-R_2(d)\bigr]+O_A(\beta^3).
+\end{aligned}
+}
+\tag{10.886}
+```
+
+Consequently
+
+```math
+\boxed{
+\begin{aligned}
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+&=8\beta^4\theta_{n,m}^2
+\sum_{i<j}(A^2)_{ij}^2+O_A(\beta^5),\\
+H^2(w_Sq_S,w_Tq_T)
+&=\frac{\beta^4}{2}\mathbb E_U(g_S-g_T)^2+O_A(\beta^5).
+\end{aligned}
+}
+\tag{10.887}
+```
+
+The selector edge sees variation around the selector mean; parent entropy
+sees the common mean, exactly a centered row-square statistic. For the
+actual nonminimal complete signing `A=J-I` at `m=n-1`, the ratio of these
+two leading coefficients is
+
+```math
+\boxed{
+\frac{\operatorname{Ent}_{\nu_\beta}(f_\beta)}
+{\mathbb E_{S\sim S'}H^2(w_Sq_S,w_{S'}q_{S'})}
+\longrightarrow\frac{(n-1)(n-2)}n
+\qquad(\beta\downarrow0).
+}
+\tag{10.888}
+```
+
+Thus no generic `o(n)` absorption holds for all matched complete-signing
+endpoints. Exact minimality remains essential. The remainders in
+(10.886)--(10.887) are fixed-`A` and are not uniform in `n`; these Taylor
+identities are structural diagnostics, not proofs at the intended
+`beta=Theta(n^{-1/2+c})` scale. The two bounds in (10.800) remain open.
+
+#### 10.82.5 Updated frontier
+
+Wave 29 keeps optimized principal restriction in front, but changes the
+ranking of its structured implementations:
+
+- the sharpest concrete target is now the **fractional multi-coset game**
+  (10.873)--(10.875). It asks for a subexponential fractional cover, or
+  equivalently one row-good coset capturing enough mass from every
+  adversarial selector law. Pointwise planting supplies only the
+  `exp{-Theta(n)}` self-incidence floor. The exact `A_9` games show that
+  mixtures can remain strong even when every deterministic `3+3+3` coset
+  misses selectors, so this route should not be collapsed back to one
+  globally coherent witness family;
+
+- deterministic low-signature selection remains a useful structural
+  alternative, but pairwise Johnson compatibility and local Hamming control
+  are insufficient. The cap-`80` `A_9` triangle is pairwise feasible in the
+  full balanced architecture and still fails globally; even exact signature
+  count plus low-row ternary span does not control the row cost of balanced
+  refinements. Any successor needs genuinely higher-order agreement and a
+  full-refinement row theorem with slack;
+
+- a scalar aligned reverse tail cannot be pruned to low row square from the
+  presently known PSD, trace, diagonal, and norm data. Conditional
+  row-Laplace control (10.878)--(10.880) is an exact exponent-matched repair,
+  but it is a second missing input in addition to the scalar lower tail.
+  This route is therefore below the fractional common-law attack unless new
+  minimizer-specific covariance structure appears;
+
+- matched parent interpolation remains the strongest independent
+  alternative. Matching removes the old `gamma=0` linear wall on all five
+  audited minimizers, but (10.886)--(10.888) isolate a parent common mode not
+  controlled by selector Hellinger variation. A useful theorem must exploit
+  exact minimality to control both this mode and the separate selector term;
+
+- constant shortfall receives no new positive or negative asymptotic input
+  and remains behind the restriction and matched-endpoint routes. No
+  convergence proof or asymptotic counterexample is known. Before selecting
+  Wave 30, `STEERING.md` must be regenerated from the complete ledger as
+  required by the five-wave refresh rule. Wave 30 should prioritize the
+  adversarial-selector dual in (10.873), keep one independent attack on
+  higher-order coset/refinement structure or a directly nonlinear cover,
+  and retain one matched-endpoint common-mode route.
