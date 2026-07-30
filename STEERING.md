@@ -1,10 +1,11 @@
 # Strategic steering
 
-Evidence cutoff: Wave 54, ledger §10.107 (2026-07-30), through (10.1296)--(10.1313). This is an early decisive-result refresh. Next mandatory refresh: Wave 59, with a blank-slate abstraction audit.
+Evidence cutoff: Wave 55, ledger §10.108 (2026-07-30), through (10.1314)--(10.1338).
+Early decisive-result refresh; next mandatory refresh: Wave 60, with a blank-slate abstraction audit.
 
 ## User-stated research objective
 
-Determine whether \(\lim_{n\to\infty}M_n/n^{3/2}\) exists. The conjectural value \(1/2\) is not an additional user objective.
+Determine whether the limit of `M_n/n^(3/2)` exists. The conjectural value `1/2` is not an additional user objective.
 
 ## Present judgment
 
@@ -15,87 +16,135 @@ No route proves convergence; the rigorous interval remains
 \le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-Adaptive optimized principal restriction remains the overarching framework. The orientation-paired K-functional tail is now the strongest single implementation: it needs one saved joint-profile population and has an exact noncircular completion theorem. The structured box plus large-core route remains serious, but needs both an exact-minimizer box theorem and a multilevel weighted-intersection theorem.
+The selected-cut project-row route is now the clear leader. Its strongest
+implementation is a low-row box witness followed by full weighted spectral
+excess. The uniform arbitrary-cut annealed completion route is no longer an
+independent alternative: joint Hanson--Wright concentration proves that any
+saved incidence under that product law already contains recurrence-strong
+local-band mass. The K-profile route is decisively falsified.
 
-## Leading route: orientation-paired far completion
+## Leading route: selected low-row cut via box and full histogram
 
-Fix \(p=m/n\in[p_0,p_1]\subset(1/2,1)\), \(0<c<1/4\), and put
-
-~~~math
-H=\lceil n^{3/4-c}\rceil,\quad T_n=n^{3/2-c},\quad
-p_2=\frac{m(m-1)}{n(n-1)}.
-~~~
-
-For a selector/local state define
+Fix a compact density window `p=m/n in (1/2,1)`, choose `0<c<1/4`, and put
 
 ~~~math
-h=Q(A[S])-p^{3/2}q_n-t,\quad
-e=\sigma y^{\mathsf T}A[S]y,\quad
-g=(1-p_2)e-h.
+H=\lceil n^{3/4-c}\rceil,qquad T_n=n^{3/2-c}.
 ~~~
 
-When \(g<0\), put \(r=-g/p_2\), \(u=A[S^c,S]y\), and \(g^\iota=-g-2h\). With the exact clipped functional \(K_H(u)\) and dependence-safe Hanson--Wright cost \(b_H\), define
+For an exact order-`n` minimizer, a selector `S`, and a child ground `y`, let
 
 ~~~math
-\mathcal R_n=
-\{g<0,\ r\ge\omega_nT_n:
-g^\iota\ge-C_BT_n\ \text{or}\ K_H(u)\ge r+b_H\},
+\mathcal V(S,y)=\min_{w\in\{\pm1\}^{S^c}}
+\lVert A[:,S]y+A[:,S^c]w\rVert_2^2.
 ~~~
 
-where \(\omega_n\uparrow\infty\) slowly. The exact sufficient lemma is
+The exact sufficient package is:
 
-~~~math
-\boxed{\nu_m(\mathcal R_n)\ge e^{-C_0H}.}
-~~~
+1. **Box:** for some child-ground incidence,
 
-The first branch reverses to saved local-band mass, so inverse Hanson--Wright gives \(q_m\le p^{3/2}q_n+O(T_n)\). On the second, Montgomery--Smith plus a dependence-safe Hanson--Wright union bound gives completion probability \(\frac12\,12^{-H}\), hence the bare tail (10.795). Geometric-window summability and exact landing force \(q_n/n^{3/2}\), and therefore \(M_n/n^{3/2}\), to converge.
+   ~~~math
+   \mathcal V(S,y)\le R_0=O(n^{9/4-c}).
+   ~~~
 
-Only the selector-driven region
-
-~~~math
-h-(1-p_2)|y^{\mathsf T}A[S]y|>C_BT_n
-~~~
-
-needs a K-profile. At the active clipped optimizer, failure has a canonical head \(I\), \(|I|<H\), satisfying
-
-~~~math
-K_H(u)=\lVert u_I\rVert_1+
-\sqrt{(H-|I|)\lVert u_{I^c}\rVert_2^2}.
-~~~
-
-The leading attack is to exchange or charge this head, or prove it cannot carry all saved both-orientations-far mass.
-
-## Falsification criteria and obstructions
-
-- The implementation is falsified if, for every usable \(c,\omega_n,C_B,C_0\), window, tolerance, and required exact minimizer, \(\nu_m(\mathcal R_n)=e^{-\omega(H)}\) along an unbounded family. This would not falsify the full annealed incidence or bare tail.
-- Cross energy alone is insufficient; the exact head/diffuse profile is essential, and stored finite states fail it after passing the energy test.
-- Orientation pairing removes recurrence-local partners, but the remaining both-far branch is substantial in stored data.
-- Generic moments through order three, constant-probability pairing, parent-cap pairing, and raw two-moment envelopes remain recurrence-local or pointwise dominated.
-- A scalable competitive signing has a child ground with \(I=\Theta(n^{5/2})\) but \(X=d=0\) and \(\mathsf H_T=0\). Cap, operator, trace, and child optimality therefore cannot force box cancellation; the family is not exact-minimal.
-- Simultaneous edge-flip minimality gives a near-ground migration/entropy dichotomy, but sees the baseline positive star rather than the subleading field excess and supplies no saved project mass.
-
-## Ranked alternatives
-
-1. **Exact-minimizer box plus weighted large-core excess.** Prove a child-ground box witness at \(R_0=O(n^{9/4-c})\), then find \(R_0\le R\le C(R_0+n^2)\) and a genuinely large core with \(-\log\rho_\ell=\omega(H)\) satisfying
+2. **Full weighted excess:** for some controlled
+   `R_0<=R<=C(R_0+n^2)` and some nontrivial core `2<=ell<m`, the associated
+   low-row center class satisfies
 
    ~~~math
    P_\ell(R)-\lambda_2(\ell)\ge e^{-O(H)}.
    ~~~
 
-   Spectral extraction then gives a saved center and (10.795).
+The extraction theorem (10.1261) then gives one row-`R` global cut favorable
+on `e^{-O(H)}` selector mass. This is the bare fixed-cut tail (10.795), which
+gives
 
-2. **Localized-curvature exclusion.** Use exact discrete minimality to rule out hidden frozen curvature on candidate low-cross incidences, or make the signed-\(d\) or a delocalized negative-\(\mathsf H_T\) gain cancel \(I-O(n^{9/4-c})\). Generic block algebra is conclusively insufficient.
+~~~math
+q_m\le p^{3/2}q_n+O(T_n).
+~~~
 
-3. **Multilevel intersection histogram.** Work directly with the self-loop-free identity (10.1292). The one-threshold lemma (10.1294) is exponentially impossible away from \(\alpha=(\beta-p^2)/(1+\beta-2p)\), and at equality asks for the full Johnson-ball rate. Polynomial all-seed stars cannot provide it.
+Geometric-window summability and exact landing then force
+`q_n/n^(3/2)`, hence `M_n/n^(3/2)`, to converge.
 
-4. **Tight decomposition, dormant.** Reopen only with a genuinely non-switching global certificate absent from (10.1251)--(10.1252).
+The current box attack uses exact minimality. If the internal field square
+`I` is much larger than `n^(9/4-c)`, the Wave 55 attenuated-block theorem
+extracts a field-excess edge set and forces a parent state of deficit
+`o(T_n)` that reverses a fixed fraction of it. The exact missing bridge is an
+aggregate child-fibre/parent-witness compatibility theorem: charge those
+migrated states back to low-cross favorable incidences or use their
+multiplicity to produce a box-canceling center.
 
-5. **Other global routes, dormant.** Reopen only with a testable composition, recovery, approximate-subadditivity, compactness, or square-root cavity theorem at the required scale.
+The overlap attack must retain the complete self-loop-free intersection
+histogram (10.1292). At a fixed linear core it must generate
+`exp(n v_*(p,alpha)+o(n))` partners for a positive fraction of biased bases,
+spread across the `Theta(sqrt(n))` transition-typical intersection levels.
 
-Constant shortfall, complement incidence, robust cylinders, canonical Bellman pressure, strict pressure, high replicas, local harmonic Poincaré, nested chains, greedoids, and unweighted edge-cube covers remain retired.
+## Decisive retirements and falsification criteria
+
+- For the full uniform local-state/completion incidence,
+
+  ~~~math
+  Z_t\le\nu_m\{g\ge-p_2DT_n\}+2e^{-cDH}.
+  ~~~
+
+  Thus every `Z_t>=e^{-O(H)}` lower bound already proves the local
+  recurrence after fixed-depth truncation. This does not apply to a selected
+  global cut.
+
+- K success at depth `D T_n` has mass at most `2e^{-cD^2H}`. Hence the
+  diverging-depth lemmas (10.1277), (10.1285), and the K branch of (10.1297)
+  are impossible. Fixed-depth K abundance is recurrence-local. Scalar
+  delocalization, canonical heads, and head exchange cannot repair this.
+
+- Generic cap, operator, trace, child optimality, and block algebra do not
+  force the box: scalable nonminimal signings hide `Theta(n^(5/2))` internal
+  curvature with zero cross and correction terms. Exact minimality now forces
+  witness migration, but finite exact examples falsify pointwise common-
+  witness compatibility.
+
+- Every linear-core one-threshold histogram compression is impossible. Away
+  from its tuned surface the shortfall is exponential; on the tuned surface
+  it is `Theta(sqrt(n))`. Nonnegative core mixtures are convex repackagings
+  and cannot beat their best component.
+
+- The leading package would be falsified as an implementation by an
+  unbounded exact-minimizer family on which either every box value exceeds
+  `n^(9/4-c)` for every usable `c`, or every controlled cap and nontrivial
+  core has spectral excess below `e^{-omega(H)}`. That would not disprove
+  convergence or the bare fixed-cut lemma.
+
+## Ranked alternatives
+
+1. **Aggregate migration compatibility.** Bound how many excess-edge choices
+   can share one escaping parent state and transfer the mass to a low-row child fibre.
+
+2. **Full weighted-histogram inequality.** Use signing compatibility and row
+   geometry to beat the degree-two baseline without threshold compression.
+
+3. **Direct selected-cut construction.** Prove (10.795) through a nonuniform
+   low-row cut law, near-ground face, or deterministic selection principle.
+
+4. **Tight decomposition, dormant.** Reopen only with a non-switching global
+   certificate that rounds all-bad pressure with state-dependent budgets.
+
+5. **Other global routes, dormant.** Reopen only with a testable composition,
+   recovery, approximate-subadditivity, compactness, or square-root cavity
+   theorem at the required scale.
+
+Uniform annealed completion, orientation/K abundance, scalar K profiles,
+canonical-head rescue, one-threshold clusters, nonnegative core mixtures,
+constant shortfall, complement incidence, robust cylinders, harmonic
+pressure, nested chains, greedoids, and unweighted edge-cube covers are
+retired in their recorded forms.
 
 ## Blank-slate audit status
 
-The most recent blank-slate audit was Wave 45. Its finite-temperature interpolation, summable cavity derivative, and signed-kernel compactness candidates supplied no recovery theorem. This Wave 54 refresh is early and decisive-result-driven, not a scheduled mandatory audit. Wave 59 must begin from the original convergence problem and perform the next blank-slate audit before route comparison.
+The most recent blank-slate audit was Wave 45. Its finite-temperature
+interpolation, summable cavity derivative, and signed-kernel compactness
+candidates supplied no recovery theorem. This Wave 55 refresh is early and
+decisive-result-driven, not a scheduled mandatory audit. Wave 60 must begin
+from the original convergence problem and perform the next blank-slate audit
+before route comparison.
 
-All rankings and hypotheses above are the main agent's assessment, not user directives. Wave 55 must independently rank ten ideas against this steering document and the Wave 54 Updated frontier.
+All rankings and hypotheses above are the main agent's assessment, not user
+directives. Wave 56 must independently rank ten ideas against this steering
+document and the Wave 55 Updated frontier.
