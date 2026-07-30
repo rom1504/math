@@ -1,142 +1,139 @@
 # Strategic steering
 
-Evidence cutoff: Wave 58, with a retrospective consolidation of Waves 40--56
-(2026-07-30). Ordinary wave generation is paused pending one bounded
-diagnostic campaign and a committed research decision. If ordinary waves
-later resume, the next scheduled refresh remains Wave 61 and must include a
-blank-slate abstraction audit.
+Evidence cutoff: the consolidation after Wave 56, later Wave 57--58
+refinements, and the completed bounded diagnostic campaign (2026-07-30).
+Ordinary wave generation is paused. The committed recommendation is to seek
+external mathematical review before deciding whether any research resumes.
+If ordinary waves later resume, Wave 61 remains the next scheduled refresh
+and must include a blank-slate abstraction audit.
 
 ## User-stated objective and workflow directives
 
 The research objective is to determine whether `M_n/n^(3/2)` converges. The
 conjectural value `1/2` is not an additional user objective.
 
-The user has directed the project to pause continuous waves, consolidate the
-evidence, investigate both convergence and genuine nonconvergence, run
-exactly one three-agent diagnostic campaign, and commit an evidence-based
-decision before further research. These are workflow directives. All
-mathematical route rankings and conjectures below are the main agent's
-assessment.
+The pause policy, consolidation rule, requirement to investigate convergence
+and genuine nonconvergence, and bounded three-agent campaign are user workflow
+directives. Route rankings and mathematical conjectures below are the main
+agent's judgments. Suggestions from subagents, external reviewers, or other
+model instances are feedback to evaluate, not directives.
 
-## Consolidated judgment
+## Current decision
 
-No route proves convergence or nonconvergence, no recurrence step has been
-completed uniformly for exact minimizers, and the rigorous interval remains
+Continuous autonomous waves remain stopped. The campaign produced exact
+diagnostic constraints but no primary progress: no improved bound, completed
+recurrence, uniformly proved exact-minimizer bridge, strict reduction,
+scalable asymptotic counterexample, or convergence/nonconvergence mechanism.
+
+The evidence supports **seeking external mathematical review**. It does not
+support resuming one named internal target, because no target was shown
+strictly weaker than the original tail. It does not support changing
+architecture, because no new mechanism survived audit. A permanent stop
+would overstate the evidence because no impossibility theorem was proved.
+Further autonomous research requires an explicit later decision; it must not
+restart automatically.
+
+## Rigorous frontier
+
+The interval remains
 
 ~~~math
 0.336493364431\ldots\le\liminf\frac{M_n}{n^{3/2}}
 \le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-Proof-level progress has stalled. Waves 40--56 produced important route
-falsifiers, exact identities, and one positive common-active-face theorem,
-but no improved bound or completed component of the convergence recurrence.
-Waves 57--58 sharpened the same obstruction interfaces without changing that
-assessment. Cleaner sufficient conditions are not counted as progress when
-they replace the bare-tail obligation by an equally strong collision, row,
-or compatibility statement.
+No fixed-density restriction recurrence is complete. The verified final
+chain is still
 
-The selected-prior lemma is the cleanest current target, not a demonstrated
-simplification. The common active-face theorem controls neither bare
-favourability nor project-scale captured row. Proving those two properties on
-one saved event would essentially prove the selected-prior statement itself;
-there is not yet evidence that the bridge is substantially weaker than the
-original bare-tail problem.
-
-## Cleanest convergence target
-
-Fix `p=m/n` in a compact subinterval of `(1/2,1)` and some fixed
-`c in (0,1/4)`. Put
-
-~~~math
-H=\lceil n^{3/4-c}\rceil,\qquad T_n=n^{3/2-c},
-\qquad R_*=n^{9/4-c}.
+~~~text
+uniform recurrence with O(n^(3/2-c)) error
+  -> summable geometric landing
+  -> convergence of q_n/n^(3/2)
+  -> convergence of M_n/n^(3/2).
 ~~~
 
-For every exact order-`n` minimizer, construct a selector-independent law
-`nu` on oriented global cuts such that the bare event `F_t` satisfies
+## Selected-prior and common-active-face verdict
 
-~~~math
-(U_m\otimes\nu)(F_t)\ge e^{-CH},\qquad
-\mathbb E[R(D)\mid F_t]\le CR_*,
-~~~
+The selected-prior package is the cleanest exact characterization, but the
+diagnostic audit proves it is not a reduction. If a prior has favourable mass
+`Z` and favourable-captured row `Rbar`, then for every `a>1` one supported cut
+has mass at least `(1-1/a)Z` and row at most `a Rbar`. Conversely a good cut
+gives the point-mass prior. At the project scales, this is exactly the bare
+favourable low-row tail up to fixed constants.
 
-with captured parent deficit `O(T_n)` when needed. Selected-prior extraction
-then gives one cut with saved favourable fibre and project row; the verified
-bare-tail lemma gives
+Captured parent deficit is optional for the bare-tail theorem because deficit
+already appears inside `widehat ell`. Requiring the event inside the
+particular common-active-face law and canonical escape adds compatibility; it
+does not weaken the tail.
 
-~~~math
-q_m\le p^{3/2}q_n+O(T_n),
-~~~
+The common-active-face theorem is correct and noncircular, but it controls
+polynomial-scale first moments. Its certificate is insensitive to arbitrary
+`e^{-Theta(H)}` perturbations and controls neither saved bare favourability
+nor row conditioned on that rare event. Scalar averaging is circular because
+`E widehat ell` is exactly the unknown restriction excess. This route should
+not resume without a new entropy-scale theorem stated in a quantity not
+already equivalent to favourable mass plus row.
 
-and geometric-window summability plus exact landing gives convergence.
+## Blank-slate diagnostic audit
 
-The missing bridges from the common active face are exact and separate:
+The diagnostic generated three formulations before comparing them with the
+ledger.
 
-1. convert common positive-block escape into saved **bare** favourability,
-   requiring signed negative-edge cancellation rather than marginal escape;
-2. control captured row on that same event at `O(R_*)`; and
-3. preserve the already available near-ground deficit and low-information
-   collision while imposing the first two properties.
+1. **Block `2/3`-power composition.** A power-saving, Hammersley-summable
+   defect would prove convergence. Bare `o(N)` error permits slow log-log
+   oscillation, and known bridges have a leading-order defect.
+2. **Far-down principal restriction.** Competitive signings are
+   cut-quasirandom and contain every fixed signed pattern. For fixed child
+   order and parent order tending to infinity, the best restriction is
+   eventually exactly the order-child optimum, so the proposal becomes the
+   scalar conclusion itself. Coupled scales return to the known
+   hidden-versus-revealed adaptive-selector gap.
+3. **Fixed-temperature pressure.** A same-temperature power-saving
+   near-additivity theorem would suffice. The exact random bridge has
+   extensive curvature, changes child temperatures, and switching makes
+   ordinary covariance interpolation independent of the signing.
 
-No verified theorem currently removes either of the first two obligations.
-
-## Other live or dormant convergence packages
-
-1. **Project-row box plus spectral excess.** A low-row favourable box and
-   saved `P_ell-lambda_2` imply a saved centre and then the bare tail. Both the
-   box and signing-specific many-selector overlap remain open. Mesoscopic
-   capacity only shows that one threshold is not numerically impossible; it
-   supplies neither obligation and is not demonstrably simpler.
-
-2. **Common-active-face completion.** Exact minimality gives one common
-   near-ground law escaping every canonical excess block. To converge it
-   still needs joint cancellation and row on saved mass, followed by the
-   selected-prior chain. This is genuine partial structure but not a
-   completed recurrence component.
-
-3. **Integrated harmonic transport.** Phase-aware endpoint domination,
-   restoring, orientation, selector transport, and endpoint mass would be
-   needed before the harmonic entropy criterion yields the recurrence.
-   Several independent bridges remain, so this route is dormant and not
-   simpler than the bare tail on present evidence.
-
-4. **Direct annealed completion, K-profile, complement, and generic pressure
-   routes.** Their recorded implementations are retired: uniform completion
-   localizes to recurrence-strength local mass, far K abundance is too small,
-   fixed-density row-good complement columns pay the unsaved exponent, and
-   canonical pressure is switching symmetry or recurrence-strong.
+These are not new architectures with leverage. Fixed-pattern compactness,
+bare little-oh composition, and covariance-only interpolation should not be
+reintroduced as independent routes.
 
 ## Genuine nonconvergence alternative
 
-Nonconvergence is a standing alternative, not a label for a failed proof
-route. A genuine result must exhibit a fixed `epsilon>0` and two infinite
-subsequences `(n_j)` and `(m_j)` with
+Genuine nonconvergence remains a standing alternative. It requires a fixed
+`epsilon>0` and two infinite subsequences separated by at least `epsilon`, or
+an equivalent proof that liminf is strictly smaller than limsup. Failure of
+an intermediate lemma does not count.
+
+The campaign found no such construction. It proved an explicit
+`O(sqrt(beta))` relative-order modulus for the actual normalized optima, where
+`beta` is relative order separation, and hence
 
 ~~~math
-\left|\frac{M_{n_j}}{n_j^{3/2}}-
-\frac{M_{m_j}}{m_j^{3/2}}\right|\ge\epsilon
+\operatorname{Clust}\left(M_n/n^{3/2}\right)
+=[\liminf M_n/n^{3/2},\limsup M_n/n^{3/2}].
 ~~~
 
-for all sufficiently large `j`, or otherwise prove
-`liminf M_n/n^(3/2)<limsup M_n/n^(3/2)`. Finite residue-class effects and
-counterexamples to complement incidence, coarea, pressure, or any other
-intermediate lemma do not meet this standard.
+If nonconvergence is real, low and high values must occupy alternating
+macroscopic intervals of positive width on the `log n` axis. Ratio-dense
+arithmetic classes cannot form distinct phases. A surviving proposal must
+start with both a strict low construction and an order-sensitive larger lower
+bound for every signing on another sparse hierarchy. No such universal lower
+mechanism is known.
 
-## Bounded diagnostic campaign
+## External-review questions
 
-Run exactly three independent agents, with a hard limit of 90 minutes and
-checks every 15 minutes; do not extend or replace them:
+The recommended review should ask:
 
-1. adversarially audit whether the selected-prior/common-active-face bridges
-   are genuinely weaker than the original bare tail or hide equivalence;
-2. make a blank-slate convergence attack, stating a concrete theorem before
-   consulting ledger route vocabulary; and
-3. seek genuine asymptotic nonconvergence through separated subsequences,
-   not an intermediate-route falsifier.
+1. Is there a known proportional principal-submatrix or discrepancy theorem
+   controlling the adaptive selector gap with a power saving for exact
+   minimizers?
+2. Can exact-minimizer structure yield entropy-scale favourable low-row mass
+   without assuming an equivalent bare-tail statement?
+3. Does covering-radius, Boolean quadratic-form, spin-glass, or design theory
+   provide a thermodynamic-limit mechanism for the minimum over signings, or
+   an all-signings lower theorem capable of genuine log-scale oscillation?
 
-Each report must contain a concrete theorem, scalable construction,
-falsifier, or an explicit account of why the direction lacks leverage. After
-the reports, choose and commit exactly one recommendation: resume with one
-named target, change research architecture, seek external mathematical
-review, or stop. Do not resume ordinary waves automatically.
+The complete implication chains, falsifiers, proofs, and campaign synthesis
+are in `ledger.md`; Git history preserves earlier rankings. Any external
+proposal must be checked against those obstructions before it can justify a
+new target or architecture.

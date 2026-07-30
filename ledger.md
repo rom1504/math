@@ -37394,3 +37394,277 @@ convergence attack, and a genuine nonconvergence attack.  Each is limited to
 reports will be synthesized into one committed recommendation before any
 further research.  If ordinary waves later resume, Wave 61 remains the next
 scheduled blank-slate steering boundary.
+
+### 10.113 Bounded diagnostic campaign and committed research decision
+
+The post-consolidation campaign used exactly the three independent
+diagnostics specified in Section 10.112.  All three completed inside the
+90-minute cap; no agent was extended or replaced, and no ordinary wave was
+started.  The main agent reconstructed the arguments below and reran the
+finite sanity checks.  The checks support the algebra but are not the basis
+for any proof label.
+
+The campaign does **not** improve the rigorous interval, complete a
+restriction recurrence, or prove convergence or nonconvergence.  It does
+establish three useful diagnostic theorems and, more importantly, shows that
+none of the current formulations meets the stopping rule's definition of
+primary progress.
+
+#### 10.113.1 Adversarial proof audit: selected priors collapse to one cut
+
+Retain the notation of (10.792)--(10.795).  For a cut `d`, let
+
+~~~math
+u(d)=U_m(F_t^d),\qquad R(d)=x^{\mathsf T}A^2x.
+~~~
+
+For any prior `nu`, put
+
+~~~math
+Z_\nu=\mathbb E_\nu u(D),\qquad
+\overline R_\nu=
+\frac{\mathbb E_\nu[u(D)R(D)]}{Z_\nu}.
+~~~
+
+The following reverse extraction is **Verified**.  If `Z_nu>0`, then for
+every `a>1` there is a deterministic cut `d` such that
+
+~~~math
+u(d)\ge(1-a^{-1})Z_\nu,
+\qquad R(d)\le a\overline R_\nu.                 \tag{10.1389}
+~~~
+
+Indeed, under the favourable output marginal
+`pi(d)=nu(d)u(d)/Z_nu`, Markov gives `pi{R<=a Rbar}>=1-1/a`.
+If every cut in that set had `u(d)<(1-1/a)Z_nu`, its `pi`-mass would be
+strictly smaller than `1-1/a`, a contradiction.  Conversely, a single cut
+gives the point-mass prior with exactly its fibre mass and row.  Thus at
+`Z_nu=e^{-O(H)}` and `Rbar=O(R_*)`, unrestricted selected-prior existence is
+equivalent, up to harmless fixed constants, to the deterministic bare-tail
+lemma (10.795).
+
+Two corrections follow.
+
+1. A separately captured parent deficit is not required by (10.795): the
+   deficit already occurs with its sign inside `widehat ell`.  It is an
+   optional strengthening, not a third necessary clause.
+2. Saved favourability without row is only the row-free bare tail.  Once row
+   is captured on that same saved event, (10.1389) recovers exactly the full
+   bare-tail obligation.  No verified theorem makes this pair easier on exact
+   minimizers.
+
+The common-active-face theorem itself is not circular, but its proposed
+completion supplies no verified simplification.  Requiring the rare event to
+lie in the particular active law and in canonical escape adds support and
+intersection conditions that a bare-tail cut need not satisfy.  Moreover,
+its certificate is a polynomial-scale first-moment statement.  Mixing
+`alpha=e^{-Theta(H)}` arbitrary mass into an active law changes the
+certificate by only `O(alpha n^(3/2))`, far below its polynomial tolerance.
+The stated certificate therefore has no resolution at the collision mass
+needed by the tail.  This is a limitation of the proved certificate, not a
+no-go theorem for every possible strengthening of the method.
+
+There is also an exact circularity warning.  For every selector-independent
+prior,
+
+~~~math
+\mathbb E_{U_m\otimes\nu}\widehat\ell(S,D)
+=\mathbb E_{U_m}Q(A[S])-p^{3/2}q_n.              \tag{10.1390}
+~~~
+
+Consequently, proving that this mean is `O(T_n)` already proves the desired
+recurrence before any tail argument.  Concentration centred at this unknown
+mean is not an independent way to locate the required tail.
+
+**Research judgment.**  The selected-prior language remains the cleanest
+exact characterization, but it is not a live reduction.  The common active
+face removes a witness-multiplicity defect inside one implementation while
+controlling neither entropy-scale bare mass nor conditional project row.
+
+#### 10.113.2 Blank-slate convergence audit
+
+Before consulting the ledger's route vocabulary, the diagnostic stated three
+candidate mechanisms.  Their later comparison with the ledger was as
+follows.
+
+1. **Block `2/3`-power composition.**  With `b_n=M_n^(2/3)`, a theorem such
+   as
+
+   ~~~math
+   b_{m+r}\le b_m+b_r+O((m+r)^{1-\delta})           \tag{10.1391}
+   ~~~
+
+   would give almost-subadditive convergence.  A uniform `o(m+r)` defect is
+   insufficient: the nonconvergent sequence
+   `b_n=n[1+epsilon sin(log log(n+n_0))]` has uniform `o(N)` two-block
+   defect.  The exact block identity retains a nonnegative cross norm, and a
+   random bridge pays `Theta(N^(3/2))` in the original scale.  No structured
+   bridge supplies the power saving in (10.1391).
+
+2. **Far-down principal restriction.**  The proposed theorem asked every
+   competitive order-`N` signing to contain an `n`-set with
+
+   ~~~math
+   \frac{D(A[S])}{n^{3/2}}
+   \le\frac{D(A)}{N^{3/2}}
+   +C\left(n^{-\gamma}+\sqrt{n/N}\right),           \tag{10.1392}
+   ~~~
+
+   where `D(A)=max_x|H_A(x)|`.  It would prove convergence by fixing `n`
+   and sending a liminf parent order `N` to infinity.  That quantifier order
+   is tautological for a precise reason.  If `D(A_N)=O(N^(3/2))`, then for
+   all disjoint `U,V`,
+
+   ~~~math
+   \left|\sum_{i\in U,j\in V}a_{ij}\right|
+   \le\frac32D(A_N).                                \tag{10.1393}
+   ~~~
+
+   This follows by writing the rectangle as half the combination of the
+   three signed cuts `U`, `V`, and `U union V`.  Principal internal sums are
+   also at most `D(A_N)`, so the positive-edge graph has cut distance
+   `O(N^{-1/2})` from density `1/2`.  The induced counting lemma then shows
+   that every fixed signed pattern occurs in every sufficiently large
+   competitive signing.  Hence, for each fixed `n`,
+
+   ~~~math
+   \min_{|S|=n}D(A_N[S])=M_n                         \tag{10.1394}
+   ~~~
+
+   eventually.  In the far-down limit, (10.1392) is therefore exactly the
+   unknown scalar inequality `M_n/n^(3/2)<=liminf c_N+O(n^-gamma)`, not a
+   sampling mechanism.  If `n` and `N` are instead coupled at fixed density,
+   the problem returns exactly to the verified hidden-versus-revealed
+   selector game (10.643)--(10.646) and its open adaptive-max bridge.
+
+3. **Fixed-temperature pressure.**  For
+
+   ~~~math
+   P_n(\beta)=\frac1n\min_A\log\mathbb E_x
+   \exp\!\left(\frac{\beta|H_A(x)|}{\sqrt n}\right),
+   ~~~
+
+   one has the exact squeeze
+
+   ~~~math
+   \frac{M_n}{n^{3/2}}-\frac{\log2}{\beta}
+   \le\frac{P_n(\beta)}\beta
+   \le\frac{M_n}{n^{3/2}}.                         \tag{10.1395}
+   ~~~
+
+   A same-temperature near-additivity theorem with a power-saving,
+   Hammersley-summable defect would prove convergence.  The annealed random
+   bridge instead produces an extensive term
+   `mr log cosh(beta/sqrt(N))=Theta_beta(N)` at a balanced split and changes
+   both child temperatures.  Random switching makes the two-replica
+   covariance independent of the signing, so ordinary covariance
+   interpolation cannot distinguish the minimized structures.  No
+   higher-order mechanism was found.
+
+**Research judgment.**  The cut-quasirandomness lemma (10.1393)--(10.1394)
+is a verified structural fact, but it shows why fixed-size local compactness
+is blind to the `n^(3/2)` objective.  None of the three candidates supplies a
+new composition or interpolation mechanism at the required scale.
+
+#### 10.113.3 Genuine nonconvergence diagnostic
+
+Put `a_n=M_n/n^(3/2)` and
+
+~~~math
+C_0=\sqrt{\frac{9\log2}{8}}.
+~~~
+
+The padding argument yields a useful **Verified** modulus for the actual
+optima.  For `1<=n<=m`, let `beta=(m-n)/m`.  Then
+
+~~~math
+\begin{aligned}
+a_m-a_n
+&\le C_0\beta^{3/2}
++\sqrt{2\log2\,\beta(1-\beta)(1+2/m)},\\
+a_n-a_m
+&\le C_0[1-(1-\beta)^{3/2}].                       \tag{10.1396}
+\end{aligned}
+~~~
+
+The first line follows from the random cross-block inequality and the
+all-order random-sign bound `M_h<=C_0h^(3/2)`; the second follows from
+monotonicity.  Thus `|a_m-a_n|=O(sqrt(beta))` uniformly as `beta` tends to
+zero.
+
+Because `|a_(n+1)-a_n|` tends to zero, the first-crossing argument gives
+
+~~~math
+\operatorname{Clust}(a_n)
+=[\liminf a_n,\limsup a_n].                         \tag{10.1397}
+~~~
+
+If the two endpoints differed by a fixed `g>0`, the modulus would thicken
+each low or high centre into an order interval of fixed positive width on the
+`log n` axis.  Low and high centres could be selected alternately only at
+multiplicatively separated scales.  Genuine nonconvergence would therefore
+require alternating macroscopic log-scale epochs, not isolated design orders.
+This is a necessary condition, not evidence that nonconvergence is false.
+
+The candidate constructions all fail an independent quantifier test.  A
+genuine separated-subsequence result needs both a strict upper construction
+on one infinite class and a strictly larger lower bound for **every** signing
+on another.  Conference, Paley, Hadamard, bent, maximum-excess, divisibility,
+and resonance phenomena constrain selected constructions or bounded
+arithmetic lattices; none supplies the second clause.  Ratio-dense order
+classes have the same cluster set by (10.1396).  Paley principal minors at
+orders `N=n+o(n)` also have vanishing normalized spectral defect, so exact
+conference nonexistence cannot create a continuous spectral gap.  No sparse
+order hierarchy with an all-signings lower theorem was found.
+
+**Research judgment.**  The arithmetic/design branch should not be resumed
+without first stating a scalable order-sensitive lower theorem for every
+signing.  The log-epoch scenario remains logically possible, so this campaign
+does not prove convergence.
+
+#### 10.113.4 Synthesis and decision
+
+The three reports were assessed against the rubric fixed before their final
+results: correct object, uniform asymptotic scale, logical novelty, absence of
+circularity, scalability, and a complete implication chain.
+
+1. The proof audit gives an exact equivalence/falsifier, not a weaker lemma.
+2. The blank-slate audit gives valid sufficient languages and a local
+   universality theorem, but every surviving bottleneck is either the old
+   adaptive-selector gap or an extensive non-summable defect.
+3. The nonconvergence audit gives a theorem about the shape of any
+   counterexample, but no separated subsequences or universal high-order
+   mechanism.
+
+Accordingly there is no evidence-based basis to **resume with one named
+target**: no report produced a genuinely weaker lemma with a complete chain.
+There is also no basis to **change research architecture**: no materially new
+mechanism survived its ledger audit.  A permanent **stop** would be stronger
+than the evidence, because the diagnostics prove neither impossibility nor
+intractability.
+
+The committed recommendation is therefore:
+
+> **Seek external mathematical review.**  Keep autonomous research paused
+> while a specialist independently assesses the problem and the consolidated
+> obstruction map.
+
+A useful review packet should ask, without presenting any conjecture as a
+directive:
+
+1. whether discrepancy, Boolean quadratic-form, or principal-submatrix
+   theory contains a proportional restriction theorem that controls the
+   adaptive selector gap (10.643)--(10.646) with a power saving;
+2. whether an entropy-scale inequality can connect exact-minimizer structure
+   to the bare favourable low-row event without merely invoking the
+   equivalent selected-prior package; and
+3. whether covering-radius, spin-glass, or design theory supplies either a
+   genuine thermodynamic-limit mechanism for the minimum over signings or an
+   order-sensitive all-signings lower theorem capable of log-scale
+   nonconvergence.
+
+External suggestions are evidence to audit, not directives.  Further
+autonomous research is stopped at this checkpoint.  It may resume only after
+an explicit new decision based on review or user direction; it must not
+restart automatically.  If ordinary waves later resume, Wave 61 remains the
+next scheduled blank-slate steering boundary.
