@@ -34086,3 +34086,404 @@ ranking:
   $2\le\ell<m$ spectral-excess theorem, exact-minimizer signed-shell structure
   under controlled cap inflation, and genuinely moderate-deviation
   completion tails beyond the target local Hanson--Wright band.
+
+### 10.105 Wave 52: the core-scale boundary and a K-functional far tail
+
+Wave 52 audited the sharper spectral-excess target at every common-core
+scale, attempted to force it through controlled row shells and selector
+exchange, and sought a genuinely far completion tail.  The overlap audit
+shows that fixed and $O(n^{3/4-c})$ core sizes are direct degree estimates in
+disguise; spectral amplification is genuinely distinct only at much larger
+cores.  The shell audit proves a positive-threshold exchange star but shows
+that every one-seed sublinear-radius selector ball is exponentially too small
+for the level-two target.  The completion audit imports an explicit primary-source
+Rademacher lower tail and couples it to the dependent outside quadratic form
+without assuming independence.  This gives a live exact profile theorem,
+although its required saved state population remains open.  All three
+checkers were rerun independently and reproduced their saved outputs.
+
+#### 10.105.1 Core-load calculus separates direct collision from spectral amplification
+
+Let $N=\binom nm$ and let $F_z$ be a favorable selector family with
+$r_z=|F_z|=Na_z$.  Empty fibers contribute zero below.  For $r_z>0$ and
+every $\ell$-set $R$, put
+
+~~~math
+c_z(R)=|\{S\in F_z:R\subseteq S\}|,\qquad
+\rho_\ell=\frac{\binom m\ell}{\binom n\ell},\qquad
+u_z(R)=\frac{c_z(R)}{r_z\rho_\ell}.
+~~~
+
+Here $\mathbb E_R$ is uniform over all $\ell$-cores, and
+$\mathbb E_Ru_z(R)=1$.  Exact common-core counting gives the
+**Verified core-load identity and sandwich**
+
+~~~math
+\boxed{
+p_\ell(z)=a_z\mathbb E_Ru_z(R)^2,
+\qquad
+a_z\le p_\ell(z)\le\frac{a_z}{\rho_\ell}.}
+\tag{10.1266}
+~~~
+
+For any center class $C$ with $\sum_{z\in C}a_z^2>0$, put
+
+~~~math
+P_\ell=\frac{\sum_{z\in C}a_z^2p_\ell(z)}
+{\sum_{z\in C}a_z^2},\qquad
+r_C=\frac{\sum_{z\in C}a_z^3}{\sum_{z\in C}a_z^2},\qquad
+M=\max_{z\in C}a_z.
+~~~
+
+Averaging (10.1266) and combining it with (10.1261) proves the **Verified
+hybrid extraction**
+
+~~~math
+\boxed{
+M\ge\max\left\{
+\rho_\ell P_\ell,
+\frac{[P_\ell-\lambda_2(\ell)]_+}
+{(1-\lambda_1(\ell))+n(\lambda_1(\ell)-\lambda_2(\ell))}
+\right\}.}
+\tag{10.1267}
+~~~
+
+The first term is direct collision counting; only the second term is
+spectral amplification.
+
+For $2\le\ell<m$ there is also an exact higher-core surplus.  With
+
+~~~math
+d_\ell=\binom m\ell\binom{n-\ell}{m-\ell},\qquad
+b_\ell=\binom{m-2}{\ell-2}
+\binom{n-\ell-2}{m-\ell},
+~~~
+
+factorial cancellation gives $\lambda_2(\ell)d_\ell=b_\ell$, hence the
+**Verified identity**
+
+~~~math
+\boxed{
+P_\ell-\lambda_2(\ell)=
+\frac{\displaystyle
+\sum_{z\in C}r_z
+\left\{\sum_{|R|=\ell}c_z(R)^2-b_\ell r_z\right\}}
+{\displaystyle d_\ell\sum_{z\in C}r_z^2}.}
+\tag{10.1268}
+~~~
+
+At level two this is a weighted pair-load collision inequality.  More
+sharply, the non-strict threshold itself gives
+
+~~~math
+\boxed{
+P_2\ge\lambda_2(2)\qquad\Longrightarrow\qquad
+M\ge\rho_2\lambda_2(2)
+=\frac{2(n-m)(n-m-1)}
+{n(n-1)(n-2)(n-3)}.}
+\tag{10.1269}
+~~~
+
+Equality is allowed.  On the standing compact fixed-density window the last
+expression is $\Theta(n^{-2})$.  This is much stronger than the saved degree
+required for convergence, but it is not a new overlap amplifier: at fixed
+density $P_2$ and $r_C$ are equivalent up to constants by (10.1266).
+
+The same distinction holds at the target exponential resolution.  Let
+$L_n=n^{3/4-c}$.  Uniformly on compact fixed-density windows and for
+$\ell=o(n)$,
+
+~~~math
+\log\rho_\ell=\ell\log(m/n)+O(\ell^2/n),\qquad
+-\log\lambda_2(\ell)=O(\log n).
+~~~
+
+Thus every $\ell=O(L_n)$ lies in the direct regime: a saved lower bound on
+$P_\ell$, and in particular the Wave 51 saved-excess target, already gives
+saved $M$ through the first term of (10.1267).  The **refined Open spectral
+target** is
+
+~~~math
+\boxed{
+-\log\rho_\ell=\omega(L_n),\qquad
+P_\ell(R)-\lambda_2(\ell)\ge e^{-O(L_n)}}
+\tag{10.1270}
+~~~
+
+at a controlled project-row cap.  A linear-sized core is one clean example;
+it is not necessary.  A small-core theorem could still prove convergence,
+but it would be a direct saved-degree theorem in equivalent notation.
+
+Finite data do not support an asymptotic level-two claim.  Every nonempty
+family has the diagonal self-loop
+
+~~~math
+h_2=\binom{n-2}{m-2}^{-1},\qquad
+\frac{h_2}{\lambda_2(2)}
+=\frac{\binom m2}{\binom{n-4}{m-2}}.
+~~~
+
+All stored target-side cases with $m>n/2$ and $n\le10$ have
+$h_2\ge\lambda_2(2)$.  Thus the fact that these cases pass the nonnegative
+criterion is automatic from the self-loop and is not signing evidence;
+measured strict excess may still include off-diagonal collisions.  This is a
+**Numerical exact finite warning**.  At fixed density the denominator is
+exponential; already at $(n,m)=(12,7)$,
+$h_2=1/252<2/189=\lambda_2(2)$.
+
+#### 10.105.2 Maximal-selector exchange gives only a local positive-threshold star
+
+There is genuine signing structure behind selector exchange, but it does not
+produce the needed global family.  Let
+$q_*=\max_{|S|=m}Q(A[S])$, fix a maximizing selector and an oriented ground
+$y$ with $\sigma y^{\mathsf T}A[S]y=q_*$ for
+$\sigma\in\{\pm1\}$, and put $T=S^c$, $k=|T|=n-m$.  For $i\in S$,
+$j\in T$, and a full completion $z$ with $z[S]=y$, define
+
+~~~math
+r_i=\sigma y_i\sum_{u\in S\setminus\{i\}}a_{iu}y_u,
+\qquad
+t_{ji}=\sigma z_j\sum_{u\in S\setminus\{i\}}a_{ju}y_u.
+~~~
+
+One-spin optimality and maximality over selectors prove the **Verified port
+bounds**
+
+~~~math
+\boxed{0\le r_i\le q_*/2,\qquad |t_{ji}|\le r_i.}
+\tag{10.1271}
+~~~
+
+Direct summation also gives the **Verified square budget**
+
+~~~math
+\boxed{
+\sum_{i\in S,j\in T}(r_i^2-t_{ji}^2)
+=|T|\lVert A[S]y\rVert_2^2
+-(m-2)\lVert A[T,S]y\rVert_2^2-m|T|\ge0.}
+\tag{10.1272}
+~~~
+
+For each port choose between $z$ and the outside flip $z^j$ so the incoming
+sign maximizes the exchanged candidate.  If $S'=S-i+j$, then
+
+~~~math
+D_{z\text{ or }z^j}(S')\le2(r_i-|t_{ji}|),\qquad
+\sum_{i,j}2(r_i-|t_{ji}|)\le2|T|q_*.
+~~~
+
+Consequently, at positive threshold $H=4q_*/m$, some center in
+$\{z\}\cup\{z^j:j\in T\}$ has at least
+
+~~~math
+\boxed{\frac{m|T|}{2(|T|+1)}}
+\tag{10.1273}
+~~~
+
+distinct $H$-favorable one-exchange selectors, while its row is at most
+$\{\sqrt{R_2(z)}+2\sqrt n\}^2$.  This is a **Verified positive-threshold
+exchange theorem**, not a zero-deficit overlap theorem.  At threshold zero,
+this port upper-bound certificate yields an exchanged ground retaining the
+same global value $q_*$ only under $|t_{ji}|=r_i$.  An exchanged selector
+with smaller $Q(A[S'])$ may nevertheless have zero deficit under strict
+inequality.  Moreover, (10.1271)--(10.1273) start from a selector maximizing
+$Q(A[S])$, whereas the box witness may use an arbitrary child ground; the
+star is therefore not automatically available at the box row $R_0$.
+
+The local star is exponentially too small.  If a construction uses at most
+$u$ physical flips and selectors within $u$ exchanges of one seed, it has at
+most
+
+~~~math
+B_{m,k}(u)=\sum_{s\le u}\binom ms\binom ks
+=\exp\{O(u\log(n/u))\}
+\tag{10.1274}
+~~~
+
+selector labels at each reached center.  Using (10.1265) alone to guarantee
+the controlled cap $O(R_0+n^2)$, with $R_0=O(n^{9/4-c})$, allows
+$u=O(n^{5/8-c/2})=o(n)$.  It does not rule out signing-specific
+cancellations that keep larger flip sets at low row.  For such a sublinear
+radius, (10.1274) is $e^{o(n)}$, its normalized degree and level-two
+retention are $e^{-\Theta(n)}$, and it cannot reach (10.1269).  This
+**Falsifies one-seed schemes confined to an $o(n)$-radius selector ball**, in
+particular those whose cap control uses (10.1265) alone; it does not falsify
+global overlap, a supply of exponentially many seeds, or cancellation-based
+large-radius propagation.
+
+The exact order-ten minimizer at $m=6$ makes the scope concrete.  Its row-ten
+families have no adjacent selector pair.  All forty
+row-ten-ground-incidence/outside-coordinate events move to row $42$ and give
+only one adjacent favorable selector, although these events need not yield
+distinct centers.  The 3,840 maximal-port checks are the 160 maximal-ground
+incidences times their 24 ports, and all have strict $|t_{ji}|<r_i$; hence no
+port preserves $q_*=22$ by saturation.  Nevertheless, the maximizing-sign
+exchanged candidate has zero deficit at its smaller selector cap in 3,200 of
+the 3,840 checks and deficit four in the remaining 640.  Thus nonsaturation
+is not a zero-deficit obstruction.  Every stored level-two shell is
+nonnegative, but fifteen of sixteen tests pass automatically from
+$h_2\ge\lambda_2$ and the remaining case is at density $1/2$.  These are
+**Numerical exact finite warnings**, not asymptotic counterexamples.
+
+#### 10.105.3 A dependence-safe K-functional far-completion theorem
+
+Return to the completion polynomial $Z=L+Q_T$ from (10.1257), with
+$L=\beta^{\mathsf T}w$, $Q_T=w^{\mathsf T}Bw$, and
+$r=-g/p_2>0$.  For an integer $H\ge1$, define
+
+~~~math
+\mathcal K_H(\beta)=K_{1,2}(\beta,\sqrt H)
+=\inf_{\beta=u+v}
+\{\lVert u\rVert_1+\sqrt H\lVert v\rVert_2\}.
+~~~
+
+[Montgomery-Smith's primary theorem](https://stephenmontgomerysmith.github.io/preprints/tail.pdf)
+and its explicit integer-parameter proof give the **Verified sourced lower
+tail**
+
+~~~math
+\boxed{
+\Pr\{L<-\tfrac12\mathcal K_H(\beta)\}\ge12^{-H}.}
+\tag{10.1275}
+~~~
+
+The hypotheses match exactly: the coefficient sequence is finite and the
+outside spins are independent Rademachers.  Holmstedt's formula in the same
+paper gives, for decreasing $b_i^*=|\beta_i|^*$,
+
+~~~math
+\mathcal K_H(\beta)\asymp
+\sum_{i\le H}b_i^*+\sqrt H
+\left(\sum_{i>H}(b_i^*)^2\right)^{1/2}.
+~~~
+
+This gives the concentrated/diffuse coefficient-profile split up to universal
+constants.
+
+The quadratic term is dependent on $L$, so it cannot be discarded by an
+independence product.  Here $k=|T|$, $B$ has zero diagonal, so
+$\mathbb E Q_T=\operatorname{tr}B=0$, and
+$\lVert B\rVert_F=\sqrt{k(k-1)}$.  Apply
+[Rudelson–Vershynin's primary Hanson–Wright
+theorem](https://arxiv.org/abs/1306.2872) to
+$Q_T=w^{\mathsf T}Bw$.  For a sufficiently large universal $C_{\rm HW}$, put
+
+~~~math
+b_H=C_{\rm HW}\{\lVert B\rVert_F\sqrt H+\lVert B\rVert_{\rm op}H\}.
+~~~
+
+Then $\Pr\{Q_T>b_H\}\le\frac12\,12^{-H}$.  A union bound, with no
+independence assumption, proves the **Verified coupled completion theorem**
+
+~~~math
+\boxed{
+r+b_H\le\tfrac12\mathcal K_H(\beta)
+\quad\Longrightarrow\quad
+\Pr\{Z\le-r\}\ge\tfrac12\,12^{-H}.}
+\tag{10.1276}
+~~~
+
+Take $H=\lceil n^{3/4-c}\rceil$ and $T_n=n^{3/2-c}$.  Exact-minimizer
+operator control gives
+
+~~~math
+b_H=O\!\left(n\sqrt H+\sqrt q\,H\right)=O(T_n).
+~~~
+
+Thus (10.1276) is genuinely outside the local recurrence wall on states with
+$r/T_n\to\infty$.  Fix a deterministic sequence $\omega_n\uparrow\infty$.
+If $\nu_m$ is the uniform selector/local-state law, define $G_n(\omega)$ to
+be the set of states satisfying
+
+~~~math
+g<0,\qquad r\ge\omega_nT_n,\qquad
+r+b_H\le\tfrac12\mathcal K_H(\beta).
+~~~
+
+The **Open exact-minimizer profile-abundance lemma** is
+
+~~~math
+\boxed{\text{For some }\omega_n\uparrow\infty\text{ and }C_0<\infty,
+\qquad \nu_m(G_n(\omega))\ge e^{-C_0H}}
+\tag{10.1277}
+~~~
+
+uniformly over the required exact minimizers, compact density window, and
+tolerances.  This would give $Z_t\ge e^{-O(H)}$ by (10.1276), hence (10.795)
+and convergence.  No such abundance statement is proved.
+
+This profile lives precisely above the project-row cross-energy scale.
+Since $\mathcal K_H(\beta)\le\sqrt H\lVert\beta\rVert_2$, every state in
+$G_n(\omega)$ has
+
+~~~math
+\boxed{
+\lVert A[T,S]y\rVert_2^2
+=\tfrac14\lVert\beta\rVert_2^2\gg n^{9/4-c}.}
+\tag{10.1278}
+~~~
+
+The two terms in Holmstedt's formula distinguish a concentrated head from a
+diffuse tail; failure means both are too small relative to $r+b_H$ on every
+saved far-margin population.  High cross energy alone is necessary, not
+sufficient.
+
+There is an attractive exact shortcut, but it is recurrence-circular.  The
+parent cap on the antipodal pair gives
+
+~~~math
+\Pr\{Z\le-r\}\ge\frac12
+\Pr\{|L|\ge(q-e+r)/2\}.
+\tag{10.1279}
+~~~
+
+Combining this with (10.1275) would require
+$\mathcal K_H(\beta)\ge q-e+r$.  But the same parent cap gives
+$\lVert\beta\rVert_1=\max_w|L(w)|\le q$, and
+$\mathcal K_H\le\lVert\beta\rVert_1$.  The condition therefore forces
+$e\ge r$.  Saved far-margin state mass then already proves the local
+recurrence by Hanson–Wright.  This **Retires only the cap-pairing shortcut**;
+the dependence-safe theorem (10.1276) remains live because it pays
+$b_H=O(T_n)$ rather than the possibly macroscopic slack $q-e$.
+
+#### 10.105.4 Updated frontier
+
+Wave 52 leaves the rigorous convergence interval unchanged and proves no
+asymptotic restriction estimate.  It sharpens the live boundary as follows:
+
+- project-row spectral excess remains the leading structured implementation,
+  but (10.1266)--(10.1270) expose its genuine scale.  Fixed and
+  $O(n^{3/4-c})$ cores are direct degree bounds in disguise.  A distinct
+  spectral mechanism must use $-\log\rho_\ell=\omega(n^{3/4-c})$--for
+  example, a linear-sized common core--and prove saved positive excess above
+  $\lambda_2$ at a controlled cap, together with the still-open box witness;
+
+- level two gives the clean polynomial criterion (10.1269), but all stored
+  target-window tests of its nonnegative condition are automatic from the
+  finite self-loop.  The exact positive-
+  threshold exchange certificate supplies only polynomially many
+  one-exchange labels.  Every one-seed sublinear-radius exchange ball has
+  $e^{o(n)}$ labels; exact A10 saturation fails at every audited maximal
+  port, although most exchanged selectors there still have zero deficit at
+  their smaller cap.  Such local certificates should not be treated as the
+  large-core overlap mechanism, but cancellation-based large-radius
+  propagation remains unruled out;
+
+- the noncircular K-functional theorem (10.1275)--(10.1278) is now the
+  strongest direct annealed alternative.  It supplies a sufficient reduction
+  to saved abundance of far-negative states whose cross-linear
+  coefficient profile pays both the desired depth and a Hanson--Wright
+  quadratic cutoff.  Its successful states necessarily have cross energy
+  above $n^{9/4-c}$; no abundance theorem is known;
+
+- exact parent-cap pairing eliminates the quadratic noise pointwise but is
+  recurrence-circular because its K-functional condition forces $e\ge r$.
+  The live union-bound coupling makes no independence error and avoids that
+  wall.  Generic moments through order three, constant-probability tails,
+  and cap pairing remain retired as far-tail implementations;
+
+- Wave 52 changes the exact leading scale and supplies a new live annealed
+  sufficient theorem, so refresh `STEERING.md` at this boundary.  Wave 53
+  should compare large-core spectral excess, a high-cross K-profile versus
+  low-cross box-discrepancy dichotomy, and a minimizer-specific abundance or
+  failure theorem for (10.1277).
