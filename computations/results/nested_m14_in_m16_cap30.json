@@ -1,0 +1,27 @@
+{
+  "child_cap": 21,
+  "child_order": 14,
+  "classification": "solver-certified finite computation; no standalone proof object",
+  "model": {
+    "binary_variables": 105,
+    "child_projective_constraints": 16384,
+    "global_complement_symmetry": true,
+    "parent_projective_constraints": 65536,
+    "root_gauge": true
+  },
+  "parent_cap": 30,
+  "parent_order": 16,
+  "schema": "quadratic-signing-nested-principal-cpsat-v1",
+  "solver": {
+    "branches": 25853,
+    "conflicts": 9876,
+    "elapsed_seconds": 900.0280752182007,
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "response_stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 0\nbest_bound: 0\nintegers: 1098\nbooleans: 104\nconflicts: 9876\nbranches: 25853\npropagations: 16128\ninteger_propagations: 2228280\nrestarts: 53\nlp_iterations: 1217638\nwalltime: 900.025\nusertime: 900.025\ndeterministic_time: 737.194\ngap_integral: 0\n",
+    "status": "UNKNOWN",
+    "time_limit_seconds": 900.0,
+    "wall_time_seconds": 900.025482677,
+    "workers": 2
+  }
+}

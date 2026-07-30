@@ -1,8 +1,8 @@
 # Strategic steering
 
-Evidence cutoff: the fourth computational--composition checkpoint (2026-07-30), including minimizer classes and the exact code mapping. Status:
-**computational--composition campaign active**. This is a new sustained
-campaign architecture, not a return to the prior short-wave sequence.
+Evidence cutoff: the fifth computational--composition checkpoint (2026-07-30), including spectral completion and exact Paley deletion chains. Status:
+**computational--composition campaign active**: a sustained architecture, not
+the prior short-wave sequence.
 
 ## User-stated objective and workflow directives
 
@@ -43,9 +43,9 @@ is why the lemma would prove convergence.
 Exhaustive evidence is positive but finite. For every `3<=n<=8`, one saved
 order-`2n` parent contains every exact order-`n` minimizer class on one half
 and an exact minimizer on the other; the parent is globally optimal through
-`n=7` and has cap 32 at `n=8`. At order 7 all three classes occur in the same
-conference parent with negative bridge-margin correlation. Exact computation
-also gives `M_13=20`, `M_14=21`, and upper intervals through order 16.
+`n=7` and has cap 32 at `n=8`. Every pair of order-8 minimizer classes now has
+a certified cap-32 bridge. Exact computation also gives `M_13=20`, `M_14=21`,
+and upper intervals through order 18.
 
 The main obstruction is now sharp: the two order-8 classes have identical
 complete Boolean energy histograms but universal-double caps 40 and 32;
@@ -54,14 +54,17 @@ give 31.62, and one anti-intertwining moment 29.45, against the true cap 21.
 Thus cap or one-body energy data are insufficient, while an unrestricted
 joint-state profile risks restating the original optimization.
 
-The code mapping is exact but does not itself reduce difficulty. Standard
-cut-code frustration is one-sided, and inspected covering-radius direct-sum
-theorems have the wrong code or inequality direction. Conference completion
-remains the strongest structured testbed. The lead is falsified by scalable
-linear `b`-defect, failure of every bounded-complexity restriction profile, or
-a verified equivalence of the proposed state to full parent minimization.
-Ranked alternatives are algebraic conference completion, broader exact bridge
-tests, a genuinely applicable covering-code theorem, and nonconvergence.
+The code mapping is exact but does not itself reduce difficulty. A verified
+spectral theorem now guarantees one- or two-vertex conference completion for
+the relevant three- or four-eigenvalue Seidel classes. `PC(10)` contains an
+exact `M_8 -> M_9` deletion chain, but its parent misses `M_10` by two; the
+order-14 double deletions already miss `M_12` by two. Conference-completable
+spectral classes are therefore the strongest structured implementation, not
+a replacement for cap control or cross-order landing. The lead is falsified
+by scalable linear `b`-defect, arithmetic scarcity at the needed scales,
+failure of every bounded-complexity profile, or equivalence of that state to
+full parent minimization. Ranked alternatives are broader exact bridge tests,
+a genuinely applicable augmented-code theorem, and nonconvergence.
 Update this assessment only after major evidence or a substantial checkpoint.
 
 ## Rigorous frontier
@@ -77,7 +80,8 @@ The newly certified finite information is
 
 ~~~math
 M_{11}=17,\qquad M_{12}=18,\qquad M_{13}=20,\qquad M_{14}=21.
-21\le M_{15}\le27,\qquad22\le M_{16}\le32.
+21\le M_{15}\le27,\quad22\le M_{16}\le32,\quad
+22\le M_{17}\le32,\quad23\le M_{18}\le33.
 ~~~
 
 They do not change the asymptotic interval. No fixed-density restriction
@@ -142,8 +146,5 @@ heuristic, and open claims. External coding results count only after checking
 the absolute two-sided maximum and all normalizations; one-sided frustration
 is not interchangeable with this problem.
 
-At the four-to-six-hour checkpoint, integrate all three tracks in `ledger.md`,
-update this assessment, and name the strongest defensible next target. If no
-track yields one, commit a concise negative report specifying the missing
-resource or idea. The next scheduled ordinary-wave blank-slate boundary would
-still be Wave 61, but this campaign is not being counted as ordinary waves.
+At the four-to-six-hour checkpoint, integrate all tracks, update this assessment, and name the strongest target or the missing resource. Wave 61
+remains the next ordinary-wave blank-slate boundary; this is not such a wave.

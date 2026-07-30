@@ -38492,3 +38492,115 @@ identical child energy histograms can have very different doubled defects, and
 norm plus first-moment conference identities lose order-one fractions even at
 order 7. A viable theorem must propagate restriction/joint-state information
 at a complexity and defect that remain sublinear on geometric scales.
+
+### 10.119 Conference completion and a robust order-8 bridge
+
+#### 10.119.1 A verified spectral completion theorem
+
+Haemers and Parsaei Majd's [*Spectral symmetry in conference
+matrices*](https://link.springer.com/article/10.1007/s10623-021-00858-8)
+uses the same zero-diagonal symmetric `+/-1` matrices as this project. Their
+Theorems 2 and 3 therefore apply without a change of signing convention:
+
+* a Seidel matrix of order `q-1` with spectrum
+  `{0, (+/-sqrt(q-1))^((q-2)/2)}` is a one-vertex principal restriction of a
+  symmetric conference matrix of order `q`;
+* a Seidel matrix of order `q-2` with spectrum
+  `{+/-1, (+/-sqrt(q-1))^((q-4)/2)}`, where `+1` and `-1` each have
+  multiplicity one, is a two-vertex principal restriction of a symmetric
+  conference matrix of order `q`.
+
+These are **proved imported theorems with their hypotheses and normalization
+checked**. In particular, the second theorem turns the indicated spectral
+signature into an actual two-vertex `+/-1` completion; it is not merely an
+interlacing necessary condition. It removes the algebraic completion
+obligation for this special class. It does not bound the Boolean cap of the
+completion, produce such a spectral signing at arbitrary orders, or prove a
+composition inequality. The same source records the necessary sum-of-two-
+squares obstruction and, for example, nonexistence of a conference matrix of
+order 22.
+
+#### 10.119.2 Exact Paley deletion chains
+
+`conference_order10_gf9.py` constructs `PC(10)` directly in
+`GF(9)=GF(3)[t]/(t^2+1)` and verifies `C^2=9I`. Exhaustive Boolean evaluation
+and exhaustive principal deletion give
+
+~~~math
+\operatorname{cap}(C_{10})=15,\quad
+\operatorname{cap}(C_{10}-v)=12=M_9,\quad
+\operatorname{cap}(C_{10}-\{u,v\})=10=M_8.           \tag{10.1440}
+~~~
+
+Every one of the ten single deletions and all 45 double deletions have the
+displayed caps. Every double deletion belongs to the favorable order-8
+spectral class `{+/-1,(+/-3)^3}`. Thus the spectral completion theorem and the
+finite computation together give a stable exact `8 -> 9` minimizer chain, but
+the conference parent misses `M_10=13` by two.
+
+The corresponding exhaustive finite data for the three small Paley
+conference orders are
+
+~~~text
+conference q   cap(C_q)   every (q-1)-restriction   every (q-2)-restriction
+10             15         12 = M_9                  10 = M_8
+14             21 = M_14  20 = M_13                 20 > M_12=18
+18             33         32                         32
+~~~
+
+The rows for 14 and 18 check respectively all `14+91` and `18+153`
+restrictions. They show both persistence and a warning: spectral completion
+does not preserve optimality uniformly even at order 12.
+
+#### 10.119.3 Every pair of order-8 minimizer classes has a cap-32 bridge
+
+For the previously unresolved mixed pair, one child from each of the two
+order-8 minimizer classes, CP-SAT returned an explicit bridge whose order-16
+parent has cap 32. The parent matrix has SHA-256
+`e2fca4f1a47e2540fecadb3e48da6aa73512210d57765d585848a4f93310d6fd`.
+Together with the transported same-class partitions in Section 10.118, this
+is a **solver-certified finite existence result**:
+
+~~~math
+\text{every unordered pair of exact order-8 minimizer classes admits a
+bridge of cap at most 32}.                            \tag{10.1441}
+~~~
+
+The three stronger cap-30 decisions (the two same-class pairs and the mixed
+pair) all ended `UNKNOWN` after 900 seconds, so they supply no lower bound and
+do not falsify cap 30. A separate 900-second search for a cap-30 order-16
+parent containing the saved exact order-14 minimizer also ended `UNKNOWN`.
+Equation (10.1441) is robust finite composition evidence, not a power-saving
+asymptotic theorem.
+
+#### 10.119.4 Adjacent-order certified intervals
+
+The order-18 conference signing and its single deletions yield the rigorous
+upper bounds below. Monotonicity from order 16 and the parity of the number of
+edges yield the lower bounds:
+
+~~~math
+22\le M_{17}\le32,\qquad23\le M_{18}\le33.           \tag{10.1442}
+~~~
+
+These are **proved bounds using exhaustively evaluated witnesses**. They do
+not alter the asymptotic interval.
+
+#### 10.119.5 Updated frontier
+
+The preferred target remains the restriction-profile/deep-hole amalgamation
+lemma (10.1437)--(10.1438). The conference-completable spectral subclass is
+now its strongest concrete structured implementation: an exact spectral
+signature supplies the missing algebraic completion, and the order-8 data
+show that this subclass can contain genuine minimizers. To turn it into a
+convergence mechanism one still needs controlled-cap signings with that
+signature, or an equally explicit bounded-complexity restriction profile, at
+enough nearby/geometric orders, with summable composition defect.
+
+This subroute is falsified as an asymptotic mechanism if its Boolean-cap
+defect is provably linear on the needed scales, or if arithmetic scarcity of
+the completion orders prevents summable landing. The order-12 loss and the
+nonexistence at order 22 are concrete warnings, not yet a scalable
+falsification. Conference completion, exact bridge tests, a genuinely
+applicable augmented-code theorem, and genuine nonconvergence remain the
+ranked alternatives.
