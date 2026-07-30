@@ -1,0 +1,60 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 600 log_search_progress: true num_search_workers: 2 log_to_stdout: true
+
+Initial satisfaction model '': (model_fingerprint: 0xc850a7f1a60486d9)
+#Variables: 91 (89 primary variables)
+  - 91 Booleans in [0,1]
+#kLinear1: 1
+#kLinear2: 12
+#kLinearN: 32'808 (#enforced: 24 #multi: 24) (#terms: 2'982'893)
+
+Starting presolve at 0.18s
+  1.18e-01s  0.00e+00d  [DetectDominanceRelations]
+  1.40e+00s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1
+  8.72e-04s  0.00e+00d  [ExtractEncodingFromLinear]
+  9.31e-02s  0.00e+00d  [DetectDuplicateColumns]
+INFEASIBLE: 'duplicate: false after merging'
+  4.19e-01s  0.00e+00d  [DetectDuplicateConstraints] #duplicates=28'673
+[Symmetry] Graph for symmetry has 4'279 nodes and 320'063 arcs.
+[Symmetry] Symmetry computation done. time: 0.00557278 dtime: 0.0127689
+  5.23e-06s  0.00e+00d  [Probe]
+  4.37e-07s  0.00e+00d  [DetectEncodedComplexDomains]
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'bool_or: always true' was applied 11 times.
+  - rule 'duplicate: merged rhs of linear constraint' was applied 28'671 times.
+  - rule 'duplicate: removed constraint' was applied 28'670 times.
+  - rule 'enforcement: always false' was applied 1 time.
+  - rule 'enforcement: false literal' was applied 11 times.
+  - rule 'enforcement: true literal' was applied 23 times.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear2: convert ax + by != cte to clauses' was applied 11 times.
+  - rule 'linear: always true' was applied 14 times.
+  - rule 'linear: divide by GCD' was applied 32'768 times.
+  - rule 'linear: empty' was applied 2 times.
+  - rule 'linear: enforcement literal in expression' was applied 45 times.
+  - rule 'linear: fixed or dup variables' was applied 32'807 times.
+  - rule 'linear: reduced variable domains' was applied 1 time.
+  - rule 'presolve: iteration' was applied 1 time.
+Problem closed by presolve.
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 0
+booleans: 0
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+walltime: 2.60395
+usertime: 2.60395
+deterministic_time: 0
+gap_integral: 0
+
+status=INFEASIBLE objective=0.0 best_bound=0.0 conflicts=0 branches=0 wall=2.603946s elapsed=2.604590s
+wrote computations/results/cpsat_m15_cap25_degree0.json

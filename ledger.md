@@ -38828,3 +38828,157 @@ four deletions are additional finite facts, not consequences claimed from the
 source. Switching class is consequently a genuine compact state for the first
 two restriction levels, but no theorem yet controls its Boolean cap at
 comparable block sizes or its distance from `M_n`.
+
+### 10.123 Shallow square-field descendants have limiting cap `1/2`
+
+The Boolean eigenvector from (10.1445) also gives a scalable obstruction to
+using only one or two conference deletions. Let `C` be `PC(r^2+1)`, with `r`
+an odd prime power, and normalize its infinity edges to `+1`. Deleting the
+infinity coordinate from a Boolean `+r` eigenvector loses exactly `r` units
+of quadratic energy. Hence every one-vertex descendant `S_1` (by the imported
+switching equivalence) satisfies
+
+~~~math
+\frac{r(r^2-1)}2\le\operatorname{cap}(S_1)
+\le\frac{r^3}{2}.                                    \tag{10.1453}
+~~~
+
+For two deletions, choose the line function `f` in (10.1445) so that the
+selected finite coordinate has sign `+1`. Deleting it together with infinity
+loses `2r` but restores their common `+1` edge. Switching equivalence of all
+two-vertex descendants and the spectral norm bound give
+
+~~~math
+\frac{r(r^2+1)}2-2r+1\le\operatorname{cap}(S_2)
+\le\frac{r(r^2-1)}2.                                 \tag{10.1454}
+~~~
+
+Both bounds are **proved uniformly**. Since the orders are respectively
+`r^2` and `r^2-1`, they imply
+
+~~~math
+\frac{\operatorname{cap}(S_i)}{|S_i|^{3/2}}
+\longrightarrow\frac12\qquad(i=1,2).                \tag{10.1455}
+~~~
+
+The exact order-10 and order-26 values attain the lower endpoints in
+(10.1453)--(10.1454), but endpoint equality is not claimed for general `r`.
+Equation (10.1455) is a **scalable route obstruction**: deleting a bounded
+number of vertices from square-field Paley conferences cannot by itself yield
+a signing family with limiting constant below `1/2`. This does not obstruct
+growing or comparable deletion blocks, precisely the regime isolated in
+Section 10.121.
+
+### 10.124 Four-hour computational--composition checkpoint
+
+The sustained campaign ran from approximately 17:47 UTC to this checkpoint,
+with the three tracks integrated rather than split into short waves.
+
+#### 10.124.1 Outcome against the campaign success criteria
+
+The campaign met two explicit success criteria:
+
+1. **Certified exact computation:** it proved the solver-certified finite
+   values `M_11=17`, `M_12=18`, `M_13=20`, and `M_14=21`, extending the exact
+   frontier beyond the former order-10 range. It also preserved rigorous
+   witness intervals through order 26.
+2. **External theorem with verified mapping:** the Paley descendant theorem
+   in Section 10.122 proves that one representative suffices for every one-
+   or two-vertex restriction, removing a real verification obligation. The
+   spectral completion theorems in Section 10.119 independently remove the
+   algebraic completion obligation for their stated eigenvalue classes.
+
+There is not yet a proved asymptotic composition inequality, a scalable
+subsequence separation, convergence, or nonconvergence. The asymptotic
+interval is unchanged.
+
+#### 10.124.2 Integrated evidence from the three tracks
+
+**Exact computation and certificates.** Besides the four exact values, the
+campaign produced a constant-memory Gray evaluator, a verified `GF(25)`
+conference construction, exact profiles through order 26, exhaustive
+restriction classifications through four deletions, and a certified witness
+chain down to order 19. Every claim is labeled as exhaustive, solver-
+certified, sampled, or heuristic in its result file.
+
+**Structural analysis.** The two order-8 minimizer classes have the same full
+energy histogram but different spectra, restriction profiles, and doubled
+caps. Square-field Paley matrices have explicit Boolean eigenvectors and
+saturate the spectral bound. Their shallow descendants retain limiting cap
+`1/2`. At `PC(26)`, the four-vertex switching/cap class exactly predicts the
+22-vertex complement cap, while comparable halves exhibit a four-unit gap
+above `M_13` in the deterministic sample.
+
+**Cross-order composition.** Every order-8 class pair admits a cap-32 bridge.
+The favorable `4+22` conference split has `2/3`-power defect only
+`0.255875...`, and structured `(24,24)` halves compose with negative defect.
+The missing issue is landing on near-minimizers at comparable orders, not
+composition of the structured witnesses themselves.
+
+The coding formulation `M_n=binom(n,2)-2 rho(C_n^+)` remains exact, but no
+general covering-code result inspected supplies the needed augmented-code
+amalgamation inequality. This track clarified normalization without removing
+the asymptotic obligation.
+
+#### 10.124.3 Bounded negative diagnostics
+
+A 200-restart, 50-kick order-15 heuristic search did not improve the cap-27
+witness. In a cap-25 CP-SAT case split, root degree 0 was certified
+`INFEASIBLE` in 2.60 seconds, while degrees 1, 2, and 3 each ended `UNKNOWN`
+after 600 seconds; degrees 4--6 were not launched. This does not tighten
+`21<=M_15<=27` and identifies stronger symmetry or a proof-producing solver as
+the missing exact-computation resource.
+
+For the favorable fixed `4+22` children (caps 4 and 49), cap 63 would change
+the conference seed's positive power defect into
+
+~~~math
+63^{2/3}-4^{2/3}-49^{2/3}=-0.0774641154\ldots.        \tag{10.1456}
+~~~
+
+`bridge_constraint_generation.py` alternated CP-SAT over the 88 bridge signs
+with exact separation over all `2^25` projective parent states. After 100
+rounds and 200 separated states it reached the declared iteration limit; its
+candidates had caps 67--91 and did not beat the cap-65 seed. This is a
+**reproducible inconclusive diagnostic**. It neither proves nor falsifies a
+cap-63 bridge; it shows that adding only one positive and one negative extreme
+state per round is too weak for this instance.
+
+#### 10.124.4 Global research judgment and continuation decision
+
+Define `b_n=M_n^(2/3)`. The strongest defensible next target is a
+**growing-block conference complement-transfer and structured-landing
+theorem**. For a noncircular, explicitly defined structured class `F_n`, put
+`u_n=min_(S in F_n) cap(S)^(2/3)`. The exact sufficient package is
+
+~~~math
+0\le u_n-b_n=o(n),\qquad
+u_{m+n}\le u_m+u_n+e(m+n),
+\qquad
+\sum_{j\ge1}\frac{e(2^jk)}{2^jk}\longrightarrow0.    \tag{10.1457}
+~~~
+
+The second clause gives convergence of `u_n/n`; the first transfers it to
+`b_n/n`. The next mathematical task is to define `F_n` using a bounded
+switching/spectral restriction state and prove or falsify both clauses. The
+four-vertex complement law is positive evidence for such a state; the
+`13+13` landing gap and the separator's growing active set are the known
+obstructions.
+
+Continuation is justified: the campaign produced primary progress, and
+(10.1457) is a named, falsifiable architecture rather than another equivalent
+low-row lemma. Continue this target with bundled active-state separation and
+growing-block tests. Stop or seek external review if the structured landing
+gap or required state complexity is shown to be linear/exponential. The
+selected-prior and common-active-face routes remain inactive, and no automatic
+short-wave loop resumes.
+
+#### 10.124.5 Updated frontier
+
+The exact frontier is `M_14=21`; the rigorous intervals are those displayed
+in (10.1442), (10.1450), and (10.1451). The asymptotic interval remains
+(10.1416). The preferred concrete lemma is now (10.1457), instantiated by a
+bounded conference complement state at growing block sizes. Its falsification
+criteria are a linear structured-landing gap, a linear accumulated bridge
+defect, arithmetic failure of geometric landing, or equivalence of the state
+description to full parent minimization.

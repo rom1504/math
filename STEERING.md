@@ -1,150 +1,137 @@
 # Strategic steering
 
-Evidence cutoff: the fifth computational--composition checkpoint (2026-07-30), including spectral completion and exact Paley deletion chains. Status:
-**computational--composition campaign active**: a sustained architecture, not
-the prior short-wave sequence.
+Evidence cutoff: the four-hour computational--composition checkpoint
+(2026-07-30). Status: **computational--composition campaign active, continuing
+on one named target** rather than returning to short proof waves.
 
 ## User-stated objective and workflow directives
 
-The research objective is to determine whether `M_n/n^(3/2)` converges. The conjectural value `1/2` is not an additional user objective.
+The research objective is to determine whether `M_n/n^(3/2)` converges. The
+conjectural value `1/2` is not an additional user objective.
 
-The user has explicitly authorized research to resume through a sustained
-computational--composition campaign. Its three connected tracks are exact
-computation and certificates, structural analysis of exact and heuristic
-signings, and cross-order composition as the principal mathematical target.
-The campaign should run roughly four to six hours before a global assessment,
-integrating the tracks regularly rather than reverting to short proof waves.
-The existing consolidation and stopping discipline remains in force.
-
-The success criteria and requirement to preserve reproducible programs,
-solver evidence, classifications, ledger updates, and Git checkpoints are
-user workflow directives. Mathematical hypotheses, route ranking, and the
-choice of a precise composition target are agent-authored judgments.
+The user explicitly authorized a sustained computational--composition
+campaign connecting exact certificates, structural analysis, and cross-order
+composition. The four-to-six-hour global assessment, reproducible artifacts,
+claim classification, ledger updates, and Git checkpoints are workflow
+directives. The existing consolidation and stopping discipline remains in
+force. Mathematical hypotheses and route rankings below are agent-authored.
 
 ## Agent-authored campaign assessment
 
-The leading route is now the more precise **restriction-profile/deep-hole
-amalgamation theorem**. For `b_n=M_n^(2/3)`, the exact sufficient result is to
-choose suitable near-minimizing representatives at comparable orders and a
-bridge with
+The preferred target is now a **growing-block conference complement-transfer
+and structured-landing theorem**, a concrete specialization of the earlier
+restriction-profile/deep-hole route. For a precisely defined structured class
+`F_n`, set
 
 ~~~math
-b_{m+n}\le b_m+b_n+e(m+n),
-\qquad \sum_{j\ge1}\frac{e(2^jk)}{2^jk}\longrightarrow0.
+u_n=\min_{S\in F_n}\operatorname{cap}(S)^{2/3},
+\qquad b_n=M_n^{2/3}.
 ~~~
 
-Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge. In the
-exact coding formulation, `M_n=binom(n,2)-2 rho(C_n^+)`, where `C_n^+` is the
-cut code augmented by the all-one edge word. The required lemma is to
-amalgamate two deep holes with a cross word satisfying ledger (10.1437), with
-loss bounded by (10.1438) for an `e` having the displayed geometric sum. This
-is why the lemma would prove convergence.
+An exact sufficient package is
 
-Exhaustive evidence is positive but finite. For every `3<=n<=8`, one saved
-order-`2n` parent contains every exact order-`n` minimizer class on one half
-and an exact minimizer on the other; the parent is globally optimal through
-`n=7` and has cap 32 at `n=8`. Every pair of order-8 minimizer classes now has
-a certified cap-32 bridge. Exact computation also gives `M_13=20`, `M_14=21`,
-and upper intervals through order 18.
+~~~math
+0\le u_n-b_n=o(n),\qquad
+u_{m+n}\le u_m+u_n+e(m+n),
+\qquad
+\sum_{j\ge1}\frac{e(2^jk)}{2^jk}\to0.               \tag{S1}
+~~~
 
-The main obstruction is now sharp: the two order-8 classes have identical
-complete Boolean energy histograms but universal-double caps 40 and 32;
-principal restrictions and spectra distinguish them. Conference norm bounds
-give 31.62, and one anti-intertwining moment 29.45, against the true cap 21.
-Thus cap or one-body energy data are insufficient, while an unrestricted
-joint-state profile risks restating the original optimization.
+The second statement makes `u_n/n` converge by balanced merging; the first
+then transfers convergence to `b_n/n` and hence `M_n/n^(3/2)`. The immediate
+research obligation is to define `F_n` using a bounded switching/spectral
+state that makes both parts of (S1) testable, rather than defining it by the
+unknown optimum.
 
-The code mapping is exact but does not itself reduce difficulty. A verified
-spectral theorem now guarantees one- or two-vertex conference completion for
-the relevant three- or four-eigenvalue Seidel classes. `PC(10)` contains an
-exact `M_8 -> M_9` deletion chain, but its parent misses `M_10` by two; the
-order-14 double deletions already miss `M_12` by two. Conference-completable
-spectral classes are therefore the strongest structured implementation, not
-a replacement for cap control or cross-order landing. The lead is falsified
-by scalable linear `b`-defect, arithmetic scarcity at the needed scales,
-failure of every bounded-complexity profile, or equivalence of that state to
-full parent minimization. Ranked alternatives are broader exact bridge tests,
-a genuinely applicable augmented-code theorem, and nonconvergence.
-Update this assessment only after major evidence or a substantial checkpoint.
+The best positive evidence is exact but finite. `PC(26)` has a pointwise
+`4+22` complement law: cap-4 children correspond exactly to cap-49
+complements, while cap-6 children correspond to cap 51. Every order-8
+minimizer-class pair has a cap-32 bridge. An imported Paley theorem proves all
+one- and two-vertex descendants switching equivalent, genuinely removing a
+family of verification obligations.
+
+The principal obstruction occurs at the required comparable scale. Among
+10,000 exact-profiled `13+13` splits of `PC(26)`, the best pair was `(24,24)`
+and no half reached `M_13=20`. The structured pair itself has negative
+`2/3`-power defect, so composition inside the family is not the issue;
+landing near exact minimizers is. A cap-63 fixed-child `4+22` separator also
+failed to resolve after 100 exact cutting-plane rounds, showing that a tiny
+active-state set is inadequate but not falsifying cap 63.
+
+The route is falsified by a proved linear gap `u_n-b_n`, linear accumulated
+composition defect, arithmetic sparsity that defeats geometric landing, or a
+proof that the proposed bounded state is equivalent to full minimization.
+Ranked alternatives are a genuinely applicable augmented-cut-code theorem,
+broader nonconference constraint generation, and genuine nonconvergence.
 
 ## Rigorous frontier
 
-The interval remains
+The asymptotic interval remains
 
 ~~~math
 0.336493364431\ldots\le\liminf\frac{M_n}{n^{3/2}}
 \le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-The newly certified finite information is
+The campaign certified
 
 ~~~math
-M_{11}=17,\qquad M_{12}=18,\qquad M_{13}=20,\qquad M_{14}=21.
-21\le M_{15}\le27,\quad22\le M_{16}\le32,\quad
-22\le M_{17}\le32,\quad23\le M_{18}\le33.
+M_{11}=17,\quad M_{12}=18,\quad M_{13}=20,\quad M_{14}=21,
 ~~~
 
-They do not change the asymptotic interval. No fixed-density restriction
-recurrence is complete. The verified final chain is still
+and explicit witnesses plus monotonicity/parity give
 
 ~~~text
-uniform recurrence with O(n^(3/2-c)) error
-  -> summable geometric landing
-  -> convergence of q_n/n^(3/2)
+n:          15  16  17  18  19  20  21  22  23  24  25  26
+lower:      21  22  22  23  23  24  24  25  25  26  26  27
+upper:      27  32  32  33  41  42  44  49  53  56  60  65
+~~~
+
+No fixed-density recurrence is complete. The verified final chain remains
+
+~~~text
+uniform recurrence with geometrically summable power defect
   -> convergence of M_n/n^(3/2).
 ~~~
 
-## Inactive routes: selected prior and common active face
+## Conference facts and limits
 
-These are not current targets. The selected-prior package is exactly
-equivalent, up to constants, to the bare favourable low-row cut: Markov
-extraction converts the prior to one cut, and a point mass gives the converse.
-Captured parent deficit is already present in `widehat ell`, so it does not
-weaken that tail obligation.
-
-The common-active-face theorem is correct but controls polynomial-scale first
-moments, not exponentially rare bare favourability or its conditioned row.
-Scalar averaging returns exactly the unknown restriction excess. Neither
-route should reactivate without an ingredient that avoids both equivalence
-and entropy loss.
-
-## Blank-slate diagnostic audit
-
-The blank-slate audit found three formulations. Power-saving `2/3`-power
-composition suffices, but bare `o(N)` defect permits slow oscillation.
-Far-down fixed-order restriction becomes the scalar conclusion, while coupled
-scales return to the adaptive-selector gap. Fixed-temperature pressure needs
-power-saving near-additivity, but a random bridge changes temperature and has
-extensive curvature. Thus fixed-pattern compactness, bare little-oh
-composition, and covariance-only interpolation are not independent routes.
-
-## Genuine nonconvergence alternative
-
-Genuine nonconvergence remains a standing alternative. It requires a fixed
-`epsilon>0` and two infinite subsequences separated by at least `epsilon`, or
-an equivalent proof that liminf is strictly smaller than limsup. Failure of
-an intermediate lemma does not count.
-
-No such construction is known. The diagnostic proved an `O(sqrt(beta))`
-relative-order modulus for normalized optima and hence
+For every odd prime power `r`, the square-field Paley signing satisfies
 
 ~~~math
-\operatorname{Clust}\left(M_n/n^{3/2}\right)
-=[\liminf M_n/n^{3/2},\limsup M_n/n^{3/2}].
+\operatorname{cap}(PC(r^2+1))=r(r^2+1)/2.
 ~~~
 
-Nonconvergence would therefore need alternating macroscopic log-scale epochs,
-not ratio-dense arithmetic classes. It still needs both a strict low
-construction and a larger order-sensitive lower bound for every signing on a
-second hierarchy; no such universal mechanism is known.
+Its one- and two-vertex descendants also have normalized cap tending to
+`1/2`. Thus bounded deletion is rigorously inactive as a source of a strict
+low construction; only growing/comparable blocks remain relevant.
 
-## Connected campaign tracks and checkpoint
+## Inactive routes: selected prior and common active face
 
-Continue exact certification, structural comparison, and bridge composition
-as connected tracks. Preserve programs and logs; label exact, certified,
-heuristic, and open claims. External coding results count only after checking
-the absolute two-sided maximum and all normalizations; one-sided frustration
-is not interchangeable with this problem.
+These are not current targets. The selected-prior package is equivalent, up
+to constants, to the bare favorable low-row cut. The common-active-face
+theorem controls polynomial-scale moments, not exponentially rare bare
+favorability or its conditioned row. Neither should reactivate without an
+ingredient avoiding both equivalence and entropy loss.
 
-At the four-to-six-hour checkpoint, integrate all tracks, update this assessment, and name the strongest target or the missing resource. Wave 61
-remains the next ordinary-wave blank-slate boundary; this is not such a wave.
+## Blank-slate audit and nonconvergence
+
+The last blank-slate audit found no independent mechanism: bare little-oh
+composition permits slow oscillation, fixed-pattern compactness returns to
+adaptive selection, and fixed-temperature interpolation has extensive
+curvature. Scheduled audits remain governed by `README.md`.
+
+Genuine nonconvergence remains a standing alternative. It requires a fixed
+`epsilon>0` and two infinite subsequences separated by it, or equivalently
+strictly different liminf and limsup. Route falsification does not count. The
+known relative-order modulus means such a construction needs alternating
+macroscopic log-scale epochs; no universal mechanism is known.
+
+## Checkpoint decision
+
+Continuation is justified by primary progress: new exact values beyond the
+old range, an imported theorem with verified mapping, a scalable shallow-
+deletion obstruction, and the exact complement-cap law. Continue only the
+named growing-block/structured-landing target and integrate computation with
+the theorem attempted. Reassess after a substantive attempt or when the
+README stopping rule next triggers; do not resume automatic wave generation.
