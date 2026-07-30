@@ -39,6 +39,34 @@ sequence of agent runs.
     successors, and start another three-agent wave. Continue this cycle until
     the problem is solved or a genuine external blocker is identified.
 
+## Consolidation and stopping rule
+
+At least every ten completed waves, or earlier after five consecutive waves
+without primary progress, pause automatic wave generation.  Primary progress
+means at least one of:
+
+- an improved rigorous bound or a completed recurrence step;
+- a missing lemma proved uniformly for the required class of exact
+  minimizers;
+- a verified reduction that removes an obligation without replacing it by an
+  equivalent one;
+- a scalable asymptotic counterexample; or
+- a genuine convergence or nonconvergence mechanism.
+
+New notation, equivalent sufficient conditions, finite examples, and
+route-specific falsifications are valuable research evidence, but they do not
+by themselves reset this counter.  At a consolidation checkpoint, update
+`ledger.md` and `STEERING.md`, run one bounded diagnostic campaign, and make
+an explicit evidence-based decision about whether further research is
+justified.  Do not resume ordinary research waves automatically.
+
+Convergence and genuine nonconvergence must both remain available research
+directions.  Falsifying an intermediate lemma or implementation is not a
+nonconvergence result.  Genuine nonconvergence requires, for some fixed
+`epsilon>0`, two infinite subsequences whose normalized values differ by at
+least `epsilon`, or an equivalent proof that the liminf is strictly smaller
+than the limsup.
+
 ## Strategic steering
 
 The main agent must end every completed research wave with a subsection named
