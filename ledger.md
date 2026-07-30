@@ -27259,3 +27259,521 @@ center mismatch entropy, and attack or falsify the endpoint-erasure and
 bounded-backtracking package (10.1018)--(10.1019).  Any agreement attack must
 carry its row clause explicitly; any harmonic attack must retain selector
 information and global orientation.
+
+### 10.89 Rare-coverage converse, row-transfer walls, and transient harmonic modes
+
+Wave 36 produced one direct converse and three structural reductions.  The
+algebraic identities and exact finite enumerations in this section are
+**Verified**; the reported harmonic integral ratios are **Numerical**.  Four
+separate checkers pass, and each attack was independently cross-audited.  The
+hub joins and canonical-mixture constructions below are deliberately scoped
+mechanism walls, not counterexamples built from an unbounded family of exact
+signing minimizers.
+
+#### 10.89.1 A row-sensitive upper tail turns rare coverage into the recurrence
+
+Fix an exact order-`n` minimizer `A`, an oriented cut `d=(sigma,x)`, and put
+
+```math
+p=\frac mn,\qquad p_2=\frac{(m)_2}{(n)_2},\qquad
+B=\sigma D_xAD_x,\qquad
+X_d(S)=\xi^TB\xi-p_2\mathbf1^TB\mathbf1.
+```
+
+Thus `||B1||_2^2=R_2(d)`, `||B||_F^2=n(n-1)`, and
+`||B||_(op)=||A||_(op)`.  For independent `eta_i~Ber(p)` and
+`zeta=eta-p1`, direct expansion gives
+
+```math
+\boxed{
+X_d(\eta)
+=(p^2-p_2)\mathbf1^TB\mathbf1
++2p(B\mathbf1)^T\zeta+\zeta^TB\zeta,
+\qquad
+p^2-p_2=\frac{p(1-p)}{n-1}.
+}
+\tag{10.1021}
+```
+
+Let `b_0=(p^2-p_2)q_n` and `v=(u-b_0)_+`.  Global Hoeffding for the linear
+term, rather than a coordinatewise Bernstein bound, pays the full squared row
+norm and no `R_infty`.  The quadratic decoupling/Hanson--Wright estimate
+already used in (10.690), followed by conditioning on `sum eta_i=m`, proves
+
+```math
+\boxed{
+U_m\{X_d\ge u\}
+\le3(n+1)\exp\left\{-c\min\left(
+\frac{v^2}{R_2(d)},\frac{v^2}{n^2},
+\frac v{\lVert A\rVert_{\rm op}}
+\right)\right\}.
+}
+\tag{10.1022}
+```
+
+The conditioning costs at most `n+1`, because `m` is a mode of
+`Bin(n,m/n)`.  This bound is uniform on fixed ratio windows.
+
+Put
+
+```math
+G_{n,m}=q_m-p^{3/2}q_n,\qquad
+h_d(S)=\widehat\ell(S,d)=Y_A(S)-X_d(S).
+```
+
+Every principal signing has `Q(A[S])>=q_m`, so `Y_A(S)>=G_(n,m)`
+pointwise.  If
+
+```math
+R_2(d)\le R,\qquad U_m\{h_d\le t\}\ge e^{-L},
+```
+
+then the latter event is contained in `{X_d>=G_(n,m)-t}`.  Inverting
+(10.1022), with `H=L+O(log n)`, gives the deterministic consequence
+
+```math
+\boxed{
+G_{n,m}\le t+b_0+C\max\left\{
+\sqrt{RH},\ n\sqrt H,\ \lVert A\rVert_{\rm op}H
+\right\}.
+}
+\tag{10.1023}
+```
+
+At the arbitrary-cut scales
+
+```math
+R=O(n^{9/4-c}),\qquad L=O(n^{3/4-c}),\qquad
+t=O(n^{3/2-c}),\qquad 0<c<1/4,
+```
+
+the exact-minimizer bounds `q_n=O(n^(3/2))` and
+`||A||_(op)=O(n^(3/4))` make the three inverse-tail terms respectively
+
+```math
+O(n^{3/2-c}),\qquad O(n^{11/8-c/2}),\qquad O(n^{3/2-c}).
+```
+
+Since the middle term is no larger than the other target scale for
+`c<=1/4`, one obtains directly
+
+```math
+\boxed{
+q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c}).
+}
+\tag{10.1024}
+```
+
+With the usual ratio-window uniformity and exact landing, (10.1024) already
+proves convergence.  More sharply, if `G_(n,m)>=delta n^(3/2)`,
+`t=o(n^(3/2))`, and `L=O(n^(3/4-c))`, then any covering cut must obey
+
+```math
+\boxed{R_2(d)=\Omega(n^{9/4+c}),}
+\tag{10.1025}
+```
+
+a factor `n^(2c)` above the advertised row budget.
+
+There is an entropic form of the same converse.  The exponential estimate
+behind (10.1022) and entropy duality give, for any selector law `w`,
+
+```math
+\boxed{
+\mathbb E_wX_d
+\le b_0+C\max\left\{
+\sqrt{R_2(d)H_w},\ n\sqrt{H_w},
+\lVert A\rVert_{\rm op}H_w
+\right\},
+\qquad H_w=D(w\Vert U_m)+O(\log n).
+}
+\tag{10.1026}
+```
+
+Since `h_d<=t+[h_d-t]_+`,
+
+```math
+G_{n,m}\le t+\mathbb E_w[h_d-t]_++\mathbb E_wX_d.
+\tag{10.1027}
+```
+
+Thus a hinge package at the entropy, row, and loss scales of (10.988), or at
+the weaker arbitrary-cut row scale, forces (10.1024) even before the strict
+soft-to-hard buffer is used.  This is a converse/diagnostic, not a proof that
+the required cut exists.  It shows that ordinary quadratic large deviations
+cannot manufacture the advertised rare coverage across a genuine normalized
+gap: the missing signing-specific mechanism must already rule out that gap.
+
+#### 10.89.2 Agreement does not automatically transfer the row bound
+
+For a full word `z`, set
+
+```math
+L_S(z)=\lVert A[S]z_S\rVert_2^2,\qquad
+W=D_zAD_z,\qquad r=W\mathbf1.
+```
+
+Writing `p_k=(m)_k/(n)_k`, expansion over three distinct indices gives the
+exact uniform identity
+
+```math
+\boxed{
+\mathbb E_{S\sim U_m}L_S(z)
+=p_3R_2(z)+(p_2-p_3)n(n-1).
+}
+\tag{10.1028}
+```
+
+For a singleton anchor `v`, put
+
+```math
+\alpha_j=\frac{(m-1)_j}{(n-1)_j},\qquad
+C_v=\sum_{\substack{j<k\\j,k\ne v}}
+\bigl(w_{vj}w_{vk}+w_{vj}w_{jk}+w_{vk}w_{jk}\bigr).
+```
+
+Then, exactly,
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E[L_S(z)\mid v\in S]
+&=m(m-1)+\alpha_3\{R_2(z)-n(n-1)\}
+  +2(\alpha_2-\alpha_3)C_v,\\
+C_v&=\frac12r_v^2+(Wr)_v-\frac32(n-1).
+\end{aligned}
+}
+\tag{10.1029}
+```
+
+In particular the anchored mean is `alpha_3 R_2(z)+O(n^2)` at fixed
+density.  Under an arbitrary selector law `P`, however,
+
+```math
+\mathbb E_PL_S(z)
+=m(m-1)+2\sum_{i<j<k}P\{i,j,k\in S\}\,c_{ijk}(z),
+\tag{10.1030}
+```
+
+so transfer from a rare anchored family to the uniform anchored slice asks
+for one-sided degree-three representativeness against this signed tensor.
+
+Agreement itself makes the Hamming repair affordable.  If `y^S` are the
+canonically oriented favorable labels, `z` is their coordinatewise
+plurality, and `C_(v_*)(y)` is the corrected conflict, then
+
+```math
+\boxed{
+\sqrt{\mathbb E_PL_S(z)}
+\le\sqrt{\mathbb E_PL_S(y^S)}
++2\lVert A\rVert_{\rm op}\sqrt{\mathcal C_{v_*}(\mathbf y)}.
+}
+\tag{10.1031}
+```
+
+At project conflict scale the square of the second term is
+`o(n^(9/4-c'))`.  The obstruction is the first term.  For the favorable
+orientation put `r_i^S=sigma y_i^S(A[S]y^S)_i`; even an exact child ground
+gives only
+
+```math
+r_i^S\ge0,\qquad
+L_S(y^S)\le(m-1)Q(A[S])\le(m-1)q_n=O(n^{5/2}),
+\tag{10.1032}
+```
+
+which misses the weaker arbitrary-cut row target by `n^(1/4+c')`.
+
+A precise sufficient package for that weaker row target is
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E_PL_S(y^S)&=O(n^{9/4-c'}),\\
+\mathbb E_{U_v}L_S(z)&\le
+\mathbb E_PL_S(z)+O(n^{9/4-c'}).
+\end{aligned}
+}
+\tag{10.1033}
+```
+
+Together with (10.1031), this proves `R_2(z)=O(n^(9/4-c'))`.  It does not
+reach the stronger `2n(n-1)` center cap in (10.967); that would require the
+correspondingly stronger local-row and representativeness estimates.
+
+Two scoped hub joins show why neither line follows from entropy and generic
+stability.  A conference core with `n^(1/4)` positive hubs has a word with
+`R_2=Theta(n^(9/4))`, while an anchored hub-avoiding family has entropy loss
+only `Theta(n^(1/4))` and conditional local row `O(n^2)`.  It is neither a
+favorable-label nor an exact-minimizer example; it falsifies only entropy-to-
+degree-three representativeness.  A second join with `Theta(sqrt n)` positive
+hubs has an exact parent ground, zero-conflict favorable restrictions relative
+to its own competitive `O(n^(3/2))` cap, and a unique plurality with
+`R_2=Theta(n^(5/2))` robust under every `o(n)` Hamming repair.  That signing is
+not known to minimize `Q`.  Consequently an anchored favorable row-transfer
+theorem remains possible, but it must use exact edge-sign minimality rather
+than only cap size, local stability, agreement, or selector entropy.
+
+#### 10.89.3 Paired response orientations expose width-weighted agreement
+
+The favorable object used by the decoder is projective.  Enlarge each
+favorable projective label `[y]`, canonically represented by `y_(v_*)=1`, to
+both auxiliary response orientations `sigma=+-1`.  This is a new weaker
+sufficient game, not an implication back to the original value in
+(10.1007).  It is nevertheless safe for the convergence argument: both
+auxiliary orientations retain the same favorable projective word and row
+median, `Delta_S=q_n-R^S_(A[S])>=0` for either orientation, and the genuinely
+favorable child orientation can be reinstated after decoding.
+
+For a fixed projective label define its outside-completion polynomial
+
+```math
+f_{S,y}(x_{S^c})
+=x_{S^c}^TA[S^c]x_{S^c}+2y^TA[S,S^c]x_{S^c}
+```
+
+and its completion-width deficit
+
+```math
+\boxed{
+b_S(y)=q_n-
+\frac{\max f_{S,y}-\min f_{S,y}}2\ge0.
+}
+\tag{10.1034}
+```
+
+Pairing the two auxiliary orientations cancels every internal fractional-
+block moment.  Hence any row-qualified assignment of favorable projective
+labels certifies
+
+```math
+\boxed{
+\widetilde W^F_{\mathcal G,C}(\kappa)
+\ge q_n-
+\left\{\mathbb E_Sb_S(y^S)
++\kappa\mathcal C_{v_*}(\mathbf y)\right\}.
+}
+\tag{10.1035}
+```
+
+It is therefore sufficient to prove
+
+```math
+\boxed{
+\min_{\substack{y^S\in F_S\\R_{\rm med}(\mathbf y)\le2n(n-1)}}
+\left\{\mathbb E_Sb_S(y^S)
++\kappa\mathcal C_{v_*}(\mathbf y)\right\}
+\le\frac{\kappa(d+1)}2.
+}
+\tag{10.1036}
+```
+
+The reverse inequality shows that this game does not create coherence from
+independent one-block response estimates.  Let `v_S` be the enlarged
+one-block minimax value, `bar g=q_n-E_Sv_S`, and let
+`delta_(G,d)` be the maximum fraction of the family lying within favorable
+radius `d` of one center.  Independent one-block minimizing responses and
+the plurality decoder give
+
+```math
+\boxed{
+\widetilde W^F_{\mathcal G,C}(\kappa)
+\le q_n-\bar g-
+\kappa(d+1)(1-\delta_{\mathcal G,d}),
+\qquad
+\delta_{\mathcal G,d}
+\ge\frac12+\frac{\bar g}{\kappa(d+1)}
+}
+\tag{10.1037}
+```
+
+whenever the target value holds.  Thus it already requires at least half of
+the chosen family in one center degree, and strictly more when `bar g>0`.
+
+Exact enumeration at `kappa=4(n-1)`, `d=0`, and the natural integer
+favorable allowance gives the following full-singleton-slice upper bounds:
+
+| minimizer | `q_n` | allowance | best `delta_(G,0)` | best upper bound | target |
+|:--|--:|--:|--:|--:|--:|
+| `A_6,m=3` | 10 | 1 | `1/2` | -2 | 0 |
+| `A_8,m=5` | 20 | 2 | `5/7` | `26/7` | 6 |
+| `A_9,m=6` | 24 | 2 | `27/56` | `-47/7` | 8 |
+
+Every anchor fails.  For `A_6` the full value is exactly `-12`, every
+subfamily of density above one half fails, and some density-one-half
+subfamilies pass.  Added allowance also produces coherent passing
+certificates for all three matrices.  These are finite full-family facts,
+not asymptotic falsifiers: the theorem permits affordable thinning to density
+`exp{-O(TL_0)}`.
+
+At the natural price the transparent surviving replacement target is
+
+```math
+\boxed{
+\mathcal C_{v_*}(\mathbf y)
++\frac{\mathbb E_Sb_S(y^S)}{4(n-1)}
+\le\frac{d+1}{2},
+\qquad
+\mathbb E_Sb_S(y^S)=O(n(d+1)).
+}
+\tag{10.1038}
+```
+
+It still needs affordable thinning, favorable-label coherence, and a
+row-good median simultaneously.  Its virtue is diagnostic: it isolates the
+additional fiber-width cost and makes explicit that the response game alone
+cannot supply the required center degree.
+
+#### 10.89.4 Endpoint erasure does not control transient harmonic modes
+
+In the canonical endpoint lift `P(S,d)=mu(d)pi_d(S)`, define for every
+underlying vertex
+
+```math
+r_i(d)=P(i\notin S\mid D=d).
+```
+
+For a nonreference vertex represented by a projective chart coordinate `i`,
+also put `bar r_i(e)=P(i notin S | D_(-i)=e)`.  Omitted selector components
+use the base conditional bit law.  Bayes' rule and the KL chain rule therefore
+give the exact identities
+
+```math
+\boxed{
+C_i=\mathbb E_\mu\log\frac{\bar r_i(D_{-i})}{r_i(D)},
+\qquad
+J_i=C_i+I(S;D_i\mid D_{-i})
+}
+\tag{10.1039}
+```
+
+for those `n-1` projective flip coordinates.  Fixed-size selectors separately
+give the pointwise identity
+
+```math
+\sum_{i\in[n]}r_i(d)=n-m,
+```
+
+including the reference vertex, for which there is no corresponding chart
+erasure.  This controls only a first moment of exclusion posteriors, not their
+negative logarithms, and none of these endpoint identities controls contexts
+which are heavy at intermediate temperature and rare at the endpoint.  Global
+orientation has no exclusion formula and remains separately charged.
+
+There is a general sufficient anti-evanescence estimate.  If
+`g=log f`, `G=osc(g)`, and `M_e(t)` is a coordinate-context mass along
+`mu_t proportional to nu exp(tg)`, then
+
+```math
+\boxed{
+\int_0^1[-M'_e(t)]_+dt
+\le(e^G-1)M_e(1),
+\qquad
+\sum_{j,e}K_e\int_0^1[-M'_e(t)]_+dt
+\le(e^G-1)\sum_jC_j.
+}
+\tag{10.1040}
+```
+
+This proves (10.1019) under a uniform likelihood-oscillation bound, but no
+such exact-minimizer bound is known.
+
+A scalable canonical-mixture wall shows that the constant cannot follow
+from omission and selector cancellation alone.  One block uses a genuinely
+separate nonconstant orientation bit, vertex bits `u,v,y`, and a nearly
+noiseless redundant copy `v` of `u`.  Its endpoint likelihood on `(u,y)` is
+proportional to `(1,2;M,M+1)` and has a strictly positive singleton-selector
+mixture.  All component likelihoods are invariant outside their selector
+among vertex coordinates.  Exactly,
+
+```math
+\boxed{
+\sum_jC_j=O(M^{-1}),\qquad
+\sum_{j,e}K_e\int_0^1[-M'_e(t)]_+dt=\Theta(1),
+\qquad
+\sum_j\mathcal A_j=\Omega((\log M)^{-2}).
+}
+\tag{10.1041}
+```
+
+The last term is the actual adverse covariance, not only its weighted-
+backtracking majorant.  At `M=1000`, adaptive quadrature gives the numerical
+ratios `B/C=332.51096` and `A/C=25.43500`.
+
+Tensor `N` blocks, choose exactly one of three vertices per block, retain one
+separate orientation coordinate, and add arbitrarily small positive constant
+components for missing size-`N` selectors.  Finite-space continuity preserves
+the strict separation, while before this harmless perturbation factorization
+gives
+
+```math
+\boxed{
+\sum_jC_j=O(N/M),\qquad
+\sum_j\mathcal A_j=\Omega(N/\log^2M),
+\qquad
+\text{weighted backtracking}=\Omega(N).
+}
+\tag{10.1042}
+```
+
+Taking `M=N^p` with `p>1/2+2c` makes the endpoint cost
+`o(N^(1/2-2c))` while actual adverse migration is
+`omega(N^(1/2-2c))`.  This is not a quadratic-signing endpoint, so it does
+not falsify the harmonic route for exact minimizers.  It does prove that the
+surviving migration lemma must be minimizer-specific: it must prevent a
+high-cost context from carrying appreciable intermediate mass and then
+vanishing through a redundant mode transfer.  Restoring correlation,
+adjacent-selector Hellinger control, and orientation remain independent
+inputs.
+
+#### 10.89.5 Updated frontier
+
+Wave 36 preserves adaptive optimized principal restriction as the leading
+framework, but narrows what a successful proof can look like:
+
+- the bare sufficient target remains the arbitrary-cut tail (10.795), with
+  the exceptional-center degree (10.967) its strongest structured
+  implementation.  The new converse (10.1023) shows that coverage at the
+  advertised row and entropy scales already forces the direct restriction
+  recurrence (10.1024).  Generic quadratic fluctuation across a genuine
+  normalized gap is therefore not a mechanism for proving the tail;
+  exact-minimizer structure must directly suppress the gap, or one must
+  abandon one of the advertised row, entropy, or tolerance scales;
+
+- singleton-anchored agreement still gives an exact center decoder, but its
+  row clause has split into favorable-label row regularity and degree-three
+  selector representativeness.  Conflict-scale Hamming repair is affordable;
+  generic local ground stability is not.  The exact package (10.1033) reaches
+  only the weaker arbitrary-cut row scale, and the two nonminimal hub joins
+  show that an automatic proof from entropy, cap size, or stability cannot
+  work;
+
+- paired response orientations safely reduce conditional replacement to the
+  width-weighted agreement target (10.1038).  The reverse bound (10.1037)
+  shows that the game already contains a majority center-degree requirement;
+  it cannot manufacture cross-selector coherence from independent one-block
+  values.  Full anchored slices fail on `A_6,A_8,A_9`, while thinning and
+  slack remain viable.  Any continuation must choose the affordable family,
+  its coherent favorable labels, small completion-width deficit, and the row
+  median together;
+
+- the harmonic route remains the strongest independent alternative, but the
+  recorded fixed-size omission and selector-cancellation identities alone do
+  not make endpoint erasure control adverse migration.  A uniform likelihood-
+  oscillation bound would close backtracking by (10.1040), but is much
+  stronger than current evidence.  The viable target is instead a matched-
+  signing, minimizer-specific no-transient-mode-transfer estimate, with
+  restoring, selector Hellinger, and orientation still separate;
+
+- constant shortfall, susceptibility, and terminal min-cut receive no new
+  positive evidence.  In particular, the Wave 34 judgment that (10.617) is
+  not the strongest current route remains unchanged.
+
+No decisive leading-route change occurred, so the next mandatory steering
+refresh remains Wave 39.  Wave 37 should combine the rare-coverage converse
+with exact edge-sign minimality rather than another generic tail estimate;
+test whether low-row cuts have enough signing-specific entropy rigidity to
+turn (10.1022) into a covering contradiction; and seek a matched-partition
+no-transient-mode-transfer theorem or falsifier.  Any agreement/replacement
+continuation must carry row regularity, selector representativeness,
+completion width, and affordable thinning explicitly.
