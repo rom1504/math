@@ -1,8 +1,9 @@
 # Strategic steering
 
-Evidence cutoff: Wave 50, ledger §10.103 (2026-07-30). This early refresh
-follows (10.1251)--(10.1252). The next mandatory refresh is Wave 55, or
-earlier after another decisive result, with a fresh blank-slate audit.
+Evidence cutoff: Wave 51, ledger §10.104 (2026-07-30). This early refresh
+follows the spectral-excess theorem (10.1261) and the moment-support wall
+(10.1255)--(10.1260). The next mandatory refresh is Wave 56, or earlier after
+another decisive result, with a fresh blank-slate audit.
 
 ## User-stated research objective
 
@@ -14,49 +15,17 @@ $1/2$ is not an additional user objective.
 No route proves convergence; the rigorous interval remains
 $0.336493364431\ldots\le\liminf\le\limsup\le1/2$.
 
-Adaptive optimized principal restriction remains the leading framework, and
-the bare arbitrary-cut tail (10.795) remains its sharp sufficient lemma.
-Annealed completion incidence is its cleanest direct scalar implementation;
-project-row non-strict coarea is the strongest structured alternative. The
-canonical Bellman-pressure implementation of tight decomposition is retired:
-its full pressure is a switching-symmetry average, not a descent direction.
+Adaptive optimized principal restriction remains the overarching framework,
+and the bare arbitrary-cut tail (10.795) remains its sharp general sufficient
+lemma. Project-row spectral excess is now its leading concrete implementation.
+Wave 51 showed that the former non-strict coarea/FKN target was unnecessarily
+strong and that the two- and three-moment completion mechanisms cannot bypass
+the local principal recurrence.
 
-## Leading sufficient lemma and convergence chain
+## Leading sufficient package and convergence chain
 
 Fix a compact window $[p_0,p_1]\subset(1/2,1)$, $m/n$ in that window, and
-$c\in(0,1/4)$. For an exact minimizer $A$, let $\Pi_n$ be uniform on oriented
-projective cuts and define
-
-~~~math
-Z_t=(U_m\otimes\Pi_n)
-\{(S,d):\widehat\ell(S,d)\le t\}.
-~~~
-
-The leading direct sufficient lemma is
-
-~~~math
-t=O(n^{3/2-c}),\qquad -\log Z_t=O(n^{3/4-c}).
-~~~
-
-Conditioning the product law on this event costs $-\log Z_t$ in relative
-entropy. Equations (10.1229)--(10.1230) then give one cut with
-
-~~~math
-R_2(d)=O(n^{9/4-c}),\qquad
-U_m\{S:\widehat\ell(S,d)\le t\}\ge Z_t/2.
-~~~
-
-This is (10.795). The inverse tail gives
-
-~~~math
-q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c}),
-~~~
-
-and geometric-window summability plus exact landing forces
-$q_n/n^{3/2}$, hence $M_n/n^{3/2}$, to converge.
-
-The leading structured sufficient package is cap-inflated project-row coarea.
-First prove a child-ground box witness
+$0<c<1/4$. For an exact minimizer $A$, first prove a child-ground box witness
 
 ~~~math
 \min_{S,\ y\text{ child ground}}
@@ -65,61 +34,83 @@ First prove a child-ground box witness
 \le R_0=O(n^{9/4-c}).
 ~~~
 
-Then prove that some cap $R_0\le R\le C(R_0+n^2)$ and a pure or mixed
-common-core kernel with
-$\kappa=(\lambda_1-\lambda_2)/(1-\lambda_1)\ge\kappa_0>0$ satisfies
+For the project-row class $C_R$, zero-deficit families $f_z$, and a
+common-core kernel $K_\ell$, let $D_R=\mathbb E[\mathbf1_{C_R}a_z^2]$ and
+let $P_\ell(R)$ be the aggregate triple retention (10.1248). The exact
+missing overlap lemma is that some
 
 ~~~math
-\Pr\{f_z(T)=1\mid C,f_z(S_0)=f_z(S_1)=1\}\ge\lambda_1.
+R_0\le R\le C(R_0+n^2),\qquad 2\le\ell<m
 ~~~
 
-The box witness remains inside the inflated cap, so the conditional
-denominator is positive. The displayed inequality is exactly non-strict
-coarea by (10.1235); slice FKN then gives a constant-degree project-row
-center and hence (10.795).
+satisfies
+
+~~~math
+P_\ell(R)-\lambda_2(\ell)
+\ge\exp\{-O(n^{3/4-c})\}.
+~~~
+
+The box witness gives $D_R>0$. Equation (10.1261) then gives a center with
+
+~~~math
+\max_{z\in C_R}a_z\ge
+\frac{P_\ell(R)-\lambda_2(\ell)}
+{(1-\lambda_1)+n(\lambda_1-\lambda_2)}
+=\exp\{-O(n^{3/4-c})\}.
+~~~
+
+That center has the required project row and saved selector degree, hence
+(10.795). The established inverse tail, geometric-window summability, and
+exact landing force $q_n/n^{3/2}$ and therefore $M_n/n^{3/2}$ to converge.
 
 ## Evidence, obstructions, and falsification criteria
 
-- The exact completion CDF has the two-moment floor $Z_t\ge\mathcal H_t$
-  from (10.1243)--(10.1246). Its positive branch relaxes local deficit; its
-  negative branch requires near-saturation of conditional Parseval. Either
-  saved population proves convergence.
-- The two-moment implementation would be falsified only by a relevant
-  unbounded exact-minimizer/window family failing the saved bound for every
-  admissible tolerance and usable $c$; only analogous uniform failure for
-  $Z_t$ falsifies the full route. At $A_9,m=8$, $88.66\%$ of favorable mass
-  has negative margin while two moments capture only $6.97\%$ of $Z_0$.
-- Generic concentration supplies upper tails, not the needed lower bound.
-  A robust project-codimension cylinder already implies the desired
-  recurrence by (10.1233), so that shortcut is circular.
-- Every fixed-density project-row complement column pays
-  $e^{-\Omega(n^{3/4})}$ by (10.1216). Complement mass, high slack, scalar
-  optimization, arithmetic retention, and omitted-block excess remain retired.
-- Coarea mass is partial-completion box discrepancy. Principal shortfall is
-  rigid; finite examples instead show strong outside-column cancellation.
-- Coarea is exactly triple retention. An exact $n=10,m=6$ minimizer has the
-  globally optimal box row $10$ but fails every positive-core scale at cap
-  $10$, including positive-core-only mixtures. Cap inflation repairs two
-  scales, while $\frac34K_0+\frac14K_1$ passes at cap $10$. In general its
-  $K_0$ contribution is $r_C\le\max a_z$, so constant-$\kappa$ repair may
-  be degree-circular. An unbounded exact family failing box mass and every repaired kernel/cap would falsify coarea.
-- The canonical Bellman point $p_e=(1-w_e)/4$ is exactly a mixture of
-  switchings $A\mapsto D_UAD_U$. Equation (10.1240) is expected slack along
-  that orbit, and a ground migrates explicitly with every outcome while its
-  bad child restriction stays fixed. Canonical rounding, complete-family
-  anti-migration, and state-dependent pressure based only on this point are retired. Tight
-  decomposition remains open only through a non-switching certificate or
-  higher-order incompatibility.
-- Strict pressure, high replicas, local harmonic Poincaré, monotone deletion,
-  nested chains, greedoids, ground-face-only pressure, and constant shortfall
-  without a square-root cavity reward remain retired.
+- The spectral-excess theorem is exact. Retention above $\lambda_2$ by the
+  saved amount suffices; $P\ge\lambda_1$, constant harmonic gap, and slice
+  FKN are not needed.
+- The Wave 50 row-optimal cap-ten example already passes the sharper target
+  at scales one and two. It falsifies only the overstrong first-eigenvalue
+  package, not the convergence-scale overlap route.
+- Scale one is circular up to density constants:
+  $r_C\le P_1\le r_C/p$. Independent-resampling admixture is exactly
+  redundant: its extraction bound never beats the pure-kernel certificate or
+  the tautology $\max a_z\ge r_C$. The live scale must have
+  $2\le\ell<m$.
+- Cap inflation creates more completions of a fixed child ground but does not
+  by itself create overlap among distinct favorable selectors. Spectral
+  excess changes by a signed row-shell sum with no law-free monotonicity.
+- An abstract singleton-family model defeats box-plus-cap-only reasoning, but
+  is not an exact-minimizer counterexample. The leading route would be
+  falsified by an unbounded exact-minimizer family that has a target box
+  witness yet fails saved $P_\ell-\lambda_2$ at every allowed cap and every
+  $2\le\ell<m$. The box component is separately falsified by uniform failure of
+  the target row bound.
+- On compact fixed-density windows with $t\ge0$, the entire Wave 50
+  two-moment envelope is supported on $g\ge-O(n)$. Bonami and
+  constant-probability linear--quadratic pairing reach only
+  $g\ge-O(n^{5/4})$. Saved local-state mass at the target entropy and
+  tolerance scales in either band already implies the principal recurrence
+  by Hanson--Wright inversion.
+- Cubic endpoint localization is support-dominated by the old reverse
+  numerator. Moments through order three therefore do not supply a far-tail
+  mechanism. These facts retire the implementations, not the full annealed
+  incidence $Z_t$.
+- For the same $c$, a live annealed alternative must obtain saved contribution
+  not confined to $r=O(n^{3/2-c})$, with loss at most
+  $\exp\{O(n^{3/4-c})\}$, or avoid reducing to saved local-state mass.
+  Generic upper concentration and constant-probability reverse bounds are
+  insufficient.
+- Complement incidence, robust cylinders, positive-core first-eigenvalue
+  mixtures, canonical Bellman pressure, strict pressure, high replicas,
+  local harmonic Poincaré, monotone deletion, nested chains, greedoids, and
+  constant shortfall without a square-root cavity reward remain retired.
 
 ## Most recent blank-slate abstraction audit
 
 The Wave 45 audit began from the original problem before route comparison.
 Its candidates and judgments are agent-authored hypotheses, not user
-directives. This early decisive-result refresh does not regenerate it;
-Wave 55 will.
+directives. This early decisive-result refresh does not regenerate it; Wave
+56 will.
 
 1. **Finite-temperature zero-sum interpolation.** Balanced $o(n)$ soft-minimax
    additivity would imply convergence, but temperature mismatch and overlap
@@ -131,20 +122,21 @@ Wave 55 will.
    recovery would prove convergence; existing compactness models lack the
    recovery operation.
 
-## Ranked routes and Wave 51 direction
+## Ranked routes and Wave 52 direction
 
-1. **Annealed bare completion tail.** Prove saved positive-margin or
-   near-Parseval mass in (10.1246), or a higher-moment negative-tail bound.
-2. **Box/coarea with controlled repair.** Prove retention after
-   $R_0\le R\le C(R_0+n^2)$; separately test whether $K_0$ mixing avoids
-   the degree-circularity tradeoff. Pure and positive-core-only same-cap kernels are finitely false.
-3. **Annealed profile/spectral dichotomy.** Separate high-operator-norm
-   profiles, where reverse chaos may supply the tail, from flat profiles,
-   where a minimizer-specific restriction theorem is required.
+1. **Project-row box plus spectral excess.** Prove the box witness and saved
+   $P_\ell-\lambda_2$ for some controlled cap and $2\le\ell<m$. Attack the
+   overlap lemma through exact-minimizer selector intersections or a positive
+   signed-shell budget, not through $K_0$ or scale one.
+2. **Far-negative annealed completion tail.** Use regular linear coefficients,
+   a multiscale signed spectrum, or an exact minimizer dichotomy to obtain
+   saved contribution beyond the $O(n^{3/2-c})$ target local-margin band, or
+   a lower bound that does not collapse to saved local-state mass.
+3. **Box discrepancy itself.** Prove (10.1237) using cancellation between
+   selected and outside columns; generic uniform completion remains too weak.
 4. **Tight decomposition, dormant.** Reopen only with a non-switching global
-   certificate not encoded by (10.1240); tropical affine endpoints alone are
-   insufficient.
+   certificate absent from (10.1251)--(10.1252).
 5. **Other global routes, dormant.** Reopen only with a testable composition,
    recovery, or square-root cavity theorem at the required scale.
 
-Wave 51 must independently rank ten ideas and assign three falsifiable attacks.
+Wave 52 must independently rank ten ideas and assign three falsifiable attacks.

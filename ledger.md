@@ -33708,3 +33708,381 @@ asymptotic restriction estimate.  It changes the live boundary as follows:
   (10.1246), a higher-moment or direct lower bound for the negative
   completion tail, and cap-inflated versus independent-resampling-mixed
   overlap repair.
+
+### 10.104 Wave 51: the moment-envelope wall and spectral-excess coarea
+
+Wave 51 tested the two live completion-tail mechanisms and the proposed
+coarea repairs.  The completion audit proves that every state seen by the
+Wave 50 two-moment envelope lies in a local-margin band whose saved mass
+already implies the principal recurrence by Hanson--Wright inversion.  A
+cubic endpoint bound cannot leave that support, while two genuine direct
+lower-tail bounds reach only the wider but still recurrence-strong
+$O(n^{5/4})$ band.  The coarea audit gives the decisive positive correction:
+retention need not reach $\lambda _1$.  Saved excess above $\lambda _2$
+already extracts the required center, and it succeeds at two scales in the
+finite example that defeated the stronger package.  All three exhaustive
+checkers were rerun independently and reproduced their saved outputs.
+
+#### 10.104.1 Exact completion balances collapse the two-moment support
+
+Fix a compact density window $p=m/n\in[p_0,p_1]\subset(1/2,1)$, put
+$k=n-m$, and retain the Wave 50 notation
+
+~~~math
+p_2=\frac{m(m-1)}{n(n-1)},\qquad
+h=Q(A[S])-p^{3/2}q-t,\qquad
+g=(1-p_2)e-h.
+~~~
+
+Here $q=q_n$, $t\ge0$, and $e=\sigma y^{\mathsf T}A[S]y$ for a uniform
+oriented local projective state.  With
+
+~~~math
+V=4\lVert A[S^c,S]y\rVert_2^2+2k(k-1),
+\qquad D=q^2-e^2-V,
+~~~
+
+orientation symmetry and Walsh orthogonality give the **Verified fixed-
+selector balances**
+
+~~~math
+\boxed{
+\begin{aligned}
+\mathbb E e&=0,&
+\mathbb E e^2&=2m(m-1),\\
+\mathbb E V&=2k(n+m-1),&
+\mathbb E D&=q^2-2n(n-1).
+\end{aligned}}
+\tag{10.1253}
+~~~
+
+Moreover
+$p_2\mathbb EV=(1-p_2)\mathbb Ee^2$.  The untruncated reverse numerator in
+(10.1245) is
+
+~~~math
+N=(q-e)(p_2q+e-h)-p_2D=p_2V+(q-e)g,
+~~~
+
+so exact cancellation proves the **Verified wrong-sign identities**
+
+~~~math
+\boxed{\mathbb Eg=-h,\qquad \mathbb EN=-qh.}
+\tag{10.1254}
+~~~
+
+Thus neither the average margin, average Parseval defect, nor average raw
+reverse pressure favors a selector with $h>0$.
+
+There is a stronger pointwise wall.  The principal cap $Q(A[S])\le q$
+follows by uniformly completing any local spin.  In the negative branch put
+$r=-g/p_2$.  Since $p_2\le p^2$ and
+$\beta_0=\min_{[p_0,p_1]}(p^{3/2}-p^2)>0$,
+
+~~~math
+q-e\ge
+\frac{(p^{3/2}-p_2)q+t}{1-p_2}\ge\beta_0q.
+~~~
+
+Positivity of (10.1245) requires $V-r(q-e)>0$, while the exact-minimizer
+operator estimate gives
+
+~~~math
+V\le8qm+2n^2=O(n^{5/2}).
+~~~
+
+As $q=\Theta(n^{3/2})$, every positive reverse state has $r=O(n)$.  The
+positive Cantelli branch has $g>0$, and hence the entire Wave 50 envelope
+obeys the **Verified support theorem**
+
+~~~math
+\boxed{\mathcal C_t(S,a)>0\quad\Longrightarrow\quad g\ge-C_0n.}
+\tag{10.1255}
+~~~
+
+This makes the proposed saved-envelope lemma recurrence-strong by itself.
+Indeed, if $L_n=n^{3/4-c}$, $0<c<1/4$,
+$0\le t=O(n^{3/2-c})$, and
+$\mathcal H_t\ge e^{-CL_n}$, then (10.1255) gives one selector on which
+$e\ge(h-C_0n)/(1-p_2)$ with probability at least $e^{-CL_n}$.  Conditional
+Hanson--Wright, using
+$\lVert A[S]\rVert_F\le n$ and
+$\lVert A[S]\rVert_{\rm op}\le\sqrt{2q}=O(n^{3/4})$, yields
+
+~~~math
+h\le C_2\{n\sqrt{L_n}+n^{3/4}L_n+n\}=O(n^{3/2-c}).
+~~~
+
+Since $q_m\le Q(A[S])=p^{3/2}q_n+t+h$, this proves directly
+
+~~~math
+\boxed{q_m\le p^{3/2}q_n+O(n^{3/2-c}).}
+\tag{10.1256}
+~~~
+
+Thus a saved lower bound for $\mathcal H_t$ does not provide an independent
+way to prove the recurrence: its support already contains the required local
+energy tail.  This **Retires the two-moment envelope as an independent
+implementation**, not the full annealed incidence $Z_t$, whose favorable
+mass may occur at genuinely negative completion margins.
+
+#### 10.104.2 Low moments and constant-probability pairing do not reach the far completion tail
+
+For a fixed local state write the centered outside completion polynomial as
+
+~~~math
+Z(w)=L(w)+Q_T(w),\qquad
+L(w)=\beta^{\mathsf T}w,\quad Q_T(w)=w^{\mathsf T}Bw,
+~~~
+
+where $\beta=2\sigma A[T,S]y$, $B=\sigma A[T]$, and
+
+~~~math
+s^2=\mathbb EL^2=\lVert\beta\rVert_2^2,qquad
+W=\mathbb EQ_T^2=2k(k-1),\qquad V=s^2+W.
+~~~
+
+Pairing $w$ with $-w$ gives an exact two-point CDF formula.  Paley--Zygmund
+for $L^2$ and Cantelli for $Q_T$ then prove the **Verified direct bound**:
+for $0<\theta<1$ and $\theta s>r$,
+
+~~~math
+\boxed{
+\Pr\{Z\le-r\}\ge\frac12\left[
+\frac{(1-\theta^2)^2}{3}
+-\frac{W}{W+(\theta s-r)^2}
+\right]_+.}
+\tag{10.1257}
+~~~
+
+This can be positive when the Wave 50 reverse numerator vanishes.  A second
+universal bound follows from degree-two Bonami hypercontractivity.  Since
+$\lVert Z\rVert_4\le3\lVert Z\rVert_2$, interpolation and centering give
+$\mathbb EZ_-\ge\sqrt V/18$.  Splitting at $r$ proves
+
+~~~math
+\boxed{
+\Pr\{Z\le-r\}\ge
+\left(\frac1{18}-\frac r{\sqrt V}\right)_+^2.}
+\tag{10.1258}
+~~~
+
+In particular every nonnegative-margin state contributes at least $1/324$,
+and $g\ge-p_2\sqrt V/36$ contributes at least $1/1296$.
+
+Both bounds have a precise asymptotic obstruction.  The operator estimate
+gives $s,\sqrt V=O(n^{5/4})$.  Saved mass of either bound therefore forces
+$g\ge-O(n^{5/4})$ on saved local-state mass.  Repeating the inverse
+Hanson--Wright argument above still proves (10.1256), because
+$n^{5/4}=o(n^{3/2-c})$ for $c<1/4$.  The bounds are valid CDF improvements
+but do not bypass the local recurrence.
+
+The third-moment attempt is even more sharply confined.  Put
+$a=q+e$, $b=q-e$, and $D=ab-V$.  For $0\le r<a$ define
+
+~~~math
+M_3(a,b,r)=\max_{r\le u\le a}(a-u)(u-r)(u+b).
+~~~
+
+The endpoint polynomial $(z+a)(z+r)(z-b)$ and the exact moment
+
+~~~math
+\mu_3=\mathbb EZ^3
+=6\beta^{\mathsf T}B\beta+8\operatorname{tr}(B^3)
+~~~
+
+give the **Verified cubic sharpening**
+
+~~~math
+\boxed{
+\Pr\{Z\le-r\}\ge
+\frac{[\mu_3+2eV-rD]_+}{M_3(a,b,r)}.}
+\tag{10.1259}
+~~~
+
+However, with $\phi_2(z)=(z+r)(z-b)$, the pointwise inequality
+$(z+a)\phi_2(z)\le(a-r)\phi_2(z)$ gives the decisive **Verified domination**
+
+~~~math
+\boxed{
+\mu_3+2eV-rD\le(a-r)\{V-r(q-e)\}.}
+\tag{10.1260}
+~~~
+
+Thus a positive cubic numerator always has a positive Wave 50 numerator.
+It can improve constants but can never unlock a new state.  Exhaustive
+**Numerical** checks over all sixteen stored matrix/selector pairs verify
+33,600 pairing identities and every displayed bound.  At $(A_9,m=8)$ the
+old, cubic, pairing, and pointwise-combined negative-state averages are
+$0.005167$, $0.010370$, $0.037903$, and $0.040778$, respectively.  The
+pairing-only states there have one outside spin and are not fixed-density
+evidence.
+
+The surviving direct completion target must therefore produce saved
+contribution not confined, for the same $c$, to
+$r=O(n^{3/2-c})$; any envelope supported in that target local-margin band
+still implies (10.1256) directly.  In particular it requires a
+minimizer-specific far-tail mechanism beyond $\sqrt V$ and $s$, with loss at
+most $e^{O(n^{3/4-c})}$, or a mechanism that does not reduce to saved
+local-state mass.  It must use coefficient regularity or signed spectral
+structure beyond support, moments through order three, and generic
+degree-two hypercontractivity.
+
+#### 10.104.3 Saved excess above the second eigenvalue is enough
+
+Return to a selector-independent project-row class $C$, a common-core kernel
+$K_\ell$, and the Boolean favorable families $f_z$.  Put
+
+~~~math
+D_C=\mathbb E[\mathbf1_Ca_z^2]>0,\qquad
+P=\frac{\mathbb E[\mathbf1_Ca_z^2p_z]}{D_C},\qquad
+p_z=\frac{\langle f_z,K_\ell f_z\rangle}{a_z},\qquad
+M=\max_{z\in C}a_z.
+~~~
+
+Let $\delta=1-\lambda_1$, $\gamma=\lambda_1-\lambda_2$, and
+$\kappa=\gamma/\delta$.  Since $B_z=a_z(1-p_z)$, the aggregate boundary
+ratio is exactly $\mathcal R_C=(1-P)/\delta$.  Averaging (10.1220) under the
+double-incidence law and solving for $M$ proves the **Verified
+spectral-excess extraction theorem**
+
+~~~math
+\boxed{
+M\ge
+\frac{[P-\lambda_2]_+}
+{(1-\lambda_1)+n(\lambda_1-\lambda_2)}.}
+\tag{10.1261}
+~~~
+
+This is strictly sharper than the non-strict coarea/FKN target used in Waves
+48--50.  The common-core kernels are positive semidefinite and the denominator
+is at most $n+1$.  Consequently, once $D_C>0$ at the project-row cap, the
+actual convergence-scale overlap lemma is only
+
+~~~math
+\boxed{
+P_\ell(R)-\lambda_2(\ell)
+\ge\exp\{-O(n^{3/4-c})\}.}
+\tag{10.1262}
+~~~
+
+Equation (10.1261) then gives a center of saved selector degree directly;
+neither $P\ge\lambda_1$, constant $\kappa$, nor slice FKN is needed.
+
+This corrects the interpretation of the Wave 50 finite wall.  At its
+row-optimal cap ten the actual degree is $1/42$.  Scale one has
+$\lambda_2=0$ and $P-\lambda_2=1/42$, so (10.1261) gives $M\ge1/70$.
+Scale two has $P-\lambda_2=1/75$ and gives
+$M\ge14/2475$.  Hence that example defeats only the overstrong
+$P\ge\lambda_1$ package; it does not defeat the saved spectral-excess
+criterion.
+
+Independent-resampling admixture is redundant for this sharper extraction.
+If $r_C=\sum a_z^3/\sum a_z^2$ and
+$K_\theta=(1-\theta)K_0+\theta K_\ell$, its degree lower bound from
+(10.1261) is
+
+~~~math
+L(\theta)=
+\frac{(1-\theta)r_C+\theta(P-\lambda_2)}
+{(1-\theta)+\theta\{(1-\lambda_1)+n(\lambda_1-\lambda_2)\}}.
+~~~
+
+This is a denominator-weighted convex combination of the two endpoint
+bounds, and therefore the **Verified exact optimization** is
+
+~~~math
+\boxed{
+\sup_{0\le\theta\le1}L(\theta)
+=\max\left\{r_C,
+\frac{P-\lambda_2}
+{(1-\lambda_1)+n(\lambda_1-\lambda_2)}\right\}.}
+\tag{10.1263}
+~~~
+
+The $K_0$ endpoint is just the tautology $M\ge r_C$.  Mixing supplies no new
+spectral-excess certificate.  Scale one is also quantitatively circular:
+exact element-load counting gives
+
+~~~math
+\boxed{r_C\le P_1(R)\le r_C/p,\qquad \lambda_2(1)=0.}
+\tag{10.1264}
+~~~
+
+Thus a genuinely new overlap theorem must use some $2\le\ell<m$.
+
+Cap inflation remains potentially useful but supplies no law-free theorem.
+Flipping $r=|U|$ outside coordinates preserves the same favorable selector
+and obeys the **Verified row-neighborhood bound**
+
+~~~math
+\boxed{
+R_2(z^U)\le\{\sqrt{R_2(z)}+2r\sqrt n\}^2.}
+\tag{10.1265}
+~~~
+
+This creates low-row completions, not overlap between distinct favorable
+selectors.  At active row levels the unnormalized spectral excess changes by
+the signed shell sum
+
+~~~math
+\sum_{R_2(z)=R}a_z^2\{p_\ell(z)-\lambda_2(\ell)\},
+~~~
+
+whose sign is not controlled by mass monotonicity.  For $m=3n/5$ and all
+sufficiently large $n$, a scalable abstract model in which every low-row
+center has the same singleton favorable family has box positivity, nested
+caps, and the forced outside-flip neighborhood, but
+$P_1=e^{-\Theta(n)}$ and $P_\ell\le\lambda_2(\ell)$ for every
+$2\le\ell<m$.  This is a **Falsification only of incidence- or cap-
+monotonicity-only proofs**; it is not claimed to arise from an exact
+minimizing signing.
+
+The reduced **Open coarea package** is therefore: prove the box witness
+(10.1237) at row $R_0=O(n^{9/4-c})$, and then use exact-minimizer structure
+to find $R_0\le R\le C(R_0+n^2)$ and some $2\le\ell<m$ satisfying
+(10.1262).
+Equivalently, prove a positive saved shell budget.  Together with (10.1261),
+this gives (10.795) and convergence.
+
+#### 10.104.4 Updated frontier
+
+Wave 51 leaves the rigorous convergence interval unchanged and proves no
+asymptotic restriction estimate.  It decisively changes the implementation
+ranking:
+
+- project-row spectral-excess is now the leading concrete implementation of
+  the bare arbitrary-cut lemma.  Its exact sufficient overlap threshold is
+  (10.1262), not $P\ge\lambda_1$.  The finite same-cap obstruction from Wave
+  50 disappears at scales one and two under this sharper theorem, but scale
+  one and $K_0$ mixing are algebraically circular.  The live nontrivial
+  target is saved $P_\ell-\lambda_2$ at some controlled cap and
+  $2\le\ell<m$, coupled to the still-open box witness;
+
+- the Wave 50 two-moment completion envelope is retired as an independent
+  annealed implementation.  On compact fixed-density windows with $t\ge0$,
+  its whole support lies in $g\ge-O(n)$, and saved mass there already implies
+  the desired recurrence by local
+  Hanson--Wright.  The valid Bonami and constant-probability pairing
+  enlargements reach only $O(n^{5/4})$ negative margin and have the same
+  recurrence-strong obstruction;
+
+- cubic endpoint localization improves finite CDF constants but is
+  pointwise dominated in support by the old reverse numerator.  For the same
+  $c$, a live direct annealed attack must obtain saved contribution not
+  confined to $r=O(n^{3/2-c})$, through a minimizer-specific far-tail
+  coefficient-profile or signed-spectrum theorem, or avoid reduction to
+  saved local-state mass.  The full scalar incidence $Z_t$ and the
+  overarching bare tail (10.795) remain open;
+
+- controlled cap inflation is useful only if it forces overlap among
+  distinct favorable selectors for a common center.  More completions of one
+  child ground, cap nesting alone, independent-resampling mixtures, and
+  first-eigenvalue/FKN pressure should no longer be treated as the missing
+  theorem;
+
+- this is a decisive change of the leading implementation, so refresh
+  `STEERING.md` at this boundary.  Wave 52 should compare a direct
+  $2\le\ell<m$ spectral-excess theorem, exact-minimizer signed-shell structure
+  under controlled cap inflation, and genuinely moderate-deviation
+  completion tails beyond the target local Hanson--Wright band.
