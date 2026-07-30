@@ -1,37 +1,40 @@
 # Strategic steering
 
-Evidence cutoff: the consolidation after Wave 56, later Wave 57--58
-refinements, and the completed bounded diagnostic campaign (2026-07-30).
-Ordinary wave generation is paused. The committed recommendation is to seek
-external mathematical review before deciding whether any research resumes.
-If ordinary waves later resume, Wave 61 remains the next scheduled refresh
-and must include a blank-slate abstraction audit.
+Evidence cutoff: the completed post-consolidation diagnostic campaign and the
+start of the computational--composition campaign (2026-07-30). Status:
+**computational--composition campaign active**. This is a new sustained
+campaign architecture, not a return to the prior short-wave sequence.
 
 ## User-stated objective and workflow directives
 
 The research objective is to determine whether `M_n/n^(3/2)` converges. The
 conjectural value `1/2` is not an additional user objective.
 
-The pause policy, consolidation rule, requirement to investigate convergence
-and genuine nonconvergence, and bounded three-agent campaign are user workflow
-directives. Route rankings and mathematical conjectures below are the main
-agent's judgments. Suggestions from subagents, external reviewers, or other
-model instances are feedback to evaluate, not directives.
+The user has explicitly authorized research to resume through a sustained
+computational--composition campaign. Its three connected tracks are exact
+computation and certificates, structural analysis of exact and heuristic
+signings, and cross-order composition as the principal mathematical target.
+The campaign should run roughly four to six hours before a global assessment,
+integrating the tracks regularly rather than reverting to short proof waves.
+The existing consolidation and stopping discipline remains in force.
 
-## Current decision
+The success criteria and requirement to preserve reproducible programs,
+solver evidence, classifications, ledger updates, and Git checkpoints are
+user workflow directives. Mathematical hypotheses, route ranking, and the
+choice of a precise composition target are agent-authored judgments.
 
-Continuous autonomous waves remain stopped. The campaign produced exact
-diagnostic constraints but no primary progress: no improved bound, completed
-recurrence, uniformly proved exact-minimizer bridge, strict reduction,
-scalable asymptotic counterexample, or convergence/nonconvergence mechanism.
+## Agent-authored campaign assessment
 
-The evidence supports **seeking external mathematical review**. It does not
-support resuming one named internal target, because no target was shown
-strictly weaker than the original tail. It does not support changing
-architecture, because no new mechanism survived audit. A permanent stop
-would overstate the evidence because no impossibility theorem was proved.
-Further autonomous research requires an explicit later decision; it must not
-restart automatically.
+The preferred target is to derive the exact summable-defect criterion first,
+then use certified finite data to discover what a bridge block must accomplish
+in a construction from orders `m` and `n` to order `m+n`. Candidate
+`2/3`-power subadditivity is a test case, not an assumed theorem or exponent.
+Exact optimization and structural statistics are support tracks whose purpose
+is to constrain that bridge lemma or reveal genuine subsequence structure.
+
+Update this agent-authored assessment when the preferred target changes, a
+major obstruction is proved, or at each substantial campaign checkpoint; do
+not rewrite it after minor experiments.
 
 ## Rigorous frontier
 
@@ -52,10 +55,10 @@ uniform recurrence with O(n^(3/2-c)) error
   -> convergence of M_n/n^(3/2).
 ~~~
 
-## Selected-prior and common-active-face verdict
+## Inactive routes: selected prior and common active face
 
-The selected-prior package is the cleanest exact characterization, but the
-diagnostic audit proves it is not a reduction. If a prior has favourable mass
+These are not current targets. The selected-prior package is a clean exact
+characterization, but the diagnostic audit proves it is not a reduction. If a prior has favourable mass
 `Z` and favourable-captured row `Rbar`, then for every `a>1` one supported cut
 has mass at least `(1-1/a)Z` and row at most `a Rbar`. Conversely a good cut
 gives the point-mass prior. At the project scales, this is exactly the bare
@@ -70,9 +73,9 @@ The common-active-face theorem is correct and noncircular, but it controls
 polynomial-scale first moments. Its certificate is insensitive to arbitrary
 `e^{-Theta(H)}` perturbations and controls neither saved bare favourability
 nor row conditioned on that rare event. Scalar averaging is circular because
-`E widehat ell` is exactly the unknown restriction excess. This route should
-not resume without a new entropy-scale theorem stated in a quantity not
-already equivalent to favourable mass plus row.
+`E widehat ell` is exactly the unknown restriction excess. Neither route
+should reactivate unless a genuinely new ingredient avoids these equivalences
+and the entropy-scale loss.
 
 ## Blank-slate diagnostic audit
 
@@ -120,20 +123,26 @@ start with both a strict low construction and an order-sensitive larger lower
 bound for every signing on another sparse hierarchy. No such universal lower
 mechanism is known.
 
-## External-review questions
+## Connected campaign tracks and checkpoint
 
-The recommended review should ask:
+1. **Exact computation.** Reuse the existing programs before writing new
+   ones. Seek exact values or rigorous intervals beyond the present range via
+   symmetry-aware MIP, SAT/pseudo-Boolean, branch-and-cut, or constraint
+   generation, preserving certificates and logs.
+2. **Structural analysis.** Compare spectra, rows, ground states, principal
+   restrictions, automorphisms, residues, and nearby-order relations for
+   exact minimizers and clearly labelled heuristic constructions.
+3. **Cross-order composition.** Test bridge-block objectives exhaustively on
+   certified finite data, derive the deterministic lemma each objective would
+   need, and reject laws whose accumulated defect is not summable.
 
-1. Is there a known proportional principal-submatrix or discrepancy theorem
-   controlling the adaptive selector gap with a power saving for exact
-   minimizers?
-2. Can exact-minimizer structure yield entropy-scale favourable low-row mass
-   without assuming an equivalent bare-tail statement?
-3. Does covering-radius, Boolean quadratic-form, spin-glass, or design theory
-   provide a thermodynamic-limit mechanism for the minimum over signings, or
-   an all-signings lower theorem capable of genuine log-scale oscillation?
+Coding-theoretic or external results count only after the mapping to the
+absolute quadratic maximum, all hypotheses, and every normalization are
+verified. One-sided frustration or maximum-cut statements are not silently
+interchangeable with this problem.
 
-The complete implication chains, falsifiers, proofs, and campaign synthesis
-are in `ledger.md`; Git history preserves earlier rankings. Any external
-proposal must be checked against those obstructions before it can justify a
-new target or architecture.
+At the four-to-six-hour checkpoint, integrate all three tracks in `ledger.md`,
+update this assessment, and name the strongest defensible next target. If no
+track yields one, commit a concise negative report specifying the missing
+resource or idea. The next scheduled ordinary-wave blank-slate boundary would
+still be Wave 61, but this campaign is not being counted as ordinary waves.

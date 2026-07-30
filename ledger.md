@@ -37668,3 +37668,44 @@ autonomous research is stopped at this checkpoint.  It may resume only after
 an explicit new decision based on review or user direction; it must not
 restart automatically.  If ordinary waves later resume, Wave 61 remains the
 next scheduled blank-slate steering boundary.
+
+### 10.114 Computational--composition campaign launch
+
+#### 10.114.1 User-authorized campaign architecture
+
+On 2026-07-30 the user explicitly authorized research to resume through a
+new sustained computational--composition campaign, not through the previous
+sequence of short proof waves.  The three required connected tracks are:
+
+1. exact finite-order computation with reproducible optimization programs,
+   solver evidence, symmetry reductions, and rigorous certificates or
+   intervals;
+2. structural analysis of exact minimizers and clearly labelled heuristic
+   constructions; and
+3. cross-order composition as the principal mathematical target, with bridge
+   laws tested against certified finite data before proof investment.
+
+The selected-prior and common-active-face routes are inactive unless a
+genuinely new ingredient avoids the equivalence and entropy-scale
+obstructions proved in Section 10.113.  Relevant coding-theoretic results may
+be imported only after checking the exact mapping to the absolute quadratic
+maximum and every hypothesis and normalization.  The campaign is to run for
+roughly four to six hours before a global assessment, with regular integration
+between tracks and durable Git checkpoints.  The README consolidation and
+stopping discipline remains unchanged.
+
+#### 10.114.2 Initial agent-authored target
+
+The initial research judgment is to derive the precise summable-defect
+criterion for a cross-order law, then use exact computation to determine what
+a bridge block between good order-`m` and order-`n` signings must accomplish.
+The illustrative `2/3`-power inequality is a candidate to test, not an assumed
+form.  Exact-value extension and optimizer statistics are supporting tracks:
+they count as mathematical progress only when certified or when they isolate
+a concrete composition lemma or scalable subsequence mechanism.
+
+This section records the campaign boundary, not a result.  Subsequent
+subsections will label claims as proved, certified computationally, heuristic,
+or open, and the agent-authored steering assessment will be updated only at a
+material target change, major obstruction, or substantial campaign
+checkpoint.

@@ -60,6 +60,11 @@ by themselves reset this counter.  At a consolidation checkpoint, update
 an explicit evidence-based decision about whether further research is
 justified.  Do not resume ordinary research waves automatically.
 
+After such a pause, the user may explicitly authorize a new campaign with a
+different research architecture.  Record that authorization and the new
+campaign state in `STEERING.md` and `ledger.md`; it does not weaken or reset
+this consolidation and stopping rule.
+
 Convergence and genuine nonconvergence must both remain available research
 directions.  Falsifying an intermediate lemma or implementation is not a
 nonconvergence result.  Genuine nonconvergence requires, for some fixed
