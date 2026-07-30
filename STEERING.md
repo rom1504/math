@@ -1,7 +1,9 @@
 # Strategic steering
 
-Evidence cutoff: Wave 38, ledger §10.91 (2026-07-30). Regenerate at the Wave
-44 boundary, or earlier after a decisive result or change of leading route.
+Evidence cutoff: Wave 39, ledger §10.92 (2026-07-30). This is the early Wave
+40 boundary refresh and first blank-slate abstraction audit. The next mandatory
+refresh is at the Wave 44 boundary, or earlier after a decisive result or
+change of leading route; it must include a new blank-slate audit.
 
 ## User-stated research objective
 
@@ -13,137 +15,135 @@ $1/2$ is not an additional user objective.
 No route proves convergence. The rigorous interval remains
 $0.336493364431\ldots\le\liminf\le\limsup\le1/2$.
 
-The leading framework is **adaptive optimized principal restriction**. Its
-sharp target is the arbitrary-cut tail (10.795). **Exceptional-center degree**
-(10.967) is its strongest structured implementation, but lacks the signing estimate.
+The leading framework remains **adaptive optimized principal restriction** and
+its sharp target is the bare arbitrary-cut tail (10.795). Wave 39 makes the
+affordable low-information, low-parent-row, low-conflict complement kernel
+(10.1089) its strongest current structured implementation. Exceptional-center
+degree (10.967) remains a direct nonlinear alternative. The blank-slate audit
+below found no stronger mechanism and does not change the leader.
 
-The constant-shortfall pressure criterion (10.617) is **not** the strongest
-current route. It still lacks a mechanism producing its square-root deletion
-reward, while restriction and harmonic interpolation have weaker exact
-interfaces and several verified partial identities.
+Constant shortfall (10.617) is not the strongest route: it still lacks a
+square-root cavity-reward theorem, whereas restriction and harmonic transport
+have weaker exact interfaces and newly verified reductions.
 
 ## Exact sufficient lemma and convergence chain
 
-Fix a high-ratio window $m/n\in[\rho,1)$ and fixed $c\in(0,1/4)$. For every
-relevant exact-minimizer target pair, it suffices to find an oriented parent
-cut $d$ and constants independent of $n,m$ such that
+Fix a high-ratio window $m/n\in[\rho,1)$ and $c\in(0,1/4)$. For every relevant
+target pair, it suffices to find an exact-minimizer parent signing and one
+oriented parent cut $d$ such that
 
 ```math
-R_2(d)\le Cn^{9/4-c},
-\qquad
-U_m\{S:h_d(S)\le Cn^{3/2-c}\}
-\ge \exp\{-Cn^{3/4-c}\}.
+R_2(d)=O(n^{9/4-c}),\qquad
+U_m\{S:\widehat\ell(S,d)\le O(n^{3/2-c})\}
+\ge \exp\{-O(n^{3/4-c})\}.
 ```
 
-This is the bare arbitrary-cut tail (10.795). Why it proves convergence:
+This is (10.795). The row-sensitive inverse tail (10.1023) turns these bounds
+into $q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c})$. Geometric-window summability and
+exact landing then force $q_n/n^{3/2}$, hence the original normalization, to
+converge.
 
-1. The row-sensitive inverse tail (10.1023) turns exactly these row,
-   tolerance, and mass bounds into
-   $q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c})$.
-2. The established geometric-window summability and exact landing argument
-   iterate that power-saving recurrence.
-3. Hence $q_n/n^{3/2}$, and therefore the original normalization, converges.
-
-The strongest structured lemma, (10.967), asks with the Wave 34 parameters
-$L_0,k_0,r,T,s,D$ for
+The strongest structured reduction is (10.1089): on an affordable anchored
+complement-incidence family of relative density $\beta$, construct a joint
+selector--certificate law with
 
 ```math
-\max_{z\in\mathcal C_2}
-U_m\{S:a_z(S)\le\lfloor D/s\rfloor\}
-\ge\exp\{-O(TL_0)\}.
+\log\beta^{-1}+I(S;D)=O(n^{3/4-c}),\qquad
+\mathbb E R_2(D)=O(n^{9/4-c}),
 ```
 
-Such a center creates the favorable star, row-good block coset, and required
-cut. A proof may instead establish the bare tail directly.
+and expected corrected anchored conflict at the decoder's project budget.
+Complement support supplies favorability when $p_2\ge1/2$; (10.1087) supplies
+the **entire** selected-column Gram bound; (10.1056) decodes a global low-row
+cut. Thus deficit, cap persistence, and a separate internal-Gram theorem are
+not needed. On the full slice the weight bound already entails the difficult
+fractional cover (10.1047); the genuine opening is an affordable anchored
+subfamily.
 
-## Current evidence and obstructions
+## Current evidence, obstructions, and falsification
 
-- The rare-coverage converse (10.1022)--(10.1025) says the advertised row and
-  entropy scales force the recurrence. Across a normalized gap, such a cut
-  needs row $\Omega(n^{9/4+c})$; exact-minimizer structure must suppress it.
-- Singleton-anchored agreement has an exact decoder. Gram projection
-  (10.1054) removes degree-three selector representativeness, but now requires
-  favorable full-column Gram energy (10.1057). Completion Parseval proves the
-  external half for near-parent certificates (10.1078); cap persistence and
-  internal child row energy in (10.1080) remain open.
-- Complement minimality gives favorable coverage at $p_2\ge1/2$ (10.1045),
-  leaving the row-good fractional number $\tau_{\rm flip}$ (10.1046)--(10.1047).
-  Full-cube, uniform-dual, and constant-probability product-noise attempts hit
-  proved walls; correlated congestion or a direct rare tail is necessary.
-- Exact flipped grounds satisfy the all-subset slack corridor (10.1074), but
-  finite $A_8$ shows that imposing zero slack can discard low-row threshold
-  witnesses at the mean cap. This is a mechanism wall, not a project-scale
-  counterexample.
-- One-block replacement retains the uncontrolled term $q_n-q_m$ and can
-  migrate outside every favorable child fiber on $A_9$. It is retired unless
-  a joint-family or multiblock identity cancels that term first.
-- Uniform center degrees, generic KKT/incidence arguments, Johnson-entry
-  trees, selector-independent mean tilts, and independent noise have already
-  met recorded exponent or quantifier walls.
+- The rare-coverage converse proves the advertised row and entropy scales are
+  sharp enough for the recurrence. Generic concentration remains circular
+  because a fixed cut's mean is exactly the unknown restriction excess.
+- Information-to-Gram transport removes Gram as an independent obstacle, but
+  no theorem yet constructs a complement kernel simultaneously having low
+  information, low parent row, and low anchored conflict. First moments,
+  uniform duals, common row prices, and independent product noise have recorded
+  congestion walls.
+- The bare route is falsified only by an unbounded actual-minimizer family on
+  which every $R_2=O(n^{9/4-c})$ cut has favorable mass
+  $\exp\{-\omega(n^{3/4-c})\}$ for every admissible saving/window. Finite
+  examples or abstract label systems do not suffice.
+- The complement implementation is falsified by superbudget information or
+  conflict on every affordable anchored family. On the full slice,
+  $\log\tau_{\rm flip}=\omega(n^{3/4-c})$ at the row cap is the precise
+  congestion falsifier.
+- The harmonic route now has exact scalar curvature transport
+  (10.1091)--(10.1095). It still needs endpoint and orientation cost,
+  restoring, adjacent-selector Hellinger, and
+  $\mathcal K^2=O(n^{1/2-2c})$ in (10.1096). Excess actual scalar migration or
+  failure of another necessary input would falsify this implementation.
+- Terminal subtree flips give the exact laminar Euler inequality (10.1099),
+  but favorable fibers are not flip-closed and signed ancestor increments do
+  not telescope. Arbitrary prescribed grounds can be far apart across a zero
+  shore, so continuation needs canonical selection or favorable soft
+  potentials.
 
-## Falsification criteria
+## Blank-slate abstraction audit
 
-For fixed $c>0$, the bare route is falsified by an unbounded actual-minimizer
-family on which every cut with $R_2(d)=O(n^{9/4-c})$ has
+The following are main-agent research hypotheses, not user directives. They
+were generated from the original convergence problem before ledger comparison.
 
-```math
-U_m\{h_d\le O(n^{3/2-c})\}
-=\exp\{-\omega(n^{3/4-c})\}.
-```
+1. **Optimized finite pressure.** Define
+   $\Phi_n(b)=n^{-1}\min_A\log(2^{-n}\sum_x2\cosh(bH_A(x)/\sqrt n))$.
+   Exactly $bm_n-\log2\le\Phi_n(b)\le bm_n+\log2/n$, where
+   $m_n=M_n/n^{3/2}$. Therefore the concrete theorem “$\Phi_n(b)$ converges
+   for every fixed $b>0$” would give oscillation at most $\log2/b$ and prove
+   convergence as $b\to\infty$. **Ledger comparison:** this is §6.4 in
+   substance. Sections 3.3, 3.9, and 10.48 record wrong-temperature scaling,
+   scalar countermodels, and nonhereditary pressure walls. Reject as a new
+   route unless a signing-specific coefficient/overlap identity is supplied.
+2. **Augmented-cut-code deep-hole product.** With
+   $D_n=\binom n2/2-\rho(\mathcal C_n)=M_n/2$, seek uniformly in large $k$
+   ```math
+   D_{kn}\le k^{3/2}D_n+\varepsilon_n(kn)^{3/2},\qquad\varepsilon_n\to0.
+   ```
+   This maps directly to uniform amplification and would transfer a liminf
+   subsequence to all orders. **Ledger comparison:** it is §6.1 with code
+   vocabulary. Hadamard/vector relaxation, false tensor submultiplicativity,
+   Segre-versus-all-block-state, and centered-width walls (§§3.4, 3.8,
+   10.31--10.32, 10.50) defeat the proposed orthogonal blow-up. Reject unless
+   a nonlocal decoration controls every Boolean block state without that loss.
+3. **Discrete homogeneity exchange.** For $q_n=2M_n$, put
+   $e_n=q_n-q_{n-1}-3q_n/(2n)$. Either
+   $|e_n|\le Cn^{1/2-\delta}$ or
+   $\sum_{r=n}^{2n}|e_r|/r^{3/2}=o(1)$ makes normalized increments summable
+   and proves convergence. **Ledger comparison:** this is stronger sharp
+   insertion/constant shortfall in different notation; the linear puncture
+   cocycle (10.653)--(10.658) collapses to the original decrement and misses a
+   square-root scale. Reject without a genuinely nonlinear exchange coupling.
 
-Framework falsification requires this for every admissible saving and ratio
-window; finite examples and abstract label systems do not suffice. Failure of
-(10.967) for every parameter choice only falsifies exceptional centers.
+**Audit judgment:** all three formulations are exactly sufficient, but none
+supplies a new proof mechanism at the required scale. They do not displace the
+restriction leader. Finite pressure and amplification remain dormant unless a
+proposal explicitly evades their recorded walls; constant shortfall stays a
+lower-ranked fallback.
 
-The complement implementation is falsified, for fixed $c$, by
-$\log\tau_{\rm flip}=\omega(n^{3/4-c})$ along an unbounded actual-minimizer
-family at row cap $O(n^{9/4-c})$. The harmonic implementation is falsified
-only by excessive actual signed migration or another required input, not by
-failure of one coordinatewise majorant.
+## Ranked routes and Wave 40 direction
 
-## Strongest independent alternative
+1. **Bare tail via the complement/agreement kernel.** Prove (10.1089), with
+   anchored conflict now the main unresolved interface, then invoke (10.1087).
+2. **Harmonic scalar curvature.** Prove the isotonic-defect estimate (10.1096)
+   and audit the endpoint/restoring/orientation package.
+3. **Exceptional-center tail.** Prove (10.967) directly through nonlinear
+   low-row center degree, without rebuilding an unnecessary Gram package.
+4. **Correlated full-slice complement congestion.** Prove (10.1047) by a
+   nonproduct mechanism; do not retry first moments or common pricing alone.
+5. **Terminal favorable soft potentials.** Seek a canonical flip-compatible
+   selection that makes (10.1099) telescope at project scale.
+6. **Constant shortfall.** Retain only for a new square-root cavity-reward
+   mechanism. The blank-slate exchange formulation adds no such input.
 
-The harmonic parent-Gibbs route has the exact identity (10.1082): vertex
-weighted energy equals endpoint vertex KL minus integrated signed covariance
-$\operatorname{Cov}_{\mu_t}(g,L_t)$. Its sharp migration target is
-
-```math
-\left[-\int_0^1\operatorname{Cov}_{\mu_t}(g,L_t)\,dt\right]_+
-=O(n^{1/2-2c}),
-```
-
-with endpoint cost at the same scale. Approximate order (10.1085) is sufficient.
-Restoring, global orientation, and adjacent-selector Hellinger remain separate;
-no exact-minimizer bound for the signed covariance is known.
-
-## Constant-shortfall audit
-
-Criterion (10.617) needs, for every target pair, a selectable deletion path
-with Gibbs cavity reward $\Theta(\sqrt r)$ per step. No such theorem is known.
-A local falsifier has $\max_i\kappa_{\beta,i}=o(\sqrt r)$ on an unbounded
-exact-minimizer family; the path version needs an unavoidable deletion cutset.
-Neither exists, so this exact route is a fallback rather than the leader.
-
-## Ranked routes
-
-1. **Bare arbitrary-cut / exceptional-center tail.** Prove (10.795) directly
-   or through (10.967), using exact-minimizer nonlinear structure.
-2. **Favorable internal-Gram selection.** Prove the affordability, conflict,
-   cap-persistence, and internal-row package (10.1080); external Gram is now
-   supplied by (10.1078).
-3. **Harmonic signed migration.** Prove endpoint cost, (10.1083) or
-   approximate order (10.1085), plus restoring, orientation, and Hellinger.
-4. **Correlated complement-flip congestion.** Prove (10.1047) using the slack
-   cut system or a nonproduct rare-tail argument; do not retry first moments
-   or constant-probability product noise.
-5. **Terminal min-cut / susceptibility.** Retain as a genuinely independent
-   discrete-geometric fallback and reassess its exact unresolved lemma.
-6. **Constant shortfall.** Retain below the sharper routes until a
-   square-root deletion mechanism appears.
-
-## Wave 39 decision
-
-Attack independently: the internal-Gram/cap-persistence package; the signed
-harmonic approximate-order theorem; and one genuinely independent
-terminal-min-cut or correlated-cut-system route. Do not revive standalone
-one-block replacement, uniform product noising, or a linear mean learner.
+Wave 40 should independently attack the first two targets and one genuinely
+distinct falsifiable fallback after a fresh ten-idea ranking. Do not revive a
+rejected blank-slate candidate solely under new terminology.
