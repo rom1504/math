@@ -25475,3 +25475,559 @@ its remaining structured lemma substantially more exact:
   attack a global-minimality inequality forbidding localized quadratic modes,
   attack the center-star moment through cross-selector correlation rather
   than degrees, and retain one combined screened-response route.
+
+### 10.86 Wave 33: global replacement detects the planted mode, soft center capacity, and resonant screening
+
+All algebraic identities, finite minimax statements, and enumerations in this
+section are **Verified**.  The block-deletion estimate is a specialization of
+the earlier hybrid theorem (10.565), and the new oriented-state replacement
+law is the absolute-`Q` analogue of the centered-width dual (10.128)--(10.129).
+Their relevance here is that they correct the Wave 32 assessment of the
+specific sufficiently-large-`K` planted construction: it is positively
+excluded by exact global minimality.  No conditional witness transfer or
+convergence proof is obtained.
+
+#### 10.86.1 Exact global variation gives a near-active anti-aligned parent law
+
+Let `A` be an exact order-`n` minimizer, so `Q(A)=q_n`.  For an oriented full
+state `omega=(sigma,x)`, set
+
+```math
+d_e(\omega)=\sigma x_ix_j,qquad
+s_e(\omega)=a_ed_e(\omega),qquad
+\Delta_A(\omega)=q_n-\sigma x^{\mathsf T}Ax.
+```
+
+If `A^F` flips precisely the edge set `F`, direct expansion gives the exact
+simultaneous-edge certificate
+
+```math
+\boxed{
+Q(A^F)-q_n
+=\max_\omega\left\{-4\sum_{e\in F}s_e(\omega)
+-\Delta_A(\omega)\right\}\ge0.
+}
+\tag{10.942}
+```
+
+The witnessing state may depend on `F`; summing separate one-edge witnesses
+is invalid.
+
+Now fix `U subset[n]`, `|U|=b`, and let `A^(0,U)` set all internal `U`-edges
+to zero.  Replacing that block by an exact order-`b` minimizer and applying
+the triangle inequality gives precisely the one-block case of (10.565):
+
+```math
+\boxed{
+q_n-Q(A^{0,U})\le q_b
+\le2\sqrt{b(b-1)(b+2)\log2}=O(b^{3/2}).
+}
+\tag{10.943}
+```
+
+Thus no `b`-vertex block is norm-essential beyond order `b^(3/2)`.  Apply
+this to the Wave 32 signing `A=P_U+R`, where `P_U` is a positive `b`-clique,
+`R` has no internal `U`-edges, and `||R||_op<=C sqrt n`.  Fix the clique spin
+on `U` and average over uniform outside spins.  The mean `R`-energy is zero,
+so some completion has total energy at least `b(b-1)`.  Hence
+
+```math
+Q(A^{0,U})=Q(R)\le Cn^{3/2},
+\qquad Q(A)\ge b(b-1),
+```
+
+exact minimality would imply
+
+```math
+\boxed{
+b(b-1)\le Cn^{3/2}+q_b.
+}
+\tag{10.944}
+```
+
+For `b=ceil(Kn^(3/4))`, this forces `K^2<=C+o(1)`.  The large fixed `K`
+used in (10.936)--(10.937) to magnetize the full favorable allowance is
+therefore incompatible with an exact minimizer.  This is not a new generic
+block theorem—the mechanism was already present in (10.565), while (10.130)
+is its earlier centered-width analogue—but it excludes the specific large-`K`
+construction as a candidate minimizer obstruction.
+
+There is a useful common-law refinement.  For a local oriented state `u` on
+`U`, let `Z_U(u)` be the maximum contribution of every noninternal edge after
+optimizing the outside spin.  If `m=binom(b,2)`, define
+
+```math
+\Phi(z)=\max_u\left\{Z_U(u)+2\sum_{e\subset U}z_ed_e(u)\right\},
+\qquad z\in[-1,1]^m.
+```
+
+Independent sign-rounding of a minimizer of `Phi`, followed by finite
+minimax, gives one law `mu_U` on lifted full oriented states.  With
+
+```math
+\eta_b=\sqrt{8mb\log2}=2b\sqrt{(b-1)\log2},
+\qquad m_e=\mathbb E_{\mu_U}d_e,
+```
+
+it satisfies
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E_{\mu_U}\Delta_A&\le\eta_b,\\
+4\sum_{e\subset U}(a_em_e)_+&\le\eta_b,\\
+\mathbb E_{\mu_U}\left[2\sum_{e\subset U}a_ed_e\right]
+&\le\eta_b/2,\\
+\mathbb E_{\mu_U}Z_U&\ge q_n-\eta_b.
+\end{aligned}
+}
+\tag{10.945}
+```
+
+The same law works for all internal edges; this is stronger than the
+separate witnesses in (10.942).  If every state of slack at most `t` has
+signed internal energy
+`L_U=2sum_(e subset U)a_ed_e>=L_0`, Markov and (10.945) force
+
+```math
+\boxed{
+L_0\left(1-\frac{\eta_b}{t}\right)
+-2\binom b2\frac{\eta_b}{t}
+\le\frac{\eta_b}{2}.
+}
+\tag{10.946}
+```
+
+For a switched positive clique and `t=C_c b^(3/2)`, with `C_c` sufficiently
+large depending on `c`, this rules out having both positive orientation and
+block magnetization `>=c b` at every such near-ground parent state for all
+large `b`.
+
+Two losses are exact.  First, the internal energy is signed: a highly
+magnetized opposite orientation is strongly negative and can satisfy
+(10.945) while its orientation-free row contribution is large.  A two-state
+abstract response game realizes this shield for every block replacement.
+Second, `mu_U` is a parent-state law, while (10.926) asks for completions in
+specified favorable child fibers.  In `A_9`, every exact parent ground has
+internal signed energy `8` on `U={0,2,4,5,7}`, yet zeroing that block leaves
+`Q=24`; on `U={0,1,2,6}`, zeroing raises `Q` from `24` to `32`.  Replacement
+witnesses genuinely migrate.  The new open target is a conditional
+orientation-and-witness transfer theorem, not another unconditional block
+variation.
+
+#### 10.86.2 The center-star moment has an exact soft capacity dual
+
+Retain the favorable-fiber distance `a_z(S)` and `nu_2` from (10.925).  For
+`lambda>0`, let
+
+```math
+K_\lambda(z,S)=e^{-\lambda a_z(S)},\qquad
+q_{\lambda,w}(z)=\sum_Sw_SK_\lambda(z,S),\qquad
+L_\lambda(w)=\mathbb E_{\nu_2}q_{\lambda,w}(z)^s.
+```
+
+For iid `S_1,...,S_s~w`, put `X_z=sum_j a_z(S_j)` and let
+`D=floor(C_Dk_0)`.  Since `X_z` is integer,
+
+```math
+\boxed{
+\Pr\{X_z\le D\}
+\ge
+\max\left\{0,
+\frac{L_\lambda(w)-e^{-\lambda(D+1)}}
+     {1-e^{-\lambda(D+1)}}\right\}.
+}
+\tag{10.947}
+```
+
+The subtraction and direction are essential.  Ordinary Laplace Markov gives
+the reverse bound `Pr{X_z<=D}<=e^(lambda D)L_lambda(w)`.  For
+`L_lambda(w)` between `e^(-lambda(D+1))` and one, a law on `{0,D+1}` attains
+the positive branch of (10.947); below that threshold, zero is the sharp
+universal lower bound.
+
+Define the soft center capacity
+
+```math
+V_{s,\lambda}
+=\inf_{w\in\Delta(\Omega)}
+\|K_\lambda w\|_{L^s(\nu_2)},
+\qquad q=\frac{s}{s-1}.
+```
+
+Norm duality and finite minimax give the exact adversarial-law dual
+
+```math
+\boxed{
+V_{s,\lambda}
+=\max_{\substack{h\ge0\\\|h\|_{L^q(\nu_2)}\le1}}
+\min_S\mathbb E_{z\sim\nu_2}
+\left[h(z)e^{-\lambda a_z(S)}\right].
+}
+\tag{10.948}
+```
+
+At a primal minimizer `w_*`, with `u=K_lambda w_*` and
+`V=||u||_s`, the optimal witness is
+`h_*=u^(s-1)/V^(s-1)`.  Its overlap is at least `V` for every selector and
+equals `V` on the support of `w_*`.  If
+`Z_w=E_(nu_2)q_(lambda,w)` and `P_w` has density `q_(lambda,w)/Z_w`, then
+
+```math
+\boxed{
+L_\lambda(w)=Z_w^s
+\exp\{(s-1)D_s(P_w\Vert\nu_2)\}.
+}
+\tag{10.949}
+```
+
+Thus the relevant object is an order-`s` common-center capacity, not a first
+moment.
+
+One concrete sufficient lemma is now available.  Fix constants
+`0<A<Lambda`,
+take `lambda=Lambda rL_0/(D+1)`, and prove that one nonnegative center weight
+`h`, independent of `S` and `w`, obeys
+
+```math
+\boxed{
+\|h\|_{s/(s-1)}\le1,
+\qquad
+\min_S\mathbb E_{\nu_2}
+[h(z)e^{-\lambda a_z(S)}]\ge e^{-ATL_0}.
+}
+\tag{10.950}
+```
+
+This gives `V^s>=e^{-AsTL_0}` while the subtraction is
+`e^{-Lambda rL_0}`.  The exact ceiling margin is
+`Lambda r>A sT`.  Since `r<=sT<r+T` and `T/r=o(1)`, the fixed strict constant
+gap implies this eventually, makes the subtraction negligible, and lets
+(10.947) prove (10.926).
+
+This is strictly weaker than uniform normalized degrees.  In the hard-kernel
+toy where every column is the indicator of one shared center core of mass
+`delta`,
+
+```math
+V=\delta^{1/s},\qquad
+h=\delta^{-(s-1)/s}\mathbf1_C.
+```
+
+For `delta=e^{-ArL_0}`, the capacity pays the shared core only once:
+`delta^(1/s)=e^{-A(r/s)L_0}>=e^{-ATL_0}`.  The degree route instead pays
+`delta` for every selector.  This indicator example is a hard-kernel limit,
+not a claim that finite-`lambda` favorable distances have zero tails.
+
+Softening does not relax the geometry very much.  The tail in (10.947)
+forces
+
+```math
+\boxed{
+\lambda(D+1)=\Omega(rL_0),
+\qquad
+\lambda=\Omega(r\log n),
+\qquad
+\lambda(D/s)=\Omega(TL_0).
+}
+\tag{10.951}
+```
+
+The last relation is `Theta(TL_0)` for the selected scale
+`lambda=Theta(rL_0/D)`; the tail-margin lower bound alone gives only the
+displayed `Omega` statement.
+
+An abstract independent-label assignment defeats every adaptive
+`lambda>=lambda_min` simultaneously, where
+`lambda_min=Lambda_min rL_0/(D+1)` for a fixed `Lambda_min>0`.  Choose one
+largest radius
+`d_max=floor(alpha n/(2lambda_min))=o(n)` and apply the Chernoff construction
+of (10.930) once.  Then, for the uniform selector law and all such `lambda`,
+
+```math
+\boxed{
+V_{s,\lambda}\le2e^{-\alpha n/2}
+=e^{-\Omega(n)}=e^{-\omega(TL_0)}.
+}
+\tag{10.952}
+```
+
+This remains an abstract wall; those independent labels are not favorable
+fibers of one exact minimizer.  The surviving minimizer-specific target is
+the capacity margin
+`V_(s,lambda)^s>=e^{-O(rL_0)}` with a strict advantage over the subtraction
+in (10.947), equivalently a common weighted-center theorem of the form
+(10.950).
+
+#### 10.86.3 Paying Johnson movement is too expensive against a uniform law
+
+There is a clean deterministic transport certificate. Let a rooted tree have
+full root `z` and partial projective word `[y^v]` on `S_v` at every other
+node. On an oriented edge `u->v`, put
+
+```math
+I_{uv}=S_u\cap S_v,
+\qquad
+\Delta_{uv}=d_{\rm pr}(y^u|_{I_{uv}},y^v|_{I_{uv}}).
+```
+
+Choose relative node orientations edge by edge, which is consistent on a
+tree; then pin the child on `S_v` and copy the parent outside `S_v`. This
+constructs full completions with
+
+```math
+\boxed{
+D_T\le\sum_{u\to v}
+\left[\Delta_{uv}+|S_v\setminus S_u|\right].
+}
+\tag{10.953}
+```
+
+For fixed-size selectors, after one root-to-anchor edge, the second term is
+the Johnson distance. Thus an anchor close to a low-row root plus a tree of
+overlap-consistent adjacent selectors would prove the forest condition.
+Exhaustive small-tree enumeration agrees with (10.953).
+
+But this sufficient statistic cannot handle every selector law. Let
+`N=binom(n,m)` and sample `s` selectors uniformly. Cayley's formula,
+stars-and-bars, and
+
+```math
+|\{T:d_J(S,T)=h\}|=\binom mh\binom{n-m}h\le n^{2h}
+```
+
+give
+
+```math
+\boxed{
+\Pr\{\operatorname{MST}_J(S_1,\ldots,S_s)\le D\}
+\le
+N^{1-s}s^{s-2}\binom{D+s-1}{s-1}n^{2D}.
+}
+\tag{10.954}
+```
+
+At fixed density, `D=O(k_0)`, `T<=n^eta`, and `eta<c_0`, the negative term
+`(s-1)log N=Theta(ns)` dominates `O(s log n+D log n)`. Equality of all `s`
+selectors gives the matching lower exponential order. Even after
+union-bounding over the `s`-subsets of the full `r`-batch, for every fixed
+`C_J<infinity` (with constants depending on the fixed density and `C_J`),
+
+```math
+\boxed{
+\Pr\{\text{some }s\text{ positions have Johnson MST }\le C_Jk_0\}
+=e^{-\Theta(ns)}=e^{-\omega(rL_0)}.
+}
+\tag{10.955}
+```
+
+Same-slice Johnson-metric selector Steiner nodes do not change the exponent,
+because a metric terminal MST is at most twice a Steiner-tree cost. This
+argument does not cover variable-size or asymmetric-entry auxiliary nodes.
+The wall applies only to
+certificates which pay coordinate entry, hence at least Johnson tree length.
+It does not falsify the exact terminal min-cut (10.923), where free-coordinate
+screening may avoid paying entries separately.
+
+#### 10.86.4 Edge symmetrization yields an endpoint-only harmonic criterion
+
+On an unordered parent coordinate edge `e={x,y}`, orient temporarily from
+`x` to `y` and write
+
+```math
+Z_e(S)=\log\frac{h_S(y)}{h_S(x)},
+\qquad
+\chi_e=\log\frac{f_\beta(y)}{f_\beta(x)}.
+```
+
+Let `pi_x,pi_y` be the selector posteriors, set
+`a_x=E_(pi_x)Z_e`, `a_y=E_(pi_y)Z_e`, and put
+`K_x=D(pi_x||pi_y)`, `K_y=D(pi_y||pi_x)`. The two exponential-tilt
+identities give
+
+```math
+\boxed{
+a_x=\chi_e-K_x,
+\qquad
+a_y=\chi_e+K_y,
+\qquad
+\chi_e=\frac12(a_x+a_y+K_x-K_y).
+}
+\tag{10.956}
+```
+
+The last signed combination preserves the cancellation between common drift
+and the two posterior KL directions.
+
+Let `omega_e=log(nu_beta(y)/nu_beta(x))`,
+`u_(t,e)=omega_e+t chi_e`, and `M_(t,e)=mu_t(x)+mu_t(y)`. The exact
+conductance and edge cost are
+
+```math
+\boxed{
+\begin{aligned}
+c_t(e)&=\frac{\mu_t(x)\mu_t(y)}{\mu_t(x)+\mu_t(y)}
+=\frac{M_{t,e}}{4\cosh^2(u_{t,e}/2)},\\
+c_t(e)\chi_e^2
+&=\frac{M_{t,e}}{16\cosh^2((\omega_e+t\chi_e)/2)}
+(a_x+a_y+K_x-K_y)^2.
+\end{aligned}
+}
+\tag{10.957}
+```
+
+The conductance suppresses an edge by `cosh^(-2)` away from the resonance
+`omega_e+t chi_e=0`; whether its cost is negligible also depends on
+`M_(t,e)` and `chi_e`. The global orientation edge must be retained. For a
+vertex flip and for the orientation involution respectively,
+
+```math
+\boxed{
+\begin{aligned}
+\omega_i(d)&=-4\beta h_i(d),
+&Z_{S,i}(d)&=2\mathbf1_{\{i\in S\}}(b-\beta a),\\
+\omega_0(d)&=-2\beta H_A(d),
+&Z_{S,0}(d)&=F_{\beta,S}(d[S])-F_{-\beta,S}(d[S]).
+\end{aligned}
+}
+\tag{10.958}
+```
+
+Now put `g=log f_beta`, let `L_t` be the summed-coordinate heat-bath
+generator for `mu_t`, and define
+
+```math
+X_t=g-\mathbb E_{\mu_t}g,
+\qquad
+B_t=-L_tg.
+```
+
+Reversibility gives the one-function integration-by-parts identity
+
+```math
+\boxed{
+\mathcal E_t(g)=\sum_{j,e\in E_j}c_t(e)\chi_j(e)^2
+=\mathbb E_{\mu_t}X_tB_t.
+}
+\tag{10.959}
+```
+
+For positive energy, choose any `kappa_t>0` and set
+
+```math
+R_t=\mathbb E_{\mu_t}(B_t-\kappa_tX_t)^2,
+\qquad
+\delta_t=\frac{R_t}{\kappa_t\mathcal E_t(g)}.
+```
+
+One Cauchy--Schwarz inequality, with all constants retained, gives the exact
+endpoint-only comparison
+
+```math
+\boxed{
+C_{\rm scr}(t)
+=\frac{\operatorname{Var}_{\mu_t}(g)}{\mathcal E_t(g)}
+\le\frac1{\kappa_t}
+\left(\frac{\sqrt{\delta_t}+\sqrt{\delta_t+4}}2\right)^2.
+}
+\tag{10.960}
+```
+
+If the energy is zero, connectedness makes `g` constant and the parent
+variance is zero separately. Unlike (10.940), (10.960) asks for no generic
+Poincare inequality.
+
+A fully quantified surviving parent lemma is: uniformly over `n`, relevant
+exact minimizers, fixed-density target sizes, the prescribed project
+temperature, and `t in [0,1]`, find `kappa_t>=kappa_0>0` and `D<infinity`
+such that
+
+```math
+\mathbb E_{\mu_t}(B_t-\kappa_tX_t)^2
+\le D\kappa_t\mathcal E_t(g),
+\tag{10.961}
+```
+
+and prove the exact weighted energy target
+$`\int_0^1t\,\mathcal E_t(g)\,dt=O(n^{1/2-2c})`$, using the resonant decomposition
+(10.957). An unweighted integral bound is a stronger sufficient substitute.
+Equations (10.900) and (10.960) then prove the parent entropy target. The
+adjacent-selector Hellinger estimate remains separate.
+
+Finite exact audits delimit shortcuts. `C_scr<=1` fails on
+`A_4,beta=1/2,m=3,t=0`, where it is `1.398592860...`; pointwise restoring
+drift fails on `A_4` and on twelve states of `A_6,m=4`; and the orientation
+edge supplies about `34%` of the energy for `A_6,beta=0.1,m=3,t=0`. On the
+tested grid, the `kappa=1` squared defect is at most `1.6123` times the
+energy, but this is finite numerical evidence only. An abstract square
+likelihood `f=(1,epsilon,epsilon,e)` has
+
+```math
+\boxed{
+C_{\rm scr}=\Theta\left(
+\frac1{\epsilon\log^2(1/\epsilon)}\right)\longrightarrow\infty.
+}
+\tag{10.962}
+```
+
+Duplicating the likelihood across selectors makes all posterior KL terms
+zero. Thus a bounded endpoint comparison still needs harmonic/minimizer
+structure; it is not a consequence of likelihood algebra.
+
+#### 10.86.5 Updated frontier
+
+Wave 33 preserves adaptive optimized principal restriction and its
+fractional row-good coset implementation as the leading route.  It also
+changes the strategic reading of the Wave 32 evidence:
+
+- the specific sufficiently-large-`K` planted construction
+  (10.936)--(10.937) is **not** compatible with exact minimality.  The already
+  verified block-replacement inequality (10.943) gives the quantitative
+  exclusion (10.944).  The new common-law
+  refinement (10.945)--(10.946) further forces an anti-aligned near-active
+  parent law, but it does not select witnesses in prescribed favorable child
+  fibers and it does not defeat the negative-orientation shield.  A next
+  lemma for this route is therefore conditional
+  orientation-and-witness transfer, not another unconditional block deletion
+  estimate;
+
+- the strongest convex, dualizable center certificate is now the soft
+  capacity (10.947)--(10.950); the hard total-cost event (10.926) remains the
+  logically weaker scalar target.  A single nonnegative dual weight `h`,
+  shared by every selector and losing only `e^{-O(TL_0)}` per selector, would
+  prove the center-star moment and hence convergence.  This condition is
+  genuinely weaker than uniform normalized degrees because it can pay a shared center
+  core only once.  However, the tail scale (10.951) makes the soft kernel
+  nearly hard, and the simultaneous independent-label wall (10.952) shows
+  that a minimizer-specific common-overlap mechanism is indispensable;
+
+- Johnson-entry transport is a valid sufficient forest construction, but
+  (10.954)--(10.955) falsifies it as a uniform-law strategy at the required
+  exponent.  This does not falsify exact terminal-min-cut screening, which
+  may exploit free coordinates without separately paying selector movement;
+
+- the harmonic route now has two exact local diagnostics.  Edge
+  symmetrization (10.956)--(10.958) isolates resonant responses, and the
+  endpoint comparison (10.960) reduces the parent problem to a restoring
+  drift defect such as (10.961), plus an integrated resonant-energy bound.
+  Generic likelihood algebra cannot supply the restoring comparison: the
+  bounded screened constant and pointwise restoring-drift shortcuts have
+  explicit finite or abstract counterexamples.  These examples do not
+  falsify the separate resonant-energy target.  Adjacent-selector Hellinger
+  control remains a separate missing input;
+
+- the bare power sum (10.907) remains the exact sufficient lemma with the
+  fewest extra structural commitments.  No route yet proves it, no direct
+  restriction falsifier is known, and the rigorous interval for subsequential
+  limits is unchanged.  Constant shortfall receives no new positive evidence
+  and remains below the fractional and harmonic routes.
+
+Because (10.943)--(10.944) reverses the previous strategic interpretation of
+the planted example, `STEERING.md` is refreshed at this boundary.  Wave 34
+should prioritize: (i) conditional replacement or witness-transfer
+inequalities that convert the parent law (10.945) into common favorable-fiber
+overlap; (ii) a direct common-weight theorem for the capacity dual (10.950);
+and (iii) minimizer-specific control of the resonant energy or restoring
+defect in (10.957)--(10.961).  Exact terminal-min-cut screening remains the
+best geometric fallback; Johnson-entry trees should not be restarted without
+a mechanism that avoids their uniform-law exponent.

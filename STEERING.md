@@ -1,20 +1,29 @@
 # Strategic steering
 
-Evidence cutoff: Wave 32, §10.85 (2026-07-30). Regenerate by Wave 37, or earlier after a decisive proof, counterexample, or change of leading route.
+Evidence cutoff: Wave 33, §10.86 (2026-07-30). Regenerate by Wave 38, or earlier after a decisive change.
 
 ## User-stated research objective
 
-Determine whether $`\lim_{n\to\infty}M_n/n^{3/2}`$ exists. The conjectural value $`1/2`$ is not proved and is not an additional user objective.
+Determine whether $`\lim_{n\to\infty}M_n/n^{3/2}`$ exists. The conjectural value $`1/2`$ is not an additional user objective.
 
 ## Present judgment
 
 No route proves convergence. The rigorous interval remains $`0.336493364431\ldots\le\liminf\le\limsup\le1/2`$.
 
-The leading route remains **adaptive optimized principal restriction**, implemented by a **fractional row-good block-coset cover**. Its decisive bare statistic is the partial-collision power sum (10.907). Its most concrete structured successor is now the low-row center-star moment (10.926), while the exact forest geometry is the coherent-orientation terminal min-cut (10.923)--(10.924).
+The leading route is still **adaptive optimized principal restriction**, via
+the **fractional row-good block-coset cover**. Its bare sufficient statistic is
+the partial-collision power sum (10.907). Its strongest convex, dualizable
+center certificate is the soft capacity (10.947)--(10.950), a one-kernel
+sufficient surrogate for the logically weaker hard total-cost event (10.926).
 
-The new complete-signing wall makes the source of difficulty unusually clear: the known `Q`, operator-norm, favorable-tolerance, child-optimality, and global low-row-abundance facts do not force favorable fibers near low-row centers. A successful structured proof must use exact **global signing minimality** in a way not yet present in the ledger.
+Wave 33 changes one diagnosis: the specific sufficiently-large-`K` planted
+construction cannot be an exact minimizer, by (10.943)--(10.944). Missing is a conditional theorem
+transferring this parent constraint to prescribed favorable child fibers while
+controlling orientation and witness migration.
 
-The constant-shortfall pressure criterion (10.617) is still **not** the strongest route. No new evidence produces its square-root reward or asymptotically falsifies it.
+The constant-shortfall criterion (10.617) is **not** the strongest route. No
+evidence supplies its square-root reward along a deletion path, while the
+fractional and harmonic routes have sharper exact reductions.
 
 ## Leading route and exact sufficient lemma
 
@@ -26,68 +35,115 @@ k_0=\Theta(L_0/\log n),\qquad
 r=\left\lceil\frac{n\log(2k_0)}{L_0}\right\rceil.
 ```
 
-For `T<=n^eta`, `eta<c_0`, let `s=ceil(r/T)` and let `H_a` be the hit sets of all eligible row-good cosets. The sharp bare sufficient lemma is, uniformly over every selector law `w`,
+For `T<=n^eta`, `eta<c_0`, let `s=ceil(r/T)` and `H_a` be the eligible
+row-good-coset hit sets. Uniformly over every selector law `w`, it suffices that
 
 ```math
-\boxed{
-\sum_a w(H_a)^s\ge e^{-O(rL_0)}.
-}
+\boxed{\sum_a w(H_a)^s\ge e^{-O(rL_0)}.}
 ```
 
-This is equivalent at the required exponent to an iid batch having probability `e^{-O(rL_0)}` that one coset hits `s` positions. The partial-collision theorem gives `log tau_*<=O(TL_0)=O(n^(3/4-(c_0-eta)))`; rounding and pigeonhole then produce an arbitrary cut with a power-saving restriction edge. Geometric-window summability and exact landing prove convergence.
+This gives an iid batch where one coset hits `s` positions. Partial collision,
+rounding, and pigeonhole give a power-saving restriction edge; geometric-window
+summability and exact landing then prove convergence.
 
-The strongest currently testable center-based sufficient statement is the total-cost moment. Let `nu_2` be uniform on `C_2={z:R_2(z)<=2n(n-1)}` and let `a_z(S)` be the minimum projective distance from `z` to a favorable completion for `S`. Prove, uniformly over `w`,
+The strongest concrete structured sufficient lemma uses
+$`K_\lambda(z,S)=e^{-\lambda a_z(S)}`$ and
 
 ```math
-\boxed{
-\mathbb E_{z\sim\nu_2}
-\Pr_{S_1,\ldots,S_s\sim w}
-\left\{\sum_{j=1}^sa_z(S_j)\le Ck_0\right\}
-\ge e^{-O(rL_0)}.
-}
+V_{s,\lambda}
+=\inf_{u\in\Delta(\Omega)}\|K_\lambda u\|_{L^s(\nu_2)}
+=\max_{h\ge0,\ \|h\|_{L^q(\nu_2)}\le1}
+  \min_S\mathbb E_{\nu_2}[h(z)e^{-\lambda a_z(S)}].
 ```
 
-On this event the completions form a low-row star of total length `O(k_0)`; the verified forest bound and balanced refinement produce the required row-good coset. A more general forest may succeed even if this star moment fails.
+Here `q=s/(s-1)`. With $`D=\Theta(k_0)`$ and
+$`\lambda=\Lambda rL_0/(D+1)`$, it is enough to prove, for uniform constants
+`0<A<Lambda` and every relevant exact-minimizer target pair, the
+existence of one common weight `h` (independent of `S` and `w`) such that
 
-The exact geometric alternative is to partition the batch into `T<=n^eta` groups and, in every group, choose favorable partial labels, a low-row root, a tree, and shared node orientations such that the total coordinate terminal min-cut is `O(k_0)`. Proving this event with probability `e^{-O(rL_0)}` is also sufficient.
+```math
+\|h\|_{L^q(\nu_2)}\le1,\qquad
+\min_S\mathbb E_{\nu_2}[h(z)e^{-\lambda a_z(S)}]\ge e^{-ATL_0}.
+```
 
-## Obstructions and falsification
+Then $`V_{s,\lambda}^s\ge e^{-AsTL_0}`$; the exact margin
+`Lambda r>A sT` makes it beat $`e^{-\Lambda rL_0}`$ and proves (10.926), the
+bare power sum, and convergence. A common hard core shows this certificate is
+weaker than a uniform normalized-degree theorem.
 
-- A normalized-degree/Jensen proof of the center-star moment would require essentially `2^{m-o(n)}` favorable labels per selector. Low-row centers occupying half the cube does not help a fixed conditional fiber.
-- Independent random selector labels give an abstract system with every center degree `e^{-Omega(n)}` and center moment `e^{-omega(rL_0)}`. Cross-selector correlation is indispensable.
-- A planted clique of size `Kn^(3/4)` plus a low-norm random signing remainder is a complete signing with `Q=O(n^(3/2))` and `||A||op=O(n^(3/4))`; for every fixed-density child `S` containing the planted block, its full project-favorable fiber remains `Omega(n^(3/4))` from every `O(n^2)`-row center. It is not a global minimizer, so it isolates—rather than falsifies—the missing use of exact global minimality.
-- Completion forests are exactly coordinate terminal separators after one shared orientation per node. Pairwise overlap consistency and signed exchange cycles do not bound the resulting conflict-path packing.
-- Degree-two Hamming noise contracts row-square excess only by the two-coordinate correlation. At every relevant sublinear radius the multiplier is `1-o(1)`; a conference-block signing has a whole high-row basin.
-- Uniform-selector averages, fixed-order agreement, KKT incidence, pointwise planting, and generic codebook entropy remain blocked by the recorded walls.
+## Known obstructions and falsification criteria
 
-For any fixed sufficient choice `(c_0,eta,T(n))`, failure is witnessed along infinitely many target pairs by laws `w_n` with `sum_a w_n(H_a)^s=e^{-omega(rL_0)}`. Falsifying the entire fractional implementation requires such a sequence for every fixed sufficient parameter choice; the witnessing laws and subsequences may depend on that choice. Failure of the center-star or forest event alone does not falsify the bare coset power sum or arbitrary-cut coverage. A direct restriction falsifier still needs minimum excess `Omega(n^(3/2))` along infinitely many orders at one fixed ratio.
+- The common parent law (10.945) admits a negative-orientation shield, and its
+  witnesses need not lie in prescribed child fibers; exact `A_9` exhibits
+  witness migration.
+- Soft capacity is nearly hard: $`\lambda(D+1)=\Omega(rL_0)`$. One abstract
+  assignment makes it $`e^{-\Omega(n)}`$ simultaneously for every
+  `lambda>=lambda_min`; any proof must use signing-minimizer structure.
+- Uniform degrees, first moments, fixed-order agreement, generic KKT incidence,
+  and pointwise planting do not supply shared overlap.
+- A tree certificate that pays Johnson coordinate entry is exponentially too
+  rare under the uniform selector law by (10.954)--(10.955). Only exact
+  terminal-min-cut screening, which may exploit free coordinates, survives.
+- Generic harmonic likelihood algebra does not bound screened response. The
+  abstract square in (10.962) makes it unbounded; finite exact examples defeat
+  `C_scr<=1`, pointwise restoring drift, and omission of the orientation edge.
+- Degree-two Hamming noise contracts row-square excess only by `1-o(1)` at
+  relevant radii, and conference blocks contain a high-row basin.
 
-## Harmonic route
+For fixed sufficient parameters, fractional coverage is falsified by laws with
+$`\sum_a w(H_a)^s=e^{-\omega(rL_0)}`$. Falsifying the whole implementation
+requires witnesses for every fixed choice. Failure of the center or forest
+event does not falsify the bare power sum. Direct falsification still requires
+$`\Omega(n^{3/2})`$ along infinitely many orders at one fixed ratio.
 
-Matched parent-Gibbs interpolation remains the strongest independent route. Selector constants are pure gauge. The exact parent target is the centered Doob energy (10.920); the heat-bath screened-response bound (10.940) is an exact sufficient local criterion which retains the combined selector-common drift and posterior-KL cancellation. Posterior variance alone misses common response. The adjacent-selector Johnson-Hellinger estimate is a separate required input.
+The adaptive soft-kernel certificate is falsified if, along actual-minimizer
+targets, $`\sup_{\lambda\in\mathcal A_n}V_{s,\lambda}^s
+\le e^{-\omega(rL_0)}`$ for each fixed sufficient parameter choice. This does
+not falsify (10.926) or the bare power sum; abstract labels are insufficient.
 
-Centered flatness (10.921) is demoted as a general proxy: on the exact minimizer `A_6,m=3`, its oscillation grows like `4 beta` while the actual endpoint entropy decays like `e^(-4 beta)`. This is a finite-parameter mechanism wall, not a project-scale asymptotic falsifier.
+## Harmonic alternative
+
+Matched parent-Gibbs interpolation is the strongest independent route. Its
+centered Doob target (10.920) is implied by a uniform restoring-defect estimate
+(10.961), `kappa_t>=kappa_0>0`, plus
+$`\int_0^1t\mathcal E_t(g)\,dt=O(n^{1/2-2c})`$. Then (10.900) gives the parent
+entropy target. Selector Johnson-Hellinger control remains separate.
 
 ## Constant-shortfall audit
 
-The exact sufficient result remains fixed `rho,beta>0` and `K<infinity` such that every target pair has an exact root and deletion path landing at `m`, with
+It suffices to find fixed `rho,beta>0`, `K<infinity`, and for every target pair
+an exact root and deletion path landing at `m`, with at every step
 
 ```math
 \kappa_{\beta,i}(B_r)\ge
 \frac{q_n}{n^{3/2}}[r^{3/2}-(r-1)^{3/2}]-K
 ```
 
-at every step. Pressure telescoping would prove convergence. A literal fixed-temperature falsifier is an unbounded exact-minimizer family with `max_i kappa_(beta,i)=o(sqrt r)`; falsifying the path version requires this at every eligible root or an unavoidable deletion cutset. None is known.
+Pressure telescoping then proves convergence. A falsifier needs
+$`\max_i\kappa_{\beta,i}=o(\sqrt r)`$ on an unbounded exact-minimizer family;
+the path version requires this at every root or an unavoidable deletion
+cutset. Neither is known.
 
 ## Ranked alternatives
 
-1. **Global-minimality cut compression / conditional fibers.** Derive an edge-replacement or signing-variation inequality that rules out the planted localized quadratic mode in exact minimizers and forces (10.926) or the terminal-min-cut event.
-2. **Bare minimizer-specific power sum.** Prove (10.907) directly, without coherent completions or low-row centers, by excluding the symmetric and independent-label incidence walls.
-3. **Matched parent screened response.** Bound (10.940) for the endpoint likelihood, retain drift--KL cancellation, and separately prove selector Hellinger.
-4. **Quadratic boundary susceptibility.** Use discrete global minimality to control (10.914); ordinary exchange-cycle signs are insufficient.
-5. **Conditional row-Laplace alignment.** Combine a boundary scalar reverse tail with (10.878)--(10.880); both minimizer-specific inputs remain open.
-6. **Constant shortfall or global replacement/compactness.** Exact formulations remain falsifiable, but their missing inputs are less local and testable.
+1. **Conditional replacement/common weighted centers.** Transfer (10.945) to
+   prescribed favorable fibers and prove (10.950).
+2. **Bare minimizer-specific power sum.** Prove (10.907) directly without
+   committing to centers or coherent completions.
+3. **Matched parent resonant response.** Prove (10.961), resonant control, and
+   the separate selector-Hellinger bound.
+4. **Exact terminal-min-cut screening.** Compress coordinate conflict paths
+   without paying Johnson entry for every selector move.
+5. **Quadratic boundary susceptibility / conditional row-Laplace.** Extract a
+   usable child-fiber inequality from discrete global minimality.
+6. **Constant shortfall or global replacement/compactness.** Keep as exact
+   fallbacks, but current missing inputs are less local and less testable.
 
-## Decision rule
+## Next-wave decision
 
-Wave 33 should test a global-minimality variation against localized quadratic modes, independently attack cross-selector correlation in the center-star moment, and retain one combined screened-response route. Do not restart normalized-degree counting, small-radius noise smoothing, coordinatewise projective orientations, posterior-variance-only screening, uncentered reverse-KL accumulation, pointwise planting, or generic incidence arguments as if their recorded walls were absent. Do not infer flatness from selector centering or use it as an entropy proxy without a new project-scale minimizer mechanism.
+Wave 34 should independently test conditional witness transfer, a direct
+common-weight capacity theorem, and minimizer-specific resonant/restoring
+control. Do not restart normalized-degree counting, Johnson-entry trees,
+small-radius noise smoothing, posterior-variance-only screening, uncentered
+reverse-KL accumulation, or generic incidence arguments without a mechanism
+that explicitly escapes their recorded obstruction.
