@@ -32946,3 +32946,389 @@ restriction estimate. It decisively changes the implementation ranking:
   should compare project-row mass plus non-strict coarea, a genuinely direct
   profile-conditioned attack on (10.795), and full-slack cross-block
   consistency rather than restarting complement incidence.
+
+### 10.102 Wave 49: annealed bare incidence, cubic retention, and a full-slack integrality wall
+
+Wave 49 attacked the three implementations selected at the Wave 48 boundary.
+The direct attack shows that a lower bound on the total arbitrary-cut
+incidence automatically supplies the project-row condition; its missing
+statement is now one scalar annealed tail.  The coarea attack gives exact
+cubic and triple-retention formulations, replaces the rigid shortfall mass
+bridge by a partial-completion discrepancy, and finds exact failures of
+nearest-core and monotone-truncation strengthenings.  The block attack gives
+an all-state Bellman identity but also an exact positive
+fractional-versus-Boolean gap, even after every slack layer is retained.  The
+three checkers were rerun independently; the direct reduction also received a
+separate algebraic cross-audit.
+
+#### 10.102.1 Total bare incidence makes the row constraint automatic
+
+Let $\Pi_n$ be uniform on the $2^n$ oriented projective cuts.  For a fixed
+exact minimizer $A$, define the actual arbitrary-cut event
+
+~~~math
+F_t=\{(S,d):\widehat\ell(S,d)\le t\},\qquad
+Z_t=(U_m\otimes\Pi_n)(F_t),\qquad L_t=-\log Z_t.
+~~~
+
+Condition the product law on $F_t$ and call the resulting law $P$.  Its
+density is exactly $Z_t^{-1}\mathbf1_{F_t}$, so the chain rule gives the
+**Verified identity**
+
+~~~math
+\boxed{
+L_t=D(P_D\Vert\Pi_n)+D(P_S\Vert U_m)+I_P(S;D).}
+\tag{10.1228}
+~~~
+
+The row statistic is independent of orientation.  With
+$C=A^2-(n-1)I$,
+
+~~~math
+R_2(d)=n(n-1)+x^{\mathsf T}Cx.
+~~~
+
+Hanson--Wright and entropy duality imply, for every cut law $\mu$ with
+$D(\mu\Vert\Pi_n)\le L$,
+
+~~~math
+\mathbb E_\mu R_2
+\le n(n-1)+C_0\{\lVert C\rVert_F\sqrt L+
+\lVert C\rVert_{\rm op}L\}.
+~~~
+
+The exact-minimizer estimates
+
+~~~math
+\lVert C\rVert_F^2
+=\operatorname{tr}A^4-n(n-1)^2=O(n^{7/2}),
+\qquad
+\lVert C\rVert_{\rm op}=O(n^{3/2})
+~~~
+
+therefore give the **Verified annealed row bound**
+
+~~~math
+\boxed{
+\overline R:=\mathbb E_PR_2(D)
+\le n(n-1)+O\{n^{7/4}\sqrt{L_t}+n^{3/2}L_t\}.}
+\tag{10.1229}
+~~~
+
+Put $u_t(d)=U_m\{S:\widehat\ell(S,d)\le t\}$.  The conditioned output law
+is
+
+~~~math
+P_D(d)=\frac{\Pi_n(d)u_t(d)}{Z_t}.
+~~~
+
+Markov gives $P_D\{R_2\le2\overline R\}\ge1/2$.  Averaging $u_t$ over this
+same set, rather than separately averaging row and entropy costs, proves the
+sharper **Verified extraction**
+
+~~~math
+\boxed{
+\text{some }d\text{ satisfies }
+R_2(d)\le2\overline R,\qquad u_t(d)\ge Z_t/2.}
+\tag{10.1230}
+~~~
+
+Consequently, uniformly on a compact fixed-density window and for every
+$0<c<1/4$,
+
+~~~math
+t=O(n^{3/2-c}),\qquad
+-\log Z_t=O(n^{3/4-c})
+\quad\Longrightarrow\quad (10.795).
+~~~
+
+Indeed the two errors in (10.1229) have exponents
+$17/8-c/2$ and $9/4-c$, and the first is no larger than the second precisely
+when $c\le1/4$.  The lower bound on $Z_t$ is **Open**; the theorem removes the
+row constraint from the construction but does not prove the remaining
+annealed tail.
+
+There are two exact scalar forms of that tail.  Put
+
+~~~math
+W_S=P_SAP_S-p_2A,\qquad
+X_S(x)=x^{\mathsf T}W_Sx,\qquad
+Y_S=Q(A[S])-p^{3/2}q_n.
+~~~
+
+Then
+
+~~~math
+\widehat\ell(S,(\sigma,x))=Y_S-\sigma X_S(x).
+~~~
+
+Writing $a_S=Y_S-t$, orientation averaging gives
+
+~~~math
+\boxed{
+\Pi_n\{d:\widehat\ell(S,d)\le t\}
+=\begin{cases}
+\frac12\Pr_x\{|X_S(x)|\ge a_S\},&a_S>0,\\[1mm]
+\frac12\{1+\Pr_x(|X_S(x)|\le-a_S)\},&a_S\le0.
+\end{cases}}
+\tag{10.1231}
+~~~
+
+Alternatively, let $a=(\sigma,y)$ be uniform on the oriented local states,
+$\delta_S(a)=Q(A[S])-\sigma y^{\mathsf T}A[S]y$, and
+$B=(p^{3/2}-p_2)q_n$.  If $F_{S,a}$ is the CDF of the full oriented energy
+under uniform outside completion, then direct rearrangement gives
+
+~~~math
+\boxed{
+\Pi_n\{d:\widehat\ell(S,d)\le t\}
+=\mathbb E_aF_{S,a}\left(q_n+\frac{B+t-\delta_S(a)}{p_2}\right).}
+\tag{10.1232}
+~~~
+
+Unlike complement incidence, (10.1232) retains local states with
+$\delta_S>B+t$ whenever the full completion has enough deficit.
+
+A robust coordinate-subcube proof is circular at the target scale.  If a
+favorable cylinder has total chart codimension $K$--the orientation bit and
+$K-1$ independent tail bits, equivalently $K$ fixed physical vertices after
+including the gauge anchor--then averaging its free bits gives the
+**Verified wall**
+
+~~~math
+\boxed{Y_S\le t+K(K-1).}
+\tag{10.1233}
+~~~
+
+Such a cylinder has mass $2^{-K}$.  At
+$K=O(n^{3/4-c})$ the right side of (10.1233) already yields the desired
+restriction recurrence, so coordinate cylinders cannot independently
+explain a saved rare tail across a genuine normalized gap.
+
+Exact zero-tolerance enumeration over all stored $A_6,A_8,A_9$ cases gives
+$Z_0\in[0.2367079,0.5]$.  At $A_8,m=7$ and $A_9,m=8$, respectively $94\%$
+and $95.19\%$ of favorable incidences lie outside the older local-deficit
+incidence.  These are exact finite mechanism checks, not asymptotic evidence.
+
+#### 10.102.2 Coarea is a triple-retention theorem, and mass is a box discrepancy
+
+Retain the project-row class $C$, a Boolean selector family $f_z$, its degree
+$a_z$, the common-core kernel $K_\ell$, and
+$B_z=\langle f_z,(I-K_\ell)f_z\rangle$.  Put
+
+~~~math
+\delta=1-\lambda_1,\qquad
+\Xi_z=\sum_{j\ge2}(\lambda_1-\lambda_j)
+\lVert P_jf_z\rVert_2^2.
+~~~
+
+Since $B_z=\delta(a_z-a_z^2)+\Xi_z$, the non-strict hard-coarea target is
+**exactly equivalent** to
+
+~~~math
+\boxed{
+\mathbb E[\mathbf1_Ca_zB_z]\le
+\delta\mathbb E[\mathbf1_Ca_z^2]
+\iff
+\mathbb E[\mathbf1_Ca_z\Xi_z]\le
+\delta\mathbb E[\mathbf1_Ca_z^3].}
+\tag{10.1234}
+~~~
+
+There is a concrete probability formulation.  Suppose
+$D_C:=\mathbb E[\mathbf1_Ca_z^2]>0$.  Conditional on $z$, sample $S_0$
+uniformly and independently sample a stationary Johnson pair $(S_1,T)$ with
+$T\sim K_\ell(S_1)$.  Then (10.1234) is equivalent to the
+**Verified triple-retention criterion**
+
+~~~math
+\boxed{
+\Pr\{f_z(T)=1\mid C, f_z(S_0)=f_z(S_1)=1\}\ge\lambda_1.}
+\tag{10.1235}
+~~~
+
+For $\ell=m-s$, the kernel stays at $T=S_1$ with probability
+$h_s=\binom{n-m+s}{s}^{-1}$.  If $r_s$ is retention conditional on a genuine
+move, (10.1235) becomes
+
+~~~math
+\boxed{
+r_s\ge\frac{\lambda_1-h_s}{1-h_s},\qquad
+r_1\ge1-\frac1m-\frac1{n-m}.}
+\tag{10.1236}
+~~~
+
+Thus nearest-core coarea asks for almost deterministic exchange stability;
+the port-regret identity alone does not supply it.
+
+The mass clause has a sharper formulation than principal shortfall.  For a
+child ground $y$ on $S$, $T=S^c$, define
+
+~~~math
+\boxed{
+\mathcal V(S,y)=\min_{w\in\{\pm1\}^T}
+\lVert A[:,S]y+A[:,T]w\rVert_2^2.}
+\tag{10.1237}
+~~~
+
+For the zero-deficit family, nonzero project-row mass is exactly
+$\min_{S,\ y\text{ child ground}}\mathcal V(S,y)\le R_*$.  For every positive hard
+threshold it remains a sufficient condition.  It permits cancellation
+between selected and outside columns and is strictly weaker than controlling
+the uniform completion mean.
+
+For comparison, let $Q_S=Q(A[S])$, $\Delta=q_n-Q_S$,
+$G_{\rm int}=\lVert A[S]y\rVert_2^2$, and
+$G_{\rm ext}=\lVert A[T,S]y\rVert_2^2$.  Uniform outside completion gives
+
+~~~math
+\boxed{
+\mathbb E_wR_2(y,w)
+\le G_{\rm int}+\frac{\Delta(2q_n-\Delta)}4
++k(n-1)-\frac{k(k-1)}2,\qquad k=|T|.}
+\tag{10.1238}
+~~~
+
+This follows from
+$Q_S^2+4G_{\rm ext}+2k(k-1)\le q_n^2$.  The same identity forces
+
+~~~math
+\boxed{
+\Delta(2q_n-\Delta)\ge2k(k-1),qquad
+\Delta\ge\frac{k(k-1)}{q_n}.}
+\tag{10.1239}
+~~~
+
+At fixed density the former near-full-principal bridge is nonvacuous for
+$c<1/4$ but exceptionally rigid: it asks for $Q_S=q_n-o(q_n)$.  Exact
+lower-ratio examples show why (10.1237) is the right target.  At
+$A_9,m=5$ a child ground has a completion with row $16$ despite
+$\Delta/q_n=2/3$; at a sampled exact $A_{10},m=6$ the corresponding values
+are row $10$ and $\Delta/q_n=8/13$.
+
+The exact coarea phase diagram also rules out fixed nearest-core and
+monotone-truncation strengthenings.  The stored $A_9,m=7$ fails at
+$\ell=6$ with
+
+~~~math
+(\mathcal R,\ \text{cubic ratio},\ \text{triple ratio})
+=\left(\frac{10154}{9891},\frac{10541}{9489},
+\frac{12925}{13188}\right),
+~~~
+
+while, at the old diagnostic cap $R_*=2n(n-1)$ (which contains every
+positive-degree center in these samples), every one of twelve nonexhaustive
+exact order-ten samples at $m=8$ passes $\ell=1,\ldots,4$ and fails
+$\ell=5,6,7$.  At the minimum cap $74$, however, $\ell=2,3,4$ fail until
+cap $106$.  On $A_8,\ell=3$, row
+caps $40,56,64$ give pass, fail, pass; $A_9,\ell=3$ alternates again at caps
+$56,72,80,88$.  The adaptive nonlocal-scale version remains open.
+
+#### 10.102.3 Bellman slack produces fractional pressure but cannot round generically
+
+Fix a maximal selector $S$, let $q_*=\max_{|S|=m}Q(A[S])$, and use the
+Bellman completion slack, child deficit, and joint gap
+
+~~~math
+s_S(y)=q_n-\max_{d:d[S]=y}E_d,\qquad
+g_S(y)=q_*-c_S(y),\qquad j_S(y)=s_S(y)+g_S(y).
+~~~
+
+For a law $\lambda$ on maximal selectors, let
+$w_e=\Pr_\lambda(e\subset S)$ and $p_e=(1-w_e)/4$.  Direct double counting
+and Bellman composition give the **Verified all-state identity**
+
+~~~math
+\boxed{
+s(d)+4\sum_ep_eM_{d,e}
+=\frac12\left\{q_n-q_*+s(d)-\mathbb E_\lambda s_S(d[S])
++\mathbb E_\lambda j_S(d[S])\right\}.}
+\tag{10.1240}
+~~~
+
+Since $s_S(d[S])\le s(d)$, if $\lambda$ is supported on bad maximal blocks,
+whose lattice gap $\delta_S=\min_yj_S(y)$ is at least four, then
+
+~~~math
+\boxed{
+\min_d\left\{s(d)+4\sum_ep_eM_{d,e}\right\}
+\ge\frac12\{q_n-q_*+\mathbb E_\lambda\delta_S\}>0.}
+\tag{10.1241}
+~~~
+
+Thus a failure of tight decomposition really does create simultaneous
+positive pressure against every slack layer--but only at a fractional edge
+point.
+
+The exact minimizer $A_8$ gives a decisive scoped rounding wall.  Its two bad
+maximal four-blocks, weighted equally, produce the canonical values
+$p_e\in\{1/8,1/4\}$ and exact fractional margin eight.  The three integral
+threshold realizations--no edges, the sixteen cross edges, and all edges--all
+have margin zero, with adaptive witnesses at slacks $0,32,40$.
+
+More sharply, on the four pressure edges
+$H=\{05,34,16,27\}$, put
+
+~~~math
+\Gamma_{\rm frac}(H)=\max_{p\in[0,1]^H}\min_d
+\left\{s(d)+4\sum_{e\in H}p_eM_{d,e}\right\},
+\quad
+\Gamma_{\rm bool}(H)=\max_{F\subset H}\min_d
+\left\{s(d)+4\sum_{e\in F}M_{d,e}\right\}.
+~~~
+
+Exhaustive exact evaluation and matching primal--dual certificates prove
+
+~~~math
+\boxed{
+\Gamma_{\rm frac}(H)=4,\qquad\Gamma_{\rm bool}(H)=0.}
+\tag{10.1242}
+~~~
+
+The fractional witness is $p_e=1/2$.  The dual is a half--half law on an
+actual ground with $H$-features $(-1,1,1,1)$ and a slack-eight state with the
+opposite features.  Hence generic full-slack fractional-to-Boolean rounding,
+selector-load threshold rounding, and every universal additive integrality
+gap below four are **Falsified**.  A surviving tight-decomposition proof must
+use the global premise that every maximal selector is bad and the
+state-dependent budgets in (10.1240); full slack by itself is not enough.
+
+#### 10.102.4 Updated frontier
+
+Wave 49 leaves the rigorous convergence interval unchanged and proves no
+asymptotic restriction estimate.  It sharpens all three live interfaces:
+
+- the bare arbitrary-cut tail (10.795) remains the leading exact sufficient
+  lemma.  Its cleanest direct implementation is now the annealed mass bound
+  $-\log Z_t=O(n^{3/4-c})$: (10.1228)--(10.1230) then make the project row
+  automatic and even preserve coverage $Z_t/2$.  Equations
+  (10.1231)--(10.1232) retain the deficit/tolerance which complement incidence
+  discarded.  No minimizer-specific lower bound on this scalar tail is known;
+  robust coordinate cylinders are circular by (10.1233);
+
+- project-row non-strict coarea remains the strongest structured route, now
+  as the exact pair consisting of partial-completion box mass (10.1237) and
+  triple retention (10.1235) at some adaptive nonlocal scale.  Principal
+  shortfall is only a rigid sufficient certificate, nearest-core retention
+  can fail on exact minimizers, and row truncation is nonmonotone.  Finite
+  lower-ratio cancellation supports the box target but proves no asymptotic
+  bound;
+
+- tight decomposition gains the exact all-state pressure identity (10.1240),
+  but generic fractional-to-integral conversion is now retired even with full
+  slack.  The only surviving version is a global all-maximal-selector
+  anti-migration theorem using state-dependent margins; tight decomposition
+  itself remains unfalsified;
+
+- direct annealed incidence and structured coarea are genuinely distinct.
+  The former needs one total quadratic/completion tail and obtains row by
+  entropy; the latter needs one low-row ground completion and a double-
+  incidence exchange inequality.  Neither should be replaced by complement
+  thresholds, local-deficit-only mass, fixed nearest cores, or robust
+  cylinders;
+
+- the full-slack integrality gap is a decisive counterexample to the third
+  route's generic rounding implementation.  Refresh `STEERING.md` at this
+  boundary.  Wave 50 should compare a minimizer-specific lower bound for
+  (10.1232), the box-mass plus adaptive triple-retention pair, and a global
+  all-bad anti-migration theorem or exact falsifier.

@@ -1,9 +1,8 @@
 # Strategic steering
 
-Evidence cutoff: Wave 48, ledger §10.101 (2026-07-30). This early refresh
-follows the decisive fixed-density complement row--mass obstruction
-(10.1216). The next mandatory refresh is Wave 53, or earlier after another
-decisive result, and must include a fresh blank-slate abstraction audit.
+Evidence cutoff: Wave 49, ledger §10.102 (2026-07-30). This early refresh follows the
+decisive full-slack integrality obstruction (10.1242). The next mandatory refresh is
+Wave 54, or earlier after another decisive result, with a fresh blank-slate audit.
 
 ## User-stated research objective
 
@@ -15,107 +14,108 @@ value $1/2$ is not an additional user objective.
 No route proves convergence; the rigorous interval remains
 $0.336493364431\ldots\le\liminf\le\limsup\le1/2$.
 
-Adaptive optimized principal restriction remains the leading framework; the
-bare arbitrary-cut tail (10.795) is its sharp sufficient lemma. Its complement
-implementation is now falsified. Hard project-row coarea is the strongest
-structured mechanism, direct bare-tail counting the leading fallback, and
-tight decomposition third with full-slack control required.
+Adaptive optimized principal restriction remains the leading framework, and
+the bare arbitrary-cut tail (10.795) remains its sharp sufficient lemma. The
+annealed incidence bound is now its cleanest direct scalar implementation;
+project-row non-strict coarea is the strongest structured implementation.
+Tight decomposition remains third, but generic fractional rounding is retired.
 
 ## Leading sufficient lemma and convergence chain
 
 Fix a compact window $[p_0,p_1]\subset(1/2,1)$, $m/n$ in that window, and
-$c\in(0,1/4)$. The bare target is an oriented cut $d$ with
+$c\in(0,1/4)$. For an exact minimizer $A$, let $\Pi_n$ be uniform on oriented
+projective cuts and define
+
+~~~math
+Z_t=(U_m\otimes\Pi_n)
+\{(S,d):\widehat\ell(S,d)\le t\}.
+~~~
+
+The leading direct sufficient lemma is
+
+~~~math
+t=O(n^{3/2-c}),\qquad -\log Z_t=O(n^{3/4-c}).
+~~~
+
+Conditioning the product law on this event costs $-\log Z_t$ in relative
+entropy. Equations (10.1229)--(10.1230) then give one cut with
 
 ~~~math
 R_2(d)=O(n^{9/4-c}),\qquad
-U_m\{S:\widehat\ell(S,d)\le O(n^{3/2-c})\}
-\ge\exp\{-O(n^{3/4-c})\}.
+U_m\{S:\widehat\ell(S,d)\le t\}\ge Z_t/2.
 ~~~
 
-The inverse tail (10.1023) then gives
+This is (10.795). The inverse tail gives
 
 ~~~math
-q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c}).
+q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c}),
 ~~~
 
-Geometric-window summability and exact landing force
+and geometric-window summability plus exact landing forces
 $q_n/n^{3/2}$, hence $M_n/n^{3/2}$, to converge.
 
-The leading structured sufficient lemma is now non-strict hard coarea. Let
-$C=\{z:R_2(z)\le R_*\}$ with $R_*=O(n^{9/4-c})$, and put
+The leading structured sufficient pair is project-row coarea. At some
+balanced nonlocal common-core scale with
+$\kappa=(\lambda_1-\lambda_2)/(1-\lambda_1)\ge\kappa_0>0$, prove:
 
 ~~~math
-f_z(S)=\mathbf1\{Q(A[S])-|z_S^{\mathsf T}A[S]z_S|\le H\},
-\quad a_z=\mathbb E f_z,
-\quad B_z=\langle f_z,(I-K_\ell)f_z\rangle.
+\min_{S,\ y\text{ child ground}}
+\min_{w\in\{\pm1\}^{S^c}}
+\lVert A[:,S]y+A[:,S^c]w\rVert_2^2
+\le O(n^{9/4-c}),
 ~~~
 
-Choose a balanced nonlocal scale with
-$\delta=1-\lambda_1(K_\ell)$ and
-$\kappa=(\lambda_1-\lambda_2)/\delta\ge\kappa_0>0$. Prove
+and, under the resulting project-row-truncated triple experiment,
 
 ~~~math
-D_C:=\mathbb E[\mathbf1_Ca_z^2]>0,\qquad
-\mathbb E[\mathbf1_Ca_zB_z]\le\delta\mathbb E[\mathbf1_Ca_z^2].
+\Pr\{f_z(T)=1\mid C,f_z(S_0)=f_z(S_1)=1\}\ge\lambda_1.
 ~~~
 
-Then (10.1222), via balanced-slice FKN, gives a project-row center with
-$a_z\ge c_0>0$. Orientation splitting and the established deficit conversion
-supply (10.795), so convergence follows. No strict margin is required.
-
-A concrete sufficient input for the mass clause is one child ground $y$ on
-$S$ satisfying
-
-~~~math
-\lVert A[S]y\rVert_2^2=O(R_*),\qquad
-q_n-Q(A[S])=O(R_*/q_n).
-~~~
-
-Equations (10.1223)--(10.1224) then produce a project-row completion.
+The first clause gives nonzero incidence mass. The second is exactly the
+non-strict coarea inequality by (10.1235); slice FKN then gives a
+constant-degree project-row center and hence (10.795).
 
 ## Evidence, obstructions, and falsification criteria
 
-- For every fixed-density complement column,
-  $\alpha_d\le3(n+1)e^{-c\min(q_n^2/R_2(d),n,n^{3/4})}$.
-  Thus project row forces $-\log\alpha_d=\Omega(n^{3/4})$. Complement
-  mass, scalar optimization, arithmetic retention, high slack, and omitted
-  principal excess cannot supply a power saving and are retired.
-- The bare arbitrary-cut route is not affected: its event retains the
-  restriction deficit and tolerance instead of imposing $L_S(d)\ge q_n$.
-  It is falsified at fixed proposed constants by an unbounded exact-minimizer
-  family where every project-row cut has
-  $U_m\{\widehat\ell\le t\}=e^{-\omega(n^{3/4-c})}$.
-- Non-strict coarea has exact force. If its denominator is nonzero, it first
-  selects a family with high harmonics $O(a^2)$; slice FKN then gives
-  constant degree. A successful proof must therefore create genuine
-  dictator-scale selector structure, not merely an exponentially small
-  smooth family.
-- Project-row mass is independent. The all-positive nonminimizer has ground
-  lifts only at row $\Omega(n^3)$. For minimizers, completion Parseval and
-  one-spin stability give only $O(n^{5/2})$, missing the project cap by
-  $n^{1/4+c}$. The mass implementation is falsified by an unbounded exact-
-  minimizer family with $D_C=0$ throughout every admissible scale.
-- Uniform and nearest-core center laws fail on exact $A_8,A_9$. The surviving
-  coarea implementation is falsified if every admissible project-row class
-  with $D_C>0$ has normalized boundary strictly above one at all balanced
-  scales.
-- Tight decomposition has exact Bellman composition, an overlap-cover
-  theorem, universal validity at $m=2,3$, exhaustive support through order
-  eight, and positive order-ten samples. Its exact falsifier remains a
-  minimizer with a positive gap in (10.1203).
-- One-block zero duals are impossible for $n-m=o(\sqrt n)$, but a positive
-  fractional/integral gap remains. Exact $A_8$ shows that cross-block
-  pressure on all old grounds can be neutralized by a slack-eight layer.
-  Ground-face pressure, nested chains, greedoids, and lexicographic
-  one-block replacement are retired; full-slack control is mandatory.
+- The annealed event has exact quadratic-chaos and completion-CDF forms
+  (10.1231)--(10.1232). It genuinely uses the retained full deficit: in the
+  high-ratio finite audits, $86\%$--$95\%$ of its mass lies outside the old
+  local-deficit incidence. It is not complement incidence under new notation.
+- The annealed implementation would be falsified at fixed constants by an unbounded
+  active exact-minimizer family with
+  $-\log Z_t=\omega(n^{3/4-c})$. Generic concentration supplies upper tails,
+  not the needed lower bound. A robust project-codimension cylinder already
+  implies the desired recurrence by (10.1233), so that shortcut is circular.
+- Every fixed-density complement column with project row pays
+  $e^{-\Omega(n^{3/4})}$ mass by (10.1216). Complement mass, high slack,
+  scalar optimization, arithmetic retention, and omitted-block excess remain
+  retired. The bare annealed event is unaffected.
+- Coarea mass is exactly a partial-completion box discrepancy for the
+  zero-deficit family. Principal shortfall is only a rigid sufficient
+  certificate and asks for an exceptional $Q(A[S])=q_n-o(q_n)$ at fixed
+  density. Finite lower-ratio examples instead show strong outside-column
+  cancellation despite shortfall exceeding $60\%$ of $q_n$.
+- Coarea itself is the cubic high-harmonic inequality (10.1234), equivalently
+  triple retention. One replacement demands retention
+  $1-1/m-1/(n-m)$. Exact $A_9$ and sampled exact order-ten minimizers fail
+  prescribed near-core scales, and row truncation is nonmonotone. The live
+  claim must choose an adaptive nonlocal scale. It would be falsified by an
+  unbounded exact-minimizer family failing box mass or every admissible scale.
+- Tight decomposition has Bellman composition and the all-state identity
+  (10.1240), but $A_8$ has $\Gamma_{\rm frac}=4$ and
+  $\Gamma_{\rm bool}=0$ on four edges. Full slack, threshold rounding, and a
+  universal additive integrality bound are retired. A survivor must use the
+  global premise that every maximal selector is bad and state-dependent
+  margins. Tight decomposition itself is still unfalsified.
 - Strict pressure, high replicas, local harmonic Poincaré, monotone deletion,
-  and constant shortfall without a square-root cavity reward remain retired.
+  nested chains, greedoids, ground-face-only pressure, and constant shortfall
+  without a square-root cavity reward remain retired.
 
 ## Most recent blank-slate abstraction audit
 
 The Wave 45 audit began from the original problem before route comparison.
 Its candidates and judgments are agent-authored hypotheses, not user
-directives. This early refresh does not regenerate it; Wave 53 will.
+directives. This early refresh does not regenerate it; Wave 54 will.
 
 1. **Finite-temperature zero-sum interpolation.** Balanced $o(n)$ additivity
    of soft minimax free energy would imply convergence. Temperature mismatch,
@@ -123,27 +123,27 @@ directives. This early refresh does not regenerate it; Wave 53 will.
    bridge theorem.
 2. **Summable cavity derivative.** Extension error
    $O(n^{1/2-\delta})$ would make normalized positive variation summable.
-   This is the retired cavity/constant-shortfall route until a square-root
-   reward is proved.
+   This remains dormant until a square-root deletion reward is proved.
 3. **Second-order signed-kernel compactness.** Continuity of the Boolean
    quadratic supremum plus all-order recovery would prove convergence.
    Existing graphon, traffic, purification, and action-profile attempts lack
    a recovery operation.
 
-## Ranked routes and Wave 49 direction
+## Ranked routes and Wave 50 direction
 
-1. **Project-row mass plus non-strict hard coarea.** Prove or falsify the two
-   displayed conditions using exact-minimizer completion geometry and a
-   nonlocal port/full-profile inequality.
-2. **Direct profile-conditioned bare-tail counting.** Construct a project-row
-   arbitrary cut using the retained deficit and tolerance; do not impose a
-   complement threshold in disguise.
-3. **Full-slack cross-block consistency.** Use Bellman composition and
-   weighted maximal-selector covers to control all positive slack layers, or
-   find a jointly realizable minimizer obstruction.
-4. **Tropical/harmonic continuation.** Advance only after a full-slack tight
-   mechanism; endpoint affineness alone is insufficient.
+1. **Annealed bare completion tail.** Prove or falsify the saved lower bound
+   in (10.1232) using exact-minimizer completion profiles; keep both deficit
+   allowances and do not replace the event by complement or robust cylinders.
+2. **Box mass plus adaptive triple retention.** Attack partial-completion
+   discrepancy and the nonlocal double-incidence exchange theorem separately,
+   then test whether one scale satisfies both.
+3. **Global all-bad anti-migration.** Use (10.1240) only with the full family
+   of maximal blocks and its state-dependent budgets, or find an exact
+   minimizer falsifying tight decomposition.
+4. **Tropical/harmonic continuation.** Advance only after a genuinely
+   integral global tight mechanism; affine endpoints alone are insufficient.
 5. **Dormant global routes.** Reopen only with a testable composition,
    recovery, or square-root cavity theorem at the required scale.
 
-Wave 49 must rank ten ideas and assign three falsifiable attacks.
+Wave 50 must independently rank ten ideas and assign three falsifiable
+attacks against this refreshed frontier.
