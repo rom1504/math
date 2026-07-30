@@ -34487,3 +34487,437 @@ asymptotic restriction estimate.  It sharpens the live boundary as follows:
   should compare large-core spectral excess, a high-cross K-profile versus
   low-cross box-discrepancy dichotomy, and a minimizer-specific abundance or
   failure theorem for (10.1277).
+
+### 10.106 Wave 53: exact K-profile duality, the box field-spike wall, and the linear-core cluster threshold
+
+Wave 53 attacked the three sharpened interfaces from Wave 52.  The direct
+completion attack closes the deterministic coefficient problem at constant
+one: the K-functional has an exact clipped dual formula, and cross energy
+together with its largest coordinate gives a sharp scalar certificate.
+Energy alone is pointwise insufficient even on a stored exact minimizer.
+The box attack reduces every low-cross failure to a large internal child
+field, while the exact completion polynomial shows why uniform rounding can
+miss decisive cancellation.  The large-core attack removes the diagonal
+exactly and proves that any linear-core spectral implementation must create
+exponentially many distinct, coherently overlapping favorable selectors.
+All three independent checkers reproduced their saved outputs.
+
+#### 10.106.1 The K-functional coefficient problem closes at constant one
+
+For a finite vector $x$ and integer $H\ge1$, write
+$K_H(x)=K_{1,2}(x,\sqrt H)$.  Infimal-convolution duality gives the
+**Verified exact dual formula**
+
+~~~math
+\boxed{
+K_H(x)=
+\max\{\langle x,z\rangle:
+\lVert z\rVert_\infty\le1,\ \lVert z\rVert_2\le\sqrt H\}.}
+\tag{10.1280}
+~~~
+
+Indeed every feasible $z$ is bounded by every decomposition
+$x=a+b$, while the conjugates of $\lVert\cdot\rVert_1$ and
+$\sqrt H\lVert\cdot\rVert_2$ are the indicators of the two displayed dual
+balls.  This also gives an exact clipped formula.  If the support of $x$ has
+more than $H$ coordinates, there is a unique $\lambda>0$ with
+
+~~~math
+\sum_i\min\{1,|x_i|^2/\lambda^2\}=H,
+~~~
+
+and the optimizer is
+$z_i=\operatorname{sgn}(x_i)\min\{1,|x_i|/\lambda\}$, so
+
+~~~math
+\boxed{
+K_H(x)=\sum_i\min\{|x_i|,|x_i|^2/\lambda\}.}
+\tag{10.1281}
+~~~
+
+When the support has at most $H$ coordinates, $K_H(x)=\lVert x\rVert_1$.
+For any coordinate set $I$ of size $s<H$, put
+$G_{I^c}=\sum_{i\notin I}x_i^2$ and
+$J_{I^c}=\max_{i\notin I}|x_i|$.  The same dual formula proves the
+**Verified truncated certificate**
+
+~~~math
+\boxed{
+J_{I^c}\sqrt{H-s}\le\sqrt{G_{I^c}}
+\quad\Longrightarrow\quad
+K_H(x)\ge
+\lVert x_I\rVert_1+\sqrt{(H-s)G_{I^c}}.}
+\tag{10.1282}
+~~~
+
+It is exact at the active clipped head and permits exceptional
+coordinates.
+
+There is a sharp reduction using only total energy and the largest
+coordinate.  For $x\ne0$, put $E=\lVert x\rVert_2^2$ and
+$M=\lVert x\rVert_\infty$.  Substituting
+$z=x/\max\{M,\sqrt{E/H}\}$ in (10.1280) proves
+
+~~~math
+\boxed{
+K_H(x)\ge
+\min\left\{\frac EM,\sqrt{HE}\right\}.}
+\tag{10.1283}
+~~~
+
+Flat vectors attain equality in both regimes, and the Euclidean branch is
+exact whenever $E\ge HM^2$.  Thus both branches and constant one are sharp
+on infinite families.  The case $x=0$ is immediate.
+
+In the completion notation put
+
+~~~math
+u=A[T,S]y,\qquad
+\beta=2\sigma u,\qquad
+G=\lVert u\rVert_2^2,\qquad
+J=\lVert u\rVert_\infty,\qquad
+R=r+b_H.
+~~~
+
+Homogeneity gives $\mathcal K_H(\beta)/2=K_H(u)$.  Therefore (10.1283)
+proves the **Verified constant-one scalar profile theorem**
+
+~~~math
+\boxed{
+G\ge\frac{R^2}{H},\qquad G\ge JR
+\quad\Longrightarrow\quad
+r+b_H\le\frac12\mathcal K_H(\beta).}
+\tag{10.1284}
+~~~
+
+The simpler $J\le R/H$ together with $G\ge R^2/H$ is sufficient but
+stronger than necessary; the exact allowed bound is $J\le G/R$.
+Combining (10.1282) with the same target $R$ gives a more flexible
+head/tail implementation.
+
+Fix $0<c<1/4$, let $H=\lceil n^{3/4-c}\rceil$,
+$T_n=n^{3/2-c}$, and fix $\omega_n\uparrow\infty$.  Define
+$\mathcal D_n(\omega)$ to be the local states satisfying
+
+~~~math
+g<0,\qquad r\ge\omega_nT_n,\qquad
+G\ge(r+b_H)^2/H,\qquad G\ge J(r+b_H).
+~~~
+
+The exact remaining scalar implementation is the **Open sufficient
+abundance lemma**
+
+~~~math
+\boxed{
+\text{For some }\omega_n\uparrow\infty\text{ and }C_0<\infty,\qquad
+\nu_m(\mathcal D_n(\omega))\ge e^{-C_0H}.}
+\tag{10.1285}
+~~~
+
+uniformly over the required exact minimizers, compact density window, and
+tolerances.  Equation (10.1284) puts $\mathcal D_n(\omega)$ inside the
+successful set from (10.1277), so (10.1285) proves convergence.  At the
+minimum-energy edge it asks for
+
+~~~math
+G\gtrsim\omega_n^2n^{9/4-c},\qquad
+J\lesssim\omega_nn^{3/4}.
+~~~
+
+Thus the missing structure is joint far-margin abundance, high cross
+energy, and delocalization.  The pointwise caps
+$J\le m$, $2\lVert u\rVert_1\le q$, and
+$e^2+4G+2k(k-1)\le q^2$ are all upper bounds and do not imply it.
+
+Energy alone is genuinely insufficient.  On the stored exact $A_8$
+minimizer, with
+
+~~~math
+n=8,\quad m=4,\quad H=3,\quad
+S=\{0,1,2,5\},\quad \sigma=-1,\quad
+y=(1,-1,-1,1),
+~~~
+
+one has $u=(0,0,4,4)$, $G=32$, $J=4$, and at $t=0$,
+
+~~~math
+\boxed{
+r=\frac{124-70\sqrt2}{3}=8.3350\ldots,\qquad
+\sqrt{HG}>r,\qquad K_H(u)=8<r.}
+\tag{10.1286}
+~~~
+
+The displayed state is a **Verified exact finite pointwise obstruction**, not
+an asymptotic population falsifier.  Exhaustive **Numerical** enumeration
+finds 750 negative-margin states in this instance; 252 pass the energy-only
+test and 12 of those fail the exact K-profile.
+
+There is also a scoped scalable abstract profile.  Fix
+$0<\eta<\min\{c,1/4\}$, let
+$d=\lfloor n^{1/2-c+\eta}\rfloor$, take $u$ to have $d$ coordinates equal
+to $m$ and the rest zero, and assign the formal margin
+$r=(1+\delta)dm$ for fixed $\delta>0$.  Then $d=o(H)$,
+$K_H(u)=dm<r$, while the energy scale and displayed scalar caps hold.  Only
+the rectangular cross profile is realizable by aligned and balanced sign
+rows; the margin assignment is formal and is not embedded in an exact
+minimizer.  Hence the full clipped profile or a minimizer-specific
+delocalization theorem is indispensable.
+
+#### 10.106.2 Low cross energy reduces the box witness to an internal-field spike
+
+Fix a selector $S$, child ground $y$, $T=S^c$, and $k=|T|$.  Put
+
+~~~math
+I=\lVert A[S]y\rVert_2^2,\qquad
+X=\lVert A[T,S]y\rVert_2^2,\qquad
+d=(A^2)[T,S]y,\qquad
+\mathsf H_T=(A^2-(n-1)I_n)[T].
+~~~
+
+Uniform outside completion and direct expansion give the **Verified exact
+mean and centered minimum**
+
+~~~math
+\boxed{
+\begin{aligned}
+\mathbb E_w\lVert A[:,S]y+A[:,T]w\rVert_2^2
+&=I+X+k(n-1),\\
+\mathcal V(S,y)
+&=I+X+k(n-1)\\
+&\quad+\min_{w\in\{\pm1\}^T}
+\{2d^{\mathsf T}w+w^{\mathsf T}\mathsf H_Tw\}.
+\end{aligned}}
+\tag{10.1287}
+~~~
+
+The quadratic term has zero cube mean.  Pairing $w$ with $-w$ and applying
+the sharp $p=1$ Khintchine inequality also proves
+
+~~~math
+\boxed{
+\mathcal V(S,y)\le
+I+X+k(n-1)-2\mathbb E|d^{\mathsf T}w|
+\le I+X+k(n-1)-\sqrt2\lVert d\rVert_2.}
+\tag{10.1288}
+~~~
+
+This improvement can be decisive finitely, but present operator bounds do
+not make it large enough uniformly.
+
+Orient the internal fields by
+$r_i=\sigma y_i(A[S]y)_i$.  One-spin child optimality gives
+$0\le r_i\le\min\{m-1,Q_S/2\}$ and
+$\sum_i r_i=Q_S=Q(A[S])$.  Hence
+
+~~~math
+\boxed{
+I=\sum_{i\in S}r_i^2
+\le Q_S\lVert r\rVert_\infty.}
+\tag{10.1289}
+~~~
+
+For $R_n=n^{9/4-c}$, $Q_S=O(n^{3/2})$, and fixed density,
+(10.1287)--(10.1289) prove the **Open sufficient box-field lemma**
+
+~~~math
+\boxed{
+\text{Some child ground has}\qquad
+X+Q_S\lVert r\rVert_\infty=O(R_n).}
+\tag{10.1290}
+~~~
+
+In particular, $X=O(R_n)$ and
+$\lVert r\rVert_\infty=O(n^{3/4-c})$ suffice for the box witness.
+Conversely, the verified mean upper bound gives, for
+$R>X+k(n-1)$,
+
+~~~math
+\boxed{
+\mathcal V(S,y)>R
+\quad\Longrightarrow\quad
+\lVert r\rVert_\infty>
+\frac{R-X-k(n-1)}{Q_S}.}
+\tag{10.1291}
+~~~
+
+Thus failure on a fixed low-cross branch forces an internal field of order
+$n^{3/4-c}$.  This is a reduction, not a box proof: it neither supplies a
+low-cross child ground nor excludes the spike.
+
+The known hypotheses stop at the wrong scale.  One-spin optimality and the
+operator estimate give only
+$I\le(m-1)Q_S$ and $I+X\le2q_nm=O(n^{5/2})$.
+The maximal-selector square budget has the opposite direction, and it does
+not apply to an arbitrary box selector.  Fixed-word selector averaging loses
+child optimality.
+
+This wall is real without exact discrete minimality.  A scalable abstract
+signing can be built from $\Theta(\sqrt n)$ positive hub vertices joined to
+an $O(n^{3/2})$-cap, $O(\sqrt n)$-operator-norm core, together with a
+balanced cross block.  Its all-one child ground has
+
+~~~math
+X=0,\qquad
+\lVert r\rVert_\infty=\Theta(n),\qquad
+I=\Theta(n^{5/2}),
+~~~
+
+while the full signing still has cut cap $O(n^{3/2})$ and operator norm
+$O(n^{3/4})$.  This is a **Verified scalable construction satisfying the
+generic bounds**; it is not known to be an exact minimizer and is therefore
+not an exact-minimizer counterexample.  It isolates discrete minimality as
+the only currently unused input for the mean/field-regularity route; direct
+$A^2$ cancellation remains separate.
+
+Finite exact data also warn that the mean route is not necessary.  At
+$A_9,m=6$ and $A_{10},m=6$, maximal child grounds have
+$X=0$, $I=86$, and $\lVert r\rVert_\infty=5$.  The best sampled $A_{10}$
+box instead has $Q_S=10$, $I=30$, $X=8$, uniform mean $74$, and true
+minimum row $10$.  The quadratic correction in (10.1287) supplies most of
+the gain.  The surviving alternatives are therefore either (10.1290) or a
+minimizer-specific theorem that a low-cross field spike forces cancellation
+in the exact $A^2$ completion polynomial.
+
+#### 10.106.3 A linear core is exactly a global exponential-cluster theorem
+
+For $2\le\ell<m$ and a nonempty favorable family $F_z$, let
+
+~~~math
+\Delta_{\ell,z}
+=\frac1{r_z}
+\sum_{\substack{S,T\in F_z\\S\ne T}}
+\binom{|S\cap T|}{\ell},\qquad
+h_\ell=\binom{n-\ell}{m-\ell}^{-1},
+~~~
+
+and let $\omega_C(z)=r_z^2/\sum_{x\in C}r_x^2$.  Removing the diagonal from
+the exact core histogram gives the **Verified weighted-partner identity**
+
+~~~math
+\boxed{
+p_\ell(z)=h_\ell+\frac{\Delta_{\ell,z}}{d_\ell},\qquad
+P_\ell-\lambda_2(\ell)
+=\frac{\mathbb E_{\omega_C}\Delta_{\ell,z}
+-\{b_\ell-\binom m\ell\}}{d_\ell}.}
+\tag{10.1292}
+~~~
+
+For $\epsilon>0$, saved excess is therefore equivalent to
+
+~~~math
+\mathbb E_{\omega_C}\Delta_{\ell,z}
+\ge b_\ell-\binom m\ell+d_\ell\epsilon.
+~~~
+
+Let $N_z(s)$ be the average number, per $S\in F_z$, of distinct
+$T\in F_z$ with $|S\cap T|\ge s$.  Since every contributing weight is at
+most $\binom m\ell$, (10.1292) proves the **Verified necessary
+multiplicity bound**
+
+~~~math
+\boxed{
+\mathbb E_{\omega_C}N_z(\ell)
+\ge
+\frac{\lambda_2(\ell)-h_\ell+\epsilon}{h_\ell}.}
+\tag{10.1293}
+~~~
+
+Conversely, every pair with overlap at least $s\ge\ell$ contributes at
+least $\binom s\ell$, giving the **Verified sufficient one-threshold
+cluster lemma**
+
+~~~math
+\boxed{
+\mathbb E_{\omega_C}N_z(s)
+\ge
+\frac{b_\ell-\binom m\ell+d_\ell\epsilon}
+{\binom s\ell}
+\quad\Longrightarrow\quad
+P_\ell-\lambda_2(\ell)\ge\epsilon.}
+\tag{10.1294}
+~~~
+
+Now take $m/n\to p\in(1/2,1)$ and $\ell/n\to\alpha\in(0,p)$.
+Exact factorial cancellation and Stirling asymptotics give
+
+~~~math
+\boxed{
+\lambda_2(\ell)\longrightarrow
+\left\{\frac{\alpha(1-p)}{p(1-\alpha)}\right\}^2,\qquad
+-\log\rho_\ell=n\{H(\alpha)-pH(\alpha/p)\}+o(n),
+}
+\tag{10.1295}
+~~~
+
+and
+
+~~~math
+-\log h_\ell
+=n(1-\alpha)
+H\!\left(\frac{p-\alpha}{1-\alpha}\right)+o(n).
+~~~
+
+Thus $\lambda_2$ stays at a positive constant while both direct core
+incidence and the diagonal are exponentially small.  With
+$\epsilon=e^{-O(n^{3/4-c})}$, (10.1293) necessarily demands
+$e^{\Theta(n)}$ distinct large-overlap partners on the $r_z^2$-biased
+average.  The port star and every one-seed $o(n)$-radius ball are
+exponentially too small.
+
+This demand is genuinely spectral rather than a saved-degree assumption.
+For $s/n\to\beta$ sufficiently close to $p$, the right side of (10.1294)
+can have an immediate direct degree consequence only $e^{-\Theta(n)}$,
+while (10.1261) amplifies its saved excess to $e^{-O(n^{3/4-c})}$.
+A forbidden-intersection or stability theorem that assumes the latter
+family density in advance would be circular here.
+
+The stored exact $A_{10},m=6$ row-ten family makes the same-cap scope
+concrete:
+
+| $\ell$ | $\Delta_{\ell}$ | $b_\ell-\binom m\ell$ | $p_\ell$ | $\lambda_2(\ell)$ |
+|---:|---:|---:|---:|---:|
+| $3$ | $8$ | $20$ | $1/25$ | $2/35$ |
+| $4$ | $2$ | $21$ | $17/225$ | $4/25$ |
+| $5$ | $0$ | $6$ | $1/5$ | $2/5$ |
+
+It has negative excess at every audited larger core.  This is a
+**Numerical exact finite same-cap obstruction**, not an asymptotic
+counterexample and not an obstruction to controlled cap enlargement.
+
+#### 10.106.4 Updated frontier
+
+Wave 53 leaves the rigorous convergence interval unchanged and proves no
+asymptotic restriction estimate.  It changes the exact research frontier as
+follows:
+
+- the deterministic K-functional profile is now closed at constant one.
+  Equations (10.1280)--(10.1284) turn the direct route into the explicit
+  joint abundance lemma (10.1285), or its sharper truncated-head version.
+  The necessary condition $G\ge r^2/H$ alone is pointwise insufficient,
+  even before paying $b_H$, including on a stored exact finite minimizer.
+  The missing theorem must correlate far local margins with both high cross
+  energy and delocalization on saved state mass;
+
+- the low-cross box route is exactly blocked by internal field spikes at the
+  mean-certificate level.  Generic cap, operator, one-spin, and trace bounds
+  stop at the full $n^{5/2}$ wall, while maximal-selector information gives
+  no upper estimate for the spike.  A box proof must use discrete
+  exact-minimizer structure to prove
+  (10.1290), or exploit cancellation in the exact $A^2$ completion
+  polynomial (10.1287); finite exact data show that this cancellation can be
+  decisive;
+
+- the genuinely large-core spectral route is now an exponential global
+  clustering problem.  Saved excess at a linear core necessarily requires
+  exponentially many distinct high-overlap partners on the biased center
+  average.  Local ports and sublinear one-seed balls cannot supply them, and
+  the row-optimal $A_{10}$ family fails at every larger same-cap core.
+  Controlled cap enlargement, all-seed incidence, and cancellation-stable
+  linear-radius propagation remain open;
+
+- none of these results changes the leading strategic judgment enough to
+  require an early STEERING.md refresh; the next mandatory refresh remains
+  Wave 57.  Wave 54 should compare a joint far-margin/truncated-profile
+  abundance theorem, exact $A^2$ cancellation against low-cross field
+  spikes, and a global all-seed cluster mechanism or asymptotic falsifier for
+  (10.1294).
