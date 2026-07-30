@@ -26602,3 +26602,660 @@ minimizer-specific nonlinear tail proving or falsifying (10.967)/(10.969),
 finite walls, and (iii) endpoint binary-cost and migration control for
 (10.983).  The all-law capacity, uniform normalized degrees, and
 Johnson-entry trees should not be restarted as if they were necessary.
+
+### 10.88 Wave 35: entropic cut response, anchored agreement, and erasure information
+
+Three independent attacks and a direct main-agent derivation were audited
+against exact finite-state scripts.  The new identities below are verified;
+the displayed sufficient lemmas remain open.  No convergence proof or
+asymptotic counterexample is obtained.
+
+#### 10.88.1 The arbitrary-cut tail has an exact entropic-hinge dual
+
+Fix a uniform selector slice `U=U_m`, a row cap `C`, and write
+
+```math
+h_d(S)=\widehat\ell(S,d),\qquad
+\phi_t(u)=[u-t]_+,\qquad
+K_{\lambda,t}(d)=\mathbb E_Ue^{-\lambda\phi_t(h_d(S))},
+\qquad
+\mathcal D_C=\{d:R_2(d)\le C\}.
+```
+
+The finite Gibbs variational principle, followed by commuting two finite
+maxima, gives the exact existential identity
+
+```math
+\boxed{
+\log\max_{d\in\mathcal D_C}K_{\lambda,t}(d)
+=\sup_{w\in\Delta(\Omega_m)}\left\{-D(w\Vert U)
+-\lambda\min_{d\in\mathcal D_C}
+\mathbb E_w\phi_t(h_d(S))\right\}.
+}
+\tag{10.985}
+```
+
+For a fixed cut the optimizing selector tilt and its cost are
+
+```math
+\pi_d(S)=\frac{U(S)e^{-\lambda\phi_t(h_d(S))}}
+                   {K_{\lambda,t}(d)},
+\qquad
+-\log K_{\lambda,t}(d)
+=D(\pi_d\Vert U)+\lambda\mathbb E_{\pi_d}\phi_t(h_d).
+\tag{10.986}
+```
+
+Moreover, for every `u>0`,
+
+```math
+K_{\lambda,t}(d)
+\le U\{S:h_d(S)\le t+u\}+e^{-\lambda u}.
+\tag{10.987}
+```
+
+Consequently the following is an exact sufficient interface for (10.795).
+Uniformly for every relevant exact-minimizer target pair, suppose there are
+a selector law `w`, a cut `d` in `\mathcal D_{2n(n-1)}`, and `t,u>0`, with
+`1<=T<=n^eta`, `eta<c_0`, `c'=c_0-eta`, and constants
+`0<A<Lambda`, `c_lambda>=1`, `0<C_*<infinity` independent of the pair, such that
+
+```math
+D(w\Vert U)+\lambda\mathbb E_w\phi_t(h_d)
+\le ATL_0,
+\qquad
+\lambda u\ge\Lambda TL_0,
+\qquad
+c_\lambda^{-1}n^{-3/4}\le\lambda\le c_\lambda n^{-3/4},
+\qquad
+t+u\le C_*n^{3/2-c'}.
+\tag{10.988}
+```
+
+The fixed-cut Gibbs variational inequality underlying (10.985) gives
+`K_(lambda,t)(d)>=e^(-ATL_0)` for this same supplied cut.  Hence (10.987)
+gives
+
+```math
+U\{h_d\le t+u\}
+\ge e^{-ATL_0}-e^{-\Lambda TL_0}
+=e^{-(A+o(1))TL_0}.
+\tag{10.989}
+```
+
+All constants implicit in this package are uniform over the target pairs.
+The threshold and exponent in (10.988)--(10.989) are exactly those of
+(10.795), so the package proves convergence.  This hinge condition is
+exponent-equivalent to the hard tail, not a proof of it:
+conditioning `U` on any covered set recovers the corresponding entropy
+budget.  Its advantage is that it asks for one existential low-entropy tilt
+and one responding cut, rather than an adversarial-law certificate.
+
+The unclipped exponential does not have the right conversion scale.  Since
+`h_d=Y_A-X_d`, one has exactly
+
+```math
+\log\max_{d\in\mathcal D_C}\mathbb E_Ue^{-\lambda h_d}
+=\sup_w\left\{
+\lambda\left[\max_{d\in\mathcal D_C}\langle H_w,d\rangle-Y_w\right]
+-D(w\Vert U)\right\},
+\tag{10.990}
+```
+
+but `h_d(S)>=-(p_2+p^(3/2))q_n`.  A raw-exponential-to-tail conversion may
+therefore pay `Theta(lambda n^(3/2))=Theta(n^(3/4))`, strictly larger than
+`TL_0=o(n^(3/4))`.  Positive-part clipping is essential.
+
+There is also an exact cube Euler system.  Write `d=sigma xx^T`; for a
+physical spin block `H`, put
+
+```math
+W_H=\sum_{i\in H,j\notin H}A_{ij}x_ix_j,
+\qquad
+W_{H,S}=\sum_{i\in H\cap S,j\in S\setminus H}A_{ij}x_ix_j.
+```
+
+Then
+
+```math
+\boxed{
+h_{d^H}(S)-h_d(S)=4\sigma[W_{H,S}-p_2W_H],
+}
+\qquad
+\boxed{
+R_2(d^H)-R_2(d)
+=-4\sum_{i\in H}x_i(A^2x)_i
++4\lVert A[:,H]x_H\rVert_2^2.
+}
+\tag{10.991}
+```
+
+The one-vertex increments sum to
+
+```math
+\sum_i\Delta_i h_d(S)=4X_d(S),
+\qquad
+\sum_i\Delta_iR_2=4[n(n-1)-R_2(d)].
+\tag{10.992}
+```
+
+At a minimizer of `-\log K_{\lambda,t}(d)+\gamma R_2(d)`, every block obeys
+
+```math
+\log\mathbb E_{\pi_d}
+e^{-\lambda[\phi_t(h_{d^H})-\phi_t(h_d)]}
+\le\gamma\Delta_HR_2.
+\tag{10.993}
+```
+
+This system does not control the selector KL in (10.986), and the hinge
+breaks the linear closure in (10.992).  The one-bit loss is at most
+`4[(m-1)+p_2(n-1)]`, so generic row enforcement needs
+`gamma=Theta(lambda)`.  Such a coefficient charges a center with
+`R_2=Theta(n^2)` by `Theta(n^(5/4))`; a target-scale penalized bound would
+instead have to prove the much stronger and presently unavailable estimate
+
+```math
+R_2(d)=O(TL_0/\lambda)=O(Tn^{3/2-c_0}).
+\tag{10.994}
+```
+
+This is a wall for black-box linear row penalization, not an impossibility
+theorem: an exceptionally low-row optimizer is not ruled out.  Exact
+`A_8,A_9` diagnostics likewise show only finite surrogate instability.  For
+`A_8,m=4,t=0,lambda=.05`, the soft optimizer covers `0.257143` while the
+best hard cut covers `0.571429`; on `A_9,m=5,lambda=.2`, normalized row
+penalty `gamma=.1` moves `(R_2,coverage)` from `(112,.674603)` to
+`(16,.126984)`, even
+though every audited cut already satisfies the Wave 34 row cap.
+
+#### 10.88.2 Rare-center Euler calculus isolates mismatch-code entropy
+
+For the center distance of (10.965), define
+
+```math
+q_\lambda(z)=\mathbb E_{S\sim U_m}e^{-\lambda a_z(S)},
+\quad F_\lambda(z)=-\log q_\lambda(z),
+\quad
+\pi_z(S)=\frac{U_m(S)e^{-\lambda a_z(S)}}{q_\lambda(z)}.
+```
+
+Let `\delta_B(S)=a_{z^B}(S)-a_z(S)` and
+`R(z)=z^{\mathsf T}A^2z`.  At a global minimizer of
+`F_\lambda(z)+\gamma R(z)`, exact block optimality gives
+
+```math
+\boxed{
+\log\mathbb E_{\pi_z}e^{-\lambda\delta_B(S)}
+\le\gamma\Delta_BR,
+\qquad
+\Delta_BR
+=-4\sum_{i\in B}z_i(A^2z)_i
++4\sum_{i,j\in B}z_i(A^2)_{ij}z_j.
+}
+\tag{10.995}
+```
+
+Choose deterministically a nearest favorable label for each selector and let
+`B(S)` be its projective mismatch set.  Partition the slice into
+`G_B={S:B(S)=B}`.  Flipping `B` makes every selector in `G_B` favorable, so
+(10.995), summed over the partition, proves
+
+```math
+\boxed{
+q_\lambda(z)
+\ge\left(\sum_{B:G_B\ne\varnothing}
+e^{\gamma\Delta_BR}\right)^{-1}.
+}
+\tag{10.996}
+```
+
+At `gamma=0`, the automatic guarantee is only `e^{-O(n)}` because there may
+be exponentially many mismatch patterns, whereas `TL_0=o(n)`.  The same
+wall has the exact information form
+
+```math
+\boxed{
+F_\lambda(z)
+=D(\pi_z\Vert U_m)+\lambda\mathbb E_{\pi_z}a_z(S).
+}
+\tag{10.997}
+```
+
+Unpenalized cube optimality forces only the distance-energy term to be very
+small while leaving the selector KL uncontrolled.  Arbitrary fiber systems
+can put order `n` entropy in that term; no such actual-minimizer family is
+known.  Thus a sufficient new theorem would be the
+mismatch-compression bound
+
+```math
+\sum_{B:G_B\ne\varnothing}e^{\gamma\Delta_BR}
+\le e^{O(TL_0)},
+\tag{10.998}
+```
+
+at a low-row global minimizer of `F_lambda+gamma R`, or at a low-row center
+which independently satisfies every block inequality (10.995).  An
+alternative is to bound **both** terms in (10.997) by `O(TL_0)` there;
+selector KL alone is not equivalent to (10.998) and is not sufficient.
+
+For the exceptional-center soft-to-hard route, now specialize to the
+distinct center temperature and radius
+
+```math
+\lambda=\lambda_{\rm ctr}:=\frac{\Lambda rL_0}{D+1},
+\qquad
+d=\left\lfloor\frac Ds\right\rfloor,
+\qquad s=\lceil r/T\rceil.
+```
+
+The smooth row coefficient again conflicts with the exponent.  For
+`gamma>0`, one-bit descent gives
+
+```math
+R(z)\le n(n-1)+\frac{\lambda n}{4\gamma},
+\tag{10.999}
+```
+
+so the generic conversion to `R<=2n(n-1)` needs
+`gamma>=lambda/[4(n-1)]`.  A coefficient affordable on an ordinary
+`Theta(n^2)` row square is only `O(TL_0/n^2)`; the ratio is
+`Theta(\lambda n/TL_0)=Theta(n/d)\to\infty`.  One stronger but honest
+sufficient lemma survives: with
+`gamma=Gamma TL_0/[n(n-1)]` and `A<min{Lambda,2Gamma}`, the estimate
+
+```math
+\min_z\{F_\lambda(z)+\gamma R(z)\}\le ATL_0
+\tag{10.1000}
+```
+
+would force both the row cap and the strict soft-to-hard margin.  Neither
+(10.995) nor its one-bit sum proves (10.998) or (10.1000).  At
+`A_9,m=8,lambda=5`, the generic enforcement coefficient moves the soft
+optimizer from `(R,q)=(128,0.3355843943)` to
+`(24,3.0334827152\times10^{-5})`, although the original optimizer already
+satisfies the desired row cap.  This uses exact-ground fibers, which are
+narrower than the asymptotic favorable fibers, and is finite mechanism
+evidence only.
+
+#### 10.88.3 Singleton-anchored agreement gives an exact decoding threshold
+
+The projective orientation can be removed without loss by fixing one anchor
+vertex `v_*`.  Let `\mathcal G` be a subfamily of the selectors containing
+`v_*`, of relative density `\beta` inside that anchored slice.  Choose one
+favorable projective label on every `S\in\mathcal G` and orient it to be
+`+1` at `v_*`.  If `S,T` are independent and uniform on `\mathcal G`, put
+
+```math
+p_i=\Pr\{i\in S\},
+\qquad
+\mathcal C_{v_*}(\mathbf y)
+=\mathbb E_{S,T}\sum_{i\in(S\cap T)\setminus\{v_*\}}
+\frac{\mathbf1\{y_i^S\ne y_i^T\}}{p_i},
+\tag{10.1001}
+```
+
+omitting coordinates with `p_i=0`.  Let `z_i` be the coordinatewise
+plurality of the oriented labels.  If
+
+```math
+u_i=\Pr\{i\in S,y_i^S=+1\},
+\qquad
+v_i=\Pr\{i\in S,y_i^S=-1\},
+```
+
+then the local-error contribution is `min(u_i,v_i)`, while the conflict
+contribution is `2u_i v_i/p_i`.  Hence, exactly,
+
+```math
+\boxed{
+\mathbb E_{S\sim U(\mathcal G)}d_H(z_S,y^S)
+=\sum_i\min(u_i,v_i)
+\le\mathcal C_{v_*}(\mathbf y).
+}
+\tag{10.1002}
+```
+
+Integer-valued Markov extraction now gives
+
+```math
+\boxed{
+U_m\{S:a_z(S)\le d\}
+\ge\beta\frac mn
+\left(1-\frac{\mathcal C_{v_*}(\mathbf y)}{d+1}\right)_+.
+}
+\tag{10.1003}
+```
+
+Thus `\log\beta^{-1}=O(TL_0)` and
+`\mathcal C_{v_*}(\mathbf y)\le(d+1)/2` give the center degree required in
+(10.967), **provided the plurality also satisfies**
+`R_2(z)<=2n(n-1)`.  The row clause is logically independent: a perfectly
+consistent abstract local system may be the restrictions of one high-row
+word.  Agreement alone cannot imply it.
+
+This pins down a simultaneous replacement statement which would supply both
+missing properties.  For each selector let `Omega_S^F` be its favorable
+states, canonically oriented at the singleton anchor, and write
+
+```math
+R^S_\xi(u)=Z_S(u)+2\sum_{e\subset S}\xi_e d_e(u),
+\qquad
+\Delta_S(u)=q_n-R^S_{A[S]}(u)\ge0.
+```
+
+For an assignment `\mathbf u=(u_S)` let `R_{\rm med}(\mathbf u)` be the least
+row square among all coordinatewise Hamming medians.  For `\kappa>0`, on the
+nonempty set of assignments with `R_{\rm med}\le C`, define
+
+```math
+W^F_{\mathcal G,C}(\kappa)
+=\min_{\substack{\xi^S\in[-1,1]^{E(S)}\\S\in\mathcal G}}
+\max_{\substack{\mathbf u\in\prod_S\Omega_S^F\\
+R_{\rm med}(\mathbf u)\le C}}
+\left\{\mathbb E_SR^S_{\xi^S}(u_S)
+-\kappa\mathcal C_{v_*}(\mathbf u)\right\}.
+\tag{10.1004}
+```
+
+Finite minimax, with `\mu` a law supported on row-qualified assignments and
+`m_e^S=\mathbb E_\mu d_e(u_S)`, gives
+
+```math
+W^F_{\mathcal G,C}(\kappa)
+=\max_\mu\left\{
+\mathbb E_{\mu,S}Z_S(u_S)
+-2\mathbb E_S\sum_{e\subset S}|m_e^S|
+-\kappa\mathbb E_\mu\mathcal C_{v_*}(\mathbf u)
+\right\},
+\tag{10.1005}
+```
+
+For every optimizing dual law `\mu`, comparison with the actual blocks
+yields the exact nonnegative accounting identity
+
+```math
+\boxed{
+q_n-W^F_{\mathcal G,C}(\kappa)
+=\mathbb E_{\mu,S}\Delta_S(u_S)
++4\mathbb E_S\sum_{e\subset S}(a_e m_e^S)_+
++\kappa\mathbb E_\mu\mathcal C_{v_*}(\mathbf u).
+}
+\tag{10.1006}
+```
+
+It follows that the row-qualified response inequality
+
+```math
+\boxed{
+W^F_{\mathcal G,2n(n-1)}(\kappa)
+\ge q_n-\frac{\kappa(d+1)}2,
+\qquad
+\log\beta^{-1}=O(TL_0),
+}
+\tag{10.1007}
+```
+
+is sufficient for (10.967): (10.1006) supplies a row-qualified assignment
+with conflict at most `(d+1)/2`, and (10.1003) decodes the required center.
+At the natural price `kappa=4(n-1)`, the permitted loss is
+
+```math
+2(n-1)(d+1)
+=O\!\left(\frac{Tn^{3/2-2c_0}}{(\log n)^2}+n\right),
+\tag{10.1008}
+```
+
+whereas independent sign rounding loses `Theta(n^(3/2))` and supplies
+neither favorable support, selector coherence, nor the row condition.  The
+finite `A_9` witness (10.976) also blocks deriving the zero-slack
+hard-favorable game from unconditional global minimax.  Therefore
+(10.1007) is a genuine new sufficient lemma, not a consequence already
+hidden in (10.972).
+
+Two primary agreement results were checked and do not directly land.
+Dinur--Steurer's [direct-product theorem](https://eccc.weizmann.ac.il/report/2013/179/)
+gives, even under its most favorable parameter reading here, only an
+`O(TL_0)` local-error upper bound, too coarse to force `d=o(TL_0)`, and it
+does not state the required
+linear-density shrinking-soundness set theorem.  The introductory regime in
+Dikstein--Dinur's [agreement theorem](https://arxiv.org/abs/2308.09582) has
+acceptance above order `1/log m`; its formal theorem also imposes suitability
+and base-test hypotheses.  Here acceptance may be `e^{-O(TL_0)}`, accuracy
+must tend to one at distance `d=o(TL_0)`, and the input is a large favorable
+**list** rather than one prescribed local function.  These are parameter and
+input mismatches, not counterexamples to a sharper complete-slice theorem.
+
+#### 10.88.4 Endpoint erasure KL exposes the exact harmonic cancellation
+
+Use the `n`-bit oriented-cut chart: one global-orientation coordinate and
+`n-1` projective vertex-flip coordinates.  Put
+`\nu=\nu_\beta`, `\mu=\mu_1=\nu f`, and let `D_{-j}` erase chart coordinate `j`.
+The endpoint cost in (10.980) is exactly
+
+```math
+\boxed{
+C_j=D(\mu\Vert\nu)-D(\mu_{-j}\Vert\nu_{-j}),
+\qquad
+\sum_jC_j
+=nD(\mu\Vert\nu)-\sum_jD(\mu_{-j}\Vert\nu_{-j}).
+}
+\tag{10.1009}
+```
+
+Lift the endpoint through its canonical selector mixture
+`P(S,d)=q(S)\mu_S(d)=\mu(d)\pi_d(S)`, define
+
+```math
+J_{S,j}=D(\mu_S\Vert\nu)-D((\mu_S)_{-j}\Vert\nu_{-j}),
+\qquad
+J_j=\sum_Sq(S)J_{S,j},
+```
+
+and equivalently regard `J_j` as the conditional-bit KL before forgetting
+`S`.  Two applications of the KL chain rule give
+
+```math
+\boxed{
+J_j=C_j+I_P(S;D_j\mid D_{-j}),
+\qquad
+C_j=J_j-I_P(S;D_j\mid D_{-j}).
+}
+\tag{10.1010}
+```
+
+For a vertex-flip coordinate `i`, a component whose selector omits the
+corresponding vertex has `J_(S,i)=0`.  Nevertheless the bare inclusion count
+only yields
+
+```math
+\sum_jJ_j
+\le(m+1)\{D(\mu\Vert\nu)+I_P(S;D)\},
+\tag{10.1011}
+```
+
+with a fatal linear factor.  More importantly, (10.1010) shows that selector
+information is the **subtractive cancellation**, so discarding it estimates
+the wrong, larger quantity.  On exact `A_6,m=3,beta=1/2`, numerically,
+
+```math
+\sum_jJ_j=0.1905952906,
+\qquad
+\sum_jI(S;D_j\mid D_{-j})=0.1853778460,
+\qquad
+\sum_jC_j=0.005217444607.
+\tag{10.1012}
+```
+
+The orientation term cannot be deleted without retaining or separately
+bounding it.  Marginalizing orientation gives
+
+```math
+D(\mu\Vert\nu)=D(\bar\mu\Vert\bar\nu)+C_0.
+\tag{10.1013}
+```
+
+For the exact `A_6,m=3,beta=(log 2)/2` matched likelihood, an orientation
+pair has
+
+```math
+U_\beta(d)=\frac{847888}{3590575},
+\qquad
+U_\beta(-d)=\frac{111448}{963325},
+\qquad
+\frac{f_\beta(d)}{f_\beta(-d)}=\frac{1165846}{571171}\ne1.
+\tag{10.1014}
+```
+
+Thus `C_0>0` algebraically in an actual finite minimizer.  This does not rule
+out a separate asymptotic bound on `C_0`.
+
+The migration covariance also has an exact information derivative.  Along
+`\mu_t\propto\nu e^{tg}`, define
+
+```math
+D^-_j(t)=D((\mu_t)_{-j}\Vert\nu_{-j}),
+\qquad
+k_e(t)=tA'_e(t)-A_e(t).
+```
+
+For the context-edge law `M_{t,j}`, direct differentiation gives
+
+```math
+\boxed{
+(D^-_j)'(t)=\operatorname{Cov}_{M_{t,j}}(A'_e,A_e),
+\qquad
+\operatorname{Cov}_{M_{t,j}}(A'_e,k_e)
+=t\operatorname{Var}_{M_{t,j}}(A'_e)-(D^-_j)'(t),
+}
+\tag{10.1015}
+```
+
+and hence, with `C_j(t)=D(mu_t||nu)-D^-_j(t)`, exactly
+
+```math
+\boxed{
+C'_j(t)=t\mathcal E_{t,j}(g)
++\operatorname{Cov}_{M_{t,j}}(A'_e,k_e).
+}
+\tag{10.1016}
+```
+
+This independently recovers (10.980), including its sign and single `t`
+factor.  Put
+
+```math
+\mathcal A_j
+=\int_0^1[-\operatorname{Cov}_{M_{t,j}}(A'_e,k_e)]_+\,dt.
+```
+
+Also define the positive variation
+
+```math
+\operatorname{Var}^+_{[0,1]}D^-_j
+:=\int_0^1[(D^-_j)'(t)]_+\,dt.
+```
+
+Two exact upper bounds are
+
+```math
+\boxed{
+\mathcal A_j
+\le\operatorname{Var}^+_{[0,1]}D^-_j,
+\qquad
+\mathcal A_j
+\le\sum_eK_e\int_0^1[-M'_e(t)]_+\,dt,
+}
+\tag{10.1017}
+```
+
+where `K_e=k_e(1)` is the endpoint binary KL.  Thus the endpoint-cost and
+adverse-migration parts of (10.983) would follow from
+
+```math
+\sum_jC_j=O(n^{1/2-2c}),
+\qquad
+\sum_j\operatorname{Var}^+D^-_j=O(n^{1/2-2c}),
+\tag{10.1018}
+```
+
+or from the first bound together with the uniform bounded-backtracking
+lemma
+
+```math
+\boxed{
+\sum_{j,e}K_e\int_0^1[-M'_e(t)]_+dt
+\le K_{\rm bt}\sum_{j,e}M_e(1)K_e
+=K_{\rm bt}\sum_jC_j,
+}
+\tag{10.1019}
+```
+
+where `K_{\rm bt}` must be fixed independently of `n`, the exact minimizer, the
+ratio window, and the prescribed temperature.  Mere monotonicity of
+`D^-_j(t)` is insufficient, because its summed endpoint is
+`nD(\mu\Vert\nu)-\sum_j C_j`.  On `A_9,m=7,beta=2`, numerically,
+
+```math
+\sum_jC_j\approx0.05086819103,
+\quad
+\int_0^1t\mathcal E_t(g)dt\approx0.05233613551,
+\quad
+\sum_j\mathcal A_j\approx0.002857229663.
+\tag{10.1020}
+```
+
+Coefficient-one domination of the weighted energy by endpoint cost is
+therefore false in this finite example, while a uniform larger constant is
+not excluded.  The restoring bounds in (10.983) and adjacent-selector
+Hellinger control remain separate inputs.
+
+#### 10.88.5 Updated frontier
+
+Wave 35 leaves adaptive optimized principal restriction in front, while
+making its missing nonlinear response much more explicit:
+
+- the bare leading target remains the arbitrary-cut tail (10.795).  Its
+  exact entropic-hinge form is (10.988): one low-entropy selector tilt and
+  one low-row cut with small expected positive-part loss suffice.  This is
+  equivalent at the target exponent, not progress by itself.  Raw
+  exponential response and generic linear row pressure lose the required
+  power;
+
+- the exceptional-center degree (10.967) remains the strongest structured
+  sufficient lemma.  Exact center Euler inequalities stop at the mismatch-
+  pattern partition (10.996), leaving `Theta(n)` possible selector entropy.
+  The needed new input is mismatch compression (10.998), or simultaneous
+  control of both selector KL and tilted distance energy at a low-row center;
+
+- singleton-anchored plurality supplies an exact route from coherent local
+  labels to the required center degree.  The exact positivity threshold in
+  (10.1003) is conflict below `d+1`; the bound `(d+1)/2` is the convenient
+  fixed margin used in (10.1007).  Its exact row-qualified response target
+  is (10.1007).
+  Known agreement theorems do not reach the shrinking-soundness/list regime,
+  while agreement without row control is insufficient.  This is presently
+  the clearest candidate mechanism for proving (10.967), but it is a
+  substantially stronger statement than pairwise compatibility and remains
+  unsupported by exact minimality;
+
+- the harmonic route remains the strongest independent alternative.  Its
+  endpoint cost is erasure KL (10.1009), selector information is the crucial
+  cancellation (10.1010), and adverse migration is bounded by positive
+  marginal-information variation or weighted context backtracking
+  (10.1017).  The concrete package is (10.1018), or an endpoint-erasure
+  bound plus (10.1019), together with the existing restoring and
+  selector-Hellinger inputs.  Orientation must remain separately charged;
+
+- constant shortfall, susceptibility, and terminal min-cut receive no new
+  positive evidence.  The rigorous interval and the constant-shortfall
+  assessment in `STEERING.md` are unchanged.
+
+No decisive route change occurred, so the next mandatory steering refresh
+remains Wave 39.  Wave 36 should test whether exact minimality can force the
+singleton-anchored row-qualified response (10.1007) at project-scale slack,
+seek a direct proof of the entropic hinge package (10.988) that bypasses
+center mismatch entropy, and attack or falsify the endpoint-erasure and
+bounded-backtracking package (10.1018)--(10.1019).  Any agreement attack must
+carry its row clause explicitly; any harmonic attack must retain selector
+information and global orientation.
