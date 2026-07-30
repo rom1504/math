@@ -1,37 +1,40 @@
 # Strategic steering
 
-Evidence cutoff: Wave 44, ledger §10.97 (2026-07-30). This is an early refresh triggered by
-the strict-pressure inverse theorem (10.1162), immediately after the scheduled Wave 44
-refresh. The next mandatory refresh is at the Wave 50 boundary, or earlier after another
-decisive result; it must include a fresh blank-slate abstraction audit.
+Evidence cutoff: Wave 45, ledger §10.98 (2026-07-30). This is an early refresh
+triggered by the rigorous abundance and central-orbit walls (10.1168)--(10.1171).
+The next mandatory refresh is at the Wave 51 boundary, or earlier after another
+decisive result. It must include a fresh blank-slate abstraction audit.
 
 ## User-stated research objective
 
-Determine whether $\lim_{n\to\infty}M_n/n^{3/2}$ exists. The conjectural value $1/2$ is not
-an additional user objective.
+Determine whether $\lim_{n\to\infty}M_n/n^{3/2}$ exists. The conjectural value
+$1/2$ is not an additional user objective.
 
 ## Present judgment
 
 No route proves convergence, and the rigorous interval remains
 $0.336493364431\ldots\le\liminf\le\limsup\le1/2$.
 
-The leading framework remains adaptive optimized principal restriction, with the bare
-arbitrary-cut tail (10.795) as the sharp target. Its strongest signing-specific
-implementation is one direct row-good complement-incidence column. Wave 44 gives that
-column an exact scalar switching interface, but also shows on an actual minimizer that
-ordinary row-descending neighbor retention is false.
+The leading framework remains adaptive optimized principal restriction, with
+the bare arbitrary-cut tail (10.795) as the sharp target. Its strongest
+signing-specific implementation is still one rare row-good
+complement-incidence column. Wave 45 proves that this column cannot be obtained
+from a project-scale average partition or a central half-cube Harnack theorem.
+The existential scalar target survives, but only a noncentral,
+incidence-conditioned or otherwise genuinely rare-column mechanism remains.
 
-Integrated harmonic transport is now the strongest distinct alternative. The hard
-exceptional-center tail remains live, but fixed positive strict pressure and its
-high-replica restatement are retired: (10.1162) proves that their premise already contains
-a much stronger restriction edge. Constant shortfall is not promoted; its required
-square-root cavity reward still has no minimizer theorem. The blank-slate audit below found
-no stronger interpolation, cavity, or compactness mechanism.
+The hard common-core spectral excess (10.1177) is now the cleanest distinct
+hard-tail implementation. Integrated harmonic transport ranks next: its
+fixed-state low-temperature endpoint coefficient is controlled by phase
+crossing overlap, but no uniform minimizer theorem controls interior facets,
+weighted overlap, or the zero-slope regime. Fixed positive strict pressure,
+high replicas, local harmonic Poincare, and monotone deletion remain retired.
 
-## Exact sufficient lemma and convergence chain
+## Leading sufficient lemma and convergence chain
 
-Fix a high-ratio window $m/n\in[\rho,1)$ and $c\in(0,1/4)$. For every relevant target pair,
-choose an exact-minimizer parent signing and one oriented parent cut $d$ such that
+Fix a high-ratio window $m/n\in[\rho,1)$ and $c\in(0,1/4)$. For every
+relevant target pair, choose an exact-minimizer parent signing and one oriented
+parent cut $d$ such that
 
 ~~~math
 R_2(d)=O(n^{9/4-c}),\qquad
@@ -45,94 +48,99 @@ This is (10.795). The row-sensitive inverse tail (10.1023) yields
 q_m\le(m/n)^{3/2}q_n+O(n^{3/2-c}).
 ~~~
 
-Geometric-window summability and exact landing force $q_n/n^{3/2}$, and hence
-$M_n/n^{3/2}$, to converge.
+Geometric-window summability and exact landing then force $q_n/n^{3/2}$,
+and hence $M_n/n^{3/2}$, to converge.
 
-The leading concrete sufficient lemma is the single scalar estimate
+The leading concrete sufficient lemma is
 
 ~~~math
 \min_{d:U_m(\mathcal I_d)>0}
 \left\{-\log U_m(\mathcal I_d)+n^{-3/2}R_2(d)\right\}
-=O(n^{3/4-c}),
-\qquad
+=O(n^{3/4-c}),\qquad
 \mathcal I_d=\{S:\langle B_S,d\rangle\ge q_n\}.
 ~~~
 
-It supplies both required column bounds, and every selector in $\mathcal I_d$ is favorable
-by (10.1045). Equivalently, prove the stronger row-good fractional cover (10.1047).
-Random incidence kernels do not improve this scalar objective by (10.1148)--(10.1149).
+It supplies both column bounds, and every $S\in\mathcal I_d$ is favorable by
+(10.1045). Equivalently, prove the stronger row-good fractional cover
+(10.1047). Average incidence cannot prove this: (10.1168)--(10.1170) show
+that the witness may be exponentially rare among all cuts.
 
 ## Evidence, obstructions, and falsification criteria
 
-- Complement minimality covers every selector, but row-versus-incidence congestion is
-  uncontrolled. Pair marginals, product tilts, canonical cycles, shared priorities,
-  conflict, and decoding do not supply the column. Conflict and decoding are redundant.
-- The switching theorem (10.1159) says a project-scale geometric-mean block-orbit bound
-  regularizes the scalar minimizer's row. The `A_9` cliff has an active above-baseline
-  column whose every row-descending vertex neighbor is empty. Any positive theorem must be
-  genuinely global and must also bound the scalar value.
-- The complement implementation is falsified by an unbounded exact-minimizer family on
-  which every project-row incidence column has mass
-  $\exp\{-\omega(n^{3/4-c})\}$ in every admissible window. The bare route is falsified only
-  if every eligible arbitrary cut, not just every complement column, has such tiny mass.
-- Strict pressure obeys $K_z^{\rm abs}\le\theta(t-G_{n,m})+o(L_0)$ for every eligible
-  center. A fixed positive margin is therefore unavailable in the near-equality regime and
-  must not be retried. This does not falsify the hard exceptional-center tail.
-- The live harmonic target is the phase-aware endpoint domination
-  $\mathcal J_L^2\le C C_V(1)$, plus restoring, orientation, and selector transport. Exact
-  `A_8` phases falsify local Poincare/Efron--Stein; exact `A_9` deletion Hessians falsify
-  monotone deletion. A minimizer family with $\mathcal J_L^2/C_V(1)\to\infty$ would falsify
-  endpoint domination.
-- Terminal favorable distance has no project estimate. Constant shortfall still lacks the
-  required square-root cavity reward and must evade its affinity and migration walls.
+- Complement minimality covers every selector, but row-versus-incidence
+  congestion is uncontrolled. Pair marginals, product tilts, canonical
+  cycles, shared priorities, conflict, and decoding do not supply the column.
+- Local switching fails on the $A_9$ cliff. Globally, every central
+  $k=n/2+O(\sqrt n)$ orbit has average surprise
+  $\Omega(n^{3/4})$ by (10.1171). Only noncentral high-slack block
+  regimes remain open; they still contain a signing-specific first chaos.
+- The complement implementation is falsified by an unbounded exact-minimizer
+  family on which every project-row incidence column has mass
+  $\exp\{-\omega(n^{3/4-c})\}$ in every admissible window. The bare route
+  is falsified only if every eligible arbitrary cut has such tiny mass.
+- For the hard route, the exact theorem is
+  $\max_z a_z\ge\rho_\ell^t-\lambda_\ell^t$, with
+  $\lambda_\ell=\ell(n-m)/(m(n-\ell))$. A bound
+  $\rho_\ell-\lambda_\ell\ge e^{-O(L_0)}$ proves the needed degree.
+  Powers cannot create a positive gap, and exact $A_8,A_9$ minimizers
+  falsify nearest-core excess. A useful theorem must be nonlocal and
+  minimizer-specific.
+- Strict pressure satisfies
+  $K_z^{\rm abs}\le\theta(t-G_{n,m})+o(L_0)$. A fixed positive margin
+  already contains a much stronger restriction edge and must not be retried.
+- Harmonic endpoint domination has a verified fixed-state coefficient bound
+  $I\le(D/\eta)\mathbb E_{\pi_0}\ell_0$ under an affine/no-transient
+  envelope. An abstract star has bounded $\eta$ but ratio
+  $\mathcal J_L^2/C_V(1)\asymp\Delta$, so phase affineness alone is
+  false as a sufficient principle. A minimizer family with uncontrolled
+  interior charge, $D/\eta$, or divergent endpoint ratio falsifies this
+  implementation.
+- Terminal favorable distance has no project estimate. Constant shortfall
+  still lacks its square-root cavity reward and must evade its affinity and
+  migration walls.
 
-## Blank-slate abstraction audit
+## Most recent blank-slate abstraction audit
 
-The following candidates and judgments are authored research hypotheses, not user
-directives. They were generated from the original minimax problem before comparison with
-the ledger.
+This audit was performed at the Wave 45 boundary from the original problem
+before route comparison. Its candidates and judgments are agent-authored
+research hypotheses, not user directives. The present early refresh does not
+regenerate it; the mandatory Wave 51 refresh will.
 
-1. **Finite-temperature zero-sum interpolation.** For
-   $v_n(\gamma)=(\gamma n)^{-1}\min_A\log[2^{-n}\sum_x2\cosh(\gamma x^TAx/(2\sqrt n))]$,
-   soft-max gives $|v_n(\gamma)-M_n/n^{3/2}|\le(\log2+o(1))/\gamma$. Balanced
-   $o(n)$-additivity of $n v_n(\gamma)$, locally uniform in $\gamma$, would prove the limit.
-   **Comparison:** this is the old finite-temperature target (§6.4). Comparable blocks
-   change the diagonal temperature (§3.3), scalar pressure axioms permit oscillation
-   (§§3.9, 3.16), and the exact cavity state needs overlap geometry (§10.19). Reject without
-   a new signing-specific bridge anti-alignment theorem.
-2. **Summable cavity derivative.** The extension inequality
-   $M_{n+1}\le M_n(1+3/(2n))+O(n^{1/2-\delta})$ makes the positive variation of
-   $M_n/n^{3/2}$ summable. **Comparison:** this is exactly §6.2. Small minimizers defeat a
-   uniform finite theorem (§1.10), exact closed insertion profiles contain the whole energy
-   landscape (§3.25), and the finite-temperature version is the unsupported constant-
-   shortfall/cavity-moment route (10.617), (10.819). Reject as a renamed existing route.
-3. **Second-order signed-kernel Gamma compactness.** Normalize $T_A=A/\sqrt n$ and seek a
-   compact two-scale Young-measure topology in which the Boolean quadratic supremum is
-   continuous and every limit has all-order recovery sequences. **Comparison:** fixed
-   traffic/graphon profiles miss planted Boolean directions (§10.22); purification gives
-   compact liminf objects but no all-order realization (§10.29); full spectral/action
-   profiles lose equicontinuity and inject compulsory fibre variance (§10.31.6). The stated
-   recovery theorem is precisely the missing problem. Keep dormant unless a concrete
-   recovery operation is found.
+1. **Finite-temperature zero-sum interpolation.** Balanced $o(n)$
+   additivity of the soft minimax free energy would imply convergence.
+   Comparison found the old temperature-mismatch, oscillatory scalar-pressure,
+   and overlap-geometry walls (§§3.3, 3.9, 3.16, 6.4, 10.19). Reject without a
+   signing-specific bridge anti-alignment theorem.
+2. **Summable cavity derivative.** An extension error
+   $O(n^{1/2-\delta})$ would make the normalized positive variation
+   summable. This is the old cavity/constant-shortfall route (§6.2), whose
+   insertion profile retains the full landscape and whose required reward is
+   open. Reject as a renamed route.
+3. **Second-order signed-kernel compactness.** A topology making the Boolean
+   quadratic supremum continuous, with all-order recovery sequences, would
+   prove convergence. Existing traffic, graphon, purification, and action
+   profiles either miss planted Boolean directions or lack recovery
+   (§§10.22, 10.29, 10.31.6). Keep dormant until a concrete recovery operation
+   exists.
 
-**Audit judgment:** all three candidates have exact convergence implications, but none
-supplies a stronger or newly testable mechanism at the required scale. They do not displace
-the direct complement column or integrated harmonic transport.
+Audit judgment remains unchanged: none supplies a stronger or more testable
+mechanism at the required scale.
 
-## Ranked routes and Wave 45 direction
+## Ranked routes and Wave 46 direction
 
-1. **Direct complement scalar column.** Attack the scalar value in (10.1149) together with
-   a genuinely global block-orbit expansion theorem; do not use local neighbor retention or
-   reintroduce conflict.
-2. **Integrated harmonic endpoint domination.** Prove or sharply falsify (10.1167) using
-   phase-aware interpolation and actual completion structure, with the other costs explicit.
-3. **Hard exceptional-center tail.** Work directly at the hard boundary or with a soft
-   functional having no fixed positive pressure margin; high replicas are closed.
-4. **Direct bare-tail inverse theorem beyond complement incidence.** Seek a
-   dependence-sensitive counting mechanism compatible with (10.1022).
-5. **Favorable-distance/min-plus or constant-shortfall scaffolds.** Activate only with a new
-   project-scale composition or square-root reward theorem.
+1. **Rare direct complement scalar column.** Attack a noncentral high-slack
+   block regime or an incidence-conditioned slack-versus-row dichotomy. Do not
+   use average partition mass, central Harnack, or conflict.
+2. **Hard common-core excess.** Prove or sharply falsify (10.1177) at a
+   nonlocal core scale from exact minimality; distinguish a real collision
+   estimate from spectral iteration.
+3. **Harmonic phase geometry.** Seek a minimizer theorem excluding interior
+   facets and bounding weighted crossing overlap $D/\eta$, while keeping
+   restoring, orientation, selector transport, and zero-slope terms explicit.
+4. **Direct bare-tail counting beyond complement incidence.** Seek a
+   dependence-sensitive hard count conditioned on the principal-norm profile.
+5. **Favorable-distance/min-plus or constant-shortfall scaffolds.** Reactivate
+   only after a new project-scale composition or square-root reward theorem.
 
-Wave 45 should rank ten fresh ideas against this assessment, then assign independent attacks
-to the first three routes unless a newly specified fourth route has a stronger exact
-mechanism.
+Wave 46 must rank ten fresh ideas against this assessment and assign three
+independent, falsifiable attacks to the strongest surviving mechanisms.
