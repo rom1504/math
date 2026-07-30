@@ -1,6 +1,6 @@
 # Quadratic Signing Limit — Research Ledger
 
-Last updated: 2026-07-29 (UTC)
+Last updated: 2026-07-30 (UTC)
 
 ## Purpose
 
@@ -24963,3 +24963,515 @@ coset implementation in front, but weakens and sharpens the exact target:
   Wave 32 should attack low-row forest clustering, independently attack the
   minimizer-specific power sum against the symmetric-incidence wall, and
   retain one centered harmonic-screening route.
+
+### 10.85 Wave 32: exact forest min-cuts, center-star moments, and screened parent response
+
+All identities and finite examples in this section are **Verified**.  The
+forest and center-star statements are exact reductions, not proofs of their
+remaining minimizer-specific probability estimates.  The complete-signing
+and harmonic examples are explicitly scoped mechanism walls; neither is an
+asymptotic counterexample to convergence.
+
+#### 10.85.1 Completion forests are coordinate terminal min-cuts
+
+Fix a tree `T` rooted at an auxiliary full spin `z`.  At every non-root node
+`v`, prescribe a projective word `[y^v]` on a selector `S_v`; all coordinates
+outside `S_v` remain free.  Let `D_T` be the minimum, over full projective
+completions, of the sum of projective Hamming lengths over the tree edges.
+Because a tree has no cycle, representatives can be oriented recursively so
+that every projective edge distance is realized simultaneously as an ordinary
+Hamming distance.  If `sigma_v` is the resulting node orientation, then
+
+```math
+\boxed{
+D_T=
+\min_{\substack{\sigma_v\in\{\pm1\}\ (v\ne0)\\
+                 x^0=z,\ x^v|_{S_v}=\sigma_vy^v}}
+\sum_{uv\in E(T)}d_H(x^u,x^v).
+}
+\tag{10.922}
+```
+
+The crucial constraint is that one `sigma_v` is shared by all specified
+coordinates of node `v`.  It cannot be optimized coordinate by coordinate.
+For example, with root `(+,+)` and one child word `(+,-)`, the false
+coordinatewise relaxation is zero while the correct projective distance is
+one.
+
+Fix the node orientations.  For coordinate `i`, pin every node containing
+`i` to `sigma_v y_i^v`, with the root pinned to `z_i`, and let
+`lambda_i(sigma)` be the minimum number of disagreeing tree edges in a binary
+extension of these terminal values.  The free bits now decouple, giving
+
+```math
+\boxed{
+D_T=\min_\sigma\sum_{i=1}^n\lambda_i(\sigma).
+}
+\tag{10.923}
+```
+
+For each coordinate, binary tree variation is exactly a unit-capacity
+terminal cut.  Max-flow/min-cut and integrality give the dual form
+
+```math
+\boxed{
+\lambda_i(\sigma)
+=\min\{|C|:T-C\text{ has no component containing opposite terminals}\}
+=\max\{|\mathcal P|:\mathcal P\text{ consists of edge-disjoint
+opposite-terminal paths}\}.
+}
+\tag{10.924}
+```
+
+Exhaustive enumeration on 160 random small partial-word trees independently
+agrees with the projective-completion minimum, the dynamic program, the
+separator minimum, and the path-packing maximum.
+
+Thus the exact local statistic for a batch group is the minimum, over its
+favorable labels, low-row root, tree, and coherent node orientations, of the
+total coordinate-tagged conflict-path packing.  After optimizing a partition
+into at most `n^eta` groups, requiring every group statistic to be `O(k_0)` is
+necessary and sufficient for the metric/low-row part of the Wave 31 forest
+event.  The remaining open theorem is probabilistic: obtain this event with
+mass `e^{-O(rL_0)}` against every selector law.
+
+The exchange cocycle (10.913) does not bound either side of (10.924) by
+`O(k_0)`, and hence does not yield `D_T=O(k_0)`: it charges signed first-order
+boundary energy, while (10.924) counts unweighted conflicts which may pass
+through arbitrarily many unpinned nodes.  Block sums of the weighted
+zero-shore gadget from (10.915) give exponentially many separated exact
+grounds with zero energy regret, but have zero/real weights and are not
+complete-signing minimizers.  This is a scoped algebraic wall.  The precise
+missing input is a signing-minimizer **cut-compression theorem** producing
+coherent orientations and coordinate separators of total size `O(k_0)`.
+
+#### 10.85.2 The forest route reduces to a low-row center-star power moment
+
+Let `F_S` be the projective child labels satisfying the favorable deficit in
+(10.896), and put
+
+```math
+\mathcal C_2=\{z:R_2(z)\le2n(n-1)\},\qquad \nu_2=U_{\mathcal C_2}.
+```
+
+The trace identity and Markov give $`|\mathcal C_2|\ge2^{n-1}`$.  Define
+
+```math
+a_z(S)=\min_{[y]\in F_S}d_{\rm pr}(z_S,y).
+```
+
+Because every outside completion bit is free, this is also the exact minimum
+full projective distance from `z` to a favorable completion for `S`:
+
+```math
+\boxed{
+|\mathcal C_2|\ge2^{n-1},\qquad
+a_z(S)=\min\{d_{\rm pr}(z,x):x\text{ is a favorable full completion for }S\}.
+}
+\tag{10.925}
+```
+
+Take the Wave 31 scales and let `s=ceil(r/T)`, `T<=n^eta`, `eta<c_0`.
+If `D_0=C_Dk_0`, then, for iid selectors `S_1,...,S_s` and `z~nu_2`, the
+event `sum_j a_z(S_j)<=D_0` produces a star of favorable completions with
+total length `O(k_0)`.  Equations (10.910) and (10.894) then give one eligible
+row-good coset hitting those `s` batch positions.  Consequently
+
+```math
+\boxed{
+\Pr_{w^{\otimes r}}(J_{r,s})
+\ge
+\mathbb E_{z\sim\nu_2}
+\Pr_{S_1,\ldots,S_s\sim w}
+\left\{\sum_{j=1}^s a_z(S_j)\le C_Dk_0\right\}.
+}
+\tag{10.926}
+```
+
+A uniform lower bound `e^{-O(rL_0)}` on the right side proves convergence.
+The convenient stronger equal-radius version, with
+`d=floor(C_Dk_0/s)`, is
+
+```math
+\boxed{
+\inf_w\mathbb E_{z\sim\nu_2}
+\left[w\{S:a_z(S)\le d\}\right]^s
+\ge e^{-O(rL_0)}.
+}
+\tag{10.927}
+```
+
+This is the sharpest scalar form of the low-row forest target so far.  It is
+a conditional high-power moment; replacing it by a first moment is costly.
+Indeed, if
+
+```math
+g_S(d)=\nu_2\{z:a_z(S)\le d\},
+```
+
+then Fubini and Jensen give
+
+```math
+\mathbb E_{\nu_2}[w\{a_z\le d\}^s]
+\ge\left(\mathbb E_{S\sim w}g_S(d)\right)^s.
+\tag{10.928}
+```
+
+Thus a uniform degree proof would require
+`inf_S g_S(d)>=e^{-O(TL_0)}`.  If `N_S=|F_S|` and
+`V(m,d)=sum_(j<=d) binom(m,j)`, Hamming-volume counting and (10.925) instead
+give
+
+```math
+\boxed{
+g_S(d)\le\min\left\{1,\frac{4N_SV(m,d)}{2^m}\right\},
+\qquad
+d=O\left(\frac{n^{1/2-2c_0+\eta}}{(\log n)^2}\right),
+\qquad \log V(m,d)=o(L_0).
+}
+\tag{10.929}
+```
+
+Since `TL_0=o(n)`, this route would need
+`log N_S>=m log 2-o(n)`: essentially maximal favorable-label multiplicity.
+Global low-row abundance and a pointwise completion cylinder therefore do
+not prove the needed moment.
+
+There is also a sharp abstract wall at any fixed selector density
+`p in (0,1)`.  Give every selector an independent uniform projective label
+and use its radius-`d` cylinder.  Under the uniform selector law, a Chernoff
+bound followed by a union bound over all `2^n` centers gives a deterministic
+assignment such that, for any fixed
+`0<alpha<min{H(p),p log 2}`,
+
+```math
+\boxed{
+\max_z w\{S:d_{\rm pr}(z_S,Y_S)\le d\}\le e^{-\alpha n},
+\qquad
+\mathbb E_\nu q_z^s\le e^{-\alpha ns}=e^{-\omega(rL_0)}.
+}
+\tag{10.930}
+```
+
+The labels in this model need not be grounds of one signing.  It isolates
+the required cross-selector correlation and does not falsify (10.927).
+
+#### 10.85.3 Quadratic noise does not create the missing conditional centers
+
+Let `B=A^2` and `R_2(x)=x^TBx`.  If `y=x odot epsilon` with independent
+signs of mean `theta`, direct Walsh expansion gives
+
+```math
+\boxed{
+\mathbb E R_2(y)=\theta^2R_2(x)+(1-\theta^2)n(n-1).
+}
+\tag{10.931}
+```
+
+Writing `v=1-theta^2`, `q_(ij)=2B_(ij)x_ix_j` for `i<j`, and
+`ell_i=sum_(j ne i)q_(min(i,j),max(i,j))`, the exact variance is
+
+```math
+\boxed{
+\operatorname{Var}R_2(y)
+=v\theta^2\sum_i\ell_i^2+v^2\sum_{i<j}q_{ij}^2.
+}
+\tag{10.932}
+```
+
+For a uniform size-`d` flip set,
+
+```math
+\boxed{
+\mathbb E_{|F|=d}R_2(x^F)
+=\gamma_{n,d}R_2(x)+(1-\gamma_{n,d})n(n-1),
+\qquad
+\gamma_{n,d}=1-\frac{4d(n-d)}{n(n-1)}.
+}
+\tag{10.933}
+```
+
+Conditioning instead on a child label `y` on `S`, filling the outside bits
+uniformly, and then flipping a uniform `h`-subset of `S` gives the analogous
+identities
+
+```math
+\boxed{
+\begin{aligned}
+\mu_S(y)&=n(n-1)+y^TB_{SS}y-m(n-1),\\
+\mathbb E R_2(Z)&=n(n-1)+
+\left[1-\frac{4h(m-h)}{m(m-1)}\right]
+[\mu_S(y)-n(n-1)].
+\end{aligned}
+}
+\tag{10.934}
+```
+
+At every radius used by the forest route, the multiplier is `1-o(1)`.
+Small Hamming noise contracts only a vanishing fraction of a high conditional
+row excess.
+
+Two complete-signing constructions make the limitation concrete.  First, if
+`C` is a symmetric conference matrix of order `g` and
+
+```math
+A=C\otimes J_g+I_g\otimes(J_g-I_g),\qquad N=g^2,
+```
+
+then `A` is a complete signing,
+`||A||_op=g sqrt(g-1)+g-1=Theta(N^(3/4))`, and
+`R_2(1)=Theta(N^(5/2))`.  For every spin at projective distance at most `d`,
+
+```math
+\sqrt{R_2(y)}\ge\sqrt{R_2(1)}-2\|A\|_{op}\sqrt d.
+\tag{10.935}
+```
+
+Hence every `d=o(N)` point in this basin still has row square
+`Theta(N^(5/2))`.  This signing is not a minimizer and the distinguished cut
+is not a favorable principal completion, so it is only a generic-noise wall.
+
+The second construction reaches the actual favorable allowance while still
+remaining outside exact global minimizers.  Let
+`b=ceil(Kn^(3/4))`, choose `B subset S` of size `b`, and set
+`A=P_B+R`, where `P_B` is the positive clique on `B` and `R` is zero on
+`B times B` and has independent symmetric Rademacher entries elsewhere.  A
+standard sharp random-matrix norm bound gives a deterministic realization
+with `||R||_op<=C sqrt n`; see
+[Bandeira--van Handel](https://arxiv.org/abs/1408.6185).  Then
+
+```math
+\boxed{
+Q(A)\le b^2+Cn^{3/2}=O(n^{3/2}),
+\qquad
+\|A\|_{op}\le b+C\sqrt n=O(n^{3/4}).
+}
+\tag{10.936}
+```
+
+For every fixed-density `S` containing `B`, the positive child optimum is at
+least `b(b-1)`, while every negative-oriented value is at most
+`b+Cn^(3/2)`.  Moreover
+
+```math
+\max_{0<p<1}(p^{3/2}-p^2)=\frac{27}{256},
+\qquad q_n\le Q(A),
+```
+
+so, after taking fixed `K` sufficiently large, the full allowance
+`B_(n,m)+O(n^(3/2-c_0))` is less than `b^2/4`.  Every favorable orientation
+is therefore positive and its `B`-magnetization `M_B` obeys
+`|M_B|>=c b`.  Any completion within `d=o(b)` retains this magnetization, and
+
+```math
+\boxed{
+R_2(z)\ge
+\left\{c b^{3/2}-Cn\right\}^2
+=\Omega(n^{9/4}).
+}
+\tag{10.937}
+```
+
+Thus, for every fixed-density `S` containing `B`, its favorable fiber avoids
+**all** `O(n^2)` centers even though at least half of the full cube consists
+of such centers, and even though `Q` and the operator norm have exactly the
+coarse exponents available for minimizers.  The construction is not an exact
+global minimizer.  It proves that a center theorem must use global signing
+minimality itself, not merely its known norm, value, abundance,
+child-optimality, or tolerance consequences.
+
+#### 10.85.4 Canonical harmonic centering is gauge; combined screening survives
+
+For the harmonic endpoint of §10.84.4, put
+`z_S=E_(nu_beta)e^(-F_S)`.  Direct summation over outside completions gives
+
+```math
+\boxed{
+z_S=\frac{2^{n-m}Z_S(\beta)}{Z_A(\beta)},\quad
+\alpha_S^*=-\log z_S,\quad
+h_S=\frac{e^{-F_S}}{z_S},\quad
+q(S)=\frac{z_S}{\sum_Tz_T},\quad
+f_\beta=\mathbb E_{S\sim q}h_S.
+}
+\tag{10.938}
+```
+
+Every component `h_S nu_beta` is now a normalized likelihood.  But selector
+constants have no optimization power: for arbitrary `alpha`,
+
+```math
+q_\alpha(S)e^{-[F_S(d)-\alpha_S]}
+=\frac{e^{-F_S(d)}}{\sum_Te^{-\alpha_T}}.
+```
+
+Thus the normalized likelihood, posterior, cut responses, oscillation, and
+Doob energy are gauge invariant.
+
+Let `pi_d(S)=q(S)h_S(d)/f_beta(d)`.  For a projective vertex flip, define the
+exact screened residual
+
+```math
+Z_{S,i}(d)=F_S(d)-F_S(d^i)
+=2\mathbf1_{\{i\in S\}}(b-\beta a).
+```
+
+Then
+
+```math
+\boxed{
+\begin{aligned}
+\chi_i(d)&=\log\frac{f_\beta(d^i)}{f_\beta(d)}
+=\log\mathbb E_{\pi_d}e^{Z_{S,i}(d)},\\
+\pi_{d^i}(S)&=\pi_d(S)e^{Z_{S,i}(d)-\chi_i(d)},\\
+\chi_i(d)&=\mathbb E_{\pi_d}Z_{S,i}(d)
++D(\pi_d\Vert\pi_{d^i}).
+\end{aligned}
+}
+\tag{10.939}
+```
+
+A selector-common shift of `Z` is invisible to posterior variance, KL, and
+Hellinger distance but changes `chi` by the full shift.  Therefore
+posterior-centered susceptibility alone cannot bound the parent endpoint;
+the signed drift--KL cancellation in (10.939) must be retained.  This parent
+flip posterior is also distinct from the still-needed adjacent-selector
+Hellinger comparison on the Johnson graph.
+
+Parameterize the oriented-cut space by its orientation bit and `n-1`
+projective vertex bits.  For every coordinate involution `T_j`, define
+
+```math
+Z_{S,j}(d)=\log\frac{h_S(T_jd)}{h_S(d)},\qquad
+\chi_j(d)=\log\frac{f_\beta(T_jd)}{f_\beta(d)}
+=\log\mathbb E_{\pi_d}e^{Z_{S,j}(d)}.
+```
+
+For a vertex bit, this is the screened residual in (10.939); for the
+orientation bit it is simply the displayed likelihood ratio.  With
+`mu_t proportional to nu_beta f_beta^t`, and for an unordered coordinate
+edge `e={d,T_jd}` set
+
+```math
+c_t(e)=\frac{\mu_t(d)\mu_t(T_jd)}{\mu_t(d)+\mu_t(T_jd)}.
+```
+
+The exact heat-bath energy is
+
+```math
+\mathcal E_t(\log f_\beta)
+=\sum_{j,e\in E_j}c_t(e)\chi_j(d)^2.
+```
+
+Use the summed-coordinate normalization
+
+```math
+\operatorname{Var}_{\mu_t}(g)
+\le C_{\rm HB}(\mu_t)\sum_j
+\mathbb E_{\mu_t}\operatorname{Var}_{\mu_t}(g\mid D_{-j}).
+```
+
+With this convention, (10.900) becomes the rigorous sufficient criterion
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+\le\int_0^1t\,C_{\rm HB}(\mu_t)
+\sum_{j,e\in E_j}c_t(e)
+\left[\log\mathbb E_{\pi_d}e^{Z_{S,j}(d)}\right]^2dt.
+}
+\tag{10.940}
+```
+
+Only a comparison for this particular endpoint log likelihood is necessary;
+a generic Poincare inequality remains blocked by (10.813).  The orientation
+edge is included separately, since the screened formula `2(b-beta a)` applies
+only to vertex flips.
+
+Finally, the proposed centered-flatness shortcut (10.921) is not a faithful
+or necessary proxy for entropy.  For a parent cut `d`, define
+
+```math
+\lambda(d)=\min_{|S|=3}\max_{z\text{ extending }d[S]}
+H_{S,d[S]}(z),
+\qquad
+U_\beta(d)=C(d)e^{-\beta\lambda(d)}(1+o(1)).
+```
+
+Exact enumeration for the order-six minimizer `A_6` and `m=3` gives
+
+| parent energy | outside height | leading coefficient | count |
+|---:|---:|---:|---:|
+| `10` | `4` | `2/3` | `12` |
+| `6` | `4` | `8/15` | `20` |
+| `-6` | `4` | `2/15` | `20` |
+| `-10` | `8` | `1` | `12` |
+
+and hence, as `beta` tends to infinity,
+
+```math
+\boxed{
+\operatorname{osc}\Phi_\beta
+=4\beta+\log(2/3)+o(1)\longrightarrow\infty,
+\qquad
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+=\frac53\left[\frac15+\frac45\log\frac45\right]
+e^{-4\beta}+o(e^{-4\beta})\longrightarrow0.
+}
+\tag{10.941}
+```
+
+This is a finite-parametric mechanism wall, not an asymptotic falsifier at
+`beta=Theta(n^(-1/2+c))`.  It proves that flatness is not entropy-comparable
+or necessary; it does not falsify (10.921) as a stronger project-scale
+sufficient target.  The combined screened response (10.940) remains viable.
+
+#### 10.85.5 Updated frontier
+
+Wave 32 preserves adaptive optimized principal restriction and its
+fractional row-good coset implementation as the leading route, while making
+its remaining structured lemma substantially more exact:
+
+- completion-forest distance is precisely the coherent-orientation
+  coordinate min-cut (10.923)--(10.924).  The open combinatorial input is no
+  longer vague pairwise agreement: it is a signing-minimizer cut-compression
+  theorem excluding more than `O(k_0)` coordinate-tagged conflict paths in
+  each of at most `n^eta` groups, for some fixed `eta<c_0`, on the required
+  likely event.  Edge capacity is indexed by the coordinate--tree-edge pair,
+  so paths tagged by different coordinates may reuse the same tree edge;
+
+- the strongest scalar successor is the center-star total-cost moment
+  (10.926), with (10.927) as a convenient stronger equal-radius form.  A
+  uniform `e^{-O(rL_0)}` lower bound proves the partial collision (10.907),
+  hence a power-saving restriction edge and convergence;
+
+- first moments and global center abundance cannot establish this.  The
+  normalized-degree route would require essentially `2^m` favorable labels
+  per selector, and independent abstract fibers fail the high-power moment.
+  More decisively, the planted-clique complete signing has the correct
+  `Q`/operator exponents and, for each fixed-density `S` containing the
+  planted block, its **actual favorable fiber** remains `Omega(n^(3/4))`
+  away from every low-row center.  Exact global minimality, not its currently
+  recorded coarse consequences, is indispensable;
+
+- degree-two Hamming noise merely contracts row-square excess by the
+  two-coordinate correlation.  At the relevant sublinear radii this is a
+  `1-o(1)` multiplier, and the conference block signing contains a full
+  high-row basin.  Noise smoothing should not be retried without a new
+  minimizer-specific local-field or conditional-fiber inequality;
+
+- matched parent interpolation remains the strongest independent route, but
+  selector constants are gauge and centered flatness is not a faithful or
+  necessary entropy proxy.  The viable local criterion is the exact
+  heat-bath screened energy (10.940), which must control the combined common
+  drift and posterior-KL cancellation; the adjacent-selector Hellinger bound
+  remains separate.  Flatness survives only as a stronger sufficient target
+  requiring a new project-scale mechanism;
+
+- constant shortfall, conditional row-Laplace alignment, and global
+  replacement receive no positive asymptotic evidence.  No convergence proof
+  or asymptotic counterexample is known.  Because the favorable-fiber signing
+  wall and the exact-minimizer flatness wall decisively remove two proposed
+  shortcuts, `STEERING.md` is refreshed at this boundary.  Wave 33 should
+  attack a global-minimality inequality forbidding localized quadratic modes,
+  attack the center-star moment through cross-selector correlation rather
+  than degrees, and retain one combined screened-response route.
