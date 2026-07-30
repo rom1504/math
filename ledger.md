@@ -38604,3 +38604,88 @@ nonexistence at order 22 are concrete warnings, not yet a scalable
 falsification. Conference completion, exact bridge tests, a genuinely
 applicable augmented-code theorem, and genuine nonconvergence remain the
 ranked alternatives.
+
+### 10.120 A scalable square-field conference audit
+
+#### 10.120.1 Exact cap theorem for `PC(r^2+1)`
+
+Let `r` be an odd prime power, put `F=GF(r^2)`, and let `C` be the symmetric
+Paley conference matrix of order `N=r^2+1`. Then
+
+~~~math
+\operatorname{cap}(C)=\frac{r(r^2+1)}2,
+\qquad
+\frac{\operatorname{cap}(C)}{N^{3/2}}
+=\frac12\sqrt{1-\frac1N}.                            \tag{10.1443}
+~~~
+
+Here is a self-contained proof. Write `F=GF(r)(t)` using any quadratic
+nonresidue defining the extension, and let `chi` be the quadratic character
+of `F`. For a fixed affine line parallel to `GF(r)`, the character sums are
+
+~~~math
+\sum_{a\in GF(r)}\chi(a+ht)=
+\begin{cases}r-1,&h=0,\\-1,&h\ne0.\end{cases}        \tag{10.1444}
+~~~
+
+The first case holds because every nonzero subfield element is a square in
+the quadratic extension. The second is the standard elementary quadratic
+character sum, equivalently obtained by applying the base-field character to
+the norm `a^2-dh^2`.
+
+Choose any `f:GF(r)->{+/-1}` with `sum_b f(b)=1`, set the infinity coordinate
+to 1, and set `x_(a+bt)=f(b)`. Equation (10.1444) gives, at every finite
+coordinate,
+
+~~~math
+1+(r-1)f(b)-\sum_{c\ne b}f(c)=rf(b),                 \tag{10.1445}
+~~~
+
+while the infinity coordinate is also `r`. Hence `Cx=rx`. The conference
+identity `C^2=r^2I` gives the matching spectral upper bound
+`|x^T Cx|/2<=rN/2`, proving (10.1443). This is a **proved scalable family**.
+It approaches the existing constant `1/2` from below and therefore supplies
+neither a strict low subsequence nor any separation for `M_N`.
+
+#### 10.120.2 Exhaustive order-26 and restriction profiles
+
+`conference_prime_square.py` constructs `GF(25)=GF(5)[t]/(t^2-2)`, verifies
+`C_26^2=25I`, and calls the compiled Gray-code evaluator
+`exact_fixed_signing_gray.cpp`. The latter visits all projective Boolean
+states with constant memory. The exact fixed-signing results are
+
+~~~math
+\operatorname{cap}(C_{26})=65,\qquad
+\operatorname{cap}(C_{26}-v)=60,\qquad
+\operatorname{cap}(C_{26}-\{u,v\})=56.               \tag{10.1446}
+~~~
+
+All `2^25`, `2^24`, and `2^23` projective states were checked for the three
+displayed representatives. In addition, all 26 one-vertex restrictions have
+cap 60 and all 325 two-vertex restrictions have cap 56. This is an
+**exhaustive exact finite computation**, with source, logs, ordered-record
+hashes, matrices, and extremizers preserved.
+
+The extremizers exhibit exact nesting. All 130 projective positive and all
+130 negative extremizers of `C_26` restrict to the corresponding extremizers
+after deleting vertex 0. After deleting vertices 0 and 1, exactly 78 of the
+130 distinct restricted positive parent extremizers are the 78 positive child
+extremizers, and likewise for the negative side. The same pattern at order 10
+has counts `6 -> 6 -> 4`. Thus the cap loss in this family is governed by
+which parent Boolean eigenvectors survive the deletion, a concrete
+restriction-profile statistic rather than just the child energy histogram.
+
+#### 10.120.3 Updated frontier
+
+The square-field theorem supplies a rigorous scalable structural model and a
+larger exact fixed-signing certificate, but no new exact value of `M_n` and no
+asymptotic improvement. In fact it rules out the naive hope that raw
+square-field conference parents themselves produce a constant strictly below
+`1/2`: they attain their spectral upper bound exactly.
+
+The leading target therefore remains a restriction-profile/deep-hole
+amalgamation theorem. The most concrete next computation is to follow the
+order-26 restriction profile farther down and test whether deletion can
+create a genuinely favorable low-cap child before selecting a bridge state.
+The mathematical obligation remains a bounded-complexity rule with summable
+defect; merely inheriting a conference eigenvector is not enough.
