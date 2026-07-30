@@ -26,7 +26,13 @@ from exact_mn_milp import exact_profile, projective_spins, stable_matrix_hash
 
 def load_matrix(path: Path) -> np.ndarray:
     payload = json.loads(path.read_text())
-    key = "matrix" if "matrix" in payload else "parent_matrix"
+    key = (
+        "matrix"
+        if "matrix" in payload
+        else "parent_matrix"
+        if "parent_matrix" in payload
+        else "conference_matrix"
+    )
     matrix = np.asarray(payload[key], dtype=np.int8)
     if not np.array_equal(matrix, matrix.T) or np.any(np.diag(matrix)):
         raise ValueError(f"invalid signing matrix in {path}")

@@ -1,0 +1,86 @@
+{
+  "classes": [
+    {
+      "canonical_orbit_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "class": 0,
+      "enumerated_orbit_union_size": 2,
+      "representative_matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "representative_matrix_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "representative_profile": {
+        "M": 3,
+        "P": 3,
+        "Q": 1,
+        "bottom_spins": [
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "eigenvalues": [
+          -1.0000000000000004,
+          -1.0,
+          1.9999999999999998
+        ],
+        "energy_histogram": {
+          "-1": 3,
+          "3": 1
+        },
+        "projective_bottom_count": 3,
+        "projective_top_count": 1,
+        "row_sums": [
+          2,
+          2,
+          2
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "root_gauged_labeled_count": 2,
+      "self_complementary": false
+    }
+  ],
+  "classification": "exhaustive exact finite enumeration",
+  "conference_class_ids": [
+    "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995"
+  ],
+  "conference_splits_cover_all_minimizer_classes": true,
+  "minimizing_signing_count": 2,
+  "normalization": "root switching gauge fixes all 2 root edges to +1",
+  "order": 3,
+  "root_gauged_signing_count": 2,
+  "schema": "quadratic-signing-minimizer-orbits-v1",
+  "signed_permutation_and_global_sign_class_count": 1,
+  "target_cap": 3
+}

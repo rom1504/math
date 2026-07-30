@@ -1,0 +1,95 @@
+{
+  "active_constraint_count": {
+    "distinct_count": 1,
+    "maximum": 9.0,
+    "mean": 9.0,
+    "minimum": 9.0
+  },
+  "block_equivalence_type_counts": {
+    "class0+,class0-": 5,
+    "class0-,class0+": 5
+  },
+  "bridge_singular_spectrum_counts": {
+    "2,2,1": 10
+  },
+  "child_cap": 3,
+  "child_order": 3,
+  "class_and_bridge_spectrum_counts": {
+    "class0,class0|2,2,1": 10
+  },
+  "class_orbit_sizes": [
+    {
+      "canonical_orbit_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "intersection": 0,
+      "minus": 1,
+      "plus": 1
+    }
+  ],
+  "classification": "exhaustive exact finite structural analysis",
+  "exact_child_partition_count": 10,
+  "margin_correlation": {
+    "distinct_count": 1,
+    "maximum": -0.8666666666666667,
+    "mean": -0.8666666666666668,
+    "minimum": -0.8666666666666667
+  },
+  "matrix_key": "matrix",
+  "parent_cap": 5,
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968",
+  "parent_order": 6,
+  "representative": "computations/results/exact_m3.json",
+  "schema": "quadratic-signing-equal-split-partition-analysis-v1",
+  "signed_permutation_class_count": 1,
+  "source": "computations/results/exact_m6.json",
+  "unordered_partition_count": 10
+}

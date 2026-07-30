@@ -1,0 +1,125 @@
+{
+  "classification": "exhaustive exact finite structural comparison",
+  "conclusion": "The full one-body Boolean energy histogram does not determine the universal-double cap; spectral and principal-restriction data differ.",
+  "proved_shared_energy_histogram": true,
+  "records": [
+    {
+      "class": 0,
+      "class_size": 1680,
+      "energy_histogram": {
+        "-10": 4,
+        "-2": 16,
+        "-4": 16,
+        "-6": 12,
+        "-8": 10,
+        "0": 12,
+        "10": 4,
+        "2": 16,
+        "4": 16,
+        "6": 12,
+        "8": 10
+      },
+      "matrix_sha256": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+      "principal_restriction_cap_histograms": {
+        "2": {
+          "1": 28
+        },
+        "3": {
+          "3": 56
+        },
+        "4": {
+          "4": 60,
+          "6": 10
+        },
+        "5": {
+          "4": 24,
+          "6": 24,
+          "8": 8
+        },
+        "6": {
+          "5": 4,
+          "7": 12,
+          "9": 12
+        },
+        "7": {
+          "9": 8
+        },
+        "8": {
+          "10": 1
+        }
+      },
+      "spectrum": [
+        -3.60555127546399,
+        -2.23606797749979,
+        -2.2360679774997894,
+        -2.236067977499788,
+        2.236067977499787,
+        2.2360679774997894,
+        2.23606797749979,
+        3.60555127546399
+      ],
+      "universal_double_cap": 40,
+      "universal_double_matrix_sha256": "200bb2906a127df52a560bf945d03b389611c24344a0d27f037996c57e4c88de",
+      "universal_double_two_thirds_defect": 2.4128932856259055
+    },
+    {
+      "class": 1,
+      "class_size": 2520,
+      "energy_histogram": {
+        "-10": 4,
+        "-2": 16,
+        "-4": 16,
+        "-6": 12,
+        "-8": 10,
+        "0": 12,
+        "10": 4,
+        "2": 16,
+        "4": 16,
+        "6": 12,
+        "8": 10
+      },
+      "matrix_sha256": "ccfdf94157d2f36afc5d9909aa85526110e5057126a1882144945df0c1cb6f96",
+      "principal_restriction_cap_histograms": {
+        "2": {
+          "1": 28
+        },
+        "3": {
+          "3": 56
+        },
+        "4": {
+          "4": 60,
+          "6": 10
+        },
+        "5": {
+          "4": 16,
+          "6": 40
+        },
+        "6": {
+          "7": 24,
+          "9": 4
+        },
+        "7": {
+          "9": 8
+        },
+        "8": {
+          "10": 1
+        }
+      },
+      "spectrum": [
+        -3.000000000000001,
+        -3.0,
+        -3.0,
+        -1.0,
+        1.000000000000002,
+        2.9999999999999973,
+        3.0000000000000004,
+        3.000000000000001
+      ],
+      "universal_double_cap": 32,
+      "universal_double_matrix_sha256": "2e47c3408a9fb11b3206d8f21272500dd54b75e8ea9b5b499c5f55fe592a111a",
+      "universal_double_two_thirds_defect": 0.7961907319334269
+    }
+  ],
+  "schema": "quadratic-signing-m8-class-composition-comparison-v1",
+  "source": "computations/results/m8_minimizer_orbits.json"
+}

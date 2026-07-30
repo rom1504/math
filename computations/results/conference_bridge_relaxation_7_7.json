@@ -1,0 +1,40 @@
+{
+  "actual_parent_cap": 21,
+  "boolean_state_pair_count": 4096,
+  "bounds": {
+    "first_order_anti_intertwining": {
+      "additive_loss_above_actual": 8.446630604201715,
+      "parent_cap_bound": 29.446630604201715,
+      "strictly_improved_pair_count": 126,
+      "zero_denominator_pair_count": 988
+    },
+    "one_sided_norm": {
+      "additive_loss_above_actual": 10.621416870348583,
+      "parent_cap_bound": 31.621416870348583
+    }
+  },
+  "bridge_singular_values": [
+    3.5615528128088303,
+    2.8284271247461903,
+    2.82842712474619,
+    2.82842712474619,
+    2.8284271247461894,
+    2.0000000000000004,
+    0.5615528128088306
+  ],
+  "classification": "proved pointwise inequalities and exhaustive finite evaluation",
+  "conclusion": "The conference identities alone, relaxed through norms and one anti-intertwining moment, do not recover the Boolean cap.",
+  "conference_scale": 13,
+  "orders": {
+    "child": 7,
+    "parent": 14
+  },
+  "parent_matrix_sha256": "3d93e802d1d0fbe3d34a91f2884c3016c5424119e3a2461e079d8bbdaf49ad17",
+  "schema": "quadratic-signing-conference-bridge-relaxation-audit-v1",
+  "source": "computations/results/transported_conference_7_7.json",
+  "verified_block_identities": {
+    "A2_plus_RRT": true,
+    "AR_plus_RB": true,
+    "B2_plus_RTR": true
+  }
+}

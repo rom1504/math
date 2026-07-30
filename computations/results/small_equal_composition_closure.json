@@ -1,0 +1,92 @@
+{
+  "classification": "exhaustive exact finite class enumeration and parent-partition verification",
+  "records": [
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 3,
+      "child_order": 3,
+      "class_source": "computations/results/m3_minimizer_orbits.json",
+      "common_parent_cap": 5,
+      "common_parent_known_globally_optimal": true,
+      "common_parent_order": 6,
+      "exact_child_partitions_in_parent": 10,
+      "minimizer_class_count": 1,
+      "partition_source": "computations/results/exact_parent_3_3_partition_analysis.json",
+      "root_gauged_minimizer_count": 2,
+      "two_thirds_defect": -1.2361499078909421
+    },
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 4,
+      "child_order": 4,
+      "class_source": "computations/results/m4_minimizer_orbits.json",
+      "common_parent_cap": 10,
+      "common_parent_known_globally_optimal": true,
+      "common_parent_order": 8,
+      "exact_child_partitions_in_parent": 30,
+      "minimizer_class_count": 1,
+      "partition_source": "computations/results/exact_parent_4_4_partition_analysis.json",
+      "root_gauged_minimizer_count": 6,
+      "two_thirds_defect": -0.39809536596671435
+    },
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 4,
+      "child_order": 5,
+      "class_source": "computations/results/m5_minimizer_orbits.json",
+      "common_parent_cap": 13,
+      "common_parent_known_globally_optimal": true,
+      "common_parent_order": 10,
+      "exact_child_partitions_in_parent": 20,
+      "minimizer_class_count": 1,
+      "partition_source": "computations/results/exact_parent_5_5_partition_analysis.json",
+      "root_gauged_minimizer_count": 12,
+      "two_thirds_defect": 0.4890906140993785
+    },
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 5,
+      "child_order": 6,
+      "class_source": "computations/results/m6_minimizer_orbits.json",
+      "common_parent_cap": 18,
+      "common_parent_known_globally_optimal": true,
+      "common_parent_order": 12,
+      "exact_child_partitions_in_parent": 7,
+      "minimizer_class_count": 1,
+      "partition_source": "computations/results/conference_double_6_6_partition_analysis.json",
+      "root_gauged_minimizer_count": 12,
+      "two_thirds_defect": 1.0202499788942587
+    },
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 9,
+      "child_order": 7,
+      "class_source": "computations/results/m7_minimizer_orbits.json",
+      "common_parent_cap": 21,
+      "common_parent_known_globally_optimal": true,
+      "common_parent_order": 14,
+      "exact_child_partitions_in_parent": 624,
+      "minimizer_class_count": 3,
+      "partition_source": "computations/results/conference_7_7_partition_analysis.json",
+      "root_gauged_minimizer_count": 3240,
+      "two_thirds_defect": -1.0418348108242048
+    },
+    {
+      "all_minimizer_classes_covered": true,
+      "child_cap": 10,
+      "child_order": 8,
+      "class_source": "computations/results/m8_minimizer_orbits.json",
+      "common_parent_cap": 32,
+      "common_parent_known_globally_optimal": false,
+      "common_parent_order": 16,
+      "exact_child_partitions_in_parent": 11,
+      "minimizer_class_count": 2,
+      "partition_source": "computations/results/universal_double_8_8_class1_partition_analysis.json",
+      "root_gauged_minimizer_count": 4200,
+      "two_thirds_defect": 0.7961907319334269
+    }
+  ],
+  "schema": "quadratic-signing-small-equal-composition-closure-v1",
+  "scope": "The parents are globally optimal through n=7; at n=8 only the explicit cap-32 upper bound is claimed.",
+  "statement": "For every n=3,...,8, one saved order-2n parent contains, up to switching, permutation, and global sign, every exact order-n minimizer class on one half and an exact minimizer on the other."
+}

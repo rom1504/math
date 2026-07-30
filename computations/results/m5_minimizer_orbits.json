@@ -1,0 +1,161 @@
+{
+  "classes": [
+    {
+      "canonical_orbit_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "class": 0,
+      "enumerated_orbit_union_size": 12,
+      "representative_matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "representative_matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+      "representative_profile": {
+        "M": 4,
+        "P": 4,
+        "Q": 4,
+        "bottom_spins": [
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "eigenvalues": [
+          -2.23606797749979,
+          -2.2360679774997894,
+          3.469446951953614e-16,
+          2.2360679774997894,
+          2.23606797749979
+        ],
+        "energy_histogram": {
+          "-4": 5,
+          "0": 6,
+          "4": 5
+        },
+        "projective_bottom_count": 5,
+        "projective_top_count": 5,
+        "row_sums": [
+          4,
+          2,
+          0,
+          2,
+          0
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "root_gauged_labeled_count": 12,
+      "self_complementary": true
+    }
+  ],
+  "classification": "exhaustive exact finite enumeration",
+  "conference_class_ids": [
+    "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f"
+  ],
+  "conference_splits_cover_all_minimizer_classes": true,
+  "minimizing_signing_count": 12,
+  "normalization": "root switching gauge fixes all 4 root edges to +1",
+  "order": 5,
+  "root_gauged_signing_count": 64,
+  "schema": "quadratic-signing-minimizer-orbits-v1",
+  "signed_permutation_and_global_sign_class_count": 1,
+  "target_cap": 4
+}

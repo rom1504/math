@@ -1,0 +1,92 @@
+{
+  "classes": [
+    {
+      "canonical_orbit_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "class": 0,
+      "enumerated_orbit_union_size": 6,
+      "representative_matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "representative_matrix_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "representative_profile": {
+        "M": 4,
+        "P": 4,
+        "Q": 4,
+        "bottom_spins": [
+          [
+            1,
+            1,
+            -1,
+            -1
+          ]
+        ],
+        "eigenvalues": [
+          -2.2360679774997894,
+          -0.9999999999999998,
+          0.9999999999999996,
+          2.2360679774997894
+        ],
+        "energy_histogram": {
+          "-2": 2,
+          "-4": 1,
+          "0": 2,
+          "2": 2,
+          "4": 1
+        },
+        "projective_bottom_count": 1,
+        "projective_top_count": 1,
+        "row_sums": [
+          3,
+          3,
+          1,
+          1
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "root_gauged_labeled_count": 6,
+      "self_complementary": true
+    }
+  ],
+  "classification": "exhaustive exact finite enumeration",
+  "conference_class_ids": [
+    "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f"
+  ],
+  "conference_splits_cover_all_minimizer_classes": true,
+  "minimizing_signing_count": 6,
+  "normalization": "root switching gauge fixes all 3 root edges to +1",
+  "order": 4,
+  "root_gauged_signing_count": 8,
+  "schema": "quadratic-signing-minimizer-orbits-v1",
+  "signed_permutation_and_global_sign_class_count": 1,
+  "target_cap": 4
+}

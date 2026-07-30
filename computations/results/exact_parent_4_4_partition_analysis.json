@@ -1,0 +1,132 @@
+{
+  "active_constraint_count": {
+    "distinct_count": 2,
+    "maximum": 8.0,
+    "mean": 7.6,
+    "minimum": 7.0
+  },
+  "block_equivalence_type_counts": {
+    "class0+/-,class0+/-": 30
+  },
+  "bridge_singular_spectrum_counts": {
+    "2,2,2,2": 3,
+    "2.61312593,2.61312593,1.0823922,1.0823922": 12,
+    "2.732050808,2,2,0.7320508076": 12,
+    "2.828427125,2.828427125,0,0": 3
+  },
+  "child_cap": 4,
+  "child_order": 4,
+  "class_and_bridge_spectrum_counts": {
+    "class0,class0|2,2,2,2": 3,
+    "class0,class0|2.61312593,2.61312593,1.0823922,1.0823922": 12,
+    "class0,class0|2.732050808,2,2,0.7320508076": 12,
+    "class0,class0|2.828427125,2.828427125,0,0": 3
+  },
+  "class_orbit_sizes": [
+    {
+      "canonical_orbit_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "intersection": 6,
+      "minus": 6,
+      "plus": 6
+    }
+  ],
+  "classification": "exhaustive exact finite structural analysis",
+  "exact_child_partition_count": 30,
+  "margin_correlation": {
+    "distinct_count": 4,
+    "maximum": -0.3372554983337556,
+    "mean": -0.3799281564828419,
+    "minimum": -0.43708545856153985
+  },
+  "matrix_key": "matrix",
+  "parent_cap": 10,
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1,
+      0,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix_sha256": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+  "parent_order": 8,
+  "representative": "computations/results/exact_m4.json",
+  "schema": "quadratic-signing-equal-split-partition-analysis-v1",
+  "signed_permutation_class_count": 1,
+  "source": "computations/results/exact_m8.json",
+  "unordered_partition_count": 35
+}

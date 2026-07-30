@@ -38297,3 +38297,198 @@ an optimizer-independent transport description and unusually favorable defect,
 but no scalable selection lemma. The next composition work must isolate a
 deterministic invariant that predicts the anticorrelation in (10.1430), rather
 than merely re-solving the original parent optimization.
+
+### 10.118 Fourth computational--composition checkpoint: minimizer classes and deep holes
+
+#### 10.118.1 Exhaustive equal-order composition closure through order 8
+
+`enumerate_minimizer_orbits.py` exhausts every root-gauged signing and then
+classifies the minimizers under switching, permutation, and global negation.
+`analyze_equal_split_partitions.py` independently exhausts the equal splits of
+a fixed parent. The combined verifier
+`certify_small_equal_composition_closure.py` gives:
+
+| child `n` | root-gauged signings | minimizers | classes | common parent cap | parent globally optimal? | `2/3`-defect |
+|---:|---:|---:|---:|---:|:---:|---:|
+| 3 | 2 | 2 | 1 | 5 | yes | `-1.236150` |
+| 4 | 8 | 6 | 1 | 10 | yes | `-0.398095` |
+| 5 | 64 | 12 | 1 | 13 | yes | `+0.489091` |
+| 6 | 1,024 | 12 | 1 | 18 | yes | `+1.020250` |
+| 7 | 32,768 | 3,240 | 3 | 21 | yes | `-1.041835` |
+| 8 | 2,097,152 | 4,200 | 2 | 32 | not claimed | `+0.796191` |
+
+Thus the following is an **exhaustive exact finite theorem**: for every
+`3<=n<=8`, one saved order-`2n` signing contains, up to the listed
+equivalences, every exact order-`n` minimizer class on one half and an exact
+minimizer on the other. Through `n=7` the common parent itself attains
+`M_(2n)`; at `n=8` only its exhaustively verified cap 32 is asserted.
+
+At order 7 the fixed conference parent realizes all three minimizer classes,
+always pairing a class with its global negative. Its 624 exact `7+7` splits
+fall into class counts `364,78,182`; their three bridge singular spectra have
+margin correlations between `-0.315822` and `-0.290193`. This strengthens the
+earlier single-partition observation: the anticorrelation is not confined to
+one exceptional minimizer orbit.
+
+This finite closure is real composition evidence, but it is not a scalable
+inequality. The enumeration cost is exponential, and the statement currently
+selects the bridge by finding the parent rather than by a rule whose defect can
+be bounded.
+
+#### 10.118.2 Order 8 separates energy histograms from composability
+
+The 4,200 root-gauged order-8 minimizers form exactly two classes of sizes
+1,680 and 2,520. Both are self-complementary and have the identical complete
+Boolean energy histogram
+
+~~~text
+energy: -10 -8 -6 -4 -2 0 2 4 6 8 10
+count:     4 10 12 16 16 12 16 16 12 10 4.
+~~~
+
+Nevertheless their spectra are respectively
+
+~~~math
+\{\pm\sqrt{13},(\pm\sqrt5)^3\},
+\qquad \{(\pm3)^3,\pm1\},                              \tag{10.1432}
+~~~
+
+and their universal doubles (10.1417) have caps 40 and 32. The exact principal
+restriction profiles explain part of the split. At size 5, class 0 has cap
+histogram `{4:24,6:24,8:8}`, while class 1 has `{4:16,6:40}`. At size 6 the
+histograms are `{5:4,7:12,9:12}` and `{7:24,9:4}`. Therefore even the full
+one-body Boolean energy histogram does not determine composition quality;
+principal-restriction or comparably joint state is indispensable.
+
+Seeded local search did not improve the class-1 doubled cap 32. Three
+900-second CP-SAT decisions for cap 30, one for each unordered class pair,
+returned `UNKNOWN`. These are **heuristic and inconclusive computational
+observations**, not cap-30 falsifiers. They do not change the rigorous cap-32
+upper witness.
+
+#### 10.118.3 What the conference identities lose
+
+For a `7+7` split of the order-14 conference matrix, write
+
+~~~math
+C=\begin{pmatrix}A&R\\R^{\mathsf T}&B\end{pmatrix}.
+~~~
+
+Exact multiplication proves
+
+~~~math
+A^2+RR^{\mathsf T}=13I,\quad
+B^2+R^{\mathsf T}R=13I,\quad AR+RB=0.                 \tag{10.1433}
+~~~
+
+`conference_bridge_relaxation_audit.py` checks all 4,096 state pairs. The
+one-sided Cauchy bound derived from the first two identities gives parent cap
+at most `31.621417...`, versus the true 21. Decomposing
+`Ax=alpha x+u`, `By=beta y+v` and using the anti-intertwining identity improves
+the pointwise bound on 126 pairs but only lowers the global result to
+`29.446631...`. These are **proved inequalities with exhaustive finite
+evaluation**. Scalar norm control and one intertwining moment discard 8.45 or
+more units at the smallest decisive example; any conference proof needs
+higher joint phase/restriction information.
+
+#### 10.118.4 Exact augmented-cut-code mapping
+
+Let `E_n=binom(n,2)`, let `Cut(K_n)` be the binary cut code, and define the
+self-complementary augmented code
+
+~~~math
+\mathcal C_n^+=\operatorname{Cut}(K_n)+\langle\mathbf1\rangle
+\subseteq\mathbb F_2^{E_n}.                            \tag{10.1434}
+~~~
+
+Encode negative signing edges by a word `a`. Switching by a vertex set adds a
+cut word, while the extra all-one word complements every edge and accounts
+exactly for the absolute value. If `Q(a)` is the cap of this fixed signing,
+then direct Hamming-weight algebra gives the **proved identity**
+
+~~~math
+Q(a)=E_n-2d(a,\mathcal C_n^+),\qquad
+M_n=E_n-2\rho(\mathcal C_n^+).                         \tag{10.1435}
+~~~
+
+The code has dimension `n`; its dual is the even-weight subcode of the cycle
+space of `K_n`. `verify_augmented_cut_code_mapping.py` explicitly enumerates
+all codewords against the saved witnesses. The exact values through order 14
+give covering radii
+
+~~~text
+n:       3 4 5 6 7 8  9 10 11 12 13 14
+rho(C+): 0 1 3 5 6 9 12 16 19 24 29 35.
+~~~
+
+Solé and Zaslavsky's [*A Coding Approach to Signed
+Graphs*](https://people.math.binghamton.edu/zaslav/Tpapers/cas.sidma1994.pdf)
+proves the standard switching-class/cut-code correspondence and identifies one-sided maximum
+frustration with the ordinary cut-code covering radius. Equation (10.1435)
+checks the normalization needed here: our two-sided absolute maximum uses the
+**augmented** code, not the ordinary cut code, cycle code, or one-sided
+frustration quantity. General sphere-covering, strength, Reed--Muller, and
+amalgamated-direct-sum results inspected so far either have the wrong code or
+the wrong inequality direction; none removes a project obligation.
+
+The mapping does give an exact composition target. For a deep hole `a` of
+`C_m^+`, define its nonnegative excess profile
+
+~~~math
+g_a(b,u)=d(a,c_m(b,u))-\rho(\mathcal C_m^+),           \tag{10.1436}
+~~~
+
+where `c_m(b,u)` is the codeword `b+u_i+u_j`. Define `g_d` similarly for an
+order-`n` deep hole. A bridge word `z` on the `mn` cross edges certifies a
+parent cap at most `M_m+M_n+2Delta` exactly when
+
+~~~math
+d(z,r(b,u,v))+g_a(b,u)+g_d(b,v)
+\ge \frac{mn}{2}-\Delta                               \tag{10.1437}
+~~~
+
+for every `b,u,v`, where the cross codeword is
+`r(b,u,v)_(ij)=b+u_i+v_j`. To obtain (10.1406), it is enough to prove
+(10.1437) with
+
+~~~math
+2\Delta\le
+\bigl(M_m^{2/3}+M_n^{2/3}+e(m+n)\bigr)^{3/2}-M_m-M_n  \tag{10.1438}
+~~~
+
+and `e` satisfying (10.1407). Equations (10.1436)--(10.1438) are a precise
+deep-hole amalgamation formulation of the state-dependent bridge problem.
+They do **not** yet reduce its difficulty: without a theorem constructing `z`,
+they are equivalent bookkeeping rather than primary progress.
+
+#### 10.118.5 New adjacent-order upper intervals
+
+Exhaustive optimization over all 8,192 one-vertex rows extending the exact
+order-14 conference minimizer gives cap 27, and extending its first best row
+over all 16,384 choices gives cap 32. Hence
+
+~~~math
+21\le M_{15}\le27,\qquad22\le M_{16}\le32.            \tag{10.1439}
+~~~
+
+The lower bounds use monotonicity, `M_14=21`, and even energy parity at order
+16. Every one of the 816 order-15 restrictions of the order-18 Paley
+conference signing has cap 29; every one of its 153 order-16 restrictions has
+cap 32. These are **exhaustive finite facts**. The extension improves the
+order-15 conference-restriction bound but supplies no matching lower bound.
+
+#### 10.118.6 Updated frontier
+
+The asymptotic interval remains (10.1416), and the exact frontier through
+order 14 remains (10.1431). The strongest new mathematical target is a
+restriction-profile/deep-hole amalgamation theorem of the form
+(10.1437)--(10.1438). This is a sharpened specification of the existential
+state-dependent bridge route, not a claim that coding vocabulary solved it.
+
+Positive evidence is the exhaustive common-parent closure for every minimizer
+class through order 8 and the structured conference anticorrelation across all
+three order-7 classes. The principal obstruction is now equally explicit:
+identical child energy histograms can have very different doubled defects, and
+norm plus first-moment conference identities lose order-one fractions even at
+order 7. A viable theorem must propagate restriction/joint-state information
+at a complexity and defect that remain sublinear on geometric scales.

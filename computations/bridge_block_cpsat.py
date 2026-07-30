@@ -30,9 +30,14 @@ from ortools.sat.python import cp_model
 from exact_mn_milp import exact_profile, projective_spins, stable_matrix_hash
 
 
-def load_matrix(path: Path) -> np.ndarray:
+def load_matrix(path: Path, class_index: int | None = None) -> np.ndarray:
     payload = json.loads(path.read_text())
-    matrix = np.asarray(payload["matrix"], dtype=np.int8)
+    matrix_data = (
+        payload["matrix"]
+        if class_index is None
+        else payload["classes"][class_index]["representative_matrix"]
+    )
+    matrix = np.asarray(matrix_data, dtype=np.int8)
     if not np.array_equal(matrix, matrix.T) or np.any(np.diag(matrix)):
         raise ValueError(f"invalid signing matrix in {path}")
     return matrix
@@ -93,6 +98,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("child_a", type=Path)
     parser.add_argument("child_b", type=Path)
+    parser.add_argument("--child-a-class", type=int)
+    parser.add_argument("--child-b-class", type=int)
     parser.add_argument("--sign-b", type=int, choices=(-1, 1), default=1)
     parser.add_argument("--decision-cap", type=int)
     parser.add_argument("--time-limit", type=float, default=600.0)
@@ -100,8 +107,8 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
-    a = load_matrix(args.child_a)
-    b = load_matrix(args.child_b)
+    a = load_matrix(args.child_a, args.child_a_class)
+    b = load_matrix(args.child_b, args.child_b_class)
     model, variables, cap = build_model(a, b, args.sign_b, args.decision_cap)
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = args.time_limit
@@ -124,6 +131,8 @@ def main() -> int:
         "classification": "solver-certified computation; no standalone proof object",
         "child_a": str(args.child_a),
         "child_b": str(args.child_b),
+        "child_a_class": args.child_a_class,
+        "child_b_class": args.child_b_class,
         "sign_b": args.sign_b,
         "orders": [len(a), len(b)],
         "mode": "decision" if args.decision_cap is not None else "optimization",

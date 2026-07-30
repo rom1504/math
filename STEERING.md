@@ -1,14 +1,12 @@
 # Strategic steering
 
-Evidence cutoff: the third substantial computational--composition checkpoint
-(2026-07-30), including exact certified values through order 14. Status:
+Evidence cutoff: the fourth computational--composition checkpoint (2026-07-30), including minimizer classes and the exact code mapping. Status:
 **computational--composition campaign active**. This is a new sustained
 campaign architecture, not a return to the prior short-wave sequence.
 
 ## User-stated objective and workflow directives
 
-The research objective is to determine whether `M_n/n^(3/2)` converges. The
-conjectural value `1/2` is not an additional user objective.
+The research objective is to determine whether `M_n/n^(3/2)` converges. The conjectural value `1/2` is not an additional user objective.
 
 The user has explicitly authorized research to resume through a sustained
 computational--composition campaign. Its three connected tracks are exact
@@ -25,9 +23,9 @@ choice of a precise composition target are agent-authored judgments.
 
 ## Agent-authored campaign assessment
 
-The leading route is an existential **state-dependent bridge theorem**.  For
-`b_n=M_n^(2/3)`, the exact sufficient result is to choose suitable
-near-minimizing representatives at every pair of comparable orders and a
+The leading route is now the more precise **restriction-profile/deep-hole
+amalgamation theorem**. For `b_n=M_n^(2/3)`, the exact sufficient result is to
+choose suitable near-minimizing representatives at comparable orders and a
 bridge with
 
 ~~~math
@@ -35,36 +33,36 @@ b_{m+n}\le b_m+b_n+e(m+n),
 \qquad \sum_{j\ge1}\frac{e(2^jk)}{2^jk}\longrightarrow0.
 ~~~
 
-Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge. The
-cap-20 `6+7` bridge has `2/3`-defect `0.117296...`; its conference
-completion has 624 exact `7+7` child partitions and defect `-1.041835...`.
-Across all 27 earlier feasible witnesses, optimized cross terms are negatively
-correlated with aligned internal energy even where an iid bridge has many
-expected violations.  This makes the missing deterministic anticorrelation
-mechanism concrete, but not proved uniformly.
+Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge. In the
+exact coding formulation, `M_n=binom(n,2)-2 rho(C_n^+)`, where `C_n^+` is the
+cut code augmented by the all-one edge word. The required lemma is to
+amalgamate two deep holes with a cross word satisfying ledger (10.1437), with
+loss bounded by (10.1438) for an `e` having the displayed geometric sum. This
+is why the lemma would prove convergence.
 
-The exact finite frontier has advanced to `M_13=20` and `M_14=21` by an
-exhaustive six-case CP-SAT symmetry split and explicit witnesses. The conference
-`7+7` bridge transports deterministically to the saved blocks `E,-E`; its 156
-active constraints coexist with about 156.44 expected iid violations. This is
-strong finite evidence for structured anticorrelation, but it does not change
-the preferred theorem or the asymptotic frontier.
+Exhaustive evidence is positive but finite. For every `3<=n<=8`, one saved
+order-`2n` parent contains every exact order-`n` minimizer class on one half
+and an exact minimizer on the other; the parent is globally optimal through
+`n=7` and has cap 32 at `n=8`. At order 7 all three classes occur in the same
+conference parent with negative bridge-margin correlation. Exact computation
+also gives `M_13=20`, `M_14=21`, and upper intervals through order 16.
 
-Conference doubling/completion is the strongest structured testbed, not the
-leading theorem by itself.  It gives exact or bounded members through parent
-orders 12, 28, 36, and exploratory order 196, but it neither selects arbitrary
-near-minimizers nor lands arbitrary orders.  The universal equal-order double
-has small finite `2/3`-defects through order 20 but retains an uncontrolled
-principal restriction and equal-order doubling alone cannot prove global
-convergence.
+The main obstruction is now sharp: the two order-8 classes have identical
+complete Boolean energy histograms but universal-double caps 40 and 32;
+principal restrictions and spectra distinguish them. Conference norm bounds
+give 31.62, and one anti-intertwining moment 29.45, against the true cap 21.
+Thus cap or one-body energy data are insufficient, while an unrestricted
+joint-state profile risks restating the original optimization.
 
-The lead is falsified by a scalable linear `b`-defect, persistent failure away
-from conference orders, or a verified equivalence between bridge selection
-and the original minimization.  Ranked alternatives are broader exact bridge
-tests, a precise discrepancy/energy-profile theorem, a correctly mapped
-covering-code theorem, and genuine nonconvergence.  Update this assessment
-only when the target changes, a major obstruction is proved, or at a
-substantial checkpoint.
+The code mapping is exact but does not itself reduce difficulty. Standard
+cut-code frustration is one-sided, and inspected covering-radius direct-sum
+theorems have the wrong code or inequality direction. Conference completion
+remains the strongest structured testbed. The lead is falsified by scalable
+linear `b`-defect, failure of every bounded-complexity restriction profile, or
+a verified equivalence of the proposed state to full parent minimization.
+Ranked alternatives are algebraic conference completion, broader exact bridge
+tests, a genuinely applicable covering-code theorem, and nonconvergence.
+Update this assessment only after major evidence or a substantial checkpoint.
 
 ## Rigorous frontier
 
@@ -79,6 +77,7 @@ The newly certified finite information is
 
 ~~~math
 M_{11}=17,\qquad M_{12}=18,\qquad M_{13}=20,\qquad M_{14}=21.
+21\le M_{15}\le27,\qquad22\le M_{16}\le32.
 ~~~
 
 They do not change the asymptotic interval. No fixed-density restriction

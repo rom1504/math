@@ -1,0 +1,28 @@
+{
+  "child_a": "computations/results/m8_minimizer_orbits.json",
+  "child_a_class": 0,
+  "child_b": "computations/results/m8_minimizer_orbits.json",
+  "child_b_class": 1,
+  "classification": "solver-certified computation; no standalone proof object",
+  "decision_cap": 30,
+  "mode": "decision",
+  "orders": [
+    8,
+    8
+  ],
+  "schema": "quadratic-signing-bridge-cpsat-v1",
+  "sign_b": 1,
+  "solver": {
+    "best_bound": 0.0,
+    "branches": 54065,
+    "conflicts": 23791,
+    "elapsed_seconds": 900.0222396850586,
+    "objective": 0.0,
+    "ortools_version": "9.15.6755",
+    "response_stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 0\nbest_bound: 0\nintegers: 849\nbooleans: 63\nconflicts: 23791\nbranches: 54065\npropagations: 28139\ninteger_propagations: 6174601\nrestarts: 179\nlp_iterations: 1156455\nwalltime: 900.021\nusertime: 900.021\ndeterministic_time: 563.277\ngap_integral: 0\n",
+    "status": "UNKNOWN",
+    "time_limit_seconds": 900.0,
+    "wall_time_seconds": 900.0211511020001,
+    "workers": 2
+  }
+}
