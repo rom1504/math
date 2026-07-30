@@ -28376,3 +28376,555 @@ Gram estimate linking complement-flip certificates to (10.1057).  In
 parallel, attack the combined covariance in (10.1066) rather than its two
 large components.  Any successor must end in either a project-scale bound,
 an exact obstruction, or a sharply falsifiable intermediate lemma.
+
+### 10.91 Wave 38: product-noise walls, external Gram control, and signed harmonic migration
+
+This wave attacked the three exact interfaces isolated in Wave 37.  The
+complement-flip fractional cover does not compress through first moments,
+uniform noise, or a constant-probability independent product tilt at the
+project exponent.  Exact flipped-ground stability supplies a useful cut
+corridor but cannot inherit the row bound for free.  On the positive side,
+completion Parseval controls the external half of the favorable Gram energy,
+and summing harmonic coordinates before taking positive parts reduces
+migration to one signed state-space covariance.  All identities were
+independently reconstructed and checked; finite LP and quadrature values are
+labelled numerical.
+
+#### 10.91.1 The complement-flip dual defeats first moments and product-noise compression
+
+Retain
+
+```math
+B_S=A^{F_S}=-A+2P_SAP_S,
+\qquad
+M_S=Q(B_S),
+\qquad
+L_S(d)=\langle B_S,d\rangle.
+```
+
+Let `y_S>=0` be feasible for the dual of (10.1046), put `Y=sum_S y_S`,
+and normalize `w_S=y_S/Y` when `Y>0`.  Reversing the orientation of a cut
+negates `L_S(d)` without changing its row square.  Hence every row-good
+physical cut obeys
+
+```math
+\boxed{
+\Pr_{S\sim w}\{|L_S(d)|\ge q_n\}\le\frac2Y,
+\qquad
+|\mathbb E_wL_S(d)|\le q_n+\frac{2q_n}{Y}.
+}
+\tag{10.1067}
+```
+
+Here `|L_S(d)|<=3q_n`, because `|E_d|<=q_n` and
+`|c_S(d)|<=Q(A[S])<=q_n`.  If
+`r_(ij)(w)=Pr_w{i,j in S}`, the mean complement matrix is exactly
+
+```math
+\overline B_w
+=A\circ(2R_w-\mathbf1_{\ne}).
+```
+
+This consequence is nonlinear only through the threshold tail; its first
+moment cannot contradict minimality.  Indeed, if
+
+```math
+D_R=\max_{d:R_2(d)\le R}|I_d|,
+```
+
+the assignment `y_S=1/D_R` is dual feasible whenever `D_R>0` and its
+normalized selector law is uniform.  Therefore
+
+```math
+\boxed{
+\overline B_{U_m}=(2p_2-1)A,
+\qquad
+Q(\overline B_{U_m})=(2p_2-1)q_n<q_n
+}
+\tag{10.1068}
+```
+
+in the high-ratio window `1/2<=p_2<1`.  Across a persistent normalized gap,
+(10.1022) makes this uniform dual exponentially large.  Thus pair marginals,
+edgewise averaging, and commuting the dual average with the selector-wise
+maximum are incapable of proving (10.1047); this is the complement-flip
+version of the earlier linear-price circularity wall.
+
+Noising a flipped ground gives an apparently stronger but ultimately empty
+conditional theorem.  If `(sigma,x)` is a positive ground of `B_S`, let
+independent signs `z_i` have common mean `rho`, put `a=rho^2`, and set
+`x'=x circ z`.  Exactly,
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E[\sigma(x')^TB_Sx']&=aM_S,\\
+\mathbb E R_2(x')&=aR_2(x)+(1-a)n(n-1),\\
+\operatorname{Var}[\sigma(x')^TB_Sx']
+&=4a(1-a)\lVert B_Sx\rVert_2^2
+ +2(1-a)^2n(n-1).
+\end{aligned}
+}
+\tag{10.1069}
+```
+
+Using `R_2(x)<=2nq_n`, `||B_S||_(op)<=3||A||_(op)`, and
+`||A||_(op)^2<=2q_n`, choose `a=4q_n/M_S`.  A Chebyshev--Markov argument,
+followed by conditioning on a typical Hamming radius, proves the rigorous
+conditional dual estimate
+
+```math
+\sum_{S:M_S\ge t}y_S
+\le
+\exp\left\{C\left(\frac{nq_n}{t}+\log n\right)\right\}
+\tag{10.1070}
+```
+
+when `16n^2<=R<=min(8nq_n,q_n^2/4)` and
+`t>=128nq_n^2/R`.  The fixed-radius step is essential: its sphere has size
+`2^n exp{-O(nq_n/t+log n)}`, whereas bounding the largest product atom would
+lose the wrong square-root exponent.
+
+However, (10.1070) removes no selector.  The exact triangle inequality gives
+
+```math
+\boxed{
+q_n\le M_S
+\le Q(A)+2Q(A[S])\le3q_n
+\quad\text{for every }S.
+}
+\tag{10.1071}
+```
+
+The hypotheses of (10.1070) already force `t>=16q_n`.  Its high-cap class is
+therefore literally empty.  At the desired row cutoff its formal threshold
+is even larger.  Uniform coordinate noise cannot turn (10.1044) into the
+project cover.
+
+Coordinate-dependent product noise does not repair the exponent.  For an
+oriented base state, put `C=sigma D_xB_SD_x`; let independent `z_i` have
+means `rho_i`, variances `v_i=1-rho_i^2`, and use `x'=x circ z`.  Direct
+expansion gives
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E[\sigma(x')^TB_Sx']
+ &=\rho^TC\rho,\\
+\operatorname{Var}[\sigma(x')^TB_Sx']
+ &=4\sum_iv_i(C\rho)_i^2+4\sum_{i<j}v_iv_j,\\
+\mathbb E R_2(x')
+ &=\lVert AD_x\rho\rVert_2^2
+ +(n-1)\sum_i(1-\rho_i^2).
+\end{aligned}
+}
+\tag{10.1072}
+```
+
+The product relative entropy from the uniform spin cube is
+
+```math
+D(\rho)=\sum_i\left[
+\frac{1+\rho_i}{2}\log(1+\rho_i)
++\frac{1-\rho_i}{2}\log(1-\rho_i)
+\right].
+```
+
+Coordinatewise Pinsker gives `||rho||_2^2<=2D(rho)`.  Together with
+`||C||_(op)<=3sqrt(2q_n)`, this proves the exact barrier
+
+```math
+\boxed{
+|\rho^TC\rho|
+\le6\sqrt{2q_n}\,D(\rho),
+\qquad
+\operatorname{Var}[\sigma(x')^TB_Sx']
+\le144q_nD(\rho)+2n(n-1).
+}
+\tag{10.1073}
+```
+
+Thus retaining any fixed positive fraction of `q_n` in the mean requires
+`D(rho)=Omega(sqrt(q_n))=Omega(n^(3/4))`.  At the project budget
+`D=O(R/q_n)=O(n^(3/4-c))`, the mean is `o(q_n)` and the variance is
+`o(q_n^2)`, so the incidence event cannot have the constant probability
+needed by the entropy-to-counting argument.  The literal trial requiring
+mean `4q_n` is impossible even without entropy, by (10.1071).
+
+This falsifies uniform noising and the constant-probability independent
+product-tilt implementation.  It does not falsify `tau_flip`, a correlated
+law, or a direct lower bound on a sufficiently large rare product-law tail.
+
+#### 10.91.2 Exact flipped-ground compatibility has a necessary slack
+
+There is a separate deterministic structure which does not average the
+flipped signings.  Gauge a parent state by
+
+```math
+s_{ij}=\sigma a_{ij}x_ix_j,
+\qquad
+r_i(d)=\sum_{j\ne i}s_{ij},
+\qquad
+E_d=q_n-\Delta_d.
+```
+
+For the same selector, let `t^S_(ij)=s_(ij)` on `E(S)` and
+`t^S_(ij)=-s_(ij)` elsewhere.  Put
+
+```math
+\Gamma_S(d)=M_S-L_S(d).
+```
+
+For a vertex subset `U`, let `C_s(U)` be its unordered parent cut weight and
+let `C_s^S(U)` retain only crossing edges internal to `S`.  Flipping the
+vertices in `U` under the parent and under `B_S` gives the simultaneous exact
+cut system
+
+```math
+\boxed{
+C_s(U)\ge-\frac{\Delta_d}{4},
+\qquad
+2C_s^S(U)-C_s(U)
+\ge-\frac{\Gamma_S(d)}4
+\quad\text{for every }U\subseteq[n].
+}
+\tag{10.1074}
+```
+
+In particular, if `U subseteq S^c`,
+
+```math
+-\frac{\Delta_d}{4}
+\le C_s(U)\le\frac{\Gamma_S(d)}4.
+\tag{10.1075}
+```
+
+If `d` is an exact positive ground of `B_S`, then `Gamma_S(d)=0`; hence the
+selector contains every vertex with positive parent signed degree.  More
+generally, if `L_S(d)>=q_n` and `delta_S=M_S-q_n<=gamma`, then
+
+```math
+\boxed{
+\{i:r_i(d)>\gamma/4\}\subseteq S.
+}
+\tag{10.1076}
+```
+
+The all-subset corridor (10.1074), rather than only this singleton
+consequence, is the potentially useful low-cap structure.
+
+Zero slack cannot simply be imposed to gain it.  Exact enumeration for
+`A_8,m=6` has `M_S=24` and `q_8=20` for every selector.  All 28 selectors
+have minimum exact-flipped-ground parent row square `64`, so all miss the
+mean cap `56`.  Threshold incidences `L_S(d)>=20` instead have minimum-row
+histogram
+
+```text
+40^8, 56^16, 64^4,
+```
+
+so only four selectors miss that cap.  The associated unrestricted
+fractional-cover values are numerically `20` for exact-ground incidence and
+`10` for threshold incidence.  The miss counts and row histograms are exact;
+the LP optima are numerical.  Since the asymptotic project cap exceeds the
+mean scale, this is not a project falsifier.  It proves only that a
+zero-slack continuation needs its own low-row theorem; otherwise the slack
+in (10.1074) must remain visible.
+
+#### 10.91.3 Completion Parseval controls only the external Gram term
+
+Fix `S`, put `T=S^c`, `t=|T|`, and orient a projective child word `y` so
+that `e=y^TA[S]y`.  Its outside completion polynomial is
+
+```math
+f(x)=x^TA[T]x+2y^TA[S,T]x,
+\qquad x\in\{\pm1\}^T.
+```
+
+Let `Z_+=max f`, `Z_-=-min f`, and retain
+`w=(Z_++Z_-)/2`, `a=(Z_+-Z_-)/2`, `b=q_n-w`.  Orthogonality of the
+quadratic and linear Walsh levels, the mean-zero range bound, and the parent
+cap give the exact chain
+
+```math
+\boxed{
+2t(t-1)+4\lVert A[T,S]y\rVert_2^2
+=\mathbb E f^2
+\le Z_+Z_-=w^2-a^2
+\le q_n^2-e^2.
+}
+\tag{10.1077}
+```
+
+The first term is the fixed outside quadratic Fourier mass; the second is
+four times the external level-one Gram energy.  This is the useful direction
+of completion width: it bounds external Gram from above through the endpoint
+product, but small width deficit alone makes `w` large and supplies no saving
+unless the interval center is simultaneously near an endpoint.
+
+Now let a complement-flip certificate have parent deficit
+`Delta=q_n-E_d` and restricted word `y`.  Equation (10.1044) gives
+`e>=q_n-Delta/2`; since `0<=Delta<=2q_n`, it may be squared in (10.1077).
+Therefore
+
+```math
+\boxed{
+4\lVert A[S^c,S]y\rVert_2^2+2t(t-1)
+\le q_n\Delta-\frac{\Delta^2}{4}
+\le q_n\Delta.
+}
+\tag{10.1078}
+```
+
+In the high-ratio window the same label is favorable by (10.1045), and it
+is within `Delta/2` of the child ground energy.  Thus an affordable anchored
+family with
+
+```math
+\mathbb E\Delta=O(n^{3/4-c'})
+```
+
+automatically has external Gram average `O(n^(9/4-c'))`.  This bridge has a
+strong necessary support condition:
+
+```math
+\boxed{
+\Delta\ge2\{q_n-Q(A[S])\}.
+}
+\tag{10.1079}
+```
+
+Hence its average deficit hypothesis forces average cap persistence on the
+same rare family; pointwise persistence follows only after an explicit
+Markov thinning.
+
+The internal term remains independent:
+
+```math
+\lVert A[:,S]y\rVert_2^2
+=\lVert A[S]y\rVert_2^2
++\lVert A[S^c,S]y\rVert_2^2.
+```
+
+The completion polynomial sees `A[S]` only through the scalar `e`.  Exact
+finite grounds show non-determination.  On `A_8,m=5`, the identical tuple
+
+```text
+(w,a,b,e,external Gram)=(8,0,12,12,3)
+```
+
+occurs with internal Gram `32` and `40`.  On `A_9,m=6`, completion data
+`(w,a,b)=(4,-2,20)` and zero external Gram occur with internal Gram `46` or
+`86` (with different child energies).  These are finite structural examples,
+not project falsifiers.  Exact child-ground stability still gives
+`||A[S]y||^2<= (m-1)e=O(n^(5/2))`, which misses the target by a power.
+
+Consequently the surviving Gram implementation must select one affordable
+coherent anchored family which simultaneously has project-scale conflict,
+
+```math
+\boxed{
+\mathbb E\Delta=O(n^{3/4-c'}),
+\qquad
+\mathbb E\lVert A[S]y^S\rVert_2^2
+=O(n^{9/4-c'}).
+}
+\tag{10.1080}
+```
+
+Equation (10.1078) then supplies the external half and (10.1056) supplies
+the global row cut.  Generic independent sign noise cannot prove this
+package: suppressing a possible `Theta(n^(5/2))` Gram value to the target
+requires correlation squared `O(n^(-1/4-c'))`, which lowers a
+`Theta(n^(3/2))` near-parent child energy to `O(n^(5/4-c'))`.  This is scoped
+to preserving near-parent certificates, not to every abstract favorable
+lift.
+
+#### 10.91.4 Harmonic migration collapses to one signed global covariance
+
+Let `V_*` be the `n-1` nonreference vertex coordinates in the oriented-cut
+chart.  At interpolation time `t`, write
+
+```math
+X_{i,e}(t)=\mathbb E_{\mu_t}[g\mid D_{-i}=e],
+\qquad
+k_{i,e}(t)=D(\mu_t(D_i\mid e)\Vert\nu(D_i\mid e)),
+```
+
+and define the statewise total vertex KL load
+
+```math
+L_t(d)=\sum_{i\in V_*}k_{i,d_{-i}}(t).
+```
+
+Every context score has the same mean `E_(mu_t)g`.  Conditional expectation
+therefore collapses all vertex-context migration covariances exactly:
+
+```math
+\boxed{
+\sum_{i\in V_*}
+\operatorname{Cov}_{M_{t,i}}(X_{i,e},k_{i,e})
+=\operatorname{Cov}_{\mu_t}(g,L_t).
+}
+\tag{10.1081}
+```
+
+This recombines both terms of (10.1066) and permits cancellation across
+coordinates before taking any positive part.
+
+Put
+
+```math
+C_V(t)=\mathbb E_{\mu_t}L_t
+=\sum_{i\in V_*}\mathbb E_{M_{t,i}}k_{i,e}(t).
+```
+
+Differentiating the moving context laws and using
+`partial_t k_(i,e)=t A''_(i,e)` gives
+
+```math
+\boxed{
+C_V'(t)
+=t\mathcal E_{t,V}(g)+\operatorname{Cov}_{\mu_t}(g,L_t),
+}
+```
+
+and, since `C_V(0)=0`,
+
+```math
+\boxed{
+\int_0^1t\mathcal E_{t,V}(g)\,dt
+=C_V(1)-\int_0^1\operatorname{Cov}_{\mu_t}(g,L_t)\,dt.
+}
+\tag{10.1082}
+```
+
+Thus, once the endpoint vertex cost is controlled, the logically minimal
+vertex-migration target is only
+
+```math
+\boxed{
+\left[-\int_0^1
+\operatorname{Cov}_{\mu_t}(g,L_t)\,dt\right]_+
+=O(n^{1/2-2c}).
+}
+\tag{10.1083}
+```
+
+It is weaker, in order, than taking an adverse part at each time, then in
+each coordinate, then applying the transient-flux majorant (10.1065).  This
+is sharp bookkeeping rather than an energy proof: a large negative signed
+covariance is exactly the excess vertex energy which remains to be ruled out.
+
+There is a concrete approximate-order sufficient lemma.  Let
+
+```math
+\mathcal R_t
+=\inf_{\phi\text{ nondecreasing}}
+\mathbb E_{\mu_t}[L_t-\phi(g)]^2.
+```
+
+Since `Cov(g,phi(g))>=0`, Cauchy--Schwarz proves
+
+```math
+\boxed{
+[-\operatorname{Cov}_{\mu_t}(g,L_t)]_+
+\le\sqrt{\operatorname{Var}_{\mu_t}(g)\mathcal R_t}.
+}
+\tag{10.1084}
+```
+
+Consequently
+
+```math
+\int_0^1
+\sqrt{\operatorname{Var}_{\mu_t}(g)\mathcal R_t}\,dt
+=O(n^{1/2-2c})
+\tag{10.1085}
+```
+
+is a sharply falsifiable sufficient theorem for (10.1083).  Exact
+monotonicity is already too strong according to the numerical finite audit:
+known exact minimizers have negative integrated covariance there.
+
+The matched external partitions retain one additional pointwise coupling.
+With
+
+```math
+\widetilde B_i(e)=\frac{B_i(e)}{\mathbb E_\nu U},
+```
+
+fixed selector size gives, including the reference vertex,
+
+```math
+\boxed{
+\sum_{i=1}^n\widetilde B_i(D_{-i})=(n-m)f(D).
+}
+\tag{10.1086}
+```
+
+This controls only the omission-weighted entropy by `(n-m)log n`; it does
+not prove (10.1085).  It does show where a matched proof must seek the order
+relation: in the combined total local load, not in separate bounds for the
+omitted external partition and exclusion shape.
+
+On `A_9,m=7,beta=2`, numerical quadrature gives signed integrated vertex
+covariance `-0.001467944`, coordinatewise adverse charge `0.002857230`, and
+dynamic-flux majorant about `0.00547038`.  The boundary identity agrees below
+`2e-15`.  These values are numerical only, but they exhibit both
+cross-coordinate and time cancellation.  Endpoint cost, restoring
+correlation, orientation, and adjacent-selector Hellinger control remain
+separate open inputs.
+
+#### 10.91.5 Updated frontier
+
+Wave 38 preserves adaptive optimized principal restriction as the leading
+framework, while sharply narrowing two of its proposed implementations:
+
+- the exact favorable complement-flip cover (10.1045) remains real, but no
+  generic aggregation found here compresses its row-good fractional number.
+  A uniform dual has the contracted first moment (10.1068); the nominal
+  high-cap sphere theorem is empty because every complement cap is at most
+  `3q_n`; and any constant-probability independent product tilt retaining a
+  fixed energy fraction costs `Omega(n^(3/4))` entropy by (10.1073).  A
+  continuation must use correlated/minimizer-specific congestion, a direct
+  rare-tail theorem, or the full slack cut system (10.1074), not another
+  first-moment or independent-noise regularization;
+
+- exact flipped grounds expose strong selector support, but finite `A_8`
+  shows that zero slack can discard the available low-row threshold
+  witnesses at the mean cap.  This does not falsify a project-cap ground
+  theorem.  It requires such a theorem to be proved explicitly, or else
+  forces the surplus `Gamma_S(d)` to remain in every cut-stability argument;
+
+- the Gram projection route gains a genuine positive half: near-parent
+  complement certificates automatically control external Gram through
+  (10.1078).  Its price is cap persistence (10.1079).  Internal favorable
+  row energy remains the sole Gram obstruction, and the exact remaining
+  selection package is (10.1080) together with affordability and conflict;
+
+- the harmonic alternative now has the weaker and more faithful signed
+  migration target (10.1083).  It preserves cancellation across external
+  partition versus exclusion shape, across coordinates, and across time.
+  Approximate order (10.1085) is a concrete sufficient lemma, but no
+  exact-minimizer estimate of its isotonic defect or endpoint cost is known;
+
+- one-block replacement remains retired unless a joint construction cancels
+  `q_n-q_m`.  Constant shortfall, terminal min-cut, and susceptibility gain
+  no new positive evidence; (10.617) is still not the strongest route.
+
+The bare arbitrary-cut tail (10.795) remains the logically sharp leading
+lemma, with exceptional-center degree (10.967) still its strongest developed
+structured implementation.  Complement-flip congestion and favorable Gram
+selection are now precise alternatives, but their generic regularizations
+have hit exponent walls.  No convergence proof or asymptotic falsifier has
+appeared.
+
+Wave 39 is the mandatory strategic-steering boundary.  Before choosing its
+agents, regenerate `STEERING.md` from the complete ledger through this
+frontier.  The next attacks should compare, rather than conflate: a genuinely
+correlated/direct rare-tail argument for complement incidences; the internal
+Gram and cap-persistence package (10.1080); and the signed harmonic
+approximate-order target (10.1085).  Any fourth independent effort should
+reassess terminal min-cut or another nonrestriction route, not revive the
+falsified product-noise or standalone replacement mechanisms.
