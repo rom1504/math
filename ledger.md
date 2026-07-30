@@ -30608,3 +30608,404 @@ weighted colored-codegree/code-length package (10.1141); and an integrated
 context-mass theorem for the reveal/affinity costs in (10.1144)--(10.1147).
 A genuinely independent fourth direction is the favorable-distance scaffold,
 not another pointwise harmonic or unweighted selector-moment argument.
+
+### 10.96 Wave 43: incidence-information collapse, aggregate strict pressure, and integrated context load
+
+This wave finds a strategic correction in the leading complement
+implementation.  The posterior-support theorem (10.862)--(10.863), already
+proved in Wave 28, applies directly to complement incidences.  Consequently
+the first two clauses of (10.1089) already extract one favorable low-row cut;
+conflict, plurality decoding, Gram transport, shared priorities, and the
+colored-codegree target (10.1141) are unnecessary for that implication.  This
+does not prove the remaining row-good incidence column.
+
+The exceptional-center route gains a verified global-child-pressure
+extraction which automatically enforces the project row cap.  Its scalar
+first-moment premise is strictly stronger than exceptional pressure and
+already fails in normalized finite examples, leaving a high-replica pressure
+as the faithful open version.  Finally, the harmonic route gains a global
+load-variance norm and direction-sensitive context-mass majorants.  The raw
+reveal/affinity cost has an unavoidable fixed-density baseline and cannot
+itself be the project target.  All identities and implications below were
+independently reconstructed and checked.  Finite decimal values are
+**Numerical**.  No convergence proof or asymptotic falsifier appears.
+
+#### 10.96.1 Complement incidence satisfies the old posterior-support theorem, so conflict is redundant
+
+Let `U=U_m`, let `D` be a full oriented parent cut, and retain the actual
+complement incidence columns
+
+```math
+\mathcal I_d=\{S:\langle B_S,d\rangle\ge q_n\},
+\qquad h_d=-\log U(\mathcal I_d).
+```
+
+For any joint law supported on `S in I_D`, the chain rule and support give
+
+```math
+\boxed{
+\begin{aligned}
+\mathsf H_{\rm tot}
+&:=D(P_S\Vert U)+I(S;D)
+=\mathbb E_DD(P_{S\mid D}\Vert U),\\
+\mathbb E_Dh_D&\le\mathsf H_{\rm tot}.
+\end{aligned}}
+\tag{10.1148}
+```
+
+This is exactly (10.862), not a new posterior-support theorem.  Combining
+the two nonnegative costs in (10.1148) with
+`Rbar=E R_2(D)` reproduces (10.863): some output `d` satisfies
+
+```math
+h_d\le2\mathsf H_{\rm tot},
+\qquad R_2(d)\le2\overline R.
+```
+
+There is no type mismatch in (10.1089): its certificate is a full parent
+projective word and its second clause is precisely the parent row square.
+Anchoring merely adds `log(n/m)=O(1)` to the selector KL in a fixed-density
+window.
+
+Every `S in I_d` is favorable for this same cut.  Indeed
+`2c_S(d)-E_d>=q_n`, and the already verified (10.1045), for `p_2>=1/2`, gives
+
+```math
+\widehat\ell(S,d)\le-B_{n,m}\le0.
+```
+
+Thus
+
+```math
+\mathsf H_{\rm tot}=O(n^{3/4-c}),
+\qquad \overline R=O(n^{9/4-c})
+```
+
+already imply (10.795).  The conflict clause of (10.1089), the decoder
+(10.1056), the Gram transport (10.1087), and the entire colored-codegree
+package (10.1141) are mathematically sufficient but logically superfluous
+for this incidence-supported route.
+
+The collapse has an exact scalar form.  For every `lambda>=0`,
+
+```math
+\boxed{
+\inf_{P:\,S\in\mathcal I_D\ {\rm a.s.}}
+\left\{D(P_S\Vert U)+I(S;D)
++\lambda\mathbb E R_2(D)\right\}
+=\min_{d:U(\mathcal I_d)>0}
+\left\{-\log U(\mathcal I_d)+\lambda R_2(d)\right\}.
+}
+\tag{10.1149}
+```
+
+The lower bound is (10.1148) averaged with row cost.  Equality takes `D=d`
+and `S` uniform on `I_d`.  Random kernels only convexify the two-cost Pareto
+curve; they cannot improve a linear information--row scalarization.  A
+full-slice fractional cover remains a stronger construction, but an
+affordable-family kernel with the first two clauses of (10.1089) is
+equivalent, up to fixed extraction constants, to one row-good incidence
+column.
+
+Finite exhaustion also closes the shared-priority ansatz as a universal
+rounding of global maps.  For `A_5,m=4`, 57 of the `10^4` incidence maps have
+zero conflict, 27 are priority-rationalizable, and the best has row 16 and
+entropy `log 2`.  For the conference minimizer `A_6,m=5`, 22 of the
+`12^5` maps have zero conflict, all have row 30 and minimum entropy `log 5`,
+but none is priority-rationalizable.  Every common-priority map has conflict
+at least `2/5`; an explicit zero-conflict map forces a precedence two-cycle.
+These are exact finite walls to shared priorities, not asymptotic walls to
+the now-correct one-column target.
+
+#### 10.96.2 Global absolute child pressure extracts a project-row exceptional center
+
+Fix `H=B_(n,m)+t>0`, `L_0=n^(3/4-c)`, `0<c<1/4`, and
+`theta=bL_0/H`.  For a full spin center `z`, define
+
+```math
+d_S(z)=Q(A[S])-|z_S^{\mathsf T}A[S]z_S|,
+\qquad q(z)=\mathbb E_{U_m}e^{-\theta d_S(z)},
+```
+
+and the scalar absolute child partition
+
+```math
+\boxed{
+\mathcal Z_A(\theta)
+=\mathbb E_zq(z)
+=\mathbb E_{S\sim U_m}\left[
+e^{-\theta Q(A[S])}
+\mathbb E_y e^{\theta|y^{\mathsf T}A[S]y|}
+\right].
+}
+\tag{10.1150}
+```
+
+Tilt the joint uniform law of `(S,z)` by
+`e^(-theta d_S(z))/mathcal Z_A`.  Its exact KL is
+
+```math
+D(P\Vert U_m\otimes U_z)
+=-\theta\mathbb E_Pd_S(z)-\log\mathcal Z_A
+\le-\log\mathcal Z_A.
+```
+
+Data processing gives the same upper bound for the center marginal.  The
+Hanson--Wright entropy transport underlying (10.865) and (10.870) gives
+
+```math
+\mathbb E_PR_2(z)
+\le n(n-1)+O\left(n^{7/4}\sqrt{\mathcal H}
++n^{3/2}\mathcal H\right),
+\qquad \mathcal H=D(P_z\Vert U_z).
+```
+
+At `mathcal H=O(L_0)`, both errors are
+`O(n^(9/4-c))`; the first exponent comparison is
+`17/8-c/2<=9/4-c`, exactly for `c<=1/4`.  Markov on the tilted center law and
+the identity `P_z(z)=U_z(z)q(z)/mathcal Z_A` therefore prove the following
+**Verified sufficient lemma**.  If fixed `0<alpha<b` satisfy
+
+```math
+-\log\mathcal Z_A(bL_0/H)\le\alpha L_0,
+```
+
+then some `z` and one fixed orientation `sigma` obey
+
+```math
+\boxed{
+R_2(z)=O(n^{9/4-c}),
+\qquad
+U_m\{S:Q(A[S])-\sigma z_S^{\mathsf T}A[S]z_S\le H\}
+\ge\frac18e^{-\alpha L_0}.
+}
+\tag{10.1151}
+```
+
+The proof first extracts `q(z)>=mathcal Z_A/2`, applies the cap
+soft-to-hard inequality (10.1132) to the absolute deficit, and then splits
+selectors by the sign of the center energy.  Equation (10.861) converts the
+event to `widehat ell<=t`; hence (10.1151) proves (10.795) and convergence if
+its scalar premise holds uniformly.
+
+The premise is not established for minimizers and is stronger than the
+exceptional-center target.  At the finite normalization `theta H=1`, exact
+enumeration gives
+
+| signing, selector | `-log mathcal Z_A` | best center pressure | best absolute tail |
+|:---|---:|---:|---:|
+| `A_6,m=5` | `0.469882` | `0.817719` | `0.833333` |
+| `A_8,m=6` | `1.832711` | `0.203325` | `0.392857` |
+| `A_9,m=7` | `2.843369` | `0.041747` | `0.361111` |
+
+Thus the scalar first-moment inequality with coefficient below one already
+fails on `A_8,A_9` although an eligible center has positive pressure and a
+substantial hard tail.  This is finite evidence only, but it shows exactly
+how averaging centers can erase the exceptional signal.
+
+The faithful aggregate restatement uses a high replica.  With `nu_2`
+uniform on the old low-row class `C_2` and
+`r=ceil(kappa n/L_0)`, put
+
+```math
+\boxed{
+\mathcal P_r(b)
+=\frac1r\log\mathbb E_{z\sim\nu_2}
+\exp\{rK_z^{\rm abs}(bL_0/H)\}.
+}
+\tag{10.1152}
+```
+
+Then `max_z K_z^abs>=mathcal P_r`, while
+
+```math
+\mathcal P_r
+\ge\max_{z\in\mathcal C_2}K_z^{\rm abs}
+-\left(\frac{\log2}{\kappa}+o(1)\right)L_0.
+```
+
+Consequently a positive uniform lower bound on (10.1152) is
+exponent-equivalent, as the fixed `kappa` is increased, to the existential
+strict-pressure target.  This is a sharp formulation, not evidence that
+minimality supplies the pressure.  The first-moment mechanism is falsified
+by any unbounded exact-minimizer family with
+`-L_0^(-1)log mathcal Z_A(bL_0/H)>=b-o(1)` for every admissible `b`; such a
+family would not falsify the exceptional-center/high-replica route.
+
+#### 10.96.3 Signed harmonic migration is controlled by intrinsic load variance, not raw reveal cost
+
+Retain the interpolation `mu_s proportional nu e^(sg)` and the nonreference
+vertex coordinates.  For coordinate `i` and context `e`, let
+
+```math
+k_{i,e}(s)
+=D(\mu_s(D_i\mid e)\Vert\nu(D_i\mid e)),
+\qquad
+L_s(d)=\sum_{i\in V_*}k_{i,d_{-i}}(s).
+```
+
+With `M_(s,i)` the context law and `X_(i,e)=E[g|D_-i=e]`, one has exactly
+
+```math
+M'_{s,i}(e)=M_{s,i}(e)\{X_{i,e}(s)-\mathbb E_{\mu_s}g\},
+```
+
+and summing coordinates before taking signs recovers
+`sum_i Cov_M(X,k)=Cov_(mu_s)(g,L_s)`.  Put
+
+```math
+\mathscr H=\operatorname{Ent}_\nu(f)
+=\int_0^1s\operatorname{Var}_{\mu_s}(g)\,ds,
+\qquad
+\mathcal J_L^2
+=\int_0^1\frac{\operatorname{Var}_{\mu_s}(L_s)}s\,ds.
+```
+
+Since `k_(i,e)(s)=O(s^2)` at zero, the last integrand extends continuously.
+One global Cauchy inequality gives the **Verified** bound
+
+```math
+\boxed{
+\left[-\int_0^1\operatorname{Cov}_{\mu_s}(g,L_s)\,ds\right]_+
+\le\sqrt{\mathscr H}\,\mathcal J_L.
+}
+\tag{10.1153}
+```
+
+It preserves cross-coordinate cancellation and has no spurious factor of
+`sqrt n`.
+
+There are baseline-free context majorants.  On a vertex edge let
+`chi_(i,e)` be its endpoint score difference and set
+
+```math
+w_{i,e}(s)
+=\min\left\{|\chi_{i,e}|,\frac{s\chi_{i,e}^2}{8}\right\}.
+```
+
+Binary exponential-family calculus gives
+
+```math
+0\le k_{i,e}(s)
+\le\min\left\{s|\chi_{i,e}|,\frac{s^2\chi_{i,e}^2}{8}\right\}
+=s w_{i,e}(s).
+```
+
+Writing `W_s(d)=sum_i w_(i,d_-i)(s)` and
+
+```math
+\Phi_s=\sum_{i,e}w_{i,e}(s)[-M'_{s,i}(e)]_+,
+```
+
+one obtains
+
+```math
+\boxed{
+\begin{aligned}
+\mathcal J_L^2
+&\le\int_0^1s\mathbb E_{\mu_s}W_s^2\,ds,\\
+\mathcal A_V
+&\le\int_0^1s\Phi_s\,ds
+\le\sqrt{\mathscr H}\,\mathcal J_\Phi,\\
+\mathcal J_\Phi^2
+&=\int_0^1s\frac{\Phi_s^2}
+{\operatorname{Var}_{\mu_s}(g)}\,ds.
+\end{aligned}}
+\tag{10.1154}
+```
+
+The zero-variance quotient is defined as zero; then every context derivative
+also vanishes.  The second line charges only contexts losing interpolation
+mass.
+
+The three-factor cost from (10.1144) is finite and still diagnoses local
+variation.  At finite temperature and `0<m<n`,
+
+```math
+C_{i,e}=-\frac12\log\{r_i(x)r_i(y)\}
+\ge\frac12|\log r_i(x)-\log r_i(y)|
+=\frac12|\chi_{i,e}|.
+```
+
+Its total is nonnegative, but `C_lev` can be negative and cannot be dropped.
+More importantly, the raw cost contains an unusable baseline.  For the flat
+endpoint `f=1` at density `rho<1`, every `chi`, `k`, `L`, and migration term
+vanishes, whereas `r_i=1-rho` and
+
+```math
+\boxed{
+\int_0^1s\mathbb E_{\mu_s}
+\left(\sum_iC_{i,D_{-i}}\right)^2ds
+=\frac12(n-1)^2\log^2\frac1{1-\rho}
+=\Theta(n^2).
+}
+\tag{10.1155}
+```
+
+Thus an uncentered reveal/affinity-cost square cannot meet the project
+`O(n^(1/2-2c))` target even in the trivial case.  Continue through actual
+score variation, intrinsic load, or signed context movement, not raw cost.
+
+The bootstrap is closed conditionally.  Let `a_n=n^(1/2-2c)`.  If endpoint
+vertex cost and total orientation energy are `O(a_n)`, restoring gives
+`Var_(mu_s)(g)<=R E_s(g)`, and either
+`J_L^2=O(a_n)` or `J_Phi^2=O(a_n)`, then (10.1082) and (10.1153)--(10.1154)
+give
+
+```math
+\boxed{
+\mathscr H\le O(a_n)+O(\sqrt{a_n\mathscr H}),
+\qquad \mathscr H=O(a_n).
+}
+\tag{10.1156}
+```
+
+The orientation coordinate has no selector-exclusion identity and remains
+separate, as do restoring and adjacent-selector Hellinger.
+
+The `A_9,m=4,beta=2` bad edge has factor costs
+`(C_rev,C_aff,C_lev)=(6.6033,6.7680,-7.0790)` and total `6.2923`, but its
+maximum context mass is `2.49e-27` and its diagonal integrated cost is
+`1.38e-26`.  Thus it passes the integrated rarity test.  Conversely, on the
+strictly positive abstract Wave-36 transient wall at `M=10000`, endpoint
+vertex cost is `8.49e-6` while adverse migration is `1.24e-3`; the intrinsic
+bound is `sqrt(H J_L^2)=1.45e-3`.  Endpoint rarity alone remains false, while
+the new load norm detects the transient.  Neither example proves the
+project-scale norm for quadratic minimizers.
+
+#### 10.96.4 Updated frontier
+
+Wave 43 preserves the bare arbitrary-cut tail (10.795) as the leading exact
+convergence target, but corrects the ranking of its implementations:
+
+- the low-information complement kernel was over-specified.  Equations
+  (10.862)--(10.863), specialized in (10.1148), show that low total
+  information plus low parent row already extracts one favorable incidence
+  column.  Conflict, colored codegree, plurality decoding, and Gram transport
+  must be removed from this route's open obligations.  The honest complement
+  target is again one cut satisfying
+  `R_2=O(n^(9/4-c))` and
+  `-log U_m(I_d)=O(n^(3/4-c))`, or the stronger row-good fractional cover
+  (10.1047).  No theorem here supplies that column;
+
+- strict exceptional-center pressure remains the most direct nonlinear
+  alternative.  The global scalar lemma (10.1150)--(10.1151) automatically
+  extracts project row, but finite `A_8,A_9` show its first center moment can
+  miss an existing exceptional center.  Retain the high-replica formulation
+  (10.1152) as the faithful exact target and seek a genuinely
+  minimizer-specific overlap/alignment theorem, not unweighted moments or
+  ordinary center averaging;
+
+- fixed-density harmonic work must now be fully integrated.  The intrinsic
+  load norm (10.1153) and losing-context norm (10.1154) survive both the
+  pointwise `A_9` wall and the transient-mode wall.  Raw reveal/affinity cost
+  is falsified as a project target by the flat baseline (10.1155).  Endpoint
+  cost, restoring, orientation, adjacent-selector Hellinger, and a
+  project-scale estimate of `J_L` or `J_Phi` all remain open;
+
+- no convergence proof or asymptotic falsifier has appeared.  The complement
+  correction is a decisive strategic pruning, so the mandatory Wave 44
+  `STEERING.md` refresh is required in any case.  Before selecting Wave 44
+  agents, perform the scheduled blank-slate abstraction audit from the
+  original problem alone, then compare its candidates with the complete
+  ledger.  Only after that audit should the next three attacks be selected.
