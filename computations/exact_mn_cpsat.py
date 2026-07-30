@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """CP-SAT decision/optimization model for the exact quadratic-signing cap.
 
-This is an independent backend for the same rooted, symmetry-reduced model as
-`exact_mn_milp.py`.  Its most useful mode is a fixed-cap infeasibility test:
+This is an independent backend for the rooted, symmetry-reduced model from
+`exact_mn_milp.py`, with an additional valid degree ordering inside the two
+remaining neighbor groups.  Its most useful mode is a fixed-cap infeasibility
+test:
 
     exact_mn_cpsat.py 11 --decision-cap 15
 
@@ -46,6 +48,7 @@ def build_model(n: int, decision_cap: int | None) -> tuple[
     for j in range(2, n - 1):
         model.add(z[edge_index[(1, j)]] <= z[edge_index[(1, j + 1)]])
     incident_1 = [z[edge_index[(1, j)]] for j in range(2, n)]
+    negative_degrees: dict[int, cp_model.LinearExpr] = {1: sum(incident_1)}
     for i in range(2, n):
         incident_i = []
         for j in range(1, n):
@@ -53,7 +56,22 @@ def build_model(n: int, decision_cap: int | None) -> tuple[
                 continue
             edge = (j, i) if j < i else (i, j)
             incident_i.append(z[edge_index[edge]])
-        model.add(sum(incident_1) <= sum(incident_i))
+        negative_degrees[i] = sum(incident_i)
+        model.add(negative_degrees[1] <= negative_degrees[i])
+
+    # The vertices after 1 have already been split into its positive and
+    # negative neighbors.  Permutations inside either group remain free, so
+    # sort their negative degrees.  The two enforcement alternatives cover
+    # equal adjacent incident signs; the 0-to-1 boundary needs no ordering.
+    for j in range(2, n - 1):
+        left = z[edge_index[(1, j)]]
+        right = z[edge_index[(1, j + 1)]]
+        model.add(negative_degrees[j] <= negative_degrees[j + 1]).only_enforce_if(
+            [left.Not(), right.Not()]
+        )
+        model.add(negative_degrees[j] <= negative_degrees[j + 1]).only_enforce_if(
+            [left, right]
+        )
 
     if decision_cap is None:
         cap = model.new_int_var(0, n * (n - 1) // 2, "cap")

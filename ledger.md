@@ -38018,3 +38018,193 @@ energy-entropy route, exact/nested computation continues to test the
 algebraic hypothesis, and genuine nonconvergence remains a standing but
 currently unsupported alternative.  The selected-prior and common-active-face
 routes remain inactive.
+
+### 10.116 Computational--composition campaign: second checkpoint
+
+This checkpoint integrates the universal doubling audit, the first successful
+order-13 bridge, and its exact conference completion. Claims below are
+classified individually; none changes the rigorous asymptotic interval.
+
+#### 10.116.1 A universal equal-order doubling identity
+
+For every signing matrix `S` of order `q`, not only for a conference matrix,
+define
+
+~~~math
+D(S)=\begin{pmatrix}S&S+I\\S+I&-S\end{pmatrix}.       \tag{10.1417}
+~~~
+
+This is a signing of order `2q`. If the two block spins agree with a sign
+vector `x` except on a coordinate set `J`, exact expansion gives the **proved**
+identity
+
+~~~math
+H_{D(S)}(x,J)
+=2H_S(x)-4H_{S[J]}(x_J)+q-2|J|.                      \tag{10.1418}
+~~~
+
+For a symmetric conference matrix `S`, `S^2=(q-1)I`, put
+
+~~~math
+H=D(S)+\operatorname{diag}(-I_q,I_q).
+~~~
+
+Then exact multiplication gives `HH^T=2qI`, and the trace-zero diagonal
+correction has zero quadratic value on every sign vector. Therefore
+
+~~~math
+\max_x|H_{D(S)}(x)|
+=\frac12\max_x|x^{\mathsf T}Hx|.                     \tag{10.1419}
+~~~
+
+The block swap followed by switching one entire block conjugates `D(S)` to
+`-D(S)`, so its energy profile is symmetric. These are proved algebraic facts,
+but (10.1418) also exposes the unresolved principal-restriction term; the
+construction is not by itself a general bridge theorem.
+
+**Exhaustive finite audit.** Applied to the saved exact representatives of
+orders 3 through 10, the doubled caps for orders 6 through 20 are respectively
+
+~~~text
+9, 12, 13, 18, 29, 40, 41, 50,
+~~~
+
+and their `2/3`-power defects range from `0.166581...` to `2.514538...`.
+Thus the equal-order rule survives this small test with sublinear-looking
+defects, but the data prove no asymptotic rate and equal-order doubling alone
+does not land arbitrary orders. This is **finite exact evidence**, not a
+completed recurrence.
+
+#### 10.116.2 Conference-doubled family: exact and bounded members
+
+The Paley construction supplies symmetric conference matrices for primes
+`p=1 mod 4`, with `q=p+1`. The programs
+`conference_double_construction.py`,
+`conference_double_eigen_certificate.py`,
+`hadamard_integrality_bound.py`, and
+`analyze_conference_double_family.py` verify the following fixed-family data:
+
+| `p` | child order and cap | parent order and cap | classification |
+|---:|---:|---:|:---|
+| 5 | `q=6`, `5` | `12`, `18` | exhaustive exact |
+| 13 | `q=14`, `21` | `28`, `[70,72]` | child exhaustive; explicit lower and rigorous integer-shell upper |
+| 17 | `q=18`, `33` | `36`, `108` | child exhaustive; parent exact from an explicit Boolean Hadamard eigenvector |
+| 97 | `q=98`, `[455,481]` | `196`, `[1284,1372]` | explicit heuristic witnesses and spectral uppers only |
+
+For `p=17`, the saved sign vectors satisfy `Hx=+/-6x`; hence the parent cap is
+exactly `108=36^(3/2)/2`. For `p=13`, a 15-minute threshold-72 CP-SAT run was
+inconclusive, so `[70,72]` must not be shortened. For `p=97`, paired heuristic
+normalized lower witnesses are `0.468999...` for the child and `0.467930...`
+for the parent, but the rigorous `2/3`-defect interval remains
+`[-4.645259...,5.157867...]`. Two 300-second Boolean-eigenvector searches
+returned `UNKNOWN`; they neither prove nor disprove regularity.
+
+This family is a useful scalable testbed. It does not yet compose arbitrary
+near-minimizers or arbitrary orders, and ordinary Hadamard maximum excess does
+not supply the missing result: that theory permits independent row and column
+switches, whereas (10.1419) requires the same sign vector on both sides.
+
+#### 10.116.3 Certified order-13 bridge and order-14 completion
+
+**Solver-certified construction.** For the saved exact order-6 and order-7
+children, CP-SAT proved cap 18 infeasible and found a sign bridge of parent cap
+20. Since order-13 energies are even, their exact fixed-child bridge value is
+20. This concerns those representatives, not all minimizers. Exhaustive
+independent evaluation verifies the witness hash
+`7161aa7c14c379fca74e95b91331421143efc3d5da0dea61a5a5d13abcd5114e`
+and gives
+
+~~~math
+20^{2/3}-5^{2/3}-9^{2/3}=0.117296548146\ldots .       \tag{10.1420}
+~~~
+
+Together with monotonicity, `M_12=18`, and energy parity, this proves the new
+certified interval
+
+~~~math
+18\le M_{13}\le20.                                   \tag{10.1421}
+~~~
+
+This improves the previous heuristic cap 22. It is not yet an exact value;
+the global cap-18 infeasibility decision remains open at this checkpoint.
+
+The witness has exact spectrum `0,+/-sqrt(13)`, with multiplicities `1,6,6`.
+Exact integer arithmetic finds a sign vector `s` with
+
+~~~math
+13I-A^2=ss^{\mathsf T},\qquad As=0.                  \tag{10.1422}
+~~~
+
+Consequently
+
+~~~math
+C=\begin{pmatrix}0&s^{\mathsf T}\\s&A\end{pmatrix}
+\quad\text{satisfies}\quad C^2=13I.                 \tag{10.1423}
+~~~
+
+The exhaustive profile of this order-14 symmetric conference signing has cap
+21, and every one of its 14 vertex deletions has cap 20. Hence
+
+~~~math
+19\le M_{14}\le21,                                   \tag{10.1424}
+~~~
+
+where the lower bound uses `M_14>=M_12=18` and the odd parity of its 91-edge
+energies. Moreover, the conference signing has 624 unordered `7+7` partitions
+in which both children have the exact cap `M_7=9`. The first saved partition
+has
+
+~~~math
+21^{2/3}-2\,9^{2/3}=-1.041834810824\ldots .           \tag{10.1425}
+~~~
+
+Thus exact-child composition can have negative defect, while the adjacent
+`6+7` composition has a very small positive defect. Equations
+(10.1422)--(10.1425) are proved for explicit saved matrices; they do not show
+that conference completions exist at all required scales.
+
+#### 10.116.4 What optimized bridges are doing
+
+`analyze_bridge_margin_profiles.py` evaluates every state pair for the 27
+feasible bridge-grid witnesses through total order 12. All 27 optimized
+bridges have negative Pearson correlation between aligned internal energy and
+cross-term magnitude. At the same attained caps, an iid random bridge has
+expected violation count between `1.637...` and `34.547...`; nevertheless the
+optimized bridges have none. For the exact `6+6` bridge at cap 18, the random
+expectation is `32.2306...`, while the optimized bridge forces cross magnitude
+4 on every state pair at the highest internal level 10.
+
+This is **exact finite structural evidence** that bridge selection creates a
+state-dependent anticorrelation not captured by the raw union bound. It does
+not prove that such anticorrelation can be achieved uniformly or with a
+summable defect.
+
+#### 10.116.5 Updated frontier
+
+The rigorous asymptotic interval remains (10.1416). Primary finite progress is
+substantial: `M_13` is now certified in `[18,20]`, `M_14` in `[19,21]`, an
+exact `6+7` cap-20 composition has been found, and it completes to a highly
+structured conference signing with 624 exact `7+7` partitions.
+
+The leading target is now an **existential state-dependent bridge theorem**.
+For comparable `m,n`, it must select suitable near-minimizing representatives
+`A,B` and a bridge `C` so that
+
+~~~math
+\operatorname{cap}\!\begin{pmatrix}A&C\\C^{\mathsf T}&B\end{pmatrix}^{2/3}
+\le M_m^{2/3}+M_n^{2/3}+O((m+n)^{1-\delta})           \tag{10.1426}
+~~~
+
+for some fixed `delta>0`, or satisfy the more general summability condition
+(10.1407). By Section 10.115.2 this would prove convergence. The exact finite
+bridges and their margin profiles make (10.1426) testable and distinct from
+the inactive low-row-cut route, but no uniform selection lemma is known.
+
+Conference doubling/completion is retained as the strongest structured
+testbed, not as a completed route: it must either generalize beyond special
+orders and representatives or reveal the deterministic anticorrelation that
+an arbitrary-order bridge can use. A scalable linear `2/3`-defect, persistent
+failure away from conference orders, or a proof that bridge selection is
+equivalent to the original minimization would falsify the present lead.
+Selected-prior and common-active-face remain inactive; genuine
+nonconvergence remains a standing but unsupported alternative.

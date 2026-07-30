@@ -1,0 +1,357 @@
+{
+  "classification": "exact exhaustive statistics for the saved witnesses; not an enumeration of all minimizers",
+  "known_exact_M": {
+    "10": 13,
+    "11": 17,
+    "12": 18,
+    "13": 20,
+    "3": 3,
+    "4": 4,
+    "5": 4,
+    "6": 5,
+    "7": 9,
+    "8": 10,
+    "9": 12
+  },
+  "schema": "quadratic-signing-family-analysis-v1",
+  "two_thirds_composition_defects": [
+    {
+      "defect": -1.2361499078909421,
+      "defect_over_total": -0.20602498464849037,
+      "m": 3,
+      "n": 3,
+      "total": 6
+    },
+    {
+      "defect": -0.273177211919426,
+      "defect_over_total": -0.03902531598848943,
+      "m": 3,
+      "n": 4,
+      "total": 7
+    },
+    {
+      "defect": 0.04166291077112794,
+      "defect_over_total": 0.005207863846390992,
+      "m": 3,
+      "n": 5,
+      "total": 8
+    },
+    {
+      "defect": -0.39809536596671435,
+      "defect_over_total": -0.049761920745839294,
+      "m": 4,
+      "n": 4,
+      "total": 8
+    },
+    {
+      "defect": 0.23738122715302268,
+      "defect_over_total": 0.02637569190589141,
+      "m": 3,
+      "n": 6,
+      "total": 9
+    },
+    {
+      "defect": 0.20179858883830004,
+      "defect_over_total": 0.02242206542647778,
+      "m": 4,
+      "n": 5,
+      "total": 9
+    },
+    {
+      "defect": -0.8780577202952573,
+      "defect_over_total": -0.08780577202952573,
+      "m": 3,
+      "n": 7,
+      "total": 10
+    },
+    {
+      "defect": 0.08491497567625883,
+      "defect_over_total": 0.008491497567625883,
+      "m": 4,
+      "n": 6,
+      "total": 10
+    },
+    {
+      "defect": 0.4890906140993785,
+      "defect_over_total": 0.04890906140993785,
+      "m": 5,
+      "n": 5,
+      "total": 10
+    },
+    {
+      "defect": -0.11018363820673827,
+      "defect_over_total": -0.010016694382430752,
+      "m": 3,
+      "n": 8,
+      "total": 11
+    },
+    {
+      "defect": -0.23510179225402617,
+      "defect_over_total": -0.02137289020491147,
+      "m": 4,
+      "n": 7,
+      "total": 11
+    },
+    {
+      "defect": 1.1676291804553323,
+      "defect_over_total": 0.10614810731412111,
+      "m": 5,
+      "n": 6,
+      "total": 11
+    },
+    {
+      "defect": -0.4532811561497061,
+      "defect_over_total": -0.03777342967914218,
+      "m": 3,
+      "n": 9,
+      "total": 12
+    },
+    {
+      "defect": -0.29314547808253355,
+      "defect_over_total": -0.02442878984021113,
+      "m": 4,
+      "n": 8,
+      "total": 12
+    },
+    {
+      "defect": 0.021694644608020397,
+      "defect_over_total": 0.0018078870506683664,
+      "m": 5,
+      "n": 7,
+      "total": 12
+    },
+    {
+      "defect": 1.0202499788942587,
+      "defect_over_total": 0.08502083157452156,
+      "m": 6,
+      "n": 6,
+      "total": 12
+    },
+    {
+      "defect": -0.2407956394500026,
+      "defect_over_total": -0.018522741496154047,
+      "m": 3,
+      "n": 10,
+      "total": 13
+    },
+    {
+      "defect": -0.393261890926766,
+      "defect_over_total": -0.030250914686674308,
+      "m": 4,
+      "n": 9,
+      "total": 13
+    },
+    {
+      "defect": 0.2066320638782484,
+      "defect_over_total": 0.015894774144480647,
+      "m": 5,
+      "n": 8,
+      "total": 13
+    },
+    {
+      "defect": 0.11729654814568224,
+      "defect_over_total": 0.00902281139582171,
+      "m": 6,
+      "n": 7,
+      "total": 13
+    }
+  ],
+  "witnesses": [
+    {
+      "M": 20,
+      "P": 20,
+      "Q": 20,
+      "absolute_projective_ground_count": 78,
+      "classification": "solver-certified computation; no standalone proof object",
+      "conference_defect_frobenius_squared": 156,
+      "eigenvalues": [
+        -3.605551275463992,
+        -3.6055512754639905,
+        -3.6055512754639896,
+        -3.6055512754639887,
+        -3.605551275463988,
+        -3.605551275463988,
+        -4.718447854656915e-16,
+        3.6055512754639882,
+        3.6055512754639887,
+        3.605551275463989,
+        3.60555127546399,
+        3.605551275463991,
+        3.6055512754639913
+      ],
+      "n": 13,
+      "normalized_M": 0.4266924586347916,
+      "operator_norm": 3.605551275463992,
+      "partitions": {
+        "3+10": {
+          "child_cap_pairs": {
+            "3,15": 208,
+            "3,17": 78
+          },
+          "minimum_cap_sum": 18,
+          "minimum_two_thirds_sum": 8.162285818625303,
+          "partition_count": 286,
+          "tight_optimal_child_partition_count": 0
+        },
+        "4+9": {
+          "child_cap_pairs": {
+            "4,12": 273,
+            "4,14": 312,
+            "6,12": 52,
+            "6,14": 78
+          },
+          "minimum_cap_sum": 16,
+          "minimum_two_thirds_sum": 7.76132488820754,
+          "partition_count": 715,
+          "tight_optimal_child_partition_count": 273
+        },
+        "5+8": {
+          "child_cap_pairs": {
+            "4,10": 39,
+            "4,12": 312,
+            "6,12": 624,
+            "6,14": 78,
+            "8,12": 234
+          },
+          "minimum_cap_sum": 14,
+          "minimum_two_thirds_sum": 7.161430933402524,
+          "partition_count": 1287,
+          "tight_optimal_child_partition_count": 39
+        },
+        "6+7": {
+          "child_cap_pairs": {
+            "5,9": 52,
+            "7,11": 312,
+            "7,9": 312,
+            "9,11": 780,
+            "9,9": 260
+          },
+          "minimum_cap_sum": 14,
+          "minimum_two_thirds_sum": 7.2507664491350905,
+          "partition_count": 1716,
+          "tight_optimal_child_partition_count": 52
+        }
+      },
+      "restrictions": {
+        "10": {
+          "histogram": {
+            "15": 208,
+            "17": 78
+          },
+          "known_M": 13,
+          "maximum": 17,
+          "minimum": 15,
+          "optimal_restriction_count": 0
+        },
+        "11": {
+          "histogram": {
+            "19": 78
+          },
+          "known_M": 17,
+          "maximum": 19,
+          "minimum": 19,
+          "optimal_restriction_count": 0
+        },
+        "12": {
+          "histogram": {
+            "20": 13
+          },
+          "known_M": 18,
+          "maximum": 20,
+          "minimum": 20,
+          "optimal_restriction_count": 0
+        },
+        "3": {
+          "histogram": {
+            "3": 286
+          },
+          "known_M": 3,
+          "maximum": 3,
+          "minimum": 3,
+          "optimal_restriction_count": 286
+        },
+        "4": {
+          "histogram": {
+            "4": 585,
+            "6": 130
+          },
+          "known_M": 4,
+          "maximum": 6,
+          "minimum": 4,
+          "optimal_restriction_count": 585
+        },
+        "5": {
+          "histogram": {
+            "4": 351,
+            "6": 702,
+            "8": 234
+          },
+          "known_M": 4,
+          "maximum": 8,
+          "minimum": 4,
+          "optimal_restriction_count": 351
+        },
+        "6": {
+          "histogram": {
+            "5": 52,
+            "7": 624,
+            "9": 1040
+          },
+          "known_M": 5,
+          "maximum": 9,
+          "minimum": 5,
+          "optimal_restriction_count": 52
+        },
+        "7": {
+          "histogram": {
+            "11": 1092,
+            "9": 624
+          },
+          "known_M": 9,
+          "maximum": 11,
+          "minimum": 9,
+          "optimal_restriction_count": 624
+        },
+        "8": {
+          "histogram": {
+            "10": 39,
+            "12": 1170,
+            "14": 78
+          },
+          "known_M": 10,
+          "maximum": 14,
+          "minimum": 10,
+          "optimal_restriction_count": 39
+        },
+        "9": {
+          "histogram": {
+            "12": 325,
+            "14": 390
+          },
+          "known_M": 12,
+          "maximum": 14,
+          "minimum": 12,
+          "optimal_restriction_count": 325
+        }
+      },
+      "row_square_sum": 120,
+      "row_sums_sorted": [
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        2,
+        2,
+        4,
+        6,
+        6
+      ],
+      "source": "computations/results/bridge_6_7_sign1_cap20.json",
+      "trace_A4": 2028
+    }
+  ]
+}

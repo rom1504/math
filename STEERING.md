@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: the first substantial computational--composition checkpoint
-(2026-07-30), including certified values through order 12. Status:
+Evidence cutoff: the second substantial computational--composition checkpoint
+(2026-07-30), including certified intervals through order 14. Status:
 **computational--composition campaign active**. This is a new sustained
 campaign architecture, not a return to the prior short-wave sequence.
 
@@ -25,39 +25,39 @@ choice of a precise composition target are agent-authored judgments.
 
 ## Agent-authored campaign assessment
 
-The leading route is now a scalable algebraic/entropy-aware bridge theorem,
-prompted by a certified exact `6+6` composition at order 12.  The exact
-order-12 minimizer splits into order-6 conference minimizers `S,T` and a sign
-bridge `C` satisfying
+The leading route is an existential **state-dependent bridge theorem**.  For
+`b_n=M_n^(2/3)`, the exact sufficient result is to choose suitable
+near-minimizing representatives at every pair of comparable orders and a
+bridge with
 
 ~~~math
-S^2=T^2=5I,\quad SC+CT=0,\quad
-CC^{\mathsf T}=6I+2S,\quad C^{\mathsf T}C=6I-2T.
+b_{m+n}\le b_m+b_n+e(m+n),
+\qquad \sum_{j\ge1}\frac{e(2^jk)}{2^jk}\longrightarrow0.
 ~~~
 
-This is genuine cross-order structure, but it is not yet an asymptotic
-mechanism.  The exact sufficient result remains: for
-`b_n=M_n^(2/3)`, construct comparable-order parents with
-`b_(m+n)<=b_m+b_n+e(m+n)` where
-`sum_j e(2^j k)/(2^j k)` tends to zero as `k` tends to infinity.  Balanced
-merging then forces `b_n/n`, and hence `M_n/n^(3/2)`, to converge.
+Balanced merging then forces `b_n/n`, hence `M_n/n^(3/2)`, to converge.  The
+new cap-20 `6+7` bridge has `2/3`-defect `0.117296...`; its conference
+completion has 624 exact `7+7` child partitions and defect `-1.041835...`.
+Across all 27 earlier feasible witnesses, optimized cross terms are negatively
+correlated with aligned internal energy even where an iid bridge has many
+expected violations.  This makes the missing deterministic anticorrelation
+mechanism concrete, but not proved uniformly.
 
-The concrete target is to determine whether the conference/bridge identities
-have a scalable closure whose **Boolean cap**, not merely spectral norm,
-meets that defect condition.  A complementary target is an energy-level-count
-lemma strong enough to choose a state-dependent bridge.  The route is
-falsified as an asymptotic strategy if the identities are sporadic, if every
-extension has linear `b`-defect, or if they control only spectrum while the
-Boolean cap retains a leading-order loss.  Fixed `5+6` children already show
-that the ideal zero-defect law is false: their exact bridge cap is 17 and the
-`2/3`-power defect is `1.167629...`.  A rigorous random-bridge union bound is
-also much too weak at these orders.
+Conference doubling/completion is the strongest structured testbed, not the
+leading theorem by itself.  It gives exact or bounded members through parent
+orders 12, 28, 36, and exploratory order 196, but it neither selects arbitrary
+near-minimizers nor lands arbitrary orders.  The universal equal-order double
+has small finite `2/3`-defects through order 20 but retains an uncontrolled
+principal restriction and equal-order doubling alone cannot prove global
+convergence.
 
-Ranked alternatives are: broader exact/nested computation to identify the
-algebraic family; refined energy-histogram bridge selection; a correctly
-mapped covering-code theorem; and genuine nonconvergence.  Update this
-assessment only when the target changes, a major obstruction is proved, or at
-a substantial checkpoint.
+The lead is falsified by a scalable linear `b`-defect, persistent failure away
+from conference orders, or a verified equivalence between bridge selection
+and the original minimization.  Ranked alternatives are broader exact bridge
+tests, a precise discrepancy/energy-profile theorem, a correctly mapped
+covering-code theorem, and genuine nonconvergence.  Update this assessment
+only when the target changes, a major obstruction is proved, or at a
+substantial checkpoint.
 
 ## Rigorous frontier
 
@@ -68,10 +68,11 @@ The interval remains
 \le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-The newly solver-certified finite values are
+The newly certified finite information is
 
 ~~~math
-M_{11}=17,\qquad M_{12}=18.
+M_{11}=17,\qquad M_{12}=18,\qquad
+18\le M_{13}\le20,\qquad19\le M_{14}\le21.
 ~~~
 
 They do not change the asymptotic interval. No fixed-density restriction

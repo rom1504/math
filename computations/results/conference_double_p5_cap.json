@@ -1,0 +1,70 @@
+{
+  "cap_lower_bound": 18,
+  "cap_upper_bound": 18.0,
+  "certified_cap": 18,
+  "classification": "solver-certified exact fixed-matrix cap; no standalone proof object",
+  "matrix_sha256": "b002f4c2199bd50f5b8ff21d48f422be4373e9d689fae17cc4c40f5754baa50b",
+  "n": 12,
+  "schema": "quadratic-signing-fixed-cap-cpsat-v1",
+  "sides": [
+    {
+      "best_bound": 18.0,
+      "branches": 4215,
+      "conflicts": 1024,
+      "elapsed_seconds": 0.07081055641174316,
+      "objective": 18.0,
+      "objective_sign": 1,
+      "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 18\nbest_bound: 18\nintegers: 67\nbooleans: 66\nconflicts: 1024\nbranches: 4215\npropagations: 31529\ninteger_propagations: 39921\nrestarts: 2\nlp_iterations: 0\nwalltime: 0.07003\nusertime: 0.0700301\ndeterministic_time: 0.0152439\ngap_integral: 0\nsolution_fingerprint: 0x6e3f2959994de7\n",
+      "spins": [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "status": "OPTIMAL",
+      "verified_energy": 18,
+      "wall_time_seconds": 0.07003002500000001
+    },
+    {
+      "best_bound": 18.0,
+      "branches": 2730,
+      "conflicts": 918,
+      "elapsed_seconds": 0.04500412940979004,
+      "objective": 18.0,
+      "objective_sign": -1,
+      "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 18\nbest_bound: 18\nintegers: 67\nbooleans: 66\nconflicts: 918\nbranches: 2730\npropagations: 19692\ninteger_propagations: 26201\nrestarts: 2\nlp_iterations: 0\nwalltime: 0.0447542\nusertime: 0.0447543\ndeterministic_time: 0.00769666\ngap_integral: 0\nsolution_fingerprint: 0x7606002a2cd8aa4e\n",
+      "spins": [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "status": "OPTIMAL",
+      "verified_energy": -18,
+      "wall_time_seconds": 0.044754225
+    }
+  ],
+  "solver": {
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "time_limit_seconds_per_side": 60.0,
+    "workers": 1
+  },
+  "source": "computations/results/conference_double_p5.json"
+}

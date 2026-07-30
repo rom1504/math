@@ -93,12 +93,18 @@ def partition_statistics(matrix: np.ndarray) -> dict[str, object]:
 
 def analyze(path: Path) -> dict[str, object]:
     payload = json.loads(path.read_text())
-    key = "matrix" if "matrix" in payload else "parent_matrix"
+    key = (
+        "matrix"
+        if "matrix" in payload
+        else ("parent_matrix" if "parent_matrix" in payload else "conference_matrix")
+    )
     matrix = np.asarray(payload[key], dtype=np.int8)
     profile = exact_profile(matrix)
-    if stable_matrix_hash(matrix) != payload.get(
-        "matrix_sha256", payload.get("parent_matrix_sha256")
-    ):
+    expected_hash = payload.get(
+        "matrix_sha256",
+        payload.get("parent_matrix_sha256", payload.get("conference_matrix_sha256")),
+    )
+    if stable_matrix_hash(matrix) != expected_hash:
         raise AssertionError(f"matrix hash mismatch in {path}")
     n = len(matrix)
     square = matrix.astype(np.int64) @ matrix.astype(np.int64)

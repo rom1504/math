@@ -1,0 +1,31 @@
+{
+  "cap_lower_bound": null,
+  "cap_upper_bound": null,
+  "certified_cap": null,
+  "classification": "inconclusive fixed-threshold solver search",
+  "decision_threshold": 72,
+  "matrix_sha256": "6e5c3e054ffab06eaefeec5bce1b712111f242e65c57273ddb474427a9ce429a",
+  "n": 28,
+  "schema": "quadratic-signing-fixed-cap-cpsat-v1",
+  "sides": [
+    {
+      "best_bound": 0.0,
+      "branches": 9362229,
+      "conflicts": 4146213,
+      "decision_threshold": 72,
+      "elapsed_seconds": 900.0258820056915,
+      "objective": 0.0,
+      "objective_sign": 1,
+      "response_stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 0\nbest_bound: 0\nintegers: 378\nbooleans: 378\nconflicts: 4146213\nbranches: 9362229\npropagations: 275953897\ninteger_propagations: 114555586\nrestarts: 23778\nlp_iterations: 0\nwalltime: 900.025\nusertime: 900.025\ndeterministic_time: 191.685\ngap_integral: 0\n",
+      "status": "UNKNOWN",
+      "wall_time_seconds": 900.025217105
+    }
+  ],
+  "solver": {
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "time_limit_seconds_per_side": 900.0,
+    "workers": 1
+  },
+  "source": "computations/results/conference_double_p13.json"
+}

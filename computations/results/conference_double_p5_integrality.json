@@ -1,0 +1,30 @@
+{
+  "certified_cap_upper_bound": 20,
+  "classification": "proved fixed-signing cap upper bound by exact integer dynamic programming",
+  "energy_parity": 0,
+  "integer_shell_maximum_xTHx": 40,
+  "matrix_sha256": "b002f4c2199bd50f5b8ff21d48f422be4373e9d689fae17cc4c40f5754baa50b",
+  "n": 12,
+  "proof": [
+    "z_i=x_i(Hx)_i has the parity of N",
+    "sum z_i^2=N^2 because H H^T=NI",
+    "x^T A x=x^T H x=sum z_i",
+    "dynamic programming exactly maximizes sum z_i on the relaxed integer shell"
+  ],
+  "schema": "quadratic-signing-hadamard-integrality-bound-v1",
+  "shell_absolute_values": [
+    4,
+    4,
+    4,
+    4,
+    2,
+    4,
+    4,
+    2,
+    2,
+    2,
+    4,
+    4
+  ],
+  "source": "computations/results/conference_double_p5.json"
+}
