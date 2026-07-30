@@ -29818,3 +29818,373 @@ signing-specific exclusion of the harmonic erasure wall using the actual
 outside-completion polynomial; and a direct nonlinear exceptional-center or
 other rare-tail theorem.  Do not retry unpriced cyclic monotonicity, generic
 endpoint-cost control, or log-sum-exp terminal smoothing.
+
+### 10.94 Wave 41: Johnson flatness, mixed exceptional pressure, and one-deletion anti-resonance
+
+This wave tested the three continuations selected in the preceding frontier.
+Canonical complement responses acquire a strict quantized adjacent gap, but
+Johnson averaging and every elementary four-cycle merely repackage that gap
+and lose far too much to control overlap conflict.  The exceptional-center
+route gains an exact fixed-slice second moment, concentration at the required
+stretched-exponential speed, and a nonlinear mixed-pressure sufficient
+criterion.  The harmonic route shows that a single genuine completion
+component can realize the Wave 40 OR profile exactly, while simultaneous
+one-deletion components and their common Gibbs base enforce a sharp
+anti-resonance bound.  No result below proves convergence.
+
+#### 10.94.1 Canonical Johnson cycles have strict gaps but no conflict modulus
+
+Fix an anchor `v`, write `k=m-1`, `r=n-m`, and let `B_S=-A+2P_SAP_S`.
+For one selector-independent penalty `P` and one fixed total-order tie-break,
+let `d_S` maximize `<B_S,d>-P(d)`.  On an adjacent swap
+`T=S-a+b`, with `C=S\{a}=T\{b}`, put
+
+```math
+g_{S,T}=\langle B_S-B_T,d_S-d_T\rangle.
+```
+
+The two optimality inequalities give `g_(S,T)>=0`.  Equality would make both
+responses optimal at both selectors, so the common tie-break would choose the
+same response.  The ordered matrix normalization also makes every nonzero gap
+a multiple of eight.  Thus **Verified**:
+
+```math
+\boxed{
+d_S\ne d_T\quad\Longrightarrow\quad
+g_{S,T}\in8\mathbb Z_{>0}.
+}
+\tag{10.1119}
+```
+
+Let `h_(S,T)` count disagreement of the two anchored labels on their
+nonanchor overlap, and let `C_v` be corrected anchored conflict.  Exact
+Johnson Poincare on the conditional graphs `J(n-2,m-2)` gives
+
+```math
+\boxed{
+\mathcal C_v
+\le\frac{(m-1)(n-m)}{n-2}\mathbb E_{S\to T}h_{S,T}
+\le\frac{(m-1)(m-2)(n-m)}{8(n-2)}
+\mathbb E_{S\to T}g_{S,T}.
+}
+\tag{10.1120}
+```
+
+The second coefficient is `Theta(n^2)` at fixed density.  There is an exact
+signed formula showing that the available row information does not repair
+it.  For
+
+```math
+e_S(d)=\sum_{i<j\in S}a_{ij}d_{ij},
+\qquad
+\rho_j(d)=\sum_{i\ne j}a_{ij}d_{ij},
+```
+
+put `D_S=sum_(j in S)rho_j`,
+`I_(v,S)=sum_(i in S\{v})a_(vi)d_(vi)`, and
+`O_(v,S)=sum_(b notin S)a_(vb)d_(vb)`.  Direct swap averaging gives
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E_{S\to T}g_{S,T}
+&=8\mathbb E_S
+\frac{2(n-2)e_S(d_S)-(k-1)D_S(d_S)
+-rI_{v,S}(d_S)-O_{v,S}(d_S)}{kr},\\
+\mathbb E g_{S,T}
+&\le8\left[
+\frac{(n-2)q_n}{kr}
++\frac{(k-1)\sqrt{mR_*}}{kr}+1+\frac1k
+\right]
+\end{aligned}
+}
+\tag{10.1121}
+```
+
+when `E R_2(d_S)<=R_*`.  At the project row budget the latter is only
+`O(n^(5/8-c/2)+n^(1/2))`; inserting it into (10.1120) is worse than the
+trivial conflict bound.
+
+Elementary squares add no curvature.  If `F_square` is the forward cyclic
+regret and `F_square^rev` its reverse, then
+
+```math
+\boxed{
+F_\square+F_\square^{\rm rev}
+=\sum_{\{S,T\}\in E(\square)}g_{S,T}.
+}
+\tag{10.1122}
+```
+
+Every anchored edge lies in exactly `(m-2)(n-m-1)` such squares, so summing
+(10.1122) is only that multiplicity times the adjacent-gap sum.  The
+antisymmetric remainder is a signed circulation, with no squared label
+difference or unsigned overlap term.
+
+Two exact audits delimit the conclusion.  On the exact order-five minimizer
+`A_5`, `m=4`, common lexicographic exact-ground selection has corrected
+conflict one, pair gaps `(32,32,16,16,16,32)`, and nonzero overlap
+disagreement on three of the six pairs.  No such lexicographic conflict occurs
+for exact minimizers of orders three or four.  More decisively, for every
+`h=1 mod 4`, `h>=5`, there is a complete signing of order `n=2h`, with
+`m=n-2`, two cuts of row square exactly `n`, and one common penalty whose
+canonical responses use only those cuts, such that
+
+```text
+corrected conflict = Omega(n),
+every adjacent gap <= 48,
+every directed four-cycle regret <= 96.
+```
+
+The construction uses balanced odd circulants inside two blocks and a
+`+/-1` cross block whose row and column sums are `+/-1`.  At `n=10` the exact
+values are conflict `391/252`, mean adjacent gap `44/7`, and mean adjacent
+overlap disagreement `74/63`.  This scalable wall is not an exact minimizer
+and its chosen responses need not satisfy complement incidence.  It therefore
+falsifies a conflict theorem from common canonicality, low row, and Johnson
+cycles alone, not a minimizer-specific incidence-curvature theorem.
+
+#### 10.94.2 Signed slice energy concentrates at project speed; the missing object is mixed pressure
+
+Fix a center spin `z`, set
+
+```math
+b_{ij}=a_{ij}z_iz_j,
+\qquad E=z^TAz,
+\qquad R=z^TA^2z,
+```
+
+and for `S~U_m` put `C_S=z_S^TA[S]z_S` and
+`p_j=(m)_j/(n)_j`.  Equal, adjacent, and disjoint edge-pair counting proves
+the exact identities
+
+```math
+\boxed{
+\begin{aligned}
+\mathbb E C_S&=p_2E,\\
+\mathbb E C_S^2
+&=p_4E^2+4(p_3-p_4)R
++2n(n-1)(p_2-2p_3+p_4),\\
+\operatorname{Var}(C_S)
+&=(p_4-p_2^2)E^2+4(p_3-p_4)R
++2n(n-1)(p_2-2p_3+p_4).
+\end{aligned}
+}
+\tag{10.1123}
+```
+
+Bernoulli conditioning, a linear subgaussian bound, and Hanson--Wright give,
+uniformly on a fixed density window,
+
+```math
+\boxed{
+\Pr_{U_m}\{|C_S-p_2E|\ge u\}
+\le C\sqrt n\exp\left[-c\min\left\{
+\frac{(u-q_n/n)_+^2}{R+n^2},
+\frac{(u-q_n/n)_+}{\lVert A\rVert_{\rm op}}
+\right\}\right].
+}
+\tag{10.1124}
+```
+
+For an exact minimizer, `||A||_op<=sqrt(2q_n)=O(n^(3/4))`.  Thus a center
+with `R=O(n^2)` and `u=K n^(3/2-c)`, `0<c<1/4`, has signed-energy tail at
+most `exp{-Omega(n^(3/4-c))}`.  This is exactly the affordable speed, but it
+is an upper concentration theorem and does not control the nonlinear
+principal norm `Q_S=Q(A[S])`.
+
+Indeed, for `delta_S^abs=Q_S-|C_S|`, its second moment contains the
+uncontrolled mixed term `-2 E[Q_S|C_S|]`.  The precise nonlinear successor is
+as follows.  Let
+
+```math
+H=B_{n,m}+t,
+\qquad
+M_S=H-Q_S+\sigma C_S,
+\qquad
+K_z(\theta)=\log\mathbb E_{U_m}e^{\theta M_S},
+```
+
+where `sigma=sign(E)`, `L_0=n^(3/4-c)`, and
+`theta=Theta(n^(-3/4))`.  If, for fixed `a>0` and finite `b`, one low-row
+center satisfies
+
+```math
+\boxed{
+R(z)\le2n(n-1),
+\qquad K_z(\theta)\ge aL_0,
+\qquad K_z(2\theta)-2K_z(\theta)\le bL_0,
+}
+\tag{10.1125}
+```
+
+then Paley--Zygmund applied to `e^(theta M_S)` gives
+
+```math
+\boxed{
+U_m\{\delta_S^{\rm abs}(z)\le B_{n,m}+t\}
+\ge(1-e^{-aL_0})^2e^{-bL_0}.
+}
+\tag{10.1126}
+```
+
+This supplies a zero-distance exceptional center and proves (10.967), hence
+the restriction chain.  It is **Verified as a sufficient criterion**, not as
+an established property of minimizers.  Its derivative
+`K_z'(0)=t-G-p_2 Delta_A(z)` is exactly the circular mean obstruction
+(10.970); progress must use nonlinear `Q_S`-weighted curvature and the
+replica gap rather than another unweighted moment of `C_S`.
+
+The distinction is already exact inside `A_8,m=4`.  Two row-`72` centers have
+the same `(E,R)=(-16,72)`, the same moments
+`E C_S=-24/7`, `E C_S^2=208/7`, and the same marginal norm histogram
+`Q_S=8` sixty times and `12` ten times.  Their absolute-deficit histograms are
+
+```text
+{0:19, 4:34, 8:15, 12:2},
+{0:22, 4:28, 8:16, 12:4}.
+```
+
+Since `B_(8,4)=2.7853...<4`, their zero-tolerance favorable masses are
+`19/70` and `22/70`.  This finite wall does not falsify (10.967); it proves
+that `(E,R)`, all signed second-moment data, and even the marginal law of
+`Q_S` do not determine the required mixed tail.
+
+#### 10.94.3 A genuine completion component realizes OR, but one-deletion Gibbs coupling suppresses it
+
+For retained set `S`, outside set `T`, and boundary spin `y`, the actual
+normalized completion partition is an external Ising log-Laplace transform
+
+```math
+G_{\beta,S}(y)=\mathbb E_z\exp\{\beta X_y(z)\},
+\qquad b_S(y)=G_{\beta,S}(y)^{-1}.
+```
+
+Its continuous boundary Hessian is
+`4 beta^2 A[S,T] Cov_beta(z) A[T,S]>=0`, and at `beta=0` its second
+temperature derivative is
+`2|T|(|T|-1)+4||A[T,S]y||_2^2`.  These genuine completion constraints still
+allow OR exactly.  With one omitted spin joined positively to three retained
+spins and gauge `y_0=1`,
+
+```math
+\boxed{
+b(y_1,y_2)=\operatorname{sech}(2\beta(1+y_1+y_2)),
+\qquad
+L_\beta=\log\frac{\cosh(6\beta)}{\cosh(2\beta)}\sim4\beta.
+}
+\tag{10.1127}
+```
+
+Thus one state is low and the other three are high.  For `G=1/b`, the
+four-point determinant has magnitude `sinh^2(4 beta)`.  Convexity, Walsh
+structure, or a four-point identity for one component cannot exclude the
+Wave 40 geometry.
+
+The simultaneous one-deletion mixture has a stronger exact coupling.  If
+
+```math
+h_i(d)=\sum_{j\ne i}a_{ij}d_{ij},
+\qquad
+\omega_i=\log\frac{\nu_\beta(d^i)}{\nu_\beta(d)},
+\qquad
+\chi_i=\log\frac{U_\beta(d^i)}{U_\beta(d)},
+```
+
+then
+
+```math
+\boxed{
+b_i(d)=\operatorname{sech}(2\beta h_i(d))
+=\operatorname{sech}(\omega_i/2),
+\qquad
+|\chi_i|\le\log n+\log\cosh(|\omega_i|/2).
+}
+\tag{10.1128}
+```
+
+Here the omitted-`i` component is unchanged on the `i`-edge and contributes
+`b_i/n` to both endpoints.  If the conditional odds cross zero during
+`0<=s<=1`, then `|chi_i|>=|omega_i|`; hence (10.1128) yields
+
+```math
+\boxed{
+\text{crossing edge}
+\quad\Longrightarrow\quad
+|\omega_i|\le2\log n,
+\qquad |\chi_i|\le2\log n.
+}
+\tag{10.1129}
+```
+
+In particular the uniform-base OR wall, with `omega=0` and an unbounded
+score jump, is impossible for an actual one-deletion endpoint.  A second
+exact bound follows from `sech u>=e^(-|u|)`, Jensen, and the Boolean bilinear
+norm inequality `B(A)<=2Q(A)`:
+
+```math
+\boxed{
+e^{-4\beta Q(A)/n}\le U_\beta(d)\le1,
+\qquad
+\operatorname{osc}\log U_\beta\le\frac{4\beta Q(A)}n.
+}
+\tag{10.1130}
+```
+
+For an exact minimizer at project temperature this oscillation is `O(n^c)`.
+At order four, exact exhaustion gives `q_4=8` and 48 minimizers.  Every state
+of every minimizer has at most two row fields of magnitude three, so, with
+`p=sech(2 beta)` and `q=sech(6 beta)`,
+`max U/min U<=2p/(p+q)<2`.  Every individual component can nevertheless have
+the exact OR profile.  The nonminimal all-positive signing has full-mixture
+ratio asymptotic to `e^(4 beta)`, but its parent Gibbs odds oppose that shift
+at rate `e^(8 beta)`; numerical quadrature shows `K^2` decaying at
+`beta=1,2,4`.
+
+This protection is only a one-deletion theorem.  At fixed density the
+outside spins interact, (10.1128) is replaced by the general composition and
+tilting identities (10.745), (10.916), and a single component can retain OR.
+No bound on the fixed-density signed migration (10.1083), scalar defect
+(10.1096), endpoint orientation, restoring, or adjacent-selector Hellinger
+has been proved.
+
+#### 10.94.4 Updated frontier
+
+Wave 41 leaves adaptive optimized principal restriction and the bare tail
+(10.795) as the strategic leader, while sharpening three implementations:
+
+- common canonical tie-breaking makes complement response gaps strictly
+  positive and quantized, but Johnson Poincare loses `Theta(n^2)`, reversed
+  squares add exactly no new curvature, and a scalable low-row common-penalty
+  wall has macroscopic conflict with bounded cycle gaps.  Continue this line
+  only with an exact-minimizer, incidence-preserving cross-overlap curvature
+  theorem or a genuinely joint consensus selection; do not sum ordinary
+  cyclic inequalities again;
+
+- the exceptional-center route now has signed-energy concentration at the
+  exact affordable exponent and the checkable mixed-pressure/replica
+  criterion (10.1125).  Its missing input is precisely the nonlinear coupling
+  of `Q(A[S])` to an aligned low-row center.  Unweighted signed moments and the
+  uniform first derivative are exhausted.  This becomes the strongest direct
+  nonlinear fallback to the low-information complement kernel, but the
+  criterion itself is not evidence that minimizers satisfy it;
+
+- actual quadratic completion shape alone does not rule out harmonic OR.
+  Simultaneous one-deletion components and their Gibbs base do: crossing
+  jumps are at most logarithmic and global score oscillation is `O(n^c)`.
+  The fixed-density harmonic route survives only through a composition-level
+  analogue, adjacent-selector control, or a direct signed-migration theorem;
+  do not retry componentwise convexity or Walsh positivity as an OR ban;
+
+- no convergence proof or asymptotic falsifier has appeared, the rigorous
+  interval is unchanged, and no strategic leader has changed.  Therefore an
+  early `STEERING.md` refresh is not triggered.  The next mandatory refresh
+  and blank-slate audit remain due at the Wave 44 boundary.
+
+Wave 42 should compare: the mixed principal-norm pressure and replica gap in
+(10.1125); a genuinely joint incidence-preserving complement consensus
+kernel rather than deterministic cycle summation; and a fixed-density
+composition or selector-posterior analogue of the one-deletion anti-resonance
+bound.  Keep terminal distance and direct signed migration as ranked
+alternatives, but do not revive unweighted center moments, generic canonical
+cycles, or single-component harmonic shape constraints.
