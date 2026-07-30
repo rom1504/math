@@ -24520,3 +24520,446 @@ this boundary rather than waiting for Wave 35. Wave 31 should attack the
 minimizer-specific `J` and `C_sig` statistics directly, retain an independent
 attempt on the bare collision probability that does not presuppose planted
 completions, and continue the fixed-density harmonic parent route.
+
+### 10.84 Partial collisions, low-row forest closure, and centered harmonic composition
+
+The thirty-first wave weakens the mesoscopic event required by the
+fractional-cover route and gives a direct deterministic mechanism for both
+completion statistics left open in Wave 30. One coset need not hit the whole
+batch: hitting a positive fraction is exponent-equivalent, and even a batch
+cover by `n^eta` cosets remains convergence-sufficient when `eta<c`. A
+low-row-centered projective-Hamming forest now implies both the signature
+count and the coarsest-coset row bound. The leading missing input is therefore
+a minimizer-specific batch-clustering theorem, not a refinement theorem.
+
+The bare incidence audit identifies an exact power-sum statistic and gives a
+fully symmetric abstract wall showing that planting, fixed-order agreement,
+regular degrees, and minimax optimality do not force it. The matched-parent
+route acquires an exact reverse-KL composition, but this proves that
+uncentered sequential accumulation charges common modes which endpoint
+normalization cancels. All finite-set identities, closure bounds, harmonic
+identities, and finite computations below are **Verified**. The signing
+batch-clustering and centered harmonic bounds remain **Open targets**. No
+convergence proof or asymptotic signing counterexample is obtained.
+
+#### 10.84.1 Partial collisions and the exact incidence moment
+
+Retain an arbitrary finite hit family `H_a`, `M` candidates, selector law
+`w`, and `h_w=max_a w(H_a)`. For an iid `r`-batch put
+
+```math
+N_a=\sum_{j=1}^r\mathbf1_{\{S_j\in H_a\}},
+\qquad
+J_{r,s}=\{\max_aN_a\ge s\},
+\qquad
+S_s(w)=\sum_aw(H_a)^s.
+```
+
+The integer `Z_(r,s)=sum_a binom(N_a,s)` has mean
+`binom(r,s)S_s(w)`, and on `J_(r,s)` lies between `1` and
+`M binom(r,s)`. Hence
+
+```math
+\boxed{
+\frac{S_s(w)}M\le\Pr_{w^{\otimes r}}(J_{r,s})
+\le\binom{r}{s}S_s(w).
+}
+\tag{10.904}
+```
+
+Since `S_s/M<=h_w^s<=S_s`, this also gives
+
+```math
+\boxed{
+[M\binom{r}{s}]^{-1/s}
+\inf_w\Pr(J_{r,s})^{1/s}
+\le\delta_*
+\le\inf_w\Pr(J_{r,s})^{1/s}.
+}
+\tag{10.905}
+```
+
+Thus Wave 30's all-`r` collision can be replaced by any fixed positive
+fraction `s=ceil(alpha r)`: the candidate and binomial factors change only
+the constant multiplying `L`.
+
+There is a stronger power-saving tradeoff. Start with
+
+```math
+L_0=n^{3/4-c_0},qquad
+r=\left\lceil\frac{n\log(2k_0)}{L_0}\right\rceil,
+\qquad s=\lceil r/T\rceil,
+```
+
+and suppose, uniformly in `w`, that
+`Pr(J_(r,s))>=e^{-K rL_0}`. Since `log M<=rL_0`, (10.905) gives the exact
+bound
+
+```math
+\boxed{
+\log\tau_*
+\le(K+1)T L_0+\log(eT).
+}
+\tag{10.906}
+```
+
+If `T<=n^eta` for a fixed `eta<c_0`, the right side is
+`O(n^{3/4-c'})` with `c'=c_0-eta>0`. The row cap and tolerance constructed
+at `c_0` are stronger than those required at `c'`, so the restriction edge
+still proves convergence. Equivalently, it is enough that a likely
+mesoscopic batch be covered by `n^eta`, `eta<c_0`, eligible cosets: one of
+them hits at least `r/T` samples. Pointwise planting gives only `T=r`, whose
+cost is `Theta(n log n)`, and remains insufficient.
+
+The exact scalar target for a direct incidence attack is now
+
+```math
+\boxed{
+\inf_w\sum_{a\in\mathscr A_C}w(H_a)^s
+\ge e^{-K rL_0},
+\qquad s=\lceil r/T\rceil,\quad T\le n^\eta,\quad\eta<c_0.
+}
+\tag{10.907}
+```
+
+For fixed `alpha=s/r`, (10.904) makes this necessary and sufficient at the
+same exponent. Generalized Paley--Zygmund, de Caen, and higher-codegree
+formulas can reduce the union loss once this diagonal moment is known, but
+cannot compensate for `S_s=e^{-omega(rL_0)}`. Saddle-point complementary
+slackness likewise recovers only the tautological lower collision bound
+`delta_*^s`; it does not estimate `delta_*`.
+
+There is a sharp abstract separation. Let `X` have `N` points and take every
+`t`-element subset `B` as a candidate with `H_B=B`, for fixed `t`. The system
+is transitive and regular, every at-most-`t` tuple shares a candidate, and
+uniform primal and dual laws give the exact game value
+
+```math
+\boxed{
+M=\binom{N}{t},\qquad \delta_*=\frac tN.
+}
+\tag{10.908}
+```
+
+Nevertheless, under uniform selectors,
+
+```math
+\boxed{
+\Pr(J_{r,s})
+\le\binom{N}{t}\binom{r}{s}\left(\frac tN\right)^s.
+}
+\tag{10.909}
+```
+
+With `log N=Theta(n)` and `s=ceil(r/T)`, this is
+`e^{-omega(rL_0)}` whenever `T=o(n/L_0)=o(n^{1/4+c_0})`, including the
+entire sufficient range `T<=n^eta`, `eta<c_0`. Thus pointwise planting,
+large regular degrees, perfect common cover through the fixed order `t`, and full KKT optimality
+do not prove (10.907). This model is not a signing incidence system; it
+isolates the exact-minimizer structure still needed.
+
+#### 10.84.2 A low-row Hamming forest closes both completion statistics
+
+Let favorable completion spins `x^1,...,x^q` be joined, together with an
+auxiliary root `x^0`, by a tree. Orient representatives successively so each
+edge realizes projective Hamming distance, and put
+
+```math
+D=\sum_{uv\text{ in the tree}}d_{\rm pr}(x^u,x^v).
+```
+
+If `U` is the union of the edge-disagreement sets, then `|U|<=D`, every
+witness agrees with the root off `U`, and the enlarged coordinate-signature
+partition has `J<=1+D`. Every hybrid in its coarsest signature coset agrees,
+up to global sign, with `x^0` off `U`; hence it is
+$`h=\epsilon x^0+v`$ with $`\operatorname{supp}(v)\subseteq U`$ and
+$`\lVert v\rVert_2\le2\sqrt D`$. Therefore
+
+```math
+\boxed{
+J\le1+D,
+\qquad
+C_{\rm sig}\le
+(\sqrt{R_2(x^0)}+2\|A\|_{\rm op}\sqrt D)^2
+\le2R_2(x^0)+8\|A\|_{\rm op}^2D.
+}
+\tag{10.910}
+```
+
+The root need not be favorable for a selector. It is included in the
+containing coset, while the other words supply the hits. For every signing,
+
+```math
+\boxed{
+\mathbb E_{x\sim U_n}R_2(x)=\operatorname{tr}A^2=n(n-1),
+}
+\tag{10.911}
+```
+
+so a root below the mean exists and at least half of all spins have row cost
+at most `2n(n-1)`. Proximity of favorable completions to such roots is not
+automatic.
+
+For an exact minimizer, `||A||_op^2=O(n^{3/2})`. With
+`k_0=Theta(L_0/log n)`, the conditions
+
+```math
+R_2(x^0)=O(n^2),\qquad D=O(k_0)
+```
+
+make (10.910) imply
+`J=O(L_0/log n)` and `C_sig=O(n^{9/4-c_0})`. The constrained-refinement
+theorem (10.894) then produces one eligible row-good coset containing the
+component's favorable witnesses.
+
+Combining this with (10.906) gives a concrete convergence-sufficient event:
+against every selector law, with probability `e^{-O(rL_0)}`, partition the
+batch into `T<=n^eta`, `eta<c_0`, groups; choose favorable completions in
+each group and an auxiliary `R_2=O(n^2)` center so that each rooted tree has
+total length `O(k_0)`. The resulting `T` cosets cover the batch and prove
+convergence with saving `c_0-eta`. This is now the sharpest structured
+version of the leading open lemma.
+
+The statistics improve monotonically when witnesses are discarded: the
+signature partition coarsens, and its coarsest coset becomes a subset of the
+old one after regauging. For a subbatch of `s` witnesses, before adjoining an
+auxiliary root, a separate possible higher-order input is low VC dimension of
+coordinate signatures. Sauer--Shelah gives
+
+```math
+J\le\sum_{j=0}^d\binom{s-1}{j}=O_d(s^d).
+\tag{10.912}
+```
+
+For a fixed positive fraction `s=Theta(r)`, VC dimension at most two meets
+the signature budget whenever `c_0<1/12`, and dimension at most one does so
+for every `c_0<1/4`. No-shattered-triple is an unproved higher-order
+selection property, not a consequence of pairwise agreement.
+
+#### 10.84.3 Exchange signs do not control quadratic row closure
+
+There are exact identities, but they expose the gap. Let `d^a` be a
+completion for `S_a`, put
+
+```math
+\delta_a=Q(A[S_a])-c_{S_a}(d^a),
+\qquad
+\rho_b(a)=Q(A[S_b])-c_{S_b}(d^a)\ge0.
+```
+
+For every directed cycle `a_1,...,a_t,a_(t+1)=a_1`, telescoping gives
+
+```math
+\boxed{
+\sum_{\ell=1}^t\rho_{a_{\ell+1}}(a_\ell)
+=\sum_{\ell=1}^t\delta_{a_\ell}
++\sum_{\ell=1}^t
+\{c_{S_{a_\ell}}(d^{a_\ell})
+-c_{S_{a_{\ell+1}}}(d^{a_\ell})\}.
+}
+\tag{10.913}
+```
+
+For exact child grounds the deficits vanish, so this controls signed
+first-order boundary totals. Gauge a base spin `x` by
+`w_(ij)=A_(ij)x_i x_j`, set `r_i=sum_(j ne i)w_(ij)`, and, for a shore `F`,
+put
+
+```math
+a_i(F)=\sum_{j:\mathbf1_F(i)\ne\mathbf1_F(j)}w_{ij}.
+```
+
+The row-square change under flipping `F` is exactly
+
+```math
+\boxed{
+R_2(x^F)=R_2(x)+4\sum_i\{a_i(F)^2-r_i a_i(F)\}.
+}
+\tag{10.914}
+```
+
+Thus `C_sig` needs the complete quadratic boundary vector, not merely a
+signed shore sum. A checked five-vertex real weighted example has two exact
+grounds separated by a zero-weight shore, so every energy exchange between
+them vanishes, while
+
+```math
+\boxed{
+a(F)=(2,-2,0,0,0),qquad
+R_2(x)=2968,qquad R_2(x^F)=3048.
+}
+\tag{10.915}
+```
+
+This is a **scoped algebraic wall** with non-sign weights, not a complete
+signing or asymptotic minimizer. It proves that re-summing the exchange
+cocycle cannot by itself yield the forest or `C_sig` theorem. Discrete global
+minimality would have to supply a new quadratic boundary-susceptibility
+inequality.
+
+#### 10.84.4 Harmonic cost composes as reverse KL, but only its centered part matters
+
+For `S subset V`, normalize the outside partition sum by
+
+```math
+G^V_S(y)=K_{\beta,S}(y)/2^{|V\setminus S|},
+\qquad F^V_S(y)=\log G^V_S(y).
+```
+
+If `R=S union {i}`, the two extensions are `d^+` and `d^-`, and
+`a=c_R(d^+)-c_S(y)`, then direct splitting gives
+
+```math
+\boxed{
+G^V_S(y)=\frac12\{e^{\beta a}G^V_R(d^+)
++e^{-\beta a}G^V_R(d^-)\},
+\qquad
+F^V_S=\frac{F^++F^-}{2}+\log\cosh b,
+}
+\tag{10.916}
+```
+
+where `b=beta a+(F^+-F^-)/2` is the exact parent conditional half-log-odds
+after the remaining spins are integrated. More invariantly,
+
+```math
+\boxed{
+F^V_S(y)
+=D(U_{V\setminus S}\Vert\nu_\beta(V\setminus S\mid y)).
+}
+\tag{10.917}
+```
+
+For any `S subset R subset V`, the reverse-KL chain rule writes this as the
+nonnegative reverse KL of the intermediate uniform block plus the uniform
+average of `F^V_R`. The composition is associative.
+
+The endpoint soft minimum removes common levels. With
+
+```math
+\Phi(d)=-\log\mathbb E_{S\sim U_m}e^{-F_S(d)},
+\qquad
+\pi_d(S)=\frac{e^{-F_S(d)}}{\sum_Te^{-F_T(d)}},
+```
+
+one has both
+
+```math
+\boxed{
+\Phi(d)=\mathbb E_{\pi_d}F_S(d)+D(\pi_d\Vert U_m),
+\qquad
+\Phi(d')-\Phi(d)
+=-\log\mathbb E_{S\sim\pi_d}e^{-[F_S(d')-F_S(d)]}.
+}
+\tag{10.918}
+```
+
+For a vertex flip, the second identity is a posterior soft average of the
+renormalized-cavity screening residual `b-beta a`, not of the raw row field.
+Adding arbitrary selector-dependent constants to all `F_S` changes `Phi` by
+only a cut-independent constant after the corresponding selector base law is
+changed; the normalized parent likelihood and its entropy are unchanged.
+
+This makes uncentered sequential estimates far too expensive. The valid
+bound
+
+```math
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+\le-\log\mathbb E_{\nu_\beta}e^{-\Phi}
+\le\mathbb E_{\nu_\beta,S}F_S
+```
+
+pays every nonnegative reverse-KL common mode. For the exact minimizer `A_6`
+at `beta=1/2,m=3`, exact enumeration gives
+
+```math
+\boxed{
+\operatorname{Ent}(f)=0.001953522524668\ldots,
+\quad-\log\mathbb E_\nu U=2.228571108927248\ldots,
+\quad\mathbb E_{\nu,S}F_S=2.774144107250946\ldots.
+}
+\tag{10.919}
+```
+
+Thus first-moment reverse-KL accumulation loses more than three orders of
+magnitude already at fixed density in an exact finite minimizer.
+
+There is an exact centered target. For
+`nu_(beta,t) proportional to e^{-tPhi}nu_beta` and any full-cut bit
+filtration, let `M_(t,j)=E_(nu_(beta,t))[Phi|F_j]`. Doob orthogonality and
+(10.900) give
+
+```math
+\boxed{
+\operatorname{Ent}_{\nu_\beta}(f_\beta)
+=\int_0^1t\sum_{j=1}^n
+\mathbb E_{\nu_{\beta,t}}(M_{t,j}-M_{t,j-1})^2\,dt.
+}
+\tag{10.920}
+```
+
+Proving this is `O(n^{1/2-2c})` at fixed density is the exact surviving
+parent target. Ordinary Efron--Stein is unavailable because `nu_(beta,t)` is
+not product, and the current flip bound
+`|Phi(d^i)-Phi(d)|<=4 beta(n-m)` is off scale. A stronger but simpler
+sufficient statement is centered harmonic flatness: after selectorwise
+centering by constants `alpha_S`, prove
+
+```math
+\boxed{
+\operatorname{osc}_d\left[-\log\mathbb E_{q_\alpha}
+e^{-[F_S(d)-\alpha_S]}\right]
+=O(n^{1/2-2c}),
+\qquad q_\alpha(S)\propto e^{-\alpha_S}.
+}
+\tag{10.921}
+```
+
+No such minimizer-specific centered-screening theorem is known. The present
+uncentered first-moment and naive block-summation certificates are off scale;
+the finite audit is a mechanism wall, not an asymptotic falsifier.
+
+#### 10.84.5 Updated frontier
+
+Wave 31 keeps adaptive optimized principal restriction and its fractional
+coset implementation in front, but weakens and sharpens the exact target:
+
+- the decisive bare statistic is the partial-collision power sum (10.907).
+  A coset need only hit `r/T` points of the mesoscopic batch. Even
+  `T<=n^eta`, `eta<c_0`, common-coset groups prove convergence with degraded
+  saving `c_0-eta`; requiring one coset for all `r` points was unnecessarily
+  strong;
+
+- the strongest structured successor is the low-row forest event after
+  (10.911). A projective-Hamming tree of total length `O(k_0)` around an
+  auxiliary `R_2=O(n^2)` center automatically gives both `J` and `C_sig`, and
+  Wave 30 supplies the balanced row-good refinement. The remaining theorem
+  is to cluster likely favorable completions into fewer than `n^{c_0}` such
+  forests against every adversarial selector law;
+
+- generic incidence information cannot supply this. The symmetric
+  `t`-subset wall has perfect agreement through order `t`, regular degrees, and exact KKT
+  while failing every sufficient partial collision. It remains abstract, so
+  the central opportunity is a theorem showing that exact-minimizer hit
+  incidence cannot spread this way;
+
+- exchange/cycle identities see only signed first-order shore totals, whereas
+  coarsest row closure sees the quadratic boundary susceptibility (10.914).
+  The forest theorem bypasses that term through metric localization; a direct
+  exchange proof needs a new discrete-minimality inequality, not another
+  cycle summation;
+
+- matched parent interpolation remains the strongest independent route, but
+  its sequential harmonic cost is reverse KL and the current uncentered
+  accumulation bounds lose canceled common modes. The viable objects are the
+  centered Doob energy (10.920),
+  posterior screening response (10.918), or centered flatness (10.921),
+  together with the still-separate selector-Hellinger bound;
+
+- conditional row-Laplace alignment and constant shortfall receive no new
+  asymptotic evidence. No convergence proof or asymptotic counterexample is
+  known. Because partial collision and forest closure materially change the
+  leading sufficient lemma, `STEERING.md` is refreshed at this boundary.
+  Wave 32 should attack low-row forest clustering, independently attack the
+  minimizer-specific power sum against the symmetric-incidence wall, and
+  retain one centered harmonic-screening route.

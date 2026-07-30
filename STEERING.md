@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: Wave 30, §10.83 (2026-07-30). Regenerate by Wave 35, or earlier after a decisive proof, counterexample, or change of leading route.
+Evidence cutoff: Wave 31, §10.84 (2026-07-30). Regenerate by Wave 36, or earlier after a decisive proof, counterexample, or change of leading route.
 
 ## User-stated research objective
 
@@ -10,139 +10,87 @@ Determine whether $`\lim_{n\to\infty}M_n/n^{3/2}`$ exists. The conjectural value
 
 No route proves convergence. The rigorous interval remains $`0.336493364431\ldots\le\liminf\le\limsup\le1/2`$.
 
-The leading route is **adaptive optimized principal restriction**, whose
-sharpest constructive implementation is the **fractional row-good
-block-coset cover**. Wave 30 makes this an exact mesoscopic collision problem
-and proves that one controlled refinement follows from two batch statistics.
+The leading route is **adaptive optimized principal restriction**, implemented by a **fractional row-good block-coset cover**. Wave 31 weakens its mesoscopic endpoint: one coset need only hit a fraction `1/T` of the batch, and `T<=n^eta` still proves convergence when `eta<c_0`. Its sharpest structured successor is now low-row forest clustering of favorable completions.
 
-The constant-shortfall pressure criterion (10.617) is **not** the strongest
-route. It demands a fixed-temperature `Theta(sqrt(r))` deletion reward along
-a complete landing path. Existing audits neither supply that reward nor give
-an asymptotic falsifier, so it remains a sharply testable secondary route.
+The constant-shortfall pressure criterion (10.617) is **not** the strongest route. Existing signed-cycle, plaquette, cavity, and deficit audits neither produce nor asymptotically falsify its required square-root reward.
 
 ## Constant-shortfall audit
 
-The exact sufficient result is fixed `rho,beta>0` and `K<infinity` such that
-every target pair has an exact root and a deletion path landing at `m`, with
+The exact sufficient result is fixed `rho,beta>0` and `K<infinity` such that every target pair has an exact root and deletion path landing at `m`, with
 
 ```math
 \kappa_{\beta,i}(B_r)\ge
 \frac{q_n}{n^{3/2}}[r^{3/2}-(r-1)^{3/2}]-K
 ```
 
-at every step. Pressure telescoping then proves convergence. A literal
-fixed-temperature falsifier is an unbounded exact-minimizer family with
-`max_i kappa_(beta,i)=o(sqrt(r))`; falsifying the path version requires this
-for every eligible root or at an unavoidable deletion cutset. None is known.
+at every step. Pressure telescoping then proves convergence. A literal fixed-temperature falsifier is an unbounded exact-minimizer family with `max_i kappa_(beta,i)=o(sqrt(r))`; falsifying the path version requires this for every eligible root or at an unavoidable deletion cutset. None is known.
 
 ## Leading route and exact sufficient lemma
 
-Put $`q_n=2M_n`$, $`a_n=q_n/n^{3/2}`$, $`p=m/n`$, and
-$`p_2=(m)_2/(n)_2`$. Convergence follows if fixed
-$`\rho\in[1/2,1)`$, `c>0`, and `K` exist such that every large `n` and every
-$`m\in[\rho n,n)`$ admit an exact order-`n` minimizer `A` and `m`-set `S`
-with
+Put $`q_n=2M_n`$, $`a_n=q_n/n^{3/2}`$, and $`p=m/n`$. Convergence follows if fixed $`\rho\in[1/2,1)`$, `c>0`, and `K` exist such that every large `n` and $`m\in[\rho n,n)`$ admit an exact minimizer `A` and `m`-set `S` with
 
 ```math
 Q(A[S])\le p^{3/2}q_n+Kn^{3/2-c}.
 ```
 
-This gives $`a_m\le a_n+O_\rho(n^{-c})`$; geometric-window errors are
-summable and exact target landing proves convergence.
+Then $`a_m\le a_n+O_\rho(n^{-c})`$; geometric-window errors are summable and exact landing proves convergence. The arbitrary-cut lemma (10.795) supplies this edge from one cut having row cost `O(n^(9/4-c))` and selector coverage `e^{-O(n^(3/4-c))}` at tolerance `O(n^(3/2-c))`.
 
-The weakest current endpoint remains the arbitrary-cut lemma (10.795): find
-one cut `d` with
+For the structured implementation, choose `c_0 in (0,1/4)` and put
 
 ```math
-R_2(d)=O(n^{9/4-c}),\qquad
-U_m\{\widehat\ell(S,d)\le O(n^{3/2-c})\}
-\ge e^{-O(n^{3/4-c})}.
+L_0=n^{3/4-c_0},\quad k_0=\Theta(L_0/\log n),\quad
+r=\left\lceil\frac{n\log(2k_0)}{L_0}\right\rceil.
 ```
 
-For its structured implementation, put `L=n^{3/4-c}`, use
-`k=Theta(L/log n)` blocks, and let `H_a` be the hit set of each eligible
-row-good coset. The fractional target is
+Let `H_a` be the hit sets of all eligible row-good cosets. For `T<=n^eta`, `eta<c_0`, set `s=ceil(r/T)`. The sharp bare sufficient lemma is, uniformly for every selector law `w`,
 
 ```math
-\tau_*=\min\left\{\sum_au_a:
-u_a\ge0,\ \sum_{a:S\in H_a}u_a\ge1\ \forall S\right\}
-\le e^{O(L)}.
+\sum_aw(H_a)^s\ge e^{-O(rL_0)}.
 ```
 
-Wave 30 gives an exponent-equivalent exact target. Set
+Equivalently at this exponent, an iid batch has probability `e^{-O(rL_0)}` that one coset hits `s` positions. The partial-collision theorem gives
 
 ```math
-r=\left\lceil\frac{n\log(2k)}L\right\rceil
-=\Theta(n^{1/4+c}\log n)
+\log\tau_*\le O(TL_0)=O(n^{3/4-(c_0-\eta)}).
 ```
 
-and let `J_r` be the event that `r` iid selectors share a hit coset. Prove,
-uniformly for every selector law `w`,
+Greedy rounding and pigeonhole yield the arbitrary cut with degraded saving `c'=c_0-eta>0`, hence convergence.
+
+The sharp completion-based sufficient event is stronger but concrete: with probability `e^{-O(rL_0)}` against every `w`, partition the batch into `T<=n^eta` groups; in each group choose favorable completions joined to an auxiliary `R_2=O(n^2)` center by a projective-Hamming tree of total length `D=O(k_0)`. The verified forest theorem gives
 
 ```math
-\Pr_{w^{\otimes r}}(J_r)\ge e^{-O(rL)}.
+J\le1+D,\qquad
+C_{\rm sig}\le2R_2(x^0)+8\|A\|_{\rm op}^2D
+=O(n^{9/4-c_0}).
 ```
 
-The `(2k)^n` candidate bound and collision sandwich yield
-`tau_*=e^{O(L)}`. Greedy rounding and pigeonhole then supply the arbitrary
-fixed cut, hence the restriction edge and convergence.
-
-The sharp completion-based sufficient lemma is now:
-
-> Against every `w`, an `r`-sample has probability `e^{-O(rL)}` of admitting
-> favorable completions whose coordinate-signature count is `J=O(L/log n)`
-> and whose coarsest signature coset has
-> `C_sig=O(n^{9/4-c})`.
-
-The constrained-refinement theorem turns those statistics into one eligible
-row-good common coset. This lemma is stronger than bare `J_r`, not equivalent.
+Wave 30 then supplies one eligible row-good coset per group. Proving this adversarial-law forest event would therefore prove convergence.
 
 ## Obstructions and falsification
 
-- Uniform-selector means are circular: every fixed cut has mean effective
-  loss equal to the unknown restriction excess. Linear row pricing and mean
-  child entropy do not escape it.
-- Pointwise planting gives only `tau_*<=binom(n,m)`, with logarithm
-  `Theta(n)`. The abstract independent-label wall (10.897)--(10.898) proves
-  that local completion cylinders and hashing alone can genuinely remain at
-  `e^{-Theta(n)}` coverage. Exact-minimizer correlations are indispensable.
-- Pairwise and triple common cover are insufficient. Both exact `A_9`
-  systems have `J_2=J_3` surely for every law, no globally covering coset,
-  and fractional values below one. The required order is mesoscopic.
-- Generic agreement/list-recovery theorems begin from a prescribed overlap
-  premise and do not provide adversarial-law incidence, signature entropy,
-  or the coarsest quadratic cap. Perfect global list consistency can still
-  have `J=n` coordinate signatures.
-- The coarsest cap `C_sig` is necessary. Wave 30 proves that, with the target
-  signature count, it is also sufficient up to allowed slack for one
-  size-capped refinement; do not reinstate “every refinement” as an open
-  requirement.
-- Scalar aligned reverse tails need not survive a row cap. The exact
-  row-Laplace repair still requires both a scalar tail and a minimizer-specific
-  conditional covariance estimate.
-- Every asymptotic statement must hold for every target order in one fixed
-  ratio window, with uniform constants and summable landing costs.
+- Pointwise planting gives `T=r`, costing `Theta(n log n)`. Local completion cylinders and hashing alone can remain at `e^{-Theta(n)}` coverage.
+- A transitive abstract system whose candidates are all fixed-size subsets has exact KKT, regular degrees, and every fixed-order common cover, yet its partial-collision probability is `e^{-omega(rL_0)}` throughout the sufficient `T` range. Generic incidence or saddle-point optimality is insufficient.
+- Low-row centers are abundant by `E_U R_2=n(n-1)`, but no theorem places favorable principal completions within `O(k_0)` total forest distance of fewer than `n^{c_0}` such centers.
+- Principal-ground exchange cycles control signed first-order shore totals. `C_sig` depends on a quadratic boundary-susceptibility vector; a checked weighted ground-state example separates the two. Discrete signing minimality must add genuinely new information.
+- Uniform-selector means remain circular. Pair/triple agreement and low-information pointwise selection do not give the mesoscopic statistic.
+- All bounds must hold for every target order in one fixed ratio window, uniformly against every selector law.
 
-For fixed constants, the fractional implementation is falsified by infinitely
-many target pairs for which every exact minimizer has `tau_*>e^{KL}`, or
-equivalently at exponent scale by a law with `Pr(J_r)=e^{-omega(rL)}`. A
-direct restriction falsifier requires minimum excess `Omega(n^{3/2})` along infinitely many orders at one fixed ratio.
+For fixed constants, the fractional implementation is falsified by infinitely many target pairs for which every exact minimizer has `tau_*>e^{K n^(3/4-c)}`. At the batch level, an adversarial law with
+
+```math
+\sum_aw(H_a)^s=e^{-\omega(rL_0)}
+```
+
+for every sufficient parameter choice is equivalent evidence. This does not by itself falsify arbitrary fixed-cut coverage. A direct restriction falsifier still requires minimum excess `Omega(n^(3/2))` along infinitely many orders at one fixed ratio.
 
 ## Ranked alternatives
 
-1. **Matched parent-Gibbs interpolation.** Control the exact harmonic-cost variance (10.900) and selector Hellinger term at fixed density; one deletion works for `c<=1/12`, while `A_6` defeats centered-`R_2` reduction.
-2. **Bare mesoscopic common-coset incidence.** Prove `J_r` directly from exact minimization without the stronger coherent-completion hypothesis.
-3. **Conditional row-Laplace alignment.** Combine a boundary scalar reverse tail with (10.878)--(10.880); two minimizer-specific inputs remain.
-4. **Constant-shortfall signed-cycle/cavity route.** Direct and falsifiable, but no mechanism supplies its square-root reward.
-5. **External-surplus replacement or global compactness.** Exact formulations survive, but their missing inputs are less local and testable.
+1. **Matched parent-Gibbs interpolation.** Control the centered harmonic Doob energy (10.920) or centered flatness (10.921), plus selector Hellinger, at fixed density. Reverse-KL first moments and naive block summation lose common modes; `A_6` gives a finite mechanism wall.
+2. **Bare minimizer-specific power sum.** Prove (10.907) directly without coherent completions, by showing exact-signing hit incidence cannot resemble the symmetric fixed-subset wall.
+3. **Quadratic boundary susceptibility.** Derive a discrete-minimality inequality controlling (10.914) directly; ordinary exchange-cycle signs are insufficient.
+4. **Conditional row-Laplace alignment.** Combine a boundary scalar reverse tail with (10.878)--(10.880); two minimizer-specific inputs remain.
+5. **Constant shortfall or global replacement/compactness.** Exact formulations remain falsifiable, but their missing inputs are currently less local and testable.
 
 ## Decision rule
 
-Wave 31 should put one attack on minimizer-specific control of `J` and `C_sig`,
-one independent attack on bare mesoscopic collision probability,
-and one on fixed-density harmonic parent cost. Check the collision law
-against adversarial selector distributions, not only the uniform slice. Do
-not restart self-incidence, independent completion, fixed-order gluing,
-every-refinement control, scalar mean truncation, generic parent LSI,
-unsigned-cycle bounds, or two-ground mixing as if their recorded walls were
-absent.
+Wave 32 should attack the adversarial-law low-row forest event, independently attack the power sum using exact signing structure, and retain one centered harmonic-screening route. Do not restart all-`r` coherence, pointwise planting, fixed-order gluing, every-refinement control, uncentered harmonic accumulation, uniform-mean truncation, generic parent LSI, or unsigned-cycle bounds as if their recorded walls were absent.
