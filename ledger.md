@@ -27777,3 +27777,602 @@ turn (10.1022) into a covering contradiction; and seek a matched-partition
 no-transient-mode-transfer theorem or falsifier.  Any agreement/replacement
 continuation must carry row regularity, selector representativeness,
 completion width, and affordable thinning explicitly.
+
+### 10.90 Wave 37: favorable complement flips, Gram row transfer, and transient flux
+
+This wave tested three ways of supplying the signing-specific structure left
+open by the rare-coverage converse.  Every exact identity below was derived
+independently, checked against the finite minimizers where applicable, and
+cross-audited by a second agent.  The finite fractional-cover optima and the
+harmonic covariance tables are explicitly numerical; they are not promoted
+to exact or asymptotic claims.
+
+#### 10.90.1 Complement-edge minimality gives a favorable cover but not its congestion
+
+Let `A` be an exact order-`n` minimizer, `Q(A)=q_n`, and let an oriented
+state `d` have full energy
+
+```math
+E_d=\langle A,d\rangle=q_n-\Delta_d.
+```
+
+For an `m`-selector `S`, write
+
+```math
+c_S(d)=\sigma x_S^TA[S]x_S,
+\qquad F_S=E(K_n)\setminus E(S).
+```
+
+Flipping every edge outside `S` changes the oriented energy by the exact
+amount
+
+```math
+\boxed{
+\langle A^{F_S},d\rangle=2c_S(d)-E_d.
+}
+\tag{10.1043}
+```
+
+Since every complete signing has cap at least `q_n`, for every `S` some
+state satisfies
+
+```math
+2c_S(d)-E_d\ge q_n,
+\qquad\text{equivalently}\qquad
+c_S(d)\ge q_n-\frac{\Delta_d}{2}.
+\tag{10.1044}
+```
+
+This is the complement-edge specialization of the full deep-hole cover
+(10.733), but it has a useful favorable sign.  Recall
+
+```math
+h_d(S)=Q(A[S])-c_S(d)-p_2\Delta_d-B_{n,m},
+\qquad p_2=\frac{m(m-1)}{n(n-1)}.
+```
+
+Every principal cap obeys `Q(A[S])<=q_n`: extend a child ground by uniform
+outside spins and average.  Therefore, throughout a fixed high-ratio window
+with `p_2>=1/2`, every certificate in (10.1044) satisfies
+
+```math
+\boxed{
+h_d(S)
+\le Q(A[S])-q_n+(1/2-p_2)\Delta_d-B_{n,m}
+\le-B_{n,m}\le0.
+}
+\tag{10.1045}
+```
+
+Thus exact minimality covers every selector by an actually favorable
+arbitrary-cut incidence.  What remains uncontrolled is migration of the
+witness and, in particular, its row square.
+
+For a row cap `R_*`, define
+
+```math
+\mathcal D_{R_*}=\{d:R_2(d)\le R_*\},
+\qquad
+I_d=\{S:|S|=m,\ 2c_S(d)-E_d\ge q_n\},
+```
+
+and introduce the row-good fractional covering number
+
+```math
+\boxed{
+\tau_{\rm flip}(A,m;R_*)
+=\min\left\{
+\sum_{d\in\mathcal D_{R_*}}w_d:
+w_d\ge0,\quad
+\sum_{d:S\in I_d}w_d\ge1\ \text{for every }S
+\right\}.
+}
+\tag{10.1046}
+```
+
+Its finite LP dual maximizes `sum_S y_S` subject to `y_S>=0` and
+`sum_(S in I_d)y_S<=1` for every row-good `d`.  The concrete open theorem is
+
+```math
+\boxed{
+R_*=O(n^{9/4-c}),
+\qquad
+\log\tau_{\rm flip}(A,m;R_*)=O(n^{3/4-c})
+}
+\tag{10.1047}
+```
+
+for some fixed `c>0`, uniformly in a high-ratio active window.  Averaging
+the covering constraints over `U_m` gives
+
+```math
+1\le\sum_dw_dU_m(I_d),
+```
+
+so one row-good cut has `U_m(I_d)>=1/tau_flip`.  By (10.1045), this is a
+favorable mass of the same size.  Substitution into (10.1023), with `t=0`,
+proves the direct recurrence (10.1024), and the established landing argument
+then proves convergence.
+
+The converse is equally sharp at the exponent of interest.  If
+`G_(n,m)>=delta n^(3/2)` persists and `R_*=O(n^(9/4-c))`, (10.1022) makes
+every row-good incidence exponentially rare.  Averaging any feasible
+fractional cover then forces
+
+```math
+\boxed{
+\log\tau_{\rm flip}(A,m;R_*)=\Omega(n^{3/4}).
+}
+\tag{10.1048}
+```
+
+Hence (10.1047) would contradict a persistent normalized gap directly.
+It is the row-sensitive fractional analogue of the earlier codebook
+converse, not a consequence of mere pointwise nonemptiness.
+
+The original full edge-cube cover cannot be pruned at the desired cost.  If
+`N=binom(n,2)` and `R=N/2-q_n/4`, averaging any fractional radius-`R` cover
+of the full edge cube gives
+
+```math
+\boxed{
+\sum_dw_d
+\ge\frac{2^N}{\sum_{j\le R}\binom Nj}
+\ge\exp\left\{\frac{q_n^2}{8N}\right\}
+=\exp\{\Omega(n)\}.
+}
+\tag{10.1049}
+```
+
+The last inequality uses Hoeffding and the established
+`q_n=Omega(n^(3/2))`.  Imposing a row cap only makes a retained full-cube
+cover harder.  Any proof of (10.1047) must therefore discard almost all
+edge perturbations and exploit selector-specific row-good congestion.
+
+Finite enumeration at `A_6,m=5`, `A_8,m=6`, and `A_9,m=7` verifies
+(10.1043)--(10.1045) exactly.  Floating-point LP gives unrestricted
+`tau_flip` values `2`, `10`, and `13.75`, respectively; these three optima
+are **numerical**, because rational primal-dual certificates were not
+constructed.  At the natural mean cap `R_2<=n(n-1)`, respectively `0`, `4`,
+and `5` selectors lose all certificates.  The miss counts are exact, but
+the project cap is asymptotically larger than `n^2`, so this is only a
+mechanism warning and not an asymptotic falsifier.
+
+#### 10.90.2 A Gram projection removes degree-three representativeness
+
+For a full word `z` and selector `S`, define the full-column local energy
+
+```math
+K_S(z)=\lVert A[:,S]z_S\rVert_2^2
+=z_S^T(A^2)[S]z_S.
+```
+
+Unlike the internal local row square, this quantity sees external rows even
+when their vertices are not selected.  Direct diagonal/off-diagonal
+expansion gives
+
+```math
+\boxed{
+\mathbb E_{U_m}K_S(z)
+=p_2R_2(z)+(p-p_2)n(n-1).
+}
+\tag{10.1050}
+```
+
+For the slice anchored at `v`, put
+
+```math
+\alpha_1=\frac{m-1}{n-1},
+\qquad
+\alpha_2=\frac{(m-1)_2}{(n-1)_2},
+\qquad
+T_v=z_v(A^2z)_v-(n-1).
+```
+
+Then exactly
+
+```math
+\boxed{
+\mathbb E[K_S(z)\mid v\in S]
+=m(n-1)+\alpha_2\{R_2(z)-n(n-1)\}
++2(\alpha_1-\alpha_2)T_v.
+}
+\tag{10.1051}
+```
+
+There is also a distribution-free anchored transfer.  Let
+`g_i=z_iA[:,i]`, `V=sum_i g_i=Az`, `R=||V||_2^2`, and, when `R>0`,
+`u=V/sqrt R`, `a_i=<u,g_i>`.  Then
+
+```math
+\sum_i a_i=\sqrt R,
+\qquad
+\sum_i a_i^2=\frac{z^TA^4z}{R}\le\lVert A\rVert_{\rm op}^2,
+\qquad
+|a_v|\le\sqrt{n-1}.
+\tag{10.1052}
+```
+
+Bernoulli sampling of the nonanchor coordinates, conditioning on its modal
+size, and entropy duality show that for every law `P` on the anchored slice,
+
+```math
+\mathbb E_P\left\langle u,\sum_{i\in S}g_i\right\rangle
+\ge
+\alpha_1\sqrt R-(1-\alpha_1)\sqrt{n-1}
+-C\lVert A\rVert_{\rm op}
+ \sqrt{D(P\Vert U_v)+O(\log n)}.
+\tag{10.1053}
+```
+
+The same left side is at most `sqrt(E_P K_S(z))`.  Squaring at fixed
+selector density, including the trivial `R=0` case, yields
+
+```math
+\boxed{
+R_2(z)\le C_\rho\left\{
+\mathbb E_PK_S(z)
++\lVert A\rVert_{\rm op}^2[D(P\Vert U_v)+\log n]
++n
+\right\}.
+}
+\tag{10.1054}
+```
+
+No pairwise or degree-three comparison of `P` with the uniform slice enters
+this argument: entropy transports only the scalar projection aligned with
+the unknown full row vector `Az`.
+
+Now let `y^S` be anchored favorable labels on a family `G`, let `z` be their
+coordinatewise plurality, let `P=U(G)`, and write
+`e_S=d_H(z_S,y^S)`.  Principal compression and Minkowski give
+
+```math
+\sqrt{\mathbb E_PK_S(z)}
+\le
+\sqrt{\mathbb E_PK_S(y^S)}
++2\lVert A\rVert_{\rm op}\sqrt{\mathbb E_Pe_S}.
+\tag{10.1055}
+```
+
+The exact decoder bounds `E_P e_S` by the anchored conflict
+`C_(v_*)(y)`.  Consequently
+
+```math
+\boxed{
+R_2(z)\le C_\rho\left\{
+\mathbb E_PK_S(y^S)
++\lVert A\rVert_{\rm op}^2
+ [\mathcal C_{v_*}(\mathbf y)+\log\beta^{-1}+\log n]
++n
+\right\}.
+}
+\tag{10.1056}
+```
+
+At the project scales the conflict and entropy terms fit the weaker
+arbitrary-cut row budget.  Thus the single favorable-label estimate
+
+```math
+\boxed{
+\mathbb E_{S\sim U(G)}
+\lVert A[:,S]y^S\rVert_2^2
+=O(n^{9/4-c'})
+}
+\tag{10.1057}
+```
+
+on an affordable anchored family with project-scale conflict replaces both
+lines of the row-transfer package (10.1033).  It removes the need for
+degree-three selector representativeness, at the cost of asking directly
+for full-column Gram regularity of the favorable labels.  Generic child
+stability controls only the internal part of
+
+```math
+K_S(y)=\lVert A[S]y\rVert_2^2
++\lVert A[S^c,S]y\rVert_2^2
+```
+
+and does not prove (10.1057).  Nor does the result reach the stronger center
+cap `2n(n-1)` at the current entropy scale.
+
+#### 10.90.3 One-block replacement retains an uncentered width term
+
+Fix `S` and a projective word `y` on it.  With the parent fiber endpoints
+`Z_+(y)=max f_(S,y)` and `Z_-(y)=-min f_(S,y)`, put
+
+```math
+w(y)=\frac{Z_+(y)+Z_-(y)}2=q_n-b_S(y),
+\qquad
+a(y)=\frac{Z_+(y)-Z_-(y)}2.
+```
+
+Uniform outside spins and the two parent response orientations give
+
+```math
+\boxed{
+|a(y)|\le q_n-b_S(y),
+\qquad
+|a(y)+e_A(y)|\le b_S(y).
+}
+\tag{10.1058}
+```
+
+Delete the internal `S`-block and replace it by an arbitrary switching and
+either sign of an exact order-`m` minimizer.  Triangle inequality and exact
+order-`n` minimality prove only
+
+```math
+\boxed{
+\min_{[y]}\{b_S(y)-|a(y)|\}\le q_m,
+\qquad
+\min_{[y]}b_S(y)\le q_m+Q(A[S^c]).
+}
+\tag{10.1059}
+```
+
+These minimizing words are unrestricted; they need not be favorable child
+labels.  This witness migration occurs exactly on finite minimizers.
+
+There is a sharper same-fiber diagnostic.  Choose a favorable `y`, orient
+its child energy as `E_y>0`, switch an exact order-`m` minimizer so that `y`
+is a positive ground, and define
+
+```math
+P_\pm(y)=q_n-b_S(y)+|a(y)\pm q_m|,
+```
+
+```math
+\varepsilon_y
+=\max\{[q_n-P_+(y)]_+,[q_n-P_-(y)]_+\}.
+```
+
+If a replacement norm reaches `q_n` only on another fiber, its deficit is
+recorded in `epsilon_y`.  The interval identities imply the exact dichotomy
+
+```math
+\boxed{
+\varepsilon_y\ge E_y-q_m
+\quad\text{or}\quad
+2b_S(y)\le q_n-q_m+\varepsilon_y.
+}
+\tag{10.1060}
+```
+
+Even perfect same-fiber exposure leaves the uncentered term `q_n-q_m`.
+Present results prove only `0<=q_n-q_m=O(n^(3/2))`; they do not show that it
+is always of that order, but they also do not bound it at the required
+`O(n(d+1))` scale.  Thus one-block replacement does not close the width term
+in (10.1038) without an additional cancellation mechanism.
+
+Exact enumeration gives a concrete favorable-support wall.  For
+`A_9,m=6`, the proposal
+
+```math
+\min_{y\text{ child ground}}b_S(y)\le q_9-q_6
+```
+
+fails on `54` of `84` selectors and in uniform average by exactly `2/21`.
+For four selectors, including `S={0,1,2,3,5,7}`, every exact child ground
+has `b_S>=20`, while the right side of the proved unrestricted bound is
+`q_6+Q(A_9[S^c])=16`.  Hence the deletion witness must leave the favorable
+fiber.  A viable successor needs a joint-family or multiblock cancellation
+of `q_n-q_m` before estimating width; separate positive response mass is
+not enough.
+
+#### 10.90.4 Dynamic selector erasure identifies the transient harmonic cost
+
+For the matched endpoint lift, write
+
+```math
+w_S(d)=e^{-F_{\beta,S}(d[S])},
+\qquad
+U(d)=\mathbb E_{S\sim U_m}w_S(d),
+\qquad
+f(d)=\frac{U(d)}{\mathbb E_\nu U},
+```
+
+and retain the endpoint selector posterior
+
+```math
+\pi_d(S)=\frac{w_S(d)}{\sum_Tw_T(d)},
+\qquad
+P_t(S,d)=\mu_t(d)\pi_d(S),
+\qquad
+\mu_t(d)\propto\nu(d)f(d)^t.
+```
+
+Fix a nonreference vertex coordinate `i`, its complementary chart context
+`e=D_(-i)`, and a selector omitting `i`.  Since `w_S` is constant across the
+`i`-edge, cancellation of `U` in Bayes' formula gives the exact dynamic
+erasure law
+
+```math
+\boxed{
+P_t(D_i=\mathord\cdot\mid S,e)
+=\mu_{t-1}(D_i=\mathord\cdot\mid e),
+\qquad i\notin S.
+}
+\tag{10.1061}
+```
+
+This is valid for `0<=t<=1`; the finite laws also define the required
+negative interpolation parameters.  If
+
+```math
+Q_{t,e}=\mu_t(D_i=\mathord\cdot\mid e),
+\qquad
+q_{i,e}^{\leftarrow}(t)=D(Q_{t,e}\Vert Q_{t-1,e}),
+```
+
+the KL chain rule yields
+
+```math
+\boxed{
+J_i^{\leftarrow}(t)
+=\mathbb E_{e\sim(\mu_t)_{-i}}q_{i,e}^{\leftarrow}(t)
++I_{P_t}(S;D_i\mid D_{-i}).
+}
+\tag{10.1062}
+```
+
+Every selector omitting `i` contributes zero to the lifted cost.  At `t=1`,
+this is the endpoint cancellation (10.1039).
+
+For one context, let
+
+```math
+H_e(s)=\log\mathbb E_{Q_{0,e}}e^{s\log f}.
+```
+
+The ordinary binary cost and the one-temperature-back cost are
+
+```math
+k_e(t)=tH'_e(t)-H_e(t),
+```
+
+```math
+q_{i,e}^{\leftarrow}(t)=H'_e(t)+H_e(t-1)-H_e(t).
+```
+
+Convexity, using `0=t(t-1)+(1-t)t`, gives
+
+```math
+\boxed{
+k_e(t)\le t q_{i,e}^{\leftarrow}(t),
+\qquad 0\le t\le1.
+}
+\tag{10.1063}
+```
+
+Let `M_(t,i)(e)` be the context law.  The covariance identity in (10.980),
+discarding contexts whose mass is increasing, now proves
+
+```math
+\boxed{
+\mathcal A_i
+\le\mathfrak T_i
+:=\int_0^1t\sum_e
+q_{i,e}^{\leftarrow}(t)[-M'_{t,i}(e)]_+\,dt.
+}
+\tag{10.1064}
+```
+
+Consequently the exact matched no-transient-mode-transfer target
+
+```math
+\boxed{
+\sum_{i\ne v_*}\mathfrak T_i=O(n^{1/2-2c})
+}
+\tag{10.1065}
+```
+
+plus a separate orientation estimate proves the adverse-migration part of
+(10.983).  This is sharper than charging transient movement by a fixed
+endpoint cost, but it remains open and is not known to follow from endpoint
+erasure alone.
+
+There is an exact matched-partition decomposition of the remaining
+covariance.  Put
+
+```math
+B_i(e)=\mathbb E_{S\sim U_m}
+[\mathbf1_{\{i\notin S\}}e^{-F_{\beta,S}(e)}],
+\qquad
+r_i(d)=\frac{B_i(D_{-i})}{U(d)},
+```
+
+and
+
+```math
+\mathcal H_{i,e}(t)
+=\log\mathbb E_{\nu(D_i\mid e)}r_i(e,D_i)^{-t}.
+```
+
+Then
+
+```math
+A_{i,e}(t)
+=t\log\frac{B_i(e)}{\mathbb E_\nu U}+\mathcal H_{i,e}(t),
+\qquad
+k_{i,e}(t)=t\mathcal H'_{i,e}(t)-\mathcal H_{i,e}(t),
+```
+
+and hence
+
+```math
+\boxed{
+\operatorname{Cov}(A'_e,k_e)
+=\operatorname{Cov}(\log B_i(e),k_e)
++\operatorname{Cov}(\mathcal H'_{i,e}(t),k_e).
+}
+\tag{10.1066}
+```
+
+The two terms are, respectively, movement of the omitted-selector external
+partition and movement of the exclusion shape.  Numerical quadrature on
+`A_9,m=7,beta=2` gives integrated signed vertex contributions
+
+```text
+total = -0.00146794,
+omitted partition = 0.08670755,
+exclusion shape = -0.08817549.
+```
+
+The actual adverse vertex integral is `0.00285723`, versus `0.08817549` if
+the adverse exclusion-shape part is charged separately.  The identities
+were checked to below `7e-15`, but these decimal signs and magnitudes are
+**numerical only**.  They warn that a successful theorem should control the
+combined movement in (10.1066), rather than separately bounding two pieces
+which can nearly cancel.  Restoring correlation, adjacent-selector
+Hellinger control, and the orientation edge remain independent inputs.
+
+#### 10.90.5 Updated frontier
+
+Wave 37 leaves adaptive optimized principal restriction as the leading
+framework, but exposes two cleaner signing-specific interfaces and retires
+one standalone attack:
+
+- complement-edge minimality now supplies an exact favorable incidence for
+  every selector in a high-ratio window.  The remaining statement is no
+  longer qualitative witness existence: it is the row-good fractional
+  congestion bound (10.1047).  The rare-coverage converse proves that this
+  bound alone would close the recurrence, while (10.1049) rules out pruning
+  the full edge-cube cover.  The next attack must exploit the special
+  selector incidence and the row statistic jointly;
+
+- the exceptional-center degree (10.967) remains the strongest structured
+  implementation of the bare arbitrary-cut tail, but agreement no longer
+  needs a separate degree-three representativeness theorem.  The Gram
+  projection (10.1054) reduces its row transfer to the single favorable-label
+  estimate (10.1057).  That estimate includes external rows and is strictly
+  stronger than generic child-ground stability, so it is a new exact target,
+  not a solved clause;
+
+- one-block replacement is no longer an active standalone route to small
+  completion width.  It retains `q_n-q_m` even under perfect same-fiber
+  exposure, and exact `A_9` data show that unrestricted deletion witnesses
+  can leave every favorable child fiber.  Replacement should be revisited
+  only through a joint-family or multiblock identity which cancels the bulk
+  term before charging width;
+
+- the harmonic alternative has a more faithful dynamic target: the transient
+  selector-erasure flux (10.1065).  Endpoint selector information cancels at
+  every interpolation time after moving the reference one temperature unit
+  backward.  What is missing is an exact-minimizer estimate for the combined
+  matched-partition movement (10.1066), together with the already separate
+  restoring, Hellinger, and orientation inputs;
+
+- constant shortfall, terminal min-cut, and susceptibility receive no new
+  positive evidence.  In particular, (10.617) is still not the strongest
+  route: neither this wave nor the accumulated ledger supplies its required
+  square-root deletion reward.
+
+There is no decisive leading-route change, so the mandatory steering refresh
+remains Wave 39.  Wave 38 should first combine (10.1045) with row information:
+derive the dual or a Lagrangian form of `tau_flip`, test whether simultaneous
+minimality constrains high-row witness migration, and look for a weighted
+Gram estimate linking complement-flip certificates to (10.1057).  In
+parallel, attack the combined covariance in (10.1066) rather than its two
+large components.  Any successor must end in either a project-scale bound,
+an exact obstruction, or a sharply falsifiable intermediate lemma.
