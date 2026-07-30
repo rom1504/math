@@ -33,7 +33,17 @@ def main() -> int:
     parser.add_argument("--max-iterations", type=int, default=500)
     parser.add_argument("--solve-time", type=float, default=10.0)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument(
+        "--bundle-extremizers",
+        action="store_true",
+        help="separate every global maximizer and minimizer of each candidate",
+    )
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--resume",
+        type=Path,
+        help="preload separated_gray_codes from an earlier compatible result",
+    )
     args = parser.parse_args()
     payload = json.loads(args.input.read_text())
     source = np.asarray(payload[args.matrix_key], dtype=np.int8)
@@ -75,9 +85,28 @@ def main() -> int:
 
     # Begin with both extremal states of the inherited conference bridge.
     initial_parent = np.block([[left, original_bridge], [original_bridge.T, right]])
-    initial_profile = evaluate(args.evaluator.resolve(), initial_parent)
-    add_spin_constraint(int(initial_profile["argmax_gray"]))
-    add_spin_constraint(int(initial_profile["argmin_gray"]))
+    initial_profile = evaluate(
+        args.evaluator.resolve(), initial_parent, args.bundle_extremizers
+    )
+    initial_codes = [
+        int(initial_profile["argmax_gray"]),
+        int(initial_profile["argmin_gray"]),
+    ]
+    if args.bundle_extremizers:
+        initial_codes = [
+            *map(int, initial_profile["maximizer_gray_codes"]),
+            *map(int, initial_profile["minimizer_gray_codes"]),
+        ]
+    for code in initial_codes:
+        add_spin_constraint(code)
+    if args.resume is not None:
+        resume_payload = json.loads(args.resume.read_text())
+        if resume_payload["left_vertices"] != list(left_vertices):
+            raise ValueError("resume file has different fixed children")
+        if resume_payload["target_cap"] != args.target_cap:
+            raise ValueError("resume file has a different target cap")
+        for code in resume_payload["separated_gray_codes"]:
+            add_spin_constraint(int(code))
 
     final_parent = None
     final_profile = None
@@ -109,7 +138,7 @@ def main() -> int:
             dtype=np.int64,
         )
         parent = np.block([[left, bridge], [bridge.T, right]])
-        profile = evaluate(args.evaluator.resolve(), parent)
+        profile = evaluate(args.evaluator.resolve(), parent, args.bundle_extremizers)
         row.update(
             {
                 "candidate_cap": profile["cap"],
@@ -132,8 +161,15 @@ def main() -> int:
             final_profile = profile
             break
         before = len(seen_codes)
-        add_spin_constraint(int(profile["argmax_gray"]))
-        add_spin_constraint(int(profile["argmin_gray"]))
+        codes = [int(profile["argmax_gray"]), int(profile["argmin_gray"])]
+        if args.bundle_extremizers:
+            codes = [
+                *map(int, profile["maximizer_gray_codes"]),
+                *map(int, profile["minimizer_gray_codes"]),
+            ]
+        for code in codes:
+            add_spin_constraint(code)
+        row["new_extremal_state_constraints"] = len(seen_codes) - before
         if len(seen_codes) == before:
             raise AssertionError("violating extrema were already constrained")
 
@@ -153,10 +189,12 @@ def main() -> int:
         "max_iterations": args.max_iterations,
         "solve_time_seconds_per_iteration": args.solve_time,
         "workers": args.workers,
+        "bundle_extremizers": args.bundle_extremizers,
         "elapsed_seconds": time.monotonic() - started,
         "final_status": final_status,
         "iterations": iterations,
         "separated_projective_states": len(seen_codes),
+        "separated_gray_codes": sorted(seen_codes),
         "evaluator_source": "computations/exact_fixed_signing_gray.cpp",
     }
     if final_parent is not None and final_profile is not None:

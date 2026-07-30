@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: the four-hour computational--composition checkpoint
+Evidence cutoff: the four-hour checkpoint and its bundled-separation follow-up
 (2026-07-30). Status: **computational--composition campaign active, continuing
 on one named target** rather than returning to short proof waves.
 
@@ -54,9 +54,9 @@ The principal obstruction occurs at the required comparable scale. Among
 10,000 exact-profiled `13+13` splits of `PC(26)`, the best pair was `(24,24)`
 and no half reached `M_13=20`. The structured pair itself has negative
 `2/3`-power defect, so composition inside the family is not the issue;
-landing near exact minimizers is. A cap-63 fixed-child `4+22` separator also
-failed to resolve after 100 exact cutting-plane rounds, showing that a tiny
-active-state set is inadequate but not falsifying cap 63.
+landing near exact minimizers is. A cap-63 fixed-child `4+22` separator still
+failed after bundling 629 distinct exact extremal-state cuts over 100 rounds.
+This strengthens the state-complexity warning but does not falsify cap 63.
 
 The route is falsified by a proved linear gap `u_n-b_n`, linear accumulated
 composition defect, arithmetic sparsity that defeats geometric landing, or a

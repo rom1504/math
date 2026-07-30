@@ -38982,3 +38982,29 @@ bounded conference complement state at growing block sizes. Its falsification
 criteria are a linear structured-landing gap, a linear accumulated bridge
 defect, arithmetic failure of geometric landing, or equivalence of the state
 description to full parent minimization.
+
+### 10.125 Post-checkpoint bundled separation
+
+The first continuation tested the checkpoint's most immediate computational
+diagnosis. The separator was changed to add **every** global positive and
+negative extremizer of each candidate. The cap-65 conference seed alone has
+130 projective maximizers and 130 minimizers, so the bundled master began with
+260 exact state constraints rather than two.
+
+With a two-second CP allowance per master solve, the run accumulated 518
+distinct states before a master solve returned `UNKNOWN` at iteration 67.
+With five seconds per solve, a fresh deterministic run completed all 100
+declared iterations, saved 629 distinct states for resumption, and ended
+`ITERATION_LIMIT`. Its candidate caps ranged from 73 to 87 and never improved
+the cap-65 seed. All candidate caps were obtained by exhaustive evaluation of
+`2^25` projective spins.
+
+This remains an **inconclusive exact-separation diagnostic**: no cap-63 bridge
+was found, but neither master was proved infeasible. It does strengthen the
+architectural conclusion. The obstruction is not caused merely by adding one
+extremizer per sign; hundreds of globally active states still fail to
+approximate the full feasible region well enough. The saved state set permits
+future resumption, but further blind rounds are not the preferred next step.
+A useful continuation needs either a bundled analytic inequality, a lazy-cut
+solver retaining learned search state, or a proof-capable pseudo-Boolean
+backend. The mathematical target (10.1457) and route ranking are unchanged.
