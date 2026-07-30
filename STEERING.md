@@ -1,148 +1,101 @@
 # Strategic steering
 
-Evidence cutoff: Wave 52, ledger §10.105 (2026-07-30), after (10.1266)--(10.1270)
-and (10.1275)--(10.1278). Next mandatory refresh: Wave 57, with a blank-slate audit.
+Evidence cutoff: Wave 54, ledger §10.107 (2026-07-30), through (10.1296)--(10.1313). This is an early decisive-result refresh. Next mandatory refresh: Wave 59, with a blank-slate abstraction audit.
 
 ## User-stated research objective
 
-Determine whether $\lim_{n\to\infty}M_n/n^{3/2}$ exists. The conjectural value
-$1/2$ is not an additional user objective.
+Determine whether \(\lim_{n\to\infty}M_n/n^{3/2}\) exists. The conjectural value \(1/2\) is not an additional user objective.
 
 ## Present judgment
 
-No route proves convergence; the rigorous interval remains $0.336493364431\ldots\le\liminf\le\limsup\le1/2$.
-
-Adaptive optimized principal restriction remains the overarching framework;
-the bare arbitrary-cut tail (10.795) is its sharp general sufficient lemma.
-Large-core spectral excess leads structurally, while the dependence-safe
-K-functional tail is a precise direct alternative. Both lack abundance theorems.
-
-## Leading structured package and convergence chain
-
-Fix a compact window $[p_0,p_1]\subset(1/2,1)$, $m/n$ in that window, and
-$0<c<1/4$. Put $L_n=n^{3/4-c}$. First prove a child-ground box witness
+No route proves convergence; the rigorous interval remains
 
 ~~~math
-\min_{S,\ y\text{ child ground},\ w\in\{\pm1\}^{S^c}}
-\lVert A[:,S]y+A[:,S^c]w\rVert_2^2
-\le R_0=O(n^{9/4-c}).
+0.336493364431\ldots\le\liminf\frac{M_n}{n^{3/2}}
+\le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-For the project-row class $C_R$, zero- or admissible positive-deficit
-families $f_z$, and common-core kernel $K_\ell$, let $D_R>0$ be the
-double-incidence mass, $P_\ell(R)$ the aggregate retention, and
-$\rho_\ell=\binom m\ell/\binom n\ell$. The genuinely spectral missing lemma
-is that some scale and cap satisfy
+Adaptive optimized principal restriction remains the overarching framework. The orientation-paired K-functional tail is now the strongest single implementation: it needs one saved joint-profile population and has an exact noncircular completion theorem. The structured box plus large-core route remains serious, but needs both an exact-minimizer box theorem and a multilevel weighted-intersection theorem.
+
+## Leading route: orientation-paired far completion
+
+Fix \(p=m/n\in[p_0,p_1]\subset(1/2,1)\), \(0<c<1/4\), and put
 
 ~~~math
-R_0\le R\le C(R_0+n^2),\qquad -\log\rho_\ell=\omega(L_n),\qquad
-P_\ell(R)-\lambda_2(\ell)\ge\exp\{-O(L_n)\}.
+H=\lceil n^{3/4-c}\rceil,\quad T_n=n^{3/2-c},\quad
+p_2=\frac{m(m-1)}{n(n-1)}.
 ~~~
 
-Equation (10.1261) then gives a center of degree $\exp\{-O(L_n)\}$ and row
-$O(n^{9/4-c})$, hence (10.795). The inverse tail, geometric-window
-summability, and exact landing force $q_n/n^{3/2}$ and therefore
-$M_n/n^{3/2}$ to converge.
-
-## Exact direct alternative
-
-For a local state, write $Z=L+Q_T$, $L=\beta^{\mathsf T}w$, and
-$r=-g/p_2>0$. Put
+For a selector/local state define
 
 ~~~math
-H=\lceil L_n\rceil,\qquad T_n=n^{3/2-c},\qquad
-\mathcal K_H(\beta)=K_{1,2}(\beta,\sqrt H),\qquad
-b_H=C_{\rm HW}\{\lVert A[S^c]\rVert_F\sqrt H+
-\lVert A[S^c]\rVert_{\rm op}H\}=O(T_n).
+h=Q(A[S])-p^{3/2}q_n-t,\quad
+e=\sigma y^{\mathsf T}A[S]y,\quad
+g=(1-p_2)e-h.
 ~~~
 
-Montgomery-Smith plus a dependence-safe Hanson-Wright union bound gives
+When \(g<0\), put \(r=-g/p_2\), \(u=A[S^c,S]y\), and \(g^\iota=-g-2h\). With the exact clipped functional \(K_H(u)\) and dependence-safe Hanson--Wright cost \(b_H\), define
 
 ~~~math
-r+b_H\le\tfrac12\mathcal K_H(\beta)
-\quad\Longrightarrow\quad
-\Pr\{Z\le-r\}\ge\tfrac12\,12^{-H}.
+\mathcal R_n=
+\{g<0,\ r\ge\omega_nT_n:
+g^\iota\ge-C_BT_n\ \text{or}\ K_H(u)\ge r+b_H\},
 ~~~
 
-For a deterministic $\omega_n\uparrow\infty$, let $G_n(\omega)$ be the local
-states satisfying this condition and $r\ge\omega_nT_n$. An open sufficient
-direct lemma is
+where \(\omega_n\uparrow\infty\) slowly. The exact sufficient lemma is
 
 ~~~math
-\text{For some }\omega_n\uparrow\infty\text{ and }C_0<\infty,\qquad
-\nu_m(G_n(\omega))\ge e^{-C_0H}
+\boxed{\nu_m(\mathcal R_n)\ge e^{-C_0H}.}
 ~~~
 
-uniformly over the required exact minimizers, window, and tolerances. It yields
-$Z_t\ge\exp\{-O(H)\}$ and convergence through (10.795); Holmstedt makes the
-profile explicit up to universal constants.
+The first branch reverses to saved local-band mass, so inverse Hanson--Wright gives \(q_m\le p^{3/2}q_n+O(T_n)\). On the second, Montgomery--Smith plus a dependence-safe Hanson--Wright union bound gives completion probability \(\frac12\,12^{-H}\), hence the bare tail (10.795). Geometric-window summability and exact landing force \(q_n/n^{3/2}\), and therefore \(M_n/n^{3/2}\), to converge.
 
-## Evidence, obstructions, and falsification criteria
+Only the selector-driven region
 
-- Core-load counting gives
-  $M\ge\max\{\rho_\ell P_\ell,[P_\ell-\lambda_2]_+/D_\ell\}$, where
-  $D_\ell=(1-\lambda_1)+n(\lambda_1-\lambda_2)$. Every $\ell=O(L_n)$ is direct degree
-  counting at the target exponent, not spectral amplification. A distinct
-  spectral proof must use $-\log\rho_\ell=\omega(L_n)$; a linear core suffices.
-- At level two, $P_2\ge\lambda_2(2)$ directly forces
-  $M=\Omega(n^{-2})$ on the fixed-density window. All stored target-side
-  tests of this nonnegative criterion are inconclusive because
-  $h_2\ge\lambda_2$ makes the criterion automatic; strict excess can contain
-  off-diagonal collisions. At fixed density the self-loop is exponentially small.
-- Maximal-selector port inequalities give a real positive-threshold
-  certificate for only polynomially many one-exchange labels; it need not
-  apply to an arbitrary box-witness selector. Every one-seed sublinear-radius
-  ball has $e^{o(n)}$ labels. A10 has no adjacent row-ten selector pair and no
-  port preserving $q_*$ by saturation, although 3,200/3,840 maximizing-sign
-  exchanges have zero deficit at their smaller selector cap.
-- The structured route would be falsified by an unbounded exact-minimizer
-  family that has target box witnesses but fails saved large-core excess at
-  every controlled cap. The box component is separately falsified by uniform
-  failure of the target row bound. No such exact family is known.
-- The K-functional theorem is exact and makes no independence error. Its
-  success requires cross energy $\gg n^{9/4-c}$, but high cross energy alone
-  does not force the required head/diffuse coefficient profile or saved
-  far-margin population.
-- The direct implementation would be falsified if, for every diverging
-  $\omega_n$ and every usable $c$, tolerance, and compact window, uniformly
-  $\log\nu_m(G_n(\omega))/H\to-\infty$. That would not falsify the full
-  annealed incidence $Z_t$.
-- Exact parent-cap pairing removes $Q_T$ pointwise but is recurrence-circular:
-  its K-functional condition forces $e\ge r$. Two- and three-moment bounds,
-  Bonami, and constant-probability pairing remain trapped in the local band.
-- Complement incidence, robust cylinders, $K_0$ mixing, small-core vocabulary
-  changes, canonical Bellman pressure, strict pressure, high replicas, local
-  harmonic Poincaré, nested chains, greedoids, and constant shortfall without
-  a square-root cavity reward remain retired.
+~~~math
+h-(1-p_2)|y^{\mathsf T}A[S]y|>C_BT_n
+~~~
 
-## Most recent blank-slate abstraction audit
+needs a K-profile. At the active clipped optimizer, failure has a canonical head \(I\), \(|I|<H\), satisfying
 
-The Wave 45 audit began from the original problem before route comparison.
-Its candidates and judgments are agent-authored hypotheses, not user
-directives. This early decisive-result refresh does not regenerate it; Wave
-57 will.
+~~~math
+K_H(u)=\lVert u_I\rVert_1+
+\sqrt{(H-|I|)\lVert u_{I^c}\rVert_2^2}.
+~~~
 
-1. **Finite-temperature zero-sum interpolation.** Balanced $o(n)$ soft-minimax
-   additivity would work, but temperature mismatch and overlap lack a bridge.
-2. **Summable cavity derivative.** Error $O(n^{1/2-\delta})$ would make positive
-   variation summable; this awaits a square-root deletion reward.
-3. **Second-order signed-kernel compactness.** Continuity plus all-order recovery
-   would work; existing compactness models lack that recovery operation.
+The leading attack is to exchange or charge this head, or prove it cannot carry all saved both-orientations-far mass.
 
-## Ranked routes and Wave 53 direction
+## Falsification criteria and obstructions
 
-1. **Box plus genuinely large-core spectral excess.** Prove saved excess at
-   $-\log\rho_\ell=\omega(L_n)$ using global selector geometry or a signed-shell
-   budget; small cores and one-seed sublinear exchange balls are not substitutes.
-2. **Far K-functional completion abundance.** Prove the exact-minimizer state
-   bound for $G_n(\omega)$, or derive a checkable coefficient-profile dichotomy that
-   forces it on the high-cross branch.
-3. **High-cross versus box discrepancy.** Use (10.1278) to separate states
-   where the K route can operate from low-cross child grounds, then control
-   the internal Gram needed for the box witness in the latter branch.
-4. **Tight decomposition, dormant.** Reopen only with a non-switching global
-   certificate absent from (10.1251)--(10.1252).
-5. **Other global routes, dormant.** Reopen only with a testable composition,
-   recovery, or square-root cavity theorem at the required scale.
+- The implementation is falsified if, for every usable \(c,\omega_n,C_B,C_0\), window, tolerance, and required exact minimizer, \(\nu_m(\mathcal R_n)=e^{-\omega(H)}\) along an unbounded family. This would not falsify the full annealed incidence or bare tail.
+- Cross energy alone is insufficient; the exact head/diffuse profile is essential, and stored finite states fail it after passing the energy test.
+- Orientation pairing removes recurrence-local partners, but the remaining both-far branch is substantial in stored data.
+- Generic moments through order three, constant-probability pairing, parent-cap pairing, and raw two-moment envelopes remain recurrence-local or pointwise dominated.
+- A scalable competitive signing has a child ground with \(I=\Theta(n^{5/2})\) but \(X=d=0\) and \(\mathsf H_T=0\). Cap, operator, trace, and child optimality therefore cannot force box cancellation; the family is not exact-minimal.
+- Simultaneous edge-flip minimality gives a near-ground migration/entropy dichotomy, but sees the baseline positive star rather than the subleading field excess and supplies no saved project mass.
 
-Wave 53 must independently rank ten ideas and assign three falsifiable attacks.
+## Ranked alternatives
+
+1. **Exact-minimizer box plus weighted large-core excess.** Prove a child-ground box witness at \(R_0=O(n^{9/4-c})\), then find \(R_0\le R\le C(R_0+n^2)\) and a genuinely large core with \(-\log\rho_\ell=\omega(H)\) satisfying
+
+   ~~~math
+   P_\ell(R)-\lambda_2(\ell)\ge e^{-O(H)}.
+   ~~~
+
+   Spectral extraction then gives a saved center and (10.795).
+
+2. **Localized-curvature exclusion.** Use exact discrete minimality to rule out hidden frozen curvature on candidate low-cross incidences, or make the signed-\(d\) or a delocalized negative-\(\mathsf H_T\) gain cancel \(I-O(n^{9/4-c})\). Generic block algebra is conclusively insufficient.
+
+3. **Multilevel intersection histogram.** Work directly with the self-loop-free identity (10.1292). The one-threshold lemma (10.1294) is exponentially impossible away from \(\alpha=(\beta-p^2)/(1+\beta-2p)\), and at equality asks for the full Johnson-ball rate. Polynomial all-seed stars cannot provide it.
+
+4. **Tight decomposition, dormant.** Reopen only with a genuinely non-switching global certificate absent from (10.1251)--(10.1252).
+
+5. **Other global routes, dormant.** Reopen only with a testable composition, recovery, approximate-subadditivity, compactness, or square-root cavity theorem at the required scale.
+
+Constant shortfall, complement incidence, robust cylinders, canonical Bellman pressure, strict pressure, high replicas, local harmonic Poincaré, nested chains, greedoids, and unweighted edge-cube covers remain retired.
+
+## Blank-slate audit status
+
+The most recent blank-slate audit was Wave 45. Its finite-temperature interpolation, summable cavity derivative, and signed-kernel compactness candidates supplied no recovery theorem. This Wave 54 refresh is early and decisive-result-driven, not a scheduled mandatory audit. Wave 59 must begin from the original convergence problem and perform the next blank-slate audit before route comparison.
+
+All rankings and hypotheses above are the main agent's assessment, not user directives. Wave 55 must independently rank ten ideas against this steering document and the Wave 54 Updated frontier.
