@@ -1,0 +1,589 @@
+{
+  "balanced_all_positive_within_block_blowup": {
+    "cap_gap_formula": "2*L^2",
+    "definition": "replace every vertex by L twins, put +1 within each twin class, and retain the base sign between different classes",
+    "first_cap_formula": "24*L^2-5*L",
+    "profile_statement": "the two blowups have identical induced switching-class counts for every restriction order at most 6",
+    "second_cap_formula": "26*L^2-5*L",
+    "twofold_blowup_profile_independently_checked": {
+      "4": [
+        1509,
+        3336
+      ],
+      "5": [
+        1300,
+        5296,
+        7052,
+        1856
+      ],
+      "6": [
+        926,
+        2564,
+        8816,
+        992,
+        3416,
+        9632,
+        6336,
+        2302,
+        3520,
+        256
+      ]
+    },
+    "valid_for_integer_L_at_least": 3
+  },
+  "classification": "exact exhaustive spin caps, exact induced switching-class profiles, and exact positive-definiteness certificates",
+  "common_phi6_vector": [
+    45,
+    165,
+    3,
+    64,
+    127,
+    58,
+    0,
+    2,
+    11,
+    2,
+    11,
+    78,
+    39,
+    8,
+    55,
+    4
+  ],
+  "order": 10,
+  "oriented_restriction_class_counts": {
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 7,
+    "6": 16
+  },
+  "records": [
+    {
+      "Q_plus_4I_leading_principal_minors": [
+        5,
+        24,
+        108,
+        480,
+        2000,
+        7680,
+        24768,
+        82944,
+        232704,
+        755712
+      ],
+      "code": 5850642905,
+      "exact_energy_profile": {
+        "cap": 19,
+        "energy_histogram": {
+          "-1": 52,
+          "-11": 18,
+          "-13": 10,
+          "-15": 5,
+          "-17": 1,
+          "-3": 54,
+          "-5": 48,
+          "-7": 38,
+          "-9": 30,
+          "1": 56,
+          "11": 16,
+          "13": 10,
+          "15": 3,
+          "17": 3,
+          "19": 2,
+          "3": 52,
+          "5": 46,
+          "7": 42,
+          "9": 26
+        },
+        "maximum": 19,
+        "minimum": -17
+      },
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "matrix_sha256": "3a2a305cf8158d29569b60148acbe2248c48b0d682fd7f517c47e74ede1fdbb1",
+      "oriented_restriction_class_histograms": {
+        "2": [
+          45
+        ],
+        "3": [
+          62,
+          58
+        ],
+        "4": [
+          26,
+          165,
+          19
+        ],
+        "5": [
+          3,
+          37,
+          67,
+          27,
+          60,
+          58,
+          0
+        ],
+        "6": [
+          0,
+          2,
+          11,
+          2,
+          6,
+          43,
+          39,
+          3,
+          5,
+          55,
+          0,
+          0,
+          35,
+          5,
+          4,
+          0
+        ]
+      },
+      "restriction_class_histograms": {
+        "4": [
+          45,
+          165
+        ],
+        "5": [
+          3,
+          64,
+          127,
+          58
+        ],
+        "6": [
+          0,
+          2,
+          11,
+          2,
+          11,
+          78,
+          39,
+          8,
+          55,
+          4
+        ]
+      }
+    },
+    {
+      "Q_plus_4I_leading_principal_minors": [
+        5,
+        24,
+        108,
+        480,
+        1872,
+        7296,
+        23808,
+        80640,
+        269568,
+        755712
+      ],
+      "code": 28771662001,
+      "exact_energy_profile": {
+        "cap": 21,
+        "energy_histogram": {
+          "-1": 54,
+          "-11": 23,
+          "-13": 8,
+          "-15": 3,
+          "-17": 2,
+          "-3": 46,
+          "-5": 48,
+          "-7": 38,
+          "-9": 30,
+          "1": 60,
+          "11": 16,
+          "13": 10,
+          "15": 8,
+          "17": 1,
+          "21": 1,
+          "3": 56,
+          "5": 48,
+          "7": 34,
+          "9": 26
+        },
+        "maximum": 21,
+        "minimum": -17
+      },
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "matrix_sha256": "d2f4566b4175e3338f243cb7648de6f49b19512510872240d247b3c7d4b4d346",
+      "oriented_restriction_class_histograms": {
+        "2": [
+          45
+        ],
+        "3": [
+          62,
+          58
+        ],
+        "4": [
+          26,
+          165,
+          19
+        ],
+        "5": [
+          3,
+          37,
+          67,
+          27,
+          60,
+          58,
+          0
+        ],
+        "6": [
+          0,
+          2,
+          11,
+          2,
+          6,
+          43,
+          39,
+          3,
+          5,
+          55,
+          0,
+          0,
+          35,
+          5,
+          4,
+          0
+        ]
+      },
+      "restriction_class_histograms": {
+        "4": [
+          45,
+          165
+        ],
+        "5": [
+          3,
+          64,
+          127,
+          58
+        ],
+        "6": [
+          0,
+          2,
+          11,
+          2,
+          11,
+          78,
+          39,
+          8,
+          55,
+          4
+        ]
+      }
+    }
+  ],
+  "restriction_class_counts": {
+    "4": 2,
+    "5": 4,
+    "6": 10
+  },
+  "schema": "quadratic-signing-phase2b-phi6-collision-v1",
+  "search": {
+    "classification": "deterministic nonexhaustive search; discovered pair independently verified exactly",
+    "distinct_codes_checked_before_collision": 555,
+    "enumeration": "odd affine permutation modulo 2^35",
+    "root_gauged_global_negation_representatives": 34359738368,
+    "search_source": "computations/phase2_profile_collision_n8.cpp --sample 10 1000000"
+  },
+  "sylvester_hadamard_low_scale_separation": {
+    "cap_gap_lower": "cap(S_B(k))-cap(S_A(k)) >= k^(3/2)/8",
+    "dual_positive_definite_leading_minors_after_scaling_by_100": {
+      "diag_y_minus_Q": [
+        345,
+        124550,
+        64522550,
+        30647958400,
+        7235735722400,
+        3019509287908000,
+        496835560311940000,
+        38743496824224380000,
+        109046877631326300000,
+        287107261059861900000
+      ],
+      "diag_y_plus_Q": [
+        545,
+        311550,
+        223739550,
+        161911124400,
+        76720024378400,
+        50095507977108000,
+        18914182870419540000,
+        7567963850794117580000,
+        3259534186283088524300000,
+        1502797682809365183495900000
+      ]
+    },
+    "dual_y_numerators_over_100": [
+      445,
+      490,
+      661,
+      668,
+      436,
+      645,
+      405,
+      427,
+      485,
+      513
+    ],
+    "dual_y_sum": "207/4",
+    "first_cap_upper": "cap(S_A(k)) <= (207/8)*k^(3/2)",
+    "lift_definition": "S_A(k)=A tensor H_k + I_10 tensor (H_k-diag(H_k)); define S_B(k) analogously",
+    "normalized_gap_lower": "1/(8*10^(3/2))",
+    "order_N": "N=10*k",
+    "orders": "k=4^r for every integer r>=1",
+    "positive_boolean_eigenvector_seed_for_H4": [
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    "profile_statement": "S_A(k) and S_B(k) have identical oriented restriction profiles through order 6",
+    "second_cap_lower": "cap(S_B(k)) >= 26*k^(3/2)"
+  }
+}

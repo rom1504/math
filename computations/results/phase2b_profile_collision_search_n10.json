@@ -1,0 +1,13 @@
+{
+  "classification": "exact counterexample found in a deterministic distinct-state sample; search not exhaustive over all signings",
+  "n": 10,
+  "profiles": [4, 5, 6],
+  "first_code": 5850642905,
+  "first_cap": 19,
+  "second_code": 28771662001,
+  "second_cap": 21,
+  "codes_checked": 555,
+  "profile": [45, 165, 3, 64, 127, 58, 0, 2, 11, 2, 11, 78, 39, 8, 55, 4],
+  "source": "computations/phase2_profile_collision_n8.cpp",
+  "command": "g++ -O3 -std=c++17 -Wall -Wextra -pedantic computations/phase2_profile_collision_n8.cpp -o /home/math/quadra/tmp/phase2_profile_collision_search && /home/math/quadra/tmp/phase2_profile_collision_search --sample 10 555"
+}

@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: second sustained phase, first substantive checkpoint
+Evidence cutoff: second sustained phase, fixed-profile obstruction update
 (2026-07-31). Status: **computational--composition campaign active**, with
 the original bounded conference-state target narrowed by scalable
 obstructions rather than continued as stated.
@@ -53,12 +53,18 @@ equivalent to the unknown assertion `M_n=(1/2+o(1))n^(3/2)`. Every
 `o(n)`-deletion and every regular affine-line restriction retains or exceeds
 the normalized constant `1/2`.
 
-The strongest surviving structured-state experiment is now the 16-count
-profile `phi_6(A)`: the complete counts of induced switching classes at
-orders four, five, and six. It determines cap on every order-eight signing
-and on every balanced `PC(26)` restriction; a one-million-signing order-nine
-sample found no collision. This is finite evidence, not primary progress.
-The exact next theorem or falsifier is
+The 16-count profile `phi_6(A)` is inactive as a standalone state. An exact
+order-ten equal-profile pair has caps 19 and 21; positive-twin blowups give a
+quadratic separation. More decisively, common Sylvester--Hadamard microblocks
+preserve the profiles at the correct cap scale. An exact rational SDP
+certificate and a Boolean eigenvector prove, for `N=10k`, `k=4^r`,
+
+~~~math
+\operatorname{cap}(S_A(k))\le {207\over8}k^{3/2},\qquad
+\operatorname{cap}(S_B(k))\ge26k^{3/2}.                              \tag{S2a}
+~~~
+
+Hence
 
 ~~~math
 \phi_6(A)=\phi_6(B)
@@ -66,12 +72,22 @@ The exact next theorem or falsifier is
 |\operatorname{cap}(A)-\operatorname{cap}(B)|=o(n^{3/2})                \tag{S2}
 ~~~
 
-uniformly, or a scalable equal-profile pair with a `Theta(n^(3/2))` gap.
-If (S2) holds, choosing one canonical representative of each realizable
-profile gives a polynomial-cardinality family that lands near an optimizer
-without referring to the optimizer. A composition/update rule for those
-representatives would still be required; a clean state description alone is
-not convergence.
+is false by `Omega(n^(3/2))` even on the correct-scale class. The constants
+in (S2a) exceed the best upper constant for the optimum, so a separately
+certified near-optimal subclass is not logically falsified. Arbitrary
+canonical representatives cannot prove landing, while minimum-cap fiber
+representatives are circular. Exact invariant theory identifies `phi_6`
+with finite local moments, whose entropy bounds miss the project scale.
+
+The current principal target is therefore narrower and explicitly
+falsifiable: find an objective-independent, composition-stable certificate
+that excludes the Hadamard/profile separation while retaining a
+near-minimizer, or replace the fixed profile by an algebraically generated
+critical-scale state with a proved extreme-tail bound and update rule.
+Merely saying "restrict to near-minimizers" is not such a certificate.
+Generic enlargement is inactive: a bounded-operator Hamming net needs
+essentially `2^n` tests, and a generic moment/tail proof needs linear moment
+order, whose full induced-profile state is larger than the signing itself.
 
 The ranked direct-composition alternative is low-variance fractional
 rounding. A fractional bridge of ideal cap and variance `O(N^(2-eta))`
@@ -82,11 +98,6 @@ do this below limiting constant `1/2`: a universal Frobenius bound forces
 subquadratic variance to imply that constant. Active-rank-only arguments
 return to the inactive common-active-face route.
 
-The orbit-complete calculation proves every `13+13` split of `PC(26)` has cap
-at least 24, versus `M_13=20`. Exact automorphism orbit state is exponential,
-and full spectrum has cap-24/cap-28 collisions. These facts retire symmetry
-labels and spectrum as standalone states, while leaving (S2) genuinely open.
-
 ## Rigorous frontier
 
 The asymptotic interval remains
@@ -96,19 +107,9 @@ The asymptotic interval remains
 \le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
 ~~~
 
-The campaign certified
-
-~~~math
-M_{11}=17,\quad M_{12}=18,\quad M_{13}=20,\quad M_{14}=21,
-~~~
-
-and explicit witnesses plus monotonicity/parity give
-
-~~~text
-n:          15  16  17  18  19  20  21  22  23  24  25  26
-lower:      21  22  22  23  23  24  24  25  25  26  26  27
-upper:      27  32  32  33  41  42  44  49  53  56  60  65
-~~~
+The campaign certified `M_11=17`, `M_12=18`, `M_13=20`, and `M_14=21`.
+Explicit witnesses and monotonicity/parity give rigorous intervals through
+order 26; the ledger retains the complete table.
 
 No fixed-density recurrence is complete. The verified final chain remains
 
@@ -116,22 +117,6 @@ No fixed-density recurrence is complete. The verified final chain remains
 uniform recurrence with geometrically summable power defect
   -> convergence of M_n/n^(3/2).
 ~~~
-
-## Conference facts and limits
-
-For every odd prime power `r`, the square-field Paley signing satisfies
-
-~~~math
-\operatorname{cap}(PC(r^2+1))=r(r^2+1)/2.
-~~~
-
-Its one- and two-vertex descendants also have normalized cap tending to
-`1/2`. Thus bounded deletion is rigorously inactive as a source of a strict
-low construction; only growing/comparable blocks remain relevant.
-
-Composition within the Boolean-saturating conference family has a proved
-fixed-block, summable-defect theorem. This is retained as a clean positive
-mechanism and testbed, not as evidence for landing near the true optimum.
 
 ## Inactive routes: selected prior and common active face
 
@@ -156,11 +141,12 @@ macroscopic log-scale epochs; no universal mechanism is known.
 
 ## Checkpoint decision
 
-Continuation is justified by new primary progress in this phase: the
-switching-template landing obstruction and the universal
-operator-norm/low-variance barrier are scalable theorems. Continue the
-bounded `phi_6` stability/falsification campaign and the Boolean-certified
-fractional alternative; do not return to raw conference separator rounds,
-generic orbit labels, spectrum-only state, independent lifts, selected prior,
-or common active faces. The first checkpoint does not end the user-authorized
-four-hour phase.
+Continuation is justified by primary progress in this phase: the
+switching-template landing obstruction, the universal
+operator-norm/low-variance barrier, and now the scalable fixed-profile
+falsifier are proved theorems. Retire fixed `phi_6` as a standalone landing
+state. Continue the low-cap spike-certificate/critical-scale-state audit and
+the Boolean-certified fractional alternative; do not return to raw
+conference separator rounds, generic orbit labels, spectrum-only state,
+independent lifts, selected prior, or common active faces. This material
+target change does not end the user-authorized four-hour phase.

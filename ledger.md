@@ -39301,3 +39301,156 @@ scalable falsification attempt. The analytic fractional bridge theorem
 (10.1464) remains a ranked alternative only when accompanied by a direct
 Boolean margin certificate. The selected-prior and common-active-face routes
 remain inactive; genuine nonconvergence remains a standing alternative.
+
+### 10.128 Second sustained phase, checkpoint 2: fixed local state falsified at the project scale
+
+This checkpoint contains **proved primary progress**. The fixed six-vertex
+profile proposed at the preceding checkpoint has been falsified by an exact
+scalable construction in which both families retain `O(N^(3/2))` cap. The
+negative result narrows the structured-landing problem to a genuinely
+nonlocal or algebraically generated state.
+
+#### 10.128.1 Exact finite collision and invariant interpretation
+
+The deterministic search in `phase2_profile_collision_n8.cpp` found, after
+555 order-ten candidates, the root-gauged codes
+
+~~~text
+5850642905, 28771662001.
+~~~
+
+Independent exact reconstruction proves that their complete **oriented**
+switching/permutation restriction histograms agree at every order at most
+six, while their energy ranges are `[-17,19]` and `[-17,21]`. Thus
+
+~~~math
+\phi_6(A)=\phi_6(B),\qquad
+\operatorname{cap}(A)=19,\quad \operatorname{cap}(B)=21.             \tag{10.1470}
+~~~
+
+The accompanying exact orbit-Fourier calculation identifies what the state
+contains. Switching- and global-negation-invariant monomials are precisely
+even-edge Eulerian graphs. Their orbit-character transforms on orders four,
+five, and six have exact ranks `2,4,10` and nonzero determinants. The
+order-six histogram determines the lower histograms by deck double counting.
+In particular, `phi_6` determines `tr(A^4)`, `tr(A^6)`, and the fourth and
+sixth uniform Boolean-energy moments. This is **proved invariant theory**;
+it explains finite prediction but supplies only fixed-moment information.
+
+#### 10.128.2 Two scalable amplifications
+
+Positive `L`-twin blowup preserves all oriented profiles through order six.
+Exact positive-definiteness certificates and coordinatewise convexity give,
+for every `L>=3`,
+
+~~~math
+\operatorname{cap}(T_L(A))=24L^2-5L,qquad
+\operatorname{cap}(T_L(B))=26L^2-5L.                \tag{10.1471}
+~~~
+
+This first construction has quadratic cap. The decisive second construction
+uses a common non-rank-one microblock. For the symmetric Sylvester Hadamard
+matrix `H_k`, `k=4^r`, let `D_k=diag(H_k)` and
+
+~~~math
+S_A(k)=A\otimes H_k+I_{10}\otimes(H_k-D_k),          \tag{10.1472}
+~~~
+
+with `S_B(k)` defined analogously. These are order-`N=10k` signings. Oriented
+base-profile equivalences lift by switching whole selected fibers, so their
+profiles through order six agree exactly for every `k`.
+
+Put `Q=A+I`. Decompose each fiber spin into the positive and negative
+eigenspaces of `H_k/sqrt(k)`, producing PSD Gram matrices `G^+,G^-` with
+`diag(G^+)+diag(G^-)=1`. The leading energy is
+
+~~~math
+{k^{3/2}\over2}\operatorname{tr}(Q(G^+-G^-)).       \tag{10.1473}
+~~~
+
+The exact rational dual vector
+
+~~~math
+y={1\over200}(445,490,661,668,436,645,405,427,485,513)              \tag{10.1474}
+~~~
+
+satisfies `Diag(y)-Q/2` and `Diag(y)+Q/2` positive definite and has sum
+`207/8`. Every leading principal minor was checked by exact Bareiss and,
+independently, exact `LDL^T` arithmetic. Since `tr(H_k)=0`,
+
+~~~math
+\operatorname{cap}(S_A(k))\le {207\over8}k^{3/2}.   \tag{10.1475}
+~~~
+
+The second base has a positive energy-21 spin, while `H_4` has a Boolean
+eigenvector of eigenvalue two. Tensoring these witnesses gives
+
+~~~math
+\operatorname{cap}(S_B(k))\ge26k^{3/2}.             \tag{10.1476}
+~~~
+
+Consequently
+
+~~~math
+\operatorname{cap}(S_B(k))-\operatorname{cap}(S_A(k))
+\ge {1\over8}k^{3/2}={N^{3/2}\over8\,10^{3/2}}.    \tag{10.1477}
+~~~
+
+Both sides have `O(N^(3/2))` cap; the second follows also from its fixed-base
+Hadamard spectral bound. Equations (10.1472)--(10.1477) are a **proved
+scalable correct-scale falsifier**, not numerical extrapolation. Their
+constants exceed the best known upper constant for `M_N`, so this is not a
+pair of near-minimizers. It nevertheless kills fixed `phi_6` as a quantitative
+state on the entire correct-scale class. Restricting its fiber by cap or by
+near-optimality would be circular unless an independent certificate is
+proved to contain a near-minimizer.
+
+#### 10.128.3 Why generic growing profiles do not repair the state
+
+On a purified class `||A||_op<=C sqrt(n)`, spins at Hamming distance `d`
+obey
+
+~~~math
+|H_A(x)-H_A(y)|\le2C\sqrt{n d(n-d)}.                \tag{10.1478}
+~~~
+
+Sphere covering then shows that a direct net giving `o(n^(3/2))` error needs
+`exp((log 2-o(1))n)` test spins. Generic quadratic-chaos moments likewise
+need moment order `Theta(n)` to see an event of mass `2^(-n)`; a profile
+through `k` vertices has `2^(Theta(k^2))` class coordinates. These are
+**proved limitations of the net and generic-moment implementations**, not a
+no-go theorem for an algebraically generated implicit state.
+
+The exact surviving sufficient statement is all-order absorbing realization
+of purified bounded-operator action limits. It would prove convergence, but
+known restriction, block, random, and Hadamard lifts inject a leading
+microscopic component, and there is still no evidence that this realization
+theorem is simpler than the original cross-order problem. Exact cut-code
+response also retains exponential rank. A defensible replacement state must
+implicitly cover the extreme Boolean tail and admit an all-order operation.
+
+#### 10.128.4 Operational table
+
+| Track | Last concrete result | Next falsifiable step | Stopping or redirect condition |
+|---|---|---|---|
+| Constructive theorem | Exact invariant transform and independent Hadamard-factor audit | Test whether a larger low-cap base collision or algebraic family approaches the near-optimal constant | Any restriction defined by cap, or fixed-moment tail claims without an extreme-tail theorem |
+| Falsification/computation | Exact correct-scale equal-profile separation (10.1477) | Search known minimizer/near-minimizer neighborhoods and rank base pairs by certified vector upper versus product lower | More high-constant collisions without a scaling or near-optimal implication |
+| Independent abstraction | Full-rate Hamming-net and linear-moment-order obstructions | Specify one algebraically closed state with an exact tail theorem and order-filling operation | Generic profile enlargement, generic graphon compactness, or full cut-code response |
+| Main integration | Independent exact PSD certificate and proof audit | Convert the separation into a sharper necessary condition for any landing family; keep direct composition active | Do not mistake correct-scale state falsification for a near-optimal landing obstruction |
+
+#### 10.128.5 Updated frontier
+
+The exact values through `M_14=21`, the rigorous asymptotic interval, and the
+absence of a completed fixed-density recurrence are unchanged. The primary
+advance is structural: fixed local switching profiles fail to control cap by
+`o(N^(3/2))` even among `O(N^(3/2))` signings. Fixed local moments, spectrum,
+bounded switching quotients, and generic subexponential nets are inactive as
+standalone landing states.
+
+The leading target is now an objective-independent algebraically generated
+family or certificate that (i) provably contains a near-minimizer, (ii)
+controls the extreme Boolean tail rather than finitely many moments, and
+(iii) has a summable-defect all-order composition. The fractional bridge
+route remains secondary only with a direct Boolean margin certificate.
+Continued work is justified by the proved scalable obstruction and remains
+inside the user-authorized sustained phase.

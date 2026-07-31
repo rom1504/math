@@ -31,22 +31,22 @@ int edge_index(int n, int i, int j) {
     return -1;
 }
 
-int sign_from_code(std::uint32_t code, int n, int i, int j) {
+int sign_from_code(std::uint64_t code, int n, int i, int j) {
     if (i == j) return 0;
     if (i == 0 || j == 0) return 1;
-    return (code & (std::uint32_t{1} << edge_index(n,i,j))) ? -1 : 1;
+    return (code & (std::uint64_t{1} << edge_index(n,i,j))) ? -1 : 1;
 }
 
-std::uint32_t permute_and_gauge(std::uint32_t code, int n,
+std::uint64_t permute_and_gauge(std::uint64_t code, int n,
                                 const std::vector<int>& permutation) {
-    std::uint32_t result = 0;
+    std::uint64_t result = 0;
     int bit = 0;
     for (int i = 1; i < n; ++i) {
         for (int j = i + 1; j < n; ++j, ++bit) {
             int value = sign_from_code(code,n,permutation[i],permutation[j]) *
                         sign_from_code(code,n,permutation[0],permutation[i]) *
                         sign_from_code(code,n,permutation[0],permutation[j]);
-            if (value == -1) result |= std::uint32_t{1} << bit;
+            if (value == -1) result |= std::uint64_t{1} << bit;
         }
     }
     return result;
@@ -90,38 +90,38 @@ std::vector<std::vector<int>> subsets(int n, int k) {
     return result;
 }
 
-std::uint32_t restriction_code(std::uint32_t code,
+std::uint64_t restriction_code(std::uint64_t code,
                                const std::vector<int>& vertices) {
-    std::uint32_t result = 0;
+    std::uint64_t result = 0;
     int bit = 0;
     for (int i = 1; i < static_cast<int>(vertices.size()); ++i) {
         for (int j = i+1; j < static_cast<int>(vertices.size()); ++j, ++bit) {
             int value = sign_from_code(code,signing_order,vertices[i],vertices[j]) *
                         sign_from_code(code,signing_order,vertices[0],vertices[i]) *
                         sign_from_code(code,signing_order,vertices[0],vertices[j]);
-            if (value == -1) result |= std::uint32_t{1} << bit;
+            if (value == -1) result |= std::uint64_t{1} << bit;
         }
     }
     return result;
 }
 
-int boolean_cap(std::uint32_t code) {
+int boolean_cap(std::uint64_t code) {
     int result = 0;
     const int spin_count = 1 << (signing_order-1);
     const int nonroot_edges = (signing_order-1)*(signing_order-2)/2;
     for (int spin_code = 0; spin_code < spin_count; ++spin_code) {
         int root_term = 0;
-        std::uint32_t product_negative = 0;
+        std::uint64_t product_negative = 0;
         int bit = 0;
         for (int i = 1; i < signing_order; ++i) {
             int xi = (spin_code & (1 << (i-1))) ? -1 : 1;
             root_term += xi;
             for (int j = i+1; j < signing_order; ++j, ++bit) {
                 int xj = (spin_code & (1 << (j-1))) ? -1 : 1;
-                if (xi*xj == -1) product_negative |= std::uint32_t{1} << bit;
+                if (xi*xj == -1) product_negative |= std::uint64_t{1} << bit;
             }
         }
-        int energy = root_term + nonroot_edges - 2*__builtin_popcount(code ^ product_negative);
+        int energy = root_term + nonroot_edges - 2*__builtin_popcountll(code ^ product_negative);
         result = std::max(result, std::abs(energy));
     }
     return result;
@@ -135,15 +135,33 @@ struct KeyHash {
         return value;
     }
 };
-struct Record { int cap; std::uint32_t code; };
+struct Record { int cap; std::uint64_t code; };
 
 int main(int argc, char** argv) {
-    std::uint32_t requested = 0;
+    std::uint64_t requested = 0;
+    bool legacy_order9_sample = false;
+    bool scan_best_collision = false;
     if (argc == 3 && std::string(argv[1]) == "--order9-sample") {
         signing_order = 9;
-        requested = static_cast<std::uint32_t>(std::stoul(argv[2]));
+        legacy_order9_sample = true;
+        requested = static_cast<std::uint64_t>(std::stoull(argv[2]));
+    } else if (argc == 4 && std::string(argv[1]) == "--sample") {
+        signing_order = std::stoi(argv[2]);
+        if (signing_order < 8 || signing_order > 10) {
+            std::cerr << "sample order must be 8, 9, or 10\n";
+            return 2;
+        }
+        requested = static_cast<std::uint64_t>(std::stoull(argv[3]));
+    } else if (argc == 4 && std::string(argv[1]) == "--sample-low") {
+        signing_order = std::stoi(argv[2]);
+        if (signing_order < 8 || signing_order > 10) {
+            std::cerr << "sample order must be 8, 9, or 10\n";
+            return 2;
+        }
+        requested = static_cast<std::uint64_t>(std::stoull(argv[3]));
+        scan_best_collision = true;
     } else if (argc != 1) {
-        std::cerr << "usage: phase2_profile_collision_n8 [--order9-sample COUNT]\n";
+        std::cerr << "usage: phase2_profile_collision_n8 [--order9-sample COUNT | --sample ORDER COUNT | --sample-low ORDER COUNT]\n";
         return 2;
     }
     auto classes4 = class_map(4), classes5 = class_map(5), classes6 = class_map(6);
@@ -151,12 +169,17 @@ int main(int argc, char** argv) {
     std::unordered_map<Key,Record,KeyHash> seen;
     seen.reserve(1 << 19);
     const int signing_bits = (signing_order-1)*(signing_order-2)/2;
-    const std::uint32_t universe = std::uint32_t{1} << (signing_bits-1);
-    const std::uint32_t total = requested ? std::min(requested, universe) : universe;
-    const std::uint32_t multiplier = 747796405u; // odd: a permutation modulo a power of two
-    const std::uint32_t increment = 2891336453u;
-    for (std::uint32_t index = 0; index < total; ++index) {
-        const std::uint32_t code = requested ?
+    const std::uint64_t universe = std::uint64_t{1} << (signing_bits-1);
+    const std::uint64_t total = requested ? std::min(requested, universe) : universe;
+    const std::uint64_t multiplier = legacy_order9_sample ?
+        747796405ULL : 6364136223846793005ULL; // odd permutation modulo 2^k
+    const std::uint64_t increment = legacy_order9_sample ?
+        2891336453ULL : 1442695040888963407ULL;
+    int best_max_cap = 1000000;
+    Record best_first{0,0}, best_second{0,0};
+    Key best_key{};
+    for (std::uint64_t index = 0; index < total; ++index) {
+        const std::uint64_t code = requested ?
             (multiplier*index + increment) & (universe-1) : index;
         Key key{};
         for (const auto& subset : subsets4) ++key[classes4[restriction_code(code,subset)]];
@@ -165,7 +188,20 @@ int main(int argc, char** argv) {
         int cap = boolean_cap(code);
         auto [it, inserted] = seen.emplace(key, Record{cap,code});
         if (!inserted && it->second.cap != cap) {
-            std::cout << "{\"classification\":\"exact counterexample after exhaustive-state traversal to the reported code\",";
+            if (scan_best_collision) {
+                const int candidate_max = std::max(it->second.cap, cap);
+                if (candidate_max < best_max_cap) {
+                    best_max_cap = candidate_max;
+                    best_first = it->second;
+                    best_second = Record{cap,code};
+                    best_key = key;
+                    std::cerr << "best collision caps " << best_first.cap << ','
+                              << best_second.cap << " at " << index+1 << "\n";
+                }
+                if (cap < it->second.cap) it->second = Record{cap,code};
+                continue;
+            }
+            std::cout << "{\"classification\":\"exact counterexample found in a deterministic distinct-state sample; search not exhaustive over all signings\",";
             std::cout << "\"n\":" << signing_order << ",\"profiles\":[4,5,6],\"first_code\":" << it->second.code;
             std::cout << ",\"first_cap\":" << it->second.cap << ",\"second_code\":" << code;
             std::cout << ",\"second_cap\":" << cap << ",\"codes_checked\":" << index+1;
@@ -175,6 +211,16 @@ int main(int argc, char** argv) {
             return 0;
         }
         if (index && index % 100000 == 0) std::cerr << "checked " << index << "/" << total << "\n";
+    }
+    if (scan_best_collision && best_max_cap < 1000000) {
+        std::cout << "{\"classification\":\"best maximum cap among collisions in a deterministic distinct-state sample; search not exhaustive\",";
+        std::cout << "\"n\":" << signing_order << ",\"profiles\":[4,5,6],\"first_code\":" << best_first.code;
+        std::cout << ",\"first_cap\":" << best_first.cap << ",\"second_code\":" << best_second.code;
+        std::cout << ",\"second_cap\":" << best_second.cap << ",\"codes_checked\":" << total;
+        std::cout << ",\"profile\":[";
+        for (int i=0;i<16;++i) { if(i) std::cout << ','; std::cout << int(best_key[i]); }
+        std::cout << "]}\n";
+        return 0;
     }
     std::cout << "{\"classification\":\"" << (requested ? "deterministic collision sample; no collision found" : "exhaustive finite no-collision result") << "\",\"n\":" << signing_order << ',';
     std::cout << "\"profiles\":[4,5,6],\"signings_checked\":" << total;

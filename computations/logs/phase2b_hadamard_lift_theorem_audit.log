@@ -1,0 +1,81 @@
+{
+  "base_positive_maxima": [
+    19,
+    21
+  ],
+  "classification": "independent exact rational and tensor-factor audit",
+  "dual_interpretation": "y_i=dual_numerator_i/200; exact LDL proves Diag(y) plus/minus (A+I)/2 positive definite",
+  "dual_objective": "207/8",
+  "exact_ldl_pivots_after_scaling_by_200": {
+    "-1": [
+      "345",
+      "24910/69",
+      "1290451/2491",
+      "612959168/1290451",
+      "9044669653/38309948",
+      "3774386609885/9044669653",
+      "124208890077985/754877321977",
+      "1937174841211219/24841778015597",
+      "5452343881566315/1937174841211219",
+      "957024203532873/363489592104421"
+    ],
+    "1": [
+      "545",
+      "62310/109",
+      "1491597/2077",
+      "1079407496/1491597",
+      "191800060946/404777811",
+      "62619384971385/95900030473",
+      "47763088056615/126503808023",
+      "378398192539705879/945709143520977",
+      "162976709314154426215/378398192539705879",
+      "15027976828093651834959/32595341862830885243"
+    ]
+  },
+  "first_lift_cap_upper_coefficient": "207/8",
+  "gap_coefficient": "1/8",
+  "h4_positive_boolean_eigenvector": [
+    -1,
+    -1,
+    -1,
+    1
+  ],
+  "h4_trace": 0,
+  "k4_lift_witnesses": [
+    {
+      "base_positive_maximum": 19,
+      "base_spin": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "lift_energy_at_k4": 192
+    },
+    {
+      "base_positive_maximum": 21,
+      "base_spin": [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "lift_energy_at_k4": 208
+    }
+  ],
+  "normalized_order_N_gap": "1/(8*10^(3/2))",
+  "schema": "quadratic-signing-phase2b-hadamard-theorem-audit-v1",
+  "second_lift_cap_lower_coefficient": "26"
+}

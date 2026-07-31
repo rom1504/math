@@ -1,0 +1,81 @@
+{
+  "base_code": 5850642905,
+  "classification": "exact rational PSD and Boolean-eigenvector certificate",
+  "dual_denominator": 200,
+  "dual_numerators": [
+    445,
+    490,
+    661,
+    668,
+    436,
+    645,
+    405,
+    427,
+    485,
+    513
+  ],
+  "dual_sum": "5175/200",
+  "dual_sum_numerator": 5175,
+  "h4_boolean_eigenvector": [
+    1,
+    1,
+    1,
+    -1
+  ],
+  "h4_eigenvalue": 2,
+  "h4_trace": 0,
+  "q_definition": "Q=A+I_10",
+  "scaled_matrix_definition": "200*(Diag(y) +/- Q/2) = Diag(dual_numerators) +/- 100*Q",
+  "scaled_minus_leading_principal_minors": [
+    345,
+    124550,
+    64522550,
+    30647958400,
+    7235735722400,
+    3019509287908000,
+    496835560311940000,
+    38743496824224380000,
+    109046877631326300000,
+    287107261059861900000
+  ],
+  "scaled_plus_leading_principal_minors": [
+    545,
+    311550,
+    223739550,
+    161911124400,
+    76720024378400,
+    50095507977108000,
+    18914182870419540000,
+    7567963850794117580000,
+    3259534186283088524300000,
+    1502797682809365183495900000
+  ],
+  "schema": "quadratic-signing-phase2c-hadamard-sdp-certificate-v1",
+  "separation": "26-207/8 = 1/8",
+  "sylvester_h4": [
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1
+    ]
+  ]
+}
