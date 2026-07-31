@@ -14,6 +14,11 @@ import numpy as np
 
 CODES = (5850642905, 28771662001)
 DUAL_NUMERATORS = (445, 490, 661, 668, 436, 645, 405, 427, 485, 513)
+REFINED_DUAL_DENOMINATOR = 100_000
+REFINED_DUAL_NUMERATORS = (
+    222237, 244660, 330058, 333605, 217787,
+    322119, 202501, 213301, 242265, 256161,
+)
 
 
 def matrix_from_code(code: int, order: int = 10) -> np.ndarray:
@@ -96,6 +101,18 @@ def main() -> int:
             raise AssertionError("dual matrix is not positive definite")
         certificates[str(sign)] = [str(pivot) for pivot in pivots]
 
+    refined_certificates = {}
+    for sign in (-1, 1):
+        # 2D*(Diag(y) + sign*Q/2), for one common refined y.
+        integer_matrix = (
+            2 * np.diag(np.asarray(REFINED_DUAL_NUMERATORS, dtype=np.int64))
+            + sign * REFINED_DUAL_DENOMINATOR * first_q
+        )
+        pivots = exact_ldl_pivots(integer_matrix.tolist())
+        if not all(pivot > 0 for pivot in pivots):
+            raise AssertionError("refined common dual matrix is not positive definite")
+        refined_certificates[str(sign)] = [str(pivot) for pivot in pivots]
+
     h4 = sylvester(4)
     seed = np.asarray((-1, -1, -1, 1), dtype=np.int64)
     if not np.array_equal(h4 @ seed, 2 * seed):
@@ -127,6 +144,10 @@ def main() -> int:
     if coefficient != Fraction(207, 8):
         raise AssertionError(coefficient)
     gap = Fraction(26) - coefficient
+    refined_coefficient = Fraction(
+        sum(REFINED_DUAL_NUMERATORS), REFINED_DUAL_DENOMINATOR
+    )
+    refined_gap = Fraction(26) - refined_coefficient
     output = {
         "schema": "quadratic-signing-phase2b-hadamard-theorem-audit-v1",
         "classification": "independent exact rational and tensor-factor audit",
@@ -136,6 +157,13 @@ def main() -> int:
         ),
         "exact_ldl_pivots_after_scaling_by_200": certificates,
         "dual_objective": str(coefficient),
+        "refined_common_dual": {
+            "denominator": REFINED_DUAL_DENOMINATOR,
+            "numerators": list(REFINED_DUAL_NUMERATORS),
+            "objective": str(refined_coefficient),
+            "gap_coefficient": str(refined_gap),
+            "exact_ldl_pivots_for_both_signs": refined_certificates,
+        },
         "base_positive_maxima": positive_maxima,
         "h4_trace": int(np.trace(h4)),
         "h4_positive_boolean_eigenvector": seed.tolist(),

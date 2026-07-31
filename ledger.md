@@ -39454,3 +39454,336 @@ controls the extreme Boolean tail rather than finitely many moments, and
 route remains secondary only with a direct Boolean margin certificate.
 Continued work is justified by the proved scalable obstruction and remains
 inside the user-authorized sustained phase.
+
+### 10.129 Second sustained phase, checkpoint 3: fixed and homogeneous algebraic states obstructed
+
+This checkpoint contains **proved primary progress**, chiefly scalable
+obstructions that decide whole proposed structured families rather than
+isolated finite examples.  It also corrects and strengthens one certificate
+from the preceding checkpoint.  The rigorous interval and exact values are
+unchanged.
+
+#### 10.129.1 Corrected common dual and lower-profile diagnostic
+
+The Hadamard/profile separation in Section 10.128 requires one common dual
+vector for the positive and negative Hadamard eigenspaces.  Exact rational
+`LDL^T` verification found the stronger valid common vector
+
+~~~math
+y={1\over100000}(222237,244660,330058,333605,217787,
+322119,202501,213301,242265,256161).                  \tag{10.1479}
+~~~
+
+Both `Diag(y)-(A+I)/2` and `Diag(y)+(A+I)/2` are positive definite and
+
+~~~math
+\sum_i y_i={1292347\over50000}=25.84694.             \tag{10.1480}
+~~~
+
+Thus the certified gap in (10.1477) strengthens from `1/8` to
+`7653/50000` times `k^(3/2)`.  The saved exact audit explicitly rejects the
+invalid shortcut of optimizing two unrelated dual vectors.
+
+A deterministic million-sample order-ten search found a lower-profile
+collision with oriented profiles through order six equal and caps 17 and 19,
+but its Hadamard product witness coefficient 24 does not exceed the other
+base's numerical vector relaxation `24.408...`.  This is a reproducible
+**negative computational diagnostic**, not a scalable theorem.
+
+#### 10.129.2 Every diagonal completion of the common Sylvester lift fails
+
+Let `A` be the saved exact order-14 conference minimizer and let `D` be any
+of the `2^14` diagonal sign matrices.  With the symmetric Sylvester matrix
+`H_k`, define
+
+~~~math
+S_D(k)=A\otimes H_k+D\otimes
+       (H_k-\operatorname{diag}H_k).                 \tag{10.1481}
+~~~
+
+Exhaustive search over all 16,384 choices of `D` produced a Boolean witness
+for every order-56 signing `S_D(4)` with absolute energy at least 210.
+Independent exact verification checks every mask and every integer energy;
+the minimum is 210, attained 15 times, and
+
+~~~math
+4\cdot210^2=176400>175616=56^3.                     \tag{10.1482}
+~~~
+
+The canonical record hash is
+`760daa2b18a0e355f857f9e65b355f3e9bd0f7b33cb8b3c731357377120ad9e0`.
+The discovery heuristic is not part of the certificate.
+
+No balance hypothesis on `D` is needed.  Since `tr(H_4)=0`, the diagonal
+correction has zero quadratic value on every Boolean vector at the first
+fiber level.  Tensoring the saved witness with the Boolean eigenvector
+`(-1,-1,-1,1)` of `H_4` gives, for every `t>=0`,
+
+~~~math
+{\operatorname{cap}(S_D(4^{t+1}))\over(56\,4^t)^{3/2}}
+\ge {210\over56^{3/2}}
+=0.501114828585795\ldots>{1\over2}.                 \tag{10.1483}
+~~~
+
+Consequently every diagonal choice, even if selected anew at each scale,
+has the certified linear landing gap
+
+~~~math
+u_N-b_N\ge(0.000936049705\ldots-o(1))N              \tag{10.1484}
+~~~
+
+on these native orders.  This is a **scalable family obstruction** and
+decides all diagonal completions of this common-fiber lift.
+
+#### 10.129.3 Boolean-channel and perturbative persistence
+
+The preceding computation has a general exact explanation.  For a fixed
+full-sign macro matrix `Q` with zero trace and a finite alphabet of symmetric
+Hadamard generators having Boolean extremal eigenvectors, a Boolean witness
+of normalized energy `c` at any finite tensor prefix persists with exactly
+the same `c` through every continuation.  Moreover, every symmetric
+Hadamard generator `G` acquires such a channel after two levels because
+
+~~~math
+(G\otimes G)\operatorname{vec}(G)
+=\operatorname{vec}(G^3)=k\operatorname{vec}(G),    \tag{10.1485}
+~~~
+
+and `vec(G)` is Boolean.  Hence a missing Boolean eigenvector can delay but
+cannot remove the fixed-alphabet obstruction.
+
+The theorem remains quantitative for scale-dependent non-Kronecker repairs.
+If, after switching and permutation,
+
+~~~math
+T_{r+1}=T_r\otimes G_r+E_r,
+~~~
+
+and the propagated Boolean state has normalized energy `c_r`, then
+
+~~~math
+c_{r+1}\ge c_r-
+{|H_{E_r}(z_r\otimes v_r)|\over N_{r+1}^{3/2}}.      \tag{10.1486}
+~~~
+
+Thus the obstruction survives any summable actual-witness error.  Sufficient
+witness-independent conditions are
+
+~~~math
+\sum_r{\|E_r\|_{op}\over\sqrt{N_{r+1}}}<\infty
+\quad\hbox{or}\quad
+\sum_r{t_r\over N_{r+1}^{3/2}}<\infty,              \tag{10.1487}
+~~~
+
+where `t_r` is the number of edited unordered edges.  In particular,
+power-saving operator corrections and subcritical sparse refills cannot
+erase a finite excess.  A surviving repair must spend a cumulative
+leading-scale budget on the explicit entangled channel while still proving
+a summable cap defect.
+
+#### 10.129.4 Non-tensor Paley and coding-family obstructions
+
+Fixed tensor persistence is not the only obstruction.  For prime
+`p=1 mod 4`, a cosine-threshold spin and quadratic reciprocity produce an
+infinite arithmetic subsequence of prime Paley conference matrices with
+
+~~~math
+{\operatorname{cap}(C_p)\over(p+1)^{3/2}}\longrightarrow{1\over2}.   \tag{10.1488}
+~~~
+
+The proof uses exact Fourier normalization and Dirichlet's theorem: along
+primes for which all bounded odd frequencies are quadratic residues, the
+square-wave spin puts asymptotically all Fourier energy in the positive
+conference eigenspace.  Therefore the attractive finite caps at orders 6,
+14, and 18 do not stay uniformly below `1/2` in this non-tensor family.
+
+An independent coding audit gives a still broader exact no-go.  For arbitrary
+scale-dependent `g:F_2^m->{+1,-1}`, `n=2^m`, define the Cayley signing
+`A_g(u,v)=g(u+v)` off the diagonal.  Its Boolean Walsh characters attain the
+spectral bound exactly:
+
+~~~math
+\operatorname{cap}(A_g)
+={n\over2}\max_a|W_g(a)-g(0)|
+\ge {n\over2}(\sqrt n-1).                            \tag{10.1489}
+~~~
+
+The mapping to first-order Reed--Muller covering radius is
+
+~~~math
+d(f,RM(1,m))={n-\max_a|W_g(a)|\over2}.               \tag{10.1490}
+~~~
+
+Hence bent, plateaued, difference-set, and concatenated Cayley families all
+saturate or exceed normalized constant `1/2`; this is not a one-sided
+maximum-cut substitution.  A surviving coding route must break translation
+characters, for example through genuinely growing nonabelian fusion, or
+control cap by a state-dependent amalgamation theorem.
+
+Passing from abelian to homogeneous nonabelian fusion does not by itself
+escape.  Every symmetric signing in a homogeneous association scheme is
+regular, so the all-ones Boolean vector gives
+
+~~~math
+S\mathbf1=r\mathbf1,
+\qquad \operatorname{cap}(S)\ge {n\over2}|r|.        \tag{10.1491}
+~~~
+
+For an exact conference signing `S^2=(n-1)I`, this forces
+`r^2=n-1`, and the spectral upper bound is attained.  More generally,
+
+~~~math
+\|S^2-(n-1)I\|_{op}=o(n)
+\quad\Longrightarrow\quad
+\operatorname{cap}(S)\ge(1/2-o(1))n^{3/2}.          \tag{10.1492}
+~~~
+
+This includes scale-dependent conjugacy-class signings and group-developed
+nonabelian difference-set matrices.  Growing nontrivial representation
+dimensions do not remove the trivial Boolean representation.  The remaining
+design escape must be nonhomogeneous/multi-fiber or use a cap-specific
+certificate with genuine spectral slack.
+
+The smallest nonhomogeneous quotient does genuinely evade that particular
+channel.  For two equal fibers of size `s=2k^2+1`, the quotient
+
+~~~math
+T_k=\begin{pmatrix}2k&1\\1&-2k\end{pmatrix},
+\qquad T_k^2=(2s-1)I,                                \tag{10.1493}
+~~~
+
+is arithmetically compatible with sign blocks, while every block-constant
+Boolean spin has only `O(s)` energy.  The exact construction target is a
+two-fiber conference system with internal row sums `2k,-2k`, cross row sum
+one, and
+
+~~~math
+A^2+CC^T=(2s-1)I,\quad B^2+C^TC=(2s-1)I,\quad AC+CB=0.                \tag{10.1494}
+~~~
+
+It exists at `k=1`; scalable existence and Boolean slack are open.  Quotient
+data alone cannot control cap: among `s` by `s` sign bridges with every row
+and column sum one, the optimized Boolean response has dimension at least
+
+~~~math
+{s\choose(s+1)/2}-s-1=2^{s-O(\log s)},              \tag{10.1495}
+~~~
+
+by the exact augmented cut-response rank theorem.  Circulant bridges already
+realize at least `binom(s,(s+1)/2)/s` distinct responses with the identical
+quotient.  Thus nonhomogeneity removes the trivial channel but a positive
+route still needs a special solution of (10.1494) and a Boolean inequality
+on its nontrivial modules; retaining the full response is full bridge
+optimization.
+
+The conference identities admit a sharper cyclic reduction.  Taking
+`B=-A`, with symmetric circulant `A` of row sum `2k` and circulant bridge
+`C` of row sum one, reduces the entire block system to
+
+~~~math
+AA^T+CC^T=(2s-1)I.                                  \tag{10.1495a}
+~~~
+
+Equivalently, the negative supports form a self-indexed supplementary
+difference system.  Exact exhaustive certificates exist for `k=1,2,3`, at
+fiber sizes `s=3,9,19`.  The last two are new finite structural evidence;
+no infinite-family theorem is claimed.  The ordinary mean/centered spectral
+envelope still reaches constant `1/2` on nearly balanced spins, so the
+identities alone supply no Boolean slack.  The concrete live question is an
+infinite self-indexed family together with a cap inequality on its
+nontrivial modules.
+
+#### 10.129.5 An explicit non-Kronecker multiplier and its recursive obstruction
+
+Two order-four symmetric Hadamards `H` and `K=DHD` have disjoint Boolean
+extremal sets.  More strongly, their Boolean transport domains each have
+eight elements and partition the 16 microstates.  This supplies an explicit
+edge-twisted multiplier using `H` on every macro edge incident with the first
+half and `K` inside the second half.  No common Boolean extremizer can carry
+the parent through both channels.
+
+That incompatibility is insufficient.  Exact lift caps are 42 or 48 from an
+order-four minimizer and 56 from the order-five minimizer.  Saved exact
+witnesses have energies 170, 238, and 1488 at orders 40, 56, and 160.
+There is also a scalable product-channel theorem.  For
+`v=(-1,-1,-1,1)`,
+
+~~~math
+H_{L(A)}(z\otimes v)
+=8H_A(z)-4H_{A[S]}(z_S)+4n-2|S|.                   \tag{10.1496}
+~~~
+
+Under aligned recursive use, if `E_r` is this energy and `R_r` the energy
+on the second, common-`K` half, then
+
+~~~math
+E_{r+1}=8E_r-4R_r+3N_r,qquad R_{r+1}=4R_r+N_r,     \tag{10.1497}
+~~~
+
+and therefore
+
+~~~math
+\lim_{r\to\infty}{E_r\over8^r}=E_0-R_0+{n\over2}. \tag{10.1498}
+~~~
+
+Exhaustive base-spin audits give limiting normalized witnesses
+`22/10^(3/2)=0.695701...` and
+`31/14^(3/2)=0.591793...` for the saved order-ten and order-14 seeds.
+Exhausting all 252 and 3,432 balanced halves strengthens the scope: even the
+best permutation has worst limit at least `18/10^(3/2)=0.569210...` and
+`29/14^(3/2)=0.553613...`; switching only bijects the audited spins.  Thus
+the fixed recursive multiplier is scalably obstructed after arbitrary
+switching/permutation preprocessing.  A one-step
+inequality applied to fresh growing-order exact minimizers is not logically
+falsified, but (10.1496) shows that it requires a new full/principal-energy
+correlation theorem and is not a standalone channel-uncertainty route.
+
+#### 10.129.6 A leading correction kills certificates, not cap
+
+The all-diagonal witness set was used to test a materially new correction:
+toggle fixed micro positions across every macro-edge block.  An exact
+16-variable pseudo-Boolean hitting model proves that two bundles are
+necessary and sufficient to move all 16,384 **old** witnesses below energy
+208.  The chosen pair `(0,1),(1,0)` changes 182 of 1,456 cross-fiber edges,
+a leading fraction `1/8`; the old witness energies fall into `[122,176]`.
+
+This does not control cap.  A fresh adversarial search over all corrected
+signings found a new exact witness for every diagonal choice, now with
+minimum energy 230.  Independent exact verification has no holdouts and
+canonical hash
+`f24a16404257c693c1a82f70bf290fee00e276b2d95d8557e3253c1eeb607b89`.
+Thus fixed-witness hitting is not a cap invariant: even a leading-scale
+non-Kronecker correction can eliminate every stored certificate while
+immediately exposing uniformly stronger states.  The result is a scalable
+**finite-family diagnostic**, not a tensor-persistence or cap-upper theorem.
+It is not a no-go for adaptive corrections at every scale.
+
+#### 10.129.7 Operational table
+
+| Track | Target | Last concrete result | Next falsifiable step | Stopping or redirect condition |
+|---|---|---|---|---|
+| Constructive theorem | Scale-dependent non-Kronecker landing/composition | Edge-twisted recursion has the scalable product obstruction (10.1496)--(10.1498) | Decide whether any fresh-growing-parent inequality avoids the principal-restriction obligation | Equivalent restriction control, full parent optimization, or an unsummable defect |
+| Falsification/computation | Minimum adaptive state needed to kill entangled witnesses | Two leading micro bundles kill all old certificates but fresh caps expose stronger witnesses | Iterate a bounded correction/certificate game and test whether it stabilizes into a finite invariant | Separator accumulation without a compressed invariant, or corrections requiring full bridge response |
+| Independent abstraction | Nonhomogeneous coding/design mechanism | Exact two-fiber target (10.1494), quotient insufficiency (10.1495), and cyclic solutions at `s=3,9,19` | Seek an infinite self-indexed supplementary-difference family and Boolean slack on nontrivial modules | Quotient-only control, a regular Boolean channel, or full bridge response |
+| Main integration | Turn obstructions into a precise surviving composition obligation | Verified the common dual, all-diagonal certificate, and persistence identities | Quantify the necessary leading correction and seek a direct cap certificate for it | Do not count a new vocabulary, conference saturation, or a solver timeout as primary progress |
+
+#### 10.129.8 Updated frontier
+
+The exact values through `M_14=21` and the rigorous asymptotic interval are
+unchanged.  Primary progress is nevertheless substantive: all diagonal
+completions of the common Sylvester lift, every fixed symmetric-Hadamard
+tensor alphabet after at most two levels, summably small perturbations of
+their Boolean channels, prime-Paley landing below `1/2`, all abelian
+Cayley/Reed--Muller deep-hole families, and homogeneous orthogonal fusion
+schemes are now ruled out by scalable theorems.
+
+The central landing question is narrower.  An objective-independent family
+must use a genuinely non-Kronecker, nontranslation, growing state and make a
+leading-scale correction on every inherited entangled witness.  It must
+simultaneously certify the full Boolean cap and admit an all-order operation
+with geometrically summable `b`-defect.  No such family is currently known.
+The direct fractional-bridge route remains secondary only with a Boolean
+margin certificate; selected prior, common active faces, fixed local
+profiles, and fixed fiber algebras remain inactive.  The proved primary
+progress justifies continuing the sustained campaign rather than invoking
+the stopping rule.

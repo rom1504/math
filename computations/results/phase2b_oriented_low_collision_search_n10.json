@@ -1,0 +1,22 @@
+{
+  "classification": "best maximum cap among oriented-profile collisions in a deterministic distinct-state sample; search not exhaustive",
+  "n": 10,
+  "profile_kind": "switching/permutation classes without quotienting global negation",
+  "profiles": [4, 5, 6],
+  "restriction_class_counts": [3, 7, 16],
+  "first_code": 22200910931,
+  "first_cap": 17,
+  "second_code": 29602146463,
+  "second_cap": 19,
+  "codes_checked": 1000000,
+  "profile": [22, 166, 22, 2, 25, 72, 25, 72, 54, 2, 0, 0, 10, 0, 3, 27, 39, 7, 3, 75, 0, 10, 27, 7, 2, 0],
+  "followup": {
+    "first_energy_range": [-17, 17],
+    "second_energy_range": [-19, 19],
+    "first_vector_relaxation_numerical_value": 24.4083507534,
+    "second_product_hadamard_coefficient": 24,
+    "assessment": "the standard Hadamard vector relaxation upper exceeds the second base product lower, so this lower-cap pair does not certify a scalable lift separation"
+  },
+  "source": "computations/phase2_profile_collision_n8.cpp",
+  "command": "g++ -O3 -std=c++17 -Wall -Wextra -pedantic computations/phase2_profile_collision_n8.cpp -o /home/math/quadra/tmp/phase2_profile_collision_search && /home/math/quadra/tmp/phase2_profile_collision_search --sample-low-oriented 10 1000000"
+}

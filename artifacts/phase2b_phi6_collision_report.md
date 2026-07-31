@@ -291,3 +291,42 @@ optimum: the certified constants here are substantially above the best known
 upper constant.  Thus `phi_6` may remain a descriptive coordinate inside a
 more restrictive near-optimal family, but it cannot be the quantitative state
 that controls cap or composition by itself.
+
+## Near-optimal follow-up and the entangled-witness test
+
+A deterministic search of one million order-10 root-gauged signings then
+ranked collisions using the stronger **oriented** profiles required by the
+Hadamard functor.  The lowest maximum cap found was the exact pair
+
+```text
+codes: 22200910931, 29602146463
+caps:  17,          19
+```
+
+No oriented `13/15` or `15/17` collision appeared in this batch.  This is a
+nonexhaustive negative search result, preserved in
+`phase2b_oriented_low_collision_search_n10.json`.
+
+The lower-cap pair does not pass the Hadamard separation certificate.  Its
+larger scalar product coefficient is 24, whereas numerical optimization of
+the first base's vector relaxation gives `24.40835075...`.  Thus the standard
+micro algebra allows enough entangled vector freedom that the product-spin
+lower bound cannot separate the two lifted caps.  This numerical comparison
+is a route diagnostic, not a certified impossibility theorem.
+
+The standard falsification test for future tensor micro-algebras is therefore:
+
+1. exhaustively or certifiably evaluate at least one finite macro--micro lift,
+   including nonproduct Boolean spins;
+2. if it has an excessive entangled witness and the micro algebra has a
+   Boolean extremal eigenvector, tensor that witness to determine its leading
+   normalized obstruction; and
+3. only then invest in product-spin or spectral closure identities.
+
+The independent balanced-diagonal audit in
+`phase2c_balanced_hadamard_lift_obstruction.md` demonstrates this test
+exactly: an order-56 entangled witness of energy 220 tensorizes and forces
+normalized cap at least `0.5249774394...>1/2`, hence a proved linear landing
+gap in the `b` scale.  A materially different micro algebra must either pass
+this entangled-witness test or supply a rigorous all-spin norm bound, not just
+good separable products.

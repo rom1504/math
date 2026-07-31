@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <array>
 #include <cstdint>
 #include <iostream>
@@ -52,12 +53,12 @@ std::uint64_t permute_and_gauge(std::uint64_t code, int n,
     return result;
 }
 
-std::vector<int> class_map(int n) {
+std::vector<int> class_map(int n, bool quotient_global_negation = true) {
     const int bits = (n-1)*(n-2)/2;
     const int count = 1 << bits;
     Dsu dsu(count);
     for (int code = 0; code < count; ++code) {
-        dsu.join(code, code ^ (count-1));
+        if (quotient_global_negation) dsu.join(code, code ^ (count-1));
         for (int swap_at = 0; swap_at < n-1; ++swap_at) {
             std::vector<int> permutation(n);
             std::iota(permutation.begin(), permutation.end(), 0);
@@ -127,7 +128,7 @@ int boolean_cap(std::uint64_t code) {
     return result;
 }
 
-using Key = std::array<std::uint8_t,16>;
+using Key = std::array<std::uint8_t,26>;
 struct KeyHash {
     std::size_t operator()(const Key& key) const {
         std::size_t value = 1469598103934665603ULL;
@@ -141,6 +142,7 @@ int main(int argc, char** argv) {
     std::uint64_t requested = 0;
     bool legacy_order9_sample = false;
     bool scan_best_collision = false;
+    bool oriented_profile = false;
     if (argc == 3 && std::string(argv[1]) == "--order9-sample") {
         signing_order = 9;
         legacy_order9_sample = true;
@@ -160,11 +162,27 @@ int main(int argc, char** argv) {
         }
         requested = static_cast<std::uint64_t>(std::stoull(argv[3]));
         scan_best_collision = true;
+    } else if (argc == 4 && std::string(argv[1]) == "--sample-low-oriented") {
+        signing_order = std::stoi(argv[2]);
+        if (signing_order < 8 || signing_order > 10) {
+            std::cerr << "sample order must be 8, 9, or 10\n";
+            return 2;
+        }
+        requested = static_cast<std::uint64_t>(std::stoull(argv[3]));
+        scan_best_collision = true;
+        oriented_profile = true;
     } else if (argc != 1) {
-        std::cerr << "usage: phase2_profile_collision_n8 [--order9-sample COUNT | --sample ORDER COUNT | --sample-low ORDER COUNT]\n";
+        std::cerr << "usage: phase2_profile_collision_n8 [--order9-sample COUNT | --sample ORDER COUNT | --sample-low ORDER COUNT | --sample-low-oriented ORDER COUNT]\n";
         return 2;
     }
-    auto classes4 = class_map(4), classes5 = class_map(5), classes6 = class_map(6);
+    auto classes4 = class_map(4, !oriented_profile),
+         classes5 = class_map(5, !oriented_profile),
+         classes6 = class_map(6, !oriented_profile);
+    const int count4 = 1 + *std::max_element(classes4.begin(), classes4.end());
+    const int count5 = 1 + *std::max_element(classes5.begin(), classes5.end());
+    const int count6 = 1 + *std::max_element(classes6.begin(), classes6.end());
+    const int offset5 = count4, offset6 = count4 + count5;
+    const int profile_components = count4 + count5 + count6;
     auto subsets4 = subsets(signing_order,4), subsets5 = subsets(signing_order,5), subsets6 = subsets(signing_order,6);
     std::unordered_map<Key,Record,KeyHash> seen;
     seen.reserve(1 << 19);
@@ -183,8 +201,8 @@ int main(int argc, char** argv) {
             (multiplier*index + increment) & (universe-1) : index;
         Key key{};
         for (const auto& subset : subsets4) ++key[classes4[restriction_code(code,subset)]];
-        for (const auto& subset : subsets5) ++key[2 + classes5[restriction_code(code,subset)]];
-        for (const auto& subset : subsets6) ++key[6 + classes6[restriction_code(code,subset)]];
+        for (const auto& subset : subsets5) ++key[offset5 + classes5[restriction_code(code,subset)]];
+        for (const auto& subset : subsets6) ++key[offset6 + classes6[restriction_code(code,subset)]];
         int cap = boolean_cap(code);
         auto [it, inserted] = seen.emplace(key, Record{cap,code});
         if (!inserted && it->second.cap != cap) {
@@ -206,7 +224,7 @@ int main(int argc, char** argv) {
             std::cout << ",\"first_cap\":" << it->second.cap << ",\"second_code\":" << code;
             std::cout << ",\"second_cap\":" << cap << ",\"codes_checked\":" << index+1;
             std::cout << ",\"profile\":[";
-            for (int i=0;i<16;++i) { if(i) std::cout << ','; std::cout << int(key[i]); }
+            for (int i=0;i<profile_components;++i) { if(i) std::cout << ','; std::cout << int(key[i]); }
             std::cout << "]}\n";
             return 0;
         }
@@ -218,7 +236,7 @@ int main(int argc, char** argv) {
         std::cout << ",\"first_cap\":" << best_first.cap << ",\"second_code\":" << best_second.code;
         std::cout << ",\"second_cap\":" << best_second.cap << ",\"codes_checked\":" << total;
         std::cout << ",\"profile\":[";
-        for (int i=0;i<16;++i) { if(i) std::cout << ','; std::cout << int(best_key[i]); }
+        for (int i=0;i<profile_components;++i) { if(i) std::cout << ','; std::cout << int(best_key[i]); }
         std::cout << "]}\n";
         return 0;
     }
