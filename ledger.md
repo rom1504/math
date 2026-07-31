@@ -39008,3 +39008,17 @@ future resumption, but further blind rounds are not the preferred next step.
 A useful continuation needs either a bundled analytic inequality, a lazy-cut
 solver retaining learned search state, or a proof-capable pseudo-Boolean
 backend. The mathematical target (10.1457) and route ranking are unchanged.
+
+### 10.126 Second sustained phase launch
+
+The user explicitly authorized autonomous research to resume from commit
+`eec5aed`, with three parallel subagents and the main agent integrating and
+independently verifying the work. This is a workflow directive, not a user
+endorsement of the structured-family hypothesis.
+
+| Track | Target | Last concrete result | Next falsifiable step | Stop or redirect condition |
+|---|---|---|---|---|
+| Constructive theorem | Define a noncircular bounded-state family `F_n` and prove a quantitative landing/composition lemma | Exact four-vertex complement state controls the order-22 cap inside `PC(26)` | Give a definition independent of `M_n`, then prove one uniform implication toward either clause of (10.1457) | Two consecutive checks without a new derivation or with only a renamed full bridge problem |
+| Falsification/computation | Test structured landing and composition across held-out and nonconference data at scaling-relevant orders | `13+13` Paley sample has best pair `(24,24)` versus `M_13=20`; 629 bundled cuts did not resolve cap 63 | Produce a reproducible scaling statistic tied to one uniform lemma or a scalable obstruction; do not add uncompressed separator states | Isolated caps, another raw conference family tending to `1/2`, solver timeout, or repeated finite data without a scaling implication |
+| Independent abstraction | Seek a genuinely different exact mapping and inequality in codes, discrepancy, designs, minimax, or interpolation | Augmented-cut-code identity is exact, but known direct-sum results inspected have the wrong code or direction | State the theorem before comparing vocabulary, verify normalization, and test whether it is genuinely weaker than full optimization | Equivalent reformulation, unchecked literature analogy, or two checks with no concrete inequality |
+| Main integration | Falsify definitions, verify constants and programs, and turn patterns into exact obligations | Checkpoint sufficient package (10.1457) and its explicit falsifiers | Derive an independent structural lower/upper mechanism and audit every subagent claim | Redirect any track that repeats a known obstruction twice; consolidate only at material 45--60 minute checkpoints |

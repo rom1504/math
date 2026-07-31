@@ -16,6 +16,15 @@ claim classification, ledger updates, and Git checkpoints are workflow
 directives. The existing consolidation and stopping discipline remains in
 force. Mathematical hypotheses and route rankings below are agent-authored.
 
+The user has now explicitly authorized a second sustained autonomous phase
+from commit `eec5aed`, using three parallel subagents for constructive theory,
+falsification/computation, and an independent abstraction attack. The main
+agent must work independently, integrate and verify their claims, check them
+approximately every 10--15 minutes, and run this phase for at least four hours
+unless the problem is solved or a genuine external blocker is established.
+This authorization changes workflow status only; it does not make any
+mathematical route, conjecture, or ranking a user directive.
+
 ## Agent-authored campaign assessment
 
 The preferred target is now a **growing-block conference complement-transfer
