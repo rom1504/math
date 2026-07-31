@@ -1,0 +1,1550 @@
+{
+  "cases": [
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 512,
+      "exact_parent_cap_histogram": {
+        "11": 102,
+        "13": 18,
+        "15": 2,
+        "7": 72,
+        "9": 318
+      },
+      "orders": [
+        3,
+        3
+      ],
+      "sign_b": 1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 18
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 18
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 78,
+            "first_parent_cap": 11,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 85,
+            "second_parent_cap": 9,
+            "state_sha256": "a408ea28af1b7dbca06907ab7a0324b5f31ca917e1a70b4dd49484e7cdbf9ce5"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 17
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 10,
+            "first_parent_cap": 11,
+            "second_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 11,
+            "second_parent_cap": 9,
+            "state_sha256": "9e5d2ab69804093cc3e55b4befefad4d4b07822add3732112d8bed4cbcd766e1"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 17
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 13,
+            "first_parent_cap": 9,
+            "second_bridge": [
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 66,
+            "second_parent_cap": 11,
+            "state_sha256": "7f11081ad7082d3b12c03906ea2a53d16c394a71e59a87118692118d9f0617b0"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 176
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 4096,
+      "exact_parent_cap_histogram": {
+        "11": 2196,
+        "13": 1146,
+        "15": 262,
+        "17": 34,
+        "19": 2,
+        "9": 456
+      },
+      "orders": [
+        3,
+        4
+      ],
+      "sign_b": 1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 148
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 151
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 278,
+            "first_parent_cap": 13,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 293,
+            "second_parent_cap": 11,
+            "state_sha256": "dc952abd44352799a6fef1c6b7aeafb582c5e38f035fdc217ea75f33340d7a43"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 140
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 52,
+            "first_parent_cap": 13,
+            "second_bridge": [
+              [
+                1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 55,
+            "second_parent_cap": 11,
+            "state_sha256": "015cfed4fd29a7dceb90932dd71e2a2d072baee083ad4a38a450c2b8a6c7f452"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 124
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 279,
+            "first_parent_cap": 11,
+            "second_bridge": [
+              [
+                -1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 280,
+            "second_parent_cap": 13,
+            "state_sha256": "53a02c5c98b4cdff9ca3be123944f070cb62a4e6f946cf305349c79ba95b4dd9"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 1144
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 32768,
+      "exact_parent_cap_histogram": {
+        "10": 120,
+        "12": 7770,
+        "14": 16020,
+        "16": 7186,
+        "18": 1482,
+        "20": 180,
+        "22": 10
+      },
+      "orders": [
+        3,
+        5
+      ],
+      "sign_b": 1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 261
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 336
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 42,
+            "first_parent_cap": 16,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 53,
+            "second_parent_cap": 14,
+            "state_sha256": "33c6a187e45496fcc5ff21df891a5c50d61a3aa4aef738eb3ff7bbb09b468f12"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 260
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 38,
+            "first_parent_cap": 16,
+            "second_bridge": [
+              [
+                1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 39,
+            "second_parent_cap": 14,
+            "state_sha256": "e4c16d3a804d4ee67e4b609d4c785702ad83c13d7387eabb8ccd5c44e060b850"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 276
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 121,
+            "first_parent_cap": 12,
+            "second_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 220,
+            "second_parent_cap": 14,
+            "state_sha256": "c7620c928a48534df7f91d8d7c907f146185563a4b1c241b6e9edee3b19b3ed2"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 8384
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 65536,
+      "exact_parent_cap_histogram": {
+        "10": 184,
+        "12": 12128,
+        "14": 30768,
+        "16": 17044,
+        "18": 4560,
+        "20": 768,
+        "22": 80,
+        "24": 4
+      },
+      "orders": [
+        4,
+        4
+      ],
+      "sign_b": 1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 2720
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 2752
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 286,
+            "first_parent_cap": 18,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 301,
+            "second_parent_cap": 14,
+            "state_sha256": "bd0e4187abc392c57c6bcbbeb05ee5e365e499913c9e97fbdfa0077072f059fa"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 2531
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 300,
+            "first_parent_cap": 16,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 317,
+            "second_parent_cap": 14,
+            "state_sha256": "4b5d951b049a36245033a354ac30bba0a7a0e9fd7e667246d221ae810774dd7e"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 1656
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 854,
+            "first_parent_cap": 12,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 857,
+            "second_parent_cap": 14,
+            "state_sha256": "5abc8191ca5ac7c68e555f303eba053849db955a8a39d0d00aa2dfd33898709b"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 15697
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 512,
+      "exact_parent_cap_histogram": {
+        "11": 108,
+        "13": 12,
+        "5": 12,
+        "7": 108,
+        "9": 272
+      },
+      "orders": [
+        3,
+        3
+      ],
+      "sign_b": -1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 18
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 18
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 78,
+            "first_parent_cap": 9,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 85,
+            "second_parent_cap": 7,
+            "state_sha256": "b7acb780158acb29026ab521fedf5e0e541ac607b1d9f2b21cd132ddb57e544e"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 17
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 10,
+            "first_parent_cap": 7,
+            "second_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 11,
+            "second_parent_cap": 9,
+            "state_sha256": "113324b2a7a748ddeb5e3956cf126d59469197effa59ead5d799a7b5700e9166"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 17
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 13,
+            "first_parent_cap": 9,
+            "second_bridge": [
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 66,
+            "second_parent_cap": 7,
+            "state_sha256": "7f11081ad7082d3b12c03906ea2a53d16c394a71e59a87118692118d9f0617b0"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 176
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 4096,
+      "exact_parent_cap_histogram": {
+        "11": 2196,
+        "13": 1146,
+        "15": 262,
+        "17": 34,
+        "19": 2,
+        "9": 456
+      },
+      "orders": [
+        3,
+        4
+      ],
+      "sign_b": -1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 148
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 151
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 286,
+            "first_parent_cap": 13,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 301,
+            "second_parent_cap": 11,
+            "state_sha256": "4004d5b5ac7894d7b54fbdd52d20f99b44e89beb9256c14ec7c390d83f475398"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 140
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 52,
+            "first_parent_cap": 11,
+            "second_bridge": [
+              [
+                1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 55,
+            "second_parent_cap": 13,
+            "state_sha256": "7497e2105a377255aead22a8e0287fae65810c70748232533e31ef1c80e77c4e"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 124
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 86,
+            "first_parent_cap": 9,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 89,
+            "second_parent_cap": 11,
+            "state_sha256": "a04111e03da8e39822101df557085eb14ad42eb8bf06f9ab0ae5ba9e0b4dcf1e"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 1144
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 32768,
+      "exact_parent_cap_histogram": {
+        "10": 120,
+        "12": 7770,
+        "14": 16020,
+        "16": 7186,
+        "18": 1482,
+        "20": 180,
+        "22": 10
+      },
+      "orders": [
+        3,
+        5
+      ],
+      "sign_b": -1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 261
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 336
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 42,
+            "first_parent_cap": 14,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 53,
+            "second_parent_cap": 16,
+            "state_sha256": "33c6a187e45496fcc5ff21df891a5c50d61a3aa4aef738eb3ff7bbb09b468f12"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 260
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 38,
+            "first_parent_cap": 14,
+            "second_bridge": [
+              [
+                1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 39,
+            "second_parent_cap": 16,
+            "state_sha256": "65e91854e4fdb8a68dc16880b23caa96c1770ae4e9bf82f26ad543b324dd0081"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 276
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 121,
+            "first_parent_cap": 14,
+            "second_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 220,
+            "second_parent_cap": 12,
+            "state_sha256": "c7620c928a48534df7f91d8d7c907f146185563a4b1c241b6e9edee3b19b3ed2"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 8384
+        }
+      }
+    },
+    {
+      "all_bridges_enumerated": true,
+      "bridges_enumerated": 65536,
+      "exact_parent_cap_histogram": {
+        "10": 184,
+        "12": 12128,
+        "14": 30768,
+        "16": 17044,
+        "18": 4560,
+        "20": 768,
+        "22": 80,
+        "24": 4
+      },
+      "orders": [
+        4,
+        4
+      ],
+      "sign_b": -1,
+      "states": {
+        "conditional_cross_max_envelope": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 2720
+        },
+        "conditional_cross_second_fourth_moments": {
+          "collision": null,
+          "different_cap_collision_found": false,
+          "distinct_state_count": 2752
+        },
+        "conditional_cross_second_moments": {
+          "collision": {
+            "first_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 1097,
+            "first_parent_cap": 16,
+            "second_bridge": [
+              [
+                -1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 1112,
+            "second_parent_cap": 14,
+            "state_sha256": "14316b7a8f06cc889f78b819092868c7f3f18b9f9f9e85c66e3557bd1d2c820b"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 2531
+        },
+        "conditional_marginal_variances": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 300,
+            "first_parent_cap": 14,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 317,
+            "second_parent_cap": 16,
+            "state_sha256": "15c7c27b5076bd1a095843e667b5421f255402450bda8da10db34b1656ab57b8"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 1656
+        },
+        "full_gram_pair": {
+          "collision": {
+            "first_bridge": [
+              [
+                -1,
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "first_bridge_code": 854,
+            "first_parent_cap": 12,
+            "second_bridge": [
+              [
+                1,
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "second_bridge_code": 857,
+            "second_parent_cap": 14,
+            "state_sha256": "5abc8191ca5ac7c68e555f303eba053849db955a8a39d0d00aa2dfd33898709b"
+          },
+          "different_cap_collision_found": true,
+          "distinct_state_count": 15697
+        }
+      }
+    }
+  ],
+  "classification": "exhaustive exact finite collision search when all_bridges_enumerated; no uniform composition lemma",
+  "conclusion": "Gram and conditional moment states are falsified wherever a recorded same-state/different-cap collision appears. The conditional maximum response envelope predicts finite cap exactly but remains an open uniform construction obligation.",
+  "heldout_fourth_moment_test": {
+    "all_bridges_enumerated": true,
+    "bridges_examined": 262144,
+    "collision_found": false,
+    "distinct_state_count": 484,
+    "orders": [
+      3,
+      6
+    ],
+    "sign_b": 1
+  },
+  "schema": "quadratic-signing-bridge-gram-response-collision-v1"
+}

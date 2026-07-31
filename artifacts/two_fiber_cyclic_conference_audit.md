@@ -254,8 +254,10 @@ zero. An exhaustive integer backtrack over the resulting search space visits
 43,268,109 nodes and finds no `R`. Unit multiplication transfers this result
 to all ten survivors.
 
-Thus there is **no strong cyclic solution at `k=4`**, although general
-conference matrices of order 66 exist. This is a finite falsifier for the
+Thus there is **no strong cyclic solution at `k=4`**, although a general
+conference matrix of order 66 follows from
+[Gritsenko's `(65,32,15,16)` strongly regular graph](https://arxiv.org/abs/2102.05432).
+This is a finite falsifier for the
 strong cyclic/self-indexed ansatz at one parameter, not an obstruction to
 the unrestricted two-fiber block system or to an infinite subsequence that
 skips `k=4`. The exact audit and stable result are

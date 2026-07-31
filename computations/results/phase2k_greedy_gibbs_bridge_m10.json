@@ -1,0 +1,5851 @@
+{
+  "cases": [
+    {
+      "b_scale_composition_defect": 2.1501593682207627,
+      "base_log_partition": 6.543007334239897,
+      "bridge": [
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "bridge_log_partition_cost": 5.05565960255344,
+      "child_caps": [
+        13,
+        13
+      ],
+      "final_cap": 48,
+      "final_log_partition": 11.598666936793343,
+      "gamma": 0.4472135954999579,
+      "increments": [
+        {
+          "absolute_correlation": 1.751058311157636e-17,
+          "correlation": 1.751058311157636e-17,
+          "edge": [
+            0,
+            5
+          ],
+          "log_partition_increment": 0.09683430641363489,
+          "sign": -1,
+          "step": 0
+        },
+        {
+          "absolute_correlation": 0.1027074437823646,
+          "correlation": 0.1027074437823646,
+          "edge": [
+            6,
+            5
+          ],
+          "log_partition_increment": 0.0527814230817571,
+          "sign": -1,
+          "step": 1
+        },
+        {
+          "absolute_correlation": 0.10733314245237785,
+          "correlation": -0.10733314245237785,
+          "edge": [
+            9,
+            5
+          ],
+          "log_partition_increment": 0.05075097603860583,
+          "sign": 1,
+          "step": 2
+        },
+        {
+          "absolute_correlation": 0.09591872234060118,
+          "correlation": 0.09591872234060118,
+          "edge": [
+            4,
+            5
+          ],
+          "log_partition_increment": 0.05575388202730452,
+          "sign": -1,
+          "step": 3
+        },
+        {
+          "absolute_correlation": 0.047654180029546314,
+          "correlation": -0.047654180029546314,
+          "edge": [
+            4,
+            4
+          ],
+          "log_partition_increment": 0.0766357067355983,
+          "sign": 1,
+          "step": 4
+        },
+        {
+          "absolute_correlation": 0.1394131077769206,
+          "correlation": -0.1394131077769206,
+          "edge": [
+            4,
+            0
+          ],
+          "log_partition_increment": 0.03655490413105354,
+          "sign": 1,
+          "step": 5
+        },
+        {
+          "absolute_correlation": 0.07313558709073587,
+          "correlation": -0.07313558709073587,
+          "edge": [
+            6,
+            8
+          ],
+          "log_partition_increment": 0.0656654420995482,
+          "sign": 1,
+          "step": 6
+        },
+        {
+          "absolute_correlation": 0.10159364425370304,
+          "correlation": 0.10159364425370304,
+          "edge": [
+            6,
+            7
+          ],
+          "log_partition_increment": 0.05326970932940888,
+          "sign": -1,
+          "step": 7
+        },
+        {
+          "absolute_correlation": 0.09292954505548935,
+          "correlation": -0.09292954505548935,
+          "edge": [
+            3,
+            4
+          ],
+          "log_partition_increment": 0.057059904404535323,
+          "sign": 1,
+          "step": 8
+        },
+        {
+          "absolute_correlation": 0.11191496082323761,
+          "correlation": 0.11191496082323761,
+          "edge": [
+            2,
+            4
+          ],
+          "log_partition_increment": 0.048735717765295665,
+          "sign": -1,
+          "step": 9
+        },
+        {
+          "absolute_correlation": 0.099108065072128,
+          "correlation": 0.099108065072128,
+          "edge": [
+            1,
+            4
+          ],
+          "log_partition_increment": 0.05435852054613969,
+          "sign": -1,
+          "step": 10
+        },
+        {
+          "absolute_correlation": 0.11817002510749071,
+          "correlation": 0.11817002510749071,
+          "edge": [
+            7,
+            4
+          ],
+          "log_partition_increment": 0.04597792891899186,
+          "sign": -1,
+          "step": 11
+        },
+        {
+          "absolute_correlation": 0.11095640329347163,
+          "correlation": 0.11095640329347163,
+          "edge": [
+            0,
+            7
+          ],
+          "log_partition_increment": 0.04915766396545342,
+          "sign": -1,
+          "step": 12
+        },
+        {
+          "absolute_correlation": 0.17817531253346872,
+          "correlation": -0.17817531253346872,
+          "edge": [
+            0,
+            8
+          ],
+          "log_partition_increment": 0.019128505051902917,
+          "sign": 1,
+          "step": 13
+        },
+        {
+          "absolute_correlation": 0.09826419719340171,
+          "correlation": -0.09826419719340171,
+          "edge": [
+            7,
+            6
+          ],
+          "log_partition_increment": 0.05472790857321039,
+          "sign": 1,
+          "step": 14
+        },
+        {
+          "absolute_correlation": 0.11138236076358805,
+          "correlation": 0.11138236076358805,
+          "edge": [
+            8,
+            6
+          ],
+          "log_partition_increment": 0.04897018427623006,
+          "sign": -1,
+          "step": 15
+        },
+        {
+          "absolute_correlation": 0.11086346157473533,
+          "correlation": 0.11086346157473533,
+          "edge": [
+            8,
+            0
+          ],
+          "log_partition_increment": 0.049198566393891946,
+          "sign": -1,
+          "step": 16
+        },
+        {
+          "absolute_correlation": 0.1226859460727242,
+          "correlation": 0.1226859460727242,
+          "edge": [
+            2,
+            0
+          ],
+          "log_partition_increment": 0.04398217104634086,
+          "sign": -1,
+          "step": 17
+        },
+        {
+          "absolute_correlation": 0.14832766571648193,
+          "correlation": -0.14832766571648193,
+          "edge": [
+            7,
+            0
+          ],
+          "log_partition_increment": 0.032573973974467166,
+          "sign": 1,
+          "step": 18
+        },
+        {
+          "absolute_correlation": 0.15476431890317213,
+          "correlation": -0.15476431890317213,
+          "edge": [
+            3,
+            0
+          ],
+          "log_partition_increment": 0.029689705048913814,
+          "sign": 1,
+          "step": 19
+        },
+        {
+          "absolute_correlation": 0.10359586061532983,
+          "correlation": 0.10359586061532983,
+          "edge": [
+            5,
+            4
+          ],
+          "log_partition_increment": 0.05239177289867997,
+          "sign": -1,
+          "step": 20
+        },
+        {
+          "absolute_correlation": 0.1080652521424746,
+          "correlation": 0.1080652521424746,
+          "edge": [
+            5,
+            0
+          ],
+          "log_partition_increment": 0.0504292388023385,
+          "sign": -1,
+          "step": 21
+        },
+        {
+          "absolute_correlation": 0.09900846706858325,
+          "correlation": -0.09900846706858325,
+          "edge": [
+            0,
+            0
+          ],
+          "log_partition_increment": 0.054402124888114294,
+          "sign": 1,
+          "step": 22
+        },
+        {
+          "absolute_correlation": 0.11207929214274924,
+          "correlation": -0.11207929214274924,
+          "edge": [
+            9,
+            0
+          ],
+          "log_partition_increment": 0.04866336309334691,
+          "sign": 1,
+          "step": 23
+        },
+        {
+          "absolute_correlation": 0.09930171077578392,
+          "correlation": 0.09930171077578392,
+          "edge": [
+            7,
+            9
+          ],
+          "log_partition_increment": 0.054273736361294324,
+          "sign": -1,
+          "step": 24
+        },
+        {
+          "absolute_correlation": 0.1125557379020725,
+          "correlation": 0.1125557379020725,
+          "edge": [
+            5,
+            6
+          ],
+          "log_partition_increment": 0.048453555611085886,
+          "sign": -1,
+          "step": 25
+        },
+        {
+          "absolute_correlation": 0.12982749205185418,
+          "correlation": 0.12982749205185418,
+          "edge": [
+            2,
+            7
+          ],
+          "log_partition_increment": 0.040817896681641805,
+          "sign": -1,
+          "step": 26
+        },
+        {
+          "absolute_correlation": 0.14561435479425086,
+          "correlation": 0.14561435479425086,
+          "edge": [
+            8,
+            7
+          ],
+          "log_partition_increment": 0.03378732243121488,
+          "sign": -1,
+          "step": 27
+        },
+        {
+          "absolute_correlation": 0.1312492803452668,
+          "correlation": 0.1312492803452668,
+          "edge": [
+            0,
+            1
+          ],
+          "log_partition_increment": 0.04018673420324669,
+          "sign": -1,
+          "step": 28
+        },
+        {
+          "absolute_correlation": 0.1406293669798482,
+          "correlation": 0.1406293669798482,
+          "edge": [
+            1,
+            9
+          ],
+          "log_partition_increment": 0.0360126979581459,
+          "sign": -1,
+          "step": 29
+        },
+        {
+          "absolute_correlation": 0.13695651422668914,
+          "correlation": -0.13695651422668914,
+          "edge": [
+            1,
+            5
+          ],
+          "log_partition_increment": 0.03764915338040521,
+          "sign": 1,
+          "step": 30
+        },
+        {
+          "absolute_correlation": 0.14800435508059379,
+          "correlation": -0.14800435508059379,
+          "edge": [
+            7,
+            5
+          ],
+          "log_partition_increment": 0.032718630510285576,
+          "sign": 1,
+          "step": 31
+        },
+        {
+          "absolute_correlation": 0.14280760328384726,
+          "correlation": -0.14280760328384726,
+          "edge": [
+            9,
+            4
+          ],
+          "log_partition_increment": 0.035040908780154076,
+          "sign": 1,
+          "step": 32
+        },
+        {
+          "absolute_correlation": 0.12267137917440517,
+          "correlation": 0.12267137917440517,
+          "edge": [
+            8,
+            1
+          ],
+          "log_partition_increment": 0.043988615122334915,
+          "sign": -1,
+          "step": 33
+        },
+        {
+          "absolute_correlation": 0.1588031306709206,
+          "correlation": 0.1588031306709206,
+          "edge": [
+            2,
+            1
+          ],
+          "log_partition_increment": 0.027875653714280274,
+          "sign": -1,
+          "step": 34
+        },
+        {
+          "absolute_correlation": 0.13045503014921755,
+          "correlation": 0.13045503014921755,
+          "edge": [
+            9,
+            7
+          ],
+          "log_partition_increment": 0.04053936809988968,
+          "sign": -1,
+          "step": 35
+        },
+        {
+          "absolute_correlation": 0.11066942528866447,
+          "correlation": 0.11066942528866447,
+          "edge": [
+            3,
+            5
+          ],
+          "log_partition_increment": 0.04928395382027216,
+          "sign": -1,
+          "step": 36
+        },
+        {
+          "absolute_correlation": 0.1276089341536744,
+          "correlation": -0.1276089341536744,
+          "edge": [
+            2,
+            3
+          ],
+          "log_partition_increment": 0.04180196727053135,
+          "sign": 1,
+          "step": 37
+        },
+        {
+          "absolute_correlation": 0.14274488438698393,
+          "correlation": 0.14274488438698393,
+          "edge": [
+            2,
+            2
+          ],
+          "log_partition_increment": 0.0350689031333071,
+          "sign": -1,
+          "step": 38
+        },
+        {
+          "absolute_correlation": 0.1002436534561196,
+          "correlation": 0.1002436534561196,
+          "edge": [
+            2,
+            8
+          ],
+          "log_partition_increment": 0.05386122164836854,
+          "sign": -1,
+          "step": 39
+        },
+        {
+          "absolute_correlation": 0.09958341316719659,
+          "correlation": -0.09958341316719659,
+          "edge": [
+            3,
+            9
+          ],
+          "log_partition_increment": 0.054150385350473056,
+          "sign": 1,
+          "step": 40
+        },
+        {
+          "absolute_correlation": 0.11151550306536659,
+          "correlation": 0.11151550306536659,
+          "edge": [
+            4,
+            9
+          ],
+          "log_partition_increment": 0.04891157619751231,
+          "sign": -1,
+          "step": 41
+        },
+        {
+          "absolute_correlation": 0.11730480183210781,
+          "correlation": 0.11730480183210781,
+          "edge": [
+            3,
+            3
+          ],
+          "log_partition_increment": 0.04635984986329139,
+          "sign": -1,
+          "step": 42
+        },
+        {
+          "absolute_correlation": 0.12747853009648702,
+          "correlation": 0.12747853009648702,
+          "edge": [
+            8,
+            5
+          ],
+          "log_partition_increment": 0.04185977958603328,
+          "sign": -1,
+          "step": 43
+        },
+        {
+          "absolute_correlation": 0.13277046363512837,
+          "correlation": -0.13277046363512837,
+          "edge": [
+            3,
+            1
+          ],
+          "log_partition_increment": 0.039511006738045744,
+          "sign": 1,
+          "step": 44
+        },
+        {
+          "absolute_correlation": 0.14785832450103956,
+          "correlation": -0.14785832450103956,
+          "edge": [
+            4,
+            3
+          ],
+          "log_partition_increment": 0.032783961055079525,
+          "sign": 1,
+          "step": 45
+        },
+        {
+          "absolute_correlation": 0.1391384196339226,
+          "correlation": -0.1391384196339226,
+          "edge": [
+            5,
+            1
+          ],
+          "log_partition_increment": 0.03667731892785417,
+          "sign": 1,
+          "step": 46
+        },
+        {
+          "absolute_correlation": 0.16189728135667664,
+          "correlation": 0.16189728135667664,
+          "edge": [
+            5,
+            3
+          ],
+          "log_partition_increment": 0.026483671694218572,
+          "sign": -1,
+          "step": 47
+        },
+        {
+          "absolute_correlation": 0.16289884382136635,
+          "correlation": 0.16289884382136635,
+          "edge": [
+            4,
+            1
+          ],
+          "log_partition_increment": 0.026032678036785786,
+          "sign": -1,
+          "step": 48
+        },
+        {
+          "absolute_correlation": 0.11047604238717298,
+          "correlation": -0.11047604238717298,
+          "edge": [
+            7,
+            1
+          ],
+          "log_partition_increment": 0.04936904646523705,
+          "sign": 1,
+          "step": 49
+        },
+        {
+          "absolute_correlation": 0.14032151166149587,
+          "correlation": 0.14032151166149587,
+          "edge": [
+            0,
+            4
+          ],
+          "log_partition_increment": 0.036149967098773925,
+          "sign": -1,
+          "step": 50
+        },
+        {
+          "absolute_correlation": 0.1338762538310522,
+          "correlation": 0.1338762538310522,
+          "edge": [
+            9,
+            2
+          ],
+          "log_partition_increment": 0.03901951499890993,
+          "sign": -1,
+          "step": 51
+        },
+        {
+          "absolute_correlation": 0.10301451124705713,
+          "correlation": -0.10301451124705713,
+          "edge": [
+            5,
+            2
+          ],
+          "log_partition_increment": 0.052646763723278985,
+          "sign": 1,
+          "step": 52
+        },
+        {
+          "absolute_correlation": 0.10736369499467609,
+          "correlation": -0.10736369499467609,
+          "edge": [
+            5,
+            8
+          ],
+          "log_partition_increment": 0.05073755130803206,
+          "sign": 1,
+          "step": 53
+        },
+        {
+          "absolute_correlation": 0.12284129462596755,
+          "correlation": 0.12284129462596755,
+          "edge": [
+            9,
+            8
+          ],
+          "log_partition_increment": 0.04391344567416575,
+          "sign": -1,
+          "step": 54
+        },
+        {
+          "absolute_correlation": 0.14175732641404185,
+          "correlation": 0.14175732641404185,
+          "edge": [
+            5,
+            7
+          ],
+          "log_partition_increment": 0.03550959278096267,
+          "sign": -1,
+          "step": 55
+        },
+        {
+          "absolute_correlation": 0.12344648471419725,
+          "correlation": -0.12344648471419725,
+          "edge": [
+            0,
+            6
+          ],
+          "log_partition_increment": 0.043645667754369157,
+          "sign": 1,
+          "step": 56
+        },
+        {
+          "absolute_correlation": 0.11700070335322652,
+          "correlation": -0.11700070335322652,
+          "edge": [
+            8,
+            9
+          ],
+          "log_partition_increment": 0.04649404830032339,
+          "sign": 1,
+          "step": 57
+        },
+        {
+          "absolute_correlation": 0.12154117209964745,
+          "correlation": 0.12154117209964745,
+          "edge": [
+            7,
+            3
+          ],
+          "log_partition_increment": 0.044488467360147915,
+          "sign": -1,
+          "step": 58
+        },
+        {
+          "absolute_correlation": 0.12595695443295157,
+          "correlation": -0.12595695443295157,
+          "edge": [
+            1,
+            8
+          ],
+          "log_partition_increment": 0.042534096147194486,
+          "sign": 1,
+          "step": 59
+        },
+        {
+          "absolute_correlation": 0.12745157980573127,
+          "correlation": -0.12745157980573127,
+          "edge": [
+            4,
+            6
+          ],
+          "log_partition_increment": 0.041871727100564984,
+          "sign": 1,
+          "step": 60
+        },
+        {
+          "absolute_correlation": 0.11488632144026491,
+          "correlation": 0.11488632144026491,
+          "edge": [
+            8,
+            2
+          ],
+          "log_partition_increment": 0.04742662590553608,
+          "sign": -1,
+          "step": 61
+        },
+        {
+          "absolute_correlation": 0.11439892052734614,
+          "correlation": 0.11439892052734614,
+          "edge": [
+            1,
+            2
+          ],
+          "log_partition_increment": 0.0476414775782464,
+          "sign": -1,
+          "step": 62
+        },
+        {
+          "absolute_correlation": 0.12997266037442143,
+          "correlation": -0.12997266037442143,
+          "edge": [
+            1,
+            3
+          ],
+          "log_partition_increment": 0.04075347159088543,
+          "sign": 1,
+          "step": 63
+        },
+        {
+          "absolute_correlation": 0.09836108268047203,
+          "correlation": -0.09836108268047203,
+          "edge": [
+            6,
+            4
+          ],
+          "log_partition_increment": 0.05468550562201929,
+          "sign": 1,
+          "step": 64
+        },
+        {
+          "absolute_correlation": 0.0926682281750706,
+          "correlation": 0.0926682281750706,
+          "edge": [
+            8,
+            4
+          ],
+          "log_partition_increment": 0.057173997159305254,
+          "sign": -1,
+          "step": 65
+        },
+        {
+          "absolute_correlation": 0.10172029096407781,
+          "correlation": 0.10172029096407781,
+          "edge": [
+            4,
+            7
+          ],
+          "log_partition_increment": 0.053214199818024,
+          "sign": -1,
+          "step": 66
+        },
+        {
+          "absolute_correlation": 0.11156831027091303,
+          "correlation": -0.11156831027091303,
+          "edge": [
+            4,
+            8
+          ],
+          "log_partition_increment": 0.048888329975329194,
+          "sign": 1,
+          "step": 67
+        },
+        {
+          "absolute_correlation": 0.10674145901451015,
+          "correlation": 0.10674145901451015,
+          "edge": [
+            6,
+            6
+          ],
+          "log_partition_increment": 0.051010925111994704,
+          "sign": -1,
+          "step": 68
+        },
+        {
+          "absolute_correlation": 0.1389667610370624,
+          "correlation": -0.1389667610370624,
+          "edge": [
+            1,
+            1
+          ],
+          "log_partition_increment": 0.03675381098996677,
+          "sign": 1,
+          "step": 69
+        },
+        {
+          "absolute_correlation": 0.07632473335053803,
+          "correlation": -0.07632473335053803,
+          "edge": [
+            9,
+            6
+          ],
+          "log_partition_increment": 0.06428393719330983,
+          "sign": 1,
+          "step": 70
+        },
+        {
+          "absolute_correlation": 0.07839031177016774,
+          "correlation": -0.07839031177016774,
+          "edge": [
+            8,
+            3
+          ],
+          "log_partition_increment": 0.06338813068396348,
+          "sign": 1,
+          "step": 71
+        },
+        {
+          "absolute_correlation": 0.11058715023949788,
+          "correlation": -0.11058715023949788,
+          "edge": [
+            2,
+            5
+          ],
+          "log_partition_increment": 0.04932015750029705,
+          "sign": 1,
+          "step": 72
+        },
+        {
+          "absolute_correlation": 0.09119782340379409,
+          "correlation": -0.09119782340379409,
+          "edge": [
+            0,
+            9
+          ],
+          "log_partition_increment": 0.057815743452805754,
+          "sign": 1,
+          "step": 73
+        },
+        {
+          "absolute_correlation": 0.1104130875005767,
+          "correlation": -0.1104130875005767,
+          "edge": [
+            6,
+            9
+          ],
+          "log_partition_increment": 0.04939674641010168,
+          "sign": 1,
+          "step": 74
+        },
+        {
+          "absolute_correlation": 0.0837324387128689,
+          "correlation": 0.0837324387128689,
+          "edge": [
+            0,
+            2
+          ],
+          "log_partition_increment": 0.06106761203349567,
+          "sign": -1,
+          "step": 75
+        },
+        {
+          "absolute_correlation": 0.08877924757757463,
+          "correlation": 0.08877924757757463,
+          "edge": [
+            8,
+            8
+          ],
+          "log_partition_increment": 0.058870416355725125,
+          "sign": -1,
+          "step": 76
+        },
+        {
+          "absolute_correlation": 0.10388117439710517,
+          "correlation": 0.10388117439710517,
+          "edge": [
+            3,
+            8
+          ],
+          "log_partition_increment": 0.05226660508970759,
+          "sign": -1,
+          "step": 77
+        },
+        {
+          "absolute_correlation": 0.11026012662653731,
+          "correlation": -0.11026012662653731,
+          "edge": [
+            6,
+            1
+          ],
+          "log_partition_increment": 0.04946404549925421,
+          "sign": 1,
+          "step": 78
+        },
+        {
+          "absolute_correlation": 0.08542011449437974,
+          "correlation": 0.08542011449437974,
+          "edge": [
+            6,
+            2
+          ],
+          "log_partition_increment": 0.060333396966656176,
+          "sign": -1,
+          "step": 79
+        },
+        {
+          "absolute_correlation": 0.0662477565246447,
+          "correlation": 0.0662477565246447,
+          "edge": [
+            7,
+            2
+          ],
+          "log_partition_increment": 0.06864268202589721,
+          "sign": -1,
+          "step": 80
+        },
+        {
+          "absolute_correlation": 0.12114541086448466,
+          "correlation": -0.12114541086448466,
+          "edge": [
+            6,
+            3
+          ],
+          "log_partition_increment": 0.04466344007874103,
+          "sign": 1,
+          "step": 81
+        },
+        {
+          "absolute_correlation": 0.08946511300963804,
+          "correlation": 0.08946511300963804,
+          "edge": [
+            9,
+            3
+          ],
+          "log_partition_increment": 0.05857144270430578,
+          "sign": -1,
+          "step": 82
+        },
+        {
+          "absolute_correlation": 0.06356875060613229,
+          "correlation": -0.06356875060613229,
+          "edge": [
+            3,
+            2
+          ],
+          "log_partition_increment": 0.0697982826121582,
+          "sign": 1,
+          "step": 83
+        },
+        {
+          "absolute_correlation": 0.1069030383838919,
+          "correlation": -0.1069030383838919,
+          "edge": [
+            1,
+            7
+          ],
+          "log_partition_increment": 0.050939943846664074,
+          "sign": 1,
+          "step": 84
+        },
+        {
+          "absolute_correlation": 0.11862625123862847,
+          "correlation": -0.11862625123862847,
+          "edge": [
+            6,
+            0
+          ],
+          "log_partition_increment": 0.04577648594895852,
+          "sign": 1,
+          "step": 85
+        },
+        {
+          "absolute_correlation": 0.0701830472220643,
+          "correlation": -0.0701830472220643,
+          "edge": [
+            1,
+            6
+          ],
+          "log_partition_increment": 0.06694275240378413,
+          "sign": 1,
+          "step": 86
+        },
+        {
+          "absolute_correlation": 0.11268727125899938,
+          "correlation": 0.11268727125899938,
+          "edge": [
+            7,
+            8
+          ],
+          "log_partition_increment": 0.048395625875048524,
+          "sign": -1,
+          "step": 87
+        },
+        {
+          "absolute_correlation": 0.06018222683324766,
+          "correlation": 0.06018222683324766,
+          "edge": [
+            9,
+            1
+          ],
+          "log_partition_increment": 0.07125716562301697,
+          "sign": -1,
+          "step": 88
+        },
+        {
+          "absolute_correlation": 0.06661799928200099,
+          "correlation": 0.06661799928200099,
+          "edge": [
+            2,
+            6
+          ],
+          "log_partition_increment": 0.0684828711566376,
+          "sign": -1,
+          "step": 89
+        },
+        {
+          "absolute_correlation": 0.02533792478596623,
+          "correlation": -0.02533792478596623,
+          "edge": [
+            5,
+            9
+          ],
+          "log_partition_increment": 0.08614544106924547,
+          "sign": 1,
+          "step": 90
+        },
+        {
+          "absolute_correlation": 0.0699031178876133,
+          "correlation": 0.0699031178876133,
+          "edge": [
+            9,
+            9
+          ],
+          "log_partition_increment": 0.06706376914196235,
+          "sign": -1,
+          "step": 91
+        },
+        {
+          "absolute_correlation": 0.09766331918135637,
+          "correlation": 0.09766331918135637,
+          "edge": [
+            1,
+            0
+          ],
+          "log_partition_increment": 0.05499084899999898,
+          "sign": -1,
+          "step": 92
+        },
+        {
+          "absolute_correlation": 0.10702436207120067,
+          "correlation": -0.10702436207120067,
+          "edge": [
+            3,
+            6
+          ],
+          "log_partition_increment": 0.05088664345300086,
+          "sign": 1,
+          "step": 93
+        },
+        {
+          "absolute_correlation": 0.0828808040635908,
+          "correlation": -0.0828808040635908,
+          "edge": [
+            5,
+            5
+          ],
+          "log_partition_increment": 0.06143790696095312,
+          "sign": 1,
+          "step": 94
+        },
+        {
+          "absolute_correlation": 0.04467161401599032,
+          "correlation": 0.04467161401599032,
+          "edge": [
+            3,
+            7
+          ],
+          "log_partition_increment": 0.07791192989227147,
+          "sign": -1,
+          "step": 95
+        },
+        {
+          "absolute_correlation": 0.06415369080054067,
+          "correlation": 0.06415369080054067,
+          "edge": [
+            0,
+            3
+          ],
+          "log_partition_increment": 0.06954608010583424,
+          "sign": -1,
+          "step": 96
+        },
+        {
+          "absolute_correlation": 0.05834801381392278,
+          "correlation": -0.05834801381392278,
+          "edge": [
+            2,
+            9
+          ],
+          "log_partition_increment": 0.07204643991266999,
+          "sign": 1,
+          "step": 97
+        },
+        {
+          "absolute_correlation": 0.052749908709402916,
+          "correlation": -0.052749908709402916,
+          "edge": [
+            4,
+            2
+          ],
+          "log_partition_increment": 0.07445149760466073,
+          "sign": 1,
+          "step": 98
+        },
+        {
+          "absolute_correlation": 0.026272055176083657,
+          "correlation": -0.026272055176083657,
+          "edge": [
+            7,
+            7
+          ],
+          "log_partition_increment": 0.08574918380853147,
+          "sign": 1,
+          "step": 99
+        }
+      ],
+      "max_absolute_correlation": 0.17817531253346872,
+      "orders": [
+        10,
+        10
+      ],
+      "parent_matrix_sha256": "b78853c5a9ae5d1ad4ae0ec742bc64125f5a52d76463184d8d20d2f10b05e602",
+      "scaled_temperature": 2.0,
+      "sign_b": 1,
+      "sum_absolute_correlations": 10.756584843488051,
+      "verified_parent_profile": {
+        "M": 48,
+        "P": 46,
+        "Q": 48,
+        "bottom_spins": [
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ]
+        ],
+        "eigenvalues": [
+          -5.744692790279346,
+          -5.337202173086845,
+          -5.183986657938693,
+          -5.031623620102577,
+          -4.526338287785811,
+          -4.4617965887501185,
+          -3.9906463021670286,
+          -3.547452483892557,
+          -2.9300673556733283,
+          -0.691718438739213,
+          1.3194813442238158,
+          2.762605720992819,
+          3.259822046158829,
+          3.9654963487136836,
+          4.3345762436022905,
+          4.678706288346405,
+          4.883581398434968,
+          5.142349565254107,
+          5.371178246993904,
+          5.727727495694692
+        ],
+        "energy_histogram": {
+          "-10": 23424,
+          "-12": 21444,
+          "-14": 19112,
+          "-16": 16690,
+          "-18": 14280,
+          "-2": 27668,
+          "-20": 11991,
+          "-22": 9752,
+          "-24": 7712,
+          "-26": 5830,
+          "-28": 4165,
+          "-30": 2882,
+          "-32": 1874,
+          "-34": 1144,
+          "-36": 666,
+          "-38": 344,
+          "-4": 27100,
+          "-40": 159,
+          "-42": 66,
+          "-44": 22,
+          "-46": 6,
+          "-48": 1,
+          "-6": 26348,
+          "-8": 24974,
+          "0": 28052,
+          "10": 23676,
+          "12": 21678,
+          "14": 19364,
+          "16": 17077,
+          "18": 14498,
+          "2": 27648,
+          "20": 11998,
+          "22": 9678,
+          "24": 7483,
+          "26": 5612,
+          "28": 4082,
+          "30": 2820,
+          "32": 1842,
+          "34": 1134,
+          "36": 633,
+          "38": 322,
+          "4": 27274,
+          "40": 152,
+          "42": 60,
+          "44": 19,
+          "46": 4,
+          "6": 26472,
+          "8": 25056
+        },
+        "projective_bottom_count": 1,
+        "projective_top_count": 4,
+        "row_sums": [
+          7,
+          3,
+          -3,
+          3,
+          -1,
+          1,
+          -1,
+          1,
+          -5,
+          -1,
+          11,
+          1,
+          -3,
+          1,
+          -5,
+          1,
+          -1,
+          -5,
+          1,
+          3
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "zero_defect_energy_target": 36.76955262170046
+    },
+    {
+      "b_scale_composition_defect": 2.1501593682207627,
+      "base_log_partition": 6.543007334239897,
+      "bridge": [
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1
+        ]
+      ],
+      "bridge_log_partition_cost": 4.873492601938439,
+      "child_caps": [
+        13,
+        13
+      ],
+      "final_cap": 48,
+      "final_log_partition": 11.416499936178338,
+      "gamma": 0.4472135954999579,
+      "increments": [
+        {
+          "absolute_correlation": 1.751058311157636e-17,
+          "correlation": 1.751058311157636e-17,
+          "edge": [
+            0,
+            9
+          ],
+          "log_partition_increment": 0.09683430641363489,
+          "sign": -1,
+          "step": 0
+        },
+        {
+          "absolute_correlation": 0.10270744378236525,
+          "correlation": 0.10270744378236525,
+          "edge": [
+            6,
+            9
+          ],
+          "log_partition_increment": 0.05278142308175682,
+          "sign": -1,
+          "step": 1
+        },
+        {
+          "absolute_correlation": 0.11044048079412429,
+          "correlation": -0.11044048079412429,
+          "edge": [
+            0,
+            5
+          ],
+          "log_partition_increment": 0.04938469354454109,
+          "sign": 1,
+          "step": 2
+        },
+        {
+          "absolute_correlation": 0.1473972346840043,
+          "correlation": -0.1473972346840043,
+          "edge": [
+            6,
+            5
+          ],
+          "log_partition_increment": 0.032990213463219176,
+          "sign": 1,
+          "step": 3
+        },
+        {
+          "absolute_correlation": 0.09697181536553619,
+          "correlation": 0.09697181536553619,
+          "edge": [
+            4,
+            9
+          ],
+          "log_partition_increment": 0.05529336116619134,
+          "sign": -1,
+          "step": 4
+        },
+        {
+          "absolute_correlation": 0.12725194493852726,
+          "correlation": 0.12725194493852726,
+          "edge": [
+            6,
+            4
+          ],
+          "log_partition_increment": 0.04196022413065791,
+          "sign": -1,
+          "step": 5
+        },
+        {
+          "absolute_correlation": 0.1166198960784896,
+          "correlation": 0.1166198960784896,
+          "edge": [
+            9,
+            5
+          ],
+          "log_partition_increment": 0.046662072880605206,
+          "sign": -1,
+          "step": 6
+        },
+        {
+          "absolute_correlation": 0.15786018883341094,
+          "correlation": -0.15786018883341094,
+          "edge": [
+            0,
+            6
+          ],
+          "log_partition_increment": 0.02829947504043244,
+          "sign": 1,
+          "step": 7
+        },
+        {
+          "absolute_correlation": 0.12714430615557487,
+          "correlation": -0.12714430615557487,
+          "edge": [
+            5,
+            0
+          ],
+          "log_partition_increment": 0.042007936556977696,
+          "sign": 1,
+          "step": 8
+        },
+        {
+          "absolute_correlation": 0.07821430973665658,
+          "correlation": 0.07821430973665658,
+          "edge": [
+            2,
+            4
+          ],
+          "log_partition_increment": 0.06346449107906171,
+          "sign": -1,
+          "step": 9
+        },
+        {
+          "absolute_correlation": 0.11630028849969086,
+          "correlation": 0.11630028849969086,
+          "edge": [
+            4,
+            2
+          ],
+          "log_partition_increment": 0.04680307237276272,
+          "sign": -1,
+          "step": 10
+        },
+        {
+          "absolute_correlation": 0.0836868453995081,
+          "correlation": -0.0836868453995081,
+          "edge": [
+            6,
+            6
+          ],
+          "log_partition_increment": 0.06108743970431411,
+          "sign": 1,
+          "step": 11
+        },
+        {
+          "absolute_correlation": 0.09492741966859784,
+          "correlation": -0.09492741966859784,
+          "edge": [
+            9,
+            9
+          ],
+          "log_partition_increment": 0.05618718808140312,
+          "sign": 1,
+          "step": 12
+        },
+        {
+          "absolute_correlation": 0.10352821547016612,
+          "correlation": 0.10352821547016612,
+          "edge": [
+            9,
+            6
+          ],
+          "log_partition_increment": 0.05242144668122285,
+          "sign": -1,
+          "step": 13
+        },
+        {
+          "absolute_correlation": 0.12407798151166449,
+          "correlation": -0.12407798151166449,
+          "edge": [
+            5,
+            6
+          ],
+          "log_partition_increment": 0.043366173459152356,
+          "sign": 1,
+          "step": 14
+        },
+        {
+          "absolute_correlation": 0.09414116722521756,
+          "correlation": 0.09414116722521756,
+          "edge": [
+            9,
+            0
+          ],
+          "log_partition_increment": 0.05653073163114236,
+          "sign": -1,
+          "step": 15
+        },
+        {
+          "absolute_correlation": 0.1024398504456635,
+          "correlation": 0.1024398504456635,
+          "edge": [
+            7,
+            4
+          ],
+          "log_partition_increment": 0.052898756929636116,
+          "sign": -1,
+          "step": 16
+        },
+        {
+          "absolute_correlation": 0.11832787606339228,
+          "correlation": -0.11832787606339228,
+          "edge": [
+            4,
+            1
+          ],
+          "log_partition_increment": 0.045908235693113864,
+          "sign": 1,
+          "step": 17
+        },
+        {
+          "absolute_correlation": 0.11199333838844083,
+          "correlation": 0.11199333838844083,
+          "edge": [
+            0,
+            8
+          ],
+          "log_partition_increment": 0.04870120897095518,
+          "sign": -1,
+          "step": 18
+        },
+        {
+          "absolute_correlation": 0.15945951556312601,
+          "correlation": -0.15945951556312601,
+          "edge": [
+            0,
+            7
+          ],
+          "log_partition_increment": 0.02758052423132369,
+          "sign": 1,
+          "step": 19
+        },
+        {
+          "absolute_correlation": 0.11998829120517426,
+          "correlation": 0.11998829120517426,
+          "edge": [
+            3,
+            5
+          ],
+          "log_partition_increment": 0.04517484665634927,
+          "sign": -1,
+          "step": 20
+        },
+        {
+          "absolute_correlation": 0.15504327939960139,
+          "correlation": -0.15504327939960139,
+          "edge": [
+            1,
+            5
+          ],
+          "log_partition_increment": 0.029564514369955094,
+          "sign": 1,
+          "step": 21
+        },
+        {
+          "absolute_correlation": 0.12347125609977039,
+          "correlation": 0.12347125609977039,
+          "edge": [
+            2,
+            2
+          ],
+          "log_partition_increment": 0.04363470565372369,
+          "sign": -1,
+          "step": 22
+        },
+        {
+          "absolute_correlation": 0.08318800651483009,
+          "correlation": 0.08318800651483009,
+          "edge": [
+            5,
+            5
+          ],
+          "log_partition_increment": 0.061304349635929144,
+          "sign": -1,
+          "step": 23
+        },
+        {
+          "absolute_correlation": 0.13820562662836347,
+          "correlation": -0.13820562662836347,
+          "edge": [
+            4,
+            5
+          ],
+          "log_partition_increment": 0.037092906407369106,
+          "sign": 1,
+          "step": 24
+        },
+        {
+          "absolute_correlation": 0.09258344050540467,
+          "correlation": 0.09258344050540467,
+          "edge": [
+            4,
+            6
+          ],
+          "log_partition_increment": 0.057211013244648966,
+          "sign": -1,
+          "step": 25
+        },
+        {
+          "absolute_correlation": 0.10354725216168066,
+          "correlation": -0.10354725216168066,
+          "edge": [
+            3,
+            2
+          ],
+          "log_partition_increment": 0.05241309597666868,
+          "sign": 1,
+          "step": 26
+        },
+        {
+          "absolute_correlation": 0.15197761991627612,
+          "correlation": 0.15197761991627612,
+          "edge": [
+            3,
+            3
+          ],
+          "log_partition_increment": 0.030939448173605194,
+          "sign": -1,
+          "step": 27
+        },
+        {
+          "absolute_correlation": 0.11647769806908274,
+          "correlation": 0.11647769806908274,
+          "edge": [
+            0,
+            2
+          ],
+          "log_partition_increment": 0.04672480803791964,
+          "sign": -1,
+          "step": 28
+        },
+        {
+          "absolute_correlation": 0.10817207913741277,
+          "correlation": -0.10817207913741277,
+          "edge": [
+            6,
+            7
+          ],
+          "log_partition_increment": 0.050382283326499945,
+          "sign": 1,
+          "step": 29
+        },
+        {
+          "absolute_correlation": 0.10520256356150831,
+          "correlation": 0.10520256356150831,
+          "edge": [
+            7,
+            3
+          ],
+          "log_partition_increment": 0.05168670424826122,
+          "sign": -1,
+          "step": 30
+        },
+        {
+          "absolute_correlation": 0.13946485275747914,
+          "correlation": -0.13946485275747914,
+          "edge": [
+            8,
+            4
+          ],
+          "log_partition_increment": 0.03653184229816189,
+          "sign": 1,
+          "step": 31
+        },
+        {
+          "absolute_correlation": 0.10238010097286733,
+          "correlation": 0.10238010097286733,
+          "edge": [
+            9,
+            2
+          ],
+          "log_partition_increment": 0.052924953891560184,
+          "sign": -1,
+          "step": 32
+        },
+        {
+          "absolute_correlation": 0.12447533838365982,
+          "correlation": -0.12447533838365982,
+          "edge": [
+            7,
+            5
+          ],
+          "log_partition_increment": 0.04319026715116469,
+          "sign": 1,
+          "step": 33
+        },
+        {
+          "absolute_correlation": 0.117264402285342,
+          "correlation": -0.117264402285342,
+          "edge": [
+            7,
+            2
+          ],
+          "log_partition_increment": 0.04637767919120094,
+          "sign": 1,
+          "step": 34
+        },
+        {
+          "absolute_correlation": 0.1756283336846666,
+          "correlation": 0.1756283336846666,
+          "edge": [
+            8,
+            2
+          ],
+          "log_partition_increment": 0.020282923901366948,
+          "sign": -1,
+          "step": 35
+        },
+        {
+          "absolute_correlation": 0.1419844842366298,
+          "correlation": -0.1419844842366298,
+          "edge": [
+            3,
+            4
+          ],
+          "log_partition_increment": 0.03540824266201249,
+          "sign": 1,
+          "step": 36
+        },
+        {
+          "absolute_correlation": 0.14992344605409355,
+          "correlation": -0.14992344605409355,
+          "edge": [
+            8,
+            3
+          ],
+          "log_partition_increment": 0.03185967884544774,
+          "sign": 1,
+          "step": 37
+        },
+        {
+          "absolute_correlation": 0.11430826573450657,
+          "correlation": 0.11430826573450657,
+          "edge": [
+            8,
+            1
+          ],
+          "log_partition_increment": 0.04768143411518866,
+          "sign": -1,
+          "step": 38
+        },
+        {
+          "absolute_correlation": 0.15654050851957754,
+          "correlation": 0.15654050851957754,
+          "edge": [
+            2,
+            1
+          ],
+          "log_partition_increment": 0.028892326465387808,
+          "sign": -1,
+          "step": 39
+        },
+        {
+          "absolute_correlation": 0.12795371447090093,
+          "correlation": -0.12795371447090093,
+          "edge": [
+            2,
+            3
+          ],
+          "log_partition_increment": 0.041649098957204325,
+          "sign": 1,
+          "step": 40
+        },
+        {
+          "absolute_correlation": 0.14705342727358775,
+          "correlation": 0.14705342727358775,
+          "edge": [
+            6,
+            8
+          ],
+          "log_partition_increment": 0.03314397600663402,
+          "sign": -1,
+          "step": 41
+        },
+        {
+          "absolute_correlation": 0.11597321625264936,
+          "correlation": -0.11597321625264936,
+          "edge": [
+            0,
+            1
+          ],
+          "log_partition_increment": 0.04694734443112655,
+          "sign": 1,
+          "step": 42
+        },
+        {
+          "absolute_correlation": 0.13966117254912247,
+          "correlation": 0.13966117254912247,
+          "edge": [
+            8,
+            9
+          ],
+          "log_partition_increment": 0.03644434116333681,
+          "sign": -1,
+          "step": 43
+        },
+        {
+          "absolute_correlation": 0.1435253794827718,
+          "correlation": 0.1435253794827718,
+          "edge": [
+            2,
+            9
+          ],
+          "log_partition_increment": 0.03472047614800514,
+          "sign": -1,
+          "step": 44
+        },
+        {
+          "absolute_correlation": 0.1562494689809208,
+          "correlation": 0.1562494689809208,
+          "edge": [
+            0,
+            3
+          ],
+          "log_partition_increment": 0.029023025389398383,
+          "sign": -1,
+          "step": 45
+        },
+        {
+          "absolute_correlation": 0.12418424338862309,
+          "correlation": -0.12418424338862309,
+          "edge": [
+            2,
+            6
+          ],
+          "log_partition_increment": 0.04331913531429171,
+          "sign": 1,
+          "step": 46
+        },
+        {
+          "absolute_correlation": 0.11743319361959524,
+          "correlation": 0.11743319361959524,
+          "edge": [
+            2,
+            7
+          ],
+          "log_partition_increment": 0.04630318525370833,
+          "sign": -1,
+          "step": 47
+        },
+        {
+          "absolute_correlation": 0.1483968570924453,
+          "correlation": -0.1483968570924453,
+          "edge": [
+            7,
+            8
+          ],
+          "log_partition_increment": 0.032543013459824716,
+          "sign": 1,
+          "step": 48
+        },
+        {
+          "absolute_correlation": 0.12030625913922985,
+          "correlation": -0.12030625913922985,
+          "edge": [
+            5,
+            8
+          ],
+          "log_partition_increment": 0.045034341964611466,
+          "sign": 1,
+          "step": 49
+        },
+        {
+          "absolute_correlation": 0.09413687075442738,
+          "correlation": -0.09413687075442738,
+          "edge": [
+            3,
+            7
+          ],
+          "log_partition_increment": 0.05653260859819497,
+          "sign": 1,
+          "step": 50
+        },
+        {
+          "absolute_correlation": 0.10620435354919071,
+          "correlation": 0.10620435354919071,
+          "edge": [
+            5,
+            3
+          ],
+          "log_partition_increment": 0.0512468375059248,
+          "sign": -1,
+          "step": 51
+        },
+        {
+          "absolute_correlation": 0.12661885004093093,
+          "correlation": 0.12661885004093093,
+          "edge": [
+            7,
+            0
+          ],
+          "log_partition_increment": 0.04224081980112168,
+          "sign": -1,
+          "step": 52
+        },
+        {
+          "absolute_correlation": 0.13590470005634686,
+          "correlation": 0.13590470005634686,
+          "edge": [
+            9,
+            8
+          ],
+          "log_partition_increment": 0.03811730088750868,
+          "sign": -1,
+          "step": 53
+        },
+        {
+          "absolute_correlation": 0.09644914287954637,
+          "correlation": 0.09644914287954637,
+          "edge": [
+            7,
+            9
+          ],
+          "log_partition_increment": 0.055521953981425856,
+          "sign": -1,
+          "step": 54
+        },
+        {
+          "absolute_correlation": 0.12519124976401064,
+          "correlation": 0.12519124976401064,
+          "edge": [
+            9,
+            3
+          ],
+          "log_partition_increment": 0.04287326151436268,
+          "sign": -1,
+          "step": 55
+        },
+        {
+          "absolute_correlation": 0.10896193777755651,
+          "correlation": 0.10896193777755651,
+          "edge": [
+            5,
+            7
+          ],
+          "log_partition_increment": 0.050035034964742736,
+          "sign": -1,
+          "step": 56
+        },
+        {
+          "absolute_correlation": 0.12016411749004667,
+          "correlation": -0.12016411749004667,
+          "edge": [
+            6,
+            0
+          ],
+          "log_partition_increment": 0.04509715441300223,
+          "sign": 1,
+          "step": 57
+        },
+        {
+          "absolute_correlation": 0.10816783385774074,
+          "correlation": 0.10816783385774074,
+          "edge": [
+            1,
+            6
+          ],
+          "log_partition_increment": 0.05038414936814322,
+          "sign": -1,
+          "step": 58
+        },
+        {
+          "absolute_correlation": 0.10221816675016715,
+          "correlation": 0.10221816675016715,
+          "edge": [
+            8,
+            5
+          ],
+          "log_partition_increment": 0.05299594997431339,
+          "sign": -1,
+          "step": 59
+        },
+        {
+          "absolute_correlation": 0.12152114024630481,
+          "correlation": 0.12152114024630481,
+          "edge": [
+            8,
+            8
+          ],
+          "log_partition_increment": 0.0444973245160863,
+          "sign": -1,
+          "step": 60
+        },
+        {
+          "absolute_correlation": 0.11708223023487682,
+          "correlation": 0.11708223023487682,
+          "edge": [
+            9,
+            4
+          ],
+          "log_partition_increment": 0.04645807231373014,
+          "sign": -1,
+          "step": 61
+        },
+        {
+          "absolute_correlation": 0.12405732361999272,
+          "correlation": 0.12405732361999272,
+          "edge": [
+            1,
+            9
+          ],
+          "log_partition_increment": 0.04337531767561834,
+          "sign": -1,
+          "step": 62
+        },
+        {
+          "absolute_correlation": 0.13518610449171814,
+          "correlation": -0.13518610449171814,
+          "edge": [
+            5,
+            4
+          ],
+          "log_partition_increment": 0.03843701157237276,
+          "sign": 1,
+          "step": 63
+        },
+        {
+          "absolute_correlation": 0.11258506304473719,
+          "correlation": 0.11258506304473719,
+          "edge": [
+            5,
+            9
+          ],
+          "log_partition_increment": 0.04844064056368847,
+          "sign": -1,
+          "step": 64
+        },
+        {
+          "absolute_correlation": 0.12562756077834206,
+          "correlation": 0.12562756077834206,
+          "edge": [
+            0,
+            0
+          ],
+          "log_partition_increment": 0.04268001365301581,
+          "sign": -1,
+          "step": 65
+        },
+        {
+          "absolute_correlation": 0.12347835392157887,
+          "correlation": 0.12347835392157887,
+          "edge": [
+            4,
+            4
+          ],
+          "log_partition_increment": 0.04363156462693446,
+          "sign": -1,
+          "step": 66
+        },
+        {
+          "absolute_correlation": 0.11748667427497785,
+          "correlation": 0.11748667427497785,
+          "edge": [
+            7,
+            1
+          ],
+          "log_partition_increment": 0.046279581079755515,
+          "sign": -1,
+          "step": 67
+        },
+        {
+          "absolute_correlation": 0.10936748315179147,
+          "correlation": 0.10936748315179147,
+          "edge": [
+            7,
+            7
+          ],
+          "log_partition_increment": 0.04985669674964645,
+          "sign": -1,
+          "step": 68
+        },
+        {
+          "absolute_correlation": 0.11488279528134428,
+          "correlation": -0.11488279528134428,
+          "edge": [
+            5,
+            1
+          ],
+          "log_partition_increment": 0.04742818044087875,
+          "sign": 1,
+          "step": 69
+        },
+        {
+          "absolute_correlation": 0.10887307603887789,
+          "correlation": 0.10887307603887789,
+          "edge": [
+            1,
+            7
+          ],
+          "log_partition_increment": 0.05007410758715099,
+          "sign": -1,
+          "step": 70
+        },
+        {
+          "absolute_correlation": 0.1559165386655633,
+          "correlation": 0.1559165386655633,
+          "edge": [
+            3,
+            6
+          ],
+          "log_partition_increment": 0.029172515519103825,
+          "sign": -1,
+          "step": 71
+        },
+        {
+          "absolute_correlation": 0.11193991983969578,
+          "correlation": -0.11193991983969578,
+          "edge": [
+            1,
+            4
+          ],
+          "log_partition_increment": 0.04872472870949992,
+          "sign": 1,
+          "step": 72
+        },
+        {
+          "absolute_correlation": 0.12283935677870272,
+          "correlation": 0.12283935677870272,
+          "edge": [
+            1,
+            1
+          ],
+          "log_partition_increment": 0.043914302996561905,
+          "sign": -1,
+          "step": 73
+        },
+        {
+          "absolute_correlation": 0.1248049589485277,
+          "correlation": 0.1248049589485277,
+          "edge": [
+            9,
+            1
+          ],
+          "log_partition_increment": 0.04304432361207671,
+          "sign": -1,
+          "step": 74
+        },
+        {
+          "absolute_correlation": 0.11664021140175847,
+          "correlation": -0.11664021140175847,
+          "edge": [
+            2,
+            8
+          ],
+          "log_partition_increment": 0.04665310981075167,
+          "sign": 1,
+          "step": 75
+        },
+        {
+          "absolute_correlation": 0.14659841235506588,
+          "correlation": -0.14659841235506588,
+          "edge": [
+            8,
+            6
+          ],
+          "log_partition_increment": 0.03334743804274304,
+          "sign": 1,
+          "step": 76
+        },
+        {
+          "absolute_correlation": 0.140200038080836,
+          "correlation": 0.140200038080836,
+          "edge": [
+            4,
+            8
+          ],
+          "log_partition_increment": 0.03620412558535061,
+          "sign": -1,
+          "step": 77
+        },
+        {
+          "absolute_correlation": 0.07325586962673679,
+          "correlation": -0.07325586962673679,
+          "edge": [
+            6,
+            2
+          ],
+          "log_partition_increment": 0.06561337157868813,
+          "sign": 1,
+          "step": 78
+        },
+        {
+          "absolute_correlation": 0.1290596472275418,
+          "correlation": 0.1290596472275418,
+          "edge": [
+            6,
+            3
+          ],
+          "log_partition_increment": 0.041158593963322616,
+          "sign": -1,
+          "step": 79
+        },
+        {
+          "absolute_correlation": 0.1051180348104601,
+          "correlation": 0.1051180348104601,
+          "edge": [
+            3,
+            0
+          ],
+          "log_partition_increment": 0.05172381034925387,
+          "sign": -1,
+          "step": 80
+        },
+        {
+          "absolute_correlation": 0.13002859949330403,
+          "correlation": -0.13002859949330403,
+          "edge": [
+            1,
+            0
+          ],
+          "log_partition_increment": 0.04072864493740043,
+          "sign": 1,
+          "step": 81
+        },
+        {
+          "absolute_correlation": 0.12244122467550912,
+          "correlation": 0.12244122467550912,
+          "edge": [
+            9,
+            7
+          ],
+          "log_partition_increment": 0.044090424908664765,
+          "sign": -1,
+          "step": 82
+        },
+        {
+          "absolute_correlation": 0.09839707447054584,
+          "correlation": -0.09839707447054584,
+          "edge": [
+            3,
+            1
+          ],
+          "log_partition_increment": 0.05466975297895592,
+          "sign": 1,
+          "step": 83
+        },
+        {
+          "absolute_correlation": 0.07346196096722095,
+          "correlation": 0.07346196096722095,
+          "edge": [
+            4,
+            0
+          ],
+          "log_partition_increment": 0.06552414797267958,
+          "sign": -1,
+          "step": 84
+        },
+        {
+          "absolute_correlation": 0.08477233075292336,
+          "correlation": -0.08477233075292336,
+          "edge": [
+            4,
+            3
+          ],
+          "log_partition_increment": 0.060615275854714754,
+          "sign": 1,
+          "step": 85
+        },
+        {
+          "absolute_correlation": 0.07835725729508469,
+          "correlation": 0.07835725729508469,
+          "edge": [
+            2,
+            5
+          ],
+          "log_partition_increment": 0.06340247217194547,
+          "sign": -1,
+          "step": 86
+        },
+        {
+          "absolute_correlation": 0.0741328880481979,
+          "correlation": 0.0741328880481979,
+          "edge": [
+            1,
+            8
+          ],
+          "log_partition_increment": 0.06523362678666564,
+          "sign": -1,
+          "step": 87
+        },
+        {
+          "absolute_correlation": 0.08316866302023061,
+          "correlation": 0.08316866302023061,
+          "edge": [
+            0,
+            4
+          ],
+          "log_partition_increment": 0.0613127598131544,
+          "sign": -1,
+          "step": 88
+        },
+        {
+          "absolute_correlation": 0.10422983026625328,
+          "correlation": -0.10422983026625328,
+          "edge": [
+            8,
+            7
+          ],
+          "log_partition_increment": 0.05211362768861667,
+          "sign": 1,
+          "step": 89
+        },
+        {
+          "absolute_correlation": 0.0812861899525137,
+          "correlation": 0.0812861899525137,
+          "edge": [
+            1,
+            2
+          ],
+          "log_partition_increment": 0.062130884486983874,
+          "sign": -1,
+          "step": 90
+        },
+        {
+          "absolute_correlation": 0.05995814117710932,
+          "correlation": 0.05995814117710932,
+          "edge": [
+            1,
+            3
+          ],
+          "log_partition_increment": 0.07135362460992213,
+          "sign": -1,
+          "step": 91
+        },
+        {
+          "absolute_correlation": 0.08894040699674682,
+          "correlation": -0.08894040699674682,
+          "edge": [
+            6,
+            1
+          ],
+          "log_partition_increment": 0.05880017384482869,
+          "sign": 1,
+          "step": 92
+        },
+        {
+          "absolute_correlation": 0.0743145866125382,
+          "correlation": -0.0743145866125382,
+          "edge": [
+            4,
+            7
+          ],
+          "log_partition_increment": 0.06515493413902151,
+          "sign": 1,
+          "step": 93
+        },
+        {
+          "absolute_correlation": 0.11345620257854762,
+          "correlation": 0.11345620257854762,
+          "edge": [
+            2,
+            0
+          ],
+          "log_partition_increment": 0.04805690705697207,
+          "sign": -1,
+          "step": 94
+        },
+        {
+          "absolute_correlation": 0.04112805593065365,
+          "correlation": -0.04112805593065365,
+          "edge": [
+            3,
+            8
+          ],
+          "log_partition_increment": 0.07942608434126427,
+          "sign": 1,
+          "step": 95
+        },
+        {
+          "absolute_correlation": 0.03992886846489213,
+          "correlation": 0.03992886846489213,
+          "edge": [
+            5,
+            2
+          ],
+          "log_partition_increment": 0.07993797568781078,
+          "sign": -1,
+          "step": 96
+        },
+        {
+          "absolute_correlation": 0.04658081420685964,
+          "correlation": -0.04658081420685964,
+          "edge": [
+            7,
+            6
+          ],
+          "log_partition_increment": 0.07709518153702243,
+          "sign": 1,
+          "step": 97
+        },
+        {
+          "absolute_correlation": 0.0543599904908656,
+          "correlation": 0.0543599904908656,
+          "edge": [
+            3,
+            9
+          ],
+          "log_partition_increment": 0.07376036670863513,
+          "sign": -1,
+          "step": 98
+        },
+        {
+          "absolute_correlation": 0.028609632470493626,
+          "correlation": -0.028609632470493626,
+          "edge": [
+            8,
+            0
+          ],
+          "log_partition_increment": 0.08475689700553951,
+          "sign": 1,
+          "step": 99
+        }
+      ],
+      "max_absolute_correlation": 0.1756283336846666,
+      "orders": [
+        10,
+        10
+      ],
+      "parent_matrix_sha256": "9189c1ff2a70701504713493f75ffdd4d582968a305d2acf7649060c31bd2841",
+      "scaled_temperature": 2.0,
+      "sign_b": -1,
+      "sum_absolute_correlations": 11.172144630291815,
+      "verified_parent_profile": {
+        "M": 48,
+        "P": 48,
+        "Q": 46,
+        "bottom_spins": [
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ]
+        ],
+        "eigenvalues": [
+          -5.574141879433003,
+          -5.1930894999721104,
+          -5.043171055534541,
+          -4.786082502928623,
+          -4.3940597474480905,
+          -4.277436297419409,
+          -3.755018040257,
+          -3.4320370813446464,
+          -3.295973773161809,
+          -2.6513443324162767,
+          1.7877522786623878,
+          3.240789966619337,
+          3.463687473303975,
+          3.945395849023982,
+          4.237906954400302,
+          4.737518315088477,
+          4.8334880860143565,
+          5.073450388471275,
+          5.359017098430108,
+          5.723347799901305
+        ],
+        "energy_histogram": {
+          "-10": 23586,
+          "-12": 21784,
+          "-14": 19650,
+          "-16": 17173,
+          "-18": 14870,
+          "-2": 27580,
+          "-20": 12363,
+          "-22": 9914,
+          "-24": 7762,
+          "-26": 5629,
+          "-28": 3975,
+          "-30": 2727,
+          "-32": 1692,
+          "-34": 1034,
+          "-36": 572,
+          "-38": 256,
+          "-4": 27028,
+          "-40": 111,
+          "-42": 37,
+          "-44": 6,
+          "-46": 1,
+          "-6": 26120,
+          "-8": 25094,
+          "0": 27816,
+          "10": 23164,
+          "12": 21402,
+          "14": 19236,
+          "16": 17026,
+          "18": 14637,
+          "2": 27638,
+          "20": 12218,
+          "22": 9977,
+          "24": 7747,
+          "26": 5768,
+          "28": 4152,
+          "30": 2810,
+          "32": 1828,
+          "34": 1139,
+          "36": 639,
+          "38": 329,
+          "4": 26914,
+          "40": 154,
+          "42": 58,
+          "44": 19,
+          "46": 6,
+          "48": 1,
+          "6": 25978,
+          "8": 24668
+        },
+        "projective_bottom_count": 1,
+        "projective_top_count": 1,
+        "row_sums": [
+          7,
+          -3,
+          -3,
+          1,
+          -5,
+          1,
+          -1,
+          -1,
+          1,
+          -7,
+          -11,
+          -1,
+          -5,
+          -5,
+          1,
+          -1,
+          5,
+          -1,
+          -3,
+          -9
+        ],
+        "top_spins": [
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ]
+        ]
+      },
+      "zero_defect_energy_target": 36.76955262170046
+    },
+    {
+      "b_scale_composition_defect": 2.1501593682207627,
+      "base_log_partition": 17.353329282919358,
+      "bridge": [
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ]
+      ],
+      "bridge_log_partition_cost": 13.426820087274486,
+      "child_caps": [
+        13,
+        13
+      ],
+      "final_cap": 48,
+      "final_log_partition": 30.780149370193847,
+      "gamma": 0.8944271909999159,
+      "increments": [
+        {
+          "absolute_correlation": 1.9823930145263197e-17,
+          "correlation": -1.9823930145263197e-17,
+          "edge": [
+            5,
+            0
+          ],
+          "log_partition_increment": 0.3558462197919279,
+          "sign": 1,
+          "step": 0
+        },
+        {
+          "absolute_correlation": 0.20436773919888396,
+          "correlation": 0.20436773919888396,
+          "edge": [
+            9,
+            0
+          ],
+          "log_partition_increment": 0.19821952934468368,
+          "sign": -1,
+          "step": 1
+        },
+        {
+          "absolute_correlation": 0.23925925300017273,
+          "correlation": -0.23925925300017273,
+          "edge": [
+            6,
+            0
+          ],
+          "log_partition_increment": 0.16863785946879023,
+          "sign": 1,
+          "step": 2
+        },
+        {
+          "absolute_correlation": 0.1544573472421551,
+          "correlation": -0.1544573472421551,
+          "edge": [
+            0,
+            0
+          ],
+          "log_partition_increment": 0.23906892010051933,
+          "sign": 1,
+          "step": 3
+        },
+        {
+          "absolute_correlation": 0.14573354520218965,
+          "correlation": 0.14573354520218965,
+          "edge": [
+            0,
+            9
+          ],
+          "log_partition_increment": 0.24604072907892677,
+          "sign": -1,
+          "step": 4
+        },
+        {
+          "absolute_correlation": 0.2224841548729893,
+          "correlation": -0.2224841548729893,
+          "edge": [
+            0,
+            6
+          ],
+          "log_partition_increment": 0.182969357693166,
+          "sign": 1,
+          "step": 5
+        },
+        {
+          "absolute_correlation": 0.24321560307015405,
+          "correlation": 0.24321560307015405,
+          "edge": [
+            5,
+            6
+          ],
+          "log_partition_increment": 0.16522767949279693,
+          "sign": -1,
+          "step": 6
+        },
+        {
+          "absolute_correlation": 0.1982494999899821,
+          "correlation": -0.1982494999899821,
+          "edge": [
+            9,
+            3
+          ],
+          "log_partition_increment": 0.2033176963806275,
+          "sign": 1,
+          "step": 7
+        },
+        {
+          "absolute_correlation": 0.28474306077730654,
+          "correlation": 0.28474306077730654,
+          "edge": [
+            9,
+            2
+          ],
+          "log_partition_increment": 0.12871333432456866,
+          "sign": -1,
+          "step": 8
+        },
+        {
+          "absolute_correlation": 0.2975527596212679,
+          "correlation": 0.2975527596212679,
+          "edge": [
+            1,
+            6
+          ],
+          "log_partition_increment": 0.11717552915368962,
+          "sign": -1,
+          "step": 9
+        },
+        {
+          "absolute_correlation": 0.2659521028307779,
+          "correlation": 0.2659521028307779,
+          "edge": [
+            3,
+            5
+          ],
+          "log_partition_increment": 0.1454012247612578,
+          "sign": -1,
+          "step": 10
+        },
+        {
+          "absolute_correlation": 0.2531152754413997,
+          "correlation": -0.2531152754413997,
+          "edge": [
+            1,
+            5
+          ],
+          "log_partition_increment": 0.1566433404256352,
+          "sign": 1,
+          "step": 11
+        },
+        {
+          "absolute_correlation": 0.2569048163432126,
+          "correlation": 0.2569048163432126,
+          "edge": [
+            4,
+            0
+          ],
+          "log_partition_increment": 0.15333769968567823,
+          "sign": -1,
+          "step": 12
+        },
+        {
+          "absolute_correlation": 0.2627731230070129,
+          "correlation": 0.2627731230070129,
+          "edge": [
+            3,
+            1
+          ],
+          "log_partition_increment": 0.1481970778517823,
+          "sign": -1,
+          "step": 13
+        },
+        {
+          "absolute_correlation": 0.2444641779675185,
+          "correlation": -0.2444641779675185,
+          "edge": [
+            8,
+            8
+          ],
+          "log_partition_increment": 0.16414905045268746,
+          "sign": 1,
+          "step": 14
+        },
+        {
+          "absolute_correlation": 0.2396857301907468,
+          "correlation": 0.2396857301907468,
+          "edge": [
+            5,
+            5
+          ],
+          "log_partition_increment": 0.1682708157506795,
+          "sign": -1,
+          "step": 15
+        },
+        {
+          "absolute_correlation": 0.24480592982611582,
+          "correlation": -0.24480592982611582,
+          "edge": [
+            4,
+            6
+          ],
+          "log_partition_increment": 0.1638536121571776,
+          "sign": 1,
+          "step": 16
+        },
+        {
+          "absolute_correlation": 0.29891843101733906,
+          "correlation": 0.29891843101733906,
+          "edge": [
+            7,
+            4
+          ],
+          "log_partition_increment": 0.11593756776820557,
+          "sign": -1,
+          "step": 17
+        },
+        {
+          "absolute_correlation": 0.3468615867160837,
+          "correlation": 0.3468615867160837,
+          "edge": [
+            9,
+            6
+          ],
+          "log_partition_increment": 0.07147699320873824,
+          "sign": -1,
+          "step": 18
+        },
+        {
+          "absolute_correlation": 0.24348020248217575,
+          "correlation": 0.24348020248217575,
+          "edge": [
+            7,
+            9
+          ],
+          "log_partition_increment": 0.16499919233340554,
+          "sign": -1,
+          "step": 19
+        },
+        {
+          "absolute_correlation": 0.303927873286748,
+          "correlation": -0.303927873286748,
+          "edge": [
+            3,
+            6
+          ],
+          "log_partition_increment": 0.11138341436585214,
+          "sign": 1,
+          "step": 20
+        },
+        {
+          "absolute_correlation": 0.2595691270299247,
+          "correlation": -0.2595691270299247,
+          "edge": [
+            1,
+            1
+          ],
+          "log_partition_increment": 0.15100704503654225,
+          "sign": 1,
+          "step": 21
+        },
+        {
+          "absolute_correlation": 0.3385735742013764,
+          "correlation": -0.3385735742013764,
+          "edge": [
+            7,
+            1
+          ],
+          "log_partition_increment": 0.0793056639857379,
+          "sign": 1,
+          "step": 22
+        },
+        {
+          "absolute_correlation": 0.25409268296178955,
+          "correlation": 0.25409268296178955,
+          "edge": [
+            7,
+            8
+          ],
+          "log_partition_increment": 0.15579178677326957,
+          "sign": -1,
+          "step": 23
+        },
+        {
+          "absolute_correlation": 0.3393936418945215,
+          "correlation": -0.3393936418945215,
+          "edge": [
+            7,
+            7
+          ],
+          "log_partition_increment": 0.07853377281594048,
+          "sign": 1,
+          "step": 24
+        },
+        {
+          "absolute_correlation": 0.2861211775580854,
+          "correlation": -0.2861211775580854,
+          "edge": [
+            5,
+            4
+          ],
+          "log_partition_increment": 0.127478423951569,
+          "sign": 1,
+          "step": 25
+        },
+        {
+          "absolute_correlation": 0.23742017522660608,
+          "correlation": -0.23742017522660608,
+          "edge": [
+            2,
+            5
+          ],
+          "log_partition_increment": 0.17021910377430982,
+          "sign": 1,
+          "step": 26
+        },
+        {
+          "absolute_correlation": 0.32842032422036993,
+          "correlation": 0.32842032422036993,
+          "edge": [
+            6,
+            3
+          ],
+          "log_partition_increment": 0.08881341124580427,
+          "sign": -1,
+          "step": 27
+        },
+        {
+          "absolute_correlation": 0.2852952421845518,
+          "correlation": 0.2852952421845518,
+          "edge": [
+            1,
+            0
+          ],
+          "log_partition_increment": 0.12821871569738813,
+          "sign": -1,
+          "step": 28
+        },
+        {
+          "absolute_correlation": 0.33424405605356433,
+          "correlation": 0.33424405605356433,
+          "edge": [
+            1,
+            9
+          ],
+          "log_partition_increment": 0.0833709888637616,
+          "sign": -1,
+          "step": 29
+        },
+        {
+          "absolute_correlation": 0.2196899732236486,
+          "correlation": 0.2196899732236486,
+          "edge": [
+            6,
+            7
+          ],
+          "log_partition_increment": 0.1853366869858934,
+          "sign": -1,
+          "step": 30
+        },
+        {
+          "absolute_correlation": 0.30491245229710556,
+          "correlation": -0.30491245229710556,
+          "edge": [
+            2,
+            0
+          ],
+          "log_partition_increment": 0.11048587597703505,
+          "sign": 1,
+          "step": 31
+        },
+        {
+          "absolute_correlation": 0.3194111336845873,
+          "correlation": 0.3194111336845873,
+          "edge": [
+            7,
+            3
+          ],
+          "log_partition_increment": 0.09717480081718011,
+          "sign": -1,
+          "step": 32
+        },
+        {
+          "absolute_correlation": 0.28378768503160773,
+          "correlation": 0.28378768503160773,
+          "edge": [
+            9,
+            8
+          ],
+          "log_partition_increment": 0.12956853843775584,
+          "sign": -1,
+          "step": 33
+        },
+        {
+          "absolute_correlation": 0.3304547379081032,
+          "correlation": 0.3304547379081032,
+          "edge": [
+            8,
+            6
+          ],
+          "log_partition_increment": 0.08691556545827966,
+          "sign": -1,
+          "step": 34
+        },
+        {
+          "absolute_correlation": 0.33997606240492506,
+          "correlation": -0.33997606240492506,
+          "edge": [
+            5,
+            2
+          ],
+          "log_partition_increment": 0.07798520570073636,
+          "sign": 1,
+          "step": 35
+        },
+        {
+          "absolute_correlation": 0.36530300819418005,
+          "correlation": -0.36530300819418005,
+          "edge": [
+            5,
+            8
+          ],
+          "log_partition_increment": 0.05383455999489867,
+          "sign": 1,
+          "step": 36
+        },
+        {
+          "absolute_correlation": 0.2814559825316526,
+          "correlation": 0.2814559825316526,
+          "edge": [
+            1,
+            4
+          ],
+          "log_partition_increment": 0.1316526951351229,
+          "sign": -1,
+          "step": 37
+        },
+        {
+          "absolute_correlation": 0.2571201485258181,
+          "correlation": 0.2571201485258181,
+          "edge": [
+            6,
+            6
+          ],
+          "log_partition_increment": 0.15314953554433564,
+          "sign": -1,
+          "step": 38
+        },
+        {
+          "absolute_correlation": 0.34642108294053114,
+          "correlation": -0.34642108294053114,
+          "edge": [
+            8,
+            5
+          ],
+          "log_partition_increment": 0.07189462894996546,
+          "sign": 1,
+          "step": 39
+        },
+        {
+          "absolute_correlation": 0.3477442795566254,
+          "correlation": -0.3477442795566254,
+          "edge": [
+            7,
+            6
+          ],
+          "log_partition_increment": 0.07063959863131303,
+          "sign": 1,
+          "step": 40
+        },
+        {
+          "absolute_correlation": 0.3197741032890678,
+          "correlation": -0.3197741032890678,
+          "edge": [
+            7,
+            2
+          ],
+          "log_partition_increment": 0.09683927849969365,
+          "sign": 1,
+          "step": 41
+        },
+        {
+          "absolute_correlation": 0.261261199839148,
+          "correlation": -0.261261199839148,
+          "edge": [
+            2,
+            8
+          ],
+          "log_partition_increment": 0.149524047984012,
+          "sign": 1,
+          "step": 42
+        },
+        {
+          "absolute_correlation": 0.30783006413620106,
+          "correlation": -0.30783006413620106,
+          "edge": [
+            8,
+            7
+          ],
+          "log_partition_increment": 0.1078214520265049,
+          "sign": 1,
+          "step": 43
+        },
+        {
+          "absolute_correlation": 0.25055611627917224,
+          "correlation": 0.25055611627917224,
+          "edge": [
+            2,
+            4
+          ],
+          "log_partition_increment": 0.15886954583232596,
+          "sign": -1,
+          "step": 44
+        },
+        {
+          "absolute_correlation": 0.2915010224445782,
+          "correlation": -0.2915010224445782,
+          "edge": [
+            8,
+            3
+          ],
+          "log_partition_increment": 0.12264297349002176,
+          "sign": 1,
+          "step": 45
+        },
+        {
+          "absolute_correlation": 0.3697114076676579,
+          "correlation": -0.3697114076676579,
+          "edge": [
+            6,
+            5
+          ],
+          "log_partition_increment": 0.049570657804897944,
+          "sign": 1,
+          "step": 46
+        },
+        {
+          "absolute_correlation": 0.37043419303280645,
+          "correlation": 0.37043419303280645,
+          "edge": [
+            9,
+            5
+          ],
+          "log_partition_increment": 0.04886982561546527,
+          "sign": -1,
+          "step": 47
+        },
+        {
+          "absolute_correlation": 0.33898055142706646,
+          "correlation": 0.33898055142706646,
+          "edge": [
+            8,
+            2
+          ],
+          "log_partition_increment": 0.07892266992710406,
+          "sign": -1,
+          "step": 48
+        },
+        {
+          "absolute_correlation": 0.30273507003858485,
+          "correlation": -0.30273507003858485,
+          "edge": [
+            9,
+            1
+          ],
+          "log_partition_increment": 0.11246969112071539,
+          "sign": 1,
+          "step": 49
+        },
+        {
+          "absolute_correlation": 0.2818222469350958,
+          "correlation": -0.2818222469350958,
+          "edge": [
+            9,
+            9
+          ],
+          "log_partition_increment": 0.1313256027170433,
+          "sign": 1,
+          "step": 50
+        },
+        {
+          "absolute_correlation": 0.25475299735782514,
+          "correlation": 0.25475299735782514,
+          "edge": [
+            6,
+            1
+          ],
+          "log_partition_increment": 0.1552160857027082,
+          "sign": -1,
+          "step": 51
+        },
+        {
+          "absolute_correlation": 0.22460477762023764,
+          "correlation": -0.22460477762023764,
+          "edge": [
+            2,
+            9
+          ],
+          "log_partition_increment": 0.18116894316675405,
+          "sign": 1,
+          "step": 52
+        },
+        {
+          "absolute_correlation": 0.309361105861139,
+          "correlation": 0.309361105861139,
+          "edge": [
+            3,
+            2
+          ],
+          "log_partition_increment": 0.10642042750477243,
+          "sign": -1,
+          "step": 53
+        },
+        {
+          "absolute_correlation": 0.3331542820078853,
+          "correlation": 0.3331542820078853,
+          "edge": [
+            0,
+            7
+          ],
+          "log_partition_increment": 0.08439166514547214,
+          "sign": -1,
+          "step": 54
+        },
+        {
+          "absolute_correlation": 0.35463303959128634,
+          "correlation": -0.35463303959128634,
+          "edge": [
+            7,
+            5
+          ],
+          "log_partition_increment": 0.06408015455030125,
+          "sign": 1,
+          "step": 55
+        },
+        {
+          "absolute_correlation": 0.24533976112776443,
+          "correlation": -0.24533976112776443,
+          "edge": [
+            4,
+            8
+          ],
+          "log_partition_increment": 0.1633919499332299,
+          "sign": 1,
+          "step": 56
+        },
+        {
+          "absolute_correlation": 0.31479939008975855,
+          "correlation": -0.31479939008975855,
+          "edge": [
+            4,
+            2
+          ],
+          "log_partition_increment": 0.10142803745456475,
+          "sign": 1,
+          "step": 57
+        },
+        {
+          "absolute_correlation": 0.35334750705648343,
+          "correlation": -0.35334750705648343,
+          "edge": [
+            0,
+            8
+          ],
+          "log_partition_increment": 0.06530750235789201,
+          "sign": 1,
+          "step": 58
+        },
+        {
+          "absolute_correlation": 0.3007775110269831,
+          "correlation": 0.3007775110269831,
+          "edge": [
+            4,
+            4
+          ],
+          "log_partition_increment": 0.11424987169159417,
+          "sign": -1,
+          "step": 59
+        },
+        {
+          "absolute_correlation": 0.2706102160973487,
+          "correlation": 0.2706102160973487,
+          "edge": [
+            9,
+            4
+          ],
+          "log_partition_increment": 0.14129033115338682,
+          "sign": -1,
+          "step": 60
+        },
+        {
+          "absolute_correlation": 0.3192333101419639,
+          "correlation": -0.3192333101419639,
+          "edge": [
+            5,
+            9
+          ],
+          "log_partition_increment": 0.09733913649917292,
+          "sign": 1,
+          "step": 61
+        },
+        {
+          "absolute_correlation": 0.2825868298565216,
+          "correlation": 0.2825868298565216,
+          "edge": [
+            4,
+            1
+          ],
+          "log_partition_increment": 0.13064244697349964,
+          "sign": -1,
+          "step": 62
+        },
+        {
+          "absolute_correlation": 0.3192450161123461,
+          "correlation": -0.3192450161123461,
+          "edge": [
+            4,
+            3
+          ],
+          "log_partition_increment": 0.09732831925336155,
+          "sign": 1,
+          "step": 63
+        },
+        {
+          "absolute_correlation": 0.2784827058869938,
+          "correlation": 0.2784827058869938,
+          "edge": [
+            2,
+            3
+          ],
+          "log_partition_increment": 0.13430402767757404,
+          "sign": -1,
+          "step": 64
+        },
+        {
+          "absolute_correlation": 0.2813420306392976,
+          "correlation": -0.2813420306392976,
+          "edge": [
+            5,
+            3
+          ],
+          "log_partition_increment": 0.13175443805287512,
+          "sign": 1,
+          "step": 65
+        },
+        {
+          "absolute_correlation": 0.2228144458691003,
+          "correlation": -0.2228144458691003,
+          "edge": [
+            2,
+            1
+          ],
+          "log_partition_increment": 0.1826891527610492,
+          "sign": 1,
+          "step": 66
+        },
+        {
+          "absolute_correlation": 0.4232423941174559,
+          "correlation": -0.4232423941174559,
+          "edge": [
+            4,
+            5
+          ],
+          "log_partition_increment": -0.0037108269834427166,
+          "sign": 1,
+          "step": 67
+        },
+        {
+          "absolute_correlation": 0.21227044124882993,
+          "correlation": -0.21227044124882993,
+          "edge": [
+            6,
+            8
+          ],
+          "log_partition_increment": 0.1915957129038794,
+          "sign": 1,
+          "step": 68
+        },
+        {
+          "absolute_correlation": 0.3207218812167384,
+          "correlation": 0.3207218812167384,
+          "edge": [
+            0,
+            5
+          ],
+          "log_partition_increment": 0.09596263917055331,
+          "sign": -1,
+          "step": 69
+        },
+        {
+          "absolute_correlation": 0.2637579521330535,
+          "correlation": -0.2637579521330535,
+          "edge": [
+            0,
+            2
+          ],
+          "log_partition_increment": 0.14733177452287477,
+          "sign": 1,
+          "step": 70
+        },
+        {
+          "absolute_correlation": 0.3606512266962576,
+          "correlation": 0.3606512266962576,
+          "edge": [
+            0,
+            3
+          ],
+          "log_partition_increment": 0.05831423925604895,
+          "sign": -1,
+          "step": 71
+        },
+        {
+          "absolute_correlation": 0.27392837787721624,
+          "correlation": 0.27392837787721624,
+          "edge": [
+            2,
+            6
+          ],
+          "log_partition_increment": 0.13835163491093538,
+          "sign": -1,
+          "step": 72
+        },
+        {
+          "absolute_correlation": 0.3526834315108491,
+          "correlation": -0.3526834315108491,
+          "edge": [
+            5,
+            7
+          ],
+          "log_partition_increment": 0.06594093147652458,
+          "sign": 1,
+          "step": 73
+        },
+        {
+          "absolute_correlation": 0.33138810144553266,
+          "correlation": -0.33138810144553266,
+          "edge": [
+            3,
+            7
+          ],
+          "log_partition_increment": 0.08604365079947213,
+          "sign": 1,
+          "step": 74
+        },
+        {
+          "absolute_correlation": 0.3415302212988695,
+          "correlation": 0.3415302212988695,
+          "edge": [
+            3,
+            4
+          ],
+          "log_partition_increment": 0.07651990823414395,
+          "sign": -1,
+          "step": 75
+        },
+        {
+          "absolute_correlation": 0.318118847273418,
+          "correlation": 0.318118847273418,
+          "edge": [
+            6,
+            4
+          ],
+          "log_partition_increment": 0.09836845315354176,
+          "sign": -1,
+          "step": 76
+        },
+        {
+          "absolute_correlation": 0.32707057047748106,
+          "correlation": -0.32707057047748106,
+          "edge": [
+            8,
+            4
+          ],
+          "log_partition_increment": 0.09007057290348597,
+          "sign": 1,
+          "step": 77
+        },
+        {
+          "absolute_correlation": 0.29133979386124836,
+          "correlation": -0.29133979386124836,
+          "edge": [
+            0,
+            4
+          ],
+          "log_partition_increment": 0.12278822749248064,
+          "sign": 1,
+          "step": 78
+        },
+        {
+          "absolute_correlation": 0.2767706135900705,
+          "correlation": 0.2767706135900705,
+          "edge": [
+            8,
+            0
+          ],
+          "log_partition_increment": 0.13582755266892554,
+          "sign": -1,
+          "step": 79
+        },
+        {
+          "absolute_correlation": 0.4070159627368657,
+          "correlation": 0.4070159627368657,
+          "edge": [
+            3,
+            8
+          ],
+          "log_partition_increment": 0.012741897529386148,
+          "sign": -1,
+          "step": 80
+        },
+        {
+          "absolute_correlation": 0.17650825435941098,
+          "correlation": -0.17650825435941098,
+          "edge": [
+            1,
+            2
+          ],
+          "log_partition_increment": 0.22122667257619913,
+          "sign": 1,
+          "step": 81
+        },
+        {
+          "absolute_correlation": 0.2096456433686301,
+          "correlation": 0.2096456433686301,
+          "edge": [
+            2,
+            2
+          ],
+          "log_partition_increment": 0.19380061245297958,
+          "sign": -1,
+          "step": 82
+        },
+        {
+          "absolute_correlation": 0.3555914151212469,
+          "correlation": 0.3555914151212469,
+          "edge": [
+            1,
+            3
+          ],
+          "log_partition_increment": 0.06316417511200367,
+          "sign": -1,
+          "step": 83
+        },
+        {
+          "absolute_correlation": 0.22436263735919298,
+          "correlation": -0.22436263735919298,
+          "edge": [
+            3,
+            0
+          ],
+          "log_partition_increment": 0.18137468491965075,
+          "sign": 1,
+          "step": 84
+        },
+        {
+          "absolute_correlation": 0.1405209951568912,
+          "correlation": -0.1405209951568912,
+          "edge": [
+            3,
+            3
+          ],
+          "log_partition_increment": 0.2501833673437452,
+          "sign": 1,
+          "step": 85
+        },
+        {
+          "absolute_correlation": 0.33015736923348976,
+          "correlation": -0.33015736923348976,
+          "edge": [
+            7,
+            0
+          ],
+          "log_partition_increment": 0.08719319696952232,
+          "sign": 1,
+          "step": 86
+        },
+        {
+          "absolute_correlation": 0.19982737874465223,
+          "correlation": -0.19982737874465223,
+          "edge": [
+            6,
+            2
+          ],
+          "log_partition_increment": 0.20200537685943445,
+          "sign": 1,
+          "step": 87
+        },
+        {
+          "absolute_correlation": 0.2580692163311091,
+          "correlation": 0.2580692163311091,
+          "edge": [
+            1,
+            8
+          ],
+          "log_partition_increment": 0.15231978759673448,
+          "sign": -1,
+          "step": 88
+        },
+        {
+          "absolute_correlation": 0.24923149334773023,
+          "correlation": -0.24923149334773023,
+          "edge": [
+            3,
+            9
+          ],
+          "log_partition_increment": 0.160019888061732,
+          "sign": 1,
+          "step": 89
+        },
+        {
+          "absolute_correlation": 0.31230058360062246,
+          "correlation": -0.31230058360062246,
+          "edge": [
+            6,
+            9
+          ],
+          "log_partition_increment": 0.10372505799979775,
+          "sign": 1,
+          "step": 90
+        },
+        {
+          "absolute_correlation": 0.24883589208306686,
+          "correlation": 0.24883589208306686,
+          "edge": [
+            8,
+            9
+          ],
+          "log_partition_increment": 0.1603631835911191,
+          "sign": -1,
+          "step": 91
+        },
+        {
+          "absolute_correlation": 0.20700179195698928,
+          "correlation": -0.20700179195698928,
+          "edge": [
+            9,
+            7
+          ],
+          "log_partition_increment": 0.19601661368863244,
+          "sign": 1,
+          "step": 92
+        },
+        {
+          "absolute_correlation": 0.1537705730541079,
+          "correlation": 0.1537705730541079,
+          "edge": [
+            2,
+            7
+          ],
+          "log_partition_increment": 0.23961953614193993,
+          "sign": -1,
+          "step": 93
+        },
+        {
+          "absolute_correlation": 0.35797893851065754,
+          "correlation": 0.35797893851065754,
+          "edge": [
+            0,
+            1
+          ],
+          "log_partition_increment": 0.06087861436069897,
+          "sign": -1,
+          "step": 94
+        },
+        {
+          "absolute_correlation": 0.2897328341034489,
+          "correlation": -0.2897328341034489,
+          "edge": [
+            1,
+            7
+          ],
+          "log_partition_increment": 0.12423481719523771,
+          "sign": 1,
+          "step": 95
+        },
+        {
+          "absolute_correlation": 0.21370278977867657,
+          "correlation": 0.21370278977867657,
+          "edge": [
+            4,
+            7
+          ],
+          "log_partition_increment": 0.1903904488119153,
+          "sign": -1,
+          "step": 96
+        },
+        {
+          "absolute_correlation": 0.20089173772461172,
+          "correlation": 0.20089173772461172,
+          "edge": [
+            4,
+            9
+          ],
+          "log_partition_increment": 0.2011191773435908,
+          "sign": -1,
+          "step": 97
+        },
+        {
+          "absolute_correlation": 0.22007237454453368,
+          "correlation": -0.22007237454453368,
+          "edge": [
+            5,
+            1
+          ],
+          "log_partition_increment": 0.1850130339087288,
+          "sign": 1,
+          "step": 98
+        },
+        {
+          "absolute_correlation": 0.03586081205074069,
+          "correlation": 0.03586081205074069,
+          "edge": [
+            8,
+            1
+          ],
+          "log_partition_increment": 0.32992379203838995,
+          "sign": -1,
+          "step": 99
+        }
+      ],
+      "max_absolute_correlation": 0.4232423941174559,
+      "orders": [
+        10,
+        10
+      ],
+      "parent_matrix_sha256": "b22ecb64fb2a06ea9a57d3e1aebffaabc87eaed1527462a9b9e493c8ccfc8391",
+      "scaled_temperature": 4.0,
+      "sign_b": 1,
+      "sum_absolute_correlations": 27.654602207059817,
+      "verified_parent_profile": {
+        "M": 48,
+        "P": 48,
+        "Q": 46,
+        "bottom_spins": [
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "eigenvalues": [
+          -6.0454425023155105,
+          -5.686930749891981,
+          -5.465562672811272,
+          -4.735417453004776,
+          -4.629947478002931,
+          -4.336629001676467,
+          -3.844457813966249,
+          -3.1382909291157404,
+          -2.4394096085794352,
+          -0.7506913559561302,
+          1.3346864612747806,
+          2.5246199338666386,
+          3.4384481951724584,
+          3.5955940418311165,
+          3.8759861460441036,
+          4.640889040890341,
+          5.00099273009729,
+          5.174366870568473,
+          5.427474619472072,
+          6.059721526103224
+        ],
+        "energy_histogram": {
+          "-10": 23162,
+          "-12": 21116,
+          "-14": 18708,
+          "-16": 16417,
+          "-18": 14088,
+          "-2": 28180,
+          "-20": 11767,
+          "-22": 9663,
+          "-24": 7517,
+          "-26": 5717,
+          "-28": 4216,
+          "-30": 2930,
+          "-32": 2016,
+          "-34": 1272,
+          "-36": 743,
+          "-38": 423,
+          "-4": 27370,
+          "-40": 202,
+          "-42": 91,
+          "-44": 36,
+          "-46": 6,
+          "-6": 26350,
+          "-8": 24976,
+          "0": 28492,
+          "10": 23382,
+          "12": 21506,
+          "14": 19172,
+          "16": 16774,
+          "18": 14310,
+          "2": 28444,
+          "20": 11760,
+          "22": 9579,
+          "24": 7502,
+          "26": 5643,
+          "28": 4127,
+          "30": 2820,
+          "32": 1836,
+          "34": 1138,
+          "36": 660,
+          "38": 357,
+          "4": 27748,
+          "40": 173,
+          "42": 75,
+          "44": 23,
+          "46": 4,
+          "48": 1,
+          "6": 26630,
+          "8": 25166
+        },
+        "projective_bottom_count": 6,
+        "projective_top_count": 1,
+        "row_sums": [
+          9,
+          -1,
+          1,
+          1,
+          -3,
+          7,
+          -3,
+          3,
+          1,
+          -1,
+          11,
+          1,
+          3,
+          1,
+          -7,
+          3,
+          -5,
+          3,
+          3,
+          1
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "zero_defect_energy_target": 36.76955262170046
+    },
+    {
+      "b_scale_composition_defect": 2.1501593682207627,
+      "base_log_partition": 17.353329282919358,
+      "bridge": [
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "bridge_log_partition_cost": 13.248861755281183,
+      "child_caps": [
+        13,
+        13
+      ],
+      "final_cap": 48,
+      "final_log_partition": 30.60219103820054,
+      "gamma": 0.8944271909999159,
+      "increments": [
+        {
+          "absolute_correlation": 1.9823930145263197e-17,
+          "correlation": -1.9823930145263197e-17,
+          "edge": [
+            0,
+            5
+          ],
+          "log_partition_increment": 0.3558462197919279,
+          "sign": 1,
+          "step": 0
+        },
+        {
+          "absolute_correlation": 0.20436773919888407,
+          "correlation": 0.20436773919888407,
+          "edge": [
+            0,
+            4
+          ],
+          "log_partition_increment": 0.19821952934468356,
+          "sign": -1,
+          "step": 1
+        },
+        {
+          "absolute_correlation": 0.23947355306530527,
+          "correlation": 0.23947355306530527,
+          "edge": [
+            6,
+            4
+          ],
+          "log_partition_increment": 0.16845344090508854,
+          "sign": -1,
+          "step": 2
+        },
+        {
+          "absolute_correlation": 0.23381431517125503,
+          "correlation": 0.23381431517125503,
+          "edge": [
+            4,
+            4
+          ],
+          "log_partition_increment": 0.17331219407890092,
+          "sign": -1,
+          "step": 3
+        },
+        {
+          "absolute_correlation": 0.23493795856171124,
+          "correlation": 0.23493795856171124,
+          "edge": [
+            0,
+            0
+          ],
+          "log_partition_increment": 0.17234936364381048,
+          "sign": -1,
+          "step": 4
+        },
+        {
+          "absolute_correlation": 0.21209023657867362,
+          "correlation": 0.21209023657867362,
+          "edge": [
+            3,
+            4
+          ],
+          "log_partition_increment": 0.19174724511294886,
+          "sign": -1,
+          "step": 5
+        },
+        {
+          "absolute_correlation": 0.3502975951712462,
+          "correlation": -0.3502975951712462,
+          "edge": [
+            0,
+            2
+          ],
+          "log_partition_increment": 0.0682133593117647,
+          "sign": 1,
+          "step": 6
+        },
+        {
+          "absolute_correlation": 0.20453815663919414,
+          "correlation": 0.20453815663919414,
+          "edge": [
+            0,
+            1
+          ],
+          "log_partition_increment": 0.1980771522635643,
+          "sign": -1,
+          "step": 7
+        },
+        {
+          "absolute_correlation": 0.26787173199714714,
+          "correlation": 0.26787173199714714,
+          "edge": [
+            7,
+            4
+          ],
+          "log_partition_increment": 0.14370915390365563,
+          "sign": -1,
+          "step": 8
+        },
+        {
+          "absolute_correlation": 0.34748418549103033,
+          "correlation": 0.34748418549103033,
+          "edge": [
+            6,
+            0
+          ],
+          "log_partition_increment": 0.0708864179998343,
+          "sign": -1,
+          "step": 9
+        },
+        {
+          "absolute_correlation": 0.2546818191740939,
+          "correlation": 0.2546818191740939,
+          "edge": [
+            3,
+            2
+          ],
+          "log_partition_increment": 0.15527815898520236,
+          "sign": -1,
+          "step": 10
+        },
+        {
+          "absolute_correlation": 0.24462029716774222,
+          "correlation": -0.24462029716774222,
+          "edge": [
+            7,
+            1
+          ],
+          "log_partition_increment": 0.16401409905910935,
+          "sign": 1,
+          "step": 11
+        },
+        {
+          "absolute_correlation": 0.23978461355307165,
+          "correlation": 0.23978461355307165,
+          "edge": [
+            6,
+            6
+          ],
+          "log_partition_increment": 0.16818569344059212,
+          "sign": -1,
+          "step": 12
+        },
+        {
+          "absolute_correlation": 0.23878243984026,
+          "correlation": 0.23878243984026,
+          "edge": [
+            7,
+            3
+          ],
+          "log_partition_increment": 0.16904806493395788,
+          "sign": -1,
+          "step": 13
+        },
+        {
+          "absolute_correlation": 0.2921227340021062,
+          "correlation": -0.2921227340021062,
+          "edge": [
+            8,
+            3
+          ],
+          "log_partition_increment": 0.12208266369189039,
+          "sign": 1,
+          "step": 14
+        },
+        {
+          "absolute_correlation": 0.27956191173353423,
+          "correlation": 0.27956191173353423,
+          "edge": [
+            1,
+            4
+          ],
+          "log_partition_increment": 0.13334248990710007,
+          "sign": -1,
+          "step": 15
+        },
+        {
+          "absolute_correlation": 0.23450159417824637,
+          "correlation": -0.23450159417824637,
+          "edge": [
+            2,
+            3
+          ],
+          "log_partition_increment": 0.17272338678758137,
+          "sign": 1,
+          "step": 16
+        },
+        {
+          "absolute_correlation": 0.24188975615818034,
+          "correlation": 0.24188975615818034,
+          "edge": [
+            2,
+            1
+          ],
+          "log_partition_increment": 0.16637179066479976,
+          "sign": -1,
+          "step": 17
+        },
+        {
+          "absolute_correlation": 0.325382328760289,
+          "correlation": 0.325382328760289,
+          "edge": [
+            8,
+            1
+          ],
+          "log_partition_increment": 0.09164078110917279,
+          "sign": -1,
+          "step": 18
+        },
+        {
+          "absolute_correlation": 0.35690316966109453,
+          "correlation": 0.35690316966109453,
+          "edge": [
+            8,
+            5
+          ],
+          "log_partition_increment": 0.06190908758901659,
+          "sign": -1,
+          "step": 19
+        },
+        {
+          "absolute_correlation": 0.260746938305999,
+          "correlation": 0.260746938305999,
+          "edge": [
+            0,
+            3
+          ],
+          "log_partition_increment": 0.14997499905586886,
+          "sign": -1,
+          "step": 20
+        },
+        {
+          "absolute_correlation": 0.2749852112723497,
+          "correlation": -0.2749852112723497,
+          "edge": [
+            1,
+            7
+          ],
+          "log_partition_increment": 0.13741384495303227,
+          "sign": 1,
+          "step": 21
+        },
+        {
+          "absolute_correlation": 0.30598256470040214,
+          "correlation": -0.30598256470040214,
+          "edge": [
+            1,
+            1
+          ],
+          "log_partition_increment": 0.10950945122304187,
+          "sign": 1,
+          "step": 22
+        },
+        {
+          "absolute_correlation": 0.2894882286593022,
+          "correlation": 0.2894882286593022,
+          "edge": [
+            8,
+            2
+          ],
+          "log_partition_increment": 0.12445482831240676,
+          "sign": -1,
+          "step": 23
+        },
+        {
+          "absolute_correlation": 0.32840742820068186,
+          "correlation": 0.32840742820068186,
+          "edge": [
+            6,
+            5
+          ],
+          "log_partition_increment": 0.08882543008935251,
+          "sign": -1,
+          "step": 24
+        },
+        {
+          "absolute_correlation": 0.2502537681556676,
+          "correlation": 0.2502537681556676,
+          "edge": [
+            5,
+            1
+          ],
+          "log_partition_increment": 0.15913223057374615,
+          "sign": -1,
+          "step": 25
+        },
+        {
+          "absolute_correlation": 0.25917709259889976,
+          "correlation": -0.25917709259889976,
+          "edge": [
+            9,
+            1
+          ],
+          "log_partition_increment": 0.15135032536659493,
+          "sign": 1,
+          "step": 26
+        },
+        {
+          "absolute_correlation": 0.251716548879628,
+          "correlation": -0.251716548879628,
+          "edge": [
+            3,
+            0
+          ],
+          "log_partition_increment": 0.1578607028396885,
+          "sign": 1,
+          "step": 27
+        },
+        {
+          "absolute_correlation": 0.31633320723508057,
+          "correlation": 0.31633320723508057,
+          "edge": [
+            6,
+            3
+          ],
+          "log_partition_increment": 0.10001546273214984,
+          "sign": -1,
+          "step": 28
+        },
+        {
+          "absolute_correlation": 0.2627234730058575,
+          "correlation": 0.2627234730058575,
+          "edge": [
+            3,
+            7
+          ],
+          "log_partition_increment": 0.14824068215991074,
+          "sign": -1,
+          "step": 29
+        },
+        {
+          "absolute_correlation": 0.24398738797300745,
+          "correlation": -0.24398738797300745,
+          "edge": [
+            9,
+            7
+          ],
+          "log_partition_increment": 0.16456108099570865,
+          "sign": 1,
+          "step": 30
+        },
+        {
+          "absolute_correlation": 0.30806791244666915,
+          "correlation": 0.30806791244666915,
+          "edge": [
+            1,
+            0
+          ],
+          "log_partition_increment": 0.10760393071095739,
+          "sign": -1,
+          "step": 31
+        },
+        {
+          "absolute_correlation": 0.29711595274800257,
+          "correlation": -0.29711595274800257,
+          "edge": [
+            7,
+            6
+          ],
+          "log_partition_increment": 0.11757116500796275,
+          "sign": 1,
+          "step": 32
+        },
+        {
+          "absolute_correlation": 0.32848668855068835,
+          "correlation": -0.32848668855068835,
+          "edge": [
+            1,
+            3
+          ],
+          "log_partition_increment": 0.08875155867549589,
+          "sign": 1,
+          "step": 33
+        },
+        {
+          "absolute_correlation": 0.2327889075320803,
+          "correlation": -0.2327889075320803,
+          "edge": [
+            5,
+            2
+          ],
+          "log_partition_increment": 0.17419003973014913,
+          "sign": 1,
+          "step": 34
+        },
+        {
+          "absolute_correlation": 0.27799763438691116,
+          "correlation": 0.27799763438691116,
+          "edge": [
+            4,
+            2
+          ],
+          "log_partition_increment": 0.13473590982687408,
+          "sign": -1,
+          "step": 35
+        },
+        {
+          "absolute_correlation": 0.2696543958948697,
+          "correlation": -0.2696543958948697,
+          "edge": [
+            4,
+            5
+          ],
+          "log_partition_increment": 0.14213524395394453,
+          "sign": 1,
+          "step": 36
+        },
+        {
+          "absolute_correlation": 0.3209986857439994,
+          "correlation": 0.3209986857439994,
+          "edge": [
+            4,
+            9
+          ],
+          "log_partition_increment": 0.09570646605564337,
+          "sign": -1,
+          "step": 37
+        },
+        {
+          "absolute_correlation": 0.2870843573253756,
+          "correlation": 0.2870843573253756,
+          "edge": [
+            4,
+            0
+          ],
+          "log_partition_increment": 0.12661442631404002,
+          "sign": -1,
+          "step": 38
+        },
+        {
+          "absolute_correlation": 0.28694640976774555,
+          "correlation": -0.28694640976774555,
+          "edge": [
+            7,
+            7
+          ],
+          "log_partition_increment": 0.12673821471903374,
+          "sign": 1,
+          "step": 39
+        },
+        {
+          "absolute_correlation": 0.2881102333970991,
+          "correlation": -0.2881102333970991,
+          "edge": [
+            6,
+            9
+          ],
+          "log_partition_increment": 0.12569336673760198,
+          "sign": 1,
+          "step": 40
+        },
+        {
+          "absolute_correlation": 0.3391597481533447,
+          "correlation": 0.3391597481533447,
+          "edge": [
+            4,
+            8
+          ],
+          "log_partition_increment": 0.07875398673977729,
+          "sign": -1,
+          "step": 41
+        },
+        {
+          "absolute_correlation": 0.260034841077665,
+          "correlation": -0.260034841077665,
+          "edge": [
+            5,
+            9
+          ],
+          "log_partition_increment": 0.15059909481557,
+          "sign": 1,
+          "step": 42
+        },
+        {
+          "absolute_correlation": 0.34056542463377454,
+          "correlation": -0.34056542463377454,
+          "edge": [
+            3,
+            9
+          ],
+          "log_partition_increment": 0.07742979386017312,
+          "sign": 1,
+          "step": 43
+        },
+        {
+          "absolute_correlation": 0.3053402292451994,
+          "correlation": 0.3053402292451994,
+          "edge": [
+            5,
+            5
+          ],
+          "log_partition_increment": 0.11009566500153722,
+          "sign": -1,
+          "step": 44
+        },
+        {
+          "absolute_correlation": 0.2743455843587496,
+          "correlation": -0.2743455843587496,
+          "edge": [
+            8,
+            6
+          ],
+          "log_partition_increment": 0.13798152830304608,
+          "sign": 1,
+          "step": 45
+        },
+        {
+          "absolute_correlation": 0.37126324719628456,
+          "correlation": -0.37126324719628456,
+          "edge": [
+            9,
+            5
+          ],
+          "log_partition_increment": 0.0480653470701789,
+          "sign": 1,
+          "step": 46
+        },
+        {
+          "absolute_correlation": 0.28751121086618625,
+          "correlation": 0.28751121086618625,
+          "edge": [
+            2,
+            9
+          ],
+          "log_partition_increment": 0.12623128859007304,
+          "sign": -1,
+          "step": 47
+        },
+        {
+          "absolute_correlation": 0.3131970797720205,
+          "correlation": 0.3131970797720205,
+          "edge": [
+            9,
+            9
+          ],
+          "log_partition_increment": 0.1029015633064303,
+          "sign": -1,
+          "step": 48
+        },
+        {
+          "absolute_correlation": 0.37178435358628764,
+          "correlation": 0.37178435358628764,
+          "edge": [
+            8,
+            9
+          ],
+          "log_partition_increment": 0.0475593563730185,
+          "sign": -1,
+          "step": 49
+        },
+        {
+          "absolute_correlation": 0.40478589671754484,
+          "correlation": -0.40478589671754484,
+          "edge": [
+            8,
+            0
+          ],
+          "log_partition_increment": 0.01498205335321151,
+          "sign": 1,
+          "step": 50
+        },
+        {
+          "absolute_correlation": 0.2876447100514062,
+          "correlation": -0.2876447100514062,
+          "edge": [
+            5,
+            7
+          ],
+          "log_partition_increment": 0.12611143146176107,
+          "sign": 1,
+          "step": 51
+        },
+        {
+          "absolute_correlation": 0.3293874210022956,
+          "correlation": -0.3293874210022956,
+          "edge": [
+            9,
+            0
+          ],
+          "log_partition_increment": 0.0879116837026066,
+          "sign": 1,
+          "step": 52
+        },
+        {
+          "absolute_correlation": 0.3110584083698259,
+          "correlation": -0.3110584083698259,
+          "edge": [
+            0,
+            6
+          ],
+          "log_partition_increment": 0.1048649635614482,
+          "sign": 1,
+          "step": 53
+        },
+        {
+          "absolute_correlation": 0.3268084934838009,
+          "correlation": 0.3268084934838009,
+          "edge": [
+            1,
+            5
+          ],
+          "log_partition_increment": 0.0903144884924334,
+          "sign": -1,
+          "step": 54
+        },
+        {
+          "absolute_correlation": 0.2558467570909854,
+          "correlation": -0.2558467570909854,
+          "edge": [
+            2,
+            2
+          ],
+          "log_partition_increment": 0.1542617516196845,
+          "sign": 1,
+          "step": 55
+        },
+        {
+          "absolute_correlation": 0.27774615422487636,
+          "correlation": 0.27774615422487636,
+          "edge": [
+            1,
+            8
+          ],
+          "log_partition_increment": 0.134959741140133,
+          "sign": -1,
+          "step": 56
+        },
+        {
+          "absolute_correlation": 0.28679878978602164,
+          "correlation": 0.28679878978602164,
+          "edge": [
+            0,
+            8
+          ],
+          "log_partition_increment": 0.12687066578471987,
+          "sign": -1,
+          "step": 57
+        },
+        {
+          "absolute_correlation": 0.26660148090848734,
+          "correlation": -0.26660148090848734,
+          "edge": [
+            3,
+            6
+          ],
+          "log_partition_increment": 0.1448291462014325,
+          "sign": 1,
+          "step": 58
+        },
+        {
+          "absolute_correlation": 0.25105138040649055,
+          "correlation": -0.25105138040649055,
+          "edge": [
+            7,
+            2
+          ],
+          "log_partition_increment": 0.15843910352552612,
+          "sign": 1,
+          "step": 59
+        },
+        {
+          "absolute_correlation": 0.24533227914901898,
+          "correlation": -0.24533227914901898,
+          "edge": [
+            3,
+            8
+          ],
+          "log_partition_increment": 0.16339842189020146,
+          "sign": 1,
+          "step": 60
+        },
+        {
+          "absolute_correlation": 0.24292785279238002,
+          "correlation": 0.24292785279238002,
+          "edge": [
+            2,
+            6
+          ],
+          "log_partition_increment": 0.16547609866835358,
+          "sign": -1,
+          "step": 61
+        },
+        {
+          "absolute_correlation": 0.32568816707553594,
+          "correlation": 0.32568816707553594,
+          "edge": [
+            4,
+            3
+          ],
+          "log_partition_increment": 0.09135650830511466,
+          "sign": -1,
+          "step": 62
+        },
+        {
+          "absolute_correlation": 0.25307614113964877,
+          "correlation": -0.25307614113964877,
+          "edge": [
+            7,
+            8
+          ],
+          "log_partition_increment": 0.15667742058596845,
+          "sign": 1,
+          "step": 63
+        },
+        {
+          "absolute_correlation": 0.29388646404762986,
+          "correlation": 0.29388646404762986,
+          "edge": [
+            7,
+            0
+          ],
+          "log_partition_increment": 0.12049141318634057,
+          "sign": -1,
+          "step": 64
+        },
+        {
+          "absolute_correlation": 0.3026026522015511,
+          "correlation": -0.3026026522015511,
+          "edge": [
+            4,
+            1
+          ],
+          "log_partition_increment": 0.11259021029054475,
+          "sign": 1,
+          "step": 65
+        },
+        {
+          "absolute_correlation": 0.32153729214891774,
+          "correlation": 0.32153729214891774,
+          "edge": [
+            8,
+            8
+          ],
+          "log_partition_increment": 0.0952078161075583,
+          "sign": -1,
+          "step": 66
+        },
+        {
+          "absolute_correlation": 0.3538779265466731,
+          "correlation": -0.3538779265466731,
+          "edge": [
+            9,
+            6
+          ],
+          "log_partition_increment": 0.06480127281514086,
+          "sign": 1,
+          "step": 67
+        },
+        {
+          "absolute_correlation": 0.30255784915077766,
+          "correlation": 0.30255784915077766,
+          "edge": [
+            7,
+            5
+          ],
+          "log_partition_increment": 0.11263098418600537,
+          "sign": -1,
+          "step": 68
+        },
+        {
+          "absolute_correlation": 0.2980283284948015,
+          "correlation": 0.2980283284948015,
+          "edge": [
+            6,
+            7
+          ],
+          "log_partition_increment": 0.11674460673867196,
+          "sign": -1,
+          "step": 69
+        },
+        {
+          "absolute_correlation": 0.3095540943700054,
+          "correlation": 0.3095540943700054,
+          "edge": [
+            5,
+            3
+          ],
+          "log_partition_increment": 0.10624368833821465,
+          "sign": -1,
+          "step": 70
+        },
+        {
+          "absolute_correlation": 0.2785213731115192,
+          "correlation": 0.2785213731115192,
+          "edge": [
+            0,
+            9
+          ],
+          "log_partition_increment": 0.13426959238650343,
+          "sign": -1,
+          "step": 71
+        },
+        {
+          "absolute_correlation": 0.38512046793572546,
+          "correlation": 0.38512046793572546,
+          "edge": [
+            5,
+            8
+          ],
+          "log_partition_increment": 0.034522189257002844,
+          "sign": -1,
+          "step": 72
+        },
+        {
+          "absolute_correlation": 0.40835620348717844,
+          "correlation": 0.40835620348717844,
+          "edge": [
+            0,
+            7
+          ],
+          "log_partition_increment": 0.011393174726915756,
+          "sign": -1,
+          "step": 73
+        },
+        {
+          "absolute_correlation": 0.32836896108729063,
+          "correlation": 0.32836896108729063,
+          "edge": [
+            6,
+            8
+          ],
+          "log_partition_increment": 0.0888612798448078,
+          "sign": -1,
+          "step": 74
+        },
+        {
+          "absolute_correlation": 0.3949008782144842,
+          "correlation": 0.3949008782144842,
+          "edge": [
+            6,
+            2
+          ],
+          "log_partition_increment": 0.024851815526690024,
+          "sign": -1,
+          "step": 75
+        },
+        {
+          "absolute_correlation": 0.27623513229817515,
+          "correlation": -0.27623513229817515,
+          "edge": [
+            5,
+            0
+          ],
+          "log_partition_increment": 0.13630358072767634,
+          "sign": 1,
+          "step": 76
+        },
+        {
+          "absolute_correlation": 0.30777845677890525,
+          "correlation": 0.30777845677890525,
+          "edge": [
+            9,
+            8
+          ],
+          "log_partition_increment": 0.10786864266897656,
+          "sign": -1,
+          "step": 77
+        },
+        {
+          "absolute_correlation": 0.30757225182017534,
+          "correlation": 0.30757225182017534,
+          "edge": [
+            2,
+            0
+          ],
+          "log_partition_increment": 0.1080571777564179,
+          "sign": -1,
+          "step": 78
+        },
+        {
+          "absolute_correlation": 0.30147051337305486,
+          "correlation": -0.30147051337305486,
+          "edge": [
+            3,
+            3
+          ],
+          "log_partition_increment": 0.11362002600890322,
+          "sign": 1,
+          "step": 79
+        },
+        {
+          "absolute_correlation": 0.2786268546510383,
+          "correlation": 0.2786268546510383,
+          "edge": [
+            6,
+            1
+          ],
+          "log_partition_increment": 0.13417564924161723,
+          "sign": -1,
+          "step": 80
+        },
+        {
+          "absolute_correlation": 0.4340756566909382,
+          "correlation": 0.4340756566909382,
+          "edge": [
+            1,
+            6
+          ],
+          "log_partition_increment": -0.0148478152421056,
+          "sign": -1,
+          "step": 81
+        },
+        {
+          "absolute_correlation": 0.24672543635536867,
+          "correlation": 0.24672543635536867,
+          "edge": [
+            5,
+            6
+          ],
+          "log_partition_increment": 0.1621926096613949,
+          "sign": -1,
+          "step": 82
+        },
+        {
+          "absolute_correlation": 0.2540481726019593,
+          "correlation": 0.2540481726019593,
+          "edge": [
+            1,
+            2
+          ],
+          "log_partition_increment": 0.1558305816116008,
+          "sign": -1,
+          "step": 83
+        },
+        {
+          "absolute_correlation": 0.40470258709570234,
+          "correlation": 0.40470258709570234,
+          "edge": [
+            8,
+            7
+          ],
+          "log_partition_increment": 0.01506564274541794,
+          "sign": -1,
+          "step": 84
+        },
+        {
+          "absolute_correlation": 0.23072284090810044,
+          "correlation": -0.23072284090810044,
+          "edge": [
+            9,
+            3
+          ],
+          "log_partition_increment": 0.17595645048376937,
+          "sign": 1,
+          "step": 85
+        },
+        {
+          "absolute_correlation": 0.24525931403769943,
+          "correlation": 0.24525931403769943,
+          "edge": [
+            9,
+            4
+          ],
+          "log_partition_increment": 0.1634615349579061,
+          "sign": -1,
+          "step": 86
+        },
+        {
+          "absolute_correlation": 0.24716551496670655,
+          "correlation": -0.24716551496670655,
+          "edge": [
+            8,
+            4
+          ],
+          "log_partition_increment": 0.16181140828588597,
+          "sign": 1,
+          "step": 87
+        },
+        {
+          "absolute_correlation": 0.24526929445526482,
+          "correlation": -0.24526929445526482,
+          "edge": [
+            2,
+            4
+          ],
+          "log_partition_increment": 0.16345290237172916,
+          "sign": 1,
+          "step": 88
+        },
+        {
+          "absolute_correlation": 0.18477238493004236,
+          "correlation": -0.18477238493004236,
+          "edge": [
+            2,
+            5
+          ],
+          "log_partition_increment": 0.21445696952765622,
+          "sign": 1,
+          "step": 89
+        },
+        {
+          "absolute_correlation": 0.2476086048793099,
+          "correlation": -0.2476086048793099,
+          "edge": [
+            5,
+            4
+          ],
+          "log_partition_increment": 0.1614274516194393,
+          "sign": 1,
+          "step": 90
+        },
+        {
+          "absolute_correlation": 0.19462474881897415,
+          "correlation": -0.19462474881897415,
+          "edge": [
+            3,
+            5
+          ],
+          "log_partition_increment": 0.20632589036990812,
+          "sign": 1,
+          "step": 91
+        },
+        {
+          "absolute_correlation": 0.21493184815890504,
+          "correlation": -0.21493184815890504,
+          "edge": [
+            2,
+            7
+          ],
+          "log_partition_increment": 0.18935508596531694,
+          "sign": 1,
+          "step": 92
+        },
+        {
+          "absolute_correlation": 0.15419890999129396,
+          "correlation": 0.15419890999129396,
+          "edge": [
+            3,
+            1
+          ],
+          "log_partition_increment": 0.2392761558027362,
+          "sign": -1,
+          "step": 93
+        },
+        {
+          "absolute_correlation": 0.2989691399033255,
+          "correlation": 0.2989691399033255,
+          "edge": [
+            9,
+            2
+          ],
+          "log_partition_increment": 0.11589157137367406,
+          "sign": -1,
+          "step": 94
+        },
+        {
+          "absolute_correlation": 0.16844744800027697,
+          "correlation": -0.16844744800027697,
+          "edge": [
+            4,
+            7
+          ],
+          "log_partition_increment": 0.22778595958520048,
+          "sign": 1,
+          "step": 95
+        },
+        {
+          "absolute_correlation": 0.17758893273211285,
+          "correlation": -0.17758893273211285,
+          "edge": [
+            7,
+            9
+          ],
+          "log_partition_increment": 0.2203440167995001,
+          "sign": 1,
+          "step": 96
+        },
+        {
+          "absolute_correlation": 0.2203832673205951,
+          "correlation": -0.2203832673205951,
+          "edge": [
+            1,
+            9
+          ],
+          "log_partition_increment": 0.18474982630980877,
+          "sign": 1,
+          "step": 97
+        },
+        {
+          "absolute_correlation": 0.2744085900271529,
+          "correlation": -0.2744085900271529,
+          "edge": [
+            4,
+            6
+          ],
+          "log_partition_increment": 0.13792562365405162,
+          "sign": 1,
+          "step": 98
+        },
+        {
+          "absolute_correlation": 0.11630620570570856,
+          "correlation": -0.11630620570570856,
+          "edge": [
+            2,
+            8
+          ],
+          "log_partition_increment": 0.2692060146801029,
+          "sign": 1,
+          "step": 99
+        }
+      ],
+      "max_absolute_correlation": 0.4340756566909382,
+      "orders": [
+        10,
+        10
+      ],
+      "parent_matrix_sha256": "44033c5027882b26a4d69986cae506481141f58fe13b4a46b704023e340d04a9",
+      "scaled_temperature": 4.0,
+      "sign_b": -1,
+      "sum_absolute_correlations": 27.881319411268553,
+      "verified_parent_profile": {
+        "M": 48,
+        "P": 46,
+        "Q": 48,
+        "bottom_spins": [
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ]
+        ],
+        "eigenvalues": [
+          -5.839681806613969,
+          -5.670554901370651,
+          -5.268357302506807,
+          -5.007992685462485,
+          -4.779591402652027,
+          -4.369608844911036,
+          -3.6427639865912416,
+          -2.829113378904271,
+          -2.2933755563802607,
+          -1.8353369643379964,
+          1.7907808780437964,
+          2.2502723144948344,
+          3.384577670156185,
+          3.7731044890866214,
+          4.344356941923685,
+          4.504752717085457,
+          4.8319994972262155,
+          5.292422122003589,
+          5.612295895768451,
+          5.7518143039419085
+        ],
+        "energy_histogram": {
+          "-10": 23250,
+          "-12": 21308,
+          "-14": 18930,
+          "-16": 16730,
+          "-18": 14417,
+          "-2": 27966,
+          "-20": 11938,
+          "-22": 9716,
+          "-24": 7517,
+          "-26": 5567,
+          "-28": 4091,
+          "-30": 2856,
+          "-32": 1898,
+          "-34": 1239,
+          "-36": 743,
+          "-38": 399,
+          "-4": 27258,
+          "-40": 204,
+          "-42": 85,
+          "-44": 20,
+          "-46": 3,
+          "-48": 1,
+          "-6": 26394,
+          "-8": 24944,
+          "0": 28348,
+          "10": 23348,
+          "12": 21472,
+          "14": 19066,
+          "16": 16717,
+          "18": 14435,
+          "2": 28140,
+          "20": 11896,
+          "22": 9705,
+          "24": 7628,
+          "26": 5615,
+          "28": 4103,
+          "30": 2843,
+          "32": 1842,
+          "34": 1172,
+          "36": 667,
+          "38": 339,
+          "4": 27554,
+          "40": 161,
+          "42": 64,
+          "44": 22,
+          "46": 5,
+          "6": 26590,
+          "8": 25082
+        },
+        "projective_bottom_count": 1,
+        "projective_top_count": 5,
+        "row_sums": [
+          5,
+          -1,
+          3,
+          3,
+          -5,
+          1,
+          -11,
+          3,
+          -1,
+          3,
+          -11,
+          -3,
+          -3,
+          -1,
+          -1,
+          -1,
+          5,
+          1,
+          -5,
+          -1
+        ],
+        "top_spins": [
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "zero_defect_energy_target": 36.76955262170046
+    }
+  ],
+  "classification": "exact finite enumeration with floating Gibbs weights; heuristic scaling evidence",
+  "rule": "reveal the unrevealed edge with largest absolute Gibbs correlation and choose the opposite sign",
+  "schema": "quadratic-signing-greedy-gibbs-bridge-v1"
+}
