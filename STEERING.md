@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: second sustained phase, conference/product checkpoint
-(2026-07-31). Status: **computational--composition campaign active**.
+Evidence cutoff: four-hour synthesis of the second sustained phase (2026-07-31).
+Status: **computational--composition campaign paused at consolidation**.
 
 ## User-stated objective and workflow directives
 
@@ -35,62 +35,56 @@ u_{m+n}\le u_m+u_n+e(m+n),
 \sum_{j\ge1}\frac{e(2^jk)}{2^jk}\to0.               \tag{S1}
 ~~~
 
-The following structured states are inactive by scalable theorems:
+No route is active during the consolidation pause. The strongest new
+conditional target is adaptive soft composition. Revealing a bridge edge and
+choosing its sign against the Gibbs response `r_e` has exact increment
 
-- switching `K`-templates with `K=o(sqrt(n))`, bounded switching-rank-one
-  bridges, and universal sub-`n^(3/2)` edit nets;
-- fixed local profiles: equal `phi_6` families have an
-  `Omega(n^(3/2))` cap separation inside the correct-scale class;
-- fixed symmetric-Hadamard tensor alphabets and summably small operator/edit
-  perturbations, whose finite Boolean channels persist;
-- abelian Cayley/bent/Reed--Muller families, whose exact Walsh formula forces
-  normalized cap at least `1/2-o(1)`; and
-- homogeneous association-scheme/nonabelian fusion signings with asymptotic
-  orthogonality, whose regular trivial channel gives the same lower constant.
+~~~math
+J_\gamma(|r_e|)=\log\cosh\gamma
++\log(1-|r_e|\tanh\gamma).                         \tag{S2}
+~~~
 
-For the fixed-profile example a corrected common rational dual and Boolean
-witness prove an `Omega(n^(3/2))` separation between equal `phi_6` families.
-Their constants exceed the best optimum upper constant, so a separately
-certified near-optimal subclass is not falsified; minimum-cap representatives
-remain circular.
+For `gamma_N=t_N/sqrt(N)` and `t_N>=N^delta`, the exact sufficient lemma is
 
-The all-diagonal order-14 audit is stronger for the proposed common Sylvester
-lift: each of its `2^14` diagonal completions has an exact order-56 witness
-of energy at least 210, so every tensor continuation has normalized cap at
-least `210/56^(3/2)=0.501114...` and a linear `b`-landing gap. Any repair must
-make a cumulative leading-scale change on those explicit entangled states.
+~~~math
+\sum_eJ_{\gamma_N}(|r_e|)
+\le\gamma_N\Delta_{m,n}+O(t_NN^{1-\delta}),        \tag{S3}
+~~~
 
-The principal target remains a genuinely non-Kronecker, nontranslation,
-growing-state order operation. It must be defined without the unknown optimum,
-retain a near-minimizer, control the extreme Boolean tail, and have a
-geometrically summable `b`-defect. Fixed and edge-twisted Hadamard mosaics,
-summably small repairs, and every complete entry-local switching-natural graph
-product retain a proved leading entangled tensor channel. Three full rounds of
-active witnesses can be suppressed by one micro template while fresh faces
-reappear, so raw certificate hitting is also inactive.
+where `Delta` is the energy slack allowed by `2/3`-power composition. This
+would prove a summable recurrence. It requires average absolute response only
+of order `t_N/sqrt(N)`, quantitatively weaker than near-unit squared overlap.
 
-The cyclic two-fiber conference system is demoted from a positive landing
-lead. Its prime Paley branch is explicit but saturating. At order 38 there are
-one Paley and two graph-inequivalent non-Paley cyclic classes, all with exact
-witness 109 and fixed-cap interval `[109,113]`. The strong cyclic ansatz is
-exactly empty at `k=4`; this is finite nonexistence, not a scaling theorem.
-Every pointwise two/four-channel product fails by axial amplification. The
-universal local-field identity saves only `Theta(sqrt N)` from the spectral
-bound. Thus an infinite non-Paley family plus a cap theorem would still need
-a separate comparison with the true optimum.
+The obstruction is exact. The responses are posterior means in a noisy
+rank-one code, greedy chooses its least-likely output, and the sum in (S3) is
+exactly the final Gibbs bridge response. Its zero-temperature endpoint is the
+full bridge-cap target. Existing `D_infinity` code smoothing controls the
+opposite extremum (largest rather than deliberately least-likely output), and
+its threshold also excludes this low-rate rank-one code in the required
+regime. A random-support cubic theorem gives the correct aggregate scale for
+conference children, but only perturbatively; all connected orders enter when
+`t_N` grows. Stable computation through child order 10 shows no shrinking
+normalized shortfall and inconsistent minimizer-class margins. Thus (S3) has
+no lower-complexity certificate and is not a current target absent a new
+noisy-code theorem.
 
-Conference Gaussian rounding gives exactly the `1/pi` asymptotic constant.
-Universal root states are sharp one-flip and no-improving-two-flip traps;
-three-flip ascent escapes but higher evolution returns to full cap structure.
-Maximum independent excess uses different row/column switches, and the
-spectral-flatness/trace-four dichotomy also stops at `1/pi`. Conference systems
-remain an extremal testbed, not a convergence mechanism.
+The second-order shell theorem is an exact alternative: a convolution of the
+child and bridge deficit histograms below `2^(m+n-2)` certifies a switching.
+At balanced orders it needs extreme-shell probability below `2^(-2n+2)`.
+Generic tail estimates miss this exponential rate, fixed Hadamard glow
+moments are at the wrong scale, and the explicit Walsh-shell family has no
+verified `o(n)` landing theorem. It is retained for external review, not
+active proof search.
 
-The ranked direct-composition alternative is low-variance fractional
-rounding. A fractional bridge of ideal cap and variance `O(N^(2-eta))`
-rounds with a summable defect. It counts only with an analytic bridge and a
-direct Boolean margin certificate. Operator-norm certification cannot beat
-constant `1/2`; active-rank arguments return to common active faces.
+Full bridge Gram pairs, energy-conditioned variances, and conditional second
+moments are exactly falsified by exhaustive held-out collisions. Conditional
+fourth moments survive only finitely and are larger than the exact shellwise
+maximum envelope; the latter is equivalent to all bridge constraints.
+
+Earlier fixed templates, local profiles, Hadamard tensor alphabets, Cayley or
+fusion families, local switching-natural products, selected prior, common
+active faces, and cyclic conference products remain inactive for the scalable
+reasons in the ledger. Conference systems are testbeds, not a landing route.
 
 ## Rigorous frontier
 
@@ -112,32 +106,48 @@ uniform recurrence with geometrically summable power defect
   -> convergence of M_n/n^(3/2).
 ~~~
 
-## Inactive routes: selected prior and common active face
+## Blank-slate abstraction audit
 
-The selected-prior package is equivalent, up to constants, to the bare
-favorable low-row cut. The common-active-face theorem controls
-polynomial-scale moments, not exponentially rare bare favorability or its
-conditioned row. Neither is a current target.
+Three formulations were generated from the original minimax problem and only
+then compared with the ledger.
 
-## Blank-slate audit and nonconvergence
+1. Augmented-cut shell amalgamation gives the exact histogram theorem, but
+   needs exponential-rate extreme shells and a separate landing transfer.
+2. Finite-temperature exchange with adaptive signs gives (S3), but its exact
+   noisy-code identity re-expands to the complete Gibbs response.
+3. Conditional-moment compactness is falsified for Gram and second moments;
+   fourth moments retain exponential entropy, while the exact envelope merely
+   renames every constraint.
 
-The last blank-slate audit found no independent mechanism: bare little-oh
-composition permits slow oscillation, fixed-pattern compactness returns to
-adaptive selection, and fixed-temperature interpolation has extensive
-curvature. Scheduled audits remain governed by `README.md`.
+Neither of the first two is demonstrably more tractable in the required
+regime. The cubic calculation loses uniformity at the ground scale.
 
-Genuine nonconvergence remains a standing alternative. It requires a fixed
-`epsilon>0` and two infinite subsequences separated by it, or strict
-`liminf<limsup`. Route falsification does not count. The relative-order
-modulus forces alternating macroscopic log-scale epochs; none are known.
+## Ranked alternatives and falsification criteria
+
+1. **External noisy-code review.** Seek a theorem controlling the least-output
+   path in (S3) from a bounded-complexity invariant. It is falsified as a
+   reduction if the invariant must reconstruct every posterior response.
+2. **Extreme Walsh-glow review.** Seek a linear-moment-order, exponential-rate
+   shell theorem plus a minimizer-to-shell landing map. Either component alone
+   is insufficient.
+3. **New exact computation architecture.** A proof-producing solver or new
+   symmetry reduction could resume the `M_15` frontier; another timeout does
+   not count.
+4. **Genuine nonconvergence.** It still requires a fixed `epsilon>0` and two
+   separated infinite subsequences, or strict `liminf<limsup`. Route
+   falsification is not nonconvergence, and no candidate subsequences exist.
 
 ## Checkpoint decision
 
-The latest checkpoint has no new primary progress: it adds scalable route
-falsifiers and exact conference theorems but removes no landing obligation.
-It is the first consecutive no-primary checkpoint after the fixed-algebra
-progress. Continue the authorized phase through its four-hour boundary,
-prioritizing a nonlocal nonconference composition or an analytic fractional
-bridge with a Boolean margin. Do not return to raw separators, local graph
-products, more saturating conference examples, spectrum-only state,
-independent lifts, selected prior, or common active faces.
+This is the second consecutive substantive checkpoint without primary
+progress. The bounded diagnostic campaign found exact reformulations,
+falsifiers, and perturbative evidence, but no route that is both genuinely
+different and demonstrably more tractable at the required scale. No bound,
+uniform exact-minimizer lemma, landing obligation, recurrence step, scalable
+counterexample, or convergence/nonconvergence mechanism improved.
+
+Automatic research is therefore paused under the consolidation rule. Resume
+only on explicit user authorization or a genuinely new external ingredient;
+do not start replacement agents from the conditional lemmas alone. If
+ordinary waves later resume, Wave 61 remains the next mandatory blank-slate
+refresh boundary, with an earlier refresh after any decisive result.

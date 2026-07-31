@@ -40002,3 +40002,341 @@ convergence mechanism.  The unresolved target is an objective-independent,
 genuinely nonlocal cross-order state with a summable defect and a proved
 `o(n)` landing gap.  The authorized campaign continues through its four-hour
 boundary; one no-primary checkpoint does not trigger the stopping rule.
+
+### 10.131 Second sustained phase: nonlocal response diagnostics
+
+This section integrates the three connected tracks run after Section 10.130.
+The phase began at approximately 00:25 UTC and retained exact minimizer
+landing, rather than internal conference composition, as the central test.
+All finite claims below have reproducible artifacts; none changes the exact
+frontier through `M_14=21` or the rigorous asymptotic interval.
+
+#### 10.131.1 Second-order augmented-cut amalgamation
+
+For child signings `A,D` and a rectangular sign bridge `W`, put
+
+~~~math
+\begin{aligned}
+\eta(x,y)&=M_A+M_D-|H_A(x)+H_D(y)|,\\
+\zeta_W(u,v)&=L_W-|u^{\mathsf T}Wv|,
+\end{aligned}                                      \tag{10.1508}
+~~~
+
+where `L_W=max_(u,v)|u^T Wv|`.  If `N_eta,N_zeta` are their projective
+deficit histograms and `S=2^(m+n-2)`, the random-switching first moment proves
+the following **Verified** theorem:
+
+~~~math
+\sum_{e+z<g}N_\eta(e)N_\zeta(z)<S
+\quad\Longrightarrow\quad
+M_{m+n}\le M_A+M_D+L_W-g.                          \tag{10.1509}
+~~~
+
+In augmented-cut-code distance, the same statement is the exact identity
+
+~~~math
+r(P)=r(A)+r(D)+r(W)+{\Gamma\over2},                \tag{10.1510}
+~~~
+
+where `Gamma` is the minimum aligned deficit.  Thus shell histograms are a
+nonlocal state with polynomially many integer bins, genuinely smaller as an
+output than the complete response table.
+
+The exact finite audit is weak at scale.  For saved `5+5`, `6+6`, and `6+7`
+optimized bridges the histogram theorem certifies gains `2,2,2`, while exact
+switching gives `8,8,10`.  Fixed Sylvester bridges at `4+4` and `8+8` certify
+gain four, while exact switching gives four and eight.
+
+At balanced `n+n`, the required condition is exactly
+
+~~~math
+\Pr\{|H_A(X)+H_D(Y)|+|U^{\mathsf T}WV|
+       >M_A+M_D+r_n\}<2^{-2n+2}.                  \tag{10.1511}
+~~~
+
+It therefore needs exponential rate greater than `2 log 2`.  Universal
+Bonami/Hanson--Wright control for arbitrary low-cap children reaches only
+`exp(-Theta(sqrt n))` without an additional operator-norm theorem.  Even an
+idealized global Gaussian child bound with exact variance misses (10.1511)
+by a leading constant.  Banica's binary Hadamard glow theorem maps exactly
+to `N_zeta`, but controls fixed moments at the central `n` scale; (10.1511)
+needs moment order `Theta(n)` at the extreme `n^(3/2)` scale.  No imported
+theorem supplies that tail.
+
+A noncircular recursive Walsh-shell family was defined using fixed
+Sylvester/Hadamard bridge catalogues and (10.1509), with a Paley fallback.
+Its internal nodes have a summable `b`-defect when certified.  Its exact
+landing requirement remains
+
+~~~math
+0\le u_N-b_N=o(N).                                 \tag{10.1512}
+~~~
+
+No verified operation maps an arbitrary exact minimizer to this family with
+`o(N^(3/2))` cap loss.  The precise missing theorem is a minimizer-independent
+Walsh-shell reconstruction preserving cap to that order.  At its root it
+already needs both a balanced restriction budget and the exponential shell
+bound (10.1511).  This is a named, falsifiable landing hypothesis, not a
+proved reduction of the original obligation.
+
+#### 10.131.2 Exact falsifiers for Gram and moment states
+
+Exhaustive enumeration of every bridge for `3+3`, `3+4`, `3+5`, and `4+4`,
+in both relative child orientations, gives **Verified finite falsifiers** for
+all of the following states:
+
+1. the complete two-sided Gram pair `(CC^T,C^TC)`;
+2. child-energy-conditioned marginal cross variances; and
+3. energy-pair-conditioned cross second moments.
+
+Already at `3+3`, two explicit bridges with identical full Gram pair have
+parent caps 9 and 11.  The stable common-state hash and both matrices are in
+the certificate.  Independently, the two order-eight minimizer classes have
+the same complete augmented-cut distance/energy enumerator but universal
+double caps 40 and 32.  Marginal code distance and bridge Gram data therefore
+miss phase alignment even on exact minimizers.
+
+Conditioned second-plus-fourth moments survive those tests and all 262,144
+positive-orientation `3+6` bridges.  This is finite evidence only.  The state
+stores two numbers per energy-shell pair, larger than the exact envelope
+
+~~~math
+R_C(e,f)=\max_{H_A(x)=e,H_B(y)=f}|x^{\mathsf T}Cy|. \tag{10.1513}
+~~~
+
+The envelope predicts the parent cap exactly by
+`max_(e,f)(|e+f|+R_C(e,f))`, but bounding it at every shell is equivalent to
+the original bridge constraints.  No moment-to-maximum theorem avoids the
+exponential shell-cardinality loss.  The Gram/moment track is therefore
+stopped absent a new uniform inequality.
+
+#### 10.131.3 Exact soft-cap composition and its random-sign wall
+
+Define
+
+~~~math
+F_n(\gamma)=\min_A\log\mathbb E_x\cosh(\gamma H_A(x)),
+\qquad p_n(t)={1\over n}F_n(t/\sqrt n).             \tag{10.1514}
+~~~
+
+The **Verified** uniform squeeze
+
+~~~math
+{M_n\over n^{3/2}}-{log2\over t}
+\le {p_n(t)\over t}
+\le {M_n\over n^{3/2}}                             \tag{10.1515}
+~~~
+
+shows that convergence of `p_n(t)` for every fixed `t>0` would imply the
+original convergence.  Averaging a random bridge and the relative child
+orientation gives the exact factorization
+
+~~~math
+\mathbb E_{\epsilon,C} Z_{m+n}
+=(\cosh\gamma)^{mn}Z_mZ_n.                         \tag{10.1516}
+~~~
+
+At `gamma=t/sqrt N`, the child parameters contract to
+`t sqrt(m/N),t sqrt(n/N)`.  Subtracting `t^2/4` cancels the annealed bridge
+exactly, but repeated balanced composition drives `t` to zero and recovers
+only the annealed bound.  At fixed unscaled `gamma`, ordinary subadditivity
+is dominated by an artificial `-Theta(n^2)` centering term and is equivalent
+to the ground problem at the required remainder scale.
+
+For random sign reveals, the exact increment depends on the Gibbs response
+`r_e=<tau x_i y_j>` as
+
+~~~math
+I_\gamma(r_e)=\log\cosh\gamma
+ +{1\over2}\log(1-r_e^2\tanh^2\gamma).             \tag{10.1517}
+~~~
+
+A rank-one rate-distortion argument proves that at sufficiently small fixed
+scaled `t`, linear Gibbs entropy forces a positive fraction of unrevealed
+responses away from unit polarization.  Hence typical random bridges retain
+`Theta_t(N)` soft cost; bounded differences makes the lower tail
+`exp(-Omega_t(N))`.  This does not control the minimum among
+`2^(Theta(N^2))` bridges and lies below the calibrated child slack.  At a
+growing ground-resolving parameter, the exact sufficient overlap theorem
+requires average squared response `1-O(1/t_N)`, which scalar entropy and the
+unrestricted Frobenius dual do not provide.
+
+#### 10.131.4 Adaptive deterministic signs and the noisy-code identity
+
+Before revealing edge `e`, choose its sign opposite the current Gibbs
+response.  The one-edge ratio and logarithmic increment are exactly
+
+~~~math
+{Z_c\over Z_0}=\cosh\gamma+c r_e\sinh\gamma,
+\qquad
+J_\gamma(|r_e|)=\log\cosh\gamma
+ +\log(1-|r_e|\tanh\gamma).                        \tag{10.1518}
+~~~
+
+This deterministic rule gains linearly, rather than quadratically, in a
+small response.  With
+
+~~~math
+\Delta_{m,n}=(M_m^{2/3}+M_n^{2/3})^{3/2}-M_m-M_n,  \tag{10.1519}
+~~~
+
+the exact sufficient lemma is
+
+~~~math
+\sum_eJ_{\gamma_N}(|r_e|)
+\le\gamma_N\Delta_{m,n}+O(t_NN^{1-\delta}),
+\qquad \gamma_N={t_N\over\sqrt N}.                 \tag{10.1520}
+~~~
+
+For `t_N>=N^delta`, (10.1520) would give a summable `b`-defect.  A stronger
+simple condition asks only average absolute response of order
+`t_N/sqrt N`, far weaker than near-unit squared polarization.
+
+There is an exact noisy-code interpretation.  Under the disconnected child
+Gibbs law, let `q_ij=tau x_i y_j`, and pass this latent rank-one word through
+a binary channel of bias `tanh gamma`.  If `Pi` is the output law, then
+
+~~~math
+\Pi(C)={Z(C)\over2^{mn}Z(0)(\cosh\gamma)^{mn}},
+\qquad r_e=\mathbb E[q_e\mid C_{<e}].              \tag{10.1521}
+~~~
+
+Greedy always chooses the less likely output.  The chain rule proves
+
+~~~math
+\sum_eJ_\gamma(|r_e|)
+=\log\mathbb E_{\nu_0}
+ e^{\gamma\sum_eC^g_eq_e}.                         \tag{10.1522}
+~~~
+
+Thus the cumulative response is exactly the least-output likelihood of the
+complete noisy rank-one Gibbs code.  At zero temperature, the right side is
+the final assembled cap minus the disconnected cap.  Moving Gibbs faces do
+avoid the earlier *single* common-active-face quantifier, but their
+telescoping endpoint remains full bridge optimization.  Average entropy and
+mutual information control typical channel outputs, not this adaptively
+least-likely word.
+
+The `D_infinity` code-smoothing theorem of Pathegama--Barg
+([arXiv:2308.11009](https://arxiv.org/abs/2308.11009)) was mapped at the exact
+parameters as a final literature diagnostic.  With block length
+`L=mn`, latent support at most `2^(m+n-1)`, and crossover
+`delta=(1-tanh(gamma))/2`, its smoothing threshold is
+
+~~~math
+1-h_\infty(\delta)=\log_2(1+\tanh\gamma)
+                  =\Theta(t_N/\sqrt N),           \tag{10.1522a}
+~~~
+
+whereas the rank-one code rate is `O(1/N)`.  It therefore cannot be perfectly
+smoothed in the ground-resolving regime; the elementary largest-input-atom
+argument extends this impossibility to arbitrary weights on the same support.
+More importantly, the theorem controls the *largest* output probability,
+while (10.1520) asks for an upper bound on the deliberately *least*-likely
+output after the `L log cosh(gamma)` compensation.  The theorem is
+consequently compatible with the obstruction but removes no part of
+(10.1520).
+
+Two further **Verified** facts delimit the idea.
+
+- An all-prefix Dobrushin estimate keeps every unrevealed response small only
+  when `gamma=O(1/N)`, disjoint from the useful
+  `gamma=t_N/sqrt N` regime.
+- For conference children and an iid density-`rho` partial bridge, the cubic
+  response `Q_ij=(ACB+CC^TC)_ij` at an unrevealed edge satisfies
+
+  ~~~math
+  \mathbb E[Q_{ij}^2\mid C_{ij}=0]
+  =(m-1)(n-1)(\rho+\rho^3).                        \tag{10.1523}
+  ~~~
+
+  Hypercontractivity gives aggregate eligible cubic mass
+  `Theta_rho(N^3)`, formally the correct scale after multiplication by
+  `gamma^3`.  This concerns independent partial supports and the first
+  nonzero perturbative term.  The required `t_N` grows, so all connected
+  orders contribute and can cancel it; it is not a nested greedy theorem.
+
+The finite implementation and an independent stable replay enumerate all
+`2^(m+n-1)` parent states.  It hits the exact parent at `4+4 -> 8` and
+`5+5 -> 10`, then gives best tested caps 20, 23, 32, 39, and 48 for equal
+children of orders 6 through 10.  The best saved parent caps are respectively
+18, 21, 30, 33, and 42.  At fixed `t=4`, normalized first-moment shortfall
+does not improve through order 10; random reveal orders are worse on average,
+and held-out minimizer classes have inconsistent exact margins.  These are
+**Numerical finite diagnostics**, not a scaling law.
+
+#### 10.131.5 Operational table at the global boundary
+
+| Track | Target | Last concrete result | Next falsifiable step | Stopping condition reached |
+|---|---|---|---|---|
+| Constructive theorem | Noncircular structured landing | Exact shell theorem and explicit Walsh-shell family | Prove minimizer-to-shell reconstruction with balanced restriction and exponential tail | No implication supplies either bridge; defining near-optimal members is circular |
+| Falsification/computation | Bounded nonconference response state | Exact Gram/second-moment collisions; stable greedy replay through order 10 | Resume only if a compressed invariant predicts the exact Gibbs margin | More full-response caps have no improving normalized trend |
+| Independent abstraction | Cross-order interpolation | Exact adaptive noisy-code identity and correct-scale random cubic theorem | Control the full connected response along one nested path at growing `t_N` | Perturbation is outside the required regime; endpoint is full response |
+| Main integration | Summable `b`-defect plus `o(N)` landing | Verified all identities, hashes, finite caps, and quantifier scopes | Seek external input specifically on extreme Walsh glow or noisy rank-one least-output paths | No present route removes a landing or recurrence obligation |
+
+#### 10.131.6 Blank-slate abstraction audit
+
+Starting only from the flat quadratic minimax problem, three candidate
+formulations were generated before comparison with the route history.
+
+1. **Augmented-code shell amalgamation.**  Map a signing to a received word
+   for the cut code plus its complement and ask for a convolution theorem for
+   internal and rectangular distance deficits.  The concrete theorem is
+   (10.1509).  Comparison then found the exponential-rate wall (10.1511) and
+   the independent landing obligation (10.1512).
+2. **Finite-temperature exchange.**  Replace the maximum by a cosh partition
+   function, reveal bridge coordinates, and choose each coordinate against
+   its conditional derivative.  The concrete theorem is (10.1520).
+   Comparison exposed the exact noisy-code identity (10.1522): without a new
+   least-output theorem it is the full adaptive response, and its finite
+   normalized margin does not improve.
+3. **Conditional-moment compactness.**  Store Gram or low conditional moments
+   of the rectangular response and seek a uniform moment-to-maximum theorem.
+   Exact held-out collisions falsify Gram and second moments.  Fourth moments
+   survive only finitely and pay exponential shell entropy; the exact maximum
+   envelope is a vocabulary-only rewriting of all constraints.
+
+The first two are genuinely different mathematical representations, but
+neither is demonstrably more tractable at the required scale: one needs
+exponential extreme-shell information plus landing, and the other needs the
+complete least-likelihood Gibbs response.  The cubic theorem is positive
+perturbative evidence, but it does not survive the required growing
+temperature.  No candidate displaces the stopping assessment.
+
+#### 10.131.7 Updated frontier
+
+The rigorous frontier remains
+
+~~~math
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.                                     \tag{10.1524}
+~~~
+
+This phase produced exact identities, finite falsifiers, a noncircular test
+family, and a correct-scale cubic theorem in a perturbative model.  It did
+**not** produce primary progress under the repository definition: no uniform
+lemma for exact minimizers, improved bound, completed recurrence, scalable
+counterexample, or genuine convergence/nonconvergence mechanism was proved.
+This is the second consecutive substantive checkpoint without primary
+progress after Section 10.130.
+
+The bounded diagnostic has also completed.  Shell compression needs an
+unavailable exponential enumerator and still does not land.  Gram and second
+moments are exactly falsified.  Adaptive signs weaken near-polarization to a
+first-moment target, but the noisy-code identity and zero-temperature limit
+show that its uncompressed endpoint is the full bridge response; finite
+shortfalls do not shrink.  The perturbative cubic signal loses uniformity
+precisely when the soft parameter can resolve the ground scale.
+
+Accordingly the automatic campaign is paused at its four-hour boundary under
+the consolidation rule.  The strongest precise target to take to external
+mathematical review is a lower-complexity theorem for the least-output path in
+(10.1522), with the random-support cubic identity (10.1523) as its only
+positive structural signal.  A second external target is an exponential-rate
+extreme Walsh-glow theorem strong enough for (10.1511).  Further posterior
+tabulation, conference examples, Gram moments, or fixed-temperature finite
+caps are not justified without such a new ingredient.  Genuine
+nonconvergence remains a standing alternative and still requires separated
+infinite subsequences, not a route falsifier.
