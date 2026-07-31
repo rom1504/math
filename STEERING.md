@@ -1,8 +1,9 @@
 # Strategic steering
 
-Evidence cutoff: the four-hour checkpoint and its bundled-separation follow-up
-(2026-07-30). Status: **computational--composition campaign active, continuing
-on one named target** rather than returning to short proof waves.
+Evidence cutoff: second sustained phase, first substantive checkpoint
+(2026-07-31). Status: **computational--composition campaign active**, with
+the original bounded conference-state target narrowed by scalable
+obstructions rather than continued as stated.
 
 ## User-stated objective and workflow directives
 
@@ -27,51 +28,64 @@ mathematical route, conjecture, or ranking a user directive.
 
 ## Agent-authored campaign assessment
 
-The preferred target is now a **growing-block conference complement-transfer
-and structured-landing theorem**, a concrete specialization of the earlier
-restriction-profile/deep-hole route. For a precisely defined structured class
-`F_n`, set
-
-~~~math
-u_n=\min_{S\in F_n}\operatorname{cap}(S)^{2/3},
-\qquad b_n=M_n^{2/3}.
-~~~
-
-An exact sufficient package is
+The general sufficient package remains
 
 ~~~math
 0\le u_n-b_n=o(n),\qquad
 u_{m+n}\le u_m+u_n+e(m+n),
 \qquad
-\sum_{j\ge1}\frac{e(2^jk)}{2^jk}\to0.               \tag{S1}
+\sum_{j\ge1}\frac{e(2^jk)}{2^jk}\to0,               \tag{S1}
 ~~~
 
-The second statement makes `u_n/n` converge by balanced merging; the first
-then transfers convergence to `b_n/n` and hence `M_n/n^(3/2)`. The immediate
-research obligation is to define `F_n` using a bounded switching/spectral
-state that makes both parts of (S1) testable, rather than defining it by the
-unknown optimum.
+but the earlier bounded switching/spectral implementation is now inactive.
+Every switching `K`-template has cap at least `n^2/(8K)`; consequently the
+best such family has a superlinear `b`-scale landing gap whenever
+`K=o(sqrt(n))`. The same cross-character argument rules out a bounded number
+of balanced arbitrary children joined by switching-rank-one bridges.
+Universal sub-`n^(3/2)` edit nets have essentially full signing entropy.
 
-The best positive evidence is exact but finite. `PC(26)` has a pointwise
-`4+22` complement law: cap-4 children correspond exactly to cap-49
-complements, while cap-6 children correspond to cap 51. Every order-8
-minimizer-class pair has a cap-32 bridge. An imported Paley theorem proves all
-one- and two-vertex descendants switching equivalent, genuinely removing a
-family of verification obligations.
+Conference composition itself is no longer an open issue at the structured
+level. Canonical square-field Paley restrictions have a summable
+`O(n^0.7625)` defect, and Boolean-saturating conference children admit an
+explicit low-variance fractional bridge with `O(sqrt(n))` `b`-defect, also
+for a fixed symmetric-Hadamard number of blocks. Their landing clause is
+equivalent to the unknown assertion `M_n=(1/2+o(1))n^(3/2)`. Every
+`o(n)`-deletion and every regular affine-line restriction retains or exceeds
+the normalized constant `1/2`.
 
-The principal obstruction occurs at the required comparable scale. Among
-10,000 exact-profiled `13+13` splits of `PC(26)`, the best pair was `(24,24)`
-and no half reached `M_13=20`. The structured pair itself has negative
-`2/3`-power defect, so composition inside the family is not the issue;
-landing near exact minimizers is. A cap-63 fixed-child `4+22` separator still
-failed after bundling 629 distinct exact extremal-state cuts over 100 rounds.
-This strengthens the state-complexity warning but does not falsify cap 63.
+The strongest surviving structured-state experiment is now the 16-count
+profile `phi_6(A)`: the complete counts of induced switching classes at
+orders four, five, and six. It determines cap on every order-eight signing
+and on every balanced `PC(26)` restriction; a one-million-signing order-nine
+sample found no collision. This is finite evidence, not primary progress.
+The exact next theorem or falsifier is
 
-The route is falsified by a proved linear gap `u_n-b_n`, linear accumulated
-composition defect, arithmetic sparsity that defeats geometric landing, or a
-proof that the proposed bounded state is equivalent to full minimization.
-Ranked alternatives are a genuinely applicable augmented-cut-code theorem,
-broader nonconference constraint generation, and genuine nonconvergence.
+~~~math
+\phi_6(A)=\phi_6(B)
+\quad\Longrightarrow\quad
+|\operatorname{cap}(A)-\operatorname{cap}(B)|=o(n^{3/2})                \tag{S2}
+~~~
+
+uniformly, or a scalable equal-profile pair with a `Theta(n^(3/2))` gap.
+If (S2) holds, choosing one canonical representative of each realizable
+profile gives a polynomial-cardinality family that lands near an optimizer
+without referring to the optimizer. A composition/update rule for those
+representatives would still be required; a clean state description alone is
+not convergence.
+
+The ranked direct-composition alternative is low-variance fractional
+rounding. A fractional bridge of ideal cap and variance `O(N^(2-eta))`
+rounds with a summable defect. The raw fractional body has full parent-max
+separation, so this counts only when an analytic bridge and direct Boolean
+margin certificate are supplied. Ordinary operator-norm certification cannot
+do this below limiting constant `1/2`: a universal Frobenius bound forces
+subquadratic variance to imply that constant. Active-rank-only arguments
+return to the inactive common-active-face route.
+
+The orbit-complete calculation proves every `13+13` split of `PC(26)` has cap
+at least 24, versus `M_13=20`. Exact automorphism orbit state is exponential,
+and full spectrum has cap-24/cap-28 collisions. These facts retire symmetry
+labels and spectrum as standalone states, while leaving (S2) genuinely open.
 
 ## Rigorous frontier
 
@@ -115,6 +129,10 @@ Its one- and two-vertex descendants also have normalized cap tending to
 `1/2`. Thus bounded deletion is rigorously inactive as a source of a strict
 low construction; only growing/comparable blocks remain relevant.
 
+Composition within the Boolean-saturating conference family has a proved
+fixed-block, summable-defect theorem. This is retained as a clean positive
+mechanism and testbed, not as evidence for landing near the true optimum.
+
 ## Inactive routes: selected prior and common active face
 
 These are not current targets. The selected-prior package is equivalent, up
@@ -138,9 +156,11 @@ macroscopic log-scale epochs; no universal mechanism is known.
 
 ## Checkpoint decision
 
-Continuation is justified by primary progress: new exact values beyond the
-old range, an imported theorem with verified mapping, a scalable shallow-
-deletion obstruction, and the exact complement-cap law. Continue only the
-named growing-block/structured-landing target and integrate computation with
-the theorem attempted. Reassess after a substantive attempt or when the
-README stopping rule next triggers; do not resume automatic wave generation.
+Continuation is justified by new primary progress in this phase: the
+switching-template landing obstruction and the universal
+operator-norm/low-variance barrier are scalable theorems. Continue the
+bounded `phi_6` stability/falsification campaign and the Boolean-certified
+fractional alternative; do not return to raw conference separator rounds,
+generic orbit labels, spectrum-only state, independent lifts, selected prior,
+or common active faces. The first checkpoint does not end the user-authorized
+four-hour phase.

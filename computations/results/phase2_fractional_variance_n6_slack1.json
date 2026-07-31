@@ -1,0 +1,246 @@
+{
+  "best_restart": 0,
+  "child_caps": [
+    5,
+    5
+  ],
+  "classification": "reproducible heuristic convex-maximization over an exactly enumerated fractional bridge polytope; no global V optimum claimed",
+  "coordinates_with_abs_at_least_1_minus_1e-8": 10,
+  "elapsed_seconds": 2.67844557762146,
+  "fractional_bridge": [
+    [
+      -0.9283008588991061,
+      0.45241101567787523,
+      0.9999999999999999,
+      -1.0,
+      0.357233047033633,
+      -0.547588984322125
+    ],
+    [
+      -0.9999999999999991,
+      -0.2855339059327374,
+      0.45241101567787867,
+      1.0000000000000007,
+      0.7379449216106168,
+      -0.9999999999999994
+    ],
+    [
+      -0.6427669529663704,
+      0.6427669529663661,
+      0.2855339059327365,
+      0.9283008588991053,
+      0.619288125423016,
+      0.4524110156778741
+    ],
+    [
+      -0.19035593728849076,
+      -0.6192881254230173,
+      0.7379449216106152,
+      -0.7379449216106175,
+      0.9283008588991041,
+      -0.3572330470336329
+    ],
+    [
+      0.9048220313557539,
+      0.9283008588991057,
+      -1.0000000000000004,
+      -1.0,
+      0.7379449216106175,
+      -1.0
+    ],
+    [
+      -1.0,
+      0.6427669529663694,
+      -1.0,
+      -0.9048220313557546,
+      -0.19035593728849143,
+      0.9283008588991065
+    ]
+  ],
+  "fractional_bridge_sha256": "1b700c5a22b6640dfa66929b18873dba2c05e5c168f4dda9359b8f2153e84546",
+  "fractional_numerical_cap": 15.142135623730962,
+  "fractional_target": 15.142135623730951,
+  "ideal_power_target": 14.142135623730951,
+  "left": "computations/results/exact_m6.json",
+  "maximum_constraint_violation": 1.0658141036401503e-14,
+  "orders": [
+    6,
+    6
+  ],
+  "projective_parent_constraints": 2048,
+  "restarts": 6,
+  "right": "computations/results/exact_m6.json",
+  "rounded_bridge_cap_exact": 20,
+  "rounding_variance": 14.464505533148653,
+  "rounding_variance_over_bridge_edges": 0.40179182036524036,
+  "schema": "quadratic-signing-phase2-fractional-bridge-variance-v1",
+  "scipy_method": "HiGHS via scipy.optimize.linprog",
+  "seed": 20260811,
+  "squared_norm": 21.535494466851347,
+  "tangent_iterations": 4,
+  "target_slack": 1.0,
+  "trajectories": [
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 17.02369038017934,
+        "variance": 18.97630961982066
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 19.584766821637462,
+        "variance": 16.415233178362538
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 20.118103176413907,
+        "variance": 15.881896823586093
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 20.688797707138626,
+        "variance": 15.311202292861374
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 21.535494466851347,
+        "variance": 14.464505533148653
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 16.56895591809505,
+        "variance": 19.43104408190495
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 17.866456016746305,
+        "variance": 18.133543983253695
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 18.331933728575663,
+        "variance": 17.668066271424337
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 19.285958231638595,
+        "variance": 16.714041768361405
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 20.124772035194976,
+        "variance": 15.875227964805024
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 16.907755590564683,
+        "variance": 19.092244409435317
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 18.316041756696603,
+        "variance": 17.683958243303397
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 18.63975498651757,
+        "variance": 17.36024501348243
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 18.776156984084988,
+        "variance": 17.223843015915012
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 18.781334446404802,
+        "variance": 17.218665553595198
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 15.121572793352936,
+        "variance": 20.878427206647064
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 16.445535782843205,
+        "variance": 19.554464217156795
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 17.300275215844703,
+        "variance": 18.699724784155297
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 18.26262937474459,
+        "variance": 17.73737062525541
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 18.778501144274895,
+        "variance": 17.221498855725105
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 15.370128349193292,
+        "variance": 20.629871650806706
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 16.710570508263235,
+        "variance": 19.289429491736765
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 16.883808827120387,
+        "variance": 19.116191172879613
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 17.003614883888854,
+        "variance": 18.996385116111146
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 17.345740741436032,
+        "variance": 18.654259258563968
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 16.50336951149555,
+        "variance": 19.49663048850445
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 17.86436776608197,
+        "variance": 18.13563223391803
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 18.536829128359727,
+        "variance": 17.463170871640273
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 18.75747613319222,
+        "variance": 17.24252386680778
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 19.080123456428282,
+        "variance": 16.919876543571718
+      }
+    ]
+  ]
+}

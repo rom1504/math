@@ -1,0 +1,96 @@
+{
+  "best": {
+    "active_rank_on_fractional_entries": 21,
+    "active_state_inequalities": 140,
+    "bridge": [
+      [
+        -0.0,
+        -0.9999999999999997,
+        -0.0,
+        -1.0,
+        -0.0,
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.999999999999996
+      ],
+      [
+        1.0,
+        1.0,
+        -0.0,
+        0.9999999999999983,
+        0.9999999999999983,
+        -6.994405055138486e-15,
+        -0.0
+      ],
+      [
+        -1.0,
+        1.0,
+        -0.0,
+        1.000000000000005,
+        -0.0,
+        1.0000000000000044,
+        -0.0
+      ],
+      [
+        1.0000000000000009,
+        -1.0,
+        -1.0,
+        2.7755575615628914e-15,
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        1.0,
+        -0.0,
+        -0.0,
+        -1.0,
+        -0.0,
+        1.0000000000000002,
+        -1.0000000000000002
+      ],
+      [
+        -1.0000000000000009,
+        -0.9999999999999998,
+        2.55351295663786e-15,
+        -0.0,
+        1.0,
+        -2.1316282072802946e-15,
+        -0.9999999999999983
+      ]
+    ],
+    "fractional_entries": 21,
+    "max_constraint_residual": 1.9539925233402755e-14,
+    "trial": 153,
+    "variance": 20.999999999999996,
+    "variance_fraction": 0.4285714285714285
+  },
+  "bridge_variables": 49,
+  "child_a": "computations/results/exact_m7.json",
+  "child_b": "computations/results/exact_m7.json",
+  "classification": "heuristic LP vertex search; all spin-pair constraints are exact",
+  "linear_inequalities": 8192,
+  "orders": [
+    7,
+    7
+  ],
+  "projective_state_pairs": 4096,
+  "schema": "quadratic-signing-fractional-bridge-variance-probe-v1",
+  "seed": 20260731,
+  "sign_b": 1,
+  "solver_status_counts": {
+    "0": 200
+  },
+  "target": 20.0,
+  "trials": 200,
+  "warning": "random LP objectives do not certify the global minimum of variance"
+}
+sha256 47c6997d58a7b78c000801ac2ce75c20837b37c417d901009266a561920a8a17

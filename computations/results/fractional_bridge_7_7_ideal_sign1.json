@@ -1,0 +1,95 @@
+{
+  "best": {
+    "active_rank_on_fractional_entries": 8,
+    "active_state_inequalities": 15,
+    "bridge": [
+      [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -0.5441558772842896,
+        -0.0441558772842896,
+        0.9558441227157104
+      ],
+      [
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.4558441227157104,
+        1.0,
+        -1.0,
+        -0.4558441227157104,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        1.0,
+        0.5441558772842896,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.4116882454314208,
+        0.0441558772842896
+      ]
+    ],
+    "fractional_entries": 8,
+    "max_constraint_residual": 0.0,
+    "trial": 3,
+    "variance": 5.905176352650962,
+    "variance_fraction": 0.12051380311532575
+  },
+  "bridge_variables": 49,
+  "child_a": "computations/results/exact_m7.json",
+  "child_b": "computations/results/exact_m7.json",
+  "classification": "heuristic LP vertex search; all spin-pair constraints are exact",
+  "linear_inequalities": 8192,
+  "orders": [
+    7,
+    7
+  ],
+  "projective_state_pairs": 4096,
+  "schema": "quadratic-signing-fractional-bridge-variance-probe-v1",
+  "seed": 20260733,
+  "sign_b": 1,
+  "solver_status_counts": {
+    "0": 100
+  },
+  "target": 25.45584412271571,
+  "trials": 100,
+  "warning": "random LP objectives do not certify the global minimum of variance"
+}

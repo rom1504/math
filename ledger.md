@@ -39022,3 +39022,282 @@ endorsement of the structured-family hypothesis.
 | Falsification/computation | Test structured landing and composition across held-out and nonconference data at scaling-relevant orders | `13+13` Paley sample has best pair `(24,24)` versus `M_13=20`; 629 bundled cuts did not resolve cap 63 | Produce a reproducible scaling statistic tied to one uniform lemma or a scalable obstruction; do not add uncompressed separator states | Isolated caps, another raw conference family tending to `1/2`, solver timeout, or repeated finite data without a scaling implication |
 | Independent abstraction | Seek a genuinely different exact mapping and inequality in codes, discrepancy, designs, minimax, or interpolation | Augmented-cut-code identity is exact, but known direct-sum results inspected have the wrong code or direction | State the theorem before comparing vocabulary, verify normalization, and test whether it is genuinely weaker than full optimization | Equivalent reformulation, unchecked literature analogy, or two checks with no concrete inequality |
 | Main integration | Falsify definitions, verify constants and programs, and turn patterns into exact obligations | Checkpoint sufficient package (10.1457) and its explicit falsifiers | Derive an independent structural lower/upper mechanism and audit every subagent claim | Redirect any track that repeats a known obstruction twice; consolidate only at material 45--60 minute checkpoints |
+
+### 10.127 Second sustained phase: first substantive checkpoint
+
+This checkpoint integrates the first parallel constructive, falsification,
+independent-abstraction, and main-agent results. The central question remains
+structured landing in the `b_n=M_n^(2/3)` scale. Claims below are separated
+into proved, certified finite, heuristic, and open statements.
+
+#### 10.127.1 A scalable obstruction to switching-template landing
+
+Call a signing a switching `K`-template if, after switching, its vertices can
+be partitioned into at most `K` cells and every edge sign depends only on its
+ordered pair of cells. The main integration proves, for `n>=4`,
+
+~~~math
+\operatorname{cap}(A)\ge {n^2\over8K}.              \tag{10.1458}
+~~~
+
+Indeed, if the largest cell has size `t`, principal-restriction monotonicity
+gives `cap(A)>=binom(t,2)`. On the spins constant within switching cells, the
+distinct quotient characters are orthogonal and give
+
+~~~math
+\operatorname{cap}(A)^2\ge\sum_{a<b}s_a^2s_b^2.
+~~~
+
+Writing `S_2=sum s_a^2` and `S_4=sum s_a^4`, split according as
+`t^2>=n^2/(2K)` or not. In the second case,
+`S_2>=n^2/K`, `S_4<=t^2S_2`, and the last display is at least
+`n^4/(4K^2)`; the first case is handled by the largest cell. This proves
+(10.1458).
+
+Since the elementary random-signing argument gives `M_n=O(n^(3/2))`, the
+family of all such templates has
+
+~~~math
+{1\over n}\left(
+ \min_A\operatorname{cap}(A)^{2/3}-M_n^{2/3}
+\right)\longrightarrow+\infty
+\quad\text{whenever }K=o(\sqrt n).                  \tag{10.1459}
+~~~
+
+This is **proved primary progress** under the campaign criterion: a broad,
+noncircular proposed structured family has a superlinear landing gap.
+
+The cross-block argument is stronger than the definition suggests. If `K`
+balanced cells contain arbitrary internal child signings but every cross
+block is switching-rank one, then
+
+~~~math
+\operatorname{cap}(A)\ge {\alpha^2n^2\over2K}
+~~~
+
+when every cell has size at least `alpha n/K`. Thus even arbitrary exact
+children need `K=Omega(sqrt(n))` unless their bridges contain genuine Boolean
+complexity. A separate Hamming-volume argument shows that a universal
+`o(n^(3/2))` edit net has size `2^(binom(n,2)-o(n^2))`; generic edit rounding
+cannot supply a low-entropy landing family. Full proofs are in
+`artifacts/phase2_switching_template_obstruction.md`.
+
+#### 10.127.2 Explicit conference composition is solved, but landing is not
+
+Let `r` be the least odd prime with `r^2+1>=n`, set `N=r^2+1` and
+`d=N-n`, and take any `n`-vertex principal restriction of `PC(N)`. An explicit
+Boolean `+r` eigenvector gives the exact deletion identity
+
+~~~math
+H_{C[K]}(x_K)={rN\over2}-rd+H_{C[D]}(x_D).           \tag{10.1460}
+~~~
+
+The principal spectral bound therefore squeezes its cap between
+`r(n-2d)/2` and `rn/2`. The Baker--Harman--Pintz prime-gap theorem gives
+`d=O(n^0.7625)`, so the canonical singleton family obeys
+
+~~~math
+u_n=2^{-2/3}n+O(n^{0.7625})                          \tag{10.1461}
+~~~
+
+and hence has a geometrically summable composition defect. This is a
+**proved construction using a verified imported theorem**. Its landing clause
+is nevertheless equivalent to
+
+~~~math
+M_n=(1/2+o(1))n^{3/2}.
+~~~
+
+It therefore leaves the entire unknown leading-constant problem intact.
+Equation (10.1460) also proves that every `o(N)`-vertex deletion retains
+normalized cap `1/2`.
+
+The most natural comparable coset restriction is rigorously worse. A union
+of `s` parallel affine lines in `GF(r^2)` has, for even `s`, exact cap
+`r^2s/2`; for odd `s` it differs by at most `r/2`. If `s/r->alpha>0`,
+
+~~~math
+{\operatorname{cap}\over(rs)^{3/2}}\longrightarrow
+{1\over2\sqrt\alpha}.                               \tag{10.1462}
+~~~
+
+Thus bounded deletion and regular line/coset states are inactive as landing
+routes. The report and exact finite audits are in
+`artifacts/constructive_family_phase2_report.md`.
+
+#### 10.127.3 Orbit-complete balanced landing and surviving local state
+
+`phase2_paley_orbit_landing.py` constructs `PGammaL(2,25)`, verifies every
+generator directly as a switching/global-negation symmetry of `PC(26)`, and
+reduces all `binom(26,13)=10,400,600` halves to 391 orbits. One exact Gray
+evaluation per orbit proves the complete subset-weighted distribution
+
+~~~text
+cap:       24        26        28       30
+subsets: 2,610,400 4,913,300 2,750,800 126,100.
+~~~
+
+Hence **every** balanced `PC(26)` restriction has cap at least 24, four above
+`M_13=20`; the normalized finite `b`-gap is `0.0732517...`. This is a
+**certified exhaustive finite theorem**, not an asymptotic landing
+falsifier. The general orbit lower bound
+
+~~~math
+{\binom{q+1}{(q+1)/2}\over2q(q^2-1)}
+~~~
+
+also proves that exact automorphism-orbit labels alone have exponential state
+complexity along this family.
+
+Complete spectrum does not determine Boolean cap: eleven exact spectral
+states among these halves contain both cap-24 and cap-28 orbits. Spectrum
+plus every induced switching-class count through size five still has one
+such collision.
+
+A new candidate survives the bounded audit. Let `phi_6(A)` be the 16 integer
+counts of the switching/permutation/global-negation classes of all induced
+subsignings of sizes four, five, and six. This state determines cap on
+
+- all `2^20` root-gauged/global-negation representatives at order eight; and
+- all 391 balanced `PC(26)` orbits at order thirteen.
+
+A deterministic one-million-signing order-nine sample found no collision.
+These are **finite positive facts only**. At order thirteen the state has 376
+values on 391 orbits, and no uniform cap-stability, bridge-update, or landing
+theorem is known. The exact asymptotic target is now falsifiable:
+
+~~~math
+\phi_6(A)=\phi_6(B)\quad\Longrightarrow\quad
+|\operatorname{cap}(A)-\operatorname{cap}(B)|=o(n^{3/2})                 \tag{10.1463}
+~~~
+
+uniformly in order `n`, or a suitable one-sided version sufficient for a
+canonical representative family. A scalable equal-profile pair with a
+`Theta(n^(3/2))` cap gap falsifies it. The current data do not establish
+(10.1463).
+
+#### 10.127.4 Fractional rounding: exact implication and exact limitation
+
+For children `A,B`, let `P_T(A,B)` be the fractional bridge body on
+`[-1,1]^(m*n)` whose exact parent cap is at most `T`. If `C_0` lies in this
+body and
+
+~~~math
+V(C_0)=\sum_{ij}(1-c_{ij}^2),\qquad
+L=(m+n+2)\log2,
+~~~
+
+independent mean-`C_0` rounding and Bernstein's inequality prove that some
+integral bridge has parent cap at most
+
+~~~math
+T+\sqrt{2V(C_0)L}+{4\over3}L.                       \tag{10.1464}
+~~~
+
+Thus `V=O(N^(2-eta))` at an ideal fractional target would give a summable
+`b`-defect. This is a **proved rounding theorem**, but `P_T` has the full
+exponential parent-state separation problem. Without an analytic `C_0` or a
+compressed margin certificate, the low-variance existence statement is not a
+reduction. Active-rank language alone is tautological after projection and
+would resurrect the inactive common-active-face route.
+
+The constructive track supplies one genuine analytic realization. If `S` is
+a Boolean-saturating symmetric conference signing of order `n`, then
+
+~~~math
+P_0=\begin{pmatrix}S&S\\S&-S\end{pmatrix},\qquad
+P_0^2=2(n-1)I,\qquad V(S)=n.                        \tag{10.1465}
+~~~
+
+Filling the missing diagonal cross edges arbitrarily gives an integral
+parent with cap at most `2 sqrt(2) cap(S)+n`, hence `O(sqrt(n))` defect in the
+`b` scale. Fixed symmetric-Hadamard numbers of blocks have the same summable
+defect. This is a **proved bounded-certificate composition theorem**, but it
+acts only inside the already-known normalized-`1/2` conference family and
+does not advance landing.
+
+There is a sharp general barrier to extending this by ordinary spectral
+certification. For equal order-`n` children and a fractional bridge of
+variance `V`, Frobenius norm gives
+
+~~~math
+\|P\|_{op}^2\ge2n-1-{V\over n}.                     \tag{10.1466}
+~~~
+
+If the ideal cap `2 sqrt(2) p` is certified only through
+`cap(P)<=n||P||_op`, then
+
+~~~math
+V\ge2n^2-n-{8p^2\over n}.                           \tag{10.1467}
+~~~
+
+Consequently `V=o(n^2)` forces `p/n^(3/2)->1/2`. Any low-variance bridge
+landing below `1/2` needs a genuinely Boolean, state-weighted inequality;
+operator norm cannot certify it. This is another **proved scalable route
+obstruction**, independently derived by two tracks.
+
+The variance-oriented LP probes exhaust every state constraint but only
+heuristically maximize distance toward the cube. Their small-order values are
+erratic and supply neither a scaling law nor a lower bound on `V`; they are
+classified as a negative diagnostic.
+
+#### 10.127.5 Exact code baseline and independent lift no-go
+
+The augmented-cut-code normalization gives the proved baseline
+
+~~~math
+M_{m+n}\le M_m+M_n+B_{m,n},                          \tag{10.1468}
+~~~
+
+where `B_(m,n)` is the rectangular Gale--Berlekamp optimum. Bowlin's primary
+theorem maps exactly to
+
+~~~math
+B_{l,r}\ge lr\,2^{-(l-1)}
+\binom{l-1}{\lfloor(l-1)/2\rfloor},                 \tag{10.1469}
+~~~
+
+with equality precisely when `2^(l-1)` divides `r`. It also proves full
+`2^(l-1)` linear rank for the exact column-type response map. The rectangular
+term is leading at comparable shores, so (10.1468) is not a convergence
+recurrence; the rank theorem obstructs exact linear compression, not
+approximate nonlinear state.
+
+An independently derived biased random lift also fails at the correct scale.
+To blow an order-`n` seed up by a factor `k`, matching the ideal macro energy
+requires edge bias `mu=k^(-1/2)`. The centered microedge variance then stays
+bounded away from zero and contributes `Theta((nk)^(3/2))` both in the upper
+union bound and in a direct high-probability lower bound. Thus independent
+microblocks have linear `b`-defect. Only a seed-state-dependent absorption
+mechanism could escape this no-go.
+
+#### 10.127.6 Operational table at the checkpoint
+
+| Track | Last concrete result | Next falsifiable step | Stop or redirect condition |
+|---|---|---|---|
+| Constructive theorem | Summable conference multi-block composition; switching-template and spectral/variance obstructions | Determine whether the 16-count state admits a uniform collision-stability theorem, or derive a Boolean certificate not based on operator norm | Any argument that silently assumes `M_n~n^(3/2)/2`, uses only spectrum, or returns to full parent separation |
+| Falsification/computation | Orbit-complete cap-24 lower for every `PC(26)` half; `phi_6` survives order 8 and the Paley halves | Seek a scalable equal-`phi_6` cap collision or a quantitative bound, with held-out nonconference constructions | More isolated profiles, deeper sizes without a theorem, or sampled noncollisions without a scaling implication |
+| Independent abstraction | Exact fractional rounding; Bowlin rank obstruction; biased-lift no-go; bounded literature survey | Attack profile stability or another genuinely Boolean state-weighted inequality from a blank slate | One-sided frustration, graphon `n^2` normalization, ordinary random lifts, or vocabulary-only reformulations |
+| Main integration | Proved (10.1458)--(10.1459) and audited every finite/program claim | Test whether profile compression removes a real obligation and whether it can be composed; keep fractional rounding secondary unless an analytic nonconference bridge appears | Do not count finite predictor success or conference-internal composition as primary progress |
+
+#### 10.127.7 Updated frontier
+
+The exact values through `M_14=21` and the rigorous asymptotic interval are
+unchanged. This checkpoint nevertheless contains primary progress: the
+switching-template theorem (10.1458)--(10.1459) and the universal
+spectral/low-variance barrier (10.1466)--(10.1467) are scalable obstructions.
+
+The earlier generic bounded conference complement-state target is no longer
+defensible in that form. Bounded switching quotients, spectrum alone,
+automorphism orbit labels, shallow conference restrictions, regular affine
+line restrictions, independent lifts, and operator-norm-certified
+low-variance bridges are inactive.
+
+The strongest surviving structured-state experiment is the fixed-dimensional
+profile `phi_6`, with exact stability target (10.1463). It is not promoted to
+a convergence route until it either supplies a uniform `o(n^(3/2))`
+collision theorem plus a composition/update rule, or survives a serious
+scalable falsification attempt. The analytic fractional bridge theorem
+(10.1464) remains a ranked alternative only when accompanied by a direct
+Boolean margin certificate. The selected-prior and common-active-face routes
+remain inactive; genuine nonconvergence remains a standing alternative.

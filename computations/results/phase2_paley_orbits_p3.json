@@ -1,0 +1,162 @@
+{
+  "all_orbit_records_sha256": "0163b8799fbcf6a1a24cfec2c8309948c4507a1730d57649b5d87acec9df50fc",
+  "cap_invariance_reason": "a fractional-linear map multiplies chi(x-y) by one global character and two vertex characters; Frobenius preserves chi",
+  "cap_orbit_histogram": {
+    "4": 1,
+    "6": 1
+  },
+  "cap_subset_histogram": {
+    "4": 72,
+    "6": 180
+  },
+  "child_order": 5,
+  "classification": "exhaustive balanced-subset orbit classification under the exact PGammaL action; exact Gray cap for every orbit representative",
+  "conference_matrix_sha256": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+  "conference_order": 10,
+  "elapsed_seconds": 0.021655024960637093,
+  "evaluator_source": "computations/phase2_subset_caps_gray.cpp",
+  "field": "GF(9)=GF(3)[t]/(t^2-2)",
+  "generator_action_certificates": [
+    {
+      "global_sign": 1,
+      "negative_switch_vertices": []
+    },
+    {
+      "global_sign": 1,
+      "negative_switch_vertices": []
+    },
+    {
+      "global_sign": -1,
+      "negative_switch_vertices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "global_sign": 1,
+      "negative_switch_vertices": [
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "global_sign": 1,
+      "negative_switch_vertices": []
+    }
+  ],
+  "group": "PGammaL(2,q)",
+  "group_order": 1440,
+  "group_order_formula": "2*q*(q^2-1)",
+  "minimum_cap": 4,
+  "minimum_cap_orbits": [
+    {
+      "cap": 4,
+      "max_energy": 4,
+      "min_energy": -4,
+      "orbit_size": 72,
+      "vertices": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ]
+    }
+  ],
+  "orbit_size_histogram": {
+    "180": 1,
+    "72": 1
+  },
+  "orbit_spectral_records": [
+    {
+      "cap": 6,
+      "characteristic_coefficients": [
+        1,
+        0,
+        -10,
+        -4,
+        17,
+        12
+      ],
+      "orbit_size": 180,
+      "power_traces_3_through_n": [
+        12,
+        132,
+        140
+      ],
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "cap": 4,
+      "characteristic_coefficients": [
+        1,
+        0,
+        -10,
+        0,
+        25,
+        0
+      ],
+      "orbit_size": 72,
+      "power_traces_3_through_n": [
+        0,
+        100,
+        0
+      ],
+      "vertices": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ]
+    }
+  ],
+  "schema": "quadratic-signing-phase2-paley-orbit-landing-v1",
+  "spectral_state_audit": {
+    "3": {
+      "ambiguous_cap_sets": {},
+      "ambiguous_states": 0,
+      "cap_determined": true,
+      "distinct_states": 2,
+      "state": "power traces through degree 3, modulo global negation"
+    },
+    "4": {
+      "ambiguous_cap_sets": {},
+      "ambiguous_states": 0,
+      "cap_determined": true,
+      "distinct_states": 2,
+      "state": "power traces through degree 4, modulo global negation"
+    },
+    "5": {
+      "ambiguous_cap_sets": {},
+      "ambiguous_states": 0,
+      "cap_determined": true,
+      "distinct_states": 2,
+      "state": "power traces through degree 5, modulo global negation"
+    },
+    "full_characteristic_polynomial": {
+      "ambiguous_cap_sets": {},
+      "ambiguous_states": 0,
+      "cap_determined": true,
+      "distinct_states": 2,
+      "state": "complete spectrum modulo global negation"
+    }
+  },
+  "subset_orbits": 2,
+  "total_balanced_subsets": 252
+}

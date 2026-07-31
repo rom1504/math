@@ -1,0 +1,67 @@
+{
+  "best": {
+    "active_rank_on_fractional_entries": 13,
+    "active_state_inequalities": 41,
+    "bridge": [
+      [
+        -0.0,
+        -0.0,
+        -1.0,
+        -0.0,
+        -1.0
+      ],
+      [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        1.0,
+        -1.0,
+        0.6568542494923806,
+        0.6568542494923806
+      ],
+      [
+        0.3431457505076194,
+        -1.0,
+        -0.6568542494923806,
+        0.6568542494923806,
+        -0.6568542494923806
+      ],
+      [
+        0.6568542494923806,
+        1.0,
+        -0.3431457505076194,
+        1.0,
+        -1.0
+      ]
+    ],
+    "fractional_entries": 13,
+    "max_constraint_residual": 0.0,
+    "trial": 228,
+    "variance": 10.175756957359933,
+    "variance_fraction": 0.4070302782943973
+  },
+  "bridge_variables": 25,
+  "child_a": "computations/results/exact_m5.json",
+  "child_b": "computations/results/exact_m5.json",
+  "classification": "heuristic LP vertex search; all spin-pair constraints are exact",
+  "linear_inequalities": 512,
+  "orders": [
+    5,
+    5
+  ],
+  "projective_state_pairs": 256,
+  "schema": "quadratic-signing-fractional-bridge-variance-probe-v1",
+  "seed": 20260732,
+  "sign_b": 1,
+  "solver_status_counts": {
+    "0": 300
+  },
+  "target": 11.313708498984761,
+  "trials": 300,
+  "warning": "random LP objectives do not certify the global minimum of variance"
+}

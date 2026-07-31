@@ -1,0 +1,130 @@
+{
+  "classification": "exact fixed-child caps on deterministic subset sets; minimum is certified only when subset_search_exhaustive is true",
+  "elapsed_seconds": 0.02029471844434738,
+  "evaluator_source": "computations/phase2_subset_caps_gray.cpp",
+  "exact_M_values": {
+    "3": 3,
+    "4": 4,
+    "5": 4,
+    "6": 5,
+    "7": 9,
+    "8": 10,
+    "9": 12,
+    "10": 13,
+    "11": 17,
+    "12": 18,
+    "13": 20,
+    "14": 21
+  },
+  "label": "double12_nonconference",
+  "matrix_key": "parent_matrix",
+  "parent_matrix_sha256": "b002f4c2199bd50f5b8ff21d48f422be4373e9d689fae17cc4c40f5754baa50b",
+  "parent_order": 12,
+  "records": [
+    {
+      "all_child_caps_exact": true,
+      "best_b_gap": 0.0,
+      "best_b_gap_over_child_order": 0.0,
+      "best_cap": 5,
+      "best_cap_gap": 0,
+      "best_examples": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          11
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          10
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          9
+        ],
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          8
+        ],
+        [
+          0,
+          1,
+          3,
+          6,
+          7,
+          9
+        ],
+        [
+          0,
+          1,
+          3,
+          6,
+          7,
+          10
+        ],
+        [
+          0,
+          1,
+          3,
+          6,
+          9,
+          11
+        ],
+        [
+          0,
+          1,
+          3,
+          7,
+          8,
+          9
+        ],
+        [
+          0,
+          1,
+          4,
+          6,
+          7,
+          9
+        ]
+      ],
+      "cap_histogram": {
+        "11": 30,
+        "5": 54,
+        "7": 270,
+        "9": 570
+      },
+      "certified_M_child": 5,
+      "child_order": 6,
+      "ordered_subset_sha256": "077bc6aca732c26164247a7a6e228e9ab477bd2d92322e85d04913b67c77f950",
+      "subset_search_exhaustive": true,
+      "subsets_evaluated": 924,
+      "total_subsets": 924
+    }
+  ],
+  "samples_per_order_cap": 10000,
+  "schema": "quadratic-signing-phase2-structured-landing-audit-v1",
+  "seed": 20260731,
+  "source": "computations/results/conference_double_p5.json"
+}

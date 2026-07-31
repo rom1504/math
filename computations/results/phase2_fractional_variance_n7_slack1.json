@@ -1,0 +1,261 @@
+{
+  "best_restart": 1,
+  "child_caps": [
+    9,
+    9
+  ],
+  "classification": "reproducible heuristic convex-maximization over an exactly enumerated fractional bridge polytope; no global V optimum claimed",
+  "coordinates_with_abs_at_least_1_minus_1e-8": 45,
+  "elapsed_seconds": 12.57822922989726,
+  "fractional_bridge": [
+    [
+      -1.0,
+      -1.0,
+      -0.27207793864214835,
+      1.0,
+      -1.0,
+      -0.7279220613578516,
+      -1.0
+    ],
+    [
+      1.0,
+      -1.0,
+      0.27207793864214835,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    [
+      1.0,
+      -1.0,
+      1.0,
+      -0.7279220613578516,
+      1.0,
+      -1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    [
+      1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      1.0,
+      1.0,
+      -1.0
+    ],
+    [
+      1.0,
+      1.0,
+      -1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      -1.0,
+      1.0,
+      1.0,
+      -1.0,
+      -1.0
+    ]
+  ],
+  "fractional_bridge_sha256": "d478a5ee8a05ae6885e14ae00786266e214184a645ae208992f45c1fc6c00274",
+  "fractional_numerical_cap": 26.455844122715703,
+  "fractional_target": 26.455844122715703,
+  "ideal_power_target": 25.455844122715703,
+  "left": "computations/results/exact_m7.json",
+  "maximum_constraint_violation": 0.0,
+  "orders": [
+    7,
+    7
+  ],
+  "projective_parent_constraints": 8192,
+  "restarts": 6,
+  "right": "computations/results/exact_m7.json",
+  "rounded_bridge_cap_exact": 27,
+  "rounding_variance": 2.7922061357855483,
+  "rounding_variance_over_bridge_edges": 0.056983798689500986,
+  "schema": "quadratic-signing-phase2-fractional-bridge-variance-v1",
+  "scipy_method": "HiGHS via scipy.optimize.linprog",
+  "seed": 20260811,
+  "squared_norm": 46.20779386421445,
+  "tangent_iterations": 4,
+  "target_slack": 1.0,
+  "trajectories": [
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 40.9425368322051,
+        "variance": 8.0574631677949
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 43.27858983142257,
+        "variance": 5.721410168577428
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 44.3272759738603,
+        "variance": 4.672724026139697
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 45.11948210964586,
+        "variance": 3.8805178903541417
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 45.35065019726514,
+        "variance": 3.6493498027348608
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 39.41217807226572,
+        "variance": 9.587821927734282
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 40.7539567741255,
+        "variance": 8.246043225874502
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 41.598382230365914,
+        "variance": 7.401617769634086
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 43.61168952087654,
+        "variance": 5.3883104791234615
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 46.20779386421445,
+        "variance": 2.7922061357855483
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 41.353257221835364,
+        "variance": 7.646742778164636
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 43.46834699246725,
+        "variance": 5.5316530075327535
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 44.14891936116872,
+        "variance": 4.851080638831277
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 45.11948210964586,
+        "variance": 3.8805178903541417
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 45.11948210964586,
+        "variance": 3.8805178903541417
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 42.383143054588416,
+        "variance": 6.616856945411584
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 44.207793864214445,
+        "variance": 4.792206135785555
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 45.11948210964585,
+        "variance": 3.880517890354149
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 45.71342078212135,
+        "variance": 3.2865792178786535
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 45.71342078212135,
+        "variance": 3.2865792178786535
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 40.627731088124364,
+        "variance": 8.372268911875636
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 42.06724550158047,
+        "variance": 6.932754498419527
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 44.310715925572296,
+        "variance": 4.689284074427704
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 46.20779386421445,
+        "variance": 2.7922061357855483
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 46.20779386421445,
+        "variance": 2.7922061357855483
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 42.9300187632968,
+        "variance": 6.0699812367032
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 44.96754257170818,
+        "variance": 4.032457428291821
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 45.267534919037374,
+        "variance": 3.7324650809626263
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 45.267534919037374,
+        "variance": 3.7324650809626263
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 45.267534919037374,
+        "variance": 3.7324650809626263
+      }
+    ]
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "best_restart": 2,
+  "child_caps": [
+    4,
+    4
+  ],
+  "classification": "reproducible heuristic convex-maximization over an exactly enumerated fractional bridge polytope; no global V optimum claimed",
+  "coordinates_with_abs_at_least_1_minus_1e-8": 19,
+  "elapsed_seconds": 0.4076720401644707,
+  "fractional_bridge": [
+    [
+      -1.0,
+      -0.3431457505076194,
+      0.6568542494923806,
+      1.0,
+      1.0
+    ],
+    [
+      -0.0,
+      1.0,
+      1.0,
+      -1.0,
+      1.0
+    ],
+    [
+      -1.0,
+      1.0,
+      -1.0,
+      1.0,
+      -0.0
+    ],
+    [
+      1.0,
+      -1.0,
+      1.0,
+      -0.6568542494923806,
+      1.0
+    ],
+    [
+      -1.0,
+      -0.6568542494923806,
+      1.0,
+      1.0,
+      -1.0
+    ]
+  ],
+  "fractional_bridge_sha256": "ffe67ff8c1d6cb66a694414d450845bf6540902db5636b0495fd4facf9467485",
+  "fractional_numerical_cap": 13.313708498984761,
+  "fractional_target": 13.313708498984761,
+  "ideal_power_target": 11.313708498984761,
+  "left": "computations/results/exact_m5.json",
+  "maximum_constraint_violation": 0.0,
+  "orders": [
+    5,
+    5
+  ],
+  "projective_parent_constraints": 512,
+  "restarts": 6,
+  "right": "computations/results/exact_m5.json",
+  "rounded_bridge_cap_exact": 17,
+  "rounding_variance": 4.587878478679965,
+  "rounding_variance_over_bridge_edges": 0.1835151391471986,
+  "schema": "quadratic-signing-phase2-fractional-bridge-variance-v1",
+  "scipy_method": "HiGHS via scipy.optimize.linprog",
+  "seed": 20260812,
+  "squared_norm": 20.412121521320035,
+  "tangent_iterations": 4,
+  "target_slack": 2.0,
+  "trajectories": [
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 15.289755157233857,
+        "variance": 9.710244842766143
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 16.461328032487664,
+        "variance": 8.538671967512336
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 16.72583002030479,
+        "variance": 8.274169979695209
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 16.72583002030479,
+        "variance": 8.274169979695209
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 16.72583002030479,
+        "variance": 8.274169979695209
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 18.49206511167636,
+        "variance": 6.507934888323639
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 19.707360588325848,
+        "variance": 5.292639411674152
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 19.707360588325848,
+        "variance": 5.292639411674152
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 19.707360588325848,
+        "variance": 5.292639411674152
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 19.707360588325848,
+        "variance": 5.292639411674152
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 16.254358246930067,
+        "variance": 8.745641753069933
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 17.927056785025766,
+        "variance": 7.072943214974234
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 19.707360588325848,
+        "variance": 5.292639411674152
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 20.412121521320035,
+        "variance": 4.587878478679965
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 17.92770669885868,
+        "variance": 7.072293301141318
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 18.667822069036294,
+        "variance": 6.332177930963706
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 19.295239067005816,
+        "variance": 5.7047609329941835
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 19.295239067005816,
+        "variance": 5.7047609329941835
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 19.295239067005816,
+        "variance": 5.7047609329941835
+      }
+    ],
+    [
+      {
+        "iteration": 0,
+        "squared_norm": 17.39870272322444,
+        "variance": 7.601297276775561
+      },
+      {
+        "iteration": 1,
+        "squared_norm": 18.203993499070283,
+        "variance": 6.7960065009297175
+      },
+      {
+        "iteration": 2,
+        "squared_norm": 18.43672477690385,
+        "variance": 6.563275223096149
+      },
+      {
+        "iteration": 3,
+        "squared_norm": 18.43672477690385,
+        "variance": 6.563275223096149
+      },
+      {
+        "iteration": 4,
+        "squared_norm": 18.43672477690385,
+        "variance": 6.563275223096149
+      }
+    ]
+  ]
+}

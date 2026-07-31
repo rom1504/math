@@ -1,0 +1,113 @@
+{
+  "best": {
+    "active_rank_on_fractional_entries": 30,
+    "active_state_inequalities": 33,
+    "bridge": [
+      [
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.862068965517241,
+        -0.8620689655172413,
+        -0.0
+      ],
+      [
+        1.0,
+        -1.0,
+        -0.5517241379310346,
+        0.2758620689655171,
+        1.0,
+        -0.6551724137931031,
+        1.0,
+        -0.6206896551724139
+      ],
+      [
+        -1.0,
+        -1.0,
+        1.0,
+        0.5172413793103448,
+        -1.0,
+        -0.41379310344827624,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        -0.2758620689655171,
+        0.17241379310344868,
+        -0.5862068965517242,
+        0.5517241379310346,
+        0.20689655172413765,
+        0.9655172413793103,
+        -0.8275862068965523
+      ],
+      [
+        0.27586206896551724,
+        -1.0,
+        1.0,
+        -1.0,
+        -0.1379310344827587,
+        0.41379310344827586,
+        -1.0,
+        1.0
+      ],
+      [
+        -0.931034482758621,
+        -1.0,
+        -0.7241379310344824,
+        0.7931034482758621,
+        -0.4137931034482759,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -0.7241379310344829,
+        -1.0,
+        0.8965517241379314,
+        1.0,
+        1.0,
+        0.1724137931034485,
+        1.0
+      ],
+      [
+        0.6551724137931038,
+        1.0,
+        -0.4482758620689658,
+        -0.3448275862068969,
+        1.0,
+        0.8620689655172399,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "fractional_entries": 30,
+    "max_constraint_residual": 3.552713678800501e-15,
+    "trial": 7,
+    "variance": 19.158145065398333,
+    "variance_fraction": 0.29934601664684896
+  },
+  "bridge_variables": 64,
+  "child_a": "computations/results/exact_m8.json",
+  "child_b": "computations/results/exact_m8.json",
+  "classification": "heuristic LP vertex search; all spin-pair constraints are exact",
+  "linear_inequalities": 32768,
+  "orders": [
+    8,
+    8
+  ],
+  "projective_state_pairs": 16384,
+  "schema": "quadratic-signing-fractional-bridge-variance-probe-v1",
+  "seed": 20260731,
+  "sign_b": 1,
+  "solver_status_counts": {
+    "0": 50
+  },
+  "target": 28.0,
+  "trials": 50,
+  "warning": "random LP objectives do not certify the global minimum of variance"
+}
+sha256 e5126b0cc42aaafe4b4f2e7393d568753e7e4f7b1ef14e7cb9a6f086ced67e66

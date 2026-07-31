@@ -1,0 +1,81 @@
+{
+  "best": {
+    "active_rank_on_fractional_entries": 24,
+    "active_state_inequalities": 25,
+    "bridge": [
+      [
+        1.0,
+        -1.0,
+        0.11726188957803421,
+        0.021320343559642296,
+        0.06751442127220109,
+        0.9928932188134526
+      ],
+      [
+        -0.024873734152915883,
+        0.9466991411008941,
+        -0.9431457505076208,
+        1.0,
+        0.08172798364529665,
+        0.010660171779820926
+      ],
+      [
+        -0.08172798364529708,
+        1.0,
+        0.08528137423857039,
+        -0.9893398282201787,
+        -0.9538059222874415,
+        -0.06751442127220131
+      ],
+      [
+        -1.0,
+        -1.0,
+        0.021320343559641852,
+        0.017766952966368543,
+        -0.9893398282201789,
+        -0.08528137423857096
+      ],
+      [
+        1.0,
+        0.060407640085654135,
+        1.0,
+        0.9680194846605368,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.021320343559641908,
+        -1.0,
+        -0.9751262658470841,
+        0.017766952966369605,
+        0.06396103067892711,
+        -1.0
+      ]
+    ],
+    "fractional_entries": 24,
+    "max_constraint_residual": 3.552713678800501e-15,
+    "trial": 238,
+    "variance": 16.411895663913537,
+    "variance_fraction": 0.45588599066426494
+  },
+  "bridge_variables": 36,
+  "child_a": "computations/results/exact_m6.json",
+  "child_b": "computations/results/exact_m6.json",
+  "classification": "heuristic LP vertex search; all spin-pair constraints are exact",
+  "linear_inequalities": 2048,
+  "orders": [
+    6,
+    6
+  ],
+  "projective_state_pairs": 1024,
+  "schema": "quadratic-signing-fractional-bridge-variance-probe-v1",
+  "seed": 20260732,
+  "sign_b": 1,
+  "solver_status_counts": {
+    "0": 300
+  },
+  "target": 14.142135623730951,
+  "trials": 300,
+  "warning": "random LP objectives do not certify the global minimum of variance"
+}
+sha256 e5a787ce1058bae72160f6792584d95ec5ef7f97a7897dc71b122f826148baf8
