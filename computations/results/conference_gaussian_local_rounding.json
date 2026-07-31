@@ -1,0 +1,206 @@
+{
+  "classification": "proved exact Gaussian expectation and sharp universal pointwise barrier for one-flip local improvement",
+  "finite_exact_audits": [
+    {
+      "conference_multiplier": 5,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "exhaustive_local_maximum_audit": {
+        "energy_histogram": {
+          "5": 6
+        },
+        "minimum_positive_local_maximum_energy": 5,
+        "order": 6,
+        "projective_spin_count": 32,
+        "strict_positive_local_maximum_count": 6
+      },
+      "flip_set_audit": {
+        "classification": "positive core is the triangle-free conference graph on five vertices; Mantel excludes every improving flip set",
+        "core_order": 5,
+        "exact_improvement_criterion": "a core flip set F of size m improves iff its induced positive-edge count p(F) satisfies p(F)>m^2/4",
+        "exact_local_fields_for_general_core_flip_set": "t_root=q-2m; t_v=2m+1-4d_F(v) outside F; t_v=4d_F(v)-2m+1 inside F",
+        "one_flip_strict_improvement": false,
+        "positive_core_graph_parameters": {
+          "degree": 2,
+          "lambda": 0,
+          "mu": 1,
+          "v": 5
+        },
+        "proved_terminal_basin_radius": "for q>=9, every nonempty coordinate local maximum has m>=(3+sqrt(q))/2",
+        "root": 0,
+        "smallest_strictly_improving_flip_set_size": null,
+        "two_flip_strict_improvement": false
+      },
+      "gaussian_rounding_expected_energy": 4.427508529512998,
+      "gaussian_rounding_expected_normalized_energy": 0.3012537980313089,
+      "k": 1,
+      "order": 6,
+      "root_trap": {
+        "exact_energy": 5,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 5,
+          "5": 1
+        },
+        "normalized_energy": 0.34020690871988585,
+        "positive_bit_hex_little_endian": "1f",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    },
+    {
+      "conference_multiplier": 17,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "exhaustive_local_maximum_audit": {
+        "energy_histogram": {
+          "17": 18,
+          "33": 102
+        },
+        "minimum_positive_local_maximum_energy": 17,
+        "order": 18,
+        "projective_spin_count": 131072,
+        "strict_positive_local_maximum_count": 120
+      },
+      "flip_set_audit": {
+        "best_immediate_one_flip_gain": 2,
+        "classification": "every normalized conference core of order at least nine has a positive triangle",
+        "core_order": 17,
+        "energy_after_triangle_flip": 23,
+        "energy_before": 17,
+        "exact_energy_gain": 6,
+        "exact_improvement_criterion": "a core flip set F of size m improves iff its induced positive-edge count p(F) satisfies p(F)>m^2/4",
+        "exact_local_fields_for_general_core_flip_set": "t_root=q-2m; t_v=2m+1-4d_F(v) outside F; t_v=4d_F(v)-2m+1 inside F",
+        "one_flip_strict_improvement": false,
+        "outside_triangle_positive_neighbor_histogram": {
+          "0": 2,
+          "1": 6,
+          "2": 6
+        },
+        "positive_core_graph_parameters": {
+          "degree": 8,
+          "lambda": 3,
+          "mu": 4,
+          "v": 17
+        },
+        "positive_triangle_core_indices": [
+          0,
+          1,
+          2
+        ],
+        "positive_triangle_full_indices": [
+          1,
+          2,
+          3
+        ],
+        "post_triangle_local_field_histogram": {
+          "-1": 6,
+          "11": 1,
+          "3": 9,
+          "7": 2
+        },
+        "post_triangle_strictly_improving_one_flip_count": 6,
+        "proved_terminal_basin_radius": "for q>=9, every nonempty coordinate local maximum has m>=(3+sqrt(q))/2",
+        "root": 0,
+        "smallest_strictly_improving_flip_set_size": 3,
+        "triangle_K4_extension_count_rho": 0,
+        "two_flip_strict_improvement": false,
+        "universal_negative_count_lower_bound": 2
+      },
+      "gaussian_rounding_expected_energy": 23.861613895475013,
+      "gaussian_rounding_expected_normalized_energy": 0.3124575739915839,
+      "k": 2,
+      "order": 18,
+      "root_trap": {
+        "exact_energy": 17,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 17,
+          "17": 1
+        },
+        "normalized_energy": 0.22260769037354272,
+        "positive_bit_hex_little_endian": "12fcf",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    },
+    {
+      "conference_multiplier": 37,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "flip_set_audit": {
+        "best_immediate_one_flip_gain": 10,
+        "classification": "every normalized conference core of order at least nine has a positive triangle",
+        "core_order": 37,
+        "energy_after_triangle_flip": 43,
+        "energy_before": 37,
+        "exact_energy_gain": 6,
+        "exact_improvement_criterion": "a core flip set F of size m improves iff its induced positive-edge count p(F) satisfies p(F)>m^2/4",
+        "exact_local_fields_for_general_core_flip_set": "t_root=q-2m; t_v=2m+1-4d_F(v) outside F; t_v=4d_F(v)-2m+1 inside F",
+        "one_flip_strict_improvement": false,
+        "outside_triangle_positive_neighbor_histogram": {
+          "0": 4,
+          "1": 15,
+          "2": 12,
+          "3": 3
+        },
+        "positive_core_graph_parameters": {
+          "degree": 18,
+          "lambda": 8,
+          "mu": 9,
+          "v": 37
+        },
+        "positive_triangle_core_indices": [
+          0,
+          1,
+          2
+        ],
+        "positive_triangle_full_indices": [
+          1,
+          2,
+          3
+        ],
+        "post_triangle_local_field_histogram": {
+          "-1": 12,
+          "-5": 3,
+          "3": 18,
+          "31": 1,
+          "7": 4
+        },
+        "post_triangle_strictly_improving_one_flip_count": 15,
+        "proved_terminal_basin_radius": "for q>=9, every nonempty coordinate local maximum has m>=(3+sqrt(q))/2",
+        "root": 0,
+        "smallest_strictly_improving_flip_set_size": 3,
+        "triangle_K4_extension_count_rho": 3,
+        "two_flip_strict_improvement": false,
+        "universal_negative_count_lower_bound": 7
+      },
+      "gaussian_rounding_expected_energy": 73.91125013602233,
+      "gaussian_rounding_expected_normalized_energy": 0.31552600091096866,
+      "k": 3,
+      "order": 38,
+      "root_trap": {
+        "exact_energy": 37,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 37,
+          "37": 1
+        },
+        "normalized_energy": 0.15795243636416353,
+        "positive_bit_hex_little_endian": "9c57fa65f",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    }
+  ],
+  "schema": "quadratic-signing-conference-gaussian-local-rounding-v1",
+  "universal_results": {
+    "asymptotic_expected_constant": "1/pi",
+    "bounded_radius_improving_supply": "for every fixed core flip-set size m>=3 there are Omega(N) improving additions; the proved uniform lower bound is Omega(N/m) while m=o(sqrt(N))",
+    "gaussian_expectation": "E H(sign(g))=N*(N-1)/pi*asin(1/sqrt(N-1)) for g~N(0,P_plus)",
+    "post_triangle_escape": "a positive-triangle flip gains 6 and creates at least (N-10)/4 negative local fields",
+    "sharp_local_maximum_lower_bound": "every positive one-flip local maximum has H>=N-1",
+    "sharp_root_trap": "x=e_r+S e_r has H=N-1, local fields {N-1,1,...,1}, x=sign(P_plus x), and sign(Sx)=x",
+    "terminal_basin_radius": "for N>=10, every nonempty normalized terminal flip set has m>=(3+sqrt(N-1))/2"
+  }
+}

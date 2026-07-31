@@ -20,6 +20,7 @@ its returned candidate passes the same exact verifier.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -50,6 +51,290 @@ def circulant(first_row: Sequence[int]) -> np.ndarray:
     return np.vstack([np.roll(row, shift) for shift in range(len(row))])
 
 
+def is_prime(value: int) -> bool:
+    if value < 2:
+        return False
+    divisor = 2
+    while divisor * divisor <= value:
+        if value % divisor == 0:
+            return False
+        divisor += 1
+    return True
+
+
+def legendre(value: int, prime: int) -> int:
+    value %= prime
+    if value == 0:
+        return 0
+    return 1 if pow(value, (prime - 1) // 2, prime) == 1 else -1
+
+
+def paley_conference(prime: int) -> np.ndarray:
+    matrix = np.zeros((prime + 1, prime + 1), dtype=np.int64)
+    matrix[0, 1:] = matrix[1:, 0] = 1
+    for left in range(prime):
+        for right in range(prime):
+            if left != right:
+                matrix[left + 1, right + 1] = legendre(left - right, prime)
+    if not np.array_equal(matrix @ matrix, prime * np.eye(prime + 1, dtype=np.int64)):
+        raise AssertionError("Paley conference identity failed")
+    return matrix
+
+
+def permutation_order(permutation: Sequence[int]) -> int:
+    current = list(range(len(permutation)))
+    for order in range(1, len(permutation) + 1):
+        current = [permutation[index] for index in current]
+        if current == list(range(len(permutation))):
+            return order
+    raise AssertionError("invalid permutation")
+
+
+def mobius_companion_permutation(prime: int, trace: int) -> List[int]:
+    """Action of [[0,-1],[1,trace]] on P^1(F_prime); infinity is index 0."""
+    permutation = [1]  # infinity maps to finite zero
+    for value in range(prime):
+        denominator = (value + trace) % prime
+        if denominator == 0:
+            permutation.append(0)
+        else:
+            permutation.append((-pow(denominator, -1, prime)) % prime + 1)
+    return permutation
+
+
+def permutation_cycles(permutation: Sequence[int]) -> List[List[int]]:
+    seen = set()
+    cycles = []
+    for start in range(len(permutation)):
+        if start in seen:
+            continue
+        cycle = []
+        current = start
+        while current not in seen:
+            seen.add(current)
+            cycle.append(current)
+            current = permutation[current]
+        cycles.append(cycle)
+    return cycles
+
+
+def paley_nonsplit_torus_certificate(k: int) -> Dict[str, object]:
+    """Put prime Paley conference into the target two-circulant gauge."""
+    prime = 4 * k * k + 1
+    if not is_prime(prime):
+        raise ValueError("the present exact construction is for prime 4*k^2+1")
+    s = (prime + 1) // 2
+    paley = paley_conference(prime)
+
+    trace = None
+    permutation = None
+    for candidate in range(prime):
+        trial = mobius_companion_permutation(prime, candidate)
+        if permutation_order(trial) == s:
+            trace, permutation = candidate, trial
+            break
+    if trace is None or permutation is None:
+        raise AssertionError("no nonsplit-torus generator found")
+    cycles = permutation_cycles(permutation)
+    if sorted(map(len, cycles)) != [s, s]:
+        raise AssertionError("projective generator does not have two equal cycles")
+
+    # The Mobius action preserves the Paley two-graph, hence its entrywise
+    # conference ratio factors as switching signs d_i d_j.  Recover and
+    # verify that factorization rather than assuming a character formula.
+    ratio = np.ones_like(paley)
+    for left in range(prime + 1):
+        for right in range(prime + 1):
+            if left != right:
+                ratio[left, right] = (
+                    paley[permutation[left], permutation[right]] * paley[left, right]
+                )
+    switching_cocycle = np.ones(prime + 1, dtype=np.int64)
+    switching_cocycle[1:] = ratio[0, 1:]
+    if not np.array_equal(
+        ratio, switching_cocycle[:, None] * switching_cocycle[None, :]
+    ):
+        raise AssertionError("Paley switching cocycle did not factor")
+
+    cycle_products = [int(np.prod(switching_cocycle[cycle])) for cycle in cycles]
+    if cycle_products[0] != cycle_products[1]:
+        raise AssertionError("the two orbit cocycles have incompatible holonomy")
+    common_sign = cycle_products[0]  # s is odd, so common_sign^s=common_sign.
+    gauge = np.zeros(prime + 1, dtype=np.int64)
+    for cycle in cycles:
+        gauge[cycle[0]] = 1
+        for index in cycle[:-1]:
+            gauge[permutation[index]] = (
+                common_sign * gauge[index] * switching_cocycle[index]
+            )
+    switched = gauge[:, None] * paley * gauge[None, :]
+    if not np.array_equal(
+        switched[np.ix_(permutation, permutation)], switched
+    ):
+        raise AssertionError("gauged Paley matrix is not cycle invariant")
+
+    ordering = cycles[0] + cycles[1]
+    conference = switched[np.ix_(ordering, ordering)]
+    block_a = conference[:s, :s]
+    bridge = conference[:s, s:]
+    block_b = conference[s:, s:]
+    if int(block_a[0].sum()) == -2 * k:
+        conference = -conference
+        block_a = conference[:s, :s]
+        bridge = conference[:s, s:]
+        block_b = conference[s:, s:]
+    if int(bridge[0].sum()) == -1:
+        fiber_switch = np.array([1] * s + [-1] * s, dtype=np.int64)
+        conference = fiber_switch[:, None] * conference * fiber_switch[None, :]
+        block_a = conference[:s, :s]
+        bridge = conference[:s, s:]
+        block_b = conference[s:, s:]
+    if not np.array_equal(block_b, -block_a):
+        raise AssertionError("Paley torus gauge did not produce opposite diagonal blocks")
+    a = [int(value) for value in block_a[0]]
+    c = [int(value) for value in bridge[0]]
+    certificate = verify(k, a, c)
+    certificate["construction"] = {
+        "type": "prime Paley conference, nonsplit-torus two-cycle gauge",
+        "prime": prime,
+        "mobius_map": f"x -> -1/(x+{trace}) on P^1(F_{prime})",
+        "mobius_trace": trace,
+        "cycle_lengths": [len(cycle) for cycle in cycles],
+        "cycle_products_before_gauging": cycle_products,
+        "paley_switching_permutation_equivalence_verified": True,
+    }
+    return certificate
+
+
+def conference_graph(a: Sequence[int], c: Sequence[int]) -> np.ndarray:
+    matrix_a = circulant(a)
+    matrix_c = circulant(c)
+    conference = np.block([[matrix_a, matrix_c], [matrix_c.T, -matrix_a]])
+    switching = np.ones(len(conference), dtype=np.int64)
+    switching[1:] = conference[0, 1:]
+    normalized = switching[:, None] * conference * switching[None, :]
+    core = normalized[1:, 1:]
+    order = len(core)
+    return (np.ones((order, order), dtype=np.int64) - np.eye(order, dtype=np.int64) - core) // 2
+
+
+def count_cliques(adjacency: np.ndarray, size: int) -> int:
+    count = 0
+    for vertices in itertools.combinations(range(len(adjacency)), size):
+        if all(adjacency[left, right] for left, right in itertools.combinations(vertices, 2)):
+            count += 1
+    return count
+
+
+def _rotate_mask(mask: int, shift: int, size: int) -> int:
+    if shift == 0:
+        return mask
+    full = (1 << size) - 1
+    return ((mask << shift) & full) | (mask >> (size - shift))
+
+
+def _sign_autocorrelation_mask(mask: int, size: int) -> Tuple[int, ...]:
+    return tuple(
+        size - 2 * bin(mask ^ _rotate_mask(mask, shift, size)).count("1")
+        for shift in range(size)
+    )
+
+
+def _zero_diagonal_autocorrelation_mask(mask: int, size: int) -> Tuple[int, ...]:
+    row = [0] + [1 if mask & (1 << index) else -1 for index in range(1, size)]
+    return tuple(
+        sum(row[index] * row[(index - shift) % size] for index in range(size))
+        for shift in range(size)
+    )
+
+
+def _multiply_mask_indices(mask: int, multiplier: int, size: int) -> int:
+    result = 0
+    for index in range(size):
+        if mask & (1 << index):
+            result |= 1 << ((multiplier * index) % size)
+    return result
+
+
+def _canonical_natural_pair(pair: Tuple[int, int], size: int) -> Tuple[int, int]:
+    """Units on both sequences, plus bridge shifts and reversal."""
+    a_mask, c_mask = pair
+    candidates = []
+    for multiplier in range(1, size):  # size=19 is prime in the only caller.
+        transformed_a = _multiply_mask_indices(a_mask, multiplier, size)
+        transformed_c = _multiply_mask_indices(c_mask, multiplier, size)
+        for reflection in (1, size - 1):
+            reflected_c = _multiply_mask_indices(transformed_c, reflection, size)
+            for shift in range(size):
+                candidates.append(
+                    (transformed_a, _rotate_mask(reflected_c, shift, size))
+                )
+    return min(candidates)
+
+
+def enumerate_k3_natural_solution_orbits(paley_pair: Tuple[Sequence[int], Sequence[int]]) -> Dict[str, object]:
+    """Exhaust all k=3 cyclic certificates and quotient by evident symmetries."""
+    k, size, multiplier = 3, 19, 37
+    bridges_by_autocorrelation: Dict[Tuple[int, ...], List[int]] = {}
+    for plus_positions in itertools.combinations(range(size), (size + 1) // 2):
+        c_mask = sum(1 << index for index in plus_positions)
+        signature = _sign_autocorrelation_mask(c_mask, size)
+        bridges_by_autocorrelation.setdefault(signature, []).append(c_mask)
+
+    pairs = []
+    for positive_pairs in itertools.combinations(range(1, (size + 1) // 2), 6):
+        a_mask = 0
+        for index in positive_pairs:
+            a_mask |= (1 << index) | (1 << (size - index))
+        a_signature = _zero_diagonal_autocorrelation_mask(a_mask, size)
+        required = tuple(
+            (multiplier if shift == 0 else 0) - a_signature[shift]
+            for shift in range(size)
+        )
+        pairs.extend(
+            (a_mask, c_mask)
+            for c_mask in bridges_by_autocorrelation.get(required, [])
+        )
+
+    orbit_counts: Dict[Tuple[int, int], int] = {}
+    for pair in pairs:
+        representative = _canonical_natural_pair(pair, size)
+        orbit_counts[representative] = orbit_counts.get(representative, 0) + 1
+
+    paley_a, paley_c = paley_pair
+    paley_masks = (
+        sum(1 << index for index, value in enumerate(paley_a) if value == 1),
+        sum(1 << index for index, value in enumerate(paley_c) if value == 1),
+    )
+    paley_representative = _canonical_natural_pair(paley_masks, size)
+    records = []
+    for representative, raw_size in sorted(orbit_counts.items()):
+        a_mask, c_mask = representative
+        a = [0] + [1 if a_mask & (1 << index) else -1 for index in range(1, size)]
+        c = [1 if c_mask & (1 << index) else -1 for index in range(size)]
+        verify(k, a, c)
+        graph = conference_graph(a, c)
+        clique_counts = {str(order): count_cliques(graph, order) for order in (4, 5)}
+        records.append(
+            {
+                "natural_orbit_raw_size": raw_size,
+                "a": a,
+                "c": c,
+                "clique_counts": clique_counts,
+                "is_prime_paley_nonsplit_torus_orbit": representative == paley_representative,
+            }
+        )
+    return {
+        "classification": (
+            "exhaustive at k=3; natural equivalence uses simultaneous unit multipliers, "
+            "bridge shifts, and bridge reversal"
+        ),
+        "raw_oriented_solution_count": len(pairs),
+        "natural_orbit_count": len(records),
+        "orbits": records,
+    }
+
+
 def periodic_autocorrelation(row: Sequence[int]) -> List[int]:
     vec = np.asarray(row, dtype=np.int64)
     return [int(vec @ np.roll(vec, shift)) for shift in range(len(vec))]
@@ -65,6 +350,39 @@ def difference_counts(block: Sequence[int], modulus: int) -> List[int]:
         for right in block:
             counts[(left - right) % modulus] += 1
     return counts
+
+
+def exact_projective_boolean_cap(matrix: np.ndarray) -> Dict[str, object]:
+    """Enumerate sign vectors modulo global negation (intended for n <= 18)."""
+    order = len(matrix)
+    if order > 18:
+        raise ValueError("exact enumeration is intentionally limited to order 18")
+    best = -1
+    count = 0
+    witness: Optional[List[int]] = None
+    witness_energy = 0
+    for code in range(1 << (order - 1)):
+        spin = np.ones(order, dtype=np.int64)
+        for index in range(1, order):
+            if code & (1 << (index - 1)):
+                spin[index] = -1
+        energy = int(spin @ matrix @ spin // 2)
+        magnitude = abs(energy)
+        if magnitude > best:
+            best = magnitude
+            count = 1
+            witness = [int(value) for value in spin]
+            witness_energy = energy
+        elif magnitude == best:
+            count += 1
+    return {
+        "cap": best,
+        "projective_states_enumerated": 1 << (order - 1),
+        "projective_maximizer_count": count,
+        "witness": witness,
+        "witness_energy": witness_energy,
+        "classification": "exhaustive exact cap of this signing, not an optimality proof for M_n",
+    }
 
 
 def verify(k: int, a: Sequence[int], c: Sequence[int]) -> Dict[str, object]:
@@ -112,7 +430,7 @@ def verify(k: int, a: Sequence[int], c: Sequence[int]) -> Dict[str, object]:
         if p_counts[shift] + q_counts[shift] + int(shift in p_set) != required:
             raise AssertionError("self-indexed ASDS identity failed")
 
-    return {
+    result: Dict[str, object] = {
         "k": k,
         "s": s,
         "conference_order": 2 * s,
@@ -135,6 +453,9 @@ def verify(k: int, a: Sequence[int], c: Sequence[int]) -> Dict[str, object]:
             "verified_exact_integer_arithmetic": True,
         },
     }
+    if 2 * s <= 18:
+        result["boolean_profile"] = exact_projective_boolean_cap(conference)
+    return result
 
 
 def search_cp_sat(k: int, time_limit: float) -> Tuple[str, Optional[List[int]], Optional[List[int]]]:
@@ -151,6 +472,12 @@ def search_cp_sat(k: int, time_limit: float) -> Tuple[str, Optional[List[int]], 
     c_bits = [model.NewBoolVar(f"c_{index}") for index in range(s)]
     model.Add(sum(a_half) == (k * k + k) // 2)
     model.Add(sum(c_bits) == (s + 1) // 2)
+    # Translation of c preserves all periodic autocorrelations and produces
+    # an equivalent circulant cross block.  Since c has a positive entry, set
+    # c_0=+1 without loss.  Reversal also preserves its autocorrelation and
+    # the symmetric a block, so orient the remaining reflection by c_1>=c_-1.
+    model.Add(c_bits[0] == 1)
+    model.Add(c_bits[1] >= c_bits[s - 1])
 
     def a_bit(index: int):
         index %= s
@@ -160,9 +487,9 @@ def search_cp_sat(k: int, time_limit: float) -> Tuple[str, Optional[List[int]], 
 
     def equality_indicator(left, right, name: str):
         same = model.NewBoolVar(name)
-        # same <=> left == right.
-        model.Add(left == right).OnlyEnforceIf(same)
-        model.Add(left != right).OnlyEnforceIf(same.Not())
+        # The three-literal XOR is true exactly for
+        # (left,right,same)=(0,0,1),(1,1,1),(0,1,0),(1,0,0).
+        model.AddBoolXOr([left, right, same])
         return same
 
     # It suffices to impose shifts 1,...,(s-1)/2 by symmetry.
@@ -210,12 +537,60 @@ def main() -> int:
     args = parser.parse_args()
 
     results = [verify(k, data["a"], data["c"]) for k, data in sorted(CERTIFICATES.items())]
+
+    # Give an independently checkable equivalence classification for the
+    # embedded small examples.  The k=2 map is an explicit graph isomorphism;
+    # the k=3 clique counts are a short nonisomorphism certificate.
+    k2_graph = conference_graph(CERTIFICATES[2]["a"], CERTIFICATES[2]["c"])
+    paley17 = (np.ones((17, 17), dtype=np.int64) - np.eye(17, dtype=np.int64))
+    for left in range(17):
+        for right in range(17):
+            if left != right:
+                paley17[left, right] = int(legendre(left - right, 17) == 1)
+    k2_map = [0, 10, 5, 1, 6, 2, 14, 7, 4, 12, 3, 9, 16, 13, 11, 8, 15]
+    if not all(
+        k2_graph[left, right] == paley17[k2_map[left], k2_map[right]]
+        for left in range(17) for right in range(17)
+    ):
+        raise AssertionError("saved k=2 Paley graph isomorphism failed")
+    results[1]["conference_graph_class"] = {
+        "class": "Paley(17)",
+        "explicit_vertex_map_to_Paley": k2_map,
+        "verified": True,
+    }
+
+    k3_graph = conference_graph(CERTIFICATES[3]["a"], CERTIFICATES[3]["c"])
+    paley37 = np.zeros((37, 37), dtype=np.int64)
+    for left in range(37):
+        for right in range(37):
+            if left != right:
+                paley37[left, right] = int(legendre(left - right, 37) == 1)
+    k3_counts = {str(size): count_cliques(k3_graph, size) for size in (4, 5)}
+    paley37_counts = {str(size): count_cliques(paley37, size) for size in (4, 5)}
+    if k3_counts == paley37_counts:
+        raise AssertionError("clique invariant failed to separate saved k=3 from Paley")
+    results[2]["conference_graph_class"] = {
+        "class": "non-Paley(37)",
+        "saved_graph_clique_counts": k3_counts,
+        "paley_graph_clique_counts": paley37_counts,
+        "nonisomorphism_verified_by_clique_counts": True,
+    }
+
+    paley_torus_results = [
+        paley_nonsplit_torus_certificate(k) for k in (1, 2, 3, 5)
+    ]
+    paley_k3 = next(record for record in paley_torus_results if record["k"] == 3)
+    k3_orbits = enumerate_k3_natural_solution_orbits(
+        (paley_k3["a"], paley_k3["c"])
+    )
     payload: Dict[str, object] = {
         "schema": "quadratic-signing-two-fiber-cyclic-conference-v1",
         "classification": (
-            "proved finite certificates by exact integer verification; no infinite-family claim"
+            "exact finite certificates; deterministic prime-Paley construction whenever 4*k^2+1 is prime, but infinitude of such primes is open"
         ),
         "embedded_certificates": results,
+        "paley_nonsplit_torus_certificates": paley_torus_results,
+        "k3_exhaustive_natural_orbits": k3_orbits,
     }
     if args.search is not None:
         status, a, c = search_cp_sat(args.search, args.time_limit)
@@ -223,6 +598,10 @@ def main() -> int:
             "k": args.search,
             "status": status,
             "time_limit_seconds": args.time_limit,
+            "symmetry_reductions": [
+                "translate c so c_0=+1",
+                "reverse c so c_1>=c_-1",
+            ],
         }
         if a is not None and c is not None:
             search_result["certificate"] = verify(args.search, a, c)

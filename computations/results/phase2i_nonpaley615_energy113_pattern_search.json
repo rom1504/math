@@ -1,0 +1,84 @@
+{
+  "absolute_value_reduction": "-S is switching/permutation equivalent to S by second-fiber switching, fiber swap, and cyclic reversal",
+  "all_patterns_infeasible": false,
+  "classification": "partial exact pattern search; UNKNOWN is not exclusion",
+  "cyclic_symmetry_reduction": "global negation fixed at spin_0=+1; lex maximum removes all 19 simultaneous cyclic shifts",
+  "exact_local_field_pattern_count": 6,
+  "orbit_clique_counts": {
+    "4": 615,
+    "5": 65
+  },
+  "orbit_index": 1,
+  "records": [
+    {
+      "branches": 259132,
+      "conflicts": 25145,
+      "pattern": {
+        "11": 1,
+        "5": 22,
+        "7": 15
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.019091161
+    },
+    {
+      "branches": 136296,
+      "conflicts": 2957,
+      "pattern": {
+        "5": 23,
+        "7": 12,
+        "9": 3
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.013131448000001
+    },
+    {
+      "branches": 190309,
+      "conflicts": 2709,
+      "pattern": {
+        "3": 1,
+        "5": 20,
+        "7": 15,
+        "9": 2
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.022799084
+    },
+    {
+      "branches": 208729,
+      "conflicts": 2853,
+      "pattern": {
+        "3": 2,
+        "5": 17,
+        "7": 18,
+        "9": 1
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.010740279
+    },
+    {
+      "branches": 3007,
+      "conflicts": 0,
+      "pattern": {
+        "3": 3,
+        "5": 14,
+        "7": 21
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.012634928
+    },
+    {
+      "branches": 180308,
+      "conflicts": 934,
+      "pattern": {
+        "1": 1,
+        "5": 17,
+        "7": 20
+      },
+      "status": "UNKNOWN",
+      "wall_time_seconds": 10.015193565
+    }
+  ],
+  "schema": "quadratic-signing-order38-local-field-pattern-decision-v1",
+  "target_positive_energy": 113
+}

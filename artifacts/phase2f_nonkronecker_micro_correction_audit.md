@@ -139,3 +139,59 @@ algebra. It supplies a falsifiable next question: whether alternating exact
 template correction and fresh-witness generation stabilizes after a bounded
 number of rounds, or instead keeps exposing new faces until the active state
 has unbounded complexity.
+
+## 5. Bounded alternating-game diagnostic
+
+One bounded continuation was performed, and then stopped rather than turning
+into an indefinite separator loop. For a pooled set `W` of saved witnesses,
+the exact 16-bit robust-template problem was
+
+```math
+\min_{T\in\{0,1\}^{16}}
+\max_{(D,w)\in W}|H_{S_{T,D}}(w)|.                   \tag{MC8}
+```
+
+This is deliberately a **robust common-template diagnostic**. It is not the
+landing-family quantifier `min_(T,D) cap(S_(T,D))`, and therefore an objective
+above threshold would still require careful interpretation. Here the
+objectives are far below threshold, so the quantifier issue cannot create a
+false obstruction.
+
+Pooling the original and first fresh families gives 32,768 witnesses. Exact
+CP-SAT constraint generation proves that (MC8) has optimum 72. One optimum
+toggles the eight positions
+
+```text
+(0,2), (1,3), (2,0), (2,2), (2,3), (3,1), (3,2), (3,3).
+```
+
+All pooled energies then lie in `[-72,52]`. A third all-diagonal fresh search
+at this exact minimax template again found a threshold witness for every
+`D`, with no unresolved cases. The 16,384 new exact witnesses have minimum
+absolute energy 210 and record hash
+
+```text
+33cec568dafd3d6d504a0f837c18c844d93e90c6f65a91c21347cb630718f8a0
+```
+
+Finally, pooling all three rounds gives 49,152 witnesses. The exact robust
+common-template optimum is still only 90. One optimal ten-bundle template
+puts the entire three-round pool in `[-88,90]`.
+
+The reproducible program and records are:
+
+- `computations/phase2g_micro_template_minimax.py`;
+- `computations/results/phase2g_two_round_micro_template_minimax.json`;
+- `computations/results/phase2g_three_round_micro_template_minimax.json`;
+- `computations/results/phase2g_minimax_template_all_diagonal_audit.json`;
+- `computations/results/phase2g_minimax_template_all_diagonal_audit_verify.log`.
+
+This is a compressed negative conclusion from the alternating game. Three
+large witness families do not approximate a template-stable cap envelope:
+one common bounded template simultaneously suppresses every active witness
+to less than half the target threshold. Fresh optimization then exposes a
+nearly disjoint face family. Continuing to append individual witness cuts is
+therefore not justified. A viable state must encode a face envelope, a
+switching-invariant dual measure, or an exact/relaxed cap functional that
+transports with the template; raw active witnesses have demonstrated severe
+search-path instability.

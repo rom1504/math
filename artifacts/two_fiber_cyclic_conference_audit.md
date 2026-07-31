@@ -1,8 +1,7 @@
 # Two-fiber conference systems: cyclic certificates and the centered-module barrier
 
 Date: 2026-07-31. This note classifies every statement as an exact theorem,
-an exact finite certificate, or an open construction problem. It makes no
-infinite-family claim.
+an exact finite certificate, or an open construction problem.
 
 ## 1. Boolean invariant-plane formulation
 
@@ -119,6 +118,58 @@ give broad ASDS families when `2s-1` is a prime power. The cited results do
 do not, as stated, prove (7) or an infinite family of (6). Treating a generic
 ASDS/OQS as a solution would drop the decisive self-indexing condition.
 
+### 2.1 Prime Paley conferences give a deterministic two-cycle construction
+
+There is nevertheless a clean algebraic source of target two-fiber systems.
+Let `Q=4k^2+1` be prime and view the Paley conference matrix on the projective
+line `P^1(F_Q)`. A nonsplit torus in `PSL(2,Q)` has order
+
+```math
+s={Q+1\over2}=2k^2+1
+```
+
+and acts without fixed points on the projective line. It therefore has two
+orbits of length `s`. A Mobius generator preserves the Paley two-graph; on a
+conference representative this is a signed permutation symmetry. Since `s`
+is odd, its sign cocycle on each cyclic orbit can be gauged away. Ordering the
+two cycles consecutively makes all four blocks circulant.
+
+The quotient entries are integers and its square is `Q I_2`. Because a prime
+`Q=4k^2+1` has, up to signs and order, the unique sum-of-two-squares
+representation `Q=(2k)^2+1`, the two-fiber row sums are the target
+`2k,1,-2k` after harmless fiber switches. Thus the general two-fiber block
+system exists whenever `4k^2+1` is prime.
+
+The verifier makes the construction completely explicit using
+
+```math
+g_t(x)=-{1\over x+t}
+```
+
+on the projective line, selecting the first `t` for which `g_t` has order
+`s`, factoring its exact Paley switching cocycle, and gauging it around the
+two cycles. For `Q=5,17,37,101` it further verifies that the chosen gauge has
+the stronger form (6), including `B=-A`. This gives the new exact positive
+control `k=5`, `s=51`, `N=102` (with `t=6`).
+
+This is an unbounded-looking formula but not a proved infinite sequence of
+orders: infinitude of primes of the form `4k^2+1` is an instance of the open
+quadratic-prime problem. More importantly for the present project, these are
+ordinary Paley conference matrices in a new gauge. The already proved prime-
+Paley cosine saturation theorem gives their normalized Boolean cap a
+subsequence approaching `1/2`. Hence the construction proves existence of
+the quotient algebra, not useful landing near a hypothetically smaller true
+optimum.
+
+This exact interpretation is consistent with the adjacent two-circulant
+literature: Barrera Acevedo--O Cathain--Dietrich prove that prime Paley type-II
+Hadamard matrices admit two-circulant-core presentations
+([Proposition 4.2](https://doi.org/10.1007/s10801-021-01033-x)), and
+Iverson--Jasper--Mixon discuss two-circulant Paley/ETF representations
+([arXiv:2410.17379](https://arxiv.org/abs/2410.17379)). The projective-line
+calculation above checks the mapping at the conference normalization actually
+used here rather than importing the Hadamard or ETF statement by analogy.
+
 ## 3. Exact finite certificates
 
 The program
@@ -127,7 +178,7 @@ independently verifies all sequence, ASDS, block, and full conference
 identities with integer arithmetic. Its result file is
 [`computations/results/two_fiber_cyclic_conference.json`](../computations/results/two_fiber_cyclic_conference.json).
 
-Besides the order-six base, it certifies:
+Besides the order-six base, the saved non-Paley search branch certifies:
 
 ```text
 k=2, s=9, N=18
@@ -144,8 +195,80 @@ residuals. The `k=2` solution has `P={4,5}` and
 `R={3,5,6,8}` in `Z_9`; the `k=3` solution has the sets recorded in the JSON
 certificate. An exhaustive signature match over all admissible symmetric
 `a` and all row-sum-one `c` found the displayed solutions. This establishes
-that the cyclic restriction is nonempty through order 38. It supplies no
-scaling theorem.
+that the cyclic restriction is nonempty through order 38.
+
+The verifier now classifies their conference graphs exactly:
+
+- `k=2` is switching/permutation equivalent to the Paley conference of order
+  18. The JSON records and checks an explicit 17-vertex conference-graph
+  isomorphism.
+- The saved `k=3` certificate is **not** Paley. Its normalized conference graph
+  has 615 four-cliques and 65 five-cliques, while the Paley graph on 37
+  vertices has 555 four-cliques and no five-cliques. Clique counts are graph
+  invariants, so this is a short exact nonisomorphism certificate.
+- Separately, the nonsplit-torus construction gives a Paley cyclic certificate
+  at `k=3`. Thus the self-indexed ASDS solution space already contains both
+  Paley and non-Paley equivalence classes at order 38.
+
+An exhaustive enumeration sharpens the last statement. There are exactly 627
+oriented `k=3` pairs `(a,c)`. Under the natural operations of simultaneously
+multiplying both index sets by a unit of `Z_19`, cyclically shifting `c`, and
+reversing `c`, they form exactly three orbits, of sizes 171, 342, and 114.
+The corresponding normalized conference graphs have respective
+`(K_4,K_5)` counts
+
+```text
+(555,0), (615,65), (610,48).
+```
+
+Consequently all three natural orbits are graph-inequivalent: the first is
+the explicit Paley nonsplit-torus orbit, and the other two are distinct
+non-Paley classes. This is an exact finite classification under the stated
+natural equivalence only; it does not supply an asymptotic family or a cap
+bound.
+
+### 3.1 The strong cyclic subclass is empty at `k=4`
+
+The next discriminator now has a certified answer. For `k=4`, `s=33`, there
+are `binom(16,6)=8008` possible symmetric internal negative supports `P`.
+For 7,998 of them the audit constructs an explicit integer vector `z` with
+
+```math
+z^{\mathsf T}(65I-AA^{\mathsf T})z<0.
+```
+
+This is an exact obstruction to a bridge `C`, since
+`CC^{\mathsf T}=65I-AA^{\mathsf T}` would be positive semidefinite. The ten
+surviving supports form one orbit under multiplication by units of `Z_33`.
+For a representative with negative half-support
+
+```text
+{1,3,4,5,12,15},
+```
+
+the required bridge negative support `R` has a fixed 16-component circular
+distance profile. Summing the profile at multiples of three forces its three
+residue-class sizes to be a permutation of `(4,6,6)`. Translation puts the
+size-four class at residue zero and then puts an omitted point at coordinate
+zero. An exhaustive integer backtrack over the resulting search space visits
+43,268,109 nodes and finds no `R`. Unit multiplication transfers this result
+to all ten survivors.
+
+Thus there is **no strong cyclic solution at `k=4`**, although general
+conference matrices of order 66 exist. This is a finite falsifier for the
+strong cyclic/self-indexed ansatz at one parameter, not an obstruction to
+the unrestricted two-fiber block system or to an infinite subsequence that
+skips `k=4`. The exact audit and stable result are
+[`audit_k4_strong_cyclic_nonexistence.cpp`](../computations/audit_k4_strong_cyclic_nonexistence.cpp)
+and
+[`k4_strong_cyclic_nonexistence.json`](../computations/results/k4_strong_cyclic_nonexistence.json).
+
+Exhaustive enumeration of all `2^17` Boolean states modulo global negation
+gives cap 33 for the saved order-18 signing (204 projective maximizers). This
+is an exact cap of that signing and hence a rigorous `M_18 <= 33` construction
+bound; it is not a proof that `M_18=33`. The order-38 non-Paley certificate
+supplies finite structural diversity but, without a scalable cap theorem,
+does not itself count as a landing result.
 
 ## 4. What the block identities alone prove about Boolean cap
 
@@ -206,13 +329,22 @@ orthogonality and the two-dimensional quotient.
 
 The clean scalable construction question is now:
 
-> Construct self-indexed ASDS pairs (7) for an infinite sequence of `k`, or
-> prove a scalable obstruction to them, and then obtain a Boolean cap bound
-> on (6) that uses more than the two-fiber spectral decomposition.
+> Construct **non-Paley** self-indexed ASDS pairs (7) for an infinite sequence
+> of `k`, or prove a scalable obstruction to them, and obtain a Boolean cap
+> bound using more than the two-fiber spectral decomposition.
 
-Existence alone would not prove a useful landing theorem: all members are
-conference matrices and (10) returns the `1/2` spectral constant. Conversely,
-nonexistence in the cyclic subclass would falsify only this polynomial-state
-candidate, not the general two-fiber block system (1). The self-indexed ASDS
-condition is nonetheless a concrete, independently checkable target that is
-strictly smaller than unrestricted bridge optimization.
+Existence alone does not prove a useful landing theorem: all members are
+conference matrices and (10) returns the `1/2` spectral constant. The prime
+Paley branch is now explained and is asymptotically saturating, so further
+Paley examples are not progress. The saved non-Paley `k=3` solution and the
+certified `k=4` nonexistence show that the strong cyclic subclass is
+arithmetically selective rather than an all-parameter construction. The next
+existence target must therefore supply an explicit infinite parameter set;
+another isolated solver search would not establish scalability.
+
+Conversely, nonexistence in the cyclic subclass would falsify only this
+polynomial-state candidate, not the general two-fiber block system (1). The
+self-indexed ASDS condition remains a concrete, independently checkable
+target strictly smaller than unrestricted bridge optimization, but a useful
+research continuation must connect its non-Paley solutions to Boolean cap or
+cross-order landing rather than only enumerate more conference gauges.

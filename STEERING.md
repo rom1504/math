@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: second sustained phase, fixed-algebra checkpoint
+Evidence cutoff: second sustained phase, conference/product checkpoint
 (2026-07-31). Status: **computational--composition campaign active**.
 
 ## User-stated objective and workflow directives
@@ -60,30 +60,31 @@ of energy at least 210, so every tensor continuation has normalized cap at
 least `210/56^(3/2)=0.501114...` and a linear `b`-landing gap. Any repair must
 make a cumulative leading-scale change on those explicit entangled states.
 
-The principal target is now a genuinely non-Kronecker, nontranslation,
-growing-state order operation. It must (i) be defined without the unknown
-optimum, (ii) retain a near-minimizer, (iii) control the extreme Boolean tail,
-and (iv) have a geometrically summable `b`-defect. The edge-twisted Hadamard
-mosaic is inactive as a recursive family: after every switching/permutation
-preprocessing, exact product-channel limits stay at least `0.5692...` and
-`0.5536...` for the saved order-ten and order-14 seeds. It exposes another
-principal-restriction obligation. A leading micro correction kills all stored
-witnesses but fresh exact witnesses are stronger, so certificate hitting is
-not cap control.
+The principal target remains a genuinely non-Kronecker, nontranslation,
+growing-state order operation. It must be defined without the unknown optimum,
+retain a near-minimizer, control the extreme Boolean tail, and have a
+geometrically summable `b`-defect. Fixed and edge-twisted Hadamard mosaics,
+summably small repairs, and every complete entry-local switching-natural graph
+product retain a proved leading entangled tensor channel. Three full rounds of
+active witnesses can be suppressed by one micro template while fresh faces
+reappear, so raw certificate hitting is also inactive.
 
-The strongest concrete exploratory lead is instead the nonhomogeneous
-two-fiber conference system. Its cyclic self-indexed reduction has exact
-solutions at fiber sizes 3, 9, and 19, while no infinite family or Boolean
-slack theorem is known. Quotient data alone retain exponential bridge-response
-freedom. The next target is an infinite self-indexed supplementary-difference
-family plus a cap inequality on its nontrivial modules. Generic profiles and
-full response tables remain inactive.
+The cyclic two-fiber conference system is demoted from a positive landing
+lead. Its prime Paley branch is explicit but saturating. At order 38 there are
+one Paley and two graph-inequivalent non-Paley cyclic classes, all with exact
+witness 109 and fixed-cap interval `[109,113]`. The strong cyclic ansatz is
+exactly empty at `k=4`; this is finite nonexistence, not a scaling theorem.
+Every pointwise two/four-channel product fails by axial amplification. The
+universal local-field identity saves only `Theta(sqrt N)` from the spectral
+bound. Thus an infinite non-Paley family plus a cap theorem would still need
+a separate comparison with the true optimum.
 
-Conference families have a proved summable-defect internal composition, but
-their landing clause is exactly the unknown statement
-`M_n=(1/2+o(1))n^(3/2)`. Prime-Paley conferences also have an infinite
-arithmetic subsequence saturating normalized cap `1/2`. Thus conference
-closure alone does not solve landing.
+Conference Gaussian rounding gives exactly the `1/pi` asymptotic constant.
+Universal root states are sharp one-flip and no-improving-two-flip traps;
+three-flip ascent escapes but higher evolution returns to full cap structure.
+Maximum independent excess uses different row/column switches, and the
+spectral-flatness/trace-four dichotomy also stops at `1/pi`. Conference systems
+remain an extremal testbed, not a convergence mechanism.
 
 The ranked direct-composition alternative is low-variance fractional
 rounding. A fractional bridge of ideal cap and variance `O(N^(2-eta))`
@@ -132,10 +133,11 @@ modulus forces alternating macroscopic log-scale epochs; none are known.
 
 ## Checkpoint decision
 
-Continuation is justified by scalable primary results: the all-diagonal,
-fixed/perturbative-channel, edge-twisted, prime-Paley, abelian Cayley, and
-homogeneous nonabelian obstructions. The adaptive correction audit is finite
-structural evidence. Prioritize cyclic two-fiber existence and Boolean cap;
-keep fractional rounding secondary. Do not return to raw separators, generic
-orbit labels, spectrum-only state, independent lifts, selected prior, or
-common active faces. This checkpoint does not end the authorized phase.
+The latest checkpoint has no new primary progress: it adds scalable route
+falsifiers and exact conference theorems but removes no landing obligation.
+It is the first consecutive no-primary checkpoint after the fixed-algebra
+progress. Continue the authorized phase through its four-hour boundary,
+prioritizing a nonlocal nonconference composition or an analytic fractional
+bridge with a Boolean margin. Do not return to raw separators, local graph
+products, more saturating conference examples, spectrum-only state,
+independent lifts, selected prior, or common active faces.

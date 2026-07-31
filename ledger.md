@@ -39787,3 +39787,218 @@ margin certificate; selected prior, common active faces, fixed local
 profiles, and fixed fiber algebras remain inactive.  The proved primary
 progress justifies continuing the sustained campaign rather than invoking
 the stopping rule.
+
+### 10.130 Second sustained phase: third substantive checkpoint
+
+This checkpoint closes the bounded active-witness game, classifies the cyclic
+two-fiber examples more sharply, and proves broader product and rounding
+obstructions.  It does **not** improve an exact `M_n`, the asymptotic interval,
+or a convergence recurrence.  Claims are classified individually below.
+
+#### 10.130.1 The bounded active-witness game does not stabilize
+
+The common 16-bit micro-template minimax problem was solved exactly on two
+and then three complete all-diagonal witness rounds.  With 32,768 pooled
+witnesses its optimum is 72; with 49,152 witnesses its optimum is 90.  Yet a
+fresh all-diagonal search at the two-round optimum finds an exact witness of
+absolute energy at least 210 for every one of the 16,384 diagonal choices.
+The canonical record hash is
+
+```text
+33cec568dafd3d6d504a0f837c18c844d93e90c6f65a91c21347cb630718f8a0.
+```
+
+These are **exact finite minimax and witness certificates**.  They show that
+raw active faces are template-dependent: tens of thousands of stored
+extremizers can be killed simultaneously while a fresh face family appears
+immediately.  The alternating separator is therefore stopped.  This is not
+a cap upper bound, landing theorem, or asymptotic obstruction.
+
+#### 10.130.2 Cyclic two-fiber systems: exact classes and product no-go
+
+For `s=2k^2+1`, the cyclic two-fiber conference condition is exactly
+
+~~~math
+N_P(h)+N_R(h)+\mathbf1_P(h)=k^2-k\qquad(h\ne0).    \tag{10.1499}
+~~~
+
+A deterministic nonsplit-torus gauge puts the prime Paley conference into
+this form whenever `Q=4k^2+1` is prime.  Exact certificates cover
+`Q=5,17,37,101`, the last giving `k=5`, `s=51`, and order 102.  Infinitude of
+such primes is an open quadratic-prime problem, and this is Paley
+repackaging, not non-Paley landing.
+
+At `k=3`, exhaustive exact enumeration gives 627 oriented pairs and three
+orbits under simultaneous unit multipliers, bridge shifts, and reversal,
+with raw sizes 171, 342, and 114.  Their normalized conference graphs have
+
+```text
+(K4,K5)=(555,0), (615,65), (610,48).
+```
+
+The first is Paley and the last two are graph-inequivalent non-Paley classes.
+This proves finite structural diversity, not a scalable family.
+
+The direct product route is scalably obstructed.  Tensoring two binary pairs
+amplifies every axial complementary-autocorrelation sidelobe by the other
+factor length.  The natural Gray/four-channel product still has axial value
+`2s'a_h` instead of the required `2a_h`.  More generally, every fiberwise
+signed-permutation interleaving `q(u,v)=T_vp(u)` obeys the same amplification
+because `T_v^T T_v=I`.  A survivor must mix both coordinates nonlocally or
+add genuinely active channels.  This is a **proved scalable product-route
+falsifier**, not a composition inequality.
+
+#### 10.130.3 Universal conference arithmetic and order-38 evidence
+
+For every symmetric conference signing of order
+`N=4k^2+2=2s`, orient the local fields by the sign of the energy:
+`u_i=sign(H)w_i(Sw)_i`.  Exact conference orthogonality and odd parity give
+
+~~~math
+2ks-|H_S(w)|
+={1\over8k}\sum_i(u_i-(2k-1))(u_i-(2k+1)),         \tag{10.1500}
+~~~
+
+with nonnegative summands.  Hence
+
+~~~math
+\operatorname{cap}(S)\le2ks-1.                    \tag{10.1501}
+~~~
+
+This is a **proved universal arithmetic improvement**, but it saves only
+`Theta(sqrt N)` energy from the spectral bound.  The associated distance
+from the opposite spectral projector tends only to `1/4`, not a positive
+fraction of the Boolean norm.
+
+Exact enumeration gives caps 5 and 33 for the saved order-six and order-18
+members.  Reproducible search over 400,000 single-flip and 10,000 one/two-
+flip terminal states in each order-38 orbit finds an exact energy-109 witness
+in all three classes.  Together with (10.1501), each fixed cap lies in
+`[109,113]`.  The sampled landscapes differ, but neither 109 exactness nor an
+asymptotic difference is proved.  The precise open saturation lemma is
+
+~~~math
+\operatorname{cap}(S_k)\ge2ks-(2k-1),             \tag{10.1502}
+~~~
+
+equivalently local-field penalty at most `8k(2k-1)`.  It holds exactly for
+`k=1,2` and as a lower certificate in all three `k=3` classes.  The energy-113
+model compresses to six local-field histograms and removes a factor-38
+cyclic/global symmetry, but it remains the same 703-XOR switching QUBO with
+extra variables; bounded decisions were `UNKNOWN` and were stopped.  The
+initial normalized `k=4` ASDS search was also `UNKNOWN`.
+
+A different exhaustive integer audit subsequently proves **finite
+nonexistence at `k=4` for the strong cyclic ansatz**.  Of 8,008 symmetric
+internal supports, 7,998 have exact integer PSD separators.  The ten
+survivors are one multiplier orbit; residue counting forces bridge class
+sizes `(4,6,6)`, and an exact 43,268,109-node backtrack excludes the
+representative.  This is a certified finite route falsifier, not
+nonexistence of general order-66 conference or two-fiber systems and not a
+scaling theorem.
+
+#### 10.130.4 Exact Gaussian rounding and its local-search boundary
+
+For any symmetric conference signing of order `N`, let
+`P_+=(I+S/sqrt(N-1))/2` and draw `g` with covariance `P_+`.  The Gaussian
+arcsine identity proves
+
+~~~math
+\mathbb E H_S(\operatorname{sign}g)
+={N(N-1)\over\pi}\arcsin{1\over\sqrt{N-1}}
+=\left({1\over\pi}+o(1)\right)N^{3/2}.             \tag{10.1503}
+~~~
+
+This universal rounding gives constant `1/pi`, not `1/2`.  There is a sharp
+pointwise obstruction.  For every root `r`,
+
+~~~math
+x=e_r+Se_r,\qquad H_S(x)=N-1,                       \tag{10.1504}
+~~~
+
+has local fields `{N-1,1,...,1}`, satisfies `sign(Sx)=x`, and is itself
+`sign(P_+x)`.  Its top-space orthant has positive Gaussian measure.  Every
+positive one-flip local maximum has energy at least `N-1`, so (10.1504) is
+universally sharp.
+
+The exact flip radius prevents overinterpreting the trap.  After normalizing
+the root, let `C` be the conference core and let `p(F)` count positive core
+edges induced by a flip set of size `m`.  Then
+
+~~~math
+\Delta H=2(4p(F)-m^2).                              \tag{10.1505}
+~~~
+
+No one- or two-flip move strictly improves (10.1504), but for every `N>=10`
+a positive triangle exists and gains exactly six.  Immediately afterward
+at least `(N-10)/4` coordinates are improving.  The first two strongly-
+regular-graph moments further show that any nonempty terminal flip set is at
+Hamming distance `Omega(sqrt N)` from the root.  These facts prove escape,
+not project-scale energy: the simultaneous moves interact, and higher
+intersection data return to full cap optimization.  Basin-volume or
+multi-step control remains the missing obligation.
+
+#### 10.130.5 Product and external-theorem mapping audits
+
+Every complete entry-local product covariant under arbitrary switching of
+the parents is forced to have the form
+
+~~~math
+S_{pqr}=pA\otimes B+qA\otimes I+rI\otimes B.        \tag{10.1506}
+~~~
+
+The axial channels are controlled by parent caps, but the first term is the
+full entangled tensor channel.  If `A,B` are conference matrices, coefficient
+comparison in `S^2=tS+uI` shows that (10.1506) can have only two eigenvalues
+only when both factor orders are two.  Thus no nontrivial local,
+switching-natural graph product supplies a conference or summable-defect
+operation.  A nonlocal growing bridge state is unavoidable.
+
+The Momihara--Suda maximum-excess theorem has the wrong optimization orbit.
+It independently switches rows and columns of a symmetric Paley conference,
+producing `r^T Wc=2mN` with `r!=+/-c` and a nonsymmetric output.  Our objective
+permits only the same switch `x^T Wx`; parity already forbids a symmetric
+order-`4m^2+2` signing from attaining half that excess.  The generic
+polarization conversion loses a factor four and gives asymptotic quadratic
+constant `1/4`, below (10.1503).  The external theorem removes no obligation.
+
+A blank-slate spectral-flatness dichotomy was also audited.  The exact defect
+
+~~~math
+\|A^2-(n-1)I\|_F^2=\operatorname{tr}(A^4)-n(n-1)^2              \tag{10.1507}
+~~~
+
+and a Gaussian covariance built from `(A+tI)^2` give only the `1/pi` constant
+on the near-flat branch, with `o(n^(3/2))` perturbation when the defect is
+`o(n^(3/2))`.  A trace-four bilinear factorization suffers a worst-row
+localization loss.  Thus spectral spread versus near-conference structure
+does not yet reduce the same-switch problem; it needs a new delocalization or
+rigidity theorem.
+
+#### 10.130.6 Operational table
+
+| Track | Target | Last concrete result | Next falsifiable step | Stopping or redirect condition |
+|---|---|---|---|---|
+| Constructive theorem | Conference same-switch rounding or a genuinely nonlocal product | Exact `1/pi` theorem, universal root trap, radius-three escape, and `Omega(sqrt N)` displacement | Decide whether basin ascent gives a uniform project-scale gain | Higher intersection data that simply restate full cap optimization |
+| Falsification/computation | Cap-relevant structure beyond conference class labels | All three order-38 cyclic classes have interval `[109,113]`; the strong cyclic ansatz is exactly empty at `k=4` | Seek a nonconference held-out scaling invariant tied to one uniform lemma | More timeouts, isolated caps, or conference samples without scaling content |
+| Independent abstraction | Nonlocal cross-order operation | Switching-natural local products retain the tensor channel; trace-four dichotomy stops at `1/pi` | Produce an exact nonlocal composition inequality or a genuinely different reduction | Vocabulary-only products or unchecked row/column switching imports |
+| Main integration | Landing in the `b_n` scale | Closed the active-face game and verified same-switch, product, arithmetic, and rounding scopes | Seek a tractable nonconference family with a proved comparison to the true optimum | Do not promote conference saturation or route falsification to landing progress |
+
+#### 10.130.7 Updated frontier
+
+The exact values through `M_14=21`, all rigorous finite intervals, and the
+asymptotic interval are unchanged.  This checkpoint contains proved scalable
+obstructions and a universal conference rounding theorem, but none meets the
+campaign definition of **primary progress**: no landing obligation is
+removed, no recurrence step is completed, and no scalable nonconvergence
+construction is obtained.  This is the first consecutive substantive
+checkpoint without primary progress after Section 10.129.
+
+The cyclic two-fiber family is demoted from a positive landing lead.  Its
+Paley branch is known saturation, its two non-Paley classes are finite, its
+strong cyclic ansatz is empty at `k=4`, and every natural pointwise product
+fails axially.  Conference systems remain an extremal testbed, not a current
+convergence mechanism.  The unresolved target is an objective-independent,
+genuinely nonlocal cross-order state with a summable defect and a proved
+`o(n)` landing gap.  The authorized campaign continues through its four-hour
+boundary; one no-primary checkpoint does not trigger the stopping rule.
