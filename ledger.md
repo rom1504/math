@@ -40662,3 +40662,511 @@ discipline. Genuine nonconvergence remains a standing alternative and still
 requires separated infinite subsequences, not any of the route falsifiers
 above. If ordinary waves later resume, Wave 61 remains the next scheduled
 blank-slate boundary.
+
+### 10.133 Joint same-switch cancellation campaign launch
+
+The user explicitly authorized this campaign on 2026-08-13 after the
+checkpoint in Section 10.132. The first milestone is one rigorous inequality
+at the correct leading scale that lies outside both the scalar/independently
+paid finite-fibre no-go and the canonical same-map Krivine ceiling. No gadget
+enumeration begins until the precise theorem interface is stated and shown to
+be weaker than full parent optimization. `README.md` and its consolidation
+rule remain unchanged.
+
+| Track | Target | Last concrete result | Next falsifiable step | Stop or redirect condition |
+|---|---|---|---|---|
+| Same-spin recoupling | Convert an asymmetric two-spin response into one common spin without ordinary polarization | Canonical same-map responses stop at `1/pi`; generic polarization loses factor two | State a restricted matrix class or joint law on which recoupling has unit leading constant | Separate bounds on the two endpoints, a hidden reconstruction of `max_z |z^T A z|`, or conference constant at most `0.336493...` |
+| Joint finite-fibre action | Bound all microchannels together against the child signing | Every scalar or separately paid left/right decomposition costs more than `1.05 k^(3/2)` | Define a vector-valued child norm with a uniform `k^(3/2)+o(k^(3/2))` action bound and strictly compressed state | Atomwise triangle inequality, fixed leading excess, or the full `q^n` type assignment table |
+| Seed-dependent/nonlocal lift | Compress a seed-aware family without full parent maximization | Dependent profile recovery composes but its absorption step still depends on the full intermediate signing | Identify a polynomial or bounded state that certifies the cap of one explicit nonlocal lift | The state enumerates every parent spin or only renames every bridge constraint |
+| Main audit | Derive the minimal theorem and test it symbolically before computation | Sections 10.132.2--10.132.4 delimit the available escapes | Check exact constants on conference and stored optimal signings as soon as a candidate exists | No computation without a theorem-level candidate |
+
+#### 10.133.1 Exact asymmetric-to-common-spin recoupling
+
+All quantities in this subsection use doubled energy
+`Q(A)=max_z |z^T A z|`; divide by two for the project cap. For arbitrary
+Boolean vectors `x,y`, put
+
+```math
+I=\{i:x_i=y_i\},\quad J=\{i:x_i=-y_i\},\quad
+P=x_I^{\mathsf T}A[I]x_I,\quad
+R=x_J^{\mathsf T}A[J]x_J.                         \tag{10.1540}
+```
+
+Symmetry cancels the cross terms and gives `x^T A y=P-R`. For a principal
+block `D`, let `C_+(D)=max_z z^T D z` and
+`C_-(D)=-min_z z^T D z`. The following is **Verified**:
+
+```math
+PR\ge0\quad\Longrightarrow\quad Q(A)\ge|x^{\mathsf T}Ay|,    \tag{10.1541}
+```
+
+whereas if `PR<0`,
+
+```math
+\boxed{
+Q(A)\ge\max\left\{
+|P|+C_{\operatorname{sgn}P}(A[J]),
+|R|+C_{\operatorname{sgn}R}(A[I])
+\right\}.}                                      \tag{10.1542}
+```
+
+Indeed, for any spin `r` on `J`, the two common spins `(x_I,+/-r)`
+have maximum absolute energy
+
+```math
+|P+r^{\mathsf T}A[J]r|+2|x_I^{\mathsf T}A[I,J]r|. \tag{10.1543}
+```
+
+Choosing `r` with internal energy aligned to `P` proves the first term in
+(10.1542), and exchanging the shores proves the second. Thus the cross block
+is retained jointly and can only help. No endpoint is bounded separately and
+no polarization is used. The exact defect is the smaller of the two aligned
+one-sided shortfalls.
+
+This is an algebraic escape from both Section 10.132 no-go classes, but its
+exact one-sided caps remain Boolean optimizations. A second theorem replaces
+them by a polynomial statistic. If `D` is symmetric, zero diagonal, and
+`|d_ij|<=1`, define
+
+```math
+\Gamma_\sigma(D)=\max_{0\le\theta\le1}{2\over\pi}
+\left[\theta\operatorname{tr}((\sigma D)_+)
+-\left({\pi\over2}-1\right)\theta^2
+\operatorname{rank}((\sigma D)_+)\right].        \tag{10.1544}
+```
+
+Gaussian rounding of the correlation matrix formed from the positive
+spectral projector, together with the sharp bound
+`|arcsin(u)-u|<=(pi/2-1)u^2`, proves the **Verified polynomial certificate**
+
+```math
+\boxed{C_\sigma(D)\ge\Gamma_\sigma(D).}           \tag{10.1545}
+```
+
+Since `tr(D)=0`, the simpler common consequence for a matrix `D` of order
+`m` is
+
+```math
+\boxed{
+C_+(D),C_-(D)\ge
+S(D):=\left[{\|D\|_*\over\pi}
+-\left(1-{2\over\pi}\right)m\right]_+.}         \tag{10.1546}
+```
+
+Equations (10.1542) and (10.1545) give, samplewise for any asymmetric
+random outputs `(X,Y)`,
+
+```math
+\boxed{
+Q(A)\ge|\mathbb E[X^{\mathsf T}AY]|
+-\mathbb E\Delta_\Gamma(X,Y),}                   \tag{10.1547}
+```
+
+where `Delta_Gamma` is zero when `PR>=0` and otherwise is the minimum of
+the two aligned projector-certificate shortfalls. This is the minimal
+same-spin interface: a genuinely asymmetric bilinear response can be used at
+unit coefficient if its joint shore defect is subleading.
+
+For a symmetric conference signing `C` of order `n`, every principal block
+of size `s` obeys
+
+```math
+S(C[S])\ge\left[
+{s(s-1)\over\pi\sqrt{n-1}}
+-\left(1-{2\over\pi}\right)s\right]_+.           \tag{10.1548}
+```
+
+Thus proportional shores contribute on the required `n^(3/2)` scale. The
+theorem is not universally lossless: a positive-semidefinite argument limits
+matrix-independent phase reversal on an `m`-vertex shore to `1/(m-1)`, and
+an explicit dense full-sign block family has `B(A)/Q(A)->2`. Structure of
+the induced shores is necessary.
+
+Only after proving the theorem, the exhaustive checker tested every saved
+exact minimizer orbit through order 8, the exact order-10 minimizer, and
+conference orders 6, 10, 14, and 18. On the doubled order-10 minimizer it
+gives exact/projector/nuclear certificates `24/21.115/20.730`, versus
+ordinary polarization `20` and true `Q=26`. On order-14 conference it gives
+`42/31.093/29.639`, versus polarization `23`; on order 18 it gives
+`64/41.879/40.062`, versus `36`. These are exact finite evaluations for the
+caps and numerical spectral values, not an asymptotic gain.
+
+The complete proof and replay are
+`artifacts/asymmetric_same_spin_recoupling.md` and
+`computations/check_same_spin_recoupling.py`.
+
+#### 10.133.2 Correct-scale joint finite-fibre action
+
+For a child signing `A`, define the signed elliptope
+
+```math
+\Gamma(A)=\max\left|
+\sum_{i<j}a_{ij}(P_{ij}-Q_{ij})\right|,
+\quad P,Q\succeq0,\quad\operatorname{diag}(P+Q)=\mathbf1. \tag{10.1549}
+```
+
+This is one polynomial-size state with a shared pointwise budget, not two
+separately paid channels. If `R` is a symmetric `k` by `k` microkernel,
+`rho=||R||_op`, and `D` fills the diagonal fibres, spectral positive/negative
+parts of `R/rho` give the **Verified joint-action theorem**
+
+```math
+\boxed{
+\operatorname{cap}(A\otimes R+I\otimes D)
+\le k\rho\,\Gamma(A)+n\operatorname{cap}(D).}     \tag{10.1550}
+```
+
+The positive and negative microchannels are evaluated together before the
+absolute value. For a symmetric Hadamard `R`, `rho=sqrt(k)`, so (10.1550)
+has exactly the desired `k^(3/2)` leading scale and strictly escapes the
+scalar-atom theorem in Section 10.132.3.
+
+The compressed state nevertheless has an exact obstruction. Its SDP dual is
+
+```math
+\Gamma(A)=\min\left\{\sum_i y_i:
+\operatorname{diag}(y)\pm A/2\succeq0\right\},    \tag{10.1551}
+```
+
+and a Frobenius/Cauchy--Schwarz argument proves
+
+```math
+\boxed{\Gamma(A)\ge {n\sqrt{n-1}\over2},}         \tag{10.1552}
+```
+
+with equality exactly for symmetric conference matrices. Hence this theorem
+meets the requested first-milestone scale but cannot certify a normalized
+constant below `1/2`. Proving `Gamma(A)-cap(A)=o(n^(3/2))` on minimizers would
+itself prove the sharp lower constant `1/2`, so the remaining landing claim is
+not demonstrably easier than the original problem.
+
+An independent exact quotient theorem further shows that every fixed-level
+SOS pseudoexpectation on a child duplicates into every seed-dependent exact
+compressed lift with the full `s^(3/2)` factor. Dual certificates pull back
+at the same degree. On conference seeds the canonical pseudo-solution even
+survives all consistent `q`-local Boolean marginal constraints when
+`q(q-1)<=2sqrt(n-1)`, including every fixed locality and up to order
+`Theta(n^(1/4))`. Thus standard fixed SOS levels or bounded-local facets
+cannot repair the elliptope gap inside the lift.
+
+The proof, inheritance audit, verifier, and result are:
+
+- `artifacts/joint_finite_fibre_action_audit.md`;
+- `artifacts/nonlocal_lift_joint_sos_inheritance.md`;
+- `computations/audit_joint_finite_fibre_sdp.py`;
+- `computations/results/joint_finite_fibre_sdp_audit.json`.
+
+The SDP replay is byte-identical, with canonical payload hash
+`f855d096d645e04b3431994bb004b7a5f41ea01372f29ff8defb8986b223c9cf`.
+
+#### 10.133.3 Updated operational table
+
+| Track | Concrete result | Classification | Next falsifiable step | Status |
+|---|---|---|---|---|
+| Same-spin recoupling | Exact two-shore theorem plus polynomial spectral defect (10.1547) | Verified correct-scale joint inequality; first milestone met | For one explicit asymmetric Krivine law, prove `E Delta_Gamma=o(n^(3/2))` or smaller than its gain over `c_*` | Leading target |
+| Joint finite-fibre action | Exact Hadamard-scale inequality (10.1550) and sharp elliptope floor | Verified correct-scale joint inequality plus scalable route obstruction | Add a signing-specific global separator not preserved by quotient duplication | Universal elliptope/Clifford variants stopped |
+| Seed-dependent lift | Fixed-level SOS inheritance and bounded-local conference pseudo-solutions | Verified route obstruction | Break exact quotient with summably controlled global error, or find a genuinely global child separator | Standard fixed-level states stopped |
+| Main integration | Factors, normalizations, theorem scopes, and saved-matrix tests audited | Milestone without frontier gain | Analyze the joint shore defect of a concrete asymmetric response; no gadget enumeration yet | Focused campaign continues |
+
+#### 10.133.4 Updated frontier
+
+The rigorous asymptotic interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                  \tag{10.1553}
+```
+
+The user-requested first milestone is achieved: (10.1547) and (10.1550) are
+rigorous, genuinely joint inequalities at the correct leading scale, outside
+both no-go theorem classes from Section 10.132. Neither improves a bound or
+completes a recurrence, so neither is primary progress under the repository
+definition.
+
+The recoupling theorem is the stronger research lead. It replaces the factor
+two by a concrete polynomial defect that is strictly smaller on conference
+and exact-minimizer tests. The exact next theorem is
+`E Delta_Gamma=o(n^(3/2))` for one specified asymmetric Krivine construction,
+or a bound showing that its defect is smaller than the construction's
+bilinear gain above `c_*`. Computation should now target only that joint law;
+undirected gadget enumeration and universal fixed-level SDP variants remain
+stopped.
+
+#### 10.133.5 A concrete asymmetric law and cross-aware recoupling
+
+The abstract law is now fixed. Let `X` be uniform Boolean and set
+`Y_i=sign((AX)_i)`, using `Y_i=X_i` at a zero field. Symmetry gives the
+**Verified exact identity**
+
+```math
+V_A(X):=X^{\mathsf T}AY=\|AX\|_1,
+\qquad
+\mathbb E_XV_A(X)
+=n(n-1){\binom{n-2}{\lfloor(n-2)/2\rfloor}\over2^{n-2}}
+=\left(\sqrt{2/\pi}+o(1)\right)n^{3/2}.          \tag{10.1554}
+```
+
+Thus this response has doubled leading coefficient
+`sqrt(2/pi)=0.797884...`. To improve the existing doubled coefficient
+`c_*=0.672986728863...`, recoupling may lose at most
+
+```math
+\sqrt{2/\pi}-c_*=0.1248978\ldots                 \tag{10.1555}
+```
+
+times `n^(3/2)`.
+
+The cross term discarded in (10.1542) can be retained. For the agreement
+anchor `p=X_I`, put
+
+```math
+h_J=A[J,I]p,
+\qquad
+E_J(p)=\begin{pmatrix}A[J]&h_J\\h_J^{\mathsf T}&0\end{pmatrix}. \tag{10.1556}
+```
+
+For `P ne 0`, the **Verified anchored-shore theorem** is
+
+```math
+\boxed{Q(A)\ge |P|+C_{\operatorname{sgn}P}(E_J(p)),} \tag{10.1557}
+```
+
+with the symmetric inequality anchored on `q=X_J`. Indeed, every Boolean
+`(r,t)` in (10.1556) lifts to the common parent spin `(tp,r)`, whose energy
+is `P+(r,t)^T E_J(r,t)`. The anchor shore is evaluated once and collapsed to
+one weighted vertex; cancellation with the complete cross field occurs
+before the absolute value. This is neither polarization nor separately paid
+scalar channels. Exact evaluation is still exponential on the free shore,
+so it is a strict restriction of the parent maximum, not yet a
+bounded-complexity state.
+
+For an arbitrary weighted zero-diagonal symmetric matrix `E`, positive
+spectral-projector rounding also proves
+
+```math
+C_\sigma(E)\ge\max_{0\le\theta\le1}{2\over\pi}
+\left[\theta\operatorname{tr}((\sigma E)_+)
+-\left({\pi\over2}-1\right)\theta^2
+\sum_{u\ne v}|e_{uv}|(\Pi_\sigma)_{uv}^2\right]. \tag{10.1558}
+```
+
+This is polynomial and genuinely joint, but its tested conference defects
+stay near `0.19--0.25 n^(3/2)`, above (10.1555). It is therefore
+**Numerically falsified on the tested orders** as the closing implementation;
+(10.1557) remains valid, and no asymptotic lower bound on this defect is
+claimed.
+
+The exact conference row-law moments, spectral-information barrier, and
+cross-aware audit are in
+`artifacts/row_sign_principal_shore_spectral_audit.md`.
+
+#### 10.133.6 Polynomial augmented one-flip certificate
+
+A different polynomial implementation survives. On either augmented shore
+`E` with target sign `sigma`, initialize its free spins by
+`sign(sigma h)` (using the original free spin at a zero entry), fix the
+collapsed coordinate to `+1`, and repeatedly make the smallest-index flip
+having largest positive gain. The exact gain is
+
+```math
+\Phi(w^{\oplus u})-\Phi(w)
+=-4\sigma w_u(Ew)_u,
+\qquad \Phi(w)=\sigma w^{\mathsf T}Ew.            \tag{10.1559}
+```
+
+All entries are integral and the absolute undirected edge weight is
+`O(n^2)`, so there are at most `O(n^2)` strict flips and an incremental
+implementation runs in `O(n^3)` time. At termination,
+
+```math
+\sigma w_u(Ew)_u\ge0\quad(\hbox{all }u),
+\qquad
+\boxed{\sigma w^{\mathsf T}Ew=\sum_u|(Ew)_u|.}   \tag{10.1560}
+```
+
+Let `G_sigma(E)` be this terminal value. In the hard branch `P>0>R`, define
+
+```math
+\Delta_{\rm gr}(X)=\left[V_A(X)-
+\max\{P+G_+(E_J),-R+G_-(E_I)\}\right]_+,         \tag{10.1561}
+```
+
+and set it to zero when `PR>=0`. Equations (10.1557)--(10.1560) prove the
+requested **Verified polynomial, same-switch, joint-cancellation inequality**
+
+```math
+\boxed{Q(A)\ge V_A(X)-\Delta_{\rm gr}(X),
+\qquad
+Q(A)\ge\mathbb EV_A-\mathbb E\Delta_{\rm gr}.}  \tag{10.1562}
+```
+
+It has the correct `n^(3/2)` response coefficient and lies outside both
+Section 10.132 no-go classes. Its state is the two selected weighted shores
+and their deterministic local-search trajectories; it is polynomial and
+does not reconstruct the parent Boolean maximum.
+
+The theorem was fixed before the finite audit. Exact enumeration on all
+saved minimizer orbits through order 8, the exact order-10 minimizer, and
+saved witnesses through order 14 gives the following selected doubled
+certificates, all divided by `n^(3/2)`:
+
+| case | response | greedy defect | greedy certificate |
+|---|---:|---:|---:|
+| minimizer/conference `n=6` | 0.765466 | 0.085052 | 0.680414 |
+| exact minimizer `n=10` | 0.778217 | 0.026435 | 0.751782 |
+| conference `n=14` | 0.783775 | 0.012015 | 0.771760 |
+
+All are rigorous finite averages of samplewise certificates and exceed
+`c_*`. Reproducible conference Monte Carlo then gives:
+
+| `n` | samples | normalized greedy defect | normalized certificate |
+|---:|---:|---:|---:|
+| 18 | 32768 | 0.000380 | 0.786505 |
+| 26 | 16384 | 0.005894 | 0.784357 |
+| 30 | 4096 | 0.001278 | 0.789987 |
+| 54 | 4096 | 0.000124 | 0.794075 |
+| 74 | 4096 | 0.000034 | 0.795160 |
+| 90 | 4096 | 0.000009 | 0.795662 |
+| 98 | 2048 | 0 | 0.795852 |
+
+These larger-order averages are **Numerical**, not asymptotic proofs. Fixed
+held-out random signings at orders 30, 62, and 98 had zero defect in every
+sample. By contrast, both the weighted-projector surrogate and the
+uncorrected one-shot `sign(h)` witness fall below `c_*` on tested larger
+conference orders. The evidence favors local repair over cross-field
+initialization alone; this comparison is not an asymptotic theorem.
+
+The full 32-case replay is byte-identical. Its canonical payload hash is
+`591acb823f980cd88ad1689081b1032e9071a02f757b8f23d0f1ad0a7f570cb7`.
+The proof, implementation, and result are:
+
+- `artifacts/row_sign_augmented_greedy_audit.md`;
+- `computations/audit_row_sign_recoupling_law.py`;
+- `computations/results/row_sign_recoupling_law_audit.json`.
+
+#### 10.133.7 Exact potential reduction and falsification criterion
+
+There is a theorem-level reduction of the remaining defect. Switch by `X`,
+write `B=Diag(X)A Diag(X)`, `ell=B1`, and take
+`I={ell_i>=0}`, `J={ell_j<0}`. On the branch anchored on `I`, put
+`D=B[J]`, `a_j=-ell_j>0`, and for `S subset J` define
+
+```math
+\Phi_J(S)=a(S)+2e_D(S).                            \tag{10.1563}
+```
+
+If `S` is a one-flip terminal set, `T=J setminus S`, and
+
+```math
+p_i=a_i+2\sum_{u\in S\setminus\{i\}}d_{iu}\ge0,
+\qquad p(S)=\sum_{i\in S}p_i,
+```
+
+then direct expansion gives the **Verified path-independent identity**
+
+```math
+\boxed{\delta_J^{\rm gr}=2[a(T)-p(S)]_+.}          \tag{10.1564}
+```
+
+The other anchor has the symmetric identity. Define `kappa_J` as the least
+number of largest outside weights `a_j` needed to carry the unpaid mass
+`a(T)-p(S)`, define `kappa_I` symmetrically, and put
+`kappa_*=min(kappa_I,kappa_J)` in the hard branch, with `kappa_*=0` otherwise.
+Universal Rademacher row-field tails and
+`Q(A)<=K n^(3/2)` prove, for every fixed `alpha in (0,1]`,
+
+```math
+\boxed{
+{\mathbb E\Delta_{\rm gr}\over n^{3/2}}
+\le C\alpha\sqrt{\log(2e/\alpha)}
++K\Pr\{\kappa_*>\alpha n\}.}                    \tag{10.1565}
+```
+
+Consequently `kappa_*/n -> 0` in probability uniformly on project-scale
+signings is sufficient for `E Delta_gr=o(n^(3/2))`. Conversely, a leading
+expected defect forces, with nonvanishing probability, **simultaneous
+linear-sized diffuse unmatched cores on both shores**. A few large fields,
+one bad shore, or a sublinear exceptional set cannot falsify the route.
+This verified reduction removes accumulated-history bookkeeping, but the
+terminal set and `kappa_*` still depend on the prescribed trajectory and tie
+rule. The diffuse-core lemma itself is **Open**.
+
+The derivation is in
+`artifacts/greedy_augmented_potential_reduction.md`. Conference identities
+alone control only squared field mass, and repeated flips occur, so neither
+an `L2` argument nor the false claim that every coordinate flips at most once
+proves (10.1565)'s missing probability term.
+
+There is also a sharp **Verified scope boundary** for any attempted proof
+from terminal stability alone. For `m=4^k`, an explicit regular symmetric
+Hadamard matrix `K` has row sum `sqrt(m)`. With `C=K-I`, a codimension-two
+spin `r` is a strict one-flip local maximum of `-r^T C r` with value
+
+```math
+-r^{\mathsf T}Cr=m\left({\sqrt m\over2}+1\right).
+```
+
+Embedding `C` and `-C` as the diagonal blocks of a full order-`N=2m`
+signing, with a zero-row-sum Hadamard bridge, gives
+`Q(A)=O(N^(3/2))`. At `X=1` both anchored cross fields vanish and both
+augmented shores possess this same bad strict local optimum. If a repair
+terminates there, its normalized joint defect is
+
+```math
+{1\over4\sqrt2}-{1\over\sqrt2\,2^k}
+\longrightarrow {1\over4\sqrt2}=0.176776\ldots,
+```
+
+larger than the budget (10.1555). Thus project-scale norm, the row-sign
+shore identities at one input, both terminal conditions, and taking the
+better anchor do not suffice. This does **not** falsify the expected greedy
+lemma: only one input is specified, and convergence of the prescribed path
+to the bad point is verified only at `m=16,64,256`, not proved for all `k`.
+A genuine falsifier must still establish a nonvanishing bad basin under
+uniform `X`, as required by (10.1565). See
+`artifacts/regular_hadamard_local_stability_obstruction.md` and
+`computations/check_regular_hadamard_local_obstruction.py`.
+
+#### 10.133.8 Updated operational table
+
+| Track | Concrete result | Classification | Next falsifiable step | Status |
+|---|---|---|---|---|
+| Same-spin recoupling | Anchored theorem (10.1557) and polynomial greedy inequality (10.1562) | Verified requested milestone | Prove `kappa_*/n -> 0` in probability, or only the weaker defect threshold (10.1555), uniformly on project-scale signings | Leading target |
+| Falsification/computation | Scaling through order 98; infinite family of bad strict terminal states | Exact finite/numerical law plus verified terminal-stability obstruction | Measure `kappa_*` and basin probability on held-out structured families; seek a positive-probability diffuse-core obstruction | Active support |
+| Spectral recoupling | Weighted projector (10.1558) | Verified inequality; numerically below threshold through order 98 | None without a new flat-entry/local-field ingredient | Deprioritized |
+| Joint composition | Signed-elliptope action and quotient/SOS inheritance | Verified correct-scale inequality plus scalable obstruction | A global signing-specific separator or inexact quotient with summable error | Secondary |
+
+#### 10.133.9 Updated frontier
+
+The rigorous asymptotic interval is still
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                  \tag{10.1566}
+```
+
+The requested milestone is met more strongly than at (10.1553):
+(10.1562) is an explicit polynomial-time joint same-switch certificate for
+one concrete asymmetric law, with raw leading coefficient
+`sqrt(2/pi)>c_*`. It neither reconstructs full maximization nor decomposes
+into separately paid scalar channels. All tested exact cases from order 6
+onward and held-out conference/random samples survive the coefficient
+threshold; orders 3 and 5 are finite small-order exceptions.
+
+No asymptotic bound has yet improved. The new primary mathematical target is
+the diffuse-core probability statement following (10.1565), which is
+strictly more specific than the original cap problem and has an explicit
+falsification criterion. The regular-Hadamard family proves that its
+basin/probability content is indispensable, but does not itself falsify the
+expected statement. Proving that statement would yield
+`Q(A)>=(sqrt(2/pi)-o(1))n^(3/2)` on the only signings not already excluded by
+a large cap, improving the project lower constant from `0.336493...` to
+`1/sqrt(2pi)=0.398942...`. It would not by itself prove convergence; the
+composition interface in `STEERING.md` remains the separate sufficient route
+to that objective.
