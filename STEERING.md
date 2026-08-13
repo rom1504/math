@@ -1,7 +1,8 @@
 # Strategic steering
 
-Evidence cutoff: four-hour synthesis of the second sustained phase (2026-07-31).
-Status: **computational--composition campaign paused at consolidation**.
+Evidence cutoff: externally informed Grothendieck--gadget checkpoint
+(2026-08-13). Status: **targeted campaign complete; automatic research
+paused**.
 
 ## User-stated objective and workflow directives
 
@@ -15,139 +16,126 @@ claim classification, ledger updates, and Git checkpoints are workflow
 directives. The existing consolidation and stopping discipline remains in
 force. Mathematical hypotheses and route rankings below are agent-authored.
 
-The user has now explicitly authorized a second sustained autonomous phase
-from commit `eec5aed`, using three parallel subagents for constructive theory,
-falsification/computation, and an independent abstraction attack. The main
-agent must work independently, integrate and verify their claims, check them
-approximately every 10--15 minutes, and run this phase for at least four hours
-unless the problem is solved or a genuine external blocker is established.
-This authorization changes workflow status only; it does not make any
-mathematical route, conjecture, or ranking a user directive.
+The user later authorized a second sustained autonomous phase from commit
+`eec5aed`, using three parallel subagents for constructive theory,
+falsification/computation, and independent abstraction. This changed workflow
+status only; it did not make any route, conjecture, or ranking a user
+directive.
+
+On 2026-08-13 the user authorized research using recent external developments
+as possible ingredients, especially a restricted symmetric
+Grothendieck/Krivine attack and verified finite signing gadgets. The user
+asked for mathematical progress rather than a literature summary. These are
+workflow authorization and suggestions; the assessments below remain
+agent-authored.
 
 ## Agent-authored campaign assessment
 
-The general sufficient package remains
+The rigorous frontier is unchanged:
 
-~~~math
-0\le u_n-b_n=o(n),\qquad
-u_{m+n}\le u_m+u_n+e(m+n),
-\qquad
-\sum_{j\ge1}\frac{e(2^jk)}{2^jk}\to0.               \tag{S1}
-~~~
+```math
+0.336493364431\ldots
+\le \liminf_{n\to\infty}\frac{M_n}{n^{3/2}}
+\le \limsup_{n\to\infty}\frac{M_n}{n^{3/2}}
+\le \frac12.                                      \tag{S1}
+```
 
-No route is active during the consolidation pause. The strongest new
-conditional target is adaptive soft composition. Revealing a bridge edge and
-choosing its sign against the Gibbs response `r_e` has exact increment
+The external ideas did not provide a plug-in improvement. They did provide
+three scalable route boundaries.
 
-~~~math
-J_\gamma(|r_e|)=\log\cosh\gamma
-+\log(1-|r_e|\tanh\gamma).                         \tag{S2}
-~~~
+1. **Canonical same-map Krivine rounding is inactive.** Every such response
+   has nonnegative odd Hermite masses and first mass at most `2/pi`. On a
+   conference Gram matrix its direct undoubled expected-response constant is
+   at most `1/pi`, below the current `0.336493...` theorem. This includes
+   growing dimension, degree, and mixtures. Asymmetric/dependent maps and
+   nonlocal postselection are not covered.
+2. **Atomwise finite-gadget certificates are inactive.** The exact scalar
+   cut-decomposition recurrence is valid, but every full-sign microkernel of
+   order `k` has effective coefficient greater than `1.05 k^(3/2)`. The same
+   loss survives left/right atoms after polarization. A useful gadget proof
+   must retain joint cancellation between channels or use a seed-dependent
+   nonlocal invariant.
+3. **Fixed-moment global quadratic forms are inactive.** Central Walsh-band
+   compression is near-isometric but exponentially large. Every fixed
+   normalized Schatten moment remains on scale `n`, missing the `n^(3/2)`
+   extreme. A growing-order tail theorem remains logically open.
 
-For `gamma_N=t_N/sqrt(N)` and `t_N>=N^delta`, the exact sufficient lemma is
+These are scalable falsifiers, not improved bounds or convergence progress.
 
-~~~math
-\sum_eJ_{\gamma_N}(|r_e|)
-\le\gamma_N\Delta_{m,n}+O(t_NN^{1-\delta}),        \tag{S3}
-~~~
+## Exact sufficient successor lemma
 
-where `Delta` is the energy slack allowed by `2/3`-power composition. This
-would prove a summable recurrence. It requires average absolute response only
-of order `t_N/sqrt(N)`, quantitatively weaker than near-unit squared overlap.
+No route is active because none is demonstrably simpler than the original
+optimization. The cleanest surviving composition interface would be a family
+of explicit constructors, defined without `M_n`, such that for every child
+signing `A` of order `n` and every `k>=2`,
 
-The obstruction is exact. The responses are posterior means in a noisy
-rank-one code, greedy chooses its least-likely output, and the sum in (S3) is
-exactly the final Gibbs bridge response. Its zero-temperature endpoint is the
-full bridge-cap target. Existing `D_infinity` code smoothing controls the
-opposite extremum (largest rather than deliberately least-likely output), and
-its threshold also excludes this low-rate rank-one code in the required
-regime. A random-support cubic theorem gives the correct aggregate scale for
-conference children, but only perturbatively; all connected orders enter when
-`t_N` grows. Stable computation through child order 10 shows no shrinking
-normalized shortfall and inconsistent minimizer-class margins. Thus (S3) has
-no lower-complexity certificate and is not a current target absent a new
-noisy-code theorem.
+```math
+\operatorname{cap}(\mathcal T_k(A))
+\le (1+\eta_k)k^{3/2}\operatorname{cap}(A)
+   +Cnk^{3/2},
+\qquad \eta_k\longrightarrow0,                    \tag{S2}
+```
 
-The second-order shell theorem is an exact alternative: a convolution of the
-child and bridge deficit histograms below `2^(m+n-2)` certifies a switching.
-At balanced orders it needs extreme-shell probability below `2^(-2n+2)`.
-Generic tail estimates miss this exponential rate, fixed Hadamard glow
-moments are at the wrong scale, and the explicit Walsh-shell family has no
-verified `o(n)` landing theorem. It is retained for external review, not
-active proof search.
+with `C` uniform and `T_k(A)` a signing of order `kn`. Applying (S2) to a
+large near-liminf seed, sending `k` to infinity, and filling a fixed remainder
+with `O(nN)` new-edge cost would give `limsup<=liminf`, hence convergence.
 
-Full bridge Gram pairs, energy-conditioned variances, and conditional second
-moments are exactly falsified by exhaustive held-out collisions. Conditional
-fourth moments survive only finitely and are larger than the exact shellwise
-maximum envelope; the latter is equivalent to all bridge constraints.
-
-Earlier fixed templates, local profiles, Hadamard tensor alphabets, Cayley or
-fusion families, local switching-natural products, selected prior, common
-active faces, and cyclic conference products remain inactive for the scalable
-reasons in the ledger. Conference systems are testbeds, not a landing route.
-
-## Rigorous frontier
-
-The asymptotic interval remains
-
-~~~math
-0.336493364431\ldots\le\liminf\frac{M_n}{n^{3/2}}
-\le\limsup\frac{M_n}{n^{3/2}}\le\frac12.
-~~~
-
-The campaign certified `M_11=17`, `M_12=18`, `M_13=20`, and `M_14=21`.
-Explicit witnesses and monotonicity/parity give rigorous intervals through
-order 26; the ledger retains the complete table.
-
-No fixed-density recurrence is complete. The verified final chain is
-
-~~~text
-uniform recurrence with geometrically summable power defect
-  -> convergence of M_n/n^(3/2).
-~~~
+The missing lemma is not merely (S2): it must derive (S2) from a
+bounded-complexity joint channel state that is strictly weaker than evaluating
+the full parent cap. Scalar symmetric atoms and separately paid left/right
+atoms cannot do this by the new `1.05` theorem. A candidate is falsified as a
+reduction if its state must reconstruct all parent spin constraints or if its
+leading coefficient is bounded away from one.
 
 ## Blank-slate abstraction audit
 
-Three formulations were generated from the original minimax problem and only
-then compared with the ledger.
+Starting from the original minimax problem before comparing with the ledger
+produced three formulations.
 
-1. Augmented-cut shell amalgamation gives the exact histogram theorem, but
-   needs exponential-rate extreme shells and a separate landing transfer.
-2. Finite-temperature exchange with adaptive signs gives (S3), but its exact
-   noisy-code identity re-expands to the complete Gibbs response.
-3. Conditional-moment compactness is falsified for Gram and second moments;
-   fourth moments retain exponential entropy, while the exact envelope merely
-   renames every constraint.
+1. A finite substitution kernel with a projective atomic norm would yield a
+   multiplication recurrence. Comparison identifies the finite-fibre route;
+   separately paid scalar channels now have a uniform leading gap.
+2. Central-band compression of Walsh multiplication gives an exact
+   non-diagonal quadratic form. Comparison shows that near-isometry embeds
+   the original exponential extreme rather than removing it.
+3. A same-map Gaussian correlation cone maps conference Gram entries to one
+   odd response function. Its coefficient constraints close that class;
+   signed coefficients reintroduce the two-switch orbit unless a new
+   recoupling theorem is supplied.
 
-Neither of the first two is demonstrably more tractable in the required
-regime. The cubic calculation loses uniformity at the ground scale.
+None removes an obligation without an equally strong replacement. They are
+not vocabulary-only reformulations, but they do not justify changing the
+leading status from “no active route.”
 
 ## Ranked alternatives and falsification criteria
 
-1. **External noisy-code review.** Seek a theorem controlling the least-output
-   path in (S3) from a bounded-complexity invariant. It is falsified as a
-   reduction if the invariant must reconstruct every posterior response.
-2. **Extreme Walsh-glow review.** Seek a linear-moment-order, exponential-rate
-   shell theorem plus a minimizer-to-shell landing map. Either component alone
-   is insufficient.
-3. **New exact computation architecture.** A proof-producing solver or new
+1. **Joint vector-valued composition.** Prove (S2) before atomwise absolute
+   values. Stop a proposed invariant if it has a fixed leading gap or is full
+   bridge optimization in disguise.
+2. **Dependent same-switch recoupling.** Combine asymmetric Krivine responses
+   without polarization. This could improve the interval, but would not alone
+   prove convergence; stop if it reduces to independent endpoint choices.
+3. **Growing-order Walsh tails.** Seek a polynomial-complexity invariant
+   controlling the extreme eigenvalue. Fixed moments and exponential
+   near-isometry do not count.
+4. **Exact computation architecture.** A proof-producing solver or a new
    symmetry reduction could resume the `M_15` frontier; another timeout does
    not count.
-4. **Genuine nonconvergence.** It still requires a fixed `epsilon>0` and two
-   separated infinite subsequences, or strict `liminf<limsup`. Route
-   falsification is not nonconvergence, and no candidate subsequences exist.
+5. **Genuine nonconvergence.** It requires a fixed `epsilon>0` and two
+   asymptotically separated subsequences, or strict `liminf<limsup`. No
+   candidate subsequences are known.
 
 ## Checkpoint decision
 
-This is the second consecutive substantive checkpoint without primary
-progress. The bounded diagnostic campaign found exact reformulations,
-falsifiers, and perturbative evidence, but no route that is both genuinely
-different and demonstrably more tractable at the required scale. No bound,
-uniform exact-minimizer lemma, landing obligation, recurrence step, scalable
-counterexample, or convergence/nonconvergence mechanism improved.
+The campaign proved route boundaries but no primary result under the README
+definition: no bound improved, recurrence closed, landing obligation removed,
+uniform exact-minimizer lemma proved, or convergence/nonconvergence mechanism
+found. The immediately preceding sustained checkpoint also had no primary
+progress. The bounded blank-slate audit found no route that is both genuinely
+different and demonstrably more tractable.
 
-Automatic research is therefore paused under the consolidation rule. Resume
-only on explicit user authorization or a genuinely new external ingredient;
-do not start replacement agents from the conditional lemmas alone. If
-ordinary waves later resume, Wave 61 remains the next mandatory blank-slate
-refresh boundary, with an earlier refresh after any decisive result.
+Automatic research is therefore paused under the unchanged consolidation
+rule. Resume only on explicit user authorization or a genuinely new external
+ingredient, and do not start replacement agents from the remaining
+conditional interfaces alone. If ordinary waves later resume, Wave 61 remains
+the next mandatory blank-slate refresh boundary.

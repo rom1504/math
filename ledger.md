@@ -40340,3 +40340,325 @@ tabulation, conference examples, Gram moments, or fixed-temperature finite
 caps are not justified without such a new ingredient.  Genuine
 nonconvergence remains a standing alternative and still requires separated
 infinite subsequences, not a route falsifier.
+
+### 10.132 Targeted Grothendieck--gadget campaign launch
+
+The user explicitly authorized a new campaign on 2026-08-13, prompted by
+recent Grothendieck-constant work and finite-gadget search methodology. This
+is authorization to resume research after the consolidation pause, not a user
+endorsement of any mathematical conjecture. The main agent will verify the
+external results and their normalization before importing them. `README.md`
+and its stopping discipline are unchanged.
+
+| Track | Target | Last concrete result | Next falsifiable step | Stop or redirect condition |
+|---|---|---|---|---|
+| Symmetric Grothendieck lower bound | A correlation/Hermite obstruction using symmetry and the same Boolean vector on both sides | Field-plus-spin gives `0.336493...`; every one-probe coordinatewise rule has a proved matching ceiling | Reconstruct the new Krivine obstruction and identify an exact symmetric kernel inequality that beats the ceiling | Ordinary `K_G` insertion, polarization loss, or a fixed smooth pair kernel already covered by the ceiling |
+| Composable-gadget search | A finite signing constructor with a separately verified all-orders lifting recurrence | Local graph products, fixed Hadamard alphabets, and conference products have scalable entangled-channel obstructions | Derive the exact recurrence certificate first, then search only gadget variables that affect that certificate | Isolated low finite caps, solver timeouts, or a constructor whose verification is full parent maximization |
+| Global quadratic-form audit | A non-diagonal moment/rank or indefinite-form inequality retaining global same-switch information | Trace-four and spectral-flatness dichotomies stop at `1/pi`; independent row/column switching has the wrong orbit | State and test a concrete quadratic-form inequality not reducible to spectrum or individual cuts | Number-theory analogy without an exact map, or another trace/norm reformulation |
+| Main integration | Improve a rigorous bound, prove a lifting recurrence, or isolate a genuinely weaker uniform lemma | Second sustained phase ended with no primary progress and exact response obstructions | Verify all constants, test proposed lemmas on exact matrices, and preserve only theorem-level interfaces | Two substantive checkpoints without primary progress trigger the unchanged consolidation rule |
+
+#### 10.132.1 Exact normalization and the imported Grothendieck result
+
+Put
+
+```math
+Q(A)=\max_x|x^{\mathsf T}Ax|=2M(A),
+\qquad
+B(A)=\max_{x,y}|x^{\mathsf T}Ay|.
+```
+
+For a symmetric zero-diagonal matrix, setting `x=y` and cube polarization
+give the exact comparison
+
+```math
+\boxed{Q(A)\le B(A)\le2Q(A)=4M(A).}               \tag{10.1525}
+```
+
+Thus the normalization stated in the user-supplied analysis is correct. A
+row-sum Rademacher argument followed by (10.1525) gives only
+`M(A)>=(1/sqrt(8 pi)-o(1))n^(3/2)=0.199471...n^(3/2)`, below the current
+bound.
+
+The source of the new Grothendieck result was reconstructed directly from
+[arXiv:2608.11158](https://arxiv.org/abs/2608.11158) and its research-process
+companion [arXiv:2608.11195](https://arxiv.org/abs/2608.11195). Its advertised
+bounds are
+
+```math
+{6\pi\over11}\le K_G
+\le {\pi\over2\log(1+\sqrt2)}-10^{-4}.
+```
+
+The lower-bound core is the **Verified external theorem** that every odd
+Gaussian sign pair with
+
+```math
+H_{f,g}(t)={\pi\over2}\mathbb E[f(X)g(Y_t)]
+=b_1t+b_3t^3+\cdots
+```
+
+obeys
+
+```math
+\boxed{b_3\ge2b_1-{11\over6}.}                    \tag{10.1526}
+```
+
+The proof uses agreement/disagreement functions and one-dimensional
+rearrangement; its affine form survives mixtures and limiting Krivine
+schemes. The paper's upper construction uses signed cubic/quintic
+correlation maps and different partitions on the two bilinear sides. Its
+computer-assisted upper certificate was not rerun here. Merely substituting
+the improved numerical value of `K_G` into the existing SDP comparison does
+not remove (10.1525)'s same-switch loss and does not improve the frontier.
+
+#### 10.132.2 A uniform same-map symmetric Krivine no-go
+
+The new correlation viewpoint does yield a **Verified scalable route
+falsifier**. Consider the balanced same-map class in which both endpoints use
+the same Gaussian tensor/Hermite preprocessing and the same odd Boolean
+partition. This includes dimension, degree, mixtures, and coefficients that
+depend on `n`. Hermite--Mehler expansion gives its response
+
+```math
+K_n(t)=\sum_{\substack{r\ge 1\\ r\ \mathrm{odd}}}w_{r,n}t^r,
+\qquad w_{r,n}\ge0,
+\qquad \sum_rw_{r,n}\le1.                         \tag{10.1527}
+```
+
+The nonnegative coefficients are forced by using the same map on both
+endpoints. The linear mass is a Gaussian first-Hermite weight. The centroid
+bound gives, uniformly in dimension,
+
+```math
+w_{1,n}\le\|\mathbb E[Gf(G)]\|_2^2\le {2\over\pi}. \tag{10.1528}
+```
+
+Consequently
+
+```math
+\boxed{
+K_n(t)\le {2\over\pi}t+\left(1-{2\over\pi}\right)t^3
+\quad(0\le t\le1).}                               \tag{10.1529}
+```
+
+For a symmetric conference signing `C` of order `n`, use the Gram matrix
+`I+C/sqrt(n-1)`. Oddness makes every signed edge contribute the same amount,
+so every direct expected-response guarantee in this class satisfies
+
+```math
+\mathbb E[x^{\mathsf T}Cx]
+=n(n-1)K_n(1/\sqrt{n-1})
+\le {2\over\pi}n\sqrt{n-1}+O(\sqrt n).             \tag{10.1530}
+```
+
+Its undoubled leading constant is therefore at most `1/pi`, already below
+the proved `0.336493...`. This closes not only fixed smooth cubic/quintic
+responses but also growing-degree and growing-dimensional versions of the
+same-map Krivine architecture. Signed Hermite coefficients require different
+left/right maps and return to the bilinear orbit in (10.1525). Nonlocal
+postselection, asymmetric maps with a new same-switch recoupling, and the
+shared-spin field--plus--spin construction lie outside the theorem.
+
+The campaign also independently rederived the ledger's existing Section
+3.20 theorem
+
+```math
+2|\mathbb E[Gf]\mathbin{\cdot}\mathbb E[Sf]|
+\le\max_{t\ge0}4\phi(t)(2\Phi(t)-1)=c_*             \tag{10.1531}
+```
+
+for every fixed number of independent Gaussian-field/Rademacher-spin probes.
+The alternate proof uses Gaussian slice centroids, cube Bessel/Parseval, and
+concavity. This is corroboration, not a new result; dependent probes and
+nonuniform growing dimension remain outside its scope.
+
+The complete normalization audit, external-theorem mapping, and proof of the
+same-map ceiling are in
+`artifacts/symmetric_grothendieck_krivine_obstruction_audit.md`.
+
+#### 10.132.3 Recurrence-first gadget certificate and its all-order no-go
+
+Let `R` be a symmetric full-sign microkernel of order `k`, let
+`U_k={u in {+-1}^k:u_1=1}`, and define the finite microtype kernel
+
+```math
+K_R(u,v)=u^{\mathsf T}Rv.
+```
+
+If
+
+```math
+K_R=\sum_hc_hhh^{\mathsf T},
+\qquad h\in[-1,1]^{2^{k-1}},
+\qquad L=\sum_h|c_h|,                              \tag{10.1532}
+```
+
+then multilinearity proves, for every child signing `A` and every diagonal
+fibre signing `D`,
+
+```math
+\boxed{
+\operatorname{cap}(A\otimes R+I\otimes D)
+\le L\operatorname{cap}(A)+n\operatorname{cap}(D).} \tag{10.1533}
+```
+
+This is a genuinely bounded, parent-independent certificate of exactly the
+kind a finite-gadget search needs. However, subtracting two diagonal entries
+in (10.1532) gives `L` at least the Boolean energy range of `R`. Removing
+`diag(R)` and using the exact centered-width/cut identity yields
+
+```math
+L\ge4\max_{T\subset[k]}
+\|R_{T,T^c}\|_{\infty\to1}.                       \tag{10.1534}
+```
+
+For a split of sizes `r,s`, randomizing the `s`-shore and choosing each sign
+on the `r`-shore against its row sum gives a lower bound
+`4r E|epsilon_1+...+epsilon_s|`. Khintchine with
+`r=floor(2k/3)` proves the uniform theorem
+
+```math
+\boxed{L>1.05\,k^{3/2}\qquad(k\ge2).}              \tag{10.1535}
+```
+
+The `k=2,4` cases use a one-column cut. The three residue-class squared
+ratios are at least `32/27`, `384/343`, and `144/125`. Thus neither a fixed
+gadget nor a varying sequence of gadgets can make this scalar-decomposition
+defect vanish.
+
+Allowing left/right atoms does not evade the theorem. A decomposition into
+`(pq^T+qp^T)/2` contributes `(1/2)P^TAQ`; exact polarization costs at most
+`2 cap(A)` per unit coefficient. The atom's diagonal range is at most two,
+so its coefficient mass is at least half the same range. After polarization,
+
+```math
+\boxed{
+\text{effective left/right coefficient}
+>1.05\,k^{3/2}.}                                  \tag{10.1536}
+```
+
+This is a scalable no-go for scalar cut or Krivine-style atom certificates,
+not for the actual lift. A surviving gadget must retain joint cancellations
+between channels, depend nonlocally on the seed, or prove a vector-valued
+child-action inequality without taking the atomwise triangle inequality.
+
+The reproducible LP enumerates all `R` for `k=2,3,4`. Its exhaustive
+floating comparison gives candidate minima `4,9,16`; each attaining
+candidate has an exact rational primal/dual certificate. These are
+**Numerical exhaustive comparisons with exactly certified candidates**, not
+exact global minima. The analytic theorem (10.1535) is independent of them.
+The proof and certificate specification are in
+`artifacts/finite_fibre_cut_decomposition_no_go.md`; the replayable program
+and canonical result are
+`computations/finite_fibre_cut_decomposition_certificate.py` and
+`computations/results/finite_fibre_cut_decomposition_certificate.json`.
+
+#### 10.132.4 Global non-diagonal form and the fixed-moment scale wall
+
+Let `M_A` be multiplication by `H_A` on the Walsh cube and compress it to
+levels `L`. In the Walsh basis the exact same-switch operator is
+
+```math
+(T_L)_{S,T}=a_{ij}\quad\text{when }S\mathbin\triangle T=\{i,j\}.
+```
+
+For one level `k`, and for a consecutive central parity band `L_w`, exact
+counting gives
+
+```math
+\rho_{n,k}M(A)\le\|T_k\|\le M(A),
+\qquad \rho_{n,k}={2k(n-k)\over n(n-1)},           \tag{10.1537}
+```
+
+and `\rho_{L_w}=1-O(1/w)`. The near-lossless band has dimension
+`2^(n-o(n))`; its norm is therefore an additive `o(n^(3/2))` embedding of the
+original maximum, not a lower-complexity reduction.
+
+The first two moments give only the bulk scale
+
+```math
+\operatorname{tr}T_L^2
+=\dim(T_L){n\choose2}\rho_L,
+\qquad
+\left({\operatorname{tr}T_L^{2q}\over\dim T_L}\right)^{1/(2q)}
+=O_q(n)                                             \tag{10.1538}
+```
+
+for every fixed `q`. An exact trace-four formula retains the signed `C_4`
+sum but has the same root scale. Self-complementarity forces symmetric
+positive/negative inertia even when the cap changes substantially. Hence the
+direct fixed-order trace/rank transplant of the recent non-diagonal zeta
+method misses the required `n^(3/2)` extreme by `sqrt(n)`. A growing-order
+tail theorem or polynomial-complexity extreme-eigenvalue invariant is not
+ruled out.
+
+The independent verifier checked 180 exact trace-four identities and 448
+parity-band identities, with three spins per band, at orders 4 through 9.
+The derivation and replay artifacts are
+`artifacts/global_quadratic_form_fourier_layer_audit.md`,
+`computations/verify_global_layer_formulas.py`, and
+`computations/results/global_layer_formulas_verification.json`.
+
+#### 10.132.5 Classification and updated operational table
+
+| Track | Concrete result | Classification | Next falsifiable step | Status |
+|---|---|---|---|---|
+| Symmetric Grothendieck | Uniform same-map response ceiling (10.1529)--(10.1530); independent check of existing multireplica theorem | Verified scalable route falsifier; no bound gain | Exhibit an asymmetric or dependent same-switch recoupling that avoids polarization and is uniform on exact near-minimizers | Direct same-map and independent-replica variants stopped |
+| Composable gadgets | Exact finite certificate (10.1533), followed by uniform `1.05` atom-decomposition gap | Verified scalable route falsifier; finite LP evidence separately labelled | Control joint vector-valued child action without atomwise absolute values | Scalar symmetric and left/right atom interfaces stopped |
+| Global form | Near-isometric Walsh-band compression and exact fixed-moment wall | Verified equivalent embedding plus route falsifier | A growing-order tail theorem with a polynomial block-composition invariant | Fixed-moment rank transplant stopped |
+| Main integration | All constants, factors of two, analytic gaps, and finite certificates audited | No primary progress | Resume only around one of the genuinely nonlocal interfaces above | Checkpoint complete |
+
+#### 10.132.6 Blank-slate abstraction audit
+
+Starting from the original minimax problem before comparing route names, the
+campaign generated three exact formulations.
+
+1. A finite substitution kernel with a Banach/projective atomic norm would
+   give a uniform multiplication recurrence. Comparison with the ledger
+   identified the finite-fibre route; (10.1535)--(10.1536) now rule out every
+   separately paid scalar channel with a uniform leading gap.
+2. Compressing the Walsh multiplication operator to a central band gives a
+   non-diagonal form with an exact block rule. Comparison exposed exponential
+   dimension and fixed-moment blindness; near-isometry embeds rather than
+   removes the original extreme-state obligation.
+3. A symmetric Gaussian correlation theory maps the conference Gram matrix
+   to one odd response function. The independently derived coefficient cone
+   (10.1527) closes the same-map class; signed coefficients require the wrong
+   two-switch orbit unless a new recoupling theorem is supplied.
+
+All three are genuine formulations, but none currently removes an obligation
+without an equally strong replacement.
+
+#### 10.132.7 Updated frontier and checkpoint decision
+
+The rigorous frontier remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                    \tag{10.1539}
+```
+
+This campaign used the external ingredients to prove that three broad,
+precisely defined implementations cannot work at the required scale. It did
+not improve a bound, complete a recurrence, prove a uniform exact-minimizer
+lemma, remove a landing obligation, or produce convergence/nonconvergence.
+Under the repository definition these are valuable scalable route
+falsifiers, but not primary progress.
+
+There is therefore no justified rapid replacement wave. The strongest exact
+successor interface is a joint vector-valued finite-fibre action theorem that
+proves a scale-preserving recurrence **before** decomposing channels and is
+strictly smaller than full parent maximization. No candidate invariant
+currently meets that standard. On the lower-bound side, only dependent or
+nonlocal same-switch recoupling survives; it would improve the interval but
+does not by itself address convergence. Growing-order Walsh tails remain a
+third, presently exponential alternative.
+
+Automatic research pauses at this checkpoint under the unchanged stopping
+discipline. Genuine nonconvergence remains a standing alternative and still
+requires separated infinite subsequences, not any of the route falsifiers
+above. If ordinary waves later resume, Wave 61 remains the next scheduled
+blank-slate boundary.
