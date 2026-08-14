@@ -1,29 +1,17 @@
 # Strategic steering
 
-Evidence cutoff: row-sign augmented-greedy/local-stability checkpoint (2026-08-13).
-Status: **joint same-switch campaign active; diffuse unmatched core is leading**.
+Evidence cutoff: regular-Hadamard Walsh/basin checkpoint (2026-08-14).
+Status: **trajectory/basin campaign active; bent-only inverse inactive**.
 
 ## User-stated objective and workflow directives
 
-The research objective is to determine whether `M_n/n^(3/2)` converges. The
-conjectural value `1/2` is not an additional user objective.
+The research objective is to determine whether `M_n/n^(3/2)` converges. The conjectural value `1/2` is not an additional user objective.
 
-The user authorized sustained computational--composition research and a
-second three-agent phase from commit `eec5aed`. Reproducible artifacts,
-claim classification, regular integration, Git checkpoints, and the existing
-consolidation/stopping discipline are workflow directives. They do not make
-any mathematical route or ranking a user directive.
+The user authorized sustained computational--composition research, then focused the active campaign on a joint same-switch certificate. Reproducible artifacts, independent verification, regular Git checkpoints, and the README consolidation/stopping rule remain workflow directives; they do not make mathematical conjectures or rankings user directives.
 
-The user explicitly authorized a focused campaign seeking one rigorous joint
-same-switch inequality at the correct leading scale, with its minimal theorem
-formulated before computation. Scalar atom decompositions, separately paid
-channels, ordinary polarization, and canonical same-map Gaussian responses
-are excluded. Every candidate must be rejected if it reconstructs the full
-parent optimization, has a fixed leading loss, or fails the conference and
-exact-small-minimizer tests. These are workflow and falsification directives;
-mathematical statements and route judgments remain agent-authored.
+The latest directive requests a Walsh/bent-coordinate audit of the regular-Hadamard obstruction, a search for applicable bent/plateaued, automorphism, and Reed--Muller results, and symmetry-aware measurement of the explicit bad core's basin. The requested decision rule is to stop a Walsh-structure route if large cores are generic and continue it if they correlate strongly with bent/near-bent structure. The interpretation below is agent-authored.
 
-## Agent-authored campaign assessment
+## Agent-authored assessment
 
 The rigorous frontier is unchanged:
 
@@ -34,117 +22,76 @@ The rigorous frontier is unchanged:
 \le \frac12.                                      \tag{S1}
 ```
 
-The requested escape now exists. Take `X` uniform and
-`Y=sign(AX)`. Its doubled asymmetric response is signing-independent:
+The preceding joint same-switch certificate remains valid:
 
 ```math
-\mathbb E[X^{\mathsf T}AY]
-=\mathbb E\|AX\|_1
-=\left(\sqrt{2/\pi}+o(1)\right)n^{3/2}.          \tag{S2}
-```
-
-Agreement/disagreement recoupling can retain the whole cross field by
-collapsing the anchored shore to one weighted vertex. On that weighted shore,
-deterministic best-improvement one-spin ascent gives a rigorous samplewise
-certificate in `O(n^3)` time. If `Delta_gr(A,X)` is its clipped loss, then
-
-```math
-Q(A)\ge\mathbb E\|AX\|_1-\mathbb E\Delta_{\rm gr}(A,X). \tag{S3}
-```
-
-This escapes both earlier no-go theorems: it is asymmetric, uses one common
-parent spin, preserves all shore/cross-field cancellation before absolute
-values, and neither decomposes into paid scalar channels nor evaluates the
-full Boolean maximum.
-
-All tested exact cases from order 6 through 14 give a doubled normalized
-certificate above `0.672986...` (orders 3 and 5 are small-order exceptions).
-Conference samples give defects `0.001278` at order 30, `0.000124` at 54,
-`0.000009` at 90, and zero at 98. These are a computational scaling law, not
-an asymptotic proof. The spectral and one-shot implementations miss the
-coefficient on tested larger conference orders and are inactive.
-
-## Exact sufficient successor lemma
-
-Let `c_*=0.672986728863...` be the current doubled lower coefficient. A new
-rigorous bound follows from the exact uniform statement
-
-```math
-\mathbb E_X\Delta_{\rm gr}(A,X)
-\le\left(\sqrt{2/\pi}-c_*-\eta\right)n^{3/2}
-+o(n^{3/2})                                      \tag{S4}
-```
-
-for some `eta>0`, uniformly over signings with project-scale cap. The stronger
-statement `E Delta_gr=o(n^(3/2))` would improve the project lower constant to
-`1/sqrt(2pi)=0.398942...`. It would improve the interval, not alone prove
-convergence.
-
-The defect now has a path-independent potential reduction. At a terminal set
-on either shore it is twice the positive part of unmatched original row-field
-mass minus terminal removal margin. Let `kappa_I,kappa_J` be the least numbers
-of largest outside fields needed to carry each unmatched mass, and put
-`kappa_*=min(kappa_I,kappa_J)` in the hard branch and zero otherwise. For
-`Q(A)<=K n^(3/2)`,
-
-```math
-{\mathbb E\Delta_{\rm gr}\over n^{3/2}}
+Q(A)\ge \mathbb E\|AX\|_1-\mathbb E\Delta_{\rm gr}(A,X),\qquad
+\frac{\mathbb E\Delta_{\rm gr}}{n^{3/2}}
 \le C\alpha\sqrt{\log(2e/\alpha)}
-+K\Pr\{\kappa_*>\alpha n\}.                     \tag{S5}
++K\Pr\{\kappa_*>\alpha n\}.                       \tag{S2}
 ```
 
-Thus the exact leading target is `kappa_*/n -> 0` in probability. This is
-strictly more specific than the original cap problem: it concerns the output
-of two deterministic polynomial local searches. Its exact falsifier is a
-nonvanishing probability of simultaneous linear-sized diffuse unmatched
-cores on both shores; isolated large fields or one bad shore cannot defeat it.
-An explicit regular-Hadamard/Seidel family has a bad stable core at one
-row-sign realization, so project-scale norm plus terminal stability alone is
-insufficient. Its possible normalized defect tends to `1/(4sqrt(2))`, but
-nonvanishing basin probability under random `X` is not known.
+Thus `\kappa_*/n\to0` in probability would improve the lower constant to `1/\sqrt{2\pi}=0.398942\ldots`. It would improve the interval, not prove convergence.
 
-The cleanest convergence interface remains a family of explicit constructors,
-defined without `M_n`, such that for every child
-signing `A` of order `n` and every `k>=2`,
+## Walsh audit
+
+For the quadratic Walsh matrix `H`, put `g=fX`. The exact row/energy dictionary is
 
 ```math
-\operatorname{cap}(\mathcal T_k(A))
-\le (1+\eta_k)k^{3/2}\operatorname{cap}(A)
-   +Cnk^{3/2},
-\qquad \eta_k\longrightarrow0.                    \tag{S6}
+D_XCD_X=D_gHD_g-I,\qquad
+X_u(CX)_u=g_u(Hg)_u-1,\qquad X^TCX=g^THg-m.       \tag{S3}
 ```
 
-with `C` uniform and `T_k(A)` a signing of order `kn`. Applying (S6) to a
-large near-liminf seed, sending `k` to infinity, and filling a fixed remainder
-with `O(nN)` new-edge cost would give `limsup<=liminf`, hence convergence.
+Masked forms of (S3) give both shores, the augmented field, initialization, every flip gain, terminal margins, unmatched mass, and `\kappa`; no parent Boolean maximization is hidden.
 
-The signed elliptope has the right factor but the sharp conference floor;
-fixed-level SOS inherits its child obstruction, while scalar/separately paid
-channels have a fixed gap. These are inactive without a new global separator
-or an inexact quotient with summable error.
+For a regularizing base `g` and anti-regularizing terminal `z`,
 
-## Ranked alternatives and falsification criteria
+```math
+\Delta=[E(g)+E(z)-2m]_+=[A(z)-B(g)-2m]_+,         \tag{S4}
+```
 
-1. **Diffuse-core theorem.** Prove (S5)'s probability term vanishes, or the
-   weaker coefficient bound (S4). Stop only upon a scalable simultaneous-core
-   construction or a proof that the terminal condition hides full cap
-   optimization; current evaluation is explicitly polynomial.
-2. **Boolean joint composition.** Find a global separator or inexact quotient
-   and prove (S6). Signed elliptope, fixed-level duplication-closed SDP/SOS,
-   bounded-local facets, and scalar atoms are stopped.
-3. **Genuine nonconvergence.** It requires a fixed `epsilon>0` and two
-   asymptotically separated subsequences, or strict `liminf<limsup`. No
-   candidate subsequences are known.
+where `A,B` are squared deviations of signed Walsh amplitudes from `\sqrt m`. A leading defect forces increased anti-flatness and fourth moment, not near-bentness.
+
+The original input is self-dual bent and its displayed endpoint is anti-self-dual 2-plateaued, but that shape is not necessary:
+
+- verified static project-scale families have simultaneous linear cores with full-support nonflat spectra;
+- the prescribed least-index trajectory from a three-level non-bent tensor seed has certified `\kappa/m=0.0930862` at `k=9`, ending with Walsh support `262126/262144` and 440 absolute magnitudes;
+- therefore “large core implies bent/plateaued” is false as a finite uniform mechanism. An asymptotic inverse would require a genuinely dynamical hypothesis.
+
+The trajectory shadows an explicit tensor terminal. If all deviations lie in three medium fibres with density `\eta<1/8`, then
+
+```math
+\frac{\kappa}{m}\ge
+\frac{1/8-\eta-2/\sqrt m}{3-2/\sqrt m}.           \tag{S5}
+```
+
+Its endpoint condition reduces to one self-consistent signed-Walsh threshold set on `m/16` tail coordinates. Proving fibre confinement with `\limsup\eta<1/8` is the strongest local target. It gives a scalable pointwise core, but one seed does not falsify the probability statement in (S2).
+
+## Basin and literature boundary
+
+At `k=2`, exact projective enumeration gives basin `70/32768` for the explicit endpoint and `571/32768` for its eight-point affine-orthogonal orbit. Least-index tie breaking is not equivariant; endpoint basin sizes range from 67 to 74. A symmetry-invariant random-tie control gives orbit probability `0.0140747`.
+
+There were no explicit-orbit or anti-self-dual 2-plateaued hits in 50,000 local samples at `k=3` and no 2-plateaued hit in 10,000 at `k=4`. Uniform full two-block samples had two diffuse events in 20,000 at `k=2` and none in 3,000 at `k=3`. This favors basin decay in the tested family but is not an asymptotic theorem.
+
+Primary literature classifies and counts exact self-dual and plateaued functions; affine-support 2-plateaued vectors and fixed small Hamming neighborhoods are exponentially sparse. No checked theorem converts a Walsh `L^1` or fourth-moment defect into proximity to that class, and endpoint sparsity does not bound deterministic preimages. Reed--Muller covering-radius results control the largest Walsh coefficient, not (S4) or greedy basins.
+
+## Exact targets and falsification criteria
+
+1. **Leading: trajectory/basin entropy.** Prove `\Pr\{\kappa_*>\alpha n\}\to0` uniformly for every fixed `\alpha>0` using a state retaining tensor-fibre multiplicities and lexicographic interleaving, or construct a project-scale family with nonvanishing bad probability. A single seed, endpoint count, or moment bound does not decide this.
+2. **Local structured falsifier.** Prove or falsify fibre confinement and `\limsup\eta_k<1/8` for the non-bent tensor seed. This tests the strongest observed obstruction but cannot alone settle target 1.
+3. **Convergence composition.** The clean interface remains a constructor `T_k`, defined without `M_n`, satisfying
+
+   ```math
+   \operatorname{cap}(T_k(A))
+   \le(1+\eta_k)k^{3/2}\operatorname{cap}(A)+Cnk^{3/2},
+   \qquad \eta_k\to0.                              \tag{S6}
+   ```
+
+   Applying (S6) to a near-liminf seed and filling a fixed remainder would prove `\limsup\le\liminf`. Scalar atoms, separately paid channels, canonical same-map Krivine rounding, fixed-level SOS, and exact full bridge optimization remain inactive.
+4. **Genuine nonconvergence.** This requires fixed `\epsilon>0` and two asymptotically separated subsequences, or strict `\liminf<\limsup`. No candidate subsequences are known; route-specific cores do not count.
 
 ## Checkpoint decision
 
-The user-requested milestone is met by (S3), now with an explicit polynomial
-certificate and the correct raw leading coefficient. The scaling experiment
-also isolates the precise uniform lemma (S5). No rigorous asymptotic bound,
-recurrence, or convergence mechanism has yet improved, so this is material
-campaign progress but does not reset the README's proof-level stopping count.
+Stop the bent/plateaued stability route: exact spectral shape is neither necessary for static cores nor for the tested prescribed trajectory. Do not reopen moment-only, exact-plateaued, or Reed--Muller-deep-hole variants.
 
-Continue only on the diffuse-core theorem and its falsification criterion; do
-not reopen the deprioritized spectral/one-shot or proved scalar-atom/SOS
-implementations. Composition remains secondary because it could prove convergence.
-Wave 61 is the next blank-slate boundary if ordinary waves resume.
+Continue only the dynamics-specific basin question, with the reduced tensor threshold law as a controlled adversarial test. No primary progress under the README definition occurred: (S1), the recurrence, and convergence status are unchanged. Wave 61 remains the next scheduled blank-slate boundary if ordinary waves resume.

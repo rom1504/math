@@ -41052,13 +41052,13 @@ The proof, implementation, and result are:
 There is a theorem-level reduction of the remaining defect. Switch by `X`,
 write `B=Diag(X)A Diag(X)`, `ell=B1`, and take
 `I={ell_i>=0}`, `J={ell_j<0}`. On the branch anchored on `I`, put
-`D=B[J]`, `a_j=-ell_j>0`, and for `S subset J` define
+`D=B[J]`, `a_j=-ell_j>0`, and for `S\subset J` define
 
 ```math
 \Phi_J(S)=a(S)+2e_D(S).                            \tag{10.1563}
 ```
 
-If `S` is a one-flip terminal set, `T=J setminus S`, and
+If `S` is a one-flip terminal set, `T=J\setminus S`, and
 
 ```math
 p_i=a_i+2\sum_{u\in S\setminus\{i\}}d_{iu}\ge0,
@@ -41170,3 +41170,443 @@ a large cap, improving the project lower constant from `0.336493...` to
 `1/sqrt(2pi)=0.398942...`. It would not by itself prove convergence; the
 composition interface in `STEERING.md` remains the separate sufficient route
 to that objective.
+
+### 10.134 Regular-Hadamard obstruction in Walsh coordinates
+
+This checkpoint records the focused Walsh/bent and basin campaign requested
+after Section 10.133.  Its purpose was to decide whether the explicit
+regular-Hadamard obstruction is confined to a bent/plateaued exceptional set,
+and, where possible, to measure the basin of the displayed bad core after
+quotienting valid symmetries.  All statements below distinguish static stable
+states, certified finite trajectories, Monte Carlo evidence, and asymptotic
+theorems.
+
+#### 10.134.1 Exact switching and anchored-greedy dictionary
+
+Put
+
+```math
+V_k=\mathbb F_2^k\times\mathbb F_2^k,\qquad
+s=2^k,\qquad m=4^k,\qquad
+q(a,b)=a\mathbin\cdot b,\qquad f=(-1)^q,
+```
+
+and let
+
+```math
+\beta((a,b),(c,d))=a\mathbin\cdot d+c\mathbin\cdot b,\qquad
+H_{u,v}=(-1)^{\beta(u,v)}.
+```
+
+Then `H^2=mI`, `Hf=sf`,
+`K_{u,v}=f(u+v)=f(u)H_{u,v}f(v)`, and the regular Hadamard signing is
+`C=K-I=D_fHD_f-I`.  For a physical Boolean input `X`, define `g=fX`.  Direct
+conjugation proves the **Verified dictionary**
+
+```math
+D_XCD_X=D_gHD_g-I,\qquad
+\ell_g(u)=X_u(CX)_u=g_u(Hg)_u-1,                  \tag{10.1567}
+```
+
+```math
+X^TCX=g^THg-m.                                    \tag{10.1568}
+```
+
+Thus the row-sign shores are exactly the positive and negative thresholds of
+the signed Walsh response `g(Hg)`.  For a set `E`, its witnessed principal
+energy and the cross field from a fixed set `U` to a free set `F` are
+
+```math
+\mathcal E_g(E)=g_E^THg_E-|E|,\qquad
+h_{U\to F}(u)=g_u(Hg_U)_u.                         \tag{10.1569}
+```
+
+These formulas also expose the complete augmented greedy dynamics.  Let
+`sigma=sign(E_g(U))`, let `r` be the free relative spin, let `t` be the
+collapsed anchor, and set `z=g_Fr`, `phi=tg_U+z`.  Then
+
+```math
+\boxed{
+\sigma\{r^T(D_gHD_g-I)[F]r+2t h^Tr\}
+=\sigma\{\phi^TH\phi-g_U^THg_U-|F|\}.}           \tag{10.1570}
+```
+
+The initialization is `z^(0)=sign(sigma Hg_U)`, with `z^(0)=g` at a zero
+field.  A free flip has gain
+`-4 sigma[z_u(Hphi)_u-1]`, and the anchor flip has gain
+`-4 sigma t z^THg_U`.  Consequently the row signs, initialization, every
+greedy gain, and every terminal inequality are all explicit functions of
+`g`, masked Walsh transforms, and the conjugated bridge; there is no hidden
+parent maximization.
+
+Absorb the collapsed anchor into the free relative spin
+`r\leftarrow tr`, so that `t=1`.  For the resulting terminal flip set
+`S\subset F`, with `T=F\setminus S`, put
+
+```math
+a_u=-\sigma\ell_g(u),\qquad
+p_u=-\sigma[1+g_u(H\phi)_u]\quad(u\in S).
+```
+
+The exact potential and unmatched quantities are
+
+```math
+\Phi_{F,\sigma}(S)=-\sigma g_S^TH(g-g_S),\qquad
+u_{F,\sigma}=a(T)-p(S)
+=a(F)+2\sigma g_S^TH(g-g_S),                       \tag{10.1571}
+```
+
+```math
+\delta_{F,\sigma}=2[u_{F,\sigma}]_+,\qquad
+\kappa_{F,\sigma}
+=\min\left\{j:\sum_{i=1}^j a_{(i)}\ge u_{F,\sigma}\right\},
+                                                               \tag{10.1572}
+```
+
+where the `a_(i)` are the decreasing outside weights and `kappa=0` when
+`u<=0`.  For the full two-block signing, conjugating the bridge gives the
+operator
+
+```math
+\mathcal T=
+\begin{pmatrix}H&D_fBD_f\\(D_fBD_f)^T&-H\end{pmatrix};
+```
+
+(10.1567)--(10.1572) persist with `H` replaced by this operator and the
+block-diagonal correction `diag(I,-I)`.  The complete derivation is in
+`artifacts/regular_hadamard_walsh_coordinate_audit.md`.
+
+#### 10.134.2 The displayed bad point is bent-to-plateaued
+
+At the original input `X=1`, the transformed input is `g=f` and
+
+```math
+Hf=sf.                                               \tag{10.1573}
+```
+
+Thus the input is self-dual bent.  If `r_0=1-2 1_{S_0}` is the original
+codimension-two stable spin and `z_0=fr_0`, then the **Verified identity** is
+
+```math
+Hz_0=-2s z_0 1_{S_0}.                               \tag{10.1574}
+```
+
+The terminal is therefore anti-self-dual 2-plateaued, not bent: its Walsh
+support is `S_0`, of size `m/4`, with nonzero magnitude `2s`.  In the
+zero-cross-field two-block obstruction both shores have weights `s-1`, and
+
+```math
+\delta={m(s-4)\over2},\qquad
+\kappa=\left\lceil{m(s-4)\over4(s-1)}\right\rceil
+\sim {m\over4}.                                     \tag{10.1575}
+```
+
+This is the exact Walsh form of the original regular-Hadamard obstruction.
+
+#### 10.134.3 What a leading defect says about Walsh flatness
+
+There is a useful but oppositely directed stability identity.  Consider a
+whole-block `-C` branch whose regularizing base `g` and anti-regularizing
+terminal `z` satisfy
+
+```math
+d_u=g_u(Hg)_u\ge0,\qquad c_u=-z_u(Hz)_u\ge0.
+```
+
+Let `E(v)=v^THv`.  Parseval gives `sum d_u^2=sum c_u^2=m^2`, so
+
+```math
+B(g):=ms-E(g)={1\over2s}\sum_u(d_u-s)^2,\qquad
+A(z):=ms+E(z)={1\over2s}\sum_u(c_u-s)^2.            \tag{10.1576}
+```
+
+Cross terms cancel in the core bookkeeping and give the **Verified spectral
+defect identity**
+
+```math
+\boxed{\delta=[E(g)+E(z)-2m]_+
+=[A(z)-B(g)-2m]_+.}                                 \tag{10.1577}
+```
+
+Thus a leading defect from a flat bent base forces a leading *increase* in
+terminal Walsh-amplitude nonflatness.  If `a=A(z)/(ms)<1`, interpolation and
+Wiener--Khinchin give
+
+```math
+\sum_u|(Hz)_u|^4\ge {m^3\over(1-a)^2},\qquad
+\sum_{t\ne0}R_z(t)^2\ge2sA(z).                     \tag{10.1578}
+```
+
+Equality in the interpolation step characterizes constant nonzero Walsh
+magnitudes, hence plateaued spectra.  This does not give the needed inverse:
+random Boolean vectors already have expected fourth moment
+`3m^3-2m^2`, so moment scale alone is not diagnostic.
+
+Static terminal stability is even less restrictive.  Explicit tensor
+families in the coordinate audit have full Walsh support, stay a fixed
+`L2` distance from every flat spectrum, have arbitrarily many Walsh
+magnitudes, and possess simultaneous linear static cores.  A conjugated
+zero-row bridge also gives a project-scale two-block signing with a
+three-level non-bent input and a full-support non-plateaued stable state with
+`kappa/m -> 1/40`.  These are **Verified static scope falsifiers** only: they
+do not assert that the prescribed initialization reaches the proposed state.
+
+#### 10.134.4 Literature audit: counting is available, stability is not
+
+The checked primary literature supplies exact classification and counting,
+but no basin theorem.
+
+1. Carlet--Danielsen--Parker--Sole identify self-dual bent sign vectors as
+   Boolean `+s` eigenvectors of the Sylvester Hadamard matrix.  Shi et al.
+   extend this to Hadamard bent sequences and define the strong automorphism
+   group.  These results justify (10.1573), but contain no quantitative
+   neighborhood or greedy-basin stability theorem.
+2. Hodzic--Pasalic--Wei--Zhang prove that affine-support 2-plateaued
+   functions are exactly the partially bent examples whose spectral signs
+   are a bent function on `2k-2` variables.  The bad point (10.1574) lies in
+   this class.
+3. Potapov's bent count and that classification imply
+
+   ```math
+   N_{\mathrm{aff},2}(2k)
+   =4{2k\brack2}_2 B(2k-2),\qquad
+   \log_2N_{\mathrm{aff},2}
+   \le(11/128+o(1))m.                               \tag{10.1579}
+   ```
+
+   Hence even a relative Hamming neighborhood of radius
+   `delta<0.3291567` is exponentially sparse.  Potapov's bound for all
+   2-plateaued functions gives the smaller certified radius
+   `delta<0.1062533`.
+4. The Reed--Muller map
+   `dist(g,RM(1,2k))=(m-max|Hg|)/2` makes bent vectors exact deep holes, but
+   covering-radius and metric-regularity results concern the Walsh maximum,
+   not the `L1` increase in (10.1577), and do not control deterministic
+   preimages.
+
+Sources and normalization checks are in
+`artifacts/walsh_bent_stability_literature_audit.md`; primary references
+include [Potapov](https://arxiv.org/abs/2303.16547),
+[Hodzic et al.](https://arxiv.org/abs/1811.04171),
+[Shi et al.](https://arxiv.org/abs/2203.16439), and
+[Oblaukhov](https://arxiv.org/abs/1912.10811).  The exact logical gap is that
+terminal sparsity does not bound the preimage of a deterministic greedy map.
+
+#### 10.134.5 Symmetry-aware basin computation
+
+Translations and `q`-isometries preserve the quadratic Walsh matrix.  At
+`k=2`, explicit generation of `F_2^4\rtimes O^+(4,2)` gives 16 signed
+images of the displayed bad point, or eight projective images.  Global sign
+can be quotiented exactly.  Coordinate permutations cannot be used to
+quotient the prescribed least-index tie rule, and the computation retains
+that distinction.
+
+The **Certified exact `k=2` counts** are:
+
+```text
+explicit endpoint basin:       70/32768
+eight-endpoint orbit basin:    571/32768 = 0.0174255371
+any anti-self-dual 2-plateaued endpoint: 4112/32768
+```
+
+The eight projective endpoint basin sizes range from 67 to 74.  Under the
+auxiliary symmetry-invariant rule which chooses uniformly among tied largest
+gains, the orbit probability is `0.0140747`; probabilities that some or every
+largest-gain path reaches it are `0.180450` and `0.00320435`.  These controls
+show why symmetry may quotient the landscape but not lexicographic dynamics.
+
+The larger-order results are **Numerical fixed-seed evidence**:
+
+| experiment | samples | positive defect / target hit | linear core |
+|---|---:|---:|---:|
+| local `-C`, `k=3`, `m=64` | 50,000 | 0 orbit or 2-plateaued hits | -- |
+| local `-C`, `k=4`, `m=256` | 10,000 | 0 2-plateaued hits | -- |
+| full two-block, uniform `k=3`, `N=128` | 3,000 | 0 defects | 0 |
+| regularize `+C`, then descend `-C`, `k=3` | 10,000 | 161 defects | 49 with `kappa/m>=0.05` |
+| same diagnostic, `k=4` | 3,000 | 7 defects | 0 with `kappa/m>=0.05` |
+
+At `k=3`, 44 of the 49 diagnostic large cores have bent bases and 16 end
+at exact 2-plateaued states; this is strong small-order enrichment, not a
+necessary condition.  The local `k=3` zero-hit 95% binomial upper bound is
+`5.99e-5`.  Exact and sampled full-two-block `k=2` tests do contain diffuse
+events, including two of 20,000 uniform inputs which are not near-bent.
+
+#### 10.134.6 A non-bent prescribed trajectory and its exact limit candidate
+
+The most informative computation starts from a deterministic non-bent
+regularizer.  On `V_2`, put
+
+```math
+w=(1,-1,-1,-1,1,1,1,1,1,1,1,1,1,1,1,1),\qquad
+v=(-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+```
+
+and lift `g_k=w\otimes f_{k-2}`, `v_k=v\otimes f_{k-2}`.  The base has full
+Walsh support with normalized magnitudes `1/2,3/2,5/2` and squared distance
+`3/8` from flatness.  Direct four-bit calculation proves
+
+```math
+E(g_k)={13\over16}ms,\qquad E(v_k)=-{11\over16}ms.  \tag{10.1580}
+```
+
+Moreover `v_k` is a strict anti-regularizing free-coordinate terminal.  Its
+relative flip set consists of the first four base classes, leaving only
+weight `s/2-1` outside.  Therefore its static core is
+
+```math
+\delta_v=m[s/8-2]_+,\qquad
+\kappa_v=
+\left\lceil{m(s-16)\over8(s-2)}\right\rceil
+\sim {m\over8}.                                    \tag{10.1581}
+```
+
+The program then runs the actual largest-gain, least-index descent from
+`g_k`; it does not force `v_k` as the endpoint.  The following values are
+**Certified finite integer computations**:
+
+| `k` | `m` | `kappa/m` | `delta/m^(3/2)` | distance from `v_k` / `m` |
+|---:|---:|---:|---:|---:|
+| 4 | 256 | 0 | 0 | `22/256` |
+| 5 | 1,024 | `0.0136719` | `0.0390625` | `44/1024` |
+| 6 | 4,096 | `0.0424805` | `0.111328` | `144/4096` |
+| 7 | 16,384 | `0.0741577` | `0.110336` | `306/16384` |
+| 8 | 65,536 | `0.0904541` | `0.119644` | `980/65536` |
+| 9 | 262,144 | `0.0930862` | `0.123284` | `4006/262144` |
+
+The `k=9` endpoint has Walsh support `262126/262144` and 440 distinct
+absolute levels.  Thus actual finite diffuse cores occur from a structured
+three-level non-bent base and end at multilevel, essentially full-support
+spectra.  A bent/plateaued classification is not a valid finite uniform
+mechanism.
+
+The strongest verified transfer lemma needs much less than convergence to
+`v_k`.  Suppose an endpoint `y` differs from `v_k` at `h=eta m` sites, all
+inside the three medium-weight base fibres `1,2,3`.  Expanding about `v_k`
+and using the least eigenvalue `-s/4` of the tail Walsh factor gives
+
+```math
+\delta(y)\ge ms\left({1\over8}-\eta-{2\over s}\right),
+\qquad
+{\kappa(y)\over m}\ge
+{1/8-\eta-2/s\over3-2/s}.                           \tag{10.1582}
+```
+
+Thus fibre confinement plus
+`limsup h_k/m_k<1/8` already proves a linear core for the actual trajectory;
+the data have `h_k/m` near `0.015`.  This is the current exact missing
+dynamical lemma.
+
+Under the stronger hypothesis that the actual terminal `y_k` satisfies
+
+```math
+h_k=d_H(y_k,v_k)=o(m),                              \tag{10.1583}
+```
+
+the operator norm `||H||=s` gives
+
+```math
+|E(y_k)-E(v_k)|\le4m\sqrt{h_k}=o(ms).              \tag{10.1584}
+```
+
+Equations (10.1580)--(10.1584) imply
+
+```math
+{\delta(y_k)\over m^{3/2}}\longrightarrow {1\over8}.
+```
+
+Only `h_k` base coordinates can move high or middle base weights into the
+outside set; their total capacity is `o(ms)`.  The remaining outside weights
+equal `s/2-1`, while the unpaid mass is `(1/16+o(1))ms`.  Hence the same
+hypothesis proves the stronger conclusion
+
+```math
+\boxed{{\kappa(y_k)\over m}\longrightarrow {1\over8}.} \tag{10.1585}
+```
+
+There is also an exact compressed endpoint equation.  Write the three medium
+fibres as `y_i=-h_i f`, put `R_i=fH_{k-2}(h_i f)` and `R=sum_i R_i`.
+The three medium-fibre terminal inequalities are precisely
+
+```math
+h_i(u)[5(s/4)+R(u)]\le0\qquad(i=1,2,3).             \tag{10.1586}
+```
+
+Off the neutral level `R=-5s/4`, all three masks must agree.  For a common
+discrepancy set `D`, with `r=fH_{k-2}(f1_D)`, the remaining conditions reduce
+to
+
+```math
+u\in D\Rightarrow r(u)\le-s/12,
+\qquad
+u\notin D\Rightarrow -s/12\le r(u)\le s/4.        \tag{10.1587}
+```
+
+This is a self-consistent signed-Walsh threshold set on only `m/16` tail
+coordinates.  It is genuinely smaller than full parent maximization, but it
+does not yet prove that the lexicographically interleaved trajectory enters
+or stays on this face.  Batching fibre zero before the medium fibres reaches
+a different stable family, so preserving the actual interleaving is an
+essential proof obligation.  Details are in
+`artifacts/regular_hadamard_tensor_trajectory.md`.
+
+Either (10.1582), or the stronger (10.1583)--(10.1585), would establish a
+scalable actual-trajectory obstruction to any pointwise `kappa=o(m)`
+assertion.  It still concerns one structured input per signing and therefore
+does **not** falsify the in-probability target (10.1565); basin entropy remains
+indispensable.
+
+The reproducible implementation and payload are
+`computations/audit_regular_hadamard_walsh_basins.py` and
+`computations/results/regular_hadamard_walsh_basins.json`; the computational
+interpretation is in `artifacts/regular_hadamard_walsh_basin_audit.md`.  The
+complete replay's canonical payload SHA-256 is
+`884761bbab5e22f7db94c78d8b4cc32414391302652369a297acb7d9a4a0ee29`.
+
+#### 10.134.7 Operational table
+
+| Track | Last concrete result | Classification | Next falsifiable step | Stop condition |
+|---|---|---|---|---|
+| Walsh dictionary | (10.1567)--(10.1572) express the complete recoupling certificate | Verified | Use trajectory-level, not flatness-only, invariants | Any proposed state merely restates the full path |
+| Bent/plateaued inverse | Static nonflat families and actual multilevel endpoints | Falsified as a finite uniform mechanism | None without a new dynamics-specific hypothesis | Do not search moment or exact-plateaued variants |
+| Tensor trajectory | Fibre confinement plus `limsup h_k/m<1/8` implies a linear core | Verified reduction plus certified finite evidence | Prove the face is preserved using (10.1586)--(10.1587), with lex interleaving | Deviations escape the face or reach density at least `1/8` |
+| Uniform basin | Exact `k=2`; zero larger sampled hits | Certified finite/numerical | Bound the entropy of structured multilevel attraction basins, or construct a nonvanishing basin | A scalable probability theorem in either direction |
+| Literature | Exact plateaued counts but no stability/preimage theorem | Verified mapping and negative audit | Search only for dynamics/basin or threshold-network results | Another endpoint-count theorem without preimage control |
+
+#### 10.134.8 Updated frontier
+
+The rigorous asymptotic interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                    \tag{10.1588}
+```
+
+No bound, recurrence, convergence mechanism, or genuine nonconvergence
+mechanism improved in this campaign.  The Walsh rewrite is exact and the
+finite trajectory law is material, but it is not proof-level progress under
+the README stopping rule.
+
+The bent/plateaued inverse route is now inactive: static cores can be fully
+nonflat, and the prescribed trajectory itself reaches growing multilevel
+cores from a non-bent tensor seed.  The strongest local theorem target is
+the fibre-confinement statement preceding (10.1582), using the reduced
+threshold law (10.1586)--(10.1587); it would turn this into an asymptotic
+pointwise obstruction.
+The theorem relevant to the lower-bound route remains probabilistic: for
+every fixed `alpha>0`, prove
+
+```math
+\Pr_X\{\kappa_*(A,X)>\alpha n\}\longrightarrow0
+```
+
+uniformly on project-scale signings, or construct a fixed `alpha` and a
+project-scale family with nonvanishing probability.  Exact `k=2` quotienting
+and the zero larger-order samples favor decay for the present family, while
+the tensor trajectory shows that terminal Walsh shape alone cannot prove it.
+The next defensible architecture is therefore a trajectory/basin-entropy
+analysis retaining tensor class multiplicities and tie-order information;
+ordinary bent, plateaued, fourth-moment, and Reed--Muller covering-radius
+variants should not be reopened.

@@ -1,0 +1,4045 @@
+{
+  "canonical_payload_sha256": "884761bbab5e22f7db94c78d8b4cc32414391302652369a297acb7d9a4a0ee29",
+  "dynamics": "largest strictly positive one-flip gain, least coordinate on ties; augmented zero cross-fields start at switched spin +1",
+  "full_row_sign_experiment": [
+    {
+      "N": 32,
+      "all": {
+        "count": 32768,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394094467163086,
+          "minimum": 0.0,
+          "standard_deviation": 0.07043267491481778
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26442432403564453,
+          "minimum": 0.0,
+          "standard_deviation": 0.05873742028925993
+        },
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 9.912938769762278e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.002784542753575409
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0517578125e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.005524187433679761
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.99969482421875,
+          "minimum": 0.0,
+          "standard_deviation": 0.017466615270067022
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.28501129150390625,
+          "minimum": 0.0,
+          "standard_deviation": 0.06925105848301212
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.875,
+          "minimum": 1.0,
+          "standard_deviation": 1.109264959331178
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0849609375,
+          "minimum": 1.0,
+          "standard_deviation": 0.45565929058795795
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803619384765625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929286817322795
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394094467163086,
+          "minimum": 0.0,
+          "standard_deviation": 0.07043267491481778
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26442432403564453,
+          "minimum": 0.0,
+          "standard_deviation": 0.05873742028925993
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 8.296966552734375e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0022559506118038533
+        }
+      },
+      "both_blocks_bent_count": 448,
+      "both_blocks_near_bent_count": 7616,
+      "both_input_blocks_bent": {
+        "count": 448,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.2569056919642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.05837240124961616
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2598353794642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.06623571142638672
+        },
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 0.0033540221205835127,
+          "minimum": 0.0,
+          "standard_deviation": 0.01849006519894035
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 0.002232142857142857,
+          "minimum": 0.0,
+          "standard_deviation": 0.04719280024970083
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.30189732142857145,
+          "minimum": 0.25,
+          "standard_deviation": 0.0832633418736487
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.29464285714285715,
+          "minimum": 0.0,
+          "standard_deviation": 0.08328017011686437
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.375,
+          "minimum": 0.375,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.2569056919642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.05837240124961616
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2598353794642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.06623571142638672
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 0.0025111607142857145,
+          "minimum": 0.0,
+          "standard_deviation": 0.013620530410110406
+        }
+      },
+      "diffuse_and_both_blocks_bent_count": 16,
+      "diffuse_and_both_blocks_near_bent_count": 32,
+      "diffuse_count": 32,
+      "diffuse_only": {
+        "count": 32,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.267578125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.042026239826855494
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.236328125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.03399784215923674
+        },
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 0.0801019400562886,
+          "minimum": 0.06629126073623882,
+          "standard_deviation": 0.026921970218926165
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.25,
+          "minimum": 0.1875,
+          "standard_deviation": 0.07654655446197431
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.25,
+          "mean": 0.109375,
+          "minimum": 0.0,
+          "standard_deviation": 0.09757809372497497
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 1.9375,
+          "mean": 1.46875,
+          "minimum": 1.0,
+          "standard_deviation": 0.46875
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.5,
+          "mean": 1.25,
+          "minimum": 1.0,
+          "standard_deviation": 0.25
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.34375,
+          "minimum": 0.3125,
+          "standard_deviation": 0.03125
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.267578125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.042026239826855494
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.236328125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.03399784215923674
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 0.06640625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.015128841196122723
+        }
+      },
+      "diffuse_probability": 0.0009765625,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 1,
+      "explicit_native_bad_core_probability": 3.0517578125e-05,
+      "hard_branch_only": {
+        "count": 32758,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394825309847976,
+          "minimum": 0.03125,
+          "standard_deviation": 0.07031908458261896
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26450504456926555,
+          "minimum": 0.0625,
+          "standard_deviation": 0.05856438130426951
+        },
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 9.915964882092017e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.002784967199625863
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0526894193784724e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0055250305250302105
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.2849952683314,
+          "minimum": 0.0,
+          "standard_deviation": 0.06925348799919519
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23940335185298248,
+          "minimum": 0.0,
+          "standard_deviation": 0.05694774801864295
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.8749427620733865,
+          "minimum": 1.0,
+          "standard_deviation": 1.1094003992421047
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.084895292752915,
+          "minimum": 1.0,
+          "standard_deviation": 0.45569324556257257
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23938808840588557,
+          "minimum": 0.0,
+          "standard_deviation": 0.05696165569532157
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803605226204286,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929863068749
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394825309847976,
+          "minimum": 0.03125,
+          "standard_deviation": 0.07031908458261896
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26450504456926555,
+          "minimum": 0.0625,
+          "standard_deviation": 0.05856438130426951
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 8.299499358935222e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0022562944555266414
+        }
+      },
+      "k": 2,
+      "kappa_histogram": {
+        "0": 32717,
+        "1": 19,
+        "2": 30,
+        "4": 2
+      },
+      "m_per_block": 16,
+      "mode": "exact_X2_equals_X1_slice_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 32736,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2393819113514174,
+          "minimum": 0.0,
+          "standard_deviation": 0.07044932956817378
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2644517885508309,
+          "minimum": 0.0,
+          "standard_deviation": 0.05874993438095057
+        },
+        "defect_over_N32": {
+          "maximum": 0.06629126073623882,
+          "mean": 2.0925271697045088e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0008888732652616883
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0547409579667644e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.005526886685597563
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.9996945259042033,
+          "minimum": 0.0,
+          "standard_deviation": 0.017475147535100904
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.2850455156402737,
+          "minimum": 0.0,
+          "standard_deviation": 0.06923488966481652
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23950696480938416,
+          "minimum": 0.0,
+          "standard_deviation": 0.0567580220741615
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.876374633431085,
+          "minimum": 1.0,
+          "standard_deviation": 1.1088380404274825
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.085777126099707,
+          "minimum": 1.0,
+          "standard_deviation": 0.45506603903976534
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23927785923753667,
+          "minimum": 0.0,
+          "standard_deviation": 0.05688325487997067
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8034274193548387,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20930501237935797
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2393819113514174,
+          "minimum": 0.0,
+          "standard_deviation": 0.07044932956817378
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2644517885508309,
+          "minimum": 0.0,
+          "standard_deviation": 0.05874993438095057
+        },
+        "kappa_over_N": {
+          "maximum": 0.03125,
+          "mean": 1.8137524437927665e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0007526411288871364
+        }
+      },
+      "positive_defect_count": 51,
+      "positive_defect_probability": 0.001556396484375,
+      "samples_after_global_sign_quotient": 32768,
+      "seed": null
+    },
+    {
+      "N": 32,
+      "all": {
+        "count": 20000,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.2374328125,
+          "minimum": 0.0,
+          "standard_deviation": 0.07310513470485393
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.261890625,
+          "minimum": 0.0,
+          "standard_deviation": 0.06131788131009893
+        },
+        "defect_over_N32": {
+          "maximum": 0.18782523875267668,
+          "mean": 0.00011766698780682394,
+          "minimum": 0.0,
+          "standard_deviation": 0.0029509453244859467
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.9989,
+          "minimum": 0.0,
+          "standard_deviation": 0.03314800144805138
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.284234375,
+          "minimum": 0.0625,
+          "standard_deviation": 0.04941335288522101
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2396875,
+          "minimum": 0.0625,
+          "standard_deviation": 0.04039961517452861
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 12.71875,
+          "mean": 2.87771875,
+          "minimum": 1.0,
+          "standard_deviation": 0.7868052683310128
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.086325,
+          "minimum": 1.0,
+          "standard_deviation": 0.322545336929555
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.239209375,
+          "minimum": 0.03125,
+          "standard_deviation": 0.040318167116194376
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8051734375,
+          "minimum": 0.25,
+          "standard_deviation": 0.14832325602820534
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.2374328125,
+          "minimum": 0.0,
+          "standard_deviation": 0.07310513470485393
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.261890625,
+          "minimum": 0.0,
+          "standard_deviation": 0.06131788131009893
+        },
+        "kappa_over_N": {
+          "maximum": 0.0625,
+          "mean": 8.59375e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.001695132478921264
+        }
+      },
+      "both_blocks_bent_count": 3,
+      "both_blocks_near_bent_count": 1094,
+      "both_input_blocks_bent": {
+        "count": 3,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.34375,
+          "mean": 0.22916666666666666,
+          "minimum": 0.09375,
+          "standard_deviation": 0.10311973892303823
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.21875,
+          "mean": 0.19791666666666666,
+          "minimum": 0.1875,
+          "standard_deviation": 0.01473139127471995
+        },
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.3333333333333333,
+          "minimum": 0.3125,
+          "standard_deviation": 0.029462782549439664
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.3125,
+          "minimum": 0.3125,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.375,
+          "minimum": 0.375,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.34375,
+          "mean": 0.22916666666666666,
+          "minimum": 0.09375,
+          "standard_deviation": 0.10311973892303823
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.21875,
+          "mean": 0.19791666666666666,
+          "minimum": 0.1875,
+          "standard_deviation": 0.01473139127471995
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        }
+      },
+      "diffuse_and_both_blocks_bent_count": 0,
+      "diffuse_and_both_blocks_near_bent_count": 0,
+      "diffuse_count": 2,
+      "diffuse_only": {
+        "count": 2,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.28125,
+          "mean": 0.265625,
+          "minimum": 0.25,
+          "standard_deviation": 0.015625
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.296875,
+          "minimum": 0.28125,
+          "standard_deviation": 0.015625
+        },
+        "defect_over_N32": {
+          "maximum": 0.15467960838455727,
+          "mean": 0.14363106492851746,
+          "minimum": 0.13258252147247765,
+          "standard_deviation": 0.011048543456039806
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.21875,
+          "mean": 0.21875,
+          "minimum": 0.21875,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.21875,
+          "mean": 0.21875,
+          "minimum": 0.21875,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 2.21875,
+          "mean": 2.21875,
+          "minimum": 2.21875,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.75,
+          "mean": 1.75,
+          "minimum": 1.75,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.28125,
+          "mean": 0.28125,
+          "minimum": 0.28125,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.28125,
+          "mean": 0.265625,
+          "minimum": 0.25,
+          "standard_deviation": 0.015625
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.296875,
+          "minimum": 0.28125,
+          "standard_deviation": 0.015625
+        },
+        "kappa_over_N": {
+          "maximum": 0.0625,
+          "mean": 0.0625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.0
+        }
+      },
+      "diffuse_probability": 0.0001,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 0,
+      "explicit_native_bad_core_probability": 0.0,
+      "hard_branch_only": {
+        "count": 19978,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.23769427620382422,
+          "minimum": 0.0,
+          "standard_deviation": 0.07271930668653724
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2621790219241165,
+          "minimum": 0.0625,
+          "standard_deviation": 0.06073229264700616
+        },
+        "defect_over_N32": {
+          "maximum": 0.18782523875267668,
+          "mean": 0.00011779656402725392,
+          "minimum": 0.0,
+          "standard_deviation": 0.0029525670998283523
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.2842141981179297,
+          "minimum": 0.0625,
+          "standard_deviation": 0.04939883961340463
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2397121208329162,
+          "minimum": 0.0625,
+          "standard_deviation": 0.04039389190243174
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 12.71875,
+          "mean": 2.8773416383021324,
+          "minimum": 1.0,
+          "standard_deviation": 0.7859456575753896
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.08623235559115,
+          "minimum": 1.0,
+          "standard_deviation": 0.32245489660826876
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23922095555110623,
+          "minimum": 0.03125,
+          "standard_deviation": 0.04030686207603342
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.805181011612774,
+          "minimum": 0.25,
+          "standard_deviation": 0.14830728614585723
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.23769427620382422,
+          "minimum": 0.0,
+          "standard_deviation": 0.07271930668653724
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2621790219241165,
+          "minimum": 0.0625,
+          "standard_deviation": 0.06073229264700616
+        },
+        "kappa_over_N": {
+          "maximum": 0.0625,
+          "mean": 8.603213534888377e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0016960631714881085
+        }
+      },
+      "k": 2,
+      "kappa_histogram": {
+        "0": 19947,
+        "1": 51,
+        "2": 2
+      },
+      "m_per_block": 16,
+      "mode": "uniform_monte_carlo_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 19998,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.23742999299929993,
+          "minimum": 0.0,
+          "standard_deviation": 0.07310807956299831
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2618871262126213,
+          "minimum": 0.0,
+          "standard_deviation": 0.061319750183635155
+        },
+        "defect_over_N32": {
+          "maximum": 0.18782523875267668,
+          "mean": 0.00010331421273524571,
+          "minimum": 0.0,
+          "standard_deviation": 0.0025761831123577747
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.9988998899889989,
+          "minimum": 0.0,
+          "standard_deviation": 0.033149657147017716
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.28424092409240925,
+          "minimum": 0.0625,
+          "standard_deviation": 0.049411483782710854
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23968959395939593,
+          "minimum": 0.0625,
+          "standard_deviation": 0.040401092668441926
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 12.71875,
+          "mean": 2.8777846534653464,
+          "minimum": 1.0,
+          "standard_deviation": 0.7868170117951584
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.0863586358635864,
+          "minimum": 1.0,
+          "standard_deviation": 0.32254392763111256
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2392051705170517,
+          "minimum": 0.03125,
+          "standard_deviation": 0.04031799095388907
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8051539528952896,
+          "minimum": 0.25,
+          "standard_deviation": 0.1483178747806517
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.5625,
+          "mean": 0.23742999299929993,
+          "minimum": 0.0,
+          "standard_deviation": 0.07310807956299831
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2618871262126213,
+          "minimum": 0.0,
+          "standard_deviation": 0.061319750183635155
+        },
+        "kappa_over_N": {
+          "maximum": 0.03125,
+          "mean": 7.969546954695469e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0015761129577146508
+        }
+      },
+      "positive_defect_count": 53,
+      "positive_defect_probability": 0.00265,
+      "samples_after_global_sign_quotient": 20000,
+      "seed": 20260836
+    },
+    {
+      "N": 128,
+      "all": {
+        "count": 3000,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3300859375,
+          "minimum": 0.2578125,
+          "standard_deviation": 0.02080531824053304
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.3366015625,
+          "minimum": 0.234375,
+          "standard_deviation": 0.017233204501843027
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.060546875,
+          "mean": 2.981427734375,
+          "minimum": 2.03125,
+          "standard_deviation": 0.41660247779856496
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.6182083333333335,
+          "minimum": 1.875,
+          "standard_deviation": 0.27247079035599636
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.33636197916666666,
+          "minimum": 0.265625,
+          "standard_deviation": 0.017029424397250078
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8986223958333334,
+          "minimum": 0.6328125,
+          "standard_deviation": 0.0741448809569779
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        }
+      },
+      "both_blocks_bent_count": 0,
+      "both_blocks_near_bent_count": 0,
+      "both_input_blocks_bent": {
+        "count": 0
+      },
+      "diffuse_and_both_blocks_bent_count": 0,
+      "diffuse_and_both_blocks_near_bent_count": 0,
+      "diffuse_count": 0,
+      "diffuse_only": {
+        "count": 0
+      },
+      "diffuse_probability": 0.0,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 0,
+      "explicit_native_bad_core_probability": 0.0,
+      "hard_branch_only": {
+        "count": 3000,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3300859375,
+          "minimum": 0.2578125,
+          "standard_deviation": 0.02080531824053304
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.3366015625,
+          "minimum": 0.234375,
+          "standard_deviation": 0.017233204501843027
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.060546875,
+          "mean": 2.981427734375,
+          "minimum": 2.03125,
+          "standard_deviation": 0.41660247779856496
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.6182083333333335,
+          "minimum": 1.875,
+          "standard_deviation": 0.27247079035599636
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.33636197916666666,
+          "minimum": 0.265625,
+          "standard_deviation": 0.017029424397250078
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8986223958333334,
+          "minimum": 0.6328125,
+          "standard_deviation": 0.0741448809569779
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        }
+      },
+      "k": 3,
+      "kappa_histogram": {
+        "0": 3000
+      },
+      "m_per_block": 64,
+      "mode": "uniform_monte_carlo_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 3000,
+        "defect_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "defect_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3300859375,
+          "minimum": 0.2578125,
+          "standard_deviation": 0.02080531824053304
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.3366015625,
+          "minimum": 0.234375,
+          "standard_deviation": 0.017233204501843027
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.060546875,
+          "mean": 2.981427734375,
+          "minimum": 2.03125,
+          "standard_deviation": 0.41660247779856496
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.6182083333333335,
+          "minimum": 1.875,
+          "standard_deviation": 0.27247079035599636
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3828125,
+          "mean": 0.33636197916666666,
+          "minimum": 0.265625,
+          "standard_deviation": 0.017029424397250078
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8986223958333334,
+          "minimum": 0.6328125,
+          "standard_deviation": 0.0741448809569779
+        },
+        "kappa_branch_outside_over_N": {
+          "maximum": 0.3515625,
+          "mean": 0.23655729166666667,
+          "minimum": 0.1171875,
+          "standard_deviation": 0.03527812170893965
+        },
+        "kappa_branch_selected_over_N": {
+          "maximum": 0.3671875,
+          "mean": 0.26321875,
+          "minimum": 0.1484375,
+          "standard_deviation": 0.030668883312664572
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        }
+      },
+      "positive_defect_count": 0,
+      "positive_defect_probability": 0.0,
+      "samples_after_global_sign_quotient": 3000,
+      "seed": 20260837
+    }
+  ],
+  "generic_regularizing_base_experiment": [
+    {
+      "all": {
+        "base_bent": {
+          "maximum": 1.0,
+          "mean": 0.2413,
+          "minimum": 0.0,
+          "standard_deviation": 0.4278718382880556
+        },
+        "base_bent_residual": {
+          "maximum": 0.421875,
+          "mean": 0.14060625,
+          "minimum": 0.0,
+          "standard_deviation": 0.09897916269820382
+        },
+        "base_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.445965625,
+          "minimum": 0.28125,
+          "standard_deviation": 0.03897631980907645
+        },
+        "base_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.30230625,
+          "minimum": 0.125,
+          "standard_deviation": 0.04564098136201177
+        },
+        "base_fourth_ratio": {
+          "maximum": 3.4375,
+          "mean": 1.79295625,
+          "minimum": 1.0,
+          "standard_deviation": 0.4764626686829068
+        },
+        "base_max_abs_over_sqrt_m": {
+          "maximum": 3.25,
+          "mean": 2.0381,
+          "minimum": 1.0,
+          "standard_deviation": 0.7079536637379595
+        },
+        "base_rm1_distance_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.37261875,
+          "minimum": 0.296875,
+          "standard_deviation": 0.04424710398362275
+        },
+        "base_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "count": 10000,
+        "defect_over_m32": {
+          "maximum": 0.25,
+          "mean": 0.00137890625,
+          "minimum": 0.0,
+          "standard_deviation": 0.013527017755240286
+        },
+        "kappa_over_m": {
+          "maximum": 0.15625,
+          "mean": 0.00085625,
+          "minimum": 0.0,
+          "standard_deviation": 0.008373556312135245
+        },
+        "minus_flips_over_m": {
+          "maximum": 0.53125,
+          "mean": 0.399884375,
+          "minimum": 0.21875,
+          "standard_deviation": 0.049072514005901055
+        },
+        "outside_fraction": {
+          "maximum": 0.78125,
+          "mean": 0.60269375,
+          "minimum": 0.5,
+          "standard_deviation": 0.047787877238243924
+        },
+        "plus_flips_over_m": {
+          "maximum": 0.359375,
+          "mean": 0.2087203125,
+          "minimum": 0.078125,
+          "standard_deviation": 0.04073861633438038
+        },
+        "selected_fraction": {
+          "maximum": 0.5,
+          "mean": 0.39730625,
+          "minimum": 0.21875,
+          "standard_deviation": 0.047787877238243924
+        },
+        "terminal_anti_2_plateaued_residual": {
+          "maximum": 1.0,
+          "mean": 0.527778125,
+          "minimum": 0.0,
+          "standard_deviation": 0.24837933043453794
+        },
+        "terminal_anti_self_dual_2_plateaued": {
+          "maximum": 1.0,
+          "mean": 0.0016,
+          "minimum": 0.0,
+          "standard_deviation": 0.03996798718974975
+        },
+        "terminal_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.284465625,
+          "minimum": 0.109375,
+          "standard_deviation": 0.040167029073723874
+        },
+        "terminal_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.28638125,
+          "minimum": 0.0,
+          "standard_deviation": 0.047796549218406065
+        },
+        "terminal_fourth_ratio": {
+          "maximum": 13.24609375,
+          "mean": 2.8052265625,
+          "minimum": 1.0,
+          "standard_deviation": 1.0491390437369401
+        },
+        "terminal_in_explicit_affine_orthogonal_orbit": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_max_abs_over_sqrt_m": {
+          "maximum": 5.25,
+          "mean": 2.3412,
+          "minimum": 1.0,
+          "standard_deviation": 0.7461953899616368
+        },
+        "terminal_rm1_distance_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.353675,
+          "minimum": 0.171875,
+          "standard_deviation": 0.046637211872602155
+        },
+        "terminal_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9120953125,
+          "minimum": 0.25,
+          "standard_deviation": 0.12808321459441857
+        }
+      },
+      "anti_self_dual_2_plateaued_terminal_count": 16,
+      "bent_base_count": 2413,
+      "bent_base_to_anti_self_dual_2_plateaued_terminal_count": 16,
+      "explicit_bad_orbit_terminal_count": 0,
+      "k": 3,
+      "linear_core_and_bent_base_count": 44,
+      "linear_core_and_bent_to_plateaued_count": 16,
+      "linear_core_count": 49,
+      "linear_core_only": {
+        "base_bent": {
+          "maximum": 1.0,
+          "mean": 0.8979591836734694,
+          "minimum": 0.0,
+          "standard_deviation": 0.3027019790651291
+        },
+        "base_bent_residual": {
+          "maximum": 0.25,
+          "mean": 0.025510204081632654,
+          "minimum": 0.0,
+          "standard_deviation": 0.07567549476628227
+        },
+        "base_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.47512755102040816,
+          "minimum": 0.375,
+          "standard_deviation": 0.03398702192467952
+        },
+        "base_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2965561224489796,
+          "minimum": 0.25,
+          "standard_deviation": 0.059935408798320024
+        },
+        "base_fourth_ratio": {
+          "maximum": 3.34375,
+          "mean": 1.2391581632653061,
+          "minimum": 1.0,
+          "standard_deviation": 0.7094577634338962
+        },
+        "base_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 1.2040816326530612,
+          "minimum": 1.0,
+          "standard_deviation": 0.6054039581302582
+        },
+        "base_rm1_distance_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.4247448979591837,
+          "minimum": 0.3125,
+          "standard_deviation": 0.037837747383141045
+        },
+        "base_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "count": 49,
+        "defect_over_m32": {
+          "maximum": 0.25,
+          "mean": 0.16581632653061223,
+          "minimum": 0.125,
+          "standard_deviation": 0.05861798618916357
+        },
+        "kappa_over_m": {
+          "maximum": 0.15625,
+          "mean": 0.10363520408163265,
+          "minimum": 0.078125,
+          "standard_deviation": 0.036636241368227226
+        },
+        "minus_flips_over_m": {
+          "maximum": 0.34375,
+          "mean": 0.2850765306122449,
+          "minimum": 0.21875,
+          "standard_deviation": 0.036065600805098685
+        },
+        "outside_fraction": {
+          "maximum": 0.78125,
+          "mean": 0.7155612244897959,
+          "minimum": 0.65625,
+          "standard_deviation": 0.036402355083751135
+        },
+        "plus_flips_over_m": {
+          "maximum": 0.296875,
+          "mean": 0.22991071428571427,
+          "minimum": 0.15625,
+          "standard_deviation": 0.030767965964487214
+        },
+        "selected_fraction": {
+          "maximum": 0.34375,
+          "mean": 0.2844387755102041,
+          "minimum": 0.21875,
+          "standard_deviation": 0.036402355083750754
+        },
+        "terminal_anti_2_plateaued_residual": {
+          "maximum": 0.375,
+          "mean": 0.1836734693877551,
+          "minimum": 0.0,
+          "standard_deviation": 0.1338738955449176
+        },
+        "terminal_anti_self_dual_2_plateaued": {
+          "maximum": 1.0,
+          "mean": 0.32653061224489793,
+          "minimum": 0.0,
+          "standard_deviation": 0.46894388951330845
+        },
+        "terminal_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.288265306122449,
+          "minimum": 0.21875,
+          "standard_deviation": 0.03749218994055856
+        },
+        "terminal_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.31505102040816324,
+          "minimum": 0.25,
+          "standard_deviation": 0.03562306133614547
+        },
+        "terminal_fourth_ratio": {
+          "maximum": 9.25,
+          "mean": 4.130102040816326,
+          "minimum": 3.25,
+          "standard_deviation": 1.7630633387732981
+        },
+        "terminal_in_explicit_affine_orthogonal_orbit": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.2244897959183674,
+          "minimum": 2.0,
+          "standard_deviation": 0.6149599662579335
+        },
+        "terminal_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.36096938775510207,
+          "minimum": 0.25,
+          "standard_deviation": 0.03843499789112075
+        },
+        "terminal_support_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.3673469387755102,
+          "minimum": 0.25,
+          "standard_deviation": 0.08645757801807404
+        }
+      },
+      "linear_core_probability": 0.0049,
+      "linear_core_threshold_kappa_over_m": 0.05,
+      "m": 64,
+      "mode": "+C largest-gain regularization then -C largest-gain descent",
+      "positive_defect_count": 161,
+      "positive_defect_only": {
+        "base_bent": {
+          "maximum": 1.0,
+          "mean": 0.5031055900621118,
+          "minimum": 0.0,
+          "standard_deviation": 0.4999903552173443
+        },
+        "base_bent_residual": {
+          "maximum": 0.25,
+          "mean": 0.07016692546583851,
+          "minimum": 0.0,
+          "standard_deviation": 0.07763077393747335
+        },
+        "base_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.4624417701863354,
+          "minimum": 0.375,
+          "standard_deviation": 0.03374092652088163
+        },
+        "base_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.31337344720496896,
+          "minimum": 0.15625,
+          "standard_deviation": 0.06394506751172846
+        },
+        "base_fourth_ratio": {
+          "maximum": 3.34375,
+          "mean": 1.5386985636645962,
+          "minimum": 1.0,
+          "standard_deviation": 0.5970592708912782
+        },
+        "base_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 1.8400621118012421,
+          "minimum": 1.0,
+          "standard_deviation": 0.8513566060566428
+        },
+        "base_rm1_distance_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.38499611801242234,
+          "minimum": 0.3125,
+          "standard_deviation": 0.053209787878540304
+        },
+        "base_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "count": 161,
+        "defect_over_m32": {
+          "maximum": 0.25,
+          "mean": 0.08564635093167702,
+          "minimum": 0.0078125,
+          "standard_deviation": 0.06440521139724441
+        },
+        "kappa_over_m": {
+          "maximum": 0.15625,
+          "mean": 0.0531832298136646,
+          "minimum": 0.015625,
+          "standard_deviation": 0.03965023230924378
+        },
+        "minus_flips_over_m": {
+          "maximum": 0.375,
+          "mean": 0.3112383540372671,
+          "minimum": 0.21875,
+          "standard_deviation": 0.0438142536181651
+        },
+        "outside_fraction": {
+          "maximum": 0.78125,
+          "mean": 0.6895380434782609,
+          "minimum": 0.625,
+          "standard_deviation": 0.04378500827261441
+        },
+        "plus_flips_over_m": {
+          "maximum": 0.328125,
+          "mean": 0.22069099378881987,
+          "minimum": 0.125,
+          "standard_deviation": 0.03786530163561995
+        },
+        "selected_fraction": {
+          "maximum": 0.375,
+          "mean": 0.31046195652173914,
+          "minimum": 0.21875,
+          "standard_deviation": 0.04378500827261425
+        },
+        "terminal_anti_2_plateaued_residual": {
+          "maximum": 0.5,
+          "mean": 0.3333656832298137,
+          "minimum": 0.0,
+          "standard_deviation": 0.13785272133006515
+        },
+        "terminal_anti_self_dual_2_plateaued": {
+          "maximum": 1.0,
+          "mean": 0.09937888198757763,
+          "minimum": 0.0,
+          "standard_deviation": 0.29917005164701355
+        },
+        "terminal_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.27639751552795033,
+          "minimum": 0.15625,
+          "standard_deviation": 0.03377942669348347
+        },
+        "terminal_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.3004658385093168,
+          "minimum": 0.21875,
+          "standard_deviation": 0.03249875173061944
+        },
+        "terminal_fourth_ratio": {
+          "maximum": 13.24609375,
+          "mean": 4.809976708074534,
+          "minimum": 2.6875,
+          "standard_deviation": 2.0683178276444787
+        },
+        "terminal_in_explicit_affine_orthogonal_orbit": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_max_abs_over_sqrt_m": {
+          "maximum": 5.25,
+          "mean": 2.9316770186335406,
+          "minimum": 2.0,
+          "standard_deviation": 0.9874946252073834
+        },
+        "terminal_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.3167701863354037,
+          "minimum": 0.171875,
+          "standard_deviation": 0.06171841407546163
+        },
+        "terminal_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.5057259316770186,
+          "minimum": 0.25,
+          "standard_deviation": 0.1526535777923222
+        }
+      },
+      "positive_defect_probability": 0.0161,
+      "samples_after_global_sign_quotient": 10000,
+      "seed": 20260847
+    },
+    {
+      "all": {
+        "base_bent": {
+          "maximum": 1.0,
+          "mean": 0.0016666666666666668,
+          "minimum": 0.0,
+          "standard_deviation": 0.040790794168401395
+        },
+        "base_bent_residual": {
+          "maximum": 0.263671875,
+          "mean": 0.16635546875,
+          "minimum": 0.0,
+          "standard_deviation": 0.04359654968095129
+        },
+        "base_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.4296875,
+          "mean": 0.37934375,
+          "minimum": 0.2890625,
+          "standard_deviation": 0.016335469839273222
+        },
+        "base_fourth_ratio": {
+          "maximum": 2.34765625,
+          "mean": 1.75357470703125,
+          "minimum": 1.0,
+          "standard_deviation": 0.13191207333805618
+        },
+        "base_max_abs_over_sqrt_m": {
+          "maximum": 3.25,
+          "mean": 2.335916666666667,
+          "minimum": 1.0,
+          "standard_deviation": 0.31315530181613493
+        },
+        "base_rm1_distance_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.4270026041666667,
+          "minimum": 0.3984375,
+          "standard_deviation": 0.009786103181753552
+        },
+        "base_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "count": 3000,
+        "defect_over_m32": {
+          "maximum": 0.01953125,
+          "mean": 1.953125e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0005249269464922199
+        },
+        "kappa_over_m": {
+          "maximum": 0.01171875,
+          "mean": 1.4322916666666666e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.00032650632075912364
+        },
+        "minus_flips_over_m": {
+          "maximum": 0.546875,
+          "mean": 0.4396041666666667,
+          "minimum": 0.34765625,
+          "standard_deviation": 0.03267763662067442
+        },
+        "outside_fraction": {
+          "maximum": 0.65234375,
+          "mean": 0.5772578125,
+          "minimum": 0.50390625,
+          "standard_deviation": 0.024309531219369303
+        },
+        "plus_flips_over_m": {
+          "maximum": 0.34375,
+          "mean": 0.23505989583333334,
+          "minimum": 0.12890625,
+          "standard_deviation": 0.026920437480765683
+        },
+        "selected_fraction": {
+          "maximum": 0.49609375,
+          "mean": 0.4227421875,
+          "minimum": 0.34765625,
+          "standard_deviation": 0.024309531219369303
+        },
+        "terminal_anti_2_plateaued_residual": {
+          "maximum": 0.7890625,
+          "mean": 0.5135735677083333,
+          "minimum": 0.35546875,
+          "standard_deviation": 0.08870732673729727
+        },
+        "terminal_anti_self_dual_2_plateaued": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.41015625,
+          "mean": 0.373703125,
+          "minimum": 0.28515625,
+          "standard_deviation": 0.018109633392605472
+        },
+        "terminal_fourth_ratio": {
+          "maximum": 3.080078125,
+          "mean": 2.03836865234375,
+          "minimum": 1.361083984375,
+          "standard_deviation": 0.2090679281234287
+        },
+        "terminal_in_explicit_affine_orthogonal_orbit": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.6035833333333334,
+          "minimum": 1.5,
+          "standard_deviation": 0.32334461964838007
+        },
+        "terminal_rm1_distance_fraction": {
+          "maximum": 0.453125,
+          "mean": 0.41863802083333335,
+          "minimum": 0.3828125,
+          "standard_deviation": 0.01010451936401102
+        },
+        "terminal_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9731640625,
+          "minimum": 0.83203125,
+          "standard_deviation": 0.024483318436706855
+        }
+      },
+      "anti_self_dual_2_plateaued_terminal_count": 0,
+      "bent_base_count": 5,
+      "bent_base_to_anti_self_dual_2_plateaued_terminal_count": 0,
+      "explicit_bad_orbit_terminal_count": 0,
+      "k": 4,
+      "linear_core_and_bent_base_count": 0,
+      "linear_core_and_bent_to_plateaued_count": 0,
+      "linear_core_count": 0,
+      "linear_core_only": {
+        "count": 0
+      },
+      "linear_core_probability": 0.0,
+      "linear_core_threshold_kappa_over_m": 0.05,
+      "m": 256,
+      "mode": "+C largest-gain regularization then -C largest-gain descent",
+      "positive_defect_count": 7,
+      "positive_defect_only": {
+        "base_bent": {
+          "maximum": 1.0,
+          "mean": 0.14285714285714285,
+          "minimum": 0.0,
+          "standard_deviation": 0.3499271061118826
+        },
+        "base_bent_residual": {
+          "maximum": 0.0546875,
+          "mean": 0.03236607142857143,
+          "minimum": 0.0,
+          "standard_deviation": 0.017245019129868793
+        },
+        "base_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.40234375,
+          "mean": 0.3861607142857143,
+          "minimum": 0.375,
+          "standard_deviation": 0.01052899679916978
+        },
+        "base_fourth_ratio": {
+          "maximum": 1.451171875,
+          "mean": 1.2816685267857142,
+          "minimum": 1.0,
+          "standard_deviation": 0.14021506212032273
+        },
+        "base_max_abs_over_sqrt_m": {
+          "maximum": 2.875,
+          "mean": 2.5714285714285716,
+          "minimum": 1.0,
+          "standard_deviation": 0.6438484420471402
+        },
+        "base_rm1_distance_fraction": {
+          "maximum": 0.46875,
+          "mean": 0.41964285714285715,
+          "minimum": 0.41015625,
+          "standard_deviation": 0.02012026381397259
+        },
+        "base_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "count": 7,
+        "defect_over_m32": {
+          "maximum": 0.01953125,
+          "mean": 0.008370535714285714,
+          "minimum": 0.0009765625,
+          "standard_deviation": 0.006941883540527193
+        },
+        "kappa_over_m": {
+          "maximum": 0.01171875,
+          "mean": 0.006138392857142857,
+          "minimum": 0.00390625,
+          "standard_deviation": 0.0028454349964245453
+        },
+        "minus_flips_over_m": {
+          "maximum": 0.4609375,
+          "mean": 0.4375,
+          "minimum": 0.40625,
+          "standard_deviation": 0.01721791140685402
+        },
+        "outside_fraction": {
+          "maximum": 0.59375,
+          "mean": 0.5691964285714286,
+          "minimum": 0.5546875,
+          "standard_deviation": 0.013805041157200921
+        },
+        "plus_flips_over_m": {
+          "maximum": 0.2890625,
+          "mean": 0.2650669642857143,
+          "minimum": 0.23828125,
+          "standard_deviation": 0.01974531921088582
+        },
+        "selected_fraction": {
+          "maximum": 0.4453125,
+          "mean": 0.43080357142857145,
+          "minimum": 0.40625,
+          "standard_deviation": 0.013805041157200921
+        },
+        "terminal_anti_2_plateaued_residual": {
+          "maximum": 0.4375,
+          "mean": 0.3984375,
+          "minimum": 0.35546875,
+          "standard_deviation": 0.024705294220065465
+        },
+        "terminal_anti_self_dual_2_plateaued": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.37723214285714285,
+          "minimum": 0.359375,
+          "standard_deviation": 0.01601863849822237
+        },
+        "terminal_fourth_ratio": {
+          "maximum": 2.482421875,
+          "mean": 2.1768973214285716,
+          "minimum": 2.0078125,
+          "standard_deviation": 0.17548604037560492
+        },
+        "terminal_in_explicit_affine_orthogonal_orbit": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "terminal_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.4642857142857144,
+          "minimum": 2.25,
+          "standard_deviation": 0.2812145669289929
+        },
+        "terminal_rm1_distance_fraction": {
+          "maximum": 0.4296875,
+          "mean": 0.42299107142857145,
+          "minimum": 0.40625,
+          "standard_deviation": 0.00878795521653004
+        },
+        "terminal_support_fraction": {
+          "maximum": 0.953125,
+          "mean": 0.9380580357142857,
+          "minimum": 0.92578125,
+          "standard_deviation": 0.010319889513901481
+        }
+      },
+      "positive_defect_probability": 0.0023333333333333335,
+      "samples_after_global_sign_quotient": 3000,
+      "seed": 20260848
+    }
+  ],
+  "local_experiment": [
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": 16,
+      "anti_self_dual_2_plateaued_terminal_count": 4112,
+      "anti_self_dual_2_plateaued_terminal_probability": 0.12548828125,
+      "bad_energy_shell_probability": 0.12548828125,
+      "bad_landings_among_bent_initial": 9,
+      "bad_landings_among_near_bent_initial": 127,
+      "bad_orbit_landings": 571,
+      "bad_orbit_probability": 0.017425537109375,
+      "bad_orbit_zero_hit_upper_95": null,
+      "bad_projective_endpoint_landing_histogram": {
+        "0x1284": 73,
+        "0x1842": 74,
+        "0x2148": 70,
+        "0x2481": 67,
+        "0x4218": 73,
+        "0x4821": 70,
+        "0x7bed": 73,
+        "0x7edb": 71
+      },
+      "bent_initial_count": 448,
+      "explicit_bad_point_basin_count": 70,
+      "explicit_bad_point_basin_probability": 0.00213623046875,
+      "explicit_bad_point_projective_mask": "0x4821",
+      "flip_count_histogram": {
+        "0": 102,
+        "1": 840,
+        "2": 3316,
+        "3": 7172,
+        "4": 9794,
+        "5": 7742,
+        "6": 3256,
+        "7": 530,
+        "8": 16
+      },
+      "initial_walsh_metrics_all": {
+        "count": 32768,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.28501129150390625,
+          "minimum": 0.0,
+          "standard_deviation": 0.06925105848301212
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.875,
+          "minimum": 1.0,
+          "standard_deviation": 1.109264959331178
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0849609375,
+          "minimum": 1.0,
+          "standard_deviation": 0.45565929058795795
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803619384765625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929286817322795
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 571,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.1665936952714536,
+          "minimum": 0.0,
+          "standard_deviation": 0.059935929558314366
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.21825744308231174,
+          "minimum": 0.0,
+          "standard_deviation": 0.06547821733581469
+        },
+        "fourth_ratio": {
+          "maximum": 5.5,
+          "mean": 2.7961908931698773,
+          "minimum": 1.0,
+          "standard_deviation": 0.8329679729407893
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.0770577933450087,
+          "minimum": 1.0,
+          "standard_deviation": 0.42494350524442753
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2403677758318739,
+          "minimum": 0.125,
+          "standard_deviation": 0.053117938155553504
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8134851138353766,
+          "minimum": 0.25,
+          "standard_deviation": 0.20426136472644102
+        }
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 32197,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.28711137683635124,
+          "minimum": 0.0625,
+          "standard_deviation": 0.06755703777460641
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23975448023107743,
+          "minimum": 0.0,
+          "standard_deviation": 0.0567238254529527
+        },
+        "fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.8763976457433924,
+          "minimum": 1.0,
+          "standard_deviation": 1.113496119250465
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0851010963754386,
+          "minimum": 1.0,
+          "standard_deviation": 0.45618412254060936
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23936236295307017,
+          "minimum": 0.0,
+          "standard_deviation": 0.05702301531757605
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8034444202876044,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20937681340570638
+        }
+      },
+      "k": 2,
+      "m": 16,
+      "mode": "exact_global_sign_quotient",
+      "near_bent_initial_count_max_coefficient_at_most_1.5_sqrt_m": 7616,
+      "samples_after_quotient": 32768,
+      "seed": null,
+      "terminal_energy_histogram": {
+        "48": 4112,
+        "60": 10148,
+        "80": 18508
+      }
+    },
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": 448,
+      "anti_self_dual_2_plateaued_terminal_count": 0,
+      "anti_self_dual_2_plateaued_terminal_probability": 0.0,
+      "bad_energy_shell_probability": 0.0,
+      "bad_landings_among_bent_initial": 0,
+      "bad_landings_among_near_bent_initial": 0,
+      "bad_orbit_landings": 0,
+      "bad_orbit_probability": 0.0,
+      "bad_orbit_zero_hit_upper_95": 5.991285062456608e-05,
+      "bad_projective_endpoint_landing_histogram": {},
+      "bent_initial_count": 0,
+      "explicit_bad_point_basin_count": 0,
+      "explicit_bad_point_basin_probability": 0.0,
+      "explicit_bad_point_projective_mask": "0x4488221144882211",
+      "flip_count_histogram": {
+        "10": 1270,
+        "11": 2113,
+        "12": 3200,
+        "13": 4566,
+        "14": 5996,
+        "15": 6932,
+        "16": 6932,
+        "17": 6290,
+        "18": 4927,
+        "19": 3254,
+        "20": 1909,
+        "21": 956,
+        "22": 461,
+        "23": 140,
+        "24": 42,
+        "25": 15,
+        "26": 3,
+        "27": 1,
+        "4": 3,
+        "5": 11,
+        "6": 23,
+        "7": 72,
+        "8": 256,
+        "9": 628
+      },
+      "initial_walsh_metrics_all": {
+        "count": 50000,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.3295846875,
+          "minimum": 0.171875,
+          "standard_deviation": 0.02974850928348932
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3368171875,
+          "minimum": 0.1875,
+          "standard_deviation": 0.024302126190980544
+        },
+        "fourth_ratio": {
+          "maximum": 9.49609375,
+          "mean": 2.976208984375,
+          "minimum": 1.65625,
+          "standard_deviation": 0.6080798474853585
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.75,
+          "mean": 2.617785,
+          "minimum": 1.5,
+          "standard_deviation": 0.3929604862769283
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3363884375,
+          "minimum": 0.203125,
+          "standard_deviation": 0.024560030392307596
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9003746875,
+          "minimum": 0.46875,
+          "standard_deviation": 0.10466920194517462
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 0
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 50000,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.3295846875,
+          "minimum": 0.171875,
+          "standard_deviation": 0.02974850928348932
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3368171875,
+          "minimum": 0.1875,
+          "standard_deviation": 0.024302126190980544
+        },
+        "fourth_ratio": {
+          "maximum": 9.49609375,
+          "mean": 2.976208984375,
+          "minimum": 1.65625,
+          "standard_deviation": 0.6080798474853585
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.75,
+          "mean": 2.617785,
+          "minimum": 1.5,
+          "standard_deviation": 0.3929604862769283
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.40625,
+          "mean": 0.3363884375,
+          "minimum": 0.203125,
+          "standard_deviation": 0.024560030392307596
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9003746875,
+          "minimum": 0.46875,
+          "standard_deviation": 0.10466920194517462
+        }
+      },
+      "k": 3,
+      "m": 64,
+      "mode": "monte_carlo_global_sign_quotient",
+      "near_bent_initial_count_max_coefficient_at_most_1.5_sqrt_m": 3,
+      "samples_after_quotient": 50000,
+      "seed": 20260817,
+      "terminal_energy_histogram": {
+        "384": 13,
+        "396": 1,
+        "412": 1,
+        "416": 82,
+        "432": 361,
+        "448": 5599,
+        "460": 80,
+        "464": 390,
+        "480": 5639,
+        "492": 4357,
+        "496": 379,
+        "512": 21470,
+        "576": 11628
+      }
+    },
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": null,
+      "anti_self_dual_2_plateaued_terminal_count": 0,
+      "anti_self_dual_2_plateaued_terminal_probability": 0.0,
+      "bad_energy_shell_probability": 0.0,
+      "bad_landings_among_bent_initial": 0,
+      "bad_landings_among_near_bent_initial": 0,
+      "bad_orbit_landings": null,
+      "bad_orbit_probability": null,
+      "bad_orbit_zero_hit_upper_95": null,
+      "bad_projective_endpoint_landing_histogram": {},
+      "bent_initial_count": 0,
+      "explicit_bad_point_basin_count": 0,
+      "explicit_bad_point_basin_probability": 0.0,
+      "explicit_bad_point_projective_mask": "0x4444888822221111444488882222111144448888222211114444888822221111",
+      "flip_count_histogram": {
+        "43": 1,
+        "44": 1,
+        "45": 5,
+        "46": 3,
+        "47": 6,
+        "48": 28,
+        "49": 21,
+        "50": 34,
+        "51": 63,
+        "52": 69,
+        "53": 75,
+        "54": 122,
+        "55": 153,
+        "56": 170,
+        "57": 220,
+        "58": 252,
+        "59": 297,
+        "60": 334,
+        "61": 340,
+        "62": 444,
+        "63": 439,
+        "64": 449,
+        "65": 446,
+        "66": 467,
+        "67": 439,
+        "68": 529,
+        "69": 456,
+        "70": 466,
+        "71": 458,
+        "72": 461,
+        "73": 407,
+        "74": 374,
+        "75": 368,
+        "76": 297,
+        "77": 278,
+        "78": 218,
+        "79": 167,
+        "80": 170,
+        "81": 115,
+        "82": 97,
+        "83": 77,
+        "84": 58,
+        "85": 39,
+        "86": 25,
+        "87": 17,
+        "88": 12,
+        "89": 10,
+        "90": 6,
+        "91": 7,
+        "92": 4,
+        "93": 3,
+        "94": 2,
+        "97": 1
+      },
+      "initial_walsh_metrics_all": {
+        "count": 10000,
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.43359375,
+          "mean": 0.404526953125,
+          "minimum": 0.33984375,
+          "standard_deviation": 0.011192978040530639
+        },
+        "fourth_ratio": {
+          "maximum": 5.298583984375,
+          "mean": 2.9946984619140626,
+          "minimum": 2.177734375,
+          "standard_deviation": 0.30456888958885997
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 5.0,
+          "mean": 3.0551625,
+          "minimum": 2.25,
+          "standard_deviation": 0.35592209273062986
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.4296875,
+          "mean": 0.404526171875,
+          "minimum": 0.34375,
+          "standard_deviation": 0.01112256539783187
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.94977578125,
+          "minimum": 0.765625,
+          "standard_deviation": 0.051400055614397255
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 0
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 10000,
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.43359375,
+          "mean": 0.404526953125,
+          "minimum": 0.33984375,
+          "standard_deviation": 0.011192978040530639
+        },
+        "fourth_ratio": {
+          "maximum": 5.298583984375,
+          "mean": 2.9946984619140626,
+          "minimum": 2.177734375,
+          "standard_deviation": 0.30456888958885997
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 5.0,
+          "mean": 3.0551625,
+          "minimum": 2.25,
+          "standard_deviation": 0.35592209273062986
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.4296875,
+          "mean": 0.404526171875,
+          "minimum": 0.34375,
+          "standard_deviation": 0.01112256539783187
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.94977578125,
+          "minimum": 0.765625,
+          "standard_deviation": 0.051400055614397255
+        }
+      },
+      "k": 4,
+      "m": 256,
+      "mode": "monte_carlo_global_sign_quotient",
+      "near_bent_initial_count_max_coefficient_at_most_1.5_sqrt_m": 0,
+      "samples_after_quotient": 10000,
+      "seed": 20260818,
+      "terminal_energy_histogram": {
+        "3632": 3,
+        "3648": 3,
+        "3664": 7,
+        "3680": 12,
+        "3696": 16,
+        "3712": 42,
+        "3728": 77,
+        "3744": 117,
+        "3756": 1,
+        "3760": 190,
+        "3776": 275,
+        "3788": 3,
+        "3792": 378,
+        "3804": 9,
+        "3808": 461,
+        "3820": 3,
+        "3824": 476,
+        "3836": 9,
+        "3840": 535,
+        "3852": 23,
+        "3856": 452,
+        "3868": 25,
+        "3872": 572,
+        "3884": 49,
+        "3888": 374,
+        "3900": 57,
+        "3904": 538,
+        "3916": 58,
+        "3920": 338,
+        "3932": 53,
+        "3936": 423,
+        "3948": 135,
+        "3952": 331,
+        "3964": 86,
+        "3968": 496,
+        "3980": 222,
+        "3984": 128,
+        "3996": 212,
+        "4000": 206,
+        "4012": 152,
+        "4016": 187,
+        "4028": 92,
+        "4032": 325,
+        "4044": 86,
+        "4048": 144,
+        "4060": 257,
+        "4064": 28,
+        "4076": 206,
+        "4080": 21,
+        "4092": 101,
+        "4096": 113,
+        "4112": 216,
+        "4128": 158,
+        "4140": 16,
+        "4156": 116,
+        "4172": 185,
+        "4208": 26,
+        "4224": 117,
+        "4284": 49,
+        "4352": 10
+      }
+    }
+  ],
+  "normalization": "Q(A)=max_z |z^T A z|; full two-block defects use N^(3/2), one-block and structured defects use m^(3/2)",
+  "schema": "regular-hadamard-walsh-basin-audit-v1",
+  "structured_nonflat_counterfamily": {
+    "exact_nonflat_pair": [
+      {
+        "base_energy": 36,
+        "base_signed_walsh_products": {
+          "10": 1,
+          "2": 12,
+          "6": 3
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "k": 2,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 16,
+        "outside_size": 6,
+        "selected_size": 10,
+        "terminal_signed_walsh_products": {
+          "-14": 1,
+          "-2": 15
+        },
+        "terminal_target_energy": 60,
+        "terminal_walsh_distinct_absolute_levels": [
+          2,
+          14
+        ],
+        "terminal_walsh_support": 16,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 352,
+        "base_signed_walsh_products": {
+          "12": 12,
+          "20": 4,
+          "4": 48
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "k": 3,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 64,
+        "outside_size": 24,
+        "selected_size": 40,
+        "terminal_signed_walsh_products": {
+          "-28": 4,
+          "-4": 60
+        },
+        "terminal_target_energy": 416,
+        "terminal_walsh_distinct_absolute_levels": [
+          4,
+          28
+        ],
+        "terminal_walsh_support": 64,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 3072,
+        "base_signed_walsh_products": {
+          "24": 48,
+          "40": 16,
+          "8": 192
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "k": 4,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 256,
+        "outside_size": 96,
+        "selected_size": 160,
+        "terminal_signed_walsh_products": {
+          "-56": 16,
+          "-8": 240
+        },
+        "terminal_target_energy": 3072,
+        "terminal_walsh_distinct_absolute_levels": [
+          8,
+          56
+        ],
+        "terminal_walsh_support": 256,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 25600,
+        "base_signed_walsh_products": {
+          "16": 768,
+          "48": 192,
+          "80": 64
+        },
+        "delta": 2048,
+        "delta_over_m32": 0.0625,
+        "k": 5,
+        "kappa": 13,
+        "kappa_over_m": 0.0126953125,
+        "m": 1024,
+        "outside_size": 384,
+        "selected_size": 640,
+        "terminal_signed_walsh_products": {
+          "-112": 64,
+          "-16": 960
+        },
+        "terminal_target_energy": 23552,
+        "terminal_walsh_distinct_absolute_levels": [
+          16,
+          112
+        ],
+        "terminal_walsh_support": 1024,
+        "unpaid_mass": 1024
+      },
+      {
+        "base_energy": 208896,
+        "base_signed_walsh_products": {
+          "160": 256,
+          "32": 3072,
+          "96": 768
+        },
+        "delta": 24576,
+        "delta_over_m32": 0.09375,
+        "k": 6,
+        "kappa": 78,
+        "kappa_over_m": 0.01904296875,
+        "m": 4096,
+        "outside_size": 1536,
+        "selected_size": 2560,
+        "terminal_signed_walsh_products": {
+          "-224": 256,
+          "-32": 3840
+        },
+        "terminal_target_energy": 184320,
+        "terminal_walsh_distinct_absolute_levels": [
+          32,
+          224
+        ],
+        "terminal_walsh_support": 4096,
+        "unpaid_mass": 12288
+      },
+      {
+        "base_energy": 1687552,
+        "base_signed_walsh_products": {
+          "192": 3072,
+          "320": 1024,
+          "64": 12288
+        },
+        "delta": 229376,
+        "delta_over_m32": 0.109375,
+        "k": 7,
+        "kappa": 360,
+        "kappa_over_m": 0.02197265625,
+        "m": 16384,
+        "outside_size": 6144,
+        "selected_size": 10240,
+        "terminal_signed_walsh_products": {
+          "-448": 1024,
+          "-64": 15360
+        },
+        "terminal_target_energy": 1458176,
+        "terminal_walsh_distinct_absolute_levels": [
+          64,
+          448
+        ],
+        "terminal_walsh_support": 16384,
+        "unpaid_mass": 114688
+      },
+      {
+        "base_energy": 13565952,
+        "base_signed_walsh_products": {
+          "128": 49152,
+          "384": 12288,
+          "640": 4096
+        },
+        "delta": 1966080,
+        "delta_over_m32": 0.1171875,
+        "k": 8,
+        "kappa": 1539,
+        "kappa_over_m": 0.0234832763671875,
+        "m": 65536,
+        "outside_size": 24576,
+        "selected_size": 40960,
+        "terminal_signed_walsh_products": {
+          "-128": 61440,
+          "-896": 4096
+        },
+        "terminal_target_energy": 11599872,
+        "terminal_walsh_distinct_absolute_levels": [
+          128,
+          896
+        ],
+        "terminal_walsh_support": 65536,
+        "unpaid_mass": 983040
+      },
+      {
+        "base_energy": 108789760,
+        "base_signed_walsh_products": {
+          "1280": 16384,
+          "256": 196608,
+          "768": 49152
+        },
+        "delta": 16252928,
+        "delta_over_m32": 0.12109375,
+        "k": 9,
+        "kappa": 6354,
+        "kappa_over_m": 0.02423858642578125,
+        "m": 262144,
+        "outside_size": 98304,
+        "selected_size": 163840,
+        "terminal_signed_walsh_products": {
+          "-1792": 16384,
+          "-256": 245760
+        },
+        "terminal_target_energy": 92536832,
+        "terminal_walsh_distinct_absolute_levels": [
+          256,
+          1792
+        ],
+        "terminal_walsh_support": 262144,
+        "unpaid_mass": 8126464
+      }
+    ],
+    "prescribed_descent_from_nonbent_regularizing_seed": [
+      {
+        "base_energy": 36,
+        "comparison_v_static_core": {
+          "base_energy": 36,
+          "delta": 0,
+          "delta_over_m32": 0.0,
+          "kappa": 0,
+          "kappa_over_m": 0.0,
+          "outside_size": 12,
+          "selected_size": 4,
+          "terminal_target_energy": 60,
+          "terminal_walsh_distinct_absolute_levels": [
+            2,
+            14
+          ],
+          "terminal_walsh_support": 16,
+          "unpaid_mass": 0
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 0,
+        "flip_count": 4,
+        "k": 2,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 16,
+        "outside_size": 12,
+        "selected_by_base_fibre": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 4,
+        "terminal_target_energy": 60,
+        "terminal_walsh_distinct_absolute_levels": [
+          2,
+          14
+        ],
+        "terminal_walsh_support": 16,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 352,
+        "comparison_v_static_core": {
+          "base_energy": 352,
+          "delta": 0,
+          "delta_over_m32": 0.0,
+          "kappa": 0,
+          "kappa_over_m": 0.0,
+          "outside_size": 48,
+          "selected_size": 16,
+          "terminal_target_energy": 416,
+          "terminal_walsh_distinct_absolute_levels": [
+            4,
+            28
+          ],
+          "terminal_walsh_support": 64,
+          "unpaid_mass": 0
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 0,
+        "flip_count": 16,
+        "k": 3,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 64,
+        "outside_size": 48,
+        "selected_by_base_fibre": [
+          4,
+          4,
+          4,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 16,
+        "terminal_target_energy": 416,
+        "terminal_walsh_distinct_absolute_levels": [
+          4,
+          28
+        ],
+        "terminal_walsh_support": 64,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 3072,
+        "comparison_v_static_core": {
+          "base_energy": 3072,
+          "delta": 0,
+          "delta_over_m32": 0.0,
+          "kappa": 0,
+          "kappa_over_m": 0.0,
+          "outside_size": 192,
+          "selected_size": 64,
+          "terminal_target_energy": 3072,
+          "terminal_walsh_distinct_absolute_levels": [
+            8,
+            56
+          ],
+          "terminal_walsh_support": 256,
+          "unpaid_mass": 0
+        },
+        "delta": 0,
+        "delta_over_m32": 0.0,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          2,
+          6,
+          6,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 22,
+        "flip_count": 62,
+        "k": 4,
+        "kappa": 0,
+        "kappa_over_m": 0.0,
+        "m": 256,
+        "outside_size": 198,
+        "selected_by_base_fibre": [
+          16,
+          14,
+          10,
+          10,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 58,
+        "terminal_target_energy": 3264,
+        "terminal_walsh_distinct_absolute_levels": [
+          4,
+          8,
+          12,
+          20,
+          24,
+          28,
+          36,
+          40,
+          44,
+          72
+        ],
+        "terminal_walsh_support": 256,
+        "unpaid_mass": 0
+      },
+      {
+        "base_energy": 25600,
+        "comparison_v_static_core": {
+          "base_energy": 25600,
+          "delta": 2048,
+          "delta_over_m32": 0.0625,
+          "kappa": 69,
+          "kappa_over_m": 0.0673828125,
+          "outside_size": 768,
+          "selected_size": 256,
+          "terminal_target_energy": 23552,
+          "terminal_walsh_distinct_absolute_levels": [
+            16,
+            112
+          ],
+          "terminal_walsh_support": 1024,
+          "unpaid_mass": 1024
+        },
+        "delta": 1280,
+        "delta_over_m32": 0.0390625,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          4,
+          12,
+          12,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 44,
+        "flip_count": 244,
+        "k": 5,
+        "kappa": 14,
+        "kappa_over_m": 0.013671875,
+        "m": 1024,
+        "outside_size": 780,
+        "selected_by_base_fibre": [
+          64,
+          60,
+          52,
+          52,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 244,
+        "terminal_target_energy": 24320,
+        "terminal_walsh_distinct_absolute_levels": [
+          8,
+          16,
+          24,
+          40,
+          48,
+          56,
+          72,
+          80,
+          88,
+          112,
+          144
+        ],
+        "terminal_walsh_support": 1024,
+        "unpaid_mass": 640
+      },
+      {
+        "base_energy": 208896,
+        "comparison_v_static_core": {
+          "base_energy": 208896,
+          "delta": 24576,
+          "delta_over_m32": 0.09375,
+          "kappa": 397,
+          "kappa_over_m": 0.096923828125,
+          "outside_size": 3072,
+          "selected_size": 1024,
+          "terminal_target_energy": 184320,
+          "terminal_walsh_distinct_absolute_levels": [
+            32,
+            224
+          ],
+          "terminal_walsh_support": 4096,
+          "unpaid_mass": 12288
+        },
+        "delta": 29184,
+        "delta_over_m32": 0.111328125,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          48,
+          48,
+          48,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 144,
+        "flip_count": 880,
+        "k": 6,
+        "kappa": 174,
+        "kappa_over_m": 0.04248046875,
+        "m": 4096,
+        "outside_size": 3216,
+        "selected_by_base_fibre": [
+          256,
+          208,
+          208,
+          208,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 880,
+        "terminal_target_energy": 179712,
+        "terminal_walsh_distinct_absolute_levels": [
+          16,
+          32,
+          48,
+          80,
+          176,
+          224,
+          272
+        ],
+        "terminal_walsh_support": 4096,
+        "unpaid_mass": 14592
+      },
+      {
+        "base_energy": 1687552,
+        "comparison_v_static_core": {
+          "base_energy": 1687552,
+          "delta": 229376,
+          "delta_over_m32": 0.109375,
+          "kappa": 1821,
+          "kappa_over_m": 0.11114501953125,
+          "outside_size": 12288,
+          "selected_size": 4096,
+          "terminal_target_energy": 1458176,
+          "terminal_walsh_distinct_absolute_levels": [
+            64,
+            448
+          ],
+          "terminal_walsh_support": 16384,
+          "unpaid_mass": 114688
+        },
+        "delta": 231392,
+        "delta_over_m32": 0.1103363037109375,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          102,
+          102,
+          102,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 306,
+        "flip_count": 4030,
+        "k": 7,
+        "kappa": 1215,
+        "kappa_over_m": 0.07415771484375,
+        "m": 16384,
+        "outside_size": 12594,
+        "selected_by_base_fibre": [
+          1024,
+          922,
+          922,
+          922,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 3790,
+        "terminal_target_energy": 1456160,
+        "terminal_walsh_distinct_absolute_levels": [
+          4,
+          8,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          136,
+          148,
+          152,
+          160,
+          172,
+          184,
+          208,
+          232,
+          280,
+          304,
+          328,
+          340,
+          352,
+          364,
+          376,
+          388,
+          400,
+          412,
+          424,
+          436,
+          448,
+          460,
+          472,
+          484,
+          496,
+          508,
+          520,
+          532,
+          544,
+          556,
+          568,
+          580,
+          592,
+          604,
+          616,
+          628,
+          664
+        ],
+        "terminal_walsh_support": 16384,
+        "unpaid_mass": 115696
+      },
+      {
+        "base_energy": 13565952,
+        "comparison_v_static_core": {
+          "base_energy": 13565952,
+          "delta": 1966080,
+          "delta_over_m32": 0.1171875,
+          "kappa": 7741,
+          "kappa_over_m": 0.1181182861328125,
+          "outside_size": 49152,
+          "selected_size": 16384,
+          "terminal_target_energy": 11599872,
+          "terminal_walsh_distinct_absolute_levels": [
+            128,
+            896
+          ],
+          "terminal_walsh_support": 65536,
+          "unpaid_mass": 983040
+        },
+        "delta": 2007296,
+        "delta_over_m32": 0.1196441650390625,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          326,
+          327,
+          327,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 980,
+        "flip_count": 16178,
+        "k": 8,
+        "kappa": 5928,
+        "kappa_over_m": 0.0904541015625,
+        "m": 65536,
+        "outside_size": 50132,
+        "selected_by_base_fibre": [
+          4096,
+          3770,
+          3769,
+          3769,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 15404,
+        "terminal_target_energy": 11558656,
+        "terminal_walsh_distinct_absolute_levels": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          140,
+          144,
+          148,
+          152,
+          156,
+          160,
+          164,
+          168,
+          172,
+          176,
+          180,
+          184,
+          188,
+          192,
+          196,
+          200,
+          204,
+          208,
+          212,
+          216,
+          220,
+          224,
+          228,
+          232,
+          236,
+          240,
+          244,
+          248,
+          252,
+          256,
+          260,
+          264,
+          268,
+          272,
+          276,
+          280,
+          288,
+          292,
+          300,
+          304,
+          312,
+          316,
+          324,
+          328,
+          336,
+          340,
+          348,
+          352,
+          360,
+          364,
+          372,
+          384,
+          388,
+          408,
+          412,
+          420,
+          604,
+          612,
+          616,
+          636,
+          640,
+          652,
+          660,
+          664,
+          672,
+          676,
+          684,
+          688,
+          696,
+          700,
+          708,
+          712,
+          720,
+          724,
+          732,
+          736,
+          744,
+          748,
+          756,
+          760,
+          768,
+          772,
+          780,
+          784,
+          792,
+          796,
+          804,
+          808,
+          816,
+          820,
+          828,
+          832,
+          840,
+          844,
+          852,
+          856,
+          864,
+          868,
+          876,
+          880,
+          888,
+          892,
+          900,
+          904,
+          912,
+          916,
+          924,
+          928,
+          936,
+          940,
+          948,
+          952,
+          960,
+          964,
+          972,
+          976,
+          984,
+          988,
+          996,
+          1000,
+          1008,
+          1012,
+          1020,
+          1024,
+          1032,
+          1036,
+          1044,
+          1048,
+          1056,
+          1060,
+          1068,
+          1072,
+          1080,
+          1084,
+          1092,
+          1096,
+          1104,
+          1108,
+          1116,
+          1120,
+          1128,
+          1132,
+          1140,
+          1144,
+          1152,
+          1156,
+          1164,
+          1168,
+          1176,
+          1180,
+          1188,
+          1192,
+          1200,
+          1204,
+          1212,
+          1216,
+          1224,
+          1228,
+          1236,
+          1240,
+          1248,
+          1252,
+          1264,
+          1272,
+          1276,
+          1284,
+          1336
+        ],
+        "terminal_walsh_support": 65533,
+        "unpaid_mass": 1003648
+      },
+      {
+        "base_energy": 108789760,
+        "comparison_v_static_core": {
+          "base_energy": 108789760,
+          "delta": 16252928,
+          "delta_over_m32": 0.12109375,
+          "kappa": 31869,
+          "kappa_over_m": 0.12157058715820312,
+          "outside_size": 196608,
+          "selected_size": 65536,
+          "terminal_target_energy": 92536832,
+          "terminal_walsh_distinct_absolute_levels": [
+            256,
+            1792
+          ],
+          "terminal_walsh_support": 262144,
+          "unpaid_mass": 8126464
+        },
+        "delta": 16546864,
+        "delta_over_m32": 0.1232837438583374,
+        "deviation_from_comparison_v_by_base_fibre": [
+          0,
+          1335,
+          1335,
+          1336,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distance_to_comparison_v": 4006,
+        "flip_count": 65830,
+        "k": 9,
+        "kappa": 24402,
+        "kappa_over_m": 0.09308624267578125,
+        "m": 262144,
+        "outside_size": 200614,
+        "selected_by_base_fibre": [
+          16384,
+          15049,
+          15049,
+          15048,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "selected_size": 61530,
+        "terminal_target_energy": 92242896,
+        "terminal_walsh_distinct_absolute_levels": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          140,
+          144,
+          148,
+          152,
+          156,
+          160,
+          164,
+          168,
+          172,
+          176,
+          180,
+          184,
+          188,
+          192,
+          196,
+          200,
+          204,
+          208,
+          212,
+          216,
+          220,
+          224,
+          228,
+          232,
+          236,
+          240,
+          244,
+          248,
+          252,
+          256,
+          260,
+          264,
+          268,
+          272,
+          276,
+          280,
+          284,
+          288,
+          292,
+          296,
+          300,
+          304,
+          308,
+          312,
+          316,
+          320,
+          324,
+          328,
+          332,
+          336,
+          340,
+          344,
+          348,
+          352,
+          356,
+          360,
+          364,
+          368,
+          372,
+          376,
+          380,
+          384,
+          388,
+          392,
+          396,
+          400,
+          404,
+          408,
+          412,
+          416,
+          420,
+          424,
+          428,
+          432,
+          436,
+          440,
+          444,
+          448,
+          452,
+          456,
+          460,
+          464,
+          468,
+          472,
+          476,
+          480,
+          484,
+          488,
+          492,
+          496,
+          500,
+          504,
+          508,
+          512,
+          516,
+          520,
+          524,
+          528,
+          532,
+          536,
+          540,
+          544,
+          548,
+          552,
+          556,
+          560,
+          564,
+          572,
+          576,
+          580,
+          584,
+          588,
+          596,
+          600,
+          604,
+          608,
+          612,
+          620,
+          624,
+          632,
+          636,
+          640,
+          644,
+          648,
+          656,
+          660,
+          668,
+          672,
+          680,
+          684,
+          692,
+          696,
+          704,
+          708,
+          716,
+          720,
+          728,
+          732,
+          740,
+          744,
+          752,
+          756,
+          764,
+          768,
+          776,
+          780,
+          788,
+          792,
+          800,
+          804,
+          812,
+          816,
+          824,
+          828,
+          840,
+          848,
+          852,
+          860,
+          864,
+          876,
+          948,
+          1100,
+          1172,
+          1184,
+          1188,
+          1196,
+          1200,
+          1208,
+          1220,
+          1224,
+          1232,
+          1236,
+          1244,
+          1248,
+          1256,
+          1260,
+          1268,
+          1272,
+          1280,
+          1284,
+          1292,
+          1296,
+          1304,
+          1308,
+          1316,
+          1320,
+          1328,
+          1332,
+          1340,
+          1344,
+          1352,
+          1356,
+          1364,
+          1368,
+          1376,
+          1380,
+          1388,
+          1392,
+          1400,
+          1404,
+          1412,
+          1416,
+          1424,
+          1428,
+          1436,
+          1440,
+          1448,
+          1452,
+          1460,
+          1464,
+          1472,
+          1476,
+          1484,
+          1488,
+          1496,
+          1500,
+          1508,
+          1512,
+          1520,
+          1524,
+          1532,
+          1536,
+          1544,
+          1548,
+          1556,
+          1560,
+          1568,
+          1572,
+          1580,
+          1584,
+          1592,
+          1596,
+          1604,
+          1608,
+          1616,
+          1620,
+          1628,
+          1632,
+          1640,
+          1644,
+          1652,
+          1656,
+          1664,
+          1668,
+          1676,
+          1680,
+          1688,
+          1692,
+          1700,
+          1704,
+          1712,
+          1716,
+          1724,
+          1728,
+          1736,
+          1740,
+          1748,
+          1752,
+          1760,
+          1764,
+          1772,
+          1776,
+          1784,
+          1788,
+          1796,
+          1800,
+          1808,
+          1812,
+          1820,
+          1824,
+          1832,
+          1836,
+          1844,
+          1848,
+          1856,
+          1860,
+          1868,
+          1872,
+          1880,
+          1884,
+          1892,
+          1896,
+          1904,
+          1908,
+          1916,
+          1920,
+          1928,
+          1932,
+          1940,
+          1944,
+          1952,
+          1956,
+          1964,
+          1968,
+          1976,
+          1980,
+          1988,
+          1992,
+          2000,
+          2004,
+          2012,
+          2016,
+          2024,
+          2028,
+          2036,
+          2040,
+          2048,
+          2052,
+          2060,
+          2064,
+          2072,
+          2076,
+          2084,
+          2088,
+          2096,
+          2100,
+          2108,
+          2112,
+          2120,
+          2124,
+          2132,
+          2136,
+          2144,
+          2148,
+          2156,
+          2160,
+          2168,
+          2172,
+          2180,
+          2184,
+          2192,
+          2196,
+          2204,
+          2208,
+          2216,
+          2220,
+          2228,
+          2232,
+          2240,
+          2244,
+          2252,
+          2256,
+          2264,
+          2268,
+          2276,
+          2280,
+          2288,
+          2292,
+          2300,
+          2304,
+          2312,
+          2316,
+          2324,
+          2328,
+          2336,
+          2340,
+          2348,
+          2352,
+          2360,
+          2364,
+          2372,
+          2376,
+          2384,
+          2388,
+          2396,
+          2400,
+          2408,
+          2412,
+          2420,
+          2424,
+          2432,
+          2436,
+          2444,
+          2448,
+          2456,
+          2460,
+          2468,
+          2472,
+          2480,
+          2484,
+          2492,
+          2496,
+          2504,
+          2508,
+          2516,
+          2520,
+          2528,
+          2532,
+          2540,
+          2544,
+          2552,
+          2556,
+          2568,
+          2576,
+          2588,
+          2592,
+          2600,
+          2604,
+          2612,
+          2628,
+          2648,
+          2652,
+          2660,
+          2688,
+          2696
+        ],
+        "terminal_walsh_support": 262126,
+        "unpaid_mass": 8273432
+      }
+    ],
+    "seed_coordinate_order": "j=a0+2*a1+4*b0+8*b1, then f on tail pairs",
+    "v": [
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "w": [
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "z_star": [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "symmetry_invariant_tie_control": {
+    "every_largest_gain_path_probability": 0.003204345703125,
+    "k": 2,
+    "m": 16,
+    "maximum_generator_invariance_error": 6.938893903907228e-18,
+    "projective_input_orbit_count": 104,
+    "some_largest_gain_path_probability": 0.180450439453125,
+    "subgroup": "translations semidirect q-isometries generated by nonsingular transvections, half-swap, and an orthogonal shear; modulo global sign",
+    "uniform_random_largest_gain_tie_probability": 0.01407470703125,
+    "warning": "auxiliary symmetry-invariant tie rule; the prescribed least-index probability is the exact local k=2 entry"
+  }
+}
