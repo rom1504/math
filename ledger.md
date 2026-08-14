@@ -42032,3 +42032,352 @@ power saving for exact contracted-temperature minimizers or convert the
 conference tangent into a fixed-`beta`, minimizer-linked linear obstruction.
 If neither occurs, consolidate rather than replacing it by another scalar or
 rapid-wave variant.
+
+### 10.136 Fixed-temperature spectral extremality and the conference bridge obstruction
+
+This checkpoint follows the finite-temperature proposal through the strongest
+new primary source found in the literature audit: Fan--Misiakiewicz--Wang--Wen,
+[*Dynamical mean-field limit and replica-symmetric free energy for the
+orthogonally-invariant SK model*](https://arxiv.org/abs/2607.10102).  The result
+does not prove convergence of `M_n/n^(3/2)`, but it does two things that the
+fixed-order expansion in Section 10.135 could not do:
+
+1. it turns the conference reverse-KL shortfall into a fixed-positive-
+   temperature, linear-scale theorem; and
+2. together with a new elementary variational argument, it completes the
+   spectral optimization of the high-temperature `cosh` pressure.  Any signing
+   which beats the conference pressure by a fixed amount must now escape
+   through operator-norm or entrywise power irregularity, rather than through
+   an unidentified spectral law.
+
+#### 10.136.1 Exact conference pressure at fixed temperature
+
+For an order-`r` symmetric conference signing `A_r`, put
+
+```math
+A_r^2=(r-1)I,
+\qquad
+\psi(c)={1\over4}\left[
+ \sqrt{1+4c^2}-1-
+ \log\!\left({1+\sqrt{1+4c^2}\over2}\right)
+ \right].                                                \tag{10.1613}
+```
+
+The interaction `X_r=beta A_r/sqrt(r)` satisfies every part of Assumption
+2.9 of the cited paper: its even powers are scalar, its odd powers are a
+scalar multiple of a flat conference matrix, its spectral law tends to
+`(delta_(-beta)+delta_beta)/2`, and its operator norm tends to `beta`.
+Corollary 2.10(c), including its strict `||X||_op<1/2` hypothesis, therefore
+gives the **Verified imported-theorem consequence**
+
+```math
+{1\over r}\log\overline Z_r(A_r,\beta/\sqrt r)
+\longrightarrow\psi(\beta),
+\qquad 0<\beta<\frac12.                                 \tag{10.1614}
+```
+
+There is no missing replica parameter: at zero external field global spin
+flip makes every one-spin mean zero, so the two-replica parameter in the
+paper is exactly zero.  The paper treats `exp`, while this project uses
+`cosh`; the identity
+
+```math
+\overline Z(X)=2^{-n-1}\{Z(X)+Z(-X)\}                   \tag{10.1615}
+```
+
+and the symmetric conference spectral law give (10.1614) with the stated
+normalization.
+
+#### 10.136.2 A scalable obstruction to uniform joint reverse KL
+
+Join two conference children by a uniform `r` by `r` sign bridge:
+
+```math
+S_{\epsilon,B}=
+\begin{pmatrix}A_r&B\\B^{\mathsf T}&\epsilon A_r\end{pmatrix},
+\qquad
+t={\beta\over\sqrt{2r}}.                                \tag{10.1616}
+```
+
+For either orientation and almost every infinite bridge sequence, the
+normalized parent has limiting spectral law
+
+```math
+{1\over2}(\delta_{-1/\sqrt2}+\delta_{1/\sqrt2})
+\boxplus {\rm SC}(1/2).                                  \tag{10.1617}
+```
+
+This statement is not an unjustified use of ordinary Wigner freeness.  A
+two-block calculation shows that the conference block is a Bernoulli
+variable of magnitude `1/sqrt(2)`, the bipartite bridge is a scalar
+semicircle of variance `1/2`, and they are scalar-free in this special
+equal-block case.  A fixed-walk pairing argument gives the limiting law.
+Open-walk expectations, Efron--Stein, degree-`k` Rademacher
+hypercontractivity, a union bound, and Borel--Cantelli give the stronger
+maximum-entry fixed-power condition required by Assumption 2.9.  Finally,
+
+```math
+\limsup_r\left\|{S_{\epsilon,B}\over\sqrt{2r}}\right\|_{\rm op}
+\le {3\over\sqrt2},                                     \tag{10.1618}
+```
+
+so the imported theorem applies safely for `0<beta<sqrt(2)/6`.
+
+Let `D_r(beta)=D_KL(U||Pi)` and `G_r(beta)` be the exact balanced conference
+specialization of (10.1603).  Define
+
+```math
+\gamma(\beta)={\beta^2\over4}
+-2\psi(\beta)+2\psi(\beta/\sqrt2).                     \tag{10.1619}
+```
+
+The R-transform of the symmetric Bernoulli law is
+
+```math
+R_c(u)={\sqrt{1+4c^2u^2}-1\over2u},                     \tag{10.1620}
+```
+
+and free convolution adds the semicircle term `beta^2 u/2`.  Substitution in
+the exact output identity proves the **Verified fixed-temperature scalable
+theorem**
+
+```math
+\boxed{
+{D_r(\beta)\over r}\longrightarrow0,
+\qquad
+{G_r(\beta)\over r}\longrightarrow\gamma(\beta)>0,
+\qquad 0<\beta<{\sqrt2\over6}.}                         \tag{10.1621}
+```
+
+The sign is nonperturbative: differentiating
+`2 psi(beta)-2 psi(beta/sqrt(2))-beta^2/4` shows it is strictly decreasing
+from zero.  Near zero,
+
+```math
+\gamma(\beta)={3\over16}\beta^4-{7\over24}\beta^6
++O(\beta^8).                                             \tag{10.1622}
+```
+
+Thus the earlier fourth/eighth-order mismatch was not a nonuniform Taylor
+artifact.  Even the *full*, uncompressed reverse KL is `o(r)` while the
+same-temperature payment misses `gamma(beta)r+o(r)`.  Every compressed state
+which merely lower-bounds this same divergence also misses the linear term.
+
+There is also a **Verified lower-quantile obstruction**.  Flipping one bridge
+bit changes the parent log pressure by at most `2t`; McDiarmid therefore gives
+
+```math
+\Pr_B\{\log\overline Z_{2r}(S_{\epsilon,B},t)
+       \le2\log\overline Z_r(A_r,\beta/\sqrt r)\}
+\le \exp(-c_\beta r)                                    \tag{10.1623}
+```
+
+for each orientation and all large `r`.  This rules out uniform averaging,
+any fixed quantile, and polynomial bridge sampling.  It does not rule out an
+exponentially rare structured bridge, nor does it yet falsify (10.1604),
+because conference matrices have not been proved to be the exact contracted-
+temperature pressure minimizers.
+
+#### 10.136.3 Bernoulli is the exact two-orientation spectral extremizer
+
+The minimizer link separates into a spectral part, now completed, and an
+entrywise regularity part, still open.  Let `mu` be a compact mean-zero law
+of variance `c^2`, with real exterior R-transform branches through `[0,1]`,
+and set
+
+```math
+J(\mu)={1\over2}\int_0^1R_\mu(u)\,du.                   \tag{10.1624}
+```
+
+The following is a **New proved free-probability inequality**:
+
+```math
+\boxed{
+J(\mu)+J(-\mu)\ge2\psi(c),
+\qquad
+\max\{J(\mu),J(-\mu)\}\ge\psi(c).}                    \tag{10.1625}
+```
+
+For `c>0`, equality in the second inequality holds only for
+`mu=(delta_(-c)+delta_c)/2`.
+
+The proof is short and exact.  The Cauchy-transform inverse gives
+
+```math
+2J(\mu)=\inf_z\{z-1-\mathbb E\log(z-X)\},               \tag{10.1626}
+```
+
+with the analogous formula for `-mu`.  If `z,w` are admissible exterior
+points and `p=zw`, Jensen and AM--GM give
+
+```math
+F_+(z)+F_-(w)
+\ge2\sqrt p-2-\log(p-c^2).                              \tag{10.1627}
+```
+
+The right side is minimized when `q=sqrt(p)` satisfies
+`q^2-q-c^2=0`, and its minimum is `4 psi(c)`.  Equality forces `z=w` and
+`X^2=c^2` almost surely; mean zero then forces the symmetric two-point law.
+The `cosh` identity (10.1615) selects
+`max{J(mu),J(-mu)}`, so no symmetry of the competing spectral law was
+assumed.
+
+For
+
+```math
+P_n(\beta)=\min_A\log\overline Z_n(A,\beta/\sqrt n),
+```
+
+nearby Paley orders and restriction monotonicity give the **Unconditional
+high-temperature upper limit**
+
+```math
+\boxed{
+\limsup_{n\to\infty}{P_n(\beta)\over n}\le\psi(\beta),
+\qquad 0<\beta<\frac12.}                                \tag{10.1628}
+```
+
+Indeed, the prime number theorem in the progression `1 mod 4` supplies a
+conference order `r>=n` with `r/n->1`; adding signed vertices can only
+increase normalized `cosh` pressure at fixed raw temperature, and the full
+order-`r` term is governed by (10.1614).
+
+The exact missing lower-bound lemma is now explicit.  It is enough to turn
+each exact pressure minimizer into a signing with only `o_beta(n)` extra log
+pressure, scaled operator norm at most `1/2-eta_beta`, and the maximum-entry
+fixed-power delocalization of Assumption 2.9.  If this can be done, then
+(10.1625) and (10.1628) prove
+
+```math
+{P_n(\beta)\over n}\longrightarrow\psi(\beta)           \tag{10.1629}
+```
+
+in that high-temperature range.
+
+Equivalently, a signing sequence whose pressure is below
+`psi(beta)-delta` must either approach the operator-norm threshold or have
+some fixed power `k` and `eta>0` whose diagonal/off-diagonal residual is at
+least `n^(-1/2+eta)` infinitely often.  This is a **Verified regularity
+dichotomy**, not a regularization theorem.  A norm-only penalty is false:
+making a `c sqrt(n)` principal block all positive changes log pressure by
+only `O_beta(sqrt(n))=o(n)` while forcing an eigenvalue of order `c sqrt(n)`.
+Localized spikes must be edited or punctured, not excluded from pressure
+alone.
+
+The complete proofs are in
+`artifacts/conference_reverse_kl_fixed_temperature_obstruction.md`,
+`artifacts/conference_fixed_beta_independent_audit.md`,
+`artifacts/symmetrized_r_transform_bernoulli_extremizer.md`, and
+`artifacts/finite_temperature_spectral_regularization_dichotomy.md`.
+
+#### 10.136.4 Exact boundary of the available universality relaxation
+
+A source audit of Wang--Zhong--Fan (2024), Gorini--Jones--Kunisky--Pesenti
+(2026), and Fan--Misiakiewicz--Wang--Wen (2026) yields one **Verified
+relaxation**, but not the missing regularization theorem.  Random signed-
+permutation conjugation leaves the zero-field partition function exactly
+unchanged.  Their combined universality results therefore let the uniform
+*diagonal* part of Assumption 2.9 be replaced by convergence of the averaged
+full diagonal-monomial distribution.  They still require, for every fixed
+diagonal monomial `p`,
+
+```math
+\max_{i\ne j}|p(X_n)_{ij}|<n^{-1/2+\varepsilon}
+\quad\hbox{eventually for every }\varepsilon>0.          \tag{10.1629a}
+```
+
+This remaining maximum-entry condition is not a consequence of Frobenius
+closeness to the conference relation.  Starting with a conference signing,
+flip `r=floor(n^(3/4))` edges incident to one vertex, chosen so their
+contributions to one selected entry of `A^2` initially have the same sign.
+The resulting flat signing has
+
+```math
+\left\|{\beta^2\over n}\{A^2-(n-1)I\}\right\|_{\rm F}
+\longrightarrow0,
+\qquad
+\left\|{\beta A\over\sqrt n}\right\|_{\rm op}=\beta+o(1),
+```
+
+but its selected off-diagonal entry satisfies
+
+```math
+\left|\left({\beta A\over\sqrt n}\right)^2_{ij}\right|
+=\Theta(n^{-1/4}),                                      \tag{10.1629b}
+```
+
+violating (10.1629a).  This is a **Verified scalable falsifier** of
+Frobenius-only regularization, not a low-pressure counterexample.  The 2026
+paper's “puncturing” is projection off the all-ones direction, not deletion
+of `o(n)` exceptional coordinates, and it does not preserve the original
+Ising pressure as a stated black-box theorem.  Thus the narrowed positive
+target is uniform off-diagonal diagonal-monomial/open-cactus delocalization,
+or a new universality result permitting averaged control plus deletion of a
+small exceptional set.  The full source and construction audit is
+`artifacts/finite_temperature_universality_relaxation_audit.md`.
+
+#### 10.136.5 Reproducible spectral audit
+
+The seeded program
+`computations/audit_conference_random_bridge_spectrum.py` checks both
+orientations at conference orders `6,10,14,18,26,98`.  It records spectral
+moments through eight, operator norms, mixed-freeness probes, and the maximum
+diagonal/off-diagonal residuals for powers one through six.  This is
+**Monte Carlo evidence**, separate from the theorem above.  At child order
+`98`, with `120` independent bridges per paired orientation, it found
+
+| `epsilon` | `m_2` | `m_4` | `m_6` | `m_8` | mean operator norm |
+|---:|---:|---:|---:|---:|---:|
+| `-1` | 0.994898 | 1.733597 | 3.699974 | 8.787556 | 1.813188 |
+| `+1` | 0.994898 | 1.731258 | 3.689207 | 8.746428 | 1.806894 |
+| limit | 1 | 1.75 | 3.75 | 8.9375 | 1.837117 |
+
+The exact expected finite-order formulas through `m_6` were separately
+checked at exhaustive order two.  A full deterministic rerun reproduced the
+JSON byte for byte.  Its SHA-256 is
+`4b4e6616361717b6865c45b1db56d1cf6d612dc5a9e0c8ad6e690a650c6b710c`.
+
+#### 10.136.6 Operational table
+
+| Track | Last concrete result | Classification | Next falsifiable step | Stop condition |
+|---|---|---|---|---|
+| Uniform joint reverse KL | `D/r->0` but `G/r->gamma(beta)>0` on conference children | Proved scalable conference obstruction | Resume only with a verified exact-minimizer law unlike conference, or an output not bounded by this KL | Another KL lower bound or fixed quantile on conference children |
+| Spectral pressure | Bernoulli uniquely minimizes the two-orientation R-functional | Proved spectral reduction | Pressure-preserving regularization of exact minimizers | A renamed spectral optimization; that obligation is complete |
+| Regularity/traffic | Subconference pressure forces norm-threshold or fixed-power irregularity; Frobenius-only control fails | Proved dichotomy and scalable regularity falsifier; bridge open | Prove an `o(n)`-cost exceptional-set theorem controlling off-diagonal diagonal monomials, or construct a scalable irregular pressure improvement | Norm-only or Frobenius-only penalty |
+| Rare bridge selection | Favorable uniform bridges have probability `exp(-Theta(r))` at most | Proved lower-tail obstruction | Give an algebraically compressed selector for an exponentially rare bridge | Polynomial sampling or another uniform average |
+| Full thermodynamic limit | Small-`beta` limsup known; no matching general liminf and no large-`beta` theorem | Open | First close or falsify the regularization lemma; extension beyond `beta=1/2` is separately required | Claiming ground-state convergence from high temperature alone |
+
+#### 10.136.7 Updated frontier
+
+The rigorous ground-state interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                         \tag{10.1630}
+```
+
+No ground-state bound or recurrence step improved.  There is nevertheless a
+real verified reduction at finite temperature: the spectral optimization is
+finished, the conference fixed-`beta` remainder is uniform, and the ordinary
+uniform-output reverse-KL mechanism is linearly short on that family.  The
+remaining small-temperature question is no longer “which spectral law?” but
+whether exact pressure minimizers can be regularized, at `o(n)` log-pressure
+cost, into the high-temperature universality class.  A scalable signing which
+beats `psi(beta)` must instead exhibit a persistent operator-threshold or
+fixed-power traffic irregularity.
+
+The literature boundary narrows this further: averaged diagonal-distribution
+matching is automatic under Frobenius-near conference structure, but uniform
+off-diagonal open-walk concentration is not.  The explicit star perturbation
+falsifies any attempt to infer the latter from Frobenius closeness alone.
+
+This still does not prove convergence of `Phi_n(beta)`, and even a proof for
+all `beta<1/2` would not justify the zero-temperature squeeze.  The next
+bounded target is therefore the pressure-preserving regularization lemma (or
+a scalable irregular counterexample to it), while the conference uniform-KL
+and Walsh-basin implementations remain closed.  If the regularity track
+produces neither a theorem nor a scalable falsifier, the finite-temperature
+campaign should consolidate rather than return to scalar recurrences.

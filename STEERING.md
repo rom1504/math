@@ -1,7 +1,9 @@
 # Strategic steering
 
-Evidence cutoff: finite-temperature minimax checkpoint (2026-08-14).
-Status: **finite-temperature joint-cancellation campaign active; Walsh basin archived**.
+Evidence cutoff: fixed-temperature spectral-extremality checkpoint (2026-08-14).
+Status: **finite-temperature regularization campaign active; uniform conference reverse-KL closed**.
+Next mandatory blank-slate refresh: Wave 61 if ordinary waves resume, or after
+five substantial campaign checkpoints from this one, whichever comes first.
 
 ## User-stated objective and workflow directives
 
@@ -9,11 +11,11 @@ The research objective is to determine whether `M_n/n^(3/2)` converges. The conj
 
 Reproducible artifacts, independent verification, regular Git checkpoints, and the README consolidation/stopping rule remain workflow directives. Mathematical conjectures and route rankings below are agent-authored.
 
-The latest user input supplied three strategic tests: evaluate the finite-temperature pressure as a possible convergence mechanism, audit the quadratic-Littlewood literature, and perform one final bounded full-basin experiment at `k=4,5,6`. It recommended ending the Walsh/bent/local-search line unless that experiment found a persistent basin. The route judgment below is the agent's assessment of those tests.
+The latest user input supplied the fixed-temperature pressure reduction as a strategic lead, recommended a quadratic-Littlewood literature audit, and requested that the Walsh/bent basin line end unless its final bounded experiment found a persistent basin. It did not direct the mathematical conclusion or make any route a user objective.
 
 ## Agent-authored assessment
 
-The rigorous frontier is unchanged:
+The rigorous ground-state frontier is unchanged:
 
 ```math
 0.336493364431\ldots
@@ -22,86 +24,108 @@ The rigorous frontier is unchanged:
 \le \frac12.                                      \tag{S1}
 ```
 
-## Finite-temperature reduction and scalar boundary
-
-With `H_A(x)=sum_(i<j) a_(ij)x_ix_j`, define
+For
 
 ```math
-\Phi_n(\beta)=\frac1n\min_A\log\sum_x
-2\cosh\!\left(\frac{\beta H_A(x)}{\sqrt n}\right).
+P_n(\beta)=\min_A\log\left(2^{-n}\sum_x
+\cosh\!\left({\beta H_A(x)\over\sqrt n}\right)\right),
 ```
 
-The exact soft-max squeeze implies that convergence of `Phi_n(beta)` for every fixed `beta>0` would force convergence in (S1), by taking `beta -> infinity` after the `n` limit.
+convergence of `P_n(beta)/n` for every fixed `beta>0` would imply convergence in (S1) through the exact soft-max squeeze. Scalar bridge subadditivity still contracts `beta`, and the analytic countermodel plus the exact order-four falsifier show that centering, convexity, restriction monotonicity, and scalar interpolation do not repair this.
 
-This pressure is the repository's earlier soft-cap pressure plus its entropy normalization. For
+## New fixed-temperature theorems
+
+The July 2026 theorem of Fan--Misiakiewicz--Wang--Wen applies exactly to normalized symmetric conference matrices. Define
 
 ```math
-F_n(t)=\min_A\log\left(2^{-n}\sum_x\cosh(tH_A(x))\right),
-\qquad R_n(t)=F_n(t)-{n\choose2}\log\cosh t,
+\psi(c)=\frac14\left[
+\sqrt{1+4c^2}-1-
+\log\frac{1+\sqrt{1+4c^2}}2\right].                \tag{S2}
 ```
 
-bridge signs plus one child orientation give
+Along Paley conference orders,
 
 ```math
-R_{m+n}(t)\le R_m(t)+R_n(t).
+\frac1r\log\overline Z_r(A_r,\beta/\sqrt r)
+\longrightarrow\psi(\beta),
+\qquad 0<\beta<\frac12.                            \tag{S3}
 ```
 
-On the required diagonal this becomes
+Nearby Paley orders plus restriction monotonicity give the unconditional bound
 
 ```math
-r_{m+n}(\beta)
-\le\theta r_m(\beta\sqrt\theta)
- +(1-\theta)r_n(\beta\sqrt{1-\theta}),           \tag{S2}
+\limsup_n\frac{P_n(\beta)}n\le\psi(\beta),
+\qquad 0<\beta<\frac12.                            \tag{S4}
 ```
 
-so balanced composition contracts `beta` to `beta/sqrt(2)`. Exact centering does not fix that. A proved analytic countermodel satisfies the entropy squeeze, convexity, correct variance and zero-temperature slope, restriction monotonicity, uniform diagonal Lipschitz control, and centered subadditivity, while its diagonal pressure oscillates. The natural quadratic scale-transport inequality is also false for an actual order-four signing. Scalar Fekete/interpolation variants are therefore inactive.
-
-## Leading joint target
-
-Put `P_n(beta)=F_n(beta/sqrt(n))`. For contracted-temperature child minimizers, let `T_(m,n)` be the two child temperature increments and let `D_(m,n)=D_KL(U||Pi)` be the reverse KL divergence of the joint orientation-and-noisy-rank-one bridge output from uniform. The exact quenched identity gives
+There is also a new exact spectral theorem. If `mu` is any compact mean-zero law of variance `c^2` whose real R-transform branches reach one, and
 
 ```math
-P_{m+n}(\beta)\le P_m(\beta)+P_n(\beta)+G_{m,n}(\beta),
+J(\mu)=\frac12\int_0^1R_\mu(u)\,du,
 ```
+
+then
 
 ```math
-G_{m,n}(\beta)=mn\log\cosh\!\left(\frac\beta{\sqrt{m+n}}\right)
--T_{m,n}(\beta)-D_{m,n}(\beta).                  \tag{S3}
+J(\mu)+J(-\mu)\ge2\psi(c),
+\qquad
+\max\{J(\mu),J(-\mu)\}\ge\psi(c).                 \tag{S5}
 ```
 
-The exact sufficient lemma is: for every fixed `beta>0`, uniformly on `N/4 <= m,n <= 3N/4`,
+Equality in the maximum is unique to the symmetric Bernoulli law. The proof is a variational Cauchy-transform identity followed by product Jensen and AM--GM. The `cosh` partition selects the maximum of the two orientations, so no spectral-symmetry assumption is hidden.
+
+Consequently, every signing sequence with scaled operator norm uniformly below `1/2` and the fixed-power delocalization of Assumption 2.9 has limiting pressure at least `psi(beta)`. A sequence below `psi(beta)-delta` must approach the norm threshold or have a persistent fixed-power entrywise/traffic irregularity.
+
+The available signed-permutation universality theorem weakens uniform diagonal control to convergence of the averaged diagonal-monomial distribution, but retains uniform `n^(-1/2+o(1))` bounds for every off-diagonal diagonal monomial. Frobenius-near conference structure supplies the averaged part. An explicit `n^(3/4)`-edge conference star perturbation remains Frobenius-near and norm-near while creating an `n^(-1/4)` entry of the squared scaled matrix, so Frobenius closeness alone cannot supply the missing uniform condition.
+
+## Uniform joint reverse-KL route
+
+For two conference children and a uniform sign bridge, the random parent law is
 
 ```math
-G_{m,n}(\beta)\le C_\beta N^{1-\delta_\beta}.    \tag{S4}
+\tfrac12(\delta_{-1/\sqrt2}+\delta_{1/\sqrt2})
+\boxplus {\rm SC}(1/2).
 ```
 
-A balanced-tree Hammersley argument makes (S4) imply convergence of `P_n(beta)/n`; the soft-max squeeze then proves convergence in (S1). This state is genuinely joint and uses an averaged logarithm rather than a parent extremal spin. It is nevertheless stronger than existence of one good bridge and still has `2^(mn+1)` output sectors, so (S4) is a precise sufficient reformulation, not yet a verified reduction.
-
-Exact enumeration through total order seven finds positive `G` in every tested split. For `beta<=1`, the balanced values are nearly order-independent and remain compatible with (S4); at larger `beta`, exceptional parents already beat the uniform average, showing that (S4) is strictly stronger than scalar same-temperature subadditivity.
-
-Conference children give the main obstruction. Their average-log compensation margin has Taylor expansion
+The parent also satisfies the deterministic theorem pathwise. For every fixed `0<beta<sqrt(2)/6`, the exact full joint output obeys
 
 ```math
--\frac{\beta^2}{4}
--\frac{9r^2-25r+15}{48r}\beta^4+O_r(\beta^6),    \tag{S5}
+\frac{D_{\rm KL}(U\Vert\Pi)}r\to0,
+\qquad
+\frac{G_{r,r}(\beta)}r\to
+\gamma(\beta)=\frac{\beta^2}{4}-2\psi(\beta)
++2\psi(\beta/\sqrt2)>0.                            \tag{S6}
 ```
 
-while reverse KL first appears at order `beta^8` with bounded coefficient. Thus the adverse fourth-order coefficient is linear in the parent order. The remainder is not uniform in `r`, and conference children are not proved pressure minimizers along a fixed-`beta` infinite family, so (S5) falsifies only a conference/perturbative implementation, not (S4).
+Moreover, a uniform bridge reaches the same-temperature child target with probability at most `exp(-c_beta r)`. This converts the earlier nonuniform fourth-order tangent into a scalable fixed-temperature obstruction. It closes uniform averaging, fixed quantiles, polynomial sampling, and every compressed state that merely lower-bounds the same reverse KL on conference children.
 
-## Closed and alternative tracks
+This does not falsify the minimizer-optimized criterion: conference signings are not known to be exact pressure minimizers, and an exponentially rare algebraic bridge may exist. Do not spend further effort lower-bounding this KL on conference children; even the full divergence is sublinear.
 
-- The final uniform full two-block experiment found zero positive defects and zero nonzero unmatched cores in `10,000`, `2,000`, and `250` samples at `N=512,2048,8192`. This favors basin decay but is finite evidence. The Walsh/bent/greedy-basin line is now archived.
-- The exact disorder-counting product theorem constructs exponentially many parents, but retains the same contracted child parameters and misses an order-`N` endpoint term. A bare speed-`n^2` disorder LDP does not locate the needed support edge.
-- Quadratic Littlewood, Boolean BH, Sidon, KSZ, and current SK theorems supply no `1+o(1)` complete-support cross-order law. Guerra--Toninelli averages Gaussian disorder; it does not commute with the adversarial signing minimum.
-- Selected-prior/common-active-face, scalar atoms, separately paid channels, canonical same-map Krivine rounding, fixed-level SOS, and full bridge optimization remain inactive.
+## Leading target and implication chain
 
-## Targets and falsification criteria
+The strongest current target is **pressure-preserving regularization**. For each fixed sufficiently small `beta`, transform an exact pressure minimizer `A_n^*` into a signing `A_tilde_n` such that
 
-1. **Leading, falsification first:** determine the scale of `G_(m,n)(beta)` for exact low-temperature minimizers. Prove (S4), or prove for some fixed `beta,c_beta>0` and balanced infinite sequence that `G>=c_beta N`. Conference calculations count only after a uniform remainder theorem and a verified minimizer link.
-2. **If the uniform-output state fails:** seek a bounded-complexity overlap or disorder-support state that controls a lower quantile of bridge log pressure, not its full minimum and not merely its uniform mean.
-3. **Direct composition alternative:** retain an explicit complete-support constructor with a geometrically summable normalized defect. No such constructor is known.
-4. **Genuine nonconvergence:** produce fixed `epsilon>0` and two infinite subsequences separated by `epsilon`, or prove `liminf<limsup`. Route-specific failures do not count.
+```math
+\log\overline Z(\beta\widetilde A_n/\sqrt n)
+\le P_n(\beta)+o_\beta(n),                            \tag{S7}
+```
+
+while `||beta A_tilde_n/sqrt(n)||_op<=1/2-eta_beta`, the averaged diagonal-monomial law is conference-like, and every off-diagonal diagonal monomial is `n^(-1/2+o(1))` uniformly. The stronger original fixed-power Assumption 2.9 also suffices. Then (S5) supplies the missing liminf, (S4) supplies the limsup, and `P_n(beta)/n->psi(beta)` in that high-temperature range.
+
+This is demonstrably narrower than optimizing over all spectral laws: (S5) has removed that obligation, and the literature audit removes uniform diagonal matching under Frobenius-near structure. It is not yet known to be substantially easier than the full fixed-temperature minimization. Norm-only and Frobenius-only penalties are both falsified by localized flat-sign perturbations. A successful theorem must puncture/edit exceptional coordinates at `o(n)` pressure cost, or directly control off-diagonal open-cactus corrections.
+
+Even complete success for `beta<1/2` would not prove (S1); the zero-temperature squeeze needs fixed `beta` arbitrarily large. Extension beyond the replica-symmetric high-temperature theorem is a separate bridge.
+
+## Ranked alternatives and falsification criteria
+
+1. **Regularization/traffic:** prove (S7) with uniform off-diagonal diagonal-monomial control, or construct a scalable signing family with pressure below `psi(beta)` and a quantified persistent irregularity. Stop on norm-only/Frobenius-only estimates or a merely spectral reformulation.
+2. **Exponentially rare bridge:** give a compressed algebraic selector and a proved pressure/composition bound. Uniform or polynomial bridge search is closed by (S6).
+3. **Large-temperature thermodynamic limit:** find an interpolation or variational theorem valid beyond operator norm `1/2`; a small-`beta` analytic continuation claim is insufficient.
+4. **Direct composition:** retain an explicit complete-support constructor with geometrically summable normalized defect. No such landing theorem is known.
+5. **Genuine nonconvergence:** produce fixed `epsilon>0` and two infinite subsequences separated by `epsilon`, or prove `liminf<limsup`. Route-specific failures do not count.
+
+Walsh basin, scalar finite-temperature recurrences, conference KL lower bounds, selected-prior/common-active-face, scalar atoms, separately paid channels, canonical same-map Krivine rounding, and fixed-level SOS remain inactive.
 
 ## Checkpoint decision
 
-No rigorous bound, recurrence step, or convergence/nonconvergence mechanism improved, so this is not primary progress under the README definition. Continuing is justified only as a bounded test of (S4), because it is the one surviving joint, same-temperature statement with a correct leading scale and an immediate scalable falsifier. Do not resume Walsh-basin work or scalar finite-temperature variants. If (S4) acquires a linear fixed-`beta` obstruction without a compressed replacement state, consolidate rather than generate another rapid wave.
+The imported theorem and (S5) are material theorem-level progress: they remove the conference uniform-remainder question and the high-temperature spectral optimization. They do not improve a ground-state bound, complete a recurrence, or prove convergence/nonconvergence. Continue only the bounded regularization/traffic test and the exact literature boundary. If neither yields a pressure-preserving theorem nor a scalable irregular counterexample, consolidate the finite-temperature campaign rather than returning to rapid scalar variants.
