@@ -42381,3 +42381,172 @@ a scalable irregular counterexample to it), while the conference uniform-KL
 and Walsh-basin implementations remain closed.  If the regularity track
 produces neither a theorem nor a scalable falsifier, the finite-temperature
 campaign should consolidate rather than return to scalar recurrences.
+
+### 10.137 Distributed irregularity and Frobenius pressure stability
+
+The first regularization test after Section 10.136 gives both a decisive
+negative result and a weaker positive replacement. Maximum-entry violations
+cannot in general be isolated on `o(n)` coordinates, even at conference
+pressure. However, in the strict high-temperature regime pressure is stable
+under *global normalized-Frobenius* perturbations. Thus the right target is a
+distributed edit or a direct averaged pressure theorem, not coordinate
+puncturing.
+
+#### 10.137.1 A linear matching of thermodynamically invisible power spikes
+
+Fix `0<beta<1/2` and `0<eta<1/2`. Along any infinite symmetric conference
+sequence there are flat hollow signings `A_n`, with
+`X_n=beta A_n/sqrt(n)`, such that
+
+```math
+\|X_n\|_{\rm op}\le\beta+o(1),
+\qquad
+{1\over\sqrt n}\|X_n^2-\beta^2(1-1/n)I\|_{\rm F}=o(1),       \tag{10.1631}
+```
+
+and their full averaged diagonal-monomial distribution is the conference
+one. Nevertheless, on `floor(n/10)` vertex-disjoint pairs,
+
+```math
+|(X_n^2)_{i,j_i}|
+=2\beta^2n^{-1/2+\eta}(1+o(1)).                              \tag{10.1632}
+```
+
+Every vertex cover of the violations therefore has size `Omega(n)`. This is
+a **Verified scalable falsifier** of `o(n)`-coordinate puncturing from
+Frobenius/averaged regularity.
+
+The construction selects `r=floor(n^(1/2+eta))` eligible conference-star
+edges independently for each of `floor(n/10)` centers. Rectangular matrix
+Bernstein gives a deterministic choice whose perturbation `D_n` satisfies
+
+```math
+\|D_n\|_{\rm op}
+=O(r/\sqrt n+\sqrt r\log n)=o(\sqrt n).                    \tag{10.1633}
+```
+
+Each matched power entry is exactly `2 beta^2 r/n`. Despite the distributed
+spikes,
+
+```math
+\log\overline Z(X_n)=n\psi(\beta)+o(n).                    \tag{10.1634}
+```
+
+Thus maximum-entry delocalization is sufficient but not necessary for the
+correct pressure. The full construction and probability estimate are in
+`artifacts/distributed_exceptional_coordinates_counterexample.md`.
+
+#### 10.137.2 Pressure is continuous in normalized Frobenius norm
+
+There is a **New proved positive replacement**. Fix `kappa<1/2`. The
+dimension-free Poincare inequality used in the July 2026 high-temperature
+theorem gives a constant `K_kappa` such that, whenever symmetric interactions
+`X,Y` have operator norm at most `kappa`,
+
+```math
+\boxed{
+|\log\overline Z_n(X)-\log\overline Z_n(Y)|
+\le {K_\kappa\over2}\|X-Y\|_*
+\le {K_\kappa\sqrt n\over2}\|X-Y\|_{\rm F}.}              \tag{10.1635}
+```
+
+Indeed, along `J_s=Y+s(X-Y)`, zero-field spin-flip symmetry and Poincare give
+`||E_(J_s)[xx^T]||_op<=K_kappa`. Differentiation yields
+
+```math
+{d\over ds}\log Z_n(J_s)
+={1\over2}\operatorname{Tr}
+ \{(X-Y)\mathbb E_{J_s}[xx^{\mathsf T}]\},                 \tag{10.1636}
+```
+
+and nuclear/operator duality proves (10.1635), separately for both
+orientations. Consequently, `||X_n-Y_n||_F/sqrt(n)->0` implies an `o(n)`
+pressure difference. The edit may touch linearly many coordinates.
+
+There is also an exact polar reduction. If
+
+```math
+{1\over\sqrt n}\|X_n^2-\beta^2I\|_{\rm F}\longrightarrow0,
+```
+
+then functional calculus produces
+
+```math
+U_n=\beta\operatorname{sgn}(X_n),
+\qquad U_n^2=\beta^2I,
+\qquad {1\over\sqrt n}\|X_n-U_n\|_{\rm F}\longrightarrow0. \tag{10.1637}
+```
+
+Under a common strict operator margin, (10.1635) transfers pressure from
+`X_n` to this polar involution. This removes the need to repair every
+exceptional entry. It does not determine the pressure of a localized polar
+involution; that is now the precise remaining static issue. Proof and source
+mapping are in `artifacts/high_temperature_frobenius_pressure_stability.md`.
+
+#### 10.137.3 Exact eigenvalue-only finite-order bounds are false
+
+A padded two-spin core gives a useful scope correction. For
+
+```math
+X_n=a(e_1e_2^{\mathsf T}+e_2e_1^{\mathsf T}),
+\qquad0<a<1/2,
+```
+
+the Boolean pressure is `log cosh(a)`, whereas
+
+```math
+n\psi\!\left(\sqrt{\operatorname{Tr}X_n^2/n}\right)
+\longrightarrow {a^2\over2}>\log\cosh a.                  \tag{10.1638}
+```
+
+The spherical pressure and the natural determinant saddle instead tend to
+`-log(1-a^2)/2`, also strictly above the Boolean value. Thus a literal
+finite-`n` rms/spectral lower bound, or direct Boolean-to-spherical
+replacement, has the wrong sign. This is a **Verified finite-rank no-go**,
+not an asymptotic dense-signing obstruction: its deficit is only `O(1)` and
+is absorbed by (10.1635). Details are in
+`artifacts/finite_n_spectral_pressure_no_go.md`.
+
+For an exact zero-diagonal polar involution, Gaussian linearization plus the
+best isotropic covariance trial is rigorous but gives
+`beta^2/4-5 beta^4/24+O(beta^6)`, short of `psi(beta)` by
+`beta^4/12+O(beta^6)`. Thus the polar target needs frame-dependent or
+dense-flat information; an isotropic Brascamp--Lieb trial is already closed.
+
+#### 10.137.4 Operational table
+
+| Track | Last concrete result | Classification | Next falsifiable step | Stop condition |
+|---|---|---|---|---|
+| Coordinate puncturing | Linear matching of large `X^2` entries at conference pressure | Scalable counterexample; closed | None from averaged/Frobenius hypotheses alone | Any further exceptional-vertex cover without a new minimizer-specific input |
+| Global pressure stability | Nuclear/Frobenius continuity and polar reduction | Proved reduction | Prove the polar-involution pressure lower bound, or construct a dense flat source whose polar pressure is below `psi(beta)` linearly | Maximum-entry repair; no longer necessary |
+| Spectral/Gaussian finite bound | Padded edge reverses the exact rms and spherical inequalities | Proved `O(1)` no-go | Retain only an `o(n)`-error dense-signing theorem | Another exact eigenvalue-only finite-`n` bound |
+| Operator threshold | Localized spikes may cross `1/2` at `o(n)` pressure cost | Open escape case | Extend Frobenius/nuclear continuity through a pressure-cheap high-norm localized component | Norm-only penalty |
+| Full thermodynamic limit | High-temperature conference limsup only | Open | Close the averaged/polar liminf and separately seek a theorem beyond `beta=1/2` | Inferring ground-state convergence from the high-temperature range |
+
+#### 10.137.5 Updated frontier
+
+The rigorous ground-state interval is still
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                         \tag{10.1639}
+```
+
+No ground-state bound or recurrence step improved. At finite temperature,
+the pressure-preserving part of regularization is now genuinely weaker than
+the original maximum-entry obligation: normalized-Frobenius proximity is
+enough. The distributed-star theorem proves that this weakening is also
+necessary—correct-pressure sequences may fail uniform power delocalization
+on linearly many disjoint pairs.
+
+The strongest bounded target is now an asymptotic Boolean-pressure theorem
+for the polar involutions arising as normalized-Frobenius limits of flat
+hollow sign interactions. Concretely, prove their pressure is at least
+`n psi(beta)-o(n)`, or construct one with a linear deficit. A second bridge
+would still be needed to put exact pressure minimizers in the strict-norm,
+Frobenius-near-conference class. This is not yet a convergence proof, and the
+finite-rank Gaussian no-go forbids claiming that eigenvalues alone settle the
+polar target.

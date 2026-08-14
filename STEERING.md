@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: fixed-temperature spectral-extremality checkpoint (2026-08-14).
-Status: **finite-temperature regularization campaign active; uniform conference reverse-KL closed**.
+Evidence cutoff: distributed-irregularity/Frobenius-stability checkpoint (2026-08-14).
+Status: **finite-temperature averaged-pressure campaign active; coordinate puncturing closed**.
 Next mandatory blank-slate refresh: Wave 61 if ordinary waves resume, or after
 five substantial campaign checkpoints from this one, whichever comes first.
 
@@ -78,6 +78,10 @@ Consequently, every signing sequence with scaled operator norm uniformly below `
 
 The available signed-permutation universality theorem weakens uniform diagonal control to convergence of the averaged diagonal-monomial distribution, but retains uniform `n^(-1/2+o(1))` bounds for every off-diagonal diagonal monomial. Frobenius-near conference structure supplies the averaged part. An explicit `n^(3/4)`-edge conference star perturbation remains Frobenius-near and norm-near while creating an `n^(-1/4)` entry of the squared scaled matrix, so Frobenius closeness alone cannot supply the missing uniform condition.
 
+That obstruction is now scalable across coordinates: a distributed conference-star construction has conference pressure, the full averaged diagonal-monomial law, and `n^(-1/2+eta)` entries of `X^2` on a linear matching. Every endpoint cover is linear. Thus `o(n)`-coordinate puncturing is false even for correct-pressure sequences, and maximum-entry delocalization is not necessary for the thermodynamic answer.
+
+The positive replacement is a dimension-free high-temperature interpolation inequality. Under a common operator margin `kappa<1/2`, `|log Zbar(X)-log Zbar(Y)| <= (K_kappa/2)||X-Y||_*`; hence normalized-Frobenius `o(1)` distance costs `o(n)` pressure. If `X^2` is normalized-Frobenius close to `beta^2 I`, pressure transfers to the polar involution `beta sign(X)`. This is a verified reduction unavailable in the previous assessment.
+
 ## Uniform joint reverse-KL route
 
 For two conference children and a uniform sign bridge, the random parent law is
@@ -103,29 +107,28 @@ This does not falsify the minimizer-optimized criterion: conference signings are
 
 ## Leading target and implication chain
 
-The strongest current target is **pressure-preserving regularization**. For each fixed sufficiently small `beta`, transform an exact pressure minimizer `A_n^*` into a signing `A_tilde_n` such that
+The strongest current target is the **polar-involution pressure theorem**. For fixed `beta<1/2`, prove that every symmetric involution `U_n^2=beta^2 I` arising at normalized-Frobenius distance `o(1)` from a flat hollow signing interaction satisfies
 
 ```math
-\log\overline Z(\beta\widetilde A_n/\sqrt n)
-\le P_n(\beta)+o_\beta(n),                            \tag{S7}
+\log\overline Z(U_n)\ge n\psi(\beta)-o_\beta(n).       \tag{S7}
 ```
 
-while `||beta A_tilde_n/sqrt(n)||_op<=1/2-eta_beta`, the averaged diagonal-monomial law is conference-like, and every off-diagonal diagonal monomial is `n^(-1/2+o(1))` uniformly. The stronger original fixed-power Assumption 2.9 also suffices. Then (S5) supplies the missing liminf, (S4) supplies the limsup, and `P_n(beta)/n->psi(beta)` in that high-temperature range.
+If exact pressure minimizers can additionally be moved at `o(n)` pressure cost into the strict-norm Frobenius-near-conference class, Frobenius stability and (S7) supply the missing liminf, while (S4) supplies the limsup. This proves `P_n(beta)/n->psi(beta)` in that high-temperature range.
 
-This is demonstrably narrower than optimizing over all spectral laws: (S5) has removed that obligation, and the literature audit removes uniform diagonal matching under Frobenius-near structure. It is not yet known to be substantially easier than the full fixed-temperature minimization. Norm-only and Frobenius-only penalties are both falsified by localized flat-sign perturbations. A successful theorem must puncture/edit exceptional coordinates at `o(n)` pressure cost, or directly control off-diagonal open-cactus corrections.
+This target is narrower than entrywise universality: the proved Frobenius inequality removes every maximum-entry repair obligation and permits distributed edits. It is not an eigenvalue-only statement. A padded active edge makes the exact rms, spherical, and determinant lower bounds false, although only by `O(1)`, while the best isotropic Gaussian trial for an involution misses `psi(beta)` by `beta^4/12+O(beta^6)`. Any proof of (S7) must use frame-dependent dense flat-hollow information or allow an `o(n)` localization correction. A separate minimizer-to-Frobenius bridge remains open, so the implication chain has two genuine obligations.
 
 Even complete success for `beta<1/2` would not prove (S1); the zero-temperature squeeze needs fixed `beta` arbitrarily large. Extension beyond the replica-symmetric high-temperature theorem is a separate bridge.
 
 ## Ranked alternatives and falsification criteria
 
-1. **Regularization/traffic:** prove (S7) with uniform off-diagonal diagonal-monomial control, or construct a scalable signing family with pressure below `psi(beta)` and a quantified persistent irregularity. Stop on norm-only/Frobenius-only estimates or a merely spectral reformulation.
-2. **Exponentially rare bridge:** give a compressed algebraic selector and a proved pressure/composition bound. Uniform or polynomial bridge search is closed by (S6).
-3. **Large-temperature thermodynamic limit:** find an interpolation or variational theorem valid beyond operator norm `1/2`; a small-`beta` analytic continuation claim is insufficient.
-4. **Direct composition:** retain an explicit complete-support constructor with geometrically summable normalized defect. No such landing theorem is known.
+1. **Averaged/polar pressure:** prove (S7), or construct a dense flat-derived polar family with pressure below `psi(beta)` by a linear amount. An `O(1)` padded-core deficit does not falsify it.
+2. **Minimizer landing:** put exact pressure minimizers into the strict-norm Frobenius-near-conference class at `o(n)` pressure cost. Coordinate puncturing and maximum-entry repair are closed; a global Frobenius edit is allowed.
+3. **Exponentially rare bridge:** give a compressed algebraic selector and a proved pressure/composition bound. Uniform or polynomial bridge search is closed by (S6).
+4. **Large-temperature/direct composition:** find a theorem beyond operator norm `1/2`, or an explicit constructor with summable normalized defect.
 5. **Genuine nonconvergence:** produce fixed `epsilon>0` and two infinite subsequences separated by `epsilon`, or prove `liminf<limsup`. Route-specific failures do not count.
 
 Walsh basin, scalar finite-temperature recurrences, conference KL lower bounds, selected-prior/common-active-face, scalar atoms, separately paid channels, canonical same-map Krivine rounding, and fixed-level SOS remain inactive.
 
 ## Checkpoint decision
 
-The imported theorem and (S5) are material theorem-level progress: they remove the conference uniform-remainder question and the high-temperature spectral optimization. They do not improve a ground-state bound, complete a recurrence, or prove convergence/nonconvergence. Continue only the bounded regularization/traffic test and the exact literature boundary. If neither yields a pressure-preserving theorem nor a scalable irregular counterexample, consolidate the finite-temperature campaign rather than returning to rapid scalar variants.
+The Frobenius pressure inequality is primary theorem-level progress and the distributed matching is a scalable falsifier of the coordinate architecture. They do not improve a ground-state bound, complete a recurrence, or prove convergence/nonconvergence. Continue only the bounded polar-pressure test and the minimizer-to-Frobenius bridge. If neither yields a theorem or a linear dense-family counterexample at the next substantive checkpoint, consolidate the finite-temperature campaign rather than returning to maximum-entry traffic repairs.
