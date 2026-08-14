@@ -1,0 +1,205 @@
+{
+  "classification": "exact child and parent spin sums; exhaustive output average at order 2; seeded Monte Carlo output average at orders 6 and 10",
+  "normalization": "Zbar_n=2^{-n} sum_x cosh(t H_A(x))",
+  "orders": [
+    {
+      "bridge_draws": 16,
+      "child_order": 2,
+      "independent_statistical_units": 16,
+      "matrix_square_verified": true,
+      "orientation_values_per_bridge": 2,
+      "output_samples": 32,
+      "parent_order": 4,
+      "proved_small_beta_coefficients": {
+        "compensation_margin_beta2": -0.25,
+        "compensation_margin_beta4": -0.010416666666666666,
+        "reverse_KL_beta8": 0.005859375
+      },
+      "records": [
+        {
+          "beta": 0.25,
+          "bridge_annealed_cost": 0.031168957275593125,
+          "child_contracted_log_Zbar": 0.007792239318898317,
+          "child_target_log_Zbar": 0.015544291591047893,
+          "compensation_margin": -0.01566476698743155,
+          "compensation_margin_per_parent_vertex": -0.0039161917468578875,
+          "mean_parent_log_Zbar": 0.046753350169527336,
+          "mean_parent_log_standard_error": 0.0,
+          "raw_parent_temperature": 0.125,
+          "reverse_KL": 8.574386242687915e-08
+        },
+        {
+          "beta": 0.5,
+          "bridge_annealed_cost": 0.12371921448064555,
+          "child_contracted_log_Zbar": 0.030929803620161372,
+          "child_target_log_Zbar": 0.061239736504030806,
+          "compensation_margin": -0.06308002025046389,
+          "compensation_margin_per_parent_vertex": -0.01577000506261597,
+          "mean_parent_log_Zbar": 0.1855594932585255,
+          "mean_parent_log_standard_error": 0.0,
+          "raw_parent_temperature": 0.25,
+          "reverse_KL": 1.9328462442791405e-05
+        },
+        {
+          "beta": 1.0,
+          "bridge_annealed_cost": 0.4804580278331098,
+          "child_contracted_log_Zbar": 0.12011450695827752,
+          "child_target_log_Zbar": 0.23158132220834587,
+          "compensation_margin": -0.25457383929300403,
+          "compensation_margin_per_parent_vertex": -0.06364345982325101,
+          "mean_parent_log_Zbar": 0.7177364837096958,
+          "mean_parent_log_standard_error": 0.0,
+          "raw_parent_temperature": 0.5,
+          "reverse_KL": 0.002950558039969131
+        },
+        {
+          "beta": 2.0,
+          "bridge_annealed_cost": 1.7351233219321085,
+          "child_contracted_log_Zbar": 0.4337808304830273,
+          "child_target_log_Zbar": 0.7784912985576696,
+          "compensation_margin": -0.9125572233650112,
+          "compensation_margin_per_parent_vertex": -0.2281393058412528,
+          "mean_parent_log_Zbar": 2.4695398204803505,
+          "mean_parent_log_standard_error": 0.0,
+          "raw_parent_temperature": 1.0,
+          "reverse_KL": 0.13314516241781238
+        }
+      ],
+      "seed": null,
+      "status": "exhaustive bridge and orientation average"
+    },
+    {
+      "bridge_draws": 8192,
+      "child_order": 6,
+      "independent_statistical_units": 8192,
+      "matrix_square_verified": true,
+      "orientation_values_per_bridge": 2,
+      "output_samples": 16384,
+      "parent_order": 12,
+      "proved_small_beta_coefficients": {
+        "compensation_margin_beta2": -0.25,
+        "compensation_margin_beta4": -0.65625,
+        "reverse_KL_beta8": 0.016276041666666668
+      },
+      "records": [
+        {
+          "beta": 0.25,
+          "bridge_annealed_cost": 0.09366873264132568,
+          "child_contracted_log_Zbar": 0.03863003097664247,
+          "child_target_log_Zbar": 0.07642708153648886,
+          "compensation_margin": -0.01807218378935946,
+          "compensation_margin_per_parent_vertex": -0.0015060153157799548,
+          "mean_parent_log_Zbar": 0.17092634686233718,
+          "mean_parent_log_standard_error": 4.451357386458337e-06,
+          "raw_parent_temperature": 0.07216878364870323,
+          "reverse_KL": 2.4477322734528517e-06
+        },
+        {
+          "beta": 0.5,
+          "bridge_annealed_cost": 0.3737051050203303,
+          "child_contracted_log_Zbar": 0.14969858002784164,
+          "child_target_log_Zbar": 0.2880036478812841,
+          "compensation_margin": -0.09701721730330548,
+          "compensation_margin_per_parent_vertex": -0.00808476810860879,
+          "mean_parent_log_Zbar": 0.6730245130658736,
+          "mean_parent_log_standard_error": 6.974756448657095e-05,
+          "raw_parent_temperature": 0.14433756729740646,
+          "reverse_KL": 7.775201013993094e-05
+        },
+        {
+          "beta": 1.0,
+          "bridge_annealed_cost": 1.479618225513361,
+          "child_contracted_log_Zbar": 0.5380858225672209,
+          "child_target_log_Zbar": 0.9645031545001743,
+          "compensation_margin": -0.6187993419392592,
+          "compensation_margin_per_parent_vertex": -0.0515666118282716,
+          "mean_parent_log_Zbar": 2.547805650939608,
+          "mean_parent_log_standard_error": 0.0009681588515499636,
+          "raw_parent_temperature": 0.2886751345948129,
+          "reverse_KL": 0.00798421970819474
+        },
+        {
+          "beta": 2.0,
+          "bridge_annealed_cost": 5.693589355918657,
+          "child_contracted_log_Zbar": 1.6476713209521348,
+          "child_target_log_Zbar": 2.6923948570819634,
+          "compensation_margin": -3.1548221511476457,
+          "compensation_margin_per_parent_vertex": -0.2629018459289705,
+          "mean_parent_log_Zbar": 8.539611865311572,
+          "mean_parent_log_standard_error": 0.0064530161794716665,
+          "raw_parent_temperature": 0.5773502691896258,
+          "reverse_KL": 0.44932013251135317
+        }
+      ],
+      "seed": 20260820,
+      "status": "seeded Monte Carlo bridge average; both orientations exact"
+    },
+    {
+      "bridge_draws": 32,
+      "child_order": 10,
+      "independent_statistical_units": 32,
+      "matrix_square_verified": true,
+      "orientation_values_per_bridge": 2,
+      "output_samples": 64,
+      "parent_order": 20,
+      "proved_small_beta_coefficients": {
+        "compensation_margin_beta2": -0.25,
+        "compensation_margin_beta4": -1.3854166666666667,
+        "reverse_KL_beta8": 0.018984375
+      },
+      "records": [
+        {
+          "beta": 0.25,
+          "bridge_annealed_cost": 0.15616868754423435,
+          "child_contracted_log_Zbar": 0.06942185981177773,
+          "child_target_log_Zbar": 0.1371561535862713,
+          "compensation_margin": -0.02057219770920682,
+          "compensation_margin_per_parent_vertex": -0.0010286098854603409,
+          "mean_parent_log_Zbar": 0.29488450488174944,
+          "mean_parent_log_standard_error": 5.446679406605163e-05,
+          "raw_parent_temperature": 0.05590169943749474,
+          "reverse_KL": 0.00012790228604037113
+        },
+        {
+          "beta": 0.5,
+          "bridge_annealed_cost": 0.6237022405411039,
+          "child_contracted_log_Zbar": 0.2680625451472982,
+          "child_target_log_Zbar": 0.5144454008014332,
+          "compensation_margin": -0.12872837163204354,
+          "compensation_margin_per_parent_vertex": -0.006436418581602177,
+          "mean_parent_log_Zbar": 1.15761917323491,
+          "mean_parent_log_standard_error": 0.0008039502148380402,
+          "raw_parent_temperature": 0.11180339887498948,
+          "reverse_KL": 0.002208157600790406
+        },
+        {
+          "beta": 1.0,
+          "bridge_annealed_cost": 2.4794402953823895,
+          "child_contracted_log_Zbar": 0.9612671683579408,
+          "child_target_log_Zbar": 1.7412635112148998,
+          "compensation_margin": -0.871811343616109,
+          "compensation_margin_per_parent_vertex": -0.04359056718080545,
+          "mean_parent_log_Zbar": 4.3543383660459085,
+          "mean_parent_log_standard_error": 0.009908666219364745,
+          "raw_parent_temperature": 0.22360679774997896,
+          "reverse_KL": 0.04763626605236304
+        },
+        {
+          "beta": 2.0,
+          "bridge_annealed_cost": 9.68343064136349,
+          "child_contracted_log_Zbar": 3.076022246741262,
+          "child_target_log_Zbar": 5.348009959704291,
+          "compensation_margin": -3.904860056629113,
+          "compensation_margin_per_parent_vertex": -0.19524300283145565,
+          "mean_parent_log_Zbar": 14.600879976037696,
+          "mean_parent_log_standard_error": 0.07869591699073895,
+          "raw_parent_temperature": 0.4472135954999579,
+          "reverse_KL": 1.2345951588083182
+        }
+      ],
+      "seed": 20260824,
+      "status": "seeded Monte Carlo bridge average; both orientations exact"
+    }
+  ],
+  "schema": "joint-reverse-kl-conference-audit-v1"
+}

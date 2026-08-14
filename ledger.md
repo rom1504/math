@@ -41610,3 +41610,425 @@ The next defensible architecture is therefore a trajectory/basin-entropy
 analysis retaining tensor class multiplicities and tie-order information;
 ordinary bent, plateaued, fourth-moment, and Reed--Muller covering-radius
 variants should not be reopened.
+
+### 10.135 Finite-temperature minimax and joint cancellation
+
+This checkpoint evaluates the finite-temperature proposal supplied after the
+Walsh/basin campaign.  It separates four facts which should not be conflated:
+the ground-state soft-max reduction is correct; its scalar bridge recurrence
+was already present in the project and does not prove a diagonal limit; a
+joint reverse-KL observable gives an exact same-temperature sufficient
+condition; and conference children put strong pressure against that joint
+condition without yet furnishing a scalable falsifier for exact pressure
+minimizers.
+
+#### 10.135.1 Exact normalization and ground-state reduction
+
+For an order-`n` signing `A`, put
+
+```math
+H_A(x)=\sum_{i<j}a_{ij}x_ix_j,qquad
+\overline Z_n(A,t)=2^{-n}\sum_x\cosh(tH_A(x)),
+```
+
+```math
+F_n(t)=\min_A\log\overline Z_n(A,t),qquad
+P_n(\beta)=F_n(\beta/\sqrt n).
+```
+
+The pressure proposed in the latest input is exactly
+
+```math
+\Phi_n(\beta)
+=\left(1+{1\over n}\right)\log2+{P_n(\beta)\over n}.       \tag{10.1589}
+```
+
+If `m_n=M_n/n^(3/2)`, the two globally opposite maximizing spins give the
+slightly sharpened **Verified squeeze**
+
+```math
+m_n+{\log2\over n\beta}
+\le {\Phi_n(\beta)\over\beta}
+\le m_n+{(1+1/n)\log2\over\beta}.                         \tag{10.1590}
+```
+
+Consequently, if `Phi_n(beta)` converges for every fixed `beta>0`, then the
+`limsup-liminf` gap of `m_n` is at most `log(2)/beta`; sending `beta` to
+infinity proves convergence.  This reduction is correct and requires no
+interchange of the two limits.
+
+Split `N=m+n`, put `t=beta/sqrt(N)`, and average both the `mn` bridge signs
+and one global orientation `epsilon` of the second child.  The exact
+factorization is
+
+```math
+\mathbb E_{\epsilon,B}\overline Z_N
+=(\cosh t)^{mn}\overline Z_m(A,t)\overline Z_n(D,t).       \tag{10.1591}
+```
+
+In the unnormalized convention of (10.1589), (10.1591) improves the proposed
+composition by the harmless term `-log 2`:
+
+```math
+N\Phi_N(\beta)
+\le m\Phi_m(\beta\sqrt{m/N})
+ +n\Phi_n(\beta\sqrt{n/N})
+ +mn\log\cosh(\beta/\sqrt N)-\log2.                       \tag{10.1592}
+```
+
+Thus the proposal is the earlier soft-cap pressure in
+`artifacts/soft_cap_composition_audit.md`, with its entropy normalization
+restored; it is not an unaudited object.
+
+#### 10.135.2 Exact scalar centering and a proved no-go theorem
+
+Let `E_n=binom(n,2)` and center every edge exactly:
+
+```math
+R_n(t)=F_n(t)-E_n\log\cosh t.
+```
+
+Equation (10.1591) proves genuine fixed-physical-temperature subadditivity,
+
+```math
+R_{m+n}(t)\le R_m(t)+R_n(t).                              \tag{10.1593}
+```
+
+For `r_n(beta)=R_n(beta/sqrt(n))/n` and `theta=m/(m+n)`, however, this is
+only
+
+```math
+r_{m+n}(\beta)
+\le\theta r_m(\beta\sqrt\theta)
+ +(1-\theta)r_n(\beta\sqrt{1-\theta}).                    \tag{10.1594}
+```
+
+A balanced split contracts `beta` to `beta/sqrt(2)`.  Fixed-`t` Fekete
+theory sees a centered term of order `-n^2` and does not control the diagonal
+order-`n` remainder.
+
+This limitation is now an **Abstract proved no-go theorem**, not merely a
+failed proof attempt.  Choose a slowly oscillating nonconvergent
+`c_n=c_0+epsilon sin(log log(n+n_0))`, set
+
+```math
+a_n=c_nn^{3/2},\qquad \vartheta_n={a_n\over E_n},\qquad
+F_n^*(t)={a_n^2\over E_n}\log\cosh(t/\vartheta_n).         \tag{10.1595}
+```
+
+The parameters can be chosen so that `a_n` and `a_n^2/E_n` increase while
+`vartheta_n` decreases.  The functions (10.1595) are even, analytic and
+convex, have `(F_n^*)''(0)=E_n`, zero-temperature slope `a_n`, obey the
+correct `n log 2` entropy squeeze and restriction monotonicity, and their
+exactly centered versions satisfy (10.1593).  Their diagonal pressures are
+uniformly Lipschitz but tend along two subsequences to
+
+```math
+2c_\pm^2\log\cosh\!\left({\beta\over2c_\pm}\right),       \tag{10.1596}
+```
+
+which are distinct for every `beta>0`.  This is an abstract scalar model,
+not a signing counterexample; it proves that the scalar axioms do not force
+the desired limit.
+
+There is also an **Exact signing falsifier** for the most natural scale
+transport.  At order four the high-temperature expansion gives
+
+```math
+R_4(t)=\log(1-\tanh^4t).                                  \tag{10.1597}
+```
+
+For `0<lambda,rho<1`, (10.1597) has
+
+```math
+R_4(\operatorname{arctanh}(\lambda\rho))
+>\lambda^2R_4(\operatorname{arctanh}\rho),                 \tag{10.1598}
+```
+
+the opposite of the inequality needed to repair (10.1594).  The complete
+proof and independent check are in
+`artifacts/finite_temperature_scalar_no_go.md`.
+
+#### 10.135.3 A genuinely joint reverse-KL interface
+
+The remaining way to use finite temperature is to retain cancellation in a
+joint output law.  For contracted-temperature child minimizers `A,D`, sample
+independent augmented Gibbs variables `(x,tau_1),(y,tau_2)`, output
+
+```math
+\epsilon=\tau_1\tau_2,\qquad q_{ij}=\tau_1x_iy_j,
+```
+
+and pass `q` through independent binary channels of bias `tanh t` to obtain
+the bridge `B`.  If `Pi_(A,D,t)` is the law of `(epsilon,B)` and `U` is
+uniform on the same outputs, direct substitution proves
+
+```math
+\Pi_{A,D,t}(\epsilon,B)
+={\overline Z_N(A,\epsilon D,B;t)
+ \over2^{mn+1}(\cosh t)^{mn}
+ \overline Z_m(A,t)\overline Z_n(D,t)}.                   \tag{10.1599}
+```
+
+Taking the uniform logarithmic average gives the **Exact quenched identity**
+
+```math
+\mathbb E_U\log\overline Z_N
+=\log\overline Z_m+\log\overline Z_n
+ +mn\log\cosh t-D_{\rm KL}(U\Vert\Pi).                   \tag{10.1600}
+```
+
+This is the earlier noisy-rank-one/reveal law recoupled with the child
+temperature payment.  It is joint, and cancellation occurs before the
+logarithm; it is not an independently paid scalar-channel bound.
+
+Put
+
+```math
+\mathcal T_{m,n}(\beta)
+=P_m(\beta)-P_m(\beta\sqrt{m/N})
+ +P_n(\beta)-P_n(\beta\sqrt{n/N}),                        \tag{10.1601}
+```
+
+and let `mathcal D_(m,n)` be the largest reverse KL in (10.1600) among
+contracted-temperature minimizing child pairs.  Then
+
+```math
+P_N(\beta)\le P_m(\beta)+P_n(\beta)+G_{m,n}(\beta),       \tag{10.1602}
+```
+
+```math
+G_{m,n}(\beta)
+=mn\log\cosh(\beta/\sqrt N)
+-\mathcal T_{m,n}(\beta)-\mathcal D_{m,n}(\beta).         \tag{10.1603}
+```
+
+The **Verified sufficient theorem** is: for every fixed `beta>0`, if there
+are `delta_beta>0,C_beta<infinity` such that, uniformly for
+`N/4<=m,n<=3N/4`,
+
+```math
+G_{m,n}(\beta)\le C_\beta N^{1-\delta_\beta},             \tag{10.1604}
+```
+
+then `P_n(beta)/n` converges.  Exact raw-temperature cavity bounds give a
+uniform adjacent-order modulus; a balanced tree with leaves of size `k` and
+`k+1` accumulates only `O_beta(k^(-delta_beta))` error per vertex.  Choosing
+`k` on a `liminf` subsequence proves `limsup<=liminf`.  Equations
+(10.1589)--(10.1590) then prove convergence of `M_n/n^(3/2)` if (10.1604)
+holds for every fixed `beta`.
+
+The chain rule gives a more concrete but stronger response condition:
+
+```math
+\mathcal D_{m,n}
+={1\over2}\sum_j\mathbb E_U[-\log(1-s_j^2)],\qquad
+s_j=\tanh(t)\,\mathbb E[q_j\mid(\epsilon,B)_{<j}].        \tag{10.1605}
+```
+
+Equations (10.1602)--(10.1605) were independently checked, including every
+factor of two, the reverse-KL direction, the adjacent modulus, and the
+balanced-tree argument.
+
+The exhaustive floating-point audit uses one representative of every
+switching orbit, every contracted-temperature minimizing child pair, both
+orientations, and every bridge through total order seven.  For the most
+balanced split it gives:
+
+| `beta` | `G`, `N=4` | `G`, `N=5` | `G`, `N=6` | `G`, `N=7` |
+|---:|---:|---:|---:|---:|
+| 0.25 | 0.015665 | 0.015684 | 0.015705 | 0.015875 |
+| 0.5 | 0.063080 | 0.063362 | 0.063690 | 0.066232 |
+| 1 | 0.254574 | 0.255973 | 0.258160 | 0.289807 |
+| 2 | 0.912557 | 0.849614 | 0.797231 | 1.037759 |
+
+Thus exact zero-defect compensation is false, but the small-`beta` data are
+consistent with a bounded defect.  At `N=6`, the actual scalar
+same-temperature parent defect is already negative at `beta>=2`, while `G`
+remains positive.  This proves that the uniform-output condition is strictly
+stronger than existence of an exceptional good bridge.  The verified code,
+result, and proof are
+`computations/check_finite_temperature_reverse_kl.py`,
+`computations/results/finite_temperature_reverse_kl_small.json`, and
+`artifacts/finite_temperature_reverse_kl_interface.md`; the canonical JSON
+has SHA-256
+`951b14b968636c0394fc5d0abf0f40095ab7b568919b0f3474c1195b118fc6e3`.
+
+#### 10.135.4 Conference tangent obstruction
+
+For two copies of a symmetric conference signing `A` of order `r`, define
+the average-log compensation margin
+
+```math
+\mathcal M_r(\beta)
+=2\log\overline Z_r(A,\beta/\sqrt r)
+-\mathbb E_{\epsilon,B}\log\overline Z_{2r}
+ \left(\begin{pmatrix}A&B\\B^T&\epsilon A\end{pmatrix},
+ {\beta\over\sqrt{2r}}\right).                            \tag{10.1606}
+```
+
+The condition corresponding to (10.1604) asks that `mathcal M_r` be no more
+negative than a summable sublinear error.  The conference identity
+`A^2=(r-1)I` gives the **Exact fixed-order Taylor theorem**
+
+```math
+\mathcal M_r(\beta)
+=-{\beta^2\over4}
+-{9r^2-25r+15\over48r}\beta^4+O_r(\beta^6).               \tag{10.1607}
+```
+
+The fourth-order coefficient is `-3r/16+O(1)=-3N/32+O(1)`.  Meanwhile the
+joint output calculation and Walsh orthogonality prove
+
+```math
+D_{\rm KL}(U\Vert\Pi)
+={3\over2}{r\choose2}^2\rho^8+O_r(\rho^{10})
+={3(r-1)^2\over128r^2}\beta^8+O_r(\beta^{10}),            \tag{10.1608}
+```
+
+where `rho=tanh(beta/sqrt(2r))`.  Reverse KL first responds at eighth order
+with bounded scaled coefficient, two orders after the linear adverse term.
+
+The program `computations/audit_joint_reverse_kl_conference.py` exhausts the
+order-two output average and samples bridges at orders six and ten, averaging
+both orientations within each independent bridge draw.  Every tested margin
+has the adverse sign:
+
+| child `r` | bridge draws | `beta=0.25` | `beta=0.5` | `beta=1` | `beta=2` |
+|---:|---:|---:|---:|---:|---:|
+| 2 | 16 | -0.015665 | -0.063080 | -0.254574 | -0.912557 |
+| 6 | 8,192 | -0.018072 | -0.097017 | -0.618799 | -3.154822 |
+| 10 | 32 | -0.020572 | -0.128728 | -0.871811 | -3.904860 |
+
+The result is a **Verified structured/perturbative obstruction plus finite
+Monte Carlo evidence**, not a falsifier of (10.1604).  The remainder in
+(10.1607) is not uniform in `r`, and conference children are not proved to be
+the contracted-temperature pressure minimizers along an infinite family at
+one fixed positive `beta`.  A scalable falsifier still needs both a uniform
+fixed-`beta` margin and the minimizer link.  The full derivation is
+`artifacts/joint_reverse_kl_conference_tangent.md`; the canonical result has
+SHA-256
+`51c53f873359b6d141dd5b0a8ec0edcf3d7145de89f7f0066147d310600761e5`.
+
+#### 10.135.5 Exact disorder-counting strengthening
+
+The bridge average also gives many parents, not only one.  For
+
+```math
+N_n(t,u)=\#\{A:R_A(t)\le u\},
+```
+
+antipodal closure, an injective orientation parameterization, and Markov's
+inequality prove, for every `lambda>0`,
+
+```math
+\boxed{
+N_{m+n}(t,u+v+\lambda)
+\ge(1-e^{-\lambda})2^{mn}N_m(t,u)N_n(t,v).}               \tag{10.1609}
+```
+
+At `lambda=log 2` the factor is exactly `2^(mn-1)`.  Dividing by the total
+number of signings gives the same product law for lower-tail fractions.
+This is a **Verified microcanonical theorem**, but on the project diagonal it
+becomes
+
+```math
+N_{m+n}^{(\beta)}(u+v+\lambda)
+\ge(1-e^{-\lambda})2^{mn}
+N_m^{(\beta\sqrt{m/N})}(u)
+N_n^{(\beta\sqrt{n/N})}(v),                              \tag{10.1610}
+```
+
+so it retains the parameter contraction and misses the order-`N` endpoint
+cross term.  A speed-`n^2` disorder LDP can describe exact-orbit rarity, but
+(10.1609) does not locate its support boundary at order-`n` energy
+resolution.  Edge bounded differences instead give the natural first
+deviation scale `exp(-Theta(n))`.  Details are in
+`artifacts/microcanonical_disorder_counting_composition.md`.
+
+#### 10.135.6 Littlewood and spin-glass literature boundary
+
+The exact Littlewood formulation is
+
+```math
+M_n=\min_{a_{ij}=\pm1}
+\left\|\sum_{i<j}a_{ij}x_ix_j\right\|_{L_\infty(\{-1,1\}^n)}. \tag{10.1611}
+```
+
+Equivalently, the equal-modulus Sidon constant is
+`U_n=binom(n,2)/M_n`, and the objective is convergence of `U_n/sqrt(n)`.
+The primary-source audit found no theorem with a `1+o(1)` loss in the needed
+regime of fixed degree two, complete squarefree support, and growing ambient
+dimension.  Boolean Bohnenblust--Hille, support-sensitive BH, Sidon, RUC,
+KSZ, and quadratic-phase Fourier-growth results give order bounds, fixed
+factors, independent left/right spins, or a different Fourier object.
+
+Guerra--Toninelli proves a quenched Gaussian-disorder thermodynamic limit.
+Gaussian covariance interpolation preserves the disorder class; an
+adversarial minimum over fixed-magnitude Bernoulli coefficients does not.
+Bernoulli SK universality controls a typical random signing, not the extreme
+left support endpoint.  The July 2026 deterministic orthogonally invariant
+SK theorem assumes `||beta A/sqrt(n)||_op<1/2`; since every signing has
+`||A||_op>=sqrt(n-1)`, it cannot cover the required arbitrarily large fixed
+`beta`.  Sources and exact mappings are in
+`artifacts/finite_temperature_littlewood_primary_audit.md`.
+
+#### 10.135.7 Final bounded basin falsification
+
+The final requested Walsh-basin check used the exact full two-block sample
+map from Section 10.134 with a direct Walsh constructor which was verified
+entry-for-entry against the certified constructor at `k=2,3`.  The results
+are **Fixed-seed Monte Carlo evidence**:
+
+| `k` | full order `N` | uniform samples | positive defects | nonzero `kappa_*` | zero-hit 95% upper bound |
+|---:|---:|---:|---:|---:|---:|
+| 4 | 512 | 10,000 | 0 | 0 | 0.00029953 |
+| 5 | 2,048 | 2,000 | 0 | 0 | 0.00149674 |
+| 6 | 8,192 | 250 | 0 | 0 | 0.01191142 |
+
+Every sample entered the hard branch, yet the better anchored repair paid
+the complete response.  This favors basin decay in the tested family but is
+not an asymptotic probability theorem.  In accordance with the requested
+stopping rule, the Walsh/bent/greedy-basin line is archived.  Reproduction is
+by `computations/probe_regular_hadamard_full_basin_scaling.py`; the payload is
+`computations/results/regular_hadamard_full_basin_scaling.json`.
+
+#### 10.135.8 Operational table
+
+| Track | Last concrete result | Classification | Next falsifiable step | Stop condition |
+|---|---|---|---|---|
+| Scalar finite temperature | Oscillating analytic countermodel and exact `K_4` scale falsifier | Proved no-go for scalar axioms | None without signing-specific state | Do not reopen centering/Fekete/convexity variants |
+| Joint reverse KL | (10.1600)--(10.1604) and exhaustive `N<=7` audit | Exact sufficient reformulation; finite evidence | Prove a power saving for exact low-temperature minimizers, or a fixed-`beta` linear obstruction | A linear minimizer-scale obstruction, or a state equivalent to full parent output |
+| Conference tangent | Linear adverse fourth-order coefficient; KL starts at eighth order | Exact nonuniform Taylor theorem plus finite Monte Carlo | Uniformize the remainder and prove or refute the minimizer link | Another conference sample without either bridge |
+| Disorder counting | Product theorem (10.1609) | Verified, but parameter-contracting | Resume only with a support-edge comparison restoring fixed `beta` | Another bulk LDP with no boundary resolution |
+| Littlewood/SK literature | No asymptotically lossless mapped theorem | Verified negative audit | Watch only for complete-support flat quadratic or adversarial-disorder endpoint results | Fixed-factor BH/Sidon or typical-disorder theorem |
+| Walsh basin | Zero hits through `N=8192` in the bounded final check | Finite numerical evidence | None in the current campaign | Archived by the requested decision rule |
+
+#### 10.135.9 Updated frontier
+
+The rigorous asymptotic interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                           \tag{10.1612}
+```
+
+No bound, completed recurrence step, convergence mechanism, or genuine
+nonconvergence mechanism improved.  The scalar finite-temperature proposal
+is valid as a reduction but is already exhausted at the scalar level by
+(10.1594)--(10.1598).  The microcanonical and Littlewood abstractions do not
+repair its changing parameter.
+
+The strongest surviving target is the joint fixed-`beta` defect
+(10.1603)--(10.1604), with falsification first.  It has the correct leading
+scale and avoids an extremal parent spin, but it is stronger than finding one
+good bridge and currently retains the full output law.  It is therefore a
+precise sufficient reformulation, not yet mathematical progress under the
+README definition.  The next bounded phase should either prove a uniform
+power saving for exact contracted-temperature minimizers or convert the
+conference tangent into a fixed-`beta`, minimizer-linked linear obstruction.
+If neither occurs, consolidate rather than replacing it by another scalar or
+rapid-wave variant.
