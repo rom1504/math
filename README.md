@@ -135,6 +135,21 @@ hypothesis, normalization, and dependency before importing a result into the
 ledger.  Literature search should broaden the proof strategy, not replace
 independent verification.
 
+## Active working state
+
+Use [`ACTIVE_STATE.md`](ACTIVE_STATE.md) as the compact context for ordinary
+working agents.  It contains the exact problem, current rigorous frontier,
+strongest route obstructions, live theorem targets, selected architecture, and
+stopping conditions.  Keep it to roughly two to four pages and update it only
+at material campaign checkpoints or when the selected architecture changes.
+
+Treat `ledger.md` as the complete archival record.  Do not give the full
+ledger automatically to independent literature scouts, blank-slate
+researchers, or contrarian agents: let them freeze a concrete proposal first.
+Archive-verification agents may then use the entire ledger to detect prior
+work, hidden equivalences, and proved obstructions.  `ACTIVE_STATE.md` is a
+working abstraction, not a replacement for the ledger or its evidence.
+
 ## Ledger discipline
 
 Keep the ledger as the durable source of truth. Clearly label statements as:

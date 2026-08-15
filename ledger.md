@@ -43234,3 +43234,55 @@ The consolidation diagnostic found no primary progress and no defensible
 autonomous next target.  The active state is now a deliberate research pause
 pending external review or a genuinely new user-authorized architecture, with
 all exact positive and negative results preserved in the ledger and artifacts.
+
+### 10.141 Retrieval-grounded multi-domain panel launch
+
+Date: 2026-08-15.
+
+The user explicitly authorized a new research campaign with a different
+architecture.  This does not retroactively alter the evidence-based pause in
+Section 10.140 or weaken the README stopping rule.  Autonomous research is
+resumed as a retrieval-grounded panel: independent literature scouts first,
+separate ledger-blind domain researchers second, full-archive adversarial
+comparison only after proposals are frozen, cross-domain criticism and
+contrarian searches next, and severe director selection before execution.
+
+`ACTIVE_STATE.md` is now the compact working state.  The full ledger remains
+the archival evidence base and must not be supplied automatically to scouts or
+blank-slate researchers.  At least six domains will be sampled: discrepancy,
+spin glasses, coding/association schemes, Banach/tensor theory,
+extremal/probabilistic combinatorics, and dense graph limits.  Mathematical
+route judgments remain agent-authored; the panel architecture and coverage
+requirements are user workflow directives.
+
+#### 10.141.1 Operational table
+
+| Team or stage | Target | Last concrete result supplied initially | Next falsifiable step | Stopping condition |
+|---|---|---|---|---|
+| Discrepancy toolkit/researcher | Native vector-balancing or hereditary mechanism | Naked problem and rigorous interval only | Freeze an exact lemma strictly below full sign optimization | Abstract analogy or a generic discrepancy bound with fixed leading loss |
+| Spin-glass toolkit/researcher | Interpolation or zero-temperature limit architecture | Naked problem and rigorous interval only | Identify an all-temperature comparison with checked minimax order | Strict-high-temperature result with no continuation mechanism |
+| Coding toolkit/researcher | Covering-radius or representation mechanism | Exact augmented cut-code map | Isolate a rooted/all-coset theorem with compressed state | Pair-distance data that is translation-blind or the full coset histogram |
+| Banach/tensor toolkit/researcher | Tensor norm or quadratic-form asymptotic parameter | Naked problem and interval only | Give a no-fixed-loss same-spin or multiplicative inequality | Ordinary polarization or separately paid channels |
+| Extremal/probabilistic toolkit/researcher | Absorption, decomposition, or random-algebraic transfer | Naked problem and interval only | Produce an all-order realization or scalable separated construction | Isolated design subsequences without transfer/lower obstruction |
+| Graph-limit toolkit/researcher | Compact limit object plus all-order realization | Naked problem and interval only | Prove the discrete extrema are continuous/recoverable in the topology | A limit object that loses Boolean spikes or exists only on subsequences |
+| Contrarian nonconvergence | Two infinite normalized subsequences with fixed separation | Exact small values and interval only | Freeze a scalable construction plus required universal theorem | Any intermediate-route counterexample or finite residue pattern |
+| Contrarian short proof | A 3--10 page abstraction and exact implication | Naked problem and interval only | Define a monotone/multiplicative/asymptotic parameter and test it | Renamed full optimization or fixed leading loss |
+| Archive verification | Classify frozen proposals `A/B/C/D` | Complete repository after proposal freeze | Locate exact implication-level collision or certify novelty | Rejection by terminology alone |
+| Director selection | Rank standardized candidate cards | Independent and adversarial reports | Select at most two qualified routes | No `A` route or two substantive no-progress checkpoints |
+
+#### 10.141.2 Updated frontier
+
+The rigorous interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}
+```
+
+No mathematical result is claimed at campaign launch.  The change is a
+research-control decision: broaden retrieval and preserve independent domain
+translations before exposing agents to the archive.  The next substantive
+checkpoint is the archive classification of frozen specialist proposals.

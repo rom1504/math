@@ -1,146 +1,113 @@
 # Strategic steering
 
-Evidence cutoff: Section 10.140 (2026-08-15). Status: **autonomous route
-generation paused after consolidation diagnostic; external review advised**.
-
-If ordinary waves resume, keep Wave 61 as the next blank-slate boundary;
-refresh earlier after a decisive result or architecture change.
+Evidence cutoff: commit `e1e298db5afcbf939b994876cf08951e479c0cfe`
+(2026-08-15). Status: **retrieval-grounded multi-domain panel active**.
 
 ## User-stated objective and workflow directives
 
-The objective is to determine whether `M_n/n^(3/2)` converges; `1/2` is a
-conjectural assessment, not another user objective. Reproducibility,
-verification, Git checkpoints, both convergence and nonconvergence, and the
-README stopping rule remain user directives.
+The objective is to determine whether `M_n/n^(3/2)` converges.  Convergence
+to any constant is success; the conjectural value `1/2` is not the objective.
+A rigorous proof of nonconvergence is also success.
 
-The user's latest input supplied external research suggestions, not
-mathematical directives. They were independently evaluated; route selection
-and conjectures remain agent-authored. `README.md` is unchanged.
+The user explicitly authorized this new campaign after the stopping rule had
+correctly paused the preceding architecture.  The campaign must use six or
+more independently briefed domains, separating literature retrieval from
+problem research; keep the archive hidden until proposals are frozen; run
+adversarial archive comparison, cross-domain criticism, two contrarians, and
+one foreign-packet experiment per specialist; then select at most two routes
+for execution.  The long ledger is archival context and `ACTIVE_STATE.md` is
+the compact working context.
 
-## Agent-authored frontier
+The panel must check moving representations, entropy-weighted bridges,
+growing-state hierarchies, and the all-temperature limitation of the current
+pressure route, without presuming any is correct.  These are coverage and
+workflow directives, not user-authored mathematical conjectures.  Route
+selection and every mathematical assessment below remain agent-authored.
+
+The README verification, Git, consolidation, and stopping rules remain in
+force.  After two substantive checkpoints on a selected architecture without
+primary progress, return to director review instead of producing adjacent
+variants.
+
+## Agent-authored rigorous frontier
 
 ```math
 0.336493364431\ldots
 \le \liminf_{n\to\infty}{M_n\over n^{3/2}}
 \le \limsup_{n\to\infty}{M_n\over n^{3/2}}
-\le {1\over2}.                                      \tag{S1}
+\le {1\over2}.
 ```
 
-No bound, recurrence step, convergence theorem, or genuine nonconvergence
-mechanism improved at the last two substantive checkpoints.
-
-## Strongest new theorem and its limit
-
-For a pointwise-positive operator kernel on the edge cube whose Fourier
-coefficients and complete remainder coefficients are Loewner-positive, the
-full joint same-switch theorem is
+The exact coding formulation is
 
 ```math
-\boxed{(\lambda-\mu(a))_+T_a\preceq J.}             \tag{S2}
-```
-
-It preserves matrix cancellation. If the root is constant, however, a least
-generalized eigenvector scalarizes the certificate with exactly the same
-bound. Correct scale requires Fourier support `exp(Omega(n log n))`; rank
-alone supplies no strength.
-
-Partial matchings have that hidden size, but their direct uses are closed:
-
-```math
-\lambda-{J\over T_a}=O(n^{-1})
-```
-
-for radial matching squares, and
-
-```math
-\lambda\le {1\over n-1}
-```
-
-for arbitrary-rank kernels supported directly on matchings. Every pure
-matching add/delete representation also has coefficient at most
-
-```math
-{4\over3\sqrt3}=0.769800\ldots<1.                   \tag{S3}
-```
-
-Broader difference-of-matchings blocks remain formally open, but no uniform
-root theorem emerged and pure matching transitions cannot reach the
-conference coefficient.
-
-## Exact sufficient convergence statement
-
-A moving-kernel family defined independently of `M_n` would prove convergence
-to `1/2` if
-
-```math
-\lambda_n={1-o(1)\over\sqrt n},
+M_n={n\choose2}-2\rho(\mathcal C_n^+),
 \qquad
-\sup_a\lambda_{\min}(T_a^{-1/2}J_nT_a^{-1/2})
-=o(n^{-1/2}).                                      \tag{S4}
+\mathcal C_n^+=\{(\sigma x_ix_j)_{i<j}:\sigma,x_i\in\{\pm1\}\}.
 ```
 
-Then (S2) gives `Q(a)>=(1/2-o(1))n^(3/2)` uniformly and conference orders
-give the upper subsequence. The root estimate can encode the full signed
-coset histogram, so (S4) is not presently a strict reduction.
+No convergence recurrence, separated subsequences, or strict reduction is
+currently known.  The previous campaign supplied theorem-level obstructions
+but no primary progress.
 
-## Blank-slate abstraction audit
+## Strongest inherited obstructions
 
-1. **Uniform block completion.** The proposed inequality was
+1. Uniform block composition exposes the full state-dependent bridge
+   maximization; independent/random bridges retain a leading rectangular-norm
+   cost.
+2. Scalar finite-fibre atoms and separately paid left/right channels have a
+   fixed leading loss.  Ordinary polarization can be asymptotically sharp.
+3. Canonical same-map Gaussian/Krivine response has a conference-scale ceiling;
+   asymmetry without a same-spin recoupling theorem does not escape it.
+4. Fixed-level SOS, fixed replica depth, and bounded dual-cycle data miss
+   zero-entropy Boolean resonances.  Correct scale needs degree `Theta(n)` and
+   can restore the complete coset histogram.
+5. Bounded or local restriction profiles lose a leading `n^(3/2)` amount;
+   profiles accurate enough to repair this have repeatedly reconstructed the
+   parent optimization.
+6. The exact operator moving-kernel inequality preserves joint cancellation,
+   but constant-root rank scalarizes without loss.  Direct matching support
+   has coefficient at most `1/(n-1)`, and pure matching transitions remain a
+   fixed factor below the coefficient-one target.
+7. Entropy tilting gives an exact Rényi/martingale identity, but fixed small
+   tilt fails even on conference children and known isolated good bridges cost
+   `Theta(n^2)` entropy.  The needed diffuse `O(n)`-entropy law is open.
+8. Finite-temperature pressure is controlled in a strict high-temperature
+   regime only.  No credible continuation to every fixed inverse temperature
+   or to zero temperature is known.
 
-   ```math
-   D(A*_RB)\le\sqrt{N/p}D(A)+\sqrt{N/q}D(B)+O(N^{3/2-\delta}).
-   ```
+These are class-specific theorems, not permission to reject a proposal by
+vocabulary alone.  Archive verifiers must identify the actual implication.
 
-   It would make `M_n/sqrt(n)` almost subadditive. Comparison showed that it
-   is exactly the existing state-dependent bridge objective, with a stronger
-   universal child quantifier and the same rectangular norm obstruction.
+## Current research architecture
 
-2. **Bounded dual-cycle pressure.** Fixed-degree Eulerian cumulants were
-   proposed to determine the minimized finite-temperature pressure. The exact
-   pressure-to-ground-state mapping is valid. Fixed degree, however, misses
-   planted zero-entropy resonances; degree `Theta(n)` restores the complete
-   signed coset histogram. This is not a strict compression.
+No mathematical route is selected in advance.  Independent literature scouts
+will build primary-source toolkits for discrepancy, spin glasses, coding and
+association schemes, Banach/tensor theory, extremal/probabilistic
+combinatorics, and dense graph limits.  Separate specialists will then freeze
+native theorem architectures before seeing the archive.  Contrarian
+nonconvergence and short-proof searches run independently.
 
-3. **Symplectic/Witt nonconvergence.** Orders `4^k` and `2*4^k` were proposed.
-   The symplectic family has exact cap `(n/2)(sqrt(n)+1)`, so separation would
-   require a bad subsequence above `1/2`. Dense Paley conference restrictions
-   give `M_n<=(1/2+o(1))n^(3/2)` on every order and rigorously falsify it.
+Each proposal must isolate a lemma strictly weaker than full Boolean/coset
+optimization, an exact implication to convergence or nonconvergence, and a
+finite or structural falsifier.  Full-archive verifiers classify it `A` (new
+and surviving), `B` (new with one isolated issue), `C` (equivalent archived
+obligation), or `D` (rigorously obstructed).  Only `A/B` proposals receive a
+revision and cross-domain critique.
 
-The candidates were respectively an equivalent obligation, an obstructed
-bounded-state mechanism, and a falsified construction. None justifies a new
-campaign. Details are in Section 10.140 and the diagnostic artifact.
+## Selection and stopping conditions
 
-## Inactive mechanisms
+At most two candidates may be executed.  A candidate qualifies only if it
+imports a genuinely unused theorem, proves a strict information compression,
+survives an exact falsifier, creates a no-fixed-loss cross-order mechanism, or
+gives a plausible scalable nonconvergence construction.
 
-Selected-prior/common-active-face, scalar atoms, separately paid channels,
-ordinary polarization, same-map Gaussian response, fixed-level SOS and
-replicas, Walsh basin classification, radial moving kernels, scalar
-transversals, direct matching support, pure matching add/delete modules,
-uniform bridge sampling, fixed small disorder tilts, isolated algebraic
-bridges, and eigenvalue-only polar variants remain inactive.
+Before computation, state the minimal missing theorem.  Assign independent
+proof and disproof attempts and verify every normalization.  Stop a route
+immediately when its theorem is false unless the counterexample identifies a
+qualitatively different statement.  If the panel produces no `A` candidate,
+record that conclusion plainly rather than manufacture another route.
 
-## Conditions for a justified restart
-
-External review or a new architecture should supply at least one of:
-
-1. a coefficient-one graph-orbit moving representation with an algebraic
-   rooted mass theorem satisfying (S4);
-2. a diffuse bridge law with `O(n)` entropy and a proved linear pressure gain;
-3. a strict reduction of the existential bridge state to demonstrably less
-   information than full parent optimization; or
-4. a genuine nonconvergence mechanism producing two constants below `1/2` on
-   multiplicatively separated epochs.
-
-Suggestions must be checked against the ledger before becoming targets.
-Vocabulary-only reformulations and additional finite caps do not qualify.
-
-## Research-director decision
-
-This is the second consecutive substantive checkpoint without primary
-progress, followed by the required bounded diagnostic. The recent external
-moving-representation idea was tested with executor, adversarial-verifier,
-and director passes and yielded rigorous but route-limiting theorems.
-
-Pause autonomous route generation and seek external mathematical review. This
-does not claim the problem is solved or blocked. Resume only after explicit
-authorization tied to a genuinely new input; do not open a nearby variant.
+The next steering refresh is due after panel classification, and earlier if a
+decisive theorem, counterexample, or selected architecture emerges.  That
+refresh must include the README blank-slate abstraction audit.
