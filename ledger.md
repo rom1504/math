@@ -42858,3 +42858,227 @@ stopping counter.  Continue that one bounded attempt; if the next
 substantive checkpoint also supplies no primary progress, invoke the README
 consolidation rule and a blank-slate diagnostic rather than opening more
 nearby kernel variants.
+
+### 10.139 Consolidation checkpoint after the high-rank moving-fiber attempt
+
+Date: 2026-08-15.
+
+The bounded attempt prescribed by Section 10.138 is complete.  It produced an
+exact operator theorem and several scalable class obstructions, but no new
+bound, recurrence, convergence mechanism, or nonconvergence mechanism.  This
+is the second consecutive substantive checkpoint without primary progress
+after the Frobenius reset.  In accordance with `README.md`, nearby kernel
+variants are paused and one bounded blank-slate diagnostic is now required.
+
+The proofs are in
+`artifacts/high_rank_moving_fiber_matching_obstruction.md`.
+
+#### 10.139.1 Complete operator-valued inequality
+
+Let `K` be a pointwise-positive operator kernel on the edge cube, let every
+Fourier coefficient `Q_R` be positive semidefinite, and suppose the complete
+remainder has positive Fourier coefficients
+
+```math
+B_R=(A_EQ)_R-\lambda Q_R\succeq0.
+```
+
+With
+
+```math
+T_a=\sum_{c\in C_n^+}K(a+c),qquad
+J=\sum_{c\in C_n^+}(\tau(c)-\lambda)K(c),
+```
+
+subgroup Fourier positivity gives the exact Loewner inequality
+
+```math
+\boxed{(\lambda-\mu(a))_+T_a\preceq J.}             \tag{10.1652}
+```
+
+This retains all matrix channels until the final generalized Rayleigh
+quotient.  It is a valid joint same-switch inequality, not a separately paid
+scalar decomposition.
+
+If the root is made constant by `Q_d=0` for nonzero `d in D=(C_n^+)^perp`,
+then a least generalized eigenvector compresses (10.1652) to a scalar kernel
+with **exactly the same bound**.  Thus operator rank itself gives no advantage
+in the constant-root cone.  Any compression with
+`lambda>=c/sqrt(n)` has Fourier support
+
+```math
+\exp(\Omega_c(n\log n)),                            \tag{10.1653}
+```
+
+by the Bollobas--Lee--Letzter cube-subgraph theorem.  A growing hidden state is
+necessary, but its rank is not by itself a new proof mechanism.
+
+#### 10.139.2 Exact matching twirl
+
+Partial matchings of linear size have
+
+```math
+|\mathcal M_l|=\exp(\Theta(n\log n)),
+\qquad
+c_l={\sqrt{(l+1)\binom{n-2l}{2}}\over\binom n2}
+=\Theta(n^{-1/2}).                                  \tag{10.1654}
+```
+
+They therefore meet the two necessary size tests.  If matrix amplitudes
+`V_M` are supported on matchings and
+
+```math
+H_U(a)=\sum_{\partial M=U}\chi_M(a)V_M,
+```
+
+then two matchings lie in the same cut-code Fourier fiber exactly when their
+covered vertex sets agree.  Their difference is a union of alternating even
+cycles, and the rooted mass is
+
+```math
+\boxed{{T_a\over|C_n^+|}=\sum_UH_U(a)^*H_U(a).}       \tag{10.1655}
+```
+
+The numerator is the corresponding quotient-adjacency quadratic form.  In a
+scalar layer this is the earlier sum of squared signed principal hafnians.
+The perfect-matching association scheme diagonalizes the unrooted
+alternating-cycle relations, but it does not control the arbitrary signing
+twist in (10.1655).
+
+#### 10.139.3 Two scalable matching obstructions
+
+For a nonnegative `S_n`-radial scalar matching amplitude, quotienting by the
+cut code multiplies the layer transition by the square root of the
+perfect-matching fiber size.  The exact Rayleigh comparison gives
+
+```math
+\boxed{
+\lambda-{J\over T_a}
+\le {2\over\sqrt{\binom n2}}=O(n^{-1})}             \tag{10.1656}
+```
+
+whenever `T_a>0`; a zero root is vacuous.  Thus this construction has an
+internal `n^(-1/2)` eigenvalue but loses the whole leading scale to quotient
+leakage.
+
+There is a stronger arbitrary-rank theorem.  If
+
+```math
+K(a)=\sum_{M\ {m matching}}\chi_M(a)Q_M,qquad Q_M\succeq0,
+```
+
+is pointwise positive and its complete remainder is operator-positive-type,
+then average to the `n-1` edges in one vertex star.  Only the empty and
+singleton matching coefficients survive, so positivity at the all-negative
+star gives
+
+```math
+Q_\varnothing-\sum_{e\ni i}Q_e\succeq0.
+```
+
+Summing over vertices and combining with the empty remainder coefficient
+proves
+
+```math
+\boxed{\lambda\le{1\over n-1}.}                     \tag{10.1657}
+```
+
+No radiality, commutativity, equivariance, or scalar decomposition is used.
+Direct Fourier support on matchings is therefore closed at every rank.
+
+Finally, every add/delete partial-matching representation block is a
+compression of the full matching incidence operator.  Hence
+
+```math
+\boxed{
+\lambda\le
+\left({4\over3\sqrt3}+o(1)\right)n^{-1/2},
+\qquad {4\over3\sqrt3}=0.769800\ldots<1.}           \tag{10.1658}
+```
+
+Even a perfect root estimate in this pure architecture cannot reach the
+coefficient `1/sqrt(n)` required for convergence to the conference upper
+bound.
+
+#### 10.139.4 Positive check and exact remaining class
+
+The common standard `S_n` module `1^perp` embeds in every partial-matching
+layer.  Its transition calculation gives a valid rank-`n-1` moving projection
+with a complete unsplit Gram remainder and `lambda=Theta(n^(-1/2))`.  Its cut
+root, however, is exactly `(n-1)^2` times the scalar signed-hafnian statistic.
+The parity floor is rigorous; finite tests through order eight are vacuous
+beyond the first layer.  This is a positive construction theorem but not a
+new root channel.
+
+The matching theorems do not cover a noncommuting amplitude whose
+autocorrelation has Fourier support on broader differences of matchings,
+including alternating paths and cycles.  Such a construction must use
+cross-level multiplicity blocks jointly and prove a uniform lower bound for
+(10.1655).  No such bound emerged.  Moreover, the coefficient ceiling
+(10.1658) means that pure matching add/delete transitions cannot prove the
+conjectural limiting value even if that root problem were solved.
+
+#### 10.139.5 Consolidated classification
+
+1. **Verified results strictly reducing the original problem.** None.  The
+   operator theorem extends the valid certificate interface, but its uniform
+   root obligation remains.
+2. **Route falsifiers.** Constant-root rank as intrinsic strength; radial
+   matching squares; direct matching Fourier support at arbitrary rank; and
+   pure add/delete matching representations as a coefficient-one route.
+3. **Equivalent sufficient reformulations.** The general operator root ratio
+   in (10.1652), and the signed-hafnian matrix root in (10.1655).  Neither is
+   demonstrated simpler than the original bare tail.
+4. **Finite or numerical evidence.** The standard-module family is vacuous on
+   exact saved minimizers through order eight beyond its first layer.  This is
+   corroboration only.
+
+#### 10.139.6 Complete implication chains for live lemmas
+
+| Live statement | Chain to convergence | Additional bridges | Simpler than the bare tail? |
+|---|---|---|---|
+| General rooted moving kernel | Construct `K_n` with `lambda_n=(1-o(1))/sqrt(n)` and `sup_a lambda_min(T_a^-1/2 J_n T_a^-1/2)=o(n^-1/2)`; (10.1652) gives `mu(a)>=(1-o(1))/sqrt(n)`; hence `Q(a)>=(1/2-o(1))n^(3/2)`; conference orders give convergence to `1/2` | Pointwise positivity, both Fourier-Gram conditions, correct coefficient, and a uniform algebraic root estimate | **No evidence yet.** The root estimate can encode the full signed coset histogram |
+| Difference-of-matchings multiplicity block | Build a noncommuting block satisfying the preceding kernel hypotheses; prove a uniform bound for (10.1655); then use the same chain | A graph orbit beyond pure matching transitions is also needed to escape (10.1658) | **No.** The arbitrary diagonal signing twist remains as hard as the signed-hafnian tail |
+| Diffuse entropy-tilted bridge | Prove (10.1650) uniformly on comparable splits; obtain summable pressure composition; prove fixed-temperature limits; send temperature to infinity using the uniform free-energy sandwich | An explicit `O(n)`-entropy law, linear pressure gain, uniformity in child signings and temperatures | **Not demonstrated.** The law may encode full bridge optimization |
+| Polar pressure | Prove the frame-dependent involution/pressure lemma; derive the missing fixed-temperature comparison; compose pressures; take zero temperature | Dense noncommuting frame control and all-temperature extension | **Not demonstrated.** Existing isotropic/eigenvalue versions fail |
+| Genuine nonconvergence | Produce fixed `epsilon>0` and two infinite order subsequences with normalized values separated by `epsilon` | Scalable upper constructions on one subsequence and uniform lower obstruction on another | **No candidate mechanism.** Finite residue effects do not suffice |
+
+#### 10.139.7 Research-director decision and operational table
+
+The moving-projection suggestion was worth testing: it supplied the first
+operator same-switch theorem and identified exactly why a growing state is
+necessary.  The partial-matching realization, however, is now bounded away
+from the required coefficient and its two direct kernels are scalably closed.
+Continuing with nearby association-scheme variants would violate the stopping
+discipline.
+
+| Track | Last concrete result | Next falsifiable step | Stopping condition |
+|---|---|---|---|
+| General moving representation | Operator inequality (10.1652) | Only a graph orbit with coefficient one and a root identity independent of the full coset histogram | Another rank-only or unrooted association-scheme reformulation |
+| Partial matchings | Obstructions (10.1656)--(10.1658) | None within pure add/delete matching architecture | Any direct matching-support or radial square variant |
+| Entropy-tilted bridges | Exact Renyi martingale and small-tilt no-go | A diffuse `O(n)`-entropy law with linear pressure gain | Uniform sampling, fixed small tilt, or isolated bridge orbit |
+| Nonconvergence | No scalable mechanism | Separated infinite subsequences | Another intermediate-route counterexample |
+
+The automatic research loop is therefore paused for the required bounded
+blank-slate diagnostic.  Its job is to decide whether there is a genuinely
+different, more tractable formulation, not to rename (10.1652) or
+(10.1655).
+
+#### 10.139.8 Updated frontier
+
+The rigorous interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                    \tag{10.1659}
+```
+
+No primary progress occurred at this second substantive checkpoint.  The
+operator theorem is rigorous and the matching obstructions substantially
+narrow the new route, but they do not reduce the original convergence
+problem.  One consolidation diagnostic is now active.  No replacement wave
+or adjacent moving-kernel search may begin until that diagnostic is
+synthesized and an evidence-based continuation decision is committed.
