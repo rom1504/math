@@ -1,134 +1,148 @@
 # Strategic steering
 
-Evidence cutoff: distributed-irregularity/Frobenius-stability checkpoint (2026-08-14).
-Status: **finite-temperature averaged-pressure campaign active; coordinate puncturing closed**.
-Next mandatory blank-slate refresh: Wave 61 if ordinary waves resume, or after
-five substantial campaign checkpoints from this one, whichever comes first.
+Evidence cutoff: Section 10.138 (2026-08-15). Status: **bounded high-rank
+moving-representation attempt active; scalar fibers and small tilts closed**.
+
+Next mandatory blank-slate refresh: Wave 61 if ordinary waves resume, or five
+substantial campaign checkpoints after the last full refresh; earlier after
+a decisive theorem, counterexample, or route change.
 
 ## User-stated objective and workflow directives
 
-The research objective is to determine whether `M_n/n^(3/2)` converges. The conjectural value `1/2` is not an additional user objective.
-
-Reproducible artifacts, independent verification, regular Git checkpoints, and the README consolidation/stopping rule remain workflow directives. Mathematical conjectures and route rankings below are agent-authored.
-
-The latest user input supplied the fixed-temperature pressure reduction as a strategic lead, recommended a quadratic-Littlewood literature audit, and requested that the Walsh/bent basin line end unless its final bounded experiment found a persistent basin. It did not direct the mathematical conclusion or make any route a user objective.
+The objective is to determine whether `M_n/n^(3/2)` converges; the
+conjectural value `1/2` is not another user objective. Reproducibility,
+verification, Git checkpoints, and README stopping rules remain directives.
+The latest input supplied external research feedback, not mathematical
+directives. Route rankings below are agent-authored; `README.md` is unchanged.
 
 ## Agent-authored assessment
 
-The rigorous ground-state frontier is unchanged:
+The rigorous frontier is unchanged:
 
 ```math
 0.336493364431\ldots
-\le \liminf_{n\to\infty}\frac{M_n}{n^{3/2}}
-\le \limsup_{n\to\infty}\frac{M_n}{n^{3/2}}
-\le \frac12.                                      \tag{S1}
+\le \liminf_{n\to\infty}{M_n\over n^{3/2}}
+\le \limsup_{n\to\infty}{M_n\over n^{3/2}}
+\le {1\over2}.                                      \tag{S1}
 ```
 
-For
+## New moving-representation theorem
+
+For `E=binom(n,2)`, augmented cut code `C_n^+`, and `mu(a)=Q(a)/E`, the
+imported moving projections have overlap `kappa>=0` and unsplit remainder
 
 ```math
-P_n(\beta)=\min_A\log\left(2^{-n}\sum_x
-\cosh\!\left({\beta H_A(x)\over\sqrt n}\right)\right),
+F=(\tau-\lambda)\kappa\succeq_{\rm PD}0.
 ```
 
-convergence of `P_n(beta)/n` for every fixed `beta>0` would imply convergence in (S1) through the exact soft-max squeeze. Scalar bridge subadditivity still contracts `beta`, and the analytic countermodel plus the exact order-four falsifier show that centering, convexity, restriction monotonicity, and scalar interpolation do not repair this.
-
-## New fixed-temperature theorems
-
-The July 2026 theorem of Fan--Misiakiewicz--Wang--Wen applies exactly to normalized symmetric conference matrices. Define
-
 ```math
-\psi(c)=\frac14\left[
-\sqrt{1+4c^2}-1-
-\log\frac{1+\sqrt{1+4c^2}}2\right].                \tag{S2}
+T_a=\sum_{c\in C_n^+}\kappa(ac),
+\qquad J_n=\sum_{c\in C_n^+}F(c),
 ```
 
-Along Paley conference orders,
+subgroup Fourier positivity proves
 
 ```math
-\frac1r\log\overline Z_r(A_r,\beta/\sqrt r)
-\longrightarrow\psi(\beta),
-\qquad 0<\beta<\frac12.                            \tag{S3}
+\boxed{(\lambda-\mu(a))_+T_a\le J_n.}               \tag{S2}
 ```
 
-Nearby Paley orders plus restriction monotonicity give the unconditional bound
+The published packing theorem alone is coset-blind: `C_n^+` has minimum
+distance `n-1`, and every translate has identical internal distances.  The
+new information is the rooted cross term in (S2), not the packing bound.
+
+The exact convergence lemma is a family defined without `M_n` satisfying
 
 ```math
-\limsup_n\frac{P_n(\beta)}n\le\psi(\beta),
-\qquad 0<\beta<\frac12.                            \tag{S4}
-```
-
-There is also a new exact spectral theorem. If `mu` is any compact mean-zero law of variance `c^2` whose real R-transform branches reach one, and
-
-```math
-J(\mu)=\frac12\int_0^1R_\mu(u)\,du,
-```
-
-then
-
-```math
-J(\mu)+J(-\mu)\ge2\psi(c),
+\lambda_n={1-o(1)\over\sqrt n},
 \qquad
-\max\{J(\mu),J(-\mu)\}\ge\psi(c).                 \tag{S5}
+\sup_a{J_n\over T_a}=o(n^{-1/2}).                    \tag{S3}
 ```
 
-Equality in the maximum is unique to the symmetric Bernoulli law. The proof is a variational Cauchy-transform identity followed by product Jensen and AM--GM. The `cosh` partition selects the maximum of the two orientations, so no spectral-symmetry assumption is hidden.
+(S2) then gives `Q(a)>=(1/2-o(1))n^(3/2)` uniformly, and conference upper
+bounds prove convergence. The remaining root-mass bound is not demonstrably
+simpler than the bare tail. Canonical rank-one kernels give only RMS through
+tested order 18; their higher-level root mass collapses.
 
-Consequently, every signing sequence with scaled operator norm uniformly below `1/2` and the fixed-power delocalization of Assumption 2.9 has limiting pressure at least `psi(beta)`. A sequence below `psi(beta)-delta` must approach the norm threshold or have a persistent fixed-power entrywise/traffic irregularity.
-
-The available signed-permutation universality theorem weakens uniform diagonal control to convergence of the averaged diagonal-monomial distribution, but retains uniform `n^(-1/2+o(1))` bounds for every off-diagonal diagonal monomial. Frobenius-near conference structure supplies the averaged part. An explicit `n^(3/4)`-edge conference star perturbation remains Frobenius-near and norm-near while creating an `n^(-1/4)` entry of the squared scaled matrix, so Frobenius closeness alone cannot supply the missing uniform condition.
-
-That obstruction is now scalable across coordinates: a distributed conference-star construction has conference pressure, the full averaged diagonal-monomial law, and `n^(-1/2+eta)` entries of `X^2` on a linear matching. Every endpoint cover is linear. Thus `o(n)`-coordinate puncturing is false even for correct-pressure sequences, and maximum-entry delocalization is not necessary for the thermodynamic answer.
-
-The positive replacement is a dimension-free high-temperature interpolation inequality. Under a common operator margin `kappa<1/2`, `|log Zbar(X)-log Zbar(Y)| <= (K_kappa/2)||X-Y||_*`; hence normalized-Frobenius `o(1)` distance costs `o(n)` pressure. If `X^2` is normalized-Frobenius close to `beta^2 I`, pressure transfers to the polar involution `beta sign(X)`. This is a verified reduction unavailable in the previous assessment.
-
-## Uniform joint reverse-KL route
-
-For two conference children and a uniform sign bridge, the random parent law is
+Any rank-one partial dual-transversal has support at most `2^n`, so the
+Bollobás--Lee--Letzter cube spectral theorem forces
 
 ```math
-\tfrac12(\delta_{-1/\sqrt2}+\delta_{1/\sqrt2})
-\boxplus {\rm SC}(1/2).
+\lambda=O((n\log n)^{-1/2})=o(n^{-1/2}).             \tag{S4}
 ```
 
-The parent also satisfies the deterministic theorem pathwise. For every fixed `0<beta<sqrt(2)/6`, the exact full joint output obeys
+Thus scalar transversal fibers cannot reach (S3), even with perfect
+quotient alignment.  Correct scale needs `exp(Omega(n log n))` hidden
+support or a genuinely high-rank/nonabelian representation.
+
+## Leading route and falsification criterion
+
+The leading target is a **cut-specific high-rank moving fiber**: an
+`S_n`-equivariant family with possibly `exp(Omega(n log n))` hidden dimension,
+but polynomially closed `J_n,T_a` satisfying (S3).
+
+The state is genuinely weaker than parent maximization only if its
+definition is independent of `a` and its root-mass estimate follows from an
+algebraic identity or uniform annular bound, not from enumerating the signed
+Eulerian/coset histogram.  Reject a candidate if:
+
+- it is radial rank one or an `exp(O(n))` scalar transversal;
+- its `T_a` collapses on a scalable signing;
+- `J_n/T_a` remains above `lambda_n` by fixed `n^(-1/2)` scale; or
+- its purported compressed state invertibly reconstructs the full coset
+  energy distribution.
+
+The focused literature check found no Delsarte, Terwilliger, cocycle-code, or
+signed-graph theorem supplying this root-mass bound.
+
+## Entropy-tilted bridge alternative
+
+For bridge pressure `L` and uniform output law `U`, the exact soft minimum is
 
 ```math
-\frac{D_{\rm KL}(U\Vert\Pi)}r\to0,
-\qquad
-\frac{G_{r,r}(\beta)}r\to
-\gamma(\beta)=\frac{\beta^2}{4}-2\psi(\beta)
-+2\psi(\beta/\sqrt2)>0.                            \tag{S6}
+\mathcal R_\lambda
+=-{1\over\lambda}\log\mathbb E_Ue^{-\lambda L}
+=\log\mathbb E_Ue^L-D_{1+\lambda}(U\Vert\Pi).        \tag{S5}
 ```
 
-Moreover, a uniform bridge reaches the same-temperature child target with probability at most `exp(-c_beta r)`. This converts the earlier nonuniform fourth-order tangent into a scalable fixed-temperature obstruction. It closes uniform averaging, fixed quantiles, polynomial sampling, and every compressed state that merely lower-bounds the same reverse KL on conference children.
+Its reveal recursion is an entropy-weighted martingale. An `exp(-O(N))`
+target basin with growing tilt gives a summable composition defect.
 
-This does not falsify the minimizer-optimized criterion: conference signings are not known to be exact pressure minimizers, and an exponentially rare algebraic bridge may exist. Do not spend further effort lower-bounding this KL on conference children; even the full divergence is sublinear.
-
-## Leading target and implication chain
-
-The strongest current target is the **polar-involution pressure theorem**. For fixed `beta<1/2`, prove that every symmetric involution `U_n^2=beta^2 I` arising at normalized-Frobenius distance `o(1)` from a flat hollow signing interaction satisfies
+On conference children, every small fixed tilt retains the full linear
+defect, while the known bridge has `Theta(r^2)` entropy. Keep only a diffuse
+law with
 
 ```math
-\log\overline Z(U_n)\ge n\psi(\beta)-o_\beta(n).       \tag{S7}
+D(q_r\Vert U)=O(r)
 ```
 
-If exact pressure minimizers can additionally be moved at `o(n)` pressure cost into the strict-norm Frobenius-near-conference class, Frobenius stability and (S7) supply the missing liminf, while (S4) supplies the limsup. This proves `P_n(beta)/n->psi(beta)` in that high-temperature range.
+and a linear pressure gain.  Uniform bridges, polynomial sampling, small
+fixed tilts, and isolated algebraic orbits are closed.
 
-This target is narrower than entrywise universality: the proved Frobenius inequality removes every maximum-entry repair obligation and permits distributed edits. It is not an eigenvalue-only statement. A padded active edge makes the exact rms, spherical, and determinant lower bounds false, although only by `O(1)`, while the best isotropic Gaussian trial for an involution misses `psi(beta)` by `beta^4/12+O(beta^6)`. Any proof of (S7) must use frame-dependent dense flat-hollow information or allow an `o(n)` localization correction. A separate minimizer-to-Frobenius bridge remains open, so the implication chain has two genuine obligations.
+## Ranked alternatives
 
-Even complete success for `beta<1/2` would not prove (S1); the zero-temperature squeeze needs fixed `beta` arbitrarily large. Extension beyond the replica-symmetric high-temperature theorem is a separate bridge.
+1. **High-rank rooted moving representation:** prove (S3), or establish a
+   scalable obstruction for every algebraically closed `S_n` family.
+2. **Diffuse entropy-tilted bridge law:** prove the `O(r)`-entropy pressure
+   gain, or a matching entropy-rate no-go.
+3. **Polar pressure:** return only with a frame-dependent involution theorem
+   or dense linear counterexample; landing and large `beta` remain open.
+4. **Direct composition/large temperature:** find a summable cross-order
+   defect without scalar temperature contraction.
+5. **Genuine nonconvergence:** produce fixed `epsilon>0` and two infinite
+   subsequences separated by `epsilon`, or prove `liminf<limsup`.
 
-## Ranked alternatives and falsification criteria
-
-1. **Averaged/polar pressure:** prove (S7), or construct a dense flat-derived polar family with pressure below `psi(beta)` by a linear amount. An `O(1)` padded-core deficit does not falsify it.
-2. **Minimizer landing:** put exact pressure minimizers into the strict-norm Frobenius-near-conference class at `o(n)` pressure cost. Coordinate puncturing and maximum-entry repair are closed; a global Frobenius edit is allowed.
-3. **Exponentially rare bridge:** give a compressed algebraic selector and a proved pressure/composition bound. Uniform or polynomial bridge search is closed by (S6).
-4. **Large-temperature/direct composition:** find a theorem beyond operator norm `1/2`, or an explicit constructor with summable normalized defect.
-5. **Genuine nonconvergence:** produce fixed `epsilon>0` and two infinite subsequences separated by `epsilon`, or prove `liminf<limsup`. Route-specific failures do not count.
-
-Walsh basin, scalar finite-temperature recurrences, conference KL lower bounds, selected-prior/common-active-face, scalar atoms, separately paid channels, canonical same-map Krivine rounding, and fixed-level SOS remain inactive.
+Walsh basins, selected-prior/common-active-face, scalar atoms, separately
+paid channels, canonical same-map Krivine rounding, fixed-level SOS, radial
+rank-one moving kernels, scalar transversals, and small fixed disorder tilts
+remain inactive.
 
 ## Checkpoint decision
 
-The Frobenius pressure inequality is primary theorem-level progress and the distributed matching is a scalable falsifier of the coordinate architecture. They do not improve a ground-state bound, complete a recurrence, or prove convergence/nonconvergence. Continue only the bounded polar-pressure test and the minimizer-to-Frobenius bridge. If neither yields a theorem or a linear dense-family counterexample at the next substantive checkpoint, consolidate the finite-temperature campaign rather than returning to maximum-entry traffic repairs.
+No ground-state bound, recurrence, convergence theorem, or nonconvergence
+mechanism improved. The root-mass lemma may be equivalent in difficulty, so
+this is the first no-primary-progress checkpoint after the Frobenius reset.
+
+Continue one bounded high-rank construction attempt.  If the next
+substantive checkpoint also yields no primary progress, apply the README
+consolidation rule and a blank-slate diagnostic before opening further
+variants.

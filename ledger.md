@@ -42550,3 +42550,311 @@ would still be needed to put exact pressure minimizers in the strict-norm,
 Frobenius-near-conference class. This is not yet a convergence proof, and the
 finite-rank Gaussian no-go forbids claiming that eigenvalues alone settle the
 polar target.
+
+### 10.138 Moving representations and entropy-tilted bridges
+
+This checkpoint evaluates the latest external research feedback rather than
+adopting its route ranking.  The August 2026 binary-code argument was checked
+against its primary paper and discovery notes.  Its mathematical mechanism is
+real: moving projections keep two individually unsigned mixed terms together
+until their sum becomes a positive Gram kernel.  A second suggested mechanism,
+probability-weighted rare-branch accounting, also has an exact analogue for
+bridge signs.  Both produce rigorous new interfaces here, but neither yet
+removes the remaining optimizer-scale obligation.
+
+#### 10.138.1 Exact cut-code mapping and the packing boundary
+
+Let `E=binom(n,2)` and let
+
+```math
+\mathcal C_n^+
+=\{(\sigma x_ix_j)_{i<j}:\sigma,x_i\in\{\pm1\}\}.
+```
+
+For an edge signing `a`,
+
+```math
+\mu(a):=\max_{c\in\mathcal C_n^+}{1\over E}\sum_ec_ea_e
+={Q(a)\over E},
+\qquad
+M_n=E-2\rho(\mathcal C_n^+).                         \tag{10.1640}
+```
+
+The code has size `2^n` and minimum distance `n-1` for `n>=5`.  Direct use
+of the imported packing theorem therefore sees only correlation
+`1-2(n-1)/E=1-4/n`.  Translating the code by `a` preserves every one of
+those internal distances, so the published theorem by itself is exactly
+coset-blind.  This is not a covering-radius theorem in disguise.
+
+The paper's stronger construction nevertheless supplies a usable rooted
+identity.  Its equal-rank projections have pointwise-nonnegative overlap
+`K(z,w)=kappa(zw)`, and its *complete* mixed-term remainder satisfies
+
+```math
+\langle\Theta_z,\Theta_w\rangle
+=\bigl(\tau(zw)-\lambda\bigr)\kappa(zw).             \tag{10.1641}
+```
+
+Thus `kappa` and `F=(tau-lambda)kappa` are positive definite.  Positivity in
+(10.1641) is obtained only after the two mixed channels cancel; no channel is
+bounded and paid separately.
+
+#### 10.138.2 A proved moving-Gram coset inequality
+
+Define
+
+```math
+T_a=\sum_{c\in\mathcal C_n^+}\kappa(ac),
+\qquad
+J_n=\sum_{c\in\mathcal C_n^+}F(c).
+```
+
+Subgroup Fourier positivity gives the **new proved inequality**
+
+```math
+\boxed{
+(\lambda-\mu(a))_+T_a\le J_n,
+\qquad
+\mu(a)\ge\lambda-{J_n\over T_a}\quad(T_a>0).}       \tag{10.1642}
+```
+
+Indeed, if `D=(C_n^+)^perp`, then
+
+```math
+\sum_cF(ac)
+=|\mathcal C_n^+|\sum_{S\in D}\widehat F(S)\chi_S(a)
+```
+
+lies between `-J_n` and `J_n`, whereas pointwise nonnegativity of `kappa`
+bounds it above by `(mu(a)-lambda)T_a`.  An adversarial verifier checked the
+Fourier normalization, signs, cut-code size and dual, and exhaustive orders
+four and five; no correction was needed.
+
+Every numerator is explicit.  If
+
+```math
+q_r={(n-2r)^2-n\over n(n-1)},
+```
+
+then
+
+```math
+J_n={1\over2}\sum_{r=0}^n\binom nr
+\left[(q_r-\lambda)\kappa(q_r)
++(-q_r-\lambda)\kappa(-q_r)\right].                 \tag{10.1643}
+```
+
+The denominator is one joint weighted coset enumerator.  Its Fourier form
+contains signed even-Eulerian coefficients.  Hence (10.1642) is a genuine
+rooted interface, but a uniform lower bound on `T_a` is not yet known to be
+simpler than the original bare coset tail.
+
+The exact convergence-level sufficient statement is
+
+```math
+\lambda_n={1-o(1)\over\sqrt n},
+\qquad
+\sup_a{J_n\over T_a}=o(n^{-1/2}).                    \tag{10.1644}
+```
+
+It would imply `Q(a)>=(1/2-o(1))n^(3/2)` uniformly and, with the conference
+upper bound, convergence to `1/2`.
+
+#### 10.138.3 Growing degree is necessary, and scalar escapes fail
+
+For the paper's Hamming construction, the corrected transition radius obeys
+`lambda<=2 sqrt((L+1)/E)`, while the rank-one family has
+`lambda=Theta(sqrt(L/E))`.  The scale in (10.1644) therefore requires
+`L=Theta(n)`, opening Eulerian coefficients through degree `Theta(n)`.
+
+The canonical rank-one family was evaluated for every
+`1<=L<=min(E-1,3n)` on saved exact/good signing histograms at orders
+`6,8,10,12,14` and on the order-18 conference histogram.  At every order the
+best level was `L=1`, giving exactly the RMS bound `Q(a)>=sqrt(E)`.  At the
+first level whose `lambda` exceeded the observed cap ratio, `T_a` had already
+collapsed and (10.1642) was vacuous.  This is **finite floating-point
+evidence**, not an asymptotic no-go.  The program and output are
+`computations/audit_moving_projection_cut_code.py` and
+`computations/results/moving_projection_cut_code_audit.json`.
+
+A tempting nonradial rank-one repair can be falsified asymptotically.  Let
+`v>=0` live on a partial transversal of `D` in the edge cube and set
+`kappa=(sum_R v_R chi_R)^2`.  If normalized cube adjacency satisfies
+`A_Ev>=lambda v`, then `(tau-lambda)kappa` is positive definite and
+`T_a=|C_n^+| ||v||_2^2` is constant.  The exact resulting certificate is
+`mu(a)>=2lambda-rho_quot(v)`, where `rho_quot-lambda` is weighted unaligned
+quotient-edge leakage.
+
+However, a partial transversal has at most `2^n` support points.
+Bollobás--Lee--Letzter's hypercube spectral theorem, applied in ambient
+dimension `E` with radius `ceil(2n/log n)`, gives
+
+```math
+\lambda
+\le {\rho(Q_E[\operatorname{supp}v])\over E}
+=O\!\left({1\over\sqrt{n\log n}}\right)
+=o(n^{-1/2}).                                        \tag{10.1645}
+```
+
+This is a **verified scalable no-go** for every scalar partial-transversal
+autocorrelation, even with zero leakage.  Inverting the same estimate shows
+that correct scale needs hidden support `exp(Omega(n log n))`.  It does not
+rule out a high-rank or nonabelian moving representation; rather, it makes
+the need for one quantitative.
+
+Full details and source links are in
+`artifacts/moving_projection_cut_code_coset_audit.md`.
+
+#### 10.138.4 Exact two-temperature bridge calculus
+
+For one relative orientation and all bridge bits, let `U` be uniform,
+`z_o=Zbar_parent(o)`, `L_o=log z_o`,
+`a=E_U z_o`, and `Pi(o)=z_o/(|Omega|a)`.  The entropy-tilted soft minimum
+satisfies the exact identity
+
+```math
+\boxed{
+\mathcal R_\lambda
+:=-{1\over\lambda}\log\mathbb E_Ue^{-\lambda L}
+=\log a-D_{1+\lambda}(U\Vert\Pi).}                  \tag{10.1646}
+```
+
+Revealing bridge bits sequentially gives the exact probability-weighted
+recursion
+
+```math
+V_{j-1}
+=\mathbb E_{q_j}V_j
++{1\over\lambda}D(q_j\Vert U_1),                    \tag{10.1647}
+```
+
+and hence the Gibbs variational formula
+
+```math
+\mathcal R_\lambda
+=\min_q\left\{\mathbb E_qL
++{1\over\lambda}D(q\Vert U)\right\}.
+```
+
+This is the desired `log(1/p)` rather than `1/p` accounting.  It is not a
+compressed selector: the two future values in the reveal recursion are full
+backward dynamic programming unless another state-closing theorem is proved.
+
+There is an honest composition criterion.  If every comparable split has a
+target-reaching bridge basin with
+
+```math
+U(G_{m,n})\ge e^{-C_1N},
+\qquad
+\sup_{o\in G_{m,n}}L_o
+\le P_m(\beta)+P_n(\beta)+C_2N^{1-\eta},             \tag{10.1648}
+```
+
+then taking `lambda_N=N^alpha` gives approximate subadditivity with defect
+`O(N^(1-min(alpha,eta)))`.  Uniformity over all sufficiently large
+comparable splits and the elementary `P_n(beta)=O_beta(n)` bound are the
+explicit hypotheses needed by the balanced-tree thermodynamic-limit
+argument.
+
+Conference children impose a sharp obstruction.  With
+
+```math
+\gamma(\beta)
+={\beta^2\over4}-2\psi(\beta)+2\psi(\beta/\sqrt2)>0,
+```
+
+one has
+
+```math
+\mathcal R_{\lambda,r}-T_r
+=\gamma(\beta)r-D_{1+\lambda}(U\Vert\Pi_r)+o(r).
+```
+
+For every `0<beta<sqrt(2)/6`, there is `lambda_0(beta)>0` such that every
+fixed `0<lambda<lambda_0(beta)` satisfies
+
+```math
+{1\over r}D_{1+\lambda}(U\Vert\Pi_r)\longrightarrow0,
+\qquad
+{\mathcal R_{\lambda,r}-T_r\over r}
+\longrightarrow\gamma(\beta)>0.                    \tag{10.1649}
+```
+
+The proof combines convex Lipschitz extension of the bridge pressure on a
+strict operator-norm ball, the dimension-free high-temperature covariance
+bound, Talagrand concentration, and an exponentially small Rademacher norm
+exception.  The adversarial audit accepted the theorem.  It corrected one
+scope point: the entropy-transport inequality is exact at fixed orientation;
+for a joint orientation law it has an additional orientation-mean term,
+which is `o(r)` here and does not alter (10.1649).
+
+The known algebraic conference double occupies only `exp(o(r^2))` outputs
+and therefore costs `Theta(r^2)` entropy.  It needs `lambda_r>>r`, exactly
+the scale at which the soft minimum already resolves exact bridge selection.
+The genuine remaining statement is a diffuse law
+
+```math
+D(q_r\Vert U)=O(r),
+\qquad
+\mathbb E_{q_r}L
++{1\over\lambda}D(q_r\Vert U)
+\le T_r+O(r^{1-\delta}).                             \tag{10.1650}
+```
+
+Uniform bridges, polynomial sampling, the small fixed-tilt interval, and
+the isolated algebraic lift are inactive.  Proofs are in
+`artifacts/two_temperature_bridge_audit.md`.
+
+#### 10.138.5 Independent checks and literature boundary
+
+A ledger-blind nonconvergence run independently rediscovered the random
+rectangular-padding inequality and its consequence that `h=o(n)` changes
+the normalized value by `o(1)`.  This was already proved in Sections 1.8 and
+10.18, so it is corroboration, not a new result.  It produced no separated
+subsequences.
+
+The focused literature check found the exact Solé--Zaslavsky cocycle-code
+mapping and general Delsarte/Terwilliger covering machinery, but no theorem
+that controls the rooted convolution `T_a` for the complete-graph cut code.
+Ordinary pairwise association-scheme data remains translation-blind.  A
+rooted scalar Schur analysis reopens the constant signed-Eulerian sector and
+all `2^n` boundary sectors; it does not provide the missing compression.
+
+#### 10.138.6 Operational table
+
+| Track | Last concrete result | Classification | Next falsifiable step | Stop condition |
+|---|---|---|---|---|
+| Moving cut-code representation | Joint-Gram coset inequality (10.1642) | Proved correct-scale interface; no bound improvement | Construct one high-rank `S_n`-adapted fiber with uniform root mass and `J/T=o(n^-1/2)` | Another radial rank-one kernel, scalar transversal, or full signed-histogram state |
+| Scalar moving fibers | Support-size bound (10.1645) | Scalable class no-go | None at support `exp(O(n))` | Any scalar representative search without `exp(Omega(n log n))` algebraic closure |
+| Entropy-tilted bridges | Rényi martingale plus fixed-tilt no-go (10.1649) | Proved reduction and obstruction | Produce a diffuse `O(r)`-entropy law satisfying (10.1650), or a scalable entropy-rate impossibility | Fixed small tilts, uniform sampling, or isolated algebraic bridges |
+| Polar pressure | Frobenius stability remains valid | Proved prior reduction; currently secondary | Return only with a frame-dependent involution inequality or dense linear counterexample | Eigenvalue-only or isotropic Gaussian variants |
+| Genuine nonconvergence | Multiplicative separation remains necessary | No new result | Produce fixed separated subsequences | Another intermediate-route falsifier or `o(n)` padding |
+
+#### 10.138.7 Updated frontier
+
+The rigorous ground-state interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                     \tag{10.1651}
+```
+
+No exact value, rigorous asymptotic bound, recurrence step, convergence
+theorem, or nonconvergence mechanism improved.  The moving-Gram theorem is
+the first rigorous covering inequality imported from the new moving-
+projection architecture, but its remaining `T_a` obligation may still be an
+equivalent tail reformulation.  The canonical scalar realization fails
+finite tests, and every scalar transversal is asymptotically too small.
+
+The next bounded target is therefore genuinely higher-rank: build an
+`S_n`-equivariant moving fiber whose hidden representation may have
+`exp(Omega(n log n))` dimension but whose root mass and Gram budget collapse
+to polynomially many algebraic parameters.  This is one substantive
+checkpoint without primary progress after the Frobenius theorem reset the
+stopping counter.  Continue that one bounded attempt; if the next
+substantive checkpoint also supplies no primary progress, invoke the README
+consolidation rule and a blank-slate diagnostic rather than opening more
+nearby kernel variants.
