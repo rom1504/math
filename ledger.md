@@ -43082,3 +43082,155 @@ narrow the new route, but they do not reduce the original convergence
 problem.  One consolidation diagnostic is now active.  No replacement wave
 or adjacent moving-kernel search may begin until that diagnostic is
 synthesized and an evidence-based continuation decision is committed.
+
+### 10.140 Bounded blank-slate diagnostic and pause decision
+
+Date: 2026-08-15.
+
+The consolidation diagnostic is complete.  Three agents began from the
+definition of `M_n` without consulting the ledger, each froze one exact
+candidate theorem, and only then compared it with the archive.  Full mappings,
+falsifiers, and derivations are in
+`artifacts/consolidation_blank_slate_diagnostic_2026_08_15.md`.
+
+#### 10.140.1 Block-completion candidate
+
+The first candidate asked that every pair of child signings `A,B`, of orders
+`p,q`, admit a bridge `R` with
+
+```math
+D(A*_RB)
+\le\sqrt{p+q\over p}D(A)
++\sqrt{p+q\over q}D(B)
++C(p+q)^{3/2-\delta}.                            \tag{10.1660}
+```
+
+For `u_n=M_n/sqrt(n)`, this would give
+
+```math
+u_{p+q}\le u_p+u_q+C(p+q)^{1-\delta},              \tag{10.1661}
+```
+
+and balanced-tree almost subadditivity would prove convergence of `u_n/n`.
+The mapping is correct.  The candidate is nevertheless not new: the exact
+block identity turns (10.1660) into the existing state-dependent bridge
+problem, and its equal-block coefficient is exactly the open
+`M_n^(2/3)` composition scale.  It adds a universal child quantifier to the
+weaker existential selection theorem and removes no information.  The same
+chaining metric and its rectangular norm floor were already tested.
+
+**Classification:** equivalent sufficient reformulation; reject.
+
+#### 10.140.2 Bounded dual-cycle pressure candidate
+
+The second candidate independently recovered the exact identity
+
+```math
+P_n(a,\beta)
+={\binom n2\over n}\log\cosh{\beta\over\sqrt n}
++{1\over n}\log
+\sum_{F\in D_n}a_F
+\tanh^{|F|}{\beta\over\sqrt n},                    \tag{10.1662}
+```
+
+where `D_n` is the even-cardinality Eulerian dual.  It proposed that a
+fixed-degree Taylor truncation determine the minimized pressure uniformly as
+the degree later tends to infinity.  Together with the exact sandwich
+
+```math
+\beta{M_n\over n^{3/2}}-\log2-o(1)
+\le\min_aP_n(a,\beta)
+\le\beta{M_n\over n^{3/2}},                        \tag{10.1663}
+```
+
+this would prove convergence by sending `beta` to infinity.
+
+The identity and implication are correct, but the proposed compression is an
+existing failed class.  Fixed cycle or replica depth misses planted
+zero-entropy Boolean resonances that alter pressure by order `n`; deleting one
+vertex also opens exponentially many boundary sectors.  Degree `Theta(n)` is
+necessary at the target scale, and the resulting state restores the complete
+signed Eulerian/coset histogram.  No lucky minimum-only selection theorem was
+found to remove that obligation.
+
+**Classification:** bounded-degree route obstructed; growing-degree version
+not demonstrated simpler than the original tail; reject.
+
+#### 10.140.3 Symplectic/Witt nonconvergence candidate
+
+The third candidate used multiplicatively separated orders `4^k` and
+`2*4^k`.  On the first sequence, a nondegenerate symplectic Walsh matrix
+`H_B` obeys `H_B^2=nI`, and an explicit bent eigenvector gives the exact cap
+
+```math
+\operatorname{cap}(H_B-I)
+={n\over2}(\sqrt n+1)
+=\left({1\over2}+{1\over2\sqrt n}\right)n^{3/2}.   \tag{10.1664}
+```
+
+Thus this family supplies only constant `1/2`.  The proposed separated
+subsequence would require an all-signings lower bound strictly above `1/2` on
+orders `2*4^k`.  That is rigorously impossible: for every order `n`, a
+principal restriction of a Paley conference matrix of order
+`N=(1+o(1))n` gives
+
+```math
+M_n\le {n\over2}\sqrt{N-1}
+=\left({1\over2}+o(1)\right)n^{3/2}.              \tag{10.1665}
+```
+
+Witt parity constrains only the chosen Cayley family, while the augmented cut
+code has no growing divisibility that could force an all-signings gap.
+
+**Classification:** concrete nonconvergence mechanism falsified.  Genuine
+nonconvergence below `1/2` remains logically open, with no current mechanism.
+
+#### 10.140.4 Evidence-based decision
+
+The blank-slate candidates fairly sampled three different mechanisms:
+cross-order composition, finite-temperature compactification, and arithmetic
+nonconvergence.  After ledger comparison, none is both genuinely different
+and more tractable.  The first two recover existing full-information
+obligations; the third is incompatible with the global upper theorem.
+
+The recent external moving-representation suggestion has nevertheless
+produced real mathematics: the operator same-switch inequality (10.1652) and
+the partial-matching obstructions (10.1656)--(10.1658).  An executor,
+adversarial verifier, and research-director pass were used.  The negative
+outcome is therefore not a failure to try the proposed architecture; it is
+evidence that another orchestration cycle lacks a theorem-level target.
+
+The research decision is:
+
+> **Pause autonomous route generation and seek external mathematical review.**
+
+A justified restart requires a genuinely new input, such as:
+
+1. a coefficient-one graph-orbit moving representation with an algebraic
+   rooted mass theorem;
+2. a diffuse bridge law with `O(n)` entropy and a proved linear pressure gain;
+3. a strict compression of the existential bridge state; or
+4. a construction and all-signings theorem separating two constants below
+   `1/2` on multiplicatively separated epochs.
+
+This is a stopping-rule decision, not a claim that the mathematical problem is
+blocked or solved.  No further wave should start automatically.  A user may
+authorize a new campaign when a new architecture or external mathematical
+input is available.
+
+#### 10.140.5 Updated frontier
+
+The rigorous interval is still
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                    \tag{10.1666}
+```
+
+The consolidation diagnostic found no primary progress and no defensible
+autonomous next target.  The active state is now a deliberate research pause
+pending external review or a genuinely new user-authorized architecture, with
+all exact positive and negative results preserved in the ledger and artifacts.

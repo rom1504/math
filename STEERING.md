@@ -1,25 +1,21 @@
 # Strategic steering
 
-Evidence cutoff: Section 10.139 (2026-08-15). Status: **consolidation
-diagnostic active; automatic neighboring-route generation paused**.
+Evidence cutoff: Section 10.140 (2026-08-15). Status: **autonomous route
+generation paused after consolidation diagnostic; external review advised**.
 
-Next mandatory blank-slate refresh: this consolidation diagnostic is the
-current refresh. If ordinary numbered waves later resume, keep Wave 61 as the
-next scheduled boundary; refresh earlier after a decisive result or route
-change.
+If ordinary waves resume, keep Wave 61 as the next blank-slate boundary;
+refresh earlier after a decisive result or architecture change.
 
 ## User-stated objective and workflow directives
 
-The objective is to determine whether `M_n/n^(3/2)` converges. The value
-`1/2` is a conjectural mathematical assessment, not a separate user
-objective. Reproducibility, verification, Git checkpoints, the investigation
-of both convergence and nonconvergence, and the README stopping rule remain
-user directives.
+The objective is to determine whether `M_n/n^(3/2)` converges; `1/2` is a
+conjectural assessment, not another user objective. Reproducibility,
+verification, Git checkpoints, both convergence and nonconvergence, and the
+README stopping rule remain user directives.
 
-The user authorized a second sustained autonomous phase. Their latest input
-supplied external research suggestions, not mathematical directives. Those
-suggestions have been independently tested. Route selection and all
-conjectures below remain agent-authored. `README.md` is unchanged.
+The user's latest input supplied external research suggestions, not
+mathematical directives. They were independently evaluated; route selection
+and conjectures remain agent-authored. `README.md` is unchanged.
 
 ## Agent-authored frontier
 
@@ -30,55 +26,48 @@ conjectures below remain agent-authored. `README.md` is unchanged.
 \le {1\over2}.                                      \tag{S1}
 ```
 
-No exact value, asymptotic bound, recurrence step, convergence theorem, or
-genuine nonconvergence mechanism improved at the last two substantive
-checkpoints.
+No bound, recurrence step, convergence theorem, or genuine nonconvergence
+mechanism improved at the last two substantive checkpoints.
 
-## What the moving-representation audit proved
+## Strongest new theorem and its limit
 
-For an operator kernel `K` on the edge cube whose pointwise values, Fourier
-coefficients, and complete remainder coefficients have the required Loewner
-positivity, the full same-switch theorem is
+For a pointwise-positive operator kernel on the edge cube whose Fourier
+coefficients and complete remainder coefficients are Loewner-positive, the
+full joint same-switch theorem is
 
 ```math
 \boxed{(\lambda-\mu(a))_+T_a\preceq J.}             \tag{S2}
 ```
 
-It preserves joint matrix cancellation. If the root is constant, however, a
-least generalized eigenvector scalarizes the certificate with exactly the
-same bound. Correct scale requires Fourier support
-`exp(Omega(n log n))`; rank alone supplies no strength.
+It preserves matrix cancellation. If the root is constant, however, a least
+generalized eigenvector scalarizes the certificate with exactly the same
+bound. Correct scale requires Fourier support `exp(Omega(n log n))`; rank
+alone supplies no strength.
 
-Partial matchings have that support size and internal transition order, but
-the two direct uses are closed:
+Partial matchings have that hidden size, but their direct uses are closed:
 
 ```math
-\lambda-{J\over T_a}\le {2\over\sqrt{\binom n2}}=O(n^{-1})
+\lambda-{J\over T_a}=O(n^{-1})
 ```
 
-for the radial matching square, and
+for radial matching squares, and
 
 ```math
 \lambda\le {1\over n-1}
 ```
 
-for every arbitrary-rank kernel whose Fourier support is directly on
-matchings. The second result uses an operator star marginal and assumes no
-radiality, equivariance, commutativity, or scalar decomposition.
-
-Every pure add/delete partial-matching representation also satisfies
+for arbitrary-rank kernels supported directly on matchings. Every pure
+matching add/delete representation also has coefficient at most
 
 ```math
-\lambda\le
-\left({4\over3\sqrt3}+o(1)\right)n^{-1/2},           \tag{S3}
+{4\over3\sqrt3}=0.769800\ldots<1.                   \tag{S3}
 ```
 
-strictly below the coefficient `1` required by the conference-scale
-convergence criterion. Broader difference-of-matchings blocks remain open,
-but their signed-hafnian root is not demonstrably simpler than the original
-tail and the pure matching transition ceiling still applies.
+Broader difference-of-matchings blocks remain formally open, but no uniform
+root theorem emerged and pure matching transitions cannot reach the
+conference coefficient.
 
-## Exact sufficient convergence lemma
+## Exact sufficient convergence statement
 
 A moving-kernel family defined independently of `M_n` would prove convergence
 to `1/2` if
@@ -90,57 +79,68 @@ to `1/2` if
 =o(n^{-1/2}).                                      \tag{S4}
 ```
 
-Then (S2) gives `Q(a)>=(1/2-o(1))n^(3/2)` uniformly, and conference orders
-supply the matching upper subsequence. The remaining root estimate can encode
-the full signed coset histogram, so (S4) is not presently a strict reduction.
+Then (S2) gives `Q(a)>=(1/2-o(1))n^(3/2)` uniformly and conference orders
+give the upper subsequence. The root estimate can encode the full signed
+coset histogram, so (S4) is not presently a strict reduction.
 
-## Known obstructions
+## Blank-slate abstraction audit
 
-- The imported packing bound is translation-blind; only the rooted cross term
-  in (S2) sees a cut-code coset.
-- Canonical radial moving kernels collapse to RMS on tested signings.
-- Scalar partial transversals have too little support by the
-  Bollobas--Lee--Letzter theorem.
-- Constant-root operator rank scalarizes exactly.
-- Direct matching support, radial matching squares, and pure matching
-  add/delete transitions are closed by the new scalable theorems.
-- Fixed small disorder tilts retain a positive linear conference defect; the
-  known algebraic bridge costs `Theta(n^2)` entropy.
-- Selected-prior/common-active-face, scalar atoms, separately paid channels,
-  ordinary polarization, same-map Gaussian response, fixed-level SOS, Walsh
-  basin classification, and eigenvalue-only polar variants remain inactive.
+1. **Uniform block completion.** The proposed inequality was
 
-## Ranked formulations entering the diagnostic
+   ```math
+   D(A*_RB)\le\sqrt{N/p}D(A)+\sqrt{N/q}D(B)+O(N^{3/2-\delta}).
+   ```
 
-No route is currently entitled to automatic continuation. The bounded
-blank-slate audit must first formulate at most three mechanisms from the
-original problem and only afterward compare them with the archive.
+   It would make `M_n/sqrt(n)` almost subadditive. Comparison showed that it
+   is exactly the existing state-dependent bridge objective, with a stronger
+   universal child quantifier and the same rectangular norm obstruction.
 
-Provisional alternatives to compare fairly are:
+2. **Bounded dual-cycle pressure.** Fixed-degree Eulerian cumulants were
+   proposed to determine the minimized finite-temperature pressure. The exact
+   pressure-to-ground-state mapping is valid. Fixed degree, however, misses
+   planted zero-entropy resonances; degree `Theta(n)` restores the complete
+   signed coset histogram. This is not a strict compression.
 
-1. a graph-orbit moving representation outside partial matchings, but only if
-   it has coefficient one and an algebraic root identity satisfying (S4);
-2. a diffuse entropy-tilted bridge law with `O(n)` relative entropy and a
-   linear pressure gain, yielding a summable composition defect;
-3. a genuinely different compactness, interpolation, exchange, or
-   nonconvergence mechanism with an exact theorem and falsifier.
+3. **Symplectic/Witt nonconvergence.** Orders `4^k` and `2*4^k` were proposed.
+   The symplectic family has exact cap `(n/2)(sqrt(n)+1)`, so separation would
+   require a bad subsequence above `1/2`. Dense Paley conference restrictions
+   give `M_n<=(1/2+o(1))n^(3/2)` on every order and rigorously falsify it.
 
-The diagnostic must reject vocabulary-only reformulations and explicitly
-test whether each obligation is weaker than bare parent/coset optimization.
+The candidates were respectively an equivalent obligation, an obstructed
+bounded-state mechanism, and a falsified construction. None justifies a new
+campaign. Details are in Section 10.140 and the diagnostic artifact.
 
-## Genuine nonconvergence standard
+## Inactive mechanisms
 
-A route falsifier is not evidence of nonconvergence. A genuine result must
-produce some fixed `epsilon>0` and two infinite subsequences whose normalized
-values differ by at least `epsilon`, or equivalently prove
-`liminf<limsup`. No current construction does this.
+Selected-prior/common-active-face, scalar atoms, separately paid channels,
+ordinary polarization, same-map Gaussian response, fixed-level SOS and
+replicas, Walsh basin classification, radial moving kernels, scalar
+transversals, direct matching support, pure matching add/delete modules,
+uniform bridge sampling, fixed small disorder tilts, isolated algebraic
+bridges, and eigenvalue-only polar variants remain inactive.
 
-## Consolidation decision
+## Conditions for a justified restart
+
+External review or a new architecture should supply at least one of:
+
+1. a coefficient-one graph-orbit moving representation with an algebraic
+   rooted mass theorem satisfying (S4);
+2. a diffuse bridge law with `O(n)` entropy and a proved linear pressure gain;
+3. a strict reduction of the existential bridge state to demonstrably less
+   information than full parent optimization; or
+4. a genuine nonconvergence mechanism producing two constants below `1/2` on
+   multiplicatively separated epochs.
+
+Suggestions must be checked against the ledger before becoming targets.
+Vocabulary-only reformulations and additional finite caps do not qualify.
+
+## Research-director decision
 
 This is the second consecutive substantive checkpoint without primary
-progress. The moving-representation analogy yielded rigorous mathematics but
-not a strict reduction of the original problem. The automatic loop is paused
-under the README rule while one bounded blank-slate diagnostic is run. After
-its synthesis, make and commit one evidence-based choice: resume with one
-named theorem target, change architecture, seek external mathematical review,
-or stop. Do not open another neighboring kernel variant by default.
+progress, followed by the required bounded diagnostic. The recent external
+moving-representation idea was tested with executor, adversarial-verifier,
+and director passes and yielded rigorous but route-limiting theorems.
+
+Pause autonomous route generation and seek external mathematical review. This
+does not claim the problem is solved or blocked. Resume only after explicit
+authorization tied to a genuinely new input; do not open a nearby variant.
