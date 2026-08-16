@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "fixed_projection": [
+    {
+      "w": 0,
+      "flat_count": 1,
+      "fixed_subspace_count": 1,
+      "homomorphism_checks": 1,
+      "exact_fibre_width_checks": 1
+    },
+    {
+      "w": 1,
+      "flat_count": 2,
+      "fixed_subspace_count": 2,
+      "homomorphism_checks": 8,
+      "exact_fibre_width_checks": 3
+    },
+    {
+      "w": 2,
+      "flat_count": 5,
+      "fixed_subspace_count": 5,
+      "homomorphism_checks": 125,
+      "exact_fibre_width_checks": 12
+    },
+    {
+      "w": 3,
+      "flat_count": 16,
+      "fixed_subspace_count": 16,
+      "homomorphism_checks": 4096,
+      "exact_fibre_width_checks": 66
+    },
+    {
+      "w": 4,
+      "flat_count": 67,
+      "fixed_subspace_count": 67,
+      "homomorphism_checks": 300763,
+      "exact_fibre_width_checks": 513
+    }
+  ],
+  "triggered_contraction": [
+    {
+      "w": 1,
+      "flat_count": 2,
+      "strict_trigger_pair_count": 1,
+      "congruence_compatibility_checks": 8,
+      "nontrivial_exact_fibre_width_checks": 1
+    },
+    {
+      "w": 2,
+      "flat_count": 5,
+      "strict_trigger_pair_count": 7,
+      "congruence_compatibility_checks": 425,
+      "nontrivial_exact_fibre_width_checks": 10
+    },
+    {
+      "w": 3,
+      "flat_count": 16,
+      "strict_trigger_pair_count": 50,
+      "congruence_compatibility_checks": 40832,
+      "nontrivial_exact_fibre_width_checks": 106
+    }
+  ],
+  "kernel_classification": [
+    {
+      "w": 0,
+      "flat_count": 1,
+      "enumerated_join_congruence_count": 1,
+      "pairwise_kernel_classification_checks": 1,
+      "exact_oscillation_checks": 1,
+      "pullback_reconstruction_checks": 1
+    },
+    {
+      "w": 1,
+      "flat_count": 2,
+      "enumerated_join_congruence_count": 2,
+      "pairwise_kernel_classification_checks": 8,
+      "exact_oscillation_checks": 3,
+      "pullback_reconstruction_checks": 2
+    },
+    {
+      "w": 2,
+      "flat_count": 5,
+      "enumerated_join_congruence_count": 12,
+      "pairwise_kernel_classification_checks": 300,
+      "exact_oscillation_checks": 35,
+      "pullback_reconstruction_checks": 12
+    },
+    {
+      "w": 3,
+      "flat_count": 16,
+      "enumerated_join_congruence_count": 3616,
+      "pairwise_kernel_classification_checks": 925696,
+      "exact_oscillation_checks": 29442,
+      "pullback_reconstruction_checks": 3616
+    }
+  ]
+}

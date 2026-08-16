@@ -1,0 +1,80 @@
+{
+  "all_raw_futures": {
+    "collapsed_future_checks": 8320,
+    "nonspanning_future_supports": 36,
+    "raw_future_supports": 128,
+    "source_threshold_future_checks": 23552,
+    "spanning_sources": 92,
+    "w": 3
+  },
+  "anticodes": {
+    "1": {
+      "D_plus_one": 2,
+      "GF3_final_bound": 16,
+      "GF3_intermediate_bound": 13,
+      "exact_number_of_anticodes": 4,
+      "maximum_size": 2
+    },
+    "2": {
+      "D_plus_one": 3,
+      "GF3_final_bound": 128,
+      "GF3_intermediate_bound": 81,
+      "exact_number_of_anticodes": 16,
+      "maximum_size": 4
+    },
+    "3": {
+      "D_plus_one": 4,
+      "GF3_final_bound": 768,
+      "GF3_intermediate_bound": 457,
+      "exact_number_of_anticodes": 81,
+      "maximum_size": 4
+    },
+    "4": {
+      "D_plus_one": 5,
+      "GF3_final_bound": 4096,
+      "GF3_intermediate_bound": 2369,
+      "exact_number_of_anticodes": 393,
+      "maximum_size": 5
+    }
+  },
+  "conclusion": "The anticode, enumeration, terminal-collapse, nonspanning-future, and message-bit claims survived the independent finite audit.",
+  "support_counts": {
+    "1": {
+      "diameter_histogram": {
+        "1": 1
+      },
+      "thresholds": {}
+    },
+    "2": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 3
+      },
+      "thresholds": {}
+    },
+    "3": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 63,
+        "3": 28
+      },
+      "thresholds": {}
+    },
+    "4": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 23551,
+        "3": 6840,
+        "4": 840
+      },
+      "thresholds": {
+        "4": {
+          "GF4_log2_bound": 30.0,
+          "actual_quotient_message_bits": 10,
+          "log2_retained_supports": 9.714245517666123,
+          "retained_supports": 840
+        }
+      }
+    }
+  }
+}

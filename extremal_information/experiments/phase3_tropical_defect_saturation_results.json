@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "proper_profile_scope": {
+    "identically_infinite_remains_identically_infinite": true
+  },
+  "finite_kernel_defect": [
+    {
+      "group_order": 2,
+      "kernel_count": 4,
+      "proper_profile_inequality_checks": 360
+    },
+    {
+      "group_order": 3,
+      "kernel_count": 16,
+      "proper_profile_inequality_checks": 8064
+    },
+    {
+      "group_order": 4,
+      "kernel_count": 64,
+      "proper_profile_inequality_checks": 163200
+    }
+  ],
+  "hamming_indicator": [
+    {
+      "width": 1,
+      "radius_power_checks": 6
+    },
+    {
+      "width": 2,
+      "radius_power_checks": 12
+    },
+    {
+      "width": 3,
+      "radius_power_checks": 20
+    },
+    {
+      "width": 4,
+      "radius_power_checks": 30
+    },
+    {
+      "width": 5,
+      "radius_power_checks": 42
+    },
+    {
+      "width": 6,
+      "radius_power_checks": 56
+    },
+    {
+      "width": 7,
+      "radius_power_checks": 72
+    },
+    {
+      "width": 8,
+      "radius_power_checks": 90
+    }
+  ],
+  "fixed_chart_syndrome": [
+    {
+      "width": 1,
+      "support_count": 1,
+      "ordered_support_pairs_per_chart": 1,
+      "chart_count": 2,
+      "quotient_identity_checks": 2,
+      "radius_interval_checks": 2,
+      "strict_collision_found": 0
+    },
+    {
+      "width": 2,
+      "support_count": 2,
+      "ordered_support_pairs_per_chart": 4,
+      "chart_count": 3,
+      "quotient_identity_checks": 12,
+      "radius_interval_checks": 12,
+      "strict_collision_found": 1
+    },
+    {
+      "width": 3,
+      "support_count": 16,
+      "ordered_support_pairs_per_chart": 256,
+      "chart_count": 4,
+      "quotient_identity_checks": 1024,
+      "radius_interval_checks": 1024,
+      "strict_collision_found": 1
+    },
+    {
+      "width": 4,
+      "support_count": 2048,
+      "ordered_support_pairs_per_chart": 512,
+      "chart_count": 5,
+      "quotient_identity_checks": 2560,
+      "radius_interval_checks": 2560,
+      "strict_collision_found": 1
+    }
+  ]
+}

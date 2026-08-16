@@ -14,6 +14,12 @@ Run from the repository root:
 .venv/bin/python extremal_information/experiments/verify_phase2_response_geometry.py
 .venv/bin/python extremal_information/experiments/verify_phase2_code_syndrome_profiles.py
 .venv/bin/python extremal_information/experiments/verify_phase2_normalized_code_rate_distortion.py
+.venv/bin/python extremal_information/experiments/verify_phase3_closed_algebra_claims.py
+.venv/bin/python extremal_information/experiments/verify_phase3_prime_cycle_summary.py
+.venv/bin/python extremal_information/experiments/verify_phase3_tropical_defect_saturation.py
+.venv/bin/python extremal_information/experiments/verify_phase3_geodesic_fibre_bound.py
+.venv/bin/python extremal_information/experiments/verify_phase3_geodesic_second_audit.py
+.venv/bin/python extremal_information/experiments/verify_phase3_matroid_quotients.py
 ```
 
 The scripts write only to this directory by default.
@@ -124,3 +130,68 @@ state--environment pairs and 42 unordered state pairs.
 
 Output:
 [`phase2_normalized_code_rate_distortion_results.json`](phase2_normalized_code_rate_distortion_results.json).
+
+## `verify_phase3_closed_algebra_claims.py`
+
+This exhaustively checks two phase-three algebra claims on small binary
+instances.  First, it compares the proposed closed formula for the complete
+future residual-rank response metric with every pair of flats and every
+future flat through width four.  Second, it checks the carrier-span
+compression pointwise and after maximizing over targets, for one to three
+carriers, every background dictionary, and every future dictionary through
+width three.
+
+Output:
+[`phase3_closed_algebra_claims_results.json`](phase3_closed_algebra_claims_results.json).
+
+## `verify_phase3_tropical_defect_saturation.py`
+
+This checks finite-valued min-plus kernel powers on small cyclic groups,
+distinguishes raw Hamming-ball smoothing error from the additional
+one-blur-to-many-blur defect, and verifies the fixed-chart syndrome quotient
+on all support pairs through width three and a deterministic width-four
+sample.  It also records why the identically-infinite profile must be excluded
+from the finite sup-norm statement.
+
+Output:
+[`phase3_tropical_defect_saturation_results.json`](phase3_tropical_defect_saturation_results.json).
+
+## `verify_phase3_prime_cycle_summary.py`
+
+This checks the finite phase meshes and the exact closed-algebra obstruction
+for prime cyclic groups.  It records the actual uniform response-net error and
+the optimal one-state closed error for several primes and distortions.
+
+Output:
+[`phase3_prime_cycle_summary_results.json`](phase3_prime_cycle_summary_results.json).
+
+## `verify_phase3_geodesic_fibre_bound.py`
+
+This exhaustively checks every spanning binary support through width four and
+every diametral shortest representation.  It verifies independence, the exact
+zero fibre, diameter-two nonzero fibres, and the `D+1` anticode bound for
+`D>=3`; it also records the sharp `D=2` exception and deterministic random
+checks at widths five and six.
+
+Output:
+[`phase3_geodesic_fibre_bound_results.json`](phase3_geodesic_fibre_bound_results.json).
+
+## `verify_phase3_geodesic_second_audit.py`
+
+This independent implementation enumerates small Hamming anticodes, checks
+the hard-core quotient against every raw (including nonspanning) future at
+width three, and compares the actual width-four state count with the proved
+enumeration bound.
+
+Output:
+[`phase3_geodesic_second_audit_results.json`](phase3_geodesic_second_audit_results.json).
+
+## `verify_phase3_matroid_quotients.py`
+
+This verifies fixed-subspace and triggered contraction fibres and exhaustively
+enumerates all `3,616` join congruences of the binary width-three subspace
+lattice.  It checks the canonical kernel factorization, pullback recovery, and
+the exact residual-rank oscillation formula class by class.
+
+Output:
+[`phase3_matroid_quotients_results.json`](phase3_matroid_quotients_results.json).

@@ -1,0 +1,92 @@
+{
+  "claim": "Every diametral geodesic has an independent generator set; its span contains no other generators; all nonzero affine fibres have coordinate diameter at most two; for D>=3 they have size at most D+1.",
+  "diameter_two_endpoint": {
+    "D_plus_one": 3,
+    "diameter": 2,
+    "fibre_size": 4,
+    "geodesic_basis": [
+      1,
+      2
+    ],
+    "nonzero_fibre": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "pairwise_coordinate_distances": [
+      1,
+      2
+    ],
+    "support": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "w": 3
+  },
+  "exhaustive": {
+    "1": {
+      "diameter_histogram": {
+        "1": 1
+      },
+      "diametral_geodesics_checked": 1,
+      "spanning_supports": 1
+    },
+    "2": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 3
+      },
+      "diametral_geodesics_checked": 6,
+      "spanning_supports": 4
+    },
+    "3": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 63,
+        "3": 28
+      },
+      "diametral_geodesics_checked": 266,
+      "spanning_supports": 92
+    },
+    "4": {
+      "diameter_histogram": {
+        "1": 1,
+        "2": 23551,
+        "3": 6840,
+        "4": 840
+      },
+      "diametral_geodesics_checked": 387045,
+      "spanning_supports": 31232
+    }
+  },
+  "random": {
+    "5": {
+      "diameter_histogram": {
+        "2": 158,
+        "3": 73,
+        "4": 16,
+        "5": 3
+      },
+      "diametral_geodesics_checked": 10459,
+      "samples": 250,
+      "sampling_attempts": 308
+    },
+    "6": {
+      "diameter_histogram": {
+        "2": 152,
+        "3": 79,
+        "4": 9,
+        "5": 6,
+        "6": 4
+      },
+      "diametral_geodesics_checked": 39033,
+      "samples": 250,
+      "sampling_attempts": 265
+    }
+  }
+}
