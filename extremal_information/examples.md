@@ -27,6 +27,9 @@ and permitted relabelings have been declared.
 | Exact tropical factor rank | separable channel count under uniform lattice-scale error | rank `r` can have rank-one normalized MSE `1/r` | query mass of the exposed anchors | Proved |
 | Canonical code-transversal crossings | exponential exact channel count and raw sub-half-unit robustness | the graph-code table has rank-one normalized MSE `1/(16t)` | a positive-density joint witness, rather than a zero-density transversal | Proved |
 | Syndrome block state | basis-versus-dense generator choices in `Theta(w)` direct-sum blocks | subset-selecting future fragments give `Omega(w)` response separation and a linear information rate | complexity beyond an explicitly supplied block decomposition | Proved |
+| Raw mixed-holonomy dimension | `D kappa` exact kernel-valued gluing coordinates | discrete and two-scale carriers collapse all or almost all endpoint responses | Hausdorff separation in the query metric and cheap carrier presentation | Proved |
+| Carrier Hausdorff geometry | all distance-to-carrier endpoint responses | presentation cost can erase an arbitrary carrier; diffuse laws can give witness balls negligible mass | access cost and query exposure | Proved |
+| Projected carrier | distance geometry after a coarse metric quotient | identity quotients and high-entropy projected hyperspaces give no compression | small fibres are insufficient without entropy reduction and descended composition | Proved |
 
 The complete evidence cards, including normalizations and archive locations,
 are in
@@ -357,3 +360,80 @@ block vector gives a matching `O(w)` exact state.  This is the positive
 counterpart to Example 10: query mass erased its pairwise transversal, while
 an algebraically legal joint query here sums the effects before distortion is
 paid.
+
+## Example 12: locally trivial fragments create full-rate information
+
+Let `W=F_q^D` and `Q=F_q^k`.  Pair a zero lift and a lift by `v_j in W` over
+each quotient basis direction.  Either fragment alone is removed by a linear
+kernel-fixing shear.  After union, however, the kernel-endpoint profile is
+
+```math
+F_V(u)=\min_{z\in F_q^k}
+\{2\operatorname{wt}(z)+\operatorname{wt}(u+Vz)\}.
+```
+
+Inside an asymptotically good `[D,D/4,>D/8]` host code, its `k`-subspaces
+give at least `q^(3Dk/16)` profiles separated by more than `D/16` whenever
+`k<=D/32`.  Thus unlabelled endpoint queries retain `Theta(Dk log q)` bits:
+a constant fraction of the exact compatibility information born at
+composition.
+
+The exact profile is more detailed than its span.  In the binary case it
+recovers precisely the set of distinct generator columns of Hamming weight at
+least three; general changes of channel basis are therefore not exact
+symmetries.  At macroscopic scale it lies within `2 rank(V)` of distance to
+`im V`, which is why Grassmannian packing becomes the right coarse geometry.
+
+## Example 13: the same gauge dimension can collapse completely
+
+Two counterexamples delimit Example 12.
+
+1. Give `F_q^D` the discrete metric in which every nonzero kernel element has
+   cost one.  Every mixed profile is simply `F_V(u)=1_(u ne 0)`, independent
+   of all `Dk` holonomy coordinates.
+2. Let `varpi:F_q^D->F_q^r` and set
+
+   ```math
+   d(x,y)=D\mathbf1_{\varpi x\ne\varpi y}
+          +\mathbf1_{x\ne y}.
+   ```
+
+   This metric still has linear diameter.  For `k=o(D)`, every endpoint
+   profile is within `2k+1` of a decoder indexed only by the subspace
+   `varpi(im V)`.  With fixed `q,r`, that is a constant-size macroscopic
+   quotient.  Retaining the labeled map `varpi V` gives all-future error one
+   with only `q^(rk)` states, versus `q^(Dk)` exact gauges.
+
+The missing information is not relation rank but fine geometry inside
+diameter-one metric fibres.  This is the sharp negative evidence that forced
+the presented-carrier and metric-quotient laws.
+
+## Example 14: rank geometry is full-rate, Hamming has a duality gap
+
+In `End_(F_q)(F_(q^D))` with rank distance, the Gabidulin space
+
+```math
+\left\{x\mapsto\sum_{i<r}a_ix^{q^i}:a_i\in F_{q^D}\right\}
+```
+
+has dimension `rD` and minimum nonzero rank `D-r+1`.  Its `k`-subspaces
+therefore produce `q^(k(rD-k))` mixed-channel profiles separated by at least
+`D-r+1-2k`.  With `r=floor(D/2)` and `k<=D/16`, this is an
+`Omega(D^2k log q)` macroscopic response lower bound.  Row-supported
+anticodes have dimension `Da`; the code--anticode inequality proves this is
+the exact anticode dimension at rank scale `a`.
+
+Binary Hamming geometry behaves differently.  At scale
+`a=floor(delta D)`, its largest linear anticode has dimension `a`, but the
+Hamming sphere-packing bound gives
+
+```math
+D-A_W(a)-s_W(a)
+\ge\bigl(H_2(\delta/2)-\delta-o(1)\bigr)D.
+```
+
+Thus the lower common-host certificate and the optimal quotient certificate
+have a genuine leading gap.  This does not yet prove an equally large gap in
+the complete response entropy: subspace carriers can be packed without all
+lying inside one common separated code.  It is the first rigorous example in
+the framework where a third geometric invariant is demonstrably needed.

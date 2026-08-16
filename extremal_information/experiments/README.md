@@ -265,6 +265,56 @@ two-subspaces of the binary Reed--Muller `[16,5,8]` host code.
 Output:
 [`phase3_multichannel_holonomy_packing_results.json`](phase3_multichannel_holonomy_packing_results.json).
 
+## `verify_phase3_carrier_capacity.py`
+
+Exhaustively verifies the carrier/Hausdorff response comparison for all `242`
+zero--one weighted carriers of the five-cycle.  It also constructs the
+field-multiplication subspace of `4 x 4` binary matrices and checks the
+rank-metric carrier packing on all `35` of its two-dimensional subspaces.
+
+Output:
+[`phase3_carrier_capacity_results.json`](phase3_carrier_capacity_results.json).
+
+## `verify_phase3_carrier_relation_response_law.py`
+
+Checks the metric-carrier rough isometry and its two sharp boundaries on
+finite-field examples: exact collapse for a redundant discrete alphabet, a
+two-state quotient for a linear-diameter two-scale metric, and positive Lee
+and flag-ultrametric host packings.
+
+Output:
+[`phase3_carrier_relation_response_law_results.json`](phase3_carrier_relation_response_law_results.json).
+
+## `verify_phase3_metric_quotient_synchronization.py`
+
+Exhausts all `728` zero--one presented carriers on a six-point product
+metric, all `65,535` nonempty carriers in the `2 x 2` binary rank-metric row
+projection, the two-scale finite-field quotient, and `104,976` min-plus
+nonamplification instances.
+
+Output:
+[`phase3_metric_quotient_synchronization_results.json`](phase3_metric_quotient_synchronization_results.json).
+
+## `verify_phase3_scale_rank_response_sandwich.py`
+
+Enumerates every subspace of the three-dimensional binary two-scale carrier
+to recover its complete scale-rank function.  It also constructs the binary
+`[4 x 4,8,3]` Gabidulin rank-metric host, checks all `255` one-dimensional
+carrier profiles and their `32,385` pairs, and attains the predicted response
+gap.
+
+Output:
+[`phase3_scale_rank_response_sandwich_results.json`](phase3_scale_rank_response_sandwich_results.json).
+
+## `verify_phase3_scale_rank_sandwich.py`
+
+Independently checks the strict-threshold Singleton obstruction, the complete
+two-scale rank curve and projected decoder, small Hamming separated ranks,
+and separate sharp examples for the fibre, lift, and presentation terms.
+
+Output:
+[`phase3_scale_rank_sandwich_results.json`](phase3_scale_rank_sandwich_results.json).
+
 ## `verify_phase3_qary_multichannel_holonomy.py`
 
 Exhaustively checks over `F_3` that scalar-closed quotient fibres introduce no

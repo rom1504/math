@@ -1494,3 +1494,454 @@ elementary project deduction; it was independently audited and is not stated
 in that preprint.  Its scope is narrow but exact: after dividing distances by
 block length `m`, the protected error is only `1/(2m)`.  It gives no
 macroscopic or average-error lower bound.
+
+## 12. Composition-created carriers and their information law
+
+This section records the strongest theorem package from the third
+investigation.  Detailed proofs and independent audits are in
+[`phase3_mixed_circuit_hierarchy.md`](drafts/phase3_mixed_circuit_hierarchy.md),
+[`phase3_multichannel_holonomy_packing.md`](drafts/phase3_multichannel_holonomy_packing.md),
+[`phase3_carrier_capacity_law.md`](drafts/phase3_carrier_capacity_law.md), and
+[`phase3_metric_quotient_synchronization.md`](drafts/phase3_metric_quotient_synchronization.md).
+
+### Theorem 12.1 (mixed-relation exact sequence)
+
+Let `G=W direct-sum Q`, with `W=F_2^D`, and let a labeled family of lifted
+quotient columns be partitioned into fragments `E_1,...,E_m`.  Write
+
+```math
+U_j=\operatorname{span}q(E_j),
+\qquad U=\sum_jU_j,
+```
+
+and let `Z` be the cycle space of all quotient columns while `Z_loc` is the
+direct sum of the within-fragment cycle spaces.  Then
+
+```math
+\kappa:=\dim(Z/Z_{\rm loc})
+=\sum_j\dim U_j-\dim U.                         \tag{12.1}
+```
+
+After every individual fragment gauge class is fixed, compatible global
+kernel-fixing gauge classes form an affine space modeled on
+
+```math
+\operatorname{Hom}(Z/Z_{\rm loc},W).            \tag{12.2}
+```
+
+There are exactly `2^(D kappa)` labeled gluing classes.  For two fragments,
+`kappa=dim(U_1 intersection U_2)`.
+
+For a kernel coordinate basis `B`, column offsets `a_e`, their cycle
+holonomy `h(R)=sum_(e in R)a_e` on `Z`, and target `(u,q_0)`, the associated
+word response is exactly
+
+```math
+\ell(u,q_0)
+=\min_{R:q_R=q_0}\{|R|+|u+a_R|\}.              \tag{12.3}
+```
+
+In particular, at the antipode `t=(1,...,1)`,
+
+```math
+\ell(t,0)
+=D-\max_{R\in Z}\bigl(|h(R)|-|R|\bigr).        \tag{12.4}
+```
+
+#### Proof
+
+A kernel-fixing shear adds one linear map `L(q_e)` to every offset and leaves
+the sum on a quotient cycle unchanged.  Conversely, two offset assignments
+with the same cycle sums differ by a map that vanishes on `ker q`, hence
+factor through `im q` and differ by such a shear.  Gluing locally fixed
+representatives therefore leaves exactly the homomorphisms on
+`Z/Z_loc`; rank--nullity gives (12.1).  After a subset `R` of lifted columns
+is chosen, its quotient must equal `q_0` and the coordinate basis supplies
+the unique cheapest kernel correction, proving (12.3).  Boolean
+complementation gives (12.4). `square`
+
+The exact gauge count is not itself a response lower bound.  The next theorem
+shows that a constant fraction can nevertheless remain operational.
+
+### Theorem 12.2 (full macroscopic mixed-holonomy rate)
+
+Let `q` be a prime power, `W=F_q^D`, `Q=F_q^k`, and use scalar-closed Hamming
+alphabets.  For an independent tuple `V=(v_1,...,v_k)`, two individually
+shear-trivial fragments have the unlabelled kernel-endpoint response
+
+```math
+F_V(u)=\min_{z\in F_q^k}
+ \{2\operatorname{wt}(z)+\operatorname{wt}(u+Vz)\}.        \tag{12.5}
+```
+
+For all sufficiently large `D` and `1<=k<=D/32`, there is a family of at
+least
+
+```math
+q^{3Dk/16}                                                   \tag{12.6}
+```
+
+such profiles whose pairwise uniform distances exceed `D/16`.  Therefore a
+deterministic summary answering every endpoint to error `epsilon D`, for
+fixed `epsilon<1/32`, needs at least
+
+```math
+{3\over16}Dk\log_2q                                        \tag{12.7}
+```
+
+bits.  Under a uniform prior, successful randomized reconstruction obeys the
+corresponding Fano bound
+
+```math
+I(V;S)\ge(1-\eta){3\over16}Dk\log_2q-H_2(\eta).             \tag{12.8}
+```
+
+#### Proof
+
+Let `C_V=im V`.  Dropping the coefficient toll and then representing a
+nearest codeword with at most `k` basis columns gives
+
+```math
+d(u,C_V)\le F_V(u)\le d(u,C_V)+2k.             \tag{12.9}
+```
+
+A random `floor(D/4)`-dimensional linear code has minimum distance greater
+than `D/8` for all large `D`.  Choose one basis for every `k`-subspace of
+this host.  There are at least `q^(k(r-k))>=q^(3Dk/16)` choices.  For distinct
+subspaces choose `c` in one but not the other.  The first response at `c` is
+at most `2k`, while the second is greater than `D/8`, producing the stated
+gap.  Packing and Fano give (12.7)--(12.8). `square`
+
+No channel label is queried: the common query set is only `W`.  The theorem
+holds over every finite field and applies equally to scalar-closed Cayley
+metrics and systematic-code coset-leader profiles.
+
+### Theorem 12.3 (presented-carrier capacity law)
+
+Let `(X,d)` be finite.  For nonempty carriers `C_theta subseteq X` and costs
+`pi_theta:C_theta->[0,p]`, define
+
+```math
+F_\theta(x)=\min_{c\in C_\theta}
+ \{d(x,c)+\pi_\theta(c)\}.                    \tag{12.10}
+```
+
+Then
+
+```math
+\boxed{
+\left|\|F_\theta-F_{\theta'}\|_\infty
+      -d_H(C_\theta,C_{\theta'})\right|\le p.}              \tag{12.11}
+```
+
+For any probability measure `mu` on queries and `1<=s<infinity`, the same
+statement holds with both functions measured in `L^s(mu)` and the carrier
+metric replaced by
+
+```math
+\|d(\mathord\cdot,C_\theta)
+  -d(\mathord\cdot,C_{\theta'})\|_{L^s(\mu)}.               \tag{12.12}
+```
+
+If a Hausdorff gap `Delta` is witnessed at `x_0`, then for every `r>=0`,
+
+```math
+\|F_\theta-F_{\theta'}\|_{L^s(\mu)}
+\ge(\Delta-2r-p)_+\,\mu(B(x_0,r))^{1/s}.       \tag{12.13}
+```
+
+#### Proof
+
+Write `F_theta=d_(C_theta)+e_theta`.  Nonnegative bounded presentation gives
+`0<=e_theta<=p`, hence `||e_theta-e_theta'||<=p` in every displayed norm.
+Distance-to-set functions embed the Hausdorff hyperspace isometrically in
+the full sup norm, proving (12.11).  Their difference is two-Lipschitz, so a
+gap `Delta` remains at least `Delta-2r` on the radius-`r` ball; subtract the
+presentation error and integrate to obtain (12.13). `square`
+
+Thus carrier Hausdorff packing and response packing agree up to the sharp
+presentation-radius loss.  Equation (12.13) also states exactly why a
+uniformly hard endpoint can disappear under a diffuse query law.
+
+### Corollary 12.4 (a non-Hamming carrier family)
+
+Let `E=F_(q^D)`, let `X=End_(F_q)(E)` carry rank distance, and let `M_a` be
+multiplication by `a`.  For each `k`-subspace `U<=E`, choose a basis, let
+`suppcost_U(a)` be the number of its nonzero basis coefficients, and put
+
+```math
+F_U(A)=\min_{a\in U}
+ \{\operatorname{rank}(A-M_a)+\operatorname{suppcost}_U(a)\}.
+                                                               \tag{12.14}
+```
+
+There are at least `q^(k(D-k))` such profiles, pairwise separated by at least
+`D-k`.  For `k<=D/4` and `epsilon<3/8`, uniform error `epsilon D` therefore
+requires at least `(3/4)Dk log_2q` bits.
+
+#### Proof
+
+Every nonzero multiplication map is invertible.  Distinct subspaces of the
+multiplication host are consequently at full rank-metric Hausdorff distance
+`D`; their basis-support presentation cost is at most `k`.  Apply Theorem
+12.3 and the Gaussian-binomial count. `square`
+
+This is a genuine rank-metric Cayley realization, although the lower proof
+uses only its equilateral multiplication host rather than finer rank-ball
+geometry.
+
+### Theorem 12.5 (metric-quotient synchronization)
+
+Let `varpi:(X,d_X)->(Y,d_Y)` be onto and one-Lipschitz.  Suppose every fibre
+has diameter at most `a`, and that every quotient displacement lifts with
+defect `b`: for all `x in X,y in Y`, some `z` over `y` satisfies
+
+```math
+d_X(x,z)\le d_Y(\varpi x,y)+b.                 \tag{12.15}
+```
+
+For every presented carrier `(C,alpha)` with `0<=alpha<=p`,
+
+```math
+\boxed{
+0\le F_{C,\alpha}(x)-d_Y(\varpi x,\varpi C)
+\le a+b+p.}                                    \tag{12.16}
+```
+
+Hence an `eta`-net for the projected carriers in Hausdorff distance gives an
+`a+b+p+eta` response net of the same size.  Any fixed min-plus continuation
+operator is nonexpansive in this uniform error.
+
+If `X,Y` are abelian groups, `varpi` is a homomorphism, and carriers compose
+by Minkowski sum, then projected carriers close exactly:
+
+```math
+\varpi(C+D)=\varpi C+\varpi D.                 \tag{12.17}
+```
+
+For translation-invariant metrics, infimal convolution of presentation costs
+also gives the exact response update.  The maintained state is the projected
+carrier plus a scalar presentation-radius certificate.
+
+#### Proof
+
+One-Lipschitzness gives the lower bound in (12.16).  Choose a nearest point
+of `varpi C`, lift it within defect `b`, move within its fibre to the chosen
+point of `C` at cost at most `a`, and then pay at most `p`.  Hausdorff nets
+transfer through distance functions.  Min-plus nonexpansiveness follows by
+preserving the order inequalities `g-epsilon<=f<=g+epsilon`; (12.17) is the
+homomorphism identity. `square`
+
+The theorem is a strict composable quotient only when four separately
+verified conditions hold: `a+b+p` is subscale, projected carrier entropy is
+smaller, the declared composition descends, and the presentation certificate
+remains controlled.  Two-scale finite-field metrics give constant-state
+macroscopic collapse, while rank-row projection and Hamming puncturing give
+non-Hamming and coding small-error factors respectively.
+
+## 13. A scale-rank response sandwich
+
+For a translation-invariant metric on an `F_q`-space `W`, define
+
+```math
+s_W(\Delta)=\max\left\{
+ \dim C:C\le W,
+ \min_{c\in C\setminus\{0\}}\|c\|>\Delta
+ \right\}.                                      \tag{13.1}
+```
+
+### Theorem 13.1 (separated rank versus synchronization rank)
+
+For multichannel profiles
+
+```math
+F_V(u)=\min_{z\in F_q^k}
+ \{2\operatorname{wt}(z)+\|u+Vz\|\},           \tag{13.2}
+```
+
+the following hold.
+
+1. If `s=s_W(Delta)>=k` and `Delta>2k`, there are at least
+
+   ```math
+   q^{k(s-k)}
+   ```
+
+   distinct profiles separated by more than `Delta-2k`.  Uniform error
+   `epsilon` with `2epsilon<Delta-2k` therefore costs at least
+   `k(s-k)log_2q` bits.
+2. If a linear `(a,b)` metric synchronization maps `W` onto an
+   `r`-dimensional space, every profile is decoded from `varpi(im V)` to
+   error `a+b+2k`, using at most
+
+   ```math
+   \sum_{j=0}^{\min\{r,k\}}{r\brack j}_q         \tag{13.3}
+   ```
+
+   states.
+3. Every linear map to dimension `r` whose fibres have diameter at most `a`
+   obeys the generalized Singleton inequality
+
+   ```math
+   \boxed{s_W(a)\le r.}                          \tag{13.4}
+   ```
+
+#### Proof
+
+For (1), choose a dimension-`s` separated host and all its `k`-subspaces;
+Theorem 12.3 transfers their Hausdorff separation through the `2k`
+presentation toll.  For (2), apply Theorem 12.5 and count all possible
+projected subspace dimensions.  For (3), a separated subspace intersects the
+kernel trivially: a nonzero kernel member would be two points of one fibre at
+distance greater than `a`.  It must therefore inject into the target.
+`square`
+
+Puncturing `d-1` Hamming coordinates turns (13.4) into the classical
+Singleton bound.  Retaining rows of a matrix turns it into the rank-metric
+Singleton bound.  On the two-scale carrier of Example 13, the complete curve
+is
+
+```math
+s_W(\Delta)=
+\begin{cases}
+D,&0\le\Delta<1,\\
+r,&1\le\Delta<L+1,\\
+0,&\Delta\ge L+1,
+\end{cases}                                      \tag{13.5}
+```
+
+so the lower and upper response exponents agree at every macroscopic scale
+away from the presentation toll.
+
+### Corollary 13.2 (intrinsic rank-metric response rate)
+
+Let `E=F_(q^D)` and view `End_(F_q)(E)` as `D x D` matrices in rank metric.
+For `1<=r<=D`, the Gabidulin space
+
+```math
+\mathcal G_r=
+\left\{x\mapsto\sum_{i=0}^{r-1}a_ix^{q^i}:a_i\in E\right\}  \tag{13.6}
+```
+
+has dimension `rD` and minimum nonzero rank `D-r+1`.  Consequently, whenever
+`2k<D-r+1`, its `k`-subspaces give at least
+
+```math
+q^{k(rD-k)}                                      \tag{13.7}
+```
+
+profiles separated by at least `D-r+1-2k`.
+
+For `r=floor(D/2)` and `k<=D/16`, all sufficiently large `D` admit at least
+
+```math
+q^{kD^2/3}
+```
+
+profiles separated by more than `3D/8`.  Thus uniform error `epsilon D`, for
+fixed `epsilon<3/16`, requires at least
+
+```math
+{1\over3}kD^2\log_2q                            \tag{13.8}
+```
+
+bits.
+
+#### Proof
+
+A nonzero linearized polynomial of `q`-degree at most `r-1` has at most
+`q^(r-1)` roots, so its kernel dimension is at most `r-1` and its rank at
+least `D-r+1`.  Its coefficient representation is unique, giving dimension
+`rD`.  Apply Theorem 13.1.  With `r=floor(D/2)` and `k<=D/16`, the response
+gap exceeds `3D/8` and `rD-k>=D^2/3` for large `D`. `square`
+
+Unlike Corollary 12.4, this construction uses an MRD host and the sharp
+rank-metric Singleton geometry.  Its information exponent
+`Theta(D^2k log q)` is of the same order as the complete mixed-holonomy map.
+
+### Theorem 13.3 (optimal quotient rank and code--anticode duality)
+
+For `a>=0`, let
+
+```math
+A_W(a)=\max\{\dim K:K\le W,\ \operatorname{diam}K\le a\}.  \tag{13.9}
+```
+
+If `N=dim W`, the least dimension of a linear `(a,0)` metric
+synchronization quotient of `W`, allowing the target to carry its induced
+translation-invariant metric, is exactly
+
+```math
+\boxed{N-A_W(a).}                              \tag{13.10}
+```
+
+In particular,
+
+```math
+\boxed{s_W(a)+A_W(a)\le N.}                    \tag{13.11}
+```
+
+#### Proof
+
+The kernel of any such quotient is an anticode of dimension `N-r`, giving
+the lower bound on target dimension.  Conversely choose a maximizing
+anticode `K`, pass to `W/K`, and use the quotient metric
+
+```math
+d(x+K,y+K)=\min_{k\in K}\|x-y+k\|.
+```
+
+The quotient map is one-Lipschitz, its fibre diameter is at most `a`, and
+every quotient distance lifts with zero defect.  This proves (13.10), while
+Theorem 13.1 gives (13.11). `square`
+
+The code--anticode inequality is tight in the principal examples:
+
+```math
+\begin{array}{c|c|c}
+\text{metric}&A_W(a)&s_W(a)\\ \hline
+\text{Hamming on }F_q^D&\lfloor a\rfloor&\le D-\lfloor a\rfloor\\
+\text{two-scale, }1\le a<L+1&D-r&r\\
+\text{rank on }M_D(F_q),\ a\in\{0,\ldots,D\}&Da&D(D-a).
+\end{array}                                      \tag{13.12}
+```
+
+For Hamming space, row-echelon pivots prove every `d`-dimensional subspace
+has a word of weight at least `d`; equality in the separated-rank column
+requires suitable MDS parameters and is not automatic.  For rank metric,
+row-supported anticodes give `A_W(a)>=Da` and the Gabidulin host gives
+`s_W(a)>=D(D-a)`; (13.11) forces equality.  The mismatch between lower and
+upper response certificates is the scale-dependent code--anticode gap
+
+```math
+\gamma_W(a)=N-A_W(a)-s_W(a).                  \tag{13.13}
+```
+
+### Theorem 13.4 (binary Hamming has a leading duality gap)
+
+For `W_D=F_2^D`, fixed `0<delta<1`, and
+`a_D=floor(delta D)`,
+
+```math
+\liminf_{D\to\infty}{\gamma_{W_D}(a_D)\over D}
+\ge H_2(\delta/2)-\delta>0.                    \tag{13.14}
+```
+
+#### Proof
+
+The linear anticode dimension is `a_D`.  A code of minimum distance greater
+than `a_D` has disjoint Hamming balls of radius `floor(a_D/2)`, so the sphere-
+packing bound gives
+
+```math
+s_W(a_D)
+\le D-\log_2\sum_{j\le\lfloor a_D/2\rfloor}{D\choose j}.
+```
+
+Divide by `D` and use the Hamming-ball entropy asymptotic.  Strict positivity
+is `H_2(x)>2x` for `0<x<1/2`. `square`
+
+Thus separated-host rank and optimal synchronization rank are not
+asymptotically dual in general.  This does not yet determine the full
+Grassmannian response entropy, because a large family of separated carrier
+subspaces need not lie inside one common separated host.

@@ -405,3 +405,206 @@ try it outside finite-field Hamming geometry.  In parallel, an adversarial
 construction will test whether any lower law depending only on carrier size
 and relation rank is false.  This checkpoint redirects rather than ends the
 campaign.
+
+## Checkpoint 7: carrier capacity replaces parameter dimension
+
+**Question.** Has the continuation produced a general composition law, or
+only repackaged metric entropy?
+
+The base identity is elementary: distance-to-set functions embed the
+Hausdorff hyperspace isometrically into `ell_infinity`.  The project-level
+result is nevertheless generative because composition supplies a weighted
+carrier that was absent from either child.
+
+1. If
+
+   ```math
+   F_\theta(x)=\min_{c\in C_\theta}
+   \{d(x,c)+\pi_\theta(c)\},
+   \qquad 0\le\pi_\theta\le p,
+   ```
+
+   then response distance and carrier Hausdorff distance differ by at most
+   `p`, sharply.  Packing, covering, deterministic rate--distortion, and
+   Fano bounds transfer with that one presentation-radius loss.
+
+2. The same law is query-relative.  Under any query distribution `mu`, the
+   `L^s(mu)` response metric is within `p` of the corresponding
+   distance-transform metric.  A Hausdorff witness of size `Delta` exposes
+   at least
+
+   ```math
+   (\Delta-2t-p)_+\,\mu(B_t)^{1/s}.
+   ```
+
+   Thus uniform hardness and diffuse-query hardness differ exactly by
+   witness-neighborhood mass; the theorem does not silently turn a rare
+   endpoint into average information.
+
+3. The law produces full-rate packings in Hamming, Lee, flag-ultrametric,
+   and rank-metric Cayley realizations.  The rank-metric construction uses an
+   equilateral multiplication host, so it proves portability to a
+   non-Hamming ambient model but not an intrinsically rank-geometric entropy
+   theorem.
+
+4. Raw relation dimension is decisively falsified as a universal proxy.
+   Surjective maps can have identical image carriers; diameter-scale
+   presentation cost can erase arbitrary carrier geometry; and a two-scale
+   carrier of diameter `Theta(D)` can collapse `q^(Dk)` gauges to a quotient
+   of `q^(rk)` states, or to only the subspaces of `F_q^r` for endpoint
+   queries.
+
+### Director judgment
+
+The surviving object is not “holonomy dimension.”  It is the **presented
+carrier response**: a composition-created subset in the query metric,
+together with the cost of accessing its points.  Its macroscopic complexity
+is the exposed metric entropy of that carrier class after subtracting the
+presentation scale.  This unifies the positive and negative finite-field
+examples and gives a second nontrivial model through rank-metric shortcuts.
+It remains a theorem for distance-transform/min-plus landscapes, not a
+universal theory of arbitrary extremal responses.
+
+### Immediate continuation
+
+The two-scale counterexample suggests the complementary positive compression
+theorem.  We next test whether a coarse metric quotient with small fibres and
+controlled lifting makes every presented carrier response a function of the
+quotient carrier, with nonaccumulating error under future min-plus contexts.
+This is a natural deterministic synchronization hypothesis rather than an
+assumed linkage condition.  Work continues immediately.
+
+## Checkpoint 8: deterministic metric synchronization
+
+**Question.** Does the two-scale collapse expose a natural compression
+theorem, or only an engineered example?
+
+It exposes a general, independently audited sufficient condition.  If an
+onto one-Lipschitz map of query metrics has fibre diameter `a`, lift defect
+`b`, and a carrier has presentation radius `p`, then its complete endpoint
+profile is uniformly within `a+b+p` of distance to the projected carrier.
+The three terms are jointly sharp under the stated axioms.  Hausdorff nets of
+projected carriers therefore transfer directly to response nets.
+
+The error survives every fixed min-plus continuation without amplification.
+For additive carriers and a homomorphic quotient, the projected carrier
+updates exactly; translation-invariant metrics give the corresponding exact
+response infimal convolution.  The maintained state includes one scalar
+presentation-radius certificate.
+
+The audit identified the precise strictness conditions.  This is compression
+only if projected carrier entropy is actually smaller, the error is subscale,
+the declared composition descends, and the radius certificate remains
+controlled.  Rank-row projection and puncturing prove small-error factors but
+do not automatically prove an entropy reduction.  The two-scale model meets
+all four conditions.
+
+### Immediate continuation
+
+The lower carrier theorem and upper quotient theorem currently use unrelated
+geometric certificates.  The next theorem will define their scale-dependent
+linear ranks and test whether fibre geometry forces an inequality between
+them.  Hamming puncturing suggests a generalized Singleton argument.  Work
+continues immediately.
+
+## Checkpoint 9: scale-rank duality and an intrinsic rank model
+
+**Question.** Can the lower and upper laws be related without enumerating the
+full response class?
+
+Yes.  Let `s_W(Delta)` be the largest dimension of a linear carrier host with
+minimum nonzero metric weight greater than `Delta`.
+
+1. Its `k`-subspaces give `q^(k(s-k))` response profiles separated by more
+   than `Delta-2k`.
+2. A dimension-`r` metric synchronization quotient decodes every profile
+   from a projected subspace, using at most
+   `sum_(j<=k){r bracket j}_q` states and error `a+b+2k`.
+3. Fibre diameter `a` forces
+
+   ```math
+   s_W(a)\le r.
+   ```
+
+   A separated host must inject into the quotient.  This is exactly the
+   puncturing proof of Singleton in Hamming space and its row-projection
+   analogue in rank metric.
+
+The two-scale model attains the inequality at every scale: its separated-rank
+curve is `D`, then `r`, then zero.  More substantially, a self-contained
+Gabidulin host of dimension `rD` and minimum rank `D-r+1` turns the
+rank-metric Singleton geometry into response information.  At
+`r=floor(D/2)` and `k<=D/16`, it produces at least `q^(kD^2/3)` profiles
+separated by more than `3D/8`, forcing `(1/3)kD^2 log_2 q` bits below error
+`3D/16`.  This removes the earlier equilateral-host limitation.
+
+### Director judgment
+
+The program has moved from local examples to one genuine two-sided law for
+linear presented carriers.  Algebraic relation rank creates a potential
+state; metric carrier separation turns it into information; metric quotient
+fibres bound how much can be compressed; and Singleton duality makes those
+certificates compatible.  The same statement explains Hamming, two-scale,
+Lee/flag, and intrinsic rank-metric behavior.
+
+It is still not a universal extremal-information theory.  The carrier
+representation is special to distance-transform/min-plus responses, and the
+best separated rank need not equal the best synchronizing quotient rank.
+
+### Next theorem
+
+Determine whether those two scale ranks are asymptotically dual in a natural
+class, or exhibit a leading gap and identify the invariant between them.  A
+mere restatement as covering dimension will not suffice; the result must
+predict a response exponent or a strict composable quotient.
+
+## Checkpoint 10: anticode exactness and a real duality gap
+
+**Question.** Is synchronizing quotient rank another optimization with no
+closed characterization?
+
+No.  For an `N`-dimensional translation-invariant linear carrier, let
+`A_W(a)` be the largest dimension of a linear anticode of diameter at most
+`a`.  The least dimension of an exact `(a,0)` synchronization quotient is
+
+```math
+N-A_W(a).
+```
+
+The lower bound is kernel dimension.  The upper bound uses the canonical
+coset metric on `W/K`, which is one-Lipschitz and lifts every quotient
+distance exactly.  Consequently
+
+```math
+s_W(a)+A_W(a)\le N.
+```
+
+This is the precise code--anticode boundary between carrier packing and
+carrier compression.  It is tight for the two-scale metric and for rank
+metric, where Gabidulin codes and row-supported anticodes give
+`s_W(a)=D(D-a)` and `A_W(a)=Da`.
+
+It is not universally tight.  In binary Hamming space,
+`A_W(floor(delta D))=floor(delta D)`, while sphere packing gives
+
+```math
+\liminf {N-A_W-s_W\over D}
+\ge H_2(\delta/2)-\delta>0.
+```
+
+Thus the session ends with a decisive falsification of universal scale-rank
+duality, not an unresolved slogan.
+
+### Director judgment and continuation target
+
+The strongest surviving abstraction is now a three-layer law:
+
+1. mixed relations create a presented carrier;
+2. carrier packing and quotient anticodes bound its response information;
+3. the code--anticode gap measures what neither certificate resolves.
+
+The next theorem is the Hamming Grassmannian problem: determine whether
+families of subspace carriers not contained in one common separated host can
+fill the leading code--anticode gap.  This checkpoint is followed by full
+independent audit, surface promotion, and reproducibility checks; it is not
+being used to return to the original signing problem.

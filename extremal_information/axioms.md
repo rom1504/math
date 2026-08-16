@@ -201,6 +201,10 @@ contains a finite optimizer.
 | Convex reachable body | survives approximately in fixed effective dimension | Shapley--Folkman makes nonconvexity cost at most the largest `r` component diameters; growing `r` can carry a leading gap |
 | Robust tropical crossing rank | survives at uniform lattice scale | a four-cell gap protects channel count, but can disappear in normalized mean-square loss |
 | Query-weighted tropical exposure | survives as a finite lower-bound certificate | it detects witness mass exactly; canonical code transversals make it exponentially small under diffuse queries |
+| Mixed-relation holonomy | survives as an exact algebraic gluing state | composition creates `Hom(Z/Z_loc,W)`, but its gauge dimension alone need not be response-visible |
+| Presented carrier | survives for distance-transform/min-plus landscapes | response entropy is carrier Hausdorff entropy up to presentation radius; the query law controls witness exposure |
+| Metric-quotient synchronization | survives conditionally | small fibres and lift defect give a uniform quotient decoder, but strict compression also needs lower projected entropy and descended composition |
+| Raw carrier/relation dimension | rejected as a response proxy | surjective maps, redundant alphabets, and two-scale metrics collapse exponentially many gauges |
 | Deterministic Parisi-like overlap state | narrowed | a finite synchronization theorem exists, but no natural deterministic hypothesis is yet known to force its cross-root linkage |
 
 ## 9. Ten questions every candidate must answer
@@ -268,3 +272,73 @@ Synchronization and fixed-effective-dimension convexification are two ways
 the closure can collapse.  Tropical crossings and response packing are ways
 to prove that it cannot.  No single one of these objects is presently a
 universal deterministic analogue of the Parisi order parameter.
+
+## 12. Presented carriers: the first two-sided growth law
+
+The third investigation isolates a class in which both information growth
+and compression follow from one state.  A **presented carrier** in a query
+metric `(X,d)` is a nonempty set `C` with an access cost
+`pi:C->[0,p]`; its response is
+
+```math
+F_{C,\pi}(x)=\min_{c\in C}\{d(x,c)+\pi(c)\}.
+```
+
+This object is forced by mixed relations.  Individually valid gauges become
+incompatible on a new relation space; their holonomy image is `C`, while the
+number of relation letters needed to reach a point is `pi`.
+
+Four quantities must be kept distinct.
+
+1. **Latent relation rank** counts possible compatibility coordinates.  It is
+   only a supply of potential information.
+2. **Carrier entropy** is the Hausdorff packing/covering entropy of the image
+   sets in the declared endpoint metric.
+3. **Presentation radius** `p` is the price of accessing the carrier.  It is
+   subtracted once from uniform separations.
+4. **Exposure mass** is the query-law mass near separating witnesses.  It is
+   necessary for diffuse, rather than uniform, information bounds.
+
+Theorem 12.3 proves that items 2--4 determine response complexity inside this
+class.  Raw relation dimension does not: it can map surjectively to one
+carrier, or live inside metric fibres invisible at the chosen scale.
+
+The complementary compression primitive is a metric quotient
+`varpi:X->Y`.  It is operationally useful only if:
+
+1. fibres and lift defect are subscale;
+2. projected carriers have a proved smaller covering rate;
+3. the declared carrier composition descends to `Y`; and
+4. the presentation-radius certificate stays controlled.
+
+Under those checks, Theorem 12.5 gives a strict approximate feature algebra.
+This is the first current framework in which a single object predicts both
+`Theta(D kappa)` growth and exponential collapse in different models.  Its
+scope remains distance-transform/min-plus response families; treating every
+extremal landscape as a “carrier” without proving such a representation would
+be vocabulary rather than theory.
+
+For linear carriers, Theorem 13.1 replaces the qualitative four-part test by
+two scale-dependent ranks.  The separated rank `s_W(Delta)` is a lower
+capacity certificate; a synchronizing quotient rank is an upper compression
+certificate.  Fibre geometry forces the generalized Singleton constraint
+
+```math
+s_W(a)\le\dim Y.
+```
+
+This relation is structural rather than definitional: it becomes the
+classical Singleton bound under Hamming puncturing and the rank-metric
+Singleton bound under row projection.  Gabidulin hosts then turn it back into
+an extremal-response information theorem.  The optimal quotient rank is
+exactly `dim W-A_W(a)`, where `A_W(a)` is the largest linear anticode
+dimension.  Thus the unresolved quantity is the code--anticode gap
+
+```math
+\gamma_W(a)=\dim W-A_W(a)-s_W(a).
+```
+
+It vanishes in the two-scale and rank-metric examples but is linearly positive
+in binary Hamming space by sphere packing.  The leading question is whether
+actual Grassmannian carrier entropy fills that gap or requires a third
+invariant between code packing and anticode quotienting.
