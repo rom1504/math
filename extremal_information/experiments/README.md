@@ -225,3 +225,32 @@ full Cayley diameter.
 
 Output:
 [`phase3_geodesic_sync_full_audit_results.json`](phase3_geodesic_sync_full_audit_results.json).
+
+## `verify_phase3_transversal_composition.py`
+
+Checks the constant-error synchronization replacement, affine-state and
+affine-rank profile bounds, the exact mixed-cycle identity, the equal-depth
+radius obstruction through `D=12`, and the two linear-code pair-spectrum
+examples.
+
+Output:
+[`phase3_transversal_composition_results.json`](phase3_transversal_composition_results.json).
+
+## `verify_phase3_transversal_composition_audit.py`
+
+Independently enumerates affine feature-state products and joins, tests their
+all-future midpoint decoders, and checks the equal-state macroscopic
+obstruction and exact support-separating queries.
+
+Output:
+[`phase3_transversal_composition_audit_results.json`](phase3_transversal_composition_audit_results.json).
+
+## `verify_phase3_mixed_circuit_hierarchy.py`
+
+Checks antipodal elimination, the circuit and nullity bounds, mixed-holonomy
+rank under random fragment partitions, the strict arity hierarchy through
+seven sources, sharp disjoint-circuit accumulation, and a finite one-channel
+rooted-response packing.
+
+Output:
+[`phase3_mixed_circuit_hierarchy_results.json`](phase3_mixed_circuit_hierarchy_results.json).

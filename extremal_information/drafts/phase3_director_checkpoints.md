@@ -240,3 +240,44 @@ labels to a linear section, with a quantitative zero-temperature error and a
 sharp counterexample if the constant cannot be improved.  That test decides
 whether the hard-core count is merely enumerative or also reveals a general
 mechanism by which composition constrains latent information.
+
+## Checkpoint 4: deterministic synchronization from cycle contraction
+
+**Question.** Did the geodesic condition produce a strict response quotient,
+or merely restate shortest-path optimality?
+
+The cycle criterion itself is an exact reformulation, but its consequences
+are genuinely compressive and have survived two independent audits.
+
+1. For a complete quotient projection, one representative per affine fibre
+   has joint additive-triangle defect at most three.  Vector-valued BLR
+   stability supplies one linear section at uniformly bounded Hamming
+   distance.  Replacing the whole raw support by its linear graph changes
+   every rooted word metric under every appended raw support by at most
+   eleven.  The state uses `O(w^2)` bits rather than a fibre truth table.
+
+2. For an incomplete projection, quotient Cayley diameter `h` is the exact
+   worst-case scale of hidden fibre information.  Stripping to one lift per
+   quotient generator costs at most `2h` in every future context, and an
+   explicit selector family attains `2h`.  A linear-section state gives the
+   audited bound `10h+1`; hence `h=o(w)` is a genuine submacroscopic
+   synchronization regime.
+
+3. Synchronization does not make the response algebra exact.  Replacing
+   finitely many raw sources telescopes, but union may create projected-zero
+   cycles that occur in no source separately.  Those *mixed cycles* are the
+   first unaccounted composition feature.
+
+This reaches the requested generative threshold: a natural finite extremal
+hypothesis forces a strict all-context quotient, with a sharp parameter
+measuring when omitted rooted information becomes macroscopic.  It is not a
+universal deterministic Parisi object; it is a theorem for binary extension
+word landscapes.
+
+### Immediate continuation
+
+The next result must quantify mixed-cycle creation, not optimize the constants
+eleven or `10h+1`.  We will test whether a closed affine/holonomy state
+controls unions, identify the exact composition defect, and construct a
+scalable equal-state counterexample if bounded algebraic data fail.  This
+checkpoint therefore redirects the work and does not end it.

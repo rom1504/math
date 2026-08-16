@@ -1,0 +1,96 @@
+{
+  "affine_join_law": {
+    "atomic_associativity_checks": 4096,
+    "atomic_pair_checks": 256
+  },
+  "affine_state_bounds": {
+    "largest_gap_minus_affine_rank": 1,
+    "largest_profile_gap": 2,
+    "linear_families": 65535
+  },
+  "all_future_comparison": {
+    "all_future_support_checks": 2097152,
+    "cycle_contracting_maps": 64,
+    "largest_linear_minus_source_gap": 1,
+    "largest_source_minus_linear_gap": 1,
+    "largest_uniform_error": 1
+  },
+  "equal_depth_obstruction": {
+    "10": {
+      "mixed_cycle_target_length": 3,
+      "mixed_radius": 5,
+      "radius_gap": 5,
+      "source_count": 11,
+      "sparse_radius": 10
+    },
+    "12": {
+      "mixed_cycle_target_length": 3,
+      "mixed_radius": 6,
+      "radius_gap": 6,
+      "source_count": 13,
+      "sparse_radius": 12
+    },
+    "6": {
+      "mixed_cycle_target_length": 3,
+      "mixed_radius": 3,
+      "radius_gap": 3,
+      "source_count": 7,
+      "sparse_radius": 6
+    },
+    "8": {
+      "mixed_cycle_target_length": 3,
+      "mixed_radius": 4,
+      "radius_gap": 4,
+      "source_count": 9,
+      "sparse_radius": 8
+    }
+  },
+  "mixed_cycle_identity": {
+    "spanning_supports": 8100
+  },
+  "pair_spectrum_no_go": {
+    "base_union_radii": [
+      4,
+      4
+    ],
+    "code_radii": [
+      2,
+      3
+    ],
+    "powers": {
+      "1": {
+        "code_one_union_radius": 4,
+        "code_zero_union_radius": 4,
+        "pair_histogram": {
+          "0": 8,
+          "2": 24,
+          "4": 24,
+          "6": 8
+        },
+        "response_gap": 0
+      },
+      "2": {
+        "code_one_union_radius": 7,
+        "code_zero_union_radius": 6,
+        "pair_histogram": {
+          "0": 64,
+          "2": 384,
+          "4": 960,
+          "6": 1280,
+          "8": 960,
+          "10": 384,
+          "12": 64
+        },
+        "response_gap": 1
+      }
+    },
+    "profile_formula_checks": 256,
+    "weight_enumerator": {
+      "0": 1,
+      "2": 3,
+      "4": 3,
+      "6": 1
+    }
+  },
+  "status": "all assertions passed"
+}
