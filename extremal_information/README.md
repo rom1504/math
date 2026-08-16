@@ -142,13 +142,24 @@ problems instead of extending its vocabulary.  It produced five conclusions.
 8. The weighted-automaton benchmark yields a second strict composable state:
    tropical lumpability replaces `p` raw coordinates by `r<p` nonlinear
    block maxima, closes at arbitrary depth, and has matching
-   `Theta(r log(B/epsilon))` response complexity when quotient suffixes
+   `Theta(r log(1+B/epsilon))` response complexity when quotient suffixes
    expose every retained coordinate.
 9. Depth-uniform approximate reuse has two verified finite mechanisms.
    Compatible interface gauges telescope exactly; recurrent small-diameter
    continuations reset all older error.  A zero-or-one theorem rules out a
    generic intermediate Hilbert contraction for all-finite max-plus maps,
    while repeatable nonzero holonomy gives linear drift.
+10. Static response complexity now has a cross-benchmark two-sided law.
+    Query landmarks bound response covers from above, while balanced robust
+    exposure bounds them below.  For the full Lipschitz language the exposure
+    dimension is exactly the packing number of the query interface; for
+    weighted automata it is controlled by exposed coordinates and orthant VC
+    dimension.
+11. Shared-parameter presentation has a nontrivial robust lower bound.
+    Facets of high-facet `0/1` polytopes produce tie-free binary max-affine
+    response families with `Omega(m log m)` bits at fixed distortion.  The
+    general radius-bounded upper remains `O(m^2)`; raw normal-fan cells do not
+    settle that gap.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

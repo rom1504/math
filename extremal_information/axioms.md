@@ -510,3 +510,33 @@ no reset.  It therefore explains, in the same language, why one-step metric
 repair can coexist with macroscopic long-depth drift.  This law is exact for
 structured tropical systems; it is not yet a canonical decomposition theorem
 for arbitrary approximate block lumpings.
+
+## 16. Static response width has an upstream two-sided certificate
+
+For a metric query interface, response entropy can be bounded without first
+covering the response class itself.
+
+- Values on a query net, with scalar quantization, give a landmark upper
+  bound.
+- A balanced collection of queries that realizes every half-positive,
+  half-negative margin pattern gives an external-cover lower bound.
+- For the full Lipschitz response ball, this balanced exposure dimension is
+  exactly the size of a query packing at twice the margin, rounded down to an
+  even number.
+
+The certificate separates two costs that a one-number fat dimension would
+conflate: the number of independently exposed queries and the scalar
+precision stored at each one.  A one-dimensional response interval has
+constant fat dimension but logarithmic precision entropy.  In weighted
+automata, robust suffix pins expose an isometric coordinate cube, while the
+subgraph class is controlled by upper-orthant VC dimension.  In normalized
+Max-Cut, the full Lipschitz compiler turns query packing directly into
+response exposure.
+
+Presentation complexity supplies a second limitation.  Binary max-affine
+grammars with `m` shared parameters have an `O(m^2)` radius-bounded entropy
+ceiling, but a single high-facet `0/1` polytope already forces
+`Omega(m log m)` robust response bits.  The remaining gap concerns common
+normal fans of many support polytopes.  This is a static law only: it must be
+paired with the congruence mechanisms of Section 15 before the same summary
+can be reused at arbitrary depth.

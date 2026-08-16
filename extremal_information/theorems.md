@@ -3298,7 +3298,7 @@ the residual map is an isometric sup-cube embedding.  Hence, for
 
 ```math
 \log_2\operatorname {Cov}_\epsilon
-=\Theta(k\log(B/\epsilon))                       \tag{16.63}
+=\Theta(k\log(1+B/\epsilon))                     \tag{16.63}
 ```
 
 up to universal changes of covering radius.  In particular low affine
@@ -3347,7 +3347,7 @@ complexity
 
 ```math
 \log_2\operatorname {Cov}^{\rm ext}_\epsilon
-=\Theta(r\log(B/\epsilon)).                       \tag{16.68}
+=\Theta(r\log(1+B/\epsilon)).                     \tag{16.68}
 ```
 
 For a concrete fixed automaton this is a minimality statement only on its
@@ -3566,3 +3566,201 @@ therefore the repeatable-holonomy side of this dichotomy.  The mechanisms in
 this theorem are elementary max-plus algebra and graph cohomology; the
 generative conclusion is the sharp separation between static response
 compression and a state that can actually be reused indefinitely.
+
+### Theorem 16.11 (landmarks and balanced query exposure)
+
+Let `(X,d)` be a finite metric space of diameter `D`, and let
+`F subset Lip_1(X)/R1`, with shape metric `d_sh=osc/2`.  Write `N_X(r)` for
+the least size of an `r`-net.  Define the balanced exposure dimension
+`E_gamma(F)` as the largest even `k` for which there are queries
+`x_1,...,x_k`, thresholds `a_1,...,a_k`, and, for every balanced
+`U subset [k]`, a response representative `f_U` satisfying
+
+```math
+f_U(x_i)\ge a_i+\gamma\ (i\in U),
+\qquad
+f_U(x_i)\le a_i-\gamma\ (i\notin U).             \tag{16.80}
+```
+
+Then, for `r,eta>0`,
+
+```math
+\boxed{
+\log_2\operatorname {Cov}^{\rm ext}_{r+\eta/2}(F)
+\le N_X(r)
+\log_2\left(\left\lceil{D\over\eta}\right\rceil+1\right),}  \tag{16.81}
+```
+
+whereas, for `0<epsilon<gamma`,
+
+```math
+\boxed{
+\log_2\operatorname {Cov}^{\rm ext}_{\epsilon}(F)
+\ge
+\log_2{E_\gamma(F)\choose E_\gamma(F)/2}.}       \tag{16.82}
+```
+
+For the full Lipschitz response language this lower certificate is computed
+exactly from the query geometry:
+
+```math
+\boxed{
+E_\gamma(Lip_1(X)/R1)
+=2\left\lfloor{P_X(2\gamma)\over2}\right\rfloor,}             \tag{16.83}
+```
+
+where `P_X(s)` is the largest cardinality of a non-strictly `s`-separated
+subset of `X`.  Thus the upper and lower objects are query landmarks and
+query packings, rather than response covering numbers hidden in new notation.
+
+There are two benchmark consequences.
+
+1. For the unit-load pure-Max-Cut language on the projective `w`-cube,
+
+   ```math
+   E_{\epsilon w}
+   \ge2^{(1-H_2(2\epsilon)+o(1))w},
+   \qquad 0<\epsilon<1/4.                        \tag{16.84}
+   ```
+
+   Combining (16.82) with the shared-parameter bound in Theorem 16.8 gives
+
+   ```math
+   E_{\epsilon w}(C_{w,m})
+   -\log_2(E_{\epsilon w}(C_{w,m})+1)
+   \le O_\epsilon(m^2+m\log(w+m)).               \tag{16.85}
+   ```
+
+2. For max-plus residuals
+   `g_v(h)=max_i(v_i+h_i)-max_i h_i`, `v in [-B,B]^p`, let `k_pin` be the
+   number of coordinates robustly exposed with margin `2B`.  Ordinary fat
+   dimension obeys
+
+   ```math
+   k_{\rm pin}\le\operatorname {fat}_\gamma\{g_v\}
+   \le\min\{p,P_H(\gamma)\},
+   \qquad0<\gamma<B.                             \tag{16.86}
+   ```
+
+   The exposed subfamily is an isometric sup cube, so for `0<epsilon<B`,
+
+   ```math
+   \max\{2,B/\epsilon\}^{k_{\rm pin}}
+   \le\operatorname {Cov}^{\rm ext}_\epsilon
+   \le(1+2B/\epsilon)^p                          \tag{16.87}
+   ```
+
+   up to universal changes of radius.  If all `p` coordinates are exposed,
+   its response entropy is
+   `Theta(p log(1+B/epsilon))`.  In particular, one affine line of suffixes
+   can expose every coordinate; affine dimension alone is not the right
+   complexity parameter.
+
+#### Proof
+
+Normalize `min f=0`, so `0<=f<=D`.  Store rounded values on an `r`-net and
+take the midpoint of the upper and lower McShane envelopes.  Its error from
+`f` has oscillation less than `2r+eta`, and each landmark has at most
+`ceil(D/eta)+1` values, proving (16.81).  The decoder need not lie in `F`,
+which accounts for the external cover; internal centres cost at most twice
+the radius.
+
+Two distinct balanced patterns differ in both orientations.  Their response
+difference is at least `2gamma` at one query and at most `-2gamma` at
+another, giving shape separation at least `2gamma` and proving (16.82).
+Conversely, two queries that can be oppositely labelled in balanced patterns
+must be at distance at least `2gamma`.  On any non-strictly
+`2gamma`-separated query set, the values `+gamma` and `-gamma` assigned to a
+balanced split are one-Lipschitz and extend by McShane.  This proves (16.83).
+
+Theorem 16.4 identifies the Max-Cut response class with the full projective
+Lipschitz ball, and a projective Hamming code proves (16.84).  Equations
+(16.82) and (16.58) give (16.85).  For automata, `g_v` is two-Lipschitz in
+the projective suffix metric, giving the packing term in (16.86).  Its
+threshold subgraphs are complements of upper orthants in `R^p`, whose VC
+dimension is `p`; hence the other upper bound.  Robust pins read the chosen
+coordinates exactly.  Volume and corner packings of that cube, plus direct
+coordinate quantization, prove (16.87). `square`
+
+The one-scale exposure dimension does not determine entropy by itself: even
+a one-dimensional response interval has constant fat dimension and
+`Theta(log(1+B/epsilon))` precision cost.  Nor does this static theorem make
+a cover reusable under composition.  The transition-toll family has small
+static error and macroscopic depth drift; Theorem 16.10 supplies the
+additional congruence/reset mechanisms.
+
+### Theorem 16.12 (robust binary max-affine entropy lower bound)
+
+Let `P=conv(V)` be a full-dimensional `0/1` polytope in `R^m`.  There is a
+binary max-affine presentation with `m` shared real parameters and one query
+for `P` plus one query for each facet, containing response shapes
+`[f_(theta_F)]` such that
+
+```math
+\|[f_{\theta_F}]\|_{\rm sh}={1\over2},
+\qquad
+d_{\rm sh}([f_{\theta_F}],[f_{\theta_G}])=1
+\quad(F\ne G).                                   \tag{16.88}
+```
+
+The parameters can be perturbed off every optimizer-tie hyperplane,
+positively rescaled back to radius `1/2`, and kept pairwise more than
+`1-2eta` apart for any `eta>0`.
+
+There are full-dimensional `0/1` polytopes with at least
+
+```math
+\left({cm\over(\log m)^2}\right)^{m/2}           \tag{16.89}
+```
+
+facets for an absolute `c>0`.  Consequently, for every fixed
+`delta<1/2`, some radius-`1/2` binary shared-parameter response class has
+
+```math
+\boxed{
+\log\operatorname {Cov}^{\rm ext}_\delta
+\ge {m\over2}(\log m-2\log\log m-O(1))
+=\Omega(m\log m).}                               \tag{16.90}
+```
+
+Together with Theorem 16.8, the known general radius-bounded range is
+therefore
+
+```math
+\Omega(m\log m)
+\le\sup_{A_\bullet}
+ \log\operatorname {Cov}_\delta
+ \{[f_\theta]:\|[f_\theta]\|_{\rm sh}\le1\}
+\le O(m^2).                                      \tag{16.91}
+```
+
+This is a statement for generic binary max-affine presentations, not yet for
+unit-load Max-Cut components.
+
+#### Proof
+
+Use witness set `V` for a base query.  For every facet `F`, with vertex set
+`V_F=V cap F`, use the deletion query `V setminus V_F`.  If `u_F` exposes
+`F`, normalize it by the positive gap between `F` and the undeleted
+vertices.  The base response and every other facet-deletion response equal
+one common scalar `c_F`, while the `F`-deletion response equals `c_F-1`.
+Thus
+
+```math
+f_{\theta_F}=c_F\boldsymbol1-e_F,                 \tag{16.92}
+```
+
+which proves (16.88).  Continuity and density off finitely many comparison
+hyperplanes give the robust version.  The facet lower bound (16.89) is due
+to Gatzouras--Giannopoulos--Markoulakis; substituting it in (16.88) proves
+(16.90). `square`
+
+The primary sources are
+[Gatzouras--Giannopoulos--Markoulakis](https://arxiv.org/abs/math/0406125)
+for (16.89) and
+[Fleiner--Kaibel--Rote](https://doi.org/10.1006/eujc.1999.0326)
+for the `exp(O(m log m))` face bound on one `0/1` polytope.  Hence the
+single-polytope deletion mechanism has the `m log m` exponent.  The gap in
+(16.91) concerns robust response shapes from common refinements of many
+support polytopes: raw arrangement cells need not remain separated after
+projective normalization, and intermediate exponents are not excluded.

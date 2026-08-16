@@ -728,7 +728,7 @@ future suffix depends only on
 and every appended letter updates this pair by max-plus multiplication with
 the `2 by 2` quotient matrix.  Suitable quotient suffixes expose both
 coordinates, giving exact response complexity
-`Theta(2 log(B/epsilon))` on a bounded box.
+`Theta(2 log(1+B/epsilon))` on a bounded box.
 
 This is a strict composable state that is not a boundary table.  It is
 predicted by contextual response plus derivative compatibility: the
@@ -766,3 +766,43 @@ recurs every `L` steps, a local quotient defect `epsilon` stays below
 bond of strength `J`, the image diameter is `2|J|`: a weak bond is a small
 reset even though every nonzero bond has global projective Lipschitz
 coefficient one.
+
+## Example 27: query packing is exactly Lipschitz exposure
+
+For a finite metric query space `X`, choose a set `C` whose points are at
+least `2gamma` apart.  On every balanced split of an even subset of `C`, put
+values `+gamma` and `-gamma`; McShane extension realizes all those patterns
+as one-Lipschitz responses.  Conversely, if a response language realizes all
+balanced margin patterns on two queries, Lipschitzness forces those queries
+to be at least `2gamma` apart.
+
+Hence the balanced exposure dimension of the full Lipschitz ball is exactly
+
+```math
+2 floor(Pack_X(2gamma)/2).
+```
+
+This recovers the normalized Max-Cut lower entropy from a Hamming packing of
+the separator itself.  In a weighted automaton, robust suffix pins instead
+expose a coordinate cube; upper-orthant VC dimension shows that no more than
+the raw number of coordinates can be independently exposed.  The result is
+static: neither exposure certificate supplies a derivative congruence.
+
+## Example 28: facets create robust shared-parameter responses
+
+Let `P=conv(V)` be a full-dimensional `0/1` polytope.  Use `V` as one
+max-affine query and, for every facet `F`, use the witness set obtained by
+deleting all vertices of `F`.  At the normalized outward facet normal, every
+query except the matching deletion has one common value; the matching query
+is exactly one lower.  Thus the response shape is
+
+```math
+c_F 1-e_F.
+```
+
+Different facets have shape distance one and radius one half.  Known
+`0/1` polytopes with `(cm/(log m)^2)^(m/2)` facets therefore force
+`Omega(m log m)` response bits at every fixed error below one half, even
+with arbitrary real parameter precision.  This validates shared-parameter
+complexity as a semantic resource, while leaving a genuine gap to the
+`O(m^2)` common-arrangement upper bound.

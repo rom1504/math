@@ -123,7 +123,7 @@ other coordinates are fixed, the response map is an isometric
 
 ```math
 \log_2N_\epsilon
-=\Theta\bigl(k\log(B/\epsilon)\bigr).             \tag{WA.12}
+=\Theta\bigl(k\log(1+B/\epsilon)\bigr).           \tag{WA.12}
 ```
 
 and the same expression is a lower bound for the full residual class.
@@ -166,7 +166,7 @@ h(j)_j-h(j)_i=C(j-i)^2\ge2B\quad(i\ne j).         \tag{WA.15}
 ```
 
 Thus all `p` coordinates are exposed and the cost is
-`Theta(p log(B/epsilon))`.  The line's projective diameter and its covering
+`Theta(p log(1+B/epsilon))`.  The line's projective diameter and its covering
 number at the relevant scale grow with `p`; (WA.9), unlike bare affine
 dimension, detects this.
 
@@ -228,7 +228,7 @@ matching rate
 
 ```math
 \log_2N^{\rm ext}_\epsilon
-=\Theta\bigl(r\log(B/\epsilon)\bigr).             \tag{WA.23}
+=\Theta\bigl(r\log(1+B/\epsilon)\bigr).           \tag{WA.23}
 ```
 
 For a fixed automaton, this conclusion applies to its reachable aggregate
