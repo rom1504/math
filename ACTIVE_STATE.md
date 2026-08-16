@@ -1,6 +1,7 @@
 # Active research state
 
-Evidence cutoff: `3d668e8` and ledger Section 10.142, 2026-08-16.
+Evidence cutoff: the first focused AR checkpoint, ledger Section 10.143
+(2026-08-16), based on `c4bc2e0`.
 This is compact working context.  Use `ledger.md` and Git history only when an
 assignment explicitly calls for archive comparison or proof reconstruction.
 
@@ -126,6 +127,20 @@ These data are useful falsifiers, not asymptotic evidence by themselves.
     zero, and the full limit, to equal `1/2`.  The statistic is compressed,
     but its proposed theorem contains the sharp lower-constant burden.
 
+11. **Projective exchangeability is too random.**  A jointly exchangeable
+    infinite sign array with tight normalized operator norm must have zero
+    Aldous--Hoover mean kernel and hence iid Rademacher edges.  An online
+    greedy spin then gives normalized cap at least
+    `(2/3)sqrt(2/pi)>1/2` almost surely.  Any viable all-order recovery law
+    must therefore be order-dependent and nonprojective.
+
+12. **Low-entropy barycentres cannot be sign-near.**  If `W=E_mu A` and `U`
+    is the uniform edge law, then
+    `D(mu||U)>=(binom(n,2)-V(W))/2`, where
+    `V(W)=sum_(i<j)(1-w_ij^2)`.  Thus a sign-near barycentre
+    `V(W)=o(n^2)` costs `Theta(n^2)` relative entropy; an `O(n)`-cost rare
+    bridge or microcanonical tilt cannot produce it.
+
 ## Campaign status
 
 The retrieval-grounded independent panel is complete:
@@ -136,11 +151,42 @@ The retrieval-grounded independent panel is complete:
 - one foreign-packet experiment per specialist; and
 - final independent verification of the theorem artifacts and classifications.
 
-No class-A route survived.  The only final class-B statement is fixed-`C`
-spectral regularization, which is a support lemma and not a convergence route
-without class-C all-order realization.  Terminal drift was withdrawn after
-the scalable Paley obstruction.  The execution set is empty and autonomous
-research is paused under the stopping rule.
+No class-A route survived that panel.  The user has now authorized one focused
+campaign on the surviving all-order realization bottleneck, not a restart of
+broad route generation.
+
+The weakest noncircular structural target is `AR_min^->`: for each fixed
+purification tolerance, choose one bounded-operator liminf action cluster
+`T`; on an upward ratio-dense set of orders construct exact hollow signings
+whose one-profiles are directed-close to that of `T`, with
+`D sqrt(delta)=o(1)`.  Full action convergence, reverse profile inclusion,
+higher joint profiles, every-order recovery, and a norm bound uniform in the
+purification tolerance are unnecessary.  Principal deletion fills the
+remaining `o(n)` upward gaps.  The implication and all error budgets have
+been independently verified; see
+`artifacts/minimal_all_order_action_recovery.md`.
+
+The strongest new executable reduction is **sign-near weighted recovery**.
+For a symmetric hollow `W in [-1,1]^(m x m)`, put
+
+```math
+V(W)=\sum_{i<j}(1-w_{ij}^2).
+```
+
+It is sufficient, on upward ratio-dense orders, to construct weighted models
+of the selected cluster with the correct directed one-profile and
+`V(W)=o(m^2)`.  After deleting `o(m)` exceptional rows, biased sign rounding
+has normalized operator error `o(1)` and yields exact signs.  For the scalar
+version, the sharper direct bound is
+
+```math
+Q(A)\le Q(W)+C\bigl(\sqrt{mV(W)}+m\bigr).
+```
+
+This rigorously removes the exact-integrality obligation.  It is not yet
+known to reduce the universal Boolean-profile obligation: naive blow-ups have
+`V=Theta(m^2)`, while low-entropy random laws cannot have a sign-near
+barycentre.  See `artifacts/sign_near_weighted_recovery.md`.
 
 ## Proposal standard
 
@@ -163,7 +209,9 @@ condition, or another class-specific falsifier is not primary progress.
 | Target | Final status | Condition for reconsideration |
 |---|---|---|
 | Fixed-`C` spectral regularization `SR` | B support only | A new lossless every-order realization theorem demonstrably weaker than scalar optimum comparison |
-| Action recovery `AR` | C | An exact-sign Gamma-limsup mechanism with no `n^(3/2)` residual and no full parent optimization |
+| Sign-near weighted recovery `WAR` | active, independently verified reduction | Construct `W_m` on upward ratio-dense orders with `V(W_m)=o(m^2)` and the selected cluster's scalar upper bound or directed one-profile, without solving the full target-order landscape |
+| Directed extremal recovery `AR_min^->` | reduced to `WAR`, otherwise open | A direct exact-sign recovery theorem controlling the one-sided one-profile with no leading residual and no full parent optimization |
+| Projective exchangeable recovery | D / rigorously obstructed | Only reconsider a genuinely order-dependent, nonprojective law; projective consistency itself is incompatible with extremality |
 | Terminal coset drift | C / falsifier only | A mechanism not forced by Paley traps to prove the sharp `1/2` lower theorem |
 | Adversarial pressure | C | A signed deterministic interpolation remainder surviving the outer minimum with `o(n)` defect at every fixed temperature |
 | Growing arbitrary-root hierarchy | C/D | A concrete algebraically closed subexponential state proved not to determine the coset histogram |

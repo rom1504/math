@@ -43556,3 +43556,282 @@ Paley terminal-trap theorem, and it preserved an exact trace-fibre identity.
 These are supporting results and route obstructions, not primary progress on
 the convergence recurrence or rigorous interval.  No convergence or genuine
 nonconvergence architecture is selected; autonomous execution is paused.
+
+### 10.143 Focused all-order action-recovery campaign: first checkpoint
+
+Date: 2026-08-16.
+
+The user explicitly authorized a focused campaign on the archived all-order
+action realization problem (`AR`).  This is not a restart of broad route
+generation.  The campaign first reconstructed the weakest sufficient theorem,
+then ran literature-first action/graph-limit, sampling, exchangeability,
+quasirandom/design, and matrix-rounding audits.  Independent researchers are
+now testing only the surviving nonprojective and sign-near mechanisms.
+
+#### 10.143.1 Operational state
+
+| Track | Last concrete result | Next falsifiable step | Stop condition |
+|---|---|---|---|
+| Minimal implication | independently verified selected-cluster/directed-profile theorem | test whether its state is genuinely easier than scalar recovery | objective-only statement is merely equivalent to convergence |
+| Sampling/exchangeability | projective exchangeability obstruction proved | test order-dependent microcanonical laws | proposal encodes target minimizers or full profile histogram |
+| Weighted rounding | global sign-near scalar rounding and profile-preserving spectral rounding proved | construct weighted all-order models with `V=o(n^2)` | every natural construction has `V=Theta(n^2)` |
+| Design/quasirandomness | all-order Paley compressions and `O(n)`-leave fixed-template packing identified | isolate a design statement controlling the universal outer profile | only fixed local statistics are controlled |
+| Gamma/action limits | published theorems recover vertex states for already convergent kernels | seek an inverse exact-sign/weighted kernel recovery theorem | Gamma-limsup merely renames `AR` |
+| AR falsification | no selected extremal counterexample found | search scalable order-dependent profile gap | only vanishing parity/divisibility effects occur |
+
+#### 10.143.2 Weakest convergence implication
+
+Write
+
+```math
+p_n={2M_n\over n^{3/2}},
+\qquad
+\alpha=\liminf_n p_n.
+```
+
+Tolerance-dependent purification and action compactness give, for every
+member of a null sequence `eta_l -> 0`, at least one bounded-operator cluster
+`T_l` with
+
+```math
+\alpha\le\Phi(T_l)\le\alpha+2\eta_l.                       \tag{10.1680}
+```
+
+The literally weakest recovery statement asks for exact signings on an
+upward ratio-dense order set with scalar objective at most
+`Phi(T_l)+o(1)`.  An independent audit proved that this is equivalent to
+convergence once (10.1680) and principal deletion are available.  It is
+therefore circular as a research target.
+
+The weakest candidate **structural** statement retained is directed extremal
+one-profile recovery.  For
+
+```math
+\partial_1(S,T)
+=\sup_{\mu\in\overline{\mathcal S_1(S)}}
+  \inf_{\nu\in\overline{\mathcal S_1(T)}}d_{LP}(\mu,\nu),
+```
+
+it requires exact signings `C_m` only on an upward ratio-dense order set and
+
+```math
+\partial_1(T_{C_m},T_l)=\delta_m\to0,
+\qquad D_m\sqrt{\delta_m}\to0,                              \tag{10.1681}
+```
+
+where `D_m` bounds both normalized operator norms.  The directed continuity
+proof gives
+
+```math
+\Phi(T_{C_m})\le\Phi(T_l)+5D_m\sqrt{\delta_m}+\delta_m.     \tag{10.1682}
+```
+
+Only one selected cluster at each tolerance, one-profiles in the upper-bound
+direction, and ratio-dense orders are needed.  Full action recovery, reverse
+profile inclusion, all higher profiles, every order, and a norm bound uniform
+in the purification tolerance are unnecessary.
+
+Principal deletion is lossless:
+
+```math
+Q(A[S])\le Q(A).                                            \tag{10.1683}
+```
+
+Indeed, extend a retained spin by independent signs; its induced energy is
+the expectation of the parent energy.  Hence (10.1680)--(10.1683) prove
+convergence.  This implication and all error budgets are in
+`artifacts/minimal_all_order_action_recovery.md` and were independently
+verified.
+
+#### 10.143.3 Near-order and repair budgets
+
+If `N=n+h` and
+
+```math
+r=nh+{h\choose2},
+```
+
+randomly signing all new edges and taking a union bound over spins gives a
+deterministic completion
+
+```math
+Q(B)\le Q(A)+\sqrt{2r(N+1)\log2}.                           \tag{10.1684}
+```
+
+Thus `h=o(n)` has `o(n^(3/2))` insertion cost.  Together with (10.1683), a
+good upward ratio-dense sequence of orders already transfers to all orders.
+This resolves near-order transfer but does not make an arbitrary liminf
+subsequence ratio-dense.
+
+For `e` flipped unordered edges,
+
+```math
+|Q(A)-Q(B)|\le2e,                                          \tag{10.1685}
+```
+
+so arbitrary edit repair needs `e=o(n^(3/2))`; merely `o(n^2)` edits are not
+enough.  Operator repair instead needs `||A-B||_op=o(sqrt(n))`, and generic
+Frobenius repair needs `||A-B||_F=o(sqrt(n))`.
+
+#### 10.143.4 Verified sign-near weighted recovery reduction
+
+For a symmetric hollow weighted matrix `W in [-1,1]^(n x n)`, define
+
+```math
+Q(W)=\max_x\left|\sum_{i<j}w_{ij}x_ix_j\right|,
+\qquad
+V(W)=\sum_{i<j}(1-w_{ij}^2).                               \tag{10.1686}
+```
+
+Independent biased rounding with `E A_ij=w_ij`, scalar Bernstein, and a union
+bound over every Boolean spin prove that some supported exact signing obeys
+
+```math
+\boxed{
+Q(A)\le Q(W)+C\bigl(\sqrt{nV(W)}+n\bigr).}                 \tag{10.1687}
+```
+
+Therefore
+
+```math
+V(W)=o(n^2)
+\quad\Longrightarrow\quad
+Q(A)\le Q(W)+o(n^{3/2}).                                   \tag{10.1688}
+```
+
+This is a strict relaxation of the exact-sign **realization constraint**:
+all entries may be fractional, provided their total fractional variance is
+subquadratic.  Consequently convergence follows if each selected extremal
+cluster has, on an upward ratio-dense order set, weighted models satisfying
+
+```math
+\Phi(T_{W_m})\le\Phi(T)+o(1),
+\qquad V(W_m)=o(m^2).                                      \tag{10.1689}
+```
+
+Equation (10.1689) is not yet shown substantially easier than the original
+tail problem, because its scalar profile bound retains a universal Boolean
+quantifier.  It does, however, remove exact integrality without replacing it
+by exact target-order signs.
+
+There is also a profile-preserving version.  Let
+
+```math
+v(W)=\max_i\sum_{j\ne i}(1-w_{ij}^2).
+```
+
+Biased rounding, symmetrization, and Bandeira--van Handel Corollary 3.6 give
+
+```math
+\|A-W\|_{op}
+\le C\bigl(\sqrt{v(W)}+\sqrt{\log n}\bigr).                \tag{10.1690}
+```
+
+If only (10.1688) is known, delete the `o(n)` rows of excessive variance;
+the retained weighted matrix has `v=o(n)`, its directed profile is still
+close under a common operator bound, and (10.1690) rounds it with normalized
+operator error `o(1)`.  The perturbed orders remain upward ratio-dense.
+Thus global sign-near weighted directed recovery implies exact
+`AR_min^->`.  An independent referee checked (10.1687)--(10.1690), the
+exceptional-row argument, action normalization, and order quantifiers.  See
+`artifacts/sign_near_weighted_recovery.md`.
+
+#### 10.143.5 Entropy obstruction to producing sign-near barycentres
+
+Let `mu` be any law on the `N=binom(n,2)` edge signs, `U` the uniform product
+law, and `w_e=E_mu A_e`.  Entropy subadditivity and natural-log Pinsker give
+
+```math
+D(\mu\Vert U)
+\ge\sum_eD\left(\operatorname{Bern}\left({1+w_e\over2}\right)
+                 \middle\Vert\operatorname{Bern}\left({1\over2}\right)\right)
+\ge{1\over2}\sum_e w_e^2
+={1\over2}\bigl(N-V(W)\bigr).                             \tag{10.1691}
+```
+
+Hence a distribution with a globally sign-near barycenter necessarily costs
+`Theta(n^2)` relative entropy against iid signs.  Low-entropy-cost
+microcanonical conditioning cannot construct (10.1689).  Deterministic or
+deliberately quadratic-cost constructions are not ruled out.
+
+#### 10.143.6 Projective exchangeability is nonextremal
+
+Let one jointly exchangeable infinite sign array supply every finite order,
+and suppose its normalized operator norms are tight.  Aldous--Hoover
+representation plus a Rayleigh-quotient argument forces the conditional edge
+mean kernel to vanish; conditional edge independence then forces iid
+Rademacher edges.
+
+For iid edges, choose spins online by
+
+```math
+x_j=\operatorname{sign}\sum_{i<j}A_{ij}x_i.
+```
+
+The resulting energy is a sum of independent absolute simple random walks.
+Bernstein and Borel--Cantelli prove
+
+```math
+\boxed{
+\liminf_n{Q(A_n)\over n^{3/2}}
+\ge{2\over3}\sqrt{2\over\pi}
+=0.5319230405\ldots>{1\over2}.}                            \tag{10.1692}
+```
+
+Thus one projectively consistent exchangeable array cannot recover an
+extremal action object.  This does not obstruct order-dependent
+microcanonical laws or deterministic nonprojective realizers.  The proof is
+in `artifacts/exchangeable_recovery_obstruction.md`.
+
+#### 10.143.7 Published-theorem boundary
+
+The literature audit found no existing AR theorem.
+
+1. Bounded and unbounded graphon sampling work at every order only for fixed
+   norm-controlled kernels.  The step kernel for `A/sqrt(n)` is `sqrt(n)A`,
+   so its fixed-`p` norms diverge and the fluctuation is not a removable error.
+2. Backhausz--Szegedy Section 11 constructs deterministic full iid-sign
+   representatives at every order with operator norm at most three, but
+   extracts action convergence only on subsequences and explicitly leaves all
+   natural orders open.  Those matrices are nonsymmetric and not hollow.
+3. Published graphon Gamma-limsup theorems assume the finite kernels already
+   converge and recover vertex states; their quantifiers do not recover the
+   kernels by exact signs.
+4. Paley plus PNT in `1 mod 4` and principal compression gives exact symmetric
+   hollow signings at every order with operator norm `(1+o(1))sqrt(n)`, but
+   only for the conference comparison family, not a selected target profile.
+5. Iterative absorption gives fixed-template decompositions and even `O(n)`
+   graph leaves in typical hosts.  This clears the scalar edit budget, but it
+   controls fixed local constraints rather than all colorings in an outer
+   action profile.
+6. Unrestricted weighted rounding is impossible at little-`o` scale already
+   for `W=0`; the positive regime is exactly the sign-near theorem above.
+
+Detailed source cards are in
+`artifacts/ar_action_gamma_literature_toolkit.md`,
+`artifacts/ar_design_quasirandom_literature_toolkit.md`,
+`artifacts/ar_matrix_rounding_literature_toolkit.md`, and
+`artifacts/ar_sampling_rounding_exchangeability_toolkit.md`.
+
+#### 10.143.8 Updated frontier
+
+The rigorous interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                           \tag{10.1693}
+```
+
+The first AR checkpoint strictly weakens full recovery to a selected directed
+one-profile on upward ratio-dense orders and proves that globally sign-near
+weighted recovery rounds to exact signs with no leading loss.  It also rules
+out projective exchangeable realization and low-relative-entropy production
+of a sign-near barycenter.  This is theorem-level progress on the recovery
+architecture, but not yet a strict reduction of the complete convergence
+problem: no construction of the weighted models in (10.1689) is known, and
+the universal outer-profile quantifier remains.  The focused campaign
+continues to its second substantive checkpoint on nonprojective
+microcanonical and design/absorption formulations.

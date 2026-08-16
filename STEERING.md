@@ -1,25 +1,28 @@
 # Strategic steering
 
-Evidence cutoff: commit `3d668e8` and ledger Section 10.142 (2026-08-16).
-Status: **retrieval-grounded panel complete; autonomous execution paused**.
+Evidence cutoff: first focused AR checkpoint, ledger Section 10.143
+(2026-08-16), based on commit `c4bc2e0`.
+Status: **focused all-order action-recovery campaign, second checkpoint active**.
 
 ## User-stated objective and workflow directives
 
 Determine whether `M_n/n^(3/2)` converges.  Convergence to any constant is
-success; the conjectural value `1/2` is not the objective.  A rigorous proof
-of nonconvergence is also success.
+success; `1/2` is conjectural but is not the objective.  A rigorous proof of
+nonconvergence is also success.
 
-The user authorized a retrieval-grounded panel with six independently scouted
-domains, separate ledger-blind researchers, two contrarians, archive
-verification, cross-domain criticism, one foreign packet per specialist, and
-severe selection of at most two execution routes.  The user also required
-`ACTIVE_STATE.md` as compact context and the ledger as archive.  That campaign
-is now complete.  These are workflow directives; all mathematical judgments
-below are agent-authored.
+The user authorized a retrieval-grounded panel with ledger-blind specialists,
+archive verification, cross-domain criticism, contrarians, and severe
+selection.  That panel is complete.  On 2026-08-16 the user explicitly
+authorized this focused restart on all-order action realization/recovery
+(`AR`) as a standalone problem.  The requested campaign includes the weakest
+sufficient theorem, literature-first specialists, adversarial verification,
+five realization architectures, Gamma recovery, a falsification track, and
+near-minimizer rigidity.  It must consolidate after two substantive
+checkpoints without a theorem, strict reduction, or scalable obstruction.
 
-The README verification, Git, consolidation, blank-slate-audit, and stopping
-rules remain in force.  No user directive requires continuing after the panel
-if no executable architecture survives.
+The README verification, Git, stopping, and blank-slate-audit rules remain in
+force.  These paragraphs record user objectives and workflow directives only;
+all route choices and mathematical judgments below are agent-authored.
 
 ## Agent-authored rigorous frontier
 
@@ -30,109 +33,98 @@ if no executable architecture survives.
 \le {1\over2}.
 ```
 
-No recurrence, strict reduction, separated subsequences, or improved rigorous
-bound was obtained.  The panel proved supporting theorems and scalable route
-obstructions, not primary progress on the objective.
+The interval is unchanged.  The first AR checkpoint did prove a strict
+relaxation of exact-sign recovery and two scalable obstructions.
 
-## Panel judgment
+## Leading route: sign-near weighted recovery
 
-There is no class-A architecture and no selected leading route.  The only
-final class-B statement is fixed-constant spectral regularization:
+For a symmetric hollow weighted matrix `W in [-1,1]^(m x m)`, define
 
 ```math
-\exists C<\infty,\ \epsilon_n\downarrow0,\ \exists A_n:
-Q(A_n)\le M_n+\epsilon_n n^{3/2},
-\qquad \|A_n\|_{op}\le C\sqrt n.                    \tag{SR}
+V(W)=\sum_{i<j}(1-w_{ij}^2).
 ```
 
-`SR` is genuinely stronger than the archived fixed-`K` tradeoff, but it is a
-support lemma rather than a convergence mechanism.  Action compactness plus
-the new continuity theorem makes its action-cluster values equal the scalar
-cluster values; it does not make that set a singleton.  Completion still
-requires lossless exact signed realization at every sufficiently large order,
-the archived `AR` obligation.  Therefore `SR` is held, not executed.
+The selected target is the following tolerance-by-tolerance statement.
 
-The initially new terminal-drift quotient was withdrawn.  Square-field Paley
-conference roots satisfy
+> **WAR.**  For each selected bounded-operator liminf action cluster `T`,
+> there is an upward ratio-dense set of orders and weighted matrices `W_m`
+> with `V(W_m)=o(m^2)` whose directed one-profiles approach that of `T`.
+
+A weaker scalar version may replace profile convergence by
+`Phi(T_Wm)<=Phi(T)+o(1)`.
+
+Why it proves convergence: biased rounding and scalar Bernstein give an exact
+hollow signing `A_m` with
 
 ```math
-b(U)=0,
-\qquad z(U)\longrightarrow{1\over2}.
+Q(A_m)\le Q(W_m)+C\bigl(\sqrt{mV(W_m)}+m\bigr).
 ```
 
-Hence a continuous terminal drift with one zero forces that zero, and the
-limit of the minima, to equal `1/2`.  The lemma contains the full sharp lower
-theorem plus a uniform no-metastability assertion; it is not a weaker route.
+For profile recovery, deleting `o(m)` high-variance rows makes every row
+variance `o(m)`; Bandeira--van Handel rounding then gives
+`||A_m-W_m||_op=o(sqrt(m))`.  Directed action continuity transfers `Phi`, and
+principal deletion fills every order below the ratio-dense sequence.  The
+entire implication has been independently verified.
 
-## Verified supporting results
+Why this is a strict reduction: it removes exact target-order integrality.
+Fractional entries are allowed on as many edges as desired provided their
+total variance is subquadratic.  It does not assume `M_m` or an exact signing
+at the target order.
 
-1. Under a common `2 -> 2` bound `C`, the same-spin functional obeys
+Why tractability is still unproved: the scalar version still quantifies over
+all Boolean spins, and the profile version may still encode the dangerous
+microscopic spikes.  Naive blow-ups have `V=Theta(m^2)`.  Therefore WAR is a
+rigorous reduction of the realization layer, but is not yet demonstrably
+simpler than the complete tail problem.
 
-```math
-|\Phi(S)-\Phi(T)|
-\le5C\sqrt{2d_M(S,T)}+2d_M(S,T).
-```
+Exact falsifiers:
 
-2. Every square-field Paley conference signing is a strict one-edge cap
-minimum: all edge flips raise `Q` by exactly two.
-3. Even-extension Paley trace fibres give an exact selected-state identity,
-but no nonconvergence quantifier.
+1. prove every weighted realization of some selected cluster with the needed
+   upper profile has `V(W)>=c m^2` on infinitely many target orders; or
+2. prove that specifying its directed one-profile to the required accuracy
+   reconstructs the complete Boolean energy landscape.
 
-## Three dominant bottlenecks
+## Established obstructions at this checkpoint
 
-1. **Joint parent response:** bridge and pressure scalarizations lose the
-   cancellation needed for one bridge to answer exponentially many child
-   states; retaining it restores full parent optimization.
-2. **All-coset extreme tail:** packing, typical-root, fixed-moment, and bounded
-   local data miss the deepest arbitrary root; known exact growing closure
-   restores essentially the rooted coset histogram.
-3. **All-order fluctuation realization:** compactness and algebraic families
-   yield subsequences, but not exact hollow sign matrices at every large order
-   with `o(n^(3/2))` loss.
+1. The literally weakest scalar recovery condition is equivalent to
+   convergence after purification and deletion, so it is circular.
+2. One projectively consistent exchangeable sign array cannot be extremal.
+   Tight normalized operator norm forces iid Rademacher edges, whose greedy
+   cap is at least `(2/3)sqrt(2/pi)>1/2` almost surely.
+3. If `W=E_mu A` for an edge-sign law `mu`, then
+   `D(mu||U)>=(binom(m,2)-V(W))/2`.  A sign-near barycentre costs
+   `Theta(m^2)` entropy; an `O(m)`-cost tilt cannot construct WAR.
+4. Fixed-kernel graphon sampling, published dense-graph Gamma recovery, and
+   fixed-template absorption have the wrong quantifiers or scale.  They do
+   not supply inverse exact-sign recovery for `A/sqrt(m)`.
+5. Paley compression gives all-order operator-flat signs, but only for the
+   conference comparison family, not an arbitrary selected liminf profile.
 
-## Blank-slate abstraction audit
+## Ranked alternatives
 
-Before archive comparison, the original problem alone suggested these three
-formulations.
+1. **Order-dependent microcanonical recovery.**  It evades the exchangeable
+   obstruction, but must pay quadratic entropy or use a non-barycentric
+   mechanism while preserving the extreme profile.
+2. **Dense design/absorption.**  Promising only if the necessary directed
+   action information admits finitely many constraints at fixed accuracy;
+   fixed local graph statistics alone are too coarse.
+3. **Direct `AR_min^->`.**  Exact signs on upward ratio-dense orders with only
+   one-sided one-profile control suffice, but no construction is known.
+4. **Near-order insertion.**  Adding `h=o(n)` random signed vertices costs
+   `o(n^(3/2))`; useful only after obtaining a ratio-dense good sequence.
+5. **Genuine nonconvergence.**  Logically open.  It requires a fixed positive
+   recovery/objective gap on infinitely many orders, not vanishing parity or
+   design residue effects.
 
-1. **Operator compactification.**  Map `A` to `T_A=A/sqrt(n)` and
-   `Phi(T_A)=2Q(A)/n^(3/2)`.  A fixed-`C` regularization plus an every-order
-   signed Gamma-limsup recovery theorem would prove convergence.  Archive
-   comparison: continuity is now verified, but recovery is exactly `AR`.
-2. **Coset-landscape flow.**  Map a signing to its augmented-cut-code coset,
-   normalized height `z`, and outward degree `b`.  A unique terminal attractor
-   would prove convergence.  Archive comparison: this statistic is a strict
-   quotient, but Paley terminal traps pin the attractor to `1/2`, making the
-   required theorem stronger than the original convergence objective.
-3. **Adversarial thermodynamic limit.**  Replace the maximum by fixed-`beta`
-   pressure and use the uniform zero-temperature sandwich.  Convergence of the
-   minimized pressure for every fixed `beta` would prove convergence.  Archive
-   comparison: every known size comparison either averages random disorder or
-   reinstates the full deterministic Gibbs bridge completion.
+## Checkpoint decision
 
-None is both genuinely different and more tractable after implication-level
-comparison.  The audit therefore does not change the pause decision.
+Checkpoint one counts as theorem-level progress: it established WAR and two
+scalable no-go results, so the focused campaign proceeds to checkpoint two.
+The live question is whether nonprojective microcanonical, design, or Gamma
+machinery constructs WAR using less than the full Boolean landscape.
 
-## Ranked held alternatives
-
-1. **Lossless signed recovery after `SR`.**  Reconsider only if a theorem
-   produces exact signs at every large order without encoding scalar optimum
-   comparison or paying a leading residual.
-2. **Deterministic all-temperature interpolation.**  Reconsider only if a
-   signed remainder survives the outer disorder minimum with `o(n)` defect.
-3. **Arbitrary-root algebraic closure.**  Reconsider only after an explicit
-   subexponential closed state is proved not to determine the coset histogram.
-4. **Genuine nonconvergence.**  Remains logically open; it needs both an
-   all-spin low tower and a universal all-signings high tower with fixed gap.
-
-## Decision and next refresh
-
-The execution set is empty.  Further autonomous work is not justified inside
-the six audited architectures; external mathematical review or a genuinely
-new theorem is the appropriate next input.  This is a research-architecture
-pause, not a claim that the problem is solved or externally blocked.
-
-If ordinary waves resume, Wave 61 remains the next scheduled blank-slate
-boundary.  Otherwise the next mandatory steering refresh is five substantive
-research checkpoints after an explicit restart, and earlier after any
-decisive proof, counterexample, or change of selected architecture.
+At checkpoint two, archive-check all independent proposals and select at most
+one theorem for proof/disproof.  If none survives as a strict, testable
+reduction, consolidate and stop this campaign.  Do not restart broad search.
+If ordinary waves ever resume, Wave 61 remains the next scheduled blank-slate
+boundary.
