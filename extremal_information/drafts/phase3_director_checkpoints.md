@@ -281,3 +281,127 @@ eleven or `10h+1`.  We will test whether a closed affine/holonomy state
 controls unions, identify the exact composition defect, and construct a
 scalable equal-state counterexample if bounded algebraic data fail.  This
 checkpoint therefore redirects the work and does not end it.
+
+## Checkpoint 5: composition-created holonomy
+
+**Question.** Is mixed-cycle language only another presentation of syndrome
+decoding, or does it give a quantitative information-growth law?
+
+The elimination formula is classical in substance, but the audited package
+now goes further.
+
+1. Kernel offsets on quotient-independent columns are removable by a linear
+   shear.  Their complete invariant is the holonomy map on the quotient cycle
+   space.  When labeled fragments are glued, the newly available invariant is
+
+   ```math
+   \operatorname{Hom}(Z/Z_{\rm loc},W),
+   \qquad
+   \kappa=\sum_j\dim U_j-\dim\sum_jU_j.
+   ```
+
+   Thus composition creates exactly `D kappa` binary degrees of labeled
+   gluing freedom.  This is an exact gauge count, not automatically a scalar
+   response lower bound.
+
+2. The response content is nevertheless macroscopic.  One new mixed channel
+   has an exponential family of rooted endpoint profiles separated by
+   `Theta(D)`, so an `epsilon D` decoder with `epsilon<1/8` needs `Omega(D)`
+   new gluing bits even though each fragment separately is shear-trivial.
+   At every arity `r`, there are `r` fragments whose proper unions are all
+   trivial but whose full union changes the antipodal distance by `D-r`.
+
+3. Circuit defects give the robust amplification law
+
+   ```math
+   D-\ell(t)\le\nu\max_C d(C),
+   ```
+
+   and disjoint circuit blocks attain the nullity factor.  Composition turns
+   microscopic defect into macroscopic response precisely when the product
+   of per-circuit defect and new cycle rank is macroscopic.
+
+4. On the positive side, exact linear graph sources have a closed affine-
+   subspace feature state.  Its response error is at most `(r+1)/2`, where
+   `r` is affine map rank rather than source count, and the order is sharp.
+   This does not remove the separate synchronization cost for nonlinear raw
+   transversals.  Complete unrooted pair-distance data also fail: tensor
+   powers with identical pair laws retain a linear radius gap.
+
+### Director judgment
+
+This is a unified Level-3 result for binary extension landscapes.  The
+positive quotient, exact gluing space, robust defect amplification, and
+response packing are four faces of one relation-space mechanism.  It is not
+a universal theory of arbitrary landscapes, and neither “holonomy” nor the
+underlying exact sequence is new terminology.  The generative contribution
+is the theorem that **relative gauge information is born on mixed relations,
+with cycle rank controlling both algebraic growth and extremal error**.
+
+### Immediate continuation
+
+The one-channel lower bound does not yet show how much of the exact
+`D kappa` gluing freedom remains operational at macroscopic distortion.  The
+next theorem will study `kappa` independent mixed channels jointly.  It will
+either construct `2^{Omega(D kappa)}` rooted-response profiles separated by
+`Theta(D)`, or prove that unlabeled joint queries collapse most of those
+degrees.  A code/Hausdorff packing gives a concrete falsifiable route.  Work
+continues immediately; this checkpoint is not a stopping event.
+
+## Checkpoint 6: full macroscopic rate of mixed holonomy
+
+**Question.** Do `D kappa` labeled gluing degrees survive after channel labels
+are removed and response is observed only to additive accuracy `epsilon D`?
+
+Yes, in the Hamming extension model and throughout a nontrivial linear
+regime.  The result has three independently audited layers.
+
+1. For `k` parallel mixed channels with holonomy columns `V`, the unlabelled
+   kernel-endpoint profile is the weighted Cayley norm
+
+   ```math
+   F_V(u)=\min_z\{2\operatorname{wt}(z)+\operatorname{wt}(u+Vz)\}.
+   ```
+
+   Exactly, it remembers the set of distinct generator columns of weight at
+   least three; in particular a general change of channel basis is not an
+   exact symmetry.  Macroscopically it is within `2 rank(V)` of distance to
+   the image code.
+
+2. Put the image codes inside one asymptotically good `[D,r,d]` host.  Its
+   `k`-subspaces yield at least `q^(k(r-k))` profiles, and any two are
+   separated in sup response distance by at least `d-2k`.  With
+   `r=floor(D/4)`, `d>D/8`, and `k<=D/32`, there are at least
+   `q^(3Dk/16)` profiles separated by more than `D/16`.  Therefore accuracy
+   below `D/32` costs at least `(3/16)Dk log_2 q` deterministic bits, with the
+   corresponding Fano mutual-information bound.
+
+3. Both child fragments remain individually shear-trivial and every query is
+   only an endpoint in the common kernel.  The information is genuinely born
+   at composition.  The proof works over every finite field, so it is not a
+   binary parity accident.
+
+### Director judgment
+
+This closes the promised dichotomy on the negative side and upgrades the
+relation-space mechanism from gauge counting to operational response
+complexity.  The genuinely reusable statement is not “dimension always
+forces information.”  It is:
+
+> Mixed relations create a carrier-valued compatibility state.  A
+> presentation with submacroscopic penalty transfers Hausdorff packing of its
+> zero sets into response packing; good carrier codes can then expose a
+> constant fraction of the full compatibility information.
+
+The qualifiers are essential.  Low-diameter carriers, redundant
+presentations, synchronized sections, or a weak query family can collapse the
+same algebraic gluing space.  Relation rank is the supply of potential
+information; separated zero sets and cheap access are what make it visible.
+
+### Immediate continuation
+
+The next theorem will isolate this carrier-capacity principle abstractly and
+try it outside finite-field Hamming geometry.  In parallel, an adversarial
+construction will test whether any lower law depending only on carrier size
+and relation rank is false.  This checkpoint redirects rather than ends the
+campaign.

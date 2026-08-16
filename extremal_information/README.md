@@ -80,6 +80,30 @@ gap when that rank grows.  Four-cell tropical crossings protect exact channel
 count at lattice-scale uniform error, but canonical code transversals lose
 exponentially all such exposure under diffuse normalized mean-square queries.
 
+The third investigation moved from isolated examples to a composition law.
+For arbitrary syndrome supports it proved both a subexponential approximate
+response net and an exactly closed hard-core quotient; a geodesic/anticode
+argument gives the latter only
+`2^((1-2 epsilon)w+O(log w))+O(w^2)` description bits at error `epsilon w`.
+More importantly, it identified the missing information created by
+composition.  In a binary group extension, kernel offsets are removable
+gauge on quotient-independent columns.  They become observable precisely on
+new mixed quotient cycles, where their holonomy controls the extremal word
+response.  The mixed relation space has dimension
+
+```math
+\kappa=\sum_j\dim U_j-\dim\sum_jU_j,
+```
+
+and its labeled gluing freedom is exactly `Hom(F_2^kappa,F_2^D)`.  Circuit
+defects amplify by at most cycle-space nullity, with equality on disjoint
+blocks; bounded-arity composition tests fail at every arity; and even one
+new mixed channel carries `Omega(D)` rooted-response bits at fixed
+macroscopic accuracy.  Conversely, cycle contraction synchronizes a dense
+source to a linear graph at constant all-context error, while exact linear
+graph sources of affine rank `r` have a closed feature state with `O(r)`
+response error.
+
 ## Candidate object: the upper response roof
 
 For a finite landscape `H:Omega -> R` and a declared feature map
@@ -155,31 +179,46 @@ No single scalar statistic currently survives all three mechanisms.
 
 ## Research-director judgment
 
-The selected architecture is the combination of:
+The selected architecture now has two independent costs.
 
-1. query-relative upper response roofs as exact sufficient states;
-2. metric/rate--distortion complexity of their response classes; and
-3. a declared feature algebra whose closure determines whether composition is
-   possible without resurrecting discarded states.
+1. **Algebraic reuse and compatibility:** an approximate state must either be
+   a congruence/idempotent retraction or control its reuse defect.  Locally
+   valid gauges must also be glued across newly created relations.
+2. **Response width and exposure:** omitted information matters only to the
+   extent that declared queries separate its response fibres.  Metric entropy,
+   posterior width, and rooted packings measure that price.
 
-This selection is evidence-based rather than terminological.  The framework
-is now **Level 3 locally but Level 2 globally**.  It is locally generative
-because the posterior-width inequality, syndrome-support quotient, and finite
-synchronization theorem formulate and prove conclusions that were unavailable
-from the roof alone.  It is not yet a unified theory because those results
-close for different reasons—Hilbert separation, binary syndrome cancellation,
-and scalar order/linkage—and none of their states survives all three kinds of
-composition.
+The framework is **Level 3 for binary extension/Cayley word landscapes and
+Level 2 globally**.  In that class the relation space, its holonomy, the exact
+gluing dimension, a robust defect-amplification bound, and both positive and
+negative response-rate theorems belong to one mechanism.  Across roofs,
+matroids, convex bodies, spin-glass overlaps, and codes, the same two costs are
+visible but no single theorem yet contains all of them.
 
-The syndrome-support quotient supplies the requested second exact composable
-state beyond fixed-rank mean field and is demonstrably smaller than the full
-code landscape.  The second checkpoint passed: direct-sum block queries
-aggregate many support effects into one covering radius and prove a linear
-information law at macroscopic error using only linear-length fragments.  The
-single selected next target is now the unrestricted-support dichotomy at that
-scale: either construct a subexponential-in-`2^w` approximate quotient, or a
-superlinear/macroscopic packing that does not rely on a supplied direct-sum
-decomposition.
+The central law is therefore narrower and more precise than a universal
+“extremal information” slogan:
+
+> Local summaries compose without new information exactly when their gauges
+> glue.  Mixed relations are the obstruction; their holonomy is the new
+> feature, and query exposure decides how much of it must be retained.
+
+The unrestricted syndrome dichotomy is no longer the selected target: its
+positive side is resolved, although the optimal macroscopic rate remains
+open.  The mixed-holonomy test is also resolved in a nontrivial linear regime.
+For `kappa <= D/32`, two individually shear-trivial fragments over
+`F_q^D` can create at least
+
+```math
+q^{3D\kappa/16}
+```
+
+kernel-endpoint response profiles separated by `D/16`.  Thus fixed
+macroscopic accuracy can require `Theta(D kappa log q)` bits, matching the
+exact gluing dimension up to constants, even though the queries carry no
+channel labels.  This is a finite-field/Hamming theorem, not a universal law:
+the next question is which carrier geometries and query classes convert
+relation-space dimension into exposed response capacity, and which collapse
+it through synchronization or redundancy.
 
 ## Extremal rate--distortion
 

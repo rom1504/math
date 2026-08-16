@@ -254,3 +254,33 @@ rooted-response packing.
 
 Output:
 [`phase3_mixed_circuit_hierarchy_results.json`](phase3_mixed_circuit_hierarchy_results.json).
+
+## `verify_phase3_multichannel_holonomy_packing.py`
+
+Exhaustively checks the parallel-pair response formula and its
+Hamming--Hausdorff comparison on all two-dimensional subspaces of
+`F_2^5`.  It then verifies the macroscopic witness separation for all `155`
+two-subspaces of the binary Reed--Muller `[16,5,8]` host code.
+
+Output:
+[`phase3_multichannel_holonomy_packing_results.json`](phase3_multichannel_holonomy_packing_results.json).
+
+## `verify_phase3_qary_multichannel_holonomy.py`
+
+Exhaustively checks over `F_3` that scalar-closed quotient fibres introduce no
+extra word-length shortcuts: all `624` independent ordered pairs in
+`F_3^3`, all `16,848` kernel-endpoint profiles, and the response--Hausdorff
+comparison for all `78` pairs of projective lines are verified.
+
+Output:
+[`phase3_qary_multichannel_holonomy_results.json`](phase3_qary_multichannel_holonomy_results.json).
+
+## `verify_phase3_multichannel_response_entropy.py`
+
+Independently checks the exact weighted-Cayley formula, the classification of
+exact profile collisions by distinct heavy generator columns, failure of
+general channel-basis invariance, the span sandwich, and `74,924` direct
+two-fragment endpoint identities on small binary carriers.
+
+Output:
+[`phase3_multichannel_response_entropy_results.json`](phase3_multichannel_response_entropy_results.json).
