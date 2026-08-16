@@ -1,0 +1,32 @@
+{
+  "all_checks_passed": true,
+  "lipschitz_extension": {
+    "advertised_error": 4.0,
+    "cover_centres": 16,
+    "cover_radius": 1,
+    "cube_width": 6,
+    "extension_is_one_lipschitz": true,
+    "extension_within_bound": true,
+    "observed_error": 3.0
+  },
+  "maxcut": {
+    "boundary_width": 3,
+    "distinct_responses": 176,
+    "global_flip_symmetry": true,
+    "gluing_trials": 256,
+    "graphs_enumerated": 1024,
+    "orbit_exposure": true,
+    "orbit_exposure_tests": 4096,
+    "pointwise_gluing": true,
+    "private_vertices": 2
+  },
+  "pairwise_and_metric": {
+    "anchored_packing_min_distance": 0.5,
+    "anchored_packing_size": 128,
+    "context_metric_trials": 32,
+    "context_sup_metric": true,
+    "selector_realization": true,
+    "selector_tables_checked": 64,
+    "shape_metric": true
+  }
+}
