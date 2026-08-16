@@ -2311,3 +2311,673 @@ The first carrier family has bounded-weight words in every block, so it is
 not contained in any common host of growing minimum distance.  The response
 information is created by two-sided inter-carrier exposure, not by internal
 separation in one code.
+
+## 16. Benchmark laws: interface entropy and interacting continuation
+
+This section records the theorem-level output of the benchmark campaign.
+The standard conditional-profile and transfer-matrix identities are retained
+in the benchmark drafts rather than restated here.  The results below are the
+parts not supplied by the earlier universal-kernel theorem.
+
+### Theorem 16.1 (pure-Max-Cut projective lookup and sharp response entropy)
+
+Let `B=[w]` be an ordered boundary and
+
+```math
+X_w=\{+1,-1\}^w/\{\sigma\sim-\sigma\},
+\qquad q=2^{w-1}.
+```
+
+For a nonnegatively weighted graph `G` with private vertices, define its
+conditional cut profile
+
+```math
+h_G([\sigma])=max_z\operatorname {Cut}_G(\sigma,z). \tag{16.1}
+```
+
+Then the following hold.
+
+1. If future contexts are all nonnegatively weighted Max-Cut attachments
+   through `B`, their contextual metric is exactly
+
+   ```math
+   d_{\rm ctx}(G,G')=\|h_G-h_{G'}\|_\infty.        \tag{16.2}
+   ```
+
+   Hence `h_G` is the coarsest exact contextual state.
+2. For every `F:X_w->[0,W]`, there is a pure weighted Max-Cut component of
+   treewidth at most `w+1` with
+
+   ```math
+   h_G(s)=F(s)+(6w-2)\sum_{t\in X_w}F(t).           \tag{16.3}
+   ```
+
+   One additional private edge can pad every `F` in the cube to the common
+   offset `C_(w,W)=(6w-2)qW`.
+3. Consequently the translated cube of pure-Max-Cut responses has
+
+   ```math
+   \log\operatorname {Cov}_\epsilon,quad
+   \log\operatorname {Pack}_\epsilon
+   =\Theta\left(q\log {W\over\epsilon}\right)      \tag{16.4}
+   ```
+
+   up to universal changes of radius, for `0<epsilon<=W/6`.
+
+#### Proof
+
+Gluing is conditionally independent given the boundary, so every future
+answer is `max_s(h_G(s)+h_C(s))`; this gives the upper bound in (16.2).  To
+expose a target projective assignment `tau`, introduce a private anchor.  For
+each coordinate prescribed opposite to the anchor use a direct unit cut
+edge; for each coordinate prescribed equal use a two-edge unit path.  After
+maximizing private spins the attachment profile is
+
+```math
+c_\tau-d_{\rm proj}(s,\tau).
+```
+
+Enough copies force the same target class for two fixed finite profiles, so
+their continued-value difference exposes any chosen coordinate.  This proves
+(16.2).
+
+For the realization statement, symmetrically lift
+`lambda_a=F([a])` to oriented words.  Introduce an anchor `z`, one private
+spin `t_a` per oriented word, and put
+
+```math
+y_a={1+t_az\over2},
+\qquad x_i=s_i z,
+```
+
+```math
+E=\sum_a\lambda_a y_a
+ \left(\sum_i a_ix_i-(w-1)\right).                 \tag{16.5}
+```
+
+For fixed `s,z`, exactly the term `a=(s_i z)_i` has positive activation,
+equal to one; all others are nonpositive.  Maximizing the `t_a` therefore
+returns `F([s])`.  Since `z^2=1`, (16.5) is pairwise:
+
+```math
+E=-{w-1\over2}\sum_a\lambda_a
+ +{1\over2}\sum_{a,i}\lambda_aa_i(s_iz+t_as_i)
+ -{w-1\over2}\sum_a\lambda_at_az.                 \tag{16.6}
+```
+
+A signed pair term `Juv` is implemented, up to a constant, by positive cut
+edges.  For `J<=0`, a direct edge of weight `-2J` scores `-J+Juv`.  For
+`J>=0`, a fresh two-edge path of weights `2J` scores `3J+Juv` after its
+middle spin is maximized.  Keep the occurrences in (16.6) separate.  For the
+oriented pair `a,-a`, the two boundary-anchor groups add `2w lambda_a`, the
+two selector-boundary groups add another `2w lambda_a`, the selector-anchor
+terms add `(w-1)lambda_a`, and removing the negative constant adds
+`(w-1)lambda_a`.  The total offset per projective class is
+`(6w-2)lambda_a`, proving (16.3).
+
+The bags `B union {z}`, `B union {z,t_a}`, and three-vertex mediator bags
+give width at most `w+1`.  A private edge supplies the nonnegative padding to
+`C_(w,W)`.  Finally (16.2) reduces deterministic response covering and
+packing to the ordinary sup cube, proving (16.4). `square`
+
+The construction is exponential in `w` and has boundary load
+`4 sum_tF(t)` at every boundary vertex.  Thus (16.4) is an exact
+unrestricted-size response theorem, not a polynomial-size or
+unit-boundary-sensitivity lower bound.
+
+### Theorem 16.2 (metric-interface Lipschitz response entropy)
+
+Let `(X,d)` be a nonempty finite metric space of diameter `D`, and let
+`Lip_1(X)/R` be the one-Lipschitz functions modulo constants, with
+
+```math
+d_{\rm sh}([f],[g])=inf_c\|f-g-c\boldsymbol1\|_\infty
+={1\over2}\operatorname {osc}(f-g).                \tag{16.7}
+```
+
+If `S` is an `r`-net of `X`, `eta>0`, and `r+eta/2<=delta`, then
+
+```math
+\operatorname {Cov}_\delta(Lip_1(X)/R)
+\le\left({D\over\eta}+2\right)^{|S|}.              \tag{16.8}
+```
+
+Conversely, if `C subset X` is `rho`-separated and `k=|C|`, then
+
+```math
+d(c,c')\ge\rho\quad(c\ne c'),                      \tag{16.9}
+```
+
+then
+
+```math
+\operatorname {Pack}_\rho(Lip_1(X)/R)
+\ge {k\choose\lfloor k/2\rfloor}.                 \tag{16.10}
+```
+
+For the `w`-cube, write `V(w,r)=sum_(j<=r)binom(w,j)`.  One may take
+
+```math
+|S|\le\left\lceil{2^w\over V(w,r)}(w\log2+1)\right\rceil, \tag{16.11}
+```
+
+and, at separation `rho`, a greedy `C` of size at least
+
+```math
+\left\lfloor{2^w\over V(w,\lceil\rho\rceil-1)}\right\rfloor. \tag{16.12}
+```
+
+Therefore, for fixed `0<epsilon<1/4`,
+
+```math
+\log_2\operatorname {Cov}_{\epsilon w}
+\le2^{(1-H_2(\epsilon)+o(1))w},
+\qquad
+\log_2\operatorname {Pack}_{\epsilon w}
+\ge2^{(1-H_2(\epsilon)+o(1))w}.                   \tag{16.13}
+```
+
+In particular the actual radius-`epsilon w` covering number obeys
+
+```math
+2^{(1-H_2(2\epsilon)+o(1))w}
+\le \log_2\operatorname {Cov}_{\epsilon w}
+\le2^{(1-H_2(\epsilon)+o(1))w}.                  \tag{16.14}
+```
+
+#### Proof
+
+Normalize `min_x f(x)=0`, store upward-rounded values
+`q_s=eta ceil(f(s)/eta)` on `S`, and define
+
+```math
+u(x)=\min_s\{q_s+d(x,s)\},
+\quad
+\ell(x)=\max_s\{q_s-d(x,s)\},
+\quad g={u+\ell\over2}.                            \tag{16.14a}
+```
+
+Both envelopes and their midpoint are one-Lipschitz.  The global Lipschitz
+inequalities and a landmark within `r` give
+
+```math
+f\le u<f+\eta+2r,
+\qquad f-2r\le\ell<f+\eta.
+```
+
+Thus `g-f` lies in `[-r,eta+r)`, so its oscillation is less than
+`eta+2r` and its shape error is less than `r+eta/2<=delta`.  The normalized
+sample range is contained in `[0,D]`, proving (16.8).
+
+For each `U subset C` of cardinality `floor(k/2)`, prescribe value `rho` on
+`U` and zero on `C setminus U`.  Condition (16.9) makes these partial data
+one-Lipschitz, so they extend to `X` (and may be clipped to `[0,rho]`).  If
+`U ne V`, the difference is `+rho` somewhere in `U setminus V` and `-rho`
+somewhere in `V setminus U`; (16.7) makes their shape distance at least
+`rho`, proving (16.10).
+
+Random centers prove (16.11), while greedy deletion of radius-
+`ceil(rho)-1` balls proves (16.12).  In (16.8) take `eta=o(w)` and
+`r=(epsilon-o(1))w`; in (16.12) take `rho=epsilon w+o(w)`.  The standard
+Hamming-ball asymptotics and
+`binom(k,floor(k/2))>=2^k/(k+1)` give (16.13).  Finally, a radius-
+`epsilon w` cover can contain at most one member of a set separated by more
+than `2epsilon w`; applying (16.13) at that separation gives the lower half
+of (16.14). `square`
+
+This is an upper theorem for every effectively Lipschitz boundary-response
+class.  The lookup constructions for pairwise Ising and Theorem 16.1 realize
+the lower packing in those languages.  They do not impose a syntactic
+unit-boundary-degree promise.
+
+### Theorem 16.3 (exposed witnesses under min-plus continuation)
+
+Let `Y,X` be finite, `K:X times Y->R`, and
+
+```math
+(T_Kf)(x)=\min_y\{K(x,y)+f(y)\},
+\qquad r(f,g)=\max_y(f(y)-g(y)).                    \tag{16.15}
+```
+
+Define the exposure penalty
+
+```math
+e_K^f(y)=\min_x\{K(x,y)+f(y)-(T_Kf)(x)\}\ge0.      \tag{16.16}
+```
+
+Then
+
+```math
+\boxed{
+\max_y\{f(y)-g(y)-e_K^f(y)\}
+\le r(T_Kf,T_Kg)\le r(f,g).}                       \tag{16.17}
+```
+
+In particular, an exact maximizer of `f-g` which is exposed by `f` preserves
+that directed response.  Along repeated continuations, the losses
+
+```math
+r(f,g)-\max_y\{f(y)-g(y)-e_K^f(y)\}                \tag{16.18}
+```
+
+add at most telescopically.  The analogous condition in the reverse
+orientation controls the two-sided response separation.
+
+There is a genuine interacting family on which (16.17) closes exactly.  Let
+`(Y,d)` be a finite metric space, let `g` be a bijective self-isometry, and
+for `lambda>=0` put
+
+```math
+D_{\lambda,g}(a,t)=\lambda d(t,g(a)).              \tag{16.19}
+```
+
+With min-plus kernel composition
+`(K star L)(a,t)=min_u(K(a,u)+L(u,t))`, one has
+
+```math
+\boxed{D_{\lambda,g}\star D_{\mu,h}
+=D_{\min\{\lambda,\mu\},h\circ g}.}               \tag{16.20}
+```
+
+Moreover,
+
+```math
+r(D_{\lambda,g}(a,\cdot),D_{\lambda,g}(b,\cdot))
+=\lambda d(a,b).                                   \tag{16.21}
+```
+
+Thus a chain closes exactly on the bottleneck strength and isometry
+holonomy:
+
+```math
+D_1\star\cdots\star D_T=D_{\lambda_*,G},
+\qquad \lambda_*=\min_i\lambda_i,
+\quad G=g_T\circ\cdots\circ g_1.                 \tag{16.22}
+```
+
+This closure is robust in the precise cumulative sense requested for an
+interacting continuation.  If the actual `i`th kernel is within `eta_i` of
+`D_(lambda_i,g_i)` in entrywise sup norm, then its full composite is within
+`E=sum_i eta_i` of (16.22), and every directed row response is within `2E`
+of `lambda_*d(a,b)`.  Hence `E=o(lambda_*d(a,b))` preserves the leading
+directed scale for that declared pair through arbitrarily many steps.
+
+#### Proof
+
+For the upper inequality in (16.17), evaluate `T_Kf` at a minimizer used by
+`T_Kg`.  For the lower inequality, take `x` attaining (16.16).  Then
+
+```math
+(T_Kf)(x)=K(x,y)+f(y)-e_K^f(y),
+\qquad
+(T_Kg)(x)\le K(x,y)+g(y).
+```
+
+Subtract and maximize over `y`.  Iteration gives (16.18).
+
+For (16.20), move `t` by `h^(-1)`.  The triangle inequality gives
+
+```math
+\lambda d(u,g(a))+\mu d(u,h^{-1}(t))
+\ge\min(\lambda,\mu)d(g(a),h^{-1}(t)).
+```
+
+Choosing `u=g(a)` or `u=h^(-1)(t)` attains the smaller endpoint cost.  The
+reverse triangle inequality bounds (16.21) above, while `t=g(b)` attains the
+bound.  Entrywise min-plus composition is one-Lipschitz in each factor, and
+the directed maximum is two-Lipschitz in the two rows, proving the robust
+claim. `square`
+
+The exposure inequality is sharp throughout this family.  When a row of
+strength `lambda` is continued by a link of strength `mu>=lambda`, every
+intermediate point is exposed: choose its isometric image as the output and
+use the triangle inequality.  If `mu<lambda`, only the row's centre is
+exposed (for every other point, jumping first to the centre is strictly
+cheaper).  The maximizing witness for the ordered pair `(a,b)` is the centre
+of row `b`, so the weak link hides it and clips the response from
+`lambda d(a,b)` to `mu d(a,b)`.
+
+For the discrete metric on `[q]`, define the permutation-Potts reward kernel
+
+```math
+P_{J,\pi}(a,t)=-J{\bf1}\{t=\pi(a)\}
+=D_{J,\pi}(a,t)-J.                                 \tag{16.23}
+```
+
+Then
+
+```math
+P_{J,\pi}\star P_{L,\rho}
+=-\max(J,L)\boldsymbol1+P_{\min(J,L),\rho\circ\pi}, \tag{16.24}
+```
+
+and a chain has endpoint kernel
+
+```math
+-\left(\sum_iJ_i-\mu\right)\boldsymbol1+P_{\mu,\Pi},
+\qquad \mu=\min_iJ_i,
+\quad \Pi=\pi_T\circ\cdots\circ\pi_1.           \tag{16.25}
+```
+
+Under arbitrary labelled endpoint fields, distinct isometries at fixed
+`mu>0` are separated by at least `mu delta_Y`, where `delta_Y` is the least
+positive distance in `Y`; for the discrete metric this forces `q!` states,
+or `Theta(q log q)` discrete bits, below error `mu/2`.  The directed row
+table alone forgets the holonomy and retains only the bottleneck.  Thus the
+declared future language determines whether the exact state is `(mu,Pi)` or
+just `mu`; at `mu=0` the holonomy is operationally invisible.
+
+Finally the signed binary Ising kernel has the exact affine identification
+
+```math
+K_J^{\rm Ising}(s,t)=-Jst
+=|J|+P_{2|J|,\pi_J}(s,t),
+\qquad \pi_J(s)=\operatorname {sgn}(J)s.           \tag{16.26}
+```
+
+Consequently its chain endpoint is
+
+```math
+-\left(\sum_i|J_i|-\nu\right)
+-\operatorname {sgn}\left(\prod_iJ_i\right)\nu st,
+\qquad \nu=\min_i|J_i|,                            \tag{16.27}
+```
+
+and both directed row gaps are `2nu`.
+
+### Theorem 16.4 (normalized Max-Cut distance-shell characterization)
+
+Let
+
+```math
+X_w=\{+1,-1\}^w/\{s\sim-s\},
+```
+
+and let `lambda_i>=0`.  The weighted projective Hamming pseudometric is
+
+```math
+d_\lambda([s],[t])=
+\min\left\{
+\sum_{i:s_i\ne t_i}\lambda_i,\,
+\sum_{i:s_i=t_i}\lambda_i
+\right\}.                                        \tag{16.28}
+```
+
+(It becomes a metric after zero-cost coordinates are quotiented.)  For a
+nonnegatively weighted Max-Cut component `G` with boundary `[w]`, let
+`ell_i(G)` be
+the total weight of edges incident to boundary vertex `i`, and let `[h_G]`
+denote its conditional cut profile modulo constants.  Then
+
+```math
+\boxed{
+\{[h_G]:\ell_i(G)\le\lambda_i\ \hbox{for every }i\}
+=\operatorname {Lip}_1(X_w,d_\lambda)/R.}         \tag{16.29}
+```
+
+If
+
+```math
+\Delta_i(f)=\max_s|f([s])-f([s^{(i)}])|,
+```
+
+the minimum load vector of the shape `[f]` is exactly
+
+```math
+\inf_{G:[h_G]=[f]}\ell_i(G)=\Delta_i(f)            \tag{16.30}
+```
+
+simultaneously in all coordinates.  In particular the minimum total exposed
+load is `sum_i Delta_i(f)`.
+
+The same normalized language remains fully exposing anisotropically: if both
+tested components and all future attachments obey `ell_i<=lambda_i`, the
+literal contextual metric is `||f-g||_infinity`, while after offset
+calibration the shape metric is `osc(f-g)/2`.  Consequently, for the
+unit-load class
+`L_w=Lip_1(X_w,d_proj)/R` and fixed `0<epsilon<1/4`,
+
+```math
+\boxed{
+2^{(1-H_2(2\epsilon)+o(1))w}
+\le\log_2\operatorname {Cov}_{\epsilon w}(L_w)
+\le2^{(1-H_2(\epsilon)+o(1))w}.}                 \tag{16.31}
+```
+
+Thus boundary sensitivity one still permits exponentially many response
+bits at macroscopic distortion.
+
+#### Proof
+
+Flipping a set `D` of boundary spins while holding private spins fixed changes
+the cut by at most `sum_(i in D)ell_i(G)`.  Comparing conditional maxima in
+both directions, and then using global-flip invariance, proves the
+`d_lambda`-Lipschitz necessity.
+
+For sufficiency, translate a `d_lambda`-Lipschitz `f` to be nonnegative and
+use Theorem 16.1 to compile `C+f([y])` at a private inner interface
+`y=(y_i)`.  Join each true boundary spin `s_i` to `y_i` by a fresh two-edge
+path whose two edges have weight `lambda_i`.  Maximizing the middle spin
+gives `2lambda_i` when `s_i=y_i` and `lambda_i` otherwise.  The outer
+response, apart from a common constant, is
+
+```math
+\max_y\left\{f([y])-\sum_{i:s_i\ne y_i}\lambda_i\right\}=f([s]). \tag{16.32}
+```
+
+The equality is the max-plus McShane identity: `y=s` attains the right side,
+and Lipschitzness gives the reverse inequality.  Only the first edge of each
+path meets the true boundary, proving (16.29).  Coordinate flipping gives
+the lower half of (16.30), while telescoping shows that `f` is
+`d_Delta`-Lipschitz and the same construction attains all coordinates at
+once.
+
+A weighted positive-edge pin has profile `C-d_lambda(x,t)` and exposed load
+`lambda_i` in coordinate `i`.  The McShane identity exposes `f(t)` for every
+`d_lambda`-Lipschitz `f`, proving the restricted contextual isometry.  The
+upper half of (16.31) is Theorem 16.2 on the
+projective cube, whose balls below radius `w/2` have volume `V(w,r)`.
+For the lower half, take a projective code of distance
+`2h>2epsilon w` and size at least
+`2^(w-1)/V(w,2h-1)`.  On its codewords assign `+h` and `-h` according to
+each half-size subset.  These labels extend one-Lipschitzly; two distinct
+half-size subsets give both differences `+2h` and `-2h`, hence shape
+distance at least `2h`.  Equation (16.29) realizes every extension at unit
+load, and the standard Hamming-volume estimate proves (16.31). `square`
+
+The private compiler in this proof has exponential size.  Therefore
+(16.31) rules out boundary load alone as a compression promise; it does not
+rule out a smaller response class under polynomial graph size or bounded
+description complexity.  Unit load is not closed under parallel gluing,
+because loads add, whereas serial distance shells are idempotent.
+
+Abstractly, the shell is the max-plus distance projector
+
+```math
+(P_df)(x)=\max_y\{f(y)-d(x,y)\}.                  \tag{16.33}
+```
+
+Its fixed points are exactly the one-Lipschitz functions, and the distance
+kernel is idempotent:
+
+```math
+\max_y\{-d(x,y)-d(y,z)\}=-d(x,z).                \tag{16.34}
+```
+
+Thus a private universal profile compiler followed by one resource-bounded
+distance bridge realizes the full Lipschitz response ball at the bridge's
+resource cost.  Equations (16.20) and (16.34) are the min-plus and max-plus
+forms of the same metric closure mechanism.
+
+### Theorem 16.5 (exact tropical resource distortion)
+
+Let `(X,d)` be a nonempty finite metric space, `lambda>=0`, and `f:X->R`.
+Define
+
+```math
+(P_\lambda f)(x)=\max_y\{f(y)-\lambda d(x,y)\},
+\qquad
+(Q_\lambda f)(x)=\min_y\{f(y)+\lambda d(x,y)\},   \tag{16.35}
+```
+
+and the directed Lipschitz defect
+
+```math
+\Delta_\lambda(f)=
+\max_{x,y}\{f(y)-f(x)-\lambda d(x,y)\}.           \tag{16.36}
+```
+
+Then `P_lambda f` is the least `lambda`-Lipschitz majorant of `f`,
+`Q_lambda f` is its greatest `lambda`-Lipschitz minorant, and
+
+```math
+P_\mu P_\lambda=P_{\min(\lambda,\mu)},
+\qquad
+Q_\mu Q_\lambda=Q_{\min(\lambda,\mu)}.            \tag{16.37}
+```
+
+The exact projective response distance to the admissible Lipschitz class is
+
+```math
+\boxed{
+\inf_{h\in\operatorname {Lip}_\lambda}
+d_{\rm sh}([f],[h])
+={\Delta_\lambda(f)\over2}
+=d_{\rm sh}([f],[P_\lambda f]).}                  \tag{16.38}
+```
+
+The exact literal sup distance is also
+
+```math
+\boxed{
+\inf_{h\in\operatorname {Lip}_\lambda}\|f-h\|_\infty
+={\Delta_\lambda(f)\over2},}                      \tag{16.39}
+```
+
+attained by `(P_lambda f+Q_lambda f)/2`.
+
+For a chain of isometrically twisted distance shells with strengths
+`lambda_i`, holonomy `G`, and `lambda_*=min_i lambda_i`, the response
+distortion relative to the relabelled input is exactly one weakest-layer
+defect:
+
+```math
+d_{\rm sh}\left(
+[T_T\cdots T_1f],[f\circ G^{-1}]
+\right)
+={\Delta_{\lambda_*}(f)\over2}.                  \tag{16.40}
+```
+
+It is not paid once per layer.  If the `i`th shell has entrywise sup error
+at most `eta_i`, the right side of (16.40) increases by at most
+`sum_i eta_i`.
+
+#### Proof
+
+Every distance cone in (16.35) is `lambda`-Lipschitz, so both envelopes are
+Lipschitz and `P_lambda f>=f>=Q_lambda f`.  If `h>=f` is Lipschitz, then
+
+```math
+h(x)\ge h(y)-\lambda d(x,y)
+\ge f(y)-\lambda d(x,y),
+```
+
+so `h>=P_lambda f`; the minorant statement follows by sign reversal.
+The triangle inequality, with equality by choosing either endpoint, proves
+(16.37).
+
+Directly from the definitions,
+
+```math
+\|P_\lambda f-f\|_\infty
+=\|f-Q_\lambda f\|_\infty
+=\Delta_\lambda(f).                              \tag{16.41}
+```
+
+At a global maximum of `f`, the first error is zero, so
+`d_sh([f],[P_lambda f])=Delta_lambda(f)/2`.  Conversely, if `x,y` attain
+(16.36), every Lipschitz `h` satisfies
+
+```math
+(f-h)(y)-(f-h)(x)\ge\Delta_\lambda(f).
+```
+
+This proves the lower bounds in (16.38)--(16.39).  The midpoint of the two
+Lipschitz envelopes is Lipschitz, and its error from `f` is
+`((P_lambda f-f)-(f-Q_lambda f))/2`, whose absolute value is at most
+`Delta_lambda(f)/2`.  This proves (16.39).
+
+Finally Theorem 16.3 identifies the whole twisted chain with the single
+shell `P_(lambda_*)` after relabelling by `G`.  Equation (16.38) proves
+(16.40), and uniform kernel nonexpansiveness gives the perturbation
+statement. `square`
+
+The envelope identities are classical tropical projection.  Their
+extremal-information content is the exact operational formula (16.38) and
+its compiler/bridge applications: in every language satisfying the
+private-compiler and sensitivity hypotheses used in Theorem 16.4, a single
+distance shell is a nearest resource-admissible response, and repeated
+interacting composition pays only the weakest layer.
+
+### Theorem 16.6 (anisotropic separator bottleneck lattice)
+
+On the projective Boolean cube `X_w`, let `d_ell` be the weighted metric
+(16.28), now with a vector `ell in R_+^w`, and let
+
+```math
+B_{\ell,g}(a,t)=-d_\ell(t,g(a)),                  \tag{16.42}
+```
+
+where `g` is a signed coordinate permutation (global sign is quotiented).
+If `h_*ell` denotes the coordinate vector transported by `h`, then max-plus
+composition obeys
+
+```math
+\boxed{
+B_{\ell,g}\odot B_{m,h}
+=B_{\,m\wedge h_*\ell,\,h\circ g},}              \tag{16.43}
+```
+
+where the wedge is coordinatewise minimum.  Thus arbitrary anisotropic
+shell chains close on one load vector and one monomial holonomy.  In the
+aligned case,
+
+```math
+B_\ell\odot B_m=B_{\ell\wedge m}.                 \tag{16.44}
+```
+
+At matched scalar precision this uses `w` resource values plus a signed
+permutation, rather than an arbitrary `2^(w-1) by 2^(w-1)` transfer kernel.
+For a profile transported through such a chain, its exact shape distortion
+is `Delta_(ell_*)/2`, with `ell_*` the recursively transported wedge and
+`Delta` defined as in (16.36) using `d_(ell_*)`.
+
+#### Proof
+
+First consider aligned shells.  For oriented words and fixed endpoint
+orientation, the intermediate coordinates are independent:
+
+```math
+\min_y\left\{
+\sum_i\ell_i{\bf1}\{x_i\ne y_i\}
++\sum_i m_i{\bf1}\{y_i\ne z_i\}
+\right\}
+=\sum_i\min(\ell_i,m_i){\bf1}\{x_i\ne z_i\}.     \tag{16.45}
+```
+
+Allowing the two independent global orientations of the intermediate
+projective word leaves only their product at the endpoints, so minimizing
+that product gives `d_(ell wedge m)([x],[z])`.  Negating proves (16.44).
+
+For (16.43), change variables from the intermediate word `u` to `h(u)`.
+The first distance becomes `d_(h_*ell)(h(u),h(g(a)))`, while the second has
+weight vector `m`.  Equation (16.44) gives their coordinatewise wedge and
+the endpoint map `h circ g`.  Induction proves chain closure.  The distortion
+claim is Theorem 16.5 for the final weighted projective metric. `square`
+
+This is a strict composable quotient for a nontrivial growing-interface
+family.  It does not compress an arbitrary separator profile travelling
+through the shell: the profile may still have exponential response
+complexity.  It compresses the interacting *continuation algebra* and shows
+that heterogeneous resource constraints combine by a transported bottleneck
+lattice rather than by additive loss.

@@ -382,3 +382,64 @@ matching channels.  The Hamming simplex and rank-metric multiplication
 families validate the same theorem.  This is a generative composition law,
 not a universal response state: it controls the declared product-distance
 query and says nothing about arbitrary nonproduct couplings.
+
+## 13. Benchmark correction: three tests, not one
+
+The separator benchmarks force a sharper test for any proposed extremal
+state.  Three logically independent facts are required.
+
+1. **Context factorization.**  Every allowed future must meet the stored
+   object through a declared interface.  Conditional maxima on that interface
+   are then sufficient.
+2. **Query exposure.**  Allowed futures must actually distinguish the claimed
+   coordinates.  In pure Max-Cut, positive-edge gadgets expose projective
+   boundary assignments, not oriented assignments; global flip is a genuine
+   contextual gauge.
+3. **Language realizability.**  The model must generate a large separated
+   family of interface profiles.  Exposure alone does not give an information
+   lower bound.  The gauge-anchored lookup theorem supplies this missing step
+   for pure Max-Cut.
+
+Approximation adds a fourth datum: regularity of the realizable profiles in
+an interface metric.  The same exact projective table has full cube entropy
+without a promise, but a one-Lipschitz promise has Hamming-covering-code
+entropy.  Therefore exact contextual minimality does not determine lossy
+state growth.
+
+The benchmark states fit one profile calculus but have different growth
+laws:
+
+| model | contextual interface | exact state | growth mechanism |
+|---|---|---|---|
+| width-`w` Max-Cut | projective boundary assignment | conditional cut profile | full profile cube without normalization; full Lipschitz ball at unit boundary load |
+| width-`w` pairwise Ising | oriented boundary assignment | conditional energy profile | `2^w` independently realizable coordinates |
+| fixed-rank mean field | aggregate feature in `Z^d` | roof/profile over reachable sums | only `O(n^d)` interface types |
+| fixed weighted automaton | reachable suffix experiment | residual response function | quotient of the presented forward vector |
+
+This is explanatory rather than a new name for dynamic programming.  Its
+generative content is in model-specific realizability and distortion
+theorems, such as Theorems 16.1--16.2.
+
+The directed table now also survives one nonproduct operation.  Under a
+common min-plus continuation, an oriented response can be lost only after all
+of its exact directed witnesses cease to be exposed.  More strongly, distance
+cones on any finite metric close exactly: isometry holonomies multiply and
+response strengths combine by a bottleneck minimum.  Uniform entrywise
+perturbations accumulate additively.  This is the concrete gauge/cocycle
+mechanism anticipated by the earlier product theorem.
+
+The Max-Cut normalization benchmark adds a resource warning.  A private
+universal compiler followed by a single resource-bounded distance shell
+realizes every Lipschitz response at the shell's boundary cost.  Hence a
+local sensitivity bound need not imply low response complexity: under unit
+load the response class still has exponentially many bits at macroscopic
+distortion.  The next compression theorem must charge a global resource
+(component size, description length, internal precision, or grammar), not
+only exposed-interface load.
+
+These facts suggest one reusable mechanism rather than two unrelated
+examples: a metric distance kernel is an idempotent tropical projector on
+Lipschitz profiles, while isometries act as a holonomy group and unequal
+strengths compose by a bottleneck.  This still does not imply closure for
+arbitrary transfer kernels; the next extension must recognize or approximate
+this metric algebra without storing all kernel rows.

@@ -3,7 +3,9 @@
 **Status.** Solution-hidden benchmark report.  Sections 1--7 were derived
 before any file under `extremal_information/` was opened.  Section 8 records
 the subsequent collision audit.  The finite checks are in
-[`verify_maxcut_boundary_response.py`](../experiments/verify_maxcut_boundary_response.py).
+[`verify_maxcut_boundary_response.py`](../experiments/verify_maxcut_boundary_response.py)
+and
+[`verify_normalized_maxcut_shell.py`](../experiments/verify_normalized_maxcut_shell.py).
 
 ## 1. Experiment and conventions
 
@@ -369,23 +371,23 @@ V(w,r)=\sum_{j=0}^r {w\choose j}.
 ### Theorem MC.5 (coarse Lipschitz response entropy)
 
 Let `0<eta<delta<=w`, and let `r` be a nonnegative integer with
-`eta+2r<=delta`.  There is a radius-`delta` internal cover of `Lip_w` with at
+`r+eta/2<=delta`.  There is a radius-`delta` internal cover of `Lip_w` with at
 most
 
 ```math
-\left({2w\over\eta}+3\right)^{s+1},
+\left({w\over\eta}+2\right)^s,
 \qquad
 s=\left\lceil {2^w\over V(w,r)}(w\log2+1)\right\rceil.          \tag{MC.21}
 ```
 
-Conversely, put `h=ceil(delta)` and assume `2h<=w`.  There is a
+Conversely, put `rho=ceil(delta)` and assume `rho<=w`.  There is a
 `delta`-packing of cardinality at least
 
 ```math
-2^m,
+{m\choose\lfloor m/2\rfloor},
 \qquad
 m=\left\lfloor
- {2^w-V(w,h-1)\over V(w,2h-1)}
+ {2^w\over V(w,\rho-1)}
  \right\rfloor.                                   \tag{MC.22}
 ```
 
@@ -393,77 +395,94 @@ For fixed `0<epsilon<1/4` and `delta=epsilon w`, these imply
 
 ```math
 \log_2\operatorname{Cov}_{\epsilon w}(Lip_w)
-\le 2^{(1-H_2(\epsilon/2)+o(1))w},                \tag{MC.23}
+\le 2^{(1-H_2(\epsilon)+o(1))w},                  \tag{MC.23}
 ```
 
 ```math
 \log_2\operatorname{Pack}_{\epsilon w}(Lip_w)
-\ge 2^{(1-H_2(2\epsilon)+o(1))w}.                 \tag{MC.24}
+\ge 2^{(1-H_2(\epsilon)+o(1))w}.                  \tag{MC.24}
 ```
 
-The constants are not claimed sharp.  The point is that a linear additive
-error reduces the logarithmic entropy from the generic `Theta(2^w)` scale to
-a Hamming covering-code scale, while it remains exponential in `w`.
+For the operational radius-`epsilon w` covering number, the same construction
+at separation greater than `2epsilon w` gives
+
+```math
+2^{(1-H_2(2\epsilon)+o(1))w}
+\le \log_2\operatorname{Cov}_{\epsilon w}(Lip_w)
+\le 2^{(1-H_2(\epsilon)+o(1))w}.                  \tag{MC.24a}
+```
+
+Thus a linear additive error reduces the logarithmic entropy from the generic
+`Theta(2^w)` scale to a Hamming covering-code scale, while it remains
+exponential in `w`.
 
 #### Proof of the cover
 
 A random-centre argument gives an `r`-cover `S` of the cube with `|S|<=s`:
 `k` uniform random centres leave expected uncovered size at most
 `2^w exp(-kV(w,r)/2^w)`, which is below one for the displayed `k`.
-Adjoin a fixed anchor `x_0`.
-
-Normalize `f(x_0)=0` and round every sampled value upward at mesh `eta`:
+Normalize `min_x f(x)=0` and round every sampled value upward at mesh `eta`:
 
 ```math
 q_s=\eta\lceil f(s)/\eta\rceil.
 ```
 
-There are at most `2w/eta+3` choices per sampled value.  Define the
-McShane-type extension
+There are at most `2w/eta+3` choices per sampled value.  Define the two
+McShane envelopes and take their midpoint:
 
 ```math
-g(x)=\min_{s\in S\cup\{x_0\}}\{q_s+d_H(x,s)\}.    \tag{MC.25}
+u(x)=\min_{s\in S}\{q_s+d_H(x,s)\},
+\quad
+\ell(x)=\max_{s\in S}\{q_s-d_H(x,s)\},
+\quad g(x)={u(x)+\ell(x)\over2}.                  \tag{MC.25}
 ```
 
-It is one-Lipschitz.  Since `q_s>=f(s)`, every term in (MC.25) is at least
-`f(x)`.  If `s` is within `r` of `x`, then
+Both envelopes and hence `g` are one-Lipschitz.  Since
+`f(s)<=q_s<f(s)+eta`, the Lipschitz inequalities and a landmark within `r`
+give
 
 ```math
-g(x)<f(s)+eta+r<=f(x)+eta+2r<=f(x)+delta.
+f(x)\le u(x)<f(x)+eta+2r,
+\qquad
+f(x)-2r\le\ell(x)<f(x)+eta.
 ```
 
-Thus `||f-g||_infinity<=delta`.  The anchor term and Lipschitz consistency
-also give `g(x_0)=0`, so the centres lie in `Lip_w`.  This proves (MC.21).
+Thus `g-f` lies in `[-r,eta+r)`, so its shape distance is less than
+`r+eta/2<=delta`.  There are at most `w/eta+2` quantized values at each
+landmark.  This proves (MC.21).
 
 #### Proof of the packing
 
-Fix `x_0`.  Greedily choose a set `C` outside the radius-`h-1` ball of `x_0`
-whose mutual distances are at least `2h`.  Each choice deletes at most
-`V(w,2h-1)` candidates, giving `|C|>=m`.
-
-For every sign vector `sigma in {-1,+1}^C`, prescribe
+Greedily choose a `rho`-separated set `C`.  Each choice deletes at most
+`V(w,rho-1)` candidates, giving `|C|>=m`.  For every subset `U subset C` of
+cardinality `floor(|C|/2)`, prescribe
 
 ```math
-u_sigma(x_0)=0,\qquad u_sigma(c)=h\sigma_c.
+u_U(c)=\rho {\bf1}\{c\in U\}.
 ```
 
-These data are one-Lipschitz: a centre is at least `h` from the anchor and
-oppositely signed centres are at least `2h` apart.  Extend them to the cube
-by (MC.25), without quantization.  Distinct sign vectors differ by `2h` at
-some centre and agree at `x_0`; their difference has oscillation at least
-`2h`, so their shape distance is at least `h>=delta`.  This proves (MC.22).
+These data are one-Lipschitz and extend to the cube (then may be clipped to
+`[0,rho]`).  Distinct equal-cardinality `U,V` have a point where the
+difference is `+rho` and one where it is `-rho`; their difference has
+oscillation at least `2rho`, so their shape distance is at least
+`rho>=delta`.  This proves (MC.22).
 For the covering estimate take, for example, `eta=1` and
-`r=floor((epsilon w-1)/2)`; the extra `O(log w)` bits per landmark do not
+`r=floor(epsilon w-1)`; the extra `O(log w)` bits per landmark do not
 alter the displayed double-exponential rate.  The packing estimate and both
 entropy estimates use
-`V(w,alpha w)=2^{(H_2(alpha)+o(1))w}`. `square`
+`V(w,alpha w)=2^{(H_2(alpha)+o(1))w}` and
+`binom(m,floor(m/2))>=2^m/(m+1)`.  A radius-`epsilon w` cover separates a
+packing at distance greater than `2epsilon w`, proving (MC.24a). `square`
 
 Every function used in the lower packing is realizable by Lemma MC.4.  The
 upper bound applies in particular to responses of pairwise instances, or of
 Max-Cut instances, satisfying the unit terminal-sensitivity condition.  The
-lower bound is only claimed for pairwise CSP under an **effective response**
-Lipschitz promise; the selector realization need not obey a syntactic bound
-on the sum of all incident factor magnitudes.
+same argument on the projective Hamming cube, combined with the pure-Max-Cut
+lookup theorem in `benchmark_maxcut_projective_response.md`, realizes the
+lower packing inside pure Max-Cut under an **effective response** Lipschitz
+promise.  Neither lookup realization is claimed to obey a syntactic bound on
+the sum of all incident factor magnitudes.  A unit-boundary-degree lower bound
+therefore remains open.
 
 ## 7. Finite enumeration checks
 
@@ -483,6 +502,10 @@ checks.
    (MC.16) directly, and checks its minimum separation.
 6. It checks the rounded McShane extension and its advertised error bound on
    a small Hamming cube.
+7. The normalized-shell verifier separately checks 1,000 anisotropic
+   projective instances for the exact identity (MC.31), the load-induced
+   Lipschitz inequalities, and the coordinate-oscillation realization
+   metric.
 
 These computations are falsifiers for formulas and constants, not proofs.
 
@@ -518,3 +541,238 @@ and were not found in those comparison passages.
 The benchmark therefore reproduces the expected separator response from the
 continuation experiment alone, while the orbit exposure, gauge audit, and
 coarse Lipschitz entropy are the non-colliding outputs.
+
+## 9. Exact normalized-load response class
+
+The final normalization question is sharper than the effective Lipschitz
+promise in Section 6: does the same entropy occur when the *actual* weighted
+degree of every exposed boundary vertex is at most one?  The answer is yes.
+In fact the complete anisotropic response class can be characterized.
+
+Switch to spins and write
+
+```math
+X_w=\{\pm1\}^w/\{s\sim-s\}.
+```
+
+For a load vector `lambda=(lambda_1,...,lambda_w)>=0`, define the projective
+pseudometric (a metric after quotienting zero-cost coordinates)
+
+```math
+d_\lambda([s],[t])=
+\min\left\{
+ \sum_{i:s_i\ne t_i}\lambda_i,
+ \sum_{i:s_i=t_i}\lambda_i
+\right\}.                                        \tag{MC.26}
+```
+
+Let `ell_i(G)` be the sum of the weights of all edges incident to boundary
+vertex `i`; a boundary--boundary edge is counted at both endpoints.
+
+### Theorem MC.6 (anisotropic boundary-load realization)
+
+The response shapes of pure nonnegatively weighted Max-Cut components with
+`ell_i(G)<=lambda_i` are exactly
+
+```math
+\boxed{
+\operatorname{Resp}_w(\lambda)/\mathbb R
+=\operatorname{Lip}_1(X_w,d_\lambda)/\mathbb R.} \tag{MC.27}
+```
+
+Consequently the coordinatewise minimum exposed load needed to realize a
+projective shape `f` is
+
+```math
+\boxed{
+\inf_{G:[h_G]=[f]}\ell_i(G)=
+\Delta_i(f):=\max_s|f(s)-f(s^{(i)})|,}            \tag{MC.28}
+```
+
+with all minima attained simultaneously.  In particular,
+
+```math
+\boxed{
+\inf_{G:[h_G]=[f]}\sum_i\ell_i(G)
+=\sum_i\Delta_i(f).}                             \tag{MC.29}
+```
+
+#### Proof
+
+Fixing the private spins and flipping boundary coordinates in `D` changes
+the cut by at most `sum_(i in D)ell_i(G)`.  Compare the same private
+assignment in the two conditional maxima and then reverse the comparison.
+Global-flip invariance permits either orientation of the second word, giving
+the `d_lambda`-Lipschitz necessity.
+
+Conversely let `f` be `d_lambda`-Lipschitz and translate it to be
+nonnegative.  The projective lookup construction of
+`benchmark_maxcut_projective_response.md` supplies a pure Max-Cut component
+`H_f` with an inner interface `y in {+-1}^w` and response
+
+```math
+h_{H_f}([y])=C_f+f([y]).                           \tag{MC.30}
+```
+
+Make the `y_i` private.  For each true boundary spin `s_i`, add a fresh
+two-edge path
+
+```text
+s_i --(lambda_i)-- p_i --(lambda_i)-- y_i.
+```
+
+After `p_i` is maximized, the path scores `2lambda_i` when `s_i=y_i` and
+`lambda_i` otherwise.  The new boundary response is therefore
+
+```math
+\begin{aligned}
+h_G([s])
+ &=C_f+2\sum_i\lambda_i+
+   \max_y\left\{f([y])-
+          \sum_{i:s_i\ne y_i}\lambda_i\right\}\\
+ &=C_f+2\sum_i\lambda_i+f([s]).                  \tag{MC.31}
+\end{aligned}
+```
+
+The last equality is the max-plus McShane identity: `y=s` gives equality,
+while Lipschitzness gives the reverse inequality.  Only the first edge of
+the `i`-th path meets the true boundary, so its load is exactly `lambda_i`.
+This proves (MC.27).
+
+Necessity already gives `ell_i(G)>=Delta_i(f)`.  Conversely, coordinate
+telescoping shows that `f` is Lipschitz for the weighted Hamming metric with
+weights `Delta_i(f)`; applying (MC.27) proves (MC.28)--(MC.29). `square`
+
+Thus the total-load promise `sum_i ell_i(G)<=w` is exactly the response
+seminorm promise `sum_i Delta_i(f)<=w`.  More particularly, unit load at
+every boundary vertex realizes the entire projective one-Lipschitz ball.
+The exponential-load lookup is not placed at the exposed separator: it is
+compiled into a private landscape and paid once, while one joint hidden word
+is selected before the distance-shell response is evaluated.
+
+### Theorem MC.7 (load-bounded futures retain the exact response metric)
+
+Suppose both tested components and all allowed future attachments have load
+at most `lambda_i` at boundary vertex `i`.  For their responses `f,g`,
+
+```math
+\boxed{
+\sup_C\left|
+ \max_x(f(x)+h_C(x))-\max_x(g(x)+h_C(x))
+\right|=\|f-g\|_\infty.}                         \tag{MC.32}
+```
+
+Indeed, the positive-edge anchor gadget with terminal weights `lambda_i`
+realizes
+
+```math
+q_t(x)=K-d_\lambda(x,t)                           \tag{MC.33}
+```
+
+with boundary load `lambda_i`.  Because `f` is `d_lambda`-Lipschitz,
+
+```math
+\max_x\{f(x)-d_\lambda(x,t)\}=f(t),               \tag{MC.34}
+```
+
+and likewise for `g`.  Choosing a `t` maximizing `|f(t)-g(t)|` proves the
+lower bound; the maximum inequality proves the upper bound.  After a
+separately stored offset is calibrated, the same pins expose the entire
+range of `f-g`, so the restricted operational shape metric remains
+`osc(f-g)/2`.
+
+### Theorem MC.8 (unit-load macroscopic response rate-distortion)
+
+Let
+
+```math
+\mathcal L_w=\operatorname{Lip}_1(X_w,d_{\rm orb})/\mathbb R,
+```
+
+which equals the unit-boundary-load pure-Max-Cut response-shape class by
+MC.6.  For every fixed `0<epsilon<1/4`,
+
+```math
+\boxed{
+2^{(1-H_2(2\epsilon)+o(1))w}
+\le \log_2\operatorname{Cov}_{\epsilon w}(\mathcal L_w)
+\le 2^{(1-H_2(\epsilon)+o(1))w}.}                \tag{MC.35}
+```
+
+The cover proof is the midpoint-of-McShane-envelopes construction in MC.5,
+now on the projective cube.  Below radius `w/2`, every projective ball has
+size `V(w,r)`.  An `r`-net therefore has size at most
+
+```math
+{2^{w-1}\over V(w,r)}(1+(w-1)\log2)+1.            \tag{MC.36}
+```
+
+Quantizing its values at mesh `eta`, with
+`r+eta/2<=epsilon w`, gives the upper exponent in (MC.35).  Every resulting
+one-Lipschitz centre is itself realized with unit boundary load by MC.6, so
+this is an internal cover.
+
+For the lower bound take `h=(epsilon+o(1))w` with `2h>2epsilon w`.  Greedy
+packing supplies a `2h`-separated `C subset X_w` with
+
+```math
+|C|\ge {2^{w-1}\over V(w,2h-1)}.                  \tag{MC.37}
+```
+
+For every half-size `U subset C`, prescribe value `+h` on `U` and `-h` on
+`C\setminus U`, then extend one-Lipschitzly.  Two distinct half-size sets
+have points in both set differences, so the difference of their extensions
+takes both `+2h` and `-2h`.  Their shape distance is at least `2h`, and a
+radius-`epsilon w` ball contains at most one.  Hence
+
+```math
+\operatorname{Cov}_{\epsilon w}(\mathcal L_w)
+\ge { |C|\choose\lfloor |C|/2\rfloor},            \tag{MC.38}
+```
+
+which gives the lower exponent in (MC.35).  Using lower McShane extensions,
+a fixed translation, and common lookup padding makes all graphs in this
+packing have the same literal offset as well as total exposed boundary load
+exactly `w`.
+
+Theorem MC.8 is a double-exponential state-count lower bound with a genuinely
+linear syntactic boundary load.  It does **not** establish the same entropy
+for polynomial-size components: the private lookup compiler still has
+exponential size.  Therefore any smaller-state theorem must impose a global
+resource promise such as polynomial description size, bounded internal
+weight/precision, or a restricted construction grammar.  Boundary
+sensitivity alone is not a compression mechanism.
+
+The unit-load class is not closed under parallel gluing because exposed loads
+add.  The serial distance-shell operation below is the closure that remains
+idempotent.
+
+### Max-plus projector and interacting composition
+
+The construction is the finite-metric projector
+
+```math
+(P_df)(x)=\max_y\{f(y)-d(x,y)\}.                  \tag{MC.39}
+```
+
+It satisfies
+
+```math
+P_df=f\quad\Longleftrightarrow\quad f\in
+\operatorname{Lip}_1(X,d),                        \tag{MC.40}
+```
+
+and its kernel is max-plus idempotent:
+
+```math
+\max_y\{-d(x,y)-d(y,z)\}=-d(x,z).                \tag{MC.41}
+```
+
+Thus any language having both a private compiler for arbitrary inner
+profiles and a resource-bounded distance bridge realizes its full Lipschitz
+response ball at the cost of one bridge.  If that resource also implies the
+matching Lipschitz upper bound, the characterization is exact.  This is the
+max-plus form of the metric-isometry/bottleneck continuation algebra:
+repeated shells collapse exactly instead of accumulating loss.  It applies
+equally to a universal binary-CSP or pairwise-Ising interface and supplies a
+composition principle rather than Max-Cut-specific terminology.

@@ -121,6 +121,65 @@ def verify_directed_ising_bottleneck() -> int:
     return checks
 
 
+def compose_minplus(left, right):
+    return [
+        [
+            min(left[a][u] + right[u][t] for u in range(len(right)))
+            for t in range(len(right))
+        ]
+        for a in range(len(left))
+    ]
+
+
+def permutation_kernel(permutation: tuple[int, ...], strength: int):
+    size = len(permutation)
+    return [
+        [-strength if t == permutation[a] else 0 for t in range(size)]
+        for a in range(size)
+    ]
+
+
+def verify_permutation_potts_bottleneck() -> int:
+    checks = 0
+    for size in range(2, 6):
+        permutations = list(itertools.permutations(range(size)))
+        # Deterministic thinning keeps q=5 inexpensive while covering varied
+        # cycle types and noncommuting pairs.
+        stride = max(1, len(permutations) // 12)
+        sample = permutations[::stride]
+        for first_perm in sample:
+            for second_perm in sample:
+                composed_perm = tuple(second_perm[first_perm[a]] for a in range(size))
+                for first_strength in range(1, 5):
+                    for second_strength in range(1, 5):
+                        observed = compose_minplus(
+                            permutation_kernel(first_perm, first_strength),
+                            permutation_kernel(second_perm, second_strength),
+                        )
+                        baseline = -max(first_strength, second_strength)
+                        bottleneck = min(first_strength, second_strength)
+                        predicted = [
+                            [
+                                baseline
+                                - (bottleneck if t == composed_perm[a] else 0)
+                                for t in range(size)
+                            ]
+                            for a in range(size)
+                        ]
+                        assert observed == predicted
+                        for a in range(size):
+                            for b in range(size):
+                                if a == b:
+                                    continue
+                                directed = max(
+                                    observed[a][t] - observed[b][t]
+                                    for t in range(size)
+                                )
+                                assert directed == bottleneck
+                        checks += 1
+    return checks
+
+
 def verify_minplus_exposure(seed: int = 8675309) -> int:
     rng = random.Random(seed)
     checks = 0
@@ -163,6 +222,7 @@ def main() -> None:
                 "lookup_profile_boundary_checks": verify_lookup_profiles(),
                 "fixed_automaton_suffix_checks": verify_strict_residual_quotient(),
                 "directed_ising_bottleneck_checks": verify_directed_ising_bottleneck(),
+                "permutation_potts_bottleneck_checks": verify_permutation_potts_bottleneck(),
                 "minplus_exposure_checks": verify_minplus_exposure(),
             },
             indent=2,

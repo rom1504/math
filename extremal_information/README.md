@@ -104,6 +104,40 @@ source to a linear graph at constant all-context error, while exact linear
 graph sources of affine rank `r` have a closed feature state with `O(r)`
 response error.
 
+The fourth investigation forced the framework through classical benchmark
+problems instead of extending its vocabulary.  It produced five conclusions.
+
+1. Contextual response equivalence independently recovers the standard
+   separator table, zero-temperature transfer state, fixed-rank aggregate,
+   and weighted-language residual for the operational reason that every
+   allowed future factors through that interface.
+2. Pure weighted Max-Cut futures expose exactly the projective boundary
+   profile.  More strongly, a private lookup construction realizes every
+   projective table, so contextual exposure is matched by language
+   realizability rather than inferred from dynamic programming alone.
+3. Under unit boundary load, the exact Max-Cut response class is still the
+   entire projective one-Lipschitz ball.  Its radius-`epsilon w` covering
+   number has logarithm between
+   `2^((1-H_2(2epsilon)+o(1))w)` and
+   `2^((1-H_2(epsilon)+o(1))w)`.  Local sensitivity is therefore not a
+   compression promise; polynomial component size or bounded description is
+   a genuinely stronger unresolved resource.
+4. Finite-metric distance kernels form a nonproduct interacting algebra:
+   strengths combine by a bottleneck minimum and isometry labels by holonomy.
+   Anisotropic projective-Hamming shells strengthen this to a transported
+   coordinatewise-minimum lattice.
+5. The same distance shell is the exact nearest Lipschitz response to an
+   arbitrary profile.  Repeated shells pay precisely the weakest-layer
+   Lipschitz defect, not one approximation loss per layer.
+
+The classical ingredients are max-plus dynamic programming, Myhill--Nerode
+residuals, McShane envelopes, and tropical distance projection.  The
+project-level generative content is their resource-complete synthesis:
+private compiler plus distance bridge plus sensitivity converse gives an
+exact response class, exact distortion, and an interacting composition law.
+The experiments do not justify reconnecting to the motivating signing
+problem yet.
+
 ## Candidate object: the upper response roof
 
 For a finite landscape `H:Omega -> R` and a declared feature map
@@ -292,12 +326,21 @@ Binary simplex lines and rank-metric `F_8` multiplication lines provide two
 independent nontrivial validations.
 
 This moves the framework to **Level 3 for product-composed presented
-responses**: a `q x q` state, demonstrably smaller than the full local
-landscapes, has an exact algebra and predicts new response packings.  It does
-not yet survive genuine cross-block coupling.  The strongest next theorem is
-therefore a deterministic preservation criterion for the directed table
-under a nontrivial min-plus continuation or weak coupling, with sublinear
-loss over repeated composition.
+responses and metric-shell continuations**.  The directed table now survives
+a genuine cross-block minimization on the finite-metric family, with robust
+sublinear cumulative loss whenever the total entrywise perturbation is
+sublinear.  The anisotropic shell state is one load vector plus a monomial
+holonomy, demonstrably smaller than a general transfer table.
+
+The result is deliberately narrow.  It transports arbitrary profiles but
+does not compress them, and an exponential private compiler can hide behind
+unit interface load.  The strongest next theorem is therefore a recognition
+and stability result: characterize when a structured continuation is close
+to the metric-shell semigroup using less information than its full kernel,
+or prove a scalable obstruction showing why approximate tropical
+idempotence alone cannot provide such a quotient.  In parallel, determine
+which global resource on separator components yields nontrivial response
+compression beyond raw description counting.
 
 ## Extremal rate--distortion
 

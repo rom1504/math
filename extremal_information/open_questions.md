@@ -6,48 +6,47 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Preserve the directed response algebra beyond exact products
+## 1. Recognize and stabilize the metric-shell algebra
 
-Theorem 15.1 gives the first strict, growing-depth feature algebra in this
-phase:
+The previous lead target is resolved on a genuine interacting family.
+Finite-metric distance kernels close on an isometry holonomy and one
+bottleneck scalar; anisotropic projective-Hamming shells close on a
+transported coordinatewise-minimum load vector.  Uniform entrywise
+perturbations incur only their total actual error, and an arbitrary profile
+pays exactly one weakest-layer Lipschitz defect.
 
-```math
-r(a,b)=\sup_x(f_a(x)-f_b(x)),
-```
+The new question is whether this algebra can be recognized or approximated
+without first storing the full transfer kernel.  The exact starting point is
+elementary: a symmetric nonnegative diagonal-zero min-plus kernel is
+idempotent exactly when it is a pseudometric.  The useful theorem must be
+quantitative and compositional.
 
-and product response distances are exactly the maximum of the two oriented
-sums of `r`.  This closes because product minimization and query coordinates
-separate.  A useful theory must now survive one genuinely nonproduct
-operation.
+Prove one of the following.
 
-Let a common min-plus continuation act by
+1. A dimension-stable recognition theorem: natural local or spectral data of
+   complexity subquadratic in the alphabet determine a nearby metric shell,
+   and repeated composition has sublinear total response error.
+2. A sharp obstruction: kernels with arbitrarily small idempotence defect
+   remain macroscopically far from every metric-shell quotient, identifying
+   the additional global datum that must be stored.
+3. A structured extension (for example tree metrics, hyperconvex metrics, or
+   a finite semilattice of resource metrics) whose exact state is still
+   smaller than the full kernel and contains the anisotropic Hamming law as a
+   special case.
 
-```math
-(T_Kf)(x)=\min_y\{K(x,y)+f(y)\}.
-```
+**Success:** an exact recognition/stability inequality with sharp dependence
+on alphabet size, or a scalable counterexample that forces a principled new
+hypothesis.
 
-It always contracts directed response weights.  Find natural finite
-hypotheses—stated in terms of exposed minimizers, a synchronization quotient,
-or bounded coupling width—under which, for a declared alphabet,
+**Stop condition:** checking every triangle or storing every kernel entry is
+not compression.  Likewise, an `O(T epsilon)` estimate obtained solely by
+generic nonexpansiveness does not extend the bottleneck law.
 
-```math
-r(T_Kf_a,T_Kf_b)
-\ge r(f_a,f_b)-\varepsilon                                  \tag{OQ.1}
-```
-
-in both orientations, with cumulative loss sublinear over the intended
-composition depth.
-
-**Success:** a checkable condition verified in a nonproduct Hamming,
-rank-metric, code, or CSP model, where the directed table remains strictly
-smaller than the full response functions.
-
-**Stop condition:** assuming (OQ.1), using an identity kernel, or storing all
-kernel rows is not synchronization.  The theorem must derive preservation
-from less information than the complete continuation landscape.
-
-This is the single most important next theorem.  It tests whether the exact
-product law is a reusable theory or only a polished concatenated-code fact.
+In parallel, the normalized Max-Cut benchmark leaves one resource question:
+under unit outer load *and* polynomial component size with explicitly bounded
+weight precision, characterize the response entropy more sharply than the
+tautological bit-description count.  The exponential private compiler proves
+that boundary sensitivity alone cannot answer it.
 
 ## 2. Prove a same-input recoupling theorem at linear channel rank
 

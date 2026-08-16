@@ -188,8 +188,8 @@ def greedy_hamming_cover(w: int, radius: int) -> list[tuple[int, ...]]:
 def lipschitz_check() -> dict[str, object]:
     w = 6
     delta = 4.0
-    radius = int(delta // 4)
-    eta = delta / 2
+    eta = 1.0
+    radius = int(delta - eta)
     points = [bits(mask, w) for mask in range(1 << w)]
     anchor = points[0]
     source = points[-1]
@@ -198,7 +198,9 @@ def lipschitz_check() -> dict[str, object]:
     if anchor not in centres:
         centres.append(anchor)
     rounded = {x: eta * math.ceil(f[x] / eta) for x in centres}
-    g = {x: min(rounded[s] + hamming(x, s) for s in centres) for x in points}
+    upper = {x: min(rounded[s] + hamming(x, s) for s in centres) for x in points}
+    lower = {x: max(rounded[s] - hamming(x, s) for s in centres) for x in points}
+    g = {x: (upper[x] + lower[x]) / 2 for x in points}
     error = max(abs(f[x] - g[x]) for x in points)
     lipschitz = all(abs(g[x] - g[y]) <= hamming(x, y) for x in points for y in points)
     return {

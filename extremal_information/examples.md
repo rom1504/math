@@ -537,3 +537,120 @@ injection-distance construction based only on counting low words in
 `C+C'` is provably bounded by the common-host Gilbert exponent.  Placement
 of those low words relative to both rooted subcodes, not their scalar count,
 is the missing information.
+
+## Example 19: pure Max-Cut realizes every projective separator table
+
+A width-`w` Max-Cut boundary has `2^(w-1)` spin assignments after quotienting
+global flip.  Positive-edge pinning gadgets expose every one of these classes,
+so the conditional cut profile is the exact contextual state.
+
+More strongly, every nonnegative function `F` on the projective cube is the
+response shape of a positive-weight Max-Cut graph of treewidth at most
+`w+1`.  A common anchor converts boundary spins into gauge-relative spins;
+one selector per oriented word implements a lookup table; and direct edges or
+two-edge paths convert every resulting signed Ising term to positive cut
+edges.  After a common padding constant, the whole cube `[0,W]^(2^(w-1))` is
+realizable.  Thus its response description cost is
+
+```math
+Theta(2^(w-1) log(W/epsilon))
+```
+
+bits at additive error `epsilon`.  The construction has exponential size and
+boundary load, so this is a worst-case contextual lower bound rather than a
+unit-sensitivity approximation lower bound.
+
+## Example 20: interface regularity changes approximate response complexity
+
+For arbitrary width-`w` tables, additive error `epsilon w` still costs
+`Theta(2^w)` bits.  If the response shape is one-Lipschitz in boundary
+Hamming distance, values on a Hamming net suffice.  Midpoint McShane
+extensions give
+
+```math
+log_2 Cov_(epsilon w)
+ <=2^((1-H_2(epsilon)+o(1))w),
+```
+
+while balanced two-level values on an `epsilon w`-separated code give
+
+```math
+log_2 Pack_(epsilon w)
+ >=2^((1-H_2(epsilon)+o(1))w).
+```
+
+Using a code separated by more than `2 epsilon w` gives the operational
+covering lower bound
+
+```math
+log_2 Cov_(epsilon w)
+ >=2^((1-H_2(2 epsilon)+o(1))w).
+```
+
+The same contextual quotient can therefore have different lossy state-growth
+laws under different regularity promises.  Exact coordinate exposure alone
+does not determine approximate complexity.
+
+## Example 21: metric holonomy and a tropical bottleneck
+
+For a finite metric space `(Y,d)`, isometry `g`, and strength `lambda`, the
+kernel
+
+```math
+D_(lambda,g)(a,t)=lambda d(t,g(a))
+```
+
+has the exact interacting law
+
+```math
+D_(lambda,g) star D_(mu,h)
+=D_(min(lambda,mu),h circ g).
+```
+
+An arbitrary chain is represented by its weakest link and accumulated
+isometry holonomy, and its directed row gaps are
+`min_i(lambda_i)d(a,b)`.  Uniform entrywise perturbations accumulate only
+additively.  This is a nonproduct validation of the directed-response
+framework on every finite metric, not only on a binary chain.
+
+For a `q`-state edge preferring `t=pi(a)` with strength `J`, min-plus serial
+composition has the exact law
+
+```math
+K_(J,pi) star K_(L,rho)
+=-max(J,L) 1+K_(min(J,L),rho circ pi).
+```
+
+An arbitrary chain is represented by a baseline, the permutation product,
+and the weakest link.  All off-diagonal directed row responses equal that
+bottleneck.  This is a nonproduct validation of the directed-response
+framework: continuation preserves a directed face exactly while every
+relevant input remains exposed, and clips it when a weak edge hides those
+witnesses.  The binary case is the familiar signed zero-temperature Ising
+chain, but the permutation law is nonabelian for `q>=3`.
+
+## Example 22: a unit-load distance shell hides a universal compiler
+
+Every projective one-Lipschitz table on a width-`w` separator is the response
+shape of a pure weighted Max-Cut component with boundary load one at every
+vertex.  Compile the arbitrary table at a private interface, then connect
+each exposed spin to its private copy by a two-edge unit path.  Maximizing the
+middle spins applies the max-plus distance projector
+
+```math
+(P_df)(x)=max_y(f(y)-d(x,y))=f(x).
+```
+
+Conversely, boundary load one forces precisely this Lipschitz condition.
+Thus normalized boundary sensitivity does not reduce the realizable response
+class below the full Lipschitz ball.  At error `epsilon w` it still needs
+exponentially many response bits:
+
+```math
+2^((1-H_2(2epsilon)+o(1))w)
+ <=log_2 Cov_(epsilon w)
+ <=2^((1-H_2(epsilon)+o(1))w).
+```
+
+The compiler is exponentially large, so polynomial component size remains a
+genuinely stronger and unresolved resource promise.
