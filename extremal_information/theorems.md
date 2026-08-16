@@ -3399,3 +3399,170 @@ query-metric entropy sandwich, its affine-dimension falsifier, and a sharp
 rate for a strict nonlinear aggregate that is compatible with every future
 derivative.  This is a state other than a boundary-assignment table and a
 second application of response exposure outside Max-Cut.
+
+### Theorem 16.10 (gauges, repeatable holonomy, and tropical resets)
+
+There are two finite mechanisms by which an approximate tropical state can
+remain accurate at arbitrary depth: exact cohomological cancellation and
+recurrent projective reset.  More precisely, the following hold.
+
+**Gauged metric shells.**  On a finite metric space `(Y,d)`, let
+
+```math
+D_{\lambda,g}(a,b)=\lambda d(b,g(a))             \tag{16.69}
+```
+
+for a bijective isometry `g`.  If
+
+```math
+K_t(a,b)=D_{\lambda_t,g_t}(a,b)
+ +\phi_{t-1}(a)-\phi_t(b)+c_t,                   \tag{16.70}
+```
+
+then
+
+```math
+\boxed{
+K_1\star\cdots\star K_T
+=D_{\lambda_*,G}+\phi_0\otimes\boldsymbol1
+-\boldsymbol1\otimes\phi_T+\sum_tc_t,}         \tag{16.71}
+```
+
+where `lambda_*=min_t lambda_t` and
+`G=g_T circ ... circ g_1`.  Its directed row table is
+
+```math
+r(K_{1:T}(a,\cdot),K_{1:T}(a',\cdot))
+=\lambda_*d(a,a')+\phi_0(a)-\phi_0(a').          \tag{16.72}
+```
+
+Thus all internal perturbations cancel before the directed maximum, and the
+uniform row-table error is at most `osc(phi_0)`, with no depth factor.
+Projective distance between two rows is exactly `lambda_*d(a,a')`; the
+projective error of the whole endpoint kernel, a different metric, is
+
+```math
+{\operatorname {osc}(\phi_0)+\operatorname {osc}(\phi_T)\over2}. \tag{16.73}
+```
+
+This gauge form has a finite exact recognition test.  With
+`E_t=K_t-D_(lambda_t,g_t)`, simultaneous potentials in (16.70) exist if and
+only if every within-factor rectangle and every adjacent-interface
+circulation vanishes:
+
+```math
+\begin{aligned}
+E_t(a,b)+E_t(a',b')-E_t(a,b')-E_t(a',b)&=0,\\
+E_t(a,x)-E_t(a,x')+E_{t+1}(x,c)-E_{t+1}(x',c)&=0.
+\end{aligned}                                    \tag{16.74}
+```
+
+This assertion is for complete real-valued interfaces.  On a sparse support,
+rectangles must be replaced by all alternating support cycles.
+
+**Repeatable holonomy.**  Let a finite directed graph have edge labels in a
+normed real vector space.  The sums over all finite directed walks are
+uniformly bounded if and only if every directed closed walk has label zero.
+Equivalently, on each strongly connected component the labels are a vertex
+coboundary.  A closed walk with holonomy `h ne 0` has `k`-fold holonomy
+`kh`, so a nonzero local tolerance on a repeatable cycle cannot imply a
+depth-uniform error.  For a regular declared language this criterion applies
+to the reachable, co-reachable part of the automaton or product graph that
+encodes the declaration.  For projective responses, labels are taken modulo
+common scalar baselines.
+
+**Max-plus reset dichotomy.**  For an all-finite real `r by s` matrix `S`,
+put
+
+```math
+(F_Su)_b=\max_a\{u_a+S_{ab}\},
+\qquad d_H([u],[v])={1\over2}\operatorname {osc}(u-v),          \tag{16.75}
+```
+
+and
+
+```math
+\Delta(S)={1\over2}\max_{b,c}
+\left[\max_a(S_{ab}-S_{ac})-
+      \min_a(S_{ab}-S_{ac})\right].              \tag{16.76}
+```
+
+On the full projective domain `R^r/R1`, the image diameter is `Delta(S)` and
+
+```math
+\boxed{
+\operatorname {Lip}_H(F_S)=
+\begin{cases}
+0,&S_{ab}=\alpha_a+\beta_b,\\
+1,&\text{otherwise}.
+\end{cases}}                                     \tag{16.77}
+```
+
+Hence finite max-plus linear maps have no nontrivial global projective
+contraction coefficient strictly between zero and one.  The conclusion is
+false on an arbitrary restricted reachable subset.
+
+Small image diameter nevertheless yields a different depth-uniform law.
+Let `F_ell:X->X` be raw updates, `G_ell:Y->Y` nonexpansive quotient updates,
+and suppose
+
+```math
+d(\pi F_\ell x,G_\ell\pi x)\le\epsilon.          \tag{16.78}
+```
+
+If a word `w` of length `m` has
+`diam(G_w(Y))<=rho`, then every declared word `u=pwq` satisfies
+
+```math
+\boxed{
+d(\pi F_u x,G_u\pi x)
+\le\rho+(m+|q|)\epsilon.}                        \tag{16.79}
+```
+
+Consequently, if completed reset occurrences leave tails of length at most
+`G` and the first completion is controlled, the error is at most
+`rho+(m+G)epsilon` at every later depth.  In particular it is at most
+`rho+2L epsilon` when `m,G<=L`.
+
+#### Proof
+
+The potentials `-phi_t` and `+phi_t` cancel at every internal minimization;
+Theorem 16.3's shell identity then proves (16.71).  Terminal potentials and
+scalar baselines cancel between rows, and a metric centre exposes (16.72).
+For (16.74), a vanishing rectangle is exactly the additive-separability
+criterion `E_t(a,b)=r_t(a)+s_t(b)`.  The second line says
+`s_t(x)+r_(t+1)(x)` is constant, which is precisely the compatibility needed
+to choose one shared `phi_t`.
+
+For the graph claim, boundedness applied to repeated closed walks forces
+zero holonomy.  Conversely, delete zero-label closed subwalks from any walk;
+the remaining simple walk has at most `|V|-1` edges.  On a strongly connected
+component, path integration from a root produces the stated potential.
+
+Max-plus monotonicity and additive homogeneity prove nonexpansiveness.  Every
+output-coordinate difference is bounded by the corresponding extrema in
+(16.76), while making one input coordinate dominant realizes each row in the
+limit, proving the diameter formula.  On a full-dimensional selector cell,
+the derivative selects one input coordinate for each output.  Its projective
+norm is zero if all outputs select the same input and one otherwise.  A
+nonconstant continuous piecewise-affine projective map has a cell of the
+second kind, proving (16.77); constant projective image is equivalent to the
+displayed additive rank-one form.
+
+Finally, iterate (16.78) through the reset word starting from the actual
+encoded state, paying `m epsilon`.  The two quotient reset images are within
+`rho` regardless of the pre-reset error.  Nonexpansiveness through the tail
+adds `|q|epsilon`, proving (16.79). `square`
+
+For a binary zero-temperature Ising link `S_J(s,t)=Jst`, formula (16.76)
+gives `Delta(S_J)=2|J|`.  Every nonzero link has global coefficient one, but
+a weak link resets all prior projective memory to diameter `2|J|`.  Thus a
+weak link every `L` steps yields the uniform bound
+`2|J|+2L epsilon`, rather than a depth times error.
+
+The transition-toll family of Theorem 16.7 has rectangular defect
+`2delta` on two adjacent indices and is not a gauge.  Its linear drift is
+therefore the repeatable-holonomy side of this dichotomy.  The mechanisms in
+this theorem are elementary max-plus algebra and graph cohomology; the
+generative conclusion is the sharp separation between static response
+compression and a state that can actually be reused indefinitely.

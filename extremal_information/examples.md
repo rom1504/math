@@ -652,8 +652,10 @@ exponentially many response bits:
  <=2^((1-H_2(epsilon)+o(1))w).
 ```
 
-The compiler is exponentially large, so polynomial component size remains a
-genuinely stronger and unresolved resource promise.
+The compiler is exponentially large, so polynomial component size is a
+genuinely stronger resource promise.  The shared-parameter theorem now
+quantifies it: an `m`-edge component has only
+`O_epsilon(m^2+m log(w+m))` coarse response bits.
 
 ## Example 23: a vanishing idempotence defect accumulates a transition toll
 
@@ -732,3 +734,35 @@ This is a strict composable state that is not a boundary table.  It is
 predicted by contextual response plus derivative compatibility: the
 residual quotient says what futures can see, while tropical lumpability says
 why the same quotient remains closed after every continuation.
+
+## Example 26: gauges telescope, while weak links reset memory
+
+Let `D_(lambda,g)(a,b)=lambda d(b,g(a))` be a metric shell.  Perturb every
+layer by compatible endpoint potentials,
+
+```math
+K_t(a,b)=D_(lambda_t,g_t)(a,b)
+          +phi_(t-1)(a)-phi_t(b)+c_t.
+```
+
+All internal potentials cancel before the min-plus minimum, so an arbitrary
+chain is exactly
+
+```math
+D_(min_t lambda_t,g_T circ ... circ g_1)
++phi_0(a)-phi_T(b)+sum_t c_t.
+```
+
+The directed row-table error is only
+`phi_0(a)-phi_0(a')`, independent of chain length.  Vanishing rectangular
+and adjacent-interface circulations are the exact finite certificate for
+this cancellation.  A nonzero circulation on a pumpable cycle instead grows
+linearly when the cycle is repeated.
+
+There is a second mechanism.  A max-plus transition whose projective image
+has diameter `rho` forgets its input up to `rho`.  If such a transition block
+recurs every `L` steps, a local quotient defect `epsilon` stays below
+`rho+2L epsilon` after the first reset.  For a binary zero-temperature Ising
+bond of strength `J`, the image diameter is `2|J|`: a weak bond is a small
+reset even though every nonzero bond has global projective Lipschitz
+coefficient one.

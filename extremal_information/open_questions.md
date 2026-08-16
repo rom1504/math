@@ -6,47 +6,49 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Recognize and stabilize the metric-shell algebra
+## 1. Canonical gauge--reset decomposition for approximate lumpings
 
-The previous lead target is resolved on a genuine interacting family.
-Finite-metric distance kernels close on an isometry holonomy and one
-bottleneck scalar; anisotropic projective-Hamming shells close on a
-transported coordinatewise-minimum load vector.  Uniform entrywise
-perturbations incur only their total actual error, and an arbitrary profile
-pays exactly one weakest-layer Lipschitz defect.
+The previous recognition target has split into a theorem and a sharp no-go.
+Approximate min-plus idempotence has a dimension-free sharp repair to one
+metric shell, but a vanishing transition toll can still create fixed
+long-depth drift.  Two depth-uniform mechanisms are now rigorous:
 
-The new question is whether this algebra can be recognized or approximated
-without first storing the full transfer kernel.  The exact starting point is
-elementary: a symmetric nonnegative diagonal-zero min-plus kernel is
-idempotent exactly when it is a pseudometric.  The useful theorem must be
-quantitative and compositional.
+1. compatible endpoint gauges telescope exactly, recognized by vanishing
+   rectangle and adjacent-interface circulations; and
+2. a recurrent quotient word of projective image diameter `rho` bounds all
+   later error by `rho` plus only the defects since the last reset.
 
-Prove one of the following.
+There is no generic intermediate global Hilbert contraction for all-finite
+max-plus maps: its coefficient is zero or one on the full projective domain.
+Likewise, any nonzero holonomy on a pumpable context cycle grows linearly.
 
-1. A dimension-stable recognition theorem: natural local or spectral data of
-   complexity subquadratic in the alphabet determine a nearby metric shell,
-   and repeated composition has sublinear total response error.
-2. A sharp obstruction: kernels with arbitrarily small idempotence defect
-   remain macroscopically far from every metric-shell quotient, identifying
-   the additional global datum that must be stored.
-3. A structured extension (for example tree metrics, hyperconvex metrics, or
-   a finite semilattice of resource metrics) whose exact state is still
-   smaller than the full kernel and contains the anisotropic Hamming law as a
-   special case.
+The next theorem should decide whether these two mechanisms are complete for
+a useful class of approximate block lumpings.  Given finitely many block-max
+transitions and a proposed quotient, prove either:
 
-**Success:** an exact recognition/stability inequality with sharp dependence
-on alphabet size, or a scalable counterexample that forces a principled new
-hypothesis.
+```math
+\text{depth-uniform projective error}
+\Longrightarrow
+\text{nearby gauge coboundary on recurrent pieces plus syndetic resets},
+```
 
-**Stop condition:** checking every triangle or storing every kernel entry is
-not compression.  Likewise, an `O(T epsilon)` estimate obtained solely by
-generic nonexpansiveness does not extend the bottleneck law.
+with quantitative finite reconstruction, or construct a third mechanism
+that has bounded arbitrary-depth error but is separated from every such
+gauge--reset decomposition.
 
-In parallel, the normalized Max-Cut benchmark leaves one resource question:
-under unit outer load *and* polynomial component size with explicitly bounded
-weight precision, characterize the response entropy more sharply than the
-tautological bit-description count.  The exponential private compiler proves
-that boundary sensitivity alone cannot answer it.
+**Success:** a canonical decomposition with error depending on interface
+size but not word depth, or a finite-state counterexample proving that a
+third invariant is necessary.
+
+**Stop condition:** an `O(T epsilon)` nonexpansive estimate, a static response
+cover, or a theorem that assumes bounded path sums without deriving their
+finite certificate does not answer this question.
+
+In parallel, the bounded-presentation benchmark leaves a sharp scale gap.
+Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy
+upper bound, while robust facet deletion gives `Omega(m log m)`.  A robust
+common-normal-fan charging theorem, or an `Omega(m^2)` separated
+multi-polytope construction, would settle which exponent is real.
 
 ## 2. Prove a same-input recoupling theorem at linear channel rank
 

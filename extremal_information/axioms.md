@@ -479,3 +479,34 @@ This is stronger than relabeling dynamic programming because each clause has
 a separate theorem and a separate counterexample.  It is not yet a universal
 rate formula: the gap between query-net upper bounds and robust-exposure
 lower bounds remains model-dependent.
+
+## 15. Depth-uniform reuse has two distinct finite mechanisms
+
+The benchmark campaign sharpens “future-semigroup congruence” into a
+dichotomy.
+
+1. **Cohomological cancellation.**  If every transition residual is an
+   incoming interface potential minus an outgoing one, the internal
+   potentials telescope before min-plus optimization.  Rectangle defects
+   plus adjacent-interface circulations give an exact finite recognition
+   test on complete interfaces.  On a repeatable context graph, every
+   projective cycle holonomy must vanish exactly; any nonzero holonomy grows
+   linearly under repetition.
+2. **Projective reset.**  A continuation whose entire quotient image has
+   diameter `rho` erases all error from before that continuation.  If such a
+   reset of length at most `L` recurs with tails of length at most `L`, a
+   one-step semiconjugacy defect `epsilon` costs at most
+   `rho+2L epsilon`, independently of total depth.
+
+These are not two descriptions of ordinary contraction.  On the full
+finite-dimensional projective domain, every all-finite max-plus linear map
+has global Hilbert coefficient either zero (additive rank one, hence a full
+reset) or one.  A weak Ising bond has coefficient one but small image
+diameter, so it is useful as a reset rather than as a multiplicative
+contraction.
+
+The transition-toll counterexample fails the gauge circulation test and has
+no reset.  It therefore explains, in the same language, why one-step metric
+repair can coexist with macroscopic long-depth drift.  This law is exact for
+structured tropical systems; it is not yet a canonical decomposition theorem
+for arbitrary approximate block lumpings.
