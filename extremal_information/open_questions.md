@@ -6,43 +6,42 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Canonical gauge--reset decomposition for approximate lumpings
+## 1. Paired-selector skew-product decomposition
 
-The previous recognition target has split into a theorem and a sharp no-go.
-Approximate min-plus idempotence has a dimension-free sharp repair to one
-metric shell, but a vanishing transition toll can still create fixed
-long-depth drift.  Two depth-uniform mechanisms are now rigorous:
+The former gauge--reset completeness target was too coarse.  Nearby
+idempotent clamps remain close forever without an entrywise kernel gauge or
+a small full-image reset, because both coherent actions satisfy the same
+finite semigroup relation.  Conversely, for fresh arbitrary residuals on a
+fixed selector itinerary, endpoint gauges plus syndetic **tangent** resets
+are quantitatively necessary and sufficient.  On one recurrent selector
+cell, bounded translation is exactly a twisted coboundary, recognized by
+equality of all functional-cycle means.
 
-1. compatible endpoint gauges telescope exactly, recognized by vanishing
-   rectangle and adjacent-interface circulations; and
-2. a recurrent quotient word of projective image diameter `rho` bounds all
-   later error by `rho` plus only the defects since the last reset.
+The next theorem should combine those verified pieces across max-plus
+switching cells.  Given two finite families of piecewise-affine projective
+continuations, build their reachable paired selector automaton and prove a
+finite depth-uniform certificate on every pumpable strongly connected
+component:
 
-There is no generic intermediate global Hilbert contraction for all-finite
-max-plus maps: its coefficient is zero or one on the full projective domain.
-Likewise, any nonzero holonomy on a pumpable context cycle grows linearly.
+1. coherent zero-residual transitions factor through bounded normal forms;
+2. recurrent affine residuals satisfy the twisted cycle-mean condition on
+   every surviving selector direction; and
+3. all remaining residual directions encounter rank-one selector products
+   with bounded gaps.
 
-The next theorem should decide whether these two mechanisms are complete for
-a useful class of approximate block lumpings.  Given finitely many block-max
-transitions and a proposed quotient, prove either:
+Under fresh adversarial residuals, seek a converse with explicit dependence
+on selector rank and reset gap.  Under coherent fixed kernels, finite
+semigroup absorption must be admitted rather than treated as independent
+noise.
 
-```math
-\text{depth-uniform projective error}
-\Longrightarrow
-\text{nearby gauge coboundary on recurrent pieces plus syndetic resets},
-```
+**Success:** a finite algorithm which either returns a depth-independent
+projective error bound or a pumpable paired selector cycle causing linear
+drift, first for a tie-free finite cell complex and then with controlled tie
+switching.
 
-with quantitative finite reconstruction, or construct a third mechanism
-that has bounded arbitrary-depth error but is separated from every such
-gauge--reset decomposition.
-
-**Success:** a canonical decomposition with error depending on interface
-size but not word depth, or a finite-state counterexample proving that a
-third invariant is necessary.
-
-**Stop condition:** an `O(T epsilon)` nonexpansive estimate, a static response
-cover, or a theorem that assumes bounded path sums without deriving their
-finite certificate does not answer this question.
+**Stop condition:** an `O(T epsilon)` estimate, a global image-diameter
+assumption, or a theorem which conflates fixed coherent defects with fresh
+adversarial residuals does not answer the question.
 
 In parallel, the bounded-presentation benchmark leaves a sharp scale gap.
 Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy

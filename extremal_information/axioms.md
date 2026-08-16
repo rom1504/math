@@ -480,10 +480,11 @@ a separate theorem and a separate counterexample.  It is not yet a universal
 rate formula: the gap between query-net upper bounds and robust-exposure
 lower bounds remains model-dependent.
 
-## 15. Depth-uniform reuse has two distinct finite mechanisms
+## 15. Depth-uniform reuse must declare its perturbation quantifier
 
-The benchmark campaign sharpens “future-semigroup congruence” into a
-dichotomy.
+The benchmark campaign first suggested a gauge--reset dichotomy and then
+falsified its narrow coherent form.  Three finite certificates are now
+proved, but they apply under different quantifiers.
 
 1. **Cohomological cancellation.**  If every transition residual is an
    incoming interface potential minus an outgoing one, the internal
@@ -497,6 +498,25 @@ dichotomy.
    reset of length at most `L` recurs with tails of length at most `L`, a
    one-step semiconjugacy defect `epsilon` costs at most
    `rho+2L epsilon`, independently of total depth.
+3. **Algebraic absorption.**  If two coherent nonexpansive continuation
+   families factor through the same finite semigroup, every long word has a
+   bounded normal form.  Generator error `epsilon` then costs at most
+   `L epsilon`, where `L` is the largest shortest representative length.
+
+The third item is a finite realization of stable zero-increment recurrence,
+not a universal category beyond every possible notion of zero holonomy.
+Nearby idempotent max-plus clamps prove only that entrywise kernel gauges plus
+small **full-image** resets are incomplete.  Their paired orbits become
+stationary after one transient.
+
+Against fresh arbitrary residuals, there is a sharper converse.  On a
+coordinate-selector cell, depth-uniform `O(epsilon)` stability holds exactly,
+up to explicit `r(r-1)` constants, when rank-one **tangent** selector products
+occur with bounded gaps after endpoint gauges are removed.  A tangent reset
+may kill every transported error direction even when the full nonlinear
+state image remains large.  On a recurrent affine-selector cell, the
+translation must be a twisted coboundary; equivalently, all functional-graph
+cycles have the same translation mean.
 
 These are not two descriptions of ordinary contraction.  On the full
 finite-dimensional projective domain, every all-finite max-plus linear map
@@ -505,11 +525,12 @@ reset) or one.  A weak Ising bond has coefficient one but small image
 diameter, so it is useful as a reset rather than as a multiplicative
 contraction.
 
-The transition-toll counterexample fails the gauge circulation test and has
-no reset.  It therefore explains, in the same language, why one-step metric
-repair can coexist with macroscopic long-depth drift.  This law is exact for
-structured tropical systems; it is not yet a canonical decomposition theorem
-for arbitrary approximate block lumpings.
+The transition-toll and translated-clamp counterexamples fail these coherent
+relations and drift, despite small one-step error.  Thus a proposed stability
+theorem must say whether defects are fixed by a common algebra or may vary
+adversarially at each use.  A paired-selector theorem across switching cells,
+not a bare static cover or global contraction coefficient, is the next
+canonical target.
 
 ## 16. Static response width has an upstream two-sided certificate
 
@@ -540,3 +561,42 @@ ceiling, but a single high-facet `0/1` polytope already forces
 normal fans of many support polytopes.  This is a static law only: it must be
 paired with the congruence mechanisms of Section 15 before the same summary
 can be reused at arbitrary depth.
+
+## 17. Feature growth is controlled by exposure and congruence, not interface cardinality alone
+
+The mean-field benchmark supplies the missing contrast to separator tables.
+A finite interface with `q` independently realizable lookup coordinates can
+force `q` response degrees of freedom.  A much larger microscopic system can
+instead have a one-parameter query that exposes a structured profile whose
+slopes form a commutative multiset.  Its exact merge is histogram addition,
+so a fixed-grid approximation has polynomially many states and charges each
+microscopic field once rather than once per merge depth.
+
+The quadratic benchmark sharpens this further.  The visible state is not the
+raw conditional table but its concave envelope, because linear futures only
+probe supporting faces.  Separate affinity of the cross interaction makes
+that observational quotient a congruence.  Sufficient curvature then forces
+all profiles onto one common exposed chord and synchronizes the state to a
+single aggregate.
+
+This suggests a benchmark-tested two-stage law.
+
+1. **Exposure geometry** determines which quotient of a conditional profile
+   is semantically observable (all coordinates, a Lipschitz function, a
+   concave roof, or a residual class).
+2. **Derivative congruence** determines whether that quotient remains valid
+   after composition (lookup gluing, histogram addition, bilinear roof
+   convolution, tropical lumpability, gauge cancellation, or reset).
+
+Neither stage determines state growth by itself.  Boundary cardinality can
+be exponential while a shared presentation is small; aggregate cardinality
+can be polynomial while arbitrary real slopes make exact state cardinality
+uncountable.  Exact table width, number of equivalence classes, lossy metric
+entropy, and update complexity must therefore remain separate resources.
+
+This is now more than vocabulary: the separator compiler, automaton
+lumpability theorem, and mean-field roof theorem give different realizable
+response images and different congruences, while the transition-toll and
+changing-curvature examples independently falsify either clause in
+isolation.  What remains missing is a general necessary structural theorem
+for depth-uniform approximate congruences.

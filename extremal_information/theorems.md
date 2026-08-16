@@ -3764,3 +3764,282 @@ single-polytope deletion mechanism has the `m log m` exponent.  The gap in
 (16.91) concerns robust response shapes from common refinements of many
 support polytopes: raw arrangement cells need not remain separated after
 projective normalization, and intermediate exponents are not excluded.
+
+### Theorem 16.13 (mean-field response quotient and depth-stable rate)
+
+Let a binary block be a finite multiset of local scores
+`A={h_i} subset [-B,B]`, anchored by `H_A(0)=0`.  The allowed contexts append
+an anonymous block and apply one scalar field `lambda` to total occupancy.
+If `a_1>=...>=a_n` are the sorted fields, define
+
+```math
+p_A(k)=sum_(j<=k)a_j,
+\qquad
+R_A(lambda)=max_k{p_A(k)+lambda k}.
+```
+
+Then `R_A`, the discrete-concave profile `p_A`, and its slope multiset are
+equivalent coarsest exact contextual states.  More precisely,
+
+```math
+p_A(k)=inf_(lambda in R){R_A(lambda)-lambda k},      \tag{16.93}
+```
+
+```math
+sup_lambda|R_A(lambda)-R_(A')(lambda)|
+=max_k|p_A(k)-p_(A')(k)|                            \tag{16.94}
+```
+
+for equal masses, and anonymous union obeys
+
+```math
+p_(A sqcup C)(t)
+=max_(k+l=t){p_A(k)+p_C(l)}.                        \tag{16.95}
+```
+
+In slope coordinates, (16.95) is sorted multiset union.
+
+For `eta>0`, nearest rounding to one common grid of spacing at most `eta`
+gives an exactly additive histogram with
+
+```math
+|S_(n,eta)|={n+M-1 choose M-1},
+\qquad M=1+ceil(2B/eta),                             \tag{16.96}
+```
+
+when `B>0`; for `B=0` the state has one bin.  It uses
+`O((1+B/eta)log(n+1))` bits and satisfies
+
+```math
+max_k|p_A(k)-p_tilde_A(k)|
+vee sup_lambda|R_A(lambda)-R_tilde_A(lambda)|
+<=eta n/2.                                          \tag{16.97}
+```
+
+On any merge tree of total mass `N`, the root error is at most `eta N/2`,
+independently of depth: each microscopic field is rounded once.  Distinct
+grid histograms are response-separated by at least the grid spacing, so
+(16.96) is also the exact grid-state lower bound and remains necessary below
+half-grid error.  At macroscopic error `epsilon n`, a disjoint-tent packing
+gives the weaker general lower bound below, where `K_delta` is the minimum
+number of deterministic summary states whose decoded responses have uniform
+error at most `delta`:
+
+```math
+log_2 K_(epsilon n)
+>=Omega(min{n,sqrt(B/epsilon)}),                     \tag{16.98}
+```
+
+for `B>0`, `epsilon>0`, and
+`min{n,sqrt(B/epsilon)}` above a universal constant.  Equivalently, the
+right side means `c min{n,sqrt(B/epsilon)}` for a universal `c>0` in that
+range.  No matching macroscopic rate is claimed.
+
+Now add the fixed pair score
+
+```math
+q_A(k)=p_A(k)+J {k choose 2}
+```
+
+at every composition stage, and let `bar q_A` be its piecewise-linear least
+concave majorant on `[0,n]`.  For realizable roofs `f` on `[0,n]` and `g` on
+`[0,m]`, and `0<=t<=n+m`, set
+
+```math
+f star_J g
+=cav_t max_(substack{0<=u<=n,0<=v<=m; u+v=t})
+  {f(u)+g(v)+Juv}.                                   \tag{16.99}
+```
+
+Then
+
+```math
+bar q_(A sqcup C)=bar q_A star_J bar q_C,            \tag{16.100}
+```
+
+`star_J` is associative on realizable roofs, and `(n,bar q_A)` is the
+coarsest exact state for repeated same-`J` merges and a terminal linear
+field.  This quotient can be strict: for
+`0<a<min(B,J/2)`, the profiles `(0,0,J)` and `(0,a,J)` have the same
+endpoint-chord roof.
+
+The uniform fixed-mass collapse threshold is sharp.  Since
+
+```math
+p_A(k)-{k\over n}p_A(n)
+<={2B k(n-k)\over n},                               \tag{16.101}
+```
+
+every `J>=4B/n` makes `bar q_A` the endpoint chord, so at mass `n` the exact
+state is only `sum_i h_i`.  For `J<4B/n`, taking `k` fields equal to `B` and
+the rest equal to `-B` violates that chord.  Thus `J>=2B` is the
+size-uniform sufficient threshold for all masses at least two.  Endpoint
+optimizer uniqueness at equality is not asserted.
+
+#### Proof
+
+Exchange puts the `k` largest fields in a fixed-occupancy optimizer, so the
+slopes of `p_A` are the sorted fields.  Every `k` is supported by a scalar
+field between `-a_k` and `-a_(k+1)`, proving (16.93).  Maxima are
+nonexpansive for (16.94) in one direction; applying (16.93) gives the other.
+Splitting a size-`t` subset between two blocks proves (16.95), while the
+empty future proves contextual minimality.
+
+The grid state adds coordinatewise.  Every selected set changes score by at
+most `eta/2` per occupied site; maxima preserve that bound, and no merge
+requantizes a site.  Stars and bars proves (16.96).  Distinct arithmetic-grid
+histograms have different sorted slopes, and their first differing prefix
+sum is separated by one grid spacing.  For (16.98), use disjoint triangular
+response perturbations of height at least `Bn/(16q^2)` with
+`q=Theta(min{n,sqrt(B/epsilon)})`.
+
+For (16.100), take independent occupancy mixtures attaining the two child
+roofs.  Separate affinity gives expected cross score `Juv`; pure occupancies
+give the converse.  Both sides therefore have, for every `lambda`, response
+
+```math
+max_(u,v){bar q_A(u)+bar q_C(v)+Juv+lambda(u+v)}.
+```
+
+Linear biconjugacy identifies their roofs.  For three children this response
+contains the symmetric term `J(uv+uz+vz)`, proving associativity.  Finally,
+(16.101) follows by maximizing the deviation with `k` fields at `B` and the
+rest at `-B`; subtracting the quadratic endpoint chord gives the sharp
+threshold. `square`
+
+The theorem uses a maximized score.  Physical minimum-energy conventions
+reverse signs.  The full `lambda in R` family is essential unless mass and a
+sufficient model-dependent range are separately declared.  Separately
+addressable old blocks, changing `J/n` normalizations, and non-biaffine cross
+terms need larger states; (16.100) does not cover them.
+
+### Theorem 16.14 (algebraic absorption and the selector-reset converse)
+
+Depth-uniform continuation has different converses for coherent fixed maps
+and for fresh adversarial residuals.
+
+First, let a finite alphabet generate a finite semigroup `S`, let
+
+```math
+L=max_(s in S) min{|w|:w represents s},              \tag{16.102}
+```
+
+and let `F,G` be two exact actions of `S` by nonexpansive maps on the same
+metric space.  If corresponding generators are uniformly `epsilon`-close,
+then every word, regardless of its written length, satisfies
+
+```math
+sup_x d(F_wx,G_wx)<=L epsilon.                       \tag{16.103}
+```
+
+This bounded-normal-form mechanism is not recognized by entrywise kernel
+gauges or small full-image resets.  Indeed, in projective coordinate
+`z=u_2-u_1`, with `d_H(z,z')=|z-z'|/2`, the all-finite max-plus matrices
+
+```math
+S_0=((0,0),(-1,0)),
+\qquad S_delta=((0,delta),(-1,0))                   \tag{16.104}
+```
+
+induce the idempotents
+
+```math
+P_0(z)=clip(z,0,1),
+\qquad P_delta(z)=clip(z,delta,1).                  \tag{16.105}
+```
+
+For every `t>=1`,
+
+```math
+sup_z d_H(P_0^t z,P_delta^t z)=delta/2.             \tag{16.106}
+```
+
+Nevertheless, `S_delta-S_0` has rectangular circulation `-delta`, and the
+two positive-power image diameters are `1/2` and `(1-delta)/2`.  Thus the
+pair is neither an entrywise endpoint gauge nor an `O(delta)` full-image
+reset.  This refutes only that narrow dichotomy: the paired clamp orbit is
+stationary after one transient and can be viewed as a finite zero-increment
+recurrence.
+
+For a sharp robust statement, let `r>=2`,
+`V=R^r/R 1`, `||[v]||_H=osc(v)/2`, and for a selector
+`sigma:[r]->[r]` set `(P_sigma v)_j=v_(sigma(j))`.  In a factorial declared
+language, call a contiguous selector product a **tangent reset** when its
+composite selector is constant.  For arbitrary disturbances
+
+```math
+e_t=P_t e_(t-1)+eta_t,
+\qquad e_0=0,
+\qquad ||eta_t||_H<=epsilon,                         \tag{16.107}
+```
+
+the following quantitative converse holds.
+
+1. If every allowed word of length `L` contains a tangent-reset factor,
+   then `||e_T||_H<=L epsilon` for every `T>=L`.
+2. If there is a reset-free allowed word of length `T`, disturbances can be
+   chosen so that
+
+   ```math
+   ||e_T||_H
+   >=floor(T/[r(r-1)])epsilon.                       \tag{16.108}
+   ```
+
+Consequently, stability by `C epsilon` against all residuals forces every
+reset-free word to have length less than `(C+1)r(r-1)`.  If the recursion
+also contains an endpoint term
+
+```math
+h_t-P_t h_(t-1),                                    \tag{16.109}
+```
+
+subtracting `h_t` reduces it to (16.107); after the first tangent reset the
+bound is `||h_T||_H+L epsilon`, while before it the transported initial
+endpoint term must also be paid.
+
+Finally, on one recurrent affine-selector cell, let
+`A(e)=P_sigma e+b`.  Its projective iterates are bounded for every `e` if
+and only if every directed cycle `C` of the functional graph of `sigma` has
+one common `b`-mean.  Equivalently,
+
+```math
+b=p-P_sigma p+beta 1                                \tag{16.110}
+```
+
+for some `p,beta`, in which case
+
+```math
+A^k(e)=p+P_sigma^k(e-p)+k beta 1.                   \tag{16.111}
+```
+
+Different cycle means cause linear projective drift.  Thus the exact
+holonomy is twisted by the active selector; ordinary untransported label
+sums are not sufficient.
+
+#### Proof
+
+For (16.103), replace `w` by a representative of its semigroup element of
+length at most `L`.  Both exact actions make the replacement without error;
+hybridizing its factors costs at most `epsilon` each by nonexpansiveness.
+Direct max-plus calculation proves (16.105), hence idempotence and
+(16.106); the alternating rectangle of the kernel difference is `-delta`.
+
+Unrolling (16.107) gives
+
+```math
+e_T=sum_(s=1)^T P_T...P_(s+1) eta_s.                \tag{16.112}
+```
+
+A reset in the last length-`L` window kills all earlier summands, leaving at
+most `L`.  Conversely, every suffix of a reset-free word is a nonconstant
+selector.  Choose for each suffix an ordered output pair sent to distinct
+input coordinates.  One of the `r(r-1)` pairs recurs at least
+`floor(T/[r(r-1)])` times; insert `+epsilon,-epsilon` on its two preimages.
+All contributions have the same sign on the common final pair, proving
+(16.108).
+
+For (16.110), summing `p_j-p_(sigma(j))=b_j-beta` around a cycle gives the
+common-mean necessity.  If the means agree, define `p` consistently around
+each cycle and then recursively on its incoming trees.  Equation (16.111)
+telescopes, while unequal cycle means create different linear coordinate
+drifts. `square`

@@ -806,3 +806,64 @@ Different facets have shape distance one and radius one half.  Known
 with arbitrary real parameter precision.  This validates shared-parameter
 complexity as a semantic resource, while leaving a genuine gap to the
 `O(m^2)` common-arrangement upper bound.
+
+## Example 29: mean-field curvature synchronizes a histogram to one number
+
+For heterogeneous binary local fields, the score at fixed occupancy `k` is
+the sum of the `k` largest fields.  Hence one scalar chemical potential
+recovers the full sorted-field profile, and anonymous block union becomes
+sorted multiset union.  Rounding every microscopic field once to a common
+grid gives a histogram homomorphism: its `O((1+B/eta)log n)` bits incur at
+most `eta n/2` response error at mass `n`, regardless of merge depth.
+
+Now add the same pair reward `J {k choose 2}` to every block and parent.
+Linear terminal fields see only the concave envelope of the conditional
+profile, but bilinearity makes that envelope an exact congruence under
+composition.  For
+
+```math
+A={0,0},\qquad A'={a,-a},\qquad0<a<min(B,J/2),
+```
+
+the raw middle-fibre values differ while the endpoint-chord roofs agree, so
+no future in the declared same-`J` language distinguishes them.  More
+strongly, at mass `n` every bounded-field block collapses to this chord
+exactly when `J>=4B/n` uniformly over the class.  The surviving exact state
+is only the total field.
+
+Thus the same microscopic family displays three distinct complexities under
+one explicitly declared future algebra: an exact real slope multiset, a
+sublinear-bit approximate histogram, and a one-number synchronized quotient.
+The collapse is not an optimizer coincidence; it is a composable contextual
+equivalence.
+
+## Example 30: coherent clamps are stable without a kernel gauge or small reset
+
+On the two-dimensional max-plus projective line, two all-finite kernels can
+induce
+
+```math
+P_0(z)=clip(z,0,1),
+\qquad P_delta(z)=clip(z,delta,1).
+```
+
+They are `delta/2` apart in the half-Hilbert metric and both are idempotent,
+so that distance is unchanged at every positive depth.  Their kernel
+difference has nonzero rectangular circulation and every power retains
+image diameter near one half.  Thus the previously tempting completeness
+claim “endpoint gauge or small full-image reset” is false for fixed coherent
+continuations.
+
+The counterexample does not justify an unconstrained third category: on the
+paired orbit, both clamps become stationary after one step.  Its finite
+certificate is the common idempotent relation.  By contrast,
+`clip(z+delta,0,1)` is equally close in one step but drifts to order-one
+distance after `Theta(1/delta)` repetitions.
+
+For fresh adversarial residuals the picture is sharp again.  On an
+`r`-coordinate selector cell, absence of a tangent-reset factor for `T`
+steps lets an adversary align at least `floor(T/[r(r-1)])` residuals on one
+output pair.  Hence depth-uniform stability is equivalent, up to the stated
+factor, to syndetic rank-one selector products after endpoint gauges are
+removed.  Coherent algebraic relations and adversarial robustness must not
+be conflated.
