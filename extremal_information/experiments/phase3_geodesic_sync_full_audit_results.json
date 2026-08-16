@@ -1,0 +1,46 @@
+{
+  "bent_instances": [
+    {
+      "D": 6,
+      "coordinate_distances": [
+        6,
+        5,
+        6,
+        5,
+        6,
+        5
+      ],
+      "diameter": 6,
+      "diametral_target_distance": 6,
+      "distance_to_linear": 33,
+      "k": 4,
+      "maximum_selected_linear_error": 4,
+      "theorem_formula": 33,
+      "triple_checks": 210
+    },
+    {
+      "D": 6,
+      "coordinate_distances": [
+        120,
+        119,
+        120,
+        119,
+        120,
+        119
+      ],
+      "diameter": 6,
+      "diametral_target_distance": 6,
+      "distance_to_linear": 717,
+      "k": 8,
+      "maximum_selected_linear_error": 5,
+      "theorem_formula": 717,
+      "triple_checks": 64770
+    }
+  ],
+  "claim": "The GS.8 selector formula is exact, and the GS.11 bent family has the claimed distance and diameter beyond its smallest seed.",
+  "selector_cube": {
+    "maximum_h": 4,
+    "rooted_query_checks": 340,
+    "selector_pair_metric_checks": 340
+  }
+}

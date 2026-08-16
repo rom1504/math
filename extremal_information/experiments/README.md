@@ -195,3 +195,33 @@ the exact residual-rank oscillation formula class by class.
 
 Output:
 [`phase3_matroid_quotients_results.json`](phase3_matroid_quotients_results.json).
+
+## `verify_phase3_geodesic_synchronization.py`
+
+Checks the binary geodesic/cycle criterion through width three, the sharp
+fibre-stripping family through quotient diameter four, all-future response
+comparisons on sampled contexts, and the coupled-bent construction at
+`(D,k)=(6,4)`.
+
+Output:
+[`phase3_geodesic_synchronization_results.json`](phase3_geodesic_synchronization_results.json).
+
+## `verify_phase3_vector_blr_response_audit.py`
+
+Independently checks scalar and vector BLR constants, all cycle-contracting
+maps on `F_2^3` modulo linear coordinates, dense and partial all-future word
+profiles through ambient width three, and the sharp `2h` selector family.
+
+Output:
+[`phase3_vector_blr_response_audit_results.json`](phase3_vector_blr_response_audit_results.json).
+
+## `verify_phase3_geodesic_sync_full_audit.py`
+
+This independent audit verifies the exact selector-cube rooted-response
+formula through quotient dimension four.  It also checks the coupled-bent
+geodesic construction at `k=4` and at the first block extension `k=8`,
+including all additive triangles, exact distance to linear sections, and the
+full Cayley diameter.
+
+Output:
+[`phase3_geodesic_sync_full_audit_results.json`](phase3_geodesic_sync_full_audit_results.json).
