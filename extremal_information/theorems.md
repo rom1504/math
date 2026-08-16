@@ -2442,7 +2442,8 @@ If `S` is an `r`-net of `X`, `eta>0`, and `r+eta/2<=delta`, then
 \le\left({D\over\eta}+2\right)^{|S|}.              \tag{16.8}
 ```
 
-Conversely, if `C subset X` is `rho`-separated and `k=|C|`, then
+Conversely, if `C subset X` is non-strictly `rho`-separated and `k=|C|`,
+then, for every `0<rho'<rho`,
 
 ```math
 d(c,c')\ge\rho\quad(c\ne c'),                      \tag{16.9}
@@ -2451,7 +2452,7 @@ d(c,c')\ge\rho\quad(c\ne c'),                      \tag{16.9}
 then
 
 ```math
-\operatorname {Pack}_\rho(Lip_1(X)/R)
+\operatorname {Pack}_{\rho'}(Lip_1(X)/R)
 \ge {k\choose\lfloor k/2\rfloor}.                 \tag{16.10}
 ```
 
@@ -2981,3 +2982,420 @@ through the shell: the profile may still have exponential response
 complexity.  It compresses the interacting *continuation algebra* and shows
 that heterogeneous resource constraints combine by a transported bottleneck
 lattice rather than by additive loss.
+
+### Theorem 16.7 (sharp metric recognition and a long-depth obstruction)
+
+Let `K` be a symmetric hollow real kernel on a `q`-point set, `q>=2`, with min-plus
+square `K star K`, and put
+
+```math
+\tau(K)=\|K-K\star K\|_\infty,
+\qquad
+c_q=\max\left\{{1\over2},{q-2\over q}\right\}.    \tag{16.46}
+```
+
+Then:
+
+1. `K star K=K` exactly when `K` is a pseudometric.
+2. There is a pseudometric `d` with
+
+   ```math
+   \boxed{\|K-d\|_\infty\le c_q\tau(K).}          \tag{16.47}
+   ```
+
+   The coefficient `c_q` is the best possible universal coefficient for
+   every `q`.
+3. If a finite permutation group `Gamma` acts on the alphabet and
+
+   ```math
+   \omega_\Gamma(K)=
+   \max_{\gamma,x,y}|K(\gamma x,\gamma y)-K(x,y)|,
+   ```
+
+   there is a `Gamma`-invariant pseudometric `d` satisfying
+
+   ```math
+   \|K-d\|_\infty
+   \le\omega_\Gamma(K)+c_q\tau(K).                \tag{16.48}
+   ```
+
+Thus approximate idempotence recognizes one nearby metric shell
+dimension-freely, and full-orbit invariance recognizes a nearby composable
+metric-isometry family.
+
+This one-step theorem cannot be iterated for free.  For `a>delta>0` on
+`{0,...,q-1}`, define
+
+```math
+K_\delta(i,j)=
+\begin{cases}
+0,&i=j,\\
+a|i-j|-\delta,&i\ne j.
+\end{cases}                                      \tag{16.49}
+```
+
+It has `tau(K_delta)=delta` and lies within `delta` of the path metric
+`a|i-j|`, but for `1<=T<=q-1`,
+
+```math
+K_\delta^{\star T}(i,j)=
+\begin{cases}
+0,&i=j,\\
+a|i-j|-\delta\min\{T,|i-j|\},&i\ne j.
+\end{cases}                                      \tag{16.50}
+```
+
+Consequently
+
+```math
+\|K_\delta^{\star T}-K_\delta\|_\infty
+=(T-1)\delta,                                    \tag{16.51}
+```
+
+and the shape distance between row zero before and after composition is
+`(T-1)delta/2`.  Taking `delta=c/q` and `T=q-1` makes the local defect and
+distance to an exact metric vanish while leaving a fixed long-depth
+response drift.
+
+#### Proof
+
+The choices of an endpoint in `K star K` show `K star K<=K`, and
+
+```math
+\tau(K)=\max_{i,j,k}\{K(i,j)-K(i,k)-K(k,j)\}.     \tag{16.52}
+```
+
+Thus zero defect is precisely the triangle inequality; diagonal triples and
+symmetry also force nonnegativity.
+
+For the quantitative repair, add `c_q tau` to every off-diagonal entry of
+`K` and take the shortest-path pseudometric `d` of that complete weighted
+graph.  Diagonal triples in (16.52) give `K(i,j)>=-tau/2`, so the shifted
+edges are nonnegative.  The direct edge gives `d(i,j)<=K(i,j)+c_q tau`.
+A shortest path is simple, with `ell<=q-1` edges, and repeated relaxed
+triangles give
+
+```math
+K(i,j)\le\sum_{r=1}^{\ell}K(v_{r-1},v_r)
+          +(\ell-1)\tau.
+```
+
+Its shifted length is at least
+`K(i,j)+c_q tau+(\ell-1)(c_q-1)tau`, which is at least
+`K(i,j)-c_q tau` precisely because `q c_q>=q-2`.  This proves (16.47).
+For `q=2,3`, one off-diagonal entry `-tau/2` proves sharpness.  For `q>=4`,
+the kernels (16.49) force any approximating pseudometric, by the endpoint
+triangle along the line, to have error at least `(q-2)tau/q`.
+
+For (16.48), average `K` over `Gamma`.  The average moves by at most
+`omega_Gamma`, remains symmetric and hollow, and has triangle defect at most
+`tau`; the shifted shortest-path repair is invariant.
+
+Finally a `T`-factor path in (16.49) with `p` nonzero moves and total integer
+variation `V` costs `aV-delta p`.  Since `V>=|i-j|` and `a>delta`, the
+minimum uses `min(T,|i-j|)` monotone nonzero pieces, proving (16.50).
+Comparing an adjacent endpoint with one at distance at least `T` gives
+(16.51) and the shape claim. `square`
+
+The final family isolates the information omitted by one-step recognition:
+a per-transition toll is collected once per useful segment.  Approximate
+tropical idempotence is therefore a stable local recognition criterion but
+not a depth-stable quotient.  A long-composition theorem needs an exact
+retraction, bounded useful path length, or a closed metric semilattice such
+as Theorem 16.6.  Reading all triangle defects still requires the full
+kernel, so (16.47) is a recognition theorem, not by itself a compression
+algorithm.  No claim of external novelty is made for finite metric repair.
+
+There is one sharp positive restoration.  Suppose `K>=0`, let `K_*` be its
+min-plus shortest-path closure, and assume every pair has a shortest
+`K`-path using at most `H` nonzero edges.  Then for every depth `T`,
+
+```math
+0\le K-K^{\star T}\le K-K_*
+\le(H-1)\tau(K)\boldsymbol1.                     \tag{16.53}
+```
+
+Indeed, repeated relaxed triangles charge at most one `tau` per internal
+vertex of a shortest path, while zero diagonal steps pad any shorter path.
+If all positive off-diagonal costs lie in `[m,D]`, one may take
+`H<=floor(D/m)`.  Thus bounded useful hop length is a concrete sufficient
+mechanism for depth-uniform approximate composition; Theorem 16.7 shows that
+some such global condition is necessary.
+
+### Theorem 16.8 (shared-parameter tropical response entropy)
+
+Let `X` have `q` queries.  For each `x`, let `A_x subset R^d` have at most
+`r` elements, and consider
+
+```math
+f_\theta(x)=\max_{a\in A_x}\langle a,\theta\rangle,
+\qquad \theta\in\Theta\subseteq R^d.             \tag{16.54}
+```
+
+Suppose all response shapes `[f_theta]` lie in the radius-`R` ball of
+`R^X/R1` with norm `osc/2`.  Then, without any bound on the magnitude or
+precision of `theta`,
+
+```math
+\boxed{
+\log_2\operatorname {Cov}_\delta\{[f_\theta]\}
+\le d\log_2(4(qr^2+1))
+ +d\log_2\left(1+{2R\over\delta}\right).}        \tag{16.55}
+```
+
+If every witness vector is binary, all comparison normals belong to
+`{-1,0,1}^d`; hence
+
+```math
+\log_2\operatorname {Cov}_\delta
+=O\left(d^2+d\log(1+R/\delta)\right),             \tag{16.56}
+```
+
+independently of the number of queries and witnesses.
+
+For a concrete consequence, let `C_(w,p,m)` be the response shapes of
+unit-boundary-load pure weighted Max-Cut components with at most `p` private
+vertices and `m` nonzero nonparallel edges.  Put
+
+```math
+H_*=\min\left\{2^{w+2p-2},{3^m-1\over2}\right\}.
+```
+
+Then
+
+```math
+\begin{aligned}
+\log_2\operatorname {Cov}_\delta(C_{w,p,m})
+\le{}&\log_2(m+1)+2m\log_2(w+p)\\
+&+m\log_2(4(H_*+1))
++m\log_2\left(1+{w\over2\delta}\right).
+\end{aligned}                                    \tag{16.57}
+```
+
+After boundary-disconnected private components are removed one may take
+`p<=m`; therefore, at fixed macroscopic error,
+
+```math
+\log_2\operatorname {Cov}_{\epsilon w}(C_{w,m})
+=O_\epsilon(m^2+m\log(w+m)).                     \tag{16.58}
+```
+
+This is semantic response compression for arbitrary real edge weights, not
+finite-encoding cardinality.
+
+It sharply separates the finite presentation from the universal unit-load
+compiler of Theorem 16.4.  If `m=m(w)`-edge profiles form an
+`epsilon w`-net of the entire unit-load Lipschitz response class, then
+
+```math
+\boxed{
+\liminf_{w\to\infty}{\log_2m(w)\over w}
+\ge {1-H_2(2\epsilon)\over2},
+\qquad 0<\epsilon<1/4.}                          \tag{16.59}
+```
+
+In particular, no polynomial-size component family approximates every
+unit-load response at fixed macroscopic accuracy, even with unlimited
+weight precision.
+
+#### Proof
+
+For each query, changes of optimizer occur only on the comparison
+hyperplanes
+
+```math
+\langle a-b,\theta\rangle=0
+\qquad(a,b\in A_x).
+```
+
+There are at most `q binom(r,2)` such hyperplanes.  Their arrangement has at
+most `[4(qr^2+1)]^d` relatively open faces, including lower-dimensional
+tie faces.  On each face a fixed tie rule chooses one optimizer per query,
+so the whole response is one linear map of `theta`.  Its image modulo
+constants has dimension at most `d` and lies in a radius-`R` ball.  A
+maximal separated subset and the usual volume comparison in that quotient
+norm give a cover of size `(1+2R/delta)^d` on the face.  Union over faces
+proves (16.55).  For binary witnesses, opposite nonzero vectors in
+`{-1,0,1}^d` define the same hyperplane, leaving at most `(3^d-1)/2`;
+this proves (16.56).
+
+For a fixed Max-Cut topology with `e<=m` edges, each private cut gives an
+incidence vector in `{0,1}^e`, and the conditional optimum is precisely
+(16.54) with `theta` equal to the edge weights.  There are fewer than
+`2^(w+2p-2)` listed comparisons and at most `(3^e-1)/2` distinct
+comparison hyperplanes.  Unit boundary load makes every response
+one-Lipschitz on the projective cube, so its shape norm is at most `w/4`.
+There are at most `(m+1)(w+p)^(2m)` padded labelled topologies.  Multiplying
+the face, volume, and topology covers proves (16.57).
+
+Parallel edges combine, zero edges disappear, and every remaining connected
+component with private vertices and a boundary vertex has at least as many
+edges as private vertices.  Components disjoint from the boundary contribute
+only a quotient constant.  Hence `p<=m` and (16.58) follows.
+
+Finally let `C_(w,m)` be an `epsilon w`-net of the full unit-load class.  A
+`tau w`-cover of `C_(w,m)` is an `(epsilon+tau)w`-cover of that class.
+The balanced projective-code packing in Theorem 16.4 and (16.58) imply
+
+```math
+m^2+m\log(w+m)
+\ge2^{(1-H_2(2\epsilon+2\tau)+o(1))w}.
+```
+
+First let `w` grow and then `tau` decrease to zero, proving (16.59).
+`square`
+
+The `m^2` term counts possible ternary-normal optimizer cells; whether its
+robust macroscopic form can be reduced to `O(m log m)` or is sometimes
+necessary is open.  A bare `B`-bit decoder admits no stronger general law
+than `2^B` possible responses: it can hardwire any chosen packing.  The
+nontrivial resource in (16.55) is a shared-parameter max-affine grammar.
+The same proof applies to weighted finite-domain CSPs with Boolean-valued
+factors and to acyclic max-plus path models with binary resource-incidence
+vectors.  Its mechanism is classical hyperplane-arrangement geometry plus
+finite-dimensional metric entropy; (16.58)--(16.59) are promoted as
+semantic response-complexity consequences, not as an external novelty or a
+computational lower bound.
+
+### Theorem 16.9 (query entropy and exact tropical lumpability)
+
+Let a `p`-state max-plus weighted automaton have forward vector `v`, and let
+`H subset R^p` be the declared set of reachable suffix vectors.  Its suffix
+response is
+
+```math
+F_v(h)=\max_i\{v_i+h_i\}.                         \tag{16.60}
+```
+
+For `v in [-B,B]^p`, let `R_B(H)` be the resulting class of functions on
+`H`, and give `H` the projective metric
+
+```math
+d_{\rm pr}(h,k)=\inf_c\|h-k-c\boldsymbol1\|_\infty.
+```
+
+If `N_pr(delta;H)` is its covering number, then the external response
+covering number satisfies
+
+```math
+\boxed{
+\log_2\operatorname {Cov}^{\rm ext}_{\delta+\eta/2}(R_B(H))
+\le N_{\rm pr}(\delta;H)\cdot
+\log_2\left(\left\lceil{2B\over\eta}\right\rceil+2\right).}  \tag{16.61}
+```
+
+Conversely, suppose suffixes `h^(1),...,h^(k)` robustly expose distinct
+coordinates `i_1,...,i_k`:
+
+```math
+h^{(j)}_{i_j}\ge
+\max_{i\ne i_j}h^{(j)}_i+2B.                    \tag{16.62}
+```
+
+On the subfamily where those `k` forward coordinates vary in `[-B,B]`,
+the residual map is an isometric sup-cube embedding.  Hence, for
+`0<epsilon<B`,
+
+```math
+\log_2\operatorname {Cov}_\epsilon
+=\Theta(k\log(B/\epsilon))                       \tag{16.63}
+```
+
+up to universal changes of covering radius.  In particular low affine
+dimension of `H` alone does not imply compression: one affine line can
+contain `p` suffixes satisfying (16.62).
+
+There is an exact repeatedly composable quotient under a finite
+synchronization hypothesis.  Partition the raw states into
+`I_1,...,I_r`, choose gauges `c_i`, and assume every transition matrix
+`T_ell` satisfies
+
+```math
+\max_{j\in I_b}\{T_\ell(i,j)+c_j\}-c_i
+=S_\ell(a,b)
+\quad(i\in I_a),                                  \tag{16.64}
+```
+
+independently of the microscopic `i`.  Suppose the terminal vector has the
+form `beta_i=c_i+u_empty(a)` on `I_a`.  Then every suffix vector factors as
+
+```math
+h_y(i)=c_i+u_y(a),
+\qquad
+u_{\ell y}(a)=\max_b\{S_\ell(a,b)+u_y(b)\},       \tag{16.65}
+```
+
+and the nonlinear aggregates
+
+```math
+P_a=\max_{i\in I_a}\{v_i+c_i\}                    \tag{16.66}
+```
+
+are an exact state:
+
+```math
+F_v(h_y)=\max_a\{P_a+u_y(a)\},
+\qquad
+P'_b=\max_a\{P_a+S_\ell(a,b)\}.                  \tag{16.67}
+```
+
+Thus a `p`-coordinate presentation can quotient strictly to `r<p`
+coordinates and remain closed for arbitrary concatenation depth.  If the
+quotient suffixes robustly expose all `r` coordinates, the formal aggregate
+response family on `[-B,B]^r` is coarsest there and has matching response
+complexity
+
+```math
+\log_2\operatorname {Cov}^{\rm ext}_\epsilon
+=\Theta(r\log(B/\epsilon)).                       \tag{16.68}
+```
+
+For a concrete fixed automaton this is a minimality statement only on its
+reachable aggregate set.  The full rate (16.68) requires that set to contain
+the displayed aggregate box, or a comparable product packing.
+
+#### Proof
+
+Choose a projective `delta`-net `k_1,...,k_N` in `H` and quantize each
+`F_v(k_j)` at mesh `eta`.  For any query `h`, choose `j,c` with
+`||h-k_j-c1||_infinity<=delta`.  The known query baseline `c` is restored by
+the decoder, and the maximum in (16.60) is one-Lipschitz, giving total error
+`delta+eta/2`.  These decoded vectors need not themselves be residuals,
+which is why (16.61) is an external cover.  Choosing one class member from
+each nonempty external ball gives an internal cover at twice the radius.
+Under (16.62), query `h^(j)` returns
+`v_(i_j)+h^(j)_(i_j)` throughout the box.  These queries read all `k`
+coordinates, while (16.60) is one-Lipschitz in `v`, proving the isometry and
+(16.63).  For example,
+
+```math
+h(t)_i=C(2it-i^2),\qquad t=1,...,p,\quad C\ge2B,
+```
+
+lies on one affine line and exposes coordinate `t`.
+
+The terminal factorization in (16.65) is the base case.  If it holds for
+`y`, then (16.64) gives
+
+```math
+h_{\ell y}(i)
+=c_i+\max_b\{S_\ell(a,b)+u_y(b)\},
+```
+
+proving it inductively.  Grouping the maxima in (16.60) proves the first
+identity in (16.67).  If `v'=v odot T_ell`, then
+
+```math
+\max_{j\in I_b}(v'_j+c_j)
+=\max_a\max_{i\in I_a}\{v_i+c_i+S_\ell(a,b)\},
+```
+
+which proves the exact aggregate update.  Robust quotient pins give the
+same cube isometry argument and (16.68). `square`
+
+The exact residual quotient and derivative law are the classical weighted
+Myhill--Nerode/Hankel viewpoint.  The benchmark-level additions are the
+query-metric entropy sandwich, its affine-dimension falsifier, and a sharp
+rate for a strict nonlinear aggregate that is compatible with every future
+derivative.  This is a state other than a boundary-assignment table and a
+second application of response exposure outside Max-Cut.

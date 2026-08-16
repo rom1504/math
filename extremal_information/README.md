@@ -120,8 +120,8 @@ problems instead of extending its vocabulary.  It produced five conclusions.
    number has logarithm between
    `2^((1-H_2(2epsilon)+o(1))w)` and
    `2^((1-H_2(epsilon)+o(1))w)`.  Local sensitivity is therefore not a
-   compression promise; polynomial component size or bounded description is
-   a genuinely stronger unresolved resource.
+   compression promise.  Polynomial component size is a genuinely stronger
+   resource, quantified by the shared-parameter bound below.
 4. Finite-metric distance kernels form a nonproduct interacting algebra:
    strengths combine by a bottleneck minimum and isometry labels by holonomy.
    Anisotropic projective-Hamming shells strengthen this to a transported
@@ -129,6 +129,21 @@ problems instead of extending its vocabulary.  It produced five conclusions.
 5. The same distance shell is the exact nearest Lipschitz response to an
    arbitrary profile.  Repeated shells pay precisely the weakest-layer
    Lipschitz defect, not one approximation loss per layer.
+6. Approximate idempotence recognizes a nearby metric with a sharp
+   dimension-free repair, but it is not by itself stable under long
+   composition.  A bounded-diameter line family has vanishing one-step
+   defect and fixed long-depth response drift because a small
+   per-transition toll accumulates.
+7. Global presentation size supplies the missing resource bound.  Unit-load
+   Max-Cut components with `m` edges have only
+   `O_epsilon(m^2+m log(w+m))` response bits at error `epsilon w`, even with
+   arbitrary real weights.  Approximating the full unit-load response ball
+   therefore needs exponentially many edges.
+8. The weighted-automaton benchmark yields a second strict composable state:
+   tropical lumpability replaces `p` raw coordinates by `r<p` nonlinear
+   block maxima, closes at arbitrary depth, and has matching
+   `Theta(r log(B/epsilon))` response complexity when quotient suffixes
+   expose every retained coordinate.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

@@ -443,3 +443,39 @@ Lipschitz profiles, while isometries act as a holonomy group and unequal
 strengths compose by a bottleneck.  This still does not imply closure for
 arbitrary transfer kernels; the next extension must recognize or approximate
 this metric algebra without storing all kernel rows.
+
+## 14. Benchmark revision: three distinct complexity resources
+
+The validation campaign separates three quantities that should no longer be
+called simply “state size.”
+
+1. **Interface sensitivity** controls regularity.  In Max-Cut, boundary load
+   is exactly the weighted-Hamming Lipschitz seminorm of the response.
+2. **Presentation complexity** controls how many optimizer cells a shared
+   parameter grammar can generate.  An `m`-parameter binary max-affine
+   presentation has only `exp(O(m^2))` normal-fan cells even with
+   arbitrary-precision weights.
+3. **Derivative-compatible quotient complexity** controls indefinite reuse.
+   A small cover at one time is not an automaton; the quotient must also
+   descend under every future derivative.  Tropical lumpability and metric
+   semilattices are positive mechanisms, while the transition-toll example
+   shows how a vanishing local defect can accumulate.
+
+These resources are independent.  Unit interface load admits the full
+Lipschitz ball if an exponential private compiler is allowed.  A
+polynomial-size compiler has polynomial response-bit entropy, but that alone
+does not supply an exact repeated transition.  Conversely, a tiny holonomy or
+lumped transition algebra can transport a profile whose own response
+description remains large.
+
+The resulting candidate law is operational:
+
+> Future-response compression requires both a small realizable response
+> image and a congruence for the future semigroup.  Regularity bounds the
+> image metrically; shared-parameter presentation bounds its entropy;
+> synchronization/lumpability makes the same quotient reusable.
+
+This is stronger than relabeling dynamic programming because each clause has
+a separate theorem and a separate counterexample.  It is not yet a universal
+rate formula: the gap between query-net upper bounds and robust-exposure
+lower bounds remains model-dependent.

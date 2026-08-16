@@ -654,3 +654,81 @@ exponentially many response bits:
 
 The compiler is exponentially large, so polynomial component size remains a
 genuinely stronger and unresolved resource promise.
+
+## Example 23: a vanishing idempotence defect accumulates a transition toll
+
+On the line `0,...,q-1`, put
+
+```math
+K_\delta(i,j)=a|i-j|-\delta\quad(i\ne j),
+\qquad K_\delta(i,i)=0,
+```
+
+with `a>delta`.  Its min-plus idempotence defect is exactly `delta`, and it
+is within `delta` of the exact path metric.  Nevertheless,
+
+```math
+K_\delta^{star T}(i,j)
+=a|i-j|-\delta\min(T,|i-j|)
+```
+
+off the diagonal.  The row-shape drift is `(T-1)delta/2` up to depth
+`q-1`.  Taking `a=2c/q`, `delta=c/q`, and `T=q-1` gives bounded-diameter
+kernels with vanishing local defect but fixed response drift.
+
+The lost datum is a reward of `delta` for each useful nonzero transition.
+Composition turns that microscopic toll into macroscopic information.  Thus
+one-step closeness to a metric shell does not imply a depth-stable quotient;
+bounded useful path length or an exact metric semilattice is a necessary
+kind of additional hypothesis.
+
+## Example 24: polynomial presentation cannot hide a universal separator
+
+Fix a pure Max-Cut topology with `m` edges and arbitrary nonnegative real
+weights.  Every boundary response is a maximum of binary-incidence linear
+forms in the same `m` parameters.  Although there may be exponentially many
+private cuts and boundary queries, their optimizer comparisons have only
+`(3^m-1)/2` possible hyperplane normals.  Arrangement faces and
+finite-dimensional volume therefore give, under unit boundary load,
+
+```math
+\log_2 Cov_(epsilon w)
+=O_epsilon(m^2+m log(w+m)).
+```
+
+This does not assume bounded numerical precision.  In contrast, the full
+unit-load Lipschitz response class has exponentially many response bits.
+Any family approximating every such response must have
+
+```math
+liminf (log_2 m)/w
+ >=(1-H_2(2epsilon))/2.
+```
+
+The distance shell can hide a universal compiler behind a cheap interface,
+but the compiler itself cannot have polynomial max-affine presentation
+complexity.
+
+## Example 25: four weighted states lump to two tropical aggregates
+
+Partition four max-plus automaton states into `I_0={1,2}` and `I_1={3,4}`.
+Choose transition rows that are microscopically different inside each block
+but whose maximum into every target block equals the same quotient
+transition `S(a,b)`.  Then no raw state can simply be deleted: depending on
+the incoming vector, either member of a block may win.  Nevertheless every
+future suffix depends only on
+
+```math
+(P_0,P_1)
+=(max(p_1,p_2),max(p_3,p_4)),
+```
+
+and every appended letter updates this pair by max-plus multiplication with
+the `2 by 2` quotient matrix.  Suitable quotient suffixes expose both
+coordinates, giving exact response complexity
+`Theta(2 log(B/epsilon))` on a bounded box.
+
+This is a strict composable state that is not a boundary table.  It is
+predicted by contextual response plus derivative compatibility: the
+residual quotient says what futures can see, while tropical lumpability says
+why the same quotient remains closed after every continuation.
