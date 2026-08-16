@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: `e1e298db5afcbf939b994876cf08951e479c0cfe`, 2026-08-15.
+Evidence cutoff: `3d668e8` and ledger Section 10.142, 2026-08-16.
 This is compact working context.  Use `ledger.md` and Git history only when an
 assignment explicitly calls for archive comparison or proof reconstruction.
 
@@ -112,28 +112,35 @@ These data are useful falsifiers, not asymptotic evidence by themselves.
    family and an all-signings lower obstruction on separated infinite epochs;
    finite residue effects and route counterexamples do not count.
 
-## Active campaign architecture
+9. **Action compactness is subsequential.**  Under a common `2 -> 2` bound,
+   the same-spin objective is quantitatively continuous in action distance:
+   `|Phi(S)-Phi(T)|<=5C sqrt(2d_M)+2d_M`.  Fixed-`C` spectral
+   regularization is open, but even it only identifies the scalar and action
+   cluster sets.  Convergence still needs lossless exact sign realizers at
+   every sufficiently large order, the archived `AR` obligation.
 
-The selected *research architecture*, not a selected mathematical route, is a
-retrieval-grounded independent panel:
+10. **Terminal drift is stronger than it looks.**  Square-field Paley
+    conferences are strict one-edge cap minima: every edge flip raises `Q` by
+    two, so their cosets have `b=0` and normalized value tending to `1/2`.
+    Any uniform terminal drift law with a unique zero therefore forces that
+    zero, and the full limit, to equal `1/2`.  The statistic is compressed,
+    but its proposed theorem contains the sharp lower-constant burden.
 
-- six literature toolkits: discrepancy; spin glasses; coding/association
-  schemes; Banach/tensor theory; extremal/probabilistic combinatorics; dense
-  graph limits;
-- six separate ledger-blind specialists who translate the problem only after
-  receiving their domain toolkit;
-- two ledger-blind contrarians, assuming respectively nonconvergence and a
-  short proof;
-- archive verifiers who compare frozen proposals with the complete project;
-- one revision and cross-domain/foreign-packet critique for surviving `A/B`
-  proposals; and
-- director selection of at most two candidates for independent proof and
-  disproof attempts.
+## Campaign status
 
-Do not select moving representations, entropy bridges, growing states, or
-pressure continuation merely because they are named here.  They are test
-cases for the panel.  Mathematical route selection remains open until archive
-classification.
+The retrieval-grounded independent panel is complete:
+
+- 103 primary-source cards across six independently scouted domains;
+- six ledger-blind specialist translations and two contrarians;
+- full-archive implication audits;
+- one foreign-packet experiment per specialist; and
+- final independent verification of the theorem artifacts and classifications.
+
+No class-A route survived.  The only final class-B statement is fixed-`C`
+spectral regularization, which is a support lemma and not a convergence route
+without class-C all-order realization.  Terminal drift was withdrawn after
+the scalable Paley obstruction.  The execution set is empty and autonomous
+research is paused under the stopping rule.
 
 ## Proposal standard
 
@@ -151,16 +158,17 @@ Every candidate must state:
 A new name, a finite cap, a solver timeout, an equivalent sufficient
 condition, or another class-specific falsifier is not primary progress.
 
-## Current live targets and stopping conditions
+## Held targets and restart conditions
 
-| Stage | Live target | Stop or advance criterion |
+| Target | Final status | Condition for reconsideration |
 |---|---|---|
-| Retrieval | Six toolkits of 8--20 primary sources with precise theorems and hypotheses | Reject abstract-only analogy or unverifiable citation |
-| Independent research | At most three native architectures per domain, each with an exact lemma and falsifier | Freeze proposal before archive access |
-| Archive audit | Actual implication-level `A/B/C/D` classification | Do not reject by shared vocabulary alone |
-| Cross-domain review | Strongest failure reason and strongest foreign rescue theorem | Preserve disagreements; no consensus by imitation |
-| Selection | Ranked standardized cards | Execute at most two `A/B` candidates meeting the strict selection test |
-| Execution | Minimal theorem, independent proof/disproof, decisive computation only | Stop false routes immediately; after two no-progress checkpoints return to director review |
+| Fixed-`C` spectral regularization `SR` | B support only | A new lossless every-order realization theorem demonstrably weaker than scalar optimum comparison |
+| Action recovery `AR` | C | An exact-sign Gamma-limsup mechanism with no `n^(3/2)` residual and no full parent optimization |
+| Terminal coset drift | C / falsifier only | A mechanism not forced by Paley traps to prove the sharp `1/2` lower theorem |
+| Adversarial pressure | C | A signed deterministic interpolation remainder surviving the outer minimum with `o(n)` defect at every fixed temperature |
+| Growing arbitrary-root hierarchy | C/D | A concrete algebraically closed subexponential state proved not to determine the coset histogram |
+| Genuine nonconvergence | logically open | Both a selected all-spin low tower and a universal all-signings high theorem with fixed separation |
 
-The full convergence problem is unsolved.  No mathematical architecture is
-currently endorsed; the panel itself is the active, user-authorized campaign.
+The full convergence problem remains unsolved and the rigorous interval is
+unchanged.  A new autonomous campaign should not begin without one of the
+restart inputs above or another comparably strict mathematical reduction.

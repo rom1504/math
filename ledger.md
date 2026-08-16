@@ -43286,3 +43286,273 @@ No mathematical result is claimed at campaign launch.  The change is a
 research-control decision: broaden retrieval and preserve independent domain
 translations before exposing agents to the archive.  The next substantive
 checkpoint is the archive classification of frozen specialist proposals.
+
+### 10.142 Retrieval-grounded panel synthesis
+
+Date: 2026-08-16.
+
+The six-domain panel is complete.  Six ledger-blind literature scouts
+extracted 103 primary-source cards across discrepancy, spin glasses, coding
+and association schemes, Banach/tensor theory, extremal combinatorics, and
+dense graph/action limits.  Separate ledger-blind researchers froze proposals;
+two contrarians independently assumed nonconvergence and a short proof.  Only
+then did archive verifiers compare implications with the complete project.
+Every specialist also completed one foreign-packet experiment.  Full source
+packets and the standardized director synthesis are preserved in
+`artifacts/retrieval_panel_2026_08/` and
+`artifacts/retrieval_grounded_panel_synthesis.md`.
+
+The panel found no class-A architecture.  Its only final class-B statement is
+fixed-constant spectral regularization of near-minimizers; this is a support
+lemma with no convergence implication unless it is paired with the already
+archived all-order signed-realization statement.  An independent final audit
+checked that no A route was hidden by the combined classifications.
+
+#### 10.142.1 Final proposal classification
+
+The grades apply to exact implications, not shared vocabulary.
+
+| Architecture | Final grade | Exact reason |
+|---|:---:|---|
+| Fixed-`C` spectral regularization `SR` | `B` support | Stronger than the archived fixed-`K` tradeoff and not falsified, but compactness only identifies subsequential cluster values |
+| All-order action realization `AR`, hence `SR+AR` | `C` | `AR` is the archived exact-sign recovery obligation at every sufficiently large order |
+| Terminal coset drift `L_drift` | `C` after revision | The scalable Paley trap theorem below forces its unique zero to be `1/2`, so it contains the full sharp lower theorem plus a no-metastability assertion |
+| Fixed-temperature adversarial interpolation / deterministic Laplace bridge | `C` | Exactly the archived minimized-pressure or full deterministic Gibbs-completion obligation |
+| Joint block completion after the `2/3` or squared transform | `C` | The summable recurrence is correct, but its bridge clause is the full parent maximum over all joint states |
+| Proportional restriction, thinning, or sharp star insertion | `C` | The far-down version is scalar optimum comparison; the star version is the archived sharp insertion lemma |
+| Growing all-root moment/Terwilliger closure | `C`; fixed/packing versions `D` | The sharp `L_(2k)` statement is target-equivalent, while known exact root closure restores the coset histogram |
+| Banach tensor/Grothendieck architectures | `C/D` | Same-spin recovery or all-order realization is missing; ordinary polarization and projective output have fixed leading loss |
+| Arithmetic, Arf, or tensor nonconvergence | `C/D` | Selected-family identities supply neither an all-spin low tower nor a universal all-signings high tower |
+
+Accordingly the execution set is empty.  `SR` remains a legitimate isolated
+structural question, but it cannot count as an executable convergence route
+without a genuinely new substitute for `AR`.
+
+#### 10.142.2 Verified action-continuity modulus
+
+For a self-adjoint `P`-operator, put
+
+```math
+\Phi(T)=\sup_{|f|\le1}|\langle f,Tf\rangle|.
+```
+
+If `||S||_(2->2),||T||_(2->2)<=C` and `delta` is the Levy--Prokhorov
+Hausdorff distance between their closed one-profiles, the graph-limit
+specialist proved and an independent verifier reconstructed
+
+```math
+\boxed{|\Phi(S)-\Phi(T)|\le5C\sqrt\delta+\delta.}             \tag{10.1667}
+```
+
+Since the one-profile has weight `1/2` in the action metric,
+
+```math
+\boxed{|\Phi(S)-\Phi(T)|
+\le5C\sqrt{2d_M(S,T)}+2d_M(S,T).}                            \tag{10.1668}
+```
+
+For `T_A=A/sqrt(n)` on the uniform `n`-point space,
+
+```math
+\Phi(T_A)={2Q(A)\over n^{3/2}}.                              \tag{10.1669}
+```
+
+The proof uses a Strassen coupling, output truncation at `R`, the common
+second-moment bound, and
+
+```math
+{2C^2\over R}+(3R+1)\delta;
+```
+
+choosing `R=C/sqrt(delta)` gives (10.1667).  Uniform integrability justifies
+the closed-profile and supremum steps.  This closes continuity only.  It
+supplies neither `SR` nor `AR`; the theorem and its boundary are in
+`artifacts/quantitative_action_continuity.md`.
+
+#### 10.142.3 Square-field Paley conferences are terminal traps
+
+Let `r` be an odd prime power and `C` the symmetric Paley conference matrix
+of order `n=r^2+1`.  The known Boolean eigenspace construction and conference
+identity give
+
+```math
+Q(C)={rn\over2}.                                               \tag{10.1670}
+```
+
+The panel strengthened this to a scalable local theorem.  For every edge
+`e={i,j}`, there is a Boolean `r`-eigenvector `x` with
+
+```math
+C_{ij}x_ix_j=-1.                                              \tag{10.1671}
+```
+
+One direct construction writes `GF(r^2)=GF(r)+tGF(r)`, uses a fibre-sign
+function with sum one, and then multiplies coordinates by a square chosen to
+put any prescribed finite edge in two distinct fibres.  Both required fibre
+signs can be prescribed.  Infinity edges are handled by choosing the relevant
+fibre negative.
+
+Evaluating the flipped signing at (10.1671), and using the exact one-edge
+Lipschitz bound, proves
+
+```math
+\boxed{Q(C^{(e)})=Q(C)+2\quad\hbox{for every edge }e.}         \tag{10.1672}
+```
+
+Thus the Paley coset has no outward edge:
+
+```math
+\boxed{b(U_C)=0,
+\qquad z(U_C)={r\over2\sqrt{r^2+1}}\longrightarrow{1\over2}.}\tag{10.1673}
+```
+
+The exact saved extremizers verify all `45` edges at order `10` and all `325`
+edges at order `26`; the new audit script reproduces both certificates.  The
+proof, code, and JSON certificate are in
+`artifacts/paley_conference_terminal_drift_obstruction.md`,
+`computations/audit_paley_edge_traps.py`, and
+`computations/results/paley_conference_edge_trap_audit.json`.
+
+This has a decisive consequence for the coding specialist's initially B-level
+lemma.  Suppose uniformly on an interval containing `[0.33,0.51]` that
+
+```math
+{b(U)\over\binom n2}=\beta(z(U))+o(1),                        \tag{10.1674}
+```
+
+where `beta` is continuous with one zero `c`.  Equations (10.1673)--(10.1674)
+force `beta(1/2)=0` and hence `c=1/2`.  Deepest cosets also have `b=0`, so the
+same lemma then proves
+
+```math
+{M_n\over n^{3/2}}\longrightarrow{1\over2}.                  \tag{10.1675}
+```
+
+Therefore terminal drift is a strict data quotient but not a strict
+difficulty reduction.  It contains the sharp universal lower theorem and the
+stronger assertion that every terminal-band one-edge trap has the same
+asymptotic level.
+
+#### 10.142.4 Exact finite trap evidence
+
+An exact exhaustive census of all augmented-cut-code cosets through order
+eight found no nondeep dead end for `n<=5`, then `25`, `1,260`, and `130,655`
+at orders `6,7,8`.  At order eight, `119,700` of them lie at `Q=12`, whose
+normalized value is `0.530330...`, just above the mandatory drift interval.
+
+A deterministic-seed descent at order ten located the nonconference root
+with negative edges
+
+```text
+01 02 03 04 05 06 14 15 16 17 18 19 24 25 27 38
+47 49 56 58 59 78 89.
+```
+
+Exact evaluation gives
+
+```math
+Q=15,
+\qquad Q(A^{(e)})=17\quad\hbox{for all 45 edges},
+\qquad M_{10}=13.                                             \tag{10.1676}
+```
+
+Thus it is a certified nondeep terminal-band trap.  This is finite evidence,
+not an asymptotic falsifier.  Sources and the compact result record are
+`computations/coset_terminal_drift_exact.cpp`,
+`computations/coset_terminal_drift_sample.cpp`, and
+`computations/results/coset_terminal_drift_audit.json`.
+
+#### 10.142.5 Contrarian nonconvergence audit
+
+The contrarian finite-field calculation is correct.  If `q=p^(2r)` and
+`x_a=phi(Tr(ta))` with `sum phi=1`, then for the Paley core
+
+```math
+\boxed{|x^{\mathsf T}B_qx|=(1-p^{-2})q^{3/2}.}                \tag{10.1677}
+```
+
+The bordered conference cap therefore has the selected-state lower bound
+
+```math
+Q(C_q)\ge{1\over2}(1-p^{-2})q^{3/2}+{q\over p}.               \tag{10.1678}
+```
+
+This is an `exists matrix, exists spin` statement in the wrong direction for
+a low construction, and it is weaker than the archived exact square-field
+saturation theorem.  The proposed odd/even Paley separation still needs an
+all-spin odd upper and a universal all-signings even lower.  Arf phase is
+flipped by a one-edge coset shift, while taking absolute values erases it;
+tensor parity leaves entangled Boolean spins uncontrolled.  Hence no genuine
+nonconvergence mechanism survives.  The calculation is preserved in
+`artifacts/even_extension_paley_trace_fibre.md`.
+
+#### 10.142.6 Cross-domain conclusion
+
+Every foreign-packet experiment failed at an exact quantifier boundary:
+
+1. discrepancy and Banach tools either select one coloring or change to
+   independent input channels;
+2. spin-glass interpolation assumes compatible random disorder and does not
+   commute with the deterministic outer minimum;
+3. moving representations and covering localizers are same-order, while
+   arbitrary-root localization becomes a weighted coset enumerator;
+4. absorption repairs bounded templates but supplies no growing arbitrary-root
+   intertwiner; and
+5. action compactness supplies subsequences, not exact signings at every large
+   order.
+
+These failures organize into three shared bottlenecks:
+
+- **joint parent response:** scalar cap or pressure loses the cancellation
+  needed for one bridge to answer exponentially many child states;
+- **all-coset extreme tail:** packing, typical roots, and bounded moments miss
+  the deepest arbitrary root, while known exact growing closure recovers the
+  rooted histogram; and
+- **all-order fluctuation realization:** compactness and algebraic families
+  give subsequences, but no lossless theorem supplies exact hollow signs at
+  every sufficiently large order.
+
+#### 10.142.7 Director decision and stopping condition
+
+No proposal satisfies the execution gates.  Starting a campaign on `SR` would
+not attack convergence because `AR` remains unchanged.  Starting one on
+terminal drift would attack the stronger sharp-constant/no-metastability
+theorem.  The finite-temperature, composition, restriction, moment, tensor,
+and nonconvergence proposals are C/D at implication level.
+
+The evidence-based decision is therefore:
+
+> **Pause further autonomous execution inside the six audited architectures.**
+
+A justified restart needs a genuinely new theorem of one of the following
+types:
+
+1. lossless every-order signed recovery strictly weaker than scalar optimum
+   comparison;
+2. deterministic interpolation whose signed remainder survives the outer
+   disorder minimum with `o(n)` pressure defect;
+3. arbitrary-root algebraic closure with provably subexponential state that
+   does not determine the coset histogram; or
+4. a selected all-spin low construction paired with a genuinely universal
+   order-dependent lower obstruction.
+
+This is a research-architecture pause, not a claim that the mathematical
+problem is solved or externally blocked.
+
+#### 10.142.8 Updated frontier
+
+The rigorous interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                               \tag{10.1679}
+```
+
+The panel proved a quantitative action-continuity theorem and the scalable
+Paley terminal-trap theorem, and it preserved an exact trace-fibre identity.
+These are supporting results and route obstructions, not primary progress on
+the convergence recurrence or rigorous interval.  No convergence or genuine
+nonconvergence architecture is selected; autonomous execution is paused.
