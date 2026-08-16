@@ -1,0 +1,92 @@
+{
+  "exact_radius_checks": [
+    {
+      "S_0": 10,
+      "S_1": 12,
+      "block_length": 4,
+      "covering_radii": [
+        2,
+        3
+      ],
+      "larger_radius_parity": 1,
+      "normalized_cartesian_power_gap": 0.25,
+      "r": 3
+    },
+    {
+      "S_0": 66,
+      "S_1": 60,
+      "block_length": 16,
+      "covering_radii": [
+        11,
+        10
+      ],
+      "larger_radius_parity": 0,
+      "normalized_cartesian_power_gap": 0.0625,
+      "r": 5
+    }
+  ],
+  "r3_complete_ambient_censuses": [
+    {
+      "cells_parity_0": 2,
+      "cells_parity_1": 2,
+      "equal": true,
+      "replicas": 1,
+      "total_tuples": 16
+    },
+    {
+      "cells_parity_0": 15,
+      "cells_parity_1": 15,
+      "equal": true,
+      "replicas": 2,
+      "total_tuples": 256
+    },
+    {
+      "cells_parity_0": 148,
+      "cells_parity_1": 148,
+      "equal": true,
+      "replicas": 3,
+      "total_tuples": 4096
+    },
+    {
+      "cells_parity_0": 1900,
+      "cells_parity_1": 1900,
+      "equal": true,
+      "replicas": 4,
+      "total_tuples": 65536
+    },
+    {
+      "cells_parity_0": 28987,
+      "cells_parity_1": 28987,
+      "equal": false,
+      "replicas": 5,
+      "total_tuples": 1048576
+    }
+  ],
+  "schema": "extremal-information-code-replica-hierarchy-v1",
+  "selected_profile_checks": [
+    {
+      "block_length": 4,
+      "order": 4,
+      "proper_label_subsets_checked": 14,
+      "r": 3
+    },
+    {
+      "block_length": 16,
+      "order": 6,
+      "proper_label_subsets_checked": 62,
+      "r": 5
+    },
+    {
+      "block_length": 64,
+      "order": 8,
+      "proper_label_subsets_checked": 254,
+      "r": 7
+    },
+    {
+      "block_length": 256,
+      "order": 10,
+      "proper_label_subsets_checked": 1022,
+      "r": 9
+    }
+  ]
+}

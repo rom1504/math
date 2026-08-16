@@ -1,0 +1,260 @@
+# Extremal landscape information
+
+This directory starts a theory-building program about a question that occurs
+across combinatorial optimization, coding theory, and disordered systems:
+
+> What information about an exponentially large energy landscape is necessary
+> and sufficient to preserve its extreme values under future perturbations or
+> composition?
+
+The motivating example is a quadratic Boolean landscape
+
+```math
+H_A(x)=\sum_{i<j}a_{ij}x_ix_j,
+```
+
+but the definitions here are not tied to the open problem about
+`M_n/n^(3/2)`.  This directory deliberately does not modify the main project
+state.  It asks for general theorems first and will reconnect to that problem
+only after the framework has a nontrivial information inequality, a
+composition theorem, an application outside sign matrices, and a credible
+finite-realization theory.
+
+## Present status
+
+The program has reached **Level 2 (explanatory theory)** and has several
+Level-3 generative results.  It is not yet a finished theory and it is not a
+proof of the motivating convergence statement.
+
+The first investigation gave four precise conclusions.
+
+1. For homogeneous quadratic Boolean forms, positive-rate upper-tail entropy
+   reaches the maximum.  A Hamming-noise cloud around any maximizer contains
+   exponentially many states at every fixed strict fraction of the maximum.
+   Consequently two such sequences cannot have the same resolved upper-tail
+   entropy but different limiting normalized maxima.
+2. Entropy is not compositionally sufficient.  Two weighted quadratic
+   landscapes can have exactly the same finite energy histogram and the same
+   complete energy--energy--global-overlap histogram, yet have fixed-block
+   coupling responses separated by `1/2` asymptotically.
+3. Pair data can fail for the same reason in coding theory.  Two explicit
+   code landscapes have identical exact energy--energy--distance counts at
+   every tensor power but covering radii `2r` and `3r`; a rooted intervention
+   separates them by order `r`.  More generally, for every fixed replica
+   order `k`, explicit code pairs agree in their complete unrooted data through
+   `k` points while Cartesian powers retain a positive normalized
+   covering-radius gap.
+4. Preserving all counterfactual optima can be information-heavy even when
+   preserving the unperturbed maximum is free.  There is a
+   `2^binom(n,2)`-element family of quadratic landscapes, all shifted to have
+   maximum zero, for which mean-square accurate pinned-query answers require
+   `binom(n,2)[1-h_2(D)]` bits.
+
+These results force the current candidate concept: a summary must be declared
+relative to the **query interface** through which a future environment can
+interrogate the landscape.
+
+## Candidate object: the upper response roof
+
+For a finite landscape `H:Omega -> R` and a declared feature map
+`phi:Omega -> R^d`, define
+
+```math
+\widehat H_\phi(u)=
+\max\left\{\sum_x\lambda_xH(x):
+\lambda\in\Delta(\Omega),\ \sum_x\lambda_x\phi(x)=u\right\}.
+```
+
+This is the upper boundary of
+
+```math
+\operatorname{conv}\{(\phi(x),H(x)):x\in\Omega\}.
+```
+
+It is the minimal exact quotient for all linear response queries
+
+```math
+V_H(\theta)=\max_x\{H(x)+\langle\theta,\phi(x)\rangle\}.
+```
+
+The roof has an exact algebra:
+
+- additive composition becomes sup-convolution;
+- lifted response bodies add by Minkowski sum;
+- every bi-affine cross energy and bi-affine parent feature is recovered
+  exactly from the two child roofs, with a non-amplifying query-distortion
+  inequality;
+- fixed-dimensional bounded response bodies form a compact Hausdorff space
+  with unrestricted finite recovery sequences.
+
+This is useful only when the declared feature algebra closes under the next
+operation.  If the next coupling asks for an omitted block, root, or
+correlation, a larger roof is required.  If `phi(x)=x` on the Boolean cube,
+every vertex is exposed and
+
+```math
+\widehat H_\phi(x)=H(x).
+```
+
+Thus exact sufficiency for arbitrary spin-pinning queries necessarily retains
+the complete landscape.  A viable compression theorem must either restrict
+the query family, exploit special structure, or prove a synchronization law
+that makes omitted features functions of retained ones.
+
+The positive side is not empty: for fixed-rank Curie--Weiss/Potts-type
+mean-field Hamiltonians, total feature vectors form a fixed-dimensional
+bi-affine algebra.  Their roofs have polynomially many attainable feature
+values and give an exact, bracket-independent ground-state dynamic program.
+This is the first application in which the candidate state is both exact and
+genuinely smaller than the landscape.
+
+The name “upper response roof” is descriptive, not a claim that a new
+mathematical field has already been established.  It is ordinary convex
+duality used as a query-relative extremal sufficient statistic.
+
+## What the obstruction atlas says
+
+Across the motivating repository and the new examples, failed summaries fall
+into three mechanisms.
+
+| Mechanism | What survives | What is lost |
+|---|---|---|
+| Bulk compression | spectra, fixed moments, bounded-temperature pressure, or positive-density states | an exposed zero-entropy face or planted Boolean resonance |
+| Unrooted compression | energy histograms and global overlap laws | which coordinate block, code root, or interface carries the extreme response |
+| Nonclosed compression | child scalar channels or a fixed feature set | correlations created by the next coupling; enlarging until closure may recover the full landscape |
+
+The detailed, evidence-labeled atlas is in
+[`drafts/obstruction_atlas_report.md`](drafts/obstruction_atlas_report.md).
+No single scalar statistic currently survives all three mechanisms.
+
+## Research-director judgment
+
+The selected architecture is the combination of:
+
+1. query-relative upper response roofs as exact sufficient states;
+2. metric/rate--distortion complexity of their response classes; and
+3. a declared feature algebra whose closure determines whether composition is
+   possible without resurrecting discarded states.
+
+This selection is evidence-based rather than terminological.  It has an exact
+composition theorem, a non-amplifying distortion inequality, a true
+polynomial-state application, and sharp counterexamples outside its closure
+class.  The rooted code profile is the strongest competing object, but all
+labeled nearest-code responses recover the code itself, so it is currently an
+obstruction laboratory rather than a compression architecture.
+
+The architecture should be abandoned or substantially revised if two further
+checkpoints fail to produce either a bounded-information closure theorem for
+a second nontrivial model or a scalable lower bound relating response error to
+feature-algebra growth.  It should not be enlarged mechanically until it
+stores every state.
+
+## Extremal rate--distortion
+
+For a landscape class `H`, query set `Theta`, and response metric
+
+```math
+d_\Theta(H,G)=
+\sup_{\theta\in\Theta}|V_H(\theta)-V_G(\theta)|,
+```
+
+the deterministic information price of uniform error `epsilon` is, up to the
+usual factor-two gap, the metric entropy of the response class:
+
+```math
+\operatorname{Pack}(\mathcal H,d_\Theta,2\epsilon)
+\le K_\epsilon
+\le\operatorname{Cov}(\mathcal H,d_\Theta,\epsilon).
+```
+
+Under an ensemble, the corresponding quantity is Shannon's rate--distortion
+function for response loss.  The query family is part of the definition.
+Encoding one maximum, one optimizer, all bounded fields, and all possible
+pair couplings are different information tasks and can have scalar, linear,
+or quadratic rates.
+
+This formulation connects convex response geometry, approximate sufficient
+statistics, sketching, and information theory without identifying them.  The
+finite quadratic lower bound in [`theorems.md`](theorems.md) is the first
+nontrivial example.
+
+## Canonical model tests
+
+| Model | Landscape | Natural extreme scale | Interface that must be declared |
+|---|---|---|---|
+| Dense quadratic signs | `sum_(i<j) a_ij x_i x_j` | `n^(3/2)` for optimized signs | fields, restrictions, or bridge features |
+| SK model | variance-normalized random quadratic form | order `n` | overlap/external-field experiment |
+| Dense Max-Cut/CSP | satisfied-constraint count | order `n^2` before centering | vertex prizes and added constraints |
+| Code/coset distance | negative distance or membership reward | block length | root, puncture, and amalgamation queries |
+| Random CSP ground state | centered clause Hamiltonian | model-dependent extensive scale | clause additions and overlap constraints |
+| Littlewood polynomial | Boolean evaluation of a unimodular polynomial | degree/support dependent | restrictions and product substitutions |
+
+An invariant is suspect if it only restates one of these models.  The current
+results already apply independently to quadratic forms, vertex-prize Max-Cut,
+and code covering-radius queries.
+
+## Evidence discipline
+
+The surface files use four labels:
+
+- **Proved**: a complete finite or asymptotic proof is in `theorems.md` or a
+  cited repository artifact and has been independently audited.
+- **Exact computation**: exhaustive integer enumeration with a reproducible
+  script, but no extrapolation beyond the checked range.
+- **Imported**: a published or repository theorem whose hypotheses are stated
+  and mapped explicitly.
+- **Open**: a falsifiable target, not a conjectural fact.
+
+Machine-learning prediction is not evidence.  The experiments are intended
+to find collisions and invariants that can be translated back into exact
+mathematics.
+
+## Files
+
+- [`examples.md`](examples.md): compact obstruction atlas and canonical
+  counterexamples.
+- [`axioms.md`](axioms.md): definitions and principles that survived the
+  first falsification pass.
+- [`theorems.md`](theorems.md): rigorous results only.
+- [`open_questions.md`](open_questions.md): minimal next mathematical targets
+  and their stopping tests.
+- [`experiments/`](experiments/): exact finite programs, outputs, and a small
+  order-eight landscape laboratory.
+- [`drafts/`](drafts/): detailed specialist reports retained for audit, not
+  promoted automatically as theory.
+
+## Literature coordinates
+
+The framework is grounded in, but not reducible to, several mature theories:
+
+- Shannon's [rate--distortion theory](https://ieeexplore.ieee.org/document/5311476);
+- Blackwell's [comparison of statistical experiments](https://doi.org/10.1214/aoms/1177729032)
+  and Le Cam's [approximate sufficiency](https://doi.org/10.1214/aoms/1177700372);
+- Kolmogorov--Tikhomirov
+  [metric entropy](https://www.mathnet.ru/php/archive.phtml?jrnid=rm&option_lang=eng&paperid=7289&wshow=paper);
+- Derrida's [REM](https://doi.org/10.1103/PhysRevLett.45.79) and
+  [GREM](https://doi.org/10.1051/jphyslet:01985004609040100);
+- the zero-temperature Parisi formula of
+  [Auffinger--Chen](https://arxiv.org/abs/1606.05335); and
+- Panchenko's [ultrametricity](https://doi.org/10.4007/annals.2013.177.1.8)
+  and multi-species
+  [synchronization](https://arxiv.org/abs/1310.6679).
+
+The research question is which compression mechanisms behind these theories
+remain valid for deterministic, adversarial landscapes without importing
+random-model identities that fail there.
+
+## Reconnection rule
+
+Do not force this framework back onto the original `M_n` problem.  Reconnect
+only after it has all of the following:
+
+1. a nontrivial general information or composition theorem;
+2. an application outside dense sign matrices;
+3. a state demonstrably smaller than the full Boolean response landscape for
+   the required bridge queries; and
+4. a constrained compactness/realization theorem for that state.
+
+Items 1 and 2 now exist.  Item 3 exists only for restricted interfaces, and
+item 4 exists only for unrestricted finite landscapes at fixed interface
+dimension.  Those are the present mathematical boundaries.
