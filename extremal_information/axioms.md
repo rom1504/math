@@ -205,6 +205,11 @@ contains a finite optimizer.
 | Presented carrier | survives for distance-transform/min-plus landscapes | response entropy is carrier Hausdorff entropy up to presentation radius; the query law controls witness exposure |
 | Metric-quotient synchronization | survives conditionally | small fibres and lift defect give a uniform quotient decoder, but strict compression also needs lower projected entropy and descended composition |
 | Raw carrier/relation dimension | rejected as a response proxy | surjective maps, redundant alphabets, and two-scale metrics collapse exponentially many gauges |
+| Sparse-flat spectrum of a quotient leader ball | survives exactly for one directed Grassmannian ball; rejected as a two-sided response state | it gives an exact ball identity, but isometric quotient norms can have a linear gap in rooted Hausdorff response |
+| Puncturing/anticode quotient as entropy-optimal | rejected even for binary line carriers | line packing is unrestricted binary coding, and an explicit probabilistic line cover has strictly smaller rate than puncturing |
+| Rooted metric extension data | forced, not yet compressed | quotient geometry and kernel geometry must be coupled to answer arbitrary future carrier queries; no strict sufficient quotient is yet proved |
+| Directed response alphabet `r(a,b)` | survives exactly for product-response distances | its two oriented sums give the exact uniform metric after arbitrary product depth; it forgets the full local functions but not this declared query |
+| Low-word count of `C+C'` plus injection distance | rejected as an improved asymptotic lower route | it yields a valid all-rank packing, but its exponent is always bounded by the common-host Gilbert exponent |
 | Deterministic Parisi-like overlap state | narrowed | a finite synchronization theorem exists, but no natural deterministic hypothesis is yet known to force its cross-root linkage |
 
 ## 9. Ten questions every candidate must answer
@@ -342,3 +347,38 @@ It vanishes in the two-scale and rank-metric examples but is linearly positive
 in binary Hamming space by sphere packing.  The leading question is whether
 actual Grassmannian carrier entropy fills that gap or requires a third
 invariant between code packing and anticode quotienting.
+
+The Hamming Grassmannian audit resolves part of that question.  The
+one-channel entropy is, up to one codeword, the unrestricted binary coding
+number; the puncturing quotient is therefore exponentially nonminimal.
+Directed balls admit an exact sparse-flat formula: count linear flats inside
+the quotient coset-leader ball.  But this is not a new sufficient state.
+Two carriers can have isometric quotient normed spaces, hence identical
+sparse-flat spectra at every scale, while a rooted Hausdorff query differs
+linearly after direct sums.
+
+The surviving abstraction is consequently a **rooted metric extension**:
+the quotient leader geometry, the metric on the carrier/kernel, and the way
+quotient representatives couple to it.  This is a requirement extracted by
+a scalable counterexample, not yet a claimed compression theorem.  At
+`k=Theta(D)`, systematic coordinates turn the coarse problem into a
+`2^k`-ary column code, but Reed--Solomon codes already saturate its Singleton
+bound.  A useful next theorem must control the coherent same-input
+recoupling that this column shadow forgets; adding more ordinary coding
+statistics cannot do so.
+
+One strict quotient nevertheless survives.  For a finite alphabet of local
+responses,
+
+```math
+r(a,b)=\sup_x(f_a(x)-f_b(x))
+```
+
+is an exact feature algebra for pairwise uniform distance under direct
+products: product distances are the maximum of the two oriented sums of
+`r`.  A two-sided carrier gap `d` and presentation radius `p` imply local
+weights at least `d-p`; an outer code amplifies them without charging
+matching channels.  The Hamming simplex and rank-metric multiplication
+families validate the same theorem.  This is a generative composition law,
+not a universal response state: it controls the declared product-distance
+query and says nothing about arbitrary nonproduct couplings.

@@ -6,7 +6,50 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Resolve the Hamming Grassmannian gap
+## 1. Preserve the directed response algebra beyond exact products
+
+Theorem 15.1 gives the first strict, growing-depth feature algebra in this
+phase:
+
+```math
+r(a,b)=\sup_x(f_a(x)-f_b(x)),
+```
+
+and product response distances are exactly the maximum of the two oriented
+sums of `r`.  This closes because product minimization and query coordinates
+separate.  A useful theory must now survive one genuinely nonproduct
+operation.
+
+Let a common min-plus continuation act by
+
+```math
+(T_Kf)(x)=\min_y\{K(x,y)+f(y)\}.
+```
+
+It always contracts directed response weights.  Find natural finite
+hypotheses—stated in terms of exposed minimizers, a synchronization quotient,
+or bounded coupling width—under which, for a declared alphabet,
+
+```math
+r(T_Kf_a,T_Kf_b)
+\ge r(f_a,f_b)-\varepsilon                                  \tag{OQ.1}
+```
+
+in both orientations, with cumulative loss sublinear over the intended
+composition depth.
+
+**Success:** a checkable condition verified in a nonproduct Hamming,
+rank-metric, code, or CSP model, where the directed table remains strictly
+smaller than the full response functions.
+
+**Stop condition:** assuming (OQ.1), using an identity kernel, or storing all
+kernel rows is not synchronization.  The theorem must derive preservation
+from less information than the complete continuation landscape.
+
+This is the single most important next theorem.  It tests whether the exact
+product law is a reusable theory or only a polished concatenated-code fact.
+
+## 2. Prove a same-input recoupling theorem at linear channel rank
 
 For mixed-relation models, composition creates a homomorphism
 
@@ -20,7 +63,7 @@ quotient rank with anticode codimension, while Theorem 13.4 proves that binary
 Hamming separated rank lies a linear amount below it.  Universal scale-rank
 duality is therefore false.
 
-The remaining object is the actual Grassmannian packing
+The actual Grassmannian packing is
 
 ```math
 P_{D,k}(\Delta)=
@@ -28,24 +71,59 @@ P_{D,k}(\Delta)=
 \bigl(\operatorname{Gr}_k(F_2^D),d_H,\Delta\bigr).
 ```
 
-Determine whether large families of subspace carriers not contained in one
-common separated host can fill the code--anticode gap.  Does the exponent
-equal the common-host lower bound, the quotient-state upper bound, or a
-genuinely intermediate invariant?
+The unrestricted form of this question has now been reduced to a recognized
+hard object.  At `k=1`, Theorem 14.3 proves
 
-**Success:** matching exponential upper and lower bounds for
-`P_(D,k)(Delta)` in one nontrivial linear regime, transferred through the
-presentation toll to a response rate--distortion theorem.
+```math
+A_2(D,\Delta+1)-1\le P_{D,1}(\Delta)\le A_2(D,\Delta+1),
+```
 
-**Useful negative result:** prove that common-host packings are exponentially
-suboptimal, or that anticode-quotient summaries retain exponentially too many
-states, thereby isolating a new middle invariant.
+so its packing exponent is the classical unrestricted binary coding rate.
+An explicit probabilistic line cover, using the exact line-ball volume,
+proves separately that puncturing retains exponentially too many states.
+Thus neither a universal closed exponent nor anticode-quotient optimality is
+a credible next target.
 
-This is the single most important next theorem.  The two-scale and rank-
-metric models have zero code--anticode gap; binary Hamming space is the first
-rigorous setting where the general theory leaves a leading interval.
+At `k=kappa D`, a systematic carrier has generator `[I_k|X]`, and
 
-## 2. A natural strict metric synchronization
+```math
+d_H(C_X,C_Y)\le
+\max_u wt(u(X-Y))
+\le d_{\rm column}(X,Y).
+```
+
+The outer column alphabet has size `2^k`, large enough for Reed--Solomon
+codes to meet Singleton.  Ordinary column coding therefore reproduces the
+puncturing exponent and cannot narrow the gap.  The next theorem must charge
+the **same-input recoupling** in the first inequality.
+
+For fixed admissible `kappa,delta`, prove either
+
+```math
+\log_2P_{D,\lfloor\kappa D\rfloor}(\lfloor\delta D\rfloor)
+\le
+\bigl(\kappa(1-\delta-\kappa)-c_{\kappa,\delta}\bigr)D^2
++o(D^2)                                                        \tag{OQ.2}
+```
+
+for some explicit `c_(kappa,delta)>0`, or construct a matching
+quadratic-bit family showing that no such recoupling gain exists.
+
+**Success:** a positive recoupling exponent in one nontrivial linear regime,
+or a construction saturating puncturing after the exact Hausdorff metric is
+verified, transferred through the presentation toll to a response
+rate--distortion theorem.
+
+**Stop condition:** a bound only on the number of differing columns cannot
+work: the growing-alphabet shadow already meets Singleton.  Likewise, the
+sparse-flat spectrum exactly counts directed balls but is not two-sided
+sufficient; isometric quotient norms can have a linear rooted-response gap.
+
+This remains the sharpest model-specific target.  It asks whether
+composition turns the microscopic coupling between a quotient and its rooted
+lifts into quadratic-scale response information.
+
+## 3. A natural strict metric synchronization
 
 Theorem 12.5 shows that one uniform approximate submetry
 `varpi:X->Y` compresses all presented carriers when four conditions hold:
@@ -65,7 +143,7 @@ unbounded composition depth.
 a fixed-context approximation without a descended state update is not
 compression.
 
-## 3. Query-mass-sensitive carrier capacity
+## 4. Query-mass-sensitive carrier capacity
 
 The uniform carrier law is sharp.  Under a query distribution, Theorem 12.3
 only gives the local exposure bound
@@ -88,7 +166,7 @@ transforms all collapse under the proposed diffuse query law.
 Do not infer average hardness from one endpoint witness; its neighborhood
 mass must be charged explicitly.
 
-## 4. Effective-rank composition beyond fixed dimension
+## 5. Effective-rank composition beyond fixed dimension
 
 Shapley--Folkman bounds the loss from replacing a nonconvex reachable sum by
 its convex roof by the `r` largest component diameters, where `r` is the
@@ -102,7 +180,7 @@ model where ambient rank grows.
 **Falsifier:** a same-roof pair with low exposed complexity for every local
 component but a leading composed response gap.
 
-## 5. Constrained compactness and realization
+## 6. Constrained compactness and realization
 
 Fixed-interface response bodies have unrestricted finite recovery sequences.
 Characterize which limiting response or presented-carrier states are realized

@@ -608,3 +608,105 @@ families of subspace carriers not contained in one common separated host can
 fill the leading code--anticode gap.  This checkpoint is followed by full
 independent audit, surface promotion, and reproducibility checks; it is not
 being used to return to the original signing problem.
+
+## Checkpoint 11: the Hamming gap contains coding theory and rooted lifts
+
+**Question.** Is the missing Hamming Grassmannian exponent another quantity
+that should have a simple formula between separated rank and anticode
+codimension?
+
+Not in unrestricted form.
+
+1. For binary lines, the packing number is between
+   `A_2(D,t+1)-1` and `A_2(D,t+1)`.  Its exponent is the classical nonlinear
+   coding exponent.  An actual probabilistic line cover has exponent at most
+   `1-H_2(delta)`, proving that puncturing is exponentially nonminimal without
+   confusing packing and covering.
+2. Directed Grassmannian balls have an exact formula in terms of linear flats
+   inside the quotient coset-leader ball.  This sparse-flat spectrum is useful
+   but not two-sided sufficient: direct-sum carriers can have isometric
+   quotient norms and a linear rooted Hausdorff gap.
+3. A general injection-distance construction uses the low words in `C+C'`,
+   but its asymptotic exponent is always bounded by the common-host Gilbert
+   exponent.  A four-carrier finite witness and a scalable seven-plane
+   alphabet show that common hosts are nevertheless not exactly complete.
+4. Systematic charts reduce to `2^k`-ary column codes.  At `k=Theta(D)` that
+   alphabet admits MDS codes meeting Singleton, so ordinary column coding
+   cannot improve the quotient exponent; same-input recoupling is the missing
+   constraint.
+
+### Director judgment
+
+The sparse-flat spectrum is retained as an exact one-sided counting tool and
+rejected as a response state.  The actual middle geometry contains nonlinear
+coding, kernel/lift rooting, and orientation.  A universal closed Hamming
+exponent is not a sensible immediate objective.
+
+### Immediate continuation
+
+The seven-plane packing exposed a useful compositional ingredient—both
+directed gaps add exactly—but its presentation toll is too large.  Work
+continues with the minimal question: when does a finite two-sided carrier
+alphabet retain a positive response margin after presentation?
+
+## Checkpoint 12: exact directed-response algebra
+
+**Question.** Can multiple channels be evaluated jointly so their useful
+orientation adds before the final absolute value, without paying matching
+channels separately?
+
+Yes.  For local responses `f_a`, the finite directed table
+
+```math
+r(a,b)=\sup_x(f_a(x)-f_b(x))
+```
+
+determines every pairwise uniform distance after arbitrary direct-product
+composition:
+
+```math
+\|F_{\boldsymbol a}-F_{\boldsymbol b}\|_\infty
+=\max\left\{
+ \sum_i r(a_i,b_i),
+ \sum_i r(b_i,a_i)
+ \right\}.
+```
+
+This is exact.  If local carriers have both directed gaps at least `d` and
+presentation radius `p`, each differing channel contributes at least `d-p`
+in either chosen orientation.  An outer code of relative distance `rho`
+therefore gives gap `(d-p)rho m`; matching channels pay zero.  This improves
+the coarse global-carrier estimate by `p(1-rho)m`.
+
+Two independent model tests are proved and exhaustively checked.
+
+* Seven binary simplex lines have `d=4,p=2`; a relative-`3/4` outer code gives
+  response gap `3m/2`.
+* Seven `F_8` multiplication lines in rank metric have `d=3,p=2`; the same
+  outer code gives gap `3m/4`.
+
+Both families have positive response rate
+`(0.0573549...-o(1))m` bits.  The Hamming family is not contained in any
+common growing-distance host.
+
+### Director judgment
+
+This is the strongest result of the checkpoint.  The `q x q` directed table
+is a strict query-relative quotient of the full local functions, has an exact
+composition algebra, and produces a theorem in two metric models.  The
+framework is genuinely generative at Level 3 for product-composed presented
+responses, while remaining Level 2 globally.
+
+It is related to concatenated coding but not merely a relabeling: the new
+content is the exact signed response algebra and the proof that presentation
+cost is charged only on differing channels.  It directly explains when
+composition converts microscopic distinctions into macroscopic extremal
+information.
+
+### Next theorem
+
+Determine when a nontrivial min-plus continuation preserves the directed
+table up to sublinear cumulative loss.  Generic continuation is only
+nonexpansive.  A successful theorem must derive near-equality from exposed
+minimizers or a strict synchronization quotient without storing the full
+kernel rows.  The original signing problem remains out of scope.

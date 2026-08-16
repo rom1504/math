@@ -437,3 +437,103 @@ have a genuine leading gap.  This does not yet prove an equally large gap in
 the complete response entropy: subspace carriers can be packed without all
 lying inside one common separated code.  It is the first rigorous example in
 the framework where a third geometric invariant is demonstrably needed.
+
+## Example 15: identical quotient geometry, different rooted response
+
+In one four-bit Hamming block compare
+
+```math
+C^{(2)}=\operatorname{span}(1100),qquad
+C^{(1)}=\operatorname{span}(1000).
+```
+
+Both quotient normed spaces are exactly the three-bit Hamming cube.  Hence
+their complete quotient leader distributions and all sparse-flat spectra
+agree.  After `r` direct sums, however, the maximum weight inside the first
+carrier is `2r` and inside the second is `r`.  Their Hausdorff distances to
+the zero carrier differ by `r`.
+
+This is a scalable rooted-versus-unrooted counterexample.  Knowing every
+short-syndrome flat controls directed distance *to* the stored carrier, but
+does not control reverse or future-carrier queries.  The internal kernel
+metric, and in general its coupling to quotient lifts, is genuine response
+information.
+
+## Example 16: one-channel carrier entropy is nonlinear coding entropy
+
+Binary one-dimensional carriers are indexed by nonzero words `v`.  Their
+Hausdorff metric is
+
+```math
+d_H(\operatorname{span}(v),\operatorname{span}(w))
+=\max\{\min(wt(v),wt(v+w)),\min(wt(w),wt(v+w))\}.
+```
+
+The maximum size of a packing at distance greater than `t` lies between
+`A_2(D,t+1)-1` and `A_2(D,t+1)`.  Thus its asymptotic packing exponent is the
+unrestricted binary coding rate, not merely the best linear-code rate.
+Puncturing gives `2^(D-t)` quotient states.  A probabilistic cover built from
+the exact line-ball volume has exponent at most `1-H_2(delta)`, proving the
+genuine state overcount
+
+```math
+(H_2(\delta)-\delta-o(1))D.
+```
+
+This holds at `t=delta D` and proves that the code--anticode gap is present
+in the actual response entropy already at one channel.  For `k=Theta(D)`, a
+systematic chart instead produces a growing alphabet of size `2^k`; ordinary
+alphabet coding meets Singleton, so only coherent same-input recoupling can
+improve the puncturing exponent there.
+
+## Example 17: a finite directed alphabet amplifies before absolute values
+
+For local presented responses `f_a`, retain only
+
+```math
+r(a,b)=\sup_x(f_a(x)-f_b(x)).
+```
+
+Under direct-product composition, this finite table closes exactly:
+
+```math
+\|F_{\boldsymbol a}-F_{\boldsymbol b}\|_\infty
+=\max\left\{
+ \sum_i r(a_i,b_i),
+ \sum_i r(b_i,a_i)
+ \right\}.
+```
+
+The seven nonzero `[7,3,4]` simplex words give Hamming line carriers with
+two-sided carrier gap four and presentation radius two.  A seven-letter
+outer code of relative distance `3/4` therefore gives exponentially many
+responses separated by `3m/2`.  The seven nonzero multiplication maps of
+`F_8` give rank-metric lines with gap three and the same presentation cost,
+yielding separation `3m/4`.
+
+This is a same-sign joint inequality: matching blocks pay nothing, and all
+differing blocks are evaluated in one orientation before the final absolute
+value.  It is stronger by a linear amount than applying the global carrier
+bound and paying every block separately.
+
+## Example 18: pure Grassmannian packing can escape every common host
+
+Seven explicit two-planes in `F_2^6` have both directed Hausdorff distances
+equal to three.  Concatenating them through a seven-letter outer code gives
+`2^((0.0573549...-o(1))m)` carriers in `Gr_(2m)(F_2^(6m))` at relative
+Hausdorff distance tending to `3/8`.  Every product carrier contains a
+nonzero vector of weight at most four, so none lies in a common host whose
+minimum distance grows with `m`.
+
+This falsifies common-host control of pure carrier packing.  It does not by
+itself give presented responses: its standard presentation radius is `4m`,
+larger than its carrier gap.  The simplex lines in Example 17 are the
+presentation-compatible replacement.
+
+At `(D,k,t)=(5,2,2)`, four explicit two-planes already have pairwise
+Hausdorff distance three, whereas a distance-three linear host has dimension
+at most two and contains only one two-plane.  Conversely, the general
+injection-distance construction based only on counting low words in
+`C+C'` is provably bounded by the common-host Gilbert exponent.  Placement
+of those low words relative to both rooted subcodes, not their scalar count,
+is the missing information.

@@ -263,10 +263,41 @@ equilateral subspace.  The optimal synchronization rank is exactly the
 codimension of a largest linear anticode, yielding the general
 code--anticode inequality.  Binary Hamming space then gives a decisive
 negative result: at relative scale `delta`, sphere packing forces a linear
-duality gap of at least `H_2(delta/2)-delta`.  The remaining target is now
-sharper: determine whether Grassmannian carrier packings can fill that gap
-without a common separated host, or whether another invariant yields a
-response upper bound below anticode codimension.
+duality gap of at least `H_2(delta/2)-delta`.
+
+The Hamming Grassmannian audit now resolves the unrestricted version of that
+target negatively.  At one channel, carrier packing is the classical
+unrestricted binary coding number up to one codeword; an actual metric cover
+also proves that puncturing is exponentially nonminimal.  Sparse-flat counts
+inside quotient leader balls give an exact formula for directed
+Grassmannian balls, but isometric quotient norms can still have a linear gap
+in rooted symmetric response.  At general channel rank, a low-word sum-code
+plus injection-distance construction is valid yet provably cannot beat the
+common-host Gilbert exponent.  These facts force rooted extension geometry,
+not another scalar rank.
+
+The positive synthesis is a new exact product algebra.  For a finite local
+response alphabet, retain only
+
+```math
+r(a,b)=\sup_x(f_a(x)-f_b(x)).
+```
+
+After arbitrary direct-product composition, the uniform distance between
+two word responses is exactly the maximum of the two oriented sums of this
+table.  Two-sided local carrier gap `d` and presentation radius `p` therefore
+give a per-differing-channel margin `d-p`; matching channels pay nothing.
+Outer codes amplify this to a macroscopic response rate whenever `d>p`.
+Binary simplex lines and rank-metric `F_8` multiplication lines provide two
+independent nontrivial validations.
+
+This moves the framework to **Level 3 for product-composed presented
+responses**: a `q x q` state, demonstrably smaller than the full local
+landscapes, has an exact algebra and predicts new response packings.  It does
+not yet survive genuine cross-block coupling.  The strongest next theorem is
+therefore a deterministic preservation criterion for the directed table
+under a nontrivial min-plus continuation or weak coupling, with sublinear
+loss over repeated composition.
 
 ## Extremal rate--distortion
 

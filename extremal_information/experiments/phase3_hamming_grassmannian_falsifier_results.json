@@ -1,0 +1,483 @@
+{
+  "status": "passed",
+  "exact_line_checks": [
+    {
+      "dimension": 2,
+      "threshold": 1,
+      "line_pack": 1,
+      "A2": 2,
+      "minimum_line_ball": 3,
+      "hamming_ball_volume": 3
+    },
+    {
+      "dimension": 3,
+      "threshold": 1,
+      "line_pack": 3,
+      "A2": 4,
+      "minimum_line_ball": 4,
+      "hamming_ball_volume": 4
+    },
+    {
+      "dimension": 3,
+      "threshold": 2,
+      "line_pack": 1,
+      "A2": 2,
+      "minimum_line_ball": 7,
+      "hamming_ball_volume": 7
+    },
+    {
+      "dimension": 4,
+      "threshold": 1,
+      "line_pack": 7,
+      "A2": 8,
+      "minimum_line_ball": 5,
+      "hamming_ball_volume": 5
+    },
+    {
+      "dimension": 4,
+      "threshold": 2,
+      "line_pack": 2,
+      "A2": 2,
+      "minimum_line_ball": 11,
+      "hamming_ball_volume": 11
+    },
+    {
+      "dimension": 4,
+      "threshold": 3,
+      "line_pack": 1,
+      "A2": 2,
+      "minimum_line_ball": 15,
+      "hamming_ball_volume": 15
+    },
+    {
+      "dimension": 5,
+      "threshold": 1,
+      "line_pack": 15,
+      "A2": 16,
+      "minimum_line_ball": 6,
+      "hamming_ball_volume": 6
+    },
+    {
+      "dimension": 5,
+      "threshold": 2,
+      "line_pack": 3,
+      "A2": 4,
+      "minimum_line_ball": 16,
+      "hamming_ball_volume": 16
+    },
+    {
+      "dimension": 5,
+      "threshold": 3,
+      "line_pack": 2,
+      "A2": 2,
+      "minimum_line_ball": 26,
+      "hamming_ball_volume": 26
+    },
+    {
+      "dimension": 5,
+      "threshold": 4,
+      "line_pack": 1,
+      "A2": 2,
+      "minimum_line_ball": 31,
+      "hamming_ball_volume": 31
+    },
+    {
+      "dimension": 6,
+      "threshold": 1,
+      "line_pack": 31,
+      "A2": 32,
+      "minimum_line_ball": 7,
+      "hamming_ball_volume": 7
+    },
+    {
+      "dimension": 6,
+      "threshold": 2,
+      "line_pack": 7,
+      "A2": 8,
+      "minimum_line_ball": 22,
+      "hamming_ball_volume": 22
+    },
+    {
+      "dimension": 6,
+      "threshold": 3,
+      "line_pack": 3,
+      "A2": 4,
+      "minimum_line_ball": 42,
+      "hamming_ball_volume": 42
+    },
+    {
+      "dimension": 6,
+      "threshold": 4,
+      "line_pack": 2,
+      "A2": 2,
+      "minimum_line_ball": 57,
+      "hamming_ball_volume": 57
+    },
+    {
+      "dimension": 6,
+      "threshold": 5,
+      "line_pack": 1,
+      "A2": 2,
+      "minimum_line_ball": 63,
+      "hamming_ball_volume": 63
+    }
+  ],
+  "local_alphabet": {
+    "alphabet_size": 7,
+    "alphabet_is_pairwise_distinct": true,
+    "joint_span_dimension": 5,
+    "local_minimum_weights": [
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "directed_distance_matrix": [
+      [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        0,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        0,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        0,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        0
+      ]
+    ],
+    "length_two_pairs_checked": 1176,
+    "binary_hamming_margin_H2_3_16_minus_2_3": 0.02954559345847918,
+    "qary_GV_symbol_rate_1_minus_H7_3_4": 0.020430235452939094,
+    "qary_GV_bit_rate_per_outer_coordinate": 0.057354922057604334
+  },
+  "presented_alphabets": {
+    "simplex_alphabet_size": 7,
+    "simplex_word_weights": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "simplex_directed_distance_matrix": [
+      [
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        0,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        0,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0
+      ]
+    ],
+    "simplex_signed_response_matrix": [
+      [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0
+      ]
+    ],
+    "rank_multiplication_alphabet_size": 7,
+    "rank_directed_distance_matrix": [
+      [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        0,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        0,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        0,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        0
+      ]
+    ],
+    "rank_signed_response_matrix": [
+      [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "hamming_response_gap_per_outer_coordinate": 1.5,
+    "rank_response_gap_per_outer_coordinate": 0.75
+  }
+}

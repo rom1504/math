@@ -334,3 +334,45 @@ two-fragment endpoint identities on small binary carriers.
 
 Output:
 [`phase3_multichannel_response_entropy_results.json`](phase3_multichannel_response_entropy_results.json).
+
+## `verify_phase3_sparse_flat_grassmannian.py`
+
+Checks the exact sparse-flat directed-ball identity at every center and
+integer threshold for `(D,k)=(4,2),(5,2)`.  It also verifies two centers with
+isometric quotient leader geometry but different symmetric balls, and the
+scalable rooted-kernel diameter gap.
+
+Output:
+[`phase3_sparse_flat_grassmannian.json`](phase3_sparse_flat_grassmannian.json).
+
+## `verify_phase3_hamming_grassmannian_coding_barrier.py`
+
+Exhaustively verifies the binary line metric, exact line-ball formula, and
+`A_2-1 <= P <= A_2` through `D=5`, plus `4,152` systematic-chart comparisons.
+
+## `verify_phase3_hamming_grassmannian_injection_barrier.py`
+
+Checks `25,650` subspace pairs for the low-weight sum-code certificate,
+the finite common-host counterexample, monotonicity, and `62,807` numerical
+regressions of the analytic entropy domination theorem.
+
+Output:
+[`phase3_hamming_grassmannian_injection_barrier_results.json`](phase3_hamming_grassmannian_injection_barrier_results.json).
+
+## `verify_phase3_hamming_grassmannian_falsifier.py`
+
+Verifies the line slice through `D=6`, all directed comparisons in the
+seven-plane, simplex-line, and rank-multiplication alphabets, and length-two
+product additivity.
+
+Output:
+[`phase3_hamming_grassmannian_falsifier_results.json`](phase3_hamming_grassmannian_falsifier_results.json).
+
+## `verify_phase3_finite_alphabet_response_amplification.py`
+
+Independently checks the exact directed response tables for seven Hamming
+simplex lines and seven `F_8` multiplication lines, together with all `1,176`
+length-two word pairs in each model.
+
+Output:
+[`phase3_finite_alphabet_response_amplification.json`](phase3_finite_alphabet_response_amplification.json).

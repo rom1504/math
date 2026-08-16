@@ -1945,3 +1945,369 @@ Thus separated-host rank and optimal synchronization rank are not
 asymptotically dual in general.  This does not yet determine the full
 Grassmannian response entropy, because a large family of separated carrier
 subspaces need not lie inside one common separated host.
+
+## 14. Hamming Grassmannian response geometry
+
+Let `W` be a `D`-dimensional `F_q`-space with a translation-invariant metric,
+fix `C_0 in Gr_k(W)`, and give `W/C_0` its quotient norm.  Define
+
+```math
+L_{C_0}(\Delta)=\{\bar x:\|\bar x\|_{C_0}\le\Delta\},
+```
+
+```math
+\Lambda_{C_0}(\ell,\Delta)=
+\#\{U\le W/C_0:\dim U=\ell, U\subseteq L_{C_0}(\Delta)\}.   \tag{14.1}
+```
+
+### Theorem 14.1 (exact sparse-flat ball identity)
+
+For directed Hausdorff distance,
+
+```math
+\#\{C\in\operatorname{Gr}_k(W):h^\to(C,C_0)\le\Delta\}
+=\sum_{\ell=0}^{\min\{k,D-k\}}
+ {k\brack\ell}_q q^{\ell^2}
+ \Lambda_{C_0}(\ell,\Delta).                              \tag{14.2}
+```
+
+Moreover
+
+```math
+h^\to(C,C_0)=\rho_{C+C_0}(C_0),                            \tag{14.3}
+```
+
+so Hamming Grassmannian distance is the maximum of two relative covering
+radii, rather than the usual injection distance.
+
+#### Proof
+
+The directed condition is exactly that the quotient image of `C` lies in
+`L_(C_0)(Delta)`.  Put `ell=dim pi(C)`.  Choose
+`J=C cap C_0` in `{k bracket ell}_q` ways and the quotient image in
+`Lambda_(C_0)(ell,Delta)` ways.  Relative to a section, `C/J` is the graph of
+a map from an `ell`-space to the `ell`-space `C_0/J`, giving `q^(ell^2)`
+lifts.  This parametrization is unique.  For (14.3), write every member of
+`C+C_0` as `c+c_0` and use translation invariance. `square`
+
+Writing `lambda=log_q min(q^(D-k),V_W(Delta))`, ordered-basis counting in
+the quotient leader ball and greedy deletion give
+
+```math
+\log_q\operatorname{Pack}(\operatorname{Gr}_k(W),d_H,\Delta)
+\ge\log_q{D\brack k}_q
+-\max_{0\le\ell\le\min\{k,D-k\}}
+ \ell(k-\ell+\lambda)-O(\log D).              \tag{14.4}
+```
+
+For binary Hamming space, `k/D->kappa<=1/2` and
+`Delta/D->delta<1/2`, this becomes
+
+```math
+\liminf {\log_2\operatorname{Pack}\over D^2}
+\ge\kappa(1-\kappa)
+-\max_{0\le\eta\le\kappa}
+ \eta(\kappa-\eta+\min\{1-\kappa,H_2(\delta)\}).            \tag{14.5}
+```
+
+The proof is (14.2),
+`Lambda(ell,Delta)<=|L(Delta)|^ell/|GL(ell,q)|`, and the Hamming-ball
+entropy estimate.
+
+### Theorem 14.2 (quotient leader geometry is not two-sided sufficient)
+
+There are binary Hamming carriers with isometric quotient normed spaces at
+every size but a linear gap in a Hausdorff query.  In one four-coordinate
+block let
+
+```math
+C^{(2)}=\operatorname{span}(1100),\qquad
+C^{(1)}=\operatorname{span}(1000).
+```
+
+Both quotients are the three-dimensional Hamming cube.  Nevertheless, for
+`r` direct-sum blocks,
+
+```math
+d_H((C^{(2)})^{\oplus r},\{0\})=2r,
+\qquad d_H((C^{(1)})^{\oplus r},\{0\})=r.       \tag{14.6}
+```
+
+Hence even the complete unlabelled quotient norm, and therefore every
+sparse-flat spectrum (14.1), forgets macroscopic rooted lift information.
+
+#### Proof
+
+Quotienting the first two coordinates by `span(11)` leaves one parity-class
+coordinate of leader cost one; quotienting by `span(10)` deletes one
+coordinate.  Direct sums therefore give isometric `3r`-dimensional Hamming
+quotients.  The largest kernel word has weight `2r` in the first family and
+`r` in the second, proving (14.6). `square`
+
+### Theorem 14.3 (line carriers recover unrestricted coding rate)
+
+Let
+
+```math
+P_{D,k}(t)=\operatorname{Pack}
+(\operatorname{Gr}_k(F_2^D),d_H,t)
+```
+
+with pairwise distance strictly greater than the integer `t`, and let
+`A_2(D,d)` be the unrestricted binary coding number.  Then
+
+```math
+\boxed{A_2(D,t+1)-1\le P_{D,1}(t)\le A_2(D,t+1).}            \tag{14.7}
+```
+
+Consequently, for `t=floor(delta D)` and `0<delta<1/2`,
+
+```math
+1-H_2(\delta)
+\le\liminf {\log_2P_{D,1}(t)\over D}
+\le\limsup {\log_2P_{D,1}(t)\over D}
+\le1-H_2(\delta/2).                                           \tag{14.8}
+```
+
+The puncturing quotient has `2^(D-t)` states, so its count exceeds the
+maximum same-scale packing count by at least
+
+```math
+(H_2(\delta/2)-\delta-o(1))D.                                \tag{14.9}
+```
+
+More operationally, if `N_(D,1)(t)` is the radius-`t` covering number of all
+binary lines, then
+
+```math
+N_{D,1}(t)
+\le{(2^D-1)(\log(2^D-1)+1)\over
+       \sum_{i=0}^t{D\choose i}}+1.                          \tag{14.9a}
+```
+
+Hence at `t=floor(delta D)`, puncturing uses at least
+
+```math
+(H_2(\delta)-\delta-o(1))D                                  \tag{14.9b}
+```
+
+more bits than an existing same-scale metric summary.
+
+#### Proof
+
+For `L_v=span(v)`, put `a=wt(v)`, `b=wt(w)`, and `c=wt(v+w)`.  Directly,
+
+```math
+d_H(L_v,L_w)=\max\{\min(a,c),\min(b,c)\}.                    \tag{14.10}
+```
+
+Thus separation greater than `t` means `c>t` and at least one of `a,b` is
+greater than `t`.  Translate an optimal binary code to contain zero and
+discard zero for the lower bound.  Conversely, representatives of a line
+packing form a distance-`t+1` code and contain at most one word of weight at
+most `t`; replace that word by zero if it exists.  This proves (14.7).
+Gilbert and Hamming ball bounds prove (14.8), and puncturing `t` coordinates
+proves the packing comparison (14.9).  Every radius-`t` line ball contains
+at least the Hamming volume `V_D(t)`: for a heavy center it is one Hamming
+ball, while for a light center it is a union of two.  Independently choose
+each line center with probability `(log(2^D-1)+1)/V_D(t)` and then add every
+uncovered line.  The expected size proves (14.9a); Hamming-ball entropy gives
+(14.9b). `square`
+
+### Theorem 14.4 (systematic-chart recoupling bound)
+
+For every `1<=k<D`,
+
+```math
+P_{D,k}(t)
+\le {D\choose k}A_{2^k}(D-k,t+1).                            \tag{14.11}
+```
+
+In particular, for `t<=D-k`,
+
+```math
+\log_2P_{D,k}(t)
+\le k(D-k-t)+\log_2{D\choose k}.                             \tag{14.12}
+```
+
+#### Proof
+
+Partition carriers by a chosen coordinate information set.  In one chart a
+carrier has systematic generator `[I_k|X]`.  If matrices `X,Y` differ in `s`
+columns, matching the same input row `u` gives
+
+```math
+d_H(C_X,C_Y)\le\max_u wt(u(X-Y))\le s.                       \tag{14.13}
+```
+
+The chart is therefore a `2^k`-ary code of distance at least `t+1`, proving
+(14.11); Singleton gives (14.12).  When `2^k>=D-k`, Reed--Solomon evaluation
+codes attain this column-code Singleton bound.  They need not attain the
+Grassmannian bound because (14.13) discards same-input recoupling. `square`
+
+### Theorem 14.5 (the injection/sum-weight route cannot beat a common host)
+
+Let `C,C' in Gr_k(F_2^D)` have injection distance
+`r=k-dim(C cap C')`.  If `d_H(C,C')<=t`, then
+
+```math
+2^r\le |(C+C')\cap B_D(t)|
+\le\sum_{i=0}^{\min\{t,k+r\}}{k+r\choose i}.                \tag{14.14}
+```
+
+Hence, if the last sum is below `2^r`, an injection-distance-`r`
+Grassmannian code is a Hausdorff-distance-`t` packing.  Greedy injection
+packing gives one of size at least
+
+```math
+{2^{k(D-k)-(r-1)(D-r+1)}\over16r}.                           \tag{14.15}
+```
+
+However, put `k/D->kappa`, `r/D->rho`, and `t/D->delta`, with
+`0<rho<=kappa<=1/2`.  Whenever this construction applies through
+
+```math
+(\kappa+\rho)
+H_2\!\left({\delta\over\kappa+\rho}\right)<\rho,             \tag{14.16}
+```
+
+its exponent obeys
+
+```math
+\boxed{
+\kappa(1-\kappa)-\rho(1-\rho)
+\le\kappa(1-H_2(\delta)-\kappa).}                            \tag{14.17}
+```
+
+The right side is the elementary common-host Gilbert exponent.  Thus every
+route that uses only a low-word count in `C+C'`, followed by injection
+packing, is asymptotically unable to improve the host construction.
+
+#### Proof
+
+Hausdorff closeness supplies one distinct weight-`<=t` representative for
+each of the `2^r` cosets of `C'` met by `C`.  An information set injects the
+`(k+r)`-dimensional sum code into `F_2^(k+r)` without increasing weight,
+proving (14.14).  The injection ball has size
+
+```math
+\sum_{s<r}2^{s^2}{k\brack s}_2{D-k\brack s}_2,
+```
+
+which is at most `16r 2^((r-1)(D-r+1))`, proving (14.15).
+
+For (14.17), set `a=kappa+rho`, `p=delta/a`, and `h=H_2(p)`.  Condition
+(14.16) is `ah<rho`.  The function
+
+```math
+x(1-x)-(a-x)H_2(ap)
+```
+
+is increasing for `x<=1/2`; at `x=ah` it equals
+
+```math
+a\{h(1-ah)-(1-h)H_2(ap)\}\ge0.
+```
+
+The last inequality follows because the braced expression decreases in
+`a<=1` and vanishes at `a=1`.  Evaluation at `x=rho` gives
+`rho(1-rho)>=kappa H_2(delta)`, equivalent to (14.17). `square`
+
+Theorems 14.1--14.5 isolate the new middle layer.  One-sided leader-flat
+counts are exact but not two-sided sufficient; at one channel the true
+entropy is the nonlinear coding rate; at linearly many channels ordinary
+column coding saturates the coarse quotient bound and cannot expose the
+remaining recoupling loss.
+
+## 15. A joint-channel response algebra
+
+Let `(C_a,pi_a)`, `a in[q]`, be presented carriers in a finite metric space,
+with `0<=pi_a<=p`, and let
+
+```math
+f_a(x)=\min_{c\in C_a}\{d(x,c)+\pi_a(c)\},
+\qquad
+r(a,b)=\sup_x\{f_a(x)-f_b(x)\}.                              \tag{15.1}
+```
+
+On Cartesian powers use the `ell_1` metric, product carriers, and additive
+presentations.
+
+### Theorem 15.1 (exact directed-response composition)
+
+For words `a,b in[q]^m`, the product responses satisfy
+
+```math
+\boxed{
+\|F_{\boldsymbol a}-F_{\boldsymbol b}\|_\infty
+=\max\left\{
+ \sum_i r(a_i,b_i),
+ \sum_i r(b_i,a_i)
+ \right\}.}                                                    \tag{15.2}
+```
+
+If every distinct local pair has both directed carrier distances at least
+`d_0`, then
+
+```math
+r(a,b),r(b,a)\ge d_0-p.                                      \tag{15.3}
+```
+
+Consequently an outer `q`-ary code of relative distance `rho` produces
+responses separated by at least
+
+```math
+(d_0-p)\rho m.                                                \tag{15.4}
+```
+
+For every `rho<1-1/q`, the family can have
+
+```math
+2^{(1-H_q(\rho)-o(1))m\log_2q}                               \tag{15.5}
+```
+
+members.  Thus `d_0>p` is a sufficient local condition for positive linear
+response rate at arbitrary composition depth.
+
+#### Proof
+
+The product minimization factors, so
+`F_boldsymbol_a(x)=sum_i f_(a_i)(x_i)`.  Suprema over the independent query
+coordinates then add; applying this in both signs proves (15.2).  Since
+
+```math
+f_a(x)\ge d(x,C_a),\qquad f_b(x)\le d(x,C_b)+p,
+```
+
+and
+
+```math
+\sup_x\{d(x,C_a)-d(x,C_b)\}=h^\to(C_b,C_a),
+```
+
+both oriented inequalities (15.3) follow.  Equations (15.4)--(15.5) are the
+`q`-ary Gilbert packing bound. `square`
+
+The `q x q` directed table `r`, rather than the full local response
+functions, is therefore an exact feature algebra for pairwise uniform
+response distance under product composition.  The absolute value is taken
+only after all channels of one orientation have added.  A coarse global
+carrier estimate would give `d_0 rho m-pm`; (15.4) is larger by
+`p(1-rho)m` because matching channels pay no presentation toll.
+
+### Corollary 15.2 (two nontrivial model validations)
+
+1. The seven nonzero words of the binary `[7,3,4]` simplex code, viewed as
+   Hamming line carriers with nonzero access cost two, have `d_0=4,p=2`.
+   A seven-letter outer code of relative distance `3/4` gives
+   `2^((0.0573549...-o(1))m)` mixed-channel responses on `F_2^(7m)` separated
+   by at least `3m/2`.
+2. The seven nonzero multiplication maps of `F_8`, viewed as binary
+   rank-metric line carriers with cost two, have `d_0=3,p=2`.  On
+   block-diagonal products the same outer code gives the same number of
+   responses separated by at least `3m/4`.
+
+The first carrier family has bounded-weight words in every block, so it is
+not contained in any common host of growing minimum distance.  The response
+information is created by two-sided inter-carrier exposure, not by internal
+separation in one code.
