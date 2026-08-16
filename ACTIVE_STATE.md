@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: the first focused AR checkpoint, ledger Section 10.143
-(2026-08-16), based on `c4bc2e0`.
+Evidence cutoff: focused AR checkpoint-two consolidation, ledger Section
+10.144 (2026-08-16), building on checkpoint commit `77ef709`.
 This is compact working context.  Use `ledger.md` and Git history only when an
 assignment explicitly calls for archive comparison or proof reconstruction.
 
@@ -63,83 +63,60 @@ These data are useful falsifiers, not asymptotic evidence by themselves.
 
 ## Strongest reusable obstructions
 
-1. **Full-state bridge identity.**  For a two-block signing with internal
-   matrices `A,B` and bridge `R`, the parent maximum keeps the internal
-   energies and `x^T R y` coupled.  Uniform scalar composition statements
-   repeatedly hide rather than remove this parent optimization.  Random or
-   independently selected bridges retain a leading rectangular-norm floor.
+1. **Local summaries miss Boolean extremes.**  Fixed-level SOS, bounded
+   moments/cycles, bounded restriction profiles, and separately paid scalar
+   channels miss planted zero-entropy resonances of leading size.  Retaining
+   enough generic data restores the full signed-coset response.  Ordinary
+   bridge, fibre, Krivine, and fixed-gadget variants are archived, not live.
 
-2. **Separately paid channels.**  Scalar finite-fibre atom decompositions and
-   symmetric left/right atoms bounded one at a time incur a fixed leading
-   multiplier.  Ordinary polarization can be asymptotically sharp.  A valid
-   escape must preserve cancellation until after channels are recombined.
-
-3. **Canonical same-map rounding.**  Same-map Gaussian/Krivine correlations
-   have nonnegative odd Hermite coefficients.  On the natural conference Gram
-   representation this class cannot provide the needed lower-bound constant.
-   An asymmetric construction still needs a rigorous same-spin recoupling
-   theorem; calling it Grothendieck does not supply one.
-
-4. **Bounded moments and local data.**  Fixed-level SOS, fixed replica depth,
-   bounded Eulerian-cycle data, and bounded restriction profiles miss planted
-   zero-entropy Boolean resonances of leading size.  At the required scale the
-   degree is `Theta(n)` and naive storage recovers the complete signed coset
-   histogram.
-
-5. **Moving kernels need hidden size and a root theorem.**  A proved
-   operator-valued same-switch inequality preserves joint matrix
-   cancellation.  Constant roots nevertheless scalarize exactly.  Correct
-   coefficient requires hidden support `exp(Omega(n log n))`; direct matching
-   Fourier support and pure matching add/delete representations are
-   quantitatively too weak.  A different algebraically closed orbit hierarchy
-   is not ruled out.
-
-6. **Entropy-weighted bridges are exact but unclosed.**  The Gibbs variational
-   and edge-reveal Rényi identities turn a rare-event cost into relative
-   entropy.  Fixed small tilt fails on conference children, while known
-   isolated algebraic bridges cost `Theta(n^2)` entropy.  A useful law would
-   require only `O(n)` entropy and a `Theta(n)` pressure gain without encoding
-   full backward dynamic programming.
-
-7. **High temperature is neighboring, not sufficient.**  Minimized pressure
-   has exact finite-temperature formulations and strict-high-temperature
-   stability results.  Convergence only below a fixed inverse-temperature
-   threshold does not control the ground state.  A route must extend to every
-   fixed temperature and then justify the zero-temperature limit.
-
-8. **Arithmetic examples do not prove nonconvergence.**  Bent, Paley,
-   symplectic, conference, and Hadamard families supply selected constructions,
-   generally at the `1/2` scale.  Nonconvergence needs both a strict upper
-   family and an all-signings lower obstruction on separated infinite epochs;
-   finite residue effects and route counterexamples do not count.
-
-9. **Action compactness is subsequential.**  Under a common `2 -> 2` bound,
+2. **Action compactness is subsequential.**  Under a common `2 -> 2` bound,
    the same-spin objective is quantitatively continuous in action distance:
    `|Phi(S)-Phi(T)|<=5C sqrt(2d_M)+2d_M`.  Fixed-`C` spectral
    regularization is open, but even it only identifies the scalar and action
    cluster sets.  Convergence still needs lossless exact sign realizers at
    every sufficiently large order, the archived `AR` obligation.
 
-10. **Terminal drift is stronger than it looks.**  Square-field Paley
-    conferences are strict one-edge cap minima: every edge flip raises `Q` by
-    two, so their cosets have `b=0` and normalized value tending to `1/2`.
-    Any uniform terminal drift law with a unique zero therefore forces that
-    zero, and the full limit, to equal `1/2`.  The statistic is compressed,
-    but its proposed theorem contains the sharp lower-constant burden.
-
-11. **Projective exchangeability is too random.**  A jointly exchangeable
+3. **Sampling and projective exchangeability are too random.**  A jointly
+    exchangeable
     infinite sign array with tight normalized operator norm must have zero
     Aldous--Hoover mean kernel and hence iid Rademacher edges.  An online
     greedy spin then gives normalized cap at least
-    `(2/3)sqrt(2/pi)>1/2` almost surely.  Any viable all-order recovery law
-    must therefore be order-dependent and nonprojective.
+    `(2/3)sqrt(2/pi)>1/2`.  More generally, bounded-op signings have iid
+    fixed-size induced limits, with a fixed `0.063846...` gap in `Phi` above
+    the relevant extremal scale.  Viable recovery must be nonprojective and
+    cannot use uniform mesoscopic induced sampling.
 
-12. **Low-entropy barycentres cannot be sign-near.**  If `W=E_mu A` and `U`
-    is the uniform edge law, then
-    `D(mu||U)>=(binom(n,2)-V(W))/2`, where
-    `V(W)=sum_(i<j)(1-w_ij^2)`.  Thus a sign-near barycentre
-    `V(W)=o(n^2)` costs `Theta(n^2)` relative entropy; an `O(n)`-cost rare
-    bridge or microcanonical tilt cannot produce it.
+4. **Sign-near weighted recovery is equivalent and information-heavy.**  If
+    `W=E_mu A`, `U` is the uniform edge law, and `N=binom(n,2)`, then
+    `D(mu||U)>=N[log2-h(V(W)/(2N))]`.  Thus `V(W)=o(n^2)` forces
+    `D(mu||U)>=N log2-o(N)` and `H(mu)=o(N)`.  Moreover all but `o(n^2)`
+    edge signs are exposed.  Although its terminal rounding theorem is proved,
+    exact recovery supplies the converse witness `W=A`; weighted existence is
+    not a strict reduction.
+
+5. **Design repair is only a last-mile module.**  An `O(n)`-edge leave is
+   negligible for both the normalized cap and action profile.  Existing dense
+   design theorems control fixed local statistics, not the universal outer
+   profile over exponentially many colorings.
+
+6. **Pressure and shell entropy add a no-gap obligation.**  Fixed-temperature
+   pressure can oscillate through state multiplicities even when a zero state
+   exists at every order.  No current interpolation theorem reaches all
+   temperatures and survives the outer signing minimum.
+
+7. **Tested near-minimizer rigidity does not narrow recovery.**  Vanishing
+    fourth-moment/cycle defect misses a Boolean kernel spike even after one
+    conference vertex is deleted.  A universal-vertex extension preserves
+    normalized near-optimality and bounded operator scale while destroying
+    square-field uniform integrability.  Exact order-six examples with the
+    same positive labelled row sums have caps `11` and `7`.  Stronger forms
+    either fail these tests or restore the complete outer Boolean profile.
+
+8. **Arithmetic examples do not prove nonconvergence.**  Bent, Paley,
+   conference, and Hadamard families give selected constructions, usually at
+   scale `1/2`.  Nonconvergence requires a universal high obstruction and a
+   low construction on separated infinite epochs; finite residue effects and
+   failed AR implementations do not count.
 
 ## Campaign status
 
@@ -151,42 +128,51 @@ The retrieval-grounded independent panel is complete:
 - one foreign-packet experiment per specialist; and
 - final independent verification of the theorem artifacts and classifications.
 
-No class-A route survived that panel.  The user has now authorized one focused
-campaign on the surviving all-order realization bottleneck, not a restart of
-broad route generation.
+No class-A convergence route survived that panel.  The user then authorized
+a focused two-checkpoint campaign on all-order action realization.  That
+campaign is now consolidated and paused.
 
-The weakest noncircular structural target is `AR_min^->`: for each fixed
-purification tolerance, choose one bounded-operator liminf action cluster
-`T`; on an upward ratio-dense set of orders construct exact hollow signings
-whose one-profiles are directed-close to that of `T`, with
-`D sqrt(delta)=o(1)`.  Full action convergence, reverse profile inclusion,
-higher joint profiles, every-order recovery, and a norm bound uniform in the
-purification tolerance are unnecessary.  Principal deletion fills the
-remaining `o(n)` upward gaps.  The implication and all error budgets have
-been independently verified; see
-`artifacts/minimal_all_order_action_recovery.md`.
-
-The strongest new executable reduction is **sign-near weighted recovery**.
-For a symmetric hollow `W in [-1,1]^(m x m)`, put
+The weakest retained **optimizer-free** structural target is
+extremal-envelope recovery with uniform integrability (`EER_UI`).  At a fixed
+purification tolerance, let `K_eta` be the compact cluster set of one bounded
+near-liminf sequence and put
 
 ```math
-V(W)=\sum_{i<j}(1-w_{ij}^2).
+\mathcal E_\eta
+=\overline{\bigcup_{T\in\mathcal K_\eta}\mathcal S_1(T)}.
 ```
 
-It is sufficient, on upward ratio-dense orders, to construct weighted models
-of the selected cluster with the correct directed one-profile and
-`V(W)=o(m^2)`.  After deleting `o(m)` exceptional rows, biased sign rounding
-has normalized operator error `o(1)` and yields exact signs.  For the scalar
-version, the sharper direct bound is
+On sufficiently covering order sets, construct exact signings whose every
+one-profile law is directed-close to `E_eta` and whose energy products `xy`
+are uniformly integrable.  Each source profile may match a different cluster
+phase; no common target operator is needed.  If `gamma_eta` is the upward
+multiplicative covering ratio, the exact tolerance condition is
 
 ```math
-Q(A)\le Q(W)+C\bigl(\sqrt{mV(W)}+m\bigr).
+\gamma_\eta^{3/2}(\alpha+\eta)\longrightarrow\alpha,
+\qquad
+\alpha=\liminf_n {2M_n\over n^{3/2}}.
 ```
 
-This rigorously removes the exact-integrality obligation.  It is not yet
-known to reduce the universal Boolean-profile obligation: naive blow-ups have
-`V=Theta(m^2)`, while low-entropy random laws cannot have a sign-near
-barycentre.  See `artifacts/sign_near_weighted_recovery.md`.
+Weak convergence plus uniform integrability transfers the energy integrals,
+and principal deletion covers the omitted orders.  A quantitative sufficient
+form uses normalized operator bounds and `D sqrt(delta)->0`.  Matching only
+one extremizing profile is formally weaker, but selecting it performs the
+target-order Boolean maximum; scalar recovery alone is equivalent to
+convergence.  See `artifacts/extremal_envelope_recovery.md`.
+
+Sign-near weighted rounding is complete but no longer a live architecture.
+If `V(W)=o(n^2)`, biased rounding gives
+
+```math
+\|T_A-T_W\|_{L^\infty\to L^1}=o(1),
+\qquad d_M(T_A,T_W)=o(1),
+\qquad |\Phi(T_A)-\Phi(T_W)|=o(1).
+```
+
+Exact recovery gives the converse weighted witness `W=A,V=0`; weighted
+recovery is therefore an equivalent recovery obligation, not a strict
+reduction.  It remains a reusable terminal rounding theorem.
 
 ## Proposal standard
 
@@ -209,14 +195,18 @@ condition, or another class-specific falsifier is not primary progress.
 | Target | Final status | Condition for reconsideration |
 |---|---|---|
 | Fixed-`C` spectral regularization `SR` | B support only | A new lossless every-order realization theorem demonstrably weaker than scalar optimum comparison |
-| Sign-near weighted recovery `WAR` | active, independently verified reduction | Construct `W_m` on upward ratio-dense orders with `V(W_m)=o(m^2)` and the selected cluster's scalar upper bound or directed one-profile, without solving the full target-order landscape |
-| Directed extremal recovery `AR_min^->` | reduced to `WAR`, otherwise open | A direct exact-sign recovery theorem controlling the one-sided one-profile with no leading residual and no full parent optimization |
+| Extremal-envelope recovery `EER_UI` | B, weakest optimizer-free profile target; open | A nonlocal constructor or inverse finite-model theorem that controls every source profile without an almost complete sign skeleton |
+| Sign-near weighted recovery `WAR` | C as architecture; A rounding module | Reconsider only with an independently proved constructor; existential weighted recovery is equivalent to exact recovery |
+| Directed extremal recovery `AR_min^->` | B/C, stronger than EER | Subsumed unless phase coherence itself becomes useful in a new theorem |
 | Projective exchangeable recovery | D / rigorously obstructed | Only reconsider a genuinely order-dependent, nonprojective law; projective consistency itself is incompatible with extremality |
+| Uniform mesoscopic induced sampling | D / rigorously obstructed | Only a quantitatively structured diagonal before iid mixing or an optimized subset could evade the theorem |
 | Terminal coset drift | C / falsifier only | A mechanism not forced by Paley traps to prove the sharp `1/2` lower theorem |
 | Adversarial pressure | C | A signed deterministic interpolation remainder surviving the outer minimum with `o(n)` defect at every fixed temperature |
 | Growing arbitrary-root hierarchy | C/D | A concrete algebraically closed subexponential state proved not to determine the coset histogram |
 | Genuine nonconvergence | logically open | Both a selected all-spin low tower and a universal all-signings high theorem with fixed separation |
 
 The full convergence problem remains unsolved and the rigorous interval is
-unchanged.  A new autonomous campaign should not begin without one of the
-restart inputs above or another comparably strict mathematical reduction.
+unchanged.  The focused AR campaign is paused after two checkpoints.  Resume
+only after an external inverse-recovery theorem, a concrete nonlocal
+constructor, a continuous order-class obstruction, or another comparably
+strict input.

@@ -2,9 +2,11 @@
 
 Date: 2026-08-16.
 
-Status: first checkpoint draft.  Claims are labelled **proved**, **published**,
-**obstructed**, or **open**.  The long project archive was consulted only
-after the independent theorem packets and proposals were frozen.
+Status: historical first-checkpoint audit, superseded for route ranking by
+`ar_director_synthesis.md`.  Claims here are labelled **proved**,
+**published**, **obstructed**, or **open**.  The long project archive was
+consulted only after the independent theorem packets and proposals were
+frozen.
 
 ## 1. Target and scale
 

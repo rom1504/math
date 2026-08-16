@@ -3,7 +3,10 @@
 Date: 2026-08-16.
 
 Status: proved implication and quantitative error audit. This note does **not**
-prove the recovery hypothesis introduced below.
+prove the recovery hypothesis introduced below.  The selected-phase target in
+this note is valid but is no longer the weakest retained optimizer-free target;
+the second-checkpoint envelope weakening is in
+`extremal_envelope_recovery.md`.
 
 The final implication is
 

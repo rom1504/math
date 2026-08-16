@@ -43835,3 +43835,341 @@ problem: no construction of the weighted models in (10.1689) is known, and
 the universal outer-profile quantifier remains.  The focused campaign
 continues to its second substantive checkpoint on nonprojective
 microcanonical and design/absorption formulations.
+
+### 10.144 Focused all-order action recovery: second checkpoint and consolidation
+
+Date: 2026-08-16.
+
+Status: **verified implications and scalable route obstructions; original
+convergence problem open**.
+
+The second checkpoint subjected the independently frozen action,
+microcanonical, design, and rounding proposals to the complete archive.  It
+corrected the first checkpoint's provisional assessment of weighted recovery,
+found a strictly weaker phase-incoherent action target, and proved a universal
+no-go theorem for mesoscopic induced sampling.
+
+#### 10.144.1 Operational outcome
+
+| Track | Concrete result | Classification | Decision |
+|---|---|---|---|
+| Minimal action theorem | extremal-envelope recovery and its uniform-integrability form proved sufficient | verified strict coherence reduction from selected-phase AR | retain as the exact optimizer-free bottleneck |
+| Weighted rounding | total fractional variance gives vanishing full action and objective error | verified rounding module; not a strict recovery reduction | module complete; stop treating weighted existence as a new route |
+| Uniform induced sampling | bounded-op parents have iid fixed-size induced limits and a fixed extremal gap | verified scalable no-go | stop raw mesoscopic sampling |
+| Projective exchangeability | previous iid/greedy obstruction retained | verified scalable no-go | only order-dependent nonprojective laws remain |
+| Microcanonical/pressure | no-gap limits are stronger than recovery and collide with archived pressure work | equivalent/stronger reformulation | stop absent an independent interpolation theorem |
+| Design/absorption | any `O(n)`-edge leave is harmless; universal outer enforcement remains open | verified last-mile module, unresolved core | stop fixed-template variants |
+| One-vertex exposed face | exact identity is ledger (10.254) | archived obligation | stop as an AR novelty |
+| Near-minimizer rigidity | cycle flatness, delocalization, and row laws fail one of forcing, closure, or safe realization | verified exact falsifiers; no narrowing property | stop these summaries absent a new uniform theorem |
+
+#### 10.144.2 Extremal-envelope recovery
+
+For a fixed purification tolerance `eta`, choose one bounded near-liminf
+sequence and let `K_eta` be its compact set of action cluster points.  If
+
+```math
+p_n={2M_n\over n^{3/2}},
+\qquad \alpha=\liminf_n p_n,
+```
+
+then every `T in K_eta` has `Phi(T)<=alpha+eta` and normalized operator norm
+at most `C_eta`.  Define the closed one-profile envelope
+
+```math
+\mathcal E_\eta
+=\overline{\bigcup_{T\in\mathcal K_\eta}\mathcal S_1(T)}. \tag{10.1694}
+```
+
+Every law `nu in E_eta` has second output moment at most `C_eta^2` and
+
+```math
+\left|\int xy\,d\nu\right|\le\alpha+\eta.
+```
+
+The closure is harmless because the energy products are uniformly
+integrable:
+
+```math
+\int |xy|\mathbf1_{\{|xy|>R\}}\,d\nu\le {C_\eta^2\over R}.
+```
+
+For a source operator `S`, set
+
+```math
+\partial_{\mathcal E_\eta}(S)
+=\sup_{\mu\in\mathcal S_1(S)}
+  \inf_{\nu\in\mathcal E_\eta}d_{LP}(\mu,\nu).
+```
+
+If `||S||_(2->2)<=D_S`, directed coupling and truncation prove
+
+```math
+\boxed{
+\Phi(S)\le\alpha+\eta
++5\max\{D_S,C_\eta\}\sqrt{\partial_{\mathcal E_\eta}(S)}
++\partial_{\mathcal E_\eta}(S).}                         \tag{10.1695}
+```
+
+The key weakening is real: each source profile may match a law from a
+different cluster phase.  No one target operator, even one depending on the
+order, must explain all profiles of the recovered matrix.
+
+Let `N_eta` be an unbounded recovery-order set, let `s_eta(N)` be its first
+member at least `N`, and put
+
+```math
+\gamma_\eta=\limsup_{N\to\infty}{s_\eta(N)\over N}.
+```
+
+It is enough to have a null sequence `eta_l` and exact signings `A_m` on
+`N_(eta_l)` such that, at each fixed `l`,
+
+```math
+\delta_m=\partial_{\mathcal E_{\eta_l}}(T_{A_m})\to0,
+\qquad
+\max\{D_m,C_{\eta_l}\}\sqrt{\delta_m}\to0,              \tag{10.1696}
+```
+
+and
+
+```math
+\gamma_{\eta_l}^{3/2}(\alpha+\eta_l)\longrightarrow\alpha. \tag{10.1697}
+```
+
+Principal deletion then gives
+
+```math
+\limsup_N p_N
+\le\gamma_{\eta_l}^{3/2}(\alpha+\eta_l),                \tag{10.1698}
+```
+
+and (10.1697) proves convergence.  Since the known lower bound makes
+`alpha>0`, the simpler sufficient condition `gamma_(eta_l)->1` is essentially
+exact.
+
+The source operator bound can be removed.  The weakest retained
+optimizer-free form, `EER_UI`, replaces (10.1696) by directed envelope
+distance tending to zero and
+
+```math
+\lim_{R\to\infty}\limsup_m
+\sup_{\mu\in\mathcal S_1(T_{A_m})}
+\int |xy|\mathbf1_{\{|xy|>R\}}\,d\mu=0.                 \tag{10.1699}
+```
+
+Weak convergence plus this Vitali condition passes the energy integrals.
+Formally, matching only one target-order extremizing profile is still weaker,
+but identifying it performs the full Boolean maximization.  It is rejected by
+the project's information criterion.  Dropping profile matching entirely
+leaves scalar recovery, which is equivalent to convergence.  Thus `EER_UI`
+is the weakest **optimizer-free** profile theorem found, not the weakest
+existential sentence.
+
+See `artifacts/extremal_envelope_recovery.md` and its independent referee.
+
+#### 10.144.3 Sign-near rounding is an equivalence module
+
+For `E=A-W`, direct two-spin Bernstein rounding gives some supported exact
+signing with
+
+```math
+B(E):=\max_{x,y}|x^{\mathsf T}Ey|
+\le C\bigl(\sqrt{nV(W)}+n\bigr),
+\qquad
+V(W)=\sum_{i<j}(1-w_{ij}^2).                              \tag{10.1700}
+```
+
+Moreover
+
+```math
+\|T_A-T_W\|_{L^\infty\to L^1}={B(E)\over n^{3/2}}.
+```
+
+If `V(W)=o(n^2)`, same-input coupling makes every fixed action profile, and
+hence full `d_M(T_A,T_W)`, tend to zero.  It also gives direct objective error
+`o(1)`.  No exceptional-row deletion or rounded operator bound is required
+for these conclusions.  The previously proved spectral route remains useful
+only when a normalized operator bound on the exact rounded signing is itself
+required.
+
+This changes the classification.  Exact recovery implies sign-near weighted
+recovery by taking `W=A,V=0`; (10.1700) proves the converse at the same orders.
+Objective weighted recovery is therefore equivalent to exact objective
+recovery, not a strict reduction.  At fixed margin, `V=o(n^2)` also exposes
+an exact sign skeleton on all but `o(n^2)` edges.
+
+The entropy obstruction sharpens to an almost maximal cost.  If `mu` is a
+law on the `N=binom(n,2)` edge signs, `U` is uniform, and `W=E_mu A`, then
+
+```math
+\boxed{
+D(\mu\Vert U)
+\ge N\left[\log2-h\left({V(W)\over2N}\right)\right].}    \tag{10.1701}
+```
+
+Thus `V=o(N)` forces `D(mu||U)>=N log2-o(N)` and `H(mu)=o(N)`.  A sign-near
+barycentre represents an almost fixed global sign phase, not an `O(n)`-cost
+canonical tilt.
+
+#### 10.144.4 Universal no-go for mesoscopic induced sampling
+
+Let `A_N` be any deterministic signings with `||A_N||_op<=C sqrt(N)`.  Their
+signed dense cut norm satisfies
+
+```math
+\|W_{A_N}\|_\square\le {C\over\sqrt N}.                 \tag{10.1702}
+```
+
+The dense counting lemma and expansion of every fixed induced sign pattern
+therefore prove that, for each fixed `m`, a uniform labeled induced
+`m`-submatrix converges in total variation to an iid Rademacher signing
+`R_m`:
+
+```math
+\boxed{
+d_{TV}\bigl(\mathcal L(A_N[S_m]),\mathcal L(R_m)\bigr)\to0.} \tag{10.1703}
+```
+
+For iid signs, sequential greedy choice of spins gives
+
+```math
+{Q(R_m)\over m^{3/2}}
+\ge {2\over3}\sqrt{2\over\pi}-o_{\mathbb P}(1),
+```
+
+so
+
+```math
+\Phi(T_{R_m})
+\ge {4\over3}\sqrt{2\over\pi}-o_{\mathbb P}(1)
+=1.0638460810\ldots-o_{\mathbb P}(1).                  \tag{10.1704}
+```
+
+Every sufficiently accurate purified extremal cluster has `Phi(T)<=1+eta`
+with `eta<0.063846...`.  Directed continuity under the proposed common sample
+operator bound contradicts (10.1703)--(10.1704).  Hence
+
+```math
+\boxed{
+\text{uniform mesoscopic induced sampling is false for every relevant
+bounded extremal cluster}.}                              \tag{10.1705}
+```
+
+This kills the exact iterated sampling theorem and every diagonal already
+past the parent's quasirandom mixing scale.  It does not kill `(1-o(1))`
+relative-size restrictions, which are exactly the proved near-order regime,
+or a deliberately optimized subset carrying new global information.
+
+See `artifacts/mesoscopic_induced_sampling_no_go.md` and the independent
+archive audit.
+
+#### 10.144.5 Archive comparison of the other proposals
+
+1. **Microcanonical and canonical profile pressure: class C.**  Their Laplace
+   implications are correct.  But alternating the multiplicity of zero-energy
+   states makes fixed-temperature pressures oscillate even when a zero state
+   exists at every order.  Pressure convergence and shell-entropy limits are
+   strictly stronger no-gap assumptions, and the architecture collides with
+   `good_signing_entropy_threshold.md` and
+   `microcanonical_disorder_counting_composition.md`.
+2. **Exposed-face insertion: class C.**  The exact formula
+   `min_b Q(A^b)=Q(A)+Delta(A)` is ledger (10.254).  The proposed derivative
+   coefficient and full near-cap slack landscape are the archived sharp
+   star-insertion obligation; thick-cap counterexamples defeat exact-ground
+   balancing.
+3. **Design repair: verified module, unresolved route.**  Any `O(n)`-edge
+   leave has `O(n)` objective cost and normalized `L^infinity -> L^1` error
+   `O(n^(-1/2))`; bounded maximum degree is unnecessary.  No cited design
+   theorem enforces the directed outer profile for every one of the `q^n`
+   fixed-alphabet colorings.
+4. **Conference/regular fibres: class D/C.**  Exact residual Frobenius and
+   microcanonical ANOVA identities kill ordinary independent, regular, and
+   separately paid fibre modes.  An unspecified nonlinear absorber merely
+   renames directed recovery.
+5. **Intrinsic AR falsifier: not found.**  Parity, conference order,
+   multiplicity, design divisibility, and Witt effects located in the audit
+   have vanishing repair or ratio-dense carriers.  There is no signed extremal
+   cluster presently known to have a fixed positive recovery gap on
+   infinitely many multiplicatively significant target intervals.
+
+#### 10.144.6 Near-minimizer rigidity audit
+
+Three properties were frozen before archive comparison and tested against
+uniform forcing, limit closure, and objective-safe all-order realization.
+
+1. **Fourth-moment/cycle flatness fails at profile level.**  For
+   `Delta_4(A)=||A^2-(n-1)I||_F^2/n^3`, Paley conference restrictions give
+   exact all-order signings with `Delta_4=o(1)`.  But deleting one vertex from
+   a conference matrix gives
+
+   ```math
+   A^2-(n-1)I=I-bb^{\mathsf T},
+   \qquad \Delta_4(A)={n(n-1)\over n^3}\to0,
+   ```
+
+   while the Boolean vector `b` sees a unit-size normalized two-walk spike.
+   Fixed cycle enrichment likewise misses a planted leading maximum.
+2. **Strong field delocalization is not forced.**  Adjoining one universally
+   positive vertex to a switched near-minimizer `B_m` gives
+
+   ```math
+   Q(\widetilde B_m)=Q(B_m)+m,
+   \qquad
+   ||\widetilde B_m||_{op}\le||B_m||_{op}+\sqrt m,
+   ```
+
+   but the new ground-state field is `m`, contributing asymptotically one to
+   the normalized square-field tail.  Ordinary coordinate or projector
+   delocalization also misses Paley Boolean resonance.  The uniformly forced
+   linear-tail estimate is already a consequence of the operator bound.
+3. **Ground-state row laws do not certify globality.**  Two explicit
+   order-six signings have the same positive labelled row-sum vector
+   `(5,3,3,1,1,1)` but exact caps `11` and `7`.  Realizing one stable row law
+   does not identify an absolute ground state; adding that assertion is the
+   complete target-order Boolean maximum, while retaining all row laws is
+   directed one-profile recovery in new notation.
+
+No candidate passes all three tests.  Weak versions contain strictly less
+information but lose rare extremizers; strong useful versions are false or
+recover the outer Boolean landscape.  See
+`artifacts/ar_near_minimizer_rigidity_audit.md`.
+
+#### 10.144.7 Director decision
+
+The focused campaign produced:
+
+- a verified strict coherence reduction from selected-cluster AR to `EER_UI`;
+- a completed action-preserving sign-near rounding theorem, together with the
+  proof that weighted recovery is not a separate existential route;
+- a verified `O(n)`-edge design-repair lemma; and
+- two scalable architectural obstructions: projective exchangeability and
+  mesoscopic induced sampling.
+
+It did **not** produce an all-order constructor, an intrinsic counterexample
+to EER/AR, a near-minimizer rigidity property with an all-order realization
+theorem, or an improved bound on `M_n`.  After two substantive checkpoints,
+further autonomous variants inside this architecture are not justified.
+The appropriate next input is external action/local-global expertise on
+inverse finite-model recovery, or a concrete nonlocal constructor whose state
+is proved smaller than an almost complete sign skeleton.
+
+#### 10.144.8 Updated frontier
+
+The original interval remains
+
+```math
+\boxed{
+0.336493364431\ldots
+\le\liminf {M_n\over n^{3/2}}
+\le\limsup {M_n\over n^{3/2}}
+\le {1\over2}.}                                           \tag{10.1706}
+```
+
+The weakest optimizer-free action theorem now known is tolerance-dependent
+extremal-envelope recovery with uniform integrability of the energy products
+and asymptotically unit upward covering ratios.  Its truth for exact sign
+matrices remains open.  Raw sampling, projective exchangeability, objective
+sign-near rephrasing, pressure no-gap assumptions, fixed-template design, and
+ordinary fibre lifts do not prove it.  The focused AR campaign is paused under
+the stopping rule pending a genuinely new constructor, invariant, or external
+theorem.

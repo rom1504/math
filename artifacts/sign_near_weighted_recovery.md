@@ -2,12 +2,12 @@
 
 Date: 2026-08-16.
 
-Status: **verified reduction**, independently audited.  Scalar
-biased rounding removes the final exact-sign obligation for convergence under
-global sign-nearness.  Spectral rounding additionally preserves directed
-profiles under a maximum-row condition; deleting exceptional rows reduces
-that condition to global sign-nearness.  The note does not construct the
-weighted recovery sequence.
+Status: **verified rounding theorem**, independently audited twice.  Global
+sign-nearness permits exact sign rounding with vanishing normalized
+`L^infinity -> L^1`, action-profile, and Boolean-objective error.  This removes
+the final integrality substep, but it also makes sign-near weighted recovery
+equivalent to exact recovery as an existential recovery obligation.  The note
+does not construct a recovery sequence.
 
 ## 1. Scalar rounding at the exact objective scale
 
@@ -56,6 +56,72 @@ variance \(V(W)\).  Bernstein's inequality and a union bound give
 Taking \(t=C(\sqrt{nV(W)}+n)\) with a sufficiently large absolute constant
 makes the right side smaller than one.  Some supported outcome then satisfies
 (WR.S1).  \(\square\)
+
+## 1A. Bilinear rounding preserves every fixed action profile
+
+For a symmetric matrix `E`, define its Boolean bilinear norm
+
+```math
+B(E):=\max_{x,y\in\{\pm1\}^n}|x^{\mathsf T}Ey|.
+```
+
+For the same biased rounding `E=A-W`, a fixed pair `(x,y)` gives a sum over
+independent unordered edges with coefficient
+`x_i y_j+x_j y_i in {-2,0,2}`.  Its variance is at most `4V(W)` and each
+summand has absolute value at most four.  Bernstein and a union bound over
+the `4^n` Boolean pairs give
+
+```math
+\mathbb P\{B(A-W)\ge t\}
+\le2\,4^n\exp\left[-\frac{t^2}{2(4V(W)+4t/3)}\right].    \tag{WR.B1}
+```
+
+Consequently some supported exact signing satisfies
+
+```math
+\boxed{B(A-W)\le C\bigl(\sqrt{nV(W)}+n\bigr).}           \tag{WR.B2}
+```
+
+This has the exact operator interpretation
+
+```math
+\sup_{|f|\le1}\|(A-W)f\|_{\ell^1}=B(A-W),
+\qquad
+\|T_A-T_W\|_{L^\infty\to L^1}
+=\frac{B(A-W)}{n^{3/2}}.                                 \tag{WR.B3}
+```
+
+The first identity follows by dualizing the `ell^1` norm and then using
+multi-affinity to move both cube variables to Boolean vertices.  If
+`V(W)=o(n^2)`, write the last quantity in (WR.B3) as `r_n=o(1)`.  For any
+fixed `k` and any bounded inputs `f_1,...,f_k`, couple the two joint profile
+laws by using the same uniform vertex and the same inputs.  Markov gives
+
+```math
+d_H\bigl(\mathcal S_k(T_A),\mathcal S_k(T_W)\bigr)
+\le\min\{1,\sqrt{k r_n}\}.                               \tag{WR.B4}
+```
+
+Thus the standard action metric obeys
+
+```math
+d_M(T_A,T_W)
+\le\left(\sum_{k\ge1}2^{-k}\sqrt k\right)\sqrt{r_n}
+=o(1).                                                    \tag{WR.B5}
+```
+
+No row-variance deletion and no operator-norm bound on the rounded matrix are
+needed for (WR.B4)--(WR.B5).  Directly,
+
+```math
+|\Phi(T_A)-\Phi(T_W)|\le r_n,                            \tag{WR.B6}
+```
+
+so continuity is not invoked after rounding.  The two-spin proof has only a
+finite Bernstein-constant loss compared with (WR.S2), never a leading
+`n^(3/2)` loss under `V=o(n^2)`.  An independent referee checked every
+coefficient, variance, normalization, and action-metric tail; see
+`ar_bilinear_rounding_referee.md`.
 
 ## 2. Spectral rounding theorem
 
@@ -260,8 +326,8 @@ Section 1 rounds these matrices at the same orders with \(o(m^{3/2})\)
 objective loss.  Principal deletion then proves convergence exactly as in
 `minimal_all_order_action_recovery.md`.
 
-If preservation of the directed action profile is desired, use the stronger
-form:
+If preservation with an operator-norm bound on the final exact signing is
+desired, one may use the following stronger form and the spectral route:
 
 > **Profile sign-near weighted recovery.** At the same orders, require
 >
@@ -296,16 +362,26 @@ For a target \(N\), take the first original recovery order
 \(m\ge N/(1-2\delta_N)\).  Upward ratio-density gives \(m/N=1+o(1)\), while
 \(k(m)\ge m(1-\delta_N)\ge N\) and \(k(m)/N=1+o(1)\).  Thus the rounded
 sequence itself satisfies \(\mathrm{AR}_{\min}^{\to}\); no padding is needed
-for this profile claim.  In particular, (WR.10) proves convergence.
+for this profile claim.  In particular, (WR.10) proves convergence.  If only
+action-profile and objective recovery are needed, Section 1A rounds directly
+at the original orders and makes the deletion step unnecessary.
 
 ## 6. Strictness and boundary
 
-This is a strict relaxation of the **exact-sign realization constraint**:
+This is a syntactic relaxation of the **exact-sign realization constraint**:
 the entries of \(W_m\) may all be fractional, provided their total fractional
-variance is \(o(m^2)\).  A vanishing fraction of exceptional rows is allowed.
-It is not yet proved to be a strict reduction of
-the complete convergence problem, because constructing the weighted outer
-profile may retain the hard universal Boolean quantifier.
+variance is \(o(m^2)\).  However, it is **not a strict existential recovery
+reduction**.  Exact recovery implies weighted recovery by taking `W=A` and
+`V=0`; conversely (WR.B2)--(WR.B6) turn any sign-near weighted recovery into
+an exact recovery at the same orders with vanishing action and objective
+error.  The theorem is a useful rounding module, but constructing its weighted
+input has not removed an asymptotic recovery obligation.
+
+The information boundary is equally sharp.  For every fixed `epsilon>0`,
+`V(W)=o(n^2)` implies that all but `o(n^2)` entries satisfy
+`|w_ij|>1-epsilon`; the signs of those entries reveal an almost complete sign
+skeleton.  Thus a sign-near weighted state is not inherently a compressed
+description of the target signing.
 
 The variance threshold precisely excludes the archived naive blow-ups.  A
 block bias of order \(k^{-1/2}\) leaves \(1-w_{ij}^2=\Theta(1)\) on a positive
@@ -342,8 +418,34 @@ conditioning argument therefore cannot produce the weighted target in
 (WR.9).  This does not obstruct a deterministic construction or a deliberately
 quadratic-cost microcanonical ensemble.
 
+In fact the cost is asymptotically maximal.  Put `delta_e=1-w_e^2` and let
+`h` be binary entropy in natural logarithms.  The minority marginal
+probability is `(1-|w_e|)/2<=delta_e/2`.  Entropy subadditivity, monotonicity
+and concavity of `h`, and Jensen give
+
+```math
+\begin{aligned}
+H(\mu)
+&\le\sum_e h\left(\frac{1-|w_e|}{2}\right)
+ \le\sum_e h\left(\frac{\delta_e}{2}\right)\\
+&\le N h\left(\frac{V(W)}{2N}\right),\\
+D(\mu\|U)
+&\ge N\left[\log2-h\left(\frac{V(W)}{2N}\right)\right]. \tag{WR.13}
+\end{aligned}
+```
+
+Therefore `V(W)=o(N)` implies
+
+```math
+D(\mu\|U)\ge N\log2-o(N),
+\qquad H(\mu)=o(N).                                      \tag{WR.14}
+```
+
+At the `N=Theta(n^2)` edge scale, a sign-near barycenter identifies an
+almost complete global sign phase rather than a low-cost canonical tilt.
+
 Thus no rounding theorem can replace global sign-nearness by an unrestricted
-fractional input assumption.  The remaining mathematical target is now
-precise: realize the selected action object at sufficiently dense orders by
-weighted matrices whose total fractional variance is \(o(n^2)\), without
-first knowing a target-order optimizer.
+fractional input assumption.  Sign-near rounding is now solved, but weighted
+recovery itself should not be advertised as a new architecture: it is an
+equivalent presentation of exact recovery unless an independent constructor
+uses the fractional representation in a provably simpler way.
