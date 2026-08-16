@@ -748,3 +748,749 @@ worst case.
 
 This is a simultaneous counterfactual-oracle theorem, not a space lower bound
 for approximating one ordinary Max-Cut value.
+
+## 7. Posterior width of an extremal response embedding
+
+Let a uniform latent parameter `A` range over `{-1,+1}^N`, and let all
+declared query answers be one vector
+
+```math
+R_A\in\mathcal Y,
+```
+
+where `mathcal Y` is a real Hilbert space (typically an `L^2` space of
+queries).  Define
+
+```math
+\Gamma(R)=\left\{\gamma\in[0,\infty)^N:
+ \sum_{e:a_e\ne b_e}\gamma_e
+ \le\|R_a-R_b\|^2\quad\text{for every }a,b\right\}, \tag{7.1}
+```
+
+and
+
+```math
+\kappa(R)=\min_{a\ne b}
+{\|R_a-R_b\|^2\over d_H(a,b)}.                     \tag{7.2}
+```
+
+Thus the constant vector with every coordinate `kappa(R)` belongs to
+`Gamma(R)`.  Put, in bits,
+
+```math
+g(v)=h_2\left({1-\sqrt{1-v}\over2}\right),
+\qquad 0\le v\le1.                                 \tag{7.3}
+```
+
+### Theorem 7.1 (posterior-width rate bound)
+
+Let `Z` be any randomized transcript and let a decoder output
+`Rhat_Z in mathcal Y`, with
+
+```math
+\Delta=\mathbb E\|R_A-\widehat R_Z\|^2.
+```
+
+For every `gamma in Gamma(R)`,
+
+```math
+I(A;Z)\ge N-
+\max\left\{
+ \sum_e g(v_e):
+ 0\le v_e\le1,
+ \sum_e\gamma_ev_e\le4\Delta
+\right\}.                                         \tag{7.4}
+```
+
+In particular,
+
+```math
+I(A;Z)\ge
+N\left[1-g\left(
+\min\left\{{4\Delta\over\kappa(R)N},1\right\}
+\right)\right].                                   \tag{7.5}
+```
+
+The geometric constant has the exact posterior interpretation
+
+```math
+\inf_\pi
+{\operatorname{Var}_\pi(R_A)\over
+ \sum_e\operatorname{Var}_\pi(A_e)}
+={\kappa(R)\over4},                                \tag{7.6}
+```
+
+where the infimum excludes a zero denominator.
+
+#### Proof
+
+For independent posterior draws `A,A'`, the Hilbert variance identity and
+(7.1) give
+
+```math
+\operatorname{Var}_\pi(R_A)
+={1\over2}\mathbb E\|R_A-R_{A'}\|^2
+\ge {1\over4}\sum_e\gamma_e
+       \operatorname{Var}_\pi(A_e).                \tag{7.7}
+```
+
+Taking a posterior supported equally on a pair attaining (7.2) proves
+(7.6).  Conditional means minimize squared Hilbert loss, so (7.7), applied
+given `Z`, implies
+
+```math
+4\Delta\ge\sum_e\gamma_e
+  \mathbb E\operatorname{Var}(A_e\mid Z).           \tag{7.8}
+```
+
+For a sign of posterior mean `w`, its variance is `v=1-w^2` and its entropy
+is exactly `g(v)`.  Direct differentiation shows that `g` is increasing and
+concave.  Entropy subadditivity followed by Jensen therefore gives
+
+```math
+H(A\mid Z)\le
+\sum_e g\bigl(\mathbb E\operatorname{Var}(A_e\mid Z)\bigr).
+```
+
+The actual variance vector is feasible in (7.4), proving it.  For constant
+weights `gamma_e=kappa(R)`, a final Jensen step gives (7.5). `square`
+
+The bound is sharp under only its geometric hypothesis.  For
+`R_a=(sqrt(gamma_e)a_e/2)_e`, independent binary symmetric channels attain
+equality in the weighted envelope.
+
+### Corollary 7.2 (four exact response moduli)
+
+The same theorem gives the following independently audited cases.
+
+1. For the shifted quadratic family (5.2), with uniform pinning directions,
+
+   ```math
+   \kappa=4a^2.
+   ```
+
+   Orthogonality of degree-two Walsh characters gives the lower bound; a
+   one-vertex switching changes `n-1` signs without changing the maximum and
+   gives equality.  Consequently (7.5) strengthens Theorem 5.2 to the sharp
+   curve `N[1-g(Delta/(a^2N))]`, nonzero for
+   `Delta<a^2N`.
+2. Let `K=2^m`, fix one anchor in the Hamming cube, and let the other `K-1`
+   membership bits specify an arbitrary nonempty code.  The uniformly rooted
+   nearest-code response has
+
+   ```math
+   \kappa={1\over K}.
+   ```
+
+   A changed membership root changes its distance by at least one; deleting
+   one word from the full cube attains equality.  Thus any fixed per-root MSE
+   below `1/4` costs `Theta(K)` bits for all sufficiently large `m`.
+3. For a uniform binary `Q` by `Q` boundary kernel, endpoint-pinning queries
+   return its entries and
+
+   ```math
+   \kappa={1\over Q^2},
+   \qquad
+   I(A;Z)\ge Q^2[1-g(\min\{4\Delta,1\})],           \tag{7.9}
+   ```
+
+   where `Delta` is uniform per-entry MSE.  The curve is sharp.  This is a
+   Bayesian lossy extension of the deterministic `Q^2`-bit separator packing
+   bound, not a claim about a restricted kernel semigroup.
+4. For the uncentered Max-Cut landscape of a graph with independent edge
+   bits, viewed under a uniform random spin query,
+
+   ```math
+   \kappa={1\over4}\qquad(n\ge3).
+   ```
+
+   Indeed, if the signed edge differences are `c_e in {-1,0,1}`, Walsh
+   orthogonality gives squared response distance
+   `((sum_e c_e)^2+|supp(c)|)/4`.  Dividing by the changed-edge count is at
+   least `1/4`, with equality when one edge is added and another removed.
+   Thus Theorem 7.1 also supplies a continuous information converse for
+   counterfactual cut-value responses.  (At `n=2` the modulus is `1/2`.)
+
+### Theorem 7.3 (orthogonal composition and its boundary)
+
+For response maps `R,S` and positive scales `alpha,beta`,
+
+```math
+\Gamma(\alpha R\oplus\beta S)
+=\alpha^2\Gamma(R)\times\beta^2\Gamma(S),          \tag{7.10}
+```
+
+and
+
+```math
+\kappa(\alpha R\oplus\beta S)
+=\min\{\alpha^2\kappa(R),\beta^2\kappa(S)\}.      \tag{7.11}
+```
+
+#### Proof
+
+Squared Hilbert distances add.  This proves sufficiency of the product
+certificates.  Freeze one latent block at a time to prove necessity.  The
+formula for `kappa` follows by taking a weighted average of the two child
+ratios and then varying only the smaller child. `square`
+
+Orthogonality is essential.  Same-space addition introduces the cross Gram
+term `2<Delta R,Delta S>`; two one-bit children with identical `Gamma=[0,4]`
+can either remain orthogonal or cancel at the parent.  Therefore `Gamma` is a
+sharp information certificate for a fixed response embedding, not by itself
+a reusable state under arbitrary composition.
+
+## 8. A syndrome-rooted code feature algebra
+
+Fix a labeled group `G=F_2^w`.  Let `H` be a full-row-rank binary parity-check
+fragment with nonzero columns, and define
+
+```math
+C_H=\ker H,
+\qquad
+\lambda_H(s)=\min\{\operatorname{wt}(e):He=s\},
+\qquad s\in G.                                     \tag{8.1}
+```
+
+For a future fragment `E` over the same interface, query
+
+```math
+\mathcal R_H(E)=\rho(\ker[H\ E]).                  \tag{8.2}
+```
+
+### Theorem 8.1 (exact syndrome response algebra)
+
+Let `S_H` be the set of distinct nonzero column types of `H`.  Then:
+
+```math
+d(x,C_H)=\lambda_H(Hx),
+\qquad
+\rho(C_H)=\max_{s\in G}\lambda_H(s);               \tag{8.3}
+```
+
+```math
+s\in S_H\quad\Longleftrightarrow\quad
+\lambda_H(s)=1\qquad(s\ne0);                      \tag{8.4}
+```
+
+and concatenation obeys
+
+```math
+\lambda_{[H_1\ H_2]}(s)
+=\min_{u\in G}
+ \{\lambda_{H_1}(u)+\lambda_{H_2}(s+u)\}.          \tag{8.5}
+```
+
+Equivalently, `S_[H_1 H_2]=S_H1 union S_H2`.  For `w>=2`, `lambda_H` is,
+up to injective recoding, the coarsest exact deterministic quotient for all
+unrestricted future responses (8.2).
+
+#### Proof
+
+A correction sends `x` into `C_H` exactly when `He=Hx`, proving (8.3); full
+row rank makes every syndrome occur.  A shortest correction never uses two
+coordinates with the same column type, because deleting both preserves its
+binary syndrome and lowers its weight.  Hence `lambda_H` depends only on
+`S_H`, and its level-one set recovers `S_H`, proving (8.4).
+
+Split a correction for `[H_1 H_2]` between the two blocks and condition on
+the first syndrome.  This proves (8.5), associativity, and the support-union
+law.
+
+For operational minimality, for each nonzero `s` append the fixed fragment
+`E_s` containing every nonzero column type except `s`.  It has `2^w-2`
+columns and depends only on the declared apparatus.  The composite radius is
+
+```math
+\mathcal R_H(E_s)=
+\begin{cases}
+1,&s\in S_H,\\
+2,&s\notin S_H.
+\end{cases}                                        \tag{8.6}
+```
+
+In the second case write `s=u+(s+u)` with
+`u notin {0,s}`.  Thus the complete future response recovers every support
+bit, while (8.5) computes every future response from the profile. `square`
+
+This quotient forgets duplicate columns and codeword geometry.  It is not
+sufficient for named punctures, coordinate weights, finite-temperature
+counts, or an incompatible syndrome labeling.
+
+### Theorem 8.2 (worst-case response information)
+
+For every `w>=2`, the deterministic message complexity of answering all
+(8.2) with uniform additive error below `1/2` is `Theta(2^w)` bits.  More
+precisely, it lies between
+
+```math
+2^w-1-w-\log_2(2^w-w)
+```
+
+and `2^w-1`.
+
+#### Proof
+
+The support indicator gives the upper bound.  Fix a basis of `G`, let
+`N=2^w-1-w`, and add every `floor(N/2)`-subset of the nonbasis nonzero
+types.  These full-rank fragments all have length `Theta(2^w)`.  The queries
+(8.6) separate any two response vectors by one, so error below `1/2` requires
+distinct messages.  Finally,
+
+```math
+\binom N{\lfloor N/2\rfloor}\ge {2^N\over N+1}.
+```
+
+Taking logarithms proves the lower bound. `square`
+
+The statement is at unnormalized integer-lattice scale and does not imply an
+exponential rate for `poly(w)`-length fragments or additive error
+proportional to `w`.
+
+### Theorem 8.3 (positive macroscopic syndrome-response rate)
+
+Fix `L>=2`, put `w=Lq`, and decompose
+
+```math
+G=V_1\oplus\cdots\oplus V_q,
+\qquad V_j\simeq\mathbb F_2^L.
+```
+
+In each block let `B_j` be a basis and `D_j=V_j\setminus{0}`.  For
+`a in {0,1}^q`, let the column-type support of `H_a` use `B_j` when `a_j=0`
+and `D_j` when `a_j=1`.  Repeating basis columns makes every `H_a` full rank
+and of the same length `q(2^L-1)`.  For `P subset [q]`, append the valid
+full-rank fragment `E_P` whose block support is `B_j` on `P` and `D_j` off
+`P`.  Then
+
+```math
+\boxed{
+\mathcal R_{H_a}(E_P)
+=q+(L-1)|\{j\in P:a_j=0\}|.}                     \tag{8.7}
+```
+
+Consequently
+
+```math
+\max_P|\mathcal R_{H_a}(E_P)-\mathcal R_{H_b}(E_P)|
+=(L-1)\max\{N_{01}(a,b),N_{10}(a,b)\}
+\ge {L-1\over2}d_H(a,b).                         \tag{8.8}
+```
+
+If a deterministic summary answers every unrestricted future-fragment query
+on this family with uniform error at most `eta`, then, for every `1<=d<=q`
+such that
+
+```math
+2\eta<(L-1)\left\lceil{d\over2}\right\rceil,
+```
+
+its worst-case message length is at least
+
+```math
+q-\log_2\left(\sum_{i=0}^{d-1}\binom qi\right).   \tag{8.9}
+```
+
+In particular, for every fixed `epsilon<1/8`, there is
+`c_epsilon>0` and an infinite sequence of widths for which error
+`eta=epsilon*w` requires at least `c_epsilon*w` bits, even though all state
+and query fragments have length `Theta_epsilon(w)`.  The latent vector `a`
+itself is a matching `O(w)`-bit exact state for **all** future-fragment
+responses on this family.  Thus its normalized response complexity is
+`Theta_epsilon(w)` on this block source family.  The upper bound is not a
+claim about arbitrary syndrome supports; it answers every unrestricted
+future query only after the source has been restricted to the displayed
+family.
+
+#### Proof
+
+Word length and covering radius add over the direct summands.  A basis block
+has radius `L`, while a block containing every nonzero vector has radius one.
+In `H_a` concatenated with `E_P`, a block remains a basis block exactly when
+`j in P` and `a_j=0`, proving (8.7).  Maximizing the difference over `P`
+selects either directed set difference between the zero coordinates of `a`
+and `b`, proving (8.8).
+
+A greedy binary Hamming packing of minimum distance `d` has size at least
+
+```math
+{2^q\over\sum_{i=0}^{d-1}\binom qi}.
+```
+
+Equation (8.8) and the decoder triangle inequality make distinct packing
+points require distinct messages, proving (8.9).  For the asymptotic claim,
+choose constants `delta<1/2` and `L` with
+
+```math
+\epsilon<{\delta(L-1)\over4L},
+```
+
+take `d=ceil(delta*q)`, and use the binary entropy estimate for the Hamming
+ball.  Such constants exist for every `epsilon<1/8`; for example first take
+`L>1/(1-8epsilon)` and then
+`4epsilon*L/(L-1)<delta<1/2`.  Finally, `a` reconstructs the support of
+`H_a`, which computes every response by (8.5). `square`
+
+This theorem is macroscopic but deliberately restricted.  It proves only a
+linear information rate on a block family; it neither proves
+`Theta(2^w)` normalized complexity for arbitrary supports nor rules out a
+subexponential approximate quotient of the full syndrome-support space.  The
+strict forgetting property of the syndrome-support state itself is supplied
+separately by Theorem 8.1 and the nonisometric duplicate-column examples.
+The response formula and metric were exhaustively checked in five small cases
+by
+[`verify_phase2_normalized_code_rate_distortion.py`](experiments/verify_phase2_normalized_code_rate_distortion.py).
+
+## 9. Finite deterministic synchronization
+
+Let `Omega` be finite, let `E=binom(Omega,2)`, and let species overlaps
+`R_s:E->[0,1]` have positive weights `lambda_s` summing to one.  Put
+
+```math
+q(e)=\sum_s\lambda_sR_s(e)                          \tag{9.1}
+```
+
+and define the cancellation defect
+
+```math
+\mathfrak c(e,f)=
+\sum_s\lambda_s|R_s(e)-R_s(f)|-|q(e)-q(f)|.        \tag{9.2}
+```
+
+It is twice the smaller of the total upward and downward species movements.
+
+### Proposition 9.1 (uniform cancellation implies synchronization)
+
+If `sup_(e,f) mathfrak c(e,f)<=delta`, then for every species there is a
+nondecreasing `1/lambda_s`-Lipschitz function `L_s` such that
+
+```math
+\max_e|R_s(e)-L_s(q(e))|
+\le {\delta\over2\lambda_s}.                       \tag{9.3}
+```
+
+#### Proof
+
+If `q(e)-q(f)=P-N`, where `P,N` are the weighted positive and negative
+species movements, then `mathfrak c=2 min(P,N)`.  Hence
+
+```math
+R_s(e)-R_s(f)
+\le{(q(e)-q(f))_++\delta/2\over\lambda_s}.         \tag{9.4}
+```
+
+The isotonic envelope
+
+```math
+L_s(p)=\inf_f\left\{R_s(f)+{(p-q(f))_+\over\lambda_s}\right\} \tag{9.5}
+```
+
+is nondecreasing and `1/lambda_s`-Lipschitz.  Equation (9.4), together with
+the term `f=e`, sandwiches `L_s(q(e))` within the error in (9.3).  Clipping
+to `[0,1]` does not increase it. `square`
+
+A kernel `K` is `eta`-ultrametric when
+
+```math
+K(y,z)\ge\min\{K(x,y),K(x,z)\}-\eta                \tag{9.6}
+```
+
+for every triple of distinct states.  Two pair labels are adjacent if they
+share a state.  Call `q` `(D,tau)`-monotone-linked if, whenever
+`q(e)<=q(f)`, an adjacent path of length at most `D` joins them and its total
+downward `q`-variation is at most `tau`.
+
+### Theorem 9.2 (ultrametricity plus cross-root linkage)
+
+Assume every `R_s` and every `R_s+R_t` for distinct species is
+`eta`-ultrametric, and assume `q` is `(D,tau)`-monotone-linked.  Then the
+functions in Proposition 9.1 can be chosen so that
+
+```math
+\boxed{
+\max_e|R_s(e)-L_s(q(e))|
+\le {\tau+3D\eta\over\lambda_s}.}                  \tag{9.7}
+```
+
+#### Proof
+
+On two adjacent pair labels, opposite movements larger than `3eta` in two
+species contradict ultrametricity of their sum: the third triangle edge is
+within one `eta` of each lower endpoint, leaving the sum short by another
+`eta`.  It follows that every adjacent step has cancellation defect at most
+`6eta`.
+
+Along a path, the triangle inequality adds these local defects.  A downward
+increment is paid twice when comparing total variation with net `q` change.
+Thus arbitrary endpoints have
+
+```math
+\mathfrak c(e,f)\le2\tau+6D\eta.                   \tag{9.8}
+```
+
+Apply Proposition 9.1 with this value of `delta`. `square`
+
+### Corollary 9.3 (uniform zero-temperature control)
+
+If a coupling potential satisfies
+
+```math
+|\Psi(r)-\Psi(r')|\le\sum_s\kappa_s|r_s-r'_s|,
+```
+
+then replacing every species profile by `(L_s(q))_s` changes
+
+```math
+\max_e\{G(e)+\Psi((R_s(e))_s)\}
+```
+
+by at most
+
+```math
+(\tau+3D\eta)\sum_s{\kappa_s\over\lambda_s}.       \tag{9.9}
+```
+
+This is a pointwise maximum estimate, not an averaged Gibbs statement.  The
+cross-root linkage is substantive: PSD, weak exchangeability, ultrametricity
+of every nonnegative species mixture, and even vanishing conditional
+variance do not imply it; the matching counterexample is recorded in
+[`examples.md`](examples.md).
+
+### Corollary 9.4 (query-restricted exposed carrier)
+
+Let `A subset E`, and let `H` be a subgraph of the pair-label line graph.
+Assume every edge `ef` of `H` has
+
+```math
+\mathfrak c(e,f)\le\zeta,                          \tag{9.10}
+```
+
+and every ordered `e,f in A` with `q(e)<=q(f)` is joined in `H` by a path of
+length at most `D` and total downward `q`-variation at most `tau`.  Then there
+are nondecreasing `1/lambda_s`-Lipschitz functions `L_s` on the range `q(A)`
+such that
+
+```math
+\max_{e\in A}|R_s(e)-L_s(q(e))|
+\le {\tau+D\zeta/2\over\lambda_s}.                \tag{9.11}
+```
+
+Now let `G:E->R`, and let every allowed potential `Psi` have oscillation at
+most `B` and satisfy
+
+```math
+|\Psi(r)-\Psi(r')|
+\le\sum_s\kappa_s|r_s-r_s'|.
+```
+
+The carrier
+
+```math
+A_B(G)=\{e:G(e)\ge\max_fG(f)-B\}                  \tag{9.12}
+```
+
+contains every maximizer of `G(e)+Psi((R_s(e))_s)`.  If the preceding path
+hypotheses hold for `A=A_B(G)`, replacing the species profiles by
+`(L_s(q))_s` and maximizing only on that carrier changes every allowed optimum
+by at most
+
+```math
+(\tau+D\zeta/2)\sum_s{\kappa_s\over\lambda_s}.    \tag{9.13}
+```
+
+#### Proof
+
+Along an allowed path, summing the local defects and paying each downward
+increment twice gives
+
+```math
+\mathfrak c(e,f)\le2\tau+D\zeta
+\qquad(e,f\in A).
+```
+
+The isotonic-envelope proof of Proposition 9.1 restricted to `A` gives
+(9.11).  A point outside (9.12) loses more than `B` in base score and can gain
+at most `B` from the potential relative to a maximizer of `G`, so it cannot
+win.  The pointwise Lipschitz bound on the common carrier then gives (9.13).
+`square`
+
+This is strictly weaker than global linkage: the rare-matching example can
+have a two-label carrier satisfying (9.10)--(9.12) exactly while an arbitrarily
+large unexposed fibre is disconnected.  The carrier is noncircular—it depends
+only on `G` and the declared oscillation budget—but need not be succinct to
+compute.  If the individual and pairwise-sum ultrametric inequalities hold
+only on triangles traversed by `H`, the local no-crossing proof gives
+`zeta=6eta`, recovering the error `tau+3D*eta` without global
+ultrametricity.
+
+## 10. Composition can amortize nonconvexity
+
+Let nonempty compact component response sets `E_i subset R^p` compose by
+Minkowski addition.  Put
+
+```math
+E=E_1+\cdots+E_n,
+\qquad
+K=\operatorname{conv}E
+ =\operatorname{conv}E_1+\cdots+\operatorname{conv}E_n, \tag{10.1}
+```
+
+and let
+
+```math
+r=\dim\operatorname{span}\bigcup_i(E_i-E_i).        \tag{10.2}
+```
+
+Write the component diameters in decreasing order as
+`Delta_1>=...>=Delta_n` in any fixed norm.
+
+### Theorem 10.1 (Shapley--Folkman response bound)
+
+```math
+d_H(E,K)\le\sum_{i=1}^{\min(r,n)}\Delta_i.          \tag{10.3}
+```
+
+Consequently every `L`-Lipschitz aggregate query satisfies
+
+```math
+\left|\sup_{e\in E}\Psi(e)-\sup_{z\in K}\Psi(z)\right|
+\le L\sum_{i=1}^{\min(r,n)}\Delta_i,               \tag{10.4}
+```
+
+and likewise for infima.
+
+#### Proof
+
+After translating one point from each component, all affine differences lie
+in the `r`-dimensional space (10.2).  The Shapley--Folkman lemma represents
+every `z in K` with all but at most `r` summands in the original `E_i`; only
+the exceptional summands need lie in their convex hulls.  Replace each
+exceptional summand by a point of its component.  The displacement is at most
+the sum of their diameters, bounded by (10.3).  Since `E subset K`, this is
+the Hausdorff bound.  Lipschitz continuity gives (10.4). `square`
+
+The imported lemma originates in Starr's appendix to
+[*Quasi-Equilibria in Markets with Non-Convex
+Preferences*](https://doi.org/10.2307/1909201) (1969).  Equations
+(10.3)--(10.4) are its response-theoretic specialization, not a claim of a
+new convexity theorem.
+
+### Corollary 10.2 (fixed-rank vector balancing)
+
+For vectors `v_i` in a normed space, let
+
+```math
+S(V)=\left\{\sum_i\epsilon_iv_i:\epsilon_i\in\{-1,+1\}\right\},
+\qquad
+Z(V)=\sum_i[-v_i,v_i].                              \tag{10.5}
+```
+
+If `r=dim span{v_i}` and the norms `a_i=||v_i||` are decreasing, then
+
+```math
+d_H(S(V),Z(V))\le\sum_{i=1}^{\min(r,n)}a_i.         \tag{10.6}
+```
+
+Thus, uniformly in every target `t`,
+
+```math
+0\le
+\min_{s\in S(V)}\|t-s\|-\operatorname{dist}(t,Z(V))
+\le\sum_{i=1}^{\min(r,n)}a_i.                     \tag{10.7}
+```
+
+#### Proof
+
+For `z=sum_i t_i v_i in Z(V)`, choose an extreme coefficient vector in the
+fibre `{t in [-1,1]^n:sum_i t_i v_i=z}`.  At most `r` coordinates are
+fractional.  Round each to its nearer sign; its displacement is at most
+`||v_i||`.  This proves (10.6), and the triangle inequality gives (10.7).
+`square`
+
+For fixed `r` and bounded vector norms, the error is independent of the
+number of composed components and therefore subextensive.  The state is
+succinct for zonotope/generator or other controlled convex-body
+representations; an arbitrary compact convex body can itself have high
+description complexity.  Growing dimension is a genuine obstruction: two
+vector families can have the same zonotope but an `ell_1` discrepancy gap
+linear in `r`, as recorded in [`examples.md`](examples.md).
+
+## 11. Robust tropical feature growth
+
+The min-plus factorization rank of a finite matrix `M` is the least `k` such
+that
+
+```math
+M(x,y)=\min_{t\le k}\{u_t(x)+v_t(y)\}.              \tag{11.1}
+```
+
+### Theorem 11.1 (robust tropical crossing bound)
+
+Suppose `M` has distinguished cells `(x_i,y_i)`, `1<=i<=r`, and `G>0`
+such that, for all `i!=j`,
+
+```math
+M(x_i,y_j)+M(x_j,y_i)
+-M(x_i,y_i)-M(x_j,y_j)\ge G.                       \tag{11.2}
+```
+
+Every `Mtilde` with
+
+```math
+\|M-\widetilde M\|_\infty<G/4                     \tag{11.3}
+```
+
+has min-plus factorization rank at least `r`.
+
+#### Proof
+
+Every factor term majorizes the represented matrix, and one term is tight at
+each distinguished cell.  If the same term were tight at cells `i,j`, its
+separability would give
+
+```math
+\widetilde M(x_i,y_i)+\widetilde M(x_j,y_j)
+\ge
+\widetilde M(x_i,y_j)+\widetilde M(x_j,y_i).
+```
+
+The right side minus the left is at least
+`G-4||M-Mtilde||_infinity>0`, a contradiction.  Distinct cells therefore
+require distinct tight terms. `square`
+
+The constant is sharp for this hypothesis: the matrix with diagonal zero and
+off-diagonal one at order two is within `1/2=G/4` of the rank-one constant
+matrix.
+
+### Corollary 11.2 (stable code trellis channels at lattice scale)
+
+For a binary linear code `C subset F_2^m` and a coordinate split `L sqcup R`,
+put
+
+```math
+W(x_L,x_R)=d((x_L,x_R),C),
+\qquad
+s=\dim C-\dim C_L-\dim C_R.                        \tag{11.4}
+```
+
+Then, for every `0<=epsilon<1/2`,
+
+```math
+\min_{\|\widetilde W-W\|_\infty\le\epsilon}
+\operatorname{rank}_{\min,+}(\widetilde W)=2^s.    \tag{11.5}
+```
+
+#### Proof
+
+Sheshadri's exact theorem gives rank `2^s` and constructs a `2^s` square
+submatrix with zero diagonal and all off-diagonal entries at least one.
+Theorem 11.1 applies with `G=2`; taking `Mtilde=W` gives the matching upper
+bound. `square`
+
+The imported exact theorem is K. Sheshadri,
+[*Trellis State Complexity as an Exact Tropical Factorization
+Rank*](https://arxiv.org/abs/2607.23471) (2026).  The robust corollary is an
+elementary project deduction; it was independently audited and is not stated
+in that preprint.  Its scope is narrow but exact: after dividing distances by
+block length `m`, the protected error is only `1/(2m)`.  It gives no
+macroscopic or average-error lower bound.

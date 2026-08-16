@@ -54,6 +54,32 @@ These results force the current candidate concept: a summary must be declared
 relative to the **query interface** through which a future environment can
 interrogate the landscape.
 
+The second investigation tested whether that principle generates mathematics
+rather than only terminology.  It produced three core project-level results:
+
+1. a sharp posterior-width information inequality for an arbitrary Boolean-
+   indexed Hilbert response embedding, with exact applications to quadratic
+   responses, nearest-code responses, Max-Cut, and boundary kernels;
+2. a syndrome-support semilattice for binary parity-check fragments: it is a
+   strict quotient of the code, composes exactly under concatenation, answers
+   every unrestricted appended-fragment covering-radius query, and has sharp
+   worst-case exact response complexity `Theta(2^w)` bits.  A block-direct-sum
+   subfamily also has a positive macroscopic rate: for every fixed
+   `epsilon<1/8`, error `epsilon*w` requires `Omega_epsilon(w)` bits, matched
+   by an `O(w)` exact state on that family; and
+3. a finite deterministic synchronization theorem: approximate mixture
+   ultrametricity plus a cross-root monotone-linkage condition forces every
+   species overlap to be a uniformly controlled scalar function of total
+   overlap.  A rare-fibre construction proves that averaged conditional
+   variance cannot replace the linkage condition at zero temperature.
+
+Two additional boundaries are now quantitative.  Shapley--Folkman
+convexification controls all Lipschitz aggregate queries when the effective
+response rank is fixed, but a same-zonotope example has a leading discrepancy
+gap when that rank grows.  Four-cell tropical crossings protect exact channel
+count at lattice-scale uniform error, but canonical code transversals lose
+exponentially all such exposure under diffuse normalized mean-square queries.
+
 ## Candidate object: the upper response roof
 
 For a finite landscape `H:Omega -> R` and a declared feature map
@@ -136,18 +162,24 @@ The selected architecture is the combination of:
 3. a declared feature algebra whose closure determines whether composition is
    possible without resurrecting discarded states.
 
-This selection is evidence-based rather than terminological.  It has an exact
-composition theorem, a non-amplifying distortion inequality, a true
-polynomial-state application, and sharp counterexamples outside its closure
-class.  The rooted code profile is the strongest competing object, but all
-labeled nearest-code responses recover the code itself, so it is currently an
-obstruction laboratory rather than a compression architecture.
+This selection is evidence-based rather than terminological.  The framework
+is now **Level 3 locally but Level 2 globally**.  It is locally generative
+because the posterior-width inequality, syndrome-support quotient, and finite
+synchronization theorem formulate and prove conclusions that were unavailable
+from the roof alone.  It is not yet a unified theory because those results
+close for different reasons—Hilbert separation, binary syndrome cancellation,
+and scalar order/linkage—and none of their states survives all three kinds of
+composition.
 
-The architecture should be abandoned or substantially revised if two further
-checkpoints fail to produce either a bounded-information closure theorem for
-a second nontrivial model or a scalable lower bound relating response error to
-feature-algebra growth.  It should not be enlarged mechanically until it
-stores every state.
+The syndrome-support quotient supplies the requested second exact composable
+state beyond fixed-rank mean field and is demonstrably smaller than the full
+code landscape.  The second checkpoint passed: direct-sum block queries
+aggregate many support effects into one covering radius and prove a linear
+information law at macroscopic error using only linear-length fragments.  The
+single selected next target is now the unrestricted-support dichotomy at that
+scale: either construct a subexponential-in-`2^w` approximate quotient, or a
+superlinear/macroscopic packing that does not rely on a supplied direct-sum
+decomposition.
 
 ## Extremal rate--distortion
 
@@ -255,6 +287,9 @@ only after it has all of the following:
    the required bridge queries; and
 4. a constrained compactness/realization theorem for that state.
 
-Items 1 and 2 now exist.  Item 3 exists only for restricted interfaces, and
-item 4 exists only for unrestricted finite landscapes at fixed interface
-dimension.  Those are the present mathematical boundaries.
+Items 1--3 now exist for restricted models: fixed-rank mean field, bounded
+separators, fixed-label syndrome fragments, and fixed-effective-rank additive
+response sets.  Item 4 exists only for unrestricted finite landscapes at
+fixed interface dimension.  None of these states yet closes the dense-sign
+bridge interface, so this campaign does not reconnect to the motivating
+problem.

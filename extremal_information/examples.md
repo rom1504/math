@@ -20,6 +20,13 @@ and permitted relabelings have been declared.
 | One action profile without uniform integrability | weak profile laws | an archived scalable pair has vanishing action distance but separated caps | tail control for the energy observable | Imported proved repository construction |
 | Sign-near posterior barycenter | almost every edge sign | it permits terminal rounding with negligible cap error | it forgets little: obtaining it costs `binom(n,2)-o(n^2)` bits | Imported/proved information converse |
 | Full pinning response roof | every optimum after a linear spin field | it recovers `H(x)` at every cube vertex | nothing relevant; it is the full landscape | Proved |
+| Outer code distance spectrum | every root-averaged distance pressure | equal spectra can have appended-fragment radii `2` and `1` | alignment of distance layers with the syndrome group | Proved/exactly checked |
+| Vanishing conditional species variance | average prediction from total overlap | a rare matching fibre keeps response error `rho/2` | uniform cross-root calibration on exposed fibres | Proved |
+| Child response-separation polytopes | posterior width of each retained channel | same-space addition can cancel completely; max-plus gluing can make `Gamma={0}` | relative displacement/cross-Gram geometry | Proved |
+| Convex signed-sum roof | every linear support query | identical zonotopes can have discrepancy gap `2d` | holes in a growing-dimensional reachable set | Proved |
+| Exact tropical factor rank | separable channel count under uniform lattice-scale error | rank `r` can have rank-one normalized MSE `1/r` | query mass of the exposed anchors | Proved |
+| Canonical code-transversal crossings | exponential exact channel count and raw sub-half-unit robustness | the graph-code table has rank-one normalized MSE `1/(16t)` | a positive-density joint witness, rather than a zero-density transversal | Proved |
+| Syndrome block state | basis-versus-dense generator choices in `Theta(w)` direct-sum blocks | subset-selecting future fragments give `Omega(w)` response separation and a linear information rate | complexity beyond an explicitly supplied block decomposition | Proved |
 
 The complete evidence cards, including normalizations and archive locations,
 are in
@@ -209,3 +216,144 @@ The first is enough to recover a quadratic maximum from upper-tail entropy.
 The second is needed by the explicit block and code queries.  Whether the
 third can be compressed without rebuilding the whole landscape is the main
 open structural question.
+
+## Example 6: equal outer spectra, different fibre composition
+
+Over `G=F_2^3`, take parity-check column lists
+
+```math
+H_A=(1,2,3,4),
+\qquad H_B=(1,2,4,7).
+```
+
+Their syndrome coset-leader profiles are
+
+```math
+(0,1,1,1,1,2,2,2),
+\qquad(0,1,1,2,1,2,2,1).
+```
+
+Both have histogram `(1,4,3)` and their two-word kernels therefore have the
+same complete outer polynomial
+
+```math
+2+8z+6z^2.
+```
+
+Append the same full-rank fragment `E=(1,3,5,6)`.  The first union of column
+types omits syndrome seven and has covering radius two; the second contains
+all seven nonzero types and has radius one.  The root-averaged pressure state
+forgot the group label on each distance layer.  The labeled syndrome profile
+repairs the composition without reconstructing the code or its full root
+table.  The exhaustive check is in
+[`phase2_code_syndrome_profiles_results.json`](experiments/phase2_code_syndrome_profiles_results.json).
+
+## Example 7: average synchronization misses an exposed fibre
+
+On `2m` states, choose a perfect matching.  Let `R_1` equal `rho` on one
+matching edge and zero on all other off-diagonal pairs; let `R_2` equal
+`rho` on the other matching edges and zero elsewhere.  Give both kernels
+diagonal one.  They are PSD, every nonnegative mixture is exactly
+ultrametric, and i.i.d. sampling gives weakly exchangeable Gram arrays.
+
+For `q=(R_1+R_2)/2`, conditional variance on the matching fibre is
+
+```math
+{\rho^2\over m}\left(1-{1\over m}\right)\longrightarrow0.
+```
+
+Nevertheless that fibre contains both species-one values `rho` and zero, so
+every scalar predictor `L(q)` has uniform error at least `rho/2`.  The two
+signed zero-temperature queries expose the same gap.  The fibre is a set of
+disconnected matching edges: local ultrametric no-crossing holds, while the
+cross-root linkage in Theorem 9.2 fails exactly.
+
+## Example 8: a convex roof can forget leading discrepancy
+
+For every coordinate `j<=d`, compare vector pairs
+
+```math
+A_j=(2e_j,2e_j),
+\qquad B_j=(3e_j,e_j).
+```
+
+Their concatenations have the identical zonotope `[-4,4]^d`, so every linear
+support response agrees.  Yet
+
+```math
+\min_{s\in S(A)}\|s\|_1=0,
+\qquad
+\min_{s\in S(B)}\|s\|_1=2d.
+```
+
+The Shapley--Folkman response bound is therefore intrinsically
+effective-dimension dependent.  In fixed dimension its error is
+subextensive; when dimension grows with the number of summands, the holes can
+carry a leading extremal gap.
+
+## Example 9: uniform tropical robustness versus average erasure
+
+Let `D_r` have zero diagonal and every off-diagonal entry one.  Its diagonal
+crossing set proves min-plus rank `r`, and Theorem 11.1 shows that every
+uniform approximation within error below `1/2` still needs at least `r`
+terms.  The rank-one all-one matrix, however, differs only on the diagonal:
+
+```math
+{1\over r^2}\|D_r-\mathbf1\|_F^2={1\over r}\to0.
+```
+
+Thus neither exact rank nor a uniform fooling-set gap implies an average-loss
+lower bound.  The query law must give quantitative mass to witnesses that
+remain monochromatic under every small-channel factor assignment.
+
+## Example 10: exponential code rank with vanishing diffuse error
+
+Let
+
+```math
+C_t=\{(z,z):z\in\mathbb F_2^t\}
+```
+
+and split its `2t` coordinates into the two displayed blocks.  Its normalized
+conditional distance table is
+
+```math
+M_t(x,y)={d_H(x,y)\over2t}.
+```
+
+The exact min-plus rank is `2^t`, and the canonical transversal crossing set
+remains rank-obstructing under raw uniform error below `1/(4t)` after this
+normalization.  Under independent uniform `x,y`, however,
+`d_H(x,y)` is `Binomial(t,1/2)`.  The rank-one constant table `1/4` therefore
+satisfies
+
+```math
+\mathbb E\left(M_t-{1\over4}\right)^2={1\over16t}\longrightarrow0.
+```
+
+The query-weighted four-cell certificate sees the same loss of mass: even for
+one channel and the complete transversal witness graph its value is exactly
+`2^{-t}/8`.  Thus exact algebraic size, uniform lattice-scale resolution, and
+diffuse normalized rate--distortion are genuinely different complexity
+coordinates.
+
+## Example 11: joint code queries amplify microscopic support bits
+
+Decompose `F_2^w` into `q=w/L` fixed `L`-dimensional blocks.  In each block a
+latent bit chooses either a basis, whose Cayley covering radius is `L`, or all
+nonzero vectors, whose radius is one.  A legal appended fragment indexed by
+`P subset [q]` leaves the basis choice visible exactly on the selected blocks.
+The resulting radius is
+
+```math
+q+(L-1)|\{j\in P:a_j=0\}|.
+```
+
+Thus a single query can coherently add any selected subset of the latent
+effects.  Hamming packings and the decoder triangle inequality imply that,
+for every fixed `epsilon<1/8`, uniformly answering all future-fragment radii
+within `epsilon*w` needs `Omega_epsilon(w)` bits on this family.  The latent
+block vector gives a matching `O(w)` exact state.  This is the positive
+counterpart to Example 10: query mass erased its pairwise transversal, while
+an algebraically legal joint query here sums the effects before distortion is
+paid.

@@ -191,9 +191,17 @@ contains a finite optimizer.
 | Upper response roof for a fixed interface | survives | exact duality and one-step composition theorems |
 | Full-spin response roof | rejected as compression | cube vertices recover every `H(x)` |
 | Query metric entropy | survives as information definition | exact packing/covering theorem and quadratic-rate example |
+| Posterior response width `Gamma(R)` | survives as a fixed-embedding rate certificate | gives a sharp mutual-information curve, but same-space cancellation destroys composition |
 | Bounded-dimensional universal state | rejected as a default assumption | scalable planted resonances evade fixed-arity tests |
-| Growing feature algebra | tentative | useful only with a proved entropy bound and closure law |
-| Deterministic Parisi-like overlap state | open | requires a deterministic synchronization mechanism, not vocabulary transfer |
+| Boundary response kernel | survives for bounded separators | coarsest exact quotient for all endpoint fields; its universal worst-case cost is quadratic in the boundary-state count |
+| Syndrome coset-leader profile | survives for fixed labeled binary syndrome interfaces | exact min-plus/union algebra, strict quotient of the code, sharp exact cost `Theta(2^w)` bits, and a positive macroscopic linear rate on a block family |
+| Root-averaged outer code spectrum | rejected for appended-fragment composition | equal outer polynomials can have different response to the same labeled future fragment |
+| Average conditional overlap variance | rejected for zero-temperature synchronization | rare exposed fibres can retain a fixed response gap |
+| Linked deterministic overlap profile | survives conditionally | mixture ultrametricity plus a checkable cross-root path condition gives uniform scalar synchronization |
+| Convex reachable body | survives approximately in fixed effective dimension | Shapley--Folkman makes nonconvexity cost at most the largest `r` component diameters; growing `r` can carry a leading gap |
+| Robust tropical crossing rank | survives at uniform lattice scale | a four-cell gap protects channel count, but can disappear in normalized mean-square loss |
+| Query-weighted tropical exposure | survives as a finite lower-bound certificate | it detects witness mass exactly; canonical code transversals make it exponentially small under diffuse queries |
+| Deterministic Parisi-like overlap state | narrowed | a finite synchronization theorem exists, but no natural deterministic hypothesis is yet known to force its cross-root linkage |
 
 ## 9. Ten questions every candidate must answer
 
@@ -215,14 +223,48 @@ exact polynomial-state dynamic program for fixed-rank Curie--Weiss/Potts-type
 mean-field ground states.  It does not yet answer them for growing bridge
 interfaces in dense sign matrices.
 
-## 10. A plausible next abstraction, not yet adopted
+## 10. Three distinct complexity coordinates
 
-Repeated composition suggests a **query-generated feature algebra**: begin
-with the observable seen by the environment, close it under the contractions
-created by allowed couplings, and measure the metric entropy of only the
-exposed response faces at each depth.  A synchronization theorem could make
-this algebra collapse; without one it may grow to the entire state table.
+The second investigation shows that “state size” is too coarse.  Three
+coordinates must be reported separately.
 
-This idea remains tentative until it yields either a bounded-complexity
-closure theorem or a scalable lower bound proving that such closure requires
-large information rate.
+1. **Exact algebraic size:** the number of labels needed for exact closure.
+   A boundary kernel has `Q^2` independent entries; a syndrome fragment over
+   `F_2^w` has `2^w-1` possible support bits.
+2. **Uniform response resolution:** the factor or covering complexity at a
+   declared sup-norm error.  Tropical crossings can protect the exact state
+   throughout a fixed lattice-scale neighborhood.
+3. **Query-weighted resolution:** the information or factor complexity under
+   a declared distribution of interventions.  Posterior width controls this
+   for Hilbert response embeddings; weighted tropical exposure controls one
+   class of factorized tables.  Uniform hardness need not survive here.
+
+These coordinates are inequivalent.  The graph-code distance table has
+exponential exact tropical rank and uniform robustness below one half unit,
+yet after normalization it has a rank-one approximation with vanishing
+uniform mean-square error.  A claim of extremal complexity must therefore
+state its query law and distortion scale.
+
+The syndrome block theorem shows how a lattice-scale coordinate effect can
+nevertheless become macroscopic without separately paying channels.  One
+future fragment selects many direct-sum blocks, and their covering-radius
+contributions add before the response error is charged.  This **joint
+exposure** is an operation in the feature algebra, not merely a different norm
+on the old one-bit queries.
+
+## 11. Current selected abstraction
+
+A **query-generated feature algebra** begins with the observable exposed to
+the environment, closes under the declared compositions and contractions,
+and identifies landscapes with the same resulting response.  Its value is
+not the definition but two possible theorems:
+
+- an algebraic quotient theorem proving that the closure is strictly smaller
+  than the landscape, as for syndrome supports; or
+- an information theorem proving that a stated distortion requires a stated
+  rate, as for posterior response width.
+
+Synchronization and fixed-effective-dimension convexification are two ways
+the closure can collapse.  Tropical crossings and response packing are ways
+to prove that it cannot.  No single one of these objects is presently a
+universal deterministic analogue of the Parisi order parameter.

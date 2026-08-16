@@ -1,169 +1,110 @@
 # Minimal open questions
 
-These questions are ordered by their ability to distinguish a real theory
-from a renamed obstruction.  Each includes a stopping or falsification test.
+These are selected theorem targets, not a catalogue of nearby ideas.  The
+first two syndrome checkpoints produced Theorem 8.3; the remaining question
+explicitly asks for complexity beyond that block construction.
 
-## 1. Minimal rooted repair of pair entropy
+## 1. Macroscopic syndrome-response rate--distortion
 
-The code pair `C^r,D^r` has identical unrooted energy--energy--distance data
-and linearly separated worst-root response.  Determine the least rooted
-augmentation that fixes every query
-
-```math
-\max_x\{H(x)-\lambda d(x,z)\}.
-```
-
-Concrete candidates are the multiset of rooted distance profiles, the upper
-roof of `(H(x),d(x,z))`, or a finite association-scheme module.
-
-**Success:** an exact sufficiency theorem with a state smaller than the full
-root-by-state distance table, plus a tensor composition law.
-
-**Stop:** an injectivity or packing theorem showing that uniform rooted
-queries recover the complete landscape/code at the requested accuracy.
-
-## 2. Can structure rescue a finite global replica hierarchy?
-
-The universal version is false: for every fixed `k`, Theorem 3.3 constructs
-code landscapes with identical complete unrooted data through `k` points and
-a positive normalized covering-radius gap after tensorization.  The remaining
-question is whether a meaningful structured class—dense quadratic signings,
-models obeying synchronization identities, or a closed association-scheme
-family—can be controlled by finite `k`.
-
-For dense quadratic signs, retain the exact energy labels and all entries of
-the global overlap matrix of `k` replicas.  Can two sequences have identical
-such data but a separated intrinsic `(k+1)`-replica response, or does a
-verifiable structural hypothesis force closure?
-
-The response must be permutation-invariant; otherwise the fixed-half example
-already answers the easier rooted question.
-
-**Success:** a scalable dense-quadratic construction, or a theorem that a
-meaningful nontrivial class synchronizes at finite `k`.
-
-**Stop:** do not infer sufficiency from the absence of collisions at small
-orders.  The exact dense-sign census currently reaches only order eight.
-
-## 3. Query-generated feature-algebra growth
-
-Starting from a feature family `F_0`, let `F_t` contain all observables created
-by `t` allowed compositions and contractions.  Bound the response metric
-entropy of its exposed roofs.
-
-**Success:** for a nontrivial model, prove
+Fix `G=F_2^w`.  A full-rank parity-check fragment is operationally represented
+by its nonzero column-type support `S subset G\{0}`.  Its response to an
+appended fragment `E` is
 
 ```math
-\log\operatorname{Cov}(\mathcal R_{n,t},\epsilon_n)
-=o(|\Omega_n|)
+\mathcal R_S(E)=\rho(\ker[H_S\ E]).
 ```
 
-at an error that preserves the normalized extreme, together with a closed
-composition law.
+Theorem 8.3 answers the first nontrivial normalized case.  On a direct-sum
+block family, subset-selecting future fragments turn `Theta(w)` latent bits
+into coherent radius differences.  For every fixed `epsilon<1/8`, error
+`epsilon*w` has complexity `Theta_epsilon(w)` on that family, using only
+linear-length fragments.
 
-**Stop:** if the algebra separates every Boolean state, prove this explicitly
-and classify the resulting full-landscape rate rather than carrying the
-hierarchy further.
+Determine the metric entropy for **arbitrary** spanning supports.
 
-## 4. Bounded-strength extremal rate--distortion
+**Positive target:** a composition-stable quotient with
+`exp(o(2^w))` possible states and uniform response error `o(w)` under repeated
+support union/min-plus convolution.
 
-The quadratic pinned-query lower bound uses external fields of magnitude
-`Theta(n)`, or bounded per-edge rank-one coupling interventions.  Determine
-the rate for bounded coordinate fields, sparse interventions, and low-rank
-bridges.
+**Negative target:** a realizable family with superlinear response-information
+rate—and ultimately, if true, `exp(Omega(2^w))` supports—whose complete
+future-response maps are pairwise `Omega(w)` apart without a supplied
+direct-sum decomposition.
 
-**Success:** a nonzero asymptotic rate function with matching upper and lower
-bounds on a natural quadratic ensemble.
+**Stop condition:** do not repeat the block subset-count construction or the
+old unit-gap support probes.  A further lower bound must increase the source
+complexity or expose a new interaction among blocks; an upper bound must
+propagate its error under union.
 
-**Falsifier for a quadratic lower rate:** construct sketches of `o(n^2)` bits
-that answer the declared bounded query family to the target normalized error.
+## 2. Derive, rather than assume, deterministic linkage
 
-## 5. A unified extremal information inequality
+Theorem 9.2 proves uniform zero-temperature synchronization from mixture
+ultrametricity and `(D,tau)` monotone linkage of total-overlap pair labels.
+The rare matching example proves that PSD, exchangeability, ultrametricity of
+all nonnegative species mixtures, and vanishing conditional variance are not
+enough.
 
-Current lower bounds use either response packing or posterior sign
-polarization.  Seek an inequality relating query distortion, posterior
-feature variance, and mutual information, for example
+Find a natural finite hypothesis, stated without inspecting the hidden species
+values, that forces `tau+3D*eta=o(1)` on every pair label exposed by a declared
+zero-temperature query.
 
-```math
-I(H;Z)\ge \Psi
-\bigl(\mathbb E\,d_\Theta(H,\widehat H_Z),
-      \text{exposed-face geometry}\bigr).
-```
+**Success:** a model class in which the synchronized scalar profile is a
+strict quotient and the theorem controls every declared maximum.
 
-It should specialize both to binary Hamming rate--distortion and to the
-sign-near barycenter bound.
+**Falsifier:** a family satisfying the proposed visible hypotheses with a
+fixed response gap on an exposed fibre.  Average-only hypotheses are already
+closed by Example 7.
 
-**Success:** a theorem with a nontrivial application to at least two of
-quadratic forms, code covering radius, Max-Cut, or random CSPs.
+## 3. Effective-rank composition beyond fixed dimension
 
-**Stop:** a restatement of the definition of mutual information or a packing
-bound with no model-specific geometry is not the requested unification.
+Shapley--Folkman bounds the loss from replacing a nonconvex reachable sum by
+its convex roof by the `r` largest component diameters, where `r` is the
+effective affine-difference rank.  Determine whether **exposed** or
+query-dependent dimension can replace `r`.
 
-## 6. Deterministic synchronization
+**Success:** a bound controlled by the dimension or Gaussian width of faces
+actually reached by a declared Lipschitz query, with subextensive error in a
+model where ambient rank grows.
 
-The Curie block pair fails because total overlap does not determine species
-overlaps.  Random multi-species spin glasses can obtain synchronization from
-strong distributional identities.  Identify deterministic hypotheses under
-which omitted block features are functions, approximately and uniformly, of
-a retained global order parameter.
+**Falsifier:** a same-roof pair with low exposed complexity for every local
+component but a leading composed response gap.  A representation of an
+arbitrary convex body is not automatically succinct.
 
-**Success:** a theorem with checkable finite hypotheses and an error bound
-stable at zero temperature.
+## 4. A normalized massive-witness theorem, or its impossibility
 
-**Falsifier:** a deterministic family satisfying the proposed hypotheses but
-retaining an order-one block-response gap.
+The query-weighted four-cell theorem is rigorous, but every matching-based
+certificate on the canonical code transversal is exponentially small under
+diffuse state-pair sampling.  The graph-code distance table even has
+exponential exact tropical rank and a rank-one normalized approximation with
+mean-square error `1/(16t)`.
 
-## 7. Constrained compactness and recovery
+Ask whether another natural conditional-response family admits a jointly
+charged witness involving a positive fraction of its table, with no separate
+payment of scalar cells or channels.
+
+**Success:** a polynomially described witness yielding a nonvanishing
+normalized average-error lower bound.
+
+**Stop:** do not try more pairwise graphs on the same transversal.  If every
+joint witness is equivalent to the full table, record an information lower
+bound instead.
+
+## 5. Constrained compactness and realization
 
 Fixed-interface response bodies have unrestricted finite recovery sequences.
-Which closed subsets arise from a constrained family—complete sign matrices,
-linear codes, dense CSPs—at every sufficiently large size?
+Characterize which limiting response states are realized at all large sizes
+inside a constrained family such as linear codes, dense CSPs, or bounded-width
+factor graphs.
 
-**Success:** a Gamma-limsup/recovery theorem that preserves the relevant
-response roof with vanishing normalized loss and does not assume the target
-finite optimum.
+**Success:** a Gamma-limsup/recovery theorem preserving the declared response
+with vanishing normalized loss and without storing a target optimizer.
 
-**Stop:** arbitrary finite-state approximation is already proved and does not
-address the constraint.  A construction that stores a target optimizer is
-circular for extremal compression.
+**Stop:** finite-state approximation outside the constrained model is already
+known and does not answer this question.
 
-## 8. Dense-sign pair-overlap collision
+## Reconnection rule
 
-Find two nonisomorphic hollow `+/-1` quadratic sequences with identical
-energy--energy--global-overlap data at a declared asymptotic resolution but a
-separated anchored response.
-
-**Success:** a scalable construction with an exact normalization and response
-gap.
-
-**Finite guide:** the exhaustive rooted-gauge census found no collision with
-different one-vertex response multisets through order eight.  This is only a
-search boundary, not evidence of impossibility.
-
-## 9. Known-model validation
-
-For each of the following, identify the query interface and determine whether
-the standard order parameter is exactly an upper response roof, a quotient of
-one, or something genuinely different:
-
-- REM/GREM and the Parisi zero-temperature limit;
-- random Max-Cut and dense CSP interpolation;
-- code/coset covering radius;
-- discrepancy and vector balancing; and
-- Littlewood/unimodular polynomial sup norms.
-
-**Success:** a known theorem becomes a short corollary of a common response or
-rate--distortion statement.
-
-**Stop:** shared terminology without a checked implication is not validation.
-
-## 10. Conditions for returning to the motivating problem
-
-Only after Questions 3, 6, or 7 produces a closed state with demonstrably
-sub-landscape information should the theory be tested on the original bridge
-composition.  The first target would then be a theorem saying that the child
-states determine the parent cap with `o(n^(3/2))` error.
-
-If the required interface separates every spin state or has quadratic edge
-information rate, record that as an explanatory lower bound and do not market
-it as a convergence reduction.
+The program now has strict composable quotients in nontrivial restricted
+models, but none closes the dense-sign bridge interface.  Do not return to the
+motivating signing problem unless one of Questions 1--3 produces a state whose
+complexity and error remain controlled when its interface rank grows.

@@ -11,6 +11,9 @@ Run from the repository root:
 .venv/bin/python extremal_information/experiments/pinned_query_rate_verify.py
 .venv/bin/python extremal_information/experiments/build_quadratic_landscape_dataset.py
 .venv/bin/python extremal_information/experiments/verify_code_replica_hierarchy.py
+.venv/bin/python extremal_information/experiments/verify_phase2_response_geometry.py
+.venv/bin/python extremal_information/experiments/verify_phase2_code_syndrome_profiles.py
+.venv/bin/python extremal_information/experiments/verify_phase2_normalized_code_rate_distortion.py
 ```
 
 The scripts write only to this directory by default.
@@ -84,3 +87,40 @@ through `t=4` and first differs at `t=5`.
 
 Output:
 [`code_replica_hierarchy_results.json`](code_replica_hierarchy_results.json).
+
+## `verify_phase2_response_geometry.py`
+
+This exhaustively checks the finite constants and counterexamples used in the
+second theory-building phase:
+
+- inverse-Hamming response moduli for boundary kernels, arbitrary rooted
+  codes, shifted quadratics, and Max-Cut;
+- the equal-outer-spectrum code collision;
+- the rare-matching conditional-variance calculation;
+- same-space response cancellation; and
+- the `D_r` tropical-rank versus mean-square scale separation.
+
+Output:
+[`phase2_response_geometry_results.json`](phase2_response_geometry_results.json).
+
+## `verify_phase2_code_syndrome_profiles.py`
+
+This enumerates binary syndrome profiles for small interface dimensions,
+checks min-plus convolution against support union, finds two length-five
+nonisometric fragments with the same syndrome profile, and verifies the
+equal-outer-spectrum pair separated by the full-rank environment used in
+Example 6.
+
+Output:
+[`phase2_code_syndrome_profiles_results.json`](phase2_code_syndrome_profiles_results.json).
+
+## `verify_phase2_normalized_code_rate_distortion.py`
+
+This exhaustively checks the block-direct-sum construction in Theorem 8.3 for
+five small `(L,q)` pairs.  It verifies full rank and common padded length, the
+exact subset-count covering-radius formula, the induced directed-difference
+response metric, and its inverse-Hamming lower bound.  In total it checks 104
+state--environment pairs and 42 unordered state pairs.
+
+Output:
+[`phase2_normalized_code_rate_distortion_results.json`](phase2_normalized_code_rate_distortion_results.json).
