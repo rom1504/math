@@ -1,0 +1,57 @@
+{
+  "classification": {
+    "n_3_through_8": "exact exhaustive coset census",
+    "n_10_trap": "heuristically located, then exactly certified over all spins and edge flips"
+  },
+  "exact_census": [
+    {"n": 3, "cosets": 1, "rho": 0, "M_n": 3, "nondeep_dead_ends": 0},
+    {"n": 4, "cosets": 4, "rho": 1, "M_n": 4, "nondeep_dead_ends": 0},
+    {"n": 5, "cosets": 32, "rho": 3, "M_n": 4, "nondeep_dead_ends": 0},
+    {
+      "n": 6,
+      "cosets": 512,
+      "rho": 5,
+      "M_n": 5,
+      "nondeep_dead_ends": 25,
+      "nearest_nondeep_dead_end_Q": 9
+    },
+    {
+      "n": 7,
+      "cosets": 16384,
+      "rho": 6,
+      "M_n": 9,
+      "nondeep_dead_ends": 1260,
+      "nearest_nondeep_dead_end_Q": 11
+    },
+    {
+      "n": 8,
+      "cosets": 1048576,
+      "rho": 9,
+      "M_n": 10,
+      "nondeep_dead_ends": 130655,
+      "dead_ends_by_Q": {"12": 119700, "14": 10920, "16": 35}
+    }
+  ],
+  "n_10_terminal_trap": {
+    "negative_edges": [
+      "01", "02", "03", "04", "05", "06", "14", "15", "16",
+      "17", "18", "19", "24", "25", "27", "38", "47", "49",
+      "56", "58", "59", "78", "89"
+    ],
+    "edge_mask_hex_in_lexicographic_order": "0x146d102df83f",
+    "Q": 15,
+    "known_M_10": 13,
+    "normalized_Q": 0.4743416490252569,
+    "single_edge_flip_Q_histogram": {"17": 45},
+    "outward_degree_b": 0,
+    "is_nondeep_terminal_dead_end": true
+  },
+  "reproduction": {
+    "exact_source": "computations/coset_terminal_drift_exact.cpp",
+    "sample_source": "computations/coset_terminal_drift_sample.cpp",
+    "compiler_flags": "g++ -O3 -std=c++17",
+    "sample_command": "coset_terminal_drift_sample 10 1000",
+    "sample_seed_is_fixed_in_source": true
+  },
+  "schema": "augmented-cut-coset-terminal-drift-audit-v1"
+}

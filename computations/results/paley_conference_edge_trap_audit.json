@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "all_edges_covered": true,
+      "cap": 15,
+      "certified_cap_after_each_single_edge_flip": 17,
+      "edges_covered": 45,
+      "input": "computations/results/conference_order10_gf9.json",
+      "input_sha256": "87147b1fa441a079ee41e46245081d7947b55b770f58849af73cad0ccafb02d1",
+      "n": 10,
+      "opposed_edges_per_extremizer": {
+        "maximum": 15,
+        "minimum": 15
+      },
+      "projective_extremizers": 12,
+      "total_edges": 45
+    },
+    {
+      "all_edges_covered": true,
+      "cap": 65,
+      "certified_cap_after_each_single_edge_flip": 67,
+      "edges_covered": 325,
+      "input": "computations/results/conference_order26_gf25.json",
+      "input_sha256": "9c40c6eb63e7edd953f3aed0bf50601409ebc767e21f6d1c7144cde9479f3168",
+      "n": 26,
+      "opposed_edges_per_extremizer": {
+        "maximum": 130,
+        "minimum": 130
+      },
+      "projective_extremizers": 260,
+      "total_edges": 325
+    }
+  ],
+  "classification": "exact checks from exhaustive fixed-signing extremizer records",
+  "schema": "paley-conference-edge-trap-audit-v1"
+}
