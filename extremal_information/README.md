@@ -820,6 +820,11 @@ The research question is which compression mechanisms behind these theories
 remain valid for deterministic, adversarial landscapes without importing
 random-model identities that fail there.
 
+A finite tower of separated exponential scales now also has an exact
+lexicographic count algebra on fixed descriptor sets. Its sharp failure on
+Vandermonde convolution shows why subleading extremal compactness must retain
+saddle multiplicity, not only pointwise rate coefficients.
+
 ## Reconnection rule
 
 Do not force this framework back onto the original `M_n` problem.  Reconnect

@@ -9415,6 +9415,101 @@ The present theorem is a speed-sensitive contextual
 roof under continuous descriptor tilts, not a wholly separate algebra and
 not a structured recovery theorem for sign quadratics.
 
+### Theorem 27.3 (finite lexicographic count algebra)
+
+Fix `L` scales
+
+```math
+a_(1,n)>>a_(2,n)>>cdots>>a_(L,n)->infinity,
+\qquad a_(j+1,n)/a_(j,n)->0.                           \tag{27.7}
+```
+
+For a nonnegative sequence `w_n`, write `nu(w)=u in R^L` when
+
+```math
+\log w_n=\sum_(j=1)^L a_(j,n)u_j+o(a_(L,n)),          \tag{27.8}
+```
+
+and use `-infinity` for an eventually zero sequence. On
+`T_L=R^L union {-infinity}`, let addition be lexicographic maximum and
+multiplication be coordinatewise addition. Then, whenever the valuations
+exist,
+
+```math
+nu(uv)=nu(u)+nu(v),\qquad nu(u+v)=max_lex{nu(u),nu(v)}. \tag{27.9}
+```
+
+Consequently, for fixed finite descriptor alphabets and a fixed map
+`m:K_1 times K_2->K`, the convolution
+
+```math
+C_n(z)=\sum_(m(x,y)=z)A_n(x)B_n(y)                    \tag{27.10}
+```
+
+has exact asymptotic profile
+
+```math
+nu(C_n(z))=
+\max_(lex,m(x,y)=z){nu(A_n(x))+nu(B_n(y))}.            \tag{27.11}
+```
+
+Every finite `T_L` profile has an all-order integer realization up to one
+common additive shift in its leading coordinate. For growing fibres, the
+same rule holds uniformly if the term remainders are uniform and
+`log |I_n|=o(a_(L,n))`. This branching condition is worst-case sharp: if
+`exp(ca_(L,n))` terms tie, the last coordinate increases by `c`.
+
+#### Proof
+
+Products add expansions. If `u>_lex v` and `j` is their first unequal
+coordinate, then
+
+```math
+\log w_n-\log z_n
+=a_(j,n)(u_j-v_j)+o(a_(j,n))->+infinity,
+```
+
+so the larger term determines the sum; equal valuations cost only `log 2`.
+Finite iteration proves (27.11). For recovery, add a constant `C` making
+every leading coefficient positive and set
+
+```math
+A_n(q)=floor\exp\left(a_(1,n)(C+u_1(q))
+             +\sum_(j=2)^L a_(j,n)u_j(q)\right).      \tag{27.12}
+```
+
+Flooring costs `o(1)`. Finally
+
+```math
+0\le\log\sum_(i in I_n)w_(n,i)-\max_i\log w_(n,i)
+\le\log|I_n|,                                         \tag{27.13}
+```
+
+which proves the growing-fibre statement and its equal-term sharpness.
+`square`
+
+### Proposition 27.4 (pointwise multiscale profiles miss saddle mass)
+
+At scales `(n,log n)`, fix `p in (0,1)` and an integer subsequence with `pn`
+integral. Stirling's formula gives
+
+```math
+nu {n choose pn}=(h(p),-1/2).                          \tag{27.14}
+```
+
+In the Vandermonde convolution
+
+```math
+{2n choose 2pn}=\sum_k {n choose k}{n choose 2pn-k},  \tag{27.15}
+```
+
+the pointwise largest summand has vector `(2h(p),-1)`, while the left side
+has `(2h(p),-1/2)`. The missing half-coordinate is the mass of
+`Theta(sqrt(n))` near-saddle decompositions. Thus a bare pointwise finite-
+speed roof does not compose once the decomposition fibre is large at the
+smallest retained speed; a tangent-density or equivalent decoration is
+required even under a smooth strictly concave leading profile.
+
 ## 28. Regular-Hadamard amplification limits
 
 ### Theorem 28.1 (monotone Boolean amplification)

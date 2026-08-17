@@ -1946,3 +1946,17 @@ near-original thermodynamic-limit benchmark whose state is exponentially
 smaller than the Boolean landscape. Its limitation is precise: exact tensor
 amplification supplies the recovery map, while arbitrary orders and
 non-tensor perturbations remain untreated.
+
+## Example 89: second-speed entropy needs saddle mass
+
+For fixed finite descriptors, a tower of separated logarithmic speeds is an
+exact lexicographic tropical response algebra. At speeds `(n,sqrt(n))`, for
+example, it distinguishes one extremizer from `exp(theta sqrt(n))`
+extremizers and composes by lexicographic supremal convolution.
+
+Growing decomposition fibres break the bare pointwise state. In
+Vandermonde's identity, each central summand contributes second-speed
+coefficient `-1` at scales `(n,log n)`, whereas their `Theta(sqrt(n))`
+near-saddle multiplicity changes the exact coefficient to `-1/2`. The
+missing information is tangent counting mass, not another value of the
+pointwise entropy profile.

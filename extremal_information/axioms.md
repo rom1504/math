@@ -1330,3 +1330,16 @@ object is the whole fixed-port cross-correlation set, not one maximizing
 sequence. Approximate applications require a quantitative lift or retraction
 with summable response defect; assuming Hausdorff convergence itself would
 merely restate the desired conclusion.
+
+## 54. The finest retained speed must pay branching entropy
+
+A finite hierarchy of exponential scales composes lexicographically only
+while the logarithm of the competing decomposition count is negligible at
+the smallest retained scale. This is a worst-case exact boundary: tied terms
+convert branching multiplicity directly into the last response coordinate.
+
+Smooth leading entropy does not remove the issue. A saddle can have
+polynomially many near-maximizers whose logarithmic mass survives after all
+pointwise coefficients have been recorded. Any genuinely multiscale compact
+state must therefore carry tangent density, Hessian data under suitable
+regularity, or another object that accounts for exposed-fibre mass.

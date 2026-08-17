@@ -167,19 +167,24 @@ one of:
   with intensity `lambda Z_infinity e^x dx`; all unmarked Laplace queries
   depend on the environment through one scalar. A separate deterministic
   theorem proves compact hypograph closure and recovery under supremal/count
-  convolution at one exponential speed.
+  convolution at one exponential speed. For fixed finite descriptors, an
+  arbitrary finite tower of separated speeds forms an exact lexicographic
+  tropical count algebra with all-order abstract recovery.
 - **Composition:** finite depth needs `(W,Z)`, but `W` vanishes and the limit
   closes by `Z=sum_u e^(-V(u))Z_u`.
 - **Best falsifier:** genealogy-marked futures distinguish branch-mass
   allocations with the same total `Z`; their state is a derivative-mass
   measure. Exponentially many descriptor fibres defeat exact-fibre mass
   prediction unless descriptor complexity is charged; one versus
-  `e^(sqrt(n))` extrema defeats every speed-`n` hypograph.
+  `e^(sqrt(n))` extrema defeats every speed-`n` hypograph. Vandermonde
+  convolution shows that even all pointwise coefficients at speeds
+  `(n,log n)` miss a `1/2 log n` saddle-mass correction.
 - **Information discarded:** genealogy and the fixed decoration law; the
   declared unmarked query class cannot inspect them.
-- **Next theorem:** either a natural multi-speed state closing beyond leading
-  entropy, or a deterministic/adversarial model in which critical
-  renormalization yields a unique composable extremal state.
+- **Next theorem:** a tangent-mass/Hessian decoration theorem on a natural
+  convolution-closed regularity class, or a deterministic/adversarial model
+  in which critical renormalization yields a unique composable extremal
+  state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
 ### 5. Adversarial statistical mechanics — keep warm, B

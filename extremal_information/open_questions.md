@@ -437,3 +437,21 @@ natural approximate-eigenvector condition is insufficient.
 **Falsifier:** a proposed condition that merely restates Hausdorff Cauchy
 convergence or controls only one preselected optimizer rather than every
 declared outer query.
+
+## 11. Tangent mass for multiscale extremal convolution
+
+Finite lexicographic valuations compose exactly on fixed descriptor
+alphabets, but Vandermonde convolution gains a logarithmic saddle-mass term
+that pointwise coefficients miss.
+
+Define a tangent-density decoration on a natural Morse-type class and prove
+that it closes under convolution, including degenerate ties and all-order
+integer recovery.
+
+**Success:** one theorem recovering the Gaussian `1/2 log n` correction and
+composing at least two nontrivial finite-type models without enumerating the
+decomposition grid.
+
+**Stop condition:** storing the entire scale-dependent descriptor measure or
+postulating the saddle asymptotic separately for every query is not a strict
+state reduction.
