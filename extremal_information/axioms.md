@@ -2214,3 +2214,96 @@ width dominates the optimality slack.  A theorem for exact minimizers may
 remain true, but it uses a discontinuous consequence of exact global
 optimality and must be labelled accordingly.  Edit-robust structural
 language cannot bridge this gap by itself.
+
+## 120. Deepest-coset stability is a cover law, not a diffusion law
+
+Exact coefficient optimality forces the radius-one error supports of a deep
+coset to cover every coordinate.  It does not force those leaders to be
+projectively diffuse: an antipodal linear code can satisfy every finite-flip
+majority-cover certificate while all subleading shells remain in one
+vanishing projective region.  The augmented cut code improves the anatomy of
+the collapsed branch to a mesoscopic complete-bipartite agreement core, but
+does not yet exclude it.
+
+Therefore any fixed-scale shell-diffusion theorem must use the special
+weight-two/cut algebra (or an equally specific property), not only linearity,
+dimension-free deep-hole language, or local optimality under coefficient
+flips.
+
+## 121. Projective response geometry has a critical Taylor/compiler scale
+
+A projective shell ball of normalized edge radius `gamma` is a pair of spin
+charts of vertex radius `O(gamma n)`.  Baseline plus local fields therefore
+approximates its full trust response with quadratic Taylor error
+`O(gamma^2 n^2)`, while retaining only linear information per chart.  The
+existing low-cap physical compiler resolves separated charts only when its
+signal `gamma n^(3/2)` exceeds its `n^(5/4)` fluctuation.  The two tools meet
+at `gamma about n^(-1/4)` but neither controls that scale with vanishing
+relative error.
+
+This is a quantitative frontier, not a dichotomy theorem.  A small static
+cover still lacks a reusable transition law, and a subleading query ball is
+already trivial at the target scale.  Future claims must specify the query
+scale, packing/cover convention, and whether they resolve the critical
+annulus.
+
+## 122. Scalar near-minimality is macroscopically hereditary; response is not
+
+Independent random padding combined with principal restriction shows that
+every vanishing near-minimizer stays vanishing-near-minimal after every
+`o(n)`-vertex deletion, uniformly over the deleted set.  This is much wider
+than the `o(sqrt n)` window visible from the raw number of removed edges.
+
+The conclusion concerns only the scalar cap.  A sublinear shore can carry a
+leading `Theta(n^(3/2))` interaction, so deleting it may preserve cap
+near-minimality while destroying the active interface, its shell witnesses,
+and every proposed cross-level gauge.  Heredity of objective value and
+heredity of extremal information are therefore distinct obligations.
+
+## 123. Pairwise shell diffusion does not supply higher-order non-recycling
+
+Exact multi-edge optimality can turn one large common-correct reservoir into
+a fresh shell word separated from every declared anchor, without accumulating
+deficit.  Positivity protects the opposite lift only at the energy scale
+`M_n`, however, so this mechanism yields `Theta(n^(-1/2))` normalized
+projective separation rather than a fixed gap.
+
+Iteration consumes an intersection, not a list of pairwise certificates.
+Actual cut words can have large common-correct reservoirs for every pair and
+only `O(n)` coordinates correct for the whole triple, even in a bounded-cap
+exact signing.  Any fixed-scale diffusion theorem must therefore control a
+higher-order reservoir/non-recycling invariant specifically on exact-
+minimizer thin shells; pairwise complete-bipartite anatomy, shell
+cardinality, and AO.20 do not imply it.
+
+## 124. Low dimension forces local shell spread only until the opposite lift enters
+
+For an antipodal code with dimension `k=o(t)` and covering-radius deficit
+`t=o(N)`, simultaneous stability under all `r`-coordinate perturbations
+forces an `o(t)` shell to spread by `(2-o(1))t` in projective distance.
+This is an information consequence: a single Hamming cap does not contain
+enough leaders to half-cover all `r`-subsets.
+
+The threshold is also the exact orientation ceiling.  At distance about
+`2t`, the antipodal lift can enter and discharge many local obligations at
+once.  Therefore dimension, local cover identities, and ordinary affine
+carriers cannot by themselves amplify deficit-scale diversity to fixed
+ambient scale.  A successful theorem must control nonlinear two-cap entry
+or introduce a response amplifier that makes deficit-scale directions
+macroscopically observable.
+
+## 125. Rare extremal components need a separate normalization and rooted synchronization
+
+A finite-rank perturbation has zero mass in a limiting empirical spectral
+law and in every fixed normalized trace moment, yet it can move a spherical
+quadratic optimum by a fixed amount.  A useful presented state keeps the
+bulk as a probability law and each possible outlier-generating spike as a
+unit mark.  It becomes small only after a separate theorem synchronizes the
+rooted spectral weights to the unrooted bulk.
+
+This is neither an intrinsic statistic of the composed matrix nor a
+congruence for adversarial future directions.  Generic orientation supplies
+the synchronization; correlated directions expose an additional Gram
+state.  Thus “zero density” is not synonymous with “negligible”: every
+rare-event compactification must declare both the normalization of rare
+components and the contexts under which rooted information collapses.

@@ -1,0 +1,112 @@
+{
+  "cap": 9,
+  "classification": "solver-certified finite computation; no standalone proof object",
+  "far_absolute_energy_bound": 7,
+  "matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      0,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      0
+    ]
+  ],
+  "n": 7,
+  "schema": "exact-minimizer-projective-collapse-v1",
+  "shell_deficit": 0,
+  "solver": {
+    "branches": 334,
+    "conflicts": 168,
+    "elapsed_seconds": 0.023969411849975586,
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "status": "OPTIMAL",
+    "time_limit_seconds": 30.0,
+    "wall_time_seconds": 0.023773532,
+    "workers": 4
+  },
+  "verified_profile": {
+    "absolute_energy_histogram": {
+      "1": 15,
+      "3": 21,
+      "5": 15,
+      "7": 9,
+      "9": 4
+    },
+    "absolute_ground_vertex_radii": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "absolute_shell_count": 4,
+    "absolute_shell_vertex_radii": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "cap": 9,
+    "negative_ground_count": 0,
+    "positive_ground_count": 4,
+    "shell_absolute_energy_floor": 9,
+    "shell_deficit": 0
+  },
+  "vertex_radius": 1
+}

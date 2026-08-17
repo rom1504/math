@@ -966,3 +966,85 @@ vanishing projective cap.  Thus no uniform version over all
 `epsilon_n`-near-minimizers can hold when the admitted shell is narrower
 than the optimality slack.  Any proof of the selected statement must use a
 genuinely discontinuous consequence of exact global optimality.
+
+Theorem 36.13 isolates the cut-specific branch more sharply.  Generic
+deep-hole theory and every finite-flip cover identity allow a scalable
+collapsed countermodel.  In the augmented cut code, however, a genuinely
+vanishing opposite-lift cap must be supported by a complete bipartite
+interface `delta(S)` with
+
+```math
+\Omega(\sqrt n)\le |S|=o(n),
+\qquad
+\sum_{e\in\delta(S)}a_e\ge M_n-o(n^{3/2}).
+```
+
+Can exact minimization force a third near-ground projective direction away
+from both poles of every such mesoscopic interface?  This is the concrete
+cut-specific form of `Cut-DH(3)`.  Replacing the interface by a separately
+optimized rectangular signing merely reopens the archived joint-bridge
+obligation and is not an answer.
+
+At finer radii, Theorem 36.14 gives a second discriminating target.  A small
+shell cover below `n^(-1/4)` has a local-field response roof; a large packing
+above `n^(-1/4)` is physically visible.  What extra invariant controls a
+shell whose metric entropy lives at the critical `n^(-1/4)` scale?  Any
+answer must beat the quadratic internal-edge Taylor term or the exact-sign
+compiler fluctuation without retaining the complete coefficient matrix.
+
+## 18. Higher-order non-recycling in exact-minimizer shells
+
+The first collapsed pair is no longer the unresolved point: Theorem 36.16
+forces a third `o(n^(3/2))`-shell direction at projective distance
+`(1/2-o(1))M_n` from both poles.  Its multi-anchor form iterates exactly as
+long as the anchors retain `Omega(M_n)` common-correct coordinates.
+
+The smallest cut-specific question is now whether one can select shell
+witnesses so that, for `k->infinity`, either
+
+```math
+|R(z_1,...,z_k)|=Omega(M_n)
+```
+
+persists, or its failure exposes a direction at `Theta(n^2)` projective
+distance.  Pairwise reservoir bounds do not imply this: Example 159 gives a
+bounded-cap cut-realizable triple with large pairwise reservoirs and an
+`O(n)` triple intersection.  A valid theorem must use exact-minimizer
+thin-shell linkage, not cut-word algebra, bounded cap, or shell cardinality
+alone.
+
+Even a growing packing at distance `Theta(M_n)` does not plug into the
+current physical compiler at target response scale.  The fixed-gap version
+of `L_projective`, or a different compiler which jointly amplifies these
+energy-scale directions without raising total cap, remains the operative
+frontier.
+
+## 19. Nonlinear two-cap entry beyond deficit-scale diffusion
+
+Theorem 36.17 proves that low dimension forces projective shell diameter
+`(2-o(1))t`, where `t` is the covering-radius deficit.  Can an antipodal
+`[N,k]` code with `t=Theta(sqrt(Nk))` have every `o(t)` shell contained in a
+nonlinear, affine-subspace-evasive union of two Hamming caps of diameter
+`o(N)`?  Direct products, large affine carriers, and a single sub-threshold
+cap are now obstructed; no generic theorem controls the opposite lift.
+
+For the augmented cut code, the corresponding question is whether exact
+minimality converts repeated opposite-lift entries into a fixed-scale
+projective direction.  Any proof must use more than dimension, finite-flip
+covering, pairwise reservoirs, or shell cardinality.  A scalable nonlinear
+countermodel would sharply delimit what generic coding theory can contribute
+to `L_projective`.
+
+## 20. Intrinsic rare-event states beyond generic spectral synchronization
+
+Theorem 37.1 gives a strict bulk-plus-spike response algebra only for a
+declared presentation and predeclared generic directions.  Is there a
+nontrivial deterministic class in which a finite rare-event state is
+intrinsic to the landscape and remains closed under every allowed
+continuation?  What hypothesis makes rooted spectral measures functions of
+a smaller unrooted state without Haar genericity?
+
+A useful answer must survive correlated perturbations or state precisely
+the extra relative-geometry marks they require.  Retaining the full
+eigenbasis or the full family of rooted measures merely reconstructs the
+matrix and is not a strict quotient.

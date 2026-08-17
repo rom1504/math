@@ -3023,3 +3023,78 @@ falsification of the simplest two-cap finite model, not evidence for a
 universal distribution or an asymptotic growth rate.  The frozen protocol
 and exact certificates are in
 [`drafts/nearmin_absolute_overlap_audit.md`](drafts/nearmin_absolute_overlap_audit.md).
+
+## Example 158: exact active-shell collapse exists, but one parity step destroys it
+
+A symmetry-complete CP-SAT search found an order-seven exact minimizer whose
+whole absolute active shell consists of four projective spins at vertex
+radii
+
+```text
+0, 1, 1, 1
+```
+
+from one gauged positive ground.  Thus exact minimization alone does not
+force even radius-two active-shell diffusion.  This does not contradict
+Example 157: at order seven, distinct singleton flips are already separated
+by a constant fraction of the 21 edge coordinates.
+
+The finite behavior changes sharply after admitting nearby energies.  For
+this optimization problem, every exact minimizer at orders 7--9 has its
+absolute deficit-two shell reaching the maximum possible projective vertex
+radius; the same is solver-certified at order ten.  At orders eight and
+nine, even the active shell must reach that equator.  These are exact finite
+exclusions internal to CP-SAT, not standalone proof certificates and not an
+asymptotic theorem.  They show why active multiplicity and a parity-thick
+shell must be kept distinct.
+
+The model, all SAT/UNSAT/timeout records, and exhaustive re-enumeration of
+the feasible witnesses are in
+[`drafts/exact_minimizer_projective_collapse_falsification.md`](drafts/exact_minimizer_projective_collapse_falsification.md)
+and
+[`experiments/search_exact_minimizer_projective_collapse.py`](experiments/search_exact_minimizer_projective_collapse.py).
+
+## Example 159: pairwise common-correct cores have no cut-word Helly theorem
+
+Take disjoint vertex sets `S,T` of order `Theta(sqrt n)` and the three
+augmented cut words
+
+```math
+\mathbf1,\qquad-c(v_S),\qquad-c(v_T).
+```
+
+Their four edge-pattern cells support an exact `+-1` signing whose prescribed
+cell sums are `(0,m,m,-m)`, with `m=Theta(n^(3/2))`.  All three displayed
+words then have energy `m+O(1)`.  Each pair has at least
+`Omega(n^(3/2))` common-correct coordinates (one pair has `Theta(n^2)`),
+but the triple common-correct set is contained in
+`delta(S) cap delta(T)` and has only `O(n)` coordinates.
+
+Choosing signs randomly subject to those cell sums gives, with positive
+probability, total cap `O(n^(3/2))`; the conditioned fluctuations are
+subgaussian and a union bound covers all cuts.  This is a scalable
+bounded-cap cut-realizable falsifier, not an exact-minimizer or thin-shell
+counterexample.  It proves that cut algebra plus pairwise reservoir mass
+cannot justify the iteration premise in Theorem 36.16.
+
+## Example 160: identical bulk moments hide a generic spectral outlier
+
+Let `B_N` have compactly supported limiting empirical spectral law `mu` and
+no top outlier, and compare it with
+
+```math
+C_N=B_N+\theta u_Nu_N^{\mathsf T},
+```
+
+where `u_N` is a frozen Haar-generic direction and
+`theta G_mu(b+)>1`.  A rank-one edit changes the empirical law by at most
+`1/N` and every fixed normalized trace moment by `O(1/N)`.  Yet the top
+eigenvalue converges to the distinct root `G_mu(rho)=1/theta`, so its
+response gap tends to `rho-b>0`.
+
+Genericity is essential.  With `B_N=0`, two orthogonal unit spikes of equal
+strength have top eigenvalue one, whereas two coincident spikes have top
+eigenvalue two.  The same formal strength multiset therefore fails under
+correlated continuation unless relative Gram geometry is retained.  This
+both motivates the unit-mass spike mark and falsifies its use as an
+adversarial contextual quotient.

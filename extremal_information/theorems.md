@@ -15632,3 +15632,387 @@ Proof and independent audit are in
 [`drafts/nearmin_planted_ground_cap_falsifier.md`](drafts/nearmin_planted_ground_cap_falsifier.md)
 and
 [`drafts/nearmin_planted_ground_cap_falsifier_independent_audit.md`](drafts/nearmin_planted_ground_cap_falsifier_independent_audit.md).
+
+### Theorem 36.13 (deep-hole projective floor and the cut-specific two-cap frontier)
+
+Let `C <= F_2^N` be a binary linear code and let `y` be a deep hole of
+covering radius `rho`.  Its radius-`rho+1` error supports cover all `N`
+coordinates, and hence
+
+```math
+\left|\{c\in C:d(y,c)\le\rho+1\}\right|
+\ge\left\lceil {N\over\rho+1}\right\rceil.          \tag{36.47}
+```
+
+For the augmented cut code, `rho=(N-M_n)/2`.  Once `M_n>2`, (36.47)
+gives at least three distinct projective words in every exact minimizer's
+positive deficit-two shell.  Their unconditional separation is only the
+projective minimum distance `n-1`, or AO overlap parameter `4/n`.  If three
+of their error supports already cover all coordinates, each pair is
+separated projectively by at least `M_n-2`, still only normalized scale
+`Theta(n^(-1/2))`.
+
+Generic deepest-coset theory cannot improve this to fixed scale.  The exact
+antipodal codes
+
+```math
+C_m=\operatorname{Rep}_{m^4-m^3}\oplus\mathbb F_2^{m^3}
+```
+
+have length `N_m=m^4`, dimension `Theta(N_m^(3/4))`, covering radius
+`N_m/2-Theta(N_m^(3/4))`, and a deep hole whose complete
+`o(N_m^(3/4))` shell has projective diameter `o(N_m)`.  This shell also
+satisfies every simultaneous finite-flip majority-cover certificate.  The
+sphere-covering inequality
+
+```math
+D\ge {2t^2\over k\log2}                              \tag{36.48}
+```
+
+for a `[D,k]` factor of radius `D/2-t` shows why this particular separable
+collapse cannot simply be reduced to the cut code's `Theta(sqrt N)`
+dimension.
+
+There is nevertheless one exact cut-specific conclusion.  If two positive
+shell words of an exact minimizer have deficits at most `2s`, actual mutual
+distance `N-D`, and
+
+```math
+D<N-\lfloor n^2/4\rfloor,
+```
+
+then their agreement coordinates form one complete bipartite cut
+`delta(S)` and
+
+```math
+D=|S|(n-|S|)\ge M_n-2s,
+\qquad
+\sum_{e\in\delta(S)}a_e\ge M_n-2s.                 \tag{36.49}
+```
+
+Thus a genuinely collapsed `D=o(N)`, `s=o(n^(3/2))` two-cap obstruction
+must concentrate a leading bias on a shore with
+`Omega(sqrt n)<=|S|=o(n)`.  This is anatomy, not a contradiction.  The
+remaining fixed-scale three-point statement is genuinely cut-specific and
+open; if proved, Theorem 36.11 compiles it into a three-state low-cap
+physical response packing, not convergence.
+
+Proof, finite checks, and the repaired independent audit are in
+[`drafts/deep_hole_projective_packing_frontier.md`](drafts/deep_hole_projective_packing_frontier.md)
+and
+[`drafts/deep_hole_projective_packing_independent_audit.md`](drafts/deep_hole_projective_packing_independent_audit.md).
+
+### Theorem 36.14 (projective shell covers give local-field response roofs)
+
+For a signing `A`, let `S_G^+(A)` be its positive augmented-cut shell of
+deficit `G`.  Suppose `L` shell centres projectively cover this shell at
+edge radius `R<E-floor(n^2/4)`, and put
+
+```math
+k_R=\max\{0\le d\le\lfloor n/2\rfloor:d(n-d)\le R\}.
+```
+
+At each centre `z^r=sigma_r c(u^r)`, retain only its baseline and oriented
+local fields
+
+```math
+h_r=\sigma_rH_A(u^r),
+\qquad
+\ell_{r,i}=\sigma_ru_i^r(Au^r)_i.                 \tag{36.50}
+```
+
+These `O(Ln log n)` bits define an explicitly sortable atlas roof for the
+absolute trust response
+
+```math
+\mathcal B_A(g)=\max_{\sigma,x}\{\sigma H_A(x)+g\mathbin\cdot x\}.
+```
+
+Uniformly for every `||g||_1<=G`, its error is
+
+```math
+\boxed{|\widehat{\mathcal B}(g)-\mathcal B_A(g)|
+       \le2k_R(k_R-1).}                            \tag{36.51}
+```
+
+The proof uses the exact identity
+
+```math
+\sigma_rH_A((u^r)^S)
+=h_r-2\sum_{i\in S}\ell_{r,i}
+ +4\sum_{\{i,j\}\subseteq S}\sigma_ra_{ij}u_i^ru_j^r, \tag{36.52}
+```
+
+and drops only the final internal-edge term.  The shell width is exactly
+`G`: a response optimizer has oriented quadratic value at least `Q(A)-G`.
+
+If `R=floor(gamma E)`, then `k_R<=gamma(n-1)`.  Thus the atlas error is
+`o(n^(3/2))` for `gamma=o(n^(-1/4))`.  An inclusion-maximal
+`R`-separated shell net gives at the same time the opposite packing branch,
+but Theorem 36.11's physical compiler resolves that branch only for
+`gamma>>n^(-1/4)`.  The critical scale remains open.  Same-radius covering
+number and maximal-net size are not interchangeable; an `R/2` cover does
+bound the latter.
+
+Two qualifications are essential.  First, when `G=o(n^(3/2))`, the scalar
+bound `Q<=B_A(g)<=Q+G` already gives target-scale compression, so the atlas
+is substantively finer only when `k_R^2=o(G)` or `G` is macroscopic.
+Second, this is a static one-block representation: it provides neither an
+efficient encoder nor a cross-order update law.  It sharpens the multiscale
+frontier but proves no near-minimizer arrow by itself.
+
+Proof, independent audit, and the exhaustive finite verifier are in
+[`drafts/nearmin_projective_shell_roof.md`](drafts/nearmin_projective_shell_roof.md),
+[`drafts/nearmin_projective_shell_roof_independent_audit.md`](drafts/nearmin_projective_shell_roof_independent_audit.md),
+and
+[`experiments/verify_nearmin_projective_shell_roof.py`](experiments/verify_nearmin_projective_shell_roof.py).
+
+### Theorem 36.15 (all sublinear principal restrictions remain near-minimal)
+
+Let `n=m+k`.  A random exact-sign rectangular bridge between minimizers of
+orders `m` and `k` gives
+
+```math
+M_n\le M_m+M_k+\sqrt{2(\log2)mkn},                 \tag{36.53}
+```
+
+and a random hollow signing gives
+
+```math
+M_k\le\sqrt{(\log2)(k^3-k)}                       \tag{36.54}
+```
+
+for `k>=2` (with `M_1=0`).  If an order-`n` signing `A` satisfies
+`Q(A)<=M_n+eta`, then **every** principal set `U` of size `m` satisfies
+
+```math
+\boxed{
+Q(A[U])-M_m
+\le eta+M_k+\sqrt{2(\log2)mkn}.}                  \tag{36.55}
+```
+
+Indeed, averaging the omitted spins gives `Q(A[U])<=Q(A)`, and (36.53)
+then supplies (36.55).  Consequently, if `A_n` is a vanishing
+near-minimizer, `k_n=o(n)`, and `U_n` is any sequence of `n-k_n` principal
+sets, then
+
+```math
+Q(A_n[U_n])-M_{n-k_n}=o(n^{3/2}).                 \tag{36.56}
+```
+
+This extends the direct edge-count deletion window from `o(sqrt n)` to all
+`o(n)`, but only for the scalar cap.  It transports neither ground states
+nor shell/response geometry.  In particular, deleting the exceptional shore
+in Theorem 36.13 preserves near-minimality of the large core while erasing
+the leading bipartite response channel.
+
+The random-bridge inequality and the consequence that relatively dense
+liminf-realizing orders would imply convergence were already in the archive.
+The newly isolated content is the elementary uniform principal-heredity
+synthesis, not a new composition method and not a fixed-ratio frontier
+advance.  Proof and independent audit are in
+[`drafts/nearmin_macroscopic_principal_heredity.md`](drafts/nearmin_macroscopic_principal_heredity.md)
+and
+[`drafts/nearmin_macroscopic_principal_heredity_independent_audit.md`](drafts/nearmin_macroscopic_principal_heredity_independent_audit.md).
+
+### Theorem 36.16 (localized exact flips force a third energy-scale direction)
+
+Let `A` be an exact minimizer, `E=binom(n,2)`, and `M=M_n`.  Suppose
+positive shell words `z_1,...,z_k`, each of deficit at most `2s`, have a
+common-correct reservoir
+
+```math
+R_k=\{e:a_e(z_i)_e=+1\text{ for every }i\},
+\qquad p_k=|R_k|.                                  \tag{36.57}
+```
+
+Fix `0<theta<1/2`.  If `1<=r<=p_k`, `2r<M`, `s+r<M`, and
+
+```math
+2^n\exp\{-2(1/2-\theta)^2r\}<1,                  \tag{36.58}
+```
+
+then the same deficit-`2max{s,r}` shell contains a further positive word
+`z_(k+1)` satisfying, simultaneously for all old anchors,
+
+```math
+\boxed{
+d_{\rm P}(z_{k+1},z_i)
+\ge\min\{\theta p_k,M-s-r\}.}                    \tag{36.59}
+```
+
+Choose an `r`-set uniformly inside `R_k`.  A hypergeometric union bound over
+all `2^n` augmented cuts makes every response which is negative on half the
+sample negative on more than `theta p_k` reservoir edges.  Flip the sample.
+Exact minimality supplies such a response with deficit at most `2r`.  Its
+actual distance from every anchor is therefore large, while positivity of
+the two words gives the complementary bound `M-s-r`.  Every new witness is
+obtained from a fresh perturbation of the same `A`, so iterating (36.59)
+does not accumulate shell width.
+
+In the collapsed branch of Theorem 36.13, the first pair has
+`p_2>=M-2s`.  Taking
+
+```math
+\theta={1\over2}-{1\over\log n},
+\qquad r=O(n\log^2n)=o(M),                         \tag{36.60}
+```
+
+therefore forces a third word of `o(n^(3/2))` deficit with
+
+```math
+d_{\rm P}(z_3,z_i)\ge(1/2-o(1))M_n
+\qquad(i=1,2).                                    \tag{36.61}
+```
+
+More generally, for fixed `beta>0` the same argument either builds any
+prescribed number of mutually `(beta/4-o(1))M`-separated words or reaches an
+explicit higher-order failure `|R_k|<beta M`.  Pairwise reservoir mass does
+not prevent this failure, even for actual cut words in a bounded-cap exact
+signing (Example 159).
+
+This is a theorem at the energy scale, not fixed projective scale:
+`M/E=Theta(n^(-1/2))`.  The complementary term in (36.59) is exactly the
+archived two-positive-word inequality AO.20.  Thus the displayed
+one-reservoir entropy proof reaches its certifiable ceiling; a fixed-scale
+packing needs a cut-specific higher-order non-recycling fact or a new way to
+control the opposite signed lift.  Proofs and independent audits are in
+[`drafts/mesoscopic_bipartite_core_third_witness.md`](drafts/mesoscopic_bipartite_core_third_witness.md),
+[`drafts/mesoscopic_bipartite_core_third_witness_independent_audit.md`](drafts/mesoscopic_bipartite_core_third_witness_independent_audit.md),
+[`drafts/mesoscopic_core_iteration_frontier.md`](drafts/mesoscopic_core_iteration_frontier.md),
+and
+[`drafts/mesoscopic_core_iteration_frontier_independent_audit.md`](drafts/mesoscopic_core_iteration_frontier_independent_audit.md).
+
+### Theorem 36.17 (low dimension forces deficit-scale shell diffusion)
+
+Let `C<=F_2^N` be an antipodal `[N,k]` code, let `y` be a deep hole, and
+write
+
+```math
+\rho(C)=N/2-t,
+\qquad
+\mathcal L_r(y)=\{c\in C:d(y,c)\le\rho+r\}.
+```
+
+If `1<=r<t`, `h=ceil(r/2)`, `m=N/2+t`, and
+
+```math
+D=\operatorname{diam}_{\rm P}\mathcal L_r(y)<2(t-r),
+```
+
+then the exact cap-cover entropy inequality
+
+```math
+\boxed{
+|\mathcal L_r(y)|\binom rh(D/m)^h\ge1}            \tag{36.62}
+```
+
+holds.  Consequently, whenever
+
+```math
+k=o(t),\qquad t=o(N),
+```
+
+every integer sequence `k=o(r)=o(t)` obeys
+
+```math
+\operatorname{diam}_{\rm P}\mathcal L_r(y)
+\ge(2-o(1))t.                                     \tag{36.63}
+```
+
+For the augmented cut-code scaling `N=Theta(n^2)`, `k=Theta(n)`, and
+`t=Theta(n^(3/2))`, one may take `r=Theta(n^(5/4))`.  Thus low dimension
+alone forces thin-shell spread of order `M_n`, but not a fixed fraction of
+`N`.
+
+The proof flips every `r`-subset of the complement of one nearest error
+support.  Covering-radius optimality forces a shell leader which agrees with
+at least half of the flipped coordinates.  Below the threshold `2(t-r)`, an
+oppositely oriented Hamming lift cannot enter, so one family of at most
+`D`-sets must half-cover every `r`-set.  Counting those incidences gives
+(36.62).  The proof stops sharply at `2(t-r)`: beyond that point an opposite
+lift can answer many local queries at once.
+
+Two further audited barriers exclude common collapsed constructions.  A
+genuine direct product whose radius-one alternatives have aggregate
+activation mass at least `N/3` already has a fixed-scale pair in an
+`o(t)` shell.  If a projectively collapsed shell contains an affine
+subspace of dimension `k-o(k)`, its direction subcode is supported on
+`o(N)` coordinates; a split-discrepancy bound then contradicts
+`t=Theta(sqrt(Nk))`.  These do not rule out a nonlinear,
+affine-subspace-evasive two-cap shell.
+
+This is a generic mesoscopic theorem and a construction barrier, not the
+selected fixed-scale `L_projective`.  Its complete proof and independent
+finite/proof audit are in
+[`drafts/generic_low_dimension_localization_barriers.md`](drafts/generic_low_dimension_localization_barriers.md)
+and
+[`drafts/generic_low_dimension_localization_barriers_independent_audit.md`](drafts/generic_low_dimension_localization_barriers_independent_audit.md).
+
+## 37. Presented rare-event states
+
+### Theorem 37.1 (generic finite-rank spikes survive bulk normalization)
+
+Let `B_N` be deterministic real symmetric matrices with uniformly bounded
+operator norm, empirical spectral laws converging to a compactly supported
+probability measure `mu`, and
+
+```math
+\lambda_{\max}(B_N)\longrightarrow
+b:=\max\operatorname{supp}\mu.
+```
+
+For a fixed `theta>0`, let `u_N` be Haar-uniform and independent of `B_N`.
+After freezing an almost-surely good sequence of directions,
+
+```math
+\lambda_{\max}(B_N+\theta u_Nu_N^{\mathsf T})
+\longrightarrow \mathcal R(\mu,\theta),           \tag{37.1}
+```
+
+where, with `G_mu(z)=int (z-t)^(-1)dmu(t)` for `z>b`,
+
+```math
+\mathcal R(\mu,\theta)=
+\begin{cases}
+\rho,&\theta G_\mu(b+)>1,
+       \quad G_\mu(\rho)=\theta^{-1},\ \rho>b,\\
+b,&\theta G_\mu(b+)\le1.
+\end{cases}                                      \tag{37.2}
+```
+
+At finite `N` the exact carrier is the rooted spectral measure
+
+```math
+\nu_{N,u}=\sum_i|\langle u,v_i\rangle|^2
+                  \delta_{\lambda_i(B_N)}.        \tag{37.3}
+```
+
+Haar isotropy synchronizes this rooted carrier to the unrooted bulk law.
+For a fixed jointly Haar-generic frame and fixed positive spike multiset
+`Theta`, the finite-rank secular equation therefore yields an asymptotically
+exact **presented** multiset-union update for all upper outliers.  The update
+is not uniform over directions selected adversarially after the presentation
+is frozen.
+
+The spike is invisible to every fixed collection of normalized trace
+moments and to the limiting weak empirical law.  In the supercritical case,
+nevertheless,
+
+```math
+\lambda_{\max}(B_N+\theta u_Nu_N^{\mathsf T})
+-\lambda_{\max}(B_N)\longrightarrow\rho-b>0.      \tag{37.4}
+```
+
+Thus empirical mass `1/N` can carry order-one extremal response and must be
+retained at a separate normalization.  This is a strict rare-event
+composition theorem for a spherical quadratic benchmark, but only at Level
+3 here: `mu` may be infinite-dimensional, the state is presentation-
+dependent, and correlated spikes require relative Gram geometry.  It has no
+current Boolean near-minimizer implication.
+
+The proof, primary citations, scope qualifications, and independent audit
+are in
+[`drafts/rare_event_spectral_spike_state.md`](drafts/rare_event_spectral_spike_state.md)
+and
+[`drafts/rare_event_spectral_spike_state_independent_audit.md`](drafts/rare_event_spectral_spike_state_independent_audit.md).

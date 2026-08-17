@@ -58,8 +58,12 @@ exact minimizer
 one low-cap physical bit in every vanishing halo wider than n^(-1/2)
 
 vanishing-width positive shell
-  --[MISSING L_projective: fixed-scale projective ball-mass decay]-->
-growing projective near-top packing
+  --[PROVED: low-dimensional cap-cover entropy + PP.4 anatomy]-->
+three energy-scale directions or a mesoscopic agreement core
+  --[PROVED: MB/MI third witness; MISSING higher-order non-recycling]-->
+growing projective packing at scale M_n
+  --[MISSING fixed-edge-scale upgrade / different amplifier]-->
+growing fixed-scale near-top packing
   --[PROVED: AO.2 low-cap physical compiler]-->
 growing low-cap contextual information in genuine near-minimizer halos
 ```
@@ -76,6 +80,24 @@ Theorem 36.12 proves that the same statement is false over arbitrary
 vanishing-near-minimizer classes at every preassigned shell width smaller
 than their optimality slack.  Exact optimality is therefore an essential,
 discontinuous hypothesis of `L_projective`.
+
+The two-cap branch is now narrower.  Theorem 36.17 first proves, for every
+antipodal code in the cut-code scaling, an `o(M_n)` shell with projective
+diameter `(2-o(1))M_n`; direct products, one common Hamming cap, and a
+near-full-dimensional affine cap carrier cannot evade this conclusion.
+This generic argument stops exactly when an opposite Hamming lift becomes
+available.  Theorems 36.13 and 36.16 then show that, in the cut code, such
+an opposite-lift pair creates a mesoscopic complete-bipartite agreement core
+and forces a third
+`o(n^(3/2))`-shell word at distance `(1/2-o(1))M_n` from both poles.  The
+multi-anchor form iterates without cumulative shell loss until the common-
+correct intersection falls below `Omega(M_n)`.  Example 159 proves that
+large pairwise intersections do not imply this higher-order premise, even
+for cut words in a bounded-cap exact signing.  Moreover `Theta(M_n)` edge
+separation is still only `Theta(n^(-1/2))` normalized separation and does not
+activate AO.2 at target scale.  Thus the operative SML remains fixed-scale
+`L_projective`; its concrete collapsed-branch sublemma is now an exact-
+minimizer-specific **higher-order non-recycling/opposite-lift theorem**.
 
 ### Route R3: near-minimizer response replacement
 
@@ -98,7 +120,7 @@ landscape.
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
 |---|---:|---:|---:|---|---:|---|
 | R1 collective synchronization | 5 for FB, MP, and the audited atlas | MP chart `O((n/q)log n)` bits conditional on gauge; exact-minimizer atlas `O(n^(4/3))` direct bits | within-chart `O(n^(4/3))`; physical fixed-ratio loss unknown | all orders | 4 for the signing-dependent one-block atlas, but 0 for physical congruence | structural RESET, transfer STRIKE: the atlas is designed, not common; Walsh kills generic mixing |
-| R2 contextual incompressibility | 5 for pinned and low-cap one-bit contexts; conditional 5 for growing low-cap packing | `Omega(n)` pinned bits; one unconditional low-cap bit; `log K_n` bits conditional on a shell packing | `(alpha/4-o(alpha))n^(3/2)` in `N_n(2alpha)`; conditional fixed-scale AO gap | all orders for one bit; growing packing open | 5 for one bit, 3 for the projective-packing premise | RESET: quadratic pinning baseline removed; exact two-cap alternative isolates `L_projective` |
+| R2 contextual incompressibility | 5 for pinned/one-bit contexts and exact energy-scale shell geometry; conditional 5 for growing low-cap packing | `Omega(n)` pinned bits; one unconditional low-cap bit; `log K_n` bits conditional on a fixed-scale shell packing | generic low dimension now forces `(2-o(1))M_n` shell diameter; exact third witness remains at `Theta(M_n)` edge distance; conditional fixed-scale AO gap | all orders for one bit/energy-scale diffusion; fixed-scale growth open | 5 for one bit and generic/cut energy-scale theorems; 3 for fixed-scale packing | structural RESET at the deficit scale, fixed-scale STRIKE: opposite-lift entry is now the precise ceiling and AO scale is unchanged |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
 | adversarial statistical mechanics | 2/3 | finite at fixed width | vanishing density error | all chain lengths | 1 | keep warm |
@@ -112,8 +134,11 @@ landscape.
    overlap at most `1-gamma`.  The exponential form `K_n=exp(Omega(n))`
    would give an extensive low-cap response rate.  AO.2 proves the complete
    physical implication, and the premise retains only witness energies and
-   pairwise projective overlaps.  The exact remaining falsifier is a
-   balanced pair of nearly antipodal projective caps.
+   pairwise projective overlaps.  A single balanced pair is no longer the
+   precise obstruction: exact flips force a third energy-scale direction.
+   The surviving falsifier is a hierarchy of near-antipodal lifts whose
+   higher-order common-correct reservoirs recycle or collapse before any
+   fixed-edge-scale direction appears.
 
 No second lemma is currently selected.  The former `L_transition` remains a
 research question, but after one transfer strike it is not promoted again
@@ -236,3 +261,85 @@ class and risks restating the desired parent optimization.
   with the deepest-coset/projective-packing theorem and a serious scalable
   two-cap construction attempt.  Do not return to spectral roofs or add more
   within-chart entropy.
+
+### Checkpoint 4 — exact deep holes, the third witness, and the projective-scale ceiling
+
+- **Strongest new statements:** (i) every deepest coset's radius-one shell
+  covers all coordinates, but a scalable antipodal linear-code family shows
+  that generic deep-hole and all finite-flip cover laws do not force
+  projective diffusion; (ii) in the cut code, a collapsed pair has a
+  mesoscopic complete-bipartite agreement core; (iii) localized exact flips
+  force a third `o(n^(3/2))`-shell word at `(1/2-o(1))M_n` projective
+  distance, and the multi-anchor form has no cumulative deficit; (iv) every
+  `o(n)` principal restriction of a vanishing near-minimizer remains scalar-
+  near-minimal; (v) a shell ball has an audited local-field response roof
+  with quadratic error, exposing the `n^(-1/4)` Taylor/compiler scale.
+- **Previous SML:** exclude a balanced pair of nearly antipodal projective
+  caps in every exact-minimizer thin shell.
+- **Current SML:** prove an exact-minimizer-specific higher-order
+  non-recycling/opposite-lift theorem which upgrades the forced succession of
+  `Theta(M_n)` directions to one fixed-`Theta(n^2)` projective packing, or
+  devise a low-cap amplifier that makes `Theta(M_n)` separation visible at
+  target response scale.
+- **Benchmark level:** remains Level 5.  The collapsed branch now has an
+  unconditional third-witness theorem, but no Level-6 transfer.
+- **Assumption-distance:** the third-witness implication is 4 (uniform exact
+  minimizers); fixed-scale non-recycling remains 3 and discontinuous in cap
+  slack.  Principal heredity is 4 for scalar cap and 0 for response.
+- **Asymptotic movement:** deletion heredity improves from `o(sqrt n)` to
+  every `o(n)` vertices.  The collapsed-shell guarantee improves from two
+  poles to three with `O(n log^2 n)` deficit and separation
+  `(1/2-o(1))M_n`.  Normalized projective separation remains
+  `Theta(n^(-1/2))`, so target response loss does **not** improve.
+- **Falsifiers:** arbitrary vanishing near-minimizers can have a planted
+  one-cap shell; generic antipodal deep holes can satisfy every flip-cover
+  certificate while collapsed; bounded-cap actual cut words can have large
+  pairwise common-correct reservoirs and only an `O(n)` triple intersection;
+  exact order-seven active-shell collapse exists, while a one-parity shell
+  already diffuses maximally.
+- **Decision:** **RESET for structural anatomy and generic-route
+  falsification; STRIKE for fixed-scale contextual progress.**  The projective
+  route gets one further exact-minimizer-specific pass only.  R1 has two
+  consecutive transfer strikes and is frozen unless a concrete physical
+  transition law appears.  Allocate the next block partly to the scoped
+  rare-event/adversarial-statistical-mechanics portfolio rather than adding
+  more affine or shell-cardinality variants.
+
+### Checkpoint 5 — low-dimensional cap-cover entropy and the opposite-lift ceiling
+
+- **Strongest new statements:** (i) for every antipodal `[N,k]` code with
+  `k=o(t)=o(N)`, every `k=o(r)=o(t)` shell around a deep hole has projective
+  diameter at least `(2-o(1))t`; (ii) direct products with macroscopic
+  radius-one activation and projectively collapsed affine carriers of
+  dimension `k-o(k)` are separately impossible at the target discrepancy;
+  (iii) a generic finite-rank spectral spike supplies a scoped rare-event
+  state invisible to weak bulk moments but composable under predeclared
+  Haar-generic contexts.
+- **Previous SML:** an exact-minimizer higher-order non-recycling theorem or
+  a new low-cap amplifier for `Theta(M_n)` directions.
+- **Current SML:** control the nonlinear opposite-lift entry in the augmented
+  cut code.  Concretely, show that repeated two-cap entries in one exact
+  minimizer shell force a fixed-`Theta(n^2)` projective direction, or produce
+  a scalable exact-minimizer shell falsifier.  Generic cap-cover entropy has
+  now reached its exact orientation ceiling and is not to be iterated as if
+  it were a fixed-scale theorem.
+- **Benchmark level:** remains Level 5; the generic coding theorem is a new
+  energy-scale implication, not Level 6 and not a convergence mechanism.
+- **Assumption-distance:** deficit-scale diffusion moves from 3 to 5 for the
+  generic code class.  Fixed-scale `L_projective` remains 3 because the
+  opposite-lift branch is unresolved.  The rare-event spike state is Level 3
+  and deliberately outside the Boolean frontier.
+- **Asymptotic movement:** the guaranteed projective diameter is now
+  `(2-o(1))t=Theta(n^(3/2))` in a shell of width `Theta(n^(5/4))`; previously
+  generic deep-hole theory guaranteed only coordinate coverage and
+  `Theta(n)` minimum-distance separation.  Normalized edge distance is still
+  `Theta(n^(-1/2))`, so the low-cap response gap does not improve.
+- **Falsifiers/ceiling:** at distance `2(t-r)` an antipodal lift can answer
+  all local-flip queries; nonlinear shells need not contain large affine
+  subspaces; relative spike directions falsify an adversarial multiset-union
+  rare-event state.
+- **Decision:** **RESET at the generic deficit scale; STRIKE at the selected
+  fixed scale.**  Give the cut-specific opposite-lift problem one final
+  bounded pass.  If it yields no fixed-scale theorem or scalable exact
+  falsifier, freeze `L_projective` and retain the new results as a precise
+  ceiling rather than launching more shell variants.
