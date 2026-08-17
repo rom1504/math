@@ -7627,6 +7627,88 @@ that exact minimizers below the conference-scale cap share this complexity.
 It is a response lower bound for the declared arbitrary-pinning future
 family, not for futures restricted only to hollow sign-quadratic fragments.
 
+### Theorem 21.6a (explicit permutation-Walsh rate)
+
+On the same subsequence `n=q^2=2^(2m)`, there are the deterministic Walsh
+bridge `W` and a family of exact-cap switched children of size
+
+```math
+\exp(\Omega(q\log q))=\exp(\Omega(\sqrt n\log n))        \tag{21.33a}
+```
+
+whose projective response distance is at least `n^(3/2)/8`. The family has a
+matching `Theta(sqrt(n)log n)`-bit description.
+
+#### Proof
+
+For every permutation `pi:F_2^m->F_2^m`, use the Maiorana--McFarland switch
+
+```math
+s_\pi(u,v)=(-1)^(u dot \pi(v)).                          \tag{21.33b}
+```
+
+It is bent, since direct summation gives
+
+```math
+(Ws_\pi)(a,b)=q(-1)^(b dot \pi^{-1}(a)).                 \tag{21.33c}
+```
+
+Thus `y_pi=q^(-1)Ws_pi` is Boolean. Switch the regular child in Theorem 21.6
+by `s_pi`. For a pair `pi,sigma`, put
+
+```math
+\tau(v)=v+\pi(v)+\sigma(v),
+\qquad
+\rho(\pi,\sigma)
+=E_(x,y)(-1)^(x dot y+\tau(x) dot \tau(y)).              \tag{21.33d}
+```
+
+Exact Walsh summation identifies `rho` with the normalized rooted Rayleigh
+coordinate `w^Tmathcal Hw/(qn)`, where `w=s_pi odot s_sigma`.
+
+It remains to find many pairs with `rho<=1/4`. First take `tau` to be a
+uniform random function. With
+
+```math
+f_a(y)=(-1)^(a dot \tau(y)),
+```
+
+one has
+
+```math
+\rho(\tau)=q^{-1}\sum_x\widehat f_(\tau(x))(x).          \tag{21.33e}
+```
+
+If this exceeds `1/4`, more than `q/7` summands exceed `1/8`. Parseval allows
+fewer than `64` such frequencies for one value of `tau(x)`, so the good
+image spans at least `r=m-8` independent output characters. For fixed
+independent characters and witnesses, the resulting `rq` Fourier signs are
+independent Rademachers. Hoeffding and a union bound give
+
+```math
+Pr\{\rho(\tau)>1/4\}
+\le q^{2r}\exp(-rq/128).                                \tag{21.33f}
+```
+
+For independent random functions `pi,sigma`, the values of `tau` are iid
+uniform. Conditioning both functions to be permutations costs at most
+`(q^q/q!)^2<=e^(2q)`. Turan's reciprocal-density bound on the resulting bad-
+pair graph therefore supplies a permutation code of size at least
+
+```math
+\exp(rq/128-2r\log q-2q)=\exp(\Omega(q\log q)).          \tag{21.33g}
+```
+
+For every good pair, the same resolvent completion as in (21.33) puts the
+cross response at most `11qn/8`, while the matched response is `3qn/2`.
+Evaluating in both query directions gives projective gap `qn/8`. Listing the
+permutation costs `log(q!)=Theta(q log q)` bits and reconstructs the child,
+which proves the matching family-level upper. `square`
+
+This explicit theorem is dominated in rate by Corollary 21.8a, whose bridge
+and code are probabilistic. Its additional structural content is the
+approximate-inner-product-isometry tail (21.33f).
+
 ### Lemma 21.7 (switching response equals weighted near-top deficit)
 
 Let `P=max_u H_A(u)` and fix a top state `u_*`. For a field `h`, define

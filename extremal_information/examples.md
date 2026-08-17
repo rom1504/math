@@ -1711,3 +1711,26 @@ commutation phase invisible to the retained scalar summaries. The exact
 Kronecker presentation uses `k sqrt(n)` truth-table bits and is closed under
 graph gluing, but it is only coefficient-level closure; it does not itself
 compute the Boolean maximum.
+
+## Example 75: permutation bent switches gain a logarithmic factor
+
+Replace the Boolean truth table in the first Walsh construction by a
+permutation `pi` of `F_2^m` and use
+
+```math
+s_pi(u,v)=(-1)^(u dot pi(v)).
+```
+
+All `q!` such vectors remain bent. For two permutations, the rooted Rayleigh
+coordinate is the signed bias with which
+`tau(v)=v+pi(v)+sigma(v)` preserves the Boolean inner product. If that bias
+exceeds `1/4`, Fourier Parseval forces `m-O(1)` independent large characters.
+Their joint Hoeffding cost has speed `q log q`, enough to survive conditioning
+two random functions to be permutations and then applying Turan's bound.
+
+The resulting explicit-family code has `exp(Omega(q log q))` children at the
+same `n^(3/2)/8` response gap, where `n=q^2`. Thus its response information is
+`Theta(sqrt(n)log n)`, matched by listing the permutation. The construction
+is weaker than the probabilistic full-orbit linear-rate theorem but exposes a
+useful algebraic invariant: approximate self-isometry of the Walsh bilinear
+form.

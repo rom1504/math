@@ -614,6 +614,12 @@ matching `Theta(n)` response bits: the lower bound is an exponential
 projective packing, while the switch itself is an `n`-bit exact state. Thus
 bounded extremal scale alone does not imply sublinear memory.
 
+An intermediate fully algebraic benchmark is also available. Permutation-
+valued Maiorana--McFarland switches and the deterministic Walsh bridge give
+a matching `Theta(sqrt(n)log n)` response state. Its proof identifies
+high-bias approximate self-isometries of the Boolean inner product and shows,
+by a Fourier-rank tail, that they are sparse at speed `sqrt(n)log n`.
+
 Repeated composition supplies the next, different obstruction. The
 structured Walsh family has an exact `k sqrt(n)`-bit Kronecker presentation
 on a `k`-block graph, but isolated bias and all within-word pairwise
