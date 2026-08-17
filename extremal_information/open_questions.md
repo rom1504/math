@@ -423,12 +423,22 @@ proved for the motivating sign matrices.
 ## 10. Synchronization among amplification phases
 
 Regular-Hadamard tensor powers and summably perturbed signed replications now
-give genuine near-original limits along each prescribed hierarchy. The
-remaining all-order issue is compatibility among different outer prefix
-phases.
+give genuine near-original limits along each prescribed hierarchy.  The
+negative half is now solved sharply: every regular-Hadamard automatic prefix
+hierarchy has a continuous mantissa profile, and the explicit order-four
+Walsh hierarchy has
 
-Seek a checkable mechanism implying that phase carriers approach one common
-limit, for example
+```math
+L(1)=L(4)=1/2<L(3).
+```
+
+Thus convergence along every fixed phase and exact all-order realization do
+not imply phase synchronization.
+
+The remaining positive target is a checkable mechanism forcing this phase
+profile to collapse.  It must be stronger than separate recovery but weaker
+than assuming equality of the phase carriers, for example a mixing or
+inter-phase transfer estimate implying
 
 ```math
 d_H(K_(d,r),K_(d',r'))\longrightarrow0
@@ -436,13 +446,13 @@ d_H(K_(d,r),K_(d',r'))\longrightarrow0
 
 whenever the represented orders are asymptotically adjacent.
 
-**Success:** an all-order automatic dense signing with one synchronized
-response limit, or an explicit coherent infinite signing with two persistent
-normalized prefix phases.
+**Success:** an all-order phase-collapse theorem stable under a nontrivial
+class of summable perturbations, with one dense signing model not defined by
+assuming its response limit.
 
-**Falsifier:** convergence along every fixed phase but a fixed gap between two
-phases. A condition that simply assumes their Hausdorff distance vanishes is
-not a recovery theorem.
+**Stop condition:** a condition that simply assumes constancy of the phase
+profile or vanishing Hausdorff distance is not a recovery theorem.  The
+Walsh construction is now the mandatory falsifier for weaker proposals.
 
 ## 11. Tangent mass for multiscale extremal convolution
 

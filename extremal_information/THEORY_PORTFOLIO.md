@@ -87,7 +87,7 @@ one of:
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 
-### 2a. Scale-preserving amplification — promoted near-original branch, B+
+### 2a. Scale-preserving amplification and phase laws — active near-original branch, A-
 
 - **Core object:** a fixed-port Boolean cross-correlation set with a
   scale-preserving witness lift.
@@ -98,20 +98,28 @@ one of:
   forces Hausdorff convergence. Signed replication supplies an exact cut-norm
   certificate, and perfect-matching flips after every amplification produce
   non-tensor dense hollow sign hierarchies whose normalized maxima converge.
-- **Best benchmark:** a dense structured sign model on geometric orders with
-  a carrier of fixed Euclidean dimension despite exponentially many spins.
+  For an arbitrary regular-Hadamard automatic prefix hierarchy, all fixed
+  phases assemble into a uniform continuous mantissa law.
+- **Best benchmark:** one explicit coherent Walsh prefix signing has a
+  nonconstant continuous phase profile: its geometric phases equal `1/2`
+  while its `3*4^r` phases are at least `89/(96sqrt(3))`.  It is a genuine
+  all-order nonconvergent dense-signing sequence, though not a statement
+  about the minima.
 - **Best falsifier:** vanishing, even square-summable, lift errors do not
   suffice without finite total drift; a logarithmically rotating scalar
-  kernel oscillates. The theorem still follows one geometric-order hierarchy
-  and provides no synchronization among distinct outer prefix phases.
+  kernel oscillates.  More decisively, exact realization and convergence on
+  every fixed outer prefix phase do not synchronize them: the Walsh profile
+  retains a fixed gap.
 - **Information discarded:** every microscopic coordinate except the finite
   outer cross-correlation matrix.
 - **Composition/limit mechanism:** normalized witness embedding, nested
   compact response images, and support-function continuity.
-- **Live theorem:** determine when different outer prefix phases synchronize,
-  or give a scalable all-order phase obstruction.
-- **Status:** promoted scoped branch; this meets a near-original benchmark
-  but does not authorize a direct attack on `M_n`.
+- **Live theorem:** characterize a checkable phase-collapse mechanism and
+  decide whether it survives summably perturbed or nonautomatic recovery
+  systems; mere phasewise realization is now rigorously insufficient.
+- **Status:** active scoped branch; the general phase theorem and explicit
+  obstruction reset the strike count and meet a near-original benchmark,
+  but they do not authorize a direct attack on `M_n`.
 
 ### 3. Composition-created holonomy / carrier geometry — active, B
 

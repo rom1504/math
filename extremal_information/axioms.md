@@ -1372,3 +1372,19 @@ memory per flux at a fixed port scale; it does not by itself prove an
 extensive information rate after the number of ports is included in the
 normalization.  A general dense-interface lower bound must control both the
 number of exposed fluxes and their response gap at the total-system scale.
+
+## 57. Recovery can leave a continuous scale phase
+
+Exact scale-preserving witness lifts make every fixed outer tensor template
+converge, but they need not identify different outer prefixes.  For any
+regular-Hadamard automatic prefix hierarchy, the residual all-order state is
+a continuous base-`h` mantissa profile.  Convergence of the scalar response
+is equivalent to constancy of that profile, not a consequence of phasewise
+compactness.
+
+The Walsh hierarchy shows this residual state can be nontrivial by a fixed
+gap.  Hence an all-order recovery theory needs a phase-synchronization or
+phase-selection principle in addition to realizability at every order.  The
+phase is still a strict compact quotient of the Boolean landscape, so the
+counterexample diagnoses the missing information without reinstating the
+full optimization.

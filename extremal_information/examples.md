@@ -1996,3 +1996,22 @@ complete support, carries an `h`-bit scalar response packing.
 This closes scalar visibility at fixed one-block accuracy.  It does not
 give an extensive whole-system rate, because the total-variable normalized
 gap decays as `h^(-3/2)`.
+
+## Example 92: an automatic dense signing has a continuous scale phase
+
+Order the tensor powers of the regular order-four Walsh matrix so that each
+is the leading block of the next.  Hollow the prefixes of the resulting
+infinite sign matrix.  Every fixed base-four prefix phase is a fixed outer
+template tensored with deeper Walsh powers, so its normalized Boolean
+maximum converges.  Operator control of the vertices added between nearby
+prefixes promotes these pointwise limits to one continuous mantissa profile.
+
+The profile is not constant.  Full powers have ratio `1/2`, while an exact
+48-spin certificate, amplified by the regular Boolean eigenvector, gives
+ratio at least `89/(96sqrt(3))` on every `3*4^r` prefix.  Thus one explicit
+coherent all-order dense signing sequence genuinely fails to converge even
+though every fixed phase does.
+
+This is not nonconvergence of the minimizing sequence.  It is the sharp
+falsifier for the claim that cross-scale recovery alone synchronizes outer
+phases.

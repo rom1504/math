@@ -9866,3 +9866,148 @@ growing Boolean kernels with distortions `alpha_r->0` and
 `n_r=2^r`, `c_r=sin(log(r+2))`, and
 `A_r=c_r sqrt(n_r)I`. Hence vanishing or square-summable error alone cannot
 replace (29.1) without an additional cancellation mechanism.
+
+## 30. Automatic tensor-prefix phase laws
+
+### Theorem 30.1 (continuous phase law for regular-Hadamard prefixes)
+
+Let `H` be a symmetric Hadamard matrix of order `h>1`, with top-left entry
+one and a Boolean vector `u` satisfying `Hu=sqrt(h)u`.  Use the lexicographic
+ordering
+
+```math
+H_r=H^(tensor r),\qquad H_(r+1)=H tensor H_r.          \tag{30.1}
+```
+
+The `H_r` are compatible leading principal blocks of one infinite symmetric
+sign matrix.  Let `A_n` be its hollow leading `n by n` block, put `R_r=h^r`,
+and define
+
+```math
+F_r(t)={Q(A_(floor(tR_r)))\over R_r^(3/2)},
+\qquad 1\le t\le h.                                   \tag{30.2}
+```
+
+Then `F_r` converges uniformly to a continuous nondecreasing function `F`.
+Moreover
+
+```math
+G_r(t)={Q(A_(floor(th^r)))\over floor(th^r)^(3/2)}
+\longrightarrow L(t):={F(t)\over t^(3/2)}              \tag{30.3}
+```
+
+uniformly on `[1,h]`.  If
+
+```math
+r(n)=floor(log_h n),\qquad t_n={n\over h^(r(n))},       \tag{30.4}
+```
+
+then
+
+```math
+{Q(A_n)\over n^(3/2)}-L(t_n)\longrightarrow0.          \tag{30.5}
+```
+
+Thus this coherent all-order sequence converges precisely when its continuous
+scale-phase profile `L` is constant.  Always `L(1)=L(h)=1/2`.
+
+#### Proof
+
+For a base-`h` rational `t=p/h^k`, with integer
+`h^k<=p<=h^(k+1)`, the relevant prefix factors exactly as
+
+```math
+C_(p h^(r-k))=B_(p,k) tensor H_(r-k),                 \tag{30.6}
+```
+
+where `B_(p,k)` is the leading `p`-square block of `H_(k+1)`.  The outer
+template is fixed.  The Boolean lift `x mapsto x tensor u` and Theorem 28.1,
+with the vanishing diagonal-removal error, make `F_r(t)` converge on this
+dense set.
+
+For `1<=t<=s<=h`, write `n=floor(tR_r)`, `m=floor(sR_r)`, and `d=m-n`.
+The block decomposition of `A_m` over `A_n` has cross block `C` and new
+diagonal block `D` satisfying
+
+```math
+||C||<=sqrt(hR_r),\qquad ||D||<=sqrt(hR_r)+1.          \tag{30.7}
+```
+
+Indeed both unhollowed blocks are coordinate compressions of `H_(r+1)`.
+For Boolean block spins, their new half-quadratic energy is at most
+
+```math
+sqrt(hR_rnd)+{d\over2}(sqrt(hR_r)+1).                  \tag{30.8}
+```
+
+Principal deletion gives `Q(A_n)<=Q(A_m)`: average over independent unbiased
+missing spins and select an extension with the desired sign.  Hence
+
+```math
+0\le F_r(s)-F_r(t)
+\le sqrt(h)sqrt{(n/R_r)(d/R_r)}
+ +{sqrt(h)\over2}{d\over R_r}+{d\over2R_r^(3/2)}.     \tag{30.9}
+```
+
+This is a common `O_h(sqrt(s-t)+s-t)+o_r(1)` modulus.  Convergence on a
+finite base-`h` rational net makes the functions uniformly Cauchy; the
+retained modulus makes the limit continuous.  Dividing by the uniformly
+positive factor `(floor(th^r)/h^r)^(3/2)` proves (30.3).  Choosing
+`t=t_n` gives (30.5) with no floor error.  At geometric orders, the spectral
+upper bound and the Boolean eigenvector give normalized value
+`1/2+O(h^(-r/2))`, proving the endpoint identities. `square`
+
+### Corollary 30.2 (one Walsh hierarchy genuinely does not converge)
+
+For
+
+```math
+H=\begin{pmatrix}
+1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1
+\end{pmatrix},
+\qquad u=(1,1,1,-1)^T,                                 \tag{30.10}
+```
+
+let `A_n` be the coherent hollow prefix signing from Theorem 30.1.  Then
+
+```math
+{Q(A_(4^r))\over(4^r)^(3/2)}={1\over2},               \tag{30.11}
+```
+
+whereas
+
+```math
+{Q(A_(3*4^r))\over(3*4^r)^(3/2)}
+\ge {89\over96sqrt3}=0.535251812061\ldots\quad(r>=2). \tag{30.12}
+```
+
+Consequently the one explicit all-order sequence `Q(A_n)/n^(3/2)` does not
+converge, and its complete asymptotic behavior is the nonconstant continuous
+mantissa law `L(t_n)` from Theorem 30.1.
+
+#### Proof
+
+At order `4^r`, `H_r` has operator norm `2^r`, Boolean eigenvector
+`u^(tensor r)`, and trace zero, giving (30.11).  Let `B` be the leading
+three-square block of `H`.  At order 48, the explicit Boolean vector
+
+```text
+(+ + + -  + + - +  + - + +  - + + -)
+(+ - - -  + + + -  + - + +  + + - -)
+(+ + + +  - + - +  - + + -  - - + -)
+```
+
+has quadratic value `356` against `B tensor H_2`.  Tensoring it with
+`u^(tensor s)` multiplies the value by `8^s`; trace zero makes hollowing
+exact.  Division by `2(48)^(3/2)8^s` gives (30.12).  Theorem 30.1 supplies
+the full phase law. `square`
+
+This is a near-original scalable obstruction, but not nonconvergence of the
+minimizing values `M_n`: the displayed prefixes are one fixed family and are
+not known to be near-minimizers.  What it disproves is the general inference
+that convergence on every fixed amplification phase, even with exact
+all-order realization, synchronizes the phases automatically.  Detailed
+proofs, audits, and the exact certificate are in
+[`drafts/automatic_tensor_prefix_phase.md`](drafts/automatic_tensor_prefix_phase.md),
+[`drafts/walsh_prefix_nonconvergence.md`](drafts/walsh_prefix_nonconvergence.md),
+and their adjacent audit files.

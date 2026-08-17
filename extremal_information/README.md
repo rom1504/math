@@ -843,6 +843,11 @@ regular-Hadamard tensor amplification: its fixed-port response sets are
 nested and yield normalized limits for genuine dense hollow sign hierarchies.
 This now tolerates summable all-pairs Boolean-lift defects and includes a
 non-tensor hierarchy with a perfect matching of sign flips at every scale.
-It is still only a geometric-order structured benchmark; it neither realizes
-near-minimizers at arbitrary orders nor closes the general dense-sign bridge
-interface, so the campaign still does not return to the motivating problem.
+For automatic regular-Hadamard prefixes, the all-order residual is a
+continuous scale-phase profile.  An exact order-four Walsh certificate proves
+that this profile can be nonconstant, yielding one explicit nonconvergent
+dense-signing sequence despite convergence on every fixed phase.  This is a
+sharp realization/synchronization obstruction, not nonconvergence of the
+minimizing values.  The theory still neither realizes near-minimizers at
+arbitrary orders nor closes the general dense-sign bridge interface, so the
+campaign does not return to the motivating problem.
