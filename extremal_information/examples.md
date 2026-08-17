@@ -2189,3 +2189,18 @@ flat alternating-form family is necessarily different: in every coordinate
 system its average edge fan-in is linear and every hidden bit changes a
 quadratic number of edge phases.  Dense broadcast, rather than a clever
 repackaging of local scalar channels, is the source of its macroscopic rate.
+
+## Example 104: contraction prices only the centred response channel
+
+On a fixed switching graph with common transported fibre laws, terminal
+centred information decays as `rho^t` and fresh centred reward errors sum to
+`B/(1-rho)`.  The scalar reward cochain is untouched: its exact asymptotic
+error is the largest absolute directed-cycle mean.  A finite response code
+therefore pays the centred dictionary at resolution `(1-rho)epsilon` and
+the recurrent cycle quotient in `|E|-|Q|+1` persistent coordinates.
+
+Two-state eigenmodes and singleton cycles attain all three terms separately.
+Consequently no scalar formula such as “static response entropy times mixing
+time” can be universal.  Strong mixing erases hidden fibre history, not
+visible reward holonomy.  The same decomposition survives genuine nonlinear
+switches only when all stochastic secants transport one law.

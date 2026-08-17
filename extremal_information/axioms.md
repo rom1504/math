@@ -1535,3 +1535,17 @@ pairwise response packing.  Spectral flatness and concise public advice are
 separate resources.  A flat positive-rate family can evade the local regime
 only by making its hidden coordinates densely incident, by changing the
 normalization, or by leaving the bounded fixed-child presentation.
+
+## 69. Forgetting scale and cycle memory add; they do not substitute
+
+On a certified common-law contracting carrier, centred terminal information
+is forgotten geometrically and fresh centred reward error accumulates only
+to its geometric resolvent.  The invariant scalar reward direction is a
+different resource: its persistent response is exactly recurrent graph
+cohomology, measured by directed cycle means or stationary flows.
+
+Thus dynamic response complexity separates into a static dictionary sampled
+at the forgetting scale and a cycle-space memory sampled at the target rate.
+More contraction cannot compensate for scalar holonomy.  Conversely, once
+the cohomology class is retained, arbitrary switching inside the contracting
+fibres creates no additional extensive expected-reward state.

@@ -11075,3 +11075,159 @@ exceptional, not the first member of a fixed-power finite hierarchy.  This
 does not exclude every non-Gaussian finite semigroup; it closes the proposed
 power-exponential extension.  Full details and audit are in
 [`drafts/non_gaussian_tangent_closure.md`](drafts/non_gaussian_tangent_closure.md).
+
+## 33. Contracting fibres and persistent reward cohomology
+
+### Theorem 33.1 (three-channel response decomposition)
+
+Let `G=(Q,E)` be a finite directed control graph.  Vertex `q` carries a
+finite probability space `(X_q,pi_q)`, and edge `e:q->q'` carries a Markov
+operator satisfying
+
+```math
+P_e1=1,qquad pi_qP_e=pi_(q'),qquad
+||P_eh||_(2,pi_q)<=rho||h||_(2,pi_(q'))              \tag{33.1}
+```
+
+for every centred `h`, with one `rho<1`.  Give edge `e` a reward residual
+`a_e` and vertex `q` a terminal residual `u_q`.  Write
+
+```math
+m_e=pi_qa_e,quad b_e=a_e-m_e1,quad
+bar u_q=pi_qu_q,quad v_q=u_q-bar u_q1,              \tag{33.2}
+```
+
+and let `B=max_e||b_e||_2`, `R=max_q||v_q||_2`.  For a path
+`p=e_1...e_t`, its expected accumulated response residual `D_p` satisfies
+
+```math
+\left\|D_p-\left(bar u_(q_t)+\sum_(s=1)^t m_(e_s)\right)1\right\|_2
+<=rho^tR+B{1-rho^t\over1-rho}.                       \tag{33.3}
+```
+
+The constant and centred parts are orthogonal.  If
+
+```math
+chi_G(m)=max_C{1\over|C|}\left|\sum_(e\in C)m_e\right|, \tag{33.4}
+```
+
+where `C` ranges over directed simple cycles in the reachable recurrent
+graph, then
+
+```math
+limsup_(t->infinity){1\over t}
+ sup_(|p|=t)||D_p||_2=chi_G(m).                       \tag{33.5}
+```
+
+Moreover, `chi_G(m)` is exactly the maximum absolute pairing of `m` with a
+normalized stationary edge flow.  It vanishes precisely when `m` is a
+vertex gradient on every strongly connected component.  Hence a uniformly
+bounded all-depth response approximation exists exactly when the recurrent
+scalar reward cochain is potential; strict mixing cannot pay nonzero scalar
+holonomy.
+
+For a fixed strongly connected `G`, put `r_G=|E|-|Q|+1`.  Let `N_U(eta)`
+and `N_B(eta)` cover the terminal and centred-edge dictionaries in maximum
+`L^2` distance, and let scalar cohomology classes lie in the radius-`L` ball
+for `chi_G`.  Then the fixed certified carrier, modulo exact endpoint gauges,
+has a composable codebook of size
+
+```math
+N_U(epsilon)N_B((1-rho)epsilon)
+\left(1+{2L\over epsilon}\right)^(r_G)               \tag{33.6}
+```
+
+whose error on every length-`t` path is
+
+```math
+epsilon t+C_Gepsilon.                                \tag{33.7}
+```
+
+The cycle exponent is sharp up to graph-dependent constants: cochain-centre
+codes must cover the cycle-norm ball, and arbitrary encoders must distinguish
+a strict `2epsilon`-packing.  Thus response entropy is sampled at the
+forgetting scale `(1-rho)epsilon`, while persistent dynamic memory costs the
+cycle rank independently.
+
+#### Proof
+
+Constants and centred functions are invariant orthogonal channels under
+(33.1).  Expanding the path response gives the exact identity
+
+```math
+D_p=\left(bar u_(q_t)+\sum_sm_(e_s)\right)1+P_pv_(q_t)
+ +\sum_(s=1)^tP_(e_1)...P_(e_(s-1))b_(e_s).          \tag{33.8}
+```
+
+Geometric summation proves (33.3).  Delete directed cycles from a path.  Its
+remaining simple part has at most `|Q|-1` edges, whereas each deleted cycle
+has mean at most `chi_G(m)`; repeating a maximizing cycle proves the reverse
+asymptotic bound.  Circulation decomposition proves the stationary-flow
+dual, and the usual path-integral argument identifies zero cycle cochains
+with gradients on a strongly connected component.
+
+The quotient by gradients has dimension `r_G`.  Cover its radius-`L` ball
+by `(1+2L/epsilon)^(r_G)` cycle-norm balls; a bounded linear section and loop
+erasure turn each such error into `epsilon t+O_G(epsilon)`.  Recenter any
+external centred-dictionary codeword orthogonally.  Terminal error costs
+`epsilon` once, while centred reward error `(1-rho)epsilon` sums to at most
+`epsilon`.  Repeated exposed cycles give the lower packing law. `square`
+
+Every factor is independently sharp: a two-state eigenmode realizes
+`rho^tR`, repeated centred reward realizes `B(1-rho^t)/(1-rho)`, and
+singleton fibres on a directed cycle realize `t chi_G(m)`.  The theorem
+assumes a fixed common-law contracting carrier; it neither discovers one for
+arbitrary hidden dynamics nor counts unbounded endpoint potentials for free.
+
+### Theorem 33.2 (nonlinear secants and the variance toll)
+
+Theorem 33.1 remains valid for switching nonlinear homogeneous maps along
+one declared visible path if every realized stochastic secant transports the
+same full-support law, contracts its centred `L^2` space by `rho`, and every
+same-input approximation defect has a control-visible mean `m_e` and centred
+norm at most `B`.  Optimizer switches and ties then create no fourth channel.
+
+Conversely, let a Markov operator preserve `pi` and satisfy
+`||P-Pi||_(2->2)<=rho<1`.  If
+
+```math
+||f-g||_infinity<=omega,qquad f<=Pf+epsilon1,        \tag{33.9}
+```
+
+then
+
+```math
+epsilon>=
+{(1-rho)^2(\sqrt(Var_pi(g))-omega)_+^2
+ \over osc(g)+2omega}.                               \tag{33.10}
+```
+
+Thus a response phase with positive stationary variance must survive in the
+recovery radius or be paid as fresh transfer toll.
+
+#### Proof
+
+For the nonlinear claim, subtract the two trajectories.  The stochastic
+secant propagates the old difference and the same-input defect supplies a
+new reward, so (33.8) applies verbatim.
+
+For (33.10), put `h=f-Pf`.  It has mean zero and lies in
+`[-osc(f),epsilon]`, whence `||h||_2^2<=osc(f)epsilon`.  With
+`v=f-pi f`,
+
+```math
+(1-rho)||v||_2<=||(I-P)v||_2=||h||_2.                \tag{33.11}
+```
+
+Finally `||v||_2>=sqrt(Var_pi(g))-omega` and
+`osc(f)<=osc(g)+2omega`. `square`
+
+For all-finite max-plus maps stochastic secants exist, but a common
+transported law and strict centred contraction generally do not.  These are
+generator-level falsifiers, not synonyms for the desired quotient.  The
+proofs, two independent audits, and 8,099 finite checks are in
+[`drafts/contracting_fibre_cocycle_decomposition.md`](drafts/contracting_fibre_cocycle_decomposition.md),
+[`drafts/contracting_fibre_cocycle_independent_audit.md`](drafts/contracting_fibre_cocycle_independent_audit.md),
+[`drafts/contracting_fibre_cocycle_second_audit.md`](drafts/contracting_fibre_cocycle_second_audit.md),
+and
+[`experiments/verify_contracting_fibre_cocycle.py`](experiments/verify_contracting_fibre_cocycle.py).

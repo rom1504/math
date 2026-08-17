@@ -25,7 +25,14 @@ one of:
 
 - **Core object:** future-response equivalence, response roofs, presented
   carriers, and finite endpoint-support families with reward potentials.
-- **Strongest theorem:** fixed-delay row-rank-one synchronization creates a
+- **Strongest theorem:** on a fixed common-law contracting control carrier,
+  response error decomposes exactly into terminal decay `rho^t`, a fresh
+  centred shell `B/(1-rho)`, and scalar recurrent cohomology measured by
+  directed cycle means.  Its response code resolves the centred dictionary
+  at `(1-rho)epsilon` and pays `|E|-|Q|+1` persistent cycle coordinates, with
+  matching exponents.  A nonlinear stochastic-secant lift covers genuine
+  switching and ties under the same transported-law certificate.  In the
+  exact combinatorial branch, fixed-delay row-rank-one synchronization creates a
   finite suffix-residual quotient with exact context-cycle response and a
   pumpable potential dichotomy.  A descending incoming-image test computes
   the greatest one-support-per-residual witness core, while arbitrary
@@ -42,13 +49,16 @@ one of:
   semantic gap.
 - **Information discarded:** individual microscopic witnesses; a terminal
   witness is chosen backward after the declared future is known.
-- **Composition mechanism:** backward-surjective support update plus a finite
-  cocycle potential; recurrent errors are cycle means.
-- **Live theorem:** extend the exact residual/core split to approximate
-  finite-delay synchronization: quantify how profile-covering error, context
-  cycle toll, and core leakage combine without charging the same error once
-  per depth.
-- **Strike count:** zero.  The bounded-delay residual/core theorem and its
+- **Composition mechanism:** contracting fibres geometrically sum centred
+  errors while recurrent scalar cohomology composes additively; the separate
+  witness branch uses backward-surjective support update and a support
+  potential.
+- **Live theorem:** derive a common transported contracting law, or an
+  approximate substitute, from a natural generator class rather than taking
+  the carrier as input.  Support-core leakage remains a separately charged
+  certificate resource.
+- **Strike count:** zero.  The contracting-fibre/cocycle law is a new
+  multi-model quantitative theorem, and the bounded-delay residual/core theorem and its
   decisive empty-core counterexample reset the counter while revising the
   hierarchy: semantic residuals and anticipatory witness certificates are
   separate quotients.

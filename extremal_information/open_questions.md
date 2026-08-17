@@ -66,22 +66,27 @@ one locally thresholded support can be attached to each residual.  The
 empty-core counterexample proves that this last condition is proof memory,
 not automatically semantic response information.
 
-The remaining target is **approximate residual/core synchronization**:
+The residual-error half of **approximate residual/core synchronization** is
+now solved on a common-law contracting carrier:
 
 ```math
 \text{how do profile-covering error, cycle toll, and support leakage combine}
 \quad\text{without paying the same approximation at every depth?} \tag{OQ.1}
 ```
 
-Seek a theorem for products that become `epsilon`-row-rank-one after a bounded
-delay.  It should return a finite residual cover plus a cycle potential and
-either a depth-uniform rooted response bound or a pumpable pair-cycle
-falsifier.  If supports are also claimed, charge the additional greatest-core
-leakage separately rather than identifying it with residual error.
+Terminal error decays as `rho^t`, fresh centred reward error costs
+`B/(1-rho)`, and scalar recurrent error is exactly the cycle-mean norm.  A
+fixed strongly connected carrier consequently has response code size
+`N_U(epsilon)N_B((1-rho)epsilon)(1+2L/epsilon)^r_G`, with a matching cycle
+exponent.  The unresolved structural target is to **derive**, rather than
+assume, a common transported contracting law or an approximate replacement
+from natural max-plus/Bellman generators.  If supports are also claimed,
+charge the greatest-core leakage separately: the response theorem does not
+turn proof memory into semantic state.
 
-**Success:** a depth-uniform quantitative theorem in two model classes, with
-profile covering number, forgetting delay, and terminal query radius all
-explicit.
+**Success:** a checkable generator-level condition producing the certified
+carrier for a class broader than promoted rank-one/reset systems, or a
+pumpable counterexample proving that no such law can exist.
 
 **Stop condition:** do not infer a scalar response gap from an empty support
 core.  The exact two-matrix counterexample in Theorem 17.1u is mandatory.
