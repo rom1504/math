@@ -14,7 +14,7 @@ carry the theorem claims.
 | 1D / fixed-width Ising | width one: baseline and cavity gap; two-ended fragment: projective `2 by 2` max-plus kernel; fixed width: boundary profile | zero-temperature transfer matrix / cavity field | yes, but low-surprise | endpoint pins prove exact coarseness and max-plus multiplication proves reuse; width-one covers are polynomial in precision; full profile-cube lower bounds apply to gadget-complete treewidth fragments, not yet strict strips | clean sanity-test A success; strict-strip approximate lower remains open |
 | heterogeneous / fixed-rank mean field | discrete-concave top-occupancy profile, equivalently sorted slopes; finite-grid histogram; under fixed pair score, the concave response roof | empirical field distribution, magnetization counts, Legendre roof | not cleanly blind; fixed-rank closure was known, but the heterogeneous roof, collapse threshold, and rate law were derived here | exact biconjugacy and metric identity; histogram addition; `eta N/2` depth-independent error; finite atoms have `Theta(n^r_Z)` exact states; equally spaced atoms have exact binomial cover below half-grid error; `J>=4B/n` sharply collapses mass `n` to total field | strong A/C success; arbitrary-continuous-field macroscopic rate remains gapped |
 | weighted automata / weighted languages | restricted future residual; under tropical lumpability, nonlinear block maxima | weighted Nerode/Hankel residual and max-plus lumping | qualified yes: solution-hidden derivation, then exact classical collision | residual is coarsest exact state; quotient updates at every depth; robust reachable pins give `Theta(r log(1+B/epsilon))` bits on an exposed aggregate box | successful harder A/B validation; sharp rate needs reachability |
-| directed response under interaction | metric-shell strength plus isometry holonomy; anisotropic transported loads; on selector cells, twisted gauges and tangent-reset data | tropical distance transforms, cocycles, finite semigroup actions | agent-authored live target, not solution-hidden | shells close exactly under min-plus interaction; gauges telescope; bounded normal forms absorb coherent defects; on a fixed factorial tie-free selector language, syndetic tangent resets are necessary and sufficient against fresh residuals; a finite suffix-product lift decides the regular case | strong specialized D/E success; generic switching weak coupling remains open |
+| directed response under interaction | metric-shell strength plus isometry holonomy; anisotropic transported loads; on selector cells, twisted gauges and suffix-row memory | tropical distance transforms, cocycles, finite semigroup actions, Dobrushin transport | agent-authored live target, not solution-hidden | shells close exactly under min-plus interaction; gauges telescope; bounded normal forms absorb coherent defects; an exact stochastic-secant gain identity handles switches and ties; block scrambling stabilizes fractional consensus without a finite reset | strong specialized D/E success; dynamic realizability of paired-cell secants remains open |
 
 ## New general theorems
 
@@ -54,11 +54,33 @@ must use algebraic dependence.
 
 ### Finite robust selector decision
 
-For a regular tie-free selector language, store all products of nonempty
-suffixes in a finite lifted graph.  Acyclic height gives a uniform error
-bound.  A reachable cycle pumps reset-free words and, under arbitrary
-residuals, produces linear drift.  This turns one important depth-stability
-hypothesis into a finite verifier/falsifier.
+For a regular tie-free selector language, beyond its control vertex the exact
+reset state is only the kernel partition of the whole selector product. It
+updates by pullback, has `Bell(r)-1` nonsink values, and is worst-case minimal
+at a fixed vertex for the full selector alphabet. Acyclic height gives a
+uniform error bound; a reachable cycle pumps reset-free words and adversarial
+linear drift. The former suffix power-set lift was correct but substantially
+nonminimal.
+
+### Tie-aware stochastic response gain
+
+Across arbitrary max-plus switches and tie faces, trajectory differences
+admit exact row-stochastic secants. For a fixed secant path, the worst
+fresh-residual error is exactly cumulative suffix-row total variation. This
+recovers the selector-reset converse for finite semigroups and adds a
+fractional-consensus mechanism with geometric forgetting. It does not
+conflate adversarial gain with the smaller coherent error that shared
+nonlinear orbits may realize.
+
+### Exact coherent witness cycles
+
+When switching admits an exact path-realizing affine-selector presentation,
+one ordered witness converts response propagation into an additive graph
+cocycle. Absence of positive cycles is equivalent to directed boundedness;
+zero cycle holonomy is equivalent to two-sided boundedness. For mismatched
+channels the state must first include cross differences, giving an
+`O(|Q|r^4)` witness graph. The translated-clamp counterexample proves that a
+local face-adjacency graph is not automatically an exact presentation.
 
 ## Revisions forced by counterexamples
 
@@ -82,6 +104,16 @@ hypothesis into a finite verifier/falsifier.
 10. Static nets at successive scales do not form an update algebra: a coarse
     child atom quantizer can collapse type counts that a finer parent needs.
     The continuous-atom theorem therefore fixes one root-scale net.
+11. The suffix-product power-set lift is not the right reset complexity.
+    Constant selectors form a two-sided ideal, so the kernel partition of the
+    whole product is sufficient and worst-case minimal at a fixed full-
+    alphabet control vertex.
+12. A locally feasible selector cycle need not pump. Whole-cell/path
+    realization is an independent resource, and tie selectors cannot be
+    branched independently without a common tangent realization.
+13. Diagonal paired error is not closed under mismatched selectors. The
+    cross-difference carrier is forced before a joint cancellation theorem
+    can be applied.
 
 ## Director judgment
 
@@ -103,19 +135,14 @@ reconnect to the signing problem.
 
 ## Single strongest next theorem
 
-**Paired-selector skew-product theorem with switching cells.**  Given two
-locally close finite families of piecewise-affine projective max-plus maps,
-build the reachable automaton of paired active cells, including a finite tie
-refinement.  After factoring exact common semigroup relations, return one of:
-
-1. twisted coboundaries on every pumpable recurrent selector cycle plus a
-   bounded gap to tangent resets, implying uniform `C epsilon` error; or
-2. a pumpable paired cycle with unequal transported means, giving an explicit
-   `Omega(T epsilon)` drift word.
-
-The fixed-itinerary suffix-product theorem proves the non-switching case.
-The missing theorem must allow perturbations to change the active cell
-without pretending that coherent fixed kernels are independent noise.
+**Finite tropical lumpability theorem.** Give intrinsic, checkable hypotheses
+under which a family of piecewise-affine max-plus maps admits a finite
+invariant path-realizing quotient, preferably a common normal fan with
+whole-cell inclusions. Its size must be demonstrably below the full orbit
+language and ties must descend consistently. The stochastic-secant and
+witness-cycle theorems then automatically return a depth-independent bound
+or a realized pumpable drift word. The missing mathematics is no longer the
+cycle criterion; it is exact finite symbolic realization.
 
 ## No reconnection yet
 

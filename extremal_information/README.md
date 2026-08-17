@@ -153,7 +153,7 @@ conclusions.
    dichotomy.  Against fresh arbitrary residuals, however, syndetic tangent
    resets are quantitatively necessary and sufficient on selector cells;
    recurrent translations obey a twisted cycle-mean criterion.  For every
-   regular tie-free selector language, a finite suffix-product lift now
+   regular tie-free selector language, the minimal kernel-partition lift
    decides which side holds and returns either a uniform bound or a pumpable
    drift cycle.
 10. Static response complexity now has a cross-benchmark two-sided law.
@@ -191,6 +191,21 @@ conclusions.
     normalized response distortion vanish without a merge-depth penalty.
     One common root-scale net must be used throughout the merge tree; an
     adaptively refined parent cannot recover types collapsed by a child.
+15. Switching and ties now have an exact fresh-residual law. A max-plus
+    secant is row-stochastic, and its worst accumulated projective error is
+    the sum of total-variation separations of terminal suffix rows. Uniform
+    block scrambling gives depth-independent error even without a finite
+    tangent reset. This does not yet decide which secant paths are
+    dynamically realizable by fixed coherent kernels.
+16. For coherent switching, an exact regular affine-selector presentation
+    has a finite necessary-and-sufficient witness-cycle test: positive cycles
+    pump directed drift, while zero cycle holonomy characterizes two-sided
+    boundedness. Different left/right selectors force the joint cross-
+    difference carrier. The earlier suffix-set reset state also compresses
+    sharply to the kernel partition and is worst-case minimal at a fixed
+    control vertex for the full selector alphabet. A naive local
+    face graph is not path-realizing, so finite tropical lumpability—not more
+    cycle notation—is the remaining structural obligation.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

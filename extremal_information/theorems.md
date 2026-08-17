@@ -4222,6 +4222,46 @@ This decides robust depth stability on a fixed tie-free selector language.
 It does not yet decide switching perturbations which change the active cell;
 that requires a paired-cell selector automaton.
 
+### Corollary 16.16a (minimal kernel-partition reset state)
+
+The suffix-set lift in Theorem 16.16 is correct but not minimal. If `rho` is
+the whole-path selector product, store only its kernel partition `Pi`. Under
+the composition convention in (16.124), appending `sigma` updates
+
+```math
+Pi'=sigma^(-1)Pi,
+\qquad i~_(Pi')j iff sigma(i)~_Pi sigma(j).         \tag{16.126a}
+```
+
+The one-block partition is a reset sink. This recognizes exactly the
+reset-free paths with at most
+
+```math
+|V_graph|(Bell(r)-1)+1                             \tag{16.126b}
+```
+
+states. At a fixed control vertex with the full transformation alphabet, the
+`Bell(r)` partition states, including the sink, are the coarsest exact
+future-reset quotient. This does not claim that distinct control vertices in
+an arbitrary regular-language graph are themselves minimal.
+
+Indeed, constant maps form a two-sided ideal. A word has a constant-product
+factor if and only if its whole product is constant, and
+`ker(rho circ sigma)=sigma^(-1)(ker rho)`. If two partitions differ, choose
+`a,b` joined in exactly one and a continuation selector with image `{a,b}`;
+it resets one state and not the other. A restricted language may admit a
+further Myhill--Nerode quotient. For paired product selectors on `[r]^2`,
+
+```math
+ker(tau times sigma)=ker(tau) times ker(sigma),     \tag{16.126c}
+```
+
+so componentwise pullbacks on two channel partitions suffice rather than a
+general partition of `r^2` coordinates. For the full independent product-
+selector alphabet this gives `Bell(r)^2-1` accepting pairs plus one sink and
+is worst-case minimal for the full reset query; restricted or diagonal-
+observation languages can quotient further.
+
 ### Theorem 16.17 (depth-stable atomic type quantization)
 
 Let an atom `z` contribute a vector `phi_z` in a normed response space, and
@@ -4332,3 +4372,163 @@ Indeed, the coordinate response identity proves the separation and stars
 and bars proves (16.133).  Along a subsequence with `D>=c n`, monotonicity
 in `D` and the standard binomial-entropy bound give
 `log {n+floor(c n)-1 choose n}=Omega_c(n)`.
+
+### Theorem 16.18 (tie-aware stochastic secants and exact response gain)
+
+Let `r>=2` and let `P_1,...,P_T` be row-stochastic `r by r` matrices acting on
+`V=R^r/R1` with `||[v]||_H=osc(v)/2`, and let
+
+```math
+e_t=P_te_(t-1)+eta_t,
+\qquad ||eta_t||_H<=epsilon_t,
+\qquad e_0=0.                                      \tag{16.134}
+```
+
+Write `R_(s,T)=P_T...P_(s+1)`, with `R_(T,T)=I`. Then
+
+```math
+\boxed{
+\sup_(||eta_s||_H<=epsilon_s)||e_T||_H
+=\max_(i,j)\sum_(s=1)^T epsilon_s
+  TV(R_(s,T)(i,*),R_(s,T)(j,*)).}                  \tag{16.135}
+```
+
+If every length-`L` block occurring in a legal trajectory has Dobrushin
+coefficient at most `rho<1`, then residuals of size at most `epsilon` satisfy
+
+```math
+||e_T||_H<={L\over1-rho}epsilon.                   \tag{16.136}
+```
+
+For a factorial language in a finite row-stochastic semigroup, uniform
+fresh-residual gain holds if and only if identical-row products occur with
+bounded gaps. If a reset-free legal word has length `T`, the semigroup has a
+nonconsensus element; let `gamma` be its least positive row-pair total
+variation over all semigroup elements. Then some residuals give
+
+```math
+||e_T||_H>={gamma T\over r(r-1)}epsilon.            \tag{16.137}
+```
+
+#### Proof
+
+Unroll (16.134). The Hilbert norm is the maximum over ordered output pairs
+of half their difference. For a zero-sum row difference `d`,
+
+```math
+sup_(||v||_H<=epsilon)d*v=epsilon||d||_1.
+```
+
+Residuals at different times optimize independently for the same terminal
+pair; the outer half proves (16.135). Dobrushin coefficients are
+submultiplicative, so grouping suffix lengths into blocks and summing a
+geometric series proves (16.136).
+
+In a finite semigroup every distinct row pair has separation at least
+`gamma`. Along a reset-free word every terminal suffix is nonconsensus;
+sum its Dobrushin coefficients and pigeonhole the maximizing pair among
+`r(r-1)` choices to obtain (16.137). An identical-row factor is a two-sided
+ideal under row-stochastic multiplication and kills every older residual,
+proving the converse. `square`
+
+This theorem applies across max-plus switches. For every all-finite max-plus
+map `F_K` and `x,y`, there is a row-stochastic secant
+
+```math
+F_K(y)-F_K(x)=P_K[x,y](y-x),                        \tag{16.138}
+```
+
+whose rows are convex combinations of selectors active along the
+corresponding line segment. Restrict each output maximum to the segment and
+integrate its piecewise-constant slope. If trajectories use maps `F_t,G_t`,
+decompose their difference into the secant of `G_t` and the same-input
+residual `G_t(x)-F_t(x)`; (16.135)--(16.136) apply.
+
+Fractional consensus is absent from the fixed-selector theorem. For
+`P_alpha=((1-alpha,alpha),(alpha,1-alpha))`, the gain is at most
+`epsilon/(1-|1-2alpha|)` although no finite power has identical rows unless
+`alpha=1/2`. A tie alone does not provide this: secant weights may approach
+zero. The lower formula permits fresh adversarial residuals and is not a
+coherent-kernel converse. Recognizing which secant paths are dynamically
+realizable remains a paired-cell reachability problem.
+
+### Theorem 16.19 (observable cycles for exact selector presentations)
+
+Let a finite directed multigraph with permitted starts carry affine-selector
+edges
+
+```math
+e:q->q',
+\qquad A_ez=P_(sigma_e)z+b_e,                     \tag{16.139}
+```
+
+and let terminal states declare ordered coordinate observations. Assume
+every actual orbit is represented by a graph path (soundness), and initial
+coordinate oscillations are at most `R_0`. Form the reverse witness graph
+
+```math
+(q',i,j)->(q,sigma_e(i),sigma_e(j))                \tag{16.140}
+```
+
+with weight `b_e(i)-b_e(j)`, retaining vertices on a path from a terminal
+observation to an allowed start.
+
+If the relevant graph has no positive cycle, every directed output is at
+most `R_0+K`, where `K>=0` is the maximum weight of a simple relevant path,
+including the empty path. If
+every relevant path and cycle repetition is realized by an allowed finite
+orbit (path realization), a positive cycle of weight `c` has fixed access,
+cycle, and exit words `u,v,w` such that, for every `k`,
+`sup_(allowed z_0)D_(uv^kw)(z_0)>=kc-C`. Hence absence of positive cycles is
+necessary and sufficient for uniform directed upper boundedness in an exact
+regular presentation. The maximizing finite-orbit seed may depend on `k`;
+one common infinite orbit requires nested-cylinder realization.
+
+Under the same path-realization assumption, if observations and relevance
+are closed under pair reversal, two-sided projective boundedness is
+equivalent to zero weight on every relevant cycle, or equivalently to a
+vertex coboundary on every relevant strongly connected component.
+
+#### Proof
+
+One edge satisfies
+
+```math
+(A_ez)_i-(A_ez)_j
+=z_(sigma_e(i))-z_(sigma_e(j))+b_e(i)-b_e(j).       \tag{16.141}
+```
+
+Iteration gives a bounded initial difference plus the reverse-path weight.
+Deleting nonpositive cycles cannot lower that weight, so a maximum is
+attained on a simple path. Under path realization, repeat a positive cycle;
+(16.141) adds `c` each time. Pair reversal negates weights, so two-sided
+boundedness forces zero cycle sums. The usual path-independence argument
+identifies zero cycle sums with vertex potentials on an SCC. `square`
+
+For paired channels with different selectors, diagonal error does not close.
+The exact joint carrier is
+
+```math
+D_(ij)=y_i-x_j,
+\qquad D'_(ij)=D_(tau(i),sigma(j))+t_i-s_j.         \tag{16.142}
+```
+
+It is an affine selector system on `r^2` coordinates, and Hilbert error is
+observed by pairs `((i,i),(j,j))`. The witness graph has at most `|Q|r^4`
+states and preserves joint cancellation before absolute values. This is
+smaller than a trajectory language only when `Q` is itself a genuine
+quotient. Applying the theorem also requires bounded initial oscillation of
+the full cross carrier, not only zero initial diagonal error: if `x=y` is an
+arbitrary projective input, off-diagonal `D_(ij)=x_i-x_j` may be unbounded
+and differing selectors can expose it. A bounded-image prefix, reset, or
+bounded initial projective domain supplies the required endpoint control.
+
+That qualification is sharp. The all-finite map
+`z->clip(z-delta,0,1)` has a slope-one cell with a nonempty one-step
+self-intersection, yet every orbit exits it after finitely many steps. A
+local face graph therefore has a spurious pumpable cycle. A finite invariant
+cell partition is path-realizing when each map sends every whole cell into a
+declared successor and has one selector-affine formula there; tie faces must
+also refine by a common realizable tangent update. One-step feasibility,
+including independent tie resolutions, is not enough. The remaining target
+is a tropical lumpability theorem producing a small exact presentation.

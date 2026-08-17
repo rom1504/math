@@ -268,3 +268,26 @@ repeat the cycle and invoke the adversarial lower bound.  `square`
 This is a finite certificate for the robust tie-free selector model.  It
 does not handle a perturbation which changes the active selector cell; that
 requires the paired-cell skew product in the next theorem target.
+
+## 7. Minimal reset quotient: kernel partitions
+
+The suffix-set lift above is correct but nonminimal. Constants form a
+two-sided ideal in the full transformation semigroup, so a word has a
+constant factor exactly when its whole composite is constant. If `Pi` is
+the kernel partition of the current composite, appending `sigma` updates it
+by the pullback `sigma^(-1)Pi`; the one-block partition is the reset sink.
+Thus the exact lift has only
+
+```math
+|V_graph|(Bell(r)-1)+1
+```
+
+states. At a fixed control vertex with the full selector alphabet, this
+partition component is minimal: two different partitions contain a pair
+joined in exactly one, and a continuation with image that pair resets exactly
+one state. A restricted language may have a smaller residual quotient, and
+distinct control vertices may also merge. The suffix construction remains a
+valid upper presentation but should not be used as the benchmark complexity.
+
+For coherent switching across different selectors, see
+[`paired_selector_witness_cycles.md`](paired_selector_witness_cycles.md).

@@ -6,48 +6,47 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Paired-selector skew-product decomposition
+## 1. Finite tropical lumpability and path realization
 
-The former gauge--reset completeness target was too coarse.  Nearby
-idempotent clamps remain close forever without an entrywise kernel gauge or
-a small full-image reset, because both coherent actions satisfy the same
-finite semigroup relation.  Conversely, for fresh arbitrary residuals on a
-fixed selector itinerary, endpoint gauges plus syndetic **tangent** resets
-are quantitatively necessary and sufficient.  On one recurrent selector
-cell, bounded translation is exactly a twisted coboundary, recognized by
-equality of all functional-cycle means.
+The analytic and algebraic parts of switching stability are now separated.
+For fresh residuals, suffix-row total variation is the exact gain and uniform
+scrambling is sufficient. For a declared exact affine-selector language, the
+ordered-witness graph is necessary and sufficient: positive cycles pump
+directed drift and zero cycle weights characterize two-sided boundedness.
+The robust reset automaton has also collapsed from a suffix power set to the
+worst-case-minimal kernel partition.
 
-For a fixed regular selector language, the reset premise is now decidable:
-the finite suffix-product lift either has an acyclic height giving a uniform
-bound or a pumpable cycle giving adversarial linear drift.  What remains is
-the genuinely switching problem in which a perturbation changes the active
-cell and therefore the selector itinerary itself.
+The remaining problem is producing the control language itself. A local
+max-plus face graph is only a sound over-approximation: the translated clamp
+has a locally feasible self-loop which no orbit repeats indefinitely, and
+independent tie resolutions can be mutually incompatible. Different paired
+selectors additionally force the cross-difference carrier
+`D_(ij)=y_i-x_j`; diagonal errors alone do not close.
 
-The next theorem should combine those verified pieces across max-plus
-switching cells.  Given two finite families of piecewise-affine projective
-continuations, build their reachable paired selector automaton and prove a
-finite depth-uniform certificate on every pumpable strongly connected
-component:
+Prove a structural theorem giving a small exact path-realizing quotient for
+a natural class of max-plus continuations. The cleanest candidate is a
+common finite invariant normal fan or cell partition satisfying whole-cell
+inclusions
 
-1. coherent zero-residual transitions factor through bounded normal forms;
-2. recurrent affine residuals satisfy the twisted cycle-mean condition on
-   every surviving selector direction; and
-3. all remaining residual directions encounter rank-one selector products
-   with bounded gaps.
+```math
+F_a(C_q) subset C_(delta(q,a)).
+```
 
-Under fresh adversarial residuals, seek a converse with explicit dependence
-on selector rank and reset gap.  Under coherent fixed kernels, finite
-semigroup absorption must be admitted rather than treated as independent
-noise.
+Allow lower-dimensional tie cells only when the tangent update descends
+consistently. Once such a quotient is supplied, Theorem 16.19 decides
+coherent drift. Theorem 16.18 separately decides fresh-residual stability
+when the quotient also yields a uniform scrambling bound over every
+dynamically realizable stochastic secant.
 
-**Success:** a finite algorithm which either returns a depth-independent
-projective error bound or a pumpable paired selector cycle causing linear
-drift, first for a tie-free finite cell complex and then with controlled tie
-switching.
+**Success:** checkable intrinsic hypotheses yielding a finite invariant,
+path-realizing quotient whose size is demonstrably below the full orbit
+language, with the witness-cycle or scrambling test then giving a uniform
+response bound or a realized pumpable drift word.
 
 **Stop condition:** an `O(T epsilon)` estimate, a global image-diameter
-assumption, or a theorem which conflates fixed coherent defects with fresh
-adversarial residuals does not answer the question.
+assumption, a nonempty-intersection face graph, or a theorem which conflates
+fixed coherent defects with fresh adversarial residuals does not answer the
+question.
 
 In parallel, the bounded-presentation benchmark leaves a sharp scale gap.
 Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy

@@ -959,3 +959,54 @@ states.  If `D/n` stays positive along an infinite subsequence, this costs
 The sufficient condition `D(eta_n)=o(n)` for vanishing type-histogram rate is
 therefore a sharp universal threshold; improvements require algebraic
 dependencies among atom responses.
+
+## Example 35: fractional consensus without a finite tangent reset
+
+On `R^2/R1`, let
+
+```math
+P_alpha=((1-alpha,alpha),(alpha,1-alpha)),
+\qquad0<alpha<1.
+```
+
+Its Dobrushin coefficient is `rho=|1-2alpha|`, so Theorem 16.18 gives exact
+depth-`T` fresh-residual gain
+
+```math
+epsilon sum_(k=0)^(T-1)rho^k.
+```
+
+For `alpha ne 1/2`, no finite power has identical rows. Convex mixing can
+therefore forget old response directions asymptotically rather than at one
+finite reset. Merely touching a max-plus tie face is insufficient: the
+segment can spend an arbitrarily small fraction of its length on one
+selector, making the mixing coefficient arbitrarily weak.
+
+## Example 36: different selectors force a cross-difference carrier
+
+Let `x=y=(0,z)`, let the first channel use the identity selector, and let the
+second swap its two coordinates. The old diagonal error is identically zero,
+but the new diagonal error is `(z,-z)`. Thus diagonal error plus the selector
+labels does not close. The joint array
+
+```math
+D_(ij)=y_i-x_j
+```
+
+does close under paired selectors, by (16.142), and retains the cancellation
+needed for Hilbert response.
+
+## Example 37: a local selector cycle need not be pumpable
+
+The all-finite max-plus projective map
+
+```math
+T_delta(z)=clip(z-delta,0,1)
+```
+
+has a slope-one middle cell with `T_delta(C) intersect C` nonempty. The usual
+local face graph therefore contains a self-loop. Nevertheless every orbit
+loses `delta` per visit and leaves the cell after finitely many steps. A
+nonzero witness cycle in such an over-approximation is not a drift
+certificate. Whole-cell invariance or another exact path-lifting theorem is
+needed before Theorem 16.19 has a converse.

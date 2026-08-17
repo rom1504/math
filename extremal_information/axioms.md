@@ -645,3 +645,37 @@ repeatedly rounding an already aggregated state, which can drift.
 
 The sharp stars-and-bars entropy matters: an atom net with `D_n=o(n)` types
 already has `o(n)` histogram bits, even when `D_n log n` is not `o(n)`.
+
+## 19. Switching transports are priced by suffix-row memory
+
+A max-plus secant across optimizer switches is row-stochastic. Its exact
+gain from fresh projective residuals is the cumulative total-variation
+separation of terminal suffix rows. This gives two distinct forgetting
+mechanisms:
+
+1. a finite consensus product kills old response directions exactly; and
+2. repeated fractional mixing makes them geometrically summable without an
+   exact reset.
+
+A face label or tie flag is therefore not a sufficient stability state.
+What matters is transported row distinguishability. Quantitative scrambling
+gives deterministic synchronization, while an unweighted active-face graph
+can miss arbitrarily weak mixing. The exact lower formula is adversarial;
+fixed coherent kernels may have smaller gain because residuals and switches
+are dynamically coupled.
+
+## 20. Cycle algebra is complete only after symbolic realization
+
+For an exact finite affine-selector presentation, one ordered coordinate
+witness turns coherent response error into an additive graph cocycle. Its
+positive cycles are precisely directed drift, and zero cycle holonomy is
+precisely two-sided boundedness. Paired channels first require the joint
+cross-difference carrier; diagonal error is not closed when selectors differ.
+
+The hard information resource is therefore not the cycle test but the
+control quotient on which paths are genuine. Nonempty adjacency between
+local faces can create spurious repeatable words. A useful finite switching
+state must be both a response quotient and path-realizing. For robust reset
+queries, this principle itself compresses the old suffix-set state to the
+kernel partition of the total selector product, which is the coarsest
+partition component at a fixed control vertex for the full selector alphabet.
