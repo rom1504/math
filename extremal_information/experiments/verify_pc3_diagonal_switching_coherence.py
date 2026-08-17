@@ -274,13 +274,16 @@ def field_scale_sequence() -> None:
     n = 16**depth
     multiplicity = int(lam * sqrt(n / depth))
     b = multiplicity * sqrt(second_moment) / sqrt(n)
-    response_gap_bound = b * (rho - sqrt(1 - rho * rho)) - b * b * rho * rho / (
+    positive_gap_bound = b * (rho - sqrt(1 - rho * rho)) - b * b * rho * rho / (
         2 * kappa
     )
+    negative_gap_bound = b * rho - b * b / (2 * (2 - kappa))
+    response_gap_bound = min(positive_gap_bound, negative_gap_bound)
     assert response_gap_bound > 0.014
     print(
         f"labelled spherical response bound at j={depth}: "
-        f"rho={rho:.8f}, b={b:.8f}, gap={response_gap_bound:.8f}"
+        f"rho={rho:.8f}, b={b:.8f}, positive_gap={positive_gap_bound:.8f}, "
+        f"negative_gap={negative_gap_bound:.8f}, gap={response_gap_bound:.8f}"
     )
 
 
