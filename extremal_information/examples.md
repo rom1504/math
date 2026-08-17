@@ -3098,3 +3098,117 @@ eigenvalue two.  The same formal strength multiset therefore fails under
 correlated continuation unless relative Gram geometry is retained.  This
 both motivates the unit-mass spike mark and falsifies its use as an
 adversarial contextual quotient.
+
+## Example 161: exact grounds can have negative four-anchor holonomy
+
+The signing
+
+```text
+ 0  1  1  1  1
+ 1  0 -1  1 -1
+ 1 -1  0 -1  1
+ 1  1 -1  0  1
+ 1 -1  1  1  0
+```
+
+has `Q(A)=M_5=4`.  Four positively oriented exact ground cuts can be chosen
+so that every pair has projective edge distance four and every triple has a
+common-correct reservoir of size at least two, while the product of the four
+signed cut words is `-mathbf 1`.  Their fourwise common-correct reservoir is
+therefore empty.
+
+This is the exact depth-four ceiling behind Theorem 36.18.  It falsifies an
+unqualified Helly iteration even on exact minimizers, but not projective
+packing: the four words are already mutually separated.  Conversely,
+Example 159 is no longer a relevant depth-three obstruction once all three
+words are genuinely within `o(M)` of the positive cap, because Theorem 36.18
+then forces `Omega(M)` common-correct mass.
+
+## Example 162: code membership hides a macroscopic reward below its thermal threshold
+
+Let `C_n<=F_2^n` have asymptotic rate `R<1`, and reward membership in `C_n`
+by `n delta`.  The marked fraction is
+
+```math
+2^{\dim C_n-n}=\exp\{-n(1-R)\log2+o(n)\}.
+```
+
+For every `B<(1-R)log2/delta`, bounded-temperature pressures and every
+adaptive Gibbs experiment with replica exponent below
+
+```math
+(1-R)\log2-B\delta
+```
+
+are asymptotically blind to the reward, even though the normalized maximum
+changes by `delta`.  A strict larger replica exponent detects it by phase
+counting.  Direct products of codes multiply membership fractions and add
+rewards, so `(codimension,reward)` is an exact hard-conjunction carrier.
+
+This is a membership-bonus example, not a covering-radius theorem.  A future
+that names one particular code or ordinary additive composition immediately
+requires more geometry or a larger phase table.
+
+## Example 163: fractional reservoirs need growing conditioning but not shrinking separation
+
+For odd `K`, take one copy of every sign pattern with exactly `(K+1)/2`
+positive coordinates.  Every pattern has coordinate sum one, while every
+row sum is the common value
+
+```math
+m={1\over K}{K\choose(K+1)/2}.
+```
+
+Any subweights retaining margin at least `m` in all `K` rows must have total
+mass at least `Km`; all available mass is exactly `Km`.  Hence the abstract
+fractional-reservoir conditioning constant is at least `K` (and at least
+`K-1` for even `K` by duplicating a row).
+
+Exact basic-support enumeration gives sharp universal constants
+
+```text
+K:       1  2  3  4  5
+C_K^*:   1  1  3  5  9.
+```
+
+These are finite sign-pattern facts, not measurements of minimizer shells.
+Their role is to falsify a uniform fractional margin under row-sum
+hypotheses alone.  Theorem 36.19 nevertheless retains a uniform
+`(1/4-o(1))M_n` final separation because the growing constant is paid in the
+edge-sampling budget instead.
+
+## Example 164: a complete exact ground shell can force full fractional edge mass
+
+For a frozen corpus of 64 low-cap signings through order 14, solve the
+shell-wide linear program
+
+```math
+\min\left\{\sum_e w_e:
+0\le w_e\le1,
+\quad\sum_e w_ea_ez_e\ge m\quad(z\in\mathcal S_m)\right\}.
+```
+
+Both selected exact order-13 representatives and both selected exact
+order-14 representatives have an active shell for which the unique optimum
+is `w_e=1` on every edge.  This is not merely numerical.  If `K` is the
+shell size and
+
+```math
+{1\over K}\sum_{z\in\mathcal S_m}a_ez_e\le {m\over E}
+\quad\hbox{for every edge }e,
+```
+
+averaging all shell constraints forces `sum_e w_e>=E`; the box constraints
+then force every weight to equal one.  Exact integer arithmetic supplies
+this certificate for 18 frozen records, including seven exact active-shell
+records.  The two order-14 active shells each contain 156 oriented words and
+force mass `E=91`, giving `C_inst=91/21=13/3`.
+
+This is a finite ceiling, not an asymptotic counterexample.  It distinguishes
+two resources that Theorem 36.19 deliberately keeps separate: a cheap
+reservoir for each **finite sequential anchor set** need not extend to one
+cheap reservoir supporting the complete exposed shell.  The computation,
+protocol, residual checks, exact certificates, and independent audit are in
+[`drafts/fractional_reservoir_finite_audit.md`](drafts/fractional_reservoir_finite_audit.md)
+and
+[`drafts/fractional_reservoir_finite_independent_audit.md`](drafts/fractional_reservoir_finite_independent_audit.md).

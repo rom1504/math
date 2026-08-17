@@ -994,24 +994,32 @@ compiler fluctuation without retaining the complete coefficient matrix.
 
 ## 18. Higher-order non-recycling in exact-minimizer shells
 
-The first collapsed pair is no longer the unresolved point: Theorem 36.16
-forces a third `o(n^(3/2))`-shell direction at projective distance
-`(1/2-o(1))M_n` from both poles.  Its multi-anchor form iterates exactly as
-long as the anchors retain `Omega(M_n)` common-correct coordinates.
-
-The smallest cut-specific question is now whether one can select shell
-witnesses so that, for `k->infinity`, either
+Higher-order non-recycling is now proved at the energy scale.  Theorem 36.19
+replaces literal common-correct intersections by a diffuse fractional
+reservoir and gives
 
 ```math
-|R(z_1,...,z_k)|=Omega(M_n)
+L_n=Theta\left({\log n\over\log\log n}\right)\longrightarrow\infty
 ```
 
-persists, or its failure exposes a direction at `Theta(n^2)` projective
-distance.  Pairwise reservoir bounds do not imply this: Example 159 gives a
-bounded-cap cut-realizable triple with large pairwise reservoirs and an
-`O(n)` triple intersection.  A valid theorem must use exact-minimizer
-thin-shell linkage, not cut-word algebra, bounded cap, or shell cardinality
-alone.
+words in one `o(M_n)` positive shell, pairwise separated by
+`(1/4-o(1))M_n`.  Negative four-anchor holonomy is therefore a ceiling only
+for literal intersections, not for jointly weighted localized flips.
+
+Two quantitative questions remain internal to this mechanism.  Is the
+worst finite-phase conditioning constant for **actual exact-minimizer shell
+patterns** substantially smaller than the arbitrary-sign-pattern bound?
+And can the uniform response approximation be obtained with fewer than
+`Theta(C_K^2n)` physical flips?  Either improvement would accelerate the
+packing count, but neither alone changes its ambient separation scale.
+
+The whole-shell version is already false as a naive finite heuristic:
+Example 164 gives exact minimizers through orders 13 and 14 whose complete
+active-shell fractional LP forces `w_e=1` on every edge.  This does not
+answer the sequential growing-anchor question, but it rules out treating
+fractionalization alone as a shell-wide `O(M_n)` quotient.  Any positive
+asymptotic strengthening must exploit how anchors are selected, not merely
+that all of them have positive response.
 
 Even a growing packing at distance `Theta(M_n)` does not plug into the
 current physical compiler at target response scale.  The fixed-gap version
@@ -1048,3 +1056,19 @@ A useful answer must survive correlated perturbations or state precisely
 the extra relative-geometry marks they require.  Retaining the full
 eigenbasis or the full family of rooted measures merely reconstructs the
 matrix and is not a strict quotient.
+
+## 21. Activation-cost states beyond hard marked phases
+
+Theorem 37.2 exactly identifies the bounded-temperature pressure and replica
+budget needed to observe one marked phase.  Can an intrinsic finite carrier
+do the same for several competing phases under an interaction that is more
+general than hard conjunction?  The carrier should compose without retaining
+the complete energy histogram, while preserving both activation costs and
+the geometry needed by the declared future queries.
+
+The immediate falsifiers are labelled futures, which distinguish equal-mass
+marked sets, and ordinary additive composition, which creates intermediate
+phases.  A positive theorem must specify a class whose phase table closes or
+whose synchronization collapses it.  Merely restating a finite-temperature
+large-deviation rate function is not enough; the new state must have an
+exact or quantitatively controlled update law.

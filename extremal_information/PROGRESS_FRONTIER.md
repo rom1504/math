@@ -59,9 +59,9 @@ one low-cap physical bit in every vanishing halo wider than n^(-1/2)
 
 vanishing-width positive shell
   --[PROVED: low-dimensional cap-cover entropy + PP.4 anatomy]-->
-three energy-scale directions or a mesoscopic agreement core
-  --[PROVED: MB/MI third witness; MISSING higher-order non-recycling]-->
-growing projective packing at scale M_n
+energy-scale directions plus a mesoscopic agreement core
+  --[PROVED: exact triple linkage; fractional trimming + joint flips]-->
+growing projective packing at separation (1/4-o(1))M_n
   --[MISSING fixed-edge-scale upgrade / different amplifier]-->
 growing fixed-scale near-top packing
   --[PROVED: AO.2 low-cap physical compiler]-->
@@ -81,7 +81,8 @@ vanishing-near-minimizer classes at every preassigned shell width smaller
 than their optimality slack.  Exact optimality is therefore an essential,
 discontinuous hypothesis of `L_projective`.
 
-The two-cap branch is now narrower.  Theorem 36.17 first proves, for every
+The two-cap branch is now resolved at its natural energy scale.  Theorem
+36.17 first proves, for every
 antipodal code in the cut-code scaling, an `o(M_n)` shell with projective
 diameter `(2-o(1))M_n`; direct products, one common Hamming cap, and a
 near-full-dimensional affine cap carrier cannot evade this conclusion.
@@ -90,14 +91,22 @@ available.  Theorems 36.13 and 36.16 then show that, in the cut code, such
 an opposite-lift pair creates a mesoscopic complete-bipartite agreement core
 and forces a third
 `o(n^(3/2))`-shell word at distance `(1/2-o(1))M_n` from both poles.  The
-multi-anchor form iterates without cumulative shell loss until the common-
-correct intersection falls below `Omega(M_n)`.  Example 159 proves that
-large pairwise intersections do not imply this higher-order premise, even
-for cut words in a bounded-cap exact signing.  Moreover `Theta(M_n)` edge
+exact triple identity in Theorem 36.18 forces a fourth direction.  Literal
+fourwise intersections can vanish by negative holonomy, but Theorem 36.19
+crosses that ceiling with a diffuse fractional reservoir and one joint
+uniform response approximation.  For every fixed `alpha<1/2`, it forces
+
+```math
+L_n=\left\lfloor{\alpha\log n\over\log\log n}\right\rfloor\to\infty
+```
+
+words in an `n^(1+alpha+o(1))=o(M_n)` shell at pairwise separation
+`(1/4-o(1))M_n`.  This proves the previously missing growing energy-scale
+packing without cumulative shell loss.  However `Theta(M_n)` edge
 separation is still only `Theta(n^(-1/2))` normalized separation and does not
-activate AO.2 at target scale.  Thus the operative SML remains fixed-scale
-`L_projective`; its concrete collapsed-branch sublemma is now an exact-
-minimizer-specific **higher-order non-recycling/opposite-lift theorem**.
+activate AO.2 at target scale.  Thus the operative SML is now purely the
+**energy-to-ambient scale upgrade**: fixed-scale `L_projective` or a new
+low-cap amplifier for the proved mesoscopic packing.
 
 ### Route R3: near-minimizer response replacement
 
@@ -120,7 +129,7 @@ landscape.
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
 |---|---:|---:|---:|---|---:|---|
 | R1 collective synchronization | 5 for FB, MP, and the audited atlas | MP chart `O((n/q)log n)` bits conditional on gauge; exact-minimizer atlas `O(n^(4/3))` direct bits | within-chart `O(n^(4/3))`; physical fixed-ratio loss unknown | all orders | 4 for the signing-dependent one-block atlas, but 0 for physical congruence | structural RESET, transfer STRIKE: the atlas is designed, not common; Walsh kills generic mixing |
-| R2 contextual incompressibility | 5 for pinned/one-bit contexts and exact energy-scale shell geometry; conditional 5 for growing low-cap packing | `Omega(n)` pinned bits; one unconditional low-cap bit; `log K_n` bits conditional on a fixed-scale shell packing | generic low dimension now forces `(2-o(1))M_n` shell diameter; exact third witness remains at `Theta(M_n)` edge distance; conditional fixed-scale AO gap | all orders for one bit/energy-scale diffusion; fixed-scale growth open | 5 for one bit and generic/cut energy-scale theorems; 3 for fixed-scale packing | structural RESET at the deficit scale, fixed-scale STRIKE: opposite-lift entry is now the precise ceiling and AO scale is unchanged |
+| R2 contextual incompressibility | 5 for pinned/one-bit contexts and exact energy-scale shell geometry; conditional 5 for growing low-cap packing | `Omega(n)` pinned bits; one unconditional low-cap bit; proved shell state count `Theta(log n/log log n)` at energy scale; physical `log K_n` bits still conditional on fixed-scale packing | shell deficit `n^(1+alpha+o(1))`; pairwise distance `(1/4-o(1))M_n`; conditional fixed-scale AO gap | all orders for one bit and growing energy-scale packing; fixed-scale growth open | 5 for exact-minimizer energy-scale packing; 3 for fixed-scale packing | structural RESET: fractional joint support crosses finite holonomy ceilings; fixed-scale STRIKE: AO response scale is unchanged |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
 | adversarial statistical mechanics | 2/3 | finite at fixed width | vanishing density error | all chain lengths | 1 | keep warm |
@@ -134,17 +143,20 @@ landscape.
    overlap at most `1-gamma`.  The exponential form `K_n=exp(Omega(n))`
    would give an extensive low-cap response rate.  AO.2 proves the complete
    physical implication, and the premise retains only witness energies and
-   pairwise projective overlaps.  A single balanced pair is no longer the
-   precise obstruction: exact flips force a third energy-scale direction.
-   The surviving falsifier is a hierarchy of near-antipodal lifts whose
-   higher-order common-correct reservoirs recycle or collapse before any
-   fixed-edge-scale direction appears.
+   pairwise projective overlaps.  Balanced pairs and higher-order reservoir
+   collapse are no longer the precise obstruction: fractional joint flips
+   force a growing `(1/4-o(1))M_n` packing.  The surviving gap is purely
+   scale, because this remains a vanishing `Theta(n^(-1/2))` fraction of all
+   edge coordinates.  A positive proof must amplify that mesoscopic packing
+   or force one fixed-ambient-gap pair; more literal common-intersection
+   lemmas are unnecessary.
 
 No second lemma is currently selected.  The former `L_transition` remains a
 research question, but after one transfer strike it is not promoted again
 until a concrete nonlinear state and update law are stated.  The low-cap
-compiler part of the former `L_lowcap-pack` is now proved; only the growing
-projective packing remains.
+compiler part of the former `L_lowcap-pack` is now proved, and a growing
+energy-scale projective packing is now proved.  Only its fixed-ambient-scale
+upgrade, or a new amplifier for the mesoscopic packing, remains.
 
 The former spectral-roof `L_sync` and semantic contracting-fibre `L_fibre`
 are not selected.  The first is too strong; the second has no frozen carrier
@@ -343,3 +355,52 @@ class and risks restating the desired parent optimization.
   bounded pass.  If it yields no fixed-scale theorem or scalable exact
   falsifier, freeze `L_projective` and retain the new results as a precise
   ceiling rather than launching more shell variants.
+
+### Checkpoint 6 — fractional joint support and growing energy-scale diffusion
+
+- **Strongest new statements:** (i) three positive thin-shell augmented cuts
+  always have `M/2-o(M)` common-correct mass, which together with exact flips
+  gives four pairwise `(1/4-o(1))M_n`-separated words; (ii) every fixed
+  family of favorable sign phases admits a bounded-mass fractional reservoir;
+  (iii) no-replacement Bernoulli inclusion uniformly approximates all
+  Boolean responses before the adaptive maximizer is chosen; consequently,
+  for every `alpha<1/2`, every exact minimizer has
+  `floor(alpha log n/log log n)` shell words at pairwise
+  `(1/4-o(1))M_n` distance and deficit `n^(1+alpha+o(1))`; (iv) a marked
+  rare phase has exact adaptive Gibbs-replica threshold `I-Bdelta`, a scoped
+  Level-3 theorem with no Boolean implication.
+- **Previous SML:** control nonlinear opposite-lift entry or prove
+  exact-minimizer higher-order non-recycling.
+- **Current SML:** upgrade the now-proved growing `Theta(M_n)` packing to a
+  fixed `Theta(n^2)` projective direction, or construct a low-cap compiler
+  that makes the mesoscopic packing visible at leading `n^(3/2)` response
+  scale.
+- **Benchmark level:** remains Level 5.  The result is uniform over every
+  exact minimizer and all sufficiently large orders, but it still supplies
+  no Level-6 cross-order transfer.
+- **Assumption-distance:** growing energy-scale diffusion moves `3 -> 5`;
+  fixed-scale `L_projective` remains 3.  The fractional trimming input itself
+  is universal finite-dimensional convex geometry; exact minimality enters
+  only in the adaptive flip-response step.
+- **Asymptotic movement:** the guaranteed shell cardinality at uniform
+  `Theta(M_n)` pairwise distance improves from four to
+  `Theta(log n/log log n)->infinity`; the common deficit is explicitly
+  `n^(1+alpha+o(1))=o(n^(3/2))`.  Normalized edge separation remains
+  `Theta(n^(-1/2))`, so physical response loss does not improve.
+- **Falsifiers/ceiling:** negative four-anchor holonomy kills literal common
+  intersections even on an order-five exact minimizer, but no longer kills
+  fractional extension.  Arbitrary sign phases force fractional conditioning
+  at least linear in their count.  A residual-checked finite audit further
+  finds complete active shells of selected exact order-13 and order-14
+  minimizers whose fractional LP is exactly certified to require every edge;
+  thus sequential finite-anchor support cannot be promoted for free to a
+  whole-shell quotient.  The current compiler still converts an energy-scale
+  direction into only `O(n)` response, not `Theta(n^(3/2))`.
+- **Decision:** **RESET for exact-minimizer structural complexity; STRIKE and
+  FREEZE for the current fixed-scale implementation.**  The bounded final
+  pass succeeded at the energy scale but did not move the ambient/compiler
+  scale.  Do not launch more literal reservoir or opposite-lift variants.
+  Resume this branch only with a concrete scale amplifier or a theorem
+  specific to cut geometry that produces a fixed ambient gap.  Keep the
+  rare-event and thermal results as scoped portfolio branches, not promoted
+  replacements.

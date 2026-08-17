@@ -15949,6 +15949,180 @@ finite/proof audit are in
 and
 [`drafts/generic_low_dimension_localization_barriers_independent_audit.md`](drafts/generic_low_dimension_localization_barriers_independent_audit.md).
 
+### Theorem 36.18 (an exact ground links three shell directions, with a sharp four-anchor ceiling)
+
+Let `A` be an order-`n` signing, let `M=Q(A)`, and let
+`z_0,z_1,z_2` be positively oriented augmented-cut words with
+
+```math
+\langle a,z_i\rangle=M-d_i.
+```
+
+Their common-correct reservoir satisfies the exact cap consequence
+
+```math
+\boxed{
+|R(z_0,z_1,z_2)|
+\ge {M\over2}-{d_0+d_1+d_2\over4}.}              \tag{36.64}
+```
+
+Indeed, after gauging by `z_0`, the signed mass of the cell on which the
+three words agree is
+
+```math
+{1\over4}\big(
+ \langle a,z_0\rangle+
+ \langle a,z_1\rangle+
+ \langle a,z_2\rangle+
+ \langle a,z_0z_1z_2\rangle\big),               \tag{36.65}
+```
+
+and the odd product is another augmented cut, so its response is at least
+`-M`.  The analogous pair bound is
+
+```math
+|R(z_0,z_1)|\ge M-{d_0+d_1\over2}.               \tag{36.66}
+```
+
+Combining (36.64)--(36.66), Theorems 36.16--36.17, and two fresh localized
+flip arguments proves a uniform consequence for exact minimizers.  There is
+`D_n=o(M_n)` such that the positive `D_n`-deficit shell of **every** exact
+order-`n` minimizer contains four words `g,u,v,w` with
+
+```math
+\boxed{
+d_{\rm P}(z,z')\ge(1/4-o(1))M_n
+\quad(z\ne z').}                                  \tag{36.67}
+```
+
+One may use code-shell excess `u_n=Theta(n^(5/4))`, localized-flip sample
+size `r_n=O(n log^2 n)`, and `D_n=2max{u_n,r_n}`.  Deficits do not
+accumulate: each new word is obtained from a fresh perturbation of the same
+exact minimizer.
+
+The corresponding four-anchor identity has a genuine orientation ceiling.
+For positive words `z_0,...,z_3`, put `h=z_0z_1z_2z_3`.  The signed mass of
+their common cell is
+
+```math
+{1\over8}\sum_{i=0}^3
+ \big(\langle a,z_i\rangle+\langle a,hz_i\rangle\big). \tag{36.68}
+```
+
+Thus a joint bound
+
+```math
+\sum_i\langle a,hz_i\rangle\ge-(4-eta)M
+```
+
+gives an `eta M/8-o(M)` common-correct reservoir when the deficits are
+`o(M)`.  Cap boundedness alone gives only zero at exact ground energy, and
+this is sharp: an explicit order-five exact minimizer has four positive
+ground words with `h=-mathbf 1`, all pairwise projective distances equal to
+`M_5=4`, and empty fourwise reservoir.  Negative holonomy therefore kills
+the literal common intersection pointwise, although it does not classify
+all possible four-anchor collapse.
+
+This theorem removes the former generic Example 159 as a depth-three
+obstruction for genuine thin-shell words.  It remains an energy-scale
+result: `M_n/binom(n,2)=Theta(n^(-1/2))`, so it does not prove the selected
+fixed-scale `L_projective`.  The proof, exact order-five witness, and
+independent audit are in
+[`drafts/exact_ground_endpoint_linkage.md`](drafts/exact_ground_endpoint_linkage.md)
+and
+[`drafts/exact_ground_endpoint_linkage_independent_audit.md`](drafts/exact_ground_endpoint_linkage_independent_audit.md).
+
+### Theorem 36.19 (fractional reservoirs force a growing energy-scale packing)
+
+For every fixed `K` there is a finite constant `C_K` with the following
+finite-phase trimming property.  If a multiset of sign patterns
+`r_e in {+-1}^K` satisfies
+
+```math
+\sum_e r_{i,e}\ge m>0\qquad(1\le i\le K),
+```
+
+then there are weights `0<=w_e<=1` such that
+
+```math
+m\le W:=\sum_e w_e\le C_Km,
+\qquad
+\sum_e w_er_{i,e}\ge m\quad(1\le i\le K).       \tag{36.69}
+```
+
+One explicit bound is
+
+```math
+C_K\le\max\left\{1,
+ \max_{2\le p\le K}{p^{1+p/2}\over2^{p-1}}
+ \right\}.                                      \tag{36.70}
+```
+
+This follows by applying Minkowski--Weyl to the box-capacity vector and
+trimming it to a convex combination of vertices.  A vertex uses at most
+`K` sign types; Cramer's rule, sign-determinant divisibility, and Hadamard's
+inequality give (36.70).  The dependence on `K` cannot be removed from this
+abstract lemma: the sharp universal constant is at least `K` for odd `K`
+and at least `K-1` for even `K`.
+
+The trimming lemma has a stronger exact-minimizer consequence.  Let
+`z_1,...,z_K` be positive responses of one exact minimizer, each of deficit
+at most `2s`, and put `m=M_n-2s`.  Independently include edge `e` with
+probability `rw_e/W`, where `r=Theta(C_K^2n)`.  A uniform Bernstein bound
+over all augmented cuts produces one actual edge set whose sampled response
+approximates every weighted response.  After flipping that set, exact
+minimality selects a new positive response `z_(K+1)` of deficit at most
+`4r` and
+
+```math
+\boxed{
+d_{\rm P}(z_{K+1},z_i)
+\ge\min\left\{{m\over4},M_n-s-2r\right\}
+\quad(1\le i\le K).}                              \tag{36.71}
+```
+
+The separation constant does **not** deteriorate with `C_K`: the latter
+only prices the number of physical edge flips needed to approximate all
+responses before the adaptive maximizer is chosen.  Independent Bernoulli
+inclusion is a no-replacement construction, so no collision error is
+hidden.
+
+Consequently, for every fixed `0<alpha<1/2`, every exact order-`n`
+minimizer has a positive shell of deficit
+
+```math
+D_n=n^{1+\alpha+o(1)}=o(M_n)                     \tag{36.72}
+```
+
+containing
+
+```math
+L_n=\left\lfloor{\alpha\log n\over\log\log n}\right\rfloor
+\longrightarrow\infty                            \tag{36.73}
+```
+
+words with pairwise projective distance
+
+```math
+\boxed{(1/4-o(1))M_n.}                            \tag{36.74}
+```
+
+Each extension uses a fresh perturbation of the original exact minimizer,
+so the shell deficit does not accumulate.  This crosses the literal
+four-anchor holonomy ceiling and completes the previously missing growing
+packing step at the **energy scale**.  It still does not prove fixed-edge-
+scale `L_projective`, because `M_n/binom(n,2)->0`, nor does it by itself
+activate the existing low-cap compiler at leading `n^(3/2)` scale.
+
+Proof and independent audit are in
+[`drafts/fractional_reservoir_localized_flip.md`](drafts/fractional_reservoir_localized_flip.md)
+and
+[`drafts/fractional_reservoir_localized_flip_independent_audit.md`](drafts/fractional_reservoir_localized_flip_independent_audit.md).
+The exact-arithmetic basic-support verifier and its output are
+[`experiments/finite_phase_fractional_reservoir_constants.py`](experiments/finite_phase_fractional_reservoir_constants.py)
+and
+[`experiments/finite_phase_fractional_reservoir_constants.json`](experiments/finite_phase_fractional_reservoir_constants.json).
+
 ## 37. Presented rare-event states
 
 ### Theorem 37.1 (generic finite-rank spikes survive bulk normalization)
@@ -16016,3 +16190,66 @@ are in
 [`drafts/rare_event_spectral_spike_state.md`](drafts/rare_event_spectral_spike_state.md)
 and
 [`drafts/rare_event_spectral_spike_state_independent_audit.md`](drafts/rare_event_spectral_spike_state_independent_audit.md).
+
+### Theorem 37.2 (rare-phase activation has a sharp adaptive replica exponent)
+
+Let a landscape on `Omega_n` be zero off a marked set `P_n` and have reward
+`E_n` on `P_n`, where
+
+```math
+q_n={|P_n|\over|\Omega_n|}=\exp\{-nI+o(n)\},
+\qquad E_n=n\delta+o(n),                            \tag{37.5}
+```
+
+with `I,delta>0`.  At inverse temperatures `0<=beta<=B<I/delta`, set
+
+```math
+a_B=I-B\delta>0.
+```
+
+Then the complete normalized pressure curve differs from the zero
+landscape by at most
+
+```math
+{1\over n}\exp\{-na_B+o(n)\},                     \tag{37.6}
+```
+
+and this exponential rate is attained at `beta=B`.  More strongly, an
+adaptive observer choosing each temperature from the preceding Gibbs
+samples has transcript total variation at most
+
+```math
+K_n\exp\{-na_B+o(n)\}                              \tag{37.7}
+```
+
+after `K_n` samples.  Every strict smaller sample exponent is therefore
+blind, including all sampled multi-overlap statistics, while every strict
+larger exponent is sufficient: sampling only at `B` and counting visits to
+`P_n` distinguishes the landscapes consistently.  The exact critical
+conditions are `K_nd_n(B)->0` for blindness and
+`K_np_n(B)->infinity`, `q_n/p_n(B)->0` for phase-count recovery; the
+subexponential critical window is not universal.
+
+The normalized maxima nevertheless differ by `delta+o(1)`.  This also gives
+a precise robust minimax statement: if an adversarial `L^infinity[0,B]`
+pressure oracle has radius at least half the pressure-curve separation and
+`K_nd_n(B)->0`, the minimax absolute error in the normalized maximum is at
+least `delta/2-o(1)`.
+
+For the declared marked-phase pressure and mass queries, `(q_n,E_n)` is an
+exact presented carrier.  Under hard conjunctive product its extensive
+rarity cost `-log q` and reward add.  The same identities hold over a
+background with carrier `(\beta\mapsto q_K(\beta),E)`.  This state is a strict
+quotient for code-membership and hard-CSP bonuses, but not for labelled
+geometric futures or ordinary additive Hamiltonian composition, which
+create intermediate phases.
+
+The entropy--reward balance and phase-count product specialize earlier
+Theorems 27.2--27.3.  The new operational content is the exact adaptive
+transcript bound and sharp replica-budget exponent.  It is a scoped Level-3
+theorem/no-go, not a new adversarial-statistical-mechanics architecture and
+not a Boolean near-minimizer implication.  Proof and post-repair independent
+audit are in
+[`drafts/thermal_activation_replica_budget.md`](drafts/thermal_activation_replica_budget.md)
+and
+[`drafts/thermal_activation_replica_budget_independent_audit.md`](drafts/thermal_activation_replica_budget_independent_audit.md).

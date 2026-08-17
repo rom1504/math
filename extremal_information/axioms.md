@@ -2268,13 +2268,13 @@ deficit.  Positivity protects the opposite lift only at the energy scale
 `M_n`, however, so this mechanism yields `Theta(n^(-1/2))` normalized
 projective separation rather than a fixed gap.
 
-Iteration consumes an intersection, not a list of pairwise certificates.
-Actual cut words can have large common-correct reservoirs for every pair and
-only `O(n)` coordinates correct for the whole triple, even in a bounded-cap
-exact signing.  Any fixed-scale diffusion theorem must therefore control a
-higher-order reservoir/non-recycling invariant specifically on exact-
-minimizer thin shells; pairwise complete-bipartite anatomy, shell
-cardinality, and AO.20 do not imply it.
+Literal-intersection iteration consumes an intersection, not a list of
+pairwise certificates.  Generic cut words can have large common-correct
+reservoirs for every pair and a tiny higher-order intersection.  Theorem
+36.19 shows that this is not the final obstruction: a bounded-mass
+**fractional** reservoir, followed by one joint uniform response
+approximation, crosses every fixed anchor count and even a slowly growing
+one.  What remains is scale amplification, not literal Helly persistence.
 
 ## 124. Low dimension forces local shell spread only until the opposite lift enters
 
@@ -2307,3 +2307,73 @@ the synchronization; correlated directions expose an additional Gram
 state.  Thus “zero density” is not synonymous with “negligible”: every
 rare-event compactification must declare both the normalization of rare
 components and the contexts under which rooted information collapses.
+
+## 126. Genuine thin-shell triples are linked, but depth four sees orientation holonomy
+
+For augmented cuts, the odd product of three response words is again a
+legal response word.  The cap bound therefore controls the signed
+common-correct cell of any three positive near-ground words, and exact
+minimality can use that reservoir to create a fourth energy-scale direction.
+This is a real algebraic linkage that generic pairwise reservoir examples do
+not see.
+
+At four anchors the same Fourier expansion introduces four translated
+responses.  Their **joint sum**, rather than four separately paid channels,
+is the correct observable.  Negative orientation holonomy can saturate the
+sum and annihilate the literal common reservoir even among exact grounds.
+Thus the next state cannot be only a list of pairwise distances or common
+intersections.  Theorem 36.19 realizes the fractional option: several phase
+cells are paid jointly, and holonomy no longer blocks extension.  Its cost
+is a `K`-dependent conditioning constant in the sampling budget, while the
+resulting separation remains uniform at the energy scale.  A further step
+must amplify that mesoscopic scale or use extra cut structure; it need not
+restore a literal common cell.
+
+## 127. Thermal visibility is priced by activation cost and observation budget
+
+An exponentially rare phase of entropy cost `I` and reward density `delta`
+is invisible below inverse-temperature budget `B<I/delta` at residual rate
+`I-Bdelta`.  That same rate prices both robust pressure resolution and the
+number of adaptive Gibbs replicas needed to observe the phase.  A bounded-
+temperature state intended to preserve zero-temperature extrema must
+therefore declare its query precision and replica budget, not merely its
+limiting pressure curve.
+
+For hard conjunction, phase probability and reward give a strict exact
+carrier; for labelled futures or ordinary additive composition they do not.
+This is an operational refinement of entropy--reward balance, not a claim
+that one scalar activation cost captures arbitrary rare-event geometry.
+
+## 128. Fractional joint support can outlive every literal common witness
+
+A finite family of positive sign responses always admits a bounded-mass
+submeasure whose correlation with every response remains positive.  The
+bound is a finite-dimensional polyhedral conditioning constant.  Uniformly
+sampling this submeasure **before** the optimizing response is selected
+preserves cancellation across all channels and turns exact minimality into a
+new jointly separated witness.
+
+The conditioning constant may grow with the number of channels, but it
+prices sampling complexity rather than final response separation.  This is
+why a slowly growing family can retain constant energy-scale separation even
+though no common-correct coordinate survives.  Literal support, fractional
+support, and ambient-scale visibility are therefore three different
+resources: the first may fail, the second may compose, and the third can
+still remain out of reach.
+
+## 129. Sequential anchor compression is weaker than whole-shell compression
+
+A fractional reservoir theorem with a constant depending on the number of
+declared anchors is a finite-context statement.  It can be iterated by
+returning to the original exact minimizer at every step, even when the union
+of all exposed shell constraints admits no proper sub-interface at all.
+Finite exact certificates already force full edge mass for complete active
+shells of several exact minimizers.
+
+Consequently one must not replace “every finite declared anchor set has a
+bounded-mass support” by “the whole near-ground phase has one bounded-mass
+support.”  The latter is a genuinely stronger global quotient claim.  A
+sequential construction may prove large extremal packing while the complete
+phase remains information-heavy; conversely, accelerating the number of
+anchors does not by itself amplify their energy-scale separation to an
+ambient-scale physical response.
