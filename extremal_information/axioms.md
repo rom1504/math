@@ -1190,3 +1190,32 @@ controlled by interface width: at a dense quadratic cut the bilinear response
 is already of leading order and the local transfer dimension is exponential.
 A useful dense analogue would need a nonlocal multiplicative quotient, not a
 larger finite-width transfer matrix.
+
+## 44. Relative algebra gives certificates before it gives a quotient
+
+For involutory child and bridge operators, commutators and anticommutators
+control two different extremal mechanisms. A small commutator preserves a
+transported common section with quadratic loss, while a small
+anticommutator imposes a global spectral ceiling. This information can force
+a leading compositional separation even though it does not compute the
+intermediate Boolean maximum.
+
+The distinction is methodological. A low-dimensional invariant can be a
+powerful **certificate state** without being a semantically sufficient
+response state. Promoting the former to the latter requires a realizability
+law for Boolean poles and closure under varying children.
+
+## 45. Orbit sufficiency and compositional congruence are different
+
+For odd-dimensional linear Walsh labels, a finite presented form--binary
+Gram data, all label relations, and one characteristic-root fibre--classifies
+every ordered tuple up to ambient orthogonal symmetry. It therefore answers
+all equivariant Boolean extremal queries on the tuple. This is a strict
+quotient of the raw labels when the word is short relative to the ambient
+dimension.
+
+Yet two such isolated orbit states do not determine their joint state:
+cross-pairings and mixed relations appear only after gluing. Exact orbit
+classification is therefore a static response theorem, not automatically a
+dynamic congruence. The missing cross-form measures composition-created
+information in a concrete algebraic family.

@@ -93,7 +93,11 @@ one of:
   `alpha I+beta J` bridges. In the Walsh family, even a flat edge connection
   has a relative commutation cocycle: commuting and anticommuting constant
   words with identical bias/pair-overlap summaries differ extensively on
-  every long path.
+  every long path. More generally, commutator defect gives a quadratic-loss
+  Boolean section while anticommutator defect gives an exact spectral
+  ceiling. For odd-dimensional linear Walsh labels, Gram, the relation
+  kernel, and the characteristic-root fibre form an exact `O(k^2)`-bit orbit
+  quotient for every `k`-block graph.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
@@ -103,10 +107,10 @@ one of:
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
 - **Composition mechanism:** group extension and cycle-space cocycles.
-- **Live theorem:** characterize the minimal relative operator algebra which
-  transports the cap-Walsh gauge through repeated composition. The immediate
-  falsifier is another pair of words agreeing on that algebra but separated
-  at leading scale.
+- **Live theorem:** characterize the gluing fibre of the rooted relation-form
+  quotient. Isolated states omit cross-Gram entries and mixed relations; the
+  target is an associative minimal interface presentation with a matching
+  information lower bound, followed by an approximate analogue.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -235,7 +239,7 @@ one of:
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
-| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits) or structured truth table (`sqrt(n)` bits); relative operator cocycle under graphs | full switching orbit has `Theta(n)` one-bridge response bits; structured graph carrier closes at coefficient level; scalar overlap quotient fails extensively |
+| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for odd-dimensional linear-label words) | full switching orbit has `Theta(n)` one-bridge response bits; relative involution algebra gives robust graph certificates; the rooted relation form is an exact orbit quotient but needs new cross-data on gluing |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |

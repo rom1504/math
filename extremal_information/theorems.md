@@ -8006,6 +8006,219 @@ observable is a relative commutation cocycle between the flat edge transport
 and the on-site involution. The result does not prove that the full
 `sqrt(n)`-bit truth table is necessary under repeated composition.
 
+### Theorem 21.11 (relative involution composition law)
+
+Let `C,F` be real symmetric `N by N` involutions and, for a graph `G` on `k`
+vertices, set
+
+```math
+\mathcal M_G=I_k\otimes C+A_G\otimes F,
+\qquad E_G(X)={\lambda\over2}X^T\mathcal M_GX.           \tag{21.55}
+```
+
+Write `rho=||A_G||`, `eta_+=||CF+FC||`, and
+`eta_-=||CF-FC||`. Then
+
+```math
+\max_{X\in\{\pm1\}^{kN}}E_G(X)
+\le {\lambda kN\over2}
+     \sqrt{1+\rho^2+\rho\eta_+}.                        \tag{21.56}
+```
+
+If `G` is bipartite with classes `L,R` and there is a Boolean `s` with
+`Cs=s` and `Fs` Boolean, then
+
+```math
+\max_XE_G(X)\ge\lambda N\left(
+ {k\over2}+|E(G)|-{\eta_-^2\over4}
+ \sum_{H\in\operatorname{cc}(G)}
+ \min\{|L\cap H|,|R\cap H|\}\right).                  \tag{21.57}
+```
+
+In particular, exact commutation gives the termwise optimum
+
+```math
+\max_XE_G(X)=\lambda N\left({k\over2}+|E(G)|\right).    \tag{21.58}
+```
+
+If `G` is `r`-regular bipartite with `r>0`, comparison of such a commuting
+pair with a pair satisfying `||CF+FC||<=eta<2` gives the extensive gap
+
+```math
+{\lambda kN\over2}
+\left(1+r-\sqrt{1+r^2+r\eta}\right)>0.                 \tag{21.59}
+```
+
+#### Proof
+
+The exact square is
+
+```math
+\mathcal M_G^2=(I_k+A_G^2)\otimes I_N
+ +A_G\otimes(CF+FC).                                    \tag{21.60}
+```
+
+The two summands commute, so in fact
+
+```math
+||\mathcal M_G||^2
+=\max_{\alpha\in\operatorname{spec}(A_G),
+       \sigma\in\operatorname{spec}(CF+FC)}
+ (1+\alpha^2+\alpha\sigma).                            \tag{21.61}
+```
+
+The triangle bound in (21.61), followed by the Boolean Rayleigh bound
+`||X||_2^2=kN`, proves (21.56). For the lower bound put `t=Fs`, assign `s`
+and `t` to opposite color classes, and orient each connected component so
+that `t` occurs on the smaller side. Every bridge is saturated. Moreover
+
+```math
+N-t^TCt={1\over2}||Ct-t||_2^2
+       ={1\over2}||[C,F]s||_2^2.                        \tag{21.62}
+```
+
+Thus every `t`-child loses at most `lambda eta_-^2N/4`, proving (21.57).
+When the commutator vanishes, all child and edge terms are saturated and
+their separate norm bounds prove equality. Finally a regular bipartite
+adjacency has eigenvalues `+-r`; pairing the sign with an extremal eigenvalue
+of `CF+FC` makes (21.56) exact at the operator level and yields (21.59).
+`square`
+
+The theorem is a robust certificate, not a complete response state. Its
+lower half also depends essentially on the transported pole `Fs` remaining
+Boolean. Generic perturbations need not preserve that property.
+
+### Theorem 21.12 (binary Gram data alone is not a Walsh extremal quotient)
+
+Let `m>=3`, `q=2^m`, `n=q^2`, `F=W/q`, and
+
+```math
+\widehat C_a=D_aFD_a,
+\qquad D_a(u,v)=(-1)^{a\cdot v}.                         \tag{21.63}
+```
+
+For the path on three blocks, give a label word `c=(c_1,c_2,c_3)` the energy
+
+```math
+E_c(X)={q\over2}\sum_i x_i^T\widehat C_{c_i}x_i
+       +q x_1^TFx_2+q x_2^TFx_3.                        \tag{21.64}
+```
+
+There are words `c^-` and `c^+` with identical binary Gram matrices
+`(c_i dot c_j)`, but
+
+```math
+\max E_{c^+}={7\over2}n^{3/2},
+\qquad
+\max E_{c^-}\le {3\sqrt3\over2}n^{3/2}.                \tag{21.65}
+```
+
+#### Proof
+
+Take
+
+```math
+a=(1,1,1,0,\ldots,0),\qquad b=(0,0,1,0,\ldots,0),
+```
+
+and `c^-=(a,a,a)`, `c^+=(a,b,a)`. All pairwise binary inner products are
+one. The Boolean sign of
+
+```math
+Q(u,v)=u_0u_1+v_0v_1+u_2v_2+v_0+v_1+v_2
+       +\sum_{j\ge3}u_jv_j                              \tag{21.66}
+```
+
+is bent. Calling it `x`, direct two-bit Walsh factorization gives
+
+```math
+\widehat C_ax=x,\qquad \widehat C_bx=-x,
+\qquad Fx\in\{\pm1\}^n,
+\qquad \widehat C_b(Fx)=Fx.                             \tag{21.67}
+```
+
+Hence `(x,Fx,x)` saturates all five terms for `c^+`. For `c^-`, `F` and
+`widehat C_a` anticommute, so the square of the normalized three-block
+operator is `(I_3+A(P_3)^2) tensor I_n`; its norm is `sqrt(3)`, proving the
+second bound. `square`
+
+This rejects **Gram alone**. It does not reject truth-table overlaps: for
+linear labels their overlap is `q 1_(a=b)`, which already separates these
+two words.
+
+### Theorem 21.13 (the characteristic root is response-visible)
+
+Put `omega=(1,...,1) in F_2^m`. For an ordered label tuple define
+
+```math
+G(\mathbf a)=(a_i\cdot a_j)_{ij},\qquad
+\mathcal R(\mathbf a)=\{c:\sum_i c_i a_i=0\},
+\qquad
+\mathcal R_\omega(\mathbf a)=\{c:\sum_i c_i a_i=\omega\}. \tag{21.68}
+```
+
+If `m>=3` is odd, the singleton labels `omega` and `e_j` have the same
+`G` and `mathcal R` but different `mathcal R_omega`. Through the rooted Walsh
+future from Theorem 21.6 their projective responses are separated by at
+least `n^(3/2)/6`.
+
+#### Proof
+
+Both labels have norm one and no nonzero relation, while only the first
+equals `omega`. With `s_c(u,v)=(-1)^(u dot v+c dot v)` and
+`y_c=q^(-1)Ws_c`, the matched response is `3n^(3/2)/2`. Distinct linear
+truth tables have zero correlation, hence the rooted Rayleigh coordinate in
+(21.31) is zero. The resolvent calculation (21.33), now with `rho=0`, bounds
+the crossed response by `4n^(3/2)/3`. Reversing the queries gives the
+projective gap. `square`
+
+### Theorem 21.14 (odd-dimensional rooted relation-form quotient)
+
+For odd `m`, two ordered linear-label tuples have identical triples
+
+```math
+(G(\mathbf a),\mathcal R(\mathbf a),
+  \mathcal R_\omega(\mathbf a))                         \tag{21.69}
+```
+
+if and only if one is carried to the other by a common
+`O in O(m,2)`. Consequently (21.69) is an exact `O(k^2)`-bit quotient,
+independent of `m`, for the Boolean maximum on every Walsh-bridged graph of
+`k` blocks. It also preserves rooted responses after the same coordinate
+relabeling.
+
+#### Proof
+
+Equality of relation kernels makes `a_i -> a_i'` a well-defined linear
+isomorphism of their spans, and equality of `G` makes it an isometry. The
+rooted coset says exactly that membership of `omega` agrees and that the
+isometry fixes `omega` whenever it is present.
+
+Because `m` is odd, `omega dot omega=1` and
+`H=omega^perp` is nondegenerate alternating. Every vector decomposes
+uniquely as
+
+```math
+u=(u\cdot u)\omega+h(u),\qquad h(u)\in H.               \tag{21.70}
+```
+
+The rooted condition makes `h(u)->h(phi(u))` well defined on the projected
+span; Gram preservation makes it symplectic. The symplectic Witt extension
+lemma extends it to `S in Sp(H)`. Then
+`O(c omega+h)=c omega+Sh` is the required orthogonal extension. Conversely,
+every orthogonal map fixes the characteristic vector `omega`, since
+`x dot x=omega dot x` characterizes it, and therefore preserves (21.69).
+
+Applying `O` simultaneously to both Walsh coordinates is a permutation of
+the Boolean cube, preserves `W`, and conjugates every `C_(a_i)` to
+`C_(a_i')`. This proves the extremal and equivariant-response claims.
+`square`
+
+This is a strict structured quotient, but not an independently composable
+one. Gluing two tuples creates cross-Gram values and cross-relations not
+determined by their isolated states. Those missing fibres are a concrete
+form of composition-created information.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

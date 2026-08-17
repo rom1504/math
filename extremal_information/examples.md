@@ -1757,3 +1757,46 @@ Boolean bilinear maximum at least `n^(3/2)/sqrt(3)`, so a balanced dense cut
 already carries a leading interface and the standard transfer state has
 `2^n` coordinates. Fixed-width lower-spectral multiplication cannot simply
 be transplanted there without a new nonlocal quotient.
+
+## Example 77: relative involution algebra is robust but conditional
+
+For a symmetric involutory child `C` and bridge `F`, the anticommutator gives
+an exact spectral ceiling on every graph composition. On a bipartite graph,
+a Boolean child pole transported to another Boolean vector by `F` gives the
+opposite certificate: its failure to remain a child pole is exactly
+
+```math
+{1\over2}||[C,F]s||_2^2.
+```
+
+Thus a fixed anticommutator gap below two forces an extensive separation
+from an exactly commuting family on every positive-degree regular bipartite
+graph. The result robustifies the Walsh parity example without pretending
+that two operator norms form a complete quotient. The Boolean transported
+pole is an indispensable realizability hypothesis.
+
+## Example 78: a binary Gram collision changes a Walsh path at leading scale
+
+Linear Walsh labels can have the same complete binary Gram matrix while
+different hidden linear relations change the simultaneous maximizing
+section. On three blocks, `(a,a,a)` and `(a,b,a)` can have all Gram entries
+one, yet the second word exactly attains `7n^(3/2)/2` while the first is at
+most `3sqrt(3)n^(3/2)/2`.
+
+This is a deliberately narrow falsifier. Ordinary truth-table overlaps see
+whether two linear labels are equal and therefore distinguish the example.
+What fails is the tempting Gram/commutation quotient used alone.
+
+## Example 79: a rooted relation form is an exact Walsh orbit state
+
+In odd label dimension, the binary Gram form and relation kernel still omit
+whether a label combination equals the characteristic vector
+`omega=(1,...,1)`. A single Walsh-rooted future sees that omitted bit with an
+`n^(3/2)/6` response gap.
+
+Adding the rooted relation coset closes the classification: Gram, kernel,
+and `omega`-coset determine an ordered label tuple up to the full orthogonal
+group. The resulting `O(k^2)`-bit state is an exact Boolean-extremal quotient
+for every graph on `k` Walsh blocks, independently of the ambient label
+dimension. It is nevertheless not separately reusable under gluing, because
+cross-Gram values and mixed relations are newly created at the interface.

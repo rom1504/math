@@ -248,20 +248,27 @@ this full orbit has `Theta(n)` response bits under coordinate-pinning futures,
 even though every child has identical isolated cap, spectrum, and all other
 switching invariants.
 
-The sharp next target is now **joint gauge-covariant reuse**, not another
-one-bridge rate bound. Under graph composition the Walsh family has an exact
-`k sqrt(n)`-bit Kronecker presentation. But bias and all within-word pairwise
-truth-table overlaps are not a reusable quotient: linear truth tables with
-the same retained summaries commute or anticommute with the bridge according
-to `a dot a`, and a long path exposes an extensive gap with asymptotic
-coefficient `(3-sqrt5)/2` per block.
+The first **joint gauge-covariant reuse** theorem is now proved for a strict
+linear-label family. In odd label dimension, the triple
 
-Determine whether the full `sqrt(n)`-bit truth table admits a semantic
-response update of sub-landscape complexity under a nontrivial graph family,
-or prove that composition exposes `Omega(k sqrt(n))` independent terminal
-information. The state may include the relative operator algebra or a gauge
-cocycle, but evaluating it may not invoke the original `2^(kn)` Boolean
-maximum.
+```math
+(\text{binary Gram},\text{relation kernel},
+  \text{characteristic-root fibre})                      \tag{OQ.5b}
+```
+
+classifies every ordered label tuple up to the orthogonal group. It is an
+exact `O(k^2)`-bit Boolean-extremal quotient on every `k`-block Walsh graph,
+independent of the ambient `sqrt(n)` label bits. Gram alone fails at leading
+scale, and even Gram plus relations misses the characteristic root under a
+rooted future.
+
+The quotient is not separately composable. Gluing two summarized tuples
+creates cross-Gram entries and mixed relations not determined by their
+isolated states. The sharp next target is therefore to characterize the
+**gluing fibre** exactly: prove an associative minimal cross-form carrier and
+a matching information lower bound, then ask whether any approximate
+quotient reduces it. Only after that should one test nonlinear truth tables.
+Evaluating the state may not invoke the original `2^(kn)` Boolean maximum.
 
 A parallel replacement target remains:
 
@@ -274,12 +281,12 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** a reusable joint quotient for a nontrivial cap-bounded graph
-family, a lower bound proving extensive growth of every such quotient, or a
-near-minimizer rigidity theorem which excludes the entropy-amplification
-mechanism. Any positive state must retain the commutation/compatibility data
-absent from scalar Rayleigh summaries and must use a property stronger than
-bounded cap.
+**Success:** an associative gluing theorem with minimal cross-information, an
+approximate reduction of that cross-information, a reusable joint quotient
+for a nonlinear cap-bounded family, or a lower bound proving extensive
+growth of every such quotient. Any positive state must retain the
+commutation/compatibility data absent from scalar Rayleigh summaries and must
+use a property stronger than bounded cap.
 
 **Falsifier:** a response-separated code inside the proposed port, or a
 four-label pinned cut-norm witness at order `n^(3/2)`.

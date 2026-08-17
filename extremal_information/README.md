@@ -626,9 +626,18 @@ on a `k`-block graph, but isolated bias and all within-word pairwise
 truth-table correlations are not reusable. A linear-label commutation bit
 between the child and bridge involutions changes the path optimum by
 `((3-sqrt(5))/2+o(1))n^(3/2)` per block. This is composition-created
-information even though the edge connection itself is flat. The open issue
-is whether the full truth-table presentation admits a semantic update which
-does not perform the complete Boolean maximization.
+information even though the edge connection itself is flat.
+
+The linear-label subfamily now has a positive exact endpoint. In odd label
+dimension, binary Gram data, the full relation kernel, and one
+characteristic-root relation coset classify every ordered tuple up to Walsh
+coordinate symmetry. This gives an `O(k^2)`-bit exact Boolean-extremal
+quotient for every `k`-block graph, independent of the `sqrt(n)`-bit ambient
+label dimension. It is static rather than independently composable: gluing
+creates cross-Gram entries and mixed relations. The open issue is to
+characterize that gluing fibre and then determine whether an approximate
+analogue survives beyond linear labels without performing the complete
+Boolean maximization.
 
 The sparse upper argument also survives abstraction. For any finite public
 bounded feature dictionary, a linear-size list of importance-weighted masks
