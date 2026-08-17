@@ -909,19 +909,23 @@ per-letter scalar tolls. This is a positive deterministic synchronization
 theorem, in contrast with the permutation-selector lower bound: the latter's
 generators do not commute.
 
-### Theorem 3.13 (dominating quotient plus coherent section)
+### Theorem 3.13 (dominating quotient plus coherent path lift)
 
 Let raw and coarse max-plus generators be `T_e,S_e`. Suppose a surjection
-`pi` and section `iota` satisfy
+`pi` satisfies
 
 ```math
 T_e(i,j)<=S_e(pi(i),pi(j))+eta_e^+,
-\qquad
-T_e(iota(a),iota(b))>=S_e(a,b)-eta_e^-                          \tag{3.33}
 ```
 
-for every generator and every indicated pair of states. Then for every word
-`w`
+and that for every `i in pi^(-1)(a)` and coarse target `b`, some
+`j in pi^(-1)(b)` satisfies
+
+```math
+T_e(i,j)>=S_e(a,b)-eta_e^-.                                    \tag{3.33}
+```
+
+Then for every word `w`
 
 ```math
 -sum_(e in w)eta_e^-
@@ -930,17 +934,229 @@ for every generator and every indicated pair of states. Then for every word
 ```
 
 Indeed, project every raw path for the upper bound and lift every coarse path
-through the same section for the lower bound. This proves the corresponding
-entrywise product inequalities first; closed paths give (3.34). At zero
+one edge at a time for the lower bound. The raw representative may depend on
+the preceding path. To close the lower spectral bound, repeat a critical
+coarse cycle: finiteness makes two raw representatives above the same coarse
+phase repeat, producing a genuine raw cycle. This proves (3.34). At zero
 defect the generator certificate preserves the response of every aligned
 word exactly, without projective-semigroup enumeration.
 
 For the corrected four-state automaton, `pi` is the two-block map and
 `iota(0)=0,iota(1)=2`. Every raw edge lies below its corrected block edge,
-and the section edges are equal. The old quotient fails the upper inequality
+and the section edges are equal, which is a stronger fixed-section form of
+the path-lift condition. The old quotient fails the upper inequality
 by exactly `delta` on one exposed self-loop. This benchmark therefore has a
 strict implicit carrier for a reason visible at the generators, rather than
 because a finite closure happened to terminate.
+
+A fixed section would be too strong even for the Ising parity reset. More
+generally, a transitive permutation gap kernel lifts the scalar zero loop by
+moving `i` to `g_ei` on every input. It has an exact relational lift, whereas
+a fixed section would have to be an invariant singleton. The relation in
+Theorem 3.13 is therefore the minimal natural positive certificate before
+the word-dependent-witness obstruction of Proposition 3.16.
+
+### Theorem 3.14 (one PWA generator implements an exponential counter)
+
+In `r=2m` dual-rail coordinates, define on the projective span-one polytope
+
+```math
+u'_0=v_0,\quad v'_0=u_0,
+```
+
+and for `i>=1`, with `c_i=min_(j<i)u_j` and
+`d_i=max_(j<i)v_j`, set
+
+```math
+u'_i=max{min(u_i,d_i),min(v_i,c_i)},
+v'_i=max{min(v_i,d_i),min(u_i,c_i)}.                            \tag{3.35}
+```
+
+This is one continuous rational additively homogeneous lattice-PWA map. A
+common refinement of its min/max comparisons makes every affine branch a
+unit selector, and every output lies inside the input range. Prefix minima
+and maxima give an `O(m)` shared-gate description.
+
+On the dual-rail Boolean points `u_i=bit_i(b),v_i=1-bit_i(b)`, `c_i` is the
+binary carry into bit `i`; hence (3.35) increments `b` modulo `2^m`. Add one
+identity probe input with reward `(u_(m-1)-v_(m-1))/2`. Its values around the
+orbit form a primitive word with half `-1/2` and half `+1/2`. Any two phases
+can therefore be moved by a common power to probe values separated by one,
+and repetition gives
+
+```math
+C_epsilon=2^m  (epsilon<1/2),
+\qquad C_epsilon=1  (epsilon>=1/2).                              \tag{3.36}
+```
+
+Without the identity probe, any bounded reward on the sole counter letter
+has the same cycle mean from every phase and phase totals differ only by a
+bounded amount. The probe is what converts orbit complexity into future
+response information.
+
+This closes the category boundary left by (3.28). A globally affine selector
+has only Landau-subexponential recurrent germs. A single all-finite max-plus
+linear map is also ultimately projectively periodic with critical-graph
+cyclicity by the classical cyclicity theorem
+([Sergeev--Schneider](https://arxiv.org/abs/0912.2534)). But one
+polynomial-description lattice-PWA selector map, because it uses both min and
+max, already has an exponentially exposed orbit.
+
+Constant-weight digits make the exponent nearly optimal. For even local
+length `ell`, use the `q=binom(ell,ell/2)` constant-weight words as digits.
+The lattice feature `h_a(z)=min_(j:u^a_j=1)z_j` is the exact indicator of
+digit `a`, so a max of the appropriate `h_a` implements any fixed cyclic
+successor `S`.  On block `i`, let `c_i` be the minimum of the last-digit
+detectors on lower blocks and `d_i` the maximum of their complementary
+detectors, with `c_0=1,d_0=0`, and use the coordinatewise lattice mux
+
+```math
+z'^(i)=max{min(z^(i),d_i),min(S(z^(i)),c_i)}.
+```
+
+Then `c_i` is the base-`q` carry and `d_i=1-c_i` on the digit orbit, so
+carrying these digits across `m` blocks gives period `q^m`. For
+fixed `ell`, this exceeds `c^r` for any prescribed `c<2` after choosing
+`ell` large enough. With `m=2^ell`, the circuit has polynomial size
+`O(r^2/ell^(3/2))` and the exposed orbit has
+
+```math
+q^m=2^(r-o(r)).                                                  \tag{3.37}
+```
+
+The probe on the most-significant block is
+`z_1-ell^(-1)sum_j z_j`, not the affine slice notation `z_1-1/2`; this makes
+it projectively invariant and it equals `+-1/2` on the digit orbit.
+
+The local successor table grows only polynomially in the total dimension in
+this regime; the global orbit is never enumerated.
+
+### Theorem 3.15 (minimum approximate congruence is NP-complete)
+
+Given a finite rational reward automaton, `epsilon`, and `k`, deciding whether
+some input congruence with at most `k` states has cycle-LP distortion at most
+`epsilon` is NP-complete already for `k=3`, `epsilon=1/2`, rewards
+`{-1,0,1}`, and identity dynamics.
+
+Under identity dynamics every partition is a congruence and midpoint tolls
+give exactly half the maximum within-block range over reward coordinates.
+For a graph `G`, use one state per vertex and one reward coordinate per edge,
+equal to `+1,-1` at its endpoints and zero elsewhere. A block has range at
+most one in every coordinate exactly when it is independent. The optimal
+state count is therefore `chi(G)`.
+
+For membership in NP, guess the partition. Tolls `g` and potentials `p^+,p^-`
+satisfy
+
+```math
+r-g-epsilon<=p^+ circ delta-p^+,
+\qquad -r+g-epsilon<=p^- circ delta-p^-                         \tag{3.38}
+```
+
+iff both signed defect graphs have no positive cycle. This is one polynomial
+rational LP. The reduction also has a rank-one-reset version, so even maximal
+state contraction does not make optimal response clustering easy. With one
+identity reward coordinate, by contrast, sorting and greedy interval
+clustering is optimal. Low-dimensional query geometry, not contraction alone,
+is the tractable resource.
+
+### Proposition 3.16 (wordwise spectra do not force a path lift)
+
+For a `{0,-C}` system, let `R_e` be the zero-edge relation.  The exact
+boundary is
+
+```math
+rho(T_w)=0 \iff R_w\text{ has a directed cycle},
+```
+
+whereas an exact relational lift to the scalar zero system exists iff every
+`R_e` is left-total.  If one `R_w` is acyclic, then
+`rho(T_w)<=-C/|I|` and repetition pumps this into linear drift.  Hence the
+intrinsic unrooted condition is periodic completeness of every word
+relation, not local totality.
+
+Let raw states and letters be `[r]` and put `T_e(i,j)=0` when `i=e`, `-C`
+otherwise. Every word `e_1...e_t` has the zero-weight closed path
+`e_1->e_2->...->e_t->e_1`, while all edges are nonpositive. Hence every word
+has spectral radius zero, exactly matching one scalar zero state.
+
+But a path-lift quotient with `eta_e^++eta_e^-<C` cannot merge two raw rows.
+Within one proposed fibre, the upper/lower inequalities force the block-row
+maxima of any two representatives to differ by at most that sum. Letter `i`
+separates row `i` from every row `i'` by exactly `C`. Using also letter `i'`
+shows the same conclusion after every common diagonal gauge.
+
+The response equality has the order `for every word, there exists a critical
+cycle`; the path-lift certificate requires one relation which works from
+every raw representative. This is the sharp limitation of Theorem 3.13.
+Recovering a converse needs a synchronization hypothesis that justifies
+interchanging those quantifiers, not merely exact scalar spectral data.
+
+A fixed binary alphabet makes the separation exponential. On states
+`{0,1}^m`, letter `e` has zero edges from a window beginning in `e` to its two
+one-step de Bruijn shifts, and weight `-C` elsewhere. Periodic windows give a
+closed zero lift for every word. The word naming one state has a zero row
+only at that state, so exact relational lifting needs all `2^m` states.
+With generator defect `delta`, merging requires `m delta>=C`; choosing `C=m`
+gives a constant-defect exponential gap. This rules out a converse even with
+a fixed alphabet and with every raw state exposed by some future word.
+
+It also survives the strongest naive scrambling repair. For every word `w`
+of length `L>=2m`, the product has one all-zero row, indexed by the initial
+`m`-window of `w`, and every other row is identically `-C`. Thus each blocked
+generator is projectively rank one, has contraction coefficient zero, one
+critical node, and critical margin at least `C/2`. Yet choosing the block
+word whose prefix names one of two merged states gives row gap `C`, so every
+block path lift of defect below `C` is discrete. At `L=2m,C=m`, this remains
+a per-original-step threshold `1/2`. The rank-one image changes with the
+word: scrambling after the future is known does not synchronize witnesses
+before the future is revealed.
+
+### Theorem 3.17 (finite survival lumpability)
+
+Suppose `T_e(i,j)<=lambda_e` and call an edge good when
+`T_e(i,j)>=lambda_e-theta_e`. Write `Delta_e(S)` for all good successors of
+`S`. A finite deterministic carrier with nonempty raw sets `K_q` and
+
+```math
+K_(delta(q,e)) subseteq Delta_e(K_q)
+```
+
+certifies, for every word,
+
+```math
+sum_(e in w)(lambda_e-theta_e)
+ <=rho(T_w)<=sum_(e in w)lambda_e.                              \tag{3.39}
+```
+
+Apply the backward-lifting inclusions to `w^r`, where `r` is the raw state
+count. The resulting path has a repeated raw vertex at word boundaries and
+hence contains a genuine `T_w` cycle. This is an anticipatory existence
+certificate: it selects the initial witness after the finite future is
+known, exactly matching the unrooted spectral query.
+
+At zero error the certificate is complete. Exact scalar word spectra are
+equivalent to each of: every composed good relation has a directed cycle;
+every composed good relation is nonempty; and the endpoint-subset automaton
+started at `I` never reaches the empty set. The canonical carrier is the set
+of reachable nonempty subsets, of size at most `2^r-1`, rather than the full
+`2^(r^2)` relation semigroup. If a uniform bad-edge gap is `C`, failure has a
+shortest mortal word of length at most `2^r-1`, and repeating it loses at
+least `C` per block in every entry.
+
+The `2^r` powerset scale is sharp for exact alive/dead monitoring. A cyclic
+permutation together with a partial identity deleting one point generates,
+by conjugation, deletion of every chosen point. All subsets are reachable,
+and two distinct subsets are distinguished by deleting everything except one
+point in their symmetric difference. This lower bound concerns verification
+over positive and negative instances; a particular universally surviving
+system may have a much smaller certificate.
+
+This is the response-specific middle state missing from the earlier
+dichotomy. Left-total one-letter relations give the stronger rowwise lift;
+subset nonmortality gives precisely the weaker unrooted response. In the
+de Bruijn family `Delta_e(I)=I` for both letters, so the survival carrier has
+one state even though every rowwise lift has `2^m` states.
 
 ## 4. Two dual max-plus block quotients
 

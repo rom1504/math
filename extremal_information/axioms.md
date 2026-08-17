@@ -844,3 +844,90 @@ path-realizing replacement: synchronizing two such graphs turns the exact
 supremum over wordwise spectral-response gaps into a finite cycle-mean
 problem. The carrier is intrinsic and checkable, but output-sensitive; its
 size may itself be exponential.
+
+## 28. A small circuit can hide an exponentially large response orbit
+
+Polynomial presentation size does not bound dynamic response information.
+One `O(r)`-gate continuous rational lattice-PWA selector map can implement a
+binary counter of period `2^(r/2)`. A single bounded identity probe exposes
+all phases at a fixed gap, forcing the full exponential state count below
+that gap.
+
+This also sharpens the query principle. With only the counter evolution
+letter, every phase sees a rotation of one reward cycle and one mean toll has
+bounded error. Adding the ability to freeze and repeat one phase observation
+turns latent orbit complexity into extensive response separation. State
+complexity is a property of dynamics *and its future interface*, not of the
+dynamical map alone.
+
+## 29. Optimal response congruence is a clustering problem, not refinement
+
+Once a candidate partition is fixed, its best asymptotic toll error is a
+polynomial cycle-mean LP. Selecting the smallest feasible partition is
+different: it is NP-complete even with identity transitions and fixed error
+`1/2`, by an exact reduction from graph coloring. Rank-one reset dynamics
+retain the hardness.
+
+Thus contraction controls how approximation errors propagate but does not
+make the response image easy to cluster. Positive structural theorems need
+low-dimensional reward geometry, an algebraic path lift, or another special
+property; generic monotone partition refinement cannot find the optimum.
+
+## 30. Path realization is stronger than equality of optimized responses
+
+A coherent path-lifting relation is a powerful sufficient certificate, but
+it is not intrinsic to scalar word responses. Exact equality of every
+aligned-word spectral radius can coexist with a linear-size lower bound on
+every low-defect path lift. The optimum may choose a different microscopic
+critical witness after seeing each full word.
+
+This is a quantifier obstruction:
+
+```math
+for every future word, there exists an optimizer
+```
+
+does not imply
+
+```math
+there exists one finite relation continuing all represented states.
+```
+
+A converse needs deterministic synchronization, exposed uniqueness stable
+under prefixes, or another hypothesis that permits this interchange.
+
+For `{0,-C}` max-plus kernels the distinction is exact. Equality with the
+scalar zero response says that every word-composed zero relation contains a
+directed cycle (**periodic completeness**). A scalar coherent path lift says
+that every one-letter zero relation is left-total (**local continuation**).
+Failure of periodic completeness supplies one finite word whose repetition
+pumps a linear response gap, but periodic completeness does not imply local
+continuation: the fixed-binary de Bruijn family separates them exponentially.
+This is an intrinsic response-versus-simulation boundary, not another choice
+of quotient terminology.
+
+Even maximal metric forgetting is not enough. In the same de Bruijn family,
+every sufficiently long word product has projective rank one and one critical
+node, but the identity of that node is the word's initial window. Contraction
+forgets an incoming message *after the word is fixed*; reusable compression
+must choose a state *before the future word is known*. The missing property
+is therefore cross-word coherence of exposed images, not merely scrambling,
+primitivity, or unique optimization within each product.
+
+## 31. Query-matched path realization can be anticipatory
+
+The correct finite path certificate depends on the query quantifiers. For a
+scalar unrooted tropical spectrum, one need not continue from every raw
+representative. It is enough to carry a nonempty subset of possible raw
+witnesses whose next subset lies inside the current good-edge image. Once a
+finite future is known, a terminal witness can be lifted backwards to a
+genuine path. Repeating a word then closes a raw cycle by finiteness.
+
+For exact scalar tolls this **survival carrier** is complete: it exists iff
+the good-edge subset automaton never dies. Its canonical state has at most
+`2^r-1` endpoint subsets, not `2^(r^2)` full relations. Failure produces a
+finite mortal word and hence a pumpable response gap. This is a genuine
+finite tropical lumpability law, intermediate between a scalar response
+table and rowwise bisimulation. It also explains why the de Bruijn example
+is not paradoxical: its one-state subset carrier answers the unrooted query,
+while rooted continuation legitimately costs `2^m` states.

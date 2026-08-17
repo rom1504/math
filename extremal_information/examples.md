@@ -1335,3 +1335,76 @@ on `b`. A critical graph of the switching envelope answers an adaptive
 maximum over letters, not a common-word query. The finite-projective-
 semigroup theorem retains the synchronized word action and detects both
 cycle slopes.
+
+## Example 56: one lattice-PWA map is a binary counter
+
+Use `m` Boolean bits in dual-rail coordinates `(u_i,v_i)=(b_i,1-b_i)`.
+Prefix minima of the `u` rails compute carries, prefix maxima of the `v`
+rails compute their complements, and a continuous min/max lattice circuit
+swaps exactly the rails whose bits must flip when adding one. The circuit has
+`O(m)` shared gates, is additively homogeneous, and every PWA branch selects
+input coordinates. It preserves the projective span-one polytope and has one
+actual orbit of period `2^m`.
+
+The centered most-significant-bit probe takes values `-1/2,+1/2` in a
+primitive cyclic word. An identity query freezes a chosen phase, so any two
+phases can be shifted to probe gap one and that gap can be repeated. Exact
+and every sub-half-error predictor needs `2^m` states; one state works at
+error `1/2`.
+
+Without the identity query, a bounded reward around the sole periodic orbit
+has one cycle mean and phase totals differ only by a bounded remainder. Thus
+the exponential orbit is not automatically exponential response
+information. The declared future query is what exposes and pumps it.
+
+Replacing each dual rail by a constant-weight block digit strengthens the
+same circuit mechanism. With growing block length and polynomially many
+shared min/max gates, the genuinely realized exposed orbit has
+`2^(r-o(r))` phases. The exponential lower bound is therefore not hidden in
+an exponential list of cells, clauses, or transitions.
+
+## Example 57: approximate reward quotienting contains graph coloring
+
+Give every vertex of a graph one fixed raw state and every edge `uv` one
+reward coordinate: `+1` at `u`, `-1` at `v`, and zero elsewhere. All dynamics
+are the identity, so every partition is a transition congruence. Its optimal
+per-step error is half the largest reward-coordinate range inside a block.
+At threshold `1/2`, its blocks are therefore exactly independent sets and
+the minimum quotient size is the graph's chromatic number.
+
+The hardness is not caused by switching, orbit growth, or holonomy. It is
+the simultaneous geometry of the declared query family. A rank-one-reset
+variant shows that arbitrarily strong forgetting does not remove it.
+
+## Example 58: exact word spectra can hide all rowwise path state
+
+Let states and letters both be `[r]`. Under letter `e`, every edge leaving
+state `e` has weight zero and every edge leaving another state has weight
+`-C`. For any word, following its successive letter names gives a closed
+zero-weight path, while no edge is positive. Every word therefore has
+spectral radius zero, exactly matching a one-state zero system.
+
+A coherent path lift tells a different story. Two raw rows in one fibre must
+have block maxima within the sum of the upper and lower local defects. Letter
+`i` separates row `i` from every other row by `C`, so any sub-`C` relational
+certificate retains all `r` states. A diagonal gauge cannot repair both
+directions simultaneously.
+
+The scalar optimum uses a word-dependent critical witness. A path lift asks
+one continuation relation to work from every raw representative. This
+quantifier gap can be macroscopic even under exact response equality.
+
+A two-letter de Bruijn version makes it exponential. Its states are binary
+windows of length `m`; a letter shifts a matching first bit and appends either
+bit. Every periodic word has a closed zero window path, so one scalar state
+still gives every spectral response, but each window is the unique zero row
+for its own length-`m` word. Exact coherent path lifting needs all `2^m`
+states.
+
+Blocking any `L>=2m` letters makes the separation sharper, not weaker. Each
+block product has one all-zero row and all other rows equal to `-C`, so it is
+projectively rank one, maximally contracting, and has a uniquely exposed
+critical node. That node is the first `m`-window of the block word and ranges
+over all `2^m` possibilities. Thus wordwise uniqueness and contraction do not
+create a reusable state: they select a different hidden witness after each
+future word is revealed.

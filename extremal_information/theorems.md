@@ -5145,8 +5145,8 @@ grow linearly along one orbit, contradicting projective compactness. All
 means are therefore equal, and the difference is scalar. Theorem 17.1j
 shows the sharp structural boundary: two switched permutation selectors,
 not one, already expose exponentially many recurrent classes. This does not
-settle one genuinely PWA max-plus generator whose active selector changes
-with the cell.
+settle one genuinely PWA selector generator whose active selector changes
+with the cell; Theorem 17.1o below does.
 
 ### Theorem 17.1l (cycle LP for a proposed reward congruence)
 
@@ -5260,22 +5260,29 @@ per-letter toll replaces the projective Cayley state. This is a checkable
 algebraic synchronization mechanism, not an assumption about common active
 faces.
 
-### Theorem 17.1n (dominating quotient with a coherent section)
+### Theorem 17.1n (dominating quotient with a coherent path lift)
 
 Let `T_e` be finite max-plus matrices on raw states `I`, let `S_e` be finite
-max-plus matrices on coarse states `J`, and let `pi:I->J` have a section
-`iota:J->I`. Suppose nonnegative numbers `eta_e^+,eta_e^-` satisfy
+max-plus matrices on coarse states `J`, and let `pi:I->J` be onto. Suppose
+nonnegative numbers `eta_e^+,eta_e^-` satisfy
 
 ```math
 T_e(i,j)<=S_e(pi(i),pi(j))+eta_e^+                 for all i,j,
-T_e(iota(a),iota(b))>=S_e(a,b)-eta_e^-             for all a,b. \tag{17.7af}
+```
+
+and, for every `i in pi^(-1)(a)` and every coarse target `b`, there is some
+`j in pi^(-1)(b)` such that
+
+```math
+T_e(i,j)>=S_e(a,b)-eta_e^-.                                    \tag{17.7af}
 ```
 
 For every word `w=e_1...e_t`,
 
 ```math
 T_w(i,j)<=S_w(pi(i),pi(j))+sum_s eta_(e_s)^+,
-T_w(iota(a),iota(b))>=S_w(a,b)-sum_s eta_(e_s)^-.               \tag{17.7ag}
+max_(j in pi^(-1)(b))T_w(i,j)
+ >=S_w(a,b)-sum_s eta_(e_s)^-  (i in pi^(-1)(a)).               \tag{17.7ag}
 ```
 
 Consequently
@@ -5286,18 +5293,484 @@ Consequently
 <=sum_s eta_(e_s)^+.                                            \tag{17.7ah}
 ```
 
-The proof maps every raw path to its coarse path for the upper bound and
-lifts every coarse path through the same section for the lower bound. Cycles
-remain cycles under both operations, which proves (17.7ah). At zero defect,
-the generator inequalities certify `rho(T_w)=rho(S_w)` for **every** aligned
-word without enumerating products or active cells. The section is the
-path-realization datum; domination is the response-approximation datum.
+The proof maps every raw path to its coarse path for the upper bound. For the
+lower bound, choose a maximizing coarse path and lift it inductively, allowing
+the raw representative of each coarse state to depend on the preceding path.
+This proves (17.7ag). A raw cycle projects to a coarse closed path. Conversely,
+repeat a critical coarse cycle and lift it forever. At returns to one coarse
+phase, finiteness of its raw fibre makes two raw representatives repeat; the
+intervening lift is a genuine raw cycle with the claimed average. This proves
+(17.7ah). At zero defect, the generator inequalities certify
+`rho(T_w)=rho(S_w)` for **every** aligned word without enumerating products or
+active cells. The lift relation is the path-realization datum; domination is
+the response-approximation datum.
 
 This applies beyond max-plus notation to any finite additive path dynamic
 program. It explains the corrected four-to-two weighted-automaton benchmark:
 the even representatives form an exact section and every microscopic edge is
 dominated by its corrected block edge. A quotient which only matches
-letterwise critical graphs lacks the coherent lift required by (17.7af).
+letterwise critical graphs lacks the coherent lift required by (17.7af). A
+fixed coherent section is a convenient stronger certificate, not a necessary
+hypothesis: it satisfies (17.7af) by choosing `j=iota(b)` at every step.
+For a transitive permutation action, the gap kernel with weight zero on
+`i->g_ei` and `-C` elsewhere has an exact one-state relational lift, choosing
+`j=g_ei`; a fixed section would require a nonempty invariant singleton and
+therefore generally fails. The two-state flip is the antiferromagnetic Ising
+parity mechanism. Allowing the witness to move is essential.
+
+### Theorem 17.1o (one lattice-PWA generator has exponential exposed memory)
+
+For `m>=1`, put `r=2m` and use dual-rail coordinates
+`(u_0,...,u_(m-1),v_0,...,v_(m-1))` on
+
+```math
+X={ [u,v] in R^(2m)/R1:osc(u,v)<=1}.
+```
+
+There is one continuous rational PWA unit-selector map `F:X->X`, described by
+`O(m)` shared min/max gates, with a genuine orbit of period `2^m`. Define
+
+```math
+u'_0=v_0,\qquad v'_0=u_0,
+```
+
+and, for `i>=1`,
+
+```math
+c_i=min_(j<i)u_j,\qquad d_i=max_(j<i)v_j,
+
+u'_i=max{min(u_i,d_i),min(v_i,c_i)},
+v'_i=max{min(v_i,d_i),min(u_i,c_i)}.                            \tag{17.7ai}
+```
+
+Every component is a continuous additively homogeneous lattice polynomial.
+On each cell it selects one input coordinate, and every output lies between
+the input minimum and maximum, so `F` is a rational unit-selector PWA map
+preserving `X`.
+
+For `b in {0,...,2^m-1}`, let `y(b)` have
+
+```math
+u_i=bit_i(b),\qquad v_i=1-bit_i(b).
+```
+
+Then `c_i` is exactly the carry into bit `i` when adding one and
+`d_i=1-c_i`; (17.7ai) gives
+
+```math
+F(y(b))=y(b+1 mod 2^m).                                       \tag{17.7aj}
+```
+
+Add one identity input `p` with bounded projective reward
+
+```math
+rho([u,v])={u_(m-1)-v_(m-1)\over2}.                            \tag{17.7ak}
+```
+
+The probe word around the counter orbit is one half `-1/2` and one half
+`+1/2`, with primitive cyclic period `2^m`. Thus for every two phases a
+common power of `F` makes their probe rewards differ by one. Repeating `p`
+and using the same merged-state argument as Theorem 17.1j proves
+
+```math
+C_epsilon=
+\begin{cases}
+2^m,&0<=epsilon<1/2,\\
+1,&epsilon>=1/2.
+\end{cases}                                                     \tag{17.7al}
+```
+
+The upper predictor stores the counter phase; above threshold it emits zero.
+This is path-realized exponential memory from one polynomial-description PWA
+generator plus one non-evolving scalar query, not an enumeration of `2^m`
+active cells.
+
+The query is essential. With only the letter `F` and any bounded one-step
+reward, phase trajectories are rotations of one finite cycle. Their
+cumulative totals differ by a bounded amount, and one state emitting the
+cycle mean has bounded absolute error. Path complexity becomes response
+information only when the declared future can freeze and repeatedly expose a
+phase.
+
+This also separates lattice-PWA from max-plus-linear dynamics. For one
+all-finite max-plus matrix, the classical cyclicity theorem makes projective
+powers ultimately periodic with the cyclicity of the critical graph, at most
+the Landau lcm bound `g(r)` (and at most `r` for one critical component); see
+[Sergeev--Schneider](https://arxiv.org/abs/0912.2534). The min/max carry
+circuit in (17.7ai) lies outside coordinatewise-convex max-plus linearity.
+
+The exponential base can be arbitrarily close to two. Fix an even block
+length `ell`, let `U` be the `q=binom(ell,ell/2)` constant-weight binary
+words, and order them cyclically with words omitting coordinate one followed
+by words containing it. For `u^a in U`, put
+
+```math
+h_a(z)=min_(j:u^a_j=1)z_j,
+\qquad
+S(z)_j=max_(a:u^(a+1)_j=1)h_a(z).                              \tag{17.7am0}
+```
+
+Equal support sizes give `h_a(u^b)=1_(a=b)`, hence `S(u^a)=u^(a+1)`.
+The detector `h_(q-1)` and the maximum over coordinates outside `u^(q-1)`
+are complementary carry rails on `U`. More explicitly, for blocks
+`z^(0),...,z^(m-1)`, let
+
+```math
+c_i=min_(j<i)h_(q-1)(z^(j)),
+\qquad
+d_i=max_(j<i)max_(k:u^(q-1)_k=0)z^(j)_k,
+```
+
+with `c_0=1,d_0=0`, and set
+
+```math
+z'^(i)_k=max{min(z^(i)_k,d_i),min(S(z^(i))_k,c_i)}.             \tag{17.7am0a}
+```
+
+On `U^m`, `c_i` is one exactly when every lower digit is `q-1`, and
+`d_i=1-c_i`.  Thus (17.7am0a) leaves digit `i` fixed unless there is a carry
+and otherwise applies `S`; it is one `O_ell(m)`-gate lattice-PWA base-`q`
+counter of period `q^m`. The most-significant coordinate-one probe again has
+one negative half and one positive half. Globally it is the projectively
+invariant functional
+
+```math
+p(z)=z_1-{1\over ell}\sum_(j=1)^ell z_j                         \tag{17.7am0b}
+```
+
+on the most-significant block, equal to `-1/2,+1/2` on the
+constant-weight digit orbit. The exact sub-half-error complexity is `q^m`.
+
+Since
+
+```math
+binom(ell,ell/2)^(1/ell)->2,                                   \tag{17.7am1}
+```
+
+for every fixed `c<2` there is a linear-description one-generator family on
+`r=m ell` coordinates requiring more than `c^r` states. This strengthening
+uses a fixed local table once `c` is chosen; it does not enumerate the global
+orbit.
+
+Allowing the local table to grow still keeps the presentation polynomial and
+makes the exponent asymptotically optimal. Choose `m=2^ell`. Computing all
+local `h_a` once per block uses `O(q ell)` shared lattice gates, so the whole
+map has
+
+```math
+O(m q ell)=O(r^2/ell^(3/2))
+```
+
+gates. Since `r=ell 2^ell` and
+`log_2q=ell-O(log ell)`, its exposed orbit has
+
+```math
+q^m=2^(r-O(r log ell/ell))=2^(r-o(r))                           \tag{17.7am2}
+```
+
+states. Thus even polynomial circuit description does not prevent
+essentially maximal Boolean dynamic response information.
+
+### Theorem 17.1p (minimum approximate reward congruence is NP-complete)
+
+Given a rational finite deterministic reward system, rational `epsilon`, and
+`k`, deciding whether an input congruence `pi` with at most `k` classes has
+`D(pi)<=epsilon` in Theorem 17.1l is NP-complete. This already holds for
+
+```math
+k=3,\qquad epsilon=1/2,
+```
+
+rewards in `{-1,0,1}`, and identity transitions.
+
+For identity transitions every partition is a congruence, every raw state is
+fixed, and independent midpoint optimization of each block/letter toll gives
+
+```math
+D(pi)={1\over2}max_(B,e)
+ \left(max_(q in B)r(q,e)-min_(q in B)r(q,e)\right).             \tag{17.7am}
+```
+
+Given a graph `G=(V,E)`, use states `V` and one letter `e_(uv)` for each
+edge, with reward `+1` at `u`, `-1` at `v`, and zero elsewhere. A block has
+diameter at most one in every reward coordinate iff it contains no edge.
+Thus `D(pi)<=1/2` iff every block is independent, and the minimum state count
+is exactly the chromatic number of `G`. Three-colorability proves hardness.
+
+The problem is in NP. Guess `pi`, check the congruence, and introduce quotient
+tolls `g` and two vertex potentials. The polynomial system
+
+```math
+r(q,e)-g(pi(q),e)-epsilon
+ <=p^+(delta_e q)-p^+(q),
+
+-r(q,e)+g(pi(q),e)-epsilon
+ <=p^-(delta_e q)-p^-(q)                                      \tag{17.7an}
+```
+
+is feasible exactly when the positive and negative defect graphs have no
+cycle of mean above `epsilon`. This is equivalent to `D(pi)<=epsilon` and is
+rational LP feasibility.
+
+Hardness persists under maximal dynamic forgetting. Replace each graph edge
+`uv` by letters `U_(uv),V_(uv)` resetting every state respectively to `u,v`,
+with reward tables
+
+```math
+r(q,U_(uv))=1_(q=u)-1_(q=v),
+\qquad
+r(q,V_(uv))=1_(q=v)-1_(q=u).                                  \tag{17.7an1}
+```
+
+Independent blocks admit edgewise defect at most `1/2`. If `u,v` merge, the
+two endpoint self-loops force the two corresponding quotient tolls to be at
+least `1/2`. The raw two-cycle `v -> u -> v` has reward `-2` but quotient
+toll at least one, hence absolute mean defect at least `3/2`. Thus the optimum
+is again `chi(G)` although every generator is a rank-one reset.
+
+This is an algorithmic obstruction, not an information lower bound on every
+instance. With identity dynamics and one scalar reward coordinate, sorting
+and greedily grouping intervals of diameter `2epsilon` is optimal. The
+hardness is created by a growing family of jointly declared future queries.
+
+### Proposition 17.1q (exact word responses need not admit a small path lift)
+
+There is a useful exact relational characterization behind the separation.
+Let every entry of `T_e` lie in `{0,-C}` and let `R_e` be its zero-edge
+relation.  For a word `w`, write `R_w` for relational composition in word
+order.  Then
+
+```math
+rho(T_w)=0
+\quad\Longleftrightarrow\quad
+R_w\hbox{ contains a directed cycle}.                           \tag{17.7ao0}
+```
+
+Indeed, the zero entries of `T_w` are exactly `R_w`; since all entries are
+nonpositive, spectral radius zero is equivalent to a zero-weight directed
+cycle.  By contrast, an exact Theorem 17.1n lift to the scalar zero system
+exists exactly when every `R_e` is left-total.  If (17.7ao0) fails for a
+word, every simple cycle of `T_w` contains a negative edge, so
+
+```math
+rho(T_w)<=-C/|I|,
+\qquad rho(T_(w^k))=k rho(T_w).                                 \tag{17.7ao1}
+```
+
+Thus failure has a finite, pumpable linear-drift witness.  What can fail is
+the converse: periodic completeness of every word relation need not supply
+one locally total relation.
+
+For every `r>=2` and `C>0`, let raw states and letters both be `[r]`, and set
+
+```math
+T_e(i,j)=0 if i=e, and -C otherwise                             \tag{17.7ao}
+```
+
+for every target `j`. Then `rho(T_w)=0` for every nonempty word `w`: the
+closed path following the successive letter names has weight zero, and every
+edge has weight at most zero. Thus the one-state alphabet `S_e=[0]` has
+exactly the same aligned-word spectral responses.
+
+Nevertheless every Theorem 17.1n certificate of local errors satisfying
+
+```math
+eta_e^++eta_e^-<C\qquad(e in[r])                                \tag{17.7ap}
+```
+
+has at least `r` coarse states. Indeed, for a fibre map `pi` define
+
+```math
+m_e(i,b)=max_(j in pi^(-1)(b))T_e(i,j).
+```
+
+The upper and lower path-lift inequalities put `m_e(i,b)` within
+`[S_e(pi(i),b)-eta_e^-,S_e(pi(i),b)+eta_e^+]`. If distinct `i,i'` share one
+fibre, letter `e=i` gives `m_e(i,b)=0` and `m_e(i',b)=-C` for every `b`,
+contradicting (17.7ap).
+
+The obstruction survives every common diagonal gauge. After replacing
+`T_e(i,j)` by `T_e(i,j)+h_j-h_i`, the two relevant block-row gaps for letters
+`i` and `i'` are
+
+```math
+|C+h_(i')-h_i|\quad\hbox{and}\quad|C-h_(i')+h_i|,
+```
+
+whose maximum is at least `C`.
+
+The alphabet can be fixed while the gap becomes exponential. Let
+`I_m={0,1}^m`, use letters `e in {0,1}`, and put a zero edge from `s` to `t`
+exactly when
+
+```math
+s_1=e,\qquad (t_1,...,t_(m-1))=(s_2,...,s_m),                  \tag{17.7aq}
+```
+
+with `t_m` free; give every other edge weight `-C`. Every word has a closed
+zero lift given by the length-`m` windows of its periodic extension, so the
+scalar zero system is again exact. But the length-`m` word naming `s` has a
+zero row only at `s`. Iterating a relational certificate shows that merging
+two states requires `m max_e(eta_e^++eta_e^-)>=C`. Hence exact path lifting
+needs all `2^m` states; taking `C=m` gives the same conclusion below a fixed
+unit local defect. Every raw state is genuinely exposed by its own word.
+
+This same family also rules out contraction or unique criticality as the
+missing synchronization hypothesis. If `w` has length `L>=2m` and
+
+```math
+s_w=(w_1,...,w_m),
+```
+
+then direct window propagation gives
+
+```math
+T_w(s,t)=
+\begin{cases}
+0,&s=s_w,\\
+-C,&s\ne s_w
+\end{cases}
+\qquad(t\in I_m).                                               \tag{17.7aq1}
+```
+
+The final `m` appended bits can be chosen freely. From a wrong initial
+window, one `-C` edge resets the window and the remaining at least `m` steps
+both synchronize it to the word and choose the endpoint. Hence every such
+word matrix has max-plus projective rank one and Hilbert contraction
+coefficient zero. Moreover its unique critical node is `s_w`: repeating
+`w` forces the unique length-`m` window of `w^infinity` at the word boundary.
+Every competing simple cycle has mean at most `-C/2`, a uniform exposed
+margin.
+
+Nevertheless, over the blocked alphabet of all length-`L` words, any
+Theorem 17.1n quotient merging `s\ne t` has block defect at least `C`: choose
+a word beginning with `s` and compare the two constant rows in (17.7aq1).
+The scalar model attains this threshold with `(eta^+,eta^-)=(0,C)`. Thus even
+exact one-state spectra, a unique uniformly exposed critical node for every
+product, and one-block contraction zero coexist with `2^m` path-lift states.
+If a letterwise certificate has defect at most `delta`, its induced block
+defect is at most `L delta`; at the natural horizon `L=2m,C=m`, every
+`delta<1/2` certificate is therefore injective. Longer blocking can amortize
+this finite synchronization toll, so the obstruction is to fixed local
+accuracy, not to vanishing error per original step as `L/m->infinity`.
+
+Thus Theorem 17.1n is a strict structural certificate, not a converse to
+all-word spectral agreement. Spectral optimization has quantifiers
+`for every word, there exists a critical raw cycle`; a uniform path lift asks
+one relation to continue from every represented raw state. Exchanging these
+quantifiers can cost the entire microscopic state space even when the scalar
+response function is already exact. Contraction forgets the *incoming
+vector* after the future word is known; it does not choose one microscopic
+seed coherently before that word is revealed.
+
+### Theorem 17.1r (finite survival lumpability for scalar tropical response)
+
+Let `T_e` be finite real max-plus matrices on an `r`-point set `I`. Fix
+scalar tolls `lambda_e` and errors `theta_e>=0`, assume
+
+```math
+T_e(i,j)<=lambda_e,
+```
+
+and let `R_e` contain the **good edges**
+
+```math
+(i,j) in R_e
+\quad\Longleftrightarrow\quad
+T_e(i,j)>=lambda_e-theta_e.                                    \tag{17.7ar}
+```
+
+A finite survival carrier consists of a finite deterministic input system
+`(Q,q_0,delta)` and nonempty subsets `K_q subseteq I` such that
+
+```math
+K_(delta(q,e)) subseteq Delta_e(K_q),
+\qquad
+Delta_e(S)={j:exists i in S\ (i,j) in R_e}.                     \tag{17.7as}
+```
+
+Then every word `w=e_1...e_t` satisfies
+
+```math
+sum_s(lambda_(e_s)-theta_(e_s))
+ <=rho(T_w)<=sum_s lambda_(e_s).                                \tag{17.7at}
+```
+
+The carrier is anticipatory rather than rowwise: after a finite future is
+declared, choose any terminal point in its nonempty `K`-set and use (17.7as)
+backwards to obtain a genuine good-edge path. Apply this to `w^r`. The
+resulting `r` macro-edges contain a repeated raw vertex, hence a cycle of
+`T_w` whose every macro-edge has weight at least
+`sum(lambda_e-theta_e)`. Domination gives the upper bound. Thus symbolic path
+existence, scalar response approximation, and finite control state are
+separate and explicit; no active-cell or relation-semigroup enumeration is
+part of the certificate.
+
+At zero error this criterion is complete. Put
+`R_e={(i,j):T_e(i,j)=lambda_e}`. The following are equivalent:
+
+1. `rho(T_w)=sum_(e in w)lambda_e` for every nonempty word;
+2. every `R_w` contains a directed cycle;
+3. `R_u` is nonempty for every word `u`;
+4. the subset trajectory `Delta_u(I)` never reaches the empty set;
+5. a finite survival carrier exists.
+
+Only `3=>2` is not immediate: `R_(w^r)` is nonempty, so the `r`-vertex graph
+`R_w` has a path of `r` edges and therefore a directed cycle. The canonical
+carrier consists of the reachable nonempty endpoint subsets
+
+```math
+Q={Delta_u(I):u in E^*},
+\qquad |Q|<=2^r-1,                                             \tag{17.7au}
+```
+
+with `K_S=S`; smaller certificates may use proper inclusions in (17.7as).
+This is exponentially smaller than the `2^(r^2)` relation semigroup in the
+worst ambient count, and it retains strictly less information than all raw
+rows.
+
+The powerset scale is nevertheless sharp for *monitoring* survival, even
+with two letters. On `I=Z/rZ`, let `P` be cyclic permutation and let `D` be
+the partial identity undefined only at zero. Their subset actions are
+
+```math
+P(S)=S+1,
+\qquad D(S)=S\setminus\{0\}.                                   \tag{17.7au1}
+```
+
+Conjugating `D` by powers of `P` deletes any chosen point, so all `2^r`
+subsets are reachable from `I`. If `S\ne T`, preserve one point of
+`S triangle T` and delete all others; the suffix survives from exactly one
+of `S,T`. Hence the exact alive/dead monitor has `2^r` Myhill--Nerode states.
+This is a verification lower bound, not a claim that every positive instance
+needs an exponential survival certificate.
+
+Failure has a finite pumpable witness. A shortest word `u` with
+`Delta_u(I)=emptyset` has
+
+```math
+|u|<=2^r-1.                                                     \tag{17.7av}
+```
+
+If every nongood edge has the uniform gap
+`T_e(i,j)<=lambda_e-C`, then
+
+```math
+T_(u^k)(i,j)<=k sum_(e in u)lambda_e-kC
+\quad\hbox{for all }i,j,k.                                     \tag{17.7aw}
+```
+
+Indeed a shortest subset trajectory cannot repeat a nonempty subset, and
+every `u`-block path uses a nongood edge. Repetition is therefore a genuine
+linear response-drift witness.
+
+The hierarchy is strict. An exact scalar Theorem 17.1n path lift requires
+every `R_e` to be left-total. Survival lumpability only requires nonmortality
+of the endpoint subset dynamics. In the binary de Bruijn family,
+`Delta_e(I)=I` for both letters, so `Q={I}` is already an exact one-state
+survival carrier, while every exact rowwise path lift has `2^m` states. This
+is a finite tropical lumpability theorem tailored to the unrooted response
+query, not a weakened simulation of the entire landscape.
 
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 

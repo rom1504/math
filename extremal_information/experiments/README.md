@@ -23,6 +23,9 @@ Run from the repository root:
 .venv/bin/python extremal_information/experiments/verify_invariant_rational_grid_shadowing.py
 .venv/bin/python extremal_information/experiments/verify_exposed_commuting_germ_lower_bound.py
 .venv/bin/python extremal_information/experiments/verify_reward_congruence_nonlattice.py
+.venv/bin/python extremal_information/experiments/verify_pwa_binary_counter_exposure.py
+.venv/bin/python extremal_information/experiments/verify_reward_congruence_coloring.py
+.venv/bin/python extremal_information/experiments/verify_word_spectrum_pathlift_gap.py
 ```
 
 The scripts write only to this directory by default.
@@ -396,3 +399,29 @@ centered-coordinate probe separates every pair at reward rate one.
 incomparable bounded-error partitions of the reset automaton through depth
 12, the bounded pairwise raw-response distance, and the linear drift of their
 one-block join.
+
+`verify_pwa_binary_counter_exposure.py` checks the dual-rail increment map
+through ten bits, verifies that every cyclic probe shift is distinct, and
+tests projective homogeneity and span-one invariance on small rational grids.
+The theorem proves the construction at every width.
+
+`verify_reward_congruence_coloring.py` exhausts all 1,099 graphs through five
+vertices and 54,253 graph/partition pairs. It verifies that the identity-
+dynamics reward construction is feasible at error `1/2` exactly on
+independent-set partitions, so its minimum quotient size equals chromatic
+number.
+
+`verify_word_spectrum_pathlift_gap.py` checks 15,024 finite word products for
+the exact scalar-spectrum/full-row-lift separation and 6,216 periodic-window
+and unique-row claims for the fixed-binary de Bruijn family. It verifies that
+wordwise critical witnesses need not assemble into one reusable path lift.
+It also verifies that every tested length-`2m` product has one all-zero row
+and every other row identically `-m`, hence projective rank one despite the
+full rooted path-lift lower bound.
+
+`verify_zero_relation_survival_carrier.py` exhausts every two-letter
+two-state zero-relation alphabet and checks equivalence between nonmortality
+of endpoint subsets and cyclicity of every relation product. It also verifies
+the fixed-two-letter `2^r` mortality-monitor construction through `r=8` and
+the one-state support carrier for binary de Bruijn systems through memory
+seven.

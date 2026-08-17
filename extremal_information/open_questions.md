@@ -8,12 +8,13 @@ secondary to understanding the new carrier law.
 
 ## 1. Find a small cycle-faithful quotient without partition enumeration
 
-The exposed-carrier dichotomy is now sharp in general. A fixed three-letter
-rational selector system needs
-`binom(r,floor(r/2))=2^(r-o(r))` states below per-step error `1/2`, while one
-globally active selector has only Landau-subexponential recurrent iterate
-complexity. Thus no theorem based only on compactness, rationality,
-nonexpansiveness, or a fixed alphabet can guarantee polynomial compression.
+The exposed-carrier dichotomy is now sharp in general. One polynomial-size
+continuous rational lattice-PWA selector circuit plus one identity probe has
+`2^(r-o(r))` exposed recurrent states below per-step error `1/2`. A globally
+affine selector and a strict irreducible max-plus-linear map remain
+Landau-subexponential. Thus compactness, rationality, nonexpansiveness, a fixed
+alphabet, and polynomial presentation do not guarantee compression; the
+min/max switching class can already encode essentially every Boolean phase.
 
 For a *proposed* finite input congruence, Theorem 17.1l computes its optimal
 asymptotic reward error by a raw-cycle linear program. But feasible
@@ -21,13 +22,31 @@ bounded-error congruences are not closed under join, so ordinary monotone
 Nerode/bisimulation refinement cannot discover a canonical coarsest one.
 The finite projective-semigroup carrier is exact but output-sensitive.
 
-The next target is a structural certificate producing a small
-**cycle-faithful** quotient directly from generators. Theorem 17.1n gives one
-such certificate--a dominating coarse system with a coherent microscopic
-section--and pairwise commuting max-plus generators collapse to a common
-eigenprofile. Determine a materially broader hypothesis, such as an
-approximate section, bounded-index synchronizing subgroup, or controlled
-projective-semigroup quotient, for which
+Theorem 17.1n now gives a nontrivial structural certificate: a dominating
+coarse system plus a coherent **path-lifting relation** preserves all aligned
+word responses, even when the microscopic representative must switch along
+the path. Pairwise commuting max-plus generators collapse further to a common
+eigenprofile. In the opposite direction, finding the smallest general
+cycle-compatible congruence is NP-complete even for identity or rank-one
+reset dynamics.
+
+The de Bruijn family now falsifies the most obvious response-to-structure
+converse: after blocking `2m` letters, every product is projectively rank one,
+has contraction coefficient zero and a uniquely exposed critical node, yet
+every sub-`m`-defect block path lift retains all `2^m` states. Uniform
+scrambling and wordwise exposed uniqueness do not synchronize the critical
+seed across different future words.
+
+The scalar `{0,-C}` case now has the correct response-specific answer:
+finite survival lumpability is equivalent to nonmortality of the endpoint
+subset automaton, and failure supplies a bounded-length pumpable word. The
+next target is to extend this middle notion beyond one scalar coarse state.
+Determine a generator-checkable **multi-state survival carrier** strictly
+between a common eigenprofile and a rowwise path lift, with quantitative
+errors and size controlled by exposed response entropy rather than the full
+powerset product. Equivalently, find a natural low-dimensional reward family
+for which such a carrier can be minimized without solving the NP-hard generic
+clustering problem. A successful theorem should give
 
 ```math
 number of states <= response-entropy scale,
@@ -37,20 +56,20 @@ cycle-LP distortion <=epsilon                                  \tag{OQ.1}
 
 without enumerating all raw partitions, germs, or word products.
 
-**Success:** a generator-checkable theorem applying beyond the corrected
-four-state benchmark and exact commutation, with an asymptotically smaller
-carrier and an all-word response bound; or a hardness/information theorem
-showing that finding the minimum cycle-compatible congruence necessarily
-encodes a recognized difficult problem.
+**Success:** a generator-checkable converse or construction applying beyond
+the corrected four-state benchmark and exact commutation, with an
+asymptotically smaller carrier and an all-word response bound. A sharp
+counterexample must preserve every declared word response while forcing any
+bounded-memory relational lift to grow.
 
 **Stop condition:** listing the finite projective semigroup, every active
 cell, or every set partition is a decision procedure, not a compression
 theorem. A pairwise response pseudometric is also insufficient because it
 forgets quotient-created cycle incidence.
 
-The adjacent one-generator question is whether a genuinely PWA max-plus map,
-whose active selector changes by cell, can expose `c^r` recurrent classes.
-The global-selector Landau bound does not answer it.
+The one-generator PWA question is closed: the binary/block counter proves
+`2^(r-o(r))` exposed classes. Do not spend another campaign optimizing that
+base unless it yields a positive quotient theorem elsewhere.
 
 ## 2. Prove a same-input recoupling theorem at linear channel rank
 

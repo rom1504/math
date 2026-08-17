@@ -281,6 +281,38 @@ conclusions.
     Their synchronized weighted Cayley graph realizes the exact extreme
     aligned-word spectral gaps as finite graph cycle means; a letterwise
     critical graph or switching envelope does not.
+29. A single `O(r)`-gate continuous rational lattice-PWA selector map can
+    implement a `2^(r/2)`-period binary counter. Constant-weight block digits
+    raise this to `2^(r-o(r))` exposed phases with a polynomial-size circuit.
+    One identity probe exposes exactly all phases below error `1/2`; without
+    that probe, phase rewards differ only by bounded cycle remainders. This
+    cleanly separates orbit complexity from future-response complexity.
+30. Optimizing the finite reward quotient is NP-complete even for identity
+    dynamics, three target states, error `1/2`, and rewards in `{-1,0,1}`:
+    the optimum is exactly graph chromatic number. A fixed quotient remains
+    easy to audit by its cycle LP. Construction and verification are therefore
+    distinct resources.
+31. A coherent path-lift relation gives a strong all-word theorem but is not
+    necessary for scalar spectral response. Exact wordwise equality may use a
+    different critical raw witness for each word while every subscale path
+    lift retains all microscopic states. The remaining positive problem is a
+    synchronization theorem that legitimately interchanges these quantifiers.
+32. For `{0,-C}` switching kernels, scalar zero-response equivalence has an
+    exact relational form: every word-composed zero relation must contain a
+    directed cycle. Failure gives a finite word whose repetition has linear
+    drift. This periodic-completeness condition is strictly weaker than the
+    left-total relations required by a coherent path lift.
+33. The fixed-binary de Bruijn separation persists after blocking until every
+    generator is projectively rank one with one critical node. Thus even
+    contraction coefficient zero and wordwise unique optimization do not
+    synchronize a reusable witness. Positive converses must control how
+    exposed images vary *across words*, not only mixing within each product.
+34. Scalar tropical response admits a strictly weaker exact path certificate:
+    a finite carrier of nonempty endpoint subsets stable under backward
+    good-edge lifting. It yields an all-word quantitative spectral bound;
+    at zero defect it is equivalent to nonmortality of the subset automaton.
+    The canonical carrier has at most `2^r-1` states, and failure supplies a
+    bounded-length mortal word whose repetition pumps linear drift.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The
