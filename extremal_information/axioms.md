@@ -2064,3 +2064,52 @@ turns a labelled trust-response separation into a separation of two physical
 exact-sign parents.  It still says nothing about whether either parent is a
 minimizer, so contextual incompressibility and extremal optimization remain
 separate layers.
+
+## 109. Near-minimizer structure must be thick in response distance
+
+Every exact minimizer has an `o(n^(3/2))` Hamming halo of asymptotic
+near-minimizers.  Geodesic motion toward one active cut can freeze every
+edge moved while increasing the cap by exactly twice the edit count, and
+localized clique implants can destroy unpeeled spectral regularity at the
+same subleading cost.
+
+Therefore a property claimed for all near-minimizers must either be stable
+under this halo or be stated for a core within
+`[f(epsilon)+o(1)]n^(3/2)` response distance.  Exact active faces, labelled
+exceptional vertices, and unpeeled operator norms are not robust states.
+
+## 110. Discrete minimality forces shell equilibrium before synchronization
+
+If every near-top signed cut were positively aligned with one weighted
+sparse edit direction, a random exact realization of that direction would
+lower the cap below `M_n`.  Minimax therefore forces a common near-top law
+whose edge-match barycentre has small positive mass, and—with a positive cap
+lower bound—small total `l_1` mass.
+
+This is an approximate first-order stationarity law on the signing cube.
+It is genuinely collective and holds at arbitrary orders, but it is not
+already synchronization: first edge marginals do not determine joint
+selector loss or response after a dense continuation.
+
+## 111. Soft shells are more robust than exact optimizer sets
+
+Certified one-step near-minimizers can have a singleton exact active set and
+maximal exact-frame defect while retaining a visibly larger deficit-two or
+deficit-four shell.  Exact minimizers are forced to have
+`exp(n^(1/2-o(1)))` states in a suitable vanishing-width shell.
+
+Thus active-set multiplicity and exact-face isotropy are the wrong raw
+objects for stability.  Any surviving extremal state should specify its
+energy window and pay at least the optimality excess.  Shell cardinality by
+itself still does not control contextual packing or generative complexity.
+
+## 112. A growing one-hot packing is information, but not a writable cube
+
+If `K` states are pairwise separated by a common labelled query bank, any
+uniform decoder below half the separation needs at least `K` summary states,
+hence `log_2 K` bits.  It does not follow that the system contains `K`
+independently writable bits or `2^K` realizable states.
+
+This distinction is decisive in the multi-selector PC.3 theorem:
+`K=N^c` proves `Theta(log N)` information, while independent multiplexing
+and one-parent realization of every query remain separate questions.

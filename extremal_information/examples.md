@@ -2888,3 +2888,57 @@ hollow sign parents of order `(1+o(1))N_j` whose Boolean caps differ by a
 fixed positive multiple of `N_j^(3/2)`.  This is a genuine all-spins-free
 contextual collision.  It is not a statement about minimizing parents and
 does not compare `M_n` across orders.
+
+## Example 149: a polynomial one-hot family replaces the isolated hidden bit
+
+Balanced PC.3 endpoint words contain an exponential-in-tensor-depth code
+whose centred fields have small pairwise covariance.  Sparse-flipping each
+endpoint selector gives `N^c` distinct child states.  Querying state `u` by
+its own row field separates it from every other state by more than
+`0.012N^(3/2)`, and the microcanonical affine compiler preserves every such
+gap after the auxiliary spins optimize.
+
+The distinction between state count and writable coordinates is essential:
+`N^c` one-hot states carry `Theta(log N)` bits, not `N^c` independent bits.
+The example nevertheless proves that the physical collision is not confined
+to one exceptional coherence bit.
+
+## Example 150: a near-minimizer can look random under rigid spectral tests
+
+A reproducible blind audit found an order-nine signing of cap
+`14=M_9+2` with conference defect `0.95833`, spectral effective-rank fraction
+`0.58546`, normalized sixth moment `12.94444`, and no improving edge flip.
+The corresponding random-control medians are `0.84722`, approximately
+`0.6`, and `13.2428`.  Thus one-step near-minimality plus edgewise local
+optimality does not force conference-like two-walk or spectral flatness.
+
+This is finite falsification, not an asymptotic theorem.  Its exact matrix,
+hash, provenance, and recomputation are in
+[`experiments/nearmin_blind_structural_results.json`](experiments/nearmin_blind_structural_results.json).
+
+## Example 151: exact optimizer multiplicity is not stable near the minimum
+
+At order eleven there is a signing of cap `19=M_11+2`, with no improving
+edge flip, having exactly one cap-active projective spin.  Its exact active
+frame defect is the maximal singleton value `10`.  Yet its deficit-two shell
+contains `25` projective spins and its deficit-four shell contains `54`.
+
+This kills structural statements based on the exact active face while
+leaving a soft-shell law plausible.  Theorem 36.2 supplies such a law at an
+asymptotically thicker, quantitatively controlled scale.
+
+## Example 152: an exact minimizer need not have near-minimal deletions
+
+The certified order-eleven bridge witness of cap `17=M_11` has all eleven
+principal deletion caps equal to `17`, whereas `M_10=13`.  Hence even an
+exact minimizer may have no deletion that is exact or one parity step from
+optimal at the adjacent order.  Principal restriction remains normalized-
+near-minimal over `o(sqrt n)` deletions by a general inequality, but the
+finite example rules out the much stronger one-step hereditary picture.
+
+Examples 150--152 were discovered under a solution-hiding protocol.  The
+observables were frozen before the analyst read the favored synchronization
+hypothesis; see
+[`experiments/nearmin_blind_observable_freeze.md`](experiments/nearmin_blind_observable_freeze.md)
+and
+[`drafts/nearmin_blind_structural_audit.md`](drafts/nearmin_blind_structural_audit.md).

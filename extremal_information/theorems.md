@@ -14901,3 +14901,237 @@ in
 [`drafts/orbit_query_large_deviations.md`](drafts/orbit_query_large_deviations.md),
 and
 [`drafts/extremal_witness_ld_independent_audit.md`](drafts/extremal_witness_ld_independent_audit.md).
+
+## 36. Near-minimizer frontier
+
+### Theorem 36.1 (diffuse exact-sign selectors carry a growing physical message)
+
+At PC.3 tensor order `N_j=16^j`, there are a common family of hollow
+exact-sign children `(A(u))_(u in U_j)` and a common externally labelled
+bank of balanced exact-sign compiler contexts such that
+
+```math
+|U_j|\ge e^{j/10000}=N_j^{1/(10000\log16)},                  \tag{36.1}
+```
+
+every sparse-flip selector is `O(j^(-1/2))`-diffuse against the entire
+active-product library, and, uniformly for `u!=v`, query `u` gives the
+oriented all-spins-free parent gap
+
+```math
+Q(P_j(v\mid u))-Q(P_j(u\mid u))
+\ge(\delta_*+o(1))N_j^{3/2},
+\qquad \delta_*>0.012.                                      \tag{36.2}
+```
+
+The endpoint code is obtained by balancing the first PC.3 coordinate in
+every factor and choosing exponentially many tensor-depth words with
+pairwise centred-field covariance at most `j/10`.  Their Boolean selectors
+then have pairwise overlap at most
+
+```math
+{2\over\pi}\arcsin(2/15)+O(j^{-1/2}).                       \tag{36.3}
+```
+
+Sparse flips converge to the corresponding rank-one penalties, so each
+query damages its own child but not any cross child by a fixed leading
+amount.  A rowwise microcanonical block realizes the query exactly and puts
+every free endpoint within `o(N_j^(3/2))` of the balanced scalar query
+segment, preserving the gap after all spins optimize.
+
+This is a polynomial **one-hot state packing**, carrying
+`log_2|U_j|=Theta(log N_j)` bits.  It is not a `2^{|U_j|}` edit cube and does
+not place all query shores in one matrix.  For the native-selector model,
+
+```math
+N_j^{1/(10000\log16)}\le |U_j|\le\sqrt {N_j}.                \tag{36.4}
+```
+
+The result closes Phase I qualitatively: the physical collision is growing
+information, not one isolated bit.  It remains a structured Level-4 result,
+not a statement about minimizers.  Proof, scope ceilings, and independent
+audit are in
+[`drafts/multiselector_sparse_flip_rate.md`](drafts/multiselector_sparse_flip_rate.md)
+and
+[`drafts/phase1_fractional_balance_independent_audit.md`](drafts/phase1_fractional_balance_independent_audit.md).
+
+### Theorem 36.2 (near-minimality forces a thick fractionally balanced shell)
+
+Let `E=binom(n,2)`, let `a` be a hollow signing, and let
+
+```math
+Z_n^+=\{(\sigma x_ix_j)_(i<j):\sigma,x_i\in\{+-1\}\},
+\qquad
+S_u(a)=\{z:\langle a,z\rangle\ge Q(a)-un^{3/2}\}.            \tag{36.5}
+```
+
+There is an absolute `C` such that, if
+
+```math
+Q(a)\le M_n+\epsilon n^{3/2},
+\quad 0<\kappa<1/4,
+\quad
+\epsilon+C(\sqrt\kappa n^{-1/4}+n^{-1/2})<\kappa/2,          \tag{36.6}
+```
+
+then a probability measure `mu` on `S_(2\kappa)(a)` satisfies
+
+```math
+{1\over E}\sum_e
+ \left(\mathbb E_\mu[a_ez_e]\right)_+
+\le
+{\epsilon+C(\sqrt\kappa n^{-1/4}+n^{-1/2})
+ \over\kappa(1-1/n)}.                                       \tag{36.7}
+```
+
+When `Q(a)>2\kappa n^(3/2)`, the normalized `l_1` norm of the complete
+edge-mean vector is at most twice the right side.  Thus fixed small
+`epsilon`, followed by `n->infinity` and `kappa=sqrt(epsilon)`, gives shell
+width and total edge bias `O(sqrt(epsilon))`.  For exact minimizers,
+`kappa=n^(-1/6)` gives both quantities `O(n^(-1/6))`.
+
+Finite minimax identifies the left side of (36.7) as the best common-law
+obstruction to a weighted sparse flip.  Independently realize that flip at
+rate `kappa/sqrt n`; Bernstein plus a union bound over the `2^n` signed cuts
+costs only
+
+```math
+O(\sqrt\kappa n^{5/4}+n).                                   \tag{36.8}
+```
+
+If (36.7) failed, the realized exact signing would have cap below `M_n`.
+This proves the result without knowing a minimizer or its active set.
+
+There is also a cardinality consequence.  If eventually
+`M_n>=c_0n^(3/2)` with `c_0>0`, every exact minimizer and every integer
+sequence `n<=r=o(n^(3/2))` obey
+
+```math
+|S_(2r/n^{3/2})(a)|\ge\exp(c_1r/n)                           \tag{36.9}
+```
+
+for `c_1=c_1(c_0)>0`.  Otherwise one random `r`-edge flip would have
+positive correlation with every member of the shell, while exact
+minimality produces a shell member with nonpositive correlation.  In
+particular a shell of vanishing normalized width `2/log n` contains
+`exp(Omega(sqrt n/log n))` signed cuts.
+
+Equation (36.7) is the first arbitrary-order Level-5 collective law in this
+program.  It is only a first-marginal equilibrium, not a response carrier;
+(36.9) is cardinality, not a contextual packing or a lower bound on
+generative description length.  The proof and independent audit are in
+[`drafts/near_minimizer_fractional_balance.md`](drafts/near_minimizer_fractional_balance.md)
+and
+[`drafts/phase1_fractional_balance_independent_audit.md`](drafts/phase1_fractional_balance_independent_audit.md).
+
+### Theorem 36.3 (every near-minimizer halo has linear pinned-response entropy)
+
+Let
+
+```math
+R_a(g)=\max_x\{H_a(x)+g\mathbin\cdot x\}.
+```
+
+There are absolute `c,C,delta>0` such that, whenever
+`C/sqrt(n)<=kappa<=1/10`, every exact minimizer `a` has exact-sign
+perturbations `(b^u)_(u in U)` with
+
+```math
+|U|\ge e^{cn},
+\qquad
+Q(b^u)\le M_n+2\kappa n^{3/2},                                \tag{36.10}
+```
+
+and the common amplitude-`n` query bank satisfies
+
+```math
+R_(b^u)(nu)-R_(b^v)(nu)
+\ge\delta\kappa n^{3/2}qquad(u\ne v).                       \tag{36.11}
+```
+
+Choose exponentially many query spins with
+`|u dot v|<=n/2`.  For each `u`, independently flip a
+`kappa/sqrt(n)` fraction of the edges on which `a_eu_iu_j=-1`.  The exact
+expected oriented gap is
+
+```math
+{\kappa\over2\sqrt n}\left(n^2-(u\mathbin\cdot v)^2\right), \tag{36.12}
+```
+
+because the base energy cancels between the target and cross channels.
+Bernstein concentration closes simultaneously over `e^{2cn}` ordered
+pairs, while every perturbation changes at most `kappa n^(3/2)` edges.
+Finally the exact pinning identity
+
+```math
+R_b(nu)=n^2+H_b(u)                                              \tag{36.13}
+```
+
+follows because changing `d` spins can gain at most `2d(n-d)` internally
+and loses `2nd` in the field.
+
+Thus any uniform decoder below half the gap in (36.11) needs `Omega(n)`
+bits even on a genuine near-minimizer class.  This is an unrestricted-query
+negative theorem, not yet a low-cap physical obstruction: realizing full
+pinning in an all-spins-free parent can introduce a common
+`Theta(n^2)` baseline.  It narrows the remaining incompressibility lemma to
+balanced continuations whose whole cap stays `O(n^(3/2))`.  Proof and audit
+are in
+[`drafts/nearmin_pinned_response_packing.md`](drafts/nearmin_pinned_response_packing.md)
+and
+[`drafts/nearmin_level5_theorem_independent_audit.md`](drafts/nearmin_level5_theorem_independent_audit.md).
+
+### Theorem 36.4 (Grothendieck peeling envelope and its sharp near-minimizer limitation)
+
+For every hollow symmetric real matrix `A`,
+
+```math
+\|A\|_(\infty\to1)\le4Q(A),
+\qquad
+\boxed{\|A\|_*\le4K_GQ(A)}.                                  \tag{36.14}
+```
+
+Indeed the bilinear form polarizes into two quadratic forms on disjoint
+principal supports, and symmetric Grothendieck factorization writes
+`A=DTD`, with `tr(D^2)=1` and
+`||T||<=K_G||A||_(infinity->1)`.  Consequently, for every `L>=1`, fewer
+than `n/L` vertices can be removed so that the surviving principal matrix
+obeys
+
+```math
+\|A[V\setminus S_L]\|_(2\to2)
+\le {4K_GLQ(A)\over n}.                                      \tag{36.15}
+```
+
+The trace-norm envelope is edit robust: changing `r` unordered signs changes
+`||A||_*` by at most `4r`.  It is nevertheless too weak for target-scale
+response compression.  Sublinear spectral rank is obtained only above a
+diverging multiple of `sqrt n`, whose discarded Boolean error exceeds the
+target scale.
+
+Moreover this limitation cannot be repaired by a polynomially sublinear
+fixed-root peel.  Around any exact minimizer, overwrite `m` disjoint
+`k`-vertex principal blocks by all-positive cliques.  The resulting signing
+`B` satisfies
+
+```math
+Q(B)\le M_n+mk(k-1),                                           \tag{36.16}
+```
+
+while every deletion set producing operator norm at most `R` has size at
+least
+
+```math
+m(k-1-R)_+.                                                    \tag{36.17}
+```
+
+With `k=Lsqrt n`, `m=sqrt n/L^3`, and a subpolynomial
+`L->infinity`, the excess is `O(n^(3/2)/L)` but an `O(sqrt n)` core needs
+`n^(1-o(1))` deleted vertices.  Thus every claimed
+`O(n^(1-delta))` peel is false.  A qualitative `o(n)` peel remains open and
+would still lack a composable response theorem.
+
+Proof, primary-source mapping, and independent audit are in
+[`drafts/nearmin_spectral_harmonic_report.md`](drafts/nearmin_spectral_harmonic_report.md)
+and
+[`drafts/nearmin_level5_theorem_independent_audit.md`](drafts/nearmin_level5_theorem_independent_audit.md).

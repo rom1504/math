@@ -827,11 +827,13 @@ compiler with global cross cap `||m_jh_j||_1+o(N_j^(3/2))`.
 
 The strengthened uniform affine estimate in Theorem 21.66 answers endpoint
 stability positively, and Theorem 21.67 yields an unconstrained exact-sign
-parent cap collision.  The remaining information question is amplification:
-how many diffuse selectors can be edited independently while all active
-product poles remain asymptotically top and balanced compilers keep the
-resulting parents separated?  Prove a packing with `k_j->infinity` bits or a
-quantitative ceiling from selector overlap and the sparse edge budget.
+parent cap collision.  Theorem 36.1 now settles the qualitative one-hot
+amplification question: a common physical query bank separates
+`N_j^c` states, or `Theta(log N_j)` message bits.  It does **not** build a
+`2^{k_j}` independently writable edit cube.  The remaining Phase-I question
+is whether nonlinear multiplexing can beat the conditional disjoint-edge
+and canonical rank-one-superposition ceilings; do not spend near-minimizer
+time optimizing the crude one-hot exponent.
 
 Two natural searches are already closed.  The PC.3 pole-conjugation twirl
 has a depth-independent gap, so every diagonal switching has selector defect
@@ -850,3 +852,40 @@ For future positive classes, seek a natural exact-sign hypothesis that
 positive observable whose common kernel is an eigenvalue-one space for every
 declared selector conjugate.  Theorem 21.60 supplies the conclusion once that
 collective object is given.
+
+## 15. Near-minimizer structural frontier
+
+Theorem 36.2 proves the first arbitrary-order collective consequence of
+near-minimality: an `epsilon`-near-minimizer has a shell of width
+`O(sqrt(epsilon))n^(3/2)` carrying one signed-cut law with total edge bias
+`O(sqrt(epsilon))`.  The exact-minimizer shell also has
+`exp(n^(1/2-o(1)))` members at vanishing normalized width.
+
+The smallest positive question is no longer to find any collective law.  It
+is:
+
+```text
+Does the forced edit-thick shell law have joint selector coercivity
+f(epsilon)+o(1) on one nonvacuous O(log n) port language,
+after o(n^(3/2)) response residual?
+```
+
+An affirmative answer plugs directly into Theorems 21.50, 21.53, and 21.54
+and yields `o(n^(3/2))` response error with a sublinear reusable state.  The
+claim must control the Fourier-product quadratic form jointly; another
+coordinatewise first-moment estimate is insufficient.
+
+The strongest backup asks instead for an edit-thick common-law contracting
+fibre whose persistent information lies in `o(n)` terminal and recurrent
+cohomology coordinates.  This allows a small number of hidden coherence
+bits rather than requiring them to vanish.
+
+Counterexamples impose four mandatory qualifications:
+
+1. the shell width must pay at least the optimality excess;
+2. spectral claims must peel or otherwise quotient localized edit implants;
+3. exact active multiplicity and adjacent-order deletion optimality are not
+   stable;
+4. full amplitude-`n` pinning may retain linear information even inside a
+   near-minimizer halo, so any positive transfer must declare a balanced,
+   low-cap context class rather than silently answering the full landscape.
