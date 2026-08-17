@@ -9414,3 +9414,126 @@ canonical Legendre data
 The present theorem is a speed-sensitive contextual
 roof under continuous descriptor tilts, not a wholly separate algebra and
 not a structured recovery theorem for sign quadratics.
+
+## 28. Regular-Hadamard amplification limits
+
+### Theorem 28.1 (monotone Boolean amplification)
+
+Let `H` be a symmetric Hadamard matrix of order `h` and suppose that some
+`u in {+-1}^h` satisfies `Hu=sqrt(h)u`. For a fixed real symmetric
+`d by d` matrix `B`, put
+
+```math
+B_r=B tensor H^(tensor r),\qquad N_r=dh^r,
+```
+
+and define
+
+```math
+q_r^+(B)={1\over2N_r^(3/2)}\max_(x in {+-1}^N_r)x^TB_rx,
+\qquad
+q_r^abs(B)={1\over2N_r^(3/2)}\max_x|x^TB_rx|.          \tag{28.1}
+```
+
+Both sequences are nondecreasing and converge, with
+
+```math
+q_r^+(B),q_r^abs(B)
+\le {||B||_(2->2)\over2sqrt(d)}.                       \tag{28.2}
+```
+
+#### Proof
+
+The Boolean lift `x mapsto x tensor u` obeys
+
+```math
+(x tensor u)^T(B_r tensor H)(x tensor u)
+=h^(3/2)x^TB_rx.                                      \tag{28.3}
+```
+
+The denominator is multiplied by the same factor, so every signed normalized
+value at level `r` reappears at level `r+1`. This proves both monotonicities.
+Moreover `||B_r||=||B||h^(r/2)` and `||x||_2^2=dh^r`, which give (28.2).
+Bounded monotone sequences converge. The positive eigenvalue is needed for
+`q^+`; eigenvalue `-sqrt(h)` still gives monotonicity of the absolute
+functional. `square`
+
+### Theorem 28.2 (a finite-dimensional limiting response set)
+
+Write `s_r=h^r` and split a Boolean vector into `d` blocks. Let
+
+```math
+K_r^(d)=conv\left\{
+ \left(s_r^(-3/2)x_i^TH^(tensor r)x_j\right)_(i<=j):
+ x_i in {+-1}^(s_r)
+\right\}.                                             \tag{28.4}
+```
+
+Then
+
+```math
+K_r^(d) subseteq K_(r+1)^(d) subseteq[-1,1]^(d(d+1)/2) \tag{28.5}
+```
+
+and the sets converge in Hausdorff distance to
+
+```math
+K_infinity^(d)=closure(union_r K_r^(d)).               \tag{28.6}
+```
+
+For every symmetric `B`,
+
+```math
+lim_r q_r^+(B)
+={1\over2d^(3/2)}\max_(K in K_infinity^(d))<B,K>,      \tag{28.7}
+```
+
+with the analogous absolute support formula. Convergence is uniform on
+bounded coefficient sets. An external entrywise-`epsilon` net has at most
+
+```math
+(1+2/epsilon)^(d(d+1)/2)                              \tag{28.8}
+```
+
+points, independently of amplification depth.
+
+#### Proof
+
+Applying `x_i mapsto x_i tensor u` to every block preserves each normalized
+entry in (28.4), proving nesting. Increasing compact subsets of a fixed
+compact cube converge in Hausdorff distance to the closure of their union.
+Expanding the quadratic gives
+
+```math
+{x^T(B tensor H^(tensor r))x\over2(ds_r)^(3/2)}
+={1\over2d^(3/2)}\sum_(i,j)B_(ij)
+ {x_i^TH^(tensor r)x_j\over s_r^(3/2)}.                \tag{28.9}
+```
+
+Linear optimization is unchanged by convexification. Hausdorff convergence
+gives (28.7), its absolute analogue, and uniform convergence on bounded dual
+sets. A grid in the ambient cube gives (28.8). `square`
+
+### Corollary 28.3 (a dense structured signing hierarchy has a limit)
+
+The order-four Walsh matrix has a Boolean vector `u=(1,1,1,-1)` with
+`W_4u=2u`. Hence every fixed linear-label Walsh graph program whose labels
+are extended only by zero coordinates and whose scalar onsite and bridge
+coefficients remain fixed has convergent normalized upper and absolute
+Boolean maxima. After regrouping coordinates,
+
+```math
+M_(m_0+r)=M_(m_0) tensor W_4^(tensor r).               \tag{28.10}
+```
+
+If a fixed outer template `B` is symmetric, entrywise `+-1`, and has trace
+zero, hollowing `B tensor W_4^(tensor r)` gives a valid dense signing `A_r`
+of order `d4^r` without changing any Boolean quadratic value. Thus
+
+```math
+{Q(A_r)\over(d4^r)^(3/2)}
+```
+
+converges. This is an exact tensor-hierarchy theorem on geometric orders. It
+does not transfer near-minimizers to arbitrary orders and therefore does not
+imply convergence of the motivating sequence.

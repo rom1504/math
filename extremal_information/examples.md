@@ -1931,3 +1931,18 @@ The gap `3(5-sqrt(17))n^(3/2)/4` needs no root, field, or pinned spin.  Hence
 the triangle flux in the off-diagonal Gram form is genuinely scalar-visible;
 it cannot be discarded merely because the root fibre disappears in the
 unrooted language.
+
+## Example 88: regular Hadamard amplification closes a dense response state
+
+Let `H` be a symmetric Hadamard matrix with a positive regular Boolean
+eigenvector and amplify a fixed outer quadratic template by `H^(tensor r)`.
+Tensoring every Boolean block witness with that eigenvector embeds its whole
+normalized cross-correlation matrix at the next depth. The resulting compact
+convex response sets are nested in fixed dimension and converge.
+
+For `H=W_4`, a trace-zero sign template yields genuine hollow dense signings
+of orders `d4^r`, and their normalized Boolean maxima converge. This is a
+near-original thermodynamic-limit benchmark whose state is exponentially
+smaller than the Boolean landscape. Its limitation is precise: exact tensor
+amplification supplies the recovery map, while arbitrary orders and
+non-tensor perturbations remain untreated.

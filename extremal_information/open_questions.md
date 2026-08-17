@@ -415,3 +415,25 @@ growing-interface entropy, closes under the relevant composition, and has a
 finite realization theorem.  The signed-balanced benchmark supplies all of
 these only for a restricted permutation-invariant class; none is currently
 proved for the motivating sign matrices.
+
+## 10. Approximate recovery beyond exact Hadamard amplification
+
+Regular-Hadamard tensor powers now give a genuine near-original limit because
+one Boolean eigenvector embeds the complete fixed-port response set exactly
+at every step. Determine an intrinsic perturbative replacement.
+
+The desired theorem should start from checkable matrix or witness maps and
+derive, rather than assume,
+
+```math
+d_H(K_r,K_(r+1))\le epsilon_r,
+\qquad \sum_r epsilon_r<infinity.
+```
+
+**Success:** a non-tensor dense signing hierarchy with a finite-port response
+carrier and a proved summable recovery defect, or a converse showing that one
+natural approximate-eigenvector condition is insufficient.
+
+**Falsifier:** a proposed condition that merely restates Hausdorff Cauchy
+convergence or controls only one preselected optimizer rather than every
+declared outer query.

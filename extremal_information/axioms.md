@@ -1316,3 +1316,17 @@ The open quantitative question is how many independent fluxes a family of
 scalar future queries can expose at fixed distortion.  Orbit-state dimension
 alone is only an upper bound; scalar visibility must be established by
 separating queries.
+
+## 53. A scale-preserving witness lift creates response compactness
+
+An exact microscopic optimizer need not be consistent across scales. It is
+enough that every Boolean witness at one scale has a feasible lift at the
+next scale preserving all declared normalized response coordinates. Then
+the convex response images are nested, and compactness turns their increasing
+union into a limiting state whose support functions converge.
+
+Regular-Hadamard amplification realizes this principle exactly. The useful
+object is the whole fixed-port cross-correlation set, not one maximizing
+sequence. Approximate applications require a quantitative lift or retraction
+with summable response defect; assuming Hausdorff convergence itself would
+merely restate the desired conclusion.

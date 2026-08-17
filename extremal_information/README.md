@@ -833,7 +833,9 @@ only after it has all of the following:
 
 Items 1--3 now exist for restricted models: fixed-rank mean field, bounded
 separators, fixed-label syndrome fragments, and fixed-effective-rank additive
-response sets.  Item 4 exists only for unrestricted finite landscapes at
-fixed interface dimension.  None of these states yet closes the dense-sign
-bridge interface, so this campaign does not reconnect to the motivating
-problem.
+response sets. A constrained version of item 4 now exists for exact
+regular-Hadamard tensor amplification: its fixed-port response sets are
+nested and yield normalized limits for genuine dense hollow sign hierarchies.
+This is only a geometric-order structured benchmark; it neither realizes
+near-minimizers at arbitrary orders nor closes the general dense-sign bridge
+interface, so the campaign still does not return to the motivating problem.
