@@ -7346,6 +7346,55 @@ numerical rank for thresholds inside its spectral bulk. The general
 `2^(Omega(r))` lower bound of Theorem 18.3 applies to arbitrary featured
 roofs; optimality for every Boolean SVD port is not claimed.
 
+### Theorem 18.8 (bounded-operator sign bridges have extensive visible rank)
+
+Let `R in {+-1}^{n by n}` satisfy
+`||R||_(2->2)<=C sqrt(n)`, with `C>=1`, and put
+
+```math
+r_epsilon(R)=#{j:sigma_j(R)>epsilon sqrt(n)},
+\qquad 0<=epsilon<1.                                 \tag{18.35}
+```
+
+Then
+
+```math
+r_epsilon(R)>= n{1-epsilon^2\over C^2-epsilon^2}.    \tag{18.36}
+```
+
+Also every rank-`r` dense sign matrix obeys
+
+```math
+||R||_(2->2)>={n\over sqrt r}.                       \tag{18.37}
+```
+
+#### Proof
+
+The sign alphabet gives
+
+```math
+n^2=||R||_F^2=sum_j sigma_j(R)^2.                    \tag{18.38}
+```
+
+The `r_epsilon` visible terms are at most `C^2n`; all others are at most
+`epsilon^2n`.  Rearranging
+`n^2<=r_epsilon C^2n+(n-r_epsilon)epsilon^2n` proves (18.36).
+If only `r` singular values are nonzero, (18.38) is at most
+`r||R||^2`, proving (18.37). `square`
+
+Consequently the SVD/operator certificate of Theorem 18.7 cannot interpolate
+from fixed rank to a bounded-operator dense sign bridge through a
+subextensive interface at fixed `n^(3/2)` accuracy: it must retain a linear
+number of singular features.  Hadamard matrices attain (18.36) at `C=1`,
+and the all-ones matrix attains (18.37).
+
+This is a scoped stable-rank barrier, not a contextual-information lower
+bound.  Full-rank permutation-invariant bridges can still compress by
+Theorem 18.6, while the rank-one all-ones matrix compresses by magnetization.
+Only synchronization or another nonlinear congruence can beat the spectral
+interface in a bounded-operator sign family.  The audited benchmark proof is
+in [`drafts/bounded_operator_rank_barrier.md`](drafts/bounded_operator_rank_barrier.md).
+
 ## 19. Extremal cut-norm replacement
 
 ### Theorem 19.1 (uniform labeled replacement)
@@ -10557,6 +10606,93 @@ reordering of the bad Walsh hierarchy must pay.  The independently audited
 full statement is in
 [`drafts/phase_refresh_synchronization.md`](drafts/phase_refresh_synchronization.md).
 
+### Theorem 31.3 (semantic expander refresh forces toll or memory)
+
+Let finite-state Markov kernels `P_j` preserve one full-support law `pi` and
+satisfy
+
+```math
+||P_j-Pi||_(L^2(pi)->L^2(pi))<=rho<1,                \tag{31.11}
+```
+
+where `Pi f=int f dpi`.  Let `g:X->[0,B]`, and suppose
+
+```math
+||f_j-g||_infinity<=omega_j,
+\qquad f_j<=P_jf_(j+1)+epsilon_j,                    \tag{31.12}
+```
+
+with nonnegative errors.  If
+`delta_j=epsilon_j+omega_j+omega_(j+1)`, then for every `x` and every
+window of length `t`,
+
+```math
+g(x)-int g dpi
+<= {B rho^t\over sqrt(pi(x))}+sum_(j=r)^(r+t-1)delta_j.\tag{31.13}
+```
+
+In particular, suppose `D=g(x)-int g dpi>0`, `|X|=S`,
+`pi(x)>=kappa/S`, `0<rho<1`, and `delta_j<=delta<D/2`.  Then
+
+```math
+log S>=log kappa+{log(1/rho)D\over delta}
+       -2log(1/rho)-2log(2B/D).                      \tag{31.14}
+```
+
+Thus a bounded-state uniformly scrambling semantic quotient pays a fixed
+transfer toll; at toll `delta`, its description needs
+`Omega(log(1/rho)D/delta)` bits.
+
+#### Proof
+
+The two inequalities in (31.12) give `g<=P_jg+delta_j`.  Iterate positive
+kernels.  Their product contracts the mean-zero subspace by `rho^t`.
+Point evaluation at `x` has centered `L^2(pi)` norm
+`sqrt(1/pi(x)-1)`, proving (31.13).  Choose
+
+```math
+t=ceil{log(2B sqrt(S/kappa)/D)\over log(1/rho)}       \tag{31.15}
+```
+
+so the mixing term is at most `D/2`; then `delta>=D/(2t)`, which rearranges
+to (31.14). `square`
+
+The semantic qualifier is essential.  If
+`T_(r,g)=V_(r,g)^*S_rV_(r,g)` is merely a finite signed-permutation gauge
+orbit, the branch maps
+
+```math
+U_(r,g,h)=V_(r+1,h)^*L_rV_(r,g)                     \tag{31.16}
+```
+
+have a pullback independent of `h`, so **any** phase kernel is exactly
+realizable while all Boolean responses are already identical.  For the
+order-four Walsh matrix, one such one-bit orbit has fixed-coordinate
+operator diameter exactly two.  Operator diameter alone therefore does not
+measure semantic phase memory.
+
+For the nonconstant Walsh prefix response `Phi=2L`, put mass `99/200` at
+each endpoint and the remaining `1/100` on a finite phase sample containing
+`3`.  Then
+
+```math
+D>=D_*={89\over48sqrt3}-1.01=0.06050362412... .      \tag{31.17}
+```
+
+A half-scrambling certificate with `delta<=C/sqrt(N)` must consequently
+have
+
+```math
+log_2S>={D_*\over C}sqrt(N)-O(1).                    \tag{31.18}
+```
+
+Hence bounded, polynomial, and `exp(o(sqrt N))` stationary expander phase
+quotients cannot synchronize that semantic phase at the natural
+`N^(-1/2)` transfer scale.  Nonstationary laws, vanishing scrambling, or a
+non-pullback mechanism remain outside the theorem.  The independently
+audited proof is in
+[`drafts/expander_phase_refresh_complexity.md`](drafts/expander_phase_refresh_complexity.md).
+
 ## 32. Tangent mass and a finite Gaussian response semigroup
 
 The lattice-Laplace estimate below is classical.  Its role here is to repair
@@ -10701,3 +10837,65 @@ arbitrary Morse amplitude fields are not finite states.  The theorem is a
 genuine closed response algebra only on the declared Gaussian class.  The
 complete repaired proof and independent audits are in
 [`drafts/morse_tangent_mass_composition.md`](drafts/morse_tangent_mass_composition.md).
+
+### Theorem 32.3 (power roofs close, but their tangent family is Gaussian-rigid)
+
+Fix `p>1` and put `I_(p,a)(x)=a|x|^p`.  The leading roofs form the exact
+infimal-convolution semigroup
+
+```math
+inf_x\{a|x|^p+b|z-x|^p\}
+=\left(a^(-1/(p-1))+b^(-1/(p-1))\right)^(-(p-1))|z|^p.\tag{32.10}
+```
+
+For the lattice arrays
+
+```math
+A_n^a(k)=exp\{-a|k|^p/n^(p-1)\},                    \tag{32.11}
+```
+
+the central convolution has tangent mass `Theta(n^(1-1/p))`, whereas every
+fixed nonzero macroscopic output has a nondegenerate saddle and tangent mass
+`Theta(n^(1/2))`.  More decisively, the normalized tangent densities
+
+```math
+g_(p,a)(x)=Z_(p,a)^(-1)e^(-a|x|^p)                  \tag{32.12}
+```
+
+satisfy
+
+```math
+g_(p,a)*g_(p,a)=g_(p,b)                              \tag{32.13}
+```
+
+for some `b>0` if and only if `p=2`, in which case `b=a/2`.
+
+#### Proof
+
+Strict convexity and homogeneity give (32.10).  At output zero, rescale
+`k=n^(1-1/p)u`; at a nonzero output the unique optimal split has positive
+finite Hessian, giving the two tangent exponents by lattice Riemann sum and
+Laplace's method.
+
+If (32.13) holds and `X,X_1,X_2` have density `g_(p,a)`, then
+`X_1+X_2` is a scale copy of `X`.  Finite nonzero variance forces the scale
+to be `sqrt2`; iteration makes every normalized dyadic iid sum have the law
+of `X`.  The central limit theorem forces `X` to be Gaussian, hence `p=2`.
+The Gaussian converse is exact.  Finally, with `s_n=n^(1-1/p)`, the locally
+uniform tangent limit
+
+```math
+{1\over s_n}(A_n^a*A_n^a)(floor(s_n u))
+->\int_R e^(-a|v|^p)e^(-a|u-v|^p)dv                 \tag{32.14}
+```
+
+follows by dominated Riemann sums, so the continuous rigidity is inherited
+by the discrete carrier. `square`
+
+The leading rate coefficient therefore closes for every power while the
+next response object does not: for `p!=2`, repeated composition generates
+new convolution shapes.  The Gaussian semigroup in Theorem 32.2 is
+exceptional, not the first member of a fixed-power finite hierarchy.  This
+does not exclude every non-Gaussian finite semigroup; it closes the proposed
+power-exponential extension.  Full details and audit are in
+[`drafts/non_gaussian_tangent_closure.md`](drafts/non_gaussian_tangent_closure.md).

@@ -91,6 +91,10 @@ one of:
   scalable packing resets the counter, despite the bounded-cap limitation.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
+- **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear
+  number of singular values above every fixed `sqrt(n)` threshold. Thus the
+  SVD interface itself cannot remain subextensive; any escape must be a
+  nonlinear synchronization or congruence, not more delicate truncation.
 
 ### 2a. Scale-preserving amplification and phase laws — active near-original branch, A-
 
@@ -111,6 +115,11 @@ one of:
   The phase also has a unique logarithmic empirical law, but this is a strict
   query quotient: every positive power-weighted mean retains, and explicitly
   reconstructs, the ordered mantissa profile.
+  A common-stationary `L^2` expander presentation is now quantitatively
+  obstructed: an observable excess `D` at toll `delta` requires
+  `Omega(log(1/rho)D/delta)` phase bits. At the Walsh `N^(-1/2)` defect scale,
+  half-scrambling costs `Omega(sqrt N)` bits, whereas a response-trivial gauge
+  orbit refreshes with one bit even at operator diameter two.
 - **Best benchmark:** one explicit coherent Walsh prefix signing has a
   nonconstant continuous phase profile: its geometric phases equal `1/2`
   while its `3*4^r` phases are at least `89/(96sqrt(3))`.  It is a genuine
@@ -205,7 +214,10 @@ one of:
   tropical count algebra with all-order abstract recovery.  On a separate
   finite-parameter Gaussian tangent class, mean/covariance, logarithmic
   exponent, and total-mass amplitude form an associative convolution
-  semigroup with finite integer all-order recovery.
+  semigroup with finite integer all-order recovery.  This Gaussian closure
+  is now known to be rigid inside the fixed power-exponential family: all
+  power roofs close at leading order, but only `p=2` retains the same tangent
+  shape under self-convolution.
 - **Composition:** finite depth needs `(W,Z)`, but `W` vanishes and the limit
   closes by `Z=sum_u e^(-V(u))Z_u`.
 - **Best falsifier:** genealogy-marked futures distinguish branch-mass
@@ -217,11 +229,10 @@ one of:
   `(n,log n)` miss a `1/2 log n` saddle-mass correction.
 - **Information discarded:** genealogy and the fixed decoration law; the
   declared unmarked query class cannot inspect them.
-- **Next theorem:** decide whether a finite stratification of Morse
-  singularity types stays closed under composition, or find a deterministic/
-  adversarial model in which critical renormalization yields a unique
-  composable extremal state.  Arbitrary functional amplitude fields are not
-  a strict state.
+- **Next theorem:** search outside fixed power-exponential types for a finite
+  non-Gaussian convolution semigroup with extremal meaning, or prove that a
+  natural finite stratification still generates unbounded tangent shapes.
+  Arbitrary functional amplitude fields are not a strict state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
 ### 5. Adversarial statistical mechanics — keep warm, B

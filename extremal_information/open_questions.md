@@ -216,6 +216,13 @@ bounded edge degree alone can still carry exponentially many macroscopic
 bits. Signed-balanced `alpha I+beta J` bridges give a different positive
 mechanism: a common optimizer section defeats full algebraic rank.
 
+There is no hidden subextensive SVD regime for bounded-operator dense sign
+bridges.  Frobenius mass forces at least
+`n(1-epsilon^2)/(C^2-epsilon^2)` singular values above
+`epsilon sqrt(n)` when `||R||<=C sqrt(n)`.  Any intermediate positive result
+must therefore use nonlinear synchronization or symmetry rather than a
+finer spectral cutoff.
+
 The intermediate sparse parameter is now calibrated. A live vertex cover of
 size `k` gives a universal `2^k`-entry bridge table, and a matching proves the
 worst-case projective rate `Theta(2^k log(1+D/epsilon))`. A common partition
@@ -480,6 +487,13 @@ d_H(K_(d,r),K_(d',r'))\longrightarrow0
 
 whenever the represented orders are asymptotically adjacent.
 
+Uniform stationary expander refresh is no longer a small-description escape:
+an observable phase excess at one-step toll `delta` requires
+`Omega(1/delta)` bits, and the Walsh profile forces `Omega(sqrt N)` bits at
+the natural transfer scale.  The live alternatives are nonstationary phase
+laws, scrambling that vanishes with scale, or a transfer not represented by
+the one-sided averaged pullback inequality.
+
 **Success:** a pullback/refresh certificate with sub-landscape description
 complexity in a dense hierarchy not already uniformly operator-close to one
 fixed model, or a theorem deriving refresh from natural pseudorandomness.
@@ -500,9 +514,14 @@ finite-parameter Gaussian tuple closes associatively and has finite integer
 all-order recovery.  This repairs Vandermonde and multinomial tangent mass
 without storing the descriptor grid.
 
-The remaining target is a **finite stratified extension**: identify a finite
-menu of non-Gaussian saddle types whose parameters remain closed when saddles
-merge, split, or become degenerate.
+The fixed power-exponential extension is now falsified.  Its leading
+homogeneous roofs close for every `p>1`, but central and off-centre tangent
+exponents differ, and the normalized power-exponential tangent family is
+closed under self-convolution only for the Gaussian power `p=2`.
+
+The remaining target is a **different finite stratified extension**:
+identify a finite menu of non-Gaussian saddle types whose parameters remain
+closed when saddles merge, split, or become degenerate.
 
 **Success:** a class containing at least one genuinely nonquadratic saddle
 and stable under two successive convolutions, with a finite parameter count

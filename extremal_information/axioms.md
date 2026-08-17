@@ -1473,3 +1473,37 @@ contain a scaled copy of an arbitrary finite weighted response algebra.
 Dynamic compression therefore needs two certificates--terminal-state
 forgetting and reward-cocycle compatibility--not merely a small static image
 or a strong projective contraction.
+
+## 64. Mixing a semantic phase has an inverse-defect information price
+
+Uniform stationary scrambling turns an observable excess over the phase
+average into a quantitative alternative: either the transfer accumulates a
+comparable toll over one mixing window, or the phase space grows
+exponentially in the inverse one-step toll.  This converts local mixing time
+into a lower bound on reusable response memory.
+
+Gauge labels are exempt because their responses were never distinct.  A
+large coordinatewise operator orbit can refresh with constant description
+when signed conjugacy makes it semantically one state.  The lower law charges
+response excess, not syntactic phase count or operator diameter.
+
+## 65. Spectral rank and response rank are different resources
+
+At bounded `sqrt(n)` operator scale, a dense sign bridge has linearly many
+singular directions visible at fixed `n^(3/2)` accuracy.  Thus spectral
+truncation cannot provide a subextensive bridge state there.
+
+This does not preclude compression by symmetry or synchronization.  A valid
+low-information dense interface must quotient the visible directions
+nonlinearly; algebraic or numerical rank alone cannot explain it.
+
+## 66. Closure of the leading roof does not imply closure of tangent mass
+
+Infimal convolution may preserve a finite family of rate functions while
+the normalized saddle shapes generate an ever richer convolution family.
+The power-exponential example makes the separation exact, and Gaussian
+stability identifies the exceptional closed tangent law.
+
+Multiscale extremal compression must therefore test every response speed
+used by future composition.  A closed leading exponent is not evidence that
+the next entropy or amplitude coordinate has finite state.

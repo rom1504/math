@@ -2120,3 +2120,43 @@ single projective row shell of radius `alpha/2`, while preserving its full
 spectral response algebra up to that scale.  Static residual proximity and
 dynamic scalar sufficiency are therefore incomparable without a compatible
 reward cocycle.
+
+## Example 99: gauge refresh is cheap; semantic refresh is not
+
+Signed-permutation conjugates of one dense operator can be two units apart
+in fixed-coordinate operator norm while carrying identical Boolean response.
+Their phase label is pure gauge, and arbitrary exact Markov refresh is
+implemented by conjugating the same pullback.  One bit suffices.
+
+For an observable response phase, a common-stationary expander has a
+different cost.  If one phase exceeds the stationary average by `D`, then a
+scrambling window must accumulate that excess as transfer toll.  At one-step
+toll `delta`, the reusable state requires `Omega(D/delta)` bits.  Applied to
+the Walsh prefix obstruction at defect `O(N^(-1/2))`, this excludes every
+`exp(o(sqrt N))` half-scrambling phase quotient.
+
+## Example 100: bounded-operator signs have linear visible SVD rank
+
+An `n`-square sign bridge has Frobenius mass exactly `n^2`.  If its operator
+norm is at most `C sqrt(n)`, then a fixed positive fraction of its singular
+values must exceed every fixed threshold below `sqrt(n)`.  Thus the
+scale-sensitive SVD roof cannot stay subextensive at the `n^(3/2)` response
+scale.
+
+This is not general incompressibility.  A full-rank orbit may collapse by
+rearrangement, and the rank-one all-ones matrix collapses to magnetization.
+The example separates spectral interface dimension from nonlinear response
+congruence.
+
+## Example 101: a closed rate roof can have an unclosed tangent law
+
+Power costs `a|x|^p` close exactly under infimal convolution for every
+`p>1`.  Their central lattice saddles have mass `n^(1-1/p)`, but the
+normalized tangent density is `e^(-a|x|^p)`.  Its self-convolution stays in
+the same scale family only for `p=2`: otherwise dyadic stability would
+contradict the central limit theorem.
+
+Hence the leading extremal roof can have a finite algebra while the next
+composition query generates a growing function-valued state.  Gaussian
+tangent closure is a rigidity phenomenon, not a generic consequence of
+convex homogeneous rates.
