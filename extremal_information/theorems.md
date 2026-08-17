@@ -9363,6 +9363,97 @@ and positive rate; growing the inner order makes the hidden rate
 `Theta(1/n)`.  The complete audited proof is in
 [`drafts/state_dependent_gram_broadcast.md`](drafts/state_dependent_gram_broadcast.md).
 
+### Theorem 21.25 (bounded fan-in has a sharp broadcast law)
+
+Let `z in {0,1}^h` and suppose a fixed child presentation has bounded atoms
+
+```math
+H_z(x)=P(x)+\sum_(e=1)^E c_e(z)\phi_e(x),
+\qquad |\phi_e(x)|\le1,                              \tag{21.125}
+```
+
+where `c_e` depends on at most `t` coordinates of `z` and has oscillation
+`omega_e`.  For any fixed public continuation language and any response
+functional that is one-Lipschitz in uniform norm, let `d` be the resulting
+contextual pseudometric.  Then, at every `z`,
+
+```math
+\sum_(i=1)^h d(z,z+e_i)
+\le\sum_(e=1)^E |I_e|\omega_e
+\le t\sum_(e=1)^E\omega_e.                          \tag{21.126}
+```
+
+Thus, for distinct quadratic pair atoms on `N` spins with `|c_e|<=B`, if
+every neighbouring hidden state is separated by `epsilon N^(3/2)`, then
+
+```math
+h<{Bt\over\epsilon}\sqrt N.                         \tag{21.127}
+```
+
+This scale is optimal for unrestricted exact sign quadratics.  There is an
+absolute `c>0` such that, for all sufficiently large `N` and
+`1<=t<=cN`, one can construct `h=t floor(sqrt N)`-bit exact signings and a
+fixed negative-clone continuation language such that every edge reads at
+most `t` hidden bits, every neighbour has response gap
+`Omega(N^(3/2))`, and an `exp(Omega(t sqrt N))` subfamily is pairwise
+separated by `Omega(N^(3/2))`.
+
+Finally, in the alternating-form broadcast of Theorem 21.24, every choice
+of linear coordinates has
+
+```math
+{1\over E}\sum_e |I_e|\ge {h\over4},
+\qquad \max_e|I_e|\ge {h\over4},                    \tag{21.128}
+```
+
+and each hidden coordinate changes at least `E/4=Theta(N^2)` edge phases.
+The flat construction is therefore genuinely high-fan-in and high-influence,
+not a disguised collection of independently paid local channels.
+
+#### Proof
+
+For a fixed future, uniform-norm nonexpansiveness cancels that future and
+gives
+
+```math
+d(z,z+e_i)
+\le\sum_(e:i\in I_e)|c_e(z)-c_e(z+e_i)|.            \tag{21.129}
+```
+
+Summing over `i` proves (21.126), and `E<=N(N-1)/2` gives (21.127).
+
+For sharpness, partition almost all edges into `g=floor(sqrt N)` equal
+cells.  In each cell, use a lookup among `2^t` public switching vectors.
+A probabilistic library makes every pair of switches disagree on a fixed
+fraction of every cell.  Changing one hidden bit then flips
+`Theta(N^(3/2))` coherently signed coefficients.  A positive-rate outer
+code over the `2^t` symbols makes two selected words differ on a fixed
+fraction of all `Theta(N^2)` edges.  If a symmetric hollow difference has
+`m` unordered entries of magnitude two, a random vertex bipartition and the
+sharp `p=1` Khintchine inequality give
+
+```math
+\max_x\left|\sum_(u<v)D_(uv)x_ux_v\right|
+\ge {m\over\sqrt(2N)},                              \tag{21.130}
+```
+
+which supplies the pairwise total-scale gap.
+
+For (21.128), write edge evaluation in any basis of alternating forms.  A
+nonzero basis vector is detected on at least `E/4` edges by the sampler in
+Theorem 21.24.  Double-counting coordinate--edge incidences proves both
+bounds. `square`
+
+Neighbour separation alone forces only a two-colouring of the hidden cube;
+the outer code is what turns incidence into a genuine information packing.
+The sharpness family need not be spectrally flat, uses an exponential public
+spin library, and uses same-support additive overlays.  The theorem therefore
+classifies the bounded-atom incidence resource, not low public-description
+or exact-sign disjoint composition.  Full details and audit are in
+[`drafts/bounded_fanin_broadcast_law.md`](drafts/bounded_fanin_broadcast_law.md)
+and
+[`drafts/bounded_fanin_broadcast_law_independent_audit.md`](drafts/bounded_fanin_broadcast_law_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

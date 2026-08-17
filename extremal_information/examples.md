@@ -2173,3 +2173,19 @@ Thus state-dependent dense broadcast escapes the local-state ceiling and
 forces `Omega(k)` response bits at total scale.  The price is explicit: a
 quadratic-size shared public base, dense bit incidence, and same-support
 additive contexts whose overlay is not itself an exact signing.
+
+## Example 103: bounded fan-in has exactly `t sqrt(N)` total-scale capacity
+
+For `O(N^2)` bounded quadratic atoms, if each atom reads at most `t` hidden
+bits, the sum of all neighbouring contextual gaps is at most the total
+bit--atom incidence.  Hence only `O(t sqrt N)` hidden coordinates can each
+have an `N^(3/2)` gap.  This is sharp even at the information level: a
+cellwise switching library followed by an outer code gives
+`exp(Omega(t sqrt N))` pairwise-separated exact signings.
+
+The example deliberately separates resources.  The sharp unrestricted
+family need not be flat and may use an exponential public library.  The
+flat alternating-form family is necessarily different: in every coordinate
+system its average edge fan-in is linear and every hidden bit changes a
+quadratic number of edge phases.  Dense broadcast, rather than a clever
+repackaging of local scalar channels, is the source of its macroscopic rate.

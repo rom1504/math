@@ -203,7 +203,12 @@ one of:
   `Theta(k)` hidden bits alter a constant density of constrained edge phases,
   every child stays spectrally flat, and same-support additive contexts give
   a fixed `k^(3/2)` packing gap. This is conditional on a quadratic shared
-  public base and does not preserve exact-sign closure under overlay.
+  public base and does not preserve exact-sign closure under overlay.  The
+  incidence boundary is now sharp: fan-in `t` supports at most
+  `O(t sqrt k)` total-scale hidden coordinates for any bounded-atom
+  presentation, and unrestricted exact signings attain that rate.  In every
+  hidden basis the flat Gram construction has linear average fan-in, so it
+  genuinely lies beyond independently paid local channels.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

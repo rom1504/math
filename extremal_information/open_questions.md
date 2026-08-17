@@ -317,9 +317,13 @@ constant density of constrained edges; one shared random dressing keeps
 every child spectrally flat, and a predeclared negative-clone overlay yields
 fixed `k^(3/2)` response separation.  The construction uses quadratic shared
 public advice and its same-support overlay leaves the exact-sign class.  The
-next discriminating target is to retain the positive rate under a disjoint
-bridge composition or an exact-sign parent with subquadratic public advice,
-or prove that one of those costs is unavoidable.
+bounded-fan-in alternative is now completely classified: fan-in `t` permits
+at most `O(t sqrt k)` total-scale hidden coordinates, and unrestricted exact
+signings attain this scale with a matching pairwise packing.  Moreover the
+flat alternating-form code necessarily has linear fan-in in every hidden
+basis.  The next discriminating target is therefore to retain the positive
+rate under a disjoint bridge composition or an exact-sign parent with concise
+public advice, or prove that one of those remaining costs is unavoidable.
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking

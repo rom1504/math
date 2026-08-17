@@ -1520,3 +1520,18 @@ Hidden description length alone is therefore not an incompressibility
 parameter.  One must also charge how widely each hidden coordinate changes
 the interaction, as well as shared public advice and the declared context
 language.
+
+## 68. Broadcast information is limited by total hidden incidence
+
+For a fixed public future language, optimization cannot make one bounded
+atom respond to more hidden coordinates than its coefficient actually
+reads.  Summed contextual influence is bounded by the total hidden
+coordinate--atom incidence.  With only `O(N^2)` bounded pair atoms, fan-in
+`t` therefore supports at most `O(t sqrt N)` coordinates having an
+`N^(3/2)` neighbouring response gap.
+
+This law is sharp for unrestricted quadratic signings, including a matching
+pairwise response packing.  Spectral flatness and concise public advice are
+separate resources.  A flat positive-rate family can evade the local regime
+only by making its hidden coordinates densely incident, by changing the
+normalization, or by leaving the bounded fixed-child presentation.
