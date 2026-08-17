@@ -345,6 +345,23 @@ not a special consequence of a Hadamard square identity.
    constructs such a span in arbitrary near-minimizers nor reconstructs
    the Boolean energy landscape.
 
+There is also a quantitative tensor boundary.  For the PC.3 seed, the two
+projective orbit-incidence rows are those in (SV.25).  At tensor depth `j`,
+the represented module remains multiplicity-free under the product action,
+orbit rows and characters are Cartesian products, and therefore
+
+```math
+\boxed{\nu_j=2^{-j}=N_j^{-1/4},\qquad N_j=16^j.} \tag{SV.31}
+```
+
+Indeed every local character is seen with largest weight exactly `1/2`, so
+every tensor character is seen with largest weight exactly `2^{-j}`.  Even
+exact symmetry thus converts uniform marginal deficit `d_j` into the useful
+conclusion `D_j=o(G_j)` by this theorem only when
+`d_j=o(N_j^{-1/4})`.  This is a condition-number limitation of the declared
+pole orbits, not a failure of twirling and not an impossibility theorem for a
+different visible action.
+
 ## 6. Verification
 
 Run
@@ -356,5 +373,5 @@ Run
 
 The script checks the switching actions, exact orbit weights, PC.3
 character polynomial and sharp relative spectrum, the mismatch constant,
-and the non-Hadamard Cayley benchmark using exact integer/rational
-arithmetic.
+the exact tensor visibility law through depth seven, and the non-Hadamard
+Cayley benchmark using exact integer/rational arithmetic.

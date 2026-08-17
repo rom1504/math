@@ -217,7 +217,19 @@ trace is zero, every Boolean quadratic energy is unchanged:
 y^T(H_j-\operatorname {diag}H_j)y=y^TH_jy.         \tag{ES.13}
 ```
 
-Thus this is not merely a weighted contraction construction.
+Thus this is not merely a weighted contraction construction.  The exact
+deficit ratios above use the diagonal-completed Hadamard roof `r_j=sqrt n_j`.
+For the hollow child `A_j=H_j-diag(H_j)`, the safe contraction scale
+`r'_j=sqrt(n_j)+1` gives deficits
+
+```math
+1-{13\over16}{\sqrt{n_j}\over\sqrt{n_j}+1},
+\qquad
+1-{1\over2}{\sqrt{n_j}\over\sqrt{n_j}+1},        \tag{ES.14}
+```
+
+whose excess tends to `5/16`.  Hollow Boolean energies are exact, but the
+hollow and completed operator roofs are not identical.
 
 ## 5. Exact scope and next boundary
 
@@ -240,7 +252,7 @@ growing generated port algebras with
 ```math
 \max_S d_S=o(1)
 \quad\hbox{but}\quad
-\max_\epsilon d_{\rm maj}(\epsilon)\ge c>0,       \tag{ES.14}
+\max_\epsilon d_{\rm maj}(\epsilon)\ge c>0,       \tag{ES.15}
 ```
 
 or whether regular-Hadamard/sign integrality forces a genuine coherence

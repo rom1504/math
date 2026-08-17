@@ -2729,3 +2729,118 @@ This proves that product synchronization solves the within-scale witness
 problem but not the scale-selection problem.  It is distinct from mantissa
 phase between tensor orders: the oscillation already occurs at the tensor
 endpoints.
+
+## Example 139: exact signs do not repair fixed-arity coherent loss
+
+Five Boolean ports in one order-16 regular Hadamard child have all sixteen
+odd-product Rayleigh deficits exactly `3/16`, while their all-positive
+majority witness has deficit `1/2`.  Common-top tensor amplification
+preserves the exact `5/16` completed-roof excess at every order `16^j`, and
+trace-zero diagonal deletion preserves all Boolean quadratic energies in a
+hollow exact signing.  At the valid hollow contraction scale
+`sqrt(n_j)+1`, the excess tends to `5/16`; it is not literally the same
+finite-order PSD defect.
+
+This is stronger than the weighted coherence falsifier in integrality but
+weaker asymptotically: the port arity and marginal deficit remain fixed, and
+the prescribed selector is not the full trust optimum.  It therefore makes
+the vanishing-marginal exact-sign question precise instead of deciding it.
+
+## Example 140: orbit visibility, not symmetry alone, controls synchronization
+
+For the hollow order-16 PC.3 signing, two commuting switching translations
+act multiplicity-freely on its three-dimensional pole span.  The two pole
+orbits see the three characters with weights `(0,1/2,1/2)` and
+`(1/2,1/2,0)`, so visibility `nu=1/2` turns individual deficit `1/5` into
+the sharp relative bound `D<=(2/5)G`.
+
+An order-eight non-Hadamard Cayley signing has Boolean Walsh-character poles
+with `nu=1`, showing that the mechanism is switching diagonalization plus
+visibility rather than the Hadamard identity.  A poorly visible character
+can still hide a large defect, so multiplicity-free symmetry by itself is
+not a dimension-free certificate.  Indeed PC.3 tensor depth `j` has exactly
+`nu_j=2^(-j)=N_j^(-1/4)`: the symmetry persists while its condition number
+grows.
+
+## Example 141: collective twirl observability beats decaying character visibility
+
+The PC.3 tensor action has character visibility `N^(-1/4)`, so recovering
+each character defect separately incurs a growing condition number.
+Nevertheless the average of the conjugated child operators has spectrum
+only `{-1,0,1}` at every depth.  Its top eigenspace is the simultaneous top
+space of all active products, and every majority selector belongs to their
+linear span.  A single gap-one operator comparison therefore bounds every
+selector deficit by twice the mean marginal deficit.
+
+This closes all diagonal switchings of the PC.3 tower as a source of
+vanishing-marginal coherent loss.  It also corrects the idea that bounded
+coordinate visibility is necessary: a collectively observable frame can be
+uniformly coercive even while each scalar character becomes poorly visible.
+
+## Example 142: the top-monomial coset exposes every natural seed dilution
+
+Even with arbitrary monomial seed factors, port-dependent auxiliary factors,
+and block-dependent direct mixtures, reproducing the concrete seed selector
+forces the average odd-channel deficit to be at least `3/32`.  The reason is
+that the positive-roof monomials form a strict subgroup which cannot
+represent that selector.  In the common-factor odd-monomial subclass, the
+full coordinate product retains at least three eighths of the prescribed
+selector defect.  Mixing in synchronized blocks only scales both losses
+together.
+
+Thus the finite exact-sign counterexample is a base case but not an
+amplification gadget.  Any asymptotic counterexample must change the seed
+nonmonomially or nonlocally, introduce a leading cross-block completion, or
+build a growing odd-product shell whose marginal quality genuinely improves.
+
+## Example 143: diffuse selectors let sparse exact-sign flips hide coherent loss
+
+In the PC.3 tensor tower, one explicit alternating endpoint has correlation
+`O(j^(-1/2))` with every one of the `4^j` active top poles.  Flip a
+`kappa/sqrt N` fraction of edges that are positive for this selector.  The
+selector loses `kappa+o(1)` of the spectral roof, while each pole loses only
+`O(j^(-1))+o(1)`; matrix concentration keeps the operator norm asymptotically
+`sqrt N`.
+
+This is a genuinely non-switching exact-sign obstruction to marginal
+coherence, and it survives hollowing.  It does not yet obstruct the full
+Boolean trust response because an undeclared spin may replace the damaged
+selector.
+
+## Example 144: the diffuse selector is visible on a sublinear leading-scale shore
+
+For the periodic endpoint in Example 143, the repeated-port field satisfies
+
+```math
+||h_j||_1=\sqrt{7/(2\mathop{\rm pi})}\,N_j\sqrt j+O(N_j).
+```
+
+This is not a numerical fit.  The exact PC.3 row law pairs the alternating
+local increments into iid centred variables of variance `7/2`, and
+Wasserstein Berry--Esseen gives the absolute Gaussian first moment with
+bounded error.  Repeating each of the `2j+1` port vertices
+`Theta(sqrt(N_j/j))` times therefore makes this one labelled response channel
+order `N_j^(3/2)` while using only `O(sqrt(N_jj))` new vertices.  Every edge
+inside that shore together contributes only `O(N_jj)=o(N_j^(3/2))`.
+
+This closes a potential scaling loophole in the certificate obstruction but
+does not by itself close its semantic loophole.  Example 145 rules out repair
+by another child spin for the fixed labelled field; free shore spins can
+still choose another endpoint word in an unconstrained parent.
+
+## Example 145: child-spin repair fails for a labelled PC.3 field
+
+The semantic loophole splits in two.  For the fixed periodic field of
+Example 144, sparse flips converge in operator norm to a rank-one penalty
+`kappa ee^T` inside the positive Hadamard eigenspace.  The normalized field
+direction has limiting cosine `rho=sqrt(2/pi)` with `e`.  A two-dimensional
+spherical optimization, including both quadratic signs, therefore bounds
+the flipped full Boolean trust response strictly below the unflipped Boolean
+witness whenever the field strength is small enough.  The explicit choice
+`kappa=1/2,lambda=1/10` gives normalized gap greater than `0.0146`.
+
+Thus no alternative old-child spin repairs the labelled channel.  An
+ordinary appended parent still optimizes the new shore endpoint itself; it
+may choose a different field.  The example separates full response to a
+declared context from realization of that context by free exact-sign
+vertices.

@@ -26,6 +26,11 @@ The program has reached **Level 2 (explanatory theory)** and has several
 Level-3 generative results.  It is not yet a finished theory and it is not a
 proof of the motivating convergence statement.
 
+The compact working research card is
+[`ACTIVE_THEORY_PORTFOLIO.md`](ACTIVE_THEORY_PORTFOLIO.md).  The longer
+`THEORY_PORTFOLIO.md` is retained as branch history rather than fed to every
+working agent.
+
 The latest bridge checkpoint gives one compact instance of the theory's
 full static-to-dynamic law.  For Boolean port systems, the exact contextual
 state is the projective row histogram, its fixed-error response entropy is
@@ -46,6 +51,38 @@ repairs it by twirling.  Even exact zero-defect closure does not force a
 limit unless the empirical factor phase converges; an exact-sign hierarchy
 has cap subsequences `1` and `1/2`.  These are structured theory benchmarks,
 not claims about the minimizing sequence.
+
+The sign-specific boundary is now sharper.  At its diagonal-completed roof,
+an exact-sign five-port seed has all product deficits `3/16` but majority
+defect `1/2`; tensoring and hollow diagonal deletion preserve the leading
+energy gap.  Conversely, a projectively closed multiplicity-free
+switching action forces relative synchronization in terms of its quantitative
+orbit--character visibility and edge-orbit error.  Visibility can itself
+decay under tensoring.  A stronger collective mechanism now closes every
+diagonal switching of the PC.3 tower: the pole-conjugation twirl has a
+depth-independent spectral gap, forcing selector loss to be at most twice
+the mean product loss.
+
+The fixed five-port bad seed is not an asymptotic gadget either.  Its
+positive-roof monomial quotient gives a `3/32` marginal floor for every
+monomial tensor/direct-mixture amplification that reproduces the prescribed
+selector blockwise, even with block- and port-dependent auxiliary factors;
+its common-factor subclass obeys a sharper `3/8` selector law.  Any
+remaining negative construction must use a genuinely nonmonomial/nonlocal
+lift or a growing seed.
+
+That remaining construction now exists at certificate level.  One explicit
+PC.3 endpoint is uniformly `O(j^(-1/2))`-correlated with its active pole
+frame.  Sparse selector-targeted exact-sign flips leave every pole
+asymptotically top and preserve operator scale, while the selector loses a
+fixed amount.  The associated port field is
+`sqrt(7/(2pi))Nsqrt(j)+O(N)` in `l_1`, so a leading-scale query needs only
+`O(sqrt(Nj))` new vertices and their internal block is subleading.  A
+two-dimensional spherical relaxation proves that no Boolean child spin can
+repair a fixed labelled field of sufficiently small strength: the unflipped
+and flipped full responses remain separated by a constant times `N^(3/2)`.
+Free endpoint spins in an ordinary completed parent may still switch to a
+different labelled channel.  No claim about `M_n` follows.
 
 The first investigation gave four precise conclusions.
 

@@ -197,8 +197,33 @@ def check_non_hadamard_cayley() -> int:
     return 32
 
 
+def check_tensor_visibility() -> int:
+    """The PC.3 orbit--character visibility has an exact tensor law."""
+    seed_rows = (
+        (Fraction(0), Fraction(1, 2), Fraction(1, 2)),
+        (Fraction(1, 2), Fraction(1, 2), Fraction(0)),
+    )
+    checks = 0
+    for depth in range(1, 8):
+        visibility = Fraction(1)
+        for character_word in product(range(3), repeat=depth):
+            best = Fraction(0)
+            for orbit_word in product(range(2), repeat=depth):
+                weight = Fraction(1)
+                for orbit, character in zip(orbit_word, character_word):
+                    weight *= seed_rows[orbit][character]
+                best = max(best, weight)
+            assert best == Fraction(1, 2**depth)
+            visibility = min(visibility, best)
+            checks += 1
+        assert visibility == Fraction(1, 2**depth)
+        assert visibility**4 == Fraction(1, 16**depth)
+        checks += 2
+    return checks
+
+
 def main() -> None:
-    checks = check_pc3() + check_non_hadamard_cayley()
+    checks = check_pc3() + check_non_hadamard_cayley() + check_tensor_visibility()
     print(f"sign-switching visibility checks passed: {checks}")
 
 

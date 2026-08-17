@@ -12283,6 +12283,476 @@ checks are in
 and
 [`experiments/verify_factorized_port_phase_law.py`](experiments/verify_factorized_port_phase_law.py).
 
+### Theorem 21.58 (exact signs permit a fixed-arity coherence gap)
+
+There is a symmetric regular Hadamard matrix `H_0` of order `16` and five
+Boolean ports `w_1,...,w_5` for which every one of the `16` odd product
+poles `z_S=product_(i in S)w_i` satisfies
+
+```math
+{z_S^TH_0z_S\over4\cdot16}={52\over64},
+\qquad d_S={3\over16},                             \tag{21.351}
+```
+
+while the all-positive majority selector `x` satisfies
+
+```math
+{x^TH_0x\over4\cdot16}={32\over64},
+\qquad d_(maj)={1\over2}.                         \tag{21.352}
+```
+
+Thus the coherent selector loss exceeds every separately inspected pole
+loss by `5/16`.  This persists exactly under
+
+```math
+H_j=H_0^{\otimes j},\qquad
+w_(i,j)=w_i\otimes\mathbf1_(16^{j-1}),            \tag{21.353}
+```
+
+at orders `n_j=16^j` and scale `sqrt(n_j)n_j`.  Since
+`tr(H_j)=0`, deleting the diagonal produces a hollow exact signing without
+changing any Boolean quadratic energy.  The exact displayed deficits use
+the diagonal-completed Hadamard roof `sqrt(n_j)`.  For the hollow child
+`A_j=H_j-diag(H_j)`, one may take the valid contraction scale
+`r'_j=sqrt(n_j)+1`; then the two deficits tend respectively to `3/16` and
+`1/2`, and their excess tends to `5/16`.  The result is therefore an
+exact-sign, external-`n^(3/2)` certificate obstruction, not just a weighted-
+contraction example, but the hollow and completed spectral roofs must not be
+identified.
+
+The qualification is essential: arity is fixed, the marginal deficit is
+the nonvanishing constant `3/16`, and (21.352) concerns the prescribed
+same-field selector rather than a separated full Boolean trust optimum.
+At the order-16 three-port PC.3 seed the four projective selector witnesses
+are exactly its four projective odd-product poles, so no such separation is
+possible for any quadratic child on that seed.  At PC.3 tensor depth two
+the analogous two projective sets intersect in only one of sixteen points;
+the rigidity is genuinely seed-specific.  The proof and 98,467 exact checks
+are in
+[`drafts/exact_sign_product_coherence_gap.md`](drafts/exact_sign_product_coherence_gap.md)
+and
+[`experiments/verify_exact_sign_product_coherence_gap.py`](experiments/verify_exact_sign_product_coherence_gap.py).
+
+### Theorem 21.59 (switching visibility converts marginal deficits into synchronization)
+
+Let a group `Gamma=(Z/2Z)^s` act by commuting signed-permutation
+involutions on a subspace `U`, and suppose its representation on `U` is
+multiplicity-free.  Let a projectively `Gamma`-invariant Boolean pole family
+span `U`.  For one representative `z_j` of each projective orbit, put
+
+```math
+p_(j,chi)=||Pi_chi(z_j/sqrt n)||_2^2,
+\qquad
+nu=\min_chi\max_jp_(j,chi)>0.                    \tag{21.354}
+```
+
+For a hollow signing `A`, choose `r>=||A||_op`, let every declared pole have
+Rayleigh deficit at most `d`, and let `k_i` count unordered edges on which
+the `i`th signed switching conjugate differs from `A`.  If `G` and `R` are
+the pole Gram and normalized Rayleigh matrices and `D=G-R`, then
+
+```math
+\boxed{
+0\preceq D\preceq
+\left({d\over nu}+\sum_i{\sqrt{2k_i}\over r}\right)G.}
+                                                               \tag{21.355}
+```
+
+The sharper nonuniform coefficient is
+
+```math
+delta_(vis)=\max_chi\min_(j:p_(j,chi)>0)
+ {\bar d_j\over p_(j,chi)},                     \tag{21.356}
+```
+
+in place of `d/nu`, where `bar d_j` is the orbit-average deficit.  The proof
+twirls the positive compressed defect.  Multiplicity freeness diagonalizes
+the twirl, positivity lets each visible orbit bound a character defect, and
+
+```math
+||C-\bar C||_op
+\le{1\over2}\sum_i||[A/r,P_i]||_op
+\le\sum_i{\sqrt{2k_i}\over r}.                  \tag{21.357}
+```
+
+This identifies visibility—not multiplicity freeness alone—as the missing
+quantitative datum.  On the hollow PC.3 order-16 signing,
+`r=5,nu=1/2,d=1/5`, and the sharp relative spectrum is
+`(0,2/5,2/5)`.  A non-Hadamard order-eight Cayley signing gives an exact
+`nu=1` character-diagonal test.  Under `j`-fold PC.3 tensoring, however, the
+two orbit-incidence rows tensor and
+
+```math
+\nu_j=2^{-j}=N_j^{-1/4},\qquad N_j=16^j.         \tag{21.358}
+```
+
+Thus this declared symmetry proves vanishing relative defect from uniform
+marginal deficit only at the stronger scale `d_j=o(N_j^(-1/4))`; visibility
+itself can be lost under growth.  The theorem neither constructs a visible
+action in arbitrary near-minimizers nor makes a generic `o(n^2)` edit budget
+small at `r=Theta(sqrt n)`.  Full proof, audit, and 3,363 exact checks are in
+[`drafts/sign_switching_visibility_synchronization.md`](drafts/sign_switching_visibility_synchronization.md),
+[`drafts/sign_switching_visibility_synchronization_audit.md`](drafts/sign_switching_visibility_synchronization_audit.md),
+and
+[`experiments/verify_sign_switching_visibility.py`](experiments/verify_sign_switching_visibility.py).
+
+### Theorem 21.60 (a gapped conjugation twirl forces collective coherence)
+
+Let `T` be a real symmetric contraction, let `Z` be a finite nonempty set of
+Boolean vectors, and put
+
+```math
+B_z=M_zTM_z,
+\qquad
+K={1\over|Z|}\sum_(z\in Z)B_z,
+\qquad M_z=diag(z).                               \tag{21.359}
+```
+
+Suppose
+
+```math
+spec(K)\subseteq[-1,1-gamma]\cup\{1\}.           \tag{21.360}
+```
+
+Then every Boolean `x in span_R(Z)` satisfies the operator inequality
+
+```math
+\boxed{
+I-M_xTM_x\preceq {2\over gamma}(I-K).}           \tag{21.361}
+```
+
+Indeed the eigenvalue-one space of `K` is the intersection of the kernels of
+the positive defects `I-B_z`, equivalently the common eigenvalue-one spaces
+of the `B_z`.  Linearity puts this common kernel inside the eigenvalue-one
+space of `M_xTM_x`; the gap of `K` then compares the two positive operators.
+Hence,
+for `||s||_2^2=n`, the selector deficit is at most
+
+```math
+{2\over gamma|Z|}\sum_(z\in Z)
+ \left(1-{s^TM_zTM_zs\over n}\right).            \tag{21.362}
+```
+
+For the order-16 PC.3 seed, the conjugation twirl over its four active poles
+obeys the exact finite identity
+
+```math
+K_0^3=K_0,
+\qquad mult_(K_0)(1,0,-1)=(3,10,3).              \tag{21.363}
+```
+
+At tensor depth `j`, the `4^j` active odd-product poles give
+`K_j=K_0^(tensor j)`, so `gamma=1` at every depth.  Since every majority
+selector lies in their span, define
+
+```math
+d_z(s)=1-{s^TM_zT_jM_zs\over n_j}
+```
+
+and define `d_epsilon(s)` analogously with the endpoint selector in place of
+`z`.  Every diagonal switching `s` of the PC.3 child then satisfies
+
+```math
+\boxed{
+d_epsilon(s)\le {2\over4^j}\sum_zd_z(s)
+                 \le2\max_zd_z(s).}             \tag{21.364}
+```
+
+Thus vanishing marginal product deficits force every selector deficit to
+vanish throughout this exact-sign perturbation class.  Diagonal deletion
+preserves all Boolean energies because the completed signing has trace zero.
+For the hollow child the scale `r'_j=sqrt(n_j)+1` is a valid contraction
+roof; its deficits are `(1-c_j)+c_jd` with
+`c_j=sqrt(n_j)/(sqrt(n_j)+1)`, so (21.364) and the same vanishing implication
+continue to hold.  The inherited `sqrt(n_j)n_j` scale alone is a Boolean
+energy roof, not necessarily the hollow operator norm.
+The theorem does not cover genuinely non-switching sign children or compare
+full Boolean trust optima.  Proof and exact order-256/4096 stress tests are
+in
+[`drafts/pc3_diagonal_switching_coherence.md`](drafts/pc3_diagonal_switching_coherence.md)
+and
+[`experiments/verify_pc3_diagonal_switching_coherence.py`](experiments/verify_pc3_diagonal_switching_coherence.py).
+
+### Theorem 21.61 (the fixed five-port seed cannot be diluted by monomial amplification)
+
+For the five-port seed of Theorem 21.58, every odd seed product has
+normalized Rayleigh value `13/16`, while its majority selector has value
+`1/2`.  First let `p` be odd and allow arbitrary monomial seed factors,
+port-dependent Boolean auxiliary factors, and arbitrary weighted direct
+mixtures of blocks.  If the majority output agrees projectively with the
+prescribed selector `x` on every concrete seed row in every block, the odd
+active-product deficits obey
+
+```math
+\boxed{
+{1\over2^{p-1}}\sum_(B\text{ odd})d_B\ge {3\over32},
+\qquad \max_(B\text{ odd})d_B\ge {3\over32}.}    \tag{21.365}
+```
+
+Indeed the positive-roof seed monomials are exactly the subgroup
+`K={0,5,9,12,17,20,24,29}` of `F_2^5`; two concrete seed rows agree on every
+`K`-monomial but `x` separates them.  Thus each block's exponent map is
+nontrivial modulo `K`.  At least half of the uniformly sampled odd subsets
+map outside `K`, where every product loses at least `3/16`.  Averaging over
+blocks leaves one common labelled channel exposed.
+
+There is a sharper quantitative law for the common-factor subclass.  Let
+`p` be odd, let each lifted port be a signed odd seed monomial times one
+common auxiliary Boolean factor `u`, and suppose the lifted majority witness
+remains projectively `x tensor u`.  If `s=<u,Su>` for a self-adjoint
+auxiliary contraction `S`, then the full active Fourier pole has an odd seed
+product on the first factor and
+
+```math
+d_(sel)=1-{s\over2},
+\qquad
+d_(full)=1-{13s\over16},
+\qquad
+\boxed{d_(full)\ge {3\over8}d_(sel).}            \tag{21.366}
+```
+
+The constant is sharp at `s=1`, and the stable form is
+
+```math
+d_(full)\ge {3\over8}d_(sel)-{11\over8}eta.      \tag{21.367}
+```
+
+Repeated selector composition is worse: for `L` seed copies, an active
+full-leaf pole has value `(13/16)^L` and hence deficit tending to one.
+Exact-sign tensor decoration and trace-zero hollowing satisfy the theorem;
+the declared completed roof and the hollow operator roof differ by at most
+one.
+
+Thus arbitrary monomial tensor decoration and direct-mixture dilution, odd
+replication or cancelling pairs, and normalized-operator-`o(1)` repairs
+cannot turn the fixed seed into a vanishing-marginal obstruction.  A
+nonmonomial/nonlocal lift, a leading cross-block completion, or a genuinely
+growing seed remains outside scope.  Full trust optima are not compared.
+The proof, independent audit, and 140,457 checks are in
+[`drafts/fixed_seed_amplification_no_go.md`](drafts/fixed_seed_amplification_no_go.md),
+[`drafts/fixed_seed_amplification_no_go_audit.md`](drafts/fixed_seed_amplification_no_go_audit.md),
+and
+[`experiments/verify_fixed_seed_amplification_no_go.py`](experiments/verify_fixed_seed_amplification_no_go.py).
+
+### Theorem 21.62 (sparse exact-sign flips create vanishing marginal loss and constant coherent loss)
+
+Let `H` be a symmetric entrywise-sign matrix of square order `N`, with
+`H^2=NI` and `tr(H)=0`.  Put `r=sqrt N`.  Let `Z` be Boolean positive
+`r`-eigenvectors and let another Boolean positive eigenvector `x` satisfy
+
+```math
+alpha_N=\max_(z\in Z){|x^Tz|\over N}=o(1),
+\qquad \log|Z|=o(N^{3/2}).                       \tag{21.368}
+```
+
+For every fixed `0<kappa<1`, there is a symmetric exact-sign matrix `H'`
+with `r'=||H'||_op=(1+o(1))sqrt N` such that
+
+```math
+0\le1-{z^TH'z\over r'N}
+ \le kappa alpha_N^2+o(1)\quad(z\in Z),          \tag{21.369}
+```
+
+uniformly, while
+
+```math
+{x^TH'x\over r'N}=1-kappa+o(1).                 \tag{21.370}
+```
+
+Construct `H'` by independently flipping, with probability
+`q=kappa/sqrt N`, every off-diagonal edge positive for `x`.  The expected
+energy loss of a pole `z` is exactly
+
+```math
+q\{rN+(x^Tz)^2-N\},                             \tag{21.371}
+```
+
+whereas `x` has `[N(N-1)+rN]/4` eligible edges.  Scalar Bernstein is uniform
+under (21.368), matrix Bernstein contributes only
+`O(N^(1/4)sqrt(log N)+log N)`, and
+
+```math
+E H'=(1-q)H-qxx^T+q(diag(H)+I).                 \tag{21.372}
+```
+
+The first two terms commute and have norm at most `sqrt N+o(sqrt N)`;
+Frobenius norm gives the reverse bound.  Hollowing preserves every Boolean
+energy and changes the operator roof by at most one.
+
+The diffuseness hypothesis holds in the PC.3 tensor tower.  For depth `j`,
+take endpoint signs
+
+```math
+epsilon_0=1,
+\qquad epsilon_(2t+1)=(-1)^t,
+\qquad epsilon_(2t+2)=1.                        \tag{21.373}
+```
+
+Then its majority selector `x_epsilon` and `4^j` active poles satisfy
+
+```math
+\boxed{
+\max_(z\in Z_j){|x_epsilon^Tz|\over16^j}
+ =O(j^{-1/2}).}                                  \tag{21.374}
+```
+
+After cancelling the common base pole, rows are iid under the three-atom law
+`(X,Y)=(1,1),(1,-1),(-1,1)` with probabilities `1/4,1/2,1/4`.  The selector
+is the sign of `1+sum_t((-1)^tX_t+Y_t)` and every pole is a product of local
+characters in `{1,X,Y,XY}`.  Berry--Esseen gives uniform
+`O(m^(-1/2))` anti-concentration after arbitrary factor deletion; each
+nonconstant character has mean modulus at most `1/2`.  Eliminating its
+factors gives a geometrically weighted error series and proves (21.374).
+
+Combining (21.369)--(21.374) yields hollow exact signings with every declared
+active-product deficit `o(1)` but one prescribed same-field selector deficit
+`kappa+o(1)`.  This is the sought scalable exact-sign **certificate**
+obstruction.  It does not separate full Boolean trust optima: another spin
+may repair the response at this stage; Theorem 21.64 subsequently rules out
+that repair for one leading labelled field.  Proof, independent audits, and exact finite
+checks through depths two and three plus the factor law through depth ten are
+in
+[`drafts/pc3_diagonal_switching_coherence.md`](drafts/pc3_diagonal_switching_coherence.md),
+[`drafts/pc3_sparse_flip_coherence_audit.md`](drafts/pc3_sparse_flip_coherence_audit.md),
+and
+[`experiments/verify_pc3_diagonal_switching_coherence.py`](experiments/verify_pc3_diagonal_switching_coherence.py).
+
+### Corollary 21.63 (the diffuse PC.3 field reaches leading scale on a sublinear shore)
+
+Let `W_j` have the `p_j=2j+1` repeated PC.3 ports as columns, let `epsilon_j`
+be the periodic endpoint in (21.373), put `h_j=W_jepsilon_j`, and set
+`N_j=16^j`.  Then
+
+```math
+\boxed{
+ ||h_j||_1=
+ \sqrt{7\over2\mathop{\rm pi}}\,N_j\sqrt j+O(N_j).}
+                                                               \tag{21.375}
+```
+
+In particular, if
+
+```math
+m_j=\left\lfloor\lambda\sqrt{N_j/j}\right\rfloor
+```
+
+for fixed `lambda>0`, repeating every port `m_j` times gives
+
+```math
+m_j||h_j||_1=
+ \left(\lambda\sqrt{7\over2\mathop{\rm pi}}+o(1)\right)
+ N_j^{3/2},
+\qquad
+m_jp_j=O(\sqrt{N_jj})=o(N_j).                  \tag{21.376}
+```
+
+Indeed the uniform PC.3 row law turns `||h_j||_1/N_j` into
+`E|1+sum_(t<j)A_t|`, with the independent variables from Theorem 21.62.
+Their means are `(-1)^t/2`, and their variances are `3/4` for even `t` and
+`11/4` for odd `t`.  Pairing consecutive increments gives iid bounded
+centred variables of variance `7/2`.  Wasserstein Berry--Esseen applied to
+the one-Lipschitz absolute-value function gives the Gaussian first absolute
+moment with `O(1)` error; the initial constant and possible odd leftover
+increment are bounded.  This proves (21.375).
+
+Thus the sparse-flip certificate can be queried at the full `N_j^(3/2)`
+scale by only a sublinear number `s_j=m_jp_j` of port vertices.  Any exact-
+sign completion internal to that shore costs at most
+`O(s_j^2)=O(N_jj)=o(N_j^(3/2))`.  The remaining issue is genuinely
+contextual: `m_jh_j` is the labelled channel in which the replicas use the
+prescribed endpoint, whereas in a full parent the new spins and the child
+spin optimize jointly and may repair it.
+
+### Theorem 21.64 (a labelled full Boolean response retains a fixed sparse-flip gap)
+
+For a hollow child `A`, define its labelled trust response by
+
+```math
+\mathcal B_A(g)=
+ \max_{y\in\{\mathord\pm1\}^N,\ \sigma\in\{\mathord\pm1\}}
+ \left\{{\sigma\over2}y^TAy+y^Tg\right\}.      \tag{21.377}
+```
+
+Fix `0<kappa<1`.  Let `A_j` be the unflipped hollow PC.3 Hadamard child.
+There is a choice of sparse-flip children `A'_j` from the construction of
+Theorem 21.62 for its periodic selector such that the following holds.  Set
+
+```math
+rho=\sqrt{2/\mathop{\rm pi}},\qquad
+s=\sqrt{1-rho^2},\qquad b={\lambda\sqrt7\over2}.
+```
+
+If
+
+```math
+0<b<\min\left\{{2kappa(rho-s)\over rho^2},
+                  2(2-kappa)rho\right\},       \tag{21.378}
+```
+
+then, for `m_j=floor(lambda sqrt(N_j/j))`,
+
+```math
+\boxed{
+ \mathcal B_{A_j}(m_jh_j)-\mathcal B_{A'_j}(m_jh_j)
+ \ge(\delta+o(1))N_j^{3/2},}
+\quad
+\delta=\min\left\{
+b(rho-s)-{b^2rho^2\over2kappa},
+brho-{b^2\over2(2-kappa)}\right\}>0.            \tag{21.379}
+```
+
+To prove this, put `T_j=H_j/sqrt(N_j)`, `e_j=x_j/sqrt(N_j)`, and
+`f_j=h_j/||h_j||_2`.  The exact row law and Corollary 21.63 give
+
+```math
+T_je_j=e_j,\qquad T_jf_j=f_j,\qquad
+e_j^Tf_j\longrightarrow rho,\qquad
+||h_j||_2^2=N_j(7j/4+O(1)).                     \tag{21.380}
+```
+
+On the simultaneous concentration event from Theorem 21.62,
+
+```math
+{H'_j\over\sqrt{N_j}}=T_j-kappa e_je_j^T+o_{op}(1). \tag{21.381}
+```
+
+Hollowing contributes only `o_op(1)`.  Relax `y=sqrt(N_j)u` to the unit
+sphere and decompose `u` into the two eigenspaces of the involution `T_j`.
+Writing `t=e_j^Tu`, the negative component only subtracts from the quadratic
+term, while (21.380) gives
+
+```math
+f_j^Tu\le rho|t|+s+o(1).
+```
+
+Since `m_j||h_j||_2/N_j -> b`, the positive quadratic channel is at most
+
+```math
+{1\over2}+bs+max_{a\ge0}\{brho a-kappa a^2/2\}+o(1)
+\le {1\over2}+bs+{b^2rho^2\over2kappa}+o(1).    \tag{21.382}
+```
+
+In the negative channel, if `a` is the norm of the positive-eigenspace
+component, the quadratic and linear terms are at most
+`1/2-(1-kappa/2)a^2+ba+o(1)`.  Hence that channel is at most
+
+```math
+{1\over2}+{b^2\over2(2-kappa)}+o(1).            \tag{21.383}
+```
+
+For the unflipped child, the Boolean pole `x_j=sgn(h_j)` gives the lower
+bound `1/2+brho+o(1)`.  Subtraction proves (21.379).  For example,
+`kappa=1/2,lambda=1/10` gives `delta>0.0146`.
+
+This upgrades the sparse-flip construction from a prescribed-spin
+certificate failure to a genuine full Boolean response separation for one
+fixed **labelled linear-field context**.  It is not yet an unconstrained
+exact-sign parent separation: if the repeated port vertices are free, their
+endpoint word optimizes too.  Proof and normalization details are in
+[`drafts/pc3_diagonal_switching_coherence.md`](drafts/pc3_diagonal_switching_coherence.md).
+An independent audit is in
+[`drafts/pc3_labelled_response_gap_audit.md`](drafts/pc3_labelled_response_gap_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

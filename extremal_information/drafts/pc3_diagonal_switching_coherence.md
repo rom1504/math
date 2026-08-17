@@ -534,6 +534,181 @@ from DS.2.  Diagonal switching keeps the gapped twirl fixed, whereas sparse
 edge flips target a selector whose overlap with every individual twirl pole
 is diffuse.
 
+### Corollary DS.5 (the diffuse endpoint has a leading-scale sublinear shore)
+
+Let `W_j` have the `p_j=2j+1` repeated PC.3 ports as columns, let `epsilon_j`
+be (DS.35), and put `h_j=W_j epsilon_j`.  Then
+
+```math
+\boxed{
+ ||h_j||_1=
+ \sqrt{7\over2\mathop{\rm pi}}\,n_j\sqrt j+O(n_j).}
+                                                               \tag{DS.47}
+```
+
+Consequently, for any fixed `lambda>0`,
+
+```math
+m_j=\left\lfloor\lambda\sqrt{n_j/j}\right\rfloor             \tag{DS.48}
+```
+
+copies of each port give
+
+```math
+m_j||h_j||_1=
+ \left(\lambda\sqrt{7\over2\mathop{\rm pi}}+o(1)\right)
+ n_j^{3/2},
+\qquad
+m_jp_j=O(\sqrt{n_jj})=o(n_j).                 \tag{DS.49}
+```
+
+#### Proof
+
+The common base pole has modulus one and hence disappears inside the
+absolute value.  Under the uniform row measure, therefore,
+
+```math
+{||h_j||_1\over n_j}
+=\mathbb E\left|1+\sum_{t<j}A_t\right|,         \tag{DS.50}
+```
+
+with the independent variables in (DS.38).  Directly from (DS.37),
+
+```math
+\mathbb EA_t={(-1)^t\over2},\qquad
+\mathop{\rm Var}(A_t)=
+\begin{cases}3/4,&t\text{ even},\\11/4,&t\text{ odd}.
+\end{cases}                                    \tag{DS.51}
+```
+
+Pair consecutive increments.  The resulting bounded variables are iid,
+centred, and have variance `7/2`.  Wasserstein Berry--Esseen, applied to the
+one-Lipschitz function `|.|`, gives the Gaussian absolute first moment with
+an `O(1)` error; the initial `1` and the one leftover increment at odd depth
+alter it by only `O(1)`.  Since
+`sqrt(7/4) E|N(0,1)|=sqrt(7/(2 pi))`, this proves (DS.47), including its
+displayed `O(n_j)` error; (DS.48)--(DS.49) are immediate. `square`
+
+The repeated shore has `s_j=m_jp_j` vertices, so an arbitrary exact-sign
+completion internal to it contributes at most `O(s_j^2)=O(n_jj)=o(n_j^(3/2))`.
+This does not solve the full-response problem: `m_jh_j` is the labelled
+channel in which all replicas of port `i` use spin `epsilon_i`; in an
+unconstrained parent those spins and the old child spin optimize jointly and
+may repair the damaged channel.
+
+### Theorem DS.6 (the labelled full Boolean response cannot repair the sparse-flip loss)
+
+For a hollow child `A` and field `g`, write its labelled trust response
+
+```math
+\mathcal B_A(g)=
+ \max_{y\in\{\mathord\pm1\}^N,\ \sigma\in\{\mathord\pm1\}}
+ \left\{{\sigma\over2}y^TAy+y^Tg\right\}.       \tag{DS.52}
+```
+
+Fix `0<kappa<1`, use the sparse-flip children `A'_j` of Proposition DS.3
+with the periodic PC.3 selector, and let `A_j` be the unflipped hollow
+Hadamard child.  Put
+
+```math
+rho=\sqrt{2/\mathop{\rm pi}},\qquad
+s=\sqrt{1-rho^2},\qquad b={\lambda\sqrt7\over2}. \tag{DS.53}
+```
+
+Whenever
+
+```math
+0<b<\min\left\{{2kappa(rho-s)\over rho^2},
+                  2(2-kappa)rho\right\},        \tag{DS.54}
+```
+
+and `m_j=floor(lambda sqrt(n_j/j))`, there is a fixed `delta>0` such that
+
+```math
+\boxed{
+ \mathcal B_{A_j}(m_jh_j)-\mathcal B_{A'_j}(m_jh_j)
+ \ge(\delta+o(1))n_j^{3/2},}
+\quad
+\delta=\min\left\{
+b(rho-s)-{b^2rho^2\over2kappa},
+brho-{b^2\over2(2-kappa)}\right\}>0.             \tag{DS.55}
+```
+
+Thus the construction is a genuine full Boolean response collision for one
+predeclared labelled linear-field context, not only a bad prescribed child
+spin.
+
+#### Proof
+
+Let `T_j=H_j/sqrt(n_j)`, `e_j=x_j/sqrt(n_j)`, and
+`f_j=h_j/||h_j||_2`.  Product closure gives
+`T_je_j=e_j` and `T_jf_j=f_j`.  Besides (DS.47), the exact increment law gives
+
+```math
+||h_j||_2^2=n_j(7j/4+O(1)),
+\qquad e_j^Tf_j\longrightarrow rho.             \tag{DS.56}
+```
+
+The matrix concentration event in Proposition DS.3 and (DS.34) imply
+
+```math
+{H'_j\over\sqrt{n_j}}
+=T_j-kappa e_je_j^T+o_{op}(1).                  \tag{DS.57}
+```
+
+Hollowing changes this by `o_op(1)`.  Relax a Boolean `y` to
+`y=sqrt(n_j)u`, `||u||_2=1`.  The normalized linear coefficient tends to
+
+```math
+{m_j||h_j||_2\over n_j}\longrightarrow b.       \tag{DS.58}
+```
+
+Decompose `u=u_++u_-` into the two eigenspaces of `T_j` and put
+`t=e_j^Tu=e_j^Tu_+`.  Both `e_j` and `f_j` lie in the positive space, so
+`f_j^Tu=f_j^Tu_+`; moreover
+`u^TT_ju/2=1/2-||u_-||_2^2`.  Resolving `f_j` into its `e_j` component and
+its orthogonal positive component gives, uniformly,
+
+```math
+f_j^Tu\le rho t+s\sqrt{1-t^2}+o(1)
+          \le rho|t|+s+o(1).                    \tag{DS.59}
+```
+
+Consequently
+
+```math
+{\mathcal B^{(+)}_{A'_j}(m_jh_j)\over n_j^{3/2}}
+\le {1\over2}+bs+max_{a\ge0}
+       \{brho a-kappa a^2/2\}+o(1)
+\le {1\over2}+bs+{b^2rho^2\over2kappa}+o(1).   \tag{DS.60}
+```
+
+For the negative quadratic channel, the same eigenspace decomposition gives
+
+```math
+{\mathcal B^{(-)}_{A'_j}(m_jh_j)\over n_j^{3/2}}
+\le {1\over2}+\max_{0\le a\le1}
+ \{-(1-kappa/2)a^2+ba\}+o(1)
+\le {1\over2}+{b^2\over2(2-kappa)}+o(1).         \tag{DS.60a}
+```
+
+For the unflipped child, the Boolean vector `x_j=sgn(h_j)` is a positive
+Hadamard pole, and hence
+
+```math
+{\mathcal B_{A_j}(m_jh_j)\over n_j^{3/2}}
+\ge {1\over2}+{m_j||h_j||_1\over n_j^{3/2}}
+={1\over2}+brho+o(1).                            \tag{DS.61}
+```
+
+Subtracting proves (DS.55). `square`
+
+For example `kappa=1/2,lambda=1/10` gives the rigorous displayed lower
+constant `delta>0.0146`.  The query is fixed before optimizing `y`, so this
+does not pin the replicas inside an ordinary unconstrained quadratic parent;
+the passage from labelled response separation to such a parent is a distinct
+realization problem.
+
 For reference, the exact finite maxima in (DS.36) for `j=2,...,10` are
 
 ```text

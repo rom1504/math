@@ -716,8 +716,10 @@ regular-Hadamard tensor hierarchy, and exact positive-pole closure already
 fixes its child cap at `n^(3/2)/2`.
 
 The weakest useful reconnection question is instead the following agent-
-authored hypothesis.  Along a near-liminf sequence `A_n`, can one construct,
-without enumerating its full maximizing-spin landscape,
+authored hypothesis.  Predeclare, independently of the signing, a family of
+at most `exp(o(n))` admissible port systems.  Along a near-liminf sequence
+`A_n`, can one select an `o(n)`-bit-indexed member, without enumerating its
+full maximizing-spin landscape,
 
 ```math
 p_n={1\over2}\log_2n+O(1),
@@ -753,9 +755,90 @@ vertices can be completed at cost `O(n)`.  This would be a strict response
 reduction for actual liminf objects, but would still require a separate
 scale-changing reuse theorem before saying anything about convergence.
 
-NMSS is demonstrably weaker than the original optimization: it controls only
+NMSS has a strictly query-narrower conclusion than the original optimization:
+it controls only
 `Theta(sqrt n)` selector words and one rank-`O(log n)` continuation language,
 not all `2^n` spins or any cross-order recurrence.  It becomes circular if
-the ports are chosen by tabulating maximizers, if Gram data replace the
-histogram, or if compression of the completed parent is mistaken for proof
-that the parent is itself near-minimizing.
+the port description itself encodes a maximizing-spin table, if Gram data
+replace the histogram, or if compression of the completed parent is mistaken
+for proof that the parent is itself near-minimizing.  More cautiously, its
+conclusion is query-narrower but is not yet known to be mathematically easier.
+The robust spectral product theorem approximates the roof `rn/2`; it proves
+NMSS only in a class where `rn/2-Q(A_n)=o(n^(3/2))`, and therefore cannot be
+silently applied if the true asymptotic cap lies below the spectral roof by a
+fixed amount.
+
+## 14. From labelled full response to an unconstrained parent
+
+The weighted majority-tail construction proves that individual product
+deficits can vanish while one joint selector has constant loss.  At its
+diagonal-completed Hadamard roof, the new exact-sign order-16 seed proves the
+same logical failure with marginal deficit `3/16`, and common-top tensoring
+preserves it at every order `16^j`; hollowing preserves its Boolean energies
+but uses a slightly different valid contraction roof.  That fixed seed did
+not settle the combined asymptotic regime; the sparse-flip theorem below now
+does at certificate level.
+
+The certificate question is now answered.  For the public PC.3 family with
+
+```math
+p_N={1\over2}\log_2N+O(1),
+```
+
+choose `r_N>=||A_N||_op` with `r_N=Theta(sqrt N)` and define
+`R=Z^TA_NZ/(r_NN)`, `D=G-R`.  The sparse-flip construction proves
+
+```math
+\max_S D_(SS)=o(1),
+\qquad
+Delta_(Maj)=\kappa+o(1).                          \tag{VEC.1}
+```
+
+The labelled **full** Boolean trust-response question is now answered.  Let
+`h_j=W_jepsilon_j`.  Corollary 21.63 proves
+
+```math
+||h_j||_1=\sqrt{7/(2\mathop{\rm pi})}\,N_j\sqrt j+O(N_j).
+```
+
+Thus `m_j=floor(lambda sqrt(N_j/j))` makes
+`m_j||h_j||_1=Theta(N_j^(3/2))`, while the new shore has only
+`O(sqrt(N_jj))=o(N_j)` vertices.  Even its whole internal signing contributes
+only `O(N_jj)=o(N_j^(3/2))` energy.
+Compare
+
+```math
+\max_(y\in\{+-1\}^{N_j})
+\left\{{1\over2}y^TA'_jy+m_jy^Th_j\right\}       \tag{VEC.2}
+```
+
+with the unflipped value, where `x_epsilon` pays both terms exactly before
+the sparse flips.  Theorem 21.64 uses a spherical relaxation to prove a
+fixed normalized gap; at `kappa=1/2,lambda=1/10` its explicit lower bound is
+greater than `0.0146`.  Thus no alternative Boolean child spin repairs this
+fixed field.
+
+The open realization question is sharper.  In an ordinary appended exact-
+sign parent, the repeated shore spins are free and may select a different
+endpoint word.  Either expose the periodic word without a leading
+calibration cost, or prove that free endpoint switching repairs every such
+sublinear-shore realization.  A shore-only completion cannot supply the
+missing leading bias because its entire energy is `o(N_j^(3/2))`.
+
+Two natural searches are already closed.  The PC.3 pole-conjugation twirl
+has a depth-independent gap, so every diagonal switching has selector defect
+at most twice its mean marginal defect.  And every monomial tensor/direct-
+mixture amplification of the fixed five-port seed that reproduces its
+prescribed selector blockwise keeps some odd active channel at deficit at
+least `3/32`; the common-factor subclass has the sharp
+`3/8` selector relation.  The successful sparse-flip construction is
+genuinely non-switching and acts at leading edge scale, exactly the escape
+left by those no-go theorems.
+
+On the positive side, bounded scalar visibility was not the right necessary
+target: it decays in PC.3 even while the collective twirl stays coercive.
+For future positive classes, seek a natural exact-sign hypothesis that
+**implies**, rather than assumes, a uniformly gapped, low-description
+positive observable whose common kernel is an eigenvalue-one space for every
+declared selector conjugate.  Theorem 21.60 supplies the conclusion once that
+collective object is given.

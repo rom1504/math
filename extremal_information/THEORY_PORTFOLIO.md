@@ -31,8 +31,8 @@ meeting the all-order reconnection guardrail.
   Semantic tensor error can accumulate linearly, while uniform convolution
   mass gives geometric forgetting.
 - Pairwise `(G,R)` is now rigorously dead as a uniform Boolean carrier: equal
-  regular-Hadamard states have response gap `rn/8` after tensor
-  amplification and exact-sign completion.
+  regular-Hadamard states have response gap `rn/8` before completion and
+  `rn/8-O(n)` after tensor amplification and a common exact-sign completion.
 - Odd product-algebra closure is a positive replacement.  It yields a dense
   exact-sign family with `p=(log_2 n)/2+1` and an exact
   `O(sqrt(n)log n)`-bit response state at bounded port mass.
@@ -40,7 +40,9 @@ meeting the all-order reconnection guardrail.
 This resets the contextual-response branch's strike count.  It does not yet
 justify work on `M_n`: the family is one exceptional tensor hierarchy with
 an unbalanced `O(sqrt n)` query shore, and no theorem forces its affine pole
-algebra for near-minimizers or transfers it to arbitrary orders.
+algebra for near-minimizers or transfers it to arbitrary orders.  Moreover,
+robust product synchronization approximates the spectral roof `rn/2`; it is
+not a recovery theorem for a Boolean cap separated below that roof.
 
 **Robust checkpoint.**  The selected theorem is now proved in two forms.
 For corresponding fixed-arity tensors, the intrinsic selector loss
@@ -59,11 +61,37 @@ prefix-consistent, zero-defect exact-sign tensor hierarchy has cap
 subsequences `1` and `1/2` when its factor-type density oscillates.  Thus
 within-scale coherence and across-scale phase are independent obligations.
 
-**Current selected theorem.** Characterize when exact sign structure forces
-the small coherence/equivariance defect needed by `D<=delta G`, or construct
-an exact-sign analogue of the majority-tail coherence falsifier.  The
-weighted contraction example proves that individual near-top products do
-not suffice; the next result must use or refute sign-specific rigidity.
+**Sign-coherence checkpoint.**  Exact signs alone do not remove coherent
+loss: at the completed Hadamard roof, a five-port order-16 seed has every
+product deficit `3/16` but majority defect `1/2`; tensor amplification and
+hollow diagonal deletion preserve the leading energy gap.  This remains a
+fixed-arity, fixed-defect selector certificate rather than separated trust
+optima.  In the positive direction, switching visibility now gives the
+checkable theorem
+
+```math
+D\preceq\left(d/nu+\sum_i\sqrt{2k_i}/r\right)G,
+```
+
+sharp on the hollow PC.3 seed and valid on a non-Hadamard Cayley signing.
+Multiplicity-free symmetry is insufficient without quantitative
+orbit--character visibility; PC.3 tensoring itself has
+`nu_j=N_j^(-1/4)`, so the certificate need not stay dimension-free.
+
+**Exact-sign dichotomy resolved at certificate level.**  A periodic PC.3
+endpoint is `O(j^(-1/2))`-correlated with every active product pole.  Targeted
+exact-sign edge flips preserve all those poles to `o(1)` and keep operator
+norm `(1+o(1))sqrt N`, while the same-field selector loses
+`kappa+o(1)`.  Thus exact signs do not turn marginal near-optimality into
+joint coherence.  This does **not** separate full Boolean trust optima.
+
+**Current selected theorem.**  The child-spin repair question is now closed:
+at a fixed labelled field, a spherical relaxation proves a normalized full
+Boolean response gap greater than `0.0146` for explicit parameters.  Decide
+whether this labelled context can be exposed inside an unconstrained exact-
+sign parent without a leading calibration cost, or whether free endpoint
+switching necessarily repairs every sublinear-shore realization.  Keep this
+realization question separate from the proved contextual collision.
 
 ## Portfolio ranking
 
@@ -183,8 +211,27 @@ not suffice; the next result must use or refute sign-specific rigidity.
   arity family with sublinear state.  Its robust tensor-stable version is now
   proved.  Fixed-arity semantic defects add without paying scalar channels;
   growing Cartesian pole algebras use the relative certificate `D<=delta G`
-  with multiplicative survival.  The next question is scale-changing phase
-  synchronization, not one-shot spectral robustness.
+  with multiplicative survival.  The factorized scale phase is now also
+  isolated.  Exact-sign structure does not force synchronization at fixed
+  marginal deficit: a tensor-amplifiable five-port seed has a `5/16`
+  coherent excess.  Conversely, projectively closed multiplicity-free
+  switching actions with visibility `nu` force
+  `D<=(d/nu+eta_eq)G`, with a sharp hollow exact-sign test.  Sparse exact-
+  sign flips now show that no such visibility or rigidity follows from
+  vanishing individual product deficits alone.
+  Collective observability is strictly stronger than scalar visibility:
+  PC.3 visibility decays as `N^(-1/4)`, but its pole-conjugation twirl has a
+  depth-independent gap and forces every diagonal switching's selector loss
+  below twice the mean marginal loss.  The fixed five-port counterexample
+  also cannot be diluted by arbitrary monomial tensor/direct mixtures that
+  reproduce its prescribed selector blockwise; an odd active channel keeps
+  deficit at least `3/32`.
+  Yet genuinely non-switching sparse edge flips escape both positive
+  mechanisms: a diffuse PC.3 selector has constant loss while every active
+  product pole has vanishing loss.  Individual generated-pole quality is
+  therefore rigorously dead even for exact signs.  A spherical relaxation
+  now also rules out child-spin repair under one leading labelled field;
+  unlabelled endpoint realization or a richer collective state remains.
   Exposed-flatness remains a weaker query-local certificate.  It yields exact
   `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
   while an orthogonal rank-two family has a fixed gap and a whole-subspace
@@ -206,11 +253,12 @@ not suffice; the next result must use or refute sign-specific rigidity.
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.
 - **Strike count:** zero.  The exact product-algebra family, scalable
-  equal-state falsifier, and robust relative tensor theorem reset the
-  counter.  They are structured growing-interface results, not a cross-order
-  recurrence for minima.
-- **Stopping condition:** two checkpoints with no family beyond fixed rank or
-  assumed symmetry and no scalable lower bound.
+  equal-state falsifier, robust relative tensor theorem, and scalable exact-
+  sign certificate obstruction reset the counter.  They are structured
+  growing-interface results, not a cross-order recurrence for minima.
+- **Stopping condition:** two checkpoints that neither realize the labelled
+  response collision in an unconstrained parent nor prove a scalable free-
+  endpoint repair theorem, with no new contextual lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear
   number of singular values above every fixed `sqrt(n)` threshold. Thus the
   SVD interface itself cannot remain subextensive; any escape must be a
@@ -448,7 +496,7 @@ not suffice; the next result must use or refute sign-specific rigidity.
   growing-interface model with sub-landscape dimension and subleading
   multiplication defect.
 
-### 6. Extremal cut-norm replacement — promoted narrow branch, B
+### 6. Extremal cut-norm replacement — archived narrow branch, B
 
 - **Core object:** labeled cut norm as an all-future extremal replacement
   metric for finite-label pair energies.

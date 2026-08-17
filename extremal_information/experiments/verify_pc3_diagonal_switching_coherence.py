@@ -10,6 +10,7 @@ forming the order-4096 Hadamard matrix.
 from __future__ import annotations
 
 from itertools import combinations, product
+from math import pi, sqrt
 from pathlib import Path
 import sys
 
@@ -212,11 +213,83 @@ def diffuse_endpoint_sequence() -> None:
     print("periodic-endpoint max correlations:", ", ".join(f"{x:.8f}" for x in observed))
 
 
+def field_scale_sequence() -> None:
+    """Check the exact finite laws behind Corollary DS.5.
+
+    Counts are integral because each local PC.3 relative state has one of
+    the multiplicities 1, 2, 1 among four equiprobable seed rows.
+    """
+    counts = {1: 1}
+    checkpoints = []
+    for depth in range(1, 129):
+        if (depth - 1) % 2 == 0:
+            local = ((0, 3), (2, 1))
+        else:
+            local = ((-2, 2), (0, 1), (2, 1))
+        updated: dict[int, int] = {}
+        for value, multiplicity in counts.items():
+            for increment, local_multiplicity in local:
+                updated[value + increment] = (
+                    updated.get(value + increment, 0)
+                    + multiplicity * local_multiplicity
+                )
+        counts = updated
+        total = 4**depth
+        mean_num = sum(value * multiplicity for value, multiplicity in counts.items())
+        second_num = sum(
+            value * value * multiplicity for value, multiplicity in counts.items()
+        )
+        expected_mean = 1 if depth % 2 == 0 else 1.5
+        expected_variance = 7 * depth / 4 - (1 if depth % 2 else 0)
+        mean = mean_num / total
+        variance = second_num / total - mean * mean
+        assert abs(mean - expected_mean) < 1e-14
+        assert abs(variance - expected_variance) < 1e-12
+        if depth in (8, 16, 32, 64, 128):
+            absolute_mean = sum(
+                abs(value) * multiplicity for value, multiplicity in counts.items()
+            ) / total
+            checkpoints.append((depth, absolute_mean / sqrt(depth)))
+
+    target = sqrt(7 / (2 * pi))
+    assert abs(checkpoints[-1][1] - target) < 0.01
+    print(
+        "periodic-field ||h||_1/(N sqrt(j)):",
+        ", ".join(f"j={depth}:{ratio:.8f}" for depth, ratio in checkpoints),
+        f"limit={target:.8f}",
+    )
+
+    # Finite-depth constants in the spherical response separation DS.6.
+    depth = 128
+    total = 4**depth
+    absolute_mean = sum(
+        abs(value) * multiplicity for value, multiplicity in counts.items()
+    ) / total
+    second_moment = sum(
+        value * value * multiplicity for value, multiplicity in counts.items()
+    ) / total
+    rho = absolute_mean / sqrt(second_moment)
+    kappa = 0.5
+    lam = 0.1
+    n = 16**depth
+    multiplicity = int(lam * sqrt(n / depth))
+    b = multiplicity * sqrt(second_moment) / sqrt(n)
+    response_gap_bound = b * (rho - sqrt(1 - rho * rho)) - b * b * rho * rho / (
+        2 * kappa
+    )
+    assert response_gap_bound > 0.014
+    print(
+        f"labelled spherical response bound at j={depth}: "
+        f"rho={rho:.8f}, b={b:.8f}, gap={response_gap_bound:.8f}"
+    )
+
+
 def main() -> None:
     seed_identities()
     stress_depth(depth=2, trials=96, seed=2026081701)
     stress_depth(depth=3, trials=24, seed=2026081702)
     diffuse_endpoint_sequence()
+    field_scale_sequence()
     print("PC.3 diagonal-switching coherence checks: PASS")
 
 

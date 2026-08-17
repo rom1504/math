@@ -1943,3 +1943,88 @@ zero-defect exact-sign tensor hierarchy can still have two separated cap
 subsequences.  Conversely, a convergent feature phase is useless if coherent
 off-diagonal defect destroys the selector witness.  A scale theorem needs
 both within-scale coherence and across-scale phase synchronization.
+
+## 101. Sign integrality does not eliminate coherent channel loss
+
+An exact sign child can make every declared product pole moderately close to
+one exposed spectral face while their nonlinear same-spin selector loses a
+strictly larger leading amount.  Tensor amplification can preserve this gap.
+Consequently, replacing a weighted coherence counterexample by exact signs
+does not by itself create synchronization.
+
+The remaining distinction is asymptotic: fixed marginal error is already
+falsified, whereas vanishing marginal error at growing arity may still force
+rigidity.  Prescribed-selector loss and separation of full Boolean optima
+must also remain distinct claims.
+
+## 102. Symmetry is useful only through quantitative visibility
+
+Twirling a positive defect under a multiplicity-free action diagonalizes it,
+but separate pole queries control a character only in proportion to the mass
+with which some declared orbit sees that character.  This orbit--character
+visibility is an intrinsic condition number.  Exact switching kills
+off-character coherence; visibility prices the remaining diagonal defects.
+
+Thus the present scalar-character theorem has three sufficient ingredients:
+projective orbit closure, multiplicity-free action on the represented span,
+and visibility bounded away from zero.  A multiplicity block might instead
+be controlled by a richer orbit-frame or PSD observability condition, so
+multiplicity freeness is not claimed necessary for every equivariance
+certificate.  Within the scalar setup, poor visibility can hide a
+future-visible defect.
+
+## 103. Collective observability can survive when coordinate visibility decays
+
+Character-by-character recovery and block/frame recovery are different
+certificates.  Orbit visibility may tend to zero because no single pole
+orbit sees one character strongly, while the average conjugated positive
+defect retains a uniform spectral gap off its common kernel.  If nonlinear
+selectors lie in the pole span, that collective gap controls them directly.
+
+The reusable resource is therefore not necessarily bounded scalar
+visibility.  It is a uniformly coercive, low-description positive observable
+whose kernel is closed under the declared selector algebra.  This can be
+strictly smaller than a coordinatewise reconstruction of the compressed
+operator.
+
+## 104. A finite coherence defect is not automatically dilutable
+
+If a selector algebra necessarily exposes one full-product channel, parity
+can force that channel to retain a fixed fraction of the selector loss under
+tensor decoration, replication, and convex mixing.  Adding synchronized
+mass then shrinks the marginal and joint defects at the same rate.
+
+An asymptotic coherence falsifier therefore needs more than a finite bad
+seed.  It must prevent every globally active product from retaining a bad
+local factor—typically through a nonlocal lift or a growing seed whose
+entire marginal shell improves.
+
+## 105. Diffuseness can turn sparse adversarial edits into coherent loss
+
+If one exposed Boolean selector is asymptotically orthogonal to every member
+of a subexponential top-pole library, selector-targeted edge flips can spend a
+constant fraction of its energy while charging each library pole only the
+square of that overlap.  Matrix concentration keeps the spectral scale
+unchanged.
+
+Thus exact signs do not force vanishing marginal losses to synchronize.  A
+positive response theorem must control either the selector's overlap with a
+collectively coercive pole frame or the complete response to the field.  In
+the PC.3 construction the latter is subsequently controlled and still has a
+gap; certificate coherence and contextual response remain logically
+distinct resources even though both fail there.
+
+## 106. Certificate failure can promote to response failure before it promotes to parent failure
+
+A diffuse selector, a rank-one targeted operator penalty, and a field with a
+nontrivial but nonunit cosine to that selector can force a fixed gap even
+after maximizing over every child spin and both quadratic signs.  A spherical
+relaxation is enough: avoiding the penalty necessarily sacrifices a fixed
+part of the field reward.
+
+This is a genuine contextual-response obstruction, but it need not be an
+unconstrained-parent obstruction.  If the context is represented by free
+auxiliary spins, they may switch to a different field channel.  Three levels
+must therefore remain separate: prescribed witness, full response to a
+labelled query, and physical realization of that query by an optimizing
+parent.
