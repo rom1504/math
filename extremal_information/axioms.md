@@ -1079,3 +1079,43 @@ can emerge only after a model-specific rare-event renormalization, even when
 no finite-depth exact quotient exists. It does not weaken query relativity.
 Genealogy-marked futures distinguish branchwise derivative masses with the
 same total, so the correct marked state is a measure rather than a scalar.
+
+## 39. Finite query mass permits universal feature thinning
+
+For a signed linear combination of a fixed bounded feature dictionary, the
+relevant concentration parameter is not the raw number of coefficient
+vectors. It is
+
+```math
+V_Phi=max_x sum_e phi_e(x)^2
+```
+
+together with the logarithm of the number of exposed state rows. Importance-
+weighted Bernoulli thinning can erase a positive fraction of the features,
+and only a linear-size public list of masks is needed to cover every
+coefficient signing. Sup-norm contraction then protects all shared max-type
+futures.
+
+This is a semantic compression law and a useful general upper bound. It is
+not automatically a dynamic congruence: the weighted sparse surrogate may
+leave the model class, and repeated copies of the approximated landscape pay
+repeated error. Thus finite-dictionary sparsification quantifies response
+image complexity while sharply exposing the separate realization and reuse
+obligations.
+
+## 40. Bounded extremal scale does not imply bounded response memory
+
+The cap-`1/2` Walsh family has the smallest spectral upper scale supplied by
+the classical Hadamard construction, yet its responses through one fixed
+dense sign bridge contain `Omega(sqrt(n))` bits at `n^(3/2)` resolution. The
+hidden state is a bent switching table; flat dual fields expose it, while a
+low-bias condition keeps cross responses in a strictly smaller spectral
+sector.
+
+Thus a bound on the unperturbed maximum controls neither contextual entropy
+nor dynamic memory. A positive compression theorem for bounded-cap
+quadratics must impose an additional synchronization or realization law. The
+Walsh example also shows what a useful strict state can look like: the
+`sqrt(n)`-bit switching table is exponentially smaller than the full energy
+landscape and sufficient for this structured family, even though no bounded
+state exists.

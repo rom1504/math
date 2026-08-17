@@ -602,9 +602,23 @@ and simultaneous discrepancy rounding give `O(n^2)`-bit universal upper
 states. A stronger Bernoulli-thinning theorem discards a fixed
 `Theta(epsilon^2)` fraction of the coefficient bits into a sparse weighted
 surrogate while preserving every Boolean energy to target accuracy. The
-lower witness has `Theta(n^2)` cap, so the bounded-cap and
-near-minimizer subclasses remain genuinely unresolved rather than being
-subsumed by the packing.
+lower witness has `Theta(n^2)` cap, so it does not determine the bounded-cap
+rate or near-minimizer rigidity.
+
+The first bounded-cap theorem now sharpens that statement. On
+`n=2^(2m)`, an explicit regularized-Walsh family has exact cap
+`n^(3/2)/2`, a `sqrt(n)`-bit bent switching state, and a matching
+`Omega(sqrt(n))` response-information lower bound through one dense Walsh
+bridge. Thus bounded extremal scale alone does not imply bounded memory. The
+remaining issue is whether richer cap-`1/2` or near-minimizing classes force a
+linear rate or admit a broader sublinear synchronized state.
+
+The sparse upper argument also survives abstraction. For any finite public
+bounded feature dictionary, a linear-size list of importance-weighted masks
+gives an explicit response code controlled by row variance and `log|X|`.
+This one theorem covers Littlewood/CSP dictionaries and code correlations as
+well as quadratics. It is a one-shot semantic replacement theorem, not yet a
+compositionally invariant quotient.
 
 An orthogonal benchmark adds a different kind of compression. In a
 boundary-case branching random walk, critical renormalization turns the

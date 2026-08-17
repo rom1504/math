@@ -18,7 +18,9 @@ representation.  Detailed proofs and exact checks are in `drafts/` and
 | Vertex-cover bridge width `k` | `2^k`-entry conditioned bridge-response table, quotiented further only by numerical envelope collisions | separator / bucket-elimination table | yes | worst-case projective rate `Theta(2^k log(1+D/epsilon))`; matching attains it | pass pending final audit; explains why degree-one matching is hard when its live cover is extensive |
 | Structured full-rank dense bridge | one magnetization per common permutation orbit, plus signed cycle gauge | rearrangement / mean-field count state | derived directly | polynomial joint search for fixed orbit count; a restricted thermodynamic limit follows; not an arbitrary frozen-fragment quotient | pass; rank is not the controlling resource |
 | Random dense sign bridge | no small all-landscape state: exponentially many exposed response coordinates | no proposed classical compression | theorem independently audited | arbitrary children require `exp(Omega(n))` bits at error `Theta(n^(3/2))`; linear children already require `Omega(n)` bits | strong negative endpoint; special quadratic child classes remain open |
-| Complete sign-quadratic children across a dense sign bridge | coefficient signing, with response collisions allowed | quadratic coefficient description | lower and upper developed by opposing agents; lower independently audited | projective packing forces `Omega(n)` bits; a sparse weighted surrogate stores at most `(1-epsilon^2/4)binom(n,2)+O(log n)` bits, still `Theta(n^2)` | pass as an information bracket; planted lower has `Theta(n^2)` cap, so bounded-cap class remains open |
+| Complete sign-quadratic children across a dense sign bridge | coefficient signing, with response collisions allowed | quadratic coefficient description | lower and upper developed by opposing agents; lower independently audited | projective packing forces `Omega(n)` bits; a sparse weighted surrogate stores at most `(1-epsilon^2/4)binom(n,2)+O(log n)` bits, still `Theta(n^2)` | pass as an information bracket; this planted lower has `Theta(n^2)` cap and does not explain the bounded-cap rate |
+| Exact cap-`1/2` Walsh sign quadratics | Maiorana--McFarland switching table | bent/Walsh spectral representation | yes; theorem independently audited | explicit family has `Theta(sqrt(n))` bits and forces that many; projective gap is exactly at least `n^(3/2)/8` | strong near-original pass; bounded cap alone does not collapse response memory |
+| Finite signed feature dictionary | one public sparse mask plus retained signs | importance sampling / uniform sparsification | generalized only after quadratic theorem | saves `Omega(min{m,E^2m/(V_Phi log|X|)})` bits and protects all shared max-type futures | new multi-model upper law; not an invariant internal quotient |
 | Generic random weighted dense Max-Cut at scale `n^2` | density/block representative in cut norm | weak regularity graphon state | literature-grounded | exact table exponential, but one block gives all-future `O(n^(3/2))=o(n^2)` error | pass at dense scale; fails to resolve `n^(3/2)` scale |
 | Boundary-case branching-random-walk extremes | derivative mass `Z` for unmarked limiting Laplace queries | derivative martingale / decorated Cox process | primary-literature scout, theorem hypotheses checked | one scalar after critical renormalization; finite depth requires `(W,Z)` and marked futures require a mass measure | orthogonal pass; a macroscopic state can emerge only in the limit |
 | Deterministic de Bruijn carrier | semantic response is scalar; anticipatory certificate retains suffix phase | finite automaton / subset carrier | derived directly | one semantic and one forward state versus `q^m` exact anticipatory states; bounded rooted probes recover `q^m` states only under a gap/filter condition | sharp falsifier and repaired observability theorem |
@@ -37,10 +39,10 @@ optimizer sections produce strict quotients; sparsity without a small live
 separator does not; a generic dense sign bridge exposes extensive information
 at the same scale as the motivating problem. Complete sign quadratics still
 carry an extensive response rate, although they have a strict polynomial-bit
-coefficient representation. The remaining question is whether bounded-cap
-quadratics and special near-minimizers occupy a rigid response subclass, not
-whether arbitrary or arbitrary-quadratic dense bridge responses are
-compressible.
+coefficient representation. Even the exact cap-`1/2` Walsh class carries
+`sqrt(n)` bits, so bounded cap alone is not the missing rigidity. The
+remaining question is whether this grows to a linear rate or whether a
+broader synchronized sublinear state exists for near-minimizers.
 
 The branching benchmark records a second kind of successful state. It is not
 an exact finite contextual quotient: critical centering and a vanishing

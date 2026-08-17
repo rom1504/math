@@ -1626,3 +1626,40 @@ This is a compression produced by critical renormalization, not by a finite
 max-plus quotient. It is also sharply query-relative: if futures may inspect
 genealogy labels, the state expands from the total mass to a derivative-mass
 measure over branches.
+
+## Example 71: one sparse mask list serves every signed feature landscape
+
+Fix `m` bounded public features on a finite state set. Bernoulli thinning,
+importance reweighting, and one union bound over the state rows show that a
+single input has a uniformly accurate sparse surrogate with positive
+probability. A second probabilistic argument needs only `m+1` public masks to
+cover all `2^m` coefficient signings. The encoded state is one mask index and
+the retained signs.
+
+For Boolean quadratics at error `epsilon n^(3/2)`, this discards at least an
+`epsilon^2/4` fraction of the `binom(n,2)` signs into a sparse `2`-bounded
+surrogate. The same theorem sparsifies Boolean Littlewood polynomials,
+bounded-CSP dictionaries, and codeword-correlation landscapes. Its limitation
+is equally informative: the surrogate answers every shared future once, but
+need not remain inside the original model or close under repeated internal
+composition.
+
+## Example 72: a cap-`1/2` Walsh family carries `sqrt(n)` bits
+
+At orders `n=2^(2m)`, regularize the Walsh matrix by a self-dual bent vector,
+hollow it, and switch it by the `2^(sqrt(n))` Maiorana--McFarland vectors
+
+```math
+s_g(u,v)=(-1)^(u dot v+g(v)).
+```
+
+Every child has the exact spectral cap `n^(3/2)/2`. The Walsh bridge maps a
+dual Boolean query to the flat field `sqrt(n)s_g`. A low-bias code of
+`exp(Omega(sqrt(n)))` tables keeps every off-diagonal product in a bounded
+Rayleigh sector. A one-line resolvent bound then puts every cross response at
+most `11n^(3/2)/8`, while the matched response is `3n^(3/2)/2`.
+
+Thus the family has projective response separation `n^(3/2)/8` and needs
+`Omega(sqrt(n))` bits. This is a genuine sub-landscape state—its `sqrt(n)`-
+bit truth table is also sufficient—but it shows that even exact
+conference-scale cap does not force bounded response complexity.

@@ -231,19 +231,29 @@ cover and simultaneous discrepancy rounding give other `O(n^2)` upper
 bounds. None is subquadratic; the internal coefficient-ball architecture
 provably cannot become so.
 
-The sharp next target is therefore the **bounded-cap quadratic child class**
+The bounded-cap qualitative question is now answered negatively on an
+infinite subsequence. For `n=2^(2m)`, a regularized Walsh signing and its
+Maiorana--McFarland switching orbit lie in
 
 ```math
 \mathcal Q_C(n)=\{A in \{-1,1\}^{\binom n2}:
-                  \max_x|H_A(x)|\le Cn^{3/2}\}.             \tag{OQ.5a}
+                  \max_x|H_A(x)|\le Cn^{3/2}\}              \tag{OQ.5a}
 ```
 
-Determine whether its dense-bridge response entropy at error
-`epsilon n^(3/2)` is `o(n)`, `Theta(n)`, or larger. A switching orbit of one
-bounded-cap signing is the smallest natural packing test: switching preserves
-the cap while a fixed labeled bridge can expose the hidden gauge. Any lower
-bound must control the full optimizer after the field is added, not only its
-value at a planted candidate.
+with `C=1/2`, has a matching `Theta(sqrt(n))`-bit state on the explicit
+family, and forms an `exp(Omega(sqrt(n)))` response packing at separation
+`n^(3/2)/8`. Thus `mathcal Q_(1/2)(n)` has at least `Omega(sqrt(n))` response
+bits. Exact small-order switching data suggest a linear rate may be possible,
+but do not prove it.
+
+The sharp next target is quantitative: raise the bounded-cap lower bound to
+`Omega(n)` bits, or construct an `o(n)`-bit quotient for a natural class that
+contains all cap-`1/2` Walsh switchings and closes under its declared bridge
+composition. The immediate algebraic discriminator is whether the larger
+Maiorana--McFarland permutation family has an
+`exp(Omega(sqrt(n)log n))` low-Rayleigh code. The geometric discriminator is
+the weighted-neighborhood entropy of the near-top set, which exactly controls
+query-linked switching deficits.
 
 A parallel replacement target remains:
 
@@ -256,11 +266,11 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** either a natural bounded-cap subclass with subextensive response
-entropy under a dense sign bridge, or a packing showing that even
-`mathcal Q_C(n)` has an extensive information rate. Any positive state must
-use a property absent from arbitrary, weighted-linear, and planted-pole
-quadratic children.
+**Success:** an `Omega(n)` bounded-cap packing, a matching upper theorem for a
+nontrivial cap class broader than the Walsh family, or a scalable ceiling
+showing why Rayleigh-only switching certificates stop at `sqrt(n)` bits. Any
+positive state must use a property absent from arbitrary, weighted-linear,
+planted-pole, and Walsh-bent children.
 
 **Falsifier:** a response-separated code inside the proposed port, or a
 four-label pinned cut-norm witness at order `n^(3/2)`.
@@ -300,6 +310,31 @@ state because its marked extremal measures are not tight or not unique.
 
 **Stop condition:** subsequential point-process compactness without a unique
 all-order recovery law is not a composable macroscopic state.
+
+## 8. When does sparse semantic replacement become a congruence?
+
+The finite-dictionary sparsification theorem gives the general upper law
+
+```math
+b\le m-\Omega\left(
+\min\{m,E^2m/(V_Phi\log |X|)\}\right)                     \tag{OQ.8}
+```
+
+for one-shot all-future response, using a public list of weighted sparse
+surrogates. It applies to quadratics, Littlewood polynomials, CSPs, and code
+correlations, but the decoded family need not close under the model's own
+composition.
+
+Characterize dictionaries for which the masks and importance weights can be
+chosen from an invariant algebra so that the same saving survives repeated
+composition without a depth factor.
+
+**Success:** a depth-stable sparsification theorem for two genuinely
+different compositional models, or a response-packing lower bound matching
+the `E^2/(V_Phi log|X|)` saving scale for one natural dictionary class.
+
+**Falsifier:** a dictionary with small one-shot response cover for which
+every invariant surrogate family has full coefficient information rate.
 
 ## Reconnection rule
 

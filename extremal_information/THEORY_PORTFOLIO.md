@@ -57,7 +57,9 @@ one of:
 - **Strongest theorem:** rank-`r` bridges between arbitrary internal
   landscapes compose exactly through an associative upper-roof algebra;
   fixed-error bucketing has `exp(O(r log(1/epsilon)))` cells, and unrestricted
-  classes need `2^(Omega(r))` bits.
+  classes need `2^(Omega(r))` bits. At the near-original endpoint, an exact
+  cap-`1/2` Walsh family has a matching `Theta(sqrt(n))`-bit state and
+  `n^(3/2)/8` projective response separation.
 - **Best benchmark:** fixed-rank quadratic bridges, not merely finite-atom
   mean field.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -71,10 +73,10 @@ one of:
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
 - **Live theorem:** determine the response entropy of bounded-cap sign
-  quadratics. The planted-pole packing has `Theta(n^2)` cap and so does not
-  settle this class. Universal Bernoulli thinning discards a fixed
-  `Theta(epsilon^2)` fraction of coefficients into a sparse `2`-bounded
-  surrogate, but still leaves the wide bracket `Omega(n)` to `O(n^2)` bits.
+  quadratics beyond the Walsh orbit. The cap-`1/2` class now needs at least
+  `Omega(sqrt(n))` bits on an infinite subsequence; the next discriminator is
+  an `Omega(n)` packing or a broader sublinear upper quotient. Universal
+  Bernoulli thinning still leaves `Theta(n^2)` bits for the full class.
 - **Strike count:** zero. Reaching genuine sign-quadratic children with a
   scalable packing resets the counter, despite the bounded-cap limitation.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
@@ -179,6 +181,26 @@ one of:
   reduces the realizable response dimension itself, rather than merely
   quantizing a full port.
 
+### 8. Finite-dictionary response sparsification — active theorem, B+
+
+- **Core object:** a public bounded feature dictionary, its row variance
+  `V_Phi`, and a linear-size universal list of importance-weighted masks.
+- **Strongest theorem:** at error `E`, Bernoulli thinning saves
+  `Omega(min{m,E^2m/(V_Phi log|X|)})` bits while preserving every signed
+  landscape and every later shared max-type future.
+- **Best benchmarks:** Boolean quadratics, Littlewood/CSP dictionaries, and
+  code/coset correlations follow from one proof.
+- **Best falsifier:** the sparse weighted center may leave the original model
+  class and does not automatically close when the child is duplicated under
+  repeated composition.
+- **Information discarded:** a controlled random fraction of coefficient
+  signs; the public mask list recovers a good importance sample for every
+  input.
+- **Next theorem:** characterize dictionaries whose sparse surrogates form an
+  invariant algebra, or prove a matching response lower bound at the
+  `E^2/(V_Phi log|X|)` saving scale.
+- **Judgment:** genuine multi-model upper law, but not yet a dynamic theory.
+
 ## Benchmark ladder
 
 | Level | Benchmark | Current/target state | Status |
@@ -199,7 +221,9 @@ one of:
 | bridge | vertex-cover width `k` | `2^k`-entry bridge table | passed; worst-case sharp, audit pending |
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
-| bridge | genuine sign-quadratic children | coefficient state with lossy Hamming/discrepancy cover | `Omega(n)` to `O(n^2)` response bits; bounded-cap subclass open |
+| bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
+| bridge | exact cap-`1/2` Walsh children | `sqrt(n)`-bit bent switching table | matching `Theta(sqrt(n))` state on the family; lower bound for the full cap class |
+| multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |
 
 ## Director rule

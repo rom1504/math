@@ -7525,6 +7525,153 @@ Closing it requires optimizer geometry shared by Hamming-distant
 coefficients; coefficientwise Lipschitz control, switching, and generic cut
 regularity cannot do so.
 
+### Theorem 21.6 (exact cap-`1/2` children still carry growing response state)
+
+On the subsequence `n=2^(2m)`, there is one dense sign bridge `B_n` with
+`||B_n||_(2->2)=sqrt n` and `N>=exp(c sqrt n)` hollow symmetric signings
+`A_1,...,A_N` such that
+
+```math
+Q(A_c)=\max_x|H_(A_c)(x)|={1\over2}n^{3/2}                \tag{21.24}
+```
+
+and
+
+```math
+{1\over2}\operatorname{osc}(P_(B_n)H_(A_c)-P_(B_n)H_(A_d))
+\ge {1\over8}n^{3/2}\qquad(c\ne d).                       \tag{21.25}
+```
+
+Hence the cap-`1/2` class needs `exp(Omega(sqrt n))` states, or
+`Omega(sqrt n)` bits, for error below `n^(3/2)/16` under arbitrary
+coordinate-pinning continuations. The explicit family itself has a matching
+`O(sqrt n)`-bit description.
+
+#### Construction and proof
+
+Put `q=2^m`, `n=q^2`, and index coordinates by
+`(u,v) in F_2^m times F_2^m`. Let `W` be the Walsh matrix and put
+
+```math
+b(u,v)=(-1)^(u dot v),
+\qquad mathcal H=D_bWD_b.                                  \tag{21.26}
+```
+
+Then `W^2=nI`, `Wb=qb`, and
+
+```math
+mathcal H^2=nI,
+\quad mathcal H1=q1,
+\quad tr(mathcal H)=0.                                     \tag{21.27}
+```
+
+Thus `A=mathcal H-diag(mathcal H)` is a hollow sign matrix and, on Boolean
+vectors, `H_A(x)=x^Tmathcal Hx/2`. The spectral bound and the all-one
+eigenvector prove `Q(A)=qn/2`.
+
+For each Boolean table `g:F_2^m->F_2`, define
+
+```math
+s_g(u,v)=(-1)^(u dot v+g(v)),
+\qquad y_g=q^(-1)Ws_g.                                    \tag{21.28}
+```
+
+Direct Walsh summation gives
+
+```math
+(Ws_g)(a,b)=q(-1)^(a dot b+g(a)),                          \tag{21.29}
+```
+
+so `y_g` is a sign vector and `Wy_g=qs_g`. A random code supplies at least
+`exp(q/32)` tables with pairwise bias
+
+```math
+|S(g,h)|=\left|\sum_v(-1)^(g(v)+h(v))\right|\le q/2.      \tag{21.30}
+```
+
+Indeed, each pair violates (21.30) with probability at most `2e^(-q/8)`,
+and the pair union bound succeeds. Switch the child by
+`A_g=D_(s_g)AD_(s_g)` and use the common bridge `B=W`.
+
+For `w=s_g odot s_h`, the exact rooted Rayleigh coordinate is
+
+```math
+w^Tmathcal Hw=qS(g,h)^2,
+\qquad rho={w^Tmathcal Hw\over qn}\le1/4.                 \tag{21.31}
+```
+
+At query `y_h`, changing variables gives
+
+```math
+(P_WH_(A_g))(y_h)
+=\max_u\{u^Tmathcal Hu/2+q w^Tu\}.                        \tag{21.32}
+```
+
+For the diagonal `g=h`, `u=1` gives `3qn/2`. Off the diagonal, set
+`K=2qI-mathcal H`. Completing the square and using
+`K^(-1)=(2qI+mathcal H)/(3q^2)` gives, even on the containing Euclidean
+sphere,
+
+```math
+u^Tmathcal Hu/2+qw^Tu
+\le qn+{2qn+w^Tmathcal Hw\over6}
+\le {11\over8}qn.                                         \tag{21.33}
+```
+
+Thus child `g` beats child `h` at `y_g` by `qn/8`, and the reverse holds at
+`y_h`; (21.25) follows. `square`
+
+This theorem closes the bounded-cap qualitative gap left by Theorem 21.4.
+It does not prove a linear information rate, apply at every order, or say
+that exact minimizers below the conference-scale cap share this complexity.
+It is a response lower bound for the declared arbitrary-pinning future
+family, not for futures restricted only to hollow sign-quadratic fragments.
+
+### Lemma 21.7 (switching response equals weighted near-top deficit)
+
+Let `P=max_u H_A(u)` and fix a top state `u_*`. For a field `h`, define
+
+```math
+Delta_A(h)=P+||h||_1-\max_u\{H_A(u)+h^Tu\}.                \tag{21.34}
+```
+
+Then the exact variational identity is
+
+```math
+Delta_A(h)=\min_u\left\{P-H_A(u)
++2\sum_(i:u_i ne sign(h_i))|h_i|\right\}.                 \tag{21.35}
+```
+
+For every bridge query `y`, put
+`s_y=u_* odot sign(By)` and `A^(s_y)=D_(s_y)AD_(s_y)`. Its matched response
+attains the joint roof:
+
+```math
+(P_BH_(A^(s_y)))(y)=P+||By||_1.                            \tag{21.36}
+```
+
+For two queries `y,z`, their switched children obey
+
+```math
+d_proj(A^(s_y),A^(s_z))
+\ge {1\over2}\{Delta_A(s_z odot By)+Delta_A(s_y odot Bz)\}.\tag{21.37}
+```
+
+#### Proof
+
+Changing variables under switching turns the response into
+`max_u(H_A(u)+(s odot By)^Tu)`. Expanding a linear score as its `l_1` roof
+minus twice the weighted Hamming disagreement proves (21.35). For `s_y`,
+the field is `u_* odot |By|`, so `u_*` maximizes both terms and gives
+(21.36). At query `y`, the response difference between its matched child and
+the `z` child is the first deficit in (21.37); at query `z` it is the
+negative of the second. Half the oscillation gives (21.37). `square`
+
+Thus an `Omega(n)`-bit cap-bounded packing reduces to a concrete geometric
+statement: exponentially many linked fields must avoid the weighted Hamming
+neighborhoods of the near-top set. Exact enumeration supports this at orders
+through fourteen but is not used as asymptotic evidence.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
@@ -7770,3 +7917,86 @@ state must then be the derivative-mass measure over labels.  The benchmark
 therefore supplies a genuine orthogonal mechanism—renormalized rare-event
 universality—while also validating the rule that the allowed future query
 class determines what can be compressed.
+
+## 25. A finite-dictionary response sparsification law
+
+Let `X` be finite, `|X|=L`, and fix public features
+`phi_e:X->[-1,1]`, `1<=e<=m`. For sign coefficients `a`, put
+
+```math
+H_a(x)=\sum_ea_e\phi_e(x),
+\qquad V_Phi=\max_x\sum_e\phi_e(x)^2.                     \tag{25.1}
+```
+
+### Theorem 25.1 (universal Bernoulli-mask response code)
+
+Fix `0<p<=1/2`, put `q=1-p`, and let `E>0`. Define
+
+```math
+Delta=2L\exp\left\{-{E^2\over2(pV_Phi/q+E/3)}\right\}
+      +\exp(-pm/8).                                       \tag{25.2}
+```
+
+If `Delta<=delta<1`, then there is one public list of at most
+
+```math
+N=\left\lceil{(m+1)\log2\over\log(1/delta)}\right\rceil  \tag{25.3}
+```
+
+masks, each retaining at most `floor((1-p/2)m)` features, such that every
+`a in {-1,1}^m` has a listed mask `S` satisfying
+
+```math
+\sup_x\left|H_a(x)-{1\over q}\sum_(e in S)a_e\phi_e(x)\right|
+\le E.                                                     \tag{25.4}
+```
+
+Thus the absolute response code uses at most
+
+```math
+\lfloor(1-p/2)m\rfloor+\lceil\log_2N\rceil                \tag{25.5}
+```
+
+bits. The same error holds after every shared max-type future
+`T_KH(y)=max_x(H(x)+K(x,y))`, without a depth factor.
+
+#### Proof
+
+Retain each feature independently with probability `q` and importance-weight
+it by `1/q`. For fixed `a,x`, the error summands are centered, bounded by one,
+and have total variance at most `pV_Phi/q`. Bernstein followed by a union
+bound over `X` gives the first term of (25.2). Chernoff says that fewer than
+`pm/2` erasures has probability at most the second term.
+
+For fixed `a`, a mask is therefore bad with probability at most `delta`.
+For `N` independent masks the expected number of coefficient signings missed
+by the whole list is at most `2^m delta^N<=1/2`; hence one deterministic list
+covers all signings. The decoder stores its mask index and the retained
+signs. Finally, max-type response operators are sup-norm nonexpansive. `square`
+
+A convenient regime follows by setting `t=log(8L)` and
+
+```math
+p=\min\{1/2,E^2/(8V_Phi t)\}.                              \tag{25.6}
+```
+
+If `E>=4t/3` and `pm>=8log4`, then `delta=1/2`, `N=m+1`, and
+
+```math
+b\le m-\min\left\{{m\over4},
+ {mE^2\over16V_Phi\log(8L)}\right\}
+ +\lceil\log_2(m+1)\rceil.                                \tag{25.7}
+```
+
+This law applies to every public Boolean monomial or bounded-CSP dictionary,
+and to code/coset correlation landscapes `H_a(c)=a dot c`. In the latter,
+uniform correlation error `E` gives nearest-code-distance error `E/2`.
+These applications share no special quadratic algebra: the common resource
+is a finite exposed row set with controlled feature variance.
+
+The theorem is a strict multi-model upper law, not an internal-family or
+algorithmic result. Its sparse weighted centers may leave the original model
+class; a list can be existential; and duplicating the approximated landscape
+several times in one future incurs the corresponding multiplicity. It
+therefore separates **one-shot semantic response compression** from an
+invariant compositional quotient.
