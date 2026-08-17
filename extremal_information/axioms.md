@@ -679,3 +679,40 @@ state must be both a response quotient and path-realizing. For robust reset
 queries, this principle itself compresses the old suffix-set state to the
 kernel partition of the total selector product, which is the coarsest
 partition component at a fixed control vertex for the full selector alphabet.
+
+## 21. Dynamic compression has three noninterchangeable certificates
+
+The switching benchmark forces a refinement of the static two-stage law.
+There are three ways a small future state can remain valid.
+
+1. **Exact contextual congruence.** Pull back the observation partition by
+   all future words. Finite stabilization is equivalent to a finite exact
+   path-realizing quotient. A finite oriented affine arrangement closed under
+   branch pullback is a checkable sufficient certificate.
+2. **Metric forgetting.** An approximate quotient or fresh quantization may
+   be reused when every old residual is attenuated with summable suffix gain.
+   Block contraction changes the resolution at which the quotient's metric
+   entropy must be paid.
+3. **Cocycle cancellation.** A projective control can return exactly while
+   its scalar baseline accumulates error. Uniform absolute response requires
+   every repeatable reward-discrepancy cycle to vanish, or a quantitative
+   contraction which absorbs it.
+
+These mechanisms solve different obligations. A static response cover gives
+none of them. The compact Cantor encoder--decoder has only five affine pieces
+and a bounded one-step response cover, yet its horizon-`T` predictive memory
+is exponential. Conversely, an exact Ising transfer profile has a large
+exposed response image but no future amplification of a one-time sup error.
+
+The finite pullback certificate must use full **oriented affine forms**.
+Unoriented normal fans forget side exchange, affine offsets, and scaling.
+Tie-value paths and tangent-selector paths must also remain separate: a fixed
+tie rule is exact for values, while independent tangents may have no common
+perturbation cone.
+
+The quantitative static--dynamic interaction is now a scale transform, not a
+formal product. If `G_T` is the sum of suffix Lipschitz gains, a finite
+sequential response simulator pays the internal covering number at scale
+`epsilon/G_T`. For the entire branching context tree, local response entropy
+at diameter `D rho^k` is paid `q^k` times. Both laws are sharp, but neither
+alone supplies an exact semiconjugacy.

@@ -4532,3 +4532,508 @@ declared successor and has one selector-affine formula there; tie faces must
 also refine by a common realizable tangent update. One-step feasibility,
 including independent tie resolutions, is not enough. The remaining target
 is a tropical lumpability theorem producing a small exact presentation.
+
+## 17. Finite tropical lumpability and dynamic response memory
+
+The results in this section give finite criteria and sharp boundaries for the
+forward half of the target left by Theorem 16.19. They distinguish an exact symbolic quotient, an approximate
+response simulator, and the information in a future response tree. Detailed
+counterexample and benchmark arithmetic is recorded in
+[`drafts/finite_tropical_lumpability.md`](drafts/finite_tropical_lumpability.md).
+
+### Theorem 17.1 (contextual refinement and an invariant-arrangement certificate)
+
+Let `E` be finite, let `F_e:X->X`, and let `P_0` be a finite observation
+partition. Define
+
+```math
+x equiv_t y
+iff
+F_wx and F_wy lie in the same P_0 atom for every |w|<=t.          \tag{17.1}
+```
+
+There is a finite deterministic forward congruence refining `P_0` if and
+only if the partitions `P_t` stabilize. The first stable partition is the
+coarsest such congruence. If a congruence with `k` classes exists,
+stabilization takes at most `k-|P_0|` strict refinements.
+
+There is the following finite certificate. Let `X` be contained in a
+`d`-dimensional affine space and let `H={h_1,...,h_m}` be oriented affine
+forms whose sign partition refines `P_0`. On each nonempty sign atom
+
+```math
+C_s={x in X:sgn h_i(x)=s_i, 1<=i<=m},                            \tag{17.2}
+```
+
+assume every `F_e` agrees with one affine branch `g_(e,s)`. Suppose
+also that, for every `i,e,s`,
+
+```math
+h_i circ g_(e,s)
+in {0, nonzero constant}
+ union {lambda h_j:lambda!=0, 1<=j<=m}.                          \tag{17.3}
+```
+
+Then the nonempty sign atoms form a sound, path-realizing forward
+congruence. Their number is at most
+
+```math
+sum_(j=0)^d 2^j {m choose j}<=3^m.                               \tag{17.4}
+```
+
+Every quotient cycle is repeatable by every seed in its source atom. If the
+branches are affine selectors, permitted starts have bounded coordinate
+oscillation, and terminal observations are quotient-coordinate observations,
+Theorem 16.19 decides observable drift on this quotient. The sign of
+`lambda` in (17.3) is part of the certificate.
+
+For selector-affine branches
+
+```math
+g_sigma(u)_a=u_(sigma(a))+b_a,                                   \tag{17.5}
+```
+
+start from finitely many oriented comparison forms
+`u_p-u_q+theta`. Construct the finite ordered-pair graph
+
+```math
+(p,q)->(sigma(p),sigma(q))
+```
+
+with edge weight `b_p-b_q`, terminating when the pair collapses. The
+unrestricted affine pullback closure of the starting comparisons is finite
+if and only if every reachable directed cycle has weight zero. Hence this
+zero-holonomy condition plus branch resolution supplies `H` in (17.3)
+without enumerating orbit words.
+
+#### Proof
+
+The recursion
+
+```math
+P_(t+1)=P_t wedge bigwedge_(e in E)F_e^(-1)P_t                   \tag{17.6}
+```
+
+shows that a stable partition is a forward congruence. Conversely, every
+forward congruence refining `P_0` refines every `P_t`. Therefore `|P_t|<=k`
+when a `k`-class congruence exists, so every strictly increasing finite
+refinement sequence stabilizes. The same observation proves coarseness.
+
+On `C_s`, the branch in (17.3) is fixed. Every target sign is then a constant,
+zero, or the sign of one source form, possibly reversed. Hence
+`F_e(C_s)` lies in one sign atom. Induction realizes every labelled path and
+cycle repetition. The hyperplane-arrangement face bound is (17.4).
+
+Finally,
+
+```math
+(u_p-u_q+theta) circ g_sigma
+=u_(sigma(p))-u_(sigma(q))+theta+b_p-b_q.                         \tag{17.7}
+```
+
+A pullback path changes the offset by its path weight. If every cycle has
+zero weight, every repeated-vertex closed subwalk decomposes into reachable
+directed cycles and has zero weight, so delete it without changing the
+resulting form; only finitely many simple paths remain. A reachable cycle of nonzero
+weight `c` produces distinct offsets `theta+kc`. `square`
+
+The affine qualifications are necessary. Normal directions alone fail for
+`F(x)=x+1`, because the negative half-line crosses its boundary. Unit
+transport is also essential: `F(x)=2x` pulls `x-1` back to the infinitely
+many boundaries `x=2^(-k)` despite zero additive translation. Closure under
+formal but dynamically incompatible branches is sufficient, not necessary.
+Tie-value paths require a fixed valid branch; tangent-selector paths need a
+paired lift and a common perturbation cone. Raw observations transfer only
+when they factor through any preliminary block quotient, or when fibre
+oscillation is separately bounded. Raw path realization additionally requires
+each declared quotient start atom to meet the image of the allowed raw start
+set. In (17.4), `m` counts distinct full affine hyperplanes, including
+different offsets of one normal; with `n` discrete control vertices the bound
+is multiplied by `n`.
+
+### Corollary 17.1a (observable refinement-growth sandwich)
+
+Suppose the observation in Theorem 17.1 takes values in a finite metric set
+whose distinct values are separated by at least `Delta`, and let
+`N_t=|P_t|`. For every `0<=epsilon<Delta/2`,
+
+```math
+N_T<=C_T(epsilon)<=sum_(t=0)^T N_t,                              \tag{17.7a}
+```
+
+where `C_T` is the deterministic predictor complexity defined in
+Theorem 17.3 below. The upper predictor is exact. Hence positive exponential
+refinement growth forces linear predictive bits, while stabilization gives
+one exact finite quotient for all depths.
+
+Indeed, distinct `P_T` atoms have observation trees differing by at least
+`Delta`, which proves the packing lower bound. For the upper bound, use states
+`(t,[x]_(P_t))`, initialize at level `T`, and update
+
+```math
+(t,[x]_(P_t))->(t-1,[F_ex]_(P_(t-1))).                           \tag{17.7b}
+```
+
+This is well-defined by (17.1), and decoding the current observation is
+exact. This corollary applies to selector labels only when those labels are
+themselves declared, margin-separated responses; it does not charge a
+numerically invisible tie refinement.
+
+### Theorem 17.2 (approximate block lumpability with depth-uniform error)
+
+Use the column max-plus convention
+
+```math
+(F_Kx)_i=max_j(K_(ij)+x_j).
+```
+
+Let `Pi={I_1,...,I_r}`, choose a gauge `c`, and set
+
+```math
+Lambda_c(x)_a=max_(i in I_a)(x_i+c_i).                            \tag{17.8}
+```
+
+Suppose a finite alphabet of raw matrices `K_e` and quotient matrices `S_e`,
+all with finite entries,
+satisfies
+
+```math
+|max_(i in I_a)(K_e(i,j)+c_i-c_j)-S_e(a,b)|<=epsilon
+quad(j in I_b).                                                   \tag{17.9}
+```
+
+Then
+
+```math
+||Lambda_c(F_(K_e)x)-F_(S_e)(Lambda_cx)||_H<=epsilon.             \tag{17.10}
+```
+
+Assume all actual aggregate and quotient states of interest lie in a
+forward-invariant set `Y` contained in a Hilbert ball of radius `R`, every
+quotient map is defined and nonexpansive on `Y`, and every contiguous legal
+length-`L` quotient composition is `rho`-contractive on `Y`, `rho<1`. For every
+`h>0` there is a deterministic finite simulator with at most
+
+```math
+(1+2R/h)^(r-1)                                                    \tag{17.11}
+```
+
+states and aggregate shadow error, uniformly over all depths and legal switch
+words, at most
+
+```math
+h+{L(epsilon+h) over1-rho}.                                      \tag{17.12}
+```
+
+If, uniformly on all raw states under consideration, the raw response in its
+declared norm is within `kappa` of an `L_O`-Lipschitz function of
+`Lambda_cx`, its response error is at most
+
+```math
+kappa+L_O[h+{L(epsilon+h) over1-rho}].                            \tag{17.13}
+```
+
+At `epsilon=0`, before quantization,
+`Lambda_cF_(K_e)=F_(S_e)Lambda_c` is an exact semiconjugacy. This
+certificate uses the block coefficients and an `(r-1)`-dimensional response
+carrier, rather than an active-cell orbit language.
+
+#### Proof
+
+Regrouping maxima gives
+
+```math
+Lambda_c(F_(K_e)x)_a
+=max_b max_(j in I_b){x_j+c_j+L^e_(aj)},                          \tag{17.14}
+```
+
+where `L^e_(aj)` is the block coefficient in (17.9). Replacing it by
+`S_e(a,b)` changes every output coordinate by at most `epsilon`, proving
+(17.10). Take an internal `h`-net `C subset Y` of `Y` and round after each
+quotient update. Explicitly, for a deterministic nearest-net map `Q`, set
+`c_0=Q(Lambda_cx_0)` and
+`c_t=Q(F_(S_(e_t))c_(t-1))`. Each step injects residual at most
+`epsilon+h`. Grouping
+transported residuals into length-`L` blocks gives the geometric sum in
+(17.12), plus the initial net error `h`. The standard volumetric covering
+bound in dimension `r-1` gives (17.11); the response decoder proves (17.13).
+`square`
+
+The finite input-word path is exact, while the state trajectory is a metric
+shadow, not an exact tie-selector itinerary. Without contraction the same
+construction gives `h+T(epsilon+h)`, and that linear loss can be sharp.
+The count (17.11) excludes any separate automaton needed to recognize a
+restricted legal language. The contraction is on `Y`: globally, a
+nonconstant finite max-plus map has Hilbert coefficient one, so strict global
+contraction is a projective reset.
+
+The weighted-automaton verifier gives a sharp finite example. A four-state
+two-letter automaton has a coarsest strong two-block quotient and 4,802 exact
+aggregation checks. Increasing one microscopic self-loop by `delta>0` makes
+strong refinement split all four states. The old two-block quotient has
+one-step defect exactly `delta`, and a repeatable maximizing self-loop has
+error exactly `n delta` at depth `n`. Thus the noncontractive linear estimate
+is attained at every horizon, while exact state cardinality jumps
+discontinuously.
+
+### Theorem 17.3 (response packing, memory gain, and predictive compactness)
+
+Let `E` be finite and let `R:X->Z` be `L_R`-Lipschitz, `L_R>0`, and define
+
+```math
+d_T(x,y)=max_(|w|<=T)d_Z(R(F_wx),R(F_wy)).                        \tag{17.15}
+```
+
+An `epsilon`-predictor consists of a finite set `S`, an encoder `q:X->S`,
+deterministic input updates `delta_e`, and a decoder `g:S->Z` such that
+
+```math
+d_Z(R(F_wx),g(delta_wq(x)))<=epsilon                             \tag{17.16}
+```
+
+for all `|w|<=T`. Let `C_T(epsilon)` be its minimum state count. Define
+
+```math
+G_T=sup_(t<=T,e_1...e_t)
+[Lip(F_(e_t)...F_(e_1))
+ +sum_(s=1)^t Lip(F_(e_t)...F_(e_(s+1)))].                       \tag{17.17}
+```
+
+Then
+
+```math
+Pack_(>2epsilon)(X,d_T)
+<=C_T(epsilon)
+<=Cov^int_(epsilon/(L_RG_T))(X).                                \tag{17.18}
+```
+
+For nonexpansive maps, `G_T<=T+1`. If every contiguous length-`L` block
+occurring in a legal trajectory is also `rho`-contractive, then
+`G_infinity<=L/(1-rho)`.
+
+If `Z` is compact and `C_infinity(epsilon)` denotes the minimum state count
+of one predictor valid for every finite word, with value `+infinity` if none
+exists, then
+
+```math
+\boxed{C_infinity(epsilon)=sup_(T>=0)C_T(epsilon).}               \tag{17.19}
+```
+
+#### Proof
+
+Two points with one encoded state receive the same prediction after every
+word, so their contextual distance is at most `2epsilon`, proving the lower
+bound. For the upper bound, encode by a nearest center of an internal
+`eta`-net and quantize after every exact update. The initial and fresh errors
+are each at most `eta`; (17.17) transports their sum. Setting
+`eta=epsilon/(L_RG_T)` proves (17.18). The two gain estimates follow by
+summing unit suffix bounds or a block-geometric series.
+
+For (17.19), choose a strictly increasing sequence of horizons with predictors
+on a common `S`-state set, padding unused states with self-loops and a fixed
+decoder value. Pass to a subsequence on which their finitely many transition
+maps are identical, then use compactness of `Z^S` to make every decoder value
+converge. On this final subsequence, for each `x` choose a state occurring
+infinitely often among its horizon-dependent initial encodings. Along that
+occurrence subsequence,
+(17.16) passes to the limit for every fixed finite word. This gives one
+infinite-depth `S`-state predictor. The reverse inequality is restriction.
+`square`
+
+This predictor need not be an exact quotient: the encoder is not asserted to
+satisfy `qF_e=delta_eq`. Theorem 17.1 is the stronger exact-congruence law.
+
+### Theorem 17.4 (contraction-weighted context-tree entropy)
+
+For `h:X->Z`, put
+
+```math
+S_h(r,epsilon)=sup_(A subseteq X,diam A<=r)
+Cov^ext_epsilon(h(A)).                                           \tag{17.20}
+```
+
+Suppose `|E|=q`, `diam X<=D`, and every `F_e` is `rho`-Lipschitz,
+`0<rho<1`. For the response tree
+
+```math
+Phi_T(x)=(h(F_wx))_(|w|<=T),                                    \tag{17.21}
+```
+
+one has
+
+```math
+log Cov^ext_epsilon(Phi_T(X))
+<=sum_(k=0)^T q^k log S_h(D rho^k,epsilon).                       \tag{17.22}
+```
+
+If `epsilon>0` and `h:X->R^p` is `L`-Lipschitz in sup norm, with finite
+`L,D` and `q>=1`, the right side yields
+
+```math
+Cov^ext_epsilon(Phi_T(X))
+<=prod_(k=0)^T
+ max{1,ceil(LD rho^k/(2epsilon))}^(p q^k).                        \tag{17.23}
+```
+
+Every factor and exponent is sharp over finite affine systems. In
+particular, for `A=LD/(2epsilon)>1`, `q>=2`, and horizons beyond the mixing
+scale,
+
+```math
+log Cov^ext_epsilon(Phi_T(X))
+=Theta_(p,q,rho)(A^(log q/log(1/rho)))                            \tag{17.24}
+```
+
+in a matching example. For `q=1`, the sharp order is
+`Theta_(p,rho)((log A)^2)`.
+
+#### Proof
+
+Each word image at level `k` has diameter at most `D rho^k`; independently
+cover its response image and multiply over the `q^k` words, proving (17.22).
+A diameter-`r` response lies in a `p`-box of side at most `Lr`, proving
+(17.23).
+
+For sharpness, for each `T` put
+`X=prod_(|u|<=T)[0,D]^p`, let `h(x)=Lx_empty`, and set
+
+```math
+(F_ax)_u=cases(rho x_(au),&|u|<T;
+               0,&|u|=T).                                       \tag{17.25}
+```
+
+The word `a_1...a_k` reads `Lrho^k x_(a_1...a_k)`, so the response image is
+
+```math
+prod_(k=0)^T[0,LD rho^k]^(p q^k).                                \tag{17.26}
+```
+
+Its exact sup-covering number is (17.23): equal subintervals cover, while
+equally spaced points including endpoints give the matching strict packing.
+Only `Theta(log A/log(1/rho))` levels are active. The deepest active level
+and a geometric sum give (17.24); with `q=1`, summing the linearly decreasing
+logarithms gives quadratic order. `square`
+
+This sharpness uses a horizon-dependent family of finite affine systems whose
+dimension grows with the active context tree; it is a distribution-free
+sharpness statement, not a fixed-dimensional asymptotic. Every predictor
+gives an external response-tree center, so
+`Cov^ext_epsilon(Phi_T(X))<=C_T(epsilon)`. The reverse is false in general because
+external table centers need not admit shift-consistent transitions.
+
+### Theorem 17.5 (bounded static response, exponential dynamic memory)
+
+On `X=[0,1]`, observe `h(x)=x`, use
+
+```math
+E_0(x)=x/3,
+\qquad E_1(x)=(x+2)/3,
+```
+
+and the continuous piecewise-affine decoder
+
+```math
+R(x)=cases(3x,&0<=x<=1/3;
+           2-3x,&1/3<=x<=2/3;
+           3x-2,&2/3<=x<=1).                                    \tag{17.27}
+```
+
+Although the numerical one-step response vector
+`(h,h circ E_0,h circ E_1,h circ R)` has an `epsilon`-cover of
+size at most `ceil(3/(2epsilon))+1`, after `t` encoders every predictor which
+answers the decoder continuations to error `epsilon<1/6` needs at least
+`2^t` states.
+
+Also, for `m>=3`, pairwise and indeed every proper-subfamily compatibility of
+max-plus tie faces is insufficient. For cyclic coordinates modulo constants, choose
+`sum_i c_i=1` and set
+
+```math
+phi_i(x)=max{x_(i+1),x_i+c_i}.
+```
+
+Every proper subfamily of the `m` tie faces intersects, but
+
+```math
+min_x max_i|x_(i+1)-x_i-c_i|=1/m.                                \tag{17.28}
+```
+
+#### Proof
+
+The decoder satisfies `RE_b=id`. Two different encoder words first differ in
+one reversed ternary digit. After stripping their common leading digits with
+`R`, one state lies in `[0,1/3]` and the other in `[2/3,1]`; some future
+response differs by at least `1/3`. A common predictor state would put every
+future pair within `2epsilon`, proving the packing. The one-step vector is
+`3`-Lipschitz, giving its scalar-grid cover.
+
+For the tie claim, write `r_i=x_(i+1)-x_i-c_i`. Deleting one cycle equation
+leaves a forest and hence a soluble proper subsystem. But
+`sum_i r_i=-1`, so `max_i|r_i|>=1/m`. Setting every `r_i=-1/m` is integrable
+around the cycle and attains equality. `square`
+
+### Theorem 17.6 (strict-strip response isometry and restricted lumpability)
+
+For a width-`w` Ising strip prefix, let `f(x)` be the maximum prefix energy
+conditioned on boundary spins `x in {-1,1}^w`. Under arbitrary real legal
+strip continuations,
+
+```math
+D_ctx(f,g):=sup_C|Opt_f(C)-Opt_g(C)|=||f-g||_infinity.            \tag{17.29}
+```
+
+Hence the exact contextual state is the full `2^w`-entry boundary table, and
+one-time sup approximation has the same error under every future depth.
+Modulo constants the metric is `osc(f-g)/2`.
+
+For a fixed finite rational column alphabet whose coefficients and seed lie
+in `eta Z`, normalized profiles lie in a finite set. If
+
+```math
+B=max_c max_(y,z)[A_c(y)-A_c(z)
+ +2sum_(i:y_i!=z_i)|J_i^c|],                                    \tag{17.30}
+```
+
+then, with `q=2^w` and `K=floor(B/eta)`, there are at most
+
+```math
+(K+1)^q-K^q                                                     \tag{17.31}
+```
+
+normalized profiles. Weighted partition refinement by `(successor,
+baseline toll)` gives the coarsest exact restricted quotient.
+
+#### Proof
+
+Max-plus nonexpansiveness gives the upper half of (17.29). To expose
+coordinate `a`, append one column with horizontal couplings `M>0`, fields
+`La_i` with `L>M`, and no vertical interactions. The new boundary is uniquely
+`a`; choosing `M` larger than half every competing profile gap also makes
+the old boundary uniquely `a`. The continued optimum difference is
+`f(a)-g(a)`, proving the reverse inequality.
+
+For (17.31), the difference of two maxima lies between the minimum and
+maximum pointwise kernel differences. Thus every normalized successor has
+span at most (17.30), lies on the `eta`-lattice, and has maximum zero.
+Counting all `(K+1)^q` grid vectors and excluding the `K^q` vectors with no
+zero gives (17.31). Finite weighted Myhill--Nerode refinement proves
+the last statement. `square`
+
+The exact verifier exhibits a strict width-three response chart with
+determinant `-1024`, a closed eight-dimensional sup-cube of radius `1/2`, and
+seven projective degrees. A rational width-two two-letter alphabet has seven
+reachable normalized profiles and a strict two-state weighted quotient.
+
+Repeatedly re-quantizing need not inherit the one-time isometry. In the
+embedded one-spin model with coupling `-K`, field `0<s<K`, and grid mesh
+`Delta>4s`, every approximate projective state rounds to flat and pays toll
+`K+s`; the exact optimum after `n` steps is
+
+```math
+nK+(n mod 2)s.                                                    \tag{17.32}
+```
+
+The absolute error is `ns` for even `n` and `(n-1)s` for odd `n`. Both exact
+and approximate projective controls return after two steps, but their reward
+cycle differs by `2s`. Thus projective lumpability and scalar-cocycle
+compatibility are separate necessities.

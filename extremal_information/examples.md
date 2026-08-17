@@ -1010,3 +1010,140 @@ loses `delta` per visit and leaves the cell after finitely many steps. A
 nonzero witness cycle in such an over-approximation is not a drift
 certificate. Whole-cell invariance or another exact path-lifting theorem is
 needed before Theorem 16.19 has a converse.
+
+## Example 38: affine normal directions do not define an invariant fan
+
+For `F(x)=x+1`, the linear normal of the hyperplane `x=0` is fixed.  But the
+negative sign atom is not mapped into one atom: `F(-2)<0` while
+`F(-1/2)>0`.  A switching certificate must retain the full affine form,
+including its offset.
+
+Even zero additive holonomy of normal directions is insufficient under
+rescaling.  For `F(x)=2x`, pullback of `x-1` produces the distinct boundaries
+`x=2^(-k)`.  The finite zero-holonomy closure law is valid for unit transport
+of oriented normals, as occurs for coordinate-difference forms under
+selector maps; it is false for arbitrary affine scaling.
+
+## Example 39: a five-piece compact system has exponential future memory
+
+On `[0,1]`, use the two encoders
+
+```math
+E_0(x)=x/3,
+\qquad E_1(x)=(x+2)/3,
+```
+
+and the continuous three-piece decoder which maps both outer thirds back to
+the whole interval and folds the middle third.  It satisfies `R E_b=id`.
+After `t` encoders, the `2^t` ternary histories are pairwise separated by at
+least `1/3` under one of the future observations
+`h,h circ R,...,h circ R^(t-1)`, where `h(x)=x`.
+
+Thus error below `1/6` requires at least `2^t` predictive states, although
+the static and complete one-step response images have `O(1/epsilon)` covers.
+The writing modes are contractions; the permitted expanding decoder is what
+turns microscopic stored digits into macroscopic future response.  Removing
+the decoder removes the explosion.
+
+## Example 40: local tie compatibility has a sharp Helly failure
+
+For cyclic coordinates modulo constants, set
+
+```math
+phi_i(x)=max{x_(i+1),x_i+c_i},
+\qquad sum_i c_i=1.
+```
+
+Every proper subfamily of the `m` tie faces intersects, because deleting one
+cycle edge leaves a forest of difference equations.  All `m` cannot
+intersect, and the precise robust gap is
+
+```math
+min_x max_i|x_(i+1)-x_i-c_i|=1/m.
+```
+
+Pairwise, or even `(m-1)`-wise, optimizer-face compatibility therefore does
+not certify a realizable switching word.  The obstruction can first appear
+at arbitrarily large dimension.
+
+## Example 41: strict width-three Ising exposes its whole boundary table
+
+For a strip prefix, let `f(x)` be the best energy conditioned on its exposed
+width-`w` spin column.  Arbitrary legal future columns give the exact
+contextual metric
+
+```math
+D_ctx(f,g)=||f-g||_infinity.
+```
+
+A single strong ferromagnetic column plus fields pins any requested old
+boundary coordinate.  Hence the usual transfer table is not merely a
+convenient dynamic-programming state: it is the coarsest contextual state.
+
+This is not an artifact of allowing arbitrary tables.  A strict width-three
+nearest-neighbor strip has an explicit integer point whose reachable response
+map has determinant `-1024`; its affine chart realizes a closed
+eight-dimensional sup-cube of radius `1/2`.  There are genuinely eight
+absolute and seven projective continuous response directions.
+
+## Example 42: a restricted strip lumps exactly, while fresh rounding drifts
+
+A two-letter rational width-two alphabet has seven reachable normalized
+messages but only two weighted residual classes.  Partition refinement
+discovers the exact quotient
+
+```math
+       c_0       c_1
+A   (A,3)     (B,3)
+B   (A,1)     (B,3).
+```
+
+Thus a transfer table can admit a strict path-realizing quotient when the
+future alphabet is restricted.
+
+By contrast, repeatedly quantizing an antiferromagnetic one-spin submodel
+with coupling `-K` and field `s` rounds the projective shape back to flat at
+every step but predicts scalar toll `K+s` each time.  The exact tolls
+alternate `K+s,K-s`, so the error after `n` steps is `ns` for even `n` and
+`(n-1)s` for odd `n`.  Projective state stability does not control the
+absolute optimum unless the scalar reward cocycle is also compatible.
+
+## Example 43: contraction and branching have an exact response-entropy law
+
+Put an independent coordinate block at every node of a finite `q`-ary tree.
+Let each input move to one child and multiply all surviving coordinates by
+`rho<1`; observe only the current root.  The depth-`T` response tree is the
+box
+
+```math
+prod_(k=0)^T[0,D rho^k]^(p q^k).
+```
+
+Its exact sup-covering number is the product of the one-dimensional covering
+numbers.  It attains the contraction-weighted context-tree bound factor by
+factor.  At fixed accuracy, contraction truncates relevant depth at
+`Theta(log(1/epsilon))`, but branching turns that into
+`Theta((1/epsilon)^(log q/log(1/rho)))` response states.  Mixing time changes
+the scale at which static entropy is paid; it does not simply multiply a
+static state count.
+
+## Example 44: exact automaton state can jump while response error is continuous
+
+A four-state, two-letter max-plus automaton has a coarsest strong block
+quotient with two states.  Its quotient is discovered by block-signature
+refinement, and actual depth-one suffixes expose both blocks.
+
+Increase one microscopic maximizing self-loop by `delta>0`.  The exact strong
+quotient now refines to all four singleton states, but the old two-state
+quotient has one-step response defect only `delta`.  Repeating that self-loop
+gives error exactly
+
+```math
+n delta
+```
+
+at every depth `n`; the nonexpansive sum-of-defects bound is sharp.  This
+separates exact state complexity, which is discontinuous at `delta=0`, from
+finite-horizon response distortion, which changes continuously.  The
+repeatable defect cycle—not the mere failure of exact lumpability—is the
+obstruction to depth-uniform reuse.

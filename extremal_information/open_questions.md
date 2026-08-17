@@ -6,47 +6,45 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Finite tropical lumpability and path realization
+## 1. Robust converse to finite tropical lumpability
 
-The analytic and algebraic parts of switching stability are now separated.
-For fresh residuals, suffix-row total variation is the exact gain and uniform
-scrambling is sufficient. For a declared exact affine-selector language, the
-ordered-witness graph is necessary and sufficient: positive cycles pump
-directed drift and zero cycle weights characterize two-sided boundedness.
-The robust reset automaton has also collapsed from a suffix power set to the
-worst-case-minimal kernel partition.
+The forward structural problem now has two rigorous positive criteria. Exact contextual
+refinement stabilizes if and only if a finite deterministic path-realizing
+quotient exists. More usefully, a finite oriented affine arrangement closed
+under generator pullback is a checkable sufficient certificate; for selector
+coordinate differences, finiteness of the unrestricted pullback closure is
+equivalent to zero weight on every reachable unit-transport cycle. An
+approximate block quotient plus uniform switching contraction gives a finite
+depth-independent response simulator without enumerating active cells.
 
-The remaining problem is producing the control language itself. A local
-max-plus face graph is only a sound over-approximation: the translated clamp
-has a locally feasible self-loop which no orbit repeats indefinitely, and
-independent tie resolutions can be mutually incompatible. Different paired
-selectors additionally force the cross-difference carrier
-`D_(ij)=y_i-x_j`; diagonal errors alone do not close.
+The remaining problem is a **robust converse**. Failure of one affine
+certificate need not kill every quotient: formal selector branches may be
+dynamically incompatible, and saturation may eliminate their infinite
+normal orbit. Nor must failure produce amplitude drift: irrational rotation
+has zero drift but an unbounded exact contextual partition. The compact
+Cantor encoder--decoder instead has exponential approximate future memory.
 
-Prove a structural theorem giving a small exact path-realizing quotient for
-a natural class of max-plus continuations. The cleanest candidate is a
-common finite invariant normal fan or cell partition satisfying whole-cell
-inclusions
+For a compact rational selector-affine system and fixed response accuracy
+`epsilon`, characterize which of the following is forced:
 
-```math
-F_a(C_q) subset C_(delta(q,a)).
-```
+1. a finite approximate bisimulation/congruence;
+2. a realizable positive response cocycle, giving extensive drift; or
+3. an explicit packing of the horizon response trees whose cardinality tends
+   to infinity.
 
-Allow lower-dimensional tie cells only when the tangent update descends
-consistently. Once such a quotient is supplied, Theorem 16.19 decides
-coherent drift. Theorem 16.18 separately decides fresh-residual stability
-when the quotient also yields a uniform scrambling bound over every
-dynamically realizable stochastic secant.
+The desired theorem must give a checkable witness, not merely define the
+minimal contextual pseudometric. A promising restricted case is a finite
+unit-transport normal graph with polyhedral enabling domains: decide whether
+a nonzero syntactic holonomy cycle has a repeatable feasible subcycle, and if
+not, bound the pullback-refinement entropy of the transient language.
 
-**Success:** checkable intrinsic hypotheses yielding a finite invariant,
-path-realizing quotient whose size is demonstrably below the full orbit
-language, with the witness-cycle or scrambling test then giving a uniform
-response bound or a realized pumpable drift word.
+**Success:** a decidable dichotomy/trichotomy for one nontrivial selector
+class, with either a finite quotient of controlled size or a quantitative
+realizable drift/response-packing witness.
 
-**Stop condition:** an `O(T epsilon)` estimate, a global image-diameter
-assumption, a nonempty-intersection face graph, or a theorem which conflates
-fixed coherent defects with fresh adversarial residuals does not answer the
-question.
+**Stop condition:** common normal directions without affine offsets, pairwise
+face compatibility, or an unconstrained orbit-language enumeration does not
+advance the target.
 
 In parallel, the bounded-presentation benchmark leaves a sharp scale gap.
 Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy

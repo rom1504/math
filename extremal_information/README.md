@@ -206,6 +206,29 @@ conclusions.
     control vertex for the full selector alphabet. A naive local
     face graph is not path-realizing, so finite tropical lumpability—not more
     cycle notation—is the remaining structural obligation.
+17. The forward finite-lumpability obligation now has an exact criterion and
+    a checkable nontrivial subclass. Iterated pullback of the observation
+    partition stabilizes exactly when a finite deterministic path-realizing
+    quotient exists. A finite oriented affine
+    arrangement closed under branch pullback is a checkable certificate; for
+    selector coordinate differences, its unrestricted closure is finite
+    exactly when every reachable unit-transport cycle has zero affine
+    holonomy. Normal directions without offsets or orientations do not
+    suffice.
+18. Approximate block lumpability plus uniform switching contraction gives a
+    finite depth-independent response simulator without active-cell
+    enumeration. More generally, static response entropy and dynamic memory
+    interact through scale: suffix gain changes the resolution at which an
+    internal cover is paid, while `q`-ary branching transforms local response
+    entropy across the context tree. A finite affine tree shift attains the
+    resulting bound at every level.
+19. The converse cannot be only a drift-cycle theorem. A compact five-piece
+    encoder--decoder has bounded one-step response entropy but exponential
+    horizon memory; irrational rotation has unbounded exact refinement
+    without amplitude drift. On the positive benchmark side, arbitrary
+    strict-strip futures expose the complete Ising boundary table with an
+    exact sup-metric isometry, while a restricted rational width-two alphabet
+    genuinely minimizes from seven reachable profiles to two weighted states.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The
@@ -415,15 +438,18 @@ shared-parameter presentation bounds its coarse entropy.  Exact tropical
 lumpability and metric shells supply congruences; the transition toll shows
 that one-step approximation does not.
 
-The recognition/stability target is now partly resolved and partly corrected.
+The recognition/stability target is now substantially resolved and corrected.
 Approximate idempotence can drift, but a *shared exact* idempotent relation can
 also absorb a coherent defect forever.  Thus no converse may treat fixed
 kernel families as fresh adversarial noise.  On a fixed factorial tie-free
 selector language with fresh arbitrary residuals, endpoint gauges plus
 syndetic tangent resets are complete, and twisted cycle means give the exact
-recurrent criterion.  The remaining unifying target is
-a paired-selector skew-product theorem combining these finite certificates
-across switching cells; a static response cover alone cannot decide this.
+recurrent criterion. The remaining unifying target is a robust converse for
+finite selector-affine dynamics: failure of a finite oriented pullback
+certificate should yield either a realizable response cocycle or a
+quantitative packing of finite-horizon response trees. A static response
+cover alone cannot decide this, and syntactically nonzero holonomy may be
+dynamically infeasible.
 
 ## Extremal rate--distortion
 
