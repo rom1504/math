@@ -419,6 +419,13 @@ Find a nonlocal semigroup, antinorm, or projective operator representation
 for a growing-interface class whose dimension is strictly smaller than its
 full Boolean landscape and whose multiplication defect is subleading.
 
+The approximate-residual question is now closed at the generic level.
+Terminal profiles admit a depth-uniform last-window theorem, but exact reset
+maps can retain a positive directed compatibility rate, and arbitrarily
+small residual shells contain scaled copies of arbitrary weighted response
+algebras. Any positive scalar theorem must control the compatibility
+cocycle, not only the residual radius or contraction coefficient.
+
 **Success:** a restricted dense or rank-growing model with an exact scalar
 lower-spectral limit plus a sub-landscape carrier, or a proof that one
 natural proposed nonlocal product necessarily retains an extensive response

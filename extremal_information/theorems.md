@@ -6781,6 +6781,111 @@ all prior error, while subsequent nonexpansive updates add at most one fresh
 `eta` each. This is a restricted-image reset, not a strict global Lipschitz
 coefficient.
 
+### Theorem 17.7 (terminal residuals, scalar compatibility, and small-shell universality)
+
+Let finite max-plus matrices act on rows.  For a row `u` and terminal field
+`z`, define the normalized terminal response
+
+```math
+R_z(u)=max_j(u_j+z_j)-max_j u_j.                    \tag{17.34}
+```
+
+Fix `D`.  Suppose every legal length-`D` product `T_v` has a factorization
+
+```math
+|T_v(i,j)-a_v(i)-p_v(j)|<=epsilon,                  \tag{17.35}
+```
+
+and the profiles `[p_v]` have an `eta`-net `{[r_c]}` in projective
+sup distance.  If a word `w` ends in `v`, then for every raw initial state
+`i` and terminal field `z`,
+
+```math
+|R_z(T_w(i,.))-R_z(r_(chi(v)))|
+<=2(epsilon+eta).                                    \tag{17.36}
+```
+
+The bound is independent of word depth and of `z`.  The suffix is always a
+finite reusable state; its smaller code label is reusable when the label is
+a right congruence under suffix shift.
+
+This terminal theorem does not control accumulated scalar response.  If
+exact rank-one generators are `T_e=a_e tensor p_e`, their directed
+compatibility table
+
+```math
+varphi(e,f)=max_j(p_e(j)+a_f(j))                     \tag{17.37}
+```
+
+obeys, on every legal cyclic word,
+
+```math
+rho(T_(e_1)...T_(e_t))=
+sum_(s=1)^t varphi(e_s,e_(s+1)),\qquad e_(t+1)=e_1. \tag{17.38}
+```
+
+Approximating length-`D` blocks entrywise by rank-one factors with errors
+`epsilon_v`, and replacing `varphi` by a quotient table, gives asymptotic
+spectral error per original letter at most
+
+```math
+{max_v epsilon_v+Delta\over D},                      \tag{17.39}
+```
+
+where `Delta` is the largest absolute mean defect on a directed simple
+cycle of the finite legal-block graph.  At zero factor error, bounded
+absolute error is possible exactly when every cycle defect vanishes, or
+equivalently when the defect is a potential on each strongly connected
+component.
+
+Both distinctions are sharp.  For every `delta>0`, the two exact rank-one
+matrices
+
+```math
+A=\begin{pmatrix}0&0\\0&0\end{pmatrix},\qquad
+B=\begin{pmatrix}delta&2delta\\0&delta\end{pmatrix} \tag{17.40}
+```
+
+have zero projective contraction and profiles with optimal one-centre
+radius `delta/4`, yet every one-dynamic-state predictor with
+letter-dependent tolls has optimal scalar response distortion exactly
+`delta/4` per letter.  More generally, scale any all-finite weighted-
+automaton alphabet with entries in `[-1,0]` by `alpha`.  Every nonempty
+product then lies in a one-profile row shell of radius `alpha/2`, while its
+entire spectral response algebra is the original algebra scaled by `alpha`.
+
+#### Proof
+
+Write `w=uv`.  Substituting (17.35) after the prefix maximum leaves one
+scalar plus `p_v(j)` and an error in `[-epsilon,epsilon]`; projective
+replacement costs `eta`, and the two maxima in (17.34) give (17.36).
+Rank-one multiplication gives
+
+```math
+(a_e tensor p_e)(a_f tensor p_f)
+=varphi(e,f)+a_e tensor p_f,                          \tag{17.41}
+```
+
+which proves (17.38).  Entrywise perturbations and spectral radius are
+one-Lipschitz; simple-cycle deletion proves (17.39) and the potential
+criterion.
+
+For (17.40), the compatibility table is
+`delta [[0,1],[1,1]]`.  The cycles `A,B,AB` force error at least
+`delta/4`; tolls `(delta/4,5delta/4)` attain it because a cyclic word with
+`k` runs of `A` has defect `delta(k-|w|/4)` and
+`0<=k<=|w|/2`.  Finally, changing only the last edge of an optimal path in a
+scaled `[-1,0]` alphabet changes any fixed product row by at most `alpha`.
+Rowwise centering gives radius `alpha/2`, while positive scaling commutes
+with max-plus multiplication and spectral radius. `square`
+
+Thus terminal response error is paid once, while unresolved compatibility
+is paid once per repeatable cycle.  Small projective radius, even combined
+with perfect one-step forgetting, cannot bound cumulative-response memory.
+The full proof, support-core guardrail, and independent audit are in
+[`drafts/approximate_residual_shell_law.md`](drafts/approximate_residual_shell_law.md)
+and its adjacent audit files.
+
 ## 18. Bridge interfaces, synchronization, and proof-memory separation
 
 The results in this section were proved during the bridge-hierarchy campaign.

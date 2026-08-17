@@ -1460,3 +1460,16 @@ profile from their subsequential mean function.
 Hence existence of a canonical averaged limit proves only sufficiency for
 that averaging query.  It cannot replace an all-order recovery or phase-
 mixing theorem when later composition is sensitive to the newest scale.
+
+## 63. Forgetting the endpoint profile does not forget accumulated reward
+
+A bounded-delay near-reset pays terminal residual error only once.  The
+scalar gained when one residual hands off to the next is a directed
+compatibility cocycle, and any non-potential cycle defect is paid at positive
+rate under repetition.
+
+This distinction is scale-sharp: an arbitrarily small one-profile shell can
+contain a scaled copy of an arbitrary finite weighted response algebra.
+Dynamic compression therefore needs two certificates--terminal-state
+forgetting and reward-cocycle compatibility--not merely a small static image
+or a strong projective contraction.

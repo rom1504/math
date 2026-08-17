@@ -288,6 +288,12 @@ one of:
 - **Next theorem:** a scalable contraction/synchronization hypothesis that
   reduces the realizable response dimension itself, rather than merely
   quantizing a full port.
+- **New dynamic boundary:** a bounded-delay approximate rank-one shell gives
+  depth-uniform normalized terminal recovery, but not scalar-reward recovery.
+  Exact reset maps can retain a positive compatibility-cycle rate, and a
+  radius-`alpha/2` one-profile shell can contain any finite weighted response
+  algebra at scale `alpha`. Reusable compression must separately quotient
+  the directed reward cocycle.
 
 ### 8. Finite-dictionary response sparsification — active theorem, B+
 

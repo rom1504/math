@@ -2104,3 +2104,19 @@ L(s)=C_alpha(s)+(s/alpha)C_alpha'(s)
 recovers the whole ordered profile.  Thus a unique averaged thermodynamic
 statistic can coexist with future contexts that recover all the information
 it discarded.
+
+## Example 98: perfect forgetting can hide an arbitrary reward algebra
+
+An approximate row-rank-one suffix controls every normalized terminal query
+with an error paid once, independent of the preceding depth.  It does not
+control accumulated max-plus reward.  Two exact rank-one binary transfer
+matrices already have contraction zero but incur an optimal one-state reward
+error `delta/4` per letter because their directed endpoint compatibilities
+have a nonzero cycle defect.
+
+The obstruction is universal below the shell scale.  Multiplying any
+bounded all-finite weighted automaton by `alpha` puts every product in a
+single projective row shell of radius `alpha/2`, while preserving its full
+spectral response algebra up to that scale.  Static residual proximity and
+dynamic scalar sufficiency are therefore incomparable without a compatible
+reward cocycle.
