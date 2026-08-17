@@ -67,3 +67,14 @@ The maximum includes every old-child Boolean spin and both quadratic signs,
 so this is a genuine full response separation for the fixed labelled field.
 It is not yet a separation between unconstrained appended parents: free
 shore spins also optimize the endpoint label and may select another field.
+
+## Free-shore corollary
+
+Corollary 21.65 / DS.7 also passes.  Here `E X=1/2,E Y=0`, so the
+all-positive endpoint has `||W_j1||_1/N_j>=1+j/2`.  There is no missing
+factor two in the cross energy.  At multiplicity
+`m_j~lambda sqrt(N_j/j)` this is
+`(lambda/2+o(1))N_j^(3/2)sqrt(j)`, whereas the child contributes only
+`O(N_j^(3/2))` and every internal exact-sign shore contributes `O(N_jj)`.
+The no-go applies to every internal completion of this direct unbalanced
+lift, but not to a redesigned balanced or cancelled cross representation.

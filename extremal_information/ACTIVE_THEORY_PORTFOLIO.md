@@ -38,7 +38,7 @@ impossibility theorem, or a genuinely orthogonal limit theorem.
 - **Current ceiling:** the positive family is one unbalanced tensor algebra,
   its robust theorem targets the spectral roof, and no result selects it for
   near-minimizers or realizes it at all orders.
-- **Next theorem:** labelled-to-unlabelled sparse-flip realization below.
+- **Next theorem:** balanced-endpoint sparse-flip realization below.
 - **Strike count:** zero.
 
 ### Live exact-sign boundary
