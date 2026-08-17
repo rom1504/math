@@ -672,6 +672,15 @@ by a smoothing transform. This is a limiting distributional state, not an
 exact finite-port quotient, and genealogy-marked futures force a larger mass
 measure. It is retained as a scoped rare-event branch.
 
+The same branch now has a deterministic leading-rate compactness theorem.
+Upper-semicontinuous microcanonical log-count hypographs compose by supremal
+convolution and have recovery sequences; finite count convolution inherits
+the limit when decomposition and descriptor complexity are subexponential at
+the declared speed. A bounded-temperature pressure family can miss an
+isolated maximum of positive normalized height, while the hypograph retains
+it. This is a speed-sensitive response roof, not a full extremal process:
+subexponential multiplicity and spacing remain invisible.
+
 A second orthogonal benchmark keeps disorder discrete and adversarial. For a
 finite-state nearest-neighbor chain, minimum transfer-product norms are
 submultiplicative, so fixed-temperature pressure is a lower spectral radius;

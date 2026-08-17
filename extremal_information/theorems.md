@@ -8979,3 +8979,104 @@ interface, while a balanced dense quadratic split has a provably leading
 interface response and a standard transfer dimension `2^n`. This falsifies
 the naive local-transfer import, not every possible nonlocal multiplicative
 norm or quotient.
+
+## 27. Microcanonical hypograph compactness
+
+Let `K` be a compact metric descriptor space and let bounded-above usc
+profiles take values in `[-infinity,M]`. Write `f_n ->^h f` for hypograph
+convergence: every convergent input sequence obeys the limsup inequality and
+every limit point has a recovery sequence. Closed downward hypographs in the
+compactified cylinder `K times [-infinity,M]` form a compact hyperspace.
+
+### Theorem 27.1 (compact sup-convolution and finite count recovery)
+
+Let `K_1,K_2,K` be compact, `m:K_1 times K_2->K` continuous, and
+`f_n ->^h f`, `g_n ->^h g`. Define
+
+```math
+(f\star_mg)(z)=\max_{m(x,y)=z}\{f(x)+g(y)\},            \tag{27.1}
+```
+
+with value `-infinity` on an empty fibre. Then
+
+```math
+f_n\star_mg_n\xrightarrow{h}f\star_mg.                 \tag{27.2}
+```
+
+Every continuous tilt `V` has convergent maximum value; cluster points of
+finite maximizers are limit maximizers, and every finite-valued limit
+maximizer has an asymptotically maximizing recovery sequence.
+
+Suppose now `A_n,B_n` are finite multiplicity profiles at speed `a_n`, their
+normalized log profiles have the preceding limits, and
+
+```math
+C_n(z)=\sum_{m(x,y)=z}A_n(x)B_n(y).                     \tag{27.3}
+```
+
+If `D_n(z)` is the number of positive decompositions and
+
+```math
+\sup_z\log\max(1,D_n(z))=o(a_n),                        \tag{27.4}
+```
+
+then the normalized log-count profile of `C_n` has limit (27.1). If the
+number of occupied descriptor fibres is also `exp(o(a_n))`, a recovered
+fibre lying `Delta` below the maximum has uniform probability
+`exp(-a_n Delta+o(a_n))`.
+
+#### Proof
+
+For the upper hypograph bound, take maximizing decompositions and pass to a
+compact subsequence; continuity of `m` and the two limsup inequalities give
+(27.2). For recovery, take a maximizing limit decomposition and combine the
+two component recovery sequences. Adding continuous `V` preserves these
+arguments.
+
+On the positive effective domain, largest-summand bounds give
+
+```math
+0\le {\log C_n(z)\over a_n}
+-\max_{m(x,y)=z}\left({\log A_n(x)\over a_n}
+                      +{\log B_n(y)\over a_n}\right)
+\le {\log\max(1,D_n(z))\over a_n}.                      \tag{27.5}
+```
+
+Both sides are `-infinity` off that domain. Uniformity in (27.4) transfers
+hypograph convergence. The same largest-fibre estimate over a
+subexponential descriptor image proves the probability statement. `square`
+
+This is the compact sign-dual form of standard epi/Gamma stability under
+infimal convolution; see
+[Rockafellar--Wets, *Variational Analysis*, Section 7](https://sites.math.washington.edu/~rtr/papers/rtr169-VarAnalysis-RockWets.pdf).
+The useful project-specific point is its query and
+speed boundary. A full usc microcanonical hypograph retains nonconcave
+finite-rate branches that a bounded family of linear-temperature pressures
+can convexify away.
+
+### Proposition 27.2 (bounded-temperature pressure can miss a rare maximum)
+
+Fix `B>0` and `0<delta<1/B`. Let one landscape have `ceil(e^n)` states at
+energy density zero and one state at density `delta`; let another have only
+the bulk. Uniformly for `|beta|<=B`, their normalized log partition functions
+differ by `o(1)`, while their normalized maxima differ by `delta`.
+
+Indeed the difference is
+
+```math
+{1\over n}\log\left(1+{e^{\beta n\delta}\over\lceil e^n\rceil}\right)
+\le {1\over n}\log(1+e^{-n(1-B\delta)+o(n)}).           \tag{27.6}
+```
+
+The speed-`n` hypograph sees the isolated energy branch. It still identifies
+one maximal state with `e^(sqrt(n))` maximal states, so it does not determine
+extremal spacings, Cox decorations, or other subexponential structure.
+
+The deterministic mean-field Blume--Emery--Griffiths model is a classical
+benchmark: its occupation entropy is `-sum_j L_j log L_j`, its energy is
+`L_++L_- -K(L_+-L_-)^2`, and its nonconcave microcanonical branch is lost by
+canonical Legendre data
+([Ellis--Touchette--Turkington](https://doi.org/10.1016/j.physa.2003.11.028)).
+The present theorem is a speed-sensitive contextual
+roof under continuous descriptor tilts, not a wholly separate algebra and
+not a structured recovery theorem for sign quadratics.

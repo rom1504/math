@@ -123,21 +123,24 @@ one of:
 
 - **Core object:** a centered extremal point process whose conditional law is
   controlled by a critical derivative-mass state.
-- **Strongest imported theorem:** under the boundary-case hypotheses,
+- **Strongest theorems:** under the boundary-case hypotheses,
   Madaule's branching-random-walk extremal process is a decorated Cox process
   with intensity `lambda Z_infinity e^x dx`; all unmarked Laplace queries
-  depend on the environment through one scalar.
+  depend on the environment through one scalar. A separate deterministic
+  theorem proves compact hypograph closure and recovery under supremal/count
+  convolution at one exponential speed.
 - **Composition:** finite depth needs `(W,Z)`, but `W` vanishes and the limit
   closes by `Z=sum_u e^(-V(u))Z_u`.
 - **Best falsifier:** genealogy-marked futures distinguish branch-mass
   allocations with the same total `Z`; their state is a derivative-mass
-  measure. A parity-alternating deterministic extremizer also shows that
-  all-order marked convergence cannot be assumed.
+  measure. Exponentially many descriptor fibres defeat exact-fibre mass
+  prediction unless descriptor complexity is charged; one versus
+  `e^(sqrt(n))` extrema defeats every speed-`n` hypograph.
 - **Information discarded:** genealogy and the fixed decoration law; the
   declared unmarked query class cannot inspect them.
-- **Next theorem:** a deterministic/adversarial model in which critical
-  renormalization, rather than a finite exact quotient, yields a unique
-  composable extremal state.
+- **Next theorem:** either a natural multi-speed state closing beyond leading
+  entropy, or a deterministic/adversarial model in which critical
+  renormalization yields a unique composable extremal state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
 ### 5. Adversarial statistical mechanics — keep warm, B
@@ -251,6 +254,7 @@ one of:
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |
+| rare-event | microcanonical density of states | compact usc hypograph at a declared speed | passed with a subexponential descriptor/decomposition condition; bounded-temperature pressure falsifier and subexponential ceiling recorded |
 
 ## Director rule
 

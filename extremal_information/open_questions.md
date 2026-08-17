@@ -307,6 +307,14 @@ CSPs, or bounded-width factor graphs.
 **Success:** a Gamma-limsup/recovery theorem preserving the declared response
 with vanishing normalized loss and without storing a target optimizer.
 
+The abstract leading-rate case is now closed for unstructured landscapes:
+compact microcanonical hypographs compose by supremal convolution and every
+bounded usc profile has an abstract finite recovery sequence. This does not
+solve constrained realization inside codes, sign quadratics, or graphs. It
+also loses subexponential extremal multiplicities. The live alternatives are
+a structured recovery theorem at the target scale, or a natural multi-speed
+hypograph whose added resolution still closes under composition.
+
 **Stop condition:** finite-state approximation outside the constrained model
 does not answer this question.
 

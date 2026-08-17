@@ -1833,3 +1833,18 @@ This puts three bridge regimes on one scale. The identity part of
 produces local factor tables, not a global state for a graph with a large
 separator, and arbitrary state-specific futures can still inspect states
 discarded inside one feature fibre.
+
+## Example 82: a microcanonical hypograph retains finite-rate rare branches
+
+At one exponential speed, store the upper-semicontinuous log-count profile
+over a compact descriptor. Cartesian composition becomes supremal
+convolution whenever the number of decompositions is subexponential, and
+hypograph recovery preserves every finite-rate branch. The nonconcave
+microcanonical entropy of the mean-field BEG model is the classical
+benchmark: bounded canonical temperature data sees only its concave envelope.
+
+Two limits are sharp. Exponentially many distinct descriptor fibres can add a
+missing mass exponent unless descriptor complexity is charged, and one
+maximum versus `e^(sqrt(n))` maxima is invisible at speed `n`. Thus this is a
+leading-rate rare-event state, not an extremal point process or an automatic
+structured realization theorem.

@@ -1248,3 +1248,16 @@ answers only bounded fields through retained features, and local low-rank
 factors can create a large separator state after elimination. Numerical rank
 therefore predicts **local response image**, while dynamic memory still
 depends on the composition graph and allowed future queries.
+
+## 48. Rare-event compactness must charge descriptor complexity and speed
+
+Hypograph convergence of exact-fibre log counts preserves the best recovered
+fibre, but total mass can hide in exponentially many distinct descriptor
+values. A valid probability or pressure theorem therefore needs either a
+subexponential descriptor image, a coarse-bin Laplace principle, or local-
+ball entropy. This is the rare-event analogue of charging query complexity.
+
+At a fixed exponential speed, supremal convolution is closed and finite-rate
+branches survive. Subexponential multiplicities and spacings do not. The
+choice of speed is therefore part of the state, just as the allowed future
+query family is part of a contextual response quotient.
