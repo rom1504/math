@@ -77,12 +77,15 @@ Closed subroutes:
 - scalar switching visibility is sufficient but not necessary: PC.3 has
   `nu=N^(-1/4)` while collective twirl coercivity remains constant.
 
-**Next theorem:** decide whether the labelled separation has an economical
-unlabelled realization.  Either construct an exact-sign parent/context that
-exposes the periodic endpoint without a leading calibration cost, or prove
-that free endpoint switching necessarily repairs every sublinear-shore
-realization.  Do not confuse this realization problem with the now-closed
-child-spin optimization.
+The direct free-shore realization is also closed: its all-positive endpoint
+has field `l_1` norm `Omega(N_jj)` and hence super-target
+`Omega(N_j^(3/2)sqrt j)` cap.
+
+**Next theorem:** construct a balanced-endpoint exact-sign compiler whose
+entire free endpoint language stays at the target scale and retains the
+labelled separation, or prove that every sublinear-shore compiler exposing
+this field necessarily admits a super-target biased endpoint.  Do not reopen
+the closed child-spin or naive free-shore constructions.
 
 ## 2. Renormalized rare-event state — keep warm, B+
 

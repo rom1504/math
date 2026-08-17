@@ -709,6 +709,34 @@ does not pin the replicas inside an ordinary unconstrained quadratic parent;
 the passage from labelled response separation to such a parent is a distinct
 realization problem.
 
+### Corollary DS.7 (free endpoint switching blows up the repeated-port parent)
+
+The direct unlabelled realization suggested by Corollary DS.5 cannot have
+bounded `n_j^(3/2)` scale.  Indeed, for the all-positive endpoint `eta`,
+
+```math
+{||W_jeta||_1\over n_j}
+=\mathbb E\left|1+\sum_{t<j}(X_t+Y_t)\right|
+\ge1+{j\over2}.                                  \tag{DS.62}
+```
+
+Therefore `m_j=floor(lambda sqrt(n_j/j))` free copies of every port expose
+
+```math
+m_j||W_jeta||_1
+\ge(\lambda/2+o(1))n_j^{3/2}\sqrt j.             \tag{DS.63}
+```
+
+This dominates both an `O(n_j^(3/2))` child cap and every internal signing
+on the `O(sqrt(n_jj))`-vertex shore, whose whole energy is `O(n_jj)`.
+Hence every ordinary exact-sign completion of this direct free-shore
+construction has super-target cap `Omega(n_j^(3/2)sqrt j)`.
+
+The obstruction is endpoint bias, not child-spin repair.  Any useful
+unlabelled compiler must restrict or balance the accessible endpoint words,
+or encode the labelled query by a different interface; a subleading internal
+shore cannot repair this construction.
+
 For reference, the exact finite maxima in (DS.36) for `j=2,...,10` are
 
 ```text

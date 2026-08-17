@@ -286,6 +286,16 @@ def field_scale_sequence() -> None:
         f"negative_gap={negative_gap_bound:.8f}, gap={response_gap_bound:.8f}"
     )
 
+    # The naive free shore also exposes the all-positive endpoint.  Its
+    # local score X+Y has exact mean 1/2, giving the scalable DS.7 blow-up.
+    all_positive_field_mean = 1 + depth / 2
+    assert all_positive_field_mean / sqrt(depth) > 5
+    print(
+        f"free all-positive endpoint at j={depth}: "
+        f"E|field| >= |E field|={all_positive_field_mean:.1f}, "
+        f"normalized by sqrt(j)={all_positive_field_mean / sqrt(depth):.8f}"
+    )
+
 
 def main() -> None:
     seed_identities()

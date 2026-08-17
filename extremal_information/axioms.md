@@ -2028,3 +2028,9 @@ auxiliary spins, they may switch to a different field channel.  Three levels
 must therefore remain separate: prescribed witness, full response to a
 labelled query, and physical realization of that query by an optimizing
 parent.
+
+In the PC.3 realization the distinction is quantitative: the balanced
+labelled field has target-scale response, but another free endpoint has a
+linear-in-arity mean and creates super-target energy.  A contextual state is
+physically reusable only if its whole realizable query language—not just the
+desired codeword—is scale controlled.

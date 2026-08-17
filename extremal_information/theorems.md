@@ -12753,6 +12753,32 @@ endpoint word optimizes too.  Proof and normalization details are in
 An independent audit is in
 [`drafts/pc3_labelled_response_gap_audit.md`](drafts/pc3_labelled_response_gap_audit.md).
 
+### Corollary 21.65 (the direct free-shore realization has super-target cap)
+
+The repeated-port implementation of Theorem 21.64 cannot simply leave its
+shore spins free.  For the all-positive endpoint `eta`, the exact PC.3 row
+law gives
+
+```math
+{||W_jeta||_1\over N_j}
+=\mathbb E\left|1+\sum_{t<j}(X_t+Y_t)\right|
+\ge1+{j\over2}.                                  \tag{21.384}
+```
+
+Consequently `m_j=floor(lambda sqrt(N_j/j))` copies of every port expose
+field reward at least
+
+```math
+(\lambda/2+o(1))N_j^{3/2}\sqrt j.               \tag{21.385}
+```
+
+This dominates an `O(N_j^(3/2))` child energy and the entire internal energy
+`O(N_jj)` of the `O(sqrt(N_jj))`-vertex shore.  Thus every exact-sign
+completion of this direct unconstrained-shore construction has cap
+`Omega(N_j^(3/2)sqrt j)`.  A useful unlabelled realization must balance or
+restrict endpoint words, or use a different interface; subleading shore
+calibration cannot suffice.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

@@ -818,12 +818,13 @@ fixed normalized gap; at `kappa=1/2,lambda=1/10` its explicit lower bound is
 greater than `0.0146`.  Thus no alternative Boolean child spin repairs this
 fixed field.
 
-The open realization question is sharper.  In an ordinary appended exact-
-sign parent, the repeated shore spins are free and may select a different
-endpoint word.  Either expose the periodic word without a leading
-calibration cost, or prove that free endpoint switching repairs every such
-sublinear-shore realization.  A shore-only completion cannot supply the
-missing leading bias because its entire energy is `o(N_j^(3/2))`.
+The realization question is now sharper still.  The direct free shore is
+falsified: its all-positive endpoint has field norm at least
+`N_j(1+j/2)`, hence cap `Omega(N_j^(3/2)sqrt j)` at this multiplicity.  A
+shore-only completion cannot remove that bias because its entire energy is
+`o(N_j^(3/2))`.  Seek a balanced-endpoint compiler whose whole accessible
+language remains at target scale, or prove that every sublinear compiler
+exposing the periodic field necessarily admits such a super-target endpoint.
 
 Two natural searches are already closed.  The PC.3 pole-conjugation twirl
 has a depth-independent gap, so every diagonal switching has selector defect

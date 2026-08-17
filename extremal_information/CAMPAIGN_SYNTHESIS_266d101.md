@@ -35,7 +35,10 @@ size law shows that this damaged channel can be queried at leading scale with
 only `o(N)` new vertices.  A two-channel spherical relaxation then proves a
 fixed gap for the **full Boolean trust response** under that labelled field.
 What remains is whether an unconstrained exact-sign parent selects a
-different endpoint word; the child-spin repair question is closed.
+different endpoint word; the child-spin repair question is closed.  The
+naive free-shore lift is also closed negatively: an all-positive endpoint
+creates `Omega(N^(3/2)sqrt(log N))` energy.  Any physical compiler must
+balance or restrict its endpoint language.
 
 ## 1. Theory portfolio and branch ranking
 
@@ -334,7 +337,7 @@ demonstrably-easier standard.
 
 ## 8. Single next three-hour campaign
 
-**Labelled-to-unlabelled realization for sparse-flip PC.3.**  Theorems
+**Balanced-endpoint realization for sparse-flip PC.3.**  Theorems
 21.62--21.64 have resolved both the prescribed-certificate question and the
 full child-spin response under one labelled field.  Let `A'_j` be the
 sparse-flip hollow child, let `W_j` be the repeated PC.3 port matrix, let
@@ -347,14 +350,16 @@ sparse-flip hollow child, let `W_j` be the repeated PC.3 port matrix, let
 
 Taking `m_j=floor(lambda sqrt(N_j/j))`, the appended shore has
 `m_j(2j+1)=O(sqrt(N_jj))=o(N_j)` vertices, and every possible internal
-signing on it has only `o(N_j^(3/2))` energy.  Nevertheless, when these shore
-spins are free, they optimize over all endpoint words rather than realizing
-the declared `epsilon_j`.
+signing on it has only `o(N_j^(3/2))` energy.  But Corollary 21.65 shows that
+the all-positive free endpoint has field at least `N_j(1+j/2)`, creating
+`Omega(N_j^(3/2)sqrt j)` cap.  The direct free-shore lift is therefore a
+scalable no-go, not an open candidate.
 
-Prove one of two genuinely discriminating results: construct an exact-sign
-context that exposes the periodic endpoint without a leading calibration
-cost, thereby realizing the labelled collision in an unconstrained parent;
-or prove a uniform free-endpoint repair theorem for every sublinear-shore
-realization of this kind.  Keep `(r_NN)/2-Q(A'_j)` separate throughout and
-do not reopen the now-closed child-spin maximization, diagonal switching, or
-fixed-seed monomial dilution.
+Prove one of two genuinely discriminating results: construct a sublinear
+exact-sign compiler whose **entire accessible endpoint language** is
+balanced at `O(N_jsqrt j)` field scale and which retains the labelled
+response gap; or prove that every such compiler exposing the periodic field
+necessarily admits a super-target biased endpoint.  Keep
+`(r_NN)/2-Q(A'_j)` separate throughout and do not reopen the now-closed
+child-spin maximization, naive free shore, diagonal switching, or fixed-seed
+monomial dilution.

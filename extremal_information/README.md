@@ -82,7 +82,10 @@ two-dimensional spherical relaxation proves that no Boolean child spin can
 repair a fixed labelled field of sufficiently small strength: the unflipped
 and flipped full responses remain separated by a constant times `N^(3/2)`.
 Free endpoint spins in an ordinary completed parent may still switch to a
-different labelled channel.  No claim about `M_n` follows.
+different labelled channel.  In fact the direct lift is now ruled out: its
+all-positive endpoint creates `Omega(N^(3/2)sqrt(log N))` energy.  A parent
+compiler must enforce a balanced endpoint language or use a different
+interface.  No claim about `M_n` follows.
 
 The first investigation gave four precise conclusions.
 

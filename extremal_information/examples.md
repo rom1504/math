@@ -2844,3 +2844,16 @@ ordinary appended parent still optimizes the new shore endpoint itself; it
 may choose a different field.  The example separates full response to a
 declared context from realization of that context by free exact-sign
 vertices.
+
+## Example 146: an unbalanced free endpoint destroys the naive parent lift
+
+Leaving the repeated PC.3 port vertices free is not a neutral realization of
+Example 145.  The all-positive endpoint has field mean `1+j/2`, so its field
+`l_1` norm is at least `N_j(1+j/2)`.  With the balanced-query multiplicity
+`Theta(sqrt(N_j/j))`, this creates
+`Omega(N_j^(3/2)sqrt j)` energy.  Neither the child nor every edge internal
+to the sublinear shore can cancel that scale.
+
+Thus the direct unlabelled parent is a scalable falsifier, not an open
+candidate.  The remaining compiler problem must enforce a balanced endpoint
+language or avoid free coefficient signs altogether.
