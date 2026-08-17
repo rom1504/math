@@ -8675,6 +8675,131 @@ Hence error below `Delta n^(3/2)/2` requires `2^h` response states, or `h`
 bits.  Here `n` is one Walsh-block order.  This is a semantic lower bound on
 the surviving unrooted coincidence memory, not merely an orbit count.
 
+### Theorem 21.20 (interaction mass controls approximate compatibility memory)
+
+For a real weighted linear-label Walsh graph, write
+
+```math
+E_(G,a)(x)=sum_vh_vH_(a_v)(x_v)
+ +sum_(uv in E(G))w_(uv)x_u^TWx_v,                    \tag{21.95}
+```
+
+where `H_a(x)=x^TC_ax/2` and one Walsh block has order `n`.  For a public
+partition `P` of the active vertices put
+
+```math
+d_G(P)=sum_(uv:[u]_P ne[v]_P)|w_(uv)|.                 \tag{21.96}
+```
+
+Deleting the cross-part edges and decoding each retained component from its
+exact unrooted state `(G(a|_C),R(a|_C))` approximates the upper optimum with
+error at most
+
+```math
+d_G(P)n^(3/2).                                         \tag{21.97}
+```
+
+The same error holds for the absolute optimum when the component decoder is
+
+```math
+max\left\{sum_Cmax E_C,-sum_Cmin E_C\right\}.          \tag{21.98}
+```
+
+For a finite declared query family, use one public partition per query and
+store only inclusion-maximal parts.  A simultaneous carrier uses
+
+```math
+O\left(sum_(C\ maximal)|C|^2\right)                    \tag{21.99}
+```
+
+bits.  In particular a unit path on `t` blocks has an
+`O(t/eta)`-bit carrier at error `eta t n^(3/2)`.  Conversely, for a complete
+graph whose edge magnitudes are at least `c`, every partition with deleted
+mass at most `eta t^2` satisfies
+
+```math
+sum_C|C|^2>=\left(1-{2eta\over c}\right)t^2.           \tag{21.100}
+```
+
+The last inequality is a ceiling on this deletion architecture, not a
+semantic lower bound for every possible code.
+
+#### Proof
+
+The Walsh bridge has operator norm `sqrt n`, so
+`|x^TWy|<=n^(3/2)`.  The pointwise difference between the original and
+truncated energies is therefore at most (21.97); maxima, minima, and absolute
+maxima are one-Lipschitz under a uniform perturbation.  Theorem 21.18 gives
+the exact component state, and disconnected upper optima add.  A maximal
+state restricts to every contained part; Gram forms and row-reduced relation
+kernels use quadratic bits, proving (21.99).  Cut a path every
+`ceil(1/eta)+1` vertices.  On `K_t`, the number of cross-part edges is exactly
+`(t^2-sum_C|C|^2)/2`, which proves (21.100). `square`
+
+### Theorem 21.21 (an off-diagonal Gram flux is scalar-visible)
+
+For every `m>=5`, let
+
+```math
+\begin{aligned}
+a^0&=(e_1+e_2,e_3+e_4,e_1+e_2+e_3+e_4),\\
+a^1&=(e_1+e_2,e_1+e_3,e_2+e_3).
+\end{aligned}                                          \tag{21.101}
+```
+
+Both tuples have zero self-pairings, relation kernel `{000,111}`, and empty
+characteristic-root fibre.  Their off-diagonal Gram values are respectively
+all zero and all one.  For the ordinary unrooted, unweighted triangle query,
+
+```math
+max E_(a^0)={9\over2}n^(3/2),                           \tag{21.102}
+```
+
+whereas
+
+```math
+max E_(a^1)
+ <={3(1+sqrt17)\over4}n^(3/2).                         \tag{21.103}
+```
+
+Thus one Gram/triangle-flux bit is exposed with gap
+
+```math
+{3(5-sqrt17)\over4}n^(3/2).                            \tag{21.104}
+```
+
+#### Proof
+
+For even labels `a,b` and `c=a+b`, the reduced Walsh involutions satisfy
+
+```math
+J_aJ_bJ_c=(-1)^(a dot b)F,                             \tag{21.105}
+```
+
+and all four involutions commute.  In the zero-flux tuple, the self-dual
+chirp `(-1)^(u dot v)` and a characteristic-rooted Witt transport give one
+Boolean vector fixed by `F` and all three children.  Putting it in every
+block saturates the three child and three bridge terms, proving (21.102).
+
+On a joint eigenspace in the unit-flux case, multiply the three child signs
+by the Walsh sign.  Their product is `-1`, and the normalized three-block
+operator becomes, up to a scalar sign,
+
+```math
+diag(s_1,s_2,s_3)+A(K_3),\qquad s_1s_2s_3=-1.          \tag{21.106}
+```
+
+Its norm is at most `(1+sqrt17)/2`: the all-negative case has norm two, and
+the one-negative case has eigenvalues `0,(1+-sqrt17)/2`.  A Boolean
+three-block vector has squared norm `3n`; the prefactor `q/2`, with
+`qn=n^(3/2)`, gives (21.103). `square`
+
+Theorem 21.18 proves `(Gram,relations)` sufficient.  The present theorem is
+a genuine partial converse: after relations and all rooted information are
+fixed, scalar unrooted maxima cannot discard every off-diagonal Gram bit.
+It does not prove entrywise recovery of a general Gram matrix; the exposed
+quantity is naturally a relation-cycle flux.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

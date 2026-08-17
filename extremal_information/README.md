@@ -673,8 +673,17 @@ coincidence relation (plus a root fibre only for root-sensitive components).
 The cost is `O(sum_C|C|^2)=O(wL)`, hence linear for bounded-size,
 bounded-incidence support families. This rate is sharp: independent
 three-block path queries expose one coincidence bit apiece at a fixed
-`n^(3/2)` gap. What remains open is which Gram and relation bits a large
-connected family of scalar graph maxima actually exposes.
+`n^(3/2)` gap. A separate ordinary triangle exposes an off-diagonal
+Gram/flux bit, even after self-parities, relations, and root fibres are fixed.
+What remains open is the metric rate of these fluxes on a large connected
+family, not whether they can be scalar-visible at all.
+
+Approximate locality has a matching scale law. Deleting cross-component
+interaction of total weight `delta` costs at most `delta n^(3/2)` and leaves
+the exact local orbit states. A unit path therefore has an `O(t/eta)`-bit
+carrier at error `eta t n^(3/2)`, whereas this total-variation deletion
+architecture stays quadratic on a dense graph with edge weights bounded
+away from zero.
 
 The sparse upper argument also survives abstraction. For any finite public
 bounded feature dictionary, a linear-size list of importance-weighted masks

@@ -106,7 +106,11 @@ one of:
   larger ambient symmetry: Gram plus relations conjugate the entire weighted-
   graph landscape, so the root fibre disappears exactly, not merely from the
   spectrum. On declared connected supports the remaining relative state
-  localizes to restricted `(kappa,J)` with `O(sum_C|C|^2)` bits.
+  localizes to restricted `(kappa,J)` with `O(sum_C|C|^2)` bits.  If a public
+  partition deletes interaction mass `d`, these exact local charts answer the
+  upper or absolute response within `d n^(3/2)`; unit paths therefore need
+  only `O(t/eta)` bits at error `eta t n^(3/2)`, whereas this deletion
+  architecture stays quadratic on a uniformly weighted complete graph.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
@@ -115,17 +119,21 @@ one of:
   all separately optimized pair responses at leading scale. A coordinate-
   rooted future exposes a bit that every unrooted weighted graph landscape
   forgets; conversely independent ordinary path maxima force one local
-  coincidence bit each at a fixed `n^(3/2)` gap.
+  coincidence bit each at a fixed `n^(3/2)` gap.  More sharply, two unrooted
+  triangles with the same self-pairings, relation kernel, and empty root
+  fibre but opposite binary triangle flux have maxima separated by
+  `3(5-sqrt(17))n^(3/2)/4`; off-diagonal Gram flux is therefore scalar
+  semantic information, not merely orbit bookkeeping.
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
 - **Composition mechanism:** rooted bilinear amalgamation. A cross form,
   intersection correspondence, and root fibre reconstruct the joined state;
   the accumulated presented span makes the operation associative.
-- **Live theorem:** inside one large connected unrooted support, determine
-  which off-diagonal Gram/relation bits scalar maxima expose, or prove a
-  further semantic quotient. In parallel, turn interaction-mass truncation
-  into a sharp approximate compatibility law. Pairwise local data is already
-  ruled out by a ternary-relation counterexample.
+- **Live theorem:** determine the packing rate of scalar-visible Gram fluxes
+  and higher relations inside one connected support, and whether weak
+  interaction admits a better decoder than deleting cross-part edges.
+  Pairwise local data is already ruled out by a ternary-relation
+  counterexample, while one triangle now exposes flux at leading scale.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -258,7 +266,7 @@ one of:
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
-| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation gives an exact associative gluing law with `rs` cross-form and `r^2+O(1)` intersection-bit lower bounds |
+| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation is exact; query-local weighted truncation costs interaction mass; an ordinary triangle exposes binary Gram flux at a fixed leading gap |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |

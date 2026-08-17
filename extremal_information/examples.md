@@ -1894,3 +1894,40 @@ when its middle label changes. Thus bounded connected supports admit an
 `O(h)` exact local carrier, but no `o(h)`-bit fixed-error summary. Localizing
 the orbit charts removes quadratic global compatibility without making the
 remaining coincidence information free.
+
+## Example 86: interaction mass prices approximate Walsh compatibility
+
+For a public partition of a weighted linear-label Walsh graph, delete the
+edges crossing its parts.  Each retained component is decoded exactly from
+its local Gram and relation state, while the deleted interaction changes the
+upper or absolute optimum by at most
+
+```math
+\left(\sum_{e\text{ crossing}}|w_e|\right)n^{3/2}.
+```
+
+Thus a unit path on `t` labelled blocks has an `O(t/eta)`-bit local carrier
+with additive error `eta t n^(3/2)`.  The same architecture cannot compress a
+complete graph with all edge magnitudes at least `c`: error at most
+`eta t^2 n^(3/2)` forces `sum_C |C|^2 >= (1-2eta/c)t^2`.  Static orbit
+compression and dynamic locality are separate resources, and interaction
+mass is the exact exchange rate for this particular approximation.
+
+## Example 87: an unrooted triangle sees binary Gram flux
+
+Take three even linear Walsh labels with the sole relation `a+b+c=0`.  One
+tuple can span a totally isotropic plane, while another has all three
+off-diagonal pairings equal to one.  Their self-pairings, relation kernels,
+and characteristic-root fibres agree.  Nevertheless the ordinary unweighted
+triangle maximum is respectively
+
+```math
+{9\over2}n^{3/2}
+\quad\hbox{and at most}\quad
+{3(1+\sqrt{17})\over4}n^{3/2}.
+```
+
+The gap `3(5-sqrt(17))n^(3/2)/4` needs no root, field, or pinned spin.  Hence
+the triangle flux in the off-diagonal Gram form is genuinely scalar-visible;
+it cannot be discarded merely because the root fibre disappears in the
+unrooted language.

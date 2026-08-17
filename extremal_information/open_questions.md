@@ -280,11 +280,13 @@ bounded-incidence supports.
 The ambient symmetry question is also closed: `(Gram,relations)` conjugates
 the **entire unrooted weighted Walsh graph landscape**, not merely its
 spectrum. The sharp next target is semantic minimality inside one large
-connected support. Determine which off-diagonal Gram and relation bits are
-exposed by ordinary scalar maxima, or prove a further quotient. In parallel,
-quantify approximate locality by deleting interaction mass below the target
-response scale. Evaluating any proposed state may not invoke the original
-`2^(kn)` Boolean maximum.
+connected support. One triangle now exposes a Gram/flux bit at a fixed
+`n^(3/2)` gap, and independent paths expose local coincidence bits. Determine
+the packing rate of such fluxes, or prove a further quotient for the
+unexposed directions. Interaction-mass deletion already gives an
+`O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
+the next approximate theorem should beat or match that law without invoking
+the original `2^(kn)` Boolean maximum.
 
 A parallel replacement target remains:
 

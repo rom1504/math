@@ -1289,3 +1289,30 @@ rooted group must be omitted from an unrooted carrier. Conversely, gluing
 requires compatibility data only on label sets that can occur together in
 one connected future; local orbit charts can use independent gauges across
 disconnected supports.
+
+## 51. Approximate congruence is weighted by interaction mass
+
+When exact semantic charts are available on connected pieces, one can build
+an approximate reusable state by omitting weak interactions.  The natural
+error is not the number of omitted compatibility variables but the uniform
+oscillation they can contribute.  For Walsh bridges this is exactly the
+deleted absolute edge mass times `n^(3/2)`.
+
+This principle has two limits.  It gives linear memory on bounded-incidence
+graphs at extensive error, but a dense graph with uniformly nonnegligible
+edges keeps quadratic component mass under the same deletion architecture.
+It is therefore an approximation law, not a claim that all weakly encoded
+holonomy can be ignored by a more global decoder.
+
+## 52. Cycle flux may be scalar semantic information
+
+A compatibility cocycle need not require a rooted or vector-valued query to
+be observable.  In the linear Walsh family, an ordinary triangle maximum
+distinguishes two tuples that agree in every self-pairing, relation, and root
+flag but have opposite off-diagonal Gram flux.  Thus the correct unrooted
+quotient may discard coordinate anchors while retaining cycle holonomy.
+
+The open quantitative question is how many independent fluxes a family of
+scalar future queries can expose at fixed distortion.  Orbit-state dimension
+alone is only an upper bound; scalar visibility must be established by
+separating queries.
