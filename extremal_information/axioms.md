@@ -1904,3 +1904,18 @@ Approximate compositional complexity must therefore state which of three
 resources it uses: fresh occurrence independence, a finer reusable semantic
 state, or contraction.  Static covering entropy alone does not choose among
 them.
+
+## 98. Approximate congruence can be an error algebra without being an exact quotient
+
+A family of current query values may fail to determine its own response
+after composition because unexposed bilinear coherence becomes visible.
+Nevertheless a nonnegative joint defect can form a closed **upper-error
+algebra**: it need only dominate every query loss and obey a subadditive or
+contractive update.
+
+For Boolean product selectors, the exact endpoint defects are not a tensor
+congruence, while their maximum is tensor-subadditive.  Under a growing
+Cartesian pole algebra, the coordinate-free relative inequality `D<=delta G`
+is the stable certificate.  The correct approximate state can therefore be
+strictly coarser than any exact contextual quotient, provided its error
+budget itself composes.

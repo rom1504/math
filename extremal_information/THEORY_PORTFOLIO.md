@@ -42,11 +42,22 @@ justify work on `M_n`: the family is one exceptional tensor hierarchy with
 an unbalanced `O(sqrt n)` query shore, and no theorem forces its affine pole
 algebra for near-minimizers or transfers it to arbitrary orders.
 
-**Current selected theorem.** Prove or falsify robust tensor-stable product
-synchronization: replace exact membership of every selector product in the
-top eigenspace by a quantitative spectral defect whose response loss is
-`o(rn)` and whose defects have a summable tensor/composition law.  The
-equal-`(G,R)` collision is the mandatory falsifier.
+**Robust checkpoint.**  The selected theorem is now proved in two forms.
+For corresponding fixed-arity tensors, the intrinsic selector loss
+`Delta_tau` is subadditive and a projective-histogram coreset gives total
+error `rn(Delta_tau/2+c eta)`.  For the growing Cartesian affine-pole
+algebra, the relative certificate `D<=delta G` composes with defect
+`1-prod(1-delta_i)`.  This removes the false `2^j` conditioning loss of the
+raw defect norm.  A three-port construction simultaneously proves that even
+the complete current endpoint-defect table is not an exact tensor
+congruence: off-query Schur coherence can appear one step later.
+
+**Current selected theorem.** Determine whether factorwise relative
+synchronization plus the already known phase/histogram dynamics yields a
+nontrivial restricted thermodynamic limit, or whether a separate phase-
+refresh hypothesis is necessary.  In either case, isolate the weakest
+scale-changing condition.  Do not infer this condition from pairwise
+`(G,R)` data, which the equal-state collision already falsifies.
 
 ## Portfolio ranking
 
@@ -163,8 +174,11 @@ equal-`(G,R)` collision is the mandatory falsifier.
   compatibility questions are now closed at fixed total port mass.  The
   positive Boolean replacement is higher-product synchronization: an odd
   selector algebra gives an exact histogram quotient and a dense logarithmic-
-  arity family with sublinear state.  Determine whether this certificate has
-  a robust tensor-stable version with summable spectral/product defects.
+  arity family with sublinear state.  Its robust tensor-stable version is now
+  proved.  Fixed-arity semantic defects add without paying scalar channels;
+  growing Cartesian pole algebras use the relative certificate `D<=delta G`
+  with multiplicative survival.  The next question is scale-changing phase
+  synchronization, not one-shot spectral robustness.
   Exposed-flatness remains a weaker query-local certificate.  It yields exact
   `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
   while an orthogonal rank-two family has a fixed gap and a whole-subspace
@@ -185,9 +199,10 @@ equal-`(G,R)` collision is the mandatory falsifier.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.
-- **Strike count:** zero.  The exact product-algebra family and the scalable
-  equal-state falsifier reset the counter.  They are structured
-  growing-interface results, not a cross-order recurrence for minima.
+- **Strike count:** zero.  The exact product-algebra family, scalable
+  equal-state falsifier, and robust relative tensor theorem reset the
+  counter.  They are structured growing-interface results, not a cross-order
+  recurrence for minima.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear

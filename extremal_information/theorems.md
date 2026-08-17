@@ -12020,6 +12020,134 @@ are in
 and
 [`experiments/verify_boolean_port_convolution_reuse.py`](experiments/verify_boolean_port_convolution_reuse.py).
 
+### Theorem 21.54 (robust product synchronization and its dynamic boundary)
+
+Let `tau:{+-1}^p->{+-1}` be an antipodally odd majority selector and let
+`Z` contain the Boolean products in the nonzero Fourier support of `tau`.
+For a symmetric child `H` with `||H||_op<=r`, set
+
+```math
+G={Z^TZ\over n},\qquad R={Z^THZ\over rn},\qquad D=G-R\succeq0. \tag{21.329}
+```
+
+If `a^epsilon_S=hat(tau)(S)prod_(i in S)epsilon_i`, define the intrinsic
+joint defect
+
+```math
+Delta_tau=\max_epsilon (a^epsilon)^TD a^epsilon.  \tag{21.330}
+```
+
+Parseval gives `||a^epsilon||_2=1`, while `Za^epsilon` is the one Boolean
+selector that simultaneously maximizes every port field.  Therefore the
+labelled Boolean trust response obeys
+
+```math
+0\le {rn\over2}+m||Wepsilon||_1-B_epsilon
+\le {rn\over2}(a^epsilon)^TD a^epsilon
+\le {rn\over2}Delta_tau.                          \tag{21.331}
+```
+
+This pays all Fourier product channels jointly.  The operator certificate
+`delta=||D||_op` is sufficient, but can be much stronger than the semantic
+defect.  Individual product deficits `d_S=D_SS` instead give the explicit
+but potentially expensive bound
+
+```math
+(a^epsilon)^TD a^epsilon
+\le\left(\sum_S|hat(tau)(S)|\sqrt{d_S}\right)^2. \tag{21.332}
+```
+
+For corresponding-port tensor products, `G_12=G_1 circ G_2` and
+`R_12=R_1 circ R_2`.  Row characters translate the selector orbit and the
+Schur product theorem controls the remaining cross term, giving the
+dimension-free semantic law
+
+```math
+\boxed{Delta_(tau,12)\le Delta_(tau,1)+Delta_(tau,2).}         \tag{21.333}
+```
+
+The operator certificate also satisfies
+
+```math
+||D_12||_op\le
+\min\{delta_1+kappa_1delta_2,\ kappa_2delta_1+delta_2\},       \tag{21.334}
+```
+
+where `kappa_i=max_S||H_i z_(i,S)||/(r_i sqrt(n_i))<=1`.
+The indefinite Rayleigh Schur multiplier is contractive because its entries
+factor as `<u_S,T u_T>` with `||T||<=1`; entrywise boundedness alone would
+not suffice.
+
+If a projective histogram approximation has response error `eta` and
+`c=mp/r`, the resulting decoder has uniform error
+
+```math
+rn(Delta_tau/2+c eta),                            \tag{21.335}
+```
+
+using `O(p/eta^2)` fixed-scale bits.  With `pm=O(r)=o(n)`, arbitrary public
+exact-sign completion of the auxiliary shore adds only `O(r^2)=o(rn)`.
+
+This state is deliberately an approximate certificate, not an exact tensor
+quotient.  Already for three-port majority there are two admissible
+contractions with the same projective histogram and the same **entire**
+endpoint defect table, all equal to `1/2`, whose self-tensors have endpoint
+defects `48/64` and `47/64`.  Off-query Schur coherence is invisible in one
+step but becomes observable after composition.  Thus (21.333) is a reusable
+upper-error law; exact updating requires richer defect geometry.
+
+### Theorem 21.55 (relative synchronization survives growing Cartesian pole algebras)
+
+The growing affine-coset construction uses a different tensor operation.
+If `V_i` lists every pole in factor `i`, its all-tuples pole list has
+
+```math
+G=\bigotimes_iG_i,\qquad R=\bigotimes_iR_i.       \tag{21.336}
+```
+
+Define the Gram-relative defect on the represented pole span by
+
+```math
+delta_i=\sup_{c:c^TG_ic>0}{c^T(G_i-R_i)c\over c^TG_ic}.       \tag{21.337}
+```
+
+For symmetric contraction factors,
+
+```math
+\boxed{delta_(1\boxtimes\cdots\boxtimes L)
+       \le\sum_i delta_i.}                       \tag{21.338}
+```
+
+If every compressed factor is positive semidefinite and
+`0<=D_i<=delta_iG_i` with `delta_i<=1`, the sharper sharp law is
+
+```math
+\boxed{0\le D\le
+\left(1-\prod_i(1-delta_i)\right)G.}             \tag{21.339}
+```
+
+No inverse of `G_i` is needed; the inequalities automatically descend to
+its support.  This exactly covers the PC.3 hierarchy: its `4^j` odd product
+poles are the Cartesian tensor list of the four seed affine-coset poles.
+Consequently factorwise defects with `sum_i delta_i=o(1)` retain
+`o(rn)` Boolean trust error even though the port arity grows and the raw
+operator norm `||D||` can acquire a spurious factor `2^j`.  Exact PC.3 is
+the case `delta_i=0`.
+
+The theorem is not a generic growing-arity result.  It assumes the declared
+pole span factors, and repeated fixed positive defect tends to a leading
+loss.  For a factored construction its certificate is constant-size per
+factor; without that presentation the final relative matrix may require
+`Theta(q^2)` parameters.
+
+Full proofs, independent audits, sharp counterexamples, and exact checks are
+in
+[`drafts/robust_boolean_product_synchronization.md`](drafts/robust_boolean_product_synchronization.md),
+[`drafts/robust_product_synchronization_independent_audit.md`](drafts/robust_product_synchronization_independent_audit.md),
+[`experiments/verify_robust_boolean_product_synchronization.py`](experiments/verify_robust_boolean_product_synchronization.py),
+and
+[`experiments/verify_robust_product_synchronization.py`](experiments/verify_robust_product_synchronization.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

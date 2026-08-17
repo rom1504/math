@@ -2655,3 +2655,31 @@ for a two-point subgroup.  If every continuation contains uniform mass
 form a geometric tail.  Independence, uncontrolled reuse, and forgetting
 are therefore distinct dynamic resources despite sharing the same static
 response image.
+
+## Example 134: one-step semantic defects hide tensor coherence
+
+For three-port majority, the four selector Fourier vectors form an
+orthonormal Hadamard basis.  Uniform row patterns give active-product Gram
+matrix `I_4`.  Two positive Gram--Rayleigh defects can have the same
+quadratic value `1/2` on every selector vector while differing off that
+orbit.  Their corresponding-port self-tensors expose the hidden terms:
+every output defect is respectively `48/64` and `47/64`.
+
+Thus even a complete current query table need not be a dynamic congruence.
+The robust selector theorem survives because it transports a conservative
+error budget; exact reuse would need the Schur cross-term geometry.  This is
+a finite, open-set counterexample rather than a tie or boundary pathology.
+
+## Example 135: relative pole geometry removes a false growing-arity loss
+
+The four seed poles of the product-closed regular-Hadamard family have Gram
+operator norm `2`.  If one measures synchronization by raw `||G-R||`, one
+perturbed factor followed by `j-1` exact factors has defect `eta 2^j`.
+This looks like catastrophic loss.
+
+The response-relevant quotient is instead relative to the represented Gram
+geometry: `D<=eta G`.  Under the Cartesian pole algebra this relation is
+unchanged by exact factors, and under independently perturbed positive
+factors its defect is exactly `1-prod_i(1-eta_i)`.  The example separates a
+basis-conditioned certificate from an intrinsic subspace certificate and
+turns exact product closure into a robust growing-interface theorem.
