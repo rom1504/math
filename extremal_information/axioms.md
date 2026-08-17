@@ -1119,3 +1119,53 @@ Walsh example also shows what a useful strict state can look like: the
 `sqrt(n)`-bit switching table is exponentially smaller than the full energy
 landscape and sufficient for this structured family, even though no bounded
 state exists.
+
+## 41. Near-top entropy deficit is an information amplifier
+
+For a Boolean landscape, the number of states within one target-scale unit
+of the maximum is not merely a descriptive statistic. If that set has an
+entropy gap `kappa n`, then almost-unbiased weighted sign tests supplied by a
+random bridge can simultaneously avoid every one of its neighborhoods. The
+coordinate-switching orbit consequently has a positive contextual
+information rate.
+
+This principle is deliberately one-way:
+
+```math
+\text{near-top entropy deficit}
+\Longrightarrow
+\text{rooted response packing},
+```
+
+not “extremal entropy is a sufficient state.” It explains in one theorem why
+both a spectral-cap Walsh landscape and a high-cap pole landscape expose
+linear switching information. The missing information is the root of the
+rare extremal set, not its scalar cardinality.
+
+At the exact Walsh cap the lower rate is matched by storing the switch, so
+the response state is `Theta(n)` bits under coordinate-pinning futures. This
+is still strictly smaller than quadratic coefficient data and exponentially
+smaller than an explicit energy table. A positive composition theorem must
+now show how that gauge label is transported or quotiented jointly with the
+interface; a cap bound alone cannot erase it.
+
+## 42. Relative operator algebra can be composition-created information
+
+Static summaries of each child and pairwise label overlaps may omit how an
+on-site operator sits relative to the bridge operator. In the Walsh family,
+the missing invariant is the sign in
+
+```math
+FC=(-1)^\omega CF.
+```
+
+It is invisible to bias and within-word pair correlations but changes a
+long bipartite composition by a fixed leading amount per block: commuting
+involutions share transported maximizing eigenspaces, while anticommuting
+ones obey a smaller Clifford-type spectral ceiling.
+
+This is a stronger form of holonomy than an unbalanced scalar edge-sign
+cycle. The edge connection itself can be flat while its compatibility with
+the on-site extremal geometry carries a cocycle. A reusable state must retain
+the relative algebra needed by future products, not merely each operator's
+isolated spectrum or low-order correlations.

@@ -7672,6 +7672,258 @@ statement: exponentially many linked fields must avoid the weighted Hamming
 neighborhoods of the near-top set. Exact enumeration supports this at orders
 through fourteen but is not used as asymptotic evidence.
 
+### Theorem 21.8 (near-top entropy amplifies to contextual information rate)
+
+Let `H:{-1,1}^n->R`, let `P=max_uH(u)=H(u_*)`, and define the switching
+orbit by `H^s(x)=H(s odot x)`. Fix `d_0,kappa>0`. If
+
+```math
+#\{u:P-H(u)<d_0n^{3/2}\}
+\le \exp\{(\log2-\kappa)n\},                              \tag{21.38}
+```
+
+then there are constants `C,gamma,d>0`, depending only on `d_0,kappa`,
+such that, for all sufficiently large `n`, one sign bridge `B` obeys
+
+```math
+||B||_(2->2)\le C\sqrt n                                \tag{21.39}
+```
+
+and at least `exp(gamma n)` switched responses satisfy
+
+```math
+d_proj(P_BH^s,P_BH^t)\ge d n^{3/2}\qquad(s\ne t).       \tag{21.40}
+```
+
+In particular, let an encoder map these switched children to `K` states and
+let one common decoder map `(state,y)` to a predicted response. Uniform
+error `epsilon n^(3/2)` at every Boolean query, with `epsilon<d/2`, forces
+
+```math
+K\ge\exp(\gamma n).                                     \tag{21.41}
+```
+
+Thus positive near-top entropy deficit implies positive contextual
+response-information rate. Since the switch itself is an `n`-bit label,
+the constructed switching family has `Theta(n)` response bits at this scale,
+up to constants.
+
+#### Proof
+
+For every row tolerance `eta>0`, there are `a,rho>0` such that, uniformly
+for `|y^Tz|<=rho n`, a random sign row `R`, and either `t in {+-1}`,
+
+```math
+Pr\{|R^Ty|\ge a\sqrt n,
+ sign(R^Ty)sign(R^Tz)\ne t\}\ge {1\over2}-\eta.          \tag{21.42}
+```
+
+Indeed, the normalized pair has covariance
+`Sigma_theta=((1,theta),(theta,1))`, where `theta=y^Tz/n`. For its independent
+summands `X_i`,
+
+```math
+\sum_i E||\Sigma_\theta^{-1/2}X_i||_2^3
+\le {2^{3/2}\over(1-\rho)^{3/2}\sqrt n}.                \tag{21.43}
+```
+
+The convex-set Lyapunov bound of Bentkus therefore gives a uniform
+`O_rho(n^(-1/2))` bivariate Gaussian approximation. The event in (21.42) is
+the disjoint union of two convex quadrant half-strips. The Gaussian arcsine
+law makes either sign occur with probability at least
+`1/2-arcsin(rho)/pi`, and deleting `|R^Ty|<a sqrt(n)` costs `Pr{|G|<a}`.
+Choosing `rho,a` small and then `n` large proves (21.42).
+
+Choose `alpha=1/2-eta` sufficiently close to `1/2`, and then
+`delta in (0,alpha)` sufficiently small, that
+
+```math
+D(\delta||\alpha)>\log2-{\kappa\over2}.                 \tag{21.44}
+```
+
+Shrink `a` so `d=2a delta<d_0`. A random Boolean code gives
+`Y subset {-1,1}^n`, `|Y|>=exp(gamma n)`, with
+`|y^Tz|<=rho n` for distinct words, where
+`gamma<min(rho^2/8,kappa/8)`.
+
+Choose `B` with iid sign entries and put
+
+```math
+s_y=u_* odot sign(By).                                  \tag{21.45}
+```
+
+For a fixed ordered pair `y!=z` and a spin in the set (21.38), the row
+events (21.42), with the target sign supplied by that spin, are independent
+and have probability at least `alpha`. The binomial lower-tail bound makes
+the probability of fewer than `delta n` successful rows at most
+`exp[-D(delta||alpha)n]`. Union-bounding over the near-top set and all
+ordered query pairs leaves probability at most `exp(-kappa n/4)`. The
+standard iid-sign norm tail intersects this event with (21.39).
+
+Every successful row contributes at least `a sqrt(n)` of weighted mismatch.
+The exact identity (21.35) therefore gives a cross deficit at least
+`d n^(3/2)`: outside the near-top set the energy deficit gives it, and inside
+the set twice the weighted mismatch gives it. Both ordered directions hold.
+Equation (21.37) now proves (21.40). If two children shared a decoded state,
+their common sup-error approximation would put their projective distance at
+most `2 epsilon n^(3/2)`, proving (21.41). `square`
+
+The probability inputs are the Rademacher specialization of
+[Rudelson--Vershynin's Hanson--Wright theorem](https://doi.org/10.1214/ECP.v18-2865)
+and [Bentkus's independent-summand Lyapunov bound](https://doi.org/10.1137/S0040585X97981123).
+The latter is applied after the explicit covariance normalization (21.43),
+not as an iid black box.
+
+### Corollary 21.8a (exact cap `1/2` has linear response rate)
+
+For every sufficiently large `n=2^(2m)`, there are one sign bridge of
+operator norm `O(sqrt n)` and `exp(gamma n)` hollow signings, all switchings
+of one regular-Walsh child, such that
+
+```math
+Q(A_s)={1\over2}n^{3/2},
+\qquad
+d_proj(P_BH_(A_s),P_BH_(A_t))\ge d n^{3/2}.             \tag{21.46}
+```
+
+Hence the arbitrary-coordinate-pinning response complexity of this exact-cap
+family is `Theta(n)` bits at fixed target-scale error.
+
+For the Walsh matrix `mathcal H` in Theorem 21.6, choose `d_0=1/8`.
+Membership in the near-top set implies
+`u^Tmathcal Hu>(3/4)n^(3/2)`. Since
+
+```math
+E u^Tmathcal Hu=0,
+\quad ||mathcal H||_F=n,
+\quad ||mathcal H||_(2->2)=\sqrt n,
+```
+
+Hanson--Wright gives (21.38) with an absolute `kappa>0`; Theorem 21.8
+applies. This strictly strengthens the explicit `Omega(sqrt n)` subfamily in
+Theorem 21.6, while the latter retains the advantage of a deterministic
+Walsh bridge and an explicit matching small state.
+
+More generally, if symmetric `K_n` obeys
+
+```math
+||K_n||_F\le Ln,
+\quad ||K_n||_(2->2)\le L\sqrt n,
+\quad
+\max_u{u^TK_nu\over2}-E_U{U^TK_nU\over2}
+\ge p n^{3/2},                                           \tag{21.47}
+```
+
+then its switching orbit has positive contextual response rate, with
+constants depending only on `p,L`. Thus the amplification law is not tied
+to Walsh algebra.
+
+### Theorem 21.9 (exact Walsh graph carrier)
+
+Let `q=2^m`, `n=q^2`, and let `R` be the order-`q` Walsh matrix. For a truth
+table `g:F_2^m->F_2`, put
+
+```math
+C_g=R\otimes(D_gRD_g),
+\qquad H_g(x)={1\over2}x^TC_gx.                          \tag{21.48}
+```
+
+This is exactly the hollow switched-child energy from Theorem 21.6, since
+`tr(C_g)=0`, and `Q(C_g)=n^(3/2)/2`. If a graph `G` joins `k` such blocks by
+the common bridge `W=R tensor R`, define the `kq`-square carrier
+
+```math
+(K_(G,g))_(ii)=D_(g_i)RD_(g_i),
+\qquad
+(K_(G,g))_(ij)=cases(R,&ij in E(G);0,&otherwise).        \tag{21.49}
+```
+
+After reordering `(i,u,v)` to `(u,i,v)`, the complete quadratic matrix is
+exactly
+
+```math
+R\otimes K_(G,g).                                       \tag{21.50}
+```
+
+Thus graph composition has an exact coefficient-level presentation using
+the graph and `kq=k sqrt(n)` truth-table bits. This is a strict description
+reduction from a general `kn`-variable quadratic, but it is not yet an
+extremal-response quotient: maximizing (21.50) still ranges over all
+`kq^2` Boolean spins.
+
+#### Proof
+
+Writing the original switch as the bent factor times `(-1)^{g(v)}` cancels
+the regularizing diagonal and gives (21.48). Diagonal blocks factor as
+`R tensor (D_gRD_g)`, while every edge block is `R tensor R`; reordering
+factors out the first `R` and proves (21.50). `square`
+
+### Theorem 21.10 (composition exposes a Walsh commutation cocycle)
+
+For `a in F_2^m`, let `g_a(v)=a dot v`, put `F=W/q`, and let
+`widehat C_a=C_(g_a)/q`. Then
+
+```math
+F\widehat C_a=(-1)^(a dot a)\widehat C_aF.              \tag{21.51}
+```
+
+Choose nonzero `a_0,a_1` with `a_0 dot a_0=0` and
+`a_1 dot a_1=1`. Their truth tables are balanced. For either constant word
+on `k` blocks, every within-word pair correlation is `q` and every bias is
+zero. Nevertheless, on every bipartite graph `G`,
+
+```math
+\max_XE_(G,a_0)(X)
+=\left({k\over2}+|E(G)|\right)n^{3/2},                  \tag{21.52}
+```
+
+whereas
+
+```math
+\max_XE_(G,a_1)(X)
+\le {k\over2}\sqrt{1+||A(G)||_(2->2)^2}\;n^{3/2}.      \tag{21.53}
+```
+
+For the path `P_k`, the missed amount is at least
+
+```math
+\left[{3k\over2}-1
+-{k\over2}\sqrt{1+4\cos^2{\pi\over k+1}}\right]n^{3/2},\tag{21.54}
+```
+
+whose coefficient divided by `k` tends to `(3-sqrt5)/2`.
+
+#### Proof
+
+Walsh modulation and translation give (21.51). Both `F` and
+`widehat C_a` are symmetric orthogonal involutions. In the even case they
+commute. A Boolean `+1` child eigenvector `s` and its Boolean Walsh dual
+`Fs` are both `+1` child eigenvectors; assigning them to the two color
+classes saturates every child and every bridge, proving (21.52).
+
+In the odd case they anticommute. For
+
+```math
+mathcal M_a=I_k tensor \widehat C_a+A(G) tensor F
+```
+
+the cross terms cancel, so
+
+```math
+mathcal M_a^2=(I_k+A(G)^2) tensor I_n.
+```
+
+Hence `||mathcal M_a||=sqrt(1+||A(G)||^2)`. A Boolean global vector has
+squared Euclidean norm `kn`, and the Rayleigh bound, with the prefactor
+`q/2`, proves (21.53). The path spectrum gives (21.54). `square`
+
+This is a scalable composition-created-information counterexample. Biases
+and all pairwise truth-table overlaps are not a reusable state, even though
+they suffice for the earlier one-bridge scalar certificate. The missing
+observable is a relative commutation cocycle between the flat edge transport
+and the on-site involution. The result does not prove that the full
+`sqrt(n)`-bit truth table is necessary under repeated composition.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

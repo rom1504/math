@@ -57,9 +57,10 @@ one of:
 - **Strongest theorem:** rank-`r` bridges between arbitrary internal
   landscapes compose exactly through an associative upper-roof algebra;
   fixed-error bucketing has `exp(O(r log(1/epsilon)))` cells, and unrestricted
-  classes need `2^(Omega(r))` bits. At the near-original endpoint, an exact
-  cap-`1/2` Walsh family has a matching `Theta(sqrt(n))`-bit state and
-  `n^(3/2)/8` projective response separation.
+  classes need `2^(Omega(r))` bits. At the near-original endpoint, a general
+  entropy-amplification theorem turns any positive near-top entropy deficit
+  into a positive switching-response rate. The full exact cap-`1/2`
+  regular-Walsh orbit consequently has `Theta(n)` response bits.
 - **Best benchmark:** fixed-rank quadratic bridges, not merely finite-atom
   mean field.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -72,11 +73,12 @@ one of:
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** determine the response entropy of bounded-cap sign
-  quadratics beyond the Walsh orbit. The cap-`1/2` class now needs at least
-  `Omega(sqrt(n))` bits on an infinite subsequence; the next discriminator is
-  an `Omega(n)` packing or a broader sublinear upper quotient. Universal
-  Bernoulli thinning still leaves `Theta(n^2)` bits for the full class.
+- **Live theorem:** determine whether the exact `sqrt(n)`-bit Walsh
+  truth-table presentation becomes a reusable semantic quotient under graph
+  composition, or whether every such quotient grows extensively with block
+  count. Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the
+  full sign-quadratic class, while bounded cap alone is now rigorously
+  insufficient for sublinear contextual rate.
 - **Strike count:** zero. Reaching genuine sign-quadratic children with a
   scalable packing resets the counter, despite the bounded-cap limitation.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
@@ -88,8 +90,10 @@ one of:
   isolated quotient summaries.
 - **Strongest theorem:** signed-balance is exactly the gauge condition for a
   common nested optimizer section in permutation-invariant
-  `alpha I+beta J` bridges; an unbalanced cycle creates a `2n` separable-
-  response gap.
+  `alpha I+beta J` bridges. In the Walsh family, even a flat edge connection
+  has a relative commutation cocycle: commuting and anticommuting constant
+  words with identical bias/pair-overlap summaries differ extensively on
+  every long path.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
@@ -99,9 +103,10 @@ one of:
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
 - **Composition mechanism:** group extension and cycle-space cocycles.
-- **Live theorem:** extend the common-section/gauge criterion beyond
-  permutation orbits, or prove that a proposed structured dense family has
-  extensive holonomy rank.
+- **Live theorem:** characterize the minimal relative operator algebra which
+  transports the cap-Walsh gauge through repeated composition. The immediate
+  falsifier is another pair of words agreeing on that algebra but separated
+  at leading scale.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -222,7 +227,7 @@ one of:
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
-| bridge | exact cap-`1/2` Walsh children | `sqrt(n)`-bit bent switching table | matching `Theta(sqrt(n))` state on the family; lower bound for the full cap class |
+| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits) or structured truth table (`sqrt(n)` bits); relative operator cocycle under graphs | full switching orbit has `Theta(n)` one-bridge response bits; structured graph carrier closes at coefficient level; scalar overlap quotient fails extensively |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |
 

@@ -231,29 +231,37 @@ cover and simultaneous discrepancy rounding give other `O(n^2)` upper
 bounds. None is subquadratic; the internal coefficient-ball architecture
 provably cannot become so.
 
-The bounded-cap qualitative question is now answered negatively on an
-infinite subsequence. For `n=2^(2m)`, a regularized Walsh signing and its
-Maiorana--McFarland switching orbit lie in
+The bounded-cap rate question is now answered for one full switching orbit
+on an infinite subsequence. For `n=2^(2m)`, a regularized Walsh signing and
+its switching orbit lie in
 
 ```math
 \mathcal Q_C(n)=\{A in \{-1,1\}^{\binom n2}:
                   \max_x|H_A(x)|\le Cn^{3/2}\}              \tag{OQ.5a}
 ```
 
-with `C=1/2`, has a matching `Theta(sqrt(n))`-bit state on the explicit
-family, and forms an `exp(Omega(sqrt(n)))` response packing at separation
-`n^(3/2)/8`. Thus `mathcal Q_(1/2)(n)` has at least `Omega(sqrt(n))` response
-bits. Exact small-order switching data suggest a linear rate may be possible,
-but do not prove it.
+with `C=1/2`. Hanson--Wright gives a positive entropy gap in its fixed
+`n^(3/2)` near-top set. Theorem 21.8 amplifies that gap into an
+`exp(Omega(n))` projective packing through one sign bridge of operator norm
+`O(sqrt n)`. Storing the switch gives the matching `O(n)` upper bound. Thus
+this full orbit has `Theta(n)` response bits under coordinate-pinning futures,
+even though every child has identical isolated cap, spectrum, and all other
+switching invariants.
 
-The sharp next target is quantitative: raise the bounded-cap lower bound to
-`Omega(n)` bits, or construct an `o(n)`-bit quotient for a natural class that
-contains all cap-`1/2` Walsh switchings and closes under its declared bridge
-composition. The immediate algebraic discriminator is whether the larger
-Maiorana--McFarland permutation family has an
-`exp(Omega(sqrt(n)log n))` low-Rayleigh code. The geometric discriminator is
-the weighted-neighborhood entropy of the near-top set, which exactly controls
-query-linked switching deficits.
+The sharp next target is now **joint gauge-covariant reuse**, not another
+one-bridge rate bound. Under graph composition the Walsh family has an exact
+`k sqrt(n)`-bit Kronecker presentation. But bias and all within-word pairwise
+truth-table overlaps are not a reusable quotient: linear truth tables with
+the same retained summaries commute or anticommute with the bridge according
+to `a dot a`, and a long path exposes an extensive gap with asymptotic
+coefficient `(3-sqrt5)/2` per block.
+
+Determine whether the full `sqrt(n)`-bit truth table admits a semantic
+response update of sub-landscape complexity under a nontrivial graph family,
+or prove that composition exposes `Omega(k sqrt(n))` independent terminal
+information. The state may include the relative operator algebra or a gauge
+cocycle, but evaluating it may not invoke the original `2^(kn)` Boolean
+maximum.
 
 A parallel replacement target remains:
 
@@ -266,11 +274,12 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** an `Omega(n)` bounded-cap packing, a matching upper theorem for a
-nontrivial cap class broader than the Walsh family, or a scalable ceiling
-showing why Rayleigh-only switching certificates stop at `sqrt(n)` bits. Any
-positive state must use a property absent from arbitrary, weighted-linear,
-planted-pole, and Walsh-bent children.
+**Success:** a reusable joint quotient for a nontrivial cap-bounded graph
+family, a lower bound proving extensive growth of every such quotient, or a
+near-minimizer rigidity theorem which excludes the entropy-amplification
+mechanism. Any positive state must retain the commutation/compatibility data
+absent from scalar Rayleigh summaries and must use a property stronger than
+bounded cap.
 
 **Falsifier:** a response-separated code inside the proposed port, or a
 four-label pinned cut-norm witness at order `n^(3/2)`.

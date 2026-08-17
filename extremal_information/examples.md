@@ -1663,3 +1663,51 @@ Thus the family has projective response separation `n^(3/2)/8` and needs
 `Omega(sqrt(n))` bits. This is a genuine sub-landscape state—its `sqrt(n)`-
 bit truth table is also sufficient—but it shows that even exact
 conference-scale cap does not force bounded response complexity.
+
+## Example 73: sparse near-top entropy becomes a linear response rate
+
+Let `H` be any Boolean landscape whose states within `d_0n^(3/2)` of its
+maximum occupy at most `exp((log2-kappa)n)` points. A random sign bridge and
+an exponential almost-orthogonal query code turn coordinate switches of
+`H` into an `exp(Omega(n))` projective response packing. The row event is a
+weighted sign disagreement of probability arbitrarily close to `1/2`; its
+relative-entropy exponent defeats the entire near-top set.
+
+This applies at two very different cap scales. Complete quadratic poles have
+only `exp(O(sqrt(n)log n))` fixed-deficit near-top states. More importantly,
+the regular-Walsh child has exact cap `n^(3/2)/2`, and Hanson--Wright supplies
+the required entropy gap. Its full switching family therefore has
+`Theta(n)` contextual response bits at fixed `n^(3/2)` error: `Omega(n)` by
+packing and `O(n)` by storing the switch.
+
+The theorem does not make extremal entropy a sufficient state. It makes an
+entropy *deficit* a certificate that hidden rooting information becomes
+observable under a suitable low-operator-norm interaction.
+
+## Example 74: Walsh composition exposes a commutation cocycle
+
+For one Walsh child, bias and a single pair-product Rayleigh coordinate
+control the explicit response separation. They do not survive repeated
+composition. Take a linear truth table `g_a(v)=a dot v`. The normalized child
+involution `C_a` and Walsh bridge involution `F` satisfy
+
+```math
+FC_a=(-1)^(a dot a)C_aF.
+```
+
+Choose one nonzero even-weight `a_0` and one odd-weight `a_1`. Constant words
+of either label have identical lists of individual biases and within-word
+pair correlations. On a bipartite `k`-block graph, however, the commuting
+word simultaneously saturates every child and edge, while the anticommuting
+word is bounded by the spectrum of `I+A(G)^2`. On a long path their optima
+differ by
+
+```math
+\left({3-\sqrt5\over2}+o(1)\right)k n^{3/2}.
+```
+
+Thus composition creates an extensive observable from a relative
+commutation phase invisible to the retained scalar summaries. The exact
+Kronecker presentation uses `k sqrt(n)` truth-table bits and is closed under
+graph gluing, but it is only coefficient-level closure; it does not itself
+compute the Boolean maximum.

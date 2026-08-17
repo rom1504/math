@@ -605,13 +605,24 @@ surrogate while preserving every Boolean energy to target accuracy. The
 lower witness has `Theta(n^2)` cap, so it does not determine the bounded-cap
 rate or near-minimizer rigidity.
 
-The first bounded-cap theorem now sharpens that statement. On
-`n=2^(2m)`, an explicit regularized-Walsh family has exact cap
-`n^(3/2)/2`, a `sqrt(n)`-bit bent switching state, and a matching
-`Omega(sqrt(n))` response-information lower bound through one dense Walsh
-bridge. Thus bounded extremal scale alone does not imply bounded memory. The
-remaining issue is whether richer cap-`1/2` or near-minimizing classes force a
-linear rate or admit a broader sublinear synchronized state.
+The bounded-cap endpoint is now quantitatively sharp for a full switching
+orbit. A general amplification theorem says that a positive entropy deficit
+in the target-scale near-top set forces a positive contextual response rate
+under one low-operator-norm sign bridge. On `n=2^(2m)`, Hanson--Wright applies
+this to the exact-cap regular-Walsh child. Its full orbit therefore has
+matching `Theta(n)` response bits: the lower bound is an exponential
+projective packing, while the switch itself is an `n`-bit exact state. Thus
+bounded extremal scale alone does not imply sublinear memory.
+
+Repeated composition supplies the next, different obstruction. The
+structured Walsh family has an exact `k sqrt(n)`-bit Kronecker presentation
+on a `k`-block graph, but isolated bias and all within-word pairwise
+truth-table correlations are not reusable. A linear-label commutation bit
+between the child and bridge involutions changes the path optimum by
+`((3-sqrt(5))/2+o(1))n^(3/2)` per block. This is composition-created
+information even though the edge connection itself is flat. The open issue
+is whether the full truth-table presentation admits a semantic update which
+does not perform the complete Boolean maximization.
 
 The sparse upper argument also survives abstraction. For any finite public
 bounded feature dictionary, a linear-size list of importance-weighted masks
