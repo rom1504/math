@@ -1,0 +1,414 @@
+{
+  "classification": "exact finite exhaustive computation; not asymptotic evidence",
+  "content_sha256_without_digest": "3e593e74dbec04739fe352646434fa12d42fbc6165090c3b67f6764549eed731",
+  "elapsed_seconds": 55.12482404708862,
+  "m1_k3_extensions": {
+    "all_collisions_listed": true,
+    "collision_classes": [],
+    "exposed_log2_classes": 3.0,
+    "largest_collision": 1,
+    "orbit_states": 8,
+    "semantic_classes": 8
+  },
+  "m1_k3_nested": {
+    "graphs": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    },
+    "omega_roots": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    },
+    "signed_weights": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    }
+  },
+  "m1_k4_nested": {
+    "graphs": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    },
+    "omega_roots": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    },
+    "signed_weights": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    }
+  },
+  "m2_k1_extension_raw": {
+    "(0,)": [
+      64,
+      128,
+      64,
+      128,
+      192,
+      64,
+      128,
+      64,
+      128,
+      192
+    ],
+    "(1,)": [
+      64,
+      104,
+      64,
+      104,
+      160,
+      64,
+      80,
+      64,
+      80,
+      128,
+      64,
+      104,
+      64,
+      104,
+      160
+    ],
+    "(3,)": [
+      64,
+      128,
+      64,
+      128,
+      192,
+      64,
+      128,
+      64,
+      128,
+      192
+    ]
+  },
+  "m2_k1_extensions": {
+    "all_collisions_listed": true,
+    "collision_classes": [
+      [
+        [
+          0
+        ],
+        [
+          3
+        ]
+      ]
+    ],
+    "exposed_log2_classes": 1.0,
+    "largest_collision": 2,
+    "orbit_states": 3,
+    "semantic_classes": 2
+  },
+  "m2_k2_nested": {
+    "adaptive_omega_roots": {
+      "all_collisions_listed": true,
+      "collision_classes": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "exposed_log2_classes": 1.584962500721156,
+      "largest_collision": 5,
+      "orbit_states": 10,
+      "semantic_classes": 3
+    },
+    "graphs": {
+      "all_collisions_listed": true,
+      "collision_classes": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "exposed_log2_classes": 1.584962500721156,
+      "largest_collision": 5,
+      "orbit_states": 10,
+      "semantic_classes": 3
+    },
+    "weighted_bridges": {
+      "all_collisions_listed": true,
+      "collision_classes": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "exposed_log2_classes": 1.584962500721156,
+      "largest_collision": 5,
+      "orbit_states": 10,
+      "semantic_classes": 3
+    }
+  },
+  "m2_k2_raw": {
+    "(0, 0)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        128
+      ],
+      "weighted_bridges": [
+        64,
+        128,
+        192
+      ]
+    },
+    "(0, 1)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        104
+      ],
+      "weighted_bridges": [
+        64,
+        104,
+        160
+      ]
+    },
+    "(0, 3)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        128
+      ],
+      "weighted_bridges": [
+        64,
+        128,
+        192
+      ]
+    },
+    "(1, 0)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        104
+      ],
+      "weighted_bridges": [
+        64,
+        104,
+        160
+      ]
+    },
+    "(1, 1)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        80
+      ],
+      "weighted_bridges": [
+        64,
+        80,
+        128
+      ]
+    },
+    "(1, 2)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        128
+      ],
+      "weighted_bridges": [
+        64,
+        128,
+        192
+      ]
+    },
+    "(1, 3)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        104
+      ],
+      "weighted_bridges": [
+        64,
+        104,
+        160
+      ]
+    },
+    "(3, 0)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        128
+      ],
+      "weighted_bridges": [
+        64,
+        128,
+        192
+      ]
+    },
+    "(3, 1)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        104
+      ],
+      "weighted_bridges": [
+        64,
+        104,
+        160
+      ]
+    },
+    "(3, 3)": {
+      "adaptive_omega_roots": [],
+      "graphs": [
+        64,
+        128
+      ],
+      "weighted_bridges": [
+        64,
+        128,
+        192
+      ]
+    }
+  },
+  "m2_roots_evaluated": false,
+  "query_families_frozen_before_search": {
+    "extensions": "append one block labelled 0, omega, or a repeated base label",
+    "graphs": "all labelled unweighted simple graphs on existing blocks",
+    "omega_roots": "all unweighted graphs and all subsets of fields q*s_omega",
+    "signed_weights": "all existing edge weights in {-1,0,1}"
+  },
+  "raw_signature_sha256": {
+    "m1_k3_extensions": "03659f6546534d757dd85d962100f31bd59694fd1037fdd81f6a3b1026da41bb",
+    "m1_k4": "dbbe45595349bfbffc6f203a8f949352bad3c64f377981b2c5ecb8a20f2a0052",
+    "m2_k1_extensions": "061ea5930bbaecdb482ddb20613482f3cdeee9a293933b2848c2a0ce39bed63f",
+    "m2_k2": "b4c395babc483085659e4e1d96bada3139eb25cfac81c77bedaa4309d826408e"
+  },
+  "schema": "linear-label-walsh-semantic-wind-tunnel-v1",
+  "software": {
+    "numpy": "2.0.2",
+    "python": "3.9.2"
+  }
+}

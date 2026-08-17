@@ -102,27 +102,30 @@ one of:
   kernel, and the characteristic-root fibre form an exact `O(k^2)`-bit orbit
   quotient for every `k`-block graph. Its exact rooted amalgamation is
   associative on accumulated spans and has independent `rs` cross-form and
-  `r^2+O(1)` intersection-memory lower bounds. A Weyl trace theorem proves
-  that the root fibre is nevertheless invisible to every unrooted weighted-
-  graph spectrum conditional on the full tuple Gram/relation state.
+  `r^2+O(1)` intersection-memory lower bounds. The unrooted language has a
+  larger ambient symmetry: Gram plus relations conjugate the entire weighted-
+  graph landscape, so the root fibre disappears exactly, not merely from the
+  spectrum. On declared connected supports the remaining relative state
+  localizes to restricted `(kappa,J)` with `O(sum_C|C|^2)` bits.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
   `O(mK log n)` label bits, with one signed-holonomy audit per type.
 - **Best falsifier:** an isolated unbalanced signed cycle defeats the sum of
-  all separately optimized pair responses at leading scale. Complete
-  synchronized-repetition spectra also fail to see a root bit exposed by a
-  Boolean future at `n^(3/2)/6`.
+  all separately optimized pair responses at leading scale. A coordinate-
+  rooted future exposes a bit that every unrooted weighted graph landscape
+  forgets; conversely independent ordinary path maxima force one local
+  coincidence bit each at a fixed `n^(3/2)` gap.
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
 - **Composition mechanism:** rooted bilinear amalgamation. A cross form,
   intersection correspondence, and root fibre reconstruct the joined state;
   the accumulated presented span makes the operation associative.
-- **Live theorem:** find an approximate metric quotient of this exact gluing
-  state, or prove that a positive fraction of its `Theta(t^2)` orbit memory is
-  semantically exposed. In particular decide whether unrooted Boolean graph
-  maxima collapse to `(Gram,relations)`, as spectra do. Pairwise local data is
-  already ruled out by a ternary-relation counterexample.
+- **Live theorem:** inside one large connected unrooted support, determine
+  which off-diagonal Gram/relation bits scalar maxima expose, or prove a
+  further semantic quotient. In parallel, turn interaction-mass truncation
+  into a sharp approximate compatibility law. Pairwise local data is already
+  ruled out by a ternary-relation counterexample.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

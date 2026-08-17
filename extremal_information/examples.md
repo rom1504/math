@@ -1862,3 +1862,35 @@ across every weighted graph experiment, while a canonical rooted Boolean
 future has an `n^(3/2)/6` projective gap. Spectral completeness is therefore
 strictly query-relative. A new appended label can add cross-Gram information,
 so no claim is made for arbitrary unmatched contexts.
+
+## Example 84: a larger ambient symmetry deletes the Walsh root exactly
+
+Embed every linear label as `(0,a)` in the full `2m`-dimensional coordinate
+space of the order-`2^(2m)` Walsh bridge. The ambient characteristic vector
+is `(omega,omega)` and never belongs to the embedded label span. Therefore
+two tuples with equal Gram form and relation kernel extend to one ambient
+orthogonal coordinate permutation, which conjugates every child and bridge.
+
+For odd `m`, constant words `omega^k` and `e_1^k` have different label-space
+root fibres but identical entire landscapes on every unrooted real weighted
+graph; the even-dimensional analogue uses `e_1+e_2`. A fixed rooted pole
+breaks that larger symmetry and separates them. The root bit is not hidden
+unrooted information--it is information created by declaring a coordinate
+anchor.
+
+## Example 85: local coincidence memory has a sharp linear rate
+
+On `h` disjoint three-coordinate chunks, fix duplicated endpoint labels
+`a_i=111` and choose each middle label independently as `a_i` or `c_i=001`.
+All isolated states, cross-Gram data, and root fibres remain fixed. Only the
+coincidence correspondence records the `h` choices. The `i`th ordinary
+three-block path maximum changes by at least
+
+```math
+{7-3sqrt3\over2}n^{3/2}
+```
+
+when its middle label changes. Thus bounded connected supports admit an
+`O(h)` exact local carrier, but no `o(h)`-bit fixed-error summary. Localizing
+the orbit charts removes quadratic global compatibility without making the
+remaining coincidence information free.

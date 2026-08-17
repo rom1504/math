@@ -657,14 +657,24 @@ quotient reduces this relational memory, or whether a nonlinear Walsh-label
 family has an analogous closed presentation without performing the complete
 Boolean maximization.
 
-There is also an exact query-relative collapse. A Weyl-word trace formula
-shows that the Gram form and relation kernel determine every unrooted
-weighted-graph spectrum on the marked linear-label tuple; the
-characteristic-root fibre is invisible to all those moments. Synchronized
-copies of the rooted-collision children therefore have identical complete
-spectral data, although a rooted Boolean future separates them at full scale.
-The remaining issue is whether unrooted scalar Boolean maxima share this
-collapse or retain nonspectral root information.
+There is also an exact query-relative collapse, now at the level of the whole
+landscape rather than only its spectrum. Embed a label as `(0,a)` in the full
+`2m`-dimensional Walsh coordinate space. The ambient characteristic vector
+never lies in the label span, so Gram plus relations extend to one ambient
+orthogonal coordinate permutation conjugating every child and common bridge.
+Thus every unrooted real weighted graph landscape factors through `(G,R)`;
+the label-space root fibre appears only after a pole or field pins the old
+coordinate splitting. The earlier Weyl-word theorem is the corresponding
+spectral shadow.
+
+Declared query locality reduces the remaining gluing state further. On each
+maximal connected support one retains only the restricted cross form and
+coincidence relation (plus a root fibre only for root-sensitive components).
+The cost is `O(sum_C|C|^2)=O(wL)`, hence linear for bounded-size,
+bounded-incidence support families. This rate is sharp: independent
+three-block path queries expose one coincidence bit apiece at a fixed
+`n^(3/2)` gap. What remains open is which Gram and relation bits a large
+connected family of scalar graph maxima actually exposes.
 
 The sparse upper argument also survives abstraction. For any finite public
 bounded feature dictionary, a linear-size list of importance-weighted masks

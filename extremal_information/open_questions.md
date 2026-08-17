@@ -270,20 +270,21 @@ cross-form bits or `r^2+O(1)` intersection bits, and pairwise amalgamation
 data can miss a ternary relation. At least one such coincidence bit changes a
 three-block scalar maximum at full `n^(3/2)` scale.
 
-The sharp next target is an **approximate rooted amalgamation theorem**:
-identify a declared graph/query family on which the accumulated relation
-state has a smaller metric quotient, or prove that a positive fraction of
-its quadratic orbit information is semantically exposed. Only after this
-test should one move to nonlinear truth tables. Evaluating the state may not
-invoke the original `2^(kn)` Boolean maximum.
+The first query-local reduction is now exact. On maximal connected supports,
+only restricted cross forms and coincidence correspondences are needed for
+unrooted queries; root fibres survive only where a continuation pins an
+external pole or field. The carrier costs `O(sum_C|C|^2)`, and independent
+three-block paths prove a matching linear lower bound for bounded-size,
+bounded-incidence supports.
 
-The first collapse is exact but only spectral. Gram plus relations determine
-every weighted-graph spectrum on a marked tuple, while the root fibre remains
-visible to a canonical Boolean future. Determine whether the collection of
-**unrooted scalar Boolean graph maxima** also forgets the root fibre. A proof
-would give a smaller semantic state than the orbit carrier; a counterexample
-would isolate genuinely nonspectral root information without using an
-arbitrary lookup query.
+The ambient symmetry question is also closed: `(Gram,relations)` conjugates
+the **entire unrooted weighted Walsh graph landscape**, not merely its
+spectrum. The sharp next target is semantic minimality inside one large
+connected support. Determine which off-diagonal Gram and relation bits are
+exposed by ordinary scalar maxima, or prove a further quotient. In parallel,
+quantify approximate locality by deleting interaction mass below the target
+response scale. Evaluating any proposed state may not invoke the original
+`2^(kn)` Boolean maximum.
 
 A parallel replacement target remains:
 

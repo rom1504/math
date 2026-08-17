@@ -1273,3 +1273,19 @@ Thus “all moments” is not synonymous with “all extremal information.” Th
 missing datum is not a higher spectral moment but a root supplied by the
 future interface. Any proposed moment hierarchy must declare whether its
 queries carry such roots or other coordinate anchors.
+
+## 50. Declared roots are symmetry stabilizers, not intrinsic coordinates
+
+The same structured family can have two exact orbit states because its query
+languages have different symmetry groups. For unrooted Walsh graphs, the
+full ambient orthogonal group makes the label-space characteristic root
+invisible and `(Gram,relations)` conjugates the whole landscape. A fixed pole
+or coordinate field restricts the group and makes the root fibre observable.
+
+This gives a practical reduction rule: compute the symmetry group of the
+**complete declared continuation**, not merely the coefficient
+parameterization. Information surviving only under a smaller, artificially
+rooted group must be omitted from an unrooted carrier. Conversely, gluing
+requires compatibility data only on label sets that can occur together in
+one connected future; local orbit charts can use independent gauges across
+disconnected supports.
