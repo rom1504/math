@@ -1051,6 +1051,31 @@ spectral norm alone.
 At the negative endpoint, a dense sign bridge with operator norm
 `O(sqrt n)` can expose exponentially many independent response coordinates
 with `n^(3/2)` margins for unrestricted children.  Even weighted linear
-children retain an `Omega(n)`-bit projective packing.  Thus any future bridge
-theory near the signing problem must use rigidity of its special quadratic
-child class; an all-landscape compression theorem is impossible.
+children retain an `Omega(n)`-bit projective packing. Complete sign
+quadratics themselves now retain `Omega(n)` bits: planted gauge-ferromagnetic
+poles turn the random bridge correlation matrix into an exponential
+projective packing. Thus quadratic syntax alone is not a compression
+resource.
+
+The qualification is structural, not cosmetic. Those pole landscapes have
+`Theta(n^2)` cap and spread. A theory near the signing problem must use
+rigidity of the bounded-cap or near-minimizing subclass. Coefficient-Hamming
+covering gives a strict universal saving. More strongly, universal random
+thinning discards a constant `Theta(epsilon^2)` fraction into a sparse
+weighted surrogate while retaining all Boolean energies at target error.
+Both remain `Theta(n^2)` bits; the present information bracket is only
+`Omega(n)` to `O(n^2)`.
+
+## 38. Rare-event states may be created only after renormalization
+
+Finite-port response quotients are not the only compression mechanism. In a
+boundary-case branching random walk, the exact finite-depth derivative
+state is `(W,Z)`, but critical centering makes `W` vanish and the limiting
+unmarked extremal process becomes a decorated Cox process controlled by one
+scalar derivative mass `Z`. The scalar composes by a smoothing transform.
+
+This suggests a genuinely orthogonal design principle: a macroscopic state
+can emerge only after a model-specific rare-event renormalization, even when
+no finite-depth exact quotient exists. It does not weaken query relativity.
+Genealogy-marked futures distinguish branchwise derivative masses with the
+same total, so the correct marked state is a measure rather than a scalar.

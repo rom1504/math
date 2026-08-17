@@ -220,9 +220,32 @@ At the negative dense endpoint, a random sign bridge with
 already carry `Omega(n)` projective bits. Thus density, spectral norm, and
 the target scaling alone cannot yield an all-landscape quotient.
 
-The sharp next target is a property of a **restricted quadratic child
-class**. It must control the exposed bridge-response image rather than rank
-or sparsity by name. A parallel replacement target remains:
+The negative theorem now reaches genuine complete sign quadratics. Planted
+pole forms `((x^Tz)^2-n)/2` give `exp(Omega(n))` response states and hence
+`Omega(n)` bits at the same scale. This closes the question “does quadratic
+syntax alone compress?”, but not the question that matters near the
+motivating model: the planted forms have `Theta(n^2)` cap. A universal
+Bernoulli-thinning code discards a fixed `Theta(epsilon^2)` fraction of the
+coefficient bits into a sparse weighted surrogate, while an internal Hamming
+cover and simultaneous discrepancy rounding give other `O(n^2)` upper
+bounds. None is subquadratic; the internal coefficient-ball architecture
+provably cannot become so.
+
+The sharp next target is therefore the **bounded-cap quadratic child class**
+
+```math
+\mathcal Q_C(n)=\{A in \{-1,1\}^{\binom n2}:
+                  \max_x|H_A(x)|\le Cn^{3/2}\}.             \tag{OQ.5a}
+```
+
+Determine whether its dense-bridge response entropy at error
+`epsilon n^(3/2)` is `o(n)`, `Theta(n)`, or larger. A switching orbit of one
+bounded-cap signing is the smallest natural packing test: switching preserves
+the cap while a fixed labeled bridge can expose the hidden gauge. Any lower
+bound must control the full optimizer after the field is added, not only its
+value at a planted candidate.
+
+A parallel replacement target remains:
 
 ```math
 \text{Find }B_n\text{ with subexponential state and }
@@ -233,10 +256,11 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** either a natural restricted quadratic child class with
-subextensive response entropy under a dense sign bridge, or a packing showing
-that even this restriction has an extensive information rate. Any positive
-state must use a property absent from arbitrary and weighted-linear children.
+**Success:** either a natural bounded-cap subclass with subextensive response
+entropy under a dense sign bridge, or a packing showing that even
+`mathcal Q_C(n)` has an extensive information rate. Any positive state must
+use a property absent from arbitrary, weighted-linear, and planted-pole
+quadratic children.
 
 **Falsifier:** a response-separated code inside the proposed port, or a
 four-label pinned cut-norm witness at order `n^(3/2)`.
@@ -253,6 +277,29 @@ with vanishing normalized loss and without storing a target optimizer.
 
 **Stop condition:** finite-state approximation outside the constrained model
 does not answer this question.
+
+## 7. Deterministic analogue of derivative-mass compression
+
+The branching-random-walk benchmark proves that an exact prelimit pair
+`(W,Z)` can collapse after critical renormalization to a scalar `Z` which
+controls the entire unmarked limiting extremal process and composes by a
+smoothing transform. This mechanism is not captured by finite-port
+polyhedral response geometry.
+
+Find a deterministic or adversarial landscape class with:
+
+1. a declared extremal point-process query family;
+2. a nontrivial centering and scaling;
+3. a unique all-order limiting response law controlled by a strict state;
+4. an exact limiting composition law; and
+5. a falsifier showing which enriched future marks force the state to grow.
+
+**Success:** a recovery/composition theorem in a model other than a branching
+process, or a proof that one proposed deterministic class cannot have such a
+state because its marked extremal measures are not tight or not unique.
+
+**Stop condition:** subsequential point-process compactness without a unique
+all-order recovery law is not a composable macroscopic state.
 
 ## Reconnection rule
 

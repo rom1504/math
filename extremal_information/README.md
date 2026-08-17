@@ -595,6 +595,25 @@ weighted linear children already retain a linear information rate. Thus an
 eventual positive theory for dense quadratic signings must exploit rigidity
 specific to that child class.
 
+That endpoint now reaches the full syntactic class of complete sign
+quadratics. Gauge-ferromagnetic pole forms yield an `exp(Omega(n))` response
+packing and force `Omega(n)` bits at the same scale, while Hamming covering
+and simultaneous discrepancy rounding give `O(n^2)`-bit universal upper
+states. A stronger Bernoulli-thinning theorem discards a fixed
+`Theta(epsilon^2)` fraction of the coefficient bits into a sparse weighted
+surrogate while preserving every Boolean energy to target accuracy. The
+lower witness has `Theta(n^2)` cap, so the bounded-cap and
+near-minimizer subclasses remain genuinely unresolved rather than being
+subsumed by the packing.
+
+An orthogonal benchmark adds a different kind of compression. In a
+boundary-case branching random walk, critical renormalization turns the
+finite-depth pair `(W,Z)` into one limiting derivative mass `Z`; conditional
+on it, the unmarked extremal process is a decorated Cox process and composes
+by a smoothing transform. This is a limiting distributional state, not an
+exact finite-port quotient, and genealogy-marked futures force a larger mass
+measure. It is retained as a scoped rare-event branch.
+
 ## Extremal rate--distortion
 
 For a landscape class `H`, query set `Theta`, and response metric
@@ -684,7 +703,9 @@ The framework is grounded in, but not reducible to, several mature theories:
   [Auffinger--Chen](https://arxiv.org/abs/1606.05335); and
 - Panchenko's [ultrametricity](https://doi.org/10.4007/annals.2013.177.1.8)
   and multi-species
-  [synchronization](https://arxiv.org/abs/1310.6679).
+  [synchronization](https://arxiv.org/abs/1310.6679); and
+- Madaule's [decorated extremal process for boundary-case branching random
+  walks](https://arxiv.org/abs/1107.2543).
 
 The research question is which compression mechanisms behind these theories
 remain valid for deterministic, adversarial landscapes without importing

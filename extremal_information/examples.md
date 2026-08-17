@@ -1582,3 +1582,47 @@ The isolated matching has degree one and treewidth one, but its minimum
 vertex cover and simultaneous live interface both have size `k`. Sparse
 structure compresses only when it reduces the live cut, not when each edge is
 locally simple.
+
+## Example 69: planted quadratic poles survive a dense bridge
+
+For every sign vector `z`, the complete sign quadratic
+
+```math
+H_z(x)=((x^Tz)^2-n)/2
+```
+
+has only the pole pair `+-z` as optimizer after adding any field with
+`infinity` norm below `n/2`. A random sign bridge supplies exponentially
+many query fields whose own sign poles have diagonal correlation
+`Omega(n^(3/2))` and pairwise cross-correlation smaller by a fixed amount.
+The resulting genuine sign-quadratic responses form an
+`exp(Omega(n))` projective packing at `n^(3/2)` separation. Exact checks
+cover 1,400 pole-locking instances; a seeded `n=32` certificate has absolute
+and projective gaps 56 and 68.
+
+This is the first dense-bridge lower bound inside the complete
+`+-1`-coefficient quadratic class, but it deliberately exposes its own
+limit: every child has cap `(n^2-n)/2`. It therefore proves an extensive
+information rate for all sign quadratics, not for bounded-cap or
+near-minimizing signings.
+
+## Example 70: a derivative martingale compresses branching extremes
+
+In a boundary-case branching random walk, the finite-depth derivative state
+does not close by itself:
+
+```math
+Z_(r+m)=sum_(|u|=r)e^(-V(u))
+             (Z_m^(u)+V(u)W_m^(u)).
+```
+
+At the extremal limit `W_m^(u)` vanishes. The remaining derivative mass
+`Z_infinity` composes by weighted addition, and the full unmarked extremal
+process is conditionally a decorated Cox process of intensity
+`lambda Z_infinity e^x dx`. Every Laplace-functional query therefore sees
+the realized environment only through one scalar.
+
+This is a compression produced by critical renormalization, not by a finite
+max-plus quotient. It is also sharply query-relative: if futures may inspect
+genealogy labels, the state expands from the total mass to a derivative-mass
+measure over branches.

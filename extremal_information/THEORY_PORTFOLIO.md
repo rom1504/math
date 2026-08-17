@@ -64,14 +64,19 @@ one of:
   matching bridge can carry exponentially many macroscopic response bits;
   a random dense sign bridge exposes `exp(Omega(n))` response bits at the
   `n^(3/2)` scale for arbitrary children and `Omega(n)` bits already for
-  weighted linear children.
+  weighted linear children. Complete sign-quadratic children now also force
+  `Omega(n)` bits, by an exact pole-locking construction.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** determine whether a natural restricted quadratic child
-  class has smaller response entropy than the random dense-bridge lower
-  endpoint.  The all-landscape version is now rigorously impossible.
+- **Live theorem:** determine the response entropy of bounded-cap sign
+  quadratics. The planted-pole packing has `Theta(n^2)` cap and so does not
+  settle this class. Universal Bernoulli thinning discards a fixed
+  `Theta(epsilon^2)` fraction of coefficients into a sparse `2`-bounded
+  surrogate, but still leaves the wide bracket `Omega(n)` to `O(n^2)` bits.
+- **Strike count:** zero. Reaching genuine sign-quadratic children with a
+  scalable packing resets the counter, despite the bounded-cap limitation.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 
@@ -96,19 +101,26 @@ one of:
   permutation orbits, or prove that a proposed structured dense family has
   extensive holonomy rank.
 
-### 4. Rare-event / extremal compactness — keep warm, B-/C+
+### 4. Renormalized rare-event state — promoted scoped branch, B+
 
-- **Candidate object:** speed-`n` action-frontier Gamma limit, augmented at
-  exposed faces by a marked extremal point process.
-- **Best benchmark:** the REM frontier locates the extensive edge while its
-  Poisson point process distinguishes ordinary from paired/clumped REM.
-- **Best falsifier:** a parity-alternating unique extremizer has no
-  full-sequence marked frontier; fixed-potential zero-temperature Gibbs
-  measures can also fail to converge.
-- **Information discarded:** the leading rate discards order-one multiplicity;
-  the marked process deliberately retains it.
-- **Required promotion evidence:** unique all-order recovery/composition for a
-  constrained deterministic class, rather than subsequential compactness.
+- **Core object:** a centered extremal point process whose conditional law is
+  controlled by a critical derivative-mass state.
+- **Strongest imported theorem:** under the boundary-case hypotheses,
+  Madaule's branching-random-walk extremal process is a decorated Cox process
+  with intensity `lambda Z_infinity e^x dx`; all unmarked Laplace queries
+  depend on the environment through one scalar.
+- **Composition:** finite depth needs `(W,Z)`, but `W` vanishes and the limit
+  closes by `Z=sum_u e^(-V(u))Z_u`.
+- **Best falsifier:** genealogy-marked futures distinguish branch-mass
+  allocations with the same total `Z`; their state is a derivative-mass
+  measure. A parity-alternating deterministic extremizer also shows that
+  all-order marked convergence cannot be assumed.
+- **Information discarded:** genealogy and the fixed decoration law; the
+  declared unmarked query class cannot inspect them.
+- **Next theorem:** a deterministic/adversarial model in which critical
+  renormalization, rather than a finite exact quotient, yields a unique
+  composable extremal state.
+- **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
 ### 5. Adversarial statistical mechanics — keep warm, B-/C+
 
@@ -187,6 +199,8 @@ one of:
 | bridge | vertex-cover width `k` | `2^k`-entry bridge table | passed; worst-case sharp, audit pending |
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
+| bridge | genuine sign-quadratic children | coefficient state with lossy Hamming/discrepancy cover | `Omega(n)` to `O(n^2)` response bits; bounded-cap subclass open |
+| orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |
 
 ## Director rule
 

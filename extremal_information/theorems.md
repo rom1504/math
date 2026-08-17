@@ -7370,6 +7370,161 @@ Sparse compression is controlled by simultaneous live interface size, not
 local degree.  Fixed numerical degeneracies of `R` may quotient the table
 further; `2^k` is the sharp support-only law.
 
+### Theorem 21.4 (complete sign quadratics retain extensive bridge information)
+
+There are universal `gamma,g>0` such that, for every sufficiently large
+`n`, some sign bridge `B in {-1,1}^(n times n)` with
+`||B||_(2->2)=O(sqrt n)` and complete sign quadratics
+
+```math
+H_c(x)=\sum_{i<j}z_(c,i)z_(c,j)x_ix_j
+      ={(x^Tz_c)^2-n\over2}                                \tag{21.14}
+```
+
+have `N>=exp(gamma n)` pairwise projectively separated responses:
+
+```math
+{1\over2}\operatorname{osc}(P_BH_c-P_BH_d)
+\ge g n^{3/2}\qquad(c\ne d).                              \tag{21.15}
+```
+
+Consequently every state that answers arbitrary later continuations on the
+full class of complete sign quadratics to error smaller than
+`g n^(3/2)/2` requires `exp(gamma n)` states, or `Omega(n)` bits, even after
+one additive calibration per child.
+
+#### Proof
+
+The deterministic ingredient is pole locking.  If
+`||h||_infinity<n/2`, then
+
+```math
+\max_x\{((x^Tz)^2-n)/2+h^Tx\}
+={n^2-n\over2}+|z^Th|.                                    \tag{21.16}
+```
+
+Indeed, choose the nearer pole `sz`, at Hamming distance `r<=n/2` from
+`x`.  The quadratic loss is `2r(n-r)>=nr`, while the field can recover less
+than `2r(n/2)=nr`.
+
+Take a random sign bridge and independent random sign queries `y_c`, put
+`h_c=By_c` and `z_c=sign(h_c)`.  For a sufficiently small fixed `gamma`,
+standard Rademacher tails and a union bound over `exp(2gamma n)` queries and
+their ordered pairs give simultaneously
+
+```math
+||B||_(2->2)<=C_0sqrt n,
+\quad ||h_c||_1>=d_0n^{3/2},
+\quad ||h_c||_infinity<n/2,
+\quad |z_d^Th_c|<={d_0\over2}n^{3/2}\ (c\ne d).             \tag{21.17}
+```
+
+For the last bound, condition on `B,y_d`; then `z_d` is fixed and
+`z_d^TBy_c` is a Rademacher sum whose coefficient norm is at most `C_0n`.
+Equation (21.16) makes the diagonal response exceed every off-diagonal
+response in its query coordinate by `(d_0/2)n^(3/2)`.  Reversing `c,d`
+gives both signs, so half the oscillation has the same lower bound. `square`
+
+This theorem is a genuine quadratic strengthening of Theorem 21.1, but its
+scope is essential: (21.14) has cap `(n^2-n)/2` and projective spread
+`Theta(n^2)`.  It does not address the bounded-cap or near-minimizing
+quadratics relevant to the motivating signing problem.
+
+### Theorem 21.5 (sparse surrogates and the coefficientwise ceiling)
+
+Let `m=binom(n,2)`, fix any bridge `B`, and let `0<epsilon<=1`. For
+`n>=64/epsilon^2`, every complete sign quadratic has a sparse weighted
+surrogate with coefficients in
+
+```math
+\{-1/q,0,1/q\},\qquad q=1-\epsilon^2/2,                   \tag{21.18}
+```
+
+which is uniformly within `epsilon n^(3/2)` before and after every bridge
+or later maximization. One universal list of at most `m+2` support masks
+suffices for all `2^m` inputs, and the summary uses at most
+
+```math
+\left\lceil(1-\epsilon^2/4)m\right\rceil
++\left\lceil\log_2(m+2)\right\rceil                       \tag{21.19}
+```
+
+bits. Thus a strict constant fraction of the exact coefficient information
+can be discarded at the target scale. The decoder's surrogate is
+`2`-bounded and sparse, not itself a sign quadratic.
+
+If code centers must remain complete sign quadratics, set
+`E=epsilon n^(3/2)`, `r=floor(E/2)<=m/2`. There is an internal codebook of
+size at most
+
+```math
+K\le\left\lceil {2^m\over\sum_{j=0}^r{m\choose j}}
+                  (m\log2+1)\right\rceil                  \tag{21.20}
+```
+
+whose responses approximate every complete sign-quadratic response within
+`E`.  For fixed `epsilon>0`, its bit count is
+
+```math
+m-\log_2\sum_{j=0}^r{m\choose j}+O(\log m)
+\le m-{\epsilon\over4}n^{3/2}\log_2n+O_epsilon(n^{3/2}).   \tag{21.21}
+```
+
+The coefficient-Hamming architecture is optimal up to `O(log n)` bits:
+the sphere-covering inequality gives the reverse bound for covers by
+radius-`r` coefficient balls.  This is not a response-entropy lower bound,
+because Boolean maximization may identify Hamming-distant coefficients.
+
+For the larger class `a_ij in [-1,1]`, there is a simultaneous unbiased
+rounding to a grid with `O(1/epsilon)` levels such that
+
+```math
+\sup_x|H_A(x)-H_(\widehat A)(x)|
+\le\epsilon n^{3/2}.                                      \tag{21.22}
+```
+
+Hence `O(n^2 log(1+1/epsilon))` bits suffice uniformly over `B` and every
+later continuation.
+
+#### Proof
+
+For the sparse surrogate, keep each coefficient independently with
+probability `q` and divide retained coefficients by `q`. For any fixed input
+signing and spin, the error is a sum of centered variables bounded by one
+with total variance at most `epsilon^2n^2/2`. Bernstein and a union bound over
+the `2^n` spins show that one mask is uniformly accurate with probability
+greater than `3/4`. Chernoff shows with probability greater than `3/4` that
+it erases at least `(epsilon^2/4)m` coefficients. Thus a fixed coefficient
+signing has a good mask with probability at least `1/2`. Sampling `m+2`
+independent masks and union-bounding over all `2^m` coefficient signings
+leaves positive probability that the one list covers every input. This gives
+(21.19); max-type response operators are sup-norm nonexpansive.
+
+The Hamming cube has a radius-`r` covering of size (21.20) by the
+probabilistic covering argument.  Changing `r` signs changes every energy by
+at most `2r`, and maximization is sup-norm nonexpansive.  The binomial lower
+bound `binom(m,r)>=(m/r)^r` gives (21.21), while the sphere-covering bound
+proves the architecture-specific converse.
+
+For (21.22), round each coefficient independently and without bias to one of
+its two adjacent grid points of spacing `delta<=epsilon`.  For fixed `x`,
+Hoeffding bounds the rounding error by
+`delta sqrt(m(n+2)log(2)/2)` except with probability below `2^(-n-1)`.
+A union bound over all `2^n` spins leaves positive probability and the
+displayed quantity is below `epsilon n^(3/2)`.  Sup-norm nonexpansiveness
+again transfers the estimate through the bridge and all futures. `square`
+
+Together, Theorems 21.4--21.5 leave a real information gap:
+
+```math
+Omega(n)\le R_{\rm sign\ quadratic}
+             (epsilon n^{3/2})\le O(n^2).                  \tag{21.23}
+```
+
+Closing it requires optimizer geometry shared by Hamming-distant
+coefficients; coefficientwise Lipschitz control, switching, and generic cut
+regularity cannot do so.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
@@ -7541,3 +7696,77 @@ e_t<=lambda^te_0+delta{1-lambda^t\over1-lambda},             \tag{23.7}
 and the denominator is attained by self-loops. This benchmark quantifies the
 dynamic factor missing from static response entropy: contraction changes the
 scale at which the same response image must be covered.
+
+## 24. Critical branching creates an asymptotic rare-event state
+
+The next result is an imported benchmark, not a theorem about deterministic
+finite ports.  Consider a boundary-case branching random walk satisfying
+
+```math
+E\sum_(|u|=1)e^{-V(u)}=1,
+\qquad E\sum_(|u|=1)V(u)e^{-V(u)}=0,                        \tag{24.1}
+```
+
+together with Madaule's nonlattice, second-moment, and logarithmic
+integrability hypotheses.  Write
+
+```math
+W_n=\sum_(|u|=n)e^{-V(u)},
+\qquad Z_n=\sum_(|u|=n)V(u)e^{-V(u)}.                       \tag{24.2}
+```
+
+### Imported Theorem 24.1 (derivative-mass response collapse)
+
+Conditional on survival, `W_n` tends to zero, `Z_n` tends to a positive
+`Z_infinity`, and the extremal process centered by `(3/2)log n` converges,
+conditionally on `Z_infinity`, to a Cox decorated Poisson process whose
+cluster-leader intensity is
+
+```math
+lambda Z_infinity e^x dx.                                  \tag{24.3}
+```
+
+For a fixed decoration law and every nonnegative compactly supported test
+function `f`, its conditional Laplace response is
+
+```math
+-\log E[e^{-<E_Z,f>}\mid Z]
+=Z A_D(f).                                                  \tag{24.4}
+```
+
+Thus the entire unmarked limiting Laplace-functional query family has one
+realized scalar state `Z`.  It composes under a cut at generation `r` by the
+exact limiting smoothing transform
+
+```math
+Z_infinity=\sum_(|u|=r)e^{-V(u)}Z_infinity^(u).             \tag{24.5}
+```
+
+At finite depth the exact identity instead is
+
+```math
+Z_(r+m)=\sum_(|u|=r)e^{-V(u)}
+       (Z_m^(u)+V(u)W_m^(u)),                               \tag{24.6}
+```
+
+so the prelimit state is at least the pair `(W,Z)`.  The scalar collapse is
+created by critical centering and the vanishing of `W`, not by an exact
+finite-depth quotient.
+
+#### Source and deduction
+
+Madaule's [Theorem 1.1](https://arxiv.org/abs/1107.2543) proves joint
+convergence of the shifted extremal process and `Z_n`, with an independent
+decorated exponential Poisson limit.
+Undoing its random `log Z_infinity` shift gives (24.3), and the Poisson
+Laplace functional gives (24.4).  Expanding the definition of the derivative
+martingale below a generation-`r` cut gives (24.6); sending `m` to infinity
+gives (24.5).  The corresponding branching-Brownian decorated process is due
+to [Aidekon--Berestycki--Brunet--Shi](https://arxiv.org/abs/1104.3738).
+
+This state is query-relative.  If future queries retain a genealogy label,
+two branch-mass allocations with the same total `Z` are distinguishable; the
+state must then be the derivative-mass measure over labels.  The benchmark
+therefore supplies a genuine orthogonal mechanism—renormalized rare-event
+universality—while also validating the rule that the allowed future query
+class determines what can be compressed.
