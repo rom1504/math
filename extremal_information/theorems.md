@@ -10157,3 +10157,124 @@ proofs, audits, and the exact certificate are in
 [`drafts/automatic_tensor_prefix_phase.md`](drafts/automatic_tensor_prefix_phase.md),
 [`drafts/walsh_prefix_nonconvergence.md`](drafts/walsh_prefix_nonconvergence.md),
 and their adjacent audit files.
+
+## 31. Phase refresh and Boolean pullback synchronization
+
+### Theorem 31.1 (refresh dominates transfer defect)
+
+Let `X` be a compact metric phase space.  At level `r` and phase `x`, let
+`T_(r,x)` be a self-adjoint operator on a finite probability space and put
+
+```math
+phi_r(x)=sup_(||f||_infinity<=1)|<f,T_(r,x)f>|.        \tag{31.1}
+```
+
+Assume `phi_r` converges uniformly to a continuous `phi`.  Suppose there is
+a Borel phase kernel `P_r` and, over every branch `x->y`, an `L^2` contraction
+`U` which is also an `L^infinity` contraction, such that the strongly
+measurable pulled-back operators obey
+
+```math
+\left\|T_(r,x)-\int U^*T_(r+1,y)U\,dGamma_(r,x)(y,U)
+\right\|_(2->2)\le epsilon_r,                         \tag{31.2}
+```
+
+where `Gamma` has phase marginal `P_r`.  For delay windows `ell_r`, write
+
+```math
+K_r=P_r...P_(r+ell_r-1),\qquad
+E_r=sum_(j=r)^(r+ell_r-1)epsilon_j.                   \tag{31.3}
+```
+
+If one full-support probability measure `nu` and numbers `alpha_r>0` satisfy
+
+```math
+K_r(x,B)>=alpha_rnu(B)                                \tag{31.4}
+```
+
+for every `x,B`, and, with `omega_r=||phi_r-phi||_infinity`,
+
+```math
+{omega_r+omega_(r+ell_r)+E_r\over alpha_r}->0,        \tag{31.5}
+```
+
+then `phi` is constant.  Quantitatively,
+
+```math
+max_Xphi-\int phi\,dnu
+\le liminf_r{omega_r+omega_(r+ell_r)+E_r\over alpha_r}. \tag{31.6}
+```
+
+If `X` is finite and `mu=min_xnu(x)>0`, the oscillation of `phi` is at most
+the right side of (31.6) divided by `mu`.
+
+#### Proof
+
+For every Boolean-bounded `f`, (31.2) and the two contraction properties give
+
+```math
+|<f,T_(r,x)f>|
+<=\int |<Uf,T_(r+1,y)Uf>|dGamma+epsilon_r.
+```
+
+Taking the supremum and iterating yields
+
+```math
+phi_r<=K_rphi_(r+ell_r)+E_r.                          \tag{31.7}
+```
+
+At a maximizer `x_*` of `phi`, decompose
+`K_r(x_*,.)=alpha_rnu+(1-alpha_r)rho_r`.  Uniform recovery and (31.7) give
+
+```math
+max phi-omega_r
+<=alpha_r\int phi dnu+(1-alpha_r)max phi
+  +omega_(r+ell_r)+E_r.
+```
+
+This is (31.6).  Under (31.5), the full-support average equals the maximum;
+continuity forces `phi` to be constant.  In the finite case, the average
+deficit is at least `mu osc(phi)`. `square`
+
+Equal-fibre signed coordinate replications and reorderings are Boolean
+contractions.  Thus a finite convex combination of their operator pullbacks,
+together with a Doeblin refresh window, is a checkable phase-collapse
+certificate.  It compares neither maximizing spins nor full response
+carriers; its description size is nevertheless model-dependent because a
+raw operator certificate may still have quadratically many coefficients.
+
+The error/refresh ratio is scale-sharp.  On `X={0,1}`, take scalar operators
+zero and one, and
+
+```math
+P_r(x,.)=(1-2^(-r))delta_x+2^(-r)nu.                  \tag{31.8}
+```
+
+Identity pullbacks have defect `2^(-r-1)` and every one-step kernel has full
+support, yet the response profile stays `(0,1)`.  Thus full support and
+vanishing defect without (31.5) do not synchronize phases.
+
+### Corollary 31.2 (the Walsh phase prices every refresh certificate)
+
+For the order-four Walsh prefix profile in Corollary 30.2, use the operator
+normalization `Phi=2L`.  Let
+
+```math
+nu_*={99\over200}(delta_1+delta_4)+{1\over100}lambda, \tag{31.9}
+```
+
+where `lambda` is normalized Lebesgue measure on `[1,4]`.  Every Boolean-
+pullback refresh satisfying `K_r(t,.)>=alpha_rnu_*` must obey
+
+```math
+liminf_r{omega_r+omega_(r+ell_r)+E_r\over alpha_r}
+\ge {89\over48sqrt3}-1.01
+=0.06050362412\ldots.                                 \tag{31.10}
+```
+
+Indeed `Phi(1)=Phi(4)=1`, `Phi(3)>=89/(48sqrt3)`, and the coordinate-
+compression bound gives `Phi<=2`; hence `int Phi dnu_*<=1.01`, and (31.6)
+applies.  This identifies the quantitative price any proposed balanced
+reordering of the bad Walsh hierarchy must pay.  The independently audited
+full statement is in
+[`drafts/phase_refresh_synchronization.md`](drafts/phase_refresh_synchronization.md).

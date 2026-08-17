@@ -2038,3 +2038,19 @@ their zero-threshold relations have no common nonempty invariant support.
 Thus an empty support core falsifies one proof presentation, not the scalar
 response.  Arbitrary terminal pins, by contrast, expose projective residual
 profiles at exact distance half their coordinate oscillation.
+
+## Example 94: balanced Boolean pullbacks erase a scale phase
+
+Let a finite or compact family of normalized dense quadratic operators carry
+a phase label.  If convex combinations of signed coordinate replications
+pull each phase into the next level with small operator defect, their phase
+marginals define a Markov kernel.  A delay window that refreshes an
+`alpha_r` fraction onto one full-support phase law forces the limiting
+same-spin response to be constant whenever recovery plus transfer error is
+`o(alpha_r)`.
+
+Neither ingredient can be omitted.  A two-state scalar family with refresh
+mass `2^(-r)` and transfer defect `2^(-r-1)` retains response phases zero and
+one forever.  Applied to the nonconstant Walsh prefix profile, the theorem
+forces every purported balanced-reordering certificate to pay at least
+`89/(48sqrt(3))-1.01` defect per unit refreshed mass.

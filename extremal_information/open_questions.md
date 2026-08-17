@@ -445,9 +445,15 @@ Thus convergence along every fixed phase and exact all-order realization do
 not imply phase synchronization.
 
 The remaining positive target is a checkable mechanism forcing this phase
-profile to collapse.  It must be stronger than separate recovery but weaker
-than assuming equality of the phase carriers, for example a mixing or
-inter-phase transfer estimate implying
+profile to collapse.  One such mechanism is now proved: averaged Boolean
+pullbacks inducing a Doeblin phase refresh collapse the limit when recovery
+plus accumulated operator defect is little-oh of refreshed mass.  The Walsh
+profile quantitatively forces this ratio to be at least `0.0605036` for a
+specific full-support refresh law.
+
+The remaining model-specific target is to find a **small-description**
+certificate of this kind in a hierarchy not already uniformly operator-close
+to one model, or a different inter-phase transfer estimate implying
 
 ```math
 d_H(K_(d,r),K_(d',r'))\longrightarrow0
@@ -455,9 +461,9 @@ d_H(K_(d,r),K_(d',r'))\longrightarrow0
 
 whenever the represented orders are asymptotically adjacent.
 
-**Success:** an all-order phase-collapse theorem stable under a nontrivial
-class of summable perturbations, with one dense signing model not defined by
-assuming its response limit.
+**Success:** a pullback/refresh certificate with sub-landscape description
+complexity in a dense hierarchy not already uniformly operator-close to one
+fixed model, or a theorem deriving refresh from natural pseudorandomness.
 
 **Stop condition:** a condition that simply assumes constancy of the phase
 profile or vanishing Hausdorff distance is not a recovery theorem.  The

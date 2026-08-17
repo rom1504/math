@@ -104,7 +104,10 @@ one of:
   certificate, and perfect-matching flips after every amplification produce
   non-tensor dense hollow sign hierarchies whose normalized maxima converge.
   For an arbitrary regular-Hadamard automatic prefix hierarchy, all fixed
-  phases assemble into a uniform continuous mantissa law.
+  phases assemble into a uniform continuous mantissa law.  A complementary
+  theorem now gives a sufficient collapse mechanism: averaged Boolean
+  pullbacks whose phase kernel refreshes mass `alpha_r` synchronize the limit
+  when recovery plus transfer defect is `o(alpha_r)`.
 - **Best benchmark:** one explicit coherent Walsh prefix signing has a
   nonconstant continuous phase profile: its geometric phases equal `1/2`
   while its `3*4^r` phases are at least `89/(96sqrt(3))`.  It is a genuine
@@ -118,10 +121,13 @@ one of:
 - **Information discarded:** every microscopic coordinate except the finite
   outer cross-correlation matrix.
 - **Composition/limit mechanism:** normalized witness embedding, nested
-  compact response images, and support-function continuity.
-- **Live theorem:** characterize a checkable phase-collapse mechanism and
-  decide whether it survives summably perturbed or nonautomatic recovery
-  systems; mere phasewise realization is now rigorously insufficient.
+  compact response images, support-function continuity, and a Doeblin-type
+  maximum principle for mixed Boolean pullbacks.
+- **Live theorem:** discover a low-description phase-refresh certificate in
+  a structured hierarchy not already operator-close to one universal model,
+  or prove that every such certificate for a bounded-cap Walsh family pays a
+  fixed transfer ratio.  Mere phasewise realization is rigorously
+  insufficient, while the abstract positive criterion is now closed.
 - **Status:** active scoped branch; the general phase theorem and explicit
   obstruction reset the strike count and meet a near-original benchmark,
   but they do not authorize a direct attack on `M_n`.

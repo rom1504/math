@@ -1401,3 +1401,21 @@ presentation.  Its failure is certificate failure unless the query exposes
 the missing endpoint geometry.  This separates three resources cleanly:
 semantic residual state, locally path-realizing witness support, and the
 terminal query language that can distinguish them.
+
+## 59. Phase mixing is useful only relative to its transfer defect
+
+Cross-scale recovery can be promoted to phase synchronization when the
+recovery maps themselves mix phase labels.  The controlling quantity is not
+full support alone but
+
+```text
+uniform recovery error + accumulated operator defect
+----------------------------------------------------- .
+                 refreshed phase mass
+```
+
+A vanishing ratio triggers a maximum principle and collapses every continuous
+limiting phase response.  A fixed positive ratio can preserve a macroscopic
+phase forever.  This gives a checkable positive counterpart to the automatic
+Walsh phase obstruction without assuming equality of phase carriers or their
+maximizers.
