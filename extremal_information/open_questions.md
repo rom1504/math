@@ -958,3 +958,11 @@ this geometry at fixed radius, or construct it scalably.  Do not substitute
 raw shell cardinality: Theorem 36.10 gives
 `2^{Omega(sqrt n log n)}` thin-shell witnesses universally without a
 projective packing theorem.
+
+The exact-minimizer quantifier is indispensable.  Theorem 36.12 constructs,
+for every prescribed `Delta_n=o(n^(3/2))`, a sequence with
+`Q(B_n)=M_n+o(n^(3/2))` whose whole positive `Delta_n` shell lies in one
+vanishing projective cap.  Thus no uniform version over all
+`epsilon_n`-near-minimizers can hold when the admitted shell is narrower
+than the optimality slack.  Any proof of the selected statement must use a
+genuinely discontinuous consequence of exact global optimality.

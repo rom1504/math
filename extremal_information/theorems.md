@@ -15571,3 +15571,64 @@ Proof, independent audit, and the overflow-safe finite verifier are in
 [`drafts/nearmin_absolute_overlap_physical_compiler_independent_audit.md`](drafts/nearmin_absolute_overlap_physical_compiler_independent_audit.md),
 and
 [`experiments/verify_nearmin_absolute_overlap_compiler.py`](experiments/verify_nearmin_absolute_overlap_compiler.py).
+
+### Theorem 36.12 (vanishing near-minimizers can have one-cap shells)
+
+Let `A` be a bounded-cap signing, let `z_0` be an oriented ground cut, and
+put
+
+```math
+D=\{e:a_e(z_0)_e=-1\},\qquad |D|={{n\choose2}-Q(A)\over2}.
+```
+
+For every sequence `n=o(r)` and `r=o(n^2)`, some `r`-set `F subset D`
+has the following property.  Flip precisely `F`, obtaining `B`.  Then
+
+```math
+\boxed{Q(B)=Q(A)+2r}                                      \tag{36.43}
+```
+
+and every positive deficit-`Delta` shell atom obeys
+
+```math
+{d_E(z,z_0)\over {n\choose2}}
+\le {32n\over r}+{\Delta\over r}
+       +{\Delta\over2{n\choose2}}.                         \tag{36.44}
+```
+
+The cap identity is exact:
+
+```math
+Q(A)+2r-\langle B,z\rangle
+=Q(A)-\langle A,z\rangle+4|F\cap\{e:z_e\ne(z_0)_e\}|.      \tag{36.45}
+```
+
+The new ingredient beyond the archived planted-face identity is a uniform
+hypergeometric hitting set over all `2^n` augmented cuts.  It converts the
+frozen planted edges into the global radius bound (36.44).
+
+Consequently, for every prescribed `Delta_n=o(n^(3/2))`, there is a
+certified sequence
+
+```math
+Q(B_n)=M_n+o(n^{3/2})                                      \tag{36.46}
+```
+
+whose entire positive `Delta_n` shell lies in one vanishing projective cap
+and has only `exp(o(n))` projective support.  One may take
+
+```math
+r_n=\left\lceil\sqrt{n^{3/2}\max\{n,\Delta_n\}}\right\rceil.
+```
+
+This is a scalable Level-5 falsifier for structural claims quantified over
+**all** vanishing near-minimizers.  It does not falsify Theorem 36.11's
+selected packing lemma when that lemma is restricted to exact minimizers,
+nor a shell whose width is comparable to or larger than the planted excess
+`2r`.  In particular it does not contradict Theorem 36.2, which deliberately
+chooses a shell wider than the near-minimality slack.
+
+Proof and independent audit are in
+[`drafts/nearmin_planted_ground_cap_falsifier.md`](drafts/nearmin_planted_ground_cap_falsifier.md)
+and
+[`drafts/nearmin_planted_ground_cap_falsifier_independent_audit.md`](drafts/nearmin_planted_ground_cap_falsifier_independent_audit.md).

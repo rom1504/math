@@ -2199,3 +2199,18 @@ total `O(n^(3/2))` cap.  One target direction even gives an unconditional
 physical bit in every vanishing near-minimizer halo.  Growing information,
 however, requires ball-mass decay or several targetable near-top directions;
 first marginals alone cannot provide them.
+
+## 119. Exact optimality can be structurally discontinuous in the cap slack
+
+Starting from any exact minimizer, an `o(n^(3/2))` geodesic perturbation can
+raise one chosen ground cut by the full edit amount while a uniform hitting
+set confines every preassigned narrower shell to one vanishing projective
+cap.  The resulting signings are genuine vanishing near-minimizers, yet their
+shell has only subexponential projective support.
+
+Therefore a projective-diffusion or response-packing theorem cannot be
+quantified uniformly over all `epsilon_n`-near-minimizers unless its shell
+width dominates the optimality slack.  A theorem for exact minimizers may
+remain true, but it uses a discontinuous consequence of exact global
+optimality and must be labelled accordingly.  Edit-robust structural
+language cannot bridge this gap by itself.

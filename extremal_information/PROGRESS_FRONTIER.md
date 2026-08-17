@@ -72,6 +72,10 @@ contexts whose whole cap is `O(n^(3/2))`.  FB signed balance alone has an
 exact two-nearly-antipodal-cap countermodel.  All 42 audited exact witnesses
 at orders 7--14 nevertheless have an exact-active `gamma=1/2` packing of
 size at least three.  This is finite encouragement, not the missing theorem.
+Theorem 36.12 proves that the same statement is false over arbitrary
+vanishing-near-minimizer classes at every preassigned shell width smaller
+than their optimality slack.  Exact optimality is therefore an essential,
+discontinuous hypothesis of `L_projective`.
 
 ### Route R3: near-minimizer response replacement
 
@@ -223,7 +227,11 @@ class and risks restating the desired parent optimization.
 - **Falsifiers:** signed first moments admit a two-cap marginal countermodel;
   projective separation at the forced `Theta(n^(-1/2))` scale yields only an
   `O(n)` response gap; one-step-near exact-active shells can be spiky; thin
-  shell counts have a universal mesoscopic floor.
+  shell counts have a universal mesoscopic floor.  A uniform planted-ground
+  construction now confines any preassigned subleading shell of some
+  `epsilon_n->0` near-minimizer to one vanishing projective cap, so the
+  selected lemma must remain exact-minimizer-only (or use shell width larger
+  than the cap slack).
 - **Decision:** **RESET for R2, STRIKE for the R1 transfer arrow.**  Continue
   with the deepest-coset/projective-packing theorem and a serious scalable
   two-cap construction attempt.  Do not return to spectral roofs or add more
