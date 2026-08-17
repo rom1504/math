@@ -416,27 +416,29 @@ finite realization theorem.  The signed-balanced benchmark supplies all of
 these only for a restricted permutation-invariant class; none is currently
 proved for the motivating sign matrices.
 
-## 10. Approximate recovery beyond exact Hadamard amplification
+## 10. Synchronization among amplification phases
 
-Regular-Hadamard tensor powers now give a genuine near-original limit because
-one Boolean eigenvector embeds the complete fixed-port response set exactly
-at every step. Determine an intrinsic perturbative replacement.
+Regular-Hadamard tensor powers and summably perturbed signed replications now
+give genuine near-original limits along each prescribed hierarchy. The
+remaining all-order issue is compatibility among different outer prefix
+phases.
 
-The desired theorem should start from checkable matrix or witness maps and
-derive, rather than assume,
+Seek a checkable mechanism implying that phase carriers approach one common
+limit, for example
 
 ```math
-d_H(K_r,K_(r+1))\le epsilon_r,
-\qquad \sum_r epsilon_r<infinity.
+d_H(K_(d,r),K_(d',r'))\longrightarrow0
 ```
 
-**Success:** a non-tensor dense signing hierarchy with a finite-port response
-carrier and a proved summable recovery defect, or a converse showing that one
-natural approximate-eigenvector condition is insufficient.
+whenever the represented orders are asymptotically adjacent.
 
-**Falsifier:** a proposed condition that merely restates Hausdorff Cauchy
-convergence or controls only one preselected optimizer rather than every
-declared outer query.
+**Success:** an all-order automatic dense signing with one synchronized
+response limit, or an explicit coherent infinite signing with two persistent
+normalized prefix phases.
+
+**Falsifier:** convergence along every fixed phase but a fixed gap between two
+phases. A condition that simply assumes their Hausdorff distance vanishes is
+not a recovery theorem.
 
 ## 11. Tangent mass for multiscale extremal convolution
 

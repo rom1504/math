@@ -1960,3 +1960,20 @@ coefficient `-1` at scales `(n,log n)`, whereas their `Theta(sqrt(n))`
 near-saddle multiplicity changes the exact coefficient to `-1/2`. The
 missing information is tangent counting mass, not another value of the
 pointwise entropy profile.
+
+## Example 90: summable one-sided Boolean recovery tolerates non-tensor edits
+
+A common Boolean lift that preserves every pair response within errors
+`epsilon_r` makes the fixed-port convex carriers approximately nested. If
+the errors are summable, compactness alone forces a Hausdorff limit; no
+reverse projection and no consistent optimizer are needed.
+
+This is realizable inside dense sign matrices. After each regular-Hadamard
+amplification, flip all signs on a perfect matching. The level has
+`Theta(N_r)` non-tensor edge edits, but their perturbation operator norm is
+exactly two, so the normalized defects `2/sqrt(N_(r+1))` are summable.
+Hollowing changes the normalized objective by only `O(N_r^(-1/2))`.
+
+The summability scale cannot formally be weakened to square summability:
+the scalar kernels `sin(log(r+2))` have square-summable step changes and two
+separated subsequential limits.

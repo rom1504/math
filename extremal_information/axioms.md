@@ -1343,3 +1343,17 @@ polynomially many near-maximizers whose logarithmic mass survives after all
 pointwise coefficients have been recorded. Any genuinely multiscale compact
 state must therefore carry tangent density, Hessian data under suitable
 regularity, or another object that accounts for exposed-fibre mass.
+
+## 55. Directed recovery, not reverse reconstruction, is enough for a limit
+
+If every old response point has a common Boolean lift to the next scale with
+summable all-pairs distortion, the response sets converge even though new
+points may appear indefinitely. Compactness converts one-sided approximate
+nesting into a limit; a backward map is needed only for a quantitative
+innovation-side rate.
+
+The all-pairs qualifier is essential. Preserving only self-quadratics can
+lose cross-block queries, and separate optimizer-dependent lifts do not
+define one composable response map. Finite total drift is also a real
+threshold absent additional cancellation: vanishing square-summable steps
+can still trace a bounded nonconvergent scalar path.

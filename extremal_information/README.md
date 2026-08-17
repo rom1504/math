@@ -841,6 +841,8 @@ separators, fixed-label syndrome fragments, and fixed-effective-rank additive
 response sets. A constrained version of item 4 now exists for exact
 regular-Hadamard tensor amplification: its fixed-port response sets are
 nested and yield normalized limits for genuine dense hollow sign hierarchies.
-This is only a geometric-order structured benchmark; it neither realizes
+This now tolerates summable all-pairs Boolean-lift defects and includes a
+non-tensor hierarchy with a perfect matching of sign flips at every scale.
+It is still only a geometric-order structured benchmark; it neither realizes
 near-minimizers at arbitrary orders nor closes the general dense-sign bridge
 interface, so the campaign still does not return to the motivating problem.

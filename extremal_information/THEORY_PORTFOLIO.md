@@ -93,20 +93,23 @@ one of:
   scale-preserving witness lift.
 - **Strongest theorem:** a symmetric regular Hadamard generator makes these
   response sets nested and Hausdorff convergent; every outer quadratic
-  support function therefore has a limit. Trace-zero sign templates produce
-  genuine dense hollow signing hierarchies `B tensor W_4^(tensor r)` whose
-  normalized Boolean maxima converge.
+  support function therefore has a limit. More generally, a common all-pairs
+  Boolean lift with summable distortion gives directed recovery and still
+  forces Hausdorff convergence. Signed replication supplies an exact cut-norm
+  certificate, and perfect-matching flips after every amplification produce
+  non-tensor dense hollow sign hierarchies whose normalized maxima converge.
 - **Best benchmark:** a dense structured sign model on geometric orders with
   a carrier of fixed Euclidean dimension despite exponentially many spins.
-- **Best falsifier:** the proof depends on an exact common Boolean
-  eigenvector and exact tensor factorization; it provides neither all-order
-  realization nor reverse approximation of non-tensor perturbations.
+- **Best falsifier:** vanishing, even square-summable, lift errors do not
+  suffice without finite total drift; a logarithmically rotating scalar
+  kernel oscillates. The theorem still follows one geometric-order hierarchy
+  and provides no synchronization among distinct outer prefix phases.
 - **Information discarded:** every microscopic coordinate except the finite
   outer cross-correlation matrix.
 - **Composition/limit mechanism:** normalized witness embedding, nested
   compact response images, and support-function continuity.
-- **Live theorem:** find a checkable approximate lift/retraction condition
-  with summable defects that survives non-tensor perturbations.
+- **Live theorem:** determine when different outer prefix phases synchronize,
+  or give a scalable all-order phase obstruction.
 - **Status:** promoted scoped branch; this meets a near-original benchmark
   but does not authorize a direct attack on `M_n`.
 
@@ -296,6 +299,7 @@ one of:
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
 | bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation is exact; query-local weighted truncation costs interaction mass; an ordinary triangle exposes binary Gram flux at a fixed leading gap |
 | near-original | regular-Hadamard tensor hierarchy | fixed-dimensional cross-correlation set | nested response sets and support functions converge; trace-zero sign templates give dense hollow signings on orders `d4^r`; no all-order recovery |
+| near-original | summably perturbed amplification | common all-pairs Boolean lift / signed replication kernel | directed recovery forces a Hausdorff limit; perfect-matching flips change `Theta(N)` edges per scale with summable defect; no phase synchronization |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |

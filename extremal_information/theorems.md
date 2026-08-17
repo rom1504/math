@@ -9621,9 +9621,10 @@ Boolean maxima. After regrouping coordinates,
 M_(m_0+r)=M_(m_0) tensor W_4^(tensor r).               \tag{28.10}
 ```
 
-If a fixed outer template `B` is symmetric, entrywise `+-1`, and has trace
-zero, hollowing `B tensor W_4^(tensor r)` gives a valid dense signing `A_r`
-of order `d4^r` without changing any Boolean quadratic value. Thus
+If a fixed outer template `B` is symmetric and entrywise `+-1`, hollowing
+`B tensor W_4^(tensor r)` gives a valid dense signing `A_r` of order `d4^r`.
+Diagonal removal changes the normalized absolute quadratic by at most
+`1/(2sqrt(d4^r))` (and changes it exactly by zero when `tr(B)=0`). Thus
 
 ```math
 {Q(A_r)\over(d4^r)^(3/2)}
@@ -9632,3 +9633,155 @@ of order `d4^r` without changing any Boolean quadratic value. Thus
 converges. This is an exact tensor-hierarchy theorem on geometric orders. It
 does not transfer near-minimizers to arbitrary orders and therefore does not
 imply convergence of the motivating sequence.
+
+## 29. Summable Boolean recovery
+
+For nonempty compact sets, write
+
+```math
+e(K,L)=\sup_(x in K)dist(x,L)
+```
+
+for directed Hausdorff excess.
+
+### Theorem 29.1 (one-sided recovery forces a response limit)
+
+Let `K_r` be nonempty compact subsets of one compact metric space. If
+
+```math
+e(K_r,K_(r+1))\le epsilon_r,
+\qquad \sum_r epsilon_r<infinity,                     \tag{29.1}
+```
+
+then `K_r` converges in Hausdorff distance to a compact set `K_infinity`.
+Moreover
+
+```math
+e(K_r,K_infinity)\le\sum_(s>=r)epsilon_s.             \tag{29.2}
+```
+
+No reverse bound tending to zero can depend only on this tail: exact forward
+inclusions may introduce new points arbitrarily late.
+
+#### Proof
+
+Starting from each `x_r in K_r`, choose a forward chain with successive
+distances at most `epsilon_s`. Its limit lies within the tail in (29.2).
+Let `E` be the set of all such limits and set `K_infinity=closure(E)`. This
+proves (29.2). A finite net of `K_infinity` with centers in `E` has all of
+its forward chains represented in every sufficiently late `K_r`, proving
+the reverse excess tends to zero. `square`
+
+Now let
+
+```math
+kappa_r(x,y)={x^TA_ry\over a_r},\qquad x,y in {+-1}^(n_r),
+```
+
+be uniformly bounded, and let `K_r^(d)` be the convex image of all fixed-`d`
+cross-response matrices `(kappa_r(x_i,x_j))_(i<=j)`. A common Boolean map
+`L_r:{+-1}^(n_r)->{+-1}^(n_(r+1))` has pair distortion
+
+```math
+alpha_r=\sup_(x,y)|kappa_(r+1)(L_rx,L_ry)-kappa_r(x,y)|. \tag{29.3}
+```
+
+Applying the same map to every port gives
+
+```math
+e_infinity(K_r^(d),K_(r+1)^(d))\le alpha_r.           \tag{29.4}
+```
+
+Hence `sum alpha_r<infinity` makes every fixed-port carrier converge and
+makes all bounded linear and absolute support queries converge uniformly.
+A backward Boolean map with distortion `beta_r` strengthens this to
+
+```math
+d_H(K_r^(d),K_infinity^(d))
+\le\sum_(s>=r)max(alpha_s,beta_s).                    \tag{29.5}
+```
+
+### Theorem 29.2 (a checkable matrix and amplification certificate)
+
+If `T_r in {0,+-1}^(n_(r+1) times n_r)` has one nonzero entry per row, then
+`L_rx=T_rx` is Boolean and its exact distortion is
+
+```math
+alpha_r=left\|T_r^T{A_(r+1)\over a_(r+1)}T_r
+                 -{A_r\over a_r}\right\|_(infinity->1). \tag{29.6}
+```
+
+Entrywise `l_1` and `n_r||.||_(2->2)` bound this norm. In particular, take
+`a_r=n_r^(3/2)` and suppose
+
+```math
+n_(r+1)=h_rn_r,
+\qquad A_(r+1)=A_r tensor H_r+E_r.                    \tag{29.7}
+```
+
+For Boolean `u_r`, put
+
+```math
+rho_r={u_r^TH_ru_r\over h_r^(3/2)},\quad
+M_r={||A_r||_(2->2)\over sqrt(n_r)},\quad
+e_r={||E_r||_(2->2)\over sqrt(n_(r+1))}.              \tag{29.8}
+```
+
+The replication `x mapsto x tensor u_r` satisfies
+
+```math
+alpha_r\le M_r|rho_r-1|+e_r.                         \tag{29.9}
+```
+
+Thus bounded `M_r` and summability of the right side force convergence of
+every fixed-port response carrier and outer quadratic support query. A
+checkable sufficient bound for `M_r` is
+
+```math
+||H_r||<= (1+sigma_r)sqrt(h_r),
+\qquad \sum_r(sigma_r+e_r)<infinity.                 \tag{29.10}
+```
+
+#### Proof
+
+Compressing (29.7) by `T_r=I tensor u_r` gives
+
+```math
+T_r^T{A_(r+1)\over n_(r+1)^(3/2)}T_r
+-{A_r\over n_r^(3/2)}
+=(rho_r-1){A_r\over n_r^(3/2)}
+ +{T_r^TE_rT_r\over n_(r+1)^(3/2)}.                  \tag{29.11}
+```
+
+The two Boolean bilinear norms are at most `M_r|rho_r-1|` and `e_r`.
+Also `M_(r+1)<=(1+sigma_r)M_r+e_r`, proving the uniform bound and the
+claim by Theorem 29.1. `square`
+
+### Corollary 29.3 (a non-tensor dense-sign hierarchy)
+
+Fix a nontrivial symmetric regular Hadamard `H` with a positive Boolean
+eigenvector. Starting from any symmetric full sign matrix `C_0`, form
+`C_r tensor H` and flip every sign on a fixed-point-free perfect matching to
+obtain `C_(r+1)`. The perturbation is a direct sum of signed
+`[[0,2],[2,0]]` blocks, so its operator norm is exactly two and
+
+```math
+e_r={2\over sqrt(N_(r+1))}.
+```
+
+These errors are summable. Therefore the fixed-port carriers converge, and
+the hollow dense signings `C_r^circ` satisfy
+
+```math
+{Q(C_r^circ)\over N_r^(3/2)}\longrightarrow q
+```
+
+for some `q`. This changes `Theta(N_r)` undirected edges at every level and
+is genuinely non-tensor.
+
+The finite-total-drift hypothesis has a sharp abstract boundary. There are
+growing Boolean kernels with distortions `alpha_r->0` and
+`sum alpha_r^2<infinity` whose scalar carriers oscillate: take
+`n_r=2^r`, `c_r=sin(log(r+2))`, and
+`A_r=c_r sqrt(n_r)I`. Hence vanishing or square-summable error alone cannot
+replace (29.1) without an additional cancellation mechanism.
