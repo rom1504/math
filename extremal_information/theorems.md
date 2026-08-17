@@ -12869,11 +12869,20 @@ Trust response is even in its field.  Repeating the two spherical estimates
 of Theorem 21.64 with strength `|a|b` shows that their upper bounds are
 increasing for `0<=|a|<=1`; hence (21.392) is at most
 `\mathcal B_{A_j}(g_j)-(delta+o(1))N_j^{3/2}` uniformly in `eta`.
-Taking the global absolute quadratic channel only introduces the same two
-trust signs.  The shore contribution is bounded by
-`O(s_j^2)=o(N_j^{3/2})`.  Conversely the target endpoint and the unflipped
-selector attain `\mathcal B_{A_j}(g_j)` up to that same shore error.  This
-proves (21.391).
+Precisely, changing `y` to `tau y` in the cross term gives, for either child
+`D`,
+
+```math
+Q\begin{pmatrix}D&B_j\\B_j^T&C_j\end{pmatrix}
+=\max_{eta,tau}\left[
+ \max_y\left\{{tau\over2}y^TDy+y^TB_jeta\right\}
+ +{tau\over2}eta^TC_jeta\right].               \tag{21.393}
+```
+
+Thus the flipped parent is at most
+`max_eta \mathcal B_{A'_j}(B_jeta)+Q(C_j)`, whereas the target endpoint gives
+the unflipped parent at least `\mathcal B_{A_j}(g_j)-Q(C_j)`.  Since
+`2Q(C_j)=O(s_j^2)=o(N_j^{3/2})`, (21.391) follows.
 
 This is a physical, all-spins-free contextual collision at the target dense
 quadratic scale.  It does **not** compare minima over signings, select these
