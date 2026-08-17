@@ -2534,3 +2534,44 @@ have a fixed `l_1/l_2` gap.  Distinct top poles differing on exactly
 is asymptotically flat and their exact Boolean--spherical gap is
 `O(n^(-1/2))`.  The result supplies a genuine restricted recovery mechanism,
 but it assumes that the flat channel is globally exposed.
+
+## Example 126: one common Boolean pole has a tensor composition law
+
+If a Boolean top eigenvector correlates on average by `1-delta` with all
+ports, evaluating that single pole loses at most `c delta` in normalized
+trust response.  Under tensor product, average absolute correlations
+multiply exactly, so `1-delta` multiplies.  The certificate is reusable when
+the total response mass times the accumulated deficit vanishes.
+
+This is a strict state—one pole and its port correlations—but not a full
+contextual quotient.  Equal deficits can hide different Boolean responses.
+The example separates a compositional recovery certificate from an exact
+response state.
+
+## Example 127: an active eigenspace charges a sphere-covering library
+
+For all unit fields in a `d`-dimensional top eigenspace, a uniformly small
+Boolean trust gap forces near-eigen Boolean projections to cover the unit
+sphere.  Error `epsilon` therefore needs
+`(c/sqrt(epsilon))^(d-1)` explicit witnesses, and a spherical net extracts a
+matching-order sufficient library.  Exact Boolean eigenvectors alone number
+at most `2^d` and cannot reach arbitrarily fine accuracy when `d>=2`.
+
+This prices a declared continuum query class.  A finite multi-port table may
+expose fewer directions or generate its library algebraically, so the count
+is not an unconditional bit lower bound.
+
+## Example 128: perfect leaves can compose into a maximally non-Boolean pole
+
+Split a sphere vector recursively into equal halves with RMS amplitudes
+`sqrt(1+delta)` and `sqrt(1-delta)`.  Every scalar leaf is exactly Boolean,
+but the global `l_1/l_2` ratio after depth `D` is
+
+```math
+\left({\sqrt{1+\delta}+\sqrt{1-\delta}\over2}\right)^D,
+```
+
+which tends to zero.  The exact flatness chain rule identifies the missing
+resource as amplitude allocation at each internal node.  Thus local rounding
+certificates are not dynamically reusable unless their allocation defects
+are summable along the exposed path.

@@ -1820,3 +1820,28 @@ flatness of its optimizer, and transporting that certificate through later
 composition.  Rank controls none of them alone.  Orthogonal and
 asymptotically coincident rank-two poles give respectively a fixed gap and
 vanishing recovery error.
+
+## 90. A recovery certificate may compose without being a response quotient
+
+Average correlation with one common Boolean pole is multiplicative under
+tensor product and directly bounds the integrality gap.  Yet two systems
+with the same correlation deficit can answer a future differently.  Exact
+algebra of a sufficient certificate is therefore weaker than contextual
+congruence and should be labelled as such.
+
+## 91. Active recovery complexity is angular
+
+Uniformly recovering every field direction in a `d`-dimensional active
+space requires near-optimal discrete witnesses whose projections cover a
+`(d-1)`-sphere.  The natural distortion exponent is one half because support
+deficit is quadratic in angular radius.  This geometric price is independent
+of the raw number of ambient cube points.
+
+## 92. Composition transports amplitude as well as local shape
+
+For a supplied exposed optimizer, coordinate flatness decomposes exactly
+into within-block flatness plus variance of block RMS amplitudes.  Perfect
+local witnesses do not prevent a global integrality gap if Euclidean mass
+localizes under repeated composition.  A dynamic recovery state must
+therefore control both local shape and allocation, and allocation defects
+must be summable at growing depth.

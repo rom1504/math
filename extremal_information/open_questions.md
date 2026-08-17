@@ -651,6 +651,17 @@ The live problem is no longer the existence of a recovery condition; it is
 whether exposure and flatness are **reusable under switching composition**
 without tabulating all trust channels.
 
+Two further boundaries now sharpen that question.  A common Boolean pole
+has an exact multiplicative correlation-deficit algebra, but equal deficits
+need not have equal responses.  A supplied exposed optimizer has an exact
+block flatness chain rule: local nonflatness and RMS-amplitude allocation add
+as separate positive resources, and fixed allocation imbalance pumps to a
+maximal gap.  Uniform recovery of a whole `d`-dimensional active sphere needs
+an explicit near-eigen witness cover of order
+`(c/sqrt(epsilon))^(d-1)`.  The remaining target is a switching law that
+selects and transports only the exposed subset without assuming its orbit
+language in advance.
+
 One narrow synchronization law is now exact.  If every onsite block is
 `+-H` and every bridge is `+-H` for one common regular Hadamard factor, the
 projective signed-graph class closes: `r` joining edges create exactly `r`

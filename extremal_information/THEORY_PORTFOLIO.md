@@ -134,7 +134,12 @@ one of:
   selected and preserved by repeated composition.  It yields exact
   `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
   while an orthogonal rank-two family has a fixed gap and a whole-subspace
-  Boolean net is impossible.
+  Boolean net is impossible.  One common Boolean pole gives a multiplicative
+  tensor certificate; a continuum `d`-dimensional active query class needs a
+  sphere-covering witness library; and a supplied optimizer's flatness obeys
+  an exact local-shape plus RMS-allocation chain rule.  Fixed allocation
+  imbalance is pumpable even with Boolean leaves.  The live gap is optimizer
+  selection under switching, not a missing one-shot rounding inequality.
   Coefficient-side frustrated cycle holonomy is not a PSD contraction and
   must remain a separate dynamic variable.
   The continuation-width question is closed once its internal cap budget is

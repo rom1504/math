@@ -11353,6 +11353,251 @@ the coefficient in (21.275) need not.  Full proof and audits are in
 and
 [`experiments/verify_exposed_boolean_synchronization_independent_audit.py`](experiments/verify_exposed_boolean_synchronization_independent_audit.py).
 
+### Theorem 21.46 (common-pole synchronization is a multiplicative certificate)
+
+In the setting of Theorem 21.45, suppose `x_0` is a Boolean top pole,
+`Hx_0=rx_0`, and define
+
+```math
+\delta(x_0;W)
+=1-{1\over pn}\sum_{i=1}^p|w_i^Tx_0|.              \tag{21.279}
+```
+
+Then
+
+```math
+\boxed{0\le\mathcal S-\mathcal B
+       \le {mp\over r}\delta(x_0;W)rn.}             \tag{21.280}
+```
+
+An arbitrary exact-sign completion `C` on the `pm` auxiliary spins adds at
+most `2Q(C)` to this gap.  Thus at bounded total mass, `delta=o(1)` is a
+strict one-witness Boolean recovery certificate.
+
+It has an exact composition algebra.  For two tensor systems, use the
+product pole and the Cartesian multiset of tensor-product ports.  If their
+deficits are `delta_1,delta_2`, then
+
+```math
+\boxed{1-\delta_{12}=(1-\delta_1)(1-\delta_2).}     \tag{21.281}
+```
+
+After `L` factors,
+
+```math
+1-\delta_{[L]}=\prod_{j=1}^L(1-\delta_j),
+\qquad
+\delta_{[L]}\le\sum_j\delta_j.                     \tag{21.282}
+```
+
+The actual recovery condition is
+`c_[L]delta_[L]=o(1)`, including the composed total port mass; deficit alone
+is sufficient only when `c_[L]=O(1)`.
+
+#### Proof
+
+The sphere is bounded by `rn/2+mpn`.  In the Boolean response, take
+`x=x_0`, the top quadratic channel, and align every endpoint independently;
+the value is at least
+
+```math
+{rn\over2}+m\sum_i|w_i^Tx_0|
+={rn\over2}+mpn(1-\delta),                          \tag{21.283}
+```
+
+which proves (21.280).  Tensor inner products multiply, so their normalized
+average absolute correlations multiply, proving (21.281)--(21.282).
+`square`
+
+The scalar deficit is an exact compositional **certificate observable**, not
+a complete contextual state: explicit order-four families have equal
+`delta=1/2` and Boolean responses `8` and `10`.  Full proof and independent
+audit are in
+[`drafts/common_pole_synchronization_algebra.md`](drafts/common_pole_synchronization_algebra.md),
+[`experiments/verify_common_pole_synchronization.py`](experiments/verify_common_pole_synchronization.py),
+[`drafts/exposed_flatness_common_pole_independent_audit.md`](drafts/exposed_flatness_common_pole_independent_audit.md),
+and
+[`experiments/verify_flatness_common_pole_independent_audit.py`](experiments/verify_flatness_common_pole_independent_audit.py).
+
+### Theorem 21.47 (active-eigenspace recovery has sphere-covering complexity)
+
+Let `V` be a `d`-dimensional subspace of the `+r` eigenspace of a symmetric
+`H` with `||H||<=r`, and let `P=P_V`.  For Boolean `x`, put
+
+```math
+q(x)={x^THx\over rn},
+\qquad u(x)={Px\over\sqrt n}.                       \tag{21.284}
+```
+
+For a unit `v in V` and field strength `beta>0`, the spherical response is
+`S_beta(v)=1/2+beta`, while
+
+```math
+B_\beta(v)=\max_x\{q(x)/2+\beta\langle v,u(x)\rangle\}. \tag{21.285}
+```
+
+Let `Gamma_beta=sup_v(S_beta(v)-B_beta(v))` and
+`W_delta={x:1-q(x)<=delta}`.  If `Gamma_beta<=eta`, then every direction has
+a witness in `W_(2eta)` with support at least `1-eta/beta`; consequently,
+for `d>=2` and `0<eta/beta<=1/2`,
+
+```math
+\boxed{|W_{2\eta}|
+\ge\left({\beta\over2\eta}\right)^{(d-1)/2}.}      \tag{21.286}
+```
+
+Conversely, if a finite library `L subset W_delta` has support at least
+`1-epsilon` in every unit direction, then
+
+```math
+\Gamma_\beta\le\delta/2+\beta\epsilon.             \tag{21.287}
+```
+
+These orders match.  If pointwise witnesses achieve support deficit
+`epsilon<=1/4`, one can retain only
+
+```math
+|L|\le(C/\sqrt\epsilon)^{d-1}                       \tag{21.288}
+```
+
+of them and obtain support deficit `4epsilon` uniformly.  With a spectral
+gap `gamma` below `V`, a defect-`delta` angular cover of deficit `alpha`
+certifies
+
+```math
+\Gamma_\beta
+\le\delta/2+\beta(\alpha+\delta/\gamma).            \tag{21.289}
+```
+
+If `V` is the complete strict top eigenspace, it contains at most `2^d`
+Boolean eigenvectors.  Hence exact-eigen witnesses alone cannot achieve
+uniform support deficit below
+
+```math
+2^{-1-2d/(d-1)}\ge1/32.                             \tag{21.290}
+```
+
+#### Proof
+
+For a Boolean optimizer the gap decomposes exactly into two nonnegative
+terms,
+
+```math
+S_\beta(v)-B_\beta(v)
+={1-q(x)\over2}+\beta(1-\langle v,u(x)\rangle).     \tag{21.291}
+```
+
+This proves necessity and sufficiency.  Unit directions served with support
+`1-epsilon` form spherical caps of angular radius
+`arccos(1-epsilon)`; their surface mass is at most
+`(2epsilon)^((d-1)/2)`, proving (21.286).  A
+`sqrt(epsilon)` sphere net and one pointwise witness per net point give
+(21.288).  The spectral gap yields
+`1-||u(x)||^2<=delta/gamma`, proving (21.289).
+Finally choose `d` coordinate functionals injective on `V`; they inject
+`V intersect {+-1}^n` into `{+-1}^d`, and combine with the cap bound to get
+(21.290). `square`
+
+This is a continuum fixed-strength query theorem.  A finite `p`-port trust
+table exposes at most `2^p` directions with direction-dependent strengths,
+and the two quadratic eigenspaces must be treated separately.  Thus
+(21.286) prices explicit witness libraries; it is not an unconditional bit
+lower bound for every algebraically generated carrier.  Full proof and audit
+are in
+[`drafts/boolean_active_eigenspace_synchronization.md`](drafts/boolean_active_eigenspace_synchronization.md),
+[`drafts/boolean_active_eigenspace_synchronization_independent_audit.md`](drafts/boolean_active_eigenspace_synchronization_independent_audit.md),
+[`experiments/verify_boolean_active_eigenspace_synchronization.py`](experiments/verify_boolean_active_eigenspace_synchronization.py),
+and
+[`experiments/verify_boolean_active_eigenspace_synchronization_independent_audit.py`](experiments/verify_boolean_active_eigenspace_synchronization_independent_audit.py).
+
+### Theorem 21.48 (exposed flatness has an exact hierarchical composition law)
+
+Partition a sphere vector `u in R^N` into blocks of relative sizes
+`lambda_i=n_i/N`.  Put
+
+```math
+\rho_i={||u_i||_2\over\sqrt{n_i}},
+\qquad
+\phi_i=1-{||u_i/\rho_i||_1\over n_i},               \tag{21.292}
+```
+
+with zero contribution for a zero block.  Since
+`sum_i lambda_i rho_i^2=1`, its global flatness satisfies the exact chain
+rule
+
+```math
+\boxed{
+\phi(u)
+={1\over2}\sum_i\lambda_i(\rho_i-1)^2
+ +\sum_i\lambda_i\rho_i\phi_i.}                   \tag{21.293}
+```
+
+On a partition tree, if `A_v` is the local amplitude-allocation defect and
+`omega_v=(N_v/N)R_v` is its transported RMS weight, then
+
+```math
+\phi(u)=\sum_{v\ {m internal}}\omega_vA_v
+       +\sum_{\ell\ {m leaf}}\omega_\ell\phi_\ell,
+\qquad
+\sum_{v\ {m at\ depth}\ d}\omega_v\le1.         \tag{21.294}
+```
+
+Consequently, if every node at depth `j` has `A_v<=a_j` and every leaf has
+flatness at most `b`, then a spherical vector exposed within
+`xi Lambda N` for `Lambda>0` and
+
+```math
+F(u)={1\over2}u^TMu+h^Tu,
+\qquad ||M||\le\Lambda,
+\qquad \kappa={||h||\over\Lambda\sqrt N},           \tag{21.295}
+```
+
+obeys
+
+```math
+S-B\le\Lambda N\left[
+\xi+(1+\kappa)\sqrt{2\left(b+\sum_j a_j\right)}
+\right].                                            \tag{21.296}
+```
+
+The summability condition is real.  On equal binary splits take relative
+RMS amplitudes `rho_+-=sqrt(1+-delta)` and
+`s=(rho_++rho_-)/2<1`.  Every scalar leaf is Boolean, but after depth `D`,
+
+```math
+{||u_D||_1\over N}=s^D,
+\qquad \phi(u_D)=1-s^D.                             \tag{21.297}
+```
+
+For the rank-one linear landscape `F_D(x)=u_D^Tx`, the sphere and cube
+maxima are exactly `N` and `Ns^D`; the normalized gap tends to one.
+
+#### Proof
+
+Additivity of `l_1` gives
+`phi=1-sum lambda_i rho_i+sum lambda_i rho_i phi_i`, while
+
+```math
+1-\sum_i\lambda_i\rho_i
+={1\over2}\sum_i\lambda_i(\rho_i-1)^2,             \tag{21.298}
+```
+
+proving (21.293).  Iteration telescopes the weights in (21.294), and
+Cauchy--Schwarz bounds their sum at every depth.  Apply sign rounding and
+(21.276) to prove (21.296).  Multiplication of the binary amplitudes gives
+`||u_D||_1/N=s^D`, proving the pumpable example. `square`
+
+The additive pair `(||u||_2^2,||u||_1)` is an exact state for a **supplied
+exposed witness**, not an optimizer-selection state for a switching response
+roof.  The theorem nevertheless identifies a new dynamic obstruction:
+perfect local Booleanity can be destroyed solely by repeated amplitude
+allocation.  Full proof and audit are in
+[`drafts/exposed_flatness_composition_law.md`](drafts/exposed_flatness_composition_law.md),
+[`experiments/verify_exposed_flatness_composition.py`](experiments/verify_exposed_flatness_composition.py),
+[`drafts/exposed_flatness_common_pole_independent_audit.md`](drafts/exposed_flatness_common_pole_independent_audit.md),
+and
+[`experiments/verify_flatness_common_pole_independent_audit.py`](experiments/verify_flatness_common_pole_independent_audit.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
