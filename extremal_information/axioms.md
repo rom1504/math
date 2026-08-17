@@ -1357,3 +1357,18 @@ lose cross-block queries, and separate optimizer-dependent lifts do not
 define one composable response map. Finite total drift is also a real
 threshold absent additional cancellation: vanishing square-summable steps
 can still trace a bounded nonconvergent scalar path.
+
+## 56. Connectedness does not erase independent compatibility flux
+
+Compatibility memory is not merely an artifact of disconnected local
+queries.  Independent Walsh relation triangles retain independently
+observable off-diagonal Gram fluxes even when every query uses one common
+connected support.  Arbitrary nonnegative bridge padding is harmless when a
+favorable witness saturates every added bridge and the same operator bound
+caps it in all competing states.
+
+The scaling qualification is part of the principle.  This proves additive
+memory per flux at a fixed port scale; it does not by itself prove an
+extensive information rate after the number of ports is included in the
+normalization.  A general dense-interface lower bound must control both the
+number of exposed fluxes and their response gap at the total-system scale.

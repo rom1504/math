@@ -1977,3 +1977,22 @@ Hollowing changes the normalized objective by only `O(N_r^(-1/2))`.
 The summability scale cannot formally be weakened to square summability:
 the scalar kernels `sin(log(r+2))` have square-summable step changes and two
 separated subsequential limits.
+
+## Example 91: one connected Walsh language carries many flux bits
+
+Use `h` disjoint relation triangles of even Walsh labels.  In each triangle,
+hold the relation `a+b+c=0`, all self-pairings, the root fibre, and every
+cross-triangle pairing fixed, while choosing its three off-diagonal Gram
+values to be either all zero or all one.  This gives an `h`-cube of states.
+
+For each coordinate, its ordinary triangle maximum detects that flux bit.
+Nonnegative Walsh bridges may connect all `3h` ports without reducing the
+gap: the favorable common eigenvector saturates every connector, while the
+operator norm gives the same connector ceiling in every competing state.
+Activating all nontarget triangles with total small weight leaves a fixed
+gap.  Hence the same bounded-degree-four connected support, or the same
+complete support, carries an `h`-bit scalar response packing.
+
+This closes scalar visibility at fixed one-block accuracy.  It does not
+give an extensive whole-system rate, because the total-variable normalized
+gap decays as `h^(-3/2)`.

@@ -279,11 +279,15 @@ bounded-incidence supports.
 
 The ambient symmetry question is also closed: `(Gram,relations)` conjugates
 the **entire unrooted weighted Walsh graph landscape**, not merely its
-spectrum. The sharp next target is semantic minimality inside one large
-connected support. One triangle now exposes a Gram/flux bit at a fixed
-`n^(3/2)` gap, and independent paths expose local coincidence bits. Determine
-the packing rate of such fluxes, or prove a further quotient for the
-unexposed directions. Interaction-mass deletion already gives an
+spectrum. The sharp next target is semantic minimality at the total-system
+scale inside one large connected support.  There are now `2^h` states whose
+`h` independent relation-cycle fluxes are separated by scalar queries on the
+same connected bounded-degree or complete support at a fixed one-Walsh-block
+`n^(3/2)` gap.  This proves `h` bits at fixed port accuracy, but the gap is
+only `Theta(h^(-3/2))` in units of all `3hn` variables.  Determine whether a
+different dense weighting exposes a positive-rate packing at total
+`N^(3/2)` accuracy, or prove a further quotient at that scale.
+Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking
 the original `2^(kn)` Boolean maximum.

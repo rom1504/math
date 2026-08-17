@@ -155,11 +155,14 @@ one of:
 - **Composition mechanism:** rooted bilinear amalgamation. A cross form,
   intersection correspondence, and root fibre reconstruct the joined state;
   the accumulated presented span makes the operation associative.
-- **Live theorem:** determine the packing rate of scalar-visible Gram fluxes
-  and higher relations inside one connected support, and whether weak
+- **Live theorem:** determine whether scalar-visible Gram fluxes retain a
+  positive information rate at the **total-system** `N^(3/2)` scale, and whether weak
   interaction admits a better decoder than deleting cross-part edges.
   Pairwise local data is already ruled out by a ternary-relation
-  counterexample, while one triangle now exposes flux at leading scale.
+  counterexample.  A connected construction exposes `h` independent fluxes
+  with one common bounded-degree or complete support and a fixed one-block
+  gap, but that gap is only `Theta(h^(-3/2))` after normalizing by all
+  `3hn` variables.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
