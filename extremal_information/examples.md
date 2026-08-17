@@ -2683,3 +2683,19 @@ unchanged by exact factors, and under independently perturbed positive
 factors its defect is exactly `1-prod_i(1-eta_i)`.  The example separates a
 basis-conditioned certificate from an intrinsic subspace certificate and
 turns exact product closure into a robust growing-interface theorem.
+
+## Example 136: vanishing marginal pole defects can align coherently
+
+Take every odd Walsh character on `p` generator bits and the high-degree
+Fourier tail of majority.  A rank-one defect aligned with that tail and a
+diagonal defect with the same diagonal entries agree on all generator
+rows/columns and on every individual product deficit.  Every such deficit
+is `O(1/p)`.  Nevertheless the coherent defect has norm one and majority
+sees loss `1-2/pi+o(1)`, whereas the diagonal system has norm and selector
+loss `O(1/p)`.
+
+This is the joint-cancellation analogue of hidden holonomy: separately good
+channels can align into one bad future-visible direction.  Group twirling
+removes exactly these off-diagonal coherences; approximate commutation gives
+a quantitative repair.  The example is presently a weighted contraction,
+so exact-sign rigidity remains a legitimate escape.

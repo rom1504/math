@@ -1919,3 +1919,15 @@ Cartesian pole algebra, the coordinate-free relative inequality `D<=delta G`
 is the stable certificate.  The correct approximate state can therefore be
 strictly coarser than any exact contextual quotient, provided its error
 budget itself composes.
+
+## 99. Marginal near-optimality needs a coherence theorem
+
+Even when every generated product pole is individually `o(1)` from an
+extremal spectral face, their off-diagonal defects can align into a constant
+loss for one nonlinear selector.  Trace, average deficit, and the full
+generator block need not detect it.
+
+The missing resource is joint coherence.  Exact group equivariance kills it
+by twirling, and approximate commutator control bounds it quantitatively.
+Accordingly, a claim that many channels are separately near-optimal is not a
+synchronization theorem until it also controls how their errors correlate.

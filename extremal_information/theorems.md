@@ -12148,6 +12148,64 @@ in
 and
 [`experiments/verify_robust_product_synchronization.py`](experiments/verify_robust_product_synchronization.py).
 
+### Theorem 21.56 (marginal near-top poles do not control coherent synchronization)
+
+For every odd `p`, there is a generated odd-character pole algebra of
+dimension
+
+```math
+q=2^{p-1}={\sqrt N\over2},\qquad N=2^{2p},        \tag{21.340}
+```
+
+and two symmetric PSD contraction children with `G=I_q` such that their
+complete degree-one generator blocks, every individual active-product
+Rayleigh deficit, and their trace and average defects agree.  Nevertheless
+one has relative defect `1`, while the other has relative defect `O(1/p)`.
+
+Explicitly, if `a` is the Fourier vector of odd majority, remove its
+singleton part and normalize the remaining vector `u`.  Then
+
+```math
+D_(coh)=uu^T,\qquad D_(diag)=diag(u_S^2).          \tag{21.341}
+```
+
+The majority selector exposes
+
+```math
+a^TD_(coh)a\longrightarrow1-{2\over\pi},
+\qquad a^TD_(diag)a=O(1/p).                       \tag{21.342}
+```
+
+Taking spectral scale `r=sqrt N`, this is a leading
+`Theta(N^(3/2))` separation between prescribed joint-selector losses even
+though every separately inspected pole is asymptotically top-Rayleigh.  The
+construction is a weighted contraction and does not assert separated
+Boolean optima.
+
+There is a matching positive structural criterion.  On an orthogonal
+character pole span, twirl the compressed child `A` by its finite abelian
+generator group.  If every diagonal deficit is at most `d`, then
+
+```math
+\boxed{D\preceq(d+||A-\overline A||_op)G.}        \tag{21.343}
+```
+
+If the group has commuting involutory generators,
+
+```math
+||A-\overline A||_op
+\le {1\over2}\sum_i||[A,rho(g_i)]||_op.           \tag{21.344}
+```
+
+Thus exact or approximate equivariance converts marginal near-top data into
+the relative synchronization needed by Theorem 21.55.  Without coherence,
+separate product estimates cannot do so.  The full proof and 70,333 exact
+checks are in
+[`drafts/gram_relative_coherence_blindness.md`](drafts/gram_relative_coherence_blindness.md),
+[`drafts/gram_relative_coherence_blindness_audit.md`](drafts/gram_relative_coherence_blindness_audit.md),
+and
+[`experiments/verify_gram_relative_coherence_blindness.py`](experiments/verify_gram_relative_coherence_blindness.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
