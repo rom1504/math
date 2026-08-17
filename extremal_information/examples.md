@@ -2503,3 +2503,19 @@ orientation holonomy is coefficient-side information outside this carrier.
 Exact PSD compatibility can therefore be large while its macroscopic
 incremental cost over already-compressed marginals is bounded, without
 absorbing every dynamic interaction variable.
+
+## Example 124: two orthogonal Boolean poles create a fixed spherical gap
+
+Take two orthogonal Boolean vectors in the top eigenspace of a regular
+Hadamard involution and attach equally repeated query shores.  On the cube,
+the largest joint linear support is the `l_1` norm of their signed sum,
+namely `n`; on the Euclidean sphere it is the `l_2` support
+`sqrt(2)n`.  Both choices simultaneously saturate the quadratic top
+eigenvalue, so the resulting gap is exact.
+
+With shore width `sqrt(n)/2`, total port mass is one and the normalized gap
+is `(sqrt(2)-1)/2`, surviving every lower-order exact-sign completion.  The
+collective PSD metric and its gluing law therefore compress their own
+spherical response correctly but cannot be rounded uniformly to the Boolean
+value.  This is an integrality obstruction, not yet an information collision
+inside the Gram state.

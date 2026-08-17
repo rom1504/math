@@ -1791,3 +1791,18 @@ coordinates but the global identities imposed by its realization category.
 Forgetting those identities either admits symbolic paths that no object can
 realize or incorrectly discards interaction information living outside the
 chosen positive geometry.
+
+## 88. Response compression and integrality are orthogonal obligations
+
+A relaxed state can have sharp metric entropy, exact composition, and
+uniform response continuity while its decoded value remains a fixed distance
+from the discrete optimum.  Two orthogonal Boolean Hadamard poles already
+separate the Euclidean and cube support functions at bounded total interface
+mass.
+
+Consequently a successful extremal carrier needs two certificates: that its
+state is small and reusable, and that its relaxation is recoverable in the
+original discrete class.  Improving the first does not make the second an
+error term.  Conversely, one fixed integrality gap does not by itself prove
+that the compressed coordinates are information-insufficient for a different
+discrete decoder.

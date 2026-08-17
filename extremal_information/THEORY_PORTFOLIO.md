@@ -119,6 +119,11 @@ one of:
   and a width-`n^(3/4)` clique create a `(3/4-o(1))n^(3/2)` orientation gap
   while preserving the final cap.  If the future block is itself
   `O(m^(3/2))`-cap, the threshold is instead linear.
+  Finally, the collective spherical carrier has a fixed Boolean integrality
+  gap already for two orthogonal top poles at bounded total port mass:
+  cube and sphere pay different `l_1/l_2` supports by
+  `(sqrt(2)-1)rn/2`.  This kills uniform trust-value rounding, though not
+  every possible Gram-based Boolean decoder.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper

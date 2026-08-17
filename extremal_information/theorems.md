@@ -11168,6 +11168,79 @@ and at anti-pin scaling `m=r` the required metric accuracy deteriorates with
 and
 [`experiments/verify_psd_gluing_compatibility_entropy.py`](experiments/verify_psd_gluing_compatibility_entropy.py).
 
+### Theorem 21.44 (bounded port mass does not close the Boolean trust gap)
+
+Let `H` be a symmetric entrywise sign matrix satisfying
+
+```math
+H^2=r^2I,\qquad \operatorname{tr}H=0,               \tag{21.264}
+```
+
+and suppose it has orthogonal Boolean top eigenvectors `a,b`.  Put
+`A=H-diag(H)` and append two disjoint `m`-spin shores with repeated old--new
+columns `a` and `b`.  Before filling the auxiliary block, the exact Boolean
+and spherical trust responses are respectively
+
+```math
+\mathcal B_m=\max_{x\in\{+-1\}^n}
+ \left\{|H_A(x)|+m|a^Tx|+m|b^Tx|\right\},           \tag{21.265}
+```
+
+```math
+\mathcal S_m=\max_{||u||_2^2=n}
+ \left\{\left|{1\over2}u^THu\right|
+          +m|a^Tu|+m|b^Tu|\right\}.                \tag{21.266}
+```
+
+For every integer `m>=0`, these values are exactly
+
+```math
+\boxed{\mathcal B_m={rn\over2}+mn,\qquad
+       \mathcal S_m={rn\over2}+\sqrt2mn.}           \tag{21.267}
+```
+
+Hence, with `p=2` and `m=r/2`, the total port mass is `mp/r=1` but
+
+```math
+{\mathcal S_m-\mathcal B_m\over rn}
+={\sqrt2-1\over2}.                                  \tag{21.268}
+```
+
+This is scalable through tensor powers of the regular order-16 Walsh
+matrix.  Their total parent order is `N=n+r`, so the same limiting gap holds
+in `N^(3/2)` units.  Completing all auxiliary pairs by any exact signing
+changes the difference by at most `2Q(C)=O(r^2)=O(n)` and cannot remove the
+leading gap.
+
+#### Proof
+
+Orthogonal Boolean vectors agree on half the coordinates and disagree on
+half, so for every endpoint signs
+
+```math
+||\epsilon_1a+\epsilon_2b||_1=n,qquad
+||\epsilon_1a+\epsilon_2b||_2=\sqrt{2n}.            \tag{21.269}
+```
+
+Cube duality bounds the Boolean field by `mn`; the spectral bound gives
+`rn/2`, and `x=a` attains both.  Euclidean duality bounds the spherical
+field by `sqrt(2)mn`; `u=(a+b)/sqrt2` lies in the top eigenspace and attains
+both.  This proves (21.267).  Tensoring the two orthogonal Boolean top poles
+of the order-16 example proves scalability.  Finally the auxiliary energy
+is uniformly bounded by `Q(C)` in each optimization, proving the completion
+claim. `square`
+
+This theorem falsifies uniform rounding of the **spherical trust value** at
+bounded total mass, even in rank two.  It does not prove that `(G,R)` is
+information-insufficient for every conceivable Boolean-response functional;
+that stronger claim would require an equal-Gram collision with separated
+Boolean responses.  Full details and independent checks are in
+[`drafts/regular_hadamard_boolean_spherical_gap.md`](drafts/regular_hadamard_boolean_spherical_gap.md),
+[`drafts/regular_hadamard_boolean_spherical_gap_independent_audit.md`](drafts/regular_hadamard_boolean_spherical_gap_independent_audit.md),
+[`experiments/verify_regular_hadamard_boolean_spherical_gap.py`](experiments/verify_regular_hadamard_boolean_spherical_gap.py),
+and
+[`experiments/verify_regular_hadamard_boolean_spherical_gap_independent_audit.py`](experiments/verify_regular_hadamard_boolean_spherical_gap_independent_audit.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
