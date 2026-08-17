@@ -1,8 +1,11 @@
 # PC.3 diagonal switchings cannot hide coherent selector loss
 
 **Status.**  Rigorous scalable no-go theorem for the complete diagonal-
-switching class of the PC.3 tensor regular-Hadamard family, with exact
-finite verifier at orders `256` and `4096`.
+switching class of the PC.3 tensor regular-Hadamard family, followed by a
+rigorous non-switching sparse-flip construction which does achieve
+vanishing marginal and constant coherent selector defect.  The finite
+verifier covers the switching theorem at orders `256,4096` and the exact
+factor-law inputs to the construction through tensor depth ten.
 
 The exact-sign five-port seed shows that fixed marginal Rayleigh loss can
 coexist with a larger coherent majority loss.  The weighted contraction
@@ -11,10 +14,13 @@ closes the most natural route from the former to the latter: **no diagonal
 switching of the growing PC.3 tensor family can have vanishing active-product
 deficits and a nonvanishing selector deficit.**  In fact every selector
 deficit is at most twice the average product deficit, at every tensor depth.
+The second half identifies the exact escape: a diffuse selector permits
+targeted sparse edge flips, and an explicit PC.3 endpoint is proved diffuse.
 
-This is a theorem about the prescribed same-field selector certificate.  It
-does not compare full Boolean trust optima, and it does not cover arbitrary
-exact-sign perturbations unrelated to diagonal switching.
+These are theorems about the prescribed same-field selector certificate.
+They do not compare full Boolean trust optima.  The negative theorem is
+restricted to diagonal switching; the positive theorem uses a genuinely
+non-switching exact-sign perturbation.
 
 ## 1. A gapped twirl lemma
 
@@ -263,11 +269,11 @@ observation structurally:
   all 64 projective selector witnesses;
 * the constant never grows with tensor depth.
 
-The theorem does **not** say that exact signs always enforce coherence.
+Theorem DS.2 does **not** say that exact signs always enforce coherence.
 The five-port exact-sign construction in the separate note is not a
 diagonal switching of the PC.3 tensor child with its canonical growing
-ports, and it has fixed marginal deficit.  The remaining sharp question is
-whether some genuinely non-switching exact-sign family can satisfy
+ports, and it has fixed marginal deficit.  The sharp question at this point
+is whether some genuinely non-switching exact-sign family can satisfy
 
 ```math
 \max_S d_S=o(1),
@@ -276,7 +282,9 @@ whether some genuinely non-switching exact-sign family can satisfy
 ```
 
 or whether an analogue of the gapped-twirl lemma is forced more broadly by
-sign integrality and regular-Hadamard structure.
+sign integrality and regular-Hadamard structure.  Proposition DS.3 and
+Theorem DS.4 below answer this question positively for targeted sparse edge
+flips.
 
 There is a precise way in which a non-switching construction could escape.
 The following proposition reduces it to a diffuseness question rather than
@@ -310,7 +318,8 @@ For every fixed `0<kappa<1`, there exists a symmetric entrywise-sign matrix
 and uniformly over `z in Z`,
 
 ```math
-{z^TH'z\over r'N}=1-O(\alpha_N^2)-o(1),          \tag{DS.25}
+0\le1-{z^TH'z\over r'N}
+\le\kappa\alpha_N^2+o(1),                        \tag{DS.25}
 ```
 
 whereas
@@ -391,34 +400,146 @@ full `N times N` sign matrix has Frobenius norm `N`, so `r'>=sqrt N=r`.
 This proves (DS.24), and the energy estimates give (DS.25)--(DS.26).
 `square`
 
-For PC.3, the unresolved input to Proposition DS.3 is now explicit: find
-endpoints whose selector witnesses obey
+For the original hollow convention, put
+`A'=H'-diag(H')`.  Every Boolean quadratic energy changes by
+`-tr(H')=-tr(H)=0`, while `||A'||_op<=r'+1=(1+o(1))sqrt(N)`.
+Thus (DS.25)--(DS.26) hold with the harmless `+1` operator-norm roof as
+well.
 
-```math
-\max_{z\in Z_j}{|x_\epsilon^Tz|\over n_j}=o(1).  \tag{DS.35}
-```
-
-A finite product-law computation for the periodic endpoint
+For PC.3, the input to Proposition DS.3 can in fact be proved.  Use endpoint
+signs
 
 ```math
 \epsilon_0=1,
 \qquad \epsilon_{2t+1}=(-1)^t,
-\qquad \epsilon_{2t+2}=(-1)^{\lfloor t/2\rfloor} \quad(0\le t<j) \tag{DS.36}
+\qquad \epsilon_{2t+2}=1 \quad(0\le t<j),         \tag{DS.35}
 ```
 
-(where the last two coordinates index the two local relative generators)
-gives the following maximum correlations for depths `j=2,...,10`:
+where the last two coordinates index the two local relative generators in
+factor `t`.
+
+### Theorem DS.4 (a diffuse PC.3 selector)
+
+For the endpoint (DS.35), there is an absolute constant `C` such that
+
+```math
+\boxed{
+\max_{z\in Z_j}{|x_\epsilon^Tz|\over n_j}
+\le {C\over\sqrt j}.}                            \tag{DS.36}
+```
+
+Consequently Proposition DS.3 gives a sequence of symmetric exact-sign
+children for which every active PC.3 product has `o(1)` positive-Rayleigh
+deficit while this same-field majority selector has deficit
+`kappa+o(1)`, for any fixed `0<kappa<1`.
+
+#### Proof
+
+Under the uniform row measure of the PC.3 tensor, the two relative
+generators in factor `t` form an independent sequence of pairs `(X_t,Y_t)`
+with three-atom law
+
+```math
+\Pr\{(X,Y)=(1,1),(1,-1),(-1,1)\}
+=\left({1\over4},{1\over2},{1\over4}\right).    \tag{DS.37}
+```
+
+After cancelling the common base pole, the selector and an arbitrary active
+product are
+
+```math
+f=\operatorname {sgn}\left(1+\sum_{t<j}A_t\right),
+\quad A_t=(-1)^tX_t+Y_t,
+\qquad
+\chi=\prod_{t<j}\chi_t(X_t,Y_t),                 \tag{DS.38}
+```
+
+where each local character belongs to
+
+```math
+\{1,X,Y,XY\}.                                    \tag{DS.39}
+```
+
+Their means under (DS.37) are respectively
+
+```math
+1,{1\over2},0,-{1\over2}.                        \tag{DS.40}
+```
+
+We use two elementary uniform consequences of Berry--Esseen.  For any sum
+`S` of `m` distinct variables among the `A_t`,
+
+```math
+\sup_u\Pr\{|S-u|\le2\}\le {C_0\over\sqrt m},    \tag{DS.41}
+```
+
+and
+
+```math
+|\mathbb E\operatorname {sgn}(1+S)|
+\le {C_0(1+|\mathbb ES|)\over\sqrt m},           \tag{DS.42}
+```
+
+with the right side truncated at one.  Indeed `|A_t|<=2`, while direct
+evaluation of (DS.37) gives a variance bounded above and below by positive
+absolute constants for both parities of `t`.  Berry--Esseen bounds interval
+mass by `O(m^(-1/2))`, proving (DS.41), and comparison with a centered
+normal at threshold `-1` proves (DS.42).
+
+Let `k` be the number of nonconstant factors in (DS.39), and integrate
+those factors one at a time.  If `R` is the sum of the other scores and
+`mu_t=E chi_t`, then
+
+```math
+\mathbb E_{(X_t,Y_t)}
+ [\chi_t\operatorname {sgn}(1+R+A_t)]
+=\mu_t\operatorname {sgn}(1+R)+e_t(R),           \tag{DS.43}
+```
+
+where
+
+```math
+|e_t(R)|\le2\mathbf1_{\{|1+R|\le2\}}.           \tag{DS.44}
+```
+
+This is because outside that window the sign is constant over all
+`|A_t|<=2`.  By (DS.40), `|mu_t|<=1/2` for every removed factor.  Iterating
+(DS.43), taking absolute values only on the localized errors, and applying
+(DS.41) gives
+
+```math
+|\mathbb E(f\chi)|
+\le2^{-k}|\mathbb E\operatorname {sgn}(1+S_{j-k})|
+ +2\sum_{ell=0}^{k-1}2^{-ell}
+   \min\left(1,{C_0\over\sqrt{\max\{1,j-ell-1\}}}\right). \tag{DS.45}
+```
+
+The sum is `O(j^(-1/2))`: split at `ell=j/2`, use (DS.41) before the split,
+and the geometric factor after it.  For the first term, if `k>=j/2` the
+factor `2^-k` is negligible.  Otherwise at least `j/2` score variables
+remain.  Since
+
+```math
+\mathbb EA_t={(-1)^t\over2},                     \tag{DS.46}
+```
+
+the mean of the complete score sum is bounded, and deleting `k` terms
+changes it by at most `k/2`.  Equations (DS.42) and
+`sup_k (k+1)2^-k<infinity` make the first term in (DS.45) also
+`O(j^(-1/2))`.  This proves (DS.36). `square`
+
+The proof is genuinely uniform over all `4^j` active products; no union
+bound over characters is used.  It also identifies the structural escape
+from DS.2.  Diagonal switching keeps the gapped twirl fixed, whereas sparse
+edge flips target a selector whose overlap with every individual twirl pole
+is diffuse.
+
+For reference, the exact finite maxima in (DS.36) for `j=2,...,10` are
 
 ```text
-0.7500, 0.65625, 0.55469, 0.58594, 0.43311,
-0.43811, 0.38107, 0.41563, 0.33625.
+0.750000, 0.562500, 0.500000, 0.421875, 0.377930,
+0.349365, 0.325562, 0.306793, 0.289959.
 ```
-
-The maximizing product is a one-factor character throughout this range,
-and the values are consistent with `Theta(j^(-1/2))`.  This is finite
-evidence, not an asymptotic theorem.  Proving or falsifying (DS.35) for the
-explicit three-atom PC.3 factor law is the exact next discriminator for
-non-switching sparse flips.
 
 ## 5. Verification
 
@@ -432,4 +553,4 @@ Run
 The verifier checks `L^3=16^2L` in exact integer arithmetic, verifies the
 `(3,10,3)` seed multiplicities, reconstructs all PC.3 products and selector
 witnesses, stress-tests (DS.18) matrix-free at orders `256` and `4096`, and
-reproduces the finite correlation sequence below (DS.35).
+reproduces the finite correlation sequence below (DS.46).

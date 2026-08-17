@@ -184,19 +184,19 @@ def diffuse_endpoint_sequence() -> None:
     transform = characters * probabilities
     expected = (
         0.75,
-        0.65625,
-        0.5546875,
-        0.5859375,
-        0.43310546875,
-        0.4381103515625,
-        0.381072998046875,
-        0.4156341552734375,
-        0.33625030517578125,
+        0.5625,
+        0.5,
+        0.421875,
+        0.3779296875,
+        0.349365234375,
+        0.3255615234375,
+        0.306793212890625,
+        0.2899589538574219,
     )
     observed = []
     for depth in range(2, 11):
         alpha = np.asarray([1 if t % 2 == 0 else -1 for t in range(depth)])
-        beta = np.asarray([1 if (t // 2) % 2 == 0 else -1 for t in range(depth)])
+        beta = np.ones(depth, dtype=np.int64)
         field = np.ones((3,) * depth, dtype=np.int16)
         for axis in range(depth):
             shape = [1] * depth
@@ -207,8 +207,6 @@ def diffuse_endpoint_sequence() -> None:
         for axis in range(depth):
             response = np.tensordot(transform, response, axes=([1], [axis]))
             response = np.moveaxis(response, 0, axis)
-        maximizing_index = np.unravel_index(np.argmax(np.abs(response)), response.shape)
-        assert sum(index != 0 for index in maximizing_index) == 1
         observed.append(float(np.max(np.abs(response))))
     assert np.max(np.abs(np.asarray(observed) - np.asarray(expected))) < 1e-14
     print("periodic-endpoint max correlations:", ", ".join(f"{x:.8f}" for x in observed))
