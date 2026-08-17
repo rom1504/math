@@ -28,6 +28,7 @@ weighted-automaton minimization.
 | Letter-indexed reset spectrum | One scalar state for optimized word spectra; all raw states for coherent path lifting | Nondeterministic critical-witness selection | Every word has a zero critical cycle, but its witness depends on the word | Any local path-lift defect below `C` forces `r` states, even after gauge | Exact response equality does not imply a reusable rowwise simulation |
 | Binary de Bruijn zero relation | One scalar state for every unrooted word spectrum; `2^m` rooted path states | Periodic window selected by the complete future word | Every `L>=2m` block product is projectively rank one with one critical node | Block path-lift defect below `C` still forces all `2^m` states | Maximal contraction and wordwise uniqueness do not imply cross-word synchronization |
 | Zero-relation switching, unrooted spectrum | Reachable nonempty endpoint subsets (or any smaller survival carrier) | Full Boolean relation semigroup / raw row simulation | Backward lifting after the future is declared; repeat a word to close a cycle | At most `2^r-1` canonical states; a mortal subset word is a pumpable drift witness | First complete finite tropical lumpability law matched to the scalar query |
+| Width-two switching Ising | Two anticipatory support states with state-dependent tolls | Four boundary-spin transfer states | Backward-surjective optimal fibres selected by the next letter | Exact response `2N_ca^cyc-N_a`; equal-Parikh words prove two states minimal | Natural strict quotient beyond flat scalar survival |
 
 ## What was actually predicted
 
@@ -57,3 +58,35 @@ are quantitative and comparative:
   affine extremizer;
 - the finite predictive compactness theorem; and
 - the Helly-sharp obstruction to local tie-path assembly.
+
+## Director checkpoint: dynamic theory judgment
+
+This campaign did predict more than ordinary transfer state. Its strongest
+positive object is the **anticipatory support carrier**: a finite selected
+family of endpoint fibres, backward-surjective generator lifts, and a support
+potential. It preserves weighted critical cycles at arbitrary depth while
+retaining strictly less state than forward simulation in both the de Bruijn
+and width-two Ising benchmarks.
+
+The strongest falsifiers delimit that claim:
+
+- a polynomial-size single lattice-PWA map plus one probe can expose
+  `2^(r-o(r))` phases;
+- minimum approximate reward congruence is NP-complete even under identity or
+  rank-one-reset dynamics;
+- exact unrooted word spectra can coexist with exponential rowwise state;
+- projective contraction zero and a uniquely exposed critical node for every
+  long word still do not synchronize witnesses across words.
+
+Thus finite tropical lumpability is now understood at three query levels:
+
+```math
+scalar survival < anticipatory weighted supports < rowwise path lift.
+```
+
+Failure of exact support survival has a mortal word which pumps linear drift;
+failure of a particular sufficient carrier alone does not. The single next
+theorem is a converse/minimality criterion for weighted supports: characterize
+when wordwise tight critical-cycle lifts admit a finite support/potential
+presentation, preferably by a bounded-delay or twins condition, and relate
+its minimum size to response metric entropy.

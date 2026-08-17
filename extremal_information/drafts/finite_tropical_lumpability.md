@@ -1158,6 +1158,42 @@ subset nonmortality gives precisely the weaker unrooted response. In the
 de Bruijn family `Delta_e(I)=I` for both letters, so the survival carrier has
 one state even though every rowwise lift has `2^m` states.
 
+### Theorem 3.18 (anticipatory supports over a weighted coarse system)
+
+Let `pi:I->J` and suppose gauged raw edges are bounded above by their coarse
+edge weight plus `alpha_e`. For each coarse state `a`, retain a finite family
+of nonempty supports inside `pi^(-1)(a)`. Along every finite coarse edge
+`a --e--> b`, choose a successor support `K'` such that every terminal in
+`K'` has a predecessor in `K` whose raw edge is within shortfall `d(K,e,b)`
+of the coarse edge. If
+
+```math
+d(K,e,b)<=beta_e+psi(K')-psi(K),
+```
+
+then every aligned word obeys
+
+```math
+-sum_(e in w)beta_e
+ <=rho(T_w)-rho(S_w)<=sum_(e in w)alpha_e.                      \tag{3.40}
+```
+
+Unfold and repeat a critical coarse cycle. A finite support repeats; backward
+surjectivity on that support produces a genuine raw cycle, while `psi`
+telescopes. This is generator-checkable and can use at most
+`sum_a(2^|pi^(-1)(a)|-1)` canonical supports. It is strictly weaker than a
+rowwise lift because the microscopic predecessor may be chosen after the
+coarse future edge is known.
+
+A width-two Ising benchmark makes the distinction natural. Three local
+couplings have zero relations `D_e times K_(tau(e))` on the four boundary
+spins, with two target supports `K_+,K_-`; every support meets every `D_e`,
+so two anticipatory states are exact. The four raw source signatures are all
+different, forcing four forward path states even after a gauge. Adding one
+bounded horizontal bond gives the exact order-sensitive response
+`2N_ca^cyc-N_a` for `C>4`; the same two states compute it, while identical-
+Parikh words with responses `-2,+2` prove that one state cannot.
+
 ## 4. Two dual max-plus block quotients
 
 For a partition `Pi={I_1,...,I_r}` and a gauge `c`, put

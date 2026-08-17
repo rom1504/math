@@ -425,3 +425,9 @@ of endpoint subsets and cyclicity of every relation product. It also verifies
 the fixed-two-letter `2^r` mortality-monitor construction through `r=8` and
 the one-state support carrier for binary de Bruijn systems through memory
 seven.
+
+`verify_ising_anticipatory_support.py` checks the strict width-two Ising
+benchmark: two backward-surjective supports, no one-support realization,
+four distinct forward row signatures, and all 1,092 words through length six
+for both the flat response and the interacting formula
+`2N_ca^cyc-N_a`.

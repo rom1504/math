@@ -5772,6 +5772,215 @@ survival carrier, while every exact rowwise path lift has `2^m` states. This
 is a finite tropical lumpability theorem tailored to the unrooted response
 query, not a weakened simulation of the entire landscape.
 
+### Theorem 17.1s (anticipatory-support lumpability over a coarse system)
+
+Let `T_e` be raw max-plus matrices on `I`, let `S_e` be coarse max-plus
+matrices on `J`, and let `pi:I->J` be onto. A common raw gauge replaces
+
+```math
+T_e(i,j)\quad\hbox{by}\quad
+That_e(i,j)=T_e(i,j)+h_i-h_j
+```
+
+without changing any word spectral radius. Suppose
+
+```math
+That_e(i,j)<=S_e(pi(i),pi(j))+alpha_e.                          \tag{17.7ax}
+```
+
+For each `a in J`, choose a finite nonempty family `K_a` of nonempty subsets
+of `pi^(-1)(a)`. For every `K in K_a` and every finite coarse edge
+`S_e(a,b)`, choose a successor support
+
+```math
+K'=sigma(K,e,b) in K_b
+```
+
+and a shortfall `d(K,e,b)>=0` such that
+
+```math
+K' subseteq {j in pi^(-1)(b):exists i in K,
+              That_e(i,j)>=S_e(a,b)-d(K,e,b)}.                 \tag{17.7ay}
+```
+
+Assume there are a potential `psi` on all selected supports and numbers
+`beta_e>=0` with
+
+```math
+d(K,e,b)<=beta_e+psi(K')-psi(K).                               \tag{17.7az}
+```
+
+Then every word `w=e_1...e_t` with finite `rho(S_w)` satisfies
+
+```math
+-sum_s beta_(e_s)
+ <=rho(T_w)-rho(S_w)
+<=sum_s alpha_(e_s).                                          \tag{17.7ba}
+```
+
+If `rho(S_w)=-infinity`, (17.7ax) forces `rho(T_w)=-infinity` as
+well.
+
+For the lower bound, take a critical cycle of the product `S_w`, unfold each
+of its macro-edges into a maximizing generator-level coarse path, and repeat
+the resulting periodic path. Evolve the finite support state using `sigma`.
+At returns to one coarse phase, some support `K` repeats. Composing (17.7ay)
+around the intervening repetitions gives `K subseteq Delta(K)`. The induced
+finite relation on `K` has positive indegree at every vertex and hence a
+directed cycle. Its raw weight is the critical coarse weight minus the sum of
+the shortfalls. The potential in (17.7az) telescopes on the closed support
+path, leaving at most `sum beta_e` per copy of `w`. Since
+`rho(T_(w^p))=p rho(T_w)`, this proves the lower bound. Projection of every
+raw cycle through (17.7ax) proves the upper bound.
+
+The certificate separates four resources:
+
+1. `sigma` gives symbolic coarse-path realization;
+2. (17.7ay) gives backward-surjective endpoint realization;
+3. (17.7az) controls response error modulo a finite cocycle;
+4. `sum_a |K_a|` is the support-state information complexity.
+
+All conditions are generator-checkable; (17.7az) is a finite system of
+difference constraints, equivalently a cycle-mean feasibility problem. A
+canonical verifier, when all coarse paths have a near-tight support lift, has
+at most
+
+```math
+sum_(a in J)(2^|pi^(-1)(a)|-1)                                 \tag{17.7bb}
+```
+
+support states. This certificate is stronger than the nonlocal necessary and
+sufficient statement “every word has some critical coarse cycle with a tight
+raw cyclic lift,” but strictly weaker than lifting from every raw
+representative as in Theorem 17.1n.
+
+Strictness already occurs in a two-state coarse system. Let every letter have
+coarse weight zero on `0<->1` and weight `-C` on the two fixed-state edges,
+take raw states `I={0,1} times [r]`, and put
+
+```math
+T_e((a,k),(b,l))=
+\begin{cases}
+0,&b=1-a\hbox{ and }k=e,\\
+-C,&\hbox{otherwise}.
+\end{cases}                                                     \tag{17.7bc}
+```
+
+The two supports `K_a={a} times [r]` lift both types of coarse edge exactly.
+For the zero toggle edge, the single source `(a,e)` reaches every target in
+the opposite support; every fixed-state raw edge has the coarse weight
+`-C`. Theorem 17.1s therefore gives exact equality of every word spectrum
+with only two support states. But a
+row `(a,k)` with `k\ne e` has no tight `e`-successor, so no corresponding
+rowwise lift exists.
+
+There is also a pumpable flat-toll converse. Suppose
+
+```math
+S_e(a,b)=lambda_e\quad\hbox{on an allowed relation, and }-infinity
+\quad\hbox{otherwise},
+```
+
+and every raw edge is either tight or at most `lambda_e-gamma`. For a word
+whose coarse relation has a cycle,
+
+```math
+rho(T_w)=sum_(e in w)lambda_e
+```
+
+iff its tight raw word relation has a directed cycle. If it has none, every
+simple raw cycle pays at least one `gamma` defect, so
+
+```math
+rho(T_w)<=sum_(e in w)lambda_e-gamma/|I|.                       \tag{17.7bd}
+```
+
+Repeating `w` pumps this fixed loss linearly. Failure to find one particular
+support certificate is not itself a falsifier; absence of a tight word cycle
+is the observable obstruction.
+
+### Corollary 17.1t (width-two Ising has a strict anticipatory quotient)
+
+Let raw boundary states be `s=(s_1,s_2) in {+-1}^2`, take letters
+`{a,b,c}`, and fix `C>0`. Define `T_e(s,t)=g_e(s)+h_e(t)` by
+
+```math
+g_a=C(s_2-1)/2,       &h_a=C(t_1-1)/2,
+g_b=C(s_1s_2-1)/2,    &h_b=C(t_1-1)/2,
+g_c=-C(1+s_1s_2)/2,   &h_c=-C(1+t_1)/2.                       \tag{17.7be}
+```
+
+These are width-two Ising fields and pair couplings. Their zero relations
+are `D_e times K_(tau(e))`, where
+
+```math
+D_a={s:s_2=1},\quad D_b={s:s_1s_2=1},\quad
+D_c={s:s_1s_2=-1},
+
+K_+={t:t_1=1},\quad K_-={t:t_1=-1},\qquad
+tau(a)=tau(b)=+,\quad tau(c)=-.                                \tag{17.7bf}
+```
+
+Every `K_q` meets every `D_e`, hence
+`Delta_e(K_q)=K_(tau(e))`. The two supports `K_+,K_-` form an exact
+anticipatory carrier and `rho(T_w)=0` for every word. They are minimal among
+support carriers: a one-state support stable under both `a` and `c` would
+have to lie in the disjoint sets `K_+` and `K_-`.
+
+By contrast, every exact rowwise path-lift partition retains all four raw
+states. Their source-membership signatures in `(D_a,D_b,D_c)` are
+
+```math
+110,\quad001,\quad101,\quad010.                                \tag{17.7bg}
+```
+
+Thus any merged pair has a zero versus negative block-row gap for some
+letter. A common diagonal gauge cannot repair the merge: the four source
+reward vectors
+
+```math
+(0,0,-C),\ (-C,-C,0),\ (0,-C,0),\ (-C,0,-C)
+```
+
+have no pair whose difference is constant across all letters. The
+response-derived support state is strictly smaller than the usual transfer
+state for a genuine switching Ising strip.
+
+The quotient also carries order-sensitive weights without returning to four
+states. For `C>4`, replace only
+
+```math
+T_a(s,t)\quad\hbox{by}\quad Ttilde_a(s,t)=g_a(s)+h_a(t)-s_1t_1. \tag{17.7bh}
+```
+
+In a cyclic word, the zero baseline constraints select the unique boundary
+state in `K_(tau(e_(k-1))) intersect D_(e_k)` at phase `k`. If another
+periodic path differs at `d` boundary positions, its baseline loses at least
+`Cd`; changed endpoints can improve the added `a`-bonds by at most `4d`.
+The selected path is therefore uniquely optimal and
+
+```math
+rho(Ttilde_w)=2N_(ca)^cyc(w)-N_a(w).                            \tag{17.7bi}
+```
+
+The same two-state carrier updates `q'=tau(e)` and uses toll
+
+```math
+r(q,a)=-q,\qquad r(q,b)=r(q,c)=0.                              \tag{17.7bj}
+```
+
+It is minimal: `aabccb` and `abbcac` have identical Parikh counts but
+responses `-2` and `+2`, so no one-state per-letter toll can answer both.
+Letters `b,c` restrict a gauge-compatible raw merge to two opposite-spin
+pairs, and letter `a` separates each of those by a nonzero row difference
+when `C>2`; hence exact rowwise lifting still needs four states. The three
+distinct resource counts are
+
+```math
+dim(response)=1,\qquad C_(anticipatory)=2,
+\qquad C_(forward\ path)=4.                                    \tag{17.7bk}
+```
+
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 
 Use the column max-plus convention

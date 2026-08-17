@@ -931,3 +931,19 @@ finite tropical lumpability law, intermediate between a scalar response
 table and rowwise bisimulation. It also explains why the de Bruijn example
 is not paradoxical: its one-state subset carrier answers the unrooted query,
 while rooted continuation legitimately costs `2^m` states.
+
+## 32. Weighted survival is a finite support cocycle
+
+For a nonflat coarse response, mere survival can follow a subcritical loop.
+The correct finite extension attaches selected endpoint supports to coarse
+states and requires backward-surjective near-optimal lifts of every declared
+coarse edge. Local shortfalls need not vanish: a potential on support states
+absorbs their transient part, and only the residual cycle mean accumulates.
+
+This yields a quantitative all-word theorem and separates symbolic coarse
+paths, endpoint realization, response error, and support-state count. It is
+strictly weaker than rowwise simulation because the predecessor within a
+support can depend on the future coarse edge. The width-two Ising benchmark
+realizes the strict hierarchy `1` scalar output, `2` anticipatory weighted
+states, and `4` forward transfer states. Thus the dynamic theory now has a
+genuine query-matched composition object, not only a static response cover.

@@ -37,16 +37,17 @@ every sub-`m`-defect block path lift retains all `2^m` states. Uniform
 scrambling and wordwise exposed uniqueness do not synchronize the critical
 seed across different future words.
 
-The scalar `{0,-C}` case now has the correct response-specific answer:
-finite survival lumpability is equivalent to nonmortality of the endpoint
-subset automaton, and failure supplies a bounded-length pumpable word. The
-next target is to extend this middle notion beyond one scalar coarse state.
-Determine a generator-checkable **multi-state survival carrier** strictly
-between a common eigenprofile and a rowwise path lift, with quantitative
-errors and size controlled by exposed response entropy rather than the full
-powerset product. Equivalently, find a natural low-dimensional reward family
-for which such a carrier can be minimized without solving the NP-hard generic
-clustering problem. A successful theorem should give
+The scalar `{0,-C}` case now has a complete answer, and Theorem 17.1s extends
+it to arbitrary weighted coarse systems: finite endpoint-support families,
+backward-surjective lifts, and a support potential give quantitative all-word
+spectral control. The width-two Ising example proves this is strictly smaller
+than forward transfer state and genuinely needs state-dependent tolls.
+
+The next target is the **converse and minimality** problem. Under block
+domination, characterize when the nonlocal condition “every word has some
+tight lift of a critical coarse cycle” admits a finite support/potential
+carrier. A plausible theorem should identify a bounded-delay, twins, or
+critical-language congruence condition and prove
 
 ```math
 number of states <= response-entropy scale,
@@ -54,13 +55,14 @@ number of states <= response-entropy scale,
 cycle-LP distortion <=epsilon                                  \tag{OQ.1}
 ```
 
-without enumerating all raw partitions, germs, or word products.
+without enumerating all raw partitions, germs, or word products. It should
+also determine whether approximate support families have a response-metric
+entropy law, rather than merely an NP-hard generic search problem.
 
-**Success:** a generator-checkable converse or construction applying beyond
-the corrected four-state benchmark and exact commutation, with an
-asymptotically smaller carrier and an all-word response bound. A sharp
-counterexample must preserve every declared word response while forcing any
-bounded-memory relational lift to grow.
+**Success:** a necessary-and-sufficient finite-state criterion for weighted
+critical-cycle lifting, or a scalable family with exact word responses but
+no finite bounded-delay support/potential carrier. A quantitative theorem
+should relate its smallest carrier to response entropy or a mixing horizon.
 
 **Stop condition:** listing the finite projective semigroup, every active
 cell, or every set partition is a decision procedure, not a compression

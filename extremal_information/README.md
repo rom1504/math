@@ -313,6 +313,15 @@ conclusions.
     at zero defect it is equivalent to nonmortality of the subset automaton.
     The canonical carrier has at most `2^r-1` states, and failure supplies a
     bounded-length mortal word whose repetition pumps linear drift.
+35. The multi-state extension uses finite endpoint-support families over a
+    coarse system. Backward-surjective near-optimal edges realize critical
+    paths, while a support potential turns transient shortfalls into a
+    cycle-mean error. This gives a generator-checkable quantitative all-word
+    theorem strictly weaker than rowwise path lifting.
+36. A genuine width-two Ising alphabet needs two anticipatory support states
+    but four forward path states. After an interacting weight perturbation,
+    the two-state carrier exactly computes the order-sensitive response
+    `2N_ca^cyc-N_a`; equal-Parikh words rule out one state.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

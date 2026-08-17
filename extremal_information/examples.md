@@ -1408,3 +1408,32 @@ critical node. That node is the first `m`-window of the block word and ranges
 over all `2^m` possibilities. Thus wordwise uniqueness and contraction do not
 create a reusable state: they select a different hidden witness after each
 future word is revealed.
+
+## Example 59: width-two Ising separates anticipatory and forward state
+
+On boundary spins `(s_1,s_2) in {+-1}^2`, three width-two Ising transfer
+letters can be chosen so that their optimal edges factor as
+
+```math
+D_a times K_+,\qquad D_b times K_+,\qquad D_c times K_-,
+```
+
+where `D_a={s_2=1}`, `D_b={s_1s_2=1}`, `D_c={s_1s_2=-1}`, and
+`K_+` or `K_-` fixes the first target spin. Each `K_q` meets every `D_e`, so the
+future letter selects a valid microscopic predecessor and resets the
+two-state support to `K_(tau(e))`. One support cannot be stable under both
+`a` and `c`, while the four raw source signatures are distinct. Exact
+unrooted response therefore costs two anticipatory states but exact forward
+lifting costs four.
+
+Adding an antiferromagnetic horizontal bond on `a`, with baseline penalty
+`C>4`, makes the response order-sensitive without changing the state count:
+
+```math
+rho(T_w)=2N_(ca)^cyc(w)-N_a(w).
+```
+
+The words `aabccb` and `abbcac` have the same letter counts and responses
+`-2,+2`, proving that no scalar per-letter toll suffices. The two-state
+support remembers precisely the previous reset sign, not the discarded
+second boundary spin.
