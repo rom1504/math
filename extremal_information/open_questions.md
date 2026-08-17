@@ -994,9 +994,9 @@ compiler fluctuation without retaining the complete coefficient matrix.
 
 ## 18. Higher-order non-recycling in exact-minimizer shells
 
-Higher-order non-recycling is now proved at the energy scale.  Theorem 36.19
-replaces literal common-correct intersections by a diffuse fractional
-reservoir and gives
+Higher-order non-recycling from an arbitrary finite anchor set is now proved
+at the energy scale.  Theorem 36.19 replaces literal common-correct
+intersections by a diffuse fractional reservoir and gives
 
 ```math
 L_n=Theta\left({\log n\over\log\log n}\right)\longrightarrow\infty
@@ -1005,6 +1005,13 @@ L_n=Theta\left({\log n\over\log\log n}\right)\longrightarrow\infty
 words in one `o(M_n)` positive shell, pairwise separated by
 `(1/4-o(1))M_n`.  Negative four-anchor holonomy is therefore a ceiling only
 for literal intersections, not for jointly weighted localized flips.
+
+This is not the strongest known global packing count.  Theorem 36.7 already
+gives `exp(Omega(sqrt n))` such energy-scale-separated shell words with
+`O(n)` deficit by taking `q=Theta(sqrt n)`.  Accordingly, improving the
+fractional conditioning constant is a question about flexible sequential
+extension, not a route to a shell-cardinality frontier which the affine cube
+has already passed.
 
 Two quantitative questions remain internal to this mechanism.  Is the
 worst finite-phase conditioning constant for **actual exact-minimizer shell
@@ -1072,3 +1079,45 @@ phases.  A positive theorem must specify a class whose phase table closes or
 whose synchronization collapses it.  Merely restating a finite-temperature
 large-deviation rate function is not enough; the new state must have an
 exact or quantitatively controlled update law.
+
+## 22. Root-to-state broadcast at the energy scale
+
+Theorems 36.20--36.22 separate three formerly conflated tasks.  Every
+`Theta(M_n)` shell pair has a bounded-cap all-spins-free **root selector**.
+Every exact minimizer also has an exponential switching orbit at mutual
+Boolean distance `Omega(n^(3/2))`.  But the existing AO affine map sends a
+mesoscopic root into children only `o(n^(3/2))` apart, after which no common
+future can amplify it.
+
+Is there an exact-sign map from a selected shell root to a child-owned block
+which has total cap `O(n^(3/2))`, broadcasts `Theta(n^(3/2))` uniform
+distance, and retains strictly less than the full rooted landscape?  A
+positive statement must name the compressed input and a common update law.
+A negative statement should prove that every such map reconstructs a
+root-dependent child optimization or pays a fixed leading loss.  More pair
+queries do not address this question.
+
+## 23. What can information heaviness contribute after `L_tail`?
+
+The former `L_tail` question is solved.  Theorem 36.26 proves a stronger
+statement: every complete signing with `Q(A)<=Cn^(3/2)` has a fixed-rate
+thin tail near both one-sided extrema.  Theorems 21.8 and 36.25 therefore
+give every exact minimizer an `exp(Omega(n))` switching suborbit separated
+by `Omega(n^(3/2))` scalar responses under all-spins-free exact-sign,
+bounded-cap contexts.  The switching label gives a matching `O(n)`-bit
+description for this orbit.
+
+The open issue is no longer whether near-minimizers are response-heavy, but
+whether this lower bound is relevant to cross-order optimization.  Can an
+`O(n)`-bit state, necessarily retaining the switching gauge, close under a
+fixed-ratio composition with `o(n^(3/2))` error?  Or can one prove that
+arbitrary dense bridges expose additional information beyond every
+linear-bit state?  Either result must specify the future language and an
+update law; the scalar contextual packing alone proves no recurrence.
+
+The internal anatomy of a hypothetical smaller fixed-level principal core
+is also now sharp.  It must be positive-dominant, have an oppositely
+oriented near-minimal complement, and may nevertheless be diffuse and far
+from every switched clique (Theorem 36.27).  Excluding such a core is not
+needed for the thin-tail theorem and should not be pursued unless a new
+cross-order mechanism makes its interface observable.

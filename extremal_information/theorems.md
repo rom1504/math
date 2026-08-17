@@ -16109,19 +16109,523 @@ words with pairwise projective distance
 
 Each extension uses a fresh perturbation of the original exact minimizer,
 so the shell deficit does not accumulate.  This crosses the literal
-four-anchor holonomy ceiling and completes the previously missing growing
-packing step at the **energy scale**.  It still does not prove fixed-edge-
-scale `L_projective`, because `M_n/binom(n,2)->0`, nor does it by itself
-activate the existing low-cap compiler at leading `n^(3/2)` scale.
+four-anchor holonomy ceiling for an **arbitrary declared finite anchor
+set**.  Its packing corollary is not a new global shell-size frontier:
+Theorem 36.7, with `q=Theta(sqrt n)` and a constant-distance mask code,
+already gives `exp(Omega(sqrt n))` same-orientation words of deficit `O(n)`
+and pairwise distance `Theta(n^(3/2))` for every bounded-cap signing.  The
+new content here is the fractional joint-support/adaptive-extension
+mechanism, not the weaker numerical packing count in (36.72)--(36.74).
+
+Neither theorem proves fixed-edge-scale `L_projective`, because
+`M_n/binom(n,2)->0`, nor does either by itself activate the existing
+low-cap scalar-response compiler at leading `n^(3/2)` scale.
 
 Proof and independent audit are in
 [`drafts/fractional_reservoir_localized_flip.md`](drafts/fractional_reservoir_localized_flip.md)
 and
 [`drafts/fractional_reservoir_localized_flip_independent_audit.md`](drafts/fractional_reservoir_localized_flip_independent_audit.md).
+The archive correction distinguishing the new finite-anchor mechanism from
+the stronger pre-existing packing consequence is recorded in
+[`drafts/fractional_reservoir_archive_collision.md`](drafts/fractional_reservoir_archive_collision.md).
 The exact-arithmetic basic-support verifier and its output are
 [`experiments/finite_phase_fractional_reservoir_constants.py`](experiments/finite_phase_fractional_reservoir_constants.py)
 and
 [`experiments/finite_phase_fractional_reservoir_constants.json`](experiments/finite_phase_fractional_reservoir_constants.json).
+
+### Theorem 36.20 (public futures cannot amplify a collapsed affine child code)
+
+For a hollow real child block `D`, write
+
+```math
+\|D\|_{\rm B}=\max_x|H_D(x)|.
+```
+
+If `J(x,y)` is any common continuation, with an arbitrary auxiliary state
+space and arbitrary interaction among its auxiliary variables, then
+
+```math
+\boxed{
+ |\max_{x,y}|H_D(x)+J(x,y)|
+  -\max_{x,y}|H_{D'}(x)+J(x,y)||
+ \le \|D-D'\|_{\rm B}.}                           \tag{36.75}
+```
+
+The same nonexpansiveness holds for one-sided maxima, minima, and every
+member of a common query bank.  It already permits complete optimizer
+switching and joint cancellation inside the continuation.
+
+This gives a sharp ceiling for the affine exact-sign children in Theorem
+36.11.  If their augmented-cut anchors `z^u,z^v` have Hamming distance
+`h_(uv)` and the uniform affine approximation has coefficient `p` and
+Boolean error `rho`, then
+
+```math
+\boxed{
+ \|b^u-b^v\|_{\rm B}\le2p h_{uv}+2\rho.}          \tag{36.76}
+```
+
+For the physical compiler there,
+
+```math
+p={\alpha\over\sqrt n},
+\qquad
+\rho=O(\sqrt\alpha\,n^{5/4}+n).
+```
+
+Consequently every same-orientation branch with source diameter `o(n^2)`
+has response diameter `o(n^(3/2))` after **every** common public future.  In
+particular, source distance `O(M_n)` yields only `O(n^(5/4))` at fixed
+`alpha`.  More generally, every bounded-cap common-coefficient affine
+interpolation has `p=O(n^(-1/2))` and the same mesoscopic ceiling.
+
+This theorem does not say that the whole shell packing in Theorem 36.19 has
+`o(n^2)` diameter: that theorem proves a lower separation, not an upper
+diameter.  Nor must an escape write the label specifically in the old--old
+block.  It must, however, broadcast it into some child-owned coefficient
+block at leading uniform distance *before* a common continuation is
+attached.  Proof and independent scope audit are in
+[`drafts/mesoscopic_scale_amplifier_no_go.md`](drafts/mesoscopic_scale_amplifier_no_go.md)
+and
+[`drafts/mesoscopic_scale_amplifier_no_go_independent_audit.md`](drafts/mesoscopic_scale_amplifier_no_go_independent_audit.md).
+
+### Theorem 36.21 (energy-scale shell roots have low-cap exact-sign selectors)
+
+Let `z,z' in {+-1}^E` have oriented Hamming distance `h`.  For every
+`0<=t<=h` there is an exact edge signing `b` such that
+
+```math
+Q(b)\le t+\sqrt{2E(n+3)\log2},                    \tag{36.77}
+```
+
+and
+
+```math
+\langle b,z\rangle-\langle b,z'\rangle
+\ge2t-2\sqrt{2h\log4}.                            \tag{36.78}
+```
+
+Thus an oriented pair at distance at least `delta M_n` has a labelled
+exact-sign query of cap `O(n^(3/2))` and evaluation gap
+`delta M_n-O(n)`.  Such a nondegenerate query cannot be overlaid additively
+on the same exact-sign child: uniqueness of Boolean Fourier coefficients
+would require both `|1+lambda|=1` and `|1-lambda|=1`.
+
+There is also a genuinely all-spins-free, but rooted, realization.  Fix
+`0<kappa<=K`.  If `u,v` have projective vertex distance
+
+```math
+kappa\sqrt n\le k\le K\sqrt n,
+```
+
+then an exact `n by n` cross block `B` exists with
+
+```math
+F_B(u)=\|B\|_{\infty\to1}=O(n^{3/2}),
+\qquad
+F_B(u)-F_B(v)\ge c_(kappa,K)n^{3/2}.               \tag{36.79}
+```
+
+The construction uses `k` synchronized rows and a spectrally flat diffuse
+public residual; cancellation is retained before the absolute value.  If
+`u` is a `d`-near-ground root of a bounded-cap exact-sign child, one common
+bounded-cap new--new fill gives a complete order-`2n` exact-sign parent in
+which the rooted slice at `u` is `d`-near-global and the rooted slice at
+`v` is lower by at least `c_(kappa,K)n^(3/2)-d`.
+
+This proves that `Theta(M_n)` shell geometry is visible at the correct
+physical scale.  It does **not** produce distinct unrooted child systems or
+a packing of scalar parent caps: freeing the old spin forgets which root was
+declared.  The missing operation is root-to-child-state encoding, not a
+larger query bank.  Proof, audit, and an exhaustive finite identity check
+are in
+[`drafts/mesoscopic_pair_query_visibility.md`](drafts/mesoscopic_pair_query_visibility.md),
+[`drafts/mesoscopic_pair_query_visibility_independent_audit.md`](drafts/mesoscopic_pair_query_visibility_independent_audit.md),
+[`experiments/verify_mesoscopic_pair_query_selector.py`](experiments/verify_mesoscopic_pair_query_selector.py),
+and
+[`experiments/mesoscopic_pair_query_selector_results.json`](experiments/mesoscopic_pair_query_selector_results.json).
+
+### Theorem 36.22 (every exact minimizer has an exponential switching broadcast)
+
+There is an absolute `c>0` such that every sufficiently large hollow
+order-`n` signing `A` has a projective switching set
+
+```math
+U\subseteq\{+-1\}^n/\{+-1\},
+\qquad |U|\ge\exp(cn),                             \tag{36.80}
+```
+
+with
+
+```math
+\boxed{\|D_uAD_u-D_vAD_v\|_{\rm B}
+       \ge {1\over4}n^{3/2}}
+\qquad(u\ne v).                                   \tag{36.81}
+```
+
+Indeed, choose a projective code with pairwise vertex distance in
+`[n/4,n/2]`.  The difference of two switches is twice the signing on the
+complete bipartite block cut out by their disagreement set.  The
+`p=1` Khintchine inequality gives Boolean norm at least
+`2k\sqrt{(n-k)/2}`, proving (36.81).  Switching preserves the complete
+energy multiset, so when `A` is an exact minimizer all of these children are
+exact minimizers.
+
+The amplitude-`n` identity
+
+```math
+\max_x\{H_C(x)+nr^Tx\}=n^2+H_C(r)                 \tag{36.82}
+```
+
+exposes this packing and gives `Omega(n)` exact pinned-response bits.  The
+quadratic calibration prevents treating this as a bounded-cap physical
+compiler.
+
+A narrower conditional statement follows from Theorem 21.8.  If fixed
+`d_0,kappa>0` satisfy
+
+```math
+#\{x:Q(A)-H_A(x)<d_0n^{3/2}\}
+\le\exp\{(\log2-\kappa)n\}                        \tag{36.83}
+```
+
+for every suitably oriented exact minimizer, then one bounded-operator
+exact-sign bridge gives an exponential subfamily with pairwise
+`Omega(n^(3/2))`-separated **conditional boundary-response profiles**.
+Theorem 36.25 subsequently supplies one query-owned bounded-cap shore fill
+for each code pole and converts these profiles into scalar all-spins-free
+parent-cap separation.  Thus no separate selector premise remains.
+
+A uniform exact-minimizer bound `\|A\|_(2\to2)=O(\sqrt n)` would imply
+(36.83) by Hanson--Wright and the known positive lower bound on
+`M_n/n^(3/2)`.  Neither condition is asserted by this switching theorem;
+Theorem 36.26 later proves (36.83) by a different complement-feedback
+argument.  Proof and independent audit are in
+[`drafts/exact_minimizer_switching_broadcast.md`](drafts/exact_minimizer_switching_broadcast.md)
+and
+[`drafts/exact_minimizer_switching_broadcast_independent_audit.md`](drafts/exact_minimizer_switching_broadcast_independent_audit.md).
+
+### Theorem 36.23 (upper-tail failure is a localized spectral-spike branch)
+
+For every hollow order-`n` signing `A`, put
+
+```math
+\Lambda(A)={\|A\|_{2\to2}\over\sqrt n},
+\qquad
+N_A(t)=\#\{x:H_A(x)\ge tn^{3/2}\}.
+```
+
+Rademacher Hanson--Wright gives the uniform bound
+
+```math
+\boxed{
+N_A(t)\le2\exp\left[n\log2-c_{\rm HW}n
+ \min\left\{{4t^2n\over n-1},{2t\over\Lambda(A)}\right\}\right].}
+                                                               \tag{36.84}
+```
+
+Hence a uniform `\|A\|_{2\to2}=O(\sqrt n)` bound for exact minimizers
+would prove the fixed-rate upper-tail lemma `L_tail`.  Conversely, failure
+of every fixed entropy deficit along exact minimizers forces
+
+```math
+{\|A_n\|_{2\to2}\over\sqrt n}\longrightarrow\infty.          \tag{36.85}
+```
+
+The cap-only asymmetric-rounding inequality
+
+```math
+Q(A)\ge{1\over4}\|A\|_{2\to2}^2                              \tag{36.86}
+```
+
+supplies only `\|A\|=O(n^{3/4})` and an `Theta(n^(3/4))`, rather
+than linear, entropy deficit.  Moreover the archived biased-sign inequality
+localizes any spike in (36.85): an extremal unit eigenvector `v_n` obeys
+
+```math
+{1\over\|v_n\|_\infty^2}=o(n).                                \tag{36.87}
+```
+
+Taken in isolation, the concentration argument leaves an
+exact-minimizer-specific localized spike rather than generic
+high-dimensional spectral mass.  Theorem 36.26 later closes the tail by a
+different complement-feedback argument without excluding that spike.
+Positive clique overwrites
+show that the `O(\sqrt n)` condition is false on broad
+`o(n^(3/2))` near-minimizer halos; complete-sign two-clique examples show
+the same `n^(3/4)` obstruction for wide upper windows.  Neither example is
+an exact minimizer or falsifies the narrow `L_tail` statement.
+
+Proof and audit are in
+[`drafts/exact_minimizer_tail_or_spike.md`](drafts/exact_minimizer_tail_or_spike.md)
+and
+[`drafts/exact_minimizer_tail_or_spike_independent_audit.md`](drafts/exact_minimizer_tail_or_spike_independent_audit.md).
+
+### Theorem 36.24 (zero-rate upper tails are carried by zero-density principal cores)
+
+Let `A` be hollow, symmetric, `|A_ij|<=1`, and
+`Q(A)<=Cn^(3/2)`.  For every `0<epsilon<=1`, Grothendieck--Pietsch
+factorization supplies a set `T`, `|T|<epsilon n`, such that, for fixed
+`t>eta>0`,
+
+```math
+P(A[T])\le(t-eta)n^{3/2}
+```
+
+implies
+
+```math
+\boxed{
+2^{-n}\#\{x:H_A(x)\ge tn^{3/2}\}
+\le3\exp\left[-cn\min\left\{
+ eta^2,{eta\epsilon\over C},{eta^2\epsilon\over C^2}
+\right\}\right].}                                             \tag{36.88}
+```
+
+The proof conditions on `T` but retains the entire cross field.  Factorization
+gives
+
+```math
+\|A[T^c]\|_{2\to2}=O(C\sqrt n/\epsilon),
+\qquad
+\|A_{T^c,T}x_T\|_2=O(Cn/\sqrt\epsilon),          \tag{36.89}
+```
+
+so a linear Rademacher tail and Hanson--Wright control the two conditional
+terms uniformly in `x_T`.
+
+Conversely, if `|T_n|=o(n)` and
+`P(A_n[T_n])\ge(t+eta)n^(3/2)`, fixing a core maximizer and randomizing the
+other spins gives
+
+```math
+2^{-n}\#\{x:H_{A_n}(x)\ge tn^{3/2}\}
+\ge2^{-|T_n|}(1-o(1))=\exp\{-o(n)\}.             \tag{36.90}
+```
+
+Consequently a vanishing exponential upper-tail rate forces some
+
+```math
+|T_n|=o(n),
+\qquad
+P(A_n[T_n])\ge(t-o(1))n^{3/2},
+\qquad
+|T_n|\ge(\sqrt{2t}-o(1))n^{3/4}.                 \tag{36.91}
+```
+
+This is a new inverse/concentration corollary.  At a separately prescribed
+fixed lower threshold, excluding every core in (36.91) remains open.
+Theorem 36.26 subsequently avoids that stronger obligation by retaining the
+actual moving near-cap level and using the linear complement's one-sided
+energy-product lower bound.  Proof and audit are in
+[`drafts/rare_upper_tail_principal_core_dichotomy.md`](drafts/rare_upper_tail_principal_core_dichotomy.md)
+and
+[`drafts/rare_upper_tail_principal_core_dichotomy_independent_audit.md`](drafts/rare_upper_tail_principal_core_dichotomy_independent_audit.md).
+
+### Theorem 36.25 (a biased boundary fill scalarizes matched response roofs)
+
+Let `C_*` and `C` be order-`n` signings of cap at most
+`P<=C_Pn^(3/2)`, let `B` be an exact-sign cross block with
+`\|B\|_{2\to2}<=L\sqrt n`, and define
+
+```math
+f_C^\sigma(y)=\max_x\sigma\{H_C(x)+x^TBy\},
+\qquad U(y)=P+\|By\|_1.
+```
+
+Suppose a declared pole `q` has the directed matched-roof certificate
+
+```math
+f_{C_*}^+(q)=U(q),
+\qquad
+f_C^+(q)\le U(q)-\delta n^{3/2}.                 \tag{36.92}
+```
+
+Then one query-owned hollow exact signing `D_q`, common to the two children,
+makes the complete order-`2n` parents
+
+```math
+\mathcal P_J^{(q)}=
+\begin{pmatrix}J&B\\B^T&D_q\end{pmatrix}
+```
+
+satisfy
+
+```math
+Q(\mathcal P_{C_*}^{(q)})-Q(\mathcal P_C^{(q)})
+\ge{\delta\over2}n^{3/2},
+\qquad
+Q(\mathcal P_J^{(q)})=O_{L,\delta,C_P}(n^{3/2}). \tag{36.93}
+```
+
+The fill is an exact-sign rounding of the weak bias
+`(lambda/sqrt n)(qq^T-I)`, with centred spectral error `O(sqrt n)`.
+The bias localizes every relevant optimizer to a small projective ball;
+the bridge norm preserves the deficit there; and the positive internal
+value at `q` suppresses the outer negative absolute-cap channel.  This is
+not universal exact pinning and need not have a short query description.
+
+The proof of Theorem 21.8 supplies exactly the two directed certificates
+(36.92) for its switched-child code.  Therefore `L_tail` alone now implies
+an `exp(Omega(n))` all-spins-free scalar contextual packing of exact-sign,
+bounded-cap, order-`2n` parents.  No separate boundary-selector lemma
+remains.  This is an information lower bound, not a recurrence or a proof
+of convergence.  Proof and audit are in
+[`drafts/bounded_cap_boundary_roof_selector.md`](drafts/bounded_cap_boundary_roof_selector.md)
+and
+[`drafts/bounded_cap_boundary_roof_selector_independent_audit.md`](drafts/bounded_cap_boundary_roof_selector_independent_audit.md).
+
+### Theorem 36.26 (every bounded-cap complete signing has a fixed-rate thin tail)
+
+Fix `C>0`.  There are `d_C,kappa_C>0` such that every sufficiently large
+hollow complete signing with `Q(A)<=Cn^(3/2)` satisfies, for both
+`sigma=+-1`,
+
+```math
+\boxed{
+\#\{x:P_\sigma(A)-\sigma H_A(x)<d_Cn^{3/2}\}
+\le\exp\{(\log2-\kappa_C)n\},}                  \tag{36.94}
+```
+
+where `P_sigma(A)=max_x sigma H_A(x)`.  Consequently the same bound,
+after changing `kappa_C`, holds for
+
+```math
+\#\{x:Q(A)-|H_A(x)|<d_Cn^{3/2}\}.               \tag{36.95}
+```
+
+One may take
+
+```math
+\gamma_C={1\over100000\max\{C,1\}},
+\qquad d_C={\gamma_C\over2}.                    \tag{36.96}
+```
+
+The proof closes the principal-core branch of Theorem 36.24.  Apply its
+Pietsch construction with `epsilon=1/4`, producing `|T|<n/4` and
+`R=T^c`.  The archived one-sided Bollobas--Scott energy-product bound,
+in the present half-energy normalization, gives
+
+```math
+P(A[R])\ge{(1-r_R^2)|R|^3\over12800Q(A)}
+          \ge\gamma_Cn^{3/2}.                   \tag{36.97}
+```
+
+One-sided block superadditivity therefore forces
+
+```math
+P(A[T])\le P(A)-\gamma_Cn^{3/2}.                \tag{36.98}
+```
+
+Conditioning on `x_T`, the full cross field and complementary quadratic
+form must together gain at least `gamma_Cn^(3/2)/2` to enter the
+`d_C`-thin tail.  The factorized linear Rademacher bound and Hanson--Wright
+then give `exp(-kappa_C n)` uniformly in `x_T`.  Applying the same argument
+to `-A` proves the other endpoint.  Exact minimality, convergence, and an
+operator-`O(sqrt n)` hypothesis are not used.
+
+For exact minimizers the random-sign upper bound allows `C=1`, so
+
+```math
+d_0={1\over200000}                               \tag{36.99}
+```
+
+proves `L_tail`.  Combining (36.94) with Theorem 21.8 and Theorem 36.25
+gives unconditionally
+
+```text
+every exact minimizer
+  -> exp(Omega(n)) switched exact-minimizer children
+  -> exp(Omega(n)) all-spins-free scalar contextual packing
+```
+
+with order-`2n` exact-sign parents, `Theta(n^(3/2))` response gaps, and
+`O(n^(3/2))` parent caps.  Encoding the switch label gives the matching
+`O(n)`-bit upper bound for that orbit, so its declared physical response
+complexity is `Theta(n)` bits.  Public query-description complexity is
+uncharged.  The parents need not be near-minimal at order `2n`, and no
+cross-order recurrence follows.
+
+The same synthesis sharpens arbitrary principal-core anatomy.  If an
+oriented exact minimizer has `T=o(n)` and
+`P(A[T])>=(t-o(1))n^(3/2)`, then its complement satisfies
+
+```math
+N(A[T])=o(n^{3/2}),
+\quad
+N(A[T^c])=Q(A[T^c])=M_n-o(n^{3/2}),
+\quad
+P(A[T^c])\ge\left({1\over12800c_n}-o(1)\right)n^{3/2},          \tag{36.100}
+```
+
+where `c_n=M_n/n^(3/2)`.  Thus any surviving smaller core has polarity
+opposite to a near-minimal linear complement; this anatomy is no longer
+needed for `L_tail` itself.
+
+Proof and audit are in
+[`drafts/bounded_cap_near_top_tail.md`](drafts/bounded_cap_near_top_tail.md)
+and
+[`drafts/bounded_cap_near_top_tail_independent_audit.md`](drafts/bounded_cap_near_top_tail_independent_audit.md).
+
+### Theorem 36.27 (one-sided principal-core geometry can remain diffuse)
+
+Let `B` be a hollow order-`k` signing, gauge a positive maximizer to
+`1`, and write `P=max H_B`, `N=-min H_B`.  Its signed cut weights satisfy
+
+```math
+0\le w(S)\le{P+N\over2},
+\qquad
+\mathbb Ew(S)={P\over2},
+\qquad
+\min_u d_H(B,uu^T-I)={\binom k2-P\over2}.        \tag{36.101}
+```
+
+Also `PN>=binom(k,2)`.  The one-sided discrepancy-product theorem implies
+that `N/P->0` forces
+
+```math
+{P\over k^{3/2}}\to\infty,
+\qquad
+{\|B\|_{2\to2}\over\sqrt k}\to\infty.          \tag{36.102}
+```
+
+Neither conclusion forces entrywise rank-one structure.  For every fixed
+`0<alpha<1/2` there are signings obtained by freezing biased independent
+edges of mean `mu_k=k^(-alpha)` such that
+
+```math
+P(B_k)=(1+o(1))\mu_k\binom k2,
+\qquad
+N(B_k)=O(k^{3/2})=o(P(B_k)),                     \tag{36.103}
+```
+
+every signed cut is nonnegative, all row sums are
+`(1+o(1))mu_k k`, yet
+
+```math
+\min_u d_H(B_k,uu^T-I)
+=\left({1\over2}-o(1)\right)\binom k2.          \tag{36.104}
+```
+
+The construction follows from a cut union bound, a centred spectral-norm
+bound, and rowwise concentration.  With `alpha=1/4` and ambient order
+`n=k^(7/6)`, it has
+
+```math
+k=o(n),
+\qquad P(B_k)=\left({1\over2}+o(1)\right)n^{3/2},
+\qquad N(B_k)=o(n^{3/2}).                        \tag{36.105}
+```
+
+Thus the orientation-separated core geometry in (36.100) cannot be
+excluded by internal cut positivity, regular rows, the displayed low
+moments, existence of a spectral outlier, or near-clique stability.  A
+successful exclusion would have to use the core--complement coupling or
+coefficient minimality.  This is a scalable internal-core falsifier, not a
+construction inside an exact minimizer.  Proof and audit are in
+[`drafts/one_sided_core_structure_and_counterexample.md`](drafts/one_sided_core_structure_and_counterexample.md)
+and
+[`drafts/one_sided_core_structure_and_counterexample_independent_audit.md`](drafts/one_sided_core_structure_and_counterexample_independent_audit.md).
 
 ## 37. Presented rare-event states
 

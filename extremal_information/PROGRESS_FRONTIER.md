@@ -58,11 +58,29 @@ exact minimizer
 one low-cap physical bit in every vanishing halo wider than n^(-1/2)
 
 vanishing-width positive shell
-  --[PROVED: low-dimensional cap-cover entropy + PP.4 anatomy]-->
-energy-scale directions plus a mesoscopic agreement core
-  --[PROVED: exact triple linkage; fractional trimming + joint flips]-->
-growing projective packing at separation (1/4-o(1))M_n
-  --[MISSING fixed-edge-scale upgrade / different amplifier]-->
+  --[PROVED ALREADY BY MP.3/36.7: exp(Omega(sqrt n))
+      energy-scale packing with O(n) deficit]-->
+growing projective packing at separation Theta(M_n)
+  --[PROVED: pairwise low-cap rooted selectors; MQ.2--MQ.3]-->
+leading-scale physical visibility of every declared pair
+  --[MISSING root-to-child-state encoding; affine encoding FALSIFIED by SA.3]-->
+distinct low-cap child systems at leading uniform distance
+  --[MISSING restricted physical exposure; SA.1 proves only that
+      leading child distance is necessary, not sufficient]-->
+scalar contextual packing
+
+exact minimizer
+  --[PROVED universally: exponential switching orbit at
+      Omega(n^(3/2)) Boolean distance; SB.2]-->
+target-scale exact-minimizer child packing
+  --[PROVED universally for bounded-cap signings: BT.3/36.26 thin tail;
+      then PROVED by Theorem 21.8]-->
+exponentially separated bounded-cap conditional boundary profiles
+  --[PROVED: biased matched-roof boundary selector; BR.2/36.25]-->
+bounded-cap all-spins-free scalar contextual information
+
+exact minimizer shell
+  --[MISSING fixed-edge-scale L_projective; BRANCH FROZEN after two strikes]-->
 growing fixed-scale near-top packing
   --[PROVED: AO.2 low-cap physical compiler]-->
 growing low-cap contextual information in genuine near-minimizer halos
@@ -81,7 +99,7 @@ vanishing-near-minimizer classes at every preassigned shell width smaller
 than their optimality slack.  Exact optimality is therefore an essential,
 discontinuous hypothesis of `L_projective`.
 
-The two-cap branch is now resolved at its natural energy scale.  Theorem
+The two-cap branch has additional anatomy at its natural energy scale.  Theorem
 36.17 first proves, for every
 antipodal code in the cut-code scaling, an `o(M_n)` shell with projective
 diameter `(2-o(1))M_n`; direct products, one common Hamming cap, and a
@@ -101,12 +119,32 @@ L_n=\left\lfloor{\alpha\log n\over\log\log n}\right\rfloor\to\infty
 ```
 
 words in an `n^(1+alpha+o(1))=o(M_n)` shell at pairwise separation
-`(1/4-o(1))M_n`.  This proves the previously missing growing energy-scale
-packing without cumulative shell loss.  However `Theta(M_n)` edge
-separation is still only `Theta(n^(-1/2))` normalized separation and does not
-activate AO.2 at target scale.  Thus the operative SML is now purely the
-**energy-to-ambient scale upgrade**: fixed-scale `L_projective` or a new
-low-cap amplifier for the proved mesoscopic packing.
+`(1/4-o(1))M_n`, with a fresh perturbation of the original minimizer at each
+extension.  This is a new adaptive-support theorem, but its packing output
+is strictly dominated by the pre-existing universal affine-shell theorem
+36.7: taking `q=Theta(sqrt n)` there gives `exp(Omega(sqrt n))` words,
+`O(n)` deficit, and `Theta(M_n)` pairwise separation.  The honest frontier
+therefore did **not** move at the energy-scale packing node.
+`Theta(M_n)` edge separation is still only `Theta(n^(-1/2))` normalized
+separation and does not activate AO.2 at target scale.  The operative SML
+remains the **energy-to-ambient scale upgrade** or a genuinely different
+child-state encoder.
+
+Theorems 36.20--36.22 split that last sentence into exact obligations.
+MQ.2--MQ.3 show that a `Theta(M_n)` pair is already physically selectable at
+leading scale by a linear-width diffuse shore.  What the selector retains is
+a **rooted** child, not a distinct unrooted system.  SA.1 proves that no
+later common future can repair a child encoder whose uniform Hamiltonian
+distance is `o(n^(3/2))`; SA.3 applies this to the existing affine AO
+children.  In contrast, SB.2 shows that every exact minimizer already has an
+`exp(Omega(n))` switching orbit at the required uniform distance.
+Theorem 36.26 now proves the formerly missing `L_tail`, uniformly for every
+bounded-cap complete signing.  Theorem 21.8 turns a suborbit into separated
+matched-roof boundary profiles, and Theorem 36.25 scalarizes them with a
+biased exact-sign boundary fill.  Hence every exact-minimizer switching orbit
+has `Theta(n)` bits of all-spins-free bounded-cap physical response.  This
+completes the negative incompressibility arrow, but it neither makes the
+order-`2n` parents near-minimal nor supplies a recurrence.
 
 ### Route R3: near-minimizer response replacement
 
@@ -129,14 +167,31 @@ landscape.
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
 |---|---:|---:|---:|---|---:|---|
 | R1 collective synchronization | 5 for FB, MP, and the audited atlas | MP chart `O((n/q)log n)` bits conditional on gauge; exact-minimizer atlas `O(n^(4/3))` direct bits | within-chart `O(n^(4/3))`; physical fixed-ratio loss unknown | all orders | 4 for the signing-dependent one-block atlas, but 0 for physical congruence | structural RESET, transfer STRIKE: the atlas is designed, not common; Walsh kills generic mixing |
-| R2 contextual incompressibility | 5 for pinned/one-bit contexts and exact energy-scale shell geometry; conditional 5 for growing low-cap packing | `Omega(n)` pinned bits; one unconditional low-cap bit; proved shell state count `Theta(log n/log log n)` at energy scale; physical `log K_n` bits still conditional on fixed-scale packing | shell deficit `n^(1+alpha+o(1))`; pairwise distance `(1/4-o(1))M_n`; conditional fixed-scale AO gap | all orders for one bit and growing energy-scale packing; fixed-scale growth open | 5 for exact-minimizer energy-scale packing; 3 for fixed-scale packing | structural RESET: fractional joint support crosses finite holonomy ceilings; fixed-scale STRIKE: AO response scale is unchanged |
+| R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
 | adversarial statistical mechanics | 2/3 | finite at fixed width | vanishing density error | all chain lengths | 1 | keep warm |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
-1. **L_projective (negative, selected): projective ball-mass decay in a
+1. **L_tail (negative): PROVED AND RETIRED FROM THE MISSING LIST.**
+   Theorem 36.26 proves the stronger bounded-cap statement: for every fixed
+   `C`, there are `d_C,kappa_C>0` such that every complete signing with
+   `Q(A)<=Cn^(3/2)` obeys at both one-sided endpoints
+
+   ```math
+   #\{x:P_\sigma(A)-\sigma H_A(x)<d_Cn^{3/2}\}
+   \le\exp\{(\log2-\kappa_C)n\}.
+   ```
+
+   The proof combines the new Pietsch conditional principal-core theorem
+   with the archived one-sided energy-product lower bound on its linear
+   complement.  Theorem 21.8 and audited BR.2--BR.3 then give an
+   unconditional `Theta(n)`-bit scalar physical response packing on every
+   exact-minimizer switching orbit.  The finite audit through order 14 is now
+   a consistency check, not evidence for an open lemma.
+
+2. **L_projective (negative, held/frozen): projective ball-mass decay in a
    positive shell.**  There are fixed `gamma>0`, deficits
    `d_n=o(n^(3/2))`, and `K_n->infinity` such that every exact minimizer's
    positive `d_n`-shell contains `K_n` atoms with pairwise absolute edge
@@ -144,19 +199,27 @@ landscape.
    would give an extensive low-cap response rate.  AO.2 proves the complete
    physical implication, and the premise retains only witness energies and
    pairwise projective overlaps.  Balanced pairs and higher-order reservoir
-   collapse are no longer the precise obstruction: fractional joint flips
-   force a growing `(1/4-o(1))M_n` packing.  The surviving gap is purely
+   collapse are not the global packing obstruction: MP.3 already forces a
+   much larger `Theta(M_n)` packing, while fractional joint flips give a new
+   arbitrary-anchor extension mechanism without improving that frontier.
+   The surviving gap is purely
    scale, because this remains a vanishing `Theta(n^(-1/2))` fraction of all
    edge coordinates.  A positive proof must amplify that mesoscopic packing
    or force one fixed-ambient-gap pair; more literal common-intersection
-   lemmas are unnecessary.
+   lemmas are unnecessary.  Two consecutive fixed-scale strikes freeze this
+   lemma as an active implementation target.  It is retained here only as
+   the strongest clean statement of what that branch would need.
 
-No second lemma is currently selected.  The former `L_transition` remains a
-research question, but after one transfer strike it is not promoted again
-until a concrete nonlinear state and update law are stated.  The low-cap
-compiler part of the former `L_lowcap-pack` is now proved, and a growing
-energy-scale projective packing is now proved.  Only its fixed-ambient-scale
-upgrade, or a new amplifier for the mesoscopic packing, remains.
+There is no second promoted near-minimality lemma on the completed negative
+route.  `L_projective` remains recorded only as a held/frozen statement of
+what the separate shell compiler would require; two transfer strikes forbid
+returning to it without a new ambient-scale mechanism.
+
+The former `L_transition` remains a research question, but after one transfer
+strike it is not promoted again until a concrete nonlinear state and update
+law are stated.  The low-cap compiler part of the former `L_lowcap-pack` is
+proved.  The new root-selector theorem shows that mesoscopic visibility is
+not the missing resource; reusable root-to-state encoding is.
 
 The former spectral-roof `L_sync` and semantic contracting-fibre `L_fibre`
 are not selected.  The first is too strong; the second has no frozen carrier
@@ -356,7 +419,7 @@ class and risks restating the desired parent optimization.
   falsifier, freeze `L_projective` and retain the new results as a precise
   ceiling rather than launching more shell variants.
 
-### Checkpoint 6 — fractional joint support and growing energy-scale diffusion
+### Checkpoint 6 — fractional joint support; archive-corrected packing ceiling
 
 - **Strongest new statements:** (i) three positive thin-shell augmented cuts
   always have `M/2-o(M)` common-correct mass, which together with exact flips
@@ -371,22 +434,25 @@ class and risks restating the desired parent optimization.
   Level-3 theorem with no Boolean implication.
 - **Previous SML:** control nonlinear opposite-lift entry or prove
   exact-minimizer higher-order non-recycling.
-- **Current SML:** upgrade the now-proved growing `Theta(M_n)` packing to a
+- **Current SML:** upgrade the pre-existing growing `Theta(M_n)` packing to a
   fixed `Theta(n^2)` projective direction, or construct a low-cap compiler
   that makes the mesoscopic packing visible at leading `n^(3/2)` response
   scale.
 - **Benchmark level:** remains Level 5.  The result is uniform over every
   exact minimizer and all sufficiently large orders, but it still supplies
   no Level-6 cross-order transfer.
-- **Assumption-distance:** growing energy-scale diffusion moves `3 -> 5`;
-  fixed-scale `L_projective` remains 3.  The fractional trimming input itself
+- **Assumption-distance:** no movement for shell packing: Theorem 36.7 was
+  already universal and stronger.  Fixed-scale `L_projective` remains 3.
+  The fractional trimming input itself
   is universal finite-dimensional convex geometry; exact minimality enters
   only in the adaptive flip-response step.
-- **Asymptotic movement:** the guaranteed shell cardinality at uniform
-  `Theta(M_n)` pairwise distance improves from four to
-  `Theta(log n/log log n)->infinity`; the common deficit is explicitly
-  `n^(1+alpha+o(1))=o(n^(3/2))`.  Normalized edge separation remains
-  `Theta(n^(-1/2))`, so physical response loss does not improve.
+- **Asymptotic movement:** **none at the global packing frontier.**  Theorem
+  36.7 already gives `exp(Omega(sqrt n))` common-orientation words with
+  `O(n)` deficit and `Theta(M_n)` pairwise distance, strictly dominating the
+  new `Theta(log n/log log n)` / `n^(1+alpha+o(1))` corollary.  What is new
+  is arbitrary-anchor fractional extension across the literal holonomy
+  ceiling.  Normalized edge separation and physical response loss do not
+  improve.
 - **Falsifiers/ceiling:** negative four-anchor holonomy kills literal common
   intersections even on an order-five exact minimizer, but no longer kills
   fractional extension.  Arbitrary sign phases force fractional conditioning
@@ -396,11 +462,70 @@ class and risks restating the desired parent optimization.
   thus sequential finite-anchor support cannot be promoted for free to a
   whole-shell quotient.  The current compiler still converts an energy-scale
   direction into only `O(n)` response, not `Theta(n^(3/2))`.
-- **Decision:** **RESET for exact-minimizer structural complexity; STRIKE and
-  FREEZE for the current fixed-scale implementation.**  The bounded final
-  pass succeeded at the energy scale but did not move the ambient/compiler
-  scale.  Do not launch more literal reservoir or opposite-lift variants.
+- **Decision:** **STRIKE after adversarial archive comparison; FREEZE the
+  current shell-reservoir implementation.**  The fractional theorem is
+  mathematically new, but its advertised packing consequence was already
+  surpassed and therefore has `NO FRONTIER CHANGE`.  Together with the prior
+  fixed-scale strike this triggers director review.  Do not launch more
+  literal reservoir or opposite-lift variants.
   Resume this branch only with a concrete scale amplifier or a theorem
   specific to cut geometry that produces a fixed ambient gap.  Keep the
   rare-event and thermal results as scoped portfolio branches, not promoted
   replacements.
+
+### Checkpoint 7 — bounded-cap thin tails and an unconditional physical information rate
+
+- **Strongest new statements:** (i) a common public future is nonexpansive
+  in child Boolean norm, so the existing affine encoder cannot amplify
+  mesoscopic shell directions; (ii) every energy-scale pair nevertheless has
+  a rooted low-cap selector, and every exact minimizer has an exponential
+  switching orbit at mutual Boolean distance `Omega(n^(3/2))`; (iii) a
+  biased exact-sign boundary fill scalarizes every directed matched-roof
+  code while controlling both absolute channels; (iv) most importantly,
+  every complete signing of cap `Cn^(3/2)` has a fixed-rate thin tail near
+  **both** one-sided extrema.  This proves `L_tail` without exact minimality.
+- **Archive-critical synthesis:** Pietsch conditional concentration first
+  charges zero-rate tails to a principal core.  The archived one-sided
+  Bollobas--Scott product theorem then gives the linear complement a fixed
+  positive cap; one-sided block superadditivity feeds that reserve back into
+  the conditional gap.  The ingredients were archived separately, but this
+  feedback theorem was not.
+- **Previous SML:** prove `L_tail`, then find a low-cap boundary selector.
+- **Current SML:** **none on the negative contextual-incompressibility
+  arrow; it is complete.**  The closest positive convergence SML remains
+  `L_replace`: an all-order structured representative with
+  `o(n^(3/2))` response loss.  The new lower bound says any such state must
+  retain at least linear switching information under the declared future
+  language.
+- **Benchmark level:** advances to unconditional Level 5 for every exact
+  minimizer, with the thin-tail input stronger on the entire bounded-cap
+  class.  This is not Level 6 because the complete order-`2n` query parents
+  are not asserted near-minimal at their own order.
+- **Assumption-distance:** `L_tail` moves from score 3 to a theorem at score
+  4.  The selector moves from 0 to a proved matched-roof compiler; its
+  hypotheses are supplied by Theorem 21.8 rather than postulated on
+  minimizers.
+- **Asymptotic movement:** the response packing improves from one rooted bit
+  and conditional profiles to `exp(Omega(n))` scalar states, hence
+  `Theta(n)` bits, at `Theta(n^(3/2))` gap and total cap.  The switching label
+  gives the matching linear upper bound on that orbit.  No cross-order loss,
+  numerical bound on `M_n`, or convergence interval changes.
+- **Falsifiers and limits:** cap-only affine amplification is impossible;
+  the operator-`O(sqrt n)` sufficient route is false on broad near-minimizer
+  halos; and a biased-random construction gives zero-density, strongly
+  one-sided cores which are maximally far from every switched clique.  Thus
+  internal cut positivity, row regularity, low moments, or one spectral
+  outlier cannot replace the complement-feedback argument.  Query
+  descriptions remain uncharged and may contain `Theta(n^2)` bits.
+- **Frontier score:** for the combined BT+BR result,
+  `(T,Q,C,G,F,A)=(4,4,2,4,4,4)`, hence `S=36`.  The high score reflects a
+  fully audited Level-5 negative theorem at the correct scale and all
+  orders; `C=2`, rather than 4, records the absence of near-minimal parent
+  composition or recurrence.
+- **Decision:** **RESET / NEGATIVE ARROW COMPLETE.**  Contextual response has
+  proved that genuine minimizers remain information-heavy; it has not turned
+  that information into reusable cross-order control.  Freeze further shell,
+  selector, and tail optimization.  Retain contextual response as a
+  diagnostic branch, and allocate the next campaign primarily to an
+  orthogonal rare-event/adversarial-statistical-mechanics mechanism or to a
+  genuinely specified `L_replace`, not another nearby packing theorem.

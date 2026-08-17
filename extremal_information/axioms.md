@@ -2377,3 +2377,102 @@ sequential construction may prove large extremal packing while the complete
 phase remains information-heavy; conversely, accelerating the number of
 anchors does not by itself amplify their energy-scale separation to an
 ambient-scale physical response.
+
+## 130. A public future is nonexpansive in the child's uniform Hamiltonian metric
+
+If two child landscapes differ pointwise by at most `eta`, then attaching
+the same arbitrary continuation changes their optimized scalar responses by
+at most `eta`.  Auxiliary order, optimizer switching, and cancellation among
+future channels do not alter this fact.  A public future can reveal a
+leading child difference, but it cannot create one after the child encoding
+has collapsed it.
+
+For affine sparse-edit encoders this is a decisive scale law.  A mesoscopic
+source direction mixed with coefficient `O(n^(-1/2))` remains subleading in
+Boolean norm, and no later common interaction repairs it.  An escape must
+broadcast the label into some child-owned block at leading uniform distance
+before the continuation is attached; the block need not be the original
+old--old one.
+
+## 131. Root visibility, state encoding, and scalar exposure are distinct arrows
+
+A low-cap context can make one declared mesoscopic near-ground root globally
+active and suppress another by `Theta(n^(3/2))`.  This proves that the shell
+geometry is physically visible.  It does not turn different roots of one
+landscape into different unrooted systems: freeing the root returns only the
+winning scalar value and forgets the identities of suppressed competitors.
+
+Likewise, a family of child systems can have separated conditional boundary
+profiles while their free scalar optima coincide.  Therefore a physical
+contextual packing requires separately audited operations:
+
+```text
+root geometry -> child-owned state -> conditional response -> scalar exposure.
+```
+
+Pair selectors prove the first arrow.  Switching proves a large metric state
+for the second.  Neither alone proves the final all-spins-free exposure.
+
+## 132. Symmetry can preserve the objective while carrying extensive hidden response
+
+Diagonal switching leaves the complete unlabelled quadratic energy multiset
+unchanged, yet every signing has an exponentially large switching suborbit
+whose members are pairwise `Omega(n^(3/2))` apart in Boolean Hamiltonian
+norm.  Exact minimizers therefore already carry a linear amount of labelled
+or pinned response information even when their scalar cap and every
+unlabelled energy statistic agree exactly.
+
+This is an information lower bound, not a structural route to convergence.
+Theorems 36.25--36.26 subsequently supply the upper-tail deficit and matched-
+roof boundary selector, so the switching metric now does yield bounded-cap
+scalar contextual information.  It also warns that any proposed
+near-minimizer state invariant under switching has deliberately discarded
+information which physical future languages can expose.
+
+## 133. A matched roof can be scalarized without exact pinning
+
+Suppose a family of boundary profiles shares one upper roof, a target meets
+that roof at a named pole, every decoy has a fixed directed deficit there,
+and the cross operator is `O(sqrt n)`.  A weak rank-one-biased exact-sign
+fill confines all competitive boundary optimizers to a small projective
+ball.  Lipschitz stability preserves the directed deficit inside the ball,
+while the fill's positive pole value suppresses the opposite absolute-cap
+channel.
+
+Thus conditional response separation can become an all-spins-free scalar
+cap separation without a universal coordinate pin.  The distinction is
+essential: the fill is query-owned, can have quadratic description length,
+and works because the roof and deficit are already matched.  Bare profile
+distance or arbitrary child families do not satisfy this rule.
+
+## 134. A zero-rate quadratic tail must live in a principal core
+
+Grothendieck--Pietsch deletion is not merely spectral localization.  After
+conditioning on its heavy coordinates, factorization controls both the
+complementary quadratic operator and the complete cross field.  If the
+heavy principal block falls a fixed global amount below the queried energy,
+linear concentration plus Hanson--Wright gives a fixed exponential tail
+deficit.
+
+Conversely, a zero-density principal block above the queried level creates
+a zero-rate tail by fixing its optimizer and randomizing the complement.
+Up to threshold slack, zero-rate upper tails of bounded-cap dense
+quadratics are therefore principal-core phenomena.  This inverse statement
+does not by itself say that a core is impossible or easy to exclude.
+
+## 135. Completeness feeds a fixed one-sided reserve back into every thin tail
+
+For a complete signing of cap `O(n^(3/2))`, every linear-sized principal
+block retains `Theta(n^(3/2))` positive and negative one-sided caps by the
+one-sided discrepancy-product theorem.  Applied to the complement of the
+Pietsch heavy set, this reserve and oriented block superadditivity force the
+heavy core a fixed distance below the actual one-sided maximum.  Conditional
+concentration then gives a uniform fixed-rate entropy deficit near both
+endpoints.
+
+This feedback law is stronger than the former exact-minimizer `L_tail`:
+it holds for every bounded-cap complete signing.  Together with switching,
+matched-roof amplification, and biased-roof scalarization, it forces
+`Theta(n)` bits of physical contextual response on every exact-minimizer
+switching orbit.  It is a same-order information lower bound, not a
+cross-order recurrence.

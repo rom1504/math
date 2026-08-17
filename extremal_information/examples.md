@@ -3212,3 +3212,105 @@ protocol, residual checks, exact certificates, and independent audit are in
 [`drafts/fractional_reservoir_finite_audit.md`](drafts/fractional_reservoir_finite_audit.md)
 and
 [`drafts/fractional_reservoir_finite_independent_audit.md`](drafts/fractional_reservoir_finite_independent_audit.md).
+
+## Example 165: a switching orbit is metrically large and statistically invisible
+
+Fix any hollow signing `A` and consider all diagonal switches `D_uAD_u`.
+Every member has exactly the same cap, spectrum, and complete unlabelled
+energy histogram.  Nevertheless a projective code of `exp(cn)` switch
+labels at mutual vertex distance in `[n/4,n/2]` gives
+
+```math
+\|D_uAD_u-D_vAD_v\|_{\rm B}\ge n^{3/2}/4.
+```
+
+The difference is twice the signed complete bipartite block across the
+label-disagreement cut, and Khintchine supplies the Boolean witness.  Thus
+unlabelled near-minimizer observables may agree exactly while labelled
+future response contains `Omega(n)` bits.  Amplitude-`n` fields expose the
+packing, but bounded-cap scalar exposure remains a separate problem.
+
+## Example 166: a diffuse shore selects a mesoscopic root without encoding it
+
+Let `u,v` differ projectively on `k=Theta(sqrt n)` vertices.  Synchronize
+those `k` rows of an `n by n` sign bridge to `u` and fill the other rows by a
+spectrally flat public sign block.  The public block supplies
+`Theta(n^(3/2))` diffuse column mass, so the exact free-shore responses obey
+
+```math
+F_B(u)=O(n^{3/2}),
+\qquad F_B(u)-F_B(v)=Theta(n^{3/2}).
+```
+
+After a common bounded-cap shore fill, `u` can be an exact global parent
+optimizer while the rooted slice at `v` is macroscopically suppressed.
+Yet both roots still belong to one child `A`; the scalar parent answer does
+not identify which rejected rival was queried.  This is the concrete
+separation between a physically visible root and a reusable encoded state.
+
+## Example 167: exact finite tails survived a preregistered falsification audit
+
+On 61 stored exact representatives through order 14, the adverse-orientation
+near-top rate
+
+```math
+I_A(d)=-{1\over n}\log\Pr\{Q(A)-H_{\pm A}(X)<dn^{3/2}\}
+```
+
+was positive at every preregistered `d in {1/64,1/32,1/16,1/8}`.  At
+`d=1/8` the smallest observed value was `0.2143980062...` nats per vertex,
+from 60 of 512 projective spins at order 10.  The largest observed exact
+operator ratio was `1.3744068037...` at order 11.  Exact tails were usually
+denser than random controls, so a random-energy constant was not supported.
+
+This was finite evidence only when computed.  Theorem 36.26 now proves a
+uniform positive asymptotic rate by a different argument; the experiment is
+retained as an independently preregistered consistency and orientation
+check.  The protocol, program, and exact output are
+[`experiments/exact_minimizer_tail_finite_protocol.md`](experiments/exact_minimizer_tail_finite_protocol.md),
+[`experiments/audit_exact_minimizer_tail.py`](experiments/audit_exact_minimizer_tail.py),
+and
+[`experiments/exact_minimizer_tail_finite_results.json`](experiments/exact_minimizer_tail_finite_results.json).
+
+## Example 168: a weak biased fill is a projective anti-pin
+
+For a declared boundary pole `q`, independently bias each exact-sign shore
+edge toward `q_iq_j` by `lambda/sqrt n`.  One realization has the form
+
+```math
+D_q={\lambda\over\sqrt n}(qq^T-I)+E_q,
+\qquad \|E_q\|_{2\to2}=O(\sqrt n),
+```
+
+and hence total cap `O(n^(3/2))`.  The rank-one mean penalizes a word at
+projective distance `theta n` by `Theta(lambda n^(3/2))`, while a profile
+generated through an `O(sqrt n)` bridge changes by only
+`O(sqrt(theta)n^(3/2))`.  A fixed near/far split therefore exposes a
+directed matched-roof deficit without exactly pinning any boundary spin.
+
+The positive pole value also dominates the opposite absolute-cap channel.
+This example explains why the universal-pin obstruction does not apply to
+Theorem 36.25: localization is required only for one spectrally Lipschitz,
+matched-roof family, and the query itself spends the target cap scale.
+
+## Example 169: an almost one-sided core can be maximally far from a clique
+
+Take an order-`k` signing with independent edge mean
+`mu_k=k^(-alpha)`, `0<alpha<1/2`, and freeze a realization for which all
+cuts and rows concentrate and the centred matrix has operator norm
+`O(sqrt k)`.  Then the all-positive word is a ground state and
+
+```math
+P=(1+o(1))\mu_k\binom k2,
+\qquad N=O(k^{3/2})=o(P),
+```
+
+but the signing differs from every switched positive clique on
+`(1/2-o(1))binom(k,2)` edges.  With `alpha=1/4` and ambient order
+`n=k^(7/6)`, this is a zero-density core with
+`P=(1/2+o(1))n^(3/2)` and `N=o(n^(3/2))`.
+
+Thus one-sidedness, nonnegative cuts, regular rows, and a spectral outlier
+do not imply near-rank-one structure.  The construction is not embedded in
+an exact minimizer; it falsifies attempts to exclude principal cores from
+their internal geometry alone.
