@@ -102,7 +102,10 @@ one of:
   `(2-sqrt(2))n^(3/2)` cross-Gram gap.  Even more sharply, `A` and `-A` are
   one-port close to `O(n)` but a second macroscopic Walsh shore exposes their
   relative orientation at leading scale; total continuation width
-  `o(n^(3/4))` cannot do so.
+  `o(n^(3/4))` cannot do so.  This exponent is sharp: a biased flat bridge
+  and a width-`n^(3/4)` clique create a `(3/4-o(1))n^(3/2)` orientation gap
+  while preserving the final cap.  If the future block is itself
+  `O(m^(3/2))`-cap, the threshold is instead linear.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
@@ -110,9 +113,10 @@ one of:
 - **Live theorem:** characterize growth of the newly identified
   amalgamation data.  Either prove that `Omega(ell^2)` independent cross-Gram
   variables remain visible at total scale, or derive a deterministic
-  synchronization law that collapses them to a rooted `O(ell)` state.  In
-  parallel, locate the sharp continuation-width threshold for exposing the
-  orientation bit between `n^(3/4)` and `n`.
+  synchronization law that collapses them to a rooted `O(ell)` state.  The
+  continuation-width question is closed once its internal cap budget is
+  declared; the next scale question is whether collective small cross-Gram
+  entries carry more than linear fixed-distortion information.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.

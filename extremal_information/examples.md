@@ -2422,3 +2422,18 @@ orientations produce the scalar block matrices
 Their exact Boolean caps differ by at least
 `(2-sqrt(2))n^(3/2)`.  Composition has made one compatibility bit
 macroscopic; no marginal one-port metric could retain it.
+
+## Example 119: a sublinear shore can spend a macroscopic cap budget
+
+The orientation law is controlled exactly by twice the internal future cap.
+This yields two different width thresholds.  If a new `m`-spin component has
+its own natural `O(m^(3/2))` cap, it must be linearly large to expose an old
+`n^(3/2)` orientation.  If only the final parent is required to remain
+bounded-cap, the small component may use a clique and spend `Theta(m^2)`.
+
+That second threshold is sharp.  At `m=n^(3/4)`, a biased exact-sign bridge
+has mean part `(m/n)J` and spectrally flat error.  Its positive orientation
+aligns the old Hadamard pole, the bridge bias, and the clique for energy
+`(2-o(1))n^(3/2)`; the opposite orientation is at most
+`(5/4+o(1))n^(3/2)`.  The complete parent still has order asymptotic to `n`
+and cap `O(n^(3/2))`.

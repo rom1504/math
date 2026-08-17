@@ -623,7 +623,10 @@ taking the product of separate one-port states: orthogonal top eigenvectors
 create a leading cross-Gram gap.  More strongly, `A` and `-A` are uniformly
 one-port close but a second macroscopic Walsh shore exposes their relative
 orientation by `(2-sqrt(2))n^(3/2)`.  The orientation quotient remains valid
-for every flattened continuation of total width `o(n^(3/4))`.
+for every flattened continuation of total width `o(n^(3/4))`.  This exponent
+is now sharp for unrestricted sign futures: a biased flat bridge and clique
+at width `n^(3/4)` attain a leading gap.  Futures which themselves have
+`O(m^(3/2))` cap still require linear width.
 
 The live question is the **growth and synchronization** of the amalgamation
 data.  For `p` ports, determine whether the `O(p^2)` cross Gram table is
@@ -631,10 +634,11 @@ minimal on a scalable family, whether a natural algebraic hypothesis makes
 it a function of only `O(p)` rooted data, and how the answer depends on the
 allowed continuation width.
 
-**Success:** a lower bound exposing `Omega(p^2)` independent cross variables
-at the correct total-system scale, a deterministic synchronization theorem
-collapsing them to a strict rooted quotient, or a sharp construction/upper
-law locating the first continuation width that exposes orientation.
+**Success:** a lower bound exposing the true number of collective cross
+variables at the correct total-system scale, or a deterministic
+synchronization theorem collapsing them to a strict rooted quotient.  The
+raw affine-bit dimension may be much smaller than the exact table and must
+be determined before seeking a quadratic lower bound.
 
 **Mandatory falsifiers:** the orthogonal-top-eigenvector cross-Gram pair and
 the `A` versus `-A` macroscopic orientation bridge.  Merely showing that one

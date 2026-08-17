@@ -10615,6 +10615,96 @@ unbounded-depth narrow composition.  The draft, verifier, and audit are in
 and
 [`drafts/bcx_two_port_holonomy_independent_audit.md`](drafts/bcx_two_port_holonomy_independent_audit.md).
 
+### Theorem 21.39 (the sharp interface scale for orientation visibility)
+
+Let `H` be any even landscape on `n` Boolean spins.  For an arbitrary sign
+bridge `B` to `m` new spins and an arbitrary even future `K`, define
+
+```math
+R_\sigma=\max_(x,y)|\sigma H(x)+x^TBy+K(y)|.
+```
+
+Then
+
+```math
+|R_+-R_-|\le2||K||_\infty.                        \tag{21.222}
+```
+
+Consequently, if `K=H_C` and `Q(C)<=K_0m^alpha`, an
+`epsilon n^(3/2)` orientation gap requires
+
+```math
+m\ge\left({\epsilon\over2K_0}\right)^{1/\alpha}
+       n^{3/(2\alpha)}.                            \tag{21.223}
+```
+
+For unrestricted complete sign continuations `alpha=2`, the exponent
+`3/4` is sharp even when the final parent must have natural cap.  More
+precisely, along regular-Hadamard orders there are complete exact-sign
+parents on
+
+```math
+N=n+\lfloor n^(3/4)\rfloor
+```
+
+spins such that
+
+```math
+Q(P_+)\ge(2-o(1))n^(3/2),
+\qquad
+Q(P_-)\le(5/4+o(1))n^(3/2).                       \tag{21.224}
+```
+
+Both caps are `O(N^(3/2))`.  If instead every future shore is itself
+bounded-cap, `Q(C)=O(m^(3/2))`, (21.223) forces `m=Omega(n)`.
+
+#### Proof
+
+With `K` omitted, invert `y` and negate the expression to identify the two
+orientation caps.  Adding `K` perturbs either by at most
+`||K||_infinity`, proving (21.222)--(21.223).
+
+For sharpness, write `S=n^(3/2)`, put
+`m=floor(n^(3/4))`, `a=m/n`, and choose an exact sign bridge
+
+```math
+B=aJ+E,
+\qquad ||E||=O(\sqrt n).                           \tag{21.225}
+```
+
+Such a bridge exists by taking independent signs of mean `a` and applying a
+rectangular subgaussian norm bound.  Use a regular symmetric Hadamard old
+block `mathcal H` and a positive clique on the new shore.  At
+`x=y=1`, the positive orientation has energy
+
+```math
+S/2+3m^2/2-o(S)=(2-o(1))S.                        \tag{21.226}
+```
+
+For the negative orientation set
+`p=(1^Tx)/n`, `s=(1^Ty)/m`, and `lambda=m^2/S<=1`.  The two outer absolute
+channels, after division by `S`, have the scalar upper envelopes
+
+```math
+{1\over2}-p^2+\lambda ps+{\lambda\over2}s^2
+\le {5\over4},
+\qquad
+{1\over2}+\lambda(-ps-s^2/2)\le1.                \tag{21.227}
+```
+
+The error bridge contributes at most
+`O(sqrt(n)sqrt(nm))=O(n^(11/8))=o(S)`.  This proves
+(21.224); termwise caps also give the final-parent bound. `square`
+
+Thus approximate contextual equivalence must be indexed by a continuation
+**cap budget**, not width alone.  The construction spends quadratic cap on
+the sublinear clique; it is not a universal pin or a statement about
+near-minimizers.  The full proof, exact finite checks, and audit are in
+[`drafts/orientation_visibility_threshold.md`](drafts/orientation_visibility_threshold.md),
+[`experiments/verify_orientation_visibility_threshold.py`](experiments/verify_orientation_visibility_threshold.py),
+and
+[`drafts/orientation_visibility_threshold_independent_audit.md`](drafts/orientation_visibility_threshold_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

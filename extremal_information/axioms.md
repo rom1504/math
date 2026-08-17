@@ -1707,3 +1707,17 @@ shore.  It is therefore invisible to every continuation of width
 Approximate contextual equivalence should consequently be indexed not only
 by error but also by a continuation budget.  A state can be a true
 congruence for one scale class and false for another without contradiction.
+
+## 82. Interface size and interface cap are different resources
+
+A sublinear continuation may still carry a leading old-scale response if its
+internal landscape is supercritical relative to its own order.  For
+quadratic sign systems, width `n^(3/4)` supports a clique cap `n^(3/2)` and
+is already enough to expose a hidden orientation bit.  Requiring every
+component to have its natural `m^(3/2)` cap moves the same threshold to
+linear width.
+
+Compositional complexity should therefore charge an interface by both its
+number of variables and the extremal budget it can spend internally.  An
+order count alone can mistake a small but high-cap calibration device for a
+negligible future.
