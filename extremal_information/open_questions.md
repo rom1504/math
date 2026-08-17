@@ -43,31 +43,34 @@ backward-surjective lifts, and a support potential give quantitative all-word
 spectral control. The width-two Ising example proves this is strictly smaller
 than forward transfer state and genuinely needs state-dependent tolls.
 
-The next target is the **converse and minimality** problem. Under block
-domination, characterize when the nonlocal condition “every word has some
-tight lift of a critical coarse cycle” admits a finite support/potential
-carrier. A plausible theorem should identify a bounded-delay, twins, or
-critical-language congruence condition and prove
+The support-certificate converse is now closed at its natural level. Theorem
+18.5 identifies its optimal toll with a finite mean-payoff support game. But
+the deterministic de Bruijn shift proves that the resulting carrier size is
+not semantic response information: scalar response and rowwise state both
+have size one while exact target-surjective support needs `q^m` states. Its
+certificate tradeoff is `Theta(C/(1+log_qN))`.
+
+The next target is therefore **witness observability**, not another twins
+variant:
 
 ```math
-number of states <= response-entropy scale,
-\qquad
-cycle-LP distortion <=epsilon                                  \tag{OQ.1}
+\text{which minimal future probes turn hidden witness phase}
+\quad\text{into an intrinsic response packing?}               \tag{OQ.1}
 ```
 
-without enumerating all raw partitions, germs, or word products. It should
-also determine whether approximate support families have a response-metric
-entropy law, rather than merely an NP-hard generic search problem.
+Seek a theorem that starts with a support game and a declared probe family,
+computes the induced behavioral pseudometric on support phases, and either
+produces a smaller semantic quotient or a pumpable response packing. It must
+distinguish the free-tail and deterministic de Bruijn systems without using
+the carrier size itself as the answer.
 
-**Success:** a necessary-and-sufficient finite-state criterion for weighted
-critical-cycle lifting, or a scalable family with exact word responses but
-no finite bounded-delay support/potential carrier. A quantitative theorem
-should relate its smallest carrier to response entropy or a mixing horizon.
+**Success:** a quantitative observability theorem relating probe entropy,
+support-game phase, and actual future-response packing in at least two model
+classes.
 
-**Stop condition:** listing the finite projective semigroup, every active
-cell, or every set partition is a decision procedure, not a compression
-theorem. A pairwise response pseudometric is also insufficient because it
-forgets quotient-created cycle incidence.
+**Stop condition:** support count is only proof complexity until a future can
+observe it. Do not infer a semantic lower bound from failure of one
+backward-surjective or rowwise certificate.
 
 The one-generator PWA question is closed: the binary/block counter proves
 `2^(r-o(r))` exposed classes. Do not spend another campaign optimizing that
@@ -190,19 +193,35 @@ transforms all collapse under the proposed diffuse query law.
 Do not infer average hardness from one endpoint witness; its neighborhood
 mass must be charged explicitly.
 
-## 5. Effective-rank composition beyond fixed dimension
+## 5. Bridge complexity between rank and regularity
 
-Shapley--Folkman bounds the loss from replacing a nonconvex reachable sum by
-its convex roof by the `r` largest component diameters, where `r` is the
-effective affine-difference rank.  Determine whether **exposed** or
-query-dependent dimension can replace `r`.
+The fixed-rank port is now exact: upper roofs compose associatively, explicit
+feature quantization uses `exp(O(r log(1/epsilon)))` cells, and an unrestricted
+bounded class needs `2^(Omega(r))` response bits. A matching bridge shows that
+bounded edge degree alone can still carry exponentially many macroscopic
+bits. Signed-balanced `alpha I+beta J` bridges give a different positive
+mechanism: a common optimizer section defeats full algebraic rank.
 
-**Success:** a bound controlled by the dimension or Gaussian width of faces
-actually reached by a declared Lipschitz query, with subextensive error in a
-model where ambient rank grows.
+The sharp next target is a structural parameter between these extremes.
+Candidates must control the *exposed bridge-response image*, not rank or
+sparsity by name. One possibility is exposed/query-dependent dimension;
+another is a signed block replacement at the natural extremal scale.
 
-**Falsifier:** a same-roof pair with low exposed complexity for every local
-component but a leading composed response gap.
+```math
+\text{Find }B_n\text{ with subexponential state and }
+||A_n-B_n||_square=o(n^{3/2}),                                 \tag{OQ.5}
+```
+
+for one nontrivial structured dense family, or prove that every such
+replacement needs exponential information. Generic Frieze--Kannan regularity
+does not suffice: its state can already be exponential at this accuracy.
+
+**Success:** a growing-rank/full-rank family not covered by permutation
+synchronization with a subextensive all-future response quotient, or an
+intrinsic response packing excluding one proposed family.
+
+**Falsifier:** a response-separated code inside the proposed port, or a
+four-label pinned cut-norm witness at order `n^(3/2)`.
 
 ## 6. Constrained compactness and realization
 
@@ -222,4 +241,6 @@ does not answer this question.
 Do not return to the motivating signing problem.  Reconnection requires a
 carrier or synchronized quotient that arises naturally there, has controlled
 growing-interface entropy, closes under the relevant composition, and has a
-finite realization theorem.  None is currently proved.
+finite realization theorem.  The signed-balanced benchmark supplies all of
+these only for a restricted permutation-invariant class; none is currently
+proved for the motivating sign matrices.

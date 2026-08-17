@@ -927,10 +927,10 @@ For exact scalar tolls this **survival carrier** is complete: it exists iff
 the good-edge subset automaton never dies. Its canonical state has at most
 `2^r-1` endpoint subsets, not `2^(r^2)` full relations. Failure produces a
 finite mortal word and hence a pumpable response gap. This is a genuine
-finite tropical lumpability law, intermediate between a scalar response
-table and rowwise bisimulation. It also explains why the de Bruijn example
-is not paradoxical: its one-state subset carrier answers the unrooted query,
-while rooted continuation legitimately costs `2^m` states.
+finite tropical lumpability law, but it is not ordered with rowwise
+bisimulation in general. In the free-tail de Bruijn example its one-state
+subset carrier answers the unrooted query while rooted continuation costs
+`2^m` states.
 
 ## 32. Weighted survival is a finite support cocycle
 
@@ -941,9 +941,71 @@ coarse edge. Local shortfalls need not vanish: a potential on support states
 absorbs their transient part, and only the residual cycle mean accumulates.
 
 This yields a quantitative all-word theorem and separates symbolic coarse
-paths, endpoint realization, response error, and support-state count. It is
-strictly weaker than rowwise simulation because the predecessor within a
-support can depend on the future coarse edge. The width-two Ising benchmark
-realizes the strict hierarchy `1` scalar output, `2` anticipatory weighted
-states, and `4` forward transfer states. Thus the dynamic theory now has a
-genuine query-matched composition object, not only a static response cover.
+paths, endpoint realization, response error, and support-state count. It can
+be strictly smaller than rowwise simulation because the predecessor within a
+support can depend on the future coarse edge: width-two Ising has `1` scalar
+output, `2` anticipatory weighted states, and `4` forward transfer states.
+
+The reverse separation is exponential. A deterministic de Bruijn shift has
+one scalar response state and one rowwise state, yet every exact
+backward-surjective support carrier has `q^m` states; its optimal certificate
+toll at size `N` is `Theta(C/(1+log_qN))`. Anticipatory and forward carriers
+are therefore incomparable proof architectures. Neither state count is
+intrinsic response information unless the declared future queries expose its
+hidden witness phase.
+
+## 33. A bridge is measured by its exposed response transform
+
+For an interaction `B(x,y)`, the canonical past state under arbitrary future
+weights is
+
+```math
+P_Bh(y)=max_x\{h(x)+B(x,y)\}.
+```
+
+The future-context metric is exactly the sup distance between these tables.
+This one transform unifies separator tables, low-rank upper roofs, and
+symmetry-orbit responses. Rank, sparsity, and graph treewidth are only useful
+when they actually shrink the realizable image of this transform.
+
+The distinction is quantitative. Fixed rank gives an exact
+finite-dimensional roof algebra and fixed-error feature nets independent of
+the microscopic state count, although rank one can still have `2^n` exact
+exposed atoms. Growing rank forces `2^(Omega(r))` response bits in an
+unrestricted bounded class. Conversely, a degree-one matching bridge can
+expose an exponential code and require exponentially many macroscopic bits.
+The relevant sparse parameter is live interface geometry, not local degree.
+
+## 34. Deterministic synchronization is a common optimizer section
+
+A quotient closes under interaction when every tuple of quotient labels has
+one microscopic representative family simultaneously realizing all discarded
+pair features. For permutation-invariant spin blocks with bridges
+`alpha I+beta J`, nonnegative identity coefficients have such a section:
+nested plus sets maximize every pairwise overlap at once.
+
+For signed identity channels the exact criterion is cycle balance. A vertex
+gauge makes all signs positive iff every cycle sign product is positive.
+An unbalanced unit cycle loses exactly `2n` against the sum of separately
+optimized pair responses on balanced blocks. Thus gauge holonomy is an
+observable obstruction to the separable pair-potential algebra.
+
+This is not a universal lower bound on joint tables; one can always retain
+more compatibility information. Its value is generative: it gives a
+checkable full-rank dense class with an exact magnetization factor algebra and
+a finite-dimensional thermodynamic limit, and it identifies the precise
+cycle witness when that algebra fails.
+
+## 35. Extremal replacement is scale-sensitive
+
+Cut-norm proximity controls every finite-label pair-energy maximum uniformly
+over arbitrary conditional futures, including a future that pins one rare
+labeling. This makes weak regularity a genuine extremal replacement theorem
+at the dense `n^2` scale, not merely a statement about bulk statistics.
+
+The same statement explains its own failure near the motivating scale.
+Preservation at scale `L_n` requires cut error `o(L_n)`. Generic weak
+regularity at `L_n=n^(3/2)` needs accuracy `o(n^(-1/2))` and may introduce
+exponentially many blocks. A useful renormalization theory must therefore
+carry the normalization in its definition; a compact state at one leading
+scale need not retain any information at a finer extremal scale.

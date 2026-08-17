@@ -5853,8 +5853,11 @@ sum_(a in J)(2^|pi^(-1)(a)|-1)                                 \tag{17.7bb}
 
 support states. This certificate is stronger than the nonlocal necessary and
 sufficient statement “every word has some critical coarse cycle with a tight
-raw cyclic lift,” but strictly weaker than lifting from every raw
-representative as in Theorem 17.1n.
+raw cyclic lift.” Source-total rowwise lifting and target-surjective support
+lifting are otherwise incomparable. The toggle and width-two examples below
+make support lifting smaller, while the deterministic de Bruijn shift in
+Section 18 has a one-state rowwise lift but needs exponentially many support
+states.
 
 Strictness already occurs in a two-state coarse system. Fix `r>=2`, use
 alphabet `E=[r]`, let every letter have coarse weight zero on `0<->1` and
@@ -6631,3 +6634,452 @@ two output maxima has oscillation at most `4sum_i|J_i|`; a weak column resets
 all prior error, while subsequent nonexpansive updates add at most one fresh
 `eta` each. This is a restricted-image reset, not a strict global Lipschitz
 coefficient.
+
+## 18. Bridge interfaces, synchronization, and proof-memory separation
+
+The results in this section were proved during the bridge-hierarchy campaign.
+They separate algebraic bridge rank, exposed response information, graph
+sparsity, deterministic synchronization, and certificate memory.
+
+### Theorem 18.1 (bridge-query isometry)
+
+Let `X,Y` be finite, let `B:X times Y -> R`, and for `h:X->R` define
+
+```math
+(P_Bh)(y)=max_(x in X){h(x)+B(x,y)}.                           \tag{18.1}
+```
+
+With arbitrary future weights `g:Y->R`, put
+
+```math
+Opt_B(h,g)=max_(x,y){h(x)+B(x,y)+g(y)}.
+```
+
+Then
+
+```math
+sup_g|Opt_B(h,g)-Opt_B(h',g)|
+=||P_Bh-P_Bh'||_infinity.                                     \tag{18.2}
+```
+
+Modulo additive constants, the quotient distance is
+
+```math
+inf_c||P_Bh-P_Bh'-c1||_infinity
+={1\over2}osc(P_Bh-P_Bh').                                    \tag{18.3}
+```
+
+#### Proof
+
+The maximum is one-Lipschitz in the sup norm, proving one inequality. Choose
+a coordinate attaining the largest signed response difference and make every
+other future weight sufficiently negative. Both optimizations are then pinned
+to that coordinate, proving the reverse inequality. Best uniform
+approximation of a finite vector by a constant is half its oscillation.
+`square`
+
+Thus the exact state of a declared bridge is its *realizable response image*,
+not rank, edge count, or symmetry in isolation. A rank factorization restricts
+this table to a finite-dimensional field set; a width-`w` separator gives a
+`2^w` table; a symmetry quotient gives one coordinate per relevant orbit.
+
+### Theorem 18.2 (exact finite-rank roof algebra)
+
+A finite `r`-featured landscape is `(X,H,phi)` with
+`phi:X->R^r`. Its linear-field response and upper concave roof are
+
+```math
+V_L(t)=max_x{H(x)+<t,phi(x)>},
+
+Hbar_L(u)=max\left\{sum_xp_xH(x):p in Delta_X,
+                         sum_xp_xphi(x)=u\right\}.             \tag{18.4}
+```
+
+For two such landscapes define
+
+```math
+(H star G)(x,y)=H(x)+G(y)+<phi(x),psi(y)>,
+\qquad (phi star psi)(x,y)=phi(x)+psi(y).                      \tag{18.5}
+```
+
+Then
+
+```math
+V_(L star K)(t)=max_(u,v)
+{Hbar_L(u)+Gbar_K(v)+<u,v>+<t,u+v>}.                           \tag{18.6}
+```
+
+On lifted points use
+
+```math
+(u,h)o(v,k)=(u+v,h+k+<u,v>)                                   \tag{18.7}
+```
+
+and then take the upper concave hull. This roof operation is associative; for
+`m` landscapes its energy is
+
+```math
+sum_iH_i(x_i)+sum_(i<j)<phi_i(x_i),phi_j(x_j)>.                \tag{18.8}
+```
+
+The final concavification is essential. If each child has features `+-1` and
+height zero, the fixed-total raw profile is `z^2/4`, while the parent upper
+roof is identically one on `[-2,2]`.
+
+#### Proof
+
+The expression in (18.6) is separately affine in the two convexifying
+probability vectors, so its global maximum is attained on original states.
+Bi-affinity gives
+
+```math
+conv(A o B)=conv(conv(A) o conv(B)).                            \tag{18.9}
+```
+
+Both parenthesizations of three lifted points have energy
+`h+k+l+<u,v>+<u,w>+<v,w>`, proving associativity. `square`
+
+If `R=UV^T` has rank at most `r`, take `phi(x)=U^Tx` and
+`psi(y)=V^Ty`. Thus arbitrary internal landscapes coupled through this fixed
+port have an exact `r`-dimensional semantic interface. The minimal interface
+is query-relative: on a fixed future signature set `Theta` it is only
+`V_L|_Theta`; under all singleton fields it is the complete roof by concave
+Fenchel biconjugacy.
+
+### Theorem 18.3 (fixed-rank approximation and the growing-rank boundary)
+
+Assume `||phi(x)||<=P` and allowed fields satisfy `||t||_*<=Q`. Quantize the
+feature ball by a map with error at most `eta`, retain only nonempty buckets,
+and store
+
+```math
+w(c)=max_(x:Q_eta(phi(x))=c)H(x).
+```
+
+Then
+
+```math
+Vtilde_L(t)=max_c{w(c)+<c,t>},
+\qquad |V_L(t)-Vtilde_L(t)|<=Q eta,                            \tag{18.10}
+```
+
+using at most
+
+```math
+(1+2P/eta)^r                                                   \tag{18.11}
+```
+
+buckets. Quantizing heights at mesh `zeta` adds at most `zeta` error. If two
+bridge sides of radii `P,Q` are quantized at `eta_1,eta_2`, the cross-term
+error is at most
+
+```math
+Q eta_1+(P+eta_1)eta_2.                                       \tag{18.12}
+```
+
+This exponential dependence on rank is unavoidable at fixed error. For every
+fixed `0<rho<1/2`, there is a class with unit feature radius containing
+
+```math
+2^(2^(Omega_rho(r)))
+```
+
+response functions separated by a fixed positive constant. Hence a uniform
+fixed-error summary needs `2^(Omega(r))` bits.
+
+#### Proof
+
+Replacing one affine term by its bucket center changes it by at most `Qeta`,
+which proves (18.10); a volumetric net proves (18.11), and expansion of the
+bilinear term proves (18.12).
+
+For the lower bound choose a code `C subset {-1,1}^r` of relative distance
+`rho` and exponential size, put `p_x=x/sqrt(r)`, and, for
+`b in {0,1}^C`, define
+
+```math
+H_b(x)=a b_x\ (x in C),\qquad H_b(x)=-1\ (x notin C),
+\qquad 0<a<2rho.                                               \tag{18.13}
+```
+
+At the actual Boolean field `q_c=c/sqrt(r)`, the state `c` is uniquely
+optimal and
+
+```math
+V_b(q_c)=1+a b_c.                                              \tag{18.14}
+```
+
+The `2^|C|` responses are pairwise `a`-separated, so error below `a/2` needs
+at least `|C|=2^(Omega(r))` bits. `square`
+
+At bounded fixed scale, (18.11) gives polynomial state size when
+`r=O(log n)`, subpolynomial size when `r=o(log n)`, and reaches arbitrary
+`n`-spin table scale only around `r=Theta(n)`. Exact complexity behaves very
+differently: already at rank one, setting
+
+```math
+p_x={sum_i2^(i-1)x_i\over2^n-1},\qquad H(x)=-p_x^2             \tag{18.15}
+```
+
+makes all `2^n` configurations uniquely exposed by the fields `2p_x`. Their
+exposure margins shrink exponentially, reconciling this with fixed-error
+compression.
+
+### Theorem 18.4 (bounded bridge degree does not imply compression)
+
+For every fixed `0<delta<1/2`, there are codes
+
+```math
+C_n subset {-1,1}^n,
+\qquad |C_n|>=2^((1-h_2(delta)-o(1))n),                        \tag{18.16}
+```
+
+and landscapes indexed by `sigma in {0,1}^C_n` such that the degree-one
+matching bridge `B(x,y)=<x,y>` has
+
+```math
+||P_Bh_sigma-P_Bh_tau||_infinity=delta n
+\quad(sigma!=tau).                                             \tag{18.17}
+```
+
+Consequently every absolute-score summary with error below `delta n/2`
+needs `2^|C_n|` states, or `|C_n|` bits. The same bit exponent holds
+projectively.
+
+#### Proof
+
+Take a greedy code of distance at least `delta n` and put
+`h_sigma(c)=delta n sigma(c)`. At query `c`, another codeword scores at most
+`n-delta n`, while `c` scores `n+delta n sigma(c)`. Thus
+
+```math
+(P_Bh_sigma)(c)=n+delta n sigma(c).                            \tag{18.18}
+```
+
+For the projective claim restrict to constant-weight labels; two distinct
+labels have both signs in their response difference, so (18.3) gives distance
+`delta n`. `square`
+
+The bridge graph has treewidth one but an extensive live interface. Sparse
+dynamic programming compresses through small live separators, not through
+edge degree alone. The internal landscapes here are arbitrary, so this is a
+theory falsifier rather than a lower bound for quadratic signings.
+
+### Theorem 18.5 (anticipatory support is certificate complexity)
+
+Let `E` have `q>=2` letters, `I=E^m`, `m>=1`, and `C>0`. Define
+
+```math
+F_e(s_1...s_m)=s_2...s_me,
+
+T_e(s,t)=cases(0,&t=F_e(s); -C,&t!=F_e(s)).                   \tag{18.19}
+```
+
+Against the scalar coarse system `S_e=0`, every word has spectral response
+zero. Nevertheless every exact Theorem-17.1s anticipatory-support carrier has
+at least `q^m` states, and this is attained.
+
+More generally, if a carrier of `N` states has uniform certificate toll
+`beta`, then
+
+```math
+ell beta<C,\quad ell<=m\quad\Longrightarrow\quad N>=q^ell.   \tag{18.20}
+```
+
+Conversely, for `0<=L<m`, suffix-cylinder supports give
+
+```math
+N_L={q^(L+1)-1\over q-1},\qquad beta_L={C\over L+1}.           \tag{18.21}
+```
+
+Thus for `1<=N<q^m`, the optimal support-certificate toll obeys
+
+```math
+beta_N=Theta\left({C\over1+log_qN}\right).                    \tag{18.22}
+```
+
+#### Proof
+
+Every word map has a fixed point obtained from the periodic extension of the
+word, proving zero spectral response. Exact upper domination forces any
+allowed gauge to be constant, since `h(s)<=h(F_e(s))` on the strongly
+connected de Bruijn graph.
+
+Start from a carrier support of maximal potential. If `beta=0`, its successor
+must have zero shortfall and the same maximal potential. After any word
+`u in E^m`, the deterministic image of a nonempty support is the singleton
+`{u}`. The `q^m` words therefore reach distinct support states.
+
+For (18.20), the same maximal-potential start gives total shortfall at most
+`ell beta<C`; every step is consequently a zero edge, and the `q^ell` word
+images lie in disjoint suffix cylinders. For (18.21), retain all suffix
+cylinders of depths at most `L`, follow a zero edge below depth `L`, and reset
+to the full support at cost `C`. The potential
+
+```math
+psi(K_u)=-{|u|C\over L+1}
+```
+
+makes every ordinary edge and reset meet the toll inequality exactly.
+`square`
+
+The semantic response state is one point, and a one-state rowwise path lift
+also exists because every raw state has the successor `F_e(s)`. Hence the
+exponential quantity is proof/certificate memory, not intrinsic response
+information. Together with the free-tail de Bruijn and width-two Ising
+examples, this proves that source-total rowwise lifts and target-surjective
+anticipatory supports are incomparable.
+
+For a fixed support architecture, its optimal toll is exactly a finite
+mean-payoff game: the controller chooses successor supports, edge costs are
+their least backward-surjective shortfalls, and a potential exists iff every
+selected cycle has nonpositive adjusted cost. Positional strategies suffice.
+
+### Theorem 18.6 (signed-balance synchronization and its limit)
+
+For blocks `x^a in {-1,1}^n`, let `k_a` be the number of plus spins and let
+the internal energy be an arbitrary `h_a(k_a)`. Couple block pairs by
+
+```math
+R_ab=alpha_ab I+beta_ab J.                                    \tag{18.23}
+```
+
+If every `alpha_ab>=0`, the exact optimum is
+
+```math
+max_(k_1,...,k_m)
+\left\{sum_ah_a(k_a)+sum_(a<b)[
+alpha_ab(n-2|k_a-k_b|)
++beta_ab(2k_a-n)(2k_b-n)]\right\}.                            \tag{18.24}
+```
+
+More generally, (18.24) holds after vertex sign gauges iff the signed graph
+of nonzero `alpha_ab` has positive sign product around every cycle. This is
+equivalent to `sgn(alpha_ab)=epsilon_aepsilon_b` for vertex signs
+`epsilon_a`.
+
+An isolated unbalanced unit-sign cycle of length `ell`, with even `n` and all
+blocks pinned to zero magnetization, has true identity-channel optimum
+
+```math
+(ell-2)n,                                                      \tag{18.25}
+```
+
+although the sum of separately optimized edge responses is `ell n`.
+
+#### Proof
+
+For plus sets `P_a`,
+
+```math
+(x^a)^Tx^b=n-2|P_a\triangle P_b|
+<=n-2|k_a-k_b|.                                                \tag{18.26}
+```
+
+Nested initial segments `P_a={1,...,k_a}` attain equality for every pair
+simultaneously. The `J` term depends only on magnetizations. Signed cycle
+balance is exactly the path-independence condition for the vertex gauge.
+
+On an unbalanced cycle, realized edge products multiply to `+1` at every
+coordinate while the desired signs multiply to `-1`, so one edge is
+unsatisfied and the coordinate reward is at most `ell-2`. Pair one maximizing
+assignment with its global negative on equal halves of the coordinates to
+make every block balanced and attain the bound. `square`
+
+The condition therefore characterizes when one common representative section
+attains all edgewise conditioned optima. The failure is an extensive
+holonomy obstruction to the separable pair-potential algebra, not to every
+possible joint response table.
+
+There is a genuine thermodynamic consequence. Fix `m` and a signed-balanced
+graph, gauge to coefficients `a_ab=|alpha_ab|`, scale the dense coefficient
+as `b_ab/n`, and assume uniformly
+
+```math
+n^(-1)h_(a,n)(x)=f_a(n^(-1)sum_i x_i)+o(1)                    \tag{18.27}
+```
+
+for continuous `f_a`. Then the normalized optimum converges to
+
+```math
+max_(u in [-1,1]^m)\left\{
+sum_af_a(u_a)+sum_(a<b)[a_ab(1-|u_a-u_b|)+b_abu_au_b]
+\right\}.                                                     \tag{18.28}
+```
+
+Indeed (18.24) reduces the finite problem to the parity grid in the compact
+cube, and the objectives converge uniformly to (18.28).
+
+The matrices `alpha I+beta J` are dense when `beta!=0` and full rank when
+`alpha!=0` and `alpha+n beta!=0`. Thus deterministic synchronization can
+beat algebraic rank in a nontrivial full-rank dense class. The state grows
+with the number of blocks; this is an exact factor algebra, not a bounded
+universal state for arbitrary dense couplings.
+
+## 19. Extremal cut-norm replacement
+
+### Theorem 19.1 (uniform labeled replacement)
+
+Let `A,B` be real matrices on the same finite labeled interface and define the
+unnormalized cut norm by
+
+```math
+||A-B||_square=max_(S,T)|(A-B)(S,T)|.
+```
+
+For `q` labels, `J in R^(q times q)`, and an arbitrary conditional future
+`F:[q]^V->R`, put
+
+```math
+M(A;J,F)=max_sigma\left\{
+F(sigma)+sum_(u,v)A_(uv)J_(sigma_u,sigma_v)\right\}.
+```
+
+Then
+
+```math
+|M(A;J,F)-M(B;J,F)|
+<=||J||_1||A-B||_square.                                      \tag{19.1}
+```
+
+#### Proof
+
+For fixed `sigma`, its label fibres `V_i` partition the interface, and the
+energy difference is
+
+```math
+sum_(i,j)J_(ij)(A-B)(V_i,V_j).
+```
+
+This is bounded by the right side of (19.1). Apply the pointwise bound to an
+optimizer in each direction. `square`
+
+The future may pin a single rare labeling, so this is genuinely an extremal
+replacement theorem. Frieze--Kannan weak regularity gives, for bounded dense
+matrices, block representatives with
+
+```math
+k<=2^(O(epsilon^(-2))),
+\qquad ||A-B||_square<=epsilon n^2.                            \tag{19.2}
+```
+
+Therefore a finite block/occupancy state preserves every fixed-label future
+response at the dense `n^2` scale. Independent block rounding adds only
+`O(n^(3/2))` cut error for fixed block data, supplying finite realizations.
+
+The scale qualification is essential. Preservation at a declared scale
+`L_n` needs cut error `o(L_n)`. At `L_n=n^(3/2)`, the generic weak-regularity
+bound requires `epsilon=o(n^(-1/2))` and may have exponentially many blocks.
+Thus Theorem 19.1 does not by itself compress the motivating signing scale.
+
+The criterion has an explicit converse witness up to a universal constant.
+For symmetric `D=A-B`, an Alon--Naor cut-norm rectangle `S,T` can be encoded
+by four labels `(1_S,1_T)` and the pair reward
+
+```math
+J_((a,b),(c,d))=(ad+bc)/2.                                   \tag{19.3}
+```
+
+A sufficiently strong labeled unary future pins this configuration, making
+the optimized response gap exactly `|D(S,T)|`. Hence a residual of order
+`L_n` is an observable, scalable falsifier of replacement at that scale.

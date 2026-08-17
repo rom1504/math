@@ -544,6 +544,36 @@ quantitative packing of finite-horizon response trees. A static response
 cover alone cannot decide this, and syntactically nonzero holonomy may be
 dynamically infeasible.
 
+The fifth investigation began the bridge hierarchy and forced a further
+revision. A rank-`r` bilinear bridge has an exact associative upper-roof
+algebra, and fixed-error response compression costs exponentially in `r` in
+the worst case. Exact and approximate complexity sharply separate: rank one
+can expose every microscopic atom at exponentially small margins, whereas a
+fixed response scale admits a finite-dimensional net. Conversely, neither
+sparsity nor bounded degree is a compression promise: a degree-one matching
+bridge can expose exponentially many macroscopic response bits for arbitrary
+internal landscapes.
+
+Algebraic rank is not the whole positive story. For dense full-rank bridges
+`alpha I+beta J`, nonnegative identity channels admit one common nested
+optimizer section, while signed cycle balance is the exact gauge condition
+for retaining that section. This yields a polynomial magnetization quotient
+and a genuine thermodynamic limit for the resulting restricted model; an
+unbalanced cycle gives an extensive holonomy loss against separately
+optimized pair responses. At the dense `n^2` scale, labeled cut-norm
+replacement supplies a different all-future compression theorem, including
+rare pinned optimizers. Its generic regularity complexity becomes
+exponential at the motivating `n^(3/2)` scale, so it is a calibrated adjacent
+theory rather than a solution to the signing problem.
+
+Finally, deterministic de Bruijn dynamics prove that anticipatory-support
+size is not itself semantic information. One example has one semantic state
+and a one-state forward lift but needs `q^m` exact anticipatory-support states,
+with optimal certificate toll `Theta(C/(1+log_q N))`. Thus forward path
+simulation and backward anticipatory support are incomparable proof
+architectures. Hidden witness memory becomes part of the reusable state only
+when the declared future queries can observe it.
+
 ## Extremal rate--distortion
 
 For a landscape class `H`, query set `Theta`, and response metric

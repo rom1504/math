@@ -1437,3 +1437,85 @@ The words `aabccb` and `abbcac` have the same letter counts and responses
 `-2,+2`, proving that no scalar per-letter toll suffices. The two-state
 support remembers precisely the previous reset sign, not the discarded
 second boundary spin.
+
+## Example 60: deterministic de Bruijn reverses the carrier hierarchy
+
+On words `I=E^m`, let input `e` deterministically shift and append `e`. Give
+that one edge weight zero and every other edge weight `-C`. Every word map has
+a periodic fixed point, so all word spectral responses are zero. A one-state
+rowwise path lift is exact because every source has its deterministic tight
+successor.
+
+Backward-surjective support lifting behaves oppositely. After a length-`m`
+word, every nonempty support maps to its singleton suffix. Exact anticipatory
+support therefore needs all `q^m` singletons. With `N` support states, its
+optimal certificate toll is `Theta(C/(1+log_q N))` before the exact threshold.
+The exact checker verified 5,379 periodic fixed-point instances, 425
+length-`m` singleton images, and 981 support/potential edges for `q=2,3` and
+`m<=5`.
+
+This is not semantic response complexity. It proves that source-total and
+target-surjective proof carriers are incomparable, not successive levels of
+one hierarchy.
+
+## Example 61: rank one has `2^n` exact atoms but fixed-error compression
+
+Put
+
+```math
+p_x={sum_i2^(i-1)x_i\over2^n-1},\qquad H(x)=-p_x^2.
+```
+
+The field `2p_x` uniquely exposes `x`, so the exact rank-one upper roof has
+all `2^n` Boolean atoms. The margins are exponentially small. An exact
+rational verifier checked all 510 exposures through `n=8`, together with 171
+two-body response identities and 513 three-body associativity identities.
+
+At fixed error, feature bucketing instead uses only
+`(1+2PQ/epsilon)^r` cells. A code construction proves that
+`2^(Omega(r))` bits are nevertheless necessary when rank grows. Exact atom
+count and macroscopic response rate are therefore different scales.
+
+## Example 62: a matching bridge has an extensive live interface
+
+Choose an exponential Hamming code `C_n` and give every codeword an
+independent binary energy bonus of size `delta n`. Under the degree-one
+bridge `<x,y>`, query `y=c` uniquely exposes the bonus at `c`. The response
+class contains `2^|C_n|` tables separated by `delta n`, even projectively
+after restricting to constant-weight bonus labels.
+
+The finite verifier checked 560 hostile/friendly pinned queries through order
+eight. Bounded edge degree and treewidth of the isolated bridge do not imply
+compression when the live boundary has `n` endpoints.
+
+## Example 63: signed overlap holonomy costs `2n`
+
+Take three balanced spin blocks with identity couplings `+,+,-` around the
+triangle. Every separately optimized edge contributes `n`, but at each
+coordinate the joint reward
+
+```math
+x^1x^2+x^2x^3-x^1x^3
+```
+
+is at most one. The true optimum is `n`, an extensive gap of `2n`. More
+generally, an unbalanced signed cycle of length `ell` has optimum
+`(ell-2)n` instead of `ell n`.
+
+For a balanced signed graph, a vertex gauge makes all identity couplings
+nonnegative and nested plus sets realize every pair optimum simultaneously.
+Enumeration verified five heterogeneous multi-block instances and unbalanced
+cycles of lengths three through five.
+
+## Example 64: zero-temperature Viterbi mixing is all or nothing
+
+For an all-finite max-plus transfer matrix, the global projective Lipschitz
+coefficient is zero exactly for additive-rank-one matrices `K_ij=u_i+v_j`
+and is one otherwise. Exact enumeration of all 625 integer `2 by 2` matrices
+with entries in `[-2,2]` found 85 rank-one resets and an exact ratio-one
+witness for each of the other 540 matrices.
+
+Thus ordinary positivity and irreducibility do not reduce worst-future
+best-path memory at zero temperature. A uniform `eta`-perturbation of rank one
+does give an `eta`-accurate shape reset, providing the correct approximate
+benchmark.
