@@ -249,7 +249,7 @@ even though every child has identical isolated cap, spectrum, and all other
 switching invariants.
 
 The first **joint gauge-covariant reuse** theorem is now proved for a strict
-linear-label family. In odd label dimension, the triple
+linear-label family. In every label dimension, the triple
 
 ```math
 (\text{binary Gram},\text{relation kernel},
@@ -262,13 +262,20 @@ independent of the ambient `sqrt(n)` label bits. Gram alone fails at leading
 scale, and even Gram plus relations misses the characteristic root under a
 rooted future.
 
-The quotient is not separately composable. Gluing two summarized tuples
-creates cross-Gram entries and mixed relations not determined by their
-isolated states. The sharp next target is therefore to characterize the
-**gluing fibre** exactly: prove an associative minimal cross-form carrier and
-a matching information lower bound, then ask whether any approximate
-quotient reduces it. Only after that should one test nonlinear truth tables.
-Evaluating the state may not invoke the original `2^(kn)` Boolean maximum.
+The exact **gluing fibre** is now known. It is the triple consisting of the
+cross bilinear form, the coincidence correspondence between the presented
+spans, and their combined characteristic-root fibre. It reconstructs the
+joined state associatively. Fixed isolated states can carry `rs` arbitrary
+cross-form bits or `r^2+O(1)` intersection bits, and pairwise amalgamation
+data can miss a ternary relation. At least one such coincidence bit changes a
+three-block scalar maximum at full `n^(3/2)` scale.
+
+The sharp next target is an **approximate rooted amalgamation theorem**:
+identify a declared graph/query family on which the accumulated relation
+state has a smaller metric quotient, or prove that a positive fraction of
+its quadratic orbit information is semantically exposed. Only after this
+test should one move to nonlinear truth tables. Evaluating the state may not
+invoke the original `2^(kn)` Boolean maximum.
 
 A parallel replacement target remains:
 
@@ -281,8 +288,7 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** an associative gluing theorem with minimal cross-information, an
-approximate reduction of that cross-information, a reusable joint quotient
+**Success:** an approximate reduction of the exact cross-information, a reusable joint quotient
 for a nonlinear cap-bounded family, or a lower bound proving extensive
 growth of every such quotient. Any positive state must retain the
 commutation/compatibility data absent from scalar Rayleigh summaries and must

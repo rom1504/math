@@ -95,9 +95,11 @@ one of:
   words with identical bias/pair-overlap summaries differ extensively on
   every long path. More generally, commutator defect gives a quadratic-loss
   Boolean section while anticommutator defect gives an exact spectral
-  ceiling. For odd-dimensional linear Walsh labels, Gram, the relation
+  ceiling. For linear Walsh labels in every ambient dimension, Gram, the relation
   kernel, and the characteristic-root fibre form an exact `O(k^2)`-bit orbit
-  quotient for every `k`-block graph.
+  quotient for every `k`-block graph. Its exact rooted amalgamation is
+  associative on accumulated spans and has independent `rs` cross-form and
+  `r^2+O(1)` intersection-memory lower bounds.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
@@ -106,11 +108,13 @@ one of:
   all separately optimized pair responses at leading scale.
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
-- **Composition mechanism:** group extension and cycle-space cocycles.
-- **Live theorem:** characterize the gluing fibre of the rooted relation-form
-  quotient. Isolated states omit cross-Gram entries and mixed relations; the
-  target is an associative minimal interface presentation with a matching
-  information lower bound, followed by an approximate analogue.
+- **Composition mechanism:** rooted bilinear amalgamation. A cross form,
+  intersection correspondence, and root fibre reconstruct the joined state;
+  the accumulated presented span makes the operation associative.
+- **Live theorem:** find an approximate metric quotient of this exact gluing
+  state, or prove that a positive fraction of its `Theta(t^2)` orbit memory is
+  semantically exposed. Pairwise local data is already ruled out by a
+  ternary-relation counterexample.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -239,7 +243,7 @@ one of:
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
-| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for odd-dimensional linear-label words) | full switching orbit has `Theta(n)` one-bridge response bits; relative involution algebra gives robust graph certificates; the rooted relation form is an exact orbit quotient but needs new cross-data on gluing |
+| bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation gives an exact associative gluing law with `rs` cross-form and `r^2+O(1)` intersection-bit lower bounds |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
 | orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |

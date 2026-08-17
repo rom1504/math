@@ -628,15 +628,23 @@ between the child and bridge involutions changes the path optimum by
 `((3-sqrt(5))/2+o(1))n^(3/2)` per block. This is composition-created
 information even though the edge connection itself is flat.
 
-The linear-label subfamily now has a positive exact endpoint. In odd label
+The linear-label subfamily now has a positive exact endpoint. In every label
 dimension, binary Gram data, the full relation kernel, and one
 characteristic-root relation coset classify every ordered tuple up to Walsh
 coordinate symmetry. This gives an `O(k^2)`-bit exact Boolean-extremal
 quotient for every `k`-block graph, independent of the `sqrt(n)`-bit ambient
 label dimension. It is static rather than independently composable: gluing
-creates cross-Gram entries and mixed relations. The open issue is to
-characterize that gluing fibre and then determine whether an approximate
-analogue survives beyond linear labels without performing the complete
+creates cross-Gram entries and mixed relations.
+
+That exact gluing fibre is now characterized. It consists of a descended
+cross bilinear form, an intersection correspondence between the two
+presented spans, and the combined characteristic-root fibre. Pullback of
+these three objects reconstructs the joined state and is associative on the
+accumulated span. The cross form can carry `rs` bits and the intersection
+correspondence `r^2+O(1)` bits with isolated states fixed; pairwise data can
+still miss a ternary relation. The next issue is whether an approximate
+quotient reduces this relational memory, or whether a nonlinear Walsh-label
+family has an analogous closed presentation without performing the complete
 Boolean maximization.
 
 The sparse upper argument also survives abstraction. For any finite public

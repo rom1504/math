@@ -1207,7 +1207,7 @@ law for Boolean poles and closure under varying children.
 
 ## 45. Orbit sufficiency and compositional congruence are different
 
-For odd-dimensional linear Walsh labels, a finite presented form--binary
+For linear Walsh labels in every ambient dimension, a finite presented form--binary
 Gram data, all label relations, and one characteristic-root fibre--classifies
 every ordered tuple up to ambient orthogonal symmetry. It therefore answers
 all equivariant Boolean extremal queries on the tuple. This is a strict
@@ -1219,3 +1219,18 @@ cross-pairings and mixed relations appear only after gluing. Exact orbit
 classification is therefore a static response theorem, not automatically a
 dynamic congruence. The missing cross-form measures composition-created
 information in a concrete algebraic family.
+
+## 46. Accumulated-span memory is the closure of relational gluing
+
+For rooted bilinear presentations, the relative gluing datum has three
+logically independent parts: a cross form, an intersection correspondence,
+and a root fibre. Their pullback formulas are associative once the composite
+retains its accumulated presented span. Pairwise edge data is not closed:
+one ternary dependency can be invisible on every pair.
+
+This gives a quantitative version of composition-created information.
+Cross-form memory can cost `rs` bits and intersection memory `r^2+O(1)` bits,
+even when isolated states are fixed. The resulting carrier is still a strict
+symmetry quotient in the low-word-length regime. Thus "new information" need
+not mean reconstructing the microscopic landscape; it can mean updating a
+small but growing relational presentation.

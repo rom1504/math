@@ -8157,14 +8157,16 @@ G(\mathbf a)=(a_i\cdot a_j)_{ij},\qquad
 \mathcal R_\omega(\mathbf a)=\{c:\sum_i c_i a_i=\omega\}. \tag{21.68}
 ```
 
-If `m>=3` is odd, the singleton labels `omega` and `e_j` have the same
+If `m>=3` is odd, use the singleton labels `omega` and `e_j`; if `m>=4` is
+even, use `omega` and `e_1+e_2`. In either case the two labels have the same
 `G` and `mathcal R` but different `mathcal R_omega`. Through the rooted Walsh
 future from Theorem 21.6 their projective responses are separated by at
 least `n^(3/2)/6`.
 
 #### Proof
 
-Both labels have norm one and no nonzero relation, while only the first
+In the odd case both labels have norm one; in the even case both are nonzero
+isotropic. They have no nonzero singleton relation, while only the first
 equals `omega`. With `s_c(u,v)=(-1)^(u dot v+c dot v)` and
 `y_c=q^(-1)Ws_c`, the matched response is `3n^(3/2)/2`. Distinct linear
 truth tables have zero correlation, hence the rooted Rayleigh coordinate in
@@ -8172,9 +8174,9 @@ truth tables have zero correlation, hence the rooted Rayleigh coordinate in
 the crossed response by `4n^(3/2)/3`. Reversing the queries gives the
 projective gap. `square`
 
-### Theorem 21.14 (odd-dimensional rooted relation-form quotient)
+### Theorem 21.14 (all-dimensional rooted relation-form quotient)
 
-For odd `m`, two ordered linear-label tuples have identical triples
+For every `m>=1`, two ordered linear-label tuples have identical triples
 
 ```math
 (G(\mathbf a),\mathcal R(\mathbf a),
@@ -8194,7 +8196,7 @@ isomorphism of their spans, and equality of `G` makes it an isometry. The
 rooted coset says exactly that membership of `omega` agrees and that the
 isometry fixes `omega` whenever it is present.
 
-Because `m` is odd, `omega dot omega=1` and
+For odd `m`, `omega dot omega=1` and
 `H=omega^perp` is nondegenerate alternating. Every vector decomposes
 uniquely as
 
@@ -8205,9 +8207,37 @@ u=(u\cdot u)\omega+h(u),\qquad h(u)\in H.               \tag{21.70}
 The rooted condition makes `h(u)->h(phi(u))` well defined on the projected
 span; Gram preservation makes it symplectic. The symplectic Witt extension
 lemma extends it to `S in Sp(H)`. Then
-`O(c omega+h)=c omega+Sh` is the required orthogonal extension. Conversely,
-every orthogonal map fixes the characteristic vector `omega`, since
-`x dot x=omega dot x` characterizes it, and therefore preserves (21.69).
+`O(c omega+h)=c omega+Sh` is the required orthogonal extension.
+
+For even `m`, choose
+
+```math
+V=\langle e,\omega\rangle\perp W,
+\qquad e\cdot e=e\cdot\omega=1,                         \tag{21.70a}
+```
+
+with `W` nondegenerate alternating. Every orthogonal map has, and every
+choice of the displayed parameters defines, the form
+
+```math
+\begin{aligned}
+T(\omega)&=\omega,\\
+T(w)&=Sw+(t\cdot Sw)\omega,\\
+T(e)&=e+t+c\omega,
+\end{aligned}                                           \tag{21.70b}
+```
+
+where `S in Sp(W)`, `t in W`, and `c in F_2`. If `omega` is absent from a
+label span, first adjoin it on both sides; the rooted condition makes this a
+well-defined isometric extension. The induced partial isometry on `W`
+extends by the symplectic Witt lemma. Nondegeneracy of `W` then chooses `t`
+to realize the remaining linear `omega`-coefficient, and `c` matches one
+odd vector if present. Formula (21.70b) therefore extends the original span
+isometry. The audited all-parity draft records the explicit substitution.
+
+Conversely, every orthogonal map fixes the characteristic vector `omega`,
+since `x dot x=omega dot x` characterizes it, and therefore preserves
+(21.69).
 
 Applying `O` simultaneously to both Walsh coordinates is a permutation of
 the Boolean cube, preserves `W`, and conjugates every `C_(a_i)` to
@@ -8218,6 +8248,144 @@ This is a strict structured quotient, but not an independently composable
 one. Gluing two tuples creates cross-Gram values and cross-relations not
 determined by their isolated states. Those missing fibres are a concrete
 form of composition-created information.
+
+### Theorem 21.15 (rooted bilinear amalgamation)
+
+For a label tuple `a=(a_1,...,a_k)`, let
+
+```math
+\alpha:F_2^k\to F_2^m,
+\quad \alpha(c)=\sum_i c_i a_i,
+\quad R_a=\ker\alpha,
+\quad U_a=F_2^k/R_a.                                    \tag{21.71}
+```
+
+For two tuples `a,b`, their isolated states from (21.69) become exactly
+composable after supplying three relative objects:
+
+```math
+\begin{aligned}
+\kappa([c],[d])&=(\alpha c)\cdot(\beta d),\\
+J_{ab}&=\ker\{U_a\oplus U_b\to F_2^m,
+                  (u,v)\mapsto\bar\alpha u+\bar\beta v\},\\
+Z_{ab}^{\times}&=\{(u,v):\bar\alpha u+\bar\beta v=\omega\}.
+\end{aligned}                                           \tag{21.72}
+```
+
+Indeed the concatenated rooted state is reconstructed by
+
+```math
+\begin{aligned}
+G_{a\sqcup b}((c,d),(c',d'))
+ &=G_a(c,c')+G_b(d,d')\\
+ &\quad+\kappa([c],[d'])+\kappa([c'],[d]),\\
+R_{a\sqcup b}
+ &=\{(c,d):([c],[d])\in J_{ab}\},\\
+Z_{a\sqcup b}
+ &=\{(c,d):([c],[d])\in Z_{ab}^{\times}\}.             \tag{21.73}
+\end{aligned}
+```
+
+Conversely, given the two marked isolated states, their combined rooted
+state determines all three objects in (21.72). Thus (21.72) is the minimal
+relative datum for a lossless **orbit-complete** carrier. Composition is
+associative on presented actual spans:
+
+```math
+(U_a\oplus U_b)/J_{ab}
+\simeq\operatorname{span}(\mathbf a,\mathbf b),         \tag{21.74}
+```
+
+and every parenthesization pulls back the same form, kernel, and inverse
+image of `omega` from the map `direct-sum_i U_i -> F_2^m`.
+
+#### Proof
+
+The concatenated coefficient map is
+`gamma(c,d)=alpha(c)+beta(d)`. Expanding `gamma(c,d) dot gamma(c',d')`
+proves the Gram formula; its zero and `omega` fibres are exactly the last two
+formulas. Theorem 21.14 turns equality of the reconstructed state into a
+global Walsh-coordinate conjugacy. Conversely, the off-diagonal Gram block
+descends to `kappa`, while the images of the combined relation and root
+fibres in `U_a direct-sum U_b` are `J_ab` and `Z_ab^times`. Associativity is
+the first isomorphism theorem applied to the one accumulated coefficient
+map. `square`
+
+The theorem classifies actual realizations. It does not claim that every
+abstract amalgamation datum embeds in a prescribed ambient dimension, nor
+that every bit is distinguished by one fixed scalar graph maximum.
+
+### Theorem 21.16 (quadratic cross-memory and a ternary obstruction)
+
+The three resources in (21.72) are independent, and orbit-complete gluing
+can require quadratically many bits.
+
+1. If odd `m>=2(r+s)+1`, there are fixed isolated states, fixed `J=0`, and
+   empty root fibre realizing all `2^(rs)` cross forms. Hence `rs` cross bits
+   are necessary.
+2. If odd `m>=2r+1`, there are fixed isolated states, zero cross form, and
+   empty root fibre realizing `|GL(r,2)|` different intersection
+   correspondences. Hence
+
+```math
+\log_2|GL(r,2)|=r^2+O(1)                                \tag{21.75}
+```
+
+   intersection bits are sometimes necessary.
+3. The combined root fibre is not determined by the other two resources.
+4. Complete pairwise amalgamation data does not determine a multi-piece
+   composite: three singleton pieces can agree in every singleton and pair
+   state while differing by a ternary relation.
+
+At least one intersection bit is semantically visible at the full leading
+scale: the two three-block Walsh path systems of Theorem 21.12 have identical
+isolated piece states, cross form, and root fibre when the endpoints are one
+piece and the middle is the other, but their maxima differ by at least
+
+```math
+{7-3\sqrt3\over2}n^{3/2}.                               \tag{21.76}
+```
+
+#### Proof
+
+In `H=omega^perp`, choose a symplectic basis `(p_i,q_i)`. Fix
+`a_i=p_i` and, for any binary `r by s` matrix `K`, take
+
+```math
+b_j^K=p_{r+j}+\sum_iK_{ij}q_i.                           \tag{21.77}
+```
+
+Private `p_(r+j)` coordinates make the second tuple independent and
+disjoint from the first; both internal Gram forms vanish, while
+`a_i dot b_j^K=K_ij`. This proves the first claim.
+
+For the second, keep `a_i=p_i` and let
+`b_j^P=sum_i P_ij p_i` for `P in GL(r,2)`. Every internal and cross Gram
+form vanishes, but
+
+```math
+J_{ab}^P=\{(Pv,v):v\in F_2^r\}.                          \tag{21.78}
+```
+
+The standard product formula for `|GL(r,2)|` gives (21.75). For root
+independence at odd `m>=5`, use
+`a=e_1+e_2`, `b^+=omega+a`, and `b^-=e_3`: all unrooted relative data agree,
+but only `a+b^+` equals `omega`.
+
+Finally choose totally isotropic independent `p_1,p_2,p_3`. The triples
+
+```math
+(p_1,p_2,p_1+p_2),\qquad(p_1,p_2,p_3)                  \tag{21.79}
+```
+
+agree on every singleton and pair amalgam but only the first has the ternary
+relation summing to zero. The path example is exactly the coincidence
+collision already proved in Theorem 21.12. `square`
+
+Thus the accumulated presented span, rather than a collection of pairwise
+edge labels, is the dynamic memory that makes future coincidences meaningful.
+Its `O(t^2)`-bit state is still strictly smaller than `mt` raw label bits
+when a length-`t` word satisfies `t=o(m)`.
 
 ## 22. Finite-port response dimension
 

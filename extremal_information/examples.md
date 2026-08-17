@@ -1789,14 +1789,31 @@ What fails is the tempting Gram/commutation quotient used alone.
 
 ## Example 79: a rooted relation form is an exact Walsh orbit state
 
-In odd label dimension, the binary Gram form and relation kernel still omit
+In every label dimension, the binary Gram form and relation kernel can omit
 whether a label combination equals the characteristic vector
 `omega=(1,...,1)`. A single Walsh-rooted future sees that omitted bit with an
 `n^(3/2)/6` response gap.
 
-Adding the rooted relation coset closes the classification: Gram, kernel,
-and `omega`-coset determine an ordered label tuple up to the full orthogonal
+Adding the rooted relation coset closes the classification in both parities:
+Gram, kernel, and `omega`-coset determine an ordered label tuple up to the full orthogonal
 group. The resulting `O(k^2)`-bit state is an exact Boolean-extremal quotient
 for every graph on `k` Walsh blocks, independently of the ambient label
 dimension. It is nevertheless not separately reusable under gluing, because
 cross-Gram values and mixed relations are newly created at the interface.
+
+## Example 80: Walsh gluing is a rooted bilinear amalgam
+
+Two independently summarized linear-label pieces become exactly composable
+after supplying three relative objects: their cross bilinear form, the graph
+of coincidences between their presented spans, and the fibre of pairs that
+sum to the characteristic root. These data reconstruct the combined Gram,
+relation, and root state by linear algebra and compose associatively on the
+accumulated presented span.
+
+The price is real. Fixed isolated states realize every one of `2^(rs)` cross
+forms, and a separate family realizes `|GL(r,2)|=2^(r^2+O(1))` different
+intersection correspondences with zero cross form. Worse, all singleton and
+pair amalgams can agree while a ternary relation differs. Dynamic memory is
+therefore the accumulated span, not an edge-local compatibility label. The
+state remains strict--`O(t^2)` rather than `mt` bits when `t=o(m)`--but it
+does not compose for free.
