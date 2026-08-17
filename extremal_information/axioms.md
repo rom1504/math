@@ -2113,3 +2113,60 @@ independently writable bits or `2^K` realizable states.
 This distinction is decisive in the multi-selector PC.3 theorem:
 `K=N^c` proves `Theta(log N)` information, while independent multiplexing
 and one-parent realization of every query remain separate questions.
+
+## 113. Large orientation-pure near-top algebras are universal
+
+A bounded quadratic cap alone forces an affine coordinate cube of dimension
+`n/q` whose entire energy lies on one side within relative error `8/q`.
+The same cube is odd-product closed and supplies a one-sided star-selector
+response law.  Thus near-top entropy, affine closure, and coherent
+orientation—even simultaneously and at nearly linear dimension—are not
+near-minimizer rigidity.
+
+The selective resource must involve how such a chart is exposed by a
+scale-controlled physical continuation or how charts chosen at different
+orders are made congruent.  Treating algebraic shell existence as the
+missing synchronization theorem is now falsified.
+
+## 114. Static affine richness and physical balance are different resources
+
+The universal affine chart has one selected endpoint of only linear field
+mass, but its full exact-sign endpoint language contains mass `Theta(np)`.
+Scalar microcanonical balancing collapses every competitor toward the
+selected line at the cost of the ordinary random-bridge residual
+`Theta(n sqrt p)`.  That residual is subleading for one near-order step but
+does not accumulate through vanishing relative steps.
+
+Accordingly a small declared response grammar is not yet a reusable parent
+state.  The missing operation must cancel residual bridge channels jointly
+against child energy or correlate different scales globally; separately
+paid Lipschitz error cannot supply it.
+
+## 115. Unrooted response entropy can hide rooted optimizer information
+
+A landscape can have only a few scalar values under a context family while
+using many distinct exposed affine witnesses to realize them.  Conversely,
+affine functions can be far apart in the uniform contextual metric while a
+small subset approximates their upper envelope by domination.
+
+Therefore scalar response histograms, metric nets of all exposed functions,
+and approximate upper-envelope covers are three different invariants.  A
+composable extremal state must preserve the last object together with its
+update congruence; neither of the first two is a safe proxy.
+
+## 116. A short designed atlas is not yet a common contextual quotient
+
+Near-minimality can force an existential union of large affine response
+charts with a subquadratic labelled presentation and vanishing normalized
+error.  The centres, gauges, supports, and therefore the query languages may
+still depend on the signing.  Such an atlas compresses a genuine one-block
+experiment without identifying corresponding states across two landscapes
+or across orders.
+
+The missing resource is transition information: a common exogenous language
+or a compressed rule that transports one signing-dependent chart to the
+next.  Within-chart entropy cannot supply this rule.  Mixed Walsh
+orientations show that first-marginal balance and chartwise one-sidedness do
+not determine it, while a separately paid linear residual loses the leading
+scale.  Designed-interface compression and reusable congruence must remain
+separate claims.

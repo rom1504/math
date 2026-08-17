@@ -889,3 +889,44 @@ Counterexamples impose four mandatory qualifications:
 4. full amplitude-`n` pinning may retain linear information even inside a
    near-minimizer halo, so any positive transfer must declare a balanced,
    low-cap context class rather than silently answering the full landscape.
+
+## 16. Frontier after the multiscale affine-shell theorem
+
+The previous selector-coercivity target must be revised twice.
+
+First, an exact-sign vanishing spectral-roof defect already forces the
+conjectural constant `1/2`; it is not demonstrably weaker than the original
+problem.  Second, FB.1 first-marginal balance alone cannot choose one
+spectral orientation, as the Walsh exact-shell example shows.
+
+At the same time, Theorem 36.7 proves something stronger than the proposed
+cap-relative shell algebra for **every** bounded-cap signing: an
+orientation-pure affine cube of dimension `n/q`, with one-sided selector
+error `8Q/q`.  Thus neither shell entropy nor coherent odd-product closure
+is the remaining near-minimizer property.
+
+The narrow unresolved alternatives are now:
+
+1. **Joint physical cancellation.**  Can a balanced exact-sign bridge be
+   chosen so its omitted channels cancel against the quadratic child before
+   absolute values, beating the separately paid `n sqrt s` residual on a
+   fixed-ratio interface?
+2. **Cross-level congruence.**  Can favorable affine charts be selected by a
+   rule whose gauges and response fibres survive composition, rather than
+   being recomputed independently at every order?
+3. **Low-cap incompressibility.**  Can the linear pinned-response packing in
+   the genuine near-minimizer halo be compiled into bounded-cap all-spins-free
+   contexts, proving that even near-minimizers retain an extensive response
+   rate?
+
+None currently qualifies as a proved strict reduction.  Projection plus
+separately paid residuals is under an explicit target-scale audit; any
+positive formulation must state the joint cancellation or nonlinear
+congruence rather than hide it inside “contracting fibres.”
+
+Theorem 36.9 sharpens the second alternative.  Every exact minimizer already
+has a balanced atlas of `O(n^(1/3))` signing-dependent charts, each with
+`Theta(n^(5/6))` affine dimensions and `O(n^(4/3))` one-block response
+error.  The next theorem must therefore compress **cross-chart transition
+data** or give a common low-cap physical context.  More within-chart shell
+states, even with a common orientation, do not advance this question.

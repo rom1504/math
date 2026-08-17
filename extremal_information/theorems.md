@@ -15135,3 +15135,288 @@ Proof, primary-source mapping, and independent audit are in
 [`drafts/nearmin_spectral_harmonic_report.md`](drafts/nearmin_spectral_harmonic_report.md)
 and
 [`drafts/nearmin_level5_theorem_independent_audit.md`](drafts/nearmin_level5_theorem_independent_audit.md).
+
+### Theorem 36.5 (deep-hole shell balance forces global edge geometry)
+
+Use the augmented-cut-code dictionary
+
+```math
+M_n=N-2\rho(C_n),\qquad N={n\choose2}.
+```
+
+If a shell law from Theorem 36.2 has normalized signed edge barycentre
+`N^(-1)sum_e|m_e|<=delta`, two independent shell words `Z,Z'` satisfy
+
+```math
+0\le \mathbb E R(Z,Z')={1\over N}\sum_em_e^2\le\delta,
+\qquad
+R(Z,Z')=1-{2d_H(Z,Z')\over N}.                   \tag{36.18}
+```
+
+Consequently the shell has Hamming diameter at least
+`(1-delta)N/2`.  For an exact minimizer with the explicit
+`kappa=n^(-1/6)` law, this is
+
+```math
+\left(1-O(n^{-1/6})\right){N\over2}              \tag{36.19}
+```
+
+inside excess code radius `n^(4/3)`.
+
+The cardinality theorem also has a metric strengthening.  If its excess
+radius `r` obeys `r/(n log n)->infinity`, the same shell contains
+
+```math
+\exp(\Omega(r/n))
+```
+
+codewords at mutual edge-Hamming distance `Omega(r/log n)`.  This is raw
+carrier geometry, not contextual response separation.
+
+The usual uniformly-packed-code shortcut is unavailable.  The augmented
+cut code has external distance `N/2-O(n)`, while its covering radius is at
+most `N/2-O(n^(3/2))`; hence the equality needed for uniform packing fails
+by `Omega(n^(3/2))`.  Deep cosets already have nonconstant leader
+multiplicities `3,4,7` at order seven.  Proof, literature mapping, and
+independent audit are in
+[`drafts/nearmin_deep_hole_shell_report.md`](drafts/nearmin_deep_hole_shell_report.md)
+and
+[`drafts/nearmin_deep_hole_shell_audit.md`](drafts/nearmin_deep_hole_shell_audit.md).
+
+### Theorem 36.6 (two sharp limits of shell-to-spectral synchronization)
+
+First, an exact-sign spectral-roof selector lemma is too strong to be a
+strict convergence reduction.  If exact signings `A,B` obey
+
+```math
+d_\square(A,B)\le h,
+```
+
+and one Boolean selector of `B` has defect `beta` relative to a roof
+`r>=||B||_(2->2)`, then
+
+```math
+\boxed{Q(A)\ge {1-\beta\over2}n\sqrt{n-1}-h.}     \tag{36.20}
+```
+
+Thus `beta=o(1)` and `h=o(n^(3/2))` for every exact minimizer would already
+prove the conjectural limit `1/2`, not merely convergence to an unknown
+constant.  The Frobenius identity for exact signings is the obstruction;
+weighted cores evade this particular implication but lack an all-order
+realization theorem.
+
+Second, optimal first-marginal shell balance does not supply a coherent
+spectral side.  At Walsh orders `N=2^(2m)` there is a hollow signing of cap
+`N^(3/2)/2` with an exact active augmented-cut law whose normalized edge
+bias is the minimum possible `sqrt(N)/(N-1)`, yet a
+`Theta(log N)`-port majority selector has spectral defect
+`1-O(1/log N)` (and defect exactly one on an infinite subsequence).  A
+different orientation-pure sublaw has exact odd-product closure and defect
+`O(N^(-1/2))`.  Hence the missing datum is coherent product orientation,
+not another first-moment estimate.  This Walsh falsifier is Level 4 because
+its cap is not known to be `o(1)`-near-minimal.
+
+The two audited conclusions respectively falsify exact-sign spectral-roof
+coercivity as a demonstrably weaker SML and the generic arrow
+“FB.1 balance implies selector coercivity.”  Details are in
+[`drafts/selector_roof_assumption_gap.md`](drafts/selector_roof_assumption_gap.md),
+[`drafts/selector_roof_assumption_gap_audit.md`](drafts/selector_roof_assumption_gap_audit.md),
+and
+[`drafts/shell_to_selector_coercivity.md`](drafts/shell_to_selector_coercivity.md).
+
+### Theorem 36.7 (universal multiscale orientation-pure affine shells)
+
+Let `A` be any hollow signing of order `n`, let `Q=Q(A)`, and let
+`2<=q<=n`.  There are an absolute ground state `x`, an orientation
+`rho in {+-1}`, and a set `I` with `|I|>=floor(n/q)` such that
+
+```math
+\boxed{
+\rho H_A(x^S)\ge\left(1-{8\over q}\right)Q
+\quad\hbox{for every }S\subseteq I.}             \tag{36.21}
+```
+
+The `2^|I|` spins are projectively distinct and closed under every odd
+coordinatewise product.  The proof combines three exact budgets.  After
+orienting and switching at `x`, the nonnegative local fields sum to `2Q`;
+on every vertex partition, the negative one-sided caps of the principal
+blocks sum to at most `Q`; and a subset-edge sum in one block is bounded
+below by minus that block's negative cap.  Averaging
+`2` times local-field mass plus `4` times negative block cap gives the
+constant eight.
+
+Consequently every bounded-cap sequence and every `q_n->infinity` has an
+orientation-pure affine cube of dimension `floor(n/q_n)` in normalized
+shell width `O(1/q_n)`.  Equivalently, a shell of absolute budget `Delta`
+in the stated nontrivial range contains an affine cube of dimension at
+least
+
+```math
+\left\lfloor {n\Delta\over16Q}\right\rfloor.      \tag{36.22}
+```
+
+For `Q=O(n^(3/2))`, this is
+`log|S_Delta|=Omega(Delta/sqrt n)`.  A constant-distance mask subcode gives
+`exp(Omega(n/q_n))` same-orientation cut words at mutual edge distance
+`Theta(n^2/q_n)`.
+
+There is also a growing one-sided response law.  An even subset of `I`
+defines the star frame consisting of `x` and its single-coordinate flips.
+Every majority endpoint selector lies back in the affine cube, and
+
+```math
+0\le Q+m||W\epsilon||_1
+-\max_y\{H_(\rho A)(y)+m(W\epsilon)\mathbin\cdot y\}
+\le {8Q\over q}                                      \tag{36.23}
+```
+
+for every `m>=0` and endpoint `epsilon`.  Conditional on the declared
+gauge, this nearly linear language has an `O((n/q)log n)`-bit star
+presentation.
+
+This is a new universal Level-5 response benchmark, not near-minimizer
+rigidity.  It proves that vanishing-width entropy, odd-product closure, and
+common orientation are too generic to identify the minimizers.  Its raw
+physical frame has an endpoint of order `n^2/q`; balanced scalar compilation
+retains the ordinary `n^(3/2)/sqrt q` random-bridge error and has no
+cross-level congruence.  Proof and independent verification are in
+[`drafts/multiscale_partition_affine_shell.md`](drafts/multiscale_partition_affine_shell.md),
+[`drafts/multiscale_partition_affine_shell_audit.md`](drafts/multiscale_partition_affine_shell_audit.md),
+and
+[`experiments/verify_multiscale_partition_affine_shell.py`](experiments/verify_multiscale_partition_affine_shell.py).
+
+### Theorem 36.8 (multi-anchor compilation and its projection ceiling)
+
+The favorable coordinate support in Theorem 36.7 can be chosen commonly
+for any finite family.  On one equitable `q`-cell partition and for
+signings `A^(1),...,A^(t)`, one cell of size at least `floor(n/q)` has,
+for every child, one-sided affine defect at most
+
+```math
+{8\sum_(u=1)^tQ(A^(u))\over q}.                 \tag{36.24}
+```
+
+Thus coordinate support is compatible for `t=o(q)` bounded-cap children;
+their gauges and mixed-field responses need not be.
+
+There is also a genuinely multi-anchor exact-sign compiler.  Partition an
+`s`-vertex shore into `d` nonempty cells, let `P` average inside each cell,
+and prescribe every old-row sum in every cell.  Some exact sign bridge `B`
+realizes all those sums and obeys
+
+```math
+\max_(\eta\in\{+-1\}^s)||B\eta-BP\eta||_1
+\le C\sqrt{n(s-d)(n+s)}.                         \tag{36.25}
+```
+
+All block-constant endpoints are therefore preserved jointly rather than
+as separately paid scalar channels.
+
+The natural projection architecture nevertheless has a sharp target-scale
+ceiling.  For every rank-`d` orthogonal projection `P` and every exact sign
+bridge,
+
+```math
+\boxed{
+\max_\eta||B(I-P)\eta||_1
+\ge {ns-||BP||_F^2\over\sqrt{2s}}.}              \tag{36.26}
+```
+
+If `P` has a Boolean orthonormal anchor basis whose bridge images each have
+`l_1` norm at most `Ln`, then
+
+```math
+\max_\eta||B(I-P)\eta||_1
+\ge n\sqrt{s/2}\left(1-{dL^2n\over s^2}\right). \tag{36.27}
+```
+
+At fixed shore ratio, a sublinear number of balanced linear anchors hence
+leaves an `Omega(n^(3/2))` channel whenever that channel is paid separately
+by trust-response Lipschitzness.  This is not a lower bound on the actual
+parent cap and not an information-theoretic impossibility theorem: joint
+child--bridge cancellation before absolute values, or a nonlinear
+cross-level congruence, remains outside its scope.
+
+Proof and audit are in
+[`drafts/multiscale_partition_composition_audit.md`](drafts/multiscale_partition_composition_audit.md)
+and
+[`drafts/multiscale_partition_composition_independent_audit.md`](drafts/multiscale_partition_composition_independent_audit.md).
+
+### Theorem 36.9 (every exact minimizer has a balanced affine atlas)
+
+Let `A` be a hollow signing of cap `Q`.  For a signed cut
+`z(sigma,x)` of deficit
+
+```math
+d=Q-\langle a,z(sigma,x)\rangle,
+```
+
+switch and orient at `(sigma,x)`, and let `ell_i` be the resulting local
+fields.  Their total negative mass satisfies
+
+```math
+\boxed{\sum_i(-\ell_i)_+\le2\sqrt{Qd}.}             \tag{36.28}
+```
+
+Consequently, for every `2<=q<=n`, the original atom lies in an affine
+chart of dimension `floor(n/q)` on which every atom retains the same
+orientation and has deficit at most
+
+```math
+d+{8Q+4\sqrt{Qd}\over q}.                           \tag{36.29}
+```
+
+This thickening is performed in place; it does not apply a local-ascent map
+and hence does not move the centre's edge word.
+
+Suppose a shell law has deficit at most `d_0` and normalized signed edge
+bias at most `delta`.  For every `K,q`, there is an existential atlas of at
+most `K` such charts whose uniform chart-and-mask law has bias at most
+
+```math
+\delta+K^{-1/2}+{2\lfloor n/q\rfloor\over n-1},      \tag{36.30}
+```
+
+and whose atoms have deficit at most
+
+```math
+D(q,d_0)=d_0+{8Q+4\sqrt{Qd_0}\over q}.              \tag{36.31}
+```
+
+Each chart also gives a declared one-block response language.  If `W_r`
+is the star frame formed from its centre and an even set of singleton
+flips, then for every endpoint `epsilon` and `m>=0`,
+
+```math
+0\le Q+m\|W_r\epsilon\|_1
+-\max_y\{\sigma_rH_A(y)+m(W_r\epsilon)\mathbin\cdot y\}
+\le D(q,d_0).                                         \tag{36.32}
+```
+
+The same estimate holds for the common absolute trust response after
+maximizing over the quadratic sign.
+
+Applying Theorem 36.2 to an exact minimizer with
+
+```math
+\kappa=n^{-1/6},\qquad K=\lceil n^{1/3}\rceil,
+\qquad q=\lceil n^{1/6}\rceil
+```
+
+gives, at every sufficiently large order, at most `O(n^(1/3))` charts of
+dimension `Theta(n^(5/6))`, normalized atlas bias `O(n^(-1/6))`, and
+common-oriented shell and declared-response error `O(n^(4/3))`.  A direct
+labelled presentation costs `O(n^(4/3))` bits while generating
+`exp(Theta(n^(5/6)))` endpoints per chart.
+
+This is a strict, Level-5, signing-dependent **designed-interface
+certificate**.  It is not an efficient encoder, a common exogenous query
+quotient, a mixed-chart response theorem, or a reusable cross-order
+congruence.  Walsh mixed orientations falsify the generic cross-chart
+implication, while Theorem 36.8 obstructs separately paying the omitted
+linear channel at fixed shore ratio.  Proof, finite verification, and
+independent audit are in
+[`drafts/nearmin_balanced_affine_atlas.md`](drafts/nearmin_balanced_affine_atlas.md),
+[`experiments/verify_nearmin_balanced_affine_atlas.py`](experiments/verify_nearmin_balanced_affine_atlas.py),
+and
+[`drafts/nearmin_balanced_affine_atlas_audit.md`](drafts/nearmin_balanced_affine_atlas_audit.md).

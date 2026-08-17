@@ -2942,3 +2942,49 @@ hypothesis; see
 [`experiments/nearmin_blind_observable_freeze.md`](experiments/nearmin_blind_observable_freeze.md)
 and
 [`drafts/nearmin_blind_structural_audit.md`](drafts/nearmin_blind_structural_audit.md).
+
+## Example 153: shell balance can mix incompatible spectral orientations
+
+The quadratic Walsh matrix has an exact active family of bent Boolean
+eigenvectors split between its positive and negative spectral sides.  The
+uniform augmented-cut law on that family has asymptotically optimal vanishing
+edge bias.  Three atoms of mixed orientation nevertheless have a majority
+selector of zero quadratic energy, and a logarithmic-port version has
+normalized selector energy `O(1/log n)`.  Restricting to the even-orientation
+subgroup restores exact odd-product closure and near-unit selector energy.
+
+Thus first edge marginals do not see the orientation word carried by a
+Fourier-product algebra.  This is a structured bounded-cap falsifier, not a
+certified near-minimizer counterexample.
+
+## Example 154: local response roofs of finite minimizers need not be small
+
+An exact enumeration of edge-edit contexts through radius three compared 45
+order-7 through order-11 signings.  At radius three, exact and one-step-near
+matrices had at least the random-control median exact-cover rate and optimizer
+mutual information at every order.  The order-ten exact sample needed all
+120 exposed witnesses for its exact roof, versus a random median of 36.
+
+The scalar cap-change histogram points in the opposite direction: it is
+simpler on the exact sample.  Moreover the exposed affine functions are all
+pairwise more than four apart while their upper envelopes often have
+tolerance-four covers of only 5--21 witnesses.  Approximate envelope
+domination and metric clustering are therefore different resources.  This
+is finite evidence; fixed edit radii have only polynomially many contexts.
+The frozen protocol and verifier are in
+[`drafts/nearmin_radial_response_audit.md`](drafts/nearmin_radial_response_audit.md).
+
+## Example 155: near-top affine closure is universal, not selective
+
+The finite minimizer sample often contains an affine parallelogram already
+in its exact active face, while random controls typically need a small
+positive deficit.  That apparent distinction disappears asymptotically at
+the natural scale.  Theorem 36.7 gives every bounded-cap signing an
+orientation-pure affine cube of dimension `n/q` in relative shell width
+`8/q`; taking `q=log^2 n` gives dimension `Theta(n/log^2 n)` at vanishing
+width.
+
+Hence shell cardinality, affine parallelograms, odd-product closure, and even
+common energy orientation do not by themselves diagnose near-minimality.
+The remaining distinction must concern physical query balance or reuse of
+the selected chart across scale.

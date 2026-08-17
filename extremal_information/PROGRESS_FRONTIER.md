@@ -29,20 +29,26 @@ on convergence.
 near-minimality
   --[PROVED: eta-thick fractional shell balance; FB.1]-->
 one common low-bias near-top law
-  --[MISSING L_sync]-->
-edit-thick collective selector coercivity for a nonvacuous log-port language
-  --[PROVED conditionally; Theorems 21.50, 21.53, 21.54]-->
-o(n^(3/2)) composable transfer
+  --[FALSIFIED GENERICALLY: Walsh mixed orientations; SC.1]--X
+spectral-roof selector coercivity
+  --[TOO STRONG for exact-sign cores: SR.1 forces limit 1/2]--X
+strict reduction
+
+bounded cap
+  --[PROVED universally: MP.3; Level-5 atlas: AA.1--AA.4]-->
+large orientation-pure affine charts / balanced affine atlas
+  --[MISSING cross-chart transition + physical congruence]-->
+o(n^(3/2)) fixed-ratio transfer
   --[MISSING all-order/cross-size step]-->
 convergence
 ```
 
-**Current SML L_sync:** prove that the `eta`-thick low-bias shell law forced
-by FB.1 has, after `o(n^(3/2))` response residual, joint selector defect
-`f(epsilon)+o(1)` on one nonvacuous `O(log n)` port language.  This is
-strictly narrower than the baseline request to identify any collective `P`.
-Coordinatewise balance alone is known insufficient, so the missing content
-is a joint Fourier/selector quadratic form, not another first moment.
+**Current SML status:** the old exact-sign `L_sync` is retired.  Within-chart
+one-sided selector response is now universal, while generic cross-chart
+mixing is false.  The smallest honest positive question is whether the
+near-minimizer atlas admits a compressed **transition/coherence law** which
+survives a low-cap physical compiler.  No current formulation of that law
+has yet been shown strictly weaker than fixed-ratio bridge optimization.
 
 ### Route R2: near-minimizer contextual incompressibility
 
@@ -60,7 +66,9 @@ rare-event / adversarial-statistical-mechanics limit theory
 exact-sign parents whose *whole cap* is `O(n^(3/2))`, or prove that the
 intended transfer must answer amplitude-`n` pinned fields.  Full pinning uses
 a `Theta(n^2)` common baseline and therefore does not yet obstruct the
-balanced low-cap interface.
+balanced low-cap interface.  The exact finite radial audit gives no evidence
+that near-minimizers have a smaller rooted response roof; fixed radius is
+asymptotically too small to settle `L_pack`.
 
 ### Route R3: near-minimizer response replacement
 
@@ -82,30 +90,33 @@ landscape.
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
 |---|---:|---:|---:|---|---:|---|
-| R1 collective synchronization | 5 (necessary law), 4.x (sufficient algebra) | shell law has an `O(Kn)` sampled presentation; desired state `o(n)` | FB bias `O(sqrt(epsilon))`; transfer loss still unknown | FB all orders; algebra tensor subsequences | 3 for FB, 0 for current sufficient class | RESET: FB.1 crosses to genuine near-minimizers; bridge to joint coercivity missing |
+| R1 collective synchronization | 5 for FB, MP, and the audited atlas | MP chart `O((n/q)log n)` bits conditional on gauge; exact-minimizer atlas `O(n^(4/3))` direct bits | within-chart `O(n^(4/3))`; physical fixed-ratio loss unknown | all orders | 4 for the signing-dependent one-block atlas, but 0 for physical congruence | RESET then FALSIFIER: the atlas is designed, not common; Walsh kills generic mixing; spectral roof is too strong |
 | R2 contextual incompressibility | 5 for pinned queries; 4.x for low-cap physical contexts | `Omega(n)` pinned bits; one physical hidden bit; Phase-I one-hot family has `Theta(log N)` message bits | `Theta(kappa n^(3/2))` pinned; fixed physical PC.3 gap | pinned all orders; physical structured subsequences | 4 pinned, 0 physical | RESET: pinned packing narrows `L_pack`; balanced physical packing remains open |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
 | adversarial statistical mechanics | 2/3 | finite at fixed width | vanishing density error | all chain lengths | 1 | keep warm |
 
-## Selected near-minimality lemmas (maximum two)
+## Candidate near-minimality lemmas after severe selection (maximum two)
 
-1. **L_sync (primary): edit-thick collective selector coercivity.**  Every
-   `epsilon`-near-minimizer has an `o(n^(3/2))` response core with
-   `||B||=Theta(sqrt n)` and joint selector defect
-   `f(epsilon)+o(1)` on a nonvacuous `O(log n)` port language, with
-   cumulative defect `o(1)`.  If proved, existing response theorems give
-   `o(n^(3/2))` error with (for example) `O(log^3 n)` bits.
-2. **L_fibre (secondary): sparse recurrent memory.**  After
-   `[f(epsilon)+o(1)]n^(3/2)` residual, the relevant max maps admit a common
-   transported law with fixed contraction and `o(n)` terminal, centred, and
-   recurrent-cohomology information.  This permits persistent hidden bits
-   rather than requiring every defect to vanish.
+1. **L_transition (positive, not yet promoted): affine-atlas transition
+   coherence.**  Refine the FB/AA atlas so selectors using ports from
+   different charts are controlled by `o(n^2)` transition information and
+   `o(n^(3/2))` response error, with an update law under a declared low-cap
+   compiler.  Walsh SC.1 kills this without genuine near-minimizer input;
+   MC.4 kills sublinear linear projections when their residual is paid
+   separately.  The lemma is retained only if a concrete nonlinear
+   transition state is found.
+2. **L_lowcap-pack (negative): balanced physical near-minimizer packing.**
+   Upgrade Theorem 36.3 to a common family of all-spins-free exact-sign
+   contexts of total cap `O(n^(3/2))` which still separates
+   `exp(Omega(n))` halo states by a fixed target-scale gap.  This would prove
+   a relevance ceiling for sublinear response carriers.  Amplitude-`n`
+   pinning has a quadratic baseline, while the Phase-I compiler concerns
+   structured non-minimizers; those are the exact remaining gaps.
 
-Both are `eta`-thick and switching invariant.  The geodesic planted face
-falsifies thinner shell statements; mesoscopic clique implants falsify
-unpeeled spectral versions.  Finite-type replacement is no longer in the
-top two.
+The former spectral-roof `L_sync` and semantic contracting-fibre `L_fibre`
+are not selected.  The first is too strong; the second has no frozen carrier
+class and risks restating the desired parent optimization.
 
 ## Campaign checkpoints
 
@@ -142,3 +153,37 @@ top two.
   rigidity all fail on certified exact/near-minimizers.
 - **Decision:** **RESET.**  A Level-5 implication is proved and the SML is
   materially narrower.  Do not count shell cardinality as a carrier.
+
+### Checkpoint 2 — universal affine shells and the synchronization ceiling
+
+- **Strongest new statements:** (i) every bounded-cap signing has an
+  orientation-pure affine cube of dimension `floor(n/q)` in relative shell
+  width `8/q`, with a one-sided star-selector response law; (ii) FB balance
+  thickens, by audited AA.1--AA.4, to `O(n^(1/3))` charts of dimension
+  `Theta(n^(5/6))`, edge bias `O(n^(-1/6))`, and within-chart response error
+  `O(n^(4/3))`; (iii) sublinear balanced linear-anchor projections leave a
+  target-scale separately paid residual at fixed ratio.
+- **Previous SML:** turn FB.1 first-marginal balance into exact-sign
+  spectral-roof selector coercivity.
+- **Current SML:** find a genuinely nonlinear cross-chart transition law
+  with low-cap physical congruence, or prove low-cap contextual packing on
+  the actual near-minimizer halo.
+- **Benchmark level:** remains Level 5, but moves from a necessary marginal
+  law to an explicit audited growing one-block
+  response representation at arbitrary orders.
+- **Assumption-distance:** within-chart response moves `0 -> 4` after the
+  FB/AA atlas implication; the fixed-ratio physical arrow remains at 0.
+- **Asymptotic movement:** universal chart dimension improves from
+  `Theta(sqrt n)` at `O(n)` defect to `Theta(n/log^2 n)` at
+  `O(n^(3/2)/log^2 n)` defect.  The near-minimizer atlas has
+  `O(n^(4/3))` direct bits and `O(n^(4/3))=o(n^(3/2))` declared response
+  error.  No cross-order loss improves yet.
+- **Falsifiers:** FB balance alone fails selector coherence (Walsh); an
+  exact-sign vanishing spectral-roof defect would already prove limit
+  `1/2`; fixed-radius exact minimizers can have *larger* rooted roof
+  complexity than random controls; raw affine frames and sublinear linear
+  projections pay a leading physical channel at fixed ratio.
+- **Decision:** **RESET for structural discovery, STRIKE for the transfer
+  arrow.**  The target assumption gap improved materially, but the new
+  structure is only chartwise.  Do not resume the retired spectral target or
+  call the atlas composable until a cross-chart/physical law is proved.
