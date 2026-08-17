@@ -1088,6 +1088,15 @@ deficit should be promoted again.  The next admissible target must couple
 energy shells across orders or couple spin entropy to bridge-disorder
 geometry in a way not reducible to the scalar pressure curve.
 
+Theorem 37.4 further rules out using the new tail theorem as a proxy for a
+bridge basin: the fixed-small-tilt conference defect survives after
+conditioning on an overwhelming class where every exact-sign output has the
+uniform tail.  The concrete surviving question is to determine the
+large-deviation speed and support edge of low parent pressure over bridge
+disorder.  A useful theorem must show an `exp(-O(n))` favorable basin or a
+joint spin--disorder contraction; an `exp(-Theta(n^2))` isolated optimum
+cannot be recovered by fixed tilt.
+
 ## 22. Root-to-state broadcast at the energy scale
 
 Theorems 36.20--36.22 separate three formerly conflated tasks.  Every

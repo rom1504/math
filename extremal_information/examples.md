@@ -3362,3 +3362,22 @@ subsequence limits.  This finite quadratic model shows exactly why a thin
 tail does not repair scalar pressure compactness.  Its real sparse weights
 are essential to its role as an axiomatic falsifier; it is not a complete
 signing counterexample.
+
+## Example 172: conditioning to thin-tailed conference parents changes no small-tilt rate
+
+For a uniform sign bridge `B` between two order-`r` conference children,
+Hoeffding and a union bound show
+
+```math
+\Pr\{\max_{x,y}|x^TBy|>2r^{3/2}\}
+\le2e^{-(2-2\log2)r}.
+```
+
+On the complementary event every complete parent has cap below
+`2(2r)^(3/2)` and hence the uniform thin tail of Theorem 36.26.  Because the
+discarded probability decays faster than the relevant negative moment for a
+nonempty interval of fixed disorder tilts, conditioning changes no
+exponential soft-minimum rate.  The same positive linear conference defect
+therefore persists inside a class where every output has the new tail
+certificate.  The example separates spin-state entropy from bridge-basin
+entropy; it does not concern arbitrary tilts or pressure-minimizing children.

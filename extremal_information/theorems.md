@@ -16876,3 +16876,73 @@ in
 [`drafts/bounded_cap_thin_tail_pressure_consequence.md`](drafts/bounded_cap_thin_tail_pressure_consequence.md)
 and
 [`drafts/bounded_cap_thin_tail_pressure_consequence_independent_audit.md`](drafts/bounded_cap_thin_tail_pressure_consequence_independent_audit.md).
+
+### Theorem 37.4 (the fixed-small-tilt conference wall survives thin-tail conditioning)
+
+Let `A_r` run through the Paley conference sequence, let `B` be a uniform
+`r`-by-`r` sign bridge, let `epsilon=+-1` be uniform, and put
+
+```math
+S_{\epsilon,B}=\begin{pmatrix}A_r&B\\B^T&\epsilon A_r\end{pmatrix},
+\quad
+L_{\epsilon,B}=\log\overline Z_{2r}
+ \left(S_{\epsilon,B},{\beta\over\sqrt{2r}}\right).       \tag{37.12}
+```
+
+Define the overwhelmingly likely event
+
+```math
+\mathcal E_r=\left\{\max_{x,y}|x^TBy|\le2r^{3/2}\right\}.
+```
+
+Then
+
+```math
+\Pr(\mathcal E_r^c)\le2e^{-(2-2\log2)r},                 \tag{37.13}
+```
+
+and every retained order-`2r` parent is an exact signing with
+
+```math
+Q(S_{\epsilon,B})\le3r^{3/2}<2(2r)^{3/2}.                \tag{37.14}
+```
+
+Thus Theorem 36.26 gives every retained parent one common fixed-rate thin
+tail, for example with width constant `d_2=1/400000`.
+
+Nevertheless, for every `0<beta<sqrt(2)/6`, there is `lambda_*(beta)>0`
+such that every fixed `0<lambda<lambda_*(beta)` obeys
+
+```math
+-{1\over\lambda r}\log
+ \mathbb E\!\left[e^{-\lambda L_{\epsilon,B}}
+                  \mid\mathcal E_r\right]
+ \longrightarrow
+ h_\beta=2\psi(\beta/\sqrt2)+{\beta^2\over4},            \tag{37.15}
+```
+
+whereas the same-temperature conference child target divided by `r` tends
+to `2psi(beta)`.  Their defect is the strictly positive constant
+`gamma(beta)=h_beta-2psi(beta)`.  Conditioning therefore leaves a linear
+same-temperature defect entirely inside the uniformly bounded-cap,
+uniformly thin-tail output class.
+
+The proof combines the audited conference negative-moment asymptotic with
+(37.13).  Since `L>=0`, the discarded negative moment is at most
+`2exp(-(2-2log2)r)`, negligible relative to
+`exp(-lambda h_beta r+o(r))` for
+`lambda<(2-2log2)/(2h_beta)`.
+
+This is a structured actual-signing benchmark, not a no-go for every
+minimizer-specific bridge law: the conference children are not known to
+minimize the contracted-temperature pressure.  It excludes neither larger
+or growing disorder tilt nor a joint spin--disorder state.  An abstract
+sharpness example in the source also shows that a spin-tail rate alone need
+not control the bridge-output basin rate: an isolated favorable output in a
+`Theta(N^2)`-bit disorder cube requires tilt `Omega(N)` to affect an
+order-`N` soft minimum.
+
+Proof and independent audit are in
+[`drafts/thin_tail_entropy_bridge_no_go.md`](drafts/thin_tail_entropy_bridge_no_go.md)
+and
+[`drafts/thin_tail_entropy_bridge_no_go_independent_audit.md`](drafts/thin_tail_entropy_bridge_no_go_independent_audit.md).

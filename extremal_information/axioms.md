@@ -2506,3 +2506,17 @@ endpoint thinness while both their normalized maxima and all positive
 fixed-temperature diagonal pressures oscillate.  A successful thermal route
 must therefore retain a joint cross-order or spin--disorder object; a scalar
 tail rate is not that object.
+
+## 138. Spin-space thinness and disorder-space basin mass are independent resources
+
+The entropy deficit near the ground states of each completed parent says
+nothing by itself about how many bridges produce a favorable parent.  On an
+overwhelming bounded-cap class of random conference completions, every output
+has the same fixed-rate spin tail, yet the audited small-disorder-temperature
+soft minimum retains a linear same-temperature defect.
+
+Thus a thermal composition theorem needs a second rate function: the lower
+tail of parent pressure over bridge disorder, preferably coupled to rooted or
+overlap information in spin space.  Increasing a scalar tilt without such a
+basin theorem merely approaches the original bridge minimization, and a
+thin-tail theorem cannot substitute for it.
