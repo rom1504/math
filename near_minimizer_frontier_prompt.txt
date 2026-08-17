@@ -1,0 +1,701 @@
+Continue the research program in `rom1504/math` from current head:
+
+08d08aa7cea86739ee7537d1f9310d61e6e9f62e
+
+Run a sustained research campaign targeting roughly 8–10 hours of substantive work.
+
+# Ultimate objective
+
+The eventual goal remains proving whether
+
+    M_n / n^(3/2)
+
+converges, where
+
+    M_n = min_A max_x |sum_(i<j) a_ij x_i x_j|.
+
+Do NOT launch a generic direct attack on this theorem.
+
+The current contextual-response theory has now crossed an important threshold:
+
+- it works on classical benchmarks;
+- it has exact compositional laws;
+- it has strong leading-scale falsifiers;
+- it has structured dense exact-sign families with strict sub-landscape states;
+- and, crucially, the sparse-flip/microcanonical construction now gives a
+  fully physical exact-sign parent contextual collision at the target
+  n^(3/2) scale after every spin optimizes.
+
+The main remaining deficiency is no longer physical realization.
+
+It is:
+
+> We do not know whether any of the structural quantities discovered by the
+> theory are forced, constrained, or simplified by near-minimality of the
+> quadratic cap.
+
+This campaign should deliberately transition from general theory building to
+**near-minimizer structural discovery**.
+
+The campaign has two phases.
+
+======================================================================
+PHASE I — FINISH THE CURRENT MULTI-SELECTOR INFORMATION QUESTION
+======================================================================
+
+Spend at most ~2–3 serious hours on this unless a major theorem is clearly
+within reach.
+
+We currently have one physically realized hidden coherence bit:
+active product poles remain asymptotically good, but an exact-sign parent can
+still expose a fixed n^(3/2)-scale response difference.
+
+Determine whether this phenomenon amplifies.
+
+Let k_n be the largest number of approximately independent diffuse selector
+channels that can be simultaneously encoded while:
+
+1. preserving every currently retained active-product statistic to o(1);
+2. using exact-sign sparse edits;
+3. admitting balanced/microcanonical physical compilers;
+4. producing unconstrained exact-sign parents whose caps/responses are
+   separated by c n^(3/2) in each encoded direction.
+
+Try to prove one of:
+
+A. k_n -> infinity;
+
+B. preferably k_n >= n^alpha or k_n >= c log n;
+
+C. a quantitative upper bound such as k_n=O(1), O(log n), or another sharp
+   packing ceiling.
+
+Either direction is useful.
+
+If k_n grows:
+    this becomes a genuine information-rate obstruction.
+
+If k_n is small:
+    the missing coherence may itself be augmentable as a manageable macrostate.
+
+Do not spend the full campaign optimizing constants in this construction.
+
+Once its qualitative rate is understood, move on.
+
+======================================================================
+PHASE II — FORCE CONTACT WITH ACTUAL NEAR-MINIMIZERS
+======================================================================
+
+This is the main campaign.
+
+Define a near-minimizer class without assuming convergence:
+
+    N_n(epsilon)
+    =
+    { A :
+      Q(A) <= M_n + epsilon n^(3/2) }
+
+or, where exact M_n is unavailable, use the best certified upper/lower
+surrogates carefully and label the distinction.
+
+The central question is:
+
+> Which structural properties are actually constrained across
+> N_n(epsilon)?
+
+Do not assume Walsh/Hadamard/product-algebra structure.
+
+The theory has generated many candidate observables. Test which, if any, are
+special on true minimizers or near-minimizers.
+
+Candidate quantities include:
+
+- selector/coherence defects;
+- higher-product spectral defects;
+- projective row-pattern entropy;
+- Gram versus higher Fourier information;
+- contextual response packing dimension;
+- numerical bridge rank at the sqrt(n) threshold;
+- exposed-pole multiplicity;
+- switching visibility;
+- collective twirl/synchronization coercivity;
+- holonomy / relational-memory growth;
+- near-top response entropy;
+- robustness under sparse exact-sign flips;
+- spectral flatness only when tied to an extremal consequence;
+- any newly discovered collective quantity suggested by the data.
+
+Do not privilege these merely because they already exist in the repository.
+
+Use actual computed minimizers and serious near-minimizers from the project.
+
+If needed, extend exact/heuristic computations modestly, but the goal is
+structural hypothesis generation, not a large new numerical search.
+
+For every candidate P(A), ask:
+
+    Does
+        Q(A) <= M_n + epsilon n^(3/2)
+    appear to force
+        P(A) <= f(epsilon,n)
+    or
+        P(A) >= f(epsilon,n)?
+
+Look especially for behavior that becomes stronger as epsilon -> 0.
+
+The ideal discovery is a candidate implication
+
+    near-minimal cap
+        =>
+    collective response/synchronization property P
+
+where P is demonstrably weaker than solving the whole optimization problem.
+
+======================================================================
+SOLUTION-HIDING / INDEPENDENT DISCOVERY
+======================================================================
+
+Use several independent roles.
+
+1. Near-minimizer experimental analyst
+   - receives matrices and objective values;
+   - does not receive the favored synchronization hypothesis;
+   - searches for statistically exceptional structure.
+
+2. Contextual-response theorist
+   - receives the current theory but not the experimental analyst's preferred
+     invariant;
+   - derives which structural quantities would suffice for cross-scale
+     compression.
+
+3. Extremal combinatorics / discrepancy specialist
+   - asks what near-optimality can force using deterministic inequalities.
+
+4. Spectral / harmonic-analysis specialist
+   - searches for stability/equality-case theorems.
+
+5. Spin-glass / statistical-mechanics specialist
+   - asks whether near-ground-state structure suggests synchronization,
+     overlap constraints, or a thermodynamic order parameter.
+
+6. Counterexample builder
+   - attempts to construct low-cap matrices violating every candidate P.
+
+7. Director
+   - compares candidate routes only after the independent reports are frozen.
+
+Literature retrieval should be used where appropriate, especially for
+stability/equality-case phenomena. Prefer primary sources.
+
+======================================================================
+THE MAIN THEOREM TARGET
+======================================================================
+
+By the end of the campaign, select at most 2 serious candidate lemmas of the
+form
+
+    Q(A) <= M_n + epsilon n^(3/2)
+        =>
+    P(A) <= f(epsilon) + o_n(1),
+
+or another quantitatively comparable near-minimizer statement.
+
+A useful P must satisfy all of:
+
+1. P is not merely another encoding of Q(A);
+2. P can plausibly be proved by tools weaker than solving the original
+   minimization;
+3. P plugs into a proved response/composition theorem;
+4. together with the current theory it yields a genuine quantitative gain,
+   ideally o(n^(3/2)) cross-scale loss or subextensive reusable state;
+5. existing counterexamples do not already kill it.
+
+Do NOT select more than 2 such lemmas.
+
+Then spend substantial time actually attacking the strongest one.
+
+======================================================================
+PREFERRED POSITIVE ENDPOINT
+======================================================================
+
+The best possible result would be a theorem schematically like
+
+    near-minimality
+        =>
+    approximate collective synchronization
+
+plus an existing/new theorem
+
+    approximate collective synchronization
+        =>
+    composable response state with o(n^(3/2)) loss.
+
+This need not be odd-product closure.
+
+In fact, the sparse-flip examples show that individual product-pole quality
+is insufficient.
+
+The property must be collective enough to survive that falsifier.
+
+Other acceptable positive outcomes:
+
+- a near-minimizer-specific response entropy upper bound;
+- a near-minimizer-specific holonomy bound;
+- an approximate finite-dimensional order parameter;
+- a cross-size replacement theorem with o(n^(3/2)) error;
+- a subsequence-to-all-orders recovery theorem using a newly constrained
+  response class.
+
+======================================================================
+PREFERRED NEGATIVE ENDPOINT
+======================================================================
+
+A strong negative theorem also counts as progress.
+
+For example:
+
+    even within N_n(epsilon),
+    any state preserving the relevant dense contexts to o(n^(3/2))
+    needs Omega(n) or larger information;
+
+or
+
+    near-minimality does not control any quantity in a large candidate family.
+
+But a negative theorem must apply to genuine low-cap / near-minimal objects,
+not just arbitrary sign quadratics.
+
+If the contextual-response approach is shown to remain information-heavy
+even on near-minimizers, that is a principled trigger to reallocate research
+toward the rare-event or adversarial-statistical-mechanics branches.
+
+======================================================================
+QUANTITATIVE PROGRESS ACCOUNTING
+======================================================================
+
+Create and maintain:
+
+    extremal_information/PROGRESS_FRONTIER.md
+
+This file is deliberately short and should be updated only at substantive
+checkpoints.
+
+The goal is to distinguish research progress from research activity.
+
+Do NOT score:
+- commits;
+- lines written;
+- number of lemmas;
+- number of definitions;
+- number of experiments.
+
+Score movement of the mathematical frontier.
+
+----------------------------------------------------------------------
+A. IMPLICATION GRAPH
+----------------------------------------------------------------------
+
+Maintain an explicit implication graph ending at
+
+    M_n/n^(3/2) converges.
+
+For each live route, write something like:
+
+    near-minimality
+        --[missing lemma L1]-->
+    structural property P
+        --[proved / missing L2]-->
+    o(n^(3/2)) composable transfer
+        --[proved / missing L3]-->
+    cross-order inequality / compactness
+        --[missing / proved]-->
+    convergence
+
+Every new result must be labeled:
+
+- PROVES AN ARROW
+- WEAKENS AN ARROW'S HYPOTHESIS
+- IMPROVES AN ARROW'S LOSS
+- FALSIFIES AN ARROW
+- NO FRONTIER CHANGE
+
+A theorem with "NO FRONTIER CHANGE" can still be mathematically useful, but
+it does not reset the progress strike count.
+
+----------------------------------------------------------------------
+B. SMALLEST MISSING LEMMA
+----------------------------------------------------------------------
+
+For every live route, maintain:
+
+    Smallest Missing Lemma (SML)
+
+This is the single most important progress metric.
+
+At every substantive checkpoint ask:
+
+> Is the SML now weaker, narrower, more quantitative, or closer to a direct
+> statement about near-minimizers than it was before?
+
+Record the old and new SML.
+
+Example of genuine progress:
+
+OLD:
+    "find a compact representation of dense quadratic response"
+
+NEW:
+    "prove that epsilon-near-minimizers have collective coherence defect
+     o_epsilon(1)"
+
+This is major progress even if convergence remains unproved.
+
+Example of non-progress:
+
+OLD:
+    "prove near-minimizers have collective coherence defect o(1)"
+
+NEW after 4 hours:
+    exactly the same sentence,
+    plus 20 specialized theorems about structured Walsh families.
+
+That counts as a strike.
+
+----------------------------------------------------------------------
+C. BENCHMARK LEVEL
+----------------------------------------------------------------------
+
+Assign each result a target-proximity level:
+
+Level 0:
+    finite toy / enumeration
+
+Level 1:
+    standard finite-state DP / classical benchmark
+
+Level 2:
+    growing system, fixed-size interface
+
+Level 3:
+    approximate compression or growing interface
+
+Level 4:
+    structured dense exact-sign quadratic systems
+
+Level 5:
+    bounded-cap / genuine near-minimizer dense sign quadratics
+
+Level 6:
+    arbitrary-order near-minimizers with quantitative transfer
+
+Level 7:
+    original convergence theorem
+
+Only claim a frontier-level advance when both:
+- a theorem is proved at the new level;
+- and a serious falsifier/limitation is tested there.
+
+The current leading branch should be regarded as approximately Level 4.x.
+
+The purpose of this campaign is to cross into Level 5.
+
+----------------------------------------------------------------------
+D. QUANTITATIVE ASYMPTOTIC METRICS
+----------------------------------------------------------------------
+
+For each candidate state/theorem record:
+
+    state bits B_n
+    response error E_n
+    interface size I_n
+    orders covered O
+    composition depth D
+    assumptions A
+
+Important thresholds:
+
+Response error:
+    E_n = o(n^(3/2))
+is qualitatively better than
+    E_n = c n^(3/2)
+for fixed c>0.
+
+State complexity:
+    subextensive or sublinear information is preferred,
+but state size matters only together with composition closure.
+
+Orders:
+    a theorem on n=16^j is a structural benchmark;
+    it is not all-order progress.
+
+Track explicitly whether constants merely improve or whether an exponent /
+little-o boundary improves.
+
+----------------------------------------------------------------------
+E. ASSUMPTION-DISTANCE SCORE
+----------------------------------------------------------------------
+
+For every positive structural theorem score the hypothesis:
+
+0:
+    hand-constructed algebraic family
+
+1:
+    robust neighborhood of a constructed family
+
+2:
+    broad recognizable structural class
+
+3:
+    property tied quantitatively to low cap / extremal statistics
+
+4:
+    property proved uniformly for near-minimizers
+
+Moving from assumption score 0 to 1 is progress.
+Moving from 1 to 2 is stronger progress.
+The central objective now is to reach 3 or 4.
+
+Do not confuse a stronger theorem inside assumption class 0 with target
+progress.
+
+----------------------------------------------------------------------
+F. FRONTIER SCORE
+----------------------------------------------------------------------
+
+For director comparison only, score each major verified result from 0 to 4 on:
+
+T = target proximity
+Q = quantitative relevance at n^(3/2) scale
+C = composition / all-order strength
+G = generality
+F = falsification value
+A = audit confidence
+
+Use the weighted score
+
+    S = 3T + 2Q + 2C + G + F + A.
+
+This is NOT an optimization target for agents.
+
+It is a diagnostic.
+
+The director must explain the score in words.
+
+A high score cannot compensate for no movement in the Smallest Missing Lemma.
+
+----------------------------------------------------------------------
+G. FRONTIER VELOCITY
+----------------------------------------------------------------------
+
+Every ~2 hours record:
+
+1. Strongest statement now provable that was not provable ~2 hours ago.
+2. Previous Smallest Missing Lemma.
+3. Current Smallest Missing Lemma.
+4. Benchmark level before/after.
+5. Whether target assumption-distance improved.
+6. Whether n^(3/2) loss changed qualitatively.
+7. Strike or reset.
+
+Define:
+
+RESET:
+    a result proves/weakens/falsifies a live arrow,
+    advances benchmark level,
+    improves the asymptotic regime,
+    or materially weakens the SML.
+
+STRIKE:
+    a substantive block of work produces only specialized variants,
+    constants, terminology, or results within the same exceptional family
+    while leaving the SML unchanged.
+
+Two consecutive strikes on the leading branch trigger a director review and
+majority allocation to another theory.
+
+======================================================================
+USE ACTUAL MINIMIZERS CAREFULLY
+======================================================================
+
+The repository already contains exact and heuristic small-order data.
+
+Use them, but distinguish:
+
+- exact minimizer;
+- certified near-minimizer;
+- heuristic best known;
+- structured benchmark.
+
+Never infer an asymptotic theorem from finite data.
+
+The purpose of finite data is to rank candidate structural lemmas.
+
+For each candidate invariant P:
+
+1. measure it on exact minimizers where available;
+2. measure it on near-minimizers;
+3. compare to random signings;
+4. compare to Walsh/conference/Paley/structured examples;
+5. deliberately search for low-cap counterexamples with atypical P;
+6. only then promote P to a theorem target.
+
+Prefer normalized quantities with a clear predicted asymptotic scale.
+
+======================================================================
+COUNTEREXAMPLE-FIRST DISCIPLINE
+======================================================================
+
+Before investing heavily in
+
+    near-minimality => P,
+
+assign an independent agent to falsify it.
+
+Try:
+- sparse edge flips;
+- switching/conjugation;
+- block sums;
+- tensor/direct products;
+- local surgery;
+- conference/Hadamard perturbations;
+- low-rank deformations;
+- mixtures preserving cap to first order.
+
+If P survives obvious attacks, then pursue proof.
+
+If P fails, determine whether a richer collective quantity P' survives.
+
+Do not patch hypotheses endlessly.
+
+======================================================================
+ORTHOGONAL PORTFOLIO
+======================================================================
+
+Keep approximately 20–25% of research effort available for the two surviving
+orthogonal branches:
+
+1. renormalized rare-event state;
+2. adversarial statistical mechanics.
+
+But do not expand them generically.
+
+Give each one a single question:
+
+Rare-event:
+    Is there a deterministic/adversarial dense model where renormalization
+    creates a composable extremal state even though finite-depth contextual
+    compression is impossible?
+
+Adversarial stat mech:
+    Is there a nonlocal lower-spectral / interpolation / antinorm object whose
+    state dimension remains sub-landscape as interface width grows?
+
+Promote one only if it reaches benchmark Level 4 or supplies a precise
+near-minimizer lemma incomparable with contextual-response theory.
+
+======================================================================
+END-OF-RUN DELIVERABLE
+======================================================================
+
+At the end, produce a concise director report.
+
+1. MULTI-SELECTOR VERDICT
+
+    Best lower/upper bound on k_n.
+    Is the physical collision one bit or growing information?
+
+2. NEAR-MINIMIZER STRUCTURAL AUDIT
+
+    Table of candidate quantities P.
+    Behavior on exact minimizers, near-minimizers, random matrices and
+    structured controls.
+    Which candidates survived adversarial falsification?
+
+3. TOP TWO CANDIDATE NEAR-MINIMALITY LEMMAS
+
+For each:
+
+    precise statement;
+    current evidence;
+    strongest counterexample;
+    assumption-distance score;
+    what existing theorem it plugs into;
+    exact consequence if proved.
+
+4. PROGRESS FRONTIER
+
+Include the final `PROGRESS_FRONTIER.md` table.
+
+For every live route:
+
+    current implication graph;
+    benchmark level;
+    smallest missing lemma;
+    state complexity;
+    response loss;
+    orders covered;
+    assumption-distance;
+    last two strike/reset decisions.
+
+5. QUANTITATIVE PROGRESS SINCE THIS PROMPT
+
+Do not summarize activity.
+
+State specifically:
+
+    Which missing lemma became weaker?
+    Which asymptotic exponent/little-o threshold improved?
+    Which benchmark level advanced?
+    Which plausible proof routes were eliminated?
+    Did target proximity increase?
+
+6. THEORY PORTFOLIO DECISION
+
+Choose one:
+
+    contextual response remains dominant;
+    contextual response + orthogonal branch in parallel;
+    contextual response reached relevance ceiling;
+    another theory should become primary.
+
+7. BEST CURRENT ROUTE TO M_n
+
+Write at most two chains:
+
+    known theorem
+    +
+    precise missing lemma L
+    +
+    known theorem
+    =>
+    meaningful progress toward convergence.
+
+The missing lemma must be demonstrably weaker than the original theorem.
+
+8. NEXT CAMPAIGN
+
+Give exactly one recommended 3–6 hour campaign.
+
+======================================================================
+RESEARCH DIRECTIVE
+======================================================================
+
+The campaign should now optimize for:
+
+    reducing the assumption gap to true near-minimizers,
+
+not for producing more mathematics inside already-understood exceptional
+families.
+
+The core question is:
+
+> What collective structural property is forced by being nearly optimal for
+> the dense quadratic cap, and does that property give o(n^(3/2)) reusable
+> control across scale?
+
+If after serious work no current response-theoretic quantity behaves
+differently on genuine near-minimizers, say so clearly.
+
+That would itself be a major quantitative signal that this theory is reaching
+its relevance ceiling.
