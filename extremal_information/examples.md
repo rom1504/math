@@ -2015,3 +2015,26 @@ though every fixed phase does.
 This is not nonconvergence of the minimizing sequence.  It is the sharp
 falsifier for the claim that cross-scale recovery alone synchronizes outer
 phases.
+
+## Example 93: residual synchronization and witness support are different
+
+If every length-`D` max-plus product has row rank one, its normalized row is
+one of finitely many suffix residuals.  One letter acts on these profiles by
+a deterministic state transition plus a scalar toll.  Context-cycle tolls
+then compute exact spectral response, and a violated potential budget pumps
+linearly.
+
+That residual quotient need not carry one locally thresholded witness
+support.  The two rank-one matrices
+
+```math
+\begin{pmatrix}0&-1\\-2&-3\end{pmatrix},
+\qquad
+\begin{pmatrix}-2&-3\\1&0\end{pmatrix}
+```
+
+share the residual `(0,-1)` and give every word spectral radius zero, but
+their zero-threshold relations have no common nonempty invariant support.
+Thus an empty support core falsifies one proof presentation, not the scalar
+response.  Arbitrary terminal pins, by contrast, expose projective residual
+profiles at exact distance half their coordinate oscillation.

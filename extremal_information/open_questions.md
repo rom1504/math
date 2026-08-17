@@ -58,24 +58,33 @@ the theorem does not smuggle in an arbitrary lookup table. Finite leakage
 also gives a sharp negative law: every common future remains nonexpansive in
 the endpoint sup norm and cannot amplify a gap beyond `C`.
 
-The remaining target is **soft phase-preserving observability**:
+Bounded-delay weighted synchronization now supplies a second positive
+structure theorem.  If every `D`-block has max-plus row rank one, normalized
+suffix residuals form a finite exact response quotient, residual-context
+cycles give exact accumulated toll, and a descending core decides whether
+one locally thresholded support can be attached to each residual.  The
+empty-core counterexample proves that this last condition is proof memory,
+not automatically semantic response information.
+
+The remaining target is **approximate residual/core synchronization**:
 
 ```math
-\text{when can a bounded-description reset or filter repeatedly restore}
-\quad\text{a hidden endpoint gap without storing the raw phase?} \tag{OQ.1}
+\text{how do profile-covering error, cycle toll, and support leakage combine}
+\quad\text{without paying the same approximation at every depth?} \tag{OQ.1}
 ```
 
-Seek a theorem combining the support mean-payoff game with a finite filter
-semigroup. It should either produce a smaller observable quotient or a
-pumpable response packing, and should quantify how filter frequency trades
-against leakage and probe oscillation.
+Seek a theorem for products that become `epsilon`-row-rank-one after a bounded
+delay.  It should return a finite residual cover plus a cycle potential and
+either a depth-uniform rooted response bound or a pumpable pair-cycle
+falsifier.  If supports are also claimed, charge the additional greatest-core
+leakage separately rather than identifying it with residual error.
 
-**Success:** a depth-uniform quantitative theorem for soft leakage in at
-least two model classes, with probe/filter description length charged.
+**Success:** a depth-uniform quantitative theorem in two model classes, with
+profile covering number, forgetting delay, and terminal query radius all
+explicit.
 
-**Stop condition:** support count is only proof complexity until a future can
-observe it. Do not infer a semantic lower bound from failure of one
-backward-surjective or rowwise certificate.
+**Stop condition:** do not infer a scalar response gap from an empty support
+core.  The exact two-matrix counterexample in Theorem 17.1u is mandatory.
 
 The one-generator PWA question is closed: the binary/block counter proves
 `2^(r-o(r))` exposed classes. Do not spend another campaign optimizing that

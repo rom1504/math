@@ -1388,3 +1388,16 @@ phase-selection principle in addition to realizability at every order.  The
 phase is still a strict compact quotient of the Boolean landscape, so the
 counterexample diagnoses the missing information without reinstating the
 full optimization.
+
+## 58. Residual synchronization does not imply witness synchronization
+
+A bounded reset delay can collapse all normalized max-plus rows to finitely
+many residual profiles.  This is enough for exact rooted response updates and
+an exact cycle-potential law.  It is not enough to select one support per
+residual phase whose individual edges attain the residual scalar toll.
+
+The greatest incoming-image core exactly decides that stricter fixed-context
+presentation.  Its failure is certificate failure unless the query exposes
+the missing endpoint geometry.  This separates three resources cleanly:
+semantic residual state, locally path-realizing witness support, and the
+terminal query language that can distinguish them.

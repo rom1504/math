@@ -6002,6 +6002,152 @@ dim(response)=1,\qquad C_(anticipatory)=2,
 \qquad C_(forward\ path)=4.                                    \tag{17.7bk}
 ```
 
+### Theorem 17.1u (bounded-delay residual-core lumpability)
+
+Let decorated letters `c` carry finite real max-plus blocks
+`T_c in R^(I_s times I_t)` between finite typed fibres.  Suppose that for
+some fixed `D>=1`, every legal `D`-letter product has max-plus row rank one:
+
+```math
+T_v(i,j)=A_v(i)+p_v(j),\qquad max_jp_v(j)=0.             \tag{17.7bl}
+```
+
+Let `Q` be the finite set of distinct terminal phase/profile pairs.  For
+every enabled letter there are unique maps
+
+```math
+delta:Q times E->Q,\qquad kappa:Q times E->R
+```
+
+such that
+
+```math
+p_q tensor T_c=kappa(q,c)1+p_(delta(q,c)).              \tag{17.7bm}
+```
+
+This quotient has three exact, distinct consequences.
+
+1. **Residual-cycle response.**  For every context cycle `C`, with word `w`,
+
+   ```math
+   rho(T_w)=sum_((q,c) in C)kappa(q,c).                 \tag{17.7bn}
+   ```
+
+2. **Accumulated-error dichotomy.**  If every entry of `T_c` is at most
+   `lambda_c`, put `d(q,c)=lambda_c-kappa(q,c)>=0`.  Given budgets
+   `beta_c>=0`, a potential satisfying
+
+   ```math
+   d(q,c)<=beta_c+psi(delta(q,c))-psi(q)                \tag{17.7bo}
+   ```
+
+   exists if and only if every residual-context cycle has
+   `sum_C(d-beta)<=0`.  A violating cycle is an observable pumpable witness:
+   its `k`th repetition exceeds the declared deficit budget by
+   `k sum_C(d-beta)`.
+
+3. **Greatest fixed-context support core.**  Define the scalar-threshold
+   relation
+
+   ```math
+   R_(q,c)(K)=\{j:exists i in K,\ T_c(i,j)>=kappa(q,c)\}. \tag{17.7bp}
+   ```
+
+   Starting from allowed endpoint sets `K_q^0=A_q`, iterate
+
+   ```math
+   K_q^(r+1)=K_q^r intersection
+      intersection_((s,c):delta(s,c)=q)R_(s,c)(K_s^r). \tag{17.7bq}
+   ```
+
+   It stabilizes after at most `sum_q|A_q|` deletions.  Its limit is the
+   greatest family with one support per residual context satisfying
+
+   ```math
+   K_q subseteq A_q,
+   \qquad K_(delta(q,c)) subseteq R_(q,c)(K_q).         \tag{17.7br}
+   ```
+
+   Hence all required limit supports are nonempty exactly when such a
+   one-support-per-context backward-surjective lift exists.
+
+Short prefixes of length below `D` contribute only the finite transient
+`sum_(ell<D)|E|^ell`; the recurrent quotient has at most `|E|^D` profiles.
+
+#### Proof
+
+If `v=c_1...c_D` and `v'` is the length-`D` suffix of `vc`, factor
+`T_(vc)=T_(c_1)T_(v'c)`.  Row-rank one of the suffix product forces the
+normalized row profile of `p_vT_c` to be `p_(v')`.  Equality of two source
+profiles makes their one-letter images equal, proving (17.7bm) is well
+defined.
+
+Around a context cycle, iteration gives
+
+```math
+p_qT_w=K1+p_q,
+\qquad K=sum_Ckappa.                                   \tag{17.7bs}
+```
+
+A finite max-plus left eigenprofile has eigenvalue equal to the maximum cycle
+mean: profile telescoping bounds every cycle above by `K`, while selecting
+one maximizing predecessor at each target yields a tight directed cycle.
+This proves (17.7bn).  The potential equivalence is the finite difference-
+constraints criterion; (17.7bn) makes every violating cycle and all its
+repetitions exact response witnesses.
+
+For the core, the right-hand side of (17.7bq) is monotone.  Every family
+satisfying (17.7br) lies in each descending iterate, and the stabilized
+family itself satisfies (17.7br).  Backward selection through (17.7br)
+realizes every finite context path by raw edges of weight at least their
+`kappa` tolls. `square`
+
+The threshold relation in (17.7bp) is not the automatically target-surjective
+row-argmax relation
+
+```math
+\{(i,j):p_q(i)+T_c(i,j)
+       =kappa(q,c)+p_(delta(q,c))(j)\}.                \tag{17.7bt}
+```
+
+The profile terms prevent either relation from containing the other.  The
+core is therefore a substantive local witness certificate, but failure of
+this particular core is not a scalar-response falsifier.  For example, with
+`p=(0,-1)` and
+
+```math
+T_a=\begin{pmatrix}0&-1\\-2&-3\end{pmatrix},\qquad
+T_b=\begin{pmatrix}-2&-3\\1&0\end{pmatrix},           \tag{17.7bu}
+```
+
+both generators have row rank one and `pT_a=pT_b=p`, so every word has
+spectral radius zero.  But their zero-threshold relations are respectively
+`{(1,1)}` and `{(2,1),(2,2)}`, whose greatest one-context core is empty.
+Allowing multiple support states or using the eigenprofile directly may
+still answer the scalar query.
+
+For arbitrary rooted terminal fields, the projective residual metric is
+exactly
+
+```math
+inf_(a in R)sup_z
+|max_i(p_i+z_i)-max_i(p_i'+z_i)-a|
+={1\over2}osc(p-p').                                  \tag{17.7bv}
+```
+
+Coordinate pins attain both endpoint differences.  Thus the distinct
+profiles are minimal exact rooted residual states under complete terminal
+probes, but not necessarily under the weaker unrooted spectral query.
+
+The finite row-residual quotient is weighted-subset/determinization algebra.
+The fixed-delay row-rank-one hypothesis is a strong checkable synchronizer,
+not a necessary condition and not equivalent to the classical twins
+property.  The genuinely additional object here is the greatest-core test
+for when those residual classes also admit one economical backward extremal-
+witness presentation.  The corrected independent audit and source boundary
+are recorded in
+[`drafts/weighted_residual_core_independent_audit.md`](drafts/weighted_residual_core_independent_audit.md).
+
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 
 Use the column max-plus convention

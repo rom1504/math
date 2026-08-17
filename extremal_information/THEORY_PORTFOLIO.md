@@ -25,28 +25,33 @@ one of:
 
 - **Core object:** future-response equivalence, response roofs, presented
   carriers, and finite endpoint-support families with reward potentials.
-- **Strongest theorem:** a backward support, forward envelope, and saturated
-  orbit readout make hidden witness phase an intrinsic response packing.  A
-  uniform gap theorem states exactly when bounded rooted probes filter to the
-  tight endpoint max-profile.
+- **Strongest theorem:** fixed-delay row-rank-one synchronization creates a
+  finite suffix-residual quotient with exact context-cycle response and a
+  pumpable potential dichotomy.  A descending incoming-image test computes
+  the greatest one-support-per-residual witness core, while arbitrary
+  terminal pins give the exact projective residual metric.
 - **Best benchmark:** width-two Ising has scalar output, two minimal
   anticipatory states, and four forward path states; its interacting response
   is `2N_ca^cyc-N_a`.
-- **Best falsifier:** deterministic de Bruijn has one semantic response state
+- **Best falsifiers:** deterministic de Bruijn has one semantic response state
   and one rowwise state but `q^m` exact anticipatory-support states, with
   certificate toll `Theta(C/(1+log_qN))`.  Carrier count can be proof memory,
-  not response information.
+  not response information.  Conversely, two rank-one residual generators
+  have scalar response zero for every word but an empty common threshold
+  core, proving that failure of one witness presentation does not pump a
+  semantic gap.
 - **Information discarded:** individual microscopic witnesses; a terminal
   witness is chosen backward after the declared future is known.
 - **Composition mechanism:** backward-surjective support update plus a finite
   cocycle potential; recurrent errors are cycle means.
-- **Live theorem:** quantify the smallest bounded-description probe/filter
-  architecture that makes phase observable with soft leakage.  Finite
-  leakage caps every common-future separation, so an infinite-horizon rate
-  theorem needs a reset or phase-preserving filter.
-- **Strike count:** zero.  The exact support-game characterization and its
-  exponential self-falsifier reset the counter while revising the hierarchy:
-  forward and anticipatory carriers are incomparable.
+- **Live theorem:** extend the exact residual/core split to approximate
+  finite-delay synchronization: quantify how profile-covering error, context
+  cycle toll, and core leakage combine without charging the same error once
+  per depth.
+- **Strike count:** zero.  The bounded-delay residual/core theorem and its
+  decisive empty-core counterexample reset the counter while revising the
+  hierarchy: semantic residuals and anticipatory witness certificates are
+  separate quotients.
 - **Stopping condition:** two substantive segments yielding only assumed-state
   applications or specialized variants.
 
