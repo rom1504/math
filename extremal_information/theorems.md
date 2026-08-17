@@ -5774,8 +5774,10 @@ query, not a weakened simulation of the entire landscape.
 
 ### Theorem 17.1s (anticipatory-support lumpability over a coarse system)
 
-Let `T_e` be raw max-plus matrices on `I`, let `S_e` be coarse max-plus
-matrices on `J`, and let `pi:I->J` be onto. A common raw gauge replaces
+Let `T_e` be raw max-plus matrices on a finite nonempty set `I`, let `S_e` be
+coarse max-plus matrices on a finite nonempty set `J`, and let `pi:I->J` be
+onto. All errors and gauge coordinates below are finite real numbers. A
+common raw gauge replaces
 
 ```math
 T_e(i,j)\quad\hbox{by}\quad
@@ -5854,9 +5856,10 @@ sufficient statement “every word has some critical coarse cycle with a tight
 raw cyclic lift,” but strictly weaker than lifting from every raw
 representative as in Theorem 17.1n.
 
-Strictness already occurs in a two-state coarse system. Let every letter have
-coarse weight zero on `0<->1` and weight `-C` on the two fixed-state edges,
-take raw states `I={0,1} times [r]`, and put
+Strictness already occurs in a two-state coarse system. Fix `r>=2`, use
+alphabet `E=[r]`, let every letter have coarse weight zero on `0<->1` and
+weight `-C` on the two fixed-state edges, take raw states
+`I={0,1} times [r]`, and put
 
 ```math
 T_e((a,k),(b,l))=
@@ -5872,7 +5875,7 @@ the opposite support; every fixed-state raw edge has the coarse weight
 `-C`. Theorem 17.1s therefore gives exact equality of every word spectrum
 with only two support states. But a
 row `(a,k)` with `k\ne e` has no tight `e`-successor, so no corresponding
-rowwise lift exists.
+rowwise lift through this displayed `pi,S` exists.
 
 There is also a pumpable flat-toll converse. Suppose
 
@@ -5881,7 +5884,9 @@ S_e(a,b)=lambda_e\quad\hbox{on an allowed relation, and }-infinity
 \quad\hbox{otherwise},
 ```
 
-and every raw edge is either tight or at most `lambda_e-gamma`. For a word
+where `lambda_e` is finite and `gamma>0`. Call an allowed projected raw edge
+tight when its weight is exactly `lambda_e`, and assume every other finite
+raw edge is at most `lambda_e-gamma`. For a word
 whose coarse relation has a cycle,
 
 ```math
@@ -5968,6 +5973,19 @@ The same two-state carrier updates `q'=tau(e)` and uses toll
 ```math
 r(q,a)=-q,\qquad r(q,b)=r(q,c)=0.                              \tag{17.7bj}
 ```
+
+More explicitly, with `pi(s)=s_1=q`, its exact dominating coarse matrices
+are
+
+```math
+S_a(q,q')=C(q'-1)/2-qq',
+\qquad S_b(q,q')=C(q'-1)/2,
+\qquad S_c(q,q')=-C(1+q')/2.                                  \tag{17.7bj1}
+```
+
+The supports `K_q=pi^(-1)(q)` lift these matrices with zero defect in
+Theorem 17.1s. The `C>4` comparison above shows that their critical cycles
+use precisely `q'=tau(e)`, on which (17.7bj1) reduces to the displayed toll.
 
 It is minimal: `aabccb` and `abbcac` have identical Parikh counts but
 responses `-2` and `+2`, so no one-state per-letter toll can answer both.
