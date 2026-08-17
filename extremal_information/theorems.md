@@ -16627,6 +16627,62 @@ construction inside an exact minimizer.  Proof and audit are in
 and
 [`drafts/one_sided_core_structure_and_counterexample_independent_audit.md`](drafts/one_sided_core_structure_and_counterexample_independent_audit.md).
 
+### Theorem 36.28 (one switched fill realizes the whole bounded-cap response bank)
+
+Fix `C_0>0`.  For every sufficiently large hollow complete signing
+`A` with `Q(A)<=C_0n^(3/2)`, there are a suborbit
+
+```math
+\{S_{s_i}AS_{s_i}:i\in I\},\qquad |I|\ge\exp(\gamma n),       \tag{36.106}
+```
+
+one common exact-sign bridge `B`, and one public hollow exact-sign base fill
+`D_1` such that all query fills have the equivariant form
+
+```math
+D_{q_i}=S_{q_i}D_1S_{q_i}.                                  \tag{36.107}
+```
+
+Every resulting order-`2n` parent has cap `O_{C_0}(n^(3/2))`, and query
+`i` separates its matched child from every other displayed child by
+`c_{C_0}n^(3/2)` in the scalar absolute cap.  Hence, at any fixed response
+error below `c_{C_0}n^(3/2)/3`, the public future language has conditional
+response complexity
+
+```math
+{\gamma\over\log2}n\le R_n\le n-1.                          \tag{36.108}
+```
+
+In particular the rate is exactly `Theta(n)` bits.  The upper bound records
+the projective switching label; it makes no computational-efficiency claim.
+
+The simultaneous query construction uses only one random-existence fill.
+If `D_1=p(J-I)+E_1`, with `p=lambda/sqrt n` and
+`||E_1||_(2->2)=O(sqrt n)`, then diagonal conjugation gives
+
+```math
+D_q=p(qq^T-I)+S_qE_1S_q.                                   \tag{36.109}
+```
+
+Thus every estimate in Theorem 36.25 holds uniformly over the full bank,
+without an exponential union bound.  The fill orbit has exactly
+`2^(n-1)` members.  If the dominant endpoint of `A` is negative, apply the
+construction to `-A` and globally negate every complete parent; this pulls
+the child blocks back to the stated orbit of `A` without changing caps or
+gaps.
+
+The theorem removes a quadratic *per-query* description caveat: after the
+common bridge and base fill are public, a query needs at most `n-1` varying
+bits.  It does not prove that the public base has a short description, that
+the order-`2n` parents are near-minimal, or that an `O(n)`-bit gauge-aware
+state fails.  Consequently this closes the campaign's physical
+multi-selector rate question but supplies no recurrence.
+
+Proof and independent audit are in
+[`drafts/equivariant_matched_roof_query_bank.md`](drafts/equivariant_matched_roof_query_bank.md)
+and
+[`drafts/equivariant_matched_roof_query_bank_independent_audit.md`](drafts/equivariant_matched_roof_query_bank_independent_audit.md).
+
 ## 37. Presented rare-event states
 
 ### Theorem 37.1 (generic finite-rank spikes survive bulk normalization)

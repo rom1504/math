@@ -516,7 +516,9 @@ class and risks restating the desired parent optimization.
   one-sided cores which are maximally far from every switched clique.  Thus
   internal cut positivity, row regularity, low moments, or one spectral
   outlier cannot replace the complement-feedback argument.  Query
-  descriptions remain uncharged and may contain `Theta(n^2)` bits.
+  descriptions remain public.  Theorem 36.28 now shows that one common base
+  fill generates the whole bank, so the varying query label is only `n-1`
+  bits; no short description of the arbitrary public base itself is proved.
 - **Frontier score:** for the combined BT+BR result,
   `(T,Q,C,G,F,A)=(4,4,2,4,4,4)`, hence `S=36`.  The high score reflects a
   fully audited Level-5 negative theorem at the correct scale and all
@@ -529,3 +531,38 @@ class and risks restating the desired parent optimization.
   diagnostic branch, and allocate the next campaign primarily to an
   orthogonal rare-event/adversarial-statistical-mechanics mechanism or to a
   genuinely specified `L_replace`, not another nearby packing theorem.
+
+### Checkpoint 8 — exact linear response rate and the positive-route ceiling
+
+- **Strongest new statement:** one common exact-sign base fill generates the
+  complete matched-roof bank by diagonal switching.  Combined with Theorems
+  36.26, 21.8, and 36.25, every bounded-cap switching orbit has fixed-scale
+  physical response complexity between `(gamma/log 2)n` and `n-1` bits.
+- **Previous SML:** identify whether the physical collision is one bit or a
+  growing information obstruction, then seek a cross-order `L_replace`.
+- **Current SML:** the information-rate question is closed at `Theta(n)`.
+  The positive SML remains `L_replace`: construct, at every sufficiently
+  large order, a bounded-cap representative preserving the declared
+  optimization responses to `o(n^(3/2))`, from state strictly poorer than
+  the complete Boolean landscape.
+- **Benchmark level:** remains Level 5.  The theorem applies to every
+  bounded-cap signing and all large orders, but the contexts are not claimed
+  near-minimal at order `2n` and supply no Level-6 transfer.
+- **Assumption-distance:** score 4 for the response-rate theorem; score 0 for
+  the missing recovery/update law.
+- **Asymptotic movement:** the lower bound is `Omega(n)` bits and the exact
+  switch-label upper bound is `n-1`, removing the earlier uncertainty between
+  one bit, sublinear growth, and an extensive rate.  Query variation is also
+  linear, not quadratic, after one public base is fixed.  The response loss
+  remains `Theta(n^(3/2))`; no `o(n^(3/2))` cross-order loss is obtained.
+- **Falsifiers and limits:** this excludes bounded, polynomial-state, and all
+  `exp(o(n))`-range carriers for the declared public language, but not an
+  `O(n)`-bit gauge-aware state or a narrower co-switching language.  It does
+  not reconstruct the full `2^(Theta(n^2))` coefficient landscape.
+- **Decision:** **NO POSITIVE FRONTIER CHANGE / BRANCH MATURE.**  The result
+  completes and quantitatively sharpens the negative arrow, so it is a
+  theorem-level reset for Phase I.  It is a second consecutive signal that
+  same-order contextual richness alone does not weaken `L_replace`.
+  Freeze selector, shell, and tail refinements and move director effort to a
+  genuinely cross-order rare-event or adversarial-statistical-mechanics
+  mechanism.

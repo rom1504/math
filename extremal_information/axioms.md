@@ -2476,3 +2476,18 @@ matched-roof amplification, and biased-roof scalarization, it forces
 `Theta(n)` bits of physical contextual response on every exact-minimizer
 switching orbit.  It is a same-order information lower bound, not a
 cross-order recurrence.
+
+## 136. A common equivariant query architecture makes the switching response rate exactly linear
+
+A weak biased exact-sign fill need not be resampled for each response pole.
+One all-positive realization generates every pole by diagonal switching,
+preserving its spectral error and cap.  Together with the uniform bounded-cap
+thin-tail theorem, this gives every bounded-cap switching orbit a public
+all-spins-free response language whose fixed-scale metric entropy is bounded
+above and below by constant multiples of `n` bits.
+
+The rate statement is conditional on the common public bridge and base fill.
+It rules out every `exp(o(n))`-range reusable state for that language, but it
+does not rule out the exact `n-1`-bit switching label, infinite-precision
+states, or narrower gauge-covariant futures.  Extensive response information
+and absence of a compositional macrostate are different claims.

@@ -3314,3 +3314,24 @@ Thus one-sidedness, nonnegative cuts, regular rows, and a spectral outlier
 do not imply near-rank-one structure.  The construction is not embedded in
 an exact minimizer; it falsifies attempts to exclude principal cores from
 their internal geometry alone.
+
+## Example 170: one public fill broadcasts every switching pole
+
+Choose once a hollow signing
+
+```math
+D_1={\lambda\over\sqrt n}(J-I)+E_1,
+\qquad \|E_1\|_{2\to2}=O(\sqrt n).
+```
+
+For each projective pole `q`, set `D_q=S_qD_1S_q`.  Then
+`D_q=(lambda/sqrt n)(qq^T-I)+S_qE_1S_q`; hence the same anti-pin estimate
+holds simultaneously for all `2^(n-1)` poles.  No union bound over the query
+bank is needed, and the varying query label costs exactly `n-1` bits once
+the public base is fixed.
+
+For every bounded-cap child, Theorem 36.28 combines this bank with its
+thin-tail switching code and obtains `exp(Omega(n))` scalar response states
+at `Theta(n^(3/2))` separation.  This is a physical information-rate example,
+not an all-order construction: the label itself remains a linear-bit exact
+carrier and the completed parents need not be optimal at their new order.
