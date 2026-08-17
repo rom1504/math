@@ -11036,6 +11036,138 @@ checks, and independent audits are in
 and
 [`experiments/verify_collective_cross_gram_packing_independent_audit.py`](experiments/verify_collective_cross_gram_packing_independent_audit.py).
 
+### Theorem 21.43 (PSD gluing has a contraction fibre of bounded fixed-scale cost)
+
+Let `K_i=Y_iY_i^T\succeq0`, where each `Y_i` has full column rank, and
+consider a two-piece joined sector
+
+```math
+K=\begin{pmatrix}K_1&C\\C^T&K_2\end{pmatrix}.       \tag{21.254}
+```
+
+Then `K\succeq0` if and only if
+
+```math
+\boxed{C=Y_1WY_2^T,\qquad ||W||_{op}\le1.}          \tag{21.255}
+```
+
+For fixed factor frames `W` is unique.  Under `Y_i\mapsto Y_iO_i`, it
+transforms as `W\mapsto O_1^TWO_2`; the presentation, not `W` alone, is
+quotiented by this gauge.  For `s` pieces the associative compatibility
+object is one block correlation operator
+
+```math
+\Omega\succeq0,qquad \Omega_{ii}=I,qquad
+K_{ij}=Y_i\Omega_{ij}Y_j^T.                         \tag{21.256}
+```
+
+Pairwise contraction tests alone are insufficient when `s>=3`.
+
+The exact fibre admits a uniform approximate compression.  Suppose
+`tr K_i<=p_i`, put `p=p_1+p_2`, and retain in each marginal only eigenvalues
+larger than `tau p_i`.  If `K^h` is the resulting joined compression, then
+
+```math
+q_p(K,K^h):={1\over p^2}\max_{\epsilon\in\{+-1\}^p}
+ |\epsilon^T(K-K^h)\epsilon|
+\le\sqrt\tau+{\tau\over2}.                          \tag{21.257}
+```
+
+For both spectral sectors this gives `d_q<=2sqrt(tau)+tau`.  The square-root
+loss is sharp for this marginal truncation architecture.  At target joined
+error `eta`, taking `tau=Theta(eta^2)` leaves rank `O(eta^(-2))` per
+marginal sector.  Approximating its factors in Frobenius norm by
+`delta sqrt(p_i)` and its contraction in operator norm by `zeta` adds
+
+```math
+d_q\le4\delta+\zeta.                                \tag{21.258}
+```
+
+In particular the compatibility data add only `O_eta(1)` parameters once
+the marginal factor states are fixed.
+
+More intrinsically, fix arbitrary Gram--Rayleigh marginals on `p_1,p_2`
+ports and metrize their two-sector compatibility fibre by the restriction
+of `d_q`.  There is an absolute constant `C_0` such that
+
+```math
+\log\operatorname{Cov}_\eta(\mathfrak F,d_q)
+\le C_0\eta^{-4}\log(C_0/\eta),                    \tag{21.259}
+```
+
+independently of `p_1+p_2`.  This is not a one-state theorem: for all small
+`eta` there are Boolean-realizable fixed marginals with a compatibility
+packing of size
+
+```math
+\exp\{c_0\eta^{-1}\log(1/\eta)\}.                  \tag{21.260}
+```
+
+#### Proof
+
+Positivity of (21.254), tested on `(x,ty)` and optimized in `t`, gives
+
+```math
+|x^TCy|^2\le(x^TK_1x)(y^TK_2y).                    \tag{21.261}
+```
+
+This defines a contractive bilinear form on the two factor support spaces,
+which is represented uniquely by `W`; conversely
+`[[I,W],[W^T,I]]` is PSD exactly when `||W||op<=1`.  A common Gram
+realization proves (21.256).
+
+For the truncation, write `P_i,Q_i` for the high and low projections.  The
+diagonal tails contribute at most `tau(p_1^2+p_2^2)`.  Contractivity in
+(21.255) bounds each cross-tail bilinear form by
+`sqrt(tau)p_1p_2`; remembering both symmetric cross blocks gives
+
+```math
+q_p(K,K^h)
+\le{\tau(p_1^2+p_2^2)+4\sqrt\tau p_1p_2\over p^2}
+\le\sqrt\tau+{\tau\over2}.                          \tag{21.262}
+```
+
+The rank bound follows from trace.  Expanding
+`Y_1WY_2^T-Z_1VZ_2^T` proves (21.258), and Euclidean nets of the fixed-rank
+factor and contraction balls give the stated parameter bound.
+
+For (21.259), truncate each fixed marginal at eigenvalue
+`Theta(eta^2(p_1+p_2))`; the cross-tail error is `O(eta)`, the retained
+support ranks are `O(eta^(-2))`, and a Frobenius net of their contraction
+balls proves the bound.  For (21.260), take `r=Theta(eta^(-1))` orthogonal
+Boolean top eigenvectors, duplicate each on both shores, and vary the
+relative frame by a permutation.  A relative-Hamming-distance permutation
+code has `exp(Omega(r log r))` words, while
+
+```math
+||P_\pi-P_\sigma||_{\infty\to1}
+\ge {4\over3}d_H(\pi,\sigma),                       \tag{21.263}
+```
+
+which gives fixed `eta` separation after normalization. `square`
+
+Unordered interchange of the two spectral sectors supplies the relative
+antipode bits in Theorem 21.41, but its cycle holonomy exposes a sharp
+boundary of the PSD theory.  Rank-one edge contractions have the same local
+switching action, yet one global PSD Gram realization forces
+`C_(ij)=q_iq_j` and hence positive product around every cycle.  A negative
+orientation-cycle product is coefficient-side interaction information, not
+a PSD compatibility coordinate.  Thus sector ordering embeds in the Gram
+carrier, whereas nontrivial coefficient holonomy must be retained by a
+separate dynamic state.
+
+The theorem controls the spherical carrier only at bounded total port mass
+`mp/r=O(1)`.  It does not solve the exact Boolean old-spin integrality gap,
+and at anti-pin scaling `m=r` the required metric accuracy deteriorates with
+`p`.  Full proofs, checks, and an independent audit are in
+[`drafts/psd_compatibility_fibre.md`](drafts/psd_compatibility_fibre.md),
+[`drafts/psd_compatibility_fibre_independent_audit.md`](drafts/psd_compatibility_fibre_independent_audit.md),
+[`drafts/psd_gluing_compatibility_entropy.md`](drafts/psd_gluing_compatibility_entropy.md),
+[`experiments/verify_psd_compatibility_fibre.py`](experiments/verify_psd_compatibility_fibre.py),
+[`experiments/verify_psd_compatibility_fibre_independent_audit.py`](experiments/verify_psd_compatibility_fibre_independent_audit.py),
+and
+[`experiments/verify_psd_gluing_compatibility_entropy.py`](experiments/verify_psd_gluing_compatibility_entropy.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

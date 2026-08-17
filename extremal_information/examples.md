@@ -2484,3 +2484,22 @@ in the port count but not in the number of pair coordinates.  At the trust
 boundary its response has a sharp square-root modulus; away from that
 boundary it is Lipschitz.  The example remains spherical: exact Boolean
 recovery is the unresolved integrality test.
+
+## Example 123: Gram gluing creates a contraction, not another marginal table
+
+Two PSD marginal sectors with factors `Y_1,Y_2` glue through exactly one
+contraction `W`, via `C=Y_1WY_2^T`.  Three or more pieces require the whole
+block correlation operator to remain PSD, so independently legal pairwise
+contractions need not form a genuine trajectory.  This is a continuous
+path-realization constraint rather than a product of local response states.
+
+At fixed collective accuracy, marginal spectral truncation leaves only
+`O(epsilon^(-2))` active directions.  Consequently the compatibility fibre
+has a number of cells depending on accuracy but not on the port count;
+Boolean permutation frames show that this dependence is nontrivial.  In rank
+one the local gauge law resembles signed-graph switching, but global PSD
+realizability forces every cycle product positive.  The earlier negative
+orientation holonomy is coefficient-side information outside this carrier.
+Exact PSD compatibility can therefore be large while its macroscopic
+incremental cost over already-compressed marginals is bounded, without
+absorbing every dynamic interaction variable.

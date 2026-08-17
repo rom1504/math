@@ -649,6 +649,14 @@ compatibility bits, split into relative antipodes and cycle flux.  Any
 proposed general theorem should recover this fibre law without assuming the
 whole scalar block graph as unexplained input.
 
+The relaxed PSD amalgamation problem is also now classified at fixed scale.
+Two marginal factors glue through a contraction; spectral truncation makes
+the conditional compatibility cover port-independent, and global
+multi-piece realizability is one block PSD constraint.  This does **not**
+subsume signed coefficient holonomy: a rank-one global Gram alignment has
+positive cycle products, whereas the negative cycle witness above lives
+outside the PSD carrier.
+
 **Mandatory falsifiers:** the orthogonal-top-eigenvector cross-Gram pair and
 the `A` versus `-A` macroscopic orientation bridge.  Merely showing that one
 planted Walsh witness moves is already covered by the Hadamard

@@ -1762,3 +1762,32 @@ amplifies the error.  Therefore raw coordinate count, fixed-scale metric
 entropy, and usable response entropy are three different quantities.  A
 compression theorem must state all three scales and must not infer exact
 Boolean realizability from a spherical PSD cover.
+
+## 86. Approximate gluing can cost less than approximate marginals
+
+For PSD response states, exact composition creates a contraction between
+the marginal support frames.  Positivity couples all such pairwise choices
+through one global block correlation matrix, so the compatibility fibre is
+a real path-realization constraint rather than optional metadata.
+
+Nevertheless spectral mass bounds how much of that fibre is visible at a
+fixed collective scale.  Marginal response images have linear port-rate,
+whereas the additional two-piece compatibility cover has port-independent
+size once accuracy is fixed.  The general resource law should therefore
+separate the cost of representing each marginal image from the conditional
+entropy of its realizable gluing fibre; adding their raw coordinate counts
+can be arbitrarily misleading.
+
+## 87. A compatibility carrier inherits its own realizability identities
+
+Matching a local gauge action does not identify two global carriers.  A
+rank-one PSD Gram alignment and a signed coefficient edge both transform by
+vertex switching, but the former is globally realizable only with trivial
+cycle product; the latter can retain frustrated cycle holonomy and expose it
+at leading scale.
+
+Any proposed unification must therefore carry not only local transition
+coordinates but the global identities imposed by its realization category.
+Forgetting those identities either admits symbolic paths that no object can
+realize or incorrectly discards interaction information living outside the
+chosen positive geometry.

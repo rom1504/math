@@ -98,7 +98,11 @@ one of:
   Boolean projective-Hamming family has matching `Omega_delta(ell)` packing
   entropy.  At bounded total port mass this gives an
   `O(ell epsilon^(-2)log(1/epsilon))` spherical response carrier, with a
-  sharp square-root hard-edge modulus.
+  sharp square-root hard-edge modulus.  Its two-piece PSD compatibility
+  fibre is exactly a contraction between marginal support frames; at fixed
+  error its conditional cover is port-independent, although a Boolean
+  permutation family forces nontrivial accuracy dependence.  Multi-piece
+  paths require one global block correlation operator.
 - **Best benchmark:** fixed-rank quadratic bridges and, beyond that classical
   regime, the bounded-cap Walsh anti-pin compiler.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -119,11 +123,13 @@ one of:
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** the collective spherical metric-entropy question is now
-  closed at fixed total port mass.  Determine whether its low-rank factor
-  state has an approximate associative compatibility fibre under repeated
-  gluing, and whether a natural Boolean recovery hypothesis transfers the
-  spherical carrier to exact old-spin caps without a fixed leading loss.
+- **Live theorem:** the collective spherical metric-entropy and PSD
+  compatibility questions are now closed at fixed total port mass.  Determine
+  whether a natural Boolean synchronization hypothesis transfers this
+  carrier to exact old-spin caps without a fixed leading loss, or whether
+  every such hypothesis already has extensive response complexity.
+  Coefficient-side frustrated cycle holonomy is not a PSD contraction and
+  must remain a separate dynamic variable.
   The continuation-width question is closed once its internal cap budget is
   declared.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
