@@ -194,7 +194,10 @@ one of:
   theorem proves compact hypograph closure and recovery under supremal/count
   convolution at one exponential speed. For fixed finite descriptors, an
   arbitrary finite tower of separated speeds forms an exact lexicographic
-  tropical count algebra with all-order abstract recovery.
+  tropical count algebra with all-order abstract recovery.  On a separate
+  finite-parameter Gaussian tangent class, mean/covariance, logarithmic
+  exponent, and total-mass amplitude form an associative convolution
+  semigroup with finite integer all-order recovery.
 - **Composition:** finite depth needs `(W,Z)`, but `W` vanishes and the limit
   closes by `Z=sum_u e^(-V(u))Z_u`.
 - **Best falsifier:** genealogy-marked futures distinguish branch-mass
@@ -206,10 +209,11 @@ one of:
   `(n,log n)` miss a `1/2 log n` saddle-mass correction.
 - **Information discarded:** genealogy and the fixed decoration law; the
   declared unmarked query class cannot inspect them.
-- **Next theorem:** a tangent-mass/Hessian decoration theorem on a natural
-  convolution-closed regularity class, or a deterministic/adversarial model
-  in which critical renormalization yields a unique composable extremal
-  state.
+- **Next theorem:** decide whether a finite stratification of Morse
+  singularity types stays closed under composition, or find a deterministic/
+  adversarial model in which critical renormalization yields a unique
+  composable extremal state.  Arbitrary functional amplitude fields are not
+  a strict state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
 ### 5. Adversarial statistical mechanics — keep warm, B

@@ -475,14 +475,20 @@ Finite lexicographic valuations compose exactly on fixed descriptor
 alphabets, but Vandermonde convolution gains a logarithmic saddle-mass term
 that pointwise coefficients miss.
 
-Define a tangent-density decoration on a natural Morse-type class and prove
-that it closes under convolution, including degenerate ties and all-order
-integer recovery.
+The nondegenerate Gaussian target is now closed.  A fixed-query discrete
+Laplace theorem supplies the Hessian and lattice-covolume factor; the
+finite-parameter Gaussian tuple closes associatively and has finite integer
+all-order recovery.  This repairs Vandermonde and multinomial tangent mass
+without storing the descriptor grid.
 
-**Success:** one theorem recovering the Gaussian `1/2 log n` correction and
-composing at least two nontrivial finite-type models without enumerating the
-decomposition grid.
+The remaining target is a **finite stratified extension**: identify a finite
+menu of non-Gaussian saddle types whose parameters remain closed when saddles
+merge, split, or become degenerate.
 
-**Stop condition:** storing the entire scale-dependent descriptor measure or
-postulating the saddle asymptotic separately for every query is not a strict
-state reduction.
+**Success:** a class containing at least one genuinely nonquadratic saddle
+and stable under two successive convolutions, with a finite parameter count
+and integer recovery.
+
+**Stop condition:** arbitrary functional amplitudes, the entire descriptor
+measure, or a separate postulated asymptotic for every query are not strict
+state reductions.  The quartic `n^(3/4)` example is mandatory.

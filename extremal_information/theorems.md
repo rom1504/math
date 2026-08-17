@@ -10278,3 +10278,148 @@ applies.  This identifies the quantitative price any proposed balanced
 reordering of the bad Walsh hierarchy must pay.  The independently audited
 full statement is in
 [`drafts/phase_refresh_synchronization.md`](drafts/phase_refresh_synchronization.md).
+
+## 32. Tangent mass and a finite Gaussian response semigroup
+
+The lattice-Laplace estimate below is classical.  Its role here is to repair
+the precise response coordinate missed by the pointwise multiscale roof in
+Theorem 27.3; the finite-parameter closure in Theorem 32.2 is the new theory
+benchmark.
+
+### Theorem 32.1 (Morse tangent-mass convolution)
+
+Let positive arrays on `nD_A intersect Z^d` and `nD_B intersect Z^d` obey
+
+```math
+A_n(k)=Theta(n^alpha e^(nf(k/n))),\qquad
+B_n(k)=Theta(n^beta e^(ng(k/n)))                     \tag{32.1}
+```
+
+uniformly on the full feasible fibre.  At an admissible grid query `z`, let
+
+```math
+F_z(x)=f(x)+g(z-x)
+```
+
+have a unique interior maximizer `x_z`, with uniform two-sided quadratic
+exposure there and a strict global gap.  Then
+
+```math
+sum_kA_n(k)B_n(nz-k)
+=Theta\left(n^(alpha+beta+d/2)e^(nF_z(x_z))\right).    \tag{32.2}
+```
+
+If the input amplitudes are locally
+
+```math
+A_n(k)=n^alpha e^(nf(k/n))(a(k/n)+o(1))
+```
+
+and similarly for `B_n`, and
+`J_z=-D^2F_z(x_z)` is positive definite, then on the unit-density standard
+lattice the leading amplitude is
+
+```math
+{(2pi)^(d/2)a(x_z)b(z-x_z)\over sqrt(det J_z)}.        \tag{32.3}
+```
+
+A tangent lattice of covolume `v` adds the factor `v^(-1)`.  The same result
+holds when the precise input asymptotics are local, provided a polynomial
+global envelope and an exponential off-saddle gap are available.
+
+#### Proof
+
+After extracting the prefactors and `e^(nF_z(x_z))`, the upper quadratic
+bound gives a shifted Gaussian lattice sum `O(n^(d/2))`.  A radius-`sqrt n`
+ball contains `Omega(n^(d/2))` feasible lattice points, each with a constant-
+factor lower weight.  This proves (32.2).  At `k=nx_z+sqrt(n)y`, Taylor
+expansion and the rescaled lattice Riemann sum give
+
+```math
+n^(-d/2)sum_k e^(n(F_z(k/n)-F_z(x_z)))
+->\int_(R^d)e^(-y^TJ_zy/2)dy,
+```
+
+which is (32.3).  The localization variant discards only an exponentially
+smaller total mass. `square`
+
+This recovers the missing `+1/2` logarithmic exponent in Vandermonde
+convolution and, in `q-1` tangent dimensions, the usual multinomial
+`-(q-1)/2` exponent.  Boundary summands are handled by the global entropy
+upper bound, not by falsely extending interior Stirling asymptotics to the
+simplex boundary.
+
+### Theorem 32.2 (finite-parameter Gaussian tangent semigroup)
+
+For positive-definite `P`, define on `Z^d`
+
+```math
+G_n^(c,mu,P,alpha,a)(k)
+=n^alpha a\exp\{nc-(k-nmu)^TP(k-nmu)/(2n)\}.          \tag{32.4}
+```
+
+Write `Sigma=P^(-1)` and
+
+```math
+m=a(2pi)^(d/2)/sqrt(det P).                           \tag{32.5}
+```
+
+On compact parameter sets with precision eigenvalues bounded away from zero
+and infinity, convolution is uniformly represented by the associative,
+commutative parameter law
+
+```math
+(c,mu,Sigma,alpha,m) star (c',mu',Sigma',alpha',m')
+=\left(c+c',mu+mu',Sigma+Sigma',
+       alpha+alpha'+d/2,mm'\right).                   \tag{32.6}
+```
+
+More precisely, at compact scaled queries,
+
+```math
+(G_n^theta*G_n^phi)(ell)
+=(1+o(1))G_n^(theta star phi)(ell).                   \tag{32.7}
+```
+
+This is a strict finite-dimensional composable state of dimension
+`d(d+1)/2+d+3`, independent of the lattice support size.  It has finite
+integer realizations on every large order: truncate to one common linear-size
+box, multiply by `e^(nC)`, and floor.  The recovered convolution still obeys
+(32.7), with `C` added to each leading `c` coordinate.
+
+#### Proof
+
+Completing the square gives output covariance `Sigma+Sigma'`, mean
+`mu+mu'`, and saddle Hessian `P+P'`.  Theorem 32.1 gives raw amplitude
+
+```math
+a_out={(2pi)^(d/2)aa'\over sqrt(det(P+P'))}.           \tag{32.8}
+```
+
+Since
+
+```math
+det(P+P')=det(P)det(P')det(P^(-1)+P'^(-1)),            \tag{32.9}
+```
+
+(32.8) is exactly `m_out=mm'`; all other coordinates update additively.
+This proves (32.6)--(32.7) and associativity.
+
+For integer recovery, compactness places every relevant saddle a fixed
+scaled distance inside common boxes.  Choose `C` so both factors exceed
+`e^(delta n)` on one saddle neighbourhood.  There
+
+```math
+0<=XY-floor(X)floor(Y)<=X+Y,
+```
+
+so relative rounding loss is exponentially small.  Outside the
+neighbourhood, including truncated tails, the whole unrounded product mass
+is exponentially smaller by the quadratic gap. `square`
+
+A quartic saddle has tangent mass `Theta(n^(3/4))`, and a flat exposed
+interval has `Theta(n)` mass.  Thus `d/2` is not a universal correction and
+arbitrary Morse amplitude fields are not finite states.  The theorem is a
+genuine closed response algebra only on the declared Gaussian class.  The
+complete repaired proof and independent audits are in
+[`drafts/morse_tangent_mass_composition.md`](drafts/morse_tangent_mass_composition.md).

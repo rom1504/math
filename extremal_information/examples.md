@@ -2054,3 +2054,18 @@ mass `2^(-r)` and transfer defect `2^(-r-1)` retains response phases zero and
 one forever.  Applied to the nonconstant Walsh prefix profile, the theorem
 forces every purported balanced-reordering certificate to pay at least
 `89/(48sqrt(3))-1.01` defect per unit refreshed mass.
+
+## Example 95: Gaussian tangent profiles form a finite response semigroup
+
+A lattice Gaussian landscape is determined asymptotically by leading height,
+mean, covariance, logarithmic power, and total-mass amplitude.  Under
+convolution, heights and means add, covariances add, logarithmic powers gain
+`d/2`, and total-mass amplitudes multiply.  This finite parameter tuple is
+associative and recovers every future convolution without storing the
+growing descriptor grid.
+
+The same saddle-mass rule repairs Vandermonde's missing `1/2 log n` and the
+`(q-1)/2` multinomial correction.  It is not universal: a quartic saddle has
+`n^(3/4)` tangent mass.  Truncation, exponential rescaling, and flooring give
+finite integer landscapes realizing the Gaussian semigroup at every large
+order.

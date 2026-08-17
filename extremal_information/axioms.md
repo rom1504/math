@@ -1419,3 +1419,17 @@ limiting phase response.  A fixed positive ratio can preserve a macroscopic
 phase forever.  This gives a checkable positive counterpart to the automatic
 Walsh phase obstruction without assuming equality of phase carriers or their
 maximizers.
+
+## 60. A tangent law becomes a theory only on a closed regularity class
+
+The polynomial mass of an exposed convolution fibre is part of extremal
+response.  At a nondegenerate `d`-dimensional saddle it contributes `d/2` to
+the logarithmic exponent and a Hessian/lattice-density amplitude.  Pointwise
+multiscale roofs omit this term.
+
+Arbitrary tangent profiles still have unbounded functional information.  A
+genuine compression theorem requires a class closed by the tangent law.  The
+Gaussian class supplies one: mean and covariance add, mass amplitude
+multiplies, and finitely many parameters realize every future convolution.
+Quartic and flat saddles mark the boundary rather than inviting an
+unrestricted hierarchy of formal coefficients.
