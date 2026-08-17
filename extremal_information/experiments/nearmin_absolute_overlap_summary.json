@@ -1,0 +1,2683 @@
+{
+  "checks": {
+    "all_caps_classified": true,
+    "overlap_identity": true,
+    "switching_permutation_global_sign_invariance": {
+      "failure_count": 0,
+      "failures": [],
+      "passed": true
+    }
+  },
+  "classification": {
+    "exact": "exhaustively recomputed cap equals supplied certified M_n",
+    "one_step_near": "exhaustively recomputed cap equals M_n+2",
+    "orbit_warning": "orders 9--14 are available witnesses, not an orbit-uniform sample",
+    "search_warning": "greedy/cap-walk source is heuristic even when the saved cap is exact"
+  },
+  "detailed_output": "extremal_information/experiments/nearmin_absolute_overlap_results.json",
+  "frozen_protocol": "extremal_information/experiments/nearmin_absolute_overlap_observable_freeze.md",
+  "parameters": {
+    "exact_packing_seconds": 1.0,
+    "exact_packing_size_limit": 120,
+    "matched_subsets_per_physical_shell": 32,
+    "orders": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "packing_rule": "pairwise absolute edge overlap <= 1/2",
+    "random_signings_per_order": 24,
+    "seed": 20260817,
+    "supplement_per_stratum_order": 8
+  },
+  "physical_by_order": {
+    "10": {
+      "exact": {
+        "record_count": 9,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 9,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              40,
+              40
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.28888888888888886,
+              0.2888888888888889
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              40,
+              40
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 9,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              80,
+              80
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2592592592592592,
+              0.25925925925925924
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              120,
+              120
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 9,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              80,
+              80
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2592592592592592,
+              0.25925925925925924
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              120,
+              120
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 9,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              80,
+              80
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2592592592592592,
+              0.25925925925925924
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              120,
+              120
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 9
+        }
+      },
+      "one_step_near": {
+        "record_count": 7,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 7,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 7,
+            "packing_certified_lower_bound_range": [
+              8,
+              16
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3333333333333333,
+              0.39259259259259255
+            ],
+            "record_count": 7,
+            "shell_size_range": [
+              8,
+              16
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 7,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 7,
+            "packing_certified_lower_bound_range": [
+              12,
+              32
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3,
+              0.33333333333333337
+            ],
+            "record_count": 7,
+            "shell_size_range": [
+              12,
+              48
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 4,
+            "exact_packing_certificate_count": 7,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 7,
+            "packing_certified_lower_bound_range": [
+              12,
+              48
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2691358024691358,
+              0.33333333333333337
+            ],
+            "record_count": 7,
+            "shell_size_range": [
+              12,
+              72
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 6,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 4,
+            "minimum_edge_abs_overlap_range": [
+              0.06666666666666667,
+              0.06666666666666667
+            ],
+            "packing_at_least_three_count": 7,
+            "packing_certified_lower_bound_range": [
+              80,
+              130
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.21052631578947376,
+              0.2592592592592592
+            ],
+            "record_count": 7,
+            "shell_size_range": [
+              120,
+              152
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 5,
+          "one_step_near_repository_witness": 2
+        }
+      }
+    },
+    "11": {
+      "exact": {
+        "record_count": 9,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 7,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              5,
+              15
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3272727272727272,
+              0.3454545454545455
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              5,
+              24
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 9,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              26,
+              34
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.27716186252771613,
+              0.28987993138936535
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              41,
+              53
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 9,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              61,
+              62
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2514332514332514,
+              0.26029526029526034
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              111,
+              117
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 9,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 9,
+            "packing_certified_lower_bound_range": [
+              96,
+              106
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2264309764309764,
+              0.23327615780445973
+            ],
+            "record_count": 9,
+            "shell_size_range": [
+              212,
+              216
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 9
+        }
+      },
+      "one_step_near": {
+        "record_count": 16,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 12,
+            "exact_packing_certificate_count": 16,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.34545454545454546
+            ],
+            "packing_at_least_three_count": 12,
+            "packing_certified_lower_bound_range": [
+              1,
+              8
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.41818181818181815,
+              1.0
+            ],
+            "record_count": 16,
+            "shell_size_range": [
+              1,
+              13
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 16,
+            "exact_packing_certificate_count": 16,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 16,
+            "packing_certified_lower_bound_range": [
+              10,
+              17
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3163636363636364,
+              0.3727272727272727
+            ],
+            "record_count": 16,
+            "shell_size_range": [
+              16,
+              27
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 16,
+            "exact_packing_certificate_count": 16,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 16,
+            "packing_certified_lower_bound_range": [
+              26,
+              35
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2887272727272727,
+              0.30643015521064304
+            ],
+            "record_count": 16,
+            "shell_size_range": [
+              41,
+              62
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 16,
+            "exact_packing_certificate_count": 13,
+            "minimum_edge_abs_overlap_range": [
+              0.01818181818181818,
+              0.01818181818181818
+            ],
+            "packing_at_least_three_count": 16,
+            "packing_certified_lower_bound_range": [
+              55,
+              66
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2589585172109443,
+              0.26951871657754006
+            ],
+            "record_count": 16,
+            "shell_size_range": [
+              96,
+              126
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 8,
+          "one_step_near_greedy_search_witness": 7,
+          "one_step_near_repository_witness": 1
+        }
+      }
+    },
+    "12": {
+      "exact": {
+        "record_count": 8,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 8,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 8,
+            "packing_certified_lower_bound_range": [
+              20,
+              20
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.27272727272727265,
+              0.2727272727272727
+            ],
+            "record_count": 8,
+            "shell_size_range": [
+              20,
+              20
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 8,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 8,
+            "packing_certified_lower_bound_range": [
+              72,
+              72
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.24901185770750983,
+              0.24901185770750994
+            ],
+            "record_count": 8,
+            "shell_size_range": [
+              92,
+              92
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 8,
+            "packing_certified_lower_bound_range": [
+              152,
+              152
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2272727272727272,
+              0.22727272727272724
+            ],
+            "record_count": 8,
+            "shell_size_range": [
+              224,
+              224
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 8,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 8,
+            "packing_certified_lower_bound_range": [
+              272,
+              272
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.20583190394511147,
+              0.2058319039451115
+            ],
+            "record_count": 8,
+            "shell_size_range": [
+              424,
+              424
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 8
+        }
+      },
+      "one_step_near": {
+        "record_count": 10,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              6,
+              18
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.303030303030303,
+              0.42424242424242425
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              6,
+              18
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 9,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              24,
+              44
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.27636363636363637,
+              0.28571428571428564
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              30,
+              50
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 10,
+            "exact_packing_certificate_count": 9,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              54,
+              98
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2543077837195484,
+              0.26573426573426573
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              78,
+              142
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 1,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.030303030303030304,
+              0.030303030303030304
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              135,
+              156
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2303030303030303,
+              0.24061124061124062
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              198,
+              234
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 6,
+          "one_step_near_repository_witness": 4
+        }
+      }
+    },
+    "13": {
+      "exact": {
+        "record_count": 2,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 2,
+            "exact_packing_certificate_count": 2,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              36,
+              36
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.25641025641025633,
+              0.25641025641025633
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              78,
+              78
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 2,
+            "exact_packing_certificate_count": 2,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              36,
+              36
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.25641025641025633,
+              0.25641025641025633
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              78,
+              78
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 2,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              234,
+              234
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2153846153846154,
+              0.2153846153846154
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              390,
+              390
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 2,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              234,
+              234
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2153846153846154,
+              0.2153846153846154
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              390,
+              390
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 2
+        }
+      },
+      "one_step_near": {
+        "record_count": 5,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 5,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 5,
+            "packing_certified_lower_bound_range": [
+              16,
+              33
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.28250112460638777,
+              0.2926613616268789
+            ],
+            "record_count": 5,
+            "shell_size_range": [
+              29,
+              57
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 5,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 5,
+            "packing_certified_lower_bound_range": [
+              16,
+              33
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.28250112460638777,
+              0.2926613616268789
+            ],
+            "record_count": 5,
+            "shell_size_range": [
+              29,
+              57
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 5,
+            "packing_certified_lower_bound_range": [
+              114,
+              137
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.23813150545823802,
+              0.2421875
+            ],
+            "record_count": 5,
+            "shell_size_range": [
+              202,
+              256
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.02564102564102564,
+              0.02564102564102564
+            ],
+            "packing_at_least_three_count": 5,
+            "packing_certified_lower_bound_range": [
+              114,
+              137
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.23813150545823802,
+              0.2421875
+            ],
+            "record_count": 5,
+            "shell_size_range": [
+              202,
+              256
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 4,
+          "one_step_near_repository_witness": 1
+        }
+      }
+    },
+    "14": {
+      "exact": {
+        "record_count": 3,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 3,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 3,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              156,
+              156
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.23076923076923078,
+              0.23076923076923078
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              156,
+              156
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 3,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              364,
+              364
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.21538461538461545,
+              0.21538461538461545
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              520,
+              520
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 3,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              364,
+              364
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.21538461538461545,
+              0.21538461538461545
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              520,
+              520
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 3,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              364,
+              364
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.21538461538461545,
+              0.21538461538461545
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              520,
+              520
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 3
+        }
+      },
+      "one_step_near": {
+        "record_count": 4,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 4,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 4,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 4,
+            "packing_certified_lower_bound_range": [
+              60,
+              60
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2527472527472527,
+              0.25274725274725274
+            ],
+            "record_count": 4,
+            "shell_size_range": [
+              60,
+              60
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 4,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 4,
+            "packing_certified_lower_bound_range": [
+              144,
+              144
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2372333548804137,
+              0.2372333548804137
+            ],
+            "record_count": 4,
+            "shell_size_range": [
+              204,
+              204
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 4,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 4,
+            "packing_certified_lower_bound_range": [
+              156,
+              156
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.22813186813186812,
+              0.2281318681318682
+            ],
+            "record_count": 4,
+            "shell_size_range": [
+              300,
+              300
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 4,
+            "exact_packing_certificate_count": 0,
+            "minimum_edge_abs_overlap_range": [
+              0.01098901098901099,
+              0.01098901098901099
+            ],
+            "packing_at_least_three_count": 4,
+            "packing_certified_lower_bound_range": [
+              364,
+              364
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.21538461538461545,
+              0.21538461538461545
+            ],
+            "record_count": 4,
+            "shell_size_range": [
+              520,
+              520
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 4
+        }
+      }
+    },
+    "7": {
+      "exact": {
+        "record_count": 3,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 3,
+            "minimum_edge_abs_overlap_range": [
+              0.047619047619047616,
+              0.14285714285714285
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              3,
+              7
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.42857142857142855,
+              0.5714285714285714
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              3,
+              7
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 3,
+            "minimum_edge_abs_overlap_range": [
+              0.047619047619047616,
+              0.047619047619047616
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              13,
+              15
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.35238095238095246,
+              0.3777777777777777
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              13,
+              15
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 3,
+            "minimum_edge_abs_overlap_range": [
+              0.047619047619047616,
+              0.047619047619047616
+            ],
+            "packing_at_least_three_count": 3,
+            "packing_certified_lower_bound_range": [
+              22,
+              30
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2952380952380952,
+              0.33333333333333326
+            ],
+            "record_count": 3,
+            "shell_size_range": [
+              22,
+              30
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_authoritative_orbit_representative": 3
+        }
+      }
+    },
+    "8": {
+      "exact": {
+        "record_count": 2,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 2,
+            "minimum_edge_abs_overlap_range": [
+              0.14285714285714285,
+              0.14285714285714285
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              8,
+              8
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.35714285714285715,
+              0.5
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              8,
+              8
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 2,
+            "minimum_edge_abs_overlap_range": [
+              0.07142857142857142,
+              0.07142857142857142
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              28,
+              28
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.30612244897959184,
+              0.30612244897959184
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              28,
+              28
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 2,
+            "minimum_edge_abs_overlap_range": [
+              0.07142857142857142,
+              0.07142857142857142
+            ],
+            "packing_at_least_three_count": 2,
+            "packing_certified_lower_bound_range": [
+              52,
+              52
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.26373626373626374,
+              0.26373626373626374
+            ],
+            "record_count": 2,
+            "shell_size_range": [
+              52,
+              52
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_authoritative_orbit_representative": 2
+        }
+      },
+      "one_step_near": {
+        "record_count": 17,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 17,
+            "minimum_edge_abs_overlap_range": [
+              0.14285714285714285,
+              0.14285714285714285
+            ],
+            "packing_at_least_three_count": 12,
+            "packing_certified_lower_bound_range": [
+              2,
+              6
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.42857142857142855,
+              0.5714285714285714
+            ],
+            "record_count": 17,
+            "shell_size_range": [
+              2,
+              6
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 17,
+            "minimum_edge_abs_overlap_range": [
+              0.07142857142857142,
+              0.07142857142857142
+            ],
+            "packing_at_least_three_count": 17,
+            "packing_certified_lower_bound_range": [
+              10,
+              14
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.36904761904761907,
+              0.4183673469387754
+            ],
+            "record_count": 17,
+            "shell_size_range": [
+              10,
+              14
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 0,
+            "exact_packing_certificate_count": 17,
+            "minimum_edge_abs_overlap_range": [
+              0.07142857142857142,
+              0.07142857142857142
+            ],
+            "packing_at_least_three_count": 17,
+            "packing_certified_lower_bound_range": [
+              22,
+              28
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3186813186813186,
+              0.35064935064935066
+            ],
+            "record_count": 17,
+            "shell_size_range": [
+              22,
+              28
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 8,
+          "one_step_near_greedy_search_witness": 8,
+          "one_step_near_repository_witness": 1
+        }
+      }
+    },
+    "9": {
+      "exact": {
+        "record_count": 6,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 6,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 6,
+            "packing_certified_lower_bound_range": [
+              11,
+              14
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.33333333333333326,
+              0.35185185185185186
+            ],
+            "record_count": 6,
+            "shell_size_range": [
+              20,
+              25
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 5,
+            "exact_packing_certificate_count": 6,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 6,
+            "packing_certified_lower_bound_range": [
+              11,
+              14
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.33333333333333326,
+              0.35185185185185186
+            ],
+            "record_count": 6,
+            "shell_size_range": [
+              20,
+              25
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 1,
+            "exact_packing_certificate_count": 6,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 6,
+            "packing_certified_lower_bound_range": [
+              40,
+              49
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.24586288416075647,
+              0.25490196078431376
+            ],
+            "record_count": 6,
+            "shell_size_range": [
+              85,
+              94
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 1,
+            "exact_packing_certificate_count": 6,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 6,
+            "packing_certified_lower_bound_range": [
+              40,
+              49
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.24586288416075647,
+              0.25490196078431376
+            ],
+            "record_count": 6,
+            "shell_size_range": [
+              85,
+              94
+            ]
+          }
+        },
+        "stratum_counts": {
+          "exact_available_repository_witness": 6
+        }
+      },
+      "one_step_near": {
+        "record_count": 10,
+        "shells": {
+          "0": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 6,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.1111111111111111
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              4,
+              9
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3888888888888889,
+              0.4938271604938272
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              5,
+              16
+            ]
+          },
+          "2": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 6,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.1111111111111111
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              4,
+              9
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.3888888888888889,
+              0.4938271604938272
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              5,
+              16
+            ]
+          },
+          "4": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 10,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              24,
+              28
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2886710239651416,
+              0.31560283687943264
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              43,
+              51
+            ]
+          },
+          "6": {
+            "above_all_32_matched_controls_count": 0,
+            "below_all_32_matched_controls_count": 10,
+            "exact_packing_certificate_count": 10,
+            "minimum_edge_abs_overlap_range": [
+              0.0,
+              0.0
+            ],
+            "packing_at_least_three_count": 10,
+            "packing_certified_lower_bound_range": [
+              24,
+              28
+            ],
+            "posthoc_signed_barycenter_l1_range": [
+              0.2886710239651416,
+              0.31560283687943264
+            ],
+            "record_count": 10,
+            "shell_size_range": [
+              43,
+              51
+            ]
+          }
+        },
+        "stratum_counts": {
+          "one_step_near_cap_walk_witness": 7,
+          "one_step_near_greedy_search_witness": 3
+        }
+      }
+    }
+  },
+  "schema": "nearmin-absolute-overlap-audit-compact-summary-v1",
+  "status": "FINITE AUDIT ONLY; NO ASYMPTOTIC CLAIM",
+  "uniform_random_signing_controls": {
+    "10": {
+      "caps": {
+        "max": 25.0,
+        "mean": 20.666666666666668,
+        "median": 21.0,
+        "min": 17.0,
+        "q25": 19.0,
+        "q75": 21.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 2,
+          "exact_packing_certified_count": 17,
+          "greedy_packing_lower_bound": {
+            "max": 4.0,
+            "mean": 1.4166666666666667,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.28888888888888886,
+            "mean": 0.14920634920634918,
+            "median": 0.1111111111111111,
+            "min": 0.06666666666666667,
+            "q25": 0.08888888888888888,
+            "q75": 0.19999999999999998
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.6,
+            "mean": 0.19999999999999998,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.4
+          },
+          "shell_size": {
+            "max": 4.0,
+            "mean": 1.4166666666666667,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 17,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 12.0,
+            "mean": 3.5416666666666665,
+            "median": 3.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 4.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6,
+            "mean": 0.12525252525252528,
+            "median": 0.06666666666666667,
+            "min": 0.06666666666666667,
+            "q25": 0.06666666666666667,
+            "q75": 0.06666666666666667
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8,
+            "mean": 0.16363636363636366,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.2
+          },
+          "shell_size": {
+            "max": 16.0,
+            "mean": 4.833333333333333,
+            "median": 4.0,
+            "min": 1.0,
+            "q25": 3.0,
+            "q75": 5.0
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 24.0,
+            "mean": 7.333333333333333,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 5.0,
+            "q75": 9.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.06666666666666667,
+            "mean": 0.06666666666666667,
+            "median": 0.06666666666666667,
+            "min": 0.06666666666666667,
+            "q25": 0.06666666666666667,
+            "q75": 0.06666666666666667
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 36.0,
+            "mean": 10.75,
+            "median": 10.0,
+            "min": 1.0,
+            "q25": 6.75,
+            "q75": 13.0
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 24,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 48.0,
+            "mean": 16.583333333333332,
+            "median": 14.0,
+            "min": 4.0,
+            "q25": 12.75,
+            "q75": 22.5
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.06666666666666667,
+            "mean": 0.06666666666666667,
+            "median": 0.06666666666666667,
+            "min": 0.06666666666666667,
+            "q25": 0.06666666666666667,
+            "q75": 0.06666666666666667
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 72.0,
+            "mean": 23.958333333333332,
+            "median": 20.0,
+            "min": 6.0,
+            "q25": 18.0,
+            "q75": 32.5
+          }
+        }
+      }
+    },
+    "11": {
+      "caps": {
+        "max": 27.0,
+        "mean": 23.5,
+        "median": 23.0,
+        "min": 19.0,
+        "q25": 23.0,
+        "q75": 25.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 5,
+          "exact_packing_certified_count": 9,
+          "greedy_packing_lower_bound": {
+            "max": 8.0,
+            "mean": 1.875,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6363636363636364,
+            "mean": 0.33333333333333337,
+            "median": 0.34545454545454546,
+            "min": 0.01818181818181818,
+            "q25": 0.01818181818181818,
+            "q75": 0.6363636363636364
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8181818181818182,
+            "mean": 0.5272727272727273,
+            "median": 0.6363636363636364,
+            "min": 0.09090909090909091,
+            "q25": 0.18181818181818182,
+            "q75": 0.8181818181818182
+          },
+          "shell_size": {
+            "max": 14.0,
+            "mean": 2.8333333333333335,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 3.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 15,
+          "exact_packing_certified_count": 3,
+          "greedy_packing_lower_bound": {
+            "max": 14.0,
+            "mean": 3.875,
+            "median": 3.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 4.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.34545454545454546,
+            "mean": 0.04415584415584416,
+            "median": 0.01818181818181818,
+            "min": 0.01818181818181818,
+            "q25": 0.01818181818181818,
+            "q75": 0.01818181818181818
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.6363636363636364,
+            "mean": 0.1255411255411255,
+            "median": 0.09090909090909091,
+            "min": 0.09090909090909091,
+            "q25": 0.09090909090909091,
+            "q75": 0.09090909090909091
+          },
+          "shell_size": {
+            "max": 23.0,
+            "mean": 6.0,
+            "median": 4.0,
+            "min": 1.0,
+            "q25": 3.0,
+            "q75": 5.25
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 23,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 30.0,
+            "mean": 9.125,
+            "median": 7.0,
+            "min": 2.0,
+            "q25": 5.0,
+            "q75": 10.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.34545454545454546,
+            "mean": 0.03636363636363637,
+            "median": 0.01818181818181818,
+            "min": 0.01818181818181818,
+            "q25": 0.01818181818181818,
+            "q75": 0.01818181818181818
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.6363636363636364,
+            "mean": 0.13636363636363635,
+            "median": 0.09090909090909091,
+            "min": 0.09090909090909091,
+            "q25": 0.09090909090909091,
+            "q75": 0.09090909090909091
+          },
+          "shell_size": {
+            "max": 53.0,
+            "mean": 15.625,
+            "median": 11.0,
+            "min": 3.0,
+            "q25": 8.75,
+            "q75": 17.0
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 24,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 61.0,
+            "mean": 17.291666666666668,
+            "median": 13.5,
+            "min": 3.0,
+            "q25": 8.5,
+            "q75": 16.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.01818181818181818,
+            "mean": 0.01818181818181818,
+            "median": 0.01818181818181818,
+            "min": 0.01818181818181818,
+            "q25": 0.01818181818181818,
+            "q75": 0.01818181818181818
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.09090909090909091,
+            "mean": 0.0909090909090909,
+            "median": 0.09090909090909091,
+            "min": 0.09090909090909091,
+            "q25": 0.09090909090909091,
+            "q75": 0.09090909090909091
+          },
+          "shell_size": {
+            "max": 116.0,
+            "mean": 30.25,
+            "median": 22.0,
+            "min": 4.0,
+            "q25": 14.25,
+            "q75": 28.5
+          }
+        }
+      }
+    },
+    "12": {
+      "caps": {
+        "max": 32.0,
+        "mean": 27.666666666666668,
+        "median": 28.0,
+        "min": 22.0,
+        "q25": 26.0,
+        "q75": 30.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 5,
+          "exact_packing_certified_count": 12,
+          "greedy_packing_lower_bound": {
+            "max": 4.0,
+            "mean": 1.7916666666666667,
+            "median": 1.5,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.3939393939393939,
+            "mean": 0.2272727272727272,
+            "median": 0.24242424242424243,
+            "min": 0.030303030303030304,
+            "q25": 0.07575757575757576,
+            "q75": 0.3939393939393939
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.6666666666666666,
+            "mean": 0.3611111111111111,
+            "median": 0.5,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.6666666666666666
+          },
+          "shell_size": {
+            "max": 4.0,
+            "mean": 1.7916666666666667,
+            "median": 1.5,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 13,
+          "exact_packing_certified_count": 3,
+          "greedy_packing_lower_bound": {
+            "max": 22.0,
+            "mean": 4.5,
+            "median": 3.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 5.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6666666666666666,
+            "mean": 0.16594516594516592,
+            "median": 0.06060606060606061,
+            "min": 0.030303030303030304,
+            "q25": 0.030303030303030304,
+            "q75": 0.3939393939393939
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8333333333333334,
+            "mean": 0.2619047619047619,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.6666666666666666
+          },
+          "shell_size": {
+            "max": 26.0,
+            "mean": 6.125,
+            "median": 4.0,
+            "min": 1.0,
+            "q25": 3.0,
+            "q75": 7.25
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 50.0,
+            "mean": 8.75,
+            "median": 6.0,
+            "min": 1.0,
+            "q25": 3.75,
+            "q75": 10.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.18181818181818182,
+            "mean": 0.05234159779614323,
+            "median": 0.030303030303030304,
+            "min": 0.030303030303030304,
+            "q25": 0.030303030303030304,
+            "q75": 0.06060606060606061
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.5,
+            "mean": 0.053030303030303025,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 72.0,
+            "mean": 13.0,
+            "median": 9.0,
+            "min": 1.0,
+            "q25": 5.0,
+            "q75": 16.25
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 24,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 78.0,
+            "mean": 19.125,
+            "median": 13.0,
+            "min": 3.0,
+            "q25": 8.0,
+            "q75": 25.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.3939393939393939,
+            "mean": 0.04671717171717171,
+            "median": 0.030303030303030304,
+            "min": 0.030303030303030304,
+            "q25": 0.030303030303030304,
+            "q75": 0.030303030303030304
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.6666666666666666,
+            "mean": 0.041666666666666664,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 128.0,
+            "mean": 27.75,
+            "median": 19.0,
+            "min": 4.0,
+            "q25": 11.5,
+            "q75": 36.0
+          }
+        }
+      }
+    },
+    "13": {
+      "caps": {
+        "max": 40.0,
+        "mean": 32.25,
+        "median": 32.0,
+        "min": 26.0,
+        "q25": 29.5,
+        "q75": 34.5
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 8,
+          "exact_packing_certified_count": 10,
+          "greedy_packing_lower_bound": {
+            "max": 8.0,
+            "mean": 2.2916666666666665,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 3.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6923076923076923,
+            "mean": 0.22710622710622713,
+            "median": 0.02564102564102564,
+            "min": 0.02564102564102564,
+            "q25": 0.02564102564102564,
+            "q75": 0.4358974358974359
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8461538461538461,
+            "mean": 0.3406593406593407,
+            "median": 0.07692307692307693,
+            "min": 0.07692307692307693,
+            "q25": 0.07692307692307693,
+            "q75": 0.6923076923076923
+          },
+          "shell_size": {
+            "max": 14.0,
+            "mean": 3.375,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 5.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 8,
+          "exact_packing_certified_count": 10,
+          "greedy_packing_lower_bound": {
+            "max": 8.0,
+            "mean": 2.2916666666666665,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 3.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6923076923076923,
+            "mean": 0.22710622710622713,
+            "median": 0.02564102564102564,
+            "min": 0.02564102564102564,
+            "q25": 0.02564102564102564,
+            "q75": 0.4358974358974359
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8461538461538461,
+            "mean": 0.3406593406593407,
+            "median": 0.07692307692307693,
+            "min": 0.07692307692307693,
+            "q25": 0.07692307692307693,
+            "q75": 0.6923076923076923
+          },
+          "shell_size": {
+            "max": 14.0,
+            "mean": 3.375,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 5.0
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 40.0,
+            "mean": 11.041666666666666,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 4.0,
+            "q75": 13.75
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6923076923076923,
+            "mean": 0.1047008547008547,
+            "median": 0.02564102564102564,
+            "min": 0.02564102564102564,
+            "q25": 0.02564102564102564,
+            "q75": 0.02564102564102564
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8461538461538461,
+            "mean": 0.21153846153846154,
+            "median": 0.07692307692307693,
+            "min": 0.07692307692307693,
+            "q25": 0.07692307692307693,
+            "q75": 0.23076923076923078
+          },
+          "shell_size": {
+            "max": 69.0,
+            "mean": 18.916666666666668,
+            "median": 11.5,
+            "min": 2.0,
+            "q25": 6.75,
+            "q75": 21.25
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 40.0,
+            "mean": 11.041666666666666,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 4.0,
+            "q75": 13.75
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.6923076923076923,
+            "mean": 0.1047008547008547,
+            "median": 0.02564102564102564,
+            "min": 0.02564102564102564,
+            "q25": 0.02564102564102564,
+            "q75": 0.02564102564102564
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8461538461538461,
+            "mean": 0.21153846153846154,
+            "median": 0.07692307692307693,
+            "min": 0.07692307692307693,
+            "q25": 0.07692307692307693,
+            "q75": 0.23076923076923078
+          },
+          "shell_size": {
+            "max": 69.0,
+            "mean": 18.916666666666668,
+            "median": 11.5,
+            "min": 2.0,
+            "q25": 6.75,
+            "q75": 21.25
+          }
+        }
+      }
+    },
+    "14": {
+      "caps": {
+        "max": 41.0,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 31.0,
+        "q25": 33.0,
+        "q75": 37.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 3,
+          "exact_packing_certified_count": 15,
+          "greedy_packing_lower_bound": {
+            "max": 4.0,
+            "mean": 1.5833333333333333,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.4725274725274725,
+            "mean": 0.2039072039072039,
+            "median": 0.07692307692307693,
+            "min": 0.054945054945054944,
+            "q25": 0.07692307692307693,
+            "q75": 0.4725274725274725
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.2698412698412699,
+            "median": 0.14285714285714285,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.7142857142857143
+          },
+          "shell_size": {
+            "max": 4.0,
+            "mean": 1.5833333333333333,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 14,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 16.0,
+            "mean": 4.375,
+            "median": 3.5,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 5.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.17682317682317683,
+            "median": 0.03296703296703297,
+            "min": 0.01098901098901099,
+            "q25": 0.01098901098901099,
+            "q75": 0.23626373626373628
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8571428571428571,
+            "mean": 0.2857142857142857,
+            "median": 0.14285714285714285,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.5357142857142857
+          },
+          "shell_size": {
+            "max": 18.0,
+            "mean": 5.833333333333333,
+            "median": 4.5,
+            "min": 1.0,
+            "q25": 2.75,
+            "q75": 7.25
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 36.0,
+            "mean": 9.5,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 4.0,
+            "q75": 12.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.08791208791208792,
+            "median": 0.01098901098901099,
+            "min": 0.01098901098901099,
+            "q25": 0.01098901098901099,
+            "q75": 0.07142857142857142
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.8571428571428571,
+            "mean": 0.15476190476190477,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.3214285714285714
+          },
+          "shell_size": {
+            "max": 52.0,
+            "mean": 13.666666666666666,
+            "median": 10.0,
+            "min": 2.0,
+            "q25": 6.75,
+            "q75": 18.0
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 24,
+          "exact_packing_certified_count": 0,
+          "greedy_packing_lower_bound": {
+            "max": 57.0,
+            "mean": 21.5,
+            "median": 17.5,
+            "min": 6.0,
+            "q25": 9.75,
+            "q75": 30.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.12087912087912088,
+            "mean": 0.017399267399267396,
+            "median": 0.01098901098901099,
+            "min": 0.01098901098901099,
+            "q25": 0.01098901098901099,
+            "q75": 0.01098901098901099
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.42857142857142855,
+            "mean": 0.017857142857142856,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 93.0,
+            "mean": 30.875,
+            "median": 23.0,
+            "min": 8.0,
+            "q25": 13.5,
+            "q75": 40.75
+          }
+        }
+      }
+    },
+    "7": {
+      "caps": {
+        "max": 17.0,
+        "mean": 11.833333333333334,
+        "median": 11.0,
+        "min": 9.0,
+        "q25": 11.0,
+        "q75": 13.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 6,
+          "exact_packing_certified_count": 11,
+          "greedy_packing_lower_bound": {
+            "max": 7.0,
+            "mean": 2.0416666666666665,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.42857142857142855,
+            "mean": 0.2527472527472527,
+            "median": 0.42857142857142855,
+            "min": 0.047619047619047616,
+            "q25": 0.047619047619047616,
+            "q75": 0.42857142857142855
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.5604395604395604,
+            "median": 0.7142857142857143,
+            "min": 0.14285714285714285,
+            "q25": 0.42857142857142855,
+            "q75": 0.7142857142857143
+          },
+          "shell_size": {
+            "max": 7.0,
+            "mean": 2.0416666666666665,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.25
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 16,
+          "exact_packing_certified_count": 5,
+          "greedy_packing_lower_bound": {
+            "max": 15.0,
+            "mean": 4.75,
+            "median": 4.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 5.25
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.42857142857142855,
+            "mean": 0.09774436090225563,
+            "median": 0.047619047619047616,
+            "min": 0.047619047619047616,
+            "q25": 0.047619047619047616,
+            "q75": 0.14285714285714285
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.18796992481203006,
+            "median": 0.14285714285714285,
+            "min": 0.14285714285714285,
+            "q25": 0.14285714285714285,
+            "q75": 0.14285714285714285
+          },
+          "shell_size": {
+            "max": 15.0,
+            "mean": 4.75,
+            "median": 4.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 5.25
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 22,
+          "exact_packing_certified_count": 1,
+          "greedy_packing_lower_bound": {
+            "max": 28.0,
+            "mean": 10.916666666666666,
+            "median": 11.0,
+            "min": 1.0,
+            "q25": 5.0,
+            "q75": 14.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.42857142857142855,
+            "mean": 0.06418219461697725,
+            "median": 0.047619047619047616,
+            "min": 0.047619047619047616,
+            "q25": 0.047619047619047616,
+            "q75": 0.047619047619047616
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7142857142857143,
+            "mean": 0.18012422360248445,
+            "median": 0.14285714285714285,
+            "min": 0.14285714285714285,
+            "q25": 0.14285714285714285,
+            "q75": 0.14285714285714285
+          },
+          "shell_size": {
+            "max": 28.0,
+            "mean": 10.916666666666666,
+            "median": 11.0,
+            "min": 1.0,
+            "q25": 5.0,
+            "q75": 14.0
+          }
+        }
+      }
+    },
+    "8": {
+      "caps": {
+        "max": 20.0,
+        "mean": 15.083333333333334,
+        "median": 15.0,
+        "min": 12.0,
+        "q25": 14.0,
+        "q75": 16.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 3,
+          "exact_packing_certified_count": 17,
+          "greedy_packing_lower_bound": {
+            "max": 4.0,
+            "mean": 1.5416666666666667,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.14285714285714285,
+            "mean": 0.14285714285714282,
+            "median": 0.14285714285714285,
+            "min": 0.14285714285714285,
+            "q25": 0.14285714285714285,
+            "q75": 0.14285714285714285
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 4.0,
+            "mean": 1.5416666666666667,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 17,
+          "exact_packing_certified_count": 3,
+          "greedy_packing_lower_bound": {
+            "max": 14.0,
+            "mean": 4.583333333333333,
+            "median": 3.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 6.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.5,
+            "mean": 0.17006802721088438,
+            "median": 0.07142857142857142,
+            "min": 0.07142857142857142,
+            "q25": 0.07142857142857142,
+            "q75": 0.14285714285714285
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.75,
+            "mean": 0.2619047619047619,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.5
+          },
+          "shell_size": {
+            "max": 14.0,
+            "mean": 4.583333333333333,
+            "median": 3.0,
+            "min": 1.0,
+            "q25": 2.0,
+            "q75": 6.0
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 21,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 26.0,
+            "mean": 9.416666666666666,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 4.0,
+            "q75": 12.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.14285714285714285,
+            "mean": 0.0779220779220779,
+            "median": 0.07142857142857142,
+            "min": 0.07142857142857142,
+            "q25": 0.07142857142857142,
+            "q75": 0.07142857142857142
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.5,
+            "mean": 0.022727272727272728,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "shell_size": {
+            "max": 26.0,
+            "mean": 9.416666666666666,
+            "median": 7.0,
+            "min": 1.0,
+            "q25": 4.0,
+            "q75": 12.0
+          }
+        }
+      }
+    },
+    "9": {
+      "caps": {
+        "max": 28.0,
+        "mean": 17.75,
+        "median": 17.0,
+        "min": 14.0,
+        "q25": 16.0,
+        "q75": 18.0
+      },
+      "sample_count": 24,
+      "shell_summaries": {
+        "0": {
+          "diffuse_certificate_packing_at_least_3_count": 4,
+          "exact_packing_certified_count": 9,
+          "greedy_packing_lower_bound": {
+            "max": 7.0,
+            "mean": 1.875,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.5555555555555556,
+            "mean": 0.1851851851851852,
+            "median": 0.1111111111111111,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.33333333333333337
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7777777777777778,
+            "mean": 0.3037037037037037,
+            "median": 0.1111111111111111,
+            "min": 0.1111111111111111,
+            "q25": 0.1111111111111111,
+            "q75": 0.5555555555555556
+          },
+          "shell_size": {
+            "max": 9.0,
+            "mean": 2.5833333333333335,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 3.0
+          }
+        },
+        "2": {
+          "diffuse_certificate_packing_at_least_3_count": 4,
+          "exact_packing_certified_count": 9,
+          "greedy_packing_lower_bound": {
+            "max": 7.0,
+            "mean": 1.875,
+            "median": 1.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 2.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.5555555555555556,
+            "mean": 0.1851851851851852,
+            "median": 0.1111111111111111,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.33333333333333337
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.7777777777777778,
+            "mean": 0.3037037037037037,
+            "median": 0.1111111111111111,
+            "min": 0.1111111111111111,
+            "q25": 0.1111111111111111,
+            "q75": 0.5555555555555556
+          },
+          "shell_size": {
+            "max": 9.0,
+            "mean": 2.5833333333333335,
+            "median": 2.0,
+            "min": 1.0,
+            "q25": 1.0,
+            "q75": 3.0
+          }
+        },
+        "4": {
+          "diffuse_certificate_packing_at_least_3_count": 22,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 27.0,
+            "mean": 10.666666666666666,
+            "median": 10.0,
+            "min": 1.0,
+            "q25": 6.0,
+            "q75": 14.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.1111111111111111,
+            "mean": 0.11111111111111112,
+            "median": 0.1111111111111111,
+            "min": 0.1111111111111111,
+            "q25": 0.1111111111111111,
+            "q75": 0.1111111111111111
+          },
+          "shell_size": {
+            "max": 51.0,
+            "mean": 18.416666666666668,
+            "median": 16.5,
+            "min": 1.0,
+            "q25": 9.75,
+            "q75": 25.0
+          }
+        },
+        "6": {
+          "diffuse_certificate_packing_at_least_3_count": 22,
+          "exact_packing_certified_count": 2,
+          "greedy_packing_lower_bound": {
+            "max": 27.0,
+            "mean": 10.666666666666666,
+            "median": 10.0,
+            "min": 1.0,
+            "q25": 6.0,
+            "q75": 14.0
+          },
+          "minimum_edge_abs_overlap": {
+            "max": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "q25": 0.0,
+            "q75": 0.0
+          },
+          "minimum_vertex_projective_overlap": {
+            "max": 0.1111111111111111,
+            "mean": 0.11111111111111112,
+            "median": 0.1111111111111111,
+            "min": 0.1111111111111111,
+            "q25": 0.1111111111111111,
+            "q75": 0.1111111111111111
+          },
+          "shell_size": {
+            "max": 51.0,
+            "mean": 18.416666666666668,
+            "median": 16.5,
+            "min": 1.0,
+            "q25": 9.75,
+            "q75": 25.0
+          }
+        }
+      }
+    }
+  }
+}

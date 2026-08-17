@@ -2170,3 +2170,32 @@ orientations show that first-marginal balance and chartwise one-sidedness do
 not determine it, while a separately paid linear residual loses the leading
 scale.  Designed-interface compression and reusable congruence must remain
 separate claims.
+
+## 117. Thin-shell cardinality has a universal mesoscopic floor
+
+At the additive `O(n)` scale, every bounded-cap quadratic landscape already
+has `2^{Omega(sqrt n log n)}` common-oriented witnesses.  Structured Walsh
+landscapes realize the same exponent at exact cap.  This count comes from
+choosing many small masks in a linear low-field pool and need not carry an
+algebra or a large response packing.
+
+Consequently neither a stretched-exponential thin shell nor its raw
+cardinality is near-minimizer rigidity.  A selective theorem must control
+the shell's generative algebra, projective packing, or contextual response.
+Coefficient-edit proximity at the broader `o(n^(3/2))` scale cannot transfer
+such thin information without a new cap-relative cancellation estimate.
+
+## 118. Signed shell balance has a projective two-cap alternative
+
+A small signed edge barycentre does not imply projective diversity.  It may
+come from nearly equal mass in two signed caps that are close after quotienting
+orientation but almost antipodal before quotienting it.  Positivity excludes
+only cap radii below `Q/binom(n,2)=Theta(n^(-1/2))`, not a fixed-radius
+two-cap law.
+
+This distinction is operational.  A fixed-separated near-top projective
+packing has a rank-one, all-spins-free compiler with leading response gap and
+total `O(n^(3/2))` cap.  One target direction even gives an unconditional
+physical bit in every vanishing near-minimizer halo.  Growing information,
+however, requires ball-mass decay or several targetable near-top directions;
+first marginals alone cannot provide them.

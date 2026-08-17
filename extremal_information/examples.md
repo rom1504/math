@@ -2988,3 +2988,38 @@ Hence shell cardinality, affine parallelograms, odd-product closure, and even
 common energy orientation do not by themselves diagnose near-minimality.
 The remaining distinction must concern physical query balance or reuse of
 the selected chart across scale.
+
+## Example 156: Walsh exact shells realize the universal thin-shell scale
+
+For `N=2^d`, the hollow Sylvester Walsh signing has Boolean maximizers equal
+to self-dual or anti-self-dual bent sign vectors.  A primary-source lift from
+arbitrary bent functions in `d-2` variables, combined with the 2025 bent
+count, gives
+
+```math
+2^{(1/2+o(1))\sqrt N\log_2N}
+```
+
+projective positive exact maximizers.  This is the same exponent as the
+universal `O(n)`-shell lower floor in Theorem 36.10, but it supplies neither
+an upper count nor contextual response separation.  At order `16`, exact
+enumeration gives 20 positive and 20 negative raw eigenvectors, or 10
+projective classes of each orientation.
+
+## Example 157: small exact minimizers reject the two-cap shell model
+
+A frozen exact audit of 42 certified minimizers at orders 7--14 found, in
+every exact active shell, at least three projective signed cuts with pairwise
+
+```math
+{|\langle z,z'\rangle|\over\binom n2}\le {1\over2}.
+```
+
+At even orders 8, 10, 12, and 14 the entire audited active shell is such a
+packing, of sizes 8, 40, 20, and 156.  All 69 one-step-near witnesses also
+have a three-point packing after deficit two is admitted.  Random and
+cardinality-matched controls oscillate strongly with parity, so this is a
+falsification of the simplest two-cap finite model, not evidence for a
+universal distribution or an asymptotic growth rate.  The frozen protocol
+and exact certificates are in
+[`drafts/nearmin_absolute_overlap_audit.md`](drafts/nearmin_absolute_overlap_audit.md).

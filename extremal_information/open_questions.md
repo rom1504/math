@@ -930,3 +930,31 @@ has a balanced atlas of `O(n^(1/3))` signing-dependent charts, each with
 error.  The next theorem must therefore compress **cross-chart transition
 data** or give a common low-cap physical context.  More within-chart shell
 states, even with a common orientation, do not advance this question.
+
+## 17. Fixed-projective-gap packing in deepest cut-code cosets
+
+Theorem 36.11 removes the physical-compiler obstruction.  The selected
+near-minimizer question is now purely structural:
+
+```math
+\exists\gamma>0,\quad d_n=o(n^{3/2}),\quad K_n\to\infty
+```
+
+such that every exact minimizer has `K_n` positive `d_n`-shell atoms with
+pairwise absolute edge overlap at most `1-gamma`.  The preferred quantitative
+form is `K_n=exp(Omega(n))`.
+
+In cut-code language, this asks for projectively separated nearest or
+near-nearest codewords in every deepest coset of the augmented coboundary
+code.  It is strictly smaller data than the full coset histogram and has an
+exact finite falsifier.  A positive answer compiles immediately into a
+growing all-spins-free contextual packing of total cap `O(n^(3/2))`.
+
+The mandatory obstruction is the two-cap alternative: an FB-balanced shell
+may put nearly half its mass close to one projective cut and nearly half near
+the opposite signed orientation.  Positivity rules this out only below
+radius `Theta(n^(-1/2))`.  Either prove that deepest cut-code cosets exclude
+this geometry at fixed radius, or construct it scalably.  Do not substitute
+raw shell cardinality: Theorem 36.10 gives
+`2^{Omega(sqrt n log n)}` thin-shell witnesses universally without a
+projective packing theorem.

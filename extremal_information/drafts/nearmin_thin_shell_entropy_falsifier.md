@@ -148,7 +148,9 @@ and
 Q(A_d)={1\over2}N^{3/2}.                           \tag{TS.9}
 ```
 
-The same conclusion holds for the diagonal-conjugate PC.3 tensor tower.
+The same conclusion holds for the unflipped hollow child matrices in the
+diagonal-conjugate PC.3 tensor tower.  It is not asserted for their
+sparse-flipped or physically completed descendants.
 
 #### Proof and imported inputs
 
@@ -156,8 +158,9 @@ A sign vector `F` is a positive `sqrt(N)` eigenvector of `W_d` exactly when
 it is the sign of a self-dual bent Boolean function.  The spectral bound
 gives (TS.9), and each such vector attains it.
 
-Carlet--Danielsen--Parker--Sole, Theorem 4.9 and the explicit example after
-it, give an injective lift from every bent function `f` in `d-2` variables
+For even `d>=6`, Carlet--Danielsen--Parker--Sole, Theorem 4.9 and the
+explicit example after it, give an injective lift from every bent function
+`f` in `d-2` variables
 to a self-dual bent function in `d` variables whose sign vector is
 
 ```math
@@ -195,9 +198,9 @@ Primary sources:
   (2025), main counting theorem.
 
 For comparison, exhaustive enumeration at order `N=16` gives 20 positive
-and 20 negative exact Walsh eigenvectors, agreeing with the classical count
-of 20 self-dual functions in four variables.  The four poles used in the
-PC.3 presentation are a strict subfamily of this full exact shell.
+and 20 negative raw exact Walsh eigenvectors, hence 10 positive and 10
+negative projective classes.  The four poles used in the PC.3 presentation
+are a strict subfamily of this full exact shell.
 
 ### What TS.2 does not prove
 
@@ -206,7 +209,9 @@ The best imported lower bound is
 functions remain exponential in `N`, so they do not prove the proposed
 thin-shell upper bound even for Walsh.  In particular, the possibility that
 the Walsh eigenspace has `exp(cN)` Boolean vertices is not excluded by the
-results used here.  It is an open counting problem, not a counterexample.
+results used here.  Walsh **realizes** the universal lower scale; no matching
+Walsh-shell upper bound is claimed.  It is an open counting problem, not a
+counterexample.
 
 ## 4. Coefficient-edit halos do not preserve the thin scale
 
@@ -217,7 +222,7 @@ For `Delta>=0`, write
 =\{x:Q(A)-|H_A(x)|\le\Delta\}.                     \tag{TS.12}
 ```
 
-### Lemma TS.3 (sharp black-box shell stability under edge edits)
+### Lemma TS.3 (black-box shell stability under edge edits)
 
 Let `A` be an exact minimizer of order `n`, and let `B` be obtained from it
 by flipping `r` edge signs.  Then
@@ -291,15 +296,20 @@ Q-|H_A(x^S)|\le2L(J)+4P(J).                         \tag{TS.17}
 ```
 
 Consequently, if a sequence of genuine near-minimizers has ground states
-and sets `J_n` such that
+and sets `J_n` such that, for a specified exponent `C_0`,
 
 ```math
-|J_n|\gg\sqrt n\,\operatorname {polylog}n,
+{|J_n|\over\sqrt n(\log n)^{C_0}}\longrightarrow\infty,
 \qquad L(J_n)+P(J_n)=O(n),                          \tag{TS.18}
 ```
 
 then its `O(n)` shell has
 `2^{|J_n|-1}` same-orientation projective states and the candidate is false.
+Here the known lower bound `Q=Omega(n^(3/2))` for genuine near-minimizers
+ensures that the `O(n)` defect cannot reverse the ground orientation for
+large `n`; the factor `1/2` is retained to cover projectivization uniformly.
+To falsify every unspecified polylogarithmic exponent at once, require the
+displayed ratio to diverge for every fixed `C_0`.
 
 This is a serious falsifier rather than vocabulary.  A pseudorandom signing
 on `k` vertices naturally has subset discrepancy on the `k^(3/2)` scale;
@@ -337,7 +347,7 @@ for genuine near-minimizers survives this audit, but it is not presently a
 selected compositional lemma:
 
 * TS.1 shows it could improve the exponent only by polylogarithmic factors;
-* Walsh/PC.3 does not falsify it and instead saturates the lower scale;
+* Walsh/PC.3 does not falsify it and instead realizes the lower scale;
 * proving it even for Walsh requires new self-dual-bent counting input;
 * shell cardinality alone has no proved cap-relative composition payoff;
 * Proposition TS.4 gives the most discriminating next falsifier: search for

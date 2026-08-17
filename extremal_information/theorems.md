@@ -15420,3 +15420,154 @@ independent audit are in
 [`experiments/verify_nearmin_balanced_affine_atlas.py`](experiments/verify_nearmin_balanced_affine_atlas.py),
 and
 [`drafts/nearmin_balanced_affine_atlas_audit.md`](drafts/nearmin_balanced_affine_atlas_audit.md).
+
+### Theorem 36.10 (the universal thin-shell entropy floor)
+
+Let `A` be a hollow signing with `Q(A)<=Cn^(3/2)`, orient a ground state,
+and fix `c>0`.  At least
+
+```math
+{1\over2}{\lfloor n/2\rfloor\choose\lfloor c\sqrt n\rfloor}
+=2^{(c/2+o(1))\sqrt n\log_2n}                     \tag{36.33}
+```
+
+projectively distinct spins have one common energy orientation and deficit
+at most
+
+```math
+(8cC+2c^2+o(1))n.                                 \tag{36.34}
+```
+
+Indeed at least `n/2` ground-state local fields are at most `4Q/n`; flip
+every `floor(c sqrt n)`-subset of that pool and use the exact flip identity.
+Unlike Theorem 36.7, this family is not asserted to be one affine algebra.
+
+The scale is attained already at exact cap by a structured bounded-cap
+family.  If `N=2^d` with even `d`, the hollow Sylvester Walsh signing has
+cap `N^(3/2)/2` and
+
+```math
+\log_2|\mathcal G_d^+|
+\ge(1/2+o(1))\sqrt N\log_2N.                    \tag{36.35}
+```
+
+projective positive maximizers.  This follows by injecting every bent
+function in `d-2` variables into a self-dual bent function in `d` variables
+and applying Haugland's bent-function lower bound.  It applies to the
+unflipped hollow PC.3 child tower under diagonal conjugacy, not to its
+sparse-flipped or completed descendants.  No matching Walsh upper count is
+known.
+
+Two stability facts delimit the conclusion.  If `B` is obtained from an
+exact minimizer `A` by `r` edge flips, then
+
+```math
+\mathcal S_B(\Delta)\subseteq\mathcal S_A(\Delta+2r),
+\qquad
+\mathcal S_A(\Delta)\subseteq\mathcal S_B(\Delta+4r).       \tag{36.36}
+```
+
+Thus black-box `o(n^(3/2))` halo proximity does not preserve an `O(n)`
+shell.  Conversely, a ground-state vertex set `J` with total local-field
+mass `L(J)` and induced subset discrepancy
+
+```math
+P(J)=\max_{S\subseteq J}
+ \left|\sum_{\{i,j\}\subseteq S}a_{ij}x_ix_j\right|
+```
+
+generates at least `2^(|J|-1)` common-oriented shell states of deficit at
+most `2L(J)+4P(J)`.  A mesoscopic `J` with `L(J)+P(J)=O(n)` is therefore a
+precise falsifier for any proposed smaller thin-shell upper bound.
+
+This theorem concerns witness cardinality, not contextual response entropy
+or generative description length.  Proof, primary-source mapping, and
+independent audit are in
+[`drafts/nearmin_thin_shell_entropy_falsifier.md`](drafts/nearmin_thin_shell_entropy_falsifier.md)
+and
+[`drafts/nearmin_thin_shell_entropy_falsifier_audit.md`](drafts/nearmin_thin_shell_entropy_falsifier_audit.md).
+
+### Theorem 36.11 (projective shell packing has a low-cap physical compiler)
+
+Let `A` be a bounded-cap signing and suppose its positive deficit-`d` shell
+contains signed cuts `z^u=sigma_uc(u)`, `u in U`, with
+
+```math
+{ |\langle z^u,z^v\rangle|\over {n\choose2}}
+\le1-\gamma\qquad(u\ne v).                         \tag{36.37}
+```
+
+For fixed `alpha,lambda,gamma>0`, independently flip an
+`alpha/sqrt n` fraction of the edges on which `A` disagrees with each
+`z^u`, producing exact-sign children `b^u`.  Query child `v` with the
+all-spins-free rank-one shore
+
+```math
+B^u=u\mathbf1_h^T,qquad h=\lfloor\lambda\sqrt n\rfloor.
+```
+
+One simultaneous realization satisfies, for every `u ne v`,
+
+```math
+Q(P^{u|u})-Q(P^{v|u})
+\ge\left({\gamma\over4}\min\{\alpha,\lambda\}-o(1)\right)n^{3/2}
+ -(1-\alpha/\sqrt n)d.                              \tag{36.38}
+```
+
+The matrices are hollow exact signings of order `n+O(sqrt n)` and their
+whole caps are `O(n^(3/2))`.  The proof keeps the sparse-flip and field
+channels joint until after maximization.  Its key spherical inequality is
+
+```math
+{\alpha\over2}(V\mathbin\cdot Y)^2
++\lambda|U\mathbin\cdot Y|
+\le {\alpha\over2}+\lambda
+-{1-|U\mathbin\cdot V|^2\over4}\min\{\alpha,\lambda\}.     \tag{36.39}
+```
+
+Thus a `K`-point vanishing-width projective shell packing yields a common
+low-cap physical query bank carrying `log_2K` bits.  This conclusion is
+conditional on the projective packing, not on signed first marginals.
+
+There is also an unconditional ordered consequence.  Take one ground state
+`u` and any Boolean `v` with `|u dot v|<=1`.  Only the target `u` must be
+near-top, so every bounded-cap signing has two halo children and one common
+free-shore context with
+
+```math
+Q(P^{u|u})-Q(P^{v|u})
+\ge(\alpha/4-o(1))n^{3/2}.                          \tag{36.40}
+```
+
+For an exact-minimizer base this is one genuine Level-5 physical hidden bit.
+It persists in a vanishing halo: if `alpha_n->0` and
+`alpha_n sqrt n->infinity`, both children lie in
+`\mathcal N_n(2alpha_n)` and the gap is
+
+```math
+(\alpha_n/4-o(\alpha_n))n^{3/2}.                   \tag{36.41}
+```
+
+This does not amplify to a growing state family without additional near-top
+directions.
+
+Finally, fractional edge balance has an exact alternative.  If a positive
+`d`-shell law has normalized edge bias at most `delta` but no pair satisfying
+(36.37), then relative to any support atom it lies in two projective caps
+whose orientation bit has bias at most `delta+gamma`.  Positivity forces
+
+```math
+\gamma>{Q(A)-d\over {n\choose2}}.                  \tag{36.42}
+```
+
+Hence Theorem 36.2 alone reaches only the `Theta(n^(-1/2))` separation
+scale: either it gives such a pair or it permits two nearly antipodal caps.
+At that scale (36.38) has only `O(n)` gap.  Ruling out this two-cap geometry
+at a fixed scale, or exploiting it with a different compiler, is the precise
+remaining structural obligation.
+
+Proof, independent audit, and the overflow-safe finite verifier are in
+[`drafts/nearmin_absolute_overlap_physical_compiler.md`](drafts/nearmin_absolute_overlap_physical_compiler.md),
+[`drafts/nearmin_absolute_overlap_physical_compiler_independent_audit.md`](drafts/nearmin_absolute_overlap_physical_compiler_independent_audit.md),
+and
+[`experiments/verify_nearmin_absolute_overlap_compiler.py`](experiments/verify_nearmin_absolute_overlap_compiler.py).
