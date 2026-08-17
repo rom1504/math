@@ -9278,6 +9278,91 @@ Public connector padding alone cannot amplify local state.  The repaired
 proof and audit are in
 [`drafts/walsh_total_scale_flux_ceiling.md`](drafts/walsh_total_scale_flux_ceiling.md).
 
+### Theorem 21.24 (alternating-form broadcast attains positive total-scale rate)
+
+For every `r>=2`, put `V=F_2^r`,
+
+```math
+h={r(r-1)\over2},\qquad k=64r^2.                     \tag{21.119}
+```
+
+There are one public label list `P=(p_1,...,p_k) in V^k` and one public
+hollow signing `A` such that, for all alternating forms `B` on `V`,
+
+```math
+A_B(i,j)=A(i,j)(-1)^(B(p_i,p_j))                    \tag{21.120}
+```
+
+defines an exact hollow signing with
+
+```math
+||A_B||_(2->2)<=8sqrt(k),\qquad Q(A_B)<=4k^(3/2).    \tag{21.121}
+```
+
+Declare the same-support additive contexts `-H_T`, one for every alternating
+form `T`, where `H_B(s)=s^TA_Bs/2`.  Their absolute responses satisfy
+
+```math
+R_B(B)=0,
+\qquad {sqrt2\over32}k^(3/2)
+       <=R_T(B)=Q(A_B-A_T)<=8k^(3/2)\quad(B!=T).     \tag{21.122}
+```
+
+Consequently these `2^h` bounded-cap sign quadratics have pairwise response
+separation `(sqrt2/32)k^(3/2)`.  Uniform error below half that gap requires
+at least
+
+```math
+h>={k\over256}                                      \tag{21.123}
+```
+
+bits.  This is a positive contextual information rate at the total
+extremal scale.
+
+#### Proof
+
+Choose the `p_i` independently.  Every nonzero alternating form has rank at
+least two, so `Pr(B(p_i,p_j)=1)>=3/8`.  McDiarmid gives probability at most
+`exp(-k/128)` that fewer than `binom(k,2)/4` pairs are detected.  Since
+`2^h exp(-k/128)<1`, one list simultaneously detects every nonzero form on
+at least that many pairs.
+
+Now choose the upper entries of `A` independently.  For fixed `B` and a
+unit vector, the quadratic form is a Rademacher sum with squared coefficient
+norm at most two.  A `1/4` sphere net and a union bound over all `2^h` forms
+give
+
+```math
+2exp\{klog9+hlog2-4k\}<1,                            \tag{21.124}
+```
+
+so one `A` satisfies (21.121) simultaneously.
+
+For `B!=T`, the difference has entries in `{0,+-2}` and at least `k^2/16`
+nonzero unordered entries.  Some vertex bipartition cuts at least `k^2/32`
+of them.  Optimizing one side after randomizing the other and using the sharp
+`p=1` Khintchine inequality gives a cross value at least
+`(sqrt2/32)k^(3/2)`.  Flipping all spins on one side shows the absolute full
+quadratic value is at least this large.  The upper bound is
+`k||A_B-A_T||/2<=8k^(3/2)`.  The predeclared coordinate `T=B` separates any
+pair of response vectors, and `h>=r^2/4=k/256`. `square`
+
+This theorem realizes the escape left open by Theorem 21.23: one hidden
+compatibility coordinate is broadcast through a dense set of state-dependent
+interaction atoms.  The edge phases form a linear alternating-form
+evaluation code and have only `h=Theta(k)` hidden bits, not independent
+quadratic edge data.
+
+The scope is essential.  The random shared base `A` is `Theta(k^2)` bits of
+nonuniform public advice.  Child and context are exact signings separately,
+but their same-edge overlay has coefficients in `{0,+-2}` and is not an
+exact-sign parent or a disjoint appended future.  Thus this is a structured
+contextual incompressibility theorem, not closure of the original signing
+class.  Fixed-order regular-Hadamard block lifts preserve the normalized gap
+and positive rate; growing the inner order makes the hidden rate
+`Theta(1/n)`.  The complete audited proof is in
+[`drafts/state_dependent_gram_broadcast.md`](drafts/state_dependent_gram_broadcast.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

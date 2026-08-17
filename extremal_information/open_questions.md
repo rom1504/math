@@ -310,6 +310,16 @@ entropy.  To escape, a local bit must alter `Omega(k^(3/2))` unit interaction
 atoms or enter a genuinely nonlocal state-dependent cross block.  The next
 construction/lower bound must therefore target that broadcast regime; adding
 more public connectors is no longer a legitimate experiment.
+
+That broadcast regime is now attained in a sharply scoped model.  An
+alternating-form evaluation code broadcasts `Theta(k)` hidden bits across a
+constant density of constrained edges; one shared random dressing keeps
+every child spectrally flat, and a predeclared negative-clone overlay yields
+fixed `k^(3/2)` response separation.  The construction uses quadratic shared
+public advice and its same-support overlay leaves the exact-sign class.  The
+next discriminating target is to retain the positive rate under a disjoint
+bridge composition or an exact-sign parent with subquadratic public advice,
+or prove that one of those costs is unavoidable.
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking

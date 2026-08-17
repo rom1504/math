@@ -199,6 +199,11 @@ one of:
   fixed-distortion response entropy.  A local bit needs
   `Omega(k^(3/2))` state-dependent interaction atoms for constant
   total-scale neighboring separation.
+  The escape is now attained by an alternating-form broadcast code:
+  `Theta(k)` hidden bits alter a constant density of constrained edge phases,
+  every child stays spectrally flat, and same-support additive contexts give
+  a fixed `k^(3/2)` packing gap. This is conditional on a quadratic shared
+  public base and does not preserve exact-sign closure under overlay.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

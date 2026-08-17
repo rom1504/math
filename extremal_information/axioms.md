@@ -1507,3 +1507,16 @@ stability identifies the exceptional closed tangent law.
 Multiscale extremal compression must therefore test every response speed
 used by future composition.  A closed leading exponent is not evidence that
 the next entropy or amplitude coordinate has finite state.
+
+## 67. Total-scale compatibility memory requires broadcast incidence
+
+Public interactions cannot amplify hidden state absent from their
+coefficients, but state-dependent dense coefficients can.  An alternating-
+form evaluation code broadcasts only linearly many hidden bits across a
+quadratic number of constrained edge phases and attains a positive
+`N^(3/2)` response rate while every child remains spectrally flat.
+
+Hidden description length alone is therefore not an incompressibility
+parameter.  One must also charge how widely each hidden coordinate changes
+the interaction, as well as shared public advice and the declared context
+language.

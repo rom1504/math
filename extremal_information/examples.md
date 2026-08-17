@@ -2160,3 +2160,16 @@ Hence the leading extremal roof can have a finite algebra while the next
 composition query generates a growing function-valued state.  Gaussian
 tangent closure is a rigidity phenomenon, not a generic consequence of
 convex homogeneous rates.
+
+## Example 102: compatibility broadcast restores a total-scale rate
+
+Encode `Theta(k)` hidden bits as an alternating bilinear form on a public
+`F_2` label list.  Every nonzero form changes a constant fraction of the
+`k^2` edge phases.  A single random public sign dressing makes all resulting
+quadratics spectrally flat, while a support-only discrepancy bound separates
+every pair by `Omega(k^(3/2))` under a predeclared negative-clone context.
+
+Thus state-dependent dense broadcast escapes the local-state ceiling and
+forces `Omega(k)` response bits at total scale.  The price is explicit: a
+quadratic-size shared public base, dense bit incidence, and same-support
+additive contexts whose overlay is not itself an exact signing.
