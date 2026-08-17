@@ -11667,6 +11667,271 @@ spread mass.  Exact checks and the source audit are in
 and
 [`experiments/verify_hypercube_flatness_scout.py`](experiments/verify_hypercube_flatness_scout.py).
 
+### Theorem 21.50 (Boolean ports have an exact Fourier algebra and linear fixed-scale entropy)
+
+For `W in {+-1}^(n times p)`, define its labelled endpoint response
+
+```math
+L_W(epsilon)=||Wepsilon||_1
+```
+
+and let `mu_W` be the histogram of its rows in the projective group
+`G_p={+-1}^p/{+-1}`.  With `g_p(z)=|sum_i z_i|`, one has the convolution
+
+```math
+L_W(epsilon)=sum_(s in G_p)mu_W(s)g_p(sepsilon).   \tag{21.304}
+```
+
+Characters of `G_p` are the even subsets `S subseteq[p]`.  If
+`P=2ceil(p/2)` and `|S|=2k>=2`, then
+
+```math
+hat g_p(emptyset)={(P-1)!!\over(P-2)!!},
+\qquad
+hat g_p(S)=(-1)^(k-1)
+{(2k-3)!!(P-2k-1)!!\over(P-2)!!}.                 \tag{21.305}
+```
+
+Every multiplier is nonzero.  Hence two systems have the same complete
+labelled response table if and only if they have the same projective row
+histogram.  The exact quotient on `n` rows has
+
+```math
+{n+2^(p-1)-1\choose2^(p-1)-1}                    \tag{21.306}
+```
+
+states, and it composes by histogram addition.  The same state answers all
+real weighted queries `||Wa||_1`, so it is the exact zonotope-support
+carrier, not merely a Boolean-endpoint code.
+
+Its fixed-scale response image is far smaller.  For probability measures
+on `G_p`, set
+
+```math
+d_p(mu,nu)=max_epsilon
+\left|E_mu{|s dot epsilon|\over p}
+      -E_nu{|s dot epsilon|\over p}\right|.        \tag{21.307}
+```
+
+Every `mu` has an equally weighted `eta`-coreset on at most
+
+```math
+k=ceil(16/eta^2)                                   \tag{21.308}
+```
+
+row types.  Therefore
+
+```math
+log Cov_p(eta)<=k(p-1)log2.                        \tag{21.309}
+```
+
+Conversely, point masses satisfy the exact identity
+
+```math
+d_p(delta_s,delta_t)={2d_H^proj(s,t)\over p},      \tag{21.310}
+```
+
+so projective Hamming codes give
+
+```math
+\boxed{log Cov_p(eta)=Theta_eta(p)}                \tag{21.311}
+```
+
+for every fixed `0<eta<1/2`.
+
+#### Proof
+
+Fourier transformation of (21.304) multiplies `hat mu_W(S)` by the
+nonzero coefficient (21.305), proving invertibility and the weak-composition
+count.  Formula (21.305) follows by adjoining an unused sign when `p` is odd
+and iterating the even-order binomial recurrence
+
+```math
+{hat g_P(2k)\over hat g_(P-2)(2k)}
+={P-2k-1\over P-2}.                                \tag{21.312}
+```
+
+For the coreset, sample `S_1,...,S_k` from `mu`.  Symmetrization and scalar
+Rademacher contraction give
+
+```math
+E d_p(mu,mu_k)
+<= {4\over kp}E_sigma sum_(i=1)^p
+       \left|sum_(j=1)^ksigma_j(S_j)_i\right|
+<= {4\over sqrt k}.                               \tag{21.313}
+```
+
+Some sample therefore proves (21.308)--(21.309).  Reverse triangle
+inequality gives the upper side of (21.310), while querying `epsilon=s`
+gives equality; projective Hamming packing completes the proof. `square`
+
+Gram data are exactly the constant and degree-two Fourier truncation.  They
+therefore determine the full pure-linear table for `p<=3`; at `p=4`, the
+uniform row distribution and doubled even-parity distribution have equal
+Gram matrices but joint supports `3n/2` and `2n`.  Exact feature dimension is
+exponential in `p`, whereas fixed-error response information is linear.
+The coreset is static: resparsifying after each merge can accumulate fresh
+error and is not an all-depth congruence.  Full proofs and audits are in
+[`drafts/boolean_port_fourier_feature_algebra.md`](drafts/boolean_port_fourier_feature_algebra.md),
+[`drafts/boolean_port_fourier_feature_algebra_independent_audit.md`](drafts/boolean_port_fourier_feature_algebra_independent_audit.md),
+[`drafts/boolean_port_dimension_free_coreset.md`](drafts/boolean_port_dimension_free_coreset.md),
+[`drafts/four_port_gram_boolean_collision.md`](drafts/four_port_gram_boolean_collision.md),
+[`experiments/verify_boolean_port_fourier_feature_algebra.py`](experiments/verify_boolean_port_fourier_feature_algebra.py),
+[`experiments/verify_boolean_port_dimension_free_coreset.py`](experiments/verify_boolean_port_dimension_free_coreset.py),
+and
+[`experiments/verify_four_port_gram_boolean_collision.py`](experiments/verify_four_port_gram_boolean_collision.py).
+
+### Theorem 21.51 (equal Gram--Rayleigh states can hide a leading Boolean response)
+
+There is a regular symmetric Hadamard matrix `H_0` of order 16 and two
+four-port tuples `W^A,W^B` of Boolean `+4` eigenvectors such that
+
+```math
+G^A=G^B=R^A=R^B=
+\begin{pmatrix}
+1&1/2&0&0\\1/2&1&0&0\\0&0&1&0\\0&0&0&1
+\end{pmatrix},                                    \tag{21.314}
+```
+
+but their joint Boolean field supports are respectively `32` and `28`.
+This finite collision amplifies without diluting the scale.  Put
+
+```math
+H_j=H_0^(tensor j),\quad n_j=16^j,\quad r_j=4^j,
+\qquad W_j=W_0\otimes1_(16^(j-1)),                \tag{21.315}
+```
+
+and give every port width `m_j=r_j`.  Then the two states remain exactly
+equal, total port mass is `pm_j/r_j=4`, and
+
+```math
+\boxed{
+\mathcal B_(r_j)(H_j;W_j^A)
+-\mathcal B_(r_j)(H_j;W_j^B)
+\ge {r_jn_j\over8}={n_j^(3/2)\over8}.}            \tag{21.316}
+```
+
+Filling all pairs among the `4r_j` auxiliary vertices by the same arbitrary
+exact signing changes the difference by at most `O(r_j^2)=O(n_j)`.  Hence
+no decoder receiving only `(G,R,n,r,m,p)`, even together with the common
+`H_j` and public completion, can have uniform Boolean error `o(rn)` on this
+class.
+
+#### Proof
+
+At the seed, endpoint enumeration gives supports `32` and `28`.  One Boolean
+word on the high side has child energy `24` and field support `32`.  Tensor
+it with the common all-one pole.  Writing `N=16^(j-1)`, this gives the lower
+bound `38r_jN`; the spectral child bound plus the low-side support gives the
+upper bound `36r_jN`.  Their difference is `2r_jN=r_jn_j/8`.  Gram and
+Rayleigh products scale identically under the tensor lift, and cap
+Lipschitzness proves the completion statement. `square`
+
+There is also a scalable one-port collision outside the involutive class.
+Two order-16 zero-Rayleigh ports have responses `64` and `78`.  Tensoring
+the common child with `J_k`, the port with `1_k`, and the width by `k` gives
+
+```math
+\mathcal B_(km)(H\otimes J_k;w\otimes1_k)
+=k^2\max_(y\in\Gamma_k^n)
+ \left\{|y^THy|/2+m|w^Ty|\right\},                \tag{21.317}
+```
+
+and independent rounding bounds the box maximum by the seed cube maximum
+plus `sum_i|H_ii|/2`.  The two equal singleton `(G,R)` states consequently
+remain separated by at least `(3/32)rn`.  A strict regular-Hadamard common
+factor does not admit this magnetization quotient: an orthogonal top mode
+with zero fibre magnetization can retain child energy `rn/2`.
+
+Theorem 21.51 upgrades the earlier spherical integrality gap to an
+information collision.  Pairwise geometry is not a complete Boolean state;
+the first scalable witness is a fourth-order row-pattern channel.  Full
+proofs and independent exact derivations are in
+[`drafts/regular_hadamard_equal_gram_rayleigh_collision.md`](drafts/regular_hadamard_equal_gram_rayleigh_collision.md),
+[`drafts/three_port_gram_closure.md`](drafts/three_port_gram_closure.md),
+[`drafts/rank_one_common_factor_amplification.md`](drafts/rank_one_common_factor_amplification.md),
+[`experiments/verify_regular_hadamard_equal_gram_rayleigh_collision.py`](experiments/verify_regular_hadamard_equal_gram_rayleigh_collision.py),
+[`experiments/verify_three_port_gram_closure.py`](experiments/verify_three_port_gram_closure.py),
+and
+[`experiments/verify_rank_one_common_factor_amplification.py`](experiments/verify_rank_one_common_factor_amplification.py).
+
+### Theorem 21.52 (odd product closure gives a growing exact Boolean carrier)
+
+Let `||H||op<=r`, let `w_1,...,w_p` be Boolean `+r` eigenvectors, and fix
+an antipodally odd tie-broken majority selector `tau`.  If every coordinate
+product
+
+```math
+w_S=\bigodot_(i\in S)w_i
+```
+
+appearing with nonzero coefficient in the Boolean Fourier expansion of
+`tau` is also a `+r` eigenvector, then every labelled trust channel is exact:
+
+```math
+\boxed{
+B_epsilon={rn\over2}+m||sum_i epsilon_iw_i||_1,
+\qquad
+S_epsilon={rn\over2}+m\sqrt n||sum_i epsilon_iw_i||_2.}
+                                                               \tag{21.318}
+```
+
+The witness is the coordinatewise selector itself.  Its Fourier expansion
+is a linear combination of positive top poles, so it pays the quadratic and
+all port channels jointly before absolute values.  Consequently the
+projective histogram of Theorem 21.50 is the minimal exact labelled Boolean
+carrier on this closed class.
+
+The selector-independent full condition has an intrinsic form.  Fixing
+`w_1` and
+
+```math
+\mathcal C=<w_1\odot w_i:2<=i<=p>,                \tag{21.319}
+```
+
+all odd port products form exactly the affine multiplicative coset
+`w_1 mathcal C`.  Thus full closure means that this coset lies in the
+Boolean positive top eigenset.  It is preserved by block concatenation and
+tensor product; on tensor ports the exact state law is projective-group
+convolution
+
+```math
+\mu_(W\boxtimes V)=\mu_W*_(G_p)\mu_V.             \tag{21.320}
+```
+
+This mechanism has a dense growing-arity realization.  The product-closed
+triple in the order-16 regular Hadamard seed supplies an affine coset of four
+positive poles.  Tensor `j` seeds and take one base pole plus the `2j`
+factor generators as ports.  Then
+
+```math
+n_j=16^j,\quad r_j=4^j,\quad
+p_j=2j+1={1\over2}\log_2n_j+1,                    \tag{21.321}
+```
+
+every odd product is a positive pole, and the exact histogram carrier has
+
+```math
+2^(p_j-1)=\sqrt{n_j}quad\hbox{bins},\qquad
+O(\sqrt{n_j}\log n_j)\quad\hbox{bits}.            \tag{21.322}
+```
+
+At width `m_j=floor(r_j/p_j)`, total port mass is at most one.  Arbitrary
+public exact-sign completion on the at most `r_j` new vertices costs only
+`O(n_j)=o(r_jn_j)`.  This is therefore a dense, growing-interface,
+exact-sign benchmark with a strict sub-landscape composable state.
+
+For `p<=2` closure is automatic for top ports.  At `p=3` it asks only that
+the triple product be top and yields an explicit Gram formula.  The
+four-port collision in Theorem 21.51 fails the product condition, proving
+that it is genuine synchronization rather than disguised pairwise data.
+Full proofs and independent audit are in
+[`drafts/boolean_port_product_algebra_closure.md`](drafts/boolean_port_product_algebra_closure.md),
+[`drafts/boolean_port_product_algebra_closure_independent_audit.md`](drafts/boolean_port_product_algebra_closure_independent_audit.md),
+[`drafts/three_port_gram_closure.md`](drafts/three_port_gram_closure.md),
+and
+[`experiments/verify_boolean_port_product_algebra_closure.py`](experiments/verify_boolean_port_product_algebra_closure.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

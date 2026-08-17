@@ -115,14 +115,14 @@ For any finite partition tree,
 ```math
 \boxed{
 \phi(u)=
-\sum_{v\ {m internal}}\omega_v\mathcal A_v
-+\sum_{\ell\ {m leaf}}\omega_\ell\phi_\ell.}     \tag{FC.11}
+\sum_{v\text{ internal}}\omega_v\mathcal A_v
++\sum_{\ell\text{ leaf}}\omega_\ell\phi_\ell.}     \tag{FC.11}
 ```
 
 At every fixed depth,
 
 ```math
-\sum_{v\ {m at\ that\ depth}}\omega_v\le1.       \tag{FC.12}
+\sum_{v\text{ at that depth}}\omega_v\le1.       \tag{FC.12}
 ```
 
 #### Proof
