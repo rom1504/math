@@ -1747,3 +1747,18 @@ edges create `s-1` relative antipodes and `r-s+1` cycle bits.  This suggests
 a concrete dynamic-complexity law: reusable state equals marginal semantic
 state plus the dimension of the amalgamation fibre, with the latter charged
 only when interaction makes it observable.
+
+## 85. Positivity converts quadratic reconstruction into linear response entropy
+
+A state may require a quadratic table for exact reconstruction while having
+only linear metric entropy under every declared collective quadratic query.
+For trace-bounded PSD Gram sectors, spectral truncation leaves fixed rank at
+fixed accuracy, and factor-space covering costs `exp(O(p))`; a projective
+Boolean cube shows this rate is sharp.
+
+The conversion is scale-sensitive.  A hard trust boundary changes the
+metric-to-response modulus from linear to square-root, and total port mass
+amplifies the error.  Therefore raw coordinate count, fixed-scale metric
+entropy, and usable response entropy are three different quantities.  A
+compression theorem must state all three scales and must not infer exact
+Boolean realizability from a spherical PSD cover.

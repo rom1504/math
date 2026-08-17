@@ -10904,6 +10904,138 @@ independent finite checks are in
 and
 [`experiments/verify_regular_hadamard_orientation_carrier_independent_audit.py`](experiments/verify_regular_hadamard_orientation_carrier_independent_audit.py).
 
+### Theorem 21.42 (collective Gram states have linear response entropy)
+
+For two positive spectral sectors on `p` labelled ports, put
+
+```math
+\mathcal K_p=\{(K^+,K^-):K^\pm\succeq0,
+                         \operatorname{tr}K^\pm\le p\},       \tag{21.243}
+```
+
+write `G=K^++K^-`, `R=K^+-K^-`, and define the collective query
+pseudometric
+
+```math
+d_q((G,R),(G',R'))={1\over p^2}
+ \max_{\epsilon\in\{+-1\}^p,\sigma\in\{+-1\}}
+ \left|\epsilon^T(\Delta G+\sigma\Delta R)\epsilon\right|.
+                                                               \tag{21.244}
+```
+
+For every `0<eta<=1`,
+
+```math
+\log\operatorname{Cov}(\eta,\mathcal K_p,d_q)
+\le2p\left\lceil{4\over\eta}\right\rceil
+       \log\left(1+{16\over\eta}\right).             \tag{21.245}
+```
+
+The centres may be chosen PSD of rank at most `ceil(4/eta)` in each
+sector.  Conversely, for every fixed `0<theta<1/2`, Boolean ports in one
+regular-Hadamard top eigenspace contain
+
+```math
+2^{(1-H_2(\theta)-o(1))p}                           \tag{21.246}
+```
+
+states separated by at least `8theta(1-theta)` in `d_q`.  Thus fixed-scale
+metric entropy is `Theta_eta(p)`, despite the exact table having
+`Theta(p^2)` entries.
+
+This metric controls a genuine collective response.  Put
+
+```math
+\kappa={pm\over r},\qquad
+a={\epsilon^TK^\sigma\epsilon\over p^2},\qquad
+b={\epsilon^TK^{-\sigma}\epsilon\over p^2}.          \tag{21.247}
+```
+
+The normalized spherical trust response in that channel is
+
+```math
+\Psi_\kappa(a,b)=\inf_{t>0}\left\{
+ {1+t\over2}+{\kappa^2\over2}
+ \left({a\over t}+{b\over t+2}\right)\right\}.       \tag{21.248}
+```
+
+If two states have `d_q<=eta`, their entire labelled trust-response tables,
+and hence their maxima, differ by at most
+
+```math
+\kappa\sqrt{\eta/2}+{\kappa^2\eta\over8}.            \tag{21.249}
+```
+
+The square-root exponent is sharp at the boundary where the dangerous
+sector has zero mass.  If all relevant trust minimizers instead obey
+`t>=tau>0`, the right side improves to
+
+```math
+{\kappa^2\eta\over4}
+\left({1\over\tau}+{1\over\tau+2}\right).            \tag{21.250}
+```
+
+At total repeated-port mass `pm<=r`, an error-`epsilon` spherical response
+carrier therefore has
+
+```math
+\log N_\epsilon
+=O\left({p\over\epsilon^2}\log{1\over\epsilon}\right). \tag{21.251}
+```
+
+This dependence on `p` cannot be removed: the Boolean rank-one family in
+(21.246) has labelled response-table separation `2kappa theta` when
+`kappa` is bounded below.
+
+#### Proof
+
+For one sector, discard eigenvalues at most `eta p/4`.  The discarded
+operator norm contributes at most `eta/4` in the normalized Boolean
+quadratic metric, while the retained rank is at most `4/eta`.  Factor the
+retained part as `BB^T`, `||B||_F<=sqrt(p)`, and cover its Euclidean factor
+ball at radius `eta sqrt(p)/8`.  The identity
+
+```math
+||BB^T-CC^T||_{op}
+\le(||B||_{op}+||C||_{op})||B-C||_{op}              \tag{21.252}
+```
+
+gives the other `eta/4`; taking two sector nets proves (21.245).
+
+For the lower family, take ports `w_i=s_iw`, where `w` is a Boolean top
+eigenvector and `s in {+-1}^p`.  Then `K_s^+=ss^T`, `K_s^-=0`, and for
+projective Hamming distance `h`,
+
+```math
+d_q(s,t)={8h(p-h)\over p^2}.                        \tag{21.253}
+```
+
+Greedy projective Hamming packing proves (21.246).
+
+Formula (21.248) is the exact one-dimensional trust dual.  Coordinatewise
+monotonicity and comparison at `t'=kappa sqrt(e)` show that changing the
+dangerous coordinate by `e` costs at most `kappa sqrt(e)`, while changing
+the safe coordinate costs at most `kappa^2e/4`.  Definition (21.244) gives
+`e=eta/2`, proving (21.249).  Restricting the comparison to `t>=tau` proves
+(21.250).  Finally use (21.245) at radius `epsilon^2`; the rank-one packing
+has exact response `1/2+kappa|epsilon^Ts|/p`. `square`
+
+The upper theorem is for the relaxed PSD/spherical carrier.  It neither
+rounds it to exact Boolean old spins nor supplies physical low-rank centres
+inside every realizable subset.  At the original one-port anti-pin scaling
+`m=r`, one has `kappa=p`, so fixed response accuracy requires much finer
+metric resolution; the linear fixed-accuracy statement applies at bounded
+total port mass, not at arbitrary simultaneous amplification.  Full proofs,
+checks, and independent audits are in
+[`drafts/cross_gram_response_metric_entropy.md`](drafts/cross_gram_response_metric_entropy.md),
+[`drafts/cross_gram_response_metric_entropy_independent_audit.md`](drafts/cross_gram_response_metric_entropy_independent_audit.md),
+[`drafts/collective_cross_gram_packing_and_response_modulus.md`](drafts/collective_cross_gram_packing_and_response_modulus.md),
+[`drafts/collective_cross_gram_packing_and_response_modulus_independent_audit.md`](drafts/collective_cross_gram_packing_and_response_modulus_independent_audit.md),
+[`experiments/verify_cross_gram_response_metric_entropy.py`](experiments/verify_cross_gram_response_metric_entropy.py),
+[`experiments/verify_collective_cross_gram_packing.py`](experiments/verify_collective_cross_gram_packing.py),
+and
+[`experiments/verify_collective_cross_gram_packing_independent_audit.py`](experiments/verify_collective_cross_gram_packing_independent_audit.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

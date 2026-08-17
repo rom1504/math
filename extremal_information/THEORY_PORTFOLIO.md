@@ -92,7 +92,13 @@ one of:
   coordinate, and fixed port count has an `O(ell^2 log n)` Gram certificate.
   PSD geometry now shows that this exact quadratic table contains only
   `O(ell/delta^2)` coordinatewise independently toggleable
-  amplitude-`delta` bits, with a matching tensor-Walsh lower family.
+  amplitude-`delta` bits, with a matching tensor-Walsh lower family.  The
+  stronger collective theorem closes the fixed-scale question: the entire
+  trace-bounded PSD state has `d_q` covering entropy `O_delta(ell)`, and a
+  Boolean projective-Hamming family has matching `Omega_delta(ell)` packing
+  entropy.  At bounded total port mass this gives an
+  `O(ell epsilon^(-2)log(1/epsilon))` spherical response carrier, with a
+  sharp square-root hard-edge modulus.
 - **Best benchmark:** fixed-rank quadratic bridges and, beyond that classical
   regime, the bounded-cap Walsh anti-pin compiler.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -113,15 +119,13 @@ one of:
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** characterize growth of the newly identified
-  amalgamation data.  Either prove that `Omega(ell^2)` independent cross-Gram
-  variables remain visible at total scale, or derive a deterministic
-  synchronization law that collapses them to a rooted `O(ell)` state.  The
-  continuation-width question is closed once its internal cap budget is
-  declared.  The selected next theorem is the metric entropy of the pair of
-  spectral elliptopes under the **collective** multi-port cap pseudometric:
-  decide whether dense small cross-Gram entries carry more than linear
-  fixed-distortion information.
+- **Live theorem:** the collective spherical metric-entropy question is now
+  closed at fixed total port mass.  Determine whether its low-rank factor
+  state has an approximate associative compatibility fibre under repeated
+  gluing, and whether a natural Boolean recovery hypothesis transfers the
+  spherical carrier to exact old-spin caps without a fixed leading loss.
+  The continuation-width question is closed once its internal cap budget is
+  declared.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.

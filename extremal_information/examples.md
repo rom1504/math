@@ -2467,3 +2467,20 @@ and `r-s+1` record new fundamental-cycle products.  A single bridge exposes
 the first resource at leading scale; a balanced versus unbalanced triangle
 exposes the second by at least `3n^(3/2)/2`.  This is an exact reusable
 repair, not merely a list of obstructions.
+
+## Example 122: a quadratic Gram table has only linear collective entropy
+
+The two spectral sectors of a `p`-port Gram--Rayleigh state are PSD and have
+trace at most `p`.  After discarding eigenvalues below a fixed fraction of
+`p`, each sector has fixed rank; a net of its factor matrix therefore has
+only `exp(O(p))` cells.  This covers every signed quadratic port query, not
+merely the individual entries.
+
+The rate is real.  Repeating or negating one Boolean Hadamard eigenvector
+produces a projective Hamming cube of labelled port states, and a
+constant-distance code gives `exp(Omega(p))` collective response tables at
+fixed separation.  Thus the operational fixed-scale state is exponential
+in the port count but not in the number of pair coordinates.  At the trust
+boundary its response has a sharp square-root modulus; away from that
+boundary it is Lipschitz.  The example remains spherical: exact Boolean
+recovery is the unresolved integrality test.

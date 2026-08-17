@@ -628,19 +628,19 @@ is now sharp for unrestricted sign futures: a biased flat bridge and clique
 at width `n^(3/4)` attain a leading gap.  Futures which themselves have
 `O(m^(3/2))` cap still require linear width.
 
-The live question is the **growth and synchronization** of the amalgamation
-data.  For `p` ports, determine whether the `O(p^2)` cross Gram table is
-minimal under the collective response metric, whether a natural algebraic
-hypothesis makes it a function of only `O(p)` rooted data, and how the answer
-depends on the allowed continuation width.  A full affine bit cube cannot
-prove quadratic minimality: PSD geometry limits its independently
-toggleable constant-amplitude dimension to `Theta(p)`, sharply.
+The fixed-scale collective metric question is now closed for the relaxed
+PSD carrier.  Trace-bounded spectral truncation and factor nets give
+`exp(O_eta(p))` covers in the signed quadratic query metric, while Boolean
+rank-one ports give `exp(Omega_eta(p))` packings.  At bounded total port mass
+this yields a linear-rate spherical response carrier with a sharp
+square-root hard-edge modulus.  Thus the `O(p^2)` exact cross-Gram table is
+not the operational fixed-accuracy state.
 
 **Success:** a lower bound exposing the true number of collective cross
-variables at the correct total-system scale, or a deterministic
-synchronization theorem collapsing them to a strict rooted quotient.  The
-next discriminating object is the metric entropy of `(G,R)` under the
-collective multi-port cap, not its raw entry count.
+variables at the correct total-system scale, a reusable approximate gluing
+law for the low-rank factor carrier, or a deterministic Boolean recovery
+theorem transferring its spherical response to exact old-spin caps without
+a fixed leading loss.
 
 One narrow synchronization law is now exact.  If every onsite block is
 `+-H` and every bridge is `+-H` for one common regular Hadamard factor, the
