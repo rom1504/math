@@ -37,6 +37,16 @@ dense family with logarithmically many ports and an exact
 `O(sqrt(n)log n)`-bit state.  This is a successful near-original benchmark,
 not an all-order result for the motivating minima.
 
+The robust follow-up separates two further resources.  Joint selector loss
+is tensor-subadditive, and a Gram-relative certificate survives growing
+Cartesian pole algebras.  Marginal near-top product estimates do not imply
+that certificate: a coherent majority-tail direction creates constant loss
+from `O(1/p)` individual deficits, while approximate group equivariance
+repairs it by twirling.  Even exact zero-defect closure does not force a
+limit unless the empirical factor phase converges; an exact-sign hierarchy
+has cap subsequences `1` and `1/2`.  These are structured theory benchmarks,
+not claims about the minimizing sequence.
+
 The first investigation gave four precise conclusions.
 
 1. For homogeneous quadratic Boolean forms, positive-rate upper-tail entropy

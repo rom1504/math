@@ -1931,3 +1931,15 @@ The missing resource is joint coherence.  Exact group equivariance kills it
 by twirling, and approximate commutator control bounds it quantitatively.
 Accordingly, a claim that many channels are separately near-optimal is not a
 synchronization theorem until it also controls how their errors correlate.
+
+## 100. Coherence and phase are independent synchronization obligations
+
+Joint spectral coherence answers whether one nonlinear selector can pay all
+present channels together.  An empirical factor phase answers whether the
+macroscopic responses selected at successive scales approach one law.
+
+Exact product closure settles the first obligation but not the second: a
+zero-defect exact-sign tensor hierarchy can still have two separated cap
+subsequences.  Conversely, a convergent feature phase is useless if coherent
+off-diagonal defect destroys the selector witness.  A scale theorem needs
+both within-scale coherence and across-scale phase synchronization.

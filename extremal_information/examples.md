@@ -2699,3 +2699,33 @@ channels can align into one bad future-visible direction.  Group twirling
 removes exactly these off-diagonal coherences; approximate commutation gives
 a quantitative repair.  The example is presently a weighted contraction,
 so exact-sign rigidity remains a legitimate escape.
+
+## Example 137: a huge product histogram collapses to one empirical phase
+
+In a Cartesian product of bounded-size pole factors, gauge each row by its
+anchor.  The remaining generator blocks are independent across factors.
+For the single query that maximizes over all endpoint labels, their entire
+histogram contributes asymptotically only
+
+```math
+theta_L={1+\sum_{t,j}|E X_(t,j)|\over1+\sum_tq_t},
+```
+
+with error at most `sqrt(sum_tq_t^2)/(1+sum_tq_t)`.  Relative product
+synchronization then converts this support law into a Boolean trust law.
+The repeated PC.3 seed has phase `1/4` and completed-parent cap `3/4`.
+
+## Example 138: exact closure can retain a nonconvergent factor phase
+
+The same regular-Hadamard seed has one relative generator of mean `1/2` and
+one of mean zero.  Use only one per tensor factor and alternate blocks of
+the two types, each block much longer than the entire prior prefix.  Every
+active pole is an exact positive eigenvector, so the relative defect is
+identically zero.  Nevertheless the empirical phase approaches `1/2` and
+zero on alternating block endpoints, and arbitrary exact-sign completions
+have normalized cap subsequences `1` and `1/2`.
+
+This proves that product synchronization solves the within-scale witness
+problem but not the scale-selection problem.  It is distinct from mantissa
+phase between tensor orders: the oscillation already occurs at the tensor
+endpoints.

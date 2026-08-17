@@ -52,12 +52,18 @@ raw defect norm.  A three-port construction simultaneously proves that even
 the complete current endpoint-defect table is not an exact tensor
 congruence: off-query Schur coherence can appear one step later.
 
-**Current selected theorem.** Determine whether factorwise relative
-synchronization plus the already known phase/histogram dynamics yields a
-nontrivial restricted thermodynamic limit, or whether a separate phase-
-refresh hypothesis is necessary.  In either case, isolate the weakest
-scale-changing condition.  Do not infer this condition from pairwise
-`(G,R)` data, which the equal-state collision already falsifies.
+**Phase checkpoint.**  Factorwise relative synchronization plus independent
+block rows now yields a uniform first-moment phase law.  It computes the
+completed PC.3 limit `3/4`.  Exact closure alone is insufficient: a
+prefix-consistent, zero-defect exact-sign tensor hierarchy has cap
+subsequences `1` and `1/2` when its factor-type density oscillates.  Thus
+within-scale coherence and across-scale phase are independent obligations.
+
+**Current selected theorem.** Characterize when exact sign structure forces
+the small coherence/equivariance defect needed by `D<=delta G`, or construct
+an exact-sign analogue of the majority-tail coherence falsifier.  The
+weighted contraction example proves that individual near-top products do
+not suffice; the next result must use or refute sign-specific rigidity.
 
 ## Portfolio ranking
 
@@ -221,6 +227,9 @@ scale-changing condition.  Do not infer this condition from pairwise
   forces Hausdorff convergence. Signed replication supplies an exact cut-norm
   certificate, and perfect-matching flips after every amplification produce
   non-tensor dense hollow sign hierarchies whose normalized maxima converge.
+  In the new factorized-pole branch, independent generator blocks collapse
+  uniformly to one first-moment phase; this gives a `3/4` completed-parent
+  limit and an exact zero-defect `1` versus `1/2` phase counterexample.
   For an arbitrary regular-Hadamard automatic prefix hierarchy, all fixed
   phases assemble into a uniform continuous mantissa law.  A complementary
   theorem now gives a sufficient collapse mechanism: averaged Boolean

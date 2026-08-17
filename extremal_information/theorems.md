@@ -12206,6 +12206,83 @@ checks are in
 and
 [`experiments/verify_gram_relative_coherence_blindness.py`](experiments/verify_gram_relative_coherence_blindness.py).
 
+### Theorem 21.57 (factorized first-moment phase law and exact-sign obstruction)
+
+Let a Cartesian pole interface have independent factor row blocks
+`X_t in {+-1}^{q_t}`, total port arity `p_L=1+sum_tq_t`, and means
+`mu_(t,j)=E X_(t,j)`.  Put
+
+```math
+V_L=\sum_tq_t^2,
+\qquad
+theta_L={1+\sum_(t,j)|mu_(t,j)|\over p_L}.         \tag{21.345}
+```
+
+Then its exact maximum linear support satisfies
+
+```math
+\boxed{
+\left|{1\over n_Lp_L}\max_epsilon||W_Lepsilon||_1-theta_L\right|
+\le {\sqrt{V_L}\over p_L}.}                      \tag{21.346}
+```
+
+This follows from Jensen and the variance bound
+`Var(sum_j epsilon_jX_(t,j))<=q_t^2`; no independence within a factor is
+needed.  Thus bounded factor arity collapses an exponentially large exact
+histogram to one scalar phase for the max-over-label query.
+
+If the represented tensor pole span has relative synchronization defect
+`e_L`, and `c_L=m_Lp_L/r_L`, every labelled Boolean trust channel obeys
+
+```math
+\left|{B_L(epsilon)\over r_Ln_L}
+-\left({1\over2}+c_L|d_L(epsilon)|\right)\right|
+\le {e_L\over2}+c_L{\sqrt{V_L}\over p_L},         \tag{21.347}
+```
+
+where `d_L` is the signed normalized first-moment phase.  Consequently,
+
+```math
+{\max_epsilon B_L(epsilon)\over r_Ln_L}
+={1\over2}+c_Ltheta_L
++O\left(e_L+c_L{\sqrt{V_L}\over p_L}\right).     \tag{21.348}
+```
+
+If the child factors are entrywise signs, have trace-zero tensor product,
+`r_L/sqrt(n_L)->rho`, and the auxiliary exact-sign completion has squared
+size `o(r_Ln_L)`, convergence of `c_L`, `theta_L`, and vanishing `e_L`
+therefore gives a completed-parent limit
+
+```math
+{Q(P_L)\over|P_L|^{3/2}}
+\longrightarrow rho(1/2+c theta).                \tag{21.349}
+```
+
+For the repeated order-16 PC.3 seed, `theta_L->1/4`, `c_L->1`, and
+`rho=1`, proving the exact-sign limit `3/4` from Theorem PL.2.
+
+The phase hypothesis is necessary.  In every factor of the same exact
+regular-Hadamard child choose either a relative pole of mean `1/2` or one of
+mean zero.  Both choices have exact pole closure and zero relative defect.
+Arrange their types in alternating blocks, each dominating the whole prior
+prefix.  The completed exact-sign parent sequence then has
+
+```math
+\limsup_L{Q(P_L)\over|P_L|^{3/2}}=1,
+\qquad
+\liminf_L{Q(P_L)\over|P_L|^{3/2}}={1\over2}.      \tag{21.350}
+```
+
+Thus exact synchronization and exact tensor composition do not themselves
+force a thermodynamic limit; the empirical factor phase is an independent
+state.  This is a nonconvergent structured signing sequence, not a statement
+about the minimizing values `M_n`.  Proof, independent audit, and 44 finite
+checks are in
+[`drafts/factorized_port_phase_law.md`](drafts/factorized_port_phase_law.md),
+[`drafts/factorized_port_phase_law_audit.md`](drafts/factorized_port_phase_law_audit.md),
+and
+[`experiments/verify_factorized_port_phase_law.py`](experiments/verify_factorized_port_phase_law.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
