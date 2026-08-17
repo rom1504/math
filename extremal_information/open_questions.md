@@ -6,50 +6,43 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Scalar-reward cohomology over the finite selector quotient
+## 1. Compress the exposed recurrent-germ carrier
 
-The symbolic path-realization problem is now solved for compact rational
-unit-selector systems: finite normal transport, a rational offset lattice,
-and compact width force affine pullback saturation to terminate. Arbitrary
-real translations cannot be covered by a soft approximation theorem;
-irrational rotation has no finite autonomous predictor below half-diameter.
-The remaining obstruction inside the positive rational class is numerical,
-not symbolic.
+The compact rational selector problem now has a complete finite architecture.
+Affine pullback saturation constructs a path-realizing symbolic quotient;
+the realized affine-germ lift is finite; and nonconstant recurrent reward
+labels return either a pumpable witness or a bounded scalar-toll simulator.
+At asymptotic error `epsilon`, packing and covering the reachable cycle-mean
+pseudometric sandwich the exact memory cost up to the finite visible-control
+factor and a bounded transient residual.
 
-Let the exact finite selector quotient carry a real transition reward
-`r_e(x)`, affine on each source atom. Characterize when there are finite edge
-tolls `bar r(s,e)` and a bounded potential `V(x)` such that
+The new bottleneck is **presentation size and exposure**. The explicit germ
+lift can be enormous, and raw microscopic cycles are not valid substitutes:
+the weighted-automaton benchmark has a syntactic cycle with mean discrepancy
+`-3/2` which is never maximizing, while a corrected two-state toll quotient
+has bounded response error despite four exact strong classes.
 
-```math
-r_e(x)-bar r(s,e)=V(x)-V(F_ex).                                 \tag{OQ.1}
-```
+Construct an implicit or quotient representation of the *exposed recurrent
+germs* for a nontrivial max-plus family. It must preserve the cycle-response
+seminorm without enumerating every active-cell word. Promising finite targets
+are a fixed-width Ising alphabet or a bounded-rank max-plus matrix semigroup.
+Alternatively, prove that any such representation needs as many states as
+the full finite germ lift on an explicit family.
 
-Then cumulative reward error telescopes at every depth. Zero discrepancy on
-every realizable periodic orbit is necessary. Determine whether it is
-sufficient for compact rational selector-affine systems, or identify the
-additional regularity/recurrence hypothesis required. A counterexample must
-have a finite exact symbolic quotient and zero periodic sums but unbounded
-Birkhoff discrepancy; merely repeating the known nonzero finite graph cycle
-does not settle this question.
+**Success:** a polynomial or response-entropy-sized carrier whose cycle-mean
+map is exact/controlled, with a proof that every retained cycle is maximizing
+and repeatable; or a scalable lower bound showing exponential germ memory is
+unavoidable.
 
-In parallel, for already finite approximate predictors, sharpen the
-behavioral-cover law. Theorem 17.3b proves
+**Stop condition:** a graph of all syntactic matrix entries, a list of every
+active cell, or a cycle test without exposure/path realization merely moves
+the original information burden.
 
-```math
-error <= base error + (net radius)(suffix gain)
-```
-
-and a saturating chain shows that a constant static cover can coexist with
-linear reusable memory. Seek an intrinsic lower bound matching the weighted
-cycle-mean upper for broader switching systems.
-
-**Success:** a finite LP/cohomology criterion giving a bounded accumulated
-reward representation, or a compact rational counterexample proving that
-periodic-orbit tests are incomplete.
-
-**Stop condition:** a theorem for rewards already constant on quotient edges
-is only finite graph potential theory; the new result must control genuine
-within-atom affine variation.
+In parallel, extend the cycle-response sandwich beyond exact fixed-seed germ
+lifts. The natural candidate is an asymptotic response pseudometric for
+contracting or synchronizing skew products. A valid upper theorem must explain
+why arbitrary switching paths decompose into controlled recurrent pieces;
+the lower packing bound alone is not enough.
 
 The bounded-presentation benchmark separately leaves a sharp scale gap.
 Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy

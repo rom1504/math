@@ -754,3 +754,35 @@ needs linearly many states if its forgetting time is linear.
 Symbolic closure, metric forgetting, and scalar reward compatibility remain
 separate. Rational compact refinement controls which branches can occur; it
 does not by itself prevent an accumulated reward cocycle from drifting.
+
+## 23. Recurrent germs, not raw periodic points, control reward memory
+
+Compact rational selectors have a finite semigroup of realized projective
+affine germs. Lifting the exact symbolic quotient by these germs turns each
+affine transition reward into an affine function on one fixed seed atom.
+Modulo scalar tolls, cumulative reward has a complete finite dichotomy:
+
+- zero label on every lifted directed cycle leaves only a simple-path
+  residual and hence a uniform depth-independent error;
+- a nonconstant lifted cycle label is a genuine repeatable response and
+  pumps linearly.
+
+Exact state-potential cohomology is stronger than bounded response. It also
+requires agreement across transient coterminal paths. Noninvertible selector
+diamonds show that all ordinary periodic sums may vanish while this exact
+potential fails, even though cumulative error remains bounded.
+
+The recurrent label is itself an exposed query. If one return word has a
+continuum of cycle means, bounded absolute simulation needs infinitely many
+states; at positive per-step distortion, the packing number of the cycle-mean
+image lower-bounds dynamic memory. This is the first direct law converting
+holonomy geometry into response rate--distortion.
+
+For a finite path-realizing germ graph this extends to a two-sided law. Give
+two hidden seeds the maximum, over reachable directed cycles, of their
+average cumulative-reward separation. Packing this cycle-response
+pseudometric lower-bounds every deterministic simulator, while an internal
+cover gives a simulator within the same radius, up to the separate finite
+control factor and one bounded transient toll. Thus the reusable asymptotic
+state is exactly the recurrent response image; acyclic history affects only
+the nonextensive constant.

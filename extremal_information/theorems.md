@@ -4790,6 +4790,193 @@ Diophantine regularity are insufficient. In interval coordinates the map is
 a compact two-chart unit-selector PWA system; precisely its translations
 generate a nondiscrete offset group.
 
+### Theorem 17.1e (finite affine-germ reward dichotomy)
+
+In the rational compact setting of Theorem 17.1b, refine to its exact
+sign-atom presentation. For every realizable path from atom `s_0` to atom
+`s`, record the projective affine germ
+
+```math
+G_w(z)=P_(sigma_w)z+b_w.
+```
+
+Only finitely many germs occur. Therefore vertices `(s_0,s,G_w)`, with
+composition transitions, form a finite path-realizing germ lift.
+
+Let every raw transition `e` have a rational affine reward `r_e(z)`. On a
+lifted edge `v--e-->v'`, define the affine seed response
+
+```math
+ell_(v,e)(z)=r_e(G_vz),
+\qquad z in C_(s_0),                                            \tag{17.7g}
+```
+
+and take its class in `Aff(C_(s_0))/R`, since a scalar finite-state edge toll
+may pay any constant. The following are equivalent:
+
+1. scalar tolls on the finite germ lift approximate all cumulative rewards
+   with one depth-independent uniform error;
+2. every reachable directed cycle in the germ lift has zero total label in
+   `Aff(C_(s_0))/R`.
+
+The criterion is effective. Choose an anchor `z_*` in every starting atom
+and toll `g_(v,e)=ell_(v,e)(z_*)`. Under item 2, deleting directed cycles
+does not change the residual function, so every residual equals that of a
+simple lifted path. A valid sharp finite certificate is
+
+```math
+B=max_(s_0,z,p simple)
+ |sum_(e in p)(ell_e(z)-ell_e(z_*))|,                            \tag{17.7h}
+```
+
+computed by finitely many rational LPs. If a lifted cycle has nonconstant
+label `L`, choose seeds `z,z'` with `L(z) ne L(z')`. Returning to the same
+germ returns both raw states exactly, so `k` repetitions separate their
+residuals by `k(L(z)-L(z'))`. No scalar toll machine on this finite control
+can have bounded error.
+
+For finiteness, selector parts have at most `r^r` values. Projective
+translation differences belong to one rational lattice. A realized germ
+satisfies `b_w=G_wz-P_(sigma_w)z`; compact source and target fibres bound the
+right side. Hence only finitely many lattice offsets occur.
+
+Exact endpoint telescoping is strictly stronger than bounded error. Affine
+potentials `H_s(z)=p_s.z+d_s` and tolls `g_e` exist exactly when
+
+```math
+a_e=p_s-P_e^Tp_t,
+\qquad c_e-g_e=d_s-d_t-p_t.b_e                                 \tag{17.7i}
+```
+
+on every edge. These incidence equations impose equality on transient
+coterminal paths as well as recurrent cycles; on lower-dimensional fibres,
+the coefficient equality is interpreted modulo affine forms vanishing on the
+source fibre.
+
+### Proposition 17.1f (periodic data miss noninvertible mergers)
+
+On `X=[0,1]^2`, the rational unit selectors
+
+```math
+A(x,y)=(0,0),
+\qquad B(x,y)=(0,x)
+```
+
+with rewards `r_A(x,y)=x`, `r_B=0` have zero reward on every periodic orbit
+and uniformly bounded cumulative reward. Nevertheless no scalar tolls and
+no potential satisfy `r_e-c_e=V-V circ e`. The fixed zero loops force both
+tolls to vanish; the `A` equation gives `V(x,y)=V(0,0)+x`, while `B` followed
+by the `A` equation gives `V(x,y)=V(0,x)=V(0,0)`. Thus ordinary periodic data
+do not characterize exact cohomology for noninvertible selector systems.
+The germ lift correctly records the discrepancy only on the transient
+coterminal paths `A` and `BA`; because it is not recurrent, it costs a bounded
+endpoint error rather than extensive drift.
+
+### Corollary 17.1g (cycle-response packing forces dynamic memory)
+
+Let one input word `w` of length `ell` return every point of a set `Y` to
+itself, and let its accumulated reward be `R_w(y)`. Put
+
+```math
+m_w(y)={R_w(y)\over ell}.                                       \tag{17.7j}
+```
+
+Suppose an `S`-state deterministic simulator, initialized from `y`, predicts
+the accumulated reward after every `k` repetitions with
+
+```math
+|R_(w^k)(y)-Rhat_(w^k)(y)|
+<=epsilon k ell+o_y(k).                                         \tag{17.7k}
+```
+
+Then
+
+```math
+|S|>=Pack_(>2epsilon)(m_w(Y)).                                  \tag{17.7l}
+```
+
+Indeed, two seeds with one initial simulator state produce the same predicted
+sequence under `w^k`, whereas their true totals differ by
+`kell|m_w(y)-m_w(y')|`. Divide the two error bounds by `kell` and pass to the
+limit. Thus a nonconstant affine cycle mean on a connected atom rules out
+every finite simulator with bounded absolute error, and its one-dimensional
+metric entropy lower-bounds memory at positive asymptotic distortion. This
+turns recurrent holonomy into exposed response information rather than only
+a yes/no drift certificate.
+
+### Theorem 17.1h (cycle-response rate--distortion law)
+
+Let `Gamma=(V,E)` be a finite path-realizing graph reached from one initial
+control, let `Y` be a compact hidden-seed space, and let each lifted edge have
+a continuous reward `ell_e:Y->R`. The legal edge path is supplied to an
+open-loop weighted transducer, every walk from the initial control is legal
+for every seed, and `R_p(y)=sum_(e in p)ell_e(y)`. All seed dependence of a
+simulator passes through its finite initial state. Define
+
+```math
+d_circ(y,y')=
+ max_(reachable directed simple cycles C)
+ {1\over|C|}|sum_(e in C)(ell_e(y)-ell_e(y'))|,                  \tag{17.7m}
+```
+
+with value zero when no reachable cycle exists. Let `C_epsilon` be the
+minimum total number of states in a deterministic simulator
+for which one finite `B` gives
+
+```math
+|R_p(y)-Rhat_p(y)|<=epsilon|p|+B                                \tag{17.7n}
+```
+
+on every legal path. Then
+
+```math
+Pack_(>2epsilon)(Y,d_circ)
+<=C_epsilon
+<=|V|Cov^int_epsilon(Y,d_circ).                                 \tag{17.7o}
+```
+
+If the visible graph control is externally supplied and not charged, the
+factor `|V|` is removed from the upper bound.
+
+For the lower bound, two seeds with one initial state have identical
+predictions along a common access path followed by repetitions of any cycle.
+Subtract (17.7n), divide by the repeated length, and pass to the limit. For
+the upper bound, retain one internal net center `c` and emit `ell_e(c)` on
+edge `e`. Delete directed simple cycles from an arbitrary walk. Each deleted
+cycle costs at most `epsilon` times its length, while the remaining simple
+path contributes at most
+
+```math
+(|V|-1)max_(e,y,c)|ell_e(y)-ell_e(c)|.                           \tag{17.7p}
+```
+
+This proves the bound.
+
+Writing
+
+```math
+M=max_e sup_(y,y' in Y)|ell_e(y)-ell_e(y')|,
+```
+
+the same loop erasure gives the stronger pairwise estimate
+
+```math
+|R_p(y)-R_p(y')|
+<=|p|d_circ(y,y')+(|V|-1)M.                                    \tag{17.7q}
+```
+
+Thus approximate compositional complexity is not a formal product of static
+entropy and graph memory in this class. It is the metric entropy of the
+**recurrent cycle-response image**, with the finite control congruence carried
+separately. Transient merging diamonds affect only `B`; recurrent holonomy is
+the information amplified to macroscopic scale.
+
+This is a theorem for cumulative path reward, not simultaneous prediction of
+every individual edge reward. Opposite edge labels can cancel on a cycle;
+per-edge queries require their own stronger response metric. Unreachable
+components are omitted throughout. A syntactic control cycle which does not
+return the affine germ is likewise not a cycle in this theorem.
+
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 
 Use the column max-plus convention
@@ -4887,6 +5074,22 @@ error exactly `n delta` at depth `n`. Thus the noncontractive linear estimate
 is attained at every horizon, while exact state cardinality jumps
 discontinuously.
 
+The cycle-response audit finds a strictly smaller bounded-error repair. If
+the perturbed entry is `T_A(2,2)=1+delta`, change only the old quotient toll
+`S_A(1,1)` from `1` to `1+delta`. Even microscopic representatives `0,2`
+then give an exact section of both quotient matrices, every raw edge is at
+most its corrected block edge, and an odd initial representative loses at
+most `2+delta` on its first transition. Therefore the corrected two-state
+quotient has uniform all-word endpoint error at most `2+delta`, attained by
+state `3` under sufficiently many `A` steps, although exact strong refinement
+still has four states. The old quotient's `n delta` error was a repairable
+cycle toll, not proof that four runtime states were needed.
+
+Only exposed/maximizing cycles may enter this conclusion. The unperturbed raw
+cycle `0->1->0` under `A` has mean discrepancy `-3/2` from its quotient loop
+but is never maximizing; charging every syntactic microscopic cycle would
+falsely reject an exact response quotient.
+
 ### Corollary 17.2a (intrinsic contraction from a weighted control graph)
 
 Let a finite legal-control graph have invariant metric fibres `Y_q`. Give
@@ -4953,6 +5156,77 @@ Deleting these reset edges and checking that the remainder is acyclic is
 therefore an exact graph certificate for full-dimensional max-plus fibres.
 Fractional coefficients remain meaningful on restricted/thin carriers and
 for stochastic secants.
+
+### Theorem 17.2b (finite Bellman envelope: potential or pumpable lasso)
+
+On a finite reachable control graph, suppose a nonnegative comparison radius
+obeys on edge `e:u->v`
+
+```math
+r^+<=eta_e+lambda_e r,
+\qquad eta_e,lambda_e>=0,                                      \tag{17.14e}
+```
+
+with initial radii represented by source edges. For a path `p`, write its
+ordered affine comparison map as
+
+```math
+F_p(x)=Lambda_p x+A_p.
+```
+
+The worst envelope
+
+```math
+B_v=sup_(p:source->v)F_p(0)                                    \tag{17.14f}
+```
+
+is the least extended fixed point of
+
+```math
+B_v=max_(e:u->v)(eta_e+lambda_eB_u).                            \tag{17.14g}
+```
+
+The following are equivalent:
+
+1. every `B_v` is finite;
+2. there is a finite Bellman potential `P>=0` satisfying
+   `P_v>=eta_e+lambda_eP_u` on every reachable edge;
+3. there is no reachable pumpable lasso `pC`.
+
+If `x=F_p(0)` is the entry radius of a closed walk `C`, the exact pump
+criterion is
+
+```math
+Lambda_C>=1
+\quad\hbox{and}\quad
+A_C+(Lambda_C-1)x>0.                                            \tag{17.14h}
+```
+
+For `Lambda_C>1` repetition grows exponentially; for `Lambda_C=1,A_C>0`
+it grows linearly. If `Lambda_C<1`, a positive one-cycle defect converges to
+a finite fixed radius and is not a pump. Path iteration proves (17.14g);
+a finite supersolution bounds every path, while a divergent path in a finite
+graph yields a repeated closed walk satisfying (17.14h). Conversely,
+
+```math
+F_C^k(x)=
+\begin{cases}
+Lambda_C^kx+A_C( Lambda_C^k-1)/(Lambda_C-1),&Lambda_C ne1,\\
+x+kA_C,&Lambda_C=1,
+\end{cases}                                                     \tag{17.14i}
+```
+
+proves pumping. The least finite potential is obtained by the linear
+inequalities in item 2. Positive log-gain cycles are found by maximum cycle
+mean; zero-log cycles carrying positive defect are the critical linear case.
+
+This is an iff for the nonnegative comparison envelope, not for a fixed
+signed or vector error. A forced two-cycle `z|->z+1`, `z|->z-1` is bounded,
+whereas replacing the second map by `z|->z+1` drifts linearly; both have the
+same local absolute data `lambda=eta=1`. Thus an envelope pump is a realized
+drift witness only under an alignment/attainability certificate. This is
+exactly why joint cancellation cannot be inferred from separately paid local
+channels.
 
 ### Theorem 17.3 (response packing, memory gain, and predictive compactness)
 

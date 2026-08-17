@@ -303,12 +303,83 @@ def verify_nearby_failed_quotient() -> dict[str, object]:
     }
 
 
+def verify_corrected_toll_quotient() -> dict[str, object]:
+    """The exact partition fails, but one corrected quotient toll is bounded."""
+
+    delta = Q(1, 10)
+    perturbed_rows = [list(row) for row in RAW_A]
+    perturbed_rows[2][2] += delta
+    perturbed_a = tuple(tuple(row) for row in perturbed_rows)
+
+    corrected_rows = [list(row) for row in QUOTIENT_A]
+    corrected_rows[1][1] += delta
+    corrected_a = tuple(tuple(row) for row in corrected_rows)
+
+    raw_matrices = (perturbed_a, RAW_B)
+    corrected_matrices = (corrected_a, QUOTIENT_B)
+
+    # Even states 0 and 2 give an exact microscopic section. Every raw edge
+    # lies below its corrected block edge.
+    representatives = (0, 2)
+    entry_checks = 0
+    for letter, (raw, quotient) in enumerate(
+        zip(raw_matrices, corrected_matrices)
+    ):
+        for source_block, source in enumerate(representatives):
+            for target_block, target in enumerate(representatives):
+                assert raw[source][target] == quotient[source_block][target_block]
+                entry_checks += 1
+        for source in range(4):
+            for target in range(4):
+                assert raw[source][target] <= quotient[
+                    STATE_BLOCK[source]
+                ][STATE_BLOCK[target]]
+                entry_checks += 1
+
+    bound = Q(2) + delta
+    word_checks = 0
+    words = [word for length in range(8) for word in product((0, 1), repeat=length)]
+    for entries in product((-2, 0, 2), repeat=4):
+        raw_start = tuple(map(Q, entries))
+        quotient_start = aggregate(raw_start)
+        for word in words:
+            raw_value = terminal_value(run_forward(raw_start, word, raw_matrices))
+            quotient_value = terminal_value(
+                run_forward(quotient_start, word, corrected_matrices)
+            )
+            assert 0 <= quotient_value - raw_value <= bound
+            word_checks += 1
+
+    # State 3 under repeated A attains the one-time lift loss after 21 steps.
+    raw_seed = (NEGATIVE_INFINITY, NEGATIVE_INFINITY,
+                NEGATIVE_INFINITY, Q(0))
+    quotient_seed = aggregate(raw_seed)
+    sharp_checks = 0
+    for length in range(21, 61):
+        word = (0,) * length
+        raw_value = terminal_value(run_forward(raw_seed, word, raw_matrices))
+        quotient_value = terminal_value(
+            run_forward(quotient_seed, word, corrected_matrices)
+        )
+        assert quotient_value - raw_value == bound
+        sharp_checks += 1
+
+    return {
+        "corrected_entry": "S_A[1,1] += 1/10",
+        "entry_section_and_domination_checks": entry_checks,
+        "finite_word_bound_checks": word_checks,
+        "uniform_bound": str(bound),
+        "sharp_repeated_A_checks": sharp_checks,
+    }
+
+
 def main() -> None:
     print(
         json.dumps(
             {
                 "exact_four_to_two": verify_exact_four_to_two(),
                 "nearby_failed_quotient": verify_nearby_failed_quotient(),
+                "corrected_toll_quotient": verify_corrected_toll_quotient(),
             },
             indent=2,
             sort_keys=True,

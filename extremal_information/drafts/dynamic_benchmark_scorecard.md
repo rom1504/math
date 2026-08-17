@@ -17,6 +17,8 @@ weighted-automaton minimization.
 | Compact rational selector system | Rational affine pullback arrangement | Finite polyhedral symbolic abstraction | Discrete offsets plus compact width force finite saturation | Terminal PWA responses admit depth-uniform quantized predictors; scalar rewards remain separate | General finite tropical lumpability theorem |
 | Saturating affine chain | Behavioral response metric | Finite transient automaton | Exact state count is `n+1` | At error `k alpha`, static cover is `ceil((n+1)/(2k+1))` but optimal reusable memory is `n-2k+1` | Sharp separation of response entropy and forgetting time |
 | Width-2 alternating Ising alphabet | Projective gap box plus legal control phase | Max-plus transfer state | One column preserves a projective direction, the other is a common-predecessor reset | Reset-free control graph has longest path one, hence every two-column block is 0-contractive | Intrinsic certificate; no product enumeration |
+| Perturbed four-state automaton, cumulative reward | Exposed recurrent germ cycles plus scalar toll | Weighted quotient with corrected transition weight | Raising one quotient loop by `delta` restores zero cycle slope with the same two runtime states | Uniform endpoint error is at most `2+delta`, although exact strong refinement has four states | Cycle response predicts toll repair rather than exact partition size |
+| Antiferromagnetic Ising scalar reward | Two-step exposed cycle mean | Transfer phase plus baseline toll | Exact and phase seeds have mean `K`; naive rounding has mean `K+s` | Retolling one state to `K` leaves bounded parity error `s`; two phases are exact | Separates asymptotic slope state from bounded transient state |
 
 ## What was actually predicted
 

@@ -1206,3 +1206,49 @@ The limiting error is exactly `Leta/(1-theta)`. At `theta=1` it grows
 linearly. This simultaneously proves the sharpness of the block-contraction
 bound and shows why merely knowing that some local maps are contracting is
 insufficient: every reachable cycle must pay contraction.
+
+## Example 49: periodic tests miss a noninvertible reward diamond
+
+On `[0,1]^2`, let
+
+```math
+A(x,y)=(0,0),
+\qquad B(x,y)=(0,x),
+\qquad r_A(x,y)=x,
+\qquad r_B=0.
+```
+
+Every nonempty word has only the zero periodic point and all periodic rewards
+vanish. Yet the coterminal paths `A` and `BA` have rewards `x` and zero, so no
+single state potential can telescope both. This does not cause drift: the
+diamond is transient and every total reward is at most one.
+
+Lifting by the finite realized affine germs separates the two phenomena.
+Transient path mismatches contribute a bounded endpoint error; a nonconstant
+label on a recurrent lifted cycle is repeatable and grows linearly. At
+per-step error `epsilon`, the packing number of that cycle's mean-reward
+image at separation `2epsilon` lower-bounds the simulator state count.
+
+## Example 50: exposed cycle response detects a toll repair, not exact refinement
+
+In the perturbed four-state weighted automaton, the old two-block quotient
+underprices one maximizing `A` self-loop by `delta`, so `A^n` has error
+`n delta`. Raising the corresponding quotient self-loop toll by `delta`
+removes every recurrent slope discrepancy. Even representatives give exact
+microscopic lifts thereafter; an odd initial state pays at most the one-time
+loss `2+delta`. Thus the corrected two-state quotient has zero cycle-response
+distance and uniformly bounded all-word error although the coarsest exact
+strong partition still has four states.
+
+Arbitrary syntactic cycles would give a false obstruction: an unperturbed
+microscopic `0->1->0` cycle has mean discrepancy `-3/2` from its quotient
+loop but is never maximizing. Cycle response must be formed from the
+path-realizing **exposed reward dynamics**, not every edge of a raw
+presentation.
+
+The Ising rounding example has the same diagnosis. Its exact two-step mean
+is `K`, while the freshly rounded scheme emits mean `K+s`, causing slope
+error `s`. Retuning the one-state toll to `K` leaves only a bounded parity
+error at most `s`; two phase states are needed only for finer absolute or
+exact response. Recurrent response entropy controls asymptotic slope memory,
+while anchored simple-path residual controls the bounded transient scale.

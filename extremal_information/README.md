@@ -246,6 +246,21 @@ conclusions.
     absent, with constants from max-times path products. A saturating-chain
     family has a constant-size static cover but linear optimal predictive
     memory, proving that the mixing factor cannot be removed.
+23. The rational compact theorem extends to accumulated affine rewards after
+    a finite lift by realized affine germs. Vanishing of the nonconstant part
+    of every lifted cycle label is equivalent to a finite-state scalar-toll
+    simulator with depth-independent error; failure returns a genuine
+    pumpable cycle. Transient merging diamonds can obstruct an exact potential
+    without causing drift, so raw periodic-orbit tests do not characterize
+    exact cohomology in noninvertible systems.
+24. Repetition turns cycle-mean geometry into an information lower bound:
+    any simulator with per-step error `epsilon` needs at least the
+    `2epsilon`-packing number of the exposed cycle-mean image. A continuum of
+    means therefore forbids finite bounded-error memory. On an arbitrary
+    finite path-realizing germ graph, the maximum average separation over all
+    reachable cycles is a pseudometric whose packing and covering numbers
+    give matching lower and upper dynamic-memory bounds up to the finite
+    visible-control factor and a bounded transient error.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The
