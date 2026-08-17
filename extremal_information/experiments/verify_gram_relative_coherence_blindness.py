@@ -117,9 +117,18 @@ def verify_coherence_pair():
 
         m = (p - 1) // 2
         a1 = float(Fraction(comb(2 * m, m), 1 << (2 * m)))
-        assert np.max(u * u) <= a1 * a1 / rho + 1e-12
+        assert np.isclose(np.max(u * u), a1 * a1 / rho, atol=1e-12)
         assert np.isclose(a @ d_coh @ a, rho, atol=1e-12)
         assert a @ d_diag @ a <= a1 * a1 + 1e-12
+
+        # Character twirling kills precisely the off-diagonal coherent
+        # entries.  Its diagnostic is necessarily macroscopic here.
+        a_coh = np.eye(q) - d_coh
+        a_diag = np.eye(q) - d_diag
+        assert np.allclose(np.diag(a_coh), np.diag(a_diag), atol=1e-12)
+        eta = np.linalg.norm(a_coh - a_diag, 2)
+        assert eta >= 1 - np.sum(u ** 4) - 1e-12
+        assert eta >= 1 - a1 * a1 / rho - 1e-12
 
         # Repetition of every row type leaves normalized Gram data unchanged,
         # so the smaller cube table suffices to verify the N=2^(2p) theorem.
