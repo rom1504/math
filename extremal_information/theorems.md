@@ -4105,7 +4105,8 @@ Cov^ext_epsilon{F_c:c in H_(n,d)}
 ={n+d-1 choose d-1}.}                               \tag{16.119}
 ```
 
-For the equally spaced heterogeneous mean-field atoms
+For the equally spaced heterogeneous mean-field atoms with `d>=2` and
+`B>0`,
 
 ```math
 gamma_j=-B+(j-1)Delta,
@@ -4220,3 +4221,114 @@ claims now follow from Theorem 16.14. `square`
 This decides robust depth stability on a fixed tie-free selector language.
 It does not yet decide switching perturbations which change the active cell;
 that requires a paired-cell selector automaton.
+
+### Theorem 16.17 (depth-stable atomic type quantization)
+
+Let an atom `z` contribute a vector `phi_z` in a normed response space, and
+let a mass-`n` additive system have response
+
+```math
+F_(z_1,...,z_n)=sum_(i=1)^n phi_(z_i).              \tag{16.127}
+```
+
+Composition concatenates atom multisets.  Fix one root-scale external
+`eta`-net of size `D` and one deterministic atom-to-centre quantizer, used at
+every leaf of the target merge tree.  Store the resulting `D`-bin histogram.
+This summary updates exactly by
+histogram addition, has at most
+
+```math
+{n+D-1 choose D-1}                                  \tag{16.128}
+```
+
+mass-`n` states, and its decoded response satisfies
+
+```math
+||F-F_tilde||<=n eta.                               \tag{16.129}
+```
+
+The error depends on total mass, not merge depth or bracketing.  External
+centres are allowed: the decoded vector need not be the response of a
+physical atom system.
+
+Writing `D(eta)` for the atom-response covering number, if
+
+```math
+eta_n -> 0,
+\qquad D(eta_n)=o(n),                               \tag{16.130}
+```
+
+then both response error per atom and summary bits per atom vanish.  In
+particular, if `D(eta)<=C eta^(-p)` for some `p>0`, choosing
+`eta_n=n^(-a)` with `0<a<1/p` gives response error `n^(1-a)` and
+`O(n^(ap)log n)` summary bits.
+
+#### Proof
+
+Replace each atom response by its assigned centre.  The triangle inequality
+proves (16.129).  Concatenation adds the counts and never requantizes an
+atom, so no depth factor appears.  Stars and bars gives (16.128), while
+
+```math
+log_2 {n+D-1 choose D-1}
+<=(D-1)log_2(e(1+n/(D-1)))                          \tag{16.131}
+```
+
+for `D>=2` (the count is one for `D=1`).  Dividing by `n` and writing
+`t=n/(D-1)` gives `log_2(e(1+t))/t -> 0`, which proves (16.130).  The
+polynomial-cover specialization follows by substitution. `square`
+
+The theorem holds intrinsically for projective responses when the net and
+norm are taken in the quotient.  It is only an upper theorem: without the
+arithmetic-rank, conditioning, or lattice-margin hypotheses of Theorem
+16.15, different histograms may have identical or nearly identical total
+response.  Heterogeneous local fields satisfy it with atom responses
+`phi_h(lambda)=(h+lambda)_+` on the sufficient bounded query interval
+`lambda in [-B,B]` at fixed known mass, and have one-dimensional atom-cover
+growth.  Equivalently, for unrestricted `lambda`, subtract the common
+baseline `(lambda)_+` and retain mass separately.
+
+The common-net hypothesis is essential.  If children use coarser
+mass-dependent nets and the parent later refines them, distinctions already
+collapsed at a child cannot be reconstructed without additional refinement
+data.
+
+As a second model, let `v_i` lie in the Euclidean unit ball of fixed
+dimension `p` and query the support of their signed-sum zonotope:
+
+```math
+F_V(theta)=max_(epsilon_i in {+-1})
+ <theta,sum_i epsilon_i v_i>
+=sum_i|<theta,v_i>|,
+\qquad theta in S^(p-1).                             \tag{16.132}
+```
+
+Here `phi_v(theta)=|<theta,v>|` and
+`||phi_v-phi_w||_infty<=||v-w||_2`.  A Euclidean `eta`-net has
+`D(eta)<=(1+2/eta)^p`, so for every `0<a<1/p`, a composable type histogram
+uses `O(n^(ap)log n)` bits and preserves every directional support query to
+error at most `n^(1-a)`.  Thus Theorem 16.17 is not specific to mean-field
+hinges.
+
+The binomial upper bound and the `D=o(n)` threshold are sharp without
+additional structure.  For query set `[D]`, take coordinate atoms
+
+```math
+phi_j(q)=1_(j=q).
+```
+
+Then `F_c(q)=c_q`, distinct mass-`n` histograms have sup distance at least
+one, and for every `0<epsilon<1/2`,
+
+```math
+Cov^ext_epsilon={n+D-1 choose D-1}.                 \tag{16.133}
+```
+
+If `limsup D/n>0`, the logarithm of (16.133) is `Omega(n)` along an infinite
+subsequence.  Hence no theorem based only on the atom-net cardinality can
+guarantee vanishing bits per atom beyond the `D=o(n)` regime.
+
+Indeed, the coordinate response identity proves the separation and stars
+and bars proves (16.133).  Along a subsequence with `D>=c n`, monotonicity
+in `D` and the standard binomial-entropy bound give
+`log {n+floor(c n)-1 choose n}=Omega_c(n)`.

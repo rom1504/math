@@ -634,3 +634,14 @@ coordinates.  Fixed-width transfer and lumped-automaton states have bounded
 carrier rank.  Finite-atom mean field has a growing histogram simplex whose
 degree is `r_Z`.  In every case the state is useful only because the same
 quotient is also a congruence for future composition.
+
+The same law has a continuous lossy form.  Quantize each microscopic atom in
+its **response metric** before any composition and store the empirical type
+histogram.  An atom-net of size `D(eta)` gives response error `n eta` and a
+binomial number of histogram states.  Because the quantizer is applied once
+per atom, the update remains exact and the error is extensive in mass rather
+than in recursion depth.  This separates genuine atomic compression from
+repeatedly rounding an already aggregated state, which can drift.
+
+The sharp stars-and-bars entropy matters: an atom net with `D_n=o(n)` types
+already has `o(n)` histogram bits, even when `D_n log n` is not `o(n)`.

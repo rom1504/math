@@ -897,3 +897,65 @@ members.  The example also separates arithmetic and robust information: a
 single real query can encode rationally independent atom values with large
 exact integer rank but zero real conditioning.  Query-parameter dimension by
 itself is therefore not a state-growth law.
+
+## Example 32: a composable zonotope sketch from atom response nets
+
+For vectors `v_i` in the Euclidean unit ball of fixed dimension `p`, query
+the directional support of all signed sums:
+
+```math
+F_V(theta)
+=max_(epsilon_i in {+-1})<theta,sum_i epsilon_i v_i>
+=sum_i|<theta,v_i>|.
+```
+
+One vector is therefore an additive response atom
+`phi_v(theta)=|<theta,v>|`.  Uniformly over unit directions,
+
+```math
+||phi_v-phi_w||_infty<=||v-w||_2.
+```
+
+Quantize every vector once to one common root-scale Euclidean net and store
+the type histogram.  A net of mesh `eta` has at most
+`(1+2/eta)^p` cells, composition adds histograms exactly, and every support
+query changes by at most `n eta`.  Taking `eta=n^(-a)`, `0<a<1/p`, gives
+both `o(n)` bits and `o(n)` uniform error.
+
+This validates atomic type quantization outside mean-field hinges.  It is an
+upper theorem only: without exposure or lattice conditioning, different
+histograms can have the same zonotope support response.
+
+The finite verifier checks 24,000 exact signed-support identities, 24,000
+root-scale quantization bounds, and 1,200 histogram merge identities.
+
+## Example 33: adaptive refinement cannot recover a collapsed child type
+
+Let atoms be `0` and `1`, each contributing that scalar on a single query.
+A child which uses the one-centre net `{1/2}` at radius `1/2` stores only its
+mass: all numbers of ones have the same coarse histogram.  If a parent later
+switches to the exact net `{0,1}`, no update from those child states can
+recover how many ones they contained.
+
+Thus atomic type quantization is depth-stable only when one root-scale net
+and quantizer are fixed throughout the merge tree, or when explicit
+refinement data is retained.  A sequence of increasingly accurate static
+nets is not automatically a composition congruence.
+
+## Example 34: coordinate atoms make the type threshold sharp
+
+Let there be `D` future queries and `D` atom types, with type `j` responding
+one to query `j` and zero to every other query.  The response of a mass-`n`
+system is exactly its histogram vector.  Distinct histograms are separated
+by at least one in sup norm, so below error `1/2` the response cover contains
+all
+
+```math
+{n+D-1 choose D-1}
+```
+
+states.  If `D/n` stays positive along an infinite subsequence, this costs
+`Omega(n)` bits on that subsequence.
+The sufficient condition `D(eta_n)=o(n)` for vanishing type-histogram rate is
+therefore a sharp universal threshold; improvements require algebraic
+dependencies among atom responses.

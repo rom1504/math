@@ -2,6 +2,8 @@
 
 **Status.** Proof source for the cross-benchmark growth theorem.  Covers are
 external unless stated otherwise; logarithms in state counts are base two.
+Finite checks for the continuous-atom application are in
+[`../experiments/verify_atomic_zonotope_quantization.py`](../experiments/verify_atomic_zonotope_quantization.py).
 
 ## 1. Stable semantic carriers
 
@@ -154,7 +156,7 @@ unlimited precision rather than robust exposed directions.
 
 ## 3. Exact finite-grid mean-field rate
 
-Take equally spaced fields
+Fix `d>=2` and `B>0`, and take equally spaced fields
 
 ```math
 \gamma_j=-B+(j-1)\Delta,
@@ -219,3 +221,117 @@ the required scale, and its state must be a congruence for every declared
 future.  Max-Cut's universal compiler defeats the first; transition tolls
 defeat the second.  Mean-field histograms and tropical lumpability satisfy
 both for different algebraic reasons.
+
+## 5. Continuous atom classes: quantize before composing
+
+The finite-atom law has a stable lossy extension.  Let an atom `z` contribute
+a response vector `phi_z` in a normed response space, and let a mass-`n`
+system have response
+
+```math
+F_(z_1,...,z_n)=sum_(i=1)^n phi_(z_i).              \tag{5.1}
+```
+
+Composition concatenates atom multisets.  Fix one root-scale external
+`eta`-net `psi_1,...,psi_D` and one deterministic quantizer, used at every
+leaf of the target merge tree.  Assign every atom to one nearby centre and
+store only the resulting `D`-bin histogram.
+
+### Theorem 2 (atomic type quantization)
+
+The quantized histogram updates exactly by addition, has at most
+
+```math
+{n+D-1 choose D-1}                                  \tag{5.2}
+```
+
+mass-`n` states, and its decoded response has uniform error at most
+
+```math
+n eta.                                               \tag{5.3}
+```
+
+This bound depends on total mass, not merge depth or bracketing.  It is valid
+for external net centres: the decoded response need not itself come from a
+physical atom system.
+
+If `D(eta)` is the atom-response covering number and there is a sequence
+
+```math
+eta_n -> 0,
+\qquad D(eta_n)=o(n),                                \tag{5.4}
+```
+
+then both normalized response error and summary bits per atom vanish.  In
+particular, if
+
+```math
+D(eta)<=C eta^(-p),                                 \tag{5.5}
+```
+
+choose `eta_n=n^(-a)` with any `0<a<1/p`; the response error is
+`n^(1-a)` and the state uses `O(n^(ap)log n)` bits, both sublinear.
+
+#### Proof
+
+Replace each `phi_(z_i)` by its assigned centre.  The triangle inequality
+gives (5.3).  Concatenating systems adds their counts and never requantizes
+an atom, proving depth stability.  Stars and bars gives (5.2), and for
+`D>=2`,
+
+```math
+log_2 {n+D-1 choose D-1}
+<=(D-1)log_2(e(1+n/(D-1))).
+```
+
+If `D=o(n)`, division by `n` reduces this to
+`log_2(e(1+t))/t -> 0` with `t=n/(D-1)`; `D=1` is trivial.  This proves
+(5.4), and substitution proves the polynomial-cover specialization.  `square`
+
+The theorem also holds intrinsically in a projective response quotient,
+provided the atom net and its norm are taken in that quotient.  It is an
+upper theorem only: without the arithmetic rank, real conditioning, or
+lattice-margin hypotheses of Theorem 1, many histograms can have the same or
+nearly the same total response.
+
+The common root-scale net is essential.  Locally changing to a finer net
+after a merge cannot recover atom distinctions already collapsed by a coarse
+child net; supporting adaptive nets would require explicit refinement data.
+
+For heterogeneous local fields,
+`phi_h(lambda)=(h+lambda)_+` on the sufficient fixed-mass interval
+`lambda in [-B,B]` is bounded and one-Lipschitz in `h`, so (5.5) holds with
+`p=1`.  For unrestricted `lambda`, subtract the shared baseline
+`(lambda)_+` and retain mass.  The earlier common-grid histogram is exactly
+this general construction.  Finite-alphabet additive landscapes give `p=0`
+and recover the polynomial exact-state branch.
+
+There is also a fixed-rank vector model.  For vectors `v_i` in the Euclidean
+unit ball of dimension `p`, the directional support of the signed-sum
+zonotope is
+
+```math
+max_(epsilon_i in {+-1})
+ <theta,sum_i epsilon_i v_i>
+=sum_i|<theta,v_i>|.
+```
+
+Thus one vector has atom response `phi_v(theta)=|<theta,v>|`, which is
+one-Lipschitz in `v` uniformly over unit `theta`.  Euclidean nets have
+`D(eta)<=(1+2/eta)^p`; for `0<a<1/p`, choosing `eta=n^(-a)` yields a
+composable `O(n^(ap)log n)`-bit histogram with uniform support error
+`n^(1-a)`.  This is a second application outside heterogeneous mean field.
+
+The state-count threshold is worst-case sharp.  On query set `[D]`, choose
+coordinate atoms `phi_j(q)=1_(j=q)`.  A histogram response is exactly its
+count vector, so at every error below `1/2` the external cover has all
+
+```math
+{n+D-1 choose D-1}
+```
+
+states.  If `limsup D/n>0`, this requires `Omega(n)` bits along an infinite
+subsequence.  Thus
+`D(eta_n)=o(n)` cannot be relaxed using atom-net size alone; any better rate
+must exploit response dependencies, conditioning collapse, or a smaller
+future query family.

@@ -183,6 +183,14 @@ conclusions.
     mean-field grid the exact cover below half-grid error is
     `{n+d-1 choose d-1}`.  This complements the separator's exponentially
     exposed lookup carrier and the automaton's fixed lumped carrier.
+14. The polynomial branch extends beyond finite alphabets.  If individual
+    atom responses have an `eta`-net of size `D(eta)`, their type histogram
+    is an exact additive update with error `n eta` and at most
+    `{n+D-1 choose D-1}` states.  Whenever
+    `D(eta_n)=o(n)` for some `eta_n->0`, both the summary rate and
+    normalized response distortion vanish without a merge-depth penalty.
+    One common root-scale net must be used throughout the merge tree; an
+    adaptively refined parent cannot recover types collapsed by a child.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The
@@ -395,9 +403,10 @@ that one-step approximation does not.
 The recognition/stability target is now partly resolved and partly corrected.
 Approximate idempotence can drift, but a *shared exact* idempotent relation can
 also absorb a coherent defect forever.  Thus no converse may treat fixed
-kernel families as fresh adversarial noise.  In the robust selector model,
-endpoint gauges plus syndetic tangent resets are complete, and twisted cycle
-means give the exact recurrent criterion.  The remaining unifying target is
+kernel families as fresh adversarial noise.  On a fixed factorial tie-free
+selector language with fresh arbitrary residuals, endpoint gauges plus
+syndetic tangent resets are complete, and twisted cycle means give the exact
+recurrent criterion.  The remaining unifying target is
 a paired-selector skew-product theorem combining these finite certificates
 across switching cells; a static response cover alone cannot decide this.
 
