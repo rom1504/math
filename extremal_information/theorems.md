@@ -10705,6 +10705,205 @@ near-minimizers.  The full proof, exact finite checks, and audit are in
 and
 [`drafts/orientation_visibility_threshold_independent_audit.md`](drafts/orientation_visibility_threshold_independent_audit.md).
 
+### Theorem 21.40 (PSD geometry limits macroscopic cross-Gram dimension)
+
+Let `K_0` be a positive semidefinite `p by p` matrix with diagonal in
+`[0,1]`.  For distinct off-diagonal pairs `e_a={i_a,j_a}`, put
+`D_e=e_ie_j^T+e_je_i^T`.  If
+
+```math
+K_\sigma=K_0+\sum_(a=1)^h\sigma_a\eta_aD_(e_a)
+\succeq0
+\qquad(\sigma\in\{+-1\}^h),                       \tag{21.228}
+```
+
+then
+
+```math
+\sum_a\eta_a^2\le {p\over2}.                     \tag{21.229}
+```
+
+Consequently, let `J` be a symmetric involution and let `p` port vectors
+have squared norm `n`.  Define
+
+```math
+G_(ij)={w_i^Tw_j\over n},
+\qquad R_(ij)={w_i^TJw_j\over n}.                 \tag{21.230}
+```
+
+Suppose every word in a full affine coordinate cube is realizable with fixed
+self data and
+
+```math
+G_\sigma=G_0+\sum_a\sigma_ag_aD_(e_a),
+\qquad
+R_\sigma=R_0+\sum_a\sigma_ar_aD_(e_a).            \tag{21.231}
+```
+
+Then
+
+```math
+\sum_a(g_a^2+r_a^2)\le2p.                         \tag{21.232}
+```
+
+In particular, coordinatewise independently toggleable features of raw
+amplitude at least `delta` have number at most `2p/delta^2`.
+
+This order is sharp for Boolean ports.  Tensor powers of the order-16
+regular Walsh matrix contain `n^(1/4)` mutually orthogonal Boolean top
+eigenvectors; pairing duplicates versus distinct vectors realizes
+`floor(p/2)` independent constant-amplitude Gram--Rayleigh bits with the
+same one-port self state.
+
+If, additionally, a fixed-arity declared response changes by at most
+`L n^(3/2)sqrt(g_a^2+r_a^2)` when bit `a` changes, and the materialized total
+order is `N`, then `epsilon N^(3/2)`-visible independent bits obey
+
+```math
+h\le {2L^2\over\epsilon^2}
+       p\left({n\over N}\right)^3.                \tag{21.233}
+```
+
+#### Proof
+
+For positive definite `K_0` with diagonal one, conjugate the perturbation by
+`K_0^(-1/2)`.  Since both sign words occur, every resulting symmetric
+matrix `T_sigma` has spectrum in `[-1,1]`, so
+`tr(T_sigma^2)<=p`.  Averaging over signs gives
+
+```math
+p\ge2\sum_a\eta_a^2
+  (M_(i_ai_a)M_(j_aj_a)+M_(i_aj_a)^2),
+\qquad M=K_0^{-1}.                                 \tag{21.234}
+```
+
+Every diagonal entry of the inverse of a correlation matrix is at least
+one, proving (21.229).  Adding `epsilon I`, normalizing the diagonal, and
+letting `epsilon` vanish handles singular `K_0`.
+
+The two spectral sectors
+
+```math
+K^+=(G+R)/2,\qquad K^-=(G-R)/2                   \tag{21.235}
+```
+
+are Gram matrices of the projections `(I+-J)/2`.  Apply (21.229) to both;
+their perturbation amplitudes are `(g_a+-r_a)/2`, which proves (21.232).
+The tensor construction supplies the lower example.  Finally a visible bit
+must have raw amplitude at least
+`(epsilon/L)(N/n)^(3/2)`; substitution in (21.232) gives (21.233). `square`
+
+The theorem concerns full coordinatewise affine cubes.  It does not bound
+dense affine directions, nonlinear codes, or collective metric entropy, and
+order normalization alone does not prove that all local pair gaps survive
+simultaneous port activation.  Thus the exact `p^2` Gram table is not an
+information lower bound, but an `O(p)` approximate sufficient state is still
+open.  The full proof, verifier, and audit are in
+[`drafts/cross_gram_macroscopic_dimension.md`](drafts/cross_gram_macroscopic_dimension.md),
+[`experiments/verify_cross_gram_macroscopic_dimension.py`](experiments/verify_cross_gram_macroscopic_dimension.py),
+and
+[`drafts/cross_gram_macroscopic_dimension_independent_audit.md`](drafts/cross_gram_macroscopic_dimension_independent_audit.md).
+
+### Theorem 21.41 (the exact orientation--cycle gluing carrier)
+
+Fix a regular symmetric Hadamard matrix `H` of order `n`, and let a finite
+graph `G=(V,E)` carry onsite orientations `sigma_i in {+-1}` and bridge
+signs `b_ij in {+-1}`.  Put
+
+```math
+T_(ii)=\sigma_i,
+\qquad T_(ij)=b_(ij)\ (ij\in E),
+\qquad T_(ij)=0\ (ij\notin E).                    \tag{21.236}
+```
+
+The corresponding complete block energy is
+
+```math
+\mathcal E_T(X)={1\over2}X^T(T\otimes H)X.        \tag{21.237}
+```
+
+Its entire Boolean energy multiset up to global sign, hence its absolute
+cap, factors through the projective switching quotient
+
+```math
+T\sim\epsilon DTD,
+\qquad \epsilon\in\{+-1\},\quad D^2=I.           \tag{21.238}
+```
+
+If `G` has `e` edges and `c` connected components, this labelled quotient
+has exactly
+
+```math
+2^(e+c-1)                                           \tag{21.239}
+```
+
+classes.  A spanning forest presents its `e+c-1` coordinates as `|V|-1`
+relative onsite orientations and `e-|V|+c` modified fundamental-cycle
+products.
+
+The quotient has an exact gluing law.  Fix the carrier of each of `s`
+connected pieces and join them by `r` cross edges whose piece graph is
+connected.  Every fibre of joined carriers has exactly
+
+```math
+2^r,                                                \tag{21.240}
+```
+
+with intrinsic dimension split
+
+```math
+r=(s-1)+(r-s+1)                                    \tag{21.241}
+```
+
+between relative marginal antipodes and new cross-cycle holonomies.  After
+choosing marginal gauge sections and a cross-edge forest, these bits and the
+piece carriers reconstruct the joined carrier.  Repeated gluing is
+associative.
+
+Both kinds of compatibility information can affect the Boolean cap at
+leading order.  One bridge gives the orientation gap
+`(2-sqrt(2))n^(3/2)` of Theorem 21.38.  On a triangle, positive versus
+negative bridge product gives
+
+```math
+Q_H(J_3)={9\over2}n^(3/2),
+\qquad
+Q_H(T_\mathrm{unbal})\le3n^(3/2),                 \tag{21.242}
+```
+
+so one cycle bit changes the cap by at least `3n^(3/2)/2`.
+
+#### Proof
+
+Blockwise spin inversion sends `T` to `DTD`; the outer absolute value
+identifies `T` with `-T`.  Vertex switching has effective rank
+`|V|-c` on edge signs, while the global antipode acts freely because all
+onsite signs are nonzero.  Quotienting the `|V|+e` coefficient bits proves
+(21.239), and forest normalization gives the displayed coordinates.
+
+The connected joined graph has `sum_a e_a+r` carrier bits while the fixed
+connected marginals have `sum_a e_a`; restriction is onto, proving
+(21.240).  Relative choices of marginal antipode give `s-1` bits, a cross
+forest normalizes `s-1` edge signs, and each remaining edge closes one
+independent cycle.  This proves (21.241) and exact reconstruction.
+
+For the unbalanced triangle, the scalar block matrix has operator norm two;
+the Boolean vector has squared norm `3n`, giving the second bound in
+(21.242).  The balanced regular pole saturates every term and gives the first.
+`square`
+
+This is minimal as a coefficient-conjugacy carrier, not a claim that one
+bare scalar cap is injective on every quotient class.  Spectrum is also too
+coarse: an explicit order-four pair of cospectral block matrices has exact
+caps `32` and `34`.  The theorem is a strict state only for the common-factor
+orientation family, not arbitrary dense bridges.  The full proof and two
+independent finite checks are in
+[`drafts/regular_hadamard_orientation_carrier.md`](drafts/regular_hadamard_orientation_carrier.md),
+[`experiments/verify_regular_hadamard_orientation_carrier.py`](experiments/verify_regular_hadamard_orientation_carrier.py),
+[`drafts/regular_hadamard_orientation_carrier_independent_audit.md`](drafts/regular_hadamard_orientation_carrier_independent_audit.md),
+and
+[`experiments/verify_regular_hadamard_orientation_carrier_independent_audit.py`](experiments/verify_regular_hadamard_orientation_carrier_independent_audit.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

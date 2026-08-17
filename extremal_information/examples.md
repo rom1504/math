@@ -2437,3 +2437,33 @@ aligns the old Hadamard pole, the bridge bias, and the clique for energy
 `(2-o(1))n^(3/2)`; the opposite orientation is at most
 `(5/4+o(1))n^(3/2)`.  The complete parent still has order asymptotic to `n`
 and cap `O(n^(3/2))`.
+
+## Example 120: an exact quadratic table need not carry quadratic macroscopic dimension
+
+The fixed-port spectral certificate records two `p by p` Gram matrices, but
+their positive and negative eigenspace sectors are themselves positive
+semidefinite.  If `h` cross coordinates can be toggled independently through
+a full affine bit cube, their squared amplitudes have total at most `2p`.
+Only `O(p)` can therefore move by a fixed amount.
+
+This order is attained by tensor-Walsh Boolean top eigenvectors: choose
+disjoint pairs and independently repeat or orthogonalize the second vector
+of each pair.  Every one-port self state remains identical and each local
+pair has a leading cap gap.  The result is a compression signal, not yet a
+compressed state; dense correlated perturbations of many small Gram entries
+may still be visible to collective queries.
+
+## Example 121: gluing absolute channels creates antipodes and cycle flux
+
+Take blocks with onsite signing `+A` or `-A` and bridge each adjacent pair by
+`+H` or `-H` for one regular Hadamard matrix.  The full coefficient matrix
+is `T tensor H`.  Block spin inversions and one global output sign identify
+exactly the projective signed-graph switching class of `T`.
+
+For a connected block graph this carrier has one bit per edge.  When `s`
+already-compressed connected pieces are joined through `r` edges, the fibre
+has exactly `r` new bits: `s-1` choose their relative global orientations,
+and `r-s+1` record new fundamental-cycle products.  A single bridge exposes
+the first resource at leading scale; a balanced versus unbalanced triangle
+exposes the second by at least `3n^(3/2)/2`.  This is an exact reusable
+repair, not merely a list of obstructions.

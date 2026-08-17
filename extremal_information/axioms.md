@@ -1721,3 +1721,29 @@ Compositional complexity should therefore charge an interface by both its
 number of variables and the extremal budget it can spend internally.  An
 order count alone can mistake a small but high-cap calibration device for a
 negligible future.
+
+## 83. Reconstruction dimension can exceed macroscopic information dimension
+
+An exact feature algebra may store every pairwise compatibility coordinate,
+yet positivity can prevent those coordinates from varying independently at
+fixed amplitude.  In a Gram/Rayleigh state the exact table is quadratic in
+the port count, while every full independently toggleable macroscopic cube
+has only linear dimension.
+
+Counting entries is therefore neither an upper nor a lower law for reusable
+information.  The operational question is the metric entropy of the
+realizable image under declared collective responses; dense correlated
+small coordinates must be tested separately from sparse independent ones.
+
+## 84. Quotient gluing has a compatibility fibre
+
+Compressing each component modulo its internal symmetries does not make
+composition cartesian.  The joined object lies over the tuple of marginal
+quotients with a fibre measuring the relative frames and new holonomies that
+the marginals discarded.
+
+In the regular-Hadamard orientation model this fibre is exact: `r` joining
+edges create `s-1` relative antipodes and `r-s+1` cycle bits.  This suggests
+a concrete dynamic-complexity law: reusable state equals marginal semantic
+state plus the dimension of the amalgamation fibre, with the latter charged
+only when interaction makes it observable.

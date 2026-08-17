@@ -90,6 +90,9 @@ one of:
   proof now extends to arbitrary regular spectral sign matrices through two
   resolvent features; two-eigenvalue matrices collapse to one Rayleigh
   coordinate, and fixed port count has an `O(ell^2 log n)` Gram certificate.
+  PSD geometry now shows that this exact quadratic table contains only
+  `O(ell/delta^2)` coordinatewise independently toggleable
+  amplitude-`delta` bits, with a matching tensor-Walsh lower family.
 - **Best benchmark:** fixed-rank quadratic bridges and, beyond that classical
   regime, the bounded-cap Walsh anti-pin compiler.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -115,8 +118,10 @@ one of:
   variables remain visible at total scale, or derive a deterministic
   synchronization law that collapses them to a rooted `O(ell)` state.  The
   continuation-width question is closed once its internal cap budget is
-  declared; the next scale question is whether collective small cross-Gram
-  entries carry more than linear fixed-distortion information.
+  declared.  The selected next theorem is the metric entropy of the pair of
+  spectral elliptopes under the **collective** multi-port cap pseudometric:
+  decide whether dense small cross-Gram entries carry more than linear
+  fixed-distortion information.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.
@@ -178,11 +183,17 @@ one of:
   obstruction reset the strike count and meet a near-original benchmark,
   but they do not authorize a direct attack on `M_n`.
 
-### 3. Composition-created holonomy / carrier geometry — active, B
+### 3. Composition-created holonomy / carrier geometry — active, A-
 
 - **Core object:** compatibility cycles and rooted carrier data invisible in
   isolated quotient summaries.
-- **Strongest theorem:** signed-balance is exactly the gauge condition for a
+- **Strongest theorem:** in the regular-Hadamard orientation family, the
+  projective signed-graph switching class is an exact cap carrier.  A
+  connected graph has one carrier bit per edge, and joining `s` connected
+  marginal carriers through `r` bridges has an exact `2^r` fibre: `s-1`
+  relative antipodes plus `r-s+1` new cycle holonomies.  Both resources have
+  fixed `n^(3/2)` Boolean witnesses, and gluing is associative.  More
+  generally, signed-balance is exactly the gauge condition for a
   common nested optimizer section in permutation-invariant
   `alpha I+beta J` bridges. In the Walsh family, even a flat edge connection
   has a relative commutation cocycle: commuting and anticommuting constant
@@ -202,7 +213,10 @@ one of:
   upper or absolute response within `d n^(3/2)`; unit paths therefore need
   only `O(t/eta)` bits at error `eta t n^(3/2)`, whereas this deletion
   architecture stays quadratic on a uniformly weighted complete graph.
-- **Best benchmark:** a full-rank dense synchronized class has an exact joint
+- **Best benchmark:** the common-factor orientation network is the first
+  exact strict dynamic quotient discovered after the state was hidden: its
+  compatibility-fibre law predicts precisely what marginal absolute caps
+  forget.  Separately, a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
   `O(mK log n)` label bits, with one signed-holonomy audit per type.
@@ -217,7 +231,9 @@ one of:
   semantic information, not merely orbit bookkeeping.
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
-- **Composition mechanism:** rooted bilinear amalgamation. A cross form,
+- **Composition mechanism:** projective signed-graph gluing makes the
+  relative-frame/cycle fibre explicit in the orientation model.  In the
+  broader Walsh carrier, rooted bilinear amalgamation uses a cross form,
   intersection correspondence, and root fibre reconstruct the joined state;
   the accumulated presented span makes the operation associative.
 - **Live theorem:** determine whether scalar-visible Gram fluxes retain a
@@ -277,9 +293,11 @@ one of:
   an `Omega(k)` approximate witness dictionary, paid either by common query
   pins or child-dependent active states.  The coordinate-pin option can be
   exponentially costly even for flat exact-sign switched pairs, with the
-  exact rate governed by extremal witness mass.  The live boundary is now
-  dynamic congruence: determine whether the anti-pin state closes under two
-  interacting ports, or whether composition creates a leading holonomy bit.
+  exact rate governed by extremal witness mass.  The one-port congruence
+  question is now answered: composition creates cross-Gram and orientation
+  holonomy, and the common-factor orientation subclass has an exact repair.
+  The live boundary is whether collective small cross-Gram entries admit an
+  `exp(O(p))` approximate response cover beyond that narrow gauge model.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -436,6 +454,7 @@ one of:
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
 | near-original | bounded-cap Walsh anti-pin compiler | switch label plus one `sqrt(n)` repeated-column query port | exact complete sign parents of order `n+sqrt(n)` preserve an `exp(Omega(n))` contextual metric within factor eight; port width is sharp in this architecture; multi-port congruence open |
+| near-original | regular-Hadamard orientation networks | projective signed-graph class plus gluing fibre | exact one-bit-per-edge carrier; `r` joining edges create exactly `r` relative-orientation/cycle bits with leading witnesses; strict associative quotient for one common Hadamard factor |
 | bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation is exact; query-local weighted truncation costs interaction mass; an ordinary triangle exposes binary Gram flux at a fixed leading gap |
 | near-original | regular-Hadamard tensor hierarchy | fixed-dimensional cross-correlation set | nested response sets and support functions converge; trace-zero sign templates give dense hollow signings on orders `d4^r`; no all-order recovery |
 | near-original | summably perturbed amplification | common all-pairs Boolean lift / signed replication kernel | directed recovery forces a Hausdorff limit; perfect-matching flips change `Theta(N)` edges per scale with summable defect; no phase synchronization |

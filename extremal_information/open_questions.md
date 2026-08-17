@@ -630,15 +630,24 @@ at width `n^(3/4)` attain a leading gap.  Futures which themselves have
 
 The live question is the **growth and synchronization** of the amalgamation
 data.  For `p` ports, determine whether the `O(p^2)` cross Gram table is
-minimal on a scalable family, whether a natural algebraic hypothesis makes
-it a function of only `O(p)` rooted data, and how the answer depends on the
-allowed continuation width.
+minimal under the collective response metric, whether a natural algebraic
+hypothesis makes it a function of only `O(p)` rooted data, and how the answer
+depends on the allowed continuation width.  A full affine bit cube cannot
+prove quadratic minimality: PSD geometry limits its independently
+toggleable constant-amplitude dimension to `Theta(p)`, sharply.
 
 **Success:** a lower bound exposing the true number of collective cross
 variables at the correct total-system scale, or a deterministic
 synchronization theorem collapsing them to a strict rooted quotient.  The
-raw affine-bit dimension may be much smaller than the exact table and must
-be determined before seeking a quadratic lower bound.
+next discriminating object is the metric entropy of `(G,R)` under the
+collective multi-port cap, not its raw entry count.
+
+One narrow synchronization law is now exact.  If every onsite block is
+`+-H` and every bridge is `+-H` for one common regular Hadamard factor, the
+projective signed-graph class closes: `r` joining edges create exactly `r`
+compatibility bits, split into relative antipodes and cycle flux.  Any
+proposed general theorem should recover this fibre law without assuming the
+whole scalar block graph as unexplained input.
 
 **Mandatory falsifiers:** the orthogonal-top-eigenvector cross-Gram pair and
 the `A` versus `-A` macroscopic orientation bridge.  Merely showing that one
