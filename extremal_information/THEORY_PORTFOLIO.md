@@ -218,7 +218,12 @@ one of:
   `O(t sqrt k)` total-scale hidden coordinates for any bounded-atom
   presentation, and unrestricted exact signings attain that rate.  In every
   hidden basis the flat Gram construction has linear average fan-in, so it
-  genuinely lies beyond independently paid local channels.
+  genuinely lies beyond independently paid local channels.  Quadratic public
+  advice has now been removed: a small-bias label list plus a
+  `6k`-wise-independent polynomial-trace seed uses only `O(k log k)` shared
+  bits while preserving simultaneous flatness and the response rate.  The
+  live costs are now the exponential same-support query language and exact-
+  sign/disjoint realization, not stored edge randomness.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

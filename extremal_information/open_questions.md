@@ -326,9 +326,13 @@ bounded-fan-in alternative is now completely classified: fan-in `t` permits
 at most `O(t sqrt k)` total-scale hidden coordinates, and unrestricted exact
 signings attain this scale with a matching pairwise packing.  Moreover the
 flat alternating-form code necessarily has linear fan-in in every hidden
-basis.  The next discriminating target is therefore to retain the positive
-rate under a disjoint bridge composition or an exact-sign parent with concise
-public advice, or prove that one of those remaining costs is unavoidable.
+basis.  Concise public advice is no longer an obstruction: a small-bias label
+sampler and a `6k`-wise-independent polynomial seed reduce the shared
+description to `O(k log k)` while preserving flatness and the full response
+packing.  The next discriminating target is therefore to retain the positive
+rate under a disjoint bridge composition or an exact-sign parent.  The live
+costs are the exponential same-support query language and, more
+fundamentally, exact-sign/disjoint closure.
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking

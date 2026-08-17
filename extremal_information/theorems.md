@@ -9454,6 +9454,97 @@ or exact-sign disjoint composition.  Full details and audit are in
 and
 [`drafts/bounded_fanin_broadcast_law_independent_audit.md`](drafts/bounded_fanin_broadcast_law_independent_audit.md).
 
+### Theorem 21.26 (short-seed flat Gram broadcast)
+
+For every `r>=2`, put
+
+```math
+h={r(r-1)\over2},\qquad k=256r^2.                    \tag{21.131}
+```
+
+There is a uniformly computable public description of `O(k log k)` bits
+defining `2^h` exact hollow sign children `A_B`, indexed by alternating
+forms `B` on `F_2^r`, such that
+
+```math
+||A_B||_(2->2)<=8sqrt(k),\qquad Q(A_B)<=4k^(3/2).    \tag{21.132}
+```
+
+For the predeclared same-support contexts `-H_T`, with
+`H_B(x)=x^TA_Bx/2`,
+
+```math
+R_B(B)=0,
+\qquad {sqrt2\over16}k^(3/2)
+ <=R_T(B)<=8k^(3/2)\quad(B!=T).                      \tag{21.133}
+```
+
+Consequently uniform response error below
+`(sqrt2/32)k^(3/2)` requires at least
+
+```math
+h>={k\over1024}                                      \tag{21.134}
+```
+
+bits, even though the shared base no longer stores a quadratic edge table.
+
+#### Proof
+
+First choose a `1/8`-biased multiset `S subset F_2^r` of size `256r` and
+repeat every indexed occurrence `r` times to form the public list
+`P=(p_1,...,p_k)`.  Hoeffding and a union bound over the nonzero linear
+characters prove existence; storing `S` costs exactly `k` bits.  For every
+nonzero alternating form `B`, Fourier expansion of its radical and the bias
+bound give
+
+```math
+#\{i<j:B(p_i,p_j)=1\}>={k^2\over8}.                 \tag{21.135}
+```
+
+Thus the alternating-form evaluation words form an injective distance code.
+
+Let `E=binom(k,2)`, `d=ceil(log_2E)`, and index the edges by distinct points
+of `F_(2^d)`.  The traces of a uniformly random polynomial of degree below
+`6k` give `6k`-wise-independent edge signs from a seed of
+
+```math
+6k\lceil\log_2E\rceil=O(k\log k)                   \tag{21.136}
+```
+
+bits.  For a fixed form and a fixed unit vector, the `6k`-th moment agrees
+with the fully independent Rademacher moment.  Taking `m=3k` gives
+
+```math
+Pr\{|z^T(A\odot\chi_B)z|>4sqrt(k)\}
+ <=(3/8)^(3k).                                      \tag{21.137}
+```
+
+A `1/4` sphere net and a union bound over all `2^h` forms have failure
+probability
+
+```math
+9^k2^h(3/8)^(3k)<e^(-0.74k).                        \tag{21.138}
+```
+
+One seed therefore gives (21.132) simultaneously.  If `B!=T`, (21.135)
+makes `A_B-A_T` nonzero with magnitude two on at least `k^2/8` unordered
+edges.  The bipartition--Khintchine bound (21.130) yields the lower half of
+(21.133), and the operator bounds yield its upper half.  The coordinate
+`T=B` in the already-declared response vector separates every pair; (21.134)
+follows from `h/k=(r-1)/(512r)`. `square`
+
+The sample space is uniformly computable by exhaustive finite search, and a
+random short seed succeeds with exponentially high probability.  No
+deterministic polynomial-time certification is proved.  The public-bit count
+excludes the `h` hidden bits and the exponential same-support query language.
+Most importantly, the overlay remains weighted in `{0,+-2}` rather than an
+appended disjoint exact-sign composition.  The remaining cost is therefore
+closure/realization, not quadratic public randomness.  Full details and
+audit are in
+[`drafts/short_seed_gram_broadcast.md`](drafts/short_seed_gram_broadcast.md)
+and
+[`drafts/short_seed_gram_broadcast_independent_audit.md`](drafts/short_seed_gram_broadcast_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

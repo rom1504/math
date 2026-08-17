@@ -2204,3 +2204,18 @@ Consequently no scalar formula such as “static response entropy times mixing
 time” can be universal.  Strong mixing erases hidden fibre history, not
 visible reward holonomy.  The same decomposition survives genuine nonlinear
 switches only when all stochastic secants transport one law.
+
+## Example 105: simultaneous flatness needs a short seed, not an edge table
+
+The alternating-form Gram family contains exponentially many correlated
+signings, yet their simultaneous operator-norm bound is a finite high-moment
+event.  A degree-`6k` polynomial trace supplies exactly the independence that
+moment argument consumes, using `O(k log k)` rather than `Theta(k^2)` shared
+bits.  A stored small-bias label multiset of only `k` bits still detects every
+nonzero alternating form on a constant density of edges.
+
+The resulting uniformly computable family retains `Theta(k)` response bits
+at the `k^(3/2)` scale while every child is spectrally flat.  It removes
+quadratic shared randomness as an explanation or obstruction.  It does not
+remove the exponential query language or convert same-edge addition into an
+exact-sign disjoint composition.

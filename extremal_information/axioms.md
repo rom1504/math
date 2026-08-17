@@ -1549,3 +1549,15 @@ at the forgetting scale and a cycle-space memory sampled at the target rate.
 More contraction cannot compensate for scalar holonomy.  Conversely, once
 the cohomology class is retained, arbitrary switching inside the contracting
 fibres creates no additional extensive expected-reward state.
+
+## 70. Public randomness and semantic broadcast are different resources
+
+An exponentially large family may be simultaneously spectrally controlled
+by a short pseudorandom seed when the proof tests only bounded moments.  Its
+semantic response rate can remain extensive because hidden coordinates are
+broadcast through the resulting dense coefficient code.
+
+Therefore a quadratic public edge table is not intrinsic to dense response
+memory.  One must separately charge hidden incidence, seed/description
+length, query-language size, and closure under the declared composition.
+Derandomizing one resource does not silently solve the others.
