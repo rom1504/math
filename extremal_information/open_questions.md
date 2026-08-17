@@ -295,7 +295,14 @@ same connected bounded-degree or complete support at a fixed one-Walsh-block
 `n^(3/2)` gap.  This proves `h` bits at fixed port accuracy, but the gap is
 only `Theta(h^(-3/2))` in units of all `3hn` variables.  Determine whether a
 different dense weighting exposes a positive-rate packing at total
-`N^(3/2)` accuracy, or prove a further quotient at that scale.
+`N^(3/2)` accuracy, or prove a further quotient at that scale.  The entire
+bounded **state-local** architecture is now closed negatively: arbitrary
+state-independent public bridges leave diameter at most `D/sqrt(k)` at total
+scale, and unequal disjoint cells have bounded fixed-distortion packing
+entropy.  To escape, a local bit must alter `Omega(k^(3/2))` unit interaction
+atoms or enter a genuinely nonlocal state-dependent cross block.  The next
+construction/lower bound must therefore target that broadcast regime; adding
+more public connectors is no longer a legitimate experiment.
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking

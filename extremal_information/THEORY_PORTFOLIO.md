@@ -181,7 +181,12 @@ one of:
   counterexample.  A connected construction exposes `h` independent fluxes
   with one common bounded-degree or complete support and a fixed one-block
   gap, but that gap is only `Theta(h^(-3/2))` after normalizing by all
-  `3hn` variables.
+  `3hn` variables.  This limitation is now a theorem for the whole
+  state-local architecture: arbitrary public bridges leave total response
+  diameter at most `D/sqrt(k)`, and unequal disjoint cells have bounded
+  fixed-distortion response entropy.  A local bit needs
+  `Omega(k^(3/2))` state-dependent interaction atoms for constant
+  total-scale neighboring separation.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

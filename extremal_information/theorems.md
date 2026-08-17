@@ -9027,6 +9027,103 @@ construction and independent audit are in
 and
 [`drafts/walsh_connected_flux_packing_independent_audit.md`](drafts/walsh_connected_flux_packing_independent_audit.md).
 
+### Theorem 21.23 (state-local information vanishes at total scale)
+
+Partition `N=kn` Boolean variables into `k` blocks.  Let a hidden state enter
+a scalar query only through bounded onsite Walsh children:
+
+```math
+E_a^theta(X)=S_theta(X)+sum_(v=1)^k d_(theta v)H_(a_v)(x_v),
+\qquad |d_(theta v)|<=D,                               \tag{21.111}
+```
+
+where `S_theta` is arbitrary and state-independent and
+`|H_a(x)|<=n^(3/2)/2`.  Then every public query family has response metric
+
+```math
+d_Theta(a,b)
+<=D\#\{v:a_v!=b_v\}n^(3/2)
+<= {D\over sqrt k}N^(3/2).                            \tag{21.112}
+```
+
+The same holds for minima and absolute maxima.  Thus no two such states have
+a fixed positive total-scale separation as `k->infinity`, regardless of how
+dense, signed, or large the public bridge term is.
+
+More generally, suppose hidden bit `i` affects only a disjoint cell of `s_i`
+variables and
+
+```math
+||E_sigma^theta-E_tau^theta||_infinity
+<=Lsum_(i:sigma_i!=tau_i)s_i^(3/2).                   \tag{21.113}
+```
+
+For every fixed `epsilon>0`, a response code whose distinct pairs have
+distance greater than `epsilon N^(3/2)` satisfies
+
+```math
+log_2|C|<=ceil(4L^2/epsilon^2).                        \tag{21.114}
+```
+
+#### Proof
+
+The public term cancels pointwise.  One changed onsite child changes the
+landscape by at most `D n^(3/2)`, and `max`, `min`, and `max|.|` are all
+one-Lipschitz in uniform norm.  This proves (21.112).
+
+For (21.114), order `s_1>=s_2>=...`.  Since `i s_i<=N`,
+
+```math
+sum_(i>r)s_i^(3/2)
+<=N^(3/2)sum_(i>r)i^(-3/2)
+<=2N^(3/2)/sqrt r.                                    \tag{21.115}
+```
+
+More than `2^r` codewords contain two agreeing on the first `r` bits.  With
+`r=ceil(4L^2/epsilon^2)`, their distance is at most the forbidden threshold.
+`square`
+
+For the `h`-flux cube in Theorem 21.22, `k=3h` and changing one flux changes
+only two onsite children.  Therefore
+
+```math
+d_Theta(sigma,tau)<=2D d_H(sigma,tau)n^(3/2),         \tag{21.116}
+```
+
+the whole cube has total-scale diameter `O(h^(-1/2))`, and its minimum
+pairwise separation is at most `2D/(3h)^(3/2)` in units of `N^(3/2)`.
+Theorem 21.22 attains the correct full-cube order.  Error-correcting subcodes
+cannot make the diameter constant.
+
+Within the coordinate-equivariant unrooted Walsh-graph query language of
+Theorem 21.18, `r` source labels have at most
+`2^((3r^2+r)/2)` possible `(Gram,relation)` states.  Encoding `h` scalar-
+distinct states requires
+
+```math
+r>={sqrt(1+24h)-1\over6}.                              \tag{21.117}
+```
+
+If those labels occupy `t>=r` child slots, (21.112) gives normalized diameter
+at most `D/sqrt(t)=O(h^(-1/4))`.  This orbit-count corollary excludes
+coordinate pins, which break the ambient symmetry; the diameter theorem
+(21.112) itself allows them.
+
+Finally, if flipping one hidden bit can alter at most `d_i` unit-weight atoms,
+each bounded by `B n^(3/2)`, a total-scale neighboring gap
+`epsilon(kn)^(3/2)` requires
+
+```math
+d_i>={epsilon\over2B}k^(3/2).                          \tag{21.118}
+```
+
+Therefore a successful total-scale escape must broadcast hidden
+compatibility into genuinely state-dependent cross-block coefficients,
+use unbounded normalized weights, or change the output scale/language.
+Public connector padding alone cannot amplify local state.  The repaired
+proof and audit are in
+[`drafts/walsh_total_scale_flux_ceiling.md`](drafts/walsh_total_scale_flux_ceiling.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

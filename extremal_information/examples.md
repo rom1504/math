@@ -2069,3 +2069,19 @@ The same saddle-mass rule repairs Vandermonde's missing `1/2 log n` and the
 `n^(3/4)` tangent mass.  Truncation, exponential rescaling, and flooring give
 finite integer landscapes realizing the Gaussian semigroup at every large
 order.
+
+## Example 96: public bridges cannot amplify local hidden Walsh state
+
+Put hidden labels in `k` Walsh blocks of order `n`, and allow an arbitrary
+state-independent scalar bridge landscape.  If hidden state enters only
+through bounded onsite child terms, two entire landscapes differ pointwise
+by at most `Dkn^(3/2)=DN^(3/2)/sqrt(k)`.  Maximization cannot amplify this
+difference.  Signed, dense, or enormous public connector baselines are
+irrelevant because they cancel before optimization.
+
+For the connected triangle-flux cube this proves the earlier one-port gap has
+the correct `h^(-3/2)` full-cube scaling and that every subcode has
+total-scale diameter `O(h^(-1/2))`.  Unequal disjoint cell sizes do not help:
+at fixed total-scale distortion, their response packing has bounded entropy.
+Any escape must make each local bit alter `Omega(k^(3/2))` unit interaction
+atoms, or otherwise leave the bounded state-local scalar architecture.

@@ -1433,3 +1433,19 @@ Gaussian class supplies one: mean and covariance add, mass amplitude
 multiplies, and finitely many parameters realize every future convolution.
 Quartic and flat saddles mark the boundary rather than inviting an
 unrestricted hierarchy of formal coefficients.
+
+## 61. A public interaction cannot amplify state it does not contain
+
+Optimization may create joint cancellation, but it is still one-Lipschitz in
+the underlying landscape.  If hidden information enters only through
+bounded local terms, every state-independent interaction cancels pointwise
+when two hidden states are compared.  The total response diameter is then
+controlled by the sum of local oscillations, not by the size or density of
+the public coupling.
+
+At the `N^(3/2)` scale, disjoint `n`-variable ports lose a factor
+`1/sqrt(k)`.  A compatibility bit can remain macroscopic only if it is
+broadcast into a superlinear number of state-dependent cross terms, its
+normalized coefficient grows, or the query reads a different local/vector
+scale.  This is a general composition-created-information threshold, not a
+Walsh-specific spectral fact.
