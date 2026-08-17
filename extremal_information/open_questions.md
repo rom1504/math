@@ -677,11 +677,85 @@ subsume signed coefficient holonomy: a rank-one global Gram alignment has
 positive cycle products, whereas the negative cycle witness above lives
 outside the PSD carrier.
 
-**Mandatory falsifiers:** the orthogonal-top-eigenvector cross-Gram pair and
-the `A` versus `-A` macroscopic orientation bridge.  Merely showing that one
-planted Walsh witness moves is already covered by the Hadamard
-synchronization obstruction.
+The Boolean information boundary is now sharper.  The complete labelled
+linear port table is an invertible convolution of the projective row
+histogram.  Its exact dimension is `2^(p-1)-1`, but its fixed-error metric
+entropy is exactly `Theta_eta(p)`, and declared union/tensor occurrence trees
+have mergeable `O(p/eta^2)`-bit randomized carriers.  Uncontrolled semantic
+reuse can accumulate linearly, while a uniform convolution component gives
+geometric forgetting.
+
+Pairwise Gram--Rayleigh data are definitively insufficient: equal states in
+one regular-Hadamard tensor family have Boolean trust responses separated by
+`rn/8`.  A positive replacement is also known.  Odd product-algebra closure
+makes the row histogram an exact trust carrier, and a dense family with
+`p=(log_2 n)/2+1` has an `O(sqrt(n)log n)`-bit exact state at bounded port
+mass.  The live question is no longer whether a sub-landscape Boolean carrier
+can exist.  It is whether a comparably generated affine pole algebra, or an
+approximate selector closure with summable defect, is forced or can be
+constructed for a class broad enough to interact with near-minimizers.
+
+**Mandatory falsifiers:** the equal-`(G,R)` four-port collision, the
+orthogonal-top-eigenvector cross-Gram pair, and the `A` versus `-A`
+macroscopic orientation bridge.  Merely showing that one planted Walsh
+witness moves is already covered by the Hadamard synchronization obstruction.
 
 **Stop condition:** storing the complete multi-query response table, the
 entire Boolean optimizer language, or one fresh `n`-bit state for every
-composition node is not closure.
+composition node is not closure.  Full odd-product closure counts as progress
+only when it has a generated sublinear presentation, as in the tensor coset;
+postulating all `2^(p-1)` identities at arbitrary dense arity does not.
+
+## 13. Near-minimizer selector synchronization
+
+PC.3 meets the literal near-original benchmark: it has a dense sign bridge
+with `Theta(n^(3/2))` edges, growing rank, leading response oscillation, and
+a strict sub-landscape state.  It does **not** authorize a direct attack on
+`M_n`.  The new shore has only `Theta(sqrt n)` vertices, the child is one
+regular-Hadamard tensor hierarchy, and exact positive-pole closure already
+fixes its child cap at `n^(3/2)/2`.
+
+The weakest useful reconnection question is instead the following agent-
+authored hypothesis.  Along a near-liminf sequence `A_n`, can one construct,
+without enumerating its full maximizing-spin landscape,
+
+```math
+p_n={1\over2}\log_2n+O(1),
+\qquad m_n=\left\lfloor{\sqrt n\over p_n}\right\rfloor,
+```
+
+Boolean ports `W_n` and one fixed antipodally odd selector `tau` such that,
+for every endpoint `epsilon`, its coordinatewise selector witness
+`x_epsilon` obeys
+
+```math
+Q(A_n)-|H_(A_n)(x_epsilon)|=o(n^(3/2)),            \tag{NMSS.1}
+```
+
+while the declared query language is nonvacuous,
+
+```math
+osc_epsilon\;m_n||W_nepsilon||_1
+>=c n^(3/2)                                        \tag{NMSS.2}
+```
+
+for one fixed `c>0`?
+
+If so, every labelled response differs by `o(n^(3/2))` from
+
+```math
+Q(A_n)+m_n||W_nepsilon||_1,                        \tag{NMSS.3}
+```
+
+and Theorem 21.50 makes `(Q(A_n),mu_(W_n))` a
+`O(sqrt(n)log n)`-bit leading-scale carrier.  The at most `sqrt n` new
+vertices can be completed at cost `O(n)`.  This would be a strict response
+reduction for actual liminf objects, but would still require a separate
+scale-changing reuse theorem before saying anything about convergence.
+
+NMSS is demonstrably weaker than the original optimization: it controls only
+`Theta(sqrt n)` selector words and one rank-`O(log n)` continuation language,
+not all `2^n` spins or any cross-order recurrence.  It becomes circular if
+the ports are chosen by tabulating maximizers, if Gram data replace the
+histogram, or if compression of the completed parent is mistaken for proof
+that the parent is itself near-minimizing.

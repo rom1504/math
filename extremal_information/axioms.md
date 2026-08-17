@@ -1859,3 +1859,48 @@ almost-Euclidean `l_1` sections cannot substitute for a synchronization
 theorem.  A positive discrete-recovery result must exploit equality-case
 structure of the selected class, such as a property forced specifically by
 near-minimal extremal cap.
+
+## 94. Exact feature dimension and approximate response information can have different exponents
+
+An exact Boolean port table invertibly stores every projective row type and
+therefore has exponential feature dimension in the port count.  At any fixed
+response distortion, the same image has only linear metric entropy because a
+constant-size empirical zonoid coreset suffices and point masses already
+force a linear Hamming packing.
+
+Thus exact algebraic state size cannot be used as a fixed-scale information
+lower bound.  Conversely, a static small coreset is not automatically a
+dynamic quotient: the operation used to reuse or merge it must be specified.
+
+## 95. Discrete synchronization can be a product algebra
+
+A coordinatewise nonlinear selector preserves a quadratic extremum when all
+Boolean monomials in its Fourier support lie in one active eigenspace.  The
+selector then pays multiple channels jointly before absolute values, and the
+otherwise missing row-pattern features become an exact composable state.
+
+This is a finite deterministic analogue of synchronization: higher features
+are not discarded or separately bounded; algebraic closure makes their
+response witness live in the same exposed face.  Pairwise Gram data alone do
+not imply the condition.
+
+## 96. Equal relaxed states can prove discrete information insufficiency
+
+A fixed integrality gap only says that one relaxed decoder is inaccurate.
+Two discrete systems with identical complete relaxed state and separated
+exact responses prove more: every decoder from that state fails on at least
+one of them.  Scale-preserving amplification turns such a finite collision
+into an asymptotic information lower bound.
+
+## 97. Reuse needs an independence or forgetting budget
+
+A response metric can be nonexpansive under one exact continuation while
+small errors still accumulate linearly over repeated approximate factors.
+Independent occurrence samples avoid that accumulation on a declared tree;
+reusing the same randomness need not.  A uniform mixing component instead
+annihilates the mean-zero response channel and yields geometric forgetting.
+
+Approximate compositional complexity must therefore state which of three
+resources it uses: fresh occurrence independence, a finer reusable semantic
+state, or contraction.  Static covering entropy alone does not choose among
+them.

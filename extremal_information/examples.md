@@ -2588,3 +2588,70 @@ This sharply rejects a tempting shortcut: delocalization says that no few
 coordinates carry the mass, whereas Boolean recovery needs almost every
 coordinate magnitude to approach one.  The deterministic example is
 quadratic-cap and therefore leaves a near-minimizer rigidity theorem open.
+
+## Example 130: exact Boolean port information is a row histogram, not a Gram matrix
+
+For `p` Boolean ports, the complete labelled linear response is convolution
+of the projective row histogram with the kernel
+`s mapsto |sum_i s_i|`.  Every even Walsh multiplier of this kernel is
+nonzero.  Hence exact response equivalence is exactly equality of all
+`2^(p-1)` projective row counts, and tensor composition is group convolution
+of those counts.
+
+Gram data retain only the constant and degree-two characters.  They are
+complete through three ports, but at four ports a parity coordinate first
+appears: uniform four-bit rows and doubled even-parity rows have equal Gram
+matrices and joint supports `3n/2` and `2n`.  Exact feature dimension is
+therefore exponential in port arity.  Fixed-error information is only
+linear: a dimension-free Rademacher coreset uses `O(eta^(-2))` row types and
+projective Hamming point masses give the matching `Theta_eta(p)` bits.
+
+## Example 131: equal full Gram--Rayleigh states hide a leading Boolean trust gap
+
+The four-port parity phenomenon survives a common dense quadratic child.
+Two tuples of Boolean top eigenvectors of one order-16 regular Hadamard have
+identical full `(G,R)` tables, but supports `32` and `28`.  Tensoring the
+child and ports gives equal states at every order `16^j` while their exact
+Boolean trust responses differ by at least `n^(3/2)/8` at bounded total port
+mass.  Arbitrary common exact-sign completion costs only `O(n)`.
+
+This is an information collision, not just a spherical integrality gap.  A
+decoder may know the common child and completion and still receives the same
+state on two macroscopically separated parents.  The missing information is
+a higher row-pattern channel.  A separate rank-one blow-up shows that even
+one port can have this pathology outside the involutive Hadamard class;
+regular-Hadamard tensoring retains a leading hidden orthogonal mode and
+falsifies the naive magnetization quotient.
+
+## Example 132: an affine pole algebra synchronizes a growing dense interface
+
+If every odd product used by a tie-broken majority selector remains in one
+positive top eigenspace, that selector is itself a Boolean top eigenvector.
+It therefore pays the child and all port fields jointly before absolute
+values.  The exact Boolean response collapses to the projective row
+histogram, and this state composes by addition and tensor convolution.
+
+Tensor powers of one four-pole regular-Hadamard coset give a dense family
+with `p=(log_2 n)/2+1` ports.  Its exact generic histogram carrier has only
+`sqrt(n)` bins and `O(sqrt(n)log n)` bits, while repeated-port mass remains
+bounded and exact-sign completion loses only `O(n)`.  This is the first
+growing-interface benchmark here where algebraic synchronization produces a
+strict sub-landscape Boolean state at the `n^(3/2)` scale.  The equal-Gram
+collision fails precisely this product closure.
+
+## Example 133: static port entropy splits into three dynamic reuse regimes
+
+For disjoint row unions, shared min-priority reservoirs form an exact random
+merge semilattice.  A fixed declared tree has response error
+`O(k^(-1/2)+sqrt(log T/k))` at all `T` nodes, independent of depth.  For
+tensor products, independent leaf occurrences similarly propagate iid
+projective types by coordinatewise multiplication.
+
+Semantic self-reuse is different.  Tensor response distance is only
+nonexpansive in one exact context, and `L` small errors can add with sharp
+coefficient `L`; squaring one sample bank can be macroscopically wrong even
+for a two-point subgroup.  If every continuation contains uniform mass
+`alpha`, the mean-zero response channel contracts by `1-alpha` and errors
+form a geometric tail.  Independence, uncontrolled reuse, and forgetting
+are therefore distinct dynamic resources despite sharing the same static
+response image.

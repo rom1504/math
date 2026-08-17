@@ -11932,6 +11932,94 @@ Full proofs and independent audit are in
 and
 [`experiments/verify_boolean_port_product_algebra_closure.py`](experiments/verify_boolean_port_product_algebra_closure.py).
 
+### Theorem 21.53 (Boolean port states have exact merge and tensor reuse laws)
+
+The fixed-scale coreset in Theorem 21.50 has two genuine dynamic extensions.
+
+First, give every labelled row occurrence `u` and each of `k` replicas an
+independent public random priority.  An aggregate stores its cardinality and
+the minimum-priority row type in each replica.  For disjoint union,
+coordinatewise priority minimum and cardinality addition form an exact
+associative carrier.  At every one of `T` aggregates declared independently
+of the priorities, with probability at least `1-delta`, its normalized
+response error is simultaneously at most
+
+```math
+{4\over\sqrt k}+\sqrt{{\log(T/delta)\over2k}}.     \tag{21.323}
+```
+
+Thus union-tree depth does not add approximation error; only the logarithm
+of the simultaneously certified node family enters.  Adaptive subsets and
+reconvergent overlap without relabelling are outside this theorem.
+
+Second, normalized tensor histograms compose by probability convolution on
+`G_p`.  If `R_mu(epsilon)=E_mu|s dot epsilon|/p`, then
+
+```math
+\boxed{R_(mu*lambda)=lambda*R_mu},                 \tag{21.324}
+```
+
+so
+
+```math
+d_p(mu*lambda,nu*lambda)<=d_p(mu,nu),
+```
+
+```math
+d_p(mu_1*cdots*mu_L,nu_1*cdots*nu_L)
+<=sum_(i=1)^Ld_p(mu_i,nu_i).                       \tag{21.325}
+```
+
+The coefficient `L` is locally sharp.  For a nontrivial order-two element
+`a` and `mu_t=(1-t)delta_e+t delta_a`,
+
+```math
+mu_t^(*L)=(1-q_L)delta_e+q_Ldelta_a,
+\qquad q_L={1-(1-2t)^L\over2},                    \tag{21.326}
+```
+
+and the ratio of the `L`-fold to one-step response error tends to `L` as
+`t` tends to zero.
+
+Independent leaf **occurrences** nevertheless admit a depth-independent
+compiler: draw `k` independent types at every leaf occurrence and multiply
+corresponding replicas up the declared tensor tree.  Every node then contains
+`k` iid samples from its exact convolution law and obeys (21.323).  Reusing
+the same sample bank in both inputs is not valid: coordinatewise squaring
+returns the identity, whereas the uniform law on `{e,a}` is convolution
+idempotent and has fixed positive response distance from that identity.
+
+There is also an exact forgetting mechanism.  Every response difference has
+zero uniform mean.  If `lambda>=alpha u_p` pointwise, where `u_p` is uniform
+on `G_p`, then
+
+```math
+\boxed{d_p(mu*lambda,nu*lambda)
+       <=(1-alpha)d_p(mu,nu).}                    \tag{21.327}
+```
+
+If local approximation errors are `eta_j` and successive contexts have
+uniform masses `alpha_j`, the final error is bounded by
+
+```math
+e_0prod_(j=1)^L(1-alpha_j)
++sum_(i=1)^Leta_i prod_(j=i+1)^L(1-alpha_j).       \tag{21.328}
+```
+
+This theorem makes the static/dynamic law exact in one nontrivial algebra:
+linear fixed-scale response information is reusable under declared
+independence, accumulates sharply under uncontrolled semantic reuse, and is
+forgotten geometrically under a Doeblin component.  Full proofs and checks
+are in
+[`drafts/boolean_port_mergeable_reservoir.md`](drafts/boolean_port_mergeable_reservoir.md),
+[`drafts/boolean_port_mergeable_reservoir_audit.md`](drafts/boolean_port_mergeable_reservoir_audit.md),
+[`drafts/boolean_port_convolution_reuse.md`](drafts/boolean_port_convolution_reuse.md),
+[`drafts/boolean_port_convolution_reuse_audit.md`](drafts/boolean_port_convolution_reuse_audit.md),
+[`drafts/boolean_port_convolution_reuse_independent_audit.md`](drafts/boolean_port_convolution_reuse_independent_audit.md),
+[`experiments/verify_boolean_port_mergeable_reservoir.py`](experiments/verify_boolean_port_mergeable_reservoir.py),
+and
+[`experiments/verify_boolean_port_convolution_reuse.py`](experiments/verify_boolean_port_convolution_reuse.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

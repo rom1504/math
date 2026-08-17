@@ -19,6 +19,35 @@ one of:
 4. an orthogonal limit/statistical-mechanics reduction with a precise new
    lemma.
 
+## Current checkpoint: Boolean feature algebra
+
+The campaign has crossed a genuine near-original benchmark without yet
+meeting the all-order reconnection guardrail.
+
+- The exact labelled Boolean port state is the projective row histogram;
+  fixed-error response entropy is sharply `Theta_eta(p)` bits.
+- Shared-priority union sketches and independent-occurrence tensor sketches
+  are exact randomized carriers for their declared composition trees.
+  Semantic tensor error can accumulate linearly, while uniform convolution
+  mass gives geometric forgetting.
+- Pairwise `(G,R)` is now rigorously dead as a uniform Boolean carrier: equal
+  regular-Hadamard states have response gap `rn/8` after tensor
+  amplification and exact-sign completion.
+- Odd product-algebra closure is a positive replacement.  It yields a dense
+  exact-sign family with `p=(log_2 n)/2+1` and an exact
+  `O(sqrt(n)log n)`-bit response state at bounded port mass.
+
+This resets the contextual-response branch's strike count.  It does not yet
+justify work on `M_n`: the family is one exceptional tensor hierarchy with
+an unbalanced `O(sqrt n)` query shore, and no theorem forces its affine pole
+algebra for near-minimizers or transfers it to arbitrary orders.
+
+**Current selected theorem.** Prove or falsify robust tensor-stable product
+synchronization: replace exact membership of every selector product in the
+top eigenspace by a quantitative spectral defect whose response loss is
+`o(rn)` and whose defects have a summable tensor/composition law.  The
+equal-`(G,R)` collision is the mandatory falsifier.
+
 ## Portfolio ranking
 
 ### 1. Contextual response and anticipatory carriers — active, priority A
@@ -69,7 +98,7 @@ one of:
 - **Stopping condition:** two substantive segments yielding only assumed-state
   applications or specialized variants.
 
-### 2. Bridge-response roofs and feature compression — active, A-
+### 2. Bridge-response roofs and higher-product synchronization — active, A-
 
 - **Core object:** the upper roof over a finite-dimensional aggregate feature
   and its realizable Minkowski semimodule.
@@ -123,15 +152,20 @@ one of:
   gap already for two orthogonal top poles at bounded total port mass:
   cube and sphere pay different `l_1/l_2` supports by
   `(sqrt(2)-1)rn/2`.  This kills uniform trust-value rounding, though not
-  every possible Gram-based Boolean decoder.
+  every possible Gram-based Boolean decoder.  That remaining loophole is now
+  closed: two equal full `(G,R)` states in one regular-Hadamard tensor family
+  have exact Boolean responses separated by `rn/8`.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
 - **Live theorem:** the collective spherical metric-entropy and PSD
-  compatibility questions are now closed at fixed total port mass.  Determine
-  when the new exposed-flatness Boolean synchronization certificate is
-  selected and preserved by repeated composition.  It yields exact
+  compatibility questions are now closed at fixed total port mass.  The
+  positive Boolean replacement is higher-product synchronization: an odd
+  selector algebra gives an exact histogram quotient and a dense logarithmic-
+  arity family with sublinear state.  Determine whether this certificate has
+  a robust tensor-stable version with summable spectral/product defects.
+  Exposed-flatness remains a weaker query-local certificate.  It yields exact
   `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
   while an orthogonal rank-two family has a fixed gap and a whole-subspace
   Boolean net is impossible.  One common Boolean pole gives a multiplicative
@@ -151,9 +185,9 @@ one of:
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.
-- **Strike count:** zero. The first bounded-cap, exact-disjoint,
-  linear-order positive compiler resets the counter.  It is presently a
-  one-layer metric result, not cross-order recurrence.
+- **Strike count:** zero.  The exact product-algebra family and the scalable
+  equal-state falsifier reset the counter.  They are structured
+  growing-interface results, not a cross-order recurrence for minima.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear

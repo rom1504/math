@@ -26,6 +26,17 @@ The program has reached **Level 2 (explanatory theory)** and has several
 Level-3 generative results.  It is not yet a finished theory and it is not a
 proof of the motivating convergence statement.
 
+The latest bridge checkpoint gives one compact instance of the theory's
+full static-to-dynamic law.  For Boolean port systems, the exact contextual
+state is the projective row histogram, its fixed-error response entropy is
+`Theta_eta(p)` bits, and its reuse depends separately on merge/tensor
+congruence, occurrence independence, or mixing.  Pairwise Gram--Rayleigh
+data fail by a tensor-amplified `n^(3/2)/8` information collision.  An odd
+product-algebra synchronization condition repairs the failure and yields a
+dense family with logarithmically many ports and an exact
+`O(sqrt(n)log n)`-bit state.  This is a successful near-original benchmark,
+not an all-order result for the motivating minima.
+
 The first investigation gave four precise conclusions.
 
 1. For homogeneous quadratic Boolean forms, positive-rate upper-tail entropy

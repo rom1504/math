@@ -68,6 +68,12 @@ representation.  Detailed proofs and exact checks are in `drafts/` and
 | Generic eigenvector flatness | normalized `l_1` deficit of an exposed spherical pole | Wigner eigenvector universality / explicit block signing | literature-grounded plus exact falsifier | sign-Wigner eigenvectors tend to `1-sqrt(2/pi)` deficit; a hollow two-block signing tends to `1-cos(pi/8)` | rejects generic delocalization as a recovery mechanism; near-minimizer-specific rigidity remains open |
 | Orientation under quadratic continuations | one relative channel-orientation bit, indexed by future cap budget | signed two-channel / block spectral state | derived and independently audited | universal gap ceiling `2Q(C)`; unrestricted sign futures have sharp width threshold `n^(3/4)` via a biased flat bridge and clique, while internally `O(m^(3/2))` futures need linear width | sharp dynamic law: contextual equivalence must declare both continuation width and internal extremal budget |
 | Regular-Hadamard orientation networks | projective signed-graph switching class | gauge-fixed signed graph / common Kronecker factor | derived and independently audited | connected carrier has one bit per edge; joining `s` pieces through `r` edges has exact `2^r` fibre split into `s-1` relative antipodes and `r-s+1` cycle fluxes; both have leading witnesses | strong near-original dynamic pass: exact strict quotient and associative gluing law; restricted to one common Hadamard factor |
+| Boolean linear port systems | projective row histogram; at fixed error, an empirical zonoid coreset | zonotope support / finite-group Fourier convolution | derived and independently audited | exact quotient has `binom(n+2^(p-1)-1,2^(p-1)-1)` states; fixed-error covering entropy is sharply `Theta_eta(p)` bits | strong pass: predicts both exponential exact feature dimension and linear response entropy; Gram is complete only through three ports |
+| Mergeable Boolean port unions | exact count plus shared min-priority row reservoirs | min-hash / mergeable sampling | derived and independently audited | `k=O(eta^(-2)(1+log(T/delta)))` samples certify all `T` declared nodes with depth-independent error | dynamic pass for declared disjoint occurrence trees; adaptive or reconvergent overlap is correctly excluded |
+| Tensor Boolean port systems | projective histogram convolution; iid occurrence products; uniform-component forgetting | finite-group convolution / Doeblin mixing | derived and independently audited | semantic error is 1-Lipschitz per factor and can accumulate with sharp factor `L`; independent occurrence trees have depth-independent sampling error; uniform mass `alpha` contracts by `1-alpha` | strong unifying pass: static response, reuse memory, and forgetting separate exactly in one algebra |
+| Equal Gram--Rayleigh Boolean trust systems | higher projective row-pattern channel beyond `(G,R)` | spherical trust-region Gram carrier | two independent seed/tensor derivations and exact audits | common dense regular-Hadamard states at `p=4,mp/r=4` differ by at least `rn/8`; common exact-sign completion loses only `O(n)` | A-level information falsifier: every `(G,R)` decoder has fixed leading error, not merely the spherical decoder |
+| Odd product-closed dense bridges | affine multiplicative top-pole coset plus projective histogram | Boolean Fourier selector algebra | derived from contextual response and independently audited | exact labelled trust quotient; tensor family has `p=(log_2 n)/2+1`, `sqrt(n)` bins and `O(sqrt(n)log n)` bits at bounded mass, with `O(n)` completion loss | strongest new near-original pass: a growing dense exact-sign interface has a strict state; arbitrary dense bridges need not satisfy closure |
+| Rank-one common-factor one-port lift | fibre magnetization grid | rank-one blow-up / randomized cube rounding | derived and exactly audited | exact contraction identity; equal singleton `(G,R)` states retain `(3/32)rn` gap; a strict Hadamard factor hides `rn/2` in an orthogonal mode | useful boundary: rank-one fibres close, strict Hadamard fibres do not; the scalable family has `r=Theta(n)`, not the near-original `sqrt(n)` scale |
 
 ## Current prediction
 
@@ -92,6 +98,17 @@ smaller bias/pair-overlap state fails by an extensive commutation-holonomy
 gap. The remaining question is whether a joint gauge-covariant state can
 transport the structured truth table without reconstructing the Boolean
 maximum, and whether any such structure is forced for near-minimizers.
+
+The Boolean port suite now resolves one controlled version of that question.
+The exact state is the full projective row histogram, its fixed-scale response
+entropy is only linear in port count, and its dynamic reuse is governed by
+independence or mixing rather than static dimension.  Odd product closure
+then synchronizes the histogram with a dense quadratic child and gives a
+growing `O(sqrt(n)log n)`-bit exact carrier.  The equal-`(G,R)` collision is
+the mandatory boundary: second-order geometry cannot substitute for this
+higher-product algebra.  No theorem currently forces the algebra for
+near-minimizers or realizes it at arbitrary balanced orders, so this is a
+near-original benchmark success rather than a recurrence for `M_n`.
 
 The branching benchmark records a second kind of successful state. It is not
 an exact finite contextual quotient: critical centering and a vanishing
