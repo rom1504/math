@@ -3335,3 +3335,30 @@ thin-tail switching code and obtains `exp(Omega(n))` scalar response states
 at `Theta(n^(3/2))` separation.  This is a physical information-rate example,
 not an all-order construction: the label itself remains a linear-bit exact
 carrier and the completed parents need not be optimal at their new order.
+
+## Example 171: a thin-tailed weighted star still oscillates thermally
+
+Let `s_n` increase by zero or one so that `s_n/n` repeatedly moves between
+`3/5` and `4/5`, while `s_n/binom(n,2)` is nonincreasing.  Put
+
+```math
+H_n(x)=\sqrt{{\binom n2\over s_n}}\,
+       x_1\sum_{j=2}^{s_n+1}x_j.
+```
+
+Its active edge products are independent signs.  It therefore has exact
+variance `binom(n,2)`, a fixed exponential entropy deficit near both
+endpoints, and an explicitly centered pressure which is subadditive under
+order addition.  Nevertheless
+
+```math
+{\|H_n\|_\infty\over n^{3/2}}
+\quad\hbox{has limit points}\quad
+\sqrt{3/10},\sqrt{2/5},
+```
+
+and every positive fixed-temperature SK-diagonal pressure has two separated
+subsequence limits.  This finite quadratic model shows exactly why a thin
+tail does not repair scalar pressure compactness.  Its real sparse weights
+are essential to its role as an axiomatic falsifier; it is not a complete
+signing counterexample.

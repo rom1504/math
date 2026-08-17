@@ -16813,3 +16813,66 @@ audit are in
 [`drafts/thermal_activation_replica_budget.md`](drafts/thermal_activation_replica_budget.md)
 and
 [`drafts/thermal_activation_replica_budget_independent_audit.md`](drafts/thermal_activation_replica_budget_independent_audit.md).
+
+### Theorem 37.3 (thin endpoint tails do not force scalar thermodynamic compactness)
+
+For a normalized quadratic pressure
+
+```math
+\psi_A(\beta)={1\over n}\log\mathbb E_x
+ \cosh\!\left({\beta H_A(x)\over\sqrt n}\right),
+\qquad q(A)={Q(A)\over n^{3/2}},                         \tag{37.8}
+```
+
+suppose
+
+```math
+\#\{x:Q(A)-|H_A(x)|<dn^{3/2}\}\le2^ne^{-\kappa n}.
+```
+
+Then
+
+```math
+\boxed{
+\beta q(A)-\log2\le\psi_A(\beta)
+\le\beta q(A)-\min\{\kappa,\beta d\}+{\log2\over n}.} \tag{37.9}
+```
+
+Consequently Theorem 36.26 gives a uniform strict soft/ground deficit for
+every bounded-cap complete signing.  In particular, if `p_n(beta)` is the
+pressure minimized over complete signings and `m_n=M_n/n^(3/2)`, then
+
+```math
+\beta m_n-\log2\le p_n(\beta)
+\le\beta m_n-g(\beta)+O(1/n),\qquad g(\beta)>0.           \tag{37.10}
+```
+
+This same-order improvement does not create scalar cross-order compactness.
+There are finite weighted quadratic Boolean landscapes
+
+```math
+H_n(x)=b_nx_1\sum_{j=2}^{s_n+1}x_j,
+\qquad b_n=\sqrt{\binom n2/s_n},                          \tag{37.11}
+```
+
+where `s_n/n` oscillates between limit points `3/5` and `4/5`, for which all
+of the following hold simultaneously:
+
+- `F_n(t)=log E cosh(tH_n)` is even, analytic, convex, fixed-`t`
+  nondecreasing, has `F_n''(0)=binom(n,2)`, and obeys the spin-entropy
+  squeeze;
+- `R_n(t)=F_n(t)-binom(n,2)log cosh t` is exactly subadditive under order
+  addition;
+- both one-sided endpoint tails, and hence the absolute tail, have one
+  uniform positive exponential deficit;
+- the normalized maxima have limit points `sqrt(3/10)` and `sqrt(2/5)`, and
+  `n^(-1)F_n(beta/sqrt n)` fails to converge for every fixed `beta>0`.
+
+The countermodel is sparse and real-weighted, not a complete sign matrix.
+It proves that the fixed-rate tail plus the full archived scalar regularity
+package is insufficient; a signing-specific cross-order shell coupling or
+other non-scalar state remains necessary.  Proof and independent audit are
+in
+[`drafts/bounded_cap_thin_tail_pressure_consequence.md`](drafts/bounded_cap_thin_tail_pressure_consequence.md)
+and
+[`drafts/bounded_cap_thin_tail_pressure_consequence_independent_audit.md`](drafts/bounded_cap_thin_tail_pressure_consequence_independent_audit.md).

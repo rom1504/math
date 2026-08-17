@@ -1080,6 +1080,14 @@ whose synchronization collapses it.  Merely restating a finite-temperature
 large-deviation rate function is not enough; the new state must have an
 exact or quantitatively controlled update law.
 
+Theorem 37.3 adds a sharper stopping condition.  Even a uniform fixed-rate
+endpoint tail, exact variance, fixed-parameter monotonicity, and exact
+centered scalar subadditivity permit oscillation of every fixed-temperature
+diagonal.  Thus neither a scalar activation cost nor one endpoint entropy
+deficit should be promoted again.  The next admissible target must couple
+energy shells across orders or couple spin entropy to bridge-disorder
+geometry in a way not reducible to the scalar pressure curve.
+
 ## 22. Root-to-state broadcast at the energy scale
 
 Theorems 36.20--36.22 separate three formerly conflated tasks.  Every

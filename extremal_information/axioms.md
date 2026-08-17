@@ -2491,3 +2491,18 @@ It rules out every `exp(o(n))`-range reusable state for that language, but it
 does not rule out the exact `n-1`-bit switching label, infinite-precision
 states, or narrower gauge-covariant futures.  Extensive response information
 and absence of a compositional macrostate are different claims.
+
+## 137. Fixed-rate spin tails improve the thermal sandwich but remain scalar
+
+An exponential deficit in the number of states within `dn^(3/2)` of the
+ground roof forces every fixed-temperature pressure a positive distance
+below that roof.  This is a genuine consequence of bounded-cap completeness,
+because Theorem 36.26 supplies the deficit uniformly.
+
+It still carries no relation between orders.  Weighted Boolean stars can
+have the exact complete-edge variance, entropy squeeze, adjacent regularity,
+fixed-parameter monotonicity, centered subadditivity, and the same fixed-rate
+endpoint thinness while both their normalized maxima and all positive
+fixed-temperature diagonal pressures oscillate.  A successful thermal route
+must therefore retain a joint cross-order or spin--disorder object; a scalar
+tail rate is not that object.
