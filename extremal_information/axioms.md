@@ -2520,3 +2520,19 @@ tail of parent pressure over bridge disorder, preferably coupled to rooted or
 overlap information in spin space.  Increasing a scalar tilt without such a
 basin theorem merely approaches the original bridge minimization, and a
 thin-tail theorem cannot substitute for it.
+
+## 139. Optimized covariant futures erase child gauge but not bridge disorder
+
+A contextual lower bound against fixed public labels need not survive the
+optimization quantifier in the original problem.  Independent diagonal
+switches of two child blocks are absorbed exactly by transporting the bridge,
+so any switching-covariant per-parent bridge minimum factors through the
+child switching classes.  The linear switch-label response rate is therefore
+not an obstruction to that unlabelled optimization.
+
+This quotient does not make the bridge small.  After complete child blocks
+fix their root gauges, an arbitrary dense bridge retains `mn-1` independent
+coefficient bits up to global sign.  Bare rectangle holonomy and anchored
+relative alignment are different resources.  Future lower bounds must expose
+gauge-invariant bridge information, not count a label that the optimizer can
+transport away.

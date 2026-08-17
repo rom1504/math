@@ -3381,3 +3381,17 @@ exponential soft-minimum rate.  The same positive linear conference defect
 therefore persists inside a class where every output has the new tail
 certificate.  The example separates spin-state entropy from bridge-basin
 entropy; it does not concern arbitrary tilts or pressure-minimizing children.
+
+## Example 173: a fixed bridge sees a switch that an optimized bridge erases
+
+Join the positive order-three signing to one new vertex using three negative
+edges.  Its cap is six.  Switch the first two old vertices but hold those
+three bridge signs fixed; direct enumeration gives cap four.  Thus a fixed
+laboratory bridge detects the relative child gauge.
+
+If the bridge is transported by the same two row switches, the two complete
+parents are diagonally conjugate and the cap returns to six.  Optimizing over
+all bridges includes this transport bijectively, so all members of the child
+switching orbit have exactly the same optimized response.  This tiny example
+is the scope boundary of the extensive public-bank theorem, not a
+counterexample to it.

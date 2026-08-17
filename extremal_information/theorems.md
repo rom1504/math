@@ -16683,6 +16683,73 @@ Proof and independent audit are in
 and
 [`drafts/equivariant_matched_roof_query_bank_independent_audit.md`](drafts/equivariant_matched_roof_query_bank_independent_audit.md).
 
+### Theorem 36.29 (optimized bridges quotient switching labels exactly)
+
+For complete signings `A,C`, an exact-sign bridge `B`, and diagonal switches
+`S,T`, let
+
+```math
+P(A,C;B)=\begin{pmatrix}A&B\\B^T&C\end{pmatrix}.
+```
+
+Then
+
+```math
+P(SAS,TCT;SBT)
+=\begin{pmatrix}S&0\\0&T\end{pmatrix}
+ P(A,C;B)
+ \begin{pmatrix}S&0\\0&T\end{pmatrix}.                  \tag{36.110}
+```
+
+Hence the complete Boolean energy multiset is unchanged.  More generally,
+if an admissible bridge fibre satisfies
+
+```math
+\mathcal B(SAS,TCT)=S\mathcal B(A,C)T,                   \tag{36.111}
+```
+
+then its attainable parent-cap multiset, minimum, maximum, quantiles, and
+every statistic under a transported bridge law depend only on the two child
+switching classes.  In particular
+
+```math
+\min_{B\in\{+-1\}^{m\times n}}Q(P(A,C;B))                \tag{36.112}
+```
+
+forgets both switching labels exactly.
+
+Fixed laboratory-frame contexts do not have this invariance.  Already for
+the positive order-three child, an order-one shore, and fixed bridge
+`B=(-1,-1,-1)^T`, the parent cap is `6`; switching the child by
+`(-1,-1,1)` while holding `B` fixed lowers it to `4`.  Transporting `B`
+restores cap `6`.
+
+The residual coefficient counts separate two notions.  A bare `m`-by-`n`
+bridge modulo arbitrary row/column switching has
+
+```math
+2^{(m-1)(n-1)}.                                      \tag{36.113}
+```
+
+But over two fixed coordinate-labelled complete child switching classes,
+root-gauging the internal blocks anchors those row/column gauges; only
+`B~-B` remains, so the exact bridge fibre has
+
+```math
+\boxed{2^{mn-1}}.                                  \tag{36.114}
+```
+
+This is a coefficient-fibre count, not a response-packing lower bound.
+
+Consequently Theorem 36.28 proves real `Theta(n)` response information for
+its shared fixed-reference query architecture, but that switching-label
+lower bound collapses completely for the original per-parent optimized
+bridge.  The surviving obstruction is the anchored dense bridge/holonomy
+fibre, not the child switch label.  Proof and independent audit are in
+[`drafts/switching_gauge_quotient_for_optimized_bridges.md`](drafts/switching_gauge_quotient_for_optimized_bridges.md)
+and
+[`drafts/switching_gauge_quotient_for_optimized_bridges_independent_audit.md`](drafts/switching_gauge_quotient_for_optimized_bridges_independent_audit.md).
+
 ## 37. Presented rare-event states
 
 ### Theorem 37.1 (generic finite-rank spikes survive bulk normalization)

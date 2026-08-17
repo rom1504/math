@@ -566,3 +566,46 @@ class and risks restating the desired parent optimization.
   Freeze selector, shell, and tail refinements and move director effort to a
   genuinely cross-order rare-event or adversarial-statistical-mechanics
   mechanism.
+
+### Checkpoint 9 — gauge quotient and the two-entropy separation
+
+- **Strongest new statements:** (i) independent child switches are absorbed
+  exactly by transporting a per-parent optimized bridge, so the entire
+  `Theta(n)` fixed-reference packing collapses to one state for the original
+  covariant bridge minimum; (ii) after root-gauging two complete child
+  classes, the residual exact bridge coefficient fibre still has
+  `2^(mn-1)` elements; (iii) the small-disorder-temperature conference wall
+  survives conditioning on an overwhelming class where every completed
+  parent has the uniform bounded-cap thin tail.
+- **Previous SML:** `L_replace`, with the new response-rate lower bound viewed
+  as a possible obstruction.
+- **Current SML:** the switch-label lower bound is not an obstruction to
+  optimized composition.  The sharp orthogonal target is now a
+  **gauge-invariant bridge-basin lemma**: for pressure-near-minimizing
+  children and each comparable split, prove an `exp(-O(N))` set of bridges
+  reaching the same-temperature target up to `o(N)` pressure, or prove that
+  such a basin has genuinely quadratic rarity.  The archived criterion (4.6)
+  turns the positive form into summably defective pressure subadditivity.
+- **Benchmark level:** the covariance theorem is exact for arbitrary complete
+  signings and the entropy no-go is Level 4 on Paley conference parents.
+  Neither reaches Level 6 because no minimizer-specific basin theorem or
+  all-order recovery is proved.
+- **Assumption-distance:** the gauge theorem has no structural assumption;
+  the conference wall has score 0 as a constructed family.  The missing
+  basin statement would have score 3 or 4 only when tied to actual
+  pressure-near-minimizing children.
+- **Asymptotic movement:** no convergence-side exponent improves.  Two false
+  inferences are removed exactly: `Omega(n)` labelled response bits do not
+  survive covariant bridge optimization, and an `exp(-kappa n)` spin-tail
+  deficit does not imply an `exp(-O(n))` favorable bridge basin.  The
+  remaining anchored disorder fibre is quadratic in coefficient bits, but
+  no response-separation theorem is inferred from that count.
+- **Frontier scores:** the gauge scope theorem has
+  `(T,Q,C,G,F,A)=(3,4,4,4,4,4)`, hence `S=37`; the conditioned conference
+  no-go has `(3,4,1,2,4,4)`, hence `S=29`.  Their value is severe route
+  selection, not a new recurrence.
+- **Decision:** **CONTEXTUAL RESPONSE RELEVANCE CEILING.**  Preserve the
+  Level-5 fixed-reference theorem as a diagnostic, but do not use it as an
+  optimized-bridge impossibility result.  The adversarial/rare-event branch
+  remains unpromoted; it earns exactly one focused basin-rate campaign.
+  More scalar tail, selector, or fixed-small-tilt optimization is frozen.

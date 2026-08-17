@@ -1132,6 +1132,15 @@ arbitrary dense bridges expose additional information beyond every
 linear-bit state?  Either result must specify the future language and an
 update law; the scalar contextual packing alone proves no recurrence.
 
+Theorem 36.29 answers the switching-label part negatively.  When the bridge
+is optimized covariantly for each parent, every child switch is pure gauge
+and the entire `Theta(n)` public response packing collapses to one state.
+After root-gauging both complete child classes, however, the residual exact
+bridge fibre still has `2^(mn-1)` coefficient classes.  The live question is
+therefore gauge-invariant: can pressure/support-edge information over this
+anchored fibre be compressed, or can one prove a leading response packing
+between distinct bridge holonomies or distinct child switching classes?
+
 The internal anatomy of a hypothetical smaller fixed-level principal core
 is also now sharp.  It must be positive-dominant, have an oppositely
 oriented near-minimal complement, and may nevertheless be diffuse and far
