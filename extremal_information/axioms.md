@@ -1561,3 +1561,17 @@ Therefore a quadratic public edge table is not intrinsic to dense response
 memory.  One must separately charge hidden incidence, seed/description
 length, query-language size, and closure under the declared composition.
 Derandomizing one resource does not silently solve the others.
+
+## 71. Persistent broadcast must enter the invariant dynamic channel
+
+On a fixed strictly contracting carrier, hidden terminal and centred-reward
+coordinates have only finite forgetting-scale value.  Their all-depth
+response cannot grow linearly.  The exact positive-rate channel is the
+visible scalar reward cohomology, and its total hidden capacity is bounded
+by the incidence of atoms that alter that cohomology.
+
+Mixing therefore does not turn dense compatibility information into free
+memory.  It either forgets the information, pays it repeatedly as fresh
+reward, or exposes it as a cycle coordinate.  Static response compression
+and dynamic persistence are linked by this resource conversion, not by one
+interchangeable complexity number.

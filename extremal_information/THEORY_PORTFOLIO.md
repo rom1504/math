@@ -31,7 +31,11 @@ one of:
   directed cycle means.  Its response code resolves the centred dictionary
   at `(1-rho)epsilon` and pays `|E|-|Q|+1` persistent cycle coordinates, with
   matching exponents.  A nonlinear stochastic-secant lift covers genuine
-  switching and ties under the same transported-law certificate.  In the
+  switching and ties under the same transported-law certificate.  A new
+  incidence corollary classifies hidden broadcast on that carrier: centred
+  hidden coordinates have no persistent rate, while the sum of rate-visible
+  coordinates is bounded by their incidence into recurrent scalar
+  cohomology.  In the
   exact combinatorial branch, fixed-delay row-rank-one synchronization creates a
   finite suffix-residual quotient with exact context-cycle response and a
   pumpable potential dichotomy.  A descending incoming-image test computes

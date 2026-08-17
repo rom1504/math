@@ -2219,3 +2219,17 @@ at the `k^(3/2)` scale while every child is spectrally flat.  It removes
 quadratic shared randomness as an explanation or obstruction.  It does not
 remove the exponential query language or convert same-edge addition into an
 exact-sign disjoint composition.
+
+## Example 106: mixing forgets centred hidden bits, not cycle bits
+
+Place a hidden family of reward dictionaries on one common contracting
+Markov carrier.  Terminal and fresh centred differences have only the finite
+budgets `rho^L R` and `B/(1-rho)`.  A hidden change in the scalar edge
+cochain instead survives at exactly its largest directed-cycle mean per step.
+
+If all dictionary coefficients come from bounded atoms, the sum of all
+neighbouring persistent response rates is bounded by the scalar bit--atom
+incidence.  This turns the static broadcast law into a dynamic one: dense
+hidden incidence can create macroscopic information, but contraction keeps
+it only if the information is promoted to recurrent cohomology or supplied
+again at later steps.

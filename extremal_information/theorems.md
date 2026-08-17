@@ -11322,3 +11322,104 @@ proofs, two independent audits, and 8,099 finite checks are in
 [`drafts/contracting_fibre_cocycle_second_audit.md`](drafts/contracting_fibre_cocycle_second_audit.md),
 and
 [`experiments/verify_contracting_fibre_cocycle.py`](experiments/verify_contracting_fibre_cocycle.py).
+
+## 34. Dynamic broadcast incidence
+
+### Theorem 34.1 (only recurrent scalar incidence survives at positive rate)
+
+Fix one strongly connected common-law carrier satisfying Theorem 33.1 with
+centred contraction `rho<1`.  Let `z in {0,1}^h` index terminal and edge-
+reward dictionaries on this carrier.  For a bit flip `z->z+e_i`, write
+
+```math
+Delta u_q^i=Delta bar u_q^i1+Delta v_q^i,
+\qquad
+Delta a_e^i=Delta m_e^i1+Delta b_e^i,                \tag{34.1}
+```
+
+and define
+
+```math
+U_i=max_q|Delta bar u_q^i|,\quad
+R_i=max_q||Delta v_q^i||_2,\quad
+B_i=max_e||Delta b_e^i||_2,
+```
+
+```math
+M_i=max_e|Delta m_e^i|,\qquad
+C_i=chi_G(Delta m^i).                                \tag{34.2}
+```
+
+If `d_L(z,z+e_i)` is the largest `L^2` response difference over visible
+paths of length `L`, then
+
+```math
+d_L(z,z+e_i)
+<=U_i+rho^LR_i+{1-rho^L\over1-rho}B_i
+  +LC_i+(|Q|-1)M_i,                                  \tag{34.3}
+```
+
+and, with the usual vacuous convention when there is no recurrent cycle,
+
+```math
+limsup_(L->infinity){d_L(z,z+e_i)\over L}=C_i.       \tag{34.4}
+```
+
+Now suppose the dictionaries have bounded-atom presentations
+
+```math
+u_q^z=\sum_alpha c_alpha(z)phi_(alpha,q),\qquad
+a_e^z=\sum_beta d_beta(z)psi_(beta,e),               \tag{34.5}
+```
+
+where every atom has maximum component `L^2` norm at most one, coefficient
+oscillation `omega`, and hidden dependency set `I`.  Put
+
+```math
+J_U=\sum_alpha|I_alpha|omega_alpha,
+\qquad J_A=\sum_beta|I_beta|omega_beta.              \tag{34.6}
+```
+
+Then
+
+```math
+\sum_(i=1)^h d_L(z,z+e_i)
+<=2J_U+
+\left(1+{1-rho^L\over1-rho}+L+|Q|-1\right)J_A,      \tag{34.7}
+```
+
+while the exact rate law sharpens to
+
+```math
+\sum_(i=1)^h\limsup_(L->infinity)
+ {d_L(z,z+e_i)\over L}
+<=J_A.                                               \tag{34.8}
+```
+
+Thus `h` neighbouring hidden states each separated by persistent rate
+`epsilon` require `h epsilon<=J_A`.  In particular, `E_0` scalar atoms of
+oscillation at most `2B` and fan-in at most `t` support at most
+
+```math
+h<={2BtE_0\over epsilon}                             \tag{34.9}
+```
+
+such rate-visible coordinates.
+
+#### Proof
+
+Apply (33.3) to the difference dictionaries.  Loop erasure bounds the scalar
+path sum by `LC_i+(|Q|-1)M_i`, and repeating a maximizing cycle proves the
+rate equality.  Orthogonal mean/centred projection and the triangle
+inequality charge each terminal atom once to `U_i,R_i` and each edge atom
+once to `B_i,M_i`.  Since `C_i<=M_i`, summing bit--atom incidences proves
+(34.7)--(34.9). `square`
+
+The three scales are separately sharp by two-state eigenmodes and singleton
+cycle fibres.  This theorem does not discover the common-law carrier.  It
+does prove a conversion law once one exists: centred broadcast is forgotten,
+whereas positive-rate hidden information must be represented in recurrent
+cohomology or freshly rebroadcast.  The full proof and audit are in
+[`drafts/dynamic_broadcast_incidence_law.md`](drafts/dynamic_broadcast_incidence_law.md)
+and
+[`drafts/dynamic_broadcast_incidence_law_independent_audit.md`](drafts/dynamic_broadcast_incidence_law_independent_audit.md).
