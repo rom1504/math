@@ -9545,6 +9545,581 @@ audit are in
 and
 [`drafts/short_seed_gram_broadcast_independent_audit.md`](drafts/short_seed_gram_broadcast_independent_audit.md).
 
+### Theorem 21.27 (exact sparse compilation and independent-star barriers)
+
+Let `x in {+-1}^k`, `E=binom(k,2)`, and
+
+```math
+H_T(x)=\sum_(i<j)T_(ij)x_ix_j,
+\qquad C_T(x)=E-H_T(x).                              \tag{21.139}
+```
+
+There is an exact disjoint unit-edge realization of `C_T`: introducing one
+spin `y_(ij)` per old edge and setting
+
+```math
+G_T(x,y)=\sum_(i<j)y_(ij)(x_i-T_(ij)x_j)             \tag{21.140}
+```
+
+gives `max_y G_T(x,y)=C_T(x)`.  This compiler has `E` auxiliaries.
+
+More generally, suppose `C_T` is exactly realized by independent sign
+stars,
+
+```math
+C_T(x)=c+\sum_(a=1)^m
+ \left|\sum_(i\in S_a)\sigma_(ai)x_i\right|,
+\qquad d_a=|S_a|,\quad \Delta=\max_a d_a.            \tag{21.141}
+```
+
+Then
+
+```math
+\sum_a d_a^(3/2)\ge k(k-1),
+\qquad
+m\ge {k(k-1)\over\Delta^(3/2)},
+\qquad
+\sum_a d_a\ge {k(k-1)\over\sqrt\Delta}.            \tag{21.142}
+```
+
+Endpoint-local stars attain the sharp count `m=E`.  If every star instead
+has full support `[k]`, then
+
+```math
+m\gamma_k\ge\max_xH_T(x),
+\qquad
+\gamma_d=2^(-(d-2)){d-2\choose\lfloor(d-1)/2\rfloor}.
+                                                               \tag{21.143}
+```
+
+Consequently, if separate full-support compilers with at most `m` stars are
+available for both `T` and `-T`, then
+
+```math
+m\ge {Q(T)\over\gamma_k}=\Omega(k^2).               \tag{21.144}
+```
+
+Thus neither bounded-fan-in nor fully dense independent selectors give a
+linear-order, scale-preserving exact compiler.
+
+#### Proof
+
+For one edge, pointwise optimization gives
+
+```math
+\max_(y=+-1)y(x_i-T_(ij)x_j)
+=|x_i-T_(ij)x_j|=1-T_(ij)x_ix_j,                    \tag{21.145}
+```
+
+proving the sparse identity.  The pair Fourier coefficient of a star of
+size `d` is
+
+```math
+\widehat{\left|\sum_(i\in S)\sigma_ix_i\right|}({i,j})
+=\gamma_d\sigma_i\sigma_j.                         \tag{21.146}
+```
+
+Conditioning on the other `d-2` spins proves this formula, and the central
+binomial estimate gives
+
+```math
+0<\gamma_d\le {1\over\sqrt(d-1)},
+\qquad
+\gamma_d{d\choose2}\le {1\over2}d^(3/2).           \tag{21.147}
+```
+
+The target pair coefficients all have modulus one.  Summing their absolute
+values and applying the triangle inequality proves (21.142).
+
+For full-support stars, antipodally symmetrize their empirical sign law
+`mu`.  The function `|sum_i x_i|` has a nonzero Fourier coefficient at every
+even level.  Since `C_T` has no levels four and above, all corresponding
+moments of `mu` vanish, while its pair moments are
+`-T_(ij)/(m gamma_k)`.  Fourier inversion is therefore exact:
+
+```math
+\mu(\sigma)=2^(-k)\left(1-{H_T(\sigma)\over m\gamma_k}\right). \tag{21.148}
+```
+
+Nonnegativity proves (21.143).  Apply it separately to `T` and `-T`, use
+`gamma_k=Theta(k^(-1/2))`, and use the universal
+`Q(T)=Omega(k^(3/2))` signing bound to obtain (21.144). `square`
+
+The two-orientation statement uses two separate compilers; it does not turn
+absolute response into one future.  Independent-star factorization is the
+essential scope.  Complete details, including the middle-slice Krawtchouk
+calculation proving nonvanishing of every even Fourier level, are in
+[`drafts/exact_disjoint_star_compiler_barrier.md`](drafts/exact_disjoint_star_compiler_barrier.md)
+and its
+[`independent audit`](drafts/exact_disjoint_star_compiler_independent_audit.md).
+
+### Theorem 21.28 (interacting selector and bounded-cap barriers)
+
+Let `k` be even and let
+
+```math
+C_+(x)={k^2-(\sum_i x_i)^2\over2}.                  \tag{21.149}
+```
+
+Consider an arbitrary correlated selector envelope
+
+```math
+F(x)=\max_(y\in{+-1}^m)\{c(y)+b(y)\mathbin\cdot x\},
+\qquad |b_i(y)|\le d_i,                              \tag{21.150}
+```
+
+and suppose `||F-C_+||_infinity<=eta<k^2/4`.  Put
+
+```math
+a={k^2\over2}-2\eta,
+\qquad D^2=\sum_i d_i^2.                             \tag{21.151}
+```
+
+Then
+
+```math
+\sum_i d_i\ge a,
+\qquad
+m\log2\ge {a^2\over2D^2}-\log(k+1).                \tag{21.152}
+```
+
+For a complete unit-sign old--new block, `d_i=m`; hence every
+`o(k^2)`-accurate compiler satisfies
+
+```math
+m\ge(8\log2)^(-1/3)k-o(k)=0.565\ldots k-o(k).       \tag{21.153}
+```
+
+There is also a query-relative form.  Suppose
+
+```math
+F(x)=\max_(q\in[K])\{c_q+b_q\mathbin\cdot x\},
+\qquad ||b_q||_2\le D,
+\qquad ||F-f||_infinity\le\eta.                     \tag{21.154}
+```
+
+If some antipodal pair `p,-p` and set `X` obey
+
+```math
+f(x)\ge\max\{f(p),f(-p)\}+a+2\eta
+\quad(x\in X),                                     \tag{21.155}
+```
+
+then
+
+```math
+\log K\ge\log|X|-k\log2+{a^2\over2D^2}.           \tag{21.156}
+```
+
+Finally, if `b(y)=By` and the selector is induced by a complete quadratic
+parent `P` on `N` spins, then
+
+```math
+\mathop{osc}_xF\le2||B||_(infinity->1)\le2Q(P).     \tag{21.157}
+```
+
+Thus no parent with `N=O(k)` and `Q(P)=O(N^(3/2))` uniformly approximates
+the all-positive cut shell to `o(k^2)`.
+
+#### Proof
+
+At every balanced `x`, choose an affine piece active in (21.150).  Comparing
+it with the envelope at the two constant spins and adding the inequalities
+gives `x dot b(y)>=a`.  Each selector covers at most
+
+```math
+2^k\exp\{-a^2/(2D^2)\}                              \tag{21.158}
+```
+
+cube points by Hoeffding.  The `2^m` selectors cover the balanced slice,
+whose size is at least `2^k/(k+1)`, proving (21.152).  The same two-antipode
+comparison on `X` proves (21.156).
+
+For (21.157), maxima of affine functions give the first Lipschitz bound.
+Flipping the whole auxiliary shore reverses `x^TBy` and preserves both
+internal quadratic energies, so one of the two parent energies has absolute
+value at least `|x^TBy|`; maximize over the shores. `square`
+
+Unlike Theorem 21.27, the selector may have arbitrary auxiliary--auxiliary
+interaction.  Its universal target is nevertheless the high-oscillation cut
+shell.  Theorem 21.28 does not rule out contextual cancellation on a common
+background or a linear-order compiler tailored to the flat Gram family.  It
+identifies the extra input needed there: exponentially many antipodally
+exposed configurations at a `Theta(k^(3/2))` gap, or a different lower-bound
+mechanism.  The complete audited proof and finite verifier are in the same
+draft and audit cited above.
+
+### Theorem 21.29 (exact disjoint coordinate compiler)
+
+For a hollow complete signing `A` of order `k`, write
+
+```math
+H_A(x)={1\over2}x^TAx.
+```
+
+Given `u in {+-1}^k`, append `k` spins `y`, use the complete sign bridge
+`R_u=u1^T`, and put the positive clique `J-I` on the new block.  The
+one-sided complete-parent response satisfies the exact identity
+
+```math
+F_u(A)=\max_(x,y)\{H_A(x)+x^TR_uy+H_(J-I)(y)\}
+={3k^2-k\over2}+H_A(u).                             \tag{21.159}
+```
+
+Consequently
+
+```math
+\sup_u|F_u(A)-F_u(A')|
+=\max_u|H_A(u)-H_(A')(u)|
+=Q(A-A').                                           \tag{21.160}
+```
+
+Thus the full same-support quadratic response metric embeds isometrically
+into disjoint complete exact-sign contexts on `N=2k` vertices.  Applied to
+the short-seed family of Theorem 21.26, it gives `2^h` exact sign children
+with
+
+```math
+h\ge {N\over2048},
+\qquad
+d_(response)(B,T)\ge {N^(3/2)\over32}.              \tag{21.161}
+```
+
+#### Proof
+
+Put `a=x dot u` and `b=y dot 1`.  The appended energy is
+
+```math
+ab+{b^2-k\over2}.                                   \tag{21.162}
+```
+
+Global sign changes let an optimizer have `a,b>=0`.  Convexity in `b`
+then puts `b=k`.  If `x` has projective Hamming distance `d<=k/2` from `u`,
+the lock loses `2kd` from its planted value.  Switching those `d` old spins
+changes only `d(k-d)` child edges, so the child can gain at most
+`2d(k-d)`.  The net change is at most `-2d^2`.  This proves (21.159), and
+subtraction proves (21.160).  The constants in (21.161) follow from
+Theorem 21.26 and `N=2k`. `square`
+
+The response `F_u` is one-sided, and its bridge depends on the declared
+coordinate `u`.  Most importantly, (21.159) contains a common
+`Theta(N^2)` calibration.  It cancels in response differences but is not a
+low-cap signing construction.  Exact-sign/disjoint **metric closure** is
+therefore solved; bounded-cap closure remains open.
+
+### Theorem 21.30 (universal equality-lock ceilings)
+
+Let a complete signing `L` act on paired blocks
+`X=(x_1,...,x_k)` and `Y=(y_1,...,y_k)`.  Every duplicate `(u,u)` is a
+global maximizer if and only if some `s in {+-1}^k` satisfies
+
+```math
+L_(x_i,y_i)=1,
+\qquad
+\begin{pmatrix}
+L_(x_i,x_j)&L_(x_i,y_j)\\
+L_(y_i,x_j)&L_(y_i,y_j)
+\end{pmatrix}
+=-s_is_j\begin{pmatrix}1&-1\\-1&1\end{pmatrix}.    \tag{21.163}
+```
+
+Equivalently, with `d_i=(x_i-y_i)/2`,
+
+```math
+H_L(x,y)=k-2\left(\sum_i s_id_i\right)^2.           \tag{21.164}
+```
+
+Hence a universal one-layer equality lock never isolates the duplicate
+relation: for `k>=2` it has nonduplicate two-mismatch ground states.
+
+Two further quantitative ceilings hold.
+
+1. If `q` signed balance squares have no nonzero ternary mismatch in their
+   common kernel, then
+
+   ```math
+   q\ge {k\log2\over\log(2k+1)}.                    \tag{21.165}
+   ```
+
+2. Let a symmetric full sign matrix `W` have a positive
+   `lambda`-eigenspace containing at least `2^(alpha k)` Boolean vectors.
+   Then `lambda<=sqrt(k/alpha)`.  In a universal repeated-lock architecture
+   with `s` size-`k` blocks and cross block `W`, robustness even to every
+   exact hollow sign child of norm at most `9sqrt k` requires
+
+   ```math
+   s\ge1+{k-1\over\lambda}
+    \ge1+(k-1)\sqrt{\alpha/k}.                       \tag{21.166}
+   ```
+
+   It therefore uses `Omega(k^(3/2))` vertices at positive Boolean-code
+   rate.
+
+#### Proof
+
+The one-spin optimality inequalities at every duplicate force each matching
+edge to be positive and every `2 by 2` pair block to have zero row and
+column sums.  Write it as `a_(ij)[[1,-1],[-1,1]]`.  A positive triangle
+product would allow a three-pair mismatch increasing the energy, so every
+triangle product is negative.  The signed complete graph is antibalanced,
+`a_(ij)=-s_i s_j`, and direct substitution gives (21.164).  Two opposite
+signed mismatches give the tie.
+
+For (21.165), the `2^k` subset sums of the `k` column words must all be
+different, while only `(2k+1)^q` integer sums are possible.  For (21.166),
+the Boolean intersection of a `d`-dimensional subspace has at most `2^d`
+points, so the eigenspace dimension is at least `alpha k`.  Frobenius mass
+gives `alpha k lambda^2<=k^2`.  Finally prescribe one child row to have
+signed field `-(k-1)` and complete the remaining signing with operator norm
+at most `9sqrt k`.  The repeated codeword's local field is
+`(s-1)lambda-(k-1)`, which must be nonnegative. `square`
+
+Theorem 21.30 excludes universal duplicate locks and universal repeated
+eigenspace locks, not a child-specific alternating-form regularizer.  The
+exact proof, Hadamard pullback obligation, verifier, and independent audit
+are in
+[`drafts/algebraic_exact_sign_locking.md`](drafts/algebraic_exact_sign_locking.md)
+and
+[`drafts/algebraic_exact_sign_locking_independent_audit.md`](drafts/algebraic_exact_sign_locking_independent_audit.md).
+
+### Theorem 21.31 (universal coordinate pins have quadratic cap)
+
+Fix an old state `u in {+-1}^k`.  Let a single appended quadratic future
+have old--new matrix `B`, arbitrary auxiliary quadratic energy `H_C`, and
+effective old landscape
+
+```math
+g(x)=\max_y\{x^TBy+H_C(y)\}.                        \tag{21.167}
+```
+
+Suppose this same future makes `u` projectively `eta`-optimal for every
+hollow complete sign child `A`:
+
+```math
+H_A(x)+g(x)\le H_A(u)+g(u)+\eta                     \tag{21.168}
+```
+
+for every `A,x`.  Put `d_*=floor(k/2)`.  Then
+
+```math
+\mathop{osc}g\ge2d_*(k-d_*)-\eta,
+\qquad
+||B||_(infinity->1)\ge d_*(k-d_*)-\eta/2.           \tag{21.169}
+```
+
+Every completed parent
+`P_A(x,y)=H_A(x)+x^TBy+H_C(y)` therefore satisfies
+
+```math
+Q(P_A)\ge d_*(k-d_*)-\eta/2.                        \tag{21.170}
+```
+
+In particular, an exact universal coordinate pin with `N=O(k)` total
+vertices has cap `Omega(k^2)`, not `O(N^(3/2))`.
+
+#### Proof
+
+For any `x` at projective Hamming distance `d` from `u`, choose the crossing
+edges of `A` so that
+
+```math
+H_A(x)-H_A(u)=2d(k-d).                               \tag{21.171}
+```
+
+Equation (21.168) gives `g(u)-g(x)>=2d(k-d)-eta`; take `d=d_*`.
+Maxima of affine pieces give `osc g<=2||B||_(infinity->1)`.  Finally,
+flipping the entire auxiliary shore changes the sign of `x^TBy` and leaves
+both internal quadratic energies fixed, so one of the two parent energies
+has absolute value at least `|x^TBy|`. `square`
+
+This theorem explains the quadratic calibration in Theorem 21.29 without
+claiming that every possible metric embedding uses a common pinned witness.
+The audited proof and verifier are in
+[`drafts/universal_pin_cap_barrier.md`](drafts/universal_pin_cap_barrier.md)
+and
+[`drafts/flat_gram_universal_pin_independent_audit.md`](drafts/flat_gram_universal_pin_independent_audit.md).
+
+### Theorem 21.32 (signed quadratic contrasts have full exposed entropy)
+
+Every nonzero homogeneous quadratic Boolean polynomial `P` obeys
+
+```math
+Pr\{P>0\}\ge {1\over324},
+\qquad
+Pr\{P<0\}\ge {1\over324}.                          \tag{21.172}
+```
+
+Consequently, for every nonzero hollow symmetric `D`, one may orient
+`f=sH_D` and choose antipodal `p,-p` and `X subset {+-1}^k` so that
+
+```math
+|X|\ge {2^k\over324},
+\qquad
+f(p)=f(-p)=-Q(D),
+\qquad
+f(x)\ge0\quad(x\in X).                              \tag{21.173}
+```
+
+If an affine selector envelope with `K` pieces, slope norm at most `D_0`,
+and uniform error `eta<Q(D)/2` realizes that signed orientation, then
+
+```math
+\log K\ge-\log324+
+ { (Q(D)-2\eta)^2\over2D_0^2}.                      \tag{21.174}
+```
+
+For every distinct pair in the short-seed flat Gram family of Theorem
+21.26, `Q(D)>=c_0k^(3/2)` with `c_0=sqrt2/16`.  If the selectors are
+`y in {+-1}^m` with cross block `C`, (21.174) implies
+
+```math
+m\ge\left({1\over256\log2}\right)^(1/3)
+ k^(2/3)(1-o(1))                                    \tag{21.175}
+```
+
+for an arbitrary complete sign cross block.  Under the extra flatness
+`||C||_(2->2)<=Lsqrt k`, it implies
+
+```math
+m\ge {1\over16L\sqrt{\log2}}k-o(k).                 \tag{21.176}
+```
+
+#### Proof
+
+Degree-two hypercontractivity gives `||P||_4<=3||P||_2`.  Interpolation
+between `L^1` and `L^4` yields `||P||_1>=||P||_2/9`.  Since `EP=0`, each
+of `EP_+` and `EP_-` is at least `||P||_2/18`; Cauchy--Schwarz proves
+(21.172).  Orient the larger absolute extremum to be the minimum and take
+`X={f>=0}` to obtain (21.173).  The antipodal selector-covering inequality
+of Theorem 21.28 gives (21.174).  Finally use
+
+```math
+D_0\le||C||_(2->2)\sqrt m,
+\qquad ||C||_(2->2)\le\sqrt{km}                    \tag{21.177}
+```
+
+and `K<=2^m` to obtain (21.175)--(21.176). `square`
+
+The signed orientation is essential.  For `k=s^2`, partition the variables
+into `s` blocks of size `s` and put coefficient two inside each block and
+zero between blocks.  Then
+
+```math
+||D||_(2->2)<2\sqrt k,
+\qquad Q(D)=k^(3/2)-k,                              \tag{21.178}
+```
+
+but for every fixed `alpha>0`,
+
+```math
+Pr\{|H_D|\ge\alpha k^(3/2)\}
+\le\exp\{-\alpha k/4+O(\sqrt k)\}.                 \tag{21.179}
+```
+
+Thus flatness plus a large absolute maximum does not give the constant-
+deficit exposed bulk needed by (21.174).  Moreover, when the old child
+remains outside the selector maximum, the inequality applies to the residual
+seen by the selectors, not automatically to the child--query difference.
+The exact scope, proof of (21.179), verifier, and independent audit are in
+[`drafts/flat_gram_exposed_entropy.md`](drafts/flat_gram_exposed_entropy.md)
+and the audit cited after Theorem 21.31.
+
+### Theorem 21.33 (quadratic-character locks lose the leading scale)
+
+Call `phi:{+-1}^k->{+-1}^k` quadratic-character preserving if every
+pair product `phi_a phi_b` is, up to sign, a degree-two input character.
+For `k>=5`, every such map has the rigid form
+
+```math
+\phi(x)=g(x)DPx,                                    \tag{21.180}
+```
+
+where `g(x)` is an arbitrary common Boolean gauge, `D` is a sign diagonal,
+and `P` is a permutation.
+
+For every fixed complete sign bridge `R`, define the defect between its free
+new-shore optimum and the best globally gauged intended copy by
+
+```math
+\Delta_(R,\phi)(x)=||R^Tx||_1-|x^TR\phi(x)|.        \tag{21.181}
+```
+
+Then
+
+```math
+\max_x\Delta_(R,\phi)(x)
+\ge k\sqrt{k/2}-\sqrt3 k.                           \tag{21.182}
+```
+
+Bounded coordinate replication cannot remove this loss.  If
+`phi_a(x)=g(x)s_ax_(pi(a))`, where `pi:[m]->[k]` is onto and every fibre has
+size at most `L`, then for every `k by m` complete sign bridge
+
+```math
+\max_x\{||R^Tx||_1-|x^TR\phi(x)|\}
+\ge m\sqrt{k/2}-\sqrt{m^2+2kLm}.                   \tag{21.183}
+```
+
+Thus `m=Theta(k)` and `L=O(1)` still incur an
+`Omega(k^(3/2))` worst defect.
+
+Finally, in the bare one-layer pin architecture, suppose a target `u` is a
+global maximizer of `H_A(x)+||R^Tx||_1` for every exact hollow sign child
+with operator norm at most `9sqrt k`.  Then necessarily
+
+```math
+R=us^T,
+\qquad ||R||_(infinity->1)=k^2,                    \tag{21.184}
+```
+
+so every complete parent containing that bridge has cap at least `k^2`.
+
+#### Proof
+
+Fix one output coordinate.  The supports of its pair characters with all
+other outputs are distinct pairwise-intersecting two-subsets.  A family of
+at least four such sets is a star; symmetric difference reconstructs all
+remaining pair supports, and the signs satisfy a one-cocycle identity.  This
+gives (21.180).
+
+The gauge disappears inside the absolute value in (21.181), leaving
+`|x^TCx|` for a sign matrix `C`.  Under uniform `x`, Khintchine gives
+
+```math
+E||R^Tx||_1\ge k\sqrt{k/2},                         \tag{21.185}
+```
+
+while Fourier orthogonality gives
+
+```math
+E(x^TCx)^2
+=(tr C)^2+\sum_(i<j)(C_(ij)+C_(ji))^2<3k^2.        \tag{21.186}
+```
+
+Averaging proves (21.182).  With replication, collapse each fibre into a
+column of `C`; then `||C||_F^2<=kLm` and `|tr C|<=m`, proving (21.183).
+
+For the final claim, prescribe for each coordinate a bounded-operator sign
+child whose signed local field at `u` is `-(k-1)`.  Comparing `u` with its
+one-bit flip forces
+
+```math
+||R^Tu||_1-||R^Tu^(i)||_1\ge2(k-1).                 \tag{21.187}
+```
+
+Columnwise, every summand is in `{-2,0,2}`.  The inequalities for all `i`
+force every column to agree with `u` up to one column sign, hence (21.184).
+The shore-flip argument gives the cap. `square`
+
+The theorem closes dominant equality-lock proofs for the **full** quadratic
+character algebra.  It does not cover query-dependent coordinate pins,
+which succeed in Theorem 21.29, or a nonlinear pullback proved only for the
+narrower alternating-form language.  The full audited proof and verifier
+are in
+[`drafts/exact_sign_disjoint_compiler.md`](drafts/exact_sign_disjoint_compiler.md)
+and
+[`drafts/exact_sign_disjoint_compiler_independent_audit.md`](drafts/exact_sign_disjoint_compiler_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

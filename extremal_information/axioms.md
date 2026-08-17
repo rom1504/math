@@ -1575,3 +1575,58 @@ memory.  It either forgets the information, pays it repeatedly as fresh
 reward, or exposes it as a cycle coordinate.  Static response compression
 and dynamic persistence are linked by this resource conversion, not by one
 interchangeable complexity number.
+
+## 72. A compiler must preserve both semantics and normalization
+
+An exact optimization identity can be useless after composition if its
+auxiliary order changes the macroscopic normalization.  For unit quadratic
+systems, compiling a `k^(3/2)` response at positive total scale requires
+`N=O(k)` total vertices, not merely a finite exact realization.
+
+Independent selectors make this tradeoff quantitative through their pair
+Fourier mass: bounded fan-in forces superlinear order, and complete fan-in
+forces quadratic order when both orientations are required.  Correlated
+selectors replace that atomwise obstruction by an exposed-set covering
+problem.  Hence the next invariant is not “number of auxiliary variables”
+alone but the joint triple of total order, slope geometry, and entropy of
+the source states that future optimization must expose.
+
+## 73. Exact contextual closure can hide a macroscopic calibration
+
+A query-dependent exact-sign future can expose every coordinate of a child
+landscape with only linear order and preserve its entire response metric.
+The price may be a common quadratic energy baseline that cancels between
+responses but remains visible to an absolute ground-state objective.
+
+This distinction is structural.  A fixed future robustly pinning one state
+against the full complete-sign child cube must have quadratic oscillation and
+quadratic parent cap.  Consequently a response compiler should be charged
+separately for semantic distortion, order blow-up, and absolute calibration.
+
+## 74. Extremal entropy is orientation-sensitive
+
+Mean-zero low-degree structure forces each **signed** side of a nonzero
+quadratic landscape to occupy constant cube mass.  Once one extremum is
+oriented as a minimum, this gives a full-entropy antipodal exposed set and a
+selector covering lower bound.
+
+Taking absolute values can destroy that conclusion even under spectral
+flatness and target-scale maximum.  A compiler that pays both orientations
+separately may therefore face linear information cost while a genuinely
+joint absolute channel evades that particular proof.  Same-switch
+cancellation is an algebraic resource, not just a constant-factor issue.
+
+## 75. Exact pullback rigidity can expose a locking no-go
+
+Requiring a Boolean encoding to preserve an entire algebra of pair queries
+may leave no nonlinear compression: the only maps are a coordinate
+permutation, signs, and a common gauge invisible to those queries.  Once this
+rigidity is proved, a freely optimized exact-sign bridge has a leading
+advantage over every intended copy.
+
+This does not invalidate query-dependent contextual compilation.  It says
+that a proof which first transports the complete query algebra to a second
+shore and then pays a dominant public equality lock has already lost the
+target scale.  Any escape must preserve a smaller query algebra, correlate
+the auxiliary selectors, or make cancellation occur before the lock is
+optimized separately.

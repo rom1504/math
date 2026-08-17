@@ -330,9 +330,53 @@ basis.  Concise public advice is no longer an obstruction: a small-bias label
 sampler and a `6k`-wise-independent polynomial seed reduce the shared
 description to `O(k log k)` while preserving flatness and the full response
 packing.  The next discriminating target is therefore to retain the positive
-rate under a disjoint bridge composition or an exact-sign parent.  The live
-costs are the exponential same-support query language and, more
-fundamentally, exact-sign/disjoint closure.
+rate under a **bounded-cap** disjoint bridge composition.  Bare exact-sign
+and disjoint metric closure is now solved: a rank-one bridge plus a positive
+auxiliary clique exposes every child coordinate exactly on `N=2k` vertices,
+preserving the response packing.  Its common calibration is `Theta(N^2)`.
+Moreover every future that universally pins one prescribed coordinate
+against all sign children must have `Omega(N^2)` cap.  The live cost is thus
+not exact signs alone but removing the quadratic calibration through
+child-dependent optimizer switching or a genuinely joint absolute channel.
+
+The first compiler boundary is now sharp.  One auxiliary per old edge gives
+an exact sparse identity, but its quadratic order destroys the total scale.
+Among independent-star futures, endpoint-local and fully dense selectors
+both require quadratic order; bounded intermediate fan-in obeys
+`sum_a d_a^(3/2)>=k(k-1)`.  Arbitrarily interacting auxiliaries still need
+at least `0.565...k-o(k)` states for the universal complete cut shell, and a
+bounded-cap linear parent cannot approximate that shell because its response
+oscillation is only `O(k^(3/2))`.
+
+These no-go results do **not** settle the flat alternating-form family.  The
+precise live target is now one of the following mutually discriminating
+statements:
+
+1. construct an `O(k)`-vertex, complete-sign, jointly interacting compiler
+   whose parent cap is `O(k^(3/2))` and which preserves a fixed fraction of
+   the alternating-form response packing; or
+2. prove that every such compiler needs linearly many selector bits with an
+   incompatible slope/cap budget.
+
+The signed exposed-set input is now proved in full generality: one orientation
+of every nonzero quadratic has a constant-fraction antipodal exposed bulk.
+It gives `Omega(k^(2/3))` auxiliaries without cross-block flatness and
+`Omega(k)` with it.  The remaining logical gap is orientation: if the old
+child stays outside the selector envelope, the argument sees the residual
+query rather than the child--query difference.  This cannot be dismissed,
+because an explicit flat block-clique family has a target-scale absolute
+maximum but exponentially small absolute near-top mass.
+
+The full quadratic-character equality-lock route is also closed.  Exact
+pullback of every pair character forces only a signed permutation and common
+gauge, and every fixed complete bridge then has an `Omega(k^(3/2))`
+worst-case defect, even with bounded coordinate replication.  A bare bridge
+robust against all spectrally bounded sign children is forced to rank one and
+quadratic cap.  Therefore the remaining positive route may preserve only the
+alternating-form query subalgebra or must let interacting auxiliaries and the
+child energy choose a joint witness; transporting the full pair algebra and
+locking it afterward is no longer live.
+
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking

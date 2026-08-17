@@ -226,8 +226,29 @@ one of:
   advice has now been removed: a small-bias label list plus a
   `6k`-wise-independent polynomial-trace seed uses only `O(k log k)` shared
   bits while preserving simultaneous flatness and the response rate.  The
-  live costs are now the exponential same-support query language and exact-
-  sign/disjoint realization, not stored edge randomness.
+  live costs are no longer stored edge randomness or bare exact-sign/disjoint
+  realization.  A query-dependent rank-one bridge and positive clique now
+  compile the full response metric exactly with only linear order.  The
+  unavoidable cost of that mechanism is a quadratic common calibration:
+  every fixed future that pins one coordinate against all sign children has
+  quadratic parent cap.  The obvious exact
+  compiler is now classified: sparse edge gadgets work but use quadratic
+  order; bounded-fan-in independent stars obey a sharp Fourier-mass law; and
+  full-support independent stars still require quadratic order for both
+  orientations.  Arbitrary interacting selectors face a linear covering
+  lower bound and a bounded-cap oscillation ceiling on the universal cut
+  shell.  Signed flat contrasts do have constant-fraction exposed entropy,
+  yielding an `Omega(k^(2/3))` selector lower bound in general and
+  `Omega(k)` under a flat cross block; an explicit flat counterexample shows
+  that the same absolute-channel entropy statement is false.  The remaining
+  escape is genuinely narrower: an `O(k)`-vertex bounded-cap, jointly
+  interacting compiler whose optimizer may switch with the child and whose
+  two signs cancel before absolute values are paid.  Full pair-character
+  pullback cannot supply it: that algebra is rigid up to signed permutation
+  and common gauge, and every fixed bridge then incurs an
+  `Omega(k^(3/2))` locking defect.  Bounded replication does not change the
+  order.  Only a restricted alternating-query pullback or genuinely joint
+  child--auxiliary optimization remains plausible.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 

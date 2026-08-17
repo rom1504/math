@@ -2233,3 +2233,102 @@ incidence.  This turns the static broadcast law into a dynamic one: dense
 hidden incidence can create macroscopic information, but contraction keeps
 it only if the information is promoted to recurrent cohomology or supplied
 again at later steps.
+
+## Example 107: exact sparse compilation can destroy total scale
+
+One auxiliary spin per old edge compiles an arbitrary signed cut shell
+exactly: optimizing `y_(ij)(x_i-T_(ij)x_j)` returns
+`1-T_(ij)x_ix_j`.  The semantic identity is perfect, but it enlarges `k`
+old variables to `Theta(k^2)` total variables.  A `k^(3/2)` response signal
+then has only `N^(3/4)` size, vanishing after `N^(3/2)` normalization.
+
+This loss is not merely an inefficient presentation at the two natural
+independent-star extremes.  Endpoint-local stars require exactly one
+auxiliary per edge, while fully dense stars require `Omega(k^2)` auxiliaries
+when both query orientations must be represented.  Exact expressibility and
+scale-preserving composability are therefore distinct resources.
+
+## Example 108: interacting selectors pay exposed-set entropy
+
+Auxiliary--auxiliary interaction turns independent absolute channels into a
+correlated affine envelope.  It can evade the star Fourier Gram bound, but
+not the need to cover every exposed source configuration.  For the complete
+cut shell, comparison with two antipodal low states forces each selector to
+correlate strongly with every balanced state it serves.  Hoeffding covering
+then requires at least `0.565...k-o(k)` complete-bipartite auxiliary spins
+for subquadratic error.
+
+A separate shore-flip bound is stronger when the completed parent must keep
+`O(N^(3/2))` cap: a linear-order parent cannot approximate the shell's
+quadratic oscillation at all.  Flat targets escape this particular
+oscillation obstruction.  Their remaining compiler question is governed by
+the entropy and geometry of their antipodally exposed near-top states, not
+by the number of query names.
+
+## Example 109: a complete exact-sign pin compiles the response metric
+
+Append a positive `k`-clique and join it to the old block by the rank-one
+sign bridge `u1^T`.  The completed order-`2k` parent has one-sided maximum
+
+```math
+{3k^2-k\over2}+H_A(u).
+```
+
+Taking response differences cancels the common term and recovers every
+coordinate of the old quadratic landscape exactly.  Thus same-support
+queries do not intrinsically prevent disjoint exact-sign compilation, and
+the short-seed flat Gram packing remains linear-rate at the enlarged total
+scale.
+
+The construction is deliberately not low cap: its calibration is quadratic.
+More generally, any fixed future that pins one prescribed old state against
+every complete sign child must itself create quadratic response oscillation
+and hence a parent of quadratic cap.  Exact contextual closure and
+near-minimal-signing closure are different targets.
+
+## Example 110: universal duplicate locks collapse to one balance equation
+
+If one complete sign Hamiltonian makes every paired duplicate `(u,u)` a
+ground state, all coordinate-pair blocks are forced into an antibalanced
+rank-one pattern.  Its full energy is
+
+```math
+k-2(s\mathbin\cdot(x-y)/2)^2.
+```
+
+It enforces only one aggregate signed balance and necessarily admits
+two-mismatch ties.  Stacking aggregate balance penalties needs at least
+`Omega(k/log k)` algebraic rows to separate every ternary mismatch, while a
+positive-rate Boolean eigenspace supplies only square-root locking margin and
+needs `Omega(k^(3/2))` replicated vertices under universal robustness.
+
+## Example 111: signed exposure has full entropy; absolute exposure need not
+
+Every nonzero quadratic Boolean polynomial is positive and negative on a
+constant fraction of the cube.  Orienting its largest absolute extremum as a
+minimum therefore creates a `2^k/324` antipodally exposed set.  For the flat
+Gram contrasts this converts the `k^(3/2)` gap into an `Omega(k^(2/3))`
+general selector lower bound, strengthened to `Omega(k)` for a spectrally
+flat cross block.
+
+No analogous constant-deficit statement holds for the absolute landscape.
+Disjoint unions of `sqrt(k)` coefficient-two cliques have operator norm
+`O(sqrt k)` and maximum `Theta(k^(3/2))`, yet every fixed macroscopic
+absolute tail has probability `exp(-Theta(k))`.  Orientation is therefore a
+real information resource, not a harmless polarization convention.
+
+## Example 112: preserving all pair characters forces a copy
+
+For at least five coordinates, any Boolean encoding that pulls every output
+pair character back to an input pair character is only a signed permutation
+times one common state-dependent gauge.  A fixed complete sign bridge cannot
+keep that copy near its freely optimized shore: even after choosing the
+favorable global antipode, some source state gains
+`(1/sqrt(2)-o(1))k^(3/2)` by abandoning the intended copy.
+
+Constant-multiplicity replication retains the same lower-order obstruction.
+If a bare bridge must instead pin one target robustly against every
+spectrally bounded sign child, all its columns are forced to equal that
+target up to sign, giving bridge norm and parent cap exactly at quadratic
+scale.  Full character preservation plus dominant locking is therefore not
+the missing joint-cancellation mechanism.
