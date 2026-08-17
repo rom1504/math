@@ -1817,3 +1817,19 @@ pair amalgams can agree while a ternary relation differs. Dynamic memory is
 therefore the accumulated span, not an edge-local compatibility label. The
 state remains strict--`O(t^2)` rather than `mt` bits when `t=o(m)`--but it
 does not compose for free.
+
+## Example 81: numerical rank depends on the extremal scale
+
+At balanced size `n`, deleting a bridge singular direction of size at most
+`epsilon sqrt(n)` changes every Boolean interaction by at most
+`epsilon n^(3/2)`. The retained singular features therefore give an exact
+low-rank roof plus a uniform spectral-tail error. For a bounded number of
+feature-visible ports, a net uses
+`exp(O(r_epsilon log(1/epsilon)))` cells.
+
+This puts three bridge regimes on one scale. The identity part of
+`alpha I+beta J` and every bounded-degree bipartite bridge are subleading at
+`n^(3/2)`; a typical dense sign bridge has extensive numerical rank. The law
+produces local factor tables, not a global state for a graph with a large
+separator, and arbitrary state-specific futures can still inspect states
+discarded inside one feature fibre.

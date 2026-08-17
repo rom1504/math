@@ -57,7 +57,10 @@ one of:
 - **Strongest theorem:** rank-`r` bridges between arbitrary internal
   landscapes compose exactly through an associative upper-roof algebra;
   fixed-error bucketing has `exp(O(r log(1/epsilon)))` cells, and unrestricted
-  classes need `2^(Omega(r))` bits. At the near-original endpoint, a general
+  classes need `2^(Omega(r))` bits. A scale-sensitive extension replaces
+  literal rank by the number of singular values above `epsilon sqrt(n)` and
+  gives an additive physical-edge error law plus local roof factors. At the
+  near-original endpoint, a general
   entropy-amplification theorem turns any positive near-top entropy deficit
   into a positive switching-response rate. The full exact cap-`1/2`
   regular-Walsh orbit consequently has `Theta(n)` response bits.
@@ -73,10 +76,10 @@ one of:
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** determine whether the exact `sqrt(n)`-bit Walsh
-  truth-table presentation becomes a reusable semantic quotient under graph
-  composition, or whether every such quotient grows extensively with block
-  count. Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the
+- **Live theorem:** determine whether numerical-rank compression can be
+  strengthened by nonlinear synchronization for a nontrivial dense family.
+  In parallel, test approximate rooted amalgamation for the exact Walsh
+  quotient. Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the
   full sign-quadratic class, while bounded cap alone is now rigorously
   insufficient for sublinear contextual rate.
 - **Strike count:** zero. Reaching genuine sign-quadratic children with a
@@ -238,6 +241,7 @@ one of:
 | 3 | approximate weighted automata | response cover at forgetting-time scale | represented by contraction and Viterbi extremes; broader case queued |
 | 3 | low-rank vector balancing | zonotope plus nonconvexity defect | active |
 | bridge | fixed-rank quadratic coupling | finite-dimensional joint roof | passed |
+| bridge | scale-sensitive spectral coupling | numerical-rank roof above the `sqrt(n)` threshold | passed locally: uniform tail error and local factor algebra; no bounded global state across large separators |
 | bridge | sparse coupling | live-interface response transform | negative: degree one can be hard |
 | bridge | vertex-cover width `k` | `2^k`-entry bridge table | passed; worst-case sharp, audit pending |
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |

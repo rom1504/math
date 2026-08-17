@@ -7016,6 +7016,85 @@ beat algebraic rank in a nontrivial full-rank dense class. The state grows
 with the number of blocks; this is an exact factor algebra, not a bounded
 universal state for arbitrary dense couplings.
 
+### Theorem 18.7 (scale-sensitive spectral bridge reduction)
+
+For arbitrary Boolean state sets `X subseteq {+-1}^p`,
+`Y subseteq {+-1}^q`, arbitrary internal landscapes `H,K`, and real bridges
+`R,S`,
+
+```math
+\left|\max_{x,y}\{H(x)+K(y)+x^TRy\}
+      -\max_{x,y}\{H(x)+K(y)+x^TSy\}\right|
+\le\sqrt{pq}\,||R-S||_{2\to2}.                          \tag{18.29}
+```
+
+This remains true after adding any shared state-specific future. For a best
+rank-`r` truncation `R_r`, the right side is
+`sqrt(pq) sigma_(r+1)(R)`. The constant is sharp on pinned Boolean singular
+vectors.
+
+At balanced size `n` and scale `n^(3/2)`, define
+
+```math
+r_\epsilon(R)=#{j:\sigma_j(R)>\epsilon\sqrt n}.         \tag{18.30}
+```
+
+Then the interaction is uniformly within `epsilon n^(3/2)` of one factoring
+through `r_epsilon(R)` singular features. If `||R||<=Csqrt(n)`, continuations
+are declared to depend only on these retained features, and their total dual
+field radius is bounded by a fixed number of opposite ports, a feature net
+with
+
+```math
+\left(1+O_C(1/\epsilon)\right)^r                         \tag{18.31}
+```
+
+cells and one additive baseline gives a further
+`epsilon n^(3/2)` response approximation. Spectral-tail and quantization
+budgets add.
+
+For a graph of bridges `R_e`, rank-`r_e` replacements `S_e` satisfying
+`||R_e-S_e||<=delta_e sqrt(n)` change every global objective pointwise by at
+most
+
+```math
+n^{3/2}\sum_e\delta_e.                                  \tag{18.32}
+```
+
+The truncated system has an exact local roof factorization of dimension
+
+```math
+d_v\le\sum_{e\ni v}r_e                                  \tag{18.33}
+```
+
+at vertex `v`. This local presentation composes associatively while every
+exposed port is retained. It is not a bounded global quotient: eliminating a
+region creates a joint boundary factor controlled by separator size or
+treewidth, which may be linear even at bounded degree.
+
+#### Proof
+
+For every Boolean pair,
+
+```math
+|x^T(R-S)y|\le||x||_2||R-S||_{2\to2}||y||_2,            \tag{18.34}
+```
+
+and maxima are one-Lipschitz under a pointwise perturbation. Eckart--Young
+proves (18.30). Factor
+`R_r=U Sigma V^T` and use features
+`Sigma^(1/2)U^Tx`, `Sigma^(1/2)V^Ty`; their radii are at most
+`sqrt(C)n^(3/4)`. Theorem 18.3, with mesh proportional to
+`epsilon n^(3/4)`, gives (18.31) for the bounded retained-feature query
+language. Summing (18.34) over physical edges proves (18.32), and
+concatenating incident singular features proves (18.33). `square`
+
+The conclusion is scale-sensitive. A bounded-row-and-column-degree bridge is
+subleading at `n^(3/2)`, while an iid dense sign bridge has extensive
+numerical rank for thresholds inside its spectral bulk. The general
+`2^(Omega(r))` lower bound of Theorem 18.3 applies to arbitrary featured
+roofs; optimality for every Boolean SVD port is not claimed.
+
 ## 19. Extremal cut-norm replacement
 
 ### Theorem 19.1 (uniform labeled replacement)

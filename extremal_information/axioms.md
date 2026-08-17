@@ -1234,3 +1234,17 @@ even when isolated states are fixed. The resulting carrier is still a strict
 symmetry quotient in the low-word-length regime. Thus "new information" need
 not mean reconstructing the microscopic landscape; it can mean updating a
 small but growing relational presentation.
+
+## 47. Interface rank is relative to the declared error scale
+
+Algebraic rank counts even singular directions whose entire Boolean
+contribution is below the target error. The relevant linear interface is the
+number of singular values above `L_n/n` at objective scale `L_n`. Operator-
+norm truncation then gives an all-state pointwise replacement, and the
+retained directions feed the exact upper-roof algebra.
+
+This does not erase the response/congruence distinction. Quantizing the roof
+answers only bounded fields through retained features, and local low-rank
+factors can create a large separator state after elimination. Numerical rank
+therefore predicts **local response image**, while dynamic memory still
+depends on the composition graph and allowed future queries.

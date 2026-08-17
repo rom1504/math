@@ -595,6 +595,16 @@ weighted linear children already retain a linear information rate. Thus an
 eventual positive theory for dense quadratic signings must exploit rigidity
 specific to that child class.
 
+Literal rank is now replaced by a scale-sensitive parameter. Uniformly
+truncating every singular value below `epsilon sqrt(n)` changes a balanced
+Boolean bridge response by at most `epsilon n^(3/2)`. The surviving numerical
+rank feeds the exact upper-roof algebra, with
+`exp(O(r_epsilon log(1/epsilon)))` local feature cells under bounded
+feature-visible ports. This explains in one law why fixed-rank and
+`alpha I+beta J` bridges compress at the target scale, bounded-degree bridges
+are subleading there, and typical dense sign bridges do not. It is a local
+factor theorem rather than a global quotient across large separators.
+
 That endpoint now reaches the full syntactic class of complete sign
 quadratics. Gauge-ferromagnetic pole forms yield an `exp(Omega(n))` response
 packing and force `Omega(n)` bits at the same scale, while Hamming covering
