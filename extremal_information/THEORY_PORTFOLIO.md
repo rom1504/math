@@ -82,9 +82,13 @@ one of:
   near-original endpoint, a general
   entropy-amplification theorem turns any positive near-top entropy deficit
   into a positive switching-response rate. The full exact cap-`1/2`
-  regular-Walsh orbit consequently has `Theta(n)` response bits.
-- **Best benchmark:** fixed-rank quadratic bridges, not merely finite-atom
-  mean field.
+  regular-Walsh orbit consequently has `Theta(n)` response bits.  A new
+  anti-pin construction compiles a linear-rate Rayleigh-separated subcode
+  into exact complete parents of order `n+sqrt(n)` and cap `O(n^(3/2))`,
+  preserving its projective response metric within a factor eight.  Its
+  repeated-column port is order-optimal at width `Theta(sqrt(n))`.
+- **Best benchmark:** fixed-rank quadratic bridges and, beyond that classical
+  regime, the bounded-cap Walsh anti-pin compiler.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
   matching bridge can carry exponentially many macroscopic response bits;
   a random dense sign bridge exposes `exp(Omega(n))` response bits at the
@@ -95,14 +99,16 @@ one of:
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** determine whether numerical-rank compression can be
-  strengthened by nonlinear synchronization for a nontrivial dense family.
-  In parallel, test approximate rooted amalgamation for the exact Walsh
-  quotient. Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the
-  full sign-quadratic class, while bounded cap alone is now rigorously
-  insufficient for sublinear contextual rate.
-- **Strike count:** zero. Reaching genuine sign-quadratic children with a
-  scalable packing resets the counter, despite the bounded-cap limitation.
+- **Live theorem:** determine whether the one-port anti-pin metric is a
+  reusable congruence.  The discriminating test is a two-port or two-stage
+  exact-sign continuation: either derive a closed Rayleigh/Gram feature
+  algebra with sub-landscape state, or exhibit a leading holonomy witness.
+  Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
+  sign-quadratic class, while bounded cap alone remains insufficient for
+  sublinear contextual rate.
+- **Strike count:** zero. The first bounded-cap, exact-disjoint,
+  linear-order positive compiler resets the counter.  It is presently a
+  one-layer metric result, not cross-order recurrence.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear
@@ -240,15 +246,26 @@ one of:
   shell.  Signed flat contrasts do have constant-fraction exposed entropy,
   yielding an `Omega(k^(2/3))` selector lower bound in general and
   `Omega(k)` under a flat cross block; an explicit flat counterexample shows
-  that the same absolute-channel entropy statement is false.  The remaining
-  escape is genuinely narrower: an `O(k)`-vertex bounded-cap, jointly
-  interacting compiler whose optimizer may switch with the child and whose
-  two signs cancel before absolute values are paid.  Full pair-character
+  that the same absolute-channel entropy statement is false.  That narrower
+  escape now exists at the one-layer metric level: a regular-Hadamard
+  anti-pin uses only `sqrt(k)` auxiliary vertices, lets the optimizer switch
+  with the child--query pair, retains bounded cap, and embeds an exponential
+  subcode's contextual metric with constant gain.  Full pair-character
   pullback cannot supply it: that algebra is rigid up to signed permutation
   and common gauge, and every fixed bridge then incurs an
   `Omega(k^(3/2))` locking defect.  Bounded replication does not change the
-  order.  Only a restricted alternating-query pullback or genuinely joint
-  child--auxiliary optimization remains plausible.
+  order.  An orthogonal bridge supplies an exact squared synchronization
+  deficit, but a bounded-cap exact child can defeat one planted Boolean
+  pullback state by `Theta(k^(3/2))`; a reusable compiler needs stronger
+  alignment.  Bounded cap alone does
+  not force such switching: one fixed future can share an optimizer across
+  `2^(Theta(k^2))` bounded-cap children.  Response separation instead forces
+  an `Omega(k)` approximate witness dictionary, paid either by common query
+  pins or child-dependent active states.  The coordinate-pin option can be
+  exponentially costly even for flat exact-sign switched pairs, with the
+  exact rate governed by extremal witness mass.  The live boundary is now
+  dynamic congruence: determine whether the anti-pin state closes under two
+  interacting ports, or whether composition creates a leading holonomy bit.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
@@ -284,6 +301,12 @@ one of:
   natural finite stratification still generates unbounded tangent shapes.
   Arbitrary functional amplitude fields are not a strict state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
+- **New bridge to contextual theory:** on every finite translation product,
+  reciprocal extremal-tail mass is the coordinate-query complexity up to a
+  polynomial factor, and its exact exponent is the Cramer rate.  Log-moment
+  functions compose additively and their Legendre dual gives future-query
+  information.  This recovers covering-code rates and resets the branch
+  strike, while overlap-dependent coupling remains a decisive falsifier.
 
 ### 5. Adversarial statistical mechanics — keep warm, B
 
@@ -398,6 +421,7 @@ one of:
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
 | bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
+| near-original | bounded-cap Walsh anti-pin compiler | switch label plus one `sqrt(n)` repeated-column query port | exact complete sign parents of order `n+sqrt(n)` preserve an `exp(Omega(n))` contextual metric within factor eight; port width is sharp in this architecture; multi-port congruence open |
 | bridge | exact cap-`1/2` Walsh children | local switch (`n` bits), structured truth table (`sqrt(n)` bits), or rooted relation form (`O(k^2)` bits for linear-label words in every dimension) | full switching orbit has `Theta(n)` one-bridge response bits; rooted bilinear amalgamation is exact; query-local weighted truncation costs interaction mass; an ordinary triangle exposes binary Gram flux at a fixed leading gap |
 | near-original | regular-Hadamard tensor hierarchy | fixed-dimensional cross-correlation set | nested response sets and support functions converge; trace-zero sign templates give dense hollow signings on orders `d4^r`; no all-order recovery |
 | near-original | summably perturbed amplification | common all-pairs Boolean lift / signed replication kernel | directed recovery forces a Hausdorff limit; perfect-matching flips change `Theta(N)` edges per scale with summable defect; no phase synchronization |

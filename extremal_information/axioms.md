@@ -1630,3 +1630,54 @@ shore and then pays a dominant public equality lock has already lost the
 target scale.  Any escape must preserve a smaller query algebra, correlate
 the auxiliary selectors, or make cancellation occur before the lock is
 optimized separately.
+
+## 76. Bounded cap charges response bins per witness, not fibre size
+
+Exponentially many bounded-cap children may share one optimizer under one
+fixed future.  What one witness cannot carry is exponentially many
+macroscopically separated scalar responses: its evaluation lies in a bounded
+interval with only constantly many target-scale bins.
+
+Accordingly, a response packing forces an extensive approximate witness
+dictionary, but that cost has two realizations.  It may be a public library
+of common query pins, or it may be child-dependent optimizer switching.
+Any theorem claiming the latter must first rule out the former.
+
+## 77. Extremal tail mass controls orbit-query complexity
+
+For a transitive translation language, preserving a threshold extremum is a
+set-transversal problem.  The reciprocal mass of one extremal witness set is
+the query complexity up to a logarithmic factor.  Under independent product
+composition, its exponent is the Legendre dual of the additive log-moment
+state.
+
+This is a genuine bridge between rare-event and contextual theories.  It
+closes exactly for product landscapes and covering codes, while
+overlap-dependent interaction is the structural event that invalidates the
+one-point rate state.
+
+## 78. A bridge penalty must dominate the local modulus, not merely the cap
+
+An orthogonal sign bridge supplies an exact quadratic penalty for leaving its
+Boolean pullback relation.  Whether that relation survives a future is
+controlled by the future's modulus near the relation, not by its global
+Boolean maximum alone.  A cap-scale child may concentrate its entire gain on
+a `sqrt(n)`-coordinate departure and defeat the relation at leading scale.
+
+Thus a synchronization theorem needs a pullback cancellation, local-field or
+operator bound, or another alignment hypothesis.  “Both pieces have the
+correct cap” is not a compositional invariant.
+
+## 79. Metric compilation is weaker than dynamic congruence, but genuinely so
+
+A context family may preserve an exponential contextual metric with bounded
+cap even when no query reconstructs a coordinate response and no fixed
+witness is pinned.  Child--query-dependent optimization can create an
+anti-diagonal gap whose two signs are recovered only after taking the
+projective oscillation across queries.
+
+This makes one-layer metric compilation a real intermediate resource, not a
+failed form of pointwise simulation.  Its next obligation is reusable
+closure: after another interaction, the response quotient must still be a
+congruence.  A metric embedding without such closure cannot by itself support
+cross-scale recurrence.

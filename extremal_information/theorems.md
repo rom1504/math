@@ -10120,6 +10120,309 @@ are in
 and
 [`drafts/exact_sign_disjoint_compiler_independent_audit.md`](drafts/exact_sign_disjoint_compiler_independent_audit.md).
 
+### Theorem 21.34 (bounded cap prices witness diversity, not fibre size)
+
+Bounded cap does not force child-dependent optimizer switching.  For every
+`u in {+-1}^k`, append one spin with incident signs `u_i`, so the effective
+future is
+
+```math
+g_u(x)=|u\mathbin\cdot x|.                          \tag{21.188}
+```
+
+There are at least
+
+```math
+2^{ {k\choose2}-k}                                 \tag{21.189}
+```
+
+distinct complete sign children `A` such that
+
+```math
+Q(A)\le2k^(3/2),
+\qquad Q(P_A)\le2k^(3/2)+k,                        \tag{21.190}
+```
+
+and the same old states `+-u` optimize `H_A+g_u` for every child.
+
+The response-sensitive replacement is quantitative.  Let `mathcal F` be a
+family with `Q(A)<=C_0k^(3/2)`, pairwise separated over a declared future
+language by
+
+```math
+\sup_g|R_A(g)-R_(A')(g)|\ge\epsilon k^(3/2).        \tag{21.191}
+```
+
+Suppose one dictionary `U subset {+-1}^k` answers every child--future pair
+within `tau k^(3/2)`:
+
+```math
+0\le R_A(g)-\max_(u\in U)\{H_A(u)+g(u)\}
+\le\tau k^(3/2),
+\qquad 2\tau<\epsilon.                              \tag{21.192}
+```
+
+Then
+
+```math
+|\mathcal F|
+\le\left(1+\left\lceil{2C_0\over\epsilon-2\tau}
+                 \right\rceil\right)^{|U|}.        \tag{21.193}
+```
+
+In particular an `exp(alpha k)` bounded-cap response packing requires
+`|U|=Omega(k)`.  If the language has futures `g_1,...,g_q` and `U_j` is the
+set of exact old witnesses used under `g_j`, then
+
+```math
+\sum_(j=1)^q|U_j|=\Omega(k).                        \tag{21.194}
+```
+
+Thus `q=O(1)` forces extensive child-dependent witness switching in some
+context, while one common optimizer per context forces `q=Omega(k)`.
+
+#### Proof
+
+Vertex switching acts freely on complete signings modulo the global sign,
+giving `2^{binom(k,2)-k+1}` orbits.  Every orbit has a representative whose
+one-sided quadratic maximum is attained at `u`.  A random signing has
+`Q(A)<=2k^(3/2)` with probability above one half by Hoeffding and a union
+bound over the cube; the event is switching invariant.  Select one
+representative from each bounded orbit.  Both `H_A` and (21.188) are
+maximized at `u`, and the appended linear term has magnitude at most `k`,
+proving (21.189)--(21.190).
+
+For the second claim, truncated maxima are nonexpansive:
+
+```math
+|R_A^U(g)-R_(A')^U(g)|
+\le\max_(u\in U)|H_A(u)-H_(A')(u)|.                 \tag{21.195}
+```
+
+Equations (21.191)--(21.192) therefore make the evaluation vectors
+`(H_A(u))_(u in U)` an `ell_infinity` packing at separation
+`(epsilon-2tau)k^(3/2)`.  Each coordinate lies in an interval of length
+`2C_0k^(3/2)`; bin it to obtain (21.193).  Taking the union of the exact
+witness supports gives (21.194). `square`
+
+For an uncalibrated hollow quadratic parent, parent cap implies the child-cap
+hypothesis by averaging over all auxiliary spins.  Projective and signed
+absolute variants obey the same law after anchoring one evaluation
+coordinate or adjoining the sign channel.  Full details and the independent
+audit are in
+[`drafts/bounded_cap_optimizer_switching.md`](drafts/bounded_cap_optimizer_switching.md)
+and
+[`drafts/bounded_cap_optimizer_switching_independent_audit.md`](drafts/bounded_cap_optimizer_switching_independent_audit.md).
+
+### Theorem 21.35 (Hadamard synchronization has an exact deficit but no universal planted-witness stability)
+
+Let `W in {+-1}^{k times k}` satisfy `W^TW=kI`, and put
+
+```math
+v_x={W^Tx\over\sqrt k}\qquad(x\in\{+-1\}^k).
+```
+
+Then the bridge deficit is exactly
+
+```math
+k^(3/2)-x^TWy
+={\sqrt k\over2}||y-v_x||_2^2,                    \tag{21.196}
+```
+
+and, after optimizing the new shore,
+
+```math
+k^(3/2)-||W^Tx||_1
+={1\over2\sqrt k}\sum_a
+ (|(W^Tx)_a|-\sqrt k)^2.                          \tag{21.197}
+```
+
+Consequently, if a future energy `K` extends to the radius-`sqrt(k)` sphere
+with Euclidean Lipschitz constant `L`, then
+
+```math
+\max_y\{x^TWy+K(y)\}
+\le k^(3/2)+K(v_x)+{L^2\over2\sqrt k}.             \tag{21.198}
+```
+
+This is a useful positive synchronization criterion, but a Boolean cap bound
+does not imply it at a subleading scale.  For all sufficiently large
+`k=2^(2m)` there are complete hollow signings `A,C` and the symmetric
+Sylvester--Walsh matrix `W` such that
+
+```math
+Q(A)\le3k^(3/2),\qquad Q(C)={1\over2}k^(3/2),      \tag{21.199}
+```
+
+the complete exact-sign parent
+
+```math
+P=\begin{pmatrix}A&W\\W&C\end{pmatrix}
+```
+
+satisfies `Q(P)<=9k^(3/2)/2`, yet a state off one planted Boolean pullback
+relation beats its planted relation state by at least `k^(3/2)/8`.
+
+#### Proof
+
+Equation (21.196) follows by expanding `||y-v_x||_2^2`; coordinatewise
+optimization and `||W^Tx||_2^2=k^2` give (21.197).  Completing the square in
+the distance variable proves (21.198).
+
+For the obstruction, write `q=sqrt(k)` and take the self-dual bent vector
+
+```math
+x_0(u,v)=(-1)^(u\mathbin\cdot v),\qquad Wx_0=qx_0.
+```
+
+If `x_S` flips `d<q/2` coordinates of `x_0`, its bridge optimizer remains
+`x_0` and its exact bridge deficit is `2dq`.  Put
+`d=floor(q/4)`, prescribe the old edges across `(S,S^c)` as
+`-x_0(i)x_0(j)`, and fill both principal shores by signings of cap at most
+twice their order to the power `3/2`.  Then
+
+```math
+H_A(x_S)-H_A(x_0)=2d(k-d),
+```
+
+while `Q(A)<=3k^(3/2)`.  Take `C` to be the hollow part of `W`.  Its trace
+is zero, so on Boolean states `H_C(y)=y^TWy/2` and
+`Q(C)=k^(3/2)/2`.  The two compared parent states use the same new spin;
+hence
+
+```math
+H_P(x_S,x_0)-H_P(x_0,x_0)
+=2d(k-d-q)\ge k^(3/2)/8.                           \tag{21.200}
+```
+
+Triangle inequality gives the stated parent cap. `square`
+
+The last assertion is deliberately about **planted-witness stability**.  It
+does not assert that every global optimizer lies outside the entire Hadamard
+relation set.  The complete proof, verifier, and independent audit are in
+[`drafts/hadamard_bridge_synchronization.md`](drafts/hadamard_bridge_synchronization.md),
+[`experiments/verify_hadamard_bridge_synchronization.py`](experiments/verify_hadamard_bridge_synchronization.py),
+and
+[`drafts/hadamard_bridge_synchronization_independent_audit.md`](drafts/hadamard_bridge_synchronization_independent_audit.md).
+
+### Theorem 21.36 (a bounded-cap exact-sign contextual metric compiler)
+
+There is an absolute `gamma>0` and, for every sufficiently large
+`n=q^2` with `q` a power of two, a family `mathcal S subset {+-1}^n` of
+size at least `exp(gamma n)` with the following properties.
+
+Let `mathcal H` be the regular symmetric Walsh signing satisfying
+
+```math
+\mathcal H^2=nI,\qquad \mathcal H\mathbf1=q\mathbf1,
+\qquad \operatorname{tr}\mathcal H=0,             \tag{21.201}
+```
+
+put `A=mathcal H-diag(mathcal H)` and
+`A_s=D_sAD_s`.  Every child is an exact hollow signing with
+
+```math
+Q(A_s)={1\over2}n^(3/2).                           \tag{21.202}
+```
+
+For every declared query `t in mathcal S`, append `q=sqrt(n)` spins, use
+the exact cross block `t1_q^T`, and put a public positive clique on the new
+shore.  If `F_s(t)` is the absolute cap of this order-`N=n+sqrt(n)` parent,
+then
+
+```math
+F_s(s)={3\over2}n^(3/2)+{q\choose2},               \tag{21.203}
+```
+
+whereas, for `s!=t`,
+
+```math
+F_s(t)\le{11\over8}n^(3/2)+{q\choose2}.           \tag{21.204}
+```
+
+All compiled parents therefore have cap `O(N^(3/2))`.  If
+
+```math
+d_0(s,t)=Q(A_s-A_t),
+```
+
+which is the projective contextual metric of the same-support language
+`r -> Q(A_s-A_r)`, and
+
+```math
+d_C(s,t)={1\over2}\operatorname{osc}_{r\in\mathcal S}
+               (F_s(r)-F_t(r)),                   \tag{21.205}
+```
+
+then
+
+```math
+{1\over8}d_0(s,t)\le d_C(s,t)\le d_0(s,t).        \tag{21.206}
+```
+
+Thus exact signs, disjoint edge ownership, linear total order, and bounded
+parent cap are compatible with constant-distortion compilation of a
+linear-rate contextual metric.  The optimizer is allowed to depend jointly
+on the child and query.
+
+#### Proof
+
+A Rademacher Hanson--Wright bound gives
+
+```math
+\Pr\{|w^T\mathcal Hw|>qn/4\}\le2e^(-c n).
+```
+
+A union bound selects `exp(gamma n)` switches such that every distinct pair
+`s,t`, with `w=s odot t`, obeys
+
+```math
+|w^T\mathcal Hw|\le qn/4.                          \tag{21.207}
+```
+
+After switching the old spin by `s`, omit the new clique and split the
+absolute cap into its two signs.  The two channels are
+
+```math
+R_\pm(w)=\max_u\left\{
+ \mathord\pm{1\over2}u^T\mathcal Hu+qw^Tu\right\}. \tag{21.208}
+```
+
+Because `mathcal H^2=q^2I`, completing squares with
+`2qI minus-or-plus mathcal H` gives
+
+```math
+R_+(w)\le qn\left(1+{2+\rho(w)\over6}\right),
+\quad
+R_-(w)\le qn\left(1+{2-\rho(w)\over6}\right),     \tag{21.209}
+```
+
+where `rho(w)=w^T mathcal H w/(qn)`.  Equation (21.207) gives the
+`11/8` off-diagonal ceiling.  On the diagonal, `u=1` and aligned new spins
+attain the sum of the three separate caps, proving (21.203).
+
+At query `s`, the response difference between child `s` and any other child
+is at least `n^(3/2)/8`; at query `t` its sign reverses.  Hence
+`d_C>=n^(3/2)/8`.  The cap is one-Lipschitz in the child Hamiltonian, so
+`d_C<=d_0`, while the triangle inequality gives `d_0<=n^(3/2)`.  This proves
+(21.206). `square`
+
+The `sqrt(n)` query shore is order-optimal within repeated rank-one query
+bridges.  With only `m` repeated columns, changing a query changes the
+projective profile by at most `2nm` when the auxiliary block is public, and
+at most `2nm+m(m-1)` if that block is query-owned.  Thus a fixed
+`n^(3/2)` response gap forces `m=Omega(sqrt(n))`.
+
+This is a one-layer metric embedding, not yet a reusable compositional
+congruence or a coordinatewise reconstruction of the old response table.
+Its scope is one linear-rate switching subcode of a regular-Hadamard family,
+not arbitrary near-minimizers.  The complete proof, verifier, and audit are
+in
+[`drafts/bounded_cap_contextual_metric_compiler.md`](drafts/bounded_cap_contextual_metric_compiler.md),
+[`experiments/verify_bounded_cap_contextual_metric_compiler.py`](experiments/verify_bounded_cap_contextual_metric_compiler.py),
+and
+[`drafts/bounded_cap_contextual_metric_compiler_independent_audit.md`](drafts/bounded_cap_contextual_metric_compiler_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
@@ -11998,3 +12301,136 @@ cohomology or freshly rebroadcast.  The full proof and audit are in
 [`drafts/dynamic_broadcast_incidence_law.md`](drafts/dynamic_broadcast_incidence_law.md)
 and
 [`drafts/dynamic_broadcast_incidence_law_independent_audit.md`](drafts/dynamic_broadcast_incidence_law_independent_audit.md).
+
+## 35. Extremal witness transversals and orbit-query rates
+
+### Theorem 35.1 (query complexity is reciprocal extremal mass)
+
+Let a finite group `G` act on itself by translation, let `f:G->R`, and put
+
+```math
+Q=\max_x|f(x)|,
+\qquad
+W_\alpha=\{x:|f(x)|\ge\alpha Q\},
+\qquad p_\alpha={|W_\alpha|\over|G|}.               \tag{35.1}
+```
+
+A coordinate library `X subset G` sees an `alpha`-extremal witness in every
+translate `f_s(x)=f(sx)` if and only if it meets every translate of
+`W_alpha`.  Its minimum size `L_alpha` satisfies
+
+```math
+{1\over p_\alpha}\le L_\alpha
+\le\left\lceil{\log|G|+1\over p_\alpha}\right\rceil.
+                                                               \tag{35.2}
+```
+
+This bound is exponentially sharp.  Let `k=s^2`, partition the Boolean cube
+into `s` blocks of size `s`, and put coefficient two within each block and
+zero between blocks.  The resulting quadratic `f=H_D` has
+
+```math
+||D||_(2->2)<2\sqrt k,
+\qquad Q=k^(3/2)-k,                                 \tag{35.3}
+```
+
+but, for every fixed `0<alpha<1`,
+
+```math
+p_\alpha\le\exp\{-\alpha k/4+O(\sqrt k)\}.         \tag{35.4}
+```
+
+Hence every coordinate-pin library for its full switching orbit has size
+
+```math
+\exp\{\alpha k/4-O(\sqrt k)\}.                     \tag{35.5}
+```
+
+Moreover `D=A-A'` for two exact hollow signings with
+`||A||+||A'||=O(sqrt k)`, and switching preserves these bounds.
+
+#### Proof
+
+Meeting all translates is equivalent to the product-set identity
+`G=W_alpha X`, which gives the lower bound in (35.2).  Independent uniform
+sampling misses a fixed translate with probability at most
+`exp(-p_alpha|X|)`; union bound over `G` gives the upper bound.
+
+Writing `M_b` for the block magnetizations gives
+
+```math
+H_D(x)=\sum_(b=1)^s(M_b^2-s).                       \tag{35.6}
+```
+
+For `lambda=1/4`, Gaussian integration and
+`cosh t<=exp(t^2/2)` bound
+`E exp(lambda M_b^2/s)` uniformly.  Chernoff over the independent blocks
+proves (35.4).  To realize exact flat signings, prescribe opposite signs on
+within-block edges and one common random sign completion between blocks;
+a standard net bound gives completion norm `O(s)`. `square`
+
+On the Hamming-distance landscape, (35.2) is exactly the sphere-covering
+law: an `alpha`-extremal library is, after antipodal complementation, a
+binary covering code of radius `(1-alpha)k`.  Thus the same state law applies
+outside quadratic forms.
+
+### Theorem 35.2 (product-orbit query rate is the Cramer rate)
+
+Let `G_0` be a finite abelian group of order `q`, let nonconstant
+`f:G_0->R`, and define
+
+```math
+F_n(x)=\sum_(i=1)^n f(x_i).                         \tag{35.7}
+```
+
+For `Ef<a<max f`, let `L_n(a)` be the smallest coordinate library which,
+for every translate `s`, contains an `x` with `F_n(s+x)>=an`.  Define
+
+```math
+\Lambda_f(\theta)=
+ \log\left({1\over q}\sum_(z\in G_0)e^(\theta f(z))\right),
+\qquad
+I_f(a)=\sup_(\theta\ge0)\{\theta a-\Lambda_f(\theta)\}.
+                                                               \tag{35.8}
+```
+
+Then
+
+```math
+\boxed{\lim_(n->infinity){1\over n}\log L_n(a)=I_f(a).}
+                                                               \tag{35.9}
+```
+
+For heterogeneous products with asymptotic type proportion `lambda`, the
+state composes by
+
+```math
+\Lambda_\lambda
+=\lambda\Lambda_f+(1-\lambda)\Lambda_g,
+\qquad
+I_\lambda=\Lambda_\lambda^*.                       \tag{35.10}
+```
+
+The corresponding minimum query libraries have exponential rate
+`I_lambda(a)`.
+
+#### Proof
+
+Theorem 35.1 sandwiches `L_n(a)` between the reciprocal upper-tail
+probability and that quantity times `n log q+1`.  Chernoff gives one
+large-deviation inequality.  For the reverse inequality, group equal values
+of `f`; a type `nu` has probability
+`exp(-nD(nu||mu)+O(log n))`.  Minimization subject to `E_nu f>=a` and
+finite-dimensional entropy duality give exactly (35.8).  The polynomial
+factor disappears on the logarithmic scale.  The heterogeneous statement
+uses the same type proof and additivity of log moments. `square`
+
+The theorem is an exact fusion of contextual response complexity and
+classical large deviations, not a claim that one-point energy histograms
+survive arbitrary interaction.  Cross-block overlap-dependent couplings are
+its sharp falsifier.  Full proofs, computations, and independent audit are
+in
+[`drafts/extremal_witness_transversals.md`](drafts/extremal_witness_transversals.md),
+[`drafts/orbit_query_large_deviations.md`](drafts/orbit_query_large_deviations.md),
+and
+[`drafts/extremal_witness_ld_independent_audit.md`](drafts/extremal_witness_ld_independent_audit.md).

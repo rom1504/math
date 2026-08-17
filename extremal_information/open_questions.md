@@ -377,6 +377,18 @@ alternating-form query subalgebra or must let interacting auxiliaries and the
 child energy choose a joint witness; transporting the full pair algebra and
 locking it afterward is no longer live.
 
+Bounded cap by itself does not force child-dependent switching.  A fixed
+one-spin future has a common optimizer across `2^(Theta(k^2))` bounded-cap
+children.  The response-sensitive theorem is a dichotomy: the flat Gram
+packing needs an `Omega(k)` approximate witness dictionary, realized either
+as common query pins or child-dependent active states.  Coordinate pins can
+be much more expensive still.  For a switched spectrally flat exact-sign
+pair with block-clique contrast, every fixed-fraction extremal pin library
+has size `exp(Omega(k))`; reciprocal extremal mass gives the sharp exponent
+up to a polynomial factor.  The unresolved question is whether one bounded-
+cap **nonlinear** context can aggregate those rare coordinate witnesses
+without reconstructing the full absolute landscape.
+
 Interaction-mass deletion already gives an
 `O(t/eta)` path carrier and an architecture-specific quadratic dense ceiling;
 the next approximate theorem should beat or match that law without invoking
@@ -597,3 +609,31 @@ and integer recovery.
 **Stop condition:** arbitrary functional amplitudes, the entire descriptor
 measure, or a separate postulated asymptotic for every query are not strict
 state reductions.  The quartic `n^(3/4)` example is mandatory.
+
+## 12. Reusability of bounded-cap anti-pin compilers
+
+The regular-Hadamard anti-pin theorem gives an `exp(Omega(n))` family of
+exact cap-`n^(3/2)/2` children and exact order-`n+sqrt(n)` contexts whose
+projective response metric has constant distortion.  The context shore is
+asymptotically minimal within its repeated-rank-one architecture.
+
+The next question is whether this one-layer quotient survives interaction.
+Append two or more `sqrt(n)` query shores, with public exact-sign interactions
+among them, and determine the smallest state controlling the resulting cap.
+Natural candidates are pairwise switch products and their Hadamard Rayleigh
+coordinates, but they must be derived rather than assumed.
+
+**Success:** either a fixed-depth algebra whose state has polynomial
+description in the number of ports and `O(n)` rather than landscape-size
+information, with `O(n^(3/2))` parent cap, or a reusable approximate
+congruence with subleading cumulative defect.
+
+**Scalable falsifier:** two children indistinguishable by the proposed
+one-port state, followed by a fixed two-stage exact-sign continuation that
+separates their normalized responses by a positive constant.  Merely
+showing that one planted Walsh witness moves is already covered by the
+Hadamard synchronization obstruction.
+
+**Stop condition:** storing the complete multi-query response table, the
+entire Boolean optimizer language, or one fresh `n`-bit state for every
+composition node is not closure.

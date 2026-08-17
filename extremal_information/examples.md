@@ -2332,3 +2332,63 @@ spectrally bounded sign child, all its columns are forced to equal that
 target up to sign, giving bridge norm and parent cap exactly at quadratic
 scale.  Full character preservation plus dominant locking is therefore not
 the missing joint-cancellation mechanism.
+
+## Example 113: bounded cap does not force optimizer switching
+
+Every switching orbit of complete signings has a representative maximized at
+one prescribed Boolean state.  More than half the orbits have cap
+`O(k^(3/2))`, so one fixed single-spin future has a common old optimizer for
+`2^(binom(k,2)-k)` bounded-cap children.  Fibre cardinality is therefore the
+wrong switching invariant.
+
+Response separation repairs the statement.  One reusable witness has only
+constantly many target-scale response bins; an exponential bounded-cap
+response packing needs an `Omega(k)` approximate old-witness dictionary.
+The cost may appear either as many common query pins or as child-dependent
+optimizer switching.  Bounded cap alone cannot decide which.
+
+## Example 114: extremal mass is an operational query rate
+
+For a translation orbit, a coordinate library must hit every translate of
+one extremal witness set.  Its minimum size lies between the reciprocal
+witness density and that number times the logarithm of the ambient group.
+Under repeated product composition, the logarithmic query rate is exactly
+the Cramer large-deviation rate of the threshold event.
+
+This recovers binary covering-code rates from contextual response alone.  It
+also shows that spectrally flat exact-sign pairs can require exponentially
+many coordinate pins: switched block-clique contrasts have target-scale
+maximum but extremal density `exp(-Theta(k))`.  Linear-order compilation and
+small query language are independent resources.
+
+## Example 115: an orthogonal bridge synchronizes quadratically but not robustly
+
+For an orthogonal sign bridge `W`, the loss from a pair `(x,y)` is exactly
+`sqrt(k)||y-W^Tx/sqrt(k)||_2^2/2`.  This turns a vague spectral heuristic
+into an exact synchronization penalty and yields a positive Lipschitz
+criterion for sufficiently smooth futures.
+
+The criterion is sharp at the relevant scale.  A self-dual Walsh bent state
+survives `Theta(sqrt(k))` coordinate flips with only linear bridge cost per
+flip, while one bounded-cap exact-sign child can gain quadratically across
+the same cut.  The planted relation is then beaten by `Theta(k^(3/2))` inside
+an exact parent whose own cap remains `O(k^(3/2))`.  Spectral flatness and one
+perfect pullback witness therefore do not imply reusable synchronization.
+
+## Example 116: a low-cap anti-pin compiles an extensive contextual metric
+
+A regular symmetric Walsh signing has a linear-rate switching subcode whose
+pair products all have small two-sided Rayleigh quotient.  A query `t`
+appends only `sqrt(n)` spins through the repeated sign column `t1^T`, with a
+public clique on the small shore.  Its own child receives response
+`3n^(3/2)/2+O(n)`, while every other code child receives at most
+`11n^(3/2)/8+O(n)`.
+
+All parents are complete signings of order `n+sqrt(n)` and cap
+`O(n^(3/2))`; the resulting projective contextual metric embeds the original
+same-support metric with distortion at most eight.  This is the first
+bounded-cap exact-disjoint positive compiler in the bridge ladder.  It is an
+anti-pin rather than a universal pin: the optimizer may switch with both
+child and query.  Its `sqrt(n)` query shore is order-optimal among repeated
+rank-one query bridges, but one-step metric preservation does not yet give a
+reusable compositional congruence.
