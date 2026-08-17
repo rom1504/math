@@ -78,3 +78,22 @@ factor two in the cross energy.  At multiplicity
 `O(N_j^(3/2))` and every internal exact-sign shore contributes `O(N_jj)`.
 The no-go applies to every internal completion of this direct unbalanced
 lift, but not to a redesigned balanced or cancelled cross representation.
+
+## Microcanonical compiler
+
+Theorem 21.66 / DS.8 passes.  For a row conditioned to have sum `g_i` and
+an endpoint of coordinate sum `c`, the exact variance is
+
+```math
+\left(1-(g_i/s)^2\right){s^2-c^2\over s-1}\le2s.
+```
+
+The stated Jensen bound follows.  Hoeffding at deviation
+`C s^(3/2)sqrt(N)` has tail `exp(-2C^2s)`, so a union bound over `2^s`
+endpoints succeeds for an absolute `C`.  For `g=m_jh_j`, magnitude and
+parity are automatic; the two excess terms are respectively
+`N_j^(5/4)j^(1/4)` and `N_j^(5/4)j^(3/4)`, both `o(N_j^(3/2))`.
+
+The theorem controls the whole cross-response roof and realizes the target
+field exactly.  It does not prove endpoint stability or preserve the parent
+gap after maximizing over the endpoint.

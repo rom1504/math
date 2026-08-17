@@ -2857,3 +2857,20 @@ to the sublinear shore can cancel that scale.
 Thus the direct unlabelled parent is a scalable falsifier, not an open
 candidate.  The remaining compiler problem must enforce a balanced endpoint
 language or avoid free coefficient signs altogether.
+
+## Example 147: microcanonical rows balance the same target field
+
+The blow-up in Example 146 is a presentation defect, not an impossibility of
+exact signs.  Given the target field `g=m_jh_j`, choose each row of a new
+`N_j by s_j` sign bridge uniformly subject to its target-endpoint sum being
+`g_i`.  One endpoint realizes `g` exactly, while Theorem 21.66 gives
+
+```math
+\max_eta||B_j eta||_1
+\le||g||_1+N_j\sqrt{2s_j}+Cs_j^{3/2}\sqrt{N_j}
+=||g||_1+o(N_j^{3/2}).
+```
+
+This is the first balanced physical compiler for the sparse-flip field.  It
+does not yet preserve the parent response gap: another near-maximal endpoint
+may couple to a repairing child response.

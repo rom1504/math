@@ -2034,3 +2034,16 @@ labelled field has target-scale response, but another free endpoint has a
 linear-in-arity mean and creates super-target energy.  A contextual state is
 physically reusable only if its whole realizable query language—not just the
 desired codeword—is scale controlled.
+
+## 107. Rowwise microcanonical realization separates scale control from endpoint stability
+
+An integral target field can be realized exactly as one endpoint of a sign
+matrix while the maximum over **all** endpoints exceeds its `l_1` norm by
+only a sampling term.  Conditioning each row on its target sum and paying a
+union bound gives the universal excess
+`O(Nsqrt(s)+s^(3/2)sqrt(N))` for an `N by s` interface.
+
+Thus a biased repeated-column presentation can fail even when the underlying
+labelled response has a balanced physical realization.  After scale control
+is repaired, the genuinely dynamic question is stability: whether other
+near-exposed endpoints carry compatible child responses.

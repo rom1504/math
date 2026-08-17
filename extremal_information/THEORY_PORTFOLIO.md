@@ -90,9 +90,10 @@ at a fixed labelled field, a spherical relaxation proves a normalized full
 Boolean response gap greater than `0.0146` for explicit parameters.  Decide
 whether a **balanced-endpoint** exact-sign compiler can expose this context.
 The naive free shore is rigorously dead: its all-positive endpoint has
-`Omega(N^(3/2)sqrt j)` cap.  Either keep every accessible endpoint at target
-scale while retaining the labelled gap, or prove that every sublinear-shore
-compiler of this response admits a super-target biased endpoint.
+`Omega(N^(3/2)sqrt j)` cap.  A rowwise microcanonical compiler now keeps the
+entire cross response within `o(N^(3/2))` of the target norm.  The selected
+problem is endpoint stability: do all near-maximal endpoint fields inherit
+the sparse-flip damage, or can one repair the full parent?
 
 ## Portfolio ranking
 
@@ -258,9 +259,9 @@ compiler of this response admits a super-target biased endpoint.
   sign certificate obstruction reset the counter.  They are structured
   growing-interface results, not a cross-order recurrence for minima.
 - **Stopping condition:** two checkpoints that neither realize the labelled
-  response collision through a balanced endpoint language nor prove a
-  scalable endpoint-bias impossibility theorem, with no new contextual lower
-  bound.
+  response collision through the microcanonical endpoint language nor
+  produce a scalable near-maximal repairing endpoint, with no new contextual
+  lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear
   number of singular values above every fixed `sqrt(n)` threshold. Thus the
   SVD interface itself cannot remain subextensive; any escape must be a

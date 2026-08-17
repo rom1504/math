@@ -84,8 +84,10 @@ and flipped full responses remain separated by a constant times `N^(3/2)`.
 Free endpoint spins in an ordinary completed parent may still switch to a
 different labelled channel.  In fact the direct lift is now ruled out: its
 all-positive endpoint creates `Omega(N^(3/2)sqrt(log N))` energy.  A parent
-compiler must enforce a balanced endpoint language or use a different
-interface.  No claim about `M_n` follows.
+compiler must enforce a balanced endpoint language.  A rowwise
+microcanonical sign compiler now does so with only `o(N^(3/2))` excess cross
+cap; whether another near-maximal endpoint repairs the parent is the next
+stability question.  No claim about `M_n` follows.
 
 The first investigation gave four precise conclusions.
 

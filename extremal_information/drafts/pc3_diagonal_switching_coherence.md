@@ -737,6 +737,32 @@ unlabelled compiler must restrict or balance the accessible endpoint words,
 or encode the labelled query by a different interface; a subleading internal
 shore cannot repair this construction.
 
+### Proposition DS.8 (a rowwise microcanonical compiler removes endpoint bias)
+
+The DS.7 obstruction is specific to identical repeated columns.  If
+`g in Z^N`, `|g_i|<=s`, and `g_i=s (mod 2)`, there is
+`B in {+-1}^{N times s}` with
+
+```math
+B1=g,
+\qquad
+\max_{eta\in\{+-1\}^s}||B eta||_1
+\le||g||_1+\sqrt{2s}\,N+C s^{3/2}\sqrt N.      \tag{DS.64}
+```
+
+Sample each row uniformly subject to its sum being `g_i`.  For a fixed
+`eta`, sampling-without-replacement covariance gives variance at most `2s`
+and mean `g_i(1^Teta)/s`.  Jensen bounds the expected `l_1` response by
+`||g||_1+sqrt(2s)N`; Hoeffding and a union bound over all `2^s` endpoints
+cost only `Cs^(3/2)sqrt N`.
+
+For `g=m_jh_j` and `s=m_j(2j+1)=Theta(sqrt(n_jj))`, parity is automatic and
+both error terms in (DS.64) are
+`o(n_j^(3/2))`.  Thus balanced exact-sign compilation at target cap scale
+is possible.  What remains is **endpoint stability**: prove that every
+near-maximal endpoint has essentially the same damaged child response, or
+construct a competitor that repairs the parent maximum.
+
 For reference, the exact finite maxima in (DS.36) for `j=2,...,10` are
 
 ```text

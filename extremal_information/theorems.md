@@ -12779,6 +12779,55 @@ completion of this direct unconstrained-shore construction has cap
 restrict endpoint words, or use a different interface; subleading shore
 calibration cannot suffice.
 
+### Theorem 21.66 (rowwise microcanonical compilation balances every endpoint)
+
+Let `g in Z^N`, let `s>=2`, and suppose `|g_i|<=s` and
+`g_i=s (mod 2)` for every row.  There is an exact-sign matrix
+`B in {+-1}^{N times s}` and a target endpoint `eta_* in {+-1}^s` such that
+
+```math
+B eta_*=g,
+\qquad
+||B||_(infinity to 1):=\max_eta||B eta||_1
+\le||g||_1+\sqrt{2s}\,N+C s^{3/2}\sqrt N.      \tag{21.386}
+```
+
+Here `C` is absolute.  To prove this, switch columns so `eta_*=1` and sample
+row `i` uniformly among sign vectors of sum `g_i`.  For a fixed endpoint
+`eta`, with `c=1^Teta`, exchangeability and sampling without replacement give
+
+```math
+\mathbb E(b_i^Teta)={g_ic\over s},
+\qquad \mathop{\rm Var}(b_i^Teta)\le2s.          \tag{21.387}
+```
+
+Thus
+
+```math
+\sum_i\mathbb E|b_i^Teta|
+\le {|c|\over s}||g||_1+\sqrt{2s}\,N
+\le||g||_1+\sqrt{2s}\,N.                      \tag{21.388}
+```
+
+The `N` absolute row responses are independent and lie in `[0,s]`.
+Hoeffding at deviation `C s sqrt(Ns)` followed by a union bound over the
+`2^s` endpoints proves that one sample satisfies (21.386) simultaneously.
+
+For the PC.3 target `g_j=m_jh_j`, the parity condition is automatic because
+`h_j` is a sum of `2j+1` signs in every row.  With
+`s_j=m_j(2j+1)=Theta(sqrt(N_jj))`,
+
+```math
+N_j\sqrt{s_j}+s_j^{3/2}\sqrt{N_j}=o(N_j^{3/2}). \tag{21.389}
+```
+
+Hence a balanced exact-sign cross block can realize the labelled field with
+global cross cap `||g_j||_1+o(N_j^(3/2))`.  This repairs the endpoint-bias
+failure of the repeated-column lift.  It does **not** yet preserve the
+response gap after maximizing the full parent: another endpoint may attain
+nearly the same cross norm with a different child response.  Endpoint
+stability is the remaining obligation.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

@@ -81,11 +81,16 @@ The direct free-shore realization is also closed: its all-positive endpoint
 has field `l_1` norm `Omega(N_jj)` and hence super-target
 `Omega(N_j^(3/2)sqrt j)` cap.
 
-**Next theorem:** construct a balanced-endpoint exact-sign compiler whose
-entire free endpoint language stays at the target scale and retains the
-labelled separation, or prove that every sublinear-shore compiler exposing
-this field necessarily admits a super-target biased endpoint.  Do not reopen
-the closed child-spin or naive free-shore constructions.
+A rowwise microcanonical compiler repairs that scale failure.  It realizes
+any parity-compatible target field `g` exactly and satisfies
+`||B||_(infinity to 1)<=||g||_1+Nsqrt(2s)+Cs^(3/2)sqrt N`; at
+`s=Theta(sqrt(Nj))` the excess is `o(N^(3/2))`.
+
+**Next theorem:** endpoint stability for this balanced compiler.  Prove that
+every endpoint with cross response within `o(N^(3/2))` of the target induces
+essentially the same damaged child field, or construct a near-maximal
+endpoint that repairs the full parent.  Do not reopen the closed child-spin
+or naive repeated-shore constructions.
 
 ## 2. Renormalized rare-event state — keep warm, B+
 

@@ -822,9 +822,14 @@ The realization question is now sharper still.  The direct free shore is
 falsified: its all-positive endpoint has field norm at least
 `N_j(1+j/2)`, hence cap `Omega(N_j^(3/2)sqrt j)` at this multiplicity.  A
 shore-only completion cannot remove that bias because its entire energy is
-`o(N_j^(3/2))`.  Seek a balanced-endpoint compiler whose whole accessible
-language remains at target scale, or prove that every sublinear compiler
-exposing the periodic field necessarily admits such a super-target endpoint.
+`o(N_j^(3/2))`.  Theorem 21.66 now gives a balanced rowwise microcanonical
+compiler with global cross cap `||m_jh_j||_1+o(N_j^(3/2))`.
+
+The remaining question is endpoint stability.  Must every endpoint whose
+cross response is within `o(N_j^(3/2))` of the target generate essentially
+the same damaged child field, or can a near-maximal endpoint repair the full
+parent response?  This is a finite `2^{s_j}` geometry problem with a random
+microcanonical presentation, not another child-spin optimization.
 
 Two natural searches are already closed.  The PC.3 pole-conjugation twirl
 has a depth-independent gap, so every diagonal switching has selector defect

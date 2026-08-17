@@ -164,7 +164,11 @@ Only the campaign's principal theorem-level results are listed here.
     bound handles both quadratic signs and upgrades the example to a full
     labelled-response collision; for `kappa=1/2,lambda=1/10` its normalized
     gap is greater than `0.0146`.  Free endpoint switching in an ordinary
-    appended parent remains outside this theorem.
+    appended parent remains outside this theorem.  The naive repeated shore
+    blows up by `sqrt j`, but a rowwise microcanonical sign compiler realizes
+    the target field exactly with global cross cap only `o(N^(3/2))` above
+    its norm.  Endpoint stability, not endpoint-scale control, is the final
+    open step.
 12. **Factorized phase law.**  For independent pole factors, the maximum of
     the entire endpoint histogram is within `sqrt(sum q_t^2)/p` of the
     scalar first-moment phase.  Together with relative synchronization this
@@ -337,7 +341,7 @@ demonstrably-easier standard.
 
 ## 8. Single next three-hour campaign
 
-**Balanced-endpoint realization for sparse-flip PC.3.**  Theorems
+**Endpoint stability for the microcanonical PC.3 compiler.**  Theorems
 21.62--21.64 have resolved both the prescribed-certificate question and the
 full child-spin response under one labelled field.  Let `A'_j` be the
 sparse-flip hollow child, let `W_j` be the repeated PC.3 port matrix, let
@@ -355,11 +359,19 @@ the all-positive free endpoint has field at least `N_j(1+j/2)`, creating
 `Omega(N_j^(3/2)sqrt j)` cap.  The direct free-shore lift is therefore a
 scalable no-go, not an open candidate.
 
-Prove one of two genuinely discriminating results: construct a sublinear
-exact-sign compiler whose **entire accessible endpoint language** is
-balanced at `O(N_jsqrt j)` field scale and which retains the labelled
-response gap; or prove that every such compiler exposing the periodic field
-necessarily admits a super-target biased endpoint.  Keep
+Theorem 21.66 supplies the nontrivial replacement: a rowwise microcanonical
+`N_j by s_j` sign matrix realizes the target field exactly and has
+
+```math
+||B_j||_(infinity to 1)
+\le||m_jh_j||_1+N_j\sqrt{2s_j}+Cs_j^{3/2}\sqrt{N_j}
+=||m_jh_j||_1+o(N_j^{3/2}).
+```
+
+Determine whether this compiler preserves the parent gap.  Prove that every
+endpoint attaining cross response within `o(N_j^(3/2))` of the target has a
+child field close enough to inherit Theorem 21.64, or exhibit a near-maximal
+endpoint whose child response repairs the full parent.  Keep
 `(r_NN)/2-Q(A'_j)` separate throughout and do not reopen the now-closed
 child-spin maximization, naive free shore, diagonal switching, or fixed-seed
 monomial dilution.
