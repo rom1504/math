@@ -2536,3 +2536,18 @@ coefficient bits up to global sign.  Bare rectangle holonomy and anchored
 relative alignment are different resources.  Future lower bounds must expose
 gauge-invariant bridge information, not count a label that the optimizer can
 transport away.
+
+## 140. A finite disorder-temperature phase is controlled by lower-tail speed
+
+For a nonnegative extensive observable converging to its typical density,
+all fixed negative exponential tilts remain on that typical branch exactly
+when every fixed lower deviation is superexponentially rare at the extensive
+speed.  A speed-`n` lower-tail rate instead creates a finite critical tilt,
+whose value is the least secant slope of the rate function toward its zero.
+
+This separates two statements which bounded differences cannot bridge.
+Linear relative entropy is enough in principle to buy a linear pressure
+improvement, but a transport inequality supplies only a finite initial wall;
+it does not decide whether any such improving law exists.  For dense bridge
+composition, the operative state is therefore a gauge-invariant disorder
+lower-tail/support edge, not another scalar spin-tail constant.

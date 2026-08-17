@@ -3395,3 +3395,23 @@ all bridges includes this transport bijectively, so all members of the child
 switching orbit have exactly the same optimized response.  This tiny example
 is the scope boundary of the extensive public-bank theorem, not a
 counterexample to it.
+
+## Example 174: conference bridges expose an exact disorder phase boundary
+
+For two Paley conference children and a uniform exact-sign bridge, changing
+one bridge bit changes the normalized log partition by at most
+`2beta/sqrt(2r)`.  Hence every fixed disorder tilt obeys
+
+```math
+{\mathcal R^E_{\lambda,r}-T_r\over r}
+\ge\gamma(\beta)-{\lambda\beta^2\over4}+o(1).
+```
+
+The positive conference wall therefore persists on the explicit interval
+`lambda<4gamma(beta)/beta^2`, even after conditioning to parents with the
+uniform bounded-cap spin tail.  Extending the annealed formula to every
+fixed tilt is neither a matter of optimizing this constant nor of sampling
+more bridges: it is equivalent to proving that every fixed lower pressure
+deviation has probability `exp(-omega(r))` with exponent superlinear in
+`r`.  The isolated algebraic double has quadratic entropy and does not
+decide whether a larger linear-entropy basin exists.

@@ -17013,3 +17013,68 @@ Proof and independent audit are in
 [`drafts/thin_tail_entropy_bridge_no_go.md`](drafts/thin_tail_entropy_bridge_no_go.md)
 and
 [`drafts/thin_tail_entropy_bridge_no_go_independent_audit.md`](drafts/thin_tail_entropy_bridge_no_go_independent_audit.md).
+
+### Theorem 37.5 (the bridge negative-moment phase is exactly a lower-tail question)
+
+In the notation and range of Theorem 37.4, let
+
+```math
+\mathcal R^E_{\lambda,r}
+=-{1\over\lambda}\log
+ \mathbb E\!\left[e^{-\lambda L_{\epsilon,B}}\mid\mathcal E_r\right],
+\qquad
+T_r=2\log\overline Z_r(A_r,\beta/\sqrt r).
+```
+
+Then every fixed `lambda>0` satisfies the explicit global bound
+
+```math
+\boxed{
+\liminf_{r\to\infty}{\mathcal R^E_{\lambda,r}-T_r\over r}
+\ge\gamma(\beta)-{\lambda\beta^2\over4}.}              \tag{37.16}
+```
+
+Thus the conference defect remains strictly positive throughout
+`0<lambda<4gamma(beta)/beta^2`, even after thin-tail conditioning.  The
+constant follows from bridge-bit sensitivity `2beta/sqrt(2r)` and the
+bounded-difference exponential lemma.  The entropy variational form gives
+the matching limit of this method: a bridge law of relative-entropy density
+`d` can improve the mean pressure by at most `beta sqrt(d)`, so optimizing
+that transport estimate yields exactly `-lambda beta^2/4`.
+
+More generally, if `X_r>=0` and `X_r/r -> h>0` in probability, then
+
+```math
+\boxed{
+\forall\lambda>0:\quad
+-{1\over\lambda r}\log\mathbb E e^{-\lambda X_r}\to h}
+```
+
+holds if and only if, for every `a<h`,
+
+```math
+\boxed{
+{1\over r}\log\Pr\{X_r\le ar\}\longrightarrow-\infty.} \tag{37.17}
+```
+
+Applied to conference bridge pressure, (37.17) is precisely the assertion
+that every fixed lower pressure deviation is superexponentially rare at
+speed `r`.  Equivalently, every fixed-order reverse Renyi divergence in the
+exact noisy-output identity is `o(r)`.  If a speed-`r` lower-tail LDP with
+rate `I_beta` exists, the annealed branch ends at
+
+```math
+\lambda_{\rm ann}(\beta)
+=\inf_{0\le a<h_\beta}{I_\beta(a)\over h_\beta-a}.       \tag{37.18}
+```
+
+The equivalence is an elementary Laplace/tail theorem, not a new LDP.  It
+shows that improving speed-`r` concentration constants cannot prove the
+all-fixed-tilt statement.  The March 2026 Gaussian mixed-spin result controls
+the opposite disorder tail in a different model; no imported theorem in the
+audit supplies (37.17) for the deformed bipartite Rademacher pressure here.
+
+Proof, exact literature comparison, and independent audit are in
+[`drafts/conference_negative_moment_phase_boundary.md`](drafts/conference_negative_moment_phase_boundary.md)
+and
+[`drafts/conference_negative_moment_phase_boundary_independent_audit.md`](drafts/conference_negative_moment_phase_boundary_independent_audit.md).

@@ -1147,3 +1147,23 @@ oriented near-minimal complement, and may nevertheless be diffuse and far
 from every switched clique (Theorem 36.27).  Excluding such a core is not
 needed for the thin-tail theorem and should not be pursued unless a new
 cross-order mechanism makes its interface observable.
+
+## 24. What is the lower-deviation speed of conference bridge pressure?
+
+For the deformed bipartite Rademacher pressure in Theorem 37.5, prove or
+disprove that, for every fixed `delta>0`,
+
+```math
+\Pr\{L_{\epsilon,B}\le(h_\beta-\delta)r\}
+\le\exp\{-r\,\omega_{\beta,\delta}(r)\},
+\qquad \omega_{\beta,\delta}(r)\to\infty.
+```
+
+A speed-`r^2` theorem would match the conjectured lower-tail scale in some
+mean-field spin glasses; an `exp(-O(r))` construction would instead locate
+a finite disorder-temperature transition.  Either result must handle the
+deterministic conference diagonal blocks, Rademacher cross disorder, and
+finite-temperature pressure.  Existing Gaussian upper-deviation results do
+not transfer.  The useful next object should be a concrete joint
+spin--disorder statistic or support edge, not a reformulation of the same
+negative moment.
