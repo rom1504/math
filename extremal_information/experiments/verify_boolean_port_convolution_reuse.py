@@ -77,6 +77,15 @@ def main():
 
         assert convolution(uniform, uniform, points) == uniform
 
+        # CR.14 is an exact supremum identity, not just a bound at the
+        # all-plus query.  Uniform response is constant, and the point-mass
+        # response stays in [0,1] and attains 1.
+        uniform_response = response(uniform, points)
+        constant = next(iter(uniform_response.values()))
+        assert set(uniform_response.values()) == {constant}
+        assert constant <= Fraction(1, 2)
+        assert metric(uniform, delta(points, e), points) == 1 - constant
+
         # The order-two subgroup is idempotent, whereas diagonal sample reuse
         # always squares to the identity.
         a = (1, -1) + (1,) * (p - 2)
@@ -103,6 +112,14 @@ def main():
                     for x in points
                 }
                 assert power == expected
+                # This checks the sharp L-factor response calculation, not
+                # only the underlying Bernoulli parity distribution.
+                assert metric(power, delta(points, e), points) == q * metric(
+                    delta(points, a), delta(points, e), points
+                )
+                assert metric(base, delta(points, e), points) == t * metric(
+                    delta(points, a), delta(points, e), points
+                )
 
         # Exact Doeblin test: lambda=alpha*u+(1-alpha)*point mass.
         alpha = Fraction(1, 3)
@@ -135,6 +152,24 @@ def main():
                 points,
             )
             assert enumerated == iterated
+
+            # Integer row counts multiply under tensor product.  Normalizing
+            # the exact pair-count histogram gives precisely convolution.
+            left_counts = {x: i + 1 for i, x in enumerate(points)}
+            right_counts = {x: 2 * len(points) - i for i, x in enumerate(points)}
+            left_total = sum(left_counts.values())
+            right_total = sum(right_counts.values())
+            pair_counts = {x: 0 for x in points}
+            for x, y in product(points, repeat=2):
+                pair_counts[mul(x, y)] += left_counts[x] * right_counts[y]
+            assert sum(pair_counts.values()) == left_total * right_total
+            left_law = {x: Fraction(left_counts[x], left_total) for x in points}
+            right_law = {x: Fraction(right_counts[x], right_total) for x in points}
+            expected_law = convolution(left_law, right_law, points)
+            assert all(
+                Fraction(pair_counts[x], left_total * right_total) == expected_law[x]
+                for x in points
+            )
 
     print(f"PASS: {checks} exact convolution response identities plus reuse tests")
 
