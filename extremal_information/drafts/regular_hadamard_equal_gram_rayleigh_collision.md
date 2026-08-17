@@ -328,8 +328,9 @@ total-parent units.
 The spherical trust formula is a function of `(G,R)`, so the two systems have
 identical spherical responses in every endpoint channel.  More strongly,
 Theorem EG.2 is an information collision for **any** Boolean decoder from this
-state.  Let a proposed decoder receive `(G,R,n,r,m,p)` and even the common
-public completion `C_j`.  It must return the same number on the two inputs.
+state.  Let a proposed decoder receive `(G,R,n,r,m,p)`, the entire common
+factor `H_j`, and even the common public completion `C_j`.  It must return the
+same number on the two inputs.
 Since their completed caps differ by `(1/8-o(1))rn`, at least one decoding
 error is `(1/16-o(1))rn`.  Therefore no `(G,R)`-only decoder can have uniform
 `o(rn)` Boolean error on this class.  This conclusion is not limited to
