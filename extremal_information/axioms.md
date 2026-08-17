@@ -1681,3 +1681,29 @@ failed form of pointwise simulation.  Its next obligation is reusable
 closure: after another interaction, the response quotient must still be a
 congruence.  A metric embedding without such closure cannot by itself support
 cross-scale recurrence.
+
+## 80. Port features compose by amalgamation, not by product
+
+A finite port family may admit a small Gram or resolvent state, while two
+such states cannot be glued from their separate coordinates alone.  The
+cross pairings are new semantic variables.  If the model supplies no
+synchronization law determining them, every amalgamation enlarges the state
+even though each isolated port remains simple.
+
+This is composition-created information in its most elementary form.  A
+claim of reusable feature closure must specify the cross-data map; taking the
+cartesian product of marginal feature states silently sets precisely the
+unknown part to zero.
+
+## 81. Visibility has an interface-scale threshold
+
+Whether a quotient is valid can depend on how much future system is allowed
+to interact with it.  For quadratic absolute caps, the orientation
+`A` versus `-A` is indistinguishable up to twice the internal cap of the new
+shore.  It is therefore invisible to every continuation of width
+`o(n^(3/4))`, yet a dense shore of comparable order exposes it at the full
+`n^(3/2)` scale.
+
+Approximate contextual equivalence should consequently be indexed not only
+by error but also by a continuation budget.  A state can be a true
+congruence for one scale class and false for another without contradiction.

@@ -10423,6 +10423,198 @@ in
 and
 [`drafts/bounded_cap_contextual_metric_compiler_independent_audit.md`](drafts/bounded_cap_contextual_metric_compiler_independent_audit.md).
 
+### Theorem 21.37 (spectral anti-pins have a finite-port Gram certificate)
+
+Let `H` be a symmetric sign matrix satisfying
+
+```math
+H\mathbf1=r\mathbf1,qquad ||H||\le r,qquad
+\operatorname{tr}H=0,                              \tag{21.210}
+```
+
+and put `A=H-diag(H)`, `A_s=D_sAD_s`.  Then
+`Q(A_s)=rn/2`.  Fix an integer `m` with `2m>r`, and for
+`w in {+-1}^n` define
+
+```math
+\Psi_\sigma(w)={m\over2n}
+ w^T(2mI-\sigma H)^{-1}w,qquad\sigma\in\{+-1\}.   \tag{21.211}
+```
+
+If a switch code `mathcal S` obeys, for distinct `s,t`,
+
+```math
+\max_\sigma\Psi_\sigma(s\odot t)
+\le {r\over2m}-\delta,                             \tag{21.212}
+```
+
+then the repeated-column query `t1_m^T`, completed by a public positive
+clique, gives a bounded-cap exact-sign compiler whose projective response
+metric satisfies
+
+```math
+{\delta m\over r}Q(A_s-A_t)
+\le d_C(s,t)\le Q(A_s-A_t).                        \tag{21.213}
+```
+
+If additionally `H^2=r^2I` and `m=r`, the two features collapse to the one
+Rayleigh coordinate `rho(w)=w^THw/(rn)`:
+
+```math
+\Psi_+(w)={2+\rho(w)\over6},\qquad
+\Psi_-(w)={2-\rho(w)\over6}.                       \tag{21.214}
+```
+
+Thus every two-sided Rayleigh code `|rho|<=theta<1` works with
+`delta=(1-theta)/6`; the Walsh realization is not essential.
+
+For a fixed collection of `ell` repeated ports `w_1,...,w_ell`, the exact
+trust-region spherical relaxation depends only on the two Gram matrices
+
+```math
+G_(ab)={w_a^Tw_b\over n},
+\qquad R_(ab)={w_a^THw_b\over rn}.                 \tag{21.215}
+```
+
+Indeed, for each sign vector `epsilon` and channel `sigma` it equals
+
+```math
+rn\inf_(\alpha>1/2)\left\{
+\alpha+{(m/r)^2(2\alpha\epsilon^TG\epsilon
+                  +\sigma\epsilon^TR\epsilon)
+             \over2(4\alpha^2-1)}\right\}.        \tag{21.216}
+```
+
+At fixed `ell`, this is an `O(ell^2 log n)`-bit one-layer certificate; any
+public exact-sign completion on the `ell m` auxiliary spins adds only
+`O_ell(n)` when `m=Theta(sqrt(n))`.
+
+#### Proof
+
+After switching the old spin, the two absolute channels are
+
+```math
+\max_u\left\{{\sigma\over2}u^THu+mw^Tu\right\}.
+```
+
+Completing the square with `2mI-sigma H` bounds this by
+`mn(1+Psi_sigma(w))`.  The diagonal query attains
+`rn/2+mn` before the public completion, so (21.212) gives opposite gaps
+`delta mn` at the two diagonal coordinates.  Lipschitzness in the old child
+and `Q(A_s-A_t)<=rn` prove (21.213).  The inverse formula
+
+```math
+(2rI\mp H)^{-1}={2rI\pm H\over3r^2}
+```
+
+proves (21.214).
+
+For several ports, endpoint optimization produces
+`v=sum_a epsilon_a w_a`.  The exact Lagrange dual for maximizing a quadratic
+plus a linear form on `||u||_2^2=n`, followed by
+
+```math
+(2\alpha rI-\sigma H)^{-1}
+={2\alpha rI+\sigma H\over r^2(4\alpha^2-1)},
+```
+
+gives (21.216). `square`
+
+The Gram state is a spherical certificate, not an exact Boolean-cap
+reconstruction: it may retain a fixed integrality gap.  It is also not yet a
+congruence.  For tensor powers of one order-16 regular Walsh matrix there are
+orthogonal Boolean `+sqrt(n)` eigenvectors `1,v` with identical separate
+one-port states, but
+
+```math
+\mathcal Q(\mathbf1,\mathbf1)-\mathcal Q(\mathbf1,v)
+\ge(2-\sqrt2)n^(3/2),                               \tag{21.217}
+```
+
+where `mathcal Q` is the two-port cap before the lower-order completion.
+The full Gram pair sees the newly created cross entries; the product of the
+separate one-port states does not.  Full details and audit are in
+[`drafts/spectral_antipin_feature_algebra.md`](drafts/spectral_antipin_feature_algebra.md),
+[`experiments/verify_spectral_antipin_feature_algebra.py`](experiments/verify_spectral_antipin_feature_algebra.py),
+and
+[`drafts/spectral_antipin_feature_algebra_independent_audit.md`](drafts/spectral_antipin_feature_algebra_independent_audit.md).
+
+### Theorem 21.38 (one-port orientation blindness and macroscopic holonomy)
+
+Let `n=q^2` and let `mathcal H` be a regular symmetric Walsh signing with
+`mathcal H^2=nI`, `mathcal H1=q1`, and trace zero.  Put
+`A=mathcal H-diag(mathcal H)`.  For **every** rank-one anti-pin query `t`
+using `q` appended spins and a public positive clique, the cap responses of
+`A` and `-A` satisfy
+
+```math
+|F_A(t)-F_(-A)(t)|\le q(q-1)<n.                    \tag{21.218}
+```
+
+Nevertheless, join either orientation to one fixed `A` shore through the
+public exact-sign bridge `mathcal H`.  The two order-`2n` parents
+
+```math
+P_+(x,z)=H_A(x)+H_A(z)+x^T\mathcal Hz,
+\quad
+P_-(x,z)=H_A(x)-H_A(z)+x^T\mathcal Hz              \tag{21.219}
+```
+
+obey
+
+```math
+Q(P_+)=2n^(3/2),qquad Q(P_-)\le\sqrt2n^(3/2).      \tag{21.220}
+```
+
+Thus a relative orientation bit invisible to every one-port query becomes
+observable after dense composition with gap
+`(2-sqrt(2))n^(3/2)`.
+
+There is a matching positive narrow-continuation law.  For any old child
+`A`, arbitrary old--new sign block `B`, and arbitrary complete auxiliary
+signing `C` on `m` spins, let
+
+```math
+R_\sigma=\max_(x,y)|\sigma H_A(x)+x^TBy+H_C(y)|.
+```
+
+Then
+
+```math
+|R_+-R_-|\le2Q(C)\le m(m-1).                      \tag{21.221}
+```
+
+Hence orientation is a valid vanishing-distortion quotient for every
+quadratic continuation flattenable onto total auxiliary width
+`m=o(n^(3/4))`, but not for a second macroscopic shore.
+
+#### Proof
+
+With `C` omitted, replacing `y` by `-y` and then negating the expression
+makes the two orientation caps identical.  Adding `C` changes either cap by
+at most `Q(C)`, proving (21.218) and (21.221).
+
+The real symmetric block matrices of (21.219) are
+
+```math
+\begin{pmatrix}1&1\\1&1\end{pmatrix}\otimes\mathcal H,
+\qquad
+\begin{pmatrix}1&1\\1&-1\end{pmatrix}\otimes\mathcal H.
+```
+
+Their operator norms are `2q` and `sqrt(2)q`.  The spectral bound on a
+Boolean vector of squared norm `2n` gives (21.220), and the first bound is
+attained at `(1,1)`. `square`
+
+The result is a global-cap congruence falsifier, not a planted-witness
+failure.  Simultaneous switching makes it gauge-covariant over the
+exponential BCX code.  It does not cover adaptive re-encoding or
+unbounded-depth narrow composition.  The draft, verifier, and audit are in
+[`drafts/bcx_two_port_holonomy.md`](drafts/bcx_two_port_holonomy.md),
+[`experiments/verify_bcx_two_port_holonomy.py`](experiments/verify_bcx_two_port_holonomy.py),
+and
+[`drafts/bcx_two_port_holonomy_independent_audit.md`](drafts/bcx_two_port_holonomy_independent_audit.md).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

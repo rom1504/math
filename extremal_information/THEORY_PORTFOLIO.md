@@ -86,7 +86,10 @@ one of:
   anti-pin construction compiles a linear-rate Rayleigh-separated subcode
   into exact complete parents of order `n+sqrt(n)` and cap `O(n^(3/2))`,
   preserving its projective response metric within a factor eight.  Its
-  repeated-column port is order-optimal at width `Theta(sqrt(n))`.
+  repeated-column port is order-optimal at width `Theta(sqrt(n))`.  The
+  proof now extends to arbitrary regular spectral sign matrices through two
+  resolvent features; two-eigenvalue matrices collapse to one Rayleigh
+  coordinate, and fixed port count has an `O(ell^2 log n)` Gram certificate.
 - **Best benchmark:** fixed-rank quadratic bridges and, beyond that classical
   regime, the bounded-cap Walsh anti-pin compiler.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
@@ -94,15 +97,22 @@ one of:
   a random dense sign bridge exposes `exp(Omega(n))` response bits at the
   `n^(3/2)` scale for arbitrary children and `Omega(n)` bits already for
   weighted linear children. Complete sign-quadratic children now also force
-  `Omega(n)` bits, by an exact pole-locking construction.
+  `Omega(n)` bits, by an exact pole-locking construction.  Separate
+  one-port Gram states are not a congruence: composition creates a
+  `(2-sqrt(2))n^(3/2)` cross-Gram gap.  Even more sharply, `A` and `-A` are
+  one-port close to `O(n)` but a second macroscopic Walsh shore exposes their
+  relative orientation at leading scale; total continuation width
+  `o(n^(3/4))` cannot do so.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** determine whether the one-port anti-pin metric is a
-  reusable congruence.  The discriminating test is a two-port or two-stage
-  exact-sign continuation: either derive a closed Rayleigh/Gram feature
-  algebra with sub-landscape state, or exhibit a leading holonomy witness.
+- **Live theorem:** characterize growth of the newly identified
+  amalgamation data.  Either prove that `Omega(ell^2)` independent cross-Gram
+  variables remain visible at total scale, or derive a deterministic
+  synchronization law that collapses them to a rooted `O(ell)` state.  In
+  parallel, locate the sharp continuation-width threshold for exposing the
+  orientation bit between `n^(3/4)` and `n`.
   Universal Bernoulli thinning still leaves `Theta(n^2)` bits for the full
   sign-quadratic class, while bounded cap alone remains insufficient for
   sublinear contextual rate.

@@ -617,22 +617,29 @@ exact cap-`n^(3/2)/2` children and exact order-`n+sqrt(n)` contexts whose
 projective response metric has constant distortion.  The context shore is
 asymptotically minimal within its repeated-rank-one architecture.
 
-The next question is whether this one-layer quotient survives interaction.
-Append two or more `sqrt(n)` query shores, with public exact-sign interactions
-among them, and determine the smallest state controlling the resulting cap.
-Natural candidates are pairwise switch products and their Hadamard Rayleigh
-coordinates, but they must be derived rather than assumed.
+The first multi-port boundary is now known.  At fixed port count, two Gram
+matrices give a polynomial-size spherical certificate.  They do not arise by
+taking the product of separate one-port states: orthogonal top eigenvectors
+create a leading cross-Gram gap.  More strongly, `A` and `-A` are uniformly
+one-port close but a second macroscopic Walsh shore exposes their relative
+orientation by `(2-sqrt(2))n^(3/2)`.  The orientation quotient remains valid
+for every flattened continuation of total width `o(n^(3/4))`.
 
-**Success:** either a fixed-depth algebra whose state has polynomial
-description in the number of ports and `O(n)` rather than landscape-size
-information, with `O(n^(3/2))` parent cap, or a reusable approximate
-congruence with subleading cumulative defect.
+The live question is the **growth and synchronization** of the amalgamation
+data.  For `p` ports, determine whether the `O(p^2)` cross Gram table is
+minimal on a scalable family, whether a natural algebraic hypothesis makes
+it a function of only `O(p)` rooted data, and how the answer depends on the
+allowed continuation width.
 
-**Scalable falsifier:** two children indistinguishable by the proposed
-one-port state, followed by a fixed two-stage exact-sign continuation that
-separates their normalized responses by a positive constant.  Merely
-showing that one planted Walsh witness moves is already covered by the
-Hadamard synchronization obstruction.
+**Success:** a lower bound exposing `Omega(p^2)` independent cross variables
+at the correct total-system scale, a deterministic synchronization theorem
+collapsing them to a strict rooted quotient, or a sharp construction/upper
+law locating the first continuation width that exposes orientation.
+
+**Mandatory falsifiers:** the orthogonal-top-eigenvector cross-Gram pair and
+the `A` versus `-A` macroscopic orientation bridge.  Merely showing that one
+planted Walsh witness moves is already covered by the Hadamard
+synchronization obstruction.
 
 **Stop condition:** storing the complete multi-query response table, the
 entire Boolean optimizer language, or one fresh `n`-bit state for every

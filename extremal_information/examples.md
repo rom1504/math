@@ -2392,3 +2392,33 @@ anti-pin rather than a universal pin: the optimizer may switch with both
 child and query.  Its `sqrt(n)` query shore is order-optimal among repeated
 rank-one query bridges, but one-step metric preservation does not yet give a
 reusable compositional congruence.
+
+## Example 117: fixed ports close spectrally, but gluing creates cross Gram data
+
+The Walsh anti-pin proof uses only two resolvent quadratic forms.  For any
+regular two-eigenvalue sign matrix they reduce to one Rayleigh coordinate,
+and a fixed collection of ports has a spherical certificate determined by
+two small Gram matrices.  This is a genuine finite feature algebra for one
+layer, with only quadratic growth in the number of ports.
+
+Separate summaries do not compose by cartesian product.  Two orthogonal
+Boolean top eigenvectors have the same self Gram/Rayleigh data and identical
+one-port responses, while repeating one port or pairing the two changes the
+two-port cap by at least `(2-sqrt(2))n^(3/2)`.  The missing information is
+exactly the cross Gram pair created when the port families meet.
+
+## Example 118: orientation is invisible narrowly and visible macroscopically
+
+For any quadratic child, changing `H_A` to `-H_A` is invisible to every
+continuation whose new shore has no internal energy: invert all new spins and
+then use the outer absolute value.  An internal signing on `m` new spins can
+break this symmetry by at most `m(m-1)`.  Thus the orientation quotient is
+uniformly valid at the `n^(3/2)` scale for total continuation width
+`o(n^(3/4))`.
+
+A second order-`n` Walsh shore changes the answer.  The relative `+` and `-`
+orientations produce the scalar block matrices
+`[[1,1],[1,1]]` and `[[1,1],[1,-1]]`, whose norms are `2` and `sqrt(2)`.
+Their exact Boolean caps differ by at least
+`(2-sqrt(2))n^(3/2)`.  Composition has made one compatibility bit
+macroscopic; no marginal one-port metric could retain it.
