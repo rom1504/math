@@ -867,3 +867,33 @@ output pair.  Hence depth-uniform stability is equivalent, up to the stated
 factor, to syndetic rank-one selector products after endpoint gauges are
 removed.  Coherent algebraic relations and adversarial robustness must not
 be conflated.
+
+## Example 31: one additive algebra has exact degree, conditioning, and lattice scales
+
+Let a mass-`n` system contain `c_j` copies of each of `d` atom types, and let
+type `j` contribute the bounded future-response function `phi_j`.  Equal
+mass histograms are contextually equivalent precisely when their difference
+lies in the integer kernel of
+
+```math
+z mapsto sum_j z_j phi_j.
+```
+
+The quotient therefore has `Theta(n^r_Z)` states, where `r_Z` is the integer
+rank of the atom-response differences.  Histogram addition is the exact
+future congruence; no dynamic-programming table was assumed.
+
+For equally spaced heterogeneous mean-field bins, the atom functions are
+hinges `(gamma_j+lambda)_+`.  Values at their knots recover tail sums of the
+histogram.  This gives real conditioning at least `Delta/4` and literal
+lattice margin exactly `Delta`, so below response error `Delta/2` the exact
+external cover has
+
+```math
+{n+d-1 choose d-1}
+```
+
+members.  The example also separates arithmetic and robust information: a
+single real query can encode rationally independent atom values with large
+exact integer rank but zero real conditioning.  Query-parameter dimension by
+itself is therefore not a state-growth law.

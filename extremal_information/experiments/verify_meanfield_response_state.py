@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import itertools
+import math
 import random
 from fractions import Fraction
 
@@ -106,6 +107,34 @@ def check_histogram_quantization(rng):
     return checks, merge_checks
 
 
+def weak_compositions(n, d, prefix=()):
+    if d == 1:
+        yield prefix + (n,)
+        return
+    for value in range(n + 1):
+        yield from weak_compositions(n - value, d - 1, prefix + (value,))
+
+
+def check_grid_response_rate():
+    """Exact microscopic count and unit lattice margin on finite grids."""
+    count_checks = 0
+    separation_checks = 0
+    for d in range(2, 6):
+        grid = tuple(range(d))
+        for n in range(0, 7):
+            profiles = []
+            for hist in weak_compositions(n, d):
+                fields = tuple(value for value, count in zip(grid, hist) for _ in range(count))
+                profiles.append(profile(fields))
+            assert len(profiles) == math.comb(n + d - 1, d - 1)
+            assert len(set(profiles)) == len(profiles)
+            count_checks += 1
+            for p, q in itertools.combinations(profiles, 2):
+                assert max(abs(a - b) for a, b in zip(p, q)) >= 1
+                separation_checks += 1
+    return count_checks, separation_checks
+
+
 def check_quadratic_roofs(rng):
     strict = 0
     chord = 0
@@ -198,12 +227,15 @@ def main():
     rng = random.Random(20260816)
     biconjugacy, metric, convolution = check_exact_state(rng)
     quantized, hist_merge = check_histogram_quantization(rng)
+    grid_counts, grid_separations = check_grid_response_rate()
     strict, chord, sharpness, quadratic, roof_congruence = check_quadratic_roofs(rng)
     print(f"linear-field biconjugacy coordinates: {biconjugacy}")
     print(f"contextual metric identities: {metric}")
     print(f"max-plus/sorted-union identities: {convolution}")
     print(f"quantized response bounds: {quantized}")
     print(f"histogram merge identities: {hist_merge}")
+    print(f"exact grid state-count checks: {grid_counts}")
+    print(f"unit grid response separations: {grid_separations}")
     print(f"strict quadratic roof collapses: {strict}")
     print(f"sharp-threshold chord inequalities: {chord}")
     print(f"below-threshold chord obstructions: {sharpness}")

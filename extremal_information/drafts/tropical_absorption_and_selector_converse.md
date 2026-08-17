@@ -146,7 +146,8 @@ For the converse, every suffix product of a reset-free word is a nonconstant
 selector.  For each insertion time choose an ordered output pair sent to two
 different input coordinates.  One of the (r(r-1)) ordered pairs occurs at
 least (\lfloor T/[r(r-1)]\rfloor) times.  At each of those times put
-(+\varepsilon) and (-\varepsilon) on its two preimage coordinates.  All
+(+\varepsilon) and (-\varepsilon) on the two distinct input coordinates
+selected by that output pair.  All
 chosen contributions have the same sign at the common output pair, yielding
 (3.3).  `square`
 
@@ -213,3 +214,57 @@ is nevertheless essential for fixed continuation kernels.  No global
 converse is claimed for arbitrary switching max-plus systems; the next
 finite target is a paired-selector skew-product certificate combining
 twisted cycle means, tangent resets, and exact semigroup relations.
+
+## 6. A finite decision theorem for regular selector languages
+
+The robust reset premise itself is decidable by a finite cycle test.  Let all
+finite paths of a finite directed graph be legal trajectories and label every
+edge by a selector on `[r]`; initialize at `(v,emptyset)` for each permitted
+start vertex, and at every vertex when all graph paths are legal.  For a reset-free path prefix ending at graph vertex
+`v`, store the set `S` of composite selectors of all its nonempty suffixes.
+If an edge labelled `sigma` is appended, update
+
+```math
+S'={sigma} union {rho circ sigma:rho in S}.           \tag{6.1}
+```
+
+Reject the update if `S'` contains a constant map.  The lifted graph has at
+most
+
+```math
+|V_graph| 2^(r^r-r)                                 \tag{6.2}
+```
+
+states, since `[r]^[r]` has `r^r` maps and `r` are constant.
+
+### Theorem 4 (suffix-product cycle criterion)
+
+There are reset-free legal paths of arbitrarily large length if and only if
+a reachable directed cycle exists in the lifted graph `(v,S)`.  If no such
+cycle exists and `H` is the largest edge length of a lifted path, every legal word
+of length `H+1` contains a tangent-reset factor.  Hence all arbitrary-
+residual trajectories satisfy
+
+```math
+||e_T||_H<=(H+1)epsilon                              \tag{6.3}
+```
+
+after the final-window condition applies.  If a reachable lifted cycle
+exists, pumping it and applying Theorem 2 produces residuals with unbounded
+linear response error.  The cycle is therefore an explicit instability
+certificate.
+
+#### Proof
+
+Induction on path length shows that `S` in (6.1) is exactly the set of
+products of all nonempty suffixes.  A factor ending at the newest edge is a
+reset precisely when its product is constant; factors ending earlier were
+checked at their own update.  Thus every reset-free legal path has a unique
+lift, and every lifted path projects to one.  A finite directed graph has paths of
+unbounded length exactly when a reachable directed cycle exists.  In the
+acyclic case its longest path gives the claimed reset gap; in the cyclic case
+repeat the cycle and invoke the adversarial lower bound.  `square`
+
+This is a finite certificate for the robust tie-free selector model.  It
+does not handle a perturbation which changes the active selector cell; that
+requires the paired-cell skew product in the next theorem target.

@@ -17,6 +17,12 @@ are quantitatively necessary and sufficient.  On one recurrent selector
 cell, bounded translation is exactly a twisted coboundary, recognized by
 equality of all functional-cycle means.
 
+For a fixed regular selector language, the reset premise is now decidable:
+the finite suffix-product lift either has an acyclic height giving a uniform
+bound or a pumpable cycle giving adversarial linear drift.  What remains is
+the genuinely switching problem in which a perturbation changes the active
+cell and therefore the selector itinerary itself.
+
 The next theorem should combine those verified pieces across max-plus
 switching cells.  Given two finite families of piecewise-affine projective
 continuations, build their reachable paired selector automaton and prove a

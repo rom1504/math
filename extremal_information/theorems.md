@@ -3993,9 +3993,10 @@ also contains an endpoint term
 h_t-P_t h_(t-1),                                    \tag{16.109}
 ```
 
-subtracting `h_t` reduces it to (16.107); after the first tangent reset the
-bound is `||h_T||_H+L epsilon`, while before it the transported initial
-endpoint term must also be paid.
+subtracting `h_t` reduces it to (16.107).  Once the syndetic hypothesis
+supplies a completed reset in the final length-`L` window, the bound is
+`||h_T||_H+L epsilon`; before that, the transported initial endpoint term
+must also be paid.
 
 Finally, on one recurrent affine-selector cell, let
 `A(e)=P_sigma e+b`.  Its projective iterates are bounded for every `e` if
@@ -4034,12 +4035,188 @@ A reset in the last length-`L` window kills all earlier summands, leaving at
 most `L`.  Conversely, every suffix of a reset-free word is a nonconstant
 selector.  Choose for each suffix an ordered output pair sent to distinct
 input coordinates.  One of the `r(r-1)` pairs recurs at least
-`floor(T/[r(r-1)])` times; insert `+epsilon,-epsilon` on its two preimages.
-All contributions have the same sign on the common final pair, proving
-(16.108).
+`floor(T/[r(r-1)])` times.  At each selected time insert
+`+epsilon,-epsilon` on the two distinct input coordinates selected by that
+output pair.  All contributions have the same sign on the common final pair,
+proving (16.108).
 
 For (16.110), summing `p_j-p_(sigma(j))=b_j-beta` around a cycle gives the
 common-mean necessity.  If the means agree, define `p` consistently around
 each cycle and then recursively on its incoming trees.  Equation (16.111)
 telescopes, while unequal cycle means create different linear coordinate
 drifts. `square`
+
+### Theorem 16.15 (arithmetic feature-algebra growth law)
+
+Let `phi_1,...,phi_d` be bounded real response functions on a declared query
+set.  At mass `n`, let
+
+```math
+H_(n,d)={c in N^d:sum_j c_j=n},
+\qquad F_c=sum_j c_j phi_j,                          \tag{16.113}
+```
+
+and compose systems by histogram addition.  On
+`V={z in R^d:sum_j z_j=0}`, put `Tz=sum_j z_j phi_j` and define
+
+```math
+Gamma_Phi=<phi_1-phi_d,...,phi_(d-1)-phi_d>_Z,
+\qquad r_Z=rank_Z Gamma_Phi.                        \tag{16.114}
+```
+
+For projective responses, take this group and the norms below intrinsically
+in the quotient by constant query functions.  On each fixed-mass slice,
+for `c,c' in H_(n,d)`, contextual equivalence is exactly
+
+```math
+c sim c' iff T(c-c')=0,                             \tag{16.115}
+```
+
+it is a congruence for every future histogram addition, and the number
+`N_n` of exact mass-`n` contextual states satisfies
+
+```math
+\boxed{N_n=Theta_Phi(n^(r_Z)).}                     \tag{16.116}
+```
+
+There is a robust version.  Let
+
+```math
+alpha=inf_(z in V,||z||_infty=1)||Tz||_infty,
+\qquad L=max_j||phi_j||_infty,
+\qquad sigma=inf_(0 ne z in V cap Z^d)||Tz||_infty. \tag{16.117}
+```
+
+If `d>=2` and `alpha>0`, the full histogram is the coarsest exact state,
+`r_Z=d-1`, and, with
+`s_epsilon=1+floor(2epsilon/alpha)`,
+
+```math
+(1+floor(n/[(d-1)s_epsilon]))^(d-1)
+<=Cov^ext_epsilon{F_c:c in H_(n,d)}
+<=(2+ceil(L(d-1)n/epsilon))^(d-1).                 \tag{16.118}
+```
+
+If `sigma>0`, then for every `0<epsilon<sigma/2`,
+
+```math
+\boxed{
+Cov^ext_epsilon{F_c:c in H_(n,d)}
+={n+d-1 choose d-1}.}                               \tag{16.119}
+```
+
+For the equally spaced heterogeneous mean-field atoms
+
+```math
+gamma_j=-B+(j-1)Delta,
+\qquad Delta={2B\over d-1},
+\qquad phi_j(lambda)=(gamma_j+lambda)_+,
+\quad lambda in [-B,B],                             \tag{16.120}
+```
+
+one has
+
+```math
+alpha>=Delta/4,
+\qquad sigma=Delta                                  \tag{16.121}
+```
+
+in the literal anchored sup norm.  In the projective half-oscillation norm,
+the corresponding safe constants are `alpha>=Delta/8` and
+`sigma=Delta/2`.  Consequently the literal exact external response-cover
+count below half-grid error is the binomial in (16.119), while (16.118)
+gives polynomial two-sided response-rate bounds at coarser scales.
+
+#### Proof
+
+At fixed mass,
+
+```math
+F_c=n phi_d+sum_(j<d)c_j(phi_j-phi_d).              \tag{16.122}
+```
+
+This proves (16.115), and addition preserves it.  Identify the finitely
+generated torsion-free group `Gamma_Phi` with `Z^(r_Z)`.  Its atom
+generators have bounded integer coordinates, so every mass-`n` sum lies in
+an `O_Phi(n)` box, proving the upper half of (16.116).  Choose `r_Z` of the
+displayed differences independent over `Q`, vary each count up to
+`floor(n/r_Z)`, and put all unused mass in type `d`.  The resulting sums are
+distinct, proving the lower half; rank zero gives one state.
+
+When `alpha>0`, `T` is injective on `V`.  For the lower bound in (16.118),
+vary the first `d-1` counts in multiples of `s_epsilon`; distinct choices
+are more than `2epsilon` apart in response norm.  For the upper bound,
+externally round those counts on mesh `epsilon/[L(d-1)]` and adjust the last
+coordinate to retain total mass.  Its response error is at most `epsilon`.
+Distinct integer histograms are `sigma`-separated, which proves (16.119).
+
+For (16.121), at the knots `lambda=-gamma_k`, write
+
+```math
+{Tz(-gamma_k)\over Delta}
+=S_k=sum_(j>k)z_j(j-k).                             \tag{16.123}
+```
+
+The tail sums satisfy `sum_(j>=k+1)z_j=S_k-S_(k+1)`, hence
+`||z||_infty<=4max_k|S_k|` and `alpha>=Delta/4`.  If `z` is a nonzero
+integer vector, some `S_k` is a nonzero integer, giving norm at least
+`Delta`.  Moving one site between adjacent bins attains equality, so
+`sigma=Delta`. `square`
+
+The arithmetic rank and robust conditioning are deliberately separate.  A
+one-real-parameter query can assign rationally independent atom responses
+and have large exact `r_Z` while `alpha=0`; unlimited-precision exact state
+growth then need not represent a robust exposed direction.  Conversely, the
+additive update is an exact depth-stable congruence, not merely a static
+metric cover.
+
+### Theorem 16.16 (finite suffix-product stability certificate)
+
+Let all finite paths of a finite directed graph be legal selector
+trajectories, with every edge labelled by a map `sigma:[r]->[r]`, `r>=2`.
+Initialize the lift at `(v,emptyset)` for every permitted path-start vertex
+(at every vertex when all graph paths are legal).  For a reset-free path
+prefix ending at vertex `v`, let `S` be the set of composite selectors of all
+its nonempty suffixes.  On appending an edge `sigma`, update
+
+```math
+S'={sigma} union {rho circ sigma:rho in S},          \tag{16.124}
+```
+
+and discard the transition if `S'` contains a constant map.  This defines a
+finite lifted graph on at most
+
+```math
+|V_graph| 2^(r^r-r)                                 \tag{16.125}
+```
+
+states.
+
+There are reset-free legal paths of arbitrarily large length if and only if
+the reachable lifted graph contains a directed cycle.  If it is acyclic and
+`H` is its maximum path length in edges, every legal word of length `H+1` contains a
+tangent-reset factor.  Hence the arbitrary-residual recursion (16.107)
+satisfies
+
+```math
+||e_T||_H<=(H+1)epsilon                             \tag{16.126}
+```
+
+once a final window of that length exists.  If a reachable lifted cycle
+exists, it is an explicit instability certificate: pumping it gives
+arbitrarily long reset-free words, and (16.108) produces errors growing
+linearly with word length.
+
+#### Proof
+
+Induction shows that (16.124) stores exactly all products of suffixes ending
+at the newest edge.  A new constant product is precisely a tangent-reset
+factor ending there; every earlier factor was checked when its last edge was
+appended.  Thus every reset-free legal path has a unique lift, and every
+lifted path projects to one.  A finite directed graph has paths of unbounded length exactly
+when a reachable directed cycle exists.  The acyclic height and the two
+claims now follow from Theorem 16.14. `square`
+
+This decides robust depth stability on a fixed tie-free selector language.
+It does not yet decide switching perturbations which change the active cell;
+that requires a paired-cell selector automaton.

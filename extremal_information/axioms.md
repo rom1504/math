@@ -600,3 +600,37 @@ response images and different congruences, while the transition-toll and
 changing-curvature examples independently falsify either clause in
 isolation.  What remains missing is a general necessary structural theorem
 for depth-uniform approximate congruences.
+
+## 18. Finite additive feature algebras have an arithmetic growth exponent
+
+When every component response is a nonnegative integer combination of a
+fixed finite set of atom responses and composition adds those counts, the
+exact contextual quotient is itself a finitely generated abelian monoid.
+Its mass-`n` state count grows as
+
+```math
+Theta(n^(r_Z)),
+```
+
+where `r_Z` is the integer rank of the atom-response differences after any
+projective baseline is removed.  This is the first benchmark law that
+predicts a state-growth exponent directly from the feature algebra.
+
+Arithmetic rank is not a robust dimension.  Irrational responses on one
+real query can have high integer rank while integer combinations approach
+each other arbitrarily closely.  Approximate response complexity instead
+depends on the smallest real singular value of the query map and on its
+lattice margin.  These three quantities answer different questions:
+
+1. `r_Z` controls exact polynomial growth under unlimited precision;
+2. real conditioning controls macroscopic packing and covering; and
+3. lattice margin controls the resolution below which every exact state is
+   still distinguishable.
+
+The separator, Ising, mean-field, and automaton benchmarks now fit one
+operational scheme without sharing one numerical dimension.  Arbitrary
+separator lookup futures expose exponentially many independent semantic
+coordinates.  Fixed-width transfer and lumped-automaton states have bounded
+carrier rank.  Finite-atom mean field has a growing histogram simplex whose
+degree is `r_Z`.  In every case the state is useful only because the same
+quotient is also a congruence for future composition.

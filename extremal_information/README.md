@@ -152,7 +152,10 @@ conclusions.
    clamps falsify the narrower “kernel gauge or small full-image reset”
    dichotomy.  Against fresh arbitrary residuals, however, syndetic tangent
    resets are quantitatively necessary and sufficient on selector cells;
-   recurrent translations obey a twisted cycle-mean criterion.
+   recurrent translations obey a twisted cycle-mean criterion.  For every
+   regular tie-free selector language, a finite suffix-product lift now
+   decides which side holds and returns either a uniform bound or a pumpable
+   drift cycle.
 10. Static response complexity now has a cross-benchmark two-sided law.
     Query landmarks bound response covers from above, while balanced robust
     exposure bounds them below.  For the full Lipschitz language the exposure
@@ -172,6 +175,14 @@ conclusions.
     pair interaction can strictly synchronize this profile to its concave
     envelope; at mass `n`, `J>=4B/n` sharply collapses the state to total
     field alone.
+13. A cross-benchmark feature-algebra theorem now predicts the polynomial
+    branch rather than merely cataloguing it.  For `d` additive response
+    atoms, the exact mass-`n` quotient has `Theta(n^r_Z)` states, where
+    `r_Z` is the arithmetic rank of the atom-response differences.  Robust
+    conditioning gives two-sided response covers; on an equally spaced
+    mean-field grid the exact cover below half-grid error is
+    `{n+d-1 choose d-1}`.  This complements the separator's exponentially
+    exposed lookup carrier and the automaton's fixed lumped carrier.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The
@@ -179,7 +190,9 @@ project-level generative content is their resource-complete synthesis:
 private compiler plus distance bridge plus sensitivity converse gives an
 exact response class, exact distortion, and an interacting composition law;
 the mean-field roof adds a distinct strict quotient whose complexity changes
-with the future interaction rather than with microscopic size alone.
+with the future interaction rather than with microscopic size alone.  The
+arithmetic feature-algebra law is the first general theorem here to predict a
+state-growth exponent from response generators and an exact update algebra.
 The experiments do not justify reconnecting to the motivating signing
 problem yet.
 

@@ -118,11 +118,92 @@ def check_selector_converse():
     return checked
 
 
+def compose_selectors(left, right):
+    """Product map after appending ``right`` to a factor with map ``left``."""
+    return tuple(left[right[j]] for j in range(len(left)))
+
+
+def suffix_update(suffix_products, sigma):
+    new = {tuple(sigma)}
+    new.update(compose_selectors(old, sigma) for old in suffix_products)
+    if any(len(set(product)) == 1 for product in new):
+        return None
+    return frozenset(new)
+
+
+def lifted_cycle_and_height(selectors):
+    """One-vertex regular language with one loop per selector."""
+    start = frozenset()
+    reachable = {start}
+    stack = [start]
+    adjacency = {}
+    while stack:
+        state = stack.pop()
+        successors = []
+        for sigma in selectors:
+            nxt = suffix_update(state, sigma)
+            if nxt is None:
+                continue
+            successors.append(nxt)
+            if nxt not in reachable:
+                reachable.add(nxt)
+                stack.append(nxt)
+        adjacency[state] = tuple(successors)
+
+    colour = {}
+
+    def has_cycle(state):
+        colour[state] = 1
+        for nxt in adjacency[state]:
+            if colour.get(nxt) == 1:
+                return True
+            if colour.get(nxt, 0) == 0 and has_cycle(nxt):
+                return True
+        colour[state] = 2
+        return False
+
+    cyclic = has_cycle(start)
+    if cyclic:
+        return True, None
+
+    memo = {}
+
+    def height(state):
+        if state not in memo:
+            memo[state] = max((1 + height(nxt) for nxt in adjacency[state]), default=0)
+        return memo[state]
+
+    return False, height(start)
+
+
+def check_suffix_product_automaton():
+    checks = 0
+    r = 2
+    transformations = tuple(itertools.product(range(r), repeat=r))
+    for mask in range(1, 1 << len(transformations)):
+        alphabet = tuple(transformations[i] for i in range(len(transformations)) if mask & (1 << i))
+        cyclic, height = lifted_cycle_and_height(alphabet)
+        # On this tiny alphabet, brute force one word beyond the acyclic
+        # height; in the cyclic case find reset-free words through depth 8.
+        if cyclic:
+            for depth in range(1, 9):
+                assert any(reset_free(word, r) for word in itertools.product(alphabet, repeat=depth))
+                checks += 1
+        else:
+            assert not any(reset_free(word, r) for word in itertools.product(alphabet, repeat=height + 1))
+            if height:
+                assert any(reset_free(word, r) for word in itertools.product(alphabet, repeat=height))
+            checks += 1
+    return checks
+
+
 def main():
     clamp_checks = check_clamps()
     selector_checks = check_selector_converse()
+    automaton_checks = check_suffix_product_automaton()
     print(f"exact clamp/idempotence checks: {clamp_checks}")
     print(f"reset-free selector lower-bound checks: {selector_checks}")
+    print(f"suffix-product automaton checks: {automaton_checks}")
 
 
 if __name__ == "__main__":
