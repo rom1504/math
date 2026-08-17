@@ -10255,6 +10255,82 @@ proofs, audits, and the exact certificate are in
 [`drafts/walsh_prefix_nonconvergence.md`](drafts/walsh_prefix_nonconvergence.md),
 and their adjacent audit files.
 
+### Theorem 30.3 (scale-phase averaging law and its information boundary)
+
+Let `h>=2` be an integer, let `(q_n)` be bounded, and suppose a continuous
+`L:[1,h]->R` satisfies
+
+```math
+sup_(h^r<=n<h^(r+1))|q_n-L(n/h^r)|->0.               \tag{30.13}
+```
+
+Then every continuous `psi` has the unique logarithmic empirical limit
+
+```math
+{1\over\log N}\sum_(n<=N){\psi(q_n)\over n}
+->{1\over\log h}\int_1^h{\psi(L(t))\over t}dt.       \tag{30.14}
+```
+
+Positive power biases behave differently.  For `alpha>0`, `s in [1,h]`,
+and `N_R=floor(sh^R)`,
+
+```math
+{\sum_(n<=N_R)n^(alpha-1)q_n\over
+ \sum_(n<=N_R)n^(alpha-1)}
+->C_alpha(s),                                        \tag{30.15}
+```
+
+where
+
+```math
+C_alpha(s)={alpha\over s^alpha}\left{
+ {1\over h^alpha-1}\int_1^h t^(alpha-1)L(t)dt
+ +\int_1^s t^(alpha-1)L(t)dt\right}.                \tag{30.16}
+```
+
+The map `L mapsto C_alpha` is injective, with
+
+```math
+L(s)=C_alpha(s)+{s\over alpha}C_alpha'(s).            \tag{30.17}
+```
+
+Thus `C_alpha` is constant exactly when `L` is constant.  Logarithmic
+averaging retains only the pushforward of `dt/(t log h)` by `L`: for
+`u=log_h t`, the distinct profiles `cos(2pi u)` and `cos(4pi u)` have the
+same logarithmic law, whereas every positive-power response phase
+distinguishes them.
+
+#### Proof
+
+On a complete scale block, harmonic and power-weighted Riemann sums give,
+respectively,
+
+```math
+\sum_(n=h^r)^(h^(r+1)-1){\psi(q_n)\over n}
+->\int_1^h{\psi(L(t))\over t}dt,                     \tag{30.18}
+```
+
+and
+
+```math
+\sum_(n=h^r)^(h^(r+1)-1)n^(alpha-1)q_n
+=h^(alpha r)\int_1^h t^(alpha-1)L(t)dt+o(h^(alpha r)).\tag{30.19}
+```
+
+Cesaro averaging the `log_hN+O(1)` bounded harmonic blocks proves (30.14).
+Geometric summation of (30.19), adding the final partial block, and using
+`sum_(n<=N)n^(alpha-1)=N^alpha/alpha+o(N^alpha)` prove
+(30.15)--(30.16).  Differentiation yields
+`C_alpha'=(alpha/s)(L-C_alpha)`, hence (30.17).  Finally `dt/(t log h)=du`,
+and both displayed cosines have the arcsine pushforward under uniform `u`.
+`square`
+
+For Corollary 30.2, the logarithmic response law exists and is nontrivial,
+while every positive power-weighted mean retains a nonconstant subsequential
+phase.  Averaging the scale phase is therefore a declared-query quotient,
+not phase synchronization.  The proof and numerical wind tunnel are in
+[`drafts/phase_averaging_laws.md`](drafts/phase_averaging_laws.md).
+
 ## 31. Phase refresh and Boolean pullback synchronization
 
 ### Theorem 31.1 (refresh dominates transfer defect)

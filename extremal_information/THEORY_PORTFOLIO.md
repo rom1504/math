@@ -108,6 +108,9 @@ one of:
   theorem now gives a sufficient collapse mechanism: averaged Boolean
   pullbacks whose phase kernel refreshes mass `alpha_r` synchronize the limit
   when recovery plus transfer defect is `o(alpha_r)`.
+  The phase also has a unique logarithmic empirical law, but this is a strict
+  query quotient: every positive power-weighted mean retains, and explicitly
+  reconstructs, the ordered mantissa profile.
 - **Best benchmark:** one explicit coherent Walsh prefix signing has a
   nonconstant continuous phase profile: its geometric phases equal `1/2`
   while its `3*4^r` phases are at least `89/(96sqrt(3))`.  It is a genuine

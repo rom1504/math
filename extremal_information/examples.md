@@ -2085,3 +2085,22 @@ total-scale diameter `O(h^(-1/2))`.  Unequal disjoint cell sizes do not help:
 at fixed total-scale distortion, their response packing has bounded entropy.
 Any escape must make each local bit alter `Omega(k^(3/2))` unit interaction
 atoms, or otherwise leave the bounded state-local scalar architecture.
+
+## Example 97: logarithmic averaging forgets scale order
+
+An automatic response sequence with phase profile `L(t)` has a canonical
+logarithmic empirical law: push `dt/(t log h)` through `L`.  This remains
+true when the pointwise sequence oscillates.  It is a genuine compression,
+but not a reusable last-scale response state.  The distinct profiles
+`cos(2pi log_h t)` and `cos(4pi log_h t)` have the same logarithmic law.
+
+Every positive power-weighted mean retains a phase function `C_alpha(s)`,
+and the exact inverse
+
+```math
+L(s)=C_alpha(s)+(s/alpha)C_alpha'(s)
+```
+
+recovers the whole ordered profile.  Thus a unique averaged thermodynamic
+statistic can coexist with future contexts that recover all the information
+it discarded.

@@ -451,6 +451,11 @@ L(1)=L(4)=1/2<L(3).
 Thus convergence along every fixed phase and exact all-order realization do
 not imply phase synchronization.
 
+Logarithmic averaging is now completely classified and does not solve this
+problem.  It always yields the Haar pushforward law of the phase profile, but
+can identify distinct ordered profiles; every positive power-weighted mean
+retains the full phase through an explicit differential inverse.
+
 The remaining positive target is a checkable mechanism forcing this phase
 profile to collapse.  One such mechanism is now proved: averaged Boolean
 pullbacks inducing a Doeblin phase refresh collapse the limit when recovery

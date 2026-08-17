@@ -1449,3 +1449,14 @@ broadcast into a superlinear number of state-dependent cross terms, its
 normalized coefficient grows, or the query reads a different local/vector
 scale.  This is a general composition-created-information threshold, not a
 Walsh-specific spectral fact.
+
+## 62. Averaged scale statistics are query quotients, not synchronization
+
+A continuous discrete-scale phase always has a unique logarithmic empirical
+law, but that law forgets the cyclic ordering of response values.  Positive
+power-weighted futures retain the phase and even reconstruct its entire
+profile from their subsequential mean function.
+
+Hence existence of a canonical averaged limit proves only sufficiency for
+that averaging query.  It cannot replace an all-order recovery or phase-
+mixing theorem when later composition is sensitive to the newest scale.
