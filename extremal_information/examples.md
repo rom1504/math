@@ -1848,3 +1848,17 @@ missing mass exponent unless descriptor complexity is charged, and one
 maximum versus `e^(sqrt(n))` maxima is invisible at speed `n`. Thus this is a
 leading-rate rare-event state, not an extremal point process or an automatic
 structured realization theorem.
+
+## Example 83: complete Walsh spectra can miss a rooted response bit
+
+Every word in a linear-label Walsh child `J_a` reduces to a Weyl operator
+whose trace is nonzero only when an even-length label sum vanishes. Its phase
+is determined by binary Gram data. Consequently the Gram matrix and relation
+kernel determine the complete spectrum of every weighted graph carrier on a
+marked tuple; the characteristic-root fibre is spectrally invisible.
+
+For synchronized copies of the rooted-collision children, this remains true
+across every weighted graph experiment, while a canonical rooted Boolean
+future has an `n^(3/2)/6` projective gap. Spectral completeness is therefore
+strictly query-relative. A new appended label can add cross-Gram information,
+so no claim is made for arbitrary unmatched contexts.

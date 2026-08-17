@@ -277,6 +277,14 @@ its quadratic orbit information is semantically exposed. Only after this
 test should one move to nonlinear truth tables. Evaluating the state may not
 invoke the original `2^(kn)` Boolean maximum.
 
+The first collapse is exact but only spectral. Gram plus relations determine
+every weighted-graph spectrum on a marked tuple, while the root fibre remains
+visible to a canonical Boolean future. Determine whether the collection of
+**unrooted scalar Boolean graph maxima** also forgets the root fibre. A proof
+would give a smaller semantic state than the orbit carrier; a counterexample
+would isolate genuinely nonspectral root information without using an
+arbitrary lookup query.
+
 A parallel replacement target remains:
 
 ```math

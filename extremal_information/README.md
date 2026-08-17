@@ -657,6 +657,15 @@ quotient reduces this relational memory, or whether a nonlinear Walsh-label
 family has an analogous closed presentation without performing the complete
 Boolean maximization.
 
+There is also an exact query-relative collapse. A Weyl-word trace formula
+shows that the Gram form and relation kernel determine every unrooted
+weighted-graph spectrum on the marked linear-label tuple; the
+characteristic-root fibre is invisible to all those moments. Synchronized
+copies of the rooted-collision children therefore have identical complete
+spectral data, although a rooted Boolean future separates them at full scale.
+The remaining issue is whether unrooted scalar Boolean maxima share this
+collapse or retain nonspectral root information.
+
 The sparse upper argument also survives abstraction. For any finite public
 bounded feature dictionary, a linear-size list of importance-weighted masks
 gives an explicit response code controlled by row variance and `log|X|`.

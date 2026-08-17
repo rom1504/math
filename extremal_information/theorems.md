@@ -8466,6 +8466,66 @@ edge labels, is the dynamic memory that makes future coincidences meaningful.
 Its `O(t^2)`-bit state is still strictly smaller than `mt` raw label bits
 when a length-`t` word satisfies `t=o(m)`.
 
+### Theorem 21.17 (unrooted Walsh spectra forget the root fibre)
+
+Let `m>=1`, let `F` be the normalized order-`2^m` Walsh involution, and put
+
+```math
+J_a=D_aFD_a.                                             \tag{21.80}
+```
+
+If two ordered linear-label tuples have the same binary Gram matrix and
+relation kernel, then for every real weighted graph on the marked tuple, the
+coefficient carriers `K_(G,a)` from Theorem 21.9 have exactly the same
+spectrum with multiplicity. Their characteristic-root fibres need not agree.
+
+#### Proof
+
+Write modulation and translation operators as `M_a,T_a`. Then
+
+```math
+J_a=M_aT_aF,
+\qquad FM_aF=T_a,
+\qquad T_bM_a=(-1)^(a\cdot b)M_aT_b.                    \tag{21.81}
+```
+
+Induction reduces every word to
+
+```math
+J_(a_1)\cdots J_(a_l)
+=(-1)^theta M_sT_sF^(l\bmod2),
+\qquad s=\sum_ja_j,                                    \tag{21.82}
+```
+
+where `theta` is a quadratic polynomial in the pairwise Gram values. Hence
+
+```math
+\operatorname{tr}(J_(a_1)\cdots J_(a_l))
+=\begin{cases}
+(-1)^theta2^m,&l\text{ even and }s=0,\\
+0,&\text{otherwise}.
+\end{cases}                                             \tag{21.83}
+```
+
+For odd `l`, the diagonal character sum is proportional to
+`sum_x(-1)^(x dot x)=sum_x(-1)^(omega dot x)=0`.
+
+Expand every power trace of `K_(G,a)` over closed block walks. Formula
+(21.83) says that each summand depends only on whether one coefficient mask
+lies in the relation kernel and on a phase determined by the Gram matrix.
+All power traces, hence the finite symmetric-matrix spectra, agree. `square`
+
+In particular, the two children in Theorem 21.13 have identical spectra in
+every weighted graph made from synchronized copies of the compared child,
+yet one canonical rooted Boolean future separates their projective responses
+by `n^(3/2)/6`. An arbitrary common appended label is not covered: its cross
+pairing can make the complete tuple Gram states differ.
+
+Thus complete spectral information can be strictly smaller than rooted
+extremal information even in a family with an exact orbit quotient. The
+remaining unrooted question is semantic: scalar Boolean graph maxima may or
+may not also forget the characteristic root.
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

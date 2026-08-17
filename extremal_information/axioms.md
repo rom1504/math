@@ -1261,3 +1261,15 @@ At a fixed exponential speed, supremal convolution is closed and finite-rate
 branches survive. Subexponential multiplicities and spacings do not. The
 choice of speed is therefore part of the state, just as the allowed future
 query family is part of a contextual response quotient.
+
+## 49. Complete spectral data can be a strict unrooted quotient
+
+In the linear Walsh family, all power traces conditional on a marked tuple
+factor through its Gram form and relation kernel. The characteristic-root
+fibre, although necessary for the full orthogonal orbit and visible to a
+rooted Boolean query, disappears from every such unrooted spectrum.
+
+Thus “all moments” is not synonymous with “all extremal information.” The
+missing datum is not a higher spectral moment but a root supplied by the
+future interface. Any proposed moment hierarchy must declare whether its
+queries carry such roots or other coordinate anchors.

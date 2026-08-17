@@ -102,13 +102,17 @@ one of:
   kernel, and the characteristic-root fibre form an exact `O(k^2)`-bit orbit
   quotient for every `k`-block graph. Its exact rooted amalgamation is
   associative on accumulated spans and has independent `rs` cross-form and
-  `r^2+O(1)` intersection-memory lower bounds.
+  `r^2+O(1)` intersection-memory lower bounds. A Weyl trace theorem proves
+  that the root fibre is nevertheless invisible to every unrooted weighted-
+  graph spectrum conditional on the full tuple Gram/relation state.
 - **Best benchmark:** a full-rank dense synchronized class has an exact joint
   magnetization reduction and a finite-dimensional thermodynamic limit.
   A common `K`-type partition extends the joint search to
   `O(mK log n)` label bits, with one signed-holonomy audit per type.
 - **Best falsifier:** an isolated unbalanced signed cycle defeats the sum of
-  all separately optimized pair responses at leading scale.
+  all separately optimized pair responses at leading scale. Complete
+  synchronized-repetition spectra also fail to see a root bit exposed by a
+  Boolean future at `n^(3/2)/6`.
 - **Information discarded:** local gauge choices, retaining only cycle
   holonomy and presented carrier geometry.
 - **Composition mechanism:** rooted bilinear amalgamation. A cross form,
@@ -116,8 +120,9 @@ one of:
   the accumulated presented span makes the operation associative.
 - **Live theorem:** find an approximate metric quotient of this exact gluing
   state, or prove that a positive fraction of its `Theta(t^2)` orbit memory is
-  semantically exposed. Pairwise local data is already ruled out by a
-  ternary-relation counterexample.
+  semantically exposed. In particular decide whether unrooted Boolean graph
+  maxima collapse to `(Gram,relations)`, as spectra do. Pairwise local data is
+  already ruled out by a ternary-relation counterexample.
 
 ### 4. Renormalized rare-event state — promoted scoped branch, B+
 
