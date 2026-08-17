@@ -229,6 +229,23 @@ conclusions.
     strict-strip futures expose the complete Ising boundary table with an
     exact sup-metric isometry, while a restricted rational width-two alphabet
     genuinely minimizes from seven reachable profiles to two weighted states.
+20. Compact rational unit-selector systems now supply a genuine finite
+    tropical lumpability theorem. Selector pullbacks have a finite normal
+    orbit; rational offsets form a lattice; compactness leaves only finitely
+    many relevant translated walls. Rational LP saturation therefore builds
+    an exact path-realizing quotient for every finite polyhedral observation
+    coloring. Irrational rotation proves that compactness without a discrete
+    offset group is not enough.
+21. Every finite predictor has a canonical future-behavior pseudometric. Its
+    transition maps are nonexpansive, its failure to recouple with physical
+    re-encoding is at most twice its response error, and a strict behavioral
+    gap promotes this to exact semiconjugacy. Quantizing this metric gives the
+    sharp law `new error <= old error + net radius * suffix gain`.
+22. A finite weighted control graph makes the dynamic factor checkable:
+    depth-uniform reuse holds when every reachable unit-coefficient cycle is
+    absent, with constants from max-times path products. A saturating-chain
+    family has a constant-size static cover but linear optimal predictive
+    memory, proving that the mixing factor cannot be removed.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

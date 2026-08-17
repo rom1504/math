@@ -4679,6 +4679,117 @@ exact. This corollary applies to selector labels only when those labels are
 themselves declared, margin-separated responses; it does not charge a
 numerically invisible tie refinement.
 
+### Theorem 17.1b (compact rational unit-selector lumpability)
+
+Let finitely many control fibres `X_q` be rational polytopes in
+`R^r/R1`. Suppose every input map has finitely many closed rational
+polyhedral branches covering its source fibre and, on each branch, is
+
+```math
+z|->P_sigma z+b,
+\qquad (P_sigma z)_i=z_(sigma(i)),                               \tag{17.7c}
+```
+
+with rational `b`; overlapping tie branches agree on their overlap and map
+into their declared target fibre. Let a finite rational affine sign coloring
+(including observations, guards, and branch comparisons) be given, with all
+normals perpendicular to `1`.
+
+Restricted affine pullback saturation terminates effectively. Its nonempty
+sign atoms form a finite exact forward congruence refining the coloring, and
+every declared quotient path is a genuine raw trajectory. In particular,
+every bounded rational piecewise-affine terminal response has, after rational
+quantization at mesh `eta`, one finite path-realizing predictor with
+depth-uniform response error controlled by `eta`.
+
+Indeed, `P_sigma^Ta` is obtained by assigning the `r` labelled coefficients
+of `a` to `r` bins and summing within bins, so one seed normal has at most
+`r^r` reachable normals. Pullback offsets change by numbers `a.b` from a
+finite rational set. All offsets therefore lie in a discrete lattice
+`delta Z` after including the finitely many seed offsets. For fixed `q,a`, a
+wall meets `X_q` only over an offset interval of length
+
+```math
+W_(q,a)=max_(X_q)a.z-min_(X_q)a.z,
+```
+
+so at most `1+floor(W_(q,a)/delta)` parallel walls survive (with the evident
+one-wall convention for the zero subgroup). Rational linear programs decide
+intersection and constant sign. The resulting finite pullback-closed
+arrangement satisfies Theorem 17.1. If it has `m_q` walls in projective
+dimension `r-1`, its total number of sign faces is at most
+
+```math
+sum_q sum_(j=0)^(r-1)2^j binom(m_q,j).                           \tag{17.7d}
+```
+
+This is a symbolic/terminal-response theorem. An accumulated real reward
+still needs a compatible scalar cocycle; a repeatable reward-cycle defect can
+grow linearly. Compactness and discreteness are independent: noncompact
+rational translation realizes arbitrarily long transient words without an
+infinite orbit, while irrational circle rotation gives dense pullbacks of a
+single observation cut on a compact carrier.
+
+### Theorem 17.1c (finite repeatability test for one selector cycle)
+
+Let the return along one fixed legal branch cycle be
+
+```math
+Az=P_sigma z+b
+```
+
+on `R^r/R1`, and let its closed legal-return domain `D` be projectively
+compact. Let `p` be the least common multiple of the directed-cycle lengths
+of `sigma`. The following are equivalent:
+
+1. for every `k`, a seed realizes `k` consecutive traversals;
+2. one seed remains in `D` under every iterate of `A`;
+3. some `y in D` and `lambda in R` satisfy
+
+   ```math
+   y,Ay,...,A^(p-1)y in D,
+   \qquad A^py=y+lambda1.                                      \tag{17.7e}
+   ```
+
+For rational polyhedral `D` and rational selector data, item 3 is one finite
+rational LP (not necessarily polynomial-size, since `p` can be exponential).
+To prove the equivalence, nested compactness gives 1 implies 2. After the
+at-most-`r-1` transient of the functional graph of `sigma`, projective
+boundedness forces all selector cycles to have the same mean increment;
+hence an appropriate iterate of the infinite seed satisfies (17.7e).
+Additive homogeneity makes its first `p` iterates repeat modulo constants,
+proving 3 implies 2.
+
+Consequently a nonzero projective observable holonomy on such a cycle proves
+that it is not indefinitely repeatable. Pumpable nonzero drift must use a
+noncompact legal domain or a setting where arbitrarily long paths cannot be
+compactly recoupled to one infinite trajectory.
+
+### Proposition 17.1d (compact equicontinuity does not imply finite prediction)
+
+Let `F_alpha(x)=x+alpha mod 1` be an irrational rotation of the circle and
+observe `h(x)=x` in geodesic distance. Then
+
+```math
+C_infinity(epsilon)=+infinity
+\qquad(0<=epsilon<1/2),                                          \tag{17.7f}
+```
+
+while one constant state is valid at error `1/2`. The same impossibility
+holds for exact prediction of any nontrivial finite arc coloring, even if
+errors are ignored inside a fixed sufficiently thin neighborhood of its cut
+points.
+
+Indeed, the output path of any finite autonomous predictor is eventually
+periodic. If its eventual period is `p`, then at every fixed phase the true
+subsequence advances by `palpha` and is dense. Its supremal distance from the
+one decoder value assigned to that phase is `1/2`. For an arc coloring, each
+phase subsequence visits robust interiors of two colors. Taking a badly
+approximable irrational `alpha` shows that both equicontinuity and
+Diophantine regularity are insufficient. In interval coordinates the map is
+a compact two-chart unit-selector PWA system; precisely its translations
+generate a nondiscrete offset group.
+
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 
 Use the column max-plus convention
@@ -4776,6 +4887,73 @@ error exactly `n delta` at depth `n`. Thus the noncontractive linear estimate
 is attained at every horizon, while exact state cardinality jumps
 discontinuously.
 
+### Corollary 17.2a (intrinsic contraction from a weighted control graph)
+
+Let a finite legal-control graph have invariant metric fibres `Y_q`. Give
+each edge `e:u->v` a restricted Lipschitz coefficient `lambda_e<=1`, and put
+
+```math
+beta_n=max_(legal |p|=n) prod_(e in p)lambda_e,
+\qquad beta_0=1.                                                 \tag{17.14a}
+```
+
+For exact and approximate trajectories with edge defect at most `eta`,
+
+```math
+D_n<=beta_nD_0+eta sum_(m=0)^(n-1)beta_m.                        \tag{17.14b}
+```
+
+This is sharp from the local coefficients alone. If `rho=beta_L<1`, then
+
+```math
+sup_n D_n
+<=D_0+eta{sum_(r=0)^(L-1)beta_r\over1-rho}
+<=D_0+{Leta\over1-rho}.                                         \tag{17.14c}
+```
+
+Equivalently, some `beta_L<1` precisely when every directed cycle has
+coefficient product below one, or when the subgraph of `lambda_e=1` edges is
+acyclic. If
+
+```math
+gamma=max_(cycles C)(prod_(e in C)lambda_e)^(1/|C|)<1,
+```
+
+then for every `mu in (gamma,1)` logarithmic difference constraints produce
+positive vertex weights `a_q` with
+
+```math
+lambda_e{a_v\over a_u}<=mu,
+```
+
+and hence `beta_n<=Kmu^n`, `K=max a/min a`. Thus the block-contraction
+hypothesis of Theorem 17.2 is certified by a maximum-cycle-mean computation,
+not by enumerating products.
+
+The proof of (17.14b) transports each fresh defect through its exact suffix;
+submultiplicativity gives (17.14c). The cycle equivalences are the standard
+finite weighted-graph potential criterion. A directed `L`-cycle with `L-1`
+unit edges and one coefficient `theta<1`, with aligned scalar defects,
+attains `Leta/(1-theta)`. At `theta=1` its error grows linearly. Hence both
+the contraction denominator and the failure at unit cycle mean are sharp.
+
+For a max-plus map on a convex full-dimensional projective polytope, its
+restricted Hilbert coefficient is either zero or one. On a tie-free selector
+cell a nonconsensus row-selector has Dobrushin coefficient one; if no such
+cell meets the interior, continuity makes the projective map constant. A
+zero edge is checked intrinsically by a dominance cone: input coordinate `k`
+wins every row on `Y` whenever
+
+```math
+x_k-x_j>=max_i(S_(ij)-S_(ik))
+\quad(x in Y,\ j).                                               \tag{17.14d}
+```
+
+Deleting these reset edges and checking that the remainder is acyclic is
+therefore an exact graph certificate for full-dimensional max-plus fibres.
+Fractional coefficients remain meaningful on restricted/thin carriers and
+for stochastic secants.
+
 ### Theorem 17.3 (response packing, memory gain, and predictive compactness)
 
 Let `E` be finite and let `R:X->Z` be `L_R`-Lipschitz, `L_R>0`, and define
@@ -4842,6 +5020,110 @@ infinite-depth `S`-state predictor. The reverse inequality is restriction.
 
 This predictor need not be an exact quotient: the encoder is not asserted to
 satisfy `qF_e=delta_eq`. Theorem 17.1 is the stronger exact-congruence law.
+
+### Corollary 17.3a (behavioral recoupling of every finite predictor)
+
+Let `(S,q,delta,g)` be an infinite-depth `epsilon`-predictor. Define
+
+```math
+d_S(s,t)=sup_(w in E^*)d_Z(g(delta_ws),g(delta_wt)).              \tag{17.19a}
+```
+
+Then `d_S` is a pseudometric, `g` is one-Lipschitz, every transition is
+nonexpansive, and
+
+```math
+d_S(q(F_ex),delta_eq(x))<=2epsilon.                              \tag{17.19b}
+```
+
+Moreover, `d_S` is determined by the finite synchronized pair graph:
+
+```math
+d_S(s,t)=max{d_Z(g(u),g(v)):(u,v)
+               reachable from (s,t)}.                            \tag{17.19c}
+```
+
+After deleting states unreachable from `q(X)`, quotient `S` by zero
+behavioral distance. This is the minimal Moore realization of this
+predictor's exact decoded response trees (not necessarily the smallest
+`epsilon`-predictor for the physical system). If `gamma` is the least positive
+distance between distinct quotient states, with `gamma=+infinity` for a
+one-state quotient, then `2epsilon<gamma` makes the induced encoder an exact
+forward semiconjugacy.
+
+Indeed, the empty word proves the decoder bound, and prepending one letter
+proves transition nonexpansiveness. For every future word `w`, the predictions
+from `q(F_ex)` and `delta_eq(x)` both approximate `R(F_wF_ex)` within
+`epsilon`, proving (17.19b). Formula (17.19c) is the finite word orbit of the
+state pair. Zero distance is therefore a transition congruence, and the
+strict margin forces the defect in (17.19b) to be zero. The pair search is
+effective whenever the finitely many decoder distances are effectively
+represented. `square`
+
+The constant is sharp. A one-point zero-response system has an error-one
+predictor which outputs `-1` initially and then transitions to a fixed state
+outputting `+1`; its behavioral defect is exactly two. Thus equality at the
+margin need not yield exact semiconjugacy.
+
+### Theorem 17.3b (behavioral entropy times dynamic suffix gain)
+
+Let `(S,q,delta,g)` be any infinite-depth `epsilon`-predictor. Remove
+unreachable states and quotient by the zero classes of (17.19a). Choose an
+internal `eta`-net `C` in its finite behavioral metric and a retraction
+`Q:S->C`, and define
+
+```math
+qhat=Qq,
+\qquad deltahat_e(c)=Qdelta_e(c),
+\qquad ghat=g|_C.                                                \tag{17.19d}
+```
+
+Let `G_T` be (17.17) for the finite transition maps `delta_e` in `d_S`.
+Then the rounded predictor has error at most
+
+```math
+epsilon+eta G_T                                                 \tag{17.19e}
+```
+
+through horizon `T`. If every legal length-`L` transition block is
+`rho`-contracting, it is valid at every depth with error
+
+```math
+epsilon+{Leta\over1-rho}                                       \tag{17.19f}
+```
+
+and uses at most `Cov^int_eta(S,d_S)` states. The proof compares the rounded
+trajectory with the original predictor trajectory; the initial and fresh
+retraction residuals are transported by suffix maps, while `g` is
+one-Lipschitz. No physical semiconjugacy is needed. Corollary 17.3a's strict
+gap condition supplies the separate conclusion that re-encoding the evolved
+physical state agrees exactly with its predicted behavioral class.
+
+The contraction factor is an essential multiplier, not decoration. Let
+
+```math
+S_n={0,...,n},
+\qquad delta(i)=min(i+1,n),
+\qquad g(i)=alpha i,                                             \tag{17.19g}
+```
+
+and take this exact predictor as the physical system. Its behavioral metric
+is `alpha|i-j|`. For `eta=kalpha`, `1<=2k<=n`,
+
+```math
+Cov^int_eta(S_n)=ceil{n+1\over2k+1},
+\qquad C_infinity(eta)=n-2k+1.                                  \tag{17.19h}
+```
+
+For the lower bound, any repeated predictor state along the orbit from zero
+is eventually periodic. Every decoder value on its cycle must be within
+`eta` of `nalpha`, while its first occurrence at time `i` must be within
+`eta` of `ialpha`; thus `(n-i)alpha<=2eta`. The first `n-2k+1` states are
+distinct. Keeping the earlier transient exactly and merging the last
+`2k+1` states into one midpoint-decoded sink proves equality. Taking
+`k` proportional to `n` gives a constant static cover but linear reusable
+memory. This finite grid is invariant under the compact two-piece PWA map
+`F(x)=min(x+alpha,nalpha)`; its forgetting time grows like `n`.
 
 ### Theorem 17.4 (contraction-weighted context-tree entropy)
 
@@ -5037,3 +5319,19 @@ The absolute error is `ns` for even `n` and `(n-1)s` for odd `n`. Both exact
 and approximate projective controls return after two steps, but their reward
 cycle differs by `2s`. Thus projective lumpability and scalar-cocycle
 compatibility are separate necessities.
+
+There is also a positive switching approximation not requiring a common
+optimizer cell. For one column with horizontal couplings `J_i`,
+
+```math
+||[T_cf]-[T_cg]||_H<=2sum_i|J_i|                                 \tag{17.33}
+```
+
+for arbitrary incoming profiles. If every `L` consecutive columns contain
+one with `2sum_i|J_i|<=delta`, and each normalized update is rounded with
+Hilbert error at most `eta`, then after the first such column the projective
+error is at most `delta+Leta` at every depth. Indeed, the difference of the
+two output maxima has oscillation at most `4sum_i|J_i|`; a weak column resets
+all prior error, while subsequent nonexpansive updates add at most one fresh
+`eta` each. This is a restricted-image reset, not a strict global Lipschitz
+coefficient.

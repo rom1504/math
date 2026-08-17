@@ -274,6 +274,185 @@ is realizable.  Indeed, choose any terminal point and lift it backward
 edge-by-edge using (3.5).  The seed may depend on the path length, exactly as
 allowed in the finite-orbit pumping conclusion of Theorem 16.19.
 
+For a fixed candidate cycle, selector structure and compactness give a less
+demanding exact test than edgewise surjectivity.
+
+### Theorem 3.4 (finite periodic test for selector-cycle realization)
+
+Let one traversal of a declared control/branch cycle have selector-affine
+return map
+
+```math
+Az=P_sigma z+b                                                     \tag{3.6}
+```
+
+on `V=R^r/R1`. Let `D subset V` be the set of starting points for which that traversal,
+including all intermediate branch and enabling constraints, is legal and
+returns to the source control cell. Assume `D` is closed and projectively
+compact. Let `p` be the least common multiple of the directed-cycle lengths
+of the finite function `sigma:[r]->[r]`.
+
+The following are equivalent:
+
+1. for every `k`, some seed realizes `k` consecutive traversals;
+2. one seed `z` satisfies `A^jz in D` for every `j>=0`;
+3. there are `y in D` and `lambda in R` such that
+
+   ```math
+   y,Ay,...,A^(p-1)y in D,
+   \qquad A^p y=y+lambda 1.                                     \tag{3.7}
+   ```
+
+For rational selector data and a rational polyhedral `D`, condition 3 is one
+finite linear-feasibility problem. Hence repeatability of this fixed branch
+cycle is decided without testing unbounded repetition depths. In particular,
+a nonzero projective observable holonomy on the cycle *rules out*
+repeatability: condition 3 would make every projective affine observable
+periodic, whereas the alleged holonomy would change it by a nonzero amount
+on every traversal. Pumpable nonzero drift therefore requires a noncompact
+legal-return set, or the weaker seed-dependent finite-path setting in which
+compactness cannot extract one infinite orbit.
+
+#### Proof
+
+Put
+
+```math
+K_k=bigcap_(j=0)^(k-1)A^(-j)D.
+```
+
+Choose a fixed gauge, for example `z_r=0`. The saturated projective set `D`
+then has one ordinary compact representative, and `A` followed by regauging
+is continuous. Under condition 1, the `K_k` are nonempty nested closed
+subsets of this compact set. Their intersection is nonempty, proving
+condition 2.
+
+For the selector map,
+
+```math
+(A^tz)_i=z_(sigma^t(i))+sum_(s=0)^(t-1)b_(sigma^s(i)).           \tag{3.8}
+```
+
+Let
+
+```math
+d_sigma=max_i min{t:sigma^t(i) lies on a directed cycle}<=r-1.
+```
+
+After `d_sigma` steps, every coordinate path has entered a directed cycle of
+`sigma`. At multiples of `p`, (3.8) gives
+
+```math
+(A^(d_sigma+np)z)_i
+=(A^(d_sigma)z)_i+np mu_(C(i)),                                  \tag{3.9}
+```
+
+where
+`mu_(C(i))` is the mean of `b` on its eventual selector cycle. If two such
+means differed, their coordinate difference along the infinite orbit would
+grow linearly, contradicting projective compactness of `D`. Thus all means
+are one `mu` (every functional-graph cycle contains one of the coordinate
+indices). For an infinite seed `z`, take `y=A^(d_sigma)z`. Formula (3.9) gives
+`A^py=y+p mu 1`, and every displayed iterate remains in `D`, proving
+condition 3. Conversely, additive homogeneity
+`A(z+t1)=Az+t1` and projective saturation of `D` make the first `p` legal
+iterates in (3.7) repeat modulo `lambda 1`, proving condition 2. `square`
+
+In the rational-polyhedral case, impose the gauge `y_r=0`, precompute
+`A^t=P_(sigma^t)y+b^(t)` for `0<=t<=p`, and impose the linear constraints
+`A^ty in D`, `0<=t<p`, together with
+`A^py-y=lambda 1`. This is one rational LP. Strict or relatively open branch
+domains do not satisfy the closedness hypothesis; tie-valid weak inequalities
+do.
+
+Compactness is essential. In `R^2/R1`, let `d=z_1-z_2`, let
+`A(z)=(z_1-1,z_2)`, and take the closed noncompact domain `D={d>=0}`. For
+every `k`, the seed `d=k` realizes `k` traversals, but no seed realizes all
+traversals. The theorem tests one fixed declared branch cycle and its closed
+compact legal-return domain; it is not a procedure for finding reachable
+cycles through arbitrary access words.
+
+The period `p` can be exponential in `r`; this is a finite decidability
+certificate, not a polynomial-size one.
+
+### Theorem 3.5 (compact rational selector systems have finite refinement)
+
+Let `Q` be a finite control set.  At control `q`, let `X_q` be a rational
+polytope in `V=R^r/R1`.  Each input map is given by finitely many closed
+rational polyhedral branch domains, covering its source fibre, and on every
+branch has the unit-selector form
+
+```math
+z |-> P_sigma z+b,                                               \tag{3.10}
+```
+
+with rational `b`, mapping the branch into its declared target fibre.  Ties
+may lie in several branch domains, but the affine formulas must agree there
+as maps.  Let the initial finite observation coloring and all guard/branch
+colors be defined by signs of finitely many rational projective affine forms
+`a.z+beta`, where `a.1=0`.
+
+Then restricted affine pullback saturation terminates.  Its nonempty sign
+atoms form a finite exact forward congruence refining every declared color,
+and every quotient word from a nonempty atom is realized by every raw point
+in that atom.  The congruence and its transitions are computable by rational
+linear programming.
+
+More quantitatively, selector pullbacks of one normal have at most `r^r`
+distinct normals.  Let `delta>0` generate the additive subgroup of `R`
+spanned by all rational initial offsets and all possible rational increments
+`a.b` (with the finitely many reachable normals `a`); use one offset when
+this subgroup is zero.  If
+
+```math
+W_(q,a)=max_(z in X_q)a.z-min_(z in X_q)a.z,
+```
+
+then each seed/normal/control triple contributes at most
+`1+floor(W_(q,a)/delta)` nonconstant parallel walls.  If `m_q` walls survive
+at control `q`, the total number of sign faces is at most
+
+```math
+sum_(q in Q) sum_(j=0)^(r-1)2^j binom(m_q,j).                    \tag{3.11}
+```
+
+#### Proof
+
+For `(P_sigma z)_i=z_(sigma(i))`, pullback sends `a` to
+`P_sigma^T a`.  Every original labelled coefficient of `a` is assigned to
+one of `r` coordinate bins and coefficients assigned to the same bin are
+summed.  Thus at most `r^r` normals can occur; moreover their coordinate sum
+remains zero, so every form descends to `V`.
+
+For a reachable normal, an affine pullback changes the offset by one of the
+finitely many numbers `a.b`.  Rationality puts every reachable offset in a
+translate of the discrete lattice `delta Z`.  A wall `a.z+beta=0` can meet
+`X_q` only when `-beta` lies in the compact interval `a(X_q)`, so only the
+stated finite number of offsets survives.  A wall missing the convex fibre
+has constant sign there and may be recorded as a constant.  Rational LP
+tests decide intersection and sign.  Breadth-first restricted pullback
+therefore terminates.
+
+Include every guard facet before saturation.  On a final sign atom one valid
+branch is fixed, and the pullback of every target sign is a fixed source sign
+or a constant.  The argument of Theorem 3.1 now gives forward inclusion and
+path realization.  The arrangement-face bound gives (3.11). `square`
+
+This is stronger than enumerating words or active-cell itineraries: its
+termination comes from finite normal transport, an offset lattice, and
+compact width.  It is nevertheless a **symbolic** theorem.  It gives a
+depth-uniform `eta`-predictor for any bounded piecewise-affine terminal
+response after adding a finite rational `eta`-quantization of that response
+to the initial coloring.  An accumulated real reward requires a separate
+cocycle certificate; a nonzero repeatable reward-cycle discrepancy still
+causes linear error as in Proposition 7.3.
+
+Both compactness and a discrete offset group matter.  Irrational rotation of
+the circle, written as two unit-slope affine branches and observed through a
+nontrivial interval cut, has dense pullbacks of the cut boundary and no
+finite exact contextual quotient.  The noncompact translation example after
+Theorem 3.4 shows the independent failure without compactness.
+
 ## 4. Two dual max-plus block quotients
 
 For a partition `Pi={I_1,...,I_r}` and a gauge `c`, put
@@ -697,6 +876,183 @@ partition.  The selected state `q_infinity(x)` need not satisfy
 `q_infinity(F_ex)=delta_e q_infinity(x)`.  Requiring that stronger identity
 is the exact lumpability problem of Theorems 2.1 and 3.1.
 
+There is nevertheless a canonical finite metric in which every infinite
+predictor is automatically an approximate congruence.
+
+### Theorem 5.5 (behavioral recoupling of a finite predictor)
+
+Let `(S,q,delta,g)` be an infinite-depth `epsilon`-predictor into a metric
+response space `Z`. Define on its finite state set
+
+```math
+d_S(s,t)=sup_(w in E^*)d_Z(g(delta_ws),g(delta_wt)).              \tag{5.20}
+```
+
+Then:
+
+1. `d_S` is a pseudometric, `g` is one-Lipschitz, and every `delta_e` is
+   nonexpansive;
+2. the encoder has behavioral semiconjugacy defect at most `2epsilon`:
+
+   ```math
+   d_S(q(F_ex),delta_eq(x))<=2epsilon;                            \tag{5.21}
+   ```
+
+3. `d_S` is determined by the finite pair graph:
+
+   ```math
+   d_S(s,t)=max{d_Z(g(u),g(v)):(u,v)
+                  is reachable from (s,t)};                      \tag{5.22}
+   ```
+
+4. after deleting states unreachable from `q(X)`, quotienting `S` by
+   `d_S=0` gives the minimal Moore realization of this predictor's exact
+   decoded response trees. If
+   `gamma` is the least positive distance between its distinct classes and
+   `2epsilon<gamma`, then the induced encoder is an exact forward
+   semiconjugacy into that quotient.
+
+Thus a finite future predictor does not hide an uncontrolled congruence
+failure. Its entire dynamic incompatibility is a checkable `2epsilon`
+displacement in the finite response-behavior metric. This conclusion is
+strictly weaker than raw-state bisimulation and exactly matched to the
+declared response queries.
+
+#### Proof
+
+The supremum of the pullback pseudometrics in (5.20) is a pseudometric, and
+the empty word proves that `g` is one-Lipschitz. Prepending `e` to every
+future word shows
+
+```math
+d_S(delta_es,delta_et)<=d_S(s,t).                                \tag{5.23}
+```
+
+For any physical `x`, input `e`, and future word `w`, the two predictions
+
+```math
+g(delta_w q(F_ex))
+\quad\hbox{and}\quad
+g(delta_w delta_e q(x))                                         \tag{5.24}
+```
+
+both approximate the same response `R(F_wF_ex)` within `epsilon`: use the
+predictor once with initial state `F_ex` and once with initial state `x` and
+word `e` followed by `w`. The triangle inequality and supremum over `w` prove
+(5.21).
+
+Formula (5.22) is just (5.20) because the word orbit of a pair is its finite
+reachable set; the maximum is reached after a simple path in the pair graph.
+It is effectively computable when the finitely many decoder distances are
+effectively represented.
+Zero distance is a transition congruence by (5.23). In the minimized finite
+space, (5.21) and `2epsilon<gamma` force
+`[q(F_ex)]=[delta_eq(x)]`, which is exact semiconjugacy. `square`
+
+Minimality here is relative to the predictor's decoded trees, not among all
+`epsilon`-predictors of the physical system.  The margin `gamma` belongs to
+the predictor's **future behavior**, not its
+one-step output. Two states with equal present output can still have positive
+`d_S` because a continuation separates them. Conversely, distinct control
+labels at zero `d_S` are redundant and must not be charged as information.
+The factor two and strict margin are sharp: a one-point physical system with
+response zero has a valid error-one predictor whose first state outputs `-1`
+and transitions to a fixed state outputting `+1`. Its behavioral transition
+defect is exactly two, so equality `2epsilon=gamma` need not give exact
+semiconjugacy.
+
+The behavioral metric also supplies the missing quantitative bridge from a
+static cover to a reusable approximate machine—provided the predictor itself
+forgets.
+
+### Theorem 5.6 (behavioral cover times dynamic suffix gain)
+
+Let `(S,q,delta,g)` be an infinite-depth `epsilon`-predictor, first remove
+unreachable states and quotient by `d_S=0`.  Let `C` be an internal
+`eta`-net of the resulting finite metric space and choose a retraction
+`Q:S->C` with `d_S(s,Qs)<=eta`.  Define the rounded predictor by
+
+```math
+qhat=Qq,
+\qquad deltahat_e(c)=Qdelta_e(c),
+\qquad ghat=g|_C.                                                \tag{5.25}
+```
+
+If `G_T` is the suffix gain (5.14), now computed for the transition maps
+`delta_e` in `d_S`, then for every word of length at most `T`,
+
+```math
+d_Z(R(F_wx),ghat(deltahat_wqhat(x)))
+<=epsilon+eta G_T.                                               \tag{5.26}
+```
+
+Consequently, if every legal length-`L` transition block is
+`rho`-contracting, `rho<1`, one finite predictor is valid at every depth with
+error
+
+```math
+epsilon+{L eta\over1-rho}                                       \tag{5.27}
+```
+
+and at most
+
+```math
+Cov^int_eta(S,d_S)                                               \tag{5.28}
+```
+
+states.  For target error `tau>epsilon`, take
+`eta=(tau-epsilon)(1-rho)/L`.
+
+#### Proof
+
+The unrounded state after `w` is `delta_wq(x)` and already predicts the
+physical response within `epsilon`; no physical semiconjugacy is needed.
+The initial retraction and every rounded transition insert a residual of at
+most `eta`.  Transporting these residuals by the suffix transition maps gives
+at most `eta G_T`.  The decoder is one-Lipschitz in `d_S`, proving (5.26).
+The block-geometric suffix sum is at most `L/(1-rho)`, proving the rest.
+`square`
+
+If the strict margin in Theorem 5.5 holds, the original encoder also
+recouples exactly to physical one-step evolution.  This is logically
+separate from (5.26): prediction follows the predictor's transition law,
+while recoupling says that re-encoding the evolved physical state gives the
+same behavioral class.
+
+### Proposition 5.7 (static behavioral covers can underestimate memory linearly)
+
+Fix `alpha>0`, let `S_n={0,...,n}`, and use one transition and response
+
+```math
+delta(i)=min(i+1,n),
+\qquad g(i)=alpha i.                                             \tag{5.29}
+```
+
+Take this exact predictor as the physical system. Its behavioral metric is
+`d_S(i,j)=alpha|i-j|`. For `eta=k alpha`, `1<=2k<=n`,
+
+```math
+Cov^int_eta(S_n,d_S)=ceil{n+1\over2k+1},
+\qquad C_infinity(eta)=n-2k+1.                                  \tag{5.30}
+```
+
+Thus with `k` of order `n/4`, a constant-size static response cover coexists
+with linear reusable memory.
+
+For the lower bound, follow any infinite-depth `eta`-predictor from physical
+state zero. If its state first repeats at times `i<j`, all decoder values on
+the resulting cycle must be within `eta` of the eventual true value
+`n alpha`. The value at time `i` is also within `eta` of `i alpha`, so
+`(n-i)alpha<=2eta`. Hence the first `n-2k+1` states are distinct. For the
+upper bound, retain exact transient states `0,...,n-2k-1` and merge the
+suffix `{n-2k,...,n}` into one sink decoded at `(n-k)alpha`.
+
+This is the compact two-piece affine system
+`F(x)=min(x+alpha,n alpha)` restricted to its invariant grid.  It identifies
+the missing dynamic resource exactly: its first constant transition block
+has length `n`, so the `L` in (5.27) grows at the same scale as the memory
+lower bound.  A cover without forgetting is not a reusable quotient.
+
 ## 6. Static compression can fail dynamically
 
 ### Theorem 6.1 (compact encoder--decoder memory explosion)
@@ -914,6 +1270,45 @@ controls return exactly to flat after two steps, but the reward-cycle
 discrepancy is `2s`.  Projective lumpability can therefore coexist with
 extensive error in the absolute optimum; the additive register and its
 cocycle are a separate resource.
+
+### Proposition 7.4 (weak-bond reset gives a depth-uniform projective net)
+
+For one strict-strip column (7.1), let `J_i` be its horizontal couplings. For
+arbitrary incoming profiles `f,g`,
+
+```math
+||[T_cf]-[T_cg]||_H<=2sum_i|J_i|.                               \tag{7.8}
+```
+
+Suppose every block of `L` consecutive columns contains a weak column with
+`2sum_i|J_i|<=delta`. If a normalized approximate transfer is rounded after
+every column with Hilbert error at most `eta`, then after the first weak
+column,
+
+```math
+||[f_t]-[f~_t]||_H<=delta+L eta                                  \tag{7.9}
+```
+
+at every depth. Thus a finite net of a bounded reachable projective region is
+a reusable approximate state despite optimizer switching. This is a
+small-image reset, not strict global contraction of an individual max-plus
+map.
+
+#### Proof
+
+The local column term cancels between `T_cf` and `T_cg`. For two output
+boundaries `y,z`, the kernel difference
+
+```math
+sum_i J_i x_i(y_i-z_i)
+```
+
+has range at most `4sum_i|J_i|` over `x`. The difference between the two
+maxima for `f` and `g` therefore has oscillation at most that range, proving
+(7.8) after division by two. A weak column resets the projective discrepancy
+to at most `delta`, independently of the incoming discrepancy; its rounding
+and at most `L-1` later nonexpansive rounded updates add at most `Leta`.
+`square`
 
 ## 8. Weighted automata: exact refinement and a sharp defect cycle
 

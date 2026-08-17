@@ -1147,3 +1147,62 @@ separates exact state complexity, which is discontinuous at `delta=0`, from
 finite-horizon response distortion, which changes continuously.  The
 repeatable defect cycle—not the mere failure of exact lumpability—is the
 obstruction to depth-uniform reuse.
+
+## Example 45: rational compact selector dynamics have finite symbolic memory
+
+On a compact rational projective polytope, let every branch copy coordinates
+and add rational offsets. Pulling back one affine observation wall can create
+new offsets, but its normal only redistributes the finitely many labelled
+coefficients among coordinate bins. The offsets lie on one rational lattice,
+and only finitely many lattice translates cross the compact carrier.
+
+Thus the complete contextual refinement is finite without enumerating orbit
+words. This is an algebraic path-realization mechanism distinct from
+contraction: the maps may retain old differences exactly. It preserves a
+finite polyhedral observation coloring, not an arbitrary accumulated real
+reward.
+
+## Example 46: irrational rotation defeats every finite autonomous predictor
+
+Let `F_alpha(x)=x+alpha mod 1` on the circle, with irrational `alpha`, and
+observe the circle coordinate in geodesic distance. Any trajectory of a
+finite autonomous predictor is eventually periodic. Along one eventual
+phase, the true orbit advances by `p alpha` and is dense, so its distance
+from the phase's fixed decoded value has supremum `1/2`. Consequently no
+finite predictor has uniform error below `1/2`.
+
+This remains true for badly approximable `alpha`: equicontinuity and strong
+Diophantine regularity do not replace a finite invariant net. A nontrivial
+arc coloring likewise has no finite exact predictor. The failure is temporal
+phase drift, not numerical instability.
+
+## Example 47: a two-centre cover can require linear dynamic memory
+
+On the invariant grid `{0,alpha,...,nalpha}`, use
+
+```math
+F(x)=min(x+alpha,nalpha),
+\qquad h(x)=x.
+```
+
+At error `eta=kalpha`, the static behavioral metric has internal covering
+number `ceil((n+1)/(2k+1))`, but the exact minimum number of states in an
+infinite-depth `eta`-predictor is `n-2k+1`. For `k=n/4`, two static centres
+coexist with order-`n` reusable memory. A repeated predictor state too early
+would be both close to its transient value and, on its eventual cycle, close
+to the saturated value. The two requirements differ by more than `2eta`.
+
+## Example 48: one contracting edge per control cycle gives the sharp gain
+
+Take an `L`-cycle of metric fibres with `L-1` identity edges and one edge of
+coefficient `theta<1`. Add an aligned fresh error `eta` on every transition.
+Observed just before the contracting edge, one circuit sends
+
+```math
+z |-> theta z+Leta.
+```
+
+The limiting error is exactly `Leta/(1-theta)`. At `theta=1` it grows
+linearly. This simultaneously proves the sharpness of the block-contraction
+bound and shows why merely knowing that some local maps are contracting is
+insufficient: every reachable cycle must pay contraction.

@@ -6,49 +6,54 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Robust converse to finite tropical lumpability
+## 1. Scalar-reward cohomology over the finite selector quotient
 
-The forward structural problem now has two rigorous positive criteria. Exact contextual
-refinement stabilizes if and only if a finite deterministic path-realizing
-quotient exists. More usefully, a finite oriented affine arrangement closed
-under generator pullback is a checkable sufficient certificate; for selector
-coordinate differences, finiteness of the unrestricted pullback closure is
-equivalent to zero weight on every reachable unit-transport cycle. An
-approximate block quotient plus uniform switching contraction gives a finite
-depth-independent response simulator without enumerating active cells.
+The symbolic path-realization problem is now solved for compact rational
+unit-selector systems: finite normal transport, a rational offset lattice,
+and compact width force affine pullback saturation to terminate. Arbitrary
+real translations cannot be covered by a soft approximation theorem;
+irrational rotation has no finite autonomous predictor below half-diameter.
+The remaining obstruction inside the positive rational class is numerical,
+not symbolic.
 
-The remaining problem is a **robust converse**. Failure of one affine
-certificate need not kill every quotient: formal selector branches may be
-dynamically incompatible, and saturation may eliminate their infinite
-normal orbit. Nor must failure produce amplitude drift: irrational rotation
-has zero drift but an unbounded exact contextual partition. The compact
-Cantor encoder--decoder instead has exponential approximate future memory.
+Let the exact finite selector quotient carry a real transition reward
+`r_e(x)`, affine on each source atom. Characterize when there are finite edge
+tolls `bar r(s,e)` and a bounded potential `V(x)` such that
 
-For a compact rational selector-affine system and fixed response accuracy
-`epsilon`, characterize which of the following is forced:
+```math
+r_e(x)-bar r(s,e)=V(x)-V(F_ex).                                 \tag{OQ.1}
+```
 
-1. a finite approximate bisimulation/congruence;
-2. a realizable positive response cocycle, giving extensive drift; or
-3. an explicit packing of the horizon response trees whose cardinality tends
-   to infinity.
+Then cumulative reward error telescopes at every depth. Zero discrepancy on
+every realizable periodic orbit is necessary. Determine whether it is
+sufficient for compact rational selector-affine systems, or identify the
+additional regularity/recurrence hypothesis required. A counterexample must
+have a finite exact symbolic quotient and zero periodic sums but unbounded
+Birkhoff discrepancy; merely repeating the known nonzero finite graph cycle
+does not settle this question.
 
-The desired theorem must give a checkable witness, not merely define the
-minimal contextual pseudometric. A promising restricted case is a finite
-unit-transport normal graph with polyhedral enabling domains: decide whether
-a nonzero syntactic holonomy cycle has a repeatable feasible subcycle, and if
-not, bound the pullback-refinement entropy of the transient language.
+In parallel, for already finite approximate predictors, sharpen the
+behavioral-cover law. Theorem 17.3b proves
 
-**Success:** a decidable dichotomy/trichotomy for one nontrivial selector
-class, with either a finite quotient of controlled size or a quantitative
-realizable drift/response-packing witness.
+```math
+error <= base error + (net radius)(suffix gain)
+```
 
-**Stop condition:** common normal directions without affine offsets, pairwise
-face compatibility, or an unconstrained orbit-language enumeration does not
-advance the target.
+and a saturating chain shows that a constant static cover can coexist with
+linear reusable memory. Seek an intrinsic lower bound matching the weighted
+cycle-mean upper for broader switching systems.
 
-In parallel, the bounded-presentation benchmark leaves a sharp scale gap.
+**Success:** a finite LP/cohomology criterion giving a bounded accumulated
+reward representation, or a compact rational counterexample proving that
+periodic-orbit tests are incomplete.
+
+**Stop condition:** a theorem for rewards already constant on quotient edges
+is only finite graph potential theory; the new result must control genuine
+within-atom affine variation.
+
+The bounded-presentation benchmark separately leaves a sharp scale gap.
 Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy
-upper bound, while robust facet deletion gives `Omega(m log m)`.  A robust
+upper bound, while robust facet deletion gives `Omega(m log m)`. A robust
 common-normal-fan charging theorem, or an `Omega(m^2)` separated
 multi-polytope construction, would settle which exponent is real.
 

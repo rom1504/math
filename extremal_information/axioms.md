@@ -716,3 +716,41 @@ sequential response simulator pays the internal covering number at scale
 `epsilon/G_T`. For the entire branching context tree, local response entropy
 at diameter `D rho^k` is paid `q^k` times. Both laws are sharp, but neither
 alone supplies an exact semiconjugacy.
+
+## 22. Compact arithmetic closes symbolic switching, while mixing prices lossy reuse
+
+Unit-selector dynamics have an additional exact closure mechanism. On a
+common compact projective carrier, selector pullbacks move every labelled
+normal through a finite set. If affine offsets lie in a discrete additive
+group, only finitely many translated walls can meet the carrier. Rational
+polyhedral selector systems therefore admit an effectively constructible
+finite path-realizing refinement for every finite polyhedral observation
+coloring. Compactness alone is insufficient: an irrational circle rotation
+has dense wall pullbacks and no finite autonomous predictor below half the
+response diameter.
+
+For approximate reuse, the intrinsic metric on a finite predictor is not its
+one-step output distance but the supremum of output distance over all common
+suffixes. In this behavioral metric every transition is nonexpansive, and
+the encoder misses physical one-step recoupling by at most twice the original
+response error. A strict behavioral margin turns this into exact
+semiconjugacy.
+
+Quantization then obeys a precise static--dynamic law:
+
+```math
+response error
+<= original predictor error
+ + (behavioral net radius)(suffix gain).
+```
+
+A weighted legal-control graph computes the suffix gain. It is bounded
+exactly when every reachable coefficient-one cycle is absent, with the sharp
+constant obtained from max-times path products or a maximum-cycle-mean
+potential. This makes contraction a quantitative information resource: a
+finite response cover can have two states while every reusable predictor
+needs linearly many states if its forgetting time is linear.
+
+Symbolic closure, metric forgetting, and scalar reward compatibility remain
+separate. Rational compact refinement controls which branches can occur; it
+does not by itself prevent an accumulated reward cocycle from drifting.

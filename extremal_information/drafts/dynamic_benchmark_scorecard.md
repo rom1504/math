@@ -14,6 +14,9 @@ weighted-automaton minimization.
 | Switched affine contractions | Metric net on the invariant quotient | Approximate symbolic model | No exact finite congruence is claimed | Suffix gain makes one finite net uniformly valid; response complexity is paid at scale `epsilon/G` | Correctly recovers contraction mechanism |
 | Compact Cantor encoder--decoder | No bounded future state at error below `1/6` | Symbolic shift register | Exact contextual refinement grows | `2^t` predictive states after `t` writes despite an `O(1/epsilon)` one-step cover | Sharp failure of static-cover reasoning |
 | Irrational rotation | Pullback partition never stabilizes | Sturmian symbolic dynamics | No finite exact congruence | Bounded amplitude and zero drift show that non-lumpability need not yield a positive cocycle | Forces entropy/language obstruction beside holonomy |
+| Compact rational selector system | Rational affine pullback arrangement | Finite polyhedral symbolic abstraction | Discrete offsets plus compact width force finite saturation | Terminal PWA responses admit depth-uniform quantized predictors; scalar rewards remain separate | General finite tropical lumpability theorem |
+| Saturating affine chain | Behavioral response metric | Finite transient automaton | Exact state count is `n+1` | At error `k alpha`, static cover is `ceil((n+1)/(2k+1))` but optimal reusable memory is `n-2k+1` | Sharp separation of response entropy and forgetting time |
+| Width-2 alternating Ising alphabet | Projective gap box plus legal control phase | Max-plus transfer state | One column preserves a projective direction, the other is a common-predecessor reset | Reset-free control graph has longest path one, hence every two-column block is 0-contractive | Intrinsic certificate; no product enumeration |
 
 ## What was actually predicted
 
