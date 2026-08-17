@@ -1,0 +1,3060 @@
+{
+  "classification": "proved exhaustive finite computation for k<=2; solver-certified exact finite computation without standalone proof object for k=3",
+  "definition": "F_C(A)=min_{B in {+-1}^{n by k}} Q([[A,B],[B^T,C]])",
+  "environment": {
+    "cp_sat_num_search_workers": 1,
+    "cp_sat_random_seed": 0,
+    "numpy": "2.0.2",
+    "ortools": "9.15.6755",
+    "platform": "Linux-5.10.0-39-amd64-x86_64-with-glibc2.31",
+    "python": "3.9.2 (default, May 14 2026, 03:00:00) \n[GCC 10.2.1 20210110]"
+  },
+  "frozen_conclusion": {
+    "asymptotic_scope": "These are fixed-order separations only; the experiment provides no scaling law or asymptotic response gap.",
+    "order_7": "The optimized k=1 response separates class 1 from classes 0 and 2; the tested k<=3 language does not separate classes 0 and 2.",
+    "order_8": "The k<=2 responses coincide, while optimized k=3 responses separate the two exhaustive exact-minimizer classes: class 0 has sorted pair [17,17] and class 1 has [19,19]."
+  },
+  "global_exact_values": {
+    "10": 13,
+    "11": 17,
+    "3": 3,
+    "4": 4,
+    "5": 4,
+    "6": 5,
+    "7": 9,
+    "8": 10,
+    "9": 12
+  },
+  "global_sign_quotient_rule": "F_C(-A)=F_{-C}(A); k=3 triangle-product coordinates swap, so the two k=3 values are sorted in the canonical class signature",
+  "normalization": "Q(A)=max_x |sum_{i<j} a_ij x_i x_j|",
+  "query_orbit_check": {
+    "k3_orbits_classified_by_triangle_product": [
+      -1,
+      1
+    ],
+    "switching_and_permutation_orbit_counts": {
+      "1": 1,
+      "2": 1,
+      "3": 2
+    }
+  },
+  "records": [
+    {
+      "canonical_orbit_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "canonical_response_signature_mod_global_sign": [
+        4,
+        4,
+        5,
+        7
+      ],
+      "class": 0,
+      "order": 3,
+      "oriented_response": {
+        "k1_unique": 4,
+        "k2_unique": 4,
+        "k3_triangle_product_minus": 5,
+        "k3_triangle_product_plus": 7
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 8,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.0002444162964820862,
+            "method": "complete vectorized enumeration",
+            "objective": 4,
+            "optimal_bridge_count": 6,
+            "witness_bridge": [
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 4,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 4,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 64,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.00023825280368328094,
+            "method": "complete vectorized enumeration",
+            "objective": 4,
+            "optimal_bridge_count": 12,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 4,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 8,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 0,
+                "conflicts": 0,
+                "elapsed_seconds": 0.0009109769016504288,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 0\nbooleans: 0\nconflicts: 0\nbranches: 0\npropagations: 0\ninteger_propagations: 0\nrestarts: 0\nlp_iterations: 0\nwalltime: 0.000798735\nusertime: 0.000798773\ndeterministic_time: 0\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 5,
+                "wall_time_seconds": 0.0007987350000000001
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 115,
+                "conflicts": 12,
+                "elapsed_seconds": 0.0024621300399303436,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 7\nbooleans: 7\nconflicts: 12\nbranches: 115\npropagations: 68\ninteger_propagations: 142\nrestarts: 0\nlp_iterations: 4\nwalltime: 0.00242482\nusertime: 0.00242486\ndeterministic_time: 9.32072e-05\ngap_integral: 0\nsolution_fingerprint: 0xcad43061cb5f3596\n",
+                "status": "OPTIMAL",
+                "target": 7,
+                "wall_time_seconds": 0.002424816
+              }
+            ],
+            "global_parent_lower_bound": 5,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 7,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 7,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 16,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 52,
+                "conflicts": 13,
+                "elapsed_seconds": 0.002490442246198654,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 7\nbooleans: 7\nconflicts: 13\nbranches: 52\npropagations: 68\ninteger_propagations: 66\nrestarts: 0\nlp_iterations: 7\nwalltime: 0.00245636\nusertime: 0.0024564\ndeterministic_time: 0.000128812\ngap_integral: 0\nsolution_fingerprint: 0xd99c23d6f53f16e\n",
+                "status": "OPTIMAL",
+                "target": 5,
+                "wall_time_seconds": 0.0024563600000000003
+              }
+            ],
+            "global_parent_lower_bound": 5,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 5,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 5,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 16,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "source_self_complementary": false
+    },
+    {
+      "canonical_orbit_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "canonical_response_signature_mod_global_sign": [
+        4,
+        5,
+        9,
+        9
+      ],
+      "class": 0,
+      "order": 4,
+      "oriented_response": {
+        "k1_unique": 4,
+        "k2_unique": 5,
+        "k3_triangle_product_minus": 9,
+        "k3_triangle_product_plus": 9
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 16,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.00024685077369213104,
+            "method": "complete vectorized enumeration",
+            "objective": 4,
+            "optimal_bridge_count": 4,
+            "witness_bridge": [
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 4,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 8,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 256,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.0005102753639221191,
+            "method": "complete vectorized enumeration",
+            "objective": 5,
+            "optimal_bridge_count": 4,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ]
+            ]
+          },
+          "objective": 5,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 16,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 456,
+                "conflicts": 43,
+                "elapsed_seconds": 0.004069598391652107,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 10\nbooleans: 10\nconflicts: 43\nbranches: 456\npropagations: 251\ninteger_propagations: 524\nrestarts: 0\nlp_iterations: 5\nwalltime: 0.00403026\nusertime: 0.0040303\ndeterministic_time: 0.000638059\ngap_integral: 0\nsolution_fingerprint: 0xad96be1798ba2988\n",
+                "status": "OPTIMAL",
+                "target": 9,
+                "wall_time_seconds": 0.004030256
+              }
+            ],
+            "global_parent_lower_bound": 9,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 9,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 9,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 32,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 525,
+                "conflicts": 51,
+                "elapsed_seconds": 0.004613006487488747,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 10\nbooleans: 10\nconflicts: 51\nbranches: 525\npropagations: 268\ninteger_propagations: 623\nrestarts: 1\nlp_iterations: 4\nwalltime: 0.00457178\nusertime: 0.00457182\ndeterministic_time: 0.000837848\ngap_integral: 0\nsolution_fingerprint: 0xe42bbe38bbe0975e\n",
+                "status": "OPTIMAL",
+                "target": 9,
+                "wall_time_seconds": 0.0045717760000000005
+              }
+            ],
+            "global_parent_lower_bound": 9,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 9,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1
+              ]
+            ]
+          },
+          "objective": 9,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 32,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "source_self_complementary": true
+    },
+    {
+      "canonical_orbit_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "canonical_response_signature_mod_global_sign": [
+        5,
+        9,
+        10,
+        10
+      ],
+      "class": 0,
+      "order": 5,
+      "oriented_response": {
+        "k1_unique": 5,
+        "k2_unique": 9,
+        "k3_triangle_product_minus": 10,
+        "k3_triangle_product_plus": 10
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 32,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.00045457109808921814,
+            "method": "complete vectorized enumeration",
+            "objective": 5,
+            "optimal_bridge_count": 2,
+            "witness_bridge": [
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 5,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 16,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 1024,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.001718936488032341,
+            "method": "complete vectorized enumeration",
+            "objective": 9,
+            "optimal_bridge_count": 200,
+            "witness_bridge": [
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 9,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 32,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 1075,
+                "conflicts": 141,
+                "elapsed_seconds": 0.01280074194073677,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 13\nbooleans: 13\nconflicts: 141\nbranches: 1075\npropagations: 707\ninteger_propagations: 1160\nrestarts: 1\nlp_iterations: 50\nwalltime: 0.0127188\nusertime: 0.0127189\ndeterministic_time: 0.00331115\ngap_integral: 0\nsolution_fingerprint: 0x58081a20431a2774\n",
+                "status": "OPTIMAL",
+                "target": 10,
+                "wall_time_seconds": 0.012718809000000001
+              }
+            ],
+            "global_parent_lower_bound": 10,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 10,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ]
+          },
+          "objective": 10,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 524,
+                "conflicts": 57,
+                "elapsed_seconds": 0.011029915884137154,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 13\nbooleans: 13\nconflicts: 57\nbranches: 524\npropagations: 308\ninteger_propagations: 563\nrestarts: 1\nlp_iterations: 36\nwalltime: 0.0109373\nusertime: 0.0109373\ndeterministic_time: 0.00154502\ngap_integral: 0\nsolution_fingerprint: 0x3e8716501c184260\n",
+                "status": "OPTIMAL",
+                "target": 10,
+                "wall_time_seconds": 0.0109373
+              }
+            ],
+            "global_parent_lower_bound": 10,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 10,
+            "witness_bridge": [
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 10,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+      "source_self_complementary": true
+    },
+    {
+      "canonical_orbit_sha256": "bb3cba9a1a887f6d68e7c69aec039cb485023810e718c57c43104131d8314603",
+      "canonical_response_signature_mod_global_sign": [
+        9,
+        10,
+        12,
+        12
+      ],
+      "class": 0,
+      "order": 6,
+      "oriented_response": {
+        "k1_unique": 9,
+        "k2_unique": 10,
+        "k3_triangle_product_minus": 12,
+        "k3_triangle_product_plus": 12
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 64,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.0010195299983024597,
+            "method": "complete vectorized enumeration",
+            "objective": 9,
+            "optimal_bridge_count": 40,
+            "witness_bridge": [
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 9,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 32,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 4096,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.00927484780550003,
+            "method": "complete vectorized enumeration",
+            "objective": 10,
+            "optimal_bridge_count": 40,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 10,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 2342,
+                "conflicts": 170,
+                "elapsed_seconds": 0.04973975196480751,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 32\nbooleans: 16\nconflicts: 170\nbranches: 2342\npropagations: 585\ninteger_propagations: 9487\nrestarts: 1\nlp_iterations: 57\nwalltime: 0.0496378\nusertime: 0.0496379\ndeterministic_time: 0.00764771\ngap_integral: 0\nsolution_fingerprint: 0x5cef8b2f8e3bf873\n",
+                "status": "OPTIMAL",
+                "target": 12,
+                "wall_time_seconds": 0.049637821000000006
+              }
+            ],
+            "global_parent_lower_bound": 12,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 12,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 751,
+                "conflicts": 54,
+                "elapsed_seconds": 0.03162962943315506,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 30\nbooleans: 16\nconflicts: 54\nbranches: 751\npropagations: 173\ninteger_propagations: 2971\nrestarts: 1\nlp_iterations: 65\nwalltime: 0.0315242\nusertime: 0.0315243\ndeterministic_time: 0.00299346\ngap_integral: 0\nsolution_fingerprint: 0x4d2747d40b05b928\n",
+                "status": "OPTIMAL",
+                "target": 12,
+                "wall_time_seconds": 0.031524236000000004
+              }
+            ],
+            "global_parent_lower_bound": 12,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 12,
+            "witness_bridge": [
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968",
+      "source_self_complementary": true
+    },
+    {
+      "canonical_orbit_sha256": "bb31d592e80928c8d2ac5951109738bcd57ec5bcb4be1a2744d0d731cbe3a077",
+      "canonical_response_signature_mod_global_sign": [
+        10,
+        12,
+        13,
+        15
+      ],
+      "class": 0,
+      "order": 7,
+      "oriented_response": {
+        "k1_unique": 10,
+        "k2_unique": 12,
+        "k3_triangle_product_minus": 13,
+        "k3_triangle_product_plus": 15
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 128,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.0026147663593292236,
+            "method": "complete vectorized enumeration",
+            "objective": 10,
+            "optimal_bridge_count": 2,
+            "witness_bridge": [
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 10,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 16384,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.06433742679655552,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 384,
+            "witness_bridge": [
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 3831,
+                "conflicts": 393,
+                "elapsed_seconds": 0.2533504031598568,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 41\nbooleans: 19\nconflicts: 393\nbranches: 3831\npropagations: 1186\ninteger_propagations: 18598\nrestarts: 1\nlp_iterations: 2394\nwalltime: 0.25325\nusertime: 0.25325\ndeterministic_time: 0.0734833\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 13,
+                "wall_time_seconds": 0.253249722
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 4088,
+                "conflicts": 233,
+                "elapsed_seconds": 0.13061533868312836,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 41\nbooleans: 19\nconflicts: 233\nbranches: 4088\npropagations: 769\ninteger_propagations: 17633\nrestarts: 1\nlp_iterations: 103\nwalltime: 0.130442\nusertime: 0.130442\ndeterministic_time: 0.0214975\ngap_integral: 0\nsolution_fingerprint: 0x7d11bcacb07d56e0\n",
+                "status": "OPTIMAL",
+                "target": 15,
+                "wall_time_seconds": 0.130441526
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 15,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ]
+          },
+          "objective": 15,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 1950,
+                "conflicts": 155,
+                "elapsed_seconds": 0.08778682164847851,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 41\nbooleans: 19\nconflicts: 155\nbranches: 1950\npropagations: 594\ninteger_propagations: 9990\nrestarts: 1\nlp_iterations: 259\nwalltime: 0.0875995\nusertime: 0.0875995\ndeterministic_time: 0.0144456\ngap_integral: 0\nsolution_fingerprint: 0x4278e7e142dd0359\n",
+                "status": "OPTIMAL",
+                "target": 13,
+                "wall_time_seconds": 0.08759945100000001
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 13,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1
+              ]
+            ]
+          },
+          "objective": 13,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "1b64bd7ae64b52b5853dbd784d1056b5c66eb33bf539dea1c36c372240c1365d",
+      "source_self_complementary": false
+    },
+    {
+      "canonical_orbit_sha256": "be39e817ba7b9299254d0d5b73114b75e441ce4d031d90d71f19ba30780e2002",
+      "canonical_response_signature_mod_global_sign": [
+        12,
+        12,
+        13,
+        15
+      ],
+      "class": 1,
+      "order": 7,
+      "oriented_response": {
+        "k1_unique": 12,
+        "k2_unique": 12,
+        "k3_triangle_product_minus": 15,
+        "k3_triangle_product_plus": 13
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 128,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.002458171918988228,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 42,
+            "witness_bridge": [
+              [
+                -1
+              ],
+              [
+                -1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 16384,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.05858580581843853,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 280,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 3091,
+                "conflicts": 224,
+                "elapsed_seconds": 0.10906169563531876,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 43\nbooleans: 19\nconflicts: 224\nbranches: 3091\npropagations: 599\ninteger_propagations: 15528\nrestarts: 1\nlp_iterations: 118\nwalltime: 0.108893\nusertime: 0.108893\ndeterministic_time: 0.0166357\ngap_integral: 0\nsolution_fingerprint: 0xd4e3c6683c397d65\n",
+                "status": "OPTIMAL",
+                "target": 13,
+                "wall_time_seconds": 0.10889314500000001
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 13,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ]
+            ]
+          },
+          "objective": 13,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 1805,
+                "conflicts": 181,
+                "elapsed_seconds": 0.15011149644851685,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 40\nbooleans: 19\nconflicts: 181\nbranches: 1805\npropagations: 501\ninteger_propagations: 8268\nrestarts: 1\nlp_iterations: 1288\nwalltime: 0.150001\nusertime: 0.150001\ndeterministic_time: 0.0379145\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 13,
+                "wall_time_seconds": 0.15000143000000002
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 2824,
+                "conflicts": 209,
+                "elapsed_seconds": 0.09252802841365337,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 40\nbooleans: 19\nconflicts: 209\nbranches: 2824\npropagations: 717\ninteger_propagations: 12719\nrestarts: 1\nlp_iterations: 87\nwalltime: 0.092343\nusertime: 0.0923431\ndeterministic_time: 0.0123104\ngap_integral: 0\nsolution_fingerprint: 0x36131cdea65111ef\n",
+                "status": "OPTIMAL",
+                "target": 15,
+                "wall_time_seconds": 0.092343014
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 15,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ]
+            ]
+          },
+          "objective": 15,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "a0fdae82f541ccb006d188dd04630a3689a63242bb6734fbac7af628e6fe501e",
+      "source_self_complementary": false
+    },
+    {
+      "canonical_orbit_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "canonical_response_signature_mod_global_sign": [
+        10,
+        12,
+        13,
+        15
+      ],
+      "class": 2,
+      "order": 7,
+      "oriented_response": {
+        "k1_unique": 10,
+        "k2_unique": 12,
+        "k3_triangle_product_minus": 13,
+        "k3_triangle_product_plus": 15
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 128,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.00264081172645092,
+            "method": "complete vectorized enumeration",
+            "objective": 10,
+            "optimal_bridge_count": 6,
+            "witness_bridge": [
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 10,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 64,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 16384,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.061147291213274,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 252,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 3205,
+                "conflicts": 331,
+                "elapsed_seconds": 0.2340627107769251,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 46\nbooleans: 19\nconflicts: 331\nbranches: 3205\npropagations: 904\ninteger_propagations: 18876\nrestarts: 1\nlp_iterations: 1993\nwalltime: 0.233976\nusertime: 0.233976\ndeterministic_time: 0.0688013\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 13,
+                "wall_time_seconds": 0.23397566500000003
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 4007,
+                "conflicts": 294,
+                "elapsed_seconds": 0.14396275579929352,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 46\nbooleans: 19\nconflicts: 294\nbranches: 4007\npropagations: 955\ninteger_propagations: 22638\nrestarts: 1\nlp_iterations: 257\nwalltime: 0.143804\nusertime: 0.143804\ndeterministic_time: 0.0246974\ngap_integral: 0\nsolution_fingerprint: 0x59d4a530ecfdee40\n",
+                "status": "OPTIMAL",
+                "target": 15,
+                "wall_time_seconds": 0.143804432
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 15,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 15,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 2007,
+                "conflicts": 154,
+                "elapsed_seconds": 0.08022196404635906,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 39\nbooleans: 19\nconflicts: 154\nbranches: 2007\npropagations: 431\ninteger_propagations: 8449\nrestarts: 1\nlp_iterations: 79\nwalltime: 0.0800525\nusertime: 0.0800526\ndeterministic_time: 0.0103567\ngap_integral: 0\nsolution_fingerprint: 0xca5ab9838dc48e78\n",
+                "status": "OPTIMAL",
+                "target": 13,
+                "wall_time_seconds": 0.080052522
+              }
+            ],
+            "global_parent_lower_bound": 13,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 13,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 13,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "cbee65e7c700db32846a60fda7df654026768f19c94a14956fcf8974437cc980",
+      "source_self_complementary": false
+    },
+    {
+      "canonical_orbit_sha256": "a5bbc9a3785f85e929367e670d5e7e0bf6bc46cec302dc054c01b5eee2d07fc9",
+      "canonical_response_signature_mod_global_sign": [
+        12,
+        15,
+        17,
+        17
+      ],
+      "class": 0,
+      "order": 8,
+      "oriented_response": {
+        "k1_unique": 12,
+        "k2_unique": 15,
+        "k3_triangle_product_minus": 17,
+        "k3_triangle_product_plus": 17
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 256,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.006136476993560791,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 24,
+            "witness_bridge": [
+              [
+                -1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 65536,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.48895727656781673,
+            "method": "complete vectorized enumeration",
+            "objective": 15,
+            "optimal_bridge_count": 312,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 15,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 11189,
+                "conflicts": 1750,
+                "elapsed_seconds": 0.7094820030033588,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 51\nbooleans: 22\nconflicts: 1750\nbranches: 11189\npropagations: 3488\ninteger_propagations: 67728\nrestarts: 6\nlp_iterations: 7548\nwalltime: 0.709234\nusertime: 0.709234\ndeterministic_time: 0.243023\ngap_integral: 0\nsolution_fingerprint: 0xc262fa9737dff78\n",
+                "status": "OPTIMAL",
+                "target": 17,
+                "wall_time_seconds": 0.7092341080000001
+              }
+            ],
+            "global_parent_lower_bound": 17,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 17,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 17,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 512,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 6558,
+                "conflicts": 961,
+                "elapsed_seconds": 0.4229676369577646,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 53\nbooleans: 22\nconflicts: 961\nbranches: 6558\npropagations: 2244\ninteger_propagations: 45536\nrestarts: 2\nlp_iterations: 4097\nwalltime: 0.422661\nusertime: 0.422661\ndeterministic_time: 0.118079\ngap_integral: 0\nsolution_fingerprint: 0x25df1dffc09580c6\n",
+                "status": "OPTIMAL",
+                "target": 17,
+                "wall_time_seconds": 0.42266067
+              }
+            ],
+            "global_parent_lower_bound": 17,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 17,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 17,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 512,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+      "source_self_complementary": true
+    },
+    {
+      "canonical_orbit_sha256": "75397bf3565083fefc1f5be5b402c0f0bb92c607871ebad3d2a01d53f39c7c5d",
+      "canonical_response_signature_mod_global_sign": [
+        12,
+        15,
+        19,
+        19
+      ],
+      "class": 1,
+      "order": 8,
+      "oriented_response": {
+        "k1_unique": 12,
+        "k2_unique": 15,
+        "k3_triangle_product_minus": 19,
+        "k3_triangle_product_plus": 19
+      },
+      "queries": [
+        {
+          "computation": {
+            "bridge_count": 256,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.006338838487863541,
+            "method": "complete vectorized enumeration",
+            "objective": 12,
+            "optimal_bridge_count": 8,
+            "witness_bridge": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                -1
+              ],
+              [
+                -1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          "objective": 12,
+          "query": "k1_unique",
+          "query_matrix": [
+            [
+              0
+            ]
+          ],
+          "query_order": 1,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 128,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "bridge_count": 65536,
+            "classification": "proved exhaustive finite computation",
+            "elapsed_seconds": 0.499183451756835,
+            "method": "complete vectorized enumeration",
+            "objective": 15,
+            "optimal_bridge_count": 136,
+            "witness_bridge": [
+              [
+                -1,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "objective": 15,
+          "query": "k2_unique",
+          "query_matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "query_order": 2,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 256,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 125241,
+                "conflicts": 14793,
+                "elapsed_seconds": 9.293319147080183,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 54\nbooleans: 22\nconflicts: 14793\nbranches: 125241\npropagations: 64298\ninteger_propagations: 881723\nrestarts: 61\nlp_iterations: 113600\nwalltime: 9.29321\nusertime: 9.29321\ndeterministic_time: 5.30053\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 17,
+                "wall_time_seconds": 9.29321136
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 9713,
+                "conflicts": 397,
+                "elapsed_seconds": 0.2986212410032749,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 54\nbooleans: 22\nconflicts: 397\nbranches: 9713\npropagations: 1704\ninteger_propagations: 54569\nrestarts: 1\nlp_iterations: 75\nwalltime: 0.298358\nusertime: 0.298358\ndeterministic_time: 0.0535915\ngap_integral: 0\nsolution_fingerprint: 0x63a93ff31652d292\n",
+                "status": "OPTIMAL",
+                "target": 19,
+                "wall_time_seconds": 0.29835808
+              }
+            ],
+            "global_parent_lower_bound": 17,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 19,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                1,
+                -1,
+                -1
+              ]
+            ]
+          },
+          "objective": 19,
+          "query": "k3_triangle_product_plus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 512,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        },
+        {
+          "computation": {
+            "classification": "solver-certified exact finite computation; no standalone proof object",
+            "decisions": [
+              {
+                "best_objective_bound": 0.0,
+                "branches": 146602,
+                "conflicts": 16339,
+                "elapsed_seconds": 10.349620576947927,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 48\nbooleans: 22\nconflicts: 16339\nbranches: 146602\npropagations: 73291\ninteger_propagations: 856960\nrestarts: 73\nlp_iterations: 126248\nwalltime: 10.3495\nusertime: 10.3495\ndeterministic_time: 6.39041\ngap_integral: 0\n",
+                "status": "INFEASIBLE",
+                "target": 17,
+                "wall_time_seconds": 10.349525156
+              },
+              {
+                "best_objective_bound": 0.0,
+                "branches": 4324,
+                "conflicts": 193,
+                "elapsed_seconds": 0.16751063242554665,
+                "first_row_orbit_representatives_bits": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    1
+                  ]
+                ],
+                "query_signed_permutation_automorphism_count": 12,
+                "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 0\nbest_bound: 0\nintegers: 48\nbooleans: 22\nconflicts: 193\nbranches: 4324\npropagations: 798\ninteger_propagations: 21037\nrestarts: 1\nlp_iterations: 83\nwalltime: 0.167241\nusertime: 0.167241\ndeterministic_time: 0.0234457\ngap_integral: 0\nsolution_fingerprint: 0xe57a1fbf5e98f48c\n",
+                "status": "OPTIMAL",
+                "target": 19,
+                "wall_time_seconds": 0.16724138400000002
+              }
+            ],
+            "global_parent_lower_bound": 17,
+            "method": "parity-stepped deterministic CP-SAT feasibility",
+            "objective": 19,
+            "witness_bridge": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                -1,
+                1,
+                -1
+              ],
+              [
+                1,
+                1,
+                -1
+              ]
+            ]
+          },
+          "objective": 19,
+          "query": "k3_triangle_product_minus",
+          "query_matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "query_order": 3,
+          "transport_verification": {
+            "all_projective_child_switch_pairs_checked": 512,
+            "reverse_permutation_checked": true,
+            "simultaneous_global_sign_transport_checked": true
+          }
+        }
+      ],
+      "representative_matrix_sha256": "ccfdf94157d2f36afc5d9909aa85526110e5057126a1882144945df0c1cb6f96",
+      "source_self_complementary": true
+    }
+  ],
+  "response_partitions_by_order": {
+    "3": [
+      {
+        "classes": [
+          0
+        ],
+        "signature": [
+          4,
+          4,
+          5,
+          7
+        ]
+      }
+    ],
+    "4": [
+      {
+        "classes": [
+          0
+        ],
+        "signature": [
+          4,
+          5,
+          9,
+          9
+        ]
+      }
+    ],
+    "5": [
+      {
+        "classes": [
+          0
+        ],
+        "signature": [
+          5,
+          9,
+          10,
+          10
+        ]
+      }
+    ],
+    "6": [
+      {
+        "classes": [
+          0
+        ],
+        "signature": [
+          9,
+          10,
+          12,
+          12
+        ]
+      }
+    ],
+    "7": [
+      {
+        "classes": [
+          0,
+          2
+        ],
+        "signature": [
+          10,
+          12,
+          13,
+          15
+        ]
+      },
+      {
+        "classes": [
+          1
+        ],
+        "signature": [
+          12,
+          12,
+          13,
+          15
+        ]
+      }
+    ],
+    "8": [
+      {
+        "classes": [
+          0
+        ],
+        "signature": [
+          12,
+          15,
+          17,
+          17
+        ]
+      },
+      {
+        "classes": [
+          1
+        ],
+        "signature": [
+          12,
+          15,
+          19,
+          19
+        ]
+      }
+    ]
+  },
+  "schema": "exact-minimizer-optimized-bridge-response-v1",
+  "source_global_exact_values": {
+    "10": {
+      "path": "computations/results/exact_m10.json",
+      "sha256": "c5ebd9bff217c4854214f73b4674cd274b65ab158d81e6b67c3b5d1272ad2979"
+    },
+    "11": {
+      "path": "computations/results/certified_m11_m12.json",
+      "sha256": "0d3f97d09c8397c025d2d9be8e8e07ecd602406c91d5972ebde93964616d2d2f"
+    },
+    "3": {
+      "path": "computations/results/exact_m3.json",
+      "sha256": "df3ccceb545d8dba362b80b6eb44c3e925dd509b03a99d0b6b615ea80827a5aa"
+    },
+    "4": {
+      "path": "computations/results/exact_m4.json",
+      "sha256": "455ad7c8b04741c229e23fb4f6dc273ccffc0033ba37589281929d8346b6b203"
+    },
+    "5": {
+      "path": "computations/results/exact_m5.json",
+      "sha256": "dbe4157c0cd60e8be51cdc9127b23e5b6099d9ec6e3bd2807e64fb10db25b1bc"
+    },
+    "6": {
+      "path": "computations/results/exact_m6.json",
+      "sha256": "f7cc742c56c3566a8f956f2536befa0c5a8041175ba8222622dc80fc82562464"
+    },
+    "7": {
+      "path": "computations/results/exact_m7.json",
+      "sha256": "d31b4e4f41cf467a9608bf23e99c65184ca1d384890ea66bb204312b6cf3813c"
+    },
+    "8": {
+      "path": "computations/results/exact_m8.json",
+      "sha256": "7fb3674faa21b060543d579112c9f82457966614350bd4d42fc9774c84a1f2de"
+    },
+    "9": {
+      "path": "computations/results/exact_m9.json",
+      "sha256": "766be51f88dd999566972047ad3383409cf39801d80d148fde16e715dc082252"
+    }
+  },
+  "source_minimizer_classes": {
+    "3": {
+      "class_count": 1,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m3_minimizer_orbits.json",
+      "sha256": "10618f45db6a146ebe3949ca0902ac814a2ad8254d28208a3cc160fdc706268b"
+    },
+    "4": {
+      "class_count": 1,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m4_minimizer_orbits.json",
+      "sha256": "c509fc36925c8fb180c3012f00e3786ce95435bb42344dcb81188abf99e6ec94"
+    },
+    "5": {
+      "class_count": 1,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m5_minimizer_orbits.json",
+      "sha256": "c5d291822d84462a5874770aeef19521202c6124f1d0b3470b27d5a0274d63bb"
+    },
+    "6": {
+      "class_count": 1,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m6_minimizer_orbits.json",
+      "sha256": "9244a7f4dc496c19fd13bb699dab389db7dd0ae5324e0acb7d1a8a6f9b8c78a4"
+    },
+    "7": {
+      "class_count": 3,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m7_minimizer_orbits.json",
+      "sha256": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510"
+    },
+    "8": {
+      "class_count": 2,
+      "classification": "exhaustive exact finite enumeration",
+      "path": "computations/results/m8_minimizer_orbits.json",
+      "sha256": "119633851ebe024924331b9015354fcc2989eaedde415f49e466376dd39ddbf4"
+    }
+  }
+}

@@ -3415,3 +3415,32 @@ more bridges: it is equivalent to proving that every fixed lower pressure
 deviation has probability `exp(-omega(r))` with exponent superlinear in
 `r`.  The isolated algebraic double has quadratic entropy and does not
 decide whether a larger linear-entropy basin exists.
+
+## Example 175: optimized small continuations distinguish minimizer classes after gauge quotient
+
+For an exact-minimizer representative `A` and a hollow sign query `C`, the
+finite response
+
+```math
+F_C(A)=\min_B Q\!\begin{pmatrix}A&B\\B^\mathsf T&C\end{pmatrix}
+```
+
+is invariant under independent child switching once the bridge is
+transported, and its two order-three coordinates must be sorted under the
+residual global-sign quotient.  Exhaustive enumeration for query orders at
+most two and independently cross-checked exact integer optimization at query
+order three give the following order-eight signatures for the two exhaustive
+exact-minimizer classes:
+
+```text
+class 0: [12,15,17,17]
+class 1: [12,15,19,19].
+```
+
+Thus optimized bridges erase switch labels but not every gauge-invariant
+distinction between inequivalent minimizers.  The separation first appears
+here at query order three; both classes agree for orders one and two.  This
+is a fixed finite gap of two, with no asymptotic packing or scaling claim.
+The reproducible protocol, result, source audit, and independent
+symmetry-free MILP check are in `experiments/` and `drafts/` under
+`exact_minimizer_optimized_bridge_response`.
