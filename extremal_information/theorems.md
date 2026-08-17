@@ -11241,6 +11241,118 @@ Boolean responses.  Full details and independent checks are in
 and
 [`experiments/verify_regular_hadamard_boolean_spherical_gap_independent_audit.py`](experiments/verify_regular_hadamard_boolean_spherical_gap_independent_audit.py).
 
+### Theorem 21.45 (one exposed flat optimizer suffices for Boolean recovery)
+
+Let `H` be symmetric with `H^2=r^2I`, let `w_1,...,w_p` be Boolean ports
+of common width `m`, and maximize the channel family
+
+```math
+F_{\sigma,\epsilon}(u)
+={\sigma\over2}u^THu
+ +m\left(\sum_{i=1}^p\epsilon_iw_i\right)^Tu.       \tag{21.270}
+```
+
+Write `mathcal S` and `mathcal B` for its maxima on the sphere
+`||u||^2=n` and the Boolean cube.  If one sphere point in one channel obeys
+
+```math
+F_{\sigma,\epsilon}(u)\ge\mathcal S-\xi rn,
+\qquad
+\phi(u):=1-{||u||_1\over n}\le\varphi,              \tag{21.271}
+```
+
+then, with `c=mp/r`,
+
+```math
+\boxed{
+0\le\mathcal S-\mathcal B
+\le rn\left[\xi+(1+c)\sqrt{2\varphi}\right].}      \tag{21.272}
+```
+
+The condition must concern a near-global exposed channel; locating that
+channel is a separate response-state problem.  It is nevertheless a strict
+recovery certificate: after exposure, it stores one `l_1` statistic and
+uses coordinatewise sign rounding, not a Boolean response table.
+
+The stronger demand that every direction in a `d`-dimensional trust span be
+uniformly flat is impossible for `d>=2`.  Every such subspace contains
+`u`, `||u||^2=n`, with
+
+```math
+{||u||_1\over n}
+\le\gamma_d
+:=\sqrt d\,{\Gamma(d/2)\over
+                 \sqrt\pi\Gamma((d+1)/2)}<1.        \tag{21.273}
+```
+
+Yet exposed flatness occurs in a nontrivial scalable family.  For every
+even `d`, put `q=2^d`, `n=q^2`, and regularize the Walsh matrix on
+`F_2^d\times F_2^d` by the self-dual bent vector
+`y_0(x,z)=(-1)^(x\cdot z)`.  A self-dual linear subspace `L` of size `q`
+produces two distinct Boolean top poles
+
+```math
+a=\mathbf1,
+\qquad b=\mathbf1-2\mathbf1_L,
+\qquad {a^Tb\over n}=1-{2\over q}.                  \tag{21.274}
+```
+
+For two ports of width `m=q/2`, total port mass is one and
+
+```math
+{\mathcal S-\mathcal B\over rn}
+=\sqrt{1-{1\over q}}-\left(1-{1\over q}\right)
+=O(n^{-1/2}).                                       \tag{21.275}
+```
+
+Thus rank two can exhibit either the fixed gap of Theorem 21.44 or
+asymptotically exact Boolean recovery; the distinguishing mechanism is
+exposed pole synchronization, not rank.
+
+#### Proof
+
+For `x=sgn(u)`,
+
+```math
+{||x-u||_2^2\over n}=2\phi(u).                      \tag{21.276}
+```
+
+The quadratic rounding loss is at most
+`rn sqrt(2phi)`, and the port field costs at most
+`mpn sqrt(2phi)=crn sqrt(2phi)`, proving (21.272).
+
+For (21.273), choose a uniform direction `theta` on the unit sphere of the
+subspace.  Rotational invariance and Cauchy--Schwarz give
+
+```math
+\mathbb E||\sqrt nQ\theta||_1\le n\gamma_d,         \tag{21.277}
+```
+
+and strictness follows from `E|theta_1|<sqrt(E theta_1^2)`.
+
+For the construction, take the graph
+`L={(x,Mx)}` of a fixed-point-free symmetric coordinate pairing.  Then
+`L=L^perp`, `y_0|_L=1`, and Walsh inversion gives
+`W1_L=q1_L`.  Hence `y_0-2 1_L` is another Boolean top eigenvector.
+For two Boolean top poles of correlation `rho>=0`, cube and sphere duality
+give exactly
+
+```math
+\mathcal B={rn\over2}+mn(1+\rho),\qquad
+\mathcal S={rn\over2}+mn\sqrt{2(1+\rho)}.           \tag{21.278}
+```
+
+Substitution proves (21.275). `square`
+
+An arbitrary exact-sign completion on the `q` auxiliary vertices changes
+the gap by only `O(q^2)=O(n)`, so the little-oh recovery survives, although
+the coefficient in (21.275) need not.  Full proof and audits are in
+[`drafts/exposed_boolean_synchronization.md`](drafts/exposed_boolean_synchronization.md),
+[`drafts/exposed_boolean_synchronization_independent_audit.md`](drafts/exposed_boolean_synchronization_independent_audit.md),
+[`experiments/verify_exposed_boolean_synchronization.py`](experiments/verify_exposed_boolean_synchronization.py),
+and
+[`experiments/verify_exposed_boolean_synchronization_independent_audit.py`](experiments/verify_exposed_boolean_synchronization_independent_audit.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

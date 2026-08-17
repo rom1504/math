@@ -642,6 +642,15 @@ law for the low-rank factor carrier, or a deterministic Boolean recovery
 theorem transferring its spherical response to exact old-spin caps without
 a fixed leading loss.
 
+The third item now has a strict query-local solution.  One near-global
+spherical optimizer with vanishing coordinate-flatness deficit rounds with
+`o(n^(3/2))` loss, and a close-pole rank-two Walsh family satisfies the
+condition exactly.  Orthogonal rank-two poles retain a fixed gap, while a
+uniform Boolean net for an entire multidimensional trust span is impossible.
+The live problem is no longer the existence of a recovery condition; it is
+whether exposure and flatness are **reusable under switching composition**
+without tabulating all trust channels.
+
 One narrow synchronization law is now exact.  If every onsite block is
 `+-H` and every bridge is `+-H` for one common regular Hadamard factor, the
 projective signed-graph class closes: `r` joining edges create exactly `r`

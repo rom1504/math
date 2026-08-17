@@ -130,9 +130,11 @@ one of:
   concavification; exact for complete common-feature coupling.
 - **Live theorem:** the collective spherical metric-entropy and PSD
   compatibility questions are now closed at fixed total port mass.  Determine
-  whether a natural Boolean synchronization hypothesis transfers this
-  carrier to exact old-spin caps without a fixed leading loss, or whether
-  every such hypothesis already has extensive response complexity.
+  when the new exposed-flatness Boolean synchronization certificate is
+  selected and preserved by repeated composition.  It yields exact
+  `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
+  while an orthogonal rank-two family has a fixed gap and a whole-subspace
+  Boolean net is impossible.
   Coefficient-side frustrated cycle holonomy is not a PSD contraction and
   must remain a separate dynamic variable.
   The continuation-width question is closed once its internal cap budget is

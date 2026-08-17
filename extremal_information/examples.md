@@ -2519,3 +2519,18 @@ collective PSD metric and its gluing law therefore compress their own
 spherical response correctly but cannot be rounded uniformly to the Boolean
 value.  This is an integrality obstruction, not yet an information collision
 inside the Gram state.
+
+## Example 125: exposed flatness, not low rank, controls trust recovery
+
+Coordinatewise rounding of a spherical optimizer loses exactly twice its
+`l_1` flatness deficit in squared Euclidean distance.  Consequently one
+near-global exposed optimizer with `||u||_1/n=1-o(1)` transfers a bounded-
+mass spherical trust value to the Boolean cube with `o(n^(3/2))` loss.
+Requiring this of an entire multidimensional subspace is impossible.
+
+Both sides occur among two-port regular-Walsh systems.  Orthogonal top poles
+have a fixed `l_1/l_2` gap.  Distinct top poles differing on exactly
+`sqrt(n)` coordinates have correlation `1-2/sqrt(n)`; their normalized sum
+is asymptotically flat and their exact Boolean--spherical gap is
+`O(n^(-1/2))`.  The result supplies a genuine restricted recovery mechanism,
+but it assumes that the flat channel is globally exposed.

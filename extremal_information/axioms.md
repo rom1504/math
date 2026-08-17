@@ -1806,3 +1806,17 @@ original discrete class.  Improving the first does not make the second an
 error term.  Conversely, one fixed integrality gap does not by itself prove
 that the compressed coordinates are information-insufficient for a different
 discrete decoder.
+
+## 89. Discrete recovery is an exposed-direction property
+
+A continuous response state need not approximate every vector in its active
+span by a discrete configuration.  That stronger demand already fails in
+every linear subspace of dimension at least two.  For optimizing one query,
+it is enough that one near-global exposed direction be coordinate-flat and
+hence close to its sign rounding.
+
+This separates three obligations: finding the exposed channel, certifying
+flatness of its optimizer, and transporting that certificate through later
+composition.  Rank controls none of them alone.  Orthogonal and
+asymptotically coincident rank-two poles give respectively a fixed gap and
+vanishing recovery error.
