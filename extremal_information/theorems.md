@@ -7083,3 +7083,461 @@ J_((a,b),(c,d))=(ad+bc)/2.                                   \tag{19.3}
 A sufficiently strong labeled unary future pins this configuration, making
 the optimized response gap exactly `|D(S,T)|`. Hence a residual of order
 `L_n` is an observable, scalable falsifier of replacement at that scale.
+
+## 20. When hidden witness phase becomes response information
+
+Let finite max-plus generators satisfy `T_e(i,j)<=lambda_e`.  Choose good
+relations `R_e`, tolerances `theta_e>=0`, and a gap `C>0` so that
+
+```math
+(i,j) in R_e
+  ==>T_e(i,j)>=lambda_e-theta_e,
+
+(i,j) notin R_e
+  ==>T_e(i,j)<=lambda_e-C.                                  \tag{20.1}
+```
+
+For a root set `A`, let `A_u=R_u(A)`, put
+`Theta(u)=sum_s theta_(e_s)`, and define
+
+```math
+V_A(u;f)=max_(i in A,j in I)\{T_u(i,j)+f(j)\}
+          -sum_slambda_(e_s).                               \tag{20.2}
+```
+
+### Theorem 20.1 (gap filtering and orbit-profile isometry)
+
+If `A_u` is nonempty and `Theta(u)+osc(f)<C`, then
+
+```math
+max_(j in A_u)f(j)-Theta(u)
+<=V_A(u;f)<=max_(j in A_u)f(j).                             \tag{20.3}
+```
+
+In particular, at `theta_e=0` equality holds.  If a finite group `G` acts by
+permutations on `I`, `r:I->R`, and
+
+```math
+Phi_r(B)(g)=max_(i in B)r(gi),                              \tag{20.4}
+```
+
+then, for `k osc(r)<C`,
+
+```math
+sup_(g in G)|V_A(u;kr_g)-V_A(v;kr_g)|
+=k||Phi_r(A_u)-Phi_r(A_v)||_infinity.                       \tag{20.5}
+```
+
+With nonzero tolerances, the two sides differ by at most
+`Theta(u)+Theta(v)` under the corresponding gap condition.
+
+#### Proof
+
+An all-good path has weight between the declared toll minus `Theta(u)` and
+the toll.  A path using a bad edge loses at least `C`, more than the total
+good-path uncertainty plus `osc(f)`, so it cannot optimize.  This gives
+(20.3); apply it to every orbit probe `kr_g` to get (20.5). `square`
+
+Now let phases `q` carry nonempty backward supports `K_q`, forward envelopes
+`B_q`, and a deterministic update `delta`, satisfying
+
+```math
+K_(delta(q,e)) subseteq R_e(K_q),
+
+K_q subseteq B_q,
+\qquad R_e(B_q) subseteq B_(delta(q,e)),                    \tag{20.6}
+```
+
+and suppose every declared orbit probe is saturated:
+
+```math
+max_(i in K_q)r_g(i)=max_(i in B_q)r_g(i).                  \tag{20.7}
+```
+
+### Theorem 20.2 (observable support sandwich)
+
+From root `A=K_(q_0)`, every history `u` obeys
+
+```math
+K_(delta(q_0,u)) subseteq A_u subseteq B_(delta(q_0,u)),
+
+Phi_r(A_u)=Phi_r(K_(delta(q_0,u))).                          \tag{20.8}
+```
+
+Thus `M` reachable phases with pairwise `gamma`-separated profiles give an
+intrinsic `M`-state rooted-response packing at error below `kgamma/2`, under
+the gap hypothesis of Theorem 20.1.
+
+#### Proof
+
+The first and second inclusions propagate respectively by the two halves of
+(20.6).  Monotonicity of maxima and (20.7) force equality of the profiles;
+(20.5) and the merged-state triangle inequality prove the packing. `square`
+
+This is not arbitrary lookup exposure.  In the deterministic de Bruijn shift
+on `I=E^m`, cyclic coordinate rotations and the one-symbol readout
+`r(s)=s_1/(q-1)` separate all `q^m` singleton phases.  For nontight cost
+`-C`, every integer `k<C` gives response separation at least `k/(q-1)`.
+With hard (`-infinity`) leakage the separation may be amplified indefinitely.
+
+The finite-gap qualification is necessary.  For length-`m` de Bruijn
+histories, their rooted endpoint vectors differ by at most `C` in sup norm.
+Every common max-plus continuation and terminal maximum is nonexpansive, so
+no common future can separate them by more than `C`.  Anticipatory support
+memory becomes semantic information only through a phase-preserving filter,
+hard reachability, bounded probe horizon, or an equivalent observable
+sandwich.
+
+## 21. Positive and negative endpoints of the bridge hierarchy
+
+### Theorem 21.1 (dense sign bridges carry target-scale response bits)
+
+There are constants `a,gamma,L>0` such that, for every sufficiently large
+`n`, some `B in {-1,1}^(n times n)` with
+`||B||_(2->2)=O(sqrt n)` has `N>=exp(gamma n)` state--query pairs
+`(x_c,y_c)`.  For each `sigma in {0,1}^N`, define
+
+```math
+h_sigma(x_c)=a n^(3/2)sigma_c,
+\qquad
+h_sigma(x)=-Ln^(3/2)\quad(x notin \{x_c\}).                 \tag{21.1}
+```
+
+Then
+
+```math
+(P_Bh_sigma)(y_c)=D_c+a n^(3/2)sigma_c,                     \tag{21.2}
+```
+
+with `D_c` independent of `sigma`.  The `2^N` response functions are pairwise
+exactly `a n^(3/2)` apart.  Uniform error below half this amount needs
+`2^(exp(Omega(n)))` states, or `exp(Omega(n))` bits.
+
+Even the linear landscapes
+
+```math
+h_c(x)=-x^TBy_c                                             \tag{21.3}
+```
+
+contain an `exp(gamma n)`-element projective response packing at separation
+`Omega(n^(3/2))`, and therefore need `Omega(n)` bits.
+
+#### Proof
+
+Take a random sign matrix and independent random sign queries, and set
+`x_c=sign(By_c)`.  Standard Rademacher concentration and a sufficiently small
+`gamma` give simultaneously
+
+```math
+||B||_(2->2)<=C_0sqrt n,
+\quad ||By_c||_1>=d_0n^(3/2),
+
+x_d^TBy_c<=d_1n^(3/2)\quad(d!=c),                           \tag{21.4}
+```
+
+for constants `d_1<d_0`.  Conditional on `B,y_d`, the last tail is Hoeffding
+with coefficient norm at most `C_0n`; a union bound over `N^2` pairs is still
+exponentially small.  Choose `a<(d_0-d_1)/2` and `L` larger than the
+`infinity->1` bridge bound.  This proves (21.2), while sup-norm
+nonexpansiveness proves exact separation.
+
+After also requiring the random queries to have linear pairwise Hamming
+distance, the same rowwise concentration gives
+`||B(y_c-y_d)||_1>=cn^(3/2)`.  But
+
+```math
+(P_Bh_c)(y)=||B(y-y_c)||_1.                                 \tag{21.5}
+```
+
+At `y_c,y_d`, a pairwise response difference takes both signs with this
+magnitude, proving the projective linear-child packing. `square`
+
+Thus neither density nor spectral control compresses arbitrary child
+landscapes at the motivating scale.  The theorem does not address the much
+smaller class of fixed-magnitude quadratic near-minimizers.
+
+### Theorem 21.2 (multitype common-section optimization)
+
+Partition a common coordinate set into types `C_c`, `|C_c|=n_c`.  Block `a`
+has an internal energy depending only on the typewise plus counts `k_(a,c)`.
+Couple blocks by
+
+```math
+R_ab=sum_c alpha_(ab,c)D_c
+     +sum_(c,d)beta_(ab,cd)1_(C_c)1_(C_d)^T,
+\qquad alpha_(ab,c)>=0.                                     \tag{21.6}
+```
+
+Then the exact joint optimum is
+
+```math
+max_(k_(a,c))\left\{
+sum_a h_a(k_a)+sum_(a<b)\left[
+sum_c alpha_(ab,c)(n_c-2|k_(a,c)-k_(b,c)|)
++sum_(c,d)beta_(ab,cd)s_(a,c)s_(b,d)
+\right]\right\}.                                           \tag{21.7}
+```
+
+One nested representative inside each type attains every pairwise bound at
+once.  The reduced joint search uses at most `mKlog_2(n+1)` label bits for
+`m` blocks and `K` types, even though the matrices can be dense and full
+rank.
+
+For signed nonzero `alpha_(ab,c)` and `n_c>=2`, a common section exists
+uniformly for all count assignments iff each type's signed block graph is
+balanced.  An isolated unbalanced unit cycle at even `n_c` and zero
+type-magnetization loses exactly `2n_c` relative to separately optimized pair
+responses.
+
+#### Proof
+
+Inside one type,
+
+```math
+sum_(i in C_c)x_i^ax_i^b
+=n_c-2|P_(a,c)\triangle P_(b,c)|
+<=n_c-2|k_(a,c)-k_(b,c)|.                                  \tag{21.8}
+```
+
+Common initial segments attain equality for every pair.  Signed balance is
+the vertex-gauge criterion.  For necessity on an unbalanced cycle, gauge a
+spanning path and assign count one or `n_c-1` according to the path gauge;
+path-edge optimality forces one fixed singleton or its complement, while the
+closing edge has the incompatible sign.  The quantitative cycle loss follows
+coordinatewise as in Theorem 18.6. `square`
+
+This is a reduced **jointly reoptimizable** search, not an arbitrary-future
+state for a fragment with a frozen microscopic alignment.  Under fixed
+`m,K`, convergent type proportions, `beta=b/n`, and uniformly convergent
+gauged internal energies, (21.7) yields a finite-dimensional compact
+variational limit by uniform convergence on the type-magnetization grids.
+
+### Theorem 21.3 (vertex-cover bridge width is worst-case sharp)
+
+Let a bipartite bridge `R` have left variables `A union U`, right variables
+`B union V`, where `A union B` is a vertex cover of size `k`; hence
+`R_(UV)=0`.  For an arbitrary left landscape `F`, define its conditioned
+table
+
+```math
+Q_F(a,beta)=a^TR_(AB)beta
++max_u\{F(a,u)+u^TR_(UB)beta\}.                              \tag{21.9}
+```
+
+It has `2^k` entries and determines the exact outgoing bridge response:
+
+```math
+(P_RF)(beta,v)=max_a\{Q_F(a,beta)+a^TR_(AV)v\}.              \tag{21.10}
+```
+
+Thus equality of this envelope is the coarsest exact state for arbitrary
+right futures; the raw table is a universal sufficient representation.
+
+This dependence is worst-case sharp.  For a `k`-edge matching of weight `W`,
+let normalized child tables range over `[-D,0]^({-1,1}^k)` with `2W>D`.
+Then
+
+```math
+(P_RQ)(y)=kW+Q(y).                                           \tag{21.11}
+```
+
+Every coordinate is exposed.  The exact projective lattice with mesh `eta`,
+`M=D/eta`, has
+
+```math
+(M+1)^(2^k)-M^(2^k)                                         \tag{21.12}
+```
+
+classes, and the worst-case response rate is
+
+```math
+Theta(2^k log(1+D/epsilon))                                  \tag{21.13}
+```
+
+bits.
+
+#### Proof
+
+Because no edge joins `U` to `V`, conditioning on `(a,beta)` separates the
+left maximization and gives (21.10).  Arbitrary future weights compare only
+the displayed envelope and can pin each right spin assignment.  In the
+matching instance, changing one spin from `x=y` loses `2W>D`, proving
+(21.11).  Sup-norm response isometry, grid packing, and coordinate
+quantization give (21.12)--(21.13). `square`
+
+The matching has degree and treewidth one but minimum vertex cover `k`.
+Sparse compression is controlled by simultaneous live interface size, not
+local degree.  Fixed numerical degeneracies of `R` may quotient the table
+further; `2^k` is the sharp support-only law.
+
+## 22. Finite-port response dimension
+
+For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective
+classes define
+
+```math
+d_proj([m],[m'])
+=inf_(c in R)sup_(g in R^q)|R_m(g)-R_(m')(g)-c|.             \tag{22.1}
+```
+
+### Theorem 22.1 (polyhedral response rate)
+
+If `S subset R^q/R1` is a fixed compact finite ordinary polyhedral complex
+of topological dimension `d`, arbitrary coordinate futures make `S` the
+coarsest exact projective response state and
+
+```math
+d_proj([m],[m'])={1\over2}osc(m-m').                         \tag{22.2}
+```
+
+As `epsilon` tends to zero,
+
+```math
+Cov(S,d_proj,epsilon)=Theta_S(epsilon^(-d)).                 \tag{22.3}
+```
+
+The same exponent governs optimal response codebooks up to the usual
+packing/covering factor two.  A bounded scalar baseline adds one scalar
+precision term; an unbounded baseline has no finite absolute codebook.
+
+#### Proof
+
+Coordinate-pinning futures recover every coordinate difference.  Optimizing
+one future-independent scalar calibration gives the midrange and (22.2).
+A finite `d`-dimensional polyhedral complex has an
+`O_S(epsilon^(-d))` cover, while a relatively open ball in a maximal cell
+gives the matching packing. `square`
+
+### Theorem 22.2 (all-finite tropical-kernel carrier)
+
+For finite `K in R^(p times q)`, let
+
+```math
+(U_Ku)_j=max_i\{u_i+K_(ij)\},
+\qquad C_K=\{[U_Ku]:u in R^p\}.                              \tag{22.4}
+```
+
+Then `C_K` is a compact finite polyhedral complex of ordinary dimension
+`d_K<=min(p-1,q-1)`, and hence has response rate (22.3) with `d=d_K`.
+At a tree node with child messages `b_c1+r_c in R^p`, unary score `a`, and
+outgoing kernel `K`, its exact state update is
+
+```math
+u=a+sum_c r_c,
+\quad w=U_Ku,
+
+b_out=sum_cb_c+max_jw_j,
+\quad r_out=w-(max_jw_j)1.                                  \tag{22.5}
+```
+
+Thus the response image is an exact semantic congruence.  If all microscopic
+data lie in one lattice `eta Z`, the normalized carriers are finite and
+exactly invariant.  Rounding `F` arbitrary factors first gives a carrier for
+the rounded model and total conditional-optimum error at most `Feta/2`; it
+does not give depth-independent error at fixed mesh.
+
+#### Proof
+
+On each selector region `U_K` is affine.  The projective image of that
+polyhedron is a polyhedron, and
+
+```math
+min_i(K_(ij)-K_(ik))
+<=(U_Ku)_j-(U_Ku)_k
+<=max_i(K_(ij)-K_(ik))                                      \tag{22.6}
+```
+
+makes every normalized image bounded.  A finite common refinement is the
+classical tropical type complex.  Formula (22.5) is max-sum elimination;
+the lattice and rounding claims follow assignmentwise. `square`
+
+The geometry in Theorem 22.2 is classical tropical convexity.  The response
+metric, rate statement, and separation between static image and reusable
+arithmetic congruence are the deductions used here.
+
+For a ferromagnetic `q`-state Potts edge of strength `K>0`, direct calculation
+gives the exact image
+
+```math
+C_K=\{r in [-K,0]^q:max_jr_j=0\},                            \tag{22.7}
+```
+
+so `d_K=q-1` and its sharp contextual codebook has
+`Theta_q((K/epsilon)^(q-1))` states.  This independently derived benchmark
+also gives the binary clipped-gap update.  Bounded Viterbi survivor families
+and bounded parity tables are instances of Theorem 22.1, but not literal
+all-finite compact-kernel images because their structural infeasibility uses
+infinite semiring entries.
+
+## 23. Contraction turns response scale into forgetting time
+
+Let a deterministic discounted-control block of duration `h` act on a
+terminal value vector by
+
+```math
+(U_(K,h)v)_i=max_j\{K_(ij)+lambda^h v_j\},
+\qquad 0<lambda<1.                                          \tag{23.1}
+```
+
+Blocks compose by the semidirect max-plus rule
+
+```math
+(K odot_h L)_(ik)=max_j\{K_(ij)+lambda^hL_(jk)\}.           \tag{23.2}
+```
+
+### Theorem 23.1 (discounted response isometry and rate)
+
+If arbitrary deterministic routing continuations and initial-state probes
+are declared, then the exact depth-`h` response metrics are
+
+```math
+d_h(v,w)=lambda^h||v-w||_infinity,
+
+dbar_h([v],[w])={lambda^h\over2}osc(v-w).                    \tag{23.3}
+```
+
+Suppose immediate rewards lie in `[-R,R]` and a horizon-`H` terminal reward
+is zero. The realizable value class is exactly the cube
+
+```math
+[-B_H,B_H]^n,
+\qquad B_H=R{1-lambda^H\over1-lambda}.                       \tag{23.4}
+```
+
+Consequently its optimal depth-`h`, error-`epsilon` absolute response
+codebook satisfies
+
+```math
+log_2M=Theta\left(
+n log\left(1+{B_Hlambda^h\over epsilon}\right)\right),      \tag{23.5}
+```
+
+with exponent `n-1` projectively. The constants are absolute in the
+nontrivial resolution regime; explicit coordinate-grid packing and covering
+bounds govern the one-state endpoint.
+
+#### Proof
+
+The maximum inequality contracts sup distance by `lambda^h`. A hard
+zero-reward route to a coordinate attaining the sup difference gives
+equality, and scalar calibration gives the projective formula. Every value
+lies in (23.4). Conversely, a statewise self-loop reward
+
+```math
+r_i=v_i{1-lambda\over1-lambda^H}                             \tag{23.6}
+```
+
+realizes every point of that cube without exceeding `R`. Grids of mesh
+`epsilon/lambda^h` give matching covers and separated packings. `square`
+
+The infinite-horizon radius is `R/(1-lambda)`, so old information becomes
+`epsilon`-irrelevant after `Theta(log(B/epsilon)/(-log lambda))` steps. If a
+fresh local error `delta` enters at every Bellman update, however,
+
+```math
+e_t<=lambda^te_0+delta{1-lambda^t\over1-lambda},             \tag{23.7}
+```
+
+and the denominator is attained by self-loops. This benchmark quantifies the
+dynamic factor missing from static response entropy: contraction changes the
+scale at which the same response image must be covered.

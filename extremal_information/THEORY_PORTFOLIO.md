@@ -25,9 +25,10 @@ one of:
 
 - **Core object:** future-response equivalence, response roofs, presented
   carriers, and finite endpoint-support families with reward potentials.
-- **Strongest theorem:** weighted anticipatory-support lumpability gives
-  generator-checkable all-word spectral error; scalar survival is exactly
-  subset nonmortality and failure has a pumpable mortal word.
+- **Strongest theorem:** a backward support, forward envelope, and saturated
+  orbit readout make hidden witness phase an intrinsic response packing.  A
+  uniform gap theorem states exactly when bounded rooted probes filter to the
+  tight endpoint max-profile.
 - **Best benchmark:** width-two Ising has scalar output, two minimal
   anticipatory states, and four forward path states; its interacting response
   is `2N_ca^cyc-N_a`.
@@ -39,8 +40,10 @@ one of:
   witness is chosen backward after the declared future is known.
 - **Composition mechanism:** backward-surjective support update plus a finite
   cocycle potential; recurrent errors are cycle means.
-- **Live theorem:** characterize which rooted probes make hidden support phase
-  observable and convert certificate memory into intrinsic response packing.
+- **Live theorem:** quantify the smallest bounded-description probe/filter
+  architecture that makes phase observable with soft leakage.  Finite
+  leakage caps every common-future separation, so an infinite-horizon rate
+  theorem needs a reset or phase-preserving filter.
 - **Strike count:** zero.  The exact support-game characterization and its
   exponential self-falsifier reset the counter while revising the hierarchy:
   forward and anticipatory carriers are incomparable.
@@ -58,13 +61,17 @@ one of:
 - **Best benchmark:** fixed-rank quadratic bridges, not merely finite-atom
   mean field.
 - **Best falsifiers:** rank one can expose `2^n` exact atoms; a degree-one
-  matching bridge can carry exponentially many macroscopic response bits.
+  matching bridge can carry exponentially many macroscopic response bits;
+  a random dense sign bridge exposes `exp(Omega(n))` response bits at the
+  `n^(3/2)` scale for arbitrary children and `Omega(n)` bits already for
+  weighted linear children.
 - **Information discarded:** microscopic configurations inside one aggregate
   fibre.
 - **Composition mechanism:** bi-affine lifted-point product followed by upper
   concavification; exact for complete common-feature coupling.
-- **Live theorem:** replace ambient rank by an exposed/query parameter in a
-  genuinely intermediate structured family, or prove a response packing.
+- **Live theorem:** determine whether a natural restricted quadratic child
+  class has smaller response entropy than the random dense-bridge lower
+  endpoint.  The all-landscape version is now rigorously impossible.
 - **Stopping condition:** two checkpoints with no family beyond fixed rank or
   assumed symmetry and no scalable lower bound.
 
@@ -76,8 +83,10 @@ one of:
   common nested optimizer section in permutation-invariant
   `alpha I+beta J` bridges; an unbalanced cycle creates a `2n` separable-
   response gap.
-- **Best benchmark:** a full-rank dense synchronized class has an exact
-  magnetization factor algebra and a finite-dimensional thermodynamic limit.
+- **Best benchmark:** a full-rank dense synchronized class has an exact joint
+  magnetization reduction and a finite-dimensional thermodynamic limit.
+  A common `K`-type partition extends the joint search to
+  `O(mK log n)` label bits, with one signed-holonomy audit per type.
 - **Best falsifier:** an isolated unbalanced signed cycle defeats the sum of
   all separately optimized pair responses at leading scale.
 - **Information discarded:** local gauge choices, retaining only cycle
@@ -135,6 +144,29 @@ one of:
 - **Next theorem:** a structured signed replacement lemma achieving
   `o(n^(3/2))` error with subexponential state, or a lower bound excluding it.
 
+### 7. Finite-port tropical response images — active, B+
+
+- **Core object:** the realizable projective response image, separated from
+  the arithmetic or semantic congruence that makes a finite net reusable.
+- **Strongest theorem:** a fixed compact polyhedral response family of
+  dimension `d` has semantic codebook size `Theta(epsilon^(-d))`; an
+  all-finite max-plus kernel realizes a compact tropical polytope and closes
+  exactly under tree composition.
+- **Best benchmarks:** Viterbi survivor vectors, minimal parity-trellis
+  tables, and clipped Potts messages were frozen independently.  Potts has
+  an exact lattice carrier and sharp `(K/epsilon)^(q-1)` rate.
+- **Contraction benchmark:** discounted deterministic control has exact
+  depth-`h` response metric `lambda^h` times the static metric.  Its bounded
+  reward cube gives a matching rate and the sharp `1/(1-lambda)` repeated-
+  error denominator.
+- **Best falsifier:** dimension alone is nonuniform across changing kernels,
+  and a fixed mesh gives total error proportional to the number of rounded
+  factors.  All-finite positivity has no strict zero-temperature contraction
+  except at max-plus rank one.
+- **Next theorem:** a scalable contraction/synchronization hypothesis that
+  reduces the realizable response dimension itself, rather than merely
+  quantizing a full port.
+
 ## Benchmark ladder
 
 | Level | Benchmark | Current/target state | Status |
@@ -144,14 +176,17 @@ one of:
 | 1 | weighted automata | response residual versus support proof game | passed; notions incomparable |
 | 1 | finite-rank mean field | aggregate histogram / roof | passed |
 | 2 | Viterbi/HMM optimization | projective survivor vector | passed independently |
-| 2 | bounded-treewidth decoding | future-visible syndrome quotient | active, frozen |
-| 2 | tensor/junction-tree contraction | projective boundary tensor response | queued |
-| 3 | approximate weighted automata | response cover at forgetting-time scale | queued |
+| 2 | bounded-treewidth decoding | future-visible syndrome quotient | passed independently |
+| 2 | Potts tree / junction-tree max-sum | clipped tropical response image | passed independently |
+| 2 | tensor/junction-tree contraction | projective boundary tensor response | represented by finite-port theorem; broader tensor case queued |
+| 3 | discounted deterministic control | value vector with contraction-scaled response cover | passed independently |
+| 3 | approximate weighted automata | response cover at forgetting-time scale | represented by contraction and Viterbi extremes; broader case queued |
 | 3 | low-rank vector balancing | zonotope plus nonconvexity defect | active |
 | bridge | fixed-rank quadratic coupling | finite-dimensional joint roof | passed |
 | bridge | sparse coupling | live-interface response transform | negative: degree one can be hard |
+| bridge | vertex-cover width `k` | `2^k`-entry bridge table | passed; worst-case sharp, audit pending |
 | bridge | structured dense coupling | signed-balanced magnetization algebra | passed with limit theorem |
-| bridge | random dense coupling | cut-norm replacement at `n^2` scale | passed; `n^(3/2)` ceiling |
+| bridge | random dense coupling | cut-norm replacement at `n^2`; sign-bridge packing at `n^(3/2)` | positive dense-scale replacement and strong target-scale negative |
 
 ## Director rule
 

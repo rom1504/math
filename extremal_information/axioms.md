@@ -993,8 +993,12 @@ observable obstruction to the separable pair-potential algebra.
 This is not a universal lower bound on joint tables; one can always retain
 more compatibility information. Its value is generative: it gives a
 checkable full-rank dense class with an exact magnetization factor algebra and
-a finite-dimensional thermodynamic limit, and it identifies the precise
-cycle witness when that algebra fails.
+checkable full-rank dense class with an exact joint magnetization reduction
+and a finite-dimensional thermodynamic limit, and it identifies the precise
+cycle witness when that reduction fails.  Counts are not automatically a
+serial state when an old microscopic alignment is frozen and exposed to a
+new future; the common-section theorem assumes joint reoptimization in the
+declared synchronized family.
 
 ## 35. Extremal replacement is scale-sensitive
 
@@ -1009,3 +1013,44 @@ regularity at `L_n=n^(3/2)` needs accuracy `o(n^(-1/2))` and may introduce
 exponentially many blocks. A useful renormalization theory must therefore
 carry the normalization in its definition; a compact state at one leading
 scale need not retain any information at a finer extremal scale.
+
+## 36. Proof memory becomes semantic only through observability
+
+A backward-surjective support can remember exponentially many phases while
+the optimized response and a forward path lift each have one state.  Carrier
+size is therefore not an information lower bound by itself.
+
+The missing condition is two-sided and query-relative.  A backward support
+must sit inside a forward endpoint envelope, and the declared probes must
+take the same maxima on the two sets.  Under a uniform energy gap, bounded
+probes then filter exactly to the endpoint max-profile, turning separated
+phase profiles into a genuine response packing.  A cyclic navigation group
+and one local symbol readout already expose every deterministic de Bruijn
+phase; arbitrary lookup tables are unnecessary.
+
+Finite leakage imposes a hard ceiling: max-plus continuation is
+nonexpansive, so endpoint vectors within `C` remain within `C` under every
+common future.  Persistent rate separation requires hard reachability, a
+phase-preserving reset/filter, or a bounded probe horizon.  Observability,
+not proof architecture, decides whether hidden witness phase is information.
+
+## 37. Bridge compression has several incomparable structural resources
+
+The canonical object is the realizable image of
+
+```math
+P_Bh(y)=max_x\{h(x)+B(x,y)\}.
+```
+
+Low algebraic rank compresses it through an upper roof.  A small live vertex
+cover gives a `2^k` conditioned table and this dependence is worst-case
+sharp.  A common optimizer section can compress a dense full-rank family by
+orbit counts.  None of these follows from bounded degree, density, or
+spectral norm alone.
+
+At the negative endpoint, a dense sign bridge with operator norm
+`O(sqrt n)` can expose exponentially many independent response coordinates
+with `n^(3/2)` margins for unrestricted children.  Even weighted linear
+children retain an `Omega(n)`-bit projective packing.  Thus any future bridge
+theory near the signing problem must use rigidity of its special quadratic
+child class; an all-landscape compression theorem is impossible.

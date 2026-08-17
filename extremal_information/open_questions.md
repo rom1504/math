@@ -50,23 +50,28 @@ not semantic response information: scalar response and rowwise state both
 have size one while exact target-surjective support needs `q^m` states. Its
 certificate tradeoff is `Theta(C/(1+log_qN))`.
 
-The next target is therefore **witness observability**, not another twins
-variant:
+Witness observability now has a first positive theorem. A backward support,
+forward envelope, and saturated bounded orbit readout turn phase profiles
+into an exact rooted-response packing under a uniform gap. Cyclic rotations
+and one local symbol readout expose all deterministic de Bruijn phases, so
+the theorem does not smuggle in an arbitrary lookup table. Finite leakage
+also gives a sharp negative law: every common future remains nonexpansive in
+the endpoint sup norm and cannot amplify a gap beyond `C`.
+
+The remaining target is **soft phase-preserving observability**:
 
 ```math
-\text{which minimal future probes turn hidden witness phase}
-\quad\text{into an intrinsic response packing?}               \tag{OQ.1}
+\text{when can a bounded-description reset or filter repeatedly restore}
+\quad\text{a hidden endpoint gap without storing the raw phase?} \tag{OQ.1}
 ```
 
-Seek a theorem that starts with a support game and a declared probe family,
-computes the induced behavioral pseudometric on support phases, and either
-produces a smaller semantic quotient or a pumpable response packing. It must
-distinguish the free-tail and deterministic de Bruijn systems without using
-the carrier size itself as the answer.
+Seek a theorem combining the support mean-payoff game with a finite filter
+semigroup. It should either produce a smaller observable quotient or a
+pumpable response packing, and should quantify how filter frequency trades
+against leakage and probe oscillation.
 
-**Success:** a quantitative observability theorem relating probe entropy,
-support-game phase, and actual future-response packing in at least two model
-classes.
+**Success:** a depth-uniform quantitative theorem for soft leakage in at
+least two model classes, with probe/filter description length charged.
 
 **Stop condition:** support count is only proof complexity until a future can
 observe it. Do not infer a semantic lower bound from failure of one
@@ -202,10 +207,22 @@ bounded edge degree alone can still carry exponentially many macroscopic
 bits. Signed-balanced `alpha I+beta J` bridges give a different positive
 mechanism: a common optimizer section defeats full algebraic rank.
 
-The sharp next target is a structural parameter between these extremes.
-Candidates must control the *exposed bridge-response image*, not rank or
-sparsity by name. One possibility is exposed/query-dependent dimension;
-another is a signed block replacement at the natural extremal scale.
+The intermediate sparse parameter is now calibrated. A live vertex cover of
+size `k` gives a universal `2^k`-entry bridge table, and a matching proves the
+worst-case projective rate `Theta(2^k log(1+D/epsilon))`. A common partition
+into `K` coordinate types gives an `O(mK log n)` joint optimization grid when
+all blocks remain jointly reoptimizable, but counts are not a serial state if
+a past alignment is frozen.
+
+At the negative dense endpoint, a random sign bridge with
+`||B||_(2->2)=O(sqrt n)` carries `exp(Omega(n))` response bits at
+`Theta(n^(3/2))` error for unrestricted children. Weighted linear children
+already carry `Omega(n)` projective bits. Thus density, spectral norm, and
+the target scaling alone cannot yield an all-landscape quotient.
+
+The sharp next target is a property of a **restricted quadratic child
+class**. It must control the exposed bridge-response image rather than rank
+or sparsity by name. A parallel replacement target remains:
 
 ```math
 \text{Find }B_n\text{ with subexponential state and }
@@ -216,9 +233,10 @@ for one nontrivial structured dense family, or prove that every such
 replacement needs exponential information. Generic Frieze--Kannan regularity
 does not suffice: its state can already be exponential at this accuracy.
 
-**Success:** a growing-rank/full-rank family not covered by permutation
-synchronization with a subextensive all-future response quotient, or an
-intrinsic response packing excluding one proposed family.
+**Success:** either a natural restricted quadratic child class with
+subextensive response entropy under a dense sign bridge, or a packing showing
+that even this restriction has an extensive information rate. Any positive
+state must use a property absent from arbitrary and weighted-linear children.
 
 **Falsifier:** a response-separated code inside the proposed port, or a
 four-label pinned cut-norm witness at order `n^(3/2)`.

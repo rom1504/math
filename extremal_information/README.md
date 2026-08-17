@@ -574,6 +574,27 @@ simulation and backward anticipatory support are incomparable proof
 architectures. Hidden witness memory becomes part of the reusable state only
 when the declared future queries can observe it.
 
+The sixth investigation validated and sharpened these claims on harder
+benchmarks. Future equivalence independently recovered the Viterbi survivor
+vector, the minimal partial-syndrome trellis quotient, the clipped Potts
+cavity message, and the discounted-control value vector. Their shared law is
+now explicit: a fixed compact polyhedral response image of dimension `d` has
+small-error codebook size `Theta(epsilon^(-d))`; indefinite reuse separately
+requires an invariant congruence or contraction. Discounting changes the
+cover scale by exactly `lambda^h` and gives the sharp repeated-error factor
+`1/(1-lambda)`.
+
+The bridge ladder is also calibrated on both sides. A live vertex cover of
+size `k` gives a universal `2^k`-entry bridge table, and a matching proves
+that exponent sharp. A common multitype partition yields a compact joint
+optimization grid under a common-section condition, but not a serial state
+when a past microscopic alignment is frozen. At the opposite endpoint, one
+dense sign bridge with operator norm `O(sqrt n)` carries exponentially many
+independent response bits at `n^(3/2)` accuracy for unrestricted children;
+weighted linear children already retain a linear information rate. Thus an
+eventual positive theory for dense quadratic signings must exploit rigidity
+specific to that child class.
+
 ## Extremal rate--distortion
 
 For a landscape class `H`, query set `Theta`, and response metric
