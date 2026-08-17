@@ -205,6 +205,55 @@ optimal for selector representations of `x`. When every port has odd seed
 degree, Lemma PA.1 gives the sharper exposed full pole and the quantitative
 selector relation below.
 
+### Theorem PA.1d (abstract top-subgroup packing lemma)
+
+The preceding argument is not special to order 16. Let Boolean features
+`{chi_g:g in V}` on a finite probability space be indexed by a finite
+`F_2`-vector space and satisfy
+
+```math
+\chi_g\chi_h=\chi_{g+h}.
+```
+
+Let `T` be a self-adjoint contraction. Suppose:
+
+1. the top-Rayleigh set
+   `K={g:<chi_g,Tchi_g>=1}` is a linear subspace;
+2. for some `gamma>0`, every `g notin K` obeys
+   `|<chi_g,Tchi_g>|<=1-gamma`; and
+3. a Boolean target `f` is not the sign of any real linear combination of
+   the `K`-features on the declared support.
+
+For odd `p`, represent `f` blockwise as a majority of signed monomial ports
+`chi_(g_j) tensor u_j`, allowing arbitrary auxiliary contractions,
+port-dependent Boolean decorations, and weighted direct mixtures. Then
+the odd product-query deficits obey
+
+```math
+\boxed{
+{1\over2^{p-1}}\sum_{B\in\mathcal O_p}d_B
+\ge {\gamma\over2},
+\qquad
+\max_{B\in\mathcal O_p}d_B\ge {\gamma\over2}.}   \tag{PA.4h}
+```
+
+#### Proof
+
+If every `g_j` lay in `K`, then after fixing the auxiliary coordinate the
+majority would be the sign of a real linear combination of `K`-features,
+contrary to assumption 3. Thus the exponent map from `F_2^p` has nonzero
+image in `V/K`. A scalar functional nonzero on that image is one on at
+least half the odd affine hyperplane, exactly as in PA.1c. On those queries
+the base feature lies outside `K`; tensoring by an arbitrary Boolean
+auxiliary Rayleigh factor cannot raise its ratio above `1-gamma`. Average
+over queries and mixture blocks. `square`
+
+For the five-port seed, `V=F_2^5`, the subgroup is (PA.4c),
+`gamma=3/16`, and rows `3,10` give a two-point certificate for assumption
+3. Thus PA.1c is precisely the `gamma/2=3/32` specialization. The theorem
+identifies the reusable obstruction: a quotient gap in the feature algebra,
+not the accidental labels of the bad seed ports.
+
 ## 3. Tensor no-go and its sharp defect relation
 
 Use the tensor contraction

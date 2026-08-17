@@ -164,10 +164,61 @@ def stress_depth(depth: int, trials: int, seed: int) -> None:
     )
 
 
+def diffuse_endpoint_sequence() -> None:
+    """Compute (DS.35) from the exact three-atom factor law.
+
+    The local relative-generator pair has values/probabilities
+    (1,1):1/4, (1,-1):1/2, (-1,1):1/4.  A tensor transform evaluates all
+    4^j raw-character correlations without constructing 16^j rows.
+    """
+    states = np.asarray(((1, 1), (1, -1), (-1, 1)), dtype=np.int64)
+    probabilities = np.asarray((0.25, 0.5, 0.25))
+    characters = np.stack(
+        (
+            np.ones(3),
+            states[:, 0],
+            states[:, 1],
+            states[:, 0] * states[:, 1],
+        )
+    )
+    transform = characters * probabilities
+    expected = (
+        0.75,
+        0.65625,
+        0.5546875,
+        0.5859375,
+        0.43310546875,
+        0.4381103515625,
+        0.381072998046875,
+        0.4156341552734375,
+        0.33625030517578125,
+    )
+    observed = []
+    for depth in range(2, 11):
+        alpha = np.asarray([1 if t % 2 == 0 else -1 for t in range(depth)])
+        beta = np.asarray([1 if (t // 2) % 2 == 0 else -1 for t in range(depth)])
+        field = np.ones((3,) * depth, dtype=np.int16)
+        for axis in range(depth):
+            shape = [1] * depth
+            shape[axis] = 3
+            field += alpha[axis] * states[:, 0].reshape(shape)
+            field += beta[axis] * states[:, 1].reshape(shape)
+        response = np.where(field > 0, 1.0, -1.0)
+        for axis in range(depth):
+            response = np.tensordot(transform, response, axes=([1], [axis]))
+            response = np.moveaxis(response, 0, axis)
+        maximizing_index = np.unravel_index(np.argmax(np.abs(response)), response.shape)
+        assert sum(index != 0 for index in maximizing_index) == 1
+        observed.append(float(np.max(np.abs(response))))
+    assert np.max(np.abs(np.asarray(observed) - np.asarray(expected))) < 1e-14
+    print("periodic-endpoint max correlations:", ", ".join(f"{x:.8f}" for x in observed))
+
+
 def main() -> None:
     seed_identities()
     stress_depth(depth=2, trials=96, seed=2026081701)
     stress_depth(depth=3, trials=24, seed=2026081702)
+    diffuse_endpoint_sequence()
     print("PC.3 diagonal-switching coherence checks: PASS")
 
 

@@ -68,6 +68,13 @@ block mixture proves a common global channel with deficit at least `3/32`.
 This validates PA.1c even when monomial classes, auxiliary factors, and
 port labels vary by block.
 
+The same proof gives PA.1d. Its threshold-closure premise is exactly what
+forces the exponent map to leave the top subgroup; its absolute Rayleigh
+gap is exactly what survives an arbitrary auxiliary factor of either sign.
+The result is stronger than naming a quotient: it gives the quantitative
+and mixture-stable lower bound `gamma/2` for an exponential family of
+future product queries.
+
 ## 3. Tensor arithmetic and positivity
 
 Let `s=<u,Su>`. Since `S` is a self-adjoint contraction and `u` is a unit
