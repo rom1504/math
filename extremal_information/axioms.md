@@ -786,3 +786,61 @@ cover gives a simulator within the same radius, up to the separate finite
 control factor and one bounded transient toll. Thus the reusable asymptotic
 state is exactly the recurrent response image; acyclic history affects only
 the nonextensive constant.
+
+## 24. Exact invariant nets are a third alternative to congruence or forgetting
+
+Fresh projection onto a static net generally drifts, but a net preserved
+exactly by every transition introduces no fresh residual. For deterministic
+continuous rational unit-selector maps on compact convex rational projective
+polytopes, with a fixed whole-fibre target for each control/input pair,
+sufficiently fine compatible ambient rational grids are finite invariant
+nets. Selector nonexpansiveness then keeps the initial shadow error unchanged
+under every switching word, even when no strict contraction occurs.
+State-dependent target controls must first be carried by an exact symbolic
+refinement.
+
+This arithmetic phase-locking differs from exact contextual congruence: two
+nearby raw points need not re-encode to the same grid state after a step. It
+also differs from metric forgetting: old error need not shrink. The simulator
+evolves one genuine nearby raw trajectory forever. Irrational rotation marks
+the boundary—without a discrete invariant grid, equicontinuity alone supplies
+no finite autonomous predictor.
+
+## 25. Finiteness and compression are quantitatively different
+
+Compact rational selector systems admit finite exact refinements and
+invariant grids, but their smallest exposed recurrent carrier can still have
+`2^(r-o(r))` states. Two permutation inputs and one repeatable scalar probe
+already expose the constant-weight orbit of `S_r`. The correct quotient
+removes a factorial stabilizer, yet remains exponentially large. Structural
+closure must therefore be accompanied by response metric entropy; a finite
+presentation alone is not an information bound.
+
+A useful sharp boundary is generator count. One globally active selector on
+`r` coordinates has only `exp(O(sqrt(r log r)))` recurrent iterate germs on a
+compact carrier. Two switched selectors can have exponentially many exposed
+classes. Interaction creates the information growth.
+
+## 26. Approximate congruences are selected by cycle incidence, not pair distance
+
+For a proposed finite input congruence, optimizing scalar tolls is exactly a
+minimax cycle-mean linear program on the raw transition graph. Raw-cycle
+defects vanish iff total error stays bounded. This is the finite quantitative
+compatibility law missing from a static response cover.
+
+Feasible bounded-error partitions are not closed under join and may have no
+unique coarsest member. Even when every pair of raw states has zero
+same-input asymptotic response distance, merging them can create a quotient
+cycle whose required letter tolls are inconsistent. Thus a metric quotient
+and a transition congruence cannot be optimized independently: the
+composition law changes which response combinations are recurrent.
+
+## 27. Recurrent exposure is word-synchronized
+
+A critical graph compresses one fixed max-plus product. It does not in
+general preserve responses to each aligned switching word. When the
+projective product semigroup is finite, its weighted Cayley graph is the
+path-realizing replacement: synchronizing two such graphs turns the exact
+supremum over wordwise spectral-response gaps into a finite cycle-mean
+problem. The carrier is intrinsic and checkable, but output-sensitive; its
+size may itself be exponential.

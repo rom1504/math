@@ -20,6 +20,9 @@ Run from the repository root:
 .venv/bin/python extremal_information/experiments/verify_phase3_geodesic_fibre_bound.py
 .venv/bin/python extremal_information/experiments/verify_phase3_geodesic_second_audit.py
 .venv/bin/python extremal_information/experiments/verify_phase3_matroid_quotients.py
+.venv/bin/python extremal_information/experiments/verify_invariant_rational_grid_shadowing.py
+.venv/bin/python extremal_information/experiments/verify_exposed_commuting_germ_lower_bound.py
+.venv/bin/python extremal_information/experiments/verify_reward_congruence_nonlattice.py
 ```
 
 The scripts write only to this directory by default.
@@ -376,3 +379,20 @@ length-two word pairs in each model.
 
 Output:
 [`phase3_finite_alphabet_response_amplification.json`](phase3_finite_alphabet_response_amplification.json).
+
+## Dynamic selector checks
+
+`verify_invariant_rational_grid_shadowing.py` checks 120,066 exact
+grid/word inequalities for two switched rational clamps. It verifies exact
+forward invariance and no growth of the initial shadow error despite
+slope-one cells.
+
+`verify_exposed_commuting_germ_lower_bound.py` checks both the block-product
+prototype and the stronger fixed-three-letter construction. Two permutation
+selectors generate every constant-weight binary state, and a repeatable
+centered-coordinate probe separates every pair at reward rate one.
+
+`verify_reward_congruence_nonlattice.py` exhaustively checks the two
+incomparable bounded-error partitions of the reset automaton through depth
+12, the bounded pairwise raw-response distance, and the linear drift of their
+one-block join.

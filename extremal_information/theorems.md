@@ -4977,6 +4977,328 @@ per-edge queries require their own stronger response metric. Unreachable
 components are omitted throughout. A syntactic control cycle which does not
 return the affine germ is likewise not a cycle in this theorem.
 
+### Theorem 17.1i (finite invariant-grid shadowing)
+
+Let finitely many deterministic continuous PWA maps act from one whole
+compact convex rational projective polytope `X_q` to another. Suppose every
+affine branch has a rational unit-selector linear part and rational
+translation. Then for every
+`eta>0` there are finite internal nets `C_(q,eta) subset X_q` such that every
+map sends its source net exactly into its target net. Moreover,
+
+```math
+sum_q|C_(q,eta)|
+<=sum_q O_q(eta^(-dim X_q)),                                    \tag{17.7r}
+```
+
+and a raw state initialized within Hilbert distance `eta` of a net point is
+shadowed by that point under every switching word with the same error
+`eta`. Thus every `L`-Lipschitz terminal projective response has one finite
+path-realizing simulator of error `Leta` at arbitrary depth, without a
+contraction assumption.
+
+To prove this, use the common ambient coordinate-difference lattice in a
+fixed coordinate gauge and clear all vertex and projective-translation
+denominators by `D`. On mesh `h=1/(DN)`, the regauged selector matrices are
+integral, so selector maps preserve the ambient grid. Their intersection
+with each invariant polytope is therefore forward invariant. A rational
+triangulation and denominator-`N` barycentric rounding
+give an `O_q(1/N)` internal net and the lattice-point count (17.7r), including
+on lower-dimensional rational faces.
+
+Each selector derivative contracts Hilbert norm. Continuity across the
+finite PWA cells and subdivision of the segment between two points therefore
+make the whole map nonexpansive. Exact evolution of the chosen grid point
+introduces no fresh residual, proving depth-uniform shadowing.
+
+This is not generic finite quantization. Independently chosen intrinsic
+lattices on lower-dimensional fibres need not be compatible. State-dependent
+edge enabling must first be refined into whole-source controls. Irrational
+translations preserve no such grid, discontinuous selector switches need not
+be nonexpansive, and accumulated affine rewards still require the
+recurrent-germ criterion of Theorem 17.1e. Even the rational contraction
+`x|->x/2` on `[0,1]` has no finite forward-invariant internal net except
+`{0}`: every positive point has an infinite halving orbit. Unit/integer
+lattice preservation, not rationality alone, is essential.
+
+In particular, if a finite family of max-plus maps has a common eigenprofile
+
+```math
+F_e(v)=v+lambda_e1,
+```
+
+then one projective state with per-letter toll `lambda_e` shadows every word.
+Any initial projective radius `R` from `[v]` remains at most `R` forever. This
+is an implicit exposed carrier certified generator by generator, rather than
+an enumeration of active germs.
+
+If transition rewards `ell_e` are `L_e`-Lipschitz, the same invariant-grid
+simulator predicts accumulated reward, not only terminal response:
+
+```math
+|R_w(x)-R_w(c)|
+<=eta sum_(e in w)L_e
+<=eta L|w|.                                                     \tag{17.7r'}
+```
+
+Thus per-step distortion `epsilon` costs at most
+`sum_q O_q((L/epsilon)^(dim X_q))` states. This does not give bounded absolute
+error; it gives a depth-uniform *rate*. Theorem 17.1j shows that exponential
+dependence on growing projective dimension cannot be removed in general.
+
+### Theorem 17.1j (fixed-alphabet exponential exposed-germ memory)
+
+For every `r>=2`, put `k=floor(r/2)` and let
+
+```math
+X_r={[z] in R^r/R1:osc(z)<=1},
+qquad
+Y_r={1_A:A subseteq [r], |A|=k}.                               \tag{17.7s}
+```
+
+There is a three-letter rational max-plus selector system on `X_r` whose
+exact cumulative-response complexity on the orbit `Y_r` is
+
+```math
+C_epsilon=
+\begin{cases}
+\binom r{\lfloor r/2\rfloor},&0<=epsilon<1/2,\\
+1,&epsilon>=1/2.
+\end{cases}                                                     \tag{17.7t}
+```
+
+Here complexity means the least total number of deterministic predictor
+states satisfying `|R_w-Rhat_w|<=epsilon|w|+B` for every word, from one fixed
+raw initial seed, with arbitrary finite `B`.
+
+For a permutation `sigma`, take the all-finite matrix
+
+```math
+K^sigma_(ij)=0 if j=sigma(i), and -2 otherwise.                 \tag{17.7u}
+```
+
+On `X_r` its intended selector is uniquely maximizing with margin at least
+one, so it realizes `P_sigma` globally. Two letters use the cycle
+`(1 2 ... r)` and transposition `(1 2)`, both with zero reward. They generate
+`S_r`. The third letter is the identity selector with projectively invariant
+reward
+
+```math
+rho([z])=z_1-r^(-1)sum_j z_j.                                  \tag{17.7v}
+```
+
+The orbit of one weight-`k` indicator is all of `Y_r`. For distinct
+`1_A,1_B`, choose `j in A triangle B` and a common suffix permutation pulling
+coordinate `j` to coordinate one. The repeatable probe loop then has reward
+rates differing by exactly one. If histories reaching `A` and `B` ended in
+one predictor state, their predicted future probe totals could differ only
+by a fixed prefix constant. Repeating the probe `n` times and dividing the
+two error inequalities by `n` would give `1<=2epsilon`. Thus all
+`binom(r,k)` orbit states are necessary below error `1/2`. Storing the current
+subset is exact. At error `1/2`, one state emits `1/2-k/r` on the probe and
+zero otherwise, proving (17.7t).
+
+Consequently a fixed input alphabet, compactness, rationality, globally
+unique active selectors, exact isometry, and zero translation holonomy do
+not imply a subexponential exposed carrier:
+
+```math
+log_2 C_epsilon
+>=r-(1/2)log_2 r-O(1).                                         \tag{17.7w}
+```
+
+The full germ group has `r!` elements, but the exact response quotient is the
+orbit `S_r/(S_k times S_(r-k))`; stabilizer germs are correctly discarded.
+Thus the lower bound charges exposed response information, not syntactic
+germ enumeration.
+
+### Proposition 17.1k (one selector has subexponential recurrent germ count)
+
+Let one globally active affine unit selector
+
+```math
+A[z]=[P_sigma z+b]
+```
+
+preserve a nonempty projectively compact set on `r` coordinates. If `k_0`
+is the longest tail in the functional graph of `sigma`, and `p` is the least
+common multiple of all its directed-cycle lengths, then
+
+```math
+[A^(n+p)]=[A^n]
+\qquad(n>=k_0).                                                 \tag{17.7x}
+```
+
+Hence it has at most `k_0+p<=r-1+p` iterate germs and at most `p` recurrent
+germs. In particular
+
+```math
+p<=g(r)=exp((1+o(1))sqrt(r log r)),                             \tag{17.7y}
+```
+
+where `g` is Landau's maximal permutation order.
+
+Indeed, after `k_0` steps every coordinate path lies on a selector cycle.
+The difference between iterates `n+p` and `n` is `p` times that cycle's mean
+translation. Two unequal cycle means would make a coordinate difference
+grow linearly along one orbit, contradicting projective compactness. All
+means are therefore equal, and the difference is scalar. Theorem 17.1j
+shows the sharp structural boundary: two switched permutation selectors,
+not one, already expose exponentially many recurrent classes. This does not
+settle one genuinely PWA max-plus generator whose active selector changes
+with the cell.
+
+### Theorem 17.1l (cycle LP for a proposed reward congruence)
+
+Let `Q` be a finite deterministic reward system with alphabet `E`, transition
+`delta_e`, and edge reward `r(q,e)`. Let `pi:Q->S` be an input congruence, so
+`pi(delta_e q)` depends only on `pi(q)`. For scalar quotient tolls `g(s,e)`,
+write `R_w(q)` and `Rhat_w(pi(q))` for the two cumulative rewards. Define
+
+```math
+D(pi)=inf_g inf{epsilon>=0: exists B<infinity such that
+ |R_w(q)-Rhat_w(pi(q))|<=epsilon|w|+B for all q,w}.              \tag{17.7z}
+```
+
+Then, with `C(Q)` the finite set of directed simple cycles in the raw
+transition graph,
+
+```math
+D(pi)=inf_g max_(C in C(Q))
+ {1\over|C|}|sum_((q,e) in C)(r(q,e)-g(pi(q),e))|.              \tag{17.7aa}
+```
+
+Thus the best asymptotic distortion of a fixed finite congruence is one
+finite linear program. In particular, it has a depth-independent absolute
+error iff tolls can make every raw cycle defect zero. Necessity follows by
+repeating a raw cycle. For sufficiency, erase directed cycles from an
+arbitrary path. Each erased cycle costs at most `epsilon` per edge, while the
+remaining simple path has fewer than `|Q|` edges and contributes one uniform
+constant. Taking the infimum over tolls proves (17.7aa).
+
+Feasible bounded-error congruences need not have a unique coarsest member and
+are not closed under join. On states `{I,A,B}`, let every `a` go to `A`, every
+`b` go to `B`, and let the only nonzero reward be `r(A,b)=1`. Both
+
+```math
+{I,A}|{B}
+\quad\hbox{and}\quad
+{A}|{I,B}                                                       \tag{17.7ab}
+```
+
+are bounded-error congruences: toll the recurrent `A --b--> B` edge by one
+and all other recurrent edges by zero; the transient state costs at most
+one. Their join is the one-block partition. Constant words force its two
+letter tolls to be zero, whereas `(ba)^n` from `A` has reward `n`. The join
+therefore fails. Moreover every pair of raw starting states has same-word
+reward difference at most one, since the first letter synchronizes them.
+Pairwise asymptotic response distance can consequently vanish while every
+one-state compositional quotient fails: the missing datum is cycle incidence
+created by the quotient, not another static metric.
+
+### Theorem 17.1m (finite projective-semigroup cycle realization)
+
+Let two finite alphabets of all-finite max-plus matrices `A_a,B_a` have
+finite projective product semigroups `P_A,P_B`. Normalize a matrix `P` by
+subtracting `nu(P)=max_(ij)P_(ij)`, and write
+
+```math
+P A_a=kappa_A(P,a)+tau_A(P,a)                                  \tag{17.7ac}
+```
+
+with `tau_A` normalized; define the analogous `B` transition. Synchronize
+the two projective Cayley graphs under the same input letter and label an
+edge by `kappa_A-kappa_B`. On the reachable synchronized graph `G`, let
+`mu_max(G),mu_min(G)` be its extreme directed-cycle means. Then
+
+```math
+sup_(w ne empty){rho(A_w)-rho(B_w)\over|w|}=mu_max(G),
+\qquad
+inf_(w ne empty){rho(A_w)-rho(B_w)\over|w|}=mu_min(G).           \tag{17.7ad}
+```
+
+In particular the aligned-word recurrent response distance is the larger
+absolute value of these two means.
+
+For one direction, a carrier cycle labelled by `v` gives
+`P A_v=kappa+P`. Every row of the all-finite `P` is a finite left eigenvector
+of the irreducible all-finite `A_v`, so `kappa=rho(A_v)`; similarly for `B`.
+Conversely, fix any word `w` and follow the synchronized sequence of
+projective powers `([A_(w^j)],[B_(w^j)])`. Finiteness gives `i>=1,p>=1` for
+which the pair at powers `i` and `i+p` agrees. The intervening closed walk is
+labelled by `w^p`. Its two finite-row eigenvector equations make its tolls
+`rho(A_(w^p))=p rho(A_w)` and `rho(B_(w^p))=p rho(B_w)`, so its mean is exactly
+`(rho(A_w)-rho(B_w))/|w|`. No claim is made that the first copy of `w` closes
+or that its max-entry normalization toll already equals its spectral radius.
+
+The theorem gives a genuine all-word path-realizing carrier and reduces its
+response comparison to two finite maximum-cycle-mean computations. It is
+output-sensitive rather than automatically compressive: the projective
+semigroups may be exponential or infinite. A fixed-letter critical graph is
+not a substitute. For one-state systems with rewards
+`A_a=1,A_b=0` and `B_a=0,B_b=1`, the two letterwise envelopes have the same
+critical graph, but aligned word responses differ by `+1` on `a` and `-1`
+on `b`.
+
+If one all-finite alphabet is pairwise max-plus commuting, its exact carrier
+collapses further. The common-eigenvector theorem of
+[Katz--Schneider--Sergeev](https://arxiv.org/abs/1005.1424) supplies a finite
+`h` with
+
+```math
+A_a h=rho(A_a)+h
+```
+
+for every letter. Therefore
+
+```math
+rho(A_w)=sum_a |w|_a rho(A_a).                                 \tag{17.7ae}
+```
+
+The recurrent response factors through the Parikh vector, and a scalar
+per-letter toll replaces the projective Cayley state. This is a checkable
+algebraic synchronization mechanism, not an assumption about common active
+faces.
+
+### Theorem 17.1n (dominating quotient with a coherent section)
+
+Let `T_e` be finite max-plus matrices on raw states `I`, let `S_e` be finite
+max-plus matrices on coarse states `J`, and let `pi:I->J` have a section
+`iota:J->I`. Suppose nonnegative numbers `eta_e^+,eta_e^-` satisfy
+
+```math
+T_e(i,j)<=S_e(pi(i),pi(j))+eta_e^+                 for all i,j,
+T_e(iota(a),iota(b))>=S_e(a,b)-eta_e^-             for all a,b. \tag{17.7af}
+```
+
+For every word `w=e_1...e_t`,
+
+```math
+T_w(i,j)<=S_w(pi(i),pi(j))+sum_s eta_(e_s)^+,
+T_w(iota(a),iota(b))>=S_w(a,b)-sum_s eta_(e_s)^-.               \tag{17.7ag}
+```
+
+Consequently
+
+```math
+-sum_s eta_(e_s)^-
+<=rho(T_w)-rho(S_w)
+<=sum_s eta_(e_s)^+.                                            \tag{17.7ah}
+```
+
+The proof maps every raw path to its coarse path for the upper bound and
+lifts every coarse path through the same section for the lower bound. Cycles
+remain cycles under both operations, which proves (17.7ah). At zero defect,
+the generator inequalities certify `rho(T_w)=rho(S_w)` for **every** aligned
+word without enumerating products or active cells. The section is the
+path-realization datum; domination is the response-approximation datum.
+
+This applies beyond max-plus notation to any finite additive path dynamic
+program. It explains the corrected four-to-two weighted-automaton benchmark:
+the even representatives form an exact section and every microscopic edge is
+dominated by its corrected block edge. A quotient which only matches
+letterwise critical graphs lacks the coherent lift required by (17.7af).
+
 ### Theorem 17.2 (approximate block lumpability with depth-uniform error)
 
 Use the column max-plus convention

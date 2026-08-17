@@ -1252,3 +1252,86 @@ error `s`. Retuning the one-state toll to `K` leaves only a bounded parity
 error at most `s`; two phase states are needed only for finer absolute or
 exact response. Recurrent response entropy controls asymptotic slope memory,
 while anchored simple-path residual controls the bounded transient scale.
+
+## Example 51: an invariant grid survives switching without contraction
+
+On `[0,1]`, use the two rational selector-PWA maps
+
+```math
+F_-(x)=max(0,x-1/3),
+\qquad F_+(x)=min(1,x+1/3).
+```
+
+Both have slope-one cells, so neither gives strict global forgetting. For
+every `N`, however, the grid
+
+```math
+C_N={0,1/(3N),...,1}
+```
+
+is exactly invariant under both maps. Starting from the nearest grid point,
+nonexpansiveness keeps the error at most `1/(6N)` under every switch word and
+at every depth. This is not repeated rounding: the chosen grid point follows
+one genuine trajectory. Exact enumeration verifies 120,066 grid/word
+inequalities for `N<=12`.
+
+## Example 52: rational nonexpansiveness need not preserve a finite net
+
+The map `F(x)=x/2` on `[0,1]` is rational, continuous, and nonexpansive. If a
+finite set `C` satisfies `F(C) subseteq C`, however, every positive `x in C`
+would force the infinitely many distinct points `x/2^j` into `C`. Thus the
+only finite forward-invariant set is `{0}`, which is not an internal
+`eta`-net below the interval's covering radius. The invariant-grid theorem
+uses integer-selector preservation of one common lattice, not rational PWA
+data alone.
+
+## Example 53: three inputs expose an exponential selector orbit
+
+On the weight-`floor(r/2)` binary slice, a cycle and an adjacent
+transposition act by rational max-plus permutation selectors and generate the
+whole symmetric group. A repeatable identity input observes one centered
+coordinate. Every pair of distinct subsets can be moved by the same suffix
+so that the probe rewards differ by one. Consequently exact and every
+`epsilon<1/2` cumulative-response predictor needs
+`binom(r,floor(r/2))` states, while one state suffices at error `1/2`.
+
+This example survives compactness, rationality, unique active branches,
+isometry, zero translation holonomy, and a fixed three-letter alphabet. The
+full germ group has `r!` elements, but its stabilizer is invisible; the
+minimal response state is exactly the exponential constant-weight orbit.
+
+## Example 54: bounded-reward congruences do not form a quotient lattice
+
+Use states `{I,A,B}`. Every `a` resets to `A`, every `b` resets to `B`, and
+only the edge `(A,b)` has reward one. Both partitions
+
+```math
+{I,A}|{B}
+\qquad\hbox{and}\qquad
+{A}|{I,B}
+```
+
+admit scalar tolls with at most one total error. Their join has one block.
+The words `a^n` and `b^n` force both one-state tolls to zero, but `(ba)^n`
+from `A` earns `n`. There is therefore no unique coarsest bounded-error
+congruence. Yet two raw starting states have same-word response difference at
+most one, because their trajectories synchronize after the first input.
+Asymptotic pairwise response equivalence misses quotient-created cycle
+incidence.
+
+## Example 55: a switching envelope forgets aligned words
+
+Take two one-state max-plus alphabets with
+
+```math
+(A_a,A_b)=(1,0),
+\qquad
+(B_a,B_b)=(0,1).
+```
+
+Their maximum-over-letters envelopes are the same one-loop system of weight
+one. Nevertheless the aligned response difference is `+1` on `a` and `-1`
+on `b`. A critical graph of the switching envelope answers an adaptive
+maximum over letters, not a common-word query. The finite-projective-
+semigroup theorem retains the synchronized word action and detects both
+cycle slopes.

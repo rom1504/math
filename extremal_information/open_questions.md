@@ -6,49 +6,51 @@ longer the lead question: a composition-stable subexponential response net and
 a quadratic-bit macroscopic packing are both proved.  Optimizing that gap is
 secondary to understanding the new carrier law.
 
-## 1. Compress the exposed recurrent-germ carrier
+## 1. Find a small cycle-faithful quotient without partition enumeration
 
-The compact rational selector problem now has a complete finite architecture.
-Affine pullback saturation constructs a path-realizing symbolic quotient;
-the realized affine-germ lift is finite; and nonconstant recurrent reward
-labels return either a pumpable witness or a bounded scalar-toll simulator.
-At asymptotic error `epsilon`, packing and covering the reachable cycle-mean
-pseudometric sandwich the exact memory cost up to the finite visible-control
-factor and a bounded transient residual.
+The exposed-carrier dichotomy is now sharp in general. A fixed three-letter
+rational selector system needs
+`binom(r,floor(r/2))=2^(r-o(r))` states below per-step error `1/2`, while one
+globally active selector has only Landau-subexponential recurrent iterate
+complexity. Thus no theorem based only on compactness, rationality,
+nonexpansiveness, or a fixed alphabet can guarantee polynomial compression.
 
-The new bottleneck is **presentation size and exposure**. The explicit germ
-lift can be enormous, and raw microscopic cycles are not valid substitutes:
-the weighted-automaton benchmark has a syntactic cycle with mean discrepancy
-`-3/2` which is never maximizing, while a corrected two-state toll quotient
-has bounded response error despite four exact strong classes.
+For a *proposed* finite input congruence, Theorem 17.1l computes its optimal
+asymptotic reward error by a raw-cycle linear program. But feasible
+bounded-error congruences are not closed under join, so ordinary monotone
+Nerode/bisimulation refinement cannot discover a canonical coarsest one.
+The finite projective-semigroup carrier is exact but output-sensitive.
 
-Construct an implicit or quotient representation of the *exposed recurrent
-germs* for a nontrivial max-plus family. It must preserve the cycle-response
-seminorm without enumerating every active-cell word. Promising finite targets
-are a fixed-width Ising alphabet or a bounded-rank max-plus matrix semigroup.
-Alternatively, prove that any such representation needs as many states as
-the full finite germ lift on an explicit family.
+The next target is a structural certificate producing a small
+**cycle-faithful** quotient directly from generators. Theorem 17.1n gives one
+such certificate--a dominating coarse system with a coherent microscopic
+section--and pairwise commuting max-plus generators collapse to a common
+eigenprofile. Determine a materially broader hypothesis, such as an
+approximate section, bounded-index synchronizing subgroup, or controlled
+projective-semigroup quotient, for which
 
-**Success:** a polynomial or response-entropy-sized carrier whose cycle-mean
-map is exact/controlled, with a proof that every retained cycle is maximizing
-and repeatable; or a scalable lower bound showing exponential germ memory is
-unavoidable.
+```math
+number of states <= response-entropy scale,
+\qquad
+cycle-LP distortion <=epsilon                                  \tag{OQ.1}
+```
 
-**Stop condition:** a graph of all syntactic matrix entries, a list of every
-active cell, or a cycle test without exposure/path realization merely moves
-the original information burden.
+without enumerating all raw partitions, germs, or word products.
 
-In parallel, extend the cycle-response sandwich beyond exact fixed-seed germ
-lifts. The natural candidate is an asymptotic response pseudometric for
-contracting or synchronizing skew products. A valid upper theorem must explain
-why arbitrary switching paths decompose into controlled recurrent pieces;
-the lower packing bound alone is not enough.
+**Success:** a generator-checkable theorem applying beyond the corrected
+four-state benchmark and exact commutation, with an asymptotically smaller
+carrier and an all-word response bound; or a hardness/information theorem
+showing that finding the minimum cycle-compatible congruence necessarily
+encodes a recognized difficult problem.
 
-The bounded-presentation benchmark separately leaves a sharp scale gap.
-Binary `m`-parameter max-affine grammars have an `O(m^2)` coarse entropy
-upper bound, while robust facet deletion gives `Omega(m log m)`. A robust
-common-normal-fan charging theorem, or an `Omega(m^2)` separated
-multi-polytope construction, would settle which exponent is real.
+**Stop condition:** listing the finite projective semigroup, every active
+cell, or every set partition is a decision procedure, not a compression
+theorem. A pairwise response pseudometric is also insufficient because it
+forgets quotient-created cycle incidence.
+
+The adjacent one-generator question is whether a genuinely PWA max-plus map,
+whose active selector changes by cell, can expose `c^r` recurrent classes.
+The global-selector Landau bound does not answer it.
 
 ## 2. Prove a same-input recoupling theorem at linear channel rank
 

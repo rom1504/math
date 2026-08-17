@@ -261,6 +261,26 @@ conclusions.
     reachable cycles is a pseudometric whose packing and covering numbers
     give matching lower and upper dynamic-memory bounds up to the finite
     visible-control factor and a bounded transient error.
+25. Deterministic continuous rational selector systems with fixed whole-fibre
+    control transitions also admit finite invariant projective grids at
+    arbitrary resolution. Exact evolution of one nearby grid point shadows
+    every switching word forever by nonexpansiveness, so terminal-response
+    error is depth-independent without contraction or repeated rounding.
+    State-dependent target controls require prior exact refinement; this
+    arithmetic phase-locking is also absent for irrational rotation.
+26. Finiteness is not compression. With two permutation selectors and one
+    repeatable coordinate probe, a fixed three-letter system requires exactly
+    `binom(r,floor(r/2))` states below per-step error `1/2`, despite compact
+    rational isometric dynamics and globally unique branches. One selector
+    alone has only Landau-subexponential recurrent iterate complexity.
+27. A candidate finite reward congruence has an exact cycle-mean LP for its
+    best asymptotic distortion. Such feasible congruences need not have a
+    unique coarsest member: pairwise asymptotic response equivalence can lose
+    the cycle incidence created by merging controls.
+28. Finite projective max-plus semigroups give an intrinsic all-word carrier.
+    Their synchronized weighted Cayley graph realizes the exact extreme
+    aligned-word spectral gaps as finite graph cycle means; a letterwise
+    critical graph or switching envelope does not.
 
 The classical ingredients are max-plus dynamic programming, Myhill--Nerode
 residuals, McShane envelopes, and tropical distance projection.  The

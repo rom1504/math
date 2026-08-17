@@ -453,6 +453,101 @@ nontrivial interval cut, has dense pullbacks of the cut boundary and no
 finite exact contextual quotient.  The noncompact translation example after
 Theorem 3.4 shows the independent failure without compactness.
 
+There is a second, metric consequence which does not require constructing
+the exact observation refinement.
+
+### Theorem 3.5a (invariant rational grids shadow all switch words)
+
+In Theorem 3.5, now assume each input is a deterministic continuous PWA map
+from one whole compact convex rational projective polytope to another and
+that every declared branch formula is a rational unit selector. For every
+`eta>0`, there are finite sets
+`C_(q,eta) subset X_q` such that
+
+1. `C_(q,eta)` is an internal `eta`-net of `X_q` in Hilbert norm;
+2. every input map sends its source grid exactly into its target grid; and
+3. following a nearest grid seed under the exact input maps shadows the raw
+   trajectory within `eta` at every depth and under every switch word.
+
+Consequently a finite path-realizing simulator uses
+
+```math
+sum_q O_q(eta^(-dim X_q))                                       \tag{3.11a}
+```
+
+states and approximates every `L`-Lipschitz terminal projective response to
+error `L eta`, uniformly over unbounded depth. There is no fresh rounding and
+no contraction hypothesis.
+
+#### Proof
+
+Use the common ambient coordinate-difference lattice in one fixed coordinate
+gauge and choose an integer `D` clearing all polytope vertices, facet data,
+and projective translation denominators. The regauged selector matrices have
+integer entries. On mesh
+
+```math
+h={1\over DN},
+```
+
+the gauged selector matrices are integral and every translation lies in the
+grid. Hence each PWA map sends `X_q intersect hZ^(r-1)` into the corresponding
+target intersection.
+
+A rational triangulation of `X_q` has vertices in `D^(-1)Z^(r-1)`. Rounding
+barycentric coordinates to denominator `N` gives grid points at distance
+`O_q(1/N)` from every point, including on lower-dimensional faces. For large
+enough `N` this is an `eta`-net, and the standard rational-polytope lattice
+count is `O_q(N^(dim X_q))`.
+
+Every selector linear part contracts Hilbert norm. On a line segment crossing
+finitely many PWA cells, continuity lets one sum the contracted subsegments;
+therefore the complete PWA map is globally nonexpansive on the convex fibre.
+If `c_0` is within `eta` of `x_0`, induction gives
+
+```math
+d_H(F_wc_0,F_wx_0)<=eta                                        \tag{3.11b}
+```
+
+for every word. The grid trajectory is itself raw and hence path-realizing.
+`square`
+
+The hypotheses separate this theorem from ordinary quantization. Grids must
+come from one compatible ambient lattice; unrelated intrinsic lattices on
+lower-dimensional fibres need not map into one another. State-dependent
+edge enabling must first be refined into whole-source controls. An irrational
+translation preserves no finite rational grid, a discontinuous branch switch
+need not be nonexpansive, and affine accumulated rewards may still magnify a
+persistent state-dependent cycle toll. Rationality and nonexpansiveness alone
+also do not suffice: the map `x|->x/2` on `[0,1]` has no finite
+forward-invariant internal net other than `{0}`, because every positive point
+has an infinite halving orbit. The theorem concerns bounded
+terminal/projective response and uses integer-lattice preservation
+essentially.
+
+For `L_e`-Lipschitz transition rewards the same proof gives the cumulative
+rate bound
+
+```math
+|R_w(x)-R_w(c)|<=eta sum_(e in w)L_e.                           \tag{3.11c}
+```
+
+Hence per-step distortion `epsilon` has a path-realizing state upper bound
+`sum_q O_q((L/epsilon)^(dim X_q))`. This is not bounded absolute error: a
+persistent `O(eta)` reward discrepancy may still add at every step.
+
+A useful strict collapse is the common tropical eigenprofile certificate. If
+
+```math
+F_e(v)=v+lambda_e1
+```
+
+for every input, then `{[v]}` is an invariant projective net. Every word has
+the finite-state toll `sum_e lambda_e`, and an initial state at Hilbert
+distance `R` from `[v]` remains within `R` forever. This recognizes one
+exposed response state by checking the generators, even when their full
+active-germ semigroup is large.
+
 The same three ingredients also make the realized affine transformation
 semigroup finite and permit a complete accumulated-reward test.
 
@@ -695,6 +790,157 @@ stronger edge-response metric is required. Unreachable graph components are
 discarded before (3.21). A raw control cycle which does not return the affine
 germ is also excluded: for `F(y)=0`, `r(y)=y`, the first edge is transient and
 all recurrent germ labels vanish, so one state has bounded error.
+
+### Theorem 3.10 (a fixed alphabet can expose exponentially many germs)
+
+Let `k=floor(r/2)` and let `Y_r` be the weight-`k` binary slice in the
+projective span-one polytope. Two globally active permutation selectors--the
+long cycle and one adjacent transposition--generate `S_r`. A third input is
+the identity map with reward
+
+```math
+rho([z])=z_1-r^(-1)sum_jz_j.                                    \tag{3.26}
+```
+
+Every selector is realized by an all-finite rational max-plus matrix having
+weight zero on its intended permutation edge and weight `-2` elsewhere; the
+active term has margin at least one on the whole carrier. The orbit of one
+seed has `binom(r,k)` points. Any two orbit points differ at a coordinate
+which a common permutation suffix can move to the probe coordinate. Repeating
+the probe then separates their reward rates by one. Therefore
+
+```math
+C_epsilon=binom(r,k) for epsilon<1/2,
+\qquad C_epsilon=1 for epsilon>=1/2.                             \tag{3.27}
+```
+
+The lower bound holds from one fixed initial seed: histories reaching two
+subsets cannot merge, since the same suffix and repeated probe would force
+`1<=2epsilon`. The upper bounds store the subset exactly, or emit the
+midpoint probe toll at error one half. The exposed quotient is the coset
+space `S_r/(S_k times S_(r-k))`, not the full `r!` germ group.
+
+This is the sharp general negative result for presentation compression in
+the present class. Rational compact arithmetic guarantees *finiteness*, but
+not polynomial or subexponential information. Commutativity of a growing
+generator family is likewise insufficient. The switching is essential: one
+globally active selector preserving a compact carrier has at most
+
+```math
+r-1+g(r)=exp((1+o(1))sqrt(r log r))                              \tag{3.28}
+```
+
+iterate germs. After the selector functional-graph transient, compactness
+forces all selector cycles to have one translation mean, and the projective
+iterate repeats with period dividing their lcm. Whether one genuinely PWA
+max-plus generator can expose exponentially many germs remains open.
+
+### Theorem 3.11 (candidate reward quotients are cycle linear programs)
+
+For a finite deterministic reward system `(Q,E,delta,r)` and an input
+congruence `pi:Q->S`, allow one scalar quotient toll `g(s,e)`. The least
+uniform asymptotic per-step error equals
+
+```math
+inf_g max_(C simple raw cycle)
+ {1\over|C|}|sum_((q,e) in C)(r(q,e)-g(pi(q),e))|.              \tag{3.29}
+```
+
+Necessity repeats a cycle. Sufficiency deletes cycles from an arbitrary path;
+all that remains is a bounded simple-path residual. Thus (3.29) is a finite
+LP and zero is equivalent to depth-independent absolute error.
+
+This does **not** induce a canonical coarsest approximate congruence. On
+three states `{I,A,B}`, send every state to `A` under `a` and to `B` under
+`b`, with sole nonzero reward `r(A,b)=1`. The two congruences
+
+```math
+{I,A}|{B},
+\qquad {A}|{I,B}                                                \tag{3.30}
+```
+
+both admit bounded-error tolls, but their one-block join does not: `a^n` and
+`b^n` force both letter tolls to zero, whereas `(ba)^n` from `A` earns `n`.
+All same-word responses from two raw starting states differ by at most one,
+since the first input synchronizes them. Hence pairwise asymptotic response
+distance forgets exactly the cycle incidence which a quotient merge can
+create. Feasible partitions need search/optimization, not ordinary monotone
+bisimulation refinement.
+
+### Theorem 3.12 (finite projective semigroups realize all word cycles)
+
+For two all-finite max-plus alphabets with finite projective product
+semigroups, normalize every product by its largest entry. Right multiplication
+by a letter gives a finite weighted projective Cayley graph. Synchronize the
+two graphs under the same input and label an edge by the difference of their
+normalization tolls. If `mu_min,mu_max` are the extreme reachable cycle
+means, then exactly
+
+```math
+inf_(w ne empty){rho(A_w)-rho(B_w)\over|w|}=mu_min,
+\qquad
+sup_(w ne empty){rho(A_w)-rho(B_w)\over|w|}=mu_max.              \tag{3.31}
+```
+
+On a carrier cycle, every row of the all-finite projective product is a
+finite left eigenvector of the cycle word, so its toll is the max-plus
+spectral radius. Conversely, synchronized finiteness makes two sufficiently
+late powers of an arbitrary word return to the same pair state. The closed
+walk between them is a power of that word and has its exact spectral slope.
+This is an intrinsic all-word path-realization theorem, though output
+sensitive: the projective semigroup may be exponential or infinite.
+
+A letterwise critical graph is insufficient. The one-state alphabets with
+rewards `(A_a,A_b)=(1,0)` and `(B_a,B_b)=(0,1)` have identical switching
+envelopes but opposite aligned-letter response defects. Critical graphs are
+compact carriers for a fixed product; aligned switching requires the
+synchronized projective carrier or an additional exact section.
+
+Pairwise max-plus commutation is one strict algebraic collapse. All-finite
+commuting matrices have a common finite eigenvector by
+[Katz--Schneider--Sergeev](https://arxiv.org/abs/1005.1424), so
+
+```math
+rho(A_w)=sum_a|w|_a rho(A_a).                                   \tag{3.32}
+```
+
+The recurrent response then factors through the Parikh vector and needs only
+per-letter scalar tolls. This is a positive deterministic synchronization
+theorem, in contrast with the permutation-selector lower bound: the latter's
+generators do not commute.
+
+### Theorem 3.13 (dominating quotient plus coherent section)
+
+Let raw and coarse max-plus generators be `T_e,S_e`. Suppose a surjection
+`pi` and section `iota` satisfy
+
+```math
+T_e(i,j)<=S_e(pi(i),pi(j))+eta_e^+,
+\qquad
+T_e(iota(a),iota(b))>=S_e(a,b)-eta_e^-                          \tag{3.33}
+```
+
+for every generator and every indicated pair of states. Then for every word
+`w`
+
+```math
+-sum_(e in w)eta_e^-
+<=rho(T_w)-rho(S_w)
+<=sum_(e in w)eta_e^+.                                         \tag{3.34}
+```
+
+Indeed, project every raw path for the upper bound and lift every coarse path
+through the same section for the lower bound. This proves the corresponding
+entrywise product inequalities first; closed paths give (3.34). At zero
+defect the generator certificate preserves the response of every aligned
+word exactly, without projective-semigroup enumeration.
+
+For the corrected four-state automaton, `pi` is the two-block map and
+`iota(0)=0,iota(1)=2`. Every raw edge lies below its corrected block edge,
+and the section edges are equal. The old quotient fails the upper inequality
+by exactly `delta` on one exposed self-loop. This benchmark therefore has a
+strict implicit carrier for a reason visible at the generators, rather than
+because a finite closure happened to terminate.
 
 ## 4. Two dual max-plus block quotients
 
@@ -1658,23 +1904,28 @@ finite-horizon response modulus, and the repeatable discrepancy cocycle.
 The finite dynamic law is now precise:
 
 ```math
-usable future compression
-= finite response cover
-+ path-realizing congruence or quantitative forgetting.          \tag{8.1}
+usable cumulative-response compression
+= path-realizing control
++ cycle-compatible response toll
++ finite response information.                                  \tag{8.1}
 ```
 
 Theorem 3.1 supplies a checkable exact congruence; Theorem 5.1 supplies a
-depth-independent approximate substitute; Theorem 6.1 proves that static
-entropy alone cannot replace either.  Theorem 16.19 then turns an exact
-presentation into a finite pumpable-cycle decision, while the strip
-benchmark proves that exact contextual minimality and approximate dynamic
-reuse are different questions even in the simplest switching model.
+depth-independent approximate substitute; and invariant rational grids give
+a third, arithmetic shadowing mechanism. Theorems 3.9 and 3.11 identify
+recurrent cycle response as the compatibility test and information metric.
+Theorem 6.1 proves that static entropy alone cannot replace control, while
+Theorem 3.10 proves that even a finite rational germ carrier may have
+unavoidable exponential exposed entropy.
 
-This is a dynamic/compositional component, not just static response
-geometry.  It still leaves a sharp converse open: characterize when failure
-of pullback stabilization forces either observable cycle drift or horizon-
-growing contextual entropy, rather than merely a larger but bounded exact
-quotient.
+This is a dynamic/compositional component, not just static response geometry.
+There is no general canonical coarsest approximate quotient: feasible reward
+congruences are not closed under join. Positive compression therefore needs
+extra algebra. A coherent dominating section certifies every aligned word
+from generator inequalities; commutation collapses recurrent response to
+Parikh counts; a finite projective semigroup gives an exact but
+output-sensitive carrier. The open problem is to recognize a broader small
+cycle-faithful quotient without enumerating partitions or products.
 
 The boundary with existing theory is important. Weighted block refinement is
 classical; compare
