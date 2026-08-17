@@ -1734,3 +1734,26 @@ same `n^(3/2)/8` response gap, where `n=q^2`. Thus its response information is
 is weaker than the probabilistic full-orbit linear-rate theorem but exposes a
 useful algebraic invariant: approximate self-isometry of the Walsh bilinear
 form.
+
+## Example 76: discrete adversarial chains have a lower-spectral limit
+
+For a finite-state nearest-neighbor chain, keep the local disorder alphabet
+finite and adversarial rather than random or convexified. At inverse
+temperature `beta`, every disorder letter is a positive transfer matrix.
+The minimum partition function differs by only a fixed factor from the
+minimum norm of a matrix product, so its pressure is the log lower spectral
+radius. The uniform soft-max sandwich then proves existence of the
+zero-temperature adversarial ground-state density with error at most
+`log(q)/beta`.
+
+When the transfer entries are uniformly positive, projective cavity updates
+contract in Hilbert metric. A `delta`-net of the `(q-1)`-dimensional cavity
+simplex has `O(delta^{-(q-1)})` states and approximates the asymptotic mean
+pressure within `delta/(1-kappa)`. This is a genuine nonconvex-disorder limit
+and a benchmark success for response plus contraction.
+
+It also diagnoses its own transfer ceiling. Every dense sign bridge has
+Boolean bilinear maximum at least `n^(3/2)/sqrt(3)`, so a balanced dense cut
+already carries a leading interface and the standard transfer state has
+`2^n` coordinates. Fixed-width lower-spectral multiplication cannot simply
+be transplanted there without a new nonlocal quotient.

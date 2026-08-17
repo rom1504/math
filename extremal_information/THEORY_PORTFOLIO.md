@@ -129,21 +129,29 @@ one of:
   composable extremal state.
 - **Scope:** orthogonal benchmark, not yet a route to dense sign quadratics.
 
-### 5. Adversarial statistical mechanics — keep warm, B-/C+
+### 5. Adversarial statistical mechanics — keep warm, B
 
-- **Core object:** Gibbs variational dual plus Sion minimax for a compact
-  convex coupling set.
-- **Strongest theorem:** exact finite-temperature mixed-state duality and a
-  uniform `log|X|/beta` zero-temperature transfer; affine `d`-parameter
-  designs have a `d+1`-state active certificate.
-- **Best benchmark:** optimized nonnegative complete-graph antiferromagnetic
-  budget has exact limit `1/2` and pressure `1/2+log(2)/beta`.
+- **Core object:** finite-temperature pressure under outer adversarial
+  disorder; convex models use Gibbs--Sion, while finite-width discrete
+  disorder uses a lower spectral radius and projective cavity dynamics.
+- **Strongest theorem:** for every finite-state nearest-neighbor model with a
+  finite *discrete* disorder alphabet, both fixed-temperature adversarial
+  pressure and zero-temperature ground-state density converge. Under uniform
+  positivity, a `(q-1)`-dimensional Hilbert cavity has a polynomial
+  `delta`-net approximating mean pressure within `delta/(1-kappa)`.
+- **Best benchmarks:** the discrete adversarial chain retains the original
+  nonconvex alphabet exactly; the convex complete-graph antiferromagnetic
+  budget separately has limit `1/2` and pressure `1/2+log(2)/beta`.
 - **Best falsifier:** one fixed-magnitude sign coupling has primal value one
   and mixed dual zero.  Discrete sign alphabets cannot be convexified for
   free.
-- **Promotion test:** a subleading-loss replacement lemma for a genuinely
-  nonconvex coupling class, or fixed-temperature convergence that survives
-  the outer optimization without convexifying it.
+- **Best falsifier:** every dense sign bridge has bilinear response at least
+  `n^(3/2)/sqrt3`; its standard transfer width and contraction loss are
+  exponential. The local lower-spectral mechanism does not cross a dense
+  interface.
+- **Promotion test:** a nonlocal product/antinorm representation for a
+  growing-interface model with sub-landscape dimension and subleading
+  multiplication defect.
 
 ### 6. Extremal cut-norm replacement — promoted narrow branch, B
 
@@ -229,6 +237,7 @@ one of:
 | bridge | genuine sign-quadratic children | sparse weighted coefficient surrogate | `Omega(n)` to `O(n^2)` bits for the unrestricted-cap class; bounded-cap rate sharpened separately |
 | bridge | exact cap-`1/2` Walsh children | local switch (`n` bits) or structured truth table (`sqrt(n)` bits); relative operator cocycle under graphs | full switching orbit has `Theta(n)` one-bridge response bits; structured graph carrier closes at coefficient level; scalar overlap quotient fails extensively |
 | multi-model | finite signed feature dictionaries | sparse importance-weighted mask | constant-fraction saving for quadratics; explicit `V_Phi,log|X|` law |
+| orthogonal | discrete adversarial finite-width chain | lower spectral radius plus projective cavity | passed: fixed-temperature and ground-state limits without convexifying disorder; dense transfer fails at a leading interface |
 | orthogonal | branching random-walk extremes | derivative mass `Z` after critical renormalization | promoted scoped: exact limiting composition for unmarked Laplace queries |
 
 ## Director rule

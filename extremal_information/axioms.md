@@ -1169,3 +1169,24 @@ cycle. The edge connection itself can be flat while its compatibility with
 the on-site extremal geometry carries a cocycle. A reusable state must retain
 the relative algebra needed by future products, not merely each operator's
 isolated spectrum or low-order correlations.
+
+## 43. A scalar asymptotic state can exist without a periodic optimizer
+
+Finite exact response carriers are not the only compositional mechanism. For
+finite-width adversarial chains, submultiplicativity of minimum transfer-
+product norms creates a scalar lower-spectral growth rate even when no finite
+word attains it. Under strict positivity, a projective cavity potential and
+contraction refine that scalar into a polynomial approximate mean-pressure
+carrier.
+
+This separates three claims which should not be conflated:
+
+1. an asymptotic scalar value exists;
+2. a finite or compact state computes it approximately;
+3. one bounded-period microscopic construction realizes it.
+
+The first two can hold while the third fails. Conversely, the mechanism is
+controlled by interface width: at a dense quadratic cut the bilinear response
+is already of leading order and the local transfer dimension is exponential.
+A useful dense analogue would need a nonlocal multiplicative quotient, not a
+larger finite-width transfer matrix.

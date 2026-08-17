@@ -645,6 +645,16 @@ by a smoothing transform. This is a limiting distributional state, not an
 exact finite-port quotient, and genealogy-marked futures force a larger mass
 measure. It is retained as a scoped rare-event branch.
 
+A second orthogonal benchmark keeps disorder discrete and adversarial. For a
+finite-state nearest-neighbor chain, minimum transfer-product norms are
+submultiplicative, so fixed-temperature pressure is a lower spectral radius;
+a uniform soft-max sandwich then proves convergence of the adversarial
+ground-state density. Strictly positive transfers have a contractive Hilbert-
+metric cavity and polynomial finite nets for asymptotic mean pressure. This
+does not transfer locally to a dense sign split: every dense sign bridge has
+Boolean bilinear response at least `n^(3/2)/sqrt(3)`, already the leading
+scale, and the ordinary transfer interface has `2^n` states.
+
 ## Extremal rate--distortion
 
 For a landscape class `H`, query set `Theta`, and response metric
@@ -736,7 +746,11 @@ The framework is grounded in, but not reducible to, several mature theories:
   and multi-species
   [synchronization](https://arxiv.org/abs/1310.6679); and
 - Madaule's [decorated extremal process for boundary-case branching random
-  walks](https://arxiv.org/abs/1107.2543).
+  walks](https://arxiv.org/abs/1107.2543);
+- Birkhoff's [projective contraction theorem](https://doi.org/10.1090/S0002-9947-1957-0087058-6);
+  and
+- Guglielmi--Zennaro's [lower-spectral-radius and antinorm
+  review](https://arts.units.it/retrieve/handle/11368/2972807/338571/GZ2019_finale.pdf).
 
 The research question is which compression mechanisms behind these theories
 remain valid for deterministic, adversarial landscapes without importing

@@ -345,6 +345,36 @@ the `E^2/(V_Phi log|X|)` saving scale for one natural dictionary class.
 **Falsifier:** a dictionary with small one-shot response cover for which
 every invariant surrogate family has full coefficient information rate.
 
+## 9. A nonlocal lower-spectral representation for growing interfaces
+
+Finite-width discrete adversarial chains now have a complete scalar limit:
+their pressure is a lower spectral radius, the ground-state density follows
+by a uniform zero-temperature sandwich, and positive transfers admit a
+contractive projective cavity net. This is not merely convex minimax and it
+does not require a periodic optimizing disorder word.
+
+The mechanism fails under the standard path decomposition of a dense
+quadratic system. Every `n by n` sign bridge has
+
+```math
+max_(x,y)x^TBy\ge n^{3/2}/\sqrt3,
+```
+
+so the interface contribution is leading, its transfer dimension is `2^n`,
+and its positive-temperature projective contraction degenerates with `n`.
+
+Find a nonlocal semigroup, antinorm, or projective operator representation
+for a growing-interface class whose dimension is strictly smaller than its
+full Boolean landscape and whose multiplication defect is subleading.
+
+**Success:** a restricted dense or rank-growing model with an exact scalar
+lower-spectral limit plus a sub-landscape carrier, or a proof that one
+natural proposed nonlocal product necessarily retains an extensive response
+rate.
+
+**Stop condition:** repackaging the `2^n` transfer matrix or convexifying the
+discrete sign alphabet is not a new representation.
+
 ## Reconnection rule
 
 Do not return to the motivating signing problem.  Reconnection requires a

@@ -8334,3 +8334,188 @@ class; a list can be existential; and duplicating the approximated landscape
 several times in one future incurs the corresponding multiplicity. It
 therefore separates **one-shot semantic response compression** from an
 invariant compositional quotient.
+
+## 26. Discrete adversarial thermodynamics through a lower spectral radius
+
+Fix a spin alphabet `[q]`, a finite disorder alphabet `D`, and bounded local
+rewards `h_d:[q] times [q]->R`. For a disorder word
+`w=(d_1,...,d_n)`, put
+
+```math
+H_w(\sigma)=\sum_(j=1)^n h_(d_j)(\sigma_(j-1),\sigma_j),
+\qquad
+Z_(n,beta)(w)=\sum_\sigma e^(beta H_w(\sigma)),            \tag{26.1}
+```
+
+and retain the discrete adversarial choice
+
+```math
+F_(n,beta)=\min_(w in D^n)\log Z_(n,beta)(w),
+\qquad
+G_n=\min_(w in D^n)\max_\sigma H_w(\sigma).              \tag{26.2}
+```
+
+### Theorem 26.1 (adversarial finite-range thermodynamic limit)
+
+Let
+
+```math
+T_d(i,j)=e^(beta h_d(j,i)),
+\qquad mathcal T_beta=\{T_d:d in D\}.
+```
+
+Then, for every fixed `beta>0`,
+
+```math
+p(\beta):=\lim_(n->infinity){F_(n,beta)\over n}
+=\log\check\rho(mathcal T_beta),                          \tag{26.3}
+```
+
+where
+
+```math
+\check\rho(mathcal T)
+=\lim_n\min_(d_1,...,d_n)
+ ||T_(d_n)\cdots T_(d_1)||_1^(1/n).                      \tag{26.4}
+```
+
+Moreover the zero-temperature adversarial density exists and satisfies
+
+```math
+g:=\lim_n{G_n\over n}
+=\lim_(beta->infinity){p(beta)\over beta},
+\qquad
+0\le {p(beta)\over beta}-g\le{\log q\over beta}.         \tag{26.5}
+```
+
+No distribution or convex hull on the disorder alphabet is introduced.
+
+#### Proof
+
+For every nonnegative `q by q` matrix `P`,
+
+```math
+||P||_1\le 1^TP1\le q||P||_1.                            \tag{26.6}
+```
+
+The log of the minimum norm of a length-`n` product is subadditive, since
+minimizing products can be concatenated and the matrix norm is
+submultiplicative. Fekete and (26.6) prove (26.3).
+
+There are `q^(n+1)` spin paths, so for every fixed disorder word
+
+```math
+\max_\sigma H_w(\sigma)
+\le\beta^{-1}\log Z_(n,beta)(w)
+\le\max_\sigma H_w(\sigma)+{(n+1)\log q\over\beta}.      \tag{26.7}
+```
+
+Take the minimum over the same word set. Because the middle term divided by
+`n` converges for each `beta`, the limsup--liminf gap of `G_n/n` is at most
+`log(q)/beta`. Sending `beta` to infinity proves convergence, and then the
+same sandwich proves (26.5). `square`
+
+### Theorem 26.2 (contractive projective cavity and finite mean-pressure state)
+
+Assume, for a fixed `beta`, that
+
+```math
+0<a\le T_d(i,j)\le b<infinity                              \tag{26.8}
+```
+
+uniformly. On the probability simplex define
+
+```math
+tau_d(p)={T_dp\over||T_dp||_1},
+\qquad r_d(p)=\log||T_dp||_1,
+\qquad
+(mathcal Vf)(p)=\min_d\{r_d(p)+f(tau_d(p))\}.             \tag{26.9}
+```
+
+There are a scalar `lambda` and a continuous potential `u` such that
+
+```math
+mathcal Vu=u+lambda,
+\qquad
+lambda=\log\check\rho(mathcal T_beta),
+\qquad
+Lip_(d_H)(u)\le{1\over1-kappa},                          \tag{26.10}
+```
+
+where
+
+```math
+kappa\le{b-a\over b+a}<1.                                \tag{26.11}
+```
+
+Furthermore, a Hilbert-metric `delta`-net with
+
+```math
+O_(q,a,b)(delta^(-(q-1)))                                \tag{26.12}
+```
+
+states has minimum cycle mean `lambda_delta` satisfying
+
+```math
+|lambda_delta-lambda|\le{delta\over1-kappa}.             \tag{26.13}
+```
+
+This approximates asymptotic mean pressure. It does not claim a
+depth-independent additive approximation to every unnormalized finite-
+horizon response.
+
+#### Proof
+
+Every update lands in the invariant compact interior set
+
+```math
+X=\{p in Delta_(q-1):a/(qb)\le p_i\le b/(qa)\}.
+```
+
+[Birkhoff's projective contraction theorem](https://doi.org/10.1090/S0002-9947-1957-0087058-6)
+and the cross-ratio bound give (26.11), while
+`|r_d(p)-r_d(p')|<=d_H(p,p')`. Consequently
+
+```math
+Lip(mathcal Vf)\le1+kappa Lip(f).                         \tag{26.14}
+```
+
+On normalized `1/(1-kappa)`-Lipschitz functions, Arzela--Ascoli and Schauder
+give the additive eigenfunction. Sup-norm nonexpansiveness yields
+
+```math
+||mathcal V^n0-(u+n lambda)||_infinity\le||u||_infinity.
+```
+
+For fixed interior `p`, `||Pp||_1` and `||P||_1` differ by a factor
+independent of product length, identifying `lambda` with (26.4).
+
+Round each `tau_d(p)` at a net point to `p'`. With
+`L=1/(1-kappa)`, every rounded edge satisfies
+
+```math
+r_d(p)+u(p')\ge lambda+u(p)-L delta.                     \tag{26.15}
+```
+
+Every cycle therefore has mean at least `lambda-L delta`. Following a
+minimizing symbol from every net point gives the reverse inequality on its
+eventual cycle, proving (26.13). `square`
+
+### Proposition 26.3 (why the local transfer mechanism stops at a dense cut)
+
+For every `n by n` sign matrix `B`,
+
+```math
+\max_(x,y in {+-1}^n)x^TBy\ge {n^{3/2}\over\sqrt3}.      \tag{26.16}
+```
+
+Indeed, for uniform `x`, every coordinate `S_j=(B^Tx)_j` has
+`ES_j^2=n` and `ES_j^4<=3n^2`. Interpolation gives
+`E|S_j|>=sqrt(n/3)`. Some `x` therefore has
+`||B^Tx||_1>=n^(3/2)/sqrt3`, and optimizing `y` proves the claim.
+
+Thus the fixed-width lower-spectral mechanism glues across a bounded
+interface, while a balanced dense quadratic split has a provably leading
+interface response and a standard transfer dimension `2^n`. This falsifies
+the naive local-transfer import, not every possible nonlocal multiplicative
+norm or quotient.
