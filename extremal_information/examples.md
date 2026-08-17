@@ -2575,3 +2575,16 @@ which tends to zero.  The exact flatness chain rule identifies the missing
 resource as amplitude allocation at each internal node.  Thus local rounding
 certificates are not dynamically reusable unless their allocation defects
 are summable along the exposed path.
+
+## Example 129: delocalized eigenvectors are still a fixed distance from the cube
+
+Gaussian/Haar directions have normalized `l_1` norm `sqrt(2/pi)`, and
+eigenvector universality transfers this constant to the standard symmetric
+sign-Wigner benchmark.  An explicit two-block hollow signing gives a simple
+top eigenvector with limiting normalized `l_1` norm `cos(pi/8)`.  Neither is
+Boolean-flat.
+
+This sharply rejects a tempting shortcut: delocalization says that no few
+coordinates carry the mass, whereas Boolean recovery needs almost every
+coordinate magnitude to approach one.  The deterministic example is
+quadratic-cap and therefore leaves a near-minimizer rigidity theorem open.

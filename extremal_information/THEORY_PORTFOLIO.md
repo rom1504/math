@@ -140,6 +140,10 @@ one of:
   an exact local-shape plus RMS-allocation chain rule.  Fixed allocation
   imbalance is pumpable even with Boolean leaves.  The live gap is optimizer
   selection under switching, not a missing one-shot rounding inequality.
+  A focused literature audit now rules out generic delocalization as the
+  selector: Wigner eigenvectors have deficit `1-sqrt(2/pi)`, and an explicit
+  hollow two-block signing has deficit `1-cos(pi/8)`.  Any positive selection
+  theorem must use near-minimizer-specific equality structure.
   Coefficient-side frustrated cycle holonomy is not a PSD contraction and
   must remain a separate dynamic variable.
   The continuation-width question is closed once its internal cap budget is

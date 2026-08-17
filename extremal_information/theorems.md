@@ -11598,6 +11598,75 @@ allocation.  Full proof and audit are in
 and
 [`experiments/verify_flatness_common_pole_independent_audit.py`](experiments/verify_flatness_common_pole_independent_audit.py).
 
+### Theorem 21.49 (generic delocalization does not imply Boolean flatness)
+
+Two independent benchmarks rule out a generic exposed-flatness theorem.
+
+First, specialize Bourgade--Yau eigenvector universality to a real symmetric
+Rademacher generalized Wigner matrix with independent entries **including
+the diagonal**, normalized by `1/sqrt(N)`.  For every eigenvector index in
+their stated edge/central-bulk set, if `v_k` has norm one and
+`u_k=sqrt(N)v_k`, then
+
+```math
+{||u_k||_1\over N}\longrightarrow\sqrt{2/\pi}
+\quad\hbox{in }L^2.                                 \tag{21.299}
+```
+
+Thus its flatness deficit tends to
+`1-sqrt(2/pi)`, not zero.  No hollow-matrix extension is asserted.
+
+Second, for `n=2m` the explicit hollow signing
+
+```math
+A_m=\begin{pmatrix}
+J_m-I_m&J_m\\J_m&-(J_m-I_m)
+\end{pmatrix}                                       \tag{21.300}
+```
+
+has a simple top eigenvalue
+
+```math
+r_m=\sqrt{(m-1)^2+m^2}.                             \tag{21.301}
+```
+
+Its norm-`sqrt(n)` top eigenvector is constant on the two blocks with ratio
+
+```math
+t_m={r_m-(m-1)\over m},                             \tag{21.302}
+```
+
+and satisfies
+
+```math
+{||u_m||_1\over n}
+={1+t_m\over\sqrt{2(1+t_m^2)}}
+\longrightarrow\cos(\pi/8)<1.                     \tag{21.303}
+```
+
+#### Proof
+
+For the random model, Bourgade--Yau gives uniform one- and two-coordinate
+Gaussian moment convergence.  Averaging those coordinates and using uniform
+integrability yields convergence of the first and second moments of the
+normalized `l_1` norm to `sqrt(2/pi)` and `2/pi`, proving (21.299).
+
+For (21.300), the block-constant quotient is
+`[[m-1,m],[m,-(m-1)]]`; the orthogonal complements have eigenvalues `-1`
+and `+1`.  Diagonalizing the quotient gives (21.301)--(21.302), and direct
+normalization gives (21.303). `square`
+
+The deterministic family has quadratic cap of order `n^2`, so it does not
+falsify a near-minimizer-specific rigidity theorem.  It does prove that
+ordinary delocalization, isotropy, Kashin/Dvoretzky-type Euclidean sections,
+vector balancing, and inverse Littlewood--Offord structure cannot by
+themselves supply `phi=o(1)`: Gaussian coordinates sit at the wrong equality
+constant.  Any positive route must force near-cube equality, not merely
+spread mass.  Exact checks and the source audit are in
+[`drafts/hypercube_flatness_literature_scout.md`](drafts/hypercube_flatness_literature_scout.md)
+and
+[`experiments/verify_hypercube_flatness_scout.py`](experiments/verify_hypercube_flatness_scout.py).
+
 ## 22. Finite-port response dimension
 
 For a message `m in R^q`, write `R_m(g)=max_j(m_j+g_j)`.  On projective

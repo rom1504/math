@@ -1845,3 +1845,17 @@ local witnesses do not prevent a global integrality gap if Euclidean mass
 localizes under repeated composition.  A dynamic recovery state must
 therefore control both local shape and allocation, and allocation defects
 must be summable at growing depth.
+
+## 93. Delocalization is quantitatively weaker than cube flatness
+
+An isotropic or Gaussian eigenvector spreads its Euclidean mass but has
+average coordinate magnitude `sqrt(2/pi)`, a fixed distance below the
+Cauchy--Schwarz equality required by Boolean rounding.  Even a simple
+deterministic hollow signing can have a uniquely exposed, delocalized top
+vector with constant flatness deficit.
+
+Therefore generic random-matrix universality, discrepancy balancing, or
+almost-Euclidean `l_1` sections cannot substitute for a synchronization
+theorem.  A positive discrete-recovery result must exploit equality-case
+structure of the selected class, such as a property forced specifically by
+near-minimal extremal cap.
