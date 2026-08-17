@@ -32,13 +32,13 @@ the original minimization problem.  Sparse selector-targeted flips preserve all
 `4^j` active PC.3 product poles to `o(1)` and the actual `sqrt(N)` operator
 scale while inflicting constant loss on their joint selector.  A sharp field-
 size law shows that this damaged channel can be queried at leading scale with
-only `o(N)` new vertices.  A two-channel spherical relaxation then proves a
-fixed gap for the **full Boolean trust response** under that labelled field.
-What remains is whether an unconstrained exact-sign parent selects a
-different endpoint word; the child-spin repair question is closed.  The
-naive free-shore lift is also closed negatively: an all-positive endpoint
-creates `Omega(N^(3/2)sqrt(log N))` energy.  Any physical compiler must
-balance or restrict its endpoint language.
+only `o(N)` new vertices.  A two-channel spherical relaxation proves a fixed
+gap for the **full Boolean trust response** under that labelled field.  The
+naive free-shore lift fails because an all-positive endpoint creates
+`Omega(N^(3/2)sqrt(log N))` energy, but a rowwise microcanonical compiler
+balances every endpoint.  Its uniform affine law closes both endpoint and
+child-spin repair and yields two all-spins-free exact-sign parents separated
+at the leading scale.  Neither parent is known to minimize its order.
 
 ## 1. Theory portfolio and branch ranking
 
@@ -167,8 +167,10 @@ Only the campaign's principal theorem-level results are listed here.
     appended parent remains outside this theorem.  The naive repeated shore
     blows up by `sqrt j`, but a rowwise microcanonical sign compiler realizes
     the target field exactly with global cross cap only `o(N^(3/2))` above
-    its norm.  Endpoint stability, not endpoint-scale control, is the final
-    open step.
+    its norm.  Its stronger uniform affine endpoint law proves endpoint
+    stability and yields two unconstrained exact-sign parents whose caps
+    differ by `(delta+o(1))N^(3/2)`.  This is a physical response collision,
+    not a comparison of minimizing signings.
 12. **Factorized phase law.**  For independent pole factors, the maximum of
     the entire endpoint histogram is within `sqrt(sum q_t^2)/p` of the
     scalar first-moment phase.  Together with relative synchronization this
@@ -215,10 +217,12 @@ Only the campaign's principal theorem-level results are listed here.
   mixture dilution reproducing the prescribed seed selector from making all
   marginals vanish.  Neither no-go is universal: the sparse-flip construction
   gives exact signings at the correct operator scale with all active-product
-  deficits `o(1)` and a constant prescribed-selector deficit.  It therefore
-  rules out deriving semantic NMSS from individual product deficits alone;
-  whether the full Boolean response repairs the selector is the remaining
-  distinction.
+  deficits `o(1)` and a constant prescribed-selector deficit.  A spherical
+  trust bound and balanced compiler further show that neither child-spin nor
+  free-endpoint optimization repairs one such channel.  It therefore rules
+  out deriving semantic NMSS from individual product deficits alone; the
+  remaining distinction is whether this one physical bit amplifies and
+  whether any analogue is forced on near-minimizers.
 - **Random/arbitrary dense bridges:** response packing is extensive at the
   `n^(3/2)` scale.  Cut-norm replacement only helps at the coarser `n^2`
   scale.
@@ -235,8 +239,8 @@ classification.
 this campaign produced a new multi-model dynamic theorem, scalable
 incompressibility results, a strict growing near-original carrier, and a
 robust tensor law.  It should not yet consume a direct attack on `M_n`.
-The next test is whether the new labelled response collision has an
-economical unlabelled exact-sign realization, rather than another assumed
+The next test is whether the new physical response collision amplifies to a
+growing packing, rather than remaining one exceptional bit of an assumed
 pole algebra.
 
 ## 6. Scout decisions
@@ -289,10 +293,11 @@ language, and asserts no cross-order recurrence.  It is **not yet proved
 mathematically easier**.  The robust spectral theorem supplies one possible
 proof mechanism only in classes whose spectral roof is already tight; it is
 not silently assumed here.  The sparse-flip theorem additionally rules out
-proving this semantic lemma from near-optimality of the individual generated
-product poles, even under exact signs and the correct operator scale; a
-successful proof must control full-response repair or a richer collective
-state.
+  proving this semantic lemma from near-optimality of the individual generated
+  product poles, even under exact signs and the correct operator scale.  The
+  one-channel compiler also shows that full-response repair can fail, but it
+  does not select that channel for near-minimizers; a successful proof still
+  needs a near-minimizer-specific collective state.
 
 ### Program B: a decisive coherence lower bound
 
@@ -341,37 +346,23 @@ demonstrably-easier standard.
 
 ## 8. Single next three-hour campaign
 
-**Endpoint stability for the microcanonical PC.3 compiler.**  Theorems
-21.62--21.64 have resolved both the prescribed-certificate question and the
-full child-spin response under one labelled field.  Let `A'_j` be the
-sparse-flip hollow child, let `W_j` be the repeated PC.3 port matrix, let
-`epsilon_j` be the periodic endpoint, and put `h_j=W_jepsilon_j`.  Corollary
-21.63 proves
+**Multi-selector sparse-flip response packing.**  Theorems 21.62--21.67 now
+give one fully physical bit: active product poles have vanishing loss, yet a
+balanced exact-sign parent context separates the unflipped and sparse-flipped
+children by a fixed `N_j^(3/2)` amount after every spin optimizes.
 
-```math
-||h_j||_1=\sqrt{7/(2\mathop{\rm pi})}\,N_j\sqrt j+O(N_j).
-```
+Find the largest `k_j` for which one can choose diffuse selectors
+`x_(j,1),...,x_(j,k_j)` and targeted exact-sign edit patterns so that:
 
-Taking `m_j=floor(lambda sqrt(N_j/j))`, the appended shore has
-`m_j(2j+1)=O(sqrt(N_jj))=o(N_j)` vertices, and every possible internal
-signing on it has only `o(N_j^(3/2))` energy.  But Corollary 21.65 shows that
-the all-positive free endpoint has field at least `N_j(1+j/2)`, creating
-`Omega(N_j^(3/2)sqrt j)` cap.  The direct free-shore lift is therefore a
-scalable no-go, not an open candidate.
+1. every active PC.3 product pole has `o(1)` deficit uniformly over all
+   `2^{k_j}` edit choices;
+2. rowwise microcanonical compilers expose each selector with
+   `o(N_j^(3/2))` endpoint error; and
+3. the resulting unconstrained parents form an `N_j^(3/2)`-separated
+   contextual packing of size `2^{k_j}`.
 
-Theorem 21.66 supplies the nontrivial replacement: a rowwise microcanonical
-`N_j by s_j` sign matrix realizes the target field exactly and has
-
-```math
-||B_j||_(infinity to 1)
-\le||m_jh_j||_1+N_j\sqrt{2s_j}+Cs_j^{3/2}\sqrt{N_j}
-=||m_jh_j||_1+o(N_j^{3/2}).
-```
-
-Determine whether this compiler preserves the parent gap.  Prove that every
-endpoint attaining cross response within `o(N_j^(3/2))` of the target has a
-child field close enough to inherit Theorem 21.64, or exhibit a near-maximal
-endpoint whose child response repairs the full parent.  Keep
-`(r_NN)/2-Q(A'_j)` separate throughout and do not reopen the now-closed
-child-spin maximization, naive free shore, diagonal switching, or fixed-seed
-monomial dilution.
+Either prove `k_j->infinity` (preferably a quantitative rate) or prove a
+packing ceiling from selector overlap/edge-budget geometry.  This tests
+whether the new collision is one exceptional bit or a genuine information-
+rate obstruction.  Do not reconnect to `M_n` unless the construction or its
+converse acquires a near-minimizer hypothesis.

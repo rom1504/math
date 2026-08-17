@@ -2047,3 +2047,20 @@ Thus a biased repeated-column presentation can fail even when the underlying
 labelled response has a balanced physical realization.  After scale control
 is repaired, the genuinely dynamic question is stability: whether other
 near-exposed endpoints carry compatible child responses.
+
+## 108. Affine endpoint control is a reusable route from labelled to physical response
+
+A compiler that realizes one target field and controls only its largest
+cross norm need not preserve a labelled response gap.  A stronger sufficient
+resource is a uniform affine law: every realizable endpoint field lies,
+within the target error scale, on the balanced segment through the target.
+If the damaged child's response upper bound is even and monotone along that
+segment, optimization over the formerly labelled endpoint creates no new
+channel.
+
+This criterion is strictly weaker than enumerating the endpoint language and
+strictly stronger than scalar survival.  In the PC.3 sparse-flip example it
+turns a labelled trust-response separation into a separation of two physical
+exact-sign parents.  It still says nothing about whether either parent is a
+minimizer, so contextual incompressibility and extremal optimization remain
+separate layers.

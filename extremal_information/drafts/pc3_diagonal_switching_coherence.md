@@ -746,6 +746,14 @@ The DS.7 obstruction is specific to identical repeated columns.  If
 ```math
 B1=g,
 \qquad
+\max_{eta\in\{+-1\}^s}
+ \left\|B eta-{1^Teta\over s}g\right\|_1
+\le\sqrt{2s}\,N+C s^{3/2}\sqrt N,              \tag{DS.64a}
+```
+
+and hence
+
+```math
 \max_{eta\in\{+-1\}^s}||B eta||_1
 \le||g||_1+\sqrt{2s}\,N+C s^{3/2}\sqrt N.      \tag{DS.64}
 ```
@@ -762,6 +770,23 @@ both error terms in (DS.64) are
 is possible.  What remains is **endpoint stability**: prove that every
 near-maximal endpoint has essentially the same damaged child response, or
 construct a competitor that repairs the parent maximum.
+
+### Corollary DS.9 (microcanonical endpoint stability realizes a parent gap)
+
+The strengthened estimate (DS.64a) already decides that dichotomy.  For
+every free endpoint `eta`, its field is `o(n_j^(3/2))` in `l_1` from
+`a m_jh_j`, where `a=(1^Teta)/s_j in [-1,1]`.  Boolean trust response is
+`l_1`-Lipschitz in the field and even under `a -> -a`.  The positive- and
+negative-channel spherical upper bounds in DS.6 are increasing functions of
+`|a|`, so their worst case is the target strength `|a|=1` and retains the
+same fixed gap.
+
+Consequently, using the same microcanonical cross block and any common
+internal exact-sign shore, the unflipped and sparse-flipped completed parents
+have caps separated by `(delta+o(1))n_j^(3/2)`.  The shore energy is only
+`O(s_j^2)=o(n_j^(3/2))`.  This is an unconstrained exact-sign parent
+collision, but it neither concerns minimizing signings nor yields an
+all-order recurrence.
 
 For reference, the exact finite maxima in (DS.36) for `j=2,...,10` are
 

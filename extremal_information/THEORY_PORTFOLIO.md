@@ -87,13 +87,14 @@ joint coherence.  This does **not** separate full Boolean trust optima.
 
 **Current selected theorem.**  The child-spin repair question is now closed:
 at a fixed labelled field, a spherical relaxation proves a normalized full
-Boolean response gap greater than `0.0146` for explicit parameters.  Decide
-whether a **balanced-endpoint** exact-sign compiler can expose this context.
+Boolean response gap greater than `0.0146` for explicit parameters.  A
+**balanced-endpoint** exact-sign compiler now exposes this context physically.
 The naive free shore is rigorously dead: its all-positive endpoint has
 `Omega(N^(3/2)sqrt j)` cap.  A rowwise microcanonical compiler now keeps the
-entire cross response within `o(N^(3/2))` of the target norm.  The selected
-problem is endpoint stability: do all near-maximal endpoint fields inherit
-the sparse-flip damage, or can one repair the full parent?
+entire endpoint field uniformly close to a scalar multiple of the target.
+This proves endpoint stability and an unconstrained exact-sign parent cap
+collision.  The selected problem is whether this one bit amplifies to a
+growing contextual packing while preserving the active-product state.
 
 ## Portfolio ranking
 
@@ -232,8 +233,10 @@ the sparse-flip damage, or can one repair the full parent?
   mechanisms: a diffuse PC.3 selector has constant loss while every active
   product pole has vanishing loss.  Individual generated-pole quality is
   therefore rigorously dead even for exact signs.  A spherical relaxation
-  now also rules out child-spin repair under one leading labelled field;
-  unlabelled endpoint realization or a richer collective state remains.
+  now also rules out child-spin repair under one leading labelled field, and
+  a microcanonical affine compiler rules out free-endpoint repair in the
+  completed parent.  Multi-selector amplification or a richer collective
+  state remains.
   Exposed-flatness remains a weaker query-local certificate.  It yields exact
   `o(n^(3/2))` recovery for a nontrivial close-pole rank-two Walsh family,
   while an orthogonal rank-two family has a fixed gap and a whole-subspace
@@ -259,9 +262,8 @@ the sparse-flip damage, or can one repair the full parent?
   sign certificate obstruction reset the counter.  They are structured
   growing-interface results, not a cross-order recurrence for minima.
 - **Stopping condition:** two checkpoints that neither realize the labelled
-  response collision through the microcanonical endpoint language nor
-  produce a scalable near-maximal repairing endpoint, with no new contextual
-  lower bound.
+  collision as a growing multi-selector packing nor prove a quantitative
+  selector-packing ceiling, with no new contextual lower bound.
 - **Rank-growth ceiling:** bounded-operator dense sign bridges have a linear
   number of singular values above every fixed `sqrt(n)` threshold. Thus the
   SVD interface itself cannot remain subextensive; any escape must be a

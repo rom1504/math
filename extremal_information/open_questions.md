@@ -825,11 +825,13 @@ shore-only completion cannot remove that bias because its entire energy is
 `o(N_j^(3/2))`.  Theorem 21.66 now gives a balanced rowwise microcanonical
 compiler with global cross cap `||m_jh_j||_1+o(N_j^(3/2))`.
 
-The remaining question is endpoint stability.  Must every endpoint whose
-cross response is within `o(N_j^(3/2))` of the target generate essentially
-the same damaged child field, or can a near-maximal endpoint repair the full
-parent response?  This is a finite `2^{s_j}` geometry problem with a random
-microcanonical presentation, not another child-spin optimization.
+The strengthened uniform affine estimate in Theorem 21.66 answers endpoint
+stability positively, and Theorem 21.67 yields an unconstrained exact-sign
+parent cap collision.  The remaining information question is amplification:
+how many diffuse selectors can be edited independently while all active
+product poles remain asymptotically top and balanced compilers keep the
+resulting parents separated?  Prove a packing with `k_j->infinity` bits or a
+quantitative ceiling from selector overlap and the sparse edge budget.
 
 Two natural searches are already closed.  The PC.3 pole-conjugation twirl
 has a depth-independent gap, so every diagonal switching has selector defect

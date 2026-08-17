@@ -12788,6 +12788,13 @@ Let `g in Z^N`, let `s>=2`, and suppose `|g_i|<=s` and
 ```math
 B eta_*=g,
 \qquad
+\max_eta\left\|B eta-{<eta,eta_*>\over s}g\right\|_1
+\le\sqrt{2s}\,N+C s^{3/2}\sqrt N,              \tag{21.386a}
+```
+
+and consequently
+
+```math
 ||B||_(infinity to 1):=\max_eta||B eta||_1
 \le||g||_1+\sqrt{2s}\,N+C s^{3/2}\sqrt N.      \tag{21.386}
 ```
@@ -12801,17 +12808,17 @@ row `i` uniformly among sign vectors of sum `g_i`.  For a fixed endpoint
 \qquad \mathop{\rm Var}(b_i^Teta)\le2s.          \tag{21.387}
 ```
 
-Thus
+Thus, writing `a=c/s`,
 
 ```math
-\sum_i\mathbb E|b_i^Teta|
-\le {|c|\over s}||g||_1+\sqrt{2s}\,N
-\le||g||_1+\sqrt{2s}\,N.                      \tag{21.388}
+\sum_i\mathbb E|b_i^Teta-a g_i|\le\sqrt{2s}\,N.
+                                                               \tag{21.388}
 ```
 
-The `N` absolute row responses are independent and lie in `[0,s]`.
+The `N` absolute centred row responses are independent and bounded by `2s`.
 Hoeffding at deviation `C s sqrt(Ns)` followed by a union bound over the
-`2^s` endpoints proves that one sample satisfies (21.386) simultaneously.
+`2^s` endpoints proves (21.386a), and the triangle inequality gives
+(21.386).
 
 For the PC.3 target `g_j=m_jh_j`, the parity condition is automatic because
 `h_j` is a sum of `2j+1` signs in every row.  With
@@ -12823,10 +12830,56 @@ N_j\sqrt{s_j}+s_j^{3/2}\sqrt{N_j}=o(N_j^{3/2}). \tag{21.389}
 
 Hence a balanced exact-sign cross block can realize the labelled field with
 global cross cap `||g_j||_1+o(N_j^(3/2))`.  This repairs the endpoint-bias
-failure of the repeated-column lift.  It does **not** yet preserve the
-response gap after maximizing the full parent: another endpoint may attain
-nearly the same cross norm with a different child response.  Endpoint
-stability is the remaining obligation.
+failure of the repeated-column lift.  The stronger affine estimate
+(21.386a), not the scalar cap bound alone, is what Theorem 21.67 uses to
+control every competing endpoint and preserve the response gap.
+
+### Theorem 21.67 (balanced compilation realizes the labelled gap in unconstrained exact-sign parents)
+
+Use `A_j,A'_j,g_j=m_jh_j` and parameters satisfying Theorem 21.64, and let
+`B_j` be a microcanonical compiler from Theorem 21.66 with
+`s_j=Theta(sqrt(N_jj))`.  Complete the new shore by any common hollow
+exact-sign matrix `C_j`, and form
+
+```math
+P_j=\begin{pmatrix}A_j&B_j\\B_j^T&C_j\end{pmatrix},
+\qquad
+P'_j=\begin{pmatrix}A'_j&B_j\\B_j^T&C_j\end{pmatrix}.          \tag{21.390}
+```
+
+Then these are unconstrained hollow exact signings of common order
+`N_j+s_j=(1+o(1))N_j`, and
+
+```math
+\boxed{Q(P_j)-Q(P'_j)\ge(\delta+o(1))N_j^{3/2},}              \tag{21.391}
+```
+
+with `delta>0` from (21.379).
+
+Indeed, for every free shore endpoint `eta`, put
+`a=<eta,eta_*>/s_j`.  The strengthened microcanonical bound (21.386a)
+and Lipschitzness of Boolean trust response in field `l_1` give
+
+```math
+\mathcal B_{A'_j}(B_jeta)
+\le\mathcal B_{A'_j}(a g_j)+o(N_j^{3/2}).        \tag{21.392}
+```
+
+Trust response is even in its field.  Repeating the two spherical estimates
+of Theorem 21.64 with strength `|a|b` shows that their upper bounds are
+increasing for `0<=|a|<=1`; hence (21.392) is at most
+`\mathcal B_{A_j}(g_j)-(delta+o(1))N_j^{3/2}` uniformly in `eta`.
+Taking the global absolute quadratic channel only introduces the same two
+trust signs.  The shore contribution is bounded by
+`O(s_j^2)=o(N_j^{3/2})`.  Conversely the target endpoint and the unflipped
+selector attain `\mathcal B_{A_j}(g_j)` up to that same shore error.  This
+proves (21.391).
+
+This is a physical, all-spins-free contextual collision at the target dense
+quadratic scale.  It does **not** compare minima over signings, select these
+children as near-minimizers, or provide a cross-order recurrence for `M_n`.
+It proves that a strict balanced response compiler can preserve coherent
+information invisible to every active product pole.
 
 ## 22. Finite-port response dimension
 

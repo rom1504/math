@@ -2871,6 +2871,20 @@ exact signs.  Given the target field `g=m_jh_j`, choose each row of a new
 =||g||_1+o(N_j^{3/2}).
 ```
 
-This is the first balanced physical compiler for the sparse-flip field.  It
-does not yet preserve the parent response gap: another near-maximal endpoint
-may couple to a repairing child response.
+This is the first balanced physical compiler for the sparse-flip field.  Its
+scalar cap estimate alone would not preserve the parent response gap, since
+another near-maximal endpoint could couple to a repairing child response.
+
+## Example 148: affine endpoint control promotes a labelled gap to a physical collision
+
+The microcanonical compiler retains more than its scalar cap: every endpoint
+field is within `o(N_j^(3/2))` in `l_1` of a scalar multiple `a g_j`, with
+`|a|<=1`.  The two spherical trust bounds for the sparse-flipped PC.3 child
+are monotone in `|a|`, and trust response is even in the field.  Consequently
+no free endpoint repairs the fixed target-strength gap.
+
+Using the same bridge and any common exact-sign shore therefore produces two
+hollow sign parents of order `(1+o(1))N_j` whose Boolean caps differ by a
+fixed positive multiple of `N_j^(3/2)`.  This is a genuine all-spins-free
+contextual collision.  It is not a statement about minimizing parents and
+does not compare `M_n` across orders.

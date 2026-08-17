@@ -38,7 +38,8 @@ impossibility theorem, or a genuinely orthogonal limit theorem.
 - **Current ceiling:** the positive family is one unbalanced tensor algebra,
   its robust theorem targets the spectral roof, and no result selects it for
   near-minimizers or realizes it at all orders.
-- **Next theorem:** balanced-endpoint sparse-flip realization below.
+- **Next theorem:** amplify the balanced sparse-flip collision to a growing
+  response packing, or prove its selector-packing ceiling.
 - **Strike count:** zero.
 
 ### Live exact-sign boundary
@@ -84,13 +85,17 @@ has field `l_1` norm `Omega(N_jj)` and hence super-target
 A rowwise microcanonical compiler repairs that scale failure.  It realizes
 any parity-compatible target field `g` exactly and satisfies
 `||B||_(infinity to 1)<=||g||_1+Nsqrt(2s)+Cs^(3/2)sqrt N`; at
-`s=Theta(sqrt(Nj))` the excess is `o(N^(3/2))`.
+`s=Theta(sqrt(Nj))` the excess is `o(N^(3/2))`.  More strongly, every
+endpoint field is uniformly close to a scalar multiple of `g`.  Monotonicity
+of the spherical bounds therefore preserves the fixed gap after all old and
+new spins optimize: the result is an unconstrained exact-sign parent
+collision.
 
-**Next theorem:** endpoint stability for this balanced compiler.  Prove that
-every endpoint with cross response within `o(N^(3/2))` of the target induces
-essentially the same damaged child field, or construct a near-maximal
-endpoint that repairs the full parent.  Do not reopen the closed child-spin
-or naive repeated-shore constructions.
+**Next theorem:** a multi-selector response packing.  Either find
+`k_j->infinity` diffuse PC.3 selectors whose targeted sparse edits and
+balanced compilers encode `2^{k_j}` parents separated at `N_j^(3/2)` scale
+while sharing the active-product state, or prove a quantitative packing
+ceiling for such selectors.  Do not reopen the now-closed one-bit compiler.
 
 ## 2. Renormalized rare-event state — keep warm, B+
 

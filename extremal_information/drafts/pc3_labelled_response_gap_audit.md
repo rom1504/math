@@ -94,6 +94,21 @@ endpoints succeeds for an absolute `C`.  For `g=m_jh_j`, magnitude and
 parity are automatic; the two excess terms are respectively
 `N_j^(5/4)j^(1/4)` and `N_j^(5/4)j^(3/4)`, both `o(N_j^(3/2))`.
 
-The theorem controls the whole cross-response roof and realizes the target
-field exactly.  It does not prove endpoint stability or preserve the parent
-gap after maximizing over the endpoint.
+The scalar cap conclusion controls the whole cross-response roof and realizes
+the target field exactly, but by itself does not prove endpoint stability.
+The strengthened affine endpoint conclusion is audited next.
+
+## Unconstrained-parent lift
+
+Theorem 21.67 passes.  For a fixed shore endpoint and global absolute sign
+`tau`, replacing the old spin by `tau y` turns the parent objective into one
+of the two trust channels plus a shore term.  Hence the flipped parent is at
+most the maximum labelled trust response plus `Q(C)`, while the target
+endpoint gives the unflipped trust response minus `Q(C)`.
+
+The uniform affine compiler estimate, field-`l_1` Lipschitzness, and evenness
+reduce every endpoint to strength `|a|b`.  Both spherical upper bounds are
+increasing on `0<=|a|<=1`, so the target-strength gap is uniform.  Finally
+`2Q(C)=O(s_j^2)=o(N_j^(3/2))` and `N_j+s_j=(1+o(1))N_j`.  The direction and
+normalization in (21.391) are therefore correct.  This compares two
+constructed exact-sign parents, not their minima over signings.
