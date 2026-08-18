@@ -15,6 +15,7 @@ import math
 import sys
 from pathlib import Path
 
+import mpmath as mp
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
@@ -352,6 +353,15 @@ def main() -> None:
     parser.add_argument("--lambda-value", type=float, default=1.0)
     parser.add_argument("--quadrature-order", type=int, default=12)
     parser.add_argument(
+        "--mp-dps",
+        type=int,
+        default=80,
+        help=(
+            "decimal precision for the optimizing-child histogram comparison; "
+            "must exceed the 20 guard digits used by the selector"
+        ),
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=(
@@ -360,6 +370,9 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+    if args.mp_dps <= 20:
+        parser.error("--mp-dps must be greater than 20")
+    mp.mp.dps = args.mp_dps
 
     records = []
     for total_n in args.orders:
@@ -418,6 +431,7 @@ def main() -> None:
             "orders": args.orders,
             "betas": args.betas,
             "lambda": args.lambda_value,
+            "mp_dps": args.mp_dps,
             "interaction_path_gauss_legendre_order": args.quadrature_order,
             "balanced_split_only": True,
             "all_contracted_temperature_minimizer_classes": True,
