@@ -1109,10 +1109,11 @@ class and risks restating the desired parent optimization.
   matching-bit certificate therefore cannot amplify at weak physical
   temperature.  A linear coarse certificate must be genuinely aggregate,
   with total squared fibre transport `Omega(N^2)`.
-- **Sharp method ceilings:** exact enumeration of all 102 balanced actual
-  minimizer-class/orientation cases through `N=9` rejects worst-context
-  projective diameter as an efficient next target: at `N=9,beta=1` its best
-  bound is already at least `74.2` times the exact canonical cumulant.  A
+- **Corrected finite scope:** the archived `102`-record enumeration used
+  default `mpmath` precision with an invalid minimizer tie tolerance.  Only
+  `36` records survive corrected minimizing-child classification; the quoted
+  all-record ranges and the `74.2` optimizer-level comparison are withdrawn.
+  The per-record identities remain implementation checks.  A
   generic weak rank-one channel has tight row `D_2` but linear canonical
   cumulant; block-parity child priors agree with iid through every prescribed
   fixed overlap order and still have linear cumulant.  Hence local
@@ -1174,14 +1175,13 @@ class and risks restating the desired parent optimization.
   dependence, positive-density regular factor retuning, or both.  This is a
   finite structural classification; it does not select the asymptotic
   branch.
-- **Sharp finite falsifier on actual children:** complete bridge enumeration
-  of all `102` balanced minimizing-child laws through `N=9` reconstructs the
-  identity above within relative error `5.29e-11`.  The total-correlation
-  share ranges from `.3462` to `1`, while marginal drift ranges from `0` to
-  `.6538`.  Therefore neither a dependence-only nor a marginal-only theorem
-  can close the actual canonical error.  The optimized conditional-
-  entropic bound remains only a factor `1.486--2.273` above `J`; it is a
-  faithful diagnostic, but the `beta=2,4` data show no finite no-gain trend.
+- **Corrected finite scope:** the archived `102`-record bridge enumeration
+  reconstructs the algebraic identity within relative error `5.29e-11`, but
+  only `36` records survive corrected minimizing-child classification because
+  the original run used an invalid low-precision tie tolerance.  The quoted
+  all-record ranges and optimizer-level trend claims are therefore withdrawn.
+  They cannot support either a dependence-only or a marginal-only asymptotic
+  conclusion without a deliberately regenerated certified child list.
 - **Previous SML:** prove `sup_s A_s=o(N)` from optimizing-child structure or
   certify a linear high-transport image gap.
 - **Current SML:** from a child statistic strictly smaller than the complete
@@ -1488,3 +1488,113 @@ class and risks restating the desired parent optimization.
   high-order Gibbs table without a compression theorem is a substantive
   strike; two such strikes freeze this branch and promote rare-event/
   renormalization.
+
+### Checkpoint 24 — target orientation is removed and the product shadow has a finite-degree carrier
+
+- **Strongest new actual-child theorem:** every globally optimal product
+  factor for the exact child-induced pressure has bounded row `D_2` and weak
+  log coordinates.  Uniform Walsh projection of the density, followed by a
+  normalized positive-part link, therefore gives the child-independent
+  carrier
+
+  ```math
+  {dq_g\over dU_n}={g_+\over E_Ug_+},
+  \qquad \deg g\le d,quad E_Ug=1,quad\|g\|_2\le K_0,
+  \qquad K_0=e^{\lambda^2\beta^2/2}.
+  ```
+
+  If `V^row` is the unrestricted actual row-product variational value and
+  `V^(d,K_0)` its restriction to these carriers, then, uniformly over actual
+  minimizing children, all orders, orientations, and row directions,
+
+  ```math
+  0\le V^{(d,K_0)}-V^{\rm row}
+  \le m\eta_d,
+  \qquad
+  \eta_d=O_{\beta,\lambda}(d^{-1/8}\log d)\to0.       \tag{PF.24.1}
+  ```
+
+  The proof is a genuine physical-scale telescope: centered row Poincare
+  removes the apparent `sqrt(N)` loss, while bounded-`L^2` entropy continuity
+  is dimension-free.  The carrier uses `N^{O(d)}` coefficients at fixed
+  accuracy, cannot encode point rows, and a declared extensive gain is
+  verifiable with a constant number of sampled pressure evaluations.  Thus
+  an extensive coherent retuning has a fixed-degree, diffuse,
+  finite-description witness.
+- **Concrete branch selector, with its exact scope:** define the restricted
+  reverse projection `I_(d,K_0)^leftarrow`.  From (PF.24.1), if `J>=eta N`
+  and `d` is fixed so that the recovery error is at most `eta N/4`, then
+
+  ```math
+  I_{d,K_0}^{\leftarrow}\ge3\eta N/4
+  \Longrightarrow I^{\leftarrow}\ge\eta N/2,
+  \qquad
+  I_{d,K_0}^{\leftarrow}<3\eta N/4
+  \Longrightarrow J-I^{\leftarrow}>\eta N/4.       \tag{PF.24.2}
+  ```
+
+  This eliminates exponential row-factor tables from alternatives (ii) and
+  (iii).  It does **not** yet generate the carrier coefficients or lower-bound
+  the restricted minimum from a small child state; a pressure point oracle
+  may still conceal the cross-row landscape.  Therefore (PF.24.2) is a
+  factor/certificate reduction, not by itself an operational child-side
+  decision algorithm.
+- **Target relevance is now a theorem rather than an assumption:** central
+  symmetry and the orientation-uniform canonical row bound
+  `D_2<=lambda^2 beta^2` give a common vector-subgaussian proxy in every
+  orientation.  The physical sector--Gram/cluster promotion theorem therefore
+  applies directly in whichever orientation reaches the parent target, with
+  explicit constants.  The former obligation to prove that the
+  bias-canceling orientation is target-reaching is removed, although the
+  balanced presentation can retain sharper constants.
+- **Sharp falsifiers and ceilings:**
+  1. the complete flip/contraction/Bellman/extension identities have zero
+     defect on the exact order-two minimizing children while their canonical
+     interaction is positive, so those identities alone do not force cluster
+     tightness;
+  2. unsigned sector--Gram mass cannot choose a product phase; the signed
+     Kronecker sector mode gives valid stable-edge and coherent-retuning
+     certificates, but exact finite actual children show higher-order terms
+     can reverse its quadratic prediction;
+  3. degree-one normed clipped carriers already form an exact basis of every
+     row function, so the complete exact carrier-response surface is
+     table-complete.  Its inverse is exponentially ill-conditioned, and
+     physical bit-Lipschitzness makes linear row degrees contribute only
+     `o(N)` to bounded-`L^2` products.  This kills exact finite-Walsh closure,
+     not macroscopic optimized-value closure;
+  4. square-root projection gives an exact nonnegative degree-`2d` carrier
+     and `O(N/sqrt(d))` pressure recovery, but entropy recovery remains open.
+     Hellinger, bounded KL, and bounded square-root Dirichlet energy alone are
+     insufficient, as an explicit polynomial spike shows.
+- **Precision correction:** the old `102`-record projective/tilted-path run
+  used default `mpmath` precision with an invalid minimizer tie tolerance;
+  only `36` records survive corrected minimizing-child classification.  Its
+  per-record identities remain implementation checks, but all-record ranges
+  and optimizer-level empirical claims have been withdrawn.  No conclusion
+  in this checkpoint uses those ranges.
+- **Previous SML `L_balanced-product-phase`:** select (i), (ii), or (iii) from
+  a low-information actual-child observable and prove the balanced
+  orientation target-relevant.
+- **Current SML — macroscopic finite-degree child closure:** target
+  orientation and factor representation are no longer unknown.  For one
+  fixed degree and norm, derive an `O(N)`-accurate bound or generation rule
+  for `I_(d,K_0)^leftarrow` from polynomially many actual-child observables,
+  or give a scalable actual-minimizer collision at fixed density.  The state
+  must control the coherent low/mesoscopic row-degree response across a
+  positive density of rows; exact high row degree is now excluded as the
+  macroscopic obstruction.  A point-pressure oracle is enough to verify a
+  declared branch-(iii) witness but does not count as child closure.
+- **Progress classification:** **RESET ON TARGET RELEVANCE AND PRODUCT-FACTOR
+  INFORMATION; LEVEL 5, NOT LEVEL 6.**  The target-orientation requirement is
+  proved away, and a full exponential product-factor search is uniformly
+  replaced by fixed-degree diffuse witnesses with an explicit branch
+  selector.  The remaining child-response closure is strictly narrower.
+  There is no bound on `J`, no summable recurrence error, and no Level-6
+  transfer.  The exact-response and square-entropy failures are scoped
+  subroute falsifiers, not a campaign strike.
+- **Decision:** run exactly one macroscopic finite-degree child-closure
+  campaign.  It must either derive the restricted value from a polynomial
+  actual-child state with a fixed-density/power-saving margin, or produce a
+  scalable robust actual-child obstruction.  If it yields only another
+  pressure-oracle reformulation, freeze adversarial statistical mechanics
+  and promote rare-event/renormalization.

@@ -417,7 +417,7 @@ put
 
 ```math
 \mathcal I^{\leftarrow}
-=\inf_{P\ {m row\ product}}D(P\Vert q_\lambda).
+=\inf_{P\ {\rm row\ product}}D(P\Vert q_\lambda).
 ```
 
 For each row define

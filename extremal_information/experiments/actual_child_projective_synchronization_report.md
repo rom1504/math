@@ -3,6 +3,15 @@
 Classification: **complete finite bridge enumeration; numerical evidence,
 not an interval certificate and not an asymptotic claim**.
 
+> **Precision correction (2026-08-18).**  The archived run described below
+> used the default `mpmath` precision while applying a minimizer tie tolerance
+> calibrated for high-precision arithmetic.  Only `36` of the `102` archived
+> records correspond to genuine minimizing-child pairs under the corrected
+> classification.  The identities checked within each record remain useful
+> implementation checks, but the aggregate ranges and any conclusions drawn
+> from all `102` records are withdrawn.  The script now sets its precision
+> explicitly; the frozen JSON has not been silently regenerated.
+
 The implementation
 [`actual_child_projective_synchronization.py`](actual_child_projective_synchronization.py)
 tests CC.14 on every contracted-temperature minimizer class for balanced

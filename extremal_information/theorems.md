@@ -11536,10 +11536,10 @@ On a partition tree, if `A_v` is the local amplitude-allocation defect and
 `omega_v=(N_v/N)R_v` is its transported RMS weight, then
 
 ```math
-\phi(u)=\sum_{v\ {m internal}}\omega_vA_v
-       +\sum_{\ell\ {m leaf}}\omega_\ell\phi_\ell,
+\phi(u)=\sum_{v\ {\rm internal}}\omega_vA_v
+       +\sum_{\ell\ {\rm leaf}}\omega_\ell\phi_\ell,
 \qquad
-\sum_{v\ {m at\ depth}\ d}\omega_v\le1.         \tag{21.294}
+\sum_{v\ {\rm at\ depth}\ d}\omega_v\le1.         \tag{21.294}
 ```
 
 Consequently, if every node at depth `j` has `A_v<=a_j` and every leaf has
@@ -18590,3 +18590,260 @@ adversarial audit are in
 [`drafts/actual_child_sector_gram_physical_promotion.md`](drafts/actual_child_sector_gram_physical_promotion.md)
 and
 [`audits/actual_child_sector_gram_physical_promotion_adversarial_audit.md`](audits/actual_child_sector_gram_physical_promotion_adversarial_audit.md).
+
+### Theorem 37.34 (physical cluster promotion is target-orientation uniform)
+
+Let `P` be a centrally symmetric law on the `n`-cube and suppose
+`D_2(P||U_n)<=C`.  Then, for every `v in R^n`,
+
+```math
+\boxed{
+ \mathbb E_Pe^{\langle v,R\rangle}
+ \le \exp\{2e^{C/2}\|v\|_2^2\}.}                 \tag{37.97}
+```
+
+Canonical rows of the actual minimizing-child channel are centrally
+symmetric and, in every relative orientation and either row direction,
+
+```math
+D_2(r_{\epsilon,u}\Vert U_n)
+\le n\log\{1+\tanh^2(\lambda u)\}
+\le\lambda^2u^2n.                                \tag{37.98}
+```
+
+Consequently Theorem 37.33 has an orientation-uniform version.  At
+`u=t=beta/sqrt(N)`, put
+
+```math
+a_*={1\over8\sqrt2e^{\lambda^2\beta^2/2}},
+\qquad b_*=64e^{\lambda^2\beta^2}.
+```
+
+For either orientation, if
+
+```math
+K_\epsilon\le\kappa N^2,
+\qquad \lambda\beta^2\sqrt{2\kappa}\le a_*,
+```
+
+then
+
+```math
+\boxed{
+\mathcal J_t^\epsilon
+\le b_*\lambda^2t^4K_\epsilon
+   +2\lambda\mathfrak C_{\ge4}^\epsilon(t).}      \tag{37.99}
+```
+
+Thus a target-reaching orientation can be analyzed directly; no theorem
+showing that the bias-canceling orientation reaches the target is needed.
+This removes an independent target-relevance obligation, but it does not
+prove a small cluster tail or preserve the sharper balanced cutoff.  The
+proof and adversarial audit are in
+[`drafts/actual_child_orientation_uniform_cluster_promotion.md`](drafts/actual_child_orientation_uniform_cluster_promotion.md),
+[`audits/actual_child_orientation_uniform_cluster_promotion_adversarial_audit.md`](audits/actual_child_orientation_uniform_cluster_promotion_adversarial_audit.md).
+
+### Theorem 37.35 (signed sector modes certify the two product phases)
+
+In any actual-child orientation write the full-versus-row-erased interaction
+as
+
+```math
+h=t^2H_2+R+c,
+\qquad H_2={1\over2}B^{\mathsf T}MB,
+\qquad \Omega=\operatorname {osc}R.
+```
+
+The signed matrix is the polynomial-size child observable
+
+```math
+\boxed{
+M=\sum_{a=\pm1}\pi_a^\epsilon
+ (C_A^a-I)\otimes C_D^{\epsilon a},
+\qquad \|M\|_F^2=2K_\epsilon.}                   \tag{37.100}
+```
+
+For every row product `P`, let
+
+```math
+\mathscr G_h(P)
+=\lambda\{\mathbb E_rh-\mathbb E_Ph\}-D(P\Vert r).
+```
+
+Then the exact product-gain identity is
+
+```math
+\boxed{
+\mathcal J-\mathcal I^{\leftarrow}
+=\sup_{P\ {\rm row\ product}}\mathscr G_h(P).}    \tag{37.101}
+```
+
+If the canonical row is vector-subgaussian with proxy `sigma^2` and
+`lambda t^2 rho_-(M)<=sigma^(-2)`, then
+
+```math
+0\le\mathcal J-\mathcal I^{\leftarrow}\le\lambda\Omega. \tag{37.102}
+```
+
+Conversely, choose odd row bits `phi_i`, put
+`w_i=E_r[B phi_i(B)]`, and tilt every selected row by one common scalar.
+If `k` rows are selected and, for some `0<delta<=1`,
+
+```math
+-\lambda t^2w^{\mathsf T}Mw\ge(1+\delta)k,
+```
+
+then
+
+```math
+\boxed{
+\mathcal J-\mathcal I^{\leftarrow}
+\ge {3\delta^2\over16(1+\delta)}k-\lambda\Omega.} \tag{37.103}
+```
+
+The theorem retains the sign of the sector mode, which the scalar Gram mass
+forgets, and evaluates all channels jointly before taking an absolute value.
+Finite exact actual-child examples show that the quadratic sign alone need
+not survive the physical higher-order remainder.  The theorem is therefore a
+directional certificate, not a branch-selection theorem.  See
+[`drafts/actual_child_signed_sector_mode_product_certificate.md`](drafts/actual_child_signed_sector_mode_product_certificate.md)
+and its adversarial audit.
+
+### Theorem 37.36 (fixed-degree recovery of the actual product shadow)
+
+For a row cube define the child-independent carrier
+
+```math
+\mathcal C_{n,d,K}
+=\left\{q_g:{dq_g\over dU_n}={g_+\over E_Ug_+},
+ \deg g\le d,\ E_Ug=1,\ \|g\|_2\le K\right\}.     \tag{37.104}
+```
+
+Fix `beta,lambda>0`, let `L(B)` be the pressure induced by any pair of
+actual contracted-temperature minimizing children, and let `V^row` be the
+minimum of
+
+```math
+\mathcal F(P)=E_PL+{1\over\lambda}\sum_iD(P_i\Vert U_n)
+```
+
+over row products.  Put `K_0=exp(lambda^2 beta^2/2)` and let `V^(d,K_0)`
+be the same minimum with every factor in (37.104).  There is an explicit
+sequence
+
+```math
+\eta_d=O_{\beta,\lambda}(d^{-1/8}\log d)\longrightarrow0
+```
+
+such that, uniformly over orders, splits, minimizing children, orientations,
+and row directions,
+
+```math
+\boxed{
+0\le V^{(d,K_0)}-V^{\rm row}\le m\eta_d.}          \tag{37.105}
+```
+
+Equivalently, for the corresponding reverse-product projections,
+
+```math
+\boxed{
+0\le \mathcal I_{d,K_0}^{\leftarrow}
+       -\mathcal I^{\leftarrow}
+\le\lambda m\eta_d.}                              \tag{37.106}
+```
+
+The proof uses two optimizer-specific facts about every globally optimal
+row factor: dimension-free `D_2` and `O(n^(-1/2))` bit oscillation of its
+log density.  Walsh projection of the *density*, followed by normalized
+positive-part repair, gives `L^2` error `O(d^(-1/2))`.  A dimension-free
+entropy modulus on bounded `L^2` balls and a centered row Poincare estimate
+then telescope the complete product objective without a `sqrt(N)` loss.
+
+Each fixed-degree carrier has `N^{O(d)}` coefficients, remains diffuse, and
+can be sampled exactly by rejection from the fair row law.  Given point
+evaluation of the actual pressure, a declared carrier's extensive gain has
+a constant-sample randomized certificate.  Hence, if `J>=eta N`, fixed `d`
+can be chosen so that
+
+```math
+\begin{array}{ll}
+\mathcal I_{d,K_0}^{\leftarrow}\ge3\eta N/4
+ &\Longrightarrow \mathcal I^{\leftarrow}\ge\eta N/2,\\[1mm]
+\mathcal I_{d,K_0}^{\leftarrow}<3\eta N/4
+ &\Longrightarrow \mathcal J-\mathcal I^{\leftarrow}>\eta N/4.
+\end{array}                                        \tag{37.107}
+```
+
+This is a strict factor-description and witness-verification reduction.  It
+does not generate the carrier coefficients from a small child state, and a
+pressure point oracle may still hide the full cross-row landscape.  Thus it
+does not prove Level 6.  The proof, independent reconstruction, and
+adversarial audit are in
+[`drafts/actual_child_low_degree_product_carrier.md`](drafts/actual_child_low_degree_product_carrier.md),
+[`audits/actual_child_low_degree_product_carrier_independent_audit.md`](audits/actual_child_low_degree_product_carrier_independent_audit.md),
+and
+[`audits/actual_child_low_degree_density_carrier_adversarial_audit.md`](audits/actual_child_low_degree_density_carrier_adversarial_audit.md).
+
+### Theorem 37.37 (exact normed affine-carrier response is table-complete)
+
+For every fixed `K>1` and all sufficiently large `n`, put
+
+```math
+g_v(b)=1+{\langle v,b\rangle\over n-1},
+\qquad h_v={(g_v)_+\over E_U(g_v)_+}.
+```
+
+Then `g_v` belongs to the degree-one unit-mean norm ball in (37.104), and
+every Walsh coefficient of `h_v` is nonzero.  The `2^n` translates
+`{h_v:v in {+-1}^n}` form a basis of all row functions.  Therefore the
+exact response surface
+
+```math
+\left\{E_U\!\left[L(B)\prod_{i=1}^mh_{v_i}(B_i)\right]:
+       v_1,\ldots,v_m\right\}                     \tag{37.108}
+```
+
+determines the complete `2^(mn)`-entry pressure table.
+
+The obstruction is exact but exponentially ill-conditioned: the one-row
+transform has smallest singular value `2^(-n)/(n-1+2^(-n))`, and the
+`m`-row transform tensors it.  Thus (37.108) rules out an exact finite
+linear response bank; it does **not** rule out recovery of the single
+optimized value to additive `o(N)`.  Physical bit-Lipschitzness makes
+linear-size row degrees macroscopically invisible to every bounded-`L^2`
+carrier.  The resulting smallest missing lemma is robust finite-precision
+child closure, not exact response closure.  See
+[`audits/actual_child_normed_affine_carrier_response_basis_audit.md`](audits/actual_child_normed_affine_carrier_response_basis_audit.md).
+
+### Theorem 37.38 (exact-polynomial pressure recovery and its entropy blockade)
+
+Let `f` be an actual optimal row-factor density and put
+
+```math
+r=\sqrt f,
+\qquad g_d=\Pi_{\le d}r,
+\qquad q_d={g_d^2\over E_Ug_d^2}.
+```
+
+Then `q_d` is a nonnegative density of exact Walsh degree at most `2d`, its
+Hellinger distance from `f` is `O_(beta,lambda)(d^(-1/2))`, and its KL
+divergence from the fair row law is uniformly bounded.  Replacing all actual
+optimal product factors by these square carriers changes the exact physical
+bridge-pressure expectation by
+
+```math
+\boxed{
+\left|E_{\otimes_iq_{i,d}}L-E_{\otimes_if_i}L\right|
+\le {C_{\beta,\lambda}N\over\sqrt{d+1}}.}          \tag{37.109}
+```
+
+This removes positive-part Fourier leakage from the pressure term.  It does
+not yet recover the entropy-regularized objective: the available estimate is
+only `||q_d||_2<=3^d`, and Hellinger convergence plus bounded KL and bounded
+square-root Dirichlet energy do not imply entropy convergence.  An explicit
+degree-`d` spike has Hellinger distance `Theta(d^(-1/2))` from uniform and
+bounded square-root Dirichlet energy while its entropy tends to `log 2`.
+That spike is not a projection instance, so it is a barrier to the available
+bounds rather than a falsifier of a projection-specific entropy theorem.
+See
+[`audits/actual_child_square_root_polynomial_carrier_audit.md`](audits/actual_child_square_root_polynomial_carrier_audit.md).

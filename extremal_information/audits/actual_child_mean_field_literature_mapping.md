@@ -60,7 +60,7 @@ products of the `d` individual bridge bits.  The Gibbs identity gives
 ```math
 \boxed{
 \mathcal F(f)-\mathcal F_{\rm bit}(f)
-=\inf_{p\ {m bit\ product}}D(p\Vert q).}              \tag{MF.3}
+=\inf_{p\ {\rm bit\ product}}D(p\Vert q).}              \tag{MF.3}
 ```
 
 Thus the usual naive mean-field deficit is **exactly** a reverse KL

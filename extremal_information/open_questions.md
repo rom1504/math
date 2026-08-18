@@ -1493,3 +1493,29 @@ child Gibbs/external-field landscape.  In every branch, quantify whether
 the balanced orientation is target-reaching or price its loss.  Merely
 renaming the full high-order Gibbs law as one exact scalar does not solve
 this question.
+
+Theorem 37.34 removes the separate orientation obligation: the physical
+promotion theorem now holds directly in whichever orientation reaches the
+target.  Theorem 37.36 also settles the factor-representation part of the
+product alternatives.  At every fixed extensive accuracy, the full optimal
+row factors may be replaced uniformly by diffuse, norm-bounded,
+fixed-degree carriers, and the restricted projection robustly separates
+alternatives (ii) and (iii) once `J` is known to be linear.
+
+The remaining question is therefore the following strictly narrower robust
+closure problem.
+
+> **Macroscopic finite-degree child closure.**  For one fixed carrier degree
+> and norm, derive an `O(N)`-accurate rule for the restricted carrier value
+> from polynomially many actual-child observables, or construct a scalable
+> pair of actual minimizing children on which every such proposed rule
+> collides by a fixed density.  The rule must either establish `J=o(N)` with
+> a usable rate or decide the reverse-product/coherent-retuning alternative.
+
+Exact carrier responses do not solve this: Theorem 37.37 shows that even
+degree-one clipped responses are table-complete at infinite precision.
+Conversely, that transform is exponentially ill-conditioned and high row
+degrees are macroscopically attenuated, so the exact no-go does not falsify
+an `O(N)`-precision closure.  A pressure point oracle is acceptable for
+verifying a declared retuning witness but cannot be counted as a child-side
+generation theorem.

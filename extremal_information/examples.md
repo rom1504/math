@@ -3774,7 +3774,7 @@ Complete bridge enumeration and outward interval branch-and-bound on four
 row features prove
 
 ```math
-1.075\le\inf_{p\ {m row\ product}}D(p\Vert q_{\lambda_*})
+1.075\le\inf_{p\ {\rm row\ product}}D(p\Vert q_{\lambda_*})
 \le4.506450.
 ```
 
@@ -3836,12 +3836,14 @@ optimized-child law; it is a scalable falsifier showing that the new
 collision-curvature lemma must use optimizer-specific structure or a
 growing but compressed hierarchy.
 
-## Example 195: actual canonical error uses both row correlation and marginal drift
+## Example 195: archived path decomposition has a precision-classification defect
 
-The exact hybrid path was enumerated for all `102` balanced
-contracted-temperature minimizing-child laws at orders `4,...,9`, both
-orientations, `beta in {1,2,4}`, and `lambda=1`.  The two terms in (37.75)
-reconstruct `J` to relative error at most `5.29e-11`.
+The exact hybrid path was archived for `102` candidate records at orders
+`4,...,9`, both orientations, `beta in {1,2,4}`, and `lambda=1`.  The two
+terms in (37.75) reconstruct `J` within each record to relative error at most
+`5.29e-11`.  However, the run used default `mpmath` precision with an invalid
+minimizer tie tolerance.  Only `36` records survive corrected
+minimizing-child classification.
 
 Their integrated shares range as follows:
 
@@ -3851,13 +3853,11 @@ Their integrated shares range as follows:
 | `2` | `[.5403,1]` | `[0,.4597]` |
 | `4` | `[.3462,1]` | `[0,.6538]` |
 
-At `N=9,beta=4`, the highest-error orientation has `J/N=.43119`; only
-`.34618` of its path integral is total correlation and `.65382` is marginal
-drift.  Other actual orientations put more than ninety percent in total
-correlation.  Thus neither a marginal-only nor a dependence-only account of
-the canonical mismatch survives finite actual-child testing.  This is a
-falsifier of one-component proof strategies, not asymptotic evidence that
-either component has positive limiting density.
+The displayed all-record ranges are retained only as provenance and are
+withdrawn as optimizer evidence.  In particular this archived run does not
+falsify a one-component theorem for actual minimizing children.  Its valid
+content is the per-record identity check; optimizer-level empirical claims
+require a deliberately regenerated child list.
 
 ## Example 196: actual deletion optimality does not survive sector bias
 
@@ -3966,3 +3966,51 @@ large biases cancel.  This example removes an apparent escape route:
 large child bias can change which orientation is useful, but it cannot by
 itself force concentrated canonical components after orientation and
 filtration are chosen together.  Joint row dependence remains untouched.
+
+## Example 201: exact optimizer identities can coexist with a positive product phase
+
+Take the unique order-two child on both sides.  These are exact thermal
+minimizers and satisfy the complete flip, contraction, Bellman, extension,
+and sector-bias identities with zero defect.  Nevertheless, with
+`q=tanh^4t` and
+
+```math
+d=\log{1+3q\over1-q},
+```
+
+their canonical interaction is
+
+```math
+J=\log{e^{-3\lambda d/4}+3e^{\lambda d/4}\over4}>0,
+\qquad
+J={3\over2}\lambda^2t^8+O(t^{10}).
+```
+
+The sector--Gram mass is `2tanh^4t` and the fourth connected cumulant is
+`1-tanh^4t`.  Thus the presently known exact optimizer identities do not,
+even with zero defect, force cluster tightness.  This is a finite
+route-specific falsifier, not an asymptotic obstruction.
+
+## Example 202: exact affine-carrier completeness is exponentially fragile
+
+For fixed `K>1` and large `n`, the normalized positive parts of
+
+```math
+g_v(b)=1+{\langle v,b\rangle\over n-1}
+```
+
+are admissible degree-one normed carriers and their translates form a basis
+of every row function.  Tensoring across rows makes the exact carrier
+response surface table-complete.  The smallest one-row response multiplier,
+however, is
+
+```math
+{2^{-n}\over n-1+2^{-n}},
+```
+
+and tensoring raises it to the number of rows.  Exact inversion therefore
+requires exponentially fine precision.  Physical bit-Lipschitzness also
+bounds every degree-`k` row response by `O(k^(-1/2))`; linear row degrees
+contribute only sublinear total pressure to bounded-`L^2` carriers.  The
+example separates exact algebraic information from macroscopic response
+information and motivates a robust, rather than exact, child-closure lemma.

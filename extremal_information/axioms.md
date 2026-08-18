@@ -2915,3 +2915,45 @@ cluster mass is the right final state.  The tail ranges over all orders and
 can be harder than the cancellation-sensitive quantity it bounds.  A
 one-scalar presentation is not operational compression until its
 description or verification complexity is controlled.
+
+## 164. Target orientation should be separated from component regularity
+
+Balanced orientation gives a useful pointwise density bound, but it is not
+needed for physical cluster promotion.  Central symmetry plus bounded row
+Renyi two already supplies a dimension-free vector-subgaussian estimate in
+every orientation.  Thus a target-reaching orientation may be analyzed in
+place; changing orientation only changes explicit constants and the signed
+sector--Gram data.
+
+This closes the qualitative target-relevance subproblem without asserting
+that the bias-canceling orientation reaches the target.  It also illustrates
+the distinction between an existentially convenient presentation and a
+property that is genuinely required by the target functional.
+
+## 165. Diffuse finite-degree carriers recover optimal factors, not the child oracle
+
+Weak coordinate scores and bounded Renyi two force every optimal product
+factor into the uniform closure of normalized positive parts of bounded-
+degree, bounded-`L^2` Walsh polynomials.  At fixed macroscopic accuracy this
+replaces each exponential row table by polynomially many coefficients, and
+all coefficients remain jointly coupled before the pressure expectation is
+taken.
+
+This is genuine factor-side compression.  It is not automatically child-side
+closure: evaluating the restricted objective can still query a complete
+cross-row pressure landscape.  A proposed branch selector must say separately
+how the coefficients are generated or how the restricted value is bounded
+from optimizer data.
+
+## 166. Exact completeness and macroscopic sufficiency are different questions
+
+Even clipped affine densities inside a fixed norm ball can form an exact
+basis of all row functions, so the complete exact carrier-response surface
+determines the whole bridge table.  The inversion is exponentially ill-
+conditioned, however, and physical bit-Lipschitzness attenuates its high-degree
+directions below the macroscopic scale.
+
+Therefore exact response closure is both impossible in a small linear bank
+and stronger than the problem needs.  The correct remaining question is a
+robust `O(N)`-precision closure theorem for the optimized carrier value.  An
+exact algebraic basis obstruction does not by itself falsify such a theorem.

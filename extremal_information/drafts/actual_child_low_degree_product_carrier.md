@@ -217,7 +217,7 @@ and row direction, and a split `m+n=N`.  Put `u=beta/sqrt(N)` and let
 Let
 
 ```math
-V^{\rm row}=\min_{P\ {m row\ product}}\mathcal F(P)             \tag{LDC.12}
+V^{\rm row}=\min_{P\ {\rm row\ product}}\mathcal F(P)          \tag{LDC.12}
 ```
 
 and, for a child-independent carrier,

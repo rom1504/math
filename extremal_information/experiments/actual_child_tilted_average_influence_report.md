@@ -4,6 +4,15 @@ Classification: **complete finite bridge enumeration and numerical
 quadrature; reproducible evidence, not an interval certificate and not an
 asymptotic theorem**.
 
+> **Precision correction (2026-08-18).**  This report inherits the archived
+> child list from `actual_child_projective_synchronization.py`.  That run used
+> default `mpmath` precision with an inappropriately loose minimizer tie
+> tolerance: only `36` of the `102` archived records survive corrected
+> minimizing-child classification.  Per-record numerical identities remain
+> implementation checks, but the quoted all-record ranges and optimizer-level
+> empirical conclusions are withdrawn pending a deliberately regenerated run.
+> The frozen JSON is retained as provenance rather than rewritten.
+
 The experiment extends
 [`actual_child_projective_synchronization.py`](actual_child_projective_synchronization.py)
 to the exact hybrid law
