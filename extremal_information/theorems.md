@@ -20445,3 +20445,446 @@ bound cannot be reversed into product gain: Theorem 37.53 has positive
 limiting raw overlap and `I_N=0`.  Hence Theorems 37.52 and 37.56 falsify
 the decay SML but supply no recurrence in the favorable direction.  See
 [`audits/actual_child_negative_overlap_recurrence_scope.md`](audits/actual_child_negative_overlap_recurrence_scope.md).
+
+### Theorem 37.60 (actual projective-atom bound and flip-information ceiling)
+
+Let `A` be an exact order-`m` minimizer of the augmented pressure at raw
+temperature `t>0`, and let
+
+```math
+\bar\nu_A(\tau,[x])
+={e^{t\tau H_A(x)}\over2^mZ_A(t)},
+\qquad \rho=\tanh t.                                  \tag{37.206}
+```
+
+Then every actual minimizing child obeys
+
+```math
+\boxed{\|\bar\nu_A\|_\infty\le{1+\rho\over2}.}        \tag{37.207}
+```
+
+Indeed, an atom with `tau H_A(x)<=0` has mass at most `2^{-m}`.  Otherwise
+some signed cavity edge `Y_e=tau a_ex_ix_j` equals `+1`; the exact optimizer
+tangent `E Y_e<=rho` and `E Y_e>=2bar nu_A(tau,[x])-1` prove (37.207).
+Thus at `t=beta/sqrt N` the direct actual-minimizer consequence is only
+`1/2+O_beta(N^{-1/2})`, not a vanishing atom bound.
+
+For two actual children `A,D`, conditioned on relative orientation
+`epsilon`, let
+
+```math
+\mathcal Z_\epsilon
+=Z_A^+Z_D^\epsilon+Z_A^-Z_D^{-\epsilon}.
+```
+
+The exact maximum atom of their rank-one bridge word is
+
+```math
+\boxed{
+\eta_\epsilon(A,D;t)
+={2^{2-m-n}\over\mathcal Z_\epsilon}
+ \cosh\!\left(t\max_{x,y}|H_A(x)+\epsilon H_D(y)|\right).} \tag{37.207a}
+```
+
+The word law is centrally symmetric, so `eta_epsilon=o(1)` is the weakest
+direct scalar condition excluding a fixed positive-mass antipodal copy of
+the literal two-word mechanism in Theorem 37.58.  It does not exclude a
+diffuse coherent cluster.  The quadratic Hamming-sphere spread theorem below
+does prove this atom decay exponentially for actual contracted-temperature
+minimizers.
+
+More robustly, let `kappa_(A,s)(delta)` be the largest mass of a projective
+Hamming cap
+`|<x,u>|/m>=1-delta` under the sector law `mu_(A,s)`, and let
+`Xi_epsilon(delta)` be the largest mass of a rank-one cap
+`|<Q,uv^T>|/(mn)>=1-delta` under the actual conditional word law.  Then
+
+```math
+\boxed{
+\max_s\pi_s^{(\epsilon)}
+ \kappa_{A,s}(\delta/2)\kappa_{D,\epsilon s}(\delta/2)
+\le\Xi_\epsilon(\delta)
+\le\sum_s\pi_s^{(\epsilon)}
+ \kappa_{A,s}(\delta)\kappa_{D,\epsilon s}(\delta).}   \tag{37.207b}
+```
+
+This follows from the exact factorization
+`|<Q,uv^T>|/(mn)=(|<x,u>|/m)(|<y,v>|/n)`.  The four
+sector-resolved cap profiles are therefore a strict low-information
+observable deciding fixed geometric common-sign clusters.  They do not
+control diffuse coherent retuning.  The sector spread theorem bounds narrow
+caps exponentially, but it does not close the row-lifetime SML for diffuse
+exponential-rate retuning.
+
+There is also an exact information statement.  For `m>=3`, the `m` edges
+
+```math
+\mathcal B=\{\{1,i\}:2\le i\le m\}\cup\{\{2,3\}\}    \tag{37.208}
+```
+
+give a bijection
+`(tau,[x]) -> (Y_e)_(e in mathcal B)`.  The triangle identity
+
+```math
+Y_{12}Y_{13}Y_{23}=\tau a_{12}a_{13}a_{23}            \tag{37.209}
+```
+
+recovers `tau`, after which the star edges recover `[x]`.  Consequently the
+`2^m` actual flip-ratio values
+
+```math
+R_A(S)=E_{\bar\nu_A}e^{-2t\sum_{e\in S}Y_e},
+\qquad S\subseteq\mathcal B,                           \tag{37.210}
+```
+
+recover the complete augmented child law.  Explicitly, with
+`c=cosh(2t)`, `s=sinh(2t)`, and
+`M(T)=E prod_(e in T)Y_e`,
+
+```math
+R_A(S)=\sum_{T\subseteq S}c^{|S|-|T|}(-s)^{|T|}M(T), \tag{37.211}
+```
+
+an invertible subset-triangular transform, followed by Walsh inversion.
+
+The **inequality signs** `R_A(S)>=1` do not imply diffuse projective mass.
+On the correct projective state space, fix antipodal states `z_0,bar z_0`
+with `Y(bar z_0)=-Y(z_0)` and put
+
+```math
+\pi_\varepsilon=(1-\varepsilon)
+ {\delta_{z_0}+\delta_{\bar z_0}\over2}
+ +\varepsilon U_{\Omega_m}.                           \tag{37.212}
+```
+
+For every edge set `S`, its flip moment is at least one, since the two terms
+are respectively
+`cosh(2t sum_(e in S)Y_e(z_0))>=1` and an average of coshes.  Yet
+
+```math
+\|\pi_\varepsilon\|_\infty
+={1-\varepsilon\over2}+{\varepsilon\over2^m}.          \tag{37.213}
+```
+
+This last law is an **abstract sign-cone witness, not a Gibbs law of an
+actual minimizing signing**.  It proves only that using the directions of
+(AC.32)/(FC.5) cannot force min-entropy growth.  Excluding the shared-latent
+common-sign mechanism therefore needs extra Gibbs/quadratic rigidity (as in
+the sector spread theorem), quantitative nonradial flip values, or a direct
+sector-resolved latent cluster bound.  See
+[`audits/actual_child_projective_atom_flip_information_ceiling.md`](audits/actual_child_projective_atom_flip_information_ceiling.md).
+
+### Theorem 37.61 (actual-child quadratic spread and diffuse-retuning reduction)
+
+Let `A` be an exact pressure-minimizing child of order `m` at
+`t=beta/sqrt N`, where `m<=N`, and put
+
+```math
+K_A=\max_x|H_A(x)|,
+\qquad C_\beta=\log2+{\beta^2\over4}.
+```
+
+The scalar optimizer contraction and one maximum term give
+
+```math
+\boxed{
+{tK_A\over m}
+\le\log2+{m-1\over2}\log\cosh t
+\le C_\beta.}                                      \tag{37.214}
+```
+
+For either sector
+`mu_(A,s)(x)=e^(stH_A(x))/sum_z e^(stH_A(z))` and every
+`1<=r<=m-1`, exact averaging of a quadratic form on a Hamming sphere gives
+
+```math
+\boxed{
+\|\mu_{A,s}\|_\infty
+\le {m\choose r}^{-1}
+ \exp\left\{{4tK_Ar(m-r)\over m(m-1)}\right\}.}       \tag{37.215}
+```
+
+In particular, the one-flip sphere gives the finite-order estimate
+
+```math
+\boxed{
+\|\mu_{A,s}\|_\infty\le {16e^{\beta^2}\over m}.}     \tag{37.215a}
+```
+
+Indeed, if `x_*` maximizes `sH_A`, then
+
+```math
+{1\over{m\choose r}}\sum_{|R|=r}sH_A(x_*^R)
+=\left(1-{4r(m-r)\over m(m-1)}\right)sH_A(x_*),
+```
+
+and Jensen lower-bounds the sector partition sum on that sphere.
+
+Define
+
+```math
+\eta_\beta
+=\sup_{0<q<1/2}\{h(q)-4C_\beta q(1-q)\},
+\qquad h(q)=-q\log q-(1-q)\log(1-q).                \tag{37.216}
+```
+
+Then `eta_beta>0`; in fact, taking
+`q=e^(-4C_beta)=e^(-beta^2)/16` gives
+
+```math
+\eta_\beta\ge {e^{-\beta^2}\over16}.                \tag{37.217}
+```
+
+Consequently, uniformly over actual minimizing children and both sectors,
+
+```math
+\boxed{
+\liminf_{m\to\infty}-{1\over m}
+ \log\|\mu_{A,s}\|_\infty\ge\eta_\beta.}            \tag{37.218}
+```
+
+For two actual children at a comparable split, the induced conditional
+rank-one bridge-word prior therefore satisfies, uniformly in orientation,
+
+```math
+\boxed{
+\|\mu_\epsilon\|_\infty
+\le e^{-\eta_\beta N+o(N)},
+\qquad
+\sum_Q\mu_\epsilon(Q)^2
+\le e^{-\eta_\beta N+o(N)}.}                         \tag{37.219}
+```
+
+Already the finite one-flip estimate yields
+
+```math
+\boxed{
+\|\mu_\epsilon\|_\infty
+\le {512e^{2\beta^2}\over mn}.}                      \tag{37.219a}
+```
+
+For a fixed `Q` and sector there are two spin-pair preimages; summing the
+two sectors proves
+`||mu_epsilon||_infty<=2 max_s ||mu_(A,s)||_infty
+||mu_(D,epsilon s)||_infty`.  Thus (37.219) proves the literal atom target
+(37.207a) exponentially, using no nonradial flip table.
+
+The same theorem controls robust common-sign clusters.  In the notation of
+(37.207b), for every fixed `delta` with
+`h(delta/2)<eta_beta`,
+
+```math
+\boxed{
+\kappa_{A,s}(\delta)
+\le e^{-[\eta_\beta-h(\delta/2)]m+o(m)},
+\qquad
+\Xi_\epsilon(\delta)
+\le e^{-[\eta_\beta-h(\delta/2)]N+o(N)}.}             \tag{37.220}
+```
+
+This follows by multiplying the maximum-atom bound by the size
+`exp{m h(delta/2)+o(m)}` of a projective overlap cap, then using
+(37.207b).  A union of `exp(xi N)` such caps still has exponentially
+vanishing prior mass whenever
+`xi+h(delta/2)<eta_beta`.
+
+In particular, if a retuned law gives mass at least `a` to one such cap,
+binary data processing gives
+
+```math
+D(\bar\mu\Vert\mu_\epsilon)
+\ge a\{\eta_\beta-h(\delta/2)\}N-o(N)-h(a).           \tag{37.220a}
+```
+
+Finally, if a retuned latent law `bar mu` puts mass at least `a>0` on a set
+`R` of at most `exp(xi N)` words, where `xi<eta_beta`, then binary data
+processing gives
+
+```math
+\boxed{
+D(\bar\mu\Vert\mu_\epsilon)
+\ge a(\eta_\beta-\xi)N-o(N)-h(a).}                    \tag{37.221}
+```
+
+Hence sublinear posterior retuning cannot select a finite, polynomial,
+subexponential, or sufficiently low-rate narrow catalogue.  This is a
+strict actual-child narrowing of the generic common-sign obstruction.  It
+does **not** bound retuning that remains diffuse across an exponential-rate
+family and does not close the row-lifetime or target-reach SML.  See
+[`audits/actual_child_sector_min_entropy.md`](audits/actual_child_sector_min_entropy.md).
+
+### Theorem 37.62 (actual retuning splits into polynomial shells and within-shell geometry)
+
+For actual children `A,D` and orientation `epsilon`, define on a rank-one
+word `Q=xy^T`
+
+```math
+E_\epsilon(Q)=H_A(x)+\epsilon H_D(y).                 \tag{37.222}
+```
+
+Here `Q` is a signed rank-one word.  The only two factorizations of a fixed
+`Q` are `(x,y)` and `(-x,-y)`, and both quadratic child energies are invariant
+under global sign, so (37.222) is well-defined.  Equation (37.207a) gives
+
+```math
+\mu_\epsilon(Q)
+={2^{2-m-n}\over\mathcal Z_\epsilon}
+ \cosh(tE_\epsilon(Q)).                               \tag{37.223}
+```
+
+Therefore the actual prior is uniform conditional on each shell
+`S_e={Q:E_epsilon(Q)=e}`.  There are at most
+
+```math
+|\operatorname {range}E_\epsilon|
+\le {m\choose2}+{n\choose2}+1=O(N^2)                 \tag{37.224}
+```
+
+shells.  For every retuned law `bar mu<<mu_epsilon`, with energy marginal
+`bar p` and shell conditionals `bar mu_e`, the exact chain rule is
+
+```math
+\boxed{
+D(\bar\mu\Vert\mu_\epsilon)
+=D(\bar p\Vert p)
+ +\sum_e\bar p_e
+   \{\log|\mathcal S_e|-H(\bar\mu_e)\}.}              \tag{37.225}
+```
+
+The scalar optimizer contraction also gives the pointwise surprise bound
+
+```math
+\boxed{
+\mu_\epsilon(Q)\ge e^{-C_\beta N},
+\qquad p_e\ge e^{-C_\beta N},
+\qquad C_\beta=\log2+{\beta^2\over4}.}                \tag{37.225a}
+```
+
+Indeed,
+`mathcal Z_epsilon<=4Z_A(t)Z_D(t)
+<=4(cosh t)^({m choose2}+{n choose2})`, and (37.223) has
+`cosh(tE)>=1`.
+
+Consequently, if `D(bar p||p)>=cN`, then
+
+```math
+\boxed{
+\bar p\{e:p_e\le e^{-cN/2}\}
+\ge {c\over2C_\beta-c},
+\qquad
+p\{e:p_e\le e^{-cN/2}\}
+\le O(N^2)e^{-cN/2}.}                                 \tag{37.225b}
+```
+
+This follows by applying the bounded random variable
+`X(e)=-log p_e in [0,C_beta N]` to
+`D(bar p||p)=E_(bar p)X-H(bar p)`.
+
+For the averaged latent posterior under any actual negative-disorder bridge
+law, this is exactly the retuning term in Theorem 37.55: the channel depends
+on the latent state only through `Q`, so posterior averaging preserves the
+prior conditional law on fibres over `Q` and
+
+```math
+D(\bar\nu\Vert\nu)
+=D(\bar\mu_Q\Vert\mu_\epsilon).                       \tag{37.226}
+```
+
+Moreover, for the joint bridge/posterior law,
+
+```math
+\boxed{
+E_qD(\nu_{E\mid B}\Vert p)
+=I(B;E)+D(\bar p\Vert p),
+\qquad I(B;E)=O(\log N).}                             \tag{37.226a}
+```
+
+The mutual-information bound uses the `O(N^2)` shell alphabet.
+
+Thus linear actual posterior retuning forces either linear KL in the
+polynomial-state combined-energy distribution--in which case (37.225b)
+exposes a one-dimensional exponentially rare shell event--or a linear
+conditional entropy deficit inside equal-energy shells.  Theorem 37.61
+rules out a subcritical-rate catalogue in either branch.  The second
+alternative is the strict surviving nonradial obstruction: diffuse
+exponential-rate within-shell retuning.  No current inequality controls
+`J-I^leftarrow` by the terms in (37.225), so this narrows but does not close
+the row-lifetime SML.  See
+[`audits/actual_child_energy_shell_retuning_decomposition.md`](audits/actual_child_energy_shell_retuning_decomposition.md).
+
+### Theorem 37.63 (global spread and zero posterior retuning do not control row-product regret)
+
+This is a **generic rank-one channel, not an actual minimizing-child
+sequence**. Let `m=k+ell`, `m+n=N`, with
+`k/N->kappa>0`, `ell/N->zeta>0`, and `n/N->nu>0`. Take
+
+```math
+Q=X\mathbf1_n^T,
+\qquad X=(\sigma\mathbf1_k,\xi_1,\ldots,\xi_\ell),    \tag{37.227}
+```
+
+where all displayed signs are independent and fair. The uniform latent
+prior has genuine global spread:
+
+```math
+\boxed{
+\|\mu\|_\infty=\sum_Q\mu(Q)^2=2^{-(\ell+1)}.}         \tag{37.228}
+```
+
+If `ell/m->a>0`, then for every fixed rank-one word `uv^T` and
+`0<delta<a`,
+
+```math
+\boxed{
+\mu\left\{Q:{|\langle Q,uv^T\rangle|\over mn}
+                  \ge1-\delta\right\}
+\le {2\over2^\ell}
+ \sum_{r\le\lfloor\delta m/2\rfloor}{\ell\choose r}
+=e^{-\Omega_{a,\delta}(m)}.}                         \tag{37.229}
+```
+
+At physical scale `u=beta/sqrt N`, with row sums `S_i` and
+`S_C=sum_(i<=k)S_i`, the forward likelihood factors exactly as
+
+```math
+p(B)={\cosh(uS_C)\over(\cosh u)^{kn}}
+ \prod_{i>k}{\cosh(uS_i)\over(\cosh u)^n}.            \tag{37.230}
+```
+
+Hence its inverse escort is the product of the `k`-row common-sign inverse
+escort and the `ell` isolated nuisance-row escorts. If `r` is the canonical
+inverse row product, product additivity gives
+
+```math
+\boxed{
+J(q,r)=J(q_C,r_C),
+\qquad I^\leftarrow(q)=I^\leftarrow(q_C).}            \tag{37.231}
+```
+
+With `G~N(0,beta^2nu)` and `d_0>0` as in (37.199),
+
+```math
+\boxed{
+J=\kappa d_0N+o(N),
+\qquad I^\leftarrow=O(\sqrt N),
+\qquad J-I^\leftarrow=\kappa d_0N+o(N).}              \tag{37.232}
+```
+
+Finally, the support of `X` is a multiplicative row-sign group. Row
+switching by any support element preserves the fair bridge law and `p(B)`
+and acts transitively on latent states. Therefore, under every bridge tilt
+whose density is a function of `p(B)`, including the negative inverse
+escort, the averaged forward posterior satisfies
+
+```math
+\boxed{\bar\mu=\mu.}                                  \tag{37.233}
+```
+
+Thus averaged-posterior KL, and both the marginal and conditional terms of
+every deterministic shell/geometric KL split, vanish exactly despite
+linear canonical product regret. Global exponential min-entropy, collision,
+and narrow-cap decay are therefore insufficient for a generic
+shell-to-row-lifetime inequality. This does not refute an actual-child
+theorem: the right projective factor is fixed and violates Theorem 37.61
+factorwise. See
+[`audits/generic_partial_common_row_shell_lifetime_no_go.md`](audits/generic_partial_common_row_shell_lifetime_no_go.md).

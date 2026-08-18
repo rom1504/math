@@ -2093,3 +2093,72 @@ class and risks restating the desired parent optimization.
   product whose excess above `I^leftarrow` is summably small. Merely
   bounding early-time row `D_2`, support size, or the number of retained rows
   is now rigorously insufficient.
+
+### Checkpoint 28 — actual quadratic spread excludes low-rate common-sign retuning
+
+- **Actual-minimizer theorem (Theorem 37.61):** scalar pressure contraction
+  plus exact Hamming-sphere averaging of a quadratic form prove a uniform
+  sector min-entropy rate.  At `t=beta/sqrt N`, every sector of every actual
+  minimizing child satisfies
+
+  ```math
+  \liminf-{1\over m}\log\|\mu_{A,s}\|_\infty
+  \ge\eta_\beta,
+  \qquad
+  \eta_\beta\ge e^{-\beta^2}/16>0.
+  ```
+
+  Hence the actual conditional rank-one bridge prior has maximum atom and
+  collision probability at most `exp{-eta_beta N+o(N)}`.
+- **Sharp finite warning:** exhaustive signing/energy enumeration through
+  child order eight finds that at `m=3,beta=4` an actual finite pressure
+  minimizer pair has projective two-word mass `0.978594...`.  At
+  `m=8,beta=4` the maximum is `0.015837...`, and the sequence is strongly
+  nonmonotone.  This does not challenge the asymptotic spread theorem; it
+  shows why the Hamming-sphere argument, rather than a finite-order
+  diffuseness claim, is necessary.  Transcendental pressure comparisons in
+  this experiment are high-precision numerical after exact enumeration.
+- **Robust geometric consequence:** the largest rank-one overlap cap of
+  deficit `delta` has mass at most
+  `exp{-[eta_beta-h(delta/2)]N+o(N)}`.  Even a union of
+  `exp(xi N)` such caps is negligible when
+  `xi+h(delta/2)<eta_beta`.  Fixed posterior mass on a catalogue of rate
+  `xi<eta_beta` costs at least a fixed multiple of `N` in retuning KL.
+- **Information audit (Theorem 37.60):** this spread uses genuinely coarser
+  optimizer information than the child Gibbs table: only the scalar
+  annealed pressure bound and the exact quadratic Hamming-sphere identity.
+  By contrast, values on an `m`-edge cycle-basis flip cube (all `2^m`
+  subsets) invert to the complete augmented law.  The inequality signs alone
+  admit abstract half-atom laws, so the quadratic/Gibbs identity is
+  essential.
+- **Diffuse branch split (Theorem 37.62):** the actual rank-one prior is
+  uniform conditional on the combined child energy
+  `E_epsilon(Q)=H_A(x)+epsilon H_D(y)`, which takes only `O(N^2)` values.
+  Every actual averaged posterior retuning therefore splits exactly into
+  KL of this polynomial-state shell distribution plus an entropy deficit
+  within uniform equal-energy shells.  Linear retuning must be either a
+  low-information radial shell shift or genuinely nonradial diffuse
+  within-shell selection.  Quantitatively, every shell has prior mass at
+  least `exp{-(log2+beta^2/4)N}`.  If shell KL is at least `cN`, a posterior
+  mass at least `c/(2(log2+beta^2/4)-c)` lies on an `exp(-cN/2)`-rare set of
+  shells, while the shell label carries only `O(log N)` mutual information.
+- **Sharp generic ceiling (Theorem 37.63):** global spread does not connect
+  this shell split to canonical regret. A partial-common-row rank-one prior
+  has exponential maximum-atom/collision decay and exponentially small
+  fixed narrow caps; group symmetry nevertheless gives `bar mu=mu`, so
+  every averaged-posterior shell/geometric retuning term is zero, while a
+  positive-density common row block retains
+  `J-I^leftarrow=Theta(N)`. The example is not actual: its right child factor
+  is fixed and violates factorwise spread. Thus any shell-to-lifetime theorem
+  must use factorwise actual-child structure, not merely global latent
+  min-entropy or the shell KL decomposition.
+- **RESET and new SML:** the literal two-word obstruction of Theorem 37.58,
+  and every sufficiently low-rate narrow-cluster variant, are incompatible
+  with sublinear retuning for actual optimizing children.  The surviving
+  SML is strictly narrower: use **factorwise** quadratic spread or another
+  exact child-minimality identity to connect `J-I^leftarrow` to the shell
+  split. Control the polynomial shell-retuning branch, and determine whether
+  the actual inverse-disorder posterior has linear diffuse exponential-rate
+  within-shell retuning or whether child minimality compresses it to an
+  explicit direction. No row-lifetime bound, target reach, or Level-6
+  recurrence follows yet.

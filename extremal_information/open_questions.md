@@ -1755,3 +1755,57 @@ fixed mass on an exponentially rare child set, that divergence is already
 linear.  Prior Shannon entropy and positive-temperature full support do not
 decide between these cases.  This is a scope closure, not a replacement for
 `L_row-lifetime-closure`.
+
+Theorem 37.61 now rules out the literal common-sign mechanism and its
+low-rate narrow-cluster variants for actual children at sublinear retuning
+cost.  Scalar pressure contraction bounds `t max|H_A|/m`, while the exact
+quadratic Hamming-sphere identity turns this into a uniform sector
+min-entropy rate
+
+```math
+H_\infty(\mu_{A,s})\ge(\eta_\beta-o(1))m,
+\qquad \eta_\beta\ge e^{-\beta^2}/16.
+```
+
+Thus the actual rank-one prior has maximum atom and collision probability
+`exp{-Omega_beta(N)}`.  A posterior placing fixed mass on any latent
+catalogue of rate below `eta_beta` pays linear KL; the same holds for a
+union of narrow rank-one overlap caps below the explicit entropy-rate
+threshold in (37.220).
+
+The strict remaining question is no longer whether one or finitely many
+common-sign words can carry the row lifetime.  It is:
+
+> Can the actual inverse-disorder posterior retune diffusely across an
+> exponential-rate family and create `J-I^leftarrow=Omega(N)`?  Either
+> identify an optimizer-specific low-dimensional direction of such diffuse
+> retuning, or prove that its contribution to `J-I^leftarrow` is `o(N)`
+> with a summable rate.
+
+Theorem 37.62 splits this question exactly.  The rank-one prior is uniform
+on each combined-energy shell
+`H_A(x)+epsilon H_D(y)=e`, and there are only `O(N^2)` shells.  Every actual
+latent retuning KL equals the KL of that polynomial-state shell distribution
+plus the conditional entropy deficit inside the uniform shells.  Hence the
+next proof should first test whether the shell KL controls a coherent
+low-complexity product direction.  If it does not, the irreducible remainder
+is now specifically diffuse exponential-rate **within-shell** selection,
+not an arbitrary full-table retuning.
+
+Theorem 37.63 prevents treating that split as a generic row-lifetime proxy.
+A partially shared row-sign group has global exponential min-entropy,
+collision decay, and narrow-cap decay, and its averaged posterior equals its
+prior under every disorder tilt. Thus both shell terms vanish, while a
+positive-density common block still has `J-I^leftarrow=Theta(N)`. The fixed
+right factor makes this a non-actual channel. Accordingly the next lemma
+must use factorwise actual-child spread or another optimizer identity; a
+bound in terms of global prior spread and averaged-posterior shell KL alone
+is false.
+
+Theorem 37.60 records the information boundary.  Values on all subsets of
+an `m`-edge cycle basis recover the entire augmented Gibbs table by an
+invertible transform, so that route is not a compression.  The inequality
+directions alone admit abstract half-atom laws.  The successful spread
+input is genuinely coarser: one scalar pressure bound plus the exact
+Hamming-sphere algebra of quadratic forms.  No target-reach or Level-6
+recurrence follows from spread alone.
