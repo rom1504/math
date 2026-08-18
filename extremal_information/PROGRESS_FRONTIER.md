@@ -170,7 +170,7 @@ landscape.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 4 on conference benchmark | scalar pressure plus exact quartic coordinate on power-regular sector; no closed full state | linear defect excluded with `r^2` tail on regular sector; full loss unknown | Paley conference sequence only | 0 on benchmark, 3 only for the eventual minimizer basin lemma | focused reset: exceptional deeply irregular sector only |
+| adversarial statistical mechanics | 4 on conference benchmark | pressure, exact quartic coordinate, mean/covariance peel, total correlation, and latent component density; no closed full state | `o(r)` for bounded-Renyi-two products, `o(r)`-correlated extensions, and uniformly regular latent mixtures; full loss unknown | Paley conference sequence only | 0 on benchmark, 3 only for the eventual minimizer basin lemma | reset: only conditionally singular or irreducibly dependent laws remain |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -719,3 +719,154 @@ class and risks restating the desired parent optimization.
   nonlinear diffuse class is justified.  A result that merely finds another
   speed-`r` set, operator spike, or scalar moment is a strike; it must prove
   a pressure law or a general dependent-tilt inequality.
+
+### Checkpoint 12 — removable irregularity cannot support the phase
+
+- **Strongest new statement:** the declared row-magnitude fibre is closed
+  throughout the full strict conference interval.  Projecting away its one
+  exceptional population direction leaves a bridge coupled to iid disorder
+  at `o(sqrt(r))` operator cost and `o(r)` Frobenius cost; convexity restores
+  the rank-one channel with only `O(1)` expected downward pressure loss.
+  Uniformly over all constant-mass magnitude sets,
+
+  ```math
+  E[(h_beta-f(B)/r)_+] -> 0.
+  ```
+
+  The proof abstracts: any `o(r)`-rank, subcritical-nuclear response peel
+  attached to a regularly coupled bulk is one-sidedly harmless.
+- **Entropy--temperature frontier:** for
+
+  ```math
+  C_*(beta)={1\over8}(1/(sqrt(2)beta)-1)^2-2log9,
+  ```
+
+  every arbitrary event of mass at least `e^(-Cr)`, `C<C_*(beta)`, has
+  conditional pressure rate `h_beta`; fixed tilts remain annealed when
+  `C+lambda h_beta<C_*(beta)`.  A target-reaching law must pay KL density at
+  least `C_*(beta)gamma(beta)/h_beta`, whose certified small-beta limit is
+  `3/128`.  This improves the earlier `Theta(beta^6)` information price.
+- **Sharp falsifier:** ordinary KL cannot replace the max-density condition
+  in the two-sided theorem.  A fixed mixture with an exponentially rarer
+  high-cross-halfspace law has linear KL but retains fixed high-pressure
+  mass.  The KL result is necessarily one-sided.
+- **Previous SML:** construct or exclude one nonlinear, conditionally
+  diffuse, operator-irregular speed-`r` law; row magnitude was the first
+  test.
+- **Current SML:** construct or exclude a law with **irreducible extensive
+  irregularity after every cheap response peel**.  The next precise class
+  question is whether every centrally symmetric constant-density row event
+  admits an `o(r)`-rank projected regular coupling.  A counterexample must
+  retain leading irregularity after every such projection; another finite
+  list of row statistics does not count.
+- **Benchmark and target distance:** audited Level 4 on conference children.
+  The projected-coupling theorem covers a broad recognizable structural
+  class (assumption-distance 2), but no property has been proved for actual
+  contracted-temperature minimizers (no Level 6 transfer).
+- **Asymptotic movement:** the response loss for the entire magnitude class
+  improves from unknown `Theta(r)` to `o(r)` one-sidedly; the certified
+  small-beta KL price improves from a vanishing `Theta(beta^6)` coefficient
+  to `3/128+o(1)`.  No `M_n` bound, cross-order loss, or convergence interval
+  changes.
+- **Decision:** **RESET, THEN NARROW.**  The orthogonal branch earned one
+  class-level projected-coupling campaign.  Stop single-direction magnitude,
+  raw spectral-edge, and scalar entropy variants.  If arbitrary
+  constant-density row fibres neither satisfy the criterion nor yield an
+  explicit extensively irregular counterexample in the next checkpoint,
+  freeze the conference benchmark and return allocation to actual child
+  minimizers or another theory.
+
+### Checkpoint 13 — the complete row-product class closes; cross-row information is linear
+
+- **Strongest new statements:** (i) every centrally symmetric row law with
+  uniformly bounded Renyi-two density has an `O(sqrt r)` covariance peel
+  whose whitened complement has the sharp sample-covariance edge two; hence
+  every such iid row-product law has no leading downward conference-pressure
+  gain throughout `beta<sqrt(2)/6`; (ii) if an arbitrary joint bridge law has
+  these common row marginals and row total correlation `tau_r`, then
+
+  ```math
+  E[(h_beta-f/r)_+]
+  <=o(1)+K_kappa beta sqrt(tau_r/r).
+  ```
+
+  Thus `tau_r=o(r)` is also harmless, while every fixed favorable shortfall
+  forces `tau_r=Omega(r)`.
+- **Imported-edge audit:** the covariance peel alone was not counted as the
+  theorem.  Hanson--Wright verifies Chafai--Tikhomirov's uniform Strong Tail
+  Projection hypothesis after whitening; Yaskov's quadratic-form condition
+  gives the MP bulk.  The expectation upper edge and MP lower edge together
+  force operator convergence in probability.  Two independent audits read
+  the primary sources and passed the mapping.
+- **Stress falsifiers:** full-parity and block-majority-parity row fibres can
+  be covariance-invisible but remain covered.  An order-`r` parity across row
+  labels has total correlation only `log 2` and is harmless.  A single latent
+  half shared by every row has exactly `(r-1)log 2`, showing that the linear
+  threshold is the first scale not controlled by this argument.
+- **Previous SML:** prove the projected regular coupling for every
+  constant-density centrally symmetric row event, or exhibit an irreducible
+  row event.
+- **Current SML:** within the conference benchmark, construct or exclude a
+  **linearly cross-row-correlated**, entrywise diffuse law with constant-
+  density row marginals and a fixed pressure gain.  Equivalently, determine
+  whether a common-latent mixture can use its `Theta(r)` reusable row
+  information jointly, rather than paying each product component separately.
+- **Benchmark and target distance:** the class-level theorem is audited Level
+  4 and assumption-distance 2.  It closes a broad recognizable law class but
+  still concerns conference children; no property is proved for the actual
+  contracted-temperature minimizers and there is no Level-6 transfer.
+- **Asymptotic movement:** the old unknown sharp edge becomes
+  `||B(I-P)||=(2+o_Pr(1))sqrt r`, closing the full bounded-Renyi-two
+  row-product class with `o(r)` one-sided response loss.  The first dependent
+  extension establishes a new linear information threshold
+  `D(q||mu^r)=Omega(r)`.  No bound on `M_n`, cross-order loss, or convergence
+  interval changes.
+- **Decision:** **RESET, THEN ONE FINAL DEPENDENCE TEST.**  This resolves the
+  exact class-level SML named at Checkpoint 12.  The conference branch earns
+  one bounded test of linearly correlated latent mixtures.  Failure to
+  produce either a joint pressure theorem or an explicit favorable family is
+  a strike and freezes this benchmark; do not retreat to more row statistics
+  or isolated fibres.
+
+### Checkpoint 14 — regular latent correlation closes; only conditional singularity remains
+
+- **Strongest new statements:** central symmetry is unnecessary in Theorem
+  37.13.  Parseval also bounds the row mean; joining its span to the bad
+  second-moment eigenspace adds one dimension and centers the compressed
+  rows without requiring the joined projection to commute with the second
+  moment.  More importantly, an arbitrary mixture
+  `q_r=int nu_(z,r)^r pi_r(dz)` has no leading downward pressure whenever
+  the component Renyi-two constants are uniformly tight.  Quantitatively,
+
+  ```math
+  E_q[(h_beta-f/r)_+]
+  <=epsilon_r(K)+h_beta pi_r{K_2(nu_z)>K},
+  \qquad epsilon_r(K)->0.
+  ```
+
+- **Stress falsifiers:** a two-half common latent bit has exact row total
+  correlation `(r-1)log 2`, but each component has `K_2=2`, so it is closed.
+  A continuum or arbitrarily growing latent support incurs no union bound.
+  Conversely, choosing a uniform latent row and repeating it in every row
+  has benign one-row marginal but component `K_2=2^r`; this is a scope
+  falsifier, not a favorable-pressure construction.
+- **Previous SML:** decide whether a linearly cross-row-correlated regular
+  latent mixture can create the phase.
+- **Current SML:** determine the first growth scale of component Renyi-two
+  complexity for which the projected comparison can fail, with latent mass
+  included quantitatively; or construct a favorable conditionally singular
+  law.  Dependence that remains irreducible after every conditional-product
+  representation is the other uncovered class.
+- **Benchmark and target distance:** audited Level 4 on conference children,
+  assumption-distance 2 for a broad probabilistic class.  There is still no
+  statement about actual contracted-temperature child minimizers and no
+  Level-6 transfer.
+- **Asymptotic movement:** the no-gain class expands from `o(r)` row total
+  correlation to `Theta(r)` correlation whenever it has a uniformly regular
+  latent disintegration.  Response loss remains `o(r)` on this larger class.
+  No `M_n` bound, cross-order loss, or convergence interval changes.
+- **Decision:** **RESET, THEN CONDITIONAL-SINGULARITY STOP TEST.**  The exact
+  linearly correlated benchmark proposed at Checkpoint 13 is solved.  Permit
+  one quantitative growth-threshold campaign; absent a theorem or explicit
+  favorable family, freeze conference work rather than follow an unbounded
+  hierarchy of increasingly singular components.

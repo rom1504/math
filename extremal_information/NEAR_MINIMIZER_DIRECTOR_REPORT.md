@@ -113,7 +113,7 @@ and scalar tail-to-pressure closure are now rejected.
 | R1 collective synchronization | 5 for balance/atlas | nonlinear cross-chart congruence tied to near-minimality | atlas direct state `O(n^(4/3))` bits | within chart `O(n^(4/3))`; fixed-ratio physical loss unknown | all orders structurally | reset for atlas, then two transfer strikes; frozen |
 | R2 contextual incompressibility | 5 | none for fixed-reference language | exactly `Theta(n)` bits on every bounded-cap switching orbit | gap and parent cap `Theta(n^(3/2))` | every large order | negative arrow complete; then scope-corrected by gauge quotient |
 | R3 response replacement | 3/4 | all-order gauge-invariant representative with `o(n^(3/2))` loss, defined without target-order optimum | unknown | target `o(n^(3/2))` | must be all large orders | prior action/weighted recovery strike; no new state |
-| adversarial pressure | 4 on the conference benchmark | construct or exclude a nonlinear conditionally diffuse operator-irregular law with `D=O(r)`, `s_*=Theta(r^2)`, and fixed pressure gain; then transfer its law to contracted-temperature child minimizers | scalar pressure, quartic coordinate, and conditional-information support; no closed full state | target `O(N^(1-delta))` pressure defect | Paley sequence now; ultimately comparable splits at all large orders | regular, fixed Gram/quartic, affine, weak-template, localized-information, and adaptive-gauge mechanisms excluded; dependent diffuse sector active |
+| adversarial pressure | 4 on the conference benchmark | locate the conditional-Renyi singularity threshold, or construct a favorable singular latent law; then test actual child minimizers | pressure, conditional-information support, mean/covariance peel, and latent component complexity; no closed full state | `o(r)` for bounded-Renyi-two products, `o(r)`-correlated extensions, and uniformly regular latent mixtures; target `O(N^(1-delta))` generally | Paley sequence now; ultimately comparable splits at all large orders | regular latent class closed; one conditional-singularity test remains |
 | presented rare-event state | 3 | deterministic rooted synchronization under adversarial dense futures | finite only in scoped spike/marked-phase models | exact there; uncontrolled for Boolean bridges | scoped models only | keep warm, no promotion |
 
 The complete checkpoint history and scored implication graph are in
@@ -170,6 +170,40 @@ The complete checkpoint history and scored implication graph are in
   selectors all retain the typical leading pressure.  In particular, the
   nonlinear row-antipodal halfcube has exactly `2^(r^2-r)` members and still
   has rate `h_beta`.
+- The first surviving diffuse nonlinear candidate has expanded into a
+  class-level closure.  Every row law with bounded Renyi-two density has an
+  `O(sqrt r)` mean-plus-covariance peel whose whitened iid-row matrix has
+  sharp operator coefficient two.  The proof verifies the exact dependent-
+  row random-matrix hypotheses; covariance alone is not counted.  Entropy
+  transport plus convex restoration then excludes *every* such row-product
+  law throughout `beta<sqrt(2)/6`, including noncentral, weighted, and
+  arbitrary constant-density high-order fibres.
+- The product boundary is not sharp.  If a joint bridge law has the same row
+  marginals and total correlation `tau_r`, its normalized downward pressure
+  shortfall is at most
+  `o(1)+K_kappa beta sqrt(tau_r/r)`.  Thus a fixed favorable phase needs
+  `tau_r=Omega(r)`.  Combined with the earlier effective-support theorem, a
+  survivor must carry both `Theta(r)` reusable cross-row information and
+  information dispersed over `Theta(r^2)` entry coordinates.
+- Linear correlation is still not sufficient.  Any arbitrary latent mixture
+  of row products with uniformly tight component Renyi-two constants inherits
+  the no-gain result by conditioning and integration, even with a growing or
+  uncountable latent support.  The exact remaining loophole is nonvanishing
+  latent mass whose component density escapes every fixed bound, or
+  dependence irreducible after conditioning on all proposed latent states.
+- At smaller beta, a direct norm-tail calculation gives the explicit
+  entropy--temperature frontier
+
+  ```math
+  C_*(beta)={1\over8}(1/(sqrt(2)beta)-1)^2-2log9.
+  ```
+
+  Every arbitrary event of mass at least `e^(-Cr)`, `C<C_*`, is
+  conditionally pressure-typical, and fixed tilts remain annealed for
+  `C+lambda h_beta<C_*`.  Any law reaching the child target pays KL density
+  at least `C_*gamma/h`; its certified small-beta limit is `3/128`, improving
+  the prior `Theta(beta^6)` transport coefficient.  A high-pressure mixture
+  proves that two-sided typicality under Shannon KL alone is false.
 
 No rigorous bound on `M_n`, `o(n^(3/2))` cross-order loss, Level-6 transfer,
 or convergence interval improved.
@@ -183,15 +217,20 @@ candidate state discards.  Do not spend more time on shell, selector, tail,
 or switch-label refinements.
 
 Presented rare-event states stay warm but unpromoted.  Adversarial
-statistical mechanics is now the sole focused active branch: its conference
-benchmark has an exact phase criterion, a quadratic-speed regular-sector
-theorem, an edit-collar localization, and a gauge-invariant quartic entropy
-barrier.  Its second focused checkpoint also proves that a finite phase must
-be conditionally diffuse and nonlinear, rather than affine, independently
-biased, localized, or gauge-selected.  This is a Level-4 reset, not
-promotion to the original problem; the remaining dependent exceptional-
-sector statement is conference-specific and has not been tied to
-pressure-minimizing children.
+statistical mechanics remains the sole focused active branch, but only for
+one final conditional-singularity test.  Its conference benchmark now has an exact
+phase criterion, quadratic regular-sector localization, a quartic entropy
+barrier, a conditional-information support law, a complete bounded-density
+row-product closure, a quantitative total-correlation barrier, and a no-gain
+theorem for every uniformly regular latent-product decomposition.  A finite
+phase must be conditionally diffuse, carry `Omega(r)` dependence between
+rows, put nonvanishing mass on increasingly singular conditional row laws
+or retain irreducible dependence after conditioning, and remain
+**irreducibly extensive after every cheap response peel**.  It cannot be
+affine, independently biased, localized, gauge-selected, sublinearly
+correlated, or a regular de Finetti-type mixture.  This is a Level-4 reset,
+not promotion to the original problem; nothing has yet tied the surviving
+exceptional sector to pressure-minimizing children.
 
 ## 7. Best current route toward `M_n`
 
@@ -224,7 +263,17 @@ outside the power-regular pressure-to-quartic reduction, and without any
 fixed leading improvement of the typical Gram/quartic coordinates.  It must
 also spread `O(r)` conditional information over `Theta(r^2)` coordinates;
 sparse/affine support, weak product templates, and adaptive gauges are
-rigorously insufficient.
+rigorously insufficient.  In addition, its irregularity cannot be confined
+to any `o(r)`-rank response subspace whose orthogonal bulk admits a regular
+low-cost coupling.  Every bounded-Renyi-two iid-row law has such a peel, and
+even arbitrary dependence within `o(r)` total correlation of that product
+law is harmless.  Hence a surviving candidate must spend `Omega(r)` genuine
+cross-row information while retaining the quadratic entrywise support.  If
+that dependence is a latent mixture of product laws, uniformly tight
+component Renyi-two complexity is also harmless; nonvanishing conditional
+singularity is necessary.  The conference benchmark therefore names a
+sharper necessary geometry, but no theorem forces or excludes that geometry
+for the actual child minimizers.
 
 The old `L_replace` chain is not recommended until it names a concrete
 gauge-invariant state.  In its current form it remains too close to an
@@ -232,31 +281,32 @@ all-order restatement of the desired transfer.
 
 ## 8. Exactly one next 3–6 hour campaign
 
-Resolve the first nonlinear diffuse exact-sign conference bridge class:
-rowwise sign-invariant magnitude fibres.  For a fixed `v`, impose one
-constant-probability constraint per row on
-`|<B_{i,*},v>|`, chosen so the full family has probability `exp(-Theta(r))`.
-Retain the gauge quotient and study
+Resolve the **conditional-Renyi singularity threshold**.  Consider latent
+row-product bridge laws
 
 ```math
-I_{A,C,\beta}(\ell)
-=-\log\Pr_B\{L_{A,C,B}(\beta)\le N\ell\}.
+q_r=\int\nu_{z,r}^{\otimes r}\,\pi_r(dz)
 ```
 
-The regular, scalar-gradient, fixed-quartic, affine, independent-template,
-and switching-cross-section sectors are now closed and must not be repeated.
-Either:
+with a benign one-row marginal, `D(q_r||U)=O(r)`, and quadratic effective
+entrywise support, but with nonvanishing latent mass on components whose
 
-1. prove this magnitude fibre has pressure rate `h_beta`, preferably by a
-   rowwise invariance principle or uniform quenched/annealed comparison that
-   covers a broader dependent diffuse class; or
-2. exhibit parameters for which its pressure is at most
-   `(h_beta-eta)r+o(r)`, with an exact entropy count and a certificate not
-   defined by thresholding pressure.
+```math
+K_2(\nu_{z,r})=E_U(d\nu_{z,r}/dU)^2
+```
 
-Do not stop at its covariance, singular value, or finite numerics.  The
-output must be a pressure theorem for the fibre or a general dependent-tilt
-inequality.  Only after that discriminating test should the campaign either
-generalize the surviving joint state or stop the conference branch and test
-the conditional-information law on actual contracted-temperature
-minimizers.
+diverges.  Determine the largest explicit growth regime `K_r->infinity` for
+which the mean/covariance peel, projection tails, entropy transport, and
+convex restoration still yield `o(r)` downward pressure loss.  Alternatively,
+construct a counted algebraic component family at the first failing scale,
+specified without pressure thresholding, with a rigorous fixed linear gain.
+
+The main theorem must combine component complexity with latent mass; an
+essential-supremum divergence is insufficient because Theorem 37.15 already
+removes a vanishing exceptional latent set.  Begin by deriving quantitative
+versions of the STP and nuclear estimates in terms of `K_r`, then test one
+singular but non-rank-one family.  Do not revisit bounded-density products,
+two-half mixtures, copied rows, affine constraints, or raw edge numerics.
+This is the final conference-only checkpoint: if no nontrivial growth regime
+or favorable family appears, freeze the benchmark and move to actual
+contracted-temperature child minimizers or another theory.

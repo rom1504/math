@@ -2636,3 +2636,81 @@ description must certify pressure before selecting on pressure itself.  In
 the remaining conference problem that certificate must encode nonlinear
 dependence spread across the dense interface and must act specifically on
 the operator-irregular remainder.
+
+## 146. Irregularity matters only after every cheap response peel
+
+A full interaction may be operator-irregular because of a small exceptional
+response subspace while its orthogonal bulk remains sharply coupled to
+typical disorder.  In a convex pressure, such a subspace cannot create a
+leading downward gain when its scaled nuclear mass is sublinear: compare the
+regular bulk first, then restore the exceptional component by a supporting
+line taken at the regular base point.
+
+This yields an operational hierarchy stronger than “regular versus
+irregular.”  A candidate extremal phase must be **irreducibly irregular**:
+after every sublinear-rank peel with subcritical nuclear cost, either the
+remaining bulk still has leading irregularity or no low-cost coupling to the
+reference law exists.  The state retained is a response subspace plus a
+bulk coupling certificate, strictly less than the full landscape when its
+rank is `o(r)`.
+
+## 147. Entropy amount, density spikes, and irregular mass are distinct
+
+Conditioning on an event of mass `e^(-Cr)` controls the maximum likelihood
+ratio, so a pressure tail faster than `e^(-Cr)` survives the conditioning
+uniformly.  A Shannon KL budget of the same order permits small fixed mass
+on much rarer events and cannot imply two-sided typicality.
+
+For downward pressure, however, positivity and regular-sector transport
+recover a directional statement.  Any linear mean improvement must move a
+quantified mass into the exponentially rare irregular sector, and binary
+data processing charges that move in KL.  Thus three resources must not be
+conflated: total Shannon information, its largest likelihood spike, and the
+amount of probability assigned to the structural sector where the response
+theorem fails.
+
+## 148. Bounded row information becomes spectral after a covariance peel
+
+An arbitrary row law with uniformly bounded Renyi-two density can hide
+high-order Boolean dependence and a nonzero mean, but Parseval confines its
+mean and second-order defect to bounded squared mass.  Joining the mean
+direction to the eigenvalues outside a shrinking window costs only
+`O(sqrt r)` dimensions.  On the remaining centered subspace, transferred
+Hanson--Wright tails are strong enough for a dependent-row Bai--Yin edge,
+while entropy transport supplies the required coupling to reference
+disorder.
+
+Thus low-order covariance is not being asserted sufficient for the
+landscape.  Rather, covariance identifies the only cheap response subspace,
+and bounded row information prevents the whitened complement from developing
+a new spectral edge.  Convexity then makes every subcritical-nuclear removed
+channel one-sidedly harmless for pressure.
+
+## 149. Static row information and reusable cross-row information are different
+
+Even arbitrary dependence between rows is harmless when its total
+correlation is sublinear.  Product-measure transportation changes only
+`o(r)` whole rows, whose matrix difference has `o(r^(3/2))` nuclear cost;
+one supporting line at the regular product base absorbs the entire dependent
+endpoint without regularizing it.
+
+Therefore a linear favorable response requires a linear cross-row
+information rate, not merely a high-order constraint.  Together with the
+quadratic coordinate-support theorem, a surviving bridge phase must use two
+resources simultaneously: information spread across `Theta(r^2)` entry
+coordinates and `Theta(r)` reusable dependence among the row blocks.
+
+## 150. Linear correlation is harmless when it resolves into regular latent products
+
+The total amount of cross-row information is not by itself a phase variable.
+A common latent state can create `Theta(r)` total correlation, yet if every
+conditional row-product component has uniformly bounded Renyi-two density,
+the product no-gain theorem applies uniformly and integrates with no union
+bound.  Even an uncountable latent support is harmless.
+
+What remains is conditional singularity or irreducible dependence.  A latent
+mixture can evade the theorem only if nonvanishing latent mass escapes every
+fixed component-density bound; rare escaping components of vanishing mass
+are removed by truncation.  Thus the relevant information is not just
+`I(rows)` but how that information disintegrates into conditional response
+laws.

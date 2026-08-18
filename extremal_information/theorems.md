@@ -17379,3 +17379,276 @@ Proofs and audits are in
 [`drafts/conference_speed_r_basin_candidate_audit.md`](drafts/conference_speed_r_basin_candidate_audit.md),
 [`drafts/conference_row_halfcube_pressure.md`](drafts/conference_row_halfcube_pressure.md),
 and their matching files in [`audits/`](audits/).
+
+### Theorem 37.11 (row-magnitude fibres cannot lower conference pressure)
+
+Fix a sign direction `v_r` and a centrally symmetric row event
+
+```math
+E_r=\{R:|\langle R,v_r\rangle|\in I_r\},
+\qquad 2^{-r}|E_r|\ge p_0>0.
+```
+
+Let `B_r` have independent rows uniform on `E_r`.  For every fixed
+`0<beta<sqrt(2)/6`, every conference child, and both orientations,
+
+```math
+\boxed{
+ \mathbb E\left[\left(h_\beta-{f_{\epsilon,r}(B_r)\over r}\right)_+\right]
+ \longrightarrow0.}                                  \tag{37.34}
+```
+
+Hence the uniform fibre law cannot make the smaller child target typical.
+This conclusion covers the entire strict conference interval and is
+one-sided: a strong row tail may raise pressure, and exceptional favorable
+subfamilies inside the fibre are not excluded.
+
+The proof couples a conditioned row to a uniform row by nested Hamming
+layers.  After projecting off `v_r`, the coupling error satisfies
+
+```math
+\|(B_r-W_r)(I-P_{v_r})\|_{op}
+=O_{\Pr}(r^{3/8}\sqrt{\log r})=o(\sqrt r),             \tag{37.35}
+```
+
+while its expected Frobenius norm is `O(r^(3/4))`.  Both projected bridges
+therefore lie in the common strict high-temperature ball and have pressure
+`h_beta r+o(r)`.  The removed bridge component has rank one.  Convexity
+restores it without requiring the full endpoint to be regular:
+
+```math
+f(B_r)\ge f(B_r(I-P_v))
+-{K_\kappa\beta\over\sqrt2\,r}\|B_rv_r\|_2.          \tag{37.36}
+```
+
+The expected loss in (37.36) is `O_(p_0)(1)`.
+
+More generally, the same proof gives a projected-coupling criterion.  If a
+random bridge can be coupled to an iid bridge so that, after a deterministic
+projection, both projected bridges are operator-regular, their projected
+Frobenius distance is `o(r)`, and both removed components have expected
+nuclear norm `o(r^(3/2))`, then (37.34) holds.  A rank-`k_r=o(r)` removed
+component automatically has the required nuclear scale for iid rows and
+for constant-density row conditionings.  Thus a favorable law must have
+**irreducible extensive irregularity** after every such low-rank peel, or
+must fail projected coupling itself.
+
+At sufficiently smaller temperature the coupling gives the stronger
+two-sided conclusion `f(B_r)/r -> h_beta` in probability and `L^1`.  Exact
+annealed enumeration at conference orders `6,10,14` found no negative
+increment among `4,080` preregistered magnitude thresholds and directions;
+this is finite evidence only.
+
+Proofs, two independent audits, and the reproducible finite check are in
+[`drafts/conference_row_magnitude_fibres.md`](drafts/conference_row_magnitude_fibres.md),
+[`drafts/conference_row_magnitude_full_beta_no_gain.md`](drafts/conference_row_magnitude_full_beta_no_gain.md),
+[`drafts/conference_projected_coupling_no_gain.md`](drafts/conference_projected_coupling_no_gain.md),
+[`audits/conference_row_magnitude_full_beta_no_gain_independent_audit.md`](audits/conference_row_magnitude_full_beta_no_gain_independent_audit.md),
+[`audits/conference_row_magnitude_full_beta_no_gain_adversarial_audit.md`](audits/conference_row_magnitude_full_beta_no_gain_adversarial_audit.md),
+[`audits/conference_projected_coupling_no_gain_repair_verification.md`](audits/conference_projected_coupling_no_gain_repair_verification.md),
+and [`experiments/conference_row_magnitude_annealed_protocol.md`](experiments/conference_row_magnitude_annealed_protocol.md).
+
+### Theorem 37.12 (an explicit entropy--temperature exclusion frontier)
+
+For sufficiently small `beta`, define the certified operator-tail exponent
+
+```math
+C_*(\beta)
+={1\over8}\left({1\over\sqrt2\beta}-1\right)^2-2\log9. \tag{37.37}
+```
+
+For every `0<=C<C_*(beta)` and every sequence of bridge events, even events
+defined using pressure itself, satisfying `U_r(F_r)>=e^(-Cr)`,
+
+```math
+\boxed{
+ {f_{\epsilon,r}\over r}\longrightarrow h_\beta
+ \quad\hbox{in conditional probability and }L^1.}     \tag{37.38}
+```
+
+The statement is uniform over all such events.  It follows by a direct
+two-net estimate
+
+```math
+U_r\{\|B\|_{op}>L\sqrt r\}
+\le2\exp\{-(L^2/8-2\log9)r\},                         \tag{37.39}
+```
+
+followed by the quadratic regular-sector pressure tail.  Thus the geometry
+of the conditioning is irrelevant below the explicit entropy budget.  The
+same conclusion holds for laws with max density at most `e^(Cr)`.
+
+The corresponding negative-disorder soft minimum remains annealed whenever
+
+```math
+\boxed{C+\lambda h_\beta<C_*(\beta).}                 \tag{37.40}
+```
+
+This is a finite interval, not the all-fixed-tilt theorem: the remaining
+operator-irregular sector still has only a certified speed-`r` bound.
+
+Ordinary KL is weaker than a max-density budget.  A fixed mixture of the
+uniform law with a rarer high-cross-halfspace law has `D(q||U)=O(r)` but
+keeps positive mass a fixed distance above `h_beta`; hence two-sided
+typicality under KL alone is false.  One-sidedly, however, regular-sector
+transport and binary data processing give
+
+```math
+\liminf {\mathbb E_qf\over r}
+\ge\left(1-{C\over C_*(\beta)}\right)_+h_\beta
+\quad\hbox{if }\limsup {D(q\|U)\over r}\le C.          \tag{37.41}
+```
+
+In particular, every law whose mean reaches
+`tau_beta=h_beta-gamma(beta)` must pay
+
+```math
+\boxed{
+ \liminf {D(q\|U)\over r}
+ \ge C_*(\beta){\gamma(\beta)\over h_\beta}.}         \tag{37.42}
+```
+
+The certified right side tends to `3/128` as `beta` decreases to zero.  The
+older global bounded-difference argument gave only a `Theta(beta^6)` entropy
+density at that limit.  This is a quantitative information-price
+improvement, not an existence or convergence theorem.
+
+Proof and independent audit are in
+[`drafts/conference_linear_entropy_conditioning_theorem.md`](drafts/conference_linear_entropy_conditioning_theorem.md)
+and
+[`audits/conference_linear_entropy_conditioning_independent_audit.md`](audits/conference_linear_entropy_conditioning_independent_audit.md).
+
+### Theorem 37.13 (all bounded-Renyi-two row-product laws have a sharp regular bulk)
+
+Let `mu_r` be any law on the row cube, with density `g_r=dmu_r/dU_r`
+satisfying `E_U g_r^2<=K`; no central symmetry is required.  If `B_r` has
+iid rows with law `mu_r`, then a deterministic mean-plus-covariance
+projection `P_r` of rank `O_K(sqrt r)` satisfies
+
+```math
+\boxed{\|B_r(I-P_r)\|_{op}/\sqrt r\longrightarrow2}
+\quad\hbox{in probability}.                         \tag{37.43}
+```
+
+The proof is not a generic subgaussian-edge invocation.  Parseval bounds the
+mean norm and `||Sigma_r-I||_F`; joining the mean direction to the bad
+second-moment eigenspace centers the complement.  Although the joined
+projection need not commute with `Sigma_r`, its compression retains the
+`1+o(1)` spectral window.  Cauchy--Schwarz plus Hanson--Wright then verifies
+the uniform Strong Tail Projection property.  Chafai--Tikhomirov's
+dependent-row upper-edge theorem gives the sharp expectation upper bound,
+while Yaskov's quadratic-form criterion gives the parameter-one
+Marchenko--Pastur bulk and matching lower edge.
+
+The same Parseval peel, entropy transport, and nuclear estimate verify all
+remaining projected-coupling hypotheses.  Therefore, for every fixed
+`0<beta<sqrt(2)/6`, every such row-product bridge law obeys
+
+```math
+\boxed{
+ \mathbb E[(h_\beta-f(B_r)/r)_+]\longrightarrow0.}   \tag{37.44}
+```
+
+In particular, this closes every centrally symmetric constant-density row
+fibre, including arbitrary high-order Fourier constraints.  The theorem is
+strictly broader: a uniformly bounded Renyi-two density need not be uniform
+on an event.
+
+The complete proofs, exact imported hypotheses, and independent source
+audits are in
+[`drafts/constant_density_row_projected_reduction.md`](drafts/constant_density_row_projected_reduction.md),
+[`drafts/constant_density_row_sharp_edge.md`](drafts/constant_density_row_sharp_edge.md),
+[`drafts/bounded_l2_noncentral_row_extension.md`](drafts/bounded_l2_noncentral_row_extension.md),
+[`audits/constant_density_row_projected_reduction_independent_audit.md`](audits/constant_density_row_projected_reduction_independent_audit.md),
+[`audits/constant_density_row_sharp_edge_external_theorem_audit.md`](audits/constant_density_row_sharp_edge_external_theorem_audit.md),
+[`audits/constant_density_row_sharp_edge_adversarial_audit.md`](audits/constant_density_row_sharp_edge_adversarial_audit.md),
+and
+[`audits/noncentral_mean_peel_extension_adversarial_audit.md`](audits/noncentral_mean_peel_extension_adversarial_audit.md).
+
+### Theorem 37.14 (sublinear cross-row information is harmless)
+
+Let `mu_r` be a centrally symmetric constant-density row fibre and let
+`q_r` be any exact-sign bridge law whose `r` row marginals all equal
+`mu_r`.  Write its row total correlation as
+
+```math
+\tau_r=D(q_r\|\mu_r^{\otimes r}).
+```
+
+For every fixed `0<beta<sqrt(2)/6`, there is `epsilon_r->0` such that
+
+```math
+\boxed{
+ \mathbb E_{q_r}[(h_\beta-f(C_r)/r)_+]
+ \le \epsilon_r+K_\kappa\beta\sqrt{\tau_r/r}.}       \tag{37.45}
+```
+
+Indeed, row-symbol transportation couples `q_r` to the product law while
+changing at most `sqrt(r tau_r/2)` rows in expectation.  The matrix mismatch
+has expected nuclear norm at most `sqrt(2)r sqrt(tau_r)`.  Starting at the
+regular projected product bridge from Theorem 37.13, one convex supporting
+line restores both that mismatch and the covariance peel; the dependent
+endpoint itself need not be operator-regular.
+
+Consequently, `tau_r=o(r)` cannot create a favorable linear pressure phase,
+and any fixed normalized mean shortfall `gamma` forces
+
+```math
+\boxed{
+ \tau_r\ge
+ \left({\gamma-o(1)\over K_\kappa\beta}\right)^2r.}   \tag{37.46}
+```
+
+Thus a surviving speed-`r` law must spend a positive information rate on
+dependence *between* rows (or violate the bounded-row-density premise), in
+addition to the previously proved quadratic effective support across bridge
+coordinates.
+
+Proof and independent audit are in
+[`drafts/near_product_row_dependence_no_gain.md`](drafts/near_product_row_dependence_no_gain.md)
+and
+[`audits/near_product_row_dependence_no_gain_adversarial_audit.md`](audits/near_product_row_dependence_no_gain_adversarial_audit.md).
+
+### Theorem 37.15 (uniformly regular latent products remain harmless)
+
+Let an arbitrary latent variable `Z_r` select a row law `nu_(z,r)`, and,
+conditional on `Z_r=z`, draw all `r` bridge rows independently from that
+law.  If
+
+```math
+\mathbb E_U(d\nu_{z,r}/dU)^2\le K
+```
+
+for one fixed `K`, uniformly for almost every latent state and every `r`,
+then throughout `0<beta<sqrt(2)/6`,
+
+```math
+\boxed{
+ \mathbb E[(h_\beta-f(B_r)/r)_+]\longrightarrow0.}    \tag{37.47}
+```
+
+The latent support may grow arbitrarily or be uncountable, and the induced
+row total correlation may be `Theta(r)`.  The reason is uniform rather than
+combinatorial: Theorem 37.13 gives a worst-component error
+`epsilon_r(K)->0`, and conditioning on `Z_r` followed by integration incurs
+no union bound.
+
+More sharply, if `K_2(z,r)` is the component Renyi-two constant, then
+
+```math
+\boxed{
+ \mathbb E[(h_\beta-f/r)_+]
+ \le\epsilon_r(K)
+   +h_\beta\Pr\{K_2(Z_r,r)>K\}.}                     \tag{37.48}
+```
+
+Uniform tightness of the latent component constants is therefore enough.
+The exact remaining loophole is a nonvanishing amount of latent mass escaping
+every fixed row-density bound, or dependence which remains after every
+conditional-product representation.  A two-half common latent bit is
+closed, despite its exact total correlation `(r-1)log 2`.
+
+Proof and independent audit are in
+[`drafts/latent_mixture_row_product_no_gain.md`](drafts/latent_mixture_row_product_no_gain.md)
+and
+[`audits/latent_mixture_row_product_no_gain_independent_audit.md`](audits/latent_mixture_row_product_no_gain_independent_audit.md).

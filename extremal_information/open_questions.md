@@ -1222,3 +1222,61 @@ laws—perhaps through a rowwise invariance principle, a convex-order
 comparison, or a uniform quenched/annealed estimate.  A bounded-difference
 tail inside the conditioned class stops at speed `r` and does not answer the
 question.
+
+The row-product test is now closed.  Theorems 37.11--37.14 prove that every
+centrally symmetric bounded-Renyi-two row product, and every joint law within
+`o(r)` row total correlation of it, cannot lower pressure anywhere in the
+strict conference interval; at smaller beta, every event below an explicit
+linear entropy budget is typical regardless of its structure.  The remaining
+law must carry `Omega(r)` genuine cross-row information and be irreducible
+after every cheap low-rank response peel, not merely diffuse and
+operator-irregular before projection.
+
+## 27. Arbitrary constant-density row fibres: solved positively
+
+Theorem 37.13 answers the former question and proves more.  Every row law
+with uniformly bounded Renyi-two density admits a deterministic
+`O(sqrt r)` mean-plus-covariance peel, an `o(r)` Frobenius coupling on the
+complement, subcritical removed nuclear mass, and the sharp projected edge
+
+```math
+\|B_r(I-P_r)\|_{op}/\sqrt r\longrightarrow2.
+```
+
+The nontrivial last step follows by verifying the Strong Tail Projection
+hypothesis and combining a dependent-row upper-edge theorem with the
+Marchenko--Pastur bulk lower edge.  Hence no iid constant-density row fibre
+can be the favorable conference basin.
+
+## 28. Can conditionally singular cross-row information create the remaining phase?
+
+Theorem 37.14 extends the no-gain result through arbitrary dependence whose
+row total correlation is `o(r)`.  A favorable law with common
+constant-density marginals must therefore satisfy, simultaneously,
+
+```text
+D(q_r||mu_r^{otimes r})=Omega(r),
+s_*(q_r)=Theta(r^2),
+and E_q f <= (h_beta-eta)r.
+```
+
+Theorem 37.15 additionally closes every common-latent mixture of product row
+laws whose component Renyi-two constants are uniformly tight, even when its
+total correlation is linear.  Construct a law with a pressure certificate
+independent of thresholding `f`, or prove a response-specific inequality for
+the remaining class.  A latent-mixture candidate must put nonvanishing mass
+on component row laws whose Renyi-two constants escape every fixed bound;
+alternatively, its dependence must remain irreducible after conditioning on
+every proposed latent state.
+
+The useful next quantitative target is a growth-rate theorem: find the
+largest `K_r->infinity` for which component laws with `K_2<=K_r` still admit
+an `o(r)` pressure comparison, or construct a counted latent family at the
+first failing scale.  Such a theorem must track covariance-peel rank,
+projection tails, transport, and latent mass jointly; an essential-supremum
+divergence on a vanishing set of components is already harmless.
+
+A mere `Theta(r)` KL calculation, a copied-row spike, or a singular mixture
+without a rigorous pressure direction does not count.  If this class resists
+one focused checkpoint, freeze the conference benchmark: the surviving
+statement is then too close to the unrestricted speed-`r` pressure basin.

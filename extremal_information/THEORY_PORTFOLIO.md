@@ -68,11 +68,34 @@ one of:
   templates and their exact type shells, localized-row information, and
   adaptive switching cross-sections all fail as whole basins.  The last
   claim includes the exact `2^(r^2-r)` row-antipodal halfcube.
-- **Live target:** classify a nonlinear, conditionally diffuse,
-  operator/power-irregular law which evades every fixed macroscopic
-  Gram/quartic improvement through higher-order cancellation.  A rowwise
-  sign-invariant magnitude fibre is the first concrete test; it must come
-  with a pressure theorem, not another entropy or norm calculation.
+- **New projected-coupling closure:** every row law with bounded Renyi-two
+  density fails as a lower-pressure iid-row basin
+  throughout `beta<sqrt(2)/6`.  Parseval supplies an `O(sqrt r)` covariance
+  peel; dependent-row edge theory proves that the whitened complement has
+  sharp coefficient two; entropy transport and convex restoration finish
+  the pressure comparison.  This includes every constant-density row fibre,
+  not only magnitude laws or low-order constraints.
+- **Cross-row information threshold:** arbitrary dependence with those same
+  row marginals remains harmless when its total correlation is `o(r)`, with
+  quantitative shortfall at most
+  `o(1)+K_kappa beta sqrt(D(q||mu^r)/r)`.  A favorable law must therefore
+  spend `Omega(r)` reusable information between rows as well as have
+  `Theta(r^2)` effective entrywise support.
+- **Latent-mixture closure:** linear total correlation is still insufficient
+  when it disintegrates into product components with uniformly tight
+  Renyi-two row density.  Uniform component error integrates over arbitrary
+  latent support.  A survivor needs nonvanishing conditionally singular mass
+  or dependence irreducible after every latent-product representation.
+- **Entropy--temperature frontier:** below the explicit net exponent
+  `C_*(beta)`, arbitrary `e^(-Cr)` events are conditionally typical and
+  target-reaching laws pay KL density at least `C_*gamma/h`.  Its certified
+  small-beta limit is `3/128`, rather than the previous vanishing
+  `Theta(beta^6)` transport price.
+- **Live target:** determine the first growth scale of component Renyi-two
+  complexity at which a latent product mixture can evade the `o(r)` pressure
+  comparison, or produce an explicit favorable conditionally singular law.
+  Product laws, `o(r)`-correlated neighborhoods, and uniformly regular latent
+  mixtures are closed; another row statistic or finite fibre is not live.
 - **Promotion status:** promoted to one focused active benchmark campaign,
   not to a convergence architecture.  Full promotion still requires the
   same result for contracted-temperature child minimizers in the exact
@@ -96,7 +119,12 @@ convergence architecture, while remaining a useful diagnostic language.
 Adversarial statistical mechanics has now strictly reduced its structured
 benchmark to a deeply irregular support edge, so it becomes the sole focused
 active branch.  It is not yet primary for the original problem because all
-new speed theorems remain conference-specific.
+new speed theorems remain conference-specific.  The latest checkpoint
+closes every bounded-Renyi-two row-product law, its sublinearly correlated
+neighborhood, and every uniformly regular latent-product mixture even at
+linear correlation.  It earns one final quantitative test at the
+conditional-singularity threshold; failure there freezes the conference
+benchmark.
 
 ## Previous checkpoint: Boolean feature algebra
 

@@ -3542,3 +3542,91 @@ union over all `2^r` switch labels.  Hence the uniform halfcube pressure is
 `h_beta r+o(r)`, not the smaller child target.  This closes a genuinely
 nonlinear exact speed-`r` candidate without confusing its gauge label with
 a thermodynamic phase.
+
+## Example 181: a diffuse row-magnitude law has only one removable irregular direction
+
+Condition every bridge row on a constant-probability event determined by
+`|<R,v>|`.  The product fibre has exact density `p_r^r=exp(-Theta(r))` and
+its chain-rule information is spread through the dense row coordinates.
+A tail event can also create an arbitrarily large population-covariance
+spike in direction `v`, so a uniform sharp operator edge for the full bridge
+is false.
+
+Nevertheless the irregularity is thermodynamically one-sided.  Projecting
+off `v` leaves a bridge which can be coupled to iid disorder at
+`o(sqrt(r))` operator cost and `o(r)` Frobenius cost.  The projected pressure
+is typical throughout `beta<sqrt(2)/6`; convexity then restores the rank-one
+spike with only `O(1)` expected downward loss.  Thus diffuse conditional
+information and operator irregularity are still insufficient when all
+irregularity lives in one removable response direction.
+
+## Example 182: Shannon entropy and max density control different pressure questions
+
+An arbitrary event `F_r` of probability at least `e^(-Cr)` has likelihood
+ratio at most `e^(Cr)` after conditioning.  At sufficiently small beta,
+operator-norm rarity plus regular-sector quadratic concentration make every
+such conditional pressure typical, regardless of how `F_r` was selected.
+
+The analogous statement under only `D(q||U)<=Cr` is false.  Put a small
+fixed mixture weight on the halfspace
+
+```math
+u^TBv\ge a r^{3/2}.
+```
+
+It has probability `exp(-a^2r/2+O(1))`, every retained bridge has a fixed
+linear *higher* pressure by one explicit spin pair, and convexity of KL keeps
+the mixture information linear.  KL still yields a one-sided lower-pressure
+floor because lowering pressure requires moving actual mass into the
+exponentially rare irregular sector.  This example explains why the correct
+arbitrary-conditioning theorem uses a max-density or Renyi-`alpha>1`
+budget, while the KL theorem must remain directional.
+
+## Example 183: high-order row constraints still have a sharp bulk edge
+
+Uniform conditioning on a full-parity row fibre, or on a parity of several
+block-majority signs, can be invisible to covariance: `Sigma=I`, so the
+canonical exceptional projection is zero.  These are genuine high-order
+tests of the row theorem, not low-degree magnitude examples.
+
+Nevertheless their density relative to the row cube has bounded
+Renyi-two norm.  Conditional Hanson--Wright tails verify the dependent-row
+sharp-edge hypotheses directly, and Theorem 37.13 gives
+`||B||_op/sqrt(r)->2`.  Thus covariance invisibility does not create a
+counterexample: after whitening, bounded row information cannot move the
+sample-covariance edge.
+
+## Example 184: row parity and a common latent half straddle the correlation threshold
+
+Let `z:E_r->{+-1}` be balanced.  Conditioning independent fibre rows on
+
+```math
+\prod_{i=1}^r z(R_i)=1
+```
+
+preserves every row marginal and creates an order-`r` dependence, but its
+total correlation is only `log 2`.  Theorem 37.14 proves that it cannot lower
+conference pressure at leading order.  Hence high interaction order alone
+is not the missing resource.
+
+In contrast, split the row fibre into two equal halves and draw one latent
+half shared by all rows.  Every row marginal is again unchanged, while the
+total correlation is exactly `(r-1)log 2`.  This lies at the linear boundary
+where Theorem 37.14 alone permits a constant normalized response.  Theorem
+37.15 nevertheless closes it: after conditioning on the latent bit, each
+half is still a bounded-Renyi-two row product.  Thus neither formal
+dependence order nor linear correlation is sufficient.
+
+## Example 185: a singular latent decomposition marks the next boundary
+
+Choose a row `z` uniformly from the cube and, conditional on `z`, set every
+bridge row equal to it.  The one-row marginal is exactly uniform, but each
+conditional law is `delta_z`, with Renyi-two constant `2^r`.  The rows have
+quadratic, rather than linear, total correlation and a rank-one bridge.
+
+This does not exhibit low pressure.  It is the clean scope falsifier for the
+latent-mixture theorem: benign marginal information does not control the
+conditional components.  Theorem 37.15 shows that a genuine latent-mixture
+candidate needs a nonvanishing amount of mass on components whose row
+density escapes every fixed bound; merely inserting rare singular components
+with vanishing total latent mass is still harmless by truncation.
