@@ -1464,3 +1464,15 @@ covariance eigenmode of order `sqrt(N)`.  What remains is a uniform
 physical-scale tail/synchronization theorem.  Merely applying the KL chain
 rule or storing the complete contrast/scale tables does not count as a
 strict reduction.
+
+
+Theorem 37.32 additionally removes unbounded scalar sector bias from the
+component-support side: some orientation/filtration presentation always
+has uniformly bounded canonical `D_infty`, independent of both biases.
+The smallest remaining question should therefore be asked in that balanced
+presentation.  Does exact child minimality force its joint canonical
+interaction `J` to be `o(N)`, or does a child-only high-transport
+observable certify a fixed positive density of the already classified
+row dependence/retuning resource?  A proof must also check that the
+balanced orientation is relevant to the desired target; zero-bridge
+optimality alone does not establish this.

@@ -3941,3 +3941,28 @@ both orientations, but their joint tangent values are `20` and `12`.
 Therefore the row quotient removes canonical sector ambiguity without
 determining the cross-row interaction.  It is a genuine quotient and a
 genuine no-go in the same example.
+
+
+## Example 200: large sector bias does not force a concentrated row factor
+
+Let two actual minimizing children have sector biases `gamma_C,gamma_D`,
+possibly of arbitrary magnitude.  Point the row filtration toward the
+child with larger absolute bias and choose the relative orientation which
+cancels the signs.  Positive-mixture comparison gives
+
+```math
+z_{C\to D}^{\epsilon}\ge{1\over2}z_D^0.
+```
+
+The neutral likelihood has the optimizer extension lower envelope, so the
+selected inverse row factor has
+
+```math
+D_\infty(r\Vert U)\le\lambda(\delta_n+\log2)=O_{\beta,\lambda}(1).
+```
+
+The factor `1/2` is sharp for the two-weight mixture algebra when equal
+large biases cancel.  This example removes an apparent escape route:
+large child bias can change which orientation is useful, but it cannot by
+itself force concentrated canonical components after orientation and
+filtration are chosen together.  Joint row dependence remains untouched.

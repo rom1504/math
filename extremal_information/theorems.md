@@ -18465,3 +18465,60 @@ are in
 [`drafts/actual_child_sector_contrast_quotient.md`](drafts/actual_child_sector_contrast_quotient.md)
 and
 [`audits/actual_child_sector_gram_tangent_carrier_audit.md`](audits/actual_child_sector_gram_tangent_carrier_audit.md).
+
+### Theorem 37.32 (sector-bias balancing gives a tight actual canonical presentation)
+
+Let `C,D` be exact contracted-temperature child minimizers.  Relabel them
+so that `|gamma_C|<=|gamma_D|`, use `D` as the row base, and choose the
+relative orientation `epsilon` so that `epsilon gamma_C` has sign opposite
+to `gamma_D`.  Then the canonical biased extension likelihood satisfies
+the pointwise optimizer-specific comparison
+
+```math
+\boxed{
+z_{C\to D}^{\epsilon}(b;t,u)
+\ge{1\over2}z_D^0(b;t,u)\quad\hbox{for every }b.} \tag{37.91}
+```
+
+Indeed the sharp comparison coefficient is
+
+```math
+e^{-|\gamma_C|}
+{\cosh|\gamma_D|\over
+ \cosh(|\gamma_D|-|\gamma_C|)}\ge{1\over2}. \tag{37.92}
+```
+
+At equal incident and internal amplitudes, the neutral optimizer extension
+envelope therefore yields
+
+```math
+\boxed{
+D_\infty(r_{C\to D}^{\epsilon}\Vert U_n)
+\le\lambda\{\delta_n(t)+\log2\}.}           \tag{37.93}
+```
+
+At `t=beta/sqrt(N)` this is at most
+`lambda(beta^2/2+log2)`, uniformly in both child biases and orders.  Thus
+the bridge may be presented with canonical row factors having
+dimension-free max density even if either scalar sector bias diverges.
+This strictly strengthens the neutral-only optimizer bound (37.79).
+
+The same canceling orientation minimizes the zero-bridge augmented
+pressure over the two orientations, since
+
+```math
+\overline Z_{C\oplus\epsilon D}(t)
+=\sqrt{Z_C^+Z_C^-Z_D^+Z_D^-}\,
+ \cosh(\gamma_C+\epsilon\gamma_D).            \tag{37.94}
+```
+
+The theorem is existential over the two orientations and the two row
+directions.  It does not give simultaneous orientation control, and
+zero-bridge optimality does not prove that the selected orientation reaches
+a parent target after bridge optimization.  Most importantly, it controls
+only canonical component support; the joint interaction `h`, total
+correlation, and reverse-product gap can remain linear.  The proof and
+audit are in
+[`drafts/actual_child_sector_bias_balancing.md`](drafts/actual_child_sector_bias_balancing.md)
+and
+[`audits/actual_child_sector_bias_balancing_adversarial_audit.md`](audits/actual_child_sector_bias_balancing_adversarial_audit.md).

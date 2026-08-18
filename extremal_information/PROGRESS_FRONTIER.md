@@ -1363,3 +1363,66 @@ class and risks restating the desired parent optimization.
   physical tail bound is the first post-reset strike; a second such strike
   freezes adversarial statistical mechanics and promotes rare-event/
   renormalization.
+
+
+### Checkpoint 22 — sector-bias escape is closed by a balanced actual presentation
+
+- **Strongest optimizer-specific theorem:** for any two exact
+  contracted-temperature minimizing children, point the row filtration
+  toward the child with larger absolute sector bias and choose the relative
+  orientation which cancels the bias signs.  Then, pointwise on every row,
+
+  ```math
+  z_{C\to D}^{\epsilon}\ge{1\over2}z_D^0,
+  \qquad
+  D_\infty(r_{C\to D}^{\epsilon}\Vert U_n)
+  \le\lambda(\delta_n+\log2)
+  \le\lambda(\beta^2/2+\log2).
+  ```
+
+  The result is uniform in both bias magnitudes and uses the actual
+  optimizer extension envelope.  The same orientation minimizes the
+  zero-bridge pressure.  Together with the pre-existing uniform absolute
+  conditional `D_2` bounds, this closes scalar sector bias and escaping
+  row-component complexity in an available actual-child presentation.
+- **Exact surviving dichotomy:** all canonical, hybrid-conditional, and
+  optimal-product factors are tight, yet Theorem 37.27 remains exhaustive:
+  if `J` is linear, a positive density of regular rows carries order-one
+  marginal drift or row-versus-rest information, and any linear repair by
+  the best product retunes a positive density of regular factors.  Thus
+  the only surviving resource is irreducible joint compatibility among
+  individually diffuse rows.
+- **Sharp scope/falsifier:** balancing is existential over orientation and
+  transpose.  Zero-bridge optimality does not prove the balanced
+  orientation reaches the parent target after bridges are optimized.
+  Moreover the exact order-eight collision with identical row quotient
+  but tangent values `20,12` proves that tight balanced row factors cannot
+  determine `h/J`; the joint resource can differ while all scalar and
+  one-row data agree.
+- **Previous SML:** promote the polynomial contrast quotient and
+  sector--Gram tangent through a physical sector-hierarchy tail theorem.
+- **Current SML `L_balanced-joint`:** in the balanced orientation and
+  filtration of Theorem 37.32, prove from an actual-child observable
+  strictly smaller than the full bridge/external-field table either
+
+  ```math
+  J_N=o(N)
+  ```
+
+  with a summable rate, or a fixed positive-density reverse-product/image
+  certificate for the ES.42 row resource.  The theorem must also establish
+  that this orientation is target-relevant, or compare its target loss to
+  the joint gain.  No bound on `gamma`, component support, or another
+  one-row statistic is still missing.
+- **Progress classification:** **RESET TO A PURELY JOINT ACTUAL-CHILD
+  LEMMA; LEVEL 5.**  This is strictly narrower than the campaign's initial
+  request to understand the child-induced law: KL density, effective row
+  support, conditional Renyi complexity, sector orientation, and the
+  positive-density consequence of a linear phase are all classified.
+  What is not decided is whether the balanced joint phase is sublinear or
+  extensive, so no Level-6 pressure recurrence exists.
+- **Decision:** no surrogate strike.  The next campaign should attack only
+  `L_balanced-joint` and target relevance.  A generic concentration bound,
+  another one-row quotient, or a fixed-order moment expansion is a strike;
+  after two such strikes, freeze this branch and promote rare-event/
+  renormalization.

@@ -2885,3 +2885,18 @@ Thus a proof must not charge canonical sector ambiguity and irreducible
 joint compatibility as if they were the same resource.  Conversely, a
 scalar-valued row statistic is not automatically a low-information state:
 its table and its joint label process may be exponentially complex.
+
+
+## 162. Balance orientation and filtration before charging sector bias
+
+For two actual optimizing children, the larger absolute sector bias should
+be used as the row-base child and the relative orientation should cancel
+the two bias signs.  This choice makes every canonical row likelihood at
+least half the neutral optimizer extension likelihood, regardless of the
+bias magnitudes.  Consequently canonical max-density is uniformly tight at
+physical scaling.
+
+A divergent scalar sector bias is therefore not an escaping-component
+mechanism.  The balancing choice is existential and need not be the
+orientation selected by a separate target calculation; even when it is
+used, all extensive difficulty can remain in compatibility among rows.
