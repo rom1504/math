@@ -17652,3 +17652,96 @@ Proof and independent audit are in
 [`drafts/latent_mixture_row_product_no_gain.md`](drafts/latent_mixture_row_product_no_gain.md)
 and
 [`audits/latent_mixture_row_product_no_gain_independent_audit.md`](audits/latent_mixture_row_product_no_gain_independent_audit.md).
+
+### Theorem 37.16 (subexponential row density does not preserve the sharp edge)
+
+Along Walsh--Hadamard orders, for every fixed `L>2` there is a central exact-
+sign row law with
+
+```math
+\mathbb E R=0,
+\qquad \mathbb E RR^T=I,
+\qquad
+\log\mathbb E_U(d\mu_r/dU)^2
+=(L^2+o(1)){r\log\log r\over\log r}=o(r),             \tag{37.49}
+```
+
+such that an `r`-row iid matrix `B_r` satisfies, for **every deterministic**
+projection `P_r` of rank `o(r)`,
+
+```math
+\boxed{
+ \liminf {\|B_r(I-P_r)\|_{op}\over\sqrt r}\ge L
+ \quad\hbox{in probability}.}                       \tag{37.50}
+```
+
+The row first chooses one of `r` orthogonal Hadamard directions and a random
+sign, then uses independent coordinates with weak mean
+`c_r=L sqrt(loglog(r)/log(r))` in that direction.  Averaging the directions
+makes the population second moment exactly identity.  In a sample of `r`
+rows, however, the largest latent occupancy is
+`(1-o(1))log(r)/loglog(r)`, amplifying the weak bias to singular coefficient
+`L`.  Parseval leaves `r-o(r)` Hadamard directions almost intact after any
+deterministic sublinear-rank peel, so the occupancy persists.
+
+This is a scalable random-matrix obstruction, not a favorable-pressure
+construction.  It proves that the sharp-edge/no-gain method cannot be
+extended merely by replacing bounded row Renyi-two complexity with the broad
+condition `log K_2=o(r)`.  A sample-dependent projection is outside the
+claim and could tautologically delete a realized top singular vector.
+
+Proof and independent audit are in
+[`drafts/growing_renyi_hadamard_cluster_edge_counterexample.md`](drafts/growing_renyi_hadamard_cluster_edge_counterexample.md)
+and
+[`audits/growing_renyi_hadamard_cluster_edge_counterexample_independent_audit.md`](audits/growing_renyi_hadamard_cluster_edge_counterexample_independent_audit.md).
+
+### Theorem 37.17 (tight latent component Renyi-two complexity is enough)
+
+In the latent-product setting of Theorem 37.15, put
+
+```math
+Y_r(z)=D_2(\nu_{z,r}\Vert U_r)=\log K_2(\nu_{z,r})
+```
+
+and let
+
+```math
+\epsilon_r(K)=
+\sup_{\nu:K_2(\nu)\le K}
+\mathbb E_{\nu^{\otimes r}}
+\left(h_\beta-{f_r(B)\over r}\right)_+.
+```
+
+For every fixed finite `K`, Theorem 37.13 gives
+`epsilon_r(K)->0`.  For every threshold `t>=0`, conditioning the latent
+mixture exactly yields
+
+```math
+\boxed{
+\mathbb E_{q_r}\left(h_\beta-{f_r(B)\over r}\right)_+
+\le \epsilon_r(e^t)+h_\beta\Pr\{Y_r>t\}.}          \tag{37.51}
+```
+
+Consequently, if the random component complexities are tight,
+
+```math
+\lim_{T\to\infty}\limsup_{r\to\infty}\Pr\{Y_r>T\}=0,
+```
+
+then the normalized downward shortfall tends to zero.  In particular,
+bounded mean component `D_2`, or any uniform coercive Orlicz moment of it,
+is sufficient.  This is strictly weaker than a uniform essential-supremum
+bound and permits `Theta(r)` row total correlation.
+
+There also exists a nonconstructive deterministic sequence `b_r->infinity`
+such that `epsilon_r(e^(b_r))->0`.  This diagonal fact supplies *some*
+slowly growing density window, but fixed-`K` convergence alone implies no
+prescribed divergent rate.  A monotone abstract error profile can converge
+at every fixed `K` and still remain maximal at any externally specified
+`K=e^(a_r)`.  Thus a named growing-density regime requires a quantitative
+component theorem or genuinely new pressure structure.
+
+Proof and independent audit are in
+[`drafts/latent_mixture_renyi2_tightness.md`](drafts/latent_mixture_renyi2_tightness.md)
+and
+[`audits/latent_mixture_renyi2_tightness_independent_audit.md`](audits/latent_mixture_renyi2_tightness_independent_audit.md).

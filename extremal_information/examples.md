@@ -3630,3 +3630,23 @@ conditional components.  Theorem 37.15 shows that a genuine latent-mixture
 candidate needs a nonvanishing amount of mass on components whose row
 density escapes every fixed bound; merely inserting rare singular components
 with vanishing total latent mass is still harmless by truncation.
+
+## Example 186: weak Hadamard clusters create a sample edge invisible to covariance
+
+Choose one of `r` orthogonal Hadamard directions uniformly, choose its sign,
+and give each row coordinate the weak corresponding bias
+
+```math
+c_r=L\sqrt{\log\log r/\log r}.
+```
+
+The mixture is central and has second moment exactly `I`; no deterministic
+mean/covariance direction is available to peel.  Its row Renyi-two cost is
+still subexponential.  But among `r` sampled rows, one of the `r` latent
+directions occurs about `log r/loglog r` times, converting the weak bias into
+a singular value `(L-o(1))sqrt r`.
+
+This excess survives every deterministic `o(r)`-rank projection because
+almost all Hadamard basis vectors retain norm `1-o(1)`.  The example shows
+that population isotropy and `o(r)` row Renyi information do not control the
+empirical edge.  It does not determine the pressure direction of that edge.

@@ -113,7 +113,7 @@ and scalar tail-to-pressure closure are now rejected.
 | R1 collective synchronization | 5 for balance/atlas | nonlinear cross-chart congruence tied to near-minimality | atlas direct state `O(n^(4/3))` bits | within chart `O(n^(4/3))`; fixed-ratio physical loss unknown | all orders structurally | reset for atlas, then two transfer strikes; frozen |
 | R2 contextual incompressibility | 5 | none for fixed-reference language | exactly `Theta(n)` bits on every bounded-cap switching orbit | gap and parent cap `Theta(n^(3/2))` | every large order | negative arrow complete; then scope-corrected by gauge quotient |
 | R3 response replacement | 3/4 | all-order gauge-invariant representative with `o(n^(3/2))` loss, defined without target-order optimum | unknown | target `o(n^(3/2))` | must be all large orders | prior action/weighted recovery strike; no new state |
-| adversarial pressure | 4 on the conference benchmark | locate the conditional-Renyi singularity threshold, or construct a favorable singular latent law; then test actual child minimizers | pressure, conditional-information support, mean/covariance peel, and latent component complexity; no closed full state | `o(r)` for bounded-Renyi-two products, `o(r)`-correlated extensions, and uniformly regular latent mixtures; target `O(N^(1-delta))` generally | Paley sequence now; ultimately comparable splits at all large orders | regular latent class closed; one conditional-singularity test remains |
+| adversarial pressure | 4 on the conference benchmark | classify the exact child-induced Gibbs bridge law by conditional `D_2` and irreducible row dependence | pressure, conditional-information support, and latent component complexity; no closed full state | `o(r)` for tight-component latent products; projected-edge control is false already at `log K_2=o(r)` | Paley benchmark only so far; exact child splits still untouched | sharp occupancy falsifier; conference edge variants frozen |
 | presented rare-event state | 3 | deterministic rooted synchronization under adversarial dense futures | finite only in scoped spike/marked-phase models | exact there; uncontrolled for Boolean bridges | scoped models only | keep warm, no promotion |
 
 The complete checkpoint history and scored implication graph are in
@@ -191,6 +191,13 @@ The complete checkpoint history and scored implication graph are in
   uncountable latent support.  The exact remaining loophole is nonvanishing
   latent mass whose component density escapes every fixed bound, or
   dependence irreducible after conditioning on all proposed latent states.
+- That loophole is real for the projected-edge architecture.  A noisy
+  Hadamard-cluster row law has exact identity second moment and
+  `log K_2=Theta(r loglog r/log r)=o(r)`, yet its iid sample has operator
+  coefficient at least any prescribed fixed `L>2` after every deterministic
+  `o(r)`-rank peel.  The mechanism is multinomial occupancy, not population
+  covariance.  This is a scalable route falsifier, not evidence of lower
+  pressure.
 - At smaller beta, a direct norm-tail calculation gives the explicit
   entropy--temperature frontier
 
@@ -217,8 +224,8 @@ candidate state discards.  Do not spend more time on shell, selector, tail,
 or switch-label refinements.
 
 Presented rare-event states stay warm but unpromoted.  Adversarial
-statistical mechanics remains the sole focused active branch, but only for
-one final conditional-singularity test.  Its conference benchmark now has an exact
+statistical mechanics remains the only defensible focused branch, but its
+conference projected-edge hierarchy is now frozen.  That benchmark has an exact
 phase criterion, quadratic regular-sector localization, a quartic entropy
 barrier, a conditional-information support law, a complete bounded-density
 row-product closure, a quantitative total-correlation barrier, and a no-gain
@@ -228,8 +235,11 @@ rows, put nonvanishing mass on increasingly singular conditional row laws
 or retain irreducible dependence after conditioning, and remain
 **irreducibly extensive after every cheap response peel**.  It cannot be
 affine, independently biased, localized, gauge-selected, sublinearly
-correlated, or a regular de Finetti-type mixture.  This is a Level-4 reset,
-not promotion to the original problem; nothing has yet tied the surviving
+correlated, or a regular de Finetti-type mixture.  The Hadamard-cluster law
+proves that exact isotropy plus `log K_2=o(r)` still permits a persistent
+occupancy-created edge after every deterministic cheap peel, so no broader
+population-moment criterion is credible.  This is a Level-4 falsifier, not
+promotion to the original problem; nothing has yet tied the surviving
 exceptional sector to pressure-minimizing children.
 
 ## 7. Best current route toward `M_n`
@@ -271,9 +281,14 @@ law is harmless.  Hence a surviving candidate must spend `Omega(r)` genuine
 cross-row information while retaining the quadratic entrywise support.  If
 that dependence is a latent mixture of product laws, uniformly tight
 component Renyi-two complexity is also harmless; nonvanishing conditional
-singularity is necessary.  The conference benchmark therefore names a
-sharper necessary geometry, but no theorem forces or excludes that geometry
-for the actual child minimizers.
+singularity is necessary.  The Hadamard-cluster obstruction further shows
+that even exact identity covariance and `log K_2=o(r)` do not control the
+projected edge: rare occupancy among many weak latent directions can retain
+a leading singular value.  Because this construction has no favorable-
+pressure direction and its naive row-product entropy is too large for the
+speed-`r` basin, it is a route falsifier rather than a candidate solution.
+The conference benchmark therefore names a sharper necessary geometry, but
+no theorem forces or excludes that geometry for the actual child minimizers.
 
 The old `L_replace` chain is not recommended until it names a concrete
 gauge-invariant state.  In its current form it remains too close to an
@@ -281,32 +296,26 @@ all-order restatement of the desired transfer.
 
 ## 8. Exactly one next 3–6 hour campaign
 
-Resolve the **conditional-Renyi singularity threshold**.  Consider latent
-row-product bridge laws
+Run an **actual-child bridge-law resource audit**.  For the exact
+entropy-regularized bridge identity, take contracted-temperature child
+minimizers and study the induced negative-disorder Gibbs law on bridges,
+not another conference surrogate.  Quantify, analytically and at exact small
+orders where useful, four preregistered resources: total KL density,
+effective coordinate support, row total correlation, and the tail of
+conditional component
 
 ```math
-q_r=\int\nu_{z,r}^{\otimes r}\,\pi_r(dz)
+D_2(\nu_{Z,r}\Vert U_r)
 ```
 
-with a benign one-row marginal, `D(q_r||U)=O(r)`, and quadratic effective
-entrywise support, but with nonvanishing latent mass on components whose
+after the best explicitly defined latent-product or row-filtration
+disintegration.
 
-```math
-K_2(\nu_{z,r})=E_U(d\nu_{z,r}/dU)^2
-```
-
-diverges.  Determine the largest explicit growth regime `K_r->infinity` for
-which the mean/covariance peel, projection tails, entropy transport, and
-convex restoration still yield `o(r)` downward pressure loss.  Alternatively,
-construct a counted algebraic component family at the first failing scale,
-specified without pressure thresholding, with a rigorous fixed linear gain.
-
-The main theorem must combine component complexity with latent mass; an
-essential-supremum divergence is insufficient because Theorem 37.15 already
-removes a vanishing exceptional latent set.  Begin by deriving quantitative
-versions of the STP and nuclear estimates in terms of `K_r`, then test one
-singular but non-rank-one family.  Do not revisit bounded-density products,
-two-half mixtures, copied rows, affine constraints, or raw edge numerics.
-This is the final conference-only checkpoint: if no nontrivial growth regime
-or favorable family appears, freeze the benchmark and move to actual
-contracted-temperature child minimizers or another theory.
+The theorem target is a dichotomy specific to this law.  Either its
+component `D_2` is tight (or has vanishing escaping mass), in which case
+Theorems 37.15 and 37.17 rule out a linear favorable phase, or a fixed mass
+is proved to carry non-tight conditional `D_2`/irreducible row dependence,
+which supplies the first structural property of actual child minimizers for
+the basin route.  Computation may select a disintegration but cannot define
+it by pressure thresholding or by the target-order optimum.  Do not resume
+conference edge variants, generic row fibres, or raw spectral searches.

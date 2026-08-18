@@ -2714,3 +2714,18 @@ fixed component-density bound; rare escaping components of vanishing mass
 are removed by truncation.  Thus the relevant information is not just
 `I(rows)` but how that information disintegrates into conditional response
 laws.
+
+## 151. Population regularity can hide an occupancy-created empirical edge
+
+A row law may have zero mean and exact identity second moment while secretly
+mixing many weakly biased orthogonal components.  Population averaging erases
+the latent direction, but a finite square sample has a largest occupancy of
+order `log r/loglog r`; a bias of order
+`sqrt(loglog r/log r)` is therefore amplified to the leading singular scale.
+
+This mechanism survives every deterministic sublinear-rank peel and costs
+only `o(r)` row Renyi-two information.  Hence neither isotropy nor
+subexponential density complexity guarantees a sharp empirical edge.  A
+successful growing-density theory must retain an occupancy/mixture-complexity
+state or permit sample-adaptive compression; population covariance alone
+cannot see the obstruction.

@@ -1269,14 +1269,31 @@ on component row laws whose Renyi-two constants escape every fixed bound;
 alternatively, its dependence must remain irreducible after conditioning on
 every proposed latent state.
 
-The useful next quantitative target is a growth-rate theorem: find the
-largest `K_r->infinity` for which component laws with `K_2<=K_r` still admit
-an `o(r)` pressure comparison, or construct a counted latent family at the
-first failing scale.  Such a theorem must track covariance-peel rank,
-projection tails, transport, and latent mass jointly; an essential-supremum
-divergence on a vanishing set of components is already harmless.
+The exact positive compactness statement is now Theorem 37.17: tightness of
+the random component `D_2` is enough, and fixed-`K` convergence supplies some
+nonconstructive slowly growing window.  A named growth-rate theorem would
+need new quantitative pressure input; it is no longer the selected target.
+
+Theorem 37.16 supplies the first upper obstruction to that growth window.
+At
+
+```math
+\log K_{2,r}=Theta(r\log\log r/\log r)=o(r),
+```
+
+an exactly isotropic Hadamard-cluster law has a super-Bai--Yin edge after
+every deterministic `o(r)`-rank peel.  Therefore no theorem based only on
+subexponential component density and deterministic population peeling can
+work.  The gap is now between the nonconstructive slowly growing window
+guaranteed by fixed-`K` compactness and this explicit occupancy scale.  A
+positive result must give a quantitative smaller window or use pressure
+structure beyond the operator edge.
 
 A mere `Theta(r)` KL calculation, a copied-row spike, or a singular mixture
-without a rigorous pressure direction does not count.  If this class resists
-one focused checkpoint, freeze the conference benchmark: the surviving
-statement is then too close to the unrestricted speed-`r` pressure basin.
+without a rigorous pressure direction does not count.  The conference
+projected-edge benchmark is now frozen.  The live question is whether the
+exact negative-disorder Gibbs law associated with contracted-temperature
+child minimizers has tight conditional component `D_2`, or instead forces a
+fixed mass of non-tight conditional complexity or dependence irreducible
+after every explicit latent-product/row-filtration decomposition.  This must
+be a theorem about that induced law, not another surrogate row fibre.

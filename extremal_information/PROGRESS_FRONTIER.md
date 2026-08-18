@@ -870,3 +870,90 @@ class and risks restating the desired parent optimization.
   one quantitative growth-threshold campaign; absent a theorem or explicit
   favorable family, freeze conference work rather than follow an unbounded
   hierarchy of increasingly singular components.
+
+### Checkpoint 15 — a Renyi--occupancy obstruction bounds the singularity window
+
+- **Strongest new statement:** along Walsh--Hadamard orders, a central row
+  law with `ER=0`, `ERR^T=I`, and
+
+  ```math
+  \log K_{2,r}=(L^2+o(1))r\log\log r/\log r=o(r)
+  ```
+
+  has iid sample edge at least `L sqrt r` after **every deterministic**
+  `o(r)`-rank column peel.  The weak latent bias
+  `L sqrt(loglog r/log r)` is amplified by the maximum occupancy among `r`
+  orthogonal Hadamard clusters.  Any fixed `L>2` falsifies a sharp projected
+  edge under the broad assumption `log K_2=o(r)`.
+- **Adversarial verification:** the exact Renyi formula, identity covariance,
+  balls-in-bins second moment, arbitrary-projection residual count, and
+  uniform subgaussian noise estimate were independently reconstructed.  The
+  result makes no pressure-direction claim and excludes only deterministic
+  peels; both scope limits are explicit.
+- **Previous SML:** locate the first growing component-density scale at which
+  the regular latent-product comparison can fail.
+- **Current SML:** close the gap between the qualitative diagonal window
+  `K_2(r)->infinity` supplied by fixed-`K` compactness and the explicit
+  obstruction at
+  `log K_2=Theta(r loglog r/log r)`, or find a pressure-specific theorem that
+  tolerates the occupancy edge.  A sample-adaptive peel would be a different
+  architecture and must account for its information cost.
+- **Benchmark and target distance:** audited Level 4 random-matrix obstruction
+  inside the conference bridge model, assumption-distance 2.  It does not
+  touch actual child minimizers, produce a favorable basin, or yield Level 6.
+- **Asymptotic movement:** a vague “diverging density” loophole now has a
+  scalable subexponential obstruction scale and an exact mechanism.  This
+  falsifies one proposed extension but does not improve `M_n`, cross-order
+  loss, or the convergence interval.
+- **Decision:** **RESET FOR A SHARP FALSIFIER, THEN FREEZE CONFERENCE EDGE
+  VARIANTS.**  The deterministic projected-edge architecture has a real
+  ceiling.  Future conference work must either control pressure despite the
+  edge, price a sample-adaptive state, or stop; more population-moment peels
+  are not justified.
+
+### Checkpoint 16 — compactness is exact, but no explicit edge window survives
+
+- **Strongest new statements:** for a latent row-product law, tightness of
+  the random component complexity
+
+  ```math
+  Y_r=D_2(\nu_{Z_r,r}\Vert U_r)
+  ```
+
+  is sufficient for vanishing normalized downward shortfall.  More exactly,
+  every threshold `t` gives
+
+  ```math
+  E[(h_beta-f/r)_+]
+  <=epsilon_r(e^t)+h_beta Pr(Y_r>t).
+  ```
+
+  Bounded mean `Y_r` is a checkable sufficient condition.  Fixed-density
+  convergence also produces a nonconstructive diagonal window `b_r->infinity`,
+  but no prescribed divergent rate follows without quantitative input.
+- **Sharp falsifier:** the Hadamard-cluster example lies at
+  `Y_r=Theta(r loglog(r)/log(r))` and destroys the sharp edge after every
+  deterministic cheap peel, despite exact covariance identity.  Thus the
+  desired explicit extension cannot follow from `Y_r=o(r)` plus population
+  moments.  The obstruction has no favorable-pressure direction, so it does
+  not prove that the latent-mixture no-gain conclusion itself fails.
+- **Previous SML:** close the gap between the qualitative diagonal density
+  window and the explicit occupancy obstruction, or prove pressure remains
+  typical despite the edge.
+- **Current SML:** for the exact negative-disorder Gibbs bridge law induced
+  by contracted-temperature child minimizers, prove either tight conditional
+  component `D_2` (which closes the phase) or a fixed mass of non-tight
+  component complexity/irreducible row dependence (the first actual-child
+  structural statement).
+- **Benchmark and target distance:** the compactness theorem and falsifier
+  remain Level 4.  They exactly delimit a proof architecture but do not
+  improve target proximity; actual child minimizers remain untouched.
+- **Asymptotic movement:** the latent sufficient hypothesis weakens from a
+  uniform `K_2` bound to tight random `D_2`, while the proposed explicit
+  `log K_2=o(r)` extension is falsified at a scalable sublinear-information
+  scale.  No `M_n` bound, cross-order loss, or convergence interval changes.
+- **Decision:** **RESET FOR CLASSIFICATION, THEN FREEZE THE SURROGATE.**  This
+  checkpoint supplies both the exact compactness input and a scalable ceiling.
+  It ends conference projected-edge work.  The sole next campaign must test
+  the child-induced bridge law itself; returning to another row fibre or
+  deterministic population peel is a strike by construction.
