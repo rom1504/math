@@ -261,6 +261,10 @@ D_2(f_yU\Vert U)=n\log(1+c^2/n)\le c^2,
 =\log{1+a\over1-a}=O_c(n^{-1/2}).                \tag{FC.15}
 ```
 
+Taking `c` below the fixed actual-factor envelope places this whole family
+inside the same `L^2` and weak-coordinate bounds used in Theorem 37.39;
+optimality of the factors is deliberately not asserted.
+
 If `h=d_H(y,y')`, then
 
 ```math
