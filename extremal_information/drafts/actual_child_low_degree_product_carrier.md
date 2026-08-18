@@ -479,7 +479,9 @@ harmless adjustment when `M=1`).  Since `z_i>=1`, ordinary bounded
 sampling and a union bound estimate every row contribution to fixed
 additive accuracy using a number of samples polynomial in `M`,
 `epsilon^(-1)`, and `log(m/zeta)`.  Summing `m<=N` such errors proves
-item 4.  Completeness is (LDC.24), and soundness is (SM.1)--(SM.2).
+item 4.  Completeness is (LDC.24), and soundness is the exact Gibbs
+variational identity (LDC.22): every feasible carrier gain is bounded by
+the unrestricted product gain.
 Finally, Cauchy--Schwarz and the same evaluation bound prove (LDC.28).
 `square`
 
