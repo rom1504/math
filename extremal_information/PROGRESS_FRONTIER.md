@@ -670,3 +670,52 @@ class and risks restating the desired parent optimization.
   bridge, scalar-gradient, selector, and quartic-constant variants.  The
   next work must classify the exceptional sector or tie the basin theorem to
   actual pressure-minimizing children.
+
+### Checkpoint 11 — a finite phase must be diffuse, nonlinear, and irregular
+
+- **Strongest new statement:** for any bridge law `q`, sequential
+  hybridization and Pinsker give
+
+  ```math
+  |E_qf-E_Uf|\le\beta\sqrt{D(q\|U)s_*(q)/r},
+  ```
+
+  where `s_*(q)` is the minimum squared `l_1/l_2` ratio of the chain-rule
+  conditional entropy increments.  Hence every `D(q||U)=O(r)` law with a
+  fixed linear pressure gain has `s_*(q)=Theta(r^2)`.  This applies directly
+  to the Gibbs bridge law of any genuine fixed-disorder-temperature phase.
+- **Scalable candidate eliminations:** (i) every affine parity fibre of
+  codimension `O(r)` is a uniform small-repair image and retains pressure
+  `h_beta r+o(r)`; (ii) every independent weak template bias with
+  `sum m_e^2=O(r)` has mean pressure at least `h_beta r-o(r)`, by an
+  `O(sqrt r)` Lindeberg comparison plus convex evenness; its exact
+  speed-`r` type shell has only an `exp(-Omega(r))` low fraction; (iii) a
+  union over all row/column switches preserves the regular-sector
+  `r^2` tail.  The exact rowwise antipodal halfcube of size `2^(r^2-r)`
+  therefore has the typical pressure rate despite its critical-scale naive
+  repair.
+- **Sharp falsifier:** finitely many twin rows create an exact speed-`r`
+  operator-irregular stratum but cannot change conditional mean pressure by
+  `Theta(r)`.  The same singular spike can be planted pointwise into the
+  quadratically rare universal-double family without destroying its low
+  pressure.  Spectral localization has no pressure direction by itself.
+- **Previous SML:** classify an arbitrary deeply operator/power-irregular
+  target-reaching bridge family.
+- **Current SML:** construct or exclude a **nonlinear conditionally diffuse
+  operator-irregular law** with `D=O(r)`, `s_*=Theta(r^2)`, and a fixed
+  pressure gain.  Sparse/affine information, independent weak templates,
+  and adaptive gauge selectors are no longer candidates.  A rowwise
+  sign-invariant magnitude fibre is the first concrete surviving test.
+- **Benchmark and target distance:** these are audited Level-4 theorems on
+  conference children.  The effective-support inequality is general for
+  bridge pressure, but its center and phase interpretation use the
+  conference benchmark.  There is no Level-6 transfer or near-minimizer
+  assumption improvement.
+- **Asymptotic movement:** the structured SML moves from an unclassified
+  `exp(-O(r))` irregular set to a diffuse-dependent phase with quadratic
+  effective support.  No bound on `M_n`, cross-order loss, or convergence
+  interval changes.
+- **Decision:** **ORTHOGONAL-BRANCH RESET.**  One more focused test of the
+  nonlinear diffuse class is justified.  A result that merely finds another
+  speed-`r` set, operator spike, or scalar moment is a strike; it must prove
+  a pressure law or a general dependent-tilt inequality.

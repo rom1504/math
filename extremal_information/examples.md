@@ -3460,7 +3460,7 @@ f_-(B^1)-f_-(B^0)={\beta c^2\over\sqrt2}r+o(r),
 
 For a suitable fixed `c`, both bridges lie below the typical conference
 pressure by a fixed linear amount.  Convexity forces
-`||nabla f_-(B^1)||_F=Omega(r^(1/4))`.  This is a scalable exact-sign
+`||gradient f_-(B^1)||_F=Omega(r^(1/4))`.  This is a scalable exact-sign
 counterexample to the inference “low scalar pressure implies
 dimension-free response,” while remaining consistent with a
 superlinear-speed lower tail.
@@ -3495,3 +3495,50 @@ prefix.  After truncating the few high prefix-Gram eigenvalues, each such
 row costs `exp(-Omega(r))`; their adaptive product costs
 `exp(-Omega(r^2))`.  This converts what looks like one global moment
 constraint into an extensive sequence of conditional information charges.
+
+## Example 179: twin rows separate operator irregularity from information support
+
+Force `k` specified bridge rows to be identical.  This event has exact
+probability `2^(-(k-1)r)` and forces
+
+```math
+\|B\|_{op}\ge\sqrt{kr},
+\qquad
+\left\|{\beta S\over\sqrt{2r}}\right\|_{op}
+\ge\beta\sqrt{k/2}.
+```
+
+For fixed sufficiently large `k` it is therefore an exact speed-`r`,
+operator-irregular stratum.  Yet its conditional mean pressure is
+`h_beta r+O(sqrt r)`, because all information is supported on only `kr`
+coordinates.  Conversely, overwrite `k` rows of the universal-double
+bridge by one common row.  The resulting bridge has the same singular
+certificate and retains pressure `tau_beta r+O(sqrt r)`, but the whole
+family remains quadratically rare in the ambient bridge cube.
+
+The same spectral symptom is compatible with both typical and low pressure.
+What distinguishes a possible speed-`r` phase is not localization itself,
+but whether a diffuse conditional-information law can make low pressure
+typical.
+
+## Example 180: a nonlinear row halfcube has the right entropy but the wrong pressure
+
+For fixed sign vectors `u,v`, select from every antipodal row pair
+`{R,-R}` the member whose signed majority points toward `u_i v`, with an
+odd deterministic tie rule.  Requiring all `r` rows to use their selected
+halves gives exactly
+
+```math
+2^{r^2-r}
+```
+
+bridges.  Its naive entrywise majority repair can use
+`Theta(r^(3/2))` flips, so the small-repair theorem does not apply.
+
+Nevertheless the canonicalization is exactly an adaptive row switch
+`B=D_{s(W)}W` of a uniform bridge.  Operator norm is unchanged by every
+switch, and the regular-sector `exp(-Omega(r^2))` pressure bound survives a
+union over all `2^r` switch labels.  Hence the uniform halfcube pressure is
+`h_beta r+o(r)`, not the smaller child target.  This closes a genuinely
+nonlinear exact speed-`r` candidate without confusing its gauge label with
+a thermodynamic phase.

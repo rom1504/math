@@ -113,7 +113,7 @@ and scalar tail-to-pressure closure are now rejected.
 | R1 collective synchronization | 5 for balance/atlas | nonlinear cross-chart congruence tied to near-minimality | atlas direct state `O(n^(4/3))` bits | within chart `O(n^(4/3))`; fixed-ratio physical loss unknown | all orders structurally | reset for atlas, then two transfer strikes; frozen |
 | R2 contextual incompressibility | 5 | none for fixed-reference language | exactly `Theta(n)` bits on every bounded-cap switching orbit | gap and parent cap `Theta(n^(3/2))` | every large order | negative arrow complete; then scope-corrected by gauge quotient |
 | R3 response replacement | 3/4 | all-order gauge-invariant representative with `o(n^(3/2))` loss, defined without target-order optimum | unknown | target `o(n^(3/2))` | must be all large orders | prior action/weighted recovery strike; no new state |
-| adversarial pressure | 4 on the conference benchmark | classify the deeply operator/power-irregular target basin, then transfer the resulting basin law to contracted-temperature child minimizers | scalar pressure plus exact quartic coordinate on the regular sector; no closed full state | target `O(N^(1-delta))` pressure defect | Paley sequence now; ultimately comparable splits at all large orders | regular sector and every fixed Gram/quartic improvement have quadratic entropy cost; exceptional-sector campaign active |
+| adversarial pressure | 4 on the conference benchmark | construct or exclude a nonlinear conditionally diffuse operator-irregular law with `D=O(r)`, `s_*=Theta(r^2)`, and fixed pressure gain; then transfer its law to contracted-temperature child minimizers | scalar pressure, quartic coordinate, and conditional-information support; no closed full state | target `O(N^(1-delta))` pressure defect | Paley sequence now; ultimately comparable splits at all large orders | regular, fixed Gram/quartic, affine, weak-template, localized-information, and adaptive-gauge mechanisms excluded; dependent diffuse sector active |
 | presented rare-event state | 3 | deterministic rooted synchronization under adversarial dense futures | finite only in scoped spike/marked-phase models | exact there; uncontrolled for Boolean bridges | scoped models only | keep warm, no promotion |
 
 The complete checkpoint history and scored implication graph are in
@@ -161,6 +161,15 @@ The complete checkpoint history and scored implication graph are in
   difference between the two order-eight minimizer classes at query order
   three (`[12,15,17,17]` versus `[12,15,19,19]`), independently reproduced
   by a symmetry-free MILP.  Its gap is two and carries no asymptotic claim.
+- The remaining bridge phase was narrowed information-theoretically.  Any
+  entropy-`O(r)` law gaining `Theta(r)` pressure must have quadratic
+  effective conditional-information support `s_*=Theta(r^2)`.  This applies
+  to the actual Gibbs bridge tilt, not only designed candidate laws.
+  Codimension-`O(r)` affine fibres, independent weak templates and exact
+  type shells, finitely supported row information, and adaptive switching
+  selectors all retain the typical leading pressure.  In particular, the
+  nonlinear row-antipodal halfcube has exactly `2^(r^2-r)` members and still
+  has rate `h_beta`.
 
 No rigorous bound on `M_n`, `o(n^(3/2))` cross-order loss, Level-6 transfer,
 or convergence interval improved.
@@ -177,9 +186,12 @@ Presented rare-event states stay warm but unpromoted.  Adversarial
 statistical mechanics is now the sole focused active branch: its conference
 benchmark has an exact phase criterion, a quadratic-speed regular-sector
 theorem, an edit-collar localization, and a gauge-invariant quartic entropy
-barrier.  This is a Level-4 reset, not promotion to the original problem;
-the remaining exceptional-sector statement is conference-specific and has
-not been tied to pressure-minimizing children.
+barrier.  Its second focused checkpoint also proves that a finite phase must
+be conditionally diffuse and nonlinear, rather than affine, independently
+biased, localized, or gauge-selected.  This is a Level-4 reset, not
+promotion to the original problem; the remaining dependent exceptional-
+sector statement is conference-specific and has not been tied to
+pressure-minimizing children.
 
 ## 7. Best current route toward `M_n`
 
@@ -209,7 +221,10 @@ contracted-temperature child minimizers; conference examples alone do not
 suffice.  The conference analysis now shows exactly where such a positive
 law could hide: beyond an `r^(3/2)` edit collar of the operator-regular set,
 outside the power-regular pressure-to-quartic reduction, and without any
-fixed leading improvement of the typical Gram/quartic coordinates.
+fixed leading improvement of the typical Gram/quartic coordinates.  It must
+also spread `O(r)` conditional information over `Theta(r^2)` coordinates;
+sparse/affine support, weak product templates, and adaptive gauges are
+rigorously insufficient.
 
 The old `L_replace` chain is not recommended until it names a concrete
 gauge-invariant state.  In its current form it remains too close to an
@@ -217,27 +232,31 @@ all-order restatement of the desired transfer.
 
 ## 8. Exactly one next 3–6 hour campaign
 
-Classify the deeply irregular support edge of exact-sign conference bridge
-pressure.  Retain the gauge quotient and study
+Resolve the first nonlinear diffuse exact-sign conference bridge class:
+rowwise sign-invariant magnitude fibres.  For a fixed `v`, impose one
+constant-probability constraint per row on
+`|<B_{i,*},v>|`, chosen so the full family has probability `exp(-Theta(r))`.
+Retain the gauge quotient and study
 
 ```math
 I_{A,C,\beta}(\ell)
 =-\log\Pr_B\{L_{A,C,B}(\beta)\le N\ell\}.
 ```
 
-The regular, scalar-gradient, and fixed-quartic sectors are now closed and
-must not be repeated.  Either:
+The regular, scalar-gradient, fixed-quartic, affine, independent-template,
+and switching-cross-section sectors are now closed and must not be repeated.
+Either:
 
-1. construct and count an `I=O(r)` family at the same-temperature target,
-   with a rigorous pressure upper bound showing how higher cumulants cancel;
-   or
-2. prove that every deeply operator/power-irregular target bridge pays an
-   explicit `omega(r)` information charge, completing the structured
-   superexponential lower tail.
+1. prove this magnitude fibre has pressure rate `h_beta`, preferably by a
+   rowwise invariance principle or uniform quenched/annealed comparison that
+   covers a broader dependent diffuse class; or
+2. exhibit parameters for which its pressure is at most
+   `(h_beta-eta)r+o(r)`, with an exact entropy count and a certificate not
+   defined by thresholding pressure.
 
-Do not append moments one at a time or optimize another scalar tilt.  The
-output must be a counted basin theorem, a superlinear entropy obstruction
-on the exceptional sector, or a finite/compact joint spin--disorder state
-with a uniform pressure remainder.  Only after the conference dichotomy is
-resolved should the next campaign test the same state on actual
-contracted-temperature minimizers.
+Do not stop at its covariance, singular value, or finite numerics.  The
+output must be a pressure theorem for the fibre or a general dependent-tilt
+inequality.  Only after that discriminating test should the campaign either
+generalize the surviving joint state or stop the conference branch and test
+the conditional-information law on actual contracted-temperature
+minimizers.

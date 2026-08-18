@@ -1194,3 +1194,31 @@ Equivalently, isolate a finite or compact gauge-invariant support-edge state
 whose low-pressure fibres are superexponentially small, or construct a
 linear-entropy higher-cumulant cancellation showing that no such bounded
 state can suffice.
+
+## 26. Can a nonlinear diffuse bridge law make low pressure typical?
+
+Theorems 37.9--37.10 exclude concentrated conditional information, every
+`O(r)`-codimensional affine fibre with a small repair, independent weak
+template tilts, exact finite-template type shells, and adaptive switching
+cross-sections as conference pressure basins.  The remaining candidate must
+simultaneously have:
+
+```text
+D(q_r||U_r)=O(r),
+s_*(q_r)=Theta(r^2),
+operator-irregular mass bounded away from zero,
+and E_q f <= (h_beta-eta)r.
+```
+
+Construct such a law with a pressure certificate not defined by thresholding
+`f`, or prove it cannot exist.  The first concrete test is a rowwise
+sign-invariant magnitude fibre, for example one fixed-probability constraint
+per row on `|<B_i,v>|`.  It has the right entropy and is not a switching
+cross-section; its dependence changes one population-covariance direction
+while leaving most local moments typical.
+
+A useful negative theorem should cover a natural class of dependent diffuse
+laws—perhaps through a rowwise invariance principle, a convex-order
+comparison, or a uniform quenched/annealed estimate.  A bounded-difference
+tail inside the conditioned class stops at speed `r` and does not answer the
+question.

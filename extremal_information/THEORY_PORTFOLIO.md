@@ -62,10 +62,17 @@ one of:
   gradient; the same strict sublevel contains sign bridges forcing
   `Omega(r^(1/4))` Frobenius response.  The exceptional sector cannot be
   removed by another convex-extension argument.
-- **Live target:** classify target-reaching bridges which are deeply
-  operator/power irregular and evade every fixed macroscopic Gram/quartic
-  improvement through higher-order cancellation.  Construct a speed-`r`
-  basin there or prove it superexponentially rare.
+- **New information-support law:** every entropy-`O(r)` bridge law with a
+  fixed linear pressure gain must spread its chain-rule information over
+  `Theta(r^2)` coordinates.  Affine parity fibres, independent weak
+  templates and their exact type shells, localized-row information, and
+  adaptive switching cross-sections all fail as whole basins.  The last
+  claim includes the exact `2^(r^2-r)` row-antipodal halfcube.
+- **Live target:** classify a nonlinear, conditionally diffuse,
+  operator/power-irregular law which evades every fixed macroscopic
+  Gram/quartic improvement through higher-order cancellation.  A rowwise
+  sign-invariant magnitude fibre is the first concrete test; it must come
+  with a pressure theorem, not another entropy or norm calculation.
 - **Promotion status:** promoted to one focused active benchmark campaign,
   not to a convergence architecture.  Full promotion still requires the
   same result for contracted-temperature child minimizers in the exact

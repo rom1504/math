@@ -17262,3 +17262,120 @@ Proof and independent audit are in
 [`drafts/frame_potential_entropy_barrier.md`](drafts/frame_potential_entropy_barrier.md)
 and
 [`audits/frame_potential_entropy_barrier_independent_audit.md`](audits/frame_potential_entropy_barrier_independent_audit.md).
+
+### Theorem 37.9 (a linear-entropy pressure phase must be conditionally diffuse)
+
+Order the `r^2` bridge signs arbitrarily.  For a bridge law `q`, let `d_j`
+be the expected conditional relative entropy of coordinate `j` given its
+predecessors, relative to a fair sign.  Define
+
+```math
+s_*(q)=\inf_\pi
+ {\left(\sum_j\sqrt{d_j^\pi}\right)^2\over D(q\|U_r)},
+```
+
+with `s_*(U_r)=0`.  For nonuniform `q`, one always has
+`1<=s_*(q)<=r^2`.  Conference bridge pressure satisfies the exact transport
+refinement
+
+```math
+\boxed{
+ |\mathbb E_qf-\mathbb E_{U_r}f|
+ \le\beta\sqrt{{D(q\|U_r)s_*(q)\over r}}.}             \tag{37.30}
+```
+
+This follows by sequentially replacing the conditional sign laws, applying
+Pinsker at each coordinate, and using the one-bit pressure oscillation
+`2beta/sqrt(2r)`.
+
+Consequently, if `D(q||U_r)<=Cr` and
+
+```math
+\mathbb E_qf\le(h_\beta-\eta)r,
+```
+
+then
+
+```math
+\boxed{
+s_*(q)\ge\left({\eta^2\over\beta^2C}-o(1)\right)r^2.} \tag{37.31}
+```
+
+In particular, a favorable event of probability `exp(-O(r))`, conditioned
+as a bridge law, must distribute its conditional information over a
+positive fraction of all `r^2` coordinates.  The same conclusion applies
+to an actual finite negative-disorder-temperature phase: for
+`q_lambda proportional e^(-lambda f)U_r`, concavity of
+`-log E exp(-lambda f)` gives both `D(q_lambda||U_r)=O(r)` and a fixed
+linear gain in `E_q f` whenever its soft minimum has one.
+
+This excludes localized information, not localized singular vectors
+pointwise.  A speed-`r` event forcing finitely many twin rows is
+operator-irregular but has typical pressure in conditional mean.  Conversely
+the same twin-row spike can be overwritten into the quadratically rare
+universal-double bridge while preserving its low pressure up to `O(sqrt r)`.
+Thus singular localization alone has neither pressure direction; the
+remaining candidate is a diffuse dependent tilt.
+
+Proof and independent audit are in
+[`drafts/conference_operator_irregular_localization.md`](drafts/conference_operator_irregular_localization.md)
+and
+[`audits/conference_operator_irregular_localization_independent_audit.md`](audits/conference_operator_irregular_localization_independent_audit.md).
+
+### Theorem 37.10 (elementary speed-`r` conference basin mechanisms fail)
+
+Three broad bridge families of ambient probability `exp(-O(r))` retain the
+typical conference pressure rate.
+
+1. **Small-repair images.**  If the uniform law on a family `F_r` is the
+   pushforward of a uniform bridge by a map changing
+   `o(r^(3/2))` signs, then a uniform member of `F_r` has
+   `f/r -> h_beta` in probability.  Every affine parity fibre of
+   codimension `O(r)` admits such a retraction, including prescribed row and
+   column products.
+2. **Weak independent templates.**  For any product bridge law with means
+
+   ```math
+   \sum_e m_e^2=O(r),
+   ```
+
+   ```math
+   \mathbb E_qf\ge h_\beta r-o(r),
+   \qquad
+   q\{f\le(h_\beta-\eta)r\}\le e^{-c_{\beta,\eta}r}.    \tag{37.32}
+   ```
+
+   The proof moment-matches each biased sign to
+   `m_e+sqrt(1-m_e^2)V_e`, uses a third-derivative Lindeberg replacement of
+   total cost `O(sqrt r)`, and then uses convexity and global bridge-evenness
+   to show that translating the centered noise cannot lower its expected
+   pressure.  Conditioning gives the same conclusion for exact rank-one,
+   block, or arbitrary finite-template type shells of size
+   `2^(r^2)exp(-Theta(r))`.
+3. **Adaptive switching sections.**  On the common operator-regular event,
+   the quadratic lower-tail theorem is uniform over all
+   `2^(2r-1)` row/column bridge switches.  Therefore any bridge-dependent
+   switching selector has
+
+   ```math
+   \Pr\{f(g(B)\mathbin\cdot B)\le(h_\beta-\eta)r\}
+   \le e^{-c_0r}+e^{-c_1r^2}.                           \tag{37.33}
+   ```
+
+   In particular, the exact rowwise antipodal halfcube has cardinality
+   `2^(r^2-r)` and conditioned pressure `f/r -> h_beta` in probability and
+   in `L^1`, despite its critical-scale naive majority repair.
+
+These results do not prove the full superexponential pressure tail: each
+class may still contain an `exp(-Theta(r))` low subset inside its own
+operator-irregular remainder.  They do prove that a favorable speed-`r`
+basin cannot be explained by sparse repair, affine parity, independent weak
+bias, a finite template shell, or adaptive gauge selection as such.  In
+combination with Theorem 37.9, the live candidate is a nonlinear,
+conditionally diffuse, operator-irregular law with an independent pressure
+certificate.
+
+Proofs and audits are in
+[`drafts/conference_speed_r_basin_candidate_audit.md`](drafts/conference_speed_r_basin_candidate_audit.md),
+[`drafts/conference_row_halfcube_pressure.md`](drafts/conference_row_halfcube_pressure.md),
+and their matching files in [`audits/`](audits/).

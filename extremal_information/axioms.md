@@ -2602,3 +2602,37 @@ either second-order row orthogonality or the fourth pressure coordinate.
 If a speed-`r` favorable pressure basin exists, it must exploit a genuinely
 higher-order, power-irregular cancellation rather than an inexpensive
 macroscopic frame regularization.
+
+## 144. Entropy amount and entropy support are separate phase resources
+
+A bridge law with `O(r)` relative entropy is cheap enough, in principle, to
+change an extensive pressure.  It cannot do so when that information is
+conditionally concentrated on `o(r^2)` coordinates.  Sequential hybrid
+transport measures the relevant support by the squared `l_1/l_2` ratio of
+the chain-rule entropy increments and forces this effective support to be
+`Theta(r^2)` for every fixed linear pressure gain.
+
+Thus a possible finite disorder-temperature phase must be both cheap and
+diffuse: roughly `1/r` information per bridge bit across a positive fraction
+of the dense interface, or a dependent analogue with the same conditional
+support.  Operator localization is not the opposite notion.  A localized
+singular spike can be produced by diffuse weak information, while a
+pointwise low-pressure bridge can carry a planted localized spike.  The
+phase variable must couple conditional information geometry to pressure,
+not merely count entropy or singular directions.
+
+## 145. A cheap dense constraint is not automatically an extremal basin
+
+Several qualitatively different families can remove only `O(r)` bits from a
+dense bridge cube while leaving its leading pressure unchanged: affine
+parity fibres with a small repair, independent `r^(-1/2)` template biases,
+their exact type shells, and nonlinear switching cross-sections.  The
+mechanisms are different—edit continuity, convex-even Lindeberg comparison,
+and orbit-uniform quadratic concentration—but their conclusion is the same.
+
+Therefore cardinality `2^(r^2)exp(-O(r))`, or even a visibly nonuniform
+operator profile, is not evidence for a favorable phase.  A useful basin
+description must certify pressure before selecting on pressure itself.  In
+the remaining conference problem that certificate must encode nonlinear
+dependence spread across the dense interface and must act specifically on
+the operator-irregular remainder.
