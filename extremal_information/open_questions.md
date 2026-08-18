@@ -2046,3 +2046,21 @@ Conversely, the BSC-smoothed common-phase example shows that even the proved
 macroscopic conditional min-entropy property allows a linear subgaussian
 proxy of order the child size.  A positive theorem must use more than either
 spread or pair correlations.
+
+The strongest next target is weaker than either global PT.1 or full sector
+subgaussianity.  Let `M_B=E(Q|B)` and let `a_beta>0` be the high-overlap
+constant supplied by Theorem 37.56.  Prove, only on the actual negative-path
+posterior image,
+
+```math
+\bar q_N\left\{B:\ \|M_B\|_F^2\ge a_\beta mn/2,
+\ D(\mu_B\Vert\mu_N)
+ <c_\beta{\|M_B\|_F^2\over\sqrt{mn}}-o(N)\right\}=o(1).     \tag{OQ.1}
+```
+
+Call this `L_reachable-barycentric-transport`.  It immediately forces
+`log K_e=Omega(N)` on fixed positive path mass because `D_2>=D` and GC.3.
+Its exact falsifier is positive path mass with macroscopic `M_B` but
+`D(mu_B||mu_N)=o(N)`; that outcome would identify a subexponential coherent
+phase family for the rare-event/renormalization branch.  This target avoids
+paying sectorwise MGF directions never reached by the bridge channel.

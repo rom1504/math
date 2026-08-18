@@ -2575,6 +2575,18 @@ class and risks restating the desired parent optimization.
   exceeded on fixed positive actual path mass and identify the responsible
   child phase.  The transport-gap modulus is one child-only sufficient
   falsifier, but its operational complexity remains unproved.
+- **Selected next theorem inside that SML:** prove reachable barycentric
+  transport only on the actual high-overlap posterior image:
+
+  ```math
+  D(\mu_B\Vert\mu_N)
+  \ge c_\beta\|M_B\|_F^2/\sqrt{mn}-o(N)
+  ```
+
+  outside `o(1)` path mass.  This is strictly weaker than global PT.1 and
+  full sector subgaussianity.  Its falsifier—fixed path mass with
+  `||M_B||_F^2=Theta(mn)` but posterior KL `o(N)`—would itself identify the
+  subexponential coherent phase required by renormalization.
 - **Exact recurrence consequence:** the only raw implication is still
 
   ```math
