@@ -380,6 +380,74 @@ Theorems RA.1 and RA.2 expose two independent non-uniformity barriers.
    tensor without a cluster/cumulant theorem would be an invalid
    high-temperature extrapolation.
 
+The first barrier is not merely a gap in a Taylor proof based only on
+coordinate oscillation and central symmetry.  Those two elementary facts do
+not exclude it; convexity of the actual log-partition is an additional
+structure, treated separately in
+`actual_child_spectral_high_temperature_closure.md`.
+
+**Proposition RA.4 (a rare-well ceiling for infinitesimal geometry).**  There
+are centrally symmetric functions `F_N` on `N^2` fair bits such that
+
+```math
+|F_N(b)-F_N(b^{(e)})|\le {C\over\sqrt N},
+\qquad
+\operatorname{Var}(F_N)=e^{-\Omega(N)},               \tag{RA.25a}
+```
+
+but for a fixed `lambda>0`,
+
+```math
+\mathbb E F_N
+-\left[-{1\over\lambda}\log\mathbb E e^{-\lambda F_N}\right]
+\ge cN.                                                \tag{RA.26a}
+```
+
+Thus bounded bridge-coordinate oscillation, global sign symmetry, and the
+entire infinitesimal ANOVA split cannot by themselves control the fixed
+negative moment.
+
+*Proof.*  Let `S=sum_(e=1)^(N^2)b_e` and, for fixed positive constants
+`a,gamma,eta`, put
+
+```math
+F_N(b)=-\min\left\{\eta N,
+ {\gamma\over\sqrt N}(|S|-aN^{3/2})_+\right\}.        \tag{RA.27a}
+```
+
+This is centrally symmetric and has flip oscillation at most
+`2gamma/sqrt(N)`.  Hoeffding's inequality gives
+
+```math
+\Pr(F_N\ne0)\le2e^{-a^2N/2},
+```
+
+so its variance is exponentially small.  On the event
+
+```math
+|S|\ge(a+\eta/\gamma)N^{3/2}
+```
+
+one has `F_N=-eta N`.  The elementary Stirling estimate for this binomial
+moderate-deviation event is
+
+```math
+\Pr\{|S|\ge c_0N^{3/2}\}
+\ge\exp\{-(c_0^2/2+o(1))N\},
+\qquad c_0=a+\eta/\gamma.                             \tag{RA.28a}
+```
+
+Consequently the negative log moment has linear gain whenever
+`lambda eta>c_0^2/2`.  Constants satisfying this strict inequality may be
+fixed in advance. `square`
+
+Proposition RA.4 is deliberately **not** an actual-child construction.  Its
+role is a sharp ceiling: any uniform continuation of RA.1 must use a special
+property of optimized-child log-partitions, not the generic cube facts in
+(AC.9), central symmetry, or low-order information geometry.  In particular,
+`F_N` is not asserted to be convex, so the proposition does not obstruct a
+proof that makes essential use of log-partition convexity.
+
 There is also an optimizer-information mismatch.  The singleton child
 minimality inequality (AC.33) controls signed, `tau`-odd correlations
 

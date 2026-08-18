@@ -129,3 +129,70 @@ RA.17 is a genuine actual-child, low-order nonradial statistic, but it does
 not yet narrow the fixed-tilt SML.  Such a reset would require a uniform
 cluster/cumulant theorem or a direct physical-scale bound on
 `sigma_cross^2(L_t)`.  The draft makes this limitation explicit.
+
+## 6. Audit of the physical mixed-response identity (RA.3)
+
+**Verdict: PASS.**  Let `R_i` denote conditional expectation over bridge row
+`i` and write the independent-replacement difference as `D_i=I-R_i` on the
+enlarged probability space containing the original and replacement row.
+For a row-ANOVA component `L_S`,
+
+```math
+\mathbb E(D_iD_kL_S)^2
+=4\|L_S\|_2^2\mathbf 1_{\{i,k\}\subseteq S}.
+```
+
+Each replacement difference contributes a factor two to the squared norm,
+so the factor `1/4` in (RA.22a) is correct.  Summing over `i<k` gives
+`sum_S binom(|S|,2)||L_S||_2^2`; hence both constants in (RA.23a) are exact.
+
+For the interpolation
+`B_(s,v)=B^(ik)+s(R_i-R_i')+v(R_k-R_k')`, differentiation of the parent
+log-partition gives
+
+```math
+\partial_sL=t\,\mathbb E_{\nu_{s,v}}Z_i,
+\qquad
+\partial_v\partial_sL
+=t^2\operatorname{Cov}_{\nu_{s,v}}(Z_i,Z_k).
+```
+
+The orientation variable is already included in `Z_i,Z_k`; there is no
+additional sign or factor two.  The two-dimensional fundamental theorem of
+calculus has the same corner signs as `square_(ik)L`, so (RA.24a) is also
+correct.  The draft correctly warns that the covariance is a parent
+interpolation quantity and that `J_2` overcounts ANOVA order `s` by
+`binom(s,2)`.
+
+## 7. Audit of the rare-well ceiling (RA.4)
+
+**Verdict: PASS, with the stated asymptotic interpretation.**  A bit flip
+changes `S` by two and therefore changes (RA.27a) by at most
+`2 gamma/sqrt(N)`.  Since `|F_N|<=eta N` and
+
+```math
+\Pr\{|S|>aN^{3/2}\}\le 2e^{-a^2N/2},
+```
+
+one has `Var(F_N)<=eta^2N^2 2e^{-a^2N/2}=e^{-Omega(N)}` (after absorbing the
+polynomial prefactor).  For fixed `c_0`, the binomial moderate-deviation
+estimate at threshold `c_0N^(3/2)` is
+
+```math
+\log\Pr\{|S|\ge c_0N^{3/2}\}
+=-(c_0^2/2+o(1))N;
+```
+
+this is within the moderate-deviation regime because the threshold divided
+by the number `N^2` of bits tends to zero.  Therefore
+
+```math
+\mathbb EF_N+{1\over\lambda}\log\mathbb Ee^{-\lambda F_N}
+\ge\left(\eta-{c_0^2\over2\lambda}-o(1)\right)N,
+```
+
+and the condition `lambda eta>c_0^2/2` is exactly the positive-gain
+condition.  Such fixed positive constants exist (take `a` small and
+`gamma` large relative to `eta`).  This is a method-specific ceiling only:
+the construction is not asserted to be a child-induced log-partition, as
+the draft explicitly records.
