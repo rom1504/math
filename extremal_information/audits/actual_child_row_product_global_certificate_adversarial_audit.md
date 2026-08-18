@@ -6,18 +6,16 @@
 - [`experiments/actual_child_row_product_certificate.py`](../experiments/actual_child_row_product_certificate.py)
 - [`../../computations/results/actual_child_row_product_certificate.json`](../../computations/results/actual_child_row_product_certificate.json)
 
-**Verdict:** **analytic PASS; numerical certificate PASS modulo one small
-interval-hardening requirement.**  GC.1 has the correct constant four and
-the a posteriori interval has the correct sign and inverse Hessian.  KL data
+**Verdict:** **PASS.**  GC.1 has the correct constant four and the a
+posteriori interval has the correct sign and inverse Hessian.  KL data
 processing is in the required direction.  The exact N=8 twin reduction and
-the N=9 uniform-global argument are valid.  A clean rerun reproduced every
-reported value except wall-clock fields.  However, the N=8 branch-and-bound
-calls the platform `math.log` for entropy and declares a fixed `1e-12`
-subtraction to be an outward certificate.  Python does not specify a formal
-error bound for the system `libm` implementation.  Replace those entropy
-evaluations (and the N=9 `log(2)` endpoint) by cached `mpmath.iv` evaluations,
-or record and prove an explicit `libm` error assumption, before calling the
-floating certificate fully rigorous.
+the N=9 uniform-global argument are valid.  The implementation now encloses
+all transcendental quantities used in the certificate with `mpmath.iv`,
+including binary entropy at exact dyadic subdivision endpoints, `log(2)`,
+the child-minimum comparisons, negative-moment soft pressure, and the
+same-temperature target.  A clean hardened rerun reproduced every reported
+field except wall-clock values and certified the N=8 target excess lower
+bound `0.19973600675473155`.
 
 ## 1. GC.1 constants and a posteriori bound
 
@@ -87,12 +85,13 @@ Global complement symmetry then reduces to `u,v in [0,1]`.  Equation
 On a nonnegative box, `p log p+(1-p)log(1-p)` is increasing with the mean,
 so evaluating it at the point closest to zero is a valid lower bound.  The
 interval choices for the negative `J,k` terms and positive `K` term are also
-in the correct directions.  The only rigor issue is numerical enclosure of
-that entropy value: ordinary `math.log` plus an asserted safety subtraction
-is excellent reproducible numerical evidence, but is not a source-level
-outward interval proof without a stated `libm` guarantee.  Cached interval
-entropy at dyadic endpoints would repair this without changing the
-mathematics or the comfortably separated bound `1.075`.
+in the correct directions.  The hardened routine reconstructs each binary64
+subdivision endpoint by `as_integer_ratio` and evaluates its entropy using
+outward `mpmath.iv` arithmetic.  The remaining elementary binary64
+accumulation is explicitly bounded by fewer than 64 operations of magnitude
+below 16, while the `1e-12` downward safety margin exceeds the resulting
+worst-case roundoff bound by more than a factor four.  Thus the reported
+branch-and-bound lower bound `1.075` is a valid outward certificate.
 
 ## 4. N=9 uniform-global claim
 
@@ -103,9 +102,9 @@ coordinate Gibbs fixed point.  The coarse rectangle matrix is nonnegative
 and symmetric; its certified maximum row sum bounds its spectral radius.
 The reported `.571` and `1.266` margins are far below four, so GC.1 proves
 the uniform product is the unique global minimizer.  The value is then
-`-a_0-4log 2`, as used in the result file.  For formal outward endpoints,
-compute `log 2` with the same interval package rather than applying one
-`nextafter` to an unspecified-libm result.
+`-a_0-4log 2`, as used in the result file.  The hardened implementation
+evaluates `log 2` by outward `mpmath.iv` arithmetic, so this endpoint is also
+formally enclosed.
 
 ## 5. Reproduction and scope
 
@@ -117,9 +116,9 @@ actual_child_row_product_certificate.py
 ```
 
 to a file under `/home/math/quadra/tmp` reproduced all probability,
-coefficient, rectangle, branch-and-bound, and projection fields exactly;
-only the recorded wall times differed.  The full-alphabet rectangle spectral
-radii are correctly labelled floating falsification diagnostics, not proof
+coefficient, rectangle, branch-and-bound, projection, child-minimality,
+soft-pressure, target, and target-excess fields exactly; only the recorded
+wall times differed.  The full-alphabet rectangle spectral radii are
+correctly labelled floating falsification diagnostics, not proof
 certificates.  The finite lower bounds are genuine actual-child dependence
-witnesses once the small entropy-enclosure issue above is hardened; they do
-not assert extensive asymptotic dependence.
+witnesses; they do not assert extensive asymptotic dependence.

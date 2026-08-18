@@ -54,6 +54,79 @@ product of its row marginals.  In particular `E_(Pi_u)h_u` is the forward
 row total correlation, although the measure relevant below is `r_u`, not
 `Pi_u`.
 
+The row-erased objects simplify further for the actual child prior.  Define
+the one-sided child partition functions
+
+```math
+Z_A^s(t)=2^{-m}\sum_xe^{stH_A(x)},
+\qquad Z_D^s(t)=2^{-n}\sum_ye^{stH_D(y)},
+\qquad s\in\{\pm1\}.                                 \tag{CR.4a}
+```
+
+**Proposition CR.0 (all erased rows are one child channel).**  For fixed
+orientation `epsilon`, every forward row marginal `p_(i,u)` is the same
+likelihood `p_(row,u)`.  Its planted row prior is
+
+```math
+\mu_{\rm row}^{(\epsilon)}
+=\sum_{s=\pm1}\pi_s^{(\epsilon)}\mu_{D,\epsilon s},
+\qquad
+\pi_s^{(\epsilon)}
+={Z_A^s(t)Z_D^{\epsilon s}(t)
+  \over\sum_{a=\pm1}Z_A^a(t)Z_D^{\epsilon a}(t)},    \tag{CR.4b}
+```
+
+where `mu_(D,a)(y)` is proportional to `e^(atH_D(y))`.  Explicitly,
+
+```math
+p_{\rm row,u}(b)
+=\mathbb E_{Y\sim\mu_{\rm row}^{(\epsilon)}}
+  \prod_{j=1}^n(1+\tanh(u)b_jY_j).                   \tag{CR.4c}
+```
+
+Consequently `R_(i,u)=R_(row,u)` and the canonical certificate in (CR.3)
+is the iid-row law
+
+```math
+r_u=r_{\rm row,u}^{\otimes m}.                       \tag{CR.4d}
+```
+
+The symmetric column-erased statement holds with `A,D` interchanged.
+
+*Proof.*  Conditional on the orientation and on `tau_1=s`, the zero-bridge
+law factors exactly as
+
+```math
+ \mu_{A,s}(x)\mu_{D,\epsilon s}(y),
+ \qquad
+ \Pr(\tau_1=s\mid\epsilon)
+ ={Z_A^s(t)Z_D^{\epsilon s}(t)
+   \over\sum_{a=\pm1}Z_A^a(t)Z_D^{\epsilon a}(t)}.    \tag{CR.4e}
+```
+
+The powers of two in the two child sums cancel because of the normalized
+definitions in (CR.4a), so there is no missing sector factor.  The
+Hamiltonian of the left child is invariant under the global flip
+`X->-X`; hence each `X_i` is a fair sign conditional on `tau_1=s`.  It is
+independent of `Y`, so `tau_1X_i` is fair and independent of `Y`.
+Furthermore `mu_(D,epsilon s)` is invariant under `Y->-Y`.  Consequently
+the row word
+
+```math
+ Q_{i,*}=(\tau_1X_i)Y
+```
+
+has law `mu_(D,epsilon s)` conditional on the sector.  Mixing with (CR.4e)
+proves (CR.4b)--(CR.4c), independently of `i`, and the remaining claims
+follow from the definitions.  No step uses `m=n`: the erased row has length
+`n`, while the possibly unequal left order `m` enters only through the
+scalar weights in (CR.4e). `square`
+
+This is a strict state reduction: the explicit product certificate needs
+one noisy single-child output law and one scalar sector weight, rather than
+`m` unrelated row tables or the full parent bridge landscape.  The
+cross-row interaction `h_u` remains the only genuinely joint object.
+
 ## 2. Exact canonical row-product decomposition
 
 **Theorem CR.1 (capturable row work plus centered interaction).**  At every
