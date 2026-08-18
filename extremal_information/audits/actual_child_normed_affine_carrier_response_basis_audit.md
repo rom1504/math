@@ -314,3 +314,90 @@ amount.  Exact reconstruction uses large signed linear combinations of
 their responses; it is not implementable by selecting one admissible
 product law.  This proves that AB.2 is a genuine exact-response obstruction
 but not a robust obstruction to the normalized optimized value.
+
+## 6. General high-row-degree invisibility
+
+The attenuation is not confined to the special basis in Theorem AB.1.  Let
+`F` be any row-effective pressure obtained by averaging `L` over arbitrary
+genuine laws on all other rows.  It retains one-bit oscillation at most
+`2u`.  Therefore
+
+```math
+\sum_{S\subseteq[n]}|S|\widehat F(S)^2
+={1\over4}\sum_jE_U(F-F^{(j)})^2
+\le nu^2.                                          \tag{AB.24}
+```
+
+For the projection onto row Walsh levels at least `k`, this gives
+
+```math
+\boxed{
+\|\Pi_{\ge k}F\|_2\le u\sqrt{n/k},
+\qquad
+|E_h\Pi_{\ge k}F|\le K u\sqrt{n/k}}               \tag{AB.25}
+```
+
+for every density `h` with `||h||_2<=K`.  In particular, if every factor in
+a row product satisfies
+
+```math
+\widehat{(h_i-1)}(S)=0\quad(1\le|S|<k),            \tag{AB.26}
+```
+
+then replacing its rows sequentially by fair rows and applying (AB.25) at
+each genuine intermediate product proves
+
+```math
+\boxed{
+|E_{\otimes_i h_i}L-E_UL|
+\le m\sqrt{K^2-1}\,u\sqrt{n/k}.}                  \tag{AB.27}
+```
+
+At physical scale and comparable splits, taking `k` proportional to `n`
+makes (AB.27) only `O_(beta,K)(sqrt N)`.  Hence a product phase cannot be
+carried solely by row degrees proportional to the row length.
+
+This conclusion is compatible with polynomially visible individual high
+modes.  Fix `K>1`, put `R=sqrt(K^2-1)`, and let `S` have size `k`.  For all
+sufficiently large `k`, set
+
+```math
+\ell=\left\lceil{k\over2}+{\sqrt k\over2R}\right\rceil,
+\qquad s=\ell-{k\over2},
+\qquad
+g_S(b)=1+{1\over2s}\sum_{j\in S}b_j.              \tag{AB.28}
+```
+
+Then `Eg_S=1`, `||g_S||_2<=K`, and, for
+`h_S=(g_S)_+/E(g_S)_+`, alternating partial-binomial identities give
+
+```math
+|\widehat h_S(S)|
+={2^{-k}\over zs}{k-\ell\over k-1}
+ {k-1\choose\ell-1}
+=\Theta_K(k^{-1}),
+\qquad z=E(g_S)_+.                                 \tag{AB.29}
+```
+
+Indeed `1<=z<=K`, while the binomial coefficient in (AB.29) lies a fixed
+`K`-dependent number of standard deviations from the center.  Thus every
+large subset can be targeted with only polynomial Fourier attenuation.
+Nevertheless (AB.24) gives
+
+```math
+|\widehat F(S)|\le u\sqrt{n/k}.                    \tag{AB.30}
+```
+
+For `k` proportional to `n`, the isolated response in (AB.29) is at most
+`O_(beta,K)(n^(-3/2))` per row.  Isolating it from the other modes also uses
+a signed average of translated carrier responses, not one feasible carrier
+law.  The exact response surface can therefore contain exponentially many
+individually addressable directions while their high-degree-only physical
+effect is still sublinear.
+
+Equations (AB.24)--(AB.30) sharpen the remaining SML.  The unresolved
+response information is not exact high row degree.  It is coherent
+low/mesoscopic row-degree information coupled across a positive density of
+rows, together with the entropy cost of the feasible factors.  The formal
+cross-row tensor at every fixed row degree remains exponential, and no
+actual-minimizer identity in this audit synchronizes it.
