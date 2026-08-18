@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact-cube audit of the CC.14 projective synchronization observable.
+"""Exact-cube audit of CC.14 and the IC.3 tilted average-influence path.
 
 The child signings are the complete contracted-temperature minimizer classes
 from ``actual_child_bridge_law_exact``.  Every bridge is enumerated.  This is
@@ -49,7 +49,11 @@ def row_marginal_logs(
 
 
 def projective_record(
-    pressure: np.ndarray, m: int, n: int, lam: float
+    pressure: np.ndarray,
+    m: int,
+    n: int,
+    lam: float,
+    quadrature_order: int,
 ) -> dict:
     d = m * n
     log_p = pressure - logmeanexp(pressure)
@@ -84,6 +88,7 @@ def projective_record(
     canonical_j = logsumexp(log_r - lam * (h - mean_h))
     average_projective_squared = []
     conditional_variance_terms = []
+    row_centered_differences = []
     for row in range(m):
         lower_bits = row * n
         upper_bits = d - lower_bits - n
@@ -111,8 +116,62 @@ def projective_record(
                 )
             )
         )
+        row_centered_differences.append(
+            (h_view - conditional_mean[:, None, :]).reshape(-1)
+        )
     delta_squared = float(np.dot(deltas, deltas))
     theorem_bound = lam * lam * delta_squared / 8.0
+
+    gauss_nodes, gauss_weights = np.polynomial.legendre.leggauss(
+        quadrature_order
+    )
+    integration_nodes = 0.5 * lam * (gauss_nodes + 1.0)
+    integration_weights = 0.5 * lam * gauss_weights
+    profile_nodes = sorted(
+        set([0.0, lam, *(float(value) for value in integration_nodes)])
+    )
+    path_profile = []
+    path_by_s = {}
+    for s in profile_nodes:
+        log_q = log_r - s * h
+        log_q -= logsumexp(log_q)
+        q_probability = np.exp(log_q)
+        q_mean_h = float(np.dot(q_probability, h))
+        curvature = float(np.dot(q_probability, (h - q_mean_h) ** 2))
+        if s == 0.0:
+            influence = 0.5 * sum(conditional_variance_terms)
+        else:
+            tau_sum = np.zeros_like(h)
+            for difference in row_centered_differences:
+                argument = s * difference
+                tau_sum += np.expm1(argument) - argument
+            influence = float(np.dot(q_probability, tau_sum)) / (s * s)
+        centered_cumulant = logsumexp(
+            log_r - s * (h - mean_h)
+        )
+        item = {
+            "s": s,
+            "K_s": centered_cumulant,
+            "curvature_Var_qs_h": curvature,
+            "curvature_per_parent_vertex": curvature / (m + n),
+            "tilted_average_influence_A_s": influence,
+            "tilted_average_influence_per_parent_vertex": influence
+            / (m + n),
+        }
+        path_profile.append(item)
+        path_by_s[s] = item
+
+    curvature_quadrature = 0.0
+    influence_quadrature = 0.0
+    for s, weight in zip(integration_nodes, integration_weights):
+        item = path_by_s[float(s)]
+        curvature_quadrature += (
+            weight * (lam - s) * item["curvature_Var_qs_h"]
+        )
+        influence_quadrature += (
+            weight * item["tilted_average_influence_A_s"]
+        )
+    ic15_rhs = lam * influence_quadrature
     marginal_spread = max(
         float(np.max(np.abs(log_z[row] - log_z[0])))
         for row in range(m)
@@ -131,6 +190,25 @@ def projective_record(
         "Efron_Stein_variance_upper_bound": sum(conditional_variance_terms),
         "actual_variance_h_under_canonical_product": float(
             np.dot(r_probability, (h - mean_h) ** 2)
+        ),
+        "interaction_path_quadrature_order": quadrature_order,
+        "interaction_path_profile": path_profile,
+        "maximum_tilted_average_influence": max(
+            item["tilted_average_influence_A_s"] for item in path_profile
+        ),
+        "maximum_tilted_average_influence_per_parent_vertex": max(
+            item["tilted_average_influence_per_parent_vertex"]
+            for item in path_profile
+        ),
+        "IC7_curvature_quadrature": curvature_quadrature,
+        "IC7_curvature_quadrature_to_exact_J_ratio": (
+            curvature_quadrature / canonical_j
+            if canonical_j > 1e-14
+            else None
+        ),
+        "IC15_rhs_quadrature": ic15_rhs,
+        "IC15_rhs_quadrature_to_exact_J_ratio": (
+            ic15_rhs / canonical_j if canonical_j > 1e-14 else None
         ),
         "canonical_J": canonical_j,
         "canonical_J_per_parent_vertex": canonical_j / (m + n),
@@ -166,6 +244,7 @@ def main() -> None:
     parser.add_argument("--orders", nargs="+", type=int, default=list(range(4, 10)))
     parser.add_argument("--betas", nargs="+", type=float, default=[1.0, 2.0, 4.0])
     parser.add_argument("--lambda-value", type=float, default=1.0)
+    parser.add_argument("--quadrature-order", type=int, default=12)
     parser.add_argument(
         "--output",
         type=Path,
@@ -210,7 +289,11 @@ def main() -> None:
                         "right_sha256": right["sha256"],
                         "pressure_audit": pressure_audit,
                         **projective_record(
-                            pressure, m, n, args.lambda_value
+                            pressure,
+                            m,
+                            n,
+                            args.lambda_value,
+                            args.quadrature_order,
                         ),
                     }
                 )
@@ -223,12 +306,13 @@ def main() -> None:
                 )
 
     payload = {
-        "schema": "actual-child-projective-synchronization-v1",
+        "schema": "actual-child-projective-synchronization-and-influence-v2",
         "classification": "complete finite bridge enumeration; numerical, not interval-certified",
         "parameters": {
             "orders": args.orders,
             "betas": args.betas,
             "lambda": args.lambda_value,
+            "interaction_path_gauss_legendre_order": args.quadrature_order,
             "balanced_split_only": True,
             "all_contracted_temperature_minimizer_classes": True,
             "all_relative_orientations": True,
