@@ -325,6 +325,16 @@ Hence its largest nonconstant singular value is
 \tag{FC.20}
 ```
 
+The same channel has only bounded Shannon information per row:
+
+```math
+I(Y;B)=n\left[\log2-h\left({1+a\over2}\right)\right]
+\longrightarrow {c^2\over2}                     \tag{FC.20a}
+```
+
+in nats.  Thus both maximal correlation and ordinary transmitted
+information regard one random query as highly compressed.
+
 Now take `m` rows, let `N=m+n`, fix a sign matrix
 `C=(C_ij)` (it may be rank one), put `t=beta/sqrt(N)`, and define
 
