@@ -459,3 +459,24 @@ minimizer diagnostic.
 
 Output:
 [`../../computations/results/actual_child_orbit_scaling.json`](../../computations/results/actual_child_orbit_scaling.json).
+
+## `actual_child_escort_low_degree_falsifier.py`
+
+Exhaustively selects the thermal-pressure-minimizing children at physical
+raw temperature `4/sqrt(N)` for `3+3`, `4+4`, and `3+7`, enumerates both
+orientations of the complete bridge cube, and solves the weighted normal
+equations for the best degree-one and degree-three polynomial approximation
+to every edge-orbit cavity under the `lambda=1` inverse escort.  It also
+checks the exact parity law: even Walsh degrees are orthogonal to every
+cavity response.  The residuals are complete-cube numerical evidence, not
+an interval certificate or asymptotic lower bound.
+
+Run:
+
+```bash
+.venv/bin/python \
+  extremal_information/experiments/actual_child_escort_low_degree_falsifier.py
+```
+
+Output:
+[`../../computations/results/actual_child_escort_low_degree_falsifier.json`](../../computations/results/actual_child_escort_low_degree_falsifier.json).

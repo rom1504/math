@@ -4426,3 +4426,41 @@ the one sufficient statistic `<B,Q>` into its central window. There
 `log P` differs from a scalar by only `O(1)`, and every cavity is a function
 of that one statistic. The example cleanly separates bulk Hilbert-space
 degree from the conditional information exposed by a rare-event query.
+
+## Example 222: actual inverse-escort cavities resist fixed low degree
+
+At `beta=4`, `lambda=1`, exhaustive thermal-minimizer selection and complete
+bridge enumeration give the true weighted least-squares error
+
+```math
+\min_{\deg f\le3}E_{q_\lambda}(r_e-f(B_{-e}))^2
+```
+
+for every edge orbit and both orientations at the splits `3+3`, `4+4`, and
+`3+7`.  At total orders eight and ten the residual is
+`0.09015`--`0.09739`, or `18.9%`--`23.5%` of the cavity energy.  The weighted
+Gram condition numbers are moderate and the normal-equation residuals are
+below `9e-16`.  These are complete-cube numerical values on certified actual
+children, not interval-certified residuals or an asymptotic lower bound.
+
+The parity part is exact: global antipodal symmetry makes the escort even
+and every cavity odd, so even Walsh levels are orthogonal and degree four
+cannot improve on degree three.  What remains missing is an optimizer
+identity transferring a nonvanishing odd high-degree mass to the negative
+escort as the order grows.
+
+## Example 223: low rank at each query need not mean a reusable quotient
+
+Every actual posterior response matrix belongs to the nuclear ball
+`||M(B)||_*<=sqrt(mn)`.  Its best rank-`R` approximation captures the deleted
+cavities with physical squared error `O(N/R)+O(1)` under *any* bridge law.
+Thus every individual query admits a power-saving state with
+`R=N^alpha`.
+
+This compression is adaptive: the singular vectors are selected after the
+complete bridge posterior is known.  The unrestricted nuclear ball has
+`exp{Omega(RN)}` separated frames at the same accuracy, so a small matrix at
+each query can still define a large response language.  The example cleanly
+separates pointwise geometric rank from compositional information: the new
+unknown is synchronization and integrability of the frames, not existence
+of a low-rank approximation.

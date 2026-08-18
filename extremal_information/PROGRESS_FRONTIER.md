@@ -270,6 +270,22 @@ measure lower bound is not an escort lower bound.  Thus the exact live fork
 is sublinear-degree/subexponential **escort-weighted cavity** compression
 versus an optimizer-specific linear lower bound in that same norm.
 
+Theorem 37.73 now proves that every individual query is geometrically
+compressible in exactly that norm.  The full posterior mean has nuclear norm
+at most `sqrt(mn)`, and its best rank-`R` truncation approximates all cavities
+with physical inverse-escort error `O(N/R)+O(1)`.  The strong-channel overlap
+floor therefore appears as a macroscopic adaptive posterior singular
+direction.  What is not compressed is the map from the bridge to its
+singular frame: the ambient response image has `Omega(RN)` metric entropy,
+the frame is selected using the full posterior oracle, and its projected
+field need not be integrable.  The exact live SML is consequently
+`L_actual-posterior-frame-synchronization`: prove that actual optimizing
+children synchronize these frames into an `exp{o(N)}` child-generated,
+curl-free carrier with summable error and directional target meaning, or
+prove an actual `Omega(N)` response-information obstruction in this frame
+language.  Theorem 37.74 and complete `N=8,10` negative-escort calculations
+falsify fixed degree three but do not give an asymptotic degree lower bound.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -278,7 +294,7 @@ versus an optimizer-specific linear lower bound in that same norm.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; actual orbit response is saturated at the finite frontier; GG regularization gives a low-information Gram object but lacks coordinate lifting | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient; order-eight actual posterior distinguishes all rooted orbit cells | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and finite quotient falsifier, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** rare-event SML is `L_moderate-escort-coordinate-lifting`; Level 6 remains absent |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; each posterior response is querywise low rank, but its adaptive singular-frame language is uncontrolled | strong-channel `hat rho^-` has a uniform positive floor and forces a macroscopic posterior singular direction; fixed degree three leaves `19%`--`24%` finite actual cavity energy unexplained | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and adaptive-frame reduction, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** promoted SML is `L_actual-posterior-frame-synchronization`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2383,3 +2399,51 @@ class and risks restating the desired parent optimization.
   Level-6 recurrence.  It is a strict final sharpening of the promoted
   rare-event/renormalization campaign; the raw overlap implementation stays
   frozen.
+
+### Checkpoint 35 — posterior nuclear compression isolates adaptive frames
+
+- **Power-saving querywise theorem (Theorem 37.73):** for the exact posterior
+  mean `M(B)=E[Q|B]`, pointwise `||M||_*<=sqrt(mn)` and
+  `||M-r||_F^2<=4rho^2mn`.  Best rank `R` therefore gives, under the actual
+  negative escort and without a measure-change loss,
+
+  ```math
+  t^2E\|r-M_R\|_F^2
+  \le {2t^2mn\over R+1}+8t^2rho^2mn
+  =O_beta(N/R)+O_beta(1).
+  ```
+
+  Posterior-replica averaging gives the same rate.  Taking `R=N^alpha`
+  yields a genuine power saving in the exact physical cavity norm.
+- **Structure of the actual obstruction:** combining the uniform
+  strong-channel floor of Theorem 37.56 with the nuclear bound proves that
+  the actual optimizing-child posterior has a singular value of order
+  `sqrt(mn)` on positive negative-path mass.  Thus the nondecaying overlap
+  is not diffuse coordinate noise: it is an adaptive macroscopic spectral
+  mode.
+- **Operational ceiling:** the truncation uses the full posterior separately
+  at each bridge.  The ambient rank-`R` frame language has metric entropy
+  `Omega(RN)` to `O(RN log R)` at the required scale, and the projected
+  cavity vector field need not be curl-free.  Hence pointwise low rank does
+  not define a reusable pressure quotient.  This explicitly separates
+  existence, generation, and compositional reuse.
+- **Actual finite falsifier (Theorem 37.74 and experiment):** antipodal
+  symmetry makes every inverse escort even and every cavity odd, so even
+  Walsh degree adds exactly no approximation power.  Exhaustive certified
+  children and complete bridge cubes at `N=8,10`, `beta=4`, `lambda=1`
+  leave `0.09015`--`0.09739`, or `18.9%`--`23.5%`, after the *optimal*
+  degree-three weighted projection.  This is numerical finite evidence, not
+  an asymptotic degree lower bound.
+- **New SML:** `L_actual-posterior-frame-synchronization`: either generate
+  the slowly growing posterior singular frames from actual child data with
+  an `exp{o(N)}` response image, an integrable/curl-free carrier, summable
+  physical error, and directional target relevance, or prove that the
+  realized frames themselves require `Omega(N)` response information.
+- **Exact recurrence and decision:** no recurrence follows from adaptive
+  low rank.  The only exact raw-overlap implication remains conditional
+  (37.204), and its separate target-reach premise already closes the parent
+  bound by (37.205).  The requested decay is uniformly false for balanced
+  `beta>4/sqrt(pi)`.  This is a **RESET** under the declared obstruction
+  criterion and a strict narrowing of the promoted rare-event problem, not
+  a Level-6 theorem; the raw adversarial-statistical-mechanics implementation
+  remains frozen.

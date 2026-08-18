@@ -21482,3 +21482,95 @@ inverse escort at fixed `lambda>0`, `log P` is degree-zero up to `O(1)` and ever
 on one linear statistic. The missing information is conditional cavity
 geometry under the negative tail, not ordinary likelihood degree. See
 [`audits/actual_child_inverse_escort_walsh_degree_audit.md`](audits/actual_child_inverse_escort_walsh_degree_audit.md).
+
+### Theorem 37.73 (posterior nuclear compression and the adaptive-frame boundary)
+
+For any actual rank-one bridge channel, let
+
+```math
+M(B)=E[Q\mid B],\qquad Q=\tau XY^{\mathsf T},qquad d=mn,
+```
+
+and let `r(B)` be the matrix of exact deleted-edge cavity responses, evaluated
+at the complete bridge word.  Pointwise in `B`,
+
+```math
+\boxed{\|M(B)\|_*\le\sqrt d,\qquad
+       \|M(B)-r(B)\|_F^2\le4\rho^2d,}
+\qquad \rho=\tanh(\beta/\sqrt N).                 \tag{37.272}
+```
+
+Indeed, every latent word has nuclear norm `sqrt(d)`, while exact bit
+insertion gives
+
+```math
+M_e(B)={r_e(B_{-e})+\rho B_e
+        \over1+\rho B_er_e(B_{-e})},
+\qquad |M_e-r_e|\le2\rho.                         \tag{37.273}
+```
+
+If `M_R(B)` is the best rank-`R` truncation, then for every bridge word and
+therefore under every inverse escort,
+
+```math
+\boxed{
+t^2E_{q_\lambda}\|r-M_R\|_F^2
+\le {2t^2d\over R+1}+8t^2\rho^2d
+=O_\beta(N/R)+O_\beta(1).}                       \tag{37.274}
+```
+
+The same rate is realized in conditional expectation by averaging `R`
+independent posterior rank-one replicas.  Thus `R=N^alpha` gives a genuine
+power-saving approximation in the physical, negative-escort-weighted cavity
+norm without any fair-measure transfer.
+
+Positive overlap has a correspondingly sharp geometric witness.  For any
+bridge law `nu`,
+
+```math
+{1\over d}E_\nu\|r\|_F^2\ge\eta
+\quad\Longrightarrow\quad
+E_\nu\sigma_1(M)
+\ge(\eta/2-4\rho^2)\sqrt d.                       \tag{37.275}
+```
+
+Consequently the uniform actual-child floor in Theorem 37.56 is carried by
+a macroscopic posterior singular direction on positive mass along the
+negative path.
+
+This is querywise compression, not an operational quotient.  The singular
+frames are chosen after computing the complete posterior at `B`.  At
+Frobenius accuracy `Theta(sqrt(d/R))`, the ambient nuclear ball has metric
+entropy between `Omega(RN)` and `O(RN log R)` at comparable splits.  Hence
+`R->infinity`, needed for `o(N)` physical error, has superlinear generic
+state cost.  Actual optimality must synchronize the realized frames or give
+a child-only rule generating them; pointwise low rank alone does not control
+their response image or curl and gives no recurrence.  See
+[`audits/actual_child_posterior_nuclear_cavity_compression.md`](audits/actual_child_posterior_nuclear_cavity_compression.md).
+The constants and path-mixture scope were independently checked in the
+matching
+[`verifier`](audits/actual_child_posterior_nuclear_cavity_compression_verifier.md).
+
+### Theorem 37.74 (inverse-escort cavity parity selection rule)
+
+For every antipodally symmetric rank-one child law, every power escort of
+its bridge likelihood is globally even, whereas each deleted-edge cavity is
+globally odd in the retained bridge bits:
+
+```math
+q_\lambda(B)=q_\lambda(-B),\qquad
+r_e(-B_{-e})=-r_e(B_{-e}).                        \tag{37.276}
+```
+
+Therefore, in weighted `L^2(q_lambda)`,
+
+```math
+\boxed{E_{q_\lambda}r_e\chi_S=0
+       \quad\hbox{for every even }|S|.}           \tag{37.277}
+```
+
+The best degree-`2k` Walsh-polynomial approximation to `r_e` consequently
+has exactly the same error as the best degree-`(2k-1)` approximation.  This
+is an exact rule for the actual child law, not an asymptotic lower bound on
+odd degree.  The exhaustive finite audit and proof are in
+[`audits/actual_child_escort_low_degree_falsifier.md`](audits/actual_child_escort_low_degree_falsifier.md).

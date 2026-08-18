@@ -1940,3 +1940,32 @@ actual optimizing children, or prove an optimizer-specific `Omega(N)`
 lower bound in that same norm. A fair-measure Fourier lower bound, a scalar
 pressure approximation, or the universal degree-`cN` decoder does not decide
 this question.
+
+Theorem 37.73 solves the pointwise approximation half but exposes why it was
+not yet operationally formulated.  At every bridge, the full posterior mean
+has nuclear norm at most `sqrt(mn)`, and rank `R` gives physical
+escort-weighted squared cavity error `O(N/R)+O(1)`.  Hence the response is
+querywise low rank with a power saving.  But its singular frame is chosen
+after evaluating the complete posterior; the ambient frame language costs
+`Omega(RN)` bits at that accuracy, and the projected vector field need not
+remain an integrable bridge pressure.
+
+The resulting sharper rare-event lemma is:
+
+> **`L_actual-posterior-frame-synchronization`.**  For actual
+> contracted-temperature optimizing children, find `R_N->infinity` and a
+> child-generated, curl-free carrier for the rank-`R_N` posterior response
+> whose singular-frame response image has `exp{o(N)}` states and whose
+> negative-escort physical error is `o(N)` (preferably
+> `O(N^(1-delta))`).  The carrier must be reusable without a full posterior
+> oracle and must either convert its coherent modes directionally to
+> `J-I^leftarrow` or prove target-relevant no gain.  Alternatively, prove an
+> optimizer-specific `Omega(N)` response-information lower bound for these
+> frames in the same escort-weighted norm.
+
+This is strictly narrower than arbitrary coordinate lifting: low-rank
+existence and the truncation error are proved.  The only missing information
+is the generated frame language, its integrability/reuse, and its directional
+meaning.  Theorem 37.74 plus exhaustive `N=8,10` data rule out fixed degree
+three as the generator but do not establish an asymptotic degree lower
+bound.  Target reach remains a separate obligation.
