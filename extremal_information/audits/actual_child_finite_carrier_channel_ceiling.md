@@ -281,9 +281,11 @@ separation
 \qquad(y\ne y',\ y,y'\in C_n).                 \tag{FC.17}
 ```
 
-Apply Theorem 37.39 with the common constants in (FC.15), and fix `d` large
-enough that its approximation error is below `Delta_(c,delta)/4`.  The
-resulting exact degree-`2d` square carriers `q_(y,d)` form an
+Apply Theorem 37.39 to `f_1` with the common constants in (FC.15), fix `d`
+large enough that its approximation error is below
+`Delta_(c,delta)/4`, and translate that one approximant by
+`q_(y,d)(b)=q_(1,d)(y odot b)`.  The resulting exact degree-`2d` square
+carriers form an
 `exp(r_delta n)` packing at a fixed positive `L^2` scale.  Therefore
 
 ```math
@@ -427,8 +429,9 @@ This is not an actual-minimizing-child counterexample: (FC.21) is a
 two-state rank-one pressure and the factors (FC.14) are admissible weak-row
 density models, not proved optimal factors of a contracted-temperature
 child.  Its scope is exact and important: bounded row complexity, fixed
-literal degree, a common base measure, and even a vanishing singular value
-do not imply uniform product-phase closure.
+literal degree, a common base measure, and either vanishing source-channel
+contraction or arbitrarily strong fixed carrier contraction do not imply
+uniform product-phase closure.
 
 ## 7. Consequence for the smallest missing lemma
 
