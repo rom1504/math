@@ -1,0 +1,944 @@
+{
+  "cases": [
+    {
+      "N": 8,
+      "V_row_certified_interval": [
+        12.114123447812094,
+        12.75169070053334
+      ],
+      "actual_child_minimality_interval_certificates": [
+        {
+          "certified_gap_lower_bound": 2.0290382685776516,
+          "minimum_pressure_outward_interval": [
+            3.695749942519492,
+            3.6957499425194933
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 5.724788211097145,
+          "order": 4,
+          "temperature_normalization_order": 8
+        },
+        {
+          "certified_gap_lower_bound": 2.0290382685776516,
+          "minimum_pressure_outward_interval": [
+            3.695749942519492,
+            3.6957499425194933
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 5.724788211097145,
+          "order": 4,
+          "temperature_normalization_order": 8
+        }
+      ],
+      "actual_child_representative_sha256": [
+        "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+        "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f"
+      ],
+      "beta": 4.0,
+      "case": "N8_beta4_target",
+      "coarse_log_probability_Walsh_coefficient_outward_intervals": [
+        [
+          -4.298927923054103,
+          -4.298927923054101
+        ],
+        [
+          -4.681786083753411e-69,
+          4.678390204098851e-69
+        ],
+        [
+          -4.687445883177678e-69,
+          4.685181963407971e-69
+        ],
+        [
+          1.7435815628710896,
+          1.7435815628710902
+        ],
+        [
+          -4.719140759953572e-69,
+          4.721404679723278e-69
+        ],
+        [
+          0.014847015902978544,
+          0.01484701590297855
+        ],
+        [
+          0.014847015902978544,
+          0.01484701590297855
+        ],
+        [
+          -4.687445883177678e-69,
+          4.687445883177678e-69
+        ],
+        [
+          -4.755363476268878e-69,
+          4.757627396038585e-69
+        ],
+        [
+          0.014847015902978544,
+          0.01484701590297855
+        ],
+        [
+          0.014847015902978544,
+          0.01484701590297855
+        ],
+        [
+          -4.714612920414158e-69,
+          4.710085080874745e-69
+        ],
+        [
+          1.7435815628710896,
+          1.7435815628710902
+        ],
+        [
+          -4.679522163983705e-69,
+          4.680654123868558e-69
+        ],
+        [
+          -4.687445883177678e-69,
+          4.685181963407971e-69
+        ],
+        [
+          -0.8815669491614136,
+          -0.8815669491614133
+        ]
+      ],
+      "coarse_probability_outward_intervals": [
+        [
+          0.19515841163300182,
+          0.1951584116330019
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.17330195347899408,
+          0.17330195347899416
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.00017206160133776118,
+          0.00017206160133776126
+        ],
+        [
+          0.00017206160133776118,
+          0.00017206160133776126
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.00017206160133776118,
+          0.00017206160133776126
+        ],
+        [
+          0.00017206160133776118,
+          0.00017206160133776126
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.17330195347899408,
+          0.17330195347899416
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.03279887792133211,
+          0.03279887792133213
+        ],
+        [
+          0.19515841163300182,
+          0.1951584116330019
+        ]
+      ],
+      "coarse_reverse_product_projection_certificate": {
+        "branch_and_bound_boxes_processed": 752768,
+        "certified_lower_bound": 1.075,
+        "dimension_reduction": "exact signature classes imply twin pairs; first-order monotonicity forces s1=s2 and s3=s4, then complement/sign symmetry reduces to u,v in [0,1]",
+        "feasible_coarse_product_mean": 0.74237662,
+        "feasible_coarse_product_value_interval": [
+          1.075619910790213,
+          1.0756199107922173
+        ],
+        "minimum_pruned_box_lower_bound": 1.075000000841172,
+        "per_box_binary64_safety_subtraction": 1e-12
+      },
+      "exact_negative_moment_soft_pressure": 11.91438744105736,
+      "exact_signature_count_complement_symmetry": true,
+      "exact_signature_count_equality_groups": [
+        [
+          0,
+          15
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          1,
+          2,
+          4,
+          7,
+          8,
+          11,
+          13,
+          14
+        ],
+        [
+          5,
+          6,
+          9,
+          10
+        ]
+      ],
+      "feasible_full_reverse_projection_upper_bound": 4.5064480038489885,
+      "feasible_full_row_product_objective": 12.75168970053334,
+      "full_reverse_projection_certified_interval": [
+        1.075,
+        4.506449003848989
+      ],
+      "full_row_condition_passes": false,
+      "full_row_rectangle_matrix_numerical": [
+        [
+          0.0,
+          12.633569601133711,
+          11.515827712803484,
+          11.515827712803492
+        ],
+        [
+          12.633569601133711,
+          0.0,
+          11.515827712803484,
+          11.515827712803492
+        ],
+        [
+          11.515827712803484,
+          11.515827712803484,
+          0.0,
+          12.633569601133711
+        ],
+        [
+          11.515827712803492,
+          11.515827712803492,
+          12.633569601133711,
+          0.0
+        ]
+      ],
+      "full_row_rectangle_spectral_radius_numerical": 35.66522502674068,
+      "full_row_strong_convexity_left_side": 191.95395725931513,
+      "full_row_strong_convexity_required_upper_bound": 4.0,
+      "imported_feasible_upper_endpoint_safety": 1e-06,
+      "lambda": 5.382104195764755,
+      "negative_moment_soft_pressure_interval_certificate": {
+        "negative_moment_soft_pressure_outward_interval": [
+          11.914387441057354,
+          11.91438744105736
+        ]
+      },
+      "negative_moment_soft_pressure_outward_interval": [
+        11.914387441057354,
+        11.91438744105736
+      ],
+      "pressure_cube_audit": {
+        "bridge_cube_size": 65536,
+        "bridge_sign_count": 16,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21845,
+          65535
+        ],
+        "maximum_direct_log_pressure_error": 1.762479051592436e-15,
+        "rank_one_character_count": 64
+      },
+      "relative_child_orientation": -1,
+      "row_Walsh_feature_masks": [
+        2,
+        1,
+        4,
+        8
+      ],
+      "same_temperature_target_interval_certificate": {
+        "components": [
+          {
+            "certified_gap_lower_bound": 3.2712728794089574,
+            "minimum_pressure_outward_interval": [
+              5.957193720528678,
+              5.9571937205286805
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 9.228466599937638,
+            "order": 4,
+            "temperature_normalization_order": 4
+          },
+          {
+            "certified_gap_lower_bound": 3.2712728794089574,
+            "minimum_pressure_outward_interval": [
+              5.957193720528678,
+              5.9571937205286805
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 9.228466599937638,
+            "order": 4,
+            "temperature_normalization_order": 4
+          }
+        ],
+        "same_temperature_minimum_child_target_outward_interval": [
+          11.914387441057354,
+          11.914387441057363
+        ]
+      },
+      "signature_enumeration": {
+        "bridge_cube_size": 65536,
+        "exact_pressure_signature_count": 481,
+        "internal_bin_width": 17,
+        "rank_one_character_count": 64,
+        "signature_width": 153,
+        "wall_time_seconds": 0.7452986240386963
+      },
+      "split": [
+        4,
+        4
+      ],
+      "target_excess_certified_lower_bound": 0.19973600675473155
+    },
+    {
+      "N": 9,
+      "V_row_certified_interval": [
+        6.174492417668179,
+        6.37248023159232
+      ],
+      "actual_child_minimality_interval_certificates": [
+        {
+          "certified_gap_lower_bound": 0.41974625766716483,
+          "minimum_pressure_outward_interval": [
+            1.1223259511850716,
+            1.1223259511850723
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 1.5420722088522372,
+          "order": 4,
+          "temperature_normalization_order": 9
+        },
+        {
+          "certified_gap_lower_bound": 0.3242397555787388,
+          "minimum_pressure_outward_interval": [
+            1.5880482475409572,
+            1.5880482475409579
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 1.9122880031196967,
+          "order": 5,
+          "temperature_normalization_order": 9
+        }
+      ],
+      "actual_child_representative_sha256": [
+        "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+        "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f"
+      ],
+      "beta": 2.0,
+      "case": "N9_beta2_lambda1",
+      "coarse_log_probability_Walsh_coefficient_outward_intervals": [
+        [
+          -2.7792263908566386,
+          -2.7792263908566373
+        ],
+        [
+          -3.050631889679749e-68,
+          3.050631889679749e-68
+        ],
+        [
+          -3.0510846736336905e-68,
+          3.0510846736336905e-68
+        ],
+        [
+          -0.06820616124191216,
+          -0.06820616124191212
+        ],
+        [
+          -3.052895809449456e-68,
+          3.052895809449456e-68
+        ],
+        [
+          0.033935663498287943,
+          0.033935663498287964
+        ],
+        [
+          0.033935663498287943,
+          0.033935663498287964
+        ],
+        [
+          -3.050631889679749e-68,
+          3.050631889679749e-68
+        ],
+        [
+          -3.057423648988869e-68,
+          3.057423648988869e-68
+        ],
+        [
+          0.033935663498287943,
+          0.033935663498287964
+        ],
+        [
+          0.033935663498287943,
+          0.033935663498287964
+        ],
+        [
+          -3.050631889679749e-68,
+          3.050631889679749e-68
+        ],
+        [
+          -0.06820616124191216,
+          -0.06820616124191212
+        ],
+        [
+          -3.050631889679749e-68,
+          3.050631889679749e-68
+        ],
+        [
+          -3.0510846736336905e-68,
+          3.0510846736336905e-68
+        ],
+        [
+          -0.0021890227917638664,
+          -0.002189022791763865
+        ]
+      ],
+      "coarse_probability_outward_intervals": [
+        [
+          0.06190928675830962,
+          0.06190928675830964
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.047190136054556395,
+          0.047190136054556416
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.07100513425074191,
+          0.07100513425074195
+        ],
+        [
+          0.07100513425074191,
+          0.07100513425074195
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.07100513425074191,
+          0.07100513425074195
+        ],
+        [
+          0.07100513425074191,
+          0.07100513425074195
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.047190136054556395,
+          0.047190136054556416
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.06222257717141252,
+          0.06222257717141254
+        ],
+        [
+          0.06190928675830962,
+          0.06190928675830964
+        ]
+      ],
+      "coarse_rectangle_matrix_outward_upper": [
+        [
+          0.0,
+          0.2815807361357041,
+          0.14449874516120736,
+          0.14449874516120736
+        ],
+        [
+          0.2815807361357041,
+          0.0,
+          0.14449874516120736,
+          0.14449874516120736
+        ],
+        [
+          0.14449874516120736,
+          0.14449874516120736,
+          0.0,
+          0.2815807361357041
+        ],
+        [
+          0.14449874516120736,
+          0.14449874516120736,
+          0.2815807361357041,
+          0.0
+        ]
+      ],
+      "coarse_rectangle_max_row_sum_upper": 0.5705782264581188,
+      "coarse_reverse_product_projection_outward_interval": [
+        0.006637668616855218,
+        0.006637668616857884
+      ],
+      "coarse_uniform_is_exact_unique_product_minimizer": true,
+      "exact_negative_moment_soft_pressure": 6.167854749051327,
+      "exact_signature_count_complement_symmetry": true,
+      "feasible_full_reverse_projection_upper_bound": 0.20462448254099286,
+      "feasible_full_row_product_objective": 6.37247923159232,
+      "full_reverse_projection_certified_interval": [
+        0.006637668616855218,
+        0.20462548254099286
+      ],
+      "full_row_condition_passes": false,
+      "full_row_rectangle_matrix_numerical": [
+        [
+          0.0,
+          5.6058362799411,
+          4.705776806082439,
+          4.705776806082439
+        ],
+        [
+          5.6058362799411,
+          0.0,
+          4.705776806082439,
+          4.705776806082439
+        ],
+        [
+          4.705776806082439,
+          4.705776806082439,
+          0.0,
+          5.6058362799411
+        ],
+        [
+          4.705776806082439,
+          4.705776806082439,
+          5.6058362799411,
+          0.0
+        ]
+      ],
+      "full_row_rectangle_spectral_radius_numerical": 15.017389892105975,
+      "full_row_strong_convexity_left_side": 15.017389892105975,
+      "full_row_strong_convexity_required_upper_bound": 4.0,
+      "imported_feasible_upper_endpoint_safety": 1e-06,
+      "lambda": 1.0,
+      "negative_moment_soft_pressure_interval_certificate": {
+        "negative_moment_soft_pressure_outward_interval": [
+          6.167854749051325,
+          6.167854749051328
+        ]
+      },
+      "negative_moment_soft_pressure_outward_interval": [
+        6.167854749051325,
+        6.167854749051328
+      ],
+      "pressure_cube_audit": {
+        "bridge_cube_size": 1048576,
+        "bridge_sign_count": 20,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          349525,
+          1048575
+        ],
+        "maximum_direct_log_pressure_error": 2.220446049250313e-16,
+        "rank_one_character_count": 128
+      },
+      "relative_child_orientation": -1,
+      "row_Walsh_feature_masks": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "same_temperature_target_interval_certificate": {
+        "components": [
+          {
+            "certified_gap_lower_bound": 1.107901648625728,
+            "minimum_pressure_outward_interval": [
+              2.192564408323918,
+              2.1925644083239195
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 3.300466056949648,
+            "order": 4,
+            "temperature_normalization_order": 4
+          },
+          {
+            "certified_gap_lower_bound": 0.6684661953487757,
+            "minimum_pressure_outward_interval": [
+              2.448290744957494,
+              2.4482907449574953
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 3.116756940306271,
+            "order": 5,
+            "temperature_normalization_order": 5
+          }
+        ],
+        "same_temperature_minimum_child_target_outward_interval": [
+          4.640855153281412,
+          4.640855153281415
+        ]
+      },
+      "signature_enumeration": {
+        "bridge_cube_size": 1048576,
+        "exact_pressure_signature_count": 5059,
+        "internal_bin_width": 21,
+        "rank_one_character_count": 128,
+        "signature_width": 189,
+        "wall_time_seconds": 13.608204126358032
+      },
+      "split": [
+        4,
+        5
+      ]
+    },
+    {
+      "N": 9,
+      "V_row_certified_interval": [
+        15.801337702428587,
+        17.12585684099535
+      ],
+      "actual_child_minimality_interval_certificates": [
+        {
+          "certified_gap_lower_bound": 1.8514423102973943,
+          "minimum_pressure_outward_interval": [
+            3.393059676559465,
+            3.3930596765594663
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 5.244501986856861,
+          "order": 4,
+          "temperature_normalization_order": 9
+        },
+        {
+          "certified_gap_lower_bound": 1.477698182681429,
+          "minimum_pressure_outward_interval": [
+            4.175982520075598,
+            4.175982520075601
+          ],
+          "next_distinct_histogram_pressure_lower_bound": 5.65368070275703,
+          "order": 5,
+          "temperature_normalization_order": 9
+        }
+      ],
+      "actual_child_representative_sha256": [
+        "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+        "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f"
+      ],
+      "beta": 4.0,
+      "case": "N9_beta4_lambda1",
+      "coarse_log_probability_Walsh_coefficient_outward_intervals": [
+        [
+          -2.7999345876843225,
+          -2.799934587684321
+        ],
+        [
+          -3.2267648477629287e-68,
+          3.2267648477629287e-68
+        ],
+        [
+          -3.2274440236938407e-68,
+          3.22721763171687e-68
+        ],
+        [
+          -0.13986300592191914,
+          -0.13986300592191905
+        ],
+        [
+          -3.2297079434635474e-68,
+          3.229934335440518e-68
+        ],
+        [
+          0.07363476367238347,
+          0.07363476367238352
+        ],
+        [
+          0.07363476367238347,
+          0.07363476367238352
+        ],
+        [
+          -3.2267648477629287e-68,
+          3.2267648477629287e-68
+        ],
+        [
+          -3.2324246471871954e-68,
+          3.232651039164166e-68
+        ],
+        [
+          0.07363476367238347,
+          0.07363476367238352
+        ],
+        [
+          0.07363476367238347,
+          0.07363476367238352
+        ],
+        [
+          -3.2267648477629287e-68,
+          3.2267648477629287e-68
+        ],
+        [
+          -0.13986300592191914,
+          -0.13986300592191905
+        ],
+        [
+          -3.2267648477629287e-68,
+          3.2267648477629287e-68
+        ],
+        [
+          -3.2274440236938407e-68,
+          3.22721763171687e-68
+        ],
+        [
+          -0.009763697152495006,
+          -0.009763697152495001
+        ]
+      ],
+      "coarse_probability_outward_intervals": [
+        [
+          0.06112188815631818,
+          0.0611218881563182
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.033912779766626155,
+          0.033912779766626176
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.0796612290227335,
+          0.07966122902273354
+        ],
+        [
+          0.0796612290227335,
+          0.07966122902273354
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.0796612290227335,
+          0.07966122902273354
+        ],
+        [
+          0.0796612290227335,
+          0.07966122902273354
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.033912779766626155,
+          0.033912779766626176
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.061410718507897144,
+          0.061410718507897165
+        ],
+        [
+          0.06112188815631818,
+          0.0611218881563182
+        ]
+      ],
+      "coarse_rectangle_matrix_outward_upper": [
+        [
+          0.0,
+          0.5985068122986567,
+          0.3335938433005141,
+          0.3335938433005141
+        ],
+        [
+          0.5985068122986567,
+          0.0,
+          0.3335938433005141,
+          0.3335938433005141
+        ],
+        [
+          0.3335938433005141,
+          0.3335938433005141,
+          0.0,
+          0.5985068122986567
+        ],
+        [
+          0.3335938433005141,
+          0.3335938433005141,
+          0.5985068122986567,
+          0.0
+        ]
+      ],
+      "coarse_rectangle_max_row_sum_upper": 1.265694498899685,
+      "coarse_reverse_product_projection_outward_interval": [
+        0.027345865444539093,
+        0.027345865444541765
+      ],
+      "coarse_uniform_is_exact_unique_product_minimizer": true,
+      "exact_negative_moment_soft_pressure": 15.773991836984052,
+      "exact_signature_count_complement_symmetry": true,
+      "feasible_full_reverse_projection_upper_bound": 1.351864004011297,
+      "feasible_full_row_product_objective": 17.12585584099535,
+      "full_reverse_projection_certified_interval": [
+        0.027345865444539093,
+        1.351865004011297
+      ],
+      "full_row_condition_passes": false,
+      "full_row_rectangle_matrix_numerical": [
+        [
+          0.0,
+          15.251920118613578,
+          13.183161712268507,
+          13.183161712268504
+        ],
+        [
+          15.251920118613578,
+          0.0,
+          13.183161712268507,
+          13.183161712268504
+        ],
+        [
+          13.183161712268507,
+          13.183161712268507,
+          0.0,
+          15.251920118613551
+        ],
+        [
+          13.183161712268504,
+          13.183161712268504,
+          15.251920118613551,
+          0.0
+        ]
+      ],
+      "full_row_rectangle_spectral_radius_numerical": 41.61824354315058,
+      "full_row_strong_convexity_left_side": 41.61824354315058,
+      "full_row_strong_convexity_required_upper_bound": 4.0,
+      "imported_feasible_upper_endpoint_safety": 1e-06,
+      "lambda": 1.0,
+      "negative_moment_soft_pressure_interval_certificate": {
+        "negative_moment_soft_pressure_outward_interval": [
+          15.773991836984049,
+          15.773991836984054
+        ]
+      },
+      "negative_moment_soft_pressure_outward_interval": [
+        15.773991836984049,
+        15.773991836984054
+      ],
+      "pressure_cube_audit": {
+        "bridge_cube_size": 1048576,
+        "bridge_sign_count": 20,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          349525,
+          1048575
+        ],
+        "maximum_direct_log_pressure_error": 1.4068607390171906e-15,
+        "rank_one_character_count": 128
+      },
+      "relative_child_orientation": -1,
+      "row_Walsh_feature_masks": [
+        1,
+        1,
+        4,
+        4
+      ],
+      "same_temperature_target_interval_certificate": {
+        "components": [
+          {
+            "certified_gap_lower_bound": 3.2712728794089574,
+            "minimum_pressure_outward_interval": [
+              5.957193720528678,
+              5.9571937205286805
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 9.228466599937638,
+            "order": 4,
+            "temperature_normalization_order": 4
+          },
+          {
+            "certified_gap_lower_bound": 2.3761786668703153,
+            "minimum_pressure_outward_interval": [
+              5.993203636787605,
+              5.993203636787608
+            ],
+            "next_distinct_histogram_pressure_lower_bound": 8.369382303657924,
+            "order": 5,
+            "temperature_normalization_order": 5
+          }
+        ],
+        "same_temperature_minimum_child_target_outward_interval": [
+          11.950397357316282,
+          11.95039735731629
+        ]
+      },
+      "signature_enumeration": {
+        "bridge_cube_size": 1048576,
+        "exact_pressure_signature_count": 5059,
+        "internal_bin_width": 21,
+        "rank_one_character_count": 128,
+        "signature_width": 189,
+        "wall_time_seconds": 13.870957612991333
+      },
+      "split": [
+        4,
+        5
+      ]
+    }
+  ],
+  "classification": "complete actual-child bridge enumeration; exact integer pressure signatures; outward interval coarse laws; rigorous coarse reverse-product lower certificates; feasible full row-product upper bounds; full-alphabet rectangle radii are floating falsification diagnostics only",
+  "parameters": {
+    "batch_size": 2048,
+    "iv_dps": 70,
+    "mp_dps": 80
+  },
+  "schema": "actual-child-row-product-global-certificate-v1",
+  "theorem_note": "extremal_information/drafts/actual_child_row_product_global_certificate.md",
+  "wall_time_seconds": 51.17157983779907
+}
