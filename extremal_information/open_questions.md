@@ -2031,3 +2031,14 @@ the gap and freeze the coreset implementation, or turn its quantitative
 failure into such a usable coherent direction.  Merely optimizing the
 modulus from the complete convex hull would not be a lower-information
 solution.
+
+A concrete sufficient route is now isolated.  If the two sector-conditioned
+child laws have linear subgaussian proxies satisfying
+`max_s sigma^2_(A,s)sigma^2_(D,epsilon s)<4`, then Theorem 37.79 proves a
+fixed transport gap by Gaussian linearization and hence the extensive
+collision-tail obstruction.  Standard dense-temperature Dobrushin bounds
+do not give this: their interaction row sums grow like `sqrt(N)`.  The
+optimizer-specific question is whether exact pressure minimality yields a
+different strong-mixing/linear-MGF inequality.  Covariance bounds alone are
+provably insufficient because exponentially rare coherent spikes can have
+asymptotically identity covariance while violating the finite MGF gap.

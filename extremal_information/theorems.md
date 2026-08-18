@@ -21852,6 +21852,44 @@ actual-child overlap floor of Theorem 37.56 implies that a uniform gap
 (37.297) forces `log K_e=Omega(N)` on fixed positive mass of the actual
 negative-path mixture.
 
+The gap has a checkable necessary spectral condition.  For the exact
+two-sector actual law (LE.2), let
+
+```math
+\boxed{
+\left\|\sum_{s=\pm1}\pi_s^{(\epsilon)}
+ (C_{D,\epsilon s}\otimes C_{A,s})\right\|_{op}
+\le(4-8c)\sqrt{mn}.}                            \tag{37.300}
+```
+
+The matrix inside the norm is exactly the latent covariance, and (37.300)
+follows by expanding (37.297) at zero.  In particular, if one sector has
+`pi_s||C_(A,s)||op||C_(D,epsilon s)||op>4sqrt(mn)`, the gap fails and its
+two top child eigenvectors supply a rank-one MGF-violating direction.
+Bounded covariance is not conversely sufficient for the nonlinear
+exponential-moment gap.
+
+A sufficient child-only condition is also explicit.  Let `sigma^2(nu)` be
+the least linear subgaussian proxy of an even child-sector law, and put
+
+```math
+\kappa_*=max_s\sigma^2(\mu_{A,s})
+                    \sigma^2(\mu_{D,\epsilon s}).
+```
+
+If `kappa_*<4`, Gaussian linearization gives
+
+```math
+\log E_\mu e^{\langle A,Q\rangle/(2\sqrt{mn})}
+\le {\kappa_*\|A\|_F^2
+ \over8mn(1-\kappa_*/4)},                       \tag{37.301}
+```
+
+so (37.297) holds with `c=1/4` for all sufficiently large orders.  A
+log-Sobolev inequality implies this through Herbst.  Covariance alone does
+not: exponentially rare antipodal spikes can have covariance tending to
+the identity while violating (37.297) even with `c=0`.
+
 If no uniform gap exists, one obtains only an existential child-prior MGF-
 violating query.  It need not have macroscopic norm, concise description,
 or target relevance, and finding it may require full convex-hull

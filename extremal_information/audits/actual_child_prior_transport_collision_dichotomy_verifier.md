@@ -16,3 +16,13 @@ It need not have macroscopic norm, concise description, or target relevance
 and may require the complete convex hull to find.  The audit now states
 this limitation and does not call the witness an operational coherent
 phase.  No proof or constant correction is otherwise needed.
+
+The sector-subgaussian refinement also passes.  Conditioning, Gaussian
+linearization, and the second factor bound produce the determinant with
+coefficient `kappa_*`; `||A||op^2<=d` gives denominator
+`1-kappa_*/4`, and comparison with `1/(4sqrt(d))` yields exactly
+`sqrt(d)>=2kappa_*/(4-kappa_*)`.  The rare-spike example has covariance
+norm `1+(m-1)e^(-km)` but contributes probability `exp(-kN)/2` to the
+aligned rank-one atom, proving the stated nonlinear-MGF violation.  It is
+correctly labeled nonactual and is used only to refute covariance-only
+closure.

@@ -529,3 +529,28 @@ Audit:
 
 Output:
 [`../../computations/results/actual_child_latent_collision_diag.json`](../../computations/results/actual_child_latent_collision_diag.json).
+
+## `actual_child_prior_transport_gap_diag.py`
+
+Tests two explicit candidate families for the child-prior PT.1 transport gap
+on the certified `beta=4` minimizing children at splits `3+3`, `4+4`, and
+`3+7`: LP-certified radial points along the top child-prior covariance mode,
+and posterior barycenters from the complete cube's 24 largest-collision and
+24 largest-`qK_0` antipodal bridge pairs.  No candidate has negative
+normalized gap; the smallest finite-candidate value is `.132624`.  Child and
+bridge enumeration is exhaustive, but the search over the convex hull is
+explicitly only a finite candidate search, so the result is finite evidence
+rather than a PT.1 certificate.
+
+Run:
+
+```bash
+.venv/bin/python \
+  extremal_information/experiments/actual_child_prior_transport_gap_diag.py
+```
+
+Audit:
+[`actual_child_prior_transport_gap_diag_report.md`](actual_child_prior_transport_gap_diag_report.md).
+
+Output:
+[`../../computations/results/actual_child_prior_transport_gap_diag.json`](../../computations/results/actual_child_prior_transport_gap_diag.json).

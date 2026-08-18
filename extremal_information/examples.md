@@ -4526,3 +4526,21 @@ complete-cube values are reproducible finite numerical evidence, not an
 asymptotic lower bound or an interval certificate for the transcendental
 summaries.  See
 [`experiments/actual_child_latent_collision_diag_report.md`](experiments/actual_child_latent_collision_diag_report.md).
+
+## Example 227: natural actual-child transport witnesses retain a positive finite gap
+
+For the PT.1 modulus in Theorem 37.79, a reproducible candidate search tests
+the top latent-covariance ray and posterior barycenters from the largest
+collision and largest individual `qK_0` bridge contributions.  On certified
+`beta=4` minimizing children at both orientations of `3+3`, `4+4`, and
+`3+7`, every tested normalized gap is positive.  The minimum is `.132624`
+on the order-six covariance ray; at order ten the collision-selected
+posterior minima are `.496339` and `.482178`, despite normalized squared
+Frobenius norms `.7081` and `.9835`.
+
+The child and bridge enumerations are exhaustive, covariance-ray membership
+is LP-certified to numerical precision, and posterior reconstructions have
+maximum coordinate discrepancy below `6e-14`.  The search over the convex
+hull is not exhaustive, so this is finite evidence consistent with a fixed
+transport gap—not a certificate for PT.1.  See
+[`experiments/actual_child_prior_transport_gap_diag_report.md`](experiments/actual_child_prior_transport_gap_diag_report.md).

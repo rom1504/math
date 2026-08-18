@@ -2553,7 +2553,22 @@ class and risks restating the desired parent optimization.
   (Theorem 37.78).  It is nonactual.  For actual priors, Theorem 37.79 shows
   that a fixed child-only rank-one transport gap forces
   `log K_e=Omega(N)` on nonvanishing path mass.  Failure yields only an
-  existential MGF-violating query, not yet a concise coherent phase.
+  existential MGF-violating query, not yet a concise coherent phase.  A
+  checkable necessary test is
+  `||sum_s pi_s(C_(D,epsilon s) tensor C_(A,s))||_op
+  <=(4-8c)sqrt(mn)`; a single sector exceeding the threshold gives the
+  rank-one direction formed by its two top child-correlation eigenvectors.
+  Conversely, sector linear-subgaussian proxies with
+  `max_s sigma^2_(A,s)sigma^2_(D,epsilon s)<4` imply a fixed transport gap
+  by Gaussian linearization.  No current minimizing-child identity proves
+  this strong-mixing bound, and covariance-only closure has a rare-spike
+  counterexample.
+- **Finite transport test:** on the same certified `beta=4` children through
+  `N=10`, the top covariance ray and the largest-collision posterior
+  barycenters all have positive PT.1 normalized gap; the smallest tested
+  value is `.132624`.  Several order-ten posterior witnesses have
+  `||A||_F^2/(mn)>.7`, so this is not merely a tiny-norm effect.  The
+  candidate family is nonexhaustive and gives no uniform theorem.
 - **New SML:** `L_actual-latent-collision-tail`: prove the displayed
   subexponential-threshold/polynomial-escaping-mass estimate uniformly on
   the actual negative path, or prove that every subexponential threshold is
