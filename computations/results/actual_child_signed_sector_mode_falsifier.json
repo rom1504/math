@@ -1,0 +1,985 @@
+{
+  "classification": "80-digit optimizing-child selection; complete finite bridge enumeration; floating transcendental/eigensystem evaluation; numerical evidence only",
+  "parameters": {
+    "balanced_orientation_and_row_direction": true,
+    "betas": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "canonical_principal_eigenspace_projection": true,
+    "lambda": 1.0,
+    "mp_dps": 80,
+    "orders": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "records": [
+    {
+      "N": 4,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 1.9949319973733282e-17,
+        "rank_one_character_count": 4
+      },
+      "canonical_J": 0.002783664975935185,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.4271045340681452,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 0.0912091415107837,
+      "quadratic_lambda_max": 0.2135522670340726,
+      "quadratic_lambda_min": -0.2135522670340726,
+      "raw_t": 0.5,
+      "right_sector_bias": 0.0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "rounded_negative_energy_per_active_row": 0.05338806675851815,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        2
+      ],
+      "trial": null
+    },
+    {
+      "N": 4,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 2.1597307275911248e-16,
+        "rank_one_character_count": 4
+      },
+      "canonical_J": 0.09372879290975034,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 1.160051316771948,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 0.6728595287721651,
+      "quadratic_lambda_max": 0.580025658385974,
+      "quadratic_lambda_min": -0.580025658385974,
+      "raw_t": 1.0,
+      "right_sector_bias": 0.0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "rounded_negative_energy_per_active_row": 0.580025658385974,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        2
+      ],
+      "trial": null
+    },
+    {
+      "N": 4,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 4.371503159461554e-16,
+        "rank_one_character_count": 4
+      },
+      "canonical_J": 0.5427094643423664,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 1.858698350293671,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 1.727379778692207,
+      "quadratic_lambda_max": 0.9293491751468355,
+      "quadratic_lambda_min": -0.9293491751468355,
+      "raw_t": 2.0,
+      "right_sector_bias": 0.0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "rounded_negative_energy_per_active_row": 3.717396700587342,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        2
+      ],
+      "trial": {
+        "SM25_quadratic_lower_bound": 0.1875,
+        "actual_directional_gain": -0.07116972070738892,
+        "amplitude": 0.6123724356957945,
+        "binary_entropy_cost": 0.3147913400176421,
+        "delta": 1.0,
+        "physical_remainder_contribution_to_gain": -0.8637616375451727,
+        "quadratic_directional_gain": 0.7925919168377837,
+        "trial_probability_normalization_error": 0.0
+      }
+    },
+    {
+      "N": 5,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 5.1011712215442984e-17,
+        "rank_one_character_count": 8
+      },
+      "canonical_J": 0.0032990410733768627,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 4.163336342344337e-17,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.23806975737477987,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 0.18888503067407117,
+      "quadratic_lambda_max": 0.38313852994172853,
+      "quadratic_lambda_min": -0.3831385299417287,
+      "raw_t": 0.4472135954999579,
+      "right_sector_bias": 0.07401448984663972,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.054164548118758156,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 5,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 1.2685165418080402e-16,
+        "rank_one_character_count": 8
+      },
+      "canonical_J": 0.1139454222820544,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 3.469446951953614e-17,
+      "orientation": -1,
+      "principal_eigenspace_gap": 1.0277303391876529,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 1.7572947451686243,
+      "quadratic_lambda_max": 1.2776459349679659,
+      "quadratic_lambda_min": -1.2776459349679659,
+      "raw_t": 0.8944271909999159,
+      "right_sector_bias": 0.38073141239917685,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.5271646639237731,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 5,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 5.204170427930421e-16,
+        "rank_one_character_count": 8
+      },
+      "canonical_J": 1.033139255762584,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_feature_fairness_error": 3.2959746043559335e-17,
+      "orientation": -1,
+      "principal_eigenspace_gap": 2.493543441411475,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 6.716270694971911,
+      "quadratic_lambda_max": 2.588122900268915,
+      "quadratic_lambda_min": -2.588122900268915,
+      "raw_t": 1.7888543819998317,
+      "right_sector_bias": 1.2405877170440174,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 2.9775465490467217,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        2,
+        3
+      ],
+      "trial": {
+        "SM25_quadratic_lower_bound": 0.1875,
+        "actual_directional_gain": -0.19213584844159962,
+        "amplitude": 0.6123724356957945,
+        "binary_entropy_cost": 0.3147913400176421,
+        "delta": 1.0,
+        "physical_remainder_contribution_to_gain": -0.7643322206584435,
+        "quadratic_directional_gain": 0.5721963722168439,
+        "trial_probability_normalization_error": 6.661338147750939e-16
+      }
+    },
+    {
+      "N": 6,
+      "active_mode_row_count": 3,
+      "active_mode_rows": [
+        0,
+        1,
+        2
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 512,
+        "bridge_sign_count": 9,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          170,
+          511
+        ],
+        "maximum_direct_log_pressure_error": 1.0690233420707074e-16,
+        "rank_one_character_count": 16
+      },
+      "canonical_J": 0.006141559170365518,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.058018566680825084,
+      "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.38327650133518754,
+      "principal_eigenspace_multiplicity": 5,
+      "quadratic_K": 0.4407026294272256,
+      "quadratic_lambda_max": 0.5110353351135831,
+      "quadratic_lambda_min": -0.2555176675567919,
+      "raw_t": 0.4082482904638631,
+      "right_sector_bias": 0.058018566680825084,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.02474373949098924,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        3,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 6,
+      "active_mode_row_count": 3,
+      "active_mode_rows": [
+        0,
+        1,
+        2
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 512,
+        "bridge_sign_count": 9,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          170,
+          511
+        ],
+        "maximum_direct_log_pressure_error": 2.445960101127298e-16,
+        "rank_one_character_count": 16
+      },
+      "canonical_J": 0.17623828137917297,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.31506365901228456,
+      "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.8196823788423073,
+      "principal_eigenspace_multiplicity": 5,
+      "quadratic_K": 2.0156376065537533,
+      "quadratic_lambda_max": 1.0929098384564104,
+      "quadratic_lambda_min": -0.5464549192282052,
+      "raw_t": 0.8164965809277261,
+      "right_sector_bias": 0.31506365901228456,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.21455712621113232,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        3,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 6,
+      "active_mode_row_count": 3,
+      "active_mode_rows": [
+        0,
+        1,
+        2
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 512,
+        "bridge_sign_count": 9,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          170,
+          511
+        ],
+        "maximum_direct_log_pressure_error": 7.346553920761778e-16,
+        "rank_one_character_count": 16
+      },
+      "canonical_J": 1.4378286735768908,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 1.0856238269799832,
+      "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "maximum_feature_fairness_error": 6.938893903907228e-18,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.9922714989690379,
+      "principal_eigenspace_multiplicity": 5,
+      "quadratic_K": 2.9538081829987863,
+      "quadratic_lambda_max": 1.3230286652920509,
+      "quadratic_lambda_min": -0.6615143326460257,
+      "raw_t": 1.6329931618554523,
+      "right_sector_bias": 1.0856238269799832,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 1.1059385968005655,
+      "selector_gaps_to_next_histogram": [
+        null,
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        3,
+        3
+      ],
+      "trial": {
+        "SM25_quadratic_lower_bound": 0.005708210028616405,
+        "actual_directional_gain": -0.06427150410585719,
+        "amplitude": 0.26803544708788474,
+        "binary_entropy_cost": 0.10401337837521124,
+        "delta": 0.1059385968005655,
+        "physical_remainder_contribution_to_gain": -0.07395482504010886,
+        "quadratic_directional_gain": 0.009683320934251671,
+        "trial_probability_normalization_error": 8.881784197001252e-16
+      }
+    },
+    {
+      "N": 7,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        2,
+        3
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 4096,
+        "bridge_sign_count": 12,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          1365,
+          4095
+        ],
+        "maximum_direct_log_pressure_error": 1.0809495659680479e-16,
+        "rank_one_character_count": 32
+      },
+      "canonical_J": 0.007443470518015971,
+      "canonical_row_log_spread": 1.7763568394002505e-15,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 2.7755575615628914e-17,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.20000540856917576,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 0.8620598996814115,
+      "quadratic_lambda_max": 0.8852980818501637,
+      "quadratic_lambda_min": -0.5041342057267911,
+      "raw_t": 0.3779644730092272,
+      "right_sector_bias": 0.04705651315404299,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.05225566315689515,
+      "selector_gaps_to_next_histogram": [
+        "0.066779756384295682425914733944339803747296475062041223589872354427004762196903561",
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 7,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        2,
+        3
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 4096,
+        "bridge_sign_count": 12,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          1365,
+          4095
+        ],
+        "maximum_direct_log_pressure_error": 3.408731630294426e-16,
+        "rank_one_character_count": 32
+      },
+      "canonical_J": 0.22549074695220828,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.5100508774337935,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 7.3928891240169055,
+      "quadratic_lambda_max": 3.059504191073422,
+      "quadratic_lambda_min": -1.4652268318512545,
+      "raw_t": 0.7559289460184544,
+      "right_sector_bias": 0.26666240677773734,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 0.48095189122233295,
+      "selector_gaps_to_next_histogram": [
+        "0.58688451873274747796545465598881162916159911665641890471295649112448172828266837",
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        3
+      ],
+      "trial": null
+    },
+    {
+      "N": 7,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        2,
+        3
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 4096,
+        "bridge_sign_count": 12,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          1365,
+          4095
+        ],
+        "maximum_direct_log_pressure_error": 4.518954654919582e-16,
+        "rank_one_character_count": 32
+      },
+      "canonical_J": 1.6622278338356358,
+      "canonical_row_log_spread": 8.881784197001252e-16,
+      "feature_tie_counts": [
+        0,
+        0
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 1.734723475976807e-17,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.35143262294238076,
+      "principal_eigenspace_multiplicity": 1,
+      "quadratic_K": 33.39457397414917,
+      "quadratic_lambda_max": 7.042664457128315,
+      "quadratic_lambda_min": -2.6149901544552896,
+      "raw_t": 1.5118578920369088,
+      "right_sector_bias": 0.9656912897157292,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "rounded_negative_energy_per_active_row": 2.274495192614308,
+      "selector_gaps_to_next_histogram": [
+        "2.2412529982075729134643328577539510940942310026577368245050287454552973232054078",
+        null
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        3
+      ],
+      "trial": {
+        "SM25_quadratic_lower_bound": 0.1875,
+        "actual_directional_gain": -0.2785556839295638,
+        "amplitude": 0.6123724356957945,
+        "binary_entropy_cost": 0.3147913400176421,
+        "delta": 1.0,
+        "physical_remainder_contribution_to_gain": -0.6413185833347108,
+        "quadratic_directional_gain": 0.36276289940514694,
+        "trial_probability_normalization_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "N": 8,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 65536,
+        "bridge_sign_count": 16,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21845,
+          65535
+        ],
+        "maximum_direct_log_pressure_error": 6.722053469410127e-17,
+        "rank_one_character_count": 64
+      },
+      "canonical_J": 0.007971053011109674,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        4,
+        4
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.1620186966239241,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 1.091408043550361,
+      "quadratic_lambda_max": 0.7831014908493527,
+      "quadratic_lambda_min": -0.4462087306818907,
+      "raw_t": 0.35355339059327373,
+      "right_sector_bias": 0.0,
+      "right_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "rounded_negative_energy_per_active_row": 0.02905606558889323,
+      "selector_gaps_to_next_histogram": [
+        "0.052469120187727712595586024303875445226318274707022949367144061630181920888748687",
+        "0.052469120187727712595586024303875445226318274707022949367144061630181920888748687"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        4
+      ],
+      "trial": null
+    },
+    {
+      "N": 8,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 65536,
+        "bridge_sign_count": 16,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21845,
+          65535
+        ],
+        "maximum_direct_log_pressure_error": 1.8041124150158794e-16,
+        "rank_one_character_count": 64
+      },
+      "canonical_J": 0.24689571001407273,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        4,
+        4
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": -5.551115123125783e-17,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.45521666026431773,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 8.398753537391244,
+      "quadratic_lambda_max": 2.394450500740306,
+      "quadratic_lambda_min": -1.182713759584916,
+      "raw_t": 0.7071067811865475,
+      "right_sector_bias": -5.551115123125783e-17,
+      "right_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "rounded_negative_energy_per_active_row": 0.21730348546209588,
+      "selector_gaps_to_next_histogram": [
+        "0.49303735914708717395782811802783012995760167968467136267549473008555463661728416",
+        "0.49303735914708717395782811802783012995760167968467136267549473008555463661728416"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        4
+      ],
+      "trial": null
+    },
+    {
+      "N": 8,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 65536,
+        "bridge_sign_count": 16,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21845,
+          65535
+        ],
+        "maximum_direct_log_pressure_error": 1.762479051592436e-15,
+        "rank_one_character_count": 64
+      },
+      "canonical_J": 2.9176823001221797,
+      "canonical_row_log_spread": 8.881784197001252e-16,
+      "feature_tie_counts": [
+        4,
+        4
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": -1.1102230246251568e-16,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.3393508043069997,
+      "principal_eigenspace_multiplicity": 2,
+      "quadratic_K": 31.2817231729482,
+      "quadratic_lambda_max": 4.828344569943275,
+      "quadratic_lambda_min": -1.8467414743481845,
+      "raw_t": 1.414213562373095,
+      "right_sector_bias": -1.1102230246251568e-16,
+      "right_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "rounded_negative_energy_per_active_row": 0.10300208597072782,
+      "selector_gaps_to_next_histogram": [
+        "2.0290382685776538567896505226819408760329921449616130765240120678012128964740491",
+        "2.0290382685776538567896505226819408760329921449616130765240120678012128964740491"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        4
+      ],
+      "trial": null
+    },
+    {
+      "N": 9,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 1048576,
+        "bridge_sign_count": 20,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          349525,
+          1048575
+        ],
+        "maximum_direct_log_pressure_error": 2.0946785972419946e-16,
+        "rank_one_character_count": 128
+      },
+      "canonical_J": 0.0077955461611392,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        2,
+        2
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.14413901379974625,
+      "principal_eigenspace_multiplicity": 4,
+      "quadratic_K": 1.1532170943148015,
+      "quadratic_lambda_max": 0.6188835352270144,
+      "quadratic_lambda_min": -0.35894939529006487,
+      "raw_t": 0.3333333333333333,
+      "right_sector_bias": 0.0,
+      "right_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "rounded_negative_energy_per_active_row": 0.02683339652430985,
+      "selector_gaps_to_next_histogram": [
+        "0.042296209633126341355143651549298648734886555915380309513922812781197078385090596",
+        "0.037254153023079292686410162001384733149434154845927535461786962967380609743146318"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        5
+      ],
+      "trial": null
+    },
+    {
+      "N": 9,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 1048576,
+        "bridge_sign_count": 20,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          349525,
+          1048575
+        ],
+        "maximum_direct_log_pressure_error": 2.220446049250313e-16,
+        "rank_one_character_count": 128
+      },
+      "canonical_J": 0.2285051149956594,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        2,
+        2
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 0.0,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.42856182893578393,
+      "principal_eigenspace_multiplicity": 4,
+      "quadratic_K": 6.9090078613707835,
+      "quadratic_lambda_max": 1.5696633959065642,
+      "quadratic_lambda_min": -0.8227297663310041,
+      "raw_t": 0.6666666666666666,
+      "right_sector_bias": 0.0,
+      "right_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "rounded_negative_energy_per_active_row": 0.21982695405635178,
+      "selector_gaps_to_next_histogram": [
+        "0.41974625766716558454156048673285105013634379876263968885650133881589284171207672",
+        "0.324239755578739622683087304438554938155221636330614493636977158204740880316716"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        5
+      ],
+      "trial": null
+    },
+    {
+      "N": 9,
+      "active_mode_row_count": 2,
+      "active_mode_rows": [
+        0,
+        1
+      ],
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 1048576,
+        "bridge_sign_count": 20,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          349525,
+          1048575
+        ],
+        "maximum_direct_log_pressure_error": 1.4068607390171906e-15,
+        "rank_one_character_count": 128
+      },
+      "canonical_J": 3.8806848326275336,
+      "canonical_row_log_spread": 0.0,
+      "feature_tie_counts": [
+        2,
+        2
+      ],
+      "lambda": 1.0,
+      "left_sector_bias": 1.1102230246251564e-16,
+      "left_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "maximum_feature_fairness_error": 0.0,
+      "orientation": -1,
+      "principal_eigenspace_gap": 0.21400093084578664,
+      "principal_eigenspace_multiplicity": 4,
+      "quadratic_K": 18.24619993625217,
+      "quadratic_lambda_max": 2.5824653881115793,
+      "quadratic_lambda_min": -1.1383942636185092,
+      "raw_t": 1.3333333333333333,
+      "right_sector_bias": 0.0,
+      "right_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "rounded_negative_energy_per_active_row": 0.2921464871122115,
+      "selector_gaps_to_next_histogram": [
+        "1.8514423102973969139336994386525825469817688636390545378674361076111855131059659",
+        "1.4776981826814312808799344591369883335644668812037503479370557947667332850914544"
+      ],
+      "selector_mp_dps": 80,
+      "split": [
+        4,
+        5
+      ],
+      "trial": null
+    }
+  ],
+  "schema": "actual-child-signed-sector-mode-falsifier-v1"
+}
