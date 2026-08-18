@@ -2551,3 +2551,54 @@ improvement, but a transport inequality supplies only a finite initial wall;
 it does not decide whether any such improving law exists.  For dense bridge
 composition, the operative state is therefore a gauge-invariant disorder
 lower-tail/support edge, not another scalar spin-tail constant.
+
+## 141. Regularity localizes a disorder phase but scalar pressure does not create regularity
+
+On the strict high-temperature operator-regular conference class, pressure
+has dimension-free Frobenius response and every fixed linear lower
+deviation costs quadratic bridge entropy.  This remains true through a
+`Theta(r^(3/2))` Hamming collar and for every sublinear disorder tilt.
+
+The converse inference fails.  A single strict scalar pressure sublevel can
+contain sign bridges separated by only `Theta(r^(3/4))` in Frobenius norm
+but by `Theta(r)` in pressure.  Thus low pressure alone does not synchronize
+the Gibbs response or provide the regular extension needed for quadratic
+concentration.  A possible finite-tilt phase is localized to a deeply
+operator-irregular sector, but that sector cannot be discarded merely by
+conditioning on the desired scalar outcome.
+
+## 142. The first nontrivial conference disorder coordinate is a completion defect
+
+For conference children the bridge-dependent fourth cumulant is governed
+by
+
+```math
+J_\epsilon(B)=\|BB^T\|_F^2+\|AB+\epsilon BA\|_F^2.
+```
+
+This is invariant under independent child switching, is bounded below by
+`r^3`, and reaches the lower edge exactly at conference completions.  It is
+therefore genuine post-gauge bridge information, unlike the child switch
+label.  On a power-regular high-temperature class, reaching the child
+pressure forces `J` near this edge.
+
+The condition is not yet an unconditional pressure state.  Fixed
+temperature observes all even cumulants, so a power-irregular bridge may
+compensate for an unfavorable quartic coordinate.  The exact statistic
+identifies the first algebraic obstruction; it does not truncate the full
+rare-event hierarchy.
+
+## 143. Macroscopic Gram improvement has quadratic information price
+
+Uniform Rademacher rows have typical frame potential `2r^3+o(r^3)`.
+Lowering it by any fixed fraction has probability `exp(-Omega(r^2))` and
+requires `Omega(r^2)` relative entropy under any tilted bridge law.  The
+same conclusion holds for every fixed leading improvement of the complete
+conference quartic coordinate `J`, because its intertwiner channel is a
+rank-`r^2/2` Rademacher projection.
+
+Hence a speed-`O(r)` bridge law cannot buy a fixed leading improvement in
+either second-order row orthogonality or the fourth pressure coordinate.
+If a speed-`r` favorable pressure basin exists, it must exploit a genuinely
+higher-order, power-irregular cancellation rather than an inexpensive
+macroscopic frame regularization.

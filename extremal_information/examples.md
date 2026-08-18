@@ -3444,3 +3444,54 @@ is a fixed finite gap of two, with no asymptotic packing or scaling claim.
 The reproducible protocol, result, source audit, and independent
 symmetry-free MILP check are in `experiments/` and `drafts/` under
 `exact_minimizer_optimized_bridge_response`.
+
+## Example 176: a mesoscopic planted block breaks scalar pressure regularity
+
+Let `A_r` be conference, use orientation `-`, and take the universal-double
+bridge `B^0=A_r+I`.  Overwrite an arbitrary
+`k`-by-`k` submatrix by `+1`, where `k=c r^(3/4)`, obtaining `B^1`.  In the
+strict conference high-temperature range,
+
+```math
+f_-(B^1)-f_-(B^0)={\beta c^2\over\sqrt2}r+o(r),
+\qquad
+\|B^1-B^0\|_F=(\sqrt2c+o(1))r^{3/4}.
+```
+
+For a suitable fixed `c`, both bridges lie below the typical conference
+pressure by a fixed linear amount.  Convexity forces
+`||nabla f_-(B^1)||_F=Omega(r^(1/4))`.  This is a scalable exact-sign
+counterexample to the inference “low scalar pressure implies
+dimension-free response,” while remaining consistent with a
+superlinear-speed lower tail.
+
+## Example 177: conference completion is the quartic support edge
+
+For conference child `A_r`, orientation `-`, and `B=A_r+I`,
+
+```math
+J_-(B)=r^3+4r(r-1)=r^3+O(r^2).
+```
+
+Thus the universal double reaches the asymptotic lower edge of the exact
+fourth-cumulant coordinate even where an exact order-`2r` conference
+completion is unavailable.  A uniform bridge instead has
+`EJ=4r^3-3r^2`, and every fixed neighborhood of the lower edge has
+probability `exp(-Omega(r^2))`.  The example supplies a real low-pressure
+point but not an `exp(-O(r))` basin.
+
+## Example 178: low frame potential is a sequential rare event
+
+For independent sign rows `R_1,...,R_r`,
+
+```math
+\|BB^T\|_F^2=r^3+2\sum_{k<r}\sum_{j\le k}
+                 \langle R_{k+1},R_j\rangle^2.
+```
+
+A fixed deficit below the typical leading value forces linearly many late
+rows to have an atypically small quadratic interaction with their entire
+prefix.  After truncating the few high prefix-Gram eigenvalues, each such
+row costs `exp(-Omega(r))`; their adaptive product costs
+`exp(-Omega(r^2))`.  This converts what looks like one global moment
+constraint into an extensive sequence of conditional information charges.

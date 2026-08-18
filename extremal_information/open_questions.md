@@ -1167,3 +1167,30 @@ finite-temperature pressure.  Existing Gaussian upper-deviation results do
 not transfer.  The useful next object should be a concrete joint
 spin--disorder statistic or support edge, not a reformulation of the same
 negative moment.
+
+## 25. What can a speed-`r` conference basin look like after regular and quartic localization?
+
+Theorems 37.6--37.8 rule out three broad mechanisms for an
+`exp(-O(r))` favorable basin at small fixed temperature:
+
+1. it cannot lie in the operator-regular class, nor within
+   `Theta(r^(3/2))` Hamming distance of that sign set;
+2. on the FMW-power-regular class it cannot reach the child target without
+   moving the quartic completion statistic to its quadratic-entropy edge;
+3. under any `O(r)`-relative-entropy change of bridge law it cannot lower
+   the frame potential or full quartic coordinate by a fixed leading
+   fraction.
+
+Determine whether the remaining deeply operator- and power-irregular sector
+contains a target-reaching family of probability `exp(-O(r))`.  A useful
+positive answer must exhibit a counted exact-sign family and a rigorous
+pressure upper bound.  A useful negative answer must prove that every
+target-reaching bridge either has a fixed quartic deficit or pays another
+explicit `omega(r)` information charge.  Merely adding higher moments one
+at a time is not acceptable unless they close under a uniform pressure
+remainder.
+
+Equivalently, isolate a finite or compact gauge-invariant support-edge state
+whose low-pressure fibres are superexponentially small, or construct a
+linear-entropy higher-cumulant cancellation showing that no such bounded
+state can suffice.

@@ -170,7 +170,7 @@ landscape.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 2/3 | finite at fixed width | vanishing density error | all chain lengths | 1 | keep warm |
+| adversarial statistical mechanics | 4 on conference benchmark | scalar pressure plus exact quartic coordinate on power-regular sector; no closed full state | linear defect excluded with `r^2` tail on regular sector; full loss unknown | Paley conference sequence only | 0 on benchmark, 3 only for the eventual minimizer basin lemma | focused reset: exceptional deeply irregular sector only |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -581,8 +581,9 @@ class and risks restating the desired parent optimization.
   as a possible obstruction.
 - **Current SML:** the switch-label lower bound is not an obstruction to
   optimized composition.  The sharp orthogonal target is now a
-  **gauge-invariant bridge-basin lemma**: for pressure-near-minimizing
-  children and each comparable split, prove an `exp(-O(N))` set of bridges
+  **gauge-invariant bridge-basin lemma**: for the contracted-temperature
+  child minimizers in the exact bridge identity and each comparable split,
+  prove an `exp(-O(N))` set of bridges
   reaching the same-temperature target up to `o(N)` pressure, or prove that
   such a basin has genuinely quadratic rarity.  The archived criterion (4.6)
   turns the positive form into summably defective pressure subadditivity.
@@ -592,8 +593,8 @@ class and risks restating the desired parent optimization.
   all-order recovery is proved.
 - **Assumption-distance:** the gauge theorem has no structural assumption;
   the conference wall has score 0 as a constructed family.  The missing
-  basin statement would have score 3 or 4 only when tied to actual
-  pressure-near-minimizing children.
+  basin statement would have score 3 or 4 only when tied to those actual
+  contracted-temperature child minimizers.
 - **Asymptotic movement:** no convergence-side exponent improves.  Two false
   inferences are removed exactly: `Omega(n)` labelled response bits do not
   survive covariant bridge optimization, and an `exp(-kappa n)` spin-tail
@@ -609,3 +610,63 @@ class and risks restating the desired parent optimization.
   optimized-bridge impossibility result.  The adversarial/rare-event branch
   remains unpromoted; it earns exactly one focused basin-rate campaign.
   More scalar tail, selector, or fixed-small-tilt optimization is frozen.
+
+### Checkpoint 10 — the bridge basin is localized to a deeply irregular sector
+
+- **Strongest new statements:** (i) every fixed negative disorder tilt is
+  annealed exactly when every fixed lower pressure deviation is
+  superexponentially rare at speed `r`; bounded differences gives the
+  explicit conditioned wall
+  `gamma(beta)-lambda beta^2/4`; (ii) on the operator-regular conference
+  sector, lower pressure deviations have speed `r^2` and every positive
+  `lambda_r=o(r)` remains annealed; (iii) this speed-`r^2` conclusion
+  extends through a `Theta(r^(3/2))` Hamming collar; (iv) the exact quartic
+  coordinate
+  `J=||BB^T||_F^2+||AB+epsilon BA||_F^2` is the nonnegative conference-
+  completion defect, its near-zero basin has speed `r^2`, and sufficiently
+  small-beta target pressure forces near-zero `J` on an explicit
+  power-regular class; (v) every fixed leading deficit below the *typical*
+  frame potential or full `J` coordinate also has speed `r^2`, and any law
+  producing that deficit pays `Omega(r^2)` relative entropy.
+- **Sharp falsifier:** scalar low pressure does not imply the dimension-free
+  gradient needed by the regular-sector argument.  Genuine sign bridges in
+  one strict low-pressure sublevel can differ by `Theta(r)` pressure at only
+  `Theta(r^(3/4))` Frobenius distance, forcing gradient
+  `Omega(r^(1/4))`.  The deeply irregular sector cannot be folded back into
+  convex concentration by naming the sublevel.
+- **Finite optimized-response check:** after quotienting child switching and
+  global sign correctly, the two exhaustive order-eight exact-minimizer
+  classes agree for query orders at most two but have optimized order-three
+  response signatures `[12,15,17,17]` and `[12,15,19,19]`.  A second,
+  symmetry-free MILP reproduced the separation.  This is Level-0 finite
+  evidence with fixed gap two, not an asymptotic packing.
+- **Previous SML:** determine the lower-deviation speed of favorable parent
+  pressure over the full anchored bridge fibre.
+- **Current SML:** on the conference benchmark, only the **deeply
+  operator/power-irregular sector** remains: either construct an
+  `exp(-O(r))` family in that sector reaching the same-temperature target,
+  or prove its lower tail superexponential.  Any such family must lie more
+  than `Theta(r^(3/2))` edits from the operator-regular sign set and must
+  evade both the lower-edge and fixed-typical-deficit quartic barriers
+  through higher-order structure.  In particular, no `O(r)`-entropy law can
+  buy a fixed macroscopic Gram/quartic improvement.  For the convergence
+  route this statement must eventually be
+  transferred from conference children to the actual contracted-temperature
+  minimizers in the exact bridge identity.
+- **Benchmark level:** the analytic statements are audited Level 4 on a
+  structured dense exact-sign family; the optimized-response table is Level
+  0.  There is still no Level-6 minimizer-specific transfer.
+- **Assumption-distance:** score 0 for conference/power-regular inputs.  The
+  full `L_basin` remains score 3 only when quantified over the actual child
+  pressure minimizers.  No near-minimizer hypothesis became a theorem here.
+- **Asymptotic movement:** the lower-tail speed improves from unknown to
+  quadratic on a strict overwhelming sector, and the unresolved set is
+  localized beyond the `r^(3/2)` edit scale.  This is a genuine weakening of
+  the structured benchmark SML, but it changes no bound on `M_n`, no
+  cross-order loss, and no convergence interval.
+- **Decision:** **ORTHOGONAL-BRANCH RESET, CONTEXTUAL CEILING UNCHANGED.**
+  The adversarial-statistical-mechanics branch has earned one narrowly
+  targeted continuation on the deeply irregular support edge.  Stop regular
+  bridge, scalar-gradient, selector, and quartic-constant variants.  The
+  next work must classify the exceptional sector or tie the basin theorem to
+  actual pressure-minimizing children.

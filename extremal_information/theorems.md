@@ -17078,3 +17078,187 @@ Proof, exact literature comparison, and independent audit are in
 [`drafts/conference_negative_moment_phase_boundary.md`](drafts/conference_negative_moment_phase_boundary.md)
 and
 [`drafts/conference_negative_moment_phase_boundary_independent_audit.md`](drafts/conference_negative_moment_phase_boundary_independent_audit.md).
+
+### Theorem 37.6 (operator-regular conference bridges have a quadratic lower tail)
+
+Fix `0<beta<sqrt(2)/6`.  For a Paley conference child `A_r`, orientation
+`epsilon`, and sign bridge `B`, put
+
+```math
+S_{\epsilon,B}=\begin{pmatrix}A_r&B\\B^T&\epsilon A_r\end{pmatrix},
+\qquad
+f_{\epsilon,r}(B)=\log\overline Z_{2r}
+ \left(S_{\epsilon,B},{\beta\over\sqrt{2r}}\right).
+```
+
+Choose `kappa<1/2` strictly above
+`beta(3+delta)/sqrt(2)` and condition on
+
+```math
+\mathcal K_{\epsilon,r}
+=\left\{B:\left\|{\beta S_{\epsilon,B}\over\sqrt{2r}}
+             \right\|_{op}\le\kappa\right\}.
+```
+
+This event has probability `1-exp(-Omega(r))`.  If
+
+```math
+h_\beta=2\psi(\beta/\sqrt2)+{\beta^2\over4},
+```
+
+then, for every fixed `eta>0`,
+
+```math
+\boxed{
+ \Pr\{f_{\epsilon,r}(B)\le(h_\beta-\eta)r
+       \mid\mathcal K_{\epsilon,r}\}
+ \le e^{-c_{\beta,\kappa,\eta}r^2}.}                 \tag{37.19}
+```
+
+Consequently the conditioned negative-moment soft minimum has rate
+`h_beta r` for every fixed disorder tilt.  In fact the independently
+audited recentering argument gives the same conclusion for every positive
+`lambda_r=o(r)`.  The proof uses the high-temperature covariance bound to
+extend pressure from the convex operator-regular set as a dimension-free
+Frobenius-Lipschitz convex function, followed by Talagrand concentration.
+
+The localization is stable under a mesoscopic edit collar.  If a
+low-pressure bridge lies within
+
+```math
+s_r=\left\lfloor{\eta r\over4(\beta/\sqrt{2r})}\right\rfloor
+=\Theta(r^{3/2})
+```
+
+bit flips of the regular sign set, the total probability of all such
+bridges is still `exp(-Omega(r^2))`.  Thus an `exp(-O(r))` favorable basin,
+if one exists, must be Hamming-deep in the operator-irregular sector.
+
+The scalar pressure sublevel itself cannot replace the operator event.  An
+explicit universal-double bridge and a `Theta(r^(3/4))`-by-`Theta(r^(3/4))`
+overwrite both lie in one strict lower-pressure sublevel, have pressure gap
+`Theta(r)` and Frobenius distance `Theta(r^(3/4))`.  At one endpoint
+
+```math
+\|\nabla_B f\|_F=\Omega(r^{1/4}),                    \tag{37.20}
+```
+
+so no dimension-free Frobenius-Lipschitz function can agree with pressure
+on every sign point of that sublevel.
+
+Proofs and the independent audit are in
+[`drafts/conference_regular_conditioned_all_tilts.md`](drafts/conference_regular_conditioned_all_tilts.md),
+[`drafts/conference_sublevel_gradient_audit.md`](drafts/conference_sublevel_gradient_audit.md),
+and
+[`drafts/conference_regular_and_sublevel_gradient_independent_audit.md`](drafts/conference_regular_and_sublevel_gradient_independent_audit.md).
+
+### Theorem 37.7 (the fourth conference coefficient is a completion defect)
+
+In the preceding setup define the gauge-invariant statistic
+
+```math
+J_\epsilon(B)=\|BB^T\|_F^2+\|A_rB+\epsilon BA_r\|_F^2.               \tag{37.21}
+```
+
+Then the following identities are exact:
+
+```math
+\operatorname {Tr}S_{\epsilon,B}^4
+=6r^3-8r^2+2r+2J_\epsilon(B),                          \tag{37.22}
+```
+
+```math
+\kappa_4\!\left({1\over2}z^TS_{\epsilon,B}z\right)
+=6J_\epsilon(B)-30r^3+32r^2-10r.                       \tag{37.23}
+```
+
+Moreover `J_epsilon(B)>=r^3`, with equality exactly when the completed
+parent is itself conference:
+
+```math
+BB^T=rI,\qquad A_rB+\epsilon BA_r=0.
+```
+
+The intertwiner term has the exact projection representation
+
+```math
+\|A_rB+\epsilon BA_r\|_F^2
+=4(r-1)b^TP_\epsilon b,
+\qquad \operatorname {rank}P_\epsilon={r^2\over2},      \tag{37.24}
+```
+
+where `b=vec(B)`.  Hanson--Wright therefore gives, uniformly in the
+conference child and orientation,
+
+```math
+\Pr\{J_\epsilon(B)\le(1+\delta)r^3\}
+\le2e^{-cr^2}\qquad(0<\delta\le1/2).                  \tag{37.25}
+```
+
+On the explicitly stated FMW-power-regular class, a uniform free-cumulant
+remainder shows that, for sufficiently small fixed `beta`, reaching the
+same-temperature child pressure forces
+
+```math
+J_\epsilon(B)\le(1+O_K(\beta^2))r^3.                   \tag{37.26}
+```
+
+Hence target-reaching power-regular bridges have quadratic entropy cost.
+The implication (37.26) is not asserted for power-irregular bridges: at one
+fixed temperature, higher cumulants may compensate for the fourth term.
+
+The exact identities, reproducible symbolic/enumerative check, proof, and
+independent audit are in
+[`drafts/conference_quartic_basin_reduction.md`](drafts/conference_quartic_basin_reduction.md),
+[`drafts/conference_quartic_basin_reduction_independent_audit.md`](drafts/conference_quartic_basin_reduction_independent_audit.md),
+and
+[`experiments/conference_quartic_identity_audit.py`](experiments/conference_quartic_identity_audit.py).
+
+### Theorem 37.8 (fixed Rademacher frame and quartic deficits cost quadratic entropy)
+
+For a uniform `r`-by-`r` sign matrix `B`, let
+
+```math
+\mathcal F(B)=\|BB^T\|_F^2.
+```
+
+For every fixed `delta in (0,1)`,
+
+```math
+\boxed{
+ \Pr\{\mathcal F(B)\le(2-\delta)r^3\}
+ \le e^{-c_\delta r^2}.}                               \tag{37.27}
+```
+
+If a bridge law `q_r` lowers the expected frame potential by the same fixed
+leading fraction, then
+
+```math
+D(q_r\|U_r)=\Omega_\delta(r^2).                         \tag{37.28}
+```
+
+The proof exposes the rows sequentially.  A low final frame potential
+forces linearly many late rows to make a fixed lower deviation against the
+prefix Gram matrix.  Spectral truncation removes the few large prefix
+eigenvalues without losing a fixed trace fraction; Hanson--Wright then
+charges `exp(-Omega(r))` at every selected row, producing the quadratic
+speed.
+
+Combining this theorem with (37.24) yields the broader conference bound
+
+```math
+\boxed{
+ \Pr\{J_\epsilon(B)\le(4-\delta)r^3\}
+ \le e^{-c_\delta r^2},}                               \tag{37.29}
+```
+
+and the analogous `Omega_delta(r^2)` relative-entropy cost for a fixed
+expected deficit.  Thus no `O(r)`-entropy change of bridge law can improve
+the typical fourth-cumulant coordinate by a fixed leading amount.  This
+still does not prove that low pressure forces such an improvement outside
+the power-regular class.
+
+Proof and independent audit are in
+[`drafts/frame_potential_entropy_barrier.md`](drafts/frame_potential_entropy_barrier.md)
+and
+[`audits/frame_potential_entropy_barrier_independent_audit.md`](audits/frame_potential_entropy_barrier_independent_audit.md).

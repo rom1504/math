@@ -1,9 +1,10 @@
 # Theory portfolio
 
-Compact active state for the ten-hour validation and bridge campaign begun at
-`266d101`.  Detailed proofs and history live in `theorems.md`, `examples.md`,
-the benchmark scorecards, and Git.  This file records current judgment, not
-speculation as fact.
+Compact active state.  Detailed proofs and history live in `theorems.md`,
+`examples.md`, `PROGRESS_FRONTIER.md`, the benchmark scorecards, and Git.
+This file records current judgment, not speculation as fact.  The long
+Boolean-feature discussion below is retained as the previous portfolio
+checkpoint; the dated override immediately below is controlling.
 
 ## Objective and guardrail
 
@@ -19,7 +20,78 @@ one of:
 4. an orthogonal limit/statistical-mechanics reduction with a precise new
    lemma.
 
-## Current checkpoint: Boolean feature algebra
+## Current director override: near-minimizer campaign, 2026-08-17
+
+### 1. Contextual response — mature diagnostic, priority B
+
+- **Strongest theorem:** every complete signing with cap `O(n^(3/2))` has a
+  uniform fixed-rate thin tail.  Switching, matched-roof amplification, and
+  one equivariant exact-sign fill then give every switching orbit
+  `Theta(n)` bits of fixed-reference physical response at the target scale.
+- **Best falsifier/scope correction:** per-parent optimized covariant bridges
+  absorb every child switch exactly.  Thus the linear lower bound is real for
+  shared or laboratory-frame futures but collapses for the original
+  unlabelled bridge minimum.
+- **Information discarded by the quotient:** after both complete child
+  gauges are anchored, arbitrary bridge disorder still has `mn-1`
+  coefficient bits up to global sign.  No response separation follows from
+  this count.
+- **Stopping status:** selector, shell, tail, and switching-rate refinements
+  are frozen.  Resume only with a gauge-invariant cross-order state or
+  obstruction.  Strike count: two on the positive transfer arrow.
+
+### 2. Adversarial statistical mechanics — focused active test, priority B+
+
+- **Strongest positive input:** the exact entropy-regularized bridge identity
+  and archived basin criterion: an `exp(-O(N))` family of bridges reaching
+  the same-temperature pressure target to `o(N)` gives summably defective
+  subadditivity.
+- **Strongest no-go:** fixed-rate spin tails improve the soft/ground sandwich
+  but do not force scalar thermal compactness.  On Paley conference children,
+  the fixed-small-tilt wall persists after conditioning on an overwhelming
+  output class where every parent has the uniform thin tail.
+- **New strict reduction:** every fixed tilt is governed exactly by the lower
+  pressure-deviation speed.  On the operator-regular conference sector that
+  speed is `r^2`, even through a `Theta(r^(3/2))` edit collar, and every
+  positive sublinear disorder tilt remains annealed.  On an explicit
+  power-regular class, target pressure also forces a gauge-invariant quartic
+  conference-completion defect whose near edge has speed `r^2`.  More
+  generally, any fixed leading improvement of the typical Rademacher frame
+  potential or full quartic coordinate costs `Omega(r^2)` relative entropy.
+- **Strongest falsifier:** scalar low pressure itself does not regularize the
+  gradient; the same strict sublevel contains sign bridges forcing
+  `Omega(r^(1/4))` Frobenius response.  The exceptional sector cannot be
+  removed by another convex-extension argument.
+- **Live target:** classify target-reaching bridges which are deeply
+  operator/power irregular and evade every fixed macroscopic Gram/quartic
+  improvement through higher-order cancellation.  Construct a speed-`r`
+  basin there or prove it superexponentially rare.
+- **Promotion status:** promoted to one focused active benchmark campaign,
+  not to a convergence architecture.  Full promotion still requires the
+  same result for contracted-temperature child minimizers in the exact
+  bridge identity.
+
+### 3. Presented rare-event states — keep warm, priority C+
+
+- **Strongest theorem:** bulk spectral law plus finitely many presented
+  generic spikes composes exactly for a spherical quadratic benchmark, and a
+  marked phase has a sharp adaptive replica exponent.
+- **Boundary:** neither state is intrinsic under adversarial directions or
+  ordinary dense Boolean coupling.  No Level-4 near-minimizer connection has
+  appeared.
+- **Promotion status:** no promotion.  Reconsider only with deterministic
+  rooted synchronization or a bridge-disorder support-edge algebra.
+
+### Portfolio judgment
+
+Contextual response has reached its relevance ceiling as a *positive*
+convergence architecture, while remaining a useful diagnostic language.
+Adversarial statistical mechanics has now strictly reduced its structured
+benchmark to a deeply irregular support edge, so it becomes the sole focused
+active branch.  It is not yet primary for the original problem because all
+new speed theorems remain conference-specific.
+
+## Previous checkpoint: Boolean feature algebra
 
 The campaign has crossed a genuine near-original benchmark without yet
 meeting the all-order reconnection guardrail.
