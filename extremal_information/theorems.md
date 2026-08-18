@@ -21709,3 +21709,112 @@ approximation does not suffice.  See
 [`audits/actual_child_fixed_frame_directional_conversion.md`](audits/actual_child_fixed_frame_directional_conversion.md)
 and its independent
 [`verifier`](audits/actual_child_fixed_frame_directional_conversion_verifier.md).
+
+### Theorem 37.77 (truncated global coreset from an escort collision tail)
+
+In the setting of Theorem 37.75, let
+
+```math
+G_H=\{B:K_0(B)\le H\},\qquad \delta_H=q(G_H^{\mathsf c}).
+```
+
+One global prior-sampled empirical child law of size `R` has expected
+aggregate cavity and scalar-potential errors
+
+```math
+\boxed{
+E_{\mu_R}E_q\sum_e(r_e^{(R)}-r_e)^2
+\le {32e^{4t}mnH\over R}+4mn\delta_H,}          \tag{37.289}
+```
+
+and
+
+```math
+\boxed{
+\begin{aligned}
+E_{\mu_R}E_q|\log P_R-\log P|
+\le{}&3\sqrt{H/R}+{4H\log(2R)\over R}\\
+&+2tmn\{e^{-R/(4H)}+\delta_H\}.
+\end{aligned}}                                  \tag{37.290}
+```
+
+The same sample is used at every bridge and every edge, and its cavity
+field remains an exact gradient.  Consequently, at comparable splits, if
+for some fixed `zeta>0`
+
+```math
+\boxed{
+\log H_N=o(N),\qquad
+q\{K_0>H_N\}=O(N^{-1/2-\zeta}),}                \tag{37.291}
+```
+
+then an `exp{o(N)}`-support integrable channel satisfies
+
+```math
+\boxed{
+t^2E_q\sum_e(r_e^{(R)}-r_e)^2=O_\beta(N^{1/2-\zeta}),
+\qquad E_q|\log P_R-\log P|=o(N).}              \tag{37.292}
+```
+
+This is logically strictly weaker than annealed subexponential collision:
+an exponential collision value on polynomially vanishing mass can make
+`E_qK_0` exponential while preserving (37.291).  Strictness within the
+actual optimizing-child class is not proved.  The theorem changes the
+collision SML from a mean bound to a tail/escaping-mass bound; it does not
+provide target reach or a mergeable `o(N)`-bit state.  The proof and
+independent audit are
+[`here`](audits/actual_child_truncated_latent_coreset.md) and
+[`here`](audits/actual_child_truncated_latent_coreset_verifier.md).
+
+### Theorem 37.78 (diffuse rank-one entropy forces an extensive collision tail)
+
+Let `mu` be the uniform law on the `2^(m+n-1)` factor-gauge classes
+`Q=XY^T`, and let `nu` be any posterior with barycenter `M=E_nu Q`.  Then
+
+```math
+\boxed{
+D(\nu\Vert\mu)
+\ge {\|M\|_F^2\over2\sqrt{mn}}
+     -{\|M\|_F^2\over6mn}
+\ge {\|M\|_F^2\over3\sqrt{mn}}.}               \tag{37.293}
+```
+
+The proof is entropy duality plus the bilinear Rademacher bound
+
+```math
+\log E_{X,Y}e^{\theta X^TAY}
+\le {\theta^2\|A\|_F^2
+       \over2(1-\theta^2\|A\|_{op}^2)},         \tag{37.294}
+```
+
+at `theta=1/(2sqrt(mn))`.  Consequently, if a bridge law has normalized
+cavity overlap at least `eta`, then
+
+```math
+\log E_qK_0
+\ge {\eta/2-4\rho^2\over3}\sqrt{mn},
+\qquad
+\log\overline K_{del}
+\ge-4t+{\eta/2-4\rho^2\over3}\sqrt{mn}.        \tag{37.295}
+```
+
+Applying the universal pointwise overlap estimate (37.184) to this prior
+gives, for `0<lambda<1` and
+`beta>beta_BG(gamma_0)/(1-lambda)`,
+
+```math
+\boxed{
+\liminf_N{1\over N}\log\overline K_{del}
+\ge {\sqrt{\gamma_0}\over6}
+ {1-\beta_{BG}(\gamma_0)/\beta-\lambda
+       \over1+\lambda}>0.}                     \tag{37.296}
+```
+
+This is a scalable **generic, nonactual** falsifier.  Uniform factors obey
+maximal conditional spread and every currently used rank-one, flip,
+tangent, cap, and averaged-retuning inequality direction, but no hollow
+sign child generates their zero-interaction law.  Hence those structural
+consequences alone cannot prove a subexponential actual collision tail;
+some optimizer-specific nonradial information is necessary.  See the
+[`proof`](audits/actual_child_latent_collision_generic_falsifier.md) and
+[`verifier`](audits/actual_child_latent_collision_generic_falsifier_verifier.md).

@@ -4500,3 +4500,29 @@ two-temperature question.  The example also marks the remaining boundary:
 the actual theorems bound output-row Renyi complexity, while the empirical
 coreset needs latent-posterior collision complexity in the reverse channel
 direction.
+
+## Example 226: actual finite posterior collision is extensive and tail-amplified
+
+At `beta=4`, `lambda=1`, exhaustive bridge cubes for certified
+contracted-temperature minimizing children give
+
+```math
+{1\over N}\log\overline K_{\rm full},
+\ {1\over N}\log\overline K_{\rm del}
+\in[0.8087,1.0451]
+```
+
+across both orientations of the `3+3`, `4+4`, and `3+7` splits.  At total
+order ten, the median normalized log collision lies between `.629` and
+`.667`, and more than `62%` of both the full and deleted base laws have
+`log K>.5N`.  Thus the observed exponential scale is not confined to one
+isolated bridge.
+
+The annealed mean is nevertheless increasingly tail-amplified: only
+`.97%`--`2.0%` of the relevant order-ten base mass supplies half of its
+collision expectation.  This distinction motivated Theorem 37.77: a large
+annealed mean alone cannot rule out a tail-truncated global coreset.  The
+complete-cube values are reproducible finite numerical evidence, not an
+asymptotic lower bound or an interval certificate for the transcendental
+summaries.  See
+[`experiments/actual_child_latent_collision_diag_report.md`](experiments/actual_child_latent_collision_diag_report.md).

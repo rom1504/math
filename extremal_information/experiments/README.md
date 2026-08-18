@@ -505,3 +505,27 @@ Audit:
 
 Output:
 [`../../computations/results/actual_child_posterior_frame_wind_tunnel.json`](../../computations/results/actual_child_posterior_frame_wind_tunnel.json).
+
+## `actual_child_latent_collision_diag.py`
+
+Evaluates the full and deleted latent-posterior collision factors for the
+certified `beta=4` thermal-minimizing children at splits `3+3`, `4+4`, and
+`3+7`, with `lambda=1` inverse-escort weighting over both orientations of the
+complete bridge cube.  It keeps the child prior fixed and uses the exact
+doubled-channel formulas `K_0=z_(2t)z_0/z_t^2` and
+`K_e=z_(2t,e)z_0/z_(t,e)^2`.  It reports normalized log means, escort-tail
+quantiles, and the base mass carrying the collision mean.  All collision
+summaries are numerical finite evidence, not asymptotic lower bounds.
+
+Run:
+
+```bash
+.venv/bin/python \
+  extremal_information/experiments/actual_child_latent_collision_diag.py
+```
+
+Audit:
+[`actual_child_latent_collision_diag_report.md`](actual_child_latent_collision_diag_report.md).
+
+Output:
+[`../../computations/results/actual_child_latent_collision_diag.json`](../../computations/results/actual_child_latent_collision_diag.json).

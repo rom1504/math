@@ -2002,3 +2002,21 @@ generation problem, but it is not yet known to be mathematically easier for
 actual minimizers.  Theorem 37.76 proves the directional conversion once a
 subexponential integrable roof and linear row cost are present; it also shows
 why inverse-escort error alone cannot replace fair target calibration.
+
+Theorem 37.77 shows that the annealed mean in that formulation is stronger
+than the coreset architecture actually needs.  The current sharp version is:
+
+> **`L_actual-latent-collision-tail`.**  For some fixed `zeta>0`, find
+> `H_N=exp{o(N)}` such that
+> `q\{K_0>H_N\}=O(N^(-1/2-zeta))`, uniformly on the required actual
+> negative path; or prove that every subexponential threshold is exceeded
+> on nonvanishing actual escort mass and identify the localized child
+> phase.  In the positive branch, decide the one-row cost and fair
+> target-calibration obligations of Theorem 37.76.
+
+The positive branch gives a global curl-free channel with power-saving
+physical cavity error and `o(N)` scalar-potential error even when
+`E_qK_0` is exponential.  Exact finite data at `beta=4`, `lambda=1` show
+typical `log K=Theta(N)` through total order ten, so there is no visible
+finite onset of this tail condition; they do not prove its asymptotic
+failure.  Target reach and mergeability remain separate.
