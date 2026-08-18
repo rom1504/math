@@ -246,6 +246,19 @@ the full smoothed density, or the complete latent table.  Even a solution
 decides only the product phase; target reach remains a separate recurrence
 interface.
 
+Theorems 37.67--37.69 sharpen this into the concrete admissible target
+`L_inverse-escort-coordinate-lifting`.  Exact group equivariance compresses
+averaged retuning to the latent orbit label, but the two certified
+order-eight actual children use every one of their `19` or `22` rooted
+symmetry cells; energy shells are already too coarse.  Generic Gaussian
+perturbation, on the other hand, forces a one-overlap ultrametric object at
+`o(N)` scalar-response cost for every deterministic child.  The missing
+step is to augment that object by subexponential coordinate data which
+approximates **inverse-escort-typical**, not all-bridge, row responses with
+`o(N)` total error and supplies a directional bound on
+`J-I^leftarrow`.  Separate perturbations must be synchronized without
+silently introducing the non-product coupling of the multi-species theorem.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -254,7 +267,7 @@ interface.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; every macroscopic child marginal has positive conditional min-entropy rate; a new quotient is still needed for diffuse phase retuning | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient, though the latter has a polynomial orbit quotient | every finite split for structure; no asymptotic target theorem | 5 for actual-law obstruction and local spread, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** SML is `L_actual-diffuse-phase-quotient`; Level 6 remains absent |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; actual orbit response is saturated at the finite frontier; GG regularization gives a low-information Gram object but lacks coordinate lifting | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient; order-eight actual posterior distinguishes all rooted orbit cells | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and finite quotient falsifier, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** rare-event SML is `L_inverse-escort-coordinate-lifting`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2257,3 +2270,50 @@ class and risks restating the desired parent optimization.
   boundary, not a rescue of adversarial statistical mechanics.  The raw
   overlap implementation remains frozen; the surviving question is now
   explicitly a rare-event/renormalization quotient problem.
+
+### Checkpoint 31 — actual finite posterior response saturates rooted symmetry
+
+- **Exact quotient theorem (Theorem 37.67):** for every equivariant latent
+  channel and likelihood-dependent disorder tilt, averaged posterior KL is
+  exactly the KL of the latent orbit label.  For approximate symmetry, the
+  omitted term is exactly the symmetry-breaking divergence
+  `D(nu||S_G nu)`.
+- **Actual-child saturation (Theorem 37.68):** exhaustive exact computation
+  for the two certified order-eight pressure minimizers paired with the
+  order-two child proves that the negative posterior distinguishes all `19`
+  and `22` simultaneous signed-similarity cells.  Rooted energy--absolute-
+  overlap profiles equal these cells, while the `12` combined-energy shells
+  contain up to four and six distinct responses.
+- **Judgment:** symmetry provides a genuine finite quotient but no observed
+  further collapse.  A useful all-order theorem must bound orbit complexity,
+  symmetry-breaking KL, or response coalescence asymptotically.  This is a
+  finite actual-law falsifier of the energy-shell proposal, not a Level-6
+  theorem and not a new recurrence.
+- **Decision:** no extra RESET beyond Checkpoint 30.  Continue only through
+  the rare-event quotient fork; enumerating larger exact orbit languages is
+  not a standalone route.
+
+### Checkpoint 32 — generic perturbation isolates coordinate lifting
+
+- **Imported theorem with exact mapping (Theorem 37.69):** every
+  deterministic child admits a mixed Gaussian perturbation of amplitude
+  `k^gamma`, `0<gamma<1/2`, with `o(k)` pressure cost and
+  `O(k^(-gamma/2))` quantitative GG error on every fixed replica test.  For
+  comparable separately perturbed children, the normalized bridge response
+  changes uniformly by `O_P(N^(1/2+gamma))=o_P(N)`.
+- **Sharp boundary:** the limiting overlap array is ultrametric and
+  determined by one overlap law, but this object is invariant under Hilbert
+  isometry and forgets the physical coordinates queried by sign bridges.
+  Separate perturbations do not synchronize the child trees; the joint
+  multi-species perturbation that does synchronize them changes their
+  product law.  The independent audit verifies all exponents after enlarging
+  the concentration coefficient cube to `[0,3]`.
+- **New SML:** `L_inverse-escort-coordinate-lifting`: add subexponential
+  coordinate data to the separately regularized overlap laws and recover
+  inverse-escort-typical cavity responses with `o(N)` total error, together
+  with a directional conversion to `J-I^leftarrow`.  Uniform all-bridge
+  recovery is deliberately not requested.
+- **Recurrence and decision:** no target-reach estimate and no Level-6
+  recurrence follow.  The raw implementation stays frozen.  This is a
+  strict rare-event/renormalization reduction to audit further, not a claim
+  that GG theory closes the product phase.

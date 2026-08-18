@@ -1871,3 +1871,38 @@ directions alone admit abstract half-atom laws.  The successful spread
 input is genuinely coarser: one scalar pressure bound plus the exact
 Hamming-sphere algebra of quadratic forms.  No target-reach or Level-6
 recurrence follows from spread alone.
+
+### Rooted symmetry and overlap regularization: the next exact boundary
+
+Theorem 37.68 gives the first finite actual-child saturation test.  At the
+two order-eight minimizing classes, the negative posterior uses every one
+of the `19` or `22` simultaneous signed-similarity/rooted-profile cells,
+while the polynomial combined-energy shell is strictly too coarse.  Hence
+an all-order orbit proposal must prove a genuinely asymptotic statement:
+subexponentially many cells, `o(N)` symmetry-breaking KL for an approximate
+action, or response coalescence across exponentially many exact cells.
+Finite symmetry by itself is not evidence for such a theorem.
+
+Theorem 37.69 supplies a distinct, literature-backed regularization.  An
+`o(N)` generic Gaussian perturbation of every deterministic child forces an
+ultrametric limiting replica Gram law and changes the normalized bridge
+response uniformly by `o(N)`.  But the Gram law forgets the physical
+coordinate embedding, and the available synchronization theorem either
+fails for two separate perturbations or destroys the product law through a
+joint perturbation.
+
+This sharpens `L_actual-diffuse-phase-quotient` to one admissible form:
+
+> **`L_inverse-escort-coordinate-lifting`.**  For separately GG-regularized
+> actual optimizing children, augment the discretized overlap laws by
+> subexponential coordinate data and approximate the inverse-escort-
+> typical row/cavity responses with total `o(N)` error.  The construction
+> must synchronize the two child trees without using a joint perturbation
+> that changes their product, and it must convert the retained displacement
+> directionally to `J-I^leftarrow`.
+
+Uniform reconstruction over every bridge is suspected to retain the whole
+latent law and is not the target.  The quantifier must be the actual
+negative escort, with an explicit escaping-mass bound.  Proving such a
+lifting theorem, or a linear information lower bound against every such
+coordinate augmentation, is the single rare-event/renormalization fork.

@@ -169,3 +169,31 @@ minimizing children.  Its proper consequence is therefore a sharper new
 SML: any actual-child closure must use an optimizer-specific constraint
 beyond even factorwise conditional min-entropy, or expose the diffuse phase
 through a genuinely lower-information posterior statistic.
+
+## 7. Polynomial orbit quotient
+
+The refinement DC.29--DC.30 is also exact. Row and column permutations
+preserve the BSC prior, fair bridge law, likelihood, inverse escort, and
+Bayes kernel. Bridge inversion preserves the inverse escort because the
+latent prior is antipodally symmetric. A rank-one word is described, up to
+simultaneous factor complementation, by the two factor Hamming weights;
+row/column permutations are transitive at fixed weights. Passing to
+
+```math
+K=\min\{|\xi^-|,m-|\xi^-|\},
+\qquad L=\min\{|\eta^-|,n-|\eta^-|\}               \tag{VDC.10}
+```
+
+merges the two antipodal orbits, and bridge inversion gives them equal
+conditional weight. Hence both `mu` and `bar mu` are uniform conditional
+on `(K,L)`. Applying the KL chain rule proves
+
+```math
+D(\bar\mu\Vert\mu)
+=D((K,L)_\#\bar\mu\Vert(K,L)_\#\mu).               \tag{VDC.11}
+```
+
+The quotient has at most
+`(floor(m/2)+1)(floor(n/2)+1)=O(mn)` states. This refinement does not
+weaken the no-go: it shows that the diffuse coherent phase is invisible to
+atom spread but remains exposed by a genuinely low-information statistic.

@@ -21167,3 +21167,143 @@ but positively identifies the kind of low-information phase observable a
 successful actual-child theorem would need. It does not show that these
 BSC factor laws are quadratic Gibbs sectors or optimizing children. See
 [`audits/generic_diffuse_common_phase_row_lifetime_no_go.md`](audits/generic_diffuse_common_phase_row_lifetime_no_go.md).
+
+### Theorem 37.67 (exact latent-orbit posterior quotient)
+
+Let a finite group `G` act on a latent alphabet `Z` and observation alphabet
+`B`. Suppose the reference observation law `U` and latent prior `mu` are
+`G`-invariant and the channel densities are equivariant:
+
+```math
+k_{gz}(gb)=k_z(b).                                   \tag{37.256}
+```
+
+Let `p=sum_z mu(z)k_z` and let `q` be any disorder law whose density
+relative to `U` is a function of `p`. If `bar mu_q` is the forward Bayes
+posterior averaged under `q` and `pi:Z->Z/G` is the orbit map, then
+
+```math
+\boxed{
+D(\bar\mu_q\Vert\mu)
+=D(\pi_\#\bar\mu_q\Vert\pi_\#\mu).}               \tag{37.257}
+```
+
+Indeed, equivariance makes `p` and hence `q` invariant. A change of
+variables in the Bayes average makes `bar mu_q` invariant as well. Both
+`mu` and `bar mu_q` are therefore uniform conditional on every orbit, and
+the KL chain rule gives (37.257).
+
+More generally, for any latent law `nu`, let
+`S_Gnu=|G|^(-1)sum_g g_#nu`.  Since symmetrization preserves the orbit
+marginal and makes every orbit conditional uniform,
+
+```math
+\boxed{
+D(\nu\Vert\mu)
+=D(\pi_\#\nu\Vert\pi_\#\mu)
+ +D(\nu\Vert\mathsf S_G\nu).}                       \tag{37.258}
+```
+
+The second term is therefore the exact information price of broken
+symmetry; it vanishes in (37.257).
+
+Thus a channel with `K_N` latent orbits has an exact `K_N`-state averaged-
+retuning quotient, which is a strict asymptotic compression whenever
+`log K_N=o(N)`. The transitive subgroup examples have `K_N=1`; the diffuse
+BSC phase has `K_N=O(mn)` and recovers (37.255). Actual child Gibbs channels
+inherit the theorem from the product of their signing-automorphism groups,
+but an arbitrary minimizing signing may have exponentially many orbits.
+
+This theorem does **not** control `J-I^leftarrow`: the transitive examples
+have zero orbit retuning and linear canonical excess. Any useful actual-
+child quotient still needs a directional conversion theorem and a proved
+subexponential orbit or approximate-orbit count, together with sublinear
+symmetry-breaking KL in the approximate case. See
+[`audits/latent_orbit_posterior_quotient.md`](audits/latent_orbit_posterior_quotient.md).
+
+### Theorem 37.68 (finite actual-child posterior saturation of the orbit quotient)
+
+Take either of the two certified order-eight pressure-minimizer classes at
+raw temperature `t=3`, pair it with the unique order-two minimizing child,
+use orientation `+`, and set the negative-disorder exponent to `lambda=1`.
+Let `G^+-` be the simultaneous signed-similarity group: its elements send
+both child signings either to themselves or both to their negatives.  On
+the projective rank-one latent alphabet, the two cases have respectively
+
+```text
+ordinary joint factor cells:       38, 44
+simultaneous signed-similarity cells: 19, 22
+distinct values of bar(mu)/mu:     19, 22.
+```
+
+Thus the exact averaged posterior response separates every cell of the
+available simultaneous-symmetry quotient.  In both classes the rooted
+histogram
+
+```math
+\mathcal P_A(x)=\operatorname {hist}_z
+  \bigl(H_A(z),|\langle x,z\rangle|\bigr)          \tag{37.259}
+```
+
+has exactly the same `19`, respectively `22`, cells as the signed-
+automorphism orbits of the left projective spins.  By contrast, combined
+child energy has only `12` shells, with as many as four, respectively six,
+distinct posterior responses inside one shell.
+
+The separation is exact.  Each response is a rational function of
+`z=exp(t)`.  Exhaustive evaluation of all `2^16` bridges at `z=2` in
+`F_1000003` gives nonzero denominators and pairwise distinct residues across
+the `19` or `22` cells.  Hence the rational functions are distinct; they
+remain distinct at `z=e^3` because `e^3` is transcendental.
+
+This is a finite actual-minimizer theorem, not an asymptotic orbit bound.
+It shows that the polynomial energy-shell state is already too coarse and
+that, at this frontier, the posterior uses every rooted symmetry cell.  It
+does not control `J-I^leftarrow` or imply Level 6.  See
+[`audits/actual_child_orbit_response_saturation.md`](audits/actual_child_orbit_response_saturation.md)
+and the reproducible certificate
+[`experiments/actual_child_orbit_posterior_quotient.py`](experiments/actual_child_orbit_posterior_quotient.py).
+
+### Theorem 37.69 (sublinear generic perturbation of every deterministic child)
+
+Let `H_0` be an arbitrary deterministic order-`k` child Hamiltonian and add
+Panchenko's mixed Gaussian pure-`p` perturbation `s_kg_x`, with
+`s_k=k^gamma` and `0<gamma<1/2`.  Uniformly over the base signing,
+
+```math
+0\le E\log Z_s-\log Z_0\le {2\over3}s_k^2=o(k),
+\qquad
+v_k(s_k)\le C s_k.                                \tag{37.260}
+```
+
+Here the sharper variance constant `4/3` applies to the actual coefficient
+cube `[1,2]^N`; the concentration envelope in the quantitative
+Ghirlanda--Guerra proof is taken over `[0,3]^N`.  For every fixed replica
+test order `(p,l)`, averaging the auxiliary coefficients and then choosing
+a diagonal deterministic sequence gives
+
+```math
+\Delta_k(p,l)=O_{p,l}(k^{-\gamma/2}).              \tag{37.261}
+```
+
+Every subsequential limiting annealed replica-overlap array therefore
+satisfies the Ghirlanda--Guerra identities and is ultrametric; its law is
+determined by the one-overlap law.  Moreover, for two comparable children,
+separate perturbations preserve the child product and change the normalized
+bridge response uniformly by only
+
+```math
+\sup_B|L_s(B)-L(B)|=O_P(N^{1/2+\gamma})=o_P(N).    \tag{37.262}
+```
+
+This imported mechanism gives a legitimate power-saving regularization of
+the actual children, but it is not a response quotient.  Replica Gram data
+forget the coordinate embedding queried by sign bridges; separate
+perturbations do not synchronize the two overlap trees, while the
+multi-species perturbation that does synchronize them destroys the required
+product law.  No cited theorem transfers the GG object through the negative
+bridge escort or controls `J-I^leftarrow`.  The remaining statement is a
+coordinate-response lifting theorem under the inverse-escort-typical query
+law, not another overlap identity.  See
+[`audits/actual_child_generic_gg_perturbation_mapping.md`](audits/actual_child_generic_gg_perturbation_mapping.md)
+and its independent verifier.

@@ -431,3 +431,17 @@ benchmark: two backward-surjective supports, no one-support realization,
 four distinct forward row signatures, and all 1,092 words through length six
 for both the flat response and the interacting formula
 `2N_ca^cyc-N_a`.
+
+## `actual_child_orbit_posterior_quotient.py`
+
+Exhaustively evaluates all `2^16` bridges for each of the two certified
+order-eight pressure-minimizer classes paired with the order-two child at
+raw temperature `t=3` and negative exponent `lambda=1`. Integer group and
+profile enumeration gives `19` and `22` simultaneous signed-similarity
+orbits. A modular certificate over `F_1000003`, followed by transcendence of
+`e^3`, proves that the exact averaged posterior distinguishes every orbit.
+The same computation proves that the `12` combined-energy shells are too
+coarse. This is an exact finite result, not an all-order orbit bound.
+
+Output:
+[`../../computations/results/actual_child_orbit_posterior_quotient.json`](../../computations/results/actual_child_orbit_posterior_quotient.json).

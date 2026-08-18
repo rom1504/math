@@ -4359,3 +4359,35 @@ on the complete orbit, so its expected prior surprisal is at least the log
 support even when the Gibbs entropy is much smaller.  Thus effective child
 entropy cannot improve the overlap threshold without first proving the
 missing posterior-retuning theorem.
+
+## Example 218: actual finite posterior response saturates rooted symmetry
+
+For the two certified order-eight pressure minimizers at raw `t=3`, paired
+with the order-two child, the exact negative posterior ratio takes `19` and
+`22` distinct values.  These are exactly the simultaneous signed-similarity
+orbits and exactly the rooted energy--absolute-overlap profile cells.  The
+combined-energy label has only `12` cells and is strictly insufficient.
+
+This is an exact actual-child benchmark in which a nontrivial rooted quotient
+is both sufficient and saturated.  It gives no asymptotic compression: the
+number of rooted orbits may be exponential at larger orders.  A successful
+all-order quotient must prove orbit coalescence or approximate symmetry, not
+merely list the exact finite orbits.
+
+## Example 219: generic perturbation compresses Gram geometry, not bridge coordinates
+
+Adding a mixed Gaussian pure-`p` perturbation of amplitude `k^gamma`,
+`0<gamma<1/2`, to any deterministic child costs `o(k)` pressure, changes
+every normalized bridge response by `o(k)` uniformly, and forces the
+limiting annealed replica Gram array to satisfy the Ghirlanda--Guerra
+identities.  The resulting overlap object is ultrametric and determined by
+one overlap law.
+
+Nevertheless it does not answer the sign-bridge query.  Gram laws are
+defined only up to Hilbert-space isometry, whereas the bridge alphabet is
+tied to physical coordinates.  Separate child perturbations retain the
+product law but do not synchronize the two trees; joint multi-species
+perturbations synchronize them but couple the children.  This is a strict
+example of a low-information limiting geometry that is stable at scalar-
+response scale but is not yet contextually sufficient for the rare negative
+escort.
