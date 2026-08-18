@@ -11,8 +11,8 @@ row-product variational problem.
 
 ## 1. Exact product-gain identity
 
-Put two contracted-temperature optimizing children in the balanced row
-direction and orientation of Theorem 37.32.  Let
+Put two contracted-temperature optimizing children in any fixed relative
+orientation and row direction.  Let
 
 ```math
 r=r_{\rm row}^{\otimes m},
@@ -108,19 +108,34 @@ whereas `K_epsilon` is only half the squared Frobenius norm.
 
 ## 3. A global stable-mode certificate for reverse-product information
 
-The balanced optimizer theorem gives
+The canonical row law is centrally symmetric in every orientation.  Let
+`sigma^2` be any vector-subgaussian proxy for it, in the convention
+
+```math
+\log E_{r_{\rm row}}e^{\langle v,B\rangle}
+\le {\sigma^2\over2}\|v\|_2^2.                  \tag{SM.9}
+```
+
+Two proved choices are available.  The orientation-uniform Renyi-two lemma
+OU.1 gives
+
+```math
+\sigma^2=4e^{\lambda^2\beta^2/2}.                \tag{SM.10}
+```
+
+In the balanced presentation of Theorem 37.32, max-density domination gives
+the sharper alternative
 
 ```math
 {dr_{\rm row}\over dU_n}\le e^{C_0},
-\qquad C_0=\lambda(\beta^2/2+\log2),                \tag{SM.9}
+\qquad C_0=\lambda(\beta^2/2+\log2),
+\qquad \sigma^2=e^{C_0}.                           \tag{SM.11}
 ```
-
-and `r_row` is centrally symmetric.
 
 **Theorem SM.1 (signed spectral stability).**  If
 
 ```math
-\boxed{\lambda t^2\rho_-(M)\le e^{-C_0},}           \tag{SM.10}
+\boxed{\lambda t^2\rho_-(M)\le \sigma^{-2},}       \tag{SM.12}
 ```
 
 then
@@ -128,29 +143,22 @@ then
 ```math
 \boxed{
 0\le\mathcal J-\mathcal I^{\leftarrow}
-\le\lambda\Omega.}                                \tag{SM.11}
+\le\lambda\Omega.}                                \tag{SM.13}
 ```
 
 In particular, along any actual-minimizer subsequence on which
 `Omega=o(N)` and `J>=eta N`, one has
 
 ```math
-\mathcal I^{\leftarrow}\ge\eta N-o(N).             \tag{SM.12}
+\mathcal I^{\leftarrow}\ge\eta N-o(N).             \tag{SM.14}
 ```
 
-*Proof.*  Central symmetry and (SM.9) imply, exactly as in Lemma SP.2,
-
-```math
-\log E_{r_{\rm row}}e^{\langle v,B\rangle}
-\le {e^{C_0}\over2}\|v\|_2^2.                     \tag{SM.13}
-```
-
-If `P_i` is any row law and `m_i=E_(P_i)B_i`, entropy duality applied to
-(SM.13) gives
+*Proof.*  If `P_i` is any row law and `m_i=E_(P_i)B_i`, entropy
+duality applied to (SM.9) gives
 
 ```math
 D(P_i\Vert r_{\rm row})
-\ge {e^{-C_0}\over2}\|m_i\|_2^2.                  \tag{SM.14}
+\ge {1\over2\sigma^2}\|m_i\|_2^2.                \tag{SM.15}
 ```
 
 For `P=\otimes_iP_i`, independence between distinct rows and the zero
@@ -158,23 +166,26 @@ diagonal blocks of `M` give
 
 ```math
 E_PH_2={1\over2}m^{\mathsf T}Mm,
-\qquad E_rH_2=0.                                   \tag{SM.15}
+\qquad E_rH_2=0.                                   \tag{SM.16}
 ```
 
-Substitute (SM.6), (SM.14), and (SM.15) into (SM.1):
+Substitute (SM.6), (SM.15), and (SM.16) into (SM.1):
 
 ```math
 \mathscr G_h(P)
-\le {1\over2}\{\lambda t^2\rho_-(M)-e^{-C_0}\}
-       \|m\|_2^2+\lambda\Omega.                   \tag{SM.16}
+\le {1\over2}\{\lambda t^2\rho_-(M)-\sigma^{-2}\}
+       \|m\|_2^2+\lambda\Omega.                   \tag{SM.17}
 ```
 
-Under (SM.10) this is at most `lambda Omega`.  Take the supremum in
+Under (SM.12) this is at most `lambda Omega`.  Take the supremum in
 (SM.2).  Nonnegativity follows by taking `P=r`. `square`
 
 This is a global product certificate.  It does not assume that `r` is a
 coordinate fixed point, and it covers arbitrary within-row changes, not
-only linear-field tilts.
+only linear-field tilts.  Choice (SM.10) makes it orientation-uniform, so it
+can be applied directly in a target-reaching sector.  Choice (SM.11) gives a
+different, sometimes stronger cutoff in the balanced sector; neither cutoff
+uniformly dominates the other across all parameters.
 
 ## 4. One coherent binary retuning direction
 
@@ -183,13 +194,13 @@ factors.  For a set of rows `S`, choose odd binary features
 
 ```math
 \phi_i:\{-1,1\}^n\longrightarrow\{-1,1\},
-\qquad \phi_i(-b)=-\phi_i(b),                       \tag{SM.17}
+\qquad \phi_i(-b)=-\phi_i(b),                       \tag{SM.18}
 ```
 
 and put
 
 ```math
-w_i=E_{r_{\rm row}}[B\phi_i(B)].                    \tag{SM.18}
+w_i=E_{r_{\rm row}}[B\phi_i(B)].                    \tag{SM.19}
 ```
 
 Set `w_i=0` outside `S`, concatenate the `w_i` into `w`, and, for one common
@@ -200,7 +211,7 @@ amplitude `a`, define the product path
 =\begin{cases}
  e^{a\phi_i(b)}/\cosh a,&i\in S,\\
  1,&i\notin S.
-\end{cases}                                         \tag{SM.19}
+\end{cases}                                         \tag{SM.20}
 ```
 
 This is one scalar path, not `m` coupled best responses.  Since an odd bit
@@ -210,16 +221,16 @@ is fair under a centrally symmetric law,
 E_{P_{i,a}}B=\tanh(a)w_i,
 \qquad
 D(P_{i,a}\Vert r_{\rm row})
-=d(a):=a\tanh a-\log\cosh a.                       \tag{SM.20}
+=d(a):=a\tanh a-\log\cosh a.                       \tag{SM.21}
 ```
 
 **Theorem SM.2 (binary sector-mode retuning certificate).**  If `k=|S|`,
-then the exact quadratic score of (SM.19) is
+then the exact quadratic score of (SM.20) is
 
 ```math
 \mathscr G_{t^2H_2}(P_a)
 =-{\lambda t^2\over2}\tanh^2(a)w^{\mathsf T}Mw
- -k d(a).                                           \tag{SM.21}
+ -k d(a).                                           \tag{SM.22}
 ```
 
 For the full actual interaction,
@@ -228,19 +239,19 @@ For the full actual interaction,
 \boxed{
 \mathscr G_h(P_a)
 \ge-{\lambda t^2\over2}\tanh^2(a)w^{\mathsf T}Mw
-    -k d(a)-\lambda\Omega.}                        \tag{SM.22}
+    -k d(a)-\lambda\Omega.}                        \tag{SM.23}
 ```
 
 Suppose `0<delta<=1` and
 
 ```math
--\lambda t^2w^{\mathsf T}Mw\ge(1+\delta)k.         \tag{SM.23}
+-\lambda t^2w^{\mathsf T}Mw\ge(1+\delta)k.         \tag{SM.24}
 ```
 
 With
 
 ```math
-a^2={3\delta\over4(1+\delta)},                     \tag{SM.24}
+a^2={3\delta\over4(1+\delta)},                     \tag{SM.25}
 ```
 
 one obtains
@@ -248,26 +259,26 @@ one obtains
 ```math
 \boxed{
 \mathcal J-\mathcal I^{\leftarrow}
-\ge {3\delta^2\over16(1+\delta)}k-\lambda\Omega.} \tag{SM.25}
+\ge {3\delta^2\over16(1+\delta)}k-\lambda\Omega.} \tag{SM.26}
 ```
 
 Thus, if `k>=alpha N` and `Omega=o(N)`, a rounded negative sector mode
-satisfying (SM.23) proves the coherent-retuning branch
+satisfying (SM.24) proves the coherent-retuning branch
 `J-I^leftarrow=Omega(N)`.  By Theorem 37.27, the resulting linear optimal
 gain also forces order-one regular retuning on a positive density of rows.
 
-*Proof.*  Equations (SM.20), row independence, and (SM.15) prove (SM.21).
-The remainder expectation changes by at most `Omega`, proving (SM.22).
+*Proof.*  Equations (SM.21), row independence, and (SM.16) prove (SM.22).
+The remainder expectation changes by at most `Omega`, proving (SM.23).
 For `0<=a<=1`,
 
 ```math
 d(a)\le a^2/2,
-\qquad \tanh^2a\ge a^2(1-2a^2/3).                  \tag{SM.26}
+\qquad \tanh^2a\ge a^2(1-2a^2/3).                  \tag{SM.27}
 ```
 
 The first inequality follows by integrating
 `d'(a)=a sech^2(a)<=a`; the second follows from
-`tanh a>=a-a^3/3`.  Use (SM.23) in (SM.21), substitute (SM.24), and obtain
+`tanh a>=a-a^3/3`.  Use (SM.24) in (SM.22), substitute (SM.25), and obtain
 
 ```math
 \mathscr G_{t^2H_2}(P_a)
@@ -276,16 +287,16 @@ The first inequality follows by integrating
 ={3\delta^2\over16(1+\delta)}k.
 ```
 
-Now apply (SM.2) and (SM.22). `square`
+Now apply (SM.2) and (SM.23). `square`
 
 A canonical way to declare the features is to take a negative eigenvector
 `v` of the matrix in (SM.5), split it into row blocks, and use
 
 ```math
-\phi_i(b)=\operatorname {sgn}_*\langle v_i,b\rangle, \tag{SM.27}
+\phi_i(b)=\operatorname {sgn}_*\langle v_i,b\rangle, \tag{SM.28}
 ```
 
-where ties are resolved by any fixed odd rule.  Condition (SM.23) is a
+where ties are resolved by any fixed odd rule.  Condition (SM.24) is a
 single signed Rayleigh check after this hyperplane rounding.  It is not
 implied by the Frobenius mass (SM.4); that is precisely the information
 lost by the sector--Gram scalar.  Such a hyperplane bit can be genuinely
@@ -300,7 +311,7 @@ the declared path.  Define
 ```math
 \boxed{
 \mathscr D_{\phi}(a)
-=\lambda\{E_rh-E_{P_a}h\}-k d(a).}                 \tag{SM.28}
+=\lambda\{E_rh-E_{P_a}h\}-k d(a).}                 \tag{SM.29}
 ```
 
 Then (SM.1)--(SM.2) give, with no cumulant convergence or approximation,
@@ -309,7 +320,7 @@ Then (SM.1)--(SM.2) give, with no cumulant convergence or approximation,
 \boxed{
 \mathscr D_{\phi}(a)\ge cN
 \quad\Longrightarrow\quad
-\mathcal J-\mathcal I^{\leftarrow}\ge cN.}        \tag{SM.29}
+\mathcal J-\mathcal I^{\leftarrow}\ge cN.}        \tag{SM.30}
 ```
 
 This observable is operationally smaller than the forbidden product
@@ -327,16 +338,17 @@ There is also a sampling formulation.  Both `r` and `P_a` are row products.
 Changing a complete bridge row changes `h` by at most `4tn`, because each
 of its `n` bit changes moves `log p` and its erased-row term by at most
 `2t` each.  Hence bounded differences under either product law gives a
-variance proxy at most
+centered log-MGF coefficient at most
 
 ```math
-{1\over8}m(4tn)^2=2mt^2n^2=O_{\beta}(N^2)           \tag{SM.30}
+{1\over8}m(4tn)^2=2mt^2n^2=O_{\beta}(N^2)           \tag{SM.31}
 ```
 
-at comparable splits.  Under sampling access to the balanced one-row law,
+at comparable splits.  Under sampling access to the canonical one-row law
+in the chosen orientation,
 `O_(beta)(epsilon^(-2)log(1/zeta))` independent bridge point evaluations
-estimate each expectation in (SM.28) to error `epsilon N` with failure
-probability at most `zeta`.  Thus a fixed-density margin in (SM.29) has a
+estimate each expectation in (SM.29) to error `epsilon N` with failure
+probability at most `zeta`.  Thus a fixed-density margin in (SM.30) has a
 finite-query statistical certificate; no Gibbs table is hidden in the
 definition.
 
@@ -356,12 +368,12 @@ strictly smaller than the bridge/Gibbs landscape.  Theorem SM.1 therefore
 decides the reverse-dependence branch whenever the physical remainder is
 sublinear and the negative edge is below the explicit threshold.  Theorem
 SM.2 decides the retuning branch when one extensive rounded mode crosses the
-explicit threshold, and (SM.28) is an exact low-query version which does not
+explicit threshold, and (SM.29) is an exact low-query version which does not
 need the remainder bound.
 
 What is not proved is equally important.  Neither linear Frobenius mass nor
-linear **absolute** connected-cluster mass forces (SM.10), (SM.23), or a
-linear value of (SM.28).  Absolute cluster mass has no sign, and a Frobenius
+linear **absolute** connected-cluster mass forces (SM.12), (SM.24), or a
+linear value of (SM.29).  Absolute cluster mass has no sign, and a Frobenius
 norm has no spectral-edge or eigenvector information.  No theorem here says
 that every positive-density optimal retuning is caught by the single
 sector-mode rounding.  Therefore the result supplies concrete directional
