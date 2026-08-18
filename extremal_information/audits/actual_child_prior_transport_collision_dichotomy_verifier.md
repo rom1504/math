@@ -26,3 +26,11 @@ norm `1+(m-1)e^(-km)` but contributes probability `exp(-kN)/2` to the
 aligned rank-one atom, proving the stated nonlinear-MGF violation.  It is
 correctly labeled nonactual and is used only to refute covariance-only
 closure.
+
+The optimized-tilt refinement PT.1c also passes.  With
+`K=max{1,kappa_*}` and `theta=1/(2sqrt(Kd))`, the determinant argument costs
+at most `||M||_F^2/(6d)`.  Entropy duality yields
+`[1/(2sqrt(K))-1/(6sqrt(d))]||M||_F^2/sqrt(d)`, which is at least
+`||M||_F^2/(4sqrt(Kd))` exactly when `d>=4K/9`.  At comparable splits,
+`kappa_*=O(N^(2alpha))`, `0<=alpha<1`, therefore gives the stated
+`Omega(N^(1-alpha))` positive-mass collision tail.

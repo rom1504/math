@@ -21890,6 +21890,22 @@ log-Sobolev inequality implies this through Herbst.  Covariance alone does
 not: exponentially rare antipodal spikes can have covariance tending to
 the identity while violating (37.297) even with `c=0`.
 
+Optimizing the entropy-duality tilt removes the artificial threshold four.
+With `K=max{1,kappa_*}` and `mn>=4K/9`, every posterior barycenter satisfies
+
+```math
+\boxed{
+D(\nu\Vert\mu)
+\ge {\|M\|_F^2\over4\sqrt{Kmn}}.}               \tag{37.302}
+```
+
+Therefore `kappa_*=O(1)` already turns the actual overlap floor into
+`log K_e=Omega(N)` on fixed positive path mass.  More generally, for
+`0<=alpha<1`, `kappa_*=O(N^(2alpha))` gives a positive-mass collision lower
+tail of order `N^(1-alpha)`.  The bounded-proxy conclusion directly reduces
+the actual collision obstruction to two child-sector linear-response
+constants.
+
 If no uniform gap exists, one obtains only an existential child-prior MGF-
 violating query.  It need not have macroscopic norm, concise description,
 or target relevance, and finding it may require full convex-hull

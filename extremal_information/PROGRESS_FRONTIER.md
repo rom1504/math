@@ -2541,7 +2541,7 @@ class and risks restating the desired parent optimization.
   This already gives one global curl-free `exp{o(N)}`-support channel with
   physical cavity error `O(N^(1/2-zeta))` and scalar-potential error `o(N)`.
   It can hold even if the annealed collision mean is exponential.
-- **Actual finite falsifier:** complete bridge cubes for certified actual
+- **Actual finite diagnostic:** complete bridge cubes for certified actual
   children at `beta=4`, `lambda=1`, through `N=10` give
   `log Kbar/N` between `.8087` and `1.0451`.  At `N=10`, over `62%` of both
   full and deleted base mass has `log K>.5N`, although only about `1%`--`2%`
@@ -2558,11 +2558,11 @@ class and risks restating the desired parent optimization.
   `||sum_s pi_s(C_(D,epsilon s) tensor C_(A,s))||_op
   <=(4-8c)sqrt(mn)`; a single sector exceeding the threshold gives the
   rank-one direction formed by its two top child-correlation eigenvectors.
-  Conversely, sector linear-subgaussian proxies with
-  `max_s sigma^2_(A,s)sigma^2_(D,epsilon s)<4` imply a fixed transport gap
-  by Gaussian linearization.  No current minimizing-child identity proves
-  this strong-mixing bound, and covariance-only closure has a rare-spike
-  counterexample.
+  Conversely, a uniformly bounded product of the two sector linear-
+  subgaussian proxies forces an extensive collision tail by an optimized
+  Gaussian-linearization tilt; no threshold below four is needed.  No
+  current minimizing-child identity proves this strong-mixing bound, and
+  covariance-only closure has a rare-spike counterexample.
 - **Finite transport test:** on the same certified `beta=4` children through
   `N=10`, the top covariance ray and the largest-collision posterior
   barycenters all have positive PT.1 normalized gap; the smallest tested

@@ -178,6 +178,13 @@ the displayed Herbst bounds with `kappa_*<4` would settle the extensive-
 collision branch.  No current optimizer identity supplies such a uniform
 strong-mixing estimate at the dense physical temperature.
 
+The existing uniform conditional min-entropy theorem is not enough.  In
+the BSC-smoothed common-phase law from Theorem 37.66, every conditioned
+macroscopic subset retains an exponential atom bound, while
+`||E(XX^T)||op=Theta(k)` and hence its linear subgaussian proxy is also
+`Omega(k)`.  Thus spread and strong linear-MGF mixing are genuinely
+different requirements.
+
 The covariance test is sharply insufficient.  Let
 `nu_m=(1-p_m)U_m+(p_m/2)(delta_1+delta_(-1))`, with
 `p_m=exp(-km)`, and define `nu_n` similarly.  Its covariance operator norm
@@ -196,6 +203,48 @@ comparable splits this violates every positive gap when
 exactly the nonlinear information retained by (PT.1).  This spike law is
 not an actual quadratic Gibbs minimizer and need not satisfy the strongest
 conditional-spread theorem.
+
+### Theorem PT.1c (optimized tilt removes the threshold four)
+
+The fixed PT.1 query is convenient but not necessary for collision.  Let
+
+```math
+K=\max\{1,\kappa_*\}.
+```
+
+If `d>=4K/9`, then every posterior `nu<<mu` with barycenter `M` satisfies
+
+```math
+\boxed{
+D(\nu\Vert\mu)
+\ge {\|M\|_F^2\over4\sqrt{Kd}}.}                \tag{PT.2f}
+```
+
+*Proof.*  Repeat the determinant argument at the optimized entropy-duality
+tilt
+
+```math
+\theta={1\over2\sqrt{Kd}}.
+```
+
+Now `kappa_* theta^2||M||op^2<=1/4`, and the determinant bound is at most
+`||M||_F^2/(6d)`.  Entropy duality gives
+
+```math
+D(\nu\Vert\mu)
+\ge\left({1\over2\sqrt K}-{1\over6\sqrt d}\right)
+ {\|M\|_F^2\over\sqrt d}.
+```
+
+The assumed relation between `d` and `K` makes the coefficient at least
+`1/(4sqrt(K))`.  `square`
+
+Consequently `kappa_*=O(1)` alone, with no threshold below four, converts
+the actual overlap floor into `log K_e=Omega(N)` on fixed positive path
+mass.  More generally, for `0<=alpha<1`,
+`kappa_*=O(N^(2alpha))` gives a positive-mass lower tail of order
+`N^(1-alpha)`.  Only the bounded case is an extensive obstruction to every
+subexponential threshold.
 
 ## 2. Positive overlap forces a positive collision tail
 
