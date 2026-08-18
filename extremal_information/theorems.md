@@ -21818,3 +21818,44 @@ consequences alone cannot prove a subexponential actual collision tail;
 some optimizer-specific nonradial information is necessary.  See the
 [`proof`](audits/actual_child_latent_collision_generic_falsifier.md) and
 [`verifier`](audits/actual_child_latent_collision_generic_falsifier_verifier.md).
+
+### Theorem 37.79 (a child-prior transport gap forces an actual collision tail)
+
+Let `mu` be any centrally symmetric rank-one prior, including an actual
+optimizing-child prior, and put `d=mn`.  Suppose some fixed `0<c<1/2`
+satisfies, for every nonzero
+`A in conv(supp(mu))`,
+
+```math
+\log E_\mu e^{\langle A,Q\rangle/(2\sqrt d)}
+\le(1/2-c){\|A\|_F^2\over\sqrt d}.              \tag{37.297}
+```
+
+Then every posterior law with barycenter `M` obeys
+
+```math
+D(\nu\Vert\mu)\ge c\|M\|_F^2/\sqrt d.          \tag{37.298}
+```
+
+If a declared bridge law has cavity overlap at least `eta`, set
+`a=eta/2-4rho^2`.  Whenever `a>0`,
+
+```math
+\boxed{
+q\{\log K_0\ge ca\sqrt d/2\}\ge {a\over2-a},
+\qquad
+\log K_e\ge ca\sqrt d/2-4t}                    \tag{37.299}
+```
+
+on the same event, simultaneously for every edge.  Hence the uniform
+actual-child overlap floor of Theorem 37.56 implies that a uniform gap
+(37.297) forces `log K_e=Omega(N)` on fixed positive mass of the actual
+negative-path mixture.
+
+If no uniform gap exists, one obtains only an existential child-prior MGF-
+violating query.  It need not have macroscopic norm, concise description,
+or target relevance, and finding it may require full convex-hull
+information.  Thus (37.297) is a semantically lower-output child-only
+observable, not yet a proved operational compression.  See the
+[`proof`](audits/actual_child_prior_transport_collision_dichotomy.md) and
+[`verifier`](audits/actual_child_prior_transport_collision_dichotomy_verifier.md).

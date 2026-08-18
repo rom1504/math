@@ -2020,3 +2020,14 @@ physical cavity error and `o(N)` scalar-potential error even when
 typical `log K=Theta(N)` through total order ten, so there is no visible
 finite onset of this tail condition; they do not prove its asymptotic
 failure.  Target reach and mergeability remain separate.
+
+Theorem 37.79 isolates one child-only way to settle the negative branch.
+A fixed rank-one transport gap (37.297), combined with the already proved
+actual overlap floor, forces `log K_e=Omega(N)` on nonvanishing path mass.
+If the gap fails, however, the theorem supplies only an existential MGF
+query; it does not prove that this query is macroscopic, concisely generated,
+or target-relevant.  Thus the next actual-child proof may either establish
+the gap and freeze the coreset implementation, or turn its quantitative
+failure into such a usable coherent direction.  Merely optimizing the
+modulus from the complete convex hull would not be a lower-information
+solution.

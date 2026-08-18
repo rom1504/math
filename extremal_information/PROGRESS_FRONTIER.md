@@ -2514,3 +2514,65 @@ class and risks restating the desired parent optimization.
   none.  This strengthens the campaign's declared **RESET** and identifies
   precisely one rare-event/renormalization campaign; the raw-overlap
   implementation remains frozen and Level 6 is not yet credible.
+
+### Checkpoint 37 — raw decay is false; the remaining issue is an escort collision tail
+
+- **Strongest actual theorem:** Theorem 37.56 proves uniformly over all
+  contracted-temperature minimizing children and both orientations that,
+  at comparable splits,
+
+  ```math
+  \liminf\widehat\rho_N^-(\lambda)>0
+  ```
+
+  whenever `beta>beta_BG(gamma_0)`; at balanced splits the threshold is
+  `beta>4/sqrt(pi)`.  Thus the requested power decay, and even `o(1)`, is
+  false in a nonempty strong-channel regime.  The floor is carried by an
+  adaptive macroscopic posterior singular mode (Theorem 37.73), not by
+  diffuse coordinate noise.
+- **Strictly weaker rare-event reduction:** Theorem 37.77 replaces the
+  annealed condition `log E_qK=o(N)` by the tail condition
+
+  ```math
+  \log H_N=o(N),\qquad
+  q\{K_0>H_N\}=O(N^{-1/2-\zeta}).
+  ```
+
+  This already gives one global curl-free `exp{o(N)}`-support channel with
+  physical cavity error `O(N^(1/2-zeta))` and scalar-potential error `o(N)`.
+  It can hold even if the annealed collision mean is exponential.
+- **Actual finite falsifier:** complete bridge cubes for certified actual
+  children at `beta=4`, `lambda=1`, through `N=10` give
+  `log Kbar/N` between `.8087` and `1.0451`.  At `N=10`, over `62%` of both
+  full and deleted base mass has `log K>.5N`, although only about `1%`--`2%`
+  supplies half of the annealed mean.  Typical collision is extensive at
+  the finite frontier, but no asymptotic lower bound follows.
+- **Sharp structural boundary:** a maximally diffuse uniform rank-one prior
+  has exponential collision on positive negative-endpoint mass despite
+  satisfying all currently used spread/flip/tangent inequality directions
+  (Theorem 37.78).  It is nonactual.  For actual priors, Theorem 37.79 shows
+  that a fixed child-only rank-one transport gap forces
+  `log K_e=Omega(N)` on nonvanishing path mass.  Failure yields only an
+  existential MGF-violating query, not yet a concise coherent phase.
+- **New SML:** `L_actual-latent-collision-tail`: prove the displayed
+  subexponential-threshold/polynomial-escaping-mass estimate uniformly on
+  the actual negative path, or prove that every subexponential threshold is
+  exceeded on fixed positive actual path mass and identify the responsible
+  child phase.  The transport-gap modulus is one child-only sufficient
+  falsifier, but its operational complexity remains unproved.
+- **Exact recurrence consequence:** the only raw implication is still
+
+  ```math
+  \Delta_N\le E_N+C_{LS}\lambda\beta^2{mn\over N}
+                    \widehat\rho_N^-(\lambda).
+  ```
+
+  Hypothetical `O(N^(-alpha))` decay would give a summable
+  `O(N^(1-alpha))` defect, but the actual floor makes this term `Theta(N)`.
+  The separate target-reach premise already bounds the parent pressure by
+  itself.  Neither collision-tail branch supplies target reach.
+- **Decision:** **RESET** under the declared actual-obstruction criterion,
+  not Level 6.  Freeze the raw adversarial-statistical-mechanics
+  implementation.  Promote exactly the rare-event/renormalization campaign
+  which decides the actual collision tail or turns transport-gap failure
+  into a quantitatively generated, target-relevant direction.
