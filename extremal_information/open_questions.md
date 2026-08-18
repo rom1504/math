@@ -1374,17 +1374,19 @@ J=\log E_{r_{\rm row}^{\otimes m}}
 
 where `G` is the collision--cavity partition (37.64).  The entire hybrid
 path from this product to the full escort has bounded conditional row
-`D_2`, and Theorems 37.24 and IC.3 reduce a sufficient closure to the tilted
-row-influence bound
+`D_2`, now also relative to the canonical factor by Theorem 37.27.  Its
+error splits exactly into the two weighted path masses
 
 ```math
-\sup_{0\le s\le\lambda}\mathcal A_s=o(N).
+\lambda\int_0^\lambda{\operatorname {TC}(q_s)\over s^2}\,ds,
+\qquad
+\lambda\int_0^\lambda{\sum_iD(q_{s,i}\Vert r_i)\over s^2}\,ds.
 ```
 
-Prove this from an optimizer-specific child statistic strictly smaller than
-the complete external-field response, ideally with a power-saving rate.  A
-proof makes the canonical row product target-accurate whenever the full
-negative-disorder bridge reaches the child target.
+Prove both are `o(N)` from an optimizer-specific child statistic strictly
+smaller than the complete external-field response, ideally with a power-
+saving rate.  A proof makes the canonical row product target-accurate
+whenever the full negative-disorder bridge reaches the child target.
 
 The opposite branch must be directional.  Produce fixed-alphabet,
 high-transport aggregate row maps whose image of the **actual optimized
@@ -1392,9 +1394,17 @@ child escort** has reverse product gap `cN-o(N)`.  Low-transport maps cannot
 work: Theorem 37.26 proves that any `o(N^2)` raw-coordinate support and any
 bounded number of Walsh parities per row expose only `o(N)`.
 
+Theorem 37.27 excludes two evasions.  If the canonical error is linear, a
+positive density of rows has order-one scaled marginal drift or row-versus-
+rest information.  If the best product repairs a linear part of that error,
+a positive density of its regular factors must retune by order one.  Thus a
+converse may instead certify one of those positive-density alternatives
+from a high-transport child observable without solving the global product
+oracle.
+
 Finite exact data reject worst-context projective diameter as an efficient
-target and show that tilted average influence preserves much more
-cancellation.  They do not establish either asymptotic branch.  Generic
-rank-one and fixed-overlap examples prove that weak coordinates, bounded row
-Renyi complexity, central symmetry, and every fixed overlap order are
-insufficient; child optimality must enter the proof.
+target and show that neither total correlation nor marginal drift alone
+accounts for every actual child.  They do not establish either asymptotic
+branch.  Generic rank-one and fixed-overlap examples prove that weak
+coordinates, bounded row Renyi complexity, central symmetry, and every
+fixed overlap order are insufficient; child optimality must enter the proof.

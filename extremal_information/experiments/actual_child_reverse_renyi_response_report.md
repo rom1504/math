@@ -64,18 +64,20 @@ dramatically with order.
 The hybrid interaction path IC.3 is much sharper on the same data.  A
 17-point trapezoidal evaluation gives
 
-| `lambda` | exact `J` | curvature integral | tilted row-influence upper integral | projective-sup upper bound |
-|---:|---:|---:|---:|---:|
-| `1` | `2.91768` | `2.92321` | `5.27313` | `51.0251` |
-| `5.382104` | `23.89429` | `24.60695` | `96.60183` | `1478.0451` |
+| `lambda` | exact `J` | curvature integral | optimized conditional-entropic integral | unoptimized tilted-influence integral | projective-sup bound |
+|---:|---:|---:|---:|---:|---:|
+| `1` | `2.91768` | `2.92321` | `4.60221` | `5.27313` | `51.0251` |
+| `5.382104` | `23.89429` | `24.60695` | `48.46409` | `96.60183` | `1478.0451` |
 
 The curvature column checks the exact identity IC.7 (the displayed residual
-is numerical quadrature error).  The influence column is also quadrature,
-not a rigorous finite upper certificate, but it shows that averaging the
-complete row replacement under the inverse hybrid tilt retains far more of
-the relevant cancellation than worst-case projective diameter.  This makes
-the tilted row-influence quantity `A_s`, rather than `Delta`, the better
-candidate for the next asymptotic theorem.
+is numerical quadrature error).  Both influence columns are also quadrature,
+not rigorous finite upper certificates.  Optimizing the row-deleted
+comparison as in IC.4 retains another substantial amount of cancellation:
+at the target threshold it halves the unoptimized bound.  The exact slack
+identity ES.22--ES.23 shows that the remaining gap above `J` is integrated
+dual total correlation.  Thus conditional-entropic influence is a sharp
+localization diagnostic, but not by itself a strict reduction of the
+canonical error.
 
 ## Scope
 

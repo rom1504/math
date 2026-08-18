@@ -18105,3 +18105,85 @@ Proofs and audits are in
 [`drafts/actual_child_row_product_global_certificate.md`](drafts/actual_child_row_product_global_certificate.md),
 and
 [`drafts/actual_child_low_transport_feature_ceiling.md`](drafts/actual_child_low_transport_feature_ceiling.md).
+
+### Theorem 37.27 (actual-child conditional complexity and extensive-row trichotomy)
+
+Along the exact hybrid path of Theorem 37.24, let `r_i` be the canonical
+one-child inverse row factor.  Every row conditional, after either a prefix
+or all other rows, obeys the stronger relative bound
+
+```math
+\boxed{
+D_2(q_s(R_i\mid\mathcal C)\Vert r_i)
+\le5\lambda^2u^2n.}                                \tag{37.72}
+```
+
+The same bound holds for every factor `p_i^*` of a globally optimal
+row-product shadow.  Thus at physical amplitude `u=beta/sqrt(N)`, the
+canonical factors, all hybrid conditional factors, and all optimal product
+factors lie in one uniformly bounded Renyi neighborhood.
+
+Define
+
+```math
+e_i(s)={1\over s^2}E_{q_s(B_{-i})}
+D(q_s(R_i\mid B_{-i})\Vert r_i).
+```
+
+With `C=lambda^2u^2n`, each row has the uniform scaled ceiling
+
+```math
+\boxed{e_i(s)\le8e^{C/2}u^2n.}                     \tag{37.73}
+```
+
+Moreover
+
+```math
+e_i(s)={D(q_{s,i}\Vert r_i)+I_{q_s}(R_i;B_{-i})\over s^2}.
+                                                               \tag{37.74}
+```
+
+Consequently `J>=eta N` forces a fixed positive fraction of rows to carry
+order-one scaled marginal drift or row-versus-rest information.  A linear
+canonical error cannot be hidden at a hybrid parameter tending to zero or
+in a vanishing set of exceptional rows.
+
+The canonical error also has the exact forward-path decompositions
+
+```math
+\boxed{
+J=\lambda\int_0^\lambda{D(q_s\Vert r)\over s^2}\,ds
+=\lambda\int_0^\lambda
+ {\operatorname {TC}(q_s)+\sum_iD(q_{s,i}\Vert r_i)\over s^2}\,ds.}
+                                                               \tag{37.75}
+```
+
+Finally, if `I^leftarrow` is the optimal reverse row-product projection and
+`a_i=sqrt(chi^2(p_i^*||r_i))`, then, with
+
+```math
+X=e^{5C}-1,
+\qquad K=4e^{C/4}u\sqrt n+{\sqrt X\over\lambda},
+```
+
+one has
+
+```math
+\boxed{
+0\le{J-I^\leftarrow\over\lambda}
+\le K\sum_i a_i.}                                  \tag{37.76}
+```
+
+Thus a linear advantage of the best product over the canonical product
+forces order-one retuning on a positive density of rows.  Subsequence by
+subsequence, every linear canonical phase must therefore be carried by
+irreducible reverse-product dependence, extensive regular row retuning, or
+both; escaping component complexity and sparse exceptional rows are
+excluded.  These conclusions are structural classifications of the actual
+optimized-child law, not yet an optimizer-specific decision of the branch.
+
+The proof and two independent audits are in
+[`drafts/actual_child_effective_row_support_dichotomy.md`](drafts/actual_child_effective_row_support_dichotomy.md),
+[`audits/actual_child_effective_row_support_dichotomy_adversarial_audit.md`](audits/actual_child_effective_row_support_dichotomy_adversarial_audit.md),
+and
+[`audits/actual_child_effective_row_support_es3_independent_audit.md`](audits/actual_child_effective_row_support_es3_independent_audit.md).

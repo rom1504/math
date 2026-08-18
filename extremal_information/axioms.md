@@ -2834,3 +2834,19 @@ collision curvature stays sublinear or becomes extensive inside a locally
 regular family.  Worst-context projective diameter is sufficient but loses
 large finite factors; probability-weighted tilted row influence is the
 more faithful current observable.
+
+## 159. Tight components do not preclude extensive accumulation, but they localize it
+
+For weak-coordinate Gibbs laws, two row measures whose log densities have
+the physical `O(n^(-1/2))` bit oscillation are within bounded Renyi-two
+distance, even when one is a conditional law and the other is the natural
+product reference.  This remains true for the factors selected by a global
+mean-field optimum.
+
+Therefore a linear product mismatch cannot be attributed to a few singular
+components.  Along the actual-child interpolation it forces a positive
+density of rows to carry order-one scaled marginal drift or row-versus-rest
+information.  If a better product repairs a linear part of the canonical
+error, a positive density of its individually regular factors must retune by
+order one.  The remaining resource is macroscopic compatibility among
+bounded-complexity changes, not escaping local complexity.

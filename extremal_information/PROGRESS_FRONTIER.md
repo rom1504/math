@@ -174,19 +174,24 @@ target-relative product-basin / directed-dependence dichotomy
 power-saving linearly rare basin or extensive interaction theorem
 ```
 
-**Current SML `L_product-target`:** for a fixed target-reaching
-`beta,lambda`, control
+**Current SML `L_actual-row-resource`:** for fixed target-reaching
+`beta,lambda`, decide from an optimizer-specific child statistic strictly
+smaller than the complete external-field/bridge landscape whether both
 
 ```math
-\Delta_N=V_{\lambda,N}^{\rm row}-T_N
+\lambda\int_0^\lambda{\operatorname {TC}(q_s)\over s^2}\,ds,
+\qquad
+\lambda\int_0^\lambda{\sum_iD(q_{s,i}\Vert r_i)\over s^2}\,ds
 ```
 
-from a statistic of the actual minimizing children which is strictly smaller
-than the full bridge response table.  A power-saving upper bound on
-`(Delta_N)_+` gives the basin required by the entropy-tilted recurrence; a
-fixed linear lower bound proves irreducible extensive directed dependence.
-The full row best-response oracle is not an admissible state because
-point-mass queries reconstruct `L`.
+are `o(N)` (preferably with a power saving), or certify a positive density
+of rows with order-one scaled irreducible information or regular factor
+retuning.  The first alternative makes the explicit canonical product
+accurate.  In the second, a linear optimal reverse-product gap is a
+directional dependence theorem; a linear canonical-to-optimal improvement
+must retune a positive density of bounded-complexity factors.  The full row
+best-response oracle remains inadmissible because point-mass queries
+reconstruct `L`.
 
 ## Quantitative frontier table
 
@@ -1130,3 +1135,61 @@ class and risks restating the desired parent optimization.
   and is frozen.  Continue only with the probability-weighted hybrid-path
   observable or a high-transport directional certificate; another
   low-sensitivity row feature is a strike.
+
+### Checkpoint 19 — escaping components and sparse-row explanations are closed
+
+- **Strongest new actual-child theorem:** throughout the canonical-to-full
+  hybrid path, every conditional row is not only `O(1)` in `D_2` relative
+  to a fair row, but satisfies
+
+  ```math
+  D_2(q_s(R_i\mid\mathcal C)\Vert r_i)
+  \le5\lambda^2\beta^2n/N.
+  ```
+
+  Every factor of the globally optimal row-product shadow obeys the same
+  relative bound.  The scaled all-other-row response `e_i(s)` has a uniform
+  order-one ceiling and splits exactly into marginal drift plus
+  row-versus-rest mutual information.  Hence `J>=eta N` forces a fixed
+  positive density of rows to carry order-one scaled response.  If the best
+  product improves the canonical product by `eta N`, a fixed positive
+  density of its still-regular factors must retune by order one.  These
+  statements exclude escaping component complexity and sparse exceptional
+  rows in every natural filtration/product implementation.
+- **Exact resource split:** the canonical reverse error has the identity
+
+  ```math
+  J=\lambda\int_0^\lambda
+  {\operatorname {TC}(q_s)+\sum_iD(q_{s,i}\Vert r_i)\over s^2}\,ds.
+  ```
+
+  Thus every linear canonical phase contains irreducible reverse-product
+  dependence, positive-density regular factor retuning, or both.  This is a
+  finite structural classification; it does not select the asymptotic
+  branch.
+- **Sharp finite falsifier on actual children:** complete bridge enumeration
+  of all `102` balanced minimizing-child laws through `N=9` reconstructs the
+  identity above within relative error `5.29e-11`.  The total-correlation
+  share ranges from `.3462` to `1`, while marginal drift ranges from `0` to
+  `.6538`.  Therefore neither a dependence-only nor a marginal-only theorem
+  can close the actual canonical error.  The optimized conditional-
+  entropic bound remains only a factor `1.486--2.273` above `J`; it is a
+  faithful diagnostic, but the `beta=2,4` data show no finite no-gain trend.
+- **Previous SML:** prove `sup_s A_s=o(N)` from optimizing-child structure or
+  certify a linear high-transport image gap.
+- **Current SML:** from a child statistic strictly smaller than the complete
+  external-field/bridge landscape, prove that both weighted path masses in
+  the displayed identity are `o(N)` with a power saving, or certify a
+  positive density of irreducible row information or coherent regular
+  factor retuning.  In the latter case the certificate must be
+  high-transport; Theorem 37.26 excludes bounded-coordinate/Walsh images.
+- **Benchmark and target distance:** Level-5 actual-law contact with two
+  independent proof audits and exhaustive finite falsification.  The SML is
+  strictly narrower than “understand the actual child law,” but no
+  optimizer-specific statistic yet decides it, so there is no Level-6
+  recurrence or convergence-bound movement.
+- **Decision:** **RESET; CONTINUE ONLY ON THE POSITIVE-DENSITY ACTUAL-ROW
+  RESOURCE.**  This phase touches actual optimized children and incurs no
+  surrogate strike.  Further generic regularity or one-component path
+  identities do not reset the counter; the next result must use child
+  minimality to control or expose the collective row resource.

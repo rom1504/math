@@ -259,7 +259,99 @@ Without the common bound, `sum_i delta_i^2=o(N)` permits a sparse growing
 increment whose exponential `tau` cost is not controlled; the two
 sufficient hypotheses are then not ordered.
 
-## 5. Relation to the smallest missing lemma
+## 5. Optimal conditional-entropic influence
+
+The comparison function in IC.3 can be optimized exactly.  For `s>0` put
+
+```math
+h_{i,s}(B_{-i})
+=-{1\over s}\log E_{R_i\sim r_i}e^{-s h(R_i,B_{-i})}. \tag{IC.20}
+```
+
+Let `q_s^{i\mid-i}` denote the conditional law of row `i` given all other
+rows under the hybrid escort.  Define
+
+```math
+\mathcal E_s
+={1\over s^2}\sum_iE_{q_s}
+ D(q_s^{i\mid-i}\Vert r_i),                          \tag{IC.21}
+```
+
+where the outer expectation is over `B_(-i)`.  At zero set
+
+```math
+\mathcal E_0={1\over2}\sum_iE_{r_{-i}}
+ \operatorname{Var}_{r_i}(h\mid B_{-i}).             \tag{IC.22}
+```
+
+**Theorem IC.4 (conditional-entropic influence).**  The canonical
+interaction obeys
+
+```math
+\boxed{
+\mathcal J\le\lambda\int_0^\lambda\mathcal E_s\,ds,
+\qquad \mathcal E_s\le\mathcal A_s.}                \tag{IC.23}
+```
+
+Consequently, `J>=eta N` forces
+
+```math
+\exists s_N\in[0,\lambda]:
+\sum_iE_{q_{s_N}}
+D(q_{s_N}^{i\mid-i}\Vert r_i)
+\ge {\eta s_N^2\over\lambda^2}N                    \tag{IC.24}
+```
+
+in the pointwise form, and more robustly forces
+
+```math
+\sup_{0\le s\le\lambda}\mathcal E_s
+\ge {\eta\over\lambda^2}N.                         \tag{IC.25}
+```
+
+The latter allows the witness to occur at `s=0` through the limit (IC.22).
+
+*Proof.*  Use `Z_i=-h_(i,s)` in the modified log-Sobolev comparison.
+For every fixed `B_(-i)`, the choice (IC.20) makes
+
+```math
+e^{-s h_{i,s}}=E_{r_i}e^{-s h}.                     \tag{IC.26}
+```
+
+It is the equality choice in the conditional entropy variational formula.
+Moreover, the conditional hybrid law is
+
+```math
+{dq_s^{i\mid-i}\over dr_i}
+ =e^{-s(h-h_{i,s})}.                                \tag{IC.27}
+```
+
+Therefore
+
+```math
+E_{q_s^{i\mid-i}}\tau\{s(h-h_{i,s})\}
+=D(q_s^{i\mid-i}\Vert r_i).                        \tag{IC.28}
+```
+
+Indeed the expectation of the exponential term in `tau` is one by
+(IC.27), while the remaining linear term is exactly the displayed KL.
+The proof of IC.3 now gives the first inequality in (IC.23).  The equality
+choice minimizes the conditional entropy comparison, proving
+`E_s<=A_s`.  Taylor expansion on the finite cube yields (IC.22).
+Equations (IC.24)--(IC.25) follow from the same interval averaging as in
+IC.3. `square`
+
+The point of IC.4 is directional.  It does not use forward total
+correlation.  It measures, under the actual hybrid inverse escorts, how much
+the full collection of other bridge rows changes the conditional law of one
+row away from the explicit one-child inverse law `r_i`.  Thus a failure of
+canonical closure is witnessed by extensive **scaled conditional
+reverse-row influence** along a path whose conditional row Renyi complexity
+remains tight by IC.2.  Raw conditional KL is extensive only if the witness
+parameter `s_N` stays bounded away from zero; IC.24 records the exact factor
+and no such localization is assumed.
+
+## 6. Relation to the smallest missing lemma
 
 The identity (IC.7) alone is a cumulant reformulation and is not claimed as
 a strict reduction.  Its value is that the random variable `h` now has the
@@ -272,8 +364,9 @@ oracle:
 > curvature in (IC.7a) is `o(N)` for contracted-temperature minimizing
 > children.  A stronger, potentially easier-to-localize sufficient version
 > is `sup_(0<=s<=lambda) Var_(q_s)(log G)=o(N)`; a different sufficient
-> route is `sup_s A_s=o(N)` in (IC.13).  Alternatively, exhibit a
-> child-derived statistic forcing either `Omega(N)` alternative.
+> route is `sup_s E_s=o(N)` in (IC.21), which is never worse than the
+> unoptimized `A_s`.  Alternatively, exhibit a child-derived statistic
+> forcing either `Omega(N)` alternative.
 
 This obligation has a smaller **declared output** than evaluating the
 optimal row-product shadow: it asks for scalar variances of the explicit

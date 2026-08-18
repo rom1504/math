@@ -3835,3 +3835,26 @@ partition for general central rank-one priors.  The example is not an
 optimized-child law; it is a scalable falsifier showing that the new
 collision-curvature lemma must use optimizer-specific structure or a
 growing but compressed hierarchy.
+
+## Example 195: actual canonical error uses both row correlation and marginal drift
+
+The exact hybrid path was enumerated for all `102` balanced
+contracted-temperature minimizing-child laws at orders `4,...,9`, both
+orientations, `beta in {1,2,4}`, and `lambda=1`.  The two terms in (37.75)
+reconstruct `J` to relative error at most `5.29e-11`.
+
+Their integrated shares range as follows:
+
+| `beta` | row total correlation | drift from canonical row marginals |
+|---:|---:|---:|
+| `1` | `[.9072,1]` | `[0,.0928]` |
+| `2` | `[.5403,1]` | `[0,.4597]` |
+| `4` | `[.3462,1]` | `[0,.6538]` |
+
+At `N=9,beta=4`, the highest-error orientation has `J/N=.43119`; only
+`.34618` of its path integral is total correlation and `.65382` is marginal
+drift.  Other actual orientations put more than ninety percent in total
+correlation.  Thus neither a marginal-only nor a dependence-only account of
+the canonical mismatch survives finite actual-child testing.  This is a
+falsifier of one-component proof strategies, not asymptotic evidence that
+either component has positive limiting density.

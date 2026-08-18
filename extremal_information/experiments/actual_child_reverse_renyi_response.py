@@ -180,6 +180,7 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
     path_grid = np.linspace(0.0, lam, 17)
     path_curvature = []
     path_influence = []
+    path_entropic_influence = []
     for path_s in path_grid:
         log_hybrid = -float(path_s) * interaction
         log_hybrid -= float(np.max(log_hybrid))
@@ -194,6 +195,7 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
                 float(np.sum(hybrid * difference * difference))
                 for difference in row_centered_differences
             )
+            entropic_influence = influence
         else:
             influence = sum(
                 float(
@@ -207,19 +209,42 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
                 )
                 for difference in row_centered_differences
             ) / (path_s * path_s)
+            conditional_kl_sum = 0.0
+            for row in range(rows):
+                other_mass = np.sum(hybrid, axis=row)
+                other_mass = np.expand_dims(other_mass, axis=row)
+                shape = [1] * rows
+                shape[row] = row_size
+                base_row = row_escorts[row].reshape(shape)
+                conditional_kl_sum += float(
+                    np.sum(
+                        hybrid
+                        * (
+                            np.log(hybrid)
+                            - np.log(other_mass)
+                            - np.log(base_row)
+                        )
+                    )
+                )
+            entropic_influence = conditional_kl_sum / (path_s * path_s)
         path_curvature.append((lam - path_s) * curvature)
         path_influence.append(influence)
+        path_entropic_influence.append(entropic_influence)
         path_records.append(
             {
                 "s": float(path_s),
                 "interaction_variance": curvature,
                 "tilted_average_influence": influence,
+                "conditional_entropic_influence": entropic_influence,
             }
         )
 
     curvature_integral = float(np.trapezoid(path_curvature, path_grid))
     influence_upper_integral = float(
         lam * np.trapezoid(path_influence, path_grid)
+    )
+    entropic_influence_upper_integral = float(
+        lam * np.trapezoid(path_entropic_influence, path_grid)
     )
     return {
         "u": u,
@@ -248,6 +273,9 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
             curvature_integral - centered_cumulant
         ),
         "tilted_influence_upper_trapezoid": influence_upper_integral,
+        "conditional_entropic_influence_upper_trapezoid": (
+            entropic_influence_upper_integral
+        ),
         "canonical_decomposition_residual": (
             reverse_renyi
             - sum(row_works)
