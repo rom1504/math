@@ -1673,17 +1673,29 @@ at every fixed `beta,lambda`, while every negative tilt is exactly row
 product and `I^leftarrow=0`.  Hence support entropy, positive raw overlap,
 and actual rank-one algebra alone cannot decide reverse dependence.
 
-The replacement SML is:
+Theorem 37.54 supplies the correct inverse-order diagnostic but also fixes
+its scope.  For the canonical row product `r` and actual escort `q`,
 
-> **`L_noise-lifetime-no-gain`.**  Derive an exact negative-tilt
-> product-value inequality in which a Boolean interaction is charged by its
-> noise lifetime/inverse order rather than once for every incident edge.
-> Prove that the unavoidable rank-one-support inference floor of Theorem
-> 37.52 has `o(N)` cost in this inequality.  The functional must still upper-
-> bound the actual optimized no-gain or product error; otherwise it is only a
-> renamed scalar.  A directional alternative must instead subtract the
-> row-explainable cavity response and prove an actual-child reverse-
-> tensorization theorem for the remaining cross-row component.
+```math
+J=D(r\Vert q)
+=\int_0^\infty\mathfrak K_r(P_t^r(dq/dr))dt.
+```
+
+This lifetime integral vanishes on the row-factor sharpness channel and
+charges pure parity at its true `Theta(N^-1)` scale.  It is nevertheless
+exactly `J`, not yet a strict optimizer-specific reduction, and it cannot
+by itself distinguish `I^leftarrow` from `J-I^leftarrow`.
+
+The replacement SML is therefore:
+
+> **`L_row-lifetime-closure`.**  From actual-child data strictly coarser than
+> the complete bridge density, prove either a summable `J=o(N)` bound for the
+> row-refresh lifetime, or split its extensive mass into (i) an explicit
+> coherent factor-retuning direction and (ii) a cross-row component that
+> lower-bounds `I^leftarrow`.  The split may not invoke the unknown optimal
+> product or store the full smoothed density `P_t^r(dq/dr)`.  This resolves
+> only the product phase; a Level-6 recurrence still needs a separate
+> target-reach/gain theorem in the correct inequality direction.
 
 Theorem 37.51 fixes the scope of the alternative.  At the best reverse row
 product, the exact centered score is a row-ANOVA interaction residual and
@@ -1700,3 +1712,46 @@ Existing child minimality gives only one-replica `O(N)` endpoint bounds on
 internal edges and cannot prove the required replicated cross-edge
 derivative rigidity directly.  Another raw MGF, carrier net, or singular-
 value estimate is no longer an admissible route.
+
+### Actual-minimizer closure after the common-sign retuning no-go
+
+Theorem 37.58 shows that rank-one latent support and bounded conditional
+row Renyi complexity allow
+
+```math
+J=\Theta(N),\qquad I^\leftarrow=o(N),\qquad
+J-I^\leftarrow=\Theta(N),
+```
+
+with `Omega(N)` row-lifetime mass already on a fixed bounded time interval.
+The example is generic, not an actual minimizing-child sequence. The next
+question must therefore use an optimizer identity:
+
+> Do contracted-temperature minimizing children exclude the two-word
+> shared-latent retuning mechanism, or can one construct from their
+> one-child data an explicit product `s_N` satisfying
+> `D(s_N||q)<=I^leftarrow+o(N)` with a summable rate?
+
+Using the unknown optimal product `p^*` is not an answer. Nor is another
+bound based only on support cardinality, conditional row `D_2`, or
+bounded-time row-noise regularity: all three hold in the counterexample.
+Even a positive answer resolves only the product branch; target reach
+remains separate.
+
+Theorems 37.55 and 37.57 also close the scalar effective-entropy variant of
+the support argument.  Weighted-max transport can interpolate from
+`log |supp mu|` to prior Renyi entropy, but every nonzero weight on the prior
+introduces
+
+```math
+\mathcal C_{q_s}
+=E_{\bar\mu_{q_s}}[-\log\mu]
+=H(\bar\mu_{q_s})+D(\bar\mu_{q_s}\Vert\mu).
+```
+
+Thus an improved effective-support threshold requires a sublinear theorem
+for the negative-path posterior retuning.  If the retuned posterior puts
+fixed mass on an exponentially rare child set, that divergence is already
+linear.  Prior Shannon entropy and positive-temperature full support do not
+decide between these cases.  This is a scope closure, not a replacement for
+`L_row-lifetime-closure`.

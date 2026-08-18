@@ -61,6 +61,20 @@ bridge, and checks its `N=8` estimates against the complete cube.  At
 | 12 | `50000` | `.016301(64)` | `.176755(427)` | `.446383(488)` |
 | 14 | `10000` | `.021445(184)` | `.201932(1078)` | `.461008(1286)` |
 
+An additional held-out `N=16` run exhaustively selected both minimizing
+signed-permutation classes and sampled every ordered pair of classes.  With
+`2000` independent bridges per pair, the ranges over the four pairs are:
+
+| `N` | child-class pairs | `beta=1` | `beta=2` | `beta=4` |
+|---:|---:|---:|---:|---:|
+| 16 | `4` | `[.018077,.018793]` | `[.187500,.191936]` | `[.451017,.456478]` |
+
+Individual one-standard-error estimates are retained in the JSON record;
+the largest standard errors are `.000379`, `.002354`, and `.003247`,
+respectively.  This extension is still finite numerical evidence, but it
+checks that the observed strong-channel floor is not an artifact of choosing
+one optimizer class.
+
 Parentheses contain one self-normalized importance-sampling standard error
 in the last displayed digits.  All three `N=8` estimates are within one
 standard error of the complete-cube values.
@@ -83,3 +97,4 @@ Complete records:
 - [`../../computations/results/actual_child_negative_overlap_exact.json`](../../computations/results/actual_child_negative_overlap_exact.json)
 - [`../../computations/results/actual_child_negative_overlap_exact_n10_3x7.json`](../../computations/results/actual_child_negative_overlap_exact_n10_3x7.json)
 - [`../../computations/results/actual_child_negative_overlap_sample.json`](../../computations/results/actual_child_negative_overlap_sample.json)
+- [`../../computations/results/actual_child_negative_overlap_sample_n16.json`](../../computations/results/actual_child_negative_overlap_sample_n16.json)

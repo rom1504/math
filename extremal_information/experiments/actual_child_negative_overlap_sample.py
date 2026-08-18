@@ -32,7 +32,8 @@ import actual_child_bridge_law_exact as exact  # noqa: E402
 
 
 def sample_pressure_and_cavity(
-    matrix: np.ndarray,
+    left_matrix: np.ndarray,
+    right_matrix: np.ndarray,
     beta: float,
     total_order: int,
     orientation: int,
@@ -42,14 +43,15 @@ def sample_pressure_and_cavity(
 ) -> tuple[np.ndarray, np.ndarray]:
     """Sample ``L(B)`` and ``(mn)^-1 sum_e r_e(B_-e)^2``."""
 
-    rows = columns = len(matrix)
+    rows = len(left_matrix)
+    columns = len(right_matrix)
     edge_count = rows * columns
     raw_t = beta / math.sqrt(total_order)
     channel = math.tanh(raw_t)
     x = exact.projective_spins(rows).astype(np.int16)
     y = exact.projective_spins(columns).astype(np.int16)
-    ex = exact.energies_for_matrix(matrix, x)
-    ey = exact.energies_for_matrix(matrix, y)
+    ex = exact.energies_for_matrix(left_matrix, x)
+    ey = exact.energies_for_matrix(right_matrix, y)
     patterns = []
     internal_weights = []
     for left_spin, left_energy in zip(x, ex):
@@ -212,79 +214,89 @@ def run(args: argparse.Namespace) -> dict:
                 format(beta, ".12g"),
                 total_order,
             )
-            if len(classes) != 1:
-                raise ValueError(
-                    "default audit expected one minimizing signed-permutation "
-                    f"class, found {len(classes)} at N={total_order}, beta={beta}"
-                )
-            selected = classes[0]
-            matrix = np.asarray(
-                selected["representative_matrix"], dtype=np.int8
-            )
-            pressure, cavity = sample_pressure_and_cavity(
-                matrix,
-                beta,
-                total_order,
-                args.orientation,
-                sample_count,
-                args.batch_size,
-                rng,
-            )
-            paths = []
-            for inverse_disorder in args.lambdas:
-                path = negative_path(
-                    pressure,
-                    cavity,
-                    inverse_disorder,
-                    args.quadrature_order,
-                )
-                reference = exact_reference(
-                    args.exact_reference,
-                    total_order,
-                    beta,
-                    args.orientation,
-                    inverse_disorder,
-                )
-                if reference is not None:
-                    path["complete_cube_reference"] = reference
-                    path["sample_minus_reference"] = {
-                        key: path[key] - value
-                        for key, value in reference.items()
-                    }
-                paths.append(path)
-            records.append(
-                {
-                    "N": total_order,
-                    "split": [child_order, child_order],
-                    "beta": beta,
-                    "raw_t": beta / math.sqrt(total_order),
-                    "orientation": args.orientation,
-                    "sample_count": sample_count,
-                    "child_representative_sha256": selected[
-                        "representative_sha256"
-                    ],
-                    "child_minimizer_certificate": certificate,
-                    "sample_pressure_range": [
-                        float(np.min(pressure)),
-                        float(np.max(pressure)),
-                    ],
-                    "sample_pointwise_overlap_range": [
-                        float(np.min(cavity)),
-                        float(np.max(cavity)),
-                    ],
-                    "paths": paths,
-                }
-            )
-            print(
-                f"N={total_order} beta={beta:g} samples={sample_count} "
-                + " ".join(
-                    f"rhohat({path['lambda']:g})="
-                    f"{path['rhohat_path_average']:.8g}+-"
-                    f"{path['rhohat_path_standard_error']:.2g}"
-                    for path in paths
-                ),
-                flush=True,
-            )
+            for left_class, left_selected in enumerate(classes):
+                for right_class, right_selected in enumerate(classes):
+                    left_matrix = np.asarray(
+                        left_selected["representative_matrix"], dtype=np.int8
+                    )
+                    right_matrix = np.asarray(
+                        right_selected["representative_matrix"], dtype=np.int8
+                    )
+                    pressure, cavity = sample_pressure_and_cavity(
+                        left_matrix,
+                        right_matrix,
+                        beta,
+                        total_order,
+                        args.orientation,
+                        sample_count,
+                        args.batch_size,
+                        rng,
+                    )
+                    paths = []
+                    for inverse_disorder in args.lambdas:
+                        path = negative_path(
+                            pressure,
+                            cavity,
+                            inverse_disorder,
+                            args.quadrature_order,
+                        )
+                        if left_class == 0 and right_class == 0:
+                            reference = exact_reference(
+                                args.exact_reference,
+                                total_order,
+                                beta,
+                                args.orientation,
+                                inverse_disorder,
+                            )
+                        else:
+                            reference = None
+                        if reference is not None:
+                            path["complete_cube_reference"] = reference
+                            path["sample_minus_reference"] = {
+                                key: path[key] - value
+                                for key, value in reference.items()
+                            }
+                        paths.append(path)
+                    records.append(
+                        {
+                            "N": total_order,
+                            "split": [child_order, child_order],
+                            "beta": beta,
+                            "raw_t": beta / math.sqrt(total_order),
+                            "orientation": args.orientation,
+                            "sample_count": sample_count,
+                            "left_child_class": left_class,
+                            "right_child_class": right_class,
+                            "left_child_representative_sha256": left_selected[
+                                "representative_sha256"
+                            ],
+                            "right_child_representative_sha256": right_selected[
+                                "representative_sha256"
+                            ],
+                            "child_minimizer_certificate": certificate,
+                            "sample_pressure_range": [
+                                float(np.min(pressure)),
+                                float(np.max(pressure)),
+                            ],
+                            "sample_pointwise_overlap_range": [
+                                float(np.min(cavity)),
+                                float(np.max(cavity)),
+                            ],
+                            "paths": paths,
+                        }
+                    )
+                    print(
+                        f"N={total_order} beta={beta:g} "
+                        f"classes={left_class},{right_class} "
+                        f"samples={sample_count} "
+                        + " ".join(
+                            f"rhohat({path['lambda']:g})="
+                            f"{path['rhohat_path_average']:.8g}+-"
+                            f"{path['rhohat_path_standard_error']:.2g}"
+                            for path in paths
+                        ),
+                        flush=True,
+                    )
     return {
         "schema": "actual-child-raw-negative-overlap-sample-v1",
         "classification": (

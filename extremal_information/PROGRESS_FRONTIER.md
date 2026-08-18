@@ -176,7 +176,9 @@ sublinear reverse dependence or positive overlap obstruction
   --[FALSIFIED AS A DECAY ROUTE ABOVE THE STRONG-CHANNEL THRESHOLD:
       Theorem 37.52]-->
 rank-one-support floor separated from target-relevant response
-  --[MISSING L_noise-lifetime-no-gain]-->
+  --[PROVED exact row-noise lifetime representation: Theorem 37.54]-->
+canonical row-noise path with inverse-order charging
+  --[MISSING L_row-lifetime-closure]-->
 power-saving no-gain or extensive dependence/retuning certificate
 ```
 
@@ -222,13 +224,16 @@ option: if `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`, then every actual
 child pair has `liminf widehat rho_N^-(lambda)>0`.  The cause is the exact
 `2^(O(N))` rank-one latent support in `Theta(N^2)` bridge coordinates.
 
-**Current SML `L_noise-lifetime-no-gain`:** replace the raw coordinate-counted
-Dirichlet mass in (37.157) by an exact negative-tilt Boolean-noise-lifetime
-functional which counts a Walsh interaction by its lifetime rather than once
-per incident coordinate.  Prove both that this replacement still controls
-the optimized no-gain/product error and that the unavoidable rank-one-support
-floor of Theorem 37.52 has `o(N)` cost.  Without the first property it is only
-a new scalar; without the second it does not remove the proved obstruction.
+**Current SML `L_row-lifetime-closure`:** Theorem 37.54 exactly represents
+the canonical error `J` as the lifetime of `h_t=P_t^r(dq/dr)` under
+independent row refresh.  It removes both known raw-multiplicity false
+positives but is not by itself simpler than `J`.  Derive from actual-child
+data strictly coarser than the full bridge law either (a) a summable
+`J=o(N)` bound, or (b) a finite/coarse split of extensive lifetime mass into
+an explicit coherent factor-retuning direction and a cross-row remainder
+which lower-bounds `I^leftarrow`.  Invoking the optimal product `p^*` or the
+complete smoothed density is circular.  Even a solution decides only the
+product phase; target reach remains a separate recurrence interface.
 
 ## Quantitative frontier table
 
@@ -1967,13 +1972,124 @@ class and risks restating the desired parent optimization.
   `O(N^(1-alpha))`; every `alpha>0` is summable on a geometric tree.  Bare
   overlap decay, however, gives no upper bound on target reach.  Theorem
   37.52 therefore has no Level-6 recurrence consequence.
+- **Renormalized diagnostic:** Theorem 37.54 gives the exact identity
+  `J=int_0^infinity K_r(P_t^r(dq/dr))dt`.  At quadratic order a `k`-row
+  Hoeffding mode is paid `k` instantaneously but survives only time `1/(2k)`.
+  The identity is zero on the row-factor support obstruction and gives the
+  correct `Theta(N^-1)` parity cost instead of the raw `Theta(N)` charge.
+  Its tail after time `T` is at most `-m log(1-e^-T)`.  This is a valid
+  multiscale representation.  Moreover, `J>=eta N` forces an extensive
+  instantaneous witness by time `log(4/eta)`.  The exact retained-subset
+  formula shows the remaining obstruction: every fixed time still uses
+  typical marginals on `Theta(N)` rows.  The integral exactly equals the
+  already known `J`; no actual-child closure or recurrence follows yet.
+- **Entropy decider closed:** the exact posterior budget splits into latent
+  mutual information, sector retuning, two child-factor KL retunings, and
+  induced cross-child dependence.  The factor KL is evaluated under the
+  already retuned posterior, so bounding it restates the missing branch.
+  Equal-entropy exact order-eight minimizers have distinct cross-row response
+  tangents `20` and `12`; scalar child entropy cannot orient the floor.
 - **SML decision:** `L_raw-negative-overlap` is **closed false** in the
   strong-channel regime required by an unbounded-temperature squeeze.  The
-  new SML is `L_noise-lifetime-no-gain`: obtain an exact product-value bound
-  from an inverse-order/noise-lifetime functional and prove that the
-  unavoidable rank-one-support inference floor has sublinear cost.  This is
-  a RESET by a genuine actual-law obstruction, but Level 6 remains absent.
+  new SML is `L_row-lifetime-closure`: close the canonical row-noise path
+  from a strictly coarser optimizer statistic, either summably bounding `J`
+  or splitting its extensive mass directionally without `p^*`.  This is a
+  RESET by a genuine actual-law obstruction, but Level 6 remains absent.
 - **Research judgment:** freeze the raw adversarial-statistical-mechanics
   implementation.  Any continuation must be the already selected
   rare-event/renormalization architecture; another raw overlap, cumulant,
   conference model, or generic concentration inequality is ruled out.
+
+### Checkpoint 26 — bipartite geometry lowers the uniform obstruction threshold
+
+- **Strict theorem-level sharpening (Theorem 37.56):** the support argument
+  in Theorem 37.52 paid for `2^(N-1)` rank-one words as if they were an
+  arbitrary cube code.  Their bipartite geometry instead gives the uniform
+  finite-order estimate
+
+  ```math
+  E_U\max_{x,y}x^TBy
+  \le\sqrt{2\over\pi}(m\sqrt n+n\sqrt m)+O(N^{4/3}).
+  ```
+
+  The error is explicit: soft-max smoothing at `eta=N^(-1/3)` costs
+  `(N-1)log(2)N^(1/3)`, while Bernoulli-to-Gaussian Lindeberg replacement
+  costs at most
+  `{1+2sqrt(2/pi)\over6}mnN^(-2/3)`.  Gaussian
+  Sudakov--Fernique comparison is certified by the nonnegative increment
+  slack `2(m-x^Tx')(n-y^Ty')`.
+- **Actual negative-path transport:** bounded differences and
+  Donsker--Varadhan give
+
+  ```math
+  E_{q_s}X\le E_UX+mn\sqrt{2\kappa(\delta\beta/\sqrt N)}
+  ```
+
+  uniformly for `s in [-delta,0]`.  Substitution into the exact one-edge
+  posterior inequality is prior-free and therefore holds for every pair of
+  actual minimizing children and either orientation.
+- **New threshold:** on splits `mn/N^2>=gamma_0`, raw overlap has a fixed
+  positive floor whenever
+
+  ```math
+  \beta>
+  \beta_{\rm BG}(\gamma_0)
+  =\sqrt{2\over\pi}
+   \sqrt{\gamma_0^{-1}+2\gamma_0^{-1/2}}.
+  ```
+
+  At a balanced split this is `beta>4/sqrt(pi)=2.256758...`, strictly below
+  the former `sqrt(8log2)=2.354820...` support-entropy threshold.
+- **Maximum-envelope ceiling:** one explicit alternating-sign update gives
+
+  ```math
+  \liminf_{k\to\infty}{E_U\max_{x,y}x^TBy\over k^{3/2}}
+  \ge\Psi(\sqrt{2/\pi})=1.039196660145857\ldots,
+  ```
+
+  where `Psi(a)=E|G+a|`.  The proof uses iid column contributions of mean
+  `E|S_k|/k`, a triangular-array CLT, and uniform integrability.  Therefore
+  the present uniform-near-zero obstruction based only on a universal upper
+  bound for the pointwise rank-one maximum cannot reach below
+  `sqrt(2)Psi(sqrt(2/pi))=1.469646010751096...`.  This is a ceiling of the
+  proof architecture, not an actual overlap threshold; posterior-specific
+  methods and intervals bounded away from zero are not excluded.
+- **SML and level:** this strengthens the actual-law falsifier but does not
+  change the SML.  `L_raw-negative-overlap` remains closed false at strong
+  channel, `L_row-lifetime-closure` remains the rare-event/renormalization
+  target, and Level 6 is absent.  The finite `O(N^(4/3))` comparison error is
+  `o(N^(3/2))` but supplies no recurrence.  A further threshold improvement
+  requires a sharper rigorous bipartite ground-state upper bound or a
+  posterior-energy estimate below the pointwise maximum; another support
+  count is not indicated.
+
+### Checkpoint 27 — the canonical row lifetime is not closed by rank-one support and row regularity
+
+- **Scalable no-go (Theorem 37.58):** a two-word rank-one binary channel has
+  the exact latent form `Q=sigma 1_m 1_n^T` and uniform two-sided
+  conditional row-`D_2=O(1)` relative to its canonical inverse factors, yet
+
+  ```math
+  J=\theta d_0N+o(N),
+  \qquad I^\leftarrow=O(\sqrt N),
+  \qquad J-I^\leftarrow=\theta d_0N+o(N),
+  ```
+
+  for an explicit Gaussian-limit constant `d_0>0`. A fixed bounded-time
+  portion of the row-refresh lifetime already has mass `Omega(N)`.
+- **Mechanism:** the canonical factors independently invert the two-state
+  signal in every row, whereas the full inverse escort only imposes one
+  aggregate common-sign constraint. The fair product is within
+  `O(sqrt(N))` reverse KL of the full escort. Thus the linear lifetime is
+  coherent factor retuning, not irreducible reverse dependence.
+- **Exact scope:** this is a generic rank-one channel, **not** a sequence of
+  actual contracted-temperature minimizers. It proves that exact rank-one
+  support plus bounded conditional row complexity cannot close
+  `L_row-lifetime-closure`. It is not an actual-minimizer obstruction and
+  supplies no target reach or Level-6 recurrence.
+- **Narrowed obligation:** any continuation of the row-lifetime route must
+  use a genuine child-minimality identity to rule out the shared-latent
+  retuning mechanism, or construct from coarser child data a new explicit
+  product whose excess above `I^leftarrow` is summably small. Merely
+  bounding early-time row `D_2`, support size, or the number of retained rows
+  is now rigorously insufficient.

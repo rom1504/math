@@ -4272,8 +4272,9 @@ support deficit into the uniform obstruction
 \liminf_N\widehat\rho_N^-(\lambda)>0
 ```
 
-whenever `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`.  The balanced
-threshold is `beta>sqrt(8log2)=2.354820...`.  Thus the proposed raw-overlap
+whenever `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`.  Bipartite
+ground-state geometry sharpens the balanced threshold further to
+`beta>4/sqrt(pi)=2.256758...` in Theorem 37.56.  Thus the proposed raw-overlap
 power decay is false precisely in a strong-signal regime needed by any
 zero-temperature pressure squeeze.  This is not a conference effect and
 does not rely on a conjectural property of minimizers; it holds for every
@@ -4289,7 +4290,9 @@ beta=4: 0.36--0.78.
 ```
 
 Held-out fair-bridge sampling with exhaustive child selection through the
-balanced order `N=14` gives `0.4610+-0.0013` at `beta=4`; the `N=8` sampled
+balanced order `N=14` gives `0.4610+-0.0013` at `beta=4`; an additional
+`N=16` run exhausts both optimizing child classes and gives
+`[.4510,.4565]` over their four ordered pairs.  The `N=8` sampled
 implementation agrees with the complete cube within its stated standard
 error.  These values are finite numerical evidence only.  The scalable
 claim is supplied by Theorem 37.52, while the data show that its qualitative
@@ -4306,3 +4309,53 @@ four-cycle floor is only `Theta(N^-1)` after normalization and does not by
 itself control the raw negative escort.  The stronger support-entropy
 argument is nonperturbative: it resums the full rank-one code rather than one
 fixed cycle order.
+
+## Example 216: inverse-order lifetime removes two false overlap charges
+
+For any full-support row product `r`, target law `q`, density `h=dq/dr`,
+and independent row-refresh semigroup `P_t^r`, Theorem 37.54 gives
+
+```math
+D(r\Vert q)=\int_0^\infty\mathfrak K_r(P_t^rh)dt.
+```
+
+A `k`-row Hoeffding interaction is charged proportionally to `k` at time
+zero but survives for time `1/(2k)`, so the integrated quadratic charge is
+independent of `k`.  This makes the functional exactly zero on the
+row-factor channel with positive raw overlap and only `Theta(N^-1)` on the
+physical full-parity ceiling whose raw gradient cost is `Theta(N)`.
+
+The correction is not yet closure.  A two-word rank-one channel with one
+global latent sign has uniformly bounded conditional row Renyi complexity
+but
+
+```math
+J=D(r\Vert q)=\Theta(N),
+\qquad I^\leftarrow=O(\sqrt N).
+```
+
+Its bounded-time lifetime is already linear: the canonical factors pay for
+the same common sign independently in every row, while the fair product is
+sublinearly close to the full escort.  This generic channel is not an
+actual-minimizer construction.  It proves that rank-one support and row
+regularity cannot close the renormalized route without essential use of
+child minimality or a better explicit product.
+
+## Example 217: weighted support pays posterior retuning, not child entropy
+
+Weighting the rank-one maximum by its actual child Gibbs prior yields the
+valid transport charge
+
+```math
+(1-\alpha)H_\alpha(\mu)
++\alpha E_{\bar\mu_q}[-\log\mu],
+```
+
+not prior entropy alone.  The second term equals
+`H(bar mu_q)+D(bar mu_q||mu)` and splits into sector retuning, two child
+factor retunings, and induced cross-child dependence.  Under the fair
+bridge law, an equivariantly tie-broken maximizing rank-one word is uniform
+on the complete orbit, so its expected prior surprisal is at least the log
+support even when the Gibbs entropy is much smaller.  Thus effective child
+entropy cannot improve the overlap threshold without first proving the
+missing posterior-retuning theorem.

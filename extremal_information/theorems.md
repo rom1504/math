@@ -19902,3 +19902,546 @@ no-product-background theorem is additionally necessary to turn that
 residual into extensive reverse-product information.  The proof, including
 uniformity of the Gaussian limit over the complete negative path, is in
 [`audits/rank_one_support_overlap_floor_nondirectional_sharpness.md`](audits/rank_one_support_overlap_floor_nondirectional_sharpness.md).
+
+### Theorem 37.54 (reverse row-noise de Bruijn identity)
+
+Let `r=otimes_(i=1)^m r_i` and `q` be full-support laws on a finite row
+product space, set `h=dq/dr`, and let
+
+```math
+P_t^r=\exp\!\left[-t\sum_i(I-E_i)\right],
+\qquad h_t=P_t^rh,
+```
+
+where `E_i` refreshes row `i` from `r_i`.  Define
+
+```math
+\mathfrak K_r(g)=\sum_iE_{r_{-i}}
+ \{(E_ig)(E_ig^{-1})-1\}.                         \tag{37.172}
+```
+
+Then
+
+```math
+\boxed{
+D(r\Vert q)=\int_0^\infty\mathfrak K_r(h_t)dt,}
+                                                               \tag{37.173}
+```
+
+and every summand has the exact nonnegative pair form
+
+```math
+{1\over2}E_{r_{-i},X_i,X_i'}
+{\{g(X)-g(X_{-i},X_i')\}^2
+ \over g(X)g(X_{-i},X_i')}.                       \tag{37.174}
+```
+
+If `r` is the canonical row product of the actual negative escort `q`, the
+left side is the existing canonical error `J`; hence
+
+```math
+\mathcal I^{\leftarrow}\le\mathcal J
+=\int_0^\infty\mathfrak K_r(h_t)dt.               \tag{37.175}
+```
+
+At quadratic order, if `h=1+epsilon sum_(S!=emptyset)g_S` is its row-Hoeffding
+decomposition, then
+
+```math
+\mathfrak K_r(h_t)
+=\varepsilon^2\sum_S|S|e^{-2|S|t}\|g_S\|_2^2
+ +O_{r,g}(\varepsilon^3e^{-3t}),
+```
+
+so integration cancels the instantaneous row-order multiplicity:
+
+```math
+D(r\Vert q)
+={\varepsilon^2\over2}\sum_S\|g_S\|_2^2+O(\varepsilon^3).
+                                                               \tag{37.176}
+```
+
+The late path also has the uniform tail bound
+
+```math
+\boxed{
+\int_T^\infty\mathfrak K_r(h_t)dt
+\le-m\log(1-e^{-T}).}                              \tag{37.177}
+```
+
+Indeed, the event that all rows refresh contributes
+`(1-e^(-T))^mE_rh` to `h_T`, so `h_T>=(1-e^(-T))^m`.
+
+Writing `p=e^{-t}`, the exact retained-subset expansion is
+
+```math
+h_t(x)=\sum_{S\subseteq[m]}p^{|S|}(1-p)^{m-|S|}
+E_r[h\mid X_S=x_S].                              \tag{37.177a}
+```
+
+It yields a finite-scale converse.  If `m<=N`, `0<eta<=1`, and
+`D(r||q)>=eta N`, then for `T_eta=log(4/eta)` there exists
+`t in [0,T_eta]` with
+
+```math
+\boxed{
+\mathfrak K_r(h_t)\ge {2\eta N\over3\log(4/\eta)}.} \tag{37.177b}
+```
+
+Thus extensive canonical product error has an extensive bounded-time
+witness.  But at fixed `t`, (37.177a) retains a typical subset of
+`e^{-t}m=Theta(N)` rows, so the witness is not automatically a
+low-information state.
+
+The identity passes both sharp ceilings.  It is zero on the fixed-projective
+row-factor channel, despite positive raw cavity overlap.  For a full parity
+of amplitude `a`, it integrates to `log cosh(a)=Theta(N^(-1))` at physical
+amplitude, whereas its time-zero coordinate Fisher cost is `Theta(N)`.
+Nevertheless (37.173) is exactly a representation of `J`, not a proved
+actual-child bound or an improvement over `I^leftarrow<=J`; the early-time
+smoothed density can retain the full interaction.  See
+[`audits/actual_child_reverse_row_noise_lifetime.md`](audits/actual_child_reverse_row_noise_lifetime.md).
+
+### Theorem 37.55 (actual latent posterior budget and entropy ceiling)
+
+For a fixed orientation, let `nu` be the exact sector-factorized zero-bridge
+law of the two actual children, `Q=tau XY^T`, and let `nu_B` be its ordinary
+forward-channel posterior.  For **any** bridge law `q`, set
+
+```math
+\eta(dB,dz)=q(dB)\nu_B(dz),
+\qquad \bar\nu=\eta^Z,
+\qquad m(B)=E_{\nu_B}Q.
+```
+
+Then
+
+```math
+\boxed{
+E_qD(\nu_B\Vert\nu)
+=I_\eta(B;Q)+D(\bar\nu\Vert\nu),}                 \tag{37.178}
+```
+
+and, writing `S` for the augmented sector,
+
+```math
+\boxed{
+\begin{aligned}
+D(\bar\nu\Vert\nu)
+&=D(\bar\pi\Vert\pi)\\
+&\quad+\sum_s\bar\pi_s\{D(\bar\nu_{X|s}\Vert\mu_{A,s})
+ +D(\bar\nu_{Y|s}\Vert\mu_{D,\epsilon s})
+ +I_{\bar\nu}(X;Y\mid S=s)\}.
+\end{aligned}}                                     \tag{37.179}
+```
+
+The exact posterior energy budget is
+
+```math
+tE_q\langle B,m(B)\rangle
+=E_q\log p(B)+mn\log\cosh t
+ +I_\eta(B;Q)+D(\bar\nu\Vert\nu).                \tag{37.180}
+```
+
+These identities hold on the complete actual negative path.  They show why
+child Gibbs entropy alone cannot orient the floor: the factor terms in
+(37.179) are evaluated under the already retuned posterior.  Bounding them
+is the missing retuning theorem, not a consequence of prior entropy.
+Indeed, two certified order-eight exact thermal minimizers have identical
+complete pressure/entropy profiles but orientation-independent cross-row
+response tangents `20` and `12`.  Thus even within the optimizer set, scalar
+child entropy does not determine the first cross-row response coefficient.
+See
+[`audits/actual_child_latent_entropy_direction_no_go.md`](audits/actual_child_latent_entropy_direction_no_go.md).
+
+### Theorem 37.56 (bipartite geometry sharpens the actual overlap obstruction)
+
+Let `B` be a fair `m` by `n` sign matrix, `N=m+n`, and
+
+```math
+X(B)=\max_{x\in\{-1,1\}^m,\,y\in\{-1,1\}^n}x^TBy.
+```
+
+A quantitative soft-max Lindeberg replacement followed by
+Sudakov--Fernique comparison proves
+
+```math
+\boxed{
+E_UX
+\le\sqrt{2\over\pi}(m\sqrt n+n\sqrt m)+R_N,}    \tag{37.181}
+```
+
+where the fully explicit finite-order error
+
+```math
+R_N=(N-1)(\log2)N^{1/3}
+ +{1+2\sqrt{2/\pi}\over6}mnN^{-2/3}              \tag{37.182}
+```
+
+is `O(N^(4/3))`.  Indeed, smoothing at `eta=N^(-1/3)` costs
+`(N-1)log(2)/eta`; matching Bernoulli and Gaussian entries costs at most
+`{1+2sqrt(2/pi)\over6}mn eta^2`; and the Gaussian comparison has increment
+slack
+
+```math
+2(m-x^Tx')(n-y^Ty')\ge0.
+```
+
+Moreover, bounded differences and entropy transport give, for every bridge
+law `q`,
+
+```math
+\boxed{
+E_qX\le E_UX+\sqrt{2mnD(q\Vert U)}.}              \tag{37.183}
+```
+
+Apply this to the exact negative tilt of any actual child pair.  With the
+notation `rho=tanh(beta/sqrt(N))`,
+
+```math
+A_\rho={1\over1+\rho},
+\qquad
+C_{\rho,\delta}=A_\rho+{\delta\over1-\rho^2},
+```
+
+the exact one-edge posterior inequality yields, uniformly for
+`s in [-delta,0]`,
+
+```math
+\boxed{
+{S_s\over mn}\ge {1\over C_{\rho,\delta}}
+\left\{
+A_\rho
+-{\sqrt{2/\pi}(m\sqrt n+n\sqrt m)+R_N\over\rho mn}
+-{\sqrt{2\kappa(\delta\beta/\sqrt N)}\over\rho}
+\right\}.}                                        \tag{37.184}
+```
+
+This holds for **every** actual-child rank-one prior and either orientation;
+the support weights have disappeared.  If `mn/N^2>=gamma_0>0`, define
+
+```math
+\beta_{\rm BG}(\gamma_0)
+=\sqrt{2\over\pi}
+ \sqrt{\gamma_0^{-1}+2\gamma_0^{-1/2}}.           \tag{37.185}
+```
+
+Whenever `beta>beta_BG(gamma_0)`, every fixed
+
+```math
+0<\delta<\min\{\lambda,1,1-\beta_{\rm BG}(\gamma_0)/\beta\}
+```
+
+gives
+
+```math
+\boxed{
+\liminf_N\widehat\rho_N^-(\lambda)
+\ge {\delta\over\lambda}
+ {1-\beta_{\rm BG}(\gamma_0)/\beta-\delta
+  \over1+\delta}>0.}                              \tag{37.186}
+```
+
+For balanced splits this lowers the uniform actual-law obstruction
+threshold from `sqrt(8log2)` to
+
+```math
+\boxed{\beta>{4\over\sqrt\pi}=2.256758\ldots .}   \tag{37.187}
+```
+
+There is also a rigorous ceiling on this particular maximum-envelope
+architecture.  Define
+
+```math
+\Psi(a)=E|G+a|
+=\sqrt{2\over\pi}e^{-a^2/2}+a\{2\Phi(a)-1\}.
+```
+
+One alternating maximization step proves, when `n/m->r`,
+
+```math
+\boxed{
+\liminf {E_UX\over m\sqrt n}
+\ge\Psi\!\left(\sqrt{2r\over\pi}\right).}         \tag{37.188}
+```
+
+Indeed, fix `x=1`, choose
+`y_j=sgn(sum_i B_(ij))`, and then update
+`x_i=sgn(sum_j B_(ij)y_j)`.  For fixed `i`, the summands in the last row
+field are iid across columns with mean
+
+```math
+\mu_m={E|\sum_{i=1}^mB_i|\over m}
+=2^{-(m-1)}{m-1\choose\lfloor(m-1)/2\rfloor},
+```
+
+so `sqrt(m)mu_m->sqrt(2/pi)`.  The bounded triangular-array CLT and the
+uniform second-moment bound
+`E(T_i/sqrt(n))^2=1-mu_m^2+n mu_m^2` give (37.188), including convergence
+of first absolute moments.
+
+For `m=n=k`,
+
+```math
+\boxed{
+\liminf {E_UX\over k^{3/2}}
+\ge\Psi\!\left(\sqrt{2\over\pi}\right)
+=1.039196660145857\ldots .}                       \tag{37.189}
+```
+
+Since `rho k^2~beta k^(3/2)/sqrt(2)`, the present proof architecture--a
+uniform floor on a tilt interval containing zero, using only a universal
+upper bound on the pointwise `X` term--cannot reach below
+
+```math
+\sqrt2\,\Psi\!\left(\sqrt{2/\pi}\right)
+=1.469646010751096\ldots .
+```
+
+This is an architecture ceiling, not an actual overlap threshold; it does
+not exclude posterior-specific control or an interval bounded away from
+zero.
+
+This is a stronger obstruction, not a directional product certificate or a
+recurrence.  Further improvement needs either a sharper bipartite
+ground-state upper bound or an estimate below the pointwise maximum.  See
+[`audits/actual_child_bipartite_ground_state_overlap_threshold.md`](audits/actual_child_bipartite_ground_state_overlap_threshold.md).
+
+### Theorem 37.57 (weighted rank-one transport and the posterior-retuning charge)
+
+Let `mu` be the exact actual-child prior on its rank-one bridge words, let
+`mu_B` be the forward-channel posterior, and put
+
+```math
+m(B)=E_{\mu_B}Q,
+\qquad
+\bar\mu_q=E_{B\sim q}\mu_B,
+\qquad
+\mathcal C_q=E_{\bar\mu_q}[-\log\mu(Q)].
+```
+
+For every bridge law `q` and `0<=alpha<=1`,
+
+```math
+\boxed{
+E_q\langle B,m(B)\rangle
+\le\sqrt{2mn\{D(q\Vert U)+(1-\alpha)H_\alpha(\mu)
+                    +\alpha\mathcal C_q\}}.}       \tag{37.190}
+```
+
+The endpoints are the support-cardinality estimate at `alpha=0` and a
+posterior-cross-entropy estimate at `alpha=1`.  Moreover,
+
+```math
+\boxed{
+\mathcal C_q=H(\bar\mu_q)+D(\bar\mu_q\Vert\mu)
+\le H_{1-\gamma}(\mu)
+   +\gamma^{-1}D(\bar\mu_q\Vert\mu)}              \tag{37.191}
+```
+
+for every `0<gamma<1`, and Bayes calibration gives
+
+```math
+D(\bar\mu_q\Vert\mu)\le D(q\Vert\Pi),            \tag{37.192}
+```
+
+where `Pi` is the forward bridge output.  Substitution in the pointwise
+argument of Theorem 37.52 gives the refined overlap floor
+
+```math
+\boxed{
+{S_s\over mn}\ge {1\over C_{\rho,\delta}}
+\left[A_\rho-\sqrt{{2\mathcal E_{\alpha,s}
+                         \over\rho^2mn}}\right]_+,}
+                                                               \tag{37.193}
+```
+
+with
+
+```math
+\mathcal E_{\alpha,s}
+=D(q_s\Vert U)+(1-\alpha)H_\alpha(\mu)
+ +\alpha\mathcal C_{q_s}.
+```
+
+Thus prior Renyi entropy improves the support theorem only after controlling
+the posterior-retuning charge.  This limitation is exact: if
+`mu(R)<=e^(-cN)` but `bar mu_q(R)>=eta`, then
+
+```math
+\mathcal C_q\ge\eta cN,
+\qquad
+D(\bar\mu_q\Vert\mu)\ge\eta cN-h(\eta).           \tag{37.194}
+```
+
+At the fair base, an equivariantly tie-broken maximizing rank-one word is
+uniform on the full rank-one orbit, so
+
+```math
+E_U[-\log\mu(Q^*)]
+=\log|\operatorname {supp}\mu|
+ +D(U_{\operatorname {supp}\mu}\Vert\mu)
+\ge\log|\operatorname {supp}\mu|.                 \tag{37.195}
+```
+
+Hence positive-temperature full support does not justify replacing support
+cardinality by child Shannon entropy.  The necessary extra observable is
+the posterior retuning already split in Theorem 37.55.  See
+[`audits/actual_child_weighted_rank_one_transport.md`](audits/actual_child_weighted_rank_one_transport.md).
+
+### Theorem 37.58 (two-word rank-one obstruction to canonical row-lifetime closure)
+
+This is a **generic exact rank-one channel, not an actual minimizing-child
+sequence**.  Let `m/N->theta in (0,1)`, `n=N-m`,
+`u=beta/sqrt(N)`, and take the two-word latent
+
+```math
+Q=\sigma\mathbf1_m\mathbf1_n^{\mathsf T},
+\qquad \Pr\{\sigma=\pm1\}={1\over2}.
+\tag{37.196}
+```
+
+If `S_i=sum_jB_(ij)` and `S=sum_iS_i`, its binary-channel likelihood,
+inverse escort, and canonical inverse row product are
+
+```math
+\begin{aligned}
+p(B)&={\cosh(uS)\over(\cosh u)^{mn}},\\
+{dq\over dU_{mn}}&={\cosh(uS)^{-\lambda}\over Z_{mn,N}},\\
+r&=\bigotimes_{i=1}^m r_i,\qquad
+{dr_i\over dU_n}={\cosh(uS_i)^{-\lambda}\over Z_{n,N}},
+\end{aligned}
+\qquad
+Z_{k,N}=E_{U_k}\cosh(uS_k)^{-\lambda}.
+\tag{37.197}
+```
+
+Every conditional row `q(R_i|B_(-i))` and every canonical factor obeys,
+uniformly in the other rows,
+
+```math
+\boxed{
+\max\{D_2(q(R_i\mid B_{-i})\Vert r_i),
+D_2(r_i\Vert q(R_i\mid B_{-i}))\}
+\le5\lambda^2u^2n=O_{\beta,\lambda}(1).}
+\tag{37.198}
+```
+
+Let `G~N(0,beta^2(1-theta))`, `f(x)=log cosh x`, and
+
+```math
+z_0=Ee^{-\lambda f(G)},\qquad
+d_0=-\lambda{E[f(G)e^{-\lambda f(G)}]\over z_0}-\log z_0>0.
+\tag{37.199}
+```
+
+Then
+
+```math
+\boxed{
+\mathcal J=D(r\Vert q)=\theta d_0N+o(N),\qquad
+\mathcal I^{\leftarrow}\le D(U_{mn}\Vert q)=O(\sqrt N),}
+\tag{37.200}
+```
+
+and consequently
+`J-I^leftarrow=theta d_0N+o(N)`.  The proof uses the exact decomposition
+
+```math
+D(r\Vert q)
+=mD(r_i\Vert U_n)
++\lambda E_r\log\cosh\!\left(u\sum_iS_i\right)
++\log Z_{mn,N}.
+```
+
+The row KL converges to `d_0` by the CLT; the second term is
+`O(sqrt(N))` because `E_(r_i)S_i^2=O(n)`; and
+`-O(sqrt(N))<=log Z_(mn,N)<=0` follows by restricting the fair sum to
+`|S|<=sqrt(2mn)`.  The fair product gives the displayed bound on
+`I^leftarrow`.
+
+Moreover, if `h=dq/dr` and `h_t=P_t^rh`, there are fixed
+`eta_0,T_0>0` such that
+
+```math
+\boxed{
+\int_0^{T_0}\mathfrak K_r(h_t)\,dt\ge\eta_0N.}
+\tag{37.201}
+```
+
+Indeed, the whole integral is `J`, while its tail after `T` is at most
+`-m log(1-e^(-T))`.  Thus exact rank-one support and bounded conditional
+row Renyi complexity do not control even the bounded-time canonical
+lifetime.  Its extensive mass can be coherent factor retuning rather than
+irreducible reverse dependence.  An actual-child closure must use child
+minimality essentially or construct a better explicit product; the two
+generic structural inputs are insufficient.  See
+[`audits/generic_rank_one_common_sign_row_lifetime_no_go.md`](audits/generic_rank_one_common_sign_row_lifetime_no_go.md).
+
+### Theorem 37.59 (exact recurrence scope of raw negative overlap)
+
+For the actual-child bridge pressure, write
+
+```math
+\begin{aligned}
+G_N&=E_UL-V_\lambda^{\rm row},\\
+I_N&=\lambda(V_\lambda^{\rm row}-V_\lambda),\\
+\Delta_N&=V_\lambda^{\rm row}-T_N.
+\end{aligned}
+```
+
+Then the exact bookkeeping identities are
+
+```math
+\boxed{
+\Delta_N=(V_\lambda-T_N)+{I_N\over\lambda}
+        =(E_UL-T_N)-G_N.}                         \tag{37.202}
+```
+
+The raw overlap theorem controls only
+
+```math
+\boxed{
+G_N\le C_{\rm LS}\lambda t^2mn\widehat\rho_N^-(\lambda),
+\qquad
+I_N\le C_{\rm LS}\lambda^2t^2mn
+                         \widehat\rho_N^-(\lambda).}       \tag{37.203}
+```
+
+Consequently, if a **separate** target-reach estimate gives
+`V_lambda<=T_N+E_N`, then
+
+```math
+\boxed{
+\Delta_N\le E_N+C_{\rm LS}\lambda\beta^2{mn\over N}
+                 \widehat\rho_N^-(\lambda).}             \tag{37.204}
+```
+
+Thus overlap decay `O(N^(-alpha))` and target error
+`E_N=O(N^(1-gamma))` give the basin/product defect
+`O(N^(1-min{alpha,gamma}))`, which is Hammersley-summable on a
+balanced merge tree.  More generally, with
+`bar epsilon(r)=sup_(r<=M<=2r)epsilon_M`, the all-order dyadic condition is
+
+```math
+\lim_{k\to\infty}\sum_{j\ge0}\bar\epsilon(2^jk)=0
+```
+
+for a defect `N epsilon_N`.  Exact dyadic samples suffice only under an
+additional regularity such as monotonicity.
+
+This consequence is conditional rather than a Level-6 recurrence.  The
+same target-reach premise already gives
+
+```math
+\boxed{
+P_N(\beta)\le\min_B L(B)\le V_\lambda
+             \le T_N+E_N.}                              \tag{37.205}
+```
+
+Without it, (37.202)--(37.203) leave both the fair target excess and the
+full target excess uncontrolled.  Conversely, a positive overlap lower
+bound cannot be reversed into product gain: Theorem 37.53 has positive
+limiting raw overlap and `I_N=0`.  Hence Theorems 37.52 and 37.56 falsify
+the decay SML but supply no recurrence in the favorable direction.  See
+[`audits/actual_child_negative_overlap_recurrence_scope.md`](audits/actual_child_negative_overlap_recurrence_scope.md).

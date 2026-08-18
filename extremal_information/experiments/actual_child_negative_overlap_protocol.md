@@ -103,6 +103,18 @@ The held-out extension through equal splits at `N=14` uses exhaustive child
 selection but sampled bridges.  It is separately classified and reproduced
 by
 [`actual_child_negative_overlap_sample.py`](actual_child_negative_overlap_sample.py).
+The same script now retains every ordered pair when the child optimum has
+multiple signed-permutation classes.  The `N=16` two-class extension is
+reproduced by
+
+```bash
+.venv/bin/python \
+  extremal_information/experiments/actual_child_negative_overlap_sample.py \
+  --orders 16 --sample-counts 2000 --betas 1 2 4 --lambdas 1 \
+  --orientation -1 --seed 20260819 --batch-size 128 \
+  --signing-batch-size 8192 \
+  --output computations/results/actual_child_negative_overlap_sample_n16.json
+```
 
 ## Decision rule
 
