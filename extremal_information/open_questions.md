@@ -1969,3 +1969,36 @@ is the generated frame language, its integrability/reuse, and its directional
 meaning.  Theorem 37.74 plus exhaustive `N=8,10` data rule out fixed degree
 three as the generator but do not establish an asymptotic degree lower
 bound.  Target reach remains a separate obligation.
+
+Theorem 37.75 resolves generation and integrability conditionally on one
+scalar.  A single prior-sampled empirical child law controls all deleted
+cavities, is exactly curl-free, and has a power-saving pressure/cavity error
+whenever the inverse-escort-averaged latent posterior collision factor
+
+```math
+\overline K_{\rm del}
+={1\over mn}\sum_eE_q
+ \exp D_2(\mu_{e,B}\Vert\mu)
+```
+
+is subexponential.  The factor is the explicit doubled-temperature ratio
+in (37.282), so this is not a disguised request for the full cavity table.
+The available row-Renyi theorem acts in the opposite channel direction and
+does not bound it.
+
+The sharpest current formulation is therefore:
+
+> **`L_actual-latent-collision-pressure`.**  Prove
+> `log overline K_del=o(N)` for the actual optimizing-child negative escort
+> (or the required negative-path mixture), preferably with a power rate; or
+> prove `overline K_del>=exp{cN}` on positive path mass and identify the
+> localized child phase.  In the subexponential branch, additionally decide
+> the explicit one-row cost in Theorem 37.76 and obtain the fair one-sided
+> roof/target calibration needed to convert the global coreset to pressure
+> gain or coherent retuning.
+
+This is a scalar, information-theoretically strict reduction of the frame
+generation problem, but it is not yet known to be mathematically easier for
+actual minimizers.  Theorem 37.76 proves the directional conversion once a
+subexponential integrable roof and linear row cost are present; it also shows
+why inverse-escort error alone cannot replace fair target calibration.

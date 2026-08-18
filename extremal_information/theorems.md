@@ -21574,3 +21574,138 @@ has exactly the same error as the best degree-`(2k-1)` approximation.  This
 is an exact rule for the actual child law, not an asymptotic lower bound on
 odd degree.  The exhaustive finite audit and proof are in
 [`audits/actual_child_escort_low_degree_falsifier.md`](audits/actual_child_escort_low_degree_falsifier.md).
+
+### Theorem 37.75 (global integrable latent coreset from posterior collision)
+
+Let `mu` be the actual zero-bridge rank-one child law, `P_t` its normalized
+binary-channel likelihood, and `q` any declared bridge law (in particular
+the actual inverse escort or the negative-path mixture).  For a deleted edge
+`e`, write `mu_(e,B)` for the latent posterior and set
+
+```math
+\overline K_{\rm del}
+={1\over mn}\sum_eE_q
+ \{1+\chi^2(\mu_{e,B}\Vert\mu)\}.                \tag{37.278}
+```
+
+Draw one global iid sample of `R` latent words from `mu`, form its empirical
+law, and let `P_R,r_e^(R)` be the resulting genuine likelihood and cavities.
+Then
+
+```math
+\boxed{
+E_{\mu_R}E_q\sum_e(r_e^{(R)}-r_e)^2
+\le {32mn\,\overline K_{\rm del}\over R}.}       \tag{37.279}
+```
+
+The approximate field has no holonomy:
+
+```math
+\boxed{\nabla_e\log P_R
+=\operatorname {arctanh}(\rho r_e^{(R)}).}       \tag{37.280}
+```
+
+For the complete posterior collision factor `K_0`, one also has the exact
+relative-likelihood identity
+
+```math
+E_{\mu_R}E_q(P_R/P_t-1)^2
+={E_qK_0-1\over R},
+\qquad E_qK_0\le e^{4t}\overline K_{\rm del}.    \tag{37.281}
+```
+
+The collision factors are scalar two-temperature pressure ratios:
+
+```math
+K_0(B)=(1+\rho^2)^{mn}{P_{2t}(B)\over P_t(B)^2},
+\quad
+K_e(B_{-e})=(1+\rho^2)^{mn-1}
+ {P_{2t,e}(B_{-e})\over P_{t,e}(B_{-e})^2}.      \tag{37.282}
+```
+
+A Paley--Zygmund lower-tail argument upgrades (37.281) to log likelihood.
+At comparable splits, if
+
+```math
+\boxed{\log\overline K_{\rm del}=o(N),}          \tag{37.283}
+```
+
+then, for any fixed `0<zeta<1/2`, one global coreset of
+`R=exp{o(N)}` rank-one atoms satisfies
+
+```math
+\boxed{
+t^2E_q\sum_e(r_e-r_e^{(R)})^2
+=O_\beta\{N^{1/2-\zeta}/(\log N)^2\},
+\qquad E_q|\log P_R-\log P_t|=o(N).}             \tag{37.284}
+```
+
+This is a global, reusable, curl-free channel rather than querywise low
+rank.  Condition (37.283) is a scalar and information-theoretically weaker
+target than the full response table, but it is not known to be easier for
+actual minimizers.  Present child bounds give only
+`overline K_del<=exp{O_beta(N)}`.  The full proof and independent audit are
+[`here`](audits/actual_child_global_latent_coreset.md) and
+[`here`](audits/actual_child_global_latent_coreset_verifier.md).
+
+### Theorem 37.76 (integrable frame roof gives a directional alternative)
+
+For a centrally symmetric rank-one law, put
+
+```math
+Z(B)=\log E_\mu e^{t\langle B,Q\rangle}\ge0,
+\qquad dq\propto e^{-\lambda Z}dU,
+```
+
+let `r_i` be the inverse escort of the one-row restriction `Z_i`, and define
+
+```math
+D_i=D(r_i\Vert U_i),\quad
+J=D(\otimes_i r_i\Vert q),\quad
+I^\leftarrow=\inf_{p\ {m row\ product}}D(p\Vert q),
+\quad A=E_UZ.
+```
+
+With `G=D(U||q)=lambda(E_UL-V_lambda)`, the exact inequalities are
+
+```math
+\boxed{
+I^\leftarrow\le G\le\lambda A,
+\qquad
+J-I^\leftarrow\ge\sum_iD_i-\lambda A-G,}        \tag{37.285}
+```
+
+and hence
+
+```math
+\boxed{
+\max\{G,J-I^\leftarrow\}
+\ge {1\over2}[\sum_iD_i-\lambda A]_+.}          \tag{37.286}
+```
+
+If the scalar pressure has an integrable upper frame roof
+
+```math
+Z(B)\le\epsilon_NN+t\max_{k\le K}\langle B,C^k\rangle,
+\quad \|C^k\|_F\le\sqrt{mn},                    \tag{37.287}
+```
+
+then
+
+```math
+A\le\epsilon_NN+t\sqrt{2mn\log K}.              \tag{37.288}
+```
+
+Thus `epsilon_N=o(1)`, `log K=o(N)`, and
+`sum_iD_i>=eta N` force either an extensive calibrated pressure gain or
+extensive coherent retuning; in fact `I^leftarrow=o(N)` and
+`J-I^leftarrow>=eta N-o(N)` under the stated roof.
+
+The exact one-dimensional two-sided-frame case is rigid: if the posterior
+mean lies in one fixed span for every bridge, Walsh inversion forces
+`supp(mu)={C,-C}`.  It has `I^leftarrow=O(sqrt N)`, positive row cost per
+row, and `J-I^leftarrow=Omega(N)`.  A one-sided frame or inverse-escort-only
+approximation does not suffice.  See
+[`audits/actual_child_fixed_frame_directional_conversion.md`](audits/actual_child_fixed_frame_directional_conversion.md)
+and its independent
+[`verifier`](audits/actual_child_fixed_frame_directional_conversion_verifier.md).

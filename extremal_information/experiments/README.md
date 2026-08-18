@@ -480,3 +480,28 @@ Run:
 
 Output:
 [`../../computations/results/actual_child_escort_low_degree_falsifier.json`](../../computations/results/actual_child_escort_low_degree_falsifier.json).
+
+## `actual_child_posterior_frame_wind_tunnel.py`
+
+Reconstructs the exact edge posterior-mean matrix from deleted-edge cavity
+responses for the certified `beta=4` thermal-minimizing children at splits
+`3+3`, `4+4`, and `3+7`, with `lambda=1` negative-escort weighting over the
+complete bridge cube.  It tests fixed child spectral frames, elementary
+`B1`/`B^T1` field frames, and the exact natural signed-symmetry quotient.
+Individual posterior matrices are often strongly rank one, but all three
+proposed frame synchronizations fail at the finite frontier.  Exact Burnside
+orbit counts are `18`, `1438`, and `16148`; SVD-derived quantities are
+numerical finite evidence, not asymptotic claims.
+
+Run:
+
+```bash
+.venv/bin/python \
+  extremal_information/experiments/actual_child_posterior_frame_wind_tunnel.py
+```
+
+Audit:
+[`actual_child_posterior_frame_wind_tunnel_report.md`](actual_child_posterior_frame_wind_tunnel_report.md).
+
+Output:
+[`../../computations/results/actual_child_posterior_frame_wind_tunnel.json`](../../computations/results/actual_child_posterior_frame_wind_tunnel.json).

@@ -4464,3 +4464,39 @@ each query can still define a large response language.  The example cleanly
 separates pointwise geometric rank from compositional information: the new
 unknown is synchronization and integrability of the frames, not existence
 of a low-rank approximation.
+
+## Example 224: actual posterior frames are adaptive at the finite frontier
+
+At `beta=4`, `lambda=1`, complete bridge enumeration for certified actual
+children shows both sides of the geometric boundary.  At `N=10`, the median
+leading singular component contains `86.5%` of posterior Frobenius energy,
+so querywise low rank is already strong.  Nevertheless the right posterior
+Gram matrix fails to commute with the right child at normalized level `0.1`
+on `99.4%` of inverse-escort mass; the analogous left mass is `82.3%`.
+Elementary `B1` and `B^T1` frames have alignment below `0.5` on about
+`42%`--`44%` of the mass, even after excluding near-ties.
+
+The exact natural signed-symmetry bridge quotient has `18`, `1,438`, and
+`16,148` orbits at `3+3`, `4+4`, and `3+7`.  At the last split, rounded
+singular spectra distinguish all `16,148` cells.  These are finite numerical
+falsifiers of three proposed synchronizations—not an asymptotic frame-entropy
+lower bound.  They support the distinction between an individually small
+posterior matrix and a small reusable response image.
+
+## Example 225: posterior collision is exact empirical-channel complexity
+
+For any binary latent channel, one prior-sampled empirical law has exact
+relative likelihood variance
+
+```math
+E(P_R/P-1)^2={E\{1+\chi^2(\mu_B\Vert\mu)\}-1\over R}.
+```
+
+The deleted-posterior version controls all cavity errors simultaneously and
+defines a genuine scalar likelihood, so it has zero holonomy.  Moreover the
+collision factor is exactly a ratio of the same channel at temperatures
+`t` and `2t`.  This turns a vague coordinate-lifting problem into one scalar
+two-temperature question.  The example also marks the remaining boundary:
+the actual theorems bound output-row Renyi complexity, while the empirical
+coreset needs latent-posterior collision complexity in the reverse channel
+direction.

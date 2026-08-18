@@ -286,6 +286,20 @@ prove an actual `Omega(N)` response-information obstruction in this frame
 language.  Theorem 37.74 and complete `N=8,10` negative-escort calculations
 falsify fixed degree three but do not give an asymptotic degree lower bound.
 
+Theorem 37.75 then resolves the generation and curl problem conditional on
+one scalar: the inverse-escort average `overline K_del` of the deleted latent
+posterior collision factor.  A single prior-sampled empirical child law has
+physical cavity error `O(N overline K_del/R)`, is exactly integrable, and has
+`o(N)` escort pressure error with `R=exp{o(N)}` whenever
+`log overline K_del=o(N)`.  The factor is an explicit doubled-temperature
+pressure ratio, not a response table.  Theorem 37.76 separately converts a
+subexponential fair integrable roof plus linear one-row KL cost into coherent
+retuning.  Thus the promoted SML is now
+`L_actual-latent-collision-pressure`: prove subexponential actual posterior
+collision (then supply fair target calibration/row cost), or prove an
+extensive collision exponent and identify the localized phase.  Present
+actual identities give only `exp{O(N)}`.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -294,7 +308,7 @@ falsify fixed degree three but do not give an asymptotic degree lower bound.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; each posterior response is querywise low rank, but its adaptive singular-frame language is uncontrolled | strong-channel `hat rho^-` has a uniform positive floor and forces a macroscopic posterior singular direction; fixed degree three leaves `19%`--`24%` finite actual cavity energy unexplained | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and adaptive-frame reduction, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** promoted SML is `L_actual-posterior-frame-synchronization`; Level 6 remains absent |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; a global integrable coreset exists conditional on one latent-posterior collision scalar | strong-channel `hat rho^-` forces an adaptive spectral spike; actual finite frames reject child spectra, raw fields, and bounded symmetry orbits | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and scalar coreset reduction, 0 for collision bound/target reach | **RESET / IMPLEMENTATION FROZEN:** promoted SML is `L_actual-latent-collision-pressure`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2447,3 +2461,56 @@ class and risks restating the desired parent optimization.
   criterion and a strict narrowing of the promoted rare-event problem, not
   a Level-6 theorem; the raw adversarial-statistical-mechanics implementation
   remains frozen.
+
+### Checkpoint 36 — one collision scalar generates a global curl-free coreset
+
+- **Global coreset theorem (Theorem 37.75):** sample one empirical latent law
+  from the actual zero-bridge child prior and reuse it at every bridge.  If
+  `overline K_del` is the inverse-escort average of the deleted latent
+  posterior collision factor, then
+
+  ```math
+  E_{mu_R}E_q\sum_e(r_e^{(R)}-r_e)^2
+  \le {32mn\,overline K_del\over R}.
+  ```
+
+  Its likelihood is a genuine scalar potential, so all square circulations
+  vanish exactly.  Complete relative-likelihood MSE is also exact and the
+  full/deleted collision factors differ by at most `e^(4t)`.
+- **Strict scalar reduction:** every collision factor is the ratio of the
+  same fixed child channel at amplitudes `t` and `2t`.  Consequently
+  `log overline K_del=o(N)` yields a single `exp{o(N)}`-support channel with
+  power-saving physical cavity/gradient error and `o(N)` inverse-escort
+  pressure error.  Existing output-row `D_2`, fair-Walsh, min-entropy, and GG
+  results neither imply nor falsify this reverse-channel collision bound;
+  only `overline K_del<=exp{O_beta(N)}` is known.
+- **Directional conversion (Theorem 37.76):** for fair pressure mean `A`,
+  fair-to-escort gain `G`, canonical error `J`, reverse-product error
+  `I^leftarrow`, and explicit one-row costs `D_i`,
+
+  ```math
+  max{G,J-I^leftarrow}>={1\over2}[\sum_iD_i-lambda A]_+.
+  ```
+
+  A subexponential integrable fair roof has `A=o(N)`; linear row cost then
+  forces coherent retuning.  Exact common two-sided one-dimensional frames
+  are rigidly antipodal and realize this branch with `I^leftarrow=O(sqrt N)`
+  and `J-I^leftarrow=Omega(N)`.
+- **Finite actual frame falsifier:** at `N=10`, actual posterior matrices have
+  median rank-one energy fraction `0.865`, but fail the fixed right-child
+  spectral frame on `99.4%` of escort mass and the elementary field frames on
+  about `42%`--`44%`.  Natural signed-symmetry orbit counts grow
+  `18,1438,16148`.  This is complete-cube finite evidence, not an asymptotic
+  entropy lower bound.
+- **New SML:** `L_actual-latent-collision-pressure`: prove
+  `log overline K_del=o(N)` with a quantitative rate for actual optimizing
+  children, or prove an `Omega(N)` collision exponent on positive negative-
+  path mass and identify the localized latent phase.  In the positive
+  branch, fair one-sided target calibration and the one-row cost remain the
+  exact directional obligations.
+- **Recurrence and decision:** the coreset theorem is a strict global
+  integrability reduction but does not supply target reach or a mergeable
+  `o(N)`-bit state.  Therefore the exact recurrence consequence remains
+  none.  This strengthens the campaign's declared **RESET** and identifies
+  precisely one rare-event/renormalization campaign; the raw-overlap
+  implementation remains frozen and Level 6 is not yet credible.
