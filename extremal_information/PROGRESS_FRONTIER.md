@@ -1896,7 +1896,8 @@ class and risks restating the desired parent optimization.
   \qquad -\lambda\le s\le0,
   ```
 
-  whose exact positive dissipation integrates the fair-to-escort cumulant
+  where `P_u` is the fair-cube Boolean-noise semigroup.  Its exact positive
+  dissipation integrates the fair-to-escort cumulant
   and weights a Walsh mode by its lifetime rather than once per incident
   edge.  The campaign must prove that this curve is operationally simpler
   for actual children (for example by a finite noise-scale synchronization
