@@ -263,6 +263,17 @@ orientation-optimality.  It is **not** an asymptotic counterexample to an
 target in this example.  Its correct role is to rule out deriving target
 relevance from the zero-bridge identity alone.
 
+The complete check, including wide-margin assertions, is reproducible from
+the repository root with
+
+```text
+.venv/bin/python extremal_information/experiments/actual_child_orientation_target_scope_n10.py
+```
+
+The script reuses the frozen exact child selector and Walsh bridge enumerator
+from `actual_child_bridge_law_exact.py`; it writes its full certificate as
+JSON to standard output and does not modify repository data.
+
 ## 6. Frontier consequence
 
 Within the explicit OU.9 Gram regime, the target-orientation clause can be
