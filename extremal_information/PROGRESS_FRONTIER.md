@@ -1521,7 +1521,7 @@ class and risks restating the desired parent optimization.
   verifiable with a constant number of sampled pressure evaluations.  Thus
   an extensive coherent retuning has a fixed-degree, diffuse,
   finite-description witness.
-- **Concrete branch selector, with its exact scope:** define the restricted
+- **Restricted variational separator, with its exact scope:** define the restricted
   reverse projection `I_(d,K_0)^leftarrow`.  From (PF.24.1), if `J>=eta N`
   and `d` is fixed so that the recovery error is at most `eta N/4`, then
 
@@ -1588,9 +1588,11 @@ class and risks restating the desired parent optimization.
   \eta_d^{\rm sq}=O_{\beta,\lambda}(d^{-1/12}\log d). \tag{PF.24.3}
   ```
 
-  Every extensive product phase is therefore visible at one fixed literal
-  row Walsh degree.  High row degree, positivity repair, collision norm, and
-  entropy uniform integrability are all removed from the SML.
+  Conditional on `J=Omega(N)`, every fixed-density reverse-product or
+  coherent-retuning component is therefore visible at one fixed literal row
+  Walsh degree.  Branch (i) is not selected by this statement.  High row
+  degree, positivity repair, collision norm, and entropy uniform integrability
+  are all removed from the factor-side SML.
 - **Sharp cross-row ceiling at degree two:** the explicit diffuse densities
 
   ```math
@@ -1622,8 +1624,76 @@ class and risks restating the desired parent optimization.
   Thus every individual high-row-order channel is exponentially attenuated;
   what survives is precisely the entropy of the `2^m` rare query extrema.
   An actual-child subgaussian proxy `sigma_N^2=o(N)` under this explicit
-  product disorder would force `range(R)=o(N)`.  Known identities provide
-  only the leading `Theta(N)` proxy.
+  product disorder would force `range(R)=o(N)`.  This sufficient hypothesis
+  is now rigorously falsified for the raw external pressure: every actual
+  child pair has an exponentially rare rank-one bridge excursion forcing
+  `sigma_N^2=Omega(N)` for any all-parameter proxy.
+- **Finite-channel ceiling:** every finite carrier has an exact common-base
+  channel whose squared contraction is one minus the Poincare gap of its
+  weighted overlap graph.  The contraction tensorizes, but never pays the
+  entropy of a uniform extremum.  More sharply, exact fixed-degree square
+  carriers can have any prescribed strict singular-value ceiling, equal
+  entropies, and bounded row mutual information while a physical two-state
+  continuation has `Theta(N)` response range.  The corresponding generic
+  response packing forces `Omega(mn)` bits, or `Omega(m+n)` bits for rank-one
+  futures.  This kills the proposed finite-net/SDPI closure, but is not an
+  actual-child counterexample.
+- **Actual-child functional inequality and its exact limit:** the natural
+  spiked row law has dimension-free Poincare constant `7` and log-Sobolev
+  constant below `41`.  If `r_a` is the exact edge-cavity correlation, then
+
+  ```math
+  D_aL=B_a\operatorname {arctanh}(\tanh(t)r_a),
+  \qquad
+  \operatorname {Var}(L)\le7t^2\sum_aE r_a^2.     \tag{PF.24.5}
+  ```
+
+  The normalized cavity mass vanishes exactly when the averaged full-Gibbs
+  two-replica scalar `E[tau^1 tau^2 R_XR_Z]` vanishes.  This is a genuine
+  optimizer-specific low-information zero-tilt observable.  It does not
+  decide the uniform response: pressure maximizers have carré du champ
+  `Omega(N)`, so every all-tilt version fails.  A successful theorem must
+  truncate before paying those rank-one atoms or act on the conditional
+  channel output itself.
+- **Uniform actual-child truncation for the complete recovered carrier:**
+  actual child minimality gives the one-replica annealed estimate
+
+  ```math
+  \log E_Ue^L\le\log2+{3\beta^2\over8}N.          \tag{PF.24.6}
+  ```
+
+  If every row factor has `L^2` norm at most the fixed constant `K`, then for
+  any `C>3beta^2/8+2log K`,
+
+  ```math
+  \sup_{(q_i)}E_{\otimes_iq_i}(L-L\wedge CN)
+  \le C_\beta N^{3/2}e^{-cN}.                    \tag{PF.24.7}
+  ```
+
+  This holds for every exact optimal product and for the entire fixed-degree
+  square carrier, in either orientation.  Both optimized variational values
+  are preserved with the same error.  Thus the universal rank-one tail and
+  every pressure above `CN` are operationally irrelevant to alternatives
+  (ii)--(iii), not merely rare under a base law.
+- **Compact-tilt certificate for the surviving spiked test:** after that cap,
+  a spiked response range at least `eta N` forces one tilt with
+  `|s|<=8log(2)/eta` at which the normalized edge-cavity/two-replica product
+  overlap is bounded below.  Conversely, if
+
+  ```math
+  \rho_N(S_N)=O(N^{-\alpha}),
+  \qquad S_N\gtrsim N^{\alpha/2},
+  ```
+
+  uniformly over the relevant spike directions, then
+
+  ```math
+  \operatorname {range}R=O(N^{1-\alpha/2}).       \tag{PF.24.8}
+  ```
+
+  This is a recurrence-scale implication and uses only moderate capped
+  tilts.  It is one-sided and does not yet give a polynomially generated
+  state across all directions or all square carriers.
 - **Optimizer-specific scope:** the spike word and direction are exactly the
   two children's switching gauges.  A switching-invariant optimizer statistic
   cannot output a gauge-covariant favorable direction, and an exact order-two
@@ -1641,31 +1711,35 @@ class and risks restating the desired parent optimization.
 - **Previous SML `L_balanced-product-phase`:** select (i), (ii), or (iii) from
   a low-information actual-child observable and prove the balanced
   orientation target-relevant.
-- **Current SML — bounded-row-degree cross-row closure:** target orientation,
-  factor representation, positivity, and row entropy are no longer unknown.
-  At one fixed literal row degree, derive an `O(N)`-accurate bound or
-  generation rule for the jointly optimized square-polynomial response from
-  polynomially many actual-child observables, or give a scalable
-  actual-minimizer collision at fixed density.  The remaining formal tensor
-  has `(sum_(a<=2d) binom(n,a))^m` entries because it may couple arbitrarily
-  many rows.  The missing theorem must synchronize or truncate that cross-row
-  order while preserving cancellation.  Listing the tensor or using a full
-  pressure oracle is not child closure.
+- **Current SML — moderate-pressure actual-child quotient:** target
+  orientation, factor representation, positivity, row entropy, the complete
+  superlinear pressure tail, generic finite-carrier contraction, and raw
+  all-tilt concentration are no longer unknown.  For `L wedge CN`, construct
+  from polynomially many actual-child observables an `o(N)`-accurate response
+  quotient for every fixed-degree square-carrier product, or prove a
+  power-saving compact-tilt overlap bound and extend it beyond the spiked
+  test; alternatively give a scalable actual-minimizer collision.  For the
+  spiked family, (PF.24.8) is the exact recurrence-scale sufficient lemma,
+  but the overlap curve still ranges over exponentially many directions and
+  its decay is unproved.  The remaining formal tensor has
+  `(sum_(a<=2d) binom(n,a))^m` entries because it may couple arbitrarily many
+  rows.  Listing it, applying a generic SDPI, or using a full pressure oracle
+  is not child closure.
 - **Progress classification:** **RESET ON TARGET RELEVANCE AND PRODUCT-FACTOR
   INFORMATION; LEVEL 5, NOT LEVEL 6.**  The target-orientation requirement is
   proved away, and a full exponential product-factor search is uniformly
   replaced by exact bounded-row-degree diffuse witnesses with an explicit
-  branch selector.  The remaining child-response closure is strictly
-  cross-row and strictly narrower.
+  restricted variational separator.  The remaining obligation is strictly
+  cross-row and strictly narrower on the factor side.  Uniform clipping now
+  also removes the complete superlinear pressure tail on the query side.
   There is no bound on `J`, no summable recurrence error, and no Level-6
-  transfer.  The exact-response and square-entropy failures are scoped
-  subroute falsifiers, not a campaign strike.
-- **Decision:** run exactly one bounded-row-degree rare-extreme campaign.
-  Extend the exact natural-channel contraction from the binary spike to a
-  finite-accuracy net of the square-polynomial optimal-factor carrier, and
-  prove either a power-saving chaining/superconcentration bound from a
-  polynomial actual-child state or a scalable robust actual-minimizer
-  obstruction.  Per-channel attenuation without control of query entropy is
-  not progress.  If the campaign yields only another tensor listing or
-  pressure-oracle reformulation, freeze adversarial statistical mechanics and
-  promote rare-event/renormalization.
+  transfer.  The finite-net/SDPI and all-tilt raw-pressure implementations
+  are now frozen by scalable no-go theorems; they are not to be iterated.
+- **Decision:** end this optimizer-response campaign after the narrow RESET
+  and promote exactly one rare-event/renormalization campaign.  Its theorem
+  target is a coarse-graining of the **capped** actual-child pressure whose
+  retained conditional two-replica overlap satisfies (PF.24.8), first for
+  all spike directions and then for the recovered carrier.  It must exploit
+  optimizer-specific replacement or renormalization of moderate level sets;
+  another tail estimate, raw MGF, carrier net, or channel coefficient bound
+  is a strike.

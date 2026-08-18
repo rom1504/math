@@ -19064,6 +19064,13 @@ not a theorem for the complete square-polynomial carrier optimum.  The proof
 and the exact external-disorder blockade are in
 [`audits/actual_child_spiked_response_superconcentration_audit.md`](audits/actual_child_spiked_response_superconcentration_audit.md).
 
+The sufficient implication (37.123)--(37.124) remains correct, but its
+premise is not available for the external pressure: Theorem 37.45 below
+proves that every actual optimizing-child pair has
+`sigma_N^2=Omega(N)` for any all-parameter subgaussian proxy.  The surviving
+question concerns the conditional channel output, or a response-specific
+truncation, rather than the complete pressure MGF.
+
 ### Theorem 37.43 (the actual-child quartic spike is submacroscopic)
 
 Fix children `A,D`, a direction `y`, and let `R_s(v)` be the spiked response
@@ -19097,3 +19104,234 @@ response for actual thermal minimizers.  Any such response must first occur
 at sixth or higher auxiliary order, and the physical Taylor remainder is
 not controlled.  See
 [`audits/actual_child_spiked_response_quartic_ceiling.md`](audits/actual_child_spiked_response_quartic_ceiling.md).
+
+### Theorem 37.44 (finite carrier channels contract typically but not uniformly)
+
+Let `Q={q_a:a in A}` be a finite family of probability densities on a
+finite base `(Omega,U)`, let `pi` have full support, and write
+
+```math
+ \bar q=\sum_a\pi_aq_a,
+ \qquad d\mu=\bar q\,dU,
+ \qquad
+ w_{ab}=\pi_a\pi_bE_U{q_aq_b\over\bar q}.
+```
+
+If
+
+```math
+ \gamma(Q,\pi)=
+ \inf_{E_\pi h=0}{\frac12\sum_{a,b}w_{ab}(h_a-h_b)^2
+                         \over E_\pi h^2},
+```
+
+then the common-base response channel and its adjoint have exact squared
+mean-zero norm
+
+```math
+ \boxed{\|S\|^2=\|T\|^2=1-\gamma(Q,\pi).}       \tag{37.128}
+```
+
+For `m` independent rows, a response component involving precisely the row
+set `S` is attenuated by `(1-gamma)^(|S|/2)`.  This is an exact tensorized
+description of typical response contraction.
+
+It cannot control the uniform carrier response, even with arbitrarily
+strong contraction.  For every `kappa_0>0` there are fixed integers `d`, a
+fixed collision bound `K`, and, for all large `n`, an equivariant family of
+exact nonnegative degree-`2d` square densities with common base `U_n`, equal
+entropies, and largest nonconstant singular value at most `kappa_0`, such
+that on a balanced `m` by `n` bridge a physical two-state pressure has
+
+```math
+ \boxed{\operatorname {range}R\ge cN.}           \tag{37.129}
+```
+
+The same family contains fixed-scale response packings that force
+`Omega(mn)` summary bits for arbitrary two-state coefficient futures and
+`Omega(m+n)` bits even for rank-one futures.  These lower bounds hold for
+the generic square-carrier model, not for the smaller response image of
+actual optimizing children.  They show that a finite carrier net, a strict
+SDPI, and bounded per-row mutual information do not constitute a uniform
+extremal closure theorem.  See
+[`audits/actual_child_finite_carrier_channel_ceiling.md`](audits/actual_child_finite_carrier_channel_ceiling.md).
+
+### Theorem 37.45 (actual-child cavity reduction and the all-tilt ceiling)
+
+Let `A,D` be actual contracted-temperature minimizing children of balanced
+orders `m,n`, put `N=m+n` and `t=beta/sqrt(N)`, and let `L(B)` be their exact
+bridge pressure.  Under the natural spiked row disorder `mu_y`, the row law
+has dimension-free Poincare and logarithmic-Sobolev constants:
+
+```math
+ \operatorname {Var}_{\mu_y}f\le7\sum_jE_{\mu_y}(D_jf)^2,
+ \qquad
+ \operatorname {Ent}_{\mu_y}(f^2)
+ \le41\sum_jE_{\mu_y}(D_jf)^2.                  \tag{37.130}
+```
+
+If `r_a(B_-a)` is the auxiliary-spin cavity correlation on bridge edge
+`a=(i,j)`, then the half-flip derivative is exactly
+
+```math
+ \boxed{D_aL(B)=B_a\operatorname {arctanh}
+             \{\tanh(t)r_a(B_{-a})\}.}          \tag{37.131}
+```
+
+Consequently
+
+```math
+ \operatorname {Var}_{\mu_y^{\otimes m}}L
+ \le7t^2\sum_aE r_a^2,                          \tag{37.132}
+```
+
+and, up to an `O_beta(1)` remainder, the right side is bounded by
+
+```math
+ 14t^2mn\,
+ E_{B,\nu_B^{\otimes2}}[\tau^1\tau^2R_XR_Z].   \tag{37.133}
+```
+
+The normalized cavity square mass is `o(1)` if and only if this averaged
+two-replica product overlap is `o(1)`.  Thus zero-tilt pressure
+superconcentration has an exact optimizer-specific **sufficient
+carré-du-champ target**.  The converse implication from small pressure
+variance to small overlap is not asserted.
+
+The analogous all-tilt target is false.  Every such actual child pair and
+every spike direction admits a rank-one bridge atom of probability at least
+`2^(-mn-m)` whose pressure exceeds the mean by `Omega(N^(3/2))`.  Hence any
+all-parameter subgaussian estimate
+
+```math
+ \log E e^{s(L-EL)}\le{s^2\sigma_N^2\over2}
+ \quad(s\in\mathbb R)
+```
+
+must satisfy
+
+```math
+ \boxed{\sigma_N^2\ge c_{\beta,\theta}N.}       \tag{37.134}
+```
+
+Moreover every pressure-maximizing bridge has carré du champ
+`Gamma_L=Omega(N)`, and the positively tilted expectation of `Gamma_L`
+has the same lower bound as the tilt tends to infinity.  Therefore ordinary
+all-tilt external-pressure concentration cannot prove a sublinear spiked
+response range.  A surviving theorem must act after the channel, or remove
+the ultra-rare rank-one tail while controlling its query-dependent
+conditional contribution.  See
+[`audits/actual_child_spiked_external_disorder_functional_inequality_audit.md`](audits/actual_child_spiked_external_disorder_functional_inequality_audit.md).
+
+### Theorem 37.46 (uniform moderate-pressure recovery for every recovered carrier)
+
+Let `A,D` be actual contracted-temperature minimizing children of balanced
+orders, let `L` be their exact bridge pressure, and put `t=beta/sqrt(N)`.
+Under the fair bridge law,
+
+```math
+\log E_Ue^{kL}
+\le k\{\log2+p_A(t)+p_D(t)\}
+     +{k^2t^2mn\over2}                           \tag{37.135}
+```
+
+for every positive integer `k`.  In particular,
+
+```math
+\log E_Ue^L\le\log2+{3\beta^2\over8}N.          \tag{37.136}
+```
+
+Now let `P=otimes_(i=1)^m q_iU_n`, where every row density has
+`||q_i||_2<=K`, and set `L^(C)=L wedge CN`.  For every fixed
+
+```math
+C>{3\beta^2\over8}+2\log K,
+```
+
+there is `c=c(beta,K,C)>0` such that, uniformly over the children,
+orientation, and every such product,
+
+```math
+\boxed{
+0\le E_PL-E_PL^{(C)}
+\le C_\beta N^{3/2}e^{-cN}=o(1).}                \tag{37.137}
+```
+
+The theorem applies simultaneously to every exact optimal product factor
+and to the full fixed-degree square carrier of Theorem 37.39.  Therefore
+the corresponding unclipped and clipped entropy-regularized variational
+optima differ by the same exponentially small amount.  Every extensive
+reverse-product or coherent-retuning phase is already present below the
+linear cap.
+
+This proves the truncation half of bounded-row-degree rare-event closure for
+the complete recovered carrier, not merely for one spiked subfamily.  It
+does not compress the retained moderate-pressure level sets.  See
+[`audits/actual_child_response_specific_pressure_truncation.md`](audits/actual_child_response_specific_pressure_truncation.md).
+
+### Theorem 37.47 (linear spiked response forces a compact-tilt overlap)
+
+For the degree-two spiked products `P_(v,y)`, choose a linear cap as in
+Theorem 37.46 and write
+
+```math
+R(v)=E_{P_{v,y}}L,
+\qquad R_T(v)=E_{P_{v,y}}(L\wedge T_N).
+```
+
+The cap is uniformly invisible:
+
+```math
+\boxed{\sup_{v,y}|R(v)-R_T(v)|\le e^{-\delta N}.} \tag{37.138}
+```
+
+If `range_v R(v)>=eta N`, then for all large `N` there are a sign
+`sigma` and a tilt
+
+```math
+0\le s\le {8\log2\over\eta}
+```
+
+such that the capped tilted law
+`dPi_(sigma s,T) proportional e^(sigma sL_T)dmu_y^(otimes m)` satisfies
+
+```math
+\boxed{
+E_{\Pi_{\sigma s,T}}\Gamma_{L_T}
+\ge {\eta^2N\over64K_*\log2},
+\qquad K_*={41(1+e^{\sqrt2})\over8}.}             \tag{37.139}
+```
+
+Equivalently, at a balanced split its normalized edge-cavity square mass,
+and hence its full-Gibbs two-replica product overlap, is bounded below by a
+positive constant depending only on `eta,beta`.
+
+Conversely, define
+
+```math
+\rho_N(S)=\sup_{|s|\le S}{1\over mn}
+E_{\Pi_{s,T}}\sum_a r_a^2.
+```
+
+Then for every `0<s<=S`,
+
+```math
+\boxed{
+\operatorname {range}R
+\le2e^{-\delta N}
++2\left\{{m\log2\over s}+K_*t^2mn\rho_N(S)s\right\}.}         \tag{37.140}
+```
+
+In particular, if `rho_N(S_N)=O(N^(-alpha))` on a window containing
+`S_N asymp N^(alpha/2)`, then
+
+```math
+\boxed{\operatorname {range}R=O(N^{1-\alpha/2}).}              \tag{37.141}
+```
+
+This is a recurrence-scale implication for the declared spike family.  It
+does not establish the overlap estimate, does not make positive overlap
+sufficient for a linear response, and does not give an operational quotient
+for all spike directions.  It replaces the false all-tilt MGF target by a
+capped moderate-tilt statement.  See
+[`audits/actual_child_spiked_response_truncation_moderate_tilt_audit.md`](audits/actual_child_spiked_response_truncation_moderate_tilt_audit.md).

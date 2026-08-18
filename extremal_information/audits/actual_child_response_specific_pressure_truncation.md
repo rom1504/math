@@ -174,7 +174,7 @@ values and `V_C^row,V_C^(d,sq)` are obtained by replacing `L` by
 \boxed{
 |V^{\rm row}-V_C^{\rm row}|
 +|V^{(d,{\rm sq})}-V_C^{(d,{\rm sq})}|
-\le C_\beta N^{3/2}e^{-cN}.}                    \tag{RT.11}
+\le 2C_\beta N^{3/2}e^{-cN}.}                   \tag{RT.11}
 ```
 
 The entropy terms are unchanged.  Thus every extensive reverse-product or

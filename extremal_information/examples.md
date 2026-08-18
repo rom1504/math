@@ -4095,3 +4095,76 @@ bound on `Q(A)` and polarization make its complete physical-scale range only
 `O(sqrt(N))` on balanced splits.  Thus a linear spiked response, if one
 exists, must arise at sixth or higher auxiliary order; the theorem supplies
 no bound on the full physical remainder.
+
+## Example 207: vanishing channel correlation can hide a linear contextual response
+
+For fixed `c>0`, put `a=c/sqrt(n)` and
+
+```math
+f_y(b)=\prod_{j=1}^n(1+a y_jb_j),
+\qquad y\in\{+-1\}^n.
+```
+
+With a uniform prior on `y`, the common output law is the fair cube, the
+largest nonconstant channel singular value is `a`, and the mutual
+information per row tends to `c^2/2` nats.  Thus one random direction is
+almost completely forgotten.  For `m` rows, however, an aligned physical
+two-state pressure has response range `Theta(N)` on balanced splits, while
+the response variance under a random query word stays `O(1)`.
+
+Equivariant square-polynomial approximation preserves this example inside
+one fixed exact degree, with equal carrier entropies and any prescribed
+strict singular-value ceiling.  It yields fixed-scale response packings of
+size `exp(Omega(mn))`, or `exp(Omega(m+n))` even when future coefficient
+matrices are rank one.  The example is not an actual-child counterexample;
+it is a sharp falsifier for generic finite-net or SDPI closure.
+
+## Example 208: every actual child has a rare rank-one pressure spike
+
+Let `A,D` be arbitrary actual contracted-temperature minimizing children of
+balanced orders.  Choose spins `x_0,z_0` with nonnegative signed internal
+energies and set the bridge `B_*=x_0z_0^T`.  Under every natural spiked row
+law this single bridge has probability at least `2^(-mn-m)`, but at physical
+temperature its pressure exceeds the disorder mean by `Omega(N^(3/2))`.
+
+It follows that no all-parameter subgaussian inequality for the raw external
+pressure can have proxy `o(N)`.  The same obstruction appears in its
+all-tilt carré du champ.  This does not imply a linear response range after
+conditioning through the spiked channel: the conditional expectation may
+erase the ultra-rare atom.  It instead pinpoints the necessary next move as
+response-specific truncation or concentration after conditioning.
+
+## Example 209: the complete bounded-collision carrier ignores the rank-one tail
+
+For actual children, the fair bridge law satisfies
+
+```math
+\log E_Ue^L\le\log2+{3\beta^2\over8}N.
+```
+
+If `P=otimes_iq_iU_n` and every `||q_i||_2<=K`, Cauchy--Schwarz charges the
+whole product likelihood by at most `K^N`.  Consequently, for any fixed
+`C>3beta^2/8+2log K`, clipping `L` at `CN` changes `E_PL` by
+`N^(3/2)e^(-Omega(N))`, uniformly over all such products.  This includes
+both the exact optimal factors and every recovered fixed-degree square
+carrier.
+
+Thus the atom in Example 208 is a genuine obstruction to raw all-tilt
+concentration but not to the actual product response.  The example shows why
+tail counterexamples must be tested after charging the largest admissible
+query likelihood ratio.
+
+## Example 210: an extensive spike response has a finite-tilt overlap witness
+
+Clip the actual-child pressure at a linear level invisible to every spiked
+query.  If the resulting Boolean response over query words has range at
+least `eta N`, one word of mass `2^(-m)` forces a centered MGF of order `N`
+at the fixed parameter `8log(2)/eta`.  Integrating the exact log-Sobolev
+derivative then finds an intermediate bounded tilt whose edge-cavity square
+mass is a fixed positive fraction of `mn`.
+
+Conversely, decay `rho_N=O(N^(-alpha))` of this normalized cavity mass on
+the matching moderate-tilt window gives response range
+`O(N^(1-alpha/2))`.  This turns a uniform extremum into one compact-tilt
+two-replica witness, but only for the declared spiked family; it does not
+compress all spike directions or the complete square-carrier response.

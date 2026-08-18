@@ -1556,16 +1556,49 @@ The natural-channel representation sharpens this test.  With
 through a binary channel whose squared contraction tends to
 `0.6886409151...`.  Thus the remaining issue is not one unattenuated high
 coefficient but the rare minimum created by exponentially many attenuated
-coefficients.  One concrete lower-information sufficient statement is the
-actual-child external-disorder bound
+coefficients.  Theorem 37.44 proves that even arbitrarily strong strict
+channel contraction, bounded row mutual information, and fixed literal
+degree do not control this minimum in the generic carrier class.
+
+The previously proposed all-parameter external-pressure estimate with
+subgaussian proxy `o(N)` is also closed: Theorem 37.45 proves it false for
+every actual optimizing-child pair, because exponentially rare rank-one
+bridges have `N^(3/2)` pressure excursions.  At zero tilt, however, the same
+theorem gives the exact lower-information identity
 
 ```math
-\log E_{\mu_y^{\otimes m}}e^{s(L-EL)}
-\le {s^2\sigma_N^2\over2},\qquad \sigma_N^2=o(N),
+{1\over mn}\sum_aE r_a^2=o(1)
+\quad\Longleftrightarrow\quad
+E[\tau^1\tau^2R_XR_Z]=o(1),
 ```
 
-uniformly in declared spike directions.  It would give `range(R)=o(N)`.
+and this would imply `Var(L)=o(N)`.
+
+Theorem 37.46 now solves the truncation half for the **entire** recovered
+square-carrier class: one universal linear cap changes every admissible
+product response and both optimized variational values by
+`N^(3/2)e^(-Omega(N))`.  Thus the rank-one tail and all pressures above
+`CN` are rigorously irrelevant to alternatives (ii)--(iii).
+
+For the spiked subfamily, Theorem 37.47 gives a quantitative compact-tilt
+replacement.  If the normalized capped-tilt cavity overlap obeys
+`rho_N(S_N)=O(N^(-alpha))` through the matching window
+`S_N asymp N^(alpha/2)`, then its response range is
+`O(N^(1-alpha/2))`; conversely a linear range forces positive overlap at
+one bounded tilt.  This is one-sided and still ranges over exponentially many
+directions, so it is not yet an operational branch selector.
+
+The surviving SML is therefore:
+
+> **Moderate-pressure actual-child quotient.**  For the universally capped
+> pressure `L wedge CN`, either construct from polynomially many child
+> observables an `o(N)`-accurate response quotient for every recovered
+> fixed-degree square carrier, or prove a uniform power-saving compact-tilt
+> overlap bound and extend it from the spiked tests to that carrier class;
+> alternatively exhibit scalable actual minimizing children with positive
+> capped overlap and prove that it produces a coherent product phase.
+
 The quartic coefficient already has `O(sqrt(N))` physical range, so any
-failure must be nonperturbative or begin at higher auxiliary order.  This
-spiked-family statement is a discriminating subproblem, not yet a closure
-theorem for the full square-polynomial carrier class.
+obstruction must be nonperturbative or begin at higher auxiliary order.
+Another raw MGF, carrier net, or singular-value estimate is no longer an
+admissible route.

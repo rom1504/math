@@ -41,7 +41,8 @@ q_a\ge0,\qquad E_Uq_a=1.
 Fix a full-support prior `pi` on `A` and put
 
 ```math
-\mu=\sum_a\pi_aq_aU.
+\bar q=\sum_a\pi_aq_a,
+\qquad d\mu=\bar q\,dU.
 ```
 
 The forward response operator and its adjoint are
@@ -59,7 +60,7 @@ Thus `T h=E[h(A)|B]` under the joint law
 Define symmetric overlap weights
 
 ```math
-w_{ab}=\pi_a\pi_bE_U{q_aq_b\over\sum_c\pi_cq_c}
+w_{ab}=\pi_a\pi_bE_U{q_aq_b\over\bar q}
 ```
 
 and the overlap gap
@@ -345,7 +346,9 @@ L_C(B)=\log\left(2\cosh\left(t\sum_{i,j}C_{ij}B_{ij}\right)\right).
 
 This is an exact two-state partition pressure.  It is invariant under global
 bridge inversion and changing one bridge edge changes it by at most `2t`,
-exactly the physical oscillation scale.
+exactly the physical oscillation scale.  The project's normalized two-state
+pressure is `log cosh`; the extra `log 2` in (FC.21) is a harmless constant
+and has no effect on response ranges or packing bounds.
 
 For a query word `Y=(y_1,...,y_m)`, set
 

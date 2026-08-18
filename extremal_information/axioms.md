@@ -2993,3 +2993,66 @@ addition to component degree: the contraction of one response channel and
 the entropy or synchronization of the complete query family.  Row degree,
 global row order, and extremal query complexity are separate notions of
 information complexity.
+
+## 169. A functional inequality before conditioning need not control an extremal response
+
+The natural external-disorder law of the actual-child spiked channel has
+dimension-free Poincare and logarithmic-Sobolev constants, and the
+zero-tilt pressure variance reduces exactly to a scalar two-replica product
+overlap.  Nevertheless every actual child pair has exponentially rare
+rank-one bridge atoms whose pressure is larger than its mean by order
+`N^(3/2)`.  Those atoms force every all-tilt subgaussian proxy for the raw
+pressure to be at least order `N`.
+
+Thus the order of operations matters.  A useful rare-response theorem must
+either condition through the declared carrier before measuring
+concentration, or truncate the raw landscape while proving that the removed
+tail has uniformly sublinear conditional response.  Concentrating the full
+external pressure first is strictly stronger and, here, false.  This is an
+optimizer-specific obstruction: it already holds for the actual minimizing
+children and is not a surrogate pathology.
+
+## 170. Typical channel compression and contextual compression are different resources
+
+A common-base channel can have arbitrarily small maximal correlation and
+bounded mutual information per row while a future aligned query still
+separates exponentially many source words by a macroscopic response.  The
+missing resource is not another singular value; it is the metric entropy of
+the future-exposed response image after tensorization.
+
+Consequently a reusable extremal quotient needs both a typical-information
+bound and an optimizer-specific restriction on rare contextual alignment.
+Neither bounded component complexity nor strong data processing alone
+controls the latter.  This separates statistical compression of a random
+query from uniform compression over a declared future query class.
+
+## 171. Tail relevance must be measured through the admissible response class
+
+A raw landscape can contain `N^(3/2)` spikes and fail every useful all-tilt
+concentration inequality while those spikes contribute exponentially little
+to every admissible extremal query.  For actual optimizing children, one
+annealed moment under the fair bridge law, combined with the uniform row
+collision bound, removes all pressure above `CN` simultaneously for the
+complete recovered square-carrier class.
+
+This gives a general response-relative truncation principle: a rare event is
+an obstruction only after its likelihood ratio against the allowed query
+class is charged.  Global tail height and response-relevant tail mass are
+different invariants.  The retained moderate landscape may still be
+incompressible, but ultra-rare atoms can no longer be invoked as evidence of
+that incompressibility.
+
+## 172. A uniform response gap creates a bounded-tilt witness after truncation
+
+Once the landscape is uniformly capped at its natural extensive scale, an
+extensive conditional response gap cannot hide only at infinite external
+tilt.  For the spiked actual-child channel, a word of mass `2^(-m)` and a
+dimension-free log-Sobolev inequality force positive carré du champ at one
+tilt in a compact interval depending only on the normalized gap.  A
+power-saving bound on the corresponding compact-tilt overlap curve gives a
+power-saving response range.
+
+This is a one-sided certification principle.  Positive overlap need not
+create an extensive response, and evaluating all directions is not yet a
+small state.  Its content is that infinity in the tilt parameter and the
+rank-one pressure tail are not intrinsic parts of the remaining obstruction.
