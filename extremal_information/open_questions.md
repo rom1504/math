@@ -2036,8 +2036,8 @@ A concrete sufficient route is now isolated.  If the product of the two
 sector-conditioned child linear-subgaussian proxies is uniformly bounded,
 Theorem 37.79 proves by an optimized Gaussian-linearization tilt that the
 actual overlap floor forces an extensive collision tail.  Standard dense-
-temperature Dobrushin bounds
-do not give this: their interaction row sums grow like `sqrt(N)`.  The
+temperature Dobrushin bounds do not give this: their interaction row sums
+grow like `sqrt(N)`.  The
 optimizer-specific question is whether exact pressure minimality yields a
 different strong-mixing/linear-MGF inequality.  Covariance bounds alone are
 provably insufficient because exponentially rare coherent spikes can have
