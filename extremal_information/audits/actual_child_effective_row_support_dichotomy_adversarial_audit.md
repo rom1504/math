@@ -163,3 +163,77 @@ not prove the best row-product distance is linear, because
 Likewise, ES.21 and the integrated forms are exact reformulations of the
 canonical cumulant, not strict reductions by themselves.  The theorem file
 states both limitations explicitly, so no scope correction is needed.
+
+## 6. Canonical-to-best-product retuning alternative
+
+Theorem ES.3 also passes.  The comparison `D_2(p_i^*||r_i)<=5C` implies
+
+```math
+a_i^2=\chi^2(p_i^*\Vert r_i)\le e^{5C}-1=X.
+```
+
+When the product factors are changed one at a time, all other factors only
+enter through the average `f_i(b)=E[L(B)|B_i=b]`.  A bridge-bit flip changes
+`L` by at most `2u`, so averaging against any intermediate product retains
+the same `2u` bound.  Its fair-cube bounded-difference parameter is therefore
+`4u^2n`.  Combining the fourth-moment estimate with
+`D_2(r_i||U_n)<=C` gives exactly
+
+```math
+\operatorname {Var}_{r_i}(f_i)
+\le4e^{C/2}u^2n.
+```
+
+Chi-square Cauchy--Schwarz then proves ES.38 with coefficient
+`2e^{C/4}u sqrt(n)`.
+
+The potentially delicate absolute entropy-difference step admits no
+counterexample: it is an immediate exact change-of-reference identity.  If
+`g_i=log(dr_i/dU_n)`, then
+
+```math
+D(p_i^*\Vert U_n)-D(r_i\Vert U_n)
+=D(p_i^*\Vert r_i)+(E_{p_i^*}-E_{r_i})g_i.
+```
+
+The first term is at most
+`D_2(p_i^*||r_i)=log(1+a_i^2)<=a_i^2`.  Since `g_i` has bit oscillation
+`2lambda u`, the same fourth-moment argument gives
+
+```math
+\operatorname {Var}_{r_i}(g_i)
+\le4e^{C/2}\lambda^2u^2n,
+```
+
+and chi-square Cauchy--Schwarz bounds the absolute second term by
+`2e^{C/4}lambda u sqrt(n) a_i`.  This proves ES.40 in both signs; no
+unspoken ordering of the two entropies is used.
+
+There are two copies of the linear expectation-change coefficient after
+division by `lambda`: one from energy and one from entropy.  Together they
+give `4e^{C/4}u sqrt(n) a_i`.  The remaining entropy cost obeys
+`a_i^2<=sqrt(X)a_i`, yielding exactly
+
+```math
+K=4e^{C/4}u\sqrt n+{\sqrt X\over\lambda}.
+```
+
+The Gibbs variational identity gives
+`F(r)-F(p^*)=(J-I^leftarrow)/lambda>=0`, because `r` is itself a row
+product.  Thus ES.33--ES.34 follow.  Finally, if `k` rows exceed
+`eta/(2lambda K)`, the uniform ceiling `a_i<=sqrt(X)` gives
+
+```math
+\sum_i a_i\le k\sqrt X+{\eta\over2\lambda K}N,
+```
+
+and comparison with ES.34 proves the constant in ES.35.  As usual, if the
+displayed lower bound exceeds the number of available rows, the antecedent
+is impossible.  The degenerate `u=0` case should be read separately (all
+three gaps vanish); at the stated positive physical temperature the
+displayed denominators are nonzero.
+
+This is a strict structural localization of a large
+`J-I^leftarrow`: a better product shadow cannot repair the canonical one by
+retuning only `o(N)` factors.  It still does not establish that this gap is
+large or small for optimizing children, a limitation the theorem states.
