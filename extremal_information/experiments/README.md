@@ -445,3 +445,17 @@ coarse. This is an exact finite result, not an all-order orbit bound.
 
 Output:
 [`../../computations/results/actual_child_orbit_posterior_quotient.json`](../../computations/results/actual_child_orbit_posterior_quotient.json).
+
+## `actual_child_orbit_scaling.py`
+
+Extends the exact posterior-orbit audit to every certified thermal pressure
+minimizer available from orders two through eight at raw `t=3`.  It combines
+an exact cap-gap/energy-histogram pressure certificate with signed-group,
+rooted-profile, and modular posterior enumeration.  The posterior saturates
+the simultaneous symmetry quotient in every class except order three,
+where an exact denominator-type cancellation proves one all-temperature
+collision.  Order nine is recorded only as an explicitly ineligible cap-
+minimizer diagnostic.
+
+Output:
+[`../../computations/results/actual_child_orbit_scaling.json`](../../computations/results/actual_child_orbit_scaling.json).

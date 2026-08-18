@@ -5,7 +5,7 @@ The two order-eight matrices are the certified pressure-minimizer classes at
 raw temperature ``t >= 3``.  We attach the unique order-two child and use the
 negative disorder exponent ``lambda = 1``.  All structural enumerations are
 integer exact.  The posterior-response comparison is evaluated in the finite
-field F_p after setting ``z = exp(t) = 2``.  Nonzero denominators and distinct
+field F_p at the formal value ``z = 2``.  Nonzero denominators and distinct
 residues prove distinct rational response functions; transcendence of
 ``exp(3)`` then proves distinction at the actual raw temperature ``t = 3``.
 
@@ -341,7 +341,7 @@ def main() -> None:
         "left_order": 8,
         "right_order": 2,
         "finite_field_prime": PRIME,
-        "evaluation_point": "z=exp(t)=2",
+        "evaluation_point": "formal z evaluated at 2 in F_p",
         "records": records,
         "logical_certificate": (
             "Distinct finite-field residues imply distinct Q(z)-valued "

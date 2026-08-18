@@ -4391,3 +4391,24 @@ perturbations synchronize them but couple the children.  This is a strict
 example of a low-information limiting geometry that is stable at scalar-
 response scale but is not yet contextually sufficient for the rare negative
 escort.
+
+## Example 220: an identical replica Gram law can have a different labelled bridge response
+
+Two uniform antipodal laws on eight points of the five-cube can have the
+same complete infinite replica Gram-array law while differing at one common
+labelled bridge.  Their four projective centers each have Gram matrix with
+diagonal five and off-diagonal one, but the bridge correlations are
+`(5,1,1,1)` in one embedding and `(-3,1,1,1)` in the other.  Their cosh
+likelihoods are therefore
+
+```math
+{\cosh(5t)+3\cosh t\over4}
+\quad\hbox{and}\quad
+{\cosh(3t)+3\cosh t\over4}.
+```
+
+The abstract overlap geometry is identical; the coordinate embedding is
+not.  This makes the missing coordinate mark in a deterministic Parisi/GG
+object mathematically explicit.  Complete labelled bridge likelihoods lie
+at the opposite extreme: Walsh inversion recovers the entire projective
+latent law, so exact all-bridge sufficiency is not compression.

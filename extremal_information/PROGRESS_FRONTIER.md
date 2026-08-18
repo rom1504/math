@@ -246,15 +246,16 @@ the full smoothed density, or the complete latent table.  Even a solution
 decides only the product phase; target reach remains a separate recurrence
 interface.
 
-Theorems 37.67--37.69 sharpen this into the concrete admissible target
-`L_inverse-escort-coordinate-lifting`.  Exact group equivariance compresses
+Theorems 37.67--37.71 sharpen this into the concrete admissible target
+`L_moderate-escort-coordinate-lifting`.  Exact group equivariance compresses
 averaged retuning to the latent orbit label, but the two certified
 order-eight actual children use every one of their `19` or `22` rooted
 symmetry cells; energy shells are already too coarse.  Generic Gaussian
 perturbation, on the other hand, forces a one-overlap ultrametric object at
 `o(N)` scalar-response cost for every deterministic child.  The missing
 step is to augment that object by subexponential coordinate data which
-approximates **inverse-escort-typical**, not all-bridge, row responses with
+approximates **inverse-escort-typical**, not all-bridge, row responses on
+the already proved moderate-pressure truncation, with
 `o(N)` total error and supplies a directional bound on
 `J-I^leftarrow`.  Separate perturbations must be synchronized without
 silently introducing the non-product coupling of the multi-species theorem.
@@ -267,7 +268,7 @@ silently introducing the non-product coupling of the multi-species theorem.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; actual orbit response is saturated at the finite frontier; GG regularization gives a low-information Gram object but lacks coordinate lifting | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient; order-eight actual posterior distinguishes all rooted orbit cells | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and finite quotient falsifier, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** rare-event SML is `L_inverse-escort-coordinate-lifting`; Level 6 remains absent |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; actual orbit response is saturated at the finite frontier; GG regularization gives a low-information Gram object but lacks coordinate lifting | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient; order-eight actual posterior distinguishes all rooted orbit cells | every finite split for obstruction; no asymptotic target theorem | 5 for actual-law obstruction and finite quotient falsifier, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** rare-event SML is `L_moderate-escort-coordinate-lifting`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2317,3 +2318,33 @@ class and risks restating the desired parent optimization.
   recurrence follow.  The raw implementation stays frozen.  This is a
   strict rare-event/renormalization reduction to audit further, not a claim
   that GG theory closes the product phase.
+
+### Checkpoint 33 — exact coordinate information boundary
+
+- **Finite actual scaling (Theorem 37.70):** through every certified thermal
+  child at orders two through eight, the negative posterior saturates the
+  complete simultaneous symmetry quotient except for one exact order-three
+  identity.  Rooted-cell counts jump from four at order six to `13` and
+  then `19/22`; finite symmetry shows no stable bounded-state closure.
+- **Exact inversion (Theorem 37.71):** the complete cosh bridge table has
+  nonzero Walsh multiplier `rho^|S|` on every even character and recovers
+  all `2^(m+n-2)` projective rank-one probabilities.  The complete cavity
+  table is equally injective.  Conversely, two explicit antipodal laws have
+  identical complete replica Gram-array laws but different labelled bridge
+  likelihoods.
+- **Sharp quantifier boundary:** exact all-bridge coordinate lifting is the
+  full latent law, while Gram-only lifting is false.  Exponential
+  ill-conditioning prevents promoting exact injectivity to a coarse lower
+  bound.  The only viable claim is an approximate lift in an actual escort-
+  weighted norm after discarding rigorously negligible response mass.
+- **New SML:** `L_moderate-escort-coordinate-lifting`: on the already proved
+  moderate-pressure truncation of the actual child response, augment the
+  separately GG-regularized overlap law by subexponential coordinate data,
+  prove `o(N)` total error under the negative escort (with an explicit
+  escaping-mass bound), and convert it directionally to
+  `J-I^leftarrow`.  Exact almost-sure recovery is inadmissible because the
+  finite escort has full support.
+- **Decision:** this is a strict information-boundary narrowing, not a
+  Level-6 recurrence.  The adversarial-statistical-mechanics implementation
+  remains frozen; only the stated rare-event/renormalization campaign is
+  admissible.

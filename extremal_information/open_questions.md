@@ -1893,10 +1893,11 @@ joint perturbation.
 
 This sharpens `L_actual-diffuse-phase-quotient` to one admissible form:
 
-> **`L_inverse-escort-coordinate-lifting`.**  For separately GG-regularized
+> **`L_moderate-escort-coordinate-lifting`.**  For separately GG-regularized
 > actual optimizing children, augment the discretized overlap laws by
 > subexponential coordinate data and approximate the inverse-escort-
-> typical row/cavity responses with total `o(N)` error.  The construction
+> typical row/cavity responses on the proved moderate-pressure truncation
+> with total `o(N)` error.  The construction
 > must synchronize the two child trees without using a joint perturbation
 > that changes their product, and it must convert the retained displacement
 > directionally to `J-I^leftarrow`.
@@ -1906,3 +1907,19 @@ latent law and is not the target.  The quantifier must be the actual
 negative escort, with an explicit escaping-mass bound.  Proving such a
 lifting theorem, or a linear information lower bound against every such
 coordinate augmentation, is the single rare-event/renormalization fork.
+
+Theorem 37.71 now proves the exact version of that suspicion.  The cosh
+bridge transform has nonzero Walsh multiplier `rho^|S|` on every even
+character, so the complete likelihood or cavity-response table recovers all
+`2^(m+n-2)` projective rank-one probabilities.  Moreover, two explicit
+antipodal five-cube laws have identical complete replica Gram-array laws but
+different labelled bridge likelihoods.  Thus neither exact all-bridge
+lifting nor Gram data alone is the missing quotient.
+
+This does not close `L_moderate-escort-coordinate-lifting`: the Walsh inverse
+is exponentially ill-conditioned, and the negative escort asks only for an
+aggregate weighted approximation.  The next theorem must exploit that
+measure change explicitly.  In particular, it should state an escort-
+weighted norm and a truncation set of escaping mass `o(1)`; an exact
+almost-sure statement is still all-bridge because every finite escort has
+full support.

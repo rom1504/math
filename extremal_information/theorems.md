@@ -21307,3 +21307,114 @@ coordinate-response lifting theorem under the inverse-escort-typical query
 law, not another overlap identity.  See
 [`audits/actual_child_generic_gg_perturbation_mapping.md`](audits/actual_child_generic_gg_perturbation_mapping.md)
 and its independent verifier.
+
+### Theorem 37.70 (actual-child orbit scaling through order eight)
+
+At raw temperature `t=3`, the stored exhaustive cap classifications certify
+the following actual pressure-minimizer classes: the unique class at orders
+two through six, class `2` at order seven, and both classes at order eight.
+Indeed, a non-cap signing has cap at least `M_n+2`, so for `n<=8,t>=3` one
+of its extremal terms alone exceeds the complete partition sum of a cap
+minimizer.  Exact energy-histogram comparison selects the stated order-seven
+class; the two order-eight classes have the same histogram.
+
+Pair each child with the order-two minimizer and take `lambda=1`.  Exact
+enumeration gives:
+
+| child | projective spins | rooted cells | simultaneous cells | posterior cells |
+|---:|---:|---:|---:|---:|
+| `2/0` | 2 | 2 | 2 | 2 |
+| `3/0` | 4 | 2 | 4 | 3 |
+| `4/0` | 8 | 5 | 5 | 5 |
+| `5/0` | 16 | 4 | 4 | 4 |
+| `6/0` | 32 | 4 | 4 | 4 |
+| `7/2` | 64 | 13 | 26 | 26 |
+| `8/0` | 128 | 19 | 19 | 19 |
+| `8/1` | 128 | 22 | 22 | 22 |
+
+The rooted energy--absolute-overlap partition equals the signed-
+automorphism orbit partition in every eligible class.  Apart from order
+three, the negative posterior separates every simultaneous signed-
+similarity cell.  At order three there are three distinct response values at
+`t=3`; two of the four symmetry-cell rational functions agree identically.
+Grouping the 64 bridges by their exact output-denominator type makes every
+kernel coefficient in that pairwise difference vanish.  The other functions
+need not remain distinct at exceptional temperatures (all coincide at
+`t=0`).
+
+The distinctions use the same modular/transcendence certificate as Theorem
+37.68.  This finite scaling theorem shows no stable bounded-state trend: the
+rooted count jumps from four at order six to `13` and then `19/22`, and the
+posterior normally saturates the available quotient.  The stored order-nine
+object is only a cap minimizer, not a classified thermal minimizer, and is
+excluded from the theorem.  Thus no all-order quotient or recurrence follows.
+See [`audits/actual_child_orbit_scaling.md`](audits/actual_child_orbit_scaling.md).
+
+### Theorem 37.71 (complete bridge likelihood is projective Walsh-invertible)
+
+Let `mu` be an antipodally symmetric law on `G_d={+-1}^d`, let
+
+```math
+p_\mu(B)=E_\mu\cosh\{t\langle B,Q\rangle\},
+\qquad c=\cosh t,\quad s=\sinh t,
+```
+
+and use normalized Walsh coefficients in `B`.  For every `S subseteq[d]`,
+
+```math
+\boxed{
+\widehat p_\mu(S)
+=\mathbf1_{\{|S|\ \mathrm{even}\}}
+ c^{d-|S|}s^{|S|}E_\mu\chi_S(Q).}                \tag{37.263}
+```
+
+Thus for real `t!=0` every even multiplier is nonzero and the complete
+labelled bridge table determines `mu` exactly.  On arbitrary signed
+measures, the kernel consists precisely of antipodally odd measures.  For
+rank-one `m` by `n` words, the projective alphabet has
+`2^(m+n-2)` atoms and affine simplex dimension
+
+```math
+\boxed{2^{m+n-2}-1.}                              \tag{37.264}
+```
+
+Even subsets of the edges of any spanning tree of `K_(m,n)` give a minimal
+character basis for the inversion.  The complete deleted-edge cavity table
+is equally informative: its ratios
+
+```math
+{P(B_e=+,B_{-e})\over P(B_e=-,B_{-e})}
+={1+\rho r_e(B_{-e})\over1-\rho r_e(B_{-e})}      \tag{37.265}
+```
+
+determine the likelihood along every cube edge, normalization determines
+`P`, and (37.263) recovers the latent law.
+
+Complete replica Gram data do not repair the coordinate loss.  In dimension
+five, take the four centers
+
+```text
++++++, --+++, -+-++, +--++
+```
+
+and replace only the last by `-++-+` in a second family.  The uniform
+antipodal laws on the two eight-point sets have identical complete infinite
+replica Gram-array laws: each base Gram matrix has diagonal five and
+off-diagonal one.  At the common labelled bridge `B=+--++`, however,
+
+```math
+p_A(B)={\cosh(5t)+3\cosh t\over4},\qquad
+p_B(B)={\cosh(3t)+3\cosh t\over4},                \tag{37.266}
+```
+
+which differ for every `t!=0`.
+
+This theorem rules out an exact uniform coordinate lift from an overlap
+object as a compression.  It does **not** rule out the desired approximate
+inverse-escort-typical lift: inversion amplifies a degree-`k` error by
+`|tanh t|^(-k)`, reaching `exp{Theta(N log N)}` at physical scaling.  A
+fixed-BSC attempt to make (37.266) diffuse also fails at that scaling:
+an aligned atom costs only `exp{-O(N)}` but gains
+`exp{Theta(N^(3/2))}`, so both full-support priors attain the same leading
+support maximum.  See
+[`audits/bridge_likelihood_walsh_inversion.md`](audits/bridge_likelihood_walsh_inversion.md).
