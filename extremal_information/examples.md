@@ -4412,3 +4412,17 @@ not.  This makes the missing coordinate mark in a deterministic Parisi/GG
 object mathematically explicit.  Complete labelled bridge likelihoods lie
 at the opposite extreme: Walsh inversion recovers the entire projective
 latent law, so exact all-bridge sufficiency is not compression.
+
+## Example 221: fair-measure Walsh complexity can disappear under inverse escorting
+
+For every actual rank-one child law at balanced strong temperature
+`beta>sqrt(4log2)`, the normalized likelihood has exponentially large
+ordinary `L^2` mass above every degree `o(N)`. This follows from the
+diagonal two-replica collision and the actual `2^(N-1)` support bound.
+
+That is not an escort-complexity lower bound. For a single antipodal latent
+word, the same fair-`L^2` obstruction holds, while the inverse escort forces
+the one sufficient statistic `<B,Q>` into its central window. There
+`log P` differs from a scalar by only `O(1)`, and every cavity is a function
+of that one statistic. The example cleanly separates bulk Hilbert-space
+degree from the conditional information exposed by a rare-event query.

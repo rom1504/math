@@ -21418,3 +21418,67 @@ an aligned atom costs only `exp{-O(N)}` but gains
 `exp{Theta(N^(3/2))}`, so both full-support priors attain the same leading
 support maximum.  See
 [`audits/bridge_likelihood_walsh_inversion.md`](audits/bridge_likelihood_walsh_inversion.md).
+
+### Theorem 37.72 (exact degree boundary under the inverse bridge escort)
+
+Let `P` be the normalized bridge likelihood of any actual rank-one child
+law, fix `beta>0`, let `rho=tanh(beta/sqrt(N))`, `d=mn`, and let `W_k` be its squared
+Walsh mass at level `k`. Two independent latent replicas give the exact
+identity
+
+```math
+\boxed{
+\sum_k W_kz^k
+=E_{Q,Q'}(1+z\rho^2)^{(d+\langle Q,Q'\rangle)/2}
+             (1-z\rho^2)^{(d-\langle Q,Q'\rangle)/2}.}    \tag{37.267}
+```
+
+Every actual induced law has support at most `2^(N-1)`. Its diagonal
+replica contribution therefore gives, when `mn/N^2>=gamma_0+o(1)`,
+
+```math
+\|P\|_2^2\ge2^{-(N-1)}(1+\rho^2)^{mn}
+=\exp\{(\gamma_0\beta^2-\log2-o(1))N\}.          \tag{37.268}
+```
+
+For every sequence `K_N=o(N)`, the degree-`K_N` projection has squared norm
+`exp{o(N)}`. Hence, if `gamma_0 beta^2>log 2`,
+
+```math
+\boxed{
+\inf_{\deg f\le K_N}\|P-f\|_{L^2(U)}^2
+\ge\exp\{(\gamma_0\beta^2-\log2-o(1))N\}.}      \tag{37.269}
+```
+
+At a balanced split the threshold is `beta>sqrt(4log2)=1.665109...`.
+Thus ordinary `L^2`, positive-replica, or Cauchy--Schwarz-first likelihood
+approximation is forced to extensive global bridge degree at strong
+temperature, uniformly over the actual children and orientations.
+
+The correct negative-escort norm has a different exact boundary. For every
+`a>=0`,
+
+```math
+1\le E_UP^{-a}\le\exp\{a(a+1)mn\,t^2/2\}.        \tag{37.270}
+```
+
+Using this cost, a binomial Walsh-tail bound, and deterministic positivity
+clipping, some `K=ceil(cN)` depending only on `beta,lambda` gives
+
+```math
+\boxed{
+E_{q_\lambda}|\log P-\log\widetilde P_K|
+ +\sum_eE_{q_\lambda}|r_e-\widetilde r_{e,K}|
+\le e^{-c_1N}.}                                  \tag{37.271}
+```
+
+Taking `c>=1` already includes every even spanning-tree character and hence
+the complete `2^(N-2)`-atom projective law, so (37.271) is stability, not
+compression.
+
+Finally, (37.269) is not an escort-weighted lower bound. A one-antipodal-
+atom rank-one channel has the same extensive fair-`L^2` tail, but under its
+inverse escort at fixed `lambda>0`, `log P` is degree-zero up to `O(1)` and every cavity depends
+on one linear statistic. The missing information is conditional cavity
+geometry under the negative tail, not ordinary likelihood degree. See
+[`audits/actual_child_inverse_escort_walsh_degree_audit.md`](audits/actual_child_inverse_escort_walsh_degree_audit.md).

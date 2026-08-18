@@ -260,6 +260,16 @@ the already proved moderate-pressure truncation, with
 `J-I^leftarrow`.  Separate perturbations must be synchronized without
 silently introducing the non-product coupling of the multi-species theorem.
 
+Theorem 37.72 makes the complexity gap quantitative.  At balanced
+`beta>sqrt(4log2)`, every actual child likelihood has exponentially large
+ordinary `L^2(U)` error above every bridge degree `o(N)`.  Degree `cN`
+universally gives exponentially accurate inverse-escort pressure and cavity
+responses, but it already contains every projective spanning-tree character
+and hence the full latent law.  The one-atom channel proves that the fair-
+measure lower bound is not an escort lower bound.  Thus the exact live fork
+is sublinear-degree/subexponential **escort-weighted cavity** compression
+versus an optimizer-specific linear lower bound in that same norm.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -2348,3 +2358,28 @@ class and risks restating the desired parent optimization.
   Level-6 recurrence.  The adversarial-statistical-mechanics implementation
   remains frozen; only the stated rare-event/renormalization campaign is
   admissible.
+
+### Checkpoint 34 — fair degree and escort degree separate
+
+- **Actual-law lower bound (Theorem 37.72):** the exact two-replica level
+  enumerator plus the actual `2^(N-1)` support bound prove that, on balanced
+  splits with `beta>sqrt(4log2)`, every degree-`o(N)` approximation of the
+  normalized likelihood has ordinary `L^2(U)` error `exp{Omega(N)}`.
+- **Matching-scale positive theorem:** a deterministic clipped decoder of
+  degree `cN` recovers `log P` and the sum of all cavity errors under the
+  negative escort to `exp{-Omega(N)}`.  The proof pays the sharp
+  `exp{O(N)}` negative-moment envelope.  This decoder is not compression:
+  choosing `c>=1` includes the full projective spanning-tree character
+  basis.
+- **Decisive falsifier:** the one-antipodal-atom rank-one channel has the
+  extensive fair-`L^2` tail but a degree-zero escort pressure approximation
+  and one-feature cavity presentation.  Therefore positive-replica/fair-
+  measure degree cannot prove an escort-weighted information lower bound.
+- **New SML:** decide whether actual optimizing children admit an `o(N)`-
+  degree or otherwise subexponential presentation in escort-weighted
+  relative cavity error on the moderate-pressure truncation, or force
+  `Omega(N)` information in that exact norm by an optimizer identity.
+- **Recurrence and decision:** the bracket gives no target reach and no
+  Level-6 recurrence.  It is a strict final sharpening of the promoted
+  rare-event/renormalization campaign; the raw overlap implementation stays
+  frozen.

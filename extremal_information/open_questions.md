@@ -1923,3 +1923,20 @@ measure change explicitly.  In particular, it should state an escort-
 weighted norm and a truncation set of escaping mass `o(1)`; an exact
 almost-sure statement is still all-bridge because every finite escort has
 full support.
+
+Theorem 37.72 gives the first quantitative degree bracket at this exact
+boundary. Above `beta>sqrt(4log2)` on balanced splits, every actual child
+likelihood has exponentially large fair-`L^2` error above every degree
+`o(N)`. Conversely, degree `cN` universally recovers the clipped pressure
+and all cavities with exponentially small inverse-escort error, but that
+degree already contains the full projective latent law. The one-atom channel
+proves that the fair-`L^2` lower bound cannot be transferred to the escort:
+its escort response has a one-feature presentation.
+
+Thus the discriminating version of `L_moderate-escort-coordinate-lifting`
+is now quantitative: prove an `o(N)`-degree or otherwise subexponential
+coordinate presentation in the **escort-weighted relative cavity norm** for
+actual optimizing children, or prove an optimizer-specific `Omega(N)`
+lower bound in that same norm. A fair-measure Fourier lower bound, a scalar
+pressure approximation, or the universal degree-`cN` decoder does not decide
+this question.
