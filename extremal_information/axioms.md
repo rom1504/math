@@ -3056,3 +3056,54 @@ This is a one-sided certification principle.  Positive overlap need not
 create an extensive response, and evaluating all directions is not yet a
 small state.  Its content is that infinity in the tilt parameter and the
 rank-one pressure tail are not intrinsic parts of the remaining obstruction.
+
+## 173. Relative entropy can replace the alphabet entropy of a carrier family
+
+Uniformly optimizing over a huge carrier family need not require a prior or
+union bound on its labels.  If each declared response measure has bounded
+relative entropy to one common physical base law, entropy duality charges
+that measure directly.  For bounded-collision row products the charge is
+only `O(m)`, even though the carrier admits exponentially many separated row
+densities and a formal tensor with exponentially many cross-row channels.
+
+Combined with a functional inequality under the common base, this turns the
+entire carrier response range into one base-tilted carré-du-champ envelope.
+The resulting scalar curve is an analytic response certificate, not
+automatically a computable state: finding optimizers and evaluating the
+tilted expectation may remain difficult.  The principle separates the
+description entropy of candidate labels from their physical change-of-
+measure cost.
+
+## 174. Match the tilt to the entropy penalty before paying query complexity
+
+For an entropy-regularized extremal problem, bounding the entire response
+range can be unnecessarily expensive.  At the variational parameter
+`-lambda`, Donsker--Varadhan duality cancels the competitor's relative
+entropy exactly.  The optimized product value is then controlled by one
+negative-tilt fluctuation of the common-base landscape, rather than by a
+growing tilt window or by the metric entropy of all products.
+
+In the actual-child problem this replaces the square-root response estimate
+by a linear overlap estimate: overlap `O(N^(-alpha))` gives product-value
+error `O(N^(1-alpha))`.  The broader principle is to align the change of
+measure with the objective's own entropy coefficient before introducing a
+separate uniform-query bound.  Because the matched path is nonpositive and
+the pressure is nonnegative, it can be run on the raw landscape: the endpoint
+is the actual negative-disorder law, while high-pressure atoms are suppressed.
+Thus clipping and positive-tilt uniform integrability are not intrinsic to
+this optimizer-specific value question.
+
+## 175. Centering a gradient does not remove multiplicity across coordinates
+
+At a globally optimal reverse product, the likelihood score relative to the
+full law is exactly the row-ANOVA interaction residual in that product's own
+geometry.  This identifies the canonical centering, but it requires the
+unknown optimizer and therefore is not itself a compressed state.
+
+More importantly, its squared coordinate gradient can count one high-order
+mode once for every coordinate it touches.  A full-parity landscape has unit
+normalized centered gradient mass but vanishing reverse-product information.
+Thus centering removes additive false positives, not high-order multiplicity.
+A directional overlap theorem needs an inverse-order weighting, a cluster-
+order restriction, or a negative-tail mechanism in addition to quadratic
+gradient mass.

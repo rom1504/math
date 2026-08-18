@@ -4168,3 +4168,95 @@ the matching moderate-tilt window gives response range
 `O(N^(1-alpha/2))`.  This turns a uniform extremum into one compact-tilt
 two-replica witness, but only for the declared spiked family; it does not
 compress all spike directions or the complete square-carrier response.
+
+## Example 211: a huge carrier alphabet has only linear change-of-measure cost
+
+The recovered degree-`2d` square carrier can contain exponentially many
+fixed-scale separated row densities, so assigning a prior to carrier labels
+creates an unusable tensor-word entropy.  Yet every product
+`P=otimes_iq_iU_n` in the carrier satisfies
+
+```math
+D(P\Vert U_{mn})\le\sum_i\log E_Uq_i^2\le2m\log K.
+```
+
+Charging a declared product directly by this relative entropy, rather than
+by the number of carrier labels, reduces its complete capped-pressure
+response range to one fair-base tilted cavity-overlap curve.  Thus an
+exponential presentation size and a linear physical change-of-measure cost
+can coexist.  This is why the finite-net obstruction does not kill the
+full-carrier compact-tilt theorem.
+
+## Example 212: replica one is exactly blind to the remaining overlap
+
+Let `A_N(s)` be the normalized derivative at zero of the fair-base Gaussian
+smoothing of the capped actual-child pressure, and let `p_N(s)` be the tilted
+mass below the cap.  Direct Gibbs differentiation gives
+
+```math
+A_N(s)=E_{\Pi_s}[1_{\{L<CN\}}\{1+(s-1)\mathcal O(B)\}],
+```
+
+where `O(B)` is the full-Gibbs two-replica product overlap.  Hence
+`A_N(1)=p_N(1)` for every child pair: the one-replica derivative contains no
+overlap information at all.  The overlap is the secant
+`(A_N-p_N)/(s-1)` and, at `s=1`, the mixed replica/smoothing derivative.
+This explains algebraically why sharper one-replica annealed bounds cannot
+resolve the remaining compact-tilt SML.
+
+## Example 213: entropy regularization collapses a growing window to the raw negative path
+
+For the raw actual-child pressure, consider
+
+```math
+\inf_{P\ {\rm row\ product}}
+\left\{E_PL+\lambda^{-1}D(P\Vert U)\right\}.
+```
+
+A uniform response-range estimate treats the `O(m)` entropy of every product
+as an external query budget and optimizes over a growing tilt window.  At
+the actual parameter `-lambda`, however, Donsker--Varadhan duality cancels
+that entropy exactly.  If
+
+```math
+{d\widehat\Pi_s\over dU}={e^{sL}\over E_Ue^{sL}},
+\qquad -\lambda\le s\le0,
+```
+
+the whole optimized gain from the fair law is bounded, with no truncation
+error, by
+
+```math
+C_{LS}\lambda t^2mn
+{1\over\lambda mn}\int_{-\lambda}^0
+ E_{\widehat\Pi_s}\sum_a r_a^2\,ds.
+```
+
+Thus only a fixed negative window remains, and overlap
+`O(N^(-alpha))` yields value error `O(N^(1-alpha))`.  This example separates
+uniform contextual response complexity from the smaller information needed
+by a particular entropy-regularized optimum.  The same integrated statistic
+upper-bounds the reverse product projection: if it vanishes while `J` is
+linear, the coherent-retuning branch is forced.  Its endpoint is the actual
+negative-disorder bridge law, and negative tilts suppress rather than amplify
+the rare high-pressure bridges that obstruct raw positive-tilt bounds.
+
+## Example 214: high-order parity defeats even optimally centered overlap
+
+Let `chi(B)` be the parity of all `mn` bridge bits and set
+`L=C+(beta/sqrt(N))chi`.  The fair law is the optimal reverse row product for
+all large `N`, and the whole nonconstant landscape is already orthogonal to
+every one-row statistic.  Nevertheless
+
+```math
+{1\over t^2mn}\sum_eE(D_eL)^2=1
+```
+
+at every negative tilt, while the reverse-product information is only
+`log cosh(lambda beta/sqrt(N))=Theta(N^(-1))`.  The gradient counts the same
+single parity amplitude once at every edge; the response cumulant counts it
+once.  This generic landscape is not an actual-child pressure, but it shows
+why positive raw or centered overlap cannot by itself select the extensive
+reverse-dependence branch.  An actual-child converse must exclude high-row-
+order concentration or directly control the negative tail of the centered
+interaction score.

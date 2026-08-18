@@ -38,11 +38,13 @@ where, for example, one may take
 Fix a compact tilt window `S<infinity`, choose an integer `k>S`, and choose
 
 ```math
- C>{A_{\beta,k}\over k-S}.                        \tag{FB.3}
+ C>\max\left\{{3\beta^2\over8}+2\log K,
+               {A_{\beta,k}\over k-S}\right\}.  \tag{FB.3}
 ```
 
-Increasing the CT.1 cap to this value only decreases its already
-exponentially small product-response truncation error.  Put
+The first condition is the full-carrier response-truncation threshold from
+CT.1; the second controls the retained mass uniformly on the tilt window.
+Increasing the cap to satisfy both only decreases the truncation error.  Put
 
 ```math
  F=L\wedge CN,
@@ -232,19 +234,24 @@ independently certified tail correction.  No carrier labels or coefficients
 occur.
 
 For a growing window `S_N`, the same theorem remains valid if one chooses
-`k_N>S_N` and a cap coefficient
+`k_N>S_N` and a cap coefficient satisfying the carrier threshold and
 
 ```math
- C_N>{A_{\beta,k_N}\over k_N-S_N}.                \tag{FB.23}
+ \delta_N:=(k_N-S_N)C_N-A_{\beta,k_N},
+ \qquad \delta_NN\longrightarrow\infty.          \tag{FB.23}
 ```
 
-For example `k_N=2S_N+O(1)` permits `C_N=O_\beta(1+S_N)`.  Enlarging the
-cap does not harm full-carrier response truncation.  With a fixed cap and
-an unbounded positive tilt window, however, FB.5 need not hold: the capped
-tilt can concentrate on the plateau `{L>=CN}`.  Therefore the fixed-cap
-identity is an exact compact-window equivalence, while recurrence-scale
-growing windows require the declared adaptive cap (or separate plateau
-control).  This qualification is essential.
+For an exponential tail one may require `delta_N>=c_0>0`; for example take
+`k_N=2S_N+O(1)` and
+`C_N>=2A_(beta,k_N)/(k_N-S_N)`, together with
+`C_N>3beta^2/8+2log K`.  This permits
+`C_N=O_beta(1+S_N)`.  Enlarging the cap does not harm full-carrier response
+truncation.  With a fixed cap and an unbounded positive tilt window,
+however, FB.5 need not hold: the capped tilt can concentrate on the plateau
+`{L>=CN}`.  Therefore the fixed-cap identity is an exact compact-window
+equivalence, while recurrence-scale growing windows require the declared
+adaptive cap with quantitative slack (or separate plateau control).  This
+qualification is essential.
 
 ## 4. What minimality does and does not prove
 

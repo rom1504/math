@@ -19335,3 +19335,387 @@ sufficient for a linear response, and does not give an operational quotient
 for all spike directions.  It replaces the false all-tilt MGF target by a
 capped moderate-tilt statement.  See
 [`audits/actual_child_spiked_response_truncation_moderate_tilt_audit.md`](audits/actual_child_spiked_response_truncation_moderate_tilt_audit.md).
+
+### Theorem 37.48 (one compact-tilt certificate controls the full carrier response)
+
+Let `F=L wedge CN` be the universal actual-child cap from Theorem 37.46 and
+let
+
+```math
+\mathcal P_K=\left\{\bigotimes_{i=1}^m q_iU_n:
+E_Uq_i=1,\ \|q_i\|_2\le K\right\}.
+```
+
+Every `P in P_K` satisfies
+
+```math
+D(P\Vert U_{mn})\le2m\log K=:D_0.                \tag{37.142}
+```
+
+For the carrier-independent fair-base tilt
+
+```math
+{d\Pi_{s,F}\over dU_{mn}}={e^{sF}\over E_Ue^{sF}},
+\qquad
+\rho_N(S)={1\over mn}\sup_{|s|\le S}
+E_{\Pi_{s,F}}\sum_a r_a^2,                       \tag{37.143}
+```
+
+one has, for every `0<s<=S`,
+
+```math
+\boxed{
+\operatorname {range}_{P\in\mathcal P_K}E_PL
+\le O_\beta(N^{3/2}e^{-cN})
++2\left\{{D_0\over s}+C_{\rm LS}t^2mn\rho_N(S)s\right\}.}    \tag{37.144}
+```
+
+Here `C_LS` is an absolute constant; with the stated half-flip
+normalization one may take `C_LS=1`.  In particular,
+
+```math
+\rho_N(S_N)=O(N^{-\alpha}),
+\qquad S_N\gtrsim N^{\alpha/2}
+```
+
+implies, on balanced splits,
+
+```math
+\boxed{
+\operatorname {range}_{P\in\mathcal P_K}E_PL
+=O(N^{1-\alpha/2}).}                             \tag{37.145}
+```
+
+At the qualitative scale it is enough that, for every fixed `S`, a fixed
+admissible cap has `rho_N(S)->0`: applying (37.144) with `s=S`, taking
+`N->infinity`, and then `S->infinity` gives
+
+```math
+\boxed{
+N^{-1}\operatorname {range}_{P\in\mathcal P_K}E_PL\longrightarrow0.}     \tag{37.145a}
+```
+
+Thus growing-window control is required for a power-saving rate, not for
+the qualitative exclusion of a linear response.
+
+Conversely, if this full-carrier response range is at least `eta N`, then
+one tilt in a fixed interval `|s|<=S_(eta,K)` has
+
+```math
+\boxed{
+{1\over mn}E_{\Pi_{s,F}}\sum_a r_a^2
+\ge c_{\eta,K,\beta}>0.}                        \tag{37.146}
+```
+
+Thus a single fair-base capped overlap envelope controls every recovered
+fixed-degree square carrier without a carrier net or prior.  For a given
+pair with a linear entropy-regularized objective gap, either its row-additive
+entropy difference is linear or (37.146) holds.  This is a common analytic
+response certificate, not yet an operational branch decider: it does not
+find the optimizing pair, make positive overlap sufficient for favorable
+retuning, or provide a finite-precision procedure for evaluating the curve.
+See
+[`audits/actual_child_full_carrier_compact_tilt_overlap.md`](audits/actual_child_full_carrier_compact_tilt_overlap.md).
+
+### Theorem 37.49 (fair-base overlap is a replicated-smoothing secant)
+
+In the setting of Theorem 37.48, extend `L` to real bridge fields and let
+`G` be an independent standard Gaussian bridge.  For `s ne 0`, define
+
+```math
+\mathscr H_{s,F}(u)={1\over s}\log E_{B\sim U,G}
+ \exp\{s\min(L(B+\sqrt uG),CN)\},
+\qquad
+A_N(s)={2\mathscr H_{s,F}'(0+)\over t^2mn},       \tag{37.147}
+```
+
+with the continuous expectation-valued extension at zero, and put
+`p_N(s)=Pi_(s,F){L<CN}`.  If
+
+```math
+\mathcal O(B)={1\over mn}\sum_a
+  E_{\nu_B}[\tau X_iZ_j]^2,
+```
+
+then the exact identity is
+
+```math
+\boxed{
+A_N(s)=E_{\Pi_{s,F}}
+ [1_{\{L<CN\}}\{1+(s-1)\mathcal O(B)\}].}        \tag{37.148}
+```
+
+Consequently the continuous secant
+
+```math
+\mathcal Q_N(s)=
+\begin{cases}
+(A_N(s)-p_N(s))/(s-1),&s\ne1,\\
+\partial_s(A_N-p_N)|_{s=1},&s=1
+\end{cases}                                      \tag{37.149}
+```
+
+is exactly the retained tilted two-replica overlap.  On every fixed compact
+tilt window, actual-child replica moments make the cap tail exponentially
+small, and the cavity/full-Gibbs comparison gives
+
+```math
+\boxed{
+\left|\rho_N(S)-\sup_{|s|\le S}\mathcal Q_N(s)\right|
+\le O_\beta(N^{-1/2})+e^{-cN}.}                 \tag{37.150}
+```
+
+At replica number one the ordinary smoothing derivative is identically
+blind to overlap: `A_N(1)=p_N(1)`.  The overlap reappears only in the mixed
+replica/smoothing derivative in the second line of (37.149).
+
+For a growing window `S_N`, (37.150) remains valid after choosing an integer
+`k_N>S_N` in the replica moment bound and an adaptive cap satisfying both
+the carrier threshold `C_N>3beta^2/8+2log K` and
+
+```math
+\delta_N=(k_N-S_N)C_N-A_{\beta,k_N},
+\qquad \delta_NN\longrightarrow\infty.          \tag{37.151}
+```
+
+For instance `k_N=2S_N+O(1)` and
+`C_N>=2A_(beta,k_N)/(k_N-S_N)` permit
+`C_N=O_beta(1+S_N)` and an exponential tail.  A fixed cap need not give
+(37.150) on an unbounded positive window because its plateau may capture the
+tilted law.
+
+This identifies the full-carrier SML with scalar capped replicated-smoothing
+rigidity at `o(N)` derivative precision, including the mixed derivative at
+`s=1`.  Present one-replica minimality bounds only `O(N)` endpoints and acts
+on internal child edges rather than parent cross edges, so it does not prove
+this rigidity.  The statement is an analytic reduction, not yet an
+operational generation theorem.  See
+[`audits/actual_child_fair_base_carrier_interpolation.md`](audits/actual_child_fair_base_carrier_interpolation.md).
+
+### Theorem 37.50 (one fixed negative-tilt overlap controls the product optimum)
+
+Let `F=L wedge CN` be an admissible fixed cap and define
+
+```math
+\rho_N^-(\lambda)={1\over mn}
+ \sup_{-\lambda\le s\le0}
+ E_{\Pi_{s,F}}\sum_a r_a^2.                      \tag{37.152}
+```
+
+Also put
+
+```math
+\overline\rho_N^-(\lambda)={1\over\lambda mn}
+ \int_{-\lambda}^0E_{\Pi_{s,F}}\sum_a r_a^2\,ds
+\le\rho_N^-(\lambda).                            \tag{37.152a}
+```
+
+All bounds below are uniform over the actual minimizing children and either
+relative orientation.
+
+For the capped row-product variational value
+
+```math
+V_{\lambda,C}^{\rm row}
+=\inf_{P\ {\rm row\ product}}
+ \left\{E_PF+{1\over\lambda}D(P\Vert U)\right\},
+```
+
+Donsker--Varadhan duality at the single physical parameter `-lambda`
+cancels the complete entropy charge.  Together with the fair-cube
+logarithmic-Sobolev inequality, this gives
+
+```math
+\boxed{
+0\le E_UF-V_{\lambda,C}^{\rm row}
+\le {1\over\lambda}\log E_Ue^{-\lambda(F-E_UF)}
+\le C_{\rm LS}\lambda t^2mn
+       \overline\rho_N^-(\lambda).}              \tag{37.153}
+```
+
+Uniform response truncation transfers the estimate to the raw actual-child
+product optimum:
+
+```math
+\boxed{
+0\le E_UL-V_\lambda^{\rm row}
+\le C_{\rm LS}\lambda t^2mn\overline\rho_N^-(\lambda)
+ +O_{\beta,\lambda,C}(N^{3/2}e^{-cN}).}          \tag{37.154}
+```
+
+The same bound holds for the recovered fixed-degree square-carrier optimum.
+On balanced splits, `bar rho_N^-(lambda)=o(1)` therefore gives `o(N)` value
+error, while `bar rho_N^-(lambda)=O(N^(-alpha))` gives
+`O(N^(1-alpha))`.  Conversely a linear optimized product gain from the fair
+law forces `bar rho_N^-(lambda)>=c>0`.
+
+More directly, because the fair law is an admissible reverse-projection
+competitor,
+
+```math
+\boxed{
+\mathcal I_\lambda^{\leftarrow}
+\le C_{\rm LS}\lambda^2t^2mn
+       \overline\rho_N^-(\lambda)
+ +O_{\beta,\lambda,C}(N^{3/2}e^{-cN}).}          \tag{37.154a}
+```
+
+Thus an extensive reverse-product phase forces positive integrated overlap;
+if `J>=eta N` while `bar rho_N^-=o(1)`, then
+
+```math
+\boxed{\mathcal J-\mathcal I_\lambda^{\leftarrow}
+       \ge\eta N-o(N),}                          \tag{37.154b}
+```
+
+which selects coherent retuning.
+
+With the fair-base smoothing notation of Theorem 37.49, the integrated
+separator has the exact scalar presentation
+
+```math
+\boxed{
+\overline\rho_N^-(\lambda)
+={1\over\lambda}\int_{-\lambda}^0
+ {A_N(s)-p_N(s)\over s-1}\,ds
+ +O_\beta(N^{-1/2})+e^{-cN}.}                   \tag{37.154c}
+```
+
+The interval is fixed and disjoint from replica number one, so no mixed
+derivative, adaptive cap, or growing-window estimate is needed for the
+optimized product branch separator.
+
+The established coherent-retuning identity and (37.154) also give
+
+```math
+\boxed{
+\mathcal J-\mathcal I^{\leftarrow}
+=\lambda\{\mathcal G_L(r)-E_UL\}+o(N).}          \tag{37.155}
+```
+
+Thus the difficult global row-product optimization collapses, to sublinear
+error, to the fair bridge baseline and existing scalar endpoints if one
+fixed negative-tilt overlap integral decays.  The operative branch statement
+is (37.154a)--(37.154b): small overlap selects coherent retuning conditional
+on linear `J`, while extensive reverse dependence forces positive overlap.
+This is an optimizer-specific branch reduction.  It does not prove the
+decay, bound `J`, or make positive overlap sufficient for a favorable
+product gain.  See
+[`audits/actual_child_negative_tilt_product_value.md`](audits/actual_child_negative_tilt_product_value.md)
+and its independent
+[`adversarial audit`](audits/actual_child_negative_tilt_product_value_adversarial_audit.md).
+
+The cap is in fact unnecessary for this negative-window conclusion.  Define
+
+```math
+{d\widehat\Pi_s\over dU}={e^{sL}\over E_Ue^{sL}},
+\qquad
+\widehat\rho_N^-(\lambda)={1\over\lambda mn}
+ \int_{-\lambda}^0E_{\widehat\Pi_s}\sum_a r_a^2\,ds.            \tag{37.156}
+```
+
+Then the raw actual-child law satisfies the sharper exact bounds
+
+```math
+\boxed{
+\begin{aligned}
+0\le E_UL-V_\lambda^{\rm row}
+ &\le C_{\rm LS}\lambda t^2mn\widehat\rho_N^-(\lambda),\\
+\mathcal I_\lambda^{\leftarrow}
+ &\le C_{\rm LS}\lambda^2t^2mn\widehat\rho_N^-(\lambda).
+\end{aligned}}                                   \tag{37.157}
+```
+
+At `s=-lambda`, `widehat Pi_s` is exactly the actual negative-disorder
+escort.  Because all tilts are nonpositive and `L>=0`, the high-pressure
+tail is suppressed rather than amplified.
+
+If `widehat A_N(s)` is the normalized zero-time derivative of the **raw**
+fair-base Gaussian smoothing curve, then
+
+```math
+\boxed{
+\widehat\rho_N^-(\lambda)
+={1\over\lambda}\int_{-\lambda}^0
+ {\widehat A_N(s)-1\over s-1}\,ds
+ +O_\beta(N^{-1/2}).}                            \tag{37.158}
+```
+
+Thus the operative SML uses the uncapped actual law on one fixed negative
+interval; neither tail truncation nor replica-one differentiation is part of
+it.
+
+### Theorem 37.51 (optimal-product score centering and its high-order ceiling)
+
+Let `q` be the actual negative-disorder bridge law and let
+`p^*=otimes_i p_i^*` minimize `D(p||q)` over row products.  Put
+
+```math
+\mu=E_{p^*}L,
+\qquad
+\ell_i(B_i)=E_{p_{-i}^*}L(B_i,B_{-i})-\mu,
+\qquad
+L_\perp=L-\mu-\sum_i\ell_i.
+```
+
+Then the globally optimal product best-response equations give the exact
+identities
+
+```math
+\boxed{
+E_{p^*}[L_\perp\mid B_i]=0,
+\qquad
+\log{dp^*\over dq}=\mathcal I^{\leftarrow}+\lambda L_\perp,}
+                                                               \tag{37.159}
+```
+
+and hence
+
+```math
+\boxed{
+\mathcal I^{\leftarrow}
+=\log E_{p^*}e^{-\lambda L_\perp}
+=\int_0^\lambda(\lambda-s)
+ \operatorname {Var}_{\nu_s}(L_\perp)\,ds,}       \tag{37.160}
+```
+
+where `dnu_s/dp^*` is proportional to `e^(-sL_perp)`.  This path runs from
+the optimal product to `q` and retains the uniform conditional row-`D_2`
+bound.  If `e=(i,j)`, its exact centered cavity derivative is
+
+```math
+\boxed{
+D_eL_\perp=B_e\left\{
+ \operatorname {arctanh}(\tanh(t)r_e)
+ -E_{p_{-i}^*}\operatorname {arctanh}(\tanh(t)r_e)
+ \right\}.}                                      \tag{37.161}
+```
+
+Thus the unique exact removal of row-additive false positives is conditional
+centering across the other rows in the unknown optimal-product geometry.  It
+is not a lower-information observable.
+
+This limitation is sharp in two independent senses.
+
+1. A centrally symmetric row-factorized binary-channel likelihood has
+   positive raw negative-tilt cavity-overlap density but its negative escort
+   is itself a row product, so `I^leftarrow=0`.
+2. On `mn` fair bridge bits let `chi` be their full parity and set
+   `L_N=C_N+(beta/sqrt(N))chi`, with `C_N>=beta/sqrt(N)`.  For all large
+   `N`, the fair law is the unique optimal reverse row product and
+
+   ```math
+   \mathcal I^{\leftarrow}
+   =\log\cosh(\lambda\beta/\sqrt N)=\Theta(N^{-1}),
+   \qquad
+   {1\over t^2mn}\sum_eE(D_eL_\perp)^2=1.         \tag{37.162}
+   ```
+
+   under every interaction tilt.
+
+The second example has the correct physical one-bit oscillation but is not
+an actual-child pressure.  It proves that even optimally centered quadratic
+overlap cannot yield a directional converse without an optimizer-specific
+anti-high-row-order or negative-tail theorem: one global parity amplitude is
+counted once by (37.160) and `mn` times by its Dirichlet mass.  See
+[`audits/actual_child_optimal_product_score_centering.md`](audits/actual_child_optimal_product_score_centering.md).

@@ -148,6 +148,34 @@ On balanced splits, `D_0=O(N)` and `t^2mn=Theta(N)`.  Therefore
 No dependence on the coefficient dimension
 `sum_(j<=2d)binom(n,j)`, its covering number, or its `m`-fold tensor appears.
 
+There is also a weaker qualitative criterion which does not require one
+growing tilt window.
+
+### Corollary CT.2 (fixed-window vanishing suppresses every linear response)
+
+Suppose that for every fixed `S<infinity` one can choose a fixed cap
+coefficient satisfying RT.6 such that
+
+```math
+\rho_N(S)\longrightarrow0.                       \tag{CT.13a}
+```
+
+Then, on balanced splits,
+
+```math
+\boxed{
+{1\over N}\operatorname {range}_{P\in\mathcal P_K}E_PL
+\longrightarrow0.}                              \tag{CT.13b}
+```
+
+*Proof.*  In (CT.11) take `s=S` and first let `N` tend to infinity.  The
+overlap term vanishes for this fixed `S`, while the entropy term divided by
+`N` is at most `4log(K)/S`.  Now send `S` to infinity. `square`
+
+Thus all-fixed-window overlap vanishing is the minimal qualitative branch
+criterion.  The growing-window rate in (CT.13) is needed only for a
+power-saving response error suitable for the geometric recurrence.
+
 There is an exact converse at the linear scale.  If
 
 ```math
@@ -202,9 +230,11 @@ if two carrier products satisfy
 
 which is a directly computable sum of row entropies, or their pressure
 responses differ by at least `eta N/2`, in which case (CT.15) holds with
-adjusted constants.  Thus a linear full-carrier retuning is witnessed by
-either one row-additive entropy scalar or the common compact-tilt overlap
-curve; no carrier response table is needed for this dichotomy.
+adjusted constants.  Thus, for a **given witnessing pair**, a linear
+full-carrier objective difference necessarily exposes either one row-additive
+entropy scalar or the common compact-tilt overlap curve; no carrier response
+table is needed for this necessary dichotomy.  The theorem does not find the
+optimizing pair or make either condition sufficient for favorable retuning.
 
 ## 3. Why this escapes the finite-net obstruction
 
@@ -221,14 +251,16 @@ from the finite-carrier audit has a linear response range and therefore a
 positive moderate-tilt overlap, exactly as (CT.15) predicts.  CT.1 does not
 claim that bounded row complexity alone makes `rho_N` vanish.
 
-For the actual optimizing children, however, (CT.7) is one common,
-low-information target for **all** recovered square factors.  The remaining
-minimal lemma is now:
+For the actual optimizing children, however, (CT.7) is one common analytic
+response certificate for **all** recovered square factors.  It is
+carrier-independent, but no finite-precision or state-generation theorem
+currently makes it an operational low-information branch decider.  The
+remaining minimal lemma is now:
 
 > prove a power-saving bound on the fair-base capped-tilt edge-cavity overlap
 > `rho_N(S_N)` for actual contracted-temperature minimizers on a growing
 > moderate window, or exhibit an actual minimizing sequence with a positive
-> compact-tilt overlap and determine its product-phase branch.
+> compact-tilt overlap and then prove which product-phase branch it creates.
 
 Known zero-field child minimality verifies (RT.2), (CT.3), and the exact
 cavity identity (CT.5).  It does **not** currently verify any decay of

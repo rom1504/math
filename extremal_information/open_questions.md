@@ -1588,17 +1588,83 @@ replacement.  If the normalized capped-tilt cavity overlap obeys
 one bounded tilt.  This is one-sided and still ranges over exponentially many
 directions, so it is not yet an operational branch selector.
 
+Theorem 37.48 removes both qualifications at the level of response bounds.
+Relative entropy to the fair bridge law charges every bounded-collision
+product directly, so one carrier-independent curve
+
+```math
+\rho_N(S)={1\over mn}\sup_{|s|\le S}
+ E_{\Pi_{s,L\wedge CN}}\sum_a r_a^2
+```
+
+controls the pressure range of the **complete** recovered square carrier.
+Decay `rho_N(S_N)=O(N^(-alpha))` on the matching window yields
+`O(N^(1-alpha/2))` range, while a linear range forces positive overlap at
+one bounded tilt.  This is an analytic response certificate, not yet an
+operational branch decider or a way to find the optimizing carrier.
+
+Theorem 37.49 identifies this same curve, on compact windows, with one
+secant of a fair-base Gaussian-smoothing derivative.  The value at replica
+number one cancels the overlap identically; the missing information is its
+mixed replica/smoothing derivative.  Growing windows require an adaptive
+cap `C_N=O_beta,K(1+S_N)` with quantitative replica-moment slack (or
+separate plateau control).
+
+For the optimized product value, Theorem 37.50 is sharper still.  Applying
+Donsker--Varadhan duality at the objective's own parameter `-lambda` cancels
+the complete row-product entropy penalty.  On the raw actual-child path
+
+```math
+{d\widehat\Pi_s\over dU}={e^{sL}\over E_Ue^{sL}},
+\qquad -\lambda\le s\le0,
+```
+
+it gives, without clipping or a tail remainder,
+
+```math
+0\le E_UL-V_\lambda^{\rm row}
+\le C_{LS}\lambda t^2mn\widehat\rho_N^-(\lambda),
+```
+
+where
+
+```math
+\widehat\rho_N^-(\lambda)
+={1\over\lambda mn}\int_{-\lambda}^0
+ E_{\widehat\Pi_s}\sum_a r_a^2\,ds.
+```
+
+More directly,
+`I^leftarrow<=C lambda^2t^2mn hat rho_N^-`.
+Thus small integrated overlap selects coherent retuning whenever `J` is
+linear, whereas extensive reverse dependence forces positive integrated
+overlap.  At `s=-lambda` this is exactly the actual negative-disorder escort.
+In the smoothing coordinates it is the integral of the ordinary **raw**
+secant `(widehat A_N-1)/(s-1)` on `[-lambda,0]`; the interval avoids replica
+one and negative tilts suppress the high-pressure tail, so no cap, mixed
+derivative, adaptive window, or carrier optimizer is needed.
+
 The surviving SML is therefore:
 
-> **Moderate-pressure actual-child quotient.**  For the universally capped
-> pressure `L wedge CN`, either construct from polynomially many child
-> observables an `o(N)`-accurate response quotient for every recovered
-> fixed-degree square carrier, or prove a uniform power-saving compact-tilt
-> overlap bound and extend it from the spiked tests to that carrier class;
-> alternatively exhibit scalable actual minimizing children with positive
-> capped overlap and prove that it produces a coherent product phase.
+> **`L_raw-negative-overlap`.**  For actual contracted-temperature
+> minimizing children in target-reaching orientations, prove
+> `hat rho_N^-(lambda)=o(1)`, with a power/summable rate for the basin
+> recurrence; alternatively prove that positive integrated overlap produces
+> an explicit favorable reverse-product direction, or construct an actual-
+> minimizer sequence showing the obstruction.
+
+Theorem 37.51 fixes the scope of the alternative.  At the best reverse row
+product, the exact centered score is a row-ANOVA interaction residual and
+`I^leftarrow` is its negative cumulant.  This centering requires the unknown
+product optimizer.  Moreover, a full-parity landscape has unit normalized
+centered edge mass but `I^leftarrow=Theta(N^(-1))`.  Hence a positive-overlap
+converse must use actual-child structure that excludes high-row-order
+concentration or controls the centered negative tail; another quadratic
+centering cannot decide the branch.
 
 The quartic coefficient already has `O(sqrt(N))` physical range, so any
 obstruction must be nonperturbative or begin at higher auxiliary order.
-Another raw MGF, carrier net, or singular-value estimate is no longer an
-admissible route.
+Existing child minimality gives only one-replica `O(N)` endpoint bounds on
+internal edges and cannot prove the required replicated cross-edge
+derivative rigidity directly.  Another raw MGF, carrier net, or singular-
+value estimate is no longer an admissible route.

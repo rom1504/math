@@ -163,8 +163,9 @@ is equivalent to the scalar derivative rigidity
  \mathscr F_{s,T}'(0+)={t^2mn\over2}+o(N).}       \tag{CI.15}
 ```
 
-This is strictly less information than the complete bridge pressure or
-Gibbs table.
+This is formally one scalar derivative rather than the complete bridge
+pressure or Gibbs table.  No finite-precision generation theorem is proved,
+so this analytic reduction is not yet an operational information bound.
 
 At `s=1`, the overlap is recovered by a mixed derivative rather than by the
 value of the smoothing derivative:
@@ -224,10 +225,12 @@ If one instead smooths internal child edges, the analogue of CI.9 contains
 the internal replica overlap, and converting it to the bridge product
 overlap is precisely an unproved synchronization statement.
 
-This is a route-specific blockade, not a theorem that actual minimizers
-cannot satisfy CI.15.  It proves that the existing zero-bridge minimality
-value, annealed bound, and internal flip comparisons do not enter the exact
-interpolation at the precision or on the edge set required.  The actual
+This is a route-specific blockade to the presently available direct
+interpolation, not a theorem that actual minimizers cannot satisfy CI.15 or
+that a new synchronization argument cannot derive it.  It proves that the
+existing zero-bridge minimality value, annealed bound, and internal flip
+comparisons do not enter the exact interpolation directly at the precision
+or on the edge set required.  The actual
 order-eight pressure-minimizer collision in RP.7--RP.11 gives a finite sharp
 warning: two minimizer classes have identical complete radial pressure and
 fixed-size flip data but different first bridge-interaction curvature.

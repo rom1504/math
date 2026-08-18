@@ -170,15 +170,18 @@ contracted-temperature pressure minimizers
 balanced-orientation canonical rows with O(1) D_infinity
   + all hybrid/optimal conditional factors with O(1) D2
   --[PROVED: Theorem 37.27; conditional promotion: Theorem 37.33]-->
-sublinear canonical interaction or positive-density regular row resource
-  --[MISSING L_balanced-product-phase]-->
+raw fixed-negative-window cavity overlap
+  --[PROVED: Theorem 37.50 branch separator]-->
+sublinear reverse dependence or positive overlap obstruction
+  --[MISSING L_raw-negative-overlap]-->
 target-relevant power-saving no-gain or extensive dependence/retuning certificate
 ```
 
-**Current SML `L_balanced-product-phase`:** choose the bias-canceling orientation
-and filtration of Theorem 37.32.  For fixed target-reaching `beta,lambda`,
-decide from an optimizer-specific child statistic strictly smaller than the
-complete external-field/bridge landscape which of the following holds:
+**Previous SML `L_balanced-product-phase`:** choose the bias-canceling
+orientation and filtration of Theorem 37.32.  For fixed target-reaching
+`beta,lambda`, decide from an optimizer-specific child statistic strictly
+smaller than the complete external-field/bridge landscape which of the
+following holds:
 
 ```math
 \text{(i) }J_N=o(N)\text{ with a summable rate};\qquad
@@ -200,6 +203,23 @@ cluster tail forces `J=o(N)`, while linear `J` forces a linear tail.  This
 does not yet decide the product phase or prove that the all-order tail is
 operationally simpler than the full child Gibbs law.
 
+**Current SML `L_raw-negative-overlap`:** Theorem 37.50 applies in either
+orientation, so the prior target-relevance theorem permits it to replace the
+product-factor oracle, for the branch decision, by the raw integrated cavity
+overlap
+
+```math
+\widehat\rho_N^-(\lambda)={1\over\lambda mn}
+ \int_{-\lambda}^0E_{\widehat\Pi_s}\sum_a r_a^2\,ds,
+\qquad d\widehat\Pi_s\propto e^{sL}dU.
+```
+
+Prove `widehat rho_N^-=O(N^(-alpha))` for some `alpha>0` (or `o(1)`
+qualitatively), or turn positive overlap into a favorable reverse-product
+direction or an actual-minimizer obstruction.  The interval is fixed, its
+left endpoint is the actual negative-disorder law, and no cap, carrier
+alphabet, or replica-one derivative remains.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -208,7 +228,7 @@ operationally simpler than the full child Gibbs law.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | balanced canonical row has `O(1)` `D_infty`; every hybrid/optimal conditional row has `O(1)` `D_2`; the optimal product phase remains uncompressed | sublinear product target excess gives a product basin; otherwise target reach forces extensive reverse-product dependence, with coherent retuning separately tracked | every finite split for structure; no asymptotic target theorem | 3 for the actual component classification, 0 for deciding the balanced product phase | **RESET:** component escape closed; SML is `L_balanced-product-phase` plus target relevance |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | balanced canonical row has `O(1)` `D_infty`; every hybrid/optimal conditional row has `O(1)` `D_2`; one raw fixed-window scalar overlap replaces the full product oracle for the branch implication | `hat rho^-=o(1)` makes reverse dependence sublinear and selects coherent retuning when `J` is linear; extensive reverse dependence forces positive overlap | every finite split for structure; no asymptotic target theorem | 4 for the raw actual-law reduction, 0 for proving overlap decay/directional sufficiency | **NARROW RESET:** SML is `L_raw-negative-overlap`; Level 6 remains open |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -1694,6 +1714,128 @@ class and risks restating the desired parent optimization.
   This is a recurrence-scale implication and uses only moderate capped
   tilts.  It is one-sided and does not yet give a polynomially generated
   state across all directions or all square carriers.
+- **One fair-base overlap curve controls the complete carrier:** carrier-word
+  counting is unnecessary.  Every bounded-collision row product has
+  `D(P||U)<=2m log K`, so entropy duality and the fair-cube log-Sobolev
+  inequality give, for the universal cap `F=L wedge CN`,
+
+  ```math
+  \operatorname {range}_{P\in\mathcal P_K}E_PL
+  \le e^{-\Omega(N)}N^{3/2}
+   +2\left\{{2m\log K\over s}
+      +C_{LS}t^2mn\rho_N(S)s\right\},             \tag{PF.24.9}
+  ```
+
+  where
+
+  ```math
+  \rho_N(S)={1\over mn}\sup_{|u|\le S}
+  E_{\Pi_{u,F}}\sum_a r_a^2                       \tag{PF.24.10}
+  ```
+
+  is independent of all carrier coefficients.  Hence a power-saving bound
+  `rho_N(S_N)=O(N^-alpha)` on the matching window controls the **full**
+  recovered square-carrier pressure range by `O(N^(1-alpha/2))`.  Conversely,
+  a linear full-carrier range forces positive `rho_N` at one bounded tilt.
+  Qualitatively, it already suffices that `rho_N(S)->0` for every fixed
+  `S`, taking `N->infinity` before `S->infinity`, to make the full response
+  range `o(N)`.
+  For a given linear objective witness, either its row-additive entropy
+  difference is linear or this overlap certificate fires.  The theorem does
+  not find that witness or make positive overlap sufficient for retuning;
+  `rho_N` is an analytic response certificate, not yet an operational branch
+  decider.
+- **Exact carrier-independent interpolation target:** under the fair bridge
+  base, `rho_N` equals, up to `O(N^-1/2)` cavity error and an exponentially
+  small cap tail, one secant of the normalized derivative at zero Gaussian
+  cross-edge smoothing.  If `A_N(s)` is that derivative and `p_N(s)` the
+  retained cap mass, then
+
+  ```math
+  Q_N(s)={A_N(s)-p_N(s)\over s-1},
+  \qquad Q_N(1)=\partial_s(A_N-p_N)|_{s=1}.        \tag{PF.24.11}
+  ```
+
+  Replica number one cancels the overlap identically.  Existing minimality
+  provides only `O(N)` endpoint bounds on internal edges, whereas the missing
+  cross-edge derivative rigidity needs `o(N)` precision.  On growing tilt
+  windows the cap coefficient must satisfy both the carrier threshold and a
+  quantitative replica-moment slack; one may take
+  `C_N=O_beta,K(1+S_N)`.  Otherwise the fixed-cap plateau must be controlled
+  separately.
+- **The product optimum needs only one fixed negative window:** the previous
+  response-range theorem is stronger than the entropy-regularized variational
+  problem requires.  At parameter `-lambda`, Donsker--Varadhan duality
+  cancels the whole product entropy penalty and gives
+
+  ```math
+  0\le E_UL-V_\lambda^{\rm row}
+  \le C_{LS}\lambda t^2mn\widehat\rho_N^-(\lambda),           \tag{PF.24.12}
+  ```
+
+  where
+
+  ```math
+  \widehat\rho_N^-(\lambda)={1\over\lambda mn}
+  \int_{-\lambda}^0
+  E_{\widehat\Pi_s}\sum_a r_a^2\,ds,
+  \qquad d\widehat\Pi_s\propto e^{sL}dU.         \tag{PF.24.13}
+  ```
+
+  Hence `hat rho_N^-=O(N^-alpha)` gives the sharper optimized-value error
+  `O(N^(1-alpha))` on one fixed negative window.  No cap is needed: negative
+  tilts suppress the high-pressure tail, and the endpoint `s=-lambda` is the
+  actual negative-disorder escort.  Moreover,
+
+  ```math
+  J-I^\leftarrow=\lambda\{\mathcal G_L(r)-E_UL\}+o(N)           \tag{PF.24.14}
+  ```
+
+  whenever `hat rho_N^-=o(1)`.  More directly,
+
+  ```math
+  I^\leftarrow
+  \le C_{LS}\lambda^2t^2mn\widehat\rho_N^-(\lambda).           \tag{PF.24.14a}
+  ```
+
+  Therefore extensive reverse dependence forces positive integrated
+  overlap, whereas `hat rho_N^-=o(1)` together with `J>=eta N` selects
+  `J-I^leftarrow>=eta N-o(N)`, the coherent-retuning branch.  Positive
+  overlap alone is not sufficient for a favorable gain.
+  In the fair-base smoothing coordinates this integrated overlap is simply
+
+  ```math
+  {1\over\lambda}\int_{-\lambda}^0
+  {\widehat A_N(s)-1\over s-1}\,ds+O(N^{-1/2}),  \tag{PF.24.14b}
+  ```
+
+  so the branch separator needs neither a mixed derivative at replica one
+  nor truncation.
+- **Exact centering and its sharp ceiling:** if `p^*` is the optimal reverse
+  row product, then its likelihood score relative to the actual escort is
+  exactly
+
+  ```math
+  \log(dp^*/dq)=I^\leftarrow+\lambda L_\perp,
+  \qquad E_{p^*}[L_\perp\mid B_i]=0,
+  ```
+
+  and
+
+  ```math
+  I^\leftarrow=\int_0^\lambda(\lambda-s)
+       \operatorname {Var}_{\nu_s}(L_\perp)\,ds.  \tag{PF.24.14c}
+  ```
+
+  This is the unique exact row-additive centering, but it requires the
+  unknown `p^*` and is therefore not a lower-information decider.  Two sharp
+  falsifiers delimit any converse: a row-factorized binary-channel law has
+  positive raw negative overlap with `I^leftarrow=0`, while a full-parity
+  landscape has unit normalized **centered** edge mass at every tilt but
+  `I^leftarrow=Theta(N^-1)`.  The latter is not an actual-child pressure; it
+  proves that an actual-child directional theorem must exclude high-row-order
+  concentration or control the negative tail, rather than merely center the
+  overlap.
 - **Optimizer-specific scope:** the spike word and direction are exactly the
   two children's switching gauges.  A switching-invariant optimizer statistic
   cannot output a gauge-covariant favorable direction, and an exact order-two
@@ -1711,35 +1853,55 @@ class and risks restating the desired parent optimization.
 - **Previous SML `L_balanced-product-phase`:** select (i), (ii), or (iii) from
   a low-information actual-child observable and prove the balanced
   orientation target-relevant.
-- **Current SML — moderate-pressure actual-child quotient:** target
+- **Current SML `L_raw-negative-overlap`:** target
   orientation, factor representation, positivity, row entropy, the complete
-  superlinear pressure tail, generic finite-carrier contraction, and raw
-  all-tilt concentration are no longer unknown.  For `L wedge CN`, construct
-  from polynomially many actual-child observables an `o(N)`-accurate response
-  quotient for every fixed-degree square-carrier product, or prove a
-  power-saving compact-tilt overlap bound and extend it beyond the spiked
-  test; alternatively give a scalable actual-minimizer collision.  For the
-  spiked family, (PF.24.8) is the exact recurrence-scale sufficient lemma,
-  but the overlap curve still ranges over exponentially many directions and
-  its decay is unproved.  The remaining formal tensor has
-  `(sum_(a<=2d) binom(n,a))^m` entries because it may couple arbitrarily many
-  rows.  Listing it, applying a generic SDPI, or using a full pressure oracle
-  is not child closure.
-- **Progress classification:** **RESET ON TARGET RELEVANCE AND PRODUCT-FACTOR
-  INFORMATION; LEVEL 5, NOT LEVEL 6.**  The target-orientation requirement is
+  superlinear pressure tail, the carrier alphabet, generic channel
+  contraction, raw all-tilt concentration, and growing-window query entropy
+  are no longer unknown.  Prove for actual minimizing children that
+
+  ```math
+  \widehat\rho_N^-(\lambda)=O(N^{-\alpha})        \tag{PF.24.15}
+  ```
+
+  for some `alpha>0` (or at least `o(1)` for the qualitative phase) on the
+  fixed interval `[-lambda,0]`; equivalently prove the corresponding
+  **integrated ordinary** raw fair-base smoothing-secant rigidity.
+  Alternatively,
+  prove instead that positive integrated overlap yields a favorable
+  reverse-product direction using an optimizer-specific anti-high-row-order
+  or negative-tail theorem, or exhibit an actual-minimizer sequence showing
+  the obstruction.  Exact evaluation of the integral still invokes the raw
+  pressure/Gibbs law, so no operational finite-state claim is made.
+- **Progress classification:** **NARROW RESET ON TARGET RELEVANCE,
+  PRODUCT-FACTOR INFORMATION, AND THE NEGATIVE-OVERLAP BRANCH SEPARATOR;
+  LEVEL 5, NOT LEVEL 6.**  The target-orientation requirement is
   proved away, and a full exponential product-factor search is uniformly
   replaced by exact bounded-row-degree diffuse witnesses with an explicit
   restricted variational separator.  The remaining obligation is strictly
   cross-row and strictly narrower on the factor side.  Uniform clipping now
-  also removes the complete superlinear pressure tail on the query side.
+  removes the complete superlinear pressure tail, while entropy duality
+  reduces the **optimized** full-product value to one fixed-window scalar
+  overlap integral and the fair baseline.  Conditional on linear `J`, its
+  vanishing selects coherent retuning; extensive reverse dependence forces
+  it to stay positive.
   There is no bound on `J`, no summable recurrence error, and no Level-6
   transfer.  The finite-net/SDPI and all-tilt raw-pressure implementations
   are now frozen by scalable no-go theorems; they are not to be iterated.
 - **Decision:** end this optimizer-response campaign after the narrow RESET
   and promote exactly one rare-event/renormalization campaign.  Its theorem
-  target is a coarse-graining of the **capped** actual-child pressure whose
-  retained conditional two-replica overlap satisfies (PF.24.8), first for
-  all spike directions and then for the recovered carrier.  It must exploit
-  optimizer-specific replacement or renormalization of moderate level sets;
-  another tail estimate, raw MGF, carrier net, or channel coefficient bound
-  is a strike.
+  target is (PF.24.15), approached through the geometric Boolean-noise curve
+
+  ```math
+  K_s(u)=\log E_U\exp\{sP_uL\},
+  \qquad -\lambda\le s\le0,
+  ```
+
+  whose exact positive dissipation integrates the fair-to-escort cumulant
+  and weights a Walsh mode by its lifetime rather than once per incident
+  edge.  The campaign must prove that this curve is operationally simpler
+  for actual children (for example by a finite noise-scale synchronization
+  or replacement theorem), transfer internal-child rigidity at `o(N)`
+  precision, and exclude the high-row-order parity ceiling; otherwise it
+  must produce a scalable positive-overlap minimizer sequence and classify
+  its product gain.  Merely rewriting the raw MGF, adding another unweighted
+  overlap, or using a carrier net/channel coefficient is a strike.
