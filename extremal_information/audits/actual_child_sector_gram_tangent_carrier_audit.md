@@ -159,3 +159,249 @@ new finite response carrier: a genuinely sub-landscape child statistic
 computes the first nonzero cross-row interaction response.  It is not yet a
 physical-scale carrier, a finite-bit compression theorem, or a reusable
 composition state.
+
+---
+
+# Addendum: audit of Corollary SQ.4 and Theorem SQ.5
+
+## Addendum verdict
+
+**SQ.4 passes with its stated tangent-only qualification.  The measure
+identities and KL directions in SQ.5 also pass.**  SQ.5 needs a scope
+correction: conditioning on `c` exhausts the orientation dependence of the
+**canonical row product**, not the orientation dependence of the full joint
+escort.  Moreover, neither `c` nor the conditional kernel is presently a
+proved low-information state.  Thus “orientation-exhaustive” is valid only
+with “canonical-row” inserted, and “strictly narrower” is not yet justified
+in the project's information-footprint sense.
+
+## 4. Check of Corollary SQ.4
+
+For each sector, `C_C^a=E_(mu_(C,a,t))XX^T` is positive semidefinite.  Hence
+
+```math
+|G_C(a,b)|
+\le\sqrt{G_C(a,a)G_C(b,b)}\le g_C,
+```
+
+and
+
+```math
+d+2G_C(a,b)=\operatorname {tr}(C_C^aC_C^b)
+```
+
+is nonnegative.  It is at most `d+2g_C`.  Applying these facts to the
+correct formula (SQ.23), whose sector weights sum to one, gives exactly
+
+```math
+0\le K_\epsilon\le g_A(n+2g_D).
+```
+
+There is no missing symmetric factor.  The asymmetry comes from the
+`i<k` versus ordered `(j,l)` convention already checked above.
+
+Let `g=max(g_A,g_D)`.  Since `n<=N`,
+
+```math
+K_\epsilon\le g(N+2g).
+```
+
+Thus `K_epsilon>=eta N^3` forces `g>=c_eta N^(3/2)` for all sufficiently
+large `N`.  In a witnessing sector,
+
+```math
+\operatorname {tr}C^2=d+2g_C,
+\qquad
+\lambda_{\max}(C)
+\ge{\operatorname {tr}C^2\over\operatorname {tr}C},
+```
+
+and `d<=N` yields an order-`sqrt(N)` eigenvalue.  Global spin-flip symmetry
+gives `E X=0`, so this eigenvalue is indeed the variance of a unit-vector
+aggregate spin observable.  The constant need not depend on the aspect
+ratio for this bare implication, although retaining a comparability
+parameter is harmless.
+
+At `u=beta/sqrt(N)`, `u^4K=o(N)` whenever `K=o(N^3)`.  This controls only
+the formal leading tangent term.  The `O(u^6)` remainder is not uniform in
+order, so “harmless” must continue to be read as “harmless at tangent
+coefficient level,” exactly as the source's final paragraph warns.
+
+## 5. Check of the fibre conditional law
+
+On a nonempty fibre `c(b)=z`, (SQ.5) gives
+
+```math
+{dr_\epsilon\over dU_n}(b)
+\propto s(b)^{-\lambda}(1+\theta_\epsilon z)^{-\lambda}.
+```
+
+The second factor is positive and constant on the fibre.  It therefore
+cancels from the conditional normalization, leaving exactly `kappa_z` in
+(SQ.35).  Since the canonical bridge law is the row product
+`r_epsilon^(tensor m)` and the event `C_i=z_i` is rowwise, conditioning
+preserves the product and proves
+
+```math
+r_\epsilon^{\otimes m}(dB\mid\mathbf C)
+=\bigotimes_i\kappa_{C_i}(dB_i).
+```
+
+The kernel depends on `D,t,u,lambda` through `(s,c)`, but not on the
+orientation `epsilon` or on the left child `A`.  This orientation
+independence is exact.
+
+All finite-temperature likelihoods are strictly positive.  Consequently
+every contrast vector with positive canonical mass also has positive full
+escort mass, so no hidden support convention is needed in the conditional
+KL below.
+
+## 6. Check of the KL directions and scale alternative
+
+CR.6 defines the canonical error in the direction
+
+```math
+\mathcal J_\epsilon
+=D(r_\epsilon^{\otimes m}\Vert q_\epsilon).
+```
+
+Apply the KL chain rule to the deterministic map
+`B -> boldsymbol C`.  With `R_epsilon` the image of the first argument and
+`Q_epsilon` the image of the second, the exact direction and averaging law
+are
+
+```math
+D(R_\epsilon\Vert Q_\epsilon)
++E_{R_\epsilon}
+ D(r_\epsilon^{\otimes m}(\cdot\mid\mathbf C)
+   \Vert q_\epsilon(\cdot\mid\mathbf C)).
+```
+
+Substitution of the conditional product kernel proves (SQ.37).  The source
+has not reversed either KL, and the expectation correctly uses
+`R_epsilon`, not `Q_epsilon`.  Both summands are nonnegative, so the
+`eta N/2` alternative follows immediately and has the correct scale.
+
+The first term is a data-processing lower bound on the **canonical**
+reverse-product error `J_epsilon`.  It should not be confused with the
+globally optimized reverse product projection `I^leftarrow`.
+
+## 7. Required information-footprint correction
+
+The exact disintegration does not yet prove that the residual is a strict
+low-information reduction.
+
+1. SQ.2 proves that `c` is minimal for the binary row experiment only when
+   `\gamma_A\ne0`.  When `gamma_A=0`, the two canonical row escorts are
+   identical and the minimal orientation statistic is trivial, even though
+   SQ.5 may still condition on the nonconstant function `c`.
+2. A scalar-valued statistic need not have a small alphabet.  Here
+   `c(b)=c(-b)`, but it may still have as many as `2^(n-1)` distinct values
+   and can in principle identify a projective row word.  Across `m` rows it
+   may retain order `mn` bits, the leading bridge information scale.
+3. The reference kernel `kappa_z` requires the values of `s(b)` inside
+   every fibre.  Thus an exact model description for the second term uses
+   the full row tables `(s,c)`, not only the range of `c`.
+4. The conditional full escort
+   `q_epsilon(.|boldsymbol C)` can remain orientation-dependent through the
+   joint likelihood ratio `p_+/p_-` in (SQ.19).  The theorem exhausts
+   rowwise/canonical orientation, but it does not exhaust joint sector
+   orientation.
+5. Computing `Q_epsilon` or its conditional law can still require the full
+   bridge escort.  No compressed evaluation theorem is supplied by the KL
+   chain rule itself.
+
+Therefore the rigorous conclusion is:
+
+> SQ.5 is an exact canonical-row sector disintegration.  It gives a useful
+> high-transport data-processing certificate or a conditional residual,
+> but it does not by itself prove that either branch has a smaller
+> information footprint than the original joint bridge response.
+
+With this scope correction, the theorem is mathematically sound and the
+linear-gap dichotomy is exact.
+
+## 8. Audit of Theorem SQ.6
+
+**The constants and conditional max-divergence claims in SQ.6 pass.**  The
+nonconstant part of the row log-likelihood ratio is
+
+```math
+f(c)=\lambda\{\log(1+\theta_-c)-\log(1+\theta_+c)\}.
+```
+
+It is monotone.  Evaluating its limiting endpoint difference and using
+`atanh(theta_epsilon)=gamma_D+epsilon gamma_A` gives
+
+```math
+f(1)-f(-1)
+=2\lambda\{\operatorname {atanh}\theta_-
+            -\operatorname {atanh}\theta_+\}
+=-4\lambda\gamma_A.
+```
+
+The actual contrast range lies inside `(-1,1)`, so
+
+```math
+\operatorname {osc}\ell\le4\lambda|\gamma_A|.
+```
+
+There is no missing factor two.
+
+For every signing, positivity of the sector sums gives
+`|gamma_A|<=tQ(A)`.  If `A` is an exact pressure minimizer of order `m`, a
+spin attaining `|H_A|=Q(A)` and its distinct global negative contribute
+
+```math
+F_A(t)=\log E_x\cosh(tH_A(x))\ge tQ(A)-m\log2.
+```
+
+Annealed averaging and `log cosh t<=t^2/2` give
+
+```math
+F_A(t)\le{m\choose2}\log\cosh t
+        \le {m(m-1)t^2\over4}.
+```
+
+At `t=beta/sqrt(N)` and `m<=N`, these inequalities prove exactly
+
+```math
+|\gamma_A|
+\le N\left(\log2+{\beta^2\over4}\right).
+```
+
+Thus (SQ.40) and the safe state-count upper bound (SQ.41) are correct.
+
+On a quantization cell of width at most `eta`, let
+`L=dr_+/dr_-`.  Then `max L/min L<=e^eta`, while
+
+```math
+{d r_+(\cdot\mid T)\over d r_-(\cdot\mid T)}
+={L\over E_{r_-(\cdot\mid T)}L}.
+```
+
+The denominator lies between the cellwise minimum and maximum.  Hence this
+conditional density ratio lies in `[e^(-eta),e^eta]`, proving both
+directions of (SQ.42).  Conditioning a row product on its full row-label
+vector again leaves a product, so tensorization gives the stated two-sided
+`D_infty` bound `m eta`.  For `eta_N=o(1)` this is `o(N)` because `m<=N`.
+
+The theorem's information conclusion needs the following precise reading.
+
+- It constructs a polynomial-size **per-row** alphabet when `beta,lambda`
+  are fixed and `1/eta` is polynomial.  The full `m`-row label vector can
+  still have `(O(N/eta))^m` values and `O(m log(N/eta))` description length.
+- Constructing `T_eta` requires the row likelihood-ratio/contrast table;
+  SQ.6 does not compute that map from a smaller child state.
+- Label distributions can retain linear response divergence.  SQ.6 makes
+  the two canonical conditional reference kernels close after the labels
+  are revealed; it does not make the two full conditional escorts close.
+- Consequently it rules out an exponentially large **per-row canonical
+  orientation alphabet** as necessary for conditional accuracy, not
+  orientation-dependent joint complexity or the contrast-image dynamics.
+
+With those qualifications, the source's explicit disclaimers are
+substantially correct.  Phrases such as “orientation-blind within-cell
+residual” should still be replaced by “canonical-orientation-insensitive
+reference kernel,” because `q_epsilon(.|T_eta)` may retain joint sector
+orientation.
