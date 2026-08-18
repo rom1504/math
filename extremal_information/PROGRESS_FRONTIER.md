@@ -1562,10 +1562,76 @@ class and risks restating the desired parent optimization.
      physical bit-Lipschitzness makes linear row degrees contribute only
      `o(N)` to bounded-`L^2` products.  This kills exact finite-Walsh closure,
      not macroscopic optimized-value closure;
-  4. square-root projection gives an exact nonnegative degree-`2d` carrier
-     and `O(N/sqrt(d))` pressure recovery, but entropy recovery remains open.
-     Hellinger, bounded KL, and bounded square-root Dirichlet energy alone are
-     insufficient, as an explicit polynomial spike shows.
+  4. orthogonal square-root projection gives an exact nonnegative degree-`2d`
+     carrier and `O(N/sqrt(d))` pressure recovery, but Hellinger, bounded KL,
+     and bounded square-root Dirichlet energy alone do not control entropy.
+     This is a blockade for that approximation norm, not for polynomial
+     carriers: the `L^4` Jackson theorem below closes it.
+- **Stronger exact-degree recovery theorem:** Hahn--Banach duality, the scalar
+  cube Riesz transform, and the exact `L^(4/3)` tail heat estimate give, for
+  every weak-coordinate optimal factor `f`, a degree-`d` polynomial `g_d`
+  satisfying
+
+  ```math
+  \|\sqrt f-g_d\|_4=O_{\beta,\lambda}(d^{-1/3}).
+  ```
+
+  The normalized square `q_d=g_d^2/Eg_d^2` is a literal nonnegative
+  degree-`2d` density, has a dimension-free `L^2` bound, and approximates `f`
+  in `L^2` at the same rate.  Consequently both row entropy and the exact
+  actual pressure telescope, giving
+
+  ```math
+  0\le V^{(d,{\rm sq})}-V^{\rm row}
+  \le m\eta_d^{\rm sq},
+  \qquad
+  \eta_d^{\rm sq}=O_{\beta,\lambda}(d^{-1/12}\log d). \tag{PF.24.3}
+  ```
+
+  Every extensive product phase is therefore visible at one fixed literal
+  row Walsh degree.  High row degree, positivity repair, collision norm, and
+  entropy uniform integrability are all removed from the SML.
+- **Sharp cross-row ceiling at degree two:** the explicit diffuse densities
+
+  ```math
+  q_{v,y}(b)={(1+v\langle y,b\rangle/\sqrt n)^2\over2}
+  ```
+
+  have fixed `L^2` norm, identical entropy, and rank-one mean, but their
+  products expose a `2^m`-point response of the exact actual-child pressure.
+  The row-index Walsh channels are orthogonal and the fully active fair-row
+  test has norm one.  Physical bit-Lipschitzness gives query Dirichlet energy
+  `O(N)` and typical `O(sqrt(N))` fluctuations, but does not exclude a rare
+  linear minimum.
+- **Natural-channel correction and exact remaining entropy:** with
+  `dmu_y=e_y dU_n` and `a=z_y/e_y`, the same response is a conditional
+  expectation through a strict binary channel.  If
+
+  ```math
+  \kappa_n^2=E_{\mu_y}a^2
+  =E_U{2z_y^2\over1+z_y^2},
+  ```
+
+  then `kappa_n^2 -> 0.6886409151...<1` and
+
+  ```math
+  \sum_{S\ne\varnothing}\kappa_n^{-2|S|}\widehat R(S)^2
+  \le \operatorname {Var}_{\mu_y^{\otimes m}}L.     \tag{PF.24.4}
+  ```
+
+  Thus every individual high-row-order channel is exponentially attenuated;
+  what survives is precisely the entropy of the `2^m` rare query extrema.
+  An actual-child subgaussian proxy `sigma_N^2=o(N)` under this explicit
+  product disorder would force `range(R)=o(N)`.  Known identities provide
+  only the leading `Theta(N)` proxy.
+- **Optimizer-specific scope:** the spike word and direction are exactly the
+  two children's switching gauges.  A switching-invariant optimizer statistic
+  cannot output a gauge-covariant favorable direction, and an exact order-two
+  optimizing pair has zero known optimizer defects but a positive first even
+  query coefficient.  Conversely, actual thermal minimality bounds the whole
+  quartic temperature contribution to `O(sqrt(N))` on balanced splits.  Any
+  linear spike excursion must therefore be higher-order/nonperturbative; no
+  scalable actual-minimizer excursion was found.
 - **Precision correction:** the old `102`-record projective/tilted-path run
   used default `mpmath` precision with an invalid minimizer tie tolerance;
   only `36` records survive corrected minimizing-child classification.  Its
@@ -1575,26 +1641,31 @@ class and risks restating the desired parent optimization.
 - **Previous SML `L_balanced-product-phase`:** select (i), (ii), or (iii) from
   a low-information actual-child observable and prove the balanced
   orientation target-relevant.
-- **Current SML — macroscopic finite-degree child closure:** target
-  orientation and factor representation are no longer unknown.  For one
-  fixed degree and norm, derive an `O(N)`-accurate bound or generation rule
-  for `I_(d,K_0)^leftarrow` from polynomially many actual-child observables,
-  or give a scalable actual-minimizer collision at fixed density.  The state
-  must control the coherent low/mesoscopic row-degree response across a
-  positive density of rows; exact high row degree is now excluded as the
-  macroscopic obstruction.  A point-pressure oracle is enough to verify a
-  declared branch-(iii) witness but does not count as child closure.
+- **Current SML — bounded-row-degree cross-row closure:** target orientation,
+  factor representation, positivity, and row entropy are no longer unknown.
+  At one fixed literal row degree, derive an `O(N)`-accurate bound or
+  generation rule for the jointly optimized square-polynomial response from
+  polynomially many actual-child observables, or give a scalable
+  actual-minimizer collision at fixed density.  The remaining formal tensor
+  has `(sum_(a<=2d) binom(n,a))^m` entries because it may couple arbitrarily
+  many rows.  The missing theorem must synchronize or truncate that cross-row
+  order while preserving cancellation.  Listing the tensor or using a full
+  pressure oracle is not child closure.
 - **Progress classification:** **RESET ON TARGET RELEVANCE AND PRODUCT-FACTOR
   INFORMATION; LEVEL 5, NOT LEVEL 6.**  The target-orientation requirement is
   proved away, and a full exponential product-factor search is uniformly
-  replaced by fixed-degree diffuse witnesses with an explicit branch
-  selector.  The remaining child-response closure is strictly narrower.
+  replaced by exact bounded-row-degree diffuse witnesses with an explicit
+  branch selector.  The remaining child-response closure is strictly
+  cross-row and strictly narrower.
   There is no bound on `J`, no summable recurrence error, and no Level-6
   transfer.  The exact-response and square-entropy failures are scoped
   subroute falsifiers, not a campaign strike.
-- **Decision:** run exactly one macroscopic finite-degree child-closure
-  campaign.  It must either derive the restricted value from a polynomial
-  actual-child state with a fixed-density/power-saving margin, or produce a
-  scalable robust actual-child obstruction.  If it yields only another
-  pressure-oracle reformulation, freeze adversarial statistical mechanics
-  and promote rare-event/renormalization.
+- **Decision:** run exactly one bounded-row-degree rare-extreme campaign.
+  Extend the exact natural-channel contraction from the binary spike to a
+  finite-accuracy net of the square-polynomial optimal-factor carrier, and
+  prove either a power-saving chaining/superconcentration bound from a
+  polynomial actual-child state or a scalable robust actual-minimizer
+  obstruction.  Per-channel attenuation without control of query entropy is
+  not progress.  If the campaign yields only another tensor listing or
+  pressure-oracle reformulation, freeze adversarial statistical mechanics and
+  promote rare-event/renormalization.

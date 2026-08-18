@@ -4014,3 +4014,84 @@ bounds every degree-`k` row response by `O(k^(-1/2))`; linear row degrees
 contribute only sublinear total pressure to bounded-`L^2` carriers.  The
 example separates exact algebraic information from macroscopic response
 information and motivates a robust, rather than exact, child-closure lemma.
+
+## Example 203: `L^4`, not Hellinger distance, is stable under squaring
+
+Let `f` be a weak-coordinate row density and `r=sqrt(f)`.  Orthogonal
+`L^2` projection of `r` gives a polynomial square close in Hellinger distance,
+but a degree-`d` atom spike shows that Hellinger error `Theta(d^(-1/2))` and
+bounded square-root Dirichlet energy can coexist with entropy tending to
+`log 2`.
+
+Best `L^4` approximation behaves differently.  Cube tail smoothing and the
+Riesz transform give a degree-`d` polynomial `g_d` with
+
+```math
+\|r-g_d\|_4=O(d^{-1/3}).
+```
+
+Then `g_d^2/Eg_d^2` is an exact nonnegative degree-`2d` density, stays in a
+fixed `L^2` ball, and converges to `f` in `L^2`.  Its entropy and every
+physical centered row query converge uniformly.  The spike cannot evade this
+statement because its square-root perturbation has `L^4` norm of order
+`2^(d/4)/sqrt(d)`.  This is a concrete instance of choosing the approximation
+norm before, rather than after, a nonlinear feature lift.
+
+## Example 204: diffuse degree-two rows expose an unattenuated Boolean query
+
+For `y in {+-1}^n`, set `z_y(b)=<y,b>/sqrt(n)` and
+
+```math
+q_{v,y}(b)={(1+v z_y(b))^2\over2},\qquad v\in\{+-1\}.
+```
+
+This is a nonnegative unit-mean row density of literal Walsh degree two and
+fixed `L^2` norm.  For any exact two-child bridge pressure `L`, products of
+these densities define a Boolean response `R_(L,y)(v)` on `v in {+-1}^m`.
+Its Walsh channel indexed by `S subseteq [m]` pairs `L` with one odd linear
+mode in every row of `S` and one even quadratic mode in every other row.
+These channels are orthogonal, and the fully active fair-row test has norm
+one.  Under the natural carrier marginal, however, the same response is a
+strict binary channel with contraction `kappa_n<1` per active row.  Hence
+individual high-row-order coefficients are exponentially attenuated while
+the `2^m` query entropy remains.
+
+Thus fixed row degree does not by itself suppress the extremal cross-row
+problem.  Physical bit-Lipschitzness makes typical query fluctuations only
+`O(sqrt(N))`, but it does not rule out a rare linear minimum.  The example is
+an exact algebraic ceiling on child closure, not evidence that actual
+minimizing children realize such a linear excursion.
+
+## Example 205: zero optimizer slack leaves an even switching response
+
+For two positive order-two children, every edge-replacement, contraction,
+deletion, reinsertion, and neutral-extension optimality defect vanishes.
+Nevertheless the degree-two spiked response has
+
+```math
+\widehat R(\{1,2\})={1\over4}\log
+ {1+2\rho^2r^2+r^4\over1-2\rho^2r^2+r^4}>0.
+```
+
+The query word and spike direction are precisely independent switching
+gauges of the two children.  All switching-invariant optimizer data are
+constant on that orbit, so they cannot select its favorable covariant
+direction.  This is a finite no-go for optimizer-slack coercion, not an
+asymptotic response-range obstruction.
+
+## Example 206: actual minimality kills the first spiked temperature mode
+
+For fixed children, the first nonconstant coefficient of the auxiliary
+temperature expansion of the spiked response is quartic.  Its exact
+difference between query words `v,w` is
+
+```math
+{1\over2}(\|Av\|_2^2-\|Aw\|_2^2)
++{2\epsilon H_D(y)\over n}(H_A(v)-H_A(w)).
+```
+
+For contracted-temperature minimizing children, the thermal comparison
+bound on `Q(A)` and polarization make its complete physical-scale range only
+`O(sqrt(N))` on balanced splits.  Thus a linear spiked response, if one
+exists, must arise at sixth or higher auxiliary order; the theorem supplies
+no bound on the full physical remainder.

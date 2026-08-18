@@ -2957,3 +2957,39 @@ Therefore exact response closure is both impossible in a small linear bank
 and stronger than the problem needs.  The correct remaining question is a
 robust `O(N)`-precision closure theorem for the optimized carrier value.  An
 exact algebraic basis obstruction does not by itself falsify such a theorem.
+
+## 167. Approximate the square root in the norm required after nonlinear lifting
+
+Orthogonal `L^2` approximation of `sqrt(f)` controls Hellinger distance after
+squaring but can lose entropy through rare spikes.  The correct approximation
+norm is `L^4`: it turns squaring into an `L^2`-stable operation, hence preserves
+both entropy and every centered row pressure query.
+
+On the cube, weak log coordinates give a dimension-free `L^4` fractional
+gradient.  Dual tail heat smoothing then gives a degree-`d` `L^4` approximant
+at rate `d^(-1/3)`.  This produces an exact nonnegative bounded-row-degree
+carrier with fixed collision norm.  The principle is broader than this model:
+when a nonlinear lift will be applied to a compressed feature, approximation
+must be performed in the preimage norm that controls the lifted information
+functional.
+
+For the actual-child problem this eliminates high row Walsh degree,
+positivity repair, and row entropy as candidate macroscopic resources.  The
+remaining information can only be coherent across an unbounded number of
+rows at fixed row degree.
+
+## 168. Component degree, channel contraction, and extremal order are distinct
+
+A carrier can have literal degree two in every bridge row, fixed collision
+norm, and a rank-one mean, yet its product response can expose every Walsh
+order on the row-index cube.  In the fair-row coordinates of Theorem 37.40,
+the fully active test has unit `L^2` norm.  Recentring at the carrier's natural
+marginal reveals a strict binary-channel contraction `kappa<1` per active
+row, but even exponential attenuation of each coefficient does not control
+the minimum over exponentially many query words.
+
+Accordingly, a useful finite-degree closure theorem needs two resources in
+addition to component degree: the contraction of one response channel and
+the entropy or synchronization of the complete query family.  Row degree,
+global row order, and extremal query complexity are separate notions of
+information complexity.

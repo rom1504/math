@@ -18847,3 +18847,253 @@ That spike is not a projection instance, so it is a barrier to the available
 bounds rather than a falsifier of a projection-specific entropy theorem.
 See
 [`audits/actual_child_square_root_polynomial_carrier_audit.md`](audits/actual_child_square_root_polynomial_carrier_audit.md).
+
+### Theorem 37.39 (exact square-polynomial recovery of the product shadow)
+
+Let `f` be a row density with `||f||_2<=K` and
+
+```math
+\operatorname {osc}_{x_j}\log f\le {A\over\sqrt n}.
+```
+
+There is a real Walsh polynomial `g_d` of degree at most `d` such that
+
+```math
+\boxed{
+\|\sqrt f-g_d\|_4\le C_{A,K}(d+1)^{-1/3}.}        \tag{37.110}
+```
+
+Indeed, Hahn--Banach duality reduces `L^4` distance from the degree-`d`
+space to an `L^(4/3)` Walsh-tail test.  Lust--Piquard's scalar Riesz
+inequality controls `Delta^(1/2)sqrt(f)` by the weak-coordinate gradient,
+while the Eskenazis--Ivanisvili tail heat estimate at `p=4/3` gives
+
+```math
+\|\Delta^{-1/2}h\|_{4/3}
+\le C(d+1)^{-1/3}\|h\|_{4/3}.                     \tag{37.111}
+```
+
+Normalize `q_d=g_d^2/E_Ug_d^2`.  Then `q_d` is a nonnegative probability
+density of literal row Walsh degree at most `2d`, and
+
+```math
+\boxed{
+\|q_d-f\|_2\le C_{A,K}(d+1)^{-1/3},
+\qquad \|q_d\|_2\le K'_{A,K}.}                   \tag{37.112}
+```
+
+The fixed `L^2` bound makes row entropy uniformly continuous and closes the
+blockade in Theorem 37.38.  Applied sequentially to the globally optimal
+product factors of any actual minimizing-child pressure, it yields a
+child-independent square-polynomial carrier class and
+
+```math
+\boxed{
+0\le V^{(d,{\rm sq})}-V^{\rm row}
+\le m\eta_d^{\rm sq},
+\qquad
+\eta_d^{\rm sq}=O_{\beta,\lambda}(d^{-1/12}\log d).} \tag{37.113}
+```
+
+The corresponding restricted reverse projection differs from the exact one
+by at most `lambda m eta_d^sq`.  Thus all extensive product phases are
+visible at a fixed literal row Walsh degree; positivity, entropy, and high
+row degree are no longer possible obstructions.  The response tensor may
+still involve arbitrarily many rows and have
+`(sum_(a<=2d) binom(n,a))^m` entries.  No polynomial child-side closure or
+Level-6 recurrence follows.
+
+The proof, imported hypotheses, and adversarial checks are in
+[`audits/actual_child_square_polynomial_l4_carrier_audit.md`](audits/actual_child_square_polynomial_l4_carrier_audit.md).
+
+### Theorem 37.40 (degree-two carriers expose the complete fair-row tensor)
+
+Fix `y in {+-1}^n`, put `z_y(b)=<y,b>/sqrt(n)`, and define
+
+```math
+q_{v,y}(b)={(1+v z_y(b))^2\over2},
+\qquad v\in\{+-1\}.                               \tag{37.114}
+```
+
+These are nonnegative unit-mean row densities of degree two, with
+
+```math
+\|q_{v,y}\|_2^2={5\over2}-{1\over2n},
+\qquad E_{q_{v,y}}B={v y\over\sqrt n},
+\qquad \operatorname {Cov}_{q_{v,y}}(B)
+=\left(1-{1\over n}\right)I.                     \tag{37.115}
+```
+
+Their entropy is independent of `v,y`.  For the exact actual-child pressure
+`L`, set
+
+```math
+R_{L,y}(v)=E_{\otimes_iq_{v_i,y}}L,
+\qquad v\in\{+-1\}^m.
+```
+
+Then its query-cube Walsh coefficients are
+
+```math
+\boxed{
+\widehat R_{L,y}(S)=E_{U_B}\left[
+L(B)\prod_{i\in S}z_y(B_i)
+    \prod_{i\notin S}{1+z_y(B_i)^2\over2}
+\right].}                                        \tag{37.116}
+```
+
+The channel functions in (37.116) are mutually orthogonal, and the fully
+active channel has norm exactly one in `L^2(U_B)`.  Hence literal row degree
+two does not truncate the `2^m` cross-row response tensor in fair-row
+coordinates.  Theorem 37.42 identifies a strict contraction after changing
+to the carrier's natural probability geometry.  At physical scaling,
+
+```math
+|R(v)-R(v^{(i)})|\le2\beta\sqrt{n/N},
+\qquad
+\sum_S|S|\widehat R(S)^2\le{\beta^2mn\over N}.   \tag{37.117}
+```
+
+Thus typical query fluctuations are only `O(sqrt(N))`, while a linear rare
+minimum is not excluded among `2^m` coherent products.  This is an exact
+actual-pressure algebra ceiling, not a fixed-density obstruction: no theorem
+currently proves that the range is linear for actual minimizing children.
+See
+[`audits/actual_child_fixed_degree_spiked_response_tensor_audit.md`](audits/actual_child_fixed_degree_spiked_response_tensor_audit.md).
+
+### Theorem 37.41 (the spiked query is a two-sided switching orbit)
+
+For actual optimizing children `A,D`, let `A^v=diag(v)A diag(v)` and
+`D^y=diag(y)D diag(y)`.  The degree-two response in Theorem 37.40 has the
+exact representation
+
+```math
+\boxed{
+R_{A,D;y}(v)
+=E_{P_{+,\mathbf1}}L_{A^v,D^y}(B).}              \tag{37.118}
+```
+
+Every child on this orbit is again an exact contracted-temperature
+minimizer, with all sector normalizations preserved.  Global bridge
+inversion also gives
+
+```math
+R_{A,D;y}(-v)=R_{A,D;y}(v),\qquad
+\widehat R(S)=0\quad(|S|\text{ odd}).             \tag{37.119}
+```
+
+All known internal edge-replacement and contraction data are identical on
+the orbit, while deletion--reinsertion data only gauge-permute.  More
+abstractly, no statistic invariant under switching both children can output
+a single gauge-covariant point of the projective switching orbit.  This is a
+group-action obstruction, not a computational-complexity assertion.
+
+The obstruction is nonvacuous inside the actual optimizing class.  For two
+positive order-two children, every presently known optimizer defect is zero,
+but with `rho=tanh(t)` and `r=tanh(u)`,
+
+```math
+\boxed{
+\widehat R(\{1,2\})={1\over4}\log
+ {1+2\rho^2r^2+r^4\over1-2\rho^2r^2+r^4}>0.}     \tag{37.120}
+```
+
+This rules out switching-invariant optimizer slack as a coherent
+branch-(iii) selector.  It does not rule out an invariant statistic deciding
+branches (i) or (ii), nor prove a scalable response range.  See
+[`audits/actual_child_switching_orbit_response_identity_audit.md`](audits/actual_child_switching_orbit_response_identity_audit.md).
+
+### Theorem 37.42 (strict natural-channel contraction and its entropy ceiling)
+
+For the spiked carrier, write
+
+```math
+z(b)={\langle y,b\rangle\over\sqrt n},\qquad
+e(b)={1+z(b)^2\over2},\qquad
+d\mu_y=e\,dU_n,\qquad a={z\over e}.
+```
+
+Then `q_vdU_n=dmu_y(1+va)` is an exact binary channel and
+
+```math
+\kappa_n^2=E_{\mu_y}a^2
+=E_U{2z^2\over1+z^2}<1,\qquad
+\kappa_n^2\longrightarrow0.6886409151\ldots .    \tag{37.121}
+```
+
+For the response of the exact actual-child pressure,
+
+```math
+\boxed{
+\widehat R(S)=\kappa_n^{|S|}
+ \left\langle L,\prod_{i\in S}{a(B_i)\over\kappa_n}
+ \right\rangle_{L^2(\mu_y^{\otimes m})},}
+```
+
+and hence
+
+```math
+\boxed{
+\sum_{S\ne\varnothing}\kappa_n^{-2|S|}\widehat R(S)^2
+\le\operatorname {Var}_{\mu_y^{\otimes m}}L.}    \tag{37.122}
+```
+
+Thus individual high-row-order channels are exponentially attenuated and
+degrees above `C log N` are negligible for typical queries.  This corrects,
+without contradicting, the fair-row unit-norm observation in Theorem 37.40.
+It does not control the minimum over `2^m` query words.
+
+There is an exact sufficient extremal statement.  If
+
+```math
+\log E_{\mu_y^{\otimes m}}e^{s(L-EL)}
+\le{s^2\sigma_N^2\over2}\qquad(s\in\mathbb R),   \tag{37.123}
+```
+
+then conditional Jensen and the mass `2^{-m}` of each query give
+
+```math
+\boxed{
+\operatorname {range}_vR(v)
+\le2\sqrt{2m\log2\,\sigma_N^2}.}                 \tag{37.124}
+```
+
+Consequently `sigma_N^2=o(N)` would suppress the spiked coherent direction.
+This is a one-MGF, lower-information target for the declared spike family,
+not a theorem for the complete square-polynomial carrier optimum.  The proof
+and the exact external-disorder blockade are in
+[`audits/actual_child_spiked_response_superconcentration_audit.md`](audits/actual_child_spiked_response_superconcentration_audit.md).
+
+### Theorem 37.43 (the actual-child quartic spike is submacroscopic)
+
+Fix children `A,D`, a direction `y`, and let `R_s(v)` be the spiked response
+when every parent coupling is multiplied by an auxiliary temperature `s`.
+For any query words `v,w`, the first nonconstant coefficient is exactly
+
+```math
+\boxed{
+[s^4]\{R_s(v)-R_s(w)\}
+={1\over2}(\|Av\|_2^2-\|Aw\|_2^2)
+ +{2\epsilon H_D(y)\over n}(H_A(v)-H_A(w)).}      \tag{37.125}
+```
+
+If `A,D` are the actual contracted-temperature minimizers at
+`t=beta/sqrt(N)` in a balanced split, then
+
+```math
+Q(A)\le{{m\choose2}\log\cosh t+m\log2\over t},
+\qquad \|Av\|_2^2\le4(m-1)Q(A),                  \tag{37.126}
+```
+
+and therefore the complete physical-scale range of (37.125) is
+
+```math
+\boxed{t^4\max_{v,w}|[s^4]\{R_s(v)-R_s(w)\}|
+=O_{\beta,\theta}(\sqrt N)=o(N).}                 \tag{37.127}
+```
+
+Thus the quartic/sector--Gram tangent cannot create an extensive spiked
+response for actual thermal minimizers.  Any such response must first occur
+at sixth or higher auxiliary order, and the physical Taylor remainder is
+not controlled.  See
+[`audits/actual_child_spiked_response_quartic_ceiling.md`](audits/actual_child_spiked_response_quartic_ceiling.md).

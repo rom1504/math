@@ -1519,3 +1519,53 @@ degrees are macroscopically attenuated, so the exact no-go does not falsify
 an `O(N)`-precision closure.  A pressure point oracle is acceptable for
 verifying a declared retuning witness but cannot be counted as a child-side
 generation theorem.
+
+Theorem 37.39 strengthens this reduction further.  The factors can be chosen
+as literal nonnegative degree-`2d` Walsh densities with a fixed collision
+norm, while still recovering the complete entropy-regularized product value.
+The positive-part leakage and square-root entropy blockade are therefore
+closed.  The operative version of the SML is now:
+
+> **Bounded-row-degree cross-row closure.**  At one fixed row degree, evaluate
+> or bound the jointly optimized square-polynomial response from an
+> actual-child state which does not store the full cross-row coefficient
+> tensor, to a fixed-density or power-saving accuracy; or exhibit a scalable
+> actual-minimizer obstruction.  Equivalently, synchronize or truncate the
+> number of participating rows while preserving their joint cancellation.
+
+The formal bounded-row-degree tensor still has
+`(sum_(a<=2d) binom(n,a))^m` entries.  Merely listing it is the old bridge
+landscape in a thinner coordinate system and does not count as closure.
+
+Theorem 37.40 supplies a minimal falsification test for any proposed answer.
+Already at degree two, the spiked products expose the actual-pressure query
+
+```math
+R_{L,y}(v)=E_{\otimes_iq_{v_i,y}}L,
+\qquad v\in\{+-1\}^m,
+```
+
+with an unattenuated fully active channel.  A closure theorem must therefore
+prove an optimizer-specific `o(N)` range bound for this response, derive its
+minimum from a genuinely smaller child algebra, or exhibit a scalable
+actual-minimizer sequence with linear range.  Merely invoking low row degree
+or rank-one carrier means fails this test.
+
+The natural-channel representation sharpens this test.  With
+`dmu_y=e_y dU_n` and `a=z_y/e_y`, the response is a conditional expectation
+through a binary channel whose squared contraction tends to
+`0.6886409151...`.  Thus the remaining issue is not one unattenuated high
+coefficient but the rare minimum created by exponentially many attenuated
+coefficients.  One concrete lower-information sufficient statement is the
+actual-child external-disorder bound
+
+```math
+\log E_{\mu_y^{\otimes m}}e^{s(L-EL)}
+\le {s^2\sigma_N^2\over2},\qquad \sigma_N^2=o(N),
+```
+
+uniformly in declared spike directions.  It would give `range(R)=o(N)`.
+The quartic coefficient already has `O(sqrt(N))` physical range, so any
+failure must be nonperturbative or begin at higher auxiliary order.  This
+spiked-family statement is a discriminating subproblem, not yet a closure
+theorem for the full square-polynomial carrier class.
