@@ -1,0 +1,638 @@
+{
+  "classification": "exact finite ground-state arithmetic and certified minimizer input; complete floating bridge enumeration at raw t=3 is numerical, not interval-certified",
+  "minimizer_certificate": {
+    "class_count": 2,
+    "common_histogram": {
+      "-10": 4,
+      "-2": 16,
+      "-4": 16,
+      "-6": 12,
+      "-8": 10,
+      "0": 12,
+      "10": 4,
+      "2": 16,
+      "4": 16,
+      "6": 12,
+      "8": 10
+    },
+    "large_temperature_fact": "FC.22 proves both classes minimize pressure for every raw t>=3",
+    "order": 8,
+    "source": "computations/results/m8_minimizer_orbits.json",
+    "target_cap": 10
+  },
+  "parameters": {
+    "beta_for_parent_normalization": 9.486832980505138,
+    "internal_raw_t": 3.0,
+    "lambda": 1.0,
+    "physical_channel_u": 3.0,
+    "quadrature_order": 12,
+    "split": [
+      2,
+      8
+    ],
+    "total_parent_order": 10
+  },
+  "records": [
+    {
+      "cap": 10,
+      "class_index": 0,
+      "energy_histogram": {
+        "-10": 4,
+        "-2": 16,
+        "-4": 16,
+        "-6": 12,
+        "-8": 10,
+        "0": 12,
+        "10": 4,
+        "2": 16,
+        "4": 16,
+        "6": 12,
+        "8": 10
+      },
+      "exact_limiting_tangent_frobenius_squared": 14,
+      "exact_signed_ground_tangent_denominator": 8,
+      "exact_signed_ground_tangent_numerator": [
+        [
+          0,
+          4,
+          4,
+          4,
+          4,
+          4,
+          -4,
+          4
+        ],
+        [
+          4,
+          0,
+          4,
+          4,
+          4,
+          4,
+          -4,
+          4
+        ],
+        [
+          4,
+          4,
+          0,
+          4,
+          4,
+          4,
+          -4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          0,
+          4,
+          4,
+          -4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          0,
+          -4,
+          4,
+          -4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          -4,
+          0,
+          4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          4,
+          4,
+          0,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          -4,
+          -4,
+          4,
+          0
+        ]
+      ],
+      "finite_t_cross_row_Gamma_frobenius_squared": 13.768990851719153,
+      "finite_t_tangent_frobenius_squared": 13.906189837485451,
+      "ground_state_count": 8,
+      "low_channel_rho4_leading_J_coefficient": 6.884495425859576,
+      "matrix_sha256": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+      "physical_channel_records": [
+        {
+          "ES28_row_marginal_drift_fraction": 0.18318662139961747,
+          "ES28_to_J_ratio": 0.9999999996152265,
+          "ES28_total_correlation_fraction": 0.8168133786003826,
+          "IC23_to_J_ratio": 1.8168133779013333,
+          "canonical_J": 4.435731725365197,
+          "canonical_J_per_parent_vertex": 0.4435731725365197,
+          "epsilon": -1,
+          "pressure_audit": {
+            "bridge_cube_size": 65536,
+            "bridge_sign_count": 16,
+            "convolution_dtype": "float128",
+            "direct_check_masks": [
+              0,
+              21845,
+              65535
+            ],
+            "maximum_direct_log_pressure_error": 5.089678678515952e-15,
+            "rank_one_character_count": 256
+          }
+        },
+        {
+          "ES28_row_marginal_drift_fraction": 0.18318662139961445,
+          "ES28_to_J_ratio": 0.9999999996152267,
+          "ES28_total_correlation_fraction": 0.8168133786003856,
+          "IC23_to_J_ratio": 1.816813377901333,
+          "canonical_J": 4.435731725365197,
+          "canonical_J_per_parent_vertex": 0.4435731725365197,
+          "epsilon": 1,
+          "pressure_audit": {
+            "bridge_cube_size": 65536,
+            "bridge_sign_count": 16,
+            "convolution_dtype": "float128",
+            "direct_check_masks": [
+              0,
+              21845,
+              65535
+            ],
+            "maximum_direct_log_pressure_error": 8.660711037222768e-13,
+            "rank_one_character_count": 256
+          }
+        }
+      ],
+      "physical_tropical_certificate": {
+        "canonical_r_expected_parent_rate": {
+          "denominator": 12,
+          "numerator": 205
+        },
+        "exact_limit_J_over_t_at_lambda_1": {
+          "denominator": 12,
+          "float": 2.0833333333333335,
+          "numerator": 25
+        },
+        "global_maximum_rate": 27,
+        "global_minimum_rate": 15,
+        "lower_row_minimax_rate": 21,
+        "lower_row_support_active_coefficients": [
+          [
+            19,
+            20
+          ],
+          [
+            22,
+            20
+          ],
+          [
+            25,
+            20
+          ],
+          [
+            28,
+            20
+          ],
+          [
+            35,
+            20
+          ],
+          [
+            37,
+            20
+          ],
+          [
+            42,
+            20
+          ],
+          [
+            44,
+            20
+          ],
+          [
+            117,
+            20
+          ],
+          [
+            118,
+            20
+          ],
+          [
+            121,
+            20
+          ],
+          [
+            122,
+            20
+          ],
+          [
+            133,
+            20
+          ],
+          [
+            134,
+            20
+          ],
+          [
+            137,
+            20
+          ],
+          [
+            138,
+            20
+          ],
+          [
+            211,
+            20
+          ],
+          [
+            213,
+            20
+          ],
+          [
+            218,
+            20
+          ],
+          [
+            220,
+            20
+          ],
+          [
+            227,
+            20
+          ],
+          [
+            230,
+            20
+          ],
+          [
+            233,
+            20
+          ],
+          [
+            236,
+            20
+          ]
+        ],
+        "lower_row_tropical_support_size": 24,
+        "orientation": -1,
+        "upper_row_minimax_rate": 21,
+        "upper_row_support_active_coefficients": [
+          [
+            19,
+            20
+          ],
+          [
+            22,
+            20
+          ],
+          [
+            25,
+            20
+          ],
+          [
+            28,
+            20
+          ],
+          [
+            35,
+            20
+          ],
+          [
+            37,
+            20
+          ],
+          [
+            42,
+            20
+          ],
+          [
+            44,
+            20
+          ],
+          [
+            117,
+            20
+          ],
+          [
+            118,
+            20
+          ],
+          [
+            121,
+            20
+          ],
+          [
+            122,
+            20
+          ],
+          [
+            133,
+            20
+          ],
+          [
+            134,
+            20
+          ],
+          [
+            137,
+            20
+          ],
+          [
+            138,
+            20
+          ],
+          [
+            211,
+            20
+          ],
+          [
+            213,
+            20
+          ],
+          [
+            218,
+            20
+          ],
+          [
+            220,
+            20
+          ],
+          [
+            227,
+            20
+          ],
+          [
+            230,
+            20
+          ],
+          [
+            233,
+            20
+          ],
+          [
+            236,
+            20
+          ]
+        ],
+        "upper_row_tropical_support_size": 24
+      }
+    },
+    {
+      "cap": 10,
+      "class_index": 1,
+      "energy_histogram": {
+        "-10": 4,
+        "-2": 16,
+        "-4": 16,
+        "-6": 12,
+        "-8": 10,
+        "0": 12,
+        "10": 4,
+        "2": 16,
+        "4": 16,
+        "6": 12,
+        "8": 10
+      },
+      "exact_limiting_tangent_frobenius_squared": 10,
+      "exact_signed_ground_tangent_denominator": 8,
+      "exact_signed_ground_tangent_numerator": [
+        [
+          0,
+          4,
+          4,
+          4,
+          4,
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          4,
+          0,
+          0,
+          -4,
+          4,
+          -4
+        ],
+        [
+          4,
+          4,
+          0,
+          0,
+          0,
+          -4,
+          4,
+          -4
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          4,
+          -4,
+          -4,
+          4
+        ],
+        [
+          4,
+          0,
+          0,
+          4,
+          0,
+          -4,
+          -4,
+          4
+        ],
+        [
+          4,
+          -4,
+          -4,
+          -4,
+          -4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          4,
+          -4,
+          -4,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          -4,
+          -4,
+          4,
+          4,
+          0,
+          4,
+          0
+        ]
+      ],
+      "finite_t_cross_row_Gamma_frobenius_squared": 9.837888068941858,
+      "finite_t_tangent_frobenius_squared": 9.935916187318643,
+      "ground_state_count": 8,
+      "low_channel_rho4_leading_J_coefficient": 4.918944034470929,
+      "matrix_sha256": "ccfdf94157d2f36afc5d9909aa85526110e5057126a1882144945df0c1cb6f96",
+      "physical_channel_records": [
+        {
+          "ES28_row_marginal_drift_fraction": 0.5252421710019479,
+          "ES28_to_J_ratio": 1.0000000198009895,
+          "ES28_total_correlation_fraction": 0.474757828998052,
+          "IC23_to_J_ratio": 1.4747578581997567,
+          "canonical_J": 5.238489384641228,
+          "canonical_J_per_parent_vertex": 0.5238489384641227,
+          "epsilon": -1,
+          "pressure_audit": {
+            "bridge_cube_size": 65536,
+            "bridge_sign_count": 16,
+            "convolution_dtype": "float128",
+            "direct_check_masks": [
+              0,
+              21845,
+              65535
+            ],
+            "maximum_direct_log_pressure_error": 1.3912482277333993e-15,
+            "rank_one_character_count": 256
+          }
+        },
+        {
+          "ES28_row_marginal_drift_fraction": 0.5252421710019507,
+          "ES28_to_J_ratio": 1.0000000198009908,
+          "ES28_total_correlation_fraction": 0.47475782899804925,
+          "IC23_to_J_ratio": 1.4747578581997565,
+          "canonical_J": 5.238489384641229,
+          "canonical_J_per_parent_vertex": 0.5238489384641228,
+          "epsilon": 1,
+          "pressure_audit": {
+            "bridge_cube_size": 65536,
+            "bridge_sign_count": 16,
+            "convolution_dtype": "float128",
+            "direct_check_masks": [
+              0,
+              21845,
+              65535
+            ],
+            "maximum_direct_log_pressure_error": 4.3195655385908083e-13,
+            "rank_one_character_count": 256
+          }
+        }
+      ],
+      "physical_tropical_certificate": {
+        "canonical_r_expected_parent_rate": {
+          "denominator": 5,
+          "numerator": 84
+        },
+        "exact_limit_J_over_t_at_lambda_1": {
+          "denominator": 5,
+          "float": 1.8,
+          "numerator": 9
+        },
+        "global_maximum_rate": 27,
+        "global_minimum_rate": 15,
+        "lower_row_minimax_rate": 21,
+        "lower_row_support_active_coefficients": [
+          [
+            12,
+            28
+          ],
+          [
+            18,
+            28
+          ],
+          [
+            43,
+            12
+          ],
+          [
+            53,
+            12
+          ],
+          [
+            202,
+            12
+          ],
+          [
+            212,
+            12
+          ],
+          [
+            237,
+            28
+          ],
+          [
+            243,
+            28
+          ]
+        ],
+        "lower_row_tropical_support_size": 8,
+        "orientation": -1,
+        "upper_row_minimax_rate": 21,
+        "upper_row_support_active_coefficients": [
+          [
+            12,
+            28
+          ],
+          [
+            18,
+            28
+          ],
+          [
+            43,
+            12
+          ],
+          [
+            53,
+            12
+          ],
+          [
+            202,
+            12
+          ],
+          [
+            212,
+            12
+          ],
+          [
+            237,
+            28
+          ],
+          [
+            243,
+            28
+          ]
+        ],
+        "upper_row_tropical_support_size": 8
+      }
+    }
+  ],
+  "schema": "actual-child-radial-path-curvature-falsifier-v1"
+}
