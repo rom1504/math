@@ -179,6 +179,29 @@ First choose `R` large, then take `s=sqrt(t)` and let `t` tend to zero.
 Equations (LDC.9)--(LDC.10) define the required dimension-free modulus.
 `square`
 
+One may take an explicit small-`t` rate
+
+```math
+\omega_K(t)\le C(1+K^2)t^{1/4}\log(1/t).            \tag{LDC.10a}
+```
+
+Indeed, in the preceding proof choose `R=t^(-1/4)` and `s=sqrt(t)`.
+On `[0,R]`, direct integration of `1+log x` gives
+
+```math
+\varpi_R(s)\le Cs\{1+\log R+|\log s|\},
+```
+
+while `||phi_R||_infty<=C R log R`.  Substitution in
+(LDC.9)--(LDC.10) proves (LDC.10a), after changing the universal constant.
+Combined with (LDC.5), this gives the conservative explicit rate
+
+```math
+\eta_d=O_{\beta,\lambda}(d^{-1/8}\log d).            \tag{LDC.10b}
+```
+
+No optimality of this exponent is asserted.
+
 ## 4. Uniform recovery of the actual row-product optimum
 
 Fix actual contracted-temperature minimizing children, either orientation
@@ -346,7 +369,128 @@ the same uniform `D_2` bound, so Theorem 37.19's product-basin mechanism
 applies.  This is not a Level-6 recurrence: neither a summable error rate
 nor an operationally controlled growing-degree schedule has been proved.
 
-## 6. What changed in the SML
+## 6. A sound-and-complete finite-description certificate for branch (iii)
+
+The carrier reduction is not merely an existential change of variables.  A
+declared carrier can be checked without storing either an exponential row
+table or the complete bridge-pressure table.  Put
+
+```math
+D=D(n,d)=\sum_{a=0}^d{n\choose a},
+\qquad M=K\sqrt D.                                  \tag{LDC.25}
+```
+
+**Proposition LDC.4 (oracle-verifiable carrier certificate).**  Fix
+`d,K,beta,lambda` and suppose the coefficients of
+`g_1,...,g_m` in (LDC.1) are given.  Then:
+
+1. the constraints `E_Ug_i=1` and `||g_i||_2<=K` are checked directly
+   from the Walsh coefficients;
+2. exact independent samples from each `q_(g_i)` use rejection sampling
+   from `U_n` with expected at most `M` row proposals;
+3. given point-evaluation access to the actual pressure `B -> L(B)`,
+   `E_(tensor_iq_(g_i))L` is estimated to additive `epsilon N` with
+   failure probability at most `zeta` using
+
+   ```math
+   O\!\left(\beta^2\epsilon^{-2}\log {2\over\zeta}\right)             \tag{LDC.26}
+   ```
+
+   independent bridge samples; and
+4. the row entropy terms are estimated to total additive `epsilon N`
+   from polynomially many uniform row samples at every fixed `d,K,
+   epsilon`.
+
+Consequently, at any fixed extensive margin `alpha>0`, branch (iii) has a
+sound-and-complete family of randomized finite-description certificates:
+
+```math
+\boxed{
+\mathcal J-\mathcal I^{\leftarrow}\ge\alpha N
+\quad\Longrightarrow\quad
+\text{some fixed-degree carrier certifies gain at least }\alpha N/2,}
+                                                               \tag{LDC.27}
+```
+
+while every carrier whose checked gain is `cN` proves
+`J-I^leftarrow>=cN` by the exact variational identity.  One certificate
+uses `mD(n,d)` bounded real coefficients (or their fixed-accuracy
+quantizations), one common endpoint comparison, and scalar pressure
+evaluations.  It cannot encode bridge point masses: every row factor obeys
+
+```math
+q_{g_i}(E)\le K\sqrt{U_n(E)},
+\qquad
+\max_b q_{g_i}(b)\le {K\sqrt D\over2^n}.            \tag{LDC.28}
+```
+
+The restricted projection is also a robust selector between the two linear
+product alternatives.  If `J>=eta N`, choose `d` so that the right side of
+(LDC.23) is at most `eta N/4`.  Then
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathcal I_{d,K_0}^{\leftarrow}\ge3\eta N/4
+ &\Longrightarrow\quad
+   \mathcal I^{\leftarrow}\ge\eta N/2,\\[2mm]
+\mathcal I_{d,K_0}^{\leftarrow}<3\eta N/4
+ &\Longrightarrow\quad
+   \mathcal J-\mathcal I^{\leftarrow}>\eta N/4.
+\end{array}}                                             \tag{LDC.28a}
+```
+
+Thus no unbounded Walsh-degree information in the row factors is needed to
+choose between alternatives (ii) and (iii), once a linear canonical phase
+has been established.  The remaining oracle issue is evaluation from the
+children, not representation of the product competitors.
+
+*Proof.*  Parseval proves item 1.  The Walsh evaluation bound gives
+
+```math
+0\le(g_i(b))_+\le ||g_i||_2\sqrt D\le M.
+```
+
+Accept a fair row `b` with probability `(g_i(b))_+/M`.  The acceptance
+probability is `E(g_i)_+/M>=1/M`, and the accepted law has density
+`(g_i)_+/E(g_i)_+`; this proves item 2.
+
+Changing a complete bridge row changes `L` by at most `2un`.  Hoeffding's
+lemma over the `m` independent carrier rows therefore gives
+
+```math
+\log E_Pe^{s(L-E_PL)}
+\le {s^2m u^2n^2\over2}
+\le {s^2\beta^2N^2\over2}.                         \tag{LDC.29}
+```
+
+The standard subgaussian sample-mean bound proves item 3.  For item 4,
+write `z_i=E_U(g_i)_+>=1` and
+
+```math
+D(q_{g_i}\Vert U_n)
+={E_U[(g_i)_+\log(g_i)_+]\over z_i}-\log z_i.       \tag{LDC.30}
+```
+
+Both functions sampled under `U_n` are bounded in terms of `M`:
+`0<=(g_i)_+<=M` and
+`-e^(-1)<=(g_i)_+log(g_i)_+<=Mlog M` (with the evident
+harmless adjustment when `M=1`).  Since `z_i>=1`, ordinary bounded
+sampling and a union bound estimate every row contribution to fixed
+additive accuracy using a number of samples polynomial in `M`,
+`epsilon^(-1)`, and `log(m/zeta)`.  Summing `m<=N` such errors proves
+item 4.  Completeness is (LDC.24), and soundness is (SM.1)--(SM.2).
+Finally, Cauchy--Schwarz and the same evaluation bound prove (LDC.28).
+`square`
+
+This is an information and verification reduction, not a polynomial-time
+construction from the children.  A point evaluation of `L` is itself a
+finite parent partition-function computation, and finding the good
+coefficients is not supplied by the proposition.  What (LDC.27) rules out
+is a different obstruction: an extensive coherent retuning cannot require
+an exponential row table merely to *represent or verify its witness*.
+
+## 7. What changed in the SML
 
 The former retuning obligation asked for a coherent direction without
 solving `m` exponential row tables.  The exact replacement is now:
@@ -357,9 +501,18 @@ solving `m` exponential row tables.  The exact replacement is now:
 > that it cannot.  Equivalently, control the polynomially parameterized
 > restricted projection (LDC.21).
 
-This is a strict reduction: the carrier is declared before seeing `p^*`,
-has polynomial rather than exponential row description, excludes atomic
-encodings by its norm bound, and recovers the full product value uniformly.
-No sector--Gram identity presently evaluates this carrier.  The remaining
-question is therefore narrower but still optimizer-specific and
-nonconvex.
+This is a strict factor-side and certificate-side reduction: the carrier is
+declared before seeing `p^*`, has polynomial rather than exponential row
+description, excludes atomic encodings by its norm bound, recovers the full
+product value uniformly, and any extensive witness can be verified with a
+bounded number of actual-pressure samples once its coefficients are given.
+No sector--Gram or other child-only identity presently *generates* or
+uniformly bounds those coefficients.  The remaining question is therefore
+narrower but still optimizer-specific and nonconvex:
+
+> **Finite-degree child closure.**  Produce or exclude a successful
+> norm-bounded carrier from an actual-child state strictly smaller than the
+> complete pressure response surface, with a power-saving or fixed-density
+> margin.  Equivalently, prove that one fixed-degree carrier response
+> functional closes under the optimizer identities, or exhibit a scalable
+> actual-child obstruction to such closure.
