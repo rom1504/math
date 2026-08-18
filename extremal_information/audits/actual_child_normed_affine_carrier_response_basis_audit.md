@@ -225,3 +225,92 @@ children with a robust value gap under that model.
 The rigorous conclusion is therefore an exact-surface obstruction and a
 scope falsifier for naive finite-Walsh closure, not a resolution of
 finite-degree child closure at normalized pressure accuracy.
+
+## 5. The complete basis is macroscopically attenuated
+
+The precision caveat can be made quantitative using the actual pressure's
+bit oscillation.  Let `t=beta/sqrt(N)`, `N=m+n`, and suppose that changing
+one bridge bit changes `L` by at most `2t`, as it does for the actual
+optimized-child pressure.  Cube Poincare gives
+
+```math
+\operatorname {Var}_{U_B}L
+\le {1\over4}\sum_{i,j}E(L-L^{(ij)})^2
+\le mn t^2={\beta^2mn\over N}.                     \tag{AB.17}
+```
+
+Write the nonconstant coefficient magnitudes in (AB.7) as `c_S`.  They all
+satisfy
+
+```math
+|c_S|\le a_n={1\over n-1}.                         \tag{AB.18}
+```
+
+Expanding (AB.10) first in the bridge Walsh basis and then in the direction
+variables gives
+
+```math
+\mathcal R_L(\boldsymbol v)
+=\sum_{\boldsymbol S}\widehat L(\boldsymbol S)
+ \prod_i c_{S_i}(v_i)_{S_i},                       \tag{AB.19}
+```
+
+with the convention `c_emptyset=1`.  Plancherel in the uniformly random
+directions therefore proves
+
+```math
+\boxed{
+\operatorname {Var}_{\boldsymbol v}\mathcal R_L(\boldsymbol v)
+\le {1\over(n-1)^2}\operatorname {Var}_{U_B}L
+\le {\beta^2mn\over N(n-1)^2}.}                   \tag{AB.20}
+```
+
+For comparable splits, the root-mean-square response spread over the entire
+table-complete basis is only `O_beta(N^(-1/2))`.  The modes created solely by
+clipping, namely row Walsh levels at least two, have the still smaller
+multiplier `Theta(2^(-n)/n)` from (AB.16).
+
+There is also a uniform, rather than average, macroscopic bound.  Equations
+(AB.4), (AB.6), and `Z_n>=1` give
+
+```math
+\|h_v\|_2^2\le1+{n\over(n-1)^2}.
+```
+
+Consequently
+
+```math
+\begin{aligned}
+\|H_{\boldsymbol v}-1\|_2^2
+&=\prod_i\|h_{v_i}\|_2^2-1\\
+&\le\exp\left\{{mn\over(n-1)^2}\right\}-1,
+\end{aligned}                                      \tag{AB.21}
+```
+
+and Cauchy--Schwarz with (AB.17) yields
+
+```math
+\boxed{
+|\mathcal R_L(\boldsymbol v)-E_{U_B}L|
+\le
+\beta\sqrt{mn\over N}
+\left[
+ \exp\left\{{mn\over(n-1)^2}\right\}-1
+\right]^{1/2}.}                                    \tag{AB.22}
+```
+
+This is `O_beta(sqrt(N))=o(N)` uniformly at comparable splits.  Finally,
+monotonicity of Renyi divergences gives
+
+```math
+\sum_iD(h_{v_i}U_n\Vert U_n)
+\le m\log\left(1+{n\over(n-1)^2}\right)
+=O(m/n).                                           \tag{AB.23}
+```
+
+Thus the entropy charge is only `O(1)` at comparable splits, while none of
+these table-complete basis carriers can change the pressure by a linear
+amount.  Exact reconstruction uses large signed linear combinations of
+their responses; it is not implementable by selecting one admissible
+product law.  This proves that AB.2 is a genuine exact-response obstruction
+but not a robust obstruction to the normalized optimized value.
