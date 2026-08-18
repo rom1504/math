@@ -451,8 +451,8 @@ for some sector `a`; equivalently, one unit-vector aggregate spin
 observable has variance at least `c_(eta,kappa)sqrt(N)`.
 
 *Proof.*  Cauchy--Schwarz gives
-`|G_C(a,b)|<=sqrt(G_C(a,a)G_C(b,b))<=g_C`.  Apply
-The full-correlation inner product `|D|+2G_D(a,b)` is nonnegative and at
+`|G_C(a,b)|<=sqrt(G_C(a,a)G_C(b,b))<=g_C`.  The
+full-correlation inner product `|D|+2G_D(a,b)` is nonnegative and at
 most `|D|+2g_D`; applying these bounds termwise in (SQ.23), whose total is
 the squared norm `K_epsilon>=0`, gives (SQ.31).
 If both `g_A` and `g_D` were `o(N^(3/2))`, its right side would be

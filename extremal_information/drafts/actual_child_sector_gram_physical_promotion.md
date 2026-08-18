@@ -35,7 +35,7 @@ tail
 ```math
 \boxed{
 \mathfrak C_{\ge4}(u)
-=\sum_{\substack{k\ge4\ {m even}}}{|u|^k\over k!}
+=\sum_{\substack{k\ge4\\ k\ {\rm even}}}{|u|^k\over k!}
   \sum_{|\operatorname {rows}(\boldsymbol e)|\ge2}
   |\kappa_\epsilon(\boldsymbol e)|.}               \tag{SP.2}
 ```
