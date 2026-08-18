@@ -166,32 +166,39 @@ landscape.
 
 ```text
 contracted-temperature pressure minimizers
-  --[PROVED: Theorem 37.18]-->
-negative bridge escort with tight conditional row D2
-  --[PROVED: Theorem 37.19]-->
-target-relative product-basin / directed-dependence dichotomy
-  --[MISSING nonradial actual-child statistic deciding Delta_N]-->
-power-saving linearly rare basin or extensive interaction theorem
+  --[PROVED: Theorems 37.18, 37.28, 37.32]-->
+balanced-orientation canonical rows with O(1) D_infinity
+  + all hybrid/optimal conditional factors with O(1) D2
+  --[PROVED: Theorem 37.27; conditional promotion: Theorem 37.33]-->
+sublinear canonical interaction or positive-density regular row resource
+  --[MISSING L_balanced-product-phase]-->
+target-relevant power-saving no-gain or extensive dependence/retuning certificate
 ```
 
-**Current SML `L_actual-row-resource`:** for fixed target-reaching
-`beta,lambda`, decide from an optimizer-specific child statistic strictly
-smaller than the complete external-field/bridge landscape whether both
+**Current SML `L_balanced-product-phase`:** choose the bias-canceling orientation
+and filtration of Theorem 37.32.  For fixed target-reaching `beta,lambda`,
+decide from an optimizer-specific child statistic strictly smaller than the
+complete external-field/bridge landscape which of the following holds:
 
 ```math
-\lambda\int_0^\lambda{\operatorname {TC}(q_s)\over s^2}\,ds,
-\qquad
-\lambda\int_0^\lambda{\sum_iD(q_{s,i}\Vert r_i)\over s^2}\,ds
+\text{(i) }J_N=o(N)\text{ with a summable rate};\qquad
+\text{(ii) }\mathcal I_N^{\leftarrow}=\Omega(N);\qquad
+\text{(iii) }J_N-\mathcal I_N^{\leftarrow}=\Omega(N).
 ```
 
-are `o(N)` (preferably with a power saving), or certify a positive density
-of rows with order-one scaled irreducible information or regular factor
-retuning.  The first alternative makes the explicit canonical product
-accurate.  In the second, a linear optimal reverse-product gap is a
-directional dependence theorem; a linear canonical-to-optimal improvement
-must retune a positive density of bounded-complexity factors.  The full row
+Outcome (ii) needs a directional dependence certificate without full bridge
+optimization.  Outcome (iii) needs a coherent direction for the
+positive-density regular-factor retuning without solving the full product
+variational problem.  Every branch must establish whether the balanced
+orientation is target-relevant or price its target loss.  The full row
 best-response oracle remains inadmissible because point-mass queries
-reconstruct `L`.
+reconstruct `L`.  Scalar sector bias, canonical support, and escaping
+conditional component complexity are no longer missing.
+Theorem 37.33 additionally gives a physical conditional promotion: below an
+explicit normalized sector--Gram threshold, a sublinear absolute connected
+cluster tail forces `J=o(N)`, while linear `J` forces a linear tail.  This
+does not yet decide the product phase or prove that the all-order tail is
+operationally simpler than the full child Gibbs law.
 
 ## Quantitative frontier table
 
@@ -201,7 +208,7 @@ reconstruct `L`.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; 4 pressure theorem only on conference benchmark | actual escort has `O(1)` conditional row `D_2`; exact product target excess `Delta_N` remains a full row law unless compressed | target-relative: power-saving `Delta_N^+` yields a linearly rare basin; linear `Delta_N` yields extensive reverse projection | every finite split for structure; no asymptotic target theorem | 2 for the exact law/dichotomy, 0 for deciding `Delta_N` from child data | **RESET:** surrogate frozen; SML is the actual-child nonradial product-target lemma |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | balanced canonical row has `O(1)` `D_infty`; every hybrid/optimal conditional row has `O(1)` `D_2`; the optimal product phase remains uncompressed | sublinear product target excess gives a product basin; otherwise target reach forces extensive reverse-product dependence, with coherent retuning separately tracked | every finite split for structure; no asymptotic target theorem | 3 for the actual component classification, 0 for deciding the balanced product phase | **RESET:** component escape closed; SML is `L_balanced-product-phase` plus target relevance |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -1292,7 +1299,7 @@ class and risks restating the desired parent optimization.
   rare-event/renormalization branch.
 
 
-### Checkpoint 21 — canonical sector orientation is quotiented; the residual is joint
+### Checkpoint 21 — canonical sector orientation is quotiented; the residual exceeds one-row data
 
 - **Strongest exact actual-law quotient:** the two canonical erased-row
   likelihoods factor as
@@ -1385,13 +1392,14 @@ class and risks restating the desired parent optimization.
   zero-bridge pressure.  Together with the pre-existing uniform absolute
   conditional `D_2` bounds, this closes scalar sector bias and escaping
   row-component complexity in an available actual-child presentation.
-- **Exact surviving dichotomy:** all canonical, hybrid-conditional, and
+- **Exact surviving alternatives:** all canonical, hybrid-conditional, and
   optimal-product factors are tight, yet Theorem 37.27 remains exhaustive:
   if `J` is linear, a positive density of regular rows carries order-one
   marginal drift or row-versus-rest information, and any linear repair by
-  the best product retunes a positive density of regular factors.  Thus
-  the only surviving resource is irreducible joint compatibility among
-  individually diffuse rows.
+  the best product retunes a positive density of regular factors.  The
+  remaining macroscopic resources are therefore irreducible reverse-product
+  dependence and/or coherent marginal/product retuning among individually
+  diffuse rows.  Rowwise tightness does not choose between them.
 - **Sharp scope/falsifier:** balancing is existential over orientation and
   transpose.  Zero-bridge optimality does not prove the balanced
   orientation reaches the parent target after bridges are optimized.
@@ -1401,28 +1409,82 @@ class and risks restating the desired parent optimization.
   one-row data agree.
 - **Previous SML:** promote the polynomial contrast quotient and
   sector--Gram tangent through a physical sector-hierarchy tail theorem.
-- **Current SML `L_balanced-joint`:** in the balanced orientation and
-  filtration of Theorem 37.32, prove from an actual-child observable
-  strictly smaller than the full bridge/external-field table either
+- **Current SML `L_balanced-product-phase`:** in the balanced orientation
+  and filtration of Theorem 37.32, decide from a named actual-child
+  observable strictly smaller than the full bridge/external-field table
+  one of the following three outcomes:
 
   ```math
-  J_N=o(N)
+  \text{(i) }J_N=o(N)\text{ with a summable rate};\qquad
+  \text{(ii) }\mathcal I_N^{\leftarrow}=\Omega(N);\qquad
+  \text{(iii) }J_N-\mathcal I_N^{\leftarrow}=\Omega(N).
   ```
 
-  with a summable rate, or a fixed positive-density reverse-product/image
-  certificate for the ES.42 row resource.  The theorem must also establish
-  that this orientation is target-relevant, or compare its target loss to
-  the joint gain.  No bound on `gamma`, component support, or another
-  one-row statistic is still missing.
-- **Progress classification:** **RESET TO A PURELY JOINT ACTUAL-CHILD
-  LEMMA; LEVEL 5.**  This is strictly narrower than the campaign's initial
-  request to understand the child-induced law: KL density, effective row
-  support, conditional Renyi complexity, sector orientation, and the
-  positive-density consequence of a linear phase are all classified.
-  What is not decided is whether the balanced joint phase is sublinear or
-  extensive, so no Level-6 pressure recurrence exists.
+  Outcome (ii) needs a directional certificate that does not solve the full
+  bridge optimization.  Outcome (iii) needs a coherent direction for the
+  positive-density regular-factor retuning without solving the complete
+  row-product variational problem.  Every branch must also establish that
+  this orientation is target-relevant, or quantitatively price its target
+  loss.  No bound on `gamma`, component support, or another one-row statistic
+  is still missing.
+- **Progress classification:** **RESET TO A BALANCED PRODUCT-PHASE LEMMA;
+  LEVEL 5.**  This is a strict descriptive narrowing of the campaign's
+  initial request: KL density, effective row support, conditional Renyi
+  complexity, sector orientation, and the positive-density consequence of
+  a linear phase are classified.  It is not yet a proved lower-information
+  reduction, because the named compressed observable selecting (i)--(iii)
+  is still missing.  No Level-6 pressure recurrence exists.
 - **Decision:** no surrogate strike.  The next campaign should attack only
-  `L_balanced-joint` and target relevance.  A generic concentration bound,
-  another one-row quotient, or a fixed-order moment expansion is a strike;
-  after two such strikes, freeze this branch and promote rare-event/
+  `L_balanced-product-phase` and target relevance.  A generic concentration
+  bound, another one-row quotient, or a fixed-order moment expansion is a
+  strike; after two such strikes, freeze this branch and promote
+  rare-event/renormalization.
+
+
+### Checkpoint 23 — a physical actual-child promotion theorem, but no branch selection
+
+- **New rigorous actual-child theorem:** put any two exact minimizing
+  children in the balanced orientation and row direction of Theorem 37.32.
+  Their canonical row factors then have uniform max density.  If the exact
+  zero-bridge child cumulant expansion converges in every full and
+  row-restricted bridge direction, Theorem 37.33 gives
+
+  ```math
+  \mathcal J_t
+  \le b_0\lambda^2t^4K_\epsilon
+     +2\lambda\mathfrak C_{\ge4}(t).
+  ```
+
+  Here `K_epsilon` is computed by the four-coordinate sector--Gram carrier
+  and `mathfrak C_(>=4)` is the absolute connected cross-row cumulant tail
+  of the actual zero-bridge child law.  Thus, below an explicit fixed
+  `K_epsilon/N^2` threshold, sublinear cluster mass proves `J=o(N)`;
+  conversely linear `J` forces linear cluster mass.  Along a linear-`J`
+  subsequence, failure of the threshold or convergence premise yields,
+  respectively, fixed normalized Gram mass or a named cluster-expansion
+  obstruction.
+- **Proof audit:** bounded row density plus central symmetry gives a
+  dimension-free vector-subgaussian MGF by exact moment domination.  A
+  random row cut and Gaussian determinant yield the off-block
+  Hanson--Wright bound with explicit constants
+  `a_C=1/(2sqrt(2)e^C)` and `b_C=4e^(2C)`.  An independent adversarial
+  audit checked the factor-two normalization, physical scaling, and converse.
+- **Sharp limitation:** the absolute all-order cluster scalar can require
+  the complete high-order child Gibbs law to certify and can be strictly
+  stronger than the cancellation-sensitive statement `J=o(N)`.  It is
+  therefore a named child-only closure criterion, not yet a proved
+  lower-information reduction.  The balanced orientation is still not
+  known to be target-reaching after bridge optimization.
+- **Progress classification:** **ACTUAL-CHILD THEOREM; NO SML RESET; LEVEL
+  5.**  This is not a surrogate strike because it directly constrains the
+  optimized-child law at physical amplitude.  It does not select one of
+  the three balanced product-phase outcomes and therefore does not reset
+  `L_balanced-product-phase` or create a Level-6 route.
+- **Decision:** retain one narrowly scoped campaign on balanced physical
+  cluster/product structure.  It must either derive sublinear cluster mass
+  from an optimizer identity, turn extensive cluster/Gram mass into a
+  directional reverse-product or coherent-retuning certificate, or prove
+  the balanced orientation target-relevant.  A result needing the complete
+  high-order Gibbs table without a compression theorem is a substantive
+  strike; two such strikes freeze this branch and promote rare-event/
   renormalization.

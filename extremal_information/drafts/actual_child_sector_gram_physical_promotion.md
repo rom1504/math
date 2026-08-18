@@ -40,11 +40,12 @@ tail
   |\kappa_\epsilon(\boldsymbol e)|.}               \tag{SP.2}
 ```
 
-Whenever (SP.2) is finite, we additionally require that the corresponding
-zero-field cumulant series converges to the log moment-generating function
-at every real amplitude between `0` and `u`.  This is the usual absolute
-cluster-expansion hypothesis; finiteness of a merely formal series is not
-being used as a substitute for convergence.
+Whenever (SP.2) is finite, we additionally require that, for **every bridge
+word** `B` and every row-restricted word obtained by making any set of rows
+inactive, the corresponding zero-field cumulant series converges to the log
+moment-generating function at every real amplitude between `0` and `u`.
+This is the usual absolute cluster-expansion hypothesis; finiteness of a
+merely formal series is not being used as a substitute for convergence.
 
 The object in (SP.2) is child-only.  It is computed from replicas of the two
 zero-bridge sector Gibbs measures.  It retains one nonnegative aggregate,
@@ -80,22 +81,25 @@ removes precisely the one-row tuples.  Central symmetry under
 remaining nonconstant series by (SP.2), and therefore bounds its
 oscillation by twice (SP.2). `square`
 
-## 2. Optimizer extension support makes the row blocks subgaussian
+## 2. Balanced optimizer extension support makes the row blocks subgaussian
 
-Let `D` be the right child, of order `n`, and suppose it is an exact
-minimizer of its contracted-temperature pressure.  Let `r_u` be the
-canonical iid-row inverse escort at `u=t`, with inverse exponent `lambda`.
-The erased-row identity EE.7 and optimizer bound EE.16 give
+Let `C,D` be exact contracted-temperature pressure minimizers.  Relabel them
+so that `|gamma_C|<=|gamma_D|`, use `D` (of order `n`) as the row-base child,
+and choose the relative orientation which cancels their bias signs.  Let
+`r_u` be the resulting canonical iid-row inverse escort at `u=t`, with
+inverse exponent `lambda`.  The sector-bias balancing theorem SB.3 gives
 
 ```math
 {dr_{\rm row}\over dU_n}\le e^{C_{\rm row}},
 \qquad
 C_{\rm row}
-=\lambda\{\delta_n(t)+2|\gamma_A(t)|\}.            \tag{SP.5}
+=\lambda\{\delta_n(t)+\log2\}
+\le\lambda\{\beta^2/2+\log2\}.                    \tag{SP.5}
 ```
 
-At `t=beta/sqrt(N)`, `delta_n(t)<=beta^2/2`.  Thus a bounded opposite-child
-sector bias makes `C_row=O(1)`.
+This is uniform in both sector biases.  The row law is centrally symmetric,
+because its forward likelihood is invariant under `b\mapsto-b` by the
+global child-spin flip.
 
 **Lemma SP.2 (off-block quadratic MGF).**  Let `R_1,\ldots,R_m` be
 independent centrally symmetric sign vectors and suppose
@@ -119,42 +123,55 @@ then there are constants `a_C,b_C>0`, depending only on `C`, such that
 Here `M` is the symmetric block matrix with off-diagonal blocks `M_(ik)`;
 in particular `\|M\|_op<=\|M\|_F=\sqrt{2V}`.
 
-*Proof.*  Uniform-cube Hoeffding concentration and the density domination
-give
+*Proof.*  Put `K_0=e^C`.  Central symmetry and density domination give the
+dimension-free linear MGF bound
 
 ```math
-\Pr\{|\langle v,R_i\rangle|>z\}
-\le2e^C\exp\{-z^2/(2\|v\|_2^2)\}.                 \tag{SP.7}
-```
-
-Central symmetry and integration of this tail imply the joint subgaussian
-MGF bound
-
-```math
+\begin{aligned}
 E e^{\langle v,R_i\rangle}
-\le e^{\sigma_C^2\|v\|_2^2/2}                    \tag{SP.8}
+&=E\cosh\langle v,R_i\rangle\\
+&\le1+K_0\{E_{U_n}\cosh\langle v,R\rangle-1\}\\
+&\le1+K_0\{e^{\|v\|_2^2/2}-1\}
+ \le e^{K_0\|v\|_2^2/2}.
+\end{aligned}                                      \tag{SP.7}
 ```
 
-for a finite `sigma_C` depending only on `C`.  Independence gives the same
-bound for a concatenation of any collection of the row blocks.
+The last step is Bernoulli's inequality; thus one may take
+`sigma_C^2=K_0`.  Independence gives the same bound for a concatenation of
+any collection of row blocks.
 
-Randomly bipartition the row indices.  Every off-block monomial is cut with
-probability `1/2`; Jensen therefore decouples `e^(theta H)` into a constant
-multiple of the MGF of a bilinear form between the two independent sides.
-Conditioning on one side and applying (SP.8) turns this into the exponential
-of a positive quadratic form on the other side.  The Gaussian identity
+Let `H_delta` retain the pairs cut by a random bipartition of the row
+indices.  Since `E_delta H_delta=H/2`, Jensen gives the exact decoupling
+
+```math
+e^{\theta H}\le E_\delta e^{2\theta H_\delta}.     \tag{SP.8}
+```
+
+For a fixed cut write `H_delta=R_S^TBR_T`.  Conditioning on one shore and
+using (SP.7) turns its MGF into the exponential of a positive quadratic form
+on the other shore.  The Gaussian identity
 
 ```math
 e^{\alpha\|Tx\|_2^2}
 =E_g e^{\sqrt{2\alpha}\langle g,Tx\rangle}         \tag{SP.9}
 ```
 
-and (SP.8) bound that expectation by the corresponding Gaussian
-determinant.  Expanding `-log det(I-S)` for `\|S\|op<1` yields
-`b_C theta^2\|M\|_F^2`; since `\|M\|_F^2=2V`, constants can be absorbed as
-in (SP.6).  This is the standard decoupled Hanson--Wright proof, included
-here to note that independence is needed only between rows, not between
-coordinates within a row. `square`
+and a second application of (SP.7) give
+
+```math
+E e^{2\theta R_S^{\mathsf T}BR_T}
+\le\det(I-4\sigma_C^4\theta^2B^{\mathsf T}B)^{-1/2}.
+```
+
+Here `\|B\|op<=\|M\|op` and `\|B\|F^2<=V`.  Using
+`-\log(1-x)<=2x` for `x<=1/2`, one may take explicitly
+
+```math
+a_C={1\over2\sqrt2e^C},\qquad b_C=4e^{2C}.
+```
+
+This proves (SP.6) with no dimension-dependent prefactor.  Independence is
+needed only between rows, not between coordinates within a row. `square`
 
 For `H_2`, the blocks are
 `M_(ik)(j,l)=Gamma_(ik;jl)^epsilon`.  Therefore
@@ -167,17 +184,18 @@ V=K_\epsilon,\qquad \|M\|_{op}\le\sqrt{2K_\epsilon}. \tag{SP.10}
 
 **Theorem SP.3 (sector--Gram/cluster-tail physical dichotomy).**  Let
 `m+n=N`, `t=u=beta/sqrt(N)`, and let both children be exact minimizers at
-the contracted temperature.  Fix `lambda,beta` and an orientation.  Assume
+the contracted temperature.  Make the balanced row-direction and orientation
+choice preceding SP.2.  Fix `lambda,beta`, put
+`C=lambda(beta^2/2+log2)`, and assume
 
 ```math
-|\gamma_A(t)|\le G,
-\qquad
-\lambda t^2\sqrt{2K_\epsilon}\le a_C,              \tag{SP.11}
+K_\epsilon\le\kappa N^2,
+\qquad \lambda\beta^2\sqrt{2\kappa}\le a_C,       \tag{SP.11}
 ```
 
-where `C=lambda(beta^2/2+2G)` and `a_C` is from SP.2.  If the cluster series
-in SP.1 converges at `t`, then the exact canonical interaction cumulant
-satisfies
+where `a_C` is from SP.2.  If the cluster series in SP.1 converges at `t`
+for every bridge word as specified above, then the exact canonical
+interaction cumulant satisfies
 
 ```math
 \boxed{
@@ -189,21 +207,19 @@ satisfies
 Consequently,
 
 ```math
-K_\epsilon=O(N^2),
-\qquad
 \mathfrak C_{\ge4}(t)=o(N)                         \tag{SP.13}
 ```
 
-(with the constant in the first bound satisfying (SP.11)) imply
-`mathcal J_t=o(N)`; indeed the quadratic contribution is `O(1)`.
-Conversely, under the same bias, convergence, and quadratic-size premises,
+implies `\mathcal J_t=o(N)`; indeed the quadratic contribution is at most
+the constant `b_C lambda^2 beta^4 kappa`.  Conversely, under the same
+convergence and quadratic-size premises,
 
 ```math
 \mathcal J_t\ge\eta N
 \quad\Longrightarrow\quad
 \boxed{
 \mathfrak C_{\ge4}(t)
-\ge {\eta\over2\lambda}N-O_{\beta,\lambda,G}(1).} \tag{SP.14}
+\ge {\eta\over2\lambda}N-O_{\beta,\lambda,\kappa}(1).} \tag{SP.14}
 ```
 
 *Proof.*  By (SP.5), every independent row block under `r_t` meets SP.2.
@@ -221,9 +237,18 @@ Apply SP.2 to `theta=-lambda t^2` and use (SP.10).  From (SP.3),
 which proves (SP.12).  Substitute `t^4=beta^4/N^2` for (SP.13), and
 rearrange (SP.12) for (SP.14). `square`
 
-The asymmetric statement used the right-child row decomposition.  One may
-swap the children and retain whichever opposite-child sector bias is
-smaller.
+Equivalently, with
+
+```math
+\kappa_*={a_C^2\over2\lambda^2\beta^4},
+```
+
+a linear balanced canonical interaction forces either
+`K_\epsilon>\kappa_*N^2`, failure of the required absolute cluster
+expansion, or `\mathfrak C_{\ge4}(t)=\Omega(N)`.  This is an actual-child
+structural trichotomy.  It still concerns the existential balanced
+orientation and transpose; target relevance after bridge optimization is
+not proved.
 
 ## 4. Information-footprint and frontier audit
 
@@ -231,31 +256,36 @@ The physical theorem uses only:
 
 1. the four-coordinate sector--Gram states, which return `K_epsilon` by
    SQ.3;
-2. the scalar sector bias and adjacent extension deficit controlling the
-   actual canonical row law; and
+2. the balanced orientation plus the adjacent extension deficit controlling
+   the actual canonical row law; and
 3. the single absolute cluster mass `mathfrak C_(>=4)(t)`.
 
 It does not retain `B -> log Z_parent(B)`, the inverse bridge escort, or a
 table indexed by external fields.  The cluster mass can nevertheless be
 hard to bound: it aggregates cumulants of all orders and all edge tuples.
-Thus SP.3 has a strictly smaller **query footprint** than a bridge response
-table, but it is not a finite-bit compression theorem: an exact real bound
-on the all-order sum can itself be difficult to certify.  It is a
-conditional closure criterion, not yet a closure theorem for actual
+Thus SP.3 has a formally smaller **query footprint** than a bridge response
+table, but no operational information advantage has been proved.  The exact
+all-order scalar can require the complete high-order child Gibbs law, and
+the absolute values may impose a stronger condition than the cancellation-
+sensitive conclusion `J=o(N)`.  It is a conditional closure criterion, not
+yet a strict lower-information reduction or a closure theorem for actual
 minimizers.
 
-The theorem isolates a narrower physical question.  In the bounded-bias,
-quadratic-tangent regime, actual optimizing children obey exactly one of:
+The theorem isolates a narrower physical question.  Conditional on a linear
+balanced canonical interaction along a subsequence, at least one of the
+following nonexclusive alternatives occurs:
 
 ```text
-sublinear absolute connected cluster tail, hence no linear canonical gain;
-or linear high-order connected cluster mass already at zero bridge.
+a fixed normalized sector--Gram mass above the explicit threshold;
+failure of absolute cluster expansion at physical amplitude;
+or, if the canonical interaction is linear, linear high-order connected
+cluster mass already at zero bridge.
 ```
 
-The second branch is a named high-transport observable about the actual
-children.  It is not escaping conditional row Renyi complexity, and it is
-not visible in the sector--Gram tangent.  Proving which branch optimizing
-children occupy is still open.
+The last branch is a named high-transport observable about the actual
+children.  It is not escaping conditional row Renyi complexity and is not
+visible in the sector--Gram tangent.  Proving which branch optimizing
+children occupy, and pricing target relevance, are still open.
 
 ## 5. Audit of the tangent spectral corollary
 

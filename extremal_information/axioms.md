@@ -2900,3 +2900,18 @@ A divergent scalar sector bias is therefore not an escaping-component
 mechanism.  The balancing choice is existential and need not be the
 orientation selected by a separate target calculation; even when it is
 used, all extensive difficulty can remain in compatibility among rows.
+
+## 163. Tangent compression promotes only through a physical cluster law
+
+For the balanced actual-child bridge law, a finite sector--Gram state
+controls the complete quadratic cross-row chaos, but not its physical
+inverse tilt.  A dimension-free component envelope plus an absolutely
+summable connected-cluster tail does promote that tangent: the quadratic
+term contributes only `O(1)` and every linear canonical gain must then
+appear in a linear high-order connected tail.
+
+This is a theorem-backed sufficient principle, not a claim that absolute
+cluster mass is the right final state.  The tail ranges over all orders and
+can be harder than the cancellation-sensitive quantity it bounds.  A
+one-scalar presentation is not operational compression until its
+description or verification complexity is controlled.

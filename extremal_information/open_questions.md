@@ -1476,3 +1476,20 @@ observable certify a fixed positive density of the already classified
 row dependence/retuning resource?  A proof must also check that the
 balanced orientation is relevant to the desired target; zero-bridge
 optimality alone does not establish this.
+
+## 33. Balanced physical cluster tightness or extensive product phase?
+
+In the balanced actual-child presentation, Theorem 37.33 reduces one
+physical promotion step to a sector--Gram coefficient and an all-order
+absolute connected cross-row cumulant tail.  Decide, uniformly for exact
+contracted-temperature minimizing children, whether the tangent stays below
+the explicit `N^2` threshold and the tail is `o(N)` with a summable rate.
+
+If not, produce a directional theorem: either connect fixed normalized
+sector--Gram mass or linear cluster mass to `Omega(N)` reverse-product
+dependence, or certify coherent positive-density regular-factor retuning.
+The certificate must use less operational information than the complete
+child Gibbs/external-field landscape.  In every branch, quantify whether
+the balanced orientation is target-reaching or price its loss.  Merely
+renaming the full high-order Gibbs law as one exact scalar does not solve
+this question.

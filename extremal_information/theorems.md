@@ -18522,3 +18522,71 @@ audit are in
 [`drafts/actual_child_sector_bias_balancing.md`](drafts/actual_child_sector_bias_balancing.md)
 and
 [`audits/actual_child_sector_bias_balancing_adversarial_audit.md`](audits/actual_child_sector_bias_balancing_adversarial_audit.md).
+
+### Theorem 37.33 (balanced actual-child cluster promotion)
+
+Let two exact contracted-temperature minimizing children be put in the
+balanced row direction and orientation of Theorem 37.32.  At
+`t=beta/sqrt(N)`, let `K_epsilon` be their sector--Gram coefficient from
+Theorem 37.31 and let `mathfrak C_(>=4)(t)` be the absolute sum of all
+even, order-at-least-four connected cumulants of the exact zero-bridge
+rank-one child channel whose edge tuples meet at least two bridge rows.
+Assume, for every bridge word and every word obtained by making any set of
+rows inactive, that the zero-field cumulant series converges to its log MGF
+throughout the real segment from `0` to `t`.
+
+Put
+
+```math
+C_0=\lambda(\beta^2/2+\log2),\qquad
+a_0={1\over2\sqrt2e^{C_0}},\qquad b_0=4e^{2C_0}.
+```
+
+If, for some `kappa` independent of `N`,
+
+```math
+K_\epsilon\le\kappa N^2,\qquad
+\lambda\beta^2\sqrt{2\kappa}\le a_0,
+```
+
+then the exact canonical interaction cumulant satisfies the physical-scale
+bound
+
+```math
+\boxed{
+\mathcal J_t
+\le b_0\lambda^2t^4K_\epsilon
+   +2\lambda\mathfrak C_{\ge4}(t).}              \tag{37.95}
+```
+
+In particular, a sublinear absolute cluster tail implies
+`\mathcal J_t=o(N)`.  Conversely, if `\mathcal J_t>=eta N` in this
+quadratic-size regime, then
+
+```math
+\boxed{
+\mathfrak C_{\ge4}(t)
+\ge {\eta\over2\lambda}N-O_{\beta,\lambda,\kappa}(1).} \tag{37.96}
+```
+
+Equivalently, a linear interaction in the balanced presentation forces at
+least one of: normalized sector--Gram mass above the explicit threshold
+`a_0^2/(2lambda^2 beta^4)`, failure of the absolute cluster expansion at
+physical amplitude, or linear high-order connected cluster mass in the
+actual zero-bridge child law.
+
+The proof first uses balanced optimizer extension support to obtain
+dimension-free row max density.  Central symmetry then turns max-density
+domination into a dimension-free vector-subgaussian MGF.  A random row cut
+and Gaussian determinant bound control the quadratic cross-row chaos, while
+the absolutely convergent cumulant expansion bounds the remaining
+oscillation.
+
+This is a conditional theorem about the actual optimizing children, not a
+surrogate.  It does not show that the cluster scalar has lower operational
+information complexity than the full child Gibbs law, and it does not prove
+that the balanced orientation reaches the parent target.  The proof and
+adversarial audit are in
+[`drafts/actual_child_sector_gram_physical_promotion.md`](drafts/actual_child_sector_gram_physical_promotion.md)
+and
+[`audits/actual_child_sector_gram_physical_promotion_adversarial_audit.md`](audits/actual_child_sector_gram_physical_promotion_adversarial_audit.md).
