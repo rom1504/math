@@ -133,6 +133,14 @@ a_*={1\over8\sqrt2e^{\lambda^2\beta^2/2}},
 \qquad b_*=64e^{\lambda^2\beta^2}.                   \tag{A.8}
 ```
 
+These are not the constants from the balanced `D_infinity` theorem.  Its
+cutoff is `1/(2sqrt(2)e^(lambda(beta^2/2+log2)))`; neither cutoff dominates
+the other for every `beta,lambda`, and the Renyi-two cutoff is much smaller
+at many large target parameters.  Orientation-uniformity therefore trades
+away the target comparison at the price of a different, sometimes more
+restrictive, fixed normalized Gram threshold.  It does not transport every
+instance covered by SP.3 verbatim.
+
 For the sector--Gram chaos, `V=K_epsilon` and
 `||M||op<=sqrt(2K_epsilon)`.  Taking
 `theta=-lambda beta^2/N` turns the determinant condition into
@@ -257,9 +265,10 @@ relevance from the zero-bridge identity alone.
 
 ## 6. Frontier consequence
 
-The target-orientation clause can be deleted from the physical-promotion
-SML.  In the orientation which actually reaches the target, one must still
-decide from an operationally smaller actual-child observable whether
+Within the explicit OU.9 Gram regime, the target-orientation clause can be
+deleted from the physical-promotion SML.  In the orientation which actually
+reaches the target, one must still decide from an operationally smaller
+actual-child observable whether
 
 ```math
 J=o(N),\qquad I^\leftarrow=\Omega(N),\qquad
