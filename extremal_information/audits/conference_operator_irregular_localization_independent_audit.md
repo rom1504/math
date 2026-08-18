@@ -205,4 +205,3 @@ For the final illustrative product law, taking sign vectors
 `(alpha^2/2+o(1))r`, and mean singular value `alpha sqrt(r)`, as stated.
 Writing the sign-vector convention explicitly would remove the only minor
 notational ambiguity.
-
