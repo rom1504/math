@@ -1408,3 +1408,59 @@ accounts for every actual child.  They do not establish either asymptotic
 branch.  Generic rank-one and fixed-overlap examples prove that weak
 coordinates, bounded row Renyi complexity, central symmetry, and every
 fixed overlap order are insufficient; child optimality must enter the proof.
+
+## 32. Sector-oriented external-field stability of actual minimizing children
+
+The actual erased-row law is now identified exactly as a sector-biased
+one-vertex extension escort.  Exact minimization gives a dimension-free
+density bound for its neutral version, and the path from the canonical row
+product to the full escort has uniformly bounded conditional Renyi-two
+components.  If its canonical error is linear, a positive density of rows
+must carry marginal drift or row-versus-rest information.
+
+The missing implication is no longer generic row regularity.  Prove, for
+contracted-temperature minimizing children, one of the following genuinely
+directional statements:
+
+1. **External-field cavity stability.**  The summed one-row curvature
+   `Xi_N` in (37.82) is `O(N^(1-delta))` (or has another summable density
+   bound), uniformly through the sector-oriented inverse-tilt path.  This
+   makes the canonical joint interaction sublinear.
+2. **High-transport persistence.**  A child statistic smaller than its full
+   external-field response proves that a positive density of the regular
+   rows has order-one scaled mutual information or coherent factor retuning,
+   with a directional reverse-product certificate.
+
+The statistic cannot be only pressure, entropy, homogeneous/fixed-size flip
+data, or any other radial transform: exact thermal minimizers with identical
+such data have different actual row-path curvature.  It also cannot be an
+unlabelled separate-child overlap hierarchy for a fixed orientation.  The
+first viable finite coordinate is the joint `tau`-oriented four-spin tensor
+in (37.83), but its small-bridge expansion is not uniform in order.  The
+smallest concrete next theorem is therefore a uniform cumulant or
+synchronization result transporting an oriented overlap state through the
+physical external-field cavity path without reconstructing the complete
+field-response table.
+
+
+The canonical orientation subproblem is now separated more sharply by
+Theorem 37.31.  Its exact minimal row coordinate is the sector contrast,
+and its log likelihood ratio has a polynomial-size per-row quotient whose
+two orientation kernels differ by `o(1)` max divergence.  Conditional on
+the exact contrast, the canonical product kernel is orientation-independent.
+The open object is therefore not the canonical orientation bit itself but
+the joint label dynamics and the within-label full-escort residual in
+(37.88).  A valid solution must do one of the following from a child state
+strictly smaller than the full bridge/external-field response:
+
+1. prove both the contrast-label image gap and the conditional residual
+   are `o(N)` with a usable rate; or
+2. prove that one has a fixed positive density and identify a scalable
+   high-transport child observable which certifies it.
+
+The four-real-coordinate sector--Gram state exactly controls the first
+nonzero tangent and an extensive tangent forces an aggregate sector
+covariance eigenmode of order `sqrt(N)`.  What remains is a uniform
+physical-scale tail/synchronization theorem.  Merely applying the KL chain
+rule or storing the complete contrast/scale tables does not count as a
+strict reduction.

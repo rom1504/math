@@ -18187,3 +18187,281 @@ The proof and two independent audits are in
 [`audits/actual_child_effective_row_support_dichotomy_adversarial_audit.md`](audits/actual_child_effective_row_support_dichotomy_adversarial_audit.md),
 and
 [`audits/actual_child_effective_row_support_es3_independent_audit.md`](audits/actual_child_effective_row_support_es3_independent_audit.md).
+
+### Theorem 37.28 (actual child rows are biased one-vertex extension escorts)
+
+For a signing `D` of order `n`, let `z_(D,t,u)^gamma(b)` be the normalized
+one-vertex extension response under the augmented child measure with sector
+field `gamma`.  If `A,D` are the actual children and the relative orientation
+is `epsilon`, then the exact erased-row likelihood is
+
+```math
+\boxed{
+p_{{\rm row},u}^{(\epsilon)}(b)
+=z_{D,t,u}^{\epsilon\gamma_A(t)}(b),
+\qquad
+\gamma_A={1\over2}\log{Z_A^+(t)\over Z_A^-(t)}.}   \tag{37.77}
+```
+
+At `u=t` and zero sector field,
+
+```math
+z_{D,t,t}^{0}(b)
+={\overline Z_{n+1}(D\oplus b,t)
+  \over\overline Z_n(D,t)(\cosh t)^n}.             \tag{37.78}
+```
+
+If `D` is an exact order-`n` pressure minimizer and
+
+```math
+\delta_n(t)=n\log\cosh t-{F_{n+1}(t)-F_n(t)\},
+```
+
+then every extension satisfies `z^0(b)>=e^(-delta_n)`.  Hence its inverse
+row escort has the optimizer-specific bound
+
+```math
+\boxed{
+D_\infty(r_{D,t,t}^{\gamma}\Vert U_n)
+\le\lambda\min\{\delta_n(t)+2|\gamma|,\,2tn\}.}   \tag{37.79}
+```
+
+At `t=beta/sqrt(N)`, `delta_n=O_beta(1)`, so the neutral actual extension
+escort has a dimension-free `L^infinity` density bound.  The `2tn` branch
+is generic and only `O(sqrt N)`; the dimension-free neutral bound is the
+optimizer gain.
+
+The same response gives the exact Bellman recurrence
+
+```math
+F_{n+1}(t)=\min_D\{
+ \log\overline Z_n(D,t)+n\log\cosh t
+ +\min_b\log z_{D,t,t}^0(b)\}.                    \tag{37.80}
+```
+
+Every row of an exact minimizer optimally reinserts into its own deletion.
+That fact does **not** transfer automatically to the canonical sector row:
+an exact triangle/edge minimizer example shows that the other child's sector
+bias can reverse the preferred extension row.
+
+Finally, the two scalar child biases determine the forward orientation and
+its reverse-KL contribution exactly:
+
+```math
+D(U_\epsilon\Vert\Pi_\epsilon)
+=-{1\over2}\log(1-\tanh^2\gamma_A\tanh^2\gamma_D).
+                                                               \tag{37.81}
+```
+
+Thus sector symmetry breaking is either visible in the one-bit orientation
+channel or, after transposing toward the smaller bias, the canonical row is
+a diffuse biased extension escort.  The theorem controls the one-row state;
+it does not control the joint path mass in (37.75).
+
+Proofs, the exact mismatch, and an independent audit are in
+[`drafts/actual_child_deletion_extension_response.md`](drafts/actual_child_deletion_extension_response.md),
+[`drafts/actual_child_extension_escort_dichotomy.md`](drafts/actual_child_extension_escort_dichotomy.md),
+and
+[`audits/actual_child_extension_escort_dichotomy_adversarial_audit.md`](audits/actual_child_extension_escort_dichotomy_adversarial_audit.md).
+
+### Theorem 37.29 (external-field cavity curvature is the remaining local resource)
+
+For the canonical interaction `h`, let `mu_(i,theta)^(B_-i)` be the
+one-row tilt from `r_i` by `exp(-theta h)`, and define
+
+```math
+\Xi_N=\sup_{0<s\le\lambda}\sum_iE_{(q_s)_{-i}}
+ \sup_{0\le\theta\le s}
+ \operatorname {Var}_{\mu_{i,\theta}^{B_{-i}}}h.
+```
+
+Conditional exponential-family calculus gives
+
+```math
+\boxed{J\le{\lambda^2\over2}\Xi_N.}               \tag{37.82}
+```
+
+Thus `Xi_N=o(N)` is a sufficient actual-law superconcentration theorem, and
+`J>=eta N` forces `Xi_N>=2eta N/lambda^2`.  If the conditional row tilts
+have a uniform Poincare constant, the same statement holds with `Xi_N`
+replaced by their summed cavity-gradient energy.  The universal flip bound
+gives only `O(N)`, and rank-one and block-parity channels attain that scale.
+Moreover `h` is a difference of convex log partitions and is generally
+neither convex nor concave.
+
+The actual minimizer inequalities are zero-field lower-MGF constraints;
+they do not supply the needed upper curvature under external fields and
+inverse tilts.  Therefore no standard convex concentration or Poincare
+theorem closes (37.82) without a new optimizer-to-external-field stability
+lemma.  The full audit is
+[`audits/actual_child_convex_superconcentration_applicability_audit.md`](audits/actual_child_convex_superconcentration_applicability_audit.md).
+
+### Theorem 37.30 (the first actual row resource is sector-oriented overlap)
+
+For fixed finite children, let
+
+```math
+K_\epsilon=\sum_{i<k}\sum_{j,\ell}
+ \left(E_{\nu_\epsilon}X_iX_kY_jY_\ell\right)^2.
+```
+
+As the bridge amplitude `u` tends to zero while the internal temperature
+and `lambda` stay fixed, the two exact path masses in (37.75) satisfy
+
+```math
+\boxed{
+T_u={\lambda^2\over2}u^4K_\epsilon+O(u^6),
+\qquad M_u=O(u^8),
+\qquad J_u=T_u+M_u.}                               \tag{37.83}
+```
+
+Thus the first nonzero actual-child interaction is row total correlation,
+and its coefficient is a joint, `tau`-oriented four-spin overlap tensor;
+row-factor retuning starts two orders later.
+
+This statistic is genuinely nonradial.  The two certified order-eight
+thermal minimizer classes have the same complete pressure and entropy
+profile, but, paired with the order-two minimizer, their orientation-invariant
+values tend to
+
+```math
+K(A_0,D_2)=20,
+\qquad K(A_1,D_2)=12.                               \tag{37.84}
+```
+
+Hence even minimization over orientation does not make scalar child
+pressure/entropy data response-sufficient.  A separate exact triangle
+witness shows that unoriented replica data cannot label a fixed orientation,
+although it merely swaps the two orientation labels and is not a no-go to
+their unordered pair.
+
+The same order-eight classes also have identical complete radial flip data
+but low-channel canonical coefficients `7lambda^2` and `5lambda^2`.  Along
+the finite physical diagonal `u=t`, `lambda=1`, their exact zero-temperature
+tropical rates are respectively `25/12` and `9/5`.  These are finite-order
+actual-minimizer falsifiers, not contracted-order asymptotics.
+
+Proofs and reproducible calculations are in
+[`drafts/actual_child_entropy_overlap_orientation_no_go.md`](drafts/actual_child_entropy_overlap_orientation_no_go.md),
+[`drafts/actual_child_radial_path_curvature_falsifier.md`](drafts/actual_child_radial_path_curvature_falsifier.md), and
+[`experiments/actual_child_radial_path_curvature_falsifier.py`](experiments/actual_child_radial_path_curvature_falsifier.py).
+
+### Theorem 37.31 (sector contrast and a finite carrier for the actual response tangent)
+
+For the two sector-conditioned output likelihoods of a right child, put
+
+```math
+s(b)={z_+(b)+z_-(b)\over2},
+\qquad
+c(b)={z_+(b)-z_-(b)\over z_+(b)+z_-(b)}.
+```
+
+If `gamma_A,gamma_D` are the two child sector biases, then the canonical
+erased-row likelihood in relative orientation `epsilon` factors exactly as
+
+```math
+\boxed{
+z_{A\to D}^{\epsilon}(b)
+=s(b)\{1+\tanh(\gamma_D+\epsilon\gamma_A)c(b)\}.} \tag{37.85}
+```
+
+The neutral extension response is the forward-orientation barycenter of
+these two likelihoods and is pointwise between them.  When
+`gamma_A\ne0`, `c` is, up to invertible relabelling, the minimal exact
+statistic for discriminating the two normalized inverse row escorts: their
+likelihood ratio is a strictly monotone function of `c`.  Moreover,
+
+```math
+\operatorname {TV}(P_+,P_-)=E_U s|c|,             \tag{37.86}
+```
+
+and nonzero contrast necessarily has both signs.  Thus no fixed
+orientation pointwise dominates the other.
+
+The first genuinely cross-row correction also has a finite child carrier.
+For sector `a`, let
+
+```math
+v_C^a=(E_{\mu_{C,a,t}}X_iX_j)_{i<j},
+\qquad G_C(a,b)=\langle v_C^a,v_C^b\rangle,
+```
+
+and set `S_2(C;t)=(|C|,gamma_C,G_C)`.  Apart from the order this state has
+four real coordinates.  It determines the exact coefficient in Theorem
+37.30 by
+
+```math
+\boxed{
+K_\epsilon(A,D;t)
+=\sum_{a,b=\pm1}\pi_a^\epsilon\pi_b^\epsilon
+ G_A(a,b)\{|D|+2G_D(\epsilon a,\epsilon b)\},}  \tag{37.87}
+```
+
+where `pi_a^epsilon` is the zero-bridge sector weight.  Hence this
+fixed-dimensional, demonstrably sub-landscape child state composes exactly
+to the leading `u^4` row-total-correlation and canonical-cumulant tangent.
+
+There is also an exact full-amplitude disintegration.  Conditional on
+the vector of row contrasts `C_i=c(B_i)`, the canonical product has the
+form
+
+```math
+r_\epsilon^{\otimes m}(dB\mid\mathbf C)
+=\bigotimes_i\kappa_{C_i}(dB_i),
+```
+
+where the kernel `kappa` is independent of the orientation.  Therefore
+
+```math
+\boxed{
+J_\epsilon
+=D((r_\epsilon^{\otimes m})_{\mathbf C}
+   \Vert(q_\epsilon)_{\mathbf C})
+ +E D\!\left(\bigotimes_i\kappa_{C_i}
+       \middle\Vert q_\epsilon(\,\cdot\mid\mathbf C)\right).} \tag{37.88}
+```
+
+This exhausts canonical **row** orientation, not orientation in the full
+joint escort.  The contrast can have exponentially many values and the
+kernel still uses the complete one-row scale table, so (37.88) is not by
+itself a low-information reduction.
+
+Nevertheless the canonical orientation experiment has a polynomial
+approximate quotient at physical scaling.  If the opposite child is an
+exact pressure minimizer, the log likelihood ratio `ell=log(dr_+/dr_-)`
+obeys
+
+```math
+\operatorname {osc}\ell
+\le4\lambda|\gamma_A|
+\le4\lambda N(\log2+\beta^2/4).              \tag{37.89}
+```
+
+Quantizing `ell` into intervals of width `eta` uses `O(N/eta)` labels
+per row and makes the two conditional row kernels mutually
+`D_infty`-close by `eta`; their `m`-row product kernels are close by
+`m eta`.  Thus `eta_N=o(1)` removes canonical orientation at `o(N)`
+max-divergence cost with a polynomial per-row alphabet.  It does not
+compress the row-label vector or the within-cell full-escort residual.
+
+Finally, if `g_C=max_aG_C(a,a)`, then
+
+```math
+0\le K_\epsilon\le g_A(|D|+2g_D).             \tag{37.90}
+```
+
+At comparable splits an `Omega(N^3)` tangent coefficient forces some
+child sector covariance to have an eigenvalue `Omega(sqrt N)`; otherwise
+the formal physical-amplitude leading term is `o(N)`.  This is a named
+aggregate child mode, not control of the nonuniform higher-order tail.
+
+The sector--Gram reduction is only infinitesimal at fixed finite children.  It has no
+proved finite-precision complexity, uniform physical-scale remainder, or
+closure under repeated composition.  Indeed two exact order-eight
+minimizers have the same complete canonical row quotient `(s,c)` against
+the order-two child but distinct values `K=20,12`; the joint sector-Gram
+coordinate is genuinely additional.  The full proof and independent audit
+are in
+[`drafts/actual_child_sector_contrast_quotient.md`](drafts/actual_child_sector_contrast_quotient.md)
+and
+[`audits/actual_child_sector_gram_tangent_carrier_audit.md`](audits/actual_child_sector_gram_tangent_carrier_audit.md).

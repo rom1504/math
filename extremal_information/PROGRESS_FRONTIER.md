@@ -1193,3 +1193,173 @@ class and risks restating the desired parent optimization.
   surrogate strike.  Further generic regularity or one-component path
   identities do not reset the counter; the next result must use child
   minimality to control or expose the collective row resource.
+
+
+### Checkpoint 20 — the one-row state is an extension escort; the missing state is sector-oriented and contextual
+
+- **Strongest new actual-child statements:** the erased-row likelihood has
+  the exact optimizer interface
+
+  ```math
+  p_{{\rm row},u}^{(\epsilon)}(b)
+  =z_{D,t,u}^{\epsilon\gamma_A}(b),
+  ```
+
+  where `z` is a sector-biased one-vertex extension response.  At `u=t`, if
+  `D` is an exact order-`n` minimizing child and
+
+  ```math
+  \delta_n=n\log\cosh t-(F_{n+1}(t)-F_n(t)),
+  ```
+
+  then its neutral inverse extension escort satisfies the dimension-free
+  physical-scale bound
+
+  ```math
+  D_\infty(r_{D,t,t}^{0}\Vert U_n)
+  \le\lambda\delta_n=O_\beta(1).
+  ```
+
+  The biased bound is
+  `lambda min{delta_n+2|gamma|,2tn}`.  The two child sector biases also give
+  the exact one-bit orientation cost (37.81).  Thus one-row support is not
+  the unresolved resource: the neutral actual factor is uniformly diffuse,
+  every conditional/optimal factor remains bounded in Renyi two, and any
+  surviving phase is contextual compatibility across rows.
+- **Exact optimizer recurrence and its ceiling:** every row of an exact
+  minimizing child optimally reinserts into its own deletion, and the
+  minimized pressure has the exact one-vertex Bellman recurrence (37.80).
+  But an all-actual triangle/edge example proves that the other child's
+  sector bias can reverse that row preference.  The Bellman state therefore
+  does not transfer to the canonical sector escort without sector
+  synchronization or adjacent-order stability.
+- **First directional nonradial coordinate:** at fixed finite children, the
+  canonical path has
+
+  ```math
+  T_u={\lambda^2\over2}u^4K_\epsilon+O(u^6),
+  \qquad M_u=O(u^8),
+  ```
+
+  where `K_epsilon` is the joint `tau`-oriented four-spin overlap norm.  The
+  first interaction is therefore genuinely row-total-correlation, not
+  factor retuning.  This is an exact response theorem but its remainder is
+  not uniform in growing order.
+- **Sharp actual-minimizer falsifiers:** the two certified order-eight
+  thermal minimizer classes have identical complete pressure/entropy and
+  radial flip data but orientation-invariant tangent values `20` and `12`,
+  and low-channel canonical coefficients `7lambda^2` and `5lambda^2`.
+  Their fixed-order physical-diagonal tropical `J/t` rates are `25/12` and
+  `9/5`.  These results kill scalar/radial optimizer sufficiency exactly;
+  the physical-diagonal calculation is at fixed `N=10`, not a contracted
+  large-order obstruction.  A triangle witness separately proves that
+  unoriented overlap data cannot label fixed sectors, while honestly only
+  swapping the two orientation labels.
+- **Concentration ceiling:** the exact local-curvature scalar `Xi_N` obeys
+
+  ```math
+  J\le{\lambda^2\over2}\Xi_N.
+  ```
+
+  Standard Poincare/convex concentration plus all universal actual-law
+  inputs gives only `Xi_N=O(N)`, sharply attained by generic rank-one and
+  block-parity falsifiers.  Child flip minimality is a zero-field lower-MGF
+  condition and does not control the needed upper curvature under external
+  fields and inverse tilts.  Further generic concentration receives one
+  strike and is frozen.
+- **Previous SML:** from a child statistic smaller than the full external-
+  field landscape, make both weighted TC and marginal path masses `o(N)`,
+  or certify positive-density irreducible information/coherent retuning.
+- **Current SML:** prove an **actual-minimizer sector-oriented external-field
+  stability theorem**: from a compressed state retaining relative `tau`
+  alignment, show `Xi_N=O(N^(1-delta))` (or another summable-density bound)
+  throughout the physical inverse-tilt path.  The directional alternative
+  is a high-transport observable of the same sector-oriented cavity state
+  which certifies a positive density of the ES.42 row resource.  Pressure,
+  entropy, radial flips, neutral reinsertion, and a fixed unoriented overlap
+  truncation are now proved insufficient.
+- **Benchmark and target distance:** this is a **RESET for actual state
+  identification**.  It replaces “understand the actual child law” by one
+  external-field stability/synchronization statement and supplies exact
+  all-actual counterexamples to weaker states.  It remains Level 5: no
+  power-saving canonical error, directional asymptotic dependence, target
+  recurrence, or convergence-bound movement is proved.
+- **Decision:** **CONTINUE ONE NARROW SECTOR-ORIENTED CAVITY CAMPAIGN.**  The
+  radial and generic-concentration subroutes are frozen.  If that campaign
+  only restates the full external-field table or yields another `O(N)`
+  estimate, count it as the first post-reset strike; after a second such
+  strike, freeze adversarial statistical mechanics and promote the
+  rare-event/renormalization branch.
+
+
+### Checkpoint 21 — canonical sector orientation is quotiented; the residual is joint
+
+- **Strongest exact actual-law quotient:** the two canonical erased-row
+  likelihoods factor as
+
+  ```math
+  z^\epsilon(b)=s(b)\{1+\tanh(\gamma_D+\epsilon\gamma_A)c(b)\}.
+  ```
+
+  For nonzero opposite-child bias, `c` is the minimal exact statistic for
+  their binary inverse-row experiment.  Conditioning on the vector of row
+  contrasts makes the canonical product kernel independent of orientation
+  and gives the exact physical-amplitude split
+
+  ```math
+  J_\epsilon
+  =D((r_\epsilon^{\otimes m})_{\mathbf C}
+     \Vert(q_\epsilon)_{\mathbf C})
+   +E D(\otimes_i\kappa_{C_i}
+     \Vert q_\epsilon(\cdot\mid\mathbf C)).
+  ```
+
+  Thus a linear canonical phase is either visible in a scalar whole-row
+  contrast image or survives after canonical row orientation has been
+  removed.  This exhausts canonical-row orientation only; the full
+  conditional escort can retain joint orientation.
+- **Quantitative orientation complexity:** at physical scaling for an exact
+  minimizing opposite child, the row log-likelihood ratio has oscillation
+  at most `4lambda N(log2+beta^2/4)`.  Width-`eta` quantization therefore
+  uses `O(N/eta)` labels per row and makes the two conditional orientation
+  kernels mutually `D_infty`-close by `eta`, or `m eta` for their row
+  products.  Taking `eta=o(1)` removes canonical orientation at `o(N)`
+  cost with a polynomial per-row alphabet.  The row-label vector and its
+  defining one-row table are not thereby compressed.
+- **First finite child carrier:** the four-real-coordinate state
+  `S_2(C;t)=(|C|,gamma_C,G_C)` computes the exact `u^4` joint-cancellation
+  coefficient.  If that tangent is `Omega(N^3)`, some sector covariance
+  has an `Omega(sqrt(N))` eigenmode; otherwise its formal physical leading
+  contribution is `o(N)`.  The statement is tangent-only because no
+  order-uniform higher-cumulant remainder is proved.
+- **Sharp falsifier:** the exact order-eight minimizing classes paired
+  with the same order-two child have identical complete canonical row
+  quotients `(s,c)` and scalar pressure/entropy/radial data, yet their
+  joint tangent values are `20` and `12` and their finite physical
+  canonical errors differ.  Hence no theorem confined to the one-row
+  quotient can determine `h` or `J`.
+- **Previous SML:** prove sector-oriented external-field stability from a
+  compressed actual-child state, or certify a positive-density
+  high-transport row resource.
+- **Current SML:** prove an **actual-minimizer physical sector-hierarchy
+  tail theorem**.  Starting from the polynomial contrast quotient and the
+  four-coordinate sector--Gram tangent, either (a) bound both the joint
+  contrast-label image gap and the within-label full-escort residual by
+  `o(N)` with a summable rate, or (b) certify one at fixed positive density
+  from a named child observable smaller than the complete bridge/external-
+  field table.  Equivalently, promote a controlled finite sector hierarchy
+  through the physical inverse-tilt path, not merely at `u->0`.
+- **Progress classification:** **COMPONENT-LEVEL RESET, STILL LEVEL 5.**
+  This is a strictly narrower statement about actual optimizing children:
+  canonical one-row orientation is no longer part of the unknown, and the
+  first joint coordinate is explicit.  It is not yet a strict
+  lower-information reduction of the full residual, because the contrast
+  table, row-label vector, and conditional `q` can still retain the full
+  joint landscape.  No recurrence, pressure no-gain theorem, or bound on
+  `M_n` follows.
+- **Decision:** continue only on uniform promotion of the audited
+  sector--Gram/contrast state or a scalable actual-child falsifier.  A
+  result that merely expands the fixed-order moment hierarchy without a
+  physical tail bound is the first post-reset strike; a second such strike
+  freezes adversarial statistical mechanics and promotes rare-event/
+  renormalization.

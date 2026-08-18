@@ -1,6 +1,6 @@
 # Actual child rows as one-vertex extension escorts
 
-Status: **rigorous task-local theorem draft**.  This note concerns the
+Status: **rigorous, independently audited task-local theorem**.  This note concerns the
 forward channel and the canonical inverse-row factors induced by the actual
 contracted-temperature children.  It identifies those row factors with
 one-vertex extension responses of a child, including the exact scalar
@@ -395,3 +395,6 @@ marginal retuning in ES.28.  The smallest missing lemma becomes:
 The extension identity makes this question strictly narrower than arbitrary
 bounded-Renyi row regularity: all one-row factors now lie in a specified
 all-order response family with the optimizer lower envelope (EE.14).
+
+The independent adversarial audit is
+[`../audits/actual_child_extension_escort_dichotomy_adversarial_audit.md`](../audits/actual_child_extension_escort_dichotomy_adversarial_audit.md).

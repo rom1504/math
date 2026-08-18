@@ -3858,3 +3858,86 @@ correlation.  Thus neither a marginal-only nor a dependence-only account of
 the canonical mismatch survives finite actual-child testing.  This is a
 falsifier of one-component proof strategies, not asymptotic evidence that
 either component has positive limiting density.
+
+## Example 196: actual deletion optimality does not survive sector bias
+
+Every order-three signing and the unique order-two signing are exact
+augmented-pressure minimizers at every positive temperature.  Delete one
+vertex from the positive triangle.  Its incident row `(1,1)` ties with
+`(1,-1)` for the neutral augmented extension response of the remaining
+positive edge, as the exact Bellman theorem requires.
+
+Use another positive triangle as the opposite child, however.  Its unequal
+one-sided sector partitions bias the canonical erased-row response, and
+exact summation gives
+
+```math
+z_{T\to E}^{+}((1,1);t,t)
+>z_{T\to E}^{+}((1,-1);t,t).
+```
+
+The inverse escort therefore gives the actual deleted row strictly *less*
+mass.  This is an all-actual-child falsifier: zero-field row reinsertion does
+not transfer to the sector-biased bridge law.  A proof needs sector
+synchronization, orientation compensation, or adjacent-order stability.
+
+## Example 197: scalar optimizer data miss the actual row path
+
+The two certified order-eight thermal minimizer classes have identical full
+energy histograms and therefore identical pressure, entropy, homogeneous
+flip, and fixed-size flip data.  Nevertheless their signed overlap tangent
+norms are `14` and `10`; against the order-two child, their low-channel
+canonical interaction coefficients are `7lambda^2` and `5lambda^2`.
+
+At `t=u=3`, `lambda=1`, complete enumeration of the `2+8` bridges gives
+
+| right child | `J/N` | integrated TC share | marginal-retuning share |
+|---|---:|---:|---:|
+| class `A_0` | `.443573173` | `.816813379` | `.183186621` |
+| class `A_1` | `.523848938` | `.474757829` | `.525242171` |
+
+The exact zero-temperature tropical rates on this finite physical diagonal
+are `25/12` and `9/5`.  Thus complete radial optimizer information neither
+determines the canonical error nor predicts which ES component carries it.
+This is a finite actual-minimizer falsifier, not an asymptotic phase result.
+
+## Example 198: separate entropy and unoriented overlap lose sector alignment
+
+For the positive order-three triangle, replacing one child by its negative
+preserves its pressure, entropy, spin marginal, and every separate-child
+spin-replica overlap law.  Yet the two fixed-orientation canonical errors
+obey, with `q=tanh t` and `lambda=1`,
+
+```math
+J_+(q)-J_-(q)=54q^{10}+O(q^{12}),
+```
+
+and the leading difference is carried by row total correlation.  Negating
+the child swaps the two orientation labels, so this does not obstruct a
+criterion using their minimum or unordered pair.  The order-eight witness
+in Theorem 37.30 separately proves that even orientation-combined response
+tangents are not determined by scalar pressure/entropy profiles.
+
+
+## Example 199: the row sector quotient closes orientation but not interaction
+
+For any actual child pair, the two canonical erased-row likelihoods have
+the common form
+
+```math
+z^\epsilon(b)=s(b)\{1+\theta_\epsilon c(b)\}.
+```
+
+Thus `c` is the exact likelihood-ratio coordinate for the two inverse row
+escorts.  On every fibre of `c`, both orientations induce the same
+conditional kernel, proportional to `s(b)^(-lambda)`.  This gives the
+exact KL split (37.88), and a polynomial quantization makes the two
+canonical orientation kernels `o(N)`-close over a full row product.
+
+The order-eight pair from Example 197 shows the sharp ceiling.  Against
+the same order-two child, the two left minimizers have the same signed
+histogram and hence the same complete canonical row quotient `(s,c)` in
+both orientations, but their joint tangent values are `20` and `12`.
+Therefore the row quotient removes canonical sector ambiguity without
+determining the cross-row interaction.  It is a genuine quotient and a
+genuine no-go in the same example.

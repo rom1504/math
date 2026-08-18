@@ -269,3 +269,7 @@ uniformly to `u=t=beta/sqrt(N)` and fixed `lambda`, or prove that such a
 uniform transport requires the higher connected overlap hierarchy.  The
 full labelled tensor is not automatically admissible: its exact field-grid
 oracle can reconstruct the child response landscape by CC.12.
+
+The independent adversarial audit, including the fixed-order scope check for
+the physical-diagonal calculation, is
+[`../audits/actual_child_radial_path_curvature_falsifier_adversarial_audit.md`](../audits/actual_child_radial_path_curvature_falsifier_adversarial_audit.md).

@@ -2850,3 +2850,38 @@ information.  If a better product repairs a linear part of the canonical
 error, a positive density of its individually regular factors must retune by
 order one.  The remaining resource is macroscopic compatibility among
 bounded-complexity changes, not escaping local complexity.
+
+## 160. Zero-field optimizer data are not automatically contextual data
+
+An exact pressure minimizer has a genuine Bellman property: every row
+optimally reinserts into its own deletion, and the neutral inverse extension
+escort of an exact minimizing child has bounded density at physical scaling.
+But a bridge row is queried under a sector bias supplied by the *other*
+child and under external fields created by all other bridge rows.
+
+Actual finite minimizers show both mismatches sharply.  Sector bias can
+reverse a neutral extension preference, while two minimizers with identical
+complete pressure/entropy and radial flip data can have different
+row-correlation tangents and physical canonical errors.  Therefore a
+zero-field scalar or radial optimizer certificate is not reusable under
+composition merely because it is exact.  The missing state must retain
+relative sector orientation and survive external-field cavity tilts, or a
+separate theorem must synchronize those responses to a smaller parameter.
+
+
+## 161. Separate canonical orientation from joint orientation
+
+A binary sector bias can look like a global source of extensive row
+dependence, but the canonical actual-child row experiment has an exact
+minimal coordinate: its bounded sector contrast.  Conditioning on that
+coordinate makes the two canonical orientation kernels identical, and
+inverse-polynomial quantization needs only polynomially many labels per
+row at `o(1)` orientation distortion.
+
+This does not remove orientation from the full joint bridge escort.  Its
+conditional law can still depend on orientation through multi-row child
+responses, and the vector of row labels can retain extensive information.
+Thus a proof must not charge canonical sector ambiguity and irreducible
+joint compatibility as if they were the same resource.  Conversely, a
+scalar-valued row statistic is not automatically a low-information state:
+its table and its joint label process may be exponentially complex.
