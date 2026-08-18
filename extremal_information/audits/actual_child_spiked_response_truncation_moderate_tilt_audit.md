@@ -264,6 +264,65 @@ Integrating (MT.24) from zero to `s_eta` and using (MT.23), some
 Finally FI.17 identifies the normalized full-Gibbs square response with the
 two-replica overlap in (MT.22), up to `O(t)=O(N^(-1/2))`. `square`
 
+The same proof gives a rate-sensitive sufficient theorem.  Define
+
+```math
+ \rho_N(S)=\sup_{|s|\le S}{1\over mn}
+ E_{\Pi_{s,T}}\sum_a r_a^2.                       \tag{MT.25}
+```
+
+**Corollary MT.4 (moderate-overlap response bound).**  For every
+`0<s<=S`,
+
+```math
+ \boxed{
+ \operatorname {range}R
+ \le2e^{-\delta N}
+ +2\left\{{m\log2\over s}
+          +K_*t^2mn\rho_N(S)s\right\}.}          \tag{MT.26}
+```
+
+If
+
+```math
+ s_*=sqrt{{m\log2\over K_*t^2mn\rho_N(S)}}\le S,
+```
+
+then
+
+```math
+ \boxed{
+ \operatorname {range}R
+ \le2e^{-\delta N}
+ +4\sqrt{K_*m\log2\,t^2mn\rho_N(S)}.}            \tag{MT.27}
+```
+
+In particular, at balanced splits, `rho_N(S_N)=O(N^(-alpha))` on a
+window `S_N` containing `s_*=O(N^(alpha/2))` gives the power saving
+
+```math
+ \operatorname {range}R=O(N^{1-\alpha/2}).        \tag{MT.28}
+```
+
+*Proof.*  FI.22, (MT.16), and the definition of `rho_N(S)` give, for both
+signs and `0<=s<=S`,
+
+```math
+ \log E\exp\{\pm s(L_T-EL_T)\}
+ \le K_*t^2mn\rho_N(S)s^2.                       \tag{MT.29}
+```
+
+Conditional Jensen transfers the same upper bound to `R_T(V)-ER_T`.
+Charging the mass `2^(-m)` of a single query word bounds each one-sided
+extreme by
+
+```math
+ {m\log2\over s}+K_*t^2mn\rho_N(S)s.
+```
+
+Add the two sides and use (MT.12), proving (MT.26).  Optimizing at `s_*`
+proves (MT.27)--(MT.28). `square`
+
 ## 4. What this changes
 
 The false target was an `o(N)` subgaussian proxy for the untruncated
@@ -274,6 +333,12 @@ word.  MT.3 then gives the exact response-specific replacement:
 > a linear spiked response is possible only if one capped tilt in the fixed
 > interval `[-s_eta,s_eta]` has positive normalized edge-cavity, equivalently
 > two-replica product, overlap.
+
+Quantitatively, MT.4 says that a power-saving overlap bound on the matching
+moderate window transfers directly to a power-saving response bound.  It is
+therefore already in the scale required by the existing basin recurrence;
+the missing input is the actual-child overlap estimate, not another
+concentration or truncation argument.
 
 This observable is one scalar overlap curve on a compact interval for each
 declared spike direction.  It is strictly less information than the full
