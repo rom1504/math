@@ -77,6 +77,15 @@ The sharper IC.23 conditional-entropic right side divided by `J` lies in
 
 Thus optimizing each one-row conditional comparison improves the coarse
 influence certificate, but it does not close the finite interaction.
+By ES.23, the excess over one in this ratio is exactly the integrated dual
+total correlation divided by `J`.  It ranges over `[.9599,1.0672]`,
+`[.6585,1.1655]`, and `[.4864,1.2731]` for `beta=1,2,4`, respectively.
+Thus every enumerated actual-child path has a dual-total-correlation mass
+comparable to its canonical error even though every conditional row has
+uniformly bounded Renyi-two complexity.  At `beta=2,4`, where the observed
+`J/N` does not trend toward zero, this is direct finite evidence for the
+"tight components but collective dependence" side of the structural
+dichotomy; it remains numerical rather than an asymptotic lower bound.
 
 ## Which row component carries the canonical mismatch?
 
