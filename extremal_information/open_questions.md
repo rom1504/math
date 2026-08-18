@@ -1837,6 +1837,33 @@ Either such a channel retains linear coherent regret--proving that spread
 alone is still insufficient--or its cancellation identifies the first
 useful diffuse-synchronization theorem.
 
+Theorem 37.66 resolves that falsifier in the negative: BSC smoothing of the
+common phase satisfies exponential conditional min-entropy on **every**
+factor subset and still has `J-I^leftarrow>=cN`.  Therefore even the exact
+conclusion of Theorem 37.64 is not, by itself, a row-lifetime closure
+principle.  The example also supplies the positive clue: its retuned phase
+is captured exactly by the polynomial-state pair of factor magnetization
+counts.
+
+The smallest missing lemma is consequently sharper:
+
+> **`L_actual-diffuse-phase-quotient`.**  For the actual optimizing-child
+> inverse-disorder posterior, either construct an optimizer-specific
+> quotient of subexponential (preferably polynomial) state complexity whose
+> retuning controls `J-I^leftarrow` up to a summable error, or prove that no
+> extensive diffuse phase retuning occurs.  The quotient must be defined
+> from child data without the full Gibbs/bridge table and must include a
+> theorem converting its displacement into one coherent row-product
+> direction.
+
+Factor magnetization counts solve the generic exchangeable example only
+because it has `S_m times S_n` symmetry.  Arbitrary minimizing signings have
+no such symmetry, so importing those counts verbatim is not a candidate.
+The combined-energy shell is polynomial but Theorem 37.63 shows that it
+does not generically control lifetime.  A valid actual quotient must use a
+new optimizer-specific synchronization or rare-event/renormalization
+identity.  Target reach remains separate even if this lemma is proved.
+
 Theorem 37.60 records the information boundary.  Values on all subsets of
 an `m`-edge cycle basis recover the entire augmented Gibbs table by an
 invertible transform, so that route is not a compression.  The inequality

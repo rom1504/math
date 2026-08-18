@@ -21063,3 +21063,107 @@ children spread conditionally on every macroscopic coordinate block. The
 next possible falsifier must use diffuse synchronization rather than a hard
 common block. See
 [`audits/generic_double_partial_common_block_no_go.md`](audits/generic_double_partial_common_block_no_go.md).
+
+### Theorem 37.66 (diffuse conditional spread alone does not control coherent retuning)
+
+This is again a generic rank-one channel, not an actual minimizing-child
+sequence. Fix positive crossover probabilities below `1/2`, let
+
+```math
+X=\sigma\xi,
+\qquad Y=\tau\eta,
+\qquad Q=XY^T,                                      \tag{37.248}
+```
+
+where `sigma,tau` are fair and the coordinates of `xi,eta` are independent
+BSC noises with crossover probabilities `epsilon_L,epsilon_R`. For every
+factor subset `U` and every exterior value of positive probability,
+
+```math
+\boxed{
+\|\mathcal L(X_U\mid X_{U^c})\|_\infty
+ \le(1-\epsilon_L)^{|U|},}
+                                                               \tag{37.249}
+```
+
+and analogously for `Y`. Thus this construction passes the full
+every-subset conditional-spread conclusion of Theorem 37.64.
+
+Put `u=beta/sqrt(N)`, `b=1-2epsilon_R`,
+`v_N=arctanh(b tanh u)`, and let `S(z)=sum_jz_j`. The exact erased-row
+inverse escort is
+
+```math
+{d\nu_N\over dU_n}(z)
+={\cosh\{v_NS(z)\}^{-\lambda}\over
+  E_{U_n}\cosh(v_NS)^{-\lambda}}.                  \tag{37.250}
+```
+
+Writing `d_N=D(nu_N||U_n)`, one has `d_N->d_0(b)>0`, where `d_0(b)` is the
+relative entropy of the nonconstant Gaussian tilt proportional to
+`cosh(G_b)^(-lambda)` and
+`Var(G_b)=b^2beta^2lim(n/N)`.
+
+Let `p` be the full forward likelihood, let `p_0` be its zero-noise
+two-word counterpart, and put `delta=log p-log p_0`. For the fair bridge
+law `U` and for the canonical row product `r=nu_N^(tensor m)`, the exact
+noisy-to-hard comparison gives
+
+```math
+-A_NN\le E_P\delta\le R_NN+\log2,
+\qquad P\in\{U,r\},                                 \tag{37.251}
+```
+
+where
+
+```math
+\begin{aligned}
+A_N={}&-{m\over N}\log(1-\epsilon_L)
+       -{n\over N}\log(1-\epsilon_R),\\
+R_N={}&{m\over N}\log\{1+\epsilon_L(e^{C n/N}-1)\}\\
+     &+{n\over N}\log\{1+\epsilon_R(e^{C m/N}-1)\},
+\qquad C=2(1+\lambda)\beta^2.                      \tag{37.252}
+\end{aligned}
+```
+
+The proof uses the all-positive latent atom for the lower bound and a
+sequential MGF estimate for the upper bound. A bridge bit under `r` has
+arbitrary-prefix conditional mean at most
+`tanh(lambda v_N)<=lambda u`; BSC flip counts then give (37.252).
+
+Since the fair law is an admissible reverse row product,
+
+```math
+\boxed{
+J-I^\leftarrow
+\ge m d_N-\lambda\{(A_N+R_N)N+\log2+u\sqrt{mn}\}.} \tag{37.253}
+```
+
+Both `A_N+R_N` and the change in `d_0(b)` tend continuously to zero as the
+two fixed crossover probabilities decrease to zero. Therefore, for every
+fixed `beta,lambda` and comparable split, there are **positive** fixed
+crossovers and `c>0` such that
+
+```math
+\boxed{J-I^\leftarrow\ge cN}                       \tag{37.254}
+```
+
+for all large `N`. Uniform exponential conditional min-entropy on every
+factor subset is thus insufficient by itself to control coherent row
+retuning.
+
+Unlike the subgroup examples, the averaged posterior here does retune. Its
+retuning nevertheless has a polynomial quotient: row/column permutation
+symmetry makes both prior and averaged posterior uniform conditional on the
+two projective factor magnetization counts `(K,L)`, so
+
+```math
+D(\bar\mu\Vert\mu)
+=D(\mathcal L_{\bar\mu}(K,L)\Vert\mathcal L_\mu(K,L)),         \tag{37.255}
+```
+
+with only `O(mn)` states. Hence the theorem falsifies spread-only closure
+but positively identifies the kind of low-information phase observable a
+successful actual-child theorem would need. It does not show that these
+BSC factor laws are quadratic Gibbs sectors or optimizing children. See
+[`audits/generic_diffuse_common_phase_row_lifetime_no_go.md`](audits/generic_diffuse_common_phase_row_lifetime_no_go.md).

@@ -224,20 +224,27 @@ option: if `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`, then every actual
 child pair has `liminf widehat rho_N^-(lambda)>0`.  The cause is the exact
 `2^(O(N))` rank-one latent support in `Theta(N^2)` bridge coordinates.
 
-**Current SML `L_diffuse-factor-retuning`:** Theorem 37.54 exactly represents
+**Closed SML `L_diffuse-factor-retuning`:** Theorem 37.54 exactly represents
 the canonical error `J` as a row-refresh lifetime, but the global-spread
 counterexamples 37.63 and 37.65 show that neither whole-word entropy nor
 zero averaged-posterior retuning controls it.  Theorem 37.64 supplies the
 strict actual-child narrowing: every positive-density child marginal has a
 uniform exponential min-entropy rate, even after conditioning on every
-exterior child spin.  Derive from that local spread plus one additional
-optimizer identity either (a) a summable `J-I^leftarrow=o(N)` bound or (b)
-an explicit low-information direction carrying any extensive coherent
-excess.  Equivalently, decide whether an exponentially diffuse common phase,
-with no frozen macroscopic coordinate block, can carry `Theta(N)` canonical
-row-lifetime mass.  Invoking `p^*`, the complete smoothed density, or the
-full latent table is circular.  Even a solution decides only the product
-phase; target reach remains a separate recurrence interface.
+exterior child spin.  Theorem 37.66 closes the spread-only implication:
+a BSC-diffuse common phase passes that same every-subset conditional
+min-entropy property and nevertheless has `J-I^leftarrow=Omega(N)`.
+
+**Current SML `L_actual-diffuse-phase-quotient`:** either construct from
+actual optimizing-child data a subexponential, preferably polynomial-state,
+posterior quotient whose retuning controls `J-I^leftarrow` up to a summable
+error, or prove that extensive diffuse phase retuning is impossible.  The
+generic BSC model is exactly closed by two factor-magnetization counts, so
+the desired object is not inherently a full landscape; arbitrary child
+signings lack the symmetry that makes those counts available.  The quotient
+must come with a directional conversion theorem and may not invoke `p^*`,
+the full smoothed density, or the complete latent table.  Even a solution
+decides only the product phase; target reach remains a separate recurrence
+interface.
 
 ## Quantitative frontier table
 
@@ -247,7 +254,7 @@ phase; target reach remains a separate recurrence interface.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; every macroscopic child marginal has positive conditional min-entropy rate; row lifetime still needs diffuse correlation information | strong-channel `hat rho^-` has a uniform positive floor; hard common blocks are excluded, but diffuse coherent retuning is undecided | every finite split for structure; no asymptotic target theorem | 5 for actual-law obstruction and local spread, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** SML is `L_diffuse-factor-retuning`; Level 6 remains absent |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; every macroscopic child marginal has positive conditional min-entropy rate; a new quotient is still needed for diffuse phase retuning | strong-channel `hat rho^-` has a uniform positive floor; hard and BSC-diffuse generic phases show spread is insufficient, though the latter has a polynomial orbit quotient | every finite split for structure; no asymptotic target theorem | 5 for actual-law obstruction and local spread, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** SML is `L_actual-diffuse-phase-quotient`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2213,3 +2220,40 @@ class and risks restating the desired parent optimization.
   only admissible continuation is the rare-event/renormalization question
   of diffuse synchronization; another overlap, shell scalar, or hard-block
   surrogate is a strike.
+
+### Checkpoint 30 — diffuse synchronization defeats spread-only closure
+
+- **Scalable falsifier (Theorem 37.66):** take each rank-one factor to be a
+  fair global phase times iid BSC noise with a fixed positive crossover.
+  Every subset `U`, after conditioning on every complementary factor bit,
+  has maximum atom at most `(1-epsilon)^|U|`.  Thus the construction passes
+  the exact factorwise conditional-spread conclusion forced on actual
+  children by Theorem 37.64.
+- **Linear lifetime gap:** the erased-row inverse escort is an explicit
+  `cosh(vS)^(-lambda)` tilt.  A uniform noisy-to-hard interpolation at
+  `u=beta/sqrt N` proves, for sufficiently small but fixed positive
+  crossovers,
+
+  ```math
+  J-I^\leftarrow\ge c_{\beta,\lambda,\theta}N.
+  ```
+
+  The comparison is quantitative and uses no thermodynamic-limit
+  assumption.  Hence conditional min-entropy on every macroscopic block is
+  not an actual closure theorem without an additional optimizer identity.
+- **Positive structural clue:** unlike the subgroup counterexamples, the
+  averaged posterior does retune.  Row/column permutation symmetry captures
+  that retuning exactly in the `O(mn)`-state pair of factor magnetization
+  counts.  The counterexample therefore distinguishes "diffuse" from
+  "incompressible": its coherent phase is low-information even though
+  atom/cap tests cannot see it.
+- **New SML:** `L_actual-diffuse-phase-quotient`: find an optimizer-specific
+  subexponential posterior quotient for arbitrary minimizing children and
+  convert its displacement directionally to `J-I^leftarrow`, or rule out
+  extensive diffuse retuning.  The exchangeable magnetization quotient
+  cannot simply be assumed for a labeled signing.
+- **Recurrence and decision:** there is still no target-reach inequality and
+  therefore no Level-6 recurrence.  This is a **RESET** of the information
+  boundary, not a rescue of adversarial statistical mechanics.  The raw
+  overlap implementation remains frozen; the surviving question is now
+  explicitly a rare-event/renormalization quotient problem.
