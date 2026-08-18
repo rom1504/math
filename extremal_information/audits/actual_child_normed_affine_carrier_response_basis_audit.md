@@ -63,7 +63,8 @@ E_Ug_v=1,
 
 The last quantity tends to one, so it is at most `K^2` for all sufficiently
 large `n`.  If `b=-v`, then `g_v(b)=-delta_n`.  At every other vertex,
-`<v,b>>=-n`, and its smallest possible value is `-n+2`; hence
+`<v,b>` is strictly larger than `-n`, and its smallest possible value is
+`-n+2`; hence
 
 ```math
 g_v(b)\ge1-a_n(n-2)={1\over n-1}>0.                \tag{AB.5}
