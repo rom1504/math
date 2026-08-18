@@ -1361,3 +1361,40 @@ ANOVA mass.  Determine whether a uniform cluster/cumulant estimate transports
 this coordinate to physical bridge amplitude `beta/sqrt(N)` and fixed
 negative-disorder temperature.  Without an order-uniform remainder this is
 only a tangent formula, not a solution of Question 29.
+
+## 31. Actual-child collision influence or high-transport dependence?
+
+The canonical row-erased product is now explicit and child-only.  Its error
+is
+
+```math
+J=\log E_{r_{\rm row}^{\otimes m}}
+       e^{-\lambda(\log G-E\log G)},
+```
+
+where `G` is the collision--cavity partition (37.64).  The entire hybrid
+path from this product to the full escort has bounded conditional row
+`D_2`, and Theorems 37.24 and IC.3 reduce a sufficient closure to the tilted
+row-influence bound
+
+```math
+\sup_{0\le s\le\lambda}\mathcal A_s=o(N).
+```
+
+Prove this from an optimizer-specific child statistic strictly smaller than
+the complete external-field response, ideally with a power-saving rate.  A
+proof makes the canonical row product target-accurate whenever the full
+negative-disorder bridge reaches the child target.
+
+The opposite branch must be directional.  Produce fixed-alphabet,
+high-transport aggregate row maps whose image of the **actual optimized
+child escort** has reverse product gap `cN-o(N)`.  Low-transport maps cannot
+work: Theorem 37.26 proves that any `o(N^2)` raw-coordinate support and any
+bounded number of Walsh parities per row expose only `o(N)`.
+
+Finite exact data reject worst-context projective diameter as an efficient
+target and show that tilted average influence preserves much more
+cancellation.  They do not establish either asymptotic branch.  Generic
+rank-one and fixed-overlap examples prove that weak coordinates, bounded row
+Renyi complexity, central symmetry, and every fixed overlap order are
+insufficient; child optimality must enter the proof.

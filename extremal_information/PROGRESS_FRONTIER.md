@@ -1049,3 +1049,84 @@ class and risks restating the desired parent optimization.
 - **Decision:** **RESET, CONTINUE ACTUAL-CHILD WORK.**  This checkpoint touches
   actual minimizers and earns a second phase.  Radial flip averages and
   generic mean-field decompositions are now ceilings, not next targets.
+
+### Checkpoint 18 — actual row interaction is a child-only cavity object; low-transport certificates are closed
+
+- **Strongest new actual-child statements:** every erased bridge row is the
+  same noisy one-child channel, so the canonical certificate is the iid law
+  `r_row^(tensor m)`.  Its exact error is the centered lower-tail cumulant of
+  one collision--cavity partition `G` built only from the two child Gibbs
+  measures.  The hybrid path
+
+  ```math
+  q_s\propto r_{\rm row}^{\otimes m}G^{-s},
+  \qquad0\le s\le\lambda,
+  ```
+
+  retains uniformly bounded conditional row `D_2`, while
+
+  ```math
+  J=D(r\Vert q)
+   =\int_0^\lambda(\lambda-s)\operatorname{Var}_{q_s}(\log G)ds
+   \le\lambda\int_0^\lambda\mathcal A_sds.
+  ```
+
+  Here `A_s` is the probability-weighted modified-log-Sobolev cost of a
+  complete row replacement.  This is a child-only scalar proof interface;
+  the variance identity itself remains equivalent to the canonical error.
+- **Rigorous finite actual-child certificate:** on the target-reaching
+  `N=8,4+4,beta=4` law, interval branch-and-bound after a four-row feature
+  map proves
+
+  ```math
+  1.075\le I_\lambda^{\leftarrow}\le4.506450,
+  \qquad V_\lambda^{\rm row}-T\ge.19973600675473155.
+  ```
+
+  Thus directed dependence is globally certified on an actual optimizer
+  instance; this is finite and does not imply positive limiting density.
+- **Scalable actual-law falsifier:** for every row-feature image with
+  uniform-fibre Hamming transport radii `delta_i`,
+
+  ```math
+  J(Q)\le{\lambda^2\beta^2\over2N}\sum_i\delta_i^2.
+  ```
+
+  Any raw-coordinate image reading `K=o(N^2)` edges, and any bounded number
+  of Walsh parities per row, exposes only `o(N)`.  The positive order-eight
+  matching-bit certificate therefore cannot amplify at weak physical
+  temperature.  A linear coarse certificate must be genuinely aggregate,
+  with total squared fibre transport `Omega(N^2)`.
+- **Sharp method ceilings:** exact enumeration of all 102 balanced actual
+  minimizer-class/orientation cases through `N=9` rejects worst-context
+  projective diameter as an efficient next target: at `N=9,beta=1` its best
+  bound is already at least `74.2` times the exact canonical cumulant.  A
+  generic weak rank-one channel has tight row `D_2` but linear canonical
+  cumulant; block-parity child priors agree with iid through every prescribed
+  fixed overlap order and still have linear cumulant.  Hence local
+  regularity and finite overlap truncation cannot close the actual branch.
+- **Previous SML:** decide the actual-child row-product target excess from a
+  nonradial statistic smaller than the full bridge landscape.
+- **Current SML:** prove an **actual-child tilted collision-influence lemma**
+  `sup_(0<=s<=lambda) A_s=o(N)` (preferably with a power saving) from an
+  optimizer-specific child state strictly smaller than the complete
+  external-field landscape; or construct high-transport fixed-alphabet row
+  features of the actual escort with a certified `cN-o(N)` reverse-product
+  image gap.  The first branch makes the explicit canonical product
+  target-accurate; the second proves irreducible extensive dependence.
+- **Benchmark and target distance:** audited Level-5 actual-law contact and a
+  strict information-footprint theorem.  The child-only cavity formula and
+  low-transport ceiling narrow the architecture, but neither branch is yet
+  proved asymptotically for optimizing children, so there is no Level-6
+  recurrence or frontier-bound change.
+- **Asymptotic movement:** escaping conditional component complexity is
+  excluded not only at the endpoints but throughout the interaction path;
+  matching-coordinate and bounded-Walsh amplification are now rigorously
+  impossible.  The surviving unknown is collective, high-transport cavity
+  influence.  No bound on `M_n` or convergence interval changes.
+- **Decision:** **RESET, THEN NARROW TO TILTED AVERAGE INFLUENCE.**  This
+  phase produced actual-child theorems and no surrogate-only strike.  The
+  uniform projective-supremum subroute receives one strike from exact data
+  and is frozen.  Continue only with the probability-weighted hybrid-path
+  observable or a high-transport directional certificate; another
+  low-sensitivity row feature is a strike.

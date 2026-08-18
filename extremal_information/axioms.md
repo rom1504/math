@@ -2789,3 +2789,48 @@ scalar pressure averages forget.  Its limitation is equally structural:
 zero-entropy rare phases live beyond every fixed Taylor order, so an
 infinitesimal ANOVA state becomes reusable at physical scale only with a
 uniform cumulant or cluster-control theorem.
+
+## 156. Feature alphabet size and extremal transport cost are different
+
+A row feature can have one output bit and still require moving a linear
+number of microscopic coordinates between its uniform fibres; majority is
+the canonical example.  Conversely, a bounded list of Walsh parities has
+uniform-fibre transport radius bounded by its rank even when the parities
+touch every coordinate.
+
+For weak-coordinate Gibbs escorts, reverse response is controlled by this
+transport geometry, not by output alphabet alone.  At the signing scale,
+features with total squared fibre radius `o(N^2)` cannot expose linear
+directed dependence.  Any successful coarse actual-child certificate must
+therefore be both small in output complexity and genuinely collective in
+microscopic transport.
+
+## 157. Row erasure exposes a child-only collision--cavity object
+
+For the actual rank-one bridge channel, erasing all but one bridge row gives
+the same one-child output law on every row.  Relative to the iid inverse
+escort of that law, the complete parent interaction is one scalar
+collision--cavity partition `G`: a shared right-child posterior collision
+and a left-child external-field response kept inside the same expectation.
+
+This is the first exact joint object in the campaign that neither pays the
+two channels separately nor invokes a target-order product optimizer.  Its
+centered lower-tail cumulant is precisely the error of the canonical row
+certificate.  Exact evaluation of `G` still contains every even child
+correlation, so the useful state must be a quotient or concentration law for
+`G`, not its full table.
+
+## 158. Local Renyi regularity survives the interaction interpolation
+
+The path from the canonical iid-row certificate to the full actual escort
+can be obtained by tilting only with the collision interaction `h=log G`.
+Every intermediate law retains the same bounded conditional row Renyi-two
+complexity, while the canonical error is exactly integrated interaction
+variance along the path.
+
+Thus escaping component complexity is no longer a possible explanation for
+a linear canonical gap.  The remaining distinction is whether collective
+collision curvature stays sublinear or becomes extensive inside a locally
+regular family.  Worst-context projective diameter is sufficient but loses
+large finite factors; probability-weighted tilted row influence is the
+more faithful current observable.

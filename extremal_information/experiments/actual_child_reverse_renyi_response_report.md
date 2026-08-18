@@ -49,6 +49,34 @@ lower bound: a different row-product law can do better, and the separately
 certified optimum has reverse gap only known to lie between `1.075` and
 `4.506450` at this order.
 
+The collision--cavity projective ranges in CC.14 were also enumerated.  At
+the physical amplitude every row has supremum range `10.10199`, so
+`Delta^2=408.20046`.  The resulting CC.15 Hoeffding upper bounds are
+`51.0251` at `lambda=1` and `1478.0451` at `lambda=5.382104`, compared with
+the exact cumulants `2.91768` and `23.89429`.  Even replacing each supremum
+by its squared product-law mean leaves sums `205.7731` and `217.7466`.
+Thus worst-case projective synchronization is a rigorous sufficient
+criterion but is very loose on this finite target-reaching law.  Any useful
+asymptotic proof will probably need a tilted/typical-range inequality rather
+than a raw supremum, unless optimizing-child rigidity improves the ranges
+dramatically with order.
+
+The hybrid interaction path IC.3 is much sharper on the same data.  A
+17-point trapezoidal evaluation gives
+
+| `lambda` | exact `J` | curvature integral | tilted row-influence upper integral | projective-sup upper bound |
+|---:|---:|---:|---:|---:|
+| `1` | `2.91768` | `2.92321` | `5.27313` | `51.0251` |
+| `5.382104` | `23.89429` | `24.60695` | `96.60183` | `1478.0451` |
+
+The curvature column checks the exact identity IC.7 (the displayed residual
+is numerical quadrature error).  The influence column is also quadrature,
+not a rigorous finite upper certificate, but it shows that averaging the
+complete row replacement under the inverse hybrid tilt retains far more of
+the relevant cancellation than worst-case projective diameter.  This makes
+the tilted row-influence quantity `A_s`, rather than `Delta`, the better
+candidate for the next asymptotic theorem.
+
 ## Scope
 
 The physical raw amplitude at order eight is `1.414`, whereas for fixed

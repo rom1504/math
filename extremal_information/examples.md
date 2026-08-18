@@ -3760,3 +3760,78 @@ coefficient `.7951276391` in (37.61).  This verifies the finite
 normalizations and shows concretely that the first dependence coordinate is
 nonradial child overlap mass.  It is not evidence that the expansion is
 uniform at fixed disorder temperature or growing order.
+
+## Example 192: an actual target-reaching escort has certified directed dependence
+
+For the actual order-eight `4+4` thermal minimizing children at `beta=4`,
+the negative-disorder threshold is
+
+```text
+lambda*=5.382104195764755.
+```
+
+Complete bridge enumeration and outward interval branch-and-bound on four
+row features prove
+
+```math
+1.075\le\inf_{p\ {m row\ product}}D(p\Vert q_{\lambda_*})
+\le4.506450.
+```
+
+Equivalently, the optimal row-product pressure remains at least
+`.19973600675473155` above the same-temperature child target.  The
+canonical row-erased product is farther away: its centered interaction
+cumulant is `23.89429`, or `4.43958` after division by `lambda*`.
+
+This is a rigorous finite instance of irreducible directed dependence on
+the actual optimized-child law.  It is not a scaling theorem.  Theorem
+37.26 proves that its matching-bit lower certificate cannot become linear
+merely by repeating boundedly many parities per row.
+
+## Example 193: local regularity permits both directed-dependence phases
+
+Two generic constructions delimit what the actual-child local theorems can
+imply without optimizer rigidity.
+
+First, a constant-background weak common-latent mixture has microscopic
+one-bit conditionals, bounded conditional row `D_2`, and `Omega(N)`
+cross-row erasure information, but only `O(1)` reverse distance to a row
+product.  Thus leave-one-out information has the wrong KL direction.
+
+Second, pair rows with density
+
+```math
+\exp\{\gamma\tanh(r^{-1/2}\sum_jR_j)
+              \tanh(r^{-1/2}\sum_jS_j)\}.
+```
+
+This law has the same `O(r^(-1/2))` flip scale and bounded conditional row
+`D_2`, yet its reverse row-product projection is `Theta(r)`.  A majority
+sign per row exposes the dependence, and its uniform fibres have Hamming
+transport radius `Omega(r)`.  Hence collective high-transport row features
+are not an artifact of Theorem 37.26: they are exactly where an extensive
+phase can hide.
+
+## Example 194: fixed overlap order does not control collision--cavity work
+
+Partition the left spins into even blocks of size `ell` and use the block
+law
+
+```math
+2^{-\ell}\left(1+\delta\prod_{i\in I}x_i\right).
+```
+
+For every fixed `k<ell`, all correlations through order `k` agree exactly
+with iid fair spins.  Nevertheless, against a deterministic right word at
+physical amplitude `beta/sqrt(N)`, the canonical collision--cavity
+cumulant satisfies
+
+```math
+{J\over N}\longrightarrow {\theta\over\ell}j_\infty>0.
+```
+
+Thus no fixed-order overlap truncation controls the actual-scale lower-tail
+partition for general central rank-one priors.  The example is not an
+optimized-child law; it is a scalable falsifier showing that the new
+collision-curvature lemma must use optimizer-specific structure or a
+growing but compressed hierarchy.

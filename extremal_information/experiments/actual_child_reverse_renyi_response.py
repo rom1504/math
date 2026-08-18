@@ -150,6 +150,77 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
             )
         )
     )
+    projective_row_ranges = []
+    projective_row_mean_squares = []
+    row_centered_differences = []
+    for row in range(rows):
+        row_range = np.max(interaction, axis=row) - np.min(
+            interaction, axis=row
+        )
+        other_weight = np.ones_like(row_range)
+        target_axis = 0
+        for other in range(rows):
+            if other == row:
+                continue
+            shape = [1] * (rows - 1)
+            shape[target_axis] = row_size
+            other_weight *= row_escorts[other].reshape(shape)
+            target_axis += 1
+        projective_row_ranges.append(float(np.max(row_range)))
+        projective_row_mean_squares.append(
+            float(np.sum(other_weight * row_range * row_range))
+        )
+        row_mean = np.tensordot(
+            row_escorts[row], interaction, axes=(0, row)
+        )
+        row_mean = np.expand_dims(row_mean, axis=row)
+        row_centered_differences.append(interaction - row_mean)
+
+    path_records = []
+    path_grid = np.linspace(0.0, lam, 17)
+    path_curvature = []
+    path_influence = []
+    for path_s in path_grid:
+        log_hybrid = -float(path_s) * interaction
+        log_hybrid -= float(np.max(log_hybrid))
+        hybrid = product_escort * np.exp(log_hybrid)
+        hybrid /= float(np.sum(hybrid))
+        h_mean = float(np.sum(hybrid * interaction))
+        curvature = float(
+            np.sum(hybrid * (interaction - h_mean) ** 2)
+        )
+        if path_s == 0.0:
+            influence = 0.5 * sum(
+                float(np.sum(hybrid * difference * difference))
+                for difference in row_centered_differences
+            )
+        else:
+            influence = sum(
+                float(
+                    np.sum(
+                        hybrid
+                        * (
+                            np.expm1(path_s * difference)
+                            - path_s * difference
+                        )
+                    )
+                )
+                for difference in row_centered_differences
+            ) / (path_s * path_s)
+        path_curvature.append((lam - path_s) * curvature)
+        path_influence.append(influence)
+        path_records.append(
+            {
+                "s": float(path_s),
+                "interaction_variance": curvature,
+                "tilted_average_influence": influence,
+            }
+        )
+
+    curvature_integral = float(np.trapezoid(path_curvature, path_grid))
+    influence_upper_integral = float(
+        lam * np.trapezoid(path_influence, path_grid)
+    )
     return {
         "u": u,
         "rho": rho,
@@ -161,6 +232,22 @@ def response_metrics(p: np.ndarray, rows: int, columns: int, u: float, lam: floa
         "canonical_row_centered_interaction_cumulant": centered_cumulant,
         "canonical_row_product_inverse_work": sum(row_works) - interaction_mean,
         "canonical_row_certificate_reverse_KL": centered_cumulant,
+        "projective_row_range_suprema": projective_row_ranges,
+        "projective_Delta_squared": float(
+            np.sum(np.square(projective_row_ranges))
+        ),
+        "projective_range_square_product_mean_sum": float(
+            np.sum(projective_row_mean_squares)
+        ),
+        "projective_Hoeffding_upper_bound": (
+            lam * lam * float(np.sum(np.square(projective_row_ranges))) / 8.0
+        ),
+        "interaction_path_grid": path_records,
+        "interaction_curvature_trapezoid": curvature_integral,
+        "interaction_curvature_trapezoid_residual": (
+            curvature_integral - centered_cumulant
+        ),
+        "tilted_influence_upper_trapezoid": influence_upper_integral,
         "canonical_decomposition_residual": (
             reverse_renyi
             - sum(row_works)

@@ -17952,3 +17952,156 @@ Proof, audit, and verifier are in
 [`audits/actual_child_row_anova_infinitesimal_adversarial_audit.md`](audits/actual_child_row_anova_infinitesimal_adversarial_audit.md),
 and
 [`experiments/verify_actual_child_row_anova.py`](experiments/verify_actual_child_row_anova.py).
+
+### Theorem 37.23 (reverse-Renyi work is integrated actual-channel response)
+
+For the actual contracted-temperature child prior on the planted rank-one
+word `Q=tau XY^T`, let `Pi_u` be its binary-channel output at amplitude `u`,
+`p_u=dPi_u/dU`, and
+
+```math
+R_lambda(u)={1\over\lambda}\log E_Up_u^{-\lambda}.
+```
+
+If `r_(e,u)=E[Q_e|B_(-e)]` is the extrinsic planted-coordinate response and
+`rho=tanh u`, then
+
+```math
+\boxed{
+R_\lambda'(u)=\sum_eE_{q_{\lambda,u}}
+{(1-\rho^2)r_{e,u}
+ [\rho r_{e,u}+\tanh(\lambda\operatorname{atanh}(\rho r_{e,u}))]
+ \over1-\rho^2r_{e,u}^2}.}                           \tag{37.62}
+```
+
+Consequently a linear reverse-Renyi resource at
+`u=beta/sqrt(N)` forces a positive density of squared extrinsic responses
+at some amplitude comparable to `beta/sqrt(N)`; uniform submacroscopic
+response rules it out.  The inverse escort's conditional bit bias is
+`-tanh(lambda atanh(rho r_e))`, so the same phase has `Omega(N)` summed
+leave-one-out mutual information.  This is an exact classification of the
+actual child channel, not an assertion that optimizing children enter the
+phase.
+
+### Theorem 37.24 (one-child row erasure and collision--cavity reduction)
+
+Every erased bridge-row likelihood is the same one-child channel.  If
+`r_row` is its inverse escort, the explicit canonical row certificate is
+
+```math
+r=r_{\rm row}^{\otimes m}.
+```
+
+Writing `h=log p-sum_i log p_i`, one has
+
+```math
+\boxed{
+R_\lambda=\left(mR_{\rm row}-E_rh\right)+{1\over\lambda}J,
+\qquad
+J=D(r\Vert q)=\log E_re^{-\lambda(h-E_rh)}.}         \tag{37.63}
+```
+
+Moreover `h=log G`, where `G` is the exact collision--cavity partition
+
+```math
+G(B)=
+{\sum_s\pi_s E_{X\sim\mu_{A,s}}
+ \exp\{\Lambda_{D,\epsilon s}(usB^TX)\}
+ \over
+ \prod_i[\sum_s\pi_sE_{Y\sim\mu_{D,\epsilon s}}
+ \cosh(u\langle B_i,Y\rangle)]}.                    \tag{37.64}
+```
+
+This integrates the right child without separately paying its collision
+and the left-child cavity response.  If `Delta_u^2` is the sum of squared
+worst-row projective posterior-predictive diameters, then
+
+```math
+J\le {\lambda^2\over8}\Delta_u^2.                   \tag{37.65}
+```
+
+There is also an exact hybrid path
+`q_s proportional r exp(-s h)`, `0<=s<=lambda`, on which every conditional
+row has the same `O(1)` Renyi-two bound as the endpoints and
+
+```math
+\boxed{
+J=\int_0^\lambda(\lambda-s)\operatorname{Var}_{q_s}(h)\,ds.}
+                                                               \tag{37.66}
+```
+
+Finally, the modified log-Sobolev row influence `A_s` in IC.13 satisfies
+
+```math
+\boxed{J\le\lambda\int_0^\lambda A_s\,ds.}          \tag{37.67}
+```
+
+Equations (37.64)--(37.67) remove the optimal product oracle and expose a
+child-only scalar proof interface.  The curvature identity itself is an
+equivalent reformulation of the canonical error, not yet a strict
+mathematical reduction.
+
+### Theorem 37.25 (global reverse-product certificates on actual children)
+
+For a finite product variational problem with potential `f`, let `C_ij` be
+the rectangle oscillation between factors `i,j`.  A coordinate Gibbs fixed
+point is the unique global product minimizer whenever
+
+```math
+\lambda\lambda_{\max}(C)<4,                          \tag{37.68}
+```
+
+with an explicit positive-definite quadratic lower certificate.  Any
+rowwise deterministic feature image gives a rigorous lower certificate for
+the original reverse product projection by KL data processing.
+
+Applied to the completely enumerated actual `N=8`, `4+4`, `beta=4`
+target-reaching law, four selected row bits and interval branch-and-bound
+prove
+
+```math
+\boxed{
+1.075\le I_\lambda^{\leftarrow}\le4.506450,
+\qquad
+V_\lambda^{\rm row}-T\ge0.19973600675473155.}       \tag{37.69}
+```
+
+This is the first nonzero global lower certificate on an actual optimizing
+child escort.  It is finite-order only; no asymptotic irreducible mass is
+inferred.
+
+### Theorem 37.26 (low-transport features have sublinear actual response)
+
+Let row maps `phi_i` push the actual escort `q` to `Q`, and let `delta_i`
+be the `W_infinity` Hamming transport radius between their uniform fibres.
+Then
+
+```math
+\boxed{
+\inf_{P=\otimes_iP_i}D(P\Vert Q)
+\le{\lambda^2t^2\over2}\sum_i\delta_i^2.}           \tag{37.70}
+```
+
+If the maps read only `K` raw bridge coordinates, the sharper bound is
+
+```math
+\boxed{
+\inf_{P=\otimes_iP_i}D(P\Vert Q)
+\le {\lambda^2\beta^2K\over2N}.}                    \tag{37.71}
+```
+
+At fixed `beta,lambda`, every `K=o(N^2)` raw-coordinate certificate is
+therefore `o(N)`.  A fixed number of Walsh parities per row also exposes
+only `O(1)`, even if their supports cover the whole bridge.  Thus the
+positive finite certificate (37.69) cannot amplify by repeating matching
+bits: any extensive coarse certificate needs genuinely aggregate row
+features with total squared fibre-transport radius `Omega(N^2)`.
+
+Proofs and audits are in
+[`drafts/actual_child_reverse_renyi_response_identity.md`](drafts/actual_child_reverse_renyi_response_identity.md),
+[`drafts/actual_child_cross_row_response_decomposition.md`](drafts/actual_child_cross_row_response_decomposition.md),
+[`drafts/actual_child_cavity_collision_reduction.md`](drafts/actual_child_cavity_collision_reduction.md),
+[`drafts/actual_child_interaction_curvature_dichotomy.md`](drafts/actual_child_interaction_curvature_dichotomy.md),
+[`drafts/actual_child_row_product_global_certificate.md`](drafts/actual_child_row_product_global_certificate.md),
+and
+[`drafts/actual_child_low_transport_feature_ceiling.md`](drafts/actual_child_low_transport_feature_ceiling.md).
