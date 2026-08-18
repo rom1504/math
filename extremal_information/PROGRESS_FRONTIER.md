@@ -162,6 +162,32 @@ convergence
 not assume the target order optimum or retain an almost complete sign/coset
 landscape.
 
+### Route R4: actual-child adversarial statistical mechanics
+
+```text
+contracted-temperature pressure minimizers
+  --[PROVED: Theorem 37.18]-->
+negative bridge escort with tight conditional row D2
+  --[PROVED: Theorem 37.19]-->
+target-relative product-basin / directed-dependence dichotomy
+  --[MISSING nonradial actual-child statistic deciding Delta_N]-->
+power-saving linearly rare basin or extensive interaction theorem
+```
+
+**Current SML `L_product-target`:** for a fixed target-reaching
+`beta,lambda`, control
+
+```math
+\Delta_N=V_{\lambda,N}^{\rm row}-T_N
+```
+
+from a statistic of the actual minimizing children which is strictly smaller
+than the full bridge response table.  A power-saving upper bound on
+`(Delta_N)_+` gives the basin required by the entropy-tilted recurrence; a
+fixed linear lower bound proves irreducible extensive directed dependence.
+The full row best-response oracle is not an admissible state because
+point-mass queries reconstruct `L`.
+
 ## Quantitative frontier table
 
 | Route | Level | State bits | Response loss | Orders | Assumption distance | Last decisions |
@@ -170,7 +196,7 @@ landscape.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 4 on conference benchmark | pressure, exact quartic coordinate, mean/covariance peel, total correlation, and latent component density; no closed full state | `o(r)` for bounded-Renyi-two products, `o(r)`-correlated extensions, and uniformly regular latent mixtures; full loss unknown | Paley conference sequence only | 0 on benchmark, 3 only for the eventual minimizer basin lemma | reset: only conditionally singular or irreducibly dependent laws remain |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; 4 pressure theorem only on conference benchmark | actual escort has `O(1)` conditional row `D_2`; exact product target excess `Delta_N` remains a full row law unless compressed | target-relative: power-saving `Delta_N^+` yields a linearly rare basin; linear `Delta_N` yields extensive reverse projection | every finite split for structure; no asymptotic target theorem | 2 for the exact law/dichotomy, 0 for deciding `Delta_N` from child data | **RESET:** surrogate frozen; SML is the actual-child nonradial product-target lemma |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -957,3 +983,69 @@ class and risks restating the desired parent optimization.
   It ends conference projected-edge work.  The sole next campaign must test
   the child-induced bridge law itself; returning to another row fibre or
   deterministic population peel is a strike by construction.
+
+### Checkpoint 17 — the actual child law is row-regular; the target excess is the obstruction
+
+- **Strongest new statements:** for the negative escort induced by every
+  contracted-temperature minimizing child pair, every conditional row after
+  every prefix has
+
+  ```math
+  D_2(q_\lambda(R_i\mid R_{<i})\Vert U_n)
+  \le\lambda^2\beta^2n/N.
+  ```
+
+  Hence escaping row-filtration complexity is rigorously absent.  The best
+  independent-row shadow obeys the same component bound, and its omitted
+  dependence has the exact directed price
+
+  ```math
+  \mathcal I_\lambda^{\leftarrow}
+  =\lambda(V_\lambda^{\rm row}-V_\lambda).
+  ```
+
+  Relative to a target `T`, Theorem 37.19 proves an exhaustive alternative:
+  a sublinear product excess `Delta=V_lambda^row-T` generates an
+  `exp[-O(N)]` near-target basin, while a fixed linear excess, conditional on
+  the full escort reaching `T`, forces `I_lambda^leftarrow=Omega(N)`.
+- **Actual-child finite evidence:** exhaustive enumeration covers all
+  minimizing children, splits, orientations, and bridges through total order
+  nine on the preregistered grid (`600` escort laws).  The canonical reversed
+  Gibbs mixture is almost disjoint at `N=9,beta=4,lambda=1`
+  (`TV=.987994`).  At the genuine target-reaching `N=8,4+4,beta=4`
+  threshold, however, a feasible row-product shadow captures `76.4%` of the
+  gain despite row `TC=.585N`; forward total correlation is therefore the
+  wrong decision variable.
+- **First nonradial coordinate:** at infinitesimal disorder temperature, the
+  product gain is exactly the singleton-row ANOVA mass and both directed
+  dependence measures have leading coefficient equal to the cross-row ANOVA
+  mass.  Turning on the bridge from zero identifies that coefficient with a
+  squared four-spin child overlap tensor.  This is an actual-child statistic,
+  but its Taylor remainders are not uniform in order and therefore do not
+  reset the fixed-tilt SML.
+- **Sharp falsifiers:** tight autoregressive `D_2` does not imply a tight
+  latent-iid decomposition, even with exchangeability, sign symmetry,
+  `Omega(N)` total correlation, and one-bit oscillation `O(N^(-1/2))`.
+  Separately, the exact optimizer flip-contraction box is equivalent to full
+  minimization; its radial averages are only the absolute-energy histogram.
+  Two actual order-eight minimizer classes have identical radial data but
+  different overlap traces (`14` versus `10`) and different rank-one
+  extension responses.
+- **Previous SML:** determine whether the actual child-induced law has tight
+  conditional component complexity or fixed escaping/irreducible mass.
+- **Current SML:** decide the actual-child product target excess
+  `Delta_N=V_lambda^row-T_N` from a nonradial statistic strictly smaller than
+  the full bridge landscape.  A power-saving upper bound activates the basin
+  recurrence; a fixed linear lower bound proves irreducible dependence.
+- **Benchmark and target distance:** this is the first structural theorem on
+  the exact optimized-child escort (Level 5 contact), but the only pressure
+  no-gain theorem remains conference-specific.  No target-reaching
+  asymptotic statement or recurrence step is proved.
+- **Asymptotic movement:** the conditional-complexity branch is closed and
+  the unknown law class is reduced to one target-relative scalar variational
+  excess.  The row-product oracle can still reconstruct the full landscape,
+  so a low-information deciding statistic is essential.  No bound on `M_n`
+  or convergence interval changes.
+- **Decision:** **RESET, CONTINUE ACTUAL-CHILD WORK.**  This checkpoint touches
+  actual minimizers and earns a second phase.  Radial flip averages and
+  generic mean-field decompositions are now ceilings, not next targets.

@@ -17745,3 +17745,210 @@ Proof and independent audit are in
 [`drafts/latent_mixture_renyi2_tightness.md`](drafts/latent_mixture_renyi2_tightness.md)
 and
 [`audits/latent_mixture_renyi2_tightness_independent_audit.md`](audits/latent_mixture_renyi2_tightness_independent_audit.md).
+
+### Theorem 37.18 (the actual negative escort has tight row-filtration Renyi complexity)
+
+Let `A,D` be the actual contracted-temperature pressure minimizers for a
+split `m+n=N`, put `t=beta/sqrt(N)`, fix either relative orientation, and
+write
+
+```math
+L(B)=\log\overline Z_N(A,\epsilon D,B;t),
+\qquad q_\lambda(B)\propto e^{-\lambda L(B)}U_B.
+```
+
+Flipping one bridge sign changes `L` by at most `2t`.  A sharp likelihood-
+martingale lemma therefore gives, after every row prefix and every further
+conditioning/marginalization,
+
+```math
+\boxed{
+D_2(q_\lambda(R_i\mid R_{<i})\Vert U_n)
+\le n\log(1+\tanh^2(\lambda t))
+\le\lambda^2\beta^2{n\over N}.}                     \tag{37.52}
+```
+
+Thus conditional row `D_2` is uniformly tight at every comparable split for
+fixed `beta,lambda`; escaping filtration complexity is impossible.  The
+whole-law bounds are
+
+```math
+D(q_\lambda\Vert U_B)
+\le {\lambda^2\beta^2mn\over2N},
+\qquad
+D_2(q_\lambda\Vert U_B)
+\le {\lambda^2\beta^2mn\over N}.                    \tag{37.53}
+```
+
+This is a statement about the actual optimized-child law, but filtration
+regularity is not a latent-iid product decomposition and does not by itself
+invoke Theorems 37.15--37.17.
+
+### Theorem 37.19 (exact row-product shadow and target-relative dichotomy)
+
+Let
+
+```math
+V_\lambda=-\lambda^{-1}\log E_Ue^{-\lambda L},
+```
+
+and let `V_lambda^row` be the same Gibbs variational problem restricted to
+independent complete bridge rows.  Then
+
+```math
+\boxed{
+\lambda(V_\lambda^{\rm row}-V_\lambda)
+=\inf_{p\ {\rm row\ product}}D(p\Vert q_\lambda)
+=:\mathcal I_\lambda^{\leftarrow}.}                \tag{37.54}
+```
+
+Every optimal product factor satisfies (37.52).  If `T` is a target,
+`L_0=L(0)`, `h=T-L_0`, and
+`Delta=V_lambda^row-T`, then for every `a>Delta`,
+
+```math
+\boxed{
+U_B\{L\le T+a\}
+\ge
+e^{-\lambda^2\beta^2mn/N}
+\left({a-\Delta\over h+a}\right)^2.}               \tag{37.55}
+```
+
+If also `V_lambda<=T+e`, then
+
+```math
+\boxed{
+\mathcal I_\lambda^{\leftarrow}
+\ge\lambda(\Delta-e).}                              \tag{37.56}
+```
+
+Hence a target-reaching actual escort has an exhaustive alternative: a
+sublinear product target excess produces a linearly rare `o(N)`-accurate
+basin (with a power-saving basin when the excess has a power saving), while
+a fixed linear excess forces extensive directed dependence.  Ordinary row
+total correlation is the opposite KL projection and cannot replace
+`I_lambda^leftarrow`.
+
+### Theorem 37.20 (actual-child flip contraction and its radial ceiling)
+
+If `A` minimizes the child pressure at raw temperature `t`, define the
+inhomogeneous normalized partition polynomial
+
+```math
+P_A(r)=E_{x,\tau}\prod_e(1+r_e\tau a_ex_e).
+```
+
+Independent edge flips give the exact equivalence
+
+```math
+\boxed{
+{Z_A(s)\over\prod_e\cosh s_e}
+\ge {Z_A(t\mathbf1)\over(\cosh t)^{\binom m2}}
+\quad\text{for every }s\in[-t,t]^{\binom m2}.}      \tag{37.57}
+```
+
+The full box inequality is equivalent to exact sign-flip minimization.  Its
+homogeneous and fixed-size-flip averages retain exactly the radial
+Krawtchouk coefficients, equivalently the absolute-energy histogram.  This
+radial information is not channel-sufficient: the two certified order-eight
+minimizer classes have the same histogram and minimize pressure for every
+`t>=3`, but their zero-temperature overlap traces are respectively `14` and
+`10`, and their one-vertex rank-one response histograms differ.  The witness
+kills universal radial-only arguments, while leaving possible additional
+rigidity at the contracted small raw temperature open.
+
+### Theorem 37.21 (the canonical inverse-channel mixture has a linear certificate wall)
+
+The forward bridge density has the exact rank-one mixture
+
+```math
+p(B)=E_\mu\prod_{ij}(1+\tanh(t)Q_{ij}B_{ij}).
+```
+
+Coordinatewise inversion gives a canonical bounded-row-`D_2` product
+mixture `r_lambda`, but the direct Jensen domination
+`q_lambda<=e^Jr_lambda` necessarily has
+
+```math
+mn\log\cosh(\lambda t)
+\le J
+\le mn\{\lambda\log\cosh t+\log\cosh(\lambda t)\}. \tag{37.58}
+```
+
+Thus this certificate pays `Theta(N)` at comparable splits.  This is not a
+lower bound on the optimal coupling.  At `lambda=1`, however,
+`r_1=p`, and rank-one support gives the genuine separation
+
+```math
+D(q_1\Vert p)\ge D(U\Vert p)
+\ge mn\log\cosh t
+-t\sqrt{2mn(N-1)\log2}.                              \tag{37.59}
+```
+
+Whenever the last expression is linear and positive, total variation tends
+to one exponentially.  The finite actual-child audit observes this
+separation well before the conservative support threshold.
+
+Full proofs, scope audits, and exact computations are in
+[`drafts/actual_child_negative_escort_structure.md`](drafts/actual_child_negative_escort_structure.md),
+[`drafts/actual_child_target_relative_dichotomy.md`](drafts/actual_child_target_relative_dichotomy.md),
+[`drafts/actual_child_flip_averaging_ceiling.md`](drafts/actual_child_flip_averaging_ceiling.md),
+[`drafts/actual_child_inverse_mixture_barrier.md`](drafts/actual_child_inverse_mixture_barrier.md),
+and the matching files in [`audits/`](audits/) and
+[`experiments/`](experiments/).
+
+### Theorem 37.22 (infinitesimal row dependence is exactly cross-row ANOVA)
+
+For any finite actual-child bridge pressure, let
+
+```math
+L=E_UL+L_{\rm add}+L_{\rm cross}
+```
+
+be its orthogonal row Hoeffding decomposition, where `L_add` is the sum of
+singleton-row components and `L_cross` contains every component using at
+least two rows.  As the negative-disorder parameter decreases to zero,
+
+```math
+\begin{aligned}
+E_UL-V_\lambda^{\rm row}
+ &={\lambda\over2}\|L_{\rm add}\|_2^2+O_L(\lambda^2),\\
+\inf_{p\ {\rm row\ product}}D(p\Vert q_\lambda)
+ &={\lambda^2\over2}\|L_{\rm cross}\|_2^2+O_L(\lambda^3),\\
+\operatorname{TC}(q_\lambda)
+ &={\lambda^2\over2}\|L_{\rm cross}\|_2^2+O_L(\lambda^3).
+                                                               \tag{37.60}
+\end{aligned}
+```
+
+The second-order row-product coefficient is also explicit, and the global
+product minimizer is unique for all sufficiently small positive `lambda`.
+
+If the bridge amplitude is separately denoted by `u`, the first nonconstant
+coefficient of the actual pressure is controlled by the fixed-orientation
+child overlap tensor
+
+```math
+\Gamma_{ik;j\ell}^{(\epsilon)}
+=E[X_iX_kY_jY_\ell].
+```
+
+Precisely,
+
+```math
+\boxed{
+\lim_{u\to0}{\|L_{u,\rm cross}\|_2^2\over u^4}
+=\sum_{i<k}\sum_{j,\ell}
+  (\Gamma_{ik;j\ell}^{(\epsilon)})^2.}              \tag{37.61}
+```
+
+This is a genuine nonradial statistic of the actual children.  It is only an
+infinitesimal classification: neither Taylor remainder is uniform in order,
+so (37.60)--(37.61) do not control the physical fixed `lambda` and
+`u=beta/sqrt(N)` regime without a new cluster/cumulant theorem.
+
+Proof, audit, and verifier are in
+[`drafts/actual_child_row_anova_infinitesimal.md`](drafts/actual_child_row_anova_infinitesimal.md),
+[`audits/actual_child_row_anova_infinitesimal_adversarial_audit.md`](audits/actual_child_row_anova_infinitesimal_adversarial_audit.md),
+and
+[`experiments/verify_actual_child_row_anova.py`](experiments/verify_actual_child_row_anova.py).

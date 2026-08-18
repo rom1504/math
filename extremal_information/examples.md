@@ -3650,3 +3650,113 @@ This excess survives every deterministic `o(r)`-rank projection because
 almost all Hadamard basis vectors retain norm `1-o(1)`.  The example shows
 that population isotropy and `o(r)` row Renyi information do not control the
 empirical edge.  It does not determine the pressure direction of that edge.
+
+## Example 187: actual optimized-child escorts are regular by rows but dependent
+
+Every contracted-temperature minimizing child pair induces a negative
+bridge escort whose conditional row `D_2` is bounded by (37.52), uniformly
+in the complete row prefix.  Exact enumeration through total order nine
+confirms the scale and simultaneously rules out exact independence: all 600
+audited laws have positive row total correlation numerically.
+
+At the target-reaching point
+
+```text
+N=8, split 4+4, beta=4, lambda=5.382104,
+```
+
+the actual law has `KL/N=.725981`, row `TC/N=.585143`, and residual
+`TC/N=.304747` after the best one-row latent.  Yet a feasible optimized
+row-product shadow captures `76.3655%` of the pressure gain.  The product
+optimization is nonconvex and this percentage is not globally certified;
+it is a sharp warning that large forward total correlation need not mean a
+large reverse product-projection cost.
+
+## Example 188: the canonical reversed child-spin channel can be almost disjoint
+
+At `lambda=1`, central symmetry makes the canonical reversed-channel
+bounded-component mixture equal to the positive child-output density `p`.
+For the actual order-nine `4+5` optimizing children at `beta=4`, exhaustive
+bridge enumeration gives
+
+```math
+D(q_1\Vert p)=8.002424,
+\qquad \|q_1-p\|_{\rm TV}=.987994,
+\qquad \sum_B\sqrt{q_1(B)p(B)}=.051245.
+```
+
+Thus the obvious Gibbs latent is not a usable inverse-escort latent, even on
+actual minimizing children.  This does not exclude a different latent
+representation or prove an asymptotic lower bound.
+
+## Example 189: radial optimizer data collide on actual minimizers
+
+The two certified switching/permutation classes of order-eight exact
+minimizers have the same complete absolute-energy histogram and therefore
+the same pressure at every temperature.  They are actual pressure minimizers
+for all `t>=3`.  Nevertheless their zero-temperature overlap covariances
+satisfy
+
+```math
+\operatorname{Tr}C_0^2=14,
+\qquad \operatorname{Tr}C_1^2=10,
+```
+
+and their exact one-vertex rank-one response histograms are
+
+```text
+class 0: {12:24, 14:112, 16:104, 18:16}
+class 1: {12: 8, 14:112, 16:120, 18:16}.
+```
+
+Homogeneous disorder noise, fixed-size flip averages, every scalar pressure
+derivative, and the absolute-energy entropy therefore miss bridge-relevant
+overlap geometry even inside the optimizer set.  The finite witness does not
+rule out extra asymptotic rigidity at raw temperature `beta/sqrt(N)`.
+
+## Example 190: tight autoregressive components need not form a latent-iid mixture
+
+On a row cube, a density of the form
+
+```math
+{dq\over dU^{\otimes m}}
+=1+\delta\prod_{i=1}^m h(R_i),
+```
+
+with `h` a balanced even sign character, is row-exchangeable and globally
+sign symmetric.  Its first `m-1` filtration kernels are uniform and every
+conditional row has bounded `D_2`.  But it cannot equal
+`int nu_z^(otimes m) pi(dz)`: its pair `h` moment is zero, forcing
+`E_(nu_z)h=0` almost surely in any such mixture, while its `m`-fold moment is
+`delta`.
+
+A tensorized weak-bias version also has `Omega(m)` total correlation and
+one-bit log oscillation `O(n^(-1/2))` while preserving the obstruction.
+Hence tight actual-law filtration complexity cannot be fed directly into
+the archived latent-iid theorem.  This is a hypothesis-transfer falsifier,
+not a favorable-pressure law.
+
+## Example 191: actual-child row dependence has a nonradial infinitesimal coordinate
+
+For the completely enumerated actual optimizing children at `N=6`, split
+`3+3`, `beta=1`, the physical bridge pressure has row-ANOVA variances
+
+```text
+additive row mass = .0038301148,
+cross-row mass    = .0152374293.
+```
+
+As `lambda` decreases from `.1` to `.0125`, the exact escort gain, feasible
+row-product gain, reverse product projection, and forward total correlation
+approach the coefficients in (37.60), with the four normalized ratios at the
+smallest value respectively
+
+```text
+.998426, .999309, .998204, .997285.
+```
+
+Separately shrinking the bridge amplitude recovers the overlap-tensor
+coefficient `.7951276391` in (37.61).  This verifies the finite
+normalizations and shows concretely that the first dependence coordinate is
+nonradial child overlap mass.  It is not evidence that the expansion is
+uniform at fixed disorder temperature or growing order.

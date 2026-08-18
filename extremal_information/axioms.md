@@ -2729,3 +2729,63 @@ subexponential density complexity guarantees a sharp empirical edge.  A
 successful growing-density theory must retain an occupancy/mixture-complexity
 state or permit sample-adaptive compression; population covariance alone
 cannot see the obstruction.
+
+## 152. Autoregressive regularity and latent product regularity are different resources
+
+A weak one-coordinate oscillation of a Gibbs potential automatically bounds
+every conditional Renyi-two increment after arbitrary conditioning and
+marginalization.  This is a robust *local* statement about a reveal
+filtration.  It does not imply that the joint law is a mixture of independent
+components with the same density bound: a prefix may carry relational memory
+which no prefix-independent latent product reproduces.
+
+The distinction survives exchangeability, global-sign symmetry, extensive
+total correlation, and the natural `n^(-1/2)` one-bit scale.  A theorem whose
+hypothesis is a tight latent disintegration therefore cannot be invoked from
+tight filtration kernels without a separate extendibility or approximate-
+product transfer theorem.
+
+## 153. Dependence is useful only relative to a declared target
+
+For a negative Gibbs escort, the reverse projection onto a product class is
+exactly a variational free-energy gap.  Its structural meaning becomes sharp
+only after declaring the pressure target.  If the best bounded-component
+product shadow lies within sublinear distance of that target, it constructs
+a linearly rare near-target basin.  If the full escort reaches the target
+but every product shadow remains a fixed linear distance above it, the same
+gap is an extensive directed dependence certificate.
+
+This target-relative dichotomy explains why neither total correlation nor a
+large KL density has an intrinsic pressure direction.  The correct resource
+is the excess of the best reusable product law above the response level one
+is trying to realize.
+
+## 154. Radial optimizer identities need not control compositional channels
+
+Disorder-noise averaging of all sign-flip inequalities produces a normalized
+partition polynomial on a contraction box.  The complete inhomogeneous box
+is equivalent to the original discrete minimization; homogeneous and
+fixed-size averages collapse it to the absolute-energy histogram.
+
+Actual finite minimizers show that this radial quotient can preserve every
+scalar pressure and still forget overlap geometry and rank-one extension
+responses.  Thus averaging an optimizer condition is a strict reduction
+only when the retained nonradial statistic is stated and shown sufficient
+for future channels.  Scalar thermodynamic completeness is not contextual
+completeness.
+
+## 155. Infinitesimal product compression is an ANOVA projection
+
+Near zero disorder temperature, the information geometry of a product
+shadow is linear.  The additive Hoeffding/ANOVA component of a landscape is
+exactly the first row-product gain, while every multirow component is exactly
+the leading reverse-projection and total-correlation cost.  At this tangent
+the two KL directions agree, even though they need not compare at finite
+temperature.
+
+For rank-one bridge channels, the first multirow coefficient is a squared
+child overlap tensor.  This supplies a natural nonradial coordinate which
+scalar pressure averages forget.  Its limitation is equally structural:
+zero-entropy rare phases live beyond every fixed Taylor order, so an
+infinitesimal ANOVA state becomes reusable at physical scale only with a
+uniform cumulant or cluster-control theorem.

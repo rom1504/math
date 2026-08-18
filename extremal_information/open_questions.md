@@ -1297,3 +1297,67 @@ child minimizers has tight conditional component `D_2`, or instead forces a
 fixed mass of non-tight conditional complexity or dependence irreducible
 after every explicit latent-product/row-filtration decomposition.  This must
 be a theorem about that induced law, not another surrogate row fibre.
+
+## 29. Actual-child row complexity: filtration side solved, product side open
+
+Theorem 37.18 settles the filtration half of the former question.  For every
+actual contracted-temperature minimizing child pair and every row prefix,
+
+```math
+D_2(q_\lambda(R_i\mid R_{<i})\Vert U_n)
+\le\lambda^2\beta^2n/N.
+```
+
+Thus no conditional `D_2` mass escapes at fixed `beta,lambda`.  This does
+not close the phase: tight autoregressive kernels need not admit a tight
+latent-iid disintegration, and the archived no-gain observable is specific
+to conference children rather than the actual parent `L`.
+
+The exact replacement question is the directed row-product target excess
+
+```math
+\Delta_N=V_{\lambda,N}^{\rm row}-T_N.
+```
+
+Theorem 37.19 proves that, conditional on the full soft bridge reaching
+`T_N+o(N)`, either `Delta_N^+=o(N)` and a bounded-component row-product law
+constructs a linearly rare `o(N)`-accurate basin, or
+`Delta_N>=eta N` on a subsequence and
+
+```math
+\inf_{p\ {\rm row\ product}}D(p\Vert q_\lambda)=\Omega(N).
+```
+
+Determine which alternative holds uniformly for actual optimizing children.
+For a convergence route, the positive alternative needs a summable rate such
+as `Delta_N^+=O(N^(1-delta))`.
+
+## 30. Find a strict nonradial optimizer statistic
+
+The full inhomogeneous contraction box (37.57) is equivalent to exact child
+minimization.  Its homogeneous and fixed-size averages are only the absolute-
+energy histogram, and Example 189 proves that this radial quotient does not
+determine overlap geometry or even one-vertex rank-one response inside the
+actual minimizer set.
+
+Extract a statistic `S(A)` satisfying all three requirements:
+
+1. `S(A)` follows uniformly from contracted-temperature pressure
+   minimality;
+2. its information content is strictly smaller than the full sign-flip or
+   bridge response landscape;
+3. `S(A),S(D)` control `Delta_N` above with a power-saving error, or certify
+   its fixed linear lower bound.
+
+The coordinate best-response oracle for `V_lambda^row` reconstructs the
+complete bridge table on point-mass queries, so evaluating the nonconvex
+product problem directly is not such a statistic.  Generic mean-field
+theorems currently give only `O(N)` error; an `o(N)` theorem must exploit the
+rank-one log-partition structure and genuinely nonradial optimizer data.
+
+Theorem 37.22 identifies the first such coordinate: the squared
+fixed-orientation child overlap tensor is exactly the infinitesimal cross-row
+ANOVA mass.  Determine whether a uniform cluster/cumulant estimate transports
+this coordinate to physical bridge amplitude `beta/sqrt(N)` and fixed
+negative-disorder temperature.  Without an order-uniform remainder this is
+only a tangent formula, not a solution of Question 29.
