@@ -19719,3 +19719,186 @@ overlap cannot yield a directional converse without an optimizer-specific
 anti-high-row-order or negative-tail theorem: one global parity amplitude is
 counted once by (37.160) and `mn` times by its Dirichlet mass.  See
 [`audits/actual_child_optimal_product_score_centering.md`](audits/actual_child_optimal_product_score_centering.md).
+
+### Theorem 37.52 (rank-one support obstruction to raw negative-overlap decay)
+
+Let `m+n=N`, `d=mn`, `t=beta/sqrt(N)`, and `rho=tanh(t)`.  For either
+orientation and **any** pair of actual contracted-temperature children, the
+bridge pressure has the exact latent presentation
+
+```math
+L(B)=c+\log E_\mu e^{t\langle B,Q\rangle},
+\qquad Q_{ij}=\tau X_iY_j,
+\qquad |\operatorname {supp}\mu|\le2^{N-1}.       \tag{37.163}
+```
+
+Let `q_s` have density proportional to `e^(sL)` against the fair bridge law,
+let `r_e(B_{-e})` be the exact edge-cavity response, and put
+
+```math
+S_s=E_{q_s}\sum_e r_e^2.
+```
+
+For `0<delta<=lambda`, define
+
+```math
+A_\rho={1\over1+\rho},
+\qquad
+C_{\rho,\delta}=A_\rho+{\delta\over1-\rho^2},
+```
+
+and
+
+```math
+R_{N,\delta}=
+\sqrt{{2\{(N-1)\log2+d\,\kappa(\delta t)\}\over\rho^2d}},
+\qquad
+\kappa(a)=a\tanh a-\log\cosh a.
+```
+
+Then the following finite-order estimate holds uniformly for
+`-delta<=s<=0`:
+
+```math
+\boxed{
+{S_s\over d}\ge
+{[A_\rho-R_{N,\delta}]_+\over C_{\rho,\delta}},
+\qquad
+\widehat\rho_N^-(\lambda)\ge
+{\delta\over\lambda}
+{[A_\rho-R_{N,\delta}]_+\over C_{\rho,\delta}}.}  \tag{37.164}
+```
+
+Consequently, if `d/N^2>=gamma_0>0` and
+
+```math
+\beta^2\gamma_0>2\log2,                           \tag{37.165}
+```
+
+choose any fixed
+
+```math
+0<\delta<\min\left\{\lambda,1,
+\sqrt{1-{2\log2\over\beta^2\gamma_0}}\right\}.
+```
+
+Uniformly over the actual minimizing children and orientations,
+
+```math
+\boxed{
+\liminf_{N\to\infty}\widehat\rho_N^-(\lambda)
+\ge{\delta\over\lambda}
+{1-\sqrt{2\log2/(\beta^2\gamma_0)+\delta^2}
+ \over1+\delta}>0.}                              \tag{37.166}
+```
+
+For balanced splits the threshold in (37.165) is
+`beta>sqrt(8log2)=2.354820...`.
+
+The proof combines four exact facts.  Conditional insertion gives
+
+```math
+m_e={r_e+\rho B_e\over1+\rho B_er_e},
+\qquad
+E_{q_s}[B_e\mid B_{-e}]
+=\tanh\{s\operatorname {arctanh}(\rho r_e)\}.
+```
+
+These imply
+
+```math
+E_{q_s}[B_em_e\mid B_{-e}]
+\ge\rho\{A_\rho-C_{\rho,\delta}r_e^2\}.          \tag{37.167}
+```
+
+The posterior bridge energy is at most
+`X(B)=max_(Q in supp(mu)) <B,Q>`.  Meanwhile the one-bit oscillation of
+`L` is at most `2t`, so entropy chain rule gives
+
+```math
+D(q_s\Vert U)\le d\,\kappa(|s|t)\le{s^2t^2d\over2}.
+```
+
+Entropy transport and the union Rademacher MGF bound give
+
+```math
+E_{q_s}X\le
+\sqrt{2d\{\log|\operatorname {supp}\mu|+D(q_s\Vert U)\}}.
+```
+
+Summing (37.167) proves (37.164).  Thus the proposed raw-overlap decay SML
+is false at sufficiently large fixed temperature on the exact optimizing-
+child law.  The obstruction is the actual `O(N)`-bit rank-one latent support
+observed through `Theta(N^2)` bridge coordinates, not a conference surrogate.
+It does not decide whether the forced overlap is row-additive, irreducible
+reverse-product dependence, or coherent retuning, and therefore does not
+produce a Level-6 recurrence.  The complete proof and scope audit are in
+[`audits/actual_child_rank_one_support_overlap_obstruction.md`](audits/actual_child_rank_one_support_overlap_obstruction.md).
+
+### Theorem 37.53 (the rank-one support floor can be wholly row-additive)
+
+The support mechanism in Theorem 37.52 is not by itself directional.  Fix
+`z in {+-1}^n`, draw `X_1,...,X_m` independently and fairly, and set
+
+```math
+Q_{ij}=X_i z_j,
+\qquad t={\beta\over\sqrt N},
+\qquad {n\over N}\longrightarrow\alpha\in(0,1).
+```
+
+The exact channel pressure and every disorder tilt factor by bridge row:
+
+```math
+L(B)=c+\sum_i\log\cosh(t\langle B_i,z\rangle),
+\qquad
+q_s=\bigotimes_iq_{s,n}.                           \tag{37.168}
+```
+
+Consequently the negative escort is already an admissible row product and
+
+```math
+\boxed{\mathcal I_\lambda^{\leftarrow}=0.}         \tag{37.169}
+```
+
+On the other hand, the exact deleted-edge cavity response is
+
+```math
+r_{ij}=z_j\tanh\!\left(t\sum_{k\ne j}B_{ik}z_k\right).
+```
+
+If `Z` is standard Gaussian and `b=beta sqrt(alpha)`, then, uniformly for
+`s in [-lambda,0]`,
+
+```math
+{1\over mn}E_{q_s}\sum_{ij}r_{ij}^2
+\longrightarrow
+{E[\cosh(bZ)^s\tanh^2(bZ)]\over E\cosh(bZ)^s}.    \tag{37.170}
+```
+
+In particular,
+
+```math
+\boxed{
+\widehat\rho_N^-(\lambda)\longrightarrow
+{1\over\lambda}\int_{-\lambda}^0
+{E[\cosh(\beta\sqrt\alpha Z)^s
+        \tanh^2(\beta\sqrt\alpha Z)]
+ \over E\cosh(\beta\sqrt\alpha Z)^s},ds>0}      \tag{37.171}
+```
+
+for every fixed `beta,lambda>0`, simultaneously with (37.169).  This is a
+generic rank-one channel rather than an actual-minimizer claim.  Its role is
+sharpness: even the exact support algebra responsible for Theorem 37.52 can
+place all of its cavity predictability inside independent rows.
+
+Thus a directional actual-child theorem must at least remove
+
+```math
+r_{ij}^{\rm row}=E[Q_{ij}\mid B_{i,-j}]
+```
+
+and retain a positive cross-row residual.  A reverse-tensorization or
+no-product-background theorem is additionally necessary to turn that
+residual into extensive reverse-product information.  The proof, including
+uniformity of the Gaussian limit over the complete negative path, is in
+[`audits/rank_one_support_overlap_floor_nondirectional_sharpness.md`](audits/rank_one_support_overlap_floor_nondirectional_sharpness.md).

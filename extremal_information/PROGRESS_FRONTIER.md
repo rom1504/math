@@ -173,8 +173,11 @@ balanced-orientation canonical rows with O(1) D_infinity
 raw fixed-negative-window cavity overlap
   --[PROVED: Theorem 37.50 branch separator]-->
 sublinear reverse dependence or positive overlap obstruction
-  --[MISSING L_raw-negative-overlap]-->
-target-relevant power-saving no-gain or extensive dependence/retuning certificate
+  --[FALSIFIED AS A DECAY ROUTE ABOVE THE STRONG-CHANNEL THRESHOLD:
+      Theorem 37.52]-->
+rank-one-support floor separated from target-relevant response
+  --[MISSING L_noise-lifetime-no-gain]-->
+power-saving no-gain or extensive dependence/retuning certificate
 ```
 
 **Previous SML `L_balanced-product-phase`:** choose the bias-canceling
@@ -203,7 +206,7 @@ cluster tail forces `J=o(N)`, while linear `J` forces a linear tail.  This
 does not yet decide the product phase or prove that the all-order tail is
 operationally simpler than the full child Gibbs law.
 
-**Current SML `L_raw-negative-overlap`:** Theorem 37.50 applies in either
+**Closed SML `L_raw-negative-overlap`:** Theorem 37.50 applies in either
 orientation, so the prior target-relevance theorem permits it to replace the
 product-factor oracle, for the branch decision, by the raw integrated cavity
 overlap
@@ -214,11 +217,18 @@ overlap
 \qquad d\widehat\Pi_s\propto e^{sL}dU.
 ```
 
-Prove `widehat rho_N^-=O(N^(-alpha))` for some `alpha>0` (or `o(1)`
-qualitatively), or turn positive overlap into a favorable reverse-product
-direction or an actual-minimizer obstruction.  The interval is fixed, its
-left endpoint is the actual negative-disorder law, and no cap, carrier
-alphabet, or replica-one derivative remains.
+Theorem 37.52 supplies the obstruction alternative and closes the decay
+option: if `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`, then every actual
+child pair has `liminf widehat rho_N^-(lambda)>0`.  The cause is the exact
+`2^(O(N))` rank-one latent support in `Theta(N^2)` bridge coordinates.
+
+**Current SML `L_noise-lifetime-no-gain`:** replace the raw coordinate-counted
+Dirichlet mass in (37.157) by an exact negative-tilt Boolean-noise-lifetime
+functional which counts a Walsh interaction by its lifetime rather than once
+per incident coordinate.  Prove both that this replacement still controls
+the optimized no-gain/product error and that the unavoidable rank-one-support
+floor of Theorem 37.52 has `o(N)` cost.  Without the first property it is only
+a new scalar; without the second it does not remove the proved obstruction.
 
 ## Quantitative frontier table
 
@@ -1906,3 +1916,64 @@ class and risks restating the desired parent optimization.
   must produce a scalable positive-overlap minimizer sequence and classify
   its product gain.  Merely rewriting the raw MGF, adding another unweighted
   overlap, or using a carrier net/channel coefficient is a strike.
+
+### Checkpoint 25 — raw overlap decay is false on every strong actual-child channel
+
+- **Strongest theorem (37.52):** for every pair of actual
+  contracted-temperature children and either orientation, the bridge
+  pressure is exactly
+
+  ```math
+  L(B)=c+\log E_\mu e^{t\langle B,Q\rangle},
+  \qquad Q=\tau XY^T,
+  \qquad |\operatorname {supp}\mu|\le2^{N-1}.
+  ```
+
+  Exact one-edge Bayes algebra, entropy chain rule for the raw negative tilt,
+  and entropy transport for the maximum of these rank-one words prove the
+  finite-order bound (37.164).  On comparable splits `mn/N^2>=gamma_0`,
+  whenever `beta^2 gamma_0>2log2`,
+
+  ```math
+  \liminf_N\widehat\rho_N^-(\lambda)>0
+  ```
+
+  uniformly over the minimizing children and orientations.  The balanced
+  threshold is `beta>sqrt(8log2)=2.354820...`.  This is a scalable theorem
+  about the exact actual-child law, not surrogate evidence.
+- **Actual finite falsifier:** complete bridge cubes for corrected thermal
+  minimizers through balanced `N=9`, exact comparable `3+7` at `N=10`, and
+  held-out balanced sampling through `N=14` all retain constant-size path
+  averages at `beta=2,4`.  At `N=8,beta=4` and the recorded target
+  `lambda=5.382104...`, the path average is `.525128` and the actual escort
+  endpoint is `.575897`.  These values support but are not used by the
+  theorem.
+- **Physical high-order restriction:** the normalized actual likelihood has
+  Fourier coefficient `rho^|S|` on every Eulerian bridge set `S`; hence the
+  pure full-parity generic falsifier is not an actual-child pressure.  The
+  four-cycle consequence is collision-weighted and only `Theta(N^-1)` after
+  normalization, so it does not prove the raw theorem by itself.
+- **The floor is sharply nondirectional:** a rank-one channel with one
+  projective factor fixed has `q_s` exactly row-product at every tilt, hence
+  `I^leftarrow=0`, while its raw negative-path overlap converges to an
+  explicit positive Gaussian integral for every `beta,lambda>0`.  This is a
+  generic sharpness example, not an actual-minimizer construction.  It proves
+  that a directional theorem must remove row-explainable cavity response and
+  add an actual-child reverse-tensorization/no-product-background property.
+- **Recurrence audit:** if a separate hypothesis already gives target reach
+  `V_lambda<=T+E_N`, then `P_N<=min_B L<=V_lambda<=T+E_N` is a sharper
+  recurrence without overlap.  Under that redundant premise, adding
+  `widehat rho=O(N^-alpha)` would contribute
+  `O(N^(1-alpha))`; every `alpha>0` is summable on a geometric tree.  Bare
+  overlap decay, however, gives no upper bound on target reach.  Theorem
+  37.52 therefore has no Level-6 recurrence consequence.
+- **SML decision:** `L_raw-negative-overlap` is **closed false** in the
+  strong-channel regime required by an unbounded-temperature squeeze.  The
+  new SML is `L_noise-lifetime-no-gain`: obtain an exact product-value bound
+  from an inverse-order/noise-lifetime functional and prove that the
+  unavoidable rank-one-support inference floor has sublinear cost.  This is
+  a RESET by a genuine actual-law obstruction, but Level 6 remains absent.
+- **Research judgment:** freeze the raw adversarial-statistical-mechanics
+  implementation.  Any continuation must be the already selected
+  rare-event/renormalization architecture; another raw overlap, cumulant,
+  conference model, or generic concentration inequality is ruled out.

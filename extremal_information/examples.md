@@ -4260,3 +4260,49 @@ why positive raw or centered overlap cannot by itself select the extensive
 reverse-dependence branch.  An actual-child converse must exclude high-row-
 order concentration or directly control the negative tail of the centered
 interaction score.
+
+## Example 215: the exact child channel has a strong-signal overlap floor
+
+For every actual pair of contracted-temperature children, not only for a
+surrogate family, the bridge pressure is a log-mixture of at most `2^(N-1)`
+rank-one words in `mn=Theta(N^2)` bridge bits.  Theorem 37.52 converts this
+support deficit into the uniform obstruction
+
+```math
+\liminf_N\widehat\rho_N^-(\lambda)>0
+```
+
+whenever `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`.  The balanced
+threshold is `beta>sqrt(8log2)=2.354820...`.  Thus the proposed raw-overlap
+power decay is false precisely in a strong-signal regime needed by any
+zero-temperature pressure squeeze.  This is not a conference effect and
+does not rely on a conjectural property of minimizers; it holds for every
+actual child pair.
+
+Complete bridge-cube evaluation for the corrected actual thermal minimizers
+at balanced orders `N=4,...,9` gives, at `lambda=1`, path averages roughly
+
+```text
+beta=1: 0.017--0.028
+beta=2: 0.19--0.25
+beta=4: 0.36--0.78.
+```
+
+Held-out fair-bridge sampling with exhaustive child selection through the
+balanced order `N=14` gives `0.4610+-0.0013` at `beta=4`; the `N=8` sampled
+implementation agrees with the complete cube within its stated standard
+error.  These values are finite numerical evidence only.  The scalable
+claim is supplied by Theorem 37.52, while the data show that its qualitative
+obstruction is already visible at small actual orders.  See
+[`experiments/actual_child_negative_overlap_protocol.md`](experiments/actual_child_negative_overlap_protocol.md),
+[`experiments/actual_child_negative_overlap_exact.py`](experiments/actual_child_negative_overlap_exact.py),
+and
+[`experiments/actual_child_negative_overlap_sample.py`](experiments/actual_child_negative_overlap_sample.py).
+
+The same exact channel also has mandatory Fourier coefficient `rho^|S|` on
+every Eulerian bridge-edge set `S`.  This excludes the pure full-parity
+likelihood as an actual pressure, but the resulting collision-weighted
+four-cycle floor is only `Theta(N^-1)` after normalization and does not by
+itself control the raw negative escort.  The stronger support-entropy
+argument is nonperturbative: it resums the full rank-one code rather than one
+fixed cycle order.

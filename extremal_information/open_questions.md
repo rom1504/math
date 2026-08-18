@@ -1644,7 +1644,7 @@ secant `(widehat A_N-1)/(s-1)` on `[-lambda,0]`; the interval avoids replica
 one and negative tilts suppress the high-pressure tail, so no cap, mixed
 derivative, adaptive window, or carrier optimizer is needed.
 
-The surviving SML is therefore:
+The previous SML was:
 
 > **`L_raw-negative-overlap`.**  For actual contracted-temperature
 > minimizing children in target-reaching orientations, prove
@@ -1652,6 +1652,38 @@ The surviving SML is therefore:
 > recurrence; alternatively prove that positive integrated overlap produces
 > an explicit favorable reverse-product direction, or construct an actual-
 > minimizer sequence showing the obstruction.
+
+Theorem 37.52 now resolves the third alternative and closes the decay route
+in the strong-channel regime.  If `mn/N^2>=gamma_0` and
+`beta^2 gamma_0>2log2`, then every actual child pair satisfies
+
+```math
+\liminf_N\widehat\rho_N^-(\lambda)>0.
+```
+
+For balanced splits this begins at `beta>sqrt(8log2)`.  The obstruction is
+the exact `2^(O(N))` rank-one support of the actual latent child channel in
+`Theta(N^2)` bridge coordinates.  Since an unbounded sequence of fixed
+`beta` values is required to squeeze the ground-state problem, raw overlap
+decay cannot be the Level-6 mechanism.
+
+Theorem 37.53 shows that this floor is not automatically directional: a
+rank-one channel with one projective factor frozen has positive raw overlap
+at every fixed `beta,lambda`, while every negative tilt is exactly row
+product and `I^leftarrow=0`.  Hence support entropy, positive raw overlap,
+and actual rank-one algebra alone cannot decide reverse dependence.
+
+The replacement SML is:
+
+> **`L_noise-lifetime-no-gain`.**  Derive an exact negative-tilt
+> product-value inequality in which a Boolean interaction is charged by its
+> noise lifetime/inverse order rather than once for every incident edge.
+> Prove that the unavoidable rank-one-support inference floor of Theorem
+> 37.52 has `o(N)` cost in this inequality.  The functional must still upper-
+> bound the actual optimized no-gain or product error; otherwise it is only a
+> renamed scalar.  A directional alternative must instead subtract the
+> row-explainable cavity response and prove an actual-child reverse-
+> tensorization theorem for the remaining cross-row component.
 
 Theorem 37.51 fixes the scope of the alternative.  At the best reverse row
 product, the exact centered score is a row-ANOVA interaction residual and

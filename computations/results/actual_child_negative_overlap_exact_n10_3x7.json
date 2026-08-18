@@ -1,0 +1,700 @@
+{
+  "child_minimizer_certificates": [
+    {
+      "beta": 1.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 2,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.14756470632413894426413765368545523827561462975034978123995085270298489777717414",
+      "order": 3,
+      "raw_t": 0.31622776601683794,
+      "root_gauged_signing_count": 2,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    },
+    {
+      "beta": 1.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 27,
+      "double_nearest_sorted_histogram_gap": 0.0020362280206963623,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 840,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": "0.0020362280206962896587602586975171912798865512110611801297421694359245227073748114",
+      "mp_optimum": "0.92141046113184643587682477175144980059121544790673749456210244941709521427453081",
+      "order": 7,
+      "raw_t": 0.31622776601683794,
+      "root_gauged_signing_count": 32768,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    },
+    {
+      "beta": 2.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 2,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.56380778329624654684170896365543253677407386234111721487695076777964728470756441",
+      "order": 3,
+      "raw_t": 0.6324555320336759,
+      "root_gauged_signing_count": 2,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    },
+    {
+      "beta": 2.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 27,
+      "double_nearest_sorted_histogram_gap": 0.03515675907359128,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 840,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": "0.035156759073591386848517517607221542895206600621637342477169321750767899097714781",
+      "mp_optimum": "2.9263366367867231334697586197107489664736533718064313740894141878096707221350365",
+      "order": 7,
+      "raw_t": 0.6324555320336759,
+      "root_gauged_signing_count": 32768,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    },
+    {
+      "beta": 4.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 2,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "1.9452668327867232600675493361858440286634499924964029186370356710334502235693013",
+      "order": 3,
+      "raw_t": 1.2649110640673518,
+      "root_gauged_signing_count": 2,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    },
+    {
+      "beta": 4.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 27,
+      "double_nearest_sorted_histogram_gap": 0.1726269103629532,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 840,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": "0.17262691036295298362569981888647073299307870305325634531903681401675709470982746",
+      "mp_optimum": "7.9330536132363130169954540044516363802240232987526849550842639127780227226709324",
+      "order": 7,
+      "raw_t": 1.2649110640673518,
+      "root_gauged_signing_count": 32768,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 10
+    }
+  ],
+  "classification": "complete child-signing and bridge enumeration; numerical transcendental evaluation and Gauss-Legendre quadrature",
+  "exclusions": [
+    "no conference or Paley surrogate",
+    "no ground-state child surrogate",
+    "no bridge sampling",
+    "no asymptotic inference from finite values"
+  ],
+  "normalization": "rhohat=(lambda*mn)^-1 int_-lambda^0 E_Pi_s sum_e r_e(B_-e)^2 ds",
+  "records": [
+    {
+      "N": 10,
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 2.0404684886177193e-16,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.10200961393330166,
+          0.09364313312919229,
+          0.10200961393330166
+        ],
+        "maximum_flip_vs_direct_absolute_error": 3.191891195797325e-16
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.9963495182717416,
+          "endpoint_overlap_at_minus_lambda": 0.02017588825991786,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.9990439606001117,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.02070898371141978,
+          "minimum_quadrature_importance_effective_fraction": 0.996359048587149,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.02071658890038211
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.9866066881149544,
+          "endpoint_overlap_at_minus_lambda": 0.019226362191662155,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9963495182717416,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.02017588825991786,
+          "minimum_quadrature_importance_effective_fraction": 0.9866402892991412,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.020202872751150514
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.9540488672153159,
+          "endpoint_overlap_at_minus_lambda": 0.01768875451292946,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.9866066881149544,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.019226362191662155,
+          "minimum_quadrature_importance_effective_fraction": 0.9541565149651722,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.019312875599817196
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.8583254144922247,
+          "endpoint_overlap_at_minus_lambda": 0.015544615029014637,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.9540488672153159,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.01768875451292946,
+          "minimum_quadrature_importance_effective_fraction": 0.8586201549450148,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.01792456769311923
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.7811254382650674,
+          "endpoint_overlap_at_minus_lambda": 0.014508135780821182,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.9243805391791066,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.016835172428358313,
+          "minimum_quadrature_importance_effective_fraction": 0.7815464423259789,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.017174471758091114
+        }
+      ],
+      "pointwise_overlap_maximum": 0.5600463928159316,
+      "pointwise_overlap_minimum": 0.0020362291069658256,
+      "raw_t": 0.31622776601683794,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.02128774226971172
+    },
+    {
+      "N": 10,
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 1.437652080715779e-16,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.40340481131817885,
+          0.10260132414969725,
+          0.40340481131817885
+        ],
+        "maximum_flip_vs_direct_absolute_error": 1.6653345369377348e-16
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.9963212619502877,
+          "endpoint_overlap_at_minus_lambda": 0.02027507525331699,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.9990378241186972,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.020799647898480704,
+          "minimum_quadrature_importance_effective_fraction": 0.9963308762120625,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.020806514907644576
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.9864885513725178,
+          "endpoint_overlap_at_minus_lambda": 0.019332958734561694,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9963212619502877,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.02027507525331699,
+          "minimum_quadrature_importance_effective_fraction": 0.986522458177417,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.020299733696285568
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.9537215449472813,
+          "endpoint_overlap_at_minus_lambda": 0.01778760229865595,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.9864885513725178,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.019332958734561694,
+          "minimum_quadrature_importance_effective_fraction": 0.9538295369672198,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.019413556512035315
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.8587085570913513,
+          "endpoint_overlap_at_minus_lambda": 0.015595344328502845,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.9537215449472813,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.01778760229865595,
+          "minimum_quadrature_importance_effective_fraction": 0.8589980447796068,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.018013140641722953
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.7834887023383966,
+          "endpoint_overlap_at_minus_lambda": 0.01452036033495862,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.9240559989992752,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.01691989857734521,
+          "minimum_quadrature_importance_effective_fraction": 0.7838957791987153,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.017248387535388827
+        }
+      ],
+      "pointwise_overlap_maximum": 0.42672642713989456,
+      "pointwise_overlap_minimum": 0.002230392015357678,
+      "raw_t": 0.31622776601683794,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.02136544488288095
+    },
+    {
+      "N": 10,
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 3.720981855970251e-16,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.5772468642304693,
+          0.5659366713915239,
+          0.5772468642304693
+        ],
+        "maximum_flip_vs_direct_absolute_error": 8.881784197001252e-16
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.9114210597098543,
+          "endpoint_overlap_at_minus_lambda": 0.18627084732333343,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.9726038047410467,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.20310743227801578,
+          "minimum_quadrature_importance_effective_fraction": 0.9116143383173037,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.20396121173815318
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.7555165176424073,
+          "endpoint_overlap_at_minus_lambda": 0.16263486654822182,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9114210597098543,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.18627084732333343,
+          "minimum_quadrature_importance_effective_fraction": 0.7559566201337709,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.1887585953930255
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.46605112324228615,
+          "endpoint_overlap_at_minus_lambda": 0.13665571978321697,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.7555165176424073,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.16263486654822182,
+          "minimum_quadrature_importance_effective_fraction": 0.4667214537192757,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.1683911542728651
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.148387167367152,
+          "endpoint_overlap_at_minus_lambda": 0.11642187276453377,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.46605112324228615,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.13665571978321697,
+          "minimum_quadrature_importance_effective_fraction": 0.1488832001785935,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.14648565401153207
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.061974942416751416,
+          "endpoint_overlap_at_minus_lambda": 0.11113066992544555,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.3198702453632453,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.12683215335867024,
+          "minimum_quadrature_importance_effective_fraction": 0.06227262049555729,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.13800375794429956
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9767591335836795,
+      "pointwise_overlap_minimum": 0.03299733956721179,
+      "raw_t": 0.6324555320336759,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.22509096010696633
+    },
+    {
+      "N": 10,
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 7.806255641895632e-17,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.8717851366654343,
+          0.8029893978975777,
+          0.8717851366654343
+        ],
+        "maximum_flip_vs_direct_absolute_error": 2.55351295663786e-15
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.9110931930441788,
+          "endpoint_overlap_at_minus_lambda": 0.18596899481936288,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.9725812319198022,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.20261752887215156,
+          "minimum_quadrature_importance_effective_fraction": 0.9112873339383669,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.20341714690333906
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.7554598025031146,
+          "endpoint_overlap_at_minus_lambda": 0.16230194242645396,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9110931930441788,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.18596899481936288,
+          "minimum_quadrature_importance_effective_fraction": 0.7558958027437968,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.18834158492195974
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.4732431861542834,
+          "endpoint_overlap_at_minus_lambda": 0.13584068674663,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.7554598025031146,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.16230194242645396,
+          "minimum_quadrature_importance_effective_fraction": 0.47388695157154487,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.1679038576571406
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.16918529267261975,
+          "endpoint_overlap_at_minus_lambda": 0.11451135114896281,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.4732431861542834,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.13584068674663,
+          "minimum_quadrature_importance_effective_fraction": 0.16967053741030935,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.14555970460335171
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.08095516219288725,
+          "endpoint_overlap_at_minus_lambda": 0.10848507443913535,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.3335772128147028,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.12563637934537572,
+          "minimum_quadrature_importance_effective_fraction": 0.08128240422632821,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.1367299775264776
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9743289448352405,
+      "pointwise_overlap_minimum": 0.041104207989548024,
+      "raw_t": 0.6324555320336759,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.22408226686206087
+    },
+    {
+      "N": 10,
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 5.464378949326942e-16,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.8065831036312348,
+          0.8335880493116796,
+          0.8065831036312348
+        ],
+        "maximum_flip_vs_direct_absolute_error": 3.9968028886505635e-15
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.5822614030127093,
+          "endpoint_overlap_at_minus_lambda": 0.45377112072793035,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.8336122980321231,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.4879767663842393,
+          "minimum_quadrature_importance_effective_fraction": 0.5829042280505888,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.49217731587126823
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.23208225039646774,
+          "endpoint_overlap_at_minus_lambda": 0.42641238635987416,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.5822614030127093,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.45377112072793035,
+          "minimum_quadrature_importance_effective_fraction": 0.2327392316012139,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4645368303296995
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.011851939064401304,
+          "endpoint_overlap_at_minus_lambda": 0.43198840516790044,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.23208225039646774,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.42641238635987416,
+          "minimum_quadrature_importance_effective_fraction": 0.011974252425842779,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.44497095934212244
+        },
+        {
+          "endpoint_importance_effective_fraction": 8.075947408780954e-05,
+          "endpoint_overlap_at_minus_lambda": 0.5250497795659707,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.011851939064401304,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.43198840516790044,
+          "minimum_quadrature_importance_effective_fraction": 8.117720291736795e-05,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4614811963631858
+        },
+        {
+          "endpoint_importance_effective_fraction": 4.1858168844195716e-05,
+          "endpoint_overlap_at_minus_lambda": 0.5444539546548514,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.0010188167477248925,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.46021195542505383,
+          "minimum_quadrature_importance_effective_fraction": 4.1920527175060426e-05,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.48102232983421656
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9998616361778742,
+      "pointwise_overlap_minimum": 0.17400302831633607,
+      "raw_t": 1.2649110640673518,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.5475208172295377
+    },
+    {
+      "N": 10,
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 2097152,
+        "bridge_sign_count": 21,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "maximum_direct_log_pressure_error": 2.8449465006019636e-15,
+        "rank_one_character_count": 256
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          699050,
+          2097151
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.9892047598892629,
+          0.994251775902711,
+          0.9892047598892629
+        ],
+        "maximum_flip_vs_direct_absolute_error": 9.547918011776346e-15
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.5836493764353781,
+          "endpoint_overlap_at_minus_lambda": 0.4537609461873888,
+          "lambda": 0.5,
+          "midpoint_importance_effective_fraction": 0.8334935233058144,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.48790998061637897,
+          "minimum_quadrature_importance_effective_fraction": 0.5842817253588793,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4919072291725372
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.2490028980832584,
+          "endpoint_overlap_at_minus_lambda": 0.424876960039545,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.5836493764353781,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.4537609461873888,
+          "minimum_quadrature_importance_effective_fraction": 0.2496017947811479,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4640908980914119
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.03821325881632415,
+          "endpoint_overlap_at_minus_lambda": 0.4196701696971434,
+          "lambda": 2.0,
+          "midpoint_importance_effective_fraction": 0.2490028980832584,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.424876960039545,
+          "minimum_quadrature_importance_effective_fraction": 0.03843140025172885,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4418936949153258
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.0008519794556358721,
+          "endpoint_overlap_at_minus_lambda": 0.46008315121854787,
+          "lambda": 4.0,
+          "midpoint_importance_effective_fraction": 0.03821325881632415,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.4196701696971434,
+          "minimum_quadrature_importance_effective_fraction": 0.0008583728432253857,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4390993439357574
+        },
+        {
+          "endpoint_importance_effective_fraction": 0.00020560643274561023,
+          "endpoint_overlap_at_minus_lambda": 0.485307253784436,
+          "lambda": 5.382104195764755,
+          "midpoint_importance_effective_fraction": 0.00868430957625385,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.4281247177686007,
+          "minimum_quadrature_importance_effective_fraction": 0.00020679302790000914,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.4482084735547255
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9998608039552156,
+      "pointwise_overlap_minimum": 0.09976921143684417,
+      "raw_t": 1.2649110640673518,
+      "right_child_class": 0,
+      "right_child_sha256": "93191291e27943d7bda3c5fdb4a4fee10a8b95fa2d4d34dec01e90ec5d7c559e",
+      "split": [
+        3,
+        7
+      ],
+      "uniform_overlap": 0.5461259890293231
+    }
+  ],
+  "schema": "actual-child-raw-negative-overlap-exact-v1",
+  "scope": {
+    "betas": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "lambdas": [
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      5.382104195764755
+    ],
+    "mp_dps_for_child_selection": 80,
+    "orders": [
+      10,
+      10
+    ],
+    "orientations": [
+      -1,
+      1
+    ],
+    "quadrature_order": 32,
+    "splits": "fixed left order 3"
+  }
+}
