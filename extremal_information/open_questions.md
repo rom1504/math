@@ -1802,6 +1802,41 @@ must use factorwise actual-child spread or another optimizer identity; a
 bound in terms of global prior spread and averaged-posterior shell KL alone
 is false.
 
+Theorem 37.64 supplies the factorwise spread that actual children really
+have.  For every prescribed positive-density child block `U`, even after
+conditioning on every exterior child spin, its sector law has a uniform
+positive min-entropy rate.  Thus the partial-common-row obstruction is not
+merely absent globally: an actual child cannot hide a frozen or low-rate
+common phase on any macroscopic coordinate block.
+
+This changes the smallest missing lemma but does not close it:
+
+> **`L_diffuse-factor-retuning`.**  Under the exact actual-child Gibbs law
+> and its uniform macroscopic conditional min-entropy bounds, prove that
+> extensive canonical excess `J-I^leftarrow` either (a) is impossible up to
+> a summable error or (b) yields one explicit low-information coherent
+> direction.  Equivalently, decide whether an exponentially diffuse common
+> phase, with no positive-density frozen coordinate block, can carry
+> `Theta(N)` row-lifetime mass under the actual inverse-disorder tilt.
+
+The Hamming-spread estimate alone is not an independence theorem: it does
+not bound total correlation, overlaps at moderate radius, or negative-path
+posterior retuning.  A valid proof must use an additional optimizer-specific
+identity and cannot invoke the complete latent table or the unknown best
+reverse product.  Even success would still require a separate target-reach
+theorem before producing a Level-6 recurrence.
+
+Theorem 37.65 shows that the word "factorwise" must retain its local
+meaning.  Making both complete factors exponentially diffuse does not help:
+a double-partial product group still has `J-I^leftarrow=Theta(N)` and zero
+averaged-posterior retuning.  It is excluded only because each factor hides
+a positive-density two-point marginal.  Consequently the sharp generic
+falsifier for `L_diffuse-factor-retuning` is a genuinely noisy common phase
+which obeys the conditional entropy bound on **every** macroscopic block.
+Either such a channel retains linear coherent regret--proving that spread
+alone is still insufficient--or its cancellation identifies the first
+useful diffuse-synchronization theorem.
+
 Theorem 37.60 records the information boundary.  Values on all subsets of
 an `m`-edge cycle basis recover the entire augmented Gibbs table by an
 invertible transform, so that route is not a compression.  The inequality

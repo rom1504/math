@@ -224,16 +224,20 @@ option: if `mn/N^2>=gamma_0` and `beta^2 gamma_0>2log2`, then every actual
 child pair has `liminf widehat rho_N^-(lambda)>0`.  The cause is the exact
 `2^(O(N))` rank-one latent support in `Theta(N^2)` bridge coordinates.
 
-**Current SML `L_row-lifetime-closure`:** Theorem 37.54 exactly represents
-the canonical error `J` as the lifetime of `h_t=P_t^r(dq/dr)` under
-independent row refresh.  It removes both known raw-multiplicity false
-positives but is not by itself simpler than `J`.  Derive from actual-child
-data strictly coarser than the full bridge law either (a) a summable
-`J=o(N)` bound, or (b) a finite/coarse split of extensive lifetime mass into
-an explicit coherent factor-retuning direction and a cross-row remainder
-which lower-bounds `I^leftarrow`.  Invoking the optimal product `p^*` or the
-complete smoothed density is circular.  Even a solution decides only the
-product phase; target reach remains a separate recurrence interface.
+**Current SML `L_diffuse-factor-retuning`:** Theorem 37.54 exactly represents
+the canonical error `J` as a row-refresh lifetime, but the global-spread
+counterexamples 37.63 and 37.65 show that neither whole-word entropy nor
+zero averaged-posterior retuning controls it.  Theorem 37.64 supplies the
+strict actual-child narrowing: every positive-density child marginal has a
+uniform exponential min-entropy rate, even after conditioning on every
+exterior child spin.  Derive from that local spread plus one additional
+optimizer identity either (a) a summable `J-I^leftarrow=o(N)` bound or (b)
+an explicit low-information direction carrying any extensive coherent
+excess.  Equivalently, decide whether an exponentially diffuse common phase,
+with no frozen macroscopic coordinate block, can carry `Theta(N)` canonical
+row-lifetime mass.  Invoking `p^*`, the complete smoothed density, or the
+full latent table is circular.  Even a solution decides only the product
+phase; target reach remains a separate recurrence interface.
 
 ## Quantitative frontier table
 
@@ -243,7 +247,7 @@ product phase; target reach remains a separate recurrence interface.
 | R2 contextual incompressibility | 5, unconditional on every exact minimizer; BT.3 is stronger on all bounded-cap signings | `Theta(n)` bits on every switching orbit under the declared physical query model; `exp(Omega(sqrt n))` MP.3 roots separately | scalar gaps and total parent caps are `Theta(n^(3/2))`; AO affine child distance remains `o(n^(3/2))` | every sufficiently large order; parents have order `2n` but are not asserted near-minimal there | 4 for the complete negative arrow; no remaining structural premise | **RESET / ARROW COMPLETE**; contextual incompressibility proved, no recurrence consequence |
 | R3 response replacement | 3/4 | unknown | target is `o(n^(3/2))` | must be all sufficiently large orders | 0 | prior STRIKE: action/weighted recovery remained equivalent |
 | rare-event state | 3 | finite for Gaussian tangent class | exact asymptotic convolution in that class | all integer recovery in scoped model | 1 | keep warm |
-| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | balanced canonical row has `O(1)` `D_infty`; every hybrid/optimal conditional row has `O(1)` `D_2`; one raw fixed-window scalar overlap replaces the full product oracle for the branch implication | `hat rho^-=o(1)` makes reverse dependence sublinear and selects coherent retuning when `J` is linear; extensive reverse dependence forces positive overlap | every finite split for structure; no asymptotic target theorem | 4 for the raw actual-law reduction, 0 for proving overlap decay/directional sufficiency | **NARROW RESET:** SML is `L_raw-negative-overlap`; Level 6 remains open |
+| adversarial statistical mechanics | 5 structural contact with actual thermal minimizers; no Level-6 recurrence | raw overlap is obstructed; every macroscopic child marginal has positive conditional min-entropy rate; row lifetime still needs diffuse correlation information | strong-channel `hat rho^-` has a uniform positive floor; hard common blocks are excluded, but diffuse coherent retuning is undecided | every finite split for structure; no asymptotic target theorem | 5 for actual-law obstruction and local spread, 0 for target reach/directional closure | **RESET / IMPLEMENTATION FROZEN:** SML is `L_diffuse-factor-retuning`; Level 6 remains absent |
 
 ## Candidate near-minimality lemmas after severe selection (maximum two)
 
@@ -2162,3 +2166,50 @@ class and risks restating the desired parent optimization.
   within-shell retuning or whether child minimality compresses it to an
   explicit direction. No row-lifetime bound, target reach, or Level-6
   recurrence follows yet.
+
+### Checkpoint 29 — actual local spread isolates diffuse synchronization
+
+- **Actual optimizer theorem (Theorem 37.64):** for every contracted-
+  temperature minimizing child, every prescribed block `U` with
+  `|U|>=theta m`, every sector, and every exact conditioning on all exterior
+  child spins,
+
+  ```math
+  \|\mu_{A,s}(X_U\in\cdot\mid X_V=v)\|_\infty
+  \le \exp\{-\underline\eta_{\beta,\theta}|U|\},
+  ```
+
+  eventually and uniformly, where
+  `underline eta_(beta,theta)>0` is explicit.  The proof uses only the scalar
+  optimizer cap and an exact subset-flip identity.  It is strictly coarser
+  than the child Gibbs table and rules out frozen or low-rate common phases
+  on every positive-density coordinate block.
+- **Sharp generic stress test (Theorem 37.65):** making both *whole* factors
+  exponentially diffuse does not suffice.  A double-partial product-group
+  prior has exponential factor min-entropy/collision/cap decay and exact
+  `bar mu=mu`, but
+
+  ```math
+  J-I^\leftarrow\ge\kappa d_0N-o(N).
+  ```
+
+  An exact conditional `log cosh(uT+h)` representation shows that the
+  diffuse nuisance rectangles change the coherent common-block comparison
+  by only `O(sqrt N)`.  This construction is excluded precisely by the new
+  actual theorem: its two common coordinate blocks have only two marginal
+  patterns.
+- **Frontier movement:** the previous whole-factor/shell formulation is too
+  weak.  The new SML is `L_diffuse-factor-retuning`: determine whether a
+  genuinely diffuse common phase satisfying every macroscopic conditional
+  entropy bound can sustain `Theta(N)` canonical excess, or prove that
+  actual minimality converts it to one explicit direction or a summable
+  error.
+- **Recurrence and level:** no recurrence follows.  Raw overlap remains
+  bounded away from zero above the strong-channel threshold, and neither
+  local spread nor `J-I^leftarrow` controls target reach.  Level 6 is not
+  credible on the current implementation.
+- **Decision:** **RESET** by a uniform actual-minimizer structural theorem,
+  but freeze the raw adversarial-statistical-mechanics implementation.  The
+  only admissible continuation is the rare-event/renormalization question
+  of diffuse synchronization; another overlap, shell scalar, or hard-block
+  surrogate is a strike.

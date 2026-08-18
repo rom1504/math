@@ -20888,3 +20888,178 @@ shell-to-row-lifetime inequality. This does not refute an actual-child
 theorem: the right projective factor is fixed and violates Theorem 37.61
 factorwise. See
 [`audits/generic_partial_common_row_shell_lifetime_no_go.md`](audits/generic_partial_common_row_shell_lifetime_no_go.md).
+
+### Theorem 37.64 (actual children have exponential spread on every macroscopic marginal)
+
+Let
+
+```math
+H_A(x)=\sum_{i<j}a_{ij}x_ix_j,
+\qquad K_A=\max_x|H_A(x)|,
+```
+
+and let `mu_(A,s)(x)` be proportional to `exp(stH_A(x))`, where
+`s in {+-1}`. Fix a vertex set `U` of size `k>=2`, condition arbitrarily on
+the exterior spins `X_V=v`, and let `R` be uniform among the `r`-subsets of
+`U`. Put
+
+```math
+a_{k,r}={4r(k-r)\over k(k-1)},
+\qquad b_{k,r}={2r\over k}.                           \tag{37.234}
+```
+
+Then the conditional law and the unconditioned `U`-marginal obey the exact
+finite bound
+
+```math
+\boxed{
+\sup_v\|\mu_{A,s}(X_U\in\cdot\mid X_V=v)\|_\infty,
+\ \|\mu_{A,s}^{U}\|_\infty
+\le {k\choose r}^{-1}
+       \exp\{t(a_{k,r}+b_{k,r})K_A\}.}               \tag{37.235}
+```
+
+Indeed, writing `H_A=H_U+H_(U,V)+H_V`, subset flipping gives
+
+```math
+E_RH_A(u^R,v)
+=(1-a_{k,r})H_U(u)+(1-b_{k,r})H_{U,V}(u,v)+H_V(v).
+                                                               \tag{37.236}
+```
+
+Both affected pieces are controlled by the global cap:
+
+```math
+H_U(u)=E_{v'}H_A(u,v'),
+\qquad H_{U,V}(u,v)={H_A(u,v)-H_A(u,-v)\over2},       \tag{37.237}
+```
+
+so their absolute values are at most `K_A`. Jensen on the Hamming sphere
+of `u` proves the conditional estimate in (37.235); the marginal estimate
+follows by mixing the conditional laws.
+
+For an actual contracted-temperature pressure-minimizing child of order
+`m`, with `t=beta/sqrt(N)`, Theorem 37.61 gives
+
+```math
+{tK_A\over m}\le C_\beta,
+\qquad C_\beta=\log2+{\beta^2\over4}.                \tag{37.238}
+```
+
+Consequently, for every fixed `theta>0`, uniformly over all subsets
+`|U|>=theta m`, sectors, and exterior conditions,
+
+```math
+\boxed{
+\liminf_{m\to\infty}-{1\over |U|}
+ \log\|\mu_{A,s}(X_U\in\cdot\mid X_V=v)\|_\infty
+\ge\eta_{\beta,\theta}^{\rm marg}>0,}              \tag{37.239}
+```
+
+where the same statement holds for the marginal and
+
+```math
+\eta_{\beta,\theta}^{\rm marg}
+=\sup_{0<q<1/2}
+ \left\{h(q)-{C_\beta\over\theta}(6q-4q^2)\right\}
+\ge e^{-6C_\beta/\theta}
+       (1-e^{-6C_\beta/\theta}).                    \tag{37.240}
+```
+
+In particular, any two such conditional sector draws agree or anti-agree
+on a prescribed positive-density block only with exponentially small
+probability. More generally, the probability of Hamming distance at most
+`delta|U|` from agreement or anti-agreement is exponentially small whenever
+`h(delta)` is below any eventual uniform rate smaller than
+`eta_(beta,theta)^marg`.
+
+This is a strict optimizer-specific strengthening of whole-word spread: it
+rules out the partial-common-row mechanism of Theorem 37.63 on every
+macroscopic child block, even after conditioning on all exterior child
+spins. It does **not** imply approximate independence. Exponentially many
+diffuse patterns can still carry a coherent common phase, so no bound on
+`J-I^leftarrow`, target reach, or the Level-6 recurrence follows from
+(37.239) alone. See
+[`audits/actual_child_macroscopic_marginal_spread.md`](audits/actual_child_macroscopic_marginal_spread.md).
+
+### Theorem 37.65 (whole-factor spread still permits linear coherent row retuning)
+
+This is a generic rank-one channel, not an actual-child example. Let
+`m=k+ell`, `n=r+s`, with all four block sizes proportional to `N=m+n`, and
+take
+
+```math
+X=(\sigma\mathbf1_k,\xi_1,\ldots,\xi_\ell),
+\qquad
+Y=(\tau\mathbf1_r,\eta_1,\ldots,\eta_s),
+\qquad Q=XY^T.                                      \tag{37.241}
+```
+
+All displayed signs are independent and fair. Both projective factor laws
+have exponential whole-word min-entropy, collision, and narrow-cap decay.
+Nevertheless each has a positive-density two-point marginal, so (37.241)
+violates the stronger actual-child conclusion of Theorem 37.64.
+
+At `u=beta/sqrt(N)`, every erased bridge-row likelihood is
+
+```math
+p_i(b)={\cosh\{u\sum_{j\le r}b_j\}\over(\cosh u)^r}.
+                                                               \tag{37.242}
+```
+
+Let `q` be the inverse escort proportional to `p^(-lambda)`, let `R` be
+the canonical inverse row product, and let `P` agree with `R` on the last
+`ell` rows but be fair on the first `k` rows. If `T` is the sum on the
+`k by r` common rectangle, then, conditional on all exterior bridge bits,
+
+```math
+\boxed{\log p(B)=c+\log\cosh\{uT(B)+h\},}           \tag{37.243}
+```
+
+for exterior-dependent scalars `c,h`. Under both `R` and `P`, this
+rectangle is independent of the exterior and the exterior law is the same.
+The one-Lipschitz property of `log cosh`, together with
+
+```math
+E_R T^2\le {kr\over z_*},\qquad E_P T^2=kr,
+\qquad
+z_*={1\over2}\cosh(\sqrt2\beta)^{-\lambda},         \tag{37.244}
+```
+
+therefore gives
+
+```math
+|(E_R-E_P)\log p|
+\le {\beta\sqrt{kr}\over\sqrt N}(1+z_*^{-1/2})
+=O_{\beta,\lambda}(\sqrt N).                       \tag{37.245}
+```
+
+Writing `nu` for the first-`r`-bit row law in `R` and
+`d_N=D(nu||U_r)`, one has `d_N->d_0>0`, the relative entropy of the
+nonconstant Gaussian tilt proportional to
+`cosh(G)^(-lambda)`, `G~N(0,beta^2 lim(r/N))`. Hence
+
+```math
+\begin{aligned}
+J-I^\leftarrow
+&\ge D(R\Vert q)-D(P\Vert q)\\
+&=k d_N+\lambda(E_R-E_P)\log p
+\ge \kappa d_0N-o(N)=\Omega(N).                    \tag{37.246}
+\end{aligned}
+```
+
+The rank-one support is a multiplicative subgroup. Its switching action is
+transitive and preserves both fair bridge measure and `p`, so every
+likelihood-dependent disorder tilt has averaged latent posterior
+
+```math
+\boxed{\bar\mu=\mu.}                                \tag{37.247}
+```
+
+Thus exponential spread of **both complete factors**, even combined with
+zero averaged-posterior retuning, does not control canonical row-product
+regret. Theorem 37.64 pinpoints why the example is non-actual: actual
+children spread conditionally on every macroscopic coordinate block. The
+next possible falsifier must use diffuse synchronization rather than a hard
+common block. See
+[`audits/generic_double_partial_common_block_no_go.md`](audits/generic_double_partial_common_block_no_go.md).
