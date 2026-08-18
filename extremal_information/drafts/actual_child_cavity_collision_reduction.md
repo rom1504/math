@@ -290,6 +290,36 @@ exponential posterior-predictive table.  CC.2 is a noncircular sufficient
 theorem, not yet an algorithmic compression and not a claim that actual
 minimizers satisfy it.
 
+The average version controls the initial interaction curvature even when
+the uniform theorem is far too expensive.  Write the expectation below
+under the iid canonical rows and define
+
+```math
+ \overline\Delta_u^2
+ :=\sum_iE_{r_{-i}}\delta_i(B_{-i})^2.                \tag{CC.17a}
+```
+
+**Corollary CC.3 (average cavity sensitivity).**
+
+```math
+ \boxed{
+ \operatorname{Var}_{r_u}(h_u)
+ \le\sum_iE_{r_{-i}}
+       \operatorname{Var}_{r_i}(h_u\mid B_{-i})
+ \le {1\over4}\overline\Delta_u^2.}                 \tag{CC.17b}
+```
+
+*Proof.*  The first inequality is Efron--Stein for the independent rows.
+For fixed other rows, (CC.17) says the range of `h_u` is
+`delta_i(B_(-i))`; the variance of a variable in an interval of length
+`delta` is at most `delta^2/4`. `square`
+
+This controls the `s=0` endpoint of the interaction-curvature path IC.3.
+It does not control the whole centered negative moment: an extensive
+fluctuation can be created after tilting toward `q_s`.  A useful replacement
+for the uniform CC.2 criterion would therefore propagate an averaged cavity
+bound along that path.
+
 ## 4. A scalable rank-one falsifier
 
 Weak physical-scale noise, central rank-one structure, and bounded row

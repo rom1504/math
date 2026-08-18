@@ -1,0 +1,246 @@
+#!/usr/bin/env python3
+"""Exact-cube audit of the CC.14 projective synchronization observable.
+
+The child signings are the complete contracted-temperature minimizer classes
+from ``actual_child_bridge_law_exact``.  Every bridge is enumerated.  This is
+finite numerical evidence, not an interval certificate.
+"""
+
+from __future__ import annotations
+
+import argparse
+import itertools
+import json
+import math
+import sys
+from pathlib import Path
+
+import numpy as np
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(HERE))
+import actual_child_bridge_law_exact as exact  # noqa: E402
+
+
+def logsumexp(values: np.ndarray) -> float:
+    maximum = float(np.max(values))
+    return maximum + math.log(float(np.sum(np.exp(values - maximum))))
+
+
+def logmeanexp(values: np.ndarray) -> float:
+    return logsumexp(values) - math.log(len(values))
+
+
+def row_marginal_logs(
+    log_likelihood: np.ndarray, m: int, n: int, row: int
+) -> np.ndarray:
+    """Return log likelihood of one output row relative to its fair law."""
+
+    lower_bits = row * n
+    upper_bits = m * n - lower_bits - n
+    view = log_likelihood.reshape(
+        1 << upper_bits, 1 << n, 1 << lower_bits
+    )
+    result = np.empty(1 << n, dtype=np.float64)
+    for code in range(1 << n):
+        result[code] = logmeanexp(view[:, code, :].reshape(-1))
+    return result
+
+
+def projective_record(
+    pressure: np.ndarray, m: int, n: int, lam: float
+) -> dict:
+    d = m * n
+    log_p = pressure - logmeanexp(pressure)
+    log_z = [row_marginal_logs(log_p, m, n, row) for row in range(m)]
+    deltas = []
+    context_oscillations = []
+    for row in range(m):
+        lower_bits = row * n
+        upper_bits = d - lower_bits - n
+        view = log_p.reshape(1 << upper_bits, 1 << n, 1 << lower_bits)
+        score = view - log_z[row][None, :, None]
+        context_oscillation = np.max(score, axis=1) - np.min(score, axis=1)
+        context_oscillations.append(context_oscillation)
+        deltas.append(float(np.max(context_oscillation)))
+
+    masks = np.arange(1 << d, dtype=np.uint64)
+    log_r = np.zeros(1 << d, dtype=np.float64)
+    sum_log_z = np.zeros(1 << d, dtype=np.float64)
+    row_log_probabilities = []
+    row_mask = np.uint64((1 << n) - 1)
+    for row in range(m):
+        log_weights = -lam * log_z[row]
+        log_prob = log_weights - logsumexp(log_weights)
+        row_log_probabilities.append(log_prob)
+        codes = ((masks >> np.uint64(row * n)) & row_mask).astype(np.int64)
+        log_r += log_prob[codes]
+        sum_log_z += log_z[row][codes]
+
+    h = log_p - sum_log_z
+    r_probability = np.exp(log_r)
+    mean_h = float(np.dot(r_probability, h))
+    canonical_j = logsumexp(log_r - lam * (h - mean_h))
+    average_projective_squared = []
+    conditional_variance_terms = []
+    for row in range(m):
+        lower_bits = row * n
+        upper_bits = d - lower_bits - n
+        shape = (1 << upper_bits, 1 << n, 1 << lower_bits)
+        context_probability = r_probability.reshape(shape).sum(axis=1)
+        average_projective_squared.append(
+            float(np.sum(context_probability * context_oscillations[row] ** 2))
+        )
+        h_view = h.reshape(shape)
+        row_probability = np.exp(row_log_probabilities[row])
+        conditional_mean = np.sum(
+            h_view * row_probability[None, :, None], axis=1
+        )
+        conditional_second = np.sum(
+            h_view * h_view * row_probability[None, :, None], axis=1
+        )
+        conditional_variance_terms.append(
+            float(
+                np.sum(
+                    context_probability
+                    * np.maximum(
+                        conditional_second - conditional_mean * conditional_mean,
+                        0.0,
+                    )
+                )
+            )
+        )
+    delta_squared = float(np.dot(deltas, deltas))
+    theorem_bound = lam * lam * delta_squared / 8.0
+    marginal_spread = max(
+        float(np.max(np.abs(log_z[row] - log_z[0])))
+        for row in range(m)
+    )
+    return {
+        "row_projective_diameters": deltas,
+        "projective_Delta_squared": delta_squared,
+        "projective_Delta_squared_per_parent_vertex": delta_squared / (m + n),
+        "row_average_projective_squared": average_projective_squared,
+        "sum_average_projective_squared": sum(average_projective_squared),
+        "sum_average_projective_squared_per_parent_vertex": sum(
+            average_projective_squared
+        )
+        / (m + n),
+        "row_conditional_variance_terms": conditional_variance_terms,
+        "Efron_Stein_variance_upper_bound": sum(conditional_variance_terms),
+        "actual_variance_h_under_canonical_product": float(
+            np.dot(r_probability, (h - mean_h) ** 2)
+        ),
+        "canonical_J": canonical_j,
+        "canonical_J_per_parent_vertex": canonical_j / (m + n),
+        "CC2_upper_bound": theorem_bound,
+        "CC2_upper_bound_per_parent_vertex": theorem_bound / (m + n),
+        "bound_to_J_ratio": theorem_bound / canonical_j
+        if canonical_j > 1e-14
+        else None,
+        "maximum_row_marginal_log_spread": marginal_spread,
+        "row_product_log_probability_normalization_error": abs(
+            logsumexp(log_r)
+        ),
+    }
+
+
+def children(order: int, beta: float, total_n: int) -> list[dict]:
+    space = exact.build_signing_space(order)
+    classes, selector = exact.thermal_minimizer_classes(
+        space, beta, total_n
+    )
+    return [
+        {
+            "matrix": np.asarray(item["representative_matrix"], dtype=np.int16),
+            "sha256": item["representative_sha256"],
+            "selector": selector,
+        }
+        for item in classes
+    ]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--orders", nargs="+", type=int, default=list(range(4, 10)))
+    parser.add_argument("--betas", nargs="+", type=float, default=[1.0, 2.0, 4.0])
+    parser.add_argument("--lambda-value", type=float, default=1.0)
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=(
+            ROOT
+            / "computations/results/actual_child_projective_synchronization.json"
+        ),
+    )
+    args = parser.parse_args()
+
+    records = []
+    for total_n in args.orders:
+        m = total_n // 2
+        n = total_n - m
+        for beta in args.betas:
+            left_children = children(m, beta, total_n)
+            right_children = children(n, beta, total_n)
+            for left_index, right_index, epsilon in itertools.product(
+                range(len(left_children)),
+                range(len(right_children)),
+                (-1, 1),
+            ):
+                left = left_children[left_index]
+                right = right_children[right_index]
+                pressure, pressure_audit = exact.bridge_pressures(
+                    left["matrix"],
+                    right["matrix"],
+                    beta,
+                    total_n,
+                    epsilon,
+                )
+                records.append(
+                    {
+                        "N": total_n,
+                        "split": [m, n],
+                        "beta": beta,
+                        "lambda": args.lambda_value,
+                        "epsilon": epsilon,
+                        "left_class": left_index,
+                        "right_class": right_index,
+                        "left_sha256": left["sha256"],
+                        "right_sha256": right["sha256"],
+                        "pressure_audit": pressure_audit,
+                        **projective_record(
+                            pressure, m, n, args.lambda_value
+                        ),
+                    }
+                )
+                print(
+                    f"N={total_n} beta={beta:g} "
+                    f"classes={left_index},{right_index} eps={epsilon:+d} "
+                    f"Delta2/N={records[-1]['projective_Delta_squared_per_parent_vertex']:.6g} "
+                    f"J/N={records[-1]['canonical_J_per_parent_vertex']:.6g}",
+                    flush=True,
+                )
+
+    payload = {
+        "schema": "actual-child-projective-synchronization-v1",
+        "classification": "complete finite bridge enumeration; numerical, not interval-certified",
+        "parameters": {
+            "orders": args.orders,
+            "betas": args.betas,
+            "lambda": args.lambda_value,
+            "balanced_split_only": True,
+            "all_contracted_temperature_minimizer_classes": True,
+            "all_relative_orientations": True,
+        },
+        "records": records,
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    print(f"wrote {args.output}")
+
+
+if __name__ == "__main__":
+    main()

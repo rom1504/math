@@ -53,6 +53,12 @@ oscillation in (CC.14), so the factor `lambda^2/8` is correct.  The theorem
 uses a supremum over all other rows; it is therefore rigorous but may be too
 strong asymptotically.
 
+For CC.3, Efron--Stein contributes
+`sum_i E Var(h|B_(-i))` with no extra factor: the usual one-half cancels the
+factor two from two iid resamplings of row `i`.  Popoviciu's bound then gives
+`Var(h|B_(-i))<=delta_i(B_(-i))^2/4`.  This controls only the product
+endpoint and is not silently extended to the dependent hybrid laws.
+
 ## Scalable example
 
 For `Q=+-11^T`, summing the two planted words gives the two cosh formulas in
