@@ -138,14 +138,53 @@ def projective_record(
         q_probability = np.exp(log_q)
         q_mean_h = float(np.dot(q_probability, h))
         curvature = float(np.dot(q_probability, (h - q_mean_h) ** 2))
+        divergence_qs_from_r = float(
+            np.dot(q_probability, log_q - log_r)
+        )
+        row_marginal_drift = 0.0
+        for row in range(m):
+            lower_bits = row * n
+            upper_bits = d - lower_bits - n
+            shape = (1 << upper_bits, 1 << n, 1 << lower_bits)
+            q_row = q_probability.reshape(shape).sum(axis=(0, 2))
+            row_marginal_drift += float(
+                np.dot(
+                    q_row,
+                    np.log(q_row) - row_log_probabilities[row],
+                )
+            )
+        row_total_correlation = divergence_qs_from_r - row_marginal_drift
         if s == 0.0:
             influence = 0.5 * sum(conditional_variance_terms)
+            entropic_influence = influence
         else:
             tau_sum = np.zeros_like(h)
             for difference in row_centered_differences:
                 argument = s * difference
                 tau_sum += np.expm1(argument) - argument
             influence = float(np.dot(q_probability, tau_sum)) / (s * s)
+            entropic_kl_sum = 0.0
+            for row in range(m):
+                lower_bits = row * n
+                upper_bits = d - lower_bits - n
+                shape = (1 << upper_bits, 1 << n, 1 << lower_bits)
+                h_view = h.reshape(shape)
+                weighted = (
+                    -s * h_view
+                    + row_log_probabilities[row][None, :, None]
+                )
+                maximum = np.max(weighted, axis=1)
+                log_normalizer = maximum + np.log(
+                    np.sum(
+                        np.exp(weighted - maximum[:, None, :]), axis=1
+                    )
+                )
+                h_i_s = -log_normalizer / s
+                q_view = q_probability.reshape(shape)
+                entropic_kl_sum += float(
+                    np.sum(q_view * (-s * (h_view - h_i_s[:, None, :])))
+                )
+            entropic_influence = entropic_kl_sum / (s * s)
         centered_cumulant = logsumexp(
             log_r - s * (h - mean_h)
         )
@@ -157,12 +196,32 @@ def projective_record(
             "tilted_average_influence_A_s": influence,
             "tilted_average_influence_per_parent_vertex": influence
             / (m + n),
+            "conditional_entropic_influence_E_s": entropic_influence,
+            "conditional_entropic_influence_per_parent_vertex": (
+                entropic_influence / (m + n)
+            ),
+            "D_qs_from_canonical_row_product": divergence_qs_from_r,
+            "row_total_correlation_qs": row_total_correlation,
+            "row_marginal_drift_from_canonical_factors": row_marginal_drift,
+            "row_total_correlation_fraction_of_D_qs_r": (
+                row_total_correlation / divergence_qs_from_r
+                if divergence_qs_from_r > 1e-14
+                else None
+            ),
+            "row_marginal_drift_fraction_of_D_qs_r": (
+                row_marginal_drift / divergence_qs_from_r
+                if divergence_qs_from_r > 1e-14
+                else None
+            ),
         }
         path_profile.append(item)
         path_by_s[s] = item
 
     curvature_quadrature = 0.0
     influence_quadrature = 0.0
+    entropic_influence_quadrature = 0.0
+    total_correlation_quadrature = 0.0
+    row_marginal_drift_quadrature = 0.0
     for s, weight in zip(integration_nodes, integration_weights):
         item = path_by_s[float(s)]
         curvature_quadrature += (
@@ -171,7 +230,22 @@ def projective_record(
         influence_quadrature += (
             weight * item["tilted_average_influence_A_s"]
         )
+        entropic_influence_quadrature += (
+            weight * item["conditional_entropic_influence_E_s"]
+        )
+        total_correlation_quadrature += (
+            weight * item["row_total_correlation_qs"] / (s * s)
+        )
+        row_marginal_drift_quadrature += (
+            weight
+            * item["row_marginal_drift_from_canonical_factors"]
+            / (s * s)
+        )
     ic15_rhs = lam * influence_quadrature
+    ic23_rhs = lam * entropic_influence_quadrature
+    es28_total_correlation = lam * total_correlation_quadrature
+    es28_row_marginal_drift = lam * row_marginal_drift_quadrature
+    es28_total = es28_total_correlation + es28_row_marginal_drift
     marginal_spread = max(
         float(np.max(np.abs(log_z[row] - log_z[0])))
         for row in range(m)
@@ -200,6 +274,14 @@ def projective_record(
             item["tilted_average_influence_per_parent_vertex"]
             for item in path_profile
         ),
+        "maximum_conditional_entropic_influence": max(
+            item["conditional_entropic_influence_E_s"]
+            for item in path_profile
+        ),
+        "maximum_conditional_entropic_influence_per_parent_vertex": max(
+            item["conditional_entropic_influence_per_parent_vertex"]
+            for item in path_profile
+        ),
         "IC7_curvature_quadrature": curvature_quadrature,
         "IC7_curvature_quadrature_to_exact_J_ratio": (
             curvature_quadrature / canonical_j
@@ -209,6 +291,30 @@ def projective_record(
         "IC15_rhs_quadrature": ic15_rhs,
         "IC15_rhs_quadrature_to_exact_J_ratio": (
             ic15_rhs / canonical_j if canonical_j > 1e-14 else None
+        ),
+        "IC23_rhs_quadrature": ic23_rhs,
+        "IC23_rhs_quadrature_to_exact_J_ratio": (
+            ic23_rhs / canonical_j if canonical_j > 1e-14 else None
+        ),
+        "ES28_total_correlation_contribution_quadrature": (
+            es28_total_correlation
+        ),
+        "ES28_row_marginal_drift_contribution_quadrature": (
+            es28_row_marginal_drift
+        ),
+        "ES28_decomposition_quadrature": es28_total,
+        "ES28_decomposition_quadrature_to_exact_J_ratio": (
+            es28_total / canonical_j if canonical_j > 1e-14 else None
+        ),
+        "ES28_total_correlation_fraction_of_decomposition": (
+            es28_total_correlation / es28_total
+            if es28_total > 1e-14
+            else None
+        ),
+        "ES28_row_marginal_drift_fraction_of_decomposition": (
+            es28_row_marginal_drift / es28_total
+            if es28_total > 1e-14
+            else None
         ),
         "canonical_J": canonical_j,
         "canonical_J_per_parent_vertex": canonical_j / (m + n),
@@ -306,7 +412,7 @@ def main() -> None:
                 )
 
     payload = {
-        "schema": "actual-child-projective-synchronization-and-influence-v2",
+        "schema": "actual-child-projective-synchronization-and-influence-v3",
         "classification": "complete finite bridge enumeration; numerical, not interval-certified",
         "parameters": {
             "orders": args.orders,
