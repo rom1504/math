@@ -469,6 +469,54 @@ Indeed,
 Thus fixed temperature permits a genuine entropy buffer of at most
 `(log2)/(2beta)+o(1)`, while no uniform ground-state restriction is assumed.
 
+### Proposition DR.2 (an exposed cumulative layer is one shell)
+
+Let `q_0<...<q_J` be the possible cap values at order `n`, put
+
+```math
+K_j=|\{A:Q(A)\le q_j\}|,
+```
+
+and let `q_(j*)/n^(3/2)=c_(n,beta)^*` be a selected maximizer in
+(DR.15a).  Then
+
+```math
+\boxed{
+{K_{j^*-1}\over K_{j^*}}
+\le \exp\{-\beta\sqrt n(q_{j^*}-q_{j^*-1})\}
+\le e^{-2\beta\sqrt n},}                              \tag{DR.15c}
+```
+
+with the left side interpreted as zero when `j*=0`.  Consequently the total
+variation distance between the uniform law on the cumulative exposed layer
+and the uniform law on the exact shell
+`{A:Q(A)=q_(j*)}` is at most `e^(-2 beta sqrt(n))`.
+
+**Proof.**  Maximization of
+`log K_j-beta sqrt(n)q_j` at `j*` gives
+
+```math
+\log{K_{j^*}\over K_{j^*-1}}
+\ge\beta\sqrt n(q_{j^*}-q_{j^*-1}).
+```
+
+Every quadratic energy, and hence every cap, is congruent to `L_n` modulo
+two, so consecutive distinct cap values differ by at least two.  Finally,
+the cumulative uniform law puts mass `K_(j*-1)/K_(j*)` below its top shell;
+conditioning it on that shell gives the claimed total-variation identity.
+`square`
+
+Thus any restriction-tail theorem proved for the uniform exact exposed
+shell implies (ERSR) with the explicit transfer
+
+```math
+\eta_{N,m,\beta}^{\rm cumulative}
+\le\eta_{N,m,\beta}^{\rm shell}+e^{-2\beta\sqrt N}.   \tag{DR.15d}
+```
+
+This is the smallest currently identified parent ensemble: no full cap
+histogram or mixture of low-cap layers is required.
+
 The weakest unproved target is the following **exposed-layer
 restriction-shadow statement**.  Uniformly over every integer pair
 `m/N in [1/3,2/3]`, let `A` be uniform on

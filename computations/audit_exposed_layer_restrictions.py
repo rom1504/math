@@ -23,21 +23,33 @@ import numpy as np
 from audit_canonical_disorder_root_gauge import projected_masks, root_caps
 
 
-def exposed_level(cap: np.ndarray, n: int, beta: float) -> tuple[int, float, int]:
+def exposed_level(
+    cap: np.ndarray, n: int, beta: float
+) -> tuple[int, float, int, int, int | None]:
     values, counts = np.unique(cap, return_counts=True)
     edge_count = n * (n - 1) // 2
     coefficient = beta * n * n / edge_count
     cumulative = 0
-    best: tuple[float, int, float, int] | None = None
+    best: tuple[float, int, float, int, int, int | None] | None = None
+    previous_value: int | None = None
     for value, count in zip(values, counts):
+        previous_cumulative = cumulative
         cumulative += int(count)
         normalized = float(value) / n**1.5
         score = math.log(cumulative) / edge_count - coefficient * normalized
-        candidate = (score, int(value), normalized, cumulative)
+        candidate = (
+            score,
+            int(value),
+            normalized,
+            cumulative,
+            previous_cumulative,
+            previous_value,
+        )
         if best is None or candidate[0] > best[0]:
             best = candidate
+        previous_value = int(value)
     assert best is not None
-    return best[1], best[2], best[3]
+    return best[1], best[2], best[3], best[4], best[5]
 
 
 def audit_pair(
@@ -45,9 +57,19 @@ def audit_pair(
 ) -> dict[str, float | int]:
     parent_cap = cap_by_order[n]
     child_cap = cap_by_order[m]
-    level, normalized_level, layer_size = exposed_level(parent_cap, n, beta)
+    level, normalized_level, layer_size, lower_size, lower_level = exposed_level(
+        parent_cap, n, beta
+    )
     parent_law = (parent_cap <= level).astype(float)
     parent_law /= float(np.sum(parent_law))
+    lower_mass = lower_size / layer_size
+    shell_bound = (
+        math.exp(-beta * math.sqrt(n) * (level - lower_level))
+        if lower_level is not None
+        else 0.0
+    )
+    if lower_mass > shell_bound + 1e-12:
+        raise AssertionError((n, beta, lower_mass, shell_bound))
     marginal = np.bincount(
         projected_masks(n, m), weights=parent_law, minlength=len(child_cap)
     )
@@ -62,6 +84,10 @@ def audit_pair(
         "exposed_cap": level,
         "exposed_normalized_cap": normalized_level,
         "exposed_root_layer_size": layer_size,
+        "lower_cumulative_root_size": lower_size,
+        "lower_layer_mass": lower_mass,
+        "top_shell_gap": level - lower_level if lower_level is not None else None,
+        "top_shell_exponential_bound": shell_bound,
         "bad_restriction_mass": bad_mass,
         "minimum_positive_normalized_gap": (
             float(np.min(positive_gaps)) if len(positive_gaps) else None
