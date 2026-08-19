@@ -729,8 +729,10 @@ shell, none of the bad incidences for `m=3,4,5` can be moved into cap at
 most eight by flipping one edge inside the restricted set.  On the cap-12
 shell, the corresponding repairable fractions are only
 `0.037406...`, `0.103486...`, and `0.122167...`.  This is not a scalable
-falsifier of (DR.22), but it rules out beginning with a one-edge descent
-map.  The exact audit is reproduced by
+falsifier of (DR.22), but it rules out beginning with an internal one-edge
+descent map.  Even allowing the flipped edge anywhere in the parent repairs
+only `0.289276...`, `0.263486...`, and `0.281773...` of the cap-12 bad
+incidences.  The exact audit is reproduced by
 
 ```bash
 .venv/bin/python computations/audit_exposed_shell_edge_repairs.py \

@@ -22,21 +22,25 @@ from audit_canonical_disorder_root_gauge import (
 )
 
 
-def internal_edge_toggles(n: int, m: int) -> list[int]:
-    """Return root-gauge masks for flipping one edge inside ``[m]``."""
+def edge_toggle(n: int, i: int, j: int, positions: dict[tuple[int, int], int]) -> int:
+    """Return the root-gauge mask corresponding to one physical edge flip."""
+    if i:
+        return 1 << positions[(i, j)]
+    # Flipping (0,j) and switching vertex j restores root gauge.
+    toggle = 0
+    for k in range(1, n):
+        if k != j:
+            toggle ^= 1 << positions[tuple(sorted((j, k)))]
+    return toggle
+
+
+def edge_toggles(n: int, vertices: range) -> list[int]:
+    """Return root-gauge masks for edges induced by ``vertices``."""
     positions = {edge: bit for bit, edge in enumerate(internal_edges(n))}
     output: list[int] = []
-    for i in range(m):
-        for j in range(i + 1, m):
-            if i:
-                output.append(1 << positions[(i, j)])
-                continue
-            # Flipping (0,j) and switching vertex j restores root gauge.
-            toggle = 0
-            for k in range(1, n):
-                if k != j:
-                    toggle ^= 1 << positions[tuple(sorted((j, k)))]
-            output.append(toggle)
+    for i in vertices:
+        for j in range(i + 1, vertices.stop):
+            output.append(edge_toggle(n, i, j, positions))
     return output
 
 
@@ -46,7 +50,8 @@ def audit(n: int, child_orders: list[int], levels: list[int]) -> dict:
     for m in child_orders:
         child_caps = root_caps(m)
         projection = projected_masks(n, m)
-        toggles = internal_edge_toggles(n, m)
+        internal_toggles = edge_toggles(n, range(m))
+        all_toggles = edge_toggles(n, range(n))
         for level in levels:
             shell = np.flatnonzero(parent_caps == level)
             normalized_level = level / n**1.5
@@ -54,11 +59,15 @@ def audit(n: int, child_orders: list[int], levels: list[int]) -> dict:
                 child_caps[projection[shell]] / m**1.5
                 > normalized_level + 1e-12
             ]
-            repairable = sum(
-                any(parent_caps[int(mask) ^ toggle] <= level - 2
-                    for toggle in toggles)
-                for mask in bad
-            )
+            def count_repairable(toggles: list[int]) -> int:
+                return sum(
+                    any(parent_caps[int(mask) ^ toggle] <= level - 2
+                        for toggle in toggles)
+                    for mask in bad
+                )
+
+            internal_repairable = count_repairable(internal_toggles)
+            all_repairable = count_repairable(all_toggles)
             records.append(
                 {
                     "N": n,
@@ -67,9 +76,13 @@ def audit(n: int, child_orders: list[int], levels: list[int]) -> dict:
                     "root_shell_size": int(len(shell)),
                     "bad_incidence_count": int(len(bad)),
                     "bad_incidence_mass": float(len(bad) / len(shell)),
-                    "one_internal_edge_repairable_count": int(repairable),
+                    "one_internal_edge_repairable_count": int(internal_repairable),
                     "one_internal_edge_repairable_fraction": float(
-                        repairable / max(1, len(bad))
+                        internal_repairable / max(1, len(bad))
+                    ),
+                    "one_arbitrary_edge_repairable_count": int(all_repairable),
+                    "one_arbitrary_edge_repairable_fraction": float(
+                        all_repairable / max(1, len(bad))
                     ),
                 }
             )
