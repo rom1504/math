@@ -4,7 +4,7 @@ Status: **proved scalable no-go for a broad direct-recurrence class on
 actual own-scale pressure minimizers**.  Any positive generalized-Hölder
 argument which separates the two child Hamiltonians and the bridge into
 independently paid factors has a positive linear certificate at every fixed
-`beta>2.554944595...` on all sufficiently large balanced splits.  The
+`beta>2.554944594406...` on all sufficiently large balanced splits.  The
 result includes arbitrary choices of the bridge and arbitrary Hölder
 weights, including weights depending on the order and temperature.
 
@@ -13,7 +13,7 @@ certificate, not on the true cross-order defect.  It does not apply to a
 signed interpolation or to a genuinely joint inequality which preserves
 cancellation before separating the three channels.
 
-## 1. The complete positive-Hölder family
+## 1. The complete deterministic three-factor positive-Hölder family
 
 For a hollow signing `A`, write
 
@@ -60,11 +60,16 @@ the bridge law is symmetric, so its augmented and ordinary exponential
 moments agree.  Formula (1.4) also covers zero weights by the corresponding
 finite-support Laplace limits.
 
-Any finite iteration of ordinary positive Hölder which ultimately pays
-the three channels separately reduces to (1.4): multiply the conditional
+Any finite iteration of ordinary positive Hölder, applied to the original
+three exponential factors with deterministic exponents and ultimately
+paying the three channels separately, reduces to (1.4): multiply the
 weights along the Hölder tree.  The three resulting leaf weights are
 nonnegative and sum to one.  Thus (1.4), rather than any particular choice
-of exponents, is the full class under audit.
+of exponents, is the full deterministic exponent-allocation class under
+audit.  This reduction does not claim to cover a state-dependent conditional
+Hölder argument or an algebraic refactorization which keeps a joint child--
+bridge factor; those no longer pay the three displayed channels
+independently.
 
 This remains true if an argument first splits one Hamiltonian into several
 positive copies.  For every convex `f` with `f(0)=0`, its perspective
@@ -270,8 +275,9 @@ has paid anything for the bridge.  Equations (2.1)--(3.9) quantify this
 incompatibility and show that exponent tuning cannot hide it.
 
 The theorem is broader than ordinary polarization or a particular
-three-factor estimate: every positive iterated separation tree has the
-same final exponent budget.  It leaves open precisely the architectures
-which do not pay all channels separately—for example, a signed interpolation,
+three-factor estimate: every deterministic positive iterated separation
+tree on these three factors has the same final exponent budget.  It leaves
+open precisely the architectures which do not pay all channels separately—
+for example, a state-dependent conditional argument, a signed interpolation,
 a joint same-switch inequality, or a direct exceptional bridge exploiting
 cancellation inside the common logarithm.

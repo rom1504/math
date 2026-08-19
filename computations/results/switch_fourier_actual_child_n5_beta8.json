@@ -1,0 +1,84 @@
+{
+  "beta": 8.0,
+  "bridge_switching_classes": 65536,
+  "child_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      0,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "child_order": 5,
+  "child_pressure": 13.147684977440838,
+  "contracted_temperature": 2.5298221281347035,
+  "orientations": [
+    {
+      "best_full_switch_convolution": {
+        "base_before_switch_gain": 19.390289361694034,
+        "bridge_gauge_mask": 57449,
+        "certificate": 3.3623410815657984,
+        "log_gain": -16.027948280128236
+      },
+      "best_one_character": {
+        "base_before_switch_gain": 15.305969588645969,
+        "bridge_gauge_mask": 5799,
+        "certificate": 15.14601904145235,
+        "log_gain": -0.15995054719361787,
+        "mode_index": 289,
+        "mode_product_abs": 0.14781406908997305
+      },
+      "epsilon": 1,
+      "mean_internal_kernel": 60151209.837594666
+    },
+    {
+      "best_full_switch_convolution": {
+        "base_before_switch_gain": 19.390289361694034,
+        "bridge_gauge_mask": 38624,
+        "certificate": 3.3623410787758736,
+        "log_gain": -16.02794828291816
+      },
+      "best_one_character": {
+        "base_before_switch_gain": 15.305969588645969,
+        "bridge_gauge_mask": 5754,
+        "certificate": 15.14601904145235,
+        "log_gain": -0.15995054719361787,
+        "mode_index": 321,
+        "mode_product_abs": 0.14781406908997305
+      },
+      "epsilon": -1,
+      "mean_internal_kernel": 60151209.837594666
+    }
+  ],
+  "parent_order": 10,
+  "switch_group_size": 512
+}

@@ -220,10 +220,10 @@ Conversely, (3.3) gives a scalable method-class obstruction:
 \mathcal R_{\mathcal B}(A,D)\ge c_\beta N.}         \tag{4.5}
 ```
 
-Thus a switching-orbit architecture whose templates fail (4.5) cannot
-give an `o(N)` recurrence, no matter how exceptional the selected switch
-is.  Condition (4.5) is not known for pure-pressure-optimal templates and
-the current universal constants do not imply it.
+Thus a switching-orbit architecture whose templates satisfy the linear-gap
+premise in (4.5) cannot give an `o(N)` recurrence, no matter how exceptional
+the selected switch is.  That premise is not known for pure-pressure-optimal
+templates and the current universal constants do not imply it.
 
 ## 5. What orbit entropy sees
 

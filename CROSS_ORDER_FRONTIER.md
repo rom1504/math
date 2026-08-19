@@ -88,3 +88,31 @@ bound for another quantity already shown to imply convergence).
   every order; its positive floor is proved for all sufficiently large
   balanced orders in the stated temperature range.
 - **Top-level SML:** **UNCHANGED**.
+
+## Checkpoint 3 — joint quotients and separable-method barriers
+
+- **Best proved bound:** the actual-child recurrence is still
+  `E_(m,n)(beta)=O_beta(N)`.  Two scalable barriers now delimit possible
+  improvements: every deterministic positive Hölder allocation that pays
+  the two children and bridge separately has a positive linear certificate
+  on balanced splits for `beta>2.554944594406...`; and an exact labelled
+  switch-convolution quotient of dimension `ell` can gain at most
+
+  ```math
+  2\beta {\max(m,n)\over\sqrt N}\,\ell.
+  ```
+
+  Hence cancelling a residual `cN+o(N)` term by this genuinely joint
+  quotient requires `ell=Omega(sqrt(N))`.
+- **Previous/current exponent:** `1 / 1`; no actual-child exponent
+  improvement has been proved.
+- **Assumptions:** fixed `beta>0`; exact own-scale pressure minimizers.  The
+  Hölder floor concerns deterministic three-factor positive separation.
+  The Fourier lower bound is conditional only on a positive linear
+  pre-cancellation term and leaves `sqrt(N)<=ell<N-1` open.
+- **Actual optimizing children:** yes; both method barriers are uniform in
+  the selected child minimizers.  The separate marginal-entropy collision
+  is an abstract switching-group no-go, not an actual-child example.
+- **Order coverage:** all orders for the exact inequalities; comparable
+  balanced large orders for the stated linear floors.
+- **Top-level SML:** **UNCHANGED**.

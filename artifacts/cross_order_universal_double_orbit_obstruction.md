@@ -80,7 +80,7 @@ in (3) proves the exact zero-matching identity
 ```math
 \boxed{
 \phi_{K_0(A)}(t)
-=\log\left{2^{-r}\sum_{J\subseteq[r]}
+=\log\left\{2^{-r}\sum_{J\subseteq[r]}
  \exp\bigl(\phi_{A^J}(2t)\bigr)\right}.}            \tag{5}
 ```
 
@@ -320,9 +320,9 @@ The core and integral parent both have cap `18`, while the child cap is
 ```math
 \boxed{
 \begin{aligned}
-\phi_{K_0(A)}(4/\sqrt{12})-2c_6(4/\sqrt6)
+\phi_{K_0(A)}(4/\sqrt{12})-2\log c_6(4/\sqrt6)
  &=2.444721543\ldots,\\
-\phi_{K_+(A)}(4/\sqrt{12})-2c_6(4/\sqrt6)
+\phi_{K_+(A)}(4/\sqrt{12})-2\log c_6(4/\sqrt6)
  &=2.717572032\ldots.
 \end{aligned}}                                    \tag{20c}
 ```
@@ -336,6 +336,86 @@ At large `beta`, both certificate defects have positive slope
 
 This is still a finite-order construction floor, not a scalable lower bound
 on the true defect.
+
+### An exact order-eight thermal collision
+
+Order eight already shows that even the **full child energy law** does not
+determine the orbit pressure.  The two switching/permutation classes with
+canonical root-gauge codes `44280` and `111980` have the same projective
+signed-energy histogram
+
+```text
+{-10:4,-8:10,-6:12,-4:16,-2:16,0:12,
+   2:16,4:16,6:12,8:10,10:4}.
+```
+
+Both classes are actual pressure minimizers at every positive temperature,
+not merely at the audited grid points.  Here is a finite exact certificate.
+The common absolute histogram is
+
+```math
+h_* =\{0:12,2:32,4:32,6:24,8:20,10:8\}.            \tag{20e}
+```
+
+For any of the `96` absolute histograms `h` in the order-eight exhaustive
+certificate, put
+
+```math
+L_h(u)=\sum_e h_e\bigl(u^{e/2}+u^{-e/2}\bigr),
+\qquad u=e^{2s}.
+```
+
+Exact integer long division gives, for every `h != h_*`,
+
+```math
+u^{14}\bigl(L_h(u)-L_{h_*}(u)\bigr)
+=(u^2-1)^4R_h(u).                                   \tag{20f}
+```
+
+For `93` of the `95` differences, `R_h` is a nonzero polynomial with
+nonnegative integer coefficients.  The remaining two quotients are,
+respectively,
+
+```math
+\begin{aligned}
+R_1(u)&=2u^8(1-u+2u^2-u^3+u^4),\\
+R_2(u)&=2u^8(2-u+4u^2-u^3+2u^4).
+\end{aligned}                                       \tag{20g}
+```
+
+They are positive for `u>1`: in the first bracket group
+`u^3(u-1)+(2u^2-u+1)`, and in the second group
+`u^3(2u-1)+(4u^2-u+2)`.  Since
+`L_h(u)=256 Z_h(s)`, (20f)--(20g) prove strict thermal minimality of
+`h_*` for every `s>0`.
+
+The doubles nevertheless have different exact histograms and caps:
+
+```text
+                         code 111980       code 44280
+core cap                      32                40
+integral +I cap               32                40
+beta=4 core defect       1.565740894       7.959683657
+beta=4 integral defect   1.986203979       7.967889534
+beta=8 core defect       5.338579158      19.948258639
+beta=8 integral defect   5.409820802      19.948282357
+```
+
+Thus scalar minimality, and even the complete signed scalar energy
+histogram, cannot imply (9) for an arbitrarily chosen minimizer.  This is
+not a collision of labeled geometry: the two induced-clique orbits differ.
+It also does **not** obstruct the universal-double route, because a
+recurrence may select the favorable minimizer.  Concretely, because the
+integral doubles are valid parents, the favorable class gives the finite
+consequences
+
+```math
+E_{8,8}(4)\le1.986203979\ldots,
+\qquad
+E_{8,8}(8)\le5.409820802\ldots .                    \tag{20h}
+```
+
+There is no asymptotic conclusion for `E_{r,r}` from this collision alone.
 
 ## 4. Scalable scalar-minimality obstruction
 
@@ -451,11 +531,11 @@ complete-signing children.
 ## 5. Reproducible finite audit and verdict
 
 [`audit_universal_double_actual_minimizers.py`](../computations/audit_universal_double_actual_minimizers.py)
-exhausts all switching-gauged signings through child order seven, keeps
+exhausts all switching-gauged signings through child order eight, keeps
 global negations separate, and records every pressure-minimizing
 switching/permutation class on the scaled-temperature grid.  The exact
 integer histograms and evaluated defects are frozen in
-[`universal_double_actual_minimizers_n7.json`](../computations/results/universal_double_actual_minimizers_n7.json).
+[`universal_double_actual_minimizers_n8.json`](../computations/results/universal_double_actual_minimizers_n8.json).
 The computation independently verifies (5) to absolute error below
 `9e-16` in every recorded case.
 

@@ -5,10 +5,13 @@ obstruction for actual optimizing children**.  Biased vertex switching does
 remove the random-competitor regrets from the Wishart--Wigner endpoint.
 However, its complete covariance lies in the sector which is even under the
 two child global-spin flips, whereas the `mn` bridge features lie in the
-sector which is odd under both flips.  Consequently no sign-definite
-covariance comparison can turn this zero-regret endpoint into a sublinear
+sector which is odd under both flips.  Consequently a **Loewner-positive
+kernel comparison** cannot turn this zero-regret endpoint into a sublinear
 composition bound without adding a correction of rank at least `mn` and
-total variance at least `t^2mn=Theta_beta(N)` on comparable splits.
+uniform-average variance at least
+`t^2mn=Theta_beta(N)` on comparable splits.  A canonical-metric/Slepian
+comparison need not satisfy that rank conclusion, but it still needs a
+correction whose worst-state variance is at least `t^2mn`.
 
 This is a no-go for the raw zero-regret Guerra/Slepian architecture, not for
 a genuinely signed interpolation.  In particular, the result does not rule
@@ -291,6 +294,23 @@ Thus even granting arbitrary optimizer-dependent covariance inside the
 separately-even sector, a uniform canonical-metric comparison has a linear
 remainder on comparable splits.
 
+In particular, if an independent Gaussian correction `G_K` is used to
+repair the canonical metric, (3.4) forces
+
+```math
+d_K(q,q')^2\ge4t^2mn.
+```
+
+Since
+`d_K(q,q')^2<=2\{K(q,q)+K(q',q')\}`, every such metric correction obeys
+
+```math
+\boxed{\sup_{p\in\Omega_\epsilon}K(p,p)\ge t^2mn.}  \tag{3.4b}
+```
+
+This worst-state variance conclusion does not imply a rank lower bound.
+The latter requires the stronger Loewner-positive kernel comparison below.
+
 There is also an all-directions statement.  Equip functions on
 `Omega_epsilon` with the uniform inner product.  The `mn` functions in
 (3.3) are orthonormal, and their span is orthogonal to every separately-even
@@ -332,7 +352,7 @@ comparison cannot work:
 ```text
 zero-regret child switching endpoint
     + separately-even covariance corrections
-    + positive-semidefinite Guerra/Slepian domination
+    + Loewner-positive covariance-kernel domination
 ```
 
 requires `mn` new odd bridge directions and a variance budget
@@ -340,6 +360,11 @@ requires `mn` new odd bridge directions and a variance budget
 comparison which pays a positive-semidefinite correction by its universal
 annealed variance bound retains a linear certificate and cannot establish
 (1.9) with a power saving.
+
+For a canonical-metric/Slepian domination, (3.4b) gives the analogous
+linear floor whenever the correction is paid by its worst-state Gaussian
+variance.  Equations (3.5)--(3.6), including the rank-`mn` conclusion, are
+not claimed for every possible metric correction.
 
 The obstruction applies to arbitrary children and therefore, in particular,
 to every selected pair of exact own-scale pressure minimizers, at every
