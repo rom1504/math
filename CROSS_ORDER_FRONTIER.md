@@ -48,8 +48,8 @@ bound for another quantity already shown to imply convergence).
   ```
 
   At an equal split and `beta>=sqrt(8log2)`, the optimized positive
-  coefficient is
-  `beta sqrt(log2/2)-log2`, strictly below the annealed `beta^2/8`.
+  coefficient is `beta sqrt(log2/2)-log2`; it is strictly below the
+  annealed `beta^2/8` when the inequality on `beta` is strict.
 - **Previous/current exponent:** `1 / 1`; the coefficient improves, but the
   comparable-split defect is still `Theta_beta(N)`.
 - **Assumptions:** fixed `beta>0`; exact child pressure minimizers;
@@ -58,4 +58,33 @@ bound for another quantity already shown to imply convergence).
 - **Actual optimizing children:** yes.
 - **Order coverage:** every split and every order; the coefficient statement
   is asymptotic at comparable equal splits.
+- **Top-level SML:** **UNCHANGED**.
+
+## Checkpoint 2 — switching-orbit reduction and scalar floors
+
+- **Best proved bound:** in addition to the fractional-cardinality bound,
+  every pair of exact own-scale minimizing children satisfies
+
+  ```math
+  E_{m,n}(\beta)
+  \le \Psi_{m,n}(\beta/\sqrt N)-\Delta_A-\Delta_D
+      +\log(1-|u_Au_D|),
+  ```
+
+  where `Psi` is the minimum pure bipartite pressure.  The cruder
+  orientation-averaged version drops the logarithm.  At equal splits that
+  orientation-averaged certificate has a positive linear floor for every
+  fixed `beta>4.0515964866...`; the fractional-cardinality certificate,
+  even with its exact orientation term, also has a positive linear floor
+  for `beta>7.814070149...`.
+- **Previous/current exponent:** `1 / 1`; taking
+  `Psi<=mn log cosh(beta/sqrt N)` recovers an `O_beta(N)` bound, and no
+  proved estimate makes either exact right side sublinear.
+- **Assumptions:** fixed `beta>0`; exact own-scale child pressure minimizers;
+  the floor statements use only the rigorous all-order cap upper frontier
+  and are lower bounds on certificate values, not on the true defect.
+- **Actual optimizing children:** yes.
+- **Order coverage:** the switching inequality holds for every split and
+  every order; its positive floor is proved for all sufficiently large
+  balanced orders in the stated temperature range.
 - **Top-level SML:** **UNCHANGED**.

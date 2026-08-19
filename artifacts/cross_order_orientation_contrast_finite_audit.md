@@ -91,6 +91,21 @@ finite basin and is invisible to these fixed fractional parameters.  This
 is precisely the quantitative basin obligation in the selector-transport
 audit; it is not a proof that the exponential rate persists.
 
+At the common threshold `T+0.1`, the nearest-balanced `beta=1` basin has
+the following exact counts:
+
+| `N` | bridge bits | joint cube size | qualifying choices | mass |
+|---:|---:|---:|---:|---:|
+| 8 | 16 | 131,072 | 368 | `2.8076e-3` |
+| 9 | 20 | 2,097,152 | 80 | `3.8147e-5` |
+| 10 | 25 | 67,108,864 | 40 | `5.9605e-7` |
+
+The absolute count, not merely the fraction, decreases on these three
+orders.  This is a sharp falsifier for the hope that the observed low defect
+is already supported by a broad finite basin.  It is still too short and
+arithmetically irregular to distinguish an `exp{-Theta(N)}` basin from an
+orbit-sized `exp{-Theta(N^2)}` basin asymptotically.
+
 At `beta=0.25`, the uniform defects remain between `0.0156` and `0.0169`
 through order ten, so this range is too small to detect the conditional
 `Theta(beta^4 N)` high-temperature obstruction.  At `beta=2`, the best

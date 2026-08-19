@@ -3,10 +3,10 @@
 Status: **proved all-order cross-order inequality**.  It strictly improves
 the annealed bridge coefficient at sufficiently large fixed temperature and
 uses the exact radial payment of the actual child minimizers.  Its
-comparable-split exponent remains one.  A sharp certificate-level lower
-floor shows why this support-cardinality/Chernoff architecture cannot become
+comparable-split exponent remains one.  A robust certificate-level lower
+floor shows why the support-cardinality/Chernoff certificate cannot become
 sublinear at large fixed temperature, even with the best possible scalar
-radial payment.
+radial payment and with the exact signed-orientation term retained.
 
 Fix `N=m+n`, `L=mn`, `t=beta/sqrt(N)`, and exact minimizers `A,D` defining
 `P_m(beta),P_n(beta)` at
@@ -167,9 +167,9 @@ q_*={\sqrt{8\log2}\over\beta},
 f_\beta(q_*)=\beta\sqrt{\log2\over2}-\log2.          \tag{12}
 ```
 
-This is strictly smaller than the annealed coefficient `beta^2/8`, so (6)
-is a real coefficient improvement for actual children.  It does not improve
-the exponent.
+For `beta>sqrt(8log2)` this is strictly smaller than the annealed coefficient
+`beta^2/8`, so (6) is a real coefficient improvement for actual children.
+At equality the two coincide.  It does not improve the exponent.
 
 If one uses only the convexity payment displayed in (7), the known upper
 bound on the child pressures shows that the optimized **certificate** is at
@@ -192,9 +192,8 @@ rigorous all-order construction gives
 \le(\beta/2+o(1))N.                                  \tag{13}
 ```
 
-Consequently even granting the largest radial subtraction consistent with
-the complete scalar pressure data, the optimized right side of (6) is at
-least
+Consequently even granting the largest radial subtraction allowed by this
+universal cap/pressure estimate, the optimized right side of (6) is at least
 
 ```math
 \boxed{
@@ -205,13 +204,43 @@ least
  \log2-o(1)\right]N.}                                \tag{14}
 ```
 
-It is positive for `beta>7.81407015...`.  Thus the entire
-support-cardinality/subgaussian-Chernoff plus scalar-radial architecture has
-an unavoidable linear certificate floor in that range.  This does not lower
-bound the true defect and does not exclude a score detector using exact
-large deviations or a genuinely correlated rare bridge.  It proves that
-merely tuning the fractional exponent or sharpening a scalar child pressure
-estimate cannot make (6) sublinear.
+It is positive for `beta>7.81407015...`.  This floor persists in the sharper
+pre-drop certificate.  Indeed, if
+
+```math
+Z_A^\pm=\mathbb E e^{\pm tH_A},
+```
+
+then Jensen gives `Z_A^\pm>=1`, while
+
+```math
+1-u_A^2={4Z_A^+Z_A^-\over(Z_A^++Z_A^-)^2}
+       \ge e^{-2\phi_A(t)}.
+```
+
+Consequently
+
+```math
+{1\over2}\log(1-u_A^2u_D^2)
+\ge-\min\{\phi_A(t),\phi_D(t)\}.
+```
+
+The right side before dropping the orientation term is therefore at least
+
+```math
+B_h(q)-P_m(\beta)-P_n(\beta)
+       +\max\{\phi_A(t),\phi_D(t)\}
+\ge B_h(q)-P_m(\beta)-P_n(\beta),
+```
+
+which gives exactly (14).  Bound (10) has the same floor because its extra
+term `[phi_A(qt)+phi_D(qt)]/q` is nonnegative.  Thus the complete
+support-cardinality/subgaussian-Chernoff plus scalar-radial certificate has
+an unavoidable linear floor in that range.  The floor does not lower bound
+the true defect and does not exclude exact score large deviations, nonradial
+prior geometry, or a genuinely correlated rare bridge.  It proves that
+merely tuning the fractional exponent, retaining signed orientation, or
+sharpening a scalar radial payment cannot make this architecture sublinear.
 
 ## Quantitative verdict
 
@@ -219,5 +248,6 @@ Equation (6) is the strongest new unconditional cross-order inequality in
 this campaign so far.  It moves a high-temperature coefficient but leaves
 the exponent `1`.  Equation (14) forces the next architecture to use more
 than latent support size, generic Chernoff control, and a scalar radial
-payment; it must exploit the geometry of which rank-one words receive which
-child weights, or optimize an exponentially rare correlated bridge directly.
+payment: it must exploit exponentially strong signed-orientation imbalance,
+the geometry of which rank-one words receive which child weights, or an
+exponentially rare correlated bridge directly.
