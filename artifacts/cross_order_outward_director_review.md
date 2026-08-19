@@ -442,35 +442,59 @@ s_n(c)=L_n^{-1}\log|\mathcal K_n(c)|.                 \tag{DR.15}
 
 Set `s_n(c)=-infinity` when the layer is empty.
 
-The one unproved target is the following **rare-event restriction-shadow
-statement**.  Uniformly over every integer pair
-`m/N in [1/3,2/3]` and every `c` in a fixed compact interval for which
-`K_N(c)` is nonempty, let `A` be uniform on `K_N(c)` and `S` a uniform
-`m`-set.  Prove, for some `delta>0` and nonnegative errors,
+For fixed `beta`, put `a_n=beta n^2/L_n` and choose an **exposed cap
+level**
 
 ```math
-\Pr\left\{Q(A[S])>(c+\epsilon_{N,m})m^{3/2}\right\}
-\le\eta_{N,m},
+c_{n,\beta}^*\in
+\mathop{\rm argmax}_c\{s_n(c)-a_nc\}.                 \tag{DR.15a}
+```
+
+When there are ties, the target asks for the existence of one selection of
+maximizers across all orders for which the estimates below hold uniformly;
+it does not require the estimates for every maximizer.
+
+The weakest unproved target is the following **exposed-layer
+restriction-shadow statement**.  Uniformly over every integer pair
+`m/N in [1/3,2/3]`, let `A` be uniform on
+`K_N(c_(N,beta)^*)` and `S` a uniform `m`-set.  For each fixed `beta`,
+prove some `delta_beta>0` and nonnegative errors such that
+
+```math
+\Pr\left\{Q(A[S])>
+ (c_{N,\beta}^*+\epsilon_{N,m,\beta})m^{3/2}\right\}
+\le\eta_{N,m,\beta},
 \qquad
-\epsilon_{N,m}+\eta_{N,m}=O(N^{-\delta}).             \tag{RSR}
+\epsilon_{N,m,\beta}+\eta_{N,m,\beta}
+=O_\beta(N^{-\delta_\beta}).                         \tag{ERSR}
 ```
 
 The finite data give a real warning rather than support.  For a uniform
 exact order-eight minimizer, every four-vertex restriction has cap `4` or
 `6`, so all restrictions have normalized cap at least `0.5`, while the
 parent has normalized cap `10/8^(3/2)=0.4419417...`.  Thus the bad mass in
-(RSR) is exactly one at this order for every
+(ERSR), whenever the exposed level is the minimum, is exactly one at this
+order for every
 `epsilon<0.0580582...`.  This is not an asymptotic falsifier, but it makes
 vanishing escaping mass the first required experiment rather than an
 assumption.  The exact histogram is reproduced by
 `audit_frozen_minimizer_restrictions.py`.
 
+The finite-temperature exposed-layer audit is also adverse.  At order
+eight and `beta=0.25` or `0.5`, the exposed normalized level is
+`12/8^(3/2)=0.530330...`; its bad restriction masses at child orders
+`3,4,5` are respectively `1`, `0.193526...`, and `0.722379...`.  At
+`beta=1,2` the exposed layer is already the minimizing layer and the masses
+are `1`, `1`, and `0.657143...`.  These exact values are reproduced by
+`audit_exposed_layer_restrictions.py`; they are a finite warning, not a
+scalable falsifier.
+
 This is an ensemble theorem about the actual cut landscape, not a scalar
 axiom or a surrogate cap.  It has an immediate quantitative cross-order
 consequence.  Let `Y` be the canonically relabelled restriction and let
-`p<=eta_(N,m)` be its actual bad probability.  The parent layer is
+`p<=eta_(N,m,beta)` be its actual bad probability.  The parent layer is
 permutation invariant, so edge-Shearer and conditioning on the event in
-(RSR) give
+(ERSR), with `c=c_(N,beta)^*`, give
 
 ```math
 \begin{aligned}
@@ -478,21 +502,22 @@ permutation invariant, so edge-Shearer and conditioning on the event in
 &\le q^{-1}H(Y),\\
 H(Y)
 &\le h_2(p)
- +(1-p)\log|\mathcal K_m(c+\epsilon_{N,m})|
+ +(1-p)\log|\mathcal K_m(c+\epsilon_{N,m,\beta})|
  +pL_m\log2.
 \end{aligned}                                         \tag{DR.16}
 ```
 
-For all large `N`, `eta_(N,m)<=1/2`, and the right side is bounded by
-the expression with `p` replaced by `eta_(N,m)`.  After division by
+For all large `N`, `eta_(N,m,beta)<=1/2`, and the right side is bounded by
+the expression with `p` replaced by `eta_(N,m,beta)`.  After division by
 `L_N=q^{-1}L_m`, this is
 
 ```math
-s_N(c)\le s_m(c+\epsilon_{N,m})
- +\eta_{N,m}\log2+{h_2(\eta_{N,m})\over L_m}.        \tag{DR.17}
+s_N(c)\le s_m(c+\epsilon_{N,m,\beta})
+ +\eta_{N,m,\beta}\log2
+ +{h_2(\eta_{N,m,\beta})\over L_m}.                 \tag{DR.17}
 ```
 
-Moreover, with `a_n=beta n^2/L_n`, elementary grouping by the at most
+Moreover, elementary grouping by the at most
 `L_n+1` cap values yields the exact Laplace sandwich
 
 ```math
@@ -502,36 +527,41 @@ Moreover, with `a_n=beta n^2/L_n`, elementary grouping by the at most
  +{\log(L_n+1)\over L_n}.                             \tag{DR.18}
 ```
 
-For fixed `beta`, the supremum may be restricted to a compact `c` interval:
+For fixed `beta`, the exposed levels lie in a compact `c` interval:
 `s_n(c)<=log2`, while any uniform all-order bound
 `M_n<=Cn^(3/2)` (the standard random-union bound suffices) gives a finite
 lower competitor.  Enlarge the compact interval slightly to absorb the
-shift by `epsilon_(N,m)`.  Since
+shift by `epsilon_(N,m,beta)`.  Since
 `a_n=2 beta n/(n-1)` and `a_N-a_m=O_beta(N^{-1})` on comparable orders,
-(DR.17)--(DR.18) prove, with `delta'=min(delta,1)`,
+(DR.17)--(DR.18), evaluated only at the exposed parent level, prove with
+`delta'_beta=min(delta_beta,1)`,
 
 ```math
 \boxed{
-\psi_N(\beta)\le\psi_m(\beta)+O_\beta(N^{-\delta'})} \tag{DR.19}
+\psi_N(\beta)\le\psi_m(\beta)
+ +O_\beta(N^{-\delta'_\beta})}                        \tag{DR.19}
 ```
 
-after decreasing `delta` if necessary.  The geometric restriction argument
+after decreasing `delta_beta` if necessary.  The geometric restriction argument
 from (DR.8), followed by the soft-minimum squeeze (DR.9), would then prove
-convergence.  Thus (RSR) has the required direct quantitative arrow.
+convergence.  Thus (ERSR) has the required direct quantitative arrow.
 
-Its scope warning is severe.  At
-`c=M_N/N^(3/2)`, the layer is the minimizing fibre, and `eta_(N,m)<1`
-already guarantees one restriction with
+Its scope warning remains severe.  If the exposed level happens to be
+`c_(N,beta)^*=M_N/N^(3/2)`, then `eta_(N,m,beta)<1` already guarantees one
+restriction with
 
 ```math
 {M_m\over m^{3/2}}
-\le {M_N\over N^{3/2}}+\epsilon_{N,m}.                \tag{DR.20}
+\le {M_N\over N^{3/2}}+\epsilon_{N,m,\beta}.          \tag{DR.20}
 ```
 
-Geometric chaining of (DR.20) proves convergence without entropy or
-Laplace transforms.  RSR is therefore a strong, independently falsifiable
-ensemble version of the old proportional-restriction bottleneck, not a
-demonstrably easier reduction.  It is admissible only as a single
-counterexample-first campaign: prove it from genuinely new cut-incidence
-input or construct a scalable actual-layer falsifier, then stop.  Another
-conditional scalar identity is not progress.
+However, ERSR is required only at one finite-temperature exposed layer for
+each `beta`; it ignores every unexposed layer, its constants may deteriorate
+with `beta`, and no uniform minimizer statement is assumed before taking
+`N->infinity`.  It therefore has strictly fewer layer requirements than
+all-layer RSR.  It does not directly yield (DR.20) with the ERSR error, nor
+exhibit a good minimizer restriction, unless the exposed layer actually freezes.
+Whether that distinction creates leverage is precisely the one-shot test.
+The campaign must be counterexample-first: prove ERSR from genuinely new
+cut-incidence input or produce a scalable exposed-layer falsifier, then
+stop.  Another conditional scalar identity is not progress.
