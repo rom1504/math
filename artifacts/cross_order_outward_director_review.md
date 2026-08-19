@@ -552,6 +552,12 @@ are `1`, `1`, and `0.657143...`.  These exact values are reproduced by
 `audit_exposed_layer_restrictions.py`; they are a finite warning, not a
 scalable falsifier.
 
+Passing to the exact top shell does not remove the warning.  At order eight,
+`beta=0.25` or `0.5`, its bad masses for child orders four and five are
+`0.194157...` and `0.723192...`, versus `0.193526...` and `0.722379...` for
+the cumulative exposed layer.  This agrees with the exponentially small
+comparison in Proposition DR.2.
+
 This is an ensemble theorem about the actual cut landscape, not a scalar
 axiom or a surrogate cap.  It has an immediate quantitative cross-order
 consequence.  Let `Y` be the canonically relabelled restriction and let

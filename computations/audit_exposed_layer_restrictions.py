@@ -73,10 +73,16 @@ def audit_pair(
     marginal = np.bincount(
         projected_masks(n, m), weights=parent_law, minlength=len(child_cap)
     )
+    shell_law = (parent_cap == level).astype(float)
+    shell_law /= float(np.sum(shell_law))
+    shell_marginal = np.bincount(
+        projected_masks(n, m), weights=shell_law, minlength=len(child_cap)
+    )
     normalized_child = child_cap / m**1.5
     bad = normalized_child > normalized_level + 1e-12
     positive_gaps = normalized_child[bad] - normalized_level
     bad_mass = min(1.0, max(0.0, float(np.sum(marginal[bad]))))
+    shell_bad_mass = min(1.0, max(0.0, float(np.sum(shell_marginal[bad]))))
     return {
         "N": n,
         "m": m,
@@ -89,11 +95,15 @@ def audit_pair(
         "top_shell_gap": level - lower_level if lower_level is not None else None,
         "top_shell_exponential_bound": shell_bound,
         "bad_restriction_mass": bad_mass,
+        "exact_shell_bad_restriction_mass": shell_bad_mass,
         "minimum_positive_normalized_gap": (
             float(np.min(positive_gaps)) if len(positive_gaps) else None
         ),
         "expected_restriction_normalized_cap": float(
             np.dot(marginal, normalized_child)
+        ),
+        "exact_shell_expected_restriction_normalized_cap": float(
+            np.dot(shell_marginal, normalized_child)
         ),
     }
 
