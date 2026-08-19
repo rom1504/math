@@ -122,22 +122,37 @@ s={\beta\over\sqrt r},
 t={\beta\over\sqrt{2r}}={s\over\sqrt2}.
 ```
 
-Let `A` be an actual minimizer of `P_r(beta)`.  Since `K_eta(A)` is a valid
-parent, (5) and the pointwise bound on the `r` matching edges give
+Let `A` be an actual minimizer of `P_r(beta)`.  More generally, let
+`K_b(A)` fill the `r` missing matching edges of `K_0(A)` by arbitrary
+signs `b_i`.  Averaging independent fair choices of the `b_i` before
+taking the logarithm gives
+
+```math
+\mathbb E_b e^{\phi_{K_b(A)}(t)}
+=e^{\phi_{K_0(A)}(t)}(\cosh t)^r.
+```
+
+Thus some valid sign parent has pressure at most
+`phi_(K_0(A))(t)+r log cosh(t)`.  Combining this with (5) gives the
+sharpened direct recurrence
 
 ```math
 \boxed{
 \begin{aligned}
 E_{r,r}(\beta)
-&\le \phi_{K_\eta(A)}(t)-2\phi_A(s)\\
 &\le
  \log\left\{2^{-r}\sum_J
  e^{\phi_{A^J}(\sqrt2s)}\right\}
- -2\phi_A(s)+\beta\sqrt{r/2}.
+ -2\phi_A(s)+r\log\cosh t\\
+&\le
+ \log\left\{2^{-r}\sum_J
+ e^{\phi_{A^J}(\sqrt2s)}\right\}
+ -2\phi_A(s)+{\beta^2\over4}.
 \end{aligned}}                                      \tag{7}
 ```
 
-Indeed,
+For comparison, choosing the same matching sign `eta` at every coordinate
+only gives the cruder pointwise estimate
 
 ```math
 \boxed{
@@ -145,8 +160,12 @@ Indeed,
 \le tr=\beta\sqrt{r/2}.}                            \tag{8}
 ```
 
-The needed new theorem is therefore completely explicit.  If, for every
-actual minimizer and some `delta>0`,
+The annealed filling argument is deterministic by the probabilistic
+method and improves this `O_beta(sqrt(r))` payment to `O_beta(1)`.
+
+The needed new theorem is therefore completely explicit.  It is enough
+that, at every large `r`, **one** actual minimizer (which may be selected
+from the minimizing fibre) satisfy, for some `delta>0`,
 
 ```math
 \log\left\{2^{-r}\sum_J
@@ -159,7 +178,7 @@ then
 ```math
 \boxed{
 E_{r,r}(\beta)
-=O_\beta\!\left(r^{\max\{1-\delta,1/2\}}\right)
+=O_\beta\!\left(r^{1-\delta}+1\right)
 =o_\beta(r).}                                       \tag{10}
 ```
 
@@ -540,7 +559,7 @@ The computation independently verifies (5) to absolute error below
 `9e-16` in every recorded case.
 
 The permanent target is therefore **not proved**.  What survives is the
-single exact obligation (9).  The `+I` matching edges already cost only
-`O_beta(sqrt(r))`; spectral or scalar-pressure information cannot control
-the induced-clique orbit, and the weighted block floor proves that exact
-minimality plus variance cannot do so either.
+single exact obligation (9).  The matching edges cost only `O_beta(1)`
+after annealed sign completion; spectral or scalar-pressure information
+cannot control the induced-clique orbit, and the weighted block floor
+proves that exact minimality plus variance cannot do so either.
