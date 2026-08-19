@@ -5,7 +5,8 @@ inequality whose sign-completion defect is only `O_beta(k)`**.  In
 particular, the `r` missing matching edges in the universal double cost
 `O_beta(1)`, not the previously used pointwise `O_beta(sqrt(r))`.  The
 remaining core term is an exact rotated-cube pressure; no sublinear bound
-for that term is proved here.
+for that term on a large-order minimizing sequence is proved here (one
+finite actual-child instance is solved exactly below).
 
 Let `A` be a hollow symmetric signing of order `r`, and write
 
