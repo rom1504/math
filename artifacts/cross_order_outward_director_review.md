@@ -555,6 +555,20 @@ restriction with
 \le {M_N\over N^{3/2}}+\epsilon_{N,m,\beta}.          \tag{DR.20}
 ```
 
+More generally, before any tail analysis, the mere existence of one good
+restriction gives the necessary condition
+
+```math
+\boxed{
+{M_m\over m^{3/2}}
+\le c_{N,\beta}^*+\epsilon_{N,m,\beta}.}              \tag{DR.20a}
+```
+
+Thus a fixed positive gap between the exact child optimum and the exposed
+parent level on any comparable subsequence is a decisive scalable
+falsifier.  This scalar check must precede attempts to estimate the full
+restriction distribution.
+
 However, ERSR is required only at one finite-temperature exposed layer for
 each `beta`; it ignores every unexposed layer, its constants may deteriorate
 with `beta`, and no uniform minimizer statement is assumed before taking

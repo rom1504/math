@@ -235,8 +235,8 @@ bound for another quantity already shown to imply convergence).
   Separately, a log-periodic hereditary countermodel has
   `beta D_(N,floor(N/2))-S_(N,floor(N/2))
   =(0.02 beta+o(1))N^2`; this persists under every
-  `O(n^gamma)`, `gamma<3/2`, scalar perturbation, including subleading
-  genuine cut-cap data and an affine `2^n`-cut-query representation.
+  uniformly `o(n^(3/2))` scalar perturbation, including subleading genuine
+  cut-cap data and an affine `2^n`-cut-query representation.
 - **Previous/current exponent:** `1 / 1` for the actual defect.
 - **Assumptions:** fixed `beta`; exact own-scale pressure minimizers for the
   actual bound.  The no-go concerns the explicitly listed scalar
