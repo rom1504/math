@@ -417,8 +417,13 @@ zero-offset, unit-leading-coefficient, joint restriction incidence of the
 actual cut characters.  Generic cap layers, extension counts, canonical
 variationality, and Shearer contraction cannot supply a sublinear defect.
 
-This is a criterion-four architecture boundary, not Level 6 and not an
-actual-child recurrence.  The struck finite-temperature child branch stays
-frozen.  Canonical-disorder ECR deserves at most one cut-incidence-specific
-campaign; if that campaign cannot produce an inequality unavailable to the
-countermodels, the scalar-pressure architecture must also be frozen.
+This is a sharp architecture boundary, not Level 6 and not an actual-child
+recurrence.  Under the campaign's strict accounting it is nevertheless a
+**STRIKE**, not a criterion-four reset.  The archived theorem in
+`cross_order_fixed_temperature_centering_no_go.md` had already proved that
+fixed-temperature scalar pressure plus universal scalar regularity cannot
+yield an `o(N)` own-scale defect.  The present theorem gives a stronger and
+more targeted falsifier for ECR, but it still leaves actual unit-leading cut
+incidence untouched and therefore does not force a new recurrence
+architecture beyond the signing-specific input already known to be needed.
+The actual-child and scalar-pressure branches are frozen.

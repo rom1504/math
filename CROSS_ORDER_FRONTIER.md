@@ -246,7 +246,9 @@ bound for another quantity already shown to imply convergence).
   no for the proof-class countermodel.
 - **Order coverage:** every order and split for the actual linear bound;
   an infinite sequence of equal-ratio pairs for the scalable no-go.
-- **Top-level SML:** **UNCHANGED**.  The struck actual-child implementation
-  remains frozen.  Campaign accounting is **RESET under criterion 4 only**:
-  the scalar canonical-pressure proof class is quantitatively insufficient
-  and any continuation must use leading joint cut incidence.
+- **Top-level SML:** **UNCHANGED**.  This is a **STRIKE**: the countermodel
+  sharpens the ECR balance, but the archived fixed-temperature-centering
+  no-go had already established that scalar pressure data require a
+  signing-specific input.  It neither falsifies actual ECR nor forces a new
+  recurrence architecture.  The actual-child and scalar-ECR branches are
+  frozen.
