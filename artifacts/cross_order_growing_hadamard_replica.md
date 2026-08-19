@@ -252,7 +252,7 @@ After division by `(kr)^(3/2)`, the added term is
 the completion obstruction.
 
 There is also an explicit arrow in the convergence normalization.  Now let
-`A` be an actual cap minimizer, and put
+`r>=2`, let `A` be an actual cap minimizer, and put
 
 ```math
 b_n=M_n^{2/3},

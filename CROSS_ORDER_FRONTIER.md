@@ -116,3 +116,44 @@ bound for another quantity already shown to imply convergence).
 - **Order coverage:** all orders for the exact inequalities; comparable
   balanced large orders for the stated linear floors.
 - **Top-level SML:** **UNCHANGED**.
+
+## Checkpoint 4 — Hadamard replicas isolate the core
+
+- **Best proved bound:** the unconditional actual-child bound remains
+  `E_(m,n)(beta)=O_beta(N)`.  For every admissible symmetric Hadamard order
+  `k` and every `r`, however, annealed completion gives the exact
+  multiplicative-order inequality
+
+  ```math
+  P_{kr}(\beta)-kP_r(\beta)
+  \le \mathcal D^\star_{k,r}(\beta)+{\beta^2(k-1)\over4},
+  ```
+
+  where `D*` minimizes the exact rotated-cube core defect over the actual
+  order-`r` minimizing fibre and over admissible outer matrices.  Thus the
+  entire sign-completion payment is `O_beta(k)=o(kr)` when `r->infinity`;
+  only the core can retain a linear defect.  At zero temperature the proved
+  arrow is
+
+  ```math
+  b_{kr}-kb_r
+  \le {2\over3}(k^{3/2}M_r)^{-1/3}(R_cap+C)_{+},
+  ```
+
+  with `C=sqrt(k(k-1)r(kr+2)log2)`.  Hence
+  `R_cap=O((kr)^(3/2-delta))` implies
+  `E=O((kr)^(1-delta)+kr/sqrt(r))`.
+- **Previous/current exponent:** `1 / 1`; the completion component improved
+  from `1/2` to `0` for fixed `k`, but no bound on the actual minimizing
+  core improves the total exponent.
+- **Assumptions:** fixed `beta`; actual pressure or cap minimizer at order
+  `r`; a symmetric Hadamard outer matrix.  Exact data prove
+  `P_16(beta)<=4P_4(beta)+3beta^2/4`, but growing replica order is
+  nonmonotone and can have a linear core floor for a fixed actual child.
+- **Actual optimizing children:** yes; the child is selected from the exact
+  minimizing fibre.  The growing-`k` floor uses an actual all-temperature
+  order-four minimizer but keeps its child order fixed.
+- **Order coverage:** every child order `r` and every available symmetric
+  Hadamard multiplier `k`; this is not an arbitrary comparable split, and
+  the core estimate required for sublinearity is open.
+- **Top-level SML:** **UNCHANGED**.
