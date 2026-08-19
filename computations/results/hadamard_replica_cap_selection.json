@@ -1,0 +1,435 @@
+{
+  "classification": "CP-SAT-certified exact fixed-core caps; no standalone proof object",
+  "normalization": "M(A)=max_x |sum_(i<j) a_ij x_i x_j|",
+  "records": [
+    {
+      "b_defect_core_only": -0.8582403972091819,
+      "certified_core_cap": 6,
+      "child_cap": 3,
+      "child_class": 0,
+      "child_matrix_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "child_order": 3,
+      "core_cap_lower_bound": 6,
+      "core_excess": -2.4852813742385713,
+      "core_matrix_sha256": "cc8c2c0c62365580d8a30c7ca9b491fd5d6bfc217645e0548b3f4b8b3933fd16",
+      "core_order": 6,
+      "ideal_core_cap": 8.485281374238571,
+      "replica_order": 2,
+      "sides": [
+        {
+          "best_bound": 6.0,
+          "branches": 71,
+          "conflicts": 8,
+          "elapsed_seconds": 0.031339168548583984,
+          "objective": 6.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 6,
+          "wall_time_seconds": 0.031072449000000002
+        },
+        {
+          "best_bound": 6.0,
+          "branches": 113,
+          "conflicts": 11,
+          "elapsed_seconds": 0.030373334884643555,
+          "objective": 6.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -6,
+          "wall_time_seconds": 0.030235887000000003
+        }
+      ]
+    },
+    {
+      "b_defect_core_only": 0.0,
+      "certified_core_cap": 24,
+      "child_cap": 3,
+      "child_class": 0,
+      "child_matrix_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "child_order": 3,
+      "core_cap_lower_bound": 24,
+      "core_excess": 0.0,
+      "core_matrix_sha256": "d1e375bf4e7f254dd9b034b371f47dac45125f35fc8d38fd141993f9a8c186d2",
+      "core_order": 12,
+      "ideal_core_cap": 24.0,
+      "replica_order": 4,
+      "sides": [
+        {
+          "best_bound": 24.0,
+          "branches": 978,
+          "conflicts": 202,
+          "elapsed_seconds": 0.04852795600891113,
+          "objective": 24.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 24,
+          "wall_time_seconds": 0.048227701000000005
+        },
+        {
+          "best_bound": 24.0,
+          "branches": 990,
+          "conflicts": 190,
+          "elapsed_seconds": 0.04737377166748047,
+          "objective": 24.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -24,
+          "wall_time_seconds": 0.047222415000000004
+        }
+      ]
+    },
+    {
+      "b_defect_core_only": 0.20179858883830004,
+      "certified_core_cap": 12,
+      "child_cap": 4,
+      "child_class": 0,
+      "child_matrix_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "child_order": 4,
+      "core_cap_lower_bound": 12,
+      "core_excess": 0.6862915010152388,
+      "core_matrix_sha256": "8d77d390d6201164c2251a36eeff2db2a3809bf90baca86423679a0ef10c86c5",
+      "core_order": 8,
+      "ideal_core_cap": 11.313708498984761,
+      "replica_order": 2,
+      "sides": [
+        {
+          "best_bound": 12.0,
+          "branches": 376,
+          "conflicts": 31,
+          "elapsed_seconds": 0.02803182601928711,
+          "objective": 12.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 12,
+          "wall_time_seconds": 0.027857840000000002
+        },
+        {
+          "best_bound": 12.0,
+          "branches": 399,
+          "conflicts": 28,
+          "elapsed_seconds": 0.034029245376586914,
+          "objective": 12.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -12,
+          "wall_time_seconds": 0.033881359
+        }
+      ]
+    },
+    {
+      "b_defect_core_only": -1.7763568394002505e-15,
+      "certified_core_cap": 32,
+      "child_cap": 4,
+      "child_class": 0,
+      "child_matrix_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "child_order": 4,
+      "core_cap_lower_bound": 32,
+      "core_excess": 0.0,
+      "core_matrix_sha256": "c305e6145bb37e935f6b96c52781fc66c410c983181fddf92994f1d441864c58",
+      "core_order": 16,
+      "ideal_core_cap": 32.0,
+      "replica_order": 4,
+      "sides": [
+        {
+          "best_bound": 32.0,
+          "branches": 0,
+          "conflicts": 0,
+          "elapsed_seconds": 0.1684887409210205,
+          "objective": 32.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 32,
+          "wall_time_seconds": 0.168244993
+        },
+        {
+          "best_bound": 32.0,
+          "branches": 0,
+          "conflicts": 0,
+          "elapsed_seconds": 0.16029620170593262,
+          "objective": 32.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -32,
+          "wall_time_seconds": 0.160091154
+        }
+      ]
+    },
+    {
+      "b_defect_core_only": 0.20179858883830004,
+      "certified_core_cap": 12,
+      "child_cap": 4,
+      "child_class": 0,
+      "child_matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+      "child_order": 5,
+      "core_cap_lower_bound": 12,
+      "core_excess": 0.6862915010152388,
+      "core_matrix_sha256": "9b3a19c1abad183b944364900acfe8cee56b87ae813872871e0ecb3841b40414",
+      "core_order": 10,
+      "ideal_core_cap": 11.313708498984761,
+      "replica_order": 2,
+      "sides": [
+        {
+          "best_bound": 12.0,
+          "branches": 781,
+          "conflicts": 173,
+          "elapsed_seconds": 0.05437159538269043,
+          "objective": 12.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 12,
+          "wall_time_seconds": 0.054213603000000006
+        },
+        {
+          "best_bound": 12.0,
+          "branches": 859,
+          "conflicts": 208,
+          "elapsed_seconds": 0.019350051879882812,
+          "objective": 12.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -12,
+          "wall_time_seconds": 0.01918254
+        }
+      ]
+    },
+    {
+      "b_defect_core_only": 1.6167025536924768,
+      "certified_core_cap": 40,
+      "child_cap": 4,
+      "child_class": 0,
+      "child_matrix_sha256": "138470a60238bca2a57e9c35b47940ca8bd655f7402d2f2d5ff5c1172a60cd16",
+      "child_order": 5,
+      "core_cap_lower_bound": 40,
+      "core_excess": 8.0,
+      "core_matrix_sha256": "7b2d0f72c0c50e17d257378fcf86f7c6df8109766fd48845cd3a80d5513e81ff",
+      "core_order": 20,
+      "ideal_core_cap": 32.0,
+      "replica_order": 4,
+      "sides": [
+        {
+          "best_bound": 40.0,
+          "branches": 0,
+          "conflicts": 0,
+          "elapsed_seconds": 0.9328718185424805,
+          "objective": 40.0,
+          "objective_sign": 1,
+          "spins": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": 40,
+          "wall_time_seconds": 0.93267253
+        },
+        {
+          "best_bound": 40.0,
+          "branches": 0,
+          "conflicts": 0,
+          "elapsed_seconds": 2.2556731700897217,
+          "objective": 40.0,
+          "objective_sign": -1,
+          "spins": [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "status": "OPTIMAL",
+          "verified_energy": -40,
+          "wall_time_seconds": 2.255395222
+        }
+      ]
+    }
+  ],
+  "schema": "exact-small-minimizer-hadamard-replica-cap-selection-v1",
+  "selection_summary": [
+    {
+      "best_child_class": 0,
+      "best_core_cap": 6,
+      "best_core_excess": -2.4852813742385713,
+      "best_replica_order": 2,
+      "child_order": 3,
+      "selectable_nonpositive": true
+    },
+    {
+      "best_child_class": 0,
+      "best_core_cap": 32,
+      "best_core_excess": 0.0,
+      "best_replica_order": 4,
+      "child_order": 4,
+      "selectable_nonpositive": true
+    },
+    {
+      "best_child_class": 0,
+      "best_core_cap": 12,
+      "best_core_excess": 0.6862915010152388,
+      "best_replica_order": 2,
+      "child_order": 5,
+      "selectable_nonpositive": false
+    }
+  ],
+  "solver": {
+    "ortools_version": "9.15.6755",
+    "python_version": "3.9.2",
+    "time_limit_seconds_per_side": 120.0,
+    "workers": 8
+  }
+}
