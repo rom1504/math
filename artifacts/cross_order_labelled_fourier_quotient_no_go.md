@@ -14,10 +14,11 @@ most
 On comparable splits, this is `O_beta(ell sqrt(N))`.  Hence a positive
 linear pre-cancellation defect cannot be removed by any
 `ell=o(sqrt(N))` labelled Fourier quotient, regardless of the children and
-regardless of the chosen sign bridge.  The full `(N-1)`-dimensional quotient
-is exactly the original switch/bridge optimization.  The theorem leaves a
-real intermediate window, but rules out a bounded or slowly growing list of
-negative Fourier modes.
+regardless of the chosen sign bridge.  Because the actual child kernel has
+no odd--odd Fourier modes, the `(N-2)`-dimensional even--even quotient is
+already exactly the original fixed-child switch/bridge optimization.  The
+theorem leaves a real intermediate window, but rules out a bounded or
+slowly growing list of negative Fourier modes.
 
 ## 1. Characters of the rank-one switching group
 
@@ -197,16 +198,20 @@ E_{m,n}(\beta)
 Indeed the two quotient values have mean one and difference twice the
 displayed Fourier product.
 
-At the other endpoint, take `V` to be the full character group.  Then
-`pi_V` is injective, (3.3) is equality, and (3.5) is exactly
+At the other endpoint, let `W` be the even--even character subspace.  It has
+dimension `N-2`, and (2.2) says that every Fourier coefficient of `a*b`
+outside `W` vanishes.  Hence `a*b` is constant on cosets of the annihilator
+of `W`; conditional expectation onto `W` loses no information, (3.3) is
+equality, and (3.5) is exactly
 
 ```math
 \min_gL_{\epsilon,g}(B)-P_m-P_n.                   \tag{3.7}
 ```
 
 After minimizing `B`, (3.7) is the complete fixed-child bridge
-optimization.  Thus the quotient dimension measures, without a change of
-problem, how much of the exact bridge search has been reconstructed.
+optimization.  Taking all `N-1` characters is also exact but is redundant
+by one dimension.  Thus the quotient dimension measures, without a change
+of problem, how much of the exact bridge search has been reconstructed.
 
 ## 4. Gibbs smoothness bounds every small quotient
 
@@ -309,14 +314,14 @@ an `o(sqrt(N))` quotient cannot do it.
 The theorem does **not** say that full landscape information is necessary,
 and it does not rule out a useful growing quotient in the intermediate
 window.  It leaves the interval
-It leaves the interval
 
 ```math
-\sqrt N\lesssim\ell<N-1                             \tag{5.4}
+\sqrt N\lesssim\ell<N-2                             \tag{5.4}
 ```
 
-open.  At `ell=N-1` the state is exactly the full switch optimization by
-(3.7).  A successful labelled-Fourier architecture must therefore either
+open.  At `ell=N-2` the even--even state is exactly the full switch
+optimization by (3.7).  A successful labelled-Fourier architecture must
+therefore either
 
 1. find a structured quotient of at least square-root dimension whose
    `2^ell` sector table closes algebraically, or
@@ -351,6 +356,44 @@ The finite data are a falsifier, not an asymptotic theorem: even where the
 full labelled convolution finds a negative certificate, its best single
 mode remains positive.  Frozen JSON outputs accompany the script.  The
 all-order content is Theorem (4.4), not these small values.
+
+### Exhaustive subspace profile at child order four
+
+[`audit_switch_coordinate_quotient_profile.py`](../computations/audit_switch_coordinate_quotient_profile.py)
+goes beyond the one-mode audit.  For a fixed exact rare bridge it enumerates
+**every** binary linear character subspace when the switch dimension is at
+most seven.  Thus its dimension profiles optimize over all quotient
+orientations, not merely over coordinate subsets.
+
+For the best order-four bridge at `beta=4`, the best certificate at quotient
+dimensions `0,...,7` is
+
+```text
+4.83849, 3.03183, 1.49940, 0.63887,
+0.25106, -0.05651, -1.09032, -1.09032.
+```
+
+At `beta=8` it is
+
+```text
+14.07255, 9.13620, 5.53467, 1.47959,
+0.97526, 0.57787, -3.01519, -3.01519.
+```
+
+There are `127`, `2667`, `11811`, `11811`, `2667`, and `127` nontrivial
+subspaces in dimensions one through six; all were checked.  Thus at
+`beta=4` a negative certificate first appears at dimension five, and at
+`beta=8` it first appears at dimension six.  Dimension six is `N-2` and
+therefore exactly recovers the even--even convolution, explaining the
+equality of the last two entries.  At child order three, a dimension-two
+quotient already gives a negative certificate at `beta=4,8`; the required
+fraction is not monotone at these tiny orders.
+
+This is a finite falsifier, not evidence for a linear asymptotic dimension
+lower bound.  Its useful conclusion is narrower: even after optimizing over
+all labelled modes, the first actual example beyond the one-mode audit does
+not reveal a small fixed-dimensional closure, and the low-temperature
+order-four case needs the entire `N-2` effective character space.
 
 ## 7. Verdict
 
