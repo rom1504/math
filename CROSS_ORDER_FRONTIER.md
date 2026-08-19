@@ -193,3 +193,37 @@ bound for another quantity already shown to imply convergence).
   finite child-order falsifier with a fixed-seed amplification, not an
   all-large-order obstruction or a recurrence.
 - **Top-level SML:** **UNCHANGED**.
+
+## Checkpoint 6 — Gaussian soft minima do not yet calibrate the endpoint
+
+- **Best proved bound:** the unconditional actual-child inequality remains
+  `E_(m,n)(beta)=O_beta(N)`.  For every fixed disorder exponent `s`, the
+  physical Rademacher bridge moment has an all-split Gaussian replacement
+  error `O_(beta,s)(sqrt(N))`, and hence
+
+  ```math
+  P_N(\beta)\le \Phi_s^{\rm Gau}+O_{\beta,s}(\sqrt N).
+  ```
+
+  This does not improve the defect because no proved upper calibration puts
+  `Phi_s^Gau` within `o(N)` of `P_m+P_n`.  After resolving one ordinary
+  exponential sector, the natural child-variance-to-cross-variance
+  interpolation moves in the wrong direction for every `s<1`; retaining
+  the physical `cosh` sector makes its signed square indefinite and leaves
+  that route open.
+- **Previous/current exponent:** `1 / 1`; the `1/2` universality exponent
+  belongs only to the replacement error, not to the total cross-order
+  defect.
+- **Assumptions:** fixed `beta` and fixed `s`; actual own-scale minimizing
+  children for the bridge reduction.  The sector-resolved sign theorem is
+  uniform in the deterministic base measure, while its exact order-two
+  optimizer witness is finite and does not provide an asymptotic floor.
+- **Actual optimizing children:** yes for the replacement and direct
+  `P_N` arrow; no actual-child theorem controls the remaining Gaussian
+  endpoint.  A one-spin joint-sector example proves that sector resolution
+  cannot be restored for free.
+- **Order coverage:** the replacement covers every order and split.  It
+  yields no sublinear inequality on comparable large orders.
+- **Top-level SML:** **UNCHANGED**.  This checkpoint is a **STRIKE**, not a
+  criterion-four reset, because the same covariance architecture with the
+  actual joint-sector sign remains live.
