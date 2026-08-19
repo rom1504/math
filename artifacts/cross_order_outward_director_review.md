@@ -648,3 +648,14 @@ Whether that distinction creates leverage is precisely the one-shot test.
 The campaign must be counterexample-first: prove ERSR from genuinely new
 cut-incidence input or produce a scalable exposed-layer falsifier, then
 stop.  Another conditional scalar identity is not progress.
+
+The per-signing projection boundary is now rigorous; see
+[`cross_order_exposed_shell_projection_barriers.md`](cross_order_exposed_shell_projection_barriers.md).
+Every scalar parent-plus-residual coordinate projection has an
+`Omega(N^(3/2))` residual on comparable restrictions, and low cap—even
+`o(N^(3/2))` additive near-minimality—does not improve the forced
+`O(N^(3/4))` operator scale.  Consequently Hanson--Wright,
+hypercontractive, and bounded-difference arguments applied one signing at
+a time cannot prove ERSR.  These are proof-class barriers, not an ERSR
+falsifier: joint incidence across the uniform exposed shell remains the
+sole live mechanism.
