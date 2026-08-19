@@ -703,6 +703,26 @@ test concrete: construct or falsify a low-multiplicity cap-lowering repair.
 Another per-signing norm estimate without (DR.22) cannot use the
 exponential exposed-shell gap.
 
+In particular, (DR.22) needs no abstract transport construction.  If every
+bad `(A,S)` can be repaired to cap at most `q-2` by flipping at most
+
+```math
+k_N=o(\sqrt N/\log N)                                 \tag{DR.25}
+```
+
+edges, choose one repair deterministically and use its flipped-edge set as
+the label.  Given the repaired signing and that set, the parent is recovered
+exactly, while
+
+```math
+R_N\le\sum_{i\le k_N}{L_N\choose i}
+     =\exp\{O(k_N\log N)\}=\exp(o(\sqrt N)).          \tag{DR.26}
+```
+
+Hence this sparse cap descent implies (DR.23)--(DR.24).  It is a strictly
+concrete sufficient lemma: no child histogram, Gibbs table, or target-order
+optimizer is part of its statement.
+
 The first, cheapest repair rule is already false at finite order.  Exact
 switching-quotient enumeration at `N=8` shows that, on the minimum cap-10
 shell, none of the bad incidences for `m=3,4,5` can be moved into cap at
