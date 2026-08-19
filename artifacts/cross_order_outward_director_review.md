@@ -427,3 +427,111 @@ more targeted falsifier for ECR, but it still leaves actual unit-leading cut
 incidence untouched and therefore does not force a new recurrence
 architecture beyond the signing-specific input already known to be needed.
 The actual-child and scalar-pressure branches are frozen.
+
+## 8. Sole post-strike campaign: rare-event restriction shadow
+
+The outward alternative is not another scalar ECR inequality.  For the
+actual quadratic cap define the cumulative low-cap layer and its entropy
+density by
+
+```math
+\mathcal K_n(c)=\{A:Q(A)\le c n^{3/2}\},
+\qquad
+s_n(c)=L_n^{-1}\log|\mathcal K_n(c)|.                 \tag{DR.15}
+```
+
+Set `s_n(c)=-infinity` when the layer is empty.
+
+The one unproved target is the following **rare-event restriction-shadow
+statement**.  Uniformly over every integer pair
+`m/N in [1/3,2/3]` and every `c` in a fixed compact interval for which
+`K_N(c)` is nonempty, let `A` be uniform on `K_N(c)` and `S` a uniform
+`m`-set.  Prove, for some `delta>0` and nonnegative errors,
+
+```math
+\Pr\left\{Q(A[S])>(c+\epsilon_{N,m})m^{3/2}\right\}
+\le\eta_{N,m},
+\qquad
+\epsilon_{N,m}+\eta_{N,m}=O(N^{-\delta}).             \tag{RSR}
+```
+
+The finite data give a real warning rather than support.  For a uniform
+exact order-eight minimizer, every four-vertex restriction has cap `4` or
+`6`, so all restrictions have normalized cap at least `0.5`, while the
+parent has normalized cap `10/8^(3/2)=0.4419417...`.  Thus the bad mass in
+(RSR) is exactly one at this order for every
+`epsilon<0.0580582...`.  This is not an asymptotic falsifier, but it makes
+vanishing escaping mass the first required experiment rather than an
+assumption.  The exact histogram is reproduced by
+`audit_frozen_minimizer_restrictions.py`.
+
+This is an ensemble theorem about the actual cut landscape, not a scalar
+axiom or a surrogate cap.  It has an immediate quantitative cross-order
+consequence.  Let `Y` be the canonically relabelled restriction and let
+`p<=eta_(N,m)` be its actual bad probability.  The parent layer is
+permutation invariant, so edge-Shearer and conditioning on the event in
+(RSR) give
+
+```math
+\begin{aligned}
+\log|\mathcal K_N(c)|
+&\le q^{-1}H(Y),\\
+H(Y)
+&\le h_2(p)
+ +(1-p)\log|\mathcal K_m(c+\epsilon_{N,m})|
+ +pL_m\log2.
+\end{aligned}                                         \tag{DR.16}
+```
+
+For all large `N`, `eta_(N,m)<=1/2`, and the right side is bounded by
+the expression with `p` replaced by `eta_(N,m)`.  After division by
+`L_N=q^{-1}L_m`, this is
+
+```math
+s_N(c)\le s_m(c+\epsilon_{N,m})
+ +\eta_{N,m}\log2+{h_2(\eta_{N,m})\over L_m}.        \tag{DR.17}
+```
+
+Moreover, with `a_n=beta n^2/L_n`, elementary grouping by the at most
+`L_n+1` cap values yields the exact Laplace sandwich
+
+```math
+\sup_c\{s_n(c)-a_nc\}
+\le\psi_n(\beta)
+\le\sup_c\{s_n(c)-a_nc\}
+ +{\log(L_n+1)\over L_n}.                             \tag{DR.18}
+```
+
+For fixed `beta`, the supremum may be restricted to a compact `c` interval:
+`s_n(c)<=log2`, while any uniform all-order bound
+`M_n<=Cn^(3/2)` (the standard random-union bound suffices) gives a finite
+lower competitor.  Enlarge the compact interval slightly to absorb the
+shift by `epsilon_(N,m)`.  Since
+`a_n=2 beta n/(n-1)` and `a_N-a_m=O_beta(N^{-1})` on comparable orders,
+(DR.17)--(DR.18) prove, with `delta'=min(delta,1)`,
+
+```math
+\boxed{
+\psi_N(\beta)\le\psi_m(\beta)+O_\beta(N^{-\delta'})} \tag{DR.19}
+```
+
+after decreasing `delta` if necessary.  The geometric restriction argument
+from (DR.8), followed by the soft-minimum squeeze (DR.9), would then prove
+convergence.  Thus (RSR) has the required direct quantitative arrow.
+
+Its scope warning is severe.  At
+`c=M_N/N^(3/2)`, the layer is the minimizing fibre, and `eta_(N,m)<1`
+already guarantees one restriction with
+
+```math
+{M_m\over m^{3/2}}
+\le {M_N\over N^{3/2}}+\epsilon_{N,m}.                \tag{DR.20}
+```
+
+Geometric chaining of (DR.20) proves convergence without entropy or
+Laplace transforms.  RSR is therefore a strong, independently falsifiable
+ensemble version of the old proportional-restriction bottleneck, not a
+demonstrably easier reduction.  It is admissible only as a single
+counterexample-first campaign: prove it from genuinely new cut-incidence
+input or construct a scalable actual-layer falsifier, then stop.  Another
+conditional scalar identity is not progress.

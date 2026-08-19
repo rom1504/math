@@ -72,6 +72,19 @@ def audit(source: Path, max_child: int) -> list[dict[str, float | int]]:
         marginal = counts / float(np.sum(counts))
         expected_cap = float(np.dot(marginal, child_caps))
         nonminimal_mass = float(np.sum(marginal[child_caps > child_min]))
+        parent_normalized_cap = parent_cap / n**1.5
+        normalized_child_caps = child_caps / m**1.5
+        above_parent = normalized_child_caps > parent_normalized_cap + 1e-12
+        mass_above_parent_normalized_cap = float(np.sum(marginal[above_parent]))
+        positive_gaps = normalized_child_caps[above_parent] - parent_normalized_cap
+        minimum_positive_normalized_gap = (
+            float(np.min(positive_gaps)) if len(positive_gaps) else None
+        )
+        cap_histogram = {
+            str(int(cap)): int(np.sum(counts[child_caps == cap]))
+            for cap in np.unique(child_caps)
+            if np.sum(counts[child_caps == cap])
+        }
         q = (m * (m - 1)) / (n * (n - 1))
         parent_entropy = math.log(len(parents) * (1 << (n - 1)))
         shearer_slack = entropy(marginal) / q - parent_entropy
@@ -84,8 +97,16 @@ def audit(source: Path, max_child: int) -> list[dict[str, float | int]]:
                 "m": m,
                 "parent_minimizer_count_root_gauge": len(parents),
                 "parent_cap": parent_cap,
+                "parent_normalized_cap": parent_normalized_cap,
                 "child_cap": child_min,
                 "nonminimal_restriction_mass": nonminimal_mass,
+                "mass_above_parent_normalized_cap": (
+                    mass_above_parent_normalized_cap
+                ),
+                "minimum_positive_normalized_gap": (
+                    minimum_positive_normalized_gap
+                ),
+                "restriction_cap_histogram": cap_histogram,
                 "expected_restriction_cap": expected_cap,
                 "restriction_entropy": entropy(marginal),
                 "shearer_slack": shearer_slack,
