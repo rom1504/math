@@ -659,3 +659,46 @@ hypercontractive, and bounded-difference arguments applied one signing at
 a time cannot prove ERSR.  These are proof-class barriers, not an ERSR
 falsifier: joint incidence across the uniform exposed shell remains the
 sole live mechanism.
+
+One completely quantitative form of that incidence input is available.
+Let `E_N(q)={A:Q(A)=q}` and `L_N(q)={A:Q(A)<=q-2}`, where `q` is the exact
+exposed cap selected in Proposition DR.2.  Fix
+`epsilon_N=O(N^(-delta))`, and call `(A,S)` bad when `A in E_N(q)`,
+`|S|=m`, and
+
+```math
+Q(A[S])>(q/N^{3/2}+\epsilon_N)m^{3/2}.               \tag{DR.21}
+```
+
+Suppose, uniformly on comparable pairs, that every bad incidence has a
+repair `R(A,S) in L_N(q)` and a label `kappa(A,S)` in a set of size
+`R_N=exp(o(sqrt N))`, such that
+
+```math
+(A,S)\longmapsto(R(A,S),S,\kappa(A,S))               \tag{DR.22}
+```
+
+is injective.  If `K_j=|{A:Q(A)<=q}|` and
+`r=|L_N(q)|/K_j`, double counting and (DR.15c) give
+
+```math
+\boxed{
+\Pr_{A\in E_N(q),S}\{(A,S)\text{ is bad}\}
+\le {R_Nr\over1-r}
+\le \exp\{-2\beta\sqrt N+o(\sqrt N)\}.}             \tag{DR.23}
+```
+
+Adding the exact-shell-to-cumulative total-variation error from (DR.15d)
+preserves the same exponential bound.  Thus (DR.22) implies ERSR with the
+stated `epsilon_N` and exponentially small `eta_N`, and hence by (DR.19)
+
+```math
+\boxed{
+\psi_N(\beta)\le\psi_m(\beta)
+ +O_\beta(N^{-\min(\delta,1)}).}                    \tag{DR.24}
+```
+
+This is a conditional arrow, not a new recurrence.  It makes the next
+test concrete: construct or falsify a low-multiplicity cap-lowering repair.
+Another per-signing norm estimate without (DR.22) cannot use the
+exponential exposed-shell gap.
