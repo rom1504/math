@@ -454,6 +454,21 @@ When there are ties, the target asks for the existence of one selection of
 maximizers across all orders for which the estimates below hold uniformly;
 it does not require the estimates for every maximizer.
 
+The distance from the ground-state layer is quantitatively bounded.  If
+`c_n=M_n/n^(3/2)`, optimality in (DR.15a) gives
+
+```math
+\boxed{
+0\le c_{n,\beta}^*-c_n
+\le {\log2-s_n(c_n)\over a_n},
+\qquad a_n={2\beta n\over n-1}.}                      \tag{DR.15b}
+```
+
+Indeed,
+`s_n(c*)-a_nc*>=s_n(c_n)-a_nc_n` and `s_n(c*)<=log2`.
+Thus fixed temperature permits a genuine entropy buffer of at most
+`(log2)/(2beta)+o(1)`, while no uniform ground-state restriction is assumed.
+
 The weakest unproved target is the following **exposed-layer
 restriction-shadow statement**.  Uniformly over every integer pair
 `m/N in [1/3,2/3]`, let `A` be uniform on
