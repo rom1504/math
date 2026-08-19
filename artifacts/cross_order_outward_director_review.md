@@ -81,6 +81,21 @@ induced edge sets, gives
 \mathcal S_{N,m}\ge0.                                    \tag{DR.3}
 ```
 
+Equivalently, if `U_k` is uniform disorder at order `k`, cancellation of
+the ambient edge entropies gives the exact information-loss form
+
+```math
+\boxed{
+\mathcal S_{N,m}
+=D(\mu_{N,\beta}\Vert U_N)
+-q^{-1}\mathbb E_SD(\mu_S\Vert U_m).}                   \tag{DR.3a}
+```
+
+Thus ECR asks the loss of canonical-disorder information under proportional
+restriction to pay the rescaled cap-energy excess.  This is more specific
+than merely asserting `S>=0`, and it identifies the only independent
+inequality the proposed campaign is allowed to seek.
+
 ### Proposition DR.1 (exact entropy-compensated restriction identity)
 
 For every finite `N,m,beta`,
@@ -113,6 +128,38 @@ Average (DR.6), divide by `q`, and substitute (DR.2) and
 
 Equation (DR.4) is useful discipline: any argument that proves the proposed
 bound below merely by substituting (DR.5) back into it is circular.
+
+There is an equivalent variational formulation which makes the strength of
+the missing statement transparent.  For a law `nu` on order-`k` signings,
+put
+
+```math
+\mathcal G_{k,\beta}(\nu)
+=\beta\sqrt k\,\mathbb E_\nu Q+D(\nu\Vert U_k).          \tag{DR.6a}
+```
+
+The canonical law uniquely minimizes this functional.  Using (DR.3a), ECR
+is exactly
+
+```math
+\boxed{
+q^{-1}\mathbb E_S\mathcal G_{m,\beta}(\mu_S)
+\le \mathcal G_{N,\beta}(\mu_{N,\beta})
+   +C_\beta N^{2-\delta}.}                              \tag{DR.6b}
+```
+
+Thus it asserts that proportional restriction of the *large-system Gibbs
+optimizer* is an approximate scaled competitor at the same temperature.
+Ordinary Shearer plus `Q(A[S])<=Q(A)` proves (DR.6b) only at
+
+```math
+\beta' =\beta q\sqrt{N/m}
+        =\beta(m/N)^{3/2}+o(1),                         \tag{DR.6c}
+```
+
+which is the archived temperature drift.  The entire new content of ECR is
+an `o(N^2)` payment for raising `beta'` back to `beta`; generic entropy
+contraction leaves that payment of order `N^2`.
 
 ## 3. The selected sufficient lemma and its exact consequence
 
@@ -337,10 +384,41 @@ save the true recurrence.  A proof of (ECR) must instead come independently
 from restriction incidence, cap layers, or an entropy inequality.  It may
 not use the unknown limiting partition functions.
 
-The selected next campaign is therefore only:
+The selected one-shot campaign was therefore only:
 
 > **Canonical-disorder entropy--restriction compensation.**  Audit
 > (DR.4)--(DR.10), enumerate (DR.13) at larger orders and in the
 > zero-temperature uniform-minimizer limit, and then either prove (ECR)
 > from an independent cap-layer/entropy argument or construct the scalable
 > falsifier (DR.13).
+
+## 7. Outcome of the one-shot scalar audit
+
+The campaign did not prove or falsify ECR for the actual quadratic cap.
+It did prove a sharp proof-class obstruction, recorded in
+`cross_order_scalar_entropy_restriction_no_go.md`.  There are hereditary,
+parity-correct, switching-symmetric scalar cap systems with exact extension
+fibres and edge Lipschitzness for which
+
+```math
+\beta\mathcal D_{N_j,\lfloor N_j/2\rfloor}
+-\mathcal S_{N_j,\lfloor N_j/2\rfloor}
+=(0.02\beta+o(1))N_j^2.                               \tag{DR.14}
+```
+
+The obstruction survives arbitrary uniformly `o(n^(3/2))` scalar
+perturbations, including a parity-correct `O(n)` function of the genuine
+cut cap.  It also survives an exact affine representation by the `2^n`
+multiplicatively closed cut directions when their coefficient is `1/n`.
+On the other hand, a flat positively homogeneous response with only a
+bounded scalar range requires `exp(Theta(n^2))` queries.  Therefore the
+remaining possible positive input is sharply localized: it must use the
+zero-offset, unit-leading-coefficient, joint restriction incidence of the
+actual cut characters.  Generic cap layers, extension counts, canonical
+variationality, and Shearer contraction cannot supply a sublinear defect.
+
+This is a criterion-four architecture boundary, not Level 6 and not an
+actual-child recurrence.  The struck finite-temperature child branch stays
+frozen.  Canonical-disorder ECR deserves at most one cut-incidence-specific
+campaign; if that campaign cannot produce an inequality unavailable to the
+countermodels, the scalar-pressure architecture must also be frozen.
