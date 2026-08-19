@@ -1,0 +1,192 @@
+{
+  "schema": "cross-order-orientation-contrast-exact-v1",
+  "classification": "exact signing/bridge enumeration and integer energies; high-precision numerical child selection and floating-point transcendental pressure evaluation",
+  "normalization": "P_k(beta)=min_A log(2^-k sum_x cosh(beta H_A(x)/sqrt(k))); parent bridge scale beta/sqrt(m+n)",
+  "scope": {
+    "min_total_n": 10,
+    "max_total_n": 10,
+    "betas": [
+      0.25,
+      0.5,
+      2.0,
+      4.0
+    ],
+    "mp_dps": 80,
+    "balanced_only": true,
+    "child_selection": "exact thermal minimizers at child-own scale"
+  },
+  "records": [
+    {
+      "N": 10,
+      "split": [
+        5,
+        5
+      ],
+      "beta": 0.25,
+      "left_child_class": 0,
+      "right_child_class": 0,
+      "left_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "right_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "child_own_scale_pressure_sum": 0.12322217319843629,
+      "uniform_joint_defect": 0.016871281817815664,
+      "mean_half_absolute_orientation_contrast": 0.00042672803861096514,
+      "orientation_selected_mean_defect": 0.016444553779204646,
+      "best_bridge_and_orientation_defect": 0.013933980387834971,
+      "contrast_fraction_of_uniform_defect": 0.02529316048531361,
+      "selected_identity_absolute_error": 5.204170427930421e-17,
+      "minus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 1.9244588561617704e-18
+      },
+      "plus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 1.2197274440461925e-19
+      }
+    },
+    {
+      "N": 10,
+      "split": [
+        5,
+        5
+      ],
+      "beta": 0.5,
+      "left_child_class": 0,
+      "right_child_class": 0,
+      "left_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "right_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "child_own_scale_pressure_sum": 0.4734892985718522,
+      "uniform_joint_defect": 0.08071143772759015,
+      "mean_half_absolute_orientation_contrast": 0.006207981788568619,
+      "orientation_selected_mean_defect": 0.0745034559390213,
+      "best_bridge_and_orientation_defect": 0.040956102229580904,
+      "contrast_fraction_of_uniform_defect": 0.07691576266453375,
+      "selected_identity_absolute_error": 2.3592239273284576e-16,
+      "minus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 3.767602549387128e-17
+      },
+      "plus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 9.215718466126788e-19
+      }
+    },
+    {
+      "N": 10,
+      "split": [
+        5,
+        5
+      ],
+      "beta": 2.0,
+      "left_child_class": 0,
+      "right_child_class": 0,
+      "left_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "right_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "child_own_scale_pressure_sum": 4.896581489914989,
+      "uniform_joint_defect": 2.264343806068931,
+      "mean_half_absolute_orientation_contrast": 0.38657295061800234,
+      "orientation_selected_mean_defect": 1.8777708554509358,
+      "best_bridge_and_orientation_defect": 0.4514284697893016,
+      "contrast_fraction_of_uniform_defect": 0.17072184426318268,
+      "selected_identity_absolute_error": 7.105427357601002e-15,
+      "minus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 5.9761223747401e-16
+      },
+      "plus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 1.960237527853792e-16
+      }
+    },
+    {
+      "N": 10,
+      "split": [
+        5,
+        5
+      ],
+      "beta": 4.0,
+      "left_child_class": 0,
+      "right_child_class": 0,
+      "left_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "right_child_sha256": "b217cc21d81663bf2262866c1b2a9100d8e7afa6d97c1ae9586ea67c3cb68e4f",
+      "child_own_scale_pressure_sum": 11.986407273575212,
+      "uniform_joint_defect": 7.396641095668498,
+      "mean_half_absolute_orientation_contrast": 1.076901153567057,
+      "orientation_selected_mean_defect": 6.319739942101426,
+      "best_bridge_and_orientation_defect": 1.3628812577734308,
+      "contrast_fraction_of_uniform_defect": 0.1455932685712836,
+      "selected_identity_absolute_error": 1.4210854715202004e-14,
+      "minus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 1.042568809062061e-15
+      },
+      "plus_bridge_audit": {
+        "bridge_sign_count": 25,
+        "bridge_cube_size": 33554432,
+        "rank_one_character_count": 256,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          11184810,
+          33554431
+        ],
+        "maximum_direct_log_pressure_error": 2.157996004115148e-15
+      }
+    }
+  ]
+}
