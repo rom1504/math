@@ -217,6 +217,21 @@ therefore a **single high-risk falsification test**, not a promoted theory:
 if no independent cap-layer/incidence proof of ECR appears, this scalar
 pressure architecture must be frozen immediately.
 
+A focused primary-literature check found no theorem supplying that missing
+step.  Madiman--Tetali fractional-cover entropy gives exactly the archived
+temperature-rescaled Shearer inequality, not ECR.  Recent Gaussian Ising
+work proves the upper ground-state tail at speed `N` and explicitly leaves
+the expected lower tail at speed `N^2`; the available speed-`N^2` lower-tail
+bound is spherical, Gaussian, and one-sided.  Fixed-replica negative-moment
+limits for Gaussian SK are not uniform in the replica order `Theta(N)`
+needed here.  Dense-graph LDPs see the zero graphon but not its
+`N^{-1/2}` extremal tangent.  Relevant sources are
+[Madiman--Tetali](https://arxiv.org/abs/0901.0044),
+[Chen et al. (2026)](https://arxiv.org/abs/2603.06368),
+[Huang--Sellke](https://arxiv.org/abs/2311.15495), and
+[Chen](https://arxiv.org/abs/2311.08351).  Thus ECR would be a genuinely
+new entropy--energy theorem, not an application of a known LDP.
+
 ## 5. Exact small-order falsification audit
 
 Exhaustive enumeration through order six verifies (DR.4) to absolute error
@@ -237,6 +252,20 @@ are
 | `6 -> 3` | `(3.822531, 13.217732, 9.395201, 0)` |
 | `6 -> 4` | `(3.248521, 7.376322, 4.127801, 0.009374)` |
 | `6 -> 5` | `(1.788389, 1.120771, -0.667618, 0.033124)` |
+
+Exact switching-quotient enumeration extends the audit to order eight.  At
+`beta=1` it gives
+
+| restriction | tuple |
+|---|---|
+| `7 -> 4` | `(2.063025, 6.253040, 4.190014, 1.304102)` |
+| `8 -> 4` | `(4.577970, 10.668867, 6.090897, 1.691843)` |
+| `8 -> 5` | `(4.186990, 5.135347, 0.948357, 5.545085)` |
+
+The last row is especially informative: the residual tested by ECR is
+positive while the exact partition defect is `-4.596728`, because the
+scaled marginal KL contributes `5.545085`.  Discarding KL is therefore a
+substantial strengthening even at order eight.
 
 The sharper warning is frozen.  For **every** `2<=m<N<=6`, restriction of
 the uniform order-`N` minimizing fibre is exactly the uniform order-`m`
@@ -288,6 +317,10 @@ The computation is reproduced by
 
 .venv/bin/python computations/audit_frozen_minimizer_restrictions.py \
   --output computations/results/frozen_minimizer_restrictions_audit.json
+
+.venv/bin/python computations/audit_canonical_disorder_root_gauge.py \
+  --max-n 8 --min-parent 7 --betas 0.5 1 2 \
+  --output computations/results/canonical_disorder_root_gauge_audit.json
 ```
 
 ## 6. Falsifier and next campaign boundary
