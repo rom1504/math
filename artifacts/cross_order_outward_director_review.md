@@ -721,7 +721,12 @@ R_N\le\sum_{i\le k_N}{L_N\choose i}
 
 Hence this sparse cap descent implies (DR.23)--(DR.24).  It is a strictly
 concrete sufficient lemma: no child histogram, Gibbs table, or target-order
-optimizer is part of its statement.
+optimizer is part of its statement.  It is not the archived sparse
+cap-shaving target, which used `Theta(N^(3/2))` flips to seek a
+`Theta(N^(3/2))` cap decrease.  Here only bad exposed-shell incidences are
+repaired, the desired cap decrease is the parity step two, and the allowable
+radius is `o(sqrt(N)/log N)` because shell entropy—not uniform energy
+approximation—pays for the repair.
 
 The first, cheapest repair rule is already false at finite order.  Exact
 switching-quotient enumeration at `N=8` shows that, on the minimum cap-10
