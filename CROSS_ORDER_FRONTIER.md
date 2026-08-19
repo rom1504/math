@@ -157,3 +157,39 @@ bound for another quantity already shown to imply convergence).
   Hadamard multiplier `k`; this is not an arbitrary comparable split, and
   the core estimate required for sublinearity is open.
 - **Top-level SML:** **UNCHANGED**.
+
+## Checkpoint 5 — full marginal accounting and bounded replica selection fail
+
+- **Best proved bound:** the best unconditional comparable-order inequality
+  remains `E_(m,n)(beta)=O_beta(N)`, with exponent one.  Two stronger
+  certificates are now quantitatively excluded.  An unbiased iid bridge,
+  even with the complete child energy tables and exact one-constraint
+  binomial probabilities, cannot certify a parent energy radius below
+
+  ```math
+  \sqrt{2mn(m+n)\log2}-o(N^{3/2}).
+  ```
+
+  At an equal split the `1/2` cap upper frontier forces this method to pay
+  at least `0.0724620948...N` in the `b=M^(2/3)` defect.  Separately, the
+  unique exact order-five cap minimizer satisfies
+  `M(H_2 tensor A)=12>8sqrt(2)` and
+  `M(H_4 tensor A)=40>32`, so selecting between the two bounded canonical
+  replica orders does not make the core favorable.
+- **Previous/current exponent:** `1 / 1`; neither result improves the
+  unconditional exponent, while both prove a fixed linear floor for their
+  respective certificate classes.
+- **Assumptions:** iid-bridge floor: independent unbiased bridge and
+  marginal union/first-moment accounting, with arbitrary exact
+  energy-dependent thresholds.  Replica falsifier: exact cap minimizers,
+  Sylvester outer orders two and four; its dyadic amplification produces
+  one bad symmetric outer at every dyadic multiplier.
+- **Actual optimizing children:** yes.  The iid result is uniform over all
+  children and hence over optimizers; the replica result uses the exhaustive
+  unique order-five minimizing class.  Neither is a lower bound on the true
+  optimized parent defect.
+- **Order coverage:** the iid obstruction covers every comparable split and
+  is asymptotically sharp for its method class.  The replica result is a
+  finite child-order falsifier with a fixed-seed amplification, not an
+  all-large-order obstruction or a recurrence.
+- **Top-level SML:** **UNCHANGED**.
