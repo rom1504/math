@@ -702,3 +702,17 @@ This is a conditional arrow, not a new recurrence.  It makes the next
 test concrete: construct or falsify a low-multiplicity cap-lowering repair.
 Another per-signing norm estimate without (DR.22) cannot use the
 exponential exposed-shell gap.
+
+The first, cheapest repair rule is already false at finite order.  Exact
+switching-quotient enumeration at `N=8` shows that, on the minimum cap-10
+shell, none of the bad incidences for `m=3,4,5` can be moved into cap at
+most eight by flipping one edge inside the restricted set.  On the cap-12
+shell, the corresponding repairable fractions are only
+`0.037406...`, `0.103486...`, and `0.122167...`.  This is not a scalable
+falsifier of (DR.22), but it rules out beginning with a one-edge descent
+map.  The exact audit is reproduced by
+
+```bash
+.venv/bin/python computations/audit_exposed_shell_edge_repairs.py \
+  --output computations/results/exposed_shell_edge_repair_audit.json
+```
