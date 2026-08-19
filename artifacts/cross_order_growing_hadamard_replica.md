@@ -161,15 +161,34 @@ defect
 =\phi_{T\otimes A}(\beta/\sqrt{kr})-kP_r(\beta).    \tag{14}
 ```
 
+The weakest sufficient quantity selects both a favorable minimizing child
+and a favorable admissible outer matrix:
+
+```math
+\mathcal D^\star_{k,r}(\beta)
+=\min_{A\in\operatorname{Argmin}P_r(\beta)}
+ \min_{T\in\mathcal H_k^{\rm sym}}
+ \mathcal D_{k,r}(T,A;\beta),                       \tag{14a}
+```
+
+where `H_k^sym` is the finite set of symmetric Hadamard matrices of order
+`k`.  This minimum is used only when that set is nonempty.  Requiring a
+bound for every minimizing child or every `T` would unnecessarily
+strengthen the recurrence target.
+
 Since every `K_b` in (12) is a valid order-`kr` signing, (12) gives the
 required immediate arrow to the permanent cross-order defect:
 
 ```math
 \boxed{
 P_{kr}(\beta)-kP_r(\beta)
-\le\mathcal D_{k,r}(T,A;\beta)
+\le\mathcal D^\star_{k,r}(\beta)
  +{\beta^2(k-1)\over4}.}                            \tag{15}
 ```
+
+The same inequality holds with `mathcal D_(k,r)(T,A;beta)` for every
+particular admissible pair.  Thus one favorable minimizer is enough; an
+unfavorable member of the same scalar-pressure fibre is not a falsifier.
 
 In particular, for any valid Hadamard orders `k=k(r)`,
 
@@ -231,7 +250,80 @@ After division by `(kr)^(3/2)`, the added term is
 `O(r^(-1/2))`, uniformly in `k`.  Again, the growing replica number is not
 the completion obstruction.
 
-## 5. Verdict
+There is also an explicit arrow in the convergence normalization.  Now let
+`A` be an actual cap minimizer, and put
+
+```math
+b_n=M_n^{2/3},
+\quad X=k^{3/2}M_r,
+\quad R_{\rm cap}=M(T\otimes A)-X,
+\quad C=\sqrt{k(k-1)r(kr+2)\log2}.                  \tag{18a}
+```
+
+By (18), monotonicity and concavity of `u -> u^(2/3)` give
+
+```math
+\boxed{
+b_{kr}-kb_r
+\le {2\over3}X^{-1/3}(R_{\rm cap}+C)_+.}            \tag{18b}
+```
+
+Indeed, `X^(2/3)=kM_r^(2/3)` and
+`(X+y)^(2/3)-X^(2/3)<=(2/3)X^(-1/3)y` for `y>=0`;
+replacing `y` by its positive part only weakens the bound.  The universal
+lower bound `M_r=Omega(r^(3/2))` implies the direct power consequence
+
+```math
+\boxed{
+R_{\rm cap}=O((kr)^{3/2-\delta})
+\Longrightarrow
+b_{kr}-kb_r
+=O((kr)^{1-\delta}+kr/\sqrt r).}                    \tag{18c}
+```
+
+For fixed `k`, the completion contribution in (18c) is `O(sqrt(r))`; for
+arbitrary growing `k` it remains `o(kr)` as soon as `r->infinity`.
+
+## 5. Positive and negative core tests
+
+### One exact positive finite composition
+
+The outer choice can genuinely remove the core defect.  For the exact
+order-four minimizer displayed below, take the Sylvester matrix `T=H_4`.
+With `z=e^(4t)`, the exact child and order-16 core histograms give
+
+```math
+2^{16}z^8\left[
+ e^{4\phi_A(2t)}-e^{\phi_{H_4\otimes A}(t)}
+\right]
+=8(z-1)^4(z^2+1)^2R(z),                             \tag{18d}
+```
+
+where
+
+```math
+R(z)=z^8+6z^7+42z^6+82z^5+122z^4
+     +82z^3+42z^2+6z+1.
+```
+
+The right side is nonnegative for `z>=1`, and is positive for `t>0`.
+Therefore
+
+```math
+\boxed{
+\mathcal D_{4,4}(H_4,A;\beta)\le0
+\quad\hbox{for every }\beta\ge0,}                  \tag{18e}
+```
+
+and (15) yields the fully integral actual-child inequality
+
+```math
+\boxed{P_{16}(\beta)\le4P_4(\beta)+{3\beta^2\over4}.} \tag{18f}
+```
+
+This is finite-order rather than asymptotic progress, but it proves that a
+larger replica can repair the positive universal-double defect rather than
+merely repeat it.
 
 ### A genuine growing-`k` core obstruction
 
