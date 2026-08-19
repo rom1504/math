@@ -112,6 +112,14 @@ following properties.
    ```
 
    is uniformly Lipschitz on `[0,infinity)`.
+   Moreover, for every fixed `beta` there is a finite `C_beta`, independent
+   of `n`, such that the actual adjacent-order regularity also holds:
+
+   ```math
+   \left|F_{n+1}^*\!\left({\beta\over\sqrt{n+1}}\right)
+         -F_n^*\!\left({\beta\over\sqrt n}\right)\right|
+   \le C_\beta.                                      \tag{2.3a}
+   ```
 6. Its zero-temperature coefficients obey the same known asymptotic window
    as complete-signing minimizers: for all sufficiently large `n`,
 
@@ -376,6 +384,45 @@ The prefactor is uniformly bounded because
 
 This proves property 5 and completes the theorem.
 
+To verify the adjacent-order assertion in the same property, extend
+`e_n`, `vartheta_n`, and `L_n` continuously to real `x>=2` using
+`e(x)=x(x-1)/2`, and put
+
+```math
+\mathcal P(x,\beta)
+=L(x)\log\cosh\!\left({\beta\over\sqrt x\,\vartheta(x)}\right).
+```
+
+Away from the triangular-wave corners,
+
+```math
+\left|{d\log L\over d\log e}\right|\le1,
+\qquad
+\left|{d\log\vartheta\over d\log e}\right|\le{1\over2},
+\qquad
+{d\log e\over dx}\le{3\over x}.                   \tag{2.21}
+```
+
+Also `L(x)/x` is uniformly bounded by (2.11), while
+`sqrt(x)vartheta(x)` is bounded above and away from zero.  Hence, with
+`z=beta/(sqrt(x)vartheta(x))`, one has uniformly in `x`
+
+```math
+|z|\le C\beta,\qquad |z'|\le {C\beta\over x},
+\qquad |L'|\le C{L\over x}.                         \tag{2.22}
+```
+
+Differentiating `mathcal P` on each linear phase and using (2.22) gives
+
+```math
+|\partial_x\mathcal P(x,\beta)|
+\le C\log\cosh(C\beta)+C\beta=:C_\beta.            \tag{2.23}
+```
+
+The continuous piecewise-smooth function is therefore globally
+`C_beta`-Lipschitz.  Applying this between `x=n` and `x=n+1` proves
+(2.3a), including intervals which cross a corner.
+
 ## 3. Exact scope of the obstruction
 
 The no-go covers deductions from:
@@ -385,7 +432,7 @@ The no-go covers deductions from:
 - the normalized-partition entropy squeeze;
 - restriction-type monotonicity in the order;
 - monotone zero-temperature slope; and
-- uniform diagonal Lipschitz regularity.
+- uniform diagonal temperature and adjacent-order Lipschitz regularity.
 
 It does **not** cover a proof using coefficient-level Eulerian identities,
 actual Gibbs overlaps, bridge-dependent cancellation, optimizer-specific
