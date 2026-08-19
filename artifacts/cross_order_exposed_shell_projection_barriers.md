@@ -183,8 +183,8 @@ quadratic term imply
 Conditioning on `|S|=m=pN+O(1)` costs only a polynomial factor and does
 not change the exponential scale.  At the ERSR deviation
 `u=Theta(N^(3/2))`, the bound forced by (PB.7) has exponent only
-`Theta(sqrt(N))`.  On the near-minimizer family in Proposition 3, even the
-operator-norm term in (PB.10) is at most
+`Theta(sqrt(N))`.  On the near-minimizer family in Proposition 3, the
+minimum exponent in (PB.10) is at most
 `N^(1/2+o(1))`.  This cannot be union-bounded over
 `exp(Theta(N))` cut witnesses; degree-two hypercontractivity gives the same
 subexponential obstruction.  Vertex bounded differences is weaker still:
@@ -193,20 +193,23 @@ so its natural fluctuation scale is `Theta(N^(3/2))`.
 
 ## 3. Exact scope
 
-These propositions prove that the following inputs are insufficient for
-ERSR:
+These propositions prove that the following inputs are insufficient **for
+the listed signing-by-signing scalar-projection and concentration proof
+classes**:
 
 1. low cap or even `o(N^(3/2))` additive near-minimality;
 2. complete support and uniformly small individual edge influences;
 3. a scalar conditional-expectation projection followed by a separately
    paid residual;
-4. operator-norm/Hanson--Wright, hypercontractive, or bounded-difference
-   concentration applied signing by signing.
+4. operator-norm/Hanson--Wright based only on (PB.7), hypercontractive, or
+   bounded-difference concentration applied signing by signing.
 
 They do not show that a typical restriction of a uniform exposed-shell
 signing is bad.  The planted family in Proposition 3 may have negligible
-mass in that shell, and Proposition 2 leaves open cancellation visible only
-after averaging jointly over signings and restrictions.  ERSR can therefore
-still hold, but its proof must use a genuinely shell-level
-restriction-incidence or multiplicity theorem rather than another generic
-projection estimate.
+mass in that shell, Proposition 2 leaves open cancellation visible only
+after averaging jointly over signings and restrictions, and an
+operator-restriction theorem using additional exposed-shell structure is
+not ruled out.  ERSR can therefore still hold, but the audited generic
+tools do not prove it; a live proof would need genuinely shell-level
+restriction incidence, multiplicity, or another input absent from these
+per-signing bounds.
