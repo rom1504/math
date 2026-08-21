@@ -44173,3 +44173,176 @@ sign-near rephrasing, pressure no-gap assumptions, fixed-template design, and
 ordinary fibre lifts do not prove it.  The focused AR campaign is paused under
 the stopping rule pending a genuinely new constructor, invariant, or external
 theorem.
+
+### 10.145 Blank-slate direct attack at the `b5ec773` boundary
+
+This campaign deliberately did not inherit the language of cross-order
+composition, finite-temperature pressure, restriction, bridge transport,
+posterior states, or sparse repair.  Three clean-room researchers separately
+developed coding/geometric, variational/duality, and exact-minimizer
+architectures.  Four candidates were frozen before archive comparison:
+
+1. radial moment geometry of the augmented cut code;
+2. direct microcanonical coverage by its Hamming balls;
+3. rectangular Banach projections and their covariance corrections; and
+4. edge-flip stationarity of exact minimizers.
+
+Full statements and proofs are in
+`artifacts/blank_slate_direct_attack_2026_08_21.md`; exact finite checks are in
+`computations/verify_blank_slate_direct_attack.py`.
+
+#### 10.145.1 Central radial moment polytope
+
+Let `mu_A` be the uniform antipodal energy law of a signing `A`.  Define
+`L_d(A)` as the smallest central parity-lattice cap supporting a probability
+law with the same moments as `mu_A` through degree `2d`.  Equivalently it is
+the convex-hull relaxation using the first `d` even Krawtchouk coordinates of
+the coset.  If `w_A` is the mass at the two endpoints, a squared Chebyshev
+polynomial proves
+
+```math
+Q(A)\operatorname{sech}\!\left(
+ {\operatorname{arcosh}(w_A^{-1/2})\over d}
+\right)
+\le L_d(A)\le Q(A),
+\qquad w_A\ge2^{1-n}.                                  \tag{10.1707}
+```
+
+Consequently, for `Lambda_{n,d}=min_A L_d(A)`,
+
+```math
+\operatorname{sech}\!\left(
+ {\operatorname{arcosh}(2^{(n-1)/2})\over d}
+\right)M_n
+\le\Lambda_{n,d}\le M_n.                              \tag{10.1708}
+```
+
+At `d=floor(alpha n)` the factor tends to
+`sech(log(2)/(2 alpha))`, giving relative error `O(alpha^{-2})`.  Exact LP
+dual polynomials distinguish order-eight cap-14 and cap-12 masks which share
+their second and fourth moments.  This is a new exact interface, but not a
+strict reduction: vanishing large-`alpha` oscillation of `Lambda` is
+equivalent, by the uniform sandwich, to convergence of `M_n/n^{3/2}`.  Its
+linear-degree Krawtchouk data retains the archived exponential signed-Eulerian
+cancellation problem.
+
+#### 10.145.2 Direct coverage has an exponential replica barrier
+
+For the augmented cut code, let
+
+```math
+Z_r(b)=|C_n^+\cap B(b,r)|,
+\qquad
+S_\ell=\sum_b\binom{Z_r(b)}\ell.
+```
+
+The order-`K` Bonferroni sum obeys the exact identity
+
+```math
+\sum_{\ell=1}^K(-1)^{\ell+1}S_\ell
+=|\{b:Z_r(b)>0\}|-(-1)^K
+ \sum_{Z_r(b)>0}\binom{Z_r(b)-1}K.                    \tag{10.1709}
+```
+
+At
+
+```math
+r={1\over2}\binom n2-{c\over2}n^{3/2}+O(1),
+```
+
+the mean multiplicity has logarithm
+`(log 2-c^2)n+o(n)`.  For fixed `0<c<sqrt(log 2)`, any odd truncation capable of
+certifying noncoverage must have
+
+```math
+K\ge\exp((\log2-c^2)n+o(n)),                            \tag{10.1710}
+```
+
+while an even truncation capable of certifying coverage must have
+
+```math
+K\ge2^{n-(c/\log2)\sqrt n+o(\sqrt n)}.                 \tag{10.1711}
+```
+
+Thus fixed, polynomial, and subexponential direct replica expansions cannot
+improve the elementary sphere/union threshold.  At the necessary orders the
+center array has affine rank `Theta(n)` (and nearly `n` for (10.1711)), so its
+vertex-type state exposes essentially the full cut-code profile.  This
+quantifies and strengthens the earlier qualitative finite-replica
+obstruction.
+
+A separate pair-overlap saddle loses quadratic stability at normalized score
+`c=1/2`, but it controls typical multiplicity rather than the existence of a
+hole.  Equation (10.1709) explains why that attractive coincidence does not by
+itself supply a covering theorem.
+
+#### 10.145.3 Two other direct routes close below the frontier
+
+For rectangular signs, with
+
+```math
+\mu_k=\mathbb E|\varepsilon_1+\cdots+\varepsilon_k|,
+```
+
+the exact finite-width result is
+
+```math
+m\mu_k\le
+\min_{B\in\{\pm1\}^{m\times k}}\|B\|_{\infty\to1}
+\le m\mu_k+k2^k,                                      \tag{10.1712}
+```
+
+with equality on the left when `2^k` divides `m`.  Degree-two Fourier
+coefficients give the stronger unconditional inequality
+
+```math
+\|B\|_{\infty\to1}
+\ge m\mu_k+{\eta_k^2\over m\mu_k}
+ \sum_{p<q}(B^{\mathsf T}B)_{pq}^2,                    \tag{10.1713}
+```
+
+where
+`eta_k=2^{-(k-2)} binom(k-2,floor((k-2)/2))`.  Applied to random disjoint
+parts of `A`, it enhances the basic constant `0.3071059...` by the normalized
+off-diagonal fourth-moment defect.  Product rounding of an eigenvector proves
+
+```math
+Q(A)\ge{|\lambda|^3\over2(n-1)}.                       \tag{10.1714}
+```
+
+Every signing with `Q(A)=O(n^{3/2})` therefore has fourth-moment defect
+`O(n^{-1/3})` in the scale relevant to (10.1713).  The enhancement vanishes
+on every competitive signing and cannot reach the known lower frontier.
+
+Exact-minimizer edge-flip stationarity also fails as a global principle.  For
+`n=2m`, the signing which is negative inside one `m`-set and positive
+elsewhere has cap `m^2=n^2/4`, yet no single edge flip lowers its cap.  An
+explicit order-eight signing of cap 12 has no improving one- or two-edge
+flip, although a three-edge flip reaches the exact optimum 10.  Hence neither
+bounded local stationarity nor the first spectral covariance correction
+provides the missing direct characterization.
+
+#### 10.145.4 Director decision and Updated frontier
+
+The new endpoint recovery theorem, rectangular covariance inequality, and
+Bonferroni lower bounds are rigorous unconditional mathematics.  They neither
+improve the interval (10.1706) nor reduce convergence to a theorem proved
+simpler than its rare-extreme content.  Archive comparison showed that the
+remaining radial obligation is the old linear-degree signed-cancellation
+barrier; the other three architectures are quantitatively obstructed.
+
+The blank-slate campaign is therefore a **STRIKE** under its stated success
+criterion.  The best surviving architecture is direct augmented-cut-code
+coverage only in a nonperturbative form.  No strictly smaller convergence
+lemma was identified.  The exact remaining statement suggested by the pair
+transition is
+
+```math
+F_{n,1/2-\epsilon}(1)=\mathbb P_b\{Z_r(b)=0\}=0
+\quad\text{for every fixed }\epsilon>0\text{ and all large }n. \tag{10.1715}
+```
+
+With the known upper bound, (10.1715) is equivalent to convergence to `1/2`,
+not a strict reduction.  Uniform coverage for just one fixed
+`c>0.336493364431...` is the smaller discriminating milestone and would
+improve the lower frontier.  The rigorous frontier remains exactly (10.1706).
