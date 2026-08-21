@@ -252,3 +252,35 @@ bound for another quantity already shown to imply convergence).
   signing-specific input.  It neither falsifies actual ECR nor forces a new
   recurrence architecture.  The actual-child and scalar-ECR branches are
   frozen.
+
+## Checkpoint 8 — exposed-shell sparse repair is not a uniform mechanism
+
+- **Best proved bound:** the actual-child inequality remains
+  `E_(m,n)(beta)=O_beta(N)`.  On a fixed-`beta` exposed shell, the fraction
+  within Hamming radius `k=gamma sqrt(N)/log N` of the next lower cap layer
+  is at most
+
+  ```math
+  \exp\left[-\left(2\beta-{3\gamma\over2}+o(1)\right)\sqrt N\right].
+  ```
+
+  Moreover, square-field Paley conference signings have bad comparable
+  restrictions but require at least `r=sqrt(N-1)` edge flips to lower their
+  parent cap by two.  Thus the natural all-shell extension of the
+  sparse-repair sufficient condition is false on an infinite family of
+  exact quadratic-cap shells; its original exposed-shell scope remains
+  unresolved.
+- **Previous/current exponent:** `1 / 1` for the actual composition defect.
+- **Assumptions:** fixed `beta` and exact own-scale pressure minimizers for
+  the unchanged actual bound.  The exposed-shell distance theorem uses the
+  exact variational shell gap.  The scalable repair obstruction uses
+  square-field Paley conference shells, which are not known to be the
+  fixed-temperature exposed shells.
+- **Actual optimizing children:** yes only for the unchanged `O_beta(N)`
+  bound; no for the scalable sparse-repair obstruction.
+- **Order coverage:** every order and split for the actual linear bound;
+  every odd-prime-power square-field conference order for the obstruction;
+  an exhaustive order-eight audit for the finite repair distances.
+- **Top-level SML:** **UNCHANGED**.  This is a **STRIKE**, not a RESET:
+  neither exposed bad mass nor a sublinear actual defect was proved.  The
+  sparse-repair implementation is frozen.

@@ -743,3 +743,78 @@ incidences.  The exact audit is reproduced by
 .venv/bin/python computations/audit_exposed_shell_edge_repairs.py \
   --output computations/results/exposed_shell_edge_repair_audit.json
 ```
+
+### DR.27 Sparse repair is exceptional, and the uniform version is false
+
+The follow-up sparse-repair campaign is recorded in
+[`cross_order_exposed_shell_sparse_repair_no_go.md`](cross_order_exposed_shell_sparse_repair_no_go.md).
+It proves three boundaries.
+
+First, write `E={A:Q(A)=q}` and `L={A:Q(A)<=q-2}` at a fixed-`beta`
+exposed cap, and let `rho=|L|/(|E|+|L|)`.  For every radius `k`,
+
+```math
+\Pr_{A\sim U(E)}\{d_H(A,L)\le k\}
+\le \left(\sum_{i\le k}{\binom{N}{2}\choose i}\right)
+   {\rho\over1-\rho}.                              \tag{DR.27}
+```
+
+Since `rho<=exp(-2 beta sqrt(N))`, at
+`k=gamma sqrt(N)/log N` this is at most
+
+```math
+\exp\left[-\left(2\beta-{3\gamma\over2}+o(1)\right)\sqrt N\right].
+                                                               \tag{DR.28}
+```
+
+Thus almost every actual exposed-shell root is farther than every radius
+allowed by (DR.25).  Sparse repair could still prove ERSR only by showing
+that bad incidences concentrate on this exponentially exceptional subset.
+
+Second, if the repair in (DR.22) has no checkable locality, algebraic, or
+congestion constraint, then its existence is equivalent, fibre by fibre in
+`S`, to the cardinality inequality
+
+```math
+p_{\rm bad}\le R_N{|L|\over|E|}.                    \tag{DR.29}
+```
+
+It is therefore the desired rare-tail theorem itself, not a strict
+reduction.
+
+Third, the natural extension of the sparse condition from exposed shells to
+arbitrary exact quadratic-cap shells is scalably false.  For the
+square-field Paley conference signing of order
+`N=r^2+1`, an explicit edge-balanced law on Boolean ground states gives,
+for every `k`-edge flip set `F`,
+
+```math
+Q(C^F)\ge Q(C)-{2k\over r}.                          \tag{DR.30}
+```
+
+Hence lowering the cap by two needs at least `r` flips, where
+`r=sqrt(N-1)`.
+At the same time, the restriction to an even union of `h~r/2` parallel
+affine subfield fibres has the exact cap `rm/2`, so its normalized cap tends
+to `1/sqrt(2)`, against the parent's limit `1/2`.  This is a bad comparable
+restriction whose repair distance is at least project scale.  It does not
+falsify DR.25 in its original exposed-shell scope or falsify ERSR: the
+conference shell is not known to be fixed-temperature exposed with positive
+bad-incidence mass.
+
+An exact order-eight breadth-first search complements the asymptotic
+obstruction.  Every cap-12 root is within three arbitrary edge flips of the
+cap-at-most-10 layer, whereas the cap-10 layer is bottom and cannot reach
+cap at most eight.  The calculation is reproduced by
+
+```bash
+.venv/bin/python computations/audit_exposed_shell_repair_distances.py \
+  --output computations/results/exposed_shell_repair_distance_audit.json
+```
+
+These results supersede any all-shell version of (DR.25) as a viable
+**uniform** target.  A
+mass-sensitive repair theorem may discard a vanishing exceptional set, but
+it must control the bad-incidence mass directly on the actual exposed
+shell.  No actual-child cross-order defect improves: the bound remains
+`O_beta(N)`, so this implementation receives a strike and is frozen.
