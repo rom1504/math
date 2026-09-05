@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.4;
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.5;
 hierarchical fixed-point lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
@@ -32,7 +32,7 @@ All mathematical judgments below belong to the agent.
 ## Active independent assessment, 2026-09-05
 
 An elementary rooted-tree moment theorem and exact hierarchical energy law
-now improve the lower bound to 0.4260903547524242. A stable Gaussian fixed
+now improve the lower bound to 0.4283764176561877. An anchored Gaussian fixed
 point and a final threshold are realized by finite approximations before
 the matrix limit; generic AMP universality is not assumed. Independent
 proof and exact arithmetic audits passed. The paired certificate alone has
@@ -48,7 +48,7 @@ See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 ## Agent-authored rigorous frontier
 
 ```math
-0.4260903547524242
+0.4283764176561877
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```

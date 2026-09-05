@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.4, active 2026-09-05 campaign;
+Evidence cutoff: ledger Section 10.147.5, active 2026-09-05 campaign;
 hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.4260903547524242\le\liminf_n M_n/n^{3/2}
+0.4283764176561877\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -26,7 +26,8 @@ The fresh verification script does not rerun those solvers.
 
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
-See [hierarchical tree energy and fixed-point proof](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
+See [anchored fixed-point proof](artifacts/fresh_anchored_fixed_point_independent_2026_09_05.md),
+[hierarchical tree energy](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
 and its independent combinatorial, transport, and arithmetic audits.
 The upper bound is unchanged.
 
@@ -139,8 +140,9 @@ The latest user authorized six substantive hours starting 18:29 UTC on
 
 An elementary injective-tree moment theorem and own-spin-free transport now
 extend the energy identity to every fixed finite odd-degree tree hierarchy.
-Its Gaussian isometry has a stable fixed point for a degree-200 Hermite
-polynomial with derivative energy <0.998. A final threshold gives the
+Its Gaussian isometry has an anchored stable fixed point for a degree-200
+bivariate Hermite polynomial with conditional derivative energy <0.993.
+A final threshold gives the
 displayed lower bound, with an exact rational interval certificate. Every
 infinite-space operation is realized by finite approximations before n grows.
 The paired certificate itself has a proved ceiling below 1/2; this does not

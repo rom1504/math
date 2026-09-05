@@ -301,3 +301,32 @@ An elementary analytic bound already puts this below 1/2. This does not
 bound the actual unoriented output energy, nor the original optimum.
 The campaign continues with fixed-point improvements and that discarded
 energy; no convergence or nonconvergence theorem is claimed.
+
+## Anchored fixed point and midpoint reassessment (21:28 UTC)
+
+The independently audited anchored extension gives the stronger bound
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4283764176561877.
+```
+
+The constant Gaussian coordinate U1 is retained as an anchor. Only the
+innovation degree is charged in the fixed-point contraction; this is a
+strictly larger admissible response class than the previous scalar
+construction. An explicit centered bivariate polynomial of total degree
+200 has conditional derivative energy below 0.992418. Exact rational
+interval arithmetic yields lower endpoint
+0.428376417656187756438676313934781469275119835457995857473025.
+The director and algebra reviewer independently checked the proof and
+certificate, and the director reran it with identical output.
+
+[Complete theorem and certificate](fresh_anchored_fixed_point_independent_2026_09_05.md).
+No new matrix-limit theorem is assumed: the existing finite tree-energy
+identity realizes the bounded final mask after Gaussian-space approximation.
+
+At the campaign midpoint, this is substantial movement of the original
+rigorous interval, but not of an all-order convergence recurrence. The
+paired-certificate ceiling remains below 1/2. Work continues in parallel on
+a rigorously controlled mask improvement and on new unmarked internal-tree
+fields that can see the quadratic energy discarded by pairing. These new
+fields are not yet a universal theorem. The original question is open.

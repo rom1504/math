@@ -44649,3 +44649,23 @@ or M_n. [Full proof and checkpoint](artifacts/fresh_limit_campaign_2026_09_05.md
 link the independent audits and reproducible calculations.
 Updated frontier: [0.4260903547524242,1/2]. The six-hour campaign continues;
 the original convergence/nonconvergence question is still open.
+
+#### 10.147.5 Anchored Gaussian fixed point: bound above 0.4283
+
+**Proved, independently audited, exact numerical certificate:**
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4283764176561877.
+```
+
+Retaining the constant-response Gaussian as an anchor changes the fixed-
+point stability requirement to the conditional innovation derivative.
+For an explicit degree-200 bivariate polynomial this derivative energy is
+below 0.992418. The resulting threshold certificate has exact lower endpoint
+0.428376417656187756438676313934781469275119835457995857473025.
+Both the director and a separate reviewer reconstructed the common-space
+contraction and finite Hermite arithmetic. The exact computation was rerun.
+
+[Anchored theorem](artifacts/fresh_anchored_fixed_point_independent_2026_09_05.md)
+and [continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
+Updated frontier: [0.4283764176561877,1/2]. Convergence is still open.

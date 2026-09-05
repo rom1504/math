@@ -155,3 +155,64 @@ Bessel bound on the coefficients of `UH` gives the same scalar ceiling
 already established for arbitrary finite Gaussian feature families. No
 claim of reaching `1/2` or proving convergence is justified by this module
 alone.
+
+## 5. Independent audit of the unbounded-response fixed point and certificate
+
+The subsequently added Sections 5–6 also pass. An even intermediate
+`g in W^(1,2)(gamma)` with `Eg^2=1`, `Eg>0`, and `Eg'^2<1` is allowed:
+it is used only on the Gaussian probability space. Starting from the
+single-edge Gaussian, all iterates remain Gaussian linear forms. Their
+consecutive correlations obey the squared-Hermite-coefficient kernel
+recursion. Since `K'(q)<=Eg'^2<1`, consecutive `L2` distances are
+geometrically summable, proving convergence in the closed first Gaussian
+chaos to a standard Gaussian `V`. Hermite expansion proves
+`g(V_t)->g(V)` in `L2`, so `V=U[g(V)]`. There is no unjustified invocation
+of matrix state evolution for the unbounded polynomial.
+
+For `H=1{|V|<=alpha}`, isometry gives `Var(UH)=p` and
+`Cov(V,UH)=w=E g(Z)1{|Z|<=alpha}`. Thus write `UH=wV+sZ`, where
+`s^2=p-w^2`. Independent integration of the folded-normal expectation
+gives the artifact's formula (17): the Gaussian-tail contribution from
+the conditional exponential term is
+`4s^2/sqrt(p) phi(0) tailPhi(alpha sqrt(p)/s)`, and integration by parts
+of the conditional linear term contributes
+`4w^2/sqrt(p) phi(0) tailPhi(alpha sqrt(p)/s)`. Their sum is exactly the
+stated `4sqrt(p)` coefficient. This checks the normalization directly.
+
+I read both the entire new certificate script and its imported interval
+primitive, then independently ran
+
+`.venv/bin/python -B computations/fresh_limit_hierarchical_fixed_point_certificate.py`.
+
+The run succeeded and reproduced
+
+`Eg'^2 in [0.997762540769427182369956738328581413730480359774925265750549,
+           0.997762540769427182369956738328581413730480359774925265751941]`,
+
+with `Eg>0.8493298981`, and
+
+`J in [0.426090354752424224090748824426603635740460994016689775818265,
+       0.426090354752424224090748824426603635740460994016689775819420]`.
+
+The recurrence computes the probabilists' Hermite polynomials. Its three
+rational tail sums are precisely the norm, derivative norm, and covariance
+of the degree-200 resolvent polynomial; the common factor `4phi(alpha)^2`
+and degree-zero mass terms are correct. Normalization is exact in the
+definition of g, so no finite truncation tail is missing.
+
+The Fraction interval primitives round outward, division checks exclusion
+of zero, and integer square roots bound both endpoints correctly. Machin's
+identity and explicit alternating arctangent remainders enclose pi. The
+extended Gaussian integral sums its finite Taylor series exactly at each
+rational endpoint. Its omitted integrated terms decrease from that point
+onward: for `x<=8`, `u=x^2/2<=32`, while the first omitted index is 257.
+The absolute first omitted term therefore bounds the alternating tail.
+Endpoint monotonicity of Phi then encloses the entire argument interval.
+The actual arguments are below 2.5. No floating-point optimization or
+floating-point feasibility check enters this certificate.
+
+The positive margin above `213/500` is consequently certified. The exact
+one-parameter optimization in Section 5 is not needed for this numerical
+conclusion. Its weighted Cauchy--Schwarz dual and covariance-monotonicity
+calculation are also consistent with the stated scope: they optimize only
+the stable fixed-point covariance subclass at a fixed threshold.
