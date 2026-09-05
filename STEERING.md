@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147;
-first substantive checkpoint published at 86e4318.
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.2;
+universal rooted-response lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
 convergence and nonconvergence remain open.
@@ -31,29 +31,29 @@ All mathematical judgments below belong to the agent.
 
 ## Active independent assessment, 2026-09-05
 
-Three clean-room attacks have produced a paired-polar Boolean/nuclear
-inequality and an unconditional limit for a same-spin Hadamard-regularized
-minimum. Neither changes the original interval. The active questions are
-whether the true regularization has a nonquadratic finite certificate or
-can retain minimizing seeds, and whether the new spectral constraint yields
-a stronger Boolean theorem. No scalar/vector identification is assumed.
-An independent entropy audit also corrects an archived overstatement:
-ordinary n^-2 log(1+good-signing count) limits on dense thresholds suffice
-for convergence, because any seed has a positive-entropy cloud at every
-fixed relaxed cap. An empty event has infinite exact lower-tail rate, not
-the largest finite rate. Actual correlated counting is now being tested;
-no applicable Bernoulli lower-tail theorem has been imported.
+A universal rooted Gaussian theorem and paired Boolean rounding improve
+the original lower bound to 0.3396496212118657. The proof uses only a
+bounded normalized cap, not conference structure or generic AMP universality.
+Two independent agents and the director checked the contractions, transfer,
+quantifiers, and exact numerical interval certificate. The active target is
+the oriented energy of a second rooted response; its stronger proposed
+formula is still under proof audit and adversarial finite testing.
+Polar/nuclear and Hadamard-regularized results remain verified alternatives.
+The entropy audit also reopened a legitimate sufficient route: ordinary
+n^-2 log(1+good-signing count) limits at dense thresholds imply convergence.
+No such limit or applicable Bernoulli lower-tail theorem is established.
 See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 
 ## Agent-authored rigorous frontier
 
 ```math
-0.336493364431\ldots
+0.3396496212118657
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-The interval is unchanged. Exact recorded values for n=3,...,14 are
+The lower endpoint is improved; the upper endpoint is unchanged.
+Exact recorded values for n=3,...,14 are
 (3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
 bounds are solver-certified, not standalone formal proof certificates.
 

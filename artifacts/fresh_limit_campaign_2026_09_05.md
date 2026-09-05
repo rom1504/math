@@ -169,3 +169,39 @@ Independent audit and primary sources:
 
 The campaign continues with actual counting/entropy mechanisms in parallel
 with nonquadratic tensor certificates. The original interval is unchanged.
+
+## Universal lower-bound improvement (20:25 UTC)
+
+An analytic theorem, independently checked by the director and two agents,
+now proves
+
+```math
+\liminf_n M_n/n^{3/2}>0.3396496212118657.
+```
+
+For B=A/sqrt(n-1), a bounded-normalized-cap sequence, uniform independent
+signs S, and a fixed smooth even h, the rooted field B[S h(BS)] has a
+coordinatewise Gaussian limit of variance E h(Z)^2, uniformly in the
+coordinate. The low-cap spectral bootstrap, exact endpoint-spin transport,
+finite-degree invariance, and four explicit Gaussian contraction cases
+prove this without a generic AMP assumption. Paired biased rounding and
+a partial best-response update turn it into the improved lower bound.
+
+At the rational parameters t=7/8 and p=8/125 an exact outward-rounded
+Fraction calculation bounds the resulting constant between
+0.339649621211865756397462117164309583060688819678602946169260 and
+0.339649621211865756397462117164309583060688819678602946169325.
+The decimal optimization is not needed for the theorem.
+
+Proof: [rooted Gaussian theorem](fresh_limit_rooted_gaussian_2026_09_05.md),
+with [transport details](fresh_limit_rooted_response_2026_09_05.md).
+Audits: [variational reviewer](fresh_limit_rooted_independent_audit_2026_09_05.md)
+and [literature/adversarial reviewer](fresh_rooted_literature_adversarial_audit_2026_09_05.md).
+The finite stress test includes random, planted, gauged, regular-Hadamard,
+and nonconference tensor families; these are diagnostics, not asymptotic
+proof evidence.
+
+The upper bound remains 1/2 and convergence remains open. The next live
+theorem concerns the positive oriented energy of a custom second response.
+That claim is being tested independently; this checkpoint does not stop the
+campaign and does not import its unverified numerical consequences.

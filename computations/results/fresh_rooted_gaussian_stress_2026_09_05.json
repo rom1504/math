@@ -1,0 +1,1032 @@
+{
+  "seed": 20260905,
+  "classification": "finite numerical stress tests only",
+  "records": [
+    {
+      "model": "regular_hadamard",
+      "order": 16,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6977462768554688,
+        "mean": 0.0015424326375734492,
+        "second": 0.7070134480794267,
+        "fourth": 1.8092179701063347,
+        "covariance_with_first_field": 0.6982254028320308,
+        "paired_response": 0.8342334580919285,
+        "paired_initial_half_energy": 0.31485915788831714,
+        "cosine": 0.7109854054331542
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0791666666666666,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.00999133887327271,
+            0.7083902994791663,
+            1.8225515407986088,
+            0.6962320963541664,
+            0.7105193222260001
+          ]
+        },
+        {
+          "row": 8,
+          "mean_second_fourth_cov_cos": [
+            0.014561509651268116,
+            0.726106770833333,
+            1.8737977430555528,
+            0.713557942708333,
+            0.7039444983351052
+          ]
+        },
+        {
+          "row": 15,
+          "mean_second_fourth_cov_cos": [
+            -0.007595939017219949,
+            0.7083577473958329,
+            1.8253358289930535,
+            0.7005615234374998,
+            0.7108182547721849
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random",
+      "order": 16,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6998367309570312,
+        "mean": 0.0011878504220393226,
+        "second": 0.7116673787434891,
+        "fourth": 1.4451503838433144,
+        "covariance_with_first_field": 0.6951502482096351,
+        "paired_response": 0.9021851998966491,
+        "paired_initial_half_energy": 0.32901880769531316,
+        "cosine": 0.6983826141383179
+      },
+      "gram_frobenius_squared_over_n_squared": 0.12305555555555549,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.0005042947065374247,
+            0.7022623697916662,
+            1.3792263454861093,
+            0.6956542968749996,
+            0.7008457411821496
+          ]
+        },
+        {
+          "row": 8,
+          "mean_second_fourth_cov_cos": [
+            0.00479079971210553,
+            0.711149088541666,
+            1.4581130642361098,
+            0.694466145833333,
+            0.6990294916787628
+          ]
+        },
+        {
+          "row": 15,
+          "mean_second_fourth_cov_cos": [
+            -0.0015759209579294495,
+            0.678841145833333,
+            1.3245464409722207,
+            0.665657552083333,
+            0.710427813731773
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "planted_clique_n_three_quarters",
+      "order": 16,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.7002105712890625,
+        "mean": 0.006335202250876388,
+        "second": 0.7270050048828121,
+        "fourth": 1.4834079996744776,
+        "covariance_with_first_field": 0.6964650472005207,
+        "paired_response": 0.9443568447308408,
+        "paired_initial_half_energy": 0.32938717921922916,
+        "cosine": 0.6921685042145854
+      },
+      "gram_frobenius_squared_over_n_squared": 0.1536111111111111,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.014403917555475172,
+            0.7313069661458329,
+            1.46848687065972,
+            0.6985595703124999,
+            0.689691523876585
+          ]
+        },
+        {
+          "row": 8,
+          "mean_second_fourth_cov_cos": [
+            0.0015444025387708578,
+            0.728279622395833,
+            1.390960828993054,
+            0.6856526692708331,
+            0.6886499126873262
+          ]
+        },
+        {
+          "row": 15,
+          "mean_second_fourth_cov_cos": [
+            0.013332291304083147,
+            0.7376383463541664,
+            1.6608685980902758,
+            0.7121663411458329,
+            0.692442283921117
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random_root_gauged",
+      "order": 16,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.7004013061523438,
+        "mean": 0.0017433625597094537,
+        "second": 0.7138066609700516,
+        "fourth": 1.4568461439344602,
+        "covariance_with_first_field": 0.6964106241861977,
+        "paired_response": 0.9024649258666813,
+        "paired_initial_half_energy": 0.3294837043779023,
+        "cosine": 0.697733838301443
+      },
+      "gram_frobenius_squared_over_n_squared": 0.12305555555555549,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.005704833867704607,
+            0.7098551432291662,
+            1.4490033637152762,
+            0.6975179036458331,
+            0.6993681126099656
+          ]
+        },
+        {
+          "row": 8,
+          "mean_second_fourth_cov_cos": [
+            0.02439525642874789,
+            0.7206054687499995,
+            1.5015429687499986,
+            0.6961425781249999,
+            0.6956787817940965
+          ]
+        },
+        {
+          "row": 15,
+          "mean_second_fourth_cov_cos": [
+            -0.007627457436378536,
+            0.7000488281249999,
+            1.4247167968749985,
+            0.6807779947916665,
+            0.7033986872916413
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "hadamard_tensor_nonorthogonal_three",
+      "order": 48,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6175562540690104,
+        "mean": 0.000495223397953515,
+        "second": 0.6198258095599235,
+        "fourth": 1.169730069465688,
+        "covariance_with_first_field": 0.6176747531755595,
+        "paired_response": 0.8386172373561801,
+        "paired_initial_half_energy": 0.33183788487603777,
+        "cosine": 0.7340338067160853
+      },
+      "gram_frobenius_squared_over_n_squared": 0.026227931190583992,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.004593892554499119,
+            0.6254311419547871,
+            1.1951229566899606,
+            0.6229377908909575,
+            0.7321989015261555
+          ]
+        },
+        {
+          "row": 24,
+          "mean_second_fourth_cov_cos": [
+            0.01100397518868394,
+            0.6176082529920212,
+            1.1739294726474074,
+            0.6113489029255317,
+            0.7352428989088345
+          ]
+        },
+        {
+          "row": 47,
+          "mean_second_fourth_cov_cos": [
+            -0.00913436775371337,
+            0.6090555393949469,
+            1.115101363120331,
+            0.6020377950465424,
+            0.7375624842667317
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "regular_hadamard",
+      "order": 64,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.5492935180664062,
+        "mean": 0.00008218374237642598,
+        "second": 0.5497270614381818,
+        "fourth": 0.9285997048106706,
+        "covariance_with_first_field": 0.5493638780381943,
+        "paired_response": 0.8197621641175902,
+        "paired_initial_half_energy": 0.3252198122440616,
+        "cosine": 0.7603565877901969
+      },
+      "gram_frobenius_squared_over_n_squared": 0.016617063492063426,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.006367077304110518,
+            0.5514400421626982,
+            0.9366848446554543,
+            0.5474369109623014,
+            0.7598223472143005
+          ]
+        },
+        {
+          "row": 32,
+          "mean_second_fourth_cov_cos": [
+            -0.0009842824817948646,
+            0.558132595486111,
+            0.9288711759298622,
+            0.5633874317956349,
+            0.7563393581053567
+          ]
+        },
+        {
+          "row": 63,
+          "mean_second_fourth_cov_cos": [
+            -0.007197565648124932,
+            0.5455806671626983,
+            0.934591841655643,
+            0.5434957837301586,
+            0.7625327385929418
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random",
+      "order": 64,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.5495433807373047,
+        "mean": 0.00004349490459103266,
+        "second": 0.5543055761428104,
+        "fourth": 0.9157556705373928,
+        "covariance_with_first_field": 0.5507035936628067,
+        "paired_response": 0.9415147351115226,
+        "paired_initial_half_energy": 0.3309455199329596,
+        "cosine": 0.7577572624562977
+      },
+      "gram_frobenius_squared_over_n_squared": 0.031041351725875473,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.0004460029995632984,
+            0.5622849237351188,
+            0.9713171672748955,
+            0.5563325427827379,
+            0.7555509755453754
+          ]
+        },
+        {
+          "row": 32,
+          "mean_second_fourth_cov_cos": [
+            0.002460706204487155,
+            0.5465766059027776,
+            0.8724903770825452,
+            0.5417557973710316,
+            0.7601467992366167
+          ]
+        },
+        {
+          "row": 63,
+          "mean_second_fourth_cov_cos": [
+            -0.006797700889895768,
+            0.5471578931051586,
+            0.8988151213899905,
+            0.5480220734126982,
+            0.7607090807602827
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "planted_clique_n_three_quarters",
+      "order": 64,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.5497055053710938,
+        "mean": 0.0022646186788170862,
+        "second": 0.5558326357886904,
+        "fourth": 0.9168839515922466,
+        "covariance_with_first_field": 0.5504496740916416,
+        "paired_response": 1.0208436738054,
+        "paired_initial_half_energy": 0.3318757341631911,
+        "cosine": 0.7570470206876042
+      },
+      "gram_frobenius_squared_over_n_squared": 0.04230639014865198,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.0032296768933893936,
+            0.5795859685019836,
+            0.9712131199412628,
+            0.5645383804563489,
+            0.7472740383774976
+          ]
+        },
+        {
+          "row": 32,
+          "mean_second_fourth_cov_cos": [
+            0.002322291480484759,
+            0.5591265966021824,
+            0.9341724229477664,
+            0.5541352771577379,
+            0.7560700141280804
+          ]
+        },
+        {
+          "row": 63,
+          "mean_second_fourth_cov_cos": [
+            0.0010150413093509524,
+            0.5549665178571426,
+            0.9472759589947082,
+            0.5526568700396824,
+            0.7584540804184502
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random_root_gauged",
+      "order": 64,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.5503082275390625,
+        "mean": 0.0004176472054100271,
+        "second": 0.5547128102136034,
+        "fourth": 0.9180290508582623,
+        "covariance_with_first_field": 0.5508579072498138,
+        "paired_response": 0.9415368430188288,
+        "paired_initial_half_energy": 0.33134898924129313,
+        "cosine": 0.7576405274856728
+      },
+      "gram_frobenius_squared_over_n_squared": 0.031041351725875473,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.0014764237226922916,
+            0.5554780505952378,
+            0.9154236347316694,
+            0.5580085875496029,
+            0.7572055912427054
+          ]
+        },
+        {
+          "row": 32,
+          "mean_second_fourth_cov_cos": [
+            -0.0034296092725039774,
+            0.553092835441468,
+            0.9116134970336507,
+            0.5442146422371029,
+            0.7581133143647071
+          ]
+        },
+        {
+          "row": 63,
+          "mean_second_fourth_cov_cos": [
+            -0.0015071825502483826,
+            0.5476655505952379,
+            0.9412811348497727,
+            0.5365280877976187,
+            0.7618657190605379
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "hadamard_tensor_nonorthogonal_three",
+      "order": 192,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6147422790527344,
+        "mean": -0.00003284659501258755,
+        "second": 0.6154375658817524,
+        "fourth": 1.1360946485108572,
+        "covariance_with_first_field": 0.6150670942003605,
+        "paired_response": 0.8330269124631485,
+        "paired_initial_half_energy": 0.3352326247202779,
+        "cosine": 0.7351248115884986
+      },
+      "gram_frobenius_squared_over_n_squared": 0.006413869548532066,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.005688257395121092,
+            0.5988718402323299,
+            1.0834484648794052,
+            0.5938982738874341,
+            0.7415157766387581
+          ]
+        },
+        {
+          "row": 96,
+          "mean_second_fourth_cov_cos": [
+            -0.0046548317503552995,
+            0.6234731624263742,
+            1.1794431217994883,
+            0.6131847441508506,
+            0.7324070744855988
+          ]
+        },
+        {
+          "row": 191,
+          "mean_second_fourth_cov_cos": [
+            0.00897402098360718,
+            0.6268738751636125,
+            1.1603586509501502,
+            0.6254358741001309,
+            0.7303905149417302
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "regular_hadamard",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6196069717407227,
+        "mean": 0.0010015279160974454,
+        "second": 0.6195097193998442,
+        "fourth": 1.1532117613954096,
+        "covariance_with_first_field": 0.6194424161724013,
+        "paired_response": 0.8074963946543177,
+        "paired_initial_half_energy": 0.33562908500530375,
+        "cosine": 0.7336788936706437
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0039675245098039075,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.005213439532715721,
+            0.6219697840073526,
+            1.165256981239185,
+            0.6168638939950977,
+            0.7328856962799467
+          ]
+        },
+        {
+          "row": 128,
+          "mean_second_fourth_cov_cos": [
+            0.002797828253627499,
+            0.6251474417892153,
+            1.1549716079752963,
+            0.6243652343749996,
+            0.7309598842566706
+          ]
+        },
+        {
+          "row": 255,
+          "mean_second_fourth_cov_cos": [
+            0.008271175329029927,
+            0.6261766620710778,
+            1.1626821752751326,
+            0.6301767386642152,
+            0.7308505461668293
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6197457313537598,
+        "mean": -0.0000033742592283544925,
+        "second": 0.6203257074543069,
+        "fourth": 1.1523862294113096,
+        "covariance_with_first_field": 0.6194083961786004,
+        "paired_response": 0.9133164785933424,
+        "paired_initial_half_energy": 0.3368921030812482,
+        "cosine": 0.7332722916028588
+      },
+      "gram_frobenius_squared_over_n_squared": 0.00779927642012686,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.0011848726210717596,
+            0.6201540479473036,
+            1.1754974818128827,
+            0.6184421913296566,
+            0.7339762188320917
+          ]
+        },
+        {
+          "row": 128,
+          "mean_second_fourth_cov_cos": [
+            -0.00006879905541706647,
+            0.6359389361213231,
+            1.229662274951339,
+            0.6327229817708332,
+            0.7280293034967891
+          ]
+        },
+        {
+          "row": 255,
+          "mean_second_fourth_cov_cos": [
+            -0.004663047089379163,
+            0.6159495634191172,
+            1.1186064441861288,
+            0.6091212852328427,
+            0.7343385536374761
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "planted_clique_n_three_quarters",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6191926002502441,
+        "mean": 0.0022174855270516523,
+        "second": 0.6199068761339369,
+        "fourth": 1.149567633023493,
+        "covariance_with_first_field": 0.6185310980852906,
+        "paired_response": 0.99289064857249,
+        "paired_initial_half_energy": 0.33643003859187154,
+        "cosine": 0.7333803750831229
+      },
+      "gram_frobenius_squared_over_n_squared": 0.011416590073529404,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.019829416639097625,
+            0.6117149203431369,
+            1.1303792561755077,
+            0.5984556908700976,
+            0.7366451737185973
+          ]
+        },
+        {
+          "row": 128,
+          "mean_second_fourth_cov_cos": [
+            -0.006650575356983398,
+            0.6406901041666663,
+            1.202257027044885,
+            0.645473345588235,
+            0.7249975317889872
+          ]
+        },
+        {
+          "row": 255,
+          "mean_second_fourth_cov_cos": [
+            -0.007827803638564368,
+            0.6293150658700976,
+            1.1871671615184047,
+            0.620869715073529,
+            0.7300284032901273
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random_root_gauged",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6193742752075195,
+        "mean": 0.0010808379383143458,
+        "second": 0.6207582997340776,
+        "fourth": 1.1516533717940451,
+        "covariance_with_first_field": 0.6198508505727726,
+        "paired_response": 0.9142053420840544,
+        "paired_initial_half_energy": 0.33686919992347697,
+        "cosine": 0.7330360236456162
+      },
+      "gram_frobenius_squared_over_n_squared": 0.00779927642012686,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.0008714547019495484,
+            0.6262369791666662,
+            1.1630000030036507,
+            0.6240818397671563,
+            0.7307325889245537
+          ]
+        },
+        {
+          "row": 128,
+          "mean_second_fourth_cov_cos": [
+            -0.004158520682987325,
+            0.6135071997549014,
+            1.134776986315358,
+            0.6107488893995092,
+            0.7360448336115151
+          ]
+        },
+        {
+          "row": 255,
+          "mean_second_fourth_cov_cos": [
+            0.009387248894684614,
+            0.6199276194852936,
+            1.1464210955521903,
+            0.6175876991421565,
+            0.7332325070079098
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "hadamard_tensor_nonorthogonal_three",
+      "order": 768,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6136401494344076,
+        "mean": 0.00006283273194545302,
+        "second": 0.6139338164679748,
+        "fourth": 1.1292586670404363,
+        "covariance_with_first_field": 0.6137597794016775,
+        "paired_response": 0.8318051416163036,
+        "paired_initial_half_energy": 0.33633223901497916,
+        "cosine": 0.7356332638030135
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0015944477862921236,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.01373440416750827,
+            0.6219665447767277,
+            1.15099829793743,
+            0.6233951016541723,
+            0.7325647746218
+          ]
+        },
+        {
+          "row": 384,
+          "mean_second_fourth_cov_cos": [
+            -0.0012385646890467985,
+            0.6231081488856749,
+            1.2022667404318532,
+            0.6187763238978977,
+            0.7334444134648639
+          ]
+        },
+        {
+          "row": 767,
+          "mean_second_fourth_cov_cos": [
+            -0.0011327798045730477,
+            0.6151778757028196,
+            1.1587360630737116,
+            0.6133364760735823,
+            0.7359177682155211
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "regular_hadamard",
+      "order": 1024,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6185606718063354,
+        "mean": 0.0004751283348822774,
+        "second": 0.6185835040559515,
+        "fourth": 1.1473861089097357,
+        "covariance_with_first_field": 0.6185917890433108,
+        "paired_response": 0.8059743250553052,
+        "paired_initial_half_energy": 0.33621739018700897,
+        "cosine": 0.7339460022389902
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0009803809261974556,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            -0.006274426737953537,
+            0.6296606278256354,
+            1.2423764740711465,
+            0.628046149499022,
+            0.7310475701815423
+          ]
+        },
+        {
+          "row": 512,
+          "mean_second_fourth_cov_cos": [
+            0.006396556698789617,
+            0.6087404252963098,
+            1.1061362115058593,
+            0.6133511749297408,
+            0.7374946378353265
+          ]
+        },
+        {
+          "row": 1023,
+          "mean_second_fourth_cov_cos": [
+            -0.00324026052343221,
+            0.6172377361696603,
+            1.131358873693456,
+            0.6183629786397238,
+            0.734172708197659
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random",
+      "order": 1024,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6188040971755981,
+        "mean": 0.00011319607667701855,
+        "second": 0.6186817732957335,
+        "fourth": 1.1484762532820956,
+        "covariance_with_first_field": 0.6183850311929995,
+        "paired_response": 0.9124963169224569,
+        "paired_initial_half_energy": 0.3364534057399869,
+        "cosine": 0.7339357197139116
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0019469344336824528,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.023739011137512776,
+            0.626488708913734,
+            1.1600231239112815,
+            0.6249403370906645,
+            0.7306481701061821
+          ]
+        },
+        {
+          "row": 512,
+          "mean_second_fourth_cov_cos": [
+            0.004251649261605985,
+            0.6323208776270771,
+            1.2260391105979858,
+            0.6281344506048385,
+            0.7298169961247194
+          ]
+        },
+        {
+          "row": 1023,
+          "mean_second_fourth_cov_cos": [
+            0.008140725201979867,
+            0.6287672354212487,
+            1.1738735204839563,
+            0.6242462188034579,
+            0.7299558280913112
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "planted_clique_n_three_quarters",
+      "order": 1024,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6185696125030518,
+        "mean": 0.0013293485452699019,
+        "second": 0.6189145629357031,
+        "fourth": 1.148524487655873,
+        "covariance_with_first_field": 0.6183766435434855,
+        "paired_response": 0.9919096281207845,
+        "paired_initial_half_energy": 0.3364555488285943,
+        "cosine": 0.7338245779168378
+      },
+      "gram_frobenius_squared_over_n_squared": 0.002896951254820321,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.0016029557359735326,
+            0.6016806325604837,
+            1.0702148116964951,
+            0.6051122044538122,
+            0.739736274421603
+          ]
+        },
+        {
+          "row": 512,
+          "mean_second_fourth_cov_cos": [
+            0.010022289911110703,
+            0.6123474061430838,
+            1.1203296432126006,
+            0.6100258030150292,
+            0.7362334455071057
+          ]
+        },
+        {
+          "row": 1023,
+          "mean_second_fourth_cov_cos": [
+            -0.014724293403299725,
+            0.6095714102975317,
+            1.1372050312886244,
+            0.6117510157013684,
+            0.7380547946064586
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    },
+    {
+      "model": "random_root_gauged",
+      "order": 1024,
+      "samples": 8192,
+      "threshold": "7/8",
+      "gaussian_variance_target": 0.6184260942949787,
+      "gaussian_fourth_target": 1.1473525023148257,
+      "gaussian_cosine_target": 0.734024371568182,
+      "one_probe_a": 0.544109996757087,
+      "observed": {
+        "threshold_mass": 0.6185996532440186,
+        "mean": -0.00010313660511035079,
+        "second": 0.618829375487968,
+        "fourth": 1.148290870988236,
+        "covariance_with_first_field": 0.6186066902045048,
+        "paired_response": 0.912740725928554,
+        "paired_initial_half_energy": 0.3366062880905588,
+        "cosine": 0.7338556635740034
+      },
+      "gram_frobenius_squared_over_n_squared": 0.0019469344336824528,
+      "selected_rows": [
+        {
+          "row": 0,
+          "mean_second_fourth_cov_cos": [
+            0.023845874853244346,
+            0.6117753581683771,
+            1.1070930289071956,
+            0.602239793346774,
+            0.7359408229923132
+          ]
+        },
+        {
+          "row": 512,
+          "mean_second_fourth_cov_cos": [
+            -0.0006526319782177939,
+            0.6047001724019426,
+            1.091076329368284,
+            0.6074024248915565,
+            0.7389541827467092
+          ]
+        },
+        {
+          "row": 1023,
+          "mean_second_fourth_cov_cos": [
+            -0.007133153025082211,
+            0.6193307110291422,
+            1.1654074171030868,
+            0.627831482351234,
+            0.7342043568241684
+          ]
+        }
+      ],
+      "classification": "finite numerical stress test, not asymptotic proof"
+    }
+  ]
+}

@@ -44562,3 +44562,33 @@ Full proof and scope: [entropy support audit](artifacts/fresh_entropy_support_au
 The campaign continues; the original interval and convergence status are
 unchanged. This is a correction to the proof-obligation map, not a claimed
 asymptotic theorem for M_n.
+
+#### 10.147.2 A universal rooted-response lower-bound improvement
+
+**Proved and independently audited:**
+
+```math
+\liminf_{n\to\infty}\frac{M_n}{n^{3/2}}
+>0.3396496212118657.
+```
+
+For every sequence of hollow sign matrices with Q(A)=O(n^(3/2)), set
+B=A/sqrt(n-1). For fixed smooth even h and uniform independent signs S,
+the rooted response (B[S h(BS)])_i converges uniformly in i to a centered
+Gaussian with variance E h(Z)^2. The proof controls all four rooted-Wick
+contraction cases and transports Hermite tails before removing smoothing.
+It does not assert generic nonlinear or full AMP universality.
+
+Paired biased Boolean rounding and a partial best-response update yield
+the new bound. An exact rational interval certificate at t=7/8, p=8/125
+has lower endpoint
+0.339649621211865756397462117164309583060688819678602946169260.
+Two independent agents and the director audited the analytic argument;
+the numeric certificate was independently rerun. Finite stress experiments
+are saved and explicitly labeled diagnostic.
+
+Proof, exact formula, audit links, and next target:
+[campaign checkpoint](artifacts/fresh_limit_campaign_2026_09_05.md).
+The updated frontier is [0.3396496212118657,1/2]. Convergence and
+nonconvergence remain unresolved. The campaign continues with a stronger
+second-response energy formula under adversarial review.
