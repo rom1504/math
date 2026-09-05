@@ -44734,3 +44734,42 @@ independent-edge-noise union certificate below 1/2 from a saturated seed.
 It does not show that the typical noisy maximum cannot improve.
 [Annealed obstruction](artifacts/fresh_edge_noise_entropy_obstruction_2026_09_05.md).
 Updated frontier: [0.4306581794055286,1/2]. The six-hour campaign continues.
+
+#### 10.147.8 Joint weighted transport and a strict universal gain
+
+**Proved and independently audited:** the actual-signing weighted cubic
+projection, together with Schur-product variance normalization, gives
+
+```
+liminf Q(A)/n^(3/2) >= J*+c/log L
+```
+
+for every fixed sufficiently large operator cap `||A||op<=L sqrt(n)`.
+Here `c>0` is independent of L and `J*` is the exact 21-anchor value from
+10.147.7. Principal deletion with L=O(1/epsilon) has only O(epsilon)
+normalized loss, proving `liminf M_n/n^(3/2)>J*`. No explicit numerical
+increment is asserted.
+
+The core inequality is
+`sum_i sqrt((B (B^2)^(circ3) B)_ii)>=n` for every symmetric B with unit
+column norms. It follows from Schur Jensen and `tr(P^(3/2))>=tr(P)=n` for
+the correlation matrix `P=(B^2)^(circ2)`. The weighted response theorem
+retains the whole product before absolute values. Cube feasibility uses
+two same-matrix means with a common perturbation and opposite old odd
+responses, whose half energy difference has no quadratic remainder.
+These statements neither assume nor contradict child-bridge cancellation.
+
+The nonzero cubic coefficient for the selected Gaussian triple is proved
+by exact rational intervals, not floating-point evidence. Uniform Gaussian
+slice constants and the safe order of finite approximation are checked.
+[Full theorem](artifacts/fresh_normalized_unmarked_gain_and_limit_order_2026_09_05.md),
+[weighted identity](artifacts/fresh_full_weighted_unmarked_projection_2026_09_05.md),
+[arithmetic proof](artifacts/fresh_finite_anchor_cubic_coefficient_2026_09_05.md).
+
+A separate low-cap theorem shows that the covariance operator of any fixed
+smooth even input `S_i a(X_i)` tends to `E a(G)^2 I`; its raw collision
+terms are included. Odd inputs have explicit nonvanishing rerooting modes,
+so that extension is false. [Proof and falsifier](artifacts/fresh_limit_injective_input_gram_2026_09_05.md).
+Updated explicit frontier: [0.4306581794055286,1/2], with the unevaluated
+strict improvement above. Convergence/nonconvergence remains open, and the
+six-hour campaign continues after this checkpoint.

@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.7, active 2026-09-05 campaign;
+Evidence cutoff: ledger Section 10.147.8, active 2026-09-05 campaign;
 hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -29,7 +29,9 @@ certificate for its numerical evaluation, not a finite-order extrapolation.
 See [finite-anchor certificate](artifacts/fresh_finite_anchor_fixed_point_2026_09_05.md),
 [hierarchical tree energy](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
 and its independent combinatorial, transport, and arithmetic audits.
-The upper bound is unchanged.
+The upper bound is unchanged. A further, nonnumerical strict improvement
+over the exact finite-anchor value is now proved by variance-normalized
+unmarked transport; its positive increment has not been numerically certified.
 
 For N=binom(n,2), let C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates.
 Then Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension
@@ -147,10 +149,16 @@ infinite-space operation is realized by finite approximations before n grows.
 Finite ancestor anchors now strengthen the fixed point to the displayed
 0.4306581794055286 bound; the 21-anchor certificate is exact and audited.
 The nonnegative-mask certificate has a proved ceiling below 0.4495; this does not
-bound all actual algorithm outputs. Active work tests the discarded unoriented
-energy under a bounded operator cap. Classical diagonal factorization plus
-random refill proves that restricting ||A||op<=L sqrt(n) changes the normalized
-minimum by at most O(L^(-1/2)); fixed-L convergence is still unproved.
+bound all actual algorithm outputs. A new joint unmarked channel escapes that
+certificate class. For Q=B^2 and R=Q^(circ3), Schur Jensen proves
+sum_i sqrt((BRB)_ii)>=n. A weighted cubic projection theorem and exact paired
+cube means give a gain c/log L over the banked Gaussian certificate for
+every sufficiently large fixed operator cap L. Principal deletion transfers
+this to a strict universal improvement. The increment is not evaluated.
+[Complete theorem](artifacts/fresh_normalized_unmarked_gain_and_limit_order_2026_09_05.md).
+Classical diagonal factorization plus random refill also shows that restricting
+||A||op<=L sqrt(n) changes the normalized minimum by at most O(L^(-1/2));
+fixed-L convergence remains unproved.
 Unverified numerics are not frontier.
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.

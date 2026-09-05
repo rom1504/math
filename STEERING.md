@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.7;
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.8;
 hierarchical fixed-point lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
@@ -38,10 +38,12 @@ the matrix limit; generic AMP universality is not assumed. Independent
 proof and exact arithmetic audits passed. The paired certificate alone has
 a nonnegative-mask ceiling below 0.4495, not a ceiling on all actual outputs
 or on M_n.
-Active work tests whether the discarded unoriented energy supplies a
-genuinely different ingredient. Bounded-operator regularization is now
-quantitative: fixed-L restricted minima approximate the true minima to
-O(L^(-1/2)). This does not prove their convergence or all-power coherence.
+A joint unmarked transport now supplies that different ingredient: a Schur
+standard-deviation inequality and weighted cubic projection yield gain
+c/log L over the exact banked certificate at every large fixed operator cap.
+Principal deletion proves a strict universal improvement, without an evaluated
+increment. This does not prove convergence. Fixed-L restricted minima also
+approximate the true minima to O(L^(-1/2)); their convergence remains open.
 Polar/nuclear and Hadamard-regularized results remain verified alternatives.
 The entropy audit also reopened a legitimate sufficient route: ordinary
 n^-2 log(1+good-signing count) limits at dense thresholds imply convergence.
@@ -56,7 +58,8 @@ See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-The lower endpoint is improved; the upper endpoint is unchanged.
+The explicit lower endpoint is improved; an additional strict increment over
+its exact analytic value is proved but unevaluated. The upper is unchanged.
 Exact recorded values for n=3,...,14 are
 (3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
 bounds are solver-certified, not standalone formal proof certificates.

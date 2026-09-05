@@ -1,0 +1,19 @@
+{
+  "method": "exact_fraction_outward_intervals_no_quadrature",
+  "digits": 60,
+  "source_certificate": "computations/results/fresh_finite_anchor_fixed_point_certificate.json",
+  "coefficient": "E[sign(W) 1{|V|>alpha} He_3(G0)/sqrt(6)]",
+  "cubic_coefficient": {
+    "lower": "-0.063914331766535141564927573349386587491619191945279997110215",
+    "upper": "-0.063914331766535141564927573349386587491619191945279997110143"
+  },
+  "conditional_G0_residual_variance": {
+    "lower": "0.305322266067002941644711691893067541122411542314077313956091",
+    "upper": "0.305322266067002941644711691893067541122411542314077313956468"
+  },
+  "conditional_V_variance_given_W": {
+    "lower": "0.073859427546237183569380077542570977351607429142653325172055",
+    "upper": "0.073859427546237183569380077542570977351607429142653325172365"
+  },
+  "verified_below_minus_0_06": true
+}

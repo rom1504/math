@@ -397,3 +397,56 @@ adversarially checked; no universal extra constant from them is promoted
 here. The next discriminating question is their coupling to the full old
 tree response, not another conference example. Research continues through
 the original six-hour budget; the convergence question is still open.
+
+## Joint unmarked transport survives spectral regularization (23:10 UTC)
+
+**Proved, independently audited:** for the banked Gaussian certificate value
+`J*=0.4306581794055286027...`, there are positive constants `c,L0` such that
+every signing sequence with `||A||op<=L sqrt(n)` satisfies
+
+```
+liminf Q(A)/n^(3/2) >= J* + c/log L,  for each fixed L>=L0.
+```
+
+Principal deletion then proves the unrestricted lower bound is strictly
+larger than `J*`. The size of that additional universal increment is not
+evaluated, and no convergence theorem is claimed.
+
+The new ingredient is genuinely joint. For `B=A/sqrt(n-1)`, `Q=B^2`, and
+`Z=B h3(BS)`, a complete weighted projection theorem controls
+`E F(X)^T B diag(M(X)) Z/n` for a finite old tree family `X`.
+It uses the actual signing, not a conference surrogate or generic AMP claim.
+Global tree tensor flattenings, the primary matrix-chaos theorem, exact
+own-root exclusions, and a whole-functional Boolean/Gaussian comparison
+control every derivative allocation. Three independent audits passed.
+
+A short new variance inequality closes the feasibility problem. With
+`P=Q^(circ2)`, `R=Q^(circ3)` and the unital positive Schur map
+`Psi(X)=Q circ X`, operator Jensen gives
+
+```
+tr Q sqrt(R) >= tr P^(3/2) >= n,
+sum_i sqrt((BRB)_ii) >= n.
+```
+
+Thus deterministic row normalization retains a nonvanishing total positive
+direction while bounding its local Gaussian variances by one. Localizing
+the perturbation near a decision boundary costs only O(t^2); an exact half
+difference of two feasible same-matrix means cancels all quadratic errors.
+The cutoff need grow only as sqrt(log L), giving the displayed gain. This
+does not contradict the exact child-block reversal identity.
+
+The cubic edge coefficient needed for the banked certificate is rigorously
+in `[-0.063914331766535141565,-0.063914331766535141564]`, verified by a closed
+Gaussian formula and outward rational arithmetic. Finite smooth Gaussian
+approximations are chosen after L and the cutoff, before matrix order tends
+to infinity; their error constants need not be uniform in complexity.
+
+[Full gain and safe limit order](fresh_normalized_unmarked_gain_and_limit_order_2026_09_05.md),
+[weighted theorem](fresh_full_weighted_unmarked_projection_2026_09_05.md),
+[exact cubic certificate](fresh_finite_anchor_cubic_coefficient_2026_09_05.md).
+An independent covariance-operator theorem for all fixed smooth even marked
+responses, and an odd-response rerooting counterexample, delimit the new
+state calculations precisely. The remaining campaign time is directed at
+what these results actually remove from the convergence obligation; it is
+not ended by this checkpoint.
