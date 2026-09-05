@@ -51,6 +51,11 @@ These are initial hypotheses, not progress claims. The team is separately
 developing additional candidates. Historical comparison may now be used to
 test the exact mechanisms above.
 
+**Subsequent correction:** the last sentence of candidate 3 was too strong.
+An actual ordinary entropy limit *does* imply convergence, using uniform
+positive-entropy thickening. The support audit below corrects this initial
+assessment as well as the corresponding archived interpretation.
+
 ## First substantive findings (campaign continuing)
 
 ### Proved: polar-Gram tradeoff
@@ -129,3 +134,38 @@ The original interval is unchanged. The team continues with the actual
 regularized Boolean norm and its realizability constraints, while checking
 whether the spectral tradeoff supports a quantitatively useful Boolean
 argument. Neither auxiliary result is counted as solving convergence.
+
+## Entropy support audit and reopened obligation (19:35 UTC)
+
+The director reconstructed, and the source researcher independently checked,
+the following implication. If
+
+```math
+S_n(c)=n^{-2}\log\bigl(1+\#\{A:Q(A)\le c n^{3/2}\}\bigr)
+```
+
+converges for a dense set of fixed thresholds c, then M_n/n^(3/2)
+converges. No formula for S, positivity at its endpoint, or refined entropy
+scale is needed. Uniform independent edge noise turns any one signing of
+cap c into exp(eta(epsilon)n^2) signings of cap c+epsilon. Consequently an
+oscillating support minimum forces an oscillating ordinary entropy.
+
+Also, an empty lower-tail event has exact rate +infinity, whereas a single
+signing has rate at most (log 2)/2 at speed n^2. A genuine lower-tail LDP
+therefore distinguishes them. Two archived entropy assessments had asserted
+otherwise; they are corrected with links to the full proof. This audit
+removes a false restriction, not the mathematical task of proving a limit.
+
+The primary-source check found no applicable Bernoulli Boolean lower-tail
+LDP. Gaussian upper-tail LDPs have the wrong event and speed. Gaussian
+small-operator-norm lower tails cannot be transferred at speed n^2: a
+normalized hollow sign matrix has norm at least sqrt(1-1/n), while Gaussian
+small-norm events below one still have finite n^2 rate. These are precise
+scope distinctions, not an impossibility claim about correlated counting.
+
+Proof: [entropy support audit](fresh_entropy_support_audit_2026_09_05.md).
+Independent audit and primary sources:
+[entropy/LDP literature](fresh_limit_entropy_ldp_literature_2026_09_05.md).
+
+The campaign continues with actual counting/entropy mechanisms in parallel
+with nonquadratic tensor certificates. The original interval is unchanged.

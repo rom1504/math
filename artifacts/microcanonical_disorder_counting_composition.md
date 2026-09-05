@@ -226,15 +226,19 @@ attainable threshold with relative abundance `e^{-O(n)}`; all such events
 have zero speed-`n^2` rate.
 
 An exact support edge could still be represented by only a bounded number of
-switching orbits and hence be speed-`n^2` rare.  But a speed-`n^2` LDP would
-then need sharp control of the boundary of its effective domain at order-`n`
-energy resolution.  Neither switching multiplicity nor (4) provides that
-control.  At fixed `t`, the speed-`n^2` endpoint is already the universal
+switching orbits and hence be speed-`n^2` rare. A genuine LDP covering that
+lower tail would suffice to control its limiting support edge: absence has
+infinite rate while a nonempty event has uniformly bounded finite rate.
+The [2026-09-05 support audit](fresh_entropy_support_audit_2026_09_05.md)
+corrects the former overstatement that ordinary exponential scale itself
+cannot do this. Neither switching multiplicity nor (4) proves the requisite
+LDP. At fixed `t`, the speed-`n^2` endpoint is already the universal
 value `-\tfrac12\log\cosh t` by (12); on the project diagonal, (13) misses
 the endpoint by a leading-order cross term and contracts `\beta`.
 
 **Conclusion.**  The microcanonical product theorem (4) is exact and
 nontrivial as a disorder-counting statement.  Its endpoint consequence is a
 no-go: counting many annealed bridges does not repair the changing-temperature
-obstruction, and a bare speed-`n^2` disorder LDP is not a substitute for the
-missing fixed-`\beta` support-edge theorem.
+obstruction. It does not prove the ordinary speed-`n^2` lower-tail LDP
+which, if genuinely established at the relevant normalization, would
+control the limiting support edge.

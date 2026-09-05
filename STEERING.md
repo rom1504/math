@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: 2026-09-05 campaign, ledger Section 10.146; audited base
-commit 4fcbc875c5b3c407a4534d9c644fa99889e6f738.
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147;
+first substantive checkpoint published at 86e4318.
 
 Status: **fresh six-hour independent research campaign active**;
 convergence and nonconvergence remain open.
@@ -37,6 +37,12 @@ minimum. Neither changes the original interval. The active questions are
 whether the true regularization has a nonquadratic finite certificate or
 can retain minimizing seeds, and whether the new spectral constraint yields
 a stronger Boolean theorem. No scalar/vector identification is assumed.
+An independent entropy audit also corrects an archived overstatement:
+ordinary n^-2 log(1+good-signing count) limits on dense thresholds suffice
+for convergence, because any seed has a positive-entropy cloud at every
+fixed relaxed cap. An empty event has infinite exact lower-tail rate, not
+the largest finite rate. Actual correlated counting is now being tested;
+no applicable Bernoulli lower-tail theorem has been imported.
 See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 
 ## Agent-authored rigorous frontier
@@ -51,7 +57,7 @@ The interval is unchanged. Exact recorded values for n=3,...,14 are
 (3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
 bounds are solver-certified, not standalone formal proof certificates.
 
-## Strongest quantitative result of the new campaign
+## Retained quantitative result of the preceding campaign
 
 For mu_r=E|sum_{j=1}^r epsilon_j|, all n,r>=1 satisfy
 

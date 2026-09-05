@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.146, 2026-09-05 campaign, based on
-4fcbc875c5b3c407a4534d9c644fa99889e6f738. Use the ledger for archive
+Evidence cutoff: ledger Section 10.147, active 2026-09-05 campaign;
+first checkpoint 86e4318. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
 ## Exact problem and verified frontier
@@ -104,18 +104,32 @@ Proofs and precise assumptions:
 7. Arithmetic/conference examples do not provide separated universal order
    classes, and hence do not prove nonconvergence.
 
-## Current judgment and stopping conditions
+## Current independent campaign: verified additions and gaps
 
-The campaign is concluded; the current request publishes its results.
-No convergence/nonconvergence proof, improved interval, or Level-6 recurrence
-has been obtained. Do not autonomously revive a frozen branch on the
-strength of a new name or a constant improvement.
+The latest user authorized six substantive hours starting 18:29 UTC on
+2026-09-05. The campaign is active. Checkpoints do not terminate it.
 
-A new campaign should isolate either a uniform comparable-order inequality,
-a nonperturbative theorem for worst cosets of P_(2,n), or a smaller
-minimizer-specific variational state with all-order recovery. Each proposal
-must specify its quantitative implication and a falsifier before substantial
-computation. Genuine nonconvergence remains an alternative.
+- Proved polar-Gram inequality:
+  Q(A)>=n(n-1) asin(n/||A||_*)/pi. This constrains the nuclear mass of
+  low-cap signings but does not improve the universal lower constant.
+- The same-spin regularization R(B)=sup_s Q(H_s tensor B)/s^(3/2), for
+  explicit regular Hadamard orders s=4^a144^b, has a convergent minimum.
+  Its limit c_R lies in [1/sqrt(2pi),1/2] and bounds the original limsup
+  from above. Equality with the original liminf is unproved. Full sign
+  seeds remove the leading diagonal-completion cost. PSD-majorant
+  certificates cannot give a full-seed regularized ratio below 1/2.
+- Corrected entropy interpretation: convergence of ordinary
+  n^-2 log(1+good-signing count) for dense fixed cap thresholds implies
+  convergence of M_n/n^(3/2). Independent edge noise makes every seed
+  exponentially numerous after any fixed cap relaxation. A genuine
+  lower-tail LDP also suffices; adjacent published Gaussian/spectral
+  theorems do not establish this Bernoulli Boolean assertion.
+
+The team is testing nonquadratic regularization certificates and actual
+correlated entropy mechanisms. No convergence/nonconvergence proof,
+improved original interval, or Level-6 recurrence has been obtained.
+Historical route judgments are evidence to audit, not binding directives.
+See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
 
 The verifier uses exact finite enumeration for the small code examples,
 leader cubes, slice mapping, and reversal identity, and reports analytic

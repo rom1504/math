@@ -44537,3 +44537,28 @@ research decision are collected in
 [the campaign record](artifacts/fresh_limit_campaign_2026_09_05.md).
 This checkpoint does not terminate the authorized campaign. The rigorous
 interval remains [0.336493364431...,1/2]; convergence is still open.
+
+#### 10.147.1 Entropy audit: a false obstruction removed
+
+The director and independent source researcher verified that limits of
+S_n(c)=n^-2 log(1+#{A:Q(A)<=c n^(3/2)}) on a dense threshold set imply
+convergence of M_n/n^(3/2). Uniform independent edge flips show that any
+one seed at cap c produces exp(eta(epsilon)n^2) signings at cap c+epsilon.
+Thus a separated liminf/limsup would force S_n(c) to oscillate between
+zero and a positive constant at an intermediate threshold.
+
+An exact lower-tail rate is +infinity for an empty event and at most
+(log2)/2 for a nonempty one. The archived claim that these cannot be
+distinguished at ordinary speed n^2 was incorrect. The relevant passages
+in `good_signing_entropy_threshold.md` and
+`microcanonical_disorder_counting_composition.md` are explicitly corrected.
+The current campaign's initial contrary assessment is likewise retracted.
+
+No entropy limit is proved. Primary-source audits find no existing
+Bernoulli Boolean lower-tail LDP that closes this task. Gaussian spectral
+lower-tail universality is specifically false at this scale below norm one.
+
+Full proof and scope: [entropy support audit](artifacts/fresh_entropy_support_audit_2026_09_05.md).
+The campaign continues; the original interval and convergence status are
+unchanged. This is a correction to the proof-obligation map, not a claimed
+asymptotic theorem for M_n.

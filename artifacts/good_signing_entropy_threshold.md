@@ -691,7 +691,16 @@ speed-\(n\) LDP for (4.19).  A successful self-averaging theorem must
 use the geometry of the Hamming-cap intersection, not only
 edge-Lipschitzness.
 
-## 5. Why a speed-\(n^2\) lower-tail LDP alone is not enough
+## 5. Ordinary lower-tail rates: corrected support interpretation
+
+**Audit correction, 2026-09-05.** The former heading and conclusion of
+this section overstated an obstruction. A genuine lower-tail LDP or exact
+extended lower-tail-rate limit does distinguish an empty event from a
+single orbit. Moreover, the planted-noise thickening theorem implies that
+even convergence of the ordinary nonnegative entropy
+\(n^{-2}\log(1+Z_n(c))\) on a dense set of thresholds suffices for the
+original convergence question. Full proofs are in
+[the entropy support audit](fresh_entropy_support_audit_2026_09_05.md).
 
 For a uniformly random signing let
 
@@ -724,18 +733,16 @@ I_n(c)\longrightarrow\frac{\log2}{2}.
 \tag{5.2}
 \]
 
-It lies at the maximal possible finite rate.  The leading
-speed-\(n^2\) rate therefore cannot distinguish:
+It lies at the maximal possible **finite** rate. This cannot distinguish
+one orbit from \(\exp(o(n^2))\) good signings, but an empty event has
+rate \(+\infty\), not (5.2). If exact extended limits of \(I_n(c)\)
+exist on a dense set, a threshold strictly between a putative liminf and
+limsup would alternate between bounded finite rates and infinity, which
+is impossible. Thus those limits suffice without excluding sparse phases.
 
-* no good signing;
-* one algebraic switching orbit;
-* \(\exp(o(n^2))\) good signings.
-
-This is the precise obstruction to using a Bernoulli lower-tail or
-Franz--Parisi calculation by itself to settle the minimum.  Such a
-calculation locates the onset of a positive bulk entropy, but it must
-be supplemented either by exclusion of a maximal-rate sparse phase or
-by the refined entropy/free-energy criteria in Sections 3--4.
+A bulk-only or fixed-replica calculation need not establish such limits.
+Its failure to resolve the support boundary is a limitation of that
+calculation, not a theorem that ordinary exponential scale is inadequate.
 
 ## 6. Exact restriction and extension counting
 
@@ -1102,19 +1109,24 @@ phase in (5.2).
 
 ## 8. Verdict
 
-Counting good signings produces two rigorous convergence reductions:
+Counting good signings produces the following rigorous convergence reductions:
 
 1. convergence of the refined microcanonical entropy
    \(\Sigma_n(c)\) at scale \(n^{3/2}\log n\);
 2. convergence of the signing-space pressure \(\Phi_n(\beta)\) for an
    unbounded set of fixed inverse temperatures.
+3. convergence of the exact ordinary lower-tail rate \(I_n(c)\), or of
+   \(n^{-2}\log(1+Z_n(c))\), on a dense set of thresholds; the latter
+   uses the uniform planted-noise thickening theorem as explained in the
+   [2026-09-05 audit](fresh_entropy_support_audit_2026_09_05.md).
 
 Either theorem would force the desired limit, including in the
 presence of isolated algebraic constructions.
 
-The ordinary speed-\(n^2\) lower-tail rate is insufficient on its own:
-one switching orbit sits exactly at the maximal finite rate
-\((\log2)/2\).  Exact restriction and random-extension inequalities
+One switching orbit sits at the maximal finite rate \((\log2)/2\),
+whereas absence has infinite rate. A calculation restricted to a positive
+bulk phase can miss this distinction; a genuine LDP cannot. Exact
+restriction and random-extension inequalities
 give local continuity but incur the leading inflation
 \(\sqrt{\log2(1-\alpha^2)}\) under proportional growth.  Fixed-threshold
 Shearer monotonicity follows the wrong diagonal, and the explicit
