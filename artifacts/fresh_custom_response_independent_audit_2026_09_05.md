@@ -239,3 +239,88 @@ negative oriented-energy defect.
 These finite hard-rule experiments are corroborating tests, not numerical
 proofs of convergence. In particular they do not remove the ordered-limit
 caveat in Section 4.
+
+## 6. Two-field extension and exact centering reduction
+
+The multivariate endpoint formula in
+`fresh_limit_two_field_variational_2026_09_05.md` passes an independent
+audit. For fixed admissible smooth functions, it is
+
+\[
+\frac1n E F(G,Y)^T B[S H(G,Y)]
+\longrightarrow E F_g(G_*,Y_*)\,E H(G_*,Y_*)
+ +E F_y(G_*,Y_*)\,E[h(G_*)H(G_*,Y_*)].
+\]
+
+Indeed `D_j G_i=B_ij` exactly, while `D_j G_j=0`; the new direct term is
+therefore exactly the asserted `F_g` term. All central Taylor cross errors
+are controlled by `B_ij²=1/m` and the existing second moment of `D_jY_i`.
+In the indirect bilinear derivative estimate, the only new contribution is
+`max_i|D_kG_i|≤m^(-1/2)`. The own-coordinate indirect term still involves
+only `H_y`. The joint rooted-chaos limit for four fields gives the two direct
+factorizations outside a vanishing fraction of correlated coordinate pairs.
+No new depth-universality assertion is needed.
+
+For jointly even `0≤H(g,z)≤1`, its conditional average `k(g)=E_Z H(g,Z)`
+is even. Taking `h=(k-p)/c`, where `p=EH` and `c²=Var k`, makes the two
+limiting fields independent standard normals and gives `E hH=c`.
+Gaussian integration by parts and pointwise optimization of `F` yield
+
+\[
+J(H)=E\bigl[|pG+cZ|(1-H(G,Z))\bigr].
+\]
+
+The measurable-mask extension also checks: Gaussian OU smoothing preserves
+the interval `[0,1]`, joint evenness and mean, gives bounded derivatives at
+each fixed smoothing parameter, and converges in Gaussian `L²`. Conditional
+expectation contracts `L²`, so the conditional variance converges as well.
+This justifies taking dimension first, sign smoothing second, and mask
+smoothing last. If `c=0`, every OU-smoothed conditional average is constant,
+and an arbitrary centered normalized smooth even first mask yields the
+zero second coefficient required by the formula.
+
+### Centering loses no generality for nonnegative outer masks
+
+There is an additional reduction not needed for validity of the lower
+certificate. It shows that the preceding centered construction already
+captures the supremum over the whole smooth two-field response class with
+nonnegative outer masks.
+
+For a general first mask write `b=Eh`, `d²=Var h>0`, and
+`Y=bG+dZ`. Pull the outer functions back to independent coordinates:
+`K(g,z)=H(g,bg+dz)`, and similarly write the pulled-back odd channel as `F`.
+Put `p=EK`, `k(g)=E_ZK(g,Z)`, and `s²=Var k`. The endpoint formula, followed
+by Gaussian integration by parts, becomes
+
+\[
+E[(pG+rZ)F(G,Z)],\qquad
+r=\frac{E[h(G)K(G,Z)]-bp}{d}
+ =E\left[\frac{h(G)-b}{d}(k(G)-p)\right].
+\]
+
+Cauchy--Schwarz gives `|r|≤s`. Pointwise optimization over
+`|F|≤1-K` gives
+
+\[
+J_K(r)=E|pG+rZ|(1-K).
+\]
+
+This is a convex function of `r`, so
+`J_K(r)≤max(J_K(s),J_K(-s))`. The negative endpoint equals the positive
+endpoint for the reflected admissible mask `K(g,-z)`. Each endpoint is
+attained by an appropriately signed centered normalized first mask.
+Consequently arbitrary first-mask means and variances do not enlarge the
+supremum over `J(H)`. The degenerate case `d=0` has only a first-coordinate
+response, corresponding to `r=0`, and obeys the same endpoint upper bound.
+
+This statement is restricted to nonnegative outer masks. The full cube
+constraint allows signed `H` with `|F|+|H|≤1`; the same reasoning produces
+the potentially larger envelope
+
+\[
+J_{\rm signed}(H)
+ =E|pG+cZ|(1-|H|),\quad
+p=EH,\quad c^2=\operatorname{Var}(E_ZH).
+\]
+
+No reduction of this signed-mask envelope to nonnegative masks is asserted.

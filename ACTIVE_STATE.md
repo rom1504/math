@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.3, active 2026-09-05 campaign;
-second-response theorem independently audited. Use the ledger for archive
+Evidence cutoff: ledger Section 10.147.4, active 2026-09-05 campaign;
+hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
 ## Exact problem and verified frontier
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.3857858769087784\le\liminf_n M_n/n^{3/2}
+0.4260903547524242\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -26,8 +26,8 @@ The fresh verification script does not rerun those solvers.
 
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
-See [optimized second-response proof](artifacts/fresh_limit_response_variational_2026_09_05.md)
-and the two linked independent audits of its underlying energy identity.
+See [hierarchical tree energy and fixed-point proof](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
+and its independent combinatorial, transport, and arithmetic audits.
 The upper bound is unchanged.
 
 For N=binom(n,2), let C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates.
@@ -137,13 +137,15 @@ The latest user authorized six substantive hours starting 18:29 UTC on
   every bounded-normalized-cap sequence. Explicit chaos contractions and
   endpoint-spin transport avoid assuming generic AMP universality.
 
-The second-response energy formula is now independently verified. Collective
-indirect-path control uses the actual bilinear cap and maximal spin influence,
-not termwise cancellation. Optimizing its smooth first mask proves the
-displayed bound. A six-vertex counterexample rules out exact finite-rule
-positivity but does not contradict the smoothed asymptotic theorem.
-The active target is richer joint response rounding and its quantitative
-ceiling; no unverified numerical improvement is part of the frontier.
+An elementary injective-tree moment theorem and own-spin-free transport now
+extend the energy identity to every fixed finite odd-degree tree hierarchy.
+Its Gaussian isometry has a stable fixed point for a degree-200 Hermite
+polynomial with derivative energy <0.998. A final threshold gives the
+displayed lower bound, with an exact rational interval certificate. Every
+infinite-space operation is realized by finite approximations before n grows.
+The paired certificate itself has a proved ceiling below 1/2; this does not
+bound all actual algorithm outputs. Active work tests stronger fixed points
+and the discarded unoriented energy. Unverified numerics are not frontier.
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).

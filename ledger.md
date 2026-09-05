@@ -44619,3 +44619,33 @@ smoothing is held fixed before the dimension limit in the proved theorem.
 and the linked independent audits record all dependencies and scope.
 The updated frontier is [0.3857858769087784,1/2]. The campaign continues;
 neither convergence nor nonconvergence has been proved.
+
+#### 10.147.4 Rooted-tree energy and a stable fixed point: bound above 0.426
+
+**Proved and independently audited:**
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4260903547524242.
+```
+
+An elementary injective-tree moment theorem, a matching energy expansion,
+and own-spin-free Sobolev transport produce an exact Gaussian isometry for
+the countable odd-degree rooted-tree hierarchy. A stable fixed point in
+that Gaussian space supplies an explicit threshold certificate. Its
+infinite-space construction is approximated by fixed finite tree states
+before the matrix dimension tends to infinity; no generic AMP statement
+or infinite algorithm on a finite matrix is assumed.
+
+The chosen intermediate response is a degree-200 Hermite polynomial.
+Its exact derivative energy is below 0.997762540769428, and exact rational
+interval arithmetic gives lower endpoint
+0.426090354752424224090748824426603635740460994016689775818265.
+Independent audits checked the tree pairing, automorphism factors, transport,
+same-space fixed point, finite realization, and arithmetic certificate.
+
+The whole paired Gaussian certificate has a separate upper envelope below
+1/2. This is a limitation of the certificate, not of actual output energies
+or M_n. [Full proof and checkpoint](artifacts/fresh_limit_campaign_2026_09_05.md)
+link the independent audits and reproducible calculations.
+Updated frontier: [0.4260903547524242,1/2]. The six-hour campaign continues;
+the original convergence/nonconvergence question is still open.

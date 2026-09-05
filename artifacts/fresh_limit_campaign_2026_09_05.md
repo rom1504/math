@@ -249,3 +249,55 @@ taken with smoothing fixed. Saved tests of the explicit optimized mask on
 random, Gram-sign, planted, Hadamard, and tensor families are diagnostics.
 Convergence remains open. The next discriminating task is joint two-field
 rounding and a proved description of what this rounding family cannot do.
+
+## Hierarchical tree fixed point: a bound above 0.426 (21:15 UTC)
+
+The new analytic result, independently reconstructed by three reviewers, is
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4260903547524242.
+```
+
+The director's elementary tree-moment argument supplies the key extension.
+For an injectively labeled rooted tree with external-root degree one and
+all other degrees odd, every leading moment quotient either contains a
+nonempty parity graph, killed by the actual bilinear cut bound, or pairs
+whole tree copies. The latter are exactly Gaussian Wick moments. A parallel
+energy expansion pairs the physical bridge with one top tree edge; its
+branches give normalized Hermite polynomials. Own-spin-free Sobolev
+transport extends this identity to bounded smooth Boolean responses.
+
+These child Hermite polynomials form an orthonormal basis of the even
+countable Gaussian space. The resulting isometry U maps this space to its
+first Gaussian chaos. For an even unit-norm response g with E g'^2<1,
+V_(t+1)=U g(V_t) converges in the same Gaussian space to a standard normal
+V satisfying V=U g(V). For H=1{|V|<=alpha}, W=U H is jointly Gaussian with
+V, with variance p=2Phi(alpha)-1 and covariance w=E g(Z)H(Z). The exact
+Boolean certificate is E|W|1{|V|>alpha}. The passage back to sign matrices
+uses fixed finite tree/response approximations before the dimension limit.
+
+A completely finite choice of g has Hermite coefficients proportional to
+c_r/(97/10+r), for even r=0,...,200, where c_r are the coefficients of
+1{|Z|<=37/50}. Exact arithmetic gives derivative energy below
+0.997762540769428 and a lower-bound interval
+
+```math
+[0.426090354752424224090748824426603635740460994016689775818265,
+ 0.426090354752424224090748824426603635740460994016689775819420].
+```
+
+Proofs: [tree moments](fresh_limit_second_rooted_tree_2026_09_05.md),
+[hierarchical energy and fixed point](fresh_limit_hierarchical_tree_energy_2026_09_05.md),
+[own-free transport](fresh_ownfree_sobolev_transport_audit_2026_09_05.md).
+Independent audits: [tree moments](fresh_tree_chaos_literature_audit_2026_09_05.md),
+[energy combinatorics](fresh_tree_energy_independent_audit_2026_09_05.md),
+[complete hierarchy](fresh_hierarchical_energy_literature_audit_2026_09_05.md).
+The certificate and saved exact output are under `computations/`.
+
+There is also a proved limitation: the paired Gaussian certificate alone
+is bounded by the scalar envelope
+2 sqrt(p) phi(Phi^{-1}((1+p)/2)), whose numerical supremum is about 0.44955.
+An elementary analytic bound already puts this below 1/2. This does not
+bound the actual unoriented output energy, nor the original optimum.
+The campaign continues with fixed-point improvements and that discarded
+energy; no convergence or nonconvergence theorem is claimed.
