@@ -44690,3 +44690,47 @@ argument prove that this nonnegative-mask certificate family is uniformly
 bounded below 0.4495. This is a method ceiling, NOT a bound on the original
 optimum. [Precise scope and certificate](artifacts/fresh_tree_height_quantitative_ceiling_2026_09_05.md).
 Updated frontier: [0.4297864507376280,1/2]. The campaign continues.
+
+#### 10.147.7 Finite anchors, range, and bounded-operator regularization
+
+**Proved, independently audited, exact rational certificate:**
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4306581794055286.
+```
+
+A finite ancestor-closed Gaussian anchor family permits the innovation
+to be contracted independently of those anchors. Its excluded Hermite
+features are functions of the fixed anchor, so no implicit dependence on
+the evolving innovation is assumed. The exact 21-anchor, degree-200
+certificate has derivative energy below 0.990873 and lower endpoint
+0.430658179405528602724053804634711026327173238336325190455581.
+[Proof and certificate](artifacts/fresh_finite_anchor_fixed_point_2026_09_05.md).
+
+The paired proof also bounds the full energy range by twice its lower
+certificate. Consequently both signs of an actual near-minimizer have
+macroscopic extrema; this bounds but does not eliminate localized spikes.
+Separately, a self-contained classical Grothendieck/diagonal-factorization
+argument, small vertex deletion, and random incident-edge refill prove
+
+```math
+0\le\limsup_n [M_n(L)-M_n]/n^{3/2}=O(L^{-1/2}),
+```
+
+where `M_n(L)` imposes `||A||op<=L sqrt(n)`. Thus convergence for every
+sufficiently large fixed operator cap would imply the original convergence.
+No fixed-cap convergence or all-power-delocalization theorem is proved.
+[Range and regularization proof](artifacts/fresh_range_and_spectral_regularization_2026_09_05.md).
+
+An independent exact leading-diagram audit checked 208,877,244 admissible
+partitions in 29 selected cases without a counterexample. This supports,
+but does not replace, the all-orders tree proof. A distinct unmarked `He2`
+field has root-dependent variance even for bounded-op/coherent signings;
+that falsifier is expressly not a falsifier for odd `He3` transport.
+[Scope and reproducible audit](artifacts/fresh_limit_leading_diagram_and_unmarked_audit_2026_09_05.md).
+
+The exact scalar entropy of Hamming bands also defeats every one-state
+independent-edge-noise union certificate below 1/2 from a saturated seed.
+It does not show that the typical noisy maximum cannot improve.
+[Annealed obstruction](artifacts/fresh_edge_noise_entropy_obstruction_2026_09_05.md).
+Updated frontier: [0.4306581794055286,1/2]. The six-hour campaign continues.

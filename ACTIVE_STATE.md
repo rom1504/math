@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.6, active 2026-09-05 campaign;
+Evidence cutoff: ledger Section 10.147.7, active 2026-09-05 campaign;
 hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.4297864507376280\le\liminf_n M_n/n^{3/2}
+0.4306581794055286\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -26,7 +26,7 @@ The fresh verification script does not rerun those solvers.
 
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
-See [two-field mask certificate](artifacts/fresh_limit_gaussian_mask_ascent_2026_09_05.md),
+See [finite-anchor certificate](artifacts/fresh_finite_anchor_fixed_point_2026_09_05.md),
 [hierarchical tree energy](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
 and its independent combinatorial, transport, and arithmetic audits.
 The upper bound is unchanged.
@@ -144,9 +144,14 @@ Its Gaussian isometry has stable scalar and anchored fixed points. An exact
 two-field mask improvement gives the displayed lower bound, with a rational
 interval certificate enclosing all one-dimensional integration errors. Every
 infinite-space operation is realized by finite approximations before n grows.
+Finite ancestor anchors now strengthen the fixed point to the displayed
+0.4306581794055286 bound; the 21-anchor certificate is exact and audited.
 The nonnegative-mask certificate has a proved ceiling below 0.4495; this does not
-bound all actual algorithm outputs. Active work tests stronger fixed points
-and the discarded unoriented energy. Unverified numerics are not frontier.
+bound all actual algorithm outputs. Active work tests the discarded unoriented
+energy under a bounded operator cap. Classical diagonal factorization plus
+random refill proves that restricting ||A||op<=L sqrt(n) changes the normalized
+minimum by at most O(L^(-1/2)); fixed-L convergence is still unproved.
+Unverified numerics are not frontier.
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).

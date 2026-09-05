@@ -370,3 +370,30 @@ This is not an upper bound on M_n, nor on all output energies or signed-mask
 extensions. It prevents silently claiming that more iterations of this
 one mechanism reach 1/2. Work continues on the discarded energy and on
 consequences of the improved bound for actual optimizing signings.
+
+## Finite anchors and removal of an avoidable spectral hypothesis (22:27 UTC)
+
+The universal lower bound is now **0.4306581794055286**, proved by a
+21-anchor Gaussian fixed point with an exact degree-200 certificate.
+Ancestor closure ensures that every removed Hermite feature is independent
+of the evolving innovation. Multinomial grouping reduces the finite
+coefficient computation to 201 scalar groups without approximating its
+extremal response. The variational agent independently audited the entire
+argument and reproduced its numerical value; the director ran the exact
+rational certificate. [Full theorem](fresh_finite_anchor_fixed_point_2026_09_05.md).
+
+The range consequence of the paired proof applies to every signing, and
+classical diagonal factorization plus random refill yields a same-order
+O(L^(-1/2)) approximation of the true optimum by signings with operator
+norm at most L sqrt(n). Thus an unbounded normalized operator norm is not
+by itself an obstruction to a fixed-cap convergence program. It does not
+supply all-order recovery. [Proof](fresh_range_and_spectral_regularization_2026_09_05.md).
+
+A primary-theorem audit now permits an unmarked extension under explicit
+all-power delocalization, including conference matrices. Separately,
+new direct bounded-op proofs establish positive unmarked first variations
+without that coherence assumption. They are still being integrated and
+adversarially checked; no universal extra constant from them is promoted
+here. The next discriminating question is their coupling to the full old
+tree response, not another conference example. Research continues through
+the original six-hour budget; the convergence question is still open.

@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.6;
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.7;
 hierarchical fixed-point lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
@@ -32,14 +32,16 @@ All mathematical judgments below belong to the agent.
 ## Active independent assessment, 2026-09-05
 
 An elementary rooted-tree moment theorem and exact hierarchical energy law
-now improve the lower bound to 0.4297864507376280. A Gaussian fixed
-point and a two-field mask are realized by finite approximations before
+now improve the lower bound to 0.4306581794055286. Finite ancestor-anchored
+Gaussian fixed points are realized by finite approximations before
 the matrix limit; generic AMP universality is not assumed. Independent
 proof and exact arithmetic audits passed. The paired certificate alone has
 a nonnegative-mask ceiling below 0.4495, not a ceiling on all actual outputs
 or on M_n.
-Active work tests stronger fixed-point constructions and whether the
-discarded unoriented energy supplies a genuinely different ingredient.
+Active work tests whether the discarded unoriented energy supplies a
+genuinely different ingredient. Bounded-operator regularization is now
+quantitative: fixed-L restricted minima approximate the true minima to
+O(L^(-1/2)). This does not prove their convergence or all-power coherence.
 Polar/nuclear and Hadamard-regularized results remain verified alternatives.
 The entropy audit also reopened a legitimate sufficient route: ordinary
 n^-2 log(1+good-signing count) limits at dense thresholds imply convergence.
@@ -49,7 +51,7 @@ See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 ## Agent-authored rigorous frontier
 
 ```math
-0.4297864507376280
+0.4306581794055286
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
