@@ -44592,3 +44592,30 @@ Proof, exact formula, audit links, and next target:
 The updated frontier is [0.3396496212118657,1/2]. Convergence and
 nonconvergence remain unresolved. The campaign continues with a stronger
 second-response energy formula under adversarial review.
+
+#### 10.147.3 Optimized second response: lower bound above 0.38578
+
+**Proved, independently audited, exact numerical certificate:**
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.3857858769087784.
+```
+
+The second rooted-response identity controls all indirect paths collectively
+using the actual low-cap matrix and a maximal single-spin influence bound.
+Its direct term has an exact Gaussian limit. Optimizing the first smooth
+mask is an attained Hilbert-space projection, not an abstract relaxation.
+The rational choice rho=47/50, alpha=81/100 has a positive Hermite-series
+certificate with lower endpoint
+0.385785876908778466066127787300791530025224664775532506435400.
+
+The director and two independent reviewers reconstructed the energy proof,
+the optimized mask, and numerical certificate. A six-vertex exact negative
+hard-rule response shows why a finite positivity claim would be false;
+smoothing is held fixed before the dimension limit in the proved theorem.
+
+[Energy theorem](artifacts/fresh_limit_custom_response_2026_09_05.md),
+[mask optimization and certificate](artifacts/fresh_limit_response_variational_2026_09_05.md),
+and the linked independent audits record all dependencies and scope.
+The updated frontier is [0.3857858769087784,1/2]. The campaign continues;
+neither convergence nor nonconvergence has been proved.

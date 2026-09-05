@@ -205,3 +205,47 @@ The upper bound remains 1/2 and convergence remains open. The next live
 theorem concerns the positive oriented energy of a custom second response.
 That claim is being tested independently; this checkpoint does not stop the
 campaign and does not import its unverified numerical consequences.
+
+## Positive second-response energy and optimized mask (20:30 UTC)
+
+The next theorem has now passed independent audits by the director and two
+agents. For G=BS and Y=B[S h(G)], with h fixed smooth even, the exact
+asymptotic identity is
+
+```math
+\frac1n\mathbb E F(Y)^\mathsf T B[S H(Y)]
+\longrightarrow \mathbb E F'(Y_*)\,
+\mathbb E[h(G_*)H(Y_*)],
+```
+
+where (G*,Y*) is Gaussian with variances 1,E h² and covariance E h.
+All indirect paths are summed before applying the actual bilinear cap.
+Their dependence on any one seed spin vanishes uniformly by an explicit
+cube-gradient/high-moment bound. The direct term is factored using the
+proved two-coordinate rooted Gaussian law on all but a vanishing fraction
+of pairs. This is not an assertion of generic AMP universality.
+
+At fixed E h=rho, E h²=1, the exact best smooth mask for an outer threshold
+alpha is the normalized projection of
+k(g)=Pr(|rho g+sqrt(1-rho²)Z|<=alpha) onto constants and its centered part.
+It is an actual bounded smooth even function. Cauchy--Schwarz proves this
+optimization, and a positive Hermite series with an explicit geometric tail
+gives an exact arithmetic certificate. At rho=47/50, alpha=81/100,
+
+```math
+\liminf_n M_n/n^{3/2}
+\ge 0.385785876908778466066127787300791530025224664775532506435400.
+```
+
+The scalar certificate's upper endpoint is 0.385785876909691211.
+Proofs: [energy identity](fresh_limit_custom_response_2026_09_05.md),
+[smooth-mask optimization](fresh_limit_response_variational_2026_09_05.md).
+Audits: [independent counterexample reviewer](fresh_custom_response_independent_audit_2026_09_05.md)
+and [independent analytic reviewer](fresh_custom_response_literature_audit_2026_09_05.md).
+
+An exact six-vertex negative-response example falsifies a finite unsmoothed
+positivity claim. It does not falsify the theorem, whose dimension limit is
+taken with smoothing fixed. Saved tests of the explicit optimized mask on
+random, Gram-sign, planted, Hadamard, and tensor families are diagnostics.
+Convergence remains open. The next discriminating task is joint two-field
+rounding and a proved description of what this rounding family cannot do.

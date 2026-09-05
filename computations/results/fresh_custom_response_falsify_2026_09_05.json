@@ -1,0 +1,1337 @@
+{
+  "scope": "Finite Monte Carlo counterexample search, not an asymptotic proof",
+  "results": [
+    {
+      "model": "random",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 1.898834451466188,
+        "third_moment": -0.01480383153012041,
+        "fourth_moment": 1.967093434186873,
+        "positive_fraction": 0.5078125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32988956803993424,
+          "sample_se": 0.0004741966502915572
+        },
+        "custom_cross": {
+          "mean": 0.7742293356792529,
+          "sample_se": 0.0006359387584755304
+        },
+        "initial_energy": {
+          "mean": 0.3373688023213508,
+          "sample_se": 0.00037396643037626684
+        },
+        "rooted_max_field": {
+          "mean": 0.7755580399462048,
+          "sample_se": 0.0003114679761058803
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.0034543888773313296,
+          "sample_se": 0.0005263277062043549
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.03",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 5.873328307966818,
+        "third_moment": 3.3252287778543095,
+        "fourth_moment": 18.309597619195294,
+        "positive_fraction": 0.421875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3229003119946706,
+          "sample_se": 0.001294143472453992
+        },
+        "custom_cross": {
+          "mean": 0.807259961789547,
+          "sample_se": 0.002164366078474727
+        },
+        "initial_energy": {
+          "mean": 0.3399015412902301,
+          "sample_se": 0.0013471305190311264
+        },
+        "rooted_max_field": {
+          "mean": 0.7923030081440083,
+          "sample_se": 0.0014028750477235456
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.671661912243226,
+          "sample_se": 0.0040497300008582445
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.06",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 4.752682411820413,
+        "third_moment": 2.2034127655319335,
+        "fourth_moment": 9.524319548639108,
+        "positive_fraction": 0.4296875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3265728638932111,
+          "sample_se": 0.0009253023185045714
+        },
+        "custom_cross": {
+          "mean": 0.7857283378700791,
+          "sample_se": 0.0015036585124705245
+        },
+        "initial_energy": {
+          "mean": 0.3359035219830119,
+          "sample_se": 0.0009065254215225867
+        },
+        "rooted_max_field": {
+          "mean": 0.7790730585107277,
+          "sample_se": 0.0009375954084181536
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.4253226883328107,
+          "sample_se": 0.0022055189348850757
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.1",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.5420625655400393,
+        "third_moment": 1.5897742975046096,
+        "fourth_moment": 5.798639097278203,
+        "positive_fraction": 0.4140625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32869652604109517,
+          "sample_se": 0.0007117212779869278
+        },
+        "custom_cross": {
+          "mean": 0.7788874292942413,
+          "sample_se": 0.001112083649254114
+        },
+        "initial_energy": {
+          "mean": 0.337636217040909,
+          "sample_se": 0.0006739362829034748
+        },
+        "rooted_max_field": {
+          "mean": 0.7778702074935625,
+          "sample_se": 0.0006880251337748012
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.30541468970710095,
+          "sample_se": 0.0012567907992909841
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.1_noise_0.5",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.2528671714587314,
+        "third_moment": 1.0840858930243615,
+        "fourth_moment": 4.270460040920085,
+        "positive_fraction": 0.4453125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3304108574932503,
+          "sample_se": 0.0006490009992093409
+        },
+        "custom_cross": {
+          "mean": 0.7762398543207921,
+          "sample_se": 0.0010085907521144215
+        },
+        "initial_energy": {
+          "mean": 0.33668130954233455,
+          "sample_se": 0.0005960861330446533
+        },
+        "rooted_max_field": {
+          "mean": 0.7762846486083366,
+          "sample_se": 0.0005656401233737279
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.20677758564928983,
+          "sample_se": 0.0010562328990741973
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.1_noise_2",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.1458246467127893,
+        "third_moment": 0.13899880755273075,
+        "fourth_moment": 2.129161758323517,
+        "positive_fraction": 0.484375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3305748605712579,
+          "sample_se": 0.0004900225954160754
+        },
+        "custom_cross": {
+          "mean": 0.7744071326177945,
+          "sample_se": 0.0006744233505929528
+        },
+        "initial_energy": {
+          "mean": 0.3370513742792422,
+          "sample_se": 0.00039535789417147833
+        },
+        "rooted_max_field": {
+          "mean": 0.7751808256017907,
+          "sample_se": 0.0003336674595960167
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.028233239891384047,
+          "sample_se": 0.0005712383949649909
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.25",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.935926270744386,
+        "third_moment": 0.9685374026742118,
+        "fourth_moment": 3.4197873395746785,
+        "positive_fraction": 0.40625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3302353454273124,
+          "sample_se": 0.0005723775774423934
+        },
+        "custom_cross": {
+          "mean": 0.7761563295333859,
+          "sample_se": 0.0008442374078104427
+        },
+        "initial_energy": {
+          "mean": 0.33799595753864387,
+          "sample_se": 0.000506678647855322
+        },
+        "rooted_max_field": {
+          "mean": 0.7765657045328798,
+          "sample_se": 0.0004935327184146049
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.18631308186071735,
+          "sample_se": 0.0008509427209145304
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.5",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.595502667898549,
+        "third_moment": 0.6961731039917161,
+        "fourth_moment": 2.7344534689069366,
+        "positive_fraction": 0.4296875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3300111740374043,
+          "sample_se": 0.0005365131041645891
+        },
+        "custom_cross": {
+          "mean": 0.7739861236843127,
+          "sample_se": 0.0007713660142414904
+        },
+        "initial_energy": {
+          "mean": 0.33654007056545404,
+          "sample_se": 0.0004556944903940993
+        },
+        "rooted_max_field": {
+          "mean": 0.7752794634935755,
+          "sample_se": 0.00041846107107664876
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.13267180474011753,
+          "sample_se": 0.0006946816164524965
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.5_noise_0.5",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.5478984367963253,
+        "third_moment": 0.5448596047236647,
+        "fourth_moment": 2.571501643003289,
+        "positive_fraction": 0.453125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32987255843277263,
+          "sample_se": 0.0005226957633131005
+        },
+        "custom_cross": {
+          "mean": 0.7731531606828534,
+          "sample_se": 0.0007479759426659807
+        },
+        "initial_energy": {
+          "mean": 0.3362426140024011,
+          "sample_se": 0.00044026787947897694
+        },
+        "rooted_max_field": {
+          "mean": 0.7747146512080919,
+          "sample_se": 0.0003901887915766556
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.10321878137793845,
+          "sample_se": 0.0006660759695796536
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.5_noise_2",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.023367951649507,
+        "third_moment": 0.07008893689039605,
+        "fourth_moment": 2.051537603075206,
+        "positive_fraction": 0.4921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32996674595899667,
+          "sample_se": 0.00048399291941926613
+        },
+        "custom_cross": {
+          "mean": 0.7731898032694261,
+          "sample_se": 0.0006551337116670137
+        },
+        "initial_energy": {
+          "mean": 0.3365315234494175,
+          "sample_se": 0.00038427453569151376
+        },
+        "rooted_max_field": {
+          "mean": 0.7752079811668213,
+          "sample_se": 0.0003207067611548474
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.013168313190195334,
+          "sample_se": 0.0005400605196290889
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_1",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.421382336887037,
+        "third_moment": 0.5058194118389193,
+        "fourth_moment": 2.373969247938496,
+        "positive_fraction": 0.4375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32992020225780777,
+          "sample_se": 0.0005022277689088716
+        },
+        "custom_cross": {
+          "mean": 0.7737248019583646,
+          "sample_se": 0.0006957356717700507
+        },
+        "initial_energy": {
+          "mean": 0.33697394248544615,
+          "sample_se": 0.00041362184460991275
+        },
+        "rooted_max_field": {
+          "mean": 0.7752874590739273,
+          "sample_se": 0.00036691604784836775
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.09602507154708823,
+          "sample_se": 0.0006170183728863811
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_1_noise_0.5",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.3449184363151536,
+        "third_moment": 0.36577254541679927,
+        "fourth_moment": 2.2301754603509196,
+        "positive_fraction": 0.4609375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3299659843347954,
+          "sample_se": 0.0004916161699558897
+        },
+        "custom_cross": {
+          "mean": 0.77352517179272,
+          "sample_se": 0.0006789081081040808
+        },
+        "initial_energy": {
+          "mean": 0.33710629584664525,
+          "sample_se": 0.00040526320710606054
+        },
+        "rooted_max_field": {
+          "mean": 0.7751897603522886,
+          "sample_se": 0.00035181218281934334
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.06974421298321304,
+          "sample_se": 0.0005913324304969881
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_1_noise_2",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.0205609513421745,
+        "third_moment": 0.02633247909340107,
+        "fourth_moment": 1.983957467914937,
+        "positive_fraction": 0.5
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3302263751867196,
+          "sample_se": 0.0004759692778827836
+        },
+        "custom_cross": {
+          "mean": 0.7728966625768467,
+          "sample_se": 0.0006378680756283752
+        },
+        "initial_energy": {
+          "mean": 0.33643098905484947,
+          "sample_se": 0.0003799879820282947
+        },
+        "rooted_max_field": {
+          "mean": 0.7750339162033224,
+          "sample_se": 0.00031633612852767756
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.0046269516476474225,
+          "sample_se": 0.0005355865417121478
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_2",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.2128108220413005,
+        "third_moment": 0.35437490521219284,
+        "fourth_moment": 2.162176824353649,
+        "positive_fraction": 0.453125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.33028823599684537,
+          "sample_se": 0.0004904274679299124
+        },
+        "custom_cross": {
+          "mean": 0.7735527595137885,
+          "sample_se": 0.0006803096057407017
+        },
+        "initial_energy": {
+          "mean": 0.33689794931514133,
+          "sample_se": 0.0003996891186133121
+        },
+        "rooted_max_field": {
+          "mean": 0.7754805645490165,
+          "sample_se": 0.00034699156277757096
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.0676896893878223,
+          "sample_se": 0.0005692627634325271
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_4",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.18812732604819,
+        "third_moment": 0.25048606978399796,
+        "fourth_moment": 2.0848161696323384,
+        "positive_fraction": 0.46875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3305248472487076,
+          "sample_se": 0.0004881089714431312
+        },
+        "custom_cross": {
+          "mean": 0.7742115644478897,
+          "sample_se": 0.0006525292817526271
+        },
+        "initial_energy": {
+          "mean": 0.33696708786763474,
+          "sample_se": 0.0003896774882859989
+        },
+        "rooted_max_field": {
+          "mean": 0.7751578171205614,
+          "sample_se": 0.00032828288175232935
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.047945851343477064,
+          "sample_se": 0.0005591483876242521
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "planted_positive_clique_n_three_quarters",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.537062567606414,
+        "third_moment": 0.2764255268013792,
+        "fourth_moment": 2.8988157976315985,
+        "positive_fraction": 0.5
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3299696232059793,
+          "sample_se": 0.0005867907505372926
+        },
+        "custom_cross": {
+          "mean": 0.7757452217145206,
+          "sample_se": 0.0008570860795380309
+        },
+        "initial_energy": {
+          "mean": 0.3378192607239484,
+          "sample_se": 0.0004962429566465424
+        },
+        "rooted_max_field": {
+          "mean": 0.7761761406697305,
+          "sample_se": 0.00042760386852740275
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.05613441163101288,
+          "sample_se": 0.000983308402777795
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "planted_negative_clique_n_three_quarters",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.4366157323149418,
+        "third_moment": -0.2696131441503485,
+        "fourth_moment": 2.7781015562031164,
+        "positive_fraction": 0.5078125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.33080199383305997,
+          "sample_se": 0.0005665353397091738
+        },
+        "custom_cross": {
+          "mean": 0.7756663512972333,
+          "sample_se": 0.0008303102943875739
+        },
+        "initial_energy": {
+          "mean": 0.33759280446143636,
+          "sample_se": 0.0004801720539450855
+        },
+        "rooted_max_field": {
+          "mean": 0.7764719403180946,
+          "sample_se": 0.0004129237882692759
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.05476551906659074,
+          "sample_se": 0.000914035530984997
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "tensor_random_full_seed_8",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 1.6153968776708552,
+        "third_moment": -0.005240294346945659,
+        "fourth_moment": 1.6713373426746854,
+        "positive_fraction": 0.5
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3303286867044241,
+          "sample_se": 0.0004370268140806363
+        },
+        "custom_cross": {
+          "mean": 0.7729058020672621,
+          "sample_se": 0.0005498746172749069
+        },
+        "initial_energy": {
+          "mean": 0.33653685481882645,
+          "sample_se": 0.0003320537338082209
+        },
+        "rooted_max_field": {
+          "mean": 0.7749262120134761,
+          "sample_se": 0.0002770513981549125
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.00009571077462669555,
+          "sample_se": 0.00045312627205490143
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "tensor_random_full_seed_2",
+      "order": 128,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 1.5085060660073961,
+        "third_moment": -0.08803694502868578,
+        "fourth_moment": 2.015562031124063,
+        "positive_fraction": 0.28125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3068965565280454,
+          "sample_se": 0.000684845338698715
+        },
+        "custom_cross": {
+          "mean": 0.7835340139212994,
+          "sample_se": 0.0007799968630120416
+        },
+        "initial_energy": {
+          "mean": 0.3344486505087573,
+          "sample_se": 0.00047621945258550065
+        },
+        "rooted_max_field": {
+          "mean": 0.7845492034840293,
+          "sample_se": 0.00039542171416476955
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.010257470117839484,
+          "sample_se": 0.0007013733991837092
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "random",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 1.938327842905611,
+        "third_moment": -0.003384373926084594,
+        "fourth_moment": 1.9805055747789329,
+        "positive_fraction": 0.5
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3231039840531575,
+          "sample_se": 0.0003503831123677456
+        },
+        "custom_cross": {
+          "mean": 0.7734978364406355,
+          "sample_se": 0.00044023808081229416
+        },
+        "initial_energy": {
+          "mean": 0.33690951187001045,
+          "sample_se": 0.0002662750977137
+        },
+        "rooted_max_field": {
+          "mean": 0.7728224542009134,
+          "sample_se": 0.00022027781962757277
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.0006907078779740612,
+          "sample_se": 0.00040050623062031496
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.03",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 5.6921951660285135,
+        "third_moment": 3.0384540741162733,
+        "fourth_moment": 16.047045367166483,
+        "positive_fraction": 0.44921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.320921405685734,
+          "sample_se": 0.0008234885971819488
+        },
+        "custom_cross": {
+          "mean": 0.7847640400935945,
+          "sample_se": 0.0013004039639977424
+        },
+        "initial_energy": {
+          "mean": 0.33784695872147025,
+          "sample_se": 0.0008174179727402073
+        },
+        "rooted_max_field": {
+          "mean": 0.7776086240447733,
+          "sample_se": 0.0008761972491820795
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.6262455817650598,
+          "sample_se": 0.0023725994013986357
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.06",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 4.649409431762039,
+        "third_moment": 2.190748985963506,
+        "fourth_moment": 9.380963091118794,
+        "positive_fraction": 0.42578125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32034999130879765,
+          "sample_se": 0.0006310716096512675
+        },
+        "custom_cross": {
+          "mean": 0.775986218248392,
+          "sample_se": 0.0009778330060300502
+        },
+        "initial_energy": {
+          "mean": 0.3371113403489878,
+          "sample_se": 0.0006159808258634805
+        },
+        "rooted_max_field": {
+          "mean": 0.7746097181848993,
+          "sample_se": 0.0006547348170963387
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.4474030344224098,
+          "sample_se": 0.0015176904876316292
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.1",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 4.054367901673797,
+        "third_moment": 1.6323042652075768,
+        "fourth_moment": 6.166703191080365,
+        "positive_fraction": 0.421875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3218480131026813,
+          "sample_se": 0.0005165253749352353
+        },
+        "custom_cross": {
+          "mean": 0.7758761815647062,
+          "sample_se": 0.0007903148995832197
+        },
+        "initial_energy": {
+          "mean": 0.3376915337720579,
+          "sample_se": 0.0004885035047979098
+        },
+        "rooted_max_field": {
+          "mean": 0.7739953034052842,
+          "sample_se": 0.0005023860000246476
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.33351787371359504,
+          "sample_se": 0.0010645991142961984
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.1_noise_0.5",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.736089384058867,
+        "third_moment": 1.1403728524275603,
+        "fourth_moment": 4.571214917339488,
+        "positive_fraction": 0.44140625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32276279568197896,
+          "sample_se": 0.0004804353715838813
+        },
+        "custom_cross": {
+          "mean": 0.7754368709295952,
+          "sample_se": 0.0007145602412577213
+        },
+        "initial_energy": {
+          "mean": 0.33689482040505153,
+          "sample_se": 0.0004341106138381961
+        },
+        "rooted_max_field": {
+          "mean": 0.7739112562860367,
+          "sample_se": 0.0004141682902233704
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.2336847409095099,
+          "sample_se": 0.0008849239712678034
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.1_noise_2",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.3002032549324793,
+        "third_moment": 0.12420882538251365,
+        "fourth_moment": 2.138806228373701,
+        "positive_fraction": 0.4921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32249431811806617,
+          "sample_se": 0.0003607921864125606
+        },
+        "custom_cross": {
+          "mean": 0.7732893490253048,
+          "sample_se": 0.0004678853763824677
+        },
+        "initial_energy": {
+          "mean": 0.3366578757415383,
+          "sample_se": 0.0002814409262160625
+        },
+        "rooted_max_field": {
+          "mean": 0.7726853384167368,
+          "sample_se": 0.00023626812205927977
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.024973519623775836,
+          "sample_se": 0.00043574597008786043
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.25",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 3.418306806069862,
+        "third_moment": 1.0220118568220913,
+        "fourth_moment": 3.6957881584006174,
+        "positive_fraction": 0.4140625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32264851877873196,
+          "sample_se": 0.0004274317521260472
+        },
+        "custom_cross": {
+          "mean": 0.7738951032085477,
+          "sample_se": 0.0006098629809328421
+        },
+        "initial_energy": {
+          "mean": 0.33714806901138494,
+          "sample_se": 0.0003781110612169416
+        },
+        "rooted_max_field": {
+          "mean": 0.7734264722751839,
+          "sample_se": 0.00036568083671480634
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.2087432020966505,
+          "sample_se": 0.0007058382107003924
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_0.5",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.713540885323039,
+        "third_moment": 0.691655520322798,
+        "fourth_moment": 2.723933102652829,
+        "positive_fraction": 0.42578125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3226027721845917,
+          "sample_se": 0.000379968071476078
+        },
+        "custom_cross": {
+          "mean": 0.7741650738075169,
+          "sample_se": 0.0005131669699035789
+        },
+        "initial_energy": {
+          "mean": 0.3373321005124853,
+          "sample_se": 0.0003133639091270324
+        },
+        "rooted_max_field": {
+          "mean": 0.7734342831970995,
+          "sample_se": 0.00029098931935663696
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.14113451366966168,
+          "sample_se": 0.0005297577986691009
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.5_noise_0.5",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.6168143716889896,
+        "third_moment": 0.5002657213598982,
+        "fourth_moment": 2.4795136485966935,
+        "positive_fraction": 0.44921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3227408779273452,
+          "sample_se": 0.00037576182196359144
+        },
+        "custom_cross": {
+          "mean": 0.7740183681828362,
+          "sample_se": 0.00049393495026074
+        },
+        "initial_energy": {
+          "mean": 0.3372514168980163,
+          "sample_se": 0.00030266510043228356
+        },
+        "rooted_max_field": {
+          "mean": 0.7733739016972868,
+          "sample_se": 0.00026636527133474413
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.10199958639289543,
+          "sample_se": 0.0004889108066901963
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_0.5_noise_2",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.0555496465169387,
+        "third_moment": 0.06665144568718762,
+        "fourth_moment": 2.0378143021914643,
+        "positive_fraction": 0.4921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3223934486696292,
+          "sample_se": 0.00034420072798849177
+        },
+        "custom_cross": {
+          "mean": 0.7730570626311688,
+          "sample_se": 0.00044849613918934744
+        },
+        "initial_energy": {
+          "mean": 0.33670275637534547,
+          "sample_se": 0.00027030920332748006
+        },
+        "rooted_max_field": {
+          "mean": 0.7727520888646099,
+          "sample_se": 0.00022768580581871548
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.013802989657256412,
+          "sample_se": 0.0004089280766292122
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_1",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.556164705373042,
+        "third_moment": 0.5252226011957906,
+        "fourth_moment": 2.424342560553632,
+        "positive_fraction": 0.44140625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32243298423793304,
+          "sample_se": 0.00036747252040599134
+        },
+        "custom_cross": {
+          "mean": 0.7733401420779368,
+          "sample_se": 0.000489646783381561
+        },
+        "initial_energy": {
+          "mean": 0.3368660346891566,
+          "sample_se": 0.00029724728202887036
+        },
+        "rooted_max_field": {
+          "mean": 0.7731364697428676,
+          "sample_se": 0.0002663093852615917
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.10695081910893697,
+          "sample_se": 0.00047952199610043684
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_1_noise_0.5",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.4164019220760733,
+        "third_moment": 0.36802188577191586,
+        "fourth_moment": 2.262239523260284,
+        "positive_fraction": 0.4609375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32179339788030364,
+          "sample_se": 0.0003672146523503575
+        },
+        "custom_cross": {
+          "mean": 0.7730866844466955,
+          "sample_se": 0.00048007085898366515
+        },
+        "initial_energy": {
+          "mean": 0.3364873114166501,
+          "sample_se": 0.0002901941686197383
+        },
+        "rooted_max_field": {
+          "mean": 0.7727915489342728,
+          "sample_se": 0.00024890406881983345
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.07465351462106931,
+          "sample_se": 0.0004596848718073234
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_ratio_1_noise_2",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.0509895758889116,
+        "third_moment": 0.04869354322224706,
+        "fourth_moment": 2.009552095347942,
+        "positive_fraction": 0.4921875
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32290170766366294,
+          "sample_se": 0.0003469231483572755
+        },
+        "custom_cross": {
+          "mean": 0.7737559523412543,
+          "sample_se": 0.0004423739649302106
+        },
+        "initial_energy": {
+          "mean": 0.3374045425734411,
+          "sample_se": 0.00027070541972237436
+        },
+        "rooted_max_field": {
+          "mean": 0.7731091063023945,
+          "sample_se": 0.000223307733983206
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.010050604370418206,
+          "sample_se": 0.0004057537714997348
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_2",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.3642814029219834,
+        "third_moment": 0.35335626542554643,
+        "fourth_moment": 2.206270665128798,
+        "positive_fraction": 0.4609375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.322043093063202,
+          "sample_se": 0.0003583932051466557
+        },
+        "custom_cross": {
+          "mean": 0.772837108706602,
+          "sample_se": 0.0004552382208305976
+        },
+        "initial_energy": {
+          "mean": 0.33662801504040235,
+          "sample_se": 0.00027705767718362817
+        },
+        "rooted_max_field": {
+          "mean": 0.7727107682120471,
+          "sample_se": 0.0002416719944139332
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.07206065022003849,
+          "sample_se": 0.0004453747336466975
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "sign_gram_rank_ratio_4",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 2.2279367044084375,
+        "third_moment": 0.25923843814774994,
+        "fourth_moment": 2.0976778162245298,
+        "positive_fraction": 0.46484375
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3227769197936161,
+          "sample_se": 0.00035187799819250804
+        },
+        "custom_cross": {
+          "mean": 0.773026963044424,
+          "sample_se": 0.00044624638185716077
+        },
+        "initial_energy": {
+          "mean": 0.33671147570007726,
+          "sample_se": 0.00027254253613540785
+        },
+        "rooted_max_field": {
+          "mean": 0.772573180179936,
+          "sample_se": 0.00023143168014991375
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.05217411005966793,
+          "sample_se": 0.000427050585753234
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "planted_positive_clique_n_three_quarters",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 4.150222798335655,
+        "third_moment": 0.2297920826956199,
+        "fourth_moment": 2.91436178392925,
+        "positive_fraction": 0.5
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3229183400741957,
+          "sample_se": 0.0004127327252043823
+        },
+        "custom_cross": {
+          "mean": 0.774266689773482,
+          "sample_se": 0.0005828567710242007
+        },
+        "initial_energy": {
+          "mean": 0.3366932308116832,
+          "sample_se": 0.00034587327526833554
+        },
+        "rooted_max_field": {
+          "mean": 0.7730428163551559,
+          "sample_se": 0.00029626426098232285
+        },
+        "unoriented_custom_energy": {
+          "mean": 0.04763570153682996,
+          "sample_se": 0.0008261023592537804
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "planted_negative_clique_n_three_quarters",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 4.154797166866372,
+        "third_moment": -0.2417179717684934,
+        "fourth_moment": 2.9428046905036545,
+        "positive_fraction": 0.50390625
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.32187025932502744,
+          "sample_se": 0.0004177812803038567
+        },
+        "custom_cross": {
+          "mean": 0.7735743694176468,
+          "sample_se": 0.0005824392140433312
+        },
+        "initial_energy": {
+          "mean": 0.33644054955867136,
+          "sample_se": 0.00034991737951021356
+        },
+        "rooted_max_field": {
+          "mean": 0.7734524375855563,
+          "sample_se": 0.0003014721126384131
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.05182608358792926,
+          "sample_se": 0.0008444079571067745
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    },
+    {
+      "model": "regular_hadamard",
+      "order": 256,
+      "samples": 8192,
+      "threshold": "7/8",
+      "a": 0.544109996757087,
+      "spectral": {
+        "op": 1.0645812948447568,
+        "third_moment": -0.1252448582170299,
+        "fourth_moment": 1.0156862745098045,
+        "positive_fraction": 0.53125
+      },
+      "estimates": {
+        "oriented_custom_energy": {
+          "mean": 0.3218862945215373,
+          "sample_se": 0.0002353974330589825
+        },
+        "custom_cross": {
+          "mean": 0.7722386703951375,
+          "sample_se": 0.00012145082232558805
+        },
+        "initial_energy": {
+          "mean": 0.3353740447569023,
+          "sample_se": 0.00010870730920912426
+        },
+        "rooted_max_field": {
+          "mean": 0.772165074661768,
+          "sample_se": 0.00010470381888623477
+        },
+        "unoriented_custom_energy": {
+          "mean": -0.025446513129768183,
+          "sample_se": 0.00023874320576548955
+        }
+      },
+      "classification": "finite Monte Carlo falsification diagnostic only"
+    }
+  ]
+}

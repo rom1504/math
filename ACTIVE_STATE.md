@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.2, active 2026-09-05 campaign;
-rooted-response theorem independently audited. Use the ledger for archive
+Evidence cutoff: ledger Section 10.147.3, active 2026-09-05 campaign;
+second-response theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
 ## Exact problem and verified frontier
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.3396496212118657\le\liminf_n M_n/n^{3/2}
+0.3857858769087784\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -26,8 +26,9 @@ The fresh verification script does not rerun those solvers.
 
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
-See [rooted Gaussian proof](artifacts/fresh_limit_rooted_gaussian_2026_09_05.md)
-and its two linked independent audits. The upper bound is unchanged.
+See [optimized second-response proof](artifacts/fresh_limit_response_variational_2026_09_05.md)
+and the two linked independent audits of its underlying energy identity.
+The upper bound is unchanged.
 
 For N=binom(n,2), let C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates.
 Then Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension
@@ -136,9 +137,13 @@ The latest user authorized six substantive hours starting 18:29 UTC on
   every bounded-normalized-cap sequence. Explicit chaos contractions and
   endpoint-spin transport avoid assuming generic AMP universality.
 
-The active mathematical target is the oriented energy of a second rooted
-response. Its proposed formula is under independent proof and counterexample
-audit; no unverified numerical improvement is part of the frontier.
+The second-response energy formula is now independently verified. Collective
+indirect-path control uses the actual bilinear cap and maximal spin influence,
+not termwise cancellation. Optimizing its smooth first mask proves the
+displayed bound. A six-vertex counterexample rules out exact finite-rule
+positivity but does not contradict the smoothed asymptotic theorem.
+The active target is richer joint response rounding and its quantitative
+ceiling; no unverified numerical improvement is part of the frontier.
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).

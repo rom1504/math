@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.2;
-universal rooted-response lower bound independently audited.
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.3;
+optimized second-response lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
 convergence and nonconvergence remain open.
@@ -31,13 +31,14 @@ All mathematical judgments below belong to the agent.
 
 ## Active independent assessment, 2026-09-05
 
-A universal rooted Gaussian theorem and paired Boolean rounding improve
-the original lower bound to 0.3396496212118657. The proof uses only a
-bounded normalized cap, not conference structure or generic AMP universality.
-Two independent agents and the director checked the contractions, transfer,
-quantifiers, and exact numerical interval certificate. The active target is
-the oriented energy of a second rooted response; its stronger proposed
-formula is still under proof audit and adversarial finite testing.
+A universal rooted Gaussian theorem, collective indirect-path control, and
+optimized smooth-mask rounding improve the lower bound to 0.3857858769087784.
+The proofs use only a bounded normalized cap, not conference structure or
+generic AMP universality. Two independent agents and the director checked
+the identities, contractions, limiting quantifiers, and exact interval
+certificate. The active target is richer joint response rounding and a
+precise understanding of its ceiling. A finite six-vertex negative response
+does not contradict the smooth-then-large-order theorem.
 Polar/nuclear and Hadamard-regularized results remain verified alternatives.
 The entropy audit also reopened a legitimate sufficient route: ordinary
 n^-2 log(1+good-signing count) limits at dense thresholds imply convergence.
@@ -47,7 +48,7 @@ See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 ## Agent-authored rigorous frontier
 
 ```math
-0.3396496212118657
+0.3857858769087784
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
