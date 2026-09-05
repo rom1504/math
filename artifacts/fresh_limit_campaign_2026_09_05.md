@@ -330,3 +330,43 @@ paired-certificate ceiling remains below 1/2. Work continues in parallel on
 a rigorously controlled mask improvement and on new unmarked internal-tree
 fields that can see the quadratic energy discarded by pairing. These new
 fields are not yet a universal theorem. The original question is open.
+
+## A certified two-field improvement and a sharp scope limit (21:55 UTC)
+
+The original lower endpoint is now
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4297864507376280.
+```
+
+A fixed two-field mask is evaluated through an exact regression identity
+and a convexity minorant. Its one-dimensional integrals are enclosed by
+rational midpoint intervals with explicit second-derivative errors and
+separate treatment of the threshold-crossing bin. The complete lower-value
+enclosure is
+
+```math
+[0.429786450737628041355434677764144259463671564581969931627991,
+ 0.429787953860539027972266545724508214067476532943989947373807].
+```
+
+[Proof, numerical diagnostic, and exact certificate](fresh_limit_gaussian_mask_ascent_2026_09_05.md).
+The independent variational audit and the director's full reconstruction
+and rerun agree. No numerical search optimum is being treated as a theorem.
+
+There is also a new uniform obstruction inside this method. Projection
+onto finite tree heights gives an exact probability-generating-function
+identity, hence a positive residual for every supercritical scalar Gaussian
+fixed-point equation. Quantitative rearrangement stability turns it into
+the certified method ceiling
+
+```math
+\sup_{0\le H\le1} E|\mathcal U H|(1-H)<0.4495.
+```
+
+[Height theorem](fresh_limit_tree_height_defect_2026_09_05.md) and
+[quantitative proof](fresh_tree_height_quantitative_ceiling_2026_09_05.md).
+This is not an upper bound on M_n, nor on all output energies or signed-mask
+extensions. It prevents silently claiming that more iterations of this
+one mechanism reach 1/2. Work continues on the discarded energy and on
+consequences of the improved bound for actual optimizing signings.

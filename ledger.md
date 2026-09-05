@@ -44669,3 +44669,24 @@ contraction and finite Hermite arithmetic. The exact computation was rerun.
 [Anchored theorem](artifacts/fresh_anchored_fixed_point_independent_2026_09_05.md)
 and [continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
 Updated frontier: [0.4283764176561877,1/2]. Convergence is still open.
+
+#### 10.147.6 Two-field mask: lower bound above 0.42978
+
+**Proved and independently audited, including an exact integral certificate:**
+
+```math
+\liminf_n M_n/n^{3/2}\ge0.4297864507376280.
+```
+
+The fixed mask's convexity/regression certificate reduces to finite scalar
+integrals. Exact rational midpoint enclosures certify all derivative errors
+and the threshold-crossing bin; the lower endpoint is
+0.429786450737628041355434677764144259463671564581969931627991.
+The director independently read and reran the full certificate after a
+separate mathematical audit. [Proof and computation](artifacts/fresh_limit_gaussian_mask_ascent_2026_09_05.md).
+
+A separate tree-height residual theorem and quantitative rearrangement
+argument prove that this nonnegative-mask certificate family is uniformly
+bounded below 0.4495. This is a method ceiling, NOT a bound on the original
+optimum. [Precise scope and certificate](artifacts/fresh_tree_height_quantitative_ceiling_2026_09_05.md).
+Updated frontier: [0.4297864507376280,1/2]. The campaign continues.
