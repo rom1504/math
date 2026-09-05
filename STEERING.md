@@ -1,139 +1,120 @@
 # Strategic steering
 
-Evidence cutoff: blank-slate direct campaign, ledger Section 10.145
-(2026-08-21), started from commit `b5ec773`.
+Evidence cutoff: 2026-09-05 campaign, ledger Section 10.146; audited base
+commit 4fcbc875c5b3c407a4534d9c644fa99889e6f738.
 
-Status: **blank-slate campaign complete with a strike; no architecture is
-authorized to continue automatically**.
+Status: **campaign concluded; verified results consolidated in this
+checkpoint; convergence and nonconvergence remain open**.
 
 ## User-stated objective and workflow directives
 
-Determine whether `M_n/n^(3/2)` converges.  Convergence to any constant is
-success; `1/2` is conjectural but is not the objective.  A rigorous proof of
-nonconvergence is also success.
+Determine whether M_n/n^(3/2) converges, without presuming either answer.
+Convergence to any constant or rigorous nonconvergence is success.
 
-The user explicitly authorized one four-to-six-hour blank-slate campaign on
-the original problem.  It had to derive three to five genuinely different
-architectures from first principles, use archived no-go results only after
-freezing them, attack the best route with parallel falsification, and avoid
-the frozen composition, pressure, restriction, transport, posterior-state,
-and sparse-repair branches unless independently revived.  Success required a
-new asymptotic statement, a strict simpler reduction, or a genuinely new
-architecture surviving serious falsification.  The README verification,
-Git, consolidation, and blank-slate rules remain in force.  These are workflow
-directives only; all mathematical judgments below are agent-authored.
+The user authorized a fresh six-hour campaign, three parallel researchers,
+reconstruction of the current frontier, primary-literature retrieval, exact
+verification, and hourly substantive checkpoints. The user then explicitly
+requested publication and a normal commit/push attempt after changing
+permissions. The attempt remained blocked by the local read-only sandbox;
+write access has since been enabled, and this consolidated publication
+uses the normal local commit and push workflow.
+No new autonomous campaign is authorized by the publication request.
+
+The README's verification, stopping, and blank-slate rules remain in force.
+All mathematical judgments below belong to the agent.
 
 ## Agent-authored rigorous frontier
 
 ```math
 0.336493364431\ldots
-\le \liminf_{n\to\infty}{M_n\over n^{3/2}}
-\le \limsup_{n\to\infty}{M_n\over n^{3/2}}
-\le {1\over2}.
+\le\liminf_n M_n/n^{3/2}
+\le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-The interval is unchanged.  The campaign proved new radial-moment,
-rectangular, and covering-multiplicity theorems, but none supplies a strict
-reduction of convergence.
+The interval is unchanged. Exact recorded values for n=3,...,14 are
+(3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
+bounds are solver-certified, not standalone formal proof certificates.
 
-## Blank-slate abstraction audit
+## Strongest quantitative result of the new campaign
 
-Four candidates were frozen before archive comparison.
+For mu_r=E|sum_{j=1}^r epsilon_j|, all n,r>=1 satisfy
 
-1. **Radial moment geometry.**  Minimize the smallest central support cap
-   matching the first `d` even Krawtchouk coordinates of the augmented
-   cut-code coset.  A squared Chebyshev polynomial proves, uniformly in `A`,
+```math
+M_{n+r}\le M_n+M_r+
+\min\left\{
+n\mu_r+\sqrt{2nr(r-1)\log2},
+r\mu_n+\sqrt{2nr(n-1)\log2}
+\right\}.
+```
 
-   ```math
-   Q(A)\operatorname{sech}\!\left(
-   {\operatorname{arcosh}(2^{(n-1)/2})\over d}
-   \right)\le L_d(A)\le Q(A).
-   ```
+Moreover min_B ||B||_(infinity->1)=n mu_r(1+O(sqrt(r/n))) for r=o(n).
+When also r->infinity, the completion remainder is
+(sqrt(2/pi)+o(1))n sqrt(r), improving the archived iid coefficient.
+Qualitative near-order continuity was already known. This is not a
+comparable-order recurrence or Level-6 progress.
 
-   At `d=alpha n` the relative error is `O(alpha^(-2))`.  This is an exact
-   finite LP interface, but the required large-`alpha` oscillation theorem is
-   equivalent by this sandwich to convergence itself.  The state contains
-   the archived linear-degree signed-Eulerian cancellation problem.
+## Proof obligations and current judgment
 
-2. **Microcanonical cut-code coverage.**  Work directly with the multiplicity
-   `Z_r(b)` of augmented cuts in a Hamming ball.  The exact partial
-   inclusion--exclusion identity shows that below the elementary sphere
-   constant every useful odd Bonferroni truncation needs exponentially many
-   terms; an even coverage certificate needs `2^(n-O(sqrt(n)))` terms.  Its
-   affine center rank is then linear, exposing essentially the full coset
-   profile.  A pair saddle changes stability at normalized score `1/2`, but
-   does not decide whether any hole exists.
+No leading architecture earned unrestricted revival. The precise sufficient
+cross-order target remains a bound on exact minimizing children and some
+sign bridge of the form
 
-3. **Rectangular Banach projection.**  The exact fixed-width minimum is
-   `m E|sum_{j<=k} epsilon_j|+O(k2^k)`.  A new degree-two Fourier correction
-   detects squared column correlations.  Eigenvector product rounding proves
-   that this correction is `O(n^(-1/3))` on every signing with
-   `Q(A)=O(n^(3/2))`; it therefore vanishes on the minimization-relevant
-   branch and leaves a constant below the known frontier.
+```math
+Q\!\begin{pmatrix}A&B\\B^{\mathsf T}&D\end{pmatrix}^{2/3}
+\le M_m^{2/3}+M_n^{2/3}+K(m+n)^{1-\delta}
+```
 
-4. **Exact-minimizer stationarity.**  Edge flips force light/heavy cut
-   witnesses, but a scalable signing with cap `n^2/4` is one-edge locally
-   minimal.  An order-eight cap-12 signing is stable under every one- and
-   two-edge flip although the exact optimum is 10.  Bounded local
-   stationarity cannot characterize minimizers.
+for fixed delta>0, uniformly for all large m,n with 1/2<=m/n<=2.
+Balanced merge trees make its normalized defect geometrically summable.
+This lemma is sufficient but not demonstrated to be simpler than the
+original optimization. The mesoscopic theorem does not prove it.
 
-The archive comparison found genuine new statements in all four calculations,
-but it maps their unresolved obligations to signed high-moment cancellation,
-full coset multiplicity, flat-spectrum Boolean resonance, or global
-optimization.  No candidate passes the campaign's strict-reduction test.
+The exact reversal identity puts |H_A+H_D| and |x^TBy| under one maximum
+as two nonnegative summands. A successful bridge argument must control
+their joint large-value locations; signed cancellation cannot evade that
+identity. Separately paid bridges have the archived positive linear
+b-scale certificate floor.
 
-## Strongest surviving architecture and exact target
+## New obstructions and their exact scope
 
-The only route not closed by its first quantitative test is **direct
-augmented-cut-code coverage**, provided it is nonperturbative rather than a
-raw finite-replica expansion.  No strictly smaller convergence lemma was
-identified.  The exact remaining statement suggested by the pair transition
-is:
+1. Translation-invariant pseudometrics retaining the normalized coset
+   deficit with a global uniform continuity modulus require
+   exp((log2/2+o(1))n^2) covering states. This does not exclude exact-minimizer
+   states, nontranslation metrics, or physical-context limit objects.
+2. Deep leader supports contain isometric cubes. They give
+   exp((1/2+o(1))n^(3/2)) orbit classes of o(1)-near minimizers, but their
+   separation vanishes. This does not disprove compactness of shrinking
+   halos at fixed resolution.
+3. General low-rate codes can share both weight enumerators while their
+   N^(3/4) covering deficits differ. The counterexample dimension is
+   Theta(N^(3/4)), not the cut code's Theta(sqrt(N)).
+4. Arbitrary translated-coset queries are stronger than one-sided disjoint
+   physical continuations. The latter's exact compiler is archived and
+   has quadratic calibration; it is not a low-cap construction.
+5. Local-profile, algebraic-family, Gibbs, and action-recovery obstructions
+   retain their stated hypotheses. No universal impossibility is inferred.
 
-> For every fixed `epsilon>0`, prove
-> `F_{n,1/2-epsilon}(1)=Pr_b{Z_r(b)=0}=0` for every sufficiently large `n` by
-> a nonperturbative covering/isoperimetric argument.
+## Literature and ranked alternatives
 
-This would attack the absolute quadratic optimum directly and is independent
-of the frozen bridge/pressure machinery.  With the known upper bound it is
-equivalent to convergence to `1/2`, so it is a conditional research direction,
-not a class-A route.  The smaller first milestone is uniform coverage for one
-fixed `c>0.336493364431...`, which would improve the lower frontier.
+The exact code is P_(2,n)=RM(1,n) punctured to the weight-two slice,
+including the affine constant. This locates the problem in restricted
+nonlinearity literature, but no imported theorem improves the frontier.
 
-## Strongest current obstructions
-
-1. Linear-degree Krawtchouk moments approximate the maximum uniformly but
-   retain exponential signed-Eulerian cancellation.
-2. Direct Bonferroni needs exponentially many centers; full factorial moments
-   invert to the full coset-multiplicity histogram.
-3. Pair/finite-replica overlap data controls typical multiplicity, not the
-   existence of a worst uncovered word.
-4. Rectangular scalar projections top out below the rigorous lower frontier,
-   and their spectral covariance gain vanishes on competitive signings.
-5. One-edge and radius-two stationarity permit macroscopically or finitely
-   suboptimal signings.
-6. The earlier action-recovery, finite-temperature, bridge, local-profile,
-   and bounded-state routes remain frozen under their recorded no-go results.
-
-## Ranked alternatives and restart conditions
-
-1. **Worst-coset cut-code isoperimetry.**  Resume only with a theorem or
-   primary-source mechanism that bypasses factorial-moment truncation and
-   stores less than a linear-rank center profile.
-2. **External direct variational theorem.**  A Γ-limit, coding-radius, or
-   extremal-geometric theorem must verify exact signs and all orders and give
-   a strict reduction, not another compactness restatement.
-3. **Genuine nonconvergence.**  Still requires two infinite order sequences
-   with fixed normalized separation; arithmetic examples alone do not count.
-4. **Frozen architectures.**  Reopen one only after a new ingredient proves a
-   quantitative implication that escapes its specific archived obstruction.
+1. Nonperturbative covering for this specific code remains a possible
+   direction, with no established smaller missing lemma. Generic radial
+   or finite-replica reformulations do not justify resumption.
+2. A minimizer-specific nontranslation variational state remains logically
+   possible, but needs both continuity and all-order recovery.
+3. A joint comparable-order bridge inequality remains open; the new
+   rectangular bound supplies only a mesoscopic module.
+4. Nonconvergence requires fixed positive separation of two infinite
+   order subsequences, not an obstruction to an intermediate method.
 
 ## Decision and next refresh
 
-The campaign is a **STRIKE**: it produced rigorous local mathematics and an
-exponential obstruction to raw Bonferroni truncation, but no improved bound,
-strict reduction, or surviving class-A architecture.  Do not continue
-automatically.  Refresh steering
-immediately after a new user-authorized campaign or a decisive imported
-theorem/counterexample.  If ordinary numbered waves ever resume, Wave 61
-remains the next scheduled blank-slate boundary.
+Record the new quantitative theorem and scoped obstructions without claiming
+a convergence breakthrough. No further wave starts as part of this push.
+Refresh upon a new authorized campaign or a decisive proof/counterexample.
+If numbered waves resume, Wave 61 remains the next scheduled blank-slate
+boundary. Detailed proofs, limitations, and reproducible checks are in the
+two 2026-09-05 artifacts and ledger Section 10.146.

@@ -89,9 +89,11 @@ E^{\rm sep}_{n,n}\ge
 =(0.218646\ldots+o(1))n.}                              \tag{1.5}
 ```
 
-This is `0.109323...` times the parent order.  Hence cancellation between
-the bridge and the two child energies must occur **before** the absolute
-values in (1.1); a scalar bridge norm cannot prove `E_N=o(N)`.
+This is `0.109323...` times the parent order. A useful joint bound must
+instead control **anti-alignment of large values** of the two nonnegative
+summands under the common maximum in (1.1).
+Signed cancellation between them cannot help: global child reversal removes
+it exactly. A scalar bridge norm cannot prove `E_N=o(N)`.
 
 ## 2. Independent-edge softmax annealing
 

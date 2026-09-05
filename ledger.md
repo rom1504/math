@@ -44346,3 +44346,154 @@ With the known upper bound, (10.1715) is equivalent to convergence to `1/2`,
 not a strict reduction.  Uniform coverage for just one fixed
 `c>0.336493364431...` is the smaller discriminating milestone and would
 improve the lower frontier.  The rigorous frontier remains exactly (10.1706).
+
+
+### 10.146 Six-hour re-audit: mesoscopic completion and critical-scale code geometry
+
+The user authorized a new six-hour convergence/nonconvergence campaign with
+three parallel researchers, an audit through the current head, independent
+verification, primary literature, and substantive checkpoints. The audited
+head was 4fcbc875c5b3c407a4534d9c644fa99889e6f738, newer than the previously
+reported 96f49182cc559b232b13188ceeec11ed76b88129.
+
+The filesystem blocked writes during the campaign and again during the
+subsequent requested normal push attempt. This is a retrospective consolidated
+publication after local write access was enabled, not a reconstruction of
+nonexistent hourly commits. The session's reported 6h 15s elapsed includes
+idle waits and should not be represented as a measured six hours of active
+research. The user subsequently explicitly requested this update be pushed.
+
+#### 10.146.1 Verified mesoscopic completion theorem
+
+Let mu_r=E|sum_{j=1}^r epsilon_j|. For every n,r>=1,
+
+```math
+M_{n+r}\le M_n+M_r+
+\min\left\{
+n\mu_r+\sqrt{2nr(r-1)\log2},
+r\mu_n+\sqrt{2nr(n-1)\log2}
+\right\}.                                                   \tag{10.1716}
+```
+
+The proof uses exact optimizing children, a random rectangular bridge, the
+bounded-difference exponential-moment inequality, and 2^(r-1) antipodal
+query classes. Every sign bridge has norm at least n mu_r. Consequently
+
+```math
+R_{n,r}=n\mu_r(1+O(\sqrt{r/n}))\quad(r=o(n)),                  \tag{10.1717}
+```
+
+and, when also r->infinity,
+
+```math
+M_{n+r}\le M_n+(\sqrt{2/\pi}+o(1))n\sqrt r.                   \tag{10.1718}
+```
+
+The new quantitative information is the coefficient, improved from the
+archived iid-completion coefficient sqrt(2 log2). Near-order continuity was
+already known. The finite-width deterministic construction can remain better
+for tiny or specially divisible widths. The exponent is unchanged.
+
+Proof: [mesoscopic completion](artifacts/mesoscopic_completion_2026_09_05.md).
+All asymptotic and finite statements were independently audited before
+publication. The accompanying script checks tiny rectangular minima exactly;
+numeric square-root/log evaluations are explicitly not formal certificates.
+
+#### 10.146.2 Exact bridge identity and scope correction
+
+For every block signing,
+
+```math
+Q\!\begin{pmatrix}A&B\\B^{\mathsf T}&D\end{pmatrix}
+=\max_{x,y}(|H_A(x)+H_D(y)|+|x^{\mathsf T}By|).              \tag{10.1719}
+```
+
+Global reversal of the second child proves this identity. The archived
+wording about cancellation "before absolute values" was misleading:
+a useful joint bound must control anti-alignment of the large values of
+these two nonnegative summands. Their signed cancellation cannot help.
+
+The separately paid equal-split certificate still has a positive linear
+b-scale floor. Formula (10.1716) gives no sublinear comparable-split defect.
+No former local-profile, action, algebraic-family, or Gibbs obstruction has
+been extended beyond its verified hypotheses.
+
+#### 10.146.3 Verified geometric obstructions
+
+For a binary code C of length N and dimension k, put
+X=F_2^N/C, r(x)=d(x,0), and Phi(x)=(N-2r(x))/a. Then
+
+```math
+\sup_z|\Phi(x+z)-\Phi(y+z)|=2d(x,y)/a.                       \tag{10.1720}
+```
+
+If a translation-invariant pseudometric delta admits a common continuity
+modulus omega for Phi on the entire quotient, its eta-covering number is
+at least 2^(N-k)/V_N(floor(a omega(eta)/2)). For k=o(N), a=o(N), this has
+logarithm (log2+o(1))N. At the augmented-cut scale this is
+(log2/2+o(1))n^2. This rules out that particular uniformly compact carrier;
+it does not exclude exact-minimizer-specific or nontranslation limit states.
+
+A leader support contains an isometric Hamming cube in the quotient.
+At a deepest augmented-cut leader, deleting t support coordinates gives
+binom(rho_n,t) distinct cosets with exact cap M_n+2t. Taking
+t=floor(n^(3/2)/log n) yields exp((1/2+o(1))n^(3/2)) orbit classes after
+vertex relabeling, with vanishing normalized separation. Fixed halos have
+a packing obstruction under the global hypotheses above; shrinking halos
+are not thereby excluded.
+
+The binary [6,3] codes <3,5,57> and <3,12,48> have the same weight
+enumerator 1+3z^2+3z^4+z^6 and radii 2 and 3. Direct sums with a common
+repetition code produce low-rate families with identical primal/dual
+enumerators but N^(3/4)-scale deficit separation. Their dimension is
+Theta(N^(3/4)), not the cut-code scale Theta(sqrt(N)).
+
+Arbitrary translated-cap queries are strictly stronger than the archived
+one-sided disjoint-context metric Q(A-A'), even on bounded-cap signings.
+The latter's exposing compiler has quadratic calibration. Neither this
+comparison nor the radial-code pair is a theorem about exact minimizing
+children or nonconvergence of M_n.
+
+Full proofs: [critical-scale code audit](artifacts/critical_scale_code_audit_2026_09_05.md).
+
+#### 10.146.4 Literature mapping and computational status
+
+The augmented cut code equals P_(2,n)=RM(1,n) restricted to weight-two
+inputs, including the affine constant. Thus its covering radius is exactly
+the maximum restricted nonlinearity and M_n=binom(n,2)-2rho(P_(2,n)).
+Primary citations are recorded in the proof artifact. This is a verified
+mapping, not a smaller convergence obligation. No inspected published
+theorem improves the current interval.
+
+The existing exact values through n=14 remain
+(3,4,4,5,9,10,12,13,17,18,20,21) for n=3,...,14.
+The n=11,13 lower bounds are solver-certified rather than standalone proof
+certificates. The n=11 infeasibility model was rerun during the campaign.
+The new publication verifier independently checks only the finite identities
+it lists, and does not claim a fresh n=13 solver run.
+
+Reproduce the publication checks with:
+
+```bash
+.venv/bin/python -B computations/verify_campaign_2026_09_05.py
+```
+
+Output: computations/results/campaign_2026_09_05_verification.json.
+
+#### 10.146.5 Updated frontier
+
+The rigorous interval remains [0.336493364431...,1/2]. Neither convergence
+nor nonconvergence was proved. The strongest result about M_n is the
+mesoscopic coefficient improvement (10.1718); no comparable-order exponent
+improvement or Level-6 recurrence follows.
+
+The exact sufficient recurrence target remains a power-saving error
+K(m+n)^(1-delta) in b_n=M_n^(2/3) for all large comparable splits and
+actual optimizing children. A balanced merge tree makes that error
+summable; no weaker optimizer-specific hypothesis proving it was found.
+
+The geometric results narrow the scope of admissible limit states but
+do not exclude minimizer-specific nontranslation recovery. A new campaign
+would need a quantitative recurrence, an imported worst-coset theorem, or a
+strictly smaller variational obligation. This publication does not restart
+an autonomous research loop.

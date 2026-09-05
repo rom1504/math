@@ -284,3 +284,28 @@ bound for another quantity already shown to imply convergence).
 - **Top-level SML:** **UNCHANGED**.  This is a **STRIKE**, not a RESET:
   neither exposed bad mass nor a sublinear actual defect was proved.  The
   sparse-repair implementation is frozen.
+
+
+## 2026-09-05 mesoscopic completion checkpoint
+
+- **Best new cap bound:** for exact optimizing children at orders n,r,
+  M_(n+r) <= M_n+M_r+min(n mu_r+sqrt(2nr(r-1)log2),
+  r mu_n+sqrt(2nr(n-1)log2)), with mu_r=E|sum epsilon_j|.
+- **Mesoscopic consequence:** r=o(n), r->infinity gives remainder
+  (sqrt(2/pi)+o(1)) n sqrt(r), improving the archived sqrt(2log2)
+  coefficient.
+- **Previous/current exponent:** for comparable orders, 1 / 1 in the
+  b_n=M_n^(2/3) certificate. No qualitative change to the defect.
+- **Exact assumptions:** all hollow sign children; choose exact minimizers.
+  The asymptotic coefficient needs both r=o(n) and r->infinity.
+- **Actual optimizing children:** yes.
+- **Order coverage:** finite inequality at all orders, but subleading
+  n^(3/2) error only for unbalanced r=o(n) splits.
+- **Top-level SML:** **UNCHANGED**. Level 6 has not been reached.
+- **Accounting:** coefficient-only progress does not meet the earlier
+  cross-order campaign RESET standard. This publication makes no RESET
+  claim and does not restart that branch.
+
+Proof: artifacts/mesoscopic_completion_2026_09_05.md.
+The exact reversal identity requires anti-alignment of the two nonnegative
+terms inside their shared maximum; it does not permit signed cancellation.

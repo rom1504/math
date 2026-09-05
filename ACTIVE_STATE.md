@@ -1,181 +1,122 @@
 # Active research state
 
-Evidence cutoff: blank-slate direct campaign, ledger Section 10.145
-(2026-08-21), started from commit `b5ec773`.
+Evidence cutoff: ledger Section 10.146, 2026-09-05 campaign, based on
+4fcbc875c5b3c407a4534d9c644fa99889e6f738. Use the ledger for archive
+comparison; use the linked proof files to reconstruct new statements.
 
-This is compact working context.  Use `ledger.md` and Git history only for
-archive comparison or proof reconstruction.
-
-## Exact problem
-
-For a symmetric hollow sign matrix `A`, put
+## Exact problem and verified frontier
 
 ```math
-H_A(x)=\sum_{i<j}a_{ij}x_ix_j,
-\qquad
-Q(A)=\max_{x\in\{\pm1\}^n}|H_A(x)|,
-\qquad
-M_n=\min_A Q(A).
+H_A(x)=\sum_{i<j}a_{ij}x_ix_j,\quad
+Q(A)=\max_{x\in\{\pm1\}^n}|H_A(x)|,\quad
+M_n=\min_A Q(A),
 ```
 
-Determine whether `M_n/n^(3/2)` converges.  Convergence to any constant is a
-solution.  Genuine nonconvergence requires fixed positive separation between
-two infinite subsequences.
-
-Let `N=binom(n,2)` and let
+where A is hollow symmetric with off-diagonal signs. The objective is
+convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-\mathcal C_n^+
-=\{(\sigma x_ix_j)_{i<j}:\sigma,x_i\in\{\pm1\}\}
+0.336493364431\ldots\le\liminf_n M_n/n^{3/2}
+\le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-be the augmented cut code.  Under sign-to-bit identification,
+Recorded M_3,...,M_14 are (3,4,4,5,9,10,12,13,17,18,20,21).
+The n=11,13 lower bounds are solver-certified infeasibility results.
+The fresh verification script does not rerun those solvers.
+
+For N=binom(n,2), let C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates.
+Then Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension
+is n. It is exactly RM(1,n) punctured to the weight-two slice.
+
+## Strongest new quantitative module
+
+For mu_r=E|epsilon_1+...+epsilon_r|,
 
 ```math
-Q(a)=N-2d(a,\mathcal C_n^+),
-\qquad M_n=N-2\rho(\mathcal C_n^+).
+M_{n+r}\le M_n+M_r+
+\min\left\{
+n\mu_r+\sqrt{2nr(r-1)\log2},
+r\mu_n+\sqrt{2nr(n-1)\log2}
+\right\}.
 ```
 
-This is an antipodal covering-radius deficit, not one-sided Max-Cut.
-
-## Rigorous frontier
+All orders and exact minimizing children are covered. The associated bridge
+minimum is n mu_r(1+O(sqrt(r/n))) whenever r=o(n). If r also diverges,
 
 ```math
-0.336493364431\ldots
-\le \liminf_{n\to\infty}{M_n\over n^{3/2}}
-\le \limsup_{n\to\infty}{M_n\over n^{3/2}}
-\le {1\over2}.
+M_{n+r}\le M_n+(\sqrt{2/\pi}+o(1))n\sqrt r.
 ```
 
-The exact recorded values for orders 3 through 14 are
+This improves the archived random-completion coefficient, not its exponent
+or the qualitative o(n) order-transfer principle. See
+[the proof](artifacts/mesoscopic_completion_2026_09_05.md).
+
+## Exact bridge identity and missing recurrence
 
 ```math
-(3,4,4,5,9,10,12,13,17,18,20,21).
+Q\!\begin{pmatrix}A&B\\B^{\mathsf T}&D\end{pmatrix}
+=\max_{x,y}\bigl(|H_A(x)+H_D(y)|+|x^{\mathsf T}By|\bigr).
 ```
 
-They are finite falsifiers, not asymptotic evidence.
+Large values of its two nonnegative terms would have to occur in different
+places. A scalar bound on each term cannot capture that. The archived
+separated certificate has an equal-split b-scale defect of at least
+(0.218646...+o(1))n, for b_n=M_n^(2/3).
 
-## New reusable theorems from the blank-slate campaign
+A sufficient open target is a bridge for exact minimizing children giving
+b_parent <= b_m+b_n+K(m+n)^(1-delta), uniformly at comparable large orders.
+Balanced merge trees would make this defect summable. No such theorem, or
+strictly simpler sufficient minimizer property, was proved.
 
-### Central radial moment proxy
+## New scoped geometry results
 
-Let `mu_A` be the uniform antipodal energy law and let `L_d(A)` be the least
-central parity-lattice cap supporting a law with the same even moments through
-degree `2d`.  Then
+- A translation-invariant pseudometric preserving the normalized deficit
+  with a uniform modulus on the full coset quotient has covering entropy
+  (log2/2+o(1))n^2. It cannot be a uniformly compact carrier.
+- Every leader support contains an isometric quotient-Hamming cube.
+  Deepest leaders give exponentially many near minimizers, but shrinking
+  halos have shrinking separation; this alone does not obstruct their
+  fixed-resolution compactness.
+- Two explicit low-rate code families have identical primal/dual
+  enumerators and separated N^(3/4) deficits. Their dimension is
+  Theta(N^(3/4)), so they do not falsify a special cut-code theorem.
+- All translated queries are stronger than physical disjoint-continuation
+  queries. The archived physical compiler has quadratic calibration.
+  Its information lower bounds are not low-cap parent constructions.
 
-```math
-Q(A)\operatorname{sech}\!\left(
- {\operatorname{arcosh}(w_A^{-1/2})\over d}
-\right)
-\le L_d(A)\le Q(A),
-\qquad w_A=\mu_A\{\pm Q(A)\}\ge2^{1-n}.
-```
+Proofs and precise assumptions:
+[critical-scale code audit](artifacts/critical_scale_code_audit_2026_09_05.md).
 
-For `d=alpha n`, the uniform factor tends to
-`sech(log(2)/(2 alpha))`.  The LP dual consists of polynomials in `q^2`
-nonnegative on a proposed central parity lattice.  This is an exact useful
-certificate, but the required asymptotic limit of its minima is not a strict
-reduction: its large-`alpha` oscillation vanishes exactly when the oscillation
-of `M_n/n^(3/2)` does.
+## Strongest older constraints
 
-### Direct covering multiplicity obstruction
+1. Bounded moment, local-profile, restriction, and fixed-level SOS statements
+   miss leading extrema on their proved classes. Do not generalize beyond
+   each counterexample's hypotheses.
+2. Action compactness lacks all-order lossless sign recovery; projective
+   exchangeability and uniform sampling have specific iid obstructions.
+3. Sign-near weighted recovery has a rounding theorem but its existence
+   is not a strict reduction and retains almost all edge bits.
+4. Finite-temperature, posterior, transport, and sparse-repair routes have
+   no current summable recurrence. New quantities must remove an obligation.
+5. Linear-degree radial moments approximate the maximum but retain
+   high-order signed cancellation. Raw Bonferroni needs exponential rank.
+6. Bounded local stationarity permits suboptimal signings.
+7. Arithmetic/conference examples do not provide separated universal order
+   classes, and hence do not prove nonconvergence.
 
-For `Z_r(b)=|C_n^+ intersect B(b,r)|`, the order-`K` Bonferroni sum is exactly
+## Current judgment and stopping conditions
 
-```math
-|\{b:Z_r(b)>0\}|-(-1)^K
-\sum_{Z_r(b)>0}\binom{Z_r(b)-1}K.
-```
+The campaign is concluded; the current request publishes its results.
+No convergence/nonconvergence proof, improved interval, or Level-6 recurrence
+has been obtained. Do not autonomously revive a frozen branch on the
+strength of a new name or a constant improvement.
 
-At `r=N/2-(c/2)n^(3/2)+O(1)` with `c<sqrt(log 2)`, an odd truncation capable
-of proving noncoverage needs
+A new campaign should isolate either a uniform comparable-order inequality,
+a nonperturbative theorem for worst cosets of P_(2,n), or a smaller
+minimizer-specific variational state with all-order recovery. Each proposal
+must specify its quantitative implication and a falsifier before substantial
+computation. Genuine nonconvergence remains an alternative.
 
-```math
-K\ge\exp((\log2-c^2)n+o(n)),
-```
-
-and an even truncation capable of proving coverage needs
-
-```math
-K\ge2^{n-(c/\log2)\sqrt n+o(\sqrt n)}.
-```
-
-Subexponential finite-replica inclusion--exclusion cannot improve the sphere
-threshold.  At the necessary order the center array has linear affine rank;
-full factorial moments invert to the full coset-multiplicity histogram.
-
-### Rectangular projection and covariance correction
-
-For sign rectangles,
-
-```math
-m\mu_k\le\min_B\|B\|_{\infty\to1}\le m\mu_k+k2^k,
-\qquad \mu_k=\mathbb E|\varepsilon_1+\cdots+\varepsilon_k|.
-```
-
-If `T=B^T B` and
-`eta_k=2^{-(k-2)} binom(k-2,floor((k-2)/2))`, then
-
-```math
-\|B\|_{\infty\to1}
-\ge m\mu_k+{\eta_k^2\over m\mu_k}\sum_{p<q}T_{pq}^2.
-```
-
-The scalar rectangular constant is `0.3071059...`, below the current lower
-frontier.  The correction also vanishes on every competitive signing: product
-rounding gives `Q(A)>=|lambda|^3/(2(n-1))`, hence
-`Q(A)=O(n^(3/2))` forces the normalized off-diagonal fourth-moment defect to
-be `O(n^(-1/3))`.
-
-### Bounded local stationarity is insufficient
-
-For `n=2m`, the signing negative inside one `m`-set and positive elsewhere has
-`Q=n^2/4` but no improving single-edge flip.  An explicit order-eight cap-12
-signing has no improving one- or two-edge flip although a triple flip reaches
-the exact optimum 10.  Exact-minimizer light/heavy cut witnesses therefore do
-not yield a bounded-radius characterization.
-
-## Strongest reusable older obstructions
-
-1. Bounded moments, cycles, local/restriction profiles, fixed-level SOS, and
-   separately paid scalar channels miss leading zero-entropy Boolean
-   resonances.  Rich generic states reconstruct the full signed-coset response.
-2. Action compactness preserves subsequential objectives but lacks lossless
-   every-order exact-sign recovery.  Projective exchangeability and uniform
-   mesoscopic sampling become iid and are quantitatively nonextremal.
-3. Sign-near weighted recovery has a complete rounding theorem but its
-   existence is equivalent to exact recovery and costs almost all edge bits.
-4. Fixed-temperature pressure, bridge transport, posterior-state, sparse
-   repair, and finite-feature composition branches are frozen under their
-   archived no-go results.
-5. Spectra alone fail: archived cospectral masks have different Boolean caps.
-6. Arithmetic conference/Hadamard/Paley examples give selected constructions,
-   not universal order behavior or nonconvergence.
-
-## Current research status
-
-The explicitly authorized blank-slate campaign is complete and is a
-**STRIKE**.  It did not improve the rigorous interval, strictly reduce
-convergence, or leave a class-A architecture.  Do not start another automatic
-wave.
-
-The best conditional direction is a nonperturbative coverage theorem for
-
-```math
-F_n(1)=\mathbb P_b\{Z_r(b)=0\},
-```
-
-which does not expand through subexponentially many raw factorial moments.
-The exact convergence statement suggested by the pair transition is
-`F_{n,1/2-epsilon}(1)=0` for every fixed positive `epsilon` and all large `n`.
-Together with the known upper bound this is equivalent to convergence to
-`1/2`, not a strict reduction.  The smaller first milestone is uniform
-coverage at one fixed `c>0.336493364431...`, which would improve the lower
-frontier.  This direction is independent of the frozen composition language,
-but no simpler sufficient lemma has yet been found.
-
-Resume only after explicit user authorization or a concrete imported theorem,
-constructor, or counterexample that escapes the quantified obstruction.  Any
-new candidate must state its exact implication to convergence/nonconvergence,
-why its missing lemma contains less information than full Boolean/coset
-optimization, and an immediate falsifier.
+The verifier uses exact finite enumeration for the small code examples,
+leader cubes, slice mapping, and reversal identity, and reports analytic
+bound evaluations separately from those finite exact facts.

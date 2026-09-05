@@ -1,0 +1,227 @@
+{
+  "bridge_reversal": {
+    "exact_signings_checked": 1024,
+    "split": [
+      2,
+      3
+    ]
+  },
+  "cut_code_geometry": [
+    {
+      "dimension": 3,
+      "exact_M": 3,
+      "leader_cube_size": 1,
+      "length": 3,
+      "n": 3,
+      "radius": 0
+    },
+    {
+      "dimension": 4,
+      "exact_M": 4,
+      "leader_cube_size": 2,
+      "length": 6,
+      "n": 4,
+      "radius": 1
+    },
+    {
+      "dimension": 5,
+      "exact_M": 4,
+      "leader_cube_size": 8,
+      "length": 10,
+      "n": 5,
+      "radius": 3
+    }
+  ],
+  "mu_formula_orders": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "radial_pair": {
+    "A6": {
+      "dual_weight": {
+        "0": 1,
+        "2": 3,
+        "4": 3,
+        "6": 1
+      },
+      "leader_weight": {
+        "0": 1,
+        "1": 4,
+        "2": 3
+      },
+      "radius": 2,
+      "weight": {
+        "0": 1,
+        "2": 3,
+        "4": 3,
+        "6": 1
+      }
+    },
+    "B6": {
+      "dual_weight": {
+        "0": 1,
+        "2": 3,
+        "4": 3,
+        "6": 1
+      },
+      "leader_weight": {
+        "0": 1,
+        "1": 3,
+        "2": 3,
+        "3": 1
+      },
+      "radius": 3,
+      "weight": {
+        "0": 1,
+        "2": 3,
+        "4": 3,
+        "6": 1
+      }
+    }
+  },
+  "rectangles": [
+    {
+      "analytic_upper_numeric": 1,
+      "exact_minimum": 1,
+      "lower": "1",
+      "matrices": 2,
+      "n": 1,
+      "r": 1
+    },
+    {
+      "analytic_upper_numeric": 2,
+      "exact_minimum": 2,
+      "lower": "2",
+      "matrices": 4,
+      "n": 1,
+      "r": 2
+    },
+    {
+      "analytic_upper_numeric": 3,
+      "exact_minimum": 3,
+      "lower": "3",
+      "matrices": 8,
+      "n": 1,
+      "r": 3
+    },
+    {
+      "analytic_upper_numeric": 4,
+      "exact_minimum": 4,
+      "lower": "4",
+      "matrices": 16,
+      "n": 1,
+      "r": 4
+    },
+    {
+      "analytic_upper_numeric": 2,
+      "exact_minimum": 2,
+      "lower": "2",
+      "matrices": 4,
+      "n": 2,
+      "r": 1
+    },
+    {
+      "analytic_upper_numeric": 4.35482004503095,
+      "exact_minimum": 2,
+      "lower": "2",
+      "matrices": 16,
+      "n": 2,
+      "r": 2
+    },
+    {
+      "analytic_upper_numeric": 5.8840537732017655,
+      "exact_minimum": 4,
+      "lower": "3",
+      "matrices": 64,
+      "n": 2,
+      "r": 3
+    },
+    {
+      "analytic_upper_numeric": 7.330218444630791,
+      "exact_minimum": 4,
+      "lower": "4",
+      "matrices": 256,
+      "n": 2,
+      "r": 4
+    },
+    {
+      "analytic_upper_numeric": 3,
+      "exact_minimum": 3,
+      "lower": "3",
+      "matrices": 8,
+      "n": 3,
+      "r": 1
+    },
+    {
+      "analytic_upper_numeric": 5.8840537732017655,
+      "exact_minimum": 4,
+      "lower": "3",
+      "matrices": 64,
+      "n": 3,
+      "r": 2
+    },
+    {
+      "analytic_upper_numeric": 9.495327666946187,
+      "exact_minimum": 5,
+      "lower": "9/2",
+      "matrices": 512,
+      "n": 3,
+      "r": 3
+    },
+    {
+      "analytic_upper_numeric": 11.564460135092848,
+      "exact_minimum": 6,
+      "lower": "6",
+      "matrices": 4096,
+      "n": 3,
+      "r": 4
+    },
+    {
+      "analytic_upper_numeric": 4,
+      "exact_minimum": 4,
+      "lower": "4",
+      "matrices": 16,
+      "n": 4,
+      "r": 1
+    },
+    {
+      "analytic_upper_numeric": 7.330218444630791,
+      "exact_minimum": 4,
+      "lower": "4",
+      "matrices": 256,
+      "n": 4,
+      "r": 2
+    },
+    {
+      "analytic_upper_numeric": 11.564460135092848,
+      "exact_minimum": 6,
+      "lower": "6",
+      "matrices": 4096,
+      "n": 4,
+      "r": 3
+    },
+    {
+      "analytic_upper_numeric": 14.157335921350471,
+      "exact_minimum": 8,
+      "lower": "6",
+      "matrices": 65536,
+      "n": 4,
+      "r": 4
+    }
+  ],
+  "status": "All assertions passed; exact enumeration with numerical evaluation of analytic upper bounds"
+}
