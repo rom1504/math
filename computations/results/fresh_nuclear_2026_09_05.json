@@ -1,0 +1,111 @@
+{
+  "classification": "exact exhaustive caps; floating-point analytic-bound diagnostics",
+  "enumerations": [
+    {
+      "exact_M": 1,
+      "largest_nuclear_half_deficit_per_vertex_numeric": 0.0,
+      "least_polar_slack_numeric": 0.0,
+      "n": 2,
+      "root_gauged_minimizers": 1,
+      "root_gauged_signings": 1
+    },
+    {
+      "exact_M": 3,
+      "largest_nuclear_half_deficit_per_vertex_numeric": -0.3333333333333333,
+      "least_polar_slack_numeric": 1.3803207369756954,
+      "n": 3,
+      "root_gauged_minimizers": 2,
+      "root_gauged_signings": 2
+    },
+    {
+      "exact_M": 4,
+      "largest_nuclear_half_deficit_per_vertex_numeric": -0.19098300562505255,
+      "least_polar_slack_numeric": 1.4551528248658494,
+      "n": 4,
+      "root_gauged_minimizers": 6,
+      "root_gauged_signings": 8
+    },
+    {
+      "exact_M": 4,
+      "largest_nuclear_half_deficit_per_vertex_numeric": 0.09442719099991592,
+      "least_polar_slack_numeric": 0.22357293539122924,
+      "n": 5,
+      "root_gauged_minimizers": 12,
+      "root_gauged_signings": 64
+    },
+    {
+      "exact_M": 5,
+      "largest_nuclear_half_deficit_per_vertex_numeric": 0.2847006554165616,
+      "least_polar_slack_numeric": 0.5724914704870017,
+      "n": 6,
+      "root_gauged_minimizers": 12,
+      "root_gauged_signings": 1024
+    },
+    {
+      "exact_M": 9,
+      "largest_nuclear_half_deficit_per_vertex_numeric": -0.1380444617416549,
+      "least_polar_slack_numeric": 2.221426867125577,
+      "n": 7,
+      "root_gauged_minimizers": 3240,
+      "root_gauged_signings": 32768
+    },
+    {
+      "exact_M": 10,
+      "largest_nuclear_half_deficit_per_vertex_numeric": 0.03921940099542054,
+      "least_polar_slack_numeric": 2.664566695670537,
+      "n": 8,
+      "root_gauged_minimizers": 4200,
+      "root_gauged_signings": 2097152
+    }
+  ],
+  "exact_cut_laplacian_counterexample": {
+    "cut_range": [
+      0,
+      4
+    ],
+    "exact_cap": 4,
+    "exact_minor_determinant": -1,
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        0,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        0
+      ]
+    ],
+    "negative_principal_minor_indices": [
+      0,
+      3
+    ]
+  },
+  "polar_statement": "Q(A) >= n(n-1)/pi * asin(n / nuclear_norm(A))"
+}

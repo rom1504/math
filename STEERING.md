@@ -3,8 +3,8 @@
 Evidence cutoff: 2026-09-05 campaign, ledger Section 10.146; audited base
 commit 4fcbc875c5b3c407a4534d9c644fa99889e6f738.
 
-Status: **campaign concluded; verified results consolidated in this
-checkpoint; convergence and nonconvergence remain open**.
+Status: **fresh six-hour independent research campaign active**;
+convergence and nonconvergence remain open.
 
 ## User-stated objective and workflow directives
 
@@ -18,10 +18,26 @@ requested publication and a normal commit/push attempt after changing
 permissions. The attempt remained blocked by the local read-only sandbox;
 write access has since been enabled, and this consolidated publication
 uses the normal local commit and push workflow.
-No new autonomous campaign is authorized by the publication request.
+The latest user separately authorized a new six-hour substantive campaign
+on 2026-09-05, beginning from the exact problem and verified frontier before
+historical assessments. The agent may replace the research architecture;
+no previously preferred route or judgment is binding. Three independent
+researchers are active. Write access and normal Git publication have been
+verified. Checkpoints are steering events, not stopping points; neither
+bookkeeping nor idle waiting counts as active research.
 
 The README's verification, stopping, and blank-slate rules remain in force.
 All mathematical judgments below belong to the agent.
+
+## Active independent assessment, 2026-09-05
+
+Three clean-room attacks have produced a paired-polar Boolean/nuclear
+inequality and an unconditional limit for a same-spin Hadamard-regularized
+minimum. Neither changes the original interval. The active questions are
+whether the true regularization has a nonquadratic finite certificate or
+can retain minimizing seeds, and whether the new spectral constraint yields
+a stronger Boolean theorem. No scalar/vector identification is assumed.
+See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 
 ## Agent-authored rigorous frontier
 
@@ -112,9 +128,11 @@ nonlinearity literature, but no imported theorem improves the frontier.
 
 ## Decision and next refresh
 
-Record the new quantitative theorem and scoped obstructions without claiming
-a convergence breakthrough. No further wave starts as part of this push.
-Refresh upon a new authorized campaign or a decisive proof/counterexample.
+The previous campaign's quantitative theorem and scoped obstructions remain
+verified evidence, not a restriction on the newly authorized independent
+attack. Its initial hypotheses and continuing results are recorded in
+`artifacts/fresh_limit_campaign_2026_09_05.md`. Refresh the mathematical
+assessment after independent candidates are audited or a decisive result.
 If numbered waves resume, Wave 61 remains the next scheduled blank-slate
 boundary. Detailed proofs, limitations, and reproducible checks are in the
 two 2026-09-05 artifacts and ledger Section 10.146.

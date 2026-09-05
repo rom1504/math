@@ -44497,3 +44497,43 @@ do not exclude minimizer-specific nontranslation recovery. A new campaign
 would need a quantitative recurrence, an imported worst-coset theorem, or a
 strictly smaller variational obligation. This publication does not restart
 an autonomous research loop.
+
+### 10.147 Fresh independent six-hour campaign, 2026-09-05
+
+**Status: active, not a completed synthesis.** The latest user authorized
+six hours of substantive research from the original problem, permitting a
+new architecture. Workspace writes and normal Git publication work. Three
+researchers first received the naked problem/frontier, not route history.
+
+The first verified result is the exact polar-Gram inequality
+
+```math
+Q(A)\ge\frac{n(n-1)}{\pi}\arcsin\frac{n}{\|A\|_*}.
+```
+
+Here Q is the undoubled cap. For a sequence of cap at most
+(c+o(1))n^(3/2), normalized nuclear mass is at least 1/(pi c)-o(1).
+The vector relaxation has the sharp companion product inequality and a
+quantitative near-conference stability theorem. These do not identify
+Boolean and vector minimizers or improve the present universal constant.
+
+A second theorem proves convergence of the minimum of the genuine
+same-spin regularization R(B)=sup_s Q(H_s tensor B)/s^(3/2), with explicit
+regular Hadamard outer orders s=4^a 144^b. Allowing full sign seeds, including
+their diagonal, removes the leading completion cost. The limit c_R is the
+infimum over finite full-seed regularized ratios and obeys
+limsup M_n/n^(3/2)<=c_R, with 1/sqrt(2pi)<=c_R<=1/2. No reverse comparison
+with the original liminf has been proved. Its natural PSD-majorant
+relaxation has asymptotic optimum exactly 1/2.
+
+All 2,131,019 root-gauged signings through order eight were independently
+enumerated for the new finite audit. Exact integer energies are separated
+from floating-point nuclear/SDP diagnostics. The order-five signed-cut
+counterexample also has an exact negative 2-by-2 principal determinant,
+so two-sided cut positivity does not imply PSD even for an exact minimizer.
+
+Proofs, scope, reproducible checks, source audits, and the continuing
+research decision are collected in
+[the campaign record](artifacts/fresh_limit_campaign_2026_09_05.md).
+This checkpoint does not terminate the authorized campaign. The rigorous
+interval remains [0.336493364431...,1/2]; convergence is still open.
