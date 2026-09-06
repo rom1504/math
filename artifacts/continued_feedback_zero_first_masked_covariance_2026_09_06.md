@@ -91,8 +91,11 @@ where `Lambda(B)=max_x |x^T Bx|/(2n)`. Formula (5) retains an actual
 common feedback self-energy, rather than discarding it. It does not
 claim a positive uniform lower bound for that common term.
 
-For the discontinuous threshold `psi=sign`, assume for now a fixed
-positive lower bound on all `T_ii`. Then smooth approximation gives
+For the discontinuous threshold `psi=sign`, smooth approximation gives
+the following formula. The original proof used a fixed positive
+variance floor; that assumption is now removed by the exact subset
+bound and cutoff argument in
+`continued_feedback_threshold_without_variance_floor_2026_09_06.md`.
 
 ```math
 \Lambda(B)\ge \sqrt{2/\pi}\,\mu\,\frac1n\sum_i\sigma_i
@@ -100,11 +103,11 @@ positive lower bound on all `T_ii`. Then smooth approximation gives
  \left|\operatorname{Tr}(B D_{1/\sigma}T D_{1/\sigma})\right|-o(1).        (6)
 ```
 
-The variance-floor hypothesis in (6) has not been proved in general
-and must not be silently omitted. Even the stronger convenient guess
-`T_ii>=1` fails on actual bounded-op signings (Section 9); that example
-does not disprove the existence of some smaller universal positive
-floor. The smooth statement (5) needs no variance floor.
+The convenient guess `T_ii>=1` fails on actual bounded-op signings
+(Section 9), and the companion apex construction defeats every fixed
+positive floor for appropriate fixed operator caps. Nevertheless,
+the exact count `#{i:T_ii<=epsilon E f(N)²}<=epsilon n` suffices
+to justify (6), with the small-variance rows removed before smoothing.
 
 ## 2. Uniform kernel bounds for a transported scalar Hermite channel
 

@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.1, active six-hour campaign.
+Evidence cutoff: ledger Section 10.149.2, active six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -183,7 +183,8 @@ product Gaussian kernel with independent old/transported fields of covariance
 Q,T. Its actual self-energy is mu² Tr(B D_a T D_a)/(2n)+o(1), retaining a
 term absent on involutions. This is NOT a joint-law theorem allowing another
 threshold of BC. Fixed operator cap, functions, and approximation-before-order
-limits are required. Hard thresholds need additional variance control.
+limits are required. The new inverse-variance theorem now supplies the
+additional control for hard thresholds, without a pointwise fixed floor.
 
 An exact Steiner signing family B²=I+gamma B, gamma->1/sqrt(2), proves the
 nonzero self-energy 1/(pi sqrt(2)); no minimizing property is asserted.
@@ -191,6 +192,32 @@ The SAME family falsifies Gaussianizing the nonzero-first coherent return
 QS=S+gamma BS, even for bounded feasible responses, with a positive
 normalized-nuclear discrepancy. An apex/twin family separately has a cubic
 transport variance tending to zero at one root, despite bounded operator norm.
+
+The nonzero-first scalar and fixed-colored extensions now retain the literal
+Boolean return V=QS. For Z=B(f(BS)-b BS), C=H(BS)psi(bV+Z), and Gaussian
+noise variance sigma_i²=T_ii, define c0_i=H(BS_i) E psi(bV_i+sigma_i N)
+and a_i=E H(BS_i)psi'(bV_i+sigma_i N). Then
+e(C)=e(c0)+E[c0^T B D_a Z]/n+Tr(B D_a T D_a)/(2n)+o(1).
+This is an energy projection, not a law replacement. Hard thresholds use an
+explicit variance cutoff in the raw cross. Exact Boolean sine formulas
+evaluate all terms by polynomially many characteristic-function products.
+
+For every symmetric unit-row-norm B and odd p, the positive tensor lift gives
+sum_i 1/[B(B²)^(circ p)B]_ii<=n. Odd nonnegative mixtures of total mass tau²
+therefore satisfy avg tau²/T_ii<=1. This controls averaged small balls and
+hard-sign passage. Even powers fail at every root on an actual bounded-op
+opposite-twin signing family. General multichannel oddness alone is insufficient.
+
+The genuinely marked return QD, D=S h2(BS), is pure Boolean degree three and
+has expected energy Tr(B^5)/(2n)+o(1); it cannot be reduced to first Boolean
+degree. Exact Boolean gradients now give polylogarithmic positive-Walsh root
+maps for fixed polynomials of its coherent history. Full feedback closure
+for that history remains a separate active proof obligation.
+
+Exact controlled two-fibre gates enlarge arbitrary-seed sign-preserving
+conjugations. If a gate preserves every pure Boolean tensor, however, it
+retains the stabilized Hadamard seed norm. Nonlocal overlap must abandon this
+invariant to address that gap. No all-order landing conclusion is claimed.
 
 Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
 finite errors proportional to slack d; near-optimal fractional means have

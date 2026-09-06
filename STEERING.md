@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: first continued checkpoint, ledger Section 10.149.1.
+Evidence cutoff: second continued checkpoint, ledger Section 10.149.2.
 Status: **third six-hour response/convergence campaign active**,
 2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
 
@@ -129,15 +129,19 @@ record and final synthesis. The previous campaign is complete; the newly
 authorized six-hour campaign is active. If numbered
 waves resume, Wave 61 remains the scheduled blank-slate boundary.
 
-The first continued checkpoint proves actual masked-feedback covariance
-closure when the scalar input has zero first Gaussian coefficient. Its
-self-energy retains mu² Tr(B D_a T D_a)/(2n), without B²=I. Exact Steiner
-signings give the nonzero value 1/(pi sqrt(2)). The nonzero-first extension
-cannot Gaussianize QS: the same family supplies a bounded feasible-response
-counterexample. An apex/twin example rules out a uniform variance floor.
-The next target is an energy-only projection retaining QS literally, not a
-distributional substitution. Independent convergence work is testing a
-noncommuting signing-switch orbit; no landing theorem is assumed. Random
-conference thinning now falsifies universal AVERAGE sharp extraction, not
-selected subsets. The rounding gain improves to d²/(pi L), but endpoints
-have d=0. See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs.
+Actual scalar and fixed-colored feedback now has an energy-only projection
+retaining the Boolean QS return literally. It keeps coherent energy, its
+bare cross with the noise, and the linear-noise trace. This is not an L² or
+full-law Gaussian replacement. A positive-tensor theorem gives avg tau²/T_ii
+<=1 for every odd transported covariance mixture, removing the hard-threshold
+variance-floor obligation. Explicit Boolean characteristic-function formulas
+compute a sine-policy certificate without enumerating the cube; they do not
+raise the universal constant. The next transfer target is the genuine marked
+history D=S h2(BS), including QD. Its exact Walsh root maps are now controlled,
+but local-noise and mixed-star energy closure remain under audit.
+
+Nonlocal controlled two-fibre gates preserve exact sign entries for arbitrary
+seeds. Gates preserving every pure Boolean tensor also preserve the stabilized
+seed obstruction; finite cap reductions do not remove it. Overlapping gates
+outside that class are being tested. No landing or recurrence follows yet.
+See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs and scopes.

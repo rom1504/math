@@ -45327,3 +45327,54 @@ zero-first transport obligation is removed; nonzero-first feedback must
 retain QS rather than Gaussianize it. A direct energy projection is under
 attack. Independent convergence work tests noncommuting signing switches.
 Neither convergence nor nonconvergence is established. Continue the campaign.
+
+#### 10.149.2 Literal coherent energy, inverse variance, and nonlocal gate scope
+
+The actual nonzero-first scalar and fixed-colored feedback projection is now
+proved and independently reconstructed. With literal Boolean V=QS, residual
+Z, Gaussian residual covariance T, c0=H E_N psi(bV+sigma N), and deterministic
+a=E H psi'(bV+sigma N), it gives
+
+```math
+e(C)=e(c^0)+\frac1n\mathbb E[(c^0)^TBD_aZ]
+       +\frac1{2n}\operatorname{Tr}(BD_aTD_a)+o(1).
+```
+
+The coherent return is not Gaussianized. This is an energy projection, not an
+L² or full-distribution replacement. Exact higher-Walsh estimates and a source-
+collision falsifier delimit its scope. Boolean sine policies now have explicit
+polynomially many characteristic-function products for all terms, independently
+checked by full finite enumeration. Their finite numerical energies are not
+new universal bounds.
+
+A new positive-tensor inequality gives, for any symmetric unit-row-norm B,
+
+```math
+\sum_i\frac1{[B(B^2)^{\circ p}B]_{ii}}\le n\quad(p\text{ odd}),
+\qquad \frac1n\sum_i\frac{\tau^2}{T_{ii}}\le1
+```
+
+for any nonnegative odd mixture T of total mass tau². This needs no operator
+cap or flatness. Under the feedback theorem's additional assumptions it removes
+the hard-threshold variance-floor obligation. The nonzero-first raw cross keeps
+its explicit cutoff and ordered limits. Even transport fails at every root on
+an actual bounded-op sign family. Anchored mixed-correlation extensions are
+proved, but arbitrary global multichannel oddness is not sufficient.
+
+For the first real marked history D=S h2(BS), exact covariance and Boolean
+gradients give polylogarithmic root-map bounds for fixed coherent polynomials
+and centered finite-depth circuits. QD is pure degree three with energy
+Tr(B^5)/(2n)+o(1); discarding all but first Boolean degree is invalid here.
+Local residual separation and mixed-star closure remain active obligations.
+
+Independent order work gives exact arbitrary-seed two-fibre sign gates and a
+stabilized obstruction: preserving every pure Boolean tensor retains the
+regularized seed norm. Compatible scalar-preserving gates cannot remove that
+gap merely by further outer padding. Overlapping gates outside that class are
+not covered and are being tested. No landing or recurrence is inferred.
+
+[Proofs, audits, reproducible experiments, and next obligations](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: [.4333221116640807,.5], unchanged. The actual scalar/colored
+energy and hard-threshold obligations are removed; the original convergence
+question remains open. The current six-hour campaign continues.

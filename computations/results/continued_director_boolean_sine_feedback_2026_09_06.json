@@ -1,0 +1,109 @@
+{
+  "kappa": 0.6,
+  "frequency": 1.0,
+  "enumeration": [
+    {
+      "n": 6,
+      "seed_count": 64,
+      "max_errors": {
+        "M": 6.938893903907228e-17,
+        "K": 3.122502256758253e-17,
+        "a": 2.7755575615628914e-16
+      },
+      "status": "complete finite seed enumeration, floating identity check"
+    },
+    {
+      "n": 10,
+      "seed_count": 1024,
+      "max_errors": {
+        "M": 3.608224830031759e-16,
+        "K": 3.469446951953614e-17,
+        "a": 2.3869795029440866e-15
+      },
+      "status": "complete finite seed enumeration, floating identity check"
+    }
+  ],
+  "records": [
+    {
+      "n": 28,
+      "samples": 12000,
+      "seed": 9060854,
+      "terms": {
+        "coherent": 0.030021275757668046,
+        "bare_star": 0.001019242772709741,
+        "linear_noise": 0.0016985069018562002,
+        "gain": 0.11499684935052276,
+        "old": 0.0764623059802781,
+        "feedback": 0.03273902543223399,
+        "endpoint": 0.22419818076303485
+      },
+      "feedback": {
+        "mean": 0.031892283543304985,
+        "standard_error": 5.959583113844288e-05,
+        "projected": 0.03273902543223399,
+        "finite_difference": -0.0008467418889290049
+      },
+      "gain": {
+        "mean": 0.11502508146992435,
+        "standard_error": 0.0002150074413733591,
+        "projected": 0.11499684935052276,
+        "finite_difference": 2.8232119401588873e-05
+      },
+      "status": "Monte Carlo diagnostics, not an asymptotic certificate"
+    },
+    {
+      "n": 120,
+      "samples": 12000,
+      "seed": 9060855,
+      "terms": {
+        "coherent": 0.021756436530845306,
+        "bare_star": 0.0003568320725053127,
+        "linear_noise": 0.0013148986652589427,
+        "gain": 0.09549901696989577,
+        "old": 0.06070221554569922,
+        "feedback": 0.02342816726860956,
+        "endpoint": 0.17962939978420456
+      },
+      "feedback": {
+        "mean": 0.023330320364265952,
+        "standard_error": 2.9120433588068006e-05,
+        "projected": 0.02342816726860956,
+        "finite_difference": -9.784690434360907e-05
+      },
+      "gain": {
+        "mean": 0.09552143847708715,
+        "standard_error": 9.945782971205071e-05,
+        "projected": 0.09549901696989577,
+        "finite_difference": 2.2421507191380807e-05
+      },
+      "status": "Monte Carlo diagnostics, not an asymptotic certificate"
+    },
+    {
+      "n": 496,
+      "samples": 12000,
+      "seed": 9060856,
+      "terms": {
+        "coherent": 0.018429552518097445,
+        "bare_star": 0.00021112377565112123,
+        "linear_noise": 0.0011774479334934354,
+        "gain": 0.0879314087371254,
+        "old": 0.05357324202642167,
+        "feedback": 0.019818124227242002,
+        "endpoint": 0.16132277499078906
+      },
+      "feedback": {
+        "mean": 0.019787818062881105,
+        "standard_error": 1.2792698070922097e-05,
+        "projected": 0.019818124227242002,
+        "finite_difference": -3.0306164360897198e-05
+      },
+      "gain": {
+        "mean": 0.08789403967086594,
+        "standard_error": 4.372543952409275e-05,
+        "projected": 0.0879314087371254,
+        "finite_difference": -3.7369066259465566e-05
+      },
+      "status": "Monte Carlo diagnostics, not an asymptotic certificate"
+    }
+  ]
+}
