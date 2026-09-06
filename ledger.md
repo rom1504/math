@@ -45235,3 +45235,44 @@ Updated frontier: universal [.4333221116640807,.5], unchanged at this checkpoint
 The new algebraic and feedback theorems have sharply different scopes. No
 convergence, nonconvergence, or comparable-order recurrence is proved.
 Continue the final original-signing comparison checks through 07:13:55 UTC.
+
+### 10.148.8 Final original-class comparison and quantitative rounding
+
+For arbitrary bounded-op hollow signings B=A/sqrt(n-1), fixed old odd F
+satisfies E[F^TBF]/(2n)=||P1F||^2 Tr(B^3)/(2n)+o(1). Old own-spin even
+inputs have zero limiting self-energy and a controlled creation field.
+The independent audit reconstructed the endpoint Frobenius contraction;
+its diagonal-deletion display was corrected without changing any bound.
+The exact missing mixed transport is B[H sign(BF)], not the already
+controlled old self-energy. A bounded-op twin-Hadamard signing with vanishing
+cubic moment falsifies the inference to involution return structure.
+
+Mean-preserving correlated Gaussian rounding supplies a separate finite
+theorem. If d=1-||u||^2/n, ||B||op<=L, and u lies in the cube, then
+
+```math
+\max_x\frac{|x^{\mathsf T}Bx|}{2n}
+\ge\frac{|u^{\mathsf T}Bu|}{2n}+\frac{d^2}{4\pi L}
+-\frac1{\pi L(n-1)}-\frac1{2L^2\sqrt{n-1}}.
+```
+
+It follows by choosing Gaussian covariance I plus or minus B/L and
+bounding all threshold Hermite levels beyond the first. In particular,
+near-optimal fractional means have average slack O_L(sqrt(epsilon))+o(1).
+The earlier independent-rounding/feedback estimate is also valid but
+weaker. Neither raises the current constant: the pure certified endpoint
+is exactly Boolean. This is a scoped quantitative theorem, not a claimed
+closure of mixed-field transport or a free finite-query realization.
+
+The characteristic-three weighted Frobenius theorem also gives a linear
+projection/edit bound for arbitrary real targets. A sparse weighted
+Paley9 tensor I family has ratio Q/(sqrt(n)||A||F)=sqrt(2)/3<1/2, showing
+why weighted symmetry and Frobenius mass alone cannot prove one-half.
+It does not falsify an additional dense bounded-entry hypothesis.
+
+Updated frontier: universal [.4333221116640807,.5]. The original convergence
+or nonconvergence question remains open. The two major scope gaps are the
+unproved arbitrary-minimizer mixed-response comparison and the lack of
+an unrestricted all-order upper/recovery or summable recurrence theorem.
+
+[Final synthesis and exact proof obligations](artifacts/resumed_limit_final_synthesis_2026_09_06.md).

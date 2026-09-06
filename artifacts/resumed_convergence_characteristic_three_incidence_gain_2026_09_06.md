@@ -258,3 +258,12 @@ point colorings. The last inequality is sharp among individual planes:
 the pairs `(N_0,N_2)=(0,3)` and `(1,0)` both occur.
 These finite checks corroborate the elementary proof; no floating
 integration or unproved asymptotic independence enters the theorem.
+
+The homogeneous weighted version and its translation-projection
+extension to arbitrary nearby signings are proved in
+`resumed_bound_audit_characteristic_three_projection_stability_2026_09_06.md`.
+The exact weighted Paley9 tensor-identity obstruction in
+`resumed_convergence_transitive_majorant_and_weighted_barrier_2026_09_06.md`
+also shows why weighted Cayley symmetry and Frobenius mass alone cannot
+raise this architecture all the way to one-half; the full sign-entry
+condition remains essential for that target.

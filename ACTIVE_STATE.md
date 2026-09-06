@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.7, resumed six-hour campaign active.
+Evidence cutoff: ledger Section 10.148.8, completed six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -169,10 +169,16 @@ no seed-norm power. Arbitrary overlapping composition is not established.
 - Local-profile, fixed-gadget, Gibbs, scalar-channel and algebraic-family
   obstructions retain their exact hypotheses; do not broaden them by analogy.
 
-## Current campaign and next discriminating work
+## Final original-class comparison and next discriminating work
 
-Authorized six-hour interval: 2026-09-06 01:13:55–07:13:55 UTC. Work continues.
-The omitted endpoint question is settled on the flat involution class.
-Finish checking the precise arbitrary-signing comparison and the robust
-nonflat Cayley corollaries. Preserve improvements without equating scoped
-algorithmic or algebraic results with unrestricted signing theorems.
+Authorized six-hour interval: 2026-09-06 01:13:55–07:13:55 UTC.
+For arbitrary bounded-op signings, old odd F has expected self-energy
+||P1F||^2 Tr(B^3)/(2n)+o(1). The precise next missing transport is
+B[H sign(BF)]; zero cubic moment does not license an involution return.
+Correlated Gaussian rounding gives a general finite gain d^2/(4pi L)
+minus an explicit O_L(n^-1/2) error for average fractional slack d.
+Current certified endpoints are Boolean, so this does not raise the bound.
+
+[Final synthesis and remaining obligations](artifacts/resumed_limit_final_synthesis_2026_09_06.md).
+The response comparison and nonlocal sign-entry mechanisms remain distinct
+leads, not completed convergence proofs. No particular next route is mandatory.

@@ -1,6 +1,6 @@
 # Convergence-track handoff: strongest results and exact remaining gap
 
-Date: 2026-09-06, 06:52 UTC. This is a navigation handoff, not a new
+Date: 2026-09-06, updated 07:02 UTC. This is a navigation handoff, not a new
 proof. The full original problem remains unresolved: no convergence or
 nonconvergence theorem for `M_n/n^(3/2)` has been obtained. The universal
 lower certificate belongs to the response/director track; the constants
@@ -57,6 +57,10 @@ below must not be substituted for it outside their stated classes.
    essential. There is no row-sum or spectral-flatness assumption. Full
    independent audit and the exact 8192-coloring replay pass. See
    `resumed_convergence_characteristic_three_incidence_gain_2026_09_06.md`.
+   The homogeneous weighted extension and translation projection also
+   give a linear correlation/edit lower test for arbitrary signings
+   near this NONFLAT Cayley class; see
+   `resumed_bound_audit_characteristic_three_projection_stability_2026_09_06.md`.
 
 6. **Spectral tests and the remaining Cayley regime.** Every real
    symmetric convolution matrix satisfies `Q(A)>=n||A||op/3`, by exact
@@ -132,3 +136,11 @@ convergence question. The outstanding upper-bound obligation is an
 upper-preserving all-order landing from near-minimizers of the ORIGINAL
 Boolean quadratic cap. The new lower witnesses and structured-family
 rigidity results do not discharge that obligation.
+
+The last boundary package makes this gap especially explicit. Every
+transitive real seed has `T(B)>=sqrt(k)||B||_F/2`, with equality exactly
+at a flat spectrum. Yet the sparse weighted family `Paley9 tensor I`
+has actual ratio `Q/(sqrt(q)||B||_F)=sqrt(2)/3<1/2`. This falsifies
+unrestricted homogeneous weighted realization, but NOT a statement
+also imposing bounded entries and near-full Frobenius mass. See
+`resumed_convergence_transitive_majorant_and_weighted_barrier_2026_09_06.md`.

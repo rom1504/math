@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: resumed seventh checkpoint, ledger Section 10.148.7.
-Status: **second six-hour response/convergence campaign active**,
+Evidence cutoff: final comparison, ledger Section 10.148.8.
+Status: **second six-hour response/convergence campaign completed**,
 2026-09-06 01:13:55–07:13:55 UTC. Convergence and nonconvergence are open.
 
 ## User-stated objective and workflow directives
@@ -119,10 +119,17 @@ edit law. A separate character/projective-incidence proof gives
 characteristic-three additive-Cayley signing, not just near-flat ones.
 These are genuine scoped signing results, not an unrestricted recurrence.
 
-## Continuing campaign
+## Completed campaign and handoff
 
 Proofs, exact programs, and scopes are indexed in
 `artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md` and the campaign
-record. Continue substantive mathematics through the authorized endpoint.
-Refresh after a decisive proof or the final campaign synthesis. If numbered
+record and final synthesis. The authorized six-hour campaign is complete;
+convergence and nonconvergence remain open. If numbered
 waves resume, Wave 61 remains the scheduled blank-slate boundary.
+
+Final original-class comparisons are now explicit: the old odd self-energy
+is controlled by the cubic trace, whereas B[H sign(BF)] is not covered by
+existing transport identities. Mean-preserving correlated Gaussian rounding
+gives a finite d^2/(4pi L) gain for fractional slack d, but the certified
+endpoints have d=0. Neither result closes convergence. See
+`artifacts/resumed_limit_final_synthesis_2026_09_06.md` for the final proof map.

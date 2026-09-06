@@ -261,3 +261,19 @@ This is a restricted-target theorem and does not raise the unrestricted
 Continue through 07:13:55 UTC, checking the actual-original comparison and
 remaining proof dependencies before final synthesis. This commit is not the
 end of the campaign.
+
+## Final original-class verification and handoff
+
+The final comparison identifies the old self-energy by its cubic trace and
+isolates the genuinely unproved next nonlinear transport. Independent and
+correlated rounding were checked separately. The latter proves a finite
+d^2/(4pi L) gain, with explicit errors, from fractional slack d for ANY
+bounded-op hollow signing. The current certified endpoints have zero slack.
+The characteristic-three projection corollary and its sparse weighted
+scope falsifier also passed independent reconstruction and exact replay.
+
+The final scope review distinguishes robust LOWER saturation bounds from
+equality of perturbed caps. No universal convergence claim is made.
+The unrestricted interval is [.4333221116640807,.5].
+
+[Final synthesis, strongest verified theorem, and precise remaining gaps](resumed_limit_final_synthesis_2026_09_06.md).

@@ -1,6 +1,6 @@
 # Response track: final mechanism map and proved limits
 
-Date: 2026-09-06, checkpoint 06:36 UTC. This is a navigation/scope note,
+Date: 2026-09-06, checkpoint updated 07:10 UTC. This is a navigation/scope note,
 not a replacement for the proofs or independent audits. The original
 convergence/nonconvergence problem remains open.
 
@@ -114,3 +114,68 @@ universality-comparable. That missing comparison, together with the
 unidentified feedback optimum and possible growing-depth effects,
 prevents these mechanism results from resolving the original normalized
 convergence question.
+
+## 6. Final original-class comparison audit
+
+For arbitrary bounded-op hollow signings, some terms ARE identified:
+
+    E Q_B(F_old)/n = .5 ||P1F||^2 Tr(B^3)/n+o(1),
+    E Q_B(S H_old)/n=o(1),
+    B[S H_old] is the old creation field UH in ordered normalized L2.
+
+This gives the genuine conditional original-matrix lower bound
+|E H U^*F|+.5||P1F||^2 |Tr(B^3)/n|. The independent proof/audit is in
+`resumed_response_original_bounded_op_cubic_and_transport_audit_2026_09_06.md`.
+It cannot improve the universal constant when the cubic moment vanishes,
+and a concrete hollow twin-Hadamard example shows that vanishing cubic
+moment does not imply involution structure.
+
+The exact return is BF=B^2[S U^*F]+Z_R, not S U^*F+Z_R. At the next
+mixed step the uncontrolled object is a cross-root transport of
+nonlinear functions of this already exposed field. Equivalently it is
+the new term B[H sign(BF)] after a terminal best response. Existing
+restricted tests enter BF only linearly and do not close that new
+operation. This is a precise missing identity, not a blanket assertion
+that a universal mixed-charge gain is impossible.
+
+There is also a fully generic actual gain for a fractional mean u with
+average slack d>=d_0>0. New independent Boolean rounding produces row
+noise variance d+O(1/n) on every normalized hollow signing. A direct
+smooth-Lindeberg argument and damped best response yield gain
+Gamma_sqrt(d_0)(L sqrt(1-d_0))^2/(8L)>0. See
+`resumed_response_original_fractional_rounding_gain_2026_09_06.md`.
+The current pure ternary/binary terminal policy has exactly Boolean
+endpoints and zero slack. Deliberate damping incurs a larger energy
+cost than this conservative Gaussian-only guarantee can repay. Thus
+this valid generic lemma does not increase the banked constant.
+
+A final, stronger finite ORIGINAL-CLASS theorem replaces the small
+independent-noise guarantee by correlated Gaussian rounding with
+covariance I+/-B/L. It preserves all coordinate means and proves
+
+    Lambda(B)>=|e_B(u)|+d^2/(4pi L)
+                  -1/[pi L(n-1)]-1/[2L^2 sqrt(n-1)].
+
+Thus every epsilon-near-optimal fractional mean has
+d<=sqrt(4pi L(epsilon+the displayed error)). This quantitative endpoint
+rigidity and polynomial slack gain were independently reconstructed by
+the director, response agent, and bound auditor. Full proof:
+`resumed_response_original_correlated_rounding_slack_2026_09_06.md`.
+The successful pure endpoint still has zero slack, so this does not
+change the universal lower constant. Exact matrix-covariance sampling
+is not asserted to be a free single-query operation.
+
+## 7. Uniform finite-query refinement
+
+The independent auditor strengthened the fixed-frame escape to a
+depth-only theorem, with an explicit (very small) coefficient-peeling
+modulus. At a history of at most m causal query pairs, the exposed-span
+deficit and the old-history gradient gap cannot both be arbitrarily
+small. Either an old-history move improves actual energy, or genuine
+fractional innovation permits one new query and feedback to improve it.
+Thus the optimal fixed-query values obey C_(m+1)>=C_m+Delta_m with
+Delta_m>0 depending only on m. This does not provide a depth-uniform
+increment. Full proof and explicit modulus:
+`resumed_bound_audit_uniform_query_depth_hierarchy_2026_09_06.md`.
+The response agent independently reconstructed both the peeling and the
+explicit threshold algebra.

@@ -308,10 +308,12 @@ at j gives p=k-e>=2. Dropping finite injectivity exclusions changes
 the density by O(1/n). Thus its matrix is, up to fixed constants and
 Frobenius-o(1) error, either
 
-    n^-1/2 Q^(circ p),              e=0,
+    n^-1/2 (Q^(circ p)-I),          e=0,
     B circ Q^(circ p),              e=1.
 
-The first has operator norm O(n^-1/2) by the correlation Schur bound.
+The subtraction of I enforces the exact zero diagonal a=j; the graph
+formula was derived at distinct roots. The first has operator norm
+O(n^-1/2) by the correlation Schur bound and this diagonal subtraction.
 The second does as well: its absolute row sum is at most
 n^-1/2 sum_j |Q_aj|^p<=L^2 n^-1/2. Their Frobenius norms are O(1).
 This proves (3). The forbidden edge-only graph would have p=0; it
