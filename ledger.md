@@ -45119,3 +45119,62 @@ Updated frontier: [.4314713871136104,.5]. Convergence/nonconvergence and a
 comparable-order recurrence remain open. Continue the correctly conditioned
 rich-core birth and actual compatible nonlocal realization; do not spend
 the remaining two hours on the now-certified nearly optimal fixed slice.
+
+### 10.148.6 Correlated response gain, terminal ceiling, and nonlocal Ramsey saturation
+
+**Proved and independently replayed:** the original universal lower endpoint
+is now .4333221116640807. An actual correlated Gaussian birth above the rich
+core first gave .4320510727290484; a pure 256-rectangle policy in the SAME
+two-dimensional frame gives the stronger bound. Its exact pre-tail value is
+.43332537570294300749, and the entire conditional Hermite tail is paid by at
+most .000003264038862254080. Two independent replays agree. No Gaussian
+refreshing, inverse-norm substitution, or finite-order extrapolation occurs.
+
+**Uniform mechanism:** principal-angle attenuation bounds an old inverse's
+new-coordinate conditional Hermite tail by theta^(K+1)||g||_2. Weighted Jensen
+transfers the bound before division by mask mass. Fixed-frame response
+optima are attained, with uniform finite-cell approximation and exact
+restricted KKT conditions. Local numerical ascent is not global optimization.
+
+**Decisive scoped ceiling:** the ENTIRE final full-response functional is
+below .45, even with arbitrary feasible masks and unrestricted creation
+coordinates. A Gaussian tail-moment bound and weighted-square concavity
+yield a one-variable envelope; 109 outward-rational intervals certify the
+strict ceiling. It is not an actual-signing upper bound, nor does it cap
+every endpoint output, whose common quadratic energy was discarded.
+
+**New nonlocal theorem:** uniformly over growing finite abelian groups,
+every centered even Fourier involution has asymptotically mean-zero Boolean
+vectors attaining absolute Rayleigh 1-o(1). Finite Deuber sets and projective
+Ramsey supply dissociated monochromatic squarefree frequencies; a uniform
+cosine/Hermite approximation yields the Boolean witness. All finite accuracy
+parameters precede group order. The exact primary Ramsey statements and
+their positivity/echelon hypotheses were independently checked.
+
+The finite-field robust form implies Q(A)/n^(3/2)->1/2 for EVERY
+additive-Cayley hollow signing with op norm<=(1+o(1))sqrt(n). The separate
+Paley character argument gives BOTH endpoints along ALL admissible prime
+powers, strengthening the archived subsequential results. No assertion for
+arbitrary symmetric signings, general eigenbases, or spectrally nonflat
+Cayley families follows.
+
+**Actual-minimizer geometry:** single-coefficient local minimality forces a
+gap-two state outside projective radius r of every oriented ground whenever
+n(2r-1)<Q and Q>r(n-r)+1. Thus separation is at least
+(c/2-o(1))sqrt(n). A single-orientation gap-two window has at least
+1+log_2(n^2/(2Q+n)) states; mixed orientation gives a different twisted-code
+overlap bound, not the same collision estimate. Independently, a sparse-flip
+integer-combination theorem forces (1-o(1))log(n)/loglog(n) near-states in
+every fixed C sqrt(n) window of exact minimizers. No joint discrepancy or
+near-minimizer robustness is inferred.
+
+**Nonlocal scope correction:** arbitrary controlled-index truth tables are
+realizable, but one controlled gate is exactly a direct sum of old phase
+operators; its formal alphabet growth gives no extra optimized seed norm.
+
+[Director reconstruction, proof files, exact programs, and scopes](artifacts/resumed_director_sixth_checkpoint_audit_2026_09_06.md).
+
+Updated frontier: [.4333221116640807,.5]. Convergence/nonconvergence and a
+comparable-order recurrence remain open. Continue substantive work through
+07:13:55 UTC on the omitted common endpoint energy and the Ramsey mechanism's
+actual scope. This checkpoint does not end the authorized campaign.

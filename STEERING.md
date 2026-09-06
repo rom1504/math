@@ -1,167 +1,116 @@
 # Strategic steering
 
-Evidence cutoff: resumed fifth checkpoint, ledger Section 10.148.5;
-full nonlinear theorem and .4314713871136104 certificate reconstructed.
-
-Status: **second six-hour response/convergence campaign active**, starting
-2026-09-06 01:13:55 UTC from 78110a5;
-convergence and nonconvergence remain open.
+Evidence cutoff: resumed sixth checkpoint, ledger Section 10.148.6.
+Status: **second six-hour response/convergence campaign active**,
+2026-09-06 01:13:55–07:13:55 UTC. Convergence and nonconvergence are open.
 
 ## User-stated objective and workflow directives
 
 Determine whether M_n/n^(3/2) converges, without presuming either answer.
 Convergence to any constant or rigorous nonconvergence is success.
 
-The user authorized a fresh six-hour campaign, three parallel researchers,
-reconstruction of the current frontier, primary-literature retrieval, exact
-verification, and hourly substantive checkpoints. The user then explicitly
-requested publication and a normal commit/push attempt after changing
-permissions. The attempt remained blocked by the local read-only sandbox;
-write access has since been enabled, and this consolidated publication
-uses the normal local commit and push workflow.
-The latest user separately authorized a new six-hour substantive campaign
-on 2026-09-05, beginning from the exact problem and verified frontier before
-historical assessments. The agent may replace the research architecture;
-no previously preferred route or judgment is binding. Three independent
-researchers worked independently. Write access and normal Git publication have been
-verified. Checkpoints are steering events, not stopping points; neither
-bookkeeping nor idle waiting counts as active research.
+The latest user authorizes six additional hours of active research from
+78110a5. Preserve useful mathematics, develop response feasibility, independently
+pursue convergence/upper recovery, and freshly reconstruct the explicit bound.
+Neither Hadamard recovery, a particular hierarchy, nor convergence to 1/2 is
+mandatory. Prior positive audits are not proof steps. Use three complementary
+researchers, record meaningful checkpoints, and keep all limit orders explicit.
 
-The README's verification, stopping, and blank-slate rules remain in force.
-All mathematical judgments below belong to the agent.
+Write access and normal Git push are verified. Checkpoints are steering events,
+not stopping points; bookkeeping and idle waits are not research. The README's
+verification, temporary-directory, publication, and stopping rules remain.
+All mathematical judgments below are agent-authored.
 
-The latest user authorizes another six hours of active research from the
-completed campaign. Preserve useful results, develop response feasibility,
-independently pursue convergence or upper recovery, and freshly reconstruct
-the numerical lower-bound proof. Neither a particular hierarchy, Hadamard
-seed recovery, nor convergence to 1/2 is mandatory. Prior positive audits are
-not proof steps. Write access was reverified; three complementary researchers
-are active. Record meaningful checkpoints and keep all limit orders explicit.
-
-## Active independent assessment, 2026-09-06
-
-The full nonlinear response theorem is proved and independently reconstructed.
-A causal inverse shape above the rich core, conditional projection, and exact
-binwise Jensen give the displayed bound. Finite approximations precede the matrix limit;
-spectral deletion is removed last. The old marked supremum is exceeded by
-at least 1/40000. Feasible coordinate birth and one-Gaussian gradient ascent
-give further genuine finite-stage mechanisms, not refreshed product spins.
-No uniform rate or matching upper formula is known.
-
-The new audit also bounds the WHOLE fixed-rule Gaussian functional by
-sqrt(15)/8<1/2, using flat-involution GFOM universality. This is a certificate
-ceiling, not an actual-signing ceiling. Strictly causal finite stationary
-frames have the stronger 1/sqrt(2pi) bound; cyclic closures are excluded.
-These limits justify complementary nonlocal work rather than constant tuning.
-
-Matrix-height recovery now exactly decides finite Gaussian feasibility;
-strict barriers give positive approximation floors. Continuous cyclic cores
-have uniform two-stage escape on each fixed frame, not over growing frames.
-The entire fixed-mask/fixed-covariance causal shape problem now has an exact
-two-parameter dual; the banked candidate is certified within 8.2e-7 of its
-optimum. Stop tuning that slice. Pursue a correctly conditioned rich-core
-birth and actual compatible nonlocal realization. Quadratic-index and
-independent-cloud barriers are scoped, not universal nonlinear impossibility.
-Neither arbitrary polar recovery nor equality of regularized and original
-minima follows. Convergence and nonconvergence remain open.
-See `artifacts/resumed_limit_campaign_2026_09_06.md` for evidence and next tests.
-
-## Agent-authored rigorous frontier
+## Agent-authored verified frontier
 
 ```math
-0.4314713871136104
+0.4333221116640807
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-The explicit lower endpoint is improved. The exact underlying construction
-also admits a further unevaluated strict ascent. The upper is unchanged.
-Exact recorded values for n=3,...,14 are
-(3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
-bounds are solver-certified, not standalone formal proof certificates.
+The lower bound is analytic with exact rational interval evaluation, independently
+reconstructed and replayed. A correctly conditioned actual two-Gaussian response
+policy gives it. The old inverse remains norm one; its correlation with the new
+mask is retained. Fixed finite approximations precede the matrix limit, and the
+spectral cutoff is removed last. Exact recorded M_3,...,M_14 remain
+(3,4,4,5,9,10,12,13,17,18,20,21); n=11,13 solver lower certificates were not rerun.
 
-## Retained quantitative result of the preceding campaign
+## Current assessment and leading tests
 
-For mu_r=E|sum_{j=1}^r epsilon_j|, all n,r>=1 satisfy
+The successful final full-response functional now has a UNIVERSAL certificate
+ceiling below .45. Further masks, cyclic frames, or causal births expressed by
+that same terminal objective cannot reach .45. This is NOT an actual-signing
+upper bound, nor even a bound on all energies of its own endpoint outputs.
+Their common quadratic energy was discarded by the certificate. Investigating
+that term is more discriminating than further terminal constant optimization.
 
-```math
-M_{n+r}\le M_n+M_r+
-\min\left\{
-n\mu_r+\sqrt{2nr(r-1)\log2},
-r\mu_n+\sqrt{2nr(n-1)\log2}
-\right\}.
-```
+The two-Gaussian policy class has an attained optimum and uniform finite-cell
+approximation. Its nonconvex numerical stationary point is not certified globally
+optimal. Fixed analytic-core frames admit strict unrestricted escape, but no
+uniform gain over expanding frames. Principal-angle Hermite attenuation now
+rigorously controls masks correlated with an old inverse, without rare-mask
+denominators. These results explain successful finite updates and their limits.
 
-Moreover min_B ||B||_(infinity->1)=n mu_r(1+O(sqrt(r/n))) for r=o(n).
-When also r->infinity, the completion remainder is
-(sqrt(2/pi)+o(1))n sqrt(r), improving the archived iid coefficient.
-Qualitative near-order continuity was already known. This is not a
-comparable-order recurrence or Level-6 progress.
+A genuinely nonlocal Ramsey mechanism saturates centered Fourier involutions
+on every sufficiently large finite abelian group. Over additive finite fields,
+every hollow Cayley signing with op norm <=(1+o(1))sqrt(n) has normalized cap
+tending to 1/2. Paley cores and conferences saturate at ALL admissible orders,
+with both Rayleigh signs attained asymptotically. This does not imply arbitrary
+signings saturate or near-minimizers are spectrally flat/Cayley.
 
-## Proof obligations and current judgment
+Actual exact minimizers have near-states separated by order sqrt(n) within the
+gap-two window. Single-orientation windows force logarithmically many states;
+mixed orientation instead gives a twisted response-code overlap bound. No
+critical-window discrepancy or comparable-order recurrence follows yet.
 
-No leading architecture earned unrestricted revival. The precise sufficient
-cross-order target remains a bound on exact minimizing children and some
-sign bridge of the form
+## Exact original-problem obligations
+
+No convergence or nonconvergence mechanism is complete. A sufficient open
+cross-order target remains: for exact minimizing children and some sign bridge,
 
 ```math
 Q\!\begin{pmatrix}A&B\\B^{\mathsf T}&D\end{pmatrix}^{2/3}
-\le M_m^{2/3}+M_n^{2/3}+K(m+n)^{1-\delta}
+\le M_m^{2/3}+M_n^{2/3}+K(m+n)^{1-\delta},
 ```
 
-for fixed delta>0, uniformly for all large m,n with 1/2<=m/n<=2.
-Balanced merge trees make its normalized defect geometrically summable.
-This lemma is sufficient but not demonstrated to be simpler than the
-original optimization. The mesoscopic theorem does not prove it.
+uniformly at all large comparable orders, with fixed delta>0. Balanced merge
+trees make the defect summable. This target is not demonstrated simpler than
+the original optimization, and the new geometry does not establish it.
 
-The exact reversal identity puts |H_A+H_D| and |x^TBy| under one maximum
-as two nonnegative summands. A successful bridge argument must control
-their joint large-value locations; signed cancellation cannot evade that
-identity. Separately paid bridges have the archived positive linear
-b-scale certificate floor.
+The exact reversal identity is max_(x,y)(|H_A+H_D|+|x^TBy|). No signed bridge
+cancellation bypasses it. The banked mesoscopic completion has remainder
+(sqrt(2/pi)+o(1))n sqrt(r) for r->infinity, r=o(n); it improves a coefficient,
+not the comparable-order exponent.
 
-## New obstructions and their exact scope
+The convergent Hadamard-regularized seed minimum still lacks equality with
+the original liminf. Arbitrary controlled Fourier-index gates are realizable,
+but one such gate is a direct sum of phase operators and adds no norm power.
+Arbitrary overlapping networks and original-minimizer landing remain unproved.
 
-1. Translation-invariant pseudometrics retaining the normalized coset
-   deficit with a global uniform continuity modulus require
-   exp((log2/2+o(1))n^2) covering states. This does not exclude exact-minimizer
-   states, nontranslation metrics, or physical-context limit objects.
-2. Deep leader supports contain isometric cubes. They give
-   exp((1/2+o(1))n^(3/2)) orbit classes of o(1)-near minimizers, but their
-   separation vanishes. This does not disprove compactness of shrinking
-   halos at fixed resolution.
-3. General low-rate codes can share both weight enumerators while their
-   N^(3/4) covering deficits differ. The counterexample dimension is
-   Theta(N^(3/4)), not the cut code's Theta(sqrt(N)).
-4. Arbitrary translated-coset queries are stronger than one-sided disjoint
-   physical continuations. The latter's exact compiler is archived and
-   has quadratic calibration; it is not a low-cap construction.
-5. Local-profile, algebraic-family, Gibbs, and action-recovery obstructions
-   retain their stated hypotheses. No universal impossibility is inferred.
+## Ranked next directions and falsification criteria
 
-## Literature and ranked alternatives
+1. Audit the common quadratic endpoint energy omitted by the terminal response
+   certificate. Require an actual asymptotic energy identity, not a new named
+   channel or an independence assumption. Stop a claimed universal gain if a
+   legitimate flat-involution sequence kills it.
+2. Determine the reach of the nonlocal Ramsey eigenspace mechanism. Any extension
+   must verify multiplicative closure and Boolean realization, not infer them
+   from flat spectrum alone. A Haar/random-eigenbasis counterexample is outside
+   the Cayley theorem but constrains attempted generalization.
+3. Use exact-minimizer critical windows for a quantitative order-transfer theorem.
+   Counting and Hamming spread alone do not control simultaneous row responses.
+4. Keep genuine nonconvergence available: it requires fixed positive separation
+   of two infinite order subsequences, not a failed intermediate route.
 
-The exact code is P_(2,n)=RM(1,n) punctured to the weight-two slice,
-including the affine constant. This locates the problem in restricted
-nonlinearity literature, but no imported theorem improves the frontier.
+The original local-profile, code, action, Gibbs, and algebraic no-gos retain
+their exact hypotheses. The response ceiling, phase-block identity, and Cayley
+saturation are not universal impossibility claims.
 
-1. Nonperturbative covering for this specific code remains a possible
-   direction, with no established smaller missing lemma. Generic radial
-   or finite-replica reformulations do not justify resumption.
-2. A minimizer-specific nontranslation variational state remains logically
-   possible, but needs both continuity and all-order recovery.
-3. A joint comparable-order bridge inequality remains open; the new
-   rectangular bound supplies only a mesoscopic module.
-4. Nonconvergence requires fixed positive separation of two infinite
-   order subsequences, not an obstruction to an intermediate method.
+## Continuing campaign
 
-## Decision and next refresh
-
-The previous campaign's quantitative theorem and scoped obstructions remain
-verified evidence, not a restriction on the newly authorized independent
-attack. Its initial hypotheses and continuing results are recorded in
-`artifacts/fresh_limit_campaign_2026_09_05.md`. Refresh the mathematical
-assessment after independent candidates are audited or a decisive result.
-If numbered waves resume, Wave 61 remains the next scheduled blank-slate
-boundary. Detailed proofs, limitations, and reproducible checks are in the
-two 2026-09-05 artifacts and ledger Section 10.146.
+Proofs, exact programs, and scopes are indexed in
+`artifacts/resumed_director_sixth_checkpoint_audit_2026_09_06.md` and the campaign
+record. Continue substantive mathematics through the authorized endpoint.
+Refresh after a decisive proof or the final campaign synthesis. If numbered
+waves resume, Wave 61 remains the scheduled blank-slate boundary.

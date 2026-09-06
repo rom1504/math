@@ -193,3 +193,42 @@ minimizers, not all structured constructions.
 Convergence and nonconvergence remain open. More than two campaign hours
 remain for the rich-core birth, compatible nonlocal synthesis, and direct
 verification of their original-problem implications. Continue immediately.
+
+## Sixth substantive checkpoint, approximately 05:50 UTC
+
+The correctly correlated rich-core birth, followed by policy ascent in the
+same actual two-Gaussian frame, raises the original lower endpoint to
+.4333221116640807. Exact rational rectangle certification and two independent
+replays retain the old inverse's norm and its correlation with the new mask.
+A general principal-angle theorem bounds the omitted conditional chaos tail
+without any inverse-mask-mass penalty. Fixed-frame optima exist and finite
+cell optima approximate them uniformly; numerical stationarity is not a
+claim of global optimization.
+
+There is also a decisive scoped ceiling: the ENTIRE terminal full-response
+functional is below .45. Gaussian moment-body rearrangement and weighted
+square concavity reduce its upper bound to a scalar envelope, certified on
+109 rational intervals plus the infinite tail. This does not bound actual
+signings or even all energies of the algorithm's endpoint outputs: the
+common quadratic energy remains outside the terminal certificate.
+
+The nonlocal track now has a general theorem, not another seed example.
+Centered even Fourier involutions on all growing finite abelian groups have
+asymptotically mean-zero Boolean vectors saturating their absolute Rayleigh
+bound. The proof combines squarefree Hermite approximation with finite
+Deuber/projective Ramsey theorems, whose exact primary statements were read.
+The robust finite-field version implies cap->1/2 for EVERY additive-Cayley
+signing whose operator norm is (1+o(1))sqrt(n). Native Paley cores and bordered
+conferences saturate on ALL admissible orders, with both Rayleigh signs.
+This is not a claim about arbitrary eigenbases or non-Cayley minimizers.
+
+Direct optimizer analysis gives gap-two near-state separation of order
+sqrt(n), using near-state local fields and single coefficient optimality.
+An orientation dichotomy distinguishes actual near-state code entropy from
+twisted code overlap. A separate sparse-flip determinant argument forces
+an unbounded critical-window count. None yet gives simultaneous incident-row
+discrepancy or a comparable-order recurrence.
+
+[Complete director audit and proof links](resumed_director_sixth_checkpoint_audit_2026_09_06.md).
+Convergence and nonconvergence remain open. Continue on the omitted endpoint
+energy and the reach of the Ramsey mechanism, not more terminal tuning.
