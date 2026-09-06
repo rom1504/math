@@ -1,0 +1,91 @@
+{
+  "started_utc": "2026-09-06T18:47:59.124636+00:00",
+  "scope": "Finite regressions, not formal verification. Numerical parts retain their original labels. Asymptotic statements depend on the written proofs.",
+  "checks": [
+    {
+      "script": "transfer_seed_spectral_gaussian_verify_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_constants\": {\n    \"polynomial_low_to_high\": [\n      \"-3/5\",\n      \"-2/5\",\n      \"8/5\",\n      \"1\"\n    ],\n    \"semicircle_R_mean\": \"361/50\",\n    \"semicircle_LR_mean\": \"288/25\",\n    \"semicircle_R_squared_mean\": \"1262573/2500\",\n    \"rational_cap_lower\": \"2016/3971\",\n    \"rational_cap_lower_display\": 0.5076806849660035\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_seed_hadamard_graph_verify_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"eulerian_loop_graphs_structurally_checked\": 2198,\n  \"exact_degree_two_homomorphism_checks\": 150,\n  \"exact_partition_mobius_checks\": 150\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_adversary_sparse_hadamard_two_over_pi_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"degrees_checked\": 33,\n  \"witnesses\": [\n    {\n      \"degree\": 0,\n      \"P_coefficients_low_to_high\": [\n        1\n      ],\n      \"R_mean\": 2,\n      \"LR_mean\": 0,\n      \"R_squared_mean\": 4,\n      \"coefficient_before_division_by_pi\": \"0\"\n    },\n    {\n      \"degree\": 1,\n      \"P_coefficients_low_to_high\": [\n        1,\n        1\n      ],\n      \"R_mean\": 3,\n      \"LR_mean\": 2,\n      \"R_squared_mean\": 14,\n      \"coefficient_before_division_by_pi\": \"2/3\"\n    },\n    {\n      \"degree\": 2,\n      \"P_coefficients_low_to_high\": [\n        0,\n        1,\n        1\n      ],\n      \"R_mean\": 4,\n      \"LR_mean\": 4,\n      \"R_squared_mean\": 53,\n      \"coefficient_before_division_by_pi\": \"1\"\n    },\n    {\n      \"degree\": 4,\n      \"P_coefficients_low_to_high\": [\n        1,\n        -1,\n        -2,\n        1,\n        1\n      ],\n      \"R_mean\": 6,\n      \"LR_mean\": 8,\n      \"R_squared_mean\": 438,\n      \"coefficient_before_division_by_pi\": \"4/3\"\n    },\n    {\n      \"degree\": 8,\n      \"P_coefficients_low_to_high\": [\n        1,\n        -2,\n        -6,\n        7,\n        11,\n        -5,\n        -6,\n        1,\n        1\n      ],\n      \"R_mean\": 10,\n      \"LR_mean\": 16,\n      \"R_squared_mean\": 6504,\n      \"coefficient_before_division_by_pi\": \"8/5\"\n    },\n    {\n      \"degree\": 16,\n      \"P_coefficients_low_to_high\": [\n        1,\n        -4,\n        -20,\n        50,\n        130,\n        -166,\n        -314,\n        239,\n        367,\n        -174,\n        -230,\n        67,\n        79,\n        -13,\n        -14,\n        1,\n        1\n      ],\n      \"R_mean\": 18,\n      \"LR_mean\": 32,\n      \"R_squared_mean\": 137036,\n      \"coefficient_before_division_by_pi\": \"16/9\"\n    },\n    {\n      \"degree\": 32,\n      \"P_coefficients_low_to_high\": [\n        1,\n        -8,\n        -72,\n        372,\n        1716,\n        -4956,\n        -16044,\n        30738,\n        78354,\n        -107788,\n        -230252,\n        237590,\n        442118,\n        -350974,\n        -584082,\n        361711,\n        548591,\n        -266492,\n        -373596,\n        142102,\n        186166,\n        -54922,\n        -67826,\n        15227,\n        17851,\n        -2950,\n        -3302,\n        379,\n        407,\n        -29,\n        -30,\n        1,\n        1\n      ],\n      \"R_mean\": 34,\n      \"LR_mean\": 64,\n      \"R_squared_mean\": 3517588,\n      \"coefficient_before_division_by_pi\": \"32/17\"\n    }\n  ],\n  \"limiting_coefficient_before_division_by_pi\": 2,\n  \"status\": \"all exact orthogonality and moment identities pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_seed_intermediate_tensor_moments_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"nodes\": [\n    \"7991/10000\",\n    \"16067/10000\",\n    \"6081/2500\",\n    \"32891/10000\",\n    \"20981/5000\",\n    \"51901/10000\",\n    \"63639/10000\"\n  ],\n  \"degree_in_x\": 28,\n  \"gaussian_expectation_downward_1e12\": \"150828811427/200000000000\",\n  \"gaussian_expectation_display\": 0.7541440571350004,\n  \"certified_greedy_limit_lower\": \"377/750\",\n  \"sum_absolute_coefficients_display\": 8.915689136806424,\n  \"scalar_correlation_checks\": [\n    {\n      \"d\": 2,\n      \"theta\": \"1/2\",\n      \"eta_even\": {\n        \"2\": \"1/2\",\n        \"4\": \"1/2\",\n        \"6\": \"1/2\"\n      }\n    },\n    {\n      \"d\": 3,\n      \"theta\": \"5/9\",\n      \"eta_even\": {\n        \"2\": \"5/9\",\n        \"4\": \"41/81\",\n        \"6\": \"365/729\"\n      }\n    }\n  ],\n  \"adaptive_conditional_moment_checks\": 2268\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_reconstruction_correlated_cluster_exact_checks_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"all_order_four_signings\": 64,\n  \"fully_enumerated_joint_laws\": 128,\n  \"marginals_preserved_exactly\": true,\n  \"smallest_homogeneous_gain_lower\": \"1332279122577/2048000000000000\",\n  \"smallest_nonuniform_gain_lower\": \"33757396141821/52428800000000000\",\n  \"homogeneous_theorem_credit\": \"735/8388608\",\n  \"current_delta\": \"1/16777216\",\n  \"current_beta_squared_times_variance\": \"16777215/1065151889408\",\n  \"current_beta_C_times_variance\": \"16777215/8521215115264\",\n  \"current_asymptotic_credit_per_spin\": \"281474943156225/9594035304461697130468212736\",\n  \"arithmetic\": \"rational joint laws and outward rational entropy intervals\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_reconstruction_adaptive_cluster_exact_checks_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"adaptive\": {\n    \"all_order_four_signings\": 64,\n    \"nonconstant_field_cases_with_positive_exact_gain\": 48\n  },\n  \"hub\": [\n    {\n      \"r\": 1,\n      \"order\": 5,\n      \"variance_exact\": \"0\",\n      \"variance_display\": 0.0,\n      \"d1_squared_exact\": \"0\",\n      \"d1_squared_display\": 0.0\n    },\n    {\n      \"r\": 3,\n      \"order\": 65,\n      \"variance_exact\": \"186624/274625\",\n      \"variance_display\": 0.679559399180701,\n      \"d1_squared_exact\": \"47775744/1160290625\",\n      \"d1_squared_display\": 0.04117567010420342\n    },\n    {\n      \"r\": 5,\n      \"order\": 1025,\n      \"variance_exact\": \"40144896/43075625\",\n      \"variance_display\": 0.9319631694258644,\n      \"d1_squared_exact\": \"164433494016/45256328515625\",\n      \"d1_squared_display\": 0.0036333812178163862\n    },\n    {\n      \"r\": 7,\n      \"order\": 16385,\n      \"variance_exact\": \"4328530182144/4398851866625\",\n      \"variance_display\": 0.98401362750709,\n      \"d1_squared_exact\": \"283674554016989184/1180951952670750490625\",\n      \"d1_squared_display\": 0.00024020837882138434\n    },\n    {\n      \"r\": 9,\n      \"order\": 262145,\n      \"variance_exact\": \"717752965791744/720584186747945\",\n      \"variance_display\": 0.9960709365980143,\n      \"d1_squared_exact\": \"752618533858043756544/49518546051917571816643625\",\n      \"d1_squared_display\": 1.5198720355580778e-05\n    }\n  ],\n  \"compression\": {\n    \"three_coordinate_hadamard_compression\": \"passed\",\n    \"middle_boolean_eigenvalue\": 1,\n    \"hollow_cap\": 3,\n    \"spectral_net_entropy_upper\": \"68201514152853/396800000000000\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_reconstruction_stationary_logdet_exact_checks_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_asymptotic_falsifier\": {\n    \"beta\": \"101/100\",\n    \"C\": \"101/100\",\n    \"limiting_squared_mean_bracket\": [\n      \"1/40\",\n      \"3/100\"\n    ],\n    \"variance_bracket\": [\n      \"97/100\",\n      \"39/40\"\n    ],\n    \"weighted_norm_upper\": \"397839/400000\",\n    \"gaussian_logdet_per_spin_lower\": \"3214189074859/4000000000000\",\n    \"actual_stationary_chaos_per_spin_upper\": \"101/200\",\n    \"discrepancy_per_spin_lower\": \"1194189074859/4000000000000\"\n  },\n  \"stationary_identity_regression\": {\n    \"status\": \"numerical regression only; proof is algebraic\",\n    \"order\": 3,\n    \"mean\": 0.5,\n    \"variance\": 0.75,\n    \"identity_residual\": 4.440892098500626e-16\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_adversary_complement_exposure_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"seed\": 260906,\n  \"integer_weaves_checked\": 3392,\n  \"counts\": {\n    \"m4_deleted1\": 1024,\n    \"m4_deleted2\": 1024,\n    \"m4_deleted3\": 1024,\n    \"m8_deleted1\": 32,\n    \"m8_deleted2\": 32,\n    \"m8_deleted3\": 32,\n    \"m8_deleted4\": 32,\n    \"m8_deleted7\": 32,\n    \"m16_deleted1\": 32,\n    \"m16_deleted2\": 32,\n    \"m16_deleted3\": 32,\n    \"m16_deleted8\": 32,\n    \"m16_deleted15\": 32\n  },\n  \"max_deleted_gram_components\": {\n    \"m4_deleted1\": 1,\n    \"m4_deleted2\": 2,\n    \"m4_deleted3\": 1,\n    \"m8_deleted1\": 1,\n    \"m8_deleted2\": 2,\n    \"m8_deleted3\": 1,\n    \"m8_deleted4\": 4,\n    \"m8_deleted7\": 1,\n    \"m16_deleted1\": 1,\n    \"m16_deleted2\": 2,\n    \"m16_deleted3\": 1,\n    \"m16_deleted8\": 2,\n    \"m16_deleted15\": 1\n  },\n  \"status\": \"all reconstruction and orthogonality identities pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_adversary_seed_only_conditional_tail_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"seed\": 260906,\n  \"cases\": [\n    {\n      \"t\": 1,\n      \"fibre_order\": 64,\n      \"retained_order\": 3968,\n      \"negative_hollow_eigenvalue\": -65,\n      \"exact_global_cap\": 128960,\n      \"event_probability_negative_log2\": 2016,\n      \"aligned_field_dispersion\": 0\n    },\n    {\n      \"t\": 2,\n      \"fibre_order\": 128,\n      \"retained_order\": 15872,\n      \"negative_hollow_eigenvalue\": -129,\n      \"exact_global_cap\": 1023744,\n      \"event_probability_negative_log2\": 4032,\n      \"aligned_field_dispersion\": 0\n    },\n    {\n      \"t\": 4,\n      \"fibre_order\": 256,\n      \"retained_order\": 63488,\n      \"negative_hollow_eigenvalue\": -257,\n      \"exact_global_cap\": 8158208,\n      \"event_probability_negative_log2\": 8064,\n      \"aligned_field_dispersion\": 0\n    },\n    {\n      \"t\": 8,\n      \"fibre_order\": 512,\n      \"retained_order\": 253952,\n      \"negative_hollow_eigenvalue\": -513,\n      \"exact_global_cap\": 65138688,\n      \"event_probability_negative_log2\": 16128,\n      \"aligned_field_dispersion\": 0\n    }\n  ],\n  \"status\": \"integer spectrum, field and global-cap witness identities pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_director_selector_convexity_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"evidence\": \"exact integer finite regression, not a replacement for the written proof\",\n  \"all_order4_signings\": 64,\n  \"tangent_pair_checks\": 139264,\n  \"concentration_denominator\": 576\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_adversary_fixed_retention_covariance_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"seed\": 260906,\n  \"ambient_overlap_identities\": 200,\n  \"exact_subset_covariance_decompositions\": 800,\n  \"connected_overlap_exponent_checks\": 4384,\n  \"largest_finite_absolute_covariance\": \"1/5\",\n  \"status\": \"all exact two-copy decompositions pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_seed_exceptional_selector_verify_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"exact\": {\n    \"P_squared_coefficients\": [\n      \"9/25\",\n      \"12/25\",\n      \"-44/25\",\n      \"-62/25\",\n      \"44/25\",\n      \"16/5\",\n      \"1\"\n    ],\n    \"P_fourth_even_coefficients\": {\n      \"0\": \"81/625\",\n      \"2\": \"-648/625\",\n      \"4\": \"248/125\",\n      \"6\": \"2342/625\",\n      \"8\": \"-10184/625\",\n      \"10\": \"344/25\",\n      \"12\": \"1\"\n    },\n    \"semicircle_v_e_s\": [\n      \"178/25\",\n      \"288/25\",\n      \"314747/625\"\n    ],\n    \"coefficient_absolute_sums\": [\n      \"276/25\",\n      \"53896/625\"\n    ],\n    \"finite_cap_lower\": \"145071245497770289701/288781684033417350314\",\n    \"finite_cap_lower_float\": 0.5023561171593656,\n    \"limiting_local_defect_lower\": \"841/2213750\"\n  },\n  \"seed\": 20260906,\n  \"finite_clipping_checks\": 1120,\n  \"finite_two_sided_cubic_checks\": 280\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_seed_retention_transition_verify_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_couplings\": [\n    {\n      \"m\": 2,\n      \"k\": 1,\n      \"uniform_selectors\": 6,\n      \"balanced_selectors\": 4,\n      \"mean_symmetric_difference\": \"2/3\"\n    },\n    {\n      \"m\": 3,\n      \"k\": 1,\n      \"uniform_selectors\": 84,\n      \"balanced_selectors\": 27,\n      \"mean_symmetric_difference\": \"10/7\"\n    },\n    {\n      \"m\": 3,\n      \"k\": 2,\n      \"uniform_selectors\": 84,\n      \"balanced_selectors\": 27,\n      \"mean_symmetric_difference\": \"10/7\"\n    },\n    {\n      \"m\": 4,\n      \"k\": 1,\n      \"uniform_selectors\": 1820,\n      \"balanced_selectors\": 256,\n      \"mean_symmetric_difference\": \"198/91\"\n    }\n  ],\n  \"integer_nearby_selector_cap_checks\": 100,\n  \"seed\": 20260906\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "transfer_reconstruction_gaussian_threshold_exact_checks_2026_09_06.py",
+      "returncode": 0,
+      "stdout": "{\n  \"exact\": {\n    \"negative_triangle_actual_partition\": \"49/4\",\n    \"unattenuated_covariance_witness_determinant\": \"16/27\",\n    \"strict_violation_lower\": \"10877426733/2000000000000\",\n    \"current_copula_to_clipped_credit_ratio_upper\": \"2601/4398046511104\",\n    \"all_claims_in_this_section\": \"exact outward rational arithmetic\"\n  },\n  \"diagnostics\": {\n    \"status\": \"numerical regression only, not the proof\",\n    \"bivariate_threshold_cases\": 64,\n    \"minimum_hermite_tail_slack\": 0.003425855738703047,\n    \"current_threshold\": -5.294704084854597,\n    \"current_a_squared\": 4.2551591205376615e-13,\n    \"current_attenuation\": 1.784743198369744e-06,\n    \"current_copula_credit_per_spin\": 2.9904729420025756e-24,\n    \"current_clipped_credit_per_spin\": 2.9338535269442393e-14,\n    \"current_credit_ratio\": 1.0192986509170784e-10\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "completed_utc": "2026-09-06T18:48:17.632416+00:00"
+}

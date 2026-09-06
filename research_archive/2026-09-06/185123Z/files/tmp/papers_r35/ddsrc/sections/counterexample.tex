@@ -1,0 +1,110 @@
+\section{Covers and Counterexamples}
+\subsection{Proof of \pref{lem:cex}} \label{sec:proof-of-counterexample}
+In this section we elaborate on the counterexample we presented in the introduction. The setup is the following. \(X\) is a simplicial complex that admits a connected \(2\)-cover \(\rho:Y \to X\). We also assume that \(X\) is a \(\lambda=2^{-7k-1}\) two-sided high dimensional expander. Such complexes were constructed in \cite{LubotzkySV2005b} (in the referenced paper they only give a bound on one sided expansion, but see also \cite{DinurK2017} for obtaining two-sided expansion). Let \((r,r') \sim \mathcal{D}\) be any distribution over \(k\)-faces of \(X\) such that the marginal of \(\mathcal{D}\) is the distribution over \(k\)-faces in \(X\). 
+
+\restatelemma{lem:cex}
+
+\begin{proof}[Proof of \pref{lem:cex}]
+Without loss of generality we denote \(Y(0)=\sett{(v,0),(v,1)}{v \in X(0)}\), the covering map is \(\rho(v,i)=v\).
+
+By \pref{claim:inverse-image-of-l-cover} every face \(r \in X(k)\) has exactly two preimages under $\rho$, which we denote \(\tilde{r}_1,\tilde{r}_2 \in Y(k)\).
+
+We will sample a random ensemble \(\mathcal{F}\), and show that at least one random ensemble has agreement at least \(\frac{1}{2}\) by showing that \(\Ex[\mathcal{F}]{\agr_{\mathcal{D}}(\mathcal{F})} \geq \frac{1}{2}\).
+
+The randomized ensemble is constructed as follows. For every \(r \in X(k)\) we select one of the two preimage \(\tilde{r} \in Y(k)\) of \(r\), independently and uniformly at random. Then for every \(v \in r\), 
+\[f_r(v) = \begin{cases} 0 & (v,0) \in \tilde{r} \\ 1 & (v,1) \in \tilde{r} \end{cases}.\]
+In the introduction we stated that \(f_r\) comes from a function \(H|_{\tilde{r}}\). This function is \(H:Y(0) \to \set{0,1}\), \(H(v,i)=i\). 
+Let us verify that \(\Ex[\mathcal{F}]{\agr_{\mathcal{D}}(\mathcal{F})} \geq \frac{1}{2}\). The expectation is over the choice of preimages \(\tilde{r}\) for every \(r \in X(k)\).
+\[\Ex[\mathcal{F}]{\agr_{\mathcal{D}}(\mathcal{F})} = \Ex[\mathcal{F}]{\Ex[r,r' \sim D]{\one_{f_r = f_{r'}}}} = \Ex[r,r' \sim D]{\Ex[\mathcal{F}]{\one_{f_r = f_{r'}}}}.\]
+Hence it is enough to show that for every \(r,r' \sim D\), \(\Ex[\mathcal{F}]{\one_{f_r = f_{r'}}} \geq \frac{1}{2}\), or equivalently that \(\Prob[\mathcal{F}]{f_r = f_{r'}} \geq \frac{1}{2}\).
+
+Fix \(r,r' \sim D\) an edge in the agreement distribution. If \(r,r'\) have an empty intersection or \(r=r'\) this is trivial, so let us assume this is not the case.
+Let \(\tilde{r}, \tilde{r}\) be the preimages of \(r,r'\) randomly chosen, respectively. Let \(v \in r \cap r'\) and suppose without loss of generality that \((v,0) \in \tilde{r}\) be the preimage of \(v\) inside the preimage of \(r\). As \(\tilde{r}\) is chosen independently, with probability \(\frac{1}{2}\) it holds that \((v,0) \in \tilde{r}\). In this case, because \(\rho|_{X_{(v,0) }}:X_{(v,0) }(0) \to X_{v}(0)\) is an isomorphism it holds that for every \(u \in r \cap r'\), there is a preimage \((u,i)\) such that \((u,i) \in \tilde{r} \cap \tilde{r}'\). In particular \(f_r(u)=f_{r'}(u)\) by definition. Thus indeed \(\Prob[\mathcal{F}]{f_r = f_{r'}} \geq \frac{1}{2}\).
+
+Thus we take \(\mathcal{F}\) be any such assignment where \(\agr_{\mathcal{D}}(\mathcal{F}) \geq \frac{1}{2}\) (which exists since the expectation over the agreement is at least \(\frac{1}{2}\)). The first item in the lemma holds for this ensemble.
+
+\medskip
+
+We conclude by showing that for \emph{any} ensemble constructed as above, and any \(G:X(0) \to \set{0,1}\) it holds that 
+\[\Prob[r \in X(k)]{f_r \overset{1-\zeta}{\approx} G|_r} =\exp(-\Omega_\zeta(k)).\]
+
+Fix a global function \(G:X(0) \to \set{0,1}\). Recall that \(H:Y \to \set{0,1}\) is \(H(v,i)=i\). Let \(\tilde{G}:Y(0) \to \set{0,1}\) be \(\tilde{G}((v,i))=G(v)\). Note that if \(G|_r \overset{1-\zeta}{\approx} f_r\) and \(f_r\) answers according to the preimage \(\tilde{r}\), then \(H|_{\tilde{r}} \overset{1-\zeta}{\approx} \tilde{G}|_{\tilde{r}}\). This is because if \(G(v)=f_r(v)=j\) and \(f_r\) answers according to \(\tilde{r}\), this means that \((v,j) \in \tilde{r}\), and hence \(\tilde{G}(v,j)=G(v)=f_r(v)=H(v,j)\). We conclude that
+\begin{equation} \label{eq:counterexample-equivalence-inequality}
+    \Prob[r \in X(k)]{G|_r \overset{1-\zeta}{\approx} f_r} \leq 2\Prob[\tilde{r} \in Y(k)]{\tilde{G}|_{\tilde{r}} \overset{1-\zeta}{\approx} H|_{\tilde{r}}},
+\end{equation}
+since the choice of \(\tilde{r} \in Y(k)\) is done by first chosing \(r \in X(k)\) and then chosing one preimage uniformly at random. Thus we will argue that \(\Prob[\tilde{r} \in Y(k)]{\tilde{G}|_{\tilde{r}} \overset{1-\zeta}{\approx} H|_{\tilde{r}}} = \exp(-\Omega_\zeta(k))\).
+
+We observe that \(\dist(H,\tilde{G})=\frac{1}{2}\) because for every \(v \in X(0)\), \(H,\tilde{G}\) agree on exactly one of \((v,0),(v,1)\). By \pref{claim:expansion-of-cover} it holds that \(Y\) is also a \(2^{-7k}\)-two sided spectral expander. 
+
+Let \(A = \sett{(v,i) \in Y(0)}{H(v,i) \ne \tilde{G}(v,i)}\). Then \(\prob{A} = \dist(H,\tilde{G})=\frac{1}{2}\), and a face \(\tilde{r}\) is such that \(\tilde{G}|_{\tilde{r}} \overset{1-\zeta}{\approx} H|_{\tilde{r}}\) if and only if \(\cProb{(v,i)\in Y(0)}{A}{(v,i) \in \tilde{r}} < \zeta\).
+
+Thus by \pref{thm:sampling-in-HDXs}, it holds that 
+\[\Prob[\tilde{r} \in Y(k)]{\tilde{G}|_{\tilde{r}} \overset{1-\zeta}{\approx} H|_{\tilde{s}} } = \exp(-\Omega(\zeta^2 k))\]
+and by \eqref{eq:counterexample-equivalence-inequality}, 
+\[\Prob[r \in X(k)]{G|_r \overset{1-\zeta}{\approx} g_r} = \exp(-\Omega_\zeta( k )).\]    
+\end{proof}
+
+\begin{remark}
+A similar argument can generalized for complexes \(X\) with connected \(\ell\)-covers and an alphabet of \(\Sigma = [\ell]\). We can also consider test distributions that samples \(q\) \(k\)-sets instead of \(2\), provided that every \(\set{r_i} \subseteq \supp \mathcal{D}\) are contained in a simply connected sub complex of \(X\).
+
+In this case we can show that there exists an ensemble with agreement at least \(\frac{1}{\ell^{q-1}}\), but 
+\[\Prob[r \in X(k)]{G|_r \overset{1-\zeta}{\approx} g_r} = \exp(-\Omega_\zeta( k ))\]  
+will hold for any \(G:X(0) \to \Sigma\) and any \(\zeta < \frac{\ell-1}{\ell}\).
+\end{remark}
+
+\subsection[Gap amplification fails below 1/2]{Gap amplification fails below $1/2$} \label{sec:bog}
+In \cite{Bogdanov-comment05}, Bogdanov addresses the question of whether the soundness of a PCP can be reduced to any $\epsilon>0$ by a step of gap amplification a la \cite{Dinur07}. The starting point is a constraint graph $\calG = (V,E,\set{\Sigma_v},\set{\pi_{uv}})$ where $V$ is a set of vertices, $E$ a set of edges, $\Sigma_v$ a finite set of labels to be assigned to $v$ and $\pi_{uv} \subset \Sigma_u\times\Sigma_v$ a constraint specifying which pairs of labels are considered satisfying.
+The value of $\calG$ is the maximal fraction of satisfiable constraints, namely 
+\[ val(\calG)=\max_{H:V\to\bits} \Pr_{uv\in E}[(H(u),H(v))\in \pi_{uv}].\] 
+Our initial assumption is that it is NP-hard to decide if $val(\calG)=1$ or $val(\calG)<1-\eps_0$.
+
+The gap amplification, or ``powering'' step (with parameter $\ell\in\mathbb{N}$), constructs a family $X$ of subsets of $V$ corresponding to balls in $\calG$ as follows. For each $v\in V$, we define $s_v = \sett{u\in V}{\dist(u,v) \leq \ell}$. We let $X = \sett{s_v}{v\in V}$. Furthermore, for a set $s_v$ we will only allow local functions $f_{s_v}:s_v\to\bits$ that satisfy all $\calG$ constraints inside $s_v$. Formally, let
+\begin{equation}\label{eq:valid-assignments}
+    \Sigma_v = \sett{f_v:s_v\to\bits}{f_v\hbox{ satisfies all $\calG$ constraints in }s_v}.
+\end{equation}
+%
+A valid ensemble of local functions on $X$ is $\sett{f_{s_v}:s_v\to\bits}{f_{s_v}\in \Sigma_v}$. An agreement test for $X$ specifies a distribution over pairs of sets in $X$, but we do not specify the precise distribution because the counterexample works for any distribution. 
+    %
+\begin{itemize}
+    \item The completeness of this transformation is that whenever there is an assignment satisfying all of the constraints of $\calG$ then there is a valid ensemble of local functions $\set{f_s}$ with $\agr(\set{f_s})=1$. 
+    %
+    \item The soundness of this transformation is that whenever there is a valid ensemble $\set{f_s}$ with $\agr(\set{f_s})>\epsilon$ there must be some global $H:V\to\bits$ that satisfies more than $1-\eps_0$ of the constraints of $\calG$, namely, $val(\calG)>1-\eps_0$ which means, by our assumption, that $val(\calG)=1$. 
+\end{itemize}
+The ``soundness'' of the gap amplification transformation is the value of $\eps$ for which we can guarantee that 
+\[ \agr(\set{f_s})>\eps \quad\Longrightarrow \quad val(\calG)>1-\eps_0.\]
+
+Contrapositively, a counterexample to gap amplification is an ensemble that has high agreement yet $val(\calG)<1-\eps_0$. 
+
+In Bogdanov's example, the graph $\calG$ is chosen to be a high-girth expander graph, the alphabet is $\Sigma_v=\bits$ for all $v\in V$, and all edges carry inequality constraints, namely $\pi_{uv}=\set{(0,1),(1,0)}$ for all $uv\in E$. The expansion asserts that $val(\calG) \approx 1/2$ since every cut in the graph violates about half of the edges or more. 
+
+Looking at valid ensembles, we observe that the set $\Sigma_v$ of possible local functions for a given $s_v$ consists of only two assignments, per \eqref{eq:valid-assignments}. One where $v\in s_v$ is given $0$ and one where $v\in s_v$ is given $1$. The unique constraints along the edges propagate the values uniquely from $v$ to the rest of $s_v$. Bogdanov chooses an ensemble at random by choosing, for each $s_v$ one of the two available local functions independently at random. Clearly, for each edge separately,  there is probability $1/2$ of choosing a matching pair, so the overall local agreement is $\approx 1/2$, whereas, with high probability there is no global assignment agreeing with even an $\epsilon$ faction of labels, assuming $\calG$ is a good expander.\\
+
+Now let us recast this in terms of covers (and then generalize).
+We first construct the double cover $\calG'$ of $\calG$. Let $\calG'$ be a bipartite graph with vertices $V'=V\times\bits$ and edges $E' = \sett{\set{(u,0),(v,1)} }{uv\in E}$ (and still putting inequality constraints on all edges). 
+%
+
+Observe that this is a $2$-cover a la \pref{def:cover}. Moreover, since $\calG'$ is bipartite, we actually have $val(\calG)=1$. This is because all constraints are satisfied by the global assignment $H:V'\to\bits$ defined by $H(v,b)=b$.  
+
+Now we follow the recipe of the proof of \pref{lem:cex} (see Figure). 
+\begin{center}
+\begin{tikzcd}[arrows=rightarrow]
+Y  \ar[d,"\rho"] \quad & \quad \calG'\ar[l,"powering"]\ar[d,"\rho"] \\
+		 X \quad & \quad\calG\ar[l,"powering"]  
+\end{tikzcd}
+\end{center}
+Assuming that the girth of $\calG$ is larger than $\ell$, the family $Y = \sett{\tilde s_{(v,b)}}{(v,b)\in V'}$ is a $2$-cover of the family $X$ in that there is a $2$-to-$1$ map $\rho:V'\to V$ such that the image of every $\tilde s\in Y$ is some $s\in X$, and the preimage of each $s\in X$ is two disjoint sets $\tilde s_1,\tilde s_2\in Y$\footnote{This is also formally a cover, only that \(X,Y\) are cell complexes, not simplicial complexes.}. Specifically $\rho(\tilde s_{(v,b)}) = s_v$, and $\rho^{-1}(s_v) = \set{\tilde s_{(v,0)},\tilde s_{(v,1)}}$.
+From the global assignment $H:V'\to\bits$ we can construct a perfectly agreeing ensemble (on $Y$) by setting $ f_{\tilde s_{(v,b)}} = H|_{\tilde s_{(v,b)}}$.
+
+We choose, as in the proof of \pref{lem:cex}, for each $s_v\in X$ an assignment
+let \[f_{s_v}  =
+\begin{cases}
+			f_{\tilde s_{(v,0)}}, & \text{with probability 1/2}\\
+                f_{\tilde s_{(v,1)}}, & \text{with probability 1/2}
+		 \end{cases}
+\;.   \]
+Finally, observe that this is exactly the same assignment as in the direct description of Bogdanov's counterexample.
+%
+\subsubsection*{Discussion}
+One possible conclusion of this section is that the failure of gap amplification to go below $1/2$ is due to the graph-based nature of the family $X$ which allows existence of connected covers with perfect assignments. For a better gap amplification we need to start with PCP instances $\calG$ that are free of such covers. 
+
+An additional observation is that Bogdanov's example generalizes to any unique games instance $\calG$, where the size of the alphabet $t=\card \Sigma$ dictates the size of the $t$-to-$1$ cover. Even for $\calG$ whose constraints are not unique, one can easily sparsify them into unique constraints and continue the construction as before. So without revising the powering construction itself, no choice of $\calG$ can help. 

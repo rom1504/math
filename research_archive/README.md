@@ -12,6 +12,7 @@ proofs, certificates, and scripts remain in their original locations.
 |---|---|---|
 | [2026-09-06 17:36:30](2026-09-06/173630Z/README.md) | 1,886 research files; 153,016,506 bytes; all available untracked/ignored research plus modified tracked files | Preservation only; SHA-256 verified. Two unavailable old source modules documented, not reconstructed. |
 | [2026-09-06 17:55:33](2026-09-06/175533Z/README.md) | 1,898 research files; checkpoint-2 proofs/replays and newer agent drafts included | Preservation only; SHA-256 verified. Canonical verification status is in the campaign index, not inferred from this snapshot. |
+| [2026-09-06 18:51:23](2026-09-06/185123Z/README.md) | 1,915 research files; 154,762,575 bytes; checkpoint-3 proofs, failed comparisons, numerical reconnaissance and unfinished calculations | Preservation only; all hashes verified. New canonical replay programs have no ignored research input. |
 
 Each snapshot has `manifest.json` (original paths, hashes, byte counts,
 provenance category, exclusions), `files/` (unchanged payloads),

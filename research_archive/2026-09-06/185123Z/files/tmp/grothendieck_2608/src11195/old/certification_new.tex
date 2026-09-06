@@ -1,0 +1,238 @@
+\section{Certification}
+\label{sec:certification}
+
+Write the correlation function of the cubic--quintic limiting scheme as
+\begin{equation}
+  H(t)=b_1t+\sum_{\substack{m\ge 3\\ m\ \mathrm{odd}}} b_m t^m,
+  \label{eq:certification-H-series}
+\end{equation}
+and let
+\begin{equation}
+  \Delta_H:=\sum_{\substack{m\ge 3\\ m\ \mathrm{odd}}}|b_m|
+  \label{eq:nonlinear-coefficient-mass}
+\end{equation}
+be the total mass of its nonlinear coefficients.  Let
+\[
+  G(z)=H^{-1}(z)=\sum_{n\ge1}a_nz^n
+\]
+denote the local holomorphic inverse of $H$ at the origin, and define its
+majorant by
+\begin{equation}
+  \mathcal M(r):=\sum_{n\ge1}|a_n|r^n.
+  \label{eq:inverse-majorant-certification}
+\end{equation}
+The local inverse exists because $H'(0)=b_1>0$, by the holomorphic inverse
+function theorem.
+
+For the linear map $t\mapsto b_1t$, the condition $\mathcal M(\gamma)<1$ is
+simply $\gamma<b_1$.  The next proposition shows that the nonlinear part costs
+at most $\Delta_H$ of this margin.
+
+\begin{proposition}[Inverse certificate from near-linearity]
+\label{prop:inverse-certificate-near-linearity}
+Assume $b_1>0$ and $\Delta_H<\infty$.  If
+\begin{equation}
+  \gamma+\Delta_H<b_1,
+  \label{eq:near-linearity-condition}
+\end{equation}
+then there exists $R>\gamma$ such that the local inverse $G$ extends
+holomorphically to $R\mathbb D$, maps $R\mathbb D$ into $\mathbb D$, and
+satisfies
+\begin{equation}
+  \mathcal M(\gamma)
+  \le \frac{\gamma+\Delta_H}{b_1}
+  <1.
+  \label{eq:near-linearity-conclusion}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Set
+\[
+  E(t):=\sum_{m\ge3}b_mt^m,
+  \qquad
+  E_{\mathrm{maj}}(u):=\sum_{m\ge3}|b_m|u^m.
+\]
+There is a unique formal power series
+\[
+  V(z)=\sum_{n\ge1}v_nz^n
+\]
+satisfying
+\begin{equation}
+  b_1V(z)=z+E_{\mathrm{maj}}(V(z)).
+  \label{eq:majorizing-inverse-equation}
+\end{equation}
+Indeed, comparison of the coefficient of $z$ gives $v_1=b_1^{-1}$.  For
+$n\ge2$, the coefficient of $z^n$ in $E_{\mathrm{maj}}(V)$ depends only on
+$v_1,\ldots,v_{n-1}$, so \eqref{eq:majorizing-inverse-equation} determines
+$v_n$ recursively.  The same recursion shows that $v_n\ge0$ for every $n$.
+
+Comparing coefficients in
+\[
+  b_1G(z)=z-E(G(z))
+\]
+and in \eqref{eq:majorizing-inverse-equation}, induction on $n$ gives
+\begin{equation}
+  |a_n|\le v_n
+  \qquad(n\ge1).
+  \label{eq:inverse-coefficient-domination}
+\end{equation}
+Indeed, at degree $n$, every nonlinear composition involves only previously
+determined coefficients, and replacing each $b_m$ by $|b_m|$ removes all
+possible cancellation.
+
+Choose $R>\gamma$ so close to $\gamma$ that
+\[
+  q:=\frac{R+\Delta_H}{b_1}<1.
+\]
+Starting from $V_0(z)=0$, define
+\begin{equation}
+  V_{k+1}(z):=\frac{z+E_{\mathrm{maj}}(V_k(z))}{b_1}.
+  \label{eq:majorizing-inverse-iteration}
+\end{equation}
+The series $V_k$ have nonnegative coefficients and increase coefficientwise,
+meaning that each Taylor coefficient is nondecreasing in $k$.
+Moreover, if $V_k(R)\le q$, then $V_k(R)<1$ and
+\[
+  V_{k+1}(R)
+  \le \frac{R+E_{\mathrm{maj}}(1)}{b_1}
+  =q.
+\]
+Thus $V_k(R)\le q$ for every $k$.  Their coefficientwise limit satisfies
+\eqref{eq:majorizing-inverse-equation}, and hence equals $V$ by uniqueness.
+The monotone convergence theorem now gives
+\[
+  V(R)=\sum_{n\ge1}v_nR^n\le q<1.
+\]
+Together with \eqref{eq:inverse-coefficient-domination}, this implies
+\[
+  \sum_{n\ge1}|a_n|R^n\le V(R)<1.
+\]
+Consequently, the Taylor series of $G$ converges on $R\mathbb D$ and takes
+values in $\mathbb D$.  Since the identity $H(G(z))=z$ holds near the origin,
+it holds throughout $R\mathbb D$ by the identity theorem.  Finally,
+\[
+  \mathcal M(\gamma)
+  \le V(\gamma)
+  =\frac{\gamma+E_{\mathrm{maj}}(V(\gamma))}{b_1}
+  \le\frac{\gamma+\Delta_H}{b_1},
+\]
+because $0\le V(\gamma)\le V(R)<1$.
+\end{proof}
+
+It remains to certify $\Delta_H$.  We compute the coefficients through a
+finite degree $N$ and bound the remaining tail indirectly.  The point is that
+the Euler operator
+\[
+  D:=t\frac{d}{dt}
+\]
+multiplies the coefficient of $t^m$ by $m$, so $D^3$ strongly amplifies
+high-degree coefficients.  The $L^2(\mathbb T)$ norm below is the
+root-mean-square size of the resulting function around the unit circle
+$\mathbb T:=\{z\in\mathbb C:|z|=1\}$.
+
+\begin{lemma}[Third-order coefficient-tail bound]
+\label{lem:third-order-tail}
+Suppose that $D^3H$ has radial boundary values in $L^2(\mathbb T)$, with
+\[
+  \|D^3H\|_{L^2(\mathbb T)}^2
+  :=\frac{1}{2\pi}\int_0^{2\pi}
+  |D^3H(e^{i\theta})|^2\,d\theta.
+\]
+Then, for every odd $N$,
+\begin{equation}
+  \sum_{\substack{m>N\\m\ \mathrm{odd}}}|b_m|
+  \le
+  \|D^3H\|_{L^2(\mathbb T)}
+  \left(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}\right)^{1/2}
+  \le
+  \frac{\|D^3H\|_{L^2(\mathbb T)}}{\sqrt{10N^5}}.
+  \label{eq:third-order-tail}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $D^3(t^m)=m^3t^m$, Parseval's identity gives
+\begin{equation}
+  \|D^3H\|_{L^2(\mathbb T)}^2
+  =\sum_{\substack{m\ge1\\m\ \mathrm{odd}}}m^6|b_m|^2.
+  \label{eq:parseval-third-order}
+\end{equation}
+The Cauchy--Schwarz inequality therefore gives
+\[
+  \sum_{\substack{m>N\\m\ \mathrm{odd}}}|b_m|
+  =\sum_{\substack{m>N\\m\ \mathrm{odd}}}
+  m^{-3}\bigl(m^3|b_m|\bigr)
+  \le
+  \left(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}\right)^{1/2}
+  \|D^3H\|_{L^2(\mathbb T)}.
+\]
+Finally, since $x\mapsto x^{-6}$ is decreasing and consecutive odd integers
+are separated by two, the monotone integral estimate gives
+\[
+  \sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}
+  \le\frac12\int_N^\infty x^{-6}\,dx
+  =\frac{1}{10N^5}.
+\]
+\end{proof}
+
+\begin{proposition}[Certified numerical input]
+\label{prop:certified-numerical-input}
+For the cubic--quintic correlation function, interval arithmetic certifies
+\begin{equation}
+  b_1\ge0.881573822049,
+  \qquad
+  \sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}|b_m|
+  \le1.1328860\cdot10^{-5},
+  \qquad
+  \|D^3H\|_{L^2(\mathbb T)}<35.774<36.
+  \label{eq:certified-numerical-input}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+See Appendix~\ref{app:certification-details}.
+\end{proof}
+
+Lemma~\ref{lem:third-order-tail} and
+Proposition~\ref{prop:certified-numerical-input} give
+\begin{equation}
+  \Delta_H
+  \le
+  1.1328860\cdot10^{-5}
+  +\frac{36}{\sqrt{10\cdot251^5}}
+  <2.2734462\cdot10^{-5}.
+  \label{eq:certified-nonlinear-mass}
+\end{equation}
+
+\begin{theorem}[Cubic--quintic upper bound]
+\label{thm:cubic-quintic-upper-bound-certified}
+For
+\[
+  \gamma=0.881545409,
+\]
+the cubic--quintic limiting scheme satisfies $\mathcal M(\gamma)<1$.
+Consequently,
+\begin{equation}
+  K_G\le\frac{\pi}{2\gamma}
+  \le1.7818666069360661.
+  \label{eq:certified-KG-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:certified-nonlinear-mass},
+\[
+  \gamma+\Delta_H
+  <0.881545409+2.2734462\cdot10^{-5}
+  =0.881568143462
+  <0.881573822049
+  \le b_1.
+\]
+Proposition~\ref{prop:inverse-certificate-near-linearity} therefore gives
+$\mathcal M(\gamma)<1$, together with the analytic room required by the
+finite-dimensional transfer theorem.  That theorem passes the strict
+certificate to all sufficiently large ordinary finite-dimensional
+approximations.  The classical Krivine preprocessing theorem then gives
+\eqref{eq:certified-KG-bound}.
+\end{proof}

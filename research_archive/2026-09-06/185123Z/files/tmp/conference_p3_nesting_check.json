@@ -1,0 +1,253 @@
+{
+  "all_deletion_profiles": {},
+  "classification": "proved finite-field construction and conference identity; exact exhaustive fixed-signing Gray-code profiles",
+  "conference_identity": "C^2=9I",
+  "conference_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "conference_matrix_sha256": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+  "conference_order": 10,
+  "evaluator_source": "computations/exact_fixed_signing_gray.cpp",
+  "extremizer_nesting": {
+    "delete_0_1_maximizer": {
+      "child_extremizers": 4,
+      "distinct_restrictions": 6,
+      "parent_extremizers": 6,
+      "restrictions_that_are_child_extremizers": 4
+    },
+    "delete_0_1_minimizer": {
+      "child_extremizers": 4,
+      "distinct_restrictions": 6,
+      "parent_extremizers": 6,
+      "restrictions_that_are_child_extremizers": 4
+    },
+    "delete_0_maximizer": {
+      "child_extremizers": 6,
+      "distinct_restrictions": 6,
+      "parent_extremizers": 6,
+      "restrictions_that_are_child_extremizers": 6
+    },
+    "delete_0_minimizer": {
+      "child_extremizers": 6,
+      "distinct_restrictions": 6,
+      "parent_extremizers": 6,
+      "restrictions_that_are_child_extremizers": 6
+    }
+  },
+  "field": "GF(9)=GF(3)[t]/(t^2-2)",
+  "p": 3,
+  "profiles": [
+    {
+      "argmax_gray": 7,
+      "argmin_gray": 245,
+      "cap": 15,
+      "deleted_vertices": [],
+      "elapsed_seconds": 0.002772582694888115,
+      "matrix_sha256": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+      "max_count": 6,
+      "max_energy": 15,
+      "maximizer_gray_codes": [
+        7,
+        56,
+        73,
+        146,
+        448,
+        292
+      ],
+      "min_count": 6,
+      "min_energy": -15,
+      "minimizer_gray_codes": [
+        245,
+        238,
+        413,
+        427,
+        350,
+        371
+      ],
+      "n": 10,
+      "projective_assignments": 512
+    },
+    {
+      "argmax_gray": 28,
+      "argmin_gray": 49,
+      "cap": 12,
+      "deleted_vertices": [
+        0
+      ],
+      "elapsed_seconds": 0.0020490437746047974,
+      "matrix_sha256": "3277f9f382b066d48cb745d0b3c3dea4438febe7377ee18f925f352cf050c727",
+      "max_count": 6,
+      "max_energy": 12,
+      "maximizer_gray_codes": [
+        28,
+        73,
+        219,
+        252,
+        224,
+        146
+      ],
+      "min_count": 6,
+      "min_energy": -12,
+      "minimizer_gray_codes": [
+        49,
+        42,
+        119,
+        70,
+        175,
+        133
+      ],
+      "n": 9,
+      "projective_assignments": 256
+    },
+    {
+      "argmax_gray": 14,
+      "argmin_gray": 21,
+      "cap": 10,
+      "deleted_vertices": [
+        0,
+        1
+      ],
+      "elapsed_seconds": 0.0019319448620080948,
+      "matrix_sha256": "5f93b58d3814980ee93c020bdb53200da5c553b08d7457a7449e705d235bebd6",
+      "max_count": 4,
+      "max_energy": 10,
+      "maximizer_gray_codes": [
+        14,
+        112,
+        91,
+        73
+      ],
+      "min_count": 4,
+      "min_energy": -10,
+      "minimizer_gray_codes": [
+        21,
+        61,
+        35,
+        103
+      ],
+      "n": 8,
+      "projective_assignments": 128
+    }
+  ],
+  "q": 9,
+  "schema": "quadratic-signing-prime-square-conference-v1"
+}

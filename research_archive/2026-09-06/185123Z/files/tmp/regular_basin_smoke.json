@@ -1,0 +1,58 @@
+{
+  "classification": "fixed-seed Monte Carlo evidence",
+  "constructor_checks": {
+    "k=2": true,
+    "k=3": true
+  },
+  "event": "kappa_*/N exceeds each listed threshold strictly",
+  "experiment": "uniform full two-block regular-Hadamard obstruction",
+  "orders": [
+    {
+      "N": 512,
+      "build_seconds": 0.00364714115858078,
+      "hard_branch_count": 8,
+      "k": 4,
+      "kappa_over_N_thresholds_strict": {
+        "0.0": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        },
+        "0.005": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        },
+        "0.01": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        },
+        "0.025": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        },
+        "0.05": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        },
+        "0.1": {
+          "count": 0,
+          "empirical_probability": 0.0,
+          "exact_one_sided_95_percent_upper_bound": 0.31234397806636793
+        }
+      },
+      "matrix_mebibytes": 1.0,
+      "max_kappa_over_N": 0.0,
+      "nonzero_kappa_count": 0,
+      "positive_defect_count": 0,
+      "positive_defect_probability": 0.0,
+      "sample_seconds": 0.040265487506985664,
+      "samples_after_global_sign_quotient": 8,
+      "samples_per_second": 198.68131482605492,
+      "seed": 4000029
+    }
+  ]
+}
