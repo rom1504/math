@@ -1,0 +1,8226 @@
+{
+  "scope": "All root-normalized full signing extensions up to total order five, every nonempty proper old subset",
+  "bound": "0 <= I(B)-I(A) <= r sqrt(n) + r sqrt(r-1)/2",
+  "exact_extension_comparisons": 2046,
+  "comparison_counts_by_total_order": {
+    "2": 2,
+    "3": 12,
+    "4": 112,
+    "5": 1920
+  },
+  "distinct_exact_response_LPs": 76,
+  "certificates": [
+    {
+      "order": 2,
+      "root_normalized_edge_coefficients": [
+        1
+      ],
+      "response": "1",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1
+          ],
+          "weight": "1/2"
+        },
+        {
+          "spin": [
+            1,
+            1
+          ],
+          "weight": "1/2"
+        }
+      ],
+      "dual_upper_constant": "1",
+      "dual_upper_edge_coefficients": [
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 1,
+      "root_normalized_edge_coefficients": [],
+      "response": "0",
+      "primal_law": [
+        {
+          "spin": [
+            1
+          ],
+          "weight": "1"
+        }
+      ],
+      "dual_upper_constant": "0",
+      "dual_upper_edge_coefficients": [],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 3,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        -1
+      ],
+      "response": "3/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "3/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 3,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1
+      ],
+      "response": "3/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "3/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "0",
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "-1",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "response": "2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "2",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 4,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/4"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/4"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-2/3",
+        "-2/3",
+        "-2/3",
+        "-2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "-1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "0",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "-1",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "0",
+        "-1/2",
+        "0",
+        "1/2",
+        "1",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "-2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "2",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1",
+        "-1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "0",
+        "-1",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "0",
+        "2",
+        "1",
+        "1",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "0",
+        "1",
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "1/2",
+        "0",
+        "1",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1",
+        "0",
+        "-1",
+        "0",
+        "2",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1",
+        "1/2",
+        "-1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1/2",
+        "1/2",
+        "-1",
+        "1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "2",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "0",
+        "1/2",
+        "0",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "1",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "-1/2",
+        "0",
+        "0",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-2",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "-1/2",
+        "1/2",
+        "1",
+        "1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "-1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "-1/2",
+        "1",
+        "0",
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "0",
+        "0",
+        "-1/2",
+        "-1/2",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "1",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "-1",
+        "-1",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1/2",
+        "-1",
+        "-1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "1/2",
+        "0",
+        "-1",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "-1/2",
+        "1/2",
+        "0",
+        "0",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "-2",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1/2",
+        "-1/2",
+        "1",
+        "1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "0",
+        "-1/2",
+        "1",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1",
+        "-1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0",
+        "2",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "0",
+        "0",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/6"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "-1/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "0",
+        "0",
+        "1/2",
+        "1",
+        "-1/2",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "0",
+        "0",
+        "-2",
+        "1",
+        "1",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1/2",
+        "1",
+        "-1/2",
+        "1/2",
+        "0",
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "0",
+        "1",
+        "1/2",
+        "0",
+        "-1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "2",
+        "1",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "1"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "0",
+        "-1/2",
+        "0",
+        "1/2",
+        "1",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "response": "7/2",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "7/2",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "0",
+        "1/2",
+        "-1/2",
+        "0",
+        "1/2",
+        "-1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "response": "3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/8"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/8"
+        }
+      ],
+      "dual_upper_constant": "3",
+      "dual_upper_edge_coefficients": [
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    },
+    {
+      "order": 5,
+      "root_normalized_edge_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "response": "10/3",
+      "primal_law": [
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "weight": "1/12"
+        },
+        {
+          "spin": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "weight": "1/6"
+        }
+      ],
+      "dual_upper_constant": "10/3",
+      "dual_upper_edge_coefficients": [
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3"
+      ],
+      "certificate": "exact nonnegative isotropic primal law and pointwise quadratic majorant agree"
+    }
+  ]
+}

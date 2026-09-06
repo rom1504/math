@@ -1,0 +1,66 @@
+{
+  "question": "Can an exact minimum-cap signing have oriented gap >=4?",
+  "method": "exact full spin inequalities; SciPy/HiGHS MILP discovery",
+  "cases": [
+    {
+      "n": 9,
+      "imported_minimum_cap": 12,
+      "required_gap": 4,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "seconds": 2.7786835440201685,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    },
+    {
+      "n": 10,
+      "imported_minimum_cap": 13,
+      "required_gap": 4,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "seconds": 2.5008512240601704,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    },
+    {
+      "n": 11,
+      "imported_minimum_cap": 17,
+      "required_gap": 4,
+      "solver_status": 1,
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is At lower/fixed bound)",
+      "seconds": 120.0042078680126,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    },
+    {
+      "n": 12,
+      "imported_minimum_cap": 18,
+      "required_gap": 4,
+      "solver_status": 1,
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is At lower/fixed bound)",
+      "seconds": 120.00723145296797,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    },
+    {
+      "n": 13,
+      "imported_minimum_cap": 20,
+      "required_gap": 4,
+      "solver_status": 1,
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is At lower/fixed bound)",
+      "seconds": 120.01382760389242,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    },
+    {
+      "n": 14,
+      "imported_minimum_cap": 21,
+      "required_gap": 4,
+      "solver_status": 1,
+      "solver_message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is At lower/fixed bound)",
+      "seconds": 120.02646626497153,
+      "milp_node_count": null,
+      "scope": "solver discovery; infeasibility is NOT independently certified"
+    }
+  ]
+}

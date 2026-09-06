@@ -1,0 +1,65 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 60 log_search_progress: true num_search_workers: 1 log_to_stdout: true
+
+Initial satisfaction model '': (model_fingerprint: 0x359e7169e2c8f947)
+#Variables: 6 (5 primary variables)
+  - 6 Booleans in [0,1]
+#kLinear1: 1
+#kLinear2: 2
+#kLinearN: 39 (#enforced: 4 #multi: 4) (#terms: 220)
+
+Starting presolve at 0.00s
+  2.87e-05s  0.00e+00d  [DetectDominanceRelations] 
+  4.00e-04s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1 
+  7.02e-06s  0.00e+00d  [ExtractEncodingFromLinear] #potential_supersets=1 
+  1.21e-05s  0.00e+00d  [DetectDuplicateColumns] 
+  1.72e-05s  0.00e+00d  [DetectDuplicateConstraints] #duplicates=10 
+[Symmetry] Graph for symmetry has 35 nodes and 110 arcs.
+[Symmetry] Symmetry computation done. time: 3.0285e-05 dtime: 7.52e-06
+[SAT presolve] num removable Booleans: 0 / 5
+[SAT presolve] num trivial clauses: 0
+[SAT presolve] [0s] clauses:13 literals:54 vars:5 one_side_vars:0 simple_definition:0 singleton_clauses:0
+[SAT presolve] [2.3719e-05s] clauses:9 literals:26 vars:5 one_side_vars:0 simple_definition:0 singleton_clauses:0
+[SAT presolve] [3.008e-05s] clauses:9 literals:26 vars:5 one_side_vars:0 simple_definition:0 singleton_clauses:0
+INFEASIBLE: 'during probing'
+  2.00e-04s  0.00e+00d  [Probe] #probed=1 
+  6.52e-07s  0.00e+00d  [DetectEncodedComplexDomains] 
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'bool_or: implications' was applied 1 time.
+  - rule 'bool_or: removed enforcement literal' was applied 3 times.
+  - rule 'duplicate: merged rhs of linear constraint' was applied 4 times.
+  - rule 'duplicate: removed constraint' was applied 10 times.
+  - rule 'enforcement: always false' was applied 1 time.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear2: convert ax + by != cte to clauses' was applied 4 times.
+  - rule 'linear: always true' was applied 7 times.
+  - rule 'linear: divide by GCD' was applied 26 times.
+  - rule 'linear: enforcement literal in expression' was applied 5 times.
+  - rule 'linear: fixed or dup variables' was applied 3 times.
+  - rule 'linear: negative at most one' was applied 1 time.
+  - rule 'linear: negative clause' was applied 6 times.
+  - rule 'linear: positive clause' was applied 6 times.
+  - rule 'presolve: iteration' was applied 1 time.
+Problem closed by presolve.
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 0
+booleans: 0
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+walltime: 0.00340847
+usertime: 0.00340854
+deterministic_time: 0
+gap_integral: 0
+
+status=INFEASIBLE objective=0.0 best_bound=0.0 conflicts=0 branches=0 wall=0.003408s elapsed=0.003966s
+wrote /home/math/quadra/tmp/cpsat_m5_cap2_enhanced.json

@@ -32,6 +32,8 @@ SECRET_PATTERNS = {
 SECRETS = {name: re.compile(pattern) for name, pattern in SECRET_PATTERNS.items()}
 TMP_REF = re.compile(r"(?:/home/math/quadra/)?(?:computations/)?tmp/[A-Za-z0-9_.+/-]+")
 REVIEWED_BUILDS = json.loads((ROOT / "research_archive" / "reviewed_build_products.json").read_text())
+EXTERNAL_MANIFEST = ROOT / "research_archive" / "reviewed_external_dependencies.json"
+REVIEWED_EXTERNAL = json.loads(EXTERNAL_MANIFEST.read_text()) if EXTERNAL_MANIFEST.exists() else {}
 
 
 def git(*args):
@@ -46,6 +48,13 @@ def classify(name, data_head):
     p = Path(name)
     if p.parts[0] == "research_archive":
         return "archive_self", "append-only archives are not recursively copied"
+    external = REVIEWED_EXTERNAL.get(name)
+    if (external and external.get("url", "").startswith("https://")
+            and external.get("source_commit")
+            and hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == external["sha256"]):
+        return "reviewed_external_dependency", (
+            "byte-identical downloaded dependency; durable source and SHA in "
+            "research_archive/reviewed_external_dependencies.json; " + external["reason"])
     if any(part in EXCLUDED_PARTS for part in p.parts):
         return "environment_or_cache", "environment, downloaded software, or regenerable cache"
     if p.suffix.lower() in {".pyc", ".pyo", ".whl", ".aux", ".toc", ".synctex"}:

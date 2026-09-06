@@ -14,6 +14,7 @@ proofs, certificates, and scripts remain in their original locations.
 | [2026-09-06 17:55:33](2026-09-06/175533Z/README.md) | 1,898 research files; checkpoint-2 proofs/replays and newer agent drafts included | Preservation only; SHA-256 verified. Canonical verification status is in the campaign index, not inferred from this snapshot. |
 | [2026-09-06 18:51:23](2026-09-06/185123Z/README.md) | 1,915 research files; 154,762,575 bytes; checkpoint-3 proofs, failed comparisons, numerical reconnaissance and unfinished calculations | Preservation only; all hashes verified. New canonical replay programs have no ignored research input. |
 | [2026-09-06 19:29:59](2026-09-06/192959Z/README.md) | 1,901 research files; 154,677,428 bytes; threshold-information proofs, scoped counterexamples, failed reconnaissance, and the source-less experiment binary | Preservation only; all hashes verified. Executable exclusions now require reviewed binary and source hashes. |
+| [2026-09-06 20:35:22](2026-09-06/203522Z/README.md) | 1,916 research files; 155,235,485 bytes; all-order orientation repair, exact-minimizer tests, failed MILPs, subagent drafts and independent finite replays | Preservation only; all hashes verified. External downloaded dependencies have per-file pinned-commit manifests; independent order-15/16 witness replay is standalone. |
 
 Each snapshot has `manifest.json` (original paths, hashes, byte counts,
 provenance category, exclusions), `files/` (unchanged payloads),
@@ -36,6 +37,15 @@ preserved as research. ELF format alone is no longer grounds for exclusion:
 New or changed executables are retained until that provenance review is done.
 Build recipes are documented separately from claims of historical bit-for-bit
 reproducibility; no working executable was deleted or overwritten.
+
+Reviewed, byte-identical external software/source dependencies can instead be
+preserved by a pinned upstream commit, durable retrieval URL and SHA-256 in
+`reviewed_external_dependencies.json`. This applies to the inspected external
+order-15/16 certificate package, whose upstream license is unspecified; it does
+not exclude our derivations, independently authored verifiers, witness data or
+informative results. Matching is per-file and per-hash, never a blanket exclusion
+of a research directory. Local downloads are retained, not deleted. The external
+certificate audit records the remaining completeness and replay boundaries.
 
 ## Checkpoint procedure
 

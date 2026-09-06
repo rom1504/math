@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+\usepackage{bqf-paper}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,shapes.geometric}
+\usepackage[table]{xcolor}
+% \usepackage{shortcuts}
+% \usepackage[most]{tcolorbox}
+\usepackage{listings}
+
+
+% \usepackage[sort]{natbib}
+
+
+
+\newcommand{\Heta}{H_{\eta}}
+\newcommand{\HzeroP}{H_0'}
+\newcommand{\HzeroPP}{H_0''}
+\newcommand{\HetaP}{H_{\eta}'}
+\newcommand{\HetaPP}{H_{\eta}''}
+\newcommand{\Phizz}{\Phi}
+\newcommand{\Fmap}{F}
+\newcommand{\Finvmap}{F^{-1}}
+\newcommand{\Om}{\Omega}
+\newcommand{\dOm}{\partial\Omega}
+\newcommand{\Curv}{\mathcal C}
+\newcommand{\abslb}[1]{\underline{|#1|}}
+\newcommand{\absub}[1]{\overline{|#1|}}
+\newcommand{\ub}[1]{\overline{\abs{#1}}}
+\newcommand{\lb}[1]{\underline{\abs{#1}}}
+% \DeclareMathOperator{\sgn}{sgn}
+
+% \newcommand{\C}{\mathbb C}
+% \newcommand{\R}{\mathbb R}
+% \newcommand{\E}{\mathbb E}
+% \newcommand{\sgn}{\operatorname{sign}}
+
+
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\rhostar}{\rho_*}
+\newcommand{\Ncap}{N_{\mathrm{cap}}}
+\newcommand{\nq}{n_q}
+\newcommand{\Hphys}{\mathsf{H}}
+\newcommand{\simplex}{\Delta}
+\newcommand{\todo}[1]{{\color{red}\textsc{[todo: #1]}}}
+
+
+% \newcommand{\R}{\mathbb R}
+% \newcommand{\E}{\mathbb E}
+\newcommand{\K}{\mathcal K}
+\newcommand{\U}{\mathcal U}
+\newcommand{\ph}{\varphi}
+\newcommand{\wt}{\widehat}
+% \newcommand{\abs}[1]{\left|#1\right|}
+% \newcommand{\norm}[1]{\left\|#1\right\|}
+% \DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\Arg}{Arg}
+
+\newcommand{\source}[1]{{\color{blue}\textsc{#1}}}
+
+\newcommand{\ignore}[1]{{}}
+
+
+% \title{
+% {\large
+% \textsc{
+% THE GROTHENDIECK CONSTANT IS LESS THAN
+% $\frac{\pi}{2 \log (1 + \sqrt{2})} - 10^{-5}$
+% }
+% }
+% }
+\title{\paperTitleSmallCaps{
+An Asymptotic Family for the Grothendieck Constant
+}}
+
+
+
+\author{
+  \normalsize
+  \setlength{\tabcolsep}{15pt}
+  \begin{tabular}{ccc}
+    Alan Li\thanks{Equal contribution.} & Rahul Saha\footnotemark[1] & Anton Xue \\
+    \small\texttt{alanli@cs.utexas.edu} & \small\texttt{rahul.saha@utexas.edu} & \small\texttt{anton.xue@utexas.edu} \\[3ex]
+    Swarat Chaudhuri & Adam Klivans & Pravesh K. Kothari \\
+    \small \texttt{swarat@cs.utexas.edu} & \small\texttt{klivans@cs.utexas.edu} & \small\texttt{kothari@cs.princeton.edu} \\[3ex]
+    \multicolumn{3}{c}{Raghu Meka} \\
+    \multicolumn{3}{c}{\small\texttt{raghum@cs.ucla.edu }}
+  \end{tabular}
+}
+
+\date{}
+\begin{document}
+
+% \abstract{\lipsum[2-4]}
+\maketitle
+
+\section{Motivation}
+
+We first start by motivating the result. Recall the usual notation for Krivine rounding schemes given by the pair of partitions $(f, g)$, the correlation function $H_{f,g}(t) = \sum b_n t^n$ (shortened to $H$ for brevity), its inverse $H^{-1}(\zeta) = \sum a_n \zeta^n$, the inverse majorant $M = \sum |a_n| \zeta^n$, and the solution $\gamma$ such that $M(\gamma) = 1$. We will recall that $K_G \propto (1/\gamma)$, hence in order to \textbf{decrease} $K_G$ we want to \textbf{increase} $\gamma$.
+
+We have noticed in our work in 2D the following phenomenon, which previously was a very interesting artifact, but now is the basis of our extension: 
+
+\begin{center}
+    ``\textit{The mixture of two rounding schemes can outperform either rounding scheme.}''
+\end{center}
+
+This is interesting in itself. There are two good explanations for this. One of them is purely intuitive, the other is an algebraic insight which gives us what we need. The intuition is that different partitions can deal well with different vector solutions of SDPs. By mixing different schemes, you can simultaneously handle these different SDP solutions.
+
+The algebraic insight is that since $M(\gamma) = \sum |a_n| \gamma^n = 1$, we want to decrease $|a_n|$ in order to increase $\gamma$ (which is always positive). Thus, if say, through the linear combination, you can make $a_7 \approx 0$, you win (sweeping some details under the rug here but this is the gist). 
+Note that the mixing does not happen at the majorant level, but at the $H$ level (i.e. you take linear mixtures of the correlation functions of the rounding schemes, then invert, then take majorant). Nonetheless, since the $a_i$ are continuous in the $b_i$, you can achieve these under some circumstances.
+% However, you mix not at the majorant level, but at the $H$ level, i.e. for two schemes with correlation functions $H_1$ and $H_2$, a mixed scheme with parameter $p$ would have the correlation $H = pH_1 + (1-p)H_2 = \sum (b^{(1)}_n p + b^{(2)}_n (1 -p))t^n$. But once you take the inverse, the coefficients are non-linear combinations of these, 
+
+Empirically, for our best 2D mixed schemes, we noted that $a_7 \approx 0$. For a while, we felt that this might be about as good as one can do, \textit{maybe} $a_5$ but definitely not $a_3$. Turns out, quite excitingly, we were wrong. There \textit{does} exist an asymptotic family of scheme that \textit{simultaneously} makes $a_3, a_5$ converge very close to $0$. This is a really big win, not only in terms of improving $\gamma$, but also in the analysis of the scheme, as in this limit, the function basically becomes linear, which makes things very nice. 
+
+So, the goal is the following --- find a sequence of schemes, parameterized by dimension, that zero out $a_3$ and $a_5$. 
+
+\section{Escaping the basin}
+
+Our schemes in $2D$ before looked like  
+\[f_N = \sgn(Z + \eta\He_3(X)),\]
+\[f_g = \sgn(Z' - \eta\He_3(X')),\]
+or variations of this. In the \textit{space} of partitions, we thought that these functions might form a local minima or a basin, as empirically it was quite difficult to escape from even with a lot of gradient descent. It turns out that to escape the basin in a noticeable way, you do need to go to much, much higher dimensions. High enough for CLT to kick in.  
+
+Here is how we do it. Before we perturbed the hyperplane slightly, but now we perturb this perturbation. Define the functions  
+\[P_{3,N}(U) = \frac{\He_3(U_1) + \dots + \He_3(U_N)}{\sqrt{N}}\]
+\[P_{5,N}(V) = \frac{\He_5(V_1) + \dots + \He_5(V_N)}{\sqrt{N}}\]
+Note that by CLT, $P_{3,N}, P_{5,N}$ converge to a standard normal gaussian. Now define the following rounding pair: 
+\[f_N(Z, X, U, V) = \sgn(Z + \eta \He_3(X) + \chi P_{3,N}(U) + \psi P_{5, N}(V))\]
+\[g_N(Z', X', U', V') = \sgn(Z' - \eta \He_3(X') - \chi P_{3,N}(U') + \psi P_{5, N}(V'))\]
+Note that at inputs to $f$ and $g$ with correlation $t$, we have $(Z, Z') = t, (X, X') = t, (U, U') = tI, (V, V') = tI$.
+Suppose that in the limit, we get $P_{3,N} \to p_3$ and $P_{5,N} \to p_5$. Then the rounding pair converges to the rounding scheme with only four inputs
+\[f(Z, X, p_3, p_5) = \sgn(Z + \eta \He_3(X) + \chi p_3 + \psi p_5)\]
+\[g(Z', X', p_3', p_5') = \sgn(Z' - \eta \He_3(X') - \chi p_3' + \psi p_5')\]
+However, in this limit, we still have $(Z, Z') = t, (X, X') = t$, however, we now have $(p_3, p_3') = t^3, (p_5, p_5') = t^5$. These powers come from the degrees of the hermite polyonmials. 
+
+Now we are sort of back to doing what we always do --- compute $H$, then compute its inverse, take majorant, solve for $\gamma$. However, in this limiting model, the coefficients of $H$ have an explicit formula given by: 
+\begin{theorem}[Coefficient formula]\label{thm:coefficient-formula}
+Let
+\(
+  H(t)=\sum_{m\ge1}b_m t^m
+\)
+be the limiting normalized correlation.  Then
+\begin{equation}\label{eq:general-bm}
+  b_m={\pi\over2}
+  \sum_{\substack{a,b\in\Nzero,\ \beta\in\Nzero^D\\ a+b+\sum_{d\in D}d\beta_d=m}}
+  (-1)^b\prod_{d\in D}\sigma_d^{\beta_d}
+  {k!\over \beta!}
+  \prod_{d\in D}\alpha_d^{2\beta_d}
+  C_{a,b,k}^2,
+  \qquad k=|\beta|.
+\end{equation}
+\end{theorem}
+\textbf{Do not bother reading too deep into this formula for now, a lot of terms are defined elsewhere, they are integrals and expectations of various Hermite polynomials}. All that matters is that 1. this explicit formula exists, 2. this explicit formula can \textit{further} be simplified for computation, and 3. it allows us to analyze the smaller coefficients $b_1, b_3, b_5$ (and consequently $a_1, a_3, a_5$) directly. 
+
+Note that this analysis is no longer \textbf{finite dimensional}. The coordinates $p_3, p_5$ encode all the higher dimensional stuff, despite being one variable each. The nice thing about them is that it allows us to have different correlations (i.e. $t^3$ and $t^5$) rather than just $t$ as required by the Krivine scheme. Thus, the above theorem tells us exactly how to analyze the scheme. 
+
+Now, the rest is a matter of optimizing the coefficients in the partition scheme $\eta, \chi, \psi$ (using gradient descent and whatnot), and that gives us a fourth digit improvement. This is then proved using an analytic lemma + Arb, as usual (though the proof is different and somewhat simpler this time because the functions behave rather linearly due to zeroing out of the lwoer degree coefficients). 
+
+
+
+
+\bibliographystyle{amsalpha}
+\bibliography{references}
+
+
+\end{document}
