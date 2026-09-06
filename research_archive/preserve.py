@@ -31,6 +31,7 @@ SECRET_PATTERNS = {
 }
 SECRETS = {name: re.compile(pattern) for name, pattern in SECRET_PATTERNS.items()}
 TMP_REF = re.compile(r"(?:/home/math/quadra/)?(?:computations/)?tmp/[A-Za-z0-9_.+/-]+")
+REVIEWED_BUILDS = json.loads((ROOT / "research_archive" / "reviewed_build_products.json").read_text())
 
 
 def git(*args):
@@ -47,11 +48,16 @@ def classify(name, data_head):
         return "archive_self", "append-only archives are not recursively copied"
     if any(part in EXCLUDED_PARTS for part in p.parts):
         return "environment_or_cache", "environment, downloaded software, or regenerable cache"
-    if p.suffix.lower() in {".pyc", ".pyo", ".pyd", ".o", ".so", ".a", ".whl", ".aux", ".toc", ".synctex"}:
+    if p.suffix.lower() in {".pyc", ".pyo", ".whl", ".aux", ".toc", ".synctex"}:
         return "build_product", "compiled/package product; source must be retained separately"
     if data_head.startswith(b"\x7fELF") or data_head[:4] in {
             b"\xfe\xed\xfa\xce", b"\xce\xfa\xed\xfe", b"\xfe\xed\xfa\xcf", b"\xcf\xfa\xed\xfe"}:
-        return "build_product", "compiled executable (magic bytes), not an output log"
+        reviewed = REVIEWED_BUILDS.get(name)
+        if (reviewed and (ROOT / reviewed["source"]).is_file()
+                and hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == reviewed["sha256"]
+                and hashlib.sha256((ROOT / reviewed["source"]).read_bytes()).hexdigest() == reviewed["source_sha256"]):
+            return "build_product", "source/build recipe reviewed: " + reviewed["audit"] + "; source: " + reviewed["source"]
+        return "research", "compiled artifact with unverified provenance; preserve until source/build review"
     if p.name in {".env", ".netrc", ".pypirc", "credentials", "credentials.json"}:
         return "credential_candidate", "credential-like filename; do not publish without review"
     return "research", "unreviewed research/sources/outputs retained without requiring polishing"

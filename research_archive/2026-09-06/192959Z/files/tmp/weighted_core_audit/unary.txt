@@ -1,0 +1,1358 @@
+Representing One Letter Weighted Automata Over
+the Tropical Semiring
+Shaull Almagor /envel⌢pe
+Technion, Haifa, Israel
+Ismaël Jecker /envel⌢pe
+Université Marie et Louis Pasteur, France
+Filip Mazowiecki /envel⌢pe
+University of Warsaw, Poland
+Łukasz Orlikowski /envel⌢pe
+University of Warsaw, Poland
+David Purser /envel⌢pe
+University of Liverpool, UK
+Henry Sinclair-Banks /envel⌢pe/h⌢me
+University of Warsaw, Poland
+Max Planck Institute for Software Systems (MPI-
+SWS), Kaiserslautern, Germany
+Abstract
+We consider weighted automata over the tropical semiringZ∞(min, +). Recently, it was shown that
+determinisation is decidable; in this paper we focus on the complexity when the alphabet is unary.
+In 2001, Lombardy showed this problem is decidable, a close inspection of his proof yields acoNP
+upper bound on the complexity. Earlier Gaubert showed that every weighted automaton in this
+setting can be effectively turned into an equivalent union of deterministic weighted automata. We
+prove Gaubert’s result efficiently, presenting it as a generalisation of Chrobak’s normal form for
+unary NFA. In particular, we prove that the equivalent union of deterministic weighted automata
+can be represented by a weighted automaton of quadratic size in the size of the original one, and this
+representation can be computed in polynomial time. Building on this, we show that determinisation,
+and even register minimisation (which generalises determinisation), iscoNP-complete. We complete
+the paper with observations that the boundedness problem is alsocoNP-complete by reductions with
+determinisation. Lastly, we provide evidence that all of these problems are not FPT (by proving
+coW1-hardness) when parametrised by the number of deterministic automata in the union.
+2012 ACM Subject ClassificationTheory of computation→ Quantitative automata
+Keywords and phrasesweighted automata, determinisation, register minimisation
+Funding Shaull Almagor: Supported by the ISRAEL SCIENCE FOUNDATION (grant No. 989/22)
+Filip Mazowiecki: Supported by the Polish National Science Centre SONATA BIS-12 grant number
+2022/46/E/ST6/00230.
+Łukasz Orlikowski: Supported by the ERC grant INFSYS, agreement no. 950398.
+Henry Sinclair-Banks: Supported by the ERC grant INFSYS, agreement no. 950398.
+Acknowledgements We acknowledge the Weighted Automata Rock workshop funded by IDUB
+Thematic Research Programmes (POB III) of the University of Warsaw.
+1 Introduction
+Weighted automata over the tropical semiring(Z∪{∞}, min, +) are a quantitative extension
+of finite automata by labelling transitions with integers. Instead of recognising input words,
+they assign them integer weights. To every run we assign the sum of the weights on its
+transition, and the output for a given input word aggregates the weigths of accepting runs
+using the minimum function. Weighted automata over the tropical semiring play a central
+role in verification, see for example the surveys [26, 11]. For example, this model played a
+crucial role in Hashiguchi’s results proving decidability of the star height problem [18, 19].
+The power of weighted automata over the tropical semiring makes the model convenient for
+expressing many properties, unfortunately at the cost that most problems are undecidable [3].
+In contrast to Boolean finite automata, weighted automata cannot be always determinised.
+arXiv:2606.26038v2  [cs.FL]  25 Jun 2026
+2 Representing One Letter Weighted Automata Over the Tropical Semiring
+Furthermore, decision problems for subclasses, like deterministic or unambiguous weighted
+automata, become significantly less complex and, in particular, decidable [26, 11]. This
+naturally raises the question whether an input automaton admits an equivalent deterministic
+weighted automaton; as a decision problem it is called the determinisation problem. A recent
+breakthrough established decidability of determinisation for tropical weighted automata [1],
+after decades from its formulation in the 1990s by Mohri [28, 29] (and already implicit in
+earlier work [9]).
+In this paper, we focus on weighted automata over the tropical semiring when the alphabet
+is unary. In this setting decidability of determinisation was established by Lombardy [25].
+While not stated explicitly, acoNP complexity bound can be inferred from [25], matching our
+upper bound. Indeed, Lombardy essentially reduces the problem to the setting when the input
+automaton is assumed to be unambiguous. Then, non-determinisability can be witnessed
+by word demonstrating a cycle in a certain automaton. More recently, determinisation for
+unambiguous automata over the unary alphabet was shown to be decidable in linear time [12,
+Theorem 1.4].
+Our contributions. We revisit the unary alphabet setting with the aim of obtaining a
+precise structural and complexity-theoretic understanding of determinisation and related
+problems. Our approach is based on a refined analysis of runs using cycles of minimal average
+weight. Intuitively, any sufficiently long run of minimal weight must predominantly iterate
+such cycles. We show that this intuition can be turned into an effective normal form that
+captures all behaviours in a compact and algorithmically tractable way. Gaubert [15] shows
+that every unary weighted automaton can be transformed into an equivalent finite union
+of deterministic weighted automata. We improve this reduction showing that, with respect
+to the size of the original automaton, (i) there are linearly many automata in the union,
+(ii) each automaton in the union has quadratic size, and (iii) the transformation can be
+computed in polynomial time. This result is a weighted generalisation of Chrobak’s normal
+form for unary (Boolean) automata [10, 39], and yields a concise “lasso-shape” representation
+governed by cycles of minimal average weight.
+We also consider the register minimisation problem, which is known to strictly generalise
+determinisation [4, 5]. Using our Chrobak-like decomposition, we obtain acoNP decision
+procedure both for register minimisation and determinisation problems. The proof is an
+analysis of the interactions between the deterministic components and identifying cycles that
+are asymptotically redundant. Note that over unrestricted alphabets, the register minim-
+isation problem has recently been shown undecidable [2], in contrast to the aforementioned
+decidability of determinisation [1].
+Another important problem is the boundedness problem, studied in Hashiguchi’s work
+on star-height [18]. We show that determinisability coincides with boundedness. This link
+enables us to transfer techniques and results between the two settings. In particular, we
+obtain acoNP upper bound for boundedness.
+We complete these results with lower bounds proving tight complexity bounds. We
+show that determinisation, register minimisation, and boundedness are allcoNP-complete
+for unary weighted automata. Given our Chrobak-like result, it is natural to ask for FPT
+algorithms, when the input is explicitly a finite union of deterministic weighted automata.
+We prove that all three problems arecoW1-hard when parameterised by the number of
+deterministic components in the decomposition, relying on Fernau, Hoffmann, and Wehar’s
+work on the unary DFA intersection problem [13, 38]. This indicates that determinisation,
+register minimisation, and boundedness remain intractable even under strong structural
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 3
+restrictions.
+Related work. Weighted automata are also studied over fields, in particular over the
+rationals (Q, +,×) [35], encompassing probabilistic automata as a special case [16]. The
+determinisation and register minimisation problems have been shown to be decidable in the
+rational semiring [6], with the exact complexity still unresolved [7, 20] and polynomial time
+over the unary alphabet [24].
+In general, one can also consider the ambiguity hierarchy, which is a fine-grained analysis
+of classes between deterministic and unrestricted non-deterministic automata. Most notable
+partial results on determinisability are for: unambiguous [29], finitely ambiguous [23],
+and polynomially ambiguous automata [22]. One can also generalise the determinisation
+problem by asking whether the input automaton admits an alternative representation that is
+unambiguous, finite-ambiguous, or polynomial-ambiguous [2, 33]. However, these problems
+trivialise in the case of unary alphabet over the tropical semiring. Recall that Lombardy
+showed that all unary weighted automata can be converted into unambiguous weighted
+automaton [25].
+Taking the algebraic view of automata, a unary weighted automaton can be viewed as
+a matrixA∈ Zd×d over the tropical semiring, where theorbit{An|n∈ N} captures the
+behaviour of the automaton. Under this view, several works [36, 30, 17] have identified that
+the mean-value of “cycles” can be used to effectively reason about the orbit. Our work also
+contains several such observations, tailored to our setting. However, we stay in the view of
+state machines.
+2 Preliminaries
+Fork∈ N ={0, 1,... }, we denote [k] :={1,...,k }. We denote by N∞ and Z∞ the sets
+N∪{∞} and Z∪{∞}, respectively. We extend the addition andmin operations to∞ in
+the natural way:a +∞ =∞ and min{a,∞} =a, for alla∈ Z∞. By arg min{f(x) :x∈A}
+we mean the set of elements inA for whichf(x) is minimal for some functionf and setA.
+Weighted automata. A Unary (min, +) Weighted Finite Automaton(unary WFA for short)
+is a tupleA =⟨Q,Q 0, ∆,F⟩, whereQ is a finite set ofstates, Q0⊆Q are theinitial states,
+∆⊆Q× Z∞×Q is atransition relationsuch that for everyp,q∈Q there exists exactly1
+one weightc∈ Z∞ such that (p,c,q )∈ ∆, andF⊆Q is a set ofaccepting states. If|Q0| = 1
+and, for everyp∈Q, there exists at most one transition(p,c,q ) withc̸=∞, thenA is called
+deterministic. We denote by∥A∥ the maximal absolute value of any finite weight in∆.
+▶ Remark 1 (Initial and final weights and states).Weighted automata are often defined with
+initial and final weights, i.e.,Q0 andF are replaced by initial and final vectorsinit, fin∈ ZQ
+∞.
+The weight of a run then also includes the initial weight and final weight. Our choice is with
+only a small loss of generality, the expressivity of the two models differ only on the empty
+word, which has no effect on our results.
+▶ Remark 2. Throughout this paper we use the(min, +) semiring. Since we work overZ,
+our results also apply to(max, +) by symmetry.
+1 This is without loss of generality: if there are two transitions with different weights, the higher weight
+can always be ignored in the(min, +) semantics. Missing transitions can be introduced with weight∞.
+
+4 Representing One Letter Weighted Automata Over the Tropical Semiring
+Runs. A run ofA is a sequence of transitionsρ = (t1,t 2,...,t m) where ti = (pi,ci,qi) such
+that qi =pi+1 for every1≤i<m , andci <∞ for every1≤i≤m; we writeρ :p1
+m
+−→qm
+to denote this run. We say thatρ is of lengthm fromp1 to qm; we also use the notation
+len(ρ) :=m to denote the length of a run. For an infixw[i,j ], we denote the corresponding
+infix ofρ by ρ[i,j ] := (ti,...,t j). The weight of the runρ is wt(ρ) = ∑m
+i=1ci. A run is
+accepting if p1∈Q0 and qm∈F.
+Forn∈ N, we abuse the name of the unary WFA as the function it describes, and denote
+byA(n) the weight assigned byA to n, which is the minimal weight of an accepting run of
+A of lengthn. For convenience, we introduce some auxiliary notations. Forn∈ N and sets
+of statesQ1,Q 2⊆Q, we define (with the conventionmin∅ =∞)
+mwtA(Q1
+n
+− →Q2) := min{wt(ρ)|∃q1∈Q1,q 2∈Q2, ρ:q1
+n
+− →q2}.
+If Q1 or Q2 are singleton, then we denote them by a single state (e.g.,mwtA(P
+n
+− →q) for
+some setP⊆Q and stateq∈Q). Accordingly, we can defineA(n) = mwtA(Q0
+n
+− →F ). If
+there are no accepting runs onn, thenA(n) =∞. The unary WFA then defines the function
+A : N→ Z∞. We say the domain ofA, dom(A), is the set{n∈ N|A (n)<∞}
+We writep
+n
+− →q when there exists some runρ such thatρ :p
+n
+− →q. We lift this notation to
+concatenations of runs, e.g.,ρ :p
+n
+− →q
+m
+−→r means thatρ is a run onn +m from p to r that
+reachesq after the prefixn. We also incorporate this tomwt by writing mwt(q
+n
+− →p
+m
+−→r)
+to refer to the minimal weight of a runρ :q
+n
+− →p
+m
+−→r.
+Average weight. Given a runρ (typically a cycle in what follows), theaverage weightof ρ
+is wt(ρ)/len(ρ), i.e., the average effect of each step in theρ. Whenρ is a cycle, we sometimes
+call the average weight theslope.
+Trim assumption. A WFA istrim if every state is reachable fromQ0 by some run and can
+reach an accepting state with some run. Note that states that do not satisfy this can be
+found in linear time (by using a simple graph search algorithm), and can be removed from
+the WFA without changing the weight of any accepted word. We assume that all WFAs are
+trim throughout.
+k-Width WFAs. Consider a WFAA. The width ofA is the maximal number of states that
+are simultaneously reachable inA.
+3 Efficiently Computing Normal Forms for Unary WFA
+A unary non-deterministic finite automaton is said to be inChrobak normal formif it consists
+of a pathq1→ q2→···→ qm, and k simple cycles γ1,...,γ k, with q1 initial, and qm
+non-deterministically branching into each of thek cycles, as depicted in Figure 1. The key
+result is that everyn-state unary NFA can be converted, in polynomial time, into a unary
+NFA in Chrobak normal form withm,k≤O(n2) and for each cycle having length at most
+n [10, 27, 39].
+In this section, we consider two forms for unary WFAs: unions of deterministic unary
+WFAs and unary WFAs in Chrobak normal form. It is known that non-deterministic unary
+WFA can be represented as a union of deterministic unary WFAs, which are necessarily
+individually lasso-shaped automata [15, 25]. Of course, one can also unroll the cycles so
+that the initial simple path segments have the same length, and then merge these initial
+paths (by suitably adapting the weights on the transitions of the initial path and branching
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 5
+q1 q2
+···
+qm
+···
+···
+···
+···
+γ1
+γk
+···
+···
+...
+Figure 1The structure of an automaton (without any accepting states) in Chrobak normal form.
+transitions), to yield a single unary WFA whose underlying unary DFA is in Chrobak normal
+form. However, these results are existential and do not entail that automata in this form can
+be small, nor found efficiently.
+For the remainder of this section, we fix our attention on a trim unary WFAA =
+⟨Q,Q 0, ∆,F⟩. In Section 3.1, we will first prove thatA can be efficiently converted into a
+small union of quadratic size deterministic unary WFA (Theorem 3). After, in Section 3.2, we
+will strengthen our result to prove that one can efficiently compute an equivalent quadratic
+size Chrobak normal form forA in polynomial time (Corollary 15).
+3.1 Small Unions of Small Deterministic Unary WFAs
+▶ Theorem 3. There exist deterministic unary WFAsB1,..., Bk such that
+(1) for everyn,A(n) = min1≤i≤k{Bi(n)};
+(2) k≤|Q|; and
+(3) for every 1≤i≤k:
+(i) Bi consists of at most2|Q|2 +|Q| states and transitions,
+(ii) ∥Bi∥≤ 8|Q|2∥A∥, and
+(iii) Bi can be computed fromA in polynomial time.
+In order to prove Theorem 3, we will identify a collection of “representative” cycles.
+Roughly speaking, for anyn∈ N, any minimal-weight run of lengthn will mostly use cycles
+of minimalaverage weight to get to the desired lengthn. This is because any run of lengthn
+that repeatedly uses cycles with greater weight must end up having greater weight than a run
+that instead uses minimal average weight cycles. In some situations, cycles with non-minimal
+average weight must be taken; we will argue that such cycles will only be used a small number
+of times. We formalise this in Lemma 4. With this, our approach to prove Theorem 3 is to,
+more or less, categorise runs based on the lowest average weight short cycle used.
+We call a cycleshort if it consists of at most|Q| transitions. Note that all simple cycles
+are short. For every stateq∈Q, wedistinguish γq to be a shortq-cycle that has minimal
+average weight among all shortq-cycles. Recall that the average weight of a cycle is the ratio
+of its weight and length. Note that there may be multiple such cycles for a given stateq, we
+can arbitrarily distinguish any one of these cycles.
+▶ Lemma 4. Letn∈ N and s,t∈Q such that mwt(s
+n
+− →t)<∞. There exists a minimal
+weight runρ froms to t of lengthn with the following properties:
+(1) there is a decompositionρ =τγx
+qτ′, for some distinguished cycleγq and x∈ N; and
+(2) len(τ) + len(τ′)< 2|Q|2.
+We remark that Lemma 4 does not specify that the run of lengthn starts from an initial
+state, or leads to an accepting state. Though, it immediately follows that ifA(n)̸=∞, then
+
+6 Representing One Letter Weighted Automata Over the Tropical Semiring
+there exists an accepting run of lengthn and weightA(n) with properties (1) and (2) as
+specified by Lemma 4.
+To prove Lemma 4, we will perform a cycle replacement argument on an arbitrary
+minimal weight run of lengthn to obtainρ. Some of the following ideas appear in Rackoff’s
+rearrangement and replacement arguments used to analyse the length of runs that witness
+unboundedness in vector addition systems [34, Lemma 4.5]. Similar arguments have also
+been used in the development of Chrobak normal form for finite automata, in particular in
+Lin’s proof [39] which makes a subtle correction to Chrobak’s [10]. However, we must take
+care to ensure the weights are correctly maintained. The main technical contribution is to
+show that this can still be completed efficiently.
+Proof of Lemma 4.Initially, letπ be an arbitrary run froms to t of lengthn with minimal
+weightw∈ Z. LetQ′⊆Q be the subset of states that are visited byπ; note thatQ′⊇{s,t}.
+First, for every stateq∈Q′\{s,t}, that is visited byπ, we “mark” exactly one instance2 of
+a transition inπ that leads toq. We also mark the final transition (which leads tot) and
+note that we need not mark any transition tos. In total, there are at most|Q|− 1 many
+marked transitions.
+▷ Claim 5.Proof in
+Appendix A If len(π)≥|Q|2, then there is a short cycle without any marked transitions inπ.
+One by one, short cycles that do not contain marked transitions are removed fromπ and
+placed inC, a multiset that is initially empty. The order in which short cycles are removed
+does not matter but, thanks to Claim 5, we can always identify and remove a short cycle
+from π until the length ofπ is less than|Q|2.
+Now, letq∈Q′ be the state visited byπ that has the lowest average weight distinguished
+cycle γq. Formally,
+q := arg min
+p∈Q′
+{wt(γp)
+len(γp)
+}
+.
+We will now repeatedly replace cycles fromC with several iterations ofγq. We must do this
+in a way that preserves the length. For this we use the following combinatorial claim with
+m =|Q|, ℓ = len(γq), andS is the multiset of all lengths of all cycles inC.
+▷ Claim 6.Proof in
+Appendix A Let m,ℓ∈ N such thatℓ≤m and letS be a multiset of naturals such that, for
+everys∈S, 1≤s≤m. If∑
+s∈Ss≥m2, then there exist a multisetS′⊆S and e∈ N such
+that∑
+s∈S′s =eℓ.
+If the sum of all lengths of cycles inC is at least|Q|2, then we can identify a collection
+of short cyclesσ1,...,σ i such that len(σ1) +... + len(σi) =e· len(γq), for somee∈ N. This
+allows us to removeσ1,...,σ i to later be replaced withe iterations ofγq. Soon, we will argue
+that we can reconstruct a run of lengthn of the formτγx
+qτ′. Recall thatπ was assumed to
+have minimal weight; we therefore know thatwt(σ1) +... + wt(σi) =e· wt(γq).
+The above cycle replacement is repeated until the sum of the lengths of cycles inC that
+remain is less than|Q|2. Finally, we will argue that a run froms to t of lengthn can be
+reconstructed. Recall that for every state inQ′\{s}, there is a marked transition inπ that
+was not removed during the cycle removal process. This means for every stateq∈Q′\{s},
+2 To be clear, some transitions may occur multiple times inπ, if one is marked then only one instance of
+said transition is marked. We also note that, for a particular stateq ∈Q′ \ {s,t }, it does not matter
+which incoming transition is marked.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 7
+q-cycles can be reinserted intoπ: specifically aq-cycle can be taken immediately after the
+marked transition leading toq. Furthermore,s-cycles can be inserted at the very beginning
+of the run. It is also important to note that since the final transition leading tot was marked,
+we know thatπ is (still) a run froms to t. Letπ′ be the run that is obtained by adding all
+short cycles left inC after replacement (specifically,π′ does not contain the replacement
+x iterations ofγq). Since the combined length of cycles left inC was at most|Q|2 and
+len(π)<|Q|2; we deduce thatlen(π′)< 2|Q|2.
+What remains are thex := n−len(π′)
+len(γq) replacement iterations ofγq. In just the same way,
+these cycle iterations can be inserted after the marked transition forq. Specifically, letτ be
+the prefix ofπ′ before and including the marked transition forq, and letτ′ be the suffix of
+π′ after the marked transition forq. Thenρ =τγx
+qτ′ is a minimal weight run froms to t of
+length n. Clearly len(τ) + len(τ′) = len(π′)< 2|Q|2. ◀
+Now that we have this standard “linear form” for minimal weight runs, we can construct
+a collection of deterministic unary WFAsB1,..., Bk such that, for everyn∈ N,A(n) =
+min1≤i≤k{Bi(n)}. In fact, we will construct one deterministic unary WFABq, for every
+q∈Q for which there exists a (short) cycle atq inA. Recall that deterministic unary WFAs
+have a basic lasso-shaped structure: there is a simple path leading to a single simple cycle.
+As is the case with any unary deterministic automaton,Bq will have one run of lengthn,
+for everyn∈ N. The cycle inBq will have the same length and overall weight asγq but the
+accepting states and individual transition weights will likely differ. The length of the simple
+path ofBq will be bounded above by2|Q|2.
+For everyq∈Q, we defineΠq to be the set of all runs inA that (i) start at any initial state,
+(ii) end at any final state, and (iii) are of the formτγx
+qτ′ such that len(τ) + len(τ′)< 2|Q|2
+and x∈ N. It is important to note that Πq contains all runs of length less than2|Q|2,
+even those that do not visitq. This fact will be most convenient for proving thatA can
+be converted into an equivalent quadratic size unary WFA in Chrobak normal form (in
+particular for Claim 16 on Page 9).
+It is important to observe that runs across allΠq suffice for finding minimal weight runs.
+Thanks to Lemma 4, it is true that for everyn∈ N such thatA(n)̸=∞, there existsq∈Q
+andπ∈ Πq such thatwt(π) =A(n). Now, for everyq∈Q, we will define a weight functionfq :
+N→ Z∞ based on the paths inΠq. Precisely,fq(n) := min{wt(π) :π∈ Πq and len(π) =n}.
+▷ Claim 7. Proof in
+Appendix AFor everyn∈ N,A(n) = minq∈Q{fq(n)}.
+Our goal is to constructBq so that, for everyn∈ N, the run of lengthn from the initial
+state ofBq has weightfq(n). Later, we will fix which control states are accepting to capture
+the situations whenA(n)∈ Z andA(n) =∞. Now, we will prove thatfq(n) is periodic
+from n≥ 2|Q|2. We will use this fact to create the cycle ofBq.
+▷ Claim 8. Fix q∈Q. For everyn≥ 2|Q|2, fq(n + len(γq)) =fq(n) + wt(γq).
+Proof. Without loss of generality, we shall assume thatwt(γq)≥ 0; the scenario in which
+wt(γq)< 0 is analogous.
+First, we shall consider the case in whichfq(n)∈ Z (i.e. fq(n)̸=∞). Given that
+fq(n)∈ Z, there exists a pathτγx
+qτ′∈ Πq of lengthn with weightfq(n). From this, one
+can immediately construct a run of lengthn + len(γq): τγx+1
+q τ′∈ Πq. This run has weight
+fq(n) + wt(γq), thusfq(n + len(γq))≤fq(n) + wt(γq).
+Now, for sake of contradiction, assume thatfq(n + len(γq))<f q(n) + wt(γq). Suppose
+that τγy
+qτ′ is the run inΠq of lengthn + len(γq) with minimal weight,fq(n + len(γq)). Since
+n + len(γq)≥ 2|Q|2 + len(γq) and len(τ) + len(τ′)< 2|Q|2, we know thaty≥ 1. This means
+
+8 Representing One Letter Weighted Automata Over the Tropical Semiring
+···
+···
+···
+βq
+t[1] t[2] 0 t[3] 0 t[i]
+t[i+ 1]
+0
+t[ℓ]
+Figure 2The deterministic unary WFABq.
+that τγy−1
+q τ′∈ Πq is a run of lengthn and weightfq(n + len(γq))− wt(γq). Thusfq(n)≤
+fq(n + len(γq))− wt(γq). This creates a contradiction asfq(n + len(γq))− wt(γq)<f q(n).
+Thus, in the case thatfq(n)∈ Z, fq(n + len(γq)) =fq(n) + wt(γq).
+Now, to conclude the proof, we shall consider the case in whichfq(n) =∞. In this case,
+there is no path of lengthnin Πq. Suppose, for sake of contradiction, thatfq(n+len(γq))̸=∞.
+This means that there is a pathτγy
+qτ′∈ Πq of lengthn + len(γq). Sincen + len(γq)≥ 2|Q|2 +
+len(γq) and len(τ) + len(τ′)< 2|Q|2, we know thaty≥ 1. This means thatτγy−1τ′∈ Πq is
+a run of lengthn and weightfq(n + len(γq)− wt(γq)<∞. This creates a contradiction, and
+so we conclude that iffq(n) =∞, thenfq(n + len(γq)) =fq(n) + wt(γq) =∞. ◁
+Now we are ready to constructBq. There will be2|Q|2 + len(γq) many states: 2|Q|2− 1
+will form a simple path leading to a cycle oflen(γq) + 1many states. We useβq to refer to
+the cycle ofBq.
+First, we shall consider which states ofBq are accepting. This part is straightforward:
+for everyn< 2|Q|2 + len(γq) for whichfq(n)∈ Z, we mark then-th state ofBq as accepting.
+Otherwise, iffq(n)̸=∞, then then-th state is not an accepting state.
+Now, letn1 < n2 < ... < nℓ be the lengths of words accepted byA such that (i) for
+everyi∈ [ℓ],fq(ni)∈ Z, (ii)nℓ−1 < 2|Q|2 + len(γq)≤nℓ, and (iii) for everyn /∈{n1,...,n ℓ}
+such thatn < nℓ, fq(n) =∞. In other words,n1,n 2,...,n ℓ−1 are the lengths of words
+with accepting runs in Πq that are at most 2|Q|2 + len(γq), and nℓ is the length of the
+shortest word with a run inΠq whose length is at least2|Q|2 + len(γq). Now, consider
+the sequence of weight differences of consecutive accepted lengths:t = (fq(n1),fq(n2)−
+fq(n1),...,f q(nℓ)−fq(nℓ−1)). This sequence satisfies the telescoping property that, for every
+i∈ [ℓ],∑i
+j=1t[j] =fq(n1) + (fq(n2)−fq(n1)) +... + (fq(ni)−fq(ni−1)) =fq(ni).
+We will use the sequencet for the transition weights. Overall, we wish to constructBq
+so that when then-th state is reached, the current weight of the run isfq(n), assuming
+that fq(n)̸=∞. Concretely, before ni-th state is reached, the weight of the run must
+be fq(ni). To achieve this, on the first transition (the transition leading out from the
+initial state), the transition weight will bet[1] = fq(n1). Then, for every i∈ [ℓ], the
+transition from theni-th state has the weightt[i + 1]. On transitions from non-accepting
+states, we just set the transition weight to0. See Figure 2 for an example ofBq in which
+n1 = 1,n 2 = 3,...,n i = 2|Q|2,...,n ℓ = 2|Q|2 + len(γq).
+▷ Claim 9.Proof in
+Appendix A ∥Bq∥≤ 8|Q|2∥A∥.
+▷ Claim 10.Proof in
+Appendix A wt(βq) = wt(γq).
+▷ Claim 11.Proof in
+Appendix A For everyn∈ N,Bq(n) =fq(n).
+We can now put the pieces together to prove Theorem 3. All that remains is to prove
+thatBq can be computed fromA in polynomial time.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 9
+Proof of Theorem 3.For everyq∈Q, we constructBq as is described after Claim 8. Recall
+Claims 7 and 11: for everyn∈ N,A(n) = minq∈Q{fq(n)} andBq =fq(n), for everyq∈Q.
+Together, we obtain condition 1 of Theorem 3.
+Condition 2 follows from the fact that there is at most one deterministic unary WFABq
+for every stateq∈Q ofA.
+Condition 3i immediately follows from the construction ofBq: there are at most2|Q| +
+len(γq)≤ 2|Q|2 +|Q| states and transitions (see Figure 2 on Page 8). Condition 3ii is covered
+by Claim 9. Finally, for condition 3iii, it is important to note that we only need to know the
+length of the distinguishedq-cycles; for this, we use Claim 13. We also need to compute the
+transition weights forBq; for this, we use Claim 14. These two claims both rely on the basic
+fact (Claim 12) that the weight of a minimal run of lengthn can be computed in polynomial
+time fromA and n. We also note that Claim 12 can be used to decide which of the states in
+Bq are accepting in polynomial time.
+▷ Claim 12. Proof in
+Appendix ALetA′ be an arbitrary unary WFA with statesQ′, letS,T ⊆ Q′, and let
+n∈ N. In polynomial time fromA′ and n, we can compute the weight of a minimal run that
+starts at some states∈S, ends at some statet∈T, and has lengthn.
+▷ Claim 13 (Also follows from [21]). Proof in
+Appendix ALet q∈Q. We can compute, in polynomial time from
+A, the length of theq-cycle with the minimal average weight among all shortq-cycles.
+▷ Claim 14. Proof in
+Appendix Afq(n) can be computed in polynomial time with respect toA and n. ◀
+3.2 Extending Chrobak’s Normal Form to Unary WFAs
+We will now strengthen Theorem 3 by proving that there exists a quadratic size unary WFA
+in Chrobak normal form that is equivalent toA (which can be computed in polynomial time).
+To show this we consider the the deterministic unary WFAsB1,..., Bk output by Theorem 3,
+and observe that the stem of eachBi is identical, meaning their stem can be merged, branching
+at the end of the stem to the cycle of the relevantBi. We state and prove this formally in
+the following corollary, for which we recall that we fixed our attention to a trim unary WFA
+A =⟨Q,Q 0, ∆,F⟩.
+▶ Corollary 15. There exists a non-deterministic unary WFAB such that
+(1) for everyn,B(n) =A(n);
+(2) the underlying unary NFA ofB is in Chrobak normal form;
+(3) B consists of at most3|Q|2 states and transitions, in particular:
+(i) the initial path ofB has less than2|Q|2 states and
+(ii) there are at most|Q| many cycles inB, each of length at most|Q|;
+(4) ∥B∥≤ 8|Q|2∥A∥; and
+(5) B can be computed in polynomial time.
+Proof. SupposeB1,..., Bk are the deterministic unary WFAs output by Theorem 3. Observe
+that in the construction, the initial paths (the first2|Q|2− 1 states and transitions) of every
+Bi have the same weights and the same accepting states. This is formalised in the following
+claim and proof.
+▷ Claim 16. For everyp,q∈Q and everyn< 2|Q|2, fp(n) =fq(n).
+Proof. This follow from the fact that, for everyq∈Q, Πq contains all runs of length less
+than 2|Q|2 that start in any initial state, and that end in any final state. Thus, for every
+p,q ∈Q,
+{
+π∈ Πp : len(π)< 2|Q|2}
+=
+{
+π∈ Πq : len(π)< 2|Q|2}
+. Hence fp(n) = fq(n), for
+everyn< 2|Q|2. ◁
+
+10 Representing One Letter Weighted Automata Over the Tropical Semiring
+To add some detail, recall that the transition updates in the initial path ofBq are either
+t[i] =fq(ni)−fq(ni−1) or 0 (depending only on whether the transition was outgoing from
+an accepting state). Given that the accepting states in the initial path ofBq only depend on
+whetherA has an accepting run of lengthn (for n< 2|Q|2)), thanks to Claim 16, it follows
+that then-th transition of eachBq has the same weight.
+Accordingly, it is possible to merge the first2|Q|2− 1 states and transitions ofB1,..., Bk
+to obtainB. After the (2|Q|2− 1)-st transition, there will then be a non-deterministic
+branch to each of the cycles fromB1,..., Bk. It is immediate thatB satisfies the structural
+conditions 2, 3i, and 3ii of Corollary 15. The remaining conditions come directly from The-
+orem 3. The first condition follows from condition 1 of Theorem 3, the fourth follows from
+condition 3ii of Theorem 3, and the fifth follows from condition 3iii of Theorem 3. ◀
+4 Register Minimisation of CRAs
+Tropical cost register automata (CRA) are deterministic automata augmented with registers
+taking values inZ, denoted byk-CRA when there arek registers. Each transition specifies
+how the register values are updated linearly (within the tropical semiring) with respect to
+the other transitions. Intuitively, register updates take the following formri← −min{r1 +
+m1,i,r 2 +m2,i,...,r k +mk,i}, wherer′
+is are registers andmi,j are constants. Note that since
+CRAs are deterministic, then over a unary alphabet they are lasso-shaped. The complexity
+of their behaviour stems from the register updates. A formal definition of CRAs can be
+found in the appendix.
+A natural question is whether their representations can be simplified by reducing the
+number of registers. This leads to the notion ofCRA Dimension Reduction: given ak-CRA
+A and an integerk′ <k , does there exist an equivalentk′-CRAB? In this section we will
+show that the problem is incoNP (and later, that it iscoNP-complete in Theorem 27). Note
+that in the general alphabet case, this problem is undecidable [2].
+To study this problem, we exploit the fundamental result that CRA are expressively
+equivalent to WFA [4]. In one direction, the idea is that a WFA can non-deterministically
+track each register of a CRA using its states. For the converse, a CRA can simulate a
+non-deterministic WFA by keeping a register for each state of the WFA, and updating the
+registers according to the transitions of the WFA.
+Crucially, this equivalence can be refined: the number of registers corresponds exactly to
+the width of the WFA. The following is proved in [2].
+▶ Theorem 17 ([2]). The class of functions representable by ak-CRA is exactly that
+representable by widthk WFAs (and the translation between the two is effective).
+By this theorem, CRA Dimension Reduction is equivalent to theWFA Width Reduction
+problem which asks, given ak-width WFAA and k′ < k, does there exist an equivalent
+k′-width WFAB? Both problems generalise the determinisation problem which can be stated
+as asking whether there is an equivalent1-width WFA or a1-CRA.
+Since the two problems are equivalent, it suffices to work entirely in the WFA setting,
+which we do throughout to prove the following:
+▶ Theorem 18. The CRA Dimension Reduction and the unary WFA Width Reduction
+problems are incoNP.
+Proof overview. To prove Theorem 18, we develop a procedure that computes the minimal
+width of a unary WFAA. Our procedure goes through the three following steps.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 11
+1. First, we decomposeA in polynomial time into a family of deterministic unary WFA
+(Bi)k′′
+i=1.
+2. Next, we group in polynomial time all componentsBi that share the same asymptotic
+behaviours, which yields a smaller family of unary WFAs(Ci)k′
+i=1.
+3. Finally, we identify and discardredundant componentsCi, namely those whose domain is
+eventually covered by other components with a smaller average cycle weight. We show
+that we can establish whether a component is redundant incoNP (Proposition 20).
+We then prove that the number of non-redundant components obtained in the last step is
+exactly the minimal width of any unary WFA equivalent toA (Propositions 24 and 25).
+Complexity. Note that the first two steps can be carried out in polynomial time, and that
+redundancy of a given componentCi can be decided incoNP, that is, ifCi is not redundant,
+then it has a polynomial size non-redundancy witness.
+To solve the unary WFA Width Reduction problem, it suffices to decide whether there
+exists ak′-width WFA equivalent toA, without requiring minimality ofk′. Our procedure
+yields acoNP algorithm: a certificate of non-existence of ak′-width unary WFA consists of
+k′ + 1 non-redundancy witnesses for distinct components.
+Let us now address the unary WFA Width Minimisation problem: given ak-width unary
+WFAA and an integerk′ <k , isk′ the minimal integer such that there exists ak′-width
+unary WFA equivalent toA? Formally, letopt(A) be the minimal value such that there exists
+an equivalentopt(A)-width unary WFA. Our procedure yields aDP algorithm, where DP is
+the class of languages that are the intersection of a language incoNP and a language inNP
+(see [32, Section 2]). Indeed, we can decide incoNP whether k′≥ opt(A), and dually inNP
+whether k′− 1< opt(A). The intersection of these two conditions characterisesk′ = opt(A),
+which concludes the argument.
+4.1 The Procedure
+For the rest of the section we fix a unary WFAA, and we now detail each step of the
+procedure, before proving its correctness.
+Step 1: Decomposition. We begin by applying Theorem 3 to decomposeA in polynomial
+time into a family of deterministic unary WFAs(Bi)k′′
+i=1 such that
+A(n) = min
+1≤i≤k′′
+{Bi(n)} for alln∈ N. (1)
+Step 2: Grouping components. We now group together the componentsBi that share
+the same asymptotic behaviour, that is, the same average cycle weight. Formally, let
+α1 <α 2 <··· <α k′ be the distinct average weights of the cycles of the automata(Bi)k′′
+i=1.
+For each1≤i≤k′, we defineCi as the union of all componentsBj whose cycle has average
+weightαi. Note that the average cycle weights of the componentsBj can be computed and
+compared in polynomial time, therefore, as we do not determiniseCi, this construction can
+be done in polynomial time. Since eachBj appears in oneCi, Equation (1) yields
+A(n) = min
+1≤i≤k′
+{Ci(n)} for alln∈ N. (2)
+Moreover, since all the cycles inCi have average weightαi, we get the following:
+▶ Lemma 19. Proof in
+Appendix BThere existsN∈ N such that, for all1≤i≤k′ and alln∈ N, every runρ
+ofCi of lengthn satisfies|wt(ρ)−n·αi|≤ N. MoreoverN is polynomial in the description
+of theCi.
+
+12 Representing One Letter Weighted Automata Over the Tropical Semiring
+Step 3: Discarding redundant components. We now formalise which elements of the
+decomposition (Ci)k′
+i=1 are necessary. A componentCi is calledredundant if it is eventually
+dominated domain-wise by the previous components:
+Ci is redundant ifdom(Ci)\
+i−1⋃
+j=1
+dom(Cj) is finite.
+We show that while the words witnessing the non-redundancy might be exponentially large,
+we can decide their non-existence incoNP:
+▶ Proposition 20. We can establish incoNP whether a given component is redundant.
+Proof. A componentCi is redundant if and only if its domain differs only finitely from the
+union of the domains of the preceding components. LetA be the automaton recognising
+dom(Ci), and letB be the disjoint union of the automata recognising the domains of allCj
+with j < i. Then redundancy reduces to checking whetherL(A)\L(B) is finite. This is
+known to be decidable incoNP [8, Lemma 7.15]. ◀
+4.2 Minimal Width Equals the Number of Non-redundant Components
+We now show that the number of non-redundant components is exactly the minimal width
+of any unary WFA equivalent toA. Leti1 <··· <i k be the indices of the non-redundant
+componentsCi. We begin with an auxiliary lemma showing thatA is eventually determined
+by the union of its non-redundant components.
+▶ Lemma 21.Proof in
+Appendix B There existN∈ N and a partition
+{n∈ dom(A)|n≥N} =D1∪···∪ Dk
+into k infinite regular languages such thatA(n) =Cij(n) for all 1≤j≤k and alln∈Dj.
+This follows from Lemma 19, which shows that each componentCi is asymptotically linear
+with slopeαi, together with the fact that the components are ordered by increasing values of
+αi. The full proof is deferred to the appendix.
+We now construct an automaton of widthk equivalent toA. The key step is to show
+that each non-redundant component can be determinised. For this, we rely on a classical
+characterisation of determinisability in terms ofB-gap witnesses.
+▶ Definition 22. For a boundB∈ N, aB-gap witnessis a pair of wordsx,y ∈ N and a
+state q∈ Q such that upon readingx, we have mwt(Q0
+x
+− →q) > mwt(Q0
+x
+− →Q) +B, but
+mwt(Q0
+xy
+−→F ) = mwt(Q0
+x
+− →q
+y
+− →F ).
+The following characterisation is folklore; we use the formulation of [1, Theorem 2.1].
+▶ Theorem 23 (folklore, [1, Theorem 2.1]). A is determinisable if and only if there is a
+B∈ N such that there is noB-gap witness.
+The determinisation construction that corresponds to the “if” direction of Theorem 23 yields
+a deterministic equivalent of size polynomial inB (the maximal gap) and single-exponential
+in the number of states ofA. We can now derive the upper bound.
+▶ Proposition 24.Proof in
+Appendix B There exists a k-width unary WFA equivalent toA of size single-
+exponential inA.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 13
+We now establish the matching lower bound, showing that no automaton of smaller width
+can be equivalent toA. The argument exploits the existence of thek infinite regular domains
+D1,...,D k where each non-redundant component dominates according to its slope. We show
+that these regions enforcek pairwise distinct behaviours in any equivalent automaton, which
+requires width at leastk.
+▶ Proposition 25. Proof in
+Appendix BEvery unary WFAA′ equivalent toA has width at leastk.
+5 Determinisation, Boundedness, and Hardness
+In this section, we consider the determinisation problem directly and show how it relates
+with boundedness problems. The determinisation problem is a special case of the register
+minimisation problem for the case of a single register (see Theorem 17). Accordingly, our
+decision procedures andcoNP complexity upper bound carries over. We will now prove that
+the problems are bothcoNP-hard. Furthermore, recall from Section 3 that a unary WFA can
+be represented as the union ofk deterministic automata. We provide strong evidence that
+determinisation and boundedness are not fixed parameter tractable whenk is the parameter.
+First, we show that determinisation is effectively interreducible with value boundedness.
+The value boundedness problem is a specific variant of the boundedness problem which
+requires a sequence of words with increasing value (a single non-accepting word, with weight
+∞, does not suffice). This can be seen as the core of the weighted problem as the detection
+of non-accepting words is purely a reachability criterion.
+▶ Definition 26. A weighted automatonA is bounded if there existsB∈ N such that
+|A(n)|<B and not boundedotherwise. Moreover,A is value boundedif there existsB∈ N
+such that ifA(n)<∞, then|A(n)|<B , and not value boundedotherwise3.
+The boundedness problem asks, given a weighted automatonA, whetherA is bounded,
+and the value boundedness problem asks whetherA is value bounded.
+We show that the value boundedness problem is interreducible with the determinisation
+problem for unary weighted automata. Our approach is to show that (i) the connection is
+almost immediate if the minimal average cycle has weight zero, and (ii) there are reductions
+that adjust the systems to have minimal average cycle of zero weight suited to each direction
+of the equivalence. As a consequence we will show the following theorem.
+▶ Theorem 27. The determinisation, boundedness, value boundedness, register reduction,
+and width reduction problems for unary weighted automata arecoNP-complete.
+5.1 Automata with Zero-Weight Minimal Average Cycles
+In this section, we will establish the tight connection between value boundedness and
+determinisation in the case where the minimal average cycle has weight zero. We recall
+Definition 22 and Theorem 23 that tell us thatA is determinisable if and only if there is
+no B-gap witness for someB. When the minimal average slope has weight zero, bounding
+B-gap witnesses, and thus determinisability, it turns out to correspond exactly to the value
+boundedness problem.
+Recall that we assumeA is trim, so that any run visiting a reachable cycle can be
+extended into an accepting word. Given a weighted automatonA, a reachable cycleρ is
+3 We avoid the termunbounded to prevent ambiguity.
+
+14 Representing One Letter Weighted Automata Over the Tropical Semiring
+of minimal average weight ifwt(ρ)/len(ρ)≤ wt(ρ′)/len(ρ′), for all reachable cyclesρ′. Let
+α = wt(ρ)/len(ρ) be the minimal average slope achieved by a cycle inA.4
+▷ Claim 28 ([21]).Proof in
+Appendix C A cycle achieving the minimal average slopeα is simple, and therefore
+has of length less than|Q|. Moreover,α can be computed in polynomial time.
+▷ Claim 29.Proof in
+Appendix C LetA′ be an automaton with minimal average slope of zero. There exists
+B0∈ N such that, for allx∈ N,A′(x)≥−B0 and ℓ,k≤ 2|Q| such thatA′(ℓ +kn)≤B0 for
+all n∈ N.
+▷ Claim 30. LetA′ be an automaton with minimal average slope of zero. IfA′ is value
+bounded byM, then there is aB such that there is noB-gap witness, soA′ is determinisiable.
+Proof. We note thatA′ does not have negative weight cycles, thus, if the weight of the
+run exceedsMA′ = M +|Q|·||A ′|| then it can never be extended to a minimum weight
+run (which has value less thanM). Suppose we have aB-gap witness, mwt(Q0
+x
+− →q) >
+mwt(Q0
+x
+− →Q) +B, but mwt(Q0
+xy
+−→F ) = mwt(Q0
+x
+− →q
+y
+− →F )≤ MA′. But we have
+Q0
+x
+− →q used in a minimal weight run, and thusmwt(Q0
+x
+− →q)≤ MA′, By Claim 29, we
+have mwt(Q0
+x
+− →Q)≥−B0 for a constantB0∈ N. In summary, we have
+MA′≥ mwt(Q0
+x
+− →q)> mwt(Q0
+x
+− →Q) +B≥−B0 +B,
+and so allB-gap witnesses haveB≤MA′ +B0. ◀
+▷ Claim 31. LetA′ be an automaton with minimal average slope of zero. IfA′ is not value
+bounded then there is aB-gap witness for allB, and soA′ is not determinisiable.
+Proof. SupposeA′ is not value bounded; we will construct arbitrary largeB-gap witnesses.
+We have sequencesm1,m 2,... ∈ N, L1,L 2,... ∈ N such thatA′(mi) =Li and Li−−−→
+i→∞
+∞.
+Consider a run such thatmwt(Q0
+mi
+−−→F ) =Li. Consider the largestmsuch thatℓ+km<m i.
+Let q be the state reached after ℓ +km steps on the run attaining weightLi. Since
+mi−ℓ−km <|Q| we have mwt(Q0
+ℓ+km
+−−−−→q)≥ Li−|Q|·||A ′||. On the other hand we
+have, by Claim 29, we havemwt(Q0
+ℓ+km
+−−−−→Q)<B 0 for a constantB0∈ N. Hence, we have
+a (Li−|Q|·||A ′||− B0)-gap witness formed byx = ℓ +kn and y = mi−ℓ−kn. Since
+|Q|,||A′||,B 0 are bounded andLi→∞ , we have unbounded gap witnesses. ◀
+5.2 Union of k Deterministic Automata
+We observed in Section 3 that unary weighted automata can be represented as the union of de-
+terministic automata, and can efficiently be transformed into this representation (Theorem 3).
+It is natural to consider how the number of such components affects the complexity.
+In this section, we consider the boundedness, value boundedness and determinisability
+problems when the input is a union ofk deterministic automata. Recall that a parameterised
+problem is fixed parameter tractable (FPT) if there exists an algorithm that solves any
+instance (I,k ) of sizen in timef(k)·nO(1), wheref is a computable function. In the sequel,
+we call the parametrised versions of boundedness, value boundedness, and determinisability
+k-det boundedness,k-det value boundedness, andk-det determinisability, respectively. We
+will prove that all three problems are not fixed parameter tractable.
+4 Section 3 considered minimal average (short)q-cycles. Here the property is global to the automaton.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 15
+Concretely, we show that all these problems arecoW1-hard when parameterised by
+the number of deterministic automata in the union. Based on standard assumptions in
+parameterised complexity, this provides strong evidence that the problems are not FPT [14].
+▶ Lemma 32.k-det boundedness,k-det value boundedness andk-det determinisability are
+coW1-hard.
+Proof. In [13] it was shown that problem of nonnemptiness ofk deterministic unary automata
+is W1-hard. Let us fix an instance of this problem, namely k deterministic automata
+(A1,A2,..., Ak). Firstly, notice that⋂
+i∈[k]L(Ai)̸=∅ if and only if⋃L(Ai)̸={a}∗, where
+Ai is the automaton recognising the complement ofL(Ai) and can be computed in time
+polynomial in the size ofAi. Notice also thatAi is still a deterministic automaton. Hence,
+the universality problem parameterised by the number of deterministic automata in the
+union is coW1-hard.
+k-det boundedness. Let us fix an instance of the universality problem (parametrised by the
+number of automata in the union), namelyk deterministic unary automata(A1,A2,..., Ak).
+LetA be the automaton, which is the union ofA1,A2,..., Ak. For eachi∈ [k], we construct
+a deterministic unary WFABi. Concretely, the states ofBi will be the states ofAi. Also,
+accepting and initial states ofAi will be accepting and initial states ofBi, respectively.
+Finally, we set the weight of every transition inBi to zero. LetB be the automaton, which
+is the union ofB1,B2,..., Bk. Notice that ifA is universal, then for everyn∈ N, we have
+B(n) = 0. On the other hand, ifA does not acceptan, then we haveB(n) =∞. Since,
+for everyi∈ [k],Bi can be constructed in time polynomial in size ofAi we conclude that
+k-det boundedness iscoW1-hard.
+k-det value boundedness. Once again, let us fix as instance of the universality problem,
+namely k deterministic unary automata(A1,A2,..., Ak). LetA be the automaton, which is
+the union ofA1,A2,..., Ak and letU ={n|an /∈L(A)}.
+Notice, that ifU is finite, but nonempty, thenU⊆ [0,n ] where n is the number of states
+ofA. This is because if there exists integerℓ > nsuch thatℓ∈U then, for everyi∈ [k],
+automatonAi either cannot readaℓ or after readingaℓ is in a stateq which lies on a simple
+cycle. Thus, alsoℓ +n!∈U, implying thatU is infinite, as for everyi∈ [k], if automatonAi
+after readingaℓ is in a stateq, then after readingaℓ+n! is also in the stateq as it can only
+repeat the simple cycle in whichq lies and the length of this cycle dividesn!. Observe that
+in polynomial time inn, one can check whether there isℓ∈ [0,n ]∩U and, if there exists
+suchℓ, output a value unbounded single state, one transition (with weight one) unary WFA.
+Otherwise, we can assume thatU, if nonempty, is infinite and, for eachi∈ [k], we
+construct a deterministic unary WFABi. Concretely, the states ofBi will be the states
+ofAi. Also, accepting and initial states ofAi will be accepting and initial states ofBi,
+respectively. Finally, we set the weight of every transition inBi to zero. We also construct an
+unary WFABk+1 with a single stateq, which is initial and accepting, and a single transition
+(q, 1,q ). Clearly, for everyi∈ [k],Bi is a deterministic unary WFA and can be constructed
+in time polynomial in size ofAi. Moreover, alsoBk+1 is a deterministic unary WFA and can
+be constructed in constant time. Hence, in order to show thatk-det value boundedness is
+coW1-hard, it suffices to show that automatonA is universal if and only ifB, the union of
+B1,..., Bk, is bounded.
+Observe that ifn∈U then, for everyi∈ [k], we have thatBi(n) =∞. Moreover, we have
+Bk+1(n) =n. Hence, ifA is not universal, meaning thatU is nonempty, and hence infinite
+
+16 Representing One Letter Weighted Automata Over the Tropical Semiring
+we can conclude thatB is not value bounded. On the other hand, ifB is value bounded then
+U needs to be finite, and hence empty, which means thatA is universal. This concludes the
+proof thatk-det value boundedness iscoW1-hard.
+k-det determinisiability. To observe thatk-det determinisability is alsocoW1-hard, we
+reduce from k-det value boundedness to k-det determinisability. Concretely, having k
+deterministic unary WFAs(A1,A2,..., Ak), for everyi∈ [k], we construct a unary WFABi
+fromAi by replacing each transitiont = (q,c,q ′) by two transitions(q,c,s t) and (st, 0,q′)
+using new non-accepting statest. Observe that, w.l.o.g. we can assume that, for every
+transition, c≥ 0, as the previous reduction produced a unary WFA only with such weights.
+Moreover, we constructBk+1 which is a zero-weight two-state component, alternating between
+an accepting and a non-accepting state, and with the initial state being the non-accepting
+state. Clearly, for everyi∈ [k],Bi is a deterministic unary WFA and can be constructed
+in time polynomial in size ofAi. Moreover,Bk+1 is deterministic and can be constructed
+in constant time. Hence, in order to show thatk-det determinisibality iscoW1-hard it is
+enough to show that automatonA, that is a union ofA1,..., Ak, is value bounded if and
+only if unary WFAB, that is a union ofB1,..., Bk, is determinisable. Firstly, notice that
+because ofBk+1 we have, for everyn∈ N, B(2n + 1) = 0. Moreover, for everyi∈ [k] and
+n∈ N, we haveBi(2n) =Ai(n). Hence,A is value bounded if and only ifB is value bounded.
+Due toBk+1, the minimal average slope ofB is zero. Thus, by Claim 30 and Claim 31, we
+haveB is determinisable if and only ifB is value bounded. ◀
+5.3 Determinisability and Value Boundedness
+In the preceding subsection, we showed that universality ofk DFAs, and value boundedness of
+k unary WFAs reduce to the determinisation problem. We can observe that the reduction from
+value boundedness to determinisation applies with only minor modification, without assuming
+the input is a union of deterministic and that the minimal average slope is non-negative.
+▶ Lemma 33.Proof in
+Appendix C Boundedness and value boundedness reduce to determinisability in polynomial
+time.
+We can also show that the connection is tight for the value boundedness problem.
+▶ Lemma 34. Determinisability reduces to value boundedness in polynomial time.
+Proof. Given a weighted automatonA, letα =r/s, s≤|Q|, gcd(r,s ) = 1 be the minimum
+average slope inA, we defineA′(n) =s·A (n)−r·n. This is obtained by multiplying the
+weight of every transition bys, and subtractingr.
+SinceA′ has minimal average slope of zero, we haveA′ determinisable iffA′ is value
+bounded by Claim 30 and Claim 31. The proof is completed by the following claim thatA
+andA′ are equideterminisable, and so it suffices to determine whetherA′ is value bounded.
+▷ Claim 35.Proof in
+Appendix C A is determinisable if and only ifA′ is determinisable. ◀
+▶ Remark 36 (Remark on Lemma 34).We note that we do not show that determinisability of a
+unary WFAA reduces to boundedness (only to value boundedness), unlessA already happens
+to have a universal domain. Words not in the domain are no issue for determinisability, so it
+seems we would need to repair these holes by assigning them a bounded value, but we would
+need to do this without affecting the weight of other words: the natural approach seems to
+require the addition of an automaton for exactlydom(A) (with weights zero for example);
+this automaton can have exponential size.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 17
+5.4 Proving Theorem 27
+Through a chain of reductions, we have observed that NFA universality reduces to bounded-
+ness (Lemma 32), reduces to value boundedness (Lemma 33), reduces to determinisation
+(Lemma 33), which is a special case of CRA dimension reduction/WFA width reduction. The
+former, NFA universality iscoNP-hard [13] while Theorem 18 shows the latter are incoNP.
+▶ Theorem 27. The determinisation, boundedness, value boundedness, register reduction,
+and width reduction problems for unary weighted automata arecoNP-complete.
+6 Future Directions
+This paper considers, given unary WFA or their equivalent Cost Register Automata with linear
+register updates, how to represent them as simply as possible (as a union of deterministic
+automata, in Chrobak normal form, with lower width, or as CRA using fewer registers).
+In general, CRA can be defined over any update function that, in particular, need not be
+linear [4]. The case of polynomial updates over the tropical semiring is particularly interesting,
+here the constant exponent essentially provides scalar multiplication alongside minimum
+and addition. Such models, which are considered in [37], generalise both tropical and
+rational unary weighted automata, the latter often studied as Linear Recurrence Sequences.
+Despite their apparent simplicity, LRS have interesting algorithmic problems, particularly
+the Skolem and Positivity problems which remain wide open [31]. A natural direction is to
+consider boundedness, register minimisation, and normal forms for these tropical CRA with
+polynomial updates.
+References
+1 Shaull Almagor, Guy Arbel, and Sarai Sheinvald. Determinization of min-plus weighted
+automata is decidable. InProceedings of the 2026 Annual ACM-SIAM Symposium on Discrete
+Algorithms (SODA), pages 247–257. SIAM, 2026.
+2 Shaull Almagor, Guy Arbel, and Sarai Sheinvald. Unambiguisability and register minimisation
+of min-plus models. InICALP 2026, 2026.
+3 Shaull Almagor, Udi Boker, and Orna Kupferman. What’s decidable about weighted automata?
+Inf. Comput., 282:104651, 2022. doi:10.1016/J.IC.2020.104651.
+4 Rajeev Alur, Loris DAntoni, Jyotirmoy Deshmukh, Mukund Raghothaman, and Yifei Yuan.
+Regular functions and cost register automata. In2013 28th Annual ACM/IEEE Symposium
+on Logic in Computer Science, pages 13–22. IEEE, 2013.
+5 Rajeev Alur and Mukund Raghothaman. Decision problems for additive regular functions. In
+Fedor V. Fomin, Rusins Freivalds, Marta Z. Kwiatkowska, and David Peleg, editors,Automata,
+Languages, and Programming - 40th International Colloquium, ICALP 2013, Riga, Latvia, July
+8-12, 2013, Proceedings, Part II, Lecture Notes in Computer Science, pages 37–48. Springer,
+2013. doi:10.1007/978-3-642-39212-2_7.
+6 Jason P. Bell and Daniel Smertnig. Computing the linear hull: Deciding deterministic? and
+unambiguous? for weighted automata over fields. In38th Annual ACM/IEEE Symposium
+on Logic in Computer Science, LICS 2023, Boston, MA, USA, June 26-29, 2023, pages 1–13.
+IEEE, 2023. doi:10.1109/LICS56636.2023.10175691.
+7 Yahia Idriss Benalioua, Nathan Lhote, and Pierre-Alain Reynier. Minimizing cost register
+automata over a field. In Rastislav Královic and Antonín Kucera, editors,49th International
+Symposium on Mathematical Foundations of Computer Science, MFCS 2024, Bratislava,
+Slovakia, August 26-30, 2024, LIPIcs, pages 23:1–23:15. Schloss Dagstuhl - Leibniz-Zentrum
+für Informatik, 2024. URL:https://doi.org/10.4230/LIPIcs.MFCS.2024.23, doi:10.4230/
+LIPICS.MFCS.2024.23.
+
+18 Representing One Letter Weighted Automata Over the Tropical Semiring
+8 Dmitry Chistikov, Stefan Kiefer, Andrzej S. Murawski, and David Purser. The big-o problem.
+Log. Methods Comput. Sci., 18(1), 2022. doi:10.46298/LMCS-18(1:40)2022.
+9 Christian Choffrut. Une caractérisation des fonctions séquentielles et des fonctions sous-
+séquentielles en tant que relations rationnelles.Theoretical Computer Science, 5(3):325–337,
+1977.
+10 Marek Chrobak. Finite automata and unary languages.Theor. Comput. Sci., 47(3):149–158,
+1986. doi:10.1016/0304-3975(86)90142-8.
+11 Laure Daviaud. Register complexity and determinisation of max-plus automata.ACM SIGLOG
+News, 7(2):4–14, 2020. doi:10.1145/3397619.3397621.
+12 Karolina Drabik, Anita Dürr, Fabian Frei, Filip Mazowiecki, and Karol Wegrzycki. Fined-
+grained complexity of ambiguity problems on automata and directed graphs. CoRR,
+abs/2501.14725, 2025. arXiv:2501.14725, doi:10.48550/ARXIV.2501.14725.
+13 Henning Fernau, Stefan Hoffmann, and Michael Wehar. Finite Automata Intersection Non-
+Emptiness: Parameterized Complexity Revisited, 2021. URL:https://arxiv.org/abs/2108.
+05244, arXiv:2108.05244.
+14 Jörg Flum and Martin Grohe. Parameterized Complexity Theory. Texts in Theoretical
+Computer Science. An EATCS Series. Springer, 2006.doi:10.1007/3-540-29953-X.
+15 Stéphane Gaubert. Rational series over dioids and discrete event systems. In11th International
+Conference on Analysis and Optimization of Systems Discrete Event Systems: Sophia-Antipolis,
+June 15–16–17, 1994, pages 247–256. Springer, 2005.
+16 Hugo Gimbert and Youssouf Oualhadj. Probabilistic automata on finite words: Decidable and
+undecidable problems. In Samson Abramsky, Cyril Gavoille, Claude Kirchner, Friedhelm Meyer
+auf der Heide, and Paul G. Spirakis, editors,Automata, Languages and Programming, 37th
+International Colloquium, ICALP 2010, Bordeaux, France, July 6-10, 2010, Proceedings,
+Part II, Lecture Notes in Computer Science, pages 527–538. Springer, 2010.doi:10.1007/
+978-3-642-14162-1_44.
+17 Mark Hartmann and Cristina Arguelles. Transience bounds for long walks.Mathematics of
+operations research, 24(2):414–439, 1999.
+18 Kosaburo Hashiguchi. Limitedness theorem on finite automata with distance functions.J.
+Comput. Syst. Sci., 24(2):233–244, 1982. doi:10.1016/0022-0000(82)90051-4.
+19 Kosaburo Hashiguchi. Regular languages of star height one.Inf. Control., 53(3):199–210, 1982.
+doi:10.1016/S0019-9958(82)91028-2.
+20 Ismaël Jecker, Filip Mazowiecki, and David Purser. Determinisation and unambiguisation of
+polynomially-ambiguous rational weighted automata. In Pawel Sobocinski, Ugo Dal Lago,
+and Javier Esparza, editors,Proceedings of the 39th Annual ACM/IEEE Symposium on Logic
+in Computer Science, LICS 2024, Tallinn, Estonia, July 8-11, 2024, pages 46:1–46:13. ACM,
+2024. doi:10.1145/3661814.3662073.
+21 Richard M Karp. A characterization of the minimum cycle mean in a digraph.Discrete
+mathematics, 23(3):309–311, 1978.
+22 Daniel Kirsten and Sylvain Lombardy. Deciding unambiguity and sequentiality of polynomially
+ambiguous min-plus automata. In26th International Symposium on Theoretical Aspects of
+Computer Science STACS 2009, pages 589–600. IBFI Schloss Dagstuhl, 2009.
+23 Ines Klimann, Sylvain Lombardy, Jean Mairesse, and Christophe Prieur. Deciding unambiguity
+and sequentiality from a finitely ambiguous max-plus automaton.Theoretical Computer Science,
+327(3):349–373, 2004.
+24 Peter Kostolányi. Determinisability of unary weighted automata over the rational numbers.
+Theor. Comput. Sci., 898:110–131, 2022. URL: https://doi.org/10.1016/j.tcs.2021.11.
+002, doi:10.1016/J.TCS.2021.11.002.
+25 Sylvain Lombardy. Sequentialization and unambiguity of (max,+) rational series over one
+letter. In Workshop on max-plus algebras and Their Applications to Discrete-event Systems,
+Theoretical Computer Science, and Optimization, page 6pp. IFAC, Elsevier Sciences, 2001.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 19
+26 Sylvain Lombardy and Jacques Sakarovitch. Sequential?Theor. Comput. Sci., 356(1-2):224–
+244, 2006. doi:10.1016/J.TCS.2006.01.028.
+27 Andrew Martinez. Efficient computation of regular expressions from unary nfas. In Jürgen
+Dassow, Maia Hoeberechts, Helmut Jürgensen, and Detlef Wotschke, editors,Fourth Inter-
+national Workshop on Descriptional Complexity of Formal Systems - DCFS 2002, London,
+Canada, August 21 - 24, 2002. Pre-proceedings, pages 174–187. Department of Computer
+Science, The University of Western Ontario, Canada, 2002.
+28 Mehryar Mohri. Compact representations by finite-state transducers. In32nd Annual Meeting
+of the Association for Computational Linguistics, pages 204–209, 1994.
+29 Mehryar Mohri. Finite-state transducers in language and speech processing.Computational
+linguistics, 23(2):269–311, 1997.
+30 Karl Nachtigall. Powers of matrices over an extremal algebra with applications to periodic
+graphs. Mathematical Methods of Operations Research, 46(1):87–102, 1997.
+31 Joël Ouaknine and James Worrell. On linear recurrence sequences and loop termination.ACM
+SIGLOG News, 2(2):4–13, 2015. doi:10.1145/2766189.2766191.
+32 Christos H. Papadimitriou and Mihalis Yannakakis. The complexity of facets (and some facets
+of complexity). J. Comput. Syst. Sci., 28(2):244–259, 1984. doi:10.1016/0022-0000(84)
+90068-0.
+33 Antoni Puch and Daniel Smertnig. Factoring through monomial representations: arithmetic
+characterizations and ambiguity of weighted automata.CoRR, abs/2410.03444, 2024. arXiv:
+2410.03444, doi:10.48550/ARXIV.2410.03444.
+34 Charles Rackoff. The covering and boundedness problems for vector addition systems.Theor.
+Comput. Sci., 6:223–231, 1978. doi:10.1016/0304-3975(78)90036-1.
+35 Marcel Paul Schützenberger. On the definition of a family of automata. Inf. Control.,
+4(2-3):245–270, 1961. doi:10.1016/S0019-9958(61)80020-X.
+36 Serge˘ ı Sergeev and Hans Schneider. Csr expansions of matrix powers in max algebra.Trans-
+actions of the American Mathematical society, 364(11):5969–5994, 2012.
+37 Gerco van Heerdt, Justin Hsu, Joël Ouaknine, and Alexandra Silva. Convex language
+semantics for nondeterministic probabilistic automata.Theor. Comput. Sci., 1040:115191,
+2025. doi:10.1016/J.TCS.2025.115191.
+38 Michael Wehar.On the Complexity of Intersection Non-Emptiness Problems. PhD thesis, Uni-
+versity at Buffalo, State University of New York, USA, 2016. URL:http://www.michaelwehar.
+com/documents/mwehar_dissertation.pdf.
+39 Anthony Widjaja To (Lin). Unary finite automata vs. arithmetic progressions.Inf. Process.
+Lett., 109(17):1010–1014, 2009. doi:10.1016/J.IPL.2009.06.005.
+
+20 Representing One Letter Weighted Automata Over the Tropical Semiring
+A Proofs for Section 3 (Efficiently Computing Normal Forms for
+Unary WFA)
+▷ Claim 5. If len(π)≥|Q|2, then there is a short cycle without any marked transitions inπ.
+Proof. Consider the first|Q|2 transitions ofπ. In fact, consider these transitions as|Q|
+blocks of|Q| transitions. Thanks to the pigeonhole principle, observe that every block must
+contain at least one short cycle. Now, since there are at most|Q|− 1 many marked transitions,
+one of these blocks consists only of transitions that are not marked. Thus, inside this block,
+there is a short cycle that does not contain any marked transitions. ◁
+▷ Claim 6. Let m,ℓ∈ N such thatℓ≤m and letS be a multiset of naturals such that, for
+everys∈S, 1≤s≤m. If∑
+s∈Ss≥m2, then there exist a multisetS′⊆S and e∈ N such
+that∑
+s∈S′s =eℓ.
+Proof. First, since∑
+s∈Ss≥ m2 and, for everys∈ S, s≤ m, it is true that|S|≥ m.
+Arbitrarily enumeratem elements ofS: s1,...,s m. From this enumeration, we define the
+partial sumst1 = s1, t2 = s1 +s2, ... , tm = s1 +s2 +... +sm. There are two cases to
+consider.
+Case 1: there exists1≤i≤m such thatti≡ 0 modℓ. Clearly, in this case,e = ti
+ℓ and
+S′ ={s1,...,s i} satisfy this claim.
+Case 2: there does not exist1≤i≤msuch thatti≡ 0 modℓ. By the pigeonhole principle,
+there exist 1≤i<j ≤m such thatti≡tj modℓ. This means thattj−ti≡ 0 modℓ. Thus,
+in this casee = tj−ti
+ℓ and S′ ={si+1,...,s j} satisfy this claim. ◁
+▷ Claim 7. For everyn∈ N,A(n) = minq∈Q{fq(n)}.
+Proof. This claim follows from Lemma 4 and the fact that⋃
+q∈Q Πq contains all runs of the
+form τγx
+qτ′ that start from an initial state, and such thatlen(τ) + len(τ′)< 2|Q|2 and x∈ N.
+◁
+▷ Claim 9. ∥Bq∥≤ 8|Q|2∥A∥.
+Proof. For anyn∈ N, any runπ inA of length n must satisfy|wt(π)|≤ n∥A∥. This
+means that|fq(n)| ≤n∥A∥. Recall that the transition weights in Bq are either 0 or
+t[i] = fq(ni)−fq(ni− 1), for 1≤ ni−1 < ni < 2|Q|2 + 2· len(γq). Thus|t[i]|≤ ni∥A∥−
+(−ni−1∥A∥) = (ni−1 +ni)∥A∥≤ 2ni∥A∥. The greatest value ofni is 2|Q|2 + 2· len(γq)− 1≤
+2|Q|2 + 2|Q|≤ 4|Q|2. Together, we conclude that the greatest transition weight∥Bq∥ is
+bounded above by8|Q|2∥A∥. ◁
+▷ Claim 10. wt(βq) = wt(γq).
+Proof. Recall thatn1,n 2,...,n ℓ−1 are the lengths of words with accepting runs inΠq that
+are at most 2|Q|2 + len(γq), andnℓ is the length of the shortest word with a run inΠq
+whose length is at least2|Q|2 + len(γq). Leti is the least index such thatni≥ 2|Q|2. We
+will now argue thatnℓ =ni + len(γq). First, as there is a runτγx
+qτ′ of lengthni in Πq, we
+know that there exists a run of lengthni + len(γq) in Πq. Clearly asni≥ 2|Q|2, we deduce
+that ni + len(γq)≥ 2|Q|2 + len(γq). This means thatnℓ≤ ni + len(γq). Now, for sake of
+contradiction, assume thatnℓ <n i + len(γq). Supposeτγy
+qτ′ is a run lengthnℓ in Πq. Since
+nℓ≥ 2|Q|2 + len(γq) and len(τ) +len(τ′)< 2|Q|2, we deduce thaty≥ 1. Thus,τγy−1
+q τ′∈ Πq
+is a run of lengthnℓ− len(γq). Sincenℓ≥ 2|Q|2 + len(γq), it holds thatnℓ− len(γq)≥ 2|Q|2.
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 21
+Moreover, sincenℓ <n i + len(γq), we deduce thatnℓ− len(γq)<n i. Together, these facts
+contradict the definition ofni. So we conclude thatnℓ≥ni + len(γq) and nℓ≤ni + len(γq).
+Now, consider the transition weights ofβq. Until theni-th state, the transition weights
+are 0. Then, the transition from theni-th state has weightt[i + 1] = fq(ni+1)−fq(ni).
+Following this, until theni+1-st state, the transition weights are again 0. Then, the transition
+from theni+1-st state has weightt[i + 2] =fq(ni+2)−fq(ni+1). This continues; overall the
+weight ofβq is
+t[i + 1] +··· +t[ℓ] = (fq(ni+1)−fq(ni)) +... + (fq(nℓ)−fq(nℓ−1)) =fq(nℓ)−fq(ni).
+Now we can combine the fact thatni + len(γq) = nℓ with Claim 8. Sinceni≥ 2|Q|2, we
+know thatfq(nℓ) = fq(ni + len(γq)) = fq(ni) + wt(γq). Thus, we conclude thatwt(βq) =
+fq(nℓ)−fq(ni) = wt(γq). ◁
+▷ Claim 11. For everyn∈ N,Bq(n) =fq(n).
+Proof. This proof is split into two cases:n< 2|Q|2 + len(γq) and n≥ 2|Q|2 + len(γq).
+Case 1: n < 2|Q|2 + len(γq). Here, the run inBq of length n simply takes the firstn
+transitions and does not complete an iteration of the cycleβq.
+Recall that then-th state ofBq is accepting iffq(n)∈ Z. Thus, iffq(n) =∞, we know
+that the one run of lengthn inBq leads to a non-accepting state, soBq(n) =fq(n) =∞.
+Now, suppose thatfq(n)∈ Z. The one runπ of lengthn inBq leads to an accepting
+state. Recall thatn1 <n 2 <...<n ℓ−1 are the lengths of words such thatfq(ni)∈ Z and
+nℓ−1 < 2|Q|2 + len(γq). Suppose thati∈ [ℓ] is the index such thatni =n. By definition
+of the weights on the transitions ofBq, we conclude thatwt(π) = t[1] +t[2] +... +t[i] =
+fq(n1) + (fq(n2)−fq(n1)) +... + (fq(ni)−fq(ni−1)) =fq(ni). ThusBq(n) = wt(π) =fq(n),
+as required.
+Case 2: n≥ 2|Q|2 + len(γq). We will prove this case by induction onn. The base case is
+handled by Case 1. AssumeBq(n′) =fq(n′) for alln′ <n . Sincen≥ 2|Q|2 + len(γq) andBq
+is a lasso,Bq(n) =Bq(n− len(γq)) + wt(βq). By the inductive assumption,Bq(n− len(γq)) =
+fq(n−len(γq)) and, thanks to Claim 10, we know thatwt(βq) = wt(γq). Thus,Bq(n) =fq(n−
+len(γq)) + wt(γq). We conclude this case thanks to Claim 8fq(n) =fq(n− len(γq)) + wt(γq).
+◁
+▷ Claim 12. LetA′ be an arbitrary unary WFA with statesQ′, letS,T ⊆Q′, and letn∈ N.
+In polynomial time fromA′ and n, we can compute the weight of a minimal run that starts
+at some states∈S, ends at some statet∈T, and has lengthn.
+Proof. LetM∈ Z|Q′|×|Q′|
+∞ be the transition matrix ofA′. In polynomial time with respect to
+M and n, we can computeMn. Now, we can simply computemin{Mn(s,t ) :s∈S,t∈T}.
+◁
+▷ Claim 13 (Also follows from [21]).Let q∈Q. We can compute, in polynomial time from
+A, the length of theq-cycle with the minimal average weight among all shortq-cycles.
+Proof. Using Claim 12 withA′ =A, S ={q}, andT ={q}, we can compute the minimal
+weightq-cycle of lengthn in polynomial time fromA and n. In particular, assumingM is
+the transition matrix ofA, it is true thatM n(q,q)
+n is the minimal average weight of aq-cycle
+
+22 Representing One Letter Weighted Automata Over the Tropical Semiring
+of lengthn. Since we are only concerned with short cycles, i.e. whenn≤|Q|, we can identify
+the length of theq-cycle with minimal average weight among all shortq-cycles by computing:
+arg min
+1≤n≤|Q|
+{Mn(q,q )
+n
+}
+.
+◁
+▷ Claim 14. fq(n) can be computed in polynomial time with respect toA and n.
+Proof. There are two cases to consider:n< 2|Q|2 and n≥ 2|Q|2.
+Case 1: n< 2|Q|2. Since Πq contains all accepting runs of length less than2|Q|2 (regardless
+of q), we know thatfq(n) is just the weight of a minimal accepting path of lengthn (from
+any initial state, to any accepting state ofA). For this, we use Claim 12 withA′ =A,
+S =Q0, andT =F.
+Case 2: n≥ 2|Q|2. Recall that every run inΠq is of the formτγx
+qτ′ with len(τ) + len(τ′)<
+2|Q|2. That is, at most2|Q|2− 1 of the length of such runs do not come from iterations
+of γq. Our approach to computefq is to construct a unary WFAA′ that tracks runs inΠq
+by verifying two conditions: (i) the length of the non-γq part of the run is at most2|Q|2− 1
+and (ii)q is visited along the run.
+Intuitively,A′ tracks in its states the following information:
+the current state ofA,
+a counter ranging in{0,..., 2|Q|2− 1} tracking the number of steps taken outsideγq, and
+an flag in{pre,post} indicating whetherq has already visited.
+In addition, once an accepting state is reached with thepost flag,A′ allows iteratingγq on a
+new designated accepting state. Note that this location is arbitrary; we could iterate this
+cycle at any other point, provided we ensureq is visited.
+Thus,A′ assigns ton the minimal value of a run of lengthn in Πq that visitsq, which
+(for runs of length at least2|Q|2) is exactlyfq(n). We proceed with the formal construction.
+The state space ofA′ is (Q×{ 0, 1,..., 2|Q|2− 1}×{ pre,post})∪{qγ,0,...,q γ,m}. The
+initial states ofA′ are Q0×{ 0}×{ pre}. The transitions are as follows: for every transition
+(s,c,t )∈ ∆ ofA and for 0≤ i < 2|Q|2− 1, we add the transitions ((s,i, pre),c, (t,i +
+1,pre)) and ((s,i, post),c, (t,i + 1,post)) toA′. Additionally, if t∈ F we also add the
+transition ((s,i, post),c,q γ,0) toA′. For transitions (s,c,q )∈ ∆, we add the transitions
+((s,i, pre),c, (q,i + 1,post)) and ((s,i, pre),c,q γ,0) if q∈F.
+In addition, the states{qγ,0,...,q γ,m} are a copy of theγq cycle, including its weights.
+The only accepting state ofA′ is qγ,0.
+Thus,A′ proceeds for at most2|Q|2−1 steps, transitioning frompre to post upon visiting
+q, and after such a transition, reachingqγ,0 if an accepting state is reachable. From there,
+the cycleγq can be taken arbitrarily, and the run is accepting if and only if it traverses this
+cycle (in its entirety) any number of times.
+In particular, for everyn≥ 2|Q|2,A′(n) is the minimal weight of a run that uses at
+most 2|Q|2− 1 states outsideγq, visitsq at least once, and reaches and accepting state, and
+possibly has any number of repetitions ofγq. HenceA′(n) =fq(n). To conclude, sinceA′
+can easily be constructed in polynomial time fromA, we can again use Claim 12 to compute
+fq(n) withA′ =A, S =Q0×{ 0}×{ pre}, andT ={qγ,0}. ◁
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 23
+B Proofs for Section 4 (Register Minimisation of CRAs)
+We start by formally defining CRAs. ACost Register Automaton with linear register updatesof
+dimension k (k-CRA) is a tupleN =⟨Q, Σ,δ,q 0,F, upd, fin⟩ with the following components:
+⟨Q, Σ,δ,q 0,F⟩ is a deterministic finite automaton (DFA), withδ :Q× Σ→Q a determ-
+inistic transition function.
+For each stateq∈Q and letterσ∈ Σ, theupdate upd(q,σ ) is ak×k matrix over Z∞.
+We refer to its entries asupd(q,σ )i,j for 1≤i,j ≤k.
+For eachq∈F, theoutput registersare fin(q)⊆ [k].
+We turn to define the semantics of CRAs. Recall that all matrix products are in the
+(Z∞, min, +) semiring. A valuation of thek registers is a row vector⃗ r∈ Zk
+∞. Given such a
+valuation and a transition updateupd(q,σ ), thenext valuationis ⃗r′ =⃗ r· upd(q,σ ). Denote
+M = upd(q,σ ) with entriesmi,j. Unfolding tropical matrix multiplication gives the following
+register update:
+r′
+i = min{r1 +m1,i,r 2 +m2,i,...,r k +mk,i}
+Consider a wordw =σ1··· σn and the unique run
+ρ =q0
+σ1
+−→q1
+σ2
+−→···
+σn
+− − →qn
+of the DFA part ofN on w. Thenρ induces a sequence of valuations⃗r0,..., ⃗rn given by the
+zero vector⃗r0 =⃗0, and for every0≤i<n we have ⃗ri+1 = ⃗ri· upd(qi,σi+1). Ifqn∈F, the
+value assigned byN to w is min{⃗rn(i)|i∈ fin(qn)}. Ifqn /∈F the value is∞.
+▶ Lemma 19. There existsN∈ N such that, for all1≤i≤k′ and alln∈ N, every runρ
+ofCi of lengthn satisfies|wt(ρ)−n·αi|≤ N. MoreoverN is polynomial in the description
+of theCi.
+Proof. Fix 1≤ i≤ k′. Let Si∈ N be the number of states ofCi, and letMi∈ N be the
+maximal absolute weight of a transition inCi. Letρ be an accepting run ofCi on some input
+n∈ N. SinceCi is a finite union of deterministic unary WFA,ρ can be decomposed into a
+simple pathρ1 of lengthn1≤Si followed with a loopρ2 of lengthn2 obtained by iterating a
+simple cycle. Since each transition has weight at mostMi,|wt(ρ1)|<n 1·Mi. Furthermore,
+by definition ofCi the average weight of all cycles inCi isαi, hencewt(ρ2) =n2·αi. Therefore,
+|wt(ρ)−n·αi| =|wt(ρ1) + wt(ρ2)−n·αi|≤| wt(ρ1)| +|wt(ρ2)−n·αi|≤ n1(Mi +αi).
+Sincen1≤Si, we get that|wt(ρ)−n·αi|≤ Si(Mi +αi). SettingN = max1≤i≤k′Si(Ni +αi)
+then concludes the proof. ClearlyN is polynomial inmax1≤i≤k′∥Ci∥· Si, as required. ◀
+▶ Lemma 21. There existN∈ N and a partition
+{n∈ dom(A)|n≥N} =D1∪···∪ Dk
+into k infinite regular languages such thatA(n) =Cij(n) for all 1≤j≤k and alln∈Dj.
+Proof. For each1≤i≤k′, let
+Ei = dom(Ci)\
+⋃
+j<i
+dom(Cj).
+
+24 Representing One Letter Weighted Automata Over the Tropical Semiring
+By definition,Ci is redundant if and only ifEi is finite. LetN1∈ N be larger than every
+element of each finite setEi. By Lemma 19, there existsN2∈ N such that for all1≤i≤k′
+and alln∈ dom(Ci) we have|Ci(n)−n·αi|≤ N2. Let
+N = max
+(
+N1, 2N2·
+⌈
+max
+i<j
+1
+αj−αi
+⌉)
+.
+Let i1,...,i k be the indices of the non-redundant components, and define
+Dj ={n∈Eij|n≥N}.
+By the choice ofN1, the setsD1,...,D k form a partition of{n∈ dom(A)|n≥N}, and each
+Dj is infinite and regular. Fix1≤j≤k and n∈Dj. For alli<j , we haven /∈ dom(Ci),
+henceCi(n) = +∞. Furthermore, fori>j we obtain
+Ci(n)≥n·αi−N2
+=n·αj +n(αi−αj)−N2
+≥n·αj +N(αi−αj)−N2
+≥n·αj +N2
+≥C j(n).
+ThusCj(n)≤C i(n) for all 1≤ i≤ k′, and sinceA is equivalent to the union of theCi
+(Equation 2), it follows thatA(n) =Cj(n). ◀
+▶ Proposition 24. There exists a k-width unary WFA equivalent toA of size single-
+exponential inA.
+Proof. Wefirstshowthateachnon-redundantcomponent Cij isdeterminisable. ByLemma19,
+there existsN∈ N such that for any two runs ofA on the same input word, the difference of
+their weights is bounded by2N. Hence no2N-gap witness exists, and by Theorem 23, each
+Cij is determinisable. LetDj be a deterministic unary WFA equivalent toCij.
+We now consider the unary WFAA′ obtained as the union ofD1,..., Dk. Since each
+Di is deterministic,A′ has widthk. Moreover, by Lemma 21, there existsN∈ N such that
+A(n) =A′(n) for alln≥N. Thus,A andA′ differ only on finitely many inputs. Since the
+disagreement is finite, it can be fixed while preserving the determinism of the components.
+We modify a single component, sayD1 intoD′
+1, by equipping its state space with a bounded
+counter ranging over{0,...,N }, which records the length of the processed input up toN.
+For inputs of length at mostN,D′
+1 produces the corresponding value ofA. For inputs of
+length greater thanN,D′
+1 coincides withD1, so no further modification ofD1 is needed.
+This transformation preserves the determinism ofD1, hence the resulting automaton still
+has widthk and is equivalent toA.
+Finally, from Lemma 19 we have thatN is polynomial in∥A∥, i.e., either polynomial in
+the input (in caseA is represented in unary) or single-exponential, in caseA is represented
+in binary. Either way, the construction of Theorem 23 yields equivalent automata of size
+single-exponential inA. ◀
+▶ Proposition 25. Every unary WFAA′ equivalent toA has width at leastk.
+Proof. From Lemma 21, there exist infinite regular languagesD1,...,D k partitioning all
+sufficiently large inputs such that, on eachDj, the behaviour ofA coincides with that of
+the non-redundant componentCij. Since eachDj is an infinite unary regular language, it is
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 25
+ultimately periodic: there existλj,µj∈ N such thatnλj +µj∈Dj for alln∈ N. Letλ be
+the least common multiple of theλj. By Lemma 19, there existsN∈ N such that
+|A(nλ +µj)− (nλ +µj)·αj|≤ N for all 1≤j≤k and n∈ N.
+We now fix parameters for a separation argument. Let
+µ = max
+1≤j≤k
+µj, α =
+⌈
+max
+1≤i≤k′
+αi
+⌉
+, γ =
+⌈
+max
+1≤i<j≤k′
+1
+αj−αi
+⌉
+,
+and letM′ be the maximal absolute transition weight ofA′. Set
+x = 2(N +µ· (M′ +α))· (γ + 1)·λ.
+SinceA′ is equivalent toA, for eachj there is an accepting runρj ofA′ on inputx +µj
+such that
+|wt(ρj)−x·αj| =|A(x +µj)−x·αj|≤|A (x +µj)− (x +µj)·αj| +µj·αj≤N +µ·α.
+Let ρ′
+j be the prefix ofρj of lengthx. Then
+|wt(ρ′
+j)−x·αj|≤| wt(ρj)−x·αj| +µj·M′≤N +µ· (M′ +α).
+Then for any1≤i<j ≤k, sinceαi <α j, the choice ofx yields
+wt(ρ′
+j)− wt(ρ′
+i) ≥ x·αj− (N +µ· (M′ +α))− (x·αi +N +µ· (M′ +α))
+≥ x· (αj−αi)− 2(N +µ· (M′ +α))
+> 2(N +µ· (M′ +α))·λ− 2(N +µ· (M′ +α))
+≥ 0.
+Therefore, the valueswt(ρ′
+1),..., wt(ρ′
+k) are pairwise distinct, hence the runsρ′
+1,...,ρ ′
+k, all
+of lengthx, must end in distinct states. It follows thatA′ has width at leastk. ◀
+C Proofs for Section 5 (Determinisation, Boundedness, and Hardness)
+▷ Claim 28 ([21]). A cycle achieving the minimal average slopeα is simple, and therefore
+has of length less than|Q|. Moreover,α can be computed in polynomial time.
+Proof. The claim is proved in [21]. We bring its proof for completeness. Letρ be the shortest
+cycle achieving the minimal average slope, and suppose it starts and ends atq∈Q. Suppose
+for contradiction some statep∈Q in the cycle repeats (other thanq at the start and end).
+Consider the cycleρ′⊂ρ between two occurrences ofp. Ifρ′ has smaller average weight than
+ρ, this contradicts the fact thatρ has minimal average weight. Ifρ′ has the same average
+weight thenρ can be made shorter by removingρ′, maintaining the same average weight,
+contradicting thatρ is the shortest. Ifρ′ has greater average weight thenρ′ can also be
+removed, making the overall average weight lower, contradicting thatρ achieved the minimal
+average slope. Hence,ρ is simple, and thus has length less than|Q|.
+SupposeM is the transition matrix ofA and observe thatα = min1≤n≤|Q|,q∈Q
+{
+M n(q,q)
+n
+}
+.
+Just like in the proof of Claim 13, we can compute each of these values, of which there are
+polynomially many, in polynomial time to determine the minimum. ◁
+▷ Claim 29. LetA′ be an automaton with minimal average slope of zero. There exists
+B0∈ N such that, for allx∈ N,A′(x)≥−B0 and ℓ,k≤ 2|Q| such thatA′(ℓ +kn)≤B0 for
+all n∈ N.
+
+26 Representing One Letter Weighted Automata Over the Tropical Semiring
+Proof. We attain the lower bound since no cycle inA′ can have negative weight. For the upper
+bound, letk≤|Q| be the length of the simple cycle attaining the minimal average weight (r/s)
+inA′, and letq be a state on the cycle. Consider the shortest run of the formQ0
+ℓ1
+−→q
+ℓ2
+−→F
+of lengthℓ =ℓ1 +ℓ2≤ 2|Q|. Then mwt(Q0
+ℓ+kn
+−−−→F )≤ mwt(Q0
+ℓ1
+−→q
+ℓ2
+−→F )≤B0 ◀
+▶ Lemma 33. Boundedness and value boundedness reduce to determinisability in polynomial
+time.
+Proof. GivenA we decide if is is value bounded using determinisation. Letα be the minimal
+average slope ofA. We assume without loss of generality thatα≥ 0. If α = αq < 0,
+computable in polynomial time, there is a decreasing sequence formed by pumping aroundq,
+since it is not value bounded we output any small non-determinisable unary WFA.
+We construct the automatonA′, such thatA′(2n + 1) = 0 ,A′(2n) = A(n). Each
+transition q− →q′ is replaced byq− →sq′ − →q using new non-accepting statessq, where
+wt(q→ q′) = wt(q→ sq′) and wt(sq→ q′) = 0. A′(2n + 1) = 0 is easily obtained with a
+zero-weight two state component, alternating between accepting and non-accepting. Clearly,
+A is value bounded if and only ifA′ is value bounded. Due to the second component, we
+haveA′ has minimal average slope of zero. Thus, by Claim 30 and Claim 31, we haveA′
+determinisable iffA′ is value bounded.
+It remains to show that boundedness reduces to determinisability, which we show wit the
+following claim:
+▷ Claim 37. Boundedness reduces to value bounded in polynomial time.
+Proof. Let U ={n|A (n) =∞}.A is bounded ifU is empty andA is value bounded.U is
+either empty, finite or infnite.
+Consider the caseU̸=∅, eitherU is finite or infinite. The setU is recognised by an NFA
+formed fromA dropping the weights. The Chrobak normal form of this automaton tells
+us that the system is a short lasso followed by periodic behaviour. Hence ifA(n) =∞ for
+somen≥|Q|2 thenU is infinite. We can, in polynomial time check the first|Q|2 values, and
+return “not bounded” if any haveA(n) =∞.
+Henceforth, we can assume that eitherU is empty or infinite. LetA′(n) = min{A(n),n},
+constructed fromA by a new initial and accepting state counting up by1. We show that
+under the assumptionU is infnite or empty,A is bounded if and only ifA′ is value bounded.
+A is bounded byM, thenA′(n) = min{A(n),n}≤ M, and soA′ is both bounded and
+value bounded.
+A is not bounded, eitherU is empty orU infinite:
+Suppose U is infinite. Forn∈U,A′(n) =n, and soA′ is not value bounded.
+Suppose U is empty, thenA is already not value bounded. Since the witness of
+increasing values must have increasing length, the automatonA′ is also not value
+bounded on the same sequence. ◀
+Hence, boundedness reduces to value boundedness, which reduces to determinisability.◀
+▷ Claim 35. A is determinisable if and only ifA′ is determinisable.
+Proof. IfA is determinisable, realised byB, as the translation does not affect determinism,
+apply the same translation toB to attain a deterministic version ofA′.
+IfA′ is determinisable, realised byB′ we apply the converse operation toB′ attaining
+a deterministic automatonA′≡A . However, it is not certain that the transition weights
+in Z, since we divide bys. However, we have thatA′ is a lasso and has integer output
+weights (since the equivalentA has integer output weights), it is therefore easy to adjust
+S. Almagor, I. Jecker, F. Mazowiecki, Ł. Orlikowski, D. Purser, H. Sinclair-Banks 27
+the automaton to integer weights. Indeed, ifq0
+n
+− →q− →q′ and q,q′∈F, we havewt(q→
+q′) =A(n + 1)−A (n)∈ Z. If q0
+n
+− →q1,q 2,...,q m, withq1,qm∈ F and q2,...,q m−1̸∈ F
+then we haveA(n +m)−A (n)∈ Z, and we can updatewt(q1− →q2) =A(n + 1)−A (n) and
+qi− →qi+1) = 0 for i = 2,...,m − 1. ◁
+
