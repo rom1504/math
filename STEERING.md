@@ -1,7 +1,7 @@
 # Strategic steering
 
 Evidence cutoff: renewed campaign closing checkpoint, ledger Section 10.150.7.
-Status: **six-hour campaign completing final audit and preservation**,
+Status: **six-hour campaign completed; final audit and preservation published**.
 Started 2026-09-06 15:15:02 UTC from b1745cc; approximate end 22:15 UTC,
 excluding the service interruption around 16:05–17:02.
 Convergence and nonconvergence remain open; convergence to 1/2 is excluded.

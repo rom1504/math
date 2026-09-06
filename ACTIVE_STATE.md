@@ -1,7 +1,7 @@
 # Active research state
 
 Evidence cutoff: ledger Section 10.150.7, renewed campaign closing checkpoint.
-The six-active-hour campaign is completing its final audit around 22:15 UTC,
+The six-active-hour campaign completed its closing audit around 22:15 UTC,
 excluding the service interruption around 16:05–17:02. Read the
 [final synthesis](artifacts/transfer_campaign_final_synthesis_2026_09_06.md).
 Read this compact state and current STEERING; use the ledger only as needed.

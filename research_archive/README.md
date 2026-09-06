@@ -51,6 +51,11 @@ certificate audit records the remaining completeness and replay boundaries.
 
 ## Checkpoint procedure
 
+Latest publication audit: [2026-09-06 closing report](publication_audit_2026_09_06.md).
+All 1,880 remaining uncommitted research files matched saved payload hashes
+after the final mathematical checkpoint was pushed. Working originals remain
+in place intentionally; the tracked archive is their durable copy.
+
 Run from the repository root with the project venv:
 
 ```bash
