@@ -1,0 +1,54 @@
+{
+  "order": 12,
+  "all_sign_inputs": 4096,
+  "cosquare": true,
+  "seed_caps": [
+    {
+      "q_twice": 52,
+      "signed_q_twice": 52,
+      "beta": 52,
+      "witness": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "q_twice": 60,
+      "signed_q_twice": -60,
+      "beta": 60,
+      "witness": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "majorant_positive": true,
+  "minimum_LDL_pivots": [
+    "115295855762705678520562750650837/1077591340383462996634636284053",
+    "7935588003844378017167713552428522691/114056233345822623584935484137644579"
+  ],
+  "T_upper": "59563/2000",
+  "gap_above_T": "437/2000",
+  "regular_hadamard_lift_lower": 30,
+  "scalable_regularized_gap_verified": true
+}

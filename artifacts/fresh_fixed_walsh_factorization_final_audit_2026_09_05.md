@@ -46,7 +46,8 @@ large catalyst dimensions. Thus no equality or strict fixed-seed
 separation for the present `R` is imported from this paper.
 
 The source's counterexample operators act from `ell_1^n` to
-`ell_infinity^n`, not in our reversed convention. Its historical open-
+`ell_infinity^n`, not in our reversed convention, and its standing
+Banach-space convention is complex. Its historical open-
 problem statement is not asserted here to describe current literature.
 
 ## 3. A finite exact dual description of the missing coupling
@@ -92,9 +93,14 @@ sup_(U orthogonal) |tr[U F B F^T]|/N
 
 The optimum can even use a symmetric orthogonal polar completion.
 This explains exactly why unrestricted orthogonal amplification gives
-`T`. The still missing step is a Boolean realization of that polar
-coupling using the one prescribed family of flat Hadamard outers.
-Merely representing `C` by finite Boolean atoms does not give that step.
+`T`. One sufficient operational route to `R=T` is to realize, for each
+seed `B`, an optimizing polar coupling using the prescribed family of
+flat Hadamard outers and Boolean rows, to arbitrarily small objective
+error. Merely representing `C` by finite Boolean atoms does not give
+that step. Equality of the norms would not require every individual
+cut-covariance/contraction pair to be realized: a different optimizer
+or convex approximation of the relevant support functional could
+suffice. No such realization or approximation is proved here.
 
 The approximation is also valid when `C` is singular: square root is
 continuous on the positive semidefinite cone in finite dimension and
@@ -198,3 +204,16 @@ amplifications. The current real-symmetric equal-square examples do
 prove a different statement: their regularized caps differ, but no
 strict `R<T` value for either seed is established. These distinctions
 must be preserved when using the finite certificates.
+
+There is also an elementary reason not to replace fixed catalysts by
+self-tensor asymptotics. For every symmetric full sign seed `B`, the
+Boolean vector `vec(B)` satisfies
+
+```
+q_full(B tensor B) >= tr(B^4)/2 >= n^3/2.
+```
+
+The last inequality uses `tr B^2=n^2`. Thus self-squaring always
+reaches normalized at least `1/2`, regardless of a possible smaller
+normalized cap of the original seed. It cannot serve as an
+upper-preserving recovery operation for such an advantage.

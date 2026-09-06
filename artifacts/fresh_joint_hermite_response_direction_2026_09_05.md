@@ -112,6 +112,12 @@ although extremely large, common degree bound in place of the compactness
 selection argument. The degree is fixed independently of matrix order.
 This is not a claim of computational practicality or a sharp degree rate.
 
+Subsequent improvement: `fresh_general_mask_nonlinear_direction_2026_09_06.md`
+and its independent monomial audit replace this very large degree bound
+by degree 417 for every marked mask with certificate at least .43.
+The threshold-noise estimate above remains valid but is not needed for
+that stronger finite-selection conclusion.
+
 ## 3. Scope
 
 The analytic ingredients in (3)--(4) are elementary conditional projection

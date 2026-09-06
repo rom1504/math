@@ -626,9 +626,19 @@ only its \(r=3\) search is exhaustive. These cannot be promoted to
 optimal caps or a limit theorem. This paper was already cited in
 `artifacts/walsh_bent_stability_literature_audit.md`.
 
-The exact odd-Walsh problem is therefore a genuine published neighbor
-of the full seed \(H_2\) regularization, with a directly relevant
-monotone construction. No primary theorem establishing asymptotic
-spectral saturation was found. A gap for this one Walsh trajectory
-would still need control of the additional order-144 factors before
-it could bound the actual two-generator \(R(H_2)\).
+**Later campaign correction.** The initial search above missed the
+direct consequence of Schmidt's 2019 theorem on asymptotically flat
+Boolean spectra. Parseval and the very same exact lift give normalized
+maximal odd-Walsh same-spin excess tending to one. Hence
+\(R(H_2)=\sqrt2\), including the additional order-144 generators by
+the matching spectral upper bound. This settles the global regularized
+seed, but not the fate of an arbitrarily prescribed iterative starting
+state. The primary theorem, normalization, and full correction are in
+`artifacts/fresh_schmidt_odd_walsh_regularization_2026_09_05.md`.
+
+The final exact operator-factorization audit, including the nuclear
+cut-covariance dual, singular-covariance justification, and full/hollow
+sign majorant floors, is in
+`artifacts/fresh_fixed_walsh_factorization_final_audit_2026_09_05.md`.
+No general-seed identity \(R=T\), strict \(R<T\) seed, or original
+minimum convergence theorem is claimed.
