@@ -44773,3 +44773,54 @@ so that extension is false. [Proof and falsifier](artifacts/fresh_limit_injectiv
 Updated explicit frontier: [0.4306581794055286,1/2], with the unevaluated
 strict improvement above. Convergence/nonconvergence remains open, and the
 six-hour campaign continues after this checkpoint.
+
+#### 10.147.9 Uniform hierarchy escape and a scalable square-state falsifier
+
+**Proved, independently audited:** let `C_scalar` be the supremum of the
+Gaussian certificate over every unit first-chaos variable V and central
+mask `1{|V|<=alpha}`. Then `liminf M_n/n^(3/2)>C_scalar`, not merely
+above the banked 21-anchor example. The argument selects a finite set of
+nonzero odd Hermite directions uniformly over a compact covariance family,
+uses weighted transport and Schur normalization, and finally performs
+principal deletion. No numerical size of the positive gap is asserted.
+[Uniform theorem](artifacts/fresh_uniform_scalar_hierarchy_escape_2026_09_05.md),
+[all-odd identity](artifacts/fresh_all_odd_weighted_projection_2026_09_05.md),
+[joint direction and degree bound](artifacts/fresh_joint_hermite_response_direction_2026_09_05.md).
+
+A fresh adversarial dependency audit shows that the explicit lower bound
+does not need the stronger unbounded-op Sobolev extension or the full
+even-input covariance theorem. After fixed-fraction spectral deletion,
+ordinary L2/L4 approximation extends the polynomial identities. All finite
+constructions precede the matrix limit. The exact 21-anchor interval was
+independently rerun. [Minimal dependency audit](artifacts/fresh_final_lower_dependency_algebra_audit_2026_09_05.md)
+and [weighted proof audit](artifacts/fresh_weighted_projection_final_adversarial_audit_2026_09_05.md).
+
+**Exact scalable counterexample:** two symmetric full sign seeds C,C' of
+order 12 have `C^2=C'^2`, `Q_full(C)=26`, and `Q_full(C')=30`. A fixed
+rational matrix P satisfies `P>=+/-C` and has exact Boolean quadratic
+cap `59563/2000<30`. All 4096 inputs and both positive-definiteness
+claims are checked with integers and Fraction elimination. Regular
+Hadamard lifting therefore gives cap separation at least
+`437/(2000*12^(3/2))` after normalization. Hollowing costs O(N) and
+leaves squared normalized operators o(1)-close in operator norm.
+Every fixed odd-channel one-root covariance agrees as well, but their
+cross-root transported operators need not. These are not near-minimizing
+families and do not prove nonconvergence.
+[Proof and exact replay](artifacts/fresh_cosquare12_scalable_gap_2026_09_05.md).
+
+**Verified primary import:** Schmidt's all-dimensional asymptotic Walsh
+flatness theorem, Parseval, and the exact same-spin fourfold lift imply
+the regularized H2 seed equals sqrt(2). This resolves that seed and
+corrects the mistaken inference from a permanently stagnant greedy orbit.
+It supplies neither general seed landing nor original convergence.
+[Exact mapping](artifacts/fresh_schmidt_odd_walsh_regularization_2026_09_05.md).
+
+The separate nonconference transport regression, through order 20480,
+agrees statistically with the weighted theorem. Its sampled values are
+diagnostics only; the exact variance family also refutes pointwise
+variance >=1. [Evidence status](artifacts/fresh_weighted_projection_regression_2026_09_05.md).
+
+Updated frontier: the explicit interval remains [0.4306581794055286,1/2],
+with the proved unevaluated strict gain. Neither all-order upper recovery
+nor a matching upper variational formula has been obtained. The campaign
+continues through its original six-hour budget.

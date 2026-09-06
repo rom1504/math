@@ -450,3 +450,37 @@ responses, and an odd-response rerooting counterexample, delimit the new
 state calculations precisely. The remaining campaign time is directed at
 what these results actually remove from the convergence obligation; it is
 not ended by this checkpoint.
+
+## Uniform escape, exact square-state separation, and a shorter audit chain
+
+The all-odd transport theorem now yields a strict improvement over the
+entire marked scalar central-mask hierarchy. A joint finite Hermite
+direction combines channels before clipping; a Gaussian-noise estimate
+gives an explicit finite-degree selection bound. These do not prove
+completeness of the enlarged response family.
+
+A distinct exact result limits that prospective completeness claim.
+Two full symmetric order-12 seeds have identical squares but a rationally
+certified gap between their regularized Boolean caps. Hadamard amplification
+and diagonal removal preserve a gap of at least
+`437/(2000*12^(3/2))` at the normalized scale, while their squared operators
+become indistinguishable in operator norm. Even all present fixed odd
+one-root variance data agree. Cross-root signed information can distinguish
+them; neither sequence is near-minimizing. The director and two independent
+agents replayed the exact certificate and checked its asymptotic lift.
+[Scalable theorem](fresh_cosquare12_scalable_gap_2026_09_05.md).
+
+The primary-literature track also corrected an inherited pessimistic
+interpretation: Schmidt's theorem implies global odd-Walsh same-spin
+saturation and settles `R(H2)=sqrt(2)`. A fixed greedy orbit can stagnate
+without obstructing the global optimum. General prescribed-Walsh polar
+coupling and near-minimizer landing remain unproved.
+
+Final adversarial reconstruction has shortened the explicit lower-bound
+proof chain. The numerical `.4306581794055286` theorem can use spectral
+deletion followed by ordinary bounded-op Gaussian L2 approximation. It
+therefore does not require the unbounded-op smooth-transport extension,
+nor the newer weighted theorem needed for the strict additional gain.
+The exact anchor certificate was rerun yet again, and the joint means'
+factor of two, hollowness, and all limit orders were checked independently.
+Research is continuing; this checkpoint is not the end of the campaign.

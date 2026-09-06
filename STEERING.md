@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.8;
+Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.9;
 hierarchical fixed-point lower bound independently audited.
 
 Status: **fresh six-hour independent research campaign active**;
@@ -41,13 +41,15 @@ or on M_n.
 A joint unmarked transport now supplies that different ingredient: a Schur
 standard-deviation inequality and weighted cubic projection yield gain
 c/log L over the exact banked certificate at every large fixed operator cap.
-Principal deletion proves a strict universal improvement, without an evaluated
-increment. This does not prove convergence. Fixed-L restricted minima also
-approximate the true minima to O(L^(-1/2)); their convergence remains open.
-Polar/nuclear and Hadamard-regularized results remain verified alternatives.
-The entropy audit also reopened a legitimate sufficient route: ordinary
-n^-2 log(1+good-signing count) limits at dense thresholds imply convergence.
-No such limit or applicable Bernoulli lower-tail theorem is established.
+Principal deletion proves a strict universal improvement, now uniform above
+the entire scalar central-mask hierarchy; the increment is unevaluated.
+The explicit lower bound has a shorter bounded-op L2 proof chain. Fixed-L
+minima approximate true minima to O(L^(-1/2)); their convergence is open.
+Exact cosquare seeds now refute square-only recovery at leading scale,
+including the present one-root odd variances; they are not near-minimizers.
+Schmidt's theorem settles the H2 regularized seed at sqrt(2), correcting
+the inference from greedy stagnation. General signed-action recovery and
+the regularized-minimum/original-liminf equality both remain unproved.
 See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
 
 ## Agent-authored rigorous frontier

@@ -268,3 +268,64 @@ and has `D_Z=1`, but its offspring law is deterministic one-child and its
 Gaussianization is a strict tree-index shift with no unit fixed point.
 The resolvent candidates have positive zero-innovation-degree mass, so
 their critical boundary is not this exceptional case.
+
+## 7. Independent audit of the finite-ancestor extension
+
+Later in the same session, the parent extended the single-anchor theorem
+to 21 explicit ancestor-closed tree coordinates; see
+`fresh_finite_anchor_fixed_point_2026_09_05.md` and its corresponding exact
+certificate script. The following points were independently reconstructed.
+
+For a finite ancestor-closed anchor set `A`, every inverse image `h_T` of
+an anchor coordinate is a fixed normalized Hermite monomial of the anchor
+vector. If `h(G,Z)` is orthogonal to these finitely many monomials, then
+`U h(G,Z)` is orthogonal to every anchor coordinate for *every* unit
+first-chaos innovation `Z` orthogonal to the anchors. Such an innovation
+is jointly independent of all anchors, as is any correlated pair of
+innovations. Thus the same conditional-Hermite contraction proof applies
+on the complete orthogonal unit sphere, with Lipschitz constant
+`sqrt(E h_Z²)`. There is no innovation-dependent constraint hidden in the
+choice of removed monomials.
+
+For `V=rho dot G+sZ`, the total degree-`d`, innovation-degree-`l` indicator
+coefficient mass is exactly
+
+\[
+ \beta_d^2\binom dl\|\rho\|^{2(d-l)}s^{2l}.
+\]
+
+Removing the selected anchor inverse images affects only the `l=0`
+group. For a top-child multiplicity vector `m`, its coefficient is
+
+\[
+ -2\phi(\alpha)\,
+ \frac{He_{|m|-1}(\alpha)\prod_j\rho_j^{m_j}}
+      {\sqrt{\prod_jm_j!}}.
+\]
+
+Hence the script's exact subtraction `raw²/prod(m_j!)`, after factoring
+out `4phi(alpha)²`, is precisely correct. The edge constant is removed
+separately by beginning the common-factor sum at total degree two. The
+normalization, conditional derivative quotient, and covariance formula
+all cancel this common factor correctly.
+
+The actual 21-child list contains unique even child multisets with all
+child indices strictly preceding the parent, so its finite closure and
+orthonormal-monomial claims hold literally. The fixed degree 200 exceeds
+every removed feature degree. An independent floating-point diagnostic,
+using normalized Hermite recurrence rather than the exact script's raw
+Hermite recurrence, gives
+
+\[
+ \|\rho\|^2=0.85835081,\quad
+ D_Z=0.9908729106624282,\quad
+ w=0.7004154308828989,
+\]
+\[
+ J=0.43065817940552875.
+\]
+
+These decimals are a cross-check, not the arithmetic certificate. The
+exact script targets `J>0.4306`; its interval primitives were previously
+audited independently. No proof, dependence, coefficient-normalization,
+or constant mismatch was found in this extension.

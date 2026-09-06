@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.8, active 2026-09-05 campaign;
+Evidence cutoff: ledger Section 10.147.9, active 2026-09-05 campaign;
 hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -160,6 +160,23 @@ Classical diagonal factorization plus random refill also shows that restricting
 ||A||op<=L sqrt(n) changes the normalized minimum by at most O(L^(-1/2));
 fixed-L convergence remains unproved.
 Unverified numerics are not frontier.
+The strict gain now exceeds the supremum of the entire scalar central-mask
+hierarchy, uniformly, not only the selected finite-anchor certificate.
+All fixed odd channels can be combined before clipping; a finite-degree
+nonlinear response bound is proved. The independently audited headline
+numerical lower bound can bypass unbounded-operator smooth transport by
+working after spectral deletion and using ordinary Gaussian L2 approximation.
+
+Two exact full-sign seeds of order 12 have the same square, but rational
+PSD-majorant certification and regular Hadamard lifting give an asymptotic
+normalized cap gap at least 437/(2000*12^(3/2)). Hollowing preserves the
+gap and makes their normalized squares differ by o(1) in operator norm.
+Every fixed odd-channel one-root covariance also agrees asymptotically.
+This is not a near-minimizer example, full action-limit equality, or
+nonconvergence. [Exact theorem](artifacts/fresh_cosquare12_scalable_gap_2026_09_05.md).
+Schmidt's primary theorem settles the formerly unresolved H2 regularized
+seed at sqrt(2); greedy stagnation did not obstruct its global optimum.
+[Mapping](artifacts/fresh_schmidt_odd_walsh_regularization_2026_09_05.md).
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).

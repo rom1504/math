@@ -174,3 +174,39 @@ used in a fixed finite construction. No cutoff, polynomial degree, or
 smoothing parameter may grow during a dimension limit. This extension
 uses local joint convergence only to control approximation errors; the
 energy identity itself comes from the whole-functional comparison above.
+
+## 7. Audit of the all-odd hybrid extension
+
+Sections 1--3 of
+`fresh_all_odd_weighted_projection_2026_09_05.md` pass an independent
+audit. Their hybrid polynomial variance estimate correctly uses product
+Poincare/Efron--Stein, the ordinary gradient `B[w circ f'(G)]`, and the
+central-difference error `O(||w||_1/m)` in each Rademacher coordinate.
+After summing its square, `||w||_1<=sqrt(n)||w||_2` gives a dimension-free
+constant. It does not use an exact Gaussian covariance identity in a
+mixed input model.
+
+For a fixed odd degree `r`, the exact input derivatives of `B h_r(G)`
+reduce to odd response transports for positive even derivative orders,
+and to weights `B_ij B_jk` times centered even Hermite responses for odd
+orders below `r`. The even-order identity with a subtracted `j=k` term
+requires order at least two; the zeroth derivative is treated separately.
+The fully differentiated vector is
+
+`sqrt(r!) m^(-(r-1)/2) Q e_k`.
+
+This reproduces every vector scale needed through order four, including
+the cubic deterministic-vector exception.
+
+The freezing argument is also valid. First make the coordinate being
+replaced Gaussian, then project the fixed-degree polynomial onto its
+one-coordinate Hermite coefficients. Holder and conditional expectation
+bound each coefficient by a fixed higher hybrid moment, preserving its
+dimension scale. Evaluating the finite expansion at a deterministic `t`
+adds only a fixed polynomial factor. This avoids the invalid inference
+of ordinary polynomial coefficients from their two Rademacher values.
+
+The same whole-functional fourth-derivative argument therefore proves
+the `O(n^-1)` input comparison for every fixed odd Hermite transport,
+including bounded deterministic local row multipliers. All constants may
+depend on the chosen fixed odd degree.

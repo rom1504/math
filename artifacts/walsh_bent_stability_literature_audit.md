@@ -392,6 +392,17 @@ Source: K.-U. Schmidt,
 *Journal of Combinatorial Theory, Series A* 164 (2019), 50--59;
 [arXiv:1711.08215](https://arxiv.org/abs/1711.08215).
 
+**Scope correction, 2026-09-05.** Although this theorem gives no improvement
+for a prescribed greedy endpoint, Parseval and
+`||Wg||_1 >= ||Wg||_2^2/||Wg||_infinity` show that the *global* normalized
+Walsh maximal excess tends to one also in odd dimensions. The exact
+four-block same-spin lift then proves the same for the maximal odd-Walsh
+Rayleigh quotient. In particular the campaign regularization of the full
+`H2` seed is exactly `sqrt(2)`. See
+`fresh_schmidt_odd_walsh_regularization_2026_09_05.md` for the complete
+normalization and primary-theorem mapping. No arbitrary-Hadamard or
+greedy-basin conclusion is imported.
+
 Metric-complement results for `RM(1,d)` likewise identify exact bent deep
 holes but provide neither a quantitative neighborhood inverse theorem nor a
 greedy-basin estimate.

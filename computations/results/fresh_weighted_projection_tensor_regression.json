@@ -1,0 +1,165 @@
+{
+  "status": "heuristic_statistical_regression_not_asymptotic_proof",
+  "rng_seed": 2026090523,
+  "full_sign_seed": [
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ]
+  ],
+  "limiting_variance_numerators": [
+    733,
+    733,
+    733,
+    733,
+    533
+  ],
+  "limiting_variance_denominator": 625,
+  "orders": [
+    {
+      "n": 20,
+      "depth": 1,
+      "samples": 4096,
+      "operator_norm": 1.4689774459950387,
+      "minimum_local_variance": 0.9006760230507744,
+      "mean_local_standard_deviation": 1.0321959494395625,
+      "finite_gram_main_prediction": 0.7046693285088521,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": -0.03557781535053427,
+        "standard_error_over_inputs": 0.0028643594057263097
+      },
+      "cubic_channel": {
+        "mean": 0.40913421744080836,
+        "standard_error_over_inputs": 0.0068621849782604
+      },
+      "cubic_finite_size_error": -0.29553511106804375
+    },
+    {
+      "n": 80,
+      "depth": 2,
+      "samples": 4096,
+      "operator_norm": 1.3547852368455617,
+      "minimum_local_variance": 0.8640799745705285,
+      "mean_local_standard_deviation": 1.045674639402441,
+      "finite_gram_main_prediction": 0.7138710885142828,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": -0.014147684827187305,
+        "standard_error_over_inputs": 0.0018113698243632727
+      },
+      "cubic_channel": {
+        "mean": 0.6245314317537047,
+        "standard_error_over_inputs": 0.00851710030109857
+      },
+      "cubic_finite_size_error": -0.08933965676057809
+    },
+    {
+      "n": 320,
+      "depth": 3,
+      "samples": 4096,
+      "operator_norm": 1.3070822276518261,
+      "minimum_local_variance": 0.8555750058328018,
+      "mean_local_standard_deviation": 1.0496771114549228,
+      "finite_gram_main_prediction": 0.7166035341270847,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": -0.004443138363058466,
+        "standard_error_over_inputs": 0.0009745411044885972
+      },
+      "cubic_channel": {
+        "mean": 0.6859361207159359,
+        "standard_error_over_inputs": 0.005216724087491056
+      },
+      "cubic_finite_size_error": -0.03066741341114876
+    },
+    {
+      "n": 1280,
+      "depth": 4,
+      "samples": 4096,
+      "operator_norm": 1.2853295029665535,
+      "minimum_local_variance": 0.8534909376144061,
+      "mean_local_standard_deviation": 1.0507131017751434,
+      "finite_gram_main_prediction": 0.7173107938326547,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": -0.0006249817796410171,
+        "standard_error_over_inputs": 0.0004938041339910321
+      },
+      "cubic_channel": {
+        "mean": 0.7100618641269327,
+        "standard_error_over_inputs": 0.00285679510797257
+      },
+      "cubic_finite_size_error": -0.007248929705721996
+    },
+    {
+      "n": 5120,
+      "depth": 5,
+      "samples": 4096,
+      "operator_norm": 1.2749559974633888,
+      "minimum_local_variance": 0.8529725585956269,
+      "mean_local_standard_deviation": 1.0509742365904684,
+      "finite_gram_main_prediction": 0.7174890678271082,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": 8.025013371871771e-05,
+        "standard_error_over_inputs": 0.00025555823432798694
+      },
+      "cubic_channel": {
+        "mean": 0.7131984449362976,
+        "standard_error_over_inputs": 0.0014637350439497513
+      },
+      "cubic_finite_size_error": -0.004290622890810614
+    },
+    {
+      "n": 20480,
+      "depth": 6,
+      "samples": 4096,
+      "operator_norm": 1.2698927394491053,
+      "minimum_local_variance": 0.8528431286621391,
+      "mean_local_standard_deviation": 1.0510396527005117,
+      "finite_gram_main_prediction": 0.7175337267180514,
+      "old_tree_channel_prediction": 0,
+      "old_tree_channel": {
+        "mean": -0.0001091526707034953,
+        "standard_error_over_inputs": 0.00012777534500211108
+      },
+      "cubic_channel": {
+        "mean": 0.7177459178414833,
+        "standard_error_over_inputs": 0.0007401495383371958
+      },
+      "cubic_finite_size_error": 0.00021219112343195956
+    }
+  ]
+}
