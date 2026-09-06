@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.3, resumed campaign in progress;
+Evidence cutoff: ledger Section 10.148.4, resumed campaign in progress;
 full nonlinear response theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -218,6 +218,17 @@ averaging reflections by exact H144 three-cell and simplex quotients.
 Products on separate interfaces are valid; overlapping composition and
 general polar recovery are not proved. These are tests, not a matching
 upper or an all-order realization theorem.
+The fourth checkpoint removes the finite Gaussian feasibility assumption:
+normalized even vector features admit their unique canonical creation frame
+exactly when the matrix-height kernel iterates to I. A strict subfixed
+barrier also gives a quantitative approximate-realization obstruction.
+Continuous cyclic cores plus finite causal extensions have a uniform
+two-stage escape above 1/sqrt(2pi) on each FIXED frame; no rate uniform over
+growing frames follows. Arithmetic phase carriers and vectorial bent maps
+give new nonlocal regularized-norm tests, not upper-preserving recovery.
+An exhaustive q=16 balanced-profile test found exactly 7/2 for its weighted
+seed; that finite result is not an upper bound on the full regularization.
+[Proof audit and exact scopes](artifacts/resumed_director_fourth_checkpoint_audit_2026_09_06.md).
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
 

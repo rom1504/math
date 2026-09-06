@@ -131,3 +131,32 @@ its proved ceiling makes a complementary nonlocal or original-minimizer
 mechanism essential. Continue the phase-carrier construction, rigorous
 feedback/endogeneity tests, and fresh original-convergence proof obligations.
 The campaign is only about two hours old; this is not a stopping point.
+
+## Fourth substantive checkpoint, approximately 04:10 UTC
+
+The full lower endpoint is unchanged. A precise finite Gaussian recovery
+theorem is now proved: the covariance-kernel iteration reaches I exactly
+when an actual canonical frame exists, and constructs the unique frame.
+Two independent researchers reconstructed the proof. Strict subfixed
+barriers give quantitative approximate-realization floors, including
+r^2/(40sqrt(2)) for an explicit rough feedback loop. This is not a theorem
+about all original signings.
+
+Continuous cyclic cores plus finite causal appendages admit no high-value
+local maxima. Fractional ties need an objective-preserving gate followed
+by ascent, not a claimed positive original first derivative. An exact
+variance cancellation gives a uniform two-stage gain on every fixed frame.
+The gain need not be uniform after further coordinate births.
+
+The independent nonlocal track proves full seven-point resonant carriers,
+programmable projective phases, a conditional-bent no-amplification theorem,
+and balanced-profile power-permutation operators. The director checked the
+normalizations and replayed finite integer certificates. Its exhaustive
+q=16 weighted-seed test gives exactly 7/2, not a full-family upper bound.
+
+[Director proof reconstruction and scopes](resumed_director_fourth_checkpoint_audit_2026_09_06.md).
+The next work is a general nonlocal synthesis/falsifier, a bounded scalar
+endogenous variational theorem, and independent optimizer-specific analysis.
+No upper-preserving all-order recovery or convergence theorem is proved.
+The remaining three hours are for substantive mathematics, not more
+smoothness variants or isolated finite seed searches. Research continues.

@@ -45031,3 +45031,51 @@ ascent is real, but its entire fixed-rule class has a proved ceiling below
 nonconvergence theorem is established. Nonlocal realization and a fresh
 original-minimizer argument remain complementary tests, not assumed answers.
 Research continues through the six-hour authorization.
+
+#### 10.148.4 Exact Gaussian recovery and nonlocal realization tests
+
+**Proved, independently reconstructed:** normalized even vector features g
+admit an actual canonical creation frame G=Ug(G) exactly when the Gaussian
+correlation-kernel iteration K^h(0) tends to I. Equivalently there is no
+proper subfixed matrix. Compatible height projections construct the unique
+solution, with squared L2 tail tr(I-K^h(0)). Actual cyclic finite anchors
+are allowed in the relative form. Yesterday's scalar critical theorem is
+not being recounted as new.
+[Recovery](artifacts/resumed_director_creation_recovery_theorem_2026_09_06.md),
+[independent reconstruction](artifacts/resumed_bound_audit_creation_height_converse_2026_09_06.md).
+
+**Quantitative falsifier:** a strict matrix barrier gives a positive
+operator-L2 residual floor for every approximately realizable frame. The
+explicit rough two-cycle with return strength r has floor r^2/(40sqrt(2)).
+A directionwise finite-energy necessary condition distinguishes cyclic
+roughness from harmless feedforward roughness. These are response-space
+obstructions, not nonconvergence of the original signing values.
+[Barrier theorem](artifacts/resumed_director_quantitative_feedback_barrier_2026_09_06.md),
+[feedback criterion](artifacts/resumed_response_matrix_height_feedback_obstruction_2026_09_06.md).
+
+**Accumulating dynamics, with exact scope:** a continuous cyclic core plus
+finite causal extensions has no ternary stationary response above phi(0).
+Fractional stationary ties have an arbitrarily near two-stage escape with
+explicit quadratic gain. Gate purification cancels q^2 from the new
+innovation variance, proving uniform two-stage improvement on each fixed
+high-value frame. This does not provide a rate over expanding frames.
+[Proof](artifacts/resumed_response_continuous_core_and_fractional_tie_escape_2026_09_06.md),
+[independent audit](artifacts/resumed_bound_audit_continuous_core_escape_2026_09_06.md).
+
+**Nonlocal positive tests and a scoped negative:** resonant arithmetic
+carriers restore full seven-point rotations; tensor/simplex quotients
+program phases independently on projective quadratic-residue triples.
+Nonlinear vectorial bent profiles give conjugated power permutations on
+balanced inputs. Every transform normalization and exceptional constant
+term is retained. Conditional-bent large blocks give no amplification
+beyond their selector block. Exact integer replays and an exhaustive
+q=16 test are saved; the latter equals 7/2 for the selected weighted seed.
+[Director reconstruction and links](artifacts/resumed_director_fourth_checkpoint_audit_2026_09_06.md).
+
+Updated frontier: the original rigorous interval remains
+[.4314603928237005,.5]. Finite Gaussian feasibility is now characterized,
+but the full fixed-rule ceiling still prevents assuming sharpness. The
+nonlocal tests have no upper-preserving original recovery theorem. No
+convergence/nonconvergence claim or comparable-order recurrence is made.
+Continue toward general realization and actual-optimizer structure, not
+more isolated finite caps. This checkpoint is not the campaign's end.

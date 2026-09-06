@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: resumed third checkpoint, ledger Section 10.148.3;
+Evidence cutoff: resumed fourth checkpoint, ledger Section 10.148.4;
 full nonlinear theorem and .4314603928237005 certificate reconstructed.
 
 Status: **second six-hour response/convergence campaign active**, starting
@@ -54,11 +54,14 @@ ceiling, not an actual-signing ceiling. Strictly causal finite stationary
 frames have the stronger 1/sqrt(2pi) bound; cyclic closures are excluded.
 These limits justify complementary nonlocal work rather than constant tuning.
 
-Exact H144 three-cell and simplex quotients realize finite-probability
-averaging reflections on the prescribed regularized family. New arithmetic
-phase carriers are being independently checked. Neither arbitrary polar
-recovery nor equality of regularized and original minima follows. Convergence
-and nonconvergence remain open; no particular seed route is mandatory.
+Matrix-height recovery now exactly decides finite Gaussian feasibility;
+strict barriers give positive approximation floors. Continuous cyclic cores
+have uniform two-stage escape on each fixed frame, not over growing frames.
+Nonlocal resonant phase carriers and vectorial bent maps give new realizable
+regularized tests. Neither arbitrary polar recovery nor equality of
+regularized and original minima follows. Stop smoothness variants and
+isolated seed tuning; seek a general synthesis/falsifier and independently
+an original-minimizer argument. Convergence and nonconvergence remain open.
 See `artifacts/resumed_limit_campaign_2026_09_06.md` for evidence and next tests.
 
 ## Agent-authored rigorous frontier
