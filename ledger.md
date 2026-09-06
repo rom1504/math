@@ -44861,3 +44861,62 @@ proved unevaluated strict improvement. The original question is unsolved.
 No upper-preserving all-order recovery, matching variational formula, or
 two separated minimizing subsequences were proved.
 [Compact synthesis and one exact sufficient recovery obligation](artifacts/fresh_limit_final_synthesis_2026_09_06.md).
+
+### 10.148 Resumed six-hour original-problem campaign
+
+#### 10.148.1 Nonlinear center transport, all-mask escape, and a slack falsifier
+
+The user authorizes six further substantive hours from 78110a5, starting
+2026-09-06 01:13:55 UTC. Write access was immediately reverified. Three
+complementary researchers and the director are working; prior positive audits
+are not proof steps. [Campaign record](artifacts/resumed_limit_campaign_2026_09_06.md).
+
+**Reconstructed and exactly replayed:** the explicit universal lower bound
+.4306581794055286 survives a fresh minimal-proof audit. It needs fixed-fraction
+spectral deletion, finite injective-tree CLT/energy, the fixed Gaussian
+certificate, and ordered finite approximation; it does not need the new
+nonlinear channel theorem. [Fresh reconstruction](artifacts/resumed_bound_audit_minimal_proof_2026_09_06.md).
+
+**New proved theorem, independently reconstructed twice:** for a fixed even
+old-tree Gaussian mask 0<=H<=1 and odd response F with |F|+H<=1, put
+K=U*F and let s>0 be any fixed finite selected nonlinear odd edge-Hermite
+mass of F. Then
+
+```math
+\liminf_n\frac{M_n}{n^{3/2}}\ge
+\mathbb E\left[H(X)\,\mathbb E_Z|K(X)+sZ|\right].
+```
+
+The exactly feasible means are +/-F+H sign(BF). Their half energy difference
+has no quadratic remainder. The proof supplies nonlinear, not only covariance,
+tests; it separates potentially non-Gaussian first-chaos transport, controls
+full mixed contractions, and smooths zero-variance channels before taking
+bounded-test limits. Matrix order tends to infinity with the operator cap,
+finite response, and smoothing fixed. Analysis errors then vanish; Schur
+mean-standard-deviation Jensen makes the result independent of the cap, so
+principal deletion is removed last.
+[Complete theorem](artifacts/resumed_bound_audit_restricted_channel_center_update_2026_09_06.md),
+[director reconstruction](artifacts/resumed_nonlinear_channel_director_audit_2026_09_06.md),
+[independent response reconstruction](artifacts/resumed_response_center_theorem_independent_audit_2026_09_06.md).
+
+This yields liminf M_n/n^(3/2)>=C_mark+delta0>C_mark for the ENTIRE
+nonnegative marked-mask supremum, with the explicitly defined positive
+delta0=(6/25)g_(1/40000000000)(sqrt(19/6)), where g_s(x)=E|x+sZ|-x.
+The new rational Gram/monomial calculation selects degree at most 51.
+No additional decimal endpoint is evaluated. Infinite masks are approximated
+jointly with F, preserving pointwise feasibility, before applying the fixed
+finite theorem. [Uniform escape and limit order](artifacts/resumed_response_all_mask_uniform_escape_2026_09_06.md).
+
+**Exact scalable feasibility falsifier:** a genuine creation-space H has
+J(H)>.43018753665 but H=1 on |UH|<=.001. Thus high certificate value does
+not force the proposed local slack; the center theorem succeeds without it.
+The rational interval script was independently rerun and its JSON saved.
+[Construction](artifacts/resumed_response_high_value_zero_strip_2026_09_06.md),
+[independent arithmetic/proof audit](artifacts/resumed_response_strip_director_audit_2026_09_06.md).
+
+Updated frontier: the evaluated interval remains [.4306581794055286,.5],
+now with uniform symbolic strict escape above the full marked-mask class.
+No matching upper, all-order recovery, or convergence/nonconvergence theorem
+is proved. The new center depends on the old input and cannot be relabeled
+as a fresh independent mark. Full nonlinear variance and genuinely reusable
+feasible dynamics are the next discriminating targets. Research continues.

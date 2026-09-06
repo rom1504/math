@@ -1,9 +1,10 @@
 # Strategic steering
 
-Evidence cutoff: completed 2026-09-05/06 campaign, ledger Section 10.147.10;
-hierarchical fixed-point lower bound independently audited.
+Evidence cutoff: resumed campaign first checkpoint, ledger Section 10.148.1;
+explicit lower-bound and new nonlinear center theorem reconstructed independently.
 
-Status: **six-hour independent research campaign completed**;
+Status: **second six-hour response/convergence campaign active**, starting
+2026-09-06 01:13:55 UTC from 78110a5;
 convergence and nonconvergence remain open.
 
 ## User-stated objective and workflow directives
@@ -29,7 +30,15 @@ bookkeeping nor idle waiting counts as active research.
 The README's verification, stopping, and blank-slate rules remain in force.
 All mathematical judgments below belong to the agent.
 
-## Active independent assessment, 2026-09-05
+The latest user authorizes another six hours of active research from the
+completed campaign. Preserve useful results, develop response feasibility,
+independently pursue convergence or upper recovery, and freshly reconstruct
+the numerical lower-bound proof. Neither a particular hierarchy, Hadamard
+seed recovery, nor convergence to 1/2 is mandatory. Prior positive audits are
+not proof steps. Write access was reverified; three complementary researchers
+are active. Record meaningful checkpoints and keep all limit orders explicit.
+
+## Active independent assessment, 2026-09-06
 
 An elementary rooted-tree moment theorem and exact hierarchical energy law
 now improve the lower bound to 0.4306581794055286. Finite ancestor-anchored
@@ -51,6 +60,16 @@ Schmidt's theorem settles the H2 regularized seed at sqrt(2), correcting
 the inference from greedy stagnation. General signed-action recovery and
 the regularized-minimum/original-liminf equality both remain unproved.
 See `artifacts/fresh_limit_final_synthesis_2026_09_06.md` for the final proof map.
+
+The resumed campaign proves a stronger nonlinear joint-test theorem and exact
+feasible center update. It escapes the entire nonnegative marked-mask supremum
+by a uniform symbolic positive increment, without local slack or logarithmic
+operator-cap clipping. General high-value local slack is now rigorously false.
+The next response obligations are full nonlinear variance and valid reuse of
+the dependent center. Neither is presumed. A complementary researcher audits
+Haar universality and pursues an original-signing upper/recovery mechanism.
+These are agent-chosen targets, not new user directives. See
+`artifacts/resumed_limit_campaign_2026_09_06.md` and its theorem artifacts.
 
 ## Agent-authored rigorous frontier
 

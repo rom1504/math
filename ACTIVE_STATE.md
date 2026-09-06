@@ -117,6 +117,8 @@ Proofs and precise assumptions:
 
 The latest user authorized six substantive hours starting 18:29 UTC on
 2026-09-05. The six-hour campaign and its final independent audits are complete.
+The user has now authorized a second six-hour campaign, from 01:13:55 to
+07:13:55 UTC on 2026-09-06; it is active. Its first checkpoint is below.
 
 - Proved polar-Gram inequality:
   Q(A)>=n(n-1) asin(n/||A||_*)/pi. This constrains the nuclear mass of
@@ -183,6 +185,19 @@ It needs neither a regularity hypothesis nor a covariance compactness
 argument. Uniform local slack beyond the scalar class remains open;
 high value does not force even intrinsic output innovation to stay positive.
 [Closing synthesis and exact original-problem gap](artifacts/fresh_limit_final_synthesis_2026_09_06.md).
+The resumed campaign sharpens the degree to 51, with an exact rational replay.
+It also falsifies general local slack: a genuine mask has J>.4301875 and
+H=1 throughout |UH|<=.001. A newly proved restricted nonlinear-channel theorem
+bypasses this obstruction. Exact feasible means +/-F+H sign(BF), nonlinear
+joint tests, and Schur mean-standard-deviation Jensen give
+liminf M_n/n^(3/2)>=E H E|U*F+sN| for fixed feasible old pairs and finite
+nonlinear edge mass s. Two independent reconstructions check the proof.
+Consequently the original liminf strictly exceeds the ENTIRE nonnegative
+marked-mask supremum, by a uniform symbolic positive increment. No new
+decimal is evaluated. Updated spins are dependent, so iteration is not
+licensed by this one-step theorem. Full nonlinear variance and reusable
+feasible dynamics are current targets, not established conclusions.
+[Checkpoint and proof links](artifacts/resumed_limit_campaign_2026_09_06.md).
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
