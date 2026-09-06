@@ -299,3 +299,34 @@ remained nonzero, 0.026060, 0.027992, 0.028615.
 Thus this test exposes substantial finite-size remainders while finding
 no persistent falsifier. The standard errors omit pilot uncertainty;
 these observations do not prove a convergence rate or a finite-n bound.
+
+## 8. A stronger local covariance consequence for the next return
+
+At a fixed polynomial stage define the exact returned remainder
+eta=B(C-c0-D_a Z), using the already specified squarefree-main
+approximations. Sections 4 and 5 bound its source crosses against
+BD_dB for EVERY bounded deterministic diagonal d, not only d=a.
+Their proofs also apply separately to each fixed original-degree main
+of the left remainder and each original-degree old residual source on
+the right. Choosing d_i to be the sign of the corresponding same-root
+covariance therefore gives
+
+```math
+\frac1n\sum_i|\operatorname{Cov}(\eta_{p,i},Z_{q,i})|
+\longrightarrow0
+```
+
+for every fixed pair of original degrees p,q. Different degrees are
+already orthogonal. Combining this with the joint local Gaussian
+comparison shows that the finite eta-component vector is Gaussian
+independent of the OLD noise Z, after averaging over roots. This is
+stronger than merely retaining a possibly nonzero eta/Z covariance.
+
+It does not prove independence from the NEW literal return
+L=B(c0+D_a Z). The condition in
+`continued_feedback_second_return_boundary_2026_09_06.md` correctly
+isolates the unproved full contraction of a lower-degree eta component
+into a higher-degree L component. Proper cuts alone do not control that
+contraction. Regressing equal-degree covariance and keeping appropriate
+variance cutoffs are legitimate conditional steps; the needed higher-
+degree full-contraction condition is not established by the present audit.

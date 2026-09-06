@@ -235,3 +235,94 @@ checks; no simulation is used as an asymptotic proof step.
 | Director | Two-factor transport and spectrum-type entropy | Integrate the original-signing upper criterion; preserve exact scope and limit orders |
 
 Continue substantive work immediately after this checkpoint.
+
+## Fourth substantive checkpoint: full-row reduction and stable profile counting
+
+The campaign is still active; target end remains 13:37:56 UTC. The rigorous
+universal interval [.4333221116640807,.5] is unchanged. Neither an improved
+full cap nor convergence/nonconvergence has been proved.
+
+**Exact upper-construction obligation.** Restricting an exact Hadamard weave
+gives a hollow signing of order N=mk. Its deficit is an actual sum of squared
+transformed-coordinate mismatches. A PSD-kernel graph contraction now bounds
+the FULL near-saturation probability by
+
+```math
+ 2\exp(t\gamma m^2)\{E_T Z_T(t)\}^{m},
+```
+
+where Z_T sums square-root normalized kernel permanents over every supported
+child spin. This does not pay left and right bridge channels separately.
+The factor is proved; its required negative exponential rate is not assumed.
+[Construction, theorem, exact normalization](continued_convergence_restricted_weave_2026_09_06.md).
+[Finite-type permanent upper and matching asymptotics](continued_director_permanent_profile_variation_2026_09_06.md).
+
+**Important falsifiers.** Typical Gaussian spectra alone forbid the fixed-tilt
+criterion for retention p<=.9225232669. At dyadic retention, actual rare selectors
+supporting finite-spike rows forbid large tilts; at15/16 they kill the otherwise
+Gaussian-optimal tilt. A separate matching-row obstruction rules out moving the
+square root outside the entire annealed expectation. These are obstructions to
+specified bounds or laws, not to every signing or to the construction itself.
+[Gaussian audit](continued_audit_gaussian_profile_permanent_2026_09_06.md),
+[rare-selector proof](continued_feedback_weave_rare_selector_obstruction_2026_09_06.md),
+[conditioning and annealing scopes](continued_audit_rare_selectors_and_conditioning_2026_09_06.md).
+
+**A new full-row tool.** For the signed-permutation orbital Gaussian kernel,
+the orbit covariance has operator norm exactly its row-sum overlap P_t(v).
+Invariant Gaussian-Fock degrees up to O(m) have only exp(O(sqrt(m))) dimension.
+Their relative truncation error is controlled even for exponentially small
+P_t(v). Hence, uniformly over orthogonal U and bounded energy density,
+
+```math
+ E_g\sqrt{P_t(Ugv)}\le\exp(O(\sqrt m))\sqrt{P_t(v)}.
+```
+
+A separate invariant-projection inclusion proves the PSD permanent product
+inequality. Together these give a genuine finite-depth type upper recursion
+for an EXACT randomized Hadamard ensemble. Its type potential is a proved
+supersolution; atypical pairings are retained. A finite variational strict
+negative exponent would improve the constructed subsequence's cap below1/2.
+No such certificate is yet established; the first two levels at the tested
+parameters are obstructed by explicit condensation paths.
+[Uniform theorem, recursion, and precise cap criterion](continued_convergence_recursive_orbit_bound_2026_09_06.md),
+[independent proof and interface audit](continued_audit_fock_orbit_terminal_2026_09_06.md).
+
+**A separate WALSH success.** Stable profile counting no longer needs exact
+bent/plateaued divisibility. Approximate half-spectrum signs recover pair sums;
+four-point recovery improves the count further. The decisive bounded experiment
+uses eight input points, four nonplane Walsh frequencies, and only four-wise
+marginals. A fixed rational dual, checked on every finite orbit WITHOUT an
+optimizer, proves a supported-spin count rate <=.210815164800 for a fixed-width
+near-flat neighborhood. Its tilted class exponent at p15/16,t4 is <-.00874170.
+This eliminates a genuinely stable dense profile class at a tilt not ruled out
+by the typical-Gaussian lower bound. It does not control the complementary rows.
+
+- [Pair-sum stable theorem](continued_feedback_stable_flat_profile_count_2026_09_06.md).
+- [Director's four-point theorem and rational comparison](continued_director_stable_quad_profile_count_2026_09_06.md).
+- [Eight-block theorem and exact dual](continued_feedback_eight_block_stable_flat_certificate_2026_09_06.md).
+- [Independent full audit](continued_audit_eight_block_stable_flat_certificate_2026_09_06.md).
+- Optimizer-free replay programs: `continued_director_quad_entropy_certificate`,
+  `continued_feedback_eight_block_profile_lp --verify-only`, and the independently
+  rebuilt `continued_audit_eight_block_dual_replay`, all dated2026_09_06 under
+  `computations/`. Rational certificate outputs are reproducible.
+
+Exact and approximate sparse-span counts, translated weighted information sets,
+and a Walsh-divisibility/Reed--Muller count allow cheap selector conditioning.
+Their scopes and quantitative insufficiency are explicit. They do not license
+an arbitrary-profile count or a near-bent repair theorem.
+[Anti-sparsity](continued_feedback_selector_antisparsity_2026_09_06.md),
+[weighted information sets](continued_feedback_weighted_walsh_information_sets_2026_09_06.md),
+[divisibility and its neighborhoods](continued_director_walsh_divisibility_selector_count_2026_09_06.md).
+
+**Do not merge the two ensembles silently.** The eight-block proof uses the
+Walsh affine structure. The recursive randomized basis need not possess it.
+Their current consequences are complementary, not a combined full-cap proof.
+
+| Role | Last verified result | Next discriminating obligation |
+|---|---|---|
+| Feedback/counting | Stable eight-block class bound with an exact rational dual | Test finite-bin extension against the remaining actual profiles |
+| Convergence | Subexponential orbital terminal theorem and exact type recursion | Prove or falsify a finite-depth negative full-row exponent |
+| Audit | Independently rebuilt dual and full orbital proof | Check all deeper-recursion symmetries, policies, and claimed certificates |
+| Director | Stable four-point theorem; independent proofs and exact replays | Integrate the full-row criterion, not add isolated spectral classes indefinitely |
+
+Continue immediately. The remaining work is substantive, not a final synthesis.

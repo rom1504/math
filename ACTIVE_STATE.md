@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.2, active six-hour campaign.
+Evidence cutoff: ledger Section 10.149.4, active six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -228,9 +228,16 @@ retains the stabilized Hadamard seed norm. Nonlocal overlap must abandon this
 invariant to address that gap. No all-order landing conclusion is claimed.
 
 Random restricted Hadamard weaving has an exact squared-defect identity and
-a new one-row PSD-kernel permanent obligation. Entropy counting eliminates
-specified dense exact plateaued row classes, not arbitrary near-extremizers.
-Finite restricted-weave searches are lower witnesses only, not cap upper bounds.
+one-row PSD-kernel permanent obligation. A new uniform Gaussian-Fock orbit
+theorem has only exp(O(sqrt(m))) terminal loss; a proved entropy/transport
+supersolution gives a finite-depth type variational upper bound for an EXACT
+randomized Hadamard ensemble. Its required negative full-row exponent is not
+certified. In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
+exact rational dual excludes a fixed-width near-flat spectrum class at tilt4.
+Complementary profiles remain; Walsh affine identities do not automatically
+hold for the randomized ensemble. Typical-profile, rare-selector, and invalid
+annealing obstructions are scoped to their specified certificate/law. No full
+cap improvement, recurrence, convergence, or nonconvergence follows yet.
 
 Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
 finite errors proportional to slack d; near-optimal fractional means have

@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: second continued checkpoint, ledger Section 10.149.2.
+Evidence cutoff: fourth continued checkpoint, ledger Section 10.149.4.
 Status: **third six-hour response/convergence campaign active**,
 2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
 
@@ -96,17 +96,18 @@ Arbitrary overlapping networks and original-minimizer landing remain unproved.
 
 ## Ranked next directions and falsification criteria
 
-1. Determine exactly which actual-energy identities from mixed-charge feedback
-   transfer beyond involutions to arbitrary near-minimizing signings. The
-   original terminal self-energy question on Hadamards is settled, not live.
-   Require a proved comparison or an explicit obstruction; no universal gain
-   follows from a special-class algorithm or a floating state-evolution value.
-2. Determine the reach of the nonlocal Ramsey eigenspace mechanism. Any extension
-   must verify multiplicative closure and Boolean realization, not infer them
-   from flat spectrum alone. A Haar/random-eigenbasis counterexample is outside
-   the Cayley theorem but constrains attempted generalization.
-3. Use exact-minimizer critical windows for a quantitative order-transfer theorem.
-   Counting and Hamming spread alone do not control simultaneous row responses.
+1. Evaluate the new finite-depth orbital/permanent variational bound for an
+   exact randomized Hadamard weave. The uniform Gaussian-Fock terminal bound
+   loses only exp(O(sqrt(m))); no strict full-row exponent is yet certified.
+   Retain atypical pairings and matchings. A cap improvement would initially
+   concern a constructed subsequence, not establish original convergence.
+2. For the separate WALSH weave, extend the certified eight-block stable-flat
+   count to the remaining profiles. Its exact rational dual gives a negative
+   class exponent at tilt4, but is not a bound for the complete row sum.
+   Do not transfer Walsh affine identities to arbitrary randomized Hadamards.
+3. Preserve the proved actual marked-feedback energy projection. A next return
+   needs a new joint comparison, not just another description of its history.
+   The old terminal self-energy question and its ceiling are not live targets.
 4. Keep genuine nonconvergence available: it requires fixed positive separation
    of two infinite order subsequences, not a failed intermediate route.
 
@@ -142,10 +143,11 @@ projection are now proved and independently reconstructed. Exact coherent
 energy and its bare cross remain; another threshold of BC needs a new joint
 comparison and is not licensed by the energy identity alone.
 
-Nonlocal controlled two-fibre gates preserve exact sign entries for arbitrary
-seeds. Gates preserving every pure Boolean tensor also preserve the stabilized
-seed obstruction; finite cap reductions do not remove it. Overlapping gates
-outside that class are being tested. A random restricted-weave construction
-now has an exact one-row permanent/counting target; scoped plateaued witness
-classes can be ruled out, but its full cap is not bounded. No recurrence follows.
+The restricted-weave full-cap test is now an exact one-row permanent criterion.
+Typical Gaussian profiles forbid retention <=.922523 for this certificate;
+rare dyadic selectors and annealing across the square root give further scoped
+obstructions. High-probability selector conditioning is legitimate but does not
+remove typical profiles. Stable dense-profile counting now avoids exact Walsh
+divisibility: a finite four-wise-marginal dual excludes a nonzero-width flat
+class at a viable tilt. Complementary profiles and the full cap remain open.
 See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs and scopes.

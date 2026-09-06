@@ -45328,6 +45328,42 @@ retain QS rather than Gaussianize it. A direct energy projection is under
 attack. Independent convergence work tests noncommuting signing switches.
 Neither convergence nor nonconvergence is established. Continue the campaign.
 
+#### 10.149.4 A full-row orbital criterion and a stable dense-profile certificate
+
+The restricted-weave deficit has an exact one-row square-root-permanent upper
+criterion. Typical Gaussian rows, rare finite-spike selectors, and the matching
+event give independently audited obstructions to particular parameter ranges
+and annealing shortcuts. These are not universal cap impossibility claims.
+
+A new Gaussian-Fock invariant-rank argument proves, for uniform signed
+permutations g and arbitrary independent orthogonal U,
+
+```math
+ E_g\sqrt{P_t(Ugv)}\le\exp(O_{t,C}(\sqrt m))\sqrt{P_t(v)}
+ \quad(\|v\|^2\le Cm).
+```
+
+The relative error remains valid when the orbital overlap is exponentially
+small. PSD permanent tensorization and exact Hadamard recursion then reduce
+the candidate full cap to a finite-depth type variational inequality, with no
+fixed leading terminal loss. Its required strict negative exponent remains
+unproved. A selected policy is only a LOWER witness for that variational maximum.
+
+Independently, stable Walsh recovery now handles a dense profile neighborhood
+without exact divisibility. Four-wise information on affine eight-blocks plus
+a fixed rational dual gives count rate <=.210815164800 and a tilted near-flat
+class exponent <-.00874170 at retention15/16, tilt4. The dual was rebuilt and
+checked without an optimizer. Some fixed positive-width neighborhood is
+therefore controlled. Complementary profiles are still unbounded, and the Walsh
+affine identities do not transfer automatically to the randomized ensemble.
+
+[Complete proofs, independent audits, exact checkers, and remaining targets](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: [.4333221116640807,.5], unchanged. The full-row terminal
+comparison and a stable dense-profile counting obligation are removed in their
+declared constructions. No full cap improvement, recurrence, convergence, or
+nonconvergence follows yet. Continue the active campaign through13:37:56 UTC.
+
 #### 10.149.2 Literal coherent energy, inverse variance, and nonlocal gate scope
 
 The actual nonzero-first scalar and fixed-colored feedback projection is now
