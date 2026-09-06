@@ -1,0 +1,1902 @@
+In this section, we prove Theorem \ref{thm:dmft-approx}. We will omit arguments that are similar to ones in \cite{fan2025dynamicalI} for brevity, and focus on the differences in our setting of a non-Gaussian disorder matrix $\X$.
+
+\subsection{Kernel spaces and kernel mappings}\label{subsec:spaces}
+
+Fixing two constants $K_0,K_1>0$, we define ``envelope'' functions 
+$\Phi_{R_\theta},\Phi_{R_g},\Phi_{C_\theta},\Phi_{C_g}$ on $[0,\infty)$ via
+\begin{align}
+\frac{\d}{\d t}\Phi_{R_\theta}(t) &= K_0\left(\Phi_{R_\theta}(t) + \int_0^t
+\Phi_{R_g}(t-s)\Phi_{R_\theta}(s)\d s\right), \quad
+\Phi_{R_\theta}(0)=K_0,\label{eq:envelope-R-theta}\\
+\Phi_{R_g}(t) &= \sum_{p \geq 1} K_1^{p+1} \Phi_{R_\theta}^{\ast p}(t), \label{eq:envelope-R-g}\\
+\frac{\d}{\d t}\Phi_{C_\theta}(t) &= K_0\left(\Phi_{C_\theta}(t)
++\int_0^t \Phi_{R_g}(t-s)[\Phi_{C_\theta}(s)+\Phi_{C_\theta}(t)]\d s
++ \Phi_{C_g}(t)+1\right), \quad
+\Phi_{C_\theta}(0)=K_0,\label{eq:envelope-C-theta}\\
+\sqrt{\Phi_{C_g}(t)} &= \sum_{p \geq 0} K_1^{p+1} \Phi_{R_\theta}^{\ast p} \ast
+\sqrt{\Phi_{C_\theta}}(t),\label{eq:envelope-C-g}
+\end{align}
+where, for $a,b:[0,\infty) \to \R$, $[a*b](t)=\int_0^t a(t-s)b(s)\d s$.
+It may be verified through a Laplace transform argument that 
+this system has a unique solution, satisfying 
+$\Phi_{R_\theta},\Phi_{R_g},\Phi_{C_\theta},\Phi_{C_g} \in S(\lambda)$ 
+for all sufficiently large $\lambda>0$ where
+\[
+  S(\lambda)=
+  \left\{
+    \Phi:[0,\infty)\to \R,\;\Phi(t),\frac{\d}{\d t}\Phi(t) \geq 0 \text{ for all } t \geq 0,\;
+    \int_0^\infty e^{-\lambda t}\Phi(t)\d t<\infty
+  \right\}.
+\]
+We omit details of this verification, and refer to
+\cite[Lemma 3.1]{fan2025dynamicalI} for an analogous argument.
+
+We define from these envelope functions the following kernel spaces.
+
+\begin{definition}\label{def:S}
+Let $T>0$, let $D=\{d_1,\ldots,d_m\} \subset [0,T]$ be a finite subset,
+and call \[[0,d_1),[d_1,d_2),\ldots,[d_{m-1},d_m),[d_m,T]\] 
+the maximal intervals of $[0,T] \setminus D$. 
+
+Fixing $T$-dependent
+constants $K_0,K_1,K_2,K_3>0$ where $K_0,K_1$ define the above envelopes,
+let $\mathcal{S}_\theta^+(T,D)$ be the space of all
+pairs $(C_\theta,R_\theta)$ such that:
+    \begin{enumerate}
+    \item $C_\theta:[0,T] \times [0,T] \to \R$ is a positive-semidefinite
+covariance kernel satisfying
+\[C_\theta(t,t) \leq \Phi_{C_\theta}(t) \text{ for all } 0\leq t\leq T,\]
+and for any maximal interval $I$ of $[0,T]\setminus D$,
+        \begin{equation}\label{eq:Ctheta-cont}
+            |C_\theta(t,t)+C_\theta(s,s)-2C_\theta(t,s)| \leq  K_2|t-s|
+\text{ for all } t,s \in I.
+        \end{equation}
+        \item $R_\theta:[0,T] \times [0,T] \to \R$ is a function satisfying
+\[|R_\theta(t,s)| \leq \Phi_{R_\theta}(t-s) \text{ for all } 0 \leq s \leq t
+\leq T, \qquad R_\theta(t,s)=0 \text{ for all } s>t,\]
+and for any two maximal intervals $I,I'$ of $[0,T]\setminus D$,
+\begin{equation}\label{eq:Rtheta-cont}
+|R_\theta(t,s)-R_\theta(t',s')| \leq K_2(|t-t'|+|s-s'|) \text{ for all } t,t'\in
+I,~s,s'\in I' \text{ with } s\le t \text{ and } s'\le t'.
+\end{equation}
+\end{enumerate}
+
+Let $\mathcal{S}_g(T,D)$ be the space of all pairs
+$(C_g,R_g)$ such that:
+\begin{enumerate}
+    \item $C_g:[0,T] \times [0,T] \to \R$ is a symmetric function (not necessarily
+positive-semidefinite) satisfying
+\[C_g(t,t) \leq \Phi_{C_g}(t) \text{ for all } 0\leq t\leq T,\]
+and for any two maximal intervals $I,I'$ of $[0,T]\setminus D$,
+        \begin{equation}\label{eq:Cg-cont1}
+|C_g(t,t)+C_g(s,s)-2C_g(t,s)| \leq K_2K_3|t-s|
+\text{ for all } t,s \in I,
+\end{equation}
+\begin{equation}\label{eq:Cg-cont2}
+            |C_g(t,s)-C_g(t',s')| \leq K_2K_3(\sqrt{|t-t'|}+\sqrt{|s-s'|})
+\text{ for all } t,t' \in I,~s,s' \in I'.
+        \end{equation}
+      \item $R_g:[0,T] \times [0,T] \to \R$ is a function satisfying
+\[|R_g(t,s)| \leq \Phi_{R_g}(t-s) \text{ for all } 0 \leq s \leq t \leq T,
+\qquad R_g(t,s)=0 \text{ for all } s>t,\]
+and for any two maximal intervals $I,I'$ of $[0,T]\setminus D$,
+\begin{equation}\label{eq:Rg-cont}
+|R_g(t,s)-R_g(t',s')| \leq K_2K_3(|t-t'|+|s-s'|) \text{ for all } t,t'\in
+I,~s,s'\in I' \text{ with } s\le t \text{ and } s'\le t'.
+\end{equation}
+\end{enumerate}
+We denote by $\cS_g^+(T,D) \subset \cS_g(T,D)$
+the subset of pairs $(C_g,R_g)$ where $C_g$ is positive-semidefinite.
+\end{definition}
+
+These spaces depend on the constants $K_0,K_1,K_2,K_3>0$, although we make this
+dependence implicit in the notation. The final spaces $\cS_\theta^+,\cS_g^+$ in
+Theorem \ref{thm:dmft-approx}(a) will be the spaces of kernels
+$C_\theta,R_\theta,C_g,R_g$ on $[0,\infty) \times [0,\infty)$ whose restrictions
+to $[0,T] \times [0,T]$
+belong to $\cS_\theta^+(T,\emptyset)$ and $\cS_g^+(T,\emptyset)$ with
+$D=\emptyset$ for every $T>0$.
+
+We define a mapping
+\[\cT_{\theta \to g}:\cS_\theta^+(T,D) \to \cS_g(T,D),
+\qquad (C_\theta,R_\theta) \mapsto (C_g,R_g)\]
+by (\ref{eq:dmft-Cg}--\ref{eq:dmft-Rg}):
+\[C_g=\sum_{p,q \geq 0} \kappa_{p+q+2}\,
+R_\theta^{\ast p} * C_\theta * \bar R_\theta^{\ast q},
+\qquad
+R_g=\sum_{p \geq 1} \kappa_{p+1}\,R_\theta^{\ast p}.\]
+Note that $C_g$ is not necessarily positive-semidefinite.
+Restricting to positive-semidefinite $C_g$, we define a reverse mapping
+\[\cT_{g \to \theta}:\cS_g^+(T,D) \to \cS_\theta^+(T,\emptyset),
+\qquad (C_g,R_g) \mapsto (C_\theta,R_\theta)\]
+by (\ref{eq:dmft-Ctheta}--\ref{eq:dmft-Rtheta}):
+\[C_\theta(t,s)=\E[\theta^t \theta^s],
+\qquad R_\theta(t,s)=\E\left[\frac{\d\theta^t}{\d g^s}\right]\]
+where $\{\theta^t\}_{t \geq 0}$ and $\{\frac{\partial \theta^t}{\partial
+g^s}\}_{t \geq s \geq 0}$ solve (\ref{eq:dmft-theta}--\ref{eq:dmft-response})
+with $R_g$ and $\{g^t\}_{t \geq 0} \sim \GP(0,C_g)$. The following lemma
+verifies that these mappings are well-defined.
+
+\begin{lemma}\label{lemma:well_defined}
+Fix any $T>0$. Then for all sufficiently large ($T$-dependent)
+constants $K_0,K_1,K_2,K_3>0$ defining the spaces of Definition \ref{def:S},
+the following holds:
+
+For any finite subset $D \subset [0,T]$, given any $(C_g,R_g) \in
+\cS_g^+(T,D)$, the system (\ref{eq:dmft-theta}--\ref{eq:dmft-response}) has a
+unique solution, and $\cT_{g\to \theta}(C_g,R_g) \in \cS_\theta^+(T,\emptyset)$.
+Given any $(C_\theta,R_\theta) \in \cS_\theta^+(T,D)$, 
+the series (\ref{eq:dmft-Cg}--\ref{eq:dmft-Rg}) are pointwise convergent, and
+$\cT_{\theta\to g}(C_\theta,R_\theta) \in \cS_g(T,D)$.
+\end{lemma}
+\begin{proof}
+Given $(C_g,R_g) \in \cS_g^+(T,D)$, existence and uniqueness of $\{\theta^t\}_{t
+\in [0,T]}$ and $\{\frac{\partial \theta^t}{\partial g^s}\}_{0 \leq s \leq t
+\leq T}$ solving (\ref{eq:dmft-theta}--\ref{eq:dmft-response}) follows from the
+same argument as \cite[Lemma~3.3]{fan2025dynamicalI}, which we omit here for brevity.
+Therefore, $\cT_{g\to \theta}$ is well-defined.
+
+Let $(C_\theta,R_\theta)=\cT_{g \to \theta}(C_g,R_g)$.
+We check that $(C_\theta,R_\theta) \in \cS_\theta^+(T,\emptyset)$:
+First, according to \eqref{eq:dmft-response},
+\begin{align*}
+ & \left| \frac{\d }{\d t} \frac{\partial \theta^t}{\partial g^s}\right|
+ \leq \|f\|_\Lip \left| \frac{\partial \theta^t}{\partial g^s}\right| + \int_s^t
+\Phi_{R_g}(t-r) \left|\frac{\partial\theta^r}{\partial g^s}\right|\d r
+\end{align*} 
+where $\|f\|_\Lip<\infty$ is the Lipschitz constant of $f$.
+Noting that $\frac{\partial \theta^s}{\partial g^s}=1$ and
+comparing with \eqref{eq:envelope-R-theta}, this implies for $K_0>0$ large enough
+that
+\begin{align}\label{eq:bound-response-process} 
+\left|\frac{\partial \theta^t}{\partial g^s}\right| \leq \Phi_{R_\theta}(t-s).
+\end{align}
+Then by definition of $R_\theta$ in \eqref{eq:dmft-Rtheta},
+$|R_\theta(t,s)| \le \Phi_{R_\theta}(t-s)$ for all $0\le s\le t\le T$.
+Similarly, for any $0 \le s,t,t' \le T$ with $s \leq t' \leq t$, we have
+\begin{align}
+    |R_\theta(t,s) - R_\theta(t',s)| &\le \E\left|\frac{\partial
+\theta^t}{\partial g^s} - \frac{\partial \theta^{t'}}{\partial g^s}\right| \le
+\E \int_{t'}^t \left| \frac{\d }{\d r} \frac{\partial \theta^r}{\partial g^s}
+\right|\d r\notag\\
+    &\le \E \int_{t'}^t \left(\|f\|_\Lip \left| \frac{\partial
+\theta^r}{\partial g^s}\right| +  \int_s^r \Phi_{R_g}(r-r')
+\left|\frac{\partial\theta^{r'}}{\partial g^s}\right|\d r'\right)\d r
+    \le K_2|t-t'|,\label{eq:Rthetacontt}
+\end{align}
+the last inequality holding by \eqref{eq:bound-response-process} for some
+large enough ($T$-dependent) $K_2>0$.
+For continuity in \(s\), by the response equation \eqref{eq:dmft-response}, for
+\(t \ge s\),
+\[
+\frac{\partial \theta^t}{\partial g^s}
+=
+1+
+\int_s^t
+\left[
+f'(\theta^u)\frac{\partial \theta^u}{\partial g^s}
++
+\int_s^u R_g(u,r)\frac{\partial \theta^r}{\partial g^s}\,\d r
+\right]\d u.
+\]
+Consider any $t \geq s' \geq s$. Then
+\[
+\begin{aligned}
+\left|
+\frac{\partial \theta^{s'}}{\partial g^s}-1
+\right|
+&\le
+\int_s^{s'}
+\|f\|_\Lip \left|\frac{\partial \theta^u}{\partial g^s}\right|\,\d u
++
+\int_s^{s'}\int_s^u |R_g(u,r)|
+\left|\frac{\partial \theta^r}{\partial g^s}\right|
+\,\d r\,\d u  \le C |s'-s|,
+\end{aligned}
+\]
+the last holding by
+\eqref{eq:bound-response-process} and $|R_g(u,r)| \le \Phi_{R_g}(T)$
+for some large enough ($T$-dependent) constant $C>0$.
+Then subtracting the two response equations for
+\(\frac{\partial \theta^t}{\partial g^s}\) and
+\(\frac{\partial \theta^t}{\partial g^{s'}}\) gives
+\begin{align*}
+&\left|
+\frac{\partial \theta^t}{\partial g^s}
+-\frac{\partial \theta^t}{\partial g^{s'}}
+\right|
+\le
+\left|
+\frac{\partial \theta^{s'}}{\partial g^s}
+-1 \right| +
+\int_{s'}^t
+\|f\|_\Lip
+\left|
+\frac{\partial \theta^u}{\partial g^s}
+-
+\frac{\partial \theta^u}{\partial g^{s'}}
+\right|
+\,\d u \\
+&\quad+
+\int_{s'}^t\int_{s'}^u
+|R_g(u,r)|
+\left|
+\frac{\partial \theta^r}{\partial g^s}
+-
+\frac{\partial \theta^r}{\partial g^{s'}}
+\right|
+\,\d r\,\d u +
+\int_{s'}^t\int_s^{s'}
+|R_g(u,r)|
+\left|
+\frac{\partial \theta^r}{\partial g^s}
+\right|
+\,\d r\,\d u.
+\end{align*}
+The first and last terms are bounded by \(C|s'-s|\) for some $C>0$, and the
+second and third terms by $C \sup_{u \in [s',t]} |
+\frac{\partial \theta^u}{\partial g^s}
+-\frac{\partial \theta^u}{\partial g^{s'}}|$.
+Then by Gr\"onwall's inequality,
+\[
+\left|
+\frac{\partial \theta^t}{\partial g^s}
+-
+\frac{\partial \theta^t}{\partial g^{s'}}
+\right|
+\le
+K_2|s'-s|
+\]
+for some sufficiently large $K_2>0$. Taking expectations gives
+\begin{equation}\label{eq:Rthetaconts}
+\left|R_\theta(t,s)-R_\theta(t,s')\right| \le K_2|s'-s|.
+\end{equation}
+Combining \eqref{eq:Rthetacontt} and \eqref{eq:Rthetaconts} shows the continuity property \eqref{eq:Rtheta-cont}.
+This verifies all properties for $R_\theta$ in Definition \ref{def:S}.
+
+For the covariance kernel $C_\theta$, applying It\^o's formula to 
+the equation \eqref{eq:dmft-theta} gives
+  \begin{align*}
+      \frac{\d}{\d t} \E (\theta^t)^2 &= 2\E[\theta^t f(\theta^t)] + 2\int_0^t
+R_g(t,s)\E[\theta^t\theta^s]\d s + 2\E[\theta^t g^t] + 2\gamma\\
+      &\le K_0\left(\E(\theta^t)^2+\int_0^t \Phi_{R_g}(t-s) [\E (\theta^s)^2
++ \E (\theta^t)^2] \d s + C_g(t,t)+1\right),
+  \end{align*}
+the second inequality holding for large enough $K_0>0$
+since $\{g^t\}_{t \geq 0} \sim \GP(0,C_g)$, $f$ is Lipschitz, and $|R_g(s,r)|\le
+\Phi_{R_g}(s-r)$.
+Comparing with \eqref{eq:envelope-C-theta}, this implies 
+$C_\theta(t,t)=\E(\theta^t)^2 \le \Phi_{C_\theta}(t)$.
+Similarly, for all $s,s',t,t' \in [0,T]$, one can show
+\[
+|C_\theta(t,t)+C_\theta(s,s)-2C_\theta(t,s)| = \E (\theta^t - \theta^s)^2
+\le K_2|t-s|
+\]
+for large enough $K_2>0$. This verifies all properties for $C_\theta$ in
+Definition \ref{def:S} with $D=\emptyset$, so $(C_\theta,R_\theta) \in \cS_\theta^+(T,\emptyset)$.
+
+For the map $\cT_{\theta\to g}$, given $(C_\theta,R_\theta)\in
+\cS_\theta^+(T,D)$, note that Proposition \ref{prop:freecumulants}
+implies $|\kappa_p| \leq K_1^p$ for any sufficiently large $K_1>0$ and all
+$p \geq 1$, and $|R_\theta(t,s)| \leq \Phi_{R_\theta}(t-s)$. Then
+\[\left|\sum_{p \geq 1} \kappa_{p+1} R_\theta^{*p}(t,s)\right|
+\leq \sum_{p \geq 1} K_1^{p+1} \Phi_{R_\theta}^{*p}(t-s)
+\leq \sum_{p \geq 1} K_1^{p+1}\Phi_{R_\theta}(T)^p
+\frac{(t-s)^{p-1}}{(p-1)!}<\infty,\]
+so the series \eqref{eq:dmft-Rg} is pointwise convergent. Similarly
+\eqref{eq:dmft-Cg} is pointwise convergent, so
+$\cT_{\theta\to g}$ is well-defined.
+
+Let $(C_g,R_g)=\cT_{\theta\to g}(C_\theta,R_\theta)$. 
+Applying $|\kappa_p| \leq K_1^p$, $|R_\theta(t,s)| \leq \Phi_{R_\theta}(t-s)$,
+and
+\[
+|C_\theta(t,s)| \le \sqrt{C_\theta(t,t)}\sqrt{C_\theta(s,s)} \le \sqrt{\Phi_{C_\theta}(t)}\sqrt{\Phi_{C_\theta}(s)},
+\]
+we can verify that
+\begin{align*}
+    |R_g(t,s)| &\le \sum_{p \geq 1} K_1^{p+1}\,\Phi_{R_\theta}^{\ast p}(t-s) =
+\Phi_{R_g}(t-s),\\
+    |C_g(t,t)| &\le \sum_{p,q \geq 0} K_1^{p+q+2}\,
+(\Phi_{R_\theta}^{\ast p} \ast \sqrt{\Phi_{C_\theta}})(t) (\Phi_{R_\theta}^{\ast
+q} \ast \sqrt{\Phi_{C_\theta}})(t)\\
+&=\left(\sum_{p\ge 0} K_1^{p+1}\,
+(\Phi_{R_\theta}^{\ast p} \ast \sqrt{\Phi_{C_\theta}})(t)\right)^2 = \Phi_{C_g}(t).
+\end{align*}
+
+For any maximal interval $I$ of $[0,T] \setminus D$ and any $s,t \in I$
+with $t \geq s$, note that
+\begin{align}
+&|C_g(t,t)+C_g(s,s)-2C_g(t,s)|\notag\\
+&=\Bigg|\kappa_2\Big(C_\theta(t,t)+C_\theta(s,s)-2C_\theta(t,s)\Big)
++\sum_{p\ge 1}
+  \kappa_{p+2}
+  \int_0^t (R_\theta^{\ast p}(t,r)-R_\theta^{\ast p}(s,r))(C_\theta(r,t)
+-C_\theta(r,s))\d r \notag\\
+&\hspace{0.5in}+ \sum_{q\ge 1}
+  \kappa_{q+2}
+  \int_0^t \d u\,
+  (C_\theta(t,u)-C_\theta(s,u))
+(R_\theta^{\ast q}(t,u)-R_\theta^{\ast q}(s,u))\notag\\
+&\hspace{0.5in}+\sum_{p,q\ge 1}
+  \kappa_{p+q+2}
+  \int_0^t \d r \int_0^t \d u\,
+    (R_\theta^{\ast p}(t,r)-R_\theta^{\ast p}(s,r))C_\theta(r,u)
+    (R_\theta^{\ast q}(t,u)-R_\theta^{\ast q}(s,u))\Bigg|.\label{eq:Cgdiffexpr}
+\end{align}
+For any \(p\ge 1\) and $t \ge s\ge r$,
+\[
+R_\theta^{\ast p}(t,r)-R_\theta^{\ast p}(s,r)
+=
+\int_r^s
+\bigl(R_\theta(t,u)-R_\theta(s,u)\bigr)
+R_\theta^{\ast(p-1)}(u,r)\,\d u+
+\int_s^t
+R_\theta(t,u)R_\theta^{\ast(p-1)}(u,r)\,\d u.
+\]
+Therefore, combined with 
+\[
+|R_\theta(t,u) - R_\theta(s,u)| \leq K_2 |t-s|, \qquad |R_\theta^{\ast p}(t,s)| \le \Phi_{R_\theta}^{\ast p}(t-s) \le \frac{\Phi_{R_\theta}(T)^p (t-s)^{p-1}}{(p-1)!},
+\]
+we have that
+\begin{align*}
+|R_\theta^{\ast p}(t,r)-R_\theta^{\ast p}(s,r)|
+&\le \int_r^s
+K_2|t-s|
+\Phi_{R_\theta}^{\ast (p-1)}(u-r)\,\d u 
++
+\int_s^t \Phi_{R_\theta}(t-u)\Phi_{R_\theta}^{\ast (p-1)}(u-r)
+ \d u\\
+ &\le (K_2T+\Phi_{R_\theta}(T)) \frac{\Phi_{R_\theta}(T)^{p-1}T^{p-1}}{(p-1)!} |t-s|. 
+\end{align*}
+This bound holds also for $r \in [s,t]$, noting in this case that
+\[R_\theta^{\ast p}(t,r)-R_\theta^{\ast p}(s,r)
+=R_\theta^{\ast p}(t,r)=\int_r^t R_\theta(t,u)R_\theta^{*(p-1)}(u,r)\,\d u\]
+and applying the same argument. Applying this bound for summands of
+\eqref{eq:Cgdiffexpr} where either $p \geq 1$ or $q \geq 1$, and applying
+$|C_\theta(t,t)+C_\theta(s,s)-2C_\theta(t,s)| \leq K_2|t-s|$
+for $p=q=0$, we obtain
+\[|C_g(t,t)+C_g(s,s)-2C_g(t,s)| \leq K_2K_3|t-s|\]
+for all large enough $K_2,K_3>0$, which is the continuity property
+\eqref{eq:Cg-cont1}.
+
+Since $C_\theta$ is positive-semidefinite, writing $u \sim \GP(0,C_\theta)$,
+for any two maximal intervals $I,I'$ of $[0,T] \setminus D$ and any
+$t,t' \in I$ and $s,s' \in I'$, we have also
+\[|C_\theta(t,s)-C_\theta(t',s')|
+\leq |\E[(u^t-u^{t'})u^s]|+|\E[u^{t'}(u^s-u^{s'})]|
+\leq \sqrt{\Phi_{C_\theta}(T)} \cdot K_2(\sqrt{|t-t'|}+\sqrt{|s-s'|}),\]
+by Cauchy-Schwarz. Then applying a similar argument as above shows
+\[|C_g(t,s)-C_g(t',s')| \leq K_2K_3(\sqrt{|t-t'|}+\sqrt{|s-s'|})\]
+for all large enough $K_2,K_3>0$,
+which is the continuity property \eqref{eq:Cg-cont2}.
+Finally, for any maximal intervals $I,I'$ of
+$[0,T] \setminus D$ and $s,s' \in I$, $t,t' \in I'$ with $s \leq t$ and $s' \leq
+t'$, a similar argument as above using $|R_\theta(t,s)-R_\theta(t',s')| \leq
+K_2(|t-t'|+|s-s'|)$ checks that
+\[|R_g(t,s)-R_g(t',s')| \leq K_2K_3(|t-t'|+|s-s'|)\]
+for large enough $K_2,K_3>0$, which is \eqref{eq:Rg-cont}.
+Thus $(C_g,R_g)\in \cS_g(T,D)$.
+\end{proof}
+
+Henceforth, given $T>0$, we will fix $T$-dependent constants
+$K_0,K_1,K_2,K_3>0$ large enough such that Lemma \ref{lemma:well_defined}
+holds.
+
+\subsection{Contractivity and uniqueness of fixed point with projection}
+
+Next, we define a metric on $\cS_\theta^+$ and $\cS_g$. Fix $\lambda>0$.
+For a pair of response kernels $(R_1,R_2) \equiv (R_{\theta,1},R_{\theta,2})$ 
+or $(R_1,R_2) \equiv (R_{g,1},R_{g,2})$ satisfying the conditions of
+Definition \ref{def:S}, we define
+\begin{align}\label{eq:metric-response}
+  d_\lambda(R_1, R_2) = \sup_{0 \leq s \leq t \leq T} e^{-\lambda
+t}|R_1(t,s)-R_2(t,s)|.
+\end{align} 
+For a pair of (not necessarily positive-semidefinite) correlation kernels
+$(C_1,C_2) \equiv (C_{\theta,1},C_{\theta,2})$ 
+or $(C_1,C_2) \equiv (C_{g,1},C_{g,2})$ satisfying the conditions of
+$\cS_\theta^+$/$\cS_g$ in Definition \ref{def:S}, we define
+\begin{align}\label{eq:hilbertinnerproduct}
+\langle C_1, C_2 \rangle_{\lambda}=\int_0^T \int_0^T e^{-2\lambda
+(t\vee s)}C_1(t,s) C_2(t,s)\,\d t\,\d s,
+\qquad \|C\|_\lambda=\langle C,C \rangle_{\lambda}^{1/2}
+ \end{align} 
+and the metric
+\begin{align}
+\label{eq:metric-covariance}
+  d_\lambda(C_1, C_2)=\|C_1-C_2\|_\lambda= \sqrt{\int_0^T \int_0^T e^{-2\lambda (t\vee s)}(C_1(t,s) - C_2(t,s))^2 \,\d t \,\d s}.
+\end{align}
+Finally, for either
+$(C,R) \equiv (C_\theta,R_\theta)$ or $(C,R) \equiv (C_g,R_g)$, we set
+\[d_\lambda((C_1,R_1),(C_2,R_2))
+=d_\lambda(R_1,R_2)+d_\lambda(C_1,C_2).\]
+By the uniform continuity properties of the kernels on $[0,T] \setminus D$
+in Definition \ref{def:S},
+this defines a valid metric $d_\lambda$ on both $\cS_\theta^+$ and
+$\cS_g$.
+
+\begin{lemma}[Contractivity of $\cT_{g \to \theta}$]\label{lem:contraction-Rtheta}
+Let $X_i=(C_{g,i},R_{g,i})\in \mathcal{S}_{g}^+(T,D)$ for $i=1,2$, and let
+$Y_i=(C_{\theta,i},R_{\theta,i})=\cT_{g \to \theta}(C_{g,i},R_{g,i})$.
+Then for any fixed $0<\alpha<1$ and all sufficiently large $\lambda>0$
+(depending on $\alpha,T$),
+\begin{align}\label{equation:contraction_Rfix}
+d_\lambda(Y_1,Y_2) \leq \alpha\cdot d_\lambda(X_1,X_2).
+\end{align}
+\end{lemma}
+\begin{proof}
+We first consider $C_{g,1}=C_{g,2} \equiv C_g$ and different $R_{g,1},R_{g,2}$.
+Coupling the processes $\{\theta_i^t\}_{t \geq 0}$ 
+and $\{\frac{\partial \theta_i^t}{\partial g^s}\}_{t \geq s \geq 0}$ 
+solving (\ref{eq:dmft-theta}--\ref{eq:dmft-response}) with $R_{g,i}$
+by the same realizations of $\{g^t\}_{t \in [0,T]} \sim \GP(0,C_g)$ and
+$\{b^t\}_{t \in [0,T]}$, a Gr\"onwall
+argument (c.f.\ \cite[Lemma 3.7]{fan2025dynamicalI}) shows,
+for all sufficiently large $\lambda>0$ and a constant $C>0$ not depending on
+$\lambda$,
+\begin{align*}
+\sup_{0 \leq t \leq T} e^{-2\lambda t}\E(\theta_1^t-\theta_2^t)^2 \leq
+\frac{C}{\lambda}\,d_\lambda(R_{g,1},R_{g,2})^2,\\
+\sup_{0 \leq s \leq t \leq T}
+e^{-\lambda t}
+\E \left|\frac{\partial \theta_1^t}{\partial g^s} - \frac{\partial
+\theta_2^t}{\partial g^s}\right| \leq \frac{C}{\lambda}
+\,d_\lambda(R_{g,1},R_{g,2}).
+\end{align*}
+The second inequality implies
+$d_\lambda(R_{\theta,1},R_{\theta,2}) \leq \frac{C}{\lambda}
+d_\lambda (R_{g,1},R_{g,2})$. By Cauchy-Schwarz,
+\begin{align*}
+|C_{\theta,1}(t,s)-C_{\theta,2}(t,s)|^2 &\leq 2\E(\theta_1^t-\theta_2^t)^2\E(\theta_1^s)^2 + 2\E(\theta_2^t)^2\E(\theta_1^s-\theta_2^s)^2\\
+&\leq 2\Phi_{C_\theta}(T)\left( \E(\theta_1^t-\theta_2^t)^2 + \E(\theta_1^s-\theta_2^s)^2 \right). \end{align*}
+Integrating both sides, we have
+\[d_{\lambda}(C_{\theta,1}, C_{\theta,2})^2
+=\int_0^T\int_0^T e^{-2\lambda(t \vee s)}
+|C_{\theta,1}(t,s)-C_{\theta,2}(t,s)|^2\,\d t\, \d s
+\leq 4\Phi_{C_\theta}(T)T^2
+\sup_{0 \leq t \leq T} e^{-2\lambda t}\E(\theta_1^t-\theta_2^t)^2,\]
+so the first inequality implies 
+$d_{\lambda}(C_{\theta,1},C_{\theta,2}) \leq \frac{C'}{\sqrt{\lambda}}
+d_\lambda (R_{g, 1}, R_{g, 2})$. Thus, for any $\alpha \in (0,1)$ and all large
+enough $\lambda>0$,
+\begin{equation}\label{eq:contractionsameCg}
+d_\lambda(Y_1,Y_2) \leq \alpha \cdot d_\lambda(R_{g,1},R_{g,2}).
+\end{equation}
+
+We next consider $R_{g,1}=R_{g,2} \equiv R_g$ and different $C_{g,1},C_{g,2}$.
+For $u \in [0,1]$, define the interpolation $C_u=(1-u)C_{g,1}+uC_{g,2}$,
+and let $g_u \sim \GP(0,C_u)$.
+Note that $C_u$ induces a positive-semidefinite, trace-class covariance operator
+$Q_u$ on $\mathcal{H}:=L^2([0,T])$, given by
+\[
+    (Q_u\varphi)(r)
+    :=
+    \int_0^T C_u(r,r')\varphi(r')\,\d r',
+    \qquad
+    \varphi\in \mathcal{H}.
+\]
+Let $\{e_k\}_{k\ge 1}$ be an orthonormal basis of
+$\mathcal{H}$, and let $\{\xi_k\}_{k\ge 1}$ be i.i.d.~standard Gaussian random
+variables. Then we may realize $g_u \sim \GP(0,C_u)$ as
+$g_u=\sum_{k\ge 1}Q_u^{1/2}e_k \cdot \xi_k$.
+
+Fixing an integer $N \geq 1$, define $\Pi_N : {\mathcal H}\to {\sp(e_1,\ldots, e_N)}$ as the orthogonal projection onto the subspace spanned by $e_1,\ldots,e_N$. Consider the truncation
+$g_{u,N}:=\Pi_N g_u$, 
+and define $\theta_{g_{u,N}}$ by
+\[
+    \d \theta_{g_{u,N}}^t
+    =
+        \left[f(\theta_{g_{u,N}}^t)
+        +
+        \int_0^t R_g(t,s)\theta_{g_{u,N}}^s \d s
+        +
+        g_{u,N}^t \right]
+    \d t + \sqrt{2\gamma}\,\d b^t, \qquad \theta_{g_{u,N}}^0=\theta^0.
+\] 
+Let us compute
+$\frac{\d}{\d u} \E[\theta_{g_{u,N}}^t\theta_{g_{u,N}}^s]$:
+For any $h\in \mathcal{H}$, define $\{\theta_h^t\}_{t \geq 0}$ by
+\[
+    \theta_{h}^t
+    =
+    \theta^0
+    +
+    \int_0^t
+    \left[
+        f(\theta_{h}^s)
+        +
+        \int_0^s R_g(s,r)\theta_{h}^r \d r
+        +
+        {h}^s
+    \right]
+    \d s + \sqrt{2\gamma}\,b^t.
+\]
+By \cite[Theorem 2.5]{wang2017stochastic}, for any $h,k,l \in \cH$,
+the above equation has a unique solution $\{\theta_h^t\}_{t \geq 0}$, and
+there exist directional derivative processes
+$D_k\theta_h$ and $D_{kl}^2 \theta_h$ on $[0,T]$
+for which
+\[\lim_{\eps \to 0}
+\E_{\{b^t\}}\left(\frac{\theta_{h+\eps k}^t-\theta_h^t}{\eps}
+-D_k\theta_h^t\right)^2=0,
+\qquad \lim_{\eps \to 0}
+\E_{\{b^t\}}\left(\frac{D_k\theta_{h+\eps l}^t-D_k\theta_h^t}{\eps}
+-D_{kl}^2\theta_h^t\right)^2=0\]
+where $\E_{\{b^t\}}$ is the expectation over the Brownian motion
+$\{b^t\}_{t \geq 0}$. Then 
+$\E_{\{b^t\}}[\theta_{h+\eps k+\eps'l}^t
+\theta_{h+\eps k+\eps'l}^s]$ is twice continuously-differentiable in
+$(\eps,\eps')$, and 
+\begin{equation}\label{eq:thetatssecondder}
+\partial_\eps\partial_{\eps'}
+\E_{\{b^t\}}[\theta_{h+\eps k+\eps'l}^t
+\theta_{h+\eps k+\eps'l}^s]\big|_{\eps=\eps'=0}
+=\E_{\{b^t\}}\Big[(D_{kl}^2\theta_h^t)\theta_h^s
++\theta_h^t (D_{kl}^2\theta_h^s)+(D_k\theta_h^t)(D_l\theta_h^s)
++(D_l\theta_h^t)(D_k\theta_h^s)\Big].
+\end{equation}
+Furthermore by \cite[Theorem 2.5]{wang2017stochastic}, $D_k\theta_h$ and
+$D_{kl}^2\theta_h$ are the unique solutions of
+\begin{align*}
+    D_k\theta_h^t
+    &=
+    \int_0^t
+    \left[
+        f'(\theta_h^s)D_k\theta_h^s
+        +
+        \int_0^s R_g(s,r) D_k\theta_h^r \d r
+        +
+        k^s
+    \right]
+    \d s,\\
+    D_{kl}^2\theta^t
+    &=
+    \int_0^t
+    \left[
+        f''(\theta_h^s)
+        (D_k\theta_h^s)(D_l\theta_h^s)
+        +f'(\theta_h^s)D_{kl}^2 \theta_h^s
+        + \int_0^s R_g(s,r) D_{kl}^2\theta_h^r \d r
+    \right]
+    \d s.
+\end{align*}
+Equivalently, define first-order and second-order response kernels $J_h,K_h$ by
+\begin{align*}
+    J_h(t,r)
+    &=
+    1
+    +
+    \int_r^t
+    \left[
+        f'(\theta_h^s)J_h(s,r)
+        +
+        \int_r^s R_g(s,r')J_h(r',r)\d r
+    \right]
+    \d s\\
+    K_h(t,r,r')
+    &=
+    \int_{r \vee r'}^t
+    \bigg[
+        f''(\theta_h^s)J_h(s,r)J_h(s,r')
+        +
+        f'(\theta_h^s)K_h(s,r,r')
+        +
+        \int_{r \vee r'}^s R_g(s,s') K_h(s',r,r') \d s' 
+    \bigg]
+    \d s
+\end{align*}
+for $t \geq \max(r,r')$, and $J_h(t,r)=0$ and $K_h(t,r,r')=0$ if $t<r$ and/or
+$t<r'$. Then it may be checked that the above solutions are given by
+\begin{equation}\label{eq:second-deriv-representation}
+D_k\theta_h^t=\int_0^T J_h(t,r) k^r\,\d r,
+\qquad
+D_{kl}^2\theta_h^t=\int_0^T \int_0^T K_h(t,r,r')k^r l^{r'}\,\d r\,\d r'.
+\end{equation}
+Hence \eqref{eq:thetatssecondder} takes the form
+\begin{align*}
+\partial_\eps\partial_{\eps'}
+\E_{\{b^t\}}[\theta_{h+\eps k+\eps'l}^t
+\theta_{h+\eps k+\eps'l}^s]\big|_{\eps=\eps'=0}
+&=\int_0^T \int_0^T H_h(t,s;r,r')k^r l^{r'}\,\d r\,\d r',
+\end{align*}
+where
+\begin{align*}
+    H_h(t,s;r,r')
+    &:=
+    K_h(t,r,r')\theta_h^s
+    +
+    K_h(s,r,r')\theta_h^t
+    +
+    J_h(t,r)J_h(s,r')
+    +
+    J_h(t,r')J_h(s,r).
+\end{align*}
+Then, by the finite-dimensional Gaussian interpolation formula
+(see e.g.\ \cite[Lemma 7.2.7]{vershynin2018high}),
+\begin{align}
+    \frac{\d}{\d u}\E[\theta_{g_{u,N}}^t\theta_{g_{u,N}}^s]
+&=\frac{\d}{\d u}\E[\E_{\{b^t\}}[\theta_{g_{u,N}}^t\theta_{g_{u,N}}^s]]\notag\\
+    &=
+    \frac12
+    \sum_{i,j=1}^N
+    \bigl\langle (Q_1-Q_0)e_i,e_j\bigr\rangle_{\mathcal{H}}
+    \,
+    \E
+\left[\partial_\eps\partial_{\eps'}
+\E_{\{b^t\}}[\theta_{g_{u,N}+\eps e_i+\eps'e_j}^t
+\theta_{g_{u,N}+\eps e_i+\eps'e_j}^s]\big|_{\eps=\eps'=0}\right]
+    \notag\\
+    &=
+    \frac12
+    \sum_{i,j=1}^N
+    \bigl\langle (Q_1-Q_0)e_i,e_j\bigr\rangle_{\mathcal{H}}
+    \,
+    \E\left[
+        \int_0^T\int_0^T
+        H_{g_{u,N}}(t,s;r,r')
+        e_i^re_j^{r'}
+        \,\d r\,\d r'
+    \right].\label{eq:duCg}
+\end{align}
+
+By the Parseval identity, as $N \to \infty$,
+\[\sum_{i,j=1}^N
+    \bigl\langle (Q_1-Q_0)e_i,e_j\bigr\rangle_{\mathcal{H}}
+    e_i^re_j^{r'} \to (C_{g,2}-C_{g,1})(r,r')
+\]
+in $L^2([0,T] \times [0,T])$.
+Also as $N \to \infty$, $g_{u,N} \to g_u$ in $L^2([0,T])$. Then
+applying a Gr\"onwall argument to the definitions of the above processes
+shows that $\theta_{g_{u,N}} \to \theta_{g_u}$ and
+$J_{g_{u,N}}(t,\cdot) \to J_{g_u}(t,\cdot)$
+in $L^2([0,T])$, and $K_{g_{u,N}}(t,\cdot,\cdot) \to
+K_{g_u}(t,\cdot,\cdot)$ and
+$H_{g_{u,N}}(t,s;\cdot,\cdot) \to H_{g_u}(t,s;\cdot,\cdot)$
+in $L^2([0,T] \times [0,T])$. Then,
+integrating \eqref{eq:duCg} over $u \in [0,1]$ and taking the limit $N \to
+\infty$,
+\[(C_{\theta,2}-C_{\theta,1})(t,s)
+=\E[\theta_{g_1}^t\theta_{g_1}^s]
+-\E[\theta_{g_0}^t\theta_{g_0}^s]
+    =\int_0^1 \d u\left(
+    \frac12
+    \int_0^T\int_0^T
+    (C_{g,2}-C_{g,1})(r,r')
+    \E\left[
+        H_{g_u}(t,s;r,r')
+    \right]
+    \,\d r\,\d r'\right).
+\]
+As $f',f''$ are bounded and $R_g$ is bounded on $[0,T]$,
+a Gr\"onwall argument checks that $J_h(t,r)$ and $K_h(t,r,r')$ are both uniformly
+bounded over $t,r,r' \in [0,T]$ and $h =g_u$ for all $u \in [0,1]$. Then
+$\E[H_{g_u}(t,s;r,r')]$ is also uniformly bounded over $t,s,r,r' \in [0,T]$
+and $u \in [0,1]$.  Furthermore, $\E[H_{g_u}(t,s;r,r')]=0$ unless $r,r' \leq
+\max(t,s)$. Thus, there exists a $T$-dependent constant $C>0$ for which
+\begin{align*}
+|(C_{\theta,2}-C_{\theta,1})(t,s)|
+&\leq C\int_0^{t \vee s}\int_0^{t \vee s}
+    |(C_{g,2}-C_{g,1})(r,r')|\,\d r\,\d r'
+\end{align*}
+Then by Cauchy-Schwarz, for $T$-dependent constants $C',C''>0$ (not depending on
+$\lambda$),
+\begin{align*}
+&d_\lambda(C_{\theta,1},C_{\theta,2})^2
+=\int_0^T \int_0^T e^{-2\lambda(t \vee s)}
+(C_{\theta,2}(t,s)-C_{\theta,1}(t,s))^2\d t\,\d s\\
+&\leq C'\int_0^T\d t\int_0^T \d s\,
+e^{-2\lambda(t \vee s)}
+\int_0^{t \vee s}\d r\int_0^{t \vee s} \d r'
+    (C_{g,2}(r,r')-C_{g,1}(r,r'))^2\\
+&=C'\int_0^T \d r\int_0^T \d r'
+e^{-2\lambda(r \vee r')}
+(C_{g,2}(r,r')-C_{g,1}(r,r'))^2
+\mathop{\int_0^T \d t\int_0^T\d s} \1_{t \vee s \geq r \vee r'}
+e^{-2\lambda(t \vee s)+2\lambda(r \vee r')}\\
+&\leq \frac{C''}{\lambda}
+\int_0^T \d r\int_0^T \d r'
+e^{-2\lambda(r \vee r')}
+(C_{g,2}(r,r')-C_{g,1}(r,r'))^2
+=\frac{C''}{\lambda}d_\lambda(C_{g,1},C_{g,2})^2.
+\end{align*}
+Thus for any $\alpha \in (0,1)$ and all sufficiently large $\lambda$,
+$d_\lambda(C_{\theta,1},C_{\theta,2}) \leq
+\alpha \cdot d_\lambda(C_{g,1},C_{g,2})$.
+
+The analysis of the response $R_\theta$ is similar: Fixing $s \in [0,T]$,
+there exist directional derivative processes
+$D_kJ_h(\cdot,s)$
+and $D_{kl}^2J_h(\cdot,s)$ over $t \in [s,T]$ for which
+\begin{align*}
+\lim_{\eps \to 0}
+\E_{\{b^t\}}\left(\frac{J_{h+\eps k}(t,s)-J_h(t,s)}{\eps}
+-D_kJ_h(t,s)\right)^2&=0,\\
+\qquad \lim_{\eps \to 0}
+\E_{\{b^t\}}\left(\frac{D_kJ_{h+\eps l}(t,s)-D_kJ_h(t,s)}{\eps}
+-D_{kl}^2J_h(t,s)\right)^2&=0.
+\end{align*}
+These are the unique solutions of the equations
+\begin{align*}
+D_kJ_h(t,s)
+    &=
+    \int_s^t
+    \left[
+        f''(\theta_h^a)(D_k\theta_h^a)J_h(a,s)
+        +
+        f'(\theta_h^a)D_kJ_h(a,s)
+        +
+        \int_s^a R_g(a,b)D_kJ_h(b,s)\d b
+    \right]\d a,\\
+    D_{kl}^2J_h(t,s)
+    &=
+    \int_s^t
+    \bigg[
+        \Bigl(
+            f'''(\theta_h^a)(D_k\theta_h^a)(D_l\theta_h^a)
+            +
+            f''(\theta_h^a)D_{kl}^2\theta_h^a
+        \Bigr)J_h(a,s)
+        +
+        f''(\theta_h^a)(D_k\theta_h^a)D_lJ_h(a,s)
+        \\
+        &\qquad
+        +
+        f''(\theta_h^a)(D_l\theta_h^a)D_kJ_h(a,s)
+                +
+        f'(\theta_h^a)D_{kl}^2J_h(a,s)
+        +
+        \int_s^a R_g(a,b) D_{kl}^2J_h(b,s) \d b
+    \bigg]\d a .
+\end{align*}
+Analogously to \eqref{eq:second-deriv-representation},
+we may represent these solutions as
+\[
+    D_kJ_h(t,s)
+    =
+    \int_0^T M_h(t,s;r)k^r\,\d r,\qquad
+    D_{kl}^2J_h(t,s)
+    =
+    \int_0^T\int_0^T
+    L_h(t,s;r,r')k^rl^{r'}\,\d r\,\d r',
+\]
+where $M_h,L_h$ are the response processes
+\begin{align*}
+M_h(t,s;r)
+    &=
+    \int_s^t
+    \left[
+        f''(\theta_h^a)J_h(a,r)J_h(a,s)
+        +
+        f'(\theta_h^a)M_h(a,s;r)
+        +
+        \int_s^a R_g(a,b)M_h(b,s;r)\d b
+    \right]\d a,\\
+    L_h(t,s;r,r')
+    &=
+    \int_s^t
+    \bigg[
+        \Bigl(
+            f'''(\theta_h^a)J_h(a,r)J_h(a,r')
+            +
+            f''(\theta_h^a)K_h(a,r,r')
+        \Bigr)J_h(a,s)
+        +
+        f''(\theta_h^a)J_h(a,r)M_h(a,s;r')
+        \\
+        &\qquad
+        +
+        f''(\theta_h^a)J_h(a,r')M_h(a,s;r)
+        +
+        f'(\theta_h^a)L_h(a,s;r,r')
+        +
+        \int_s^a R_g(a,b)L_h(b,s;r,r')\d b
+    \bigg]\d a.
+\end{align*}
+Applying the finite-dimensional Gaussian interpolation formula, we have
+\begin{align*}
+    \frac{\d}{\d u}\E J_{g_{u,N}}(t,s)
+    &=
+    \frac12
+    \sum_{i,j=1}^N
+    \bigl\langle (Q_1-Q_0)e_i,e_j\bigr\rangle_{\cH}
+    \,
+    \E\left[
+        \partial_\eps \partial_{\eps'}J_{g_{u,N}+\eps e_i+\eps'
+e_j}(t,s)\big|_{\eps=\eps'=0}
+    \right]
+    \\
+    &=
+    \frac12
+    \sum_{i,j=1}^N
+    \bigl\langle (Q_1-Q_0)e_i,e_j\bigr\rangle_{\cH}
+    \,
+    \E\left[
+        \int_0^T\int_0^T
+        L_{g_{u,N}}(t,s;r,r')
+        e_i^re_j^{r'}
+        \,\d r\,\d r'
+    \right].
+\end{align*}
+Integrating over $u \in [0,1]$, taking the limit $N \to \infty$, and applying
+that $L_{g_u}(t,s;r,r')$ is uniformly bounded and is equal to 0 unless
+$r,r' \leq t$, we get
+\[|(R_{\theta,2}-R_{\theta,1})(t,s)|
+=\left|\lim_{N \to \infty} \E J_{g_{1,N}}(t,s)-\E J_{g_{0,N}}(t,s)\right|
+\leq C \int_0^t\int_0^t
+|(C_{g,2}-C_{g,1})(r,r')|\d r\,\d r'.
+\]
+Then, for constants $C,C'>0$ depending on $T$ but not $\lambda$,
+\begin{align*}
+d_\lambda(R_{\theta,1},R_{\theta,2})
+&=\sup_{0 \leq s \leq t \leq T}
+e^{-\lambda t}|R_{\theta,1}(t,s)-R_{\theta,2}(t,s)|\\
+&\leq C\sup_{t \in [0,T]}
+\int_0^t\int_0^t
+e^{-\lambda t+\lambda(r \vee r')}
+e^{-\lambda (r \vee r')}|C_{g,2}(r,r')-C_{g,1}(r,r')|\d r\,\d r'\\
+&\leq C\sup_{t \in [0,T]}
+\left(\int_0^t \int_0^t
+e^{-2\lambda t+2\lambda(r \vee r')} \d r\,\d r'\right)^{1/2}
+d_\lambda(C_{g,1},C_{g,2}) \leq
+\frac{C'}{\sqrt{\lambda}}d_\lambda(C_{g,1},C_{g,2}).
+\end{align*}
+Combining these bounds for $C_\theta$ and $R_\theta$,
+for any $\alpha \in (0,1)$ and all large enough $\lambda>0$,
+\begin{equation}\label{eq:contractionsameRg}
+d_\lambda(Y_1,Y_2) \leq \alpha \cdot d_\lambda(C_{g,1},C_{g,2})
+\end{equation}
+
+The lemma then follows from applying \eqref{eq:contractionsameCg} to bound
+$d_\lambda(\cT_{g \to \theta}(C_{g,1},R_{g,1}),
+\cT_{g \to \theta}(C_{g,1},R_{g,2}))$, and then
+\eqref{eq:contractionsameRg} to bound
+$d_\lambda(\cT_{g \to \theta}(C_{g,1},R_{g,2}),
+\cT_{g \to \theta}(C_{g,2},R_{g,2}))$.
+\end{proof}
+
+\begin{lemma}[Lipschitz continuity of $\cT_{\theta \to g}$]
+\label{lem:contraction-Lipschitz}
+    Let $Y_i=(C_{\theta,i},R_{\theta,i}) \in \cS_\theta^+(T,D)$ for $i=1,2$, and
+let $X_i=(C_{g,i},R_{g,i})=\cT_{\theta\to g}(Y_i)$. Then there exists a constant
+$C>0$ not depending on $\lambda$ such that for all sufficiently large
+$\lambda>0$, 
+    \[
+    d_\lambda(X_1,X_2) \leq C\cdot d_\lambda(Y_1,Y_2).
+    \]
+\end{lemma}
+
+\begin{proof}
+We have
+\[
+\begin{aligned}
+  C_{g,1}(t,s)-C_{g,2}(t,s)
+  &=
+  \sum_{p,q\ge 0}
+  \kappa_{p+q+2}
+  \bigl(
+    R_{\theta,1}^{\ast p}\ast (C_{\theta,1}-C_{\theta,2})
+    \ast \bar R_{\theta,1}^{\ast q}
+  \bigr)(t,s) \\
+  &\hspace{0.5in}
+  +
+  \sum_{p,q\ge 0}
+  \kappa_{p+q+2}
+  \bigl[
+    \bigl(R_{\theta,1}^{\ast p}\ast C_{\theta,2}\ast \bar R_{\theta,1}^{\ast q}\bigr)(t,s) -
+    \bigl(R_{\theta,2}^{\ast p}\ast C_{\theta,2}\ast \bar R_{\theta,2}^{\ast q}\bigr)(t,s)
+  \bigr].
+\end{aligned}
+\]
+Consequently, 
+\(
+  d_\lambda(C_{g,1},C_{g,2}) \leq I_C+I_R,
+\)
+where
+\begin{align*}
+  I_C
+  &:=\sum_{p,q\ge 0}
+  |\kappa_{p+q+2}| \cdot
+  \big\|
+    R_{\theta,1}^{\ast p}\ast (C_{\theta,1}-C_{\theta,2})
+    \ast \bar R_{\theta,1}^{\ast q}\big\|_\lambda,\\
+  I_R
+  &:=\sum_{p,q\ge 0}
+  |\kappa_{p+q+2}| \cdot
+  \big\|\bigl(R_{\theta,1}^{\ast p}\ast C_{\theta,2}\ast \bar R_{\theta,1}^{\ast
+q}\bigr)(t,s)-\bigl(R_{\theta,2}^{\ast p}\ast C_{\theta,2}\ast \bar
+R_{\theta,2}^{\ast q}\bigr)\big\|_\lambda.
+\end{align*}
+We first bound \(I_C\). Note that
+$|R_{\theta,1}(t,s)|\le \Phi_{R_\theta}(t-s)$ for all $0\le s\le t\le T$, and
+\[\|\Phi_{R_\theta}^{\ast p}\|_{L^1([0,T])}
+\le \frac{(\Phi_{R_\theta}(T) T)^{p}}{p!}.\]
+For $p,q \geq 1$,
+\begin{align*}
+&\big\|
+    R_{\theta,1}^{\ast p}\ast (C_{\theta,1}-C_{\theta,2})
+    \ast \bar R_{\theta,1}^{\ast q}\big\|_\lambda^2\\
+    &=\int_0^T \int_0^T e^{-2\lambda(t \vee s)}
+  \left(\int_0^t \d t'\int_0^s \d s'
+  R_{\theta,1}^{*p}(t,t')
+  (C_{\theta,1}-C_{\theta,2})(t',s')
+  R_{\theta,1}^{*q}(s,s')\right)^2\d t\, \d s\\
+  &\leq C \int_0^T \int_0^T e^{-2\lambda(t \vee s)}
+  \int_0^t \d t'\int_0^s \d s'
+  R_{\theta,1}^{*p}(t,t')^2
+  (C_{\theta,1}-C_{\theta,2})(t',s')^2
+  R_{\theta,1}^{*q}(s,s')^2\d t\, \d s\\
+  &\leq C\int_0^T \d t'\int_0^T \d s'
+  e^{-2\lambda(t' \vee s')}
+  (C_{\theta,1}-C_{\theta,2})(t',s')^2
+  \int_{t'}^T  \d t \int_{s'}^T \d s
+  R_{\theta,1}^{*p}(t,t')^2
+  R_{\theta,1}^{*q}(s,s')^2\\
+  &\leq C'\|C_{\theta,1}-C_{\theta,2}\|_\lambda^2 \|\Phi_{R_\theta}^{*p}\|_{L^1([0,T])}^2
+  \|\Phi_{R_\theta}^{*q}\|_{L^1([0,T])}^2,
+\end{align*}
+where $C,C'>0$ are $T$-dependent constants independent of $p,q$. The same bound holds for $p=0$ and/or $q=0$. Thus
+\begin{align*}
+  I_C 
+  &\le C\sum_{p,q\ge 0} |\kappa_{p+q+2}| \frac{(\Phi_{R_\theta}(T) T)^p}{p!} \frac{(\Phi_{R_\theta}(T) T)^q}{q!} \|C_{\theta,1}-C_{\theta,2}\|_\lambda
+\leq C'd_\lambda(C_{\theta,1},C_{\theta,2})
+\end{align*}
+for constant $C,C'>0$ not depending on $\lambda$.
+
+We now bound \(I_R\). First,
+we have $|C_{\theta,2}(t,s)|
+  \le C_{\theta,2}(t,t)^{1/2} C_{\theta,2}(s,s)^{1/2} \le 
+  \Phi_{C_\theta}(T)$.
+Next, for the product of response kernels, writing $t_0=t$ and $s_0=s$,
+\begin{align*}
+&\left|
+  \prod_{a=0}^{p-1}R_{\theta,1}(t_a,t_{a+1})
+  \prod_{b=0}^{q-1}R_{\theta,1}(s_b,s_{b+1})
+  -
+  \prod_{a=0}^{p-1}R_{\theta,2}(t_a,t_{a+1})
+  \prod_{b=0}^{q-1}R_{\theta,2}(s_b,s_{b+1})
+\right|\\
+&\le e^{\lambda(t\vee s)}
+\left(
+    \sup_{0\le r\le q\le T}
+    e^{-\lambda q}|R_{\theta,1}(q,r)-R_{\theta,2}(q,r)|
+  \right)
+\sum_{\ell=1}^{p+q}
+\prod_{m\ne \ell} \Phi_{R_\theta}(\xi_m),
+\end{align*}
+where \(\{\xi_m\}_{m=1}^{p+q}\) denotes the collection of increments
+  $t_0-t_1,\ldots,t_{p-1}-t_p,
+  s_0-s_1,\ldots,s_{q-1}-s_q$.
+(The empty product is interpreted as \(1\).) 
+Hence, integrating over $t_1,\ldots,t_p$ and $s_1,\ldots,s_q$,
+\[
+  I_R
+  \le
+  Cd_\lambda(R_{\theta,1},R_{\theta,2})
+  \int_0^T\int_0^T
+    \sum_{p,q\ge 0}
+    |\kappa_{p+q+2}|(p+q)\Phi_{R_\theta}(T)^{p+q-1}
+    \frac{t^p}{p!}\frac{s^q}{q!}\,
+  \d t \d s.
+\]
+This shows
+$I_R \le C d_\lambda(R_{\theta,1}, R_{\theta,2})$ for a constant $C>0$ not
+depending on $\lambda$. Therefore,
+\begin{align*}
+   d_{\lambda}(C_{g,1},C_{g,2}) \le C d_\lambda(Y_1,Y_2).
+  \end{align*}
+  By \eqref{eq:dmft-Rg} and a similar argument omitted for brevity,
+  $d_{\lambda}(R_{g,1}, R_{g,2}) \le Cd_{\lambda}(R_{\theta,1}, R_{\theta,2})$.
+Thus
+    $d_\lambda(X_1,X_2) \leq Cd_\lambda(Y_1,Y_2)$.
+\end{proof}
+
+Fixing $T>0$, define the projection
+\[\cP_D:\cS_g(T,D) \to \cS_g^+(T,D),
+\qquad (C_g,R_g) \mapsto (C_g^+,R_g)\]
+that preserves $R_g$ and projects $C_g$ onto the subset $\cS_g^+(T,D)$ of the positive-semidefinite cone
+\begin{equation}\label{eq:hilbertprojection}
+C_g^+=\operatorname{arg\,min}_{C \in \cS_g^+(T,D)} \|C-C_g\|_\lambda
+\end{equation}
+in the weighted $L^2$-metric $d_\lambda$. We note that if $(C_g^{(m)},R_g^{(m)}) \in \cS_g^+(T,D)$
+for $m=1,2,\ldots$ is a Cauchy sequence under $d_\lambda$,
+then by completeness of the weighted $L^\infty$-metric
+$d_\lambda(R_{g,1},R_{g,2})$, there exists $R_g:[0,T] \times [0,T] \to \R$ for
+which
+\begin{equation}\label{eq:Rgcauchy}
+\lim_{m \to \infty} \sup_{s,t \in [0,T]} |R_g^{(m)}(t,s)-R_g(t,s)|=0.
+\end{equation}
+By completeness of the weighted $L^2$-metric $d_\lambda(C_{g,1},C_{g,2})$,
+there also exists $C_g:[0,T] \times [0,T] \to \R$ for which
+$\|C_g\|_\lambda<\infty$
+and $\lim_{m \to \infty} d_\lambda(C_g^{(m)},C_g)=0$. 
+Then the continuity condition \eqref{eq:Cg-cont2} for each kernel $C_g^{(m)}$
+implies there exists
+a modification $\tilde C_g:[0,T] \times [0,T] \to \R$ of $C_g$ (equal to $C_g$
+Lebesgue-a.e.) for which
+\begin{equation}\label{eq:Cgcauchy}
+\lim_{m \to \infty} \sup_{s,t \in [0,T]} |C_g^{(m)}(t,s)-\tilde C_g(t,s)|=0.
+\end{equation}
+The statements \eqref{eq:Rgcauchy} and \eqref{eq:Cgcauchy} imply that $R_g$ and $\tilde C_g$ satisfy all conditions of
+$\cS_g^+(T,D)$, so $(\tilde C_g,R_g) \in \cS_g^+(T,D)$,
+and $d_\lambda((C_g^{(m)},R_g^{(m)}),(\tilde C_g,R_g)) \to 0$.
+Then $\cS_g^+(T,D)$ is a
+closed, convex subset of $\cS_g(T,D)$ under $d_\lambda$, so the
+projection \eqref{eq:hilbertprojection} is well-defined. Furthermore, by the
+non-expansive property of projections in a Hilbert space,
+\begin{equation}\label{eq:projectioncontractive}
+d_\lambda(C_{g,1}^+,C_{g,2}^+) \leq d_\lambda(C_{g,1},C_{g,2}).
+\end{equation}
+
+Lemma \ref{lemma:well_defined} then implies that
+\[\cT_{g \to g}^D:=\cP_D \circ \cT_{\theta \to g} \circ \cT_{g \to \theta}\]
+is a well-defined mapping from $\cS_g^+(T,D)$ to itself. The following corollary
+collects the preceding results to show that this mapping is contractive in
+$d_\lambda$ and has a unique fixed point in $\cS_g^+(T,D)$.
+ 
+\begin{corollary}\label{cor:continuous-dmft-existunique-with-projection}
+Fix any $T>0$ and finite subset $D \subset [0,T]$. Then
+$\cT_{g \to g}^D:=\cP_D \circ \cT_{\theta \to g} \circ \cT_{g \to \theta}$
+has a unique fixed point in $\cS_g^+(T,D)$.
+\end{corollary}
+\begin{proof}
+The preceding argument verifies that 
+$\cS_g^+(T,D)$ is complete under the metric $d_\lambda$. Lemmas
+\ref{lem:contraction-Rtheta} and \ref{lem:contraction-Lipschitz}, together with
+\eqref{eq:projectioncontractive}, show that
+$\cT_{g\to g}^D$ is a contraction on $\cS_g^+(T,D)$ with respect to $d_\lambda$,
+for any sufficiently large $\lambda>0$. Thus it has a unique fixed point by the
+Banach fixed point theorem.
+\end{proof} 
+
+\subsection{Discrete-time dynamical mean-field limit}
+
+We next prove a dynamical mean-field limit for a discretized version of the
+dynamics, and identify continuous-time embeddings of its correlation and response
+kernels as fixed points of a discretized version of the preceding mappings.
+
+Fix a discretization step size $\eta>0$. Given $\X$, $\btheta^0$, and the
+Brownian motion $\{\b^t\}_{t \geq 0}$ defining \eqref{eq:dynamics},
+set $\b_\eta^k=\b^{k\eta}$ and define the discretized dynamics 
+\begin{equation}\label{eq:disc-Langevin}
+\btheta^{k+1}_\eta-\btheta^{k}_\eta=\eta[f(\btheta^{k}_\eta)+\X\btheta^{k}_\eta]
++ \sqrt{2\gamma} (\b^{k+1}_\eta - \b^{k}_\eta),
+\qquad \btheta_\eta^0=\btheta^0.
+\end{equation}
+For its mean-field limit, let $\theta^0$ and $\{b^t\}_{t \geq 0}$ be as in
+Definition \ref{def:DMFT}, and set
+\[\theta_\eta^0=\theta^0, \qquad b_\eta^k=b^{k\eta}.\]
+Given the processes $\{\theta_\eta^i\}_{0 \leq i \leq k}$
+and $\{\frac{\partial \theta_\eta^i}{\partial g_\eta^j}\}_{0 \leq j<i \leq k}$
+up to step $k$, define correlation and response matrices 
+$\C_\theta,\bR_\theta,\C_g,\bR_g \in \R^{(k+1) \times (k+1)}$ by
+\begin{equation}\label{eq:discreteCR}
+\begin{gathered}
+\C_\theta=\Big(\E[\theta^{i}_\eta\theta^{j}_\eta]\Big)_{0 \leq i,j \leq k},
+\qquad \bR_\theta=\Big(\1_{i>j}\E\Big[\frac{\partial
+\theta^i_\eta}{\partial g^j_\eta}\Big]\Big)_{0 \leq i,j \leq k},\\
+\C_g=\sum_{p,q\ge 0} \kappa_{p+q+2}
+\bR_\theta^p\C_\theta\bR_\theta^{q\top},
+\qquad \bR_g=\sum_{p \geq 1} \kappa_{p+1}\bR_\theta^p.
+\end{gathered}
+\end{equation}
+Here, the matrices $\bR_\theta,\bR_g$ are strictly lower-triangular.
+We will verify in Theorem \ref{thm:discreteDMFT} below that
+$\C_g$ is positive-semidefinite. Then, letting
+\begin{equation}\label{eq:discreteg}
+(g^0_\eta,\ldots,g^k_\eta) \sim \cN(0,\C_g)
+\end{equation}
+be independent of $\theta^0$ and $\{b^t\}_{t \geq 0}$, and writing
+$\bR_g=(r_{ij})_{0 \leq i,j \leq k}$ for the entries of $\bR_g$, define
+the processes up to step $k+1$ by
+\begin{align}
+\theta^{k+1}_\eta
+&=\theta^{k}_\eta + \eta\Big[f(\theta^{k}_\eta)+\sum_{q=0}^k r_{kq}\theta^{q}_\eta+g^{k}_\eta\Big] + \sqrt{2\gamma} (b^{k+1}_\eta - b^{k}_\eta),\label{eq:DMFTdiscrete2}\\ 
+\frac{\partial \theta^{k+1}_\eta}{\partial g^{j}_\eta}  
+&=\frac{\partial \theta^{k}_\eta}{\partial g^{j}_\eta}+\eta\Big[f'(\theta^{k}_\eta)\frac{\partial \theta^{k}_\eta}{\partial g^{j}_\eta}
++ \sum_{q=j+1}^k r_{kq}\frac{\partial \theta^{q}_\eta}{\partial
+g^{j}_\eta}\Big] \text{ for } 0 \leq j < k,
+\qquad \frac{\partial \theta^{k+1}_\eta}{\partial
+g^{k}_\eta}=\eta.\label{eq:DMFTdiscreteresponse}
+\end{align}
+These definitions (\ref{eq:discreteCR}--\ref{eq:DMFTdiscreteresponse})
+are understood iteratively in time for $k=0,1,2,\ldots$, and
+\eqref{eq:DMFTdiscreteresponse} is the usual derivative
+of \eqref{eq:DMFTdiscrete2} in $g_\eta^j$ (by the chain rule). 
+Note that $\C_\theta,\bR_\theta,\C_g,\bR_g$ up to each step $k \geq 0$
+are the upper-left corners of those up to step $k+1$; thus we may write
+unambiguously $(\C_\theta)_{ij},(\bR_\theta)_{ij}$ etc.\ for their entries.
+
+We denote also
+\begin{equation}\label{eq:discretegk}
+\g^{k}_\eta = \X \btheta^{k}_\eta - \sum_{q=0}^k r_{kq} \btheta^{q}_\eta.
+\end{equation}
+
+\begin{theorem}\label{thm:discreteDMFT}
+The matrix $\C_g$ is positive-semidefinite. 
+For any fixed integer $K \ge 0$, almost surely as $n \to \infty$,
+\begin{align}\label{eq:AMP-SE}
+&\frac{1}{n}\sum_{i=1}^n
+\delta_{(\theta^{0}_{\eta,i},\ldots,\theta^{K}_{\eta,i},g^{0}_{\eta,i},\ldots,g^{K}_{\eta,i},b^{0}_{\eta,i},\ldots,b^{K}_{\eta,i})}
+\to \Law(\theta^{0}_\eta,\ldots,\theta^{K}_\eta, g^{0}_\eta,\ldots,g^{K}_\eta,
+b^{0}_\eta,\ldots,b^{K}_\eta)
+\end{align}
+weakly and in Wasserstein-2, where the right side denotes the joint law under
+(\ref{eq:discreteg}--\ref{eq:DMFTdiscrete2}). Furthermore,
+for any fixed $0 \leq j \leq k$, almost surely
+\begin{equation}\label{eq:discretekernelconvergence}
+\frac{1}{n}\langle \btheta_\eta^{k\top}\btheta_\eta^j \rangle
+\to (\C_\theta)_{k,j},
+\qquad \frac{1}{n}\langle \g_\eta^{k\top}\g_\eta^j \rangle
+\to (\C_g)_{k,j},
+\qquad
+\frac{1}{n}\langle \btheta_\eta^{k\top}
+\b_\eta^j \rangle \to \sqrt{2\gamma}\sum_{q=0}^{j-1}(\bR_\theta)_{k,q}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Set $\v^0=\btheta^0$ and $\v^k=\btheta^{k}_\eta-\btheta^{k-1}_\eta$, so that
+$\btheta^{k}_\eta=\v^0+\ldots+\v^k$. 
+It is readily checked that for any deterministic scalar
+values $\{a_{jk}\}_{0 \leq j \leq k}$,
+the dynamics \eqref{eq:disc-Langevin} may be equivalently written as
+\begin{equation}\label{eq:discreteAMP}
+\begin{aligned}
+\z^k&=\X\v^k-\sum_{j=0}^k a_{jk}\v^j,\\
+\v^{k+1}&=\underbrace{\eta\left[f\Big(\sum_{j=0}^k \v^j\Big)+\sum_{j=0}^k
+\Big(\sum_{i=0}^j a_{ij}\v^i+\z^j\Big)\right] +
+\sqrt{2\gamma}(\b_\eta^{k+1}-\b_\eta^k)}_{:=v_{k+1}(\z^0,\ldots,\z^k,\v^0,\b_\eta^1,\ldots,\b_\eta^{k+1})},
+\end{aligned}
+\end{equation}
+where $v_{k+1}:\R^{2k+3} \to \R$ is a scalar function defined recursively for
+$k=0,1,2,\ldots$ so that
+$\v^{k+1}=v_{k+1}(\z^0,\ldots,\z^k,\v^0,\b_\eta^1,\ldots,\b_\eta^{k+1})$ holds.
+Since $f:\R \to \R$ is Lipschitz and continuously-differentiable,
+each function $v_{k+1}$ is also Lipschitz and continuously-differentiable
+in all arguments.
+
+We define iteratively in time a corresponding AMP state evolution:
+Let $v^0=\theta^0$. Given the law of Gaussian variables $(z^0,\ldots,z^{k-1})$
+independent of $\theta^0$ and $\{b^t\}_{t \geq 0}$, define
+\begin{align*}
+\bPhi
+&=\Big(\1_{i<j}\E\Big[
+\frac{\partial}{\partial z^i}
+v_j(z^0,\ldots,z^{j-1},v^0,b_\eta^1,\ldots,b_\eta^j)
+\Big]
+\Big)_{0 \leq i,j \leq k},\\
+\bDelta
+&=\Big(
+\E[
+v_i(z^0,\ldots,z^{i-1},v^0,b_\eta^1,\ldots,b_\eta^i)
+v_j(z^0,\ldots,z^{j-1},v^0,b_\eta^1,\ldots,b_\eta^j)]
+\Big)_{0 \leq i,j \leq k}
+\end{align*}
+where $v_i(z^0,\ldots,z^{i-1},v^0,b_\eta^1,\ldots,b_\eta^i) \equiv v^0$ for
+$i=0$. Then define the AMP Onsager matrix and state evolution covariance by
+\[
+\A=\sum_{p \geq 1} \kappa_{p+1}\bPhi^p,
+\qquad
+\bSigma=\sum_{p,q \geq 0} \kappa_{p+q+2}
+\bPhi^{p\top}\bDelta\bPhi^q,
+\]
+let $(z^0,\ldots,z^k) \sim \cN(0,\bSigma)$ (independent of $\theta^0$ and
+$\{b^t\}_{t \geq 0}$), and let
+\begin{equation}\label{eq:vkdef}
+v^k=v_k(z^0,\ldots,z^{k-1},v^0,b_\eta^1,\ldots,b_\eta^k).
+\end{equation}
+Note that $\A$ is strictly upper-triangular, and the matrices
+$\bPhi,\bDelta,\A,\bSigma$ up to step $k$ are the upper-left corners of those up
+to step $k+1$.
+Writing $\A=(a_{ij})_{0 \leq i,j \leq k}$ and choosing the
+coefficients $a_{ij}$ in \eqref{eq:discreteAMP} to be the entries of $\A$,
+\cite[Theorem 4.3]{fan2022approximate} then implies that $\bSigma$
+above is positive-semidefinite (hence the above law of $(z^0,\ldots,z^k)$
+is well-defined), and for any fixed $K$, almost surely in Wasserstein-2,
+\begin{align}\label{eq:AMPconvergence}
+\lim_{n \to \infty}
+\frac{1}{n}\sum_{i=1}^n
+\delta_{(v_i^0,\ldots,v_i^K,z_i^0,\ldots,z_i^K,b_{\eta,i}^0,\ldots,b_{\eta,i}^K)}
+\to 
+\Law\left(v^0,\ldots,v^K,z^0,\ldots,z^K,b_\eta^0,\ldots,b_\eta^K\right).
+\end{align}
+
+To check that this implies \eqref{eq:AMP-SE},
+recall $\btheta_\eta^k=\v^0+\ldots+\v^k$, define
+$\g_\eta^k=\z^0+\ldots+\z^k$, and define also
+from the above AMP state evolution variables
+\begin{align*}
+\theta^{j}_\eta:=v^0+\ldots+v^j,
+\qquad g^{j}_\eta:=z^0+\cdots+z^j.
+\end{align*}
+Denote the upper-triangular
+matrix $\bE=(\1_{i\leq j})_{0\leq i,j\leq k}$. Comparing the above definitions
+of $\bPhi,\bDelta,\A,\bSigma$ with the
+definitions (\ref{eq:discreteCR}), we then have
+\[\bR_\theta^\top=\bE^{-1}\bPhi\bE,
+\qquad \C_\theta=\bE^\top\bDelta\bE,
+\qquad \bR_g^\top=\bE^{-1}\A\bE,
+\qquad \C_g=\bE^\top\bSigma\bE\]
+and $(g_\eta^0,\ldots,g_\eta^k) \sim \cN(0,\C_g)$. In particular, $\C_g$ is
+positive-semidefinite as claimed. Noting that $\A\bE=\bE\bR_g^\top$
+and writing $\bR_g=(r_{ij})_{0 \leq i,j \leq k}$,
+the recursions for $\z^k$ and $\v^{k+1}$ in \eqref{eq:discreteAMP} then imply
+\begin{align*}
+\g_\eta^k&=\X(\v^0+\ldots+\v^k)-\sum_{j=0}^k r_{kj}(\v^0+\ldots+\v^j)\\
+&=\X\btheta_\eta^k-\sum_{j=0}^k r_{kj}\btheta_\eta^j,\\
+\btheta_\eta^{k+1}-\btheta_\eta^k
+=\v^{k+1}&=\eta\Big[
+f(\v^0+\cdots+\v^k)
++\sum_{j=0}^k r_{kj}(\v^0+\cdots+\v^j)
++\g_\eta^k \Big] + \sqrt{2\gamma}(\b_\eta^{k+1}-\b_\eta^k)\\
+&=\eta\Big[f(\btheta_\eta^k)+\sum_{j=0}^k r_{kj}\btheta_\eta^j+\g_\eta^k
+\Big] + \sqrt{2\gamma}(\b_\eta^{k+1}-\b_\eta^k).
+\end{align*}
+Thus $\g_\eta^k$ coincides with the definition \eqref{eq:discretegk}, and we
+have analogously from the definition of $v^{k+1}$ in \eqref{eq:vkdef} that
+\begin{align*}
+\theta_\eta^{k+1}-\theta_\eta^k
+=v^{k+1}=\eta\Bigg[f(\theta_\eta^k)+\sum_{j=0}^k r_{kj}\theta_\eta^j
++g_\eta^k\Bigg] + \sqrt{2\gamma}(b_\eta^{k+1}-b_\eta^k),
+\end{align*}
+coinciding with \eqref{eq:DMFTdiscrete2}. Thus
+$\{\theta_\eta^k,g_\eta^k,b_\eta^k\}_{k \geq 0}$ have the same joint law as defined in
+(\ref{eq:discreteg}--\ref{eq:DMFTdiscrete2}), and the Wasserstein-2
+convergence \eqref{eq:AMPconvergence} implies \eqref{eq:AMP-SE} as desired.
+
+The first two statements of \eqref{eq:discretekernelconvergence} follow
+immediately from \eqref{eq:AMP-SE} and dominated convergence to take
+the expectation over $\{\b^t\}_{t \geq 0}$. Also from \eqref{eq:AMP-SE} and
+dominated convergence, for any $j \leq k$,
+\[
+\frac{1}{n}\langle \btheta_\eta^{k\top}\b_\eta^j \rangle
+\to \E [\theta^k_\eta b^j_\eta].\]
+Denoting $w^q=b_\eta^{q+1}-b_\eta^q \sim \cN(0,\eta)$,
+Gaussian integration-by-parts gives
+\[
+\E [\theta^k_\eta (b^{q+1}_\eta-b^q_\eta)] = \E [\theta^k_\eta w^q] = \eta\,\E
+\Big[\frac{\partial \theta^k_\eta}{\partial w^q}\Big]
+=\sqrt{2\gamma}\,\E\Big[\frac{\partial \theta^k_\eta}{\partial g^q_\eta}\Big]\]
+where the last step holds by the form of the equation \eqref{eq:DMFTdiscrete2}.
+Noting that $\E[\theta_\eta^k b_\eta^0]=0$ and summing over $q=0,\ldots,j-1$
+shows the last statement of \eqref{eq:discretekernelconvergence}.
+\end{proof}
+
+%An important fact that deserves attention 
+%from the above proof is that \begin{align}
+%  \C_k &=\bE_k^\top\bSigma_k\bE_k
+%=\sum_{p,q\ge 0} \kappa_{p+q+2}
+%[(\bE_k^{-1}\bPhi_k\bE_k)^p]^\top(\bE_k^\top\bDelta_k\bE_k)
+%(\bE_k^{-1}\bPhi_k\bE_k)^{q} \succeq 0,
+%\end{align}
+%as $\bSigma_k$ is positive semidefinite from the AMP state evolution, which is
+%not a priori clear from the definition of $\C_k$ in \eqref{eq:RkCkupdate2}.
+ 
+We next identify piecewise-constant continuous-time embeddings of the
+discrete-time mean-field limit as fixed points of a discretized system of
+mappings. Still fixing the discretization step size $\eta>0$,
+for $t\geq 0$, define
+\begin{align*}
+  \lfloor t\rfloor
+  = \max\{k\eta: k\in \mathbb Z,\ k\eta\leq t\},
+\qquad \lceil t\rceil
+  = \lfloor t\rfloor+\eta,
+\qquad
+  [t]
+  = \lfloor t\rfloor/\eta \in \mathbb{Z}.
+\end{align*}
+We use the convention that $\int_s^t f(r)\d r=0$ if $t<s$.
+Fixing $T>0$, define the discontinuity set
+\[D_\eta=[0,T] \cap \eta\mathbb{Z}.\]
+Let $\cS_\theta^{\eta,+} \subset \cS_\theta^+(T,D_\eta)$ and $\cS_g^\eta \subset
+\cS_g(T,D_\eta)$ be the subsets of the spaces
+$\cS_\theta^+(T,D_\eta),\cS_g(T,D_\eta)$ defined in Section \ref{subsec:spaces},
+for which the kernels have the piecewise-constant structure
+\begin{equation}\label{eq:piecewiseconstant}
+C(t,s)=C(\lfloor t \rfloor,\lfloor s \rfloor),
+\qquad R(t,s)=\1_{t \geq s}\,R(\lfloor t \rfloor,\lfloor s \rfloor)
+\end{equation}
+for $(C,R)=(C_\theta,R_\theta)$ or $(C,R)=(C_g,R_g)$, respectively. We define a map
+\begin{align}\label{eq:Tthetageta}
+\cT_{\theta \to g}^\eta:\cS_\theta^{\eta,+} \to \cS_g^\eta,
+\qquad (C_\theta,R_\theta) \mapsto (C_g,R_g)
+\end{align}
+by
+\begin{align*}
+R_g(t,s)&=\kappa_2R_\theta(t,s)
++\sum_{p \geq 2}\kappa_{p+1}\int_{\lceil s \rceil}^{\lfloor t \rfloor} \d t_1
+\int_{\lceil s \rceil}^{\lfloor t_1 \rfloor} \d t_2
+\ldots \int_{\lceil s \rceil}^{\lfloor t_{p-2} \rfloor} \d t_{p-1}\\
+&\hspace{3in}R_\theta(t,t_1)R_\theta(t_1,t_2)\ldots R_\theta(t_{p-1},s),\\
+C_g(t,s)&=\sum_{p,q \geq 0} \kappa_{p+q+2}\int_0^{\lfloor t \rfloor} \d t_1
+\ldots \int_0^{\lfloor t_{p-1} \rfloor} \d t_p
+\int_0^{\lfloor s \rfloor} \d s_1
+\ldots \int_0^{\lfloor s_{q-1} \rfloor} \d s_q\\
+&\hspace{1in}R_\theta(t,t_1)\ldots R_\theta(t_{p-1},t_p)
+R_\theta(s,s_1)\ldots R_\theta(s_{q-1},s_q) C_\theta(t_p,s_q),
+\end{align*}
+where $t_0=t$ and $s_0=s$. Let
+\[\cS_g^{\eta,+}=\big\{\cP_{D_\eta}(C_g,R_g):(C_g,R_g) \in
+\cS_g^\eta\big\} \subset \cS_g^+(T,D_\eta)\]
+be the image of $\cS_g^\eta$ under the preceding projection $\cP_{D_\eta}$.
+We denote
+\[\cT_{\theta \to g}^{\eta,+}:\cS_\theta^{\eta,+} \to \cS_g^{\eta,+},
+\qquad \cT_{\theta \to g}^{\eta,+}=\cP_{D_\eta} \circ \cT_{\theta \to g}^\eta.\]
+
+Next, we define a map
+\begin{align}\label{eq:Tgthetaeta}
+  \cT_{g \to \theta}^\eta:\cS_g^{\eta,+} \to \cS_\theta^{\eta,+},
+\qquad (C_g,R_g) \mapsto (C_\theta,R_\theta)
+\end{align}
+by
+\[C_\theta(t,s)=\E[\bar\theta^t\bar\theta^s],
+\qquad R_\theta(t,s)=\E\left[\frac{\partial \bar\theta^t}{\partial g^s}\right]\]
+where $\{\bar\theta^t\}_{t \geq 0}$ and $\{\frac{\partial \bar\theta^t}{\partial
+g^s}\}_{t \geq s \geq 0}$ solve
+\begin{align}
+\bar\theta^t&=\bar\theta^0+\int_0^{\lfloor t\rfloor}
+  \bigg[f(\bar\theta^r)
+    +\int_0^{\lfloor r\rfloor} R_g(r,q)
+    \bar\theta^q\,\d q+g^{\lfloor r \rfloor}\bigg]\d r+\sqrt{2\gamma}\,b^{\lfloor
+t\rfloor}, \qquad \bar\theta^0=\theta^0,
+\label{eq:piecewise_discrete_dmft_theta}\\
+\frac{\partial \bar\theta^t}{\partial g^s}
+  &=1+\int_{\lceil s\rceil}^{\lfloor t\rfloor}
+  \bigg[
+    f'(\bar\theta^r)
+    \frac{\partial \bar\theta^r}{\partial g^s}
+    +\int_{\lceil s\rceil}^{\lfloor r\rfloor}
+    R_g(r,q)\frac{\partial \bar\theta^q}{\partial g^s}\,\d q
+  \bigg]\d r \text{ for } t \geq s,
+\quad \frac{\partial \bar\theta^t}{\partial g^s}=0 \text{ for } t<s,\label{eq:piecewise_discrete_dmft_response}
+\end{align}
+and $\{g^t\}_{t \in [0,T]} \sim \GP(0,C_g)$ in
+\eqref{eq:piecewise_discrete_dmft_theta} which is independent of $\theta^0$ and
+$\{b^t\}_{t \geq 0}$.
+
+\begin{lemma}\label{lemma:discretemappings}
+For any fixed $T>0$ and all sufficiently small $\eta>0$, the following hold:
+\begin{enumerate}[(a)]
+\item For any $(C_g,R_g) \in \cS_g^{\eta,+}$, we have $\cT_{g \to
+\theta}^\eta(C_g,R_g) \in \cS_\theta^{\eta,+}$.
+\item For any $(C_\theta,R_\theta) \in \cS_\theta^{\eta,+}$, we have $\cT_{\theta
+\to g}^\eta(C_\theta,R_\theta) \in \cS_g^\eta$
+and $\cT_{\theta \to g}^{\eta,+}(C_\theta,R_\theta) \in \cS_g^{\eta,+}$.
+\item Let $\C_\theta,\bR_\theta,\C_g,\bR_g$ be the matrices
+\eqref{eq:discreteCR} defined up to a step
+$k>T/\eta$, and define their continuous-time embeddings
+\[C_\theta^\eta(t,s)=(\C_\theta)_{[t],[s]},
+\qquad C_g^\eta(t,s)=(\C_g)_{[t],[s]},\]
+\[R_\theta^\eta(t,s)=\begin{cases}
+0 & \text{ if } s>t\\
+1 & \text{ if } s \leq t,\,[s]=[t] \\
+\frac{1}{\eta}\,(\bR_\theta)_{[t],[s]} & \text{ if } [s]<[t]
+\end{cases},
+\qquad R_g^\eta(t,s)=\begin{cases}
+0 & \text{ if } s>t\\
+\kappa_2 & \text{ if } s \leq t,\,[s]=[t] \\
+\frac{1}{\eta}\,(\bR_g)_{[t],[s]} & \text{ if } [s]<[t].
+\end{cases}
+\]
+Then $(C_g^\eta,R_g^\eta) \in \cS_g^{\eta,+} \cap \cS_g^\eta$ and
+$(C_\theta^\eta,R_\theta^\eta) \in \cS_\theta^{\eta,+}$. Furthermore,
+$\cT_{g \to \theta}^\eta(C_g^\eta,R_g^\eta)=(C_\theta^\eta,R_\theta^\eta)$
+and $\cT_{\theta \to g}^\eta(C_\theta^\eta,R_\theta^\eta)=
+\cT_{\theta \to g}^{\eta,+}(C_\theta^\eta,R_\theta^\eta)=(C_g^\eta,R_g^\eta)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The proof is similar to \cite[Lemma 4.3]{fan2025dynamicalI}, so we will omit
+some details.
+
+Similar arguments as in Lemma \ref{lemma:well_defined}
+show that $(C_g,R_g) \in \cS_g^{\eta,+}$
+implies $\cT_{g \to \theta}^\eta(C_g,R_g) \in \cS_\theta^\eta(T,D_\eta)$,
+and $(C_\theta,R_\theta) \in \cS_\theta^{\eta,+}$ implies
+$\cT_{\theta \to g}^\eta(C_\theta,R_\theta) \in \cS_g(T,D_\eta)$. 
+An induction in time checks that the processes solving
+\eqref{eq:piecewise_discrete_dmft_theta}
+and \eqref{eq:piecewise_discrete_dmft_response} must satisfy
+\begin{equation}\label{eq:thetapiecewiseconstant}
+\theta^t=\theta^{\lfloor t \rfloor},
+\qquad \frac{\partial \theta^t}{\partial g^s}
+=\1_{t \geq s}\frac{\partial \theta^{\lfloor t \rfloor}}{\partial g^{\lfloor s
+\rfloor}}.
+\end{equation}
+Then $\cT_{g \to \theta}^\eta(C_g,R_g)$ satisfies \eqref{eq:piecewiseconstant},
+so $\cT_{g \to \theta}^\eta(C_g,R_g)
+\in \cS_\theta^{\eta,+}$. If $(C_\theta,R_\theta) \in \cS_\theta^{\eta,+}$
+satisfies \eqref{eq:piecewiseconstant}, then the definition of
+\eqref{eq:Tthetageta} also implies that
+$\cT_{\theta \to g}^\eta(C_\theta,R_\theta)$ satisfies
+\eqref{eq:piecewiseconstant}, so
+$\cT_{\theta \to g}^\eta(C_\theta,R_\theta) \in \cS_g^\eta$
+and hence (by definition) $\cT_{\theta \to g}^{\eta,+}(C_\theta,R_\theta) \in \cS_g^{\eta,+}$.
+Thus parts (a) and (b) hold.
+
+Letting $(C_\theta^\eta,R_\theta^\eta,C_g^\eta,R_g^\eta)$ be the embeddings of part (c),
+an induction in time using the piecewise-constant properties
+\eqref{eq:piecewiseconstant} and
+\eqref{eq:thetapiecewiseconstant} also checks that
+$\cT_{g \to \theta}^\eta(C_g^\eta,R_g^\eta)=(C_\theta^\eta,R_\theta^\eta)$
+and $\cT_{\theta \to g}^\eta(C_\theta^\eta,R_\theta^\eta)=(C_g^\eta,R_g^\eta)$.
+Theorem \ref{thm:discreteDMFT} shows that $\C_g$ is
+positive-semidefinite; hence $C_g^\eta$ is also a
+positive-semidefinite kernel on $[0,T] \times [0,T]$, so
+$\cP_{D_\eta}(C_g^\eta)=C_g^\eta$. Then also
+$\cT_{\theta \to g}^{\eta,+}(C_\theta^\eta,R_\theta^\eta)=(C_g^\eta,R_g^\eta)$.
+
+Finally, similar arguments as in Lemmas \ref{lem:contraction-Rtheta}
+and \ref{lem:contraction-Lipschitz} show that
+$\cT_{g \to \theta}^\eta \circ \cT_{\theta \to g}^{\eta,+}:\cS_\theta^{\eta,+} \to \cS_\theta^{\eta,+}$ is contractive in
+the metric $d_\lambda$ for all sufficiently large $\lambda$. Then, since
+$\cS_\theta^{\eta,+}$ is also closed under $d_\lambda$,
+this map has a unique fixed point $(\bar C_\theta^\eta,\bar R_\theta^\eta) \in
+\cS_\theta^{\eta,+}$. Letting $(\bar C_g^\eta,\bar R_g^\eta)=
+\cT_{\theta \to g}^{\eta,+}(\bar C_\theta^\eta,\bar R_\theta^\eta)
+\in \cS_g^{\eta,+}$, an induction in time using \eqref{eq:Tthetageta} and
+\eqref{eq:Tgthetaeta} shows that we must have
+$(\bar C_\theta^\eta,\bar R_\theta^\eta)=(C_\theta^\eta,R_\theta^\eta)$
+and $(\bar C_g^\eta,\bar R_g^\eta)=(C_g^\eta,R_g^\eta)$. Thus 
+$(C_\theta^\eta,R_\theta^\eta) \in \cS_\theta^{\eta,+}$ and
+$(C_g^\eta,R_g^\eta)\in \cS_g^{\eta,+} \cap \cS_g^{\eta}$,
+showing part (c).
+\end{proof}
+
+\subsection{Proof of Theorem \ref{thm:dmft-approx}}
+
+We proceed to show Theorem \ref{thm:dmft-approx}. The following lemma bounding
+the difference between the continuous-time and discretized mappings will be
+used to show part (a).
+
+\begin{lemma}\label{lem:DMFT-mapping-discretization-distance}
+There exists a constant $C>0$ depending on $T$ but not on $\lambda,\eta$
+such that for all sufficiently large $\lambda>0$ and
+sufficiently small $\eta>0$,
+\begin{enumerate}[(a)]
+\item For any $(C_g,R_g) \in \cS_g^{\eta,+}$,
+\[d_\lambda\big(\cT_{g\to \theta}(C_g,R_g),\cT_{g\to \theta}^\eta(C_g,R_g)\big)
+\le C\sqrt{\eta}.\]
+\item For any $(C_\theta,R_\theta) \in \cS_\theta^{\eta,+}$,
+\[d_\lambda\big(\cT_{\theta\to g}(C_\theta,R_\theta),\cT_{\theta\to
+g}^{\eta}(C_\theta,R_\theta)\big) \le C\eta.\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Given $(C_g,R_g) \in \cS_g^{\eta,+}$, let $(C_\theta,R_\theta)=\cT_{g \to
+\theta}(C_g,R_g)$ and $(\bar C_\theta,\bar R_\theta)=\cT_{g \to
+\theta}^\eta(C_g,R_g)$.
+By arguments similar to \cite[Lemma 4.4]{fan2025dynamicalI}, there exists a
+coupling of $(\{\theta^t\}_{t \geq 0},\{\frac{\partial \theta^t}{\partial
+g^s}\}_{t \geq s \geq 0})$ solving (\ref{eq:dmft-theta}--\ref{eq:dmft-response})
+and $(\{\bar\theta^t\}_{t \geq 0},\{\frac{\partial \bar\theta^t}{\partial
+g^s}\}_{t \geq s \geq 0})$ solving
+(\ref{eq:piecewise_discrete_dmft_theta}--\ref{eq:piecewise_discrete_dmft_response})
+for which, for all large $\lambda>0$ and small $\eta>0$,
+\[\sup_{t \in [0,T]} e^{-\lambda t} \sqrt{\E(\theta^t-\bar \theta^t)^2}
+\leq C\sqrt{\eta},
+\qquad \sup_{0 \leq s \leq t \leq T}
+e^{-\lambda t}\E\left|\frac{\partial \theta^t}{\partial g^s}
+-\frac{\partial \bar\theta^t}{\partial g^s}\right| \leq C\sqrt{\eta}.\]
+The second inequality implies $d_\lambda(R_\theta,\bar R_\theta) \leq
+C\sqrt{\eta}$, while the first inequality and $\E(\theta^t)^2 \leq \Phi_{C_\theta}(T)$
+imply
+\begin{align*}
+\sup_{s,t \in [0,T]} e^{-\lambda (s \vee t)}|C_\theta(s,t)-\bar C_\theta(s,t)|
+&=\sup_{s,t \in [0,T]} e^{-\lambda (s \vee
+t)}|\E(\theta^s\theta^t)-\E(\bar\theta^s\bar \theta^t)|\\
+&\leq \sup_{s,t \in [0,T]} e^{-\lambda s}\sqrt{\E(\theta^s-\bar \theta^s)^2}
+\sqrt{\E(\theta^t)^2}
++e^{-\lambda t}\sqrt{\E(\theta^t-\bar \theta^t)^2}
+\sqrt{\E(\bar\theta^s)^2}\\
+& \leq C'\sqrt{\eta}.
+\end{align*}
+Thus part (a) follows.
+
+For part (b), given $(C_\theta,R_\theta) \in \cS_\theta^{\eta,+}$, let
+$(C_g,R_g)=\cT_{\theta\to g}(C_\theta,R_\theta)$
+and $(\bar C_g,\bar R_g)=\cT_{\theta\to g}^\eta(C_\theta,R_\theta)$. According
+to \eqref{eq:dmft-Rg} and \eqref{eq:Tthetageta}, we know that
+\[R_g-\bar R_g=\sum_{p \geq 2} \kappa_{p+1}\Big[R_\theta^{\ast p}-
+R_\theta^{\lfloor\ast\rfloor p}\Big]\]
+where, denoting $t=s_0$ and $s=s_p$, we have
+\begin{align*}
+R^{\ast p}(t,s)&= \int_{D_p(t,s)} \prod_{a=0}^{p-1}R(s_a,s_{a+1})\, \d
+s_1\cdots\d s_{p-1},\quad D_p(t,s)=\left\{(s_1,\ldots,s_{p-1}):s \leq s_{p-1}\leq\cdots\leq s_1\leq t
+\right\},\\
+R^{\lfloor\ast\rfloor p}(t,s)&=\int_{D_{p,\eta}(t,s)} \prod_{a=0}^{p-1}
+R(s_a,s_{a+1})\, \d s_1\cdots\d s_{p-1},\\
+&\hspace{1in}D_{p,\eta}(t,s)=
+\left\{(s_1,\ldots,s_{p-1}):s_{a+1} \leq \lfloor s_a\rfloor
+\text{ for } a=0,\ldots,p-1 \right\}.
+\end{align*}
+Since $D_{p,\eta}(t,s)\subseteq D_p(t,s)$ and
+$|R_\theta(t,s)|\le \Phi_{R_\theta}(T)$, we have the entrywise bound
+\[
+\left|R_\theta^{\ast p}(t,s) - R_\theta^{\lfloor \ast \rfloor p}(t,s) \right|
+\leq \Phi_{R_\theta}(T)^p\, \left|D_p(t,s)\setminus D_{p,\eta}(t,s)\right|.
+\]
+If a point belongs to $D_p(t,s)\setminus D_{p,\eta}(t,s)$, then for at least one $a\in\{0,\ldots,p-1\}$,
+$s_{a+1}>\lfloor s_a\rfloor$,
+and therefore
+$0\leq s_a-s_{a+1}<\eta$.
+Using a union bound over the $p$ possible gaps gives
+\[
+\left|D_p(t,s)\setminus D_{p,\eta}(t,s)\right| \leq \frac{p(t-s)^{p-2}\eta}{(p-2)!}.
+\]
+Therefore, 
+\begin{align*}
+d_\lambda(R_g, \bar R_g)
+\le \sup_{0 \leq s \leq t \leq T} |R_g(t,s)-\bar R_g(t,s)|
+\leq
+%\sum_{p \geq 0} |\kappa_{p+1}|\, d_\lambda((\bar R_\theta^\eta)^{\ast p}, (\bar R_\theta^\eta)^{\lfloor\ast\rfloor p}) \le |\kappa_{2}|\Phi_{R_\theta}(T)\sqrt{T\eta} +
+\sum_{p \geq 2} |\kappa_{p+1}|\frac{p\Phi_{R_\theta}(T)^pT^{p-2}}{(p-2)!}\eta
+\le C\eta.
+\end{align*}
+A similar argument shows $d_\lambda(C_g, \bar C_g) \le C\eta$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:dmft-approx}(a)]
+Fix any $\eta>0$ small enough.
+Let $X^\eta \in \cS_g^+(T,D_\eta)$ be the unique fixed
+point of the projected continuous-time mapping
+\[\cT_{g \to g}^\eta:=\cP_{D_\eta} \circ
+\cT_{\theta \to g} \circ \cT_{g \to \theta},\]
+as guaranteed by Corollary
+\ref{cor:continuous-dmft-existunique-with-projection}.
+This definition depends on $\eta$
+through $\cP_{D_\eta}$.
+
+Let $\bar X^\eta$ be the fixed point of the projected
+discrete-time mapping
+\[\bar \cT_{g \to g}^\eta:=
+\cT_{\theta \to g}^{\eta,+} \circ \cT_{g \to \theta}^\eta
+=\cP_{D_\eta} \circ \cT_{\theta \to g}^\eta \circ
+\cT_{g \to \theta}^\eta\]
+that is constructed in Lemma \ref{lemma:discretemappings}.
+By the triangle inequality, we have
+\begin{align*}
+    d_{\lambda}(X^\eta, \bar X^\eta) &= d_{\lambda}(\cT_{g\to g}^\eta(X^\eta),
+\bar\cT_{g\to g}^\eta(\bar X^\eta)) \leq d_{\lambda}(\cT_{g\to g}^\eta(X^\eta),
+\cT_{g\to g}^\eta(\bar X^\eta)) + d_{\lambda}(\cT_{g\to g}^\eta(\bar X^\eta),
+\bar\cT^{\eta}_{g\to g}(\bar X^\eta)).
+  \end{align*}
+Lemmas
+\ref{lem:contraction-Rtheta} and
+\ref{lem:contraction-Lipschitz}
+ensure for the first term that
+$d_{\lambda}(\cT_{g\to g}^\eta(X^\eta),\cT_{g\to g}^\eta(\bar X^\eta))
+<\frac{1}{2}d_\lambda(X^\eta,\bar X^\eta)$, for sufficiently large $\lambda>0$.
+Applying contractivity of $\cP_{D_\eta}$ with respect to $d_\lambda(\cdot)$,
+the triangle inequality, and Lemmas
+\ref{lem:contraction-Lipschitz} and
+\ref{lem:DMFT-mapping-discretization-distance}, the second term is bounded as
+\begin{align}
+&d_{\lambda}(\cT^{\eta}_{g\to g}(\bar X^\eta),\bar \cT_{g\to g}^\eta(\bar
+X^\eta))\notag\\
+&\leq d_{\lambda}(\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta),
+\cT_{\theta \to g}^\eta \circ \cT_{g \to \theta}^\eta(\bar X^\eta))\notag\\
+&\leq d_{\lambda}(\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta),
+\cT_{\theta \to g} \circ \cT_{g \to \theta}^\eta(\bar X^\eta))
++d_{\lambda}(\cT_{\theta \to g} \circ \cT_{g \to \theta}^\eta(\bar X^\eta),
+\cT_{\theta \to g}^\eta \circ \cT_{g \to \theta}^\eta(\bar X^\eta))\notag\\
+&\leq C\sqrt{\eta}+C\eta \leq C'\sqrt{\eta}.\label{eq:TTetabound}
+\end{align}
+Thus, rearranging the above shows, for some $C>0$ not depending on $\eta$,
+\begin{equation}\label{eq:XXetabound}
+d_{\lambda}(X^\eta, \bar X^\eta) \leq C\sqrt{\eta}.
+\end{equation}
+
+ 
+By \eqref{eq:XXetabound} and Lemmas \ref{lem:contraction-Rtheta} and \ref{lem:contraction-Lipschitz},
+\begin{align*}
+    &d_{\lambda}(X^\eta,\cT_{\theta \to g} \circ \cT_{g \to \theta}(X^\eta))\\
+    &\leq d_{\lambda}(X^\eta,\bar X^\eta) +
+d_{\lambda}(\bar X^\eta,\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta)) +
+d_{\lambda}(\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta), \cT_{\theta \to g} \circ \cT_{g \to
+\theta}(X^\eta)) \\ 
+    &\le C''\sqrt{\eta}+
+d_{\lambda}(\bar X^\eta,\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta))
+  \end{align*}
+Also by the identity $\bar X^\eta=\cT_{\theta \to g}^\eta \circ \cT_{g \to
+\theta}^\eta(\bar X^\eta)$ (without projection) from 
+Lemma \ref{lemma:discretemappings} and the bound for the second line of
+\eqref{eq:TTetabound},
+\[d_{\lambda}(\bar X^\eta,\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar
+X^\eta))=d_{\lambda}(\cT_{\theta \to g}^\eta \circ \cT_{g \to \theta}^\eta(\bar
+X^\eta),\cT_{\theta \to g} \circ \cT_{g \to \theta}(\bar X^\eta))
+\leq C'\sqrt{\eta}.\]
+So for some $C>0$ not depending on $\eta$,
+\begin{equation}\label{eq:Xfixedpoint}
+d_{\lambda}(X^\eta,\cT_{\theta \to g} \circ \cT_{g \to \theta}(X^\eta))
+\leq C\sqrt{\eta}.
+\end{equation}
+
+ For any $\delta>0$, let $D_{\eta \cup \delta} = D_{\eta} \cup D_{\delta}$, and define $X^{\delta} \in \mathcal{S}^+(T,D_{\delta})$ analogously to $X^{\eta}$. Then $X^{\eta}, X^{\delta} \in \mathcal{S}_g^+(T,D_{\eta \cup \delta})$, and 
+\begin{align}
+   \nonumber d_{\lambda}(X^\eta,X^\delta) &\leq d_{\lambda}(X^\eta, \mathcal{T}_{\theta \to g} \circ \mathcal{T}_{g \to \theta}(X^\eta))+ d_{\lambda}(\mathcal{T}_{\theta \to g} \circ \mathcal{T}_{g \to \theta}(X^\delta),X^\delta)\\ \nonumber& \qquad \qquad \qquad+ d_{\lambda}(\mathcal{T}_{\theta \to g} \circ \mathcal{T}_{g \to \theta}(X^\eta),\mathcal{T}_{\theta \to g} \circ \mathcal{T}_{g \to \theta}(X^\delta))\\ \nonumber& \leq C(\sqrt{\eta}+\sqrt{\delta})+ \frac{1}{2}d_{\lambda}(X^\eta,X^{\delta}).
+\end{align}
+Consequently, $d_{\lambda}(X^{\eta},X^{\delta}) \leq C'(\sqrt{\eta}+\sqrt{\delta})$. This shows along any sequence of values $\eta>0$ converging to 0 that
+$\{X^{\eta}\}$ is a Cauchy sequence under $d_\lambda$. Then by completeness of the ambient weighted $L^\infty$ and $L^2$ spaces over $[0,T] \times [0,T]$ as in \eqref{eq:Rgcauchy} and \eqref{eq:Cgcauchy}, there
+exist $R_g,C_g:[0,T] \times [0,T] \to \R$ such that $X=(C_g,R_g)$ satisfies $d_{\lambda}(X,X^\eta) \leq C\sqrt{\eta}$. Together with \eqref{eq:Xfixedpoint}, we have $d_{\lambda}(X,\mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}(X^\eta)) \leq C\sqrt{\eta}.$   By Lemma \ref{lemma:well_defined},
+the image of $\cT_{\theta \to g} \circ \cT_{g \to \theta}$ is contained in
+$\cS_g(T,\emptyset)$ with discontinuity set $D=\emptyset$. Then as in \eqref{eq:Cgcauchy}, there exists a continuous modification of $C_g$ so that $X=(C_g,R_g) \in \cS_g(T,\emptyset)$. Writing $X^\eta=(C_g^\eta,R_g^\eta)$, since also $\lim_{\eta \to 0} d_\lambda(X,X^\eta)=0$ and $C_g^\eta$ is positive-semidefinite, we have that $C_g$ is positive-semidefinite, so $X \in \mathcal{S}_g^+(T,\emptyset)$. 
+
+Finally, \begin{align*}
+   \nonumber &d_{\lambda}(X, \mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}(X))
+    \\&\leq d_{\lambda}(X, X^\eta)+ d_{\lambda}(X^{\eta}, \mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}(X^\eta)) + d_{\lambda}(\mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}(X^\eta), \mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}(X)) 
+ \\& \leq C\sqrt{\eta}.
+\end{align*}
+Since $\eta>0$ is arbitrary, this shows that $X \in \cS_g^+(T,\emptyset)$ is a fixed point of $\mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}$. Uniqueness of such a fixed point in $\cS_g^+(T,\emptyset)$ is immediate as $\mathcal{T}_{\theta \to g}\circ \mathcal{T}_{g \to \theta}$ is contractive under $d_\lambda$.
+
+This shows that the components of Theorem \ref{thm:dmft-approx}(a) are 
+well-defined up to any fixed time $T>0$, where the fixed points
+$(C_\theta,R_\theta)$ and $(C_g,R_g)$ are unique in
+$\cS_\theta^+(T,\emptyset)$ and
+$\cS_g^+(T,\emptyset)$. Then Theorem \ref{thm:dmft-approx}(a) holds upon setting
+$\cS_\theta^+$ as the space of kernels
+$(C_\theta,R_\theta)$ on $[0,\infty) \times [0,\infty)$ whose
+restrictions to $[0,T] \times [0,T]$ belong to $\cS_\theta^+(T,\emptyset)$ for
+each $T>0$, and similarly for $\cS_g^+$.
+\end{proof}
+
+In the remainder of the proof, we fix $T>0$,
+$X=(C_g,R_g) \in \cS_g^+(T,\emptyset)$ as
+the preceding unique fixed point of $\cT_{\theta \to g} \circ \cT_{g \to
+\theta}$, and $\bar X^\eta=(C_g^\eta,R_g^\eta) \in \cS_g^+(T,D_\eta)$ as the
+fixed point of $\cT_{\theta \to g}^\eta \circ \cT_{g \to
+\theta}^\eta$. To show Theorem \ref{thm:dmft-approx}(b), we record the following
+continuity properties of $C_g,C_g^\eta$.
+ 
+\begin{lemma}\label{lem:discrete_dmft_approx_continue}
+For all sufficiently small \(\eta>0\),
+there is a constant $C>0$ depending on $T$ but not $\eta$, such that 
+\begin{align}
+  |C_g(t,s)-C_g(t',s')|
+  &\le
+  C\left(\sqrt{|t-t'|}+\sqrt{|s-s'|}\right),
+  \label{eq:Cg-holder-cont}\\
+  |C_g^\eta(t,s)-C_g^\eta(t',s')|
+  &\le
+  C\left(\sqrt{|t-t'|+\eta}+\sqrt{|s-s'|+\eta}\right)
+  \label{eq:Cg-holder-discrete}
+\end{align}
+for all \(s,t,s',t'\in[0,T]\).
+\end{lemma}
+\begin{proof}
+Since $(C_g,R_g) \in \cS_g^+(T,\emptyset)$, we have from \eqref{eq:Cg-cont2} that
+\[
+  |C_g(t,s)-C_g(t',s')|
+  \leq
+  C\left(\sqrt{|t-t'|}+\sqrt{|s-s'|}\right).
+\]
+For \eqref{eq:Cg-holder-discrete}, let $\{\bar \theta^t,\frac{\partial
+\bar \theta^t}{\partial g^s}\}$ be the processes solving the discretized
+equations
+(\ref{eq:piecewise_discrete_dmft_theta}--\ref{eq:piecewise_discrete_dmft_response})
+for the kernels $(C_g^\eta,R_g^\eta)$. By arguments analogous to those of
+Lemma \ref{lemma:well_defined},
+for some $C>0$ depending on $T$ but not $\eta$, we have  
+\begin{align*}
+|C_\theta^\eta(t,s)-C_\theta^\eta(t',s')|
+&\leq C(\sqrt{|t-t'|+\eta}+\sqrt{|s-s'|+\eta}) \text{ for all } s,t \in
+[0,T],\\
+|R_\theta^\eta(t,s)-R_\theta^\eta(t',s)| &\le C(|t-t'|+\eta)
+\text{ for all } s \leq t,t' \leq T,
+\end{align*}
+and hence also  
+\[|C_g^\eta(t,s)-C_g^\eta(t',s')|
+  \leq
+  C\left(\sqrt{|t-t'|+\eta}+\sqrt{|s-s'|+\eta}\right).\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:dmft-approx}(b)]
+Fix $\eta>0$, and consider a piecewise-constant embedding 
+of the discretized Langevin process
+\eqref{eq:disc-Langevin} defined as $\bar\btheta^t = \btheta_\eta^{[t]}$.
+An induction in time checks that this solves
+\begin{equation}\label{eq:langevin_discret}
+\bar\btheta^t=\btheta^0+\int_0^{\lfloor{t}\rfloor} [f(\bar\btheta^s)
++\X\bar\btheta^s]\d s +\sqrt{2\gamma}\,\b^{\lfloor{t}\rfloor}
+\end{equation}
+where $\{\b^t\}_{t \geq 0}$ is the same Brownian motion as defining the
+continuous process $\{\btheta^t\}_{t \geq 0}$.
+Define also a piecewise constant embedding $\bar \g^t=\g_\eta^{[t]}$ of
+\eqref{eq:discretegk}, and $\bar \b^t=\b_\eta^{[t]}=\b^{[t]\eta}$.
+By \cite[Lemma 4.7]{fan2025dynamicalI}, for a constant $C>0$ independent of
+$\eta$, a.s.\ for all large $n$,
+\begin{align*}
+\sup_{t\in[0,T]} \frac{1}{\sqrt{n}}\|\b^t\|_2\leq C,
+\qquad \sup_{t\in[0,T]}
+\frac{1}{\sqrt{n}}\big(\|{\b^t - \b^{\lfloor{t}\rfloor}}\|_2 + \|{\b^t -
+\b^{\lceil{t}\rceil}}\|_2\big) \leq C\sqrt{\eta\max(\log(1/\eta),1)}.
+\end{align*}
+Then by a Gr\"onwall argument (see \cite[Lemma 4.8]{fan2025dynamicalI}), a.s.\ for
+all large $n$,
+\begin{align}
+\sup_{t\in[0,T]}
+\frac{1}{\sqrt{n}}\|{\btheta^t}\|_2 \leq C,\qquad \sup_{t\in[0,T]}
+\frac{1}{\sqrt{n}}\|{\btheta^t - \bar\btheta^{t}}\|_2 \leq
+C\sqrt{\eta\max(\log(1/\eta),1)}\label{eq:theta-discret-norm}
+\end{align}
+For $\bar \g^t$, we have
+\begin{align*}
+    \|\g^t - \bar \g^t\|_2 &= \left\|\X(\btheta^t-\bar\btheta^t)-\left(\int_0^t
+R_g(t,s)\btheta^s\d s - \int_0^{\lfloor t\rfloor} R_g(t,s)\bar\btheta^s \d
+s\right)\right\|_2\\
+    & \le \|\X\|_\op\|\btheta^t-\bar\btheta^t\|_2 + \Phi_{R_g}(T)\int_0^{\lfloor
+t\rfloor} \|\btheta^s-\bar\btheta^s\|_2 \d s +  \Phi_{R_g}(T)\int_{\lfloor
+t\rfloor}^t \|\btheta^s\|_2\d s,
+\end{align*}
+so also a.s.\ for all large $n$,
+\begin{align*}
+\sup_{t\in[0,T]}
+\frac{1}{\sqrt{n}}\|{\g^t - \bar\g^{t}}\|_2 \leq C'\sqrt{\eta\max(\log(1/\eta),1)}.
+\end{align*}
+This implies that for any fixed $m \geq 1$ and $t_1,\ldots, t_m \in [0,T]$,
+\begin{align}
+&\limsup_{n\rightarrow\infty} W_2\Bigg( \frac{1}{n}\sum_{j=1}^n
+\delta_{\left(\theta^{t_1}_j, \ldots, \theta^{t_m}_j,g^{t_1}_j, \ldots,
+g^{t_m}_j,b^{t_1}_j, \ldots, b^{t_m}_j\right)},\notag\\
+&\hspace{3.4cm} \frac{1}{n}\sum_{j=1}^n
+\delta_{\left(\bar\theta^{t_1}_j, \ldots,
+\bar\theta_j^{t_m},\bar g^{t_1}_j, \ldots,
+\bar g_j^{t_m},\bar b^{t_1}_{j}, \ldots,
+\bar b_{j}^{t_m}\right)}\Bigg)<C\sqrt{\eta\max(\log(1/\eta),1)}\text{ a.s.}\label{eq:discretelangevinW2}
+\end{align}
+
+Now let $\{\theta^t,g^t,b^t\}_{t \geq 0}$ be the components of the
+continuous-time dynamical mean-field limit in Definition
+\ref{def:DMFT}, defined from the fixed point $X=(C_g,R_g)$.
+Let $\{\bar\theta^t\}_{t \geq 0}$ be the solution of
+\eqref{eq:piecewise_discrete_dmft_theta} with the same Brownian motion
+$\{b^t\}_{t \geq 0}$, defined from the discrete-time fixed
+point $\bar X^\eta=(C_g^\eta,R_g^\eta)$ and $\{\bar g^t\}_{t \geq 0} \sim
+\GP(0,C_g^\eta)$. Let $\bar b^t=b^{\lfloor t \rfloor}$. The bound
+\eqref{eq:XXetabound} implies that for any sufficiently large $\lambda>0$,
+\begin{align*}
+\lim_{\eta \to 0} \sup_{0\leq s \leq t \leq T} |R_g(t,s)-R_g^\eta(t,s)|
+&\leq \lim_{\eta \to 0} e^{\lambda T}d_\lambda(R_g,R_g^\eta)=0,\\
+\lim_{\eta \to 0} \int_0^T \d t \int_0^T \d s\,|C_g(t,s)-C_g^\eta(t,s)|^2
+&\leq \lim_{\eta \to 0} e^{2\lambda T}d_\lambda(C_g,C_g^\eta)=0.
+\end{align*}
+The continuity properties for $C_g,C_g^\eta$ in Lemma
+\ref{lem:discrete_dmft_approx_continue} then imply that also
+\[\lim_{\eta \to 0} \sup_{s,t \in [0,T]} |C_g(t,s)-C_g^\eta(t,s)|=0.\]
+Then (c.f.\ \cite[Lemma~D.1]{fan2025dynamicalII}) there exists a coupling of
+$\{g^t\}_{t \in [0,T]}$ and $\{\bar g^t\}_{t \in [0,T]}$ for which
+\[\lim_{\eta \to 0} \sup_{t \in [0,T]} \E(g^t-\bar g^t)^2=0.\]
+Under this coupling of $\{g^t\}_{t \in [0,T]}$ and $\{\bar g^t\}_{t \in [0,T]}$,
+a Gr\"onwall argument (see \cite[Eq.\ (100)]{fan2025dynamicalI})
+shows that the resulting coupling
+of $\{\theta^t\}_{t \in [0,T]}$ and $\{\bar \theta^t\}_{t \in [0,T]}$ satisfies
+\[\lim_{\eta \to 0} \sup_{t \in [0,T]} \E(\theta^t-\bar\theta^t)^2=0.\]
+Hence, for any fixed $m \geq 1$ and $t_1,\ldots,t_m \in [0,T]$,
+\begin{align}
+&\lim_{\eta \to 0} W_2\Big(
+\Law(\theta^{t_1},\ldots,
+\theta^{t_m}, g^{t_1},\ldots,
+g^{t_m}, b^{t_1},\ldots, b^{t_m}),\notag\\
+&\hspace{1in}\Law(\bar\theta^{t_1},\ldots,
+\bar\theta^{t_m},\bar g^{t_1},\ldots,
+\bar g^{t_m}, \bar b^{t_1},\ldots,\bar b^{t_m})\Big)=0.\label{eq:discretedmftW2}
+\end{align}
+Combining \eqref{eq:discretelangevinW2}, \eqref{eq:discretedmftW2}, and Theorem
+\ref{thm:discreteDMFT} which shows
+\[\lim_{n \to \infty} W_2\Bigg(\frac{1}{n}\sum_{j=1}^n
+\delta_{\left(\bar\theta^{t_1}_j, \ldots,
+\bar\theta_j^{t_m},\bar g^{t_1}_j, \ldots,
+\bar g_j^{t_m},\bar b^{t_1}_{j}, \ldots,
+\bar b_{j}^{t_m}\right)},\,\Law(\bar\theta^{t_1},\ldots,
+\bar\theta^{t_m},\bar g^{t_1},\ldots,
+\bar g^{t_m}, \bar b^{t_1},\ldots,\bar b^{t_m})\Bigg)=0 \text{ a.s.},\]
+and taking $\eta \to 0$, we have that for any fixed $m \geq 1$
+and $t_1,\ldots,t_m \in [0,T]$,
+\begin{align}\label{eq:pointwise-W2-convergence}
+\lim_{n \to \infty}
+W_2\left(\frac{1}{n}\sum_{j=1}^n \delta_{\left(\theta^{t_1}_j, \ldots,
+\theta^{t_m}_j,g^{t_1}_j, \ldots, g^{t_m}_j,b^{t_1}_j, \ldots,
+b^{t_m}_j\right)},\,\Law(\theta^{t_1},\ldots,
+\theta^{t_m}, g^{t_1},\ldots,g^{t_m}, b^{t_1},\ldots,b^{t_m})\right)=0
+\text{ a.s.}
+\end{align}
+
+We may strengthen this to Wasserstein-2 convergence over $C([0,T],\R^3)$ using
+a similar tightness argument as in \cite[Theorem 2.5(b)]{fan2025dynamicalI}:
+Let
+\[\x=\{\x^t\}_{t \in [0,T]}
+=\{(\btheta^t,\g^t,\b^t)\}_{t \in [0,T]},
+\qquad
+x=\{x^t\}_{t \in [0,T]}=\{(\theta^t,g^t,b^t)\}_{t \in [0,T]}.\]
+Denote
+\[\|x\|_\infty=\sup_{t \in [0,T]} |\theta^t|+
+\sup_{t \in [0,T]} |g^t|+\sup_{t \in [0,T]} |b^t|,\]
+and write the coordinates of $\x$ as $x_j=(\theta_j,g_j,b_j) \in C([0,T],\R^3)$ for $j=1,\ldots,n$.
+Fix any test function $F:C([0,T],\R^3) \to \R$ satisfying
+\begin{equation}\label{eq:Fpseudolipschitz}
+\big|F(x)-F(x')\big|
+\leq C\|x-x'\|_\infty(1+\|x\|_\infty+\|x'\|_\infty).
+\end{equation}
+Fix any $\eta>0$, and let $\{\tilde\x^t\}_{t \in [0,T]}$ and $\{\tilde x^t\}_{t
+\in [0,T]}$ be the piecewise-linear
+interpolations of $\{\tilde \x^t\}_{t \in [0,T] \cap \eta \mathbb{Z}}$
+and $\{\tilde x^t\}_{t \in [0,T] \cap \eta \mathbb{Z}}$, respectively, with
+knots at $[0,T] \cap \eta \mathbb{Z}$. Then
+\eqref{eq:pointwise-W2-convergence} implies
+\begin{align}\label{eq:pointwise-W2-convergence-joint}
+\lim_{n \to \infty} \frac{1}{n}\sum_{j=1}^n F(\{\tilde x_j^t\}_{t \in [0,T]})
+=\E F(\{\tilde x^t\}_{t \in [0,T]}) \text{ a.s.}
+\end{align}
+
+By the property \eqref{eq:Fpseudolipschitz} and Cauchy-Schwarz, we have
+\[\left|\frac{1}{n}\sum_{j=1}^n F(\{x_j^t\}_{t \in [0,T]})
+-F(\{\tilde x_j^t\}_{t \in [0,T]})\right|
+\leq C\left(\frac{1}{n}\sum_{j=1}^n \|x_j-\tilde x_j\|_\infty^2\right)^{1/2}
+\left(1+\frac{1}{n}\sum_{j=1}^n \|x_j\|_\infty^2\right)^{1/2}.\]
+By a modulus-of-continuity bound for Brownian motion,
+the bound \eqref{eq:theta-discret-norm}, and a Gr\"onwall argument
+(see \cite[Theorem 2.5(b)]{fan2025dynamicalI}), for some $C>0$ and
+$\alpha \in (0,1/2)$, a.s.\ for all large $n$,
+\[\frac{1}{n}\sum_{j=1}^n \|b_j\|_\infty^2 \leq C,
+\quad \frac{1}{n}\sum_{j=1}^n \|\theta_j\|_\infty^2 \leq C,
+\quad \frac{1}{n}\sum_{j=1}^n \|g_j\|_\infty^2 \leq C,\]
+\[\frac{1}{n}\sum_{j=1}^n \|b_j-\tilde b_j\|_\infty^2 \leq C\eta^{2\alpha},
+\quad \frac{1}{n}\sum_{j=1}^n \|\theta_j-\tilde\theta_j\|_\infty^2 \leq
+C\eta^{2\alpha},
+\quad \frac{1}{n}\sum_{j=1}^n \|g_j-\tilde g_j\|_\infty^2 \leq
+C\eta^{2\alpha}.\]
+Applying this above and taking $\eta \to 0$,
+\begin{equation}\label{eq:W2tightnesslangevin}
+\lim_{\eta \to 0}
+\left|\frac{1}{n}\sum_{j=1}^n F(\{x_j^t\}_{t \in [0,T]})
+-F(\{\tilde x_j^t\}_{t \in [0,T]})\right|=0 \text{ a.s.}
+\end{equation}
+For the components of the dynamical mean-field limit,
+by standard Gaussian process bounds and a Gr\"onwall argument, also
+\[\E\|b\|_\infty^2 \leq C,
+\quad \E\|g\|_\infty^2 \leq C,
+\quad \E\|\theta\|_\infty^2 \leq C,\]
+\[\E\|b-\tilde b\|_\infty^2 \leq C\eta^{2\alpha},
+\quad \E\|g-\tilde g\|_\infty^2 \leq C\eta^{2\alpha},
+\quad \E\|\theta-\tilde\theta\|_\infty^2 \leq C\eta^{2\alpha},\]
+and hence
+\begin{equation}\label{eq:W2tightnessdmft}
+\lim_{\eta \to 0} \big|\E F(\{x^t\}_{t \in [0,T]})
+-\E F(\{\tilde x^t\}_{t \in [0,T]})\big|=0.
+\end{equation}
+Combining \eqref{eq:pointwise-W2-convergence-joint}, \eqref{eq:W2tightnesslangevin},
+and \eqref{eq:W2tightnessdmft} and taking $\eta \to 0$
+shows
+\begin{align}\label{eq:pointwise-W2-convergence-2}
+\frac{1}{n}\sum_{j=1}^n F(\{x_j^t\}_{t \in [0,T]})
+\rightarrow \E F(\{x^t\}_{t \in [0,T]}) \text{ a.s.}
+\end{align}
+This holds for any function $F:C([0,T],\R^3) \to \R$
+satisfying \eqref{eq:Fpseudolipschitz}, implying the claimed Wasserstein-2
+convergence in Theorem \ref{thm:dmft-approx}(b).
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:dmft-approx}(c)]
+Theorem \ref{thm:dmft-approx}(b) implies, almost surely as $n \to \infty$,
+\[\frac{1}{n}\sum_{i=1}^n \theta_i^t\theta_i^s \to
+\E[\theta^t \theta^s]=C_\theta(t,s),
+\quad \frac{1}{n}\sum_{i=1}^n g_i^tg_i^s \to
+\E[g^tg^s]=C_g(t,s).\]
+The first two claims of Theorem \ref{thm:dmft-approx}(c) follow from this and
+dominated convergence to take an expectation over $\{\b^t\}_{t \in [0,T]}$. For
+the third claim, \eqref{eq:discretelangevinW2} implies
+\[\lim_{\eta \to 0}
+\limsup_{n \to \infty} \left|\frac{1}{n}\sum_{i=1}^n \theta_i^t b_i^s
+-\bar\theta_i^t \bar b_i^s\right|=0 \text{ a.s.}\]
+Theorem \ref{thm:discreteDMFT} shows
+\[\frac{1}{n}\sum_{i=1}^n \bar\theta_i^t \bar b_i^s
+\to \sqrt{2\gamma}\int_0^{\lfloor s \rfloor} R_\theta^\eta(t,s) \d s \text{ a.s.}\]
+The bound \eqref{eq:XXetabound} and $|R_\theta^\eta(t,s)| \leq
+\Phi_{R_\theta}(T)$ imply
+\[\lim_{\eta \to 0}\left|\int_0^s R_\theta(t,s) \d s 
+-\int_0^{\lfloor s \rfloor} R_\theta^\eta(t,s) \d s\right|=0.\]
+Then the third claim of Theorem \ref{thm:dmft-approx}(c) follows from combining
+these three statements, taking $\eta \to 0$, and again applying dominated
+convergence to take an expectation over $\{\b^t\}_{t \in [0,T]}$.
+\end{proof}

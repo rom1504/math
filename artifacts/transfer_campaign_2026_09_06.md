@@ -64,3 +64,16 @@ proofs. No new original lower or upper endpoint is claimed at this checkpoint.
 The exact original gap remains liminf seed landing with vanishing normalized
 loss. A proposed next observable must enter a quantitative cap inequality.
 This checkpoint is a steering event; substantive research continues.
+
+## Preservation checkpoint: 2026-09-06 17:36 UTC
+
+The user explicitly required durable preservation of research regardless of
+temporary placement. README now requires archival preservation at substantive
+checkpoints. The dated snapshot in
+`research_archive/2026-09-06/173630Z/` preserves 1,886 research files with verified
+SHA-256 hashes, including drafts, failed runs, seeds and subagent reports.
+Canonical proofs/certificates were not moved. Two old unavailable chiral source
+modules and other replay qualifications are documented in its dependency audit.
+No endpoint claim is changed by this preservation operation. Agents continued
+research during the inventory; later work will be preserved at the next
+substantive checkpoint. This is not the end of the active campaign.
