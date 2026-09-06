@@ -1,0 +1,653 @@
+{
+  "status": "EXACT FINITE INTEGER/RATIONAL REGRESSION; no asymptotic or new optimality claim",
+  "actual_signing_cases": 15,
+  "full_seed_configurations": 33272,
+  "strict_both_orientations": 12,
+  "cases": [
+    {
+      "case": "n3_class0",
+      "order": 3,
+      "actual_cap_replayed": 3,
+      "source": {
+        "path": "computations/results/m3_minimizer_orbits.json",
+        "file_sha256": "10618f45db6a146ebe3949ca0902ac814a2ad8254d28208a3cc160fdc706268b",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 3,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "10618f45db6a146ebe3949ca0902ac814a2ad8254d28208a3cc160fdc706268b",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 0,
+      "mean_first_response_raw_energy": "0",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 8,
+          "unstable_seed_coordinate_pairs": 0,
+          "mean_negative_field_per_vertex_raw_A": "0",
+          "alpha": "0",
+          "expected_oriented_energy_before": "3",
+          "exact_expected_fractional_ascent": "0",
+          "rigorous_Gershgorin_gain_lower": "0",
+          "expected_oriented_energy_after": "3"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 8,
+          "unstable_seed_coordinate_pairs": 24,
+          "mean_negative_field_per_vertex_raw_A": "2",
+          "alpha": "1",
+          "expected_oriented_energy_before": "-3",
+          "exact_expected_fractional_ascent": "3",
+          "rigorous_Gershgorin_gain_lower": "3",
+          "expected_oriented_energy_after": "0"
+        }
+      ]
+    },
+    {
+      "case": "n4_class0",
+      "order": 4,
+      "actual_cap_replayed": 4,
+      "source": {
+        "path": "computations/results/m4_minimizer_orbits.json",
+        "file_sha256": "c509fc36925c8fb180c3012f00e3786ce95435bb42344dcb81188abf99e6ec94",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 4,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "c509fc36925c8fb180c3012f00e3786ce95435bb42344dcb81188abf99e6ec94",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 16,
+      "mean_first_response_raw_energy": "5/2",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 16,
+          "unstable_seed_coordinate_pairs": 4,
+          "mean_negative_field_per_vertex_raw_A": "1/16",
+          "alpha": "1/48",
+          "expected_oriented_energy_before": "7/2",
+          "exact_expected_fractional_ascent": "1/192",
+          "rigorous_Gershgorin_gain_lower": "1/384",
+          "expected_oriented_energy_after": "673/192"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 16,
+          "unstable_seed_coordinate_pairs": 20,
+          "mean_negative_field_per_vertex_raw_A": "9/16",
+          "alpha": "3/16",
+          "expected_oriented_energy_before": "3/2",
+          "exact_expected_fractional_ascent": "99/256",
+          "rigorous_Gershgorin_gain_lower": "27/128",
+          "expected_oriented_energy_after": "483/256"
+        }
+      ]
+    },
+    {
+      "case": "n5_class0",
+      "order": 5,
+      "actual_cap_replayed": 4,
+      "source": {
+        "path": "computations/results/m5_minimizer_orbits.json",
+        "file_sha256": "c5d291822d84462a5874770aeef19521202c6124f1d0b3470b27d5a0274d63bb",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 4,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "c5d291822d84462a5874770aeef19521202c6124f1d0b3470b27d5a0274d63bb",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 80,
+      "mean_first_response_raw_energy": "5/2",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 32,
+          "unstable_seed_coordinate_pairs": 0,
+          "mean_negative_field_per_vertex_raw_A": "0",
+          "alpha": "0",
+          "expected_oriented_energy_before": "4",
+          "exact_expected_fractional_ascent": "0",
+          "rigorous_Gershgorin_gain_lower": "0",
+          "expected_oriented_energy_after": "4"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 32,
+          "unstable_seed_coordinate_pairs": 36,
+          "mean_negative_field_per_vertex_raw_A": "3/5",
+          "alpha": "3/20",
+          "expected_oriented_energy_before": "1",
+          "exact_expected_fractional_ascent": "1359/3200",
+          "rigorous_Gershgorin_gain_lower": "9/40",
+          "expected_oriented_energy_after": "4559/3200"
+        }
+      ]
+    },
+    {
+      "case": "n6_class0",
+      "order": 6,
+      "actual_cap_replayed": 5,
+      "source": {
+        "path": "computations/results/m6_minimizer_orbits.json",
+        "file_sha256": "9244a7f4dc496c19fd13bb699dab389db7dd0ae5324e0acb7d1a8a6f9b8c78a4",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 5,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "9244a7f4dc496c19fd13bb699dab389db7dd0ae5324e0acb7d1a8a6f9b8c78a4",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 144,
+      "mean_first_response_raw_energy": "0",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 64,
+          "unstable_seed_coordinate_pairs": 72,
+          "mean_negative_field_per_vertex_raw_A": "5/16",
+          "alpha": "1/16",
+          "expected_oriented_energy_before": "25/8",
+          "exact_expected_fractional_ascent": "465/4096",
+          "rigorous_Gershgorin_gain_lower": "15/256",
+          "expected_oriented_energy_after": "13265/4096"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 64,
+          "unstable_seed_coordinate_pairs": 312,
+          "mean_negative_field_per_vertex_raw_A": "65/48",
+          "alpha": "13/48",
+          "expected_oriented_energy_before": "-25/8",
+          "exact_expected_fractional_ascent": "70135/36864",
+          "rigorous_Gershgorin_gain_lower": "845/768",
+          "expected_oriented_energy_after": "-45065/36864"
+        }
+      ]
+    },
+    {
+      "case": "n7_class0",
+      "order": 7,
+      "actual_cap_replayed": 9,
+      "source": {
+        "path": "computations/results/m7_minimizer_orbits.json",
+        "file_sha256": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 9,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 224,
+      "mean_first_response_raw_energy": "27/8",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 108,
+          "mean_negative_field_per_vertex_raw_A": "9/32",
+          "alpha": "3/64",
+          "expected_oriented_energy_before": "19/4",
+          "exact_expected_fractional_ascent": "23787/262144",
+          "rigorous_Gershgorin_gain_lower": "189/4096",
+          "expected_oriented_energy_after": "1268971/262144"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 262,
+          "mean_negative_field_per_vertex_raw_A": "181/224",
+          "alpha": "181/1344",
+          "expected_oriented_energy_before": "2",
+          "exact_expected_fractional_ascent": "27683045/38535168",
+          "rigorous_Gershgorin_gain_lower": "32761/86016",
+          "expected_oriented_energy_after": "104753381/38535168"
+        }
+      ]
+    },
+    {
+      "case": "n7_class1",
+      "order": 7,
+      "actual_cap_replayed": 9,
+      "source": {
+        "path": "computations/results/m7_minimizer_orbits.json",
+        "file_sha256": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+        "json_pointer": "/classes/1/representative_matrix",
+        "minimum_cap_imported": 9,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 280,
+      "mean_first_response_raw_energy": "35/8",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 0,
+          "mean_negative_field_per_vertex_raw_A": "0",
+          "alpha": "0",
+          "expected_oriented_energy_before": "9",
+          "exact_expected_fractional_ascent": "0",
+          "rigorous_Gershgorin_gain_lower": "0",
+          "expected_oriented_energy_after": "9"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 332,
+          "mean_negative_field_per_vertex_raw_A": "127/112",
+          "alpha": "127/672",
+          "expected_oriented_energy_before": "-1/4",
+          "exact_expected_fractional_ascent": "1112901/802816",
+          "rigorous_Gershgorin_gain_lower": "16129/21504",
+          "expected_oriented_energy_after": "912197/802816"
+        }
+      ]
+    },
+    {
+      "case": "n7_class2",
+      "order": 7,
+      "actual_cap_replayed": 9,
+      "source": {
+        "path": "computations/results/m7_minimizer_orbits.json",
+        "file_sha256": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+        "json_pointer": "/classes/2/representative_matrix",
+        "minimum_cap_imported": 9,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "28da0b7178a2135c1e3ca9f17bc2165c1426ec4c762a7071a1d4894a03194510",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 234,
+      "mean_first_response_raw_energy": "147/32",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 14,
+          "mean_negative_field_per_vertex_raw_A": "9/224",
+          "alpha": "3/448",
+          "expected_oriented_energy_before": "99/16",
+          "exact_expected_fractional_ascent": "24111/12845056",
+          "rigorous_Gershgorin_gain_lower": "27/28672",
+          "expected_oriented_energy_after": "79502895/12845056"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 128,
+          "unstable_seed_coordinate_pairs": 192,
+          "mean_negative_field_per_vertex_raw_A": "75/112",
+          "alpha": "25/224",
+          "expected_oriented_energy_before": "3",
+          "exact_expected_fractional_ascent": "204375/401408",
+          "rigorous_Gershgorin_gain_lower": "1875/7168",
+          "expected_oriented_energy_after": "1408599/401408"
+        }
+      ]
+    },
+    {
+      "case": "n8_class0",
+      "order": 8,
+      "actual_cap_replayed": 10,
+      "source": {
+        "path": "computations/results/m8_minimizer_orbits.json",
+        "file_sha256": "119633851ebe024924331b9015354fcc2989eaedde415f49e466376dd39ddbf4",
+        "json_pointer": "/classes/0/representative_matrix",
+        "minimum_cap_imported": 10,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "119633851ebe024924331b9015354fcc2989eaedde415f49e466376dd39ddbf4",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 400,
+      "mean_first_response_raw_energy": "15/4",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 256,
+          "unstable_seed_coordinate_pairs": 298,
+          "mean_negative_field_per_vertex_raw_A": "225/1024",
+          "alpha": "225/7168",
+          "expected_oriented_energy_before": "493/64",
+          "exact_expected_fractional_ascent": "708800625/13153337344",
+          "rigorous_Gershgorin_gain_lower": "50625/1835008",
+          "expected_oriented_energy_after": "102030602353/13153337344"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 256,
+          "unstable_seed_coordinate_pairs": 1122,
+          "mean_negative_field_per_vertex_raw_A": "1237/1024",
+          "alpha": "1237/7168",
+          "expected_oriented_energy_before": "-13/64",
+          "exact_expected_fractional_ascent": "19857003113/13153337344",
+          "rigorous_Gershgorin_gain_lower": "1530169/1835008",
+          "expected_oriented_energy_after": "17185231465/13153337344"
+        }
+      ]
+    },
+    {
+      "case": "n8_class1",
+      "order": 8,
+      "actual_cap_replayed": 10,
+      "source": {
+        "path": "computations/results/m8_minimizer_orbits.json",
+        "file_sha256": "119633851ebe024924331b9015354fcc2989eaedde415f49e466376dd39ddbf4",
+        "json_pointer": "/classes/1/representative_matrix",
+        "minimum_cap_imported": 10,
+        "minimum_certificate_status": "exhaustive exact finite enumeration"
+      },
+      "source_sha256_replayed": "119633851ebe024924331b9015354fcc2989eaedde415f49e466376dd39ddbf4",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 544,
+      "mean_first_response_raw_energy": "47/8",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 256,
+          "unstable_seed_coordinate_pairs": 368,
+          "mean_negative_field_per_vertex_raw_A": "7/32",
+          "alpha": "1/32",
+          "expected_oriented_energy_before": "113/16",
+          "exact_expected_fractional_ascent": "443/8192",
+          "rigorous_Gershgorin_gain_lower": "7/256",
+          "expected_oriented_energy_after": "58299/8192"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 256,
+          "unstable_seed_coordinate_pairs": 640,
+          "mean_negative_field_per_vertex_raw_A": "65/128",
+          "alpha": "65/896",
+          "expected_oriented_energy_before": "75/16",
+          "exact_expected_fractional_ascent": "7296575/25690112",
+          "rigorous_Gershgorin_gain_lower": "4225/28672",
+          "expected_oriented_energy_after": "127718975/25690112"
+        }
+      ]
+    },
+    {
+      "case": "n9_stored",
+      "order": 9,
+      "actual_cap_replayed": 12,
+      "source": {
+        "path": "computations/results/exact_m9.json",
+        "file_sha256": "766be51f88dd999566972047ad3383409cf39801d80d148fde16e715dc082252",
+        "json_pointer": "/matrix",
+        "minimum_cap_imported": 12,
+        "minimum_certificate_status": "stored exact solver certificate; global lower bound not rerun here"
+      },
+      "source_sha256_replayed": "766be51f88dd999566972047ad3383409cf39801d80d148fde16e715dc082252",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 1266,
+      "mean_first_response_raw_energy": "439/64",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 512,
+          "unstable_seed_coordinate_pairs": 684,
+          "mean_negative_field_per_vertex_raw_A": "253/768",
+          "alpha": "253/6144",
+          "expected_oriented_energy_before": "7",
+          "exact_expected_fractional_ascent": "16194277/134217728",
+          "rigorous_Gershgorin_gain_lower": "64009/1048576",
+          "expected_oriented_energy_after": "955718373/134217728"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 512,
+          "unstable_seed_coordinate_pairs": 573,
+          "mean_negative_field_per_vertex_raw_A": "311/768",
+          "alpha": "311/6144",
+          "expected_oriented_energy_before": "215/32",
+          "exact_expected_fractional_ascent": "439983829/2415919104",
+          "rigorous_Gershgorin_gain_lower": "96721/1048576",
+          "expected_oriented_energy_after": "16671940309/2415919104"
+        }
+      ]
+    },
+    {
+      "case": "n10_stored",
+      "order": 10,
+      "actual_cap_replayed": 13,
+      "source": {
+        "path": "computations/results/exact_m10.json",
+        "file_sha256": "c5ebd9bff217c4854214f73b4674cd274b65ab158d81e6b67c3b5d1272ad2979",
+        "json_pointer": "/matrix",
+        "minimum_cap_imported": 13,
+        "minimum_certificate_status": "stored exact solver certificate; global lower bound not rerun here"
+      },
+      "source_sha256_replayed": "c5ebd9bff217c4854214f73b4674cd274b65ab158d81e6b67c3b5d1272ad2979",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 3240,
+      "mean_first_response_raw_energy": "505/64",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 1024,
+          "unstable_seed_coordinate_pairs": 2480,
+          "mean_negative_field_per_vertex_raw_A": "267/640",
+          "alpha": "89/1920",
+          "expected_oriented_energy_before": "1157/128",
+          "exact_expected_fractional_ascent": "23612501/125829120",
+          "rigorous_Gershgorin_gain_lower": "7921/81920",
+          "expected_oriented_energy_after": "1160989781/125829120"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 1024,
+          "unstable_seed_coordinate_pairs": 3710,
+          "mean_negative_field_per_vertex_raw_A": "651/1024",
+          "alpha": "217/3072",
+          "expected_oriented_energy_before": "863/128",
+          "exact_expected_fractional_ascent": "343514255/805306368",
+          "rigorous_Gershgorin_gain_lower": "235445/1048576",
+          "expected_oriented_energy_after": "5773040783/805306368"
+        }
+      ]
+    },
+    {
+      "case": "n11_stored",
+      "order": 11,
+      "actual_cap_replayed": 17,
+      "source": {
+        "path": "computations/results/nested_10_in_11_cap17.json",
+        "file_sha256": "60f6a3ac17bba72d3c2571a4f9aedefed3611f8786e3b060999b2dd371d8d641",
+        "json_pointer": "/matrix",
+        "minimum_cap_imported": 17,
+        "minimum_certificate_status": "certified_m11_m12.json / certified_m13_m14.json; solver-dependent lower bounds not rerun here"
+      },
+      "source_sha256_replayed": "60f6a3ac17bba72d3c2571a4f9aedefed3611f8786e3b060999b2dd371d8d641",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 6464,
+      "mean_first_response_raw_energy": "4815/512",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 2048,
+          "unstable_seed_coordinate_pairs": 1169,
+          "mean_negative_field_per_vertex_raw_A": "121/1024",
+          "alpha": "121/10240",
+          "expected_oriented_energy_before": "6713/512",
+          "exact_expected_fractional_ascent": "16441843/1073741824",
+          "rigorous_Gershgorin_gain_lower": "161051/20971520",
+          "expected_oriented_energy_after": "14094623219/1073741824"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 2048,
+          "unstable_seed_coordinate_pairs": 5656,
+          "mean_negative_field_per_vertex_raw_A": "4119/5632",
+          "alpha": "4119/56320",
+          "expected_oriented_energy_before": "2917/512",
+          "exact_expected_fractional_ascent": "462209124123/812017254400",
+          "rigorous_Gershgorin_gain_lower": "16966161/57671680",
+          "expected_oriented_energy_after": "5088487114523/812017254400"
+        }
+      ]
+    },
+    {
+      "case": "n12_stored",
+      "order": 12,
+      "actual_cap_replayed": 18,
+      "source": {
+        "path": "computations/results/extension_nested_m11_to_12.json",
+        "file_sha256": "9e00e6ffac52dbfd3be44fdd89df3cae4b34e70e684b68e65c5d02c0b31da2e5",
+        "json_pointer": "/parent_matrix",
+        "minimum_cap_imported": 18,
+        "minimum_certificate_status": "certified_m11_m12.json / certified_m13_m14.json; solver-dependent lower bounds not rerun here"
+      },
+      "source_sha256_replayed": "9e00e6ffac52dbfd3be44fdd89df3cae4b34e70e684b68e65c5d02c0b31da2e5",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 15624,
+      "mean_first_response_raw_energy": "5715/512",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 4096,
+          "unstable_seed_coordinate_pairs": 8624,
+          "mean_negative_field_per_vertex_raw_A": "6487/24576",
+          "alpha": "6487/270336",
+          "expected_oriented_energy_before": "6615/512",
+          "exact_expected_fractional_ascent": "2806687728793/37417755082752",
+          "rigorous_Gershgorin_gain_lower": "42081169/1107296256",
+          "expected_oriented_energy_after": "486241160135833/37417755082752"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 4096,
+          "unstable_seed_coordinate_pairs": 14254,
+          "mean_negative_field_per_vertex_raw_A": "2317/4096",
+          "alpha": "2317/45056",
+          "expected_oriented_energy_before": "4815/512",
+          "exact_expected_fractional_ascent": "1411391863567/4157528342528",
+          "rigorous_Gershgorin_gain_lower": "16105467/92274688",
+          "expected_oriented_energy_after": "40510022662927/4157528342528"
+        }
+      ]
+    },
+    {
+      "case": "n13_stored",
+      "order": 13,
+      "actual_cap_replayed": 20,
+      "source": {
+        "path": "computations/results/bridge_6_7_sign1_cap20.json",
+        "file_sha256": "54004bbb90ecdc93a7894e8ed063fa801ed14f16792219a0dc8f94d038444db7",
+        "json_pointer": "/parent_matrix",
+        "minimum_cap_imported": 20,
+        "minimum_certificate_status": "certified_m11_m12.json / certified_m13_m14.json; solver-dependent lower bounds not rerun here"
+      },
+      "source_sha256_replayed": "54004bbb90ecdc93a7894e8ed063fa801ed14f16792219a0dc8f94d038444db7",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 35412,
+      "mean_first_response_raw_energy": "13065/1024",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 8192,
+          "unstable_seed_coordinate_pairs": 13976,
+          "mean_negative_field_per_vertex_raw_A": "8409/26624",
+          "alpha": "2803/106496",
+          "expected_oriented_energy_before": "13385/1024",
+          "exact_expected_fractional_ascent": "2486829327871/23227183136768",
+          "rigorous_Gershgorin_gain_lower": "23570427/436207616",
+          "expected_oriented_energy_after": "306096054216191/23227183136768"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 8192,
+          "unstable_seed_coordinate_pairs": 14354,
+          "mean_negative_field_per_vertex_raw_A": "9691/26624",
+          "alpha": "9691/319488",
+          "expected_oriented_energy_before": "12745/1024",
+          "exact_expected_fractional_ascent": "19795411169699/139363098820608",
+          "rigorous_Gershgorin_gain_lower": "93915481/1308622848",
+          "expected_oriented_energy_after": "1754348823736739/139363098820608"
+        }
+      ]
+    },
+    {
+      "case": "n14_stored",
+      "order": 14,
+      "actual_cap_replayed": 21,
+      "source": {
+        "path": "computations/results/conference_completion_m13.json",
+        "file_sha256": "3191c3b0797a331cbb7097a374ac57b96e9274576a221cd0efa9fcb786fa05ab",
+        "json_pointer": "/conference_matrix",
+        "minimum_cap_imported": 21,
+        "minimum_certificate_status": "certified_m11_m12.json / certified_m13_m14.json; solver-dependent lower bounds not rerun here"
+      },
+      "source_sha256_replayed": "3191c3b0797a331cbb7097a374ac57b96e9274576a221cd0efa9fcb786fa05ab",
+      "frozen_source": "sign(Y) 1{|Y|>1}; tie sign(AF)=+1",
+      "source_nonzero_seed_coordinates": 69944,
+      "mean_first_response_raw_energy": "26117/2048",
+      "normalization": "divide raw energies by n*sqrt(n-1) for this finite B convention",
+      "endpoints": [
+        {
+          "endpoint": 1,
+          "energy_orientation": 1,
+          "full_cube_seed_count": 16384,
+          "unstable_seed_coordinate_pairs": 64605,
+          "mean_negative_field_per_vertex_raw_A": "97621/229376",
+          "alpha": "97621/2981888",
+          "expected_oriented_energy_before": "7225/512",
+          "exact_expected_fractional_ascent": "27689455090328627/145680892633808896",
+          "rigorous_Gershgorin_gain_lower": "9529859641/97710505984",
+          "expected_oriented_energy_after": "2083440332588901427/145680892633808896"
+        },
+        {
+          "endpoint": -1,
+          "energy_orientation": -1,
+          "full_cube_seed_count": 16384,
+          "unstable_seed_coordinate_pairs": 67642,
+          "mean_negative_field_per_vertex_raw_A": "10183/16384",
+          "alpha": "10183/212992",
+          "expected_oriented_energy_before": "11667/1024",
+          "exact_expected_fractional_ascent": "300438715304397/743269860376576",
+          "rigorous_Gershgorin_gain_lower": "725854423/3489660928",
+          "expected_oriented_energy_after": "8768924517075405/743269860376576"
+        }
+      ]
+    }
+  ]
+}

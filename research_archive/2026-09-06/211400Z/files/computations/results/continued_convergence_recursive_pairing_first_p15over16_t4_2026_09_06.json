@@ -1,0 +1,47 @@
+{
+  "p": 0.9375,
+  "t": 4.0,
+  "pairing_cross_mass": 0.025801547395834054,
+  "first_Bellman_value": -0.6060606576503419,
+  "first_certificate_exponent": 0.17078147791718978,
+  "maximum_marginal_error": 3.4416913763379853e-15,
+  "condensation_paths": [
+    {
+      "depth": 0,
+      "Bellman_lower": -0.437102993800748,
+      "certificate_exponent_lower": 0.33973914176678366,
+      "marginal_error": 1.1102230246251565e-16
+    },
+    {
+      "depth": 1,
+      "Bellman_lower": -0.6626791804662784,
+      "certificate_exponent_lower": 0.1141629551012533,
+      "marginal_error": 1.1102230246251565e-16
+    },
+    {
+      "depth": 2,
+      "Bellman_lower": -0.7731649946067056,
+      "certificate_exponent_lower": 0.003677140960826053,
+      "marginal_error": 6.938893903907228e-18
+    },
+    {
+      "depth": 3,
+      "Bellman_lower": -0.8283910692013199,
+      "certificate_exponent_lower": -0.05154893363378821,
+      "marginal_error": 5.551115123125783e-17
+    },
+    {
+      "depth": 4,
+      "Bellman_lower": -0.8560041048413639,
+      "certificate_exponent_lower": -0.07916196927383223,
+      "marginal_error": 2.7755575615628914e-17
+    },
+    {
+      "depth": 8,
+      "Bellman_lower": -0.8818913257539052,
+      "certificate_exponent_lower": -0.10504919018637349,
+      "marginal_error": 2.7755575615628914e-17
+    }
+  ],
+  "qualification": "one-level symmetry/concavity reduction requires written proof; condensation paths are lower bounds only"
+}

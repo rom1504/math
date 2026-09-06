@@ -1,0 +1,60 @@
+{
+  "scope": "Replayed finite evidence; mathematical asymptotic proofs are separate",
+  "programs_passed": 6,
+  "records": [
+    {
+      "program": "transfer_adversary_same_order_orientation_repair_2026_09_06.py",
+      "scope": "exact integer finite signing inequalities",
+      "arguments": [],
+      "source_sha256": "dd8bed2457ca418e41646a36e87579428493e0fd4f873575d674d032c5fd275d",
+      "stdout": "{\"scope\": \"All finite block inequalities tested; spectral-core theorem asserted only on marked admissible records\", \"seed\": 260906, \"finite_bound_tests\": 57, \"root_theorem_admissible_tests\": 33, \"nontrivial_admissible_repairs\": 12}\nPASS: exact same-order repair extrema and selected-core bounds\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "program": "transfer_adversary_isotropic_response_extension_2026_09_06.py",
+      "scope": "exact rational response certificates and extension inequalities",
+      "arguments": [],
+      "source_sha256": "e51a2caf7894a050091bd4945bb850352bf847ad4320f1275cb48045afc78b85",
+      "stdout": "{\"scope\": \"All root-normalized full signing extensions up to total order five, every nonempty proper old subset\", \"bound\": \"0 <= I(B)-I(A) <= r sqrt(n) + r sqrt(r-1)/2\", \"exact_extension_comparisons\": 2046, \"comparison_counts_by_total_order\": {\"2\": 2, \"3\": 12, \"4\": 112, \"5\": 1920}, \"distinct_exact_response_LPs\": 76}\nPASS: exact rational primal/dual response values; exact radical comparisons\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "program": "transfer_adversary_gaussian_return_rank_2026_09_06.py",
+      "scope": "exact integer tensor-rank identities",
+      "arguments": [],
+      "source_sha256": "0932551067d0bcb0c32cd5109e29a1a78f68b63024cd35678cadfc55fde3b041",
+      "stdout": "{\"scope\": \"Exact finite algebra only; no old-field Boolean mixed-covariance comparison\", \"seed\": 26090651, \"tensor_rank_checks\": 640, \"vector_dimensions\": 3, \"numbers_of_rows\": [1, 8], \"odd_degrees\": [1, 3, 5, 7], \"mixed_signed_diagonal_inputs\": 111, \"inputs_with_zero_Gram_diagonal\": 40, \"minimum_nonnegative_rank_slack\": 0}\nPASS: signed tensor-rank identity, rank inequality, and PSD trace comparison\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "program": "transfer_seed_high_degree_feedback_checks_2026_09_06.py",
+      "scope": "mixed: exact finite graph enumeration, floating rank/normalization/ascent diagnostics",
+      "arguments": [],
+      "source_sha256": "9646b555218048026b9e91928a374ce554a8895c2eab52c2fdf92c420bf9275c",
+      "stdout": "signed_rank_cases 196\ngaussian_mixed_normalization_cases 3240\nbipartite_graph_cases 2452\nactual_spin_ascent_cases 72 strict_finite_cases 70\nPASS: finite algebra only; no asymptotic mixed closure certified by computation\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "program": "transfer_director_actual_marked_spin_ascent_2026_09_06.py",
+      "scope": "exact integer/rational full-seed-cube checks on fifteen stored signings",
+      "arguments": [],
+      "source_sha256": "504d5e00b856554a9f5031a848e5df4b82816aba2415989bd4e21867d4c7a0a9",
+      "stdout": "{\"status\": \"EXACT FINITE INTEGER/RATIONAL REGRESSION; no asymptotic or new optimality claim\", \"actual_signing_cases\": 15, \"full_seed_configurations\": 33272, \"strict_both_orientations\": 12}\nPASS: all seed spins, both energy orientations, exact fractional-ascent inequality\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "program": "transfer_fresh_perfect_dyadic_inverse_classify.py",
+      "scope": "exact finite Walsh inverse classification, no asymptotic consequence",
+      "arguments": [],
+      "source_sha256": "6d6bacd5c92030917de7e5dc0af07e433432df1f893bd0dbf5db9dbe7b4301b0",
+      "stdout": "[{\"all_checks_integer\": true, \"examples\": {\"4\": {\"f\": [1, -1, 1, 1], \"g\": [1, -1, 1, 1]}}, \"f_representatives\": 8, \"nonzero_spectra\": 4, \"order\": 4, \"perfect_pair_counts_by_positive_c\": {\"4\": 4}}, {\"all_checks_integer\": true, \"examples\": {}, \"f_representatives\": 128, \"nonzero_spectra\": 64, \"order\": 8, \"perfect_pair_counts_by_positive_c\": {\"4\": 0, \"8\": 0}}, {\"all_checks_integer\": true, \"examples\": {\"16\": {\"f\": [1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, 1], \"g\": [1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, 1]}}, \"f_representatives\": 32768, \"nonzero_spectra\": 16832, \"order\": 16, \"perfect_pair_counts_by_positive_c\": {\"4\": 0, \"8\": 0, \"12\": 0, \"16\": 448}}]\n",
+      "stderr": "",
+      "returncode": 0
+    }
+  ]
+}

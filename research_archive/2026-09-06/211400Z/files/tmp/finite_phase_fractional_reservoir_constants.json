@@ -1,0 +1,283 @@
+{
+  "max_k": 5,
+  "orders": [
+    {
+      "order": 1,
+      "invertible_row_subsets": 2,
+      "positive_basic_vertices": 1,
+      "maximum_vertex_mass": [
+        1,
+        1
+      ],
+      "matrix": [
+        [
+          1
+        ]
+      ],
+      "primal_B_inverse_one": [
+        [
+          1,
+          1
+        ]
+      ],
+      "dual_B_inverse_transpose_one": [
+        [
+          1,
+          1
+        ]
+      ],
+      "dual_is_nonnegative": true
+    },
+    {
+      "order": 2,
+      "invertible_row_subsets": 4,
+      "positive_basic_vertices": 0,
+      "maximum_vertex_mass": null,
+      "matrix": null,
+      "primal_B_inverse_one": null,
+      "dual_B_inverse_transpose_one": null,
+      "dual_is_nonnegative": false
+    },
+    {
+      "order": 3,
+      "invertible_row_subsets": 32,
+      "positive_basic_vertices": 1,
+      "maximum_vertex_mass": [
+        3,
+        1
+      ],
+      "matrix": [
+        [
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1
+        ]
+      ],
+      "primal_B_inverse_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "dual_B_inverse_transpose_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "dual_is_nonnegative": true
+    },
+    {
+      "order": 4,
+      "invertible_row_subsets": 928,
+      "positive_basic_vertices": 5,
+      "maximum_vertex_mass": [
+        5,
+        1
+      ],
+      "matrix": [
+        [
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1
+        ]
+      ],
+      "primal_B_inverse_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "dual_B_inverse_transpose_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "dual_is_nonnegative": true
+    },
+    {
+      "order": 5,
+      "invertible_row_subsets": 96256,
+      "positive_basic_vertices": 408,
+      "maximum_vertex_mass": [
+        9,
+        1
+      ],
+      "matrix": [
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ]
+      ],
+      "primal_B_inverse_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "dual_B_inverse_transpose_one": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "dual_is_nonnegative": true
+    }
+  ],
+  "cumulative_constants": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      9,
+      1
+    ]
+  ],
+  "interpretation": "A nonnegative dual at each cumulative maximizer makes the corresponding capacity vector a matching exact lower example."
+}

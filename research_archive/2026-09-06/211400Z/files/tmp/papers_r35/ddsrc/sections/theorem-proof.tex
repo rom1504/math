@@ -1,0 +1,147 @@
+\section{Main Agreement Theorem}
+In this section we describe and prove our main agreement theorem. Recall that we defined \emph{suitable complexes} in \pref{def:suitable-complexes}.
+
+\begin{theorem}[Main] \label{thm:main}
+    For every $\epsilon_0>0$, \(p > 1\), and $k \geq \exp(\poly(1/\epsilon_0))$ there exists \(\alpha = \poly(\varepsilon)\) and \(d_0\in\mathbb{N}\) such that the following holds for any \(d \geq d_0\). Let \(\eta \leq \exp(-\poly(1/\varepsilon_0))\) be sufficiently small. Let \(\mathcal{D}\) be an agreement distribution on \(\Delta_k(pk)\) such that its extension to \(\Delta_k(m)\) is \((\eta,\poly(\frac{1}{k}),O(1))\)-sound for every \(m \geq k^3\). Let \(X\) be a \((d,k,\alpha)\)-suitable complex and let \(\mathcal{D}_X\) be the extension of \(\mathcal{D}\) to $X$. Then \(\mathcal{D}_X\) is \((\varepsilon_0,\gamma,O(1))\)-cover sound where \(\gamma = \exp(\poly(1/\varepsilon_0))\eta\).
+\end{theorem}
+%
+We derive \pref{cor:spherical-building-list-agreement} and \pref{cor:general} as corollaries of this theorem in the end of this section.
+
+\begin{corollary}[Formal version of \pref{cor:spherical-building-list-agreement}] \label{cor:spherical-building-agreement-expansion}
+    For every \(\varepsilon_0 > 0\) and \(k \geq \exp(\poly(1/\epsilon_0))\) there exists \(d_0 \geq k\) and integer \(q_0\) such that the following holds. Let \(\eta \leq \exp(-\poly(1/\varepsilon_0))\). Let \(X\) be a \(d\)-dimensional spherical building with a sufficiently large field size \(q \geq q_0\) and dimension \(d\geq d_0\). Let \(\mathcal{D}\) be either the \(V\)-test or the \(Z\)-test for sets of dimension \(k\). Then:
+    \begin{enumerate}
+        \item \(\mathcal{D}_X\) is \((\eta, \varepsilon_0, O(1))\)-sound where \(\gamma = \exp(\poly(1/\varepsilon))\poly(1/k)\).
+        \item There is an \(\ell = \poly(1/\varepsilon)\) and a list of functions \(G_1,G_2,\dots,G_\ell:Y(0) \to \Sigma\) such that
+    \begin{equation} \label{eq:list-explains-most-of-the-agreement}
+        \Prob[\set{r_i} \sim \mathcal{D}]{\text{\(\set{f_{r_i}}\) passes the agreement test but for every \(G_m\) there is at least one \(f_{r_i}\) s.t. \(f_{r_i} \overset{1-\gamma}{\napprox} G_m|_{r_i}\)} } \leq \varepsilon^2.
+    \end{equation}
+    \end{enumerate} %Then for every \(\mathcal{F}=\sett{f_r:r\to\Sigma}{r\in X(k)}\) such that \(\agr_{\mathcal{D}_X}(\mathcal{F}) = \varepsilon \geq \varepsilon_0\), there exists \(\ell = \poly(1/\varepsilon)\) and a list of functions \(G_1,G_2,\dots,G_\ell:Y(0) \to \Sigma\) such that for every \(G_i\),
+    % \begin{equation} \label{eq:main-spherical-building}
+    %     \Prob[r \in X(k)]{f_{r} \overset{1-\gamma}{\approx} G_i|_r} = poly(\varepsilon).
+    % \end{equation}
+    % where \(\gamma = \exp(\poly(1/\varepsilon))\poly(1/k)\).
+\end{corollary}
+
+\begin{corollary} \label{cor:existance-of-sparse-agreement-tests}
+    For every \(\varepsilon_0> 0\), \(\eta > 0\) and \(k \geq \exp(\poly(1/\varepsilon_0)) \in \NN\) there exists \(C>0\) and an infinite family of (non-isomorphic) complexes \(X_n\) such that the following holds.
+    \begin{enumerate}
+        \item \(|X_n(k)| \leq C|X_n(0)|^2\).
+        \item The extended \(V\) or \(Z\)-test on \(X_n\) is an \((\eta,\varepsilon_0,O(1))\)-sound.
+    \end{enumerate}
+\end{corollary}
+ 
+\begin{corollary}[Formal version of \pref{cor:general}] \label{cor:LSV-building-agreement-expansion}
+   For every \(\varepsilon_0 > 0\) and \(k \geq \exp(\poly(1/\epsilon_0))\), there exists \(d \geq k\) and integer \(q_0\) such that the following holds. Let \(X\) be a simplicial complex whose links are (isomorphic to)  the \(SL_d(\mathbb{F}_q)\)-spherical building with a sufficiently large field size \(q \geq q_0\). Let \(\mathcal{D}\) be either the \(V\)-test or the \(Z\)-test for sets of dimension \(k\). Then \(\mathcal{D}_X\) is \((\gamma,\varepsilon_0,O(1))\)-cover sound where \(\gamma = \exp(\poly(1/\varepsilon))\poly(1/k)\).
+\end{corollary}
+Note that this corollary applies for the \cite{LubotzkySV2005b} complexes in particular (but also slightly more generally).
+
+\subsection*{Proof of the agreement theorem}
+In this sub-section we prove \pref{thm:main}. We will give a high-level proof, relying on a few claims and lemmas that will be stated as needed. Then we will prove all outstanding claims in the following sections, formally completing the proof. For the rest of the section, we fix \(X,\calD,\calF \) to be as in the theorem statement. 
+
+\subsection[From 1\% agreement to 99.9\% list-agreement]{From $1\%$ agreement to $99.9\%$ list-agreement} 
+Our starting point is the following list-decoding lemma which we prove in \pref{sec:proof-of-lem-from-1-percent}.
+\begin{lemma}\torestate{ \label{lem:from-1-percent-to-list-agreement}
+    Let \(X, \mathcal{D},\mathcal{F}\) and $\epsilon$ be as in \pref{thm:main}. Let $d_1$ be an integer for which $X$ is suitable. Let $d_2=2d_1+1$ and let $d_3=3d_1+2$. There exists $\ell = \poly (1/\eps)$ such that for every $s\in X(d_1)\cup X(2d_1+1)\cup X(3d_1+2)$ there exists a tuple of functions \[ \overline{L}_s = (L_s^1,\ldots,L_s^\ell), \qquad L_s^i:s\to\Sigma\]
+    such that the following holds. Let \(\gamma = \eta\exp(\poly(1/\varepsilon))\).
+    \begin{enumerate}
+        \item All but $\exp(-\poly(\varepsilon) \frac{d_1}{k})$ fraction of faces in $X(d)$ are good, where a face is good if for all $i=1,\ldots,\ell$,
+\[\Prob[ { r \in X(k), r\subset s}]{L^i_s |_r \overset{1-\gamma}{\approx} f_r} \geq \poly(\varepsilon).\]
+        \item For every pair \(s \subset t\), $s,t\in X(d_1)\cup X(2d_1+1)\cup X(3d_1+2)$ there is a permutation \(\pi_{t,s}:[\ell]\to [\ell]\) such that 
+        \[\Prob[s,t]{\forall i=1,2,...,\ell, j=\pi_{t,s}(i) \; L_s^i \overset{1-\gamma}{\approx} L_t^{j}|_s} \geq 1-exp(-\poly(\varepsilon)\frac{d_1}{k}).\]
+        \item For a random triple \(s,t,u \in X(d_1)\cup X(2d_1+1)\cup X(3d_1+2)\) such that \(s \subset t \subset u\) it holds that
+        \[\Prob[s \subset t \subset u]{\pi_{s,u} = \pi_{s,t} \circ \pi_{t,u}} \geq 1-\exp(-\poly(\varepsilon)\frac{d_1}{k}).
+        \] 
+    \end{enumerate}}
+\end{lemma}
+
+\subsection[A cover of FX]{A cover $\widetilde{\FX{d_1}X}\twoheadrightarrow \FX{d_1}X$}
+%
+%
+Using \pref{lem:from-1-percent-to-list-agreement} we construct an almost-cycle \(\psi\in C^1(\FX{d_1}X,Sym(\ell))\) as follows.
+For each edge \((s_1,s_2)\) of \(\FX{d_1}X\), denoting \(t=s_1\dunion s_2\), let \[\psi((s_1,s_2))= \pi_{t,s_2}^{-1}\circ  \pi_{t,s_1}.\] %
+    \begin{lemma}\label{lem:propreties-of-permutations-on-FX}~
+    \begin{equation}\label{eq:almost-cocycle}
+        \wt(\zeta(\psi))  = \Prob[(s_1,s_2,s_3)\in \FX{d_1}X(2)]{\psi(s_1,s_2)\circ \psi(s_2,s_3) \neq \psi(s_1,s_3)}= exp(-\poly(\varepsilon)\frac{d_1}{k}).
+    \end{equation}
+    \end{lemma}
+
+    \begin{proof}[Proof of \pref{lem:propreties-of-permutations-on-FX}]
+        Recall \pref{def:face-complex} of the faces complex $\FX{d_1}X$ and recall \pref{def:flag-complex} of the flags complex $GX$. We wish to use \pref{claim:cochains-in-flag-complex-correspondence} for the flag complex of the faces complex, namely for $G(\FX{d_1}X) = G\FX{d_1}X$.  We define \(\phi:G\FX{d_1}X(1) \to Sym(\ell)\) as follows. Let \(\set{\set{s_1},\set{s_1,s_2},\set{s_1,s_2,s_3}}\) be a triangle in the flag complex. Let \(t = s_1 \dunion s_2\) and let \(u = s_1 \dunion s_2 \dunion s_3\). Then
+        \[\phi(\set{s_1}, \set{s_1,s_2})=\pi_{s_1,t}, \quad \phi(\set{s_1}, \set{s_1,s_2,s_3})=\pi_{s_1,u}, \quad \phi(\set{s_1,s_2}, \set{s_1,s_2,s_3})=\pi_{t,u}.\]
+        Where the permutations are the ones given in \pref{lem:from-1-percent-to-list-agreement}. By the third item of \pref{lem:from-1-percent-to-list-agreement}, it holds that with probability \(\wt(\coboundary \phi) = \exp(-\poly(\varepsilon)\frac{d_1}{k})\) and by \pref{claim:cochains-in-flag-complex-correspondence} the same holds for \(\coboundary(\psi)\).
+    \end{proof}
+%
+Using \pref{lem:propreties-of-permutations-on-FX} and \(\beta=\exp(-\alpha\frac{d_1}{k})\)-cosystolic expansion of \(\FX{d_1}X\) we have that
+\begin{corollary} \label{cor:good-cocycle}
+    There exists a cocycle \(\psi' \in Z^1(\FX{d_1}X,Sym(\ell))\) such that $\dist(\psi',\psi) = \exp(-\poly(\varepsilon)\frac{d_1}{k} + \alpha \frac{d_1}{k})$, namely,
+    \[\Prob[s_1,s_2]{\psi'(s_1,s_2) = \pi_{s_2,t}^{-1}\circ  \pi_{t,s_1}} \geq 1-\exp(-\poly(\varepsilon)d_1/k). \qed\]
+\end{corollary}
+Here is where we require that \(\beta\) is large enough relative \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\). By \pref{def:induced-cover}, \(\psi'\) gives rise to an \(\ell\)-cover \(\nu_{\psi'}:\widetilde{\FX{d_1}X} \to \FX{d_1}X\).
+%
+\subsection[Construction of a cover Y to X]{Construction of a cover \(Y \twoheadrightarrow X\)} Recall that our goal is to construct a cover \(Y \twoheadrightarrow X\) (together with a global function on the vertices of \(Y\) such that \eqref{eq:dist-cover-soundness} holds). So far we managed to construct a cover \(\nu = \nu_{\psi'}:\widetilde{\FX{d_1}X} \to \FX{d_1}X\). It seems natural to expect that every such cover \(\widetilde{\FX{d_1}X}\) is (isomorphic to) a face complex \(FY\) of some complex \(Y\). When \(X\) is a well-connected clique complex, this is indeed the case.
+
+\begin{lemma} \label{lem:Y-is-an-honest-to-god-cover-of-X}
+    Let \(\nu:\widetilde{\FX{d_1}X} \to \FX{d_1}X\) be an \(\ell\)-covering map. Then there exists an \(\ell\)-covering map \(\rho:Y \to X\) such that \(FY\) and \(\widetilde{\FX{d_1}X}\) are isomorphic.
+\end{lemma}
+\begin{center}
+\begin{tikzcd}[arrows=rightarrow]
+Y\ar[d,"\rho"]\ar[r,"faces"]  & \quad FY\stackrel{\iota}\cong \widetilde{\FX{d_1}X}\ar[d,"\nu"]  \\
+		 X\ar[r,"faces"] & \quad \FX{d_1}X 
+\end{tikzcd}
+\end{center}
+%
+We denote by \(\iota: FY \overset{\sim}{\to} \widetilde{\FX{d_1}X}\) the isomorphism. We prove this lemma in \pref{sec:construction-of-cover}.
+%
+%
+%
+\subsection[The global function G]{The global function \(G\)}\label{sec:globalfunc}
+Given \pref{lem:Y-is-an-honest-to-god-cover-of-X}, we can define an ensemble of functions for \(FY\) to be \(h_{\tilde{s}}:\tilde{s} \to \Sigma\), \(h_{\tilde{s}}=L_s^j\circ \rho\) such that \(\iota(\tilde{s}) =(s,j)\) is the identification promised in \pref{lem:Y-is-an-honest-to-god-cover-of-X}. We define a majority (plurality) function \(G:Y(0) \to \Sigma\) by \(G(v) = plurality_{s \ni v} h_s(v)\). We prove that
+\begin{claim} \torestate{\label{claim:agreement-with-majority}
+    There exists a universal constant \(c>0\) such that
+    \(\Prob[\tilde{s}\in Y(d_1)]{h_{\tilde{s}} \overset{1-O(\gamma)}{\approx} G|_{\tilde{s}}} \geq 1-\exp(-\poly(\varepsilon)\left ( \frac{d_1}{k} \right )^c ) - \frac{1}{d_1^c}.\)}
+\end{claim}
+
+This claim is proven in \pref{sec:global-func}. Combining all the pieces we can finally prove the theorem. Consider the probability \(\Prob[\tilde{r} \in Y(k)]{f_{r}\circ \rho \overset{1-O(\eta)}{\napprox} G|_{\tilde{r}}}\). Sampling \(\tilde{r} \in Y(k)\) is the marginal of sampling a pair \((\tilde{r} \subseteq \tilde{s})\) in \(Y\) such that \(\tilde{s} \in Y(d_1)\). Denote by \(\iota(\tilde{s})=(s,j)\). If \(f_r \overset{1-O(\gamma)}{\approx} L_s^j|_{r}\), and \(h_{\tilde{s}}|_{\tilde{r}} \overset{1-O(\gamma)}{\approx} G|_{\tilde{r}}\) then
+\[f_r \circ \rho \overset{1-O(\gamma)}{\approx} L_s^j|_{r} \circ \rho = h_{\tilde{s}}|_{\tilde{r}} \overset{1-O(\gamma)}{\approx} G|_{\tilde{r}}.\]
+
+Thus we define the ``bad events''
+\begin{enumerate}
+    \item \(E_1\) the event that \(f_r \overset{1-\gamma}{\napprox} L_s^j|_{r}\).
+    \item \(E_2\) the event that \(h_{\tilde{s}}|_{\tilde{r}} \overset{1-O(\gamma)}{\napprox} G|_{\tilde{r}}\).
+\end{enumerate}
+and we have that 
+\[\Prob[\tilde{r} \in Y(k)]{f_{r}\circ \rho \overset{1-O(\gamma)}{\napprox} G|_{\tilde{r}}} \leq \prob{E_1} + \prob{E_2}.\]
+
+By \pref{lem:from-1-percent-to-list-agreement} \(\prob{E_1} \leq 1-\poly(\varepsilon)\). Thus to show the theorem it is enough to bound \(\prob{E_2} \leq \exp(-\poly(\gamma)k) + \exp(-\poly(\varepsilon)\left ( \frac{d_1}{k} \right )^c )+\frac{1}{d_1^c}\) for the \(c>0\) in \pref{claim:agreement-with-majority} (\(k\) and \(d_1\) are chosen large enough such that this is much smaller than the upper bound on \(\prob{E_1}\)). Indeed, 
+\[\prob{E_2} \leq \Prob[\tilde{s},\tilde{r}]{h_{\tilde{s}} \overset{1-O(\gamma)}{\napprox} G|_{\tilde{s}} } + \Prob[\tilde{s},\tilde{r}]{h_{\tilde{s}} \overset{1-O(\gamma)}{\approx} G|_{\tilde{s}} \ve h_{\tilde{s}}|_{\tilde{r}} \overset{1-O(\gamma)}{\approx} G|_{\tilde{r}}}.\]
+The first item in this sum is bounded by \(\exp(-\poly(\varepsilon)\left ( \frac{d_1}{k} \right )^c )\) by \pref{claim:agreement-with-majority}. The second is bounded by \(\exp(-\poly(\gamma)k)\) by a standard Chernoff argument.
+
+Thus 
+\[\Prob[\tilde{r} \in Y(k)]{f_{r}\circ \rho \overset{1-O(\eta)}{\approx} G|_{\tilde{r}}} \geq \poly(\varepsilon) - \exp(-\poly(\varepsilon)\left ( \frac{d_1}{k} \right )^c )-\frac{1}{d_1^c} - \exp(-\poly(\gamma)k) = \poly(\varepsilon)\]
+and \pref{thm:main} follows.
+    
+\subsection{Deriving the corollaries}
+
+\begin{proof}[Proof of \pref{cor:spherical-building-agreement-expansion}]
+We begin with the first item, i.e. showing that there exists \emph{one} global function \(G:X(0) \to \Sigma\) for \(\varepsilon^{O(1)}\) of the \(f_r\)'s, \(G|_r \approx f_r\).
+
+Fix \(\varepsilon_0\) and let \(d,k,\alpha\) be as in \pref{thm:main} (for agreement distributions for either \(2\) or \(3\) sets). By \pref{thm:spherical-building-and-LSV-complexes-are-suitable} there is a \(q_0\) such that for \(q \geq q_0\), \(X\) is suitable. As seen in \pref{ex:sound-distributions}, both the \(V\)-test and the \(Z\)-test are \((\varepsilon_1,\eta)\)-sound for \(\varepsilon_1, \eta = \poly(1/k)\). We take \(k\) to be large enough so that \(\varepsilon_0 \geq \varepsilon_1\) and so that \(\gamma = \exp(1/\poly(\varepsilon_0))\eta < 1\). By \pref{thm:main}, there exists a cover \(\rho:Y \to X\) and a global function such that \(G':Y(0) \to \Sigma\) agrees with the ensemble as in \pref{def:distribution-cover-soundness}.
+
+It is well known that the spherical building is simply connected (see e.g. \cite{DiksteinD2023} for a proof of this fact). By simple connectivity, every connected component in the cover is isomorphic to \(X\), so a cover is in fact composed of many disconnected components, each isomorphic to \(X\). Hence we can think of the global function \(G':Y(0) \to \Sigma\) as a list of functions \(G_1,G_2,\dots,G_\ell:X(0) \to \Sigma\), each is a restriction of \(G'\) to one of the components isomorphic to \(X\). From this we get that there is at least function \(G=G_i\) such that \eqref{eq:dist-cover-soundness} holds conditioned on sampling \(\tilde{r}\) in \(G_i\)'s component.
+
+\medskip
+
+Turning to \eqref{eq:list-explains-most-of-the-agreement}, by \cite[Theorem 5.1]{DinurG2008}, if
+\[\agr_{\mathcal{D}}(\mathcal{F}) = \varepsilon \qquad \Rightarrow \qquad \exists G:X(0) \to \Sigma \; \Prob[r \in X(k)]{f_r \overset{1-\gamma}{\approx} G|_r} \geq \poly(\varepsilon)\]
+holds, then there is an (inefficient) algorithm that outputs a list of functions \(G_1,G_2,\dots,G_\ell\) for \(\ell = \poly(1/\varepsilon)\) such that \eqref{eq:list-explains-most-of-the-agreement} holds. 
+\end{proof}
+
+\begin{proof}[Proof sketch of \pref{cor:existance-of-sparse-agreement-tests}]
+    By \pref{cor:spherical-building-agreement-expansion} for every \(\varepsilon_0,\eta > 0\) and \(k\) sufficiently large, there is an integer \(d_0\) and a prime power \(q_0\) such that the following holds. Let \(X_q\) be the \(d_0\)-dimensional spherical building over any \(\F_q\) for \(q\geq q_0\). Then the \(V\) or \(Z\) tests on \(X\) are \((\eta,\varepsilon_0,O(1))\)-sound. 
+    
+    Let us show that \(|X_q(k)| = O_{d_0,k}|X_q(0)|\). The number of flags in a spherical building is $|X(d_0)|\approx q^{d^2/2}$ and for $k<d$ clearly $|X(k)|\leq 2^d\cdot|X(d)|$. However, the number of elements in \(X(0)\), which are subspaces in $|X(0)| \geq \binom{d_0}{d_0/2}_q \geq q^{d^2/4}$. The corollary follows.
+\end{proof}
+
+\begin{proof}[Proof of \pref{cor:LSV-building-agreement-expansion}]
+Fix \(\varepsilon_0\) and let \(d,k,\alpha\) be as in \pref{thm:main} (for agreement distributions for either \(2\) or \(3\) sets). By \pref{thm:spherical-building-and-LSV-complexes-are-suitable} there is a \(q_0\) such that for \(q \geq q_0\), \(X\) is suitable. As seen in \pref{ex:sound-distributions}, both the \(V\)-test and the \(Z\)-test are \((\varepsilon_1,\eta,O(1))\)-sound for \(\varepsilon_1, \eta = \poly(1/k)\). We take \(k\) to be large enough so that \(\varepsilon_0 \geq \varepsilon_1\) and so that \(\gamma = \exp(1/\poly(\varepsilon_0))\eta < 1\). The corollary follows directly from \pref{thm:main}.
+\end{proof}

@@ -15,6 +15,7 @@ proofs, certificates, and scripts remain in their original locations.
 | [2026-09-06 18:51:23](2026-09-06/185123Z/README.md) | 1,915 research files; 154,762,575 bytes; checkpoint-3 proofs, failed comparisons, numerical reconnaissance and unfinished calculations | Preservation only; all hashes verified. New canonical replay programs have no ignored research input. |
 | [2026-09-06 19:29:59](2026-09-06/192959Z/README.md) | 1,901 research files; 154,677,428 bytes; threshold-information proofs, scoped counterexamples, failed reconnaissance, and the source-less experiment binary | Preservation only; all hashes verified. Executable exclusions now require reviewed binary and source hashes. |
 | [2026-09-06 20:35:22](2026-09-06/203522Z/README.md) | 1,916 research files; 155,235,485 bytes; all-order orientation repair, exact-minimizer tests, failed MILPs, subagent drafts and independent finite replays | Preservation only; all hashes verified. External downloaded dependencies have per-file pinned-commit manifests; independent order-15/16 witness replay is standalone. |
+| [2026-09-06 21:14:00](2026-09-06/211400Z/README.md) | 1,903 research files; 154,918,023 bytes; same-order repair, actual signed-feedback proofs, exact finite checks, abandoned catalyst tests and continuing drafts | Preservation only; all hashes verified. New mathematical and diagnostic scripts have tracked inputs; no new external dependency. |
 
 Each snapshot has `manifest.json` (original paths, hashes, byte counts,
 provenance category, exclusions), `files/` (unchanged payloads),
