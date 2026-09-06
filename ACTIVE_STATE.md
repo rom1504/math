@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.4, resumed campaign in progress;
+Evidence cutoff: ledger Section 10.148.5, resumed campaign in progress;
 full nonlinear response theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.4314603928237005\le\liminf_n M_n/n^{3/2}
+0.4314713871136104\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -27,8 +27,8 @@ The fresh verification script does not rerun those solvers.
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
 See the [full nonlinear theorem](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md),
-[conditional-projection certificate](artifacts/resumed_response_conditional_v_full_center_2026_09_06.md),
-and [independent numerical reconstruction](artifacts/resumed_director_third_checkpoint_audit_2026_09_06.md).
+[causal-shape certificate](artifacts/resumed_response_causal_inverse_shape_dual_2026_09_06.md),
+and [independent reconstruction](artifacts/resumed_director_fifth_checkpoint_audit_2026_09_06.md).
 The upper is unchanged. The new theorem uses the whole nonlinear local Gaussian
 response norm, not only selected edge coefficients. Nuclear covariance, actual
 endpoint parity and full mixed contractions justify a fresh one-step channel;
@@ -230,6 +230,18 @@ An exhaustive q=16 balanced-profile test found exactly 7/2 for its weighted
 seed; that finite result is not an upper bound on the full regularization.
 [Proof audit and exact scopes](artifacts/resumed_director_fourth_checkpoint_audit_2026_09_06.md).
 Historical route judgments are evidence to audit, not binding directives.
+The fifth checkpoint proves an exact two-parameter dual for ALL causal
+inverse shapes above a fixed conditional observation, at fixed covariance
+and mask. The displayed candidate is within 8.2e-7 of that declared class's
+optimum by exact lower and upper certificates; this is not an upper bound
+on actual signings. The whole scalar Sobolev class has an attained critical
+optimum and a uniform strict escape, not merely finite-degree stationarity.
+Nonlocal quadratic-index alphabets have a phase-robust independent-cloud
+matching obstruction, while a single dense bilinear compatibility condition
+still allows matching. Neither scope covers arbitrary nonlinear modules.
+Original convergence, upper-preserving recovery, and comparable recurrence
+remain open. A new selector construction and rich-core response birth are
+under investigation; availability of separate gates does not license composition.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
 
 The verifier uses exact finite enumeration for the small code examples,

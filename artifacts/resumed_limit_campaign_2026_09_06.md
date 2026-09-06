@@ -160,3 +160,36 @@ endogenous variational theorem, and independent optimizer-specific analysis.
 No upper-preserving all-order recovery or convergence theorem is proved.
 The remaining three hours are for substantive mathematics, not more
 smoothness variants or isolated finite seed searches. Research continues.
+
+## Fifth substantive checkpoint, approximately 05:00 UTC
+
+The director reconstructed and exactly replayed a new unit causal inverse
+above the rich core, obtaining liminf M_n/n^(3/2)>=.4314713871136104.
+An exact two-scalar dual optimizes ALL such inverse shapes at fixed mask
+and covariance. The independent dual upper certificate puts this candidate
+within 8.2e-7 of that slice's optimum. This justifies stopping local shape
+tuning and seeking a genuinely new response birth, not claiming a global
+response upper bound.
+
+The entire even scalar Sobolev class has an attained critical optimum,
+uniform finite-height approximation, and a uniform full-gradient escape.
+That is stronger than testing finite-degree candidates. Its numerical
+degree progression and first birth are below the banked bound and remain
+explicitly heuristic.
+
+Nonlocal work distinguishes an enlarged arbitrary-permutation matching
+model from actually realized modules. Quadratic inverse-index alphabets
+have a phase-robust independent-cloud obstruction; a single bilinear
+compatibility condition does not. Exact nonlinear affine-MM and cubic
+modules survive those scoped restrictions. A new selector promotion is
+being audited; overlapping composition remains unproved.
+
+For actual signings, a complete Boolean Hadamard eigenbasis gives the
+robust inequality Q(A)/n^(3/2)>=1/2-1/(2n)-2d/n^2. This excludes only an
+o(n^2)-edit recovery into that specified class for hypothetical sub-.5
+minimizers, not all structured constructions.
+
+[Proof reconstruction and evidence](resumed_director_fifth_checkpoint_audit_2026_09_06.md).
+Convergence and nonconvergence remain open. More than two campaign hours
+remain for the rich-core birth, compatible nonlocal synthesis, and direct
+verification of their original-problem implications. Continue immediately.

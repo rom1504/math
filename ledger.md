@@ -45079,3 +45079,43 @@ nonlocal tests have no upper-preserving original recovery theorem. No
 convergence/nonconvergence claim or comparable-order recurrence is made.
 Continue toward general realization and actual-optimizer structure, not
 more isolated finite caps. This checkpoint is not the campaign's end.
+
+### 10.148.5. Causal-shape optimization and scoped nonlocal realization
+
+**Proved, independently replayed:** the full-response lower endpoint is now
+.4314713871136104. A unit causal inverse above the fixed rich core has
+three exactly orthonormal pieces; exact Gaussian polynomial moments and
+64-bin Jensen certify the displayed value. This changes the original
+liminf bound, not the .5 upper or the convergence status.
+
+**Strict optimization reduction:** all unit causal inverse shapes at fixed
+mask and covariance have an attained two-parameter dual. Atomless moment
+convexification introduces no response gap. An independent proof checks
+the conjugate and energy duals exactly. Rational strong-concavity and chord
+bounds place the certified candidate within 8.2e-7 of that declared slice's
+global optimum. No full-response or actual-signing upper bound is inferred.
+
+**Whole-class response theory:** the scalar Sobolev full-center optimum is
+attained and critical. Its finite-Hermite and actual-height approximations
+are uniform, and the entire scalar class has a uniform strict escape into
+the full response class. Scalar numerical optimization and its one-birth
+test stay below the banked bound; their values are diagnostics only.
+
+**Nonlocal scope:** arbitrary Fourier-index matching would attain the
+majorant norm in an enlarged model, but its actual realization remains
+missing. Quadratic index alphabets are information-limited for independent
+clouds even after arbitrary common signs. A single dense bilinear constraint
+does not prevent matching. Actual nonlinear affine-MM and cubic modules
+are proved and exactly tested; no arbitrary gate composition is assumed.
+
+**Actual-signing rigidity:** a signing d unordered edge edits from a symmetric
+Hadamard with a complete Boolean eigenbasis satisfies
+Q(A)/n^(3/2)>=1/2-1/(2n)-2d/n^2. This is not a statement about every conference
+matrix and does not give the critical-window law required for insertion.
+
+[Director audit, proof files, scripts, exact scopes](artifacts/resumed_director_fifth_checkpoint_audit_2026_09_06.md).
+
+Updated frontier: [.4314713871136104,.5]. Convergence/nonconvergence and a
+comparable-order recurrence remain open. Continue the correctly conditioned
+rich-core birth and actual compatible nonlocal realization; do not spend
+the remaining two hours on the now-certified nearly optimal fixed slice.

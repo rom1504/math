@@ -1,0 +1,86 @@
+{
+  "status": "floating_diagnostic_not_certificate",
+  "fixed_rich_core_projection": "computations/results/resumed_response_conditional_v_certificate_2026_09_06.json",
+  "runs": [
+    {
+      "value": 0.4314718442469324,
+      "alpha": 0.727985631741986,
+      "unit_basis_coordinates": [
+        0.999850715270048,
+        0.011453051427380333,
+        -0.012937340799997542
+      ],
+      "basis_correlations": [
+        0.9633663364288593,
+        0.12140052563976318,
+        0.21745553051274716
+      ],
+      "conditional_inverse_norm_squared": 0.9900996935405533,
+      "center_mass": 0.5333776181800349,
+      "center_inverse_mean_integral": 0.7035725065691967,
+      "center_inverse_second_integral": 0.942812785789973,
+      "center_variance": 0.014738087625610796,
+      "tail_second_integral": 0.04728690775058031,
+      "step_mass": 0.284136625941769,
+      "step_on_e0": 0.0,
+      "step_on_e1": 0.0,
+      "step_residual_norm": 0.0,
+      "output_covariance": 0.9617996307018561,
+      "lambda": 0.6057026525711302,
+      "gamma": 0.006248331262093505,
+      "residual_variance": 0.09242752379544582,
+      "parameters": [
+        0.727985631741986,
+        0.011453051427380333,
+        -0.012937340799997542
+      ],
+      "step_basis": false,
+      "success": true,
+      "message": "CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL",
+      "iterations": 17,
+      "replay_value": 0.4314718442469325,
+      "replay_difference": 1.1102230246251565e-16
+    },
+    {
+      "value": 0.43147188567863115,
+      "alpha": 0.7279857368024453,
+      "unit_basis_coordinates": [
+        0.9998409363128415,
+        0.011457525450950107,
+        -0.012937475882795773,
+        -0.004410090858836301
+      ],
+      "basis_correlations": [
+        0.9633663501245496,
+        0.12140059292845795,
+        0.21745543227262837
+      ],
+      "conditional_inverse_norm_squared": 0.9900996935405533,
+      "center_mass": 0.5333776824931165,
+      "center_inverse_mean_integral": 0.703572558988866,
+      "center_inverse_second_integral": 0.9428128285156776,
+      "center_variance": 0.014738103963381155,
+      "tail_second_integral": 0.04728686502487567,
+      "step_mass": 0.2841366651682502,
+      "step_on_e0": 0.3890539768251965,
+      "step_on_e1": 0.2626413381921473,
+      "step_residual_norm": 0.25257314931993025,
+      "output_covariance": 0.9617907394934425,
+      "lambda": 0.6056967600413585,
+      "gamma": 0.006253953579593722,
+      "residual_variance": 0.09242811491901232,
+      "parameters": [
+        0.7279857368024453,
+        0.011457525450950107,
+        -0.012937475882795773,
+        -0.004410090858836301
+      ],
+      "step_basis": true,
+      "success": true,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 17,
+      "replay_value": 0.4314718856786312,
+      "replay_difference": 5.551115123125783e-17
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: resumed fourth checkpoint, ledger Section 10.148.4;
-full nonlinear theorem and .4314603928237005 certificate reconstructed.
+Evidence cutoff: resumed fifth checkpoint, ledger Section 10.148.5;
+full nonlinear theorem and .4314713871136104 certificate reconstructed.
 
 Status: **second six-hour response/convergence campaign active**, starting
 2026-09-06 01:13:55 UTC from 78110a5;
@@ -41,8 +41,8 @@ are active. Record meaningful checkpoints and keep all limit orders explicit.
 ## Active independent assessment, 2026-09-06
 
 The full nonlinear response theorem is proved and independently reconstructed.
-Conditional projection onto one Gaussian field, then exact binwise Jensen,
-gives the displayed bound. Finite approximations precede the matrix limit;
+A causal inverse shape above the rich core, conditional projection, and exact
+binwise Jensen give the displayed bound. Finite approximations precede the matrix limit;
 spectral deletion is removed last. The old marked supremum is exceeded by
 at least 1/40000. Feasible coordinate birth and one-Gaussian gradient ascent
 give further genuine finite-stage mechanisms, not refreshed product spins.
@@ -57,17 +57,19 @@ These limits justify complementary nonlocal work rather than constant tuning.
 Matrix-height recovery now exactly decides finite Gaussian feasibility;
 strict barriers give positive approximation floors. Continuous cyclic cores
 have uniform two-stage escape on each fixed frame, not over growing frames.
-Nonlocal resonant phase carriers and vectorial bent maps give new realizable
-regularized tests. Neither arbitrary polar recovery nor equality of
-regularized and original minima follows. Stop smoothness variants and
-isolated seed tuning; seek a general synthesis/falsifier and independently
-an original-minimizer argument. Convergence and nonconvergence remain open.
+The entire fixed-mask/fixed-covariance causal shape problem now has an exact
+two-parameter dual; the banked candidate is certified within 8.2e-7 of its
+optimum. Stop tuning that slice. Pursue a correctly conditioned rich-core
+birth and actual compatible nonlocal realization. Quadratic-index and
+independent-cloud barriers are scoped, not universal nonlinear impossibility.
+Neither arbitrary polar recovery nor equality of regularized and original
+minima follows. Convergence and nonconvergence remain open.
 See `artifacts/resumed_limit_campaign_2026_09_06.md` for evidence and next tests.
 
 ## Agent-authored rigorous frontier
 
 ```math
-0.4314603928237005
+0.4314713871136104
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
