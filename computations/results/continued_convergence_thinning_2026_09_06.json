@@ -1,0 +1,175 @@
+{
+  "parameters": {
+    "prime": 10009,
+    "retention": 0.03,
+    "samples": 4,
+    "degree": 3,
+    "delta": 0.15,
+    "seed": 9060737,
+    "bernoulli": false,
+    "output": "computations/results/continued_convergence_thinning_2026_09_06.json"
+  },
+  "exact_degree_two_identity_checks": [
+    {
+      "vertices": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "eliminated": 2,
+      "sum": 20
+    },
+    {
+      "vertices": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "eliminated": 1,
+      "sum": -20
+    },
+    {
+      "vertices": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "eliminated": 1,
+      "sum": -20
+    },
+    {
+      "vertices": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "eliminated": 3,
+      "sum": 0
+    }
+  ],
+  "polynomial_coefficients": [
+    -0.22975292054736124,
+    -0.1419951139128235,
+    0.6015009550075457,
+    0.37174803446018456
+  ],
+  "samples": [
+    {
+      "m": 300,
+      "retained_fraction": 0.029970029970029972,
+      "degree": 3,
+      "target_iterated_limit": 0.515036214800484,
+      "diag_mean": 0.9286088785321976,
+      "diag_mean_squared_error_from_1": 0.020129145227979595,
+      "discarded_fraction": 0.05,
+      "trimmed_gaussian_energy": 0.35452910132791354,
+      "standard_gaussian_energy": 0.5038242267948311,
+      "linear_trace_energy": 0.46653901345838716
+    },
+    {
+      "m": 300,
+      "retained_fraction": 0.029970029970029972,
+      "degree": 3,
+      "target_iterated_limit": 0.515036214800484,
+      "diag_mean": 0.9811460102355852,
+      "diag_mean_squared_error_from_1": 0.020836942928822585,
+      "discarded_fraction": 0.11666666666666667,
+      "trimmed_gaussian_energy": 0.3149783548918705,
+      "standard_gaussian_energy": 0.5133973034438535,
+      "linear_trace_energy": 0.5027242317332091
+    },
+    {
+      "m": 300,
+      "retained_fraction": 0.029970029970029972,
+      "degree": 3,
+      "target_iterated_limit": 0.515036214800484,
+      "diag_mean": 0.9523996483287483,
+      "diag_mean_squared_error_from_1": 0.02125952504457513,
+      "discarded_fraction": 0.09333333333333334,
+      "trimmed_gaussian_energy": 0.32475876344478044,
+      "standard_gaussian_energy": 0.5105221410779686,
+      "linear_trace_energy": 0.4851765437211948
+    },
+    {
+      "m": 300,
+      "retained_fraction": 0.029970029970029972,
+      "degree": 3,
+      "target_iterated_limit": 0.515036214800484,
+      "diag_mean": 0.9686359848221345,
+      "diag_mean_squared_error_from_1": 0.02008635955275381,
+      "discarded_fraction": 0.08333333333333333,
+      "trimmed_gaussian_energy": 0.34185411246495295,
+      "standard_gaussian_energy": 0.5121035061251267,
+      "linear_trace_energy": 0.4949021731085839
+    }
+  ],
+  "scope": "Exact graph identities; numerical Gaussian expected-energy lower bounds, not exact caps."
+}

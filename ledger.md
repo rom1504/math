@@ -45276,3 +45276,54 @@ unproved arbitrary-minimizer mixed-response comparison and the lack of
 an unrestricted all-order upper/recovery or summable recurrence theorem.
 
 [Final synthesis and exact proof obligations](artifacts/resumed_limit_final_synthesis_2026_09_06.md).
+
+### 10.149 Six additional active hours: authorization and first checkpoint
+
+The user authorizes six additional active research hours from head25cb53e,
+2026-09-06 07:37:56–13:37:56 UTC, retaining the verified .4333221116640807
+bound. Write/execution access is verified. Three complementary researchers
+work on actual feedback, independent convergence, and adversarial verification
+while the director derives and integrates. These are starting assignments,
+not user-authored mathematical judgments. Checkpoints do not end the run.
+
+#### 10.149.1 Zero-first actual feedback and sharp transfer falsifiers
+
+For B=A/sqrt(n-1) with fixed operator cap, bounded odd scalar f with
+E[Nf(N)]=0, even bounded H, and bounded odd Lipschitz psi, set
+Q=B², R_f=sum_(p>=3 odd) f_p² Q^(circ p), T=B R_f B, and
+C=H(BS)psi(Bf(BS)). A new normalized-nuclear covariance theorem compares
+this ACTUAL response with the product Gaussian kernel with covariances Q,T.
+It retains the actual self-energy mu² Tr(B D_a T D_a)/(2n)+o(1).
+The proof handles mixed-degree lone stars by exact BW factorization,
+small tensor flattenings, collision deletion, and Boolean/Gaussian input
+replacement. The director and a separate auditor reconstructed the proof;
+bounded approximation precedes raw substitution, and finite approximation
+is fixed before the order limit. This is not a joint-law theorem for a
+further threshold of BC. Endpoint gain additionally needs |psi|<=1 and
+|f|+H<=1. Hard thresholding requires separate variance control.
+
+An exact binary-Steiner/Hadamard Gram construction gives hollow signings
+B²=I+gamma B with gamma->1/sqrt(2). It supplies a uniform transported
+variance floor and proves E[sign(Bf(BS))^T B sign(Bf(BS))]/(2n)
+->1/(pi sqrt(2)). This verifies a nonzero feedback self-energy on actual
+signings, not on near-minimizers. The same identity QS=S+gamma BS gives a
+bounded feasible-response falsifier of Gaussianizing the coherent return:
+the normalized-nuclear discrepancy exceeds3/256. A separate apex/twin
+construction has bounded operator norm and cubic variance exactly
+(36m²-40m+1)/(8m³) at its apex, tending to zero. This refutes a uniform
+pointwise variance floor, not a positive-density claim.
+
+Independently, fractional correlated rounding gains d²/(pi L) with explicit
+slack-proportional errors, improving finite stability but not the current
+Boolean certificate. A rooted-walk and Gaussian-rounding theorem proves
+liminf_(p->0) liminf_N E Q(C_N[S])/|S|^(3/2)>=2/pi for uniform proportional
+conference subsets. It refutes universal average sharp extraction, not
+exceptional subsets or a minimizer-specific order theorem.
+
+[Proofs, independent audits, exact programs, and continuing targets](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: universal [.4333221116640807,.5], unchanged. The restricted
+zero-first transport obligation is removed; nonzero-first feedback must
+retain QS rather than Gaussianize it. A direct energy projection is under
+attack. Independent convergence work tests noncommuting signing switches.
+Neither convergence nor nonconvergence is established. Continue the campaign.

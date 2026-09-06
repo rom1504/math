@@ -1,20 +1,22 @@
 # Strategic steering
 
-Evidence cutoff: final comparison, ledger Section 10.148.8.
-Status: **second six-hour response/convergence campaign completed**,
-2026-09-06 01:13:55–07:13:55 UTC. Convergence and nonconvergence are open.
+Evidence cutoff: first continued checkpoint, ledger Section 10.149.1.
+Status: **third six-hour response/convergence campaign active**,
+2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
 
 ## User-stated objective and workflow directives
 
 Determine whether M_n/n^(3/2) converges, without presuming either answer.
 Convergence to any constant or rigorous nonconvergence is success.
 
-The latest user authorizes six additional hours of active research from
-78110a5. Preserve useful mathematics, develop response feasibility, independently
-pursue convergence/upper recovery, and freshly reconstruct the explicit bound.
-Neither Hadamard recovery, a particular hierarchy, nor convergence to 1/2 is
-mandatory. Prior positive audits are not proof steps. Use three complementary
-researchers, record meaningful checkpoints, and keep all limit orders explicit.
+The latest user authorizes six additional active hours from current head
+25cb53e. Preserve the .4333221116640807 result. Use complementary feedback-
+transfer, independent-convergence, and adversarial-verification researchers
+while the director works. Their starting assignments are not mandatory
+conclusions; route selection remains agent-authored. Do not tune the terminal
+functional already bounded below .45. Prior audits are evidence, not proof
+steps. Record verified work roughly hourly and continue after checkpoints
+unless solved or genuinely blocked. Keep normalization and limit orders explicit.
 
 Write access and normal Git push are verified. Checkpoints are steering events,
 not stopping points; bookkeeping and idle waits are not research. The README's
@@ -119,17 +121,23 @@ edit law. A separate character/projective-incidence proof gives
 characteristic-three additive-Cayley signing, not just near-flat ones.
 These are genuine scoped signing results, not an unrestricted recurrence.
 
-## Completed campaign and handoff
+## Previous campaign and current authorization
 
 Proofs, exact programs, and scopes are indexed in
 `artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md` and the campaign
-record and final synthesis. The authorized six-hour campaign is complete;
-convergence and nonconvergence remain open. If numbered
+record and final synthesis. The previous campaign is complete; the newly
+authorized six-hour campaign is active. If numbered
 waves resume, Wave 61 remains the scheduled blank-slate boundary.
 
-Final original-class comparisons are now explicit: the old odd self-energy
-is controlled by the cubic trace, whereas B[H sign(BF)] is not covered by
-existing transport identities. Mean-preserving correlated Gaussian rounding
-gives a finite d^2/(4pi L) gain for fractional slack d, but the certified
-endpoints have d=0. Neither result closes convergence. See
-`artifacts/resumed_limit_final_synthesis_2026_09_06.md` for the final proof map.
+The first continued checkpoint proves actual masked-feedback covariance
+closure when the scalar input has zero first Gaussian coefficient. Its
+self-energy retains mu² Tr(B D_a T D_a)/(2n), without B²=I. Exact Steiner
+signings give the nonzero value 1/(pi sqrt(2)). The nonzero-first extension
+cannot Gaussianize QS: the same family supplies a bounded feasible-response
+counterexample. An apex/twin example rules out a uniform variance floor.
+The next target is an energy-only projection retaining QS literally, not a
+distributional substitution. Independent convergence work is testing a
+noncommuting signing-switch orbit; no landing theorem is assumed. Random
+conference thinning now falsifies universal AVERAGE sharp extraction, not
+selected subsets. The rounding gain improves to d²/(pi L), but endpoints
+have d=0. See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs.

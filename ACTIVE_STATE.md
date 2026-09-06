@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.8, completed six-hour campaign.
+Evidence cutoff: ledger Section 10.149.1, active six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -169,16 +169,39 @@ no seed-norm power. Arbitrary overlapping composition is not established.
 - Local-profile, fixed-gadget, Gibbs, scalar-channel and algebraic-family
   obstructions retain their exact hypotheses; do not broaden them by analogy.
 
-## Final original-class comparison and next discriminating work
+## Current actual-feedback comparison and next discriminating work
 
-Authorized six-hour interval: 2026-09-06 01:13:55–07:13:55 UTC.
+Current authorized interval: 2026-09-06 07:37:56–13:37:56 UTC; still active.
 For arbitrary bounded-op signings, old odd F has expected self-energy
 ||P1F||^2 Tr(B^3)/(2n)+o(1). The precise next missing transport is
 B[H sign(BF)]; zero cubic moment does not license an involution return.
-Correlated Gaussian rounding gives a general finite gain d^2/(4pi L)
-minus an explicit O_L(n^-1/2) error for average fractional slack d.
-Current certified endpoints are Boolean, so this does not raise the bound.
+The new zero-first scalar theorem closes masked feedback covariance for
+bounded odd f with E[Nf(N)]=0, even bounded H, and bounded odd Lipschitz psi.
+For Q=B², R=sum_(p>=3 odd) f_p² Q^(circ p), T=BRB, actual
+C=H(BS)psi(Bf(BS)) has normalized-nuclear covariance asymptotic to the
+product Gaussian kernel with independent old/transported fields of covariance
+Q,T. Its actual self-energy is mu² Tr(B D_a T D_a)/(2n)+o(1), retaining a
+term absent on involutions. This is NOT a joint-law theorem allowing another
+threshold of BC. Fixed operator cap, functions, and approximation-before-order
+limits are required. Hard thresholds need additional variance control.
 
-[Final synthesis and remaining obligations](artifacts/resumed_limit_final_synthesis_2026_09_06.md).
+An exact Steiner signing family B²=I+gamma B, gamma->1/sqrt(2), proves the
+nonzero self-energy 1/(pi sqrt(2)); no minimizing property is asserted.
+The SAME family falsifies Gaussianizing the nonzero-first coherent return
+QS=S+gamma BS, even for bounded feasible responses, with a positive
+normalized-nuclear discrepancy. An apex/twin family separately has a cubic
+transport variance tending to zero at one root, despite bounded operator norm.
+
+Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
+finite errors proportional to slack d; near-optimal fractional means have
+d=O_L(sqrt(epsilon)+n^-1/2). Boolean certified endpoints have d=0.
+
+Random proportional conference restrictions have iterated expected cap at
+least 2/pi as N->infinity then retention p->0. This falsifies universal
+AVERAGE sharp extraction, not exceptional subsets or minimizing parents.
+
+[Current campaign and proof index](artifacts/continued_limit_campaign_2026_09_06.md).
+
+[Previous final synthesis](artifacts/resumed_limit_final_synthesis_2026_09_06.md).
 The response comparison and nonlocal sign-entry mechanisms remain distinct
 leads, not completed convergence proofs. No particular next route is mandatory.
