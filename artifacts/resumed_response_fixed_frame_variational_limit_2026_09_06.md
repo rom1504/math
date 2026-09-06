@@ -24,9 +24,14 @@ For odd f and even q, measurable in X with |f|<=q<=1, define
     J_X(f,q)=E[(1-q)Psi(Kbar,t)].                   (1)
 
 The norm in t is the TRUE inverse norm: ||sum a_j h_j||^2=|a|^2.
-It is not a^T Gamma a. Even-gate conditional ternary realization,
-followed by the full-response theorem and Jensen conditional on X,
-makes (1) an actual original-signing lower functional. A value attained
+It is not a^T Gamma a. Finite canonical approximation, then even-gate
+conditional ternary realization, the full-response theorem and Jensen
+conditional on X make (1) an actual original-signing lower functional.
+For a completely arbitrary finite X its inverse features may depend on
+the entire countable Gaussian space; one must approximate first rather
+than assert an exact unused gate independent of all those inverse
+features. The present rich core has a finite closed containing frame,
+so exact independent gates are available there. A value attained
 in (1) is a guaranteed lower value, not a statement that the actual
 output energy equals this conditional lower estimate.
 

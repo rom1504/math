@@ -273,6 +273,19 @@ a uniform cap coefficient below `1/2`. It does not exclude Cayley
 families with a nonvanishing normalized spectral excess, or arbitrary
 non-Cayley signings.
 
+**Subsequent stronger consequence, independently audited:**
+`resumed_bound_audit_cayley_hamming_stability_2026_09_06.md` averages these
+polynomial witnesses over good dilations and all translations. Its
+oriented covariance has Frobenius norm `O_epsilon(sqrt(q))`, and a
+Grothendieck transfer replaces the operator-norm estimate. Consequently,
+if a real symmetric convolution matrix `A_q` has all but `o(q)`
+eigenvalues of magnitude at least `(1-eta)sqrt(q)` for every fixed
+`eta>0`, then **every hollow symmetric** `B_q` with
+`||B_q-A_q||_F=o(q)` satisfies `liminf Q(B_q)/q^(3/2)>=1/2`.
+This includes all `o(q^2)`-edge Hamming neighbors of the signing families
+in (9), with no operator-norm assumption on the perturbed signing. The
+finite quantitative inequality is Equation (13) of that artifact.
+
 ## 7. Exact-multiplier extension to all finite abelian groups
 
 The exact theorem in Section 1, including asymptotically mean-zero

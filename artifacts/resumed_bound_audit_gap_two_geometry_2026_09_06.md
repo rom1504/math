@@ -126,8 +126,8 @@ GAP-TWO window has projective distance at least
 
     (c/2-o(1))sqrt(n).                                 (3)
 
-The currently audited bound permits c=.4320510727290484, giving the
-separation coefficient .2160255363645242. Statement (3)
+The currently audited bound permits c=.4333221116640807, giving the
+separation coefficient .21666105583204035. Statement (3)
 uses only the positive universal lower constant; it does not require
 the upper coefficient 1/2.
 

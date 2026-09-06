@@ -104,20 +104,21 @@ an exact finite-dimensional reparameterization, not an approximation.
 The coefficients can be chosen recursively from the Haar state law.
 
 For completeness, covariance degeneracy can be removed before applying
-Theorem 2.8. Add `delta eta_t` to the input of the t-th matrix
-multiplication, using a fresh independent standard Gaussian seed
-`eta_t` which earlier updates do not use. The Bernoulli limiting spectral
-law has mean zero, so the AMP diagonal coefficient `b_tt` is zero.
-Consequently the t-th AMP residual contains a fresh term
-`delta B eta_t`, independent of the preceding residuals conditional on
-the matrix and earlier seeds. Since `B` is orthogonal, this term is an
-independent standard Gaussian vector times `delta`, even after removing
-the conditioning on the matrix. Its cross empirical inner products with
-the preceding residuals vanish and its empirical squared norm tends to
-`delta^2`. Induction therefore makes every finite state covariance
-positive definite. A dummy independent initial Gaussian multiplication
-may be inserted if needed to place an arbitrary first seed-based update
-after the initialization required by Theorem 2.8.
+Theorem 2.8, without assuming the next state evolution to justify its own
+hypothesis. Smooth the globally Lipschitz maps first, preserving their
+signed parity; their uniform errors propagate through the finite recursion.
+Add `delta eta_t` to the input of multiplication t, using a unique fresh
+Gaussian side-information coordinate which earlier updates ignore.
+In [Fan, arXiv:2008.11892](https://arxiv.org/pdf/2008.11892), Assumption
+4.2(e) excludes an update that is an almost-sure fixed linear combination
+of earlier Gaussian states and updates. Conditioning on everything except
+the new eta_t verifies that exclusion immediately. Theorem 4.3 establishes
+existence and nonsingularity of the prescribed covariance inductively.
+Smooth Lipschitz maps meet its regularity hypothesis, and its deterministic
+coefficient limits are the WZF prescriptions. An independent noisy
+initialization can be inserted if needed. The detailed reconstruction,
+including the distinction between empirical and limiting coefficients, is
+in `resumed_bound_audit_flat_endpoint_primary_2026_09_06.md`, Section 3.
 
 Apply Theorem 2.8 at fixed `delta>0`. Remove the perturbations afterward:
 the finite Lipschitz recursion and `||B||op=1` give

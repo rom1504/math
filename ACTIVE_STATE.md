@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.6, resumed six-hour campaign active.
+Evidence cutoff: ledger Section 10.148.7, resumed six-hour campaign active.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -71,11 +71,19 @@ optimizer supplies only rational policy endpoints, not trusted moments.
 4. The ENTIRE terminal one-response functional is below .45, proved by the
    Gaussian moment body, weighted-square concavity, and an exact 109-interval
    envelope. This is NOT a ceiling for actual signings or all algorithm output
-   energies. Their common quadratic endpoint energy was discarded.
+   energies. On normalized symmetric Hadamards, both discarded endpoint
+   self-energies now provably vanish, so the ceiling is physical for that
+   terminal architecture, not for all algorithms or signings.
 5. The older sqrt(15)/8 fixed-GFOM ceiling has broader algorithmic but different
    scope. Neither ceiling covers all nonlocal or growing-complexity methods.
 
-[Current proof map and scopes](artifacts/resumed_director_sixth_checkpoint_audit_2026_09_06.md).
+6. Actual mixed-charge feedback escapes the complete old Gaussian field in
+   two steps. Paired-query optima satisfy C_(m+1)>=C_m+Delta_m>C_m with an
+   explicit Delta_m>0 uniform at each fixed query depth. This is an actual
+   retained-energy hierarchy on the involution class, still bounded above
+   by sqrt(15)/8. No transfer to arbitrary near-minimizers is established.
+
+[Current proof map and scopes](artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md).
 
 ## New nonlocal and actual-minimizer theorems
 
@@ -91,6 +99,15 @@ with ||A||op<=(1+o(1))sqrt(n) has Q(A)/n^(3/2)->1/2. Native Paley cores and
 bordered conferences saturate at ALL admissible prime-power orders, with both
 Rayleigh signs. No theorem for arbitrary eigenbases, non-Cayley matrices, or
 Cayley families with a fixed spectral excess is claimed.
+
+**Robust scope and a nonflat class.** An o(n^2)-edge perturbation of the
+near-flat finite-field Cayley class still has normalized cap at least 1/2.
+For Paley cores the exact radial ground-state law gives the sharper bound
+Q(B)>=Q(A)|1-4d/[n(n-1)]| for d edge edits. Independently, ALL additive-Cayley
+signings on F_3^r, without spectral or row-sum assumptions, satisfy
+liminf Q/n^(3/2)>=2080/(9 sqrt(269441)) approximately .44523467985944279.
+The proof uses character aliases, Parseval, and a projective-incidence
+deficit; it does not improve the unrestricted .433322 endpoint.
 
 **Gap-two geometry.** A single-coefficient locally minimizing signing with
 cap Q has a near-state outside projective radius r of every oriented ground
@@ -155,7 +172,7 @@ no seed-norm power. Arbitrary overlapping composition is not established.
 ## Current campaign and next discriminating work
 
 Authorized six-hour interval: 2026-09-06 01:13:55–07:13:55 UTC. Work continues.
-Audit the common endpoint energy omitted by the <.45 terminal certificate,
-and the reach of the new nonlocal Ramsey mechanism. Preserve improvements
-without equating a certificate ceiling with a signing ceiling. Every
-decisive claim needs independent reconstruction and explicit limit order.
+The omitted endpoint question is settled on the flat involution class.
+Finish checking the precise arbitrary-signing comparison and the robust
+nonflat Cayley corollaries. Preserve improvements without equating scoped
+algorithmic or algebraic results with unrestricted signing theorems.

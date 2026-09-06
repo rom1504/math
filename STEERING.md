@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: resumed sixth checkpoint, ledger Section 10.148.6.
+Evidence cutoff: resumed seventh checkpoint, ledger Section 10.148.7.
 Status: **second six-hour response/convergence campaign active**,
 2026-09-06 01:13:55–07:13:55 UTC. Convergence and nonconvergence are open.
 
@@ -41,9 +41,13 @@ spectral cutoff is removed last. Exact recorded M_3,...,M_14 remain
 The successful final full-response functional now has a UNIVERSAL certificate
 ceiling below .45. Further masks, cyclic frames, or causal births expressed by
 that same terminal objective cannot reach .45. This is NOT an actual-signing
-upper bound, nor even a bound on all energies of its own endpoint outputs.
-Their common quadratic energy was discarded by the certificate. Investigating
-that term is more discriminating than further terminal constant optimization.
+upper bound. On normalized symmetric Hadamards the discarded endpoint
+self-energies now provably vanish, so this architecture really is limited.
+Two mixed-charge feedback steps provably escape its complete old Gaussian
+field. A paired-query theorem gives strict actual-energy improvement at
+every fixed depth, with an explicit depth-dependent margin. The entire
+fixed-GFOM class still has the separate sqrt(15)/8 ceiling on these matrices.
+No arbitrary-minimizer comparison follows from this scoped hierarchy.
 
 The two-Gaussian policy class has an attained optimum and uniform finite-cell
 approximation. Its nonconvex numerical stationary point is not certified globally
@@ -90,10 +94,11 @@ Arbitrary overlapping networks and original-minimizer landing remain unproved.
 
 ## Ranked next directions and falsification criteria
 
-1. Audit the common quadratic endpoint energy omitted by the terminal response
-   certificate. Require an actual asymptotic energy identity, not a new named
-   channel or an independence assumption. Stop a claimed universal gain if a
-   legitimate flat-involution sequence kills it.
+1. Determine exactly which actual-energy identities from mixed-charge feedback
+   transfer beyond involutions to arbitrary near-minimizing signings. The
+   original terminal self-energy question on Hadamards is settled, not live.
+   Require a proved comparison or an explicit obstruction; no universal gain
+   follows from a special-class algorithm or a floating state-evolution value.
 2. Determine the reach of the nonlocal Ramsey eigenspace mechanism. Any extension
    must verify multiplicative closure and Boolean realization, not infer them
    from flat spectrum alone. A Haar/random-eigenbasis counterexample is outside
@@ -107,10 +112,17 @@ The original local-profile, code, action, Gibbs, and algebraic no-gos retain
 their exact hypotheses. The response ceiling, phase-block identity, and Cayley
 saturation are not universal impossibility claims.
 
+The nonlocal mechanism is now robust under o(n^2) edge edits, without an
+operator bound on the perturbed target. Paley symmetry gives an exact radial
+edit law. A separate character/projective-incidence proof gives
+2080/(9 sqrt(269441)) approximately .44523467985944279 for EVERY
+characteristic-three additive-Cayley signing, not just near-flat ones.
+These are genuine scoped signing results, not an unrestricted recurrence.
+
 ## Continuing campaign
 
 Proofs, exact programs, and scopes are indexed in
-`artifacts/resumed_director_sixth_checkpoint_audit_2026_09_06.md` and the campaign
+`artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md` and the campaign
 record. Continue substantive mathematics through the authorized endpoint.
 Refresh after a decisive proof or the final campaign synthesis. If numbered
 waves resume, Wave 61 remains the scheduled blank-slate boundary.

@@ -45178,3 +45178,60 @@ Updated frontier: [.4333221116640807,.5]. Convergence/nonconvergence and a
 comparable-order recurrence remain open. Continue substantive work through
 07:13:55 UTC on the omitted common endpoint energy and the Ramsey mechanism's
 actual scope. This checkpoint does not end the authorized campaign.
+
+### 10.148.7 Robust algebraic exclusion and genuine feedback depth
+
+**Proved original-signing statements.** The finite-field Ramsey saturation
+theorem survives o(n^2) edge edits without any operator bound on the edited
+target. Averaging its finite-host witnesses over translations and good
+dilations makes their covariance Frobenius norm O_epsilon(sqrt(n)); a
+Grothendieck comparison removes the need for target spectral control.
+Accuracy is fixed before order. Paley affine symmetry separately gives the
+exact radial law Q(B)>=Q(A)|1-4d/[n(n-1)]|. Persistent cap improvement below
+1/2 therefore requires a positive fraction of edge edits, not sparse surgery.
+
+For EVERY additive-Cayley signing on F_3^r, without row-sum or spectral
+assumptions, a new character/Parseval/projective-incidence argument gives
+
+```math
+\liminf_{r\to\infty}\frac{Q(A_{3^r})}{3^{3r/2}}
+\ge\frac{2080}{9\sqrt{269441}}
+\approx0.44523467985944279335.
+```
+
+The crucial finite obstruction is 3N_mono+N_balanced>=3 in every two-colored
+projective plane PG(2,3). Pair counting forces asymptotic monochromatic-line
+density at least 1/26. Actual nine-point Boolean tests then force a linear
+spectral deficit, beyond moment-only 3/1 local models. The proof was independently
+reconstructed and all 8192 projective colorings exactly replayed. This does
+NOT replace the unrestricted lower bound by the larger Cayley coefficient.
+
+**Response ceiling now has a checked physical scope.** On normalized symmetric
+Hadamards the two common terminal self-energies vanish in L2. Hence the
+terminal response architecture really remains below .45 there; actual Boolean
+maxima and general feedback are not limited by this certificate. The primary
+traffic/universality dependencies and fresh-noise nonsingularity conditions
+were read directly and independently audited.
+
+**A genuinely different feedback mechanism.** Two inertial updates have an
+actual charge-odd component at squared L2 distance greater than 1/102400
+from the entire old canonical Gaussian field. A finite-depth paired-query
+posterior retains actual energy. Peeling the newest Gaussian pairs proves
+an explicit depth-only eta_m separating innovation from old-history gradient
+gap. Consequently the fixed-query actual-energy optima obey
+C_(m+1)>=C_m+Delta_m>C_m, with an explicit Delta_m>0. The constants deteriorate
+with depth and the separate sqrt(15)/8 GFOM ceiling still applies. No uniform
+extension to arbitrary optimizing signings follows.
+
+The exact 40-step Sylvester computation at order 2^18 yields
+30324543/67108864 approximately .4518709034. It is a reproducible finite fact,
+not an asymptotic or universal lower theorem. Floating population values are
+likewise labeled exploration. The measurability theorem, not this finite
+number, proves the escape from the old response architecture.
+
+[Director reconstruction and proof/program index](artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md).
+
+Updated frontier: universal [.4333221116640807,.5], unchanged at this checkpoint.
+The new algebraic and feedback theorems have sharply different scopes. No
+convergence, nonconvergence, or comparable-order recurrence is proved.
+Continue the final original-signing comparison checks through 07:13:55 UTC.

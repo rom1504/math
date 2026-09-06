@@ -232,3 +232,32 @@ discrepancy or a comparable-order recurrence.
 [Complete director audit and proof links](resumed_director_sixth_checkpoint_audit_2026_09_06.md).
 Convergence and nonconvergence remain open. Continue on the omitted endpoint
 energy and the reach of the Ramsey mechanism, not more terminal tuning.
+
+## Seventh substantive checkpoint, approximately 06:55 UTC
+
+The universal lower endpoint is unchanged at .4333221116640807. The omitted
+terminal self-energies have now been rigorously checked: they vanish on the
+stated Hadamard/involution class, making the <.45 limit an actual limitation
+of that terminal architecture. Two feedback updates demonstrably leave its
+complete canonical response state, by an exact squared-distance certificate
+>1/102400. Actual retained energy admits a strict query-depth hierarchy with
+an explicit positive, depth-dependent escape. This is not an unrestricted
+signing lower bound; the fixed-GFOM ceiling remains applicable.
+
+The nonlocal Ramsey mechanism now survives o(n^2) edge edits with no operator
+assumption on the edited target. Paley affine symmetry gives the exact radial
+ground-state law and the explicit edit exclusion radius delta*n^2/2+o(n^2)
+for a coefficient deficit delta below one half.
+
+A separate actual-signing theorem covers ALL characteristic-three additive-
+Cayley signings, not just flat spectra. Exact character tests and finite
+projective-incidence compatibility give asymptotic coefficient at least
+2080/(9 sqrt(269441))=.4452346798594428... . The elementary local-law
+falsifier is overcome by global incidence, not an independence assumption.
+This is a restricted-target theorem and does not raise the unrestricted
+.433322 endpoint.
+
+[Director reconstruction and exact replay record](resumed_director_seventh_checkpoint_audit_2026_09_06.md).
+Continue through 07:13:55 UTC, checking the actual-original comparison and
+remaining proof dependencies before final synthesis. This commit is not the
+end of the campaign.
