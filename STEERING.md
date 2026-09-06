@@ -1,9 +1,9 @@
 # Strategic steering
 
-Evidence cutoff: active 2026-09-05 campaign, ledger Section 10.147.9;
+Evidence cutoff: completed 2026-09-05/06 campaign, ledger Section 10.147.10;
 hierarchical fixed-point lower bound independently audited.
 
-Status: **fresh six-hour independent research campaign active**;
+Status: **six-hour independent research campaign completed**;
 convergence and nonconvergence remain open.
 
 ## User-stated objective and workflow directives
@@ -22,7 +22,7 @@ The latest user separately authorized a new six-hour substantive campaign
 on 2026-09-05, beginning from the exact problem and verified frontier before
 historical assessments. The agent may replace the research architecture;
 no previously preferred route or judgment is binding. Three independent
-researchers are active. Write access and normal Git publication have been
+researchers worked independently. Write access and normal Git publication have been
 verified. Checkpoints are steering events, not stopping points; neither
 bookkeeping nor idle waiting counts as active research.
 
@@ -50,7 +50,7 @@ including the present one-root odd variances; they are not near-minimizers.
 Schmidt's theorem settles the H2 regularized seed at sqrt(2), correcting
 the inference from greedy stagnation. General signed-action recovery and
 the regularized-minimum/original-liminf equality both remain unproved.
-See `artifacts/fresh_limit_campaign_2026_09_05.md` for the continuing audit.
+See `artifacts/fresh_limit_final_synthesis_2026_09_06.md` for the final proof map.
 
 ## Agent-authored rigorous frontier
 

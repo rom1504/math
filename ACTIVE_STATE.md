@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.9, active 2026-09-05 campaign;
+Evidence cutoff: ledger Section 10.147.10, completed 2026-09-05/06 campaign;
 hierarchical fixed-point theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -116,7 +116,7 @@ Proofs and precise assumptions:
 ## Current independent campaign: verified additions and gaps
 
 The latest user authorized six substantive hours starting 18:29 UTC on
-2026-09-05. The campaign is active. Checkpoints do not terminate it.
+2026-09-05. The six-hour campaign and its final independent audits are complete.
 
 - Proved polar-Gram inequality:
   Q(A)>=n(n-1) asin(n/||A||_*)/pi. This constrains the nuclear mass of
@@ -177,6 +177,12 @@ nonconvergence. [Exact theorem](artifacts/fresh_cosquare12_scalable_gap_2026_09_
 Schmidt's primary theorem settles the formerly unresolved H2 regularized
 seed at sqrt(2); greedy stagnation did not obstruct its global optimum.
 [Mapping](artifacts/fresh_schmidt_odd_walsh_regularization_2026_09_05.md).
+A final monomial argument uniformly selects a nonlinear odd direction
+through degree 417 for every marked mask with certificate at least .43.
+It needs neither a regularity hypothesis nor a covariance compactness
+argument. Uniform local slack beyond the scalar class remains open;
+high value does not force even intrinsic output innovation to stay positive.
+[Closing synthesis and exact original-problem gap](artifacts/fresh_limit_final_synthesis_2026_09_06.md).
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).

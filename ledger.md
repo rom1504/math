@@ -44824,3 +44824,40 @@ Updated frontier: the explicit interval remains [0.4306581794055286,1/2],
 with the proved unevaluated strict gain. Neither all-order upper recovery
 nor a matching upper variational formula has been obtained. The campaign
 continues through its original six-hour budget.
+
+#### 10.147.10 Closing audit: general nonlinear directions and the original gap
+
+**Proved and independently audited:** for any even marked mask `0<=H<=1`,
+put `W=UH`, `F=sign(W)(1-H)`, and `J=E F W`. If `J>=.43`, then
+`E G0 F>=9923/202500>.049`. Orthogonal projection onto W and elementary
+Gram inequalities prove this without assuming a scalar mask.
+The separating monomial `G^417-417!! G` then proves a uniform nonlinear
+odd Hermite projection through degree 417, with norm greater than
+`7*10^(-68)`. A particular coefficient exceeds `4*10^(-69)` in modulus.
+An exact rational replay and two independent audits checked these loose
+constants. This materially simplifies finite-direction selection, but
+does not supply local cube slack or an extra evaluated lower endpoint.
+[Theorem](artifacts/fresh_general_mask_nonlinear_direction_2026_09_06.md).
+
+**Sharp limitation of a proposed shortcut:** high-value masks can have
+vanishing output innovation even relative to their minimal Gaussian input
+span. Add a vanishing cosine component of the old output to a high-value
+mask; finite actual tree-coordinate approximations preserve the example.
+Its normalized certificate stays above .43, while the residual variance
+is O(epsilon^2). These examples still have local slack, so they refute
+the innovation criterion, not the high-value slack statement itself.
+[Proof and remaining question](artifacts/fresh_arbitrary_mask_zero_strip_obstruction_2026_09_05.md).
+
+The final root replays of the 21-anchor and cubic-coefficient rational
+certificates passed without any changed numerical result. Exact cosquare,
+Walsh32, restricted-quaternary, and height constants were also replayed.
+Sampling results retain heuristic labels; n=11,13 infeasibility results
+retain their solver-certificate qualification. No Lean formalization is
+claimed. The stronger weighted theorem is not needed for the headline
+explicit lower bound, as the final dependency audit explains.
+
+Updated original frontier: [0.4306581794055286,1/2], with the separately
+proved unevaluated strict improvement. The original question is unsolved.
+No upper-preserving all-order recovery, matching variational formula, or
+two separated minimizing subsequences were proved.
+[Compact synthesis and one exact sufficient recovery obligation](artifacts/fresh_limit_final_synthesis_2026_09_06.md).

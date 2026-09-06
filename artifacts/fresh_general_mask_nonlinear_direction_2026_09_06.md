@@ -85,6 +85,21 @@ The right side is strictly positive because `417*49^2=1001217>10^6`.
 Thus all such masks have a quantitatively nonzero nonlinear edge
 projection in the same finite set of odd degrees through 417.
 
+One deliberately loose numerical form is also certified:
+
+```
+sqrt(sum_(3<=r<=417, r odd) |E F h_r(G0)|^2) > 7*10^(-68),
+max_(3<=r<=417, r odd) |E F h_r(G0)| > 4*10^(-69).
+```
+
+Indeed `1/sqrt(417)<48971/10^6`, leaving margin `29/10^6` below
+`49/1000`. The elementary recurrence
+`(2D-1)!!/(D!!)^2<=2^(D-1)` bounds the residual denominator in (4),
+so the projection norm exceeds `29/(10^6*2^208)`. There are 208 selected
+degrees and `sqrt(208)<15`. All rational comparisons are replayed by
+`computations/fresh_general_mask_degree_certificate.py`. These are not
+claimed sharp constants or an additional evaluated original lower bound.
+
 This is much stronger than a finite-degree argument requiring a uniform
 regularity or threshold-noise bound. It follows from a separating odd
 monomial and Cauchy--Schwarz, not from a compactness assumption about
