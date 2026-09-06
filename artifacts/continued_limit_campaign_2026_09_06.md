@@ -143,3 +143,95 @@ now being tested. It also does not prove a lower bound for actual minimizers.
 | Director | Positive-tensor variance mechanism; explicit Boolean certificate | Turn the newly justified history into an original-signing comparison, not another surrogate |
 
 Continue immediately with these proof obligations, not a new short wave.
+
+## Third substantive checkpoint: a genuine marked-feedback energy theorem
+
+The universal interval remains [.4333221116640807,.5]. Convergence and
+nonconvergence are still open. The campaign continues toward 13:37:56 UTC.
+
+**Obligation removed.** For D=S h2(BS), Y=BD, fixed regular bounded odd
+f(G,Y), even bounded H, and odd bounded C² feedback psi with bounded first
+two derivatives, the actual response now has the three-term energy identity
+
+```math
+e(C)=e(c^0)+\mathbb E[(c^0)^TBD_aZ]/n
+                    +\operatorname{Tr}(BD_aTD_a)/(2n)+o(1),
+```
+
+with literal V=b0 QS+b1 QD, Z=B(f−b0 G−b1 Y),
+c0=H E_N psi(V+sigma N), and a_i=E H psi'(V+sigma_i N).
+No involution identity or Gaussianization of QD is used. This preserves
+actual feedback energy, but does not evaluate the retained terms uniformly
+over near-minimizers or identify the law needed to threshold BC again.
+
+- [Complete marked energy theorem and endpoint inequality](continued_feedback_first_marked_history_energy_projection_2026_09_06.md).
+- [Independent full reconstruction](continued_audit_marked_energy_projection_2026_09_06.md).
+- [Local separation retaining actual coherent returns](continued_feedback_marked_local_noise_separation_2026_09_06.md).
+- [All global Walsh cuts from exact Boolean derivative covers](continued_feedback_all_global_walsh_cuts_2026_09_06.md).
+- [Director's two-factor flat-transport theorem](continued_director_two_factor_flat_transport_2026_09_06.md).
+- [Independent stable Boolean Stein alternative](continued_audit_boolean_stable_noise_stein_2026_09_06.md).
+
+The key new energy estimate is not inferred from a local law. After charging
+noise-touching source collisions, two disjoint small contractions control
+higher-noise stars. Centered random linear coefficients need an additional
+split/unsplit argument at the old source. The unsplit case retains a small
+return factor times a globally controlled covariance matrix. This handles
+aliasing of distinct original Walsh degrees. Approximation is fixed before
+matrix order; the hard-threshold extension retains its positive residual
+mass and ordered variance cutoff.
+
+**Additional verified constraints.** Weak tested regressions give
+E[QS|S,G,Y] asymptotically S+gamma_i G and E[QD|S,G,Y] asymptotically
+D+gamma_i Y, in the precise fixed-test averaged sense. They do not give
+finite-order conditional-L² convergence. Their convex gain consequence
+recovers a known certificate, not a higher universal constant.
+[Proof and scope](continued_director_marked_return_regression_2026_09_06.md).
+A scalable actual-signing construction has flat offdiagonal Q and vanishing
+cubic trace but linearly many offdiagonal B³ entries near1/8. It kills the
+Q-only higher-return shortcut, not a minimizer-specific theorem.
+[Construction](continued_feedback_hidden_third_return_2026_09_06.md),
+[independent reconstruction](continued_audit_marked_root_maps_and_hidden_return_2026_09_06.md).
+
+The positive-variance hard-threshold qualifier is genuinely necessary at the
+stated Gaussian-a.e.-continuous regularity. A fixed countable-grid response
+has EVERY Gaussian coefficient zero, yet on squarefree principal Steiner
+orders it is exactly a shrinking positive multiple of a genuine zero-first
+response. Its hard feedback has energy tending to 1/(pi sqrt2); every fixed
+smooth Lipschitz feedback instead has vanishing energy. This exact
+noncommutation of limits does not contradict the smooth theorem.
+[Construction and audited dependencies](continued_audit_zero_variance_threshold_counterexample_2026_09_06.md).
+
+**Independent original-problem work.** A universal exact-sign gate can preserve
+the all-ones seed specialization while failing to preserve a proposed common
+Boolean quotient. The tempting quotient-rigidity implication is false.
+Conversely, initial admissible Walsh-quad reflections share an explicit
+quadratic bent witness family; merely combining those initial reflections
+does not kill all witnesses. Both statements have explicit finite checks.
+[Proofs](continued_convergence_quotient_rigidity_2026_09_06.md).
+
+A different candidate now restricts an exact random Hadamard weave. Its
+Boolean deficit is an exact sum of squared transformed-coordinate mismatches.
+The director's entropy theorem proves positive gaps within specified dense
+exact plateaued row classes using primary counting bounds; matching and
+arbitrary nonplateaued rows remain. This is not a cap upper bound.
+[Exact type theorem and scope](continued_director_weave_profile_entropy_2026_09_06.md).
+The convergence agent is developing a soft PSD-kernel permanent bound which
+would reduce the FULL candidate cap to a one-row partition sum. This new
+obligation is being proved and tested, not presumed small.
+
+**Reproducibility.** The marked-gradient and stable-Stein exact finite formulas
+were replayed independently. The hidden-return fixed-path identity was checked
+through order256. The director separately enumerated all order14 spins and
+rechecked the stored cap21 witness, together with its marked covariance.
+Steiner/hidden-return Monte Carlo tests of the centered star are diagnostics
+only. Programs and dated JSON records under `computations/` preserve these
+checks; no simulation is used as an asymptotic proof step.
+
+| Role | Last verified result | Next discriminating obligation |
+|---|---|---|
+| Feedback | First dependent marked-history energy projection | Identify and test the actual extra joint condition needed for another feedback |
+| Convergence | Exact gate falsifier and weave defect identity | Prove and evaluate the one-row soft permanent criterion for a real cap upper bound |
+| Audit | Full marked energy reconstruction | Test the zero-variance hard-threshold boundary and audit new counting inequalities |
+| Director | Two-factor transport and spectrum-type entropy | Integrate the original-signing upper criterion; preserve exact scope and limit orders |
+
+Continue substantive work immediately after this checkpoint.

@@ -211,13 +211,26 @@ opposite-twin signing family. General multichannel oddness alone is insufficient
 The genuinely marked return QD, D=S h2(BS), is pure Boolean degree three and
 has expected energy Tr(B^5)/(2n)+o(1); it cannot be reduced to first Boolean
 degree. Exact Boolean gradients now give polylogarithmic positive-Walsh root
-maps for fixed polynomials of its coherent history. Full feedback closure
-for that history remains a separate active proof obligation.
+maps for fixed polynomials of its coherent history, now strengthened to ALL
+global source cuts. Flat transport of a product of at least two such rooted
+tensors has vanishing proper local cuts. These estimates prove local-noise
+separation AND the same three-term energy projection for f(BS,BD), retaining
+V=b0 QS+b1 QD literally. Higher-noise and centered-coefficient energy terms
+vanish by a checked two-gain contraction argument, including degree aliases.
+This is not a joint-law theorem for another threshold of BC. Weak tested
+regressions retain the explicit local drift gamma_i=(B³)_ii but recover only
+the previously available gain certificate. A separate actual-signing example
+has flat offdiagonal Q and cubic trace zero while many B³ entries stay large.
 
 Exact controlled two-fibre gates enlarge arbitrary-seed sign-preserving
 conjugations. If a gate preserves every pure Boolean tensor, however, it
 retains the stabilized Hadamard seed norm. Nonlocal overlap must abandon this
 invariant to address that gap. No all-order landing conclusion is claimed.
+
+Random restricted Hadamard weaving has an exact squared-defect identity and
+a new one-row PSD-kernel permanent obligation. Entropy counting eliminates
+specified dense exact plateaued row classes, not arbitrary near-extremizers.
+Finite restricted-weave searches are lower witnesses only, not cap upper bounds.
 
 Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
 finite errors proportional to slack d; near-optimal fractional means have

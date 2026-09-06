@@ -137,11 +137,15 @@ full-law Gaussian replacement. A positive-tensor theorem gives avg tau²/T_ii
 variance-floor obligation. Explicit Boolean characteristic-function formulas
 compute a sine-policy certificate without enumerating the cube; they do not
 raise the universal constant. The next transfer target is the genuine marked
-history D=S h2(BS), including QD. Its exact Walsh root maps are now controlled,
-but local-noise and mixed-star energy closure remain under audit.
+history D=S h2(BS), including QD. Its local-noise separation and full energy
+projection are now proved and independently reconstructed. Exact coherent
+energy and its bare cross remain; another threshold of BC needs a new joint
+comparison and is not licensed by the energy identity alone.
 
 Nonlocal controlled two-fibre gates preserve exact sign entries for arbitrary
 seeds. Gates preserving every pure Boolean tensor also preserve the stabilized
 seed obstruction; finite cap reductions do not remove it. Overlapping gates
-outside that class are being tested. No landing or recurrence follows yet.
+outside that class are being tested. A random restricted-weave construction
+now has an exact one-row permanent/counting target; scoped plateaued witness
+classes can be ruled out, but its full cap is not bounded. No recurrence follows.
 See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs and scopes.

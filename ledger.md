@@ -45378,3 +45378,38 @@ not covered and are being tested. No landing or recurrence is inferred.
 Updated frontier: [.4333221116640807,.5], unchanged. The actual scalar/colored
 energy and hard-threshold obligations are removed; the original convergence
 question remains open. The current six-hour campaign continues.
+
+#### 10.149.3 Actual marked-history energy and an independent upper-construction test
+
+For actual bounded-op hollow signings, D=S h2(BS), Y=BD, and bounded regular
+odd f(G,Y), the full first marked-history energy projection is proved and
+independently reconstructed. It retains V=b0 QS+b1 QD literally, keeps
+e(c0), its bare cross with Z, and the linear-noise trace. Neither spectral
+flatness nor a Gaussian law for QD is assumed. The new structural estimates
+are all-global Walsh cut bounds and a two-factor flat-transport inequality;
+the final energy proof also needs two disjoint contraction gains and an
+explicit treatment of original-degree aliases. Local independence alone
+would not establish this result. Hard thresholds retain positive residual
+mass and ordered cutoffs. No arbitrary-depth theorem follows.
+
+Weak tested returns have explicit local means S+gamma_i G and D+gamma_i Y,
+gamma_i=(B³)_ii. Their gain bound recovers, rather than improves, an existing
+certificate. A scalable bounded-op signing family has delocalized Q and
+zero cubic trace but extensive hidden offdiagonal B³ returns, falsifying a
+Q-only feedback shortcut. All these scopes were independently checked.
+
+The independent upper-construction track found an exact gate quotient-rigidity
+counterexample, while identifying a common bent witness for all initially
+admissible Walsh-quad reflections. It then moved to restricted random weaving.
+Its exact defect identity and a spectrum-type entropy inequality eliminate
+some dense exact plateaued witness classes, not all near-extremizers. A soft
+one-row permanent criterion is being developed for the full candidate cap;
+its needed exponential bound is not yet proved. Finite searches are lower
+witnesses, not upper certificates.
+
+[Complete theorem index, audits, computations, and next obligations](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: universal [.4333221116640807,.5], unchanged. The first actual
+marked-history energy obligation is removed. Its retained terms, further
+feedback joint law, and the full restricted-weave upper bound remain open.
+Neither convergence nor nonconvergence is established. Continue the campaign.

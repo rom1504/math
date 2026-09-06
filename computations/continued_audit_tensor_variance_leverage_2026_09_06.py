@@ -40,9 +40,18 @@ def even_check(m):
     # d^3 is the exact denominator of B (Q circ Q) B.
     claimed_numerator = 3 * d * d - 3 * d + 1
     assert np.all(numerator == claimed_numerator)
+    q = qnumerator / d
+    positive_twins = np.kron(np.ones((2, 2)), np.eye(m))
+    three_covariance_source = np.exp(-3) * np.sinh(q)**2 * np.sinh(positive_twins)
+    three_covariance_variance = np.diag(a @ three_covariance_source @ a) / d
+    tau2 = (np.exp(-1) * np.sinh(1))**3
+    beta = np.exp(-3) * np.sinh((d - 1) / d)**2 * np.sinh(1)
+    predicted_three_covariance_variance = beta / d + tau2 - beta
+    assert np.max(np.abs(three_covariance_variance - predicted_three_covariance_variance)) < 1e-12
     return a, {"hadamard_order": m, "signing_order": n,
                "every_even_variance": str(Fraction(claimed_numerator, d**3)),
-               "every_even_variance_decimal": claimed_numerator / d**3}
+               "every_even_variance_decimal": claimed_numerator / d**3,
+               "three_distinct_covariance_globally_odd_variance_over_tau2": predicted_three_covariance_variance / tau2}
 
 
 if __name__ == "__main__":

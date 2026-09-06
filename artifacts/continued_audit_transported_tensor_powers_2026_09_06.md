@@ -141,3 +141,92 @@ claim that an unrestricted source tensor has small Hilbert distance from
 its Walsh projection. The conference cube example still disproves that
 different claim: its full row Hilbert mass is on the deleted diagonal,
 even though its proper-cut norm is small.
+
+## 7. Stronger director lemma from all global cuts
+
+The director supplied a stronger complementary argument, independently
+verified here. For each of p>=2 rooted tensor families K_j^b, assume every
+GLOBAL cut with the root on one side and a NONEMPTY marked subset on the
+other has operator norm at most C_b. No small local-cut assumption is
+needed. Consider
+
+```math
+L_i=\sum_j B_{ij}\bigotimes_{b=1}^p K_j^b.
+```
+
+Every proper marked-slot flattening satisfies
+
+```math
+\boxed{\|L_i^{\rm cut}\|_{op}
+\le\max_j|B_{ij}|\prod_b C_b.} \tag{2}
+```
+
+Here is the complete orientation check. Assign each wholly-right branch
+to group A and each wholly-left branch to group C. Assign straddling
+branches so both groups are nonempty. This is always possible: if there
+is only one straddler, at least one other whole branch exists; if there
+are none, properness supplies whole branches on both sides; if there
+are at least two, assign one to each group.
+
+For every A branch use the global cut mapping its right marked slots
+to (root,left slots). Its right marked set is nonempty. Tensor these
+maps and compress their output root indices to the common value j.
+This is a coisometry, hence gives a bounded map
+`A: R_A -> (j,L_A)` of norm at most the corresponding product of C_b.
+
+For every C branch use the transpose global cut mapping (root,right
+slots) to its left marked slots, which are nonempty. Embed one shared
+input root j into the repeated root indices of their tensor product.
+This is an isometry, giving `C:(j,R_C)->L_C` with the same product bound.
+The desired flattened tensor is exactly
+
+```math
+(I_{L_A}\otimes C)
+\,[D_{B_i}\otimes I]\,
+(A\otimes I_{R_C}),
+```
+
+up to slot permutations. The middle diagonal has norm max_j|B_ij|,
+proving (2). Root summation is the displayed composition, not an
+uncontrolled partial trace. Empty left or right pieces of individual
+branches are harmless because the chosen opposite marked part is
+always nonempty.
+
+The distinctness projection in Section 6 preserves (2) up to a fixed
+degree-dependent factor. Thus all-global-cut bounds that are fixed
+powers of log(n) give proper local cuts n^-1/2 times a fixed logarithmic
+power after any transport of at least two factors. A single factor is
+still excluded, consistently with the exact conference-return example.
+
+## 8. Consequence for the centered local noise coefficient
+
+In the first marked-history setting, suppose A(W) is a fixed EVEN
+coherent polynomial and subtract its row mean. Its positive Boolean
+Walsh degrees are a>=2. Let Z_q be one exact homogeneous residual-noise
+channel, q>=3. The established local noise/coherent contraction argument
+charges the difference between (A-EA)Z_q and its squarefree tensor-product
+main in averaged L²: expand A into the primitive old coherent fields
+of degree at most three, merge a noise-touching coincidence first, and
+use its small proper cut. The equal-degree-three complete pair is the
+already small h3(G)--marked-input covariance. All internal coherent
+collisions remain exact.
+
+The all-global-cut bounds from higher Boolean derivative matrices apply
+to both exact factors. Applying (2) to B[(A_a)Z_q] gives a homogeneous
+output of degree a+q>=5 with proper cuts O(n^-1/2 polylog(n)). At a
+fixed root, pair this with any fixed polynomial c0(W), expanded into
+the degree-at-most-three coherent primitives. The first-merge bound
+gains the small cut; all remaining merges are Hilbert-contractive.
+Consequently the normalized local pairing tends to zero. Symmetry of
+B rewrites it as
+
+```math
+\frac1n\mathbb E\sum_{ij}B_{ij}
+  (A_i-\mathbb EA_i)Z_i c_j^0=o(1). \tag{3}
+```
+
+The source-error transfer uses only the fixed operator cap and averaged
+L², followed by bounded fixed-degree moments of c0. This is precisely
+the centered-coefficient obstruction isolated in the marked-star working
+note. It does not, by itself, certify every other mixed-noise term in
+the complete marked feedback energy theorem.
