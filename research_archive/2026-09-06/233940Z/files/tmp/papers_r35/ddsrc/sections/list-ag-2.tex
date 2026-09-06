@@ -1,0 +1,253 @@
+\section{From one percent agreement to list agreement} \label{sec:proof-of-lem-from-1-percent}
+In this section we prove \pref{lem:from-1-percent-to-list-agreement}. 
+\restatelemma{lem:from-1-percent-to-list-agreement}
+Fix \(X\) to be a suitable simplicial complex and fix \(\mathcal{F} = \sett{f_r:r\to \Sigma}{r \in X(k)}\) to be an ensemble of functions on \(X(k)\). The distribution \(\mathcal{D}\) is \((\varepsilon_0,\eta)\)-sound. We also assume that \(\agr_{\mathcal{D}}(\mathcal{F})^{M}=\varepsilon^{M} \geq \varepsilon_0\) for some constant integer \(M > 0\) (which we do not explicitly calculate).
+
+For a function \(g:X(0) \to \Sigma\) We denote by \(\supp_{\zeta}(g) = \sett{r \in X(k)}{f_r \overset{1-\zeta}{\approx} g}\) and call this set the \(\zeta\)-support of \(g\). We also denote by \(A_\zeta(g) = \sett{\set{r_1,r_2}}{r_1,r_2 \in \supp_\zeta (g) \ve f_{r_1}=f_{r_2}}\) the ``agreeing edge set of \(g\)'' and by \(\alpha_{\zeta}(g) = \Prob[\set{r_1,r_2} \sim D]{\set{r_1,r_2} \in A_{\zeta}(g)}\). Here \(D\) is the agreement distribution. When the ensemble of functions is not clear from context we denote \(\supp_{\zeta}^{\mathcal{F}}(g), A_{\zeta}^{\mathcal{F}}(g)\) etc.
+
+For a face \(t \in X\), we denote by \(\mathcal{F}_t = \sett{f_r \in \mathcal{F}}{r \subseteq t}\). The set of functions whose agreeing set of edges is large is denoted by \(\overline{L}_{\tau,\zeta}(t) = \sett{g:t \to \Sigma}{\alpha_{\zeta}^{\mathcal{F}_t} (g) \geq \tau}\). In a lot of the following section we will consider partial functions \(g:t \to \Sigma\) (instead of all \(X(0)\)). In this case when we write \(\supp_\zeta(g), \alpha_\zeta(g)\) or \(A_\zeta (g)\) we will mean the support or agreement of \(g\) on its domain with respect to \(\mathcal{F}_t\).
+
+\subsection{Overview - constructing the permutations in \pref{lem:from-1-percent-to-list-agreement}}
+The idea is to use the the agreement theorem at hand to create lists of functions \(\overline{L}(s)=\set{L_s^1,L_s^2,\dots,L_s^\ell} \subseteq \overline{L}_{\tau,\zeta}(s)\) for every face \(s\). 
+Then one needs to show that there is a matching between most lists \(\overline{L}(s), \overline{L}(t)\) such that \(s \subseteq t\). The matching we construct is so that \(\pi_{s,t}(i)=j\) if and only if \(L_t^i|_s \overset{1-\gamma}{\approx} L_t^j\) for some small \(\gamma>0\).
+
+There are three degrees of freedom here, namely the choice of \(\tau,\zeta\) and \(\gamma\), and even after choosing them, it is not clear a priori which functions should appear in the list. We need the size of the lists to be \(\poly(\frac{1}{\varepsilon})\), so we cannot take all functions in \(\overline{L}_{\tau,\zeta}^0 (s)\). This gives rise to many problematic issues. The first two things we need to consider are:
+\begin{enumerate}
+    \item If \(f_r \overset{1-\gamma_1}{\approx} g|_r\) and \(g|_r \overset{1-\gamma_2}{\approx} g'|_r\) then \(f_r \overset{1-\gamma_1-\gamma_2}{\approx} g'|_r\). Hence, if two functions \(g,g':t \to \Sigma\) are close (in Hamming distance), then their support will have a lot of intersection. In particular, if \(L_t^i \in \overline{L}(t)\) we should exclude from the list a small Hamming ball around \(L_t^i\). Otherwise, if \(L_t^i|_s\) is \(\gamma\)-close to both \(L_s^j,L_s^{j'}\) we will have a difficulty of choosing whether \(\pi_{s,t}(i)=j\) or \(\pi_{s,t}(i)=j'\) in a way that will ensure that \(\pi_{s,u} = \pi_{s,t} \circ \pi_{t,u}\) for most \(s \subseteq t \subseteq u\).
+    \item We want the lists to be exhaustive - meaning that every function \(g\) that has non-trivial agreement with the \(f_r\)'s has a close by function in the list. That is, if \(g:s \to \Sigma\) has that \(f_r \approx g|_r\) for \(\geq \tau=\poly(\varepsilon)\) fraction of the \(r \in X(k)\) inside \(s\), then either \(g \in \overline{L}(s)\) or \(g' \in \bar{L}(s)\) for some \(g' \approx g\). Otherwise, this could also lead to a difference in \(\overline{L}(s),\overline{L}(t)\)'s sizes, since for instance, it may be that \(g \in \overline{L}(t)\) but its restriction \(g|_s\) is not close to any element in the list of \(\overline{L}(s)\).
+\end{enumerate}
+Towards dealing with these issues we define \emph{density} and \emph{separation} of a set.
+\begin{definition}
+    Let \(\overline{L}_1,\overline{L}_2 \subseteq \set{g:s \to \Sigma}\). Let \(\gamma > 0\).
+    \begin{enumerate}
+        \item We say that \(\overline{L}_1\) is \(\gamma\)-separated if for every two \(g_1,g_2 \in \overline{L}_1\) it holds that \(\dist(g_1,g_2) > \gamma\).
+        \item We say that \(\overline{L}_1\) is \(\gamma\)-dense in \(\overline{L}_2\) if for every \(h \in \overline{L}_2\) there exists \(g \in \overline{L}_1\) such that \(\dist(g,h) \leq \gamma\) (or as we denoted \(g \overset{1-\gamma}{\approx} h\)).
+    \end{enumerate}
+\end{definition}
+Thus, for every \(s\) we will need to find a list \(\overline{L}(s)\) that is both separated (to overcome the first issue) and dense inside \(\overline{L}_{\tau,\zeta}(s)\) (to overcome the second issue). In fact, a method by \cite{DinurHKLT2018} allows us to find lists that are \(\gamma\)-dense but \(10\gamma\)-separated (for a smartly chosen \(\gamma\)). This is the content of \pref{claim:good-gamma-for-every-t-and-delta}. We will need this property in order to match between lists. If \(\overline{L}(s)\) is \(\gamma\)-dense in \(\overline{L}_{\tau,\zeta}(s)\) and \(\overline{L}(t)|_s = \sett{L_t^i|_s}{L_t^i \in \overline{L}(t)}\) is contained in \(\overline{L}_{\tau,\zeta}(s)\) then for every \(L_t^i \in \overline{L}(t)\) there exists some \(L_s^j \in \overline{L}(s)\) such that \(L_s^j \overset{1-\gamma}{\approx} L_t^i|_s\).\footnote{There is a subtlety here that even if \(\alpha_{\zeta}(L_t^i|_s) \geq \tau\), it could be that \(\alpha_{\zeta}(L_t^i) < \tau\). We will explain in the actual proof how to overcome this using sampling arguments, but for this overview let us just ignore this issue and assume that \(\alpha_{\zeta}(L_t^i|_s) = \alpha_{\zeta}(L_t^i)\).} %
+
+%
+The \(10\gamma\)-separation will promise that there is only a single such \(L_s^j\) for every \(L_t^i\), because if \(L_s^{j},L_s^{j'}\) are both \(\gamma\)-close to \(L_t^i\) then they are \(2\gamma\)-close to one another, which is a contradiction to \(10\gamma\)-separation. If we have such lists this implies that \(\pi_{s,t}(i)=j \Leftrightarrow L_t^i|_s \overset{1-\gamma}{\approx} L_s^j\) is a well defined function.
+
+By making sure that \(\overline{L}(t)\) is also \(10\gamma\)-separated, we get that this function \(\pi_{s,t}\) is injective for most \(s \subseteq t\). If \(L_t^i,L_t^{i'}\) are \(10\gamma\)-separated, then for most \(s \subseteq t\), it will hold that \(L_t^i|_s, L_t^{i'}|_s\) will still be more than \(2\gamma\)-far. Hence, both \(L_t^i|_s, L_t^{i'}|_s\) cannot be \(\gamma\)-close to the same \(L_s^j\) by the triangle inequality. Finally, we show in the proof that the separation of all lists will ensure that their size stays \(\poly(\frac{1}{\varepsilon})\). For more details on the necessary condition for constructing these injections, see \pref{claim:injective-function} and its proof.
+
+\medskip
+Up until now we have explained in high level how to construct injective functions from \(\overline{L}(t)\) to \(\overline{L}(s)\) for \(t \supseteq s\). Surjectivity requires more care because \(\pi_{s,t}\) may still not be surjective even if \(\overline{L}(s),\overline{L}(t)\) are dense and separated. It could be that there is a ``new'' function \(L_s^j \in \overline{L}_{\tau,\zeta}(s)\) that is not close to \emph{any} function in the \(L_t^i|_s\). Another way of saying this is that \(\overline{L}(t)|_s\) may not be dense in \(\overline{L}_{\tau,\zeta}(s)\). %
+
+To overcome this we will first show a structural property. We show that for some fixed \(t\), if \(\pi_{s,t}\) is not surjective for a non-negligible fraction of the \(s \subseteq t\), this implies that there is some \(\zeta' = O(\zeta)\), and a function \(g:t \to \Sigma\) such that \(\alpha_{\zeta'}(g) \geq \tau - \poly(\varepsilon)\), that is \(\zeta'\)-far from all functions in \(\overline{L}_{\tau,\zeta}(t)\). Showing this is where the previous agreement theorems come into play; if it is true that \(\overline{L}_{\tau,\zeta}(t)\) is not dense for many of the \(s \subseteq t\), this means that even after rerandomizing \(f_r\) for \(r \in \bigcup_{g \in \overline{L}_{\tau,\zeta}(t)} \supp_{\zeta}(g)\), the ensemble will pass the agreement test with non-negligible probability. By the agreement soundness guarantee, there is a new function \(g\) such that \(A_\zeta (g) \geq \tau^3\). We then show that by scaling \(\zeta\) by a constant factor, it also holds that \(A_{\zeta'} (g) \geq \tau-\poly(\varepsilon)\) (this happens because \(g\) needs to agree with the functions \(f_r\) for \(r \notin \bigcup_{g \in \overline{L}_{\tau,\zeta}(t)} \supp_{\zeta}(g)\), since these are the functions that were not rerandomized, although this needs to be meticulously argued).
+
+On the other hand (keeping \(t\) fixed), we will show that there exists \(\zeta, \tau\) such that there are no new functions like this: We take any sequence \(\set{(\tau_i,\zeta_i)}_{i=1}^m\) where \(\tau_1=\varepsilon^2, \tau_{i+1}= \tau_i - \varepsilon^{50}\) and \(\zeta_{i+1} = 20\zeta_i\). Suppose that for every such pair there is a ``new'' \(g\) such that \(\alpha_{\zeta_{i+1}}(g) \geq \tau_{i+1} \geq \varepsilon^{10}\) that is far from all functions in \(\overline{L}_{\tau_i,\zeta_i}(t)\). This will imply that \(\prob{A_{\zeta_i}(g_i) \setminus \bigcup_{j=1}^{i-1} A_{\zeta_j}(g)} \geq \varepsilon^{10}\). This is because if \(g_i,g_{j}\) are far away from one another then most \(h_r\) that are close to \(g_i\) will be far from \(g_{j}\). Thus 
+\[m\varepsilon^{10}\leq \sum_{i=1}^m \Prob[r_1,r_2]{A_{\zeta_i}(g_i) \setminus \bigcup_{j=1}^{i-1} A_{\zeta_j}(g_j)} = \Prob[r_1,r_2]{\bigcup_{i=1}^m A_{\zeta_i}(g_i)} \leq 1.\] 
+We conclude that \(m \leq \varepsilon^{-10}\), i.e. that in every taking a long enough such sequence will result in some \(\set{(\tau_i,\zeta_i)}\) where this doesn't happen, which implies that \(\overline{L}_{\tau_i,\zeta_i}(t)\) is dense inside most \(\overline{L}_{\tau_i,\zeta_i}(s)\). This argument is depicted in \pref{claim:good-tau-and-delta-for-every-t}.
+
+We use the pigeonhole principle to find a pair \((\tau_i,\zeta_i)\) and \(M_{(\tau_i,\zeta_i)} \subseteq X(d)\) of relative size \(\poly(\varepsilon)\), such that for every \(t \in M_{(\tau_i,\zeta_i)}\) and for all but a negligible fraction of \(s \subseteq t\) it holds that \(\overline{L}_{\tau_i,\zeta_i}(t)|_s\) is dense inside \(\overline{L}_{\tau_{i+1},\zeta_{i+1}}(s)\). Finally, using this set, we show that if \(t \in M_{(\tau_i,\zeta_i)}\) then most \(s \subseteq t\) also have the same property (i.e. that \(\overline{L}_{\tau_i,\zeta_i}(s)|_u\) is dense inside most \(\overline{L}_{\tau_{i+1},\zeta_{i+1}}(u)\) for most \(u \subseteq s\)). Using sampling, we conclude that this property propagates, i.e. that for a small enough dimension \(d' \ll d\) this density property holds for most \(t' \in X(d')\). This argument is in \pref{prop:good-parameters}.
+
+Thus to conclude, we find our lists \(\overline{L}(s)\) by first finding the aforementioned \((\tau_i,\zeta_i)\). Then we find lists \(\overline{L}(s)\) that are \(\gamma\)-dense and \(10\gamma\)-separated inside \(\overline{L}_{\tau_{i+1},\zeta_{i+1}}(s)\) and define the permutation \(\pi_{s,t}(i)=j\) if and only if \(L_t^i|_s \overset{1-\gamma}{\approx} L_s^j\). These are well defined for most \(s \subseteq t\), and we use these for showing \pref{lem:from-1-percent-to-list-agreement}.
+
+\subsection{Proof of \pref{lem:from-1-percent-to-list-agreement}}
+This definition will be useful for the rest of this section.
+\begin{definition}
+    Let \(s \subseteq t\), \(\zeta > 0\) and \(L\) be a list of functions on \(t\). %
+    We say that \(s\) \emph{samples \(L\) well} if %
+    for every \(g_1,g_2 \in L\) it holds that \(\Abs{\dist(g_1|_s,g_2|_s) - \dist(g_1,g_2)} \leq \varepsilon^{100}\). We say that \(s\) \emph{samples \(L\)'s agreement} well if \(s\) samples \(L\) well and in addition, for every \(g \in L\) it holds that \(\Abs{\prob{A_{\zeta}(g)}- \prob{A_{\zeta}(g|_s)}} \leq \varepsilon^{100}\).
+\end{definition}
+
+We also define the requirements we need from the lists \(\overline{L}(s)\).
+\begin{definition} \label{def:mi}
+    Let \(d_1 \leq d_2 \leq d_3 \leq d\) be dimensions. Let \(\tau,\zeta,\gamma > 0\) be constants and let \(\ell\) be integers. Let \(M_i = M(\tau,\zeta,\gamma,\ell) \subseteq X(d_i)\) be all the \(t \in X(d_i)\) such that there exists some \(\overline{L}(t) \subseteq \overline{L}_{\tau,\zeta}(t)\) such that:
+    \begin{enumerate}
+        \item \(\overline{L}(t)\) is \(9\gamma\)-separated.
+        \item \(\overline{L}(t)\) is \(\gamma\)-dense in \(\overline{L}_{\tau - \varepsilon^{100},\zeta}(t)\).
+        \item \(|\overline{L}(t)|=\ell\).
+        \item For \(i=2,3\), and \(i'< i\). Then the following set \(P_t(i')\) has probability \(\Prob[s \subseteq t, s \in X(i')]{P_t(i')} \geq 1-\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\). \(P_t(i')\) is all the \(s \subseteq t, s \in X(i')\) such that \(s\) samples \(\overline{L}(t)\)'s agreement well.
+    \end{enumerate}    
+\end{definition}
+
+The proof of \pref{lem:from-1-percent-to-list-agreement} relies on the following proposition.
+\begin{proposition} \label{prop:good-parameters}
+    There exists parameters \(\tau = \poly(\varepsilon),\zeta,\gamma \leq \eta\exp(\poly(1/\varepsilon))\) and \(\ell=\poly(1/\varepsilon)\) such that the following holds. Let \(d_1\leq d_2 \leq d_3 \leq d\) be such that \(\frac{d_3}{d} = \exp(-\poly(\varepsilon)\frac{d_1}{k})\). Then \(\prob{M_i} \geq 1- \exp(-\poly(\varepsilon)\frac{d_1}{k}) \).
+\end{proposition}
+
+We will also use this claim,
+\begin{claim} \label{claim:injective-function}
+    Let \(L_1 = \set{g_1,g_2,\dots,g_{\ell_1}}, L_2=\set{h_1,h_2,\dots,h_{\ell_2}}\) be such that \(L_1\) is \(\gamma\)-dense in \(L_2\) and such both \(L_1\) and \(L_2\) are \(2\gamma\)-separated. Then there exists an injective function \(\pi:[\ell_1]\to [\ell_2]\) such that \(\pi(j)=k\) if and only if \(g_j \overset{1-\gamma}{\approx} h_k\).
+\end{claim}
+
+\begin{proof}[Proof of \pref{lem:from-1-percent-to-list-agreement}]
+Recall the definition of \(M_i\) is \pref{def:mi}. Given \pref{prop:good-parameters}, for every \(s \in M_1, t \in M_2\) and \(u \in M_3\) we take such a list \(\overline{L}(x) = \set{L_x^1,L_x^2,\dots,L_x^\ell}\), where \(x\) is \(s,t,u\) respectively (for \(x \notin M_i\) we take arbitrary lists). By definition, for every \(x \in M_i\) and every function in \(\overline{L}_x\) satisfies item \((1)\) in \pref{lem:from-1-percent-to-list-agreement} by definition. Let us verify the second and third items. We show the following for pairs \(s \subseteq t\), \(s \subseteq u\) and \(t \subseteq u\), we denote such a pair as \(x \subseteq y\) for short. For such a pair where \(y \in M_i, x \in P_y(i') \cap M_{i'}\) (where \(i,i'\) are the corresponding sets) we define \(\pi_{x,y}:[\ell]\to [\ell]\) by
+\begin{equation} \label{eq:def-of-permutation}
+    \pi_{x,y}(j)=k \Leftrightarrow L_y^j|_x \overset{1-\gamma}{\approx} L_x^k.
+\end{equation} 
+If either \(y \notin M_i\) or \(x \notin P_y(i')\cap M_{i'}\) we take \(\pi_{s,t}=Id\) as an arbitrary choice. We show that the assumptions in \pref{claim:injective-function} hold, which implies that this function is well defined. If this permutation is well defined for \(1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\) of the pairs \(x \subseteq y\) this implies item \((2\) in \pref{lem:from-1-percent-to-list-agreement}.
+
+First we note that if \(x\) samples \(\overline{L}(y)\)'s agreement well then \(\overline{L}(y)|_x \subseteq \overline{L}_{\tau-\varepsilon^{100},\zeta}(x)\) and \(\overline{L}(y)|_u\) is \(8\gamma\)-separated. Moreover if \(\overline{L}(x)\) is \(\gamma\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(x)\), and \(\overline{L}(y)|_x \subseteq \overline{L}_{\tau-\varepsilon^{100},\zeta}(x)\) then in particular \(\overline{L}(x)\) is \(\gamma\)-dense in \(\overline{L}(y)|_x\). Finally, by definition \(\overline{L}(y)\) is also \(9\gamma\)-separated. Hence \pref{claim:injective-function} implies that this is a well defined and injective function. As both \(\overline{L}(y)|_x\) and \(\overline{L}(y)\) have the same size \(\ell\), this is indeed a permutation.
+
+Finally, we will prove the third item in \pref{lem:from-1-percent-to-list-agreement},
+\begin{equation*}
+    \Prob[s \subseteq t \subseteq u, s \in X(d_1),t \in X(d_2), u \in X(d_3)]{\pi_{s,t}\circ \pi_{t,u} = \pi_{s,u}} \geq 1-\exp(-\Omega(\poly(\varepsilon) \frac{d_1}{k}).
+\end{equation*}
+Note that the following events are all occur with probability \(1-\exp(-\Omega(\poly(\varepsilon) \frac{d_1}{k})\):
+\begin{enumerate}
+    \item \(u \in M_1, s \in M_2, t \in M_3\).
+    \item \(t \in P_u(i_2), s \in P_t(i_1) \cap P_u(i_1)\).
+    \item For every \(j\) and \(k\), 
+    \begin{equation} \label{eq:dist-preserved-in-list-restriction}
+        \Abs{\dist(L_t^j|_s,L_u^k|_s) - \dist(L_t^j,L_u^k|_t)} \leq \gamma.
+    \end{equation}
+\end{enumerate}
+The first two items are by \pref{prop:good-parameters}. The last item is via the following claim, proven later on (we will need this claim also for later):
+\begin{claim} \label{claim:most-sets-sample-well}
+    Fix \(t\), \(L\) and \(\zeta\). Then the fraction of \(s \subseteq t, s\in X(d_1)\) that \emph{don't} sample \(L\)'s agreement well is at most \(|L|^2 \exp(-\poly(\varepsilon) \frac{d_1}{k})\).
+\end{claim}
+Indeed, if \(t\) samples \(\overline{L}(u)\) well and \(s\) samples \(\overline{L}(u)|_t \cup \overline{L}(t)\) well, then distances between members of \(\overline{L}(u)|_t \cup \overline{L}(t)\) are preserved and the third item holds (and both these events occur with probability  \(1-\exp(-\poly(\varepsilon) \frac{d_1}{k})\)).
+
+Thus to prove the theorem we assume \(s \subseteq t \subseteq u\) are such that all these events occur and show that \(\pi_{s,t}\circ \pi_{t,u} = \pi_{s,u}\). Let \(k = \pi_{s,t}\circ \pi_{t,u}(j)\) and \(k'=\pi_{s,u}(j)\). Then it holds that \(L_u^j|_s \overset{1-\gamma}{\approx} L_s^{k'}\), and that \(L_u^j|_t \overset{1-\gamma}{\approx} L_t^{\pi_{t,u}(j)}\) and \(L_t^{\pi_{s,t}(\pi_{t,u}(j))}|_s \overset{1-\gamma}{\approx} L_s^{k}\). By \eqref{eq:dist-preserved-in-list-restriction}, distances are approximately preserved, so \(L_u^j|_s \overset{1-2\gamma}{\approx} L_t^{\pi_{t,u}(j)}|_s\). Using the triangle inequality (where \(L^{\pi_{t,u}(j)}_t|_s\) is the point in the middle) it holds that \(L_u^j|_s \overset{1-3\gamma}{\approx} L_s^{k}\), which implies that \(L_s^k \overset{1-4\gamma}{\approx} L_s^{k'}\). By \(10\gamma\)-separation of \(\overline{L}(u)\), \(k=k'\).
+\end{proof}
+
+The proof of \pref{claim:injective-function} is direct.
+\begin{proof}[Proof of \pref{claim:injective-function}]
+     By density of \(L_2\) in \(L_1\), it holds that for every \(g_j\) there exists some \(h_k\) such that \(g_j \overset{1-\gamma}{\approx} h_k\). Moreover, there is only one such \(k\): assume that for some \(j\) there are \(k,k'\) such that \(g_j \overset{1-\gamma}{\approx} h_k\) and \(g_j \overset{1-\gamma}{\approx} h_{k'}\). Then by the triangle inequality \(h_k \overset{1-2\gamma}{\approx} h_{k'}\), which by \(2\gamma\)-separation implies that \(k=k'\). Thus it is a well defined function.
+
+The same argument shows that this is an injection. Indeed, Let \(k=\pi(j)=\pi(j')\). That is, \(h_j \overset{1-\gamma}{\approx} h_k \overset{1-\gamma}{\approx} h_{j'}\). Then \(h_j \overset{1-2\gamma}{\approx} h_{j'}\). by \(2\gamma\)-separation of \(\overline{L}(s)|_u\), this implies that \(j=j'\), i.e. the function is an injection.
+\end{proof}
+
+So is the proof of \pref{claim:most-sets-sample-well}.
+\begin{proof}[Proof of \pref{claim:most-sets-sample-well}]
+    Let us start with sampling well. There are \(\leq \binom{|L|}{2}\) pairs \(g,g' \in L\) so by a union bound it is enough to argue that for at most \(\exp(-\poly(\varepsilon)d_1)\) of the \(s \subseteq t\) it holds that \(\Abs{\dist(g,g')-\dist(g|_s,g'|_s)} > \varepsilon^{100}\). Let \(A \subseteq t\) be the set of \(v \in t\) such that \(g(v)\ne g'(v)\). By \pref{thm:sampling-in-HDXs} the fraction of \(s \subseteq t\) such that \(\Abs{\prob{A} - \Prob[v \subseteq s]{A}} > \varepsilon^{100}\) is \(\exp(-\poly(\varepsilon)d_1)\). On the other hand, \(\prob{A} = \dist(g,g')\) and \(\Prob[v \subseteq s]{A} = \dist(g|_s,g'|_s)\) giving us the that at most \(\binom{|L|}{2}\exp(-\poly(\varepsilon)d_1)\) don't sample \(L\) well.
+
+    Now let us make sure that most \(s \subseteq t\) also sample \(L\)'s agreement well. Indeed, let \(g \in L\). By \pref{claim:edge-sampling} there is at most \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\) of the \(s \subseteq t\) such that 
+    \[\Abs{A_{\zeta}(g) - A_{\zeta}(g|_s)} > \varepsilon^{100}.\]
+    Another union bound gives us us the claim.
+\end{proof}
+
+The proof of \pref{prop:good-parameters} will follow from these assertions. We prove them after the proof of the proposition.
+\begin{claim} \torestate{\label{claim:good-tau-and-delta-for-every-t}
+    Let \(d_1 \leq d\) and fix \(t \in X(d)\) such that \(\agr_{\mathcal{D}}(\mathcal{F}_t) \geq \varepsilon - \varepsilon^{100}\). There exists \(m\leq \frac{1}{\varepsilon^{10}}\) such that the following holds for \(\tau_m = \varepsilon^2(1-\varepsilon^{50})^m\) and \(\zeta_m = 3\eta 20^m\). There exists \(L \subseteq \overline{L}_{\tau_m,\zeta_m}(t)\) such that for \(1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\) of the \(u \subseteq t, u \in X(d_1)\), \(L|_u\) is \(20\zeta_m\)-dense in \(\overline{L}_{\tau_{m+1},\zeta_m}(u)\).}
+\end{claim}
+
+\begin{claim} \label{claim:good-gamma-for-every-t-and-delta}
+    Let \(\zeta,\tau > 0\) and let \(t \in X(d)\). Then there exists some \(\gamma = \frac{24}{23} 24^i \zeta\) for \(i=1,2,\dots,\varepsilon^{-10}\) and some \(L \subseteq \overline{L}_{\tau,\zeta}(t)\) such that \(L\) is \(\gamma\)-dense, \(\abs{L} \leq \frac{1}{\tau^3}\) and \(23\gamma\)-separated.
+\end{claim}
+
+\begin{proof}[Proof of \pref{prop:good-parameters}]
+    By \pref{claim:edge-sampling} there are \(1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\) faces \(t \in X(d)\) such that \(\agr_{\mathcal{D}}(\mathcal{F}_t) \geq \varepsilon - \varepsilon^{100}\) (we use \pref{claim:edge-sampling} on the set of \(\set{r_i}\) such that \(\set{f_{r_i}}\) pass the agreement test).
+    By \pref{claim:good-tau-and-delta-for-every-t}, for every such \(t \in X(d)\) there exists \[\tau = \varepsilon^2(1-\varepsilon^{50})^i, \zeta = 3\eta 20^i\] (for \(i \in \set{1,2,\dots,\frac{1}{\varepsilon^{10}}}\)), and a list \(L'(t) \subseteq \overline{L}_{\tau,\zeta}(t)\) as in \pref{claim:good-tau-and-delta-for-every-t}. 
+    
+    Moreover, by \pref{claim:good-gamma-for-every-t-and-delta} there exists some 
+    \[\gamma' \in [\frac{24}{23} 24\zeta,\frac{24}{23} 24^{\frac{1}{\varepsilon^{10}}}\zeta]\]
+    and \(\overline{L}(t) \subseteq \overline{L}_{\tau,\zeta}(t)\) such that \(\overline{L}(t)\) has length \(\leq \poly(1/\varepsilon)\), \(\overline{L}(t)\) is \(\gamma'\)-dense in \(\overline{L}_{\tau,\zeta}(t)\) and \(23\gamma'\)-separated.
+
+    Thus by the pigeonhole principle, there exists \(\tau,\zeta,\gamma',\ell\) and a set \(N_d = N_d(\tau,\zeta,\gamma',\ell) \subseteq X(d)\) of probability \(\prob{N_d} \geq \poly(\varepsilon)\), such that for every \(t \in X(d)\) there exists \(L'(t) \subseteq \overline{L}_{\tau,\zeta}(t)\) as in \pref{claim:good-gamma-for-every-t-and-delta} and \(\overline{L}(t) \subseteq \overline{L}_{\tau,\zeta}(t)\) of size \(\Abs{\overline{L}(t)}=\ell\), \(\overline{L}(t)\) is \(\gamma\)-dense in \(\overline{L}_{\tau,\zeta}(t)\) and \(23\gamma\)-separated.
+
+    Let us define \(M_i \subseteq X(d_i)\) be the set of \(s \in X(d)\) such that there exists some \(t \in N_d, t\supset s\) such that:
+    \begin{enumerate}
+        \item \(s \subseteq t\) samples \(L'(t) \cup \overline{L}(t)\) well.
+        \item \(L'(t)\) is \(20\zeta\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(s)\).
+        \item If \(i=2,3\) and \(i' < i\), then \(\Prob[u \subseteq s]{M_{i'}} \leq \exp(-\poly(\varepsilon)\frac{d_1}{k}))\) (This definition is recursive but \(M_i\) is always well defined).
+    \end{enumerate}
+    We show that for every \(s \in M_i\) the proposition holds for \(\tau,\zeta,\ell\) and \(\gamma=2\gamma'\). We take \(\overline{L}(s)=\overline{L}(t)|_s\) for some arbitrary \(t \in N_d\) that contains \(s\) and such that the items above holds for this \(t\). By the fact that \(\overline{L}(t)\) is sampled well we have that \(\overline{L}(s) \subseteq \overline{L}_{\tau-\varepsilon^{100},\zeta}(t)\). Moreover if \(\overline{L}(t)\) is \(23\gamma'=11.5\gamma\)-separated and in particular it holds that \(11\gamma'\)-separated (and in particular, all restrictions indeed result in distinct functions, i.e. \(\Abs{\overline{L}(s)}=\Abs{\overline{L}(t)|_s}=\ell\)). 
+    
+    Next we show density in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(s)\). Note that \(L'(t)|_s\) is \(20\zeta\)-dense in \(\overline{L}_{\tau-\varepsilon,\zeta}(s)\), and \(\overline{L}(t)\) is \(\gamma'\)-dense in \(L'(t)\) (not to say that this is a subset of \(L'(t)\), just that for every \(g' \in L'(t)\) there exists some \(g \in \overline{L}(t)\) such that \(g' \overset{1-\gamma'}{\approx} g\)). Thus by the fact that \(s\) samples \(L'(t) \cup \overline{L}(t)\) well, this implies that \(\overline{L}(t)\) is \(\gamma'+\varepsilon^{100}\)-dense in \(L'(t)\). Hence, it holds that \(\overline{L}(t)\) is \(\gamma'+\varepsilon^{100}+20\zeta\leq \gamma\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(s)\).
+
+    Finally, we show that when \(i=2,3\) and \(i' \leq i\), it holds that
+    \(P_s(i')\) from the definition of the proposition has size \(1-\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\). Let us go one by one:
+    \begin{enumerate}
+        \item For every \(t\), the fraction of \(u \subseteq s\) that don't sample \(\overline{L}(s)\) well is \(\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\) by \pref{claim:most-sets-sample-well}. %
+        \item The probability that \(u \subseteq s\) is in \(M_{i'}\) is  \(\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\). Let us show that in this case \(\overline{L}(t)|_s\) is \(2\gamma\)-dense. \(u \in M_{i'}\), therefore there is some \(\overline{L}(u)\) of size \(\ell\) that is \(\gamma\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(u)\), and \(11\gamma\)-separated (by what we already proved above). Thus if we show that for every \(g \in \overline{L}(u)\) there is some \(g' \in \overline{L}(t)|_s\) such that \(g \overset{1-\gamma}{\approx} g'\) it will follow that \(\overline{L}(t)|_s\) is \(2\gamma\)-dense. By \pref{claim:injective-function}, the fact that \(\overline{L}(u)\) is dense in \(\overline{L}(t)|_s\) and the fact that both are \(2\gamma\)-separated, there is an injective function \(\phi:\overline{L}(t)|_s \to \overline{L}(u)\) where \(\phi(g') = g\) if and only if \(g \overset{1-\gamma}{\approx} g'\). As both lists have the same size, this shows that this is a surjection, i.e. that for every \(g \in \overline{L}(u)\) there is some \(g' \in \overline{L}(t)|_s\).
+    \end{enumerate}
+    
+    To conclude, let us show that \(\prob{M_i} \geq 1- \exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k})\). Let us begin with \(M_1\). Let \(B_1\) be the fraction of \(s\)'s such that \(\Prob[t \supseteq s]{N_d} \leq \poly(\varepsilon)\). Its fraction is \(\prob{B_1} = O(\frac{d_1}{d\poly(\varepsilon)}) = \exp(-\poly(\varepsilon)\frac{d_1}{k})\) by \pref{cor:good-sampler-from-expansion}. Let \(B_2 \subseteq X(d_i)\) be the event that more than \(\frac{1}{3}\) of the \(t \supseteq s, t\in N_d\) have:
+    \begin{enumerate}
+        \item Either \(s\) doesn't sample \(\overline{L}(t) \cup L'(t)\) well.
+        \item \(L'(t)\) is \(20\zeta\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(s)\).
+    \end{enumerate}
+    On the one hand, by \pref{claim:most-sets-sample-well} and \pref{claim:good-tau-and-delta-for-every-t} there are at most \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\) such pairs. On the other hand, every \(s \in B_2 \setminus B_1\) contributes \(\poly(\varepsilon)\) such pairs. By Markov's inequality, \(\prob{B_2 \setminus B_1} = \exp(-\poly(\varepsilon)\frac{d_1}{k})\). Hence, if \(s \notin B_1 \cup B_2 = B_1 \cup (B_2 \setminus B_1)\), then \(s \in M_1\) so \(\prob{M_1} =  1 - \exp(-\poly(\varepsilon)\frac{d_1}{k})\).
+
+    Continuing with \(M_2\). The same arguments for \(M_1\) show that \(1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\) of the \(s \in X(d_2)\) sample \(\overline{L}(t)\cup L'(t)\) well and that \(L'(t)\) is \(20\zeta\)-dense in \(\overline{L}_{\tau-\varepsilon^{100},\zeta}(s)\). So we concentrate on the last property. The probability that \(s \in X(d_2)\) contains more than \(\\prob{M_1}^{1/2}\)-fraction of \(u \notin M_1\) is at most \(\left ( \prob{M_1} \right )^{1/2}\) (by Markov's inequality), and this is also \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\), albeit with a slightly worse \(\poly(\varepsilon)\) than before, since since \(\prob{M_1}=\exp(-\poly(\varepsilon)\frac{d_1}{k})\). Hence \(\prob{M_2} =1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\). The proof for \(M_3\) is similar.
+\end{proof}
+
+\begin{proof}[Proof of \pref{claim:good-gamma-for-every-t-and-delta}]
+    Consider the following method, resembling \cite{DinurHKLT2018}. Let \(L_1 \subseteq \overline{L}_{\tau,\zeta}(t)\) be a maximal \(24\zeta\)-separated list. Consider the following chain \(L_1 \supseteq L_2 \supseteq L_3 \dots\) where every \(L_i\) is a maximal \(24^i \zeta\)-separated set inside \(L_{i-1}\). Obviously, the sizes of these sets are monotonically decreasing (but they are always non-empty), therefore there must be some \(j\) such that \(L_j = L_{j+1}\). Take as \(L=L_i\) for \(i\) being the first such \(j\).
+
+    Recall that \(\gamma_i = \frac{24}{23} 24^i\). By definition, \(L_{i+1}\) is \(23\gamma_i = 24^{i+1}\zeta\)-separated. Let us see that is it also \(26\cdot 24^i \zeta\)-dense in \(\overline{L}_{\tau,\zeta}(t)\). First note that every \(L_j\) is \(24^i \zeta\)-dense in \(L_{j-1}\) (if it weren't, we could have added to \(L_j\) another \(g \in L_{j-1}\setminus L_j\) that is far from the current \(L_j\), contradicting maximality). Thus for every \(g \in \overline{L}_{\tau,\zeta}(t)\) there is a sequence \(g=g_0,g_1,g_2,\dots, g_i\) where \(g_j \in L_j\) for \(j>0\), such that \(\dist(g_{j-1},g_j)\leq 24^j \zeta\). Thus concluding that
+    \[\dist(g,g_i) \leq \sum_{j=1}^i 24^j  \zeta = \frac{24}{23}(24^i-1)\zeta \leq \frac{24}{23} \cdot 24^i = \gamma_i.\]
+
+    Finally, we must show that \(i \leq \frac{1}{\tau^3}\). If we show that \(\Abs{L_1} \leq \frac{1}{\tau^3}\) this will follow, since \(\Abs{L_i}\geq 1\) and for \(j \leq i\), \(\Abs{L_j}\leq \Abs{L_{j-1}}-1\). We distinguish this part of the proof to a separate claim since we will need it in also later on.
+    \begin{claim} \label{claim:lists-are-short}
+        let \(\tau \gg \exp(-\Omega(\zeta^2 k))\) and let \(\zeta\) and \(\gamma \geq 3\zeta\). Let \(L \subseteq \overline{L}_{\tau,\zeta}(t)\) be a \(\gamma\)-separated set. Then \(\Abs{L}\leq\frac{1}{\tau^3}\).
+    \end{claim}
+\end{proof}
+
+\begin{proof}[Proof of \pref{claim:lists-are-short}]
+    Assume towards contradiction that \(|L_1|>\frac{1}{\tau^3}\) and take some subset \(L'\subseteq L_1\) of size \(\frac{1}{\tau^3}+1\). As it is at least \(3\zeta\)-separated, for every distinct \(g,g' \in L'\), the fraction of \(r \in X(k)\) such that \(\dist(g|_r,g'|_r) \leq 2\zeta\) (i.e. \(g|_r \overset{1-2\zeta}{\approx} g'|_r\)) is at most \(\exp(-\Omega(\zeta^2 k))\leq \tau^{10}\). This shows that there are almost no intersection between the supports of \(g\) and \(g'\), since \(\supp_\zeta (g) \cap \supp_{\zeta}(g') \subseteq \sett{r \in X(k)}{\dist(g|_r,g'|_r) \leq 2\zeta}\). That is, \(\prob{\supp_\zeta (g) \cap \supp_{\zeta}(g')} \leq \exp(-\Omega(\zeta^2 k))\leq \tau^{10}\).
+    
+    Denote by 
+    \[D(g) = A_{\zeta}(g) \setminus \bigcup_{g' \in L', g' \ne g}A_{\zeta}(g').\]
+    Then in particular 
+    \begin{align}
+        \prob{D(g)} &\geq \prob{A_{\zeta}(g)} - \sum_{g' \in L', g' \ne g}\prob{A_\zeta (g) \cap A_\zeta (g')} \\
+        &\geq \prob{A_{\eta}(g)} - \sum_{g' \in L', g' \ne g} 2 \prob{\supp_{\zeta}(g) \cap \supp_{\zeta}(g')} \\
+        &\geq \tau - 2\tau^6.
+    \end{align}
+    On the other hand, the sets \(\set{D(g)}_{g \in L'}\) are mutually disjoint, namely
+    \(1 \geq \sum_{g \in L'} \prob{D(g)} \geq \frac{\tau-2\tau^6}{\tau^3+1}>1\) which is a contradiction.
+\end{proof}
+
+\subsection{Proof of \pref{claim:good-tau-and-delta-for-every-t}}
+We start with a weaker claim than \pref{claim:good-tau-and-delta-for-every-t}, saying that \(\overline{L}_{\tau^3,\zeta}(t)\) restricted to \(s \subseteq t\) is dense in \(\overline{L}_{\tau,\zeta}(s)\) for most \(s\). This claim is where we use the agreement soundness of the original distribution.
+
+\begin{claim} \label{claim:density-of-smaller-tau}
+    Fix \(t\),\(\tau\), \(\zeta\) and \(\gamma \geq 3\zeta\). Let \(L \subseteq \overline{L}_{\tau^3,\zeta}(t)\) be a \(\gamma\)-dense and \(\gamma\)-separated list. Then
+    \begin{equation*}
+        \Prob[s \subseteq t,s \in X(d_1)]{L|_s \text{ is \((\gamma+4\zeta)\)-dense in } \overline{L}_{\tau,\zeta}(s)} \geq 1-\exp(-\Omega(\frac{d_1}{k})).
+    \end{equation*}
+\end{claim}
+
+\begin{proof}[Proof of \pref{claim:density-of-smaller-tau}]
+    The claim will follow from these assertions.
+    \begin{enumerate}
+        \item If \(L\) is \(\gamma\)-dense and has size \(\poly(1/\varepsilon)\) in \(\overline{L}_{\tau^3,\zeta}(t)\) then 
+        \[\Prob[r_1,r_2 \subseteq t, r_1,r_2 \sim D]{f_{r_1}=f_{r_2} \ve r_1,r_2 \notin \bigcup_{g \in L}\supp_{\gamma+2\zeta}(g)} \leq 2\tau^{1.5}.\]
+        \item This quantity is sampled well. That is, let \(P = \sett{(r_1,r_2)}{f_{r_1}=f_{r_2} \ve r_1,r_2 \notin \bigcup_{g \in L}\supp_{\gamma+2\zeta}(g)}\). Then for \(1-\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\) of the \(s \subseteq t\) it holds that
+        \[\Abs{\Prob[r_1,r_2 \subseteq s]{P} - \prob{P}} \leq \varepsilon^{100}.\]
+    \end{enumerate}
+    Let us explain why. If there exists some \(h \in \overline{L}_{\tau,\zeta}(s)\) such that \(\dist(h,g) \geq \gamma+4\zeta\) for all \(g \in L|_s\), then \(A_{\zeta}(h) \geq \tau\) and moreover it holds that \(\prob{\supp_\zeta(h) \cap \supp_{\gamma+2\zeta}(g)} = \exp(-\poly(\varepsilon)k) \ll \poly(\varepsilon)\) (since whenever \(f_r\overset{1-\zeta}{\approx}h|_r\) and \(f_r\overset{1-\gamma-2\zeta}{\approx}g|_r\) then it holds that \(\dist(g|_r,h|_r)\leq \gamma+3\zeta\) which happens with \(\exp(-\poly(\varepsilon)k)\) probability at most). By \pref{claim:lists-are-short}, \(|L|=\poly(1/\varepsilon)\) so all these intersections are negligible. In particular, more than (say) half of the edges \((r_1,r_2) \in A_{\zeta}(h)\) have that \(r_1,r_2 \notin \bigcup_{g \in L}\supp_{\gamma+3\zeta+\varepsilon^{100}}(g)\). Thus \(\Prob[r_1,r_2 \subseteq s, r_1,r_2 \sim D]{P} \geq \frac{1}{2} A_\zeta(h) \geq \frac{1}{2}\tau\). On the other hand, by the first item \(\prob{P} \leq 2\tau^{1.5}\). By the second item \(\Prob[r_1,r_2 \subseteq s]{P} \leq \prob{P} + \varepsilon^{100}\leq 3\tau^{1.5}\) with probability as high as \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\) and hence this cannot occur for more than \(\exp(-\poly(\varepsilon)\frac{d_1}{k})\).
+
+\medskip
+
+    The second item follows directly from \pref{claim:edge-sampling}. The main effort is to show the first item. Assume that it doesn't hold. Define \(\mathcal{F}'_t\) by erasing \(f'_r\) for every \(r \in \bigcup_{g \in L}\supp_{\gamma+3\zeta+\varepsilon^{100}}(g)\) (and taking \(f'_r=f_r\) for the rest of the faces)\footnote{Formally, when we ``erase'' a function, we actually set the \(f'_r\) to be such that it agrees with no other functions. This can be done easily by extending the alphabet \(\Sigma\) to a large enough set.}. Then it still holds that 
+     \[\agr_{\mathcal{D}}(\mathcal{F}'_t) \geq 2\tau^{1.5}.\]
+     By the agreement soundness (assuming that \(\tau^{1.5}\geq \varepsilon_0\)), there is some \(h \in \overline{L}_{\tau^3,\eta}(t)\) such that \(A_{\eta}^{\mathcal{F}'}(h) \geq \tau^3\). On the other hand, there must by some \(g \in L\) such that \(\dist(h,g) \leq \gamma\). This implies that \(\prob{\supp_{\eta}^{\mathcal{F}'}(h) \setminus \supp_{\gamma+2\zeta}(g)} \leq \exp(-\poly(\zeta^2 k)) \ll \tau^3\). This is a contradiction since \(A_{\eta}^{\mathcal{F}'}(h) \subseteq \supp_{\eta}^{\mathcal{F}'}(h) \setminus \supp_{3\zeta+\gamma}(g)\) (as we erasing \(g\)'s support).
+\end{proof}
+
+\restateclaim{claim:good-tau-and-delta-for-every-t}
+
+\begin{proof}[Proof of \pref{claim:good-tau-and-delta-for-every-t}]
+    The proof logic is the following. We construct a sequence of lists \(L_1,L_2,\dots\) where \(L_1 \subseteq \bar{L}_{\tau_1,\zeta_1}(t)\), \(L_2 \subseteq \bar{L}_{\tau_2,\zeta_2}(t)\) and so on. If \(L_m \subseteq \bar{L}_{\tau_m,\zeta_m}(t)\) has the property required in the claim, i.e. that for \(1-\exp(-\poly(\varepsilon) \frac{d_1}{k})\) of the \(u \subseteq t\), \(L_m |_u\) is \(20\zeta_m\) dense inside \(\bar{L}_{\tau_{m+1},\zeta_m}(u)\) we conclude; else we continue to the next list \(L_{m+1}\). What we need to make sure is that there is an \(m \leq \frac{1}{\varepsilon^{10}}\) such that this process concludes with \(L_m\). To do so, we define a potential function \(p:\set{1,2,\dots, \frac{1}{\varepsilon^{10}}} \to [0,1]\) that is monotone non-decreasing (and \(p \leq 1\)), and show that if we don't conclude at step \(m\), then \(p(m+1) \geq p(m) + \varepsilon^{10}\), i.e.\ one of the first \(\frac{1}{\varepsilon^{10}}\) first lists must satisfy the property else \(p(\frac{1}{\varepsilon^{10}}) > 1\). The potential function is 
+    \begin{equation} \label{eq:potential-function}
+        p(m) = \Prob[r_1,r_2 \subseteq t, r_1,r_2 \sim D]{\bigcup_{g_j \in L_m} A_{9\zeta_{m-1}}(g_j)}.
+    \end{equation}
+    That is, \(p(m)\) measures how much agreement is explainable by \(L_m\), and we show that while the list \(L_m\) is not dense for most \(u \subseteq t\), then in fact we can find a list \(L_{m+1}\) whose functions `explains' more agreement. Details follow.
+    
+    Recall that \(\tau_m = \varepsilon^2 (1-\varepsilon^{10})^m\) and that \(\zeta_m = 3\eta \cdot 20^m\). Fix some \(t\). For every \(\tau_m,\zeta_m\) we choose some (arbitrary) \(L^{aux}_{m}(t) \subseteq \overline{L}_{\tau_{m}^3,\zeta_m}(t)\) that is \(3\zeta\)-dense and \(3\zeta\)-separated. We will sequentially construct lists \(L_m=\set{g_1,g_2,\dots,g_m} \subseteq \overline{L}_{\tau_{m},\zeta_{m}}(t)\), for \(m=1,2,\dots\) until \(L_m\) satisfies the claim. The potential function \(p\) shall be defined as in \pref{eq:potential-function} with respect to these lists, once we construct them. %
+
+    For \(m=0\) we take \(L_0 =\emptyset \subseteq \overline{L}_{\tau_0,\zeta_0}(t)\). Let us describe how to construct \(L_m\) using \(L_{m-1}\), provided that \(L_{m-1}\) is not \(\zeta_m=20\zeta_{m-1}\)-dense in \(\overline{L}_{\tau_{m},\zeta_{m-1}}(u)\) for \(1-\exp(-\poly(\varepsilon)\frac{d_1}{k})\) of the \(u \in X(d_1)\):
+        \begin{enumerate}
+            \item Find some \(u \subseteq t\) such that:
+            \begin{itemize}
+                \item \(L_{m-1}\) is not \(20\zeta_{m-1}\)-dense in \(\overline{L}_{\tau_{m},\zeta_{m-1}}(u)\).
+                \item \(u\) samples \(L^{aux}_{m} \cup L_{m-1}\) well.
+                \item \(L^{aux}_{m}|_u\) is \(7\zeta_{m}\)-dense in \(\overline{L}_{\tau_{m},\zeta_{m-1}}(u)\). 
+                \item For every \(g \in L^{aux}_{m}(t)\) it holds that \(\Abs{A_{9\zeta_{m-1}}^{\mathcal{F}_t}(g) - A_{9\zeta_{m-1}}^{\mathcal{F}_u}(g|_u) }\leq \varepsilon^{100}\).\footnote{The fraction of \(u \subseteq t\) such that these items do not hold is \(\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\) by \pref{claim:edge-sampling} and \pref{claim:density-of-smaller-tau}. Hence if \(L_m\) is not \(20\zeta_{m-1}\)-dense for for \(1-\exp(-\Omega(\poly(\varepsilon)\frac{d_1}{k}))\) we can find a \(u \subseteq t\) such that this holds.}
+            \end{itemize} 
+            \item Find some \(h \in \overline{L}_{\tau_{m},\zeta_{m-1}}(u)\) that is \(20\zeta_{m-1}\)-far from every element in \(L_{m-1}\). There exists such an \(h\) since \(L_{m-1}\) is not \(20\zeta_{m-1}\)-dense in \(\overline{L}_{\tau_{m},\zeta_{m-1}}(u)\).
+            \item Take some \(g=g_{m} \in L^{aux}_{m}\) such that \(\dist(g|_u,h_u) \leq 7\zeta_{m-1}\). Set \(L_{m} = L_{m-1} \cup \set{g_{m}}\). This step is possible since \(L^{aux}_{m}(t)|_u\) is \(7\zeta_{m}\)-dense inside \(\overline{L}_{\tau_{m},\zeta_{m}}(u)\).
+        \end{enumerate}
+    Observe that because \(\dist(g_{m}|_u,h) \leq 7\zeta_{m-1}\) then the fraction of \(r \in X(k)\) such that \(\dist(g_{m}|_r,h|_r) > 8\zeta_{m-1}\) has probability \(\exp(-\Omega(\zeta^2 k)) \ll \varepsilon^{100}\). In addition, when \(f_r \overset{1-\zeta_m}{\approx} h_r\) and \(h_r \overset{1-8\zeta_{m-1}}{\approx} g_{m}|_r\) then \(h_r \overset{1-9\zeta_{m-1}}{\approx} g_{m}\). Hence it holds that \(\prob{A_{9\zeta_{m-1}}(g_{m}|_u)} \geq \prob{A_{\zeta_{m-1}}(h)} - \varepsilon^{100}\). By assumption on \(u\) it holds that \(\prob{A_{9\zeta_{m-1}}(g_{m})} \geq \prob{A_{9\zeta_{m-1}}(g_{m}|_u)} -\varepsilon^{100}\) so
+    \[\prob{A_{9\zeta_{m-1}}(g_{m})} \geq \prob{A_{9\zeta_{m-1}}(h)} - 2\varepsilon^{100} \geq \tau_{m-1}-2\varepsilon^{100}\geq \tau_{m}.\]
+    That is, \(g_{m} \in \overline{L}_{\tau_{m},\zeta_{m}}(t)\) (and thus every \(L_m \subseteq \overline{L}_{\tau_{m},\zeta_{m}}(t)\)).
+
+    Moreover, note that for every \(j \leq m\) it holds that \(\dist(g_{m}|_u,g_j|_u)\geq \dist(h,g_j|_u)-\dist(g_{m}|_u,h) \geq 13\zeta_{m}\). The face \(u\) samples \(L^{aux}_{m} \cup L_{m-1}\) well, hence \(\dist(g_{m},g_j) \geq \dist(g_{m}|_u,g_j|_u) - \zeta_{m-1} \geq 12\zeta_{m-1}\). This is much larger than \(9\zeta_{m-1} + \zeta_{j-1}\). Hence (as before) it holds that \(\prob{\supp_{9\zeta_{j-1}}(g_j) \cap \supp_{9\zeta_{m-1}}(g_{m})} \ll \varepsilon^{100}\). This implies that \(\prob{A_{9\zeta_{j-1}}(g_j) \setminus \bigcup_{j' \ne j} A_{9 \zeta_{j'-1}}(g_{j'})} \geq \frac{1}{2} \prob{A_{9\zeta_{j-1}}(g_j)}\).
+    
+    Thus it holds that while \(m \leq \varepsilon^{-30}\), then \(p(m) \geq \frac{1}{2}\sum_{j=1}^m \prob{A_{9\zeta_{j-1}}(g_j)} \geq \frac{m}{2}\varepsilon^{10}\). For \(m > 2\varepsilon^{10}\) this is greater than \(1\) hence the process must stop beforehand.
+\end{proof}

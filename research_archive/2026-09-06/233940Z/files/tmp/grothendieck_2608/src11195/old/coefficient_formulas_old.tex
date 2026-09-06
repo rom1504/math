@@ -1,0 +1,268 @@
+\section{Coefficient Formula for the Limiting Model}
+\label{sec:coefficients}
+
+This section implements the coefficient step in the proof architecture.  The point is to reduce the limiting threshold model, with the correlation powers defined in Definition~\ref{def:limiting-model}, to explicit two-dimensional Gaussian integrals.
+
+\subsection{Degree-direction data}\label{subsec:degree-data}
+
+\begin{definition}[Degree-direction normalization]\label{def:degree-normalization}
+For a finite degree set $D$ and weights $(s_d)_{d\in D}$, define
+\[
+  S=\biggl(\sum_{d\in D}s_d^2\biggr)^{1/2},
+  \qquad
+  \alpha_d={s_d\over S}\quad(d\in D).
+\]
+Thus $\sum_{d\in D}\alpha_d^2=1$, and
+\[
+  \sum_{d\in D}s_dr_d=S\sum_{d\in D}\alpha_dr_d.
+\]
+\end{definition}
+
+\begin{definition}[One-dimensional threshold coefficients]\label{def:qk}
+Let $R\sim N(0,1)$.  For $u\in\R$ and $k\in\Nzero$, define
+\[
+  q_k(u)=\E_R[\sgn(u+R)\He_k(R)].
+\]
+These are the Hermite coefficients of the one-dimensional threshold $R\mapsto \sgn(u+R)$.
+\end{definition}
+
+\begin{lemma}[Closed form for $q_k$]\label{lem:qk}
+For all $u\in\R$,
+\begin{align}
+  q_0(u)&=\erf\left({u\over\sqrt2}\right),\label{eq:q0}\\
+  q_k(u)&=2\varphi(u){\He_{k-1}(-u)\over\sqrt{k}},\qquad k\ge1,\label{eq:qk}
+\end{align}
+where $\varphi(u)=(2\pi)^{-1/2}e^{-u^2/2}$.
+\end{lemma}
+
+\begin{proof}
+For $k=0$,
+\[
+  q_0(u)=\Prob[R>-u]-\Prob[R<-u]=\erf\left({u\over\sqrt2}\right).
+\]
+For $k\ge1$, orthogonality to constants gives
+\[
+  q_k(u)=2\int_{-u}^{\infty}\He_k(r)\varphi(r)\,dr.
+\]
+The orthonormal Hermite polynomials satisfy
+\[
+  {d\over dr}\left(\varphi(r)\He_{k-1}(r)\right)
+  =-\sqrt{k}\,\varphi(r)\He_k(r),
+\]
+so integration from $-u$ to $\infty$ gives \eqref{eq:qk}.
+\end{proof}
+
+\begin{definition}[Two-dimensional coefficient integrals]\label{def:Cabk}
+For $a,b,k\in\Nzero$, define
+\begin{equation}\label{eq:C-abk}
+  C_{a,b,k}
+  =\E_{Z,X}\left[\He_a(Z)\He_b(X)
+    q_k\left({Z+\eta \He_3(X)\over S}\right)\right],
+\end{equation}
+where $Z,X$ are independent standard Gaussians.  Equivalently,
+\[
+  C_{a,b,k}=\int_{\R^2}\He_a(z)\He_b(x)
+  q_k\left({z+\eta \He_3(x)\over S}\right)\varphi(z)\varphi(x)\,dz\,dx.
+\]
+\end{definition}
+
+The quantities $C_{a,b,k}$ are the only continuous integrals appearing in the coefficient formula.  Everything else is finite bookkeeping by degree.
+
+\subsection{Hermite coefficients of the limiting thresholds}\label{subsec:threshold-hermite-coefficients}
+
+For a multi-index $\beta=(\beta_d)_{d\in D}\in\Nzero^D$, write
+\[
+  |\beta|=\sum_{d\in D}\beta_d,
+  \qquad
+  \beta!=\prod_{d\in D}\beta_d!,
+  \qquad
+  \alpha^\beta=\prod_{d\in D}\alpha_d^{\beta_d}.
+\]
+
+\begin{proposition}[Hermite coefficients of the limiting thresholds]\label{prop:hermite-coefficients}
+Let $f,g$ be the limiting threshold functions in Definition~\ref{def:limiting-model}.  Write their Hermite expansions in the tensor basis as
+\[
+  f=\sum_{a,b,\beta} A_{a,b,\beta}\,\He_a(Z)\He_b(X)\prod_{d\in D}\He_{\beta_d}(R_d),
+\]
+\[
+  g=\sum_{a,b,\beta} B_{a,b,\beta}\,\He_a(Z)\He_b(X)\prod_{d\in D}\He_{\beta_d}(R_d).
+\]
+Then, for $k=|\beta|$,
+\begin{equation}\label{eq:f-coeff}
+  A_{a,b,\beta}=C_{a,b,k}\sqrt{k!\over \beta!}\,\alpha^\beta,
+\end{equation}
+while
+\begin{equation}\label{eq:g-coeff}
+  B_{a,b,\beta}=(-1)^b\prod_{d\in D}\sigma_d^{\beta_d}\,A_{a,b,\beta}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Set
+\[
+  T(Z,X)=Z+\eta \He_3(X),
+  \qquad
+  R_\alpha=\sum_{d\in D}\alpha_dR_d.
+\]
+Then
+\[
+  f=\sgn(T+SR_\alpha).
+\]
+Conditioning on $Z,X$, the coefficient of $\He_k(R_\alpha)$ in the $R_\alpha$ direction is
+\[
+  q_k\left({T(Z,X)\over S}\right).
+\]
+Taking the additional inner product against $\He_a(Z)\He_b(X)$ gives $C_{a,b,k}$.
+
+The multivariate Hermite addition formula gives
+\begin{equation}\label{eq:hermite-addition}
+  \He_k\left(\sum_{d\in D}\alpha_dR_d\right)
+  =\sum_{\substack{\beta\in\Nzero^D\\ |\beta|=k}}
+  \sqrt{k!\over \beta!}\,\alpha^\beta
+  \prod_{d\in D}\He_{\beta_d}(R_d).
+\end{equation}
+Combining the previous paragraph with \eqref{eq:hermite-addition} proves \eqref{eq:f-coeff}.
+
+Finally,
+\[
+  g(z,x,(r_d))=f(z,-x,(\sigma_dr_d)_{d\in D}).
+\]
+Since $\He_b(-x)=(-1)^b\He_b(x)$ and $\He_{\beta_d}(\sigma_dr_d)=\sigma_d^{\beta_d}\He_{\beta_d}(r_d)$, the coefficient relation \eqref{eq:g-coeff} follows.
+\end{proof}
+
+\subsection{The degree coefficient formula}\label{subsec:degree-formula}
+
+\begin{theorem}[Coefficient formula]\label{thm:coefficient-formula}
+Let
+\[
+  H(t)=\sum_{m\ge1}b_m t^m
+\]
+be the limiting normalized correlation \eqref{eq:lim-H}.  Then
+\begin{equation}\label{eq:general-bm}
+  b_m={\pi\over2}
+  \sum_{\substack{a,b\in\Nzero,\ \beta\in\Nzero^D\\ a+b+\sum_{d\in D}d\beta_d=m}}
+  (-1)^b\prod_{d\in D}\sigma_d^{\beta_d}
+  {k!\over \beta!}
+  \prod_{d\in D}\alpha_d^{2\beta_d}
+  C_{a,b,k}^2,
+  \qquad k=|\beta|.
+\end{equation}
+Only odd $m$ occur.
+\end{theorem}
+
+\begin{proof}
+Under the correlation model in Definition~\ref{def:limiting-model}, the Hermite covariance identity \eqref{eq:hermite-cov} contributes
+\[
+  t^a t^b\prod_{d\in D}(t^d)^{\beta_d}
+  =t^{a+b+\sum_d d\beta_d}
+\]
+to the tensor basis element indexed by $(a,b,\beta)$.  Multiplying the $f$- and $g$-coefficients from Proposition~\ref{prop:hermite-coefficients} and summing over all indices of degree $m$ gives \eqref{eq:general-bm}.
+
+The functions $f$ and $g$ are odd under simultaneous negation of all coordinates.  Hence their Hermite coefficients vanish unless $a+b+|\beta|$ is odd.  Since all degrees $d\in D$ are odd, $a+b+\sum_d d\beta_d$ has the same parity as $a+b+|\beta|$.  Thus only odd degrees appear.
+\end{proof}
+
+\subsection{The third/fifth specialization}\label{subsec:third-fifth-coefficients}
+
+\begin{definition}[Third/fifth coefficient data]\label{def:third-fifth-coeff-data}
+For the scheme $D=\{3,5\}$, write
+\[
+  \alpha={s_3\over S},\qquad \beta={s_5\over S},
+  \qquad S=(s_3^2+s_5^2)^{1/2}.
+\]
+With the numerical parameters \eqref{eq:params},
+\[
+  S=0.345068689589145\ldots,
+  \quad
+  \alpha=0.988241617650167\ldots,
+  \quad
+  \beta=0.152900311131734\ldots .
+\]
+\end{definition}
+
+For $D=\{3,5\}$, Theorem~\ref{thm:coefficient-formula} becomes
+\begin{equation}\label{eq:35-bm}
+  b_m={\pi\over2}
+  \sum_{\substack{a,b,\beta_3,\beta_5\in\Nzero\\ a+b+3\beta_3+5\beta_5=m}}
+  (-1)^{b+\beta_3}
+  {k!\over \beta_3!\beta_5!}
+  \alpha^{2\beta_3}\beta^{2\beta_5}
+  C_{a,b,k}^2,
+  \qquad k=\beta_3+\beta_5.
+\end{equation}
+This is the general weighted-degree formula.  The certification below uses the equivalent collapsed formula in Proposition~\ref{prop:collapsed-coefficients}.
+
+
+\subsection{A collapsed formula for the third/fifth certificate}\label{subsec:collapsed-formula}
+
+The interval certificate uses the following specialized form of the third/fifth coefficient formula.  It is equivalent to \eqref{eq:35-bm}, but it combines the three Gaussian coordinates $Z,R_3,R_5$ into one Gaussian direction before expanding.  This reduces the coefficient computation to one-dimensional threshold integrals and is the form used in Sections~\ref{sec:assembly} and~\ref{sec:formulas}.
+
+\begin{definition}[Collapsed third/fifth data]\label{def:collapsed-data}
+For the parameters \eqref{eq:params}, set
+\[
+  V=1+s_3^2+s_5^2,
+  \qquad
+  \vartheta={\eta\over\sqrt V},
+\]
+and define
+\[
+  F(w,x)=\sgn\bigl(w+\vartheta\He_3(x)\bigr).
+\]
+For $a,b\ge0$, define
+\begin{equation}\label{eq:mathsfAab}
+  \mathsf A_{a,b}=\E_{W,X}\bigl[\He_a(W)\He_b(X)F(W,X)\bigr],
+\end{equation}
+where $W,X$ are independent standard Gaussians.  Finally set
+\begin{equation}\label{eq:rho-collapsed}
+  \rho(t)={t-s_3^2t^3+s_5^2t^5\over V}.
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Collapsed coefficient formula]\label{prop:collapsed-coefficients}
+For the third/fifth limiting model,
+\begin{equation}\label{eq:H-collapsed}
+  H(t)={\pi\over2}\sum_{a,b\ge0}\mathsf A_{a,b}^2\rho(t)^a(-t)^b.
+\end{equation}
+Consequently, for every $m\ge1$,
+\begin{equation}\label{eq:bm-collapsed}
+  b_m={\pi\over2}\sum_{a,b\ge0}(-1)^b\mathsf A_{a,b}^2\,[t^{m-b}]\rho(t)^a.
+\end{equation}
+Only terms with $a+b$ odd contribute.
+\end{proposition}
+
+\begin{proof}
+Set
+\[
+  W={Z+s_3R_3+s_5R_5\over\sqrt V},
+  \qquad
+  \widetilde W={Z'-s_3R_3'+s_5R_5'\over\sqrt V}.
+\]
+Then $W$ and $\widetilde W$ are standard Gaussians and
+\[
+  \mathrm{corr}(W,\widetilde W)={t-s_3^2t^3+s_5^2t^5\over V}=\rho(t).
+\]
+Moreover
+\[
+  f=F(W,X),
+  \qquad
+  g'=F(\widetilde W,-X'),
+\]
+because $\He_3(-X')=-\He_3(X')$.  Expand
+\[
+  F(W,X)=\sum_{a,b\ge0}\mathsf A_{a,b}\He_a(W)\He_b(X).
+\]
+The Hermite covariance identity gives
+\[
+  \E[\He_a(W)\He_a(\widetilde W)]=\rho(t)^a,
+  \qquad
+  \E[\He_b(X)\He_b(-X')]=(-1)^b t^b.
+\]
+Multiplying the matching Hermite coefficients and summing proves \eqref{eq:H-collapsed}.  Reading off coefficients gives \eqref{eq:bm-collapsed}.  The parity statement follows from $F(-w,-x)=-F(w,x)$, which forces $\mathsf A_{a,b}=0$ unless $a+b$ is odd.
+\end{proof}
+
+\begin{remark}[One-dimensional form of \texorpdfstring{$\mathsf A_{a,b}$}{Aab}]
+The coefficient $\mathsf A_{a,b}$ can be written using the same threshold coefficients $q_a$ from Definition~\ref{def:qk}:
+\[
+  \mathsf A_{a,b}=\E_X\bigl[\He_b(X)q_a(\vartheta\He_3(X))\bigr].
+\]
+This is the formula used in the interval computation of the coefficient head.
+\end{remark}
