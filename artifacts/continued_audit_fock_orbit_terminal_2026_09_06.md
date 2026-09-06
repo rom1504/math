@@ -372,3 +372,306 @@ an analytic bound; a floating optimizer alone is not that certificate.
 No preservation of the concavity of `H+2f` under the Bellman operator
 has been proved here. Thus this symmetry reduction must not be imported
 automatically into deeper iterates with f different from Phi_t.
+
+## 10. Exact finite-t falsifier to repeating the symmetry reduction
+
+In fact the deeper reduction is false, not merely unproved. Let
+`f_1=B Phi_t`, take unit-variance input `nu=(delta_-1+delta_1)/2`, and
+compare two feasible pair laws. The first is anti-diagonal, `A=-B`; its
+output laws are delta_0 and `sigma=(delta_-sqrt(2)+delta_sqrt(2))/2`,
+and its input KL is log2. Averaging this law over the independent input
+sign flips gives the iid pair law, whose two output laws are both
+`mu=(delta_0+sigma)/2` and whose input KL is zero. Because the input has
+only one nonzero magnitude, this iid law is the unique fully
+sign-symmetric pair law.
+
+At infinite tilt the exact first-iterate values are
+
+```math
+f_1(\delta_0)=0,\qquad f_1(\sigma)=-\tfrac34\log2,
+\qquad f_1(\mu)=-\log2.
+```
+
+The middle identity is Section 7's two-sign calculation. For the last,
+Section 9 reduces the first iterate to a symmetric magnitude table with
+off-diagonal entry u, `0<=u<=1/2`. Put z=2u. Its objective simplifies to
+
+```math
+-\log2+\frac{1-z}{8}\log(27/32),
+```
+
+whose maximum is exactly -log2 at z=1. Therefore the depth-two Bellman
+summand at the anti-diagonal law is `-7log2/8`, whereas its fully
+sign-symmetrized law gives `-log2`. Symmetrization loses log2/8.
+
+The counterexample holds at the finite tilt t=8. For any law supported
+on at most l distinct points separated by at least delta,
+
+```math
+0\le H(\mu)-F_t(\mu)
+ \le\log\{1+(l-1)e^{-t\delta^2}\}.                 (4)
+```
+
+The lower bound uses the diagonal self-coupling. For the upper bound,
+write `H-F` as the maximum conditional-entropy-minus-cost functional
+from Section 9, discard its second marginal constraint, and apply the
+finite Gibbs variational formula in each input row. The row partition
+sum is at most the right-hand exponential in (4).
+
+All first-step child laws for sigma and mu above lie in
+`{0,+/-1,+/-2}`, with at most five atoms and separation at least one.
+Uniformly over their pair laws,
+
+```math
+0\le f_{1,8}-f_{1,\infty}
+       \le\tfrac12\log(1+4e^{-8})<.002.
+```
+
+Thus the anti-diagonal summand still exceeds its sign-symmetrized
+counterpart by more than `log2/8-.002>.0846`. The inequalities can be
+checked with finite positive series: e^8>1000 and log2>.693 suffice.
+
+This does not contradict the full Bellman upper theorem or its
+supersolution. It proves that a deeper optimizer restricted to symmetric
+magnitude couplings can underestimate the true supremum, and therefore
+cannot be used as its certified upper evaluation. Such policies remain
+legitimate lower-bound diagnostics.
+
+The same example also shows why the first-step proof cannot iterate:
+`H+2B Phi` is not concave. At infinite tilt, for delta_0, sigma, and their
+equal mixture, its values are respectively `0,-log2/2,-log2/2`; the
+mixture is strictly below the endpoint average by log2/4. The finite-t
+bound (4) preserves this violation.
+
+## 11. Certified depth-three lower policy and an honest upper relaxation
+
+The full verifier
+`computations/continued_convergence_bellman_certificate_2026_09_06.py`
+was read and the fixed certificate
+`computations/continued_convergence_bellman_depth3_certificate_2026_09_06.json`
+was replayed at 80 interval digits. All integer marginal constraints pass.
+The candidate exponent has the rigorous LOWER endpoint
+
+```text
+0.00152671438833974810585956660916941383395981761617838015730404865...
+```
+
+at p=15/16, t=4, r=3. The node class multiplicities are exactly 1 for
+(0,0), 2 for equal positive magnitudes at a fixed relative sign, and 4
+for unequal magnitudes. Exact child counts have denominator 2^30. Leaf
+self-couplings have denominator 2^50, nonnegative entries, and the exact
+two required marginals. Their folded Gaussian entropic costs are UPPER
+bounds on F, so their negative half-costs are LOWER bounds on Phi.
+Each leaf is weighted by 2^-3, making its cost coefficient -2^-4.
+The log-kernel formula also handles zero atoms correctly.
+
+Thus this is a valid feasible-policy lower certificate, with no need
+to trust its numerical discovery optimizer. It excludes the strict
+criterion at the displayed parameters and depths at most three; it
+does not exclude greater depths or a sharper actual-pressure estimate.
+
+A new proposed upper relaxation also passes the finite algebra. Under
+the always-valid global-reversal symmetry, both signed child laws are
+already symmetric, so the invertible pair transform gives
+`H(pair)=H(child+)+H(child-)-I(child+;child-)`. The exact tree expression
+telescopes to
+
+```math
+-H(\nu_{root})+\sum_{leaves}2^{-r}C_t(\nu_{leaf})/2
+       -\frac12\sum_{internal\ v}2^{-depth(v)}I(U_v;V_v).
+```
+
+The integer numerators of U=i+j and V=i-j have the same parity. This
+common deterministic function gives `I(U;V)>=h(q_odd)`. On a declared
+interval for q_odd, concavity of h bounds it below by the linear chord.
+Replacing the negative mutual information by the negative chord is
+therefore an UPPER relaxation. Exposing the leaf self-couplings makes
+the remaining maximization concave, with linear tree and marginal
+constraints. A certified dual can consequently give a genuine upper
+bound on each declared box. To cover all policies, all feasible boxes
+must be covered; a numerical primal maximum is not an upper certificate.
+
+There is a sharper legitimate bottom-node formulation. The function
+`C1(input)=B Phi_t(input)+H_signed(input)` is concave, although Section 10
+shows that the stronger `H+2B Phi_t` is not. Expose the two absolute
+child self-couplings eta. The exact bottom objective is one quarter of
+the sum over the two children of
+
+```math
+[H_{signed}(pair)-H_{abs}(child)]
+ +[H(\eta)-H_{abs}(child)]+\langle\log K_t,\eta\rangle.
+```
+
+Both entropy differences are conditional entropies of explicitly fixed
+linear marginal maps, and the last term is linear. This gives a concave
+maximization with linear feasibility constraints. In the full depth-r
+tree, group bottom nodes in this way and use linear secants only for
+the remaining convex terms `-H_abs` at intermediate profiles. The
+signed-minus-absolute entropy correction is linear.
+
+For a component interval of width at most h, the secant of x log x is
+an upper bound with error at most h/e, including intervals starting at
+zero. At depth d the magnitude alphabet has `2^d+1` entries, and the
+sum of node weights at that depth is one. Consequently the total
+secant error is at most
+
+```math
+\frac he\sum_{d=1}^{r-1}(2^d+1)
+       =\frac he(2^r+r-3).
+```
+
+This is a finite, globally certifiable concave-box scheme if all feasible
+boxes are covered and their dual objectives are verified. It is not a
+claim that the required box enumeration is computationally cheap, nor
+that its maximum has already been shown negative.
+
+## 12. Uniform exclusion of the strict criterion at depths at most two
+
+The convergence agent's Section 9 and standalone
+`computations/continued_convergence_depth2_uniform_exclusion_2026_09_06.py`
+were read completely. An independent replay of its fixed JSON certificate
+at 80 interval digits passes all 237 rational boxes, with minimum lower
+bound `1.8562159534213306e-5`.
+
+The zero-KL iid policy at both levels has terminal law equal to a
+normalized sum of four iid ternary inputs. Direct enumeration of the
+number of nonzero inputs and their signs reconstructs its five absolute
+probabilities in the source. The alternative condensation policy gives
+`B^2 Phi>=-7H(nu_p)/8`. Both are lower policies, so their maximum is a
+valid lower bound on the strict criterion's left side.
+
+On each saved rectangle, the proposed rational symmetric coefficients
+define off-diagonal self-coupling entries `c_ij w_i(p) w_j(p)` and the
+diagonal residual `w_i(p)[1-sum_{j!=i}c_ij w_j(p)]`. Positivity is
+verified throughout the rectangle, while both marginals are exact
+identities in p. Its feasible cost upper-bounds F and therefore supplies
+a lower criterion value. The folded log-kernel is exactly
+`-t(i-j)^2/(4p)+log(1+exp(-tij/p))-log2`, including zero atoms.
+
+The finite closed rectangles are contained in the target rectangle,
+have disjoint interiors, and have its exact rational total area. Since
+their finite union is closed, an uncovered point would have a relative
+open neighborhood of positive area. Thus these checks prove full
+coverage, not only agreement on grid points.
+
+The complement also reconstructs. The Gaussian-profile lower obstruction
+is uniform over Hadamard bases, and the recursive basis has a fresh full
+input signed permutation. Consequently it applies to the actual expected
+one-row pressure of this ensemble and hence, by the audited recursion,
+to its Bellman upper criterion. Concavity and positivity at p=.92
+exclude every smaller positive p. The condensation function at t=0 is
+increasing above p=1/2 and positive at .981, excluding larger p. On the
+remaining p interval its t=5 version is strictly convex; the tangent
+at .945 is uniformly positive, excluding t>=5. The exact rectangle
+certificate handles the remaining compact region.
+
+The conclusion is therefore rigorous for EVERY fixed `0<p<1,t>0,r<=2`.
+It excludes the proposed strict Bellman criterion at those depths, not
+the actual construction, greater depths, or original convergence.
+
+## 13. Exact all-tilt obstruction to the parity-only upper relaxation
+
+The complete feedback entropy-boundary artifact and the rational checker
+`continued_feedback_recursive_entropy_upper_2026_09_06.py` were read.
+The parity-falsifier branch was independently replayed, saving its output
+under `tmp/continued_audit_recursive_parity_falsifier_2026_09_06.json`.
+No optimization is used on this branch; optional solver-import warnings
+do not enter the exact rational computation.
+
+Take iid pair policies at every node, with original integer law
+`(15,2,15)/32` on `(-1,0,1)`. Exact repeated convolution gives the signed
+leaf entropy H_r and the odd numerator probability b_d at depth d.
+All nodes of a given depth have this same law. The exact parity-relaxed
+tree objective therefore has the lower test
+
+```math
+p\log 2-H_0+\frac12H_r-\frac12\sum_{d=1}^r h(b_d)
+       +t(1-\sqrt p).
+```
+
+Here the signed identity leaf coupling has zero quadratic cost and
+information H_r, so `C_t>=H_r` for every t. This is a feasible lower
+test for the UPPER relaxation, not this value of the exact Bellman
+objective: the omitted within-parity mutual information matters.
+
+The checker reduces logarithms to [1,2], evaluates 25 positive terms of
+the atanh series, and bounds the tail by
+`2 z^51/[51(1-z^2)]`. Powers of log 2 are added with correct reversed
+interval endpoints for negative powers, followed by exact outward
+rounding to denominator 10^12. Entropy signs reverse the logarithm
+endpoints correctly. The saved exact lower constants are
+
+```text
+r=1: 0.2650804577756494...
+r=2: 0.2711435865299877...
+r=3: 0.1958768798732189...
+r=4: 0.0538958065077973...
+```
+
+Thus at p=15/16, even retaining the exact parity entropy cannot make
+this relaxation negative at depths three or four for any t>=0. A
+global cover by its weaker chord relaxations cannot repair this.
+The sharper conditional-entropy/intermediate-profile scheme in Section
+11 is not excluded.
+
+## 14. Deep conditional-copy envelope and four-atom falsifier
+
+The entire source
+`continued_convergence_deep_latent_envelope_2026_09_06.md` and its
+interval checker were independently read. The proof passes at its
+stated scope: every finite symmetric input law and finite latent label.
+
+First, the iid policy costs zero and sends the source toward its
+centered Gaussian in W2. Entropic self-transport is continuous in W2:
+transport both endpoints of a feasible coupling independently through
+a marginal transport kernel, contracting relative entropy, and bound
+the quadratic-cost change using Cauchy--Schwarz. Reverse transport
+gives the reverse inequality. Since the Bellman iterates decrease,
+appending arbitrarily many iid levels proves the Gaussian lower bound
+at every earlier finite depth, including the terminal potential.
+
+For a latent label L, independently reflecting X and retaining the
+reflection in L preserves both mutual information and average conditional
+variance V. This makes all active laws symmetric without imposing
+equal classwise conditional variances. At depth d let X_d be the sum
+of 2^d conditionally iid copies sharing L, normalized by 2^(d/2).
+Conditional copies A_d,B_d have plus output X_(d+1), while their minus
+output has unconditional variance exactly V. If J_d=I(X_d;L) and
+c_d=I(A_d;B_d), conditional independence and data processing give
+
+```math
+c_d\le 2J_d-J_{d+1},\qquad
+\sum_{d=0}^{r-1}2^{-d-1}c_d\le J_0-2^{-r}J_r.
+```
+
+The weights are those of the single continuing plus branch and the
+one-half Bellman information penalty. Every departing minus branch
+can use the Gaussian lower bound at its remaining depth. The active
+terminal has at most `(2^r+1)^k` source count vectors, so its entropy
+is O(r) and its weight-2^(-r) contribution vanishes. Consequently
+
+```math
+f_\infty(\nu)\ge
+\sup_{L\ {\rm finite}}\{g_t(E\operatorname{Var}(X\mid L))-I(X;L)\}.
+```
+
+The infimum over depths exists because the decreasing iterates are
+bounded below, for example by -H(nu). The displayed supremum is a
+lower envelope only; no characterization of the deep limit follows.
+
+For the actual four-atom law X=S+T/100 and t=4, the choice L=S has
+information log 2 and V=10^-4. Coarse S remains exactly recoverable
+through every active plus sum, so each active pairing costs exactly
+log 2. The source's finite-depth entropy bound is valid and already
+separates depth four from the proposed maximum of Gaussian spreading
+and total-entropy condensation. Independent 80-digit interval replay,
+saved at `tmp/continued_audit_deep_latent_envelope_2026_09_06.json`, gives
+
+```text
+depth-four lower minus Gaussian candidate > 0.0172954654337443;
+deep lower minus Gaussian candidate       > 0.0841475430429995.
+```
+
+This rigorously falsifies that proposed universal deep upper envelope.
+It does not settle the original ternary input, the exact Bellman
+criterion at deeper levels, or the minimax convergence question.

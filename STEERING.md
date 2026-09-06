@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: fourth continued checkpoint, ledger Section 10.149.4.
+Evidence cutoff: fifth continued checkpoint, ledger Section 10.149.5.
 Status: **third six-hour response/convergence campaign active**,
 2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
 
@@ -98,16 +98,22 @@ Arbitrary overlapping networks and original-minimizer landing remain unproved.
 
 1. Evaluate the new finite-depth orbital/permanent variational bound for an
    exact randomized Hadamard weave. The uniform Gaussian-Fock terminal bound
-   loses only exp(O(sqrt(m))); no strict full-row exponent is yet certified.
-   Retain atypical pairings and matchings. A cap improvement would initially
-   concern a constructed subsequence, not establish original convergence.
-2. For the separate WALSH weave, extend the certified eight-block stable-flat
-   count to the remaining profiles. Its exact rational dual gives a negative
-   class exponent at tilt4, but is not a bound for the complete row sum.
-   Do not transfer Walsh affine identities to arbitrary randomized Hadamards.
-3. Preserve the proved actual marked-feedback energy projection. A next return
-   needs a new joint comparison, not just another description of its history.
-   The old terminal self-energy question and its ceiling are not live targets.
+   loses only exp(O(sqrt(m))); no strict full-row exponent is certified.
+   EVERY fixed parameter choice at depth<=2 is now rigorously excluded;
+   depth3 at p15/16,t4 also fails. Deeper sign symmetrization is false.
+   A strict finite certificate WOULD improve the all-order limsup: uniform
+   terminal control, relatively dense Hadamard orders, and restriction remove
+   the order-density gap. It would still not establish convergence.
+2. The new boundary-covered graph theorem controls every q>3 proper cut of
+   B P(S,G,Y,QS,QD), and identifies its exceptional cubic terms by two formal
+   derivative averages. The actual next-return full-contraction criterion is
+   now proved at each fixed polynomial stage. Finish the ordered bounded
+   gain passage, retaining equal-degree covariance and literal residuals;
+   no positive innovation or new universal constant is yet established.
+3. The separate WALSH near-flat class certificate remains valid, but its
+   diffuse finite-bin extension is quantitatively too weak even on a formal
+   two-atom profile. Do not add more isolated profile classes without a full
+   row-sum mechanism, or transfer Walsh identities to randomized Hadamards.
 4. Keep genuine nonconvergence available: it requires fixed positive separation
    of two infinite order subsequences, not a failed intermediate route.
 
@@ -143,11 +149,9 @@ projection are now proved and independently reconstructed. Exact coherent
 energy and its bare cross remain; another threshold of BC needs a new joint
 comparison and is not licensed by the energy identity alone.
 
-The restricted-weave full-cap test is now an exact one-row permanent criterion.
-Typical Gaussian profiles forbid retention <=.922523 for this certificate;
-rare dyadic selectors and annealing across the square root give further scoped
-obstructions. High-probability selector conditioning is legitimate but does not
-remove typical profiles. Stable dense-profile counting now avoids exact Walsh
-divisibility: a finite four-wise-marginal dual excludes a nonzero-width flat
-class at a viable tilt. Complementary profiles and the full cap remain open.
-See `artifacts/continued_limit_campaign_2026_09_06.md` for proofs and scopes.
+The restricted-weave full-cap test remains an exact one-row permanent criterion.
+Typical Gaussian profiles, rare selectors, and invalid square-root annealing
+have scoped obstructions. Exact asymmetric policies and a 237-box interval
+certificate now delimit shallow recursion uniformly. A deep latent/conditional-
+variance envelope is being tested against any proposed limiting potential.
+It is a LOWER bound on the Bellman supremum, never an upper certificate.

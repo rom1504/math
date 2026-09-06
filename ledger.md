@@ -45328,6 +45328,67 @@ retain QS rather than Gaussianize it. A direct energy projection is under
 attack. Independent convergence work tests noncommuting signing switches.
 Neither convergence nor nonconvergence is established. Continue the campaign.
 
+#### 10.149.5 Boundary-covered feedback graphs and certified recursion limits
+
+The original interval [.4333221116640807,.5] is unchanged. The active campaign
+continues through 13:37:56 UTC; this checkpoint is not a stopping point.
+
+A new exact graph-kernel theorem controls every prescribed boundary
+flattening when each bridge-forest leaf contains a free boundary. The proof
+uses the primary Mingo--Speicher input-output theorem, with an independently
+checked extension preserving the prescribed input/output ports. Applying it
+to exact Boolean equality diagrams of W=(S,G,Y,QS,QD) gives
+
+```math
+ \max_i\|[B P(W)]_{i,q}\|_{proper\ cut,op}
+       \le C_{P,L}\max_{ij}|B_{ij}|\qquad(q>3).
+```
+
+No small-cut property of QD is assumed. Every positive-degree individual
+source diagram also has bounded GLOBAL cuts. Even q=2 is controlled; q=3
+is genuinely exceptional on actual conference signings. The exceptional
+cubic return is identified exactly modulo a small-cut tensor:
+
+```math
+ P_3[B P(W)]=B D_u B D+B D_v QD+R_3,
+ \quad u_j=E\partial_Y P(W_j),\quad v_j=E\partial_{QD}P(W_j).
+```
+
+These are formal-coordinate derivatives, and R3 need not be small in L2.
+The graph result closes the missing higher-degree full contractions for the
+ACTUAL next feedback return at fixed polynomial stages. Covariances of equal
+degrees are retained. Bounded approximation, regression cutoffs, and a useful
+innovation size are not silently inferred. The general graph proof received
+two independent reconstructions; complete small equality-pattern enumeration
+was separately replayed, including 115975 patterns for Y^3.
+
+On the independent upper-construction track, a strict finite orbital/Bellman
+certificate would lower the ALL-ORDER limsup: the terminal bound is uniform
+over all Hadamards, relatively dense terminal orders come from the fixed-modulus
+prime theorem, and principal restriction fills intermediate sizes. This removes
+an order-density obligation, not the still-open strict finite certificate.
+
+Every fixed retention and tilt at depth<=2 is now rigorously excluded by two
+explicit policies, analytic complement bounds, and 237 exact rational parameter
+boxes with interval self-couplings. A separate exact rational policy excludes
+depth3 at p15/16,t4, with positive exponent at least .001526714388339748.
+Both certificates were independently read and replayed at 80 digits. These
+exclude the specified upper criterion, not the actual ensemble or all deeper
+recursions. Asymmetric paths must be permitted: independent sign averaging
+beyond the first step has an exact finite-temperature counterexample.
+
+The separate Walsh finite-bin counting extension was also falsified as a full
+bound: a formal two-atom profile keeps its relaxed exponent positive at every
+tilt. No actual Walsh realization at that rate is asserted. The stable eight-
+block near-flat theorem remains valid; it is not a complete row-sum estimate.
+
+[Proofs, audits, exact programs, and live targets](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: convergence and nonconvergence remain open; no new universal
+coefficient is claimed. Fixed-stage coherent feedback contraction and the
+specific construction's order-density obligations have been removed. Continue
+with the bounded next-gain passage and genuinely deeper full-row bounds.
+
 #### 10.149.4 A full-row orbital criterion and a stable dense-profile certificate
 
 The restricted-weave deficit has an exact one-row square-root-permanent upper

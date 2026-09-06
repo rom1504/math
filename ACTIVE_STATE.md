@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.4, active six-hour campaign.
+Evidence cutoff: ledger Section 10.149.5, active six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -217,7 +217,14 @@ tensors has vanishing proper local cuts. These estimates prove local-noise
 separation AND the same three-term energy projection for f(BS,BD), retaining
 V=b0 QS+b1 QD literally. Higher-noise and centered-coefficient energy terms
 vanish by a checked two-gain contraction argument, including degree aliases.
-This is not a joint-law theorem for another threshold of BC. Weak tested
+This energy identity alone is not a joint-law theorem for another threshold
+of BC. A new prescribed-boundary graph theorem now proves O(n^-1/2) proper
+cuts for ALL original Walsh degrees q>3 in B P(S,G,Y,QS,QD), including exact
+coherent collisions. Its cubic part is B D_u B D+B D_v QD plus a small-cut
+remainder, u=E partial_Y P and v=E partial_QD P. Individual positive-degree
+diagrams have bounded global cuts. These close the actual next-return full-
+contraction criterion at fixed polynomial stages; ordered bounded closure
+and a useful innovation bound are separate. Weak tested
 regressions retain the explicit local drift gamma_i=(B³)_ii but recover only
 the previously available gain certificate. A separate actual-signing example
 has flat offdiagonal Q and cubic trace zero while many B³ entries stay large.
@@ -232,12 +239,21 @@ one-row PSD-kernel permanent obligation. A new uniform Gaussian-Fock orbit
 theorem has only exp(O(sqrt(m))) terminal loss; a proved entropy/transport
 supersolution gives a finite-depth type variational upper bound for an EXACT
 randomized Hadamard ensemble. Its required negative full-row exponent is not
-certified. In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
+certified. Exact policies and a 237-box interval replay exclude EVERY fixed
+p,t at depth<=2; depth3 at p15/16,t4 is also certified impossible for this
+criterion. Independent-sign symmetrization beyond the first level is false.
+A strict finite certificate would improve the ALL-ORDER limsup via a dense
+supply of terminal Hadamard orders and principal restriction, not merely a
+subsequence. It would not itself establish convergence.
+In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
 exact rational dual excludes a fixed-width near-flat spectrum class at tilt4.
 Complementary profiles remain; Walsh affine identities do not automatically
 hold for the randomized ensemble. Typical-profile, rare-selector, and invalid
 annealing obstructions are scoped to their specified certificate/law. No full
 cap improvement, recurrence, convergence, or nonconvergence follows yet.
+The finite-bin extension of the Walsh count admits a formal two-atom profile
+with a positive relaxed exponent at every tilt; actual feasibility of that
+profile is not asserted. That extension alone cannot control the full sum.
 
 Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
 finite errors proportional to slack d; near-optimal fractional means have

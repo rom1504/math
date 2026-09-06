@@ -326,3 +326,55 @@ Their current consequences are complementary, not a combined full-cap proof.
 | Director | Stable four-point theorem; independent proofs and exact replays | Integrate the full-row criterion, not add isolated spectral classes indefinitely |
 
 Continue immediately. The remaining work is substantive, not a final synthesis.
+
+## Fifth substantive checkpoint: exact coherent graph structure
+
+The campaign remains active through13:37:56 UTC. The universal interval is
+unchanged. This checkpoint records removed proof obligations, not convergence.
+
+The director's [boundary-covered graph theorem](continued_director_boundary_graph_feedback_cuts_2026_09_06.md)
+proves O(n^-1/2) proper cuts for every q>3 component of B P(S,G,Y,QS,QD).
+It handles exact internal Boolean collisions by graph parity, not a presumed
+Gaussian law for QD. The prescribed boundary-port extension of the primary
+input-output graph theorem was independently reconstructed twice. It also
+supplies bounded GLOBAL cuts for individual positive-degree diagrams.
+[Independent proof and actual next-return contraction consequence](continued_audit_boundary_graph_and_next_return_2026_09_06.md).
+
+The [cubic subtraction theorem](continued_feedback_boundary_graph_and_cubic_return_audit_2026_09_06.md)
+identifies the two possible coherent cubic returns by E partial_Y P and
+E partial_QD P. The remainder has small proper cuts, not small L2 norm.
+The exact combinatorial checker `continued_feedback_boundary_graph_partition_audit`
+was read and replayed by the director; finite enumeration supports, but does
+not replace, the arbitrary-degree proof. The next bounded gain requires the
+ordered regression/variance passage and does not come with an innovation floor.
+
+For the upper-construction route, a [strict finite certificate implies an
+ALL-ORDER upper improvement](continued_director_recursive_weave_all_order_implication_2026_09_06.md).
+Only uniform terminal control and a relatively dense supply of terminal
+Hadamard orders are used. No extremal Paley surrogate or original-minimizer
+landing assumption enters that implication.
+
+The [exact recursive criterion](continued_convergence_recursive_orbit_bound_2026_09_06.md)
+now has a uniform shallow-depth falsifier: ALL fixed p,t fail at depth<=2.
+The certificate is `computations/continued_convergence_depth2_uniform_exclusion_2026_09_06.json`;
+the same-named verifier checks all237 exact rational boxes without optimizing.
+The director and auditor each replayed it at80digits. A separate rational
+depth3 policy at p15/16,t4 has positive exponent .001526714388339748 and was
+also independently replayed. These are lower witnesses for a supremum, never
+upper certificates. Deeper independent-sign averaging is rigorously false.
+
+The [finite-bin Walsh extension](continued_feedback_diffuse_bin_count_and_limit_2026_09_06.md)
+is too weak on an explicit formal two-atom profile, while the stable-flat
+class result remains intact. The [entropy-box formulation](continued_feedback_recursive_entropy_upper_boundary_2026_09_06.md)
+gives a mathematically valid finite certification scheme with explicit error,
+but current boxes are too loose. Its parity-only relaxation is itself
+rigorously insufficient at depths3 and4; full output dependence matters.
+
+| Role | Last checkable result | Next discriminating obligation |
+|---|---|---|
+| Feedback | Cubic coherent-return classification and independent graph audit | Quantify the actual return, not another spectral proxy |
+| Convergence | Uniform all-parameter shallow-depth exclusion | Test deeper latent/condensation envelopes and full-row certificates |
+| Audit | Fixed-stage next-return full contractions | Complete the ordered bounded next-gain passage; retain covariance |
+| Director | Boundary-covered graph theorem and all-order upper implication | Verify bounded closure and reduce the deep latent test exactly |
+
+Continue mathematical work immediately after saving this checkpoint.
