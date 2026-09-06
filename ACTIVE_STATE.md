@@ -1,305 +1,132 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.7, completed six-hour campaign.
-Use the linked proofs for reconstruction and the ledger only for archive detail.
+Evidence cutoff: ledger Section 10.150.1, renewed campaign checkpoint 1.
+The six-active-hour campaign remains ACTIVE, approximately through 22:15 UTC,
+excluding the service interruption around 16:05–17:02.
+Read this compact state and current STEERING; use the ledger only as needed.
 
-## Exact problem and verified frontier
-
-```math
-H_A(x)=\sum_{i<j}a_{ij}x_ix_j,\quad
-Q(A)=\max_{x\in\{\pm1\}^n}|H_A(x)|,\quad
-M_n=\min_A Q(A),
-```
-
-where A is hollow symmetric with off-diagonal signs. The objective is
-convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
+## Original problem and rigorous interval
 
 ```math
-0.4333221116640807\le\liminf_n M_n/n^{3/2}
-\le\limsup_n M_n/n^{3/2}\le0.499432220485404<1/2.
+H_A(x)=\sum_{i<j}a_{ij}x_ix_j,\quad Q(A)=\max_x|H_A(x)|,\quad
+M_n=\min_{A\text{ hollow symmetric signing}}Q(A).
 ```
 
-NEW: a strict ALL-ORDER upper theorem is proved and independently audited.
-The exact upper endpoint is1/2-a/(8sqrt(31/32)), with
-a=91470529542342299/20460000000000000000. The sequence cannot converge
-to1/2; whether it converges to another constant remains open.
-[Theorem and complete dependency map](artifacts/continued_director_strict_all_order_upper_2026_09_06.md).
-
-Recorded M_3,...,M_14 are (3,4,4,5,9,10,12,13,17,18,20,21).
-The n=11,13 lower bounds are solver-certified infeasibility results;
-this campaign did not rerun those solvers.
-
-For N=binom(n,2), the augmented cut code is
-C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates. Exactly
-Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension is n.
-It is RM(1,n) punctured to the weight-two slice, including the affine constant.
-
-## Strongest current quantitative result
-
-The new upper construction combines a conditional-variance envelope
-T=sup_L[E g(Var(X|L))-I(X;L)], its PROVED Bellman supersolution,
-Gaussian-boundary replacement, an exact negative posterior-envelope
-certificate, and the uniform restricted-weave/all-order realization theorem.
-Sequential parent labels and Schur-complement variance comparison bypass
-the smaller envelope's still-open equal-temperature alignment question.
-No arbitrary minimizing signing is assumed flat, Gaussian, or conference.
-The result is uniform in all sufficiently large orders, but supplies no
-comparison with the original liminf. The bound is not claimed optimal.
-
-The new original lower endpoint is analytic, with exact rational interval
-evaluation and two independent source reconstructions/replays. The finite
-Gaussian approximation is chosen before the matrix order tends to infinity;
-the spectral-deletion cutoff is removed last.
-
-The full nonlinear response theorem gives, for a fixed feasible odd F/even H,
+Determine convergence or nonconvergence of M_n/n^(3/2), without fixing its value.
 
 ```math
-\liminf_n M_n/n^{3/2}\ge
-\mathbb E\,H\,\mathbb E_N|U^*P_1F+\|(I-P_1)F\|_2N|.
+0.4333221116640807\le\liminf M_n/n^{3/2}
+\le\limsup M_n/n^{3/2}\le0.499432220485404<1/2.
 ```
 
-U is the actual canonical creation isometry, not an arbitrary distributional
-fixed point. Nuclear covariance, endpoint parity, and mixed contractions are
-proof dependencies. A 21-anchor finite-resolvent cyclic core is realizable.
-A second genuinely correlated Gaussian gives an actual two-coordinate policy.
-Its old inverse g has norm one; neither its scalar conditional mean nor an
-independence approximation replaces it in the norm or masked expectation.
+The exact upper is 1/2-a/(8sqrt(31/32)),
+a=91470529542342299/20460000000000000000. Convergence to 1/2 is impossible;
+convergence itself is OPEN. Recorded M_3,...,M_14 are
+(3,4,4,5,9,10,12,13,17,18,20,21); n=11,13 lower solvers were not rerun.
 
-The exact 256-rectangle pure policy gives the lower endpoint
-.433322111664080753415812928897579346558634648033693413106996.
-The entire omitted conditional Hermite tail is charged. The numerical
-optimizer supplies only rational policy endpoints, not trusted moments.
+For N=binom(n,2), augmented cut code
+C_n^+={(c+b_i+b_j)_(i<j)} has Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+).
+The affine constant is essential for the absolute objective.
 
-- [Full nonlinear proof audit](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md)
-- [Correlated actual birth](artifacts/resumed_response_rich_core_response_birth_2026_09_06.md)
-- [Independent optimized-policy audit](artifacts/resumed_bound_audit_rich_core_cell_ascent_2026_09_06.md)
-- [Exact certificate](computations/results/resumed_response_rich_core_optimized_policy_certificate_2026_09_06.json)
+## Current strict upper proof
 
-## Response theory: what is now known and what is not
+[Standalone reconstruction](artifacts/transfer_reconstruction_standalone_2026_09_06.md)
+independently rebuilds and exactly replays the entire chain:
 
-1. Every old Gaussian inverse has a conditional new-coordinate tail bounded
-   by theta^(K+1)||g||_2 when the old/new first-chaos principal angle is at
-   most theta<1. Weighted Jensen transfers it without inverse-mask-mass loss.
-2. Fixed-frame response optima exist and are uniformly approximated by finite
-   cell optima. Numerical KKT stationarity is not global optimality.
-3. Analytic cyclic cores with finite causal appendages have strict unrestricted
-   high-value escape; the increment is not uniform over expanding frames.
-4. The ENTIRE terminal one-response functional is below .45, proved by the
-   Gaussian moment body, weighted-square concavity, and an exact 109-interval
-   envelope. This is NOT a ceiling for actual signings or all algorithm output
-   energies. On normalized symmetric Hadamards, both discarded endpoint
-   self-energies now provably vanish, so the ceiling is physical for that
-   terminal architecture, not for all algorithms or signings.
-5. The older sqrt(15)/8 fixed-GFOM ceiling has broader algorithmic but different
-   scope. Neither ceiling covers all nonlocal or growing-complexity methods.
+1. Exact restricted rank-one weave, both objective signs and all 2^N spins.
+2. PSD folded Gaussian kernels and graph contraction give the one-row
+   permanent criterion; independent fibre averages give (E Z)^m.
+3. Gaussian Fock orbital bound has exp(O(sqrt(m))) terminal loss uniformly.
+4. Finite-depth exact type counting gives the Bellman operator.
+5. Unbounded Gaussian self-transport is strictly source-concave; zero drift
+   is exactly Gaussian. No controlled-policy uniform CLT is assumed.
+6. Conditional-variance envelope T=sup_L[E g(Var(X|L))-I(X;L)] supersolves
+   Bellman. Sequential labels, Schur pivots, log-majorization and convexity
+   prove this without equal-temperature alignment.
+7. Direct stopping at Phi-T bounds deep iterates by T. The older smaller
+   latent envelope and its unproved supersolution are not dependencies.
+8. Rational 2501-by-2501 posterior grid plus an outward continuous modulus
+   gives offset <=-a at p=31/32,t=4.
+9. H2/H12 Kronecker terminal orders are multiplicatively asymptotically dense.
+   Principal restriction fills all orders. No prime-gap theorem is needed.
 
-6. Actual mixed-charge feedback escapes the complete old Gaussian field in
-   two steps. Paired-query optima satisfy C_(m+1)>=C_m+Delta_m>C_m with an
-   explicit Delta_m>0 uniform at each fixed query depth. This is an actual
-   retained-energy hierarchy on the involution class, still bounded above
-   by sqrt(15)/8. No transfer to arbitrary near-minimizers is established.
+Limits: fixed margin, then fixed depth, then all large orders, then margin.
+The current campaign's independent reconstruction and exact checks passed.
+This construction is not asserted optimal.
 
-[Current proof map and scopes](artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md).
+## Original lower proof retained
 
-## New nonlocal and actual-minimizer theorems
+The .4333221116640807 bound uses the actual nonlinear marked/two-Gaussian
+response and a 256-rectangle rational policy with interval evaluation.
+The old Gaussian inverse remains norm one; coherent masked dependence and
+omitted Hermite tails are retained. Nuclear covariance, parity and mixed
+contractions are dependencies. Fixed approximation precedes n, and the
+spectral cutoff is removed last.
 
-**Ramsey Fourier saturation.** Every centered even Fourier involution over a
-growing finite abelian group has an asymptotically mean-zero Boolean vector
-with absolute Rayleigh quotient tending to one, uniformly over multipliers.
-Deuber sets and projective vector-space Ramsey supply a finite monochromatic
-squarefree frequency pattern; uniform cosine/Hermite approximation supplies
-the Boolean vector. Exact multiplicative Fourier structure is essential.
+- [Nonlinear proof audit](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md)
+- [Actual correlated birth](artifacts/resumed_response_rich_core_response_birth_2026_09_06.md)
+- [Policy audit](artifacts/resumed_bound_audit_rich_core_cell_ascent_2026_09_06.md)
+- [Exact lower certificate](computations/results/resumed_response_rich_core_optimized_policy_certificate_2026_09_06.json)
 
-The robust finite-field version proves: every additive-Cayley hollow signing
-with ||A||op<=(1+o(1))sqrt(n) has Q(A)/n^(3/2)->1/2. Native Paley cores and
-bordered conferences saturate at ALL admissible prime-power orders, with both
-Rayleigh signs. No theorem for arbitrary eigenbases, non-Cayley matrices, or
-Cayley families with a fixed spectral excess is claimed.
+## New verified structural results and strict scopes
 
-**Robust scope and a nonflat class.** An o(n^2)-edge perturbation of the
-near-flat finite-field Cayley class still has normalized cap at least 1/2.
-For Paley cores the exact radial ground-state law gives the sharper bound
-Q(B)>=Q(A)|1-4d/[n(n-1)]| for d edge edits. Independently, ALL additive-Cayley
-signings on F_3^r, without spectral or row-sum assumptions, satisfy
-liminf Q/n^(3/2)>=2080/(9 sqrt(269441)) approximately .44523467985944279.
-The proof uses character aliases, Parseval, and a projective-incidence
-deficit; it does not improve the unrestricted .433322 endpoint.
+- Conditional-variance factorization works for every orthogonal gate and
+  heterogeneous marginals, charging total correlation. Every fixed real
+  Hadamard gate has Gaussian-only zero drift. This does not accept an
+  arbitrary signing as an orthogonal mixer.
+- Full rank-one weaving has exact cap (m^3+m|tr S|)/2 after hollowing.
+  Balanced retention p has cap >=sqrt(p)/2 in normalized units. Outer signs
+  are gauge-erasable when arbitrary Hadamard column signs are available.
+- Exact row-permanent certificate floor: L_t(v)>=exp[m g_t(||v||²/m)].
+  It follows by positive Sinkhorn scaling, van der Waerden and Gaussian
+  extremality. The full-spin row certificate cannot certify below sqrt(15)/8,
+  even with arbitrary sign bases and variable norm retained. This is NOT an
+  actual-signing lower bound. [Proof](artifacts/transfer_director_exact_permanent_floor_2026_09_06.md).
+- Near-optimal twin surgery: o(n) copied pairs cost o(n^(3/2)) in Q but can
+  force divergent normalized precision-determinant penalties under EVERY
+  sign diagonal/precision/order. The displayed defects are o(n)-removable;
+  existence of a good seed sequence remains possible.
+- Actual minimizers, uniformly randomly restricted to
+  k=floor(sqrt(log_2(n)/2)), have normalized cap >=(2/3)sqrt(2/pi)-o(1)
+  with high probability. This is a rare-good-restriction obstruction, not
+  impossibility of exceptional or near-order extraction.
+- Hadamard-stabilized seed norm R is <= the absolute-PSD majorant T.
+  T(A)>=n sqrt(n-1)/2 for every hollow signing. R=T is OPEN. All-win
+  parallel repetition, ordinary quantum bias and parity catalysts differ.
 
-**Gap-two geometry.** A single-coefficient locally minimizing signing with
-cap Q has a near-state outside projective radius r of every oriented ground
-whenever n(2r-1)<Q and Q>r(n-r)+1. Thus exact minimizers have gap-two states
-separated by at least (c/2-o(1))sqrt(n) from every ground, for any universal
-lower coefficient c. No operator bound is needed.
+[Current campaign index](artifacts/transfer_campaign_2026_09_06.md).
 
-If all gap-two states have the same orientation, their number is at least
-1+log_2(n^2/(2Q+n)), and their collective changed support is linear. Mixed
-orientation instead gives a twisted code-overlap bound; it does not imply
-the same collision count. A separate abundant-pattern determinant argument
-gives an unconditional (1-o(1))log(n)/loglog(n) count in every C sqrt(n) window.
-These are exact-minimizer facts, not claims for arbitrary asymptotic near-minima.
+## Exact original-problem gap and active work
 
-## Retained cross-order theorem and precise gap
+A sufficient seed-transfer theorem needs ONE near-liminf seed sequence and,
+for each fixed seed, all-order/dense-order constructions preserving its
+normalized cap within epsilon_seed->0. Take target order first, seed order
+second. Current realization preserves flatness/signs, not arbitrary Q.
 
-For mu_r=E|sum_(j=1)^r epsilon_j|, every n,r satisfies
+Active discriminating tests:
 
-```math
-M_{n+r}\le M_n+M_r+
-\min\{n\mu_r+\sqrt{2nr(r-1)\log2},
-r\mu_n+\sqrt{2nr(n-1)\log2}\}.
-```
+1. Restricted tensor seed transfer and the stabilized norm R versus T.
+2. Is the homogeneous-row Finner exponent sharp for the actual joint law?
+   Test by colored-edge counting and a uniform typical-Gaussian spectrum
+   theorem for retained Hadamards. A leading joint gain must be proved,
+   not inferred from a small seed cap.
+3. Secondary actual-feedback transport: retain coherent returns QS,QD and
+   actual energy. The general high-value marked innovation is still open.
 
-For r->infinity, r=o(n), its remainder is
-(sqrt(2/pi)+o(1))n sqrt(r). It improves a coefficient, not the exponent or
-the previously known qualitative near-order continuity.
+The exact bridge identity remains
+Q(parent)=max_(x,y)(|H_A(x)+H_D(y)|+|x^TBy|).
+Mesoscopic completion costs (sqrt(2/pi)+o(1))n sqrt(r) for r=o(n), r->infinity;
+it does not provide a comparable-order sublinear recurrence.
 
-The exact bridge identity is
+## Constraints against overinterpretation
 
-```math
-Q\!\begin{pmatrix}A&B\\B^{\mathsf T}&D\end{pmatrix}
-=\max_{x,y}(|H_A(x)+H_D(y)|+|x^{\mathsf T}By|).
-```
+The terminal feedback certificate below .45 and fixed-GFOM sqrt(15)/8 ceiling
+are class/algorithm limitations, not universal upper bounds on signings.
+Finite-field near-flat Cayley and Paley saturation at 1/2 are scoped class
+theorems; arbitrary near-minimizers need not be flat or Cayley.
+Local profiles, spectral cosquares, action recovery, Gibbs and code no-gos
+retain their exact proved hypotheses. Full history is archived in Git.
 
-A sufficient open target is a sign bridge for actual minimizing children with
-b_parent<=b_m+b_n+K(m+n)^(1-delta), b_n=M_n^(2/3), uniformly at comparable
-large orders. No such recurrence or demonstrably simpler sufficient child
-property has been proved. Near-state counting/spread alone does not bound
-joint row discrepancy. Convergence and nonconvergence remain open.
-
-The Hadamard-regularized seed minimum has a limit, but equality with the
-original liminf is missing. Arbitrary controlled Fourier-index translations
-are realizable; a single such gate is exactly blockwise phase-only and adds
-no seed-norm power. Arbitrary overlapping composition is not established.
-
-## Strongest scoped older constraints
-
-- Translation-invariant coset metrics uniformly preserving normalized deficit
-  require exp((log2/2+o(1))n^2) covering states. This is not a near-minimizer-only
-  or physical-continuation impossibility.
-- Deep leader cubes give many near-minima at vanishing separation, not failure
-  of fixed-resolution compactness.
-- Spectral squares and fixed one-root covariance do not determine Boolean
-  cap: exact cosquare seeds have a scalable cap gap. This is not full action
-  equality and not a near-minimizer example.
-- Action compactness lacks all-order lossless sign recovery. Sign-near weighted
-  recovery retains nearly all edge bits.
-- Local-profile, fixed-gadget, Gibbs, scalar-channel and algebraic-family
-  obstructions retain their exact hypotheses; do not broaden them by analogy.
-
-## Current actual-feedback comparison and next discriminating work
-
-Completed authorized interval: 2026-09-06 07:37:56–13:37:56 UTC.
-For arbitrary bounded-op signings, old odd F has expected self-energy
-||P1F||^2 Tr(B^3)/(2n)+o(1). The precise next missing transport is
-B[H sign(BF)]; zero cubic moment does not license an involution return.
-The new zero-first scalar theorem closes masked feedback covariance for
-bounded odd f with E[Nf(N)]=0, even bounded H, and bounded odd Lipschitz psi.
-For Q=B², R=sum_(p>=3 odd) f_p² Q^(circ p), T=BRB, actual
-C=H(BS)psi(Bf(BS)) has normalized-nuclear covariance asymptotic to the
-product Gaussian kernel with independent old/transported fields of covariance
-Q,T. Its actual self-energy is mu² Tr(B D_a T D_a)/(2n)+o(1), retaining a
-term absent on involutions. Alone this is NOT a joint-law theorem allowing another
-threshold of BC. Fixed operator cap, functions, and approximation-before-order
-limits are required. The new inverse-variance theorem now supplies the
-additional control for hard thresholds, without a pointwise fixed floor.
-
-An exact Steiner signing family B²=I+gamma B, gamma->1/sqrt(2), proves the
-nonzero self-energy 1/(pi sqrt(2)); no minimizing property is asserted.
-The SAME family falsifies Gaussianizing the nonzero-first coherent return
-QS=S+gamma BS, even for bounded feasible responses, with a positive
-normalized-nuclear discrepancy. An apex/twin family separately has a cubic
-transport variance tending to zero at one root, despite bounded operator norm.
-
-The nonzero-first scalar and fixed-colored extensions now retain the literal
-Boolean return V=QS. For Z=B(f(BS)-b BS), C=H(BS)psi(bV+Z), and Gaussian
-noise variance sigma_i²=T_ii, define c0_i=H(BS_i) E psi(bV_i+sigma_i N)
-and a_i=E H(BS_i)psi'(bV_i+sigma_i N). Then
-e(C)=e(c0)+E[c0^T B D_a Z]/n+Tr(B D_a T D_a)/(2n)+o(1).
-This is an energy projection, not a law replacement. Hard thresholds use an
-explicit variance cutoff in the raw cross. Exact Boolean sine formulas
-evaluate all terms by polynomially many characteristic-function products.
-
-For every symmetric unit-row-norm B and odd p, the positive tensor lift gives
-sum_i 1/[B(B²)^(circ p)B]_ii<=n. Odd nonnegative mixtures of total mass tau²
-therefore satisfy avg tau²/T_ii<=1. This controls averaged small balls and
-hard-sign passage. Even powers fail at every root on an actual bounded-op
-opposite-twin signing family. General multichannel oddness alone is insufficient.
-
-The genuinely marked return QD, D=S h2(BS), is pure Boolean degree three and
-has expected energy Tr(B^5)/(2n)+o(1); it cannot be reduced to first Boolean
-degree. Exact Boolean gradients now give polylogarithmic positive-Walsh root
-maps for fixed polynomials of its coherent history, now strengthened to ALL
-global source cuts. Flat transport of a product of at least two such rooted
-tensors has vanishing proper local cuts. These estimates prove local-noise
-separation AND the same three-term energy projection for f(BS,BD), retaining
-V=b0 QS+b1 QD literally. Higher-noise and centered-coefficient energy terms
-vanish by a checked two-gain contraction argument, including degree aliases.
-This energy identity alone is not a joint-law theorem for another threshold
-of BC. A new prescribed-boundary graph theorem now proves O(n^-1/2) proper
-cuts for ALL original Walsh degrees q>3 in B P(S,G,Y,QS,QD), including exact
-coherent collisions. Its cubic part is B D_u B D+B D_v QD plus a small-cut
-remainder, u=E partial_Y P and v=E partial_QD P. Individual positive-degree
-diagrams have bounded global cuts. These close the actual next-return full-
-contraction criterion at fixed polynomial stages. Ordered bounded closure is
-now proved, retaining actual coherent regression and all variance cutoffs.
-For scalar zero-first sources and the ACTUAL remaining-slack mask, monotone
-erf feedback has a strictly positive next gain proportional to
-(mu^3/h)L^-9. A feasible fractional update increases energy by at least
-j^2/(2L). The general marked high-value source still lacks a proved innovation
-floor, and removing the spectral cutoff destroys this fixed-L margin.
-Weak tested
-regressions retain the explicit local drift gamma_i=(B³)_ii but recover only
-the previously available gain certificate. A separate actual-signing example
-has flat offdiagonal Q and cubic trace zero while many B³ entries stay large.
-
-Exact controlled two-fibre gates enlarge arbitrary-seed sign-preserving
-conjugations. If a gate preserves every pure Boolean tensor, however, it
-retains the stabilized Hadamard seed norm. Nonlocal overlap must abandon this
-invariant to address that gap. No all-order landing conclusion is claimed.
-
-Random restricted Hadamard weaving has an exact squared-defect identity and
-one-row PSD-kernel permanent obligation. A new uniform Gaussian-Fock orbit
-theorem has only exp(O(sqrt(m))) terminal loss; a proved entropy/transport
-supersolution gives a finite-depth type variational upper bound for an EXACT
-randomized Hadamard ensemble. The final conditional-variance theorem now
-certifies a negative full-row exponent at some fixed finite depth.
-Exact policies and a 237-box interval replay still exclude EVERY fixed
-p,t at depth<=2; depth3 at p15/16,t4 is also certified impossible for this
-criterion. Independent-sign symmetrization beyond the first level is false.
-The strict certificate improves the ALL-ORDER limsup via a dense supply
-of terminal Hadamard orders and principal restriction, not merely a
-subsequence. It does not itself establish convergence.
-The deep recursion now has a rigorous Gaussian-boundary limit: strict
-unbounded self-transport concavity implies that zero Bellman drift is exactly
-Gaussian; bounded-moment compactness and a stopped-tree estimate identify
-decreasing exact-terminal and increasing Gaussian-boundary iterates. The
-common fixed point is unique between those boundaries. Identifying it with
-the one-stage latent envelope requires the OPEN inequality B E<=E. The
-ternary latent value at p31/32,t4 has an exact rational upper certificate
-below -.02459765, but E is presently only a LOWER bound on the Bellman value.
-That smaller-envelope calculation alone gives no cap bound. The larger
-conditional-variance envelope now has a separately proved supersolution and
-a DIFFERENT exact negative certificate; together they yield the new upper
-endpoint stated above.
-In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
-exact rational dual excludes a fixed-width near-flat spectrum class at tilt4.
-Complementary profiles remain; Walsh affine identities do not automatically
-hold for the randomized ensemble. Typical-profile, rare-selector, and invalid
-annealing obstructions are scoped to their specified certificate/law. Those
-Walsh-only results alone give no full cap improvement or convergence theorem.
-The finite-bin extension of the Walsh count admits a formal two-atom profile
-with a positive relaxed exponent at every tilt; actual feasibility of that
-profile is not asserted. That extension alone cannot control the full sum.
-
-Correlated Gaussian rounding is sharpened to leading gain d²/(pi L), with
-finite errors proportional to slack d; near-optimal fractional means have
-d=O_L(sqrt(epsilon)+n^-1/2). Boolean certified endpoints have d=0.
-
-Random proportional conference restrictions have iterated expected cap at
-least 2/pi as N->infinity then retention p->0. This falsifies universal
-AVERAGE sharp extraction, not exceptional subsets or minimizing parents.
-
-[Current campaign and proof index](artifacts/continued_limit_campaign_2026_09_06.md).
-
-[Previous final synthesis](artifacts/resumed_limit_final_synthesis_2026_09_06.md).
-The response comparison and nonlocal sign-entry mechanisms remain distinct
-leads, not completed convergence proofs. No particular next route is mandatory.
+Continue after checkpoints. Reassess failed implementations rather than
+ending the campaign. Genuine nonconvergence requires fixed positive separation
+of two infinite subsequences. No such separation is established.
