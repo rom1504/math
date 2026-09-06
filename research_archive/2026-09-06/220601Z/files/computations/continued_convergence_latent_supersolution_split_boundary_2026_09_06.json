@@ -1,0 +1,35 @@
+{
+  "values": [
+    0.4,
+    1.2
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "t": 8.0,
+  "source_envelope": {
+    "lower": -0.8922434846337002,
+    "upper": -0.8912762767889322,
+    "intervals": 98,
+    "maximum_dual_gap": 0.00016919957265948415,
+    "grid_spacing": 0.008000000000000007,
+    "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+  },
+  "B_E_selected_lower": {
+    "lower": -0.8922434849154012,
+    "parameters": [
+      0.25000108417983913,
+      0.49997614281411845,
+      0.5000161658139999,
+      0.5000149685603019,
+      0.44447833335123066,
+      0.5995221641644214,
+      0.5354191383764275,
+      0.5237730858524356
+    ],
+    "iterations": 42
+  },
+  "gap_lower_diagnostic": -0.0009672081264689991,
+  "status": "bounded necessary-supersolution falsifier test, not a proof if gap nonpositive"
+}

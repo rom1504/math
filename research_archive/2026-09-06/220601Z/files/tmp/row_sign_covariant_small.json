@@ -1,0 +1,722 @@
+{
+  "canonical_payload_sha256": "38c4b9dcaecb9f77ee1617b47e3efc8b3e2491bd75c97e6abe4fd67c82c3874e",
+  "classification": "exact finite enumeration through n=14; exact response and cap but sampled shore defects at n=18; reproducible Monte Carlo polynomial shore diagnostics at n=26 and n=98; numerical spectral values are not proofs",
+  "current_doubled_project_constant": 0.672986728863,
+  "normalization": "doubled Q(A)=max_z |z^T A z|",
+  "records": [
+    {
+      "agreement_size_histogram": {
+        "0,10": 20,
+        "1,9": 10,
+        "10,0": 20,
+        "2,8": 50,
+        "3,7": 75,
+        "4,6": 60,
+        "5,5": 82,
+        "6,4": 60,
+        "7,3": 75,
+        "8,2": 50,
+        "9,1": 10
+      },
+      "cached_cross_anchor_states": 904,
+      "cached_shore_subsets": 564,
+      "cross_augmented_cached_boolean_candidates": 61248,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 23.7734375,
+        "Q_certificate_over_n_to_three_halves": 0.7517821031165921,
+        "exact_integer_histogram": {
+          "0": 360,
+          "14": 2,
+          "2": 120,
+          "4": 20,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.8359375,
+          "denominator": 128,
+          "numerator": 107
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 14.0,
+        "mean": 0.8359375,
+        "mean_over_n_to_three_halves": 0.026434664815470046,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 2.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 3,
+        "mean": 0.9336283185840708
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 23.7734375,
+        "Q_certificate_over_n_to_three_halves": 0.7517821031165921,
+        "exact_integer_histogram": {
+          "0": 360,
+          "14": 2,
+          "2": 120,
+          "4": 20,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.8359375,
+          "denominator": 128,
+          "numerator": 107
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 14.0,
+        "mean": 0.8359375,
+        "mean_over_n_to_three_halves": 0.026434664815470046,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 2.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 22.4609375,
+        "Q_certificate_over_n_to_three_halves": 0.7102772088268821,
+        "exact_integer_histogram": {
+          "0": 290,
+          "12": 10,
+          "2": 50,
+          "20": 2,
+          "4": 70,
+          "6": 80,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 2.1484375,
+          "denominator": 128,
+          "numerator": 275
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 20.0,
+        "mean": 2.1484375,
+        "mean_over_n_to_three_halves": 0.06793955910518003,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.43359375,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 6.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 9,
+      "cross_augmented_state_order_histogram": {
+        "3": 100,
+        "4": 150,
+        "5": 120,
+        "6": 164,
+        "7": 120,
+        "8": 150,
+        "9": 100
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 20.38808392603813,
+        "Q_certificate_over_n_to_three_halves": 0.6447278233294841,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 17.119717994522443,
+        "mean": 4.2212910739618685,
+        "mean_over_n_to_three_halves": 0.13348894460257804,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 4.362675853621571,
+          "0.9": 8.925294632464604,
+          "0.99": 10.362675853621571
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 21.9140625,
+        "Q_certificate_over_n_to_three_halves": 0.6929835028728363,
+        "exact_integer_histogram": {
+          "0": 295,
+          "12": 10,
+          "16": 20,
+          "2": 50,
+          "30": 2,
+          "4": 40,
+          "6": 70,
+          "8": 25
+        },
+        "exact_mean": {
+          "decimal": 2.6953125,
+          "denominator": 128,
+          "numerator": 345
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 30.0,
+        "mean": 2.6953125,
+        "mean_over_n_to_three_halves": 0.08523326505922585,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.423828125,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 8.0,
+          "0.99": 16.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 512,
+      "exact_expected_bilinear_response": {
+        "decimal": 24.609375,
+        "denominator": 64,
+        "numerator": 1575
+      },
+      "exact_face": {
+        "Q_certificate": 23.296875,
+        "Q_certificate_over_n_to_three_halves": 0.7367118736423521,
+        "exact_integer_histogram": {
+          "0": 360,
+          "16": 2,
+          "4": 140,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 1.3125,
+          "denominator": 16,
+          "numerator": 21
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 16.0,
+        "mean": 1.3125,
+        "mean_over_n_to_three_halves": 0.04150489428970998,
+        "name": "exact_face",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 4.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "exact-n10",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "2cb0ba2fbcb6c763ec6735e0704d883b1235fda4283c4809e5adff7c1195f33f",
+      "mode": "exact",
+      "n": 10,
+      "nuclear": {
+        "Q_certificate": 18.578024325454688,
+        "Q_certificate_over_n_to_three_halves": 0.5874887129445009,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 19.270422048691767,
+        "mean": 6.031350674545311,
+        "mean_over_n_to_three_halves": 0.19072805498756124,
+        "name": "nuclear",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 5.816901138162093,
+          "0.9": 11.54366159342693,
+          "0.99": 11.54366159342693
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.8828125,
+      "population_size": 512,
+      "projector": {
+        "Q_certificate": 19.033951896224266,
+        "Q_certificate_over_n_to_three_halves": 0.6019064086614956,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 18.88468137848347,
+        "mean": 5.575423103775733,
+        "mean_over_n_to_three_halves": 0.17631035927056649,
+        "name": "projector",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 5.442340689241736,
+          "0.9": 11.159173581135605,
+          "0.99": 11.163511033862605
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 26,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7782167679320621,
+      "sample_or_enumerated_response_mean": 24.609375,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "computations/results/exact_m10.json",
+      "source_key": "matrix",
+      "unique_agreement_subsets": 338,
+      "zero_field_coordinate_fraction": 0.0
+    },
+    {
+      "agreement_size_histogram": {
+        "0,11": 5,
+        "10,1": 51,
+        "11,0": 36,
+        "2,9": 5,
+        "3,8": 35,
+        "4,7": 90,
+        "5,6": 105,
+        "6,5": 197,
+        "7,4": 200,
+        "8,3": 170,
+        "9,2": 130
+      },
+      "cached_cross_anchor_states": 1860,
+      "cached_shore_subsets": 1198,
+      "cross_augmented_cached_boolean_candidates": 194340,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 27.01171875,
+        "Q_certificate_over_n_to_three_halves": 0.7403945126971716,
+        "exact_integer_histogram": {
+          "0": 1009,
+          "4": 15
+        },
+        "exact_mean": {
+          "decimal": 0.05859375,
+          "denominator": 256,
+          "numerator": 15
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 4.0,
+        "mean": 0.05859375,
+        "mean_over_n_to_three_halves": 0.001606061849668485,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.0146484375,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 4.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 4,
+        "mean": 0.8333333333333334
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 26.6796875,
+        "Q_certificate_over_n_to_three_halves": 0.7312934955490502,
+        "exact_integer_histogram": {
+          "0": 934,
+          "4": 80,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.390625,
+          "denominator": 64,
+          "numerator": 25
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 8.0,
+        "mean": 0.390625,
+        "mean_over_n_to_three_halves": 0.010707078997789901,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.087890625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 4.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 25.517578125,
+        "Q_certificate_over_n_to_three_halves": 0.6994399355306253,
+        "exact_integer_histogram": {
+          "0": 749,
+          "12": 15,
+          "16": 10,
+          "4": 185,
+          "6": 5,
+          "8": 60
+        },
+        "exact_mean": {
+          "decimal": 1.552734375,
+          "denominator": 512,
+          "numerator": 795
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 16.0,
+        "mean": 1.552734375,
+        "mean_over_n_to_three_halves": 0.04256063901621485,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.2685546875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 4.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 10,
+      "cross_augmented_state_order_histogram": {
+        "10": 135,
+        "3": 135,
+        "4": 205,
+        "5": 290,
+        "6": 300,
+        "7": 300,
+        "8": 290,
+        "9": 205
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 22.340078013068357,
+        "Q_certificate_over_n_to_three_halves": 0.6123442690629431,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 13.594247330885107,
+        "mean": 4.730234486931645,
+        "mean_over_n_to_three_halves": 0.1296563054838971,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.849609375,
+        "quantiles": {
+          "0.5": 4.360484559881748,
+          "0.9": 9.046906751725874,
+          "0.99": 12.990715641527412
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 25.8203125,
+        "Q_certificate_over_n_to_three_halves": 0.7077379217539125,
+        "exact_integer_histogram": {
+          "0": 809,
+          "12": 10,
+          "16": 5,
+          "4": 130,
+          "8": 70
+        },
+        "exact_mean": {
+          "decimal": 1.25,
+          "denominator": 4,
+          "numerator": 5
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 16.0,
+        "mean": 1.25,
+        "mean_over_n_to_three_halves": 0.034262652792927686,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.2099609375,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 4.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 1024,
+      "exact_expected_bilinear_response": {
+        "decimal": 27.0703125,
+        "denominator": 128,
+        "numerator": 3465
+      },
+      "exact_face": {
+        "Q_certificate": 26.46484375,
+        "Q_certificate_over_n_to_three_halves": 0.7254046021002658,
+        "exact_integer_histogram": {
+          "0": 879,
+          "4": 135,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.60546875,
+          "denominator": 256,
+          "numerator": 155
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 8.0,
+        "mean": 0.60546875,
+        "mean_over_n_to_three_halves": 0.016595972446574347,
+        "name": "exact_face",
+        "positive_fraction": 0.1416015625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 4.0,
+          "0.99": 4.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "witness-n11",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "738706134789cbbdb8b35cfc25de0cf7888da83b06b4c152222021aaa846f951",
+      "mode": "exact",
+      "n": 11,
+      "nuclear": {
+        "Q_certificate": 20.287617410518006,
+        "Q_certificate_over_n_to_three_halves": 0.5560860730658664,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 15.033420397415547,
+        "mean": 6.782695089481993,
+        "mean_over_n_to_three_halves": 0.18591450148097366,
+        "name": "nuclear",
+        "positive_fraction": 0.908203125,
+        "quantiles": {
+          "0.5": 7.033420397415545,
+          "0.9": 11.54366159342693,
+          "0.99": 15.033420397415547
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.908203125,
+      "population_size": 1024,
+      "projector": {
+        "Q_certificate": 20.867829840957455,
+        "Q_certificate_over_n_to_three_halves": 0.5719897667060965,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 14.30665994215071,
+        "mean": 6.202482659042545,
+        "mean_over_n_to_three_halves": 0.17001080784074366,
+        "name": "projector",
+        "positive_fraction": 0.908203125,
+        "quantiles": {
+          "0.5": 5.94327971451829,
+          "0.9": 11.163511033862605,
+          "0.99": 14.30665994215071
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 34,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7420005745468401,
+      "sample_or_enumerated_response_mean": 27.0703125,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "computations/results/nested_10_in_11_cap17.json",
+      "source_key": "matrix",
+      "unique_agreement_subsets": 635,
+      "zero_field_coordinate_fraction": 0.24609375
+    },
+    {
+      "agreement_size_histogram": {
+        "0,10": 16,
+        "1,9": 60,
+        "10,0": 16,
+        "4,6": 90,
+        "5,5": 180,
+        "6,4": 90,
+        "9,1": 60
+      },
+      "cached_cross_anchor_states": 720,
+      "cached_shore_subsets": 262,
+      "cross_augmented_cached_boolean_candidates": 25920,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 24.609375,
+        "Q_certificate_over_n_to_three_halves": 0.7782167679320621,
+        "exact_integer_histogram": {
+          "0": 512
+        },
+        "exact_mean": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_over_n_to_three_halves": 0.0,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.0,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 2,
+        "mean": 1.8972222222222221
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 24.515625,
+        "Q_certificate_over_n_to_three_halves": 0.7752521326256543,
+        "exact_integer_histogram": {
+          "0": 504,
+          "6": 8
+        },
+        "exact_mean": {
+          "decimal": 0.09375,
+          "denominator": 32,
+          "numerator": 3
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 6.0,
+        "mean": 0.09375,
+        "mean_over_n_to_three_halves": 0.002964635306407856,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.015625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 6.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 16.875,
+        "Q_certificate_over_n_to_three_halves": 0.5336343551534141,
+        "exact_integer_histogram": {
+          "0": 152,
+          "10": 180,
+          "12": 180
+        },
+        "exact_mean": {
+          "decimal": 7.734375,
+          "denominator": 64,
+          "numerator": 495
+        },
+        "exceeds_current_doubled_constant": false,
+        "maximum": 12.0,
+        "mean": 7.734375,
+        "mean_over_n_to_three_halves": 0.2445824127786481,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.0,
+          "0.9": 12.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 7,
+      "cross_augmented_state_order_histogram": {
+        "5": 180,
+        "6": 360,
+        "7": 180
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 18.076419693895332,
+        "Q_certificate_over_n_to_three_halves": 0.5716265817383295,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 10.362675853621571,
+        "mean": 6.532955306104668,
+        "mean_over_n_to_three_halves": 0.20659018619373268,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 8.219952572631708,
+          "0.9": 10.362675853621571,
+          "0.99": 10.362675853621571
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 12.65625,
+        "Q_certificate_over_n_to_three_halves": 0.4002257663650605,
+        "exact_integer_histogram": {
+          "0": 152,
+          "10": 180,
+          "24": 180
+        },
+        "exact_mean": {
+          "decimal": 11.953125,
+          "denominator": 64,
+          "numerator": 765
+        },
+        "exceeds_current_doubled_constant": false,
+        "maximum": 24.0,
+        "mean": 11.953125,
+        "mean_over_n_to_three_halves": 0.3779910015670016,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.0,
+          "0.9": 24.0,
+          "0.99": 24.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 512,
+      "exact_expected_bilinear_response": {
+        "decimal": 24.609375,
+        "denominator": 64,
+        "numerator": 1575
+      },
+      "exact_face": {
+        "Q_certificate": 24.609375,
+        "Q_certificate_over_n_to_three_halves": 0.7782167679320621,
+        "exact_integer_histogram": {
+          "0": 512
+        },
+        "exact_mean": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_over_n_to_three_halves": 0.0,
+        "name": "exact_face",
+        "positive_fraction": 0.0,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "conference-n10",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "69c77bbe402b2dd55c14b2ac444814be522ea2169754adbb0aaa3bb38fa9be9b",
+      "mode": "exact",
+      "n": 10,
+      "nuclear": {
+        "Q_certificate": 16.714480774831888,
+        "Q_certificate_over_n_to_three_halves": 0.5285582915556474,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 11.54366159342693,
+        "mean": 7.894894225168113,
+        "mean_over_n_to_three_halves": 0.24965847637641472,
+        "name": "nuclear",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.912926424829035,
+          "0.9": 11.54366159342693,
+          "0.99": 11.54366159342693
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.703125,
+      "population_size": 512,
+      "projector": {
+        "Q_certificate": 17.231380039759784,
+        "Q_certificate_over_n_to_three_halves": 0.5449040815360369,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 11.163511033862605,
+        "mean": 7.377994960240214,
+        "mean_over_n_to_three_halves": 0.23331268639602518,
+        "name": "projector",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 9.822785741931778,
+          "0.9": 11.163511033862605,
+          "0.99": 11.163511033862605
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 30,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7782167679320621,
+      "sample_or_enumerated_response_mean": 24.609375,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "computations/results/conference_order10_gf9.json",
+      "source_key": "conference_matrix",
+      "unique_agreement_subsets": 142,
+      "zero_field_coordinate_fraction": 0.0
+    }
+  ],
+  "schema": "quadratic-signing-row-sign-recoupling-law-audit-v1",
+  "universal_response_identity": "E[X^T A sign(AX)]=n E|S_{n-1}| for every signing A; S_m is a length-m Rademacher sum",
+  "zero_field_tie_rule": "Y_i=X_i when (AX)_i=0"
+}

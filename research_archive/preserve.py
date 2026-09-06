@@ -174,7 +174,35 @@ def main():
     parser.add_argument("--snapshot", help="existing snapshot for --restore-path")
     parser.add_argument("--restore-path")
     parser.add_argument("--verify", action="store_true", help="verify every saved payload against its hash")
+    parser.add_argument("--audit-current", action="store_true",
+                        help="check current uncommitted research against a snapshot without changing files")
     args = parser.parse_args()
+    if args.audit_current:
+        if not args.snapshot:
+            parser.error("--audit-current requires --snapshot")
+        snapshot = (ROOT / args.snapshot).resolve()
+        manifest = json.loads((snapshot / "manifest.json").read_text())
+        saved = {r["path"]: r for r in manifest["files"] if "archived_path" in r}
+        current = inventory()
+        matched, missing, changed = 0, [], []
+        for item in current:
+            if item["category"] not in {"research", "oversized_research"}:
+                continue
+            prior = saved.get(item["path"])
+            if prior is None:
+                missing.append(item["path"])
+            elif item["sha256"] != prior["sha256"]:
+                changed.append(item["path"])
+            else:
+                matched += 1
+        credentials = [r["path"] for r in current if r["category"] == "credential_candidate"]
+        print(json.dumps({"snapshot": args.snapshot, "matching_current_research": matched,
+                          "not_in_snapshot": missing, "changed_since_snapshot": changed,
+                          "credential_candidates_needing_review": credentials,
+                          "current_categories": dict(Counter(r["category"] for r in current))}, indent=2))
+        if missing or changed or credentials:
+            raise SystemExit(1)
+        return
     if args.verify:
         if not args.snapshot:
             parser.error("--verify requires --snapshot")

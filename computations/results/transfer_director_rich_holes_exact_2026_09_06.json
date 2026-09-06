@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "evidence": "exact integer and Fraction finite checks",
+  "construction": "Sylvester H; A=J2 tensor H-diag; F=sign(QS) 1{|QS|>1}",
+  "scope": "Bounded-operator signing family, not near-minimizers.",
+  "cases": [
+    {
+      "k": 2,
+      "n": 4,
+      "full_cube_states": 16,
+      "actual_cap": 4,
+      "marked_density": "1/2",
+      "hole_density": "1/2",
+      "degree_ge_2_mass": "0",
+      "distance_to_linear_twin_response": "0",
+      "exact_frobenius_error_bound": "4/9"
+    },
+    {
+      "k": 4,
+      "n": 8,
+      "full_cube_states": 256,
+      "actual_cap": 16,
+      "marked_density": "1/2",
+      "hole_density": "1/2",
+      "degree_ge_2_mass": "0",
+      "distance_to_linear_twin_response": "0",
+      "exact_frobenius_error_bound": "36/49"
+    },
+    {
+      "k": 8,
+      "n": 16,
+      "full_cube_states": 65536,
+      "actual_cap": 40,
+      "marked_density": "1/2",
+      "hole_density": "1/2",
+      "degree_ge_2_mass": "0",
+      "distance_to_linear_twin_response": "0",
+      "exact_frobenius_error_bound": "4/9"
+    }
+  ]
+}

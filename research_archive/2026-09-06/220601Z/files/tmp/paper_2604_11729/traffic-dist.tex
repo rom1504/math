@@ -1,0 +1,232 @@
+\section{Traffic Distributions of Random Matrices}
+\label{sec:trafficRandom}
+
+As both a technical preliminary for our results and useful background, this section describes the traffic distributions of several common random matrix ensembles. A common theme is that all of these classical models satisfy the strong cactus property. Most of these results have appeared previously in the literature, though we provide some extensions and new interpretations.
+
+\subsection{Wigner random matrices}
+\label{sec:traffic-wigner}
+
+A \emph{Wigner matrix} is
+a random symmetric matrix with i.i.d.\ entries on and above the diagonal.
+Changes to the diagonal entries such as setting them to zero (which is the convention used in some works), or taking the diagonal variances to be twice the off-diagonal ones (as in the GOE model), do not affect the results.
+
+The limiting traffic distribution of a sequence of Wigner matrices was derived by Male~\cite{male2020traffic}, by generalizing the combinatorial
+proof of the semicircle limit theorem for the limiting spectral distribution~\cite{AGZ-2010-RandomMatrices}.
+The same result was re-discovered in~\cite{jones2025fourier} in the context of analyzing
+pGFOM on such matrices.
+\begin{theorem}[Traffic distribution of Wigner matrices]
+\label{thm:goe}
+Let $\nu$ be a probability measure on $\R$ with all moments finite, mean 0, and variance 1.
+For all $n\ge 1$, let $\widetilde{\bA}^{(n)} \in \R^{n \times n}_{\sym}$ have entries on and above the diagonal drawn i.i.d.\ from $\nu$.
+Define $\bA^{(n)} \defeq \frac{1}{\sqrt{n}} \widetilde{\bA}^{(n)}$.
+Then, for all $\al \in \calA$,
+\[
+    \lim_{n \to \infty}\frac{1}{n} \E z_\al(\bA^{(n)}) = \begin{cases}
+        1 & \text{if $\al$ is a cactus of 2-cycles}, \\
+        0 & \text{otherwise}.
+    \end{cases}
+\]
+\end{theorem}
+\noindent
+The same result holds for normalized GOE matrices.
+Note that a cactus of 2-cycles may equivalently be viewed as a ``doubled tree'', a tree where every edge is repeated exactly twice, which is the formulation used in the previous works~\cite{male2020traffic,jones2025fourier}.
+
+Thus, sequences of Wigner matrices have the factorizing strong cactus property, with the especially simple sequence of free cumulants $\kappa_2 = 1$ and $\kappa_q = 0$ for all $q \neq 2$. These are also the free cumulants of the semicircle law, which is the limiting eigenvalue distribution of $\bA^{(n)}$.
+
+\subsection{Orthogonally invariant random matrices}
+\label{sec:rot-inv}
+
+Let the orthogonal group $O(n)$ act on $\R^{n \times n}_{\sym}$ by conjugation, with $\bQ \in O(n)$ acting as $\bQ \cdot \bA \defeq \bQ^{\top}\bA\bQ$.
+Let $\mu$ denote a probability measure on $\R^{n \times n}_{\sym}$ that is invariant under this action of $O(n)$.
+In this case, we call $\bA \sim \mu$ an \emph{orthogonally invariant random matrix}.
+
+
+If $\mu$ has a density on $\R^{n \times n}_{\sym}$, an equivalent condition is that the density at $\bA \in \R^{n \times n}_{\sym}$ depends only on the unordered multiset of eigenvalues of $\bA$.
+An important class of
+examples in physics is
+given by {\em matrix models
+with potential} $V:\R\to\R$,
+whose density
+is proportional to
+$\exp(-\Tr V(\bm A))$.
+For example, the
+GOE model corresponds to $V(t)=t^2/2$.
+We will come back to these examples 
+in~\Cref{sec:feynman-physics}.
+
+For the
+complex-valued variant
+where $O(n)$ is replaced by the unitary group $U(n)$, the limiting traffic distribution of such \emph{unitarily invariant} random matrices is described in~\cite[Theorem~1.1]{cebron2024traffic}.
+The same description holds in the orthogonal case.
+The proof is a straightforward generalization of the unitarily invariant case, but for the sake of completeness we present it in detail in \Cref{app:weingarten}.
+
+\begin{theorem}[Traffic distribution of orthogonally invariant random matrices]
+    \label{thm:moments}
+    Let $\bA^{(n)} \in \R^{n \times n}_\sym$ be a sequence of orthogonally invariant random matrices that converges in tracial moments in $L^2$ to a probability measure $\mu$.
+    Then, for all $\al \in \calA$,
+    \begin{equation}
+        \lim_{n \to \infty} \frac{1}{n} \E z_\al(\bA^{(n)}) = \begin{cases}
+            \displaystyle\prod_{\sig \in \cyc(\al)} \kappa_{|\sig|} & \text{if }\al\in\cC, \\
+            0 & \text{otherwise}.
+        \end{cases}
+        \label{eq:traffic-dist-invar}
+    \end{equation}
+    where $\kappa_q$ is the $q$th \emph{free cumulant} of $\mu$ (\Cref{def:free-cumulant}),
+    and $|\sig|$ denotes the length of the cycle.
+\end{theorem}
+
+\cref{eq:traffic-dist-invar} shows
+that the factorizing strong cactus property holds for orthogonally invariant random matrices,
+and in particular their limiting traffic distribution is supported only on cactus diagrams in the $z$-basis.
+
+Actually, in this case the strong cactus
+property is non-trivial only
+for the Eulerian diagrams,
+since the non-Eulerian ones have identically zero expectation for each fixed dimension $n$:
+\begin{claim}\label{lem:eulerian}
+    Let $\bA^{(n)} \in \R^{n \times n}_\sym$ be an orthogonally invariant random matrix.
+    Then for all $\al \in \calA$ which are not Eulerian,
+    $\E z_\al(\bA^{(n)}) = 0$.
+\end{claim}
+\noindent 
+We show this at the beginning of our proof in~\Cref{app:weingarten}.
+
+Both the proof of~\cite[Theorem 1.1]{cebron2024traffic} and our proof of~\Cref{thm:moments} are based on the \emph{Weingarten calculus}, a combinatorial description of the entrywise moments of Haar-distributed matrices from a matrix group.
+In~\cref{sec:feynman-physics}, we present an alternative (albeit non-rigorous) derivation of~\cref{thm:moments} using the {\em Feynman diagram} method from physics.
+Arguably, the combinatorics of the Feynman diagram method is simpler than that of the Weingarten calculus proof.
+
+
+
+\subsection{Block-structured random matrices}
+\label{sec:wigner-block}
+
+Wigner random matrices and orthogonally invariant random matrices both
+extend the GOE in different directions, while still satisfying the
+factorizing strong cactus property.
+We now consider a third
+generalization, block matrices, which typically do
+{\em not} satisfy
+the factorizing property.
+
+
+Fix $q\in \N$. For $r,c \in [q]$, let
+$\bm A_{r,c} = \bA_{r,c}^{(n)} \in \R_{\sym}^{n/q \times n/q}$ be a sequence of
+random matrices with $\bm A_{r,c} = \bm A_{c,r}$.
+The corresponding {\em block matrix model} is the symmetric $n$-by-$n$ matrix
+whose rows and columns are partitioned into
+blocks of sizes $n/q$ which has blocks $(\bA_{r,c})_{r,c \in [q]}$.
+We let $\block(i) \in [q]$ denote the block label of
+$i \in [n]$.
+
+The simplest example of a block matrix model is the {\em block GOE} model,
+which has previously been studied in the context of the Generalized AMP algorithm~\cite{javanmard2013state}.\footnote{In this paper, we study a slightly more symmetric variant, in which the blocks themselves are symmetric. This modification is made purely for technical reasons, since we work in our other definitions only with symmetric matrices.}
+
+\begin{definition}[Block GOE model]\label{def:blockgoe}
+    Let $q\in \N$ and let $\matSig \in \R^{q \times q}$ be a symmetric with nonnegative entries.
+    For $1 \leq r \leq c \leq q$, let $\bm A_{r,c}\in \R_\sym^{n/q \times n/q}$ be a symmetric random matrix whose entries on and above the diagonal are independent Gaussians with mean $0$ and variance $\bm\Sigma[r,c]/n$, and let $\bm A_{r,c}=\bm A_{c,r}$ for $q \geq r > c \geq 1$.
+    The \emph{block GOE} model $\bA \sim \bGOE(n,\bm\Sigma)$ is the block matrix with blocks $(\bm A_{r,c})_{r,c\in[q]}$.
+\end{definition}
+
+Following the arguments of~\cite{male2020traffic,jones2025fourier}, one can prove that the block GOE model with fixed parameter $\bm\Sigma$ satisfies the strong cactus property.
+Indeed, as in~\Cref{thm:goe}, it is still only the doubled trees or cactuses of 2-cycles that have non-zero value in the traffic distribution.
+However, these values depend non-trivially on $\bm\Sigma$, and in general the block GOE model does {not} satisfy the factorizing strong cactus property.\footnote{If the row sums of $\bm\Sigma$ are constant, yielding what is sometimes called a \emph{generalized Wigner matrix}, then up to rescaling the traffic distribution is again that of the GOE and the factorizing property does hold.}
+
+\paragraph{Traffic independence.} 
+We study block models through the notion of {\em traffic independence}.
+Traffic independence was
+introduced by Male~\cite{male2020traffic}
+as a generalization of
+free independence of matrices. Free
+independence is a property
+of the mixed traces of
+several random matrices
+(in our notation, these traces are
+represented by cycle diagrams),
+whereas traffic independence
+is a property of {\em all}
+diagrams. Using this concept, below we 
+prove a general result that 
+block-structured matrices have the
+strong cactus property 
+provided that {\em (i)}
+each of the blocks separately has
+the strong cactus property,
+and {\em (ii)} those blocks
+are asymptotically traffic
+independent.
+
+
+For a sequence of symmetric matrices $(\bA_1, \dots, \bA_k) \in (\R^{n \times n}_{\sym})^k$, we generalize the graph polynomials to 
+$w_\al(\bA_1, \dots, \bA_k)$ and $z_\al(\bA_1, \dots, \bA_k)$, where $\al$ is a multigraph whose edges are additionally colored by $\bA_1, \dots, \bA_k$.
+The graph polynomial defined by $\al$ uses the entries of $\bA_i$ on each edge whose color is $\bA_i$, as in~\cref{def:non-uniform-label}.
+
+Define a \emph{colored component} to be a maximal connected subgraph of $\al$ whose edges all have the same label $\bA_i$.
+Let $\CC(\al)$ denote the set of colored components.
+Define the \emph{graph of colored components} $\GCC(\al)$ to be the bipartite graph $\chi$ with:
+\begin{align*}
+    V(\chi) &= \CC(\al) \cup \{u \in V(\al): u \text{ belongs to at least two colored components}\}, \\
+    E(\chi) &= \{(\calC, u): u \text{ belongs to the colored component }\calC\}.
+\end{align*}
+
+\begin{definition}[Traffic independence]
+    \label{def:traffic independence}
+    Let $(\bA_1, \dots, \bA_k) = (\bA_1^{(n)},\dots, \bA_k^{(n)}) \in (\R^{n \times n}_{\sym})^k$ be sequences of symmetric random matrices, with respective limiting traffic distributions
+    $\cD_1, \ldots, \cD_k$.
+    We say that $\bA_1,\dots, \bA_k$ are {asymptotically traffic independent} if,
+    for all connected undirected multigraphs $\al$ with edges labeled by $\bA_1, \dots, \bA_k$,
+    \[
+        \lim_{n \to \infty} \frac 1n \E_{\bA_1, \dots, \bA_k}z_\al(\bA_1, \dots, \bA_k) = \begin{cases}
+            \displaystyle\prod_{\calC \in \CC(\al)} \cD_{i(\calC)}(\calC) & \textnormal{if GCC($\al$) is a tree}\\
+            0 & \textnormal{otherwise}
+        \end{cases}
+    \]
+    Here, $i(\calC)$ denotes the matrix label associated with the colored component $\calC$.
+\end{definition}
+
+Next, we prove that traffic independence of the blocks preserves the strong cactus property:
+
+\begin{proposition}
+    \label{prop:block-matrix-strong-cactus}
+    Let $q \in \N$. For $r,c\in [q]$, let $\bA_{r,c} = \bA_{r,c}^{(n)} \in \R^{n/q \times n/q}_\sym$ be a sequence of symmetric random matrices such that $\bm A_{r,c} = \bm A_{c,r}$.
+    Assume that each $\bm A_{r,c}$ has a limiting traffic distribution that satisfies the strong cactus property and $(\bm A_{r,c})_{1 \leq r\leq c \leq q}$
+    are asymptotically traffic independent. Then, the block matrix $\bmA\in \R^{n\times n}_{\sym}$ with blocks $(\bA_{r,c})_{r,c\in [q]}$ also has a limiting traffic distribution that satisfies the strong cactus property.
+\end{proposition}
+
+\begin{proof}
+    Let $\al \in \calA$.
+    In the graph polynomial $z_\al(\bA)$ we partition the sum based on the block of each vertex:
+    \begin{align*}
+        \frac 1n z_\al(\bA) &= \frac 1n \sum_{\chi : V(\al) \to [q]} \sum_{\substack{i : V(\al) \to [\frac nq]}} \prod_{uv \in E(\al)} \bA_{\chi(u),\chi(v)}[i(u), i(v)]\,.
+    \end{align*}
+    We can interpret the inner summation as a generalized graph polynomial whose edges are labeled by the matrices $\bA_{r,c}$.
+    Call this diagram $\al_\chi$ and write:
+    \[
+        \frac 1n z_\al(\bA) = \sum_{\chi : V(\al) \to [q]} \frac 1n z_{\al_\chi}((\bA_{r,c})_{r,c\in [q]})\,.
+    \]
+    Taking the expectation and the limit $n\to \infty$, by traffic independence, all limits exist (so the block matrix has a limiting traffic distribution), and the nonzero terms on the right-hand side are those for which $\GCC(\al_\chi)$ is a tree.
+    By the strong cactus property for each $\bA_{rc}$, each colored component must be a cactus.
+    Therefore, any nonzero $\al$ is formed by gluing several cactuses along a tree, which forms a bigger cactus.
+\end{proof}
+
+Finally, 
+traffic independence is shown in~\cite{male2020traffic} to hold quite generally for independent random matrices $\bA_i$, each of which has a permutation-invariant distribution.
+
+\begin{theorem}[{\cite[Theorem 1.8]{male2020traffic}}]
+\label{thm:male-traffic-independence}
+    Let $\bA_1, \dots, \bA_k \in \R_\sym^{n \times n}$ be independent random matrices such that for each $i\in [k]$,
+    \begin{enumerate}[(i)]
+        \item The law of $\bA_i \in \R^{n \times n}_\sym$ is $S_n$-invariant (i.e., invariant under the simultaneous action of $S_{n}$ on the rows and columns of $\bA_i$).
+        \item The limiting traffic distribution of $\bA_i$ exists.
+        \item The traffic distribution concentrates for $\bA_i$ (\cref{def:traffic-concentration}).
+    \end{enumerate}
+    Then $\bA_1, \dots, \bA_k$ are asymptotically traffic independent.
+\end{theorem}
+
+Together with~\Cref{prop:block-matrix-strong-cactus}, \Cref{thm:male-traffic-independence}
+implies that block-structured
+matrices with independent blocks, each
+satisfying the strong cactus property and Conditions {\em (i), (ii), (iii)} also satisfy
+the strong cactus property (such as the block
+GOE matrix).
+We note that Condition~{\em (i)} can be ensured by applying an independent random permutation to the rows and columns of each $\bA_i$.
+Condition~{\em (iii)} is proven for orthogonally invariant random matrices in~\Cref{lemma:full-factorization}.

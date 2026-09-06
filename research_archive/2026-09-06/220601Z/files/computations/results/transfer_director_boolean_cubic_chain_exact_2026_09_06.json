@@ -1,0 +1,422 @@
+{
+  "status": "PASS",
+  "evidence": "exact integer/Fraction finite regression",
+  "seed": 202609062141,
+  "test_function": "f(v1,v2)=v1^2*v2",
+  "coefficient_range": [
+    -2,
+    2
+  ],
+  "case_count": 58,
+  "nonzero_defects": 45,
+  "fourth_moment_checks": 174,
+  "cases": [
+    {
+      "cube_dimension": 2,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "-20",
+      "predicted_cubic_remainder": "-20"
+    },
+    {
+      "cube_dimension": 2,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 2,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "-2",
+      "predicted_cubic_remainder": "-2"
+    },
+    {
+      "cube_dimension": 2,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "-12",
+      "predicted_cubic_remainder": "-12"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "-32",
+      "predicted_cubic_remainder": "-32"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "16",
+      "predicted_cubic_remainder": "16"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "-38",
+      "predicted_cubic_remainder": "-38"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "-4",
+      "predicted_cubic_remainder": "-4"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "-26",
+      "predicted_cubic_remainder": "-26"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "82",
+      "predicted_cubic_remainder": "82"
+    },
+    {
+      "cube_dimension": 3,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "68/3",
+      "predicted_cubic_remainder": "68/3"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "16",
+      "predicted_cubic_remainder": "16"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "32",
+      "predicted_cubic_remainder": "32"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "44",
+      "predicted_cubic_remainder": "44"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "-4",
+      "predicted_cubic_remainder": "-4"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "-280",
+      "predicted_cubic_remainder": "-280"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "-121",
+      "predicted_cubic_remainder": "-121"
+    },
+    {
+      "cube_dimension": 4,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "-52",
+      "predicted_cubic_remainder": "-52"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "-16",
+      "predicted_cubic_remainder": "-16"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "-200",
+      "predicted_cubic_remainder": "-200"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "83",
+      "predicted_cubic_remainder": "83"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "-40/3",
+      "predicted_cubic_remainder": "-40/3"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "-482",
+      "predicted_cubic_remainder": "-482"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "243",
+      "predicted_cubic_remainder": "243"
+    },
+    {
+      "cube_dimension": 5,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "-20",
+      "predicted_cubic_remainder": "-20"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "4",
+      "predicted_cubic_remainder": "4"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "216",
+      "predicted_cubic_remainder": "216"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "-218",
+      "predicted_cubic_remainder": "-218"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "472/3",
+      "predicted_cubic_remainder": "472/3"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "542",
+      "predicted_cubic_remainder": "542"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "-76",
+      "predicted_cubic_remainder": "-76"
+    },
+    {
+      "cube_dimension": 6,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "1298/3",
+      "predicted_cubic_remainder": "1298/3"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "4",
+      "predicted_cubic_remainder": "4"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "8",
+      "predicted_cubic_remainder": "8"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "128",
+      "predicted_cubic_remainder": "128"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "-512/3",
+      "predicted_cubic_remainder": "-512/3"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "-756",
+      "predicted_cubic_remainder": "-756"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "684",
+      "predicted_cubic_remainder": "684"
+    },
+    {
+      "cube_dimension": 7,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "-1522/3",
+      "predicted_cubic_remainder": "-1522/3"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 1,
+      "probe_degree": 1,
+      "chain_defect": "20",
+      "predicted_cubic_remainder": "20"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 1,
+      "probe_degree": 2,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 1,
+      "probe_degree": 3,
+      "chain_defect": "0",
+      "predicted_cubic_remainder": "0"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 2,
+      "probe_degree": 1,
+      "chain_defect": "52",
+      "predicted_cubic_remainder": "52"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 2,
+      "probe_degree": 2,
+      "chain_defect": "239",
+      "predicted_cubic_remainder": "239"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 2,
+      "probe_degree": 3,
+      "chain_defect": "48",
+      "predicted_cubic_remainder": "48"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 3,
+      "probe_degree": 1,
+      "chain_defect": "-124",
+      "predicted_cubic_remainder": "-124"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 3,
+      "probe_degree": 2,
+      "chain_defect": "-413",
+      "predicted_cubic_remainder": "-413"
+    },
+    {
+      "cube_dimension": 8,
+      "query_degree": 3,
+      "probe_degree": 3,
+      "chain_defect": "-6880/3",
+      "predicted_cubic_remainder": "-6880/3"
+    }
+  ],
+  "scope": "No assertion about arbitrary rich signing feedback closure."
+}

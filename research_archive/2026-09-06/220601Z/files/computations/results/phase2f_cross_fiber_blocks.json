@@ -1,0 +1,44 @@
+{
+  "certificate": "computations/results/phase2e_all_diagonal_family_audit.json",
+  "certificate_canonical_record_sha256": "760daa2b18a0e355f857f9e65b355f3e9bd0f7b33cb8b3c731357377120ad9e0",
+  "classification": "exact CP-SAT optimum when status is OPTIMAL, checked against all saved witnesses; this kills only the certified finite witness set and is not a cap upper bound",
+  "cross_fiber_edge_count": 1456,
+  "results": {
+    "blocks": {
+      "active_constraint_count": 260,
+      "incumbent": [
+        1,
+        13,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "objective_lower_bound": 9,
+      "rounds": [
+        {
+          "active_constraints": 256,
+          "full_violations": 4,
+          "maximum_corrected_energy": 210,
+          "minimum_corrected_energy": 112,
+          "objective": 13,
+          "objective_lower_bound": 9,
+          "round": 1,
+          "solver_status": "FEASIBLE"
+        }
+      ],
+      "status": "TIME_LIMIT"
+    }
+  },
+  "schema": "quadratic-signing-cross-fiber-certificate-hitting-v1",
+  "source": "computations/results/heuristic_m14_from_conference.json",
+  "target_absolute_energy": 208,
+  "witness_count": 16384
+}

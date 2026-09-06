@@ -16,6 +16,7 @@ proofs, certificates, and scripts remain in their original locations.
 | [2026-09-06 19:29:59](2026-09-06/192959Z/README.md) | 1,901 research files; 154,677,428 bytes; threshold-information proofs, scoped counterexamples, failed reconnaissance, and the source-less experiment binary | Preservation only; all hashes verified. Executable exclusions now require reviewed binary and source hashes. |
 | [2026-09-06 20:35:22](2026-09-06/203522Z/README.md) | 1,916 research files; 155,235,485 bytes; all-order orientation repair, exact-minimizer tests, failed MILPs, subagent drafts and independent finite replays | Preservation only; all hashes verified. External downloaded dependencies have per-file pinned-commit manifests; independent order-15/16 witness replay is standalone. |
 | [2026-09-06 21:14:00](2026-09-06/211400Z/README.md) | 1,903 research files; 154,918,023 bytes; same-order repair, actual signed-feedback proofs, exact finite checks, abandoned catalyst tests and continuing drafts | Preservation only; all hashes verified. New mathematical and diagnostic scripts have tracked inputs; no new external dependency. |
+| [2026-09-06 22:06:01](2026-09-06/220601Z/README.md) | 1,915 research files; 154,814,524 bytes; cap-only energy approximation, rich-feedback analytic lemmas, exact falsifiers, all pending drafts and failed searches | Preservation only; payload hashes and remaining current-work hashes checked. Six standalone replays have documented package/ tracked-source inputs. |
 
 Each snapshot has `manifest.json` (original paths, hashes, byte counts,
 provenance category, exclusions), `files/` (unchanged payloads),
@@ -56,6 +57,7 @@ Run from the repository root with the project venv:
 .venv/bin/python research_archive/preserve.py
 .venv/bin/python research_archive/preserve.py --save
 .venv/bin/python research_archive/preserve.py --snapshot research_archive/DATE/TIMEZ --verify
+.venv/bin/python research_archive/preserve.py --snapshot research_archive/DATE/TIMEZ --audit-current
 ```
 
 Review the inventory and exclusions before publishing. The utility refuses to
@@ -64,6 +66,10 @@ storage decision; its pattern checks are not a complete secret audit. Review
 concurrent-write warnings and resnapshot changed work. Add an index entry and
 brief dependency findings, then commit and push. Do not wait for a draft to be
 polished, and do not remove working originals to clean Git status.
+The current-work audit reports new or changed uncommitted research not captured
+by the selected snapshot. Run it after publication as well: already committed
+canonical files need no duplicate working-copy preservation, while remaining
+untracked/ignored research must still match a saved payload.
 
 To restore one missing ignored dependency without overwriting newer work:
 
