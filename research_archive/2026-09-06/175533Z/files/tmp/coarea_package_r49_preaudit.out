@@ -1,0 +1,69 @@
+
+A6: n=6,m=5,q=10, centers=32, selectors=6
+  active center rows: min=30, max=30, old_cap=60, active_under_old_cap=32
+  ell=1: lambda=1/25, all(coarea,cubic,triple)=(7/24,0,18); oldcap=(7/24,0,18); phase_changes=[(30, True, Fraction(7, 24))]
+  ell=2: lambda=1/10, all(coarea,cubic,triple)=(7/24,0,59/8); oldcap=(7/24,0,59/8); phase_changes=[(30, True, Fraction(7, 24))]
+  ell=3: lambda=1/5, all(coarea,cubic,triple)=(7/24,0,23/6); oldcap=(7/24,0,23/6); phase_changes=[(30, True, Fraction(7, 24))]
+  ell=4: lambda=2/5, all(coarea,cubic,triple)=(7/24,0,33/16); oldcap=(7/24,0,33/16); phase_changes=[(30, True, Fraction(7, 24))]
+  completion-ground incidences exhausted=60
+    min joint P: {'S': (0, 1, 2, 3, 4), 'Q_S': 8, 'Delta': 2, 'G_int': 24, 'G_ext': 1, 'P': Fraction(33, 1), 'mean_row': Fraction(30, 1), 'upper_mean': Fraction(38, 1), 'min_row': 30}
+    min mean row: {'S': (0, 1, 2, 3, 4), 'Q_S': 8, 'Delta': 2, 'G_int': 24, 'G_ext': 1, 'P': Fraction(33, 1), 'mean_row': Fraction(30, 1), 'upper_mean': Fraction(38, 1), 'min_row': 30}
+    min exact completed row: {'S': (0, 1, 2, 3, 4), 'Q_S': 8, 'Delta': 2, 'G_int': 24, 'G_ext': 1, 'P': Fraction(33, 1), 'mean_row': Fraction(30, 1), 'upper_mean': Fraction(38, 1), 'min_row': 30}
+    min shortfall then internal Gram: {'S': (0, 1, 2, 3, 4), 'Q_S': 8, 'Delta': 2, 'G_int': 24, 'G_ext': 1, 'P': Fraction(33, 1), 'mean_row': Fraction(30, 1), 'upper_mean': Fraction(38, 1), 'min_row': 30}
+
+A8: n=8,m=6,q=20, centers=128, selectors=28
+  active center rows: min=40, max=72, old_cap=112, active_under_old_cap=100
+  ell=1: lambda=1/21, all(coarea,cubic,triple)=(4523/6160,761/12220,1945/308); oldcap=(4523/6160,761/12220,1945/308); phase_changes=[(40, True, Fraction(53, 60))]
+  ell=2: lambda=1/9, all(coarea,cubic,triple)=(1461/1925,2283/15275,5637/1925); oldcap=(1461/1925,2283/15275,5637/1925); phase_changes=[(40, True, Fraction(23, 25))]
+  ell=3: lambda=1/5, all(coarea,cubic,triple)=(1401/1760,6849/24440,799/440); oldcap=(1401/1760,6849/24440,799/440); phase_changes=[(40, True, Fraction(39, 40)), (56, False, Fraction(31, 30)), (64, True, Fraction(239, 300))]
+  ell=4: lambda=1/3, all(coarea,cubic,triple)=(1321/1540,1522/3055,989/770); oldcap=(1321/1540,1522/3055,989/770); phase_changes=[(40, False, Fraction(16, 15)), (64, True, Fraction(3373, 3900))]
+  ell=5: lambda=5/9, all(coarea,cubic,triple)=(1209/1232,2283/2444,1563/1540); oldcap=(1209/1232,2283/2444,1563/1540); phase_changes=[(40, False, Fraction(5, 4)), (72, True, Fraction(1209, 1232))]
+  completion-ground incidences exhausted=100
+    min joint P: {'S': (0, 1, 2, 5, 6, 7), 'Q_S': 18, 'Delta': 2, 'G_int': 54, 'G_ext': 0, 'P': Fraction(73, 1), 'mean_row': Fraction(68, 1), 'upper_mean': Fraction(86, 1), 'min_row': 64}
+    min mean row: {'S': (0, 1, 2, 3, 4, 5), 'Q_S': 14, 'Delta': 6, 'G_int': 46, 'G_ext': 0, 'P': Fraction(97, 1), 'mean_row': Fraction(60, 1), 'upper_mean': Fraction(110, 1), 'min_row': 40}
+    min exact completed row: {'S': (0, 1, 2, 3, 4, 5), 'Q_S': 14, 'Delta': 6, 'G_int': 46, 'G_ext': 0, 'P': Fraction(97, 1), 'mean_row': Fraction(60, 1), 'upper_mean': Fraction(110, 1), 'min_row': 40}
+    min shortfall then internal Gram: {'S': (0, 1, 2, 5, 6, 7), 'Q_S': 18, 'Delta': 2, 'G_int': 54, 'G_ext': 0, 'P': Fraction(73, 1), 'mean_row': Fraction(68, 1), 'upper_mean': Fraction(86, 1), 'min_row': 64}
+
+A9: n=9,m=7,q=24, centers=256, selectors=36
+  active center rows: min=56, max=128, old_cap=144, active_under_old_cap=85
+  ell=1: lambda=1/28, all(coarea,cubic,triple)=(160529/207711,10541/199269,54875/7693); oldcap=(160529/207711,10541/199269,54875/7693); phase_changes=[(56, True, Fraction(659, 693))]
+  ell=2: lambda=4/49, all(coarea,cubic,triple)=(70304/89019,10541/85401,133139/39564); oldcap=(70304/89019,10541/85401,133139/39564); phase_changes=[(56, True, Fraction(292, 297))]
+  ell=3: lambda=1/7, all(coarea,cubic,triple)=(5747/7065,10541/47445,4991/2355); oldcap=(5747/7065,10541/47445,4991/2355); phase_changes=[(56, False, Fraction(509, 495)), (72, True, Fraction(613, 615)), (80, False, Fraction(257, 255)), (88, True, Fraction(523, 525))]
+  ell=4: lambda=8/35, all(coarea,cubic,triple)=(50383/59346,10541/28467,26547/17584); oldcap=(50383/59346,10541/28467,26547/17584); phase_changes=[(56, False, Fraction(217, 198)), (96, True, Fraction(5773, 6030))]
+  ell=5: lambda=5/14, all(coarea,cubic,triple)=(80845/89019,52705/85401,57629/49455); oldcap=(80845/89019,52705/85401,57629/49455); phase_changes=[(56, False, Fraction(359, 297)), (112, True, Fraction(60529, 64557))]
+  ell=6: lambda=4/7, all(coarea,cubic,triple)=(10154/9891,10541/9489,12925/13188); oldcap=(10154/9891,10541/9489,12925/13188); phase_changes=[(56, False, Fraction(142, 99))]
+  completion-ground incidences exhausted=84
+    min joint P: {'S': (1, 3, 4, 5, 6, 7, 8), 'Q_S': 22, 'Delta': 2, 'G_int': 84, 'G_ext': 2, 'P': Fraction(107, 1), 'mean_row': Fraction(102, 1), 'upper_mean': Fraction(122, 1), 'min_row': 72}
+    min mean row: {'S': (0, 1, 3, 5, 6, 7, 8), 'Q_S': 18, 'Delta': 6, 'G_int': 68, 'G_ext': 2, 'P': Fraction(131, 1), 'mean_row': Fraction(86, 1), 'upper_mean': Fraction(146, 1), 'min_row': 56}
+    min exact completed row: {'S': (0, 1, 3, 5, 6, 7, 8), 'Q_S': 18, 'Delta': 6, 'G_int': 68, 'G_ext': 2, 'P': Fraction(131, 1), 'mean_row': Fraction(86, 1), 'upper_mean': Fraction(146, 1), 'min_row': 56}
+    min shortfall then internal Gram: {'S': (0, 1, 2, 3, 4, 5, 6), 'Q_S': 22, 'Delta': 2, 'G_int': 84, 'G_ext': 2, 'P': Fraction(107, 1), 'mean_row': Fraction(102, 1), 'upper_mean': Fraction(122, 1), 'min_row': 96}
+
+A10_sample_seed_0: n=10,m=8,q=26, centers=512, selectors=45
+  active center rows: min=74, max=138, old_cap=180, active_under_old_cap=120
+  ell=1: lambda=1/36, all(coarea,cubic,triple)=(19533/22400,3205/29008,3507/640); oldcap=(19533/22400,3205/29008,3507/640); phase_changes=[(74, True, Fraction(1, 1))]
+  ell=2: lambda=1/16, all(coarea,cubic,triple)=(4373/4900,3205/12691,2561/980); oldcap=(4373/4900,3205/12691,2561/980); phase_changes=[(74, False, Fraction(36, 35)), (106, True, Fraction(37568, 40915))]
+  ell=3: lambda=3/28, all(coarea,cubic,triple)=(15451/16800,3205/7252,3365/2016); oldcap=(15451/16800,3205/7252,3365/2016); phase_changes=[(74, False, Fraction(16, 15)), (106, True, Fraction(16619, 17535))]
+  ell=4: lambda=1/6, all(coarea,cubic,triple)=(1341/1400,1282/1813,339/280); oldcap=(1341/1400,1282/1813,339/280); phase_changes=[(74, False, Fraction(28, 25)), (106, True, Fraction(28908, 29225))]
+  ell=5: lambda=1/4, all(coarea,cubic,triple)=(11369/11200,16025/14504,10693/11200); oldcap=(11369/11200,16025/14504,10693/11200); phase_changes=[(74, False, Fraction(6, 5))]
+  ell=6: lambda=3/8, all(coarea,cubic,triple)=(583/525,3205/1813,257/315); oldcap=(583/525,3205/1813,257/315); phase_changes=[(74, False, Fraction(4, 3))]
+  ell=7: lambda=7/12, all(coarea,cubic,triple)=(1041/800,3205/1036,879/1120); oldcap=(1041/800,3205/1036,879/1120); phase_changes=[(74, False, Fraction(8, 5))]
+  completion-ground incidences exhausted=140
+    min joint P: {'S': (0, 1, 2, 3, 4, 5, 6, 9), 'Q_S': 24, 'Delta': 2, 'G_int': 80, 'G_ext': 0, 'P': Fraction(105, 1), 'mean_row': Fraction(98, 1), 'upper_mean': Fraction(122, 1), 'min_row': 74}
+    min mean row: {'S': (0, 1, 2, 3, 4, 5, 6, 9), 'Q_S': 24, 'Delta': 2, 'G_int': 80, 'G_ext': 0, 'P': Fraction(105, 1), 'mean_row': Fraction(98, 1), 'upper_mean': Fraction(122, 1), 'min_row': 74}
+    min exact completed row: {'S': (0, 1, 2, 3, 4, 5, 6, 9), 'Q_S': 24, 'Delta': 2, 'G_int': 80, 'G_ext': 0, 'P': Fraction(105, 1), 'mean_row': Fraction(98, 1), 'upper_mean': Fraction(122, 1), 'min_row': 74}
+    min shortfall then internal Gram: {'S': (0, 1, 2, 3, 4, 5, 6, 9), 'Q_S': 24, 'Delta': 2, 'G_int': 80, 'G_ext': 0, 'P': Fraction(105, 1), 'mean_row': Fraction(98, 1), 'upper_mean': Fraction(122, 1), 'min_row': 74}
+
+A10 deterministic MILP sample summary (matrix sample is nonexhaustive):
+  sampled=12, distinct_normalized_matrices=12
+  coarea success patterns ell=1..7: {(True, True, True, True, False, False, False): 12}
+  joint-P/min-row profiles: {(Fraction(105, 1), 2, 80, 0, 74): 7, (Fraction(113, 1), 2, 88, 0, 74): 5}
+
+Lower-ratio exhaustive-within-matrix mass diagnostics:
+  A6,m=4: q=10, incidences=30, best_P=29 (Delta=2), best_Gtot=20 (Delta=2), exact_min_row=30 (Delta=2)
+  A8,m=4: q=20, incidences=130, best_P=100 (Delta=8), best_Gtot=28 (Delta=12), exact_min_row=32 (Delta=12)
+  A8,m=5: q=20, incidences=280, best_P=96 (Delta=8), best_Gtot=27 (Delta=12), exact_min_row=32 (Delta=8)
+  A9,m=5: q=24, incidences=595, best_P=136 (Delta=8), best_Gtot=28 (Delta=16), exact_min_row=16 (Delta=16)
+  A9,m=6: q=24, incidences=208, best_P=109 (Delta=2), best_Gtot=34 (Delta=14), exact_min_row=16 (Delta=14)
+  A10_seed_0,m=6: q=26, incidences=520, best_P=134 (Delta=4), best_Gtot=38 (Delta=16), exact_min_row=10 (Delta=16)
+
+PASS: cubic/triple equivalence, row-cap phase diagrams, and completion Pareto formulas

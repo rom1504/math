@@ -1,0 +1,2251 @@
+In this section, we now prove Theorem \ref{thm:replica} and
+Corollaries \ref{cor:hightemp} and \ref{cor:ising}
+on the asymptotic overlaps and free energy of the Gibbs measure \eqref{eq:gibbsmeasure}.
+
+The argument is to establish a Markovian approximation of the generalized
+Langevin
+equation \eqref{eq:dmft-theta}, using the fluctuation-dissipation relation between $c_g,r_g$ in
+Lemma \ref{lemma:ttig}, an approximation of $c_g^0(\tau)=c_g(\tau)-\lim_{s \to \infty}
+c_g(s)$ by the correlation function
+of observables of the lifted Markovian process
+$\bxi^t=\{\btheta^s\}_{s \in [t-B,t]}$ over path histories, a further
+approximation of this correlation function by a kernel $\tilde c_g$ defined
+via a finite-dimensional approximation of its infinitesimal generator,
+and a stable coupling between the dynamics driven by $c_g^0$ and $\tilde c_g$.
+
+The approximation of $c_g^0$ (and its derivative ${-}r_g$) is carried out in the
+following lemma.
+
+\begin{lemma}\label{lemma:semigroupapprox}
+Suppose the conditions of Theorem \ref{thm:replica} hold. Let
+$v_*,q_*,c_g(\tau),r_g(\tau)$ be as defined in Lemmas \ref{lemma:tti} and
+\ref{lemma:ttig}, and set
+\[c_g^0(\tau)=c_g(\tau)-q_*\cR_\Lambda'(v_*-q_*).\]
+Fix any $\eps>0$. Then there exists a constant $C>0$
+independent of $\eps$, and some $T_0=T_0(\eps)>0$
+and function $\ell_*:[0,T_0]^2 \to \R$, such that the following holds: 
+
+For any $T>0$ and $\delta>0$, there exist
+$m \geq 1$, $u_m \in \R^m$, and $A_m \in \R^{m \times m}$ with
+$A_m+A_m^\top$ strictly positive definite,
+all depending on $\delta,T,\eps,T_0$, such that:
+\begin{enumerate}[(i)]
+\item $|u_m^\top e^{-\tau A_m}u_m
+-c_g^0(\tau)|<\delta$ for all $\tau \in [0,T]$.
+\item $\int_0^\infty |u_m^\top A_me^{-\tau A_m}u_m- r_g(\tau)|\d \tau<\delta$.
+\item $\|u_m\|_2<C$.
+\item $\|e^{-tA_m}u_m\|_2<\eps$ for all $t \geq T_0$.
+\item $\|(e^{-tA_m}-e^{-sA_m})u_m\|_2<C|t-s|^{1/2}+\delta$
+and $\|A_m(e^{-tA_m}-e^{-sA_m})u_m\|_2<C|t-s|^{1/2}+\delta$
+for all $s,t \in [0,T_0]$.
+\item $|u_m^\top e^{-tA_m^\top}A_me^{-sA_m}u_m-\ell_*(t,s)|<\delta$
+for all $s,t \in [0,T_0]$.
+\end{enumerate}
+\end{lemma}
+We emphasize that for our later coupling argument, it is important that the
+constants $C,\eps,T_0$ in statements (iii)--(vi) are fixed irrespective of $m$.
+
+\begin{proof}
+We again assume, without loss of generality, that Assumption \ref{assump:as}
+holds. The process $\{\tilde\btheta^t\}_{t \in \R}$ and conventions
+for $\langle \cdot \rangle$ are the same as in the proof
+of Lemma \ref{lemma:tti}.\\
+
+{\bf Step 1 (Markov semigroup setup):} 
+For a value $B=B(n)>0$ to be determined, let
+$\cS=C([-B,0],\R^n)$ denote the space of continuous bounded
+$\R^n$-valued functions on $[-B,0]$. We denote elements of this space by
+$\bxi \in \cS$, indexed as $\bxi=\{\bxi_\tau\}_{\tau \in [-B,0]}$.
+$\cS$ is equipped with the norm
+\[\|\bxi\|=\sup_{\tau \in [-B,0]} \|\bxi_\tau\|_2\]
+and its associated Borel sigma-algebra. Denote
+\[\bxi^t=\{\tilde \btheta^{t+\tau}\}_{\tau \in [-B,0]},
+\text{ i.e. } \bxi_\tau^t=\tilde \btheta^{t+\tau} \text{ for } \tau \in
+[-B,0].\]
+We use subscripts to index elements of $\cS$
+and superscripts to index the process $\{\bxi^t\}_{t \in \R}$ on $\cS$.
+
+Let $\nu$ be the law of $\bxi^0=\{\tilde\btheta^\tau\}_{\tau \in [-B,0]}$
+on $\cS$. Then $\{\bxi^t\}_{t \in \R}$ is a
+$\cS$-valued Markov process with stationary law $\nu$.
+Let $L^2(\mu_\Gibbs)$ and $L^2(\nu)$ be the spaces of
+Borel-measurable functions $f_0:\R^n \to \R^n$ and
+$f:\cS \to \R^n$, respectively, such that
+\[\|f_0\|_{L^2}^2:=\frac{1}{n}\,\E_{\btheta \sim \mu_\Gibbs}
+\|f_0(\btheta)\|_2^2<\infty,\qquad \|f\|_{L^2}^2:=
+\frac{1}{n}\,\E_{\bxi \sim \nu} \|f(\bxi)\|_2^2<\infty,\]
+and write $\langle \cdot \rangle_{L^2}$ for the associated inner-products.
+Consider the Markov semigroup $\{P_t\}_{t \geq 0}$ of
+bounded operators on $L^2(\nu)$ given by
+\[P_t f(\bxi)=\E[f(\bxi^t) \mid \bxi^0=\bxi].\]
+Note that for any $f \in L^2(\nu)$, we have the contractivity property
+$\|P_tf\|_{L^2} \leq \|f\|_{L^2}$ by Jensen's inequality. Furthermore,
+this semigroup is strongly continuous in the sense
+\begin{equation}\label{eq:strongcontinuity}
+\lim_{t \to 0^+} \|P_tf-f\|_{L^2}=0 \text{ for each fixed } f \in L^2(\nu).
+\end{equation}
+Indeed, as $t \to 0^+$, we have $\bxi^t \to \bxi^0$ in
+$\cS=C([-B,0],\R^n)$ by the uniform continuity of sample paths of
+$\{\tilde \btheta^t\}_{t \in \R}$ on compact intervals. Thus if
+$f:\cS \to \R^n$ is continuous and bounded, then by dominated convergence,
+\[\lim_{t \to 0^+} \|P_tf-f\|_{L^2}^2
+=\lim_{t \to 0^+} \frac{1}{n}\E\|\E[f(\bxi^t) \mid \bxi^0]-f(\bxi^0)\|_2^2
+\leq \lim_{t \to 0^+} \frac{1}{n}\E\|f(\bxi^t)-f(\bxi^0)\|_2^2=0.\]
+As $\cS$ is separable,
+the space of such continuous and bounded functions on $\cS$
+is dense in $L^2(\nu)$. Then, since $P_t$ is also contractive,
+this implies the strong continuity \eqref{eq:strongcontinuity}. 
+
+Define the generator $-A:D(A) \to L^2(\nu)$ for $\{P_t\}_{t \geq 0}$ by
+\[-Af=\lim_{t \to 0^+} \frac{1}{t}(P_tf-f)\]
+where $D(A) \subset L^2(\nu)$ is the domain where this limit exists in
+$L^2(\nu)$. Let $r_g^B:[0,\infty) \to \R$ be a compactly supported,
+smooth approximation of $r_g$ such that
+\[r_g^B(\tau)=\begin{cases}r_g(\tau) & \text{ for } \tau \in [0,B-1],\\
+0 & \text{ for } \tau \geq B,\end{cases}\]
+and $|r_g^B(\tau)| \leq |r_g(\tau)|$ 
+and $|{r_g^B}'(\tau)| \leq C|r_g'(\tau)|$  for a constant $C>0$ and
+all $\tau \geq 0$. Consider the function $f_B \in L^2(\nu)$ given by
+\begin{equation}\label{eq:Fdef}
+f_B(\bxi)=\X\bxi_0-\int_{-B}^0 r_g^B(-s)\bxi_s \d s
+-\E_{\bxi \sim \nu}\left[\X\bxi_0-\int_{-B}^0 r^B_g(-s)\bxi_s \d s\right].
+\end{equation} 
+We claim that $f_B \in D(A)$. To see this, let
+$P_t^\theta f_0(\btheta)=\E[f_0(\tilde \btheta^t) \mid \tilde \btheta^0=\btheta]$ denote the Markov diffusion semigroup on $L^2(\mu_\Gibbs)$,
+and let
+\begin{equation}\label{eq:diffusiongenerator}
+-A^\theta f_0(\btheta)=\Big((\X\btheta-U'(\btheta))^\top \nabla f_{0,i}(\btheta)
++\Tr \nabla^2 f_{0,i}(\btheta)\Big)_{i=1}^n
+\end{equation}
+denote its generator with domain $D(A^\theta) \subset
+L^2(\mu_\Gibbs)$. Denote $f_{B,0}(\btheta)=\X\btheta$, and write $c_0$ for the
+last constant term of \eqref{eq:Fdef} (not depending on $\bxi$). Then
+\begin{align*}
+P_tf_B(\bxi)&=\E[f_{B,0}(\bxi_0^t) \mid \bxi^0=\bxi]
+-\int_{-B}^0 r_g^B({-}s)\E[\bxi_s^t \mid \bxi^0=\bxi]\d s-c_0\\
+&=P_t^\theta f_{B,0}(\bxi_0)
+-\int_{\max(-t,-B)}^0 r_g^B({-}s)\E[\tilde \btheta^{t+s} \mid
+\tilde\btheta^0=\bxi_0]\d s-\int_{-B}^{\max(-t,-B)} r_g^B({-}s)\bxi_{t+s}\d
+s-c_0.
+\end{align*}
+For $t \in (0,B)$, we have
+\begin{align*}
+\frac{1}{t}(P_tf_B(\bxi)-f_B(\bxi))
+&=\frac{1}{t}(P_t^\theta f_{B,0}(\bxi_0)-f_{B,0}(\bxi_0))
+-\frac{1}{t}\int_{-t}^0 r_g^B({-}s)\E[\tilde \btheta^{t+s} \mid \tilde \btheta^0
+=\bxi_0]\d s\\
+&\qquad-\frac{1}{t}\left(\int_{-B+t}^0 (r_g^B(t-s)-r_g^B({-}s))\bxi_s\d s\right)
++\frac{1}{t}\int_{-B}^{-B+t} r_g^B({-}s)\bxi_s \d s.
+\end{align*}
+Under the condition that Assumption \ref{assump:dynamics} holds for ${-}U'$,
+$f_{B,0}$ belongs to $D(A^\theta)$, so
+\[\lim_{t \to 0^+} \frac{1}{t}(P_t^\theta f_{B,0}-f_{B,0})(\btheta)
+={-}A^\theta f_{B,0}(\btheta)=\X(\X\btheta-U'(\btheta)).\]
+Pointwise over $\bxi \in \cS$, since $\bxi_s$ and
+$\E[\tilde \btheta^s \mid \tilde \btheta^0=\bxi_0]$ are
+continuous in $s$ and $r_g^B(s)$ is continuously-differentiable with
+$r_g^B(B)=0$, we have
+\begin{align*}
+&\lim_{t \to 0^+}
+{-}\frac{1}{t}\int_{-t}^0 r_g^B({-}s)\E[\tilde \btheta^{t+s} \mid \tilde \btheta^0=\bxi_0]\d s
+-\frac{1}{t}\left(\int_{-B+t}^0 (r_g^B(t-s)-r_g^B({-}s))\bxi_s\d s\right)
++\frac{1}{t}\int_{-B}^{-B+t} r_g^B({-}s)\bxi_s \d s\\
+&={-}r_g^B(0)\bxi_0-\int_{-B}^0 {r_g^B}'(s)\bxi_s \d s+0.
+\end{align*}
+By dominated convergence, this holds also as functions of $\bxi$ in
+$L^2(\nu)$. Thus ${-}Af_B$ exists in $L^2(\nu)$, and is given explicitly by
+\begin{equation}\label{eq:generatorformula}
+-Af_B(\bxi)
+=\lim_{t \to 0^+} \frac{1}{t}(P_tf_B(\bxi)-f_B(\bxi))
+=\X(\X\bxi_0-U'(\bxi_0))-r_g^B(0)\bxi_0-\int_{-B}^0 {r_g^B}'(s)\bxi_s \d s.
+\end{equation}
+This checks that $f_B \in D(A)$.\\
+
+{\bf Step 2 (semigroup estimates):} Let us establish bounds independent of
+$n,B$ for the quantities
+\begin{align*}
+\|P_t f_B\|_{L^2},
+\quad \|Af_B\|_{L^2},
+\quad \|(P_t-P_s)f_B\|_{L^2},
+\quad \|(P_t-P_s)Af_B\|_{L^2}.
+\end{align*}
+For convenience, define
+\begin{align}
+\tilde \g_B^t&=\X\tilde \btheta^t-\int_{-\infty}^t r_g^B(t-s)\tilde\btheta^s
+\d s,\\
+\tilde \a_B^t&=\X(\X\tilde \btheta^t-U'(\tilde \btheta^t))
+-r_g(0)\tilde \btheta^t-\int_{-\infty}^t {r_g^B}'(t-s)\tilde \btheta^s \d s,
+\label{eq:tildeaB}
+\end{align}
+and recall the notation $\langle \cdot \rangle$ for the
+expectation over $\{\tilde \btheta^t\}_{t \in \R}$ conditional on $\X$. Then
+\begin{equation}\label{eq:gareprs}
+f_B(\bxi^t)=\tilde \g_B^t-\langle \tilde \g_B^0 \rangle,
+\qquad {-}Af_B(\bxi^t)=\tilde \a_B^t.
+\end{equation}
+For $\|P_tf_B\|_{L^2}$, write
+\begin{align*}
+\tilde \g_B^t-\langle \tilde \g_B^0\rangle&=\g_{B,1}^t+\g_{B,2}^t,\\
+\g_{B,1}^t&=\X(\tilde \btheta^t-\langle \btheta \rangle)
+-\int_0^{\min(t/2,B)} r_g^B(s)(\tilde\btheta^{t-s}
+-\langle \btheta \rangle)\d s,\\
+\g_{B,2}^t&={-}\int_{\min(t/2,B)}^B r_g^B(s)(\tilde \btheta^{t-s}
+-\langle \btheta \rangle) \d s
+\quad \text{ if } t/2<B, \text{ or } \g_{B,2}^t=0 \text{ otherwise}.
+\end{align*}
+When $\g_{B,2}^t \neq 0$, we may bound
+\begin{align*}
+&\left\langle \frac{1}{n}\,\|\E[\g_{B,2}^t \mid \X,\{\tilde\btheta^r\}_{r \leq
+0}] \|_2^2\right\rangle
+\leq \frac{1}{n}\,\langle \|\g_{B,2}^t\|_2^2\rangle\\
+&\leq \int_{\min(t/2,B)}^B \d t'
+\int_{\min(t/2,B)}^B \d s'\,|r_g^B(t')|\,|r_g^B(s')|
+\,\frac{1}{n}\Big|\langle (\tilde \btheta^{t-t'}-\langle \btheta \rangle)^\top
+(\tilde\btheta^{s-s'}-\langle \btheta \rangle)\rangle\Big|\\
+&\leq \frac{1}{n}\langle \|\btheta\|_2^2 \rangle
+\left(\int_{t/2}^\infty |r_g(t')|\d t'\right)^2.
+\end{align*}
+Applying \eqref{eq:thetanormbound} and the exponential bound for $r_g$
+from Lemma \ref{lemma:ttig},
+\begin{equation}\label{eq:gB2bound}
+\sup_{B>0}
+\left\langle\frac{1}{n}\|\E[\g_{B,2}^t \mid \X,\{\tilde\btheta^r\}_{r \leq
+0}]\|_2^2 \right\rangle^{1/2} \leq Ce^{-ct}
+\text{ for all } t \geq 0.
+\end{equation}
+For $\g_{B,1}^t$, recall that for each $t \geq 0$,
+there exists a coupling \eqref{eq:thetaequilibriumcoupling}
+of $(\tilde\btheta^0,\tilde\btheta^t)$ with $\btheta \sim \mu_\Gibbs$
+for which $\btheta$ is independent of $\tilde\btheta^0$ and
+$\frac{1}{n}\E[\|\tilde \btheta^t-\btheta\|_2^2 \mid \X] \leq 
+Ce^{-ct}$.
+Then by Jensen's inequality, also
+$\frac{1}{n}\langle \|\E[\tilde \btheta^t \mid \X,\tilde \btheta^0]-\langle
+\btheta \rangle\|_2^2 \rangle \leq Ce^{-ct}$ for all $t \geq 0$. Hence
+\begin{align*}
+&\left\langle \frac{1}{n}\,\|\E[\g_{B,1}^t \mid \X,\{\tilde\btheta^r\}_{r \leq
+0}]\|_2^2 \right\rangle\\
+&=\left\langle\frac{1}{n}\,
+\left\|\X(\E[\tilde \btheta^t \mid \X,\tilde \btheta^0]-\langle \btheta \rangle)
+-\int_0^{\min(t/2,B)} r_g^B(s)(\E[\tilde \btheta^{t-s} \mid \X,\tilde \btheta^0]
+-\langle \btheta \rangle)\d s\right\|_2^2\right\rangle\\
+&\leq \frac{C}{n}\,\langle
+\|\E[\tilde \btheta^t \mid \X,\tilde \btheta^0]-\langle \btheta \rangle\|_2^2
+\rangle+\frac{C}{n}\sup_{s \in [t/2,t]}
+\langle \|\E[\tilde \btheta^s \mid \X,\tilde \btheta^0]-\langle \btheta
+\rangle\|_2^2 \rangle
+\left(\int_0^\infty |r_g(s)|\,\d s\right)^2\\
+&\leq C'e^{-c't}.
+\end{align*}
+Thus
+\begin{equation}\label{eq:gB1bound}
+\sup_{B>0}
+\left\langle \frac{1}{n}\|\E[\g_{B,1}^t \mid \X,\{\tilde\btheta^r\}_{r \leq
+0}]\|_2^2\right\rangle^{1/2} \leq Ce^{-ct} \text{ for all } t \geq 0.
+\end{equation}
+Combining \eqref{eq:gB2bound} and \eqref{eq:gB1bound}, for some constants $C,c>0$,
+\begin{equation}\label{eq:IBbound}
+\sup_{B>0} \|P_tf_B\|_{L^2} \leq Ce^{-ct} \text{ for all } t \geq 0.
+\end{equation}
+
+For $\|Af_B\|_{L^2}$,
+by \eqref{eq:thetanormbound} and integrability of $|r_g'|$ shown in
+Lemma \ref{lemma:ttig}, for a constant $C>0$ we have similarly
+\begin{align}\label{eq:IIBbound}
+\sup_{B>0} \|Af_B\|_{L^2}
+=\sup_{B>0} \left\langle \frac{1}{n}\|\tilde \a_B^0\|_2^2
+\right\rangle^{1/2} \leq C.
+\end{align}
+For $\|(P_t-P_s)f_B\|_{L^2}$ and $\|(P_t-P_s)Af_B\|_{L^2}$,
+note that \eqref{eq:thetanormbound}
+and \eqref{eq:thetatildeequicontinuous} imply
+\begin{equation}\label{eq:thetacont}
+\frac{1}{n}\langle \|\tilde \btheta^\tau-\tilde\btheta^0\|_2^2
+\rangle\leq C\min(\tau,1) \text{ for all } \tau \geq 0.
+\end{equation}
+Then also by the integrability of $|r_g|$,
+\begin{align}\label{eq:IIIBgbound}
+\sup_{B>0} \|(P_{s+\tau}-P_s)f_B\|_{L^2}
+&\leq \sup_{B>0} \left\langle\frac{1}{n}\|\tilde\g_B^{\tau}-\tilde\g_B^0\|_2^2
+\right\rangle^{1/2}\notag\\
+&\leq \sup_{B>0}
+\left\langle \frac{1}{n}\|\X(\tilde\btheta^\tau-\tilde\btheta^0)\|_2^2
+\right\rangle^{1/2}
++\left\langle\frac{1}{n}\left\|\int_0^\infty r_g^B(s)(\tilde \btheta^{\tau-s}
+-\tilde\btheta^{-s})\d s \right\|_2^2 \right\rangle^{1/2}\notag\\
+&\leq C\min(\tau^{1/2},1) \text{ for all } s,\tau \geq 0.
+\end{align}
+Similarly by the integrability of $|r_g'|$,
+\begin{equation}\label{eq:IIIBabound}
+\sup_{B>0} \|(P_{s+\tau}-P_s)Af_B\|_{L^2}
+\leq \sup_{B>0} \left\langle\frac{1}{n}\|\tilde\a_B^{\tau}-\tilde\a_B^0\|_2^2
+\right\rangle^{1/2}
+\leq C\min(\tau^{1/2},1) \text{ for all } s,\tau \geq 0.
+\end{equation}
+
+{\bf Step 3 (diffusion approximation of $c_g^0$ and $r_g$):} We claim that for any 
+sequence $B(n)$ satisfying $B(n) \to \infty$ as $n \to \infty$, and for
+any $T>0$,
+\begin{align}
+&\lim_{n \to \infty}
+\sup_{\tau \in [0,T]} \left|c_g^0(\tau)-
+\left(\frac{1}{n}\langle \tilde{\g}_{B(n)}^{\tau\top} \tilde \g_{B(n)}^0
+\rangle-\frac{1}{n}\|\langle \tilde{\g}_{B(n)}^0 \rangle\|_2^2
+\right)\right|=0 \text{ a.s.},\label{eq:cgrepr}\\
+&\lim_{n \to \infty}
+\sup_{\tau \in [0,T]} \left|r_g(\tau)+
+\frac{\d}{\d\tau}
+\left(\frac{1}{n}\langle \tilde{\g}_{B(n)}^{\tau\top} \tilde \g_{B(n)}^0
+\rangle\right)\right|=0 \text{ a.s.}\label{eq:rgrepr}
+\end{align}
+To show this claim, observe that
+Theorem \ref{thm:dmft-approx}(c) and Lemma \ref{lemma:ttig} imply that
+\begin{equation}\label{eq:cgrepr1}
+c_g(\tau)=\lim_{t \to \infty}
+C_g(t+\tau,t)=\lim_{t \to \infty} \lim_{n \to \infty} \frac{1}{n}\,
+\langle \g^{t+\tau\top} \g^t \rangle \text{ a.s.}
+\end{equation}
+where here and below, all limits in $n$ exist a.s.\ over $(\X,\btheta^0)$.
+First fixing some constant $B>0$, define for $t \geq B$
+\[\g_B^t=\X\btheta^t-\int_{-\infty}^t r_g^B(t-s)\btheta^s \d s.\]
+Denote $\Delta_B(t,s)=R_g(t,s)-r_g^B(t-s)$ for $s \in [0,t]$.
+By the same argument as \eqref{eq:thetatildeequicontinuous}, using
+\eqref{eq:thetatnormbound} to bound $\frac{1}{n}\langle
+\|\btheta^t\|_2^2 \rangle$, we have
+\begin{equation}\label{eq:thetaequicontinuous}
+\frac{1}{n}\langle \|\btheta^t-\btheta^s\|_2^2 \rangle
+\leq C(e^{C(t-s)}-1) \text{ for all } t \geq s \geq 0.
+\end{equation}
+This equicontinuity and Theorem \ref{thm:dmft-approx}(c) imply, for any $t \geq
+0$,
+\[\lim_{n \to \infty} \sup_{s \in [0,t]}
+\left|\frac{1}{n}\btheta^{t\top}\btheta^s-C_\theta(t,s)\right|=0 \text{ a.s.}\]
+Then for any $t \geq B$,
+\begin{align*}
+\lim_{n \to \infty} \frac{1}{n}\langle \|\g^t-\g_B^t\|^2 \rangle
+=\lim_{n \to \infty} \frac{1}{n}\left\langle \left\|\int_0^t \Delta_B(t,s)
+\btheta^s \d s\right\|^2\right\rangle
+=\int_0^t \d s \int_0^t \d s' \Delta_B(t,s)\Delta_B(t,s')C_\theta(s,s') \text{
+a.s.}
+\end{align*}
+Note that $\Delta_B(t,s)=R_g(t,s)$ for $s>t-B+1$.
+Then applying the properties for $C_\theta,c_\theta,R_g,r_g$
+in Lemmas \ref{lemma:tti} and \ref{lemma:ttig},
+it is readily checked that for any fixed $B>0$:
+\begin{align*}
+&\lim_{t \to \infty}
+\int_0^t \d s \int_0^t \d s' \Delta_B(t,s)\Delta_B(t,s')C_\theta(s,s')\\
+&=\lim_{t \to \infty}
+\int_0^{t-B+1} \d s \int_0^{t-B+1} \d s'
+(R_g(t,s)-r_g^B(t-s))(R_g(t,s')-r_g^B(t-s'))C_\theta(s,s')\\
+&=\lim_{t \to \infty}
+\int_{B-1}^t \d s \int_{B-1}^t \d s' (R_g(t,t-s)-r_g^B(s))
+(R_g(t,t-s')-r_g^B(s'))C_\theta(t-s,t-s')\\
+&=\int_{B-1}^\infty \d s \int_{B-1}^\infty \d s'\,(r_g(s)-r_g^B(s))
+(r_g(s')-r_g^B(s'))c_\theta(s-s').
+\end{align*}
+Then by the exponential bound for $r_g$ in Lemma \ref{lemma:ttig}, also
+\begin{align*}
+&\lim_{B \to \infty} \lim_{t \to \infty}
+\int_0^t \d s \int_0^t \d s' \Delta_B(t,s)\Delta_B(t,s')C_\theta(s,s')=0.
+\end{align*}
+This shows that
+$\lim_{B \to \infty} \lim_{t \to \infty}
+\lim_{n \to \infty} \frac{1}{n}\langle \|\g^t-\g_B^t\|_2^2 \rangle=0$ a.s.
+Applying this bound, \eqref{eq:cgrepr1}, and Cauchy-Schwarz, we have
+\begin{align}\label{eq:cgrepr2}
+\left|c_g(\tau)-\lim_{t \to \infty}
+\lim_{n \to \infty} \frac{1}{n}\langle \g_B^{t+\tau\top}\g_B^t \rangle\right|
+=\left|\lim_{t \to \infty} \lim_{n \to \infty}
+\frac{1}{n}\langle \g^{t+\tau\top}\g^t \rangle
+-\frac{1}{n}\langle \g_B^{t+\tau\top}\g_B^t \rangle\right| \leq o_B(1) \text{
+a.s.}
+\end{align}
+where here and below, $o_B(1)$ is a constant bound not depending on $n,\tau$
+and vanishing as $B \to \infty$.
+
+For $t>B$, Assumption \ref{assump:convergence} implies
+there exists a coupling of
+$(\btheta^0,\btheta^{t-B})$ with $\tilde \btheta^{-B}$ 
+having law $\mu_\Gibbs$ conditional on $\btheta^0$, for which
+\[\frac{1}{n}\,\E[\|\btheta^{t-B}-\tilde \btheta^{-B}\|_2^2 \mid \X,\btheta^0]
+\leq Ce^{-ct}.\]
+Define from this coupling of $\btheta^{t-B}$ and $\tilde\btheta^{-B}$ a coupling
+of $\{\btheta^{t-B+s}\}_{s \in [0,B+\tau]}$ and
+$\{\tilde \btheta^{-B+s}\}_{s \in [0,B+\tau]}$ where both processes are driven
+by the same Brownian motion. Then by Gr\"onwall's inequality,
+\[\|\btheta^{t-B+s}-\tilde \btheta^{-B+s}\|_2 \leq e^{Cs}
+\|\btheta^{t-B}-\tilde \btheta^{-B}\|_2 \text{ for all } s \in [0,B+\tau].\]
+Thus for any fixed $B>0$ and $\tau>0$,
+there exists a constant $C(B,\tau)>0$ such that also
+\[\sup_{s \in [0,B+\tau]} \frac{1}{n}\E[\|\btheta^{t-B+s}
+-\tilde\btheta^{-B+s}\|_2^2 \mid \X,\btheta^0] \leq C(B,\tau)e^{-ct}.\]
+This implies from the definitions of $\g_B^t$ and $\tilde \g_B^t$ that
+\[\lim_{t \to \infty}\limsup_{n \to \infty}
+\left|\frac{1}{n}\,\langle \g_B^{t+\tau\top} \g_B^t\rangle
+-\frac{1}{n}\,\langle \tilde \g_B^{\tau\top} \tilde \g_B^0\rangle
+\right|=0,\]
+so \eqref{eq:cgrepr2} implies 
+\begin{equation}\label{eq:cgrepr3}
+\sup_{\tau \geq 0}\left|c_g(\tau)-\lim_{n \to \infty}
+\frac{1}{n}\,\langle \tilde\g_B^{\tau\top}\tilde \g_B^0
+\rangle\right| \leq o_B(1) \text{ a.s.}
+\end{equation}
+
+Since \eqref{eq:cgrepr3} implies that the almost-sure limit
+$\lim_{n \to \infty} \frac{1}{n}\,\langle
+\tilde \g_B^{\tau\top}\tilde \g_B^0 \rangle$ converges uniformly to
+$c_g(\tau)$ as $B \to \infty$, we have
+\begin{equation}\label{eq:cgrepr4}
+q_*\cR_\Lambda'(v_*-q_*)=\lim_{\tau \to \infty} c_g(\tau)=
+\lim_{\tau \to \infty} \lim_{B \to \infty}
+\lim_{n \to \infty}
+\frac{1}{n}\,\langle \tilde \g_B^{\tau\top}\tilde \g_B^0 \rangle
+=\lim_{B \to \infty}
+\lim_{\tau \to \infty} \lim_{n \to \infty}
+\frac{1}{n}\,\langle \tilde \g_B^{\tau\top}\tilde \g_B^0 \rangle \text{ a.s.}
+\end{equation}
+Now let $\{\check \btheta^t\}_{t \in \R}$ be a second diffusion following
+\eqref{eq:langevin} with equilibrium
+initial state $\check \btheta^0 \sim \mu_\Gibbs$. Again fix $B>0$, and
+consider $\tau>B$. Applying again
+Assumption \ref{assump:convergence} and the same coupling argument as above,
+there exists a coupling of the laws of $\{\tilde \btheta^{\tau-B+s}\}_{s \in
+[0,B]}$ and $\{\check{\btheta}^{\tau-B+s}\}_{s \in [0,B]}$ 
+conditional on $\{\tilde\btheta^t\}_{t \leq 0}$,
+where $\{\check{\btheta}^{\tau-B+s}\}_{s \in [0,B]}$ is independent of
+$\{\tilde\btheta^t\}_{t \leq 0}$, for which
+\[\sup_{s \in [0,B]} \frac{1}{n}\,\E[\|\tilde \btheta^{\tau-B+s}
+-\check\btheta^{\tau-B+s}\|_2^2 \mid \X] \leq Ce^{-c\tau}.\]
+Letting $\{\check \g_B^t\}_{t \in \R}$ be the copy of $\{\tilde \g_B^t\}_{t \in
+\R}$ defined from $\{\check \btheta^t\}_{t \in \R}$,
+this implies by Cauchy-Schwarz that
+\[\lim_{\tau \to \infty} \limsup_{n \to \infty}
+\left|\frac{1}{n}\langle \tilde \g_B^{\tau\top}\tilde \g_B^0 \rangle
+-\frac{1}{n}\E[\check \g_B^{\tau\top}\tilde \g_B^0 \mid \X]\right|=0.\]
+Here $\E[\check \g_B^{\tau\top}\tilde \g_B^0 \mid \X]=
+\|\langle \tilde \g_B^0 \rangle\|_2^2$ since
+$\check \g_B^\tau$ is a function of $\{\check \btheta^{\tau-B+s}\}_{s \in
+[0,B]}$, $\tilde \g_B^0$ is a function of $\{\tilde \btheta^t\}_{t \leq 0}$, and
+these are independent. Then, applying this to \eqref{eq:cgrepr4}, we have
+\begin{equation}\label{eq:cgrepr5}
+\left|q_*\cR_\Lambda'(v_*-q_*)-\lim_{n \to \infty}
+\frac{1}{n}\|\langle \tilde \g_B^0 \rangle\|_2^2\right| \leq o_B(1) \text{ a.s.}
+\end{equation}
+
+For any fixed $B>0$ and $B(n)$ satisfying $B(n) \to \infty$ as $n \to \infty$,
+\[\frac{1}{n}\langle \|\tilde \g_B^\tau-\tilde \g_{B(n)}^\tau\|_2^2 \rangle
+=\frac{1}{n}\,\left\langle\left\|\int_{-\infty}^\tau
+(r_g^B(\tau-s)-r_g^{B(n)}(\tau-s))\tilde\btheta^s \d s\right\|_2^2\right\rangle
+\leq C\left(\int_{B-1}^\infty |r_g(s)| \d s\right)^2
+\cdot \frac{1}{n}\langle \|\btheta\|^2 \rangle\]
+which is uniformly bounded by \eqref{eq:thetanormbound}
+and tends to 0 as $B \to \infty$. Thus
+\begin{align*}
+\sup_{\tau \geq 0} \left|\frac{1}{n}\,\langle \tilde\g_B^{\tau\top}
+\tilde \g_B^0 \rangle
+-\frac{1}{n}\,\langle \tilde\g_{B(n)}^{\tau\top}\tilde \g_{B(n)}^0
+\rangle\right|& \leq o_B(1),\\
+\sup_{\tau \geq 0} \left|\frac{1}{n}\|\langle \tilde\g_B^0
+\rangle \|_2^2
+-\frac{1}{n}\|\langle \tilde\g_{B(n)}^0\rangle\|_2^2\right| & \leq o_B(1).
+\end{align*}
+Combining with \eqref{eq:cgrepr3} and \eqref{eq:cgrepr4}
+and noting that the fixed value $B>0$ may be taken arbitrarily large, this shows
+\begin{equation}\label{eq:cgpointwiseapprox}
+c_g^0(\tau)=c_g(\tau)-q_*\cR_\Lambda'(v_*-q_*)
+=\lim_{n \to \infty} \frac{1}{n}\,\langle \tilde\g_{B(n)}^{\tau\top}
+\tilde \g_{B(n)}^0 \rangle
+-\frac{1}{n}\|\langle \tilde\g_{B(n)}^0\rangle\|_2^2 \text{ a.s.}
+\end{equation}
+The bound \eqref{eq:IIIBgbound} implies that
+for all $\tau,\tau' \in \R$ and $n \geq 1$,
+\[\left|\frac{1}{n}\langle \tilde{\g}_{B(n)}^{\tau\top} \tilde \g_{B(n)}^0
+\rangle-\frac{1}{n}\langle \tilde{\g}_{B(n)}^{\tau'\top}
+\tilde\g_{B(n)}^0 \rangle\right|
+\leq C|\tau-\tau'|^{1/2}.\]
+Then $\tau \mapsto \frac{1}{n}\langle \tilde{\g}_{B(n)}^{\tau\top}
+\tilde\g_{B(n)}^0 \rangle$
+is uniformly equicontinuous for all $n$, so the convergence in
+\eqref{eq:cgpointwiseapprox} is
+uniform over any compact interval $[0,T]$,
+establishing the claim \eqref{eq:cgrepr} for $c_g^0$.
+
+To show the second claim \eqref{eq:rgrepr} for $r_g$,
+note that Lemma \ref{lemma:ttig} shows $r_g(\tau)={-}{c_g^0}'(\tau)$. Using
+$B=B(n)$ to define the preceding semigroup $\{P_t\}_{t \geq 0}$ on $L^2(\nu)$
+in Step 1, the identities \eqref{eq:gareprs} imply that
+\[\frac{\d}{\d\tau}\,\frac{1}{n}\langle \tilde \g_{B(n)}^{\tau\top}
+\tilde \g_{B(n)}^0 \rangle
+=\frac{\d}{\d\tau} \langle f_{B(n)},P_\tau f_{B(n)} \rangle_{L^2}
+={-}\langle f_{B(n)},P_\tau Af_{B(n)} \rangle_{L^2}
+=\frac{1}{n}\langle \tilde \g_{B(n)}^{0\top}\tilde \a_{B(n)}^\tau \rangle.\]
+The bound \eqref{eq:IIIBabound} implies that this is also uniformly
+equicontinuous in $\tau$ for all $n$. Then by \eqref{eq:cgrepr} and
+Arzel\`a-Ascoli, almost surely
+\[\lim_{n \to \infty} \sup_{\tau \in [0,T]} \left|{c_g^0}'(\tau)
+-\frac{\d}{\d\tau}\,\frac{1}{n}\langle \tilde \g_{B(n)}^{\tau\top}
+\tilde \g_{B(n)}^0 \rangle\right|=0.\]
+This shows \eqref{eq:rgrepr}.\\
+
+{\bf Step 4 (semigroup regularization):} 
+Take any $B(n)$ such that $B(n) \to \infty$ as $n \to \infty$.
+Henceforth, we define the semigroup $\{P_t\}_{t \geq 0}$ with this $B(n)$ and
+write simply $B \equiv B(n)$. For the given value of
+$\eps$ in the lemma, let $T_0=T_0(\eps)>0$ be large enough such that
+\eqref{eq:IBbound} ensures
+\begin{equation}\label{eq:IBboundT0}
+\|P_{T_0}f_B\|_{L^2}<\eps/3.
+\end{equation}
+The bounds
+\eqref{eq:IBbound}, \eqref{eq:IIBbound},
+\eqref{eq:IIIBgbound}, and \eqref{eq:IIIBabound} imply
+that almost surely, $\langle P_tf_B,P_sAf_B \rangle_{L^2}$
+is uniformly bounded and uniformly equicontinuous over $(t,s)$ for all $n$.
+Hence along a subsequence of $n$,
+there exists a limit function $\ell_*:[0,T_0]^2 \to \R$ 
+(possibly random, depending on the infinite sequence of realizations
+$\X \in \R^{n \times n}$ as $n \to \infty$) for which
+\begin{equation}\label{eq:lstarlimit}
+\sup_{s,t \in [0,T_0]} |\langle P_tf_B,P_sAf_B
+\rangle_{L^2}-\ell_*(t,s)| \to 0.
+\end{equation}
+
+Now let $\delta>0$ and $T>0$ be as given in the lemma. For a sufficiently
+small regularization parameter $\rho=\rho(\eps,T_0,\delta,T)>0$ to be
+determined, define
+\[A^\rho=A+\rho\,\Id, \qquad P_t^\rho=e^{-\rho t}P_t.\]
+Note that ${-}A^\rho$ is then the generator of the regularized semigroup
+$\{P_t^\rho\}_{t \geq 0}$ on $L^2(\nu)$, with the same domain $D(A^\rho)=D(A)$.
+(Here $P_t^\rho$ no longer preserves constant functions, which no longer
+belong to the kernel of $A^\rho$, but this will be irrelevant for the rest of
+the analysis.) Then we have
+\[\frac{\d}{\d t} \langle f_B,P_t^\rho f_B \rangle_{L^2}
+={-}\langle f_B,P_t^\rho A^\rho f_B \rangle_{L^2}
+={-}e^{-\rho t}\Big(\langle f_B,P_tAf_B \rangle_{L^2}
++\rho \langle f_B,P_tf_B \rangle_{L^2}\Big).\]
+Define correspondingly
+\[c_g^\rho(\tau)=e^{-\rho \tau}c_g^0(\tau),
+\qquad r_g^\rho(\tau)={-}(c_g^\rho)'(\tau)
+=e^{-\rho\tau}(r_g(\tau)+\rho c_g^0(\tau)),\]
+where the last equality uses ${-}{c_g^0}'(\tau)=r_g(\tau)$.
+Then \eqref{eq:cgrepr} and \eqref{eq:rgrepr} imply also, for any fixed
+$\rho>0$ and $T>0$, almost surely
+\begin{equation}\label{eq:rgrhorepr}
+\lim_{n \to \infty} \sup_{\tau \in [0,T]}
+|r_g^\rho(\tau)-\langle f_B,P_\tau^\rho A^\rho f_B \rangle_{L^2}|=0.
+\end{equation}
+Note that
+\[\int_0^\infty |r_g^\rho(\tau)-r_g(\tau)|\,\d \tau
+\leq \int_0^\infty (1-e^{-\rho \tau})|r_g(\tau)| \d \tau
++\int_0^\infty \rho e^{-\rho \tau}|c_g^0(\tau)| \d \tau.\]
+Lemma \ref{lemma:ttig} shows that both $|r_g|,|c_g^0|$ are integrable, so
+by dominated convergence, this approaches to 0 as $\rho \to 0$. Thus, for
+all small enough $\rho$, we have
+\begin{equation}\label{eq:rgrgrho}
+\int_0^\infty |r_g^\rho(\tau)-r_g(\tau)|\,\d \tau<\delta/8.
+\end{equation}
+Given any $\rho>0$, we may pick $T(\rho)>0$ large enough such that
+\begin{equation}\label{eq:Trhodef}
+\int_{T(\rho)}^\infty |r_g(\tau)|\d \tau
+<\delta/8, \qquad
+\|f_B\|_{L^2} \|A^\rho f_B\|_{L^2} \int_{T(\rho)}^\infty e^{-\rho\tau}
+\d \tau <\delta/8.
+\end{equation}
+Note finally that
+$\|P_t^\rho f-P_t f\|_{L^2} \leq (1-e^{-\rho t})\|f\|_{L^2}$
+for all $f \in L^2(\nu)$, and $\|(A^\rho-A)f\|_{L^2} \leq \rho\|f\|_{L^2}$
+for all $f \in D(A)$. Then the statements \eqref{eq:cgrepr},
+\eqref{eq:rgrhorepr},
+\eqref{eq:lstarlimit}, \eqref{eq:IBbound}, \eqref{eq:IIBbound},
+\eqref{eq:IIIBgbound}, and \eqref{eq:IIIBabound}
+together imply that there exists a realization of $\ell_*:[0,T_0]^2 \to \R$ depending only on $\eps,T_0$ and some $n \geq 1$, $B=B(n)$, $\rho>0$,
+and realization of $\X \in \R^{n \times n}$ depending on $\eps,T_0,\delta,T$   such that \eqref{eq:rgrgrho} holds for
+this $\rho>0$,
+\eqref{eq:Trhodef} holds for the corresponding $T(\rho)>0$, and  
+\begin{align}
+\sup_{\tau \in [0,T]} |c_g^0(\tau)
+-\langle f_B,P_\tau^\rho f_B \rangle_{L^2}|&<\delta/2,\label{eq:cgsemigroupapprox}\\
+\int_0^{T(\rho)} |r_g^\rho(\tau)-\langle f_B,P_\tau^\rho A^\rho f_B
+\rangle_{L^2}|\d\tau&<\delta/8,\label{eq:rgsemigroupapprox}\\
+\sup_{s,t \in [0,T_0]} |\langle P_t^\rho f_B,P_s^\rho A^\rho f_B
+\rangle-\ell_*(t,s)|&<\delta/2,\label{eq:lstarapprox}\\
+\|P_{T_0}^\rho f_B\|_{L^2}&<\eps/2,\label{eq:contractionatT0}\\
+\|f_B\|_{L^2},\|A^\rho f_B\|_{L^2}&<C,\label{eq:AfBbound}\\
+\|(P_t^\rho-P_s^\rho)f_B\|_{L^2} &\leq C|t-s|^{1/2}+\delta/2
+\text{ for all } s,t \in [0,T_0],\label{eq:PtPsbound}\\
+\|(P_t^\rho-P_s^\rho)A^\rho f_B\|_{L^2} &\leq C|t-s|^{1/2}+\delta/2
+\text{ for all } s,t \in [0,T_0].\label{eq:PtPsAbound}
+\end{align}
+In the remainder of the proof, we fix these values of $n,B,\rho$
+and realizations of $\X$ and $\ell_*$.\\
+
+{\bf Step 5 (Trotter-Kato approximation):}
+We now approximate ${-}A^\rho$ by a finite-dimensional generator ${-}A_m$, and
+apply the Trotter-Kato theorem to conclude the proof.
+
+Since $\{P_t^\rho\}_{t \geq 0}$ is a strongly continuous contractive semigroup, 
+the resolvent $(\lambda\,\Id+A^\rho)^{-1}$ of its generator
+${-}A^\rho$ exists for any
+$\lambda>1$ as a bounded linear operator $(\lambda\,\Id+A^\rho)^{-1}:L^2(\nu) \to
+D(A)$, with inverse $(\lambda\,\Id+A^\rho):D(A) \to L^2(\nu)$ \cite[Theorem
+1.10]{engel2000one}. Let $\{h_i\}_{i=1}^\infty$ be any orthonormal basis of
+$L^2(\nu)$, and for each $m \geq 1$, let
+\[V_m=\sp(\{(\lambda\,\Id+A^\rho)^{-1}h_i\}_{i=1}^m) \subset D(A).\]
+We note that for any $f \in D(A)$,
+there exists $f_m \in V_m$ for which
+\begin{equation}\label{eq:graphnormapprox}
+f_m \to f, \qquad A^\rho f_m \to A^\rho f \qquad \text{ in } L^2(\nu)
+\text{ as } m \to \infty.
+\end{equation}
+Indeed, let
+$g=(\lambda\,\Id+A^\rho)f$, let $g_m \in \sp(h_1,\ldots,h_m)$ be such that
+$g_m \to g$ in $L^2(\nu)$ as $m \to \infty$,
+and let $f_m=(\lambda\,\Id+A^\rho)^{-1}g_m$. Then, since
+$(\lambda\,\Id+A^\rho)^{-1}$ is a bounded operator, $f_m \to
+(\lambda\,\Id+A^\rho)^{-1}g=f$. Furthermore $A^\rho
+f_m=g_m-\lambda f_m$, so $A^\rho f_m \to g-\lambda f=A^\rho f$, showing
+\eqref{eq:graphnormapprox}.
+
+To define $A_m$, let $\{e_i\}_{i=1}^\infty$ be elements
+of $D(A)$ such that $\{e_i\}_{i=1}^m$ forms an orthonormal basis of $V_m$ for
+each $m \geq 1$ (e.g.\ obtained from a Gram-Schmidt procedure).
+Define $\Pi_m:L^2(\nu) \to \R^m$ 
+and its adjoint $\Pi_m^*:\R^m \to L^2(\nu)$ (in the sense
+$v^\top \Pi_m f=\langle \Pi_m^* v,f \rangle_{L^2}$) by
+\[\Pi_m f=(\langle e_i,f \rangle_{L^2})_{i=1}^m,
+\qquad \Pi_m^* v=\sum_{i=1}^m v(i)e_i.\]
+Thus $\Pi_m\Pi_m^*=\Id$ on $\R^m$, and
+$\Pi_m^*\Pi_m:L^2(\nu) \to L^2(\nu)$ is the orthogonal projector onto
+$V_m$. Define $A_m \in \R^{m \times m}$ by
+\[A_m=\Pi_m A^\rho \Pi_m^*,
+\qquad (A_m)(i,j)=\langle e_i,A^\rho e_j \rangle_{L^2}.\]
+Note that for any $f \in L^2 (\nu)$, we have $\langle f,f-P_t^\rho f \rangle_{L^2} \geq
+(1-e^{-\rho t})\|f\|_{L^2}^2$
+by the contractivity $\|P_t^\rho f\|_{L^2}
+=e^{-\rho t}\|P_t f\|_{L^2} \leq e^{-\rho t}\|f\|_{L^2}$
+and Cauchy-Schwarz. Hence for any $f \in D(A)$, we have from definition of the
+generator ${-}A^\rho$ that $\langle f,A^\rho f \rangle_{L^2} \geq
+\rho\|f\|_{L^2}^2$, implying
+\begin{equation}\label{eq:Apsd}
+v^\top (A_m+A_m^\top) v 
+=2\langle \Pi_m^* v,A^\rho \Pi_m^* v \rangle_{L^2}
+\geq 2\rho\|v\|_2^2 \text{ for all } v \in \R^m.
+\end{equation}
+Thus $\lambda_{\min}(A_m+A_m^\top) \geq 2\rho$, so $A_m+A_m^\top$ is
+strictly positive definite. This implies also, for any $v \in \R^m$, that
+\begin{align*}
+\frac{\d}{\d t}\|e^{-tA_m}v\|_2^2
+&=-2(e^{-tA_m}v)^\top A_me^{-tA_m}v\\
+&=-(e^{-tA_m}v)^\top(A_m+A_m^\top)(e^{-tA_m}v)\leq -2\rho\,\|e^{-tA_m}v\|_2^2,
+\end{align*}
+so $\|e^{-tA_m}v\|_2^2 \leq e^{-2\rho t}\|v\|_2^2$
+and hence $\|e^{-tA_m}\|_\op \leq e^{-\rho t} \leq 1$ for all $t \geq 0$.
+Thus $\{P_t^m\}_{t \geq 0}:=\{e^{-tA_m}\}_{t \geq 0}$ defines
+a contraction semigroup on $\R^m$ with generator ${-}A_m$.
+The property \eqref{eq:graphnormapprox} implies that for any $f \in D(A)$,
+there exists $u_m \in \R^m$ with $\Pi_m^*u_m=f_m \in V_m$
+for each $m \geq 1$ such that as $m \to \infty$,
+\begin{equation}\label{eq:umapprox}
+\|\Pi_m^*u_m-f\|_{L^2}=\|f_m-f\|_{L^2} \to 0,
+\qquad \|A^\rho \Pi_m^*u_m-A^\rho f\|_{L^2}=\|A^\rho f_m-A^\rho f\|_{L^2} \to 0.
+\end{equation}
+Hence, from the above definition $A_m=\Pi_mA^\rho \Pi_m^*$, also
+\begin{align}
+\|\Pi_m^*A_mu_m-A^\rho f\|_{L^2}
+&=\|\Pi_m^*A_m\Pi_mf_m-A^\rho f\|_{L^2}
+=\|\Pi_m^*\Pi_m A^\rho f_m-A^\rho f\|_{L^2}\notag\\
+&\leq \|\Pi_m^*\Pi_m A^\rho f-A^\rho f\|_{L^2}
++\|\Pi_m^*\Pi_m(A^\rho f_m-A^\rho f)\|_{L^2} \to 0.\label{eq:Aumapprox}
+\end{align}
+This checks property (C2) of \cite[Proposition 3.1]{ito1998trotter}
+for $D=D(A)$. Property (C1) is automatic, since $D(A)$ is dense in $L^2(\nu)$
+\cite[Theorem 1.4]{engel2000one}
+and $(\lambda\,\Id+A^\rho):D(A) \to L^2(\nu)$ is surjective for any $\lambda$
+in the resolvent set of ${-}A^\rho$. Thus, by the version of
+the Trotter-Kato theorem stated in \cite[Theorem 2.1, Proposition
+3.1]{ito1998trotter}, for any fixed $f \in L^2(\nu)$ and $T>0$,
+\begin{equation}\label{eq:trotterkato}
+\lim_{m \to \infty} \sup_{\tau \in [0,T]} \|\Pi_m^*P_\tau^m \Pi_m f
+-P_\tau^\rho f\|_{L^2}=0.
+\end{equation}
+
+We now verify conditions (i)--(vi) of the lemma.
+Recall the function $f_B$ in \eqref{eq:Fdef}, and let $u_m \in \R^m$
+be a sequence satisfying \eqref{eq:umapprox} and \eqref{eq:Aumapprox}
+for $f=f_B$. Let $f_{m,B} \in V_m$ be such that
+\[u_m=\Pi_m f_{m,B} \in \R^m, \qquad f_{m,B}=\Pi_m^* u_m.\]
+Recall that \eqref{eq:cgsemigroupapprox} shows
+$\sup_{\tau \in [0,T]}
+|c_g^0(\tau)-\langle f_B,P_\tau^\rho f_B \rangle_{L^2}|<\delta/2$.
+Applying the Trotter-Kato result \eqref{eq:trotterkato} with $f=f_B$ and
+Cauchy-Schwarz,
+\begin{equation}\label{eq:trottercovapprox1}
+\lim_{m \to \infty}
+\sup_{\tau \in [0,T]} |\langle f_B,P_\tau^\rho f_B \rangle_{L^2}
+-\langle f_B,\Pi_m^*P_\tau^m \Pi_m f_B \rangle_{L^2}|=0.
+\end{equation}
+Here $\langle f_B,\Pi_m^*P_\tau^m \Pi_mf_B \rangle_{L^2}=(\Pi_m f_B)^\top
+e^{-\tau A_m} (\Pi_m f_B)$, and the first statement of
+\eqref{eq:umapprox} implies
+\[\lim_{m \to \infty}
+\|\Pi_m f_B-u_m\|_2=\lim_{m \to \infty} 
+\|\Pi_m^*u_m-f_B\|_{L^2}=0.\]
+Then, using $\|e^{-\tau A_m}\|_\op \leq 1$ and Cauchy-Schwarz,
+\begin{equation}\label{eq:trottercovapprox2}
+\lim_{m \to \infty} \sup_{\tau \in [0,T]}
+\Big|\langle f_B,\Pi_m^* P_\tau^m \Pi_m f_B \rangle_{L^2}-u_m^\top e^{-\tau A_m}u_m\Big|=0.
+\end{equation}
+Combining \eqref{eq:cgsemigroupapprox}, 
+\eqref{eq:trottercovapprox1}, and \eqref{eq:trottercovapprox2} shows
+statement (i) for all large enough $m$.
+
+For (ii), note that 
+\[|u_m^\top A_me^{-\tau A_m}u_m|
+\leq \|e^{-\tau A_m}\|_{\op} \|u_m\|_2 \|A_mu_m\|_2
+\leq e^{-\tau\rho}\|u_m\|_2 \|A_mu_m\|_2.\]
+By \eqref{eq:umapprox} and \eqref{eq:Aumapprox}, $\|u_m\|_2 \to \|f_B\|_{L^2}$
+and $\|A_mu_m\|_2 \to \|A^\rho f_B\|_{L^2}$ as $m \to \infty$. Then the second
+statement of \eqref{eq:Trhodef} ensures that for all large enough $m$,
+\[\int_{T(\rho)}^\infty
+|u_m^\top A_me^{-\tau A_m}u_m|\d\tau<\delta/4.\]
+Combining this with the first statement of
+\eqref{eq:Trhodef} and with \eqref{eq:rgrgrho} and
+\eqref{eq:rgsemigroupapprox},
+\begin{align}
+&\int_0^\infty |r_g(\tau)-u_m^\top A_me^{-\tau A_m}u_m|\d\tau\notag\\
+&\leq \int_0^{T(\rho)} |r_g(\tau)-u_m^\top A_me^{-\tau A_m}u_m|\d\tau
++\int_{T(\rho)}^\infty |r_g(\tau)|\d\tau
++\int_{T(\rho)}^\infty |u_m^\top A_me^{-\tau A_m}u_m|\d\tau\notag\\
+&\leq \int_0^{T(\rho)} |\langle f_B,P_\tau^\rho A^\rho f_B \rangle_{L^2}
+-u_m^\top A_me^{- \tau A_m}u_m|\d\tau+5\delta/8.\label{eq:rgsemigroupapprox1}
+\end{align}
+Applying the Trotter-Kato result \eqref{eq:trotterkato} with $f=A^\rho f_B$   and
+$T=T(\rho)$,
+\[\lim_{m \to \infty}\sup_{\tau \in [0,T(\rho)]}
+|\langle f_B,P_\tau^\rho A^\rho f_B \rangle_{L^2}
+-\langle f_B,\Pi_m^* P_\tau^m\Pi_m A^\rho f_B\rangle_{L^2}|=0.\]
+Here $\langle f_B,\Pi_m^* P_\tau^m\Pi_m A^\rho f_B\rangle_{L^2}
+=(\Pi_m f_B)^\top e^{-\tau A_m}(\Pi_m A^\rho f_B)$, and \eqref{eq:umapprox}
+and \eqref{eq:Aumapprox} imply $\|\Pi_m f_B-u_m\|_2 \to 0$
+and $\|\Pi_m A^\rho f_B-A_mu_m\|_2 \to 0$ as $m \to \infty$. Thus
+\[\lim_{m \to \infty}\sup_{\tau \in [0,T(\rho)]}
+|\langle f_B,P_\tau^\rho A^\rho f_B \rangle_{L^2}
+-u_m^\top e^{-\tau A_m}A_mu_m|=0.\]
+Applying this to \eqref{eq:rgsemigroupapprox1} shows that (ii) holds for all
+large $m$.
+
+Statement (iii) follows immediately from the convergence $\|u_m\|_2 \to
+\|f_B\|_{L^2}$ implied by \eqref{eq:umapprox}, and \eqref{eq:AfBbound}.
+
+For statement (iv),
+observe that at $t=T_0$,
+\begin{align*}
+\|e^{-T_0A_m}u_m\|_2
+&=\sup_{v \in \R^m:\|v\|_2=1} v^\top e^{-T_0A_m}u_m\\
+&\leq \sup_{g \in L^2(\nu):\|g\|_{L^2}=1} (\Pi_m g)^\top e^{-T_0A_m} u_m
+=\|\Pi_m^*P_{T_0}^m u_m\|_{L^2}\\
+&\leq \|\Pi_m^* P_{T_0}^m \Pi_m f_B\|_{L^2}
++\|\Pi_m^* P_{T_0}^m(\Pi_m f_B-u_m)\|_{L^2}
+\leq \|\Pi_m^* P_{T_0}^m \Pi_m f_B\|_{L^2}+\|\Pi_m^*u_m-f_B\|_{L^2}.
+\end{align*}
+Then by the Trotter-Kato result \eqref{eq:trotterkato} applied with $f=f_B$,
+$T=T_0$, and \eqref{eq:umapprox},
+\[\limsup_{m \to \infty}
+\|e^{-T_0A_m}u_m\|_2 \leq 
+\lim_{m \to \infty} \|\Pi_m^* P_{T_0}^m \Pi_mf_B\|_{L^2}
++\|\Pi_m^*u_m-f_B\|_{L^2}=\|P_{T_0}^\rho f_B\|_{L^2}.\]
+Then (iv) holds for all large $m$ by \eqref{eq:contractionatT0}.
+
+For statement (v), note similarly as above that for any $s,t \geq 0$,
+\begin{align*}
+\|(e^{-tA_m}-e^{-sA_m})u_m\|_2
+=\|\Pi_m^*(P_t^m-P_s^m)u_m\|_{L^2}
+\leq \|\Pi_m^*(P_t^m-P_s^m)\Pi_mf_B\|_{L^2}+\|\Pi_m^* u_m-f_B\|_{L^2}.
+\end{align*}
+Then by \eqref{eq:trotterkato} applied with $f=f_B$, $T=T_0$,
+and \eqref{eq:umapprox}, for any fixed $\delta>0$ and large enough $m$,
+\[\|(e^{-tA_m}-e^{-sA_m})u_m\|_2<\|(P_t^\rho-P_s^\rho)f_B\|_{L^2}+\delta/2
+\text{ for all } s,t \in [0,T_0].\]
+Then by \eqref{eq:PtPsbound}, 
+$\|(e^{-tA_m}-e^{-sA_m})u_m\|_2<C|t-s|^{1/2}+\delta$. Similarly, 
+\begin{align*}
+\|A_m(e^{-tA_m}-e^{-sA_m})u_m\|_2
+&=\|\Pi_m^*(P_t^m-P_s^m)A_mu_m\|_{L^2}\\
+&\leq \|\Pi_m^*(P_t^m-P_s^m)\Pi_m A^\rho f_B\|_{L^2}+\|\Pi_m^* A_mu_m-A^\rho f_B\|_{L^2}.
+\end{align*}
+Applying \eqref{eq:trotterkato} with $f=A^\rho f_B$, $T=T_0$, and
+\eqref{eq:Aumapprox}, for any $\delta>0$ and all large enough $m$,
+\[\|A_m(e^{-tA_m}-e^{-sA_m})u_m\|_2<
+\|(P_t^\rho-P_s^\rho)A^\rho f_B\|_{L^2}+\delta/2 \text{ for all } s,t \in [0,T_0].\]
+Then by \eqref{eq:PtPsAbound},
+$\|A_m(e^{-tA_m}-e^{-sA_m})u_m\|_2<C|t-s|^{1/2}+\delta$,
+showing statement (v).
+
+For statement (vi), note that
+\[u_m^\top e^{-tA_m^\top}A_me^{-sA_m}u_m
+=\langle \Pi_m^* P_t^m u_m,\Pi_m^*P_s^mA_mu_m \rangle_{L^2}.\]
+Then by the same arguments as above and Cauchy-Schwarz,
+for any $\delta>0$ and all large enough $m$, 
+\begin{align*}
+\Big|u_m^\top e^{-tA_m^\top}A_me^{-sA_m}u_m
+-\langle P_t^\rho f_B,P_s^\rho A f_B \rangle_{L^2}\Big|<\delta/2
+\text{ for all } s,t \in [0,T_0].
+\end{align*}
+The bound \eqref{eq:lstarapprox} shows
+$|\langle P_t^\rho f_B,P_s^\rho Af_B \rangle_{L^2}-\ell_*(t,s)|<\delta/2$
+for all $s,t \in [0,T_0]$, showing (vi).
+\end{proof}
+
+The above lemma implies the following coupling result for stationary
+Gaussian processes with covariances $c_g^0(\tau)$ and $\tilde c_g^m(\tau)=u_m^\top e^{-|\tau|A_m}u_m$.
+
+\begin{corollary}\label{cor:semigroupapprox}
+Suppose the conditions of Theorem \ref{thm:replica} hold.
+Then there exists a constant $C>0$ such that
+given any $\eps>0$, there exist $m \geq 1$, 
+$u_m \in \R^m$ with $\|u_m\|_2<C$, and $A_m \in \R^{m \times m}$ with
+$A_m+A_m^\top$ strictly positive definite, such that the following holds:
+
+For all $\tau \in \R$ let
+\[c_g^0(\tau)=c_g(\tau)-q_*\cR_\Lambda'(v_*-q_*),
+\qquad \tilde c_g^m(\tau)=u_m^\top e^{-|\tau|A_m}u_m,\]
+and for $\tau \geq 0$ let
+\[r_g(\tau)=-c_g'(\tau),
+\qquad \tilde r_g^m(\tau)=-(\tilde c_g^m)'(\tau)
+=u_m^\top A_me^{-\tau A_m}u_m\]
+(with derivatives understood from the right at $\tau=0$). Then
+\begin{equation}\label{eq:cg0approx}
+|\tilde c_g^m(0)-\cR_{\Lambda}(v_*-q_*)|<\eps,
+\end{equation}
+\begin{equation}\label{eq:rgapprox}
+\int_0^\infty |r_g(\tau)-\tilde r_g^m(\tau)|\,\d \tau<\eps.
+\end{equation}
+Furthermore, $c_g^0$ and $\tilde c_g^m$ are both symmetric and
+positive-semidefinite on $\R$, and for any $T>0$,
+there exists a coupling of two stationary Gaussian processes
+$\{g_0^t\}_{t \in \R} \sim \GP(0,c_g^0)$ and $\{\tilde g^t\}_{t \in \R}
+\sim \GP(0,\tilde c_g^m)$ such that
+\begin{equation}\label{eq:cgcoupling}
+\sup_{t \in [0,T]} \E(g_0^t-\tilde g^t)^2<\eps^2.
+\end{equation}
+\end{corollary}
+For our later arguments, we emphasize that the coupling \eqref{eq:cgcoupling} is
+ensured for a single fixed $m=m(\eps)$, and arbitrarily large $T$.
+
+\begin{proof}
+Let $\eps$ be the given constant, and
+let $T_0=T_0(\eps)$ be as given in Lemma \ref{lemma:semigroupapprox}. Let
+$\{(A_m,u_m)\}_{m=1}^\infty$ be a sequence of pairs in $\R^{m \times m} \times
+\R^m$, such that each $(A_m,u_m)$ attains the guarantees of Lemma
+\ref{lemma:semigroupapprox} for $(\eps,T_0)$ and $(\delta,T)=(\delta_m,T_m)$,
+where
+\[\delta_m \to 0 \text{ and } T_m \to \infty \text{ as }
+m \to \infty.\]
+Recall from Lemma \ref{lemma:ttig} that $c_g^0(0)=\cR_\Lambda(v_*-q_*)$.
+Then for any $m$ large enough such that $\delta_m<\eps$, \eqref{eq:cg0approx}
+and \eqref{eq:rgapprox}
+hold by statements (i) and (ii) of Lemma \ref{lemma:semigroupapprox}.
+
+For the coupling statement \eqref{eq:cgcoupling},
+for each $m \geq 1$, let $\{b_m^t\}_{t \in \R}$ be a standard bi-directional
+Brownian motion on $\R^m$ with $b_m^0=0$,
+and let $\Sigma_m \in \R^{m \times m}$ be any matrix such that
+$A_m+A_m^\top=\Sigma_m\Sigma_m^\top$. Denote
+\[v_m^t=\Sigma_m^\top e^{-t A_m}u_m \in \R^m.\]
+We note that $\tilde c_g^m$ is the
+covariance of the Gaussian process
+\[\tilde g_m^t=\int_{-\infty}^t v_m^{t-s\top}\d b_m^s.\]
+Indeed, note that for any $t_0<t$,
+\begin{align*}
+\E\left(\int_{t_0}^t v_m^{t-s\top}\d b_m^s\right)^2
+&=\int_{t_0}^t u_m^\top e^{-(t-s)A_m^\top}\Sigma_m\Sigma_m^\top
+e^{-(t-s)A_m}u_m\,\d s\\
+&=\int_0^{t-t_0} u_m^\top e^{-sA_m^\top}(A_m+A_m^\top)
+e^{-sA_m}u_m\,\d s\\
+&=u_m^\top(I-e^{-(t-t_0)A_m^\top}e^{-(t-t_0)A_m})u_m\\
+&=\|u_m\|_2^2-\|e^{-(t-t_0)A_m}u_m\|_2^2 \leq \|u_m\|_2^2.
+\end{align*}
+Since $A_m+A_m^\top$ is positive definite, we have
+$\|e^{-tA_m}\|_\op<1$ and 
+$\|e^{-(t-t_0)A_m}u_m\|_2^2 \to 0$ as $t_0 \to -\infty$. Then $\tilde g_m^t$ is
+well-defined, and $\E(\tilde g_m^t)^2=\|u_m\|_2^2=\tilde c_g^m(0)$.
+An analogous calculation shows, for $s \leq t$,
+\begin{align*}
+\E\tilde g_m^s\tilde g_m^t&=u_m^\top 
+\left(\int_{-\infty}^s e^{-(s-r)A_m^\top}(A_m+A_m^\top)e^{-(s-r)A_m}\d r\right)
+e^{-(t-s)A_m}u_m=u_m^\top e^{-(t-s)A_m}u_m=\tilde c_g^m(t-s),
+\end{align*}
+so $\tilde c_g^m(\tau)$ is the covariance of $\{\tilde g_m^t\}_{t \in \R}$ as
+claimed. In particular, $\tilde c_g^m$ is symmetric positive-semidefinite.
+
+Let us first couple $\{\tilde g_m^t\} \sim \GP(0,\tilde c_g^m)$ and
+$\{\tilde g_n^t\} \sim \GP(0,\tilde c_g^n)$: 
+Property (iv) of Lemma \ref{lemma:semigroupapprox} ensures
+\[\int_{T_0}^\infty \|v_m^t\|_2^2 \d t
+=\int_{T_0}^\infty u_m^\top e^{-tA_m^\top}(A_m+A_m^\top)e^{-tA_m}u_m \d t
+=\|e^{-T_0A_m}u_m\|_2^2<\eps^2\]
+for all $m \geq 1$. Set $\gamma=\eps^2/T_0$.
+For any $t \in [0,T_0]$, let
+$\lfloor t \rfloor=\max\{k\gamma:k \in \N,k\gamma \leq t\}$ be the largest
+integer multiple of $\gamma$ that is at most $t$. Then by property (v) of Lemma
+\ref{lemma:semigroupapprox}, for all $m \geq 1$ for which $\delta_m<\gamma^{1/2}$
+and $T_m>T_0$, we have
+\[\int_0^{T_0} \|v_m^t-v_m^{\lfloor t \rfloor}\|_2^2
+\d t=\int_0^{T_0} 2u_m^\top (e^{-tA_m^\top}
+-e^{-\lfloor t \rfloor A_m^\top})A_m
+(e^{-tA_m}-e^{-\lfloor t \rfloor A_m})u_m \d t<CT_0\gamma=C\eps^2.\]
+Let $E=[0,T_0] \cap \{k\gamma:k \in \N\}$. Then property
+(vi) of Lemma \ref{lemma:semigroupapprox} ensures that
+\[\lim_{m,n \to \infty}
+\sup_{s,t \in E} |v_m^{s\top} v_m^t
+-v_n^{s\top} v_n^t|
+=\lim_{m,n \to \infty}
+\sup_{s,t \in E} |2u_m^\top e^{-sA_m^\top}A_m e^{-tA_m}u_m
+-2u_n^\top e^{-sA_n^\top}A_n e^{-tA_n}u_n|=0.\]
+Then we may construct, for each pair $m,n \geq 1$, some
+$N=N(n,m)$ and isometric embeddings $\iota_m:\R^m \to \R^N$ and
+$\iota_n:\R^n \to \R^N$, such that
+\[\lim_{m,n \to \infty} \sup_{t \in E} \|\iota_m(v_m^t)-\iota_n(v_n^t)\|_2=0.\]
+(For example, letting $K_m \in \R^{|E| \times |E|}$ and $K_n \in \R^{|E| \times
+|E|}$ have entries $(v_m^{s\top}v_m^t)_{s,t \in E}$
+and $(v_n^{s\top}v_n^t)_{s,t \in E}$, we may set $N(n,m)=|E|$,
+$\iota_m(v_m^t)=K_m^{1/2}e_t$, and $\iota_n(v_n^t)=K_n^{1/2}e_t$
+where $e_t$ is the standard basis vector in $\R^{|E|}$ for each $t \in E$.)
+Then, letting $\{b_N^t\}_{t \geq 0}$ be a standard Brownian motion on $\R^N$,
+we may couple $\{\tilde g_m^t\} \sim \GP(0,\tilde c_g^m)$ and
+$\{\tilde g_n^t\} \sim \GP(0,\tilde c_g^n)$ as
+\[\tilde g_m^t=\int_{-\infty}^t \iota_m(v_m^{t-s})^\top \d b_N^s,
+\qquad \tilde g_n^t=\int_{-\infty}^t \iota_n(v_n^{t-s})^\top \d b_N^s.\]
+Denoting by $\E_{\pi(m,n)}$ the expectation over this coupling,
+for any $m,n \geq 1$ such that
+$\delta_m,\delta_n<\iota^{1/2}$ and $T_m,T_n>T_0$, we then have
+\begin{align*}
+&\E_{\pi(m,n)}(\tilde g_m^t-\tilde g_n^t)^2
+=\int_{-\infty}^t \|\iota_m(v_m^{t-s})-\iota_n(v_n^{t-s})\|_2^2 \d s\\
+&=\int_0^\infty \|\iota_m(v_m^s)-\iota_n(v_n^s)\|_2^2 \d s\\
+&\leq 3\int_0^{T_0} \left(\|v_m^s-v_m^{\lfloor s \rfloor}\|_2^2
++\|v_n^s-v_n^{\lfloor s \rfloor}\|_2^2+\|\iota_m(v_m^{\lfloor s
+\rfloor})-\iota_n(v_n^{\lfloor s \rfloor})\|_2^2\right)\d s
++2\int_{T_0}^\infty \left(\|v_m^s\|_2^2+\|v_n^s\|_2^2\right)\d s\\
+&\leq C'\eps^2+3\int_0^{T_0} 
+\|\iota_m(v_m^{\lfloor s \rfloor})-\iota_n(v_n^{\lfloor s \rfloor})\|_2^2
+\d s
+\end{align*}
+for a constant $C>0$. Thus
+\[\lim_{m,n \to \infty} \sup_{t \in \R}
+\E_{\pi(m,n)}(\tilde g_m^t-\tilde g_n^t)^2 \leq C'\eps^2,\]
+implying that there exists a fixed index $m=m(\eps)$ large enough so that
+$\delta_m<\iota^{1/2}$, $T_m>T_0$, and
+\[\lim_{n \to \infty} \sup_{t \in \R}
+\E_{\pi(m,n)}(\tilde g_m^t-\tilde g_n^t)^2 \leq C'\eps^2.\]
+
+Since Lemma \ref{lemma:semigroupapprox} ensures that $c_g^0$ is the pointwise
+limit of positive-semidefinite functions $\tilde c_g^m$, it is also
+positive-semidefinite. For any given time horizon $T>0$,
+we may couple $\tilde g_n^t \sim \GP(0,\tilde c_g^n)$
+and $g_0^t \sim \GP(0,c_g^0)$ generically over $[0,T]$, by noting that Lemma
+\ref{lemma:ttig} implies
+\begin{equation}\label{eq:cgcontinuity}
+|c_g^0(t-t)+c_g^0(s-s)-2c_g^0(t-s)|
+=2|c_g(0)-c_g(t-s)| \leq C|t-s|
+\end{equation}
+for a constant $C>0$. Then there exists a coupling of $\tilde g_n^t$ and $g_0^t$ such that
+\[\sup_{t \in [0,T]} \E(\tilde g_n^t-g_0^t)^2
+\leq C'(1+\sqrt{T}) \cdot \sqrt{\sup_{t,s \in [0,T]}
+|c_g^0(t-s)-\tilde c_g^n(t-s)|}\]
+(c.f.\ \cite[Lemma D.1]{fan2025dynamicalII}). Since $[0,T] \subset [0,T_n]$ for all large $n$, property
+(i) of Lemma \ref{lemma:semigroupapprox} then ensures that there exists
+$n=n(\eps,T)$ large enough such that
+\[\sup_{t \in [0,T]} \E(\tilde g_n^t-g_0^t)^2<\eps^2.\]
+Combining with the above, there exists a coupling of $\{\tilde g_m^t\} \sim
+\GP(0,\tilde c_g^m)$ and $\{g_0^t\} \sim \GP(0,c_g^0)$ such that
+\[\sup_{t \in [0,T]}\E(\tilde g_m^t-g_0^t)^2<C''\eps^2.\]
+The lemma follows upon adjusting $\eps$, i.e.\ applying the preceding
+with $\eps/(C'')^{1/2}$ in place of $\eps$.
+\end{proof}
+
+We now couple the generalized Langevin process $\{\theta^t\}_{t \geq 0}$ in the dynamical mean-field limit of
+Definition \ref{def:DMFT} with a process $\tilde\theta^t$ defined from
+$(\tilde c_g^m,\tilde r_g^m)$, which will admit a Markovian representation.
+
+\begin{lemma}\label{lemma:thetacoupling}
+Suppose the conditions of Theorem \ref{thm:replica} hold.
+Fix any sufficiently large $T_0,T>0$ and sufficiently small $\eps>0$.
+Let $(\tilde c_g,\tilde r_g) \equiv (\tilde c_g^m,\tilde r_g^m)$ be
+the kernels of Corollary \ref{cor:semigroupapprox} for this $\eps$. Let
+$\{\tilde g^t\}_{t \in \R},\{\tilde b^t\}_{t \geq T_0},z$
+be mutually independent such that
+$\{\tilde g^t\}_{t \in \R} \sim \GP(0,\tilde c_g)$,
+$\{\tilde b^t\}_{t \geq T_0}$ is a standard Brownian motion with $\tilde b^{T_0}=0$, and $z \sim \cN(0,q_*\cR_\Lambda'(v_*-q_*))$.
+
+Then there is a coupling of
+$(\{\tilde g^t\}_{t \in \R},\{\tilde b^t\}_{t \geq T_0},z)$
+with the process $\{\theta^t\}_{t \geq 0}$ in \eqref{eq:dmft-theta} of
+Definition \ref{def:DMFT} such that the following holds: Define the process
+$\{\tilde \theta^t\}_{t \geq 0}$ by
+\begin{align*}
+\tilde\theta^t&=\theta^t \text{ for all } t \in [0,T_0],\\
+\d\tilde \theta^t&=
+\left[-U'(\tilde \theta^t)+\int_0^t \tilde r_g(t-s)
+\tilde \theta^s ds+\tilde g^t+z\right]
+\d t+\sqrt{2}\,\d \tilde b^t \text{ for } t \geq T_0.
+\end{align*}
+Then for some constants $C,c>0$ not depending on $T_0,T,\eps$,
+\begin{equation}\label{eq:thetafourthmoment}
+\sup_{t \geq 0} \E(\theta^t)^4<C,
+\qquad \sup_{t \geq 0} \E(\tilde \theta^t)^4<C,
+\end{equation}
+and
+\begin{equation}\label{eq:thetacoupling}
+\sup_{t \in [T_0,T_0+T]} \E(\tilde \theta^t-\theta^t)^2
+<C(\eps+T^{1/4}e^{-cT_0})^{2/3}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+We construct the coupling as follows: By Lemma \ref{lemma:ttig}, there exist
+$C,c>0$ such that
+\[\sup_{s,t \in [T_0,T_0+T]} |C_g(t,s)-c_g(t-s)|<Ce^{-cT_0}.\]
+Writing $c_g(\tau)=c_g^0(\tau)+q_*\cR_\Lambda'(v_*-q_*)$
+where $q_*\cR_\Lambda'(v_*-q_*)=\lim_{\tau \to \infty} c_g(\tau) \geq 0$,
+we may represent a centered stationary Gaussian process with covariance
+$c_g$ on $\R$ as
+\[\{g_0^t+z\}_{t \in \R} \sim \GP(0,c_g)\]
+where
+\[\{g_0^t\}_{t \in \R} \sim \GP(0,c_g^0),
+\qquad z \sim \cN(0,q_*\cR_\Lambda'(v_*-q_*)),\]
+and these are independent. Then by the bound \eqref{eq:cgcontinuity} and
+\cite[Lemma D.1]{fan2025dynamicalII}, for some constants
+$C,c>0$, there exists a coupling of $\{g^t\}_{t \in [T_0,T_0+T]}
+\sim \GP(0,C_g)$ and $\{g_0^t+z\}_{t \in \R} \sim \GP(0,c_g)$ such that
+\[\sup_{t \in [T_0,T_0+T]} \E(g_0^t+z-g^t)^2<C\sqrt{T}\,e^{-cT_0}.\]
+By Corollary \ref{cor:semigroupapprox}, we may couple $\{g_0^t\}_{t \in \R} \sim
+\GP(0,c_g^0)$ and $\{\tilde g^t\}_{t \in \R} \sim \GP(0,\tilde c_g)$
+such that
+\[\E(g_0^t-\tilde g^t)^2<\eps^2\]
+for all $t \in [T_0,T_0+T]$, yielding a coupling of
+$(\{\tilde g^t\}_{t \in \R},z)$ with $\{g^t\}_{t \in [T_0,T_0+T]}$
+such that
+\begin{equation}\label{eq:finalgcoupling}
+\sup_{t \in [T_0,T_0+T]} \E(\tilde g^t+z-g^t)^2
+<C(\eps^2+\sqrt{T} \cdot e^{-cT_0}).
+\end{equation}
+
+Next, we adapt a sticky/reflection coupling
+argument of \cite{eberle2016reflection,eberle2019sticky} and \cite[Lemma
+3.3]{fan2025dynamicalII} to couple $\{\theta^t\}_{t \geq T_0}$ and
+$\{\tilde \theta^t\}_{t \geq T_0}$.
+Fix $\delta>0$, and let $h_\delta:[0,\infty) \to [0,1]$ be a smooth
+Lipschitz function such that
+\begin{equation}\label{eq:couplingboundary}
+h_\delta(0)=0, \qquad h_\delta(x)=1 \text{ for } x \geq \delta.
+\end{equation}
+Let $\{b_1^t\}_{t \geq T_0}$ and $\{b_2^t\}_{t \geq T_0}$
+be two standard Brownian motions independent of each other and of
+$(\{\theta^t\}_{t \in [0,T_0]},\{b^t\}_{t \in [0,T_0]},
+\{g^t\}_{t \in [0,T_0+T]},\{\tilde g^t\}_{t \in \R},z)$.
+We couple $\{\theta^t\}_{t \geq T_0}$ and
+$\{\tilde \theta^t\}_{t \geq T_0}$ by the evolutions
+\begin{align*}
+\d \theta^t&=\left[{-}U'(\theta^t)+\int_0^t R_g(t,s)\theta^s \d s+g^t\right]\d t
+\underbrace{+h_\delta(|\theta^t-\tilde \theta^t|)\sqrt{2}\,\d b_1^t
++\sqrt{2(1-h_\delta(|\theta^t-\tilde \theta^t|)^2)}\,\d b_2^t}_{=\sqrt{2} \d b^t},\\
+\d \tilde \theta^t&=\left[{-}U'(\tilde \theta^t)+\int_0^t \tilde r_g(t-s)
+\tilde \theta^s \d s+\tilde g^t+z\right]\d t
+\underbrace{-h_\delta(|\theta^t-\tilde \theta^t|)\sqrt{2}\,\d b_1^t
++\sqrt{2(1-h_\delta(|\theta^t-\tilde \theta^t|)^2)}\,\d b_2^t}_{=\sqrt{2}\d \tilde b^t}.
+\end{align*}
+L\'evy's characterization of Brownian motion shows that $\{b^t\}_{t \geq T_0}$
+and $\{\tilde b^t\}_{t \geq T_0}$ defined above
+are both standard Brownian motions adapted to the filtration generated by
+$\theta^t,\tilde \theta^t,g^t,\tilde g^t,b_1^t,b_2^t$,
+and hence the above processes indeed
+coincide in law with $\{\theta^t\}_{t \geq T_0}$ and
+$\{\tilde \theta^t\}_{t \geq T_0}$.
+
+Let us first check the fourth moment
+bound \eqref{eq:thetafourthmoment} for all sufficiently small
+$\eps>0$. For $\{\theta^t\}_{t \geq 0}$,
+starting with the second moment, It\^o's formula gives
+\begin{equation}\label{eq:itothetasq}
+\frac{\d}{\d t}\E(\theta^t)^2=
+\E\left[2\theta^t\left(-U'(\theta^t)+\int_0^t R_g(t,s)\theta^s \d
+s+g^t\right)\right]+2.
+\end{equation}
+By Lemma \ref{lemma:ttig}, there exists some $\iota>0$ small enough
+such that $\int_0^\infty |r_g(s)|\d s<\alpha-4\iota$, and hence also for all
+large $t$,
+\[\int_0^t |R_g(t,s)|\d s
+\leq \int_0^t |R_g(t,s)-r_g(t-s)|\d s+\int_0^t |r_g(t-s)|\d s
+<\alpha-3\iota.\]
+By the condition \eqref{eq:Uconvexity} for $U(\cdot)$, there exists a
+constant $C=C(\alpha,\iota)>0$ such that $\theta U'(\theta) \geq (\alpha-\iota)
+\theta^2-C$ for all $\theta \in \R$.
+Furthermore Lemma \ref{lemma:tti} implies $\E(g^t)^2=C_g(t,t)<C$
+for some constant $C>0$ and all $t \geq 0$,
+so $\E\theta^t g^t \leq \iota \E(\theta^t)^2+C'$ for some
+$C'=C'(\iota)>0$.
+Then for a constant $C(\iota)>0$ and all large $t$,
+\begin{align*}
+\frac{\d}{\d t}\E(\theta^t)^2
+&\leq -2(\alpha-2\iota)\,\E(\theta^t)^2
++2(\alpha-3\iota)\sup_{s \in [0,t]} \E|\theta^t\theta^s|+C(\iota)\\
+&\leq -2(\alpha-2\iota)\,\E(\theta^t)^2
++2(\alpha-3\iota)[\E(\theta^t)^2]^{1/2} \cdot \sup_{s \in [0,t]}
+[\E(\theta^s)^2]^{1/2}+C(\iota).
+\end{align*}
+Consider $M(t)=\sup_{s \in [0,t]} \E(\theta^s)^2$. Since
+$t \mapsto \E(\theta^t)^2$ is continuously-differentiable by
+\eqref{eq:itothetasq}, then so is $M(t)$
+with $\frac{\d}{\d t}M(t)=\frac{\d}{\d t} \E(\theta^t)^2$ if
+$M(t)=\E(\theta^t)^2$, and $\frac{\d}{\d t}M(t)=0$ otherwise. Thus the above
+gives
+\[\frac{\d}{\d t}M(t)
+\leq \max\left(0,{-}2\iota M(t)+C(\iota)\right)\]
+for all large $t$, implying that $M(t)$ is uniformly bounded over $t \geq 0$.
+Thus for a constant $C>0$,
+\[\sup_{t \geq 0} \E(\theta^t)^2 \leq C.\]
+Now for the fourth moment, It\^o's formula gives
+\[\frac{\d}{\d t}\E(\theta^t)^4
+=\E\left[4(\theta^t)^3\left({-}U'(\theta^t)+\int_0^t R_g(t,s)\theta^s \d s
++g^t\right)+12(\theta^t)^2\right].\]
+Applying $\theta^3 U'(\theta) \geq (\alpha-\iota) \theta^4-C\theta^2$,
+$\E(\theta^t)^3g^t
+\leq \iota \E(\theta^t)^4+C\E(g^t)^4 \leq \iota \E(\theta^t)^4+C'$, H\"older's
+inequality, and the above second moment bound,
+\[\frac{\d}{\d t}\E(\theta^t)^4
+\leq -4(\alpha-2\iota)\E(\theta^t)^4+4(\alpha-3\iota)[\E(\theta^t)^4]^{3/4}
+\sup_{s \in [0,t]} [\E(\theta^s)^4]^{1/4}+C(\iota).\]
+Then the same argument as above shows $\sup_{t \geq 0} \E(\theta^t)^4 \leq C$,
+giving the first statement of \eqref{eq:thetafourthmoment}. The argument for
+the second statement is the same, noting that
+Corollary \ref{cor:semigroupapprox} implies
+$\E(\tilde g^t)^2=\|u_m\|_2^2<C$ for all $t \in \R$ and some $C>0$ 
+(thus $\E(\tilde g^t)^4 \leq C'$), and also for $\eps>0$ sufficiently small,
+\[\int_0^t |\tilde r_g(t-s)|\d s
+\leq \int_0^t |\tilde r_g(t-s)-r_g(t-s)|\d s
++\int_0^t |r_g(t-s)|\d s<\eps+(\alpha-4\iota)<\alpha-3\iota.\]
+Then the same arguments as above applied for $\tilde\theta^t$ and
+$t \geq T_0$ show the second statement of \eqref{eq:thetafourthmoment}.
+
+Now set
+\[\xi^t=\theta^t-\tilde \theta^t,\]
+\[v^t=-U'(\theta^t)+\int_0^t R_g(t,s)\theta^s \d s+g^t,
+\qquad \tilde v^t=-U'(\tilde \theta^t)+\int_0^t \tilde r_g(t-s)
+\tilde \theta^s \d s+\tilde g^t+z.\]
+Thus
+\[\d \xi^t=(v^t-\tilde v^t)\d t+2\sqrt{2}h_\delta(|\xi^t|)\,\d b_1^t.\]
+Applying It\^o's formula with a smooth approximation $S_{\delta'}(x)$
+of $|x|$, and then taking $\delta' \to 0$, gives
+(c.f.\ \cite[Eq.\ (4.4)]{eberle2019sticky})
+\begin{equation}\label{eq:dabsxi}
+\d|\xi^t|=\sign(\xi^t)(v^t-\tilde v^t)\d t
++2\sqrt{2}\sign(\xi^t)h_\delta(|\xi^t|)\d b_1^t,
+\end{equation}
+where the property $h_\delta(0)=0$ ensures there is no additional term from the
+local time of $\xi^t$ at 0.  
+Let $A:[0,\infty) \to [0,\infty)$ be a function chosen later, and set
+\[r^t=|\xi^t|+\int_0^t A(t-s)|\xi^s|\d s\]
+Let $f:[0,\infty) \to [0,\infty)$ be a function chosen later, such that
+$f(r)$ is differentiable and $f'(r)$ is absolutely continuous, and
+\[f'(r) \in [0,1], \qquad f''(r) \leq 0 \text{ for a.e. } r \geq 0.\]
+Then applying It\^o's formula again with \eqref{eq:dabsxi} for $\d|\xi^t|$ gives
+\begin{equation}\label{eq:itobound1}
+\frac{\d}{\d t}
+\E f(r^t)=\E\left[f'(r^t)\left(\sign(\xi^t)(v^t-\tilde v^t)+A(0)|\xi^t|
++\int_0^t A'(t-s)|\xi^s|\d s\right)+4f''(r^t)h_\delta(|\xi^t|)^2\right].
+\end{equation}
+
+By Lemma \ref{lemma:ttig} and dominated convergence,
+$\lim_{\iota \to 0} \int_0^\infty e^{\iota s} |r_g(s)|\d s<\alpha$. Then
+there must exist a sufficiently small constant $\iota>0$ such that
+\[\int_0^\infty e^{\iota s} |r_g(s)|\d s<\alpha-2\iota.\]
+Let us set
+\[\qquad A(t)=e^{-\iota t}\left(\alpha-2\iota-\int_0^t e^{\iota s}|r_g(s)|\d s
+\right).\]
+This satisfies
+\[A(0)=\alpha-2\iota, \qquad A(t)>0, \qquad A'(t)={-}\iota A(t)-|r_g(t)|.\]
+Define
+\[\Delta_t=\int_0^t |R_g(t,s)-r_g(t-s)| \cdot \E|\theta^s|\d s
++\int_0^t |\tilde r_g(t-s)-r_g(t-s)| \cdot \E|\tilde \theta^s|\d s
++\E|\tilde g^t+z-g^t|.\]
+Then, applying a triangle inequality and $f'(r) \in [0,1]$,
+\begin{align}
+&\E[f'(r^t)\sign(\xi^t)(v^t-\tilde v^t)]\notag\\
+&\leq \E\left[f'(r^t)\sign(\xi^t)\Big({-}U'(\theta^t)+U'(\tilde \theta^t)\Big)
++f'(r^t)\left|\int_0^t R_g(t,s)\theta^s\d s
+-\int_0^t \tilde r_g(t-s)\tilde \theta^s\d s+g^t-(\tilde g^t+z)\right|\right]\notag\\
+&\leq \E\left[f'(r^t)\sign(\xi^t)\Big({-}U'(\theta^t)+U'(\tilde \theta^t)\Big)
++f'(r^t)\int_0^t |r_g(t-s)| \cdot |\xi^s|\d s\right]+\Delta_t.
+\label{eq:itobound2}
+\end{align}
+Let
+\[\kappa(r)=\inf_{x,y:|x-y|=r} \frac{U'(x)-U'(y)}{x-y}.\]
+Then
+\[\sign(\xi^t)\Big({-}U'(\theta^t)+U'(\tilde \theta^t)\Big)
+={-}|\theta^t-\tilde \theta^t|
+\frac{U'(\theta^t)-U'(\tilde \theta^t)}{\theta^t-\tilde \theta^t}
+\leq -|\xi^t|\kappa(|\xi^t|).\]
+Applying this bound and the identities $A(0)=\alpha-2\iota$ and
+$|r_g(t-s)|={-}\iota A(t-s)-A'(t-s)$ into
+\eqref{eq:itobound2} and \eqref{eq:itobound1},
+and re-identifying the definition of $r^t$,
+\begin{equation}\label{eq:itoboundfinal}
+\frac{\d}{\d t}
+\E f(r^t)\leq \E\left[-\iota f'(r^t)r^t
++f'(r^t)|\xi^t|(\alpha-\iota-\kappa(|\xi^t|))
++4f''(r^t)h_\delta(|\xi^t|)^2\right]+\Delta_t.
+\end{equation}
+Here, for some constants $C,c>0$, note that $\Delta_t$ satisfies the bound
+\begin{equation}\label{eq:Deltatbound}
+\sup_{t \in [T_0,T_0+T]} \Delta_t \leq C(\eps+T^{1/4}e^{-cT_0})
+\end{equation}
+by \eqref{eq:thetafourthmoment}, \eqref{eq:finalgcoupling}, 
+$\int_0^t |R_g(t,s)-r_g(t-s)|\d s<Ce^{-cT_0}$
+from Lemma \ref{lemma:ttig}, and
+$\int_0^t |r_g(t-s)-\tilde r_g(t-s)|\d s<\eps$ from
+Corollary \ref{cor:semigroupapprox}.
+
+We proceed to derive a differential inequality for $\E f(r^t)$ from
+\eqref{eq:itoboundfinal}.
+By the condition \eqref{eq:Uconvexity} for $U(\cdot)$,
+for some $C,R>0$, we must have
+\[\kappa(r) \geq -C \text{ for all }
+r \geq 0, \qquad \kappa(r) \geq \alpha-\iota \text{ for all } r \geq R.\]
+Denote
+\[\tilde \kappa(r)=\max(\alpha-\iota-\kappa(r),0)\]
+so that
+\[0 \leq \tilde \kappa(r) \leq C_0:=C+\alpha-\iota \text{ for all } r \geq 0,
+\qquad \tilde \kappa(r)=0 \text{ for all } r \geq R.\]
+Note that this implies
+\[r\tilde \kappa(r) \leq C_0R \text{ for all } r \geq 0.\]
+Recalling the cutoff $\delta>0$ defining $h_\delta(x)$ in
+\eqref{eq:couplingboundary}, denote
+\[K(r)=\sup_{t \in [T_0,T_0+T]} \E\Big[|\xi^t|\tilde \kappa(|\xi^t|)\,\Big|\,
+r^t=r,\,|\xi^t|>\delta\Big] \in [0,C_0R].\]
+Then, using that $h_\delta(x)=1$ when $x>\delta$, for any $t \in [T_0,T_0+T]$ we have
+\begin{align*}
+&\E\left[-\iota f'(r^t)r^t
++f'(r^t)|\xi^t|(\alpha-\iota-\kappa(|\xi^t|))
++4f''(r^t)h_\delta(|\xi^t|)^2 \,\Big|\,r^t=r,\,|\xi^t|>\delta \right]\\
+&\leq \E\left[-\iota f'(r^t)r^t
++f'(r^t)|\xi^t|\tilde \kappa(|\xi^t|)
++4f''(r^t) \,\Big|\,r^t=r,\,|\xi^t|>\delta \right]\\
+&={-}\iota f'(r)r+f'(r)K(r)+4f''(r).
+\end{align*}
+Let us set $f:[0,\infty) \to [0,\infty)$ as
+\[f(0)=0,
+\qquad f'(r)=\exp\left(-\frac{1}{4}\int_0^{\max(r,2C_0R/\iota)}
+K(s)\d s\right)\]
+Thus $f'(r)$ is absolutely continuous and satisfies $f'(r) \in [c_0,1]$ for a
+constant $c_0>0$ (depending on $C_0,R,\iota$), and
+\[f''(r)=\begin{cases} {-}\frac{1}{4}f'(r)K(r) & \text{ if } r \leq
+2C_0R/\iota \\
+0 & \text{ if } r>2C_0R/\iota. \end{cases}\]
+For this choice of $f(r)$, substituting above gives
+\begin{align*}
+&\E\left[-\iota f'(r^t)r^t
++f'(r^t)|\xi^t|(\alpha-\iota-\kappa(|\xi^t|))
++4f''(r^t)h_\delta(|\xi^t|)^2 \,\Big|\,r^t=r,\,|\xi^t|>\delta \right]\\
+&\leq {-}\iota f'(r)r
++\begin{cases} 0 & r \leq 2C_0R/\iota \\
+f'(r)K(r) & r>2C_0R/\iota \end{cases}\\
+&\leq {-}(\iota/2)f'(r)r
+\end{align*}
+where the second inequality applies $K(r) \leq C_0R<\iota
+r/2$ when $r>2C_0R/\iota$. On the complementary event $|\xi^t| \leq \delta$,
+let us simply apply $f'(r) \leq 1$, $f''(r) \leq 0$, and
+$\tilde \kappa(r) \leq C_0$ to get
+\[\E\left[-\iota f'(r^t)r^t
++f'(r^t)|\xi^t|(\alpha-\iota-\kappa(|\xi^t|))
++4f''(r^t)h_\delta(|\xi^t|)^2 \,\Big|\,r^t=r,\,|\xi^t| \leq \delta \right]
+\leq -\iota f'(r)r+C_0\delta.\]
+Combining these bounds, taking the expectation over $r^t$, and applying this to
+\eqref{eq:itoboundfinal} yields
+\[\frac{\d}{\d t}
+\E f(r^t)\leq {-}(\iota/2)\E[f'(r^t)r^t]+C_0\delta+\Delta_t.\]
+Finally, applying $f(0)=0$ and $f'(r^t) \in [c_0,1]$, hence
+$r^t \geq f(r^t) \geq c_0r^t$, we obtain the desired differential inequality
+\[\frac{\d}{\d t}
+\E f(r^t)\leq {-}(c_0\iota/2)\E[f(r^t)]+C_0\delta+\Delta_t.\]
+Here $\delta>0$ is arbitrary, $C_0,c_0,\iota$ do not depend on $\delta$,
+and $f(r^{T_0})=f(0)=0$, so Gr\"onwall's inequality and \eqref{eq:Deltatbound}
+show
+\[\sup_{t \in [T_0,T_0+T]} \E f(r^t) \leq C \sup_{t \in [T_0,T_0+T]} \Delta_t
+\leq C'(\eps+T^{1/4}e^{-cT_0}).\]
+Since
+also $\E|\xi^t| \leq \E r^t \leq c_0^{-1}\E f(r^t)$, this establishes for some
+constants $C,c>0$ that
+\[\sup_{t \in [T_0,T_0+T]} \E|\theta^t-\tilde \theta^t|
+\leq C(\eps+T^{1/4}e^{-cT_0}).\]
+The desired bound for $\E(\theta^t-\tilde\theta^t)^2$
+then follows from $\E(\theta^t-\tilde\theta^t)^2 \leq
+\E[|\theta^t-\tilde\theta^t|]^{2/3}\E[|\theta^t-\tilde\theta^t|^4]^{1/3}$ and
+the fourth moment bounds of \eqref{eq:thetafourthmoment}.
+\end{proof}
+
+We now prove Theorem \ref{thm:replica}.
+
+\begin{proof}[Proof of Theorem \ref{thm:replica}]
+
+
+Fix constants $T_0,T,\eps>0$ to be determined, and let
+$(\{\tilde \theta^t\}_{t \geq 0},z)$
+be as constructed in Lemma \ref{lemma:thetacoupling} for these values.
+Recall that $z \sim \cN(0,q_*\cR_\Lambda'(v_*-q_*))$, and that
+ $\{\tilde \theta^t\}_{t \geq 0}$ is defined via the kernels
+$(\tilde c_g,\tilde r_g) \equiv (\tilde c_g^m,\tilde r_g^m)$
+corresponding to a pair $(A,u) \in \R^{m \times m} \times
+\R^m$ in Corollary \ref{cor:semigroupapprox},
+where $m,A,u,\tilde c_g,\tilde r_g$ depend only on $\eps$ and not on $T_0,T$.
+
+Recall from Corollary \ref{cor:semigroupapprox} that
+$|\tilde c_g(0)-\cR_\Lambda(v_*-q_*)|<\eps$.
+Then for $\eps>0$ sufficiently small, the second condition in
+\eqref{eq:alphacondition} implies
+\begin{equation}\label{eq:Uconvexityreplica}
+\liminf_{|\theta| \to \infty} U''(\theta)>\tilde c_g(0)+\eps.
+\end{equation}
+Then given any $z \in \R$, we may define a probability density on $\R$ by
+\begin{equation}\label{eq:mum}
+\mu_m(\tilde \theta \mid z) \propto \exp\bigg({-}U(\tilde\theta)
++z\tilde\theta+\frac{\tilde c_g(0)}{2}\tilde\theta^2\bigg).
+\end{equation}
+Let $(\tilde\theta,\tilde\theta',z)$ be random variables such that
+$z \sim \cN(0,q_*\cR_\Lambda'(v_*-q_*))$ as above, and
+$\tilde\theta,\tilde\theta'$ are conditionally independent given $z$, each
+having law $\mu_m(\tilde\theta \mid z)$. We claim that for some constants
+$C(\eps),c(\eps)>0$ depending only on $\eps$ and not on $T_0,T$,
+\begin{equation}\label{eq:W2tildethetabound}
+W_2(\Law(\tilde \theta^{T_0+T/2},\tilde \theta^{T_0+T},z),\,
+\Law(\tilde\theta,\tilde\theta',z)) \leq C(\eps)e^{-c(\eps)T}.
+\end{equation}
+
+To show this claim, let $\Sigma \in \R^{m \times m}$ be any matrix such that
+$\Sigma\Sigma^\top=A+A^\top$. Observe that the
+joint law of $(\{\tilde\theta^t\}_{t \geq 0},z)$
+is equivalent to that in the system
+\begin{equation}\label{eq:auxiliarytheta}
+\begin{aligned}
+\tilde \theta^t&=\theta^t \text{ for all } t \in [0,T_0]\\
+\d \tilde \theta^t&=[{-}U'(\tilde \theta^t)
++u^\top x^t+z]\d t+\sqrt{2}\,\d\tilde b^t \text{ for } t \geq T_0,\\
+\d x^t&={-}A[x^t-u\,\tilde \theta^t]\d t+\Sigma\,\d b_x^t \text{ for } t \geq 0,
+\qquad x^0 \sim \cN(0, I_m),
+\end{aligned}
+\end{equation}
+where $\{b_x^t\}_{t \geq 0}$ is a standard Brownian motion in $\R^m$ independent
+of $(\{\theta^t\}_{t \in [0,T_0]},\{\tilde b^t\}_{t \geq 0},z,x^0)$,
+and $\{x^t\}_{t \geq 0}$ is an auxiliary process in $\R^m$. Indeed, the third
+equation of \eqref{eq:auxiliarytheta} has the explicit solution
+\begin{equation}\label{eq:xtsolution}
+x^t=e^{-At} x^0 + \int_0^t Ae^{-A(t-s)}u\,\tilde\theta^s\,\d s
++\int_0^t e^{-A(t-s)}\Sigma\,\d b_x^s.
+\end{equation}
+Substituting this solution into the second equation gives
+\[\d\tilde\theta^t=\bigg[{-}U'(\tilde\theta^t)+\int_0^t u^\top
+Ae^{-A(t-s)}u\,\tilde \theta^s \d s+u^\top e^{-At} x^0+\int_0^t u^\top e^{-A(t-s)}\Sigma\,\d b_x^s
++z\bigg]\d t+\sqrt{2}\,\d\tilde b^t \text{ for } t \geq T_0.\]
+Since $u^\top Ae^{-A(t-s)}u=\tilde r_g(t-s)$, and since $u^\top e^{-At} x^0+\int_0^t u^\top
+e^{-A(t-s)}\Sigma\,\d b_x^s$ is a Gaussian process with covariance kernel
+$\tilde c_g$ as shown in the proof of Corollary \ref{cor:semigroupapprox},
+this gives the same law for $(\{\tilde\theta^t\}_{t \geq 0},z)$
+as defined in Lemma \ref{lemma:thetacoupling}.
+
+Conditional on $z$, the process $\{(\tilde \theta^t,x^t)\}_{t \geq T_0}$ in
+\eqref{eq:auxiliarytheta} is a Markov diffusion after time $T_0$, taking
+the form
+\begin{equation}\label{eq:jointmarkov}
+\d \begin{pmatrix} \tilde \theta^t \\ x^t \end{pmatrix}
+={-}\begin{pmatrix} 1 & 0 \\ 0 & A \end{pmatrix}
+\nabla H_m(\tilde\theta^t,x^t \mid z)+\begin{pmatrix} \sqrt{2} & 0 \\ 0 &
+\Sigma \end{pmatrix} \d\begin{pmatrix} \tilde b^t \\ b_x^t
+\end{pmatrix}
+\end{equation}
+where $H_m(\cdot \mid z)$ is the Hamiltonian on $\R^{m+1}$ given by
+\begin{align*}
+H_m(\tilde\theta,x \mid z)&=U(\tilde\theta)-(u^\top x+z)\tilde\theta+\frac{1}{2}\|x\|_2^2\\
+&=U(\tilde\theta)-z\tilde\theta-\frac{\tilde c_g(0)}{2}\tilde\theta^2+\frac{1}{2}\|x-\tilde\theta u\|_2^2,
+\end{align*}
+the second equality applying $\|u\|_2^2=\tilde c_g(0)$. Then
+\[\mu_m(\tilde\theta,x \mid z) \propto e^{-H_m(\tilde\theta,x \mid z)}\]
+defines the joint probability density for a pair $(\tilde\theta,x)$ where
+$\tilde\theta \sim \mu_m(\tilde\theta \mid z)$ has the conditional
+law \eqref{eq:mum} given $z$, and $x \sim \cN(\tilde\theta u,\Id_m)$
+given both $(\tilde\theta,z)$. Since $A+A^\top=\Sigma\Sigma^\top$,
+it is standard to check that $\mu_m(\tilde\theta,x \mid z)$
+is a stationary law of the diffusion process \eqref{eq:jointmarkov}.
+
+To quantify the convergence of \eqref{eq:jointmarkov} to $\mu_m(\tilde\theta,x
+\mid z)$,
+let us write $C(\eps),c(\eps)>0$ for constants depending on $\eps$
+but not $T_0,T$ or $z$. We check that $\mu_m(\tilde\theta,x \mid z)$ satisfies a
+(Euclidean) log-Sobolev inequality on $\R^{m+1}$
+with some log-Sobolev constant $C(\eps)>0$. Indeed,
+the condition \eqref{eq:Uconvexityreplica} implies that there exists a
+continuous, compactly supported function
+$f:\R \to \R$ for which $\int_\R f=0$
+and $f(\theta) \leq U''(\theta)-\tilde c_g(0)-\eps/2$ for all $\theta \in \R$.
+Set $W(\theta)=\int_{-\infty}^\theta  \d x \int_{-\infty}^x \d y\,f(y)$, so that
+$W'(\theta)=\int_{-\infty}^\theta f(y)\d y$ remains compactly supported (with
+the same support as $f$),
+and hence $W(\theta)$ is bounded. Define $V(\theta)$ by
+\begin{equation}\label{eq:logsobolevdecomp}
+U(\theta)-z\theta-\frac{\tilde c_g(0)}{2}\theta^2=V(\theta)+W(\theta),
+\end{equation}
+so $V''(\theta)=U''(\theta)-\tilde c_g(0)-f(\theta) \geq \eps/2$ for all
+$\theta \in \R$. Then by the Holley-Stroock perturbation lemma,
+$\mu_m(\tilde\theta \mid z)$ satisfies a log-Sobolev inequality on $\R$ with
+log-Sobolev constant $C(\eps)$ not depending on $z$.
+Writing $x=\tilde\theta u+w$ where $w \sim \cN(0,\Id_m)$ is independent of
+$(\tilde\theta,z)$, we note that $(\tilde\theta,x)$ is a Lipschitz map of
+$(\tilde\theta,w)$, so this implies also a log-Sobolev inequality
+for $\mu_m(\tilde\theta,x \mid z)$.
+
+Since $\nabla^2 H(\tilde\theta,x \mid z)$ is bounded below by some 
+constant ${-}c(\eps)<0$ also not depending on $z$,
+a log-Harnack/entropy-cost inequality \cite[Corollary 1.2]{rockner2010log}
+shows, for any $t>s \geq T_0$, that $\Law(\tilde \theta^t,x^t \mid \tilde \theta^s,x^s,z)$ admits a density
+with respect to the stationary measure $\mu_m(\tilde\theta,x \mid z)$
+and satisfies
+\begin{align*}
+\DKL(\Law(\tilde \theta^t,x^t \mid \tilde \theta^s,x^s,z)\,\|\,\mu_m(\tilde\theta,x \mid z))
+&\leq \frac{C(\eps)}{e^{c(\eps)(t-s)}-1}
+W_2(\delta_{(\tilde \theta^s,x^s)},\,\mu_m(\tilde\theta,x \mid z))^2\\
+&\leq \frac{2C(\eps)}{e^{c(\eps)(t-s)}-1}\Big(\|(\tilde \theta^s,x^s)\|_2^2
++\E[\|(\tilde\theta,x)\|_2^2 \mid z]\Big)
+\end{align*}
+where $\delta_{(\tilde \theta^s,x^s)}$ denotes the unit point measure
+at $(\tilde \theta^s,x^s) \in \R^{m+1}$, and $(\tilde \theta,x)$ denotes a sample
+from $\mu_m(\tilde \theta,x \mid z)$. By the log-Sobolev inequality for
+$\mu_m(\tilde \theta,x \mid z)$ and $\eps$-dependent lower bound for
+$\lambda_{\min}(A+A^\top)$, for any
+$t'>t>s \geq T_0$, we have also the decay in relative entropy, 
+\begin{align*}
+\DKL(\Law(\tilde \theta^{t'},x^{t'} \mid \tilde \theta^s,x^s,z)\,\|\,\mu_m(\tilde\theta,x \mid z))
+\leq e^{-c(\eps)(t'-t)}
+\DKL(\Law(\tilde \theta^t,x^t \mid \tilde \theta^s,x^s,z)\,\|\,\mu_m(\tilde \theta,x \mid z)),
+\end{align*}
+as well as the $T_2$-transportation inequality \cite{otto2000generalization}
+\[W_2(\Law(\tilde \theta^{t'},x^{t'} \mid \tilde \theta^s,x^s,z),\,\mu_m(\tilde\theta,x \mid z))^2
+\leq C(\eps)\DKL(\Law(\tilde \theta^{t'},x^{t'} \mid \tilde \theta^s,x^s,z)\,\|\,\mu_m(\tilde\theta,x \mid z)).\]
+Applying the above with $t=s+1$ and $t'=s+\tau$ shows, for some
+$C(\eps),c(\eps)>0$ and any $s \geq T_0$ and $\tau \geq 1$, that
+\begin{equation}\label{eq:auxwassersteincontraction}
+W_2(\Law(\tilde \theta^{s+\tau},x^{s+\tau} \mid \tilde \theta^s,x^s,z),\,\mu_m(\tilde\theta,x \mid z))^2
+\leq C(\eps)e^{-c(\eps)\tau}\Big(\|(\tilde \theta^s,x^s)\|_2^2
++\E[\|(\tilde\theta,x)\|_2^2 \mid z]\Big).
+\end{equation}
+
+Let $(\tilde\theta,x,\tilde\theta',x',z)$ be such that $z \sim
+\cN(0,q_*\cR_\Lambda'(v_*-q_*))$, and $(\tilde\theta,x),(\tilde\theta',x')$
+are conditionally independent given $z$ with law $\mu_m(\tilde\theta,x \mid z)$.
+Then, applying \eqref{eq:auxwassersteincontraction} with $s=T_0$ and
+$\tau=T/2$ to couple $(\tilde \theta^{T_0+T/2},x^{T_0+T/2})$ with
+$(\tilde\theta,x)$ conditional on $(\tilde \theta^{T_0},x^{T_0})$ and $z$,
+and then with $s=T_0+T/2$ and $\tau=T/2$ to couple
+$(\tilde \theta^{T_0+T},x^{T_0+T})$ with $(\tilde\theta',x')$
+conditional on $(\tilde \theta^{T_0+T/2},x^{T_0+T/2})$ and $z$,
+and finally marginalizing over $z$, we get for some (different)
+constants $C(\eps),c(\eps)>0$ that
+\begin{align}
+&W_2(\Law(\tilde \theta^{T_0+T/2},\tilde \theta^{T_0+T},z),
+\,\Law(\tilde\theta,\tilde\theta',z))^2\notag\\
+&\leq \E_{z \sim \cN(0,q_*\cR_\Lambda'(v_*-q_*))}
+W_2(\Law(\tilde \theta^{T_0+T/2},x^{T_0+T/2},\tilde \theta^{T_0+T},
+x^{T_0+T} \mid z),\,\Law(\tilde\theta,x,\tilde\theta',x' \mid z))^2\notag\\
+& \leq C(\eps)e^{-c(\eps)T}\Big(\E\|(\tilde \theta^{T_0},x^{T_0})\|_2^2
++\E\|(\tilde \theta^{T_0+T/2},x^{T_0+T/2})\|_2^2
++\E\|(\tilde\theta,x)\|_2^2
++\E\|(\tilde\theta',x')\|_2^2\Big).\label{eq:W2jointcoupling}
+\end{align}
+Here, $\E(\tilde \theta^t)^2$ is uniformly bounded
+for all $t \geq 0$ by \eqref{eq:thetafourthmoment}.
+Then also by the explicit form \eqref{eq:xtsolution}, for any $t \geq T_0$,
+\begin{align*}
+\E\|x^t\|_2^2
+&\leq 2\E\left\|\int_0^t Ae^{-(t-s)A}u\,\theta^s\d s\right\|_2^2
++2\E\left\|\int_0^t e^{-A(t-s)}\Sigma\,\d b_x^s + e^{-At} x^0\right\|_2^2\\
+&\leq C\left(\int_0^\infty \|Ae^{-sA}u\|_2\,\d s\right)^2
++2m.%\int_0^\infty \Tr e^{-sA}\Sigma\Sigma^\top e^{-sA^\top}\d s.
+\end{align*}
+This is at most some $C(\eps)>0$ by the bound $\|e^{-sA}\|_\op \leq
+e^{-(s/2)\lambda_{\min}(A+A^\top)}$. Since $(\tilde \theta^t,x^t)$
+converges weakly in law to $(\tilde \theta,x)$ as $t \to \infty$,
+\eqref{eq:thetafourthmoment} and Fatou's lemma imply also
+\begin{equation}\label{eq:staticfourthmoment}
+\E\tilde\theta^4=\E(\tilde\theta')^4 \leq C
+\end{equation} for a constant $C>0$. Then, since $x \sim \cN(\tilde \theta
+u,\Id_m)$ given $(\tilde \theta,z)$, also
+$\E\|x\|_2^2=\E\|x'\|_2^2 \leq C(\eps)$.
+Applying these bounds to the right side of \eqref{eq:W2jointcoupling}
+yields \eqref{eq:W2tildethetabound} as claimed.
+
+Under the second condition in \eqref{eq:alphacondition}, we may define also
+the probability density on $\R$
+\[\mu(\theta \mid z) \propto
+\exp\Big({-}U(\theta)+z\theta+\frac{\cR_\Lambda(v_*-q_*)}{2}\theta^2\Big).\]
+Let $(\theta,\theta',z)$ be random variables such that $z \sim
+\cN(0,q_*\cR_\Lambda'(v_*-q_*))$ and $\theta,\theta'$ are conditionally
+independent given $z$ with law $\mu(\theta \mid z)$, and let
+$(\tilde\theta \tilde\theta',z)$ be defined from $\mu_m(\theta \mid z)$
+as above. As $\eps \to 0$,
+considering a sequence of $m=m(\eps)$ defining $\mu_m(\theta \mid z)$
+and recalling that $|\tilde c_g(0)-\cR_\Lambda(v_*-q_*)|<\eps$,
+we have $\mu_m(\cdot \mid z) \to \mu(\cdot \mid z)$ weakly as $\eps \to 0$
+for each fixed $z \in \R$. Then also marginalizing over $z$,
+$\Law(\tilde\theta,\tilde\theta') \to \Law(\theta,\theta')$ weakly as
+$\eps \to 0$. Since \eqref{eq:staticfourthmoment} implies that
+$(\tilde\theta,\tilde\theta')$ is uniformly integrable in $L^2$ for all
+$\eps>0$, this implies
+\[\E[\|(\tilde\theta,\tilde\theta')\|_2^2] \to \E[\|(\theta,\theta')\|_2^2]\]
+and hence also $W_2(\Law(\tilde\theta,\tilde\theta'),\Law(\theta,\theta')) \to
+0$. Thus we have
+\begin{equation}\label{eq:replicalawconvergence}
+W_2(\Law(\tilde\theta,\tilde\theta'),\Law(\theta,\theta'))^2
+\leq o_\eps(1)
+\end{equation}
+for a quantity $o_\eps(1)$ depending only on $\eps$ and vanishing
+as $\eps \to 0$. Combining the conclusion of Lemma \ref{lemma:thetacoupling}
+with \eqref{eq:W2tildethetabound} and \eqref{eq:replicalawconvergence},
+\[W_2(\Law(\theta^{T_0+T/2},\theta^{T_0+T}),
+\Law(\theta,\theta'))^2
+\leq C(\eps+T^{1/4}e^{-cT_0})^{2/3}
++C(\eps)e^{-c(\eps)T}+o_\eps(1).\]
+Given $\eps>0$, we may take $T=T(\eps)>0$ large enough such that the second
+term is small, followed by $T_0=T_0(\eps)$ large enough such that the first term
+is small. Thus, there exist some $T(\eps),T_0(\eps) \to \infty$ for which,
+as $\eps \to 0$,
+\begin{equation}\label{eq:finalW2convergence}
+\Law(\theta^{T_0(\eps)+T(\eps)/2},\theta^{T_0(\eps)+T(\eps)}) \to 
+\Law(\theta,\theta') \text{ weakly and in Wasserstein-2}.
+\end{equation}
+
+We now turn to the statements of Theorem \ref{thm:replica}. We may again assume,
+without loss of generality, that Assumption \ref{assump:as} holds.\\
+
+{\bf Part (a).}
+Identifying $z=\sqrt{q_*\cR_\Lambda'(v_*-q_*)}\,\xi$ where $\xi
+\sim \cN(0,1)$, the above law $\mu(\theta \mid z)$ is precisely
+$\mu(\theta \mid v_*,q_*,\xi)$ defined in Theorem \ref{thm:replica}.
+Then \eqref{eq:finalW2convergence} implies,
+by the characterizations of $v_*$ and $q_*$ in Lemma \ref{lemma:tti}, that
+\begin{align*}
+v_*&=c_\theta(0)=\lim_{t \to \infty} \E(\theta^t)^2=\E[\theta^2]
+=\E_{\xi \sim \cN(0,1)} \langle \theta^2 \rangle_{v_*,q_*,\xi},\\
+q_*&=\lim_{\tau \to \infty} c_\theta(\tau)
+=\lim_{s,\tau \to \infty} \E(\theta^s\theta^{s+\tau})=\E[\theta\theta']
+=\E_{\xi \sim \cN(0,1)} \langle \theta \rangle_{v_*,q_*,\xi}^2,
+\end{align*}
+establishing the fixed point conditions \eqref{eq:replicafixedpoint} for
+$(v_*,q_*)$.
+
+Let $\btheta \sim \mu_\Gibbs$. Assumption
+\ref{assump:convergence} implies
+that for some constants $C,c>0$,
+\begin{equation}\label{eq:langevinWasserstein}
+\frac{1}{n}W_2(\Law(\btheta^t \mid \X,\btheta^0),\,\Law(\btheta \mid \X))^2
+\leq Ce^{-ct}.
+\end{equation}
+This implies, for any function $f:\R \to \R$ satisfying $|f(x)-f(y)| \leq
+C(1+|x|+|y|)|x-y|$, that
+\[\left|\frac{1}{n}\sum_{i=1}^n \langle f(\theta_i^t)
+\rangle-\frac{1}{n}\sum_{i=1}^n \langle f(\theta_i) \rangle \right|
+\leq C(f)e^{-ct}\]
+for a constant $C(f)>0$. Theorem \ref{thm:dmft-approx} implies, for each fixed
+$t \geq 0$,
+\[\lim_{n \to \infty}
+\left|\frac{1}{n}\sum_{i=1}^n \langle f(\theta_i^t) \rangle-\E[f(\theta^t)]
+\right|=0 \text{ a.s.}\]
+where $\E[\cdot]$ is the expectation over $\theta^t$ in the dynamical mean-field
+limit of Definition \ref{def:DMFT}. The Wasserstein convergence
+\eqref{eq:finalW2convergence} implies
+\[\lim_{t \to \infty} \E[f(\theta^t)]=\E_{\xi \sim \cN(0,1)} \langle f(\theta)
+\rangle_{v_*,q_*,\xi}.\]
+Combining the above bounds, and taking $n \to \infty$ followed by $t \to
+\infty$, shows \eqref{eq:pseudoliptest}.
+
+For the final statement \eqref{eq:thetaXthetalimit}, recall the process
+$\g^t=\X\btheta^t-\int_0^t r_g(t-s)\btheta^s \d s$. Then
+\[\frac{1}{n} \langle \btheta^{t\top} \X\btheta^t \rangle
+=\left\langle \frac{1}{n}\btheta^{t\top}\g^t+
+\int_0^t r_g(t-s)\frac{1}{n}\btheta^{t\top} \btheta^s \d s \right\rangle.\]
+Recall from the equicontinuity \eqref{eq:thetaequicontinuous} 
+and Theorem \ref{thm:dmft-approx}(c) that
+\[\lim_{n \to \infty} \sup_{s \in [0,t]}
+\left|\frac{1}{n}\langle \btheta^{t\top}\btheta^s
+\rangle-C_\theta(t,s)\right|=0 \text{ a.s.},
+\qquad \lim_{n \to \infty} \frac{1}{n}\langle \btheta^{t\top} \g^t \rangle
+=\E[\theta^t g^t] \text{ a.s.}\]
+where $\E[\theta^t g^t]$ is the expectation in the dynamical mean-field limit of
+Definition \ref{def:DMFT}. To compute this expectation, note that It\^o's lemma
+applied to \eqref{eq:dmft-theta} gives
+\[\frac{\d}{\d t}\frac{1}{2}\,\E (\theta^t)^2
+=\E\theta^t \left({-}U'(\theta^t)+\int_0^t R_g(t,s)\theta^s \d  s
++g^t\right)+1.\]
+Therefore
+\[\E[\theta^t g^t]
+=\frac{\d}{\d t}\frac{1}{2}\,\E(\theta^t)^2
++\E[\theta^t U'(\theta^t)]-\int_0^t R_g(t,s)C_\theta(t,s) \d s-1.\]
+Applying this above,
+\[\lim_{n \to \infty} \frac{1}{n}\langle \btheta^{t\top}\X\btheta^t \rangle
+=\frac{\d}{\d t}\frac{1}{2}\E(\theta^t)^2
++\E[\theta^tU'(\theta^t)]-1
++\int_0^t (r_g(t-s)-R_g(t,s))C_\theta(t,s)\d s \text{ a.s.}\]
+By the equicontinuity \eqref{eq:thetaequicontinuous},
+for any $T>0$, this convergence holds uniformly over $t \in [T,2T]$. Then also
+\begin{align*}
+\lim_{n \to \infty}
+\frac{1}{T}\int_T^{2T} \frac{1}{n} \langle \btheta^{t\top}\X\btheta^t \rangle
+\d t&=\frac{1}{2T}\big(\E(\theta^{2T})^2-\E(\theta^T)^2\big)
++\frac{1}{T}\int_T^{2T} \Big(\E[\theta^tU'(\theta^t)]-1\Big)\d t\\
+&\hspace{1in}+\frac{1}{T}\int_T^{2T}\d t
+\int_0^t (r_g(t-s)-R_g(t,s))C_\theta(t,s)\d s \text{ a.s.}
+\end{align*}
+The Wasserstein convergence \eqref{eq:finalW2convergence} and bounds for
+$|C_\theta(t,s)|$ and $\int_0^t |r_g(t-s)-R_g(t,s)|\d s$ in Lemmas
+\ref{lemma:tti} and \ref{lemma:ttig} imply that the first and third
+terms on the right side vanish as $T \to \infty$, while the second term
+converges to
+\[\E_{\xi \sim \cN(0,1)} \langle \theta U'(\theta) \rangle_{v_*,q_*,\xi}-1.\]
+This may be evaluated by noting that, for any fixed $\xi \in \R$,
+\begin{align*}
+&\left\langle\theta\left({-}U'(\theta)+\cR_\Lambda(v_*-q_*)\theta
++\sqrt{q_*\cR_\Lambda'(v_*-q_*)}\,\xi\right)
+\right\rangle_{v_*,q_*,\xi}\\
+&=\int_\R \theta \mu'(\theta \mid v_*,q_*,\xi) \d \theta
+=-\int \mu(\theta \mid v_*,q_*,\xi) \d \theta=-1.
+\end{align*}
+Therefore, integrating by parts also in $\xi$,
+\begin{align*}
+&\E_{\xi \sim \cN(0,1)}\langle{\theta U'(\theta)}\rangle_{v_*,q_*,\xi}-1\\
+&=\cR_\Lambda(v_*-q_*)\E_{\xi \sim \cN(0,1)}\langle\theta^2
+\rangle_{v_*,q_*,\xi}+\sqrt{q_*\cR_\Lambda'(v_*-q_*)}\E_{\xi \sim \cN(0,1)}[\xi \langle \theta
+\rangle_{v_*,q_*,\xi}]\\
+&=\cR_\Lambda(v_*-q_*)\E_{\xi \sim \cN(0,1)}\langle\theta^2
+\rangle_{v_*,q_*,\xi}+q_*\cR_\Lambda'(v_*-q_*)
+\E_{\xi \sim \cN(0,1)}[\langle \theta^2 \rangle_{v_*,q_*,\xi}
+-\langle \theta \rangle_{v_*,q_*,\xi}^2]\\
+&=v_*\cR_\Lambda(v_*-q_*)+q_*(v_*-q_*)\cR_\Lambda'(v_*-q_*).
+\end{align*}
+This shows
+\[\lim_{n \to \infty}
+\frac{1}{T}\int_T^{2T} \frac{1}{n} \langle \btheta^{t\top}\X\btheta^t \rangle
+=v_*\cR_\Lambda(v_*-q_*)+q_*(v_*-q_*)\cR_\Lambda'(v_*-q_*)+o_T(1) \text{
+a.s.},\]
+where $o_T(1)$ denotes an error vanishing as $T \to \infty$. The Wasserstein
+bound \eqref{eq:langevinWasserstein} and Assumption \ref{assump:as}
+imply that for any $t \in [T,2T]$,
+\[\left|\frac{1}{n} \langle \btheta^{t\top}\X\btheta^t \rangle
+-\frac{1}{n} \langle \btheta^\top\X\btheta \rangle\right|
+\leq Ce^{-ct}.\]
+Then taking the limit $n \to \infty$ followed by $T \to \infty$ shows
+\eqref{eq:thetaXthetalimit}.\\
+
+{\bf Part (b).} Let
+\[\mu_\beta(\btheta)=\frac{1}{\cZ_\beta}
+\exp\left(\frac{\beta}{2}\btheta^\top \X\btheta
+-\sum_{i=1}^n U(\theta_i)\right) \d\btheta,
+\quad \cZ_\beta=\int \exp\left(
+\frac{\beta}{2}\btheta^\top \X\btheta
+-\sum_{i=1}^n U(\theta_i) \right) \d \btheta,\]
+and write $\langle f(\btheta) \rangle_\beta$ for the Gibbs average under
+$\mu_\beta$. Then
+\[\frac{\d}{\d\beta} \frac{1}{n}\log \cZ_\beta
+=\frac{1}{2n} \langle \btheta^\top \X\btheta \rangle_\beta.\]
+The result \eqref{eq:thetaXthetalimit} for $\beta\X$ in place of $\X$ shows, for
+each $\beta \in [0,1]$, almost surely
+\[\lim_{n \to \infty}
+\frac{1}{n}\langle \btheta^\top(\beta \X)\btheta \rangle_\beta
+=v_*(\beta)\cR_{\beta\Lambda}(v_*(\beta)-q_*(\beta))+q_*(\beta)(v_*(\beta)-q_*(\beta))\cR_{\beta\Lambda}'(v_*(\beta)-q_*(\beta))\]
+where $v_*(\beta),q_*(\beta)$ are the limits ensured by Theorem
+\ref{thm:replica}(a) for $\mu_\beta$,
+and $\cR_{\beta\Lambda}(x)$ is the R-transform of
+$\beta\Lambda$. Writing $\{\kappa_p\}_{p \geq 1}$ for the free cumulants of
+$\Lambda$, those of $\beta\Lambda$ are then $\{\beta^p \kappa_p\}_{p \geq 1}$,
+so
+\[\cR_{\beta\Lambda}(x)=\sum_{p \geq 1} \beta^{p+1}\kappa_{p+1} x^{p}
+=\beta \cR_\Lambda(\beta x),
+\qquad \cR_{\beta\Lambda}'(x)=\beta^2 \cR'_\Lambda(\beta x).\]
+Applying this above, integrating over $\beta \in [0,1]$, and applying dominated
+convergence (noting that the bound \eqref{eq:thetanormbound} for
+$\langle \frac{1}{n}\|\btheta\|_2^2 \rangle_\beta$ is uniform in $\beta$),
+\begin{align}
+\lim_{n \to \infty} \frac{1}{n}\log \cZ
+&=\lim_{n \to \infty}\frac{1}{n}\log \cZ_0
++\int_0^1 \frac{1}{2n}\langle \btheta^\top \X\btheta \rangle_\beta\d \beta\notag\\
+&=\log \int e^{-U(\theta)}\d\theta+\int_0^1 \frac{1}{2}\Big(
+v_*(\beta)\cR_\Lambda(\beta(v_*(\beta)-q_*(\beta)))\notag\\
+&\hspace{1.5in}+\beta
+q_*(\beta)(v_*(\beta)-q_*(\beta))\cR_\Lambda'(\beta(v_*(\beta)-q_*(\beta))\Big)\d\beta.\label{eq:integralfreeenergy}
+\end{align}
+
+To compare this to the replica formula, note first that
+when Assumption \ref{assump:convergence} holds with
+uniform constants $C,c>0$ for the dynamics defined by $\beta\X$ and each
+$\beta \in [0,1]$, the functions $v_*(\beta),q_*(\beta)$ must be 
+H\"older-continuous over $\beta \in [0,1]$.
+Indeed, letting $\{\btheta_\beta^t\}_{t \geq 0}$
+denote the solution of \eqref{eq:langevin} for $\beta\X$ and letting
+$\btheta_\beta \sim \mu_\beta$ denote a sample from the Gibbs measure,
+Assumption \ref{assump:convergence} implies
+\begin{equation}\label{eq:vcontinuous1}
+\left|\frac{1}{n}\langle \|\btheta_\beta^t\|_2^2 \rangle
+-\frac{1}{n}\langle \|\btheta_\beta\|_2^2 \rangle\right| \leq Ce^{-ct}
+\text{ for all } t \geq 0,\,\beta \in [0,1].
+\end{equation}
+For $\beta,\beta' \in [0,1]$, coupling $\{\btheta_\beta^t\}_{t \geq 0}$ and
+$\{\btheta_{\beta'}^t\}_{t \geq 0}$ by the same Brownian motion and applying
+the bound \eqref{eq:thetatnormbound} which holds for
+$\{\btheta^t_\beta\}_{t \geq 0}$ uniformly over $\beta \in [0,1]$, we have
+\begin{align*}
+\left|\frac{\d}{\d t}\langle \|\btheta_\beta^t-\btheta_{\beta'}^t\|_2^2
+\rangle\right|
+&=\left|\langle 2(\btheta_\beta^t-\btheta_{\beta'}^t)^\top
+(\beta \X\btheta_\beta^t-U'(\btheta_\beta^t)
+-\beta' \X\btheta_{\beta'}^t+U'(\btheta_{\beta'}^t))\rangle\right|\\
+&\leq C\langle \|\btheta_\beta^t-\btheta_{\beta'}^t\|_2^2 \rangle
++Cn|\beta-\beta'|
+\end{align*}
+for a constant $C>0$. Then by Gr\"onwall's inequality, $\frac{1}{n}\langle
+\|\btheta_\beta^t-\btheta_{\beta'}^t\|_2^2 \rangle \leq Ce^{Ct}|\beta-\beta'|$.
+By \eqref{eq:thetatnormbound} and Cauchy-Schwarz, this implies for a (different)
+constant $C>0$ that
+\begin{equation}\label{eq:vcontinuous2}
+\left|\frac{1}{n}\langle \|\btheta_\beta^t\|_2^2 \rangle
+-\frac{1}{n}\langle \|\btheta_{\beta'}^t\|_2^2 \rangle\right|
+\leq Ce^{Ct}|\beta-\beta'| \text{ for all } t \geq 0,\,\beta,\beta' \in [0,1].
+\end{equation}
+Combining \eqref{eq:vcontinuous1} and \eqref{eq:vcontinuous2}, taking the limit
+$n \to\infty$, and optimizing over $t$ shows that $v_*(\beta)$ is H\"older
+continuous over $\beta \in [0,1]$ with some exponent $\rho \in (0,1)$,
+i.e.\ $|v_*(\beta)-v_*(\beta')| \leq C|\beta-\beta'|^\rho$ for a constant $C>0$.
+ A similar argument establishes H\"older continuity
+of $q_*(\beta)$ with the same exponent $\rho \in (0,1)$.
+
+Now let $\alpha$ be the bound for
+$U''(\cdot)$ in \eqref{eq:Uconvexity}. Fixing some small enough constant
+$\eps>0$, define 
+\[S=\left\{(\beta,v,q):\beta \in [0,1],\;
+v>q \geq 0,\;
+\sum_{p \geq 1} \beta^{p+1}|\kappa_{p+1}|(v-q+\eps)^p<\alpha,\;
+q\cR_{\beta\Lambda}'(v-q) \geq 0\right\}.\]
+By the given condition \eqref{eq:alphacondition} and Lemma \ref{lemma:ttig}(b),
+$(\beta,v_*(\beta),q_*(\beta)) \in S$ for all $\beta \in [0,1]$.
+For $(\beta,v,q) \in S$, we may define
+\[\begin{aligned}
+f(\beta,v,q)&=\E_{\xi \sim \cN(0,1)} \log \int
+\exp\left(-U(\theta)+\frac{1}{2}\,\cR_{\beta\Lambda}(v-q)\theta^2
++\sqrt{q\cR_{\beta\Lambda}'(v-q)}\,\xi\theta\right) \d \theta  \\
+&\quad
++\frac{1}{2}\int_0^{v-q} \cR_{\beta\Lambda}(s) \d  s
+-\frac{1}{2}\,(v-q)\cR_{\beta\Lambda}(v-q)
+-\frac{1}{2}\,q(v-q)\cR_{\beta\Lambda}'(v-q)
+\end{aligned}\]
+and also the probability density on $\R$
+\[\mu_\beta(\theta \mid v,q,\xi)
+\propto \exp\left(-U(\theta)+\frac{1}{2}\,\cR_{\beta\Lambda}(v-q)\theta^2
++\sqrt{q\cR_{\beta\Lambda}'(v-q)}\,\xi\theta\right) \d \theta.\]
+Let us momentarily write $\langle \cdot \rangle$ without subscript
+for its associated expectation.
+Note that at any $(\beta,v,q) \in S$ where $q\cR_{\beta\Lambda}'(v-q)>0$
+strictly, $f(\beta,v,q)$ is continuously-differentiable,
+and a calculation via integration-by-parts on $\xi$ shows 
+\begin{align*}
+\partial_\beta f(\beta,v,q)&=
+\frac{1}{2}\bigg(\E_\xi\left[\partial_\beta \cR_{\beta\Lambda}(v-q)\langle
+\theta^2 \rangle+q\partial_\beta \cR_{\beta\Lambda}'(v-q)
+(\langle \theta^2 \rangle-\langle \theta \rangle^2)\right]\\
+&\hspace{1in}
++\int_0^{v-q} \partial_\beta \cR_{\beta \Lambda}(s)\d s
+-(v-q)\partial_\beta \cR_{\beta\Lambda}(v-q)
+-q(v-q)\partial_\beta\cR_{\beta\Lambda}'(v-q)\bigg),\\
+\partial_v f(\beta,v,q)&=
+\frac{1}{2}\bigg(\E_\xi\left[\cR_{\beta\Lambda}'(v-q)\langle \theta^2 \rangle
++q\cR_{\beta\Lambda}''(v-q)
+(\langle \theta^2 \rangle-\langle \theta \rangle^2)\right]
+-v\cR_{\beta\Lambda}'(v-q)
+-q(v-q)\cR_{\beta\Lambda}''(v-q)\bigg),\\
+\partial_q f(\beta,v,q)&=
+\frac{1}{2}\bigg(\E_\xi\left[{-}\cR_{\beta\Lambda}'(v-q)\langle \theta \rangle^2
+-q\cR_{\beta\Lambda}''(v-q)
+(\langle \theta^2 \rangle-\langle \theta \rangle^2)\right]
++q\cR_{\beta\Lambda}'(v-q)
++q(v-q)\cR_{\beta\Lambda}''(v-q)\bigg).
+\end{align*}
+These derivative formulas extend continuously to points $(\beta,v,q) \in S$ where
+$q\cR_{\beta\Lambda}'(v-q)=0$, and we take these extensions to be the
+definitions of $\partial_\beta f,\partial_v f,\partial_q f$ at such points.
+Since $v_*(\beta),q_*(\beta)$ satisfy the fixed point
+conditions \eqref{eq:replicafixedpoint}, the above forms of $\partial_v
+f,\partial_q f$ imply
+\begin{equation}\label{eq:vqderivvanish}
+\partial_v f(\beta,v_*(\beta),q_*(\beta))=0,
+\qquad \partial_q f(\beta,v_*(\beta),q_*(\beta))=0.
+\end{equation}
+From the identity $\cR_{\beta\Lambda}(x)=\beta\cR_\Lambda(\beta x)$, we have
+$\partial_\beta \cR_{\beta\Lambda}(x)=\cR_{\Lambda}(\beta x)+\beta
+x\cR_\Lambda'(\beta x)$ and
+\[\int_0^x \partial_\beta \cR_{\beta\Lambda}(s) \d  s
+=\int_0^x \left[\cR_\Lambda(\beta s)+\beta s\cR_\Lambda'(\beta s)
+\right]\d s=x\cR_\Lambda(\beta x),\]
+the last equality applying integration-by-parts for the second term. Then also
+\begin{align*}
+\partial_\beta f(\beta,v_*(\beta),q_*(\beta))
+&=\frac{1}{2}\left(\int_0^{v_*(\beta)-q_*(\beta)}
+\partial_\beta \cR_{\beta\Lambda}(s) \d s
++q_*(\beta)\partial_\beta
+\cR_{\beta\Lambda}(v_*(\beta)-q_*(\beta))\right)\\
+&=\frac{1}{2}\Big(v_*(\beta)\cR_\Lambda(\beta(v_*(\beta)-q_*(\beta)))
++\beta q_*(\beta)(v_*(\beta)-q_*(\beta))
+\cR_\Lambda'(\beta(v_*(\beta)-q_*(\beta)))\Big)
+\end{align*}
+which matches the integrand in \eqref{eq:integralfreeenergy}.
+
+The above continuity of $v_*(\beta),q_*(\beta)$ implies that
+$\beta \mapsto f(\beta,v_*(\beta),q_*(\beta))$ is continuous on $[0,1]$. We
+claim that it is in fact continuously-differentiable on $(0,1)$, with derivative
+\begin{equation}\label{eq:fbetacontdiff}
+\frac{\d}{\d \beta}
+f(\beta,v_*(\beta),q_*(\beta))
+=\partial_\beta f(\beta,v_*(\beta),q_*(\beta)).
+\end{equation}
+To check differentiability, we extend $f(\beta,v,q)$ smoothly to an open domain: Let $\ell_{\beta, v, q}(z) = \log \int \exp\left(-U(\theta)+\frac{1}{2}\cR_{\beta\Lambda}(v-q)\theta^2 + z\theta\right) d\theta$,  which is well-defined and analytic over $z \in \R$ for all $(\beta, v, q)$ such that $\beta \in (0,1)$, $v>q$, and $\sum_{p \geq 1} \beta^{p+1}|\kappa_{p+1}|(v-q+\eps)^p< \alpha$. Consider $\tilde{\ell}_{\beta,v,q}(s) = \E_{\xi \sim \mathcal{N}(0,1)}[\ell_{\beta,v,q}(\sqrt{s}\xi)]$ for $s \ge 0$. By Gaussian integration by parts, \[
+\frac{\partial^j}{\partial s^j} \tilde{\ell}_{\beta,v,q}(s) =\frac{1}{2^j} \E_{\xi \sim \mathcal{N}(0,1)}\left[\frac{\partial^{2j}}{\partial z^{2j}} \ell_{\beta,v,q}(\sqrt{s}\xi)\right], \quad j = 1,2,\ldots
+\]
+By dominated convergence, we can take the limit $s \to 0+$ and conclude that $\tilde{\ell}_{\beta,v,q}(s)$ has finite derivatives of all orders at $s = 0$ from the positive side. Pick $N$ to be a large enough integer such that $(N+1)\rho > 1$. We extend $\tilde \ell_{\beta,v,q}(s)$ by \begin{align}
+   \nonumber \tilde \ell_{\beta,v,q}(s) = \begin{cases}
+    \E_{\xi \sim \mathcal{N}(0,1)}[\ell_{\beta,v,q}(\sqrt{s}\xi)], & s \ge 0,\\
+    \sum_{j=0}^{N+1} \frac{\tilde \ell^{(j)}(0)}{j!} s^j, & s < 0.
+    \end{cases}
+\end{align}
+From now on, we understand $f(\beta,v,q) = \tilde \ell_{\beta,v,q}(q\cR_{\beta\Lambda}'(v-q)) + \frac{1}{2}\int_0^{v-q} \cR_{\beta\Lambda}(s) ds - \frac{1}{2}(v-q)\cR_{\beta\Lambda}(v-q) - \frac{1}{2}q(v-q)\cR_{\beta\Lambda}'(v-q)$ with this extension on the enlarged domain
+\begin{align}
+   \nonumber  S' = \left\{(\beta,v,q): \beta \in (0,1),\,v > q,\,\text{there exists } \delta>0\text{ s.t. }\sum_{p \ge 1} \beta^{p+1}|\kappa_{p+1}|(v-q+\delta)^p < \alpha\right\}.
+\end{align}
+Importantly, this domain $S'$ is open, and $f$ is $C^{N+1}$ over $(\beta,v,q) \in S'$. Now fix any $\beta_0 \in (0,1)$. For any $\beta$ sufficiently close to $\beta_0$, we have
+\begin{align*}
+    &f(\beta,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0))\\
+    &= (f(\beta,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta),q_*(\beta)) )+ (f(\beta_0,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0)) )\\
+    &=\partial_\beta f(\beta_0,v_*(\beta),q_*(\beta))(\beta - \beta_0) + o(|\beta - \beta_0|) +  (f(\beta_0,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0)) ).
+\end{align*} 
+It then suffices to show $f(\beta_0,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0)) = o(|\beta - \beta_0|)$.   Denote $\Delta v_{\beta} = v_*(\beta) - v_*(\beta_0)$ and $\Delta q_{\beta} = q_*(\beta) - q_*(\beta_0)$. By the H\"older continuity of $v_*$ and $q_*$, we have $|\Delta v_{\beta}| + |\Delta q_{\beta}| = O(|\beta - \beta_0|^{\rho})$.  By Taylor expansion of $f(\beta_0, \cdot, \cdot)$ at $(v_*(\beta_0), q_*(\beta_0))$, we have
+\begin{align}
+   \nonumber  f(\beta_0,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0)) = P_N(\Delta v_{\beta}, \Delta q_{\beta}) + O(|\Delta v_{\beta}|^{N+1} + |\Delta q_{\beta}|^{N+1}),
+\end{align}
+where $P_N$ is a polynomial of degree at most $N$. From the condition \eqref{eq:vqderivvanish}, the first order term of $P_N$ vanishes, and also 
+\begin{align}
+&|\partial_v  f(\beta_0, v_*(\beta),q_*(\beta))|  \nonumber= |\partial_v  f(\beta_0, v_*(\beta),q_*(\beta))-\partial_v  f(\beta ,  v_*(\beta),q_*(\beta))| = O( |\beta - \beta_0|).   
+\end{align}
+Combining with the fact that 
+$  
+|\partial_v  P_N(\Delta v_{\beta}, \Delta q_{\beta})-\partial_v  f(\beta_0, v_*(\beta),q_*(\beta))| = O(|\Delta v_{\beta}|^{N} + |\Delta q_{\beta}|^{N})
+ $, we have $|\partial_v  P_N(\Delta v_{\beta}, \Delta q_{\beta})| = O(|\beta - \beta_0| + |\Delta v_{\beta}|^{N} + |\Delta q_{\beta}|^{N})$. Similarly, we have $|\partial_q  P_N(\Delta v_{\beta}, \Delta q_{\beta})| = O(|\beta - \beta_0| + |\Delta v_{\beta}|^{N} + |\Delta q_{\beta}|^{N})$. Then by the Bochnak--{\L}ojasiewicz inequality
+\cite[Lemma~4.3]
+{KurdykaMostowskiParusinski2000}, $|P_N(\Delta v_{\beta}, \Delta q_{\beta})| \leq C(|\Delta v_{\beta}| + |\Delta q_{\beta}|) \cdot (|\partial_v  P_N(\Delta v_{\beta}, \Delta q_{\beta})| + |\partial_q  P_N(\Delta v_{\beta}, \Delta q_{\beta})|) = O(|\beta - \beta_0|^{1+\rho}+ |\beta - \beta_0|^{(N+1)\rho}) = o(|\beta - \beta_0|)$, where the last equality uses $\rho \in (0,1)$ and $N$ large enough such that $(N+1)\rho > 1$.  This shows $f(\beta_0,v_*(\beta),q_*(\beta)) - f(\beta_0,v_*(\beta_0),q_*(\beta_0)) = o(|\beta - \beta_0|)$, and hence \eqref{eq:fbetacontdiff} holds immediately by the definition of the derivative.
+
+Note that for $\beta=0$, we have $\cR_{\beta\Lambda}(x)=0$
+and $\cR_{\beta\Lambda}'(x)=0$ for all $x \in \R$, so
+$f(0,v_*(0),q_*(0))=\log \int e^{-U(\theta)}\d\theta$.
+Applying this and \eqref{eq:fbetacontdiff} to \eqref{eq:integralfreeenergy}, and
+using the continuous differentiability of $\beta \mapsto f(\beta,v_*(\beta),q_*(\beta))$,
+\[\lim_{n \to \infty} \frac{1}{n}\log \cZ
+=f(0,v_*(0),q_*(0))
++\int_0^1 \frac{\d}{\d \beta} f(\beta,v_*(\beta),q_*(\beta))\d \beta
+=f(1,v_*(1),q_*(1)).\]
+The right side is the desired replica formula in Theorem
+\ref{thm:replica}(b), concluding the proof.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:hightemp}]
+We let $\btheta^0$ have i.i.d.\ entries with (arbitrary) law supported on $[-1,1]$, and restrict to an event holding a.s.\ for all large $n$ where
+\[\|\X\|_\op \leq \Lambda_{\max}.\]
+Write
+\[\d \nu_x(y)=\frac{e^{\alpha xy-\frac{\alpha}{2}y^2}\d \nu(y)}
+{\int_{-M}^M e^{\alpha xy-\frac{\alpha}{2}y^2}\d \nu(y)},
+\qquad \langle f(y) \rangle_{\nu_x}=\int_{-M}^M f(y) \d \nu_x(y),
+\qquad \Var_{\nu_x}[y]=\langle y^2 \rangle_{\nu_x}
+-\langle y \rangle_{\nu_x}^2.\]
+Then
+\begin{align*}
+U''(x)&=\frac{\d^2}{\d x^2}\left[-\log
+\int_{-M}^M \sqrt{\frac{\alpha}{2\pi}}e^{-\frac{\alpha}{2}(x-y)^2}\d
+\nu(y)\right]\\
+&=\frac{\d^2}{\d x^2}\left[\frac{\alpha}{2}x^2-\log \int_{-M}^M
+e^{\alpha xy-\frac{\alpha}{2}y^2} \d \nu(y)\right]
+=\alpha-\alpha^2\Var_{\nu_x}[y].
+\end{align*}
+As $x \to \pm\infty$, the measure $\nu_x$ converges weakly to a point mass
+at the maximum/minimum point of support of $\nu$. Then $\Var_{\nu_x}[y] \to 0$.
+Thus $U(\cdot)$ satisfies
+\eqref{eq:Uconvexity}. The same argument shows that the 3rd and 4th cumulants of $\nu_x$
+converge to 0 as $x \to \pm \infty$, so also
+$\lim_{|x| \to \pm \infty} U'''(x)=0$ and $\lim_{|x| \to \pm \infty} U^{(4)}(x)=0$. Hence $f={-}U'$ satisfies the conditions
+of Assumption \ref{assump:dynamics}.
+
+To check the condition \eqref{eq:alphacondition}, observe that we may represent
+$\btheta \sim \prod_{i=1}^n e^{-U(\theta_i)}\d\theta_i$
+as $\btheta=\y+\z$ where $\y,\z$ are independent vectors with
+$y_i \overset{iid}{\sim} \nu$ and $\z \sim \cN(0,\alpha^{-1}\Id)$.
+Thus
+\begin{align*}
+\cZ&=\E\left[\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X\right],\\
+\frac{1}{n}\langle \btheta^\top \btheta'\rangle
+&=\frac{1}{n\cZ^2}\left\|\E\left[(\y+\z)
+\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X\right]\right\|_2^2,\\
+\frac{1}{n}\langle \|\btheta\|_2^2\rangle
+&=\frac{1}{n\cZ}\,\E\left[\|\y+\z\|_2^2
+\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X\right]
+\end{align*}
+where expectations are over the joint law of $(\y,\z)$.
+Evaluating the expectation over $\z$ for fixed $\X,\y$,
+where $\|\X\|_\op \leq \Lambda_{\max}<\alpha$, an explicit calculation shows
+\begin{align*}
+\E\left[\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X,\y\right]
+&=\underbrace{\frac{\exp(\frac{1}{2}\y^\top\X(\Id-\alpha^{-1}\X)^{-1}\y)}
+{\det(\Id-\alpha^{-1}\X)^{1/2}}}_{:=\cZ(\X,\y)}
+\end{align*}
+and
+\begin{align*}
+\E\left[(\y+\z)\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X,\y\right]
+&=\cZ(\X,\y)(\Id-\alpha^{-1}\X)^{-1}\y,\\
+\E\left[\|\y+\z\|_2^2
+\exp\left(\frac{1}{2}(\y+\z)^\top
+\X(\y+\z)\right)\bigg|\X,\y\right]
+&=\cZ(\X,\y)\left(\alpha^{-1}\Tr (\Id-\alpha^{-1}\X)^{-1}
++\y^\top(\Id-\alpha^{-1}\X)^{-2}\y\right).
+\end{align*}
+Thus
+\begin{equation}\label{eq:gaussianmixtureZ}
+\begin{aligned}
+\cZ&=\E[\cZ(\X,\y) \mid \X],\\
+\frac{1}{n}\langle \btheta^\top \btheta' \rangle
+&=\frac{1}{n}\,\frac{\|\E[\cZ(\X,\y)(\Id-\alpha^{-1}\X)^{-1}\y \mid \X]\|_2^2}
+{\E[\cZ(\X,\y) \mid \X]^2},\\
+\frac{1}{n}\langle \|\btheta\|_2^2 \rangle
+&=\frac{1}{n}\,\frac{\E[\cZ(\X,\y)(\alpha^{-1}\Tr (\Id-\alpha^{-1}\X)^{-1}
++\y^\top(\Id-\alpha^{-1}\X)^{-2}\y) \mid \X]}{\E[\cZ(\X,\y) \mid \X]}.
+\end{aligned}
+\end{equation}
+Since
+\[\frac{1}{n}\left|\alpha^{-1}\Tr (\Id-\alpha^{-1}\X)^{-1}
++\y^\top(\Id-\alpha^{-1}\X)^{-2}\y\right|
+\leq \frac{1}{\alpha-\Lambda_{\max}}+\frac{\alpha^2
+M^2}{(\alpha-\Lambda_{\max})^2}\]
+for all $\y$ in the support $[-M,M]^n$
+of $\prod_{i=1}^n \d\nu(y_i)$, this implies
+\[0 \leq \frac{1}{n}\langle \|\btheta\|_2^2\rangle
+-\frac{1}{n}\langle \btheta^\top \btheta'\rangle
+\leq \frac{1}{n}\langle \|\btheta\|_2^2\rangle
+\leq \frac{1}{\alpha-\Lambda_{\max}}+\frac{\alpha^2
+M^2}{(\alpha-\Lambda_{\max})^2}\].
+Then the given conditions of \eqref{eq:sufficientalphacondition} in the
+corollary imply the required conditions \eqref{eq:alphacondition} for $\alpha$
+in Theorem \ref{thm:replica}.
+
+It remains to check Assumption \ref{assump:convergence}. We verify a log-Sobolev inequality for
+$\mu_\Gibbs$ following the argument of \cite{bauerschmidt2019very}: Let
+\[\omega=\Lambda_{\max}+\eps\]
+and write
+\[\mu_\Gibbs(\btheta) \propto
+\exp\left({-}\frac{1}{2}\btheta^\top(\omega\,\Id-\X)\btheta
++\sum_{i=1}^n \left(\frac{\omega}{2}\theta_i^2-U(\theta_i)\right)\right)\]
+Then $\eps\,\Id \preceq \omega\,\Id-\X \preceq (2\omega-\eps)\,\Id$
+in the positive-definite ordering, so we have
+\[(\omega\,\Id-\X)^{-1}=(2\omega\,\Id)^{-1}+\B^{-1}\]
+for some $\B \succ 0$. Hence,
+expressing the Gaussian measure with covariance $(\omega\,\Id-\X)^{-1}$
+as a convolution of those with covariances $(2\omega\,\Id)^{-1}$ and $\B^{-1}$,
+\[\exp\left({-}\frac{1}{2}\btheta^\top(\omega\,\Id-\X)\btheta\right)
+\propto \int \exp\left({-}\frac{2\omega}{2}\|\btheta-\bphi\|_2^2
+\right)\exp\left({-}\frac{1}{2}\bphi^\top \B\bphi\right)\d\bphi.\]
+Thus
+\begin{equation}\label{eq:measuredecomp}
+\mu_\Gibbs(\btheta) \propto
+\int \d\bphi \exp\underbrace{\left({-}\frac{1}{2}\bphi^\top \B\bphi
++\log \sum_{i=1}^n
+\int
+\exp\left(\frac{\omega}{2}\theta_i^2-U(\theta_i)-\omega(\theta_i-\varphi_i)^2\right)\d\theta\right)}_{:={-}V(\bphi)}\prod_{i=1}^n
+\mu_{\varphi_i}(\theta_i)
+\end{equation}
+where
+\[\mu_\varphi(\theta)
+=\frac{\exp((\omega/2)\theta^2-U(\theta)-\omega(\theta-\varphi)^2)}
+{\int \exp((\omega/2)\theta^2-U(\theta)-\omega(\theta-\varphi)^2)\d\theta}.\]
+Under the condition \eqref{eq:alphacondition} checked above, each univariate law
+$\mu_{\varphi_i}$ satisfies a log-Sobolev inequality on $\R$ with
+log-Sobolev constant depending only on $\omega$ and $U(\cdot)$ and not on
+$\varphi_i$, by the same argument as \eqref{eq:logsobolevdecomp}. Furthermore,
+writing
+\[\langle f(\theta) \rangle_{\varphi}
+=\int f(\theta)\mu_\varphi(\theta)\d\theta,\quad
+\Var_{\varphi}[\theta]=\langle \theta^2 \rangle_{\varphi}-\langle \theta
+\rangle_{\varphi}^2,\]
+we have
+\begin{equation}\label{eq:LSIderivativebound}
+\frac{\d^2}{\d\varphi^2}
+\left[{-}\log \int
+\exp\Big(\frac{\omega}{2}\theta^2-U(\theta)-\omega(\theta-\varphi)^2\Big)\d\theta\right]
+=2\omega-4\omega^2\Var_{\varphi}[\theta].
+\end{equation}
+Recalling that $e^{-U(\theta)}$ is the law of
+$y+z$ where $y \sim \nu$ and $z \sim \cN(0,\alpha^{-1})$, we have furthermore
+\begin{align*}
+\mu_\varphi(\theta)
+&\propto \int_{-M}^M
+\exp\left(\frac{\omega}{2}\theta^2-\omega(\theta-\varphi)^2\right)
+\exp\left({-}\frac{\alpha}{2}(\theta-y)^2\right)\nu(\d y)\\
+&\propto \int_{-M}^M
+\exp\Big({-}\frac{\alpha+\omega}{2}\theta^2
++(\alpha y+2\omega \varphi)\theta-\frac{\alpha}{2}y^2\Big)\nu(\d y)\\
+&\propto \int_{-M}^M \exp\Big({-}\frac{\alpha+\omega}{2}
+\Big(\theta-\frac{\alpha y+2\omega \varphi}{\alpha+\omega}\Big)^2\Big)
+\tilde \nu_\varphi(\d y),
+\end{align*}
+for some probability measure $\tilde \nu_\varphi$ supported on $[-M,M]$ and
+depending on $(\alpha,\omega,\varphi)$. Thus $\mu_\varphi(\theta)$
+is the law of 
+\[\theta=\frac{2\omega\varphi}{\alpha+\omega}
++\frac{\alpha}{\alpha+\omega}y+z,
+\qquad y \sim \tilde \nu_\varphi,
+\qquad z \sim \cN(0,(\alpha+\omega)^{-1}),\]
+and $y,z$ are independent. Then
+\[\Var_\varphi[\theta]
+=\frac{\alpha^2}{(\alpha+\omega)^2}\Var_{\tilde \nu}[y]
++\frac{1}{\alpha+\omega}
+\leq \frac{\alpha^2M^2}{(\alpha+\omega)^2}+\frac{1}{\alpha+\omega}
+\leq M^2+\frac{1}{\alpha+\omega}.\]
+Recalling $\omega=\Lambda_{\max}+\eps$ and choosing $\eps$ small enough, the
+second given condition of \eqref{eq:sufficientalphacondition} ensures
+\[2\omega-4\omega^2\Var_\varphi[\theta] \geq \eps.\]
+Applying this to \eqref{eq:LSIderivativebound} shows that
+$V(\bphi)$ defined in \eqref{eq:measuredecomp} is a
+uniformly strongly convex potential, so $e^{-V(\bphi)}$
+satisfies a log-Sobolev inequality on $\R^n$ with log-Sobolev constant depending
+only on $\eps$. Then the argument of \cite{bauerschmidt2019very} verifies that
+$\mu_\Gibbs$ also satisfies a log-Sobolev inequality on $\R^n$, with
+log-Sobolev constant depending only on $\omega,\eps,U(\cdot)$.
+This implies by a $T_2$-transportation inequality, contraction of relative
+entropy, and log-Harnack/entropy-cost inequality (as in the proof of Theorem \ref{thm:replica}) that for any
+deterministic vector $\btheta^0 \in \R^n$ and $t \geq 1$,
+\begin{align*}
+W_2(\Law(\btheta^t \mid \btheta^0),\,\mu_\Gibbs)^2
+&\leq C\DKL(\Law(\btheta^t \mid \btheta^0)\|\,\mu_\Gibbs)\\
+&\leq Ce^{-c(t-1)}\DKL(\Law(\btheta^1 \mid \btheta^0)\|\,\mu_\Gibbs)\\
+&\leq C'e^{-ct}W_2(\delta_{\btheta^0},\,\mu_\Gibbs)^2\\
+&\leq 2C'e^{-ct}(\|\btheta^0\|_2^2+\langle \|\btheta\|_2^2 \rangle).
+\end{align*}
+
+Recall from \eqref{eq:thetanormbound} that $\frac{1}{n}\langle\|\btheta\|_2^2\rangle \leq C$, where this requires only the assumptions $\|\X\|_\op \leq \Lambda_{\max}<\alpha$. Then,
+applying the above bound with the specified initial condition $\btheta^0$ having i.i.d.\ entries on $[-1,1]$, this implies for all $t \geq 1$ that
+\[\frac{1}{n}\langle \|\btheta^t\|_2^2 \rangle \leq C.\]
+This holds also for $t \in [0,1]$, by It\^o's lemma which shows $\frac{\d}{\d t}\frac{1}{n}\langle \|\btheta^t\|_2^2 \rangle \leq C(\frac{1}{n}\langle \|\btheta^t\|_2^2 \rangle +1)$ and Gr\"onwall's inequality. Then, applying the above bound with
+$\btheta^s$ in place of $\btheta^0$
+shows the first statement of Assumption \ref{assump:convergence} for $t \geq s+1$.
+The bound for $t \in [s,s+1]$ again follows from It\^o's lemma for $\frac{\d}{\d t}\frac{1}{n}\langle \|\btheta^t-\btheta^s\|_2^2 \rangle$ and Gr\"onwall's inequality. The second statement of
+Assumption \ref{assump:convergence} follows similarly by applying the above with $\tilde\btheta^0 \sim \mu_\Gibbs$ in place of $\btheta^0$.
+This checks all needed conditions for Theorem \ref{thm:replica}(a).
+
+Note that if \eqref{eq:sufficientalphacondition}
+holds, then it also holds for $(\beta\Lambda_{\max},\beta^{p+1}\kappa_{p+1})$ in
+place of $(\Lambda_{\max},\kappa_{p+1})$ for every $\beta \in [0,1]$, because
+the left side of each condition in \eqref{eq:sufficientalphacondition}
+for $(\beta\Lambda_{\max},\beta^{p+1}\kappa_{p+1})$ is increasing
+in $\beta$. Thus, all of the above statements hold also for $\beta\X$ in place
+of $\X$, verifying the needed condition for Theorem \ref{thm:replica}(b).
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:ising}]
+Define the discrete law on $\{\pm 1\}$
+\[\nu=\frac{e^h}{e^{-h}+e^h}\,\delta_{+1}+\frac{e^{-h}}{e^{-h}+e^h}\,\delta_{-1},
+\qquad M=1.\]
+Since $\Lambda_{\max}<1/2$
+and $\limsup_{p \to \infty} |\kappa_p|^{1/p}<1$ by Proposition
+\ref{prop:freecumulants},
+the condition \eqref{eq:sufficientalphacondition} holds for all sufficiently
+large $\alpha$. Thus, for all large $\alpha$,
+Corollary \ref{cor:hightemp} holds with the potential
+\[e^{-U_\alpha(\theta)}=\frac{e^h}{e^{-h}+e^h}
+\sqrt{\frac{\alpha}{2\pi}}e^{-\frac{\alpha}{2}(\theta-1)^2}
++\frac{e^{-h}}{e^{-h}+e^h}
+\sqrt{\frac{\alpha}{2\pi}}e^{-\frac{\alpha}{2}(\theta+1)^2}\]
+Let us define $p_\alpha(\d\theta)=e^{-U_\alpha(\theta)}\d\theta$ for
+$\alpha<\infty$, and $p_\alpha(\d\theta)=\nu(\d\theta)$ for $\alpha=\infty$.
+We denote also
+\[\mu_\alpha(\d\btheta)=\frac{1}{\cZ_\alpha}
+\exp\left(\frac{1}{2}\btheta^\top \X\btheta\right)
+\prod_{i=1}^n p_\alpha(\d\theta_i),
+\qquad \cZ_\alpha= \int \exp\left(\frac{1}{2}\btheta^\top \X\btheta\right)
+\prod_{i=1}^n p_\alpha(\d\theta_i)\]
+and write $\langle \cdot \rangle_\alpha$ for the associated Gibbs average.
+Note then that $\mu_\infty \equiv \mu_{\text{Ising}}$ is precisely the Ising
+Gibbs measure \eqref{eq:ising}, and
+\begin{equation}\label{eq:ZinftyIsing}
+\cZ_\infty=\cZ_{\text{Ising}} \prod_{i=1}^n \frac{1}{e^{-h}+e^h}.
+\end{equation}
+
+Let $v_*(\alpha),q_*(\alpha)$ be the values corresponding to $\mu_\alpha$,
+for all large enough $\alpha<\infty$ such that
+Corollary \ref{cor:hightemp} holds.
+Recall the explicit forms \eqref{eq:gaussianmixtureZ}
+for $\cZ_\alpha$, $\frac{1}{n}\langle \btheta^\top \btheta' \rangle_\alpha$,
+and $\frac{1}{n}\langle \|\btheta\|_2^2 \rangle_\alpha$, where the expectation
+$\E$ is over $\y \in \{\pm 1\}^n$ with entries $y_i \overset{iid}{\sim} \nu$.
+Write $\cZ_\alpha(\X,\y)
+\equiv \cZ(\X,\y)$ to now make explicit the dependence on $\alpha$. Note that
+for any $\y \in \{\pm 1\}^n$, $\X \in \R^{n \times n}$
+with $\|\X\|_\op<\Lambda_{\max}$, and
+$\alpha>\Lambda_{\max}$, we have
+\[\frac{1}{n}\left|\alpha^{-1}\Tr (\Id-\alpha^{-1}\X)^{-1}
++\y^\top(\Id-\alpha^{-1}\X)^{-2}\y-1\right|
+\leq \frac{1}{\alpha-\Lambda_{\max}}+\frac{\alpha^2}{(\alpha-\Lambda_{\max})^2}-1.\]
+Then the third identity of \eqref{eq:gaussianmixtureZ} implies 
+\[|v_*(\alpha)-1| \leq \limsup_{n \to \infty}
+\left|\frac{1}{n}\langle \|\btheta\|_2^2 \rangle_\alpha-1\right| \leq
+\frac{1}{\alpha-\Lambda_{\max}}+\frac{\alpha^2}{(\alpha-\Lambda_{\max})^2}-1,\]
+so
+\begin{equation}\label{eq:qstardef}
+1=\lim_{\alpha \to \infty} v_*(\alpha)
+\end{equation}
+
+For $q_*(\alpha)$, observe first
+that
+\[\frac{1}{\sqrt{n}}\|(\Id-\alpha^{-1}\X)^{-1}\y-\y\|_2
+\leq \frac{\Lambda_{\max}}{\alpha-\Lambda_{\max}},
+\qquad
+\frac{1}{\sqrt{n}}\|(\Id-\alpha^{-1}\X)^{-1}\y+\y\|_2
+\leq 2+\frac{\Lambda_{\max}}{\alpha-\Lambda_{\max}}.\]
+Hence, by the second identity of \eqref{eq:gaussianmixtureZ} and Cauchy-Schwarz,
+\begin{align}
+&\left|\frac{1}{n}\langle \btheta^\top\btheta'\rangle_\alpha
+-\frac{1}{n}\frac{\|\E[\cZ_\alpha(\X,\y)\y \mid \X]\|_2^2}
+{\E[\cZ_\alpha(\X,\y) \mid \X]^2}\right|\notag\\
+&\leq \frac{1}{n}\frac{\|\E[\cZ_\alpha(\X,\y)((\Id-\alpha^{-1}\X)^{-1}\y-\y) \mid
+\X]\|_2 \cdot \|\E[\cZ_\alpha(\X,\y)((\Id-\alpha^{-1}\X)^{-1}\y+\y) \mid
+\X]\|_2}{\E[\cZ_\alpha(\X,\y) \mid \X]^2}\notag\\
+&\leq \frac{\Lambda_{\max}}{\alpha-\Lambda_{\max}}
+\left(2+\frac{\Lambda_{\max}}{\alpha-\Lambda_{\max}}\right)\label{eq:overlapcompare}
+\end{align}
+Momentarily denoting
+\[[f(\y)]_\omega
+=\frac{\E[\cZ_{\omega^{-1}}(\X,\y)f(\y) \mid \X]}{\E[\cZ_{\omega^{-1}}(\X,\y) \mid \X]}
+=\frac{\E[\exp(\frac{1}{2}\y^\top\X(\Id-\omega \X)^{-1}\y) \cdot f(\y) \mid
+\X]}{\E[\exp(\frac{1}{2}\y^\top\X(\Id-\omega \X)^{-1}\y) \mid \X]}\]
+and writing $\Var_{[\cdot]_\omega}$ and
+$\Cov_{[\cdot]_\omega}$ for the associated variance and covariance, observe that
+\[\frac{\d}{\d\omega}[y_i]_\omega
+=\Cov_{[\cdot]_\omega}\left[y_i,\,\frac{\d}{\d\omega}\frac{1}{2}\y^\top\X(\Id-\omega\X)^{-1}\y\right]
+=\Cov_{[\cdot]_\omega}\left[y_i,\,\frac{1}{2}\y^\top\X^2(\Id-\omega\X)^{-2}\y\right].\]
+Then
+\[\left\|\frac{\d}{\d \omega}[\y]_\omega\right\|_2
+=\sup_{\u:\|\u\|_2=1} \Cov_{[\cdot]_\omega}\left[\u^\top\y,
+\,\frac{1}{2}\y^\top\X^2(\Id-\omega\X)^{-2}\y\right]
+\leq C\sqrt{n}\sup_{\u:\|\u\|_2=1} \Var_{[\cdot]_\omega}[\u^\top\y]^{1/2}\]
+for a constant $C>0$ and all small $\omega$. Since $\|\X\|_\op \leq
+\Lambda_{\max}<1/2$, also
+$\|\X(\Id-\omega \X)^{-1}\|_\op<c_0<1/2$ for some constant
+$c_0 \in (\Lambda_{\max},1/2)$ and all small enough $\omega$. Then by the result
+of \cite{bauerschmidt2019very}, the Gibbs measure on $\{\pm 1\}^n$ defining
+$[\cdot]_\omega$ (having Hamiltonian $\frac{1}{2}\y^\top \X(\Id-\omega
+\X)^{-1}\y+h\sum_{i=1}^n y_i$ with respect to the uniform measure over
+$\y \in \{\pm 1\}^n$)
+satisfies a Poincar\'e inequality with a dimension-free
+Poincar\'e constant depending only on $c_0,h$. Thus,
+$\Var_{[\cdot]_\omega}[\u^\top\y] \leq C\|\u\|_2^2 \leq C$ for a constant $C>0$, any unit vector $\u$,
+and all small $\omega$. Applying this above shows that for all
+small enough $\omega$, $\|[\y]_\omega-[\y]_0\|_2 \leq C'\omega\sqrt{n}$.
+Thus, there is a constant $C>0$ such that for all large enough
+$\alpha<\infty$,
+\[\left|\frac{1}{n}\langle \btheta^\top \btheta' \rangle_\infty
+-\frac{1}{n}\frac{\|\E[\cZ_\alpha(\X,\y)\y \mid \X]\|_2^2}
+{\E[\cZ_\alpha(\X,\y) \mid \X]^2}\right|
+=\left|\frac{1}{n}\frac{\|\E[\cZ_\infty(\X,\y)\y \mid \X]\|_2^2}
+{\E[\cZ_\infty(\X,\y) \mid \X]^2}
+-\frac{1}{n}\frac{\|\E[\cZ_\alpha(\X,\y)\y \mid \X]\|_2^2}
+{\E[\cZ_\alpha(\X,\y) \mid \X]^2}\right|
+\leq \frac{C}{\alpha}.\]
+Combining this with \eqref{eq:overlapcompare} shows
+\[\lim_{\alpha \to \infty}
+\sup_{n \geq 1}\left|\frac{1}{n}\langle \btheta^\top \btheta' \rangle_\alpha
+-\frac{1}{n}\langle \btheta^\top \btheta' \rangle_\infty\right|=0.\]
+Then, since the limit
+$q_*(\alpha)=\lim_{n \to \infty} \frac{1}{n}\langle \btheta^\top
+\btheta' \rangle_\alpha$ exists a.s.\ for all large $\alpha$,
+this implies that there exists a limit
+\begin{equation}\label{eq:vstardef-alpha}
+q_*:=\lim_{\alpha \to \infty} q_*(\alpha)
+\end{equation}
+for which also
+\[q_*=\lim_{n \to \infty} \frac{1}{n}\langle \btheta^\top \btheta'
+\rangle_\infty
+=\lim_{n \to \infty}
+\frac{1}{n}\langle \btheta^\top \btheta'
+\rangle_\text{Ising}\text{ a.s.}\]
+
+For all large $\alpha$, by Theorem \ref{thm:replica},
+$v_*(\alpha),q_*(\alpha)$ satisfy the fixed point equation
+\begin{align*}
+q_*(\alpha)&=\E_{\xi \sim \cN(0,1)}
+\left(\frac{\int \theta
+\exp(\frac{1}{2}\cR_\Lambda(v_*(\alpha)-q_*(\alpha))\theta^2
++\sqrt{q_*(\alpha)\cR_\Lambda'(v_*(\alpha)-q_*(\alpha))}\xi\theta)p_\alpha(\d\theta)}
+{\int
+\exp(\frac{1}{2}\cR_\Lambda(v_*(\alpha)-q_*(\alpha))\theta^2
++\sqrt{q_*(\alpha)\cR_\Lambda'(v_*(\alpha)-q_*(\alpha))}\xi\theta)p_\alpha(\d\theta)}\right)^2.
+\end{align*}
+Then taking $\alpha \to \infty$ and applying
+ \eqref{eq:qstardef}, \eqref{eq:vstardef-alpha}, and the weak convergence of 
+$p_\alpha$ to $p_\infty=\nu$,
+\begin{align*}
+q_*&=\E_{\xi \sim \cN(0,1)}
+\left(\frac{\int \theta
+\exp(\frac{1}{2}\cR_\Lambda(1-q_*)\theta^2+\sqrt{q_*\cR_\Lambda'(1-q_*)}\xi\theta)
+\nu(\d\theta)}{\int
+\exp(\frac{1}{2}\cR_\Lambda(1-q_*)\theta^2
++\sqrt{q_*\cR_\Lambda'(1-q_*)}\xi\theta)\nu(\d\theta)}\right)^2\\
+&=\E_{\xi \sim \cN(0,1)}
+\tanh\Big(h+\sqrt{q_*\cR_\Lambda'(1-q_*)}\xi\Big)^2,
+\end{align*}
+the second equality following from definition of $\nu(\d\theta)$ which is
+supported on $\{\pm 1\}$.
+
+We have also
+\begin{align*}
+|\log \cZ_\alpha(\X,\y)-\log \cZ_\infty(\X,\y)|
+&\leq \left|\frac{1}{2}\y^\top \X(\Id-\alpha^{-1}\X)^{-1}\y
+-\frac{1}{2}\y^\top \X\y\right|
++\left|\frac{1}{2}\log \det(\Id-\alpha^{-1}\X)\right|\\
+&\leq \frac{n}{2} \cdot \frac{\Lambda_{\max}^2}{\alpha-\Lambda_{\max}}
++\frac{n}{2}\left|\log\left(1-\frac{\Lambda_{\max}}{\alpha}\right)\right|
+\end{align*}
+Thus, applying the first identity of \eqref{eq:gaussianmixtureZ} and
+taking the expectation over $\y$,
+\[\lim_{\alpha \to \infty} \sup_{n \geq 1}
+\left|\frac{1}{n}\log \cZ_\alpha-\frac{1}{n}\log \cZ_\infty\right|=0.\]
+Since $f(\alpha):=\lim_{n \to \infty} \frac{1}{n}\log \cZ_\alpha$ exists
+a.s.\ for all large $\alpha$, this implies that almost surely,
+\begin{align*}
+\lim_{n \to \infty} \frac{1}{n}\log \cZ_\infty
+&=\lim_{\alpha \to \infty} f(\alpha)\\
+&=\E_{\xi \sim \cN(0,1)}
+\log \int \exp\left(\frac{1}{2}\cR_\Lambda(1-q_*)\theta^2
++\sqrt{q_*\cR_\Lambda'(1-q_*)}\xi\theta\right)\nu(\d\theta)\\
+&\hspace{0.5in}
++\frac{1}{2}\int_0^{1-q_*} \cR_\Lambda(s)\d s
+-\frac{1}{2}(1-q_*)\cR_\Lambda(1-q_*)
+-\frac{1}{2}q_*(1-q_*)\cR_\Lambda'(1-q_*)\\
+&=\E_{\xi \sim \cN(0,1)} \log 2\cosh
+\left(h+\sqrt{q_*\cR_\Lambda'(1-q_*)}\xi\right)
+-\log 2\cosh(h)\\
+&\hspace{0.5in}+\frac{1}{2}\int_0^{1-q_*} \cR_\Lambda(s)\d s
++\frac{1}{2}q_*\cR_\Lambda(1-q_*)-\frac{1}{2}q_*(1-q_*)\cR_\Lambda'(1-q_*).
+\end{align*}
+From \eqref{eq:ZinftyIsing} we have
+$\frac{1}{n}\log \cZ_\infty=\frac{1}{n}\log \cZ_\text{Ising}
+-\log 2\cosh(h)$, proving all statements of the corollary.
+\end{proof}

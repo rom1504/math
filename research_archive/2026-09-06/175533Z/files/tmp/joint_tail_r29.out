@@ -1,0 +1,28 @@
+A6 n 6 q 10 row values [30]
+ candidate m 5 S (1, 2, 3, 4, 5) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 5 S (0, 2, 3, 4, 5) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 5 S (0, 1, 3, 4, 5) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 5 S (0, 1, 2, 4, 5) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 5 S (0, 1, 2, 3, 5) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 5 S (0, 1, 2, 3, 4) Y 0.392742257 P 1 minRhit 30 hit |H| nums/den [4, 12, 20] / 3
+ candidate m 2 S (4, 5) Y 0.075499103 P 1 minRhit 30 hit |H| nums/den [20, 24, 36, 40] / 15
+ candidate m 2 S (3, 5) Y 0.075499103 P 1 minRhit 30 hit |H| nums/den [20, 24, 36, 40] / 15
+A8 n 8 q 20 row values [8, 32, 40, 56, 64, 72]
+ candidate m 4 S (2, 3, 5, 7) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (2, 3, 4, 6) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (1, 4, 5, 6) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (1, 3, 4, 7) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (0, 5, 6, 7) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (0, 2, 4, 7) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (0, 1, 3, 6) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+ candidate m 4 S (0, 1, 2, 5) Y 4.928932188 P 13/64 minRhit 56 hit |H| nums/den [80, 92, 104, 108, 120, 132, 144, 156] / 14
+A9 n 9 q 24 row values [16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128]
+ candidate m 6 S (0, 2, 3, 4, 5, 8) Y 8.936054705 P 37/256 minRhit 56 hit |H| nums/den [112, 120, 128, 144, 152, 160, 168, 184] / 12
+ candidate m 6 S (0, 1, 2, 4, 5, 6) Y 8.936054705 P 5/32 minRhit 48 hit |H| nums/den [112, 120, 128, 144, 152, 160, 168, 184] / 12
+ candidate m 7 S (1, 3, 4, 5, 6, 7, 8) Y 5.537547398 P 23/64 minRhit 40 hit |H| nums/den [72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 176, 192] / 12
+ candidate m 5 S (1, 3, 6, 7, 8) Y 6.0619201 P 31/128 minRhit 40 hit |H| nums/den [120, 144, 168, 184, 208, 224, 248] / 18
+ candidate m 5 S (1, 2, 3, 6, 7) Y 6.0619201 P 29/128 minRhit 40 hit |H| nums/den [120, 144, 168, 184, 208, 224, 248, 288] / 18
+ candidate m 5 S (0, 1, 6, 7, 8) Y 6.0619201 P 29/128 minRhit 40 hit |H| nums/den [120, 144, 168, 184, 208, 224, 248, 288] / 18
+ candidate m 5 S (0, 2, 6, 7, 8) Y 6.0619201 P 7/32 minRhit 40 hit |H| nums/den [120, 144, 168, 184, 208, 224, 248, 328] / 18
+ candidate m 5 S (0, 2, 4, 6, 7) Y 6.0619201 P 7/32 minRhit 40 hit |H| nums/den [120, 144, 168, 184, 208, 248, 288] / 18
+PASS exact A8 wall: P(hit)=13/64, P(R<=40)=15/64, joint=0, E[R|hit]=824/13 > E[R]=56

@@ -11,6 +11,7 @@ proofs, certificates, and scripts remain in their original locations.
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
 | [2026-09-06 17:36:30](2026-09-06/173630Z/README.md) | 1,886 research files; 153,016,506 bytes; all available untracked/ignored research plus modified tracked files | Preservation only; SHA-256 verified. Two unavailable old source modules documented, not reconstructed. |
+| [2026-09-06 17:55:33](2026-09-06/175533Z/README.md) | 1,898 research files; checkpoint-2 proofs/replays and newer agent drafts included | Preservation only; SHA-256 verified. Canonical verification status is in the campaign index, not inferred from this snapshot. |
 
 Each snapshot has `manifest.json` (original paths, hashes, byte counts,
 provenance category, exclusions), `files/` (unchanged payloads),
