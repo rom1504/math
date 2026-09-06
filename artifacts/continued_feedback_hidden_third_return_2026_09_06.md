@@ -1,7 +1,8 @@
 # A hidden third return despite small off-diagonal square entries
 
-Date: 2026-09-06. Status: probabilistic construction submitted for audit;
-the finite fixed-path identity is exactly replayed. This is an actual
+Date: 2026-09-06. Status: probabilistic construction independently
+reconstructed by the audit agent; the finite fixed-path identity is
+exactly replayed. This is an actual
 signing counterexample, not a minimizing construction.
 
 There exist symmetric hollow signings `B_n=A_n/sqrt(n-1)` such that

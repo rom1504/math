@@ -1,11 +1,12 @@
 # A retained-coherent-return energy projection
 
-Date: 2026-09-06. Status: proof under independent adversarial audit.
+Date: 2026-09-06. Status: proved at the stated scope; independent audit
+is in `continued_audit_coherent_return_energy_projection_2026_09_06.md`.
 The purpose is an actual-energy statement for nonzero-first scalar
 responses. The coherent return `QS` is retained literally; it is not
 replaced by an independent Gaussian or by the own spin.
 
-## 1. Proposed theorem
+## 1. Theorem
 
 Let `B=A/sqrt(n-1)` be an arbitrary symmetric hollow signing with fixed
 `||B||op<=L`, put `Q=B²`, and let `S` have independent sign coordinates.

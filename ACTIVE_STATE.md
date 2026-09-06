@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.5, active six-hour campaign.
+Evidence cutoff: ledger Section 10.149.6, active six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -181,7 +181,7 @@ For Q=B², R=sum_(p>=3 odd) f_p² Q^(circ p), T=BRB, actual
 C=H(BS)psi(Bf(BS)) has normalized-nuclear covariance asymptotic to the
 product Gaussian kernel with independent old/transported fields of covariance
 Q,T. Its actual self-energy is mu² Tr(B D_a T D_a)/(2n)+o(1), retaining a
-term absent on involutions. This is NOT a joint-law theorem allowing another
+term absent on involutions. Alone this is NOT a joint-law theorem allowing another
 threshold of BC. Fixed operator cap, functions, and approximation-before-order
 limits are required. The new inverse-variance theorem now supplies the
 additional control for hard thresholds, without a pointwise fixed floor.
@@ -223,8 +223,14 @@ cuts for ALL original Walsh degrees q>3 in B P(S,G,Y,QS,QD), including exact
 coherent collisions. Its cubic part is B D_u B D+B D_v QD plus a small-cut
 remainder, u=E partial_Y P and v=E partial_QD P. Individual positive-degree
 diagrams have bounded global cuts. These close the actual next-return full-
-contraction criterion at fixed polynomial stages; ordered bounded closure
-and a useful innovation bound are separate. Weak tested
+contraction criterion at fixed polynomial stages. Ordered bounded closure is
+now proved, retaining actual coherent regression and all variance cutoffs.
+For scalar zero-first sources and the ACTUAL remaining-slack mask, monotone
+erf feedback has a strictly positive next gain proportional to
+(mu^3/h)L^-9. A feasible fractional update increases energy by at least
+j^2/(2L). The general marked high-value source still lacks a proved innovation
+floor, and removing the spectral cutoff destroys this fixed-L margin.
+Weak tested
 regressions retain the explicit local drift gamma_i=(B³)_ii but recover only
 the previously available gain certificate. A separate actual-signing example
 has flat offdiagonal Q and cubic trace zero while many B³ entries stay large.
@@ -245,6 +251,15 @@ criterion. Independent-sign symmetrization beyond the first level is false.
 A strict finite certificate would improve the ALL-ORDER limsup via a dense
 supply of terminal Hadamard orders and principal restriction, not merely a
 subsequence. It would not itself establish convergence.
+The deep recursion now has a rigorous Gaussian-boundary limit: strict
+unbounded self-transport concavity implies that zero Bellman drift is exactly
+Gaussian; bounded-moment compactness and a stopped-tree estimate identify
+decreasing exact-terminal and increasing Gaussian-boundary iterates. The
+common fixed point is unique between those boundaries. Identifying it with
+the one-stage latent envelope requires the OPEN inequality B E<=E. The
+ternary latent value at p31/32,t4 has an exact rational upper certificate
+below -.02459765, but E is presently only a LOWER bound on the Bellman value.
+Thus no negative construction certificate or improved universal bound follows.
 In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
 exact rational dual excludes a fixed-width near-flat spectrum class at tilt4.
 Complementary profiles remain; Walsh affine identities do not automatically

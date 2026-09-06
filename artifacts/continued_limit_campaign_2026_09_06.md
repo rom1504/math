@@ -378,3 +378,68 @@ rigorously insufficient at depths3 and4; full output dependence matters.
 | Director | Boundary-covered graph theorem and all-order upper implication | Verify bounded closure and reduce the deep latent test exactly |
 
 Continue mathematical work immediately after saving this checkpoint.
+
+## Sixth substantive checkpoint: actual innovation and Gaussian terminal rigidity
+
+Recorded at approximately13:20 UTC; the campaign continues through13:37:56.
+The universal interval remains [.4333221116640807,.5].
+
+**Actual signing feedback.** The [ordered bounded next-gain theorem](continued_audit_ordered_bounded_next_gain_2026_09_06.md)
+and its [scalar observable](continued_feedback_second_query_scalar_gain_2026_09_06.md)
+retain actual coherent regression, not an independent substitute for it.
+The [director's remaining-slack innovation theorem](continued_director_masked_innovation_floor_2026_09_06.md)
+proves a positive next gain for a broad scalar zero-first source class on
+arbitrary bounded-operator hollow signings. It includes the actual mask
+H=1-|f| and monotone erf feedback; the explicit bound is
+sqrt(3)/(48 pi sqrt(pi)) times (mu^3/h)L^-9. An exact fractional update
+turns j into energy improvement at least j^2/(2L). Two independent audits
+passed. This does not yet apply to the high-value marked policy responsible
+for .4333221116640807, and the fixed-L margin cannot survive cutoff removal
+without more information.
+
+**A genuine upper-route obligation removed.** The [unbounded Gaussian
+self-transport rigidity theorem](continued_convergence_unbounded_sinkhorn_rigidity_2026_09_06.md)
+extends strict concavity to every finite-second-moment source, using possibly
+infinite-mass Radon scaling measures of finite Gaussian energy. Strict
+tensorization equality means independence. The Bellman policy drift is at
+least one quarter of its input mutual information; zero drift forces iid
+inputs and independent normalized sum/difference, hence a Gaussian source.
+The director and two independent researchers reconstructed this argument,
+including the compact primary theorem's exact hypotheses.
+
+The [stopped-tree theorem](continued_convergence_terminal_gap_reduction_2026_09_06.md)
+then proves unconditionally that B^r Phi decreases and B^r G increases to
+the same Bellman fixed point. Tail moment escape is controlled by logarithmic
+Gaussian cost, not a uniform controlled CLT. This closes the terminal-boundary
+gap. It does not identify that fixed point with the one-stage latent envelope.
+[Independent detailed audit](continued_audit_unbounded_sinkhorn_and_terminal_gap_2026_09_06.md).
+
+**Exact remaining inequality.** For
+E(nu)=sup_L[g_t(E Var(X|L))-I(X;L)], prove or falsify B E<=E. The reverse
+inequality is proved. Every fixed-temperature branch is a supersolution;
+their supremum is not automatically one. The [deep-envelope proof](continued_convergence_deep_latent_envelope_2026_09_06.md)
+isolates this issue. The [two-orbit theorem](continued_director_two_orbit_latent_envelope_2026_09_06.md)
+and [exact entropy-hull geometry](continued_feedback_ternary_entropy_hull_shape_2026_09_06.md)
+reduce the ternary source's latent optimization. An optimizer-free rational
+certificate gives the offset-envelope upper bound
+-19678127864847/800000000000000 at p31/32,t4. The director independently
+replayed it. This is NOT an upper bound on the Bellman supremum until the
+missing inequality is proved.
+
+**Falsifiers remain scoped.** A [fixed-temperature uniform additive majorant](continued_feedback_fixed_temperature_majorant_obstruction_2026_09_06.md)
+necessarily gives exponent at least .061526454982759375 at that point, so
+that shortcut cannot certify it. The exact rational replay passed. A
+[nonzero-first actual-conference example](continued_audit_nonzero_first_conference_parity_falsifier_2026_09_06.md)
+kills blindly extending the zero-first cubic innovation formula, not total
+feedback innovation. Forty-five temperature-segregation probes gave no
+positive violation; they are finite floating diagnostics, not an alignment
+theorem or an asymptotic obstruction.
+
+| Role | Last concrete result | Remaining discriminating step |
+|---|---|---|
+| Feedback | Exact ternary envelope certificate; fixed-temperature majorant no-go | Test heterogeneous-temperature inequality without scalarizing children |
+| Convergence | Gaussian zero-drift rigidity and exact two-sided Bellman limit | Prove/falsify single-latent envelope supersolution |
+| Audit | Independent full rigidity, stopping, and actual innovation proofs | Challenge any claimed implication to a cap improvement |
+| Director | Actual remaining-slack monotone innovation and exact fractional energy gain | Integrate strict finite cap criterion; retain every missing hypothesis |
+
+Continue research. This checkpoint is not the end-of-campaign synthesis.

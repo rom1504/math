@@ -1,7 +1,8 @@
 # Zero-first scalar response: a masked nonlinear covariance closure
 
-Date: 2026-09-06. Status: proposed proof, under independent adversarial
-audit. This note concerns arbitrary bounded-operator hollow signings, not
+Date: 2026-09-06. Status: proved at the stated scope, with independent
+audit in `continued_audit_zero_first_masked_covariance_2026_09_06.md`.
+This note concerns arbitrary bounded-operator hollow signings, not
 involutions or presumed spectrally flat minimizers. It does not identify a
 second threshold of the transported masked field.
 
@@ -35,7 +36,7 @@ K_{ij}=\mathbb E[H(U_i)H(U_j)]\,
        \mathbb E[\psi(Z_i)\psi(Z_j)].
 ```
 
-The proposed closure is
+The closure is
 
 ```math
 \frac1n\left\|\mathbb E[CC^{\mathsf T}]-K\right\|_*\longrightarrow0.       (1)
@@ -91,7 +92,8 @@ where `Lambda(B)=max_x |x^T Bx|/(2n)`. Formula (5) retains an actual
 common feedback self-energy, rather than discarding it. It does not
 claim a positive uniform lower bound for that common term.
 
-For the discontinuous threshold `psi=sign`, smooth approximation gives
+For the discontinuous threshold `psi=sign`, additionally require
+`tau^2=E f(N)^2>0`. Under this hypothesis smooth approximation gives
 the following formula. The original proof used a fixed positive
 variance floor; that assumption is now removed by the exact subset
 bound and cutoff argument in
@@ -395,6 +397,8 @@ by (4), and opposite cross terms given by the preceding display.
 The exact identity `max(|a+b|,|a−b|)=|a|+|b|`, followed by the hollow
 cube-to-Boolean rounding, proves (5). A uniform variance floor gives
 Gaussian anti-concentration for threshold approximation and yields (6).
+The companion threshold note removes that pointwise floor while retaining
+positive residual variance; it does not license (6) when `E f(N)^2=0`.
 
 ## 9. Frozen scalable variance-floor falsifier
 

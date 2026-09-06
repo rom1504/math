@@ -154,3 +154,48 @@ Walsh affine-coordinate identities. Thus the eight-point theorem cannot
 be imported unchanged into that ensemble without a new transfer or an
 appropriate terminal-level coding argument. This audit makes no such
 transfer and no claim of a new universal cap or convergence result.
+
+## 6. Diffuse finite bins and the sharp scope of the counting relaxation
+
+The complete companion
+`continued_feedback_diffuse_bin_count_and_limit_2026_09_06.md` was
+independently read. Its finite-bin extension and all-tilt relaxation
+obstruction both pass, with their stated diffuse and Walsh hypotheses.
+
+Uniform U2 diffuseness of the supported spins, together with selector
+quasirandomness, supplies exactly the same four-wise posterior recovery
+cost. It does not assert eight-wise independence. Quantizing the selected
+half of the spectrum replaces its sign-only code by the product symbol
+code of rate `[H(nu)+(1-nu_0)log2]/2`. The zero bin requires no sign bit:
+replacing its possibly nonzero coefficients by zero is already included
+in the squared quantization error. Empirical nonempty bins have mass at
+least 1/m, so the exceptional DC coefficient costs only O(log m). The
+partition is selected to minimize the SUM of this symbol cost and the
+conditional recovery cost, which is justified by their joint average.
+
+Quantization error d^2 m leads to at most 32d^2 k corrected integer
+symbols among m/2 outputs. Thus the correction fraction is 64pd^2 and
+the half-rate correction term is `[h(e)+e log17]/2`. Its use for an
+at-most-e fraction is monotone precisely in the declared range e<17/18.
+Conditioning, fixed-bin profile enumeration, and the trivial 2^k cap
+therefore give the claimed sufficient upper expression.
+
+The equal-mass trial amplitudes a=1/2 and b=sqrt(7)/2 have second moment
+one. Every self-coupling has equal diagonal masses r/2; optimizing its
+single parameter gives exactly
+
+```math
+\Psi_K=\log\bigl[(\sqrt{K_{aa}K_{bb}}+K_{ab})/2\bigr].
+```
+
+Using K_aa,K_bb>=1/2 and K_ab>=exp(-gamma t)/2 cancels the symbol code's
+log2 term and yields the lower test
+`C0+log(1+exp(-gamma t))/2+Delta t` for the relaxed upper expression.
+Here gamma=2-sqrt(7)/2 and Delta=1-sqrt(15)/4. Its minimum is
+`C0+h(2Delta/gamma)/2`, with
+`2Delta/gamma=(4-sqrt(15))/(4-sqrt(7))` strictly between .09 and 1/2.
+Since C0>-.136 and h(.09)/2>.151, the expression is >.015 for every
+positive tilt. This is an obstruction to this PARTICULAR counting and
+permanent relaxation, not a lower count or feasibility assertion for
+the trial inverse-Walsh profile. Arbitrarily fine bins do not remove
+the obstruction because the trial itself has only two atoms.

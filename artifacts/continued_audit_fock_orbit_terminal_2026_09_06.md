@@ -652,7 +652,7 @@ is O(r) and its weight-2^(-r) contribution vanishes. Consequently
 
 ```math
 f_\infty(\nu)\ge
-\sup_{L\ {\rm finite}}\{g_t(E\operatorname{Var}(X\mid L))-I(X;L)\}.
+\sup_{L\ \mathrm{finite}}\{g_t(E\operatorname{Var}(X\mid L))-I(X;L)\}.
 ```
 
 The infimum over depths exists because the decreasing iterates are
@@ -675,3 +675,214 @@ deep lower minus Gaussian candidate       > 0.0841475430429995.
 This rigorously falsifies that proposed universal deep upper envelope.
 It does not settle the original ternary input, the exact Bellman
 criterion at deeper levels, or the minimax convergence question.
+
+The director's companion
+`continued_director_two_orbit_latent_envelope_2026_09_06.md` also passes
+in full. A reflected ternary posterior has density z and bias zs;
+the only residual marginal constraint is Ez=p. Its entropy is
+`h(z)+z h((1+s)/2)`, and explained variance is `E z^2s^2/p`.
+Every such posterior mixture is an actual channel by Bayes' formula.
+
+The Gaussian potential is a supremum of affine functions of variance,
+so the FULL posterior-mixture objective is convex, not concave. Match
+its three relevant moments by at most four atoms, then decompose their
+weight vector in the polytope with mass one and mean z equal to p.
+Extreme weights have at most two nonzero entries. Convexity selects an
+extreme point with value no smaller, and compactness supplies an actual
+maximizer. This proves that two reflection orbits, at most four latent
+labels, suffice for this lower envelope. It does not assert two-orbit
+sufficiency at fixed distortion or for the Bellman value itself.
+
+Exposing the Gaussian correlation r interchanges two suprema, not a
+supremum and infimum. For fixed r, the posterior-density mixture is
+exactly the least concave majorant of
+`h(z)+z max_s[h((1+s)/2)+kappa z s^2]` evaluated at p. Its scalar bias
+maximizer is zero for `2 kappa z<=1` and otherwise the unique positive
+solution of `atanh(s)=2 kappa z s`. The boundary equality still has a
+unique zero maximizer, from the negative quartic entropy term. Thus
+the claimed finite-dimensional and entropy-envelope formulas are exact;
+uncertified numerical maximization of them remains only a lower test.
+
+## 15. Exact ternary entropy-hull shape
+
+The complete feedback
+`continued_feedback_ternary_entropy_hull_shape_2026_09_06.md` passes an
+independent calculus reconstruction. On the nonzero-bias branch, set
+`a=atanh(s)` and solve `a=2 k z tanh(a)`. The envelope derivative is
+`log((1-z)/z)+log(2cosh(a))`; differentiating gives exactly
+
+```math
+g_k''(z)=\frac{2kz(1-zs^2)-1}
+ {z(1-z)[1-2kz(1-s^2)]}.
+```
+
+The denominator is positive on that stable branch. Substitution of z
+shows that its sign is `sign(k-K(a))`, with
+`K(a)=a^2/[2(a coth(a)-1)]`. The derivative numerator of K has vanishing
+quadratic and quartic coefficients and strictly positive even coefficients
+from degree six onward, exactly as given in the source. Hence K increases
+strictly from 3/2 to infinity. This proves global concavity for k<=3/2,
+and precisely one concave--convex--concave pattern otherwise. The final
+concave interval exists because the numerator at z=1 equals the negative
+stable-branch denominator factor.
+
+For k>3/2 the least concave majorant therefore has exactly one common
+tangent interval. To match the source's derivative sign, define the
+competing height difference as RIGHT-branch maximum minus LEFT-branch
+maximum. Its slope derivative is `z_left-z_right<0`, proving uniqueness.
+The infinite endpoint slopes keep both contacts strictly interior.
+
+At coexistence, the stationary slope satisfies
+`E=exp(c)=4k sinh(a)/a-2cosh(a)>0`, with unordered contact
+`z_minus=2/(E+2)` and ordered contact `z_plus=a/(2k tanh(a))`.
+The two grand-canonical heights are respectively `log(1+2/E)` and
+`log(1+2cosh(a)/E)-a^2/(4k)`. Their equality gives the claimed scalar
+equation and the linear hull value `log(1+2/E)+p log(E)`. The unique
+relevant nonzero solution lies beyond the inflection and before z=1.
+
+The outer substitution k=t(1-r)/p has the correct interval and logarithm.
+The active posterior derivative lies in [0,p], while the logarithm's
+derivative lies in [0,1/(4k)], so the displayed outer derivative bounds
+are also valid through the hull switches in the Lipschitz sense. These
+exact reductions make a certified scalar evaluation possible; they do
+not turn unverified stationary values into upper certificates.
+
+## 16. Fully rational negative ternary latent-envelope certificate
+
+Section 5 of the hull-shape source and the ENTIRE standalone
+`continued_feedback_ternary_latent_interval_certificate_2026_09_06.py`
+were independently read. Replaying the latter with its stated default
+grids, saving separately under
+`tmp/continued_audit_ternary_latent_interval_certificate_2026_09_06.json`,
+reproduces exactly
+
+```math
+E(31/32,4)\le
+-\frac{19678127864847}{800000000000000}
+=-0.02459765983105875<0.
+```
+
+This is an upper bound on the already proved LATENT LOWER-ENVELOPE
+obstruction class, not an upper bound on the Bellman value.
+
+The log routine uses only exact positive atanh-series terms, its
+geometric remainder, and outward integer rounding. Negative powers of
+log2 reverse the endpoints correctly. The integer square-root enclosure
+checks its squared bounds exactly. No floating transcendental or optimizer
+affects the certificate; floats in its output are displays only.
+
+For the inner entropy maximizer, the exact interval thresholds bracket
+the monotone function `atanh(s)/(2s)`. At the final endpoint s=1 no
+logarithm is evaluated. An entropy tangent at the bracket midpoint
+upper-bounds the entropy everywhere. Adding the convex quadratic makes
+the maximum occur at a bracket endpoint; the lower derivative endpoint
+is correctly used for the negative displacement and the upper endpoint
+for the positive displacement. Thus the rational endpoint maximum is
+an upper bound throughout each bracket, not a grid-point evaluation.
+
+For z, the entropy modulus h(delta), sign-entropy modulus delta log2,
+and quadratic modulus 2k delta hold uniformly in the maximizing bias.
+Randomized rounding to adjacent z-grid points preserves Ez=p exactly.
+The monotone-slope stack computes the least concave majorant of the
+pointwise upper values, so adding this modulus covers every posterior
+mixing law, not just grid-supported channels.
+
+On k>=1/2, hull increments lie between zero and p times the k increment.
+The remaining logarithm has derivative between zero and 1/(4k). Hence
+the exact outer objective is p-Lipschitz for p=31/32. The 364 rational
+grid points cover the interval through its exact right endpoint; adding
+p times half the largest gap is sufficient. The largest point bound is
+`-23553127864847/800000000000000`; the mesh addition is 31/6400.
+The unrestricted Gaussian-region upper bound is smaller, so the two
+regions together give the displayed global result.
+
+This verifier deliberately does not rely on locating the unique analytic
+coexistence tangent from Section 15, furnishing a separate enclosure of
+the same variational problem. A negative result eliminates this entire
+finite-channel latent obstruction at p=31/32,t=4 only. It does not rule
+out another Bellman lower policy or establish a signing construction.
+
+## 17. Subsolution envelope versus fixed-temperature supersolutions
+
+The appended Sections 5--6 of the deep-latent source were independently
+read. The conditional-copy proof gives `B E_t>=E_t`: reuse the latent
+label in the plus child and the Gaussian lower bound in the minus child;
+the information identity gives
+`[I(U;L)+I(A;B)]/2<=I(X;L)`. Both conditional variances used are V.
+This is a subsolution statement, not the needed opposite inequality.
+
+For a FIXED lambda, the directly defined quadratic rate-distortion
+Lagrangian obeys
+
+```math
+J_\lambda(A)+J_\lambda(B)-I(A;B)
+ \le J_\lambda(A,B)\le J_\lambda(A)+J_\lambda(B).
+```
+
+Conditional entropy and additive squared error prove the lower bound.
+Product marginal channels prove the upper bound: their joint information
+is at most the sum, and conditioning on both labels only improves the
+prediction error. Vector J is invariant under orthogonal changes of
+coordinates. To apply this to the exact Bellman admissibility condition,
+FIRST take the always-safe global-reversal and input-swap averages.
+Both signed input marginals are then exactly nu; fixing only their
+average absolute marginal would not justify the factor `2J_lambda(nu)`.
+This proves `B(c_t(lambda)-J_lambda)<=c_t(lambda)-J_lambda`.
+
+The latent envelope is the supremum of these branches, by exposing the
+Gaussian correlation and interchanging two suprema. A supremum of
+Bellman supersolutions need not remain a supersolution: different children
+can choose different lambda. Even an eventual opposite inequality for
+the envelope would not alone identify the decreasing terminal limit
+without a terminal-gap or fixed-point argument.
+
+The proposed finite reproduction-grid enclosure is also mathematically
+sound. For positive a_i, Jensen gives its dual lower bound for the
+grid Lagrangian. Randomly round a reproduction to neighboring grid
+points with its mean preserved; this contracts information and increases
+quadratic distortion by at most h^2/4, giving the declared continuous/grid
+gap. Projection confines the reproduction to the source convex hull.
+Monotonicity of J_lambda and c_t(lambda) then bounds a parameter interval
+[a,b] by `c_t(b)-J_a`. These facts justify the diagnostic methodology;
+the source's floating optimizer runs are not promoted here to interval
+certificates or a global supersolution claim.
+
+## 18. Exact obstruction to a uniform additive fixed-temperature majorant
+
+The full feedback fixed-temperature-majorant artifact and its standalone
+checker were independently read and replayed, with output saved under
+`tmp/continued_audit_fixed_temperature_majorant_obstruction_2026_09_06.json`.
+The exact forced exponent lower bound is
+`19688465594483/320000000000000=0.061526454982759375`.
+
+The two terminal tests are unavoidable for a UNIFORM additive correction:
+the zero law requires d+c_t>=0; the Gaussian limit requires
+`d+c_t>=g_t(1)+J_lambda(N(0,1))`. The Gaussian rate-distortion value has
+the stated linear/logarithmic formula. Conditional maximum entropy gives
+its lower bound, and quantizing a Gaussian reproduction channel into
+finite labels attains the same infimum by information and L2 martingale
+convergence. Thus this test does not enlarge the allowed latent class.
+
+One explicit root binary channel of correlation .9 gives the exact
+variance 689/3200 and information used in all temperatures. The low
+temperature lower expression decreases up to .9. The high-temperature
+expression is concave in lambda, so its minimum over [.9,4] is at an
+endpoint. The three rational checks use entropy from below and sqrt(p)
+from above. The Gaussian lower interval uses its correlation's lower
+endpoint in the increasing linear term and upper endpoint in the
+decreasing logarithm. All signs and constants reconstruct.
+
+The finite-tree relevance is also valid. A zero terminal occurs on a
+diagonal-pair minus branch; the finite iid terminal converges in W2 to
+the unit Gaussian. Retaining a source's finite reproduction label under
+that W2 coupling contracts information and changes distortion by at
+most `2omega+omega^2`, uniformly for lambda<=4. This transfers the two
+tests even for a depth-dependent temperature, with an error tending to
+zero. They need not arise from the same policy because a uniform terminal
+correction must cover both possible states.
+
+The conclusion excludes only propagating a single fixed-temperature
+supersolution plus one uniform additive defect. Explicit further Bellman
+iteration, state-dependent defects, and the stopped-tree method remain
+outside this no-go statement. It is not a lower Bellman policy or a
+falsification of the p=31/32,t=4 construction candidate.

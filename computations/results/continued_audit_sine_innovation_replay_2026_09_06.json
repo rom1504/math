@@ -1,0 +1,98 @@
+{
+  "certified_gain_coefficient_interval": "[0.0146095154440203878286413316928097950346299473583194954401027691030937738883, 0.0146095154440203878286413316928097950346299473583194954401027691030937768597]",
+  "records": [
+    {
+      "n": 28,
+      "steiner_parameter": 3,
+      "actual_operator_norm": 1.7320508075688772,
+      "fixed_operator_cap": 2.0,
+      "tau_squared": 0.009568240196573695,
+      "response_t": 5.1115659653101115,
+      "exact_formula_float_checks": {
+        "min_eigenvalue_L2tau2Q_minus_T": 0.00960654608954283,
+        "mean_old_variance": 0.009798075554388655,
+        "min_old_variance": 0.009798075554388655,
+        "mean_ideal_eta_variance": 0.00014513128345527605,
+        "max_ideal_eta_variance": 0.0001451312834552761,
+        "proved_variance_floor": 1.4969052782041118e-05,
+        "proved_ideal_row_cap": 0.043800298410950345
+      },
+      "monte_carlo": {
+        "samples": 4000,
+        "seed": 6092029,
+        "mean_eta_variance": 0.00010667697849772427,
+        "eta_variance_se": 3.606760274223063e-06,
+        "signed_mean_rho": 0.00032023726920166445,
+        "signed_mean_rho_se": 2.2880431950252328e-05,
+        "mean_absolute_estimated_row_rho": 0.00032023726920166445,
+        "mean_row_rho_standard_error": 3.7677540327530296e-05,
+        "mean_absolute_estimated_variance_error": 3.845430495755173e-05,
+        "actual_next_gain": 0.16065740724059652,
+        "next_gain_se": 0.0005313861979149864
+      },
+      "scope": "Finite diagnostics, not a convergence-rate or theorem certification."
+    },
+    {
+      "n": 120,
+      "steiner_parameter": 4,
+      "actual_operator_norm": 1.5583874449479593,
+      "fixed_operator_cap": 2.0,
+      "tau_squared": 0.009568240196573695,
+      "response_t": 5.1115659653101115,
+      "exact_formula_float_checks": {
+        "min_eigenvalue_L2tau2Q_minus_T": 0.011825257067386142,
+        "mean_old_variance": 0.009587898567495725,
+        "min_old_variance": 0.009587898567495723,
+        "mean_ideal_eta_variance": 0.0001286379664165093,
+        "max_ideal_eta_variance": 0.00012863796641650929,
+        "proved_variance_floor": 1.4969052782041118e-05,
+        "proved_ideal_row_cap": 0.043800298410950345
+      },
+      "monte_carlo": {
+        "samples": 4000,
+        "seed": 6092030,
+        "mean_eta_variance": 0.00012320547198422816,
+        "eta_variance_se": 1.3999150336593653e-06,
+        "signed_mean_rho": 3.2238969297721635e-05,
+        "signed_mean_rho_se": 8.779678702802194e-06,
+        "mean_absolute_estimated_row_rho": 3.399673720291143e-05,
+        "mean_row_rho_standard_error": 2.7123401749999527e-05,
+        "mean_absolute_estimated_variance_error": 5.550401615924874e-06,
+        "actual_next_gain": 0.1487412450004262,
+        "next_gain_se": 0.00020395541681151076
+      },
+      "scope": "Finite diagnostics, not a convergence-rate or theorem certification."
+    },
+    {
+      "n": 496,
+      "steiner_parameter": 5,
+      "actual_operator_norm": 1.4832396974191326,
+      "fixed_operator_cap": 2.0,
+      "tau_squared": 0.009568240196573695,
+      "response_t": 5.1115659653101115,
+      "exact_formula_float_checks": {
+        "min_eigenvalue_L2tau2Q_minus_T": 0.013048678590245307,
+        "mean_old_variance": 0.009571086967156254,
+        "min_old_variance": 0.009571086967156254,
+        "mean_ideal_eta_variance": 0.00012736889806068226,
+        "max_ideal_eta_variance": 0.00012736889806068242,
+        "proved_variance_floor": 1.4969052782041118e-05,
+        "proved_ideal_row_cap": 0.043800298410950345
+      },
+      "monte_carlo": {
+        "samples": 4000,
+        "seed": 6092031,
+        "mean_eta_variance": 0.0001261940415719124,
+        "eta_variance_se": 7.537327966392257e-07,
+        "signed_mean_rho": 6.095444613726194e-06,
+        "signed_mean_rho_se": 3.9466613783342215e-06,
+        "mean_absolute_estimated_row_rho": 2.0065249882745e-05,
+        "mean_row_rho_standard_error": 2.5391506009503068e-05,
+        "mean_absolute_estimated_variance_error": 2.494116342253337e-06,
+        "actual_next_gain": 0.14246905178808658,
+        "next_gain_se": 9.219994086199682e-05
+      },
+      "scope": "Finite diagnostics, not a convergence-rate or theorem certification."
+    }
+  ]
+}

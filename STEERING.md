@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: fifth continued checkpoint, ledger Section 10.149.5.
+Evidence cutoff: sixth continued checkpoint, ledger Section 10.149.6.
 Status: **third six-hour response/convergence campaign active**,
 2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
 
@@ -104,12 +104,15 @@ Arbitrary overlapping networks and original-minimizer landing remain unproved.
    A strict finite certificate WOULD improve the all-order limsup: uniform
    terminal control, relatively dense Hadamard orders, and restriction remove
    the order-density gap. It would still not establish convergence.
-2. The new boundary-covered graph theorem controls every q>3 proper cut of
-   B P(S,G,Y,QS,QD), and identifies its exceptional cubic terms by two formal
-   derivative averages. The actual next-return full-contraction criterion is
-   now proved at each fixed polynomial stage. Finish the ordered bounded
-   gain passage, retaining equal-degree covariance and literal residuals;
-   no positive innovation or new universal constant is yet established.
+2. The boundary-covered graph theorem and exceptional cubic subtraction now
+   give an ORDERED BOUNDED next-gain comparison, retaining actual coherent
+   residuals. Its scalar observable uses only sigma²=E eta² and rho=E eta L.
+   A whole scalar zero-first source class, with the actual remaining-slack
+   mask and monotone erf feedback, has a positive explicit next gain of
+   order L^-9. An exact fractional update turns this into an energy increase.
+   This does NOT cover arbitrary high-value marked f(G,Y), improve the
+   universal constant, or close convergence. Test that specific remaining
+   innovation obligation rather than retuning the old terminal functional.
 3. The separate WALSH near-flat class certificate remains valid, but its
    diffuse finite-bin extension is quantitatively too weak even on a formal
    two-atom profile. Do not add more isolated profile classes without a full
@@ -155,3 +158,23 @@ have scoped obstructions. Exact asymmetric policies and a 237-box interval
 certificate now delimit shallow recursion uniformly. A deep latent/conditional-
 variance envelope is being tested against any proposed limiting potential.
 It is a LOWER bound on the Bellman supremum, never an upper certificate.
+The ternary latent optimization reduces exactly to two posterior orbits and
+one concave-envelope calculation; a rational certificate proves its value
+at p31/32,t4 is at most -.02459765983105875. Thus that obstruction class
+does not kill the point. A fixed-temperature supersolution plus any uniform
+additive terminal error DOES fail there, with propagated exponent >=.06152645.
+The terminal-gap obligation is now CLOSED: strict concavity of Gaussian
+entropic self-transport extends to all finite-second-moment laws, and zero
+one-step Bellman drift occurs exactly at centered Gaussians. A stopped-tree
+argument proves that the decreasing exact-terminal iterates and increasing
+Gaussian-boundary iterates converge to the SAME unique Bellman fixed point
+between these boundaries. This is independently reconstructed twice; no
+uniform CLT for controlled policies is assumed.
+
+The leading remaining test is now precise: does the single-latent envelope
+obey B E<=E? Fixed-temperature branches do, but their supremum need not;
+heterogeneous child temperatures are the actual gap. A proof, combined with
+the certified negative ternary envelope, would give a strict ALL-ORDER limsup
+improvement below1/2. It would NOT by itself prove convergence. The broad
+temperature-segregation finite probe found no counterexample and is only
+diagnostic evidence. Proofs and exact certificates are in checkpoint6.

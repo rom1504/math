@@ -1,6 +1,8 @@
 # Hard feedback thresholds without a pointwise variance floor
 
-Date: 2026-09-06. Status: proof extension, submitted for independent audit.
+Date: 2026-09-06. Status: proof extension independently reconstructed by
+the director and audit agent, with the stated positive residual variance
+and ordered-cutoff hypotheses retained.
 The subset-variance inequality in Section 1 was proposed by the director;
 the audit agent sharpened it to the inverse-moment bound below. This note
 checks both and records the precise threshold consequences.

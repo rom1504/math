@@ -1,8 +1,10 @@
 # Genuine marked old history: exact coherent Walsh root-map bounds
 
-Date: 2026-09-06. Status: new structural lemma, submitted for independent
-audit. This note retains the actual marked input and its return. It does
-not yet claim the nonlinear feedback energy projection.
+Date: 2026-09-06. Status: structural lemma independently reconstructed
+by the director and audit agent. This note retains the actual marked
+input and its return. Its bounds alone do not claim the nonlinear
+energy projection, which is proved in the later
+`continued_feedback_first_marked_history_energy_projection_2026_09_06.md`.
 
 ## 1. The first marked field and its literal return
 

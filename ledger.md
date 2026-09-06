@@ -45328,6 +45328,48 @@ retain QS rather than Gaussianize it. A direct energy projection is under
 attack. Independent convergence work tests noncommuting signing switches.
 Neither convergence nor nonconvergence is established. Continue the campaign.
 
+#### 10.149.6 Actual remaining-slack innovation and Gaussian terminal rigidity
+
+The ordered bounded second-gain theorem is proved for actual bounded-operator
+hollow signings, retaining coherent covariance and the actual regression
+residual. Its scalar zero-first specialization now has a positive innovation
+floor even for the remaining-slack mask H=1-|f|. Monotone erf feedback gives
+j >= sqrt(3)/(48 pi sqrt(pi)) (mu^3/h)L^-9 asymptotically at fixed operator
+cap L and fixed response functions. The exact feasible fractional step gives
+energy improvement j^2/(2L). This removes a real feedback-feasibility
+obligation, but does not cover the high-value marked source or remove L.
+
+On the independent upper-construction route, Gaussian entropic self-transport
+is strictly concave on all finite-second-moment laws. The proof extends the
+compact Gaussian-kernel theorem using Radon scaling measures of finite kernel
+energy, and proves strict tensorization equality iff independence. One-step
+Bellman drift dominates input mutual information divided by four, so its
+zero set consists exactly of centered Gaussian laws. A bounded-moment
+stopped-tree argument identifies decreasing exact-terminal and increasing
+Gaussian-boundary Bellman iterates, unconditionally. Thus the generic terminal
+boundary gap is closed; no all-policy uniform CLT is required.
+
+The remaining envelope-identification inequality is B E<=E, where
+E(nu)=sup_L[g_t(E Var(X|L))-I(X;L)]. The opposite inequality is proved.
+An exact two-posterior-orbit reduction and rational certificate put its
+offset value at p31/32,t4 below -.02459765983105875. This is still a LOWER
+obstruction envelope for the Bellman supremum, not a cap certificate. If the
+missing supersolution inequality holds, the proved recursion and all-order
+weave implication yield limsup<1/2; convergence would remain separate.
+
+Fixed-temperature supersolutions with a uniform additive terminal correction
+cannot prove this candidate: an exact replay forces exponent >=.06152645.
+A separate actual-signing counterexample falsifies a nonzero-first cubic
+shortcut, not the general feedback mechanism. No finite diagnostic is counted
+as an asymptotic theorem.
+
+[Proofs, independent audits, exact certificates, and scopes](artifacts/continued_limit_campaign_2026_09_06.md).
+
+Updated frontier: [.4333221116640807,.5], unchanged. Actual scalar masked
+innovation and the upper recursion's Gaussian terminal-boundary identification
+are now proved. General marked innovation and heterogeneous-temperature
+alignment remain open. The campaign continues through13:37:56 UTC.
+
 #### 10.149.5 Boundary-covered feedback graphs and certified recursion limits
 
 The original interval [.4333221116640807,.5] is unchanged. The active campaign
