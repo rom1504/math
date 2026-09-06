@@ -443,3 +443,30 @@ theorem or an asymptotic obstruction.
 | Director | Actual remaining-slack monotone innovation and exact fractional energy gain | Integrate strict finite cap criterion; retain every missing hypothesis |
 
 Continue research. This checkpoint is not the end-of-campaign synthesis.
+
+## Final checkpoint: a strict upper theorem for the original sequence
+
+The six-hour active research period is complete; its final exact certificate
+and whole-chain audit were finished immediately afterward. The new rigorous
+frontier is [.4333221116640807,.499432220485404], with the sharper exact
+upper value1/2-a/(8sqrt(31/32)),
+a=91470529542342299/20460000000000000000.
+
+The conditional-variance envelope has an exact Bellman supersolution via
+sequential labels and Schur-complement regression. Unlike the smaller
+envelope, it does not require a same-temperature alignment theorem. Its
+entire ternary posterior optimization has a negative rational upper
+certificate, independently replayed. Gaussian-boundary replacement converts
+this into a negative criterion at SOME fixed finite depth. The previously
+verified weave/Fock/type and all-order restriction arguments then give a
+strict original minimax limsup bound. The director and a fresh independent
+reviewer reconstructed every normalization and limit order again.
+
+[Final theorem](continued_director_strict_all_order_upper_2026_09_06.md),
+[whole-chain independent audit](continued_audit_exact_conditional_envelope_to_all_order_cap_2026_09_06.md),
+[exact certificate](continued_feedback_conditional_variance_exact_certificate_2026_09_06.md),
+[final synthesis and remaining gap](continued_limit_final_synthesis_2026_09_06.md).
+
+Convergence to1/2 is now impossible. Convergence to another constant or
+rigorous nonconvergence remains unproved. No matching lower bound or
+arbitrary-minimizer landing has been claimed.

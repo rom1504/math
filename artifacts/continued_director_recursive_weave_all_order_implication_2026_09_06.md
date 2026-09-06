@@ -1,5 +1,9 @@
 # A strict recursive-weave certificate would improve the all-order upper bound
 
+**Final campaign update:** the finite variational hypothesis is now proved
+for some fixed finite depth. Its unconditional numerical consequence is in
+`continued_director_strict_all_order_upper_2026_09_06.md`.
+
 Date: 2026-09-06. Director reconstruction. The finite variational hypothesis
 below remains OPEN. This file removes only a potential order-density gap
 from its consequence; it is not a convergence theorem.

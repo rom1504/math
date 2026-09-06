@@ -1,5 +1,10 @@
 # Restricted random weaving: an exact soft counting reduction
 
+**Final campaign update:** a strict full-row certificate is now proved using
+the recursive ensemble and conditional-variance supersolution. See
+`continued_director_strict_all_order_upper_2026_09_06.md` for the new all-order
+bound; the exploratory status statements below describe the earlier stage.
+
 This is an original-signing upper-construction candidate, not a convergence
 theorem. No upper cap is claimed by the numerical lower-witness searches.
 

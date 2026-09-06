@@ -1,5 +1,10 @@
 # Recursive Hadamard bases: a uniform orbital bound and a type recursion
 
+**Final campaign update:** the formerly open negative-root condition below
+has now been proved at some fixed finite depth. The original-signing
+consequence is `continued_director_strict_all_order_upper_2026_09_06.md`.
+The no-gos below remain valid only at their specified shallow depths.
+
 Date: 2026-09-06. These are one-row upper-bound tools for the restricted
 weave, not an original cap or convergence theorem.
 

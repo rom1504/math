@@ -3,8 +3,9 @@
 Date: 2026-09-06. Full independent reconstruction of
 `continued_convergence_unbounded_sinkhorn_rigidity_2026_09_06.md`
 and `continued_convergence_terminal_gap_reduction_2026_09_06.md`.
-Verdict: the strict-concavity and zero-drift theorem passes. The terminal
-gap theorem passes with the ONE remaining hypothesis `B E<=E`.
+Verdict: the strict-concavity and zero-drift theorem passes. Identification
+of the deep value with E still requires `B E<=E`; the further Gaussian-
+boundary replacement in Section 6 passes UNCONDITIONALLY.
 No original minimax convergence conclusion is established.
 
 ## 1. Primary compact theorem and its exact scope

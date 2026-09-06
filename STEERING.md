@@ -1,8 +1,10 @@
 # Strategic steering
 
-Evidence cutoff: sixth continued checkpoint, ledger Section 10.149.6.
-Status: **third six-hour response/convergence campaign active**,
-2026-09-06 07:37:56–13:37:56 UTC. Convergence and nonconvergence are open.
+Evidence cutoff: final continued checkpoint, ledger Section 10.149.7.
+Status: **third six-hour response/convergence campaign complete**.
+Active research ran2026-09-06 07:37:56–13:37:56 UTC; the last proof's exact
+replay, independent audit and publication finished immediately afterward.
+Convergence and nonconvergence are open; convergence to1/2 is now ruled out.
 
 ## User-stated objective and workflow directives
 
@@ -28,7 +30,7 @@ All mathematical judgments below are agent-authored.
 ```math
 0.4333221116640807
 \le\liminf_n M_n/n^{3/2}
-\le\limsup_n M_n/n^{3/2}\le1/2.
+\le\limsup_n M_n/n^{3/2}\le0.499432220485404<1/2.
 ```
 
 The lower bound is analytic with exact rational interval evaluation, independently
@@ -37,6 +39,13 @@ policy gives it. The old inverse remains norm one; its correlation with the new
 mask is retained. Fixed finite approximations precede the matrix limit, and the
 spectral cutoff is removed last. Exact recorded M_3,...,M_14 remain
 (3,4,4,5,9,10,12,13,17,18,20,21); n=11,13 solver lower certificates were not rerun.
+
+The NEW all-order upper theorem is analytic with an exact rational
+certificate. Its exact bound is1/2-a/(8sqrt(31/32)),
+a=91470529542342299/20460000000000000000. A conditional-variance envelope
+supersolution, Gaussian-boundary replacement, full restricted-weave counting
+and relatively dense terminal orders give it. It is not claimed optimal.
+See `artifacts/continued_director_strict_all_order_upper_2026_09_06.md`.
 
 ## Current assessment and leading tests
 
@@ -96,14 +105,14 @@ Arbitrary overlapping networks and original-minimizer landing remain unproved.
 
 ## Ranked next directions and falsification criteria
 
-1. Evaluate the new finite-depth orbital/permanent variational bound for an
-   exact randomized Hadamard weave. The uniform Gaussian-Fock terminal bound
-   loses only exp(O(sqrt(m))); no strict full-row exponent is certified.
-   EVERY fixed parameter choice at depth<=2 is now rigorously excluded;
-   depth3 at p15/16,t4 also fails. Deeper sign symmetrization is false.
-   A strict finite certificate WOULD improve the all-order limsup: uniform
-   terminal control, relatively dense Hadamard orders, and restriction remove
-   the order-density gap. It would still not establish convergence.
+1. The restricted-weave route now gives a strict ALL-ORDER upper theorem.
+   Its conditional-variance envelope uses sequential parent labels,
+   Schur-complement regression and concavity in log variance; it does not
+   assume equal temperatures. Preserve and stress-test this new mechanism
+   toward optimizing seeds. The remaining convergence gap is comparison
+   with liminf, not terminal realization or the1/2 construction. Improving
+   the constant alone would not close it. The shallow-depth and invalid-
+   symmetry falsifiers remain valid with their exact scopes.
 2. The boundary-covered graph theorem and exceptional cubic subtraction now
    give an ORDERED BOUNDED next-gain comparison, retaining actual coherent
    residuals. Its scalar observable uses only sigma²=E eta² and rho=E eta L.
@@ -135,8 +144,8 @@ These are genuine scoped signing results, not an unrestricted recurrence.
 
 Proofs, exact programs, and scopes are indexed in
 `artifacts/resumed_director_seventh_checkpoint_audit_2026_09_06.md` and the campaign
-record and final synthesis. The previous campaign is complete; the newly
-authorized six-hour campaign is active. If numbered
+record and final synthesis. The newly authorized six-hour campaign is now
+complete. If numbered
 waves resume, Wave 61 remains the scheduled blank-slate boundary.
 
 Actual scalar and fixed-colored feedback now has an energy-only projection
@@ -171,10 +180,10 @@ Gaussian-boundary iterates converge to the SAME unique Bellman fixed point
 between these boundaries. This is independently reconstructed twice; no
 uniform CLT for controlled policies is assumed.
 
-The leading remaining test is now precise: does the single-latent envelope
-obey B E<=E? Fixed-temperature branches do, but their supremum need not;
-heterogeneous child temperatures are the actual gap. A proof, combined with
-the certified negative ternary envelope, would give a strict ALL-ORDER limsup
-improvement below1/2. It would NOT by itself prove convergence. The broad
-temperature-segregation finite probe found no counterexample and is only
-diagnostic evidence. Proofs and exact certificates are in checkpoint6.
+The smaller envelope's B E<=E remains open but is no longer required for
+the strict upper construction. Moving g inside the latent expectation gives
+T; the proved sequential-label factorization establishes B T<=T. A DIFFERENT
+exact rational certificate proves its root offset negative. This bypasses,
+rather than assumes, heterogeneous-temperature alignment. The final theorem
+and synthesis are in checkpoint7. No comparison to the original liminf or
+recurrence for actual optimizing children has been proved.

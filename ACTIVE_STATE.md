@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.149.6, active six-hour campaign.
+Evidence cutoff: ledger Section 10.149.7, completed six-hour campaign.
 Use the linked proofs for reconstruction and the ledger only for archive detail.
 
 ## Exact problem and verified frontier
@@ -16,8 +16,14 @@ convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
 0.4333221116640807\le\liminf_n M_n/n^{3/2}
-\le\limsup_n M_n/n^{3/2}\le1/2.
+\le\limsup_n M_n/n^{3/2}\le0.499432220485404<1/2.
 ```
+
+NEW: a strict ALL-ORDER upper theorem is proved and independently audited.
+The exact upper endpoint is1/2-a/(8sqrt(31/32)), with
+a=91470529542342299/20460000000000000000. The sequence cannot converge
+to1/2; whether it converges to another constant remains open.
+[Theorem and complete dependency map](artifacts/continued_director_strict_all_order_upper_2026_09_06.md).
 
 Recorded M_3,...,M_14 are (3,4,4,5,9,10,12,13,17,18,20,21).
 The n=11,13 lower bounds are solver-certified infeasibility results;
@@ -29,6 +35,16 @@ Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension is n.
 It is RM(1,n) punctured to the weight-two slice, including the affine constant.
 
 ## Strongest current quantitative result
+
+The new upper construction combines a conditional-variance envelope
+T=sup_L[E g(Var(X|L))-I(X;L)], its PROVED Bellman supersolution,
+Gaussian-boundary replacement, an exact negative posterior-envelope
+certificate, and the uniform restricted-weave/all-order realization theorem.
+Sequential parent labels and Schur-complement variance comparison bypass
+the smaller envelope's still-open equal-temperature alignment question.
+No arbitrary minimizing signing is assumed flat, Gaussian, or conference.
+The result is uniform in all sufficiently large orders, but supplies no
+comparison with the original liminf. The bound is not claimed optimal.
 
 The new original lower endpoint is analytic, with exact rational interval
 evaluation and two independent source reconstructions/replays. The finite
@@ -171,7 +187,7 @@ no seed-norm power. Arbitrary overlapping composition is not established.
 
 ## Current actual-feedback comparison and next discriminating work
 
-Current authorized interval: 2026-09-06 07:37:56–13:37:56 UTC; still active.
+Completed authorized interval: 2026-09-06 07:37:56–13:37:56 UTC.
 For arbitrary bounded-op signings, old odd F has expected self-energy
 ||P1F||^2 Tr(B^3)/(2n)+o(1). The precise next missing transport is
 B[H sign(BF)]; zero cubic moment does not license an involution return.
@@ -244,13 +260,14 @@ Random restricted Hadamard weaving has an exact squared-defect identity and
 one-row PSD-kernel permanent obligation. A new uniform Gaussian-Fock orbit
 theorem has only exp(O(sqrt(m))) terminal loss; a proved entropy/transport
 supersolution gives a finite-depth type variational upper bound for an EXACT
-randomized Hadamard ensemble. Its required negative full-row exponent is not
-certified. Exact policies and a 237-box interval replay exclude EVERY fixed
+randomized Hadamard ensemble. The final conditional-variance theorem now
+certifies a negative full-row exponent at some fixed finite depth.
+Exact policies and a 237-box interval replay still exclude EVERY fixed
 p,t at depth<=2; depth3 at p15/16,t4 is also certified impossible for this
 criterion. Independent-sign symmetrization beyond the first level is false.
-A strict finite certificate would improve the ALL-ORDER limsup via a dense
-supply of terminal Hadamard orders and principal restriction, not merely a
-subsequence. It would not itself establish convergence.
+The strict certificate improves the ALL-ORDER limsup via a dense supply
+of terminal Hadamard orders and principal restriction, not merely a
+subsequence. It does not itself establish convergence.
 The deep recursion now has a rigorous Gaussian-boundary limit: strict
 unbounded self-transport concavity implies that zero Bellman drift is exactly
 Gaussian; bounded-moment compactness and a stopped-tree estimate identify
@@ -259,13 +276,16 @@ common fixed point is unique between those boundaries. Identifying it with
 the one-stage latent envelope requires the OPEN inequality B E<=E. The
 ternary latent value at p31/32,t4 has an exact rational upper certificate
 below -.02459765, but E is presently only a LOWER bound on the Bellman value.
-Thus no negative construction certificate or improved universal bound follows.
+That smaller-envelope calculation alone gives no cap bound. The larger
+conditional-variance envelope now has a separately proved supersolution and
+a DIFFERENT exact negative certificate; together they yield the new upper
+endpoint stated above.
 In the SEPARATE Walsh ensemble, stable eight-block recovery plus an
 exact rational dual excludes a fixed-width near-flat spectrum class at tilt4.
 Complementary profiles remain; Walsh affine identities do not automatically
 hold for the randomized ensemble. Typical-profile, rare-selector, and invalid
-annealing obstructions are scoped to their specified certificate/law. No full
-cap improvement, recurrence, convergence, or nonconvergence follows yet.
+annealing obstructions are scoped to their specified certificate/law. Those
+Walsh-only results alone give no full cap improvement or convergence theorem.
 The finite-bin extension of the Walsh count admits a formal two-atom profile
 with a positive relaxed exponent at every tilt; actual feasibility of that
 profile is not asserted. That extension alone cannot control the full sum.

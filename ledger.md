@@ -45370,6 +45370,47 @@ innovation and the upper recursion's Gaussian terminal-boundary identification
 are now proved. General marked innovation and heterogeneous-temperature
 alignment remain open. The campaign continues through13:37:56 UTC.
 
+#### 10.149.7 Strict all-order upper bound below one half
+
+The final campaign theorem proves
+
+```math
+\limsup_n\frac{M_n}{n^{3/2}}
+\le\frac12-
+\frac{91470529542342299}{20460000000000000000\cdot8\sqrt{31/32}}
+<0.499432220485404<\frac12.
+```
+
+The decisive supersolution is T(nu)=sup_L[E g_t(Var(X|L))-I(X;L)], not
+the smaller envelope g_t(E Var)-I. Sequential parent labels pay at most
+the child information plus the pair dependence. Conditional linear
+regression gives a Schur-complement variance pair; concavity in log
+variance and ordinary convexity compare it to the rotated child variances.
+This proves B T<=T on all finite reachable sources without equal-temperature
+or Gaussian-posterior assumptions.
+
+An exact integer/rational certificate bounds the full ternary T offset at
+p31/32,t4 by -91470529542342299/20460000000000000000. Gaussian terminal
+rigidity and the stopped-tree theorem supply a negative exact-terminal
+criterion at some fixed finite depth. The full weave, uniform orbital/type
+bound, independent fibre sampling, diagonal removal and all-order terminal
+realization then give the stated original minimax inequality. Depth is
+fixed before the order limit; the numerical margin is approached only
+afterward. Both the director and independent verifier replayed the exact
+certificate and freshly reconstructed the complete construction chain.
+
+[Theorem with exact dependencies](artifacts/continued_director_strict_all_order_upper_2026_09_06.md).
+[Complete independent audit](artifacts/continued_audit_exact_conditional_envelope_to_all_order_cap_2026_09_06.md).
+[Final synthesis](artifacts/continued_limit_final_synthesis_2026_09_06.md).
+
+Updated frontier: [.4333221116640807,.499432220485404], with the exact
+sharper upper expression above. Convergence to1/2 is ruled out. The
+original convergence/nonconvergence question remains open: no equality
+with liminf or separated infinite subsequences is proved. The authorized
+six-hour campaign is complete; its final review and publication followed
+immediately. The next recommended test is seed-constrained use of the
+new factorization, not decimal tuning of an unproved limiting constant.
+
 #### 10.149.5 Boundary-covered feedback graphs and certified recursion limits
 
 The original interval [.4333221116640807,.5] is unchanged. The active campaign
