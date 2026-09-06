@@ -44976,3 +44976,58 @@ Updated frontier: the explicit lower improves, but no matching upper recovery,
 comparable-order recurrence, or convergence/nonconvergence proof exists.
 The campaign continues on the stronger variational and independent nonlocal
 realization tracks through the authorized budget.
+
+#### 10.148.3 Conditional response projection, finite ascent, and a scoped ceiling
+
+**New verified original bound:**
+
+```math
+0.4314603928237005\le\liminf_n M_n/n^{3/2}
+\le\limsup_n M_n/n^{3/2}\le\tfrac12.
+```
+
+The full center theorem is conditioned on its single Gaussian V. The
+degree-200 inverse feature has an exact scalar Hermite projection; 64
+rational central-strip bins and convexity give a lower bound without
+quadrature error or omitted tails. The rational certificate was separately
+read and rerun by the director. Contraction parameters remain fixed before
+finite approximation and the matrix limit.
+[Proof and program](artifacts/resumed_response_conditional_v_full_center_2026_09_06.md),
+[independent reconstruction](artifacts/resumed_director_third_checkpoint_audit_2026_09_06.md).
+
+**Proved uniform and generative consequences:** the full response supremum
+exceeds the entire old marked-mask supremum by at least 1/40000, via a
+128-bin rational Gaussian rearrangement certificate. Every finite canonical
+ternary response above sqrt(8/(27pi)) admits an exact one-coordinate strict
+ascent. A residual criterion extends this to the actual cyclic polynomial
+core with its added H feature, and all subsequent births. The full gradient
+has an exact one-new-Gaussian realization and an explicit positive line-search
+step whenever its innovation is nonzero. No uniform ascent rate is proved.
+[Uniform margin](artifacts/resumed_response_full_center_gain_and_purification_2026_09_06.md),
+[coordinate birth](artifacts/resumed_response_coordinate_birth_escape_2026_09_06.md),
+[gradient, moment dual, and quantitative step](artifacts/resumed_bound_audit_variational_stationarity_dual_2026_09_06.md).
+
+**Scoped limitations independently reconstructed:** finite strictly causal
+stationary frames have value at most 1/sqrt(2pi), including zero-gradient
+ties. An explicit tie falsifies the initially conjectured smaller pure-noise
+cap; its rational parameter box was replayed. Cyclic frames are not covered.
+GFOM universality on flat involutions bounds the ENTIRE fixed-rule full
+Gaussian response class, including its countable closure, by sqrt(15)/8.
+This does not bound actual Boolean optima or growing/nonlocal algorithms.
+[Stationarity and tie](artifacts/resumed_bound_audit_triangular_stationarity_tie_obstruction_2026_09_06.md),
+[universality hypotheses](artifacts/resumed_convergence_involution_local_ceiling_2026_09_06.md),
+[finite-tree handoff](artifacts/resumed_bound_audit_gfom_ceiling_handoff_2026_09_06.md).
+
+**Exact nonlocal positive tests:** a verified H144 three-cell partition and
+simplex-code quotient realize arbitrary finite-probability averaging
+reflections in the prescribed regularization. Two explicit seed/lift
+certificates recover their polar bound. Disjoint tensor products are valid;
+noncommuting overlapping composition and arbitrary polar recovery remain
+open. [Integer construction and scalable quotient](artifacts/resumed_convergence_h144_three_cell_2026_09_06.md).
+
+Updated frontier: the lower constant improves, and strict feasible response
+ascent is real, but its entire fixed-rule class has a proved ceiling below
+1/2. No matching upper, summable comparable-order recurrence, or convergence/
+nonconvergence theorem is established. Nonlocal realization and a fresh
+original-minimizer argument remain complementary tests, not assumed answers.
+Research continues through the six-hour authorization.

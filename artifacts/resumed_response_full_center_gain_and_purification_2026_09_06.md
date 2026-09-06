@@ -106,6 +106,31 @@ and numerical replay, a safely rounded original-problem lower endpoint is
 An independent floating-point calculation using the direct Gaussian
 formulas agrees; it is a diagnostic, not part of the certificate.
 
+### 3.1 One separately saved rational refinement
+
+The same 21 rational anchor coefficients and degree 200 also admit
+alpha=3623/5000 and resolvent=3479/1000. This is one static parameter
+refinement, not a new proof mechanism. The certificate's default
+parameters and the historical canonical output remain unchanged.
+Reproduce the separate output with
+
+    .venv/bin/python computations/resumed_response_full_center_certificate_2026_09_06.py --alpha 3623/5000 --resolvent 3479/1000 --target 5389/12500 --output computations/results/resumed_response_refined_full_center_certificate_2026_09_06.json
+
+Exact outward intervals give
+
+    creation derivative energy
+      < .999904932505320245853669704564681545270483582860128726229320 < 1,
+    old J
+      > .430739298690684541577697545516699092003374908840746036954451,
+    full-center gain
+      > .000385193812297116901488732009218164226276168840018344344919,
+    full-center lower bound
+      > .431124492502981658479186277525917256229651077680764381299370.
+
+This new refinement is submitted for independent director replay.
+Its safely rounded endpoint is .4311244925029816. Parameter tuning
+was stopped after this refinement to return to the structural problem.
+
 ## 4. Purification: the full variational supremum may use ternary F
 
 Define the full functional on bounded odd F and even feasible H by
@@ -171,6 +196,20 @@ using its own unused coordinate. Consequently
 This is equality of variational SUPREMA, not a direct purification of
 every infinite-coordinate response while keeping all of its old data.
 
+There is also a useful pointwise LOWER-BOUND consequence even for an
+infinite-coordinate F. Finite approximation followed by purification
+and then a limit proves
+
+    liminf M_n/n^(3/2)
+      >= E(1-|F|) Gamma_{sqrt(E|F|-||P_1F||_2^2)}(U*F).   (7)
+
+The radicand is nonnegative because ||P_1F||_2^2<=EF^2<=E|F|.
+Its continuity under L2 approximation follows from continuity of
+E|F|, of the projection norm, and of square root; a Lipschitz estimate
+at zero variance is not needed. Formula (7) does not assert existence
+of an unused coordinate for the given infinite F. It is a limit of
+valid finite purified constructions.
+
 ## 5. What purification does not give
 
 The gate is an even function of an unused Gaussian tree coordinate,
@@ -180,3 +219,97 @@ an iterative fresh-center theorem. Its use is static: it reduces the
 full variational optimization to ternary odd responses with binary
 center masks, while preserving the first-chaos adjoint and increasing
 the usable nonlinear variance.
+
+## 6. A quantitative uniform gap above every original marked mask
+
+Let H be ANY original even mask in [0,1], W=UH,
+F=sign(W)(1-H), and J=E F W>=.43. Then H=1-|F| almost surely
+whenever W is nondegenerate, as it is here. Put
+
+    mu=EH,  q=E|F|=1-mu,  sigma=||P_1F||_2,  K=U*F.
+
+The purified form (7) has nonlinear standard deviation
+t=sqrt(q-sigma^2), and EHK=J. It is available by finite purification
+and approximation even if this original mask uses countably many
+coordinates.
+
+Let a be the unique nonnegative number satisfying mu=2Phi(a)-1,
+and write m=2phi(a). If sigma>0, the normalized first projection
+G=P_1F/sigma is standard Gaussian and sigma=E[F G]. The Gaussian
+rearrangement bound gives
+
+    sigma <= E[|F||G|] <= 2phi(a)=m.                       (8)
+
+To verify the rearrangement step without any independence assumption,
+let A={|G|>a}, which has probability q. Since 0<=|F|<=1 and E|F|=q,
+
+    E[|F||G|]-E[1_A|G|]
+      = E[(|F|-1_A)(|G|-a)] <= 0
+
+pointwise in the integrand. The result applies equally to the ternary
+purification; the first projection is unchanged. Moreover
+
+    J=EHK <= sqrt(mu) sigma <= sqrt(mu)m.                  (9)
+
+Combining (7), signed weighted Jensen, and monotonicity of g in its
+standard deviation and nonnegative argument gives
+
+    liminf M_n/n^(3/2)
+      >= J+D(a),
+    D(a)=mu g_{sqrt(q-m^2)}(m/sqrt(mu)).                   (10)
+
+The radicand is strictly positive on the relevant parameter interval.
+The exact certificate checks that positivity interval by interval.
+One can also see global positivity from the strict Gaussian projection
+error of the ternary response sign(G)1_{|G|>a}.
+
+Here (9) forces a into the compact interval (47/100,22/25). Indeed
+h(a)=2phi(a)sqrt(2Phi(a)-1) has derivative with the sign of
+
+    r(a)=2phi(a)-2a[2Phi(a)-1],
+    r'(a)=-6a phi(a)-2[2Phi(a)-1] < 0,  a>0.
+
+The exact endpoint checks are
+
+    h(.47) < .429648656332302685914 < .43,  r(.47)>0,
+    h(.88) < .426949223789311322957 < .43,  r(.88)<0.
+
+Thus h(a)<.43 on both exterior intervals, and (9) excludes them.
+
+Divide [.47,.88] into 128 equal rational bins [a_l,a_r]. On each bin,
+
+    mu >= mu_l=2Phi(a_l)-1,
+    m <= m_l=2phi(a_l),
+    q >= q_r=2[1-Phi(a_r)],
+
+so a rigorous binwise lower bound for D is
+
+    mu_l g_{sqrt(q_r-m_l^2)}(m_l/sqrt(mu_l)).               (11)
+
+All factors in this monotonic comparison have the required sign. In
+particular g_t(x)>0, increases in t, and decreases in x>=0. Formula
+(11) is evaluated by outward rational intervals, with the inherited
+finite Gaussian-series error bounds.
+
+The complete replay is
+`computations/resumed_response_uniform_purified_gap_certificate_2026_09_06.py`;
+its JSON in the results directory records every one of the 128 bins.
+The minimum exact lower endpoint is
+
+    .000026760544759910564903901171555280747476109377036807622545
+
+and occurs in the first bin. Each bin separately exceeds 1/40000.
+Consequently every original marked mask with J>=.43 has a purified
+full-center certificate at least J+1/40000.
+
+If C_mark is the supremum of J over ALL original countable Gaussian
+marked masks, the previously constructed value .430658... ensures
+C_mark>.43. Take a sequence of near-supremizing masks in (10). This
+proves the quantitative separation
+
+    liminf M_n/n^(3/2) >= C_mark+1/40000.                   (12)
+
+The displayed exact bin margin in fact makes the inequality with
+C_mark+1/40000 strict. This substantially strengthens the earlier
+degree-51 common escape, but remains a static escape from the original
+marked-mask class, not an iterative theorem for the enlarged class.

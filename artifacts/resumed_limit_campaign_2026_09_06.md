@@ -95,3 +95,39 @@ fairness. These do not exclude nonlocal or initialization-sensitive updates.
 Next: justified threshold/dual optimization of the full Gaussian functional;
 the independent nonlocal three-cell/simplex realization lead; and the exact
 scope of the fixed-depth local universality ceiling. Research continues.
+
+## Third substantive checkpoint, approximately 03:25 UTC
+
+**Original-problem theorem:** conditional projection of the degree-200
+inverse feature onto V preserves center variation. Exact Gaussian Hermite
+endpoint identities and 64 rational bins prove the new endpoint
+.4314603928237005. The director derived the projection separately, read
+the full program, and independently replayed the rational certificate.
+No tail, quadrature, or sampling uncertainty enters this lower bound.
+
+**Accumulating response mechanism:** the old marked class is uniformly
+exceeded by at least 1/40000. A finite canonical high-value response always
+admits an exactly feasible one-coordinate strict ascent; a residual test
+also proves this for the actual cyclic core plus H. The full variational
+gradient admits one additional Gaussian coordinate and a positive certified
+line-search step. These are finite-stage results without a uniform rate.
+
+**Important ceiling, not a claim about signings:** the whole fixed-rule
+full Gaussian certificate class is bounded by sqrt(15)/8 on flat
+involutions. Finite strictly causal stationary frames have value at most
+1/sqrt(2pi); a genuine zero-gradient tie case was found and included in
+the corrected proof. Cyclic Gaussian cores are outside that second scope.
+These prevent confusing certificate growth with eventual sharpness.
+
+**Independent nonlocal realization:** exact H144 three-cell partitions,
+checked by integer replay, and simplex quotients generate arbitrary
+finite-probability averaging reflections on a prescribed regularized
+family. Two explicit seed/lift tests recover their PSD polar certificates.
+This does not establish general polar recovery, a matching upper bound,
+or original convergence. Overlapping operator composition is not licensed.
+
+Director judgment: the lower method has become genuinely generative, but
+its proved ceiling makes a complementary nonlocal or original-minimizer
+mechanism essential. Continue the phase-carrier construction, rigorous
+feedback/endogeneity tests, and fresh original-convergence proof obligations.
+The campaign is only about two hours old; this is not a stopping point.

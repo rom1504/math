@@ -18,8 +18,9 @@ from fresh_limit_mask_ascent_certificate import phi_large
 from fresh_limit_rooted_lower_certificate import DIGITS, I, INV_SQRT_2PI, Phi, phi
 
 
-def canonical_pair():
-    alpha, resolvent, degree = F(361, 500), F(17, 5), 200
+def canonical_pair(alpha=F(361, 500), resolvent=F(17, 5)):
+    degree = 200
+    assert 0 < alpha < 1 and resolvent > 0
     rho = [F(t, 10000) for t in
            [8108, -3110, 1441, 1662, -691, -1088, -758, -874, -444,
             331, 638, 496, 572, 502, 357, 563, 392, 452, 230, 286, 330]]
@@ -66,8 +67,11 @@ def canonical_pair():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--alpha", type=F, default=F(361, 500))
+    parser.add_argument("--resolvent", type=F, default=F(17, 5))
+    parser.add_argument("--target", type=F, default=F(431, 1000))
     args = parser.parse_args()
-    alpha, density, mass, covariance, residual_sd, derivative = canonical_pair()
+    alpha, density, mass, covariance, residual_sd, derivative = canonical_pair(args.alpha, args.resolvent)
     root_mass = mass.sqrt()
     sign_mean = 2*Phi_extended(covariance*alpha/residual_sd)-1
     outer_tail = 1-Phi_extended(root_mass*alpha/residual_sd)
@@ -84,12 +88,14 @@ def main():
                    -signed_center_mean*(1-Phi_extended(gaussian_argument)))
     assert gain.lo > 0
     full_bound = old_value+gain
-    target = F(431, 1000)
+    target = args.target
     assert full_bound.lo > target
     result = {
         "method": "exact_fraction_outward_intervals",
         "digits": DIGITS,
         "alpha": str(alpha),
+        "resolvent": str(args.resolvent),
+        "degree": 200,
         "canonical_derivative_energy": derivative.json(),
         "mask_mass": mass.json(),
         "V_W_covariance": covariance.json(),

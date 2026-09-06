@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: resumed second checkpoint, ledger Section 10.148.2;
-full nonlinear theorem and .4310374587290013 certificate reconstructed.
+Evidence cutoff: resumed third checkpoint, ledger Section 10.148.3;
+full nonlinear theorem and .4314603928237005 certificate reconstructed.
 
 Status: **second six-hour response/convergence campaign active**, starting
 2026-09-06 01:13:55 UTC from 78110a5;
@@ -40,50 +40,37 @@ are active. Record meaningful checkpoints and keep all limit orders explicit.
 
 ## Active independent assessment, 2026-09-06
 
-An elementary rooted-tree moment theorem and exact hierarchical energy law
-now improve the lower bound to 0.4306581794055286. Finite ancestor-anchored
-Gaussian fixed points are realized by finite approximations before
-the matrix limit; generic AMP universality is not assumed. Independent
-proof and exact arithmetic audits passed. The paired certificate alone has
-a nonnegative-mask ceiling below 0.4495, not a ceiling on all actual outputs
-or on M_n.
-A joint unmarked transport now supplies that different ingredient: a Schur
-standard-deviation inequality and weighted cubic projection yield gain
-c/log L over the exact banked certificate at every large fixed operator cap.
-Principal deletion proves a strict universal improvement, now uniform above
-the entire scalar central-mask hierarchy; the increment is unevaluated.
-The explicit lower bound has a shorter bounded-op L2 proof chain. Fixed-L
-minima approximate true minima to O(L^(-1/2)); their convergence is open.
-Exact cosquare seeds now refute square-only recovery at leading scale,
-including the present one-root odd variances; they are not near-minimizers.
-Schmidt's theorem settles the H2 regularized seed at sqrt(2), correcting
-the inference from greedy stagnation. General signed-action recovery and
-the regularized-minimum/original-liminf equality both remain unproved.
-See `artifacts/fresh_limit_final_synthesis_2026_09_06.md` for the final proof map.
+The full nonlinear response theorem is proved and independently reconstructed.
+Conditional projection onto one Gaussian field, then exact binwise Jensen,
+gives the displayed bound. Finite approximations precede the matrix limit;
+spectral deletion is removed last. The old marked supremum is exceeded by
+at least 1/40000. Feasible coordinate birth and one-Gaussian gradient ascent
+give further genuine finite-stage mechanisms, not refreshed product spins.
+No uniform rate or matching upper formula is known.
 
-The resumed campaign proves a stronger nonlinear joint-test theorem and exact
-feasible center update. It escapes the entire nonnegative marked-mask supremum
-by a uniform symbolic positive increment, without local slack or logarithmic
-operator-cap clipping. General high-value local slack is now rigorously false.
-Full nonlinear variance and its independent usable channel are now proved,
-giving the new decimal below. Valid reuse of the dependent center is not
-presumed; exact coordinate-ascent plateaus and twin correlations refute
-simple refreshing. The variational supremum admits ternary purification.
-A complementary researcher audits
-Haar universality and pursues an original-signing upper/recovery mechanism.
-These are agent-chosen targets, not new user directives. See
-`artifacts/resumed_limit_campaign_2026_09_06.md` and its theorem artifacts.
+The new audit also bounds the WHOLE fixed-rule Gaussian functional by
+sqrt(15)/8<1/2, using flat-involution GFOM universality. This is a certificate
+ceiling, not an actual-signing ceiling. Strictly causal finite stationary
+frames have the stronger 1/sqrt(2pi) bound; cyclic closures are excluded.
+These limits justify complementary nonlocal work rather than constant tuning.
+
+Exact H144 three-cell and simplex quotients realize finite-probability
+averaging reflections on the prescribed regularized family. New arithmetic
+phase carriers are being independently checked. Neither arbitrary polar
+recovery nor equality of regularized and original minima follows. Convergence
+and nonconvergence remain open; no particular seed route is mandatory.
+See `artifacts/resumed_limit_campaign_2026_09_06.md` for evidence and next tests.
 
 ## Agent-authored rigorous frontier
 
 ```math
-0.4310374587290013
+0.4314603928237005
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
-The explicit lower endpoint is improved; an additional strict increment over
-its exact analytic value is proved but unevaluated. The upper is unchanged.
+The explicit lower endpoint is improved. The exact underlying construction
+also admits a further unevaluated strict ascent. The upper is unchanged.
 Exact recorded values for n=3,...,14 are
 (3,4,4,5,9,10,12,13,17,18,20,21). The n=11,13 infeasibility lower
 bounds are solver-certified, not standalone formal proof certificates.

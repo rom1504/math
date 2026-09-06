@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.148.2, resumed campaign in progress;
+Evidence cutoff: ledger Section 10.148.3, resumed campaign in progress;
 full nonlinear response theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.4310374587290013\le\liminf_n M_n/n^{3/2}
+0.4314603928237005\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -27,8 +27,8 @@ The fresh verification script does not rerun those solvers.
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
 See the [full nonlinear theorem](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md),
-[exact evaluated gain](artifacts/resumed_response_full_center_gain_and_purification_2026_09_06.md),
-and [independent numerical reconstruction](artifacts/resumed_full_center_numerical_director_audit_2026_09_06.md).
+[conditional-projection certificate](artifacts/resumed_response_conditional_v_full_center_2026_09_06.md),
+and [independent numerical reconstruction](artifacts/resumed_director_third_checkpoint_audit_2026_09_06.md).
 The upper is unchanged. The new theorem uses the whole nonlinear local Gaussian
 response norm, not only selected edge coefficients. Nuclear covariance, actual
 endpoint parity and full mixed contractions justify a fresh one-step channel;
@@ -203,6 +203,21 @@ coordinate-ascent plateaus and an actual twin-spin non-product limit refute
 simple refreshing, with explicitly limited scope.
 [Checkpoint and proof links](artifacts/resumed_limit_campaign_2026_09_06.md).
 Convergence/nonconvergence and a Level-6 recurrence remain open.
+The third checkpoint proves a uniform increment of 1/40000 above the
+ENTIRE old marked-mask supremum, and a one-coordinate strict ascent for
+finite canonical responses (also for the particular cyclic core). The
+full gradient admits one-new-Gaussian ascent with an explicit positive
+line-search bound; there is no uniform convergence rate. Finite strictly
+causal stationary frames have value at most 1/sqrt(2pi), with genuine
+zero-gradient ties retained. Cyclic frames are outside that theorem.
+Crucially, fixed-rule GFOM universality on flat involutions bounds the
+ENTIRE full Gaussian certificate supremum by sqrt(15)/8<1/2. This does
+not bound actual signings or growing-complexity/nonlocal algorithms.
+The independent nonlocal track realizes arbitrary finite-probability
+averaging reflections by exact H144 three-cell and simplex quotients.
+Products on separate interfaces are valid; overlapping composition and
+general polar recovery are not proved. These are tests, not a matching
+upper or an all-order realization theorem.
 Historical route judgments are evidence to audit, not binding directives.
 See [the continuing campaign](artifacts/fresh_limit_campaign_2026_09_05.md).
 
