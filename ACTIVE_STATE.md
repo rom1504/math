@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: ledger Section 10.147.10, completed 2026-09-05/06 campaign;
-hierarchical fixed-point theorem independently audited. Use the ledger for archive
+Evidence cutoff: ledger Section 10.148.2, resumed campaign in progress;
+full nonlinear response theorem independently audited. Use the ledger for archive
 comparison; use the linked proof files to reconstruct new statements.
 
 ## Exact problem and verified frontier
@@ -16,7 +16,7 @@ where A is hollow symmetric with off-diagonal signs. The objective is
 convergence or nonconvergence of M_n/n^(3/2), not specifically the value 1/2.
 
 ```math
-0.4306581794055286\le\liminf_n M_n/n^{3/2}
+0.4310374587290013\le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
 
@@ -26,12 +26,13 @@ The fresh verification script does not rerun those solvers.
 
 The improved lower bound is analytic, with an exact rational interval
 certificate for its numerical evaluation, not a finite-order extrapolation.
-See [finite-anchor certificate](artifacts/fresh_finite_anchor_fixed_point_2026_09_05.md),
-[hierarchical tree energy](artifacts/fresh_limit_hierarchical_tree_energy_2026_09_05.md)
-and its independent combinatorial, transport, and arithmetic audits.
-The upper bound is unchanged. A further, nonnumerical strict improvement
-over the exact finite-anchor value is now proved by variance-normalized
-unmarked transport; its positive increment has not been numerically certified.
+See the [full nonlinear theorem](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md),
+[exact evaluated gain](artifacts/resumed_response_full_center_gain_and_purification_2026_09_06.md),
+and [independent numerical reconstruction](artifacts/resumed_full_center_numerical_director_audit_2026_09_06.md).
+The upper is unchanged. The new theorem uses the whole nonlinear local Gaussian
+response norm, not only selected edge coefficients. Nuclear covariance, actual
+endpoint parity and full mixed contractions justify a fresh one-step channel;
+neither a full BF conditional law nor an iterative refresh is assumed.
 
 For N=binom(n,2), let C_n^+={(c+b_i+b_j)_(i<j)} in binary coordinates.
 Then Q(a)=N-2d(a,C_n^+) and M_n=N-2rho(C_n^+). For n>=3 its dimension
@@ -194,9 +195,12 @@ liminf M_n/n^(3/2)>=E H E|U*F+sN| for fixed feasible old pairs and finite
 nonlinear edge mass s. Two independent reconstructions check the proof.
 Consequently the original liminf strictly exceeds the ENTIRE nonnegative
 marked-mask supremum, by a uniform symbolic positive increment. No new
-decimal is evaluated. Updated spins are dependent, so iteration is not
-licensed by this one-step theorem. Full nonlinear variance and reusable
-feasible dynamics are current targets, not established conclusions.
+decimal was evaluated at that checkpoint. The subsequent full nonlinear
+variance and usable innovation theorem now give the headline decimal above.
+The full variational supremum admits ternary F and binary H=1-|F| by
+purification after finite approximation. Iteration is not licensed: exact
+coordinate-ascent plateaus and an actual twin-spin non-product limit refute
+simple refreshing, with explicitly limited scope.
 [Checkpoint and proof links](artifacts/resumed_limit_campaign_2026_09_06.md).
 Convergence/nonconvergence and a Level-6 recurrence remain open.
 Historical route judgments are evidence to audit, not binding directives.

@@ -69,3 +69,29 @@ center updates admit a valid reusable response description; independently
 test the scope of Haar-algorithm ceilings and seek an original-signing
 ingredient outside them. No upper recovery or convergence theorem is claimed.
 The campaign continues; this checkpoint is not a stopping point.
+
+## Second substantive checkpoint, approximately 02:40 UTC
+
+**Proved and independently reconstructed:** the whole higher local-Hermite
+response has normalized nuclear covariance sum_k ||R_k||_2^2 Q^(circ k).
+A P4/Schur diagram argument handles partial branch matchings. Endpoint
+parity kills the old drift, and an independent doubled-diagram estimate
+closes the exceptional full root-hit contraction. The center theorem is
+now liminf M_n/n^(3/2)>=E H E|U*F+||F-P1F||_2 N|.
+Forest-main variances, not all raw variances, are used for density domination;
+raw errors transfer in averaged L2. Two independent reconstructions passed.
+
+Weighted signed-mean Jensen and exact Gaussian projections give the verified
+endpoint .4310374587290013, with gain exceeding .0003792793234727. The director
+read and reran the rational certificate. The upper remains .5; convergence
+is open. The variational supremum can be purified to ternary F and binary H
+after finite approximation; this is not refreshing product spins.
+
+**Exact dynamics falsifiers:** variable-mask coordinate ascent can be strictly
+stationary below the actual optimum at normalized operator norm tending to
+one. Twin-row signings yield correlated tested centers despite one-root
+fairness. These do not exclude nonlocal or initialization-sensitive updates.
+
+Next: justified threshold/dual optimization of the full Gaussian functional;
+the independent nonlocal three-cell/simplex realization lead; and the exact
+scope of the fixed-depth local universality ceiling. Research continues.

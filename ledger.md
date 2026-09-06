@@ -44920,3 +44920,59 @@ No matching upper, all-order recovery, or convergence/nonconvergence theorem
 is proved. The new center depends on the old input and cannot be relabeled
 as a fresh independent mark. Full nonlinear variance and genuinely reusable
 feasible dynamics are the next discriminating targets. Research continues.
+
+#### 10.148.2 Full nonlinear innovation and the explicit 0.4310374587290013 bound
+
+**Proved with two independent reconstructions:** for R=F-P1F, the actual
+old-response covariance is sum_(odd k>=3)||R_k||_2^2 Q^(circ k)+o(n) in
+nuclear norm, not necessarily o(1) operator norm. A P4 branch-pairing
+argument handles partial matches. Exact endpoint parity removes old drift;
+the doubled-diagram estimate E||J||_F^2=O(sqrt(n)) closes the exceptional
+full root-hit contraction. Thus the usable channel is the whole nonlinear
+local norm tau_F=||F-P1F||_2:
+
+```math
+\liminf_n\frac{M_n}{n^{3/2}}\ge
+\mathbb E\left[H(X)\mathbb E_Z|\mathcal U^*F(X)+\tau_F Z|\right].
+```
+
+The pair is bounded, odd/even and |F|+H<=1. Jointly feasible finite
+approximations extend this to the countable Gaussian closure. Forest-main
+variances support the smoothing step; raw errors use averaged L2. The
+operator cap is removed after the fixed-construction matrix limit.
+[Full proof](artifacts/resumed_bound_audit_full_nonlinear_covariance_trace_2026_09_06.md),
+[director reconstruction](artifacts/resumed_full_nonlinear_channel_director_audit_2026_09_06.md),
+[independent response reconstruction](artifacts/resumed_response_full_channel_independent_audit_2026_09_06.md).
+
+**Exact original-problem consequence:** signed weighted Jensen yields
+J+mu g_tau(J/mu). The canonical finite-anchor pair has an exactly specified
+covariance; its first projection and tau follow from two Gaussian integrals.
+The rational interval script, independently read and rerun, proves
+
+```math
+\boxed{0.4310374587290013\le\liminf_n M_n/n^{3/2}
+\le\limsup_n M_n/n^{3/2}\le\tfrac12.}
+```
+
+The exact gain exceeds .000379279323472719152390980507389. No floating-point
+extrapolation, solver status, or omitted Hermite tail supplies this bound.
+[Formula/certificate](artifacts/resumed_response_full_center_gain_and_purification_2026_09_06.md),
+[independent arithmetic audit](artifacts/resumed_full_center_numerical_director_audit_2026_09_06.md).
+
+**Variational simplification:** an even independent-coordinate gate purifies
+finite F to 0,+1,-1, preserving P1F and increasing usable nonlinear variance.
+The full supremum therefore permits ternary F and binary H=1-|F|. Infinite
+F is approximated first; no unused coordinate is assumed in the full space.
+
+**Exact scalable falsifiers:** actual hollow Hadamard signings have strict
+variable-mask coordinate-ascent plateaus with bilinear limit 57/128 and
+best endpoint limit 29/64, while their optimum tends to 1/2. These do not
+describe the particular Gaussian initialization's basin. Twin-row signings
+also give correlated explicitly tested centers despite one-root fairness.
+The integer replay was independently run.
+[Proof and precise scope](artifacts/resumed_response_iteration_and_twin_obstruction_2026_09_06.md).
+
+Updated frontier: the explicit lower improves, but no matching upper recovery,
+comparable-order recurrence, or convergence/nonconvergence proof exists.
+The campaign continues on the stronger variational and independent nonlocal
+realization tracks through the authorized budget.

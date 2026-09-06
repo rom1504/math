@@ -1,7 +1,7 @@
 # Strategic steering
 
-Evidence cutoff: resumed campaign first checkpoint, ledger Section 10.148.1;
-explicit lower-bound and new nonlinear center theorem reconstructed independently.
+Evidence cutoff: resumed second checkpoint, ledger Section 10.148.2;
+full nonlinear theorem and .4310374587290013 certificate reconstructed.
 
 Status: **second six-hour response/convergence campaign active**, starting
 2026-09-06 01:13:55 UTC from 78110a5;
@@ -65,8 +65,11 @@ The resumed campaign proves a stronger nonlinear joint-test theorem and exact
 feasible center update. It escapes the entire nonnegative marked-mask supremum
 by a uniform symbolic positive increment, without local slack or logarithmic
 operator-cap clipping. General high-value local slack is now rigorously false.
-The next response obligations are full nonlinear variance and valid reuse of
-the dependent center. Neither is presumed. A complementary researcher audits
+Full nonlinear variance and its independent usable channel are now proved,
+giving the new decimal below. Valid reuse of the dependent center is not
+presumed; exact coordinate-ascent plateaus and twin correlations refute
+simple refreshing. The variational supremum admits ternary purification.
+A complementary researcher audits
 Haar universality and pursues an original-signing upper/recovery mechanism.
 These are agent-chosen targets, not new user directives. See
 `artifacts/resumed_limit_campaign_2026_09_06.md` and its theorem artifacts.
@@ -74,7 +77,7 @@ These are agent-chosen targets, not new user directives. See
 ## Agent-authored rigorous frontier
 
 ```math
-0.4306581794055286
+0.4310374587290013
 \le\liminf_n M_n/n^{3/2}
 \le\limsup_n M_n/n^{3/2}\le1/2.
 ```
