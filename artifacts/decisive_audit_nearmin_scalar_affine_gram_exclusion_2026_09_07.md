@@ -107,3 +107,51 @@ Machin's identity and alternating arctangent series, uses the rounded-down
 c above, and verifies (4), the strict positive width margin, and both
 comparisons with the threshold in (5). Printed decimal values are
 diagnostic only. All exact assertions passed.
+
+## 5. Robustness to normalized-Frobenius-small covariance changes
+
+Let G0=I+sA be an admissible correlation matrix with |s|<=1/6, and
+let G be any other correlation matrix. Set E=G-G0. Both diagonal
+vectors are one, so E has zero diagonal. For any |u|<=1/6 and
+v in [-1,1],
+
+```math
+|\arcsin(v)-\arcsin(u)|\le2|v-u|.                      \tag{6}
+```
+
+Here is an elementary global check, including v at an endpoint. If u
+and v have opposite signs, the secant is a weighted average of the two
+secants from zero, each at most pi/2<2. By symmetry it remains to
+consider u,v>=0. When v<=u, both are at most 1/6, and the derivative
+is at most 6/sqrt(35)<2. When v>=u, convexity makes the secant largest
+at v=1, and the resulting secant is increasing in u. Its maximum is
+therefore
+
+```math
+{\pi/2-\arcsin(1/6)\over1-1/6}\le {3\pi\over5}<2.
+```
+
+Applying the Gaussian angle identity entrywise and then Cauchy--Schwarz
+over unordered edges gives the exact finite estimate
+
+```math
+\begin{split}
+|\mathbb E H_A(\operatorname{sign}N(0,G))
+ -\mathbb E H_A(\operatorname{sign}N(0,G0))|
+&\le {4\over\pi}\sum_{i<j}|E_{ij}|\\
+&\le {2\over\pi}\sqrt{n(n-1)}\,\|E\|_F
+\le {2n\over\pi}\|E\|_F.                              \tag{7}
+\end{split}
+```
+
+Consequently ||E||F=o(sqrt(n)) changes the normalized signed expected
+energy by o(1). In particular this holds when the *difference* E has
+uniformly bounded operator norm and rank o(n), since
+||E||F<=sqrt(rank(E))||E||op. The affine reference must itself be PSD;
+the numerical condition |s|<=1/6 alone does not imply admissibility.
+The near-minimizer application already supplies admissibility and
+s=O(n^(-1/2)), so the scalar cutoff holds eventually.
+
+Thus the signed-mean exclusion in (4) survives these perturbations.
+No bound on expected absolute energy or on arbitrary anisotropic
+covariances follows from this corollary.

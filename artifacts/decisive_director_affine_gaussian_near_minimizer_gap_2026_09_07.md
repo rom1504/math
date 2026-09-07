@@ -135,6 +135,28 @@ least c n^(3/2). The successful marked/nonlinear law is outside this
 scalar-affine covariance class. Nor does the result exclude anisotropic
 Gaussian covariances or prove an all-order recurrence.
 
+### 3.1 Signed-mean robustness under low-complexity covariance changes
+
+There is a restricted extension, NOT a mean-absolute-energy extension.
+Let G_0=Id+sA be PSD with |s|<=1/6, let G be any other correlation matrix, and
+put D=G-G_0. For |u|<=1/6 and |v|<=1,
+`|arcsin(v)-arcsin(u)|<=2|v-u|`: same-sign outward secants are maximized
+at (1/6,1), bounded by 3pi/5<2; inward ones have derivative at most
+6/sqrt(35)<2; opposite-sign secants average slopes from zero bounded by
+pi/2. The exact Gaussian sign identity and off-diagonal Cauchy--Schwarz give
+
+    |E H_A(sign N(0,G))-E H_A(sign N(0,G_0))|
+       <=(2/pi) sqrt(n(n-1)) ||D||F.
+
+Thus an o(sqrt(n)) Frobenius change cannot remove the signed-mean gap.
+In particular a uniformly bounded-operator, rank-o(n) covariance correction
+cannot do so. If the target signed-mean improvement is delta*n^(3/2)
+and ||D||op<=K, then rank(D)>=(pi*delta/(2K)-o(1))^2 n is necessary.
+The correlations G need not be affine, but the variance proof above does
+not automatically extend to them. No claim about their expected ABSOLUTE
+energy is made here. This corollary was independently checked, including
+the full versus off-diagonal Frobenius factor.
+
 Dependencies: the freshly audited universal width lower bound, this
 campaign's strict all-order upper construction, the elementary Gaussian
 sign identity, and the finite Taylor argument (4). No random-disorder

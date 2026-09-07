@@ -179,6 +179,10 @@ lower >=2/pi from the companion universality obstruction is compatible
 with this favorable direction and does not refute it. The finite examples
 in section 1 refute only zero-error versions. A norm bound on A-B cannot
 settle the two-block claim: every flat filling has a bridge discrepancy of
-order N^{3/2}, so genuine cancellation with the child landscapes is needed.
+order N^{3/2}. A successful proof therefore needs joint control of the
+CHANGED internal and bridge responses, not a separate norm bound for each.
+Global child reversal still forbids favorable cancellation of an unchanged
+internal energy with its bridge; global old-edge changes are essential
+freedom in this formulation, not permission to ignore that identity.
 
 The original convergence problem is still unresolved by this route.
