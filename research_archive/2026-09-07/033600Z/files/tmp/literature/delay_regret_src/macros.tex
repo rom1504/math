@@ -1,0 +1,107 @@
+% preamble
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[basic,classfont=caps]{complexity}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+\usepackage{paralist}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xspace}
+\usepackage{accents}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage{microtype}
+
+% Usual paragraph semantics
+\newcommand{\myparagraph}[1]{\par\smallskip\noindent\textbf{#1.}}
+\newcommand{\myproofparagraph}[1]{\par\smallskip\noindent\textit{#1.}}
+
+% Usual math notation fixes
+\makeatletter
+\let\epsilon\varepsilon
+\let\phi\varphi
+\let\emptyset\varnothing
+\let\rho\varrho
+\makeatother
+
+% Usual complexity fixes
+\renewclass{\P}{Ptime}
+\renewclass{\DTIME}{Dtime}
+\renewclass{\DSPACE}{Dspace}
+\renewclass{\EXP}{EXPtime}
+\newclass{\TWOEXP}{2EXPtime}
+\renewclass{\EXPSPACE}{EXPspace}
+\newclass{\ACK}{Ack}
+\newclass{\FDTIME}{FDtime}
+\renewclass{\AP}{APtime}
+\renewclass{\PSPACE}{Pspace}
+
+% tikz details
+\usetikzlibrary{positioning,fit,arrows,automata,calc,shapes,decorations.pathmorphing} 
+\tikzset{->,>=stealth',
+shorten >=1pt,shorten <=1pt,
+auto,node distance=1.5cm,
+every loop/.style={looseness=6},
+initial text={},
+every state/.style={inner sep=0.2mm, minimum size=0.5cm},
+el/.style={font=\scriptsize},
+inner sep=1mm,
+loopright/.style={loop,looseness=6,out=30, in=-30},
+loopleft/.style={loop,looseness=6,out=210, in=150},
+loopabove/.style={loop,looseness=6,out=120, in=60},
+loopbelow/.style={loop,looseness=6,out=300, in=240},
+ve/.style={rectangle,draw,inner sep=1mm},
+va/.style={circle,draw,inner sep=0.6mm},
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+%
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+% Usual macros
+\newcommand{\maxweight}{w_{\max}}
+\newcommand{\maxm}{\mu_{\max}}
+\newcommand{\defeq}{:=}
+\newcommand\inter[1]{\llbracket #1 \rrbracket}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\stratregret}[2]{\mathbf{reg}^{#1}(#2)}
+\providecommand\lang{}
+\renewcommand{\lang}[1]{\mathcal{L}_{#1}}
+\providecommand\st{}
+\renewcommand{\st}{\:\mid\:}
+\newcommand{\pow}{\mathcal{P}}
+\newcommand{\eve}{Eve\xspace}
+\newcommand{\adam}{Adam\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\prop}[1]{\textbf{\textsf{P}$_{#1}$}}
+
+% Payoff functions
+\newcommand{\joker}{\mathsf{joker}}
+\newcommand{\credit}{\mathsf{Cr}}
+\newcommand{\el}{\mathsf{EL}}
+\newcommand{\dom}{\mathsf{dom}}
+\newcommand{\Val}{\mathsf{Val}}
+\newcommand{\epre}{\mathsf{EPre}}
+\newcommand{\JG}{\mathrm{JG}}
+\newcommand{\trap}[1]{\mathsf{trap}_{#1}}
