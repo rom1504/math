@@ -1,0 +1,52 @@
+\section{Introduction}
+\label{sec:intro}
+
+The mathematical capabilities of AI systems have grown at a remarkable pace.
+Within a few years, they have progressed from solving grade-school word problems to matching the best human performers on competition and advanced mathematics benchmarks~\cite{hubert2026alphaproof, imo-gold, glazer2024frontiermath}.
+Mathematics research, however, is a \emph{long-horizon} task.
+Its goals are often not clearly defined and evolve over time. 
+Success is judged not only by whether a statement is proved, but also by whether the right statement was chosen in the first place. 
+It requires building a body of knowledge whose significance may be apparent only later; that is, in research, rewards are sparse, and often delayed.
+% It comprises of goals that are not clearly defined, a growing body of knowledge, and sparse, often delayed reward signals. 
+% Success is judged not only by whether a statement gets proved, but by whether the right statement was chosen in the first place. 
+It is still an open question how to use AI effectively at this horizon.
+
+Existing systems occupy well-specified corners of this space.
+Evaluator-guided searches such as FunSearch and AlphaEvolve explore spaces of programs or constructions, but require a fixed objective and an automatic scoring function~\cite{funsearch,novikov2025alphaevolvecodingagentscientific}.
+Formal-proof systems such as AlphaProof obtain a similarly clear correctness signal from a proof assistant, but require a fixed formal statement~\cite{hubert2026alphaproof}.
+Interactive use of frontier models provides broad technical assistance, but leaves agenda-setting, memory, and verification with the human expert~\cite{bubeck2025science}.
+
+In this work, we provide a detailed case study of our experience using AI operating at the level of a research \emph{program}: deciding what to attempt next, retaining what failed and why, and converting an accumulation of failures into new mathematics.
+We engineered an AI research system asynchronously steered by human operators.
+We directed it at a concrete open problem: the Grothendieck constant $\KG$, which quantifies the hardness threshold between hard combinatorial optimization problems and their efficient continuous relaxations, and whose value has been open since 1953.
+
+The collaboration tightened the best known bounds on both sides,
+\[
+    1.7135\ldots
+    \;=\;
+    \frac{6\pi}{11}
+    \;\le\;
+    \KG
+    \;\le\;
+    \frac{\pi}{2\log(1+\sqrt2)} - 3.47\times10^{-4}
+    \;=\;
+    1.7818\ldots,
+\]
+The upper bound comes from a new asymptotic framework for rounding algorithms, and the lower bound from the first argument that bounds $\KG$ from below without constructing a hard instance.
+Central steps of this mathematics originated with the AI system and were judged novel by domain experts; all results stated as theorems have been independently verified by the authors, and complete proofs appear in the companion paper~\cite{saha2026new}.
+Our contributions are as follows.
+\begin{enumerate}[label=(\arabic*), leftmargin=*]
+    \item \textbf{Novel approaches for a longstanding open problem.}
+    We give an expository account of the Grothendieck constant and of the results in \cref{sec:grothendieck} and \cref{sec:companion-results}.
+    The upper bound introduces \emph{limiting Krivine schemes}, which enlarge the space of rounding algorithms studied since Krivine's work.
+    The lower bound converts obstructions on all rounding schemes into lower bounds on $\KG$; it is the first lower bound on the constant that does not proceed by constructing a hard instance.
+
+    \item \textbf{A methodology for long-horizon AI research.}
+    We document the system in \cref{sec:ai-methodology}: its division of labor between a reasoning model and a coding agent, its file-based memory, its calibrated internal verification protocol, and its channel for asynchronous human steering.
+    The run and its outcomes are quantified in \cref{sec:ai-results}.
+
+    \item \textbf{A case study with an analysis of capabilities.}
+    We reconstruct how the lower bound was found in \cref{sec:ai-case-study} and analyze the full record in \cref{sec:ai-discussion}.
+    The record shows a consistent asymmetry: the system was strong at technical execution, but substantially less reliable at research judgement and at maintaining an accurate research state.
+    % This suggests where human oversight has the greatest leverage, and \cref{sec:ai-future} proposes concrete directions for closing the gap.
+\end{enumerate}

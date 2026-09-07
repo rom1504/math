@@ -1,0 +1,89 @@
+{
+  "fourth_moments": [
+    {
+      "b": 1,
+      "fourth_moment": "1",
+      "k5_moment": "1",
+      "q": 4,
+      "row_words": 8,
+      "status": "PASS"
+    },
+    {
+      "b": 2,
+      "fourth_moment": "1/35",
+      "k5_moment": "1/52521875",
+      "q": 4,
+      "row_words": 64,
+      "status": "PASS"
+    },
+    {
+      "b": 4,
+      "fourth_moment": "1/455",
+      "k5_moment": "1/19501004534375",
+      "q": 4,
+      "row_words": 4096,
+      "status": "PASS"
+    },
+    {
+      "b": 1,
+      "fourth_moment": "1/5",
+      "k5_moment": "1/3125",
+      "q": 8,
+      "row_words": 16,
+      "status": "PASS"
+    },
+    {
+      "b": 2,
+      "fourth_moment": "1/65",
+      "k5_moment": "1/1160290625",
+      "q": 8,
+      "row_words": 256,
+      "status": "PASS"
+    }
+  ],
+  "k5_span": [
+    {
+      "four_cycle_identities": 35,
+      "m": 7,
+      "status": "PASS"
+    },
+    {
+      "four_cycle_identities": 70,
+      "m": 8,
+      "status": "PASS"
+    },
+    {
+      "four_cycle_identities": 126,
+      "m": 9,
+      "status": "PASS"
+    }
+  ],
+  "scope": "finite regressions, not an asymptotic certificate",
+  "status": "PASS",
+  "twisted_graph": [
+    {
+      "largest_ratio_to_product_norm": 0.681395309451197,
+      "signings": 8,
+      "status": "PASS",
+      "t": 0.1
+    },
+    {
+      "largest_ratio_to_product_norm": 0.23918420986917216,
+      "signings": 8,
+      "status": "PASS",
+      "t": 0.5
+    },
+    {
+      "largest_ratio_to_product_norm": 0.13131540545241607,
+      "signings": 8,
+      "status": "PASS",
+      "t": 1
+    },
+    {
+      "largest_ratio_to_product_norm": 0.01760240009669767,
+      "signings": 8,
+      "status": "PASS",
+      "t": 3
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: third synthesis-to-principle checkpoint, 2026-09-07.
+Evidence cutoff: fourth synthesis-to-principle checkpoint, 2026-09-07.
 Status: **six-hour research campaign ACTIVE**.
 Started15:24:01 UTC; target finish approximately21:24 UTC.
 The original convergence/nonconvergence problem remains OPEN.
@@ -89,42 +89,19 @@ Proofs and independent checks: `artifacts/principle_*_2026_09_07*`.
 The current campaign record is
 [here](artifacts/principle_director_campaign_2026_09_07.md).
 
-The second checkpoint adds two positive structural theorems:
+The same c* lower applies to every bounded-amplitude row-energy-regular
+weighted matrix, without spectral assumptions. Delocalized unbounded
+amplitudes remain open. An actual all-order skew anti-invariant family
+has cap<.499: its Boolean half-floor was false, its spectral floor remains.
+Amplitude-only falsifiers do not exclude their easy global localized repair.
 
-- The same c* lower bound holds for EVERY symmetric hollow real weighted
-  matrix sequence with fixed bounded amplitudes and uniform row squared
-  norms n-1+o(n), with no spectral or finite-species assumption. The new
-  common-tree factorization retains squared weights as positive unary
-  factors; variance completion removes the operator cap. This is not
-  equality of optimized weighted and sign values above c*.
-- An actual all-order skew anti-invariant family has normalized cap
-  below .499. Twenty scalar interval covers and the full paired-spin
-  construction are verified. Hence a universal BOOLEAN half-floor in this
-  family is false; its spectral-certificate floor remains true. The family
-  does not improve the original upper bound or retain an arbitrary seed.
-
-Rank-one variance completion additionally handles arbitrary delocalized
-input amplitudes at small cap cost O(sqrt(epsilon)n^(3/2)); the stronger
-delocalized marked lower theorem is still open. Exact local-amplitude
-falsifiers require dense polarity changes, including on weighted inputs
-within O(n^(13/10)) of actual optimal cap. Their global localized repair
-is easy, so they are not global-flatification impossibility results.
-
-The NEW positive principle is stronger than the first two-sector count:
-uniform random physical selectors exclude EVERY concentrated finite-alphabet
-row response simultaneously, for every underlying orthogonal basis and fixed
-p<1. Conditioning costs exp(o(m)) per row and preserves output orbit symmetry.
-Diffuse responses then force many columns with positive tilted variance;
-convex Talagrand concentration and Finner charge ACTUAL local stability.
-This strictly improves any finite-t, p<1 old row certificate, with no phase-gap
-assumption. All diagonals, spikes, fixed-depth errors and polarities are paid.
-Two independent audits, exact finite Finner checks, and70-digit replay pass.
-
-The Gaussian/Haar threshold coincidence was NOT an exact control saddle:
-one-spin stability strictly improves the Haar annealed bound too. The lower
-and upper frameworks satisfy a proved entropy-augmented weak duality, not
-equality. Threshold ascent has an explicit entropy loss; exact entropy-free
-cleanup is false even for delocalized row-regular weighted involutions.
+The positive upper principle is uniform selector uncertainty plus actual
+stability: random selectors exclude ALL concentrated finite-alphabet row
+responses, uniformly in the orthogonal basis. Diffuse responses pay an
+exponential convex Talagrand/Finner stability penalty. Every finite-t,p<1
+old row certificate improves strictly; original70-digit and finite replays
+pass. The analogous Haar stability gap disproves an exact annealed saddle.
+Entropy-augmented weak duality survives, not equality or entropy-free cleanup.
 
 Current positive tests, not yet convergence theorems:
 
@@ -156,6 +133,25 @@ Current positive tests, not yet convergence theorems:
   is not a completed cross-order theorem. Account for every remaining limit.
 
 ## Next checkpoint and continuation
+
+Fourth-checkpoint judgment: independent port permutation is now proved to
+erase leading fixed-temperature seed pressure for ALL row profiles of energy
+O(m), not just bounded alphabets or uniformly integrable tails. Descending
+signed-port matching pays coherent spikes and an exact tagged-zero coupling
+pays their conditioning cost. This applies to selectable exact children too,
+but not to correlated placement, singular temperatures, or arbitrary rewrites.
+The cycle-sensitive compiler retains exact finite information without yet
+retaining leading cap value. Retire that fixed-temperature transfer mechanism.
+
+New actual-input theorems: low-cap signs have exponentially few spin words
+with instability below any fixed v<1/sqrt(2pi), uniformly in every fixed
+external field. At zero field the instability concentrates in L2 at the
+universal constant, with O_C(n^-1/2) normalized error. Balanced-center sign
+augmentation also proves a quantitative critical r^2 log(e/r) valley test;
+actual full-sign examples at every fixed cap c>1/2 attain that scale around
+two grounds, but an enlarged low-complexity code removes their obstruction.
+These do not establish a recurrence for exact minimizers. Continue toward
+adaptive center-code dilution or another value-preserving actual operation.
 
 Preserve and publish about hourly; review active judgments when evidence
 changes. Continue through the six-hour authorization, redirecting failed
