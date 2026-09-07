@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: first material checkpoint of the active flatification
+Evidence cutoff: second material checkpoint of the active flatification
 campaign, 2026-09-07, begun at 05:27:43 UTC; continue through 11:28 UTC.
 Read the [closing synthesis](artifacts/decisive_campaign_final_synthesis_2026_09_07.md)
 and STEERING; use ledger 10.151 and proof dependencies as needed.
@@ -111,6 +111,19 @@ It retains the complete-bipartite support, not an arbitrary weighted graph.
 8. Existing compactness/ultrafilter limits do not supply all-order recovery.
 
 ## Exact next construction target
+
+New verified same-order tool: target contraction and rounding implement any
+symmetric perturbation Delta with cap error O(n sqrt(||Delta||_*)+n).
+No incoherence/Grothendieck premise is needed. This is subleading for nuclear
+budget o(n), but the direct two-child target has distance Omega(n), not o(n).
+Exact suboptimal Hadamards satisfy stronger stationary covariance balance than
+the theorem forces at optimizers; fixed improvement there needs Omega(n^2)
+edits. Stationarity alone is not a convergence architecture.
+
+Partition-count fluctuations have a proved O(N^(5/4)) cap cleanup. The two-bit
+reveal path has original absolute-pressure endpoints, but no total drift
+inequality. See the
+[continuing checkpoint](artifacts/flatify_director_checkpoint_two_2026_09_07.md).
 
 For comparable N=m+n and selectable actual minimizing children, globally
 round the row-square-normalized weighted block diagonal

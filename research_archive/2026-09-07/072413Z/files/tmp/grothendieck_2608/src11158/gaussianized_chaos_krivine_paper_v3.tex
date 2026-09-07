@@ -1,0 +1,1425 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Nzero}{\mathbb N_0}
+\newcommand{\D}{\mathbb D}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ol}{\overline}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\KG}{K_G}
+\newcommand{\SDP}{\operatorname{SDP}}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\Khyp}{K_{\mathrm{hyp}}}
+\newcommand{\rhohyp}{\rho_{\mathrm{hyp}}}
+\newcommand{\gammazero}{\gamma_0}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\calA}{\mathcal A}
+\newcommand{\calH}{\mathcal H}
+\newcommand{\calK}{\mathcal K}
+\DeclareMathOperator{\arsinh}{arsinh}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Certificate Module}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{A Gaussianized Chaos Krivine Scheme for the Grothendieck Constant}
+\author{Draft}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce and analyze a family of high-dimensional Krivine rounding schemes built from Gaussianized Hermite-chaos reservoirs.  The simplest member of the family uses an anti-aligned third-chaos reservoir and an aligned fifth-chaos reservoir.  Its finite-dimensional incarnations are genuine Gaussian rounding schemes, while its limiting correlation model remembers the reservoir degrees through the weighted correlations \(t^3\) and \(t^5\).  We derive an explicit coefficient formula for the limiting correlation function in terms of two-dimensional Gaussian integrals, and we prove a finite-dimensional transfer theorem: any strict inverse-majorant certificate for the limiting model transfers to all sufficiently high finite-dimensional schemes.  The transfer theorem is analytic rather than coefficientwise; it uses locally uniform convergence, stability of inverse branches by Rouche's theorem, and Cauchy estimates for the inverse-tail.
+
+For the parameters
+\[
+  \eta=0.136419125,\qquad s_3=0.34101124,\qquad s_5=0.05276111,
+\]
+the limiting normalized correlation has linear coefficient \(b_1=0.8815738220\ldots\), while the cubic and quintic coefficients are numerically annihilated.  We reduce the proof of admissibility at
+\[
+  \gammazero=0.8815624
+\]
+to a short interval-arithmetic certificate for the head and tail of the limiting coefficient sequence.  Once this certificate is inserted, the construction gives
+\[
+  \KG \le {\pi\over 2\gammazero}
+  =1.7818322637\ldots
+  ={\pi\over 2\log(1+\sqrt2)}-3.81714\cdot 10^{-4}\ldots .
+\]
+The certificate section of this draft is deliberately modular: all preceding arguments are analytic and exact, and the remaining computer-assisted inequalities are isolated explicitly.
+\end{abstract}
+
+
+\section{Introduction}
+
+The Grothendieck inequality~\cite{Grothendieck1953} from functional analysis shows that~\cite{LindenstraussPelczynski1968}, there exists a universal constant $K<\infty$ such that for every $m,n\in\N$ and every matrix $A=(a_{ij})\in\R^{m\times n}$,
+\begin{equation}\label{eq:grothendieck-ineq}
+  \max_{\eps_i,\delta_j\in\{\pm1\}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\eps_i\delta_j\right|
+  \le
+  \sup_{u_i,v_j\in S^{m+n-1}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\ip{u_i}{v_j}\right|
+  \le
+  K\max_{\eps_i,\delta_j\in\{\pm1\}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\eps_i\delta_j\right|.
+\end{equation}
+Here $S^{m+n-1}$ denotes the unit sphere in $\R^{m+n}$. The Grothendieck constant $\KG$ is the infimum of $K$ for which this inequality holds.
+
+The Grothendieck inequality is equivalent to the statement that the integrality gap of the canonical SDP relaxation for maximizing the bilinear form $x^\top Ay$ over $x\in\{-1,1\}^m$ and $y\in\{-1,1\}^n$ is an absolute constant $\KG$. As a result, one obtains efficient algorithms for approximating the matrix cut norms that, among other applications, lead to algorithms for finding Szemeredi partitions of graphs~\cite{AlonNaor2006}. Beyond this natural role in the design of approximation algorithms in computer science, the inequality is important in several subfields, including the geometry of Banach spaces, $C^*$-algebras, harmonic analysis, operator spaces, and quantum mechanics; see, for example,~\cite{LindenstraussTzafriri2013,Pisier2012,KhotNaor2011}.
+
+Despite a long line of work on the problem, the exact value of $\KG$ remains unknown. Grothendieck proved that $\KG\le \sinh(\pi/2)=2.3012\ldots$. The next advance was made in 1977 by Krivine~\cite{Krivine1977}, who proved that
+\begin{equation}\label{eq:krivine-bound-intro}
+  \KG\le {\pi\over 2\log(1+\sqrt2)}=1.7822\ldots .
+\end{equation}
+Krivine's proof involved developing an explicit \emph{rounding scheme}, an algorithm that maps an input set of vectors $u_i,v_j\in S^{d-1}$ into signs $\eps_i,\delta_j\in\{\pm1\}$. Krivine's scheme consisted of first lifting $\{u_i,v_j\}$ to an infinite-dimensional space and then partitioning them by a random hyperplane into signed $\{\eps_i,\delta_j\}$. He showed that this hyperplane partition yields the above bound and conjectured that it is optimal, leading to subsequent efforts to find matching lower bounds~\cite{Davie1984,Reeds1991}.
+
+Krivine's conjecture was refuted three decades later by Braverman, Makarychev, Makarychev, and Naor~\cite{BMMN2011}, who showed that, in fact,
+\[
+  \KG < {\pi\over 2\log(1+\sqrt2)}-\eps
+\]
+for some $\eps>0$. Their proof relied on a ``mixing'' of two rounding strategies, i.e., applying a new non-hyperplane scheme with a small probability and the hyperplane rounding scheme with the rest. This idea of mixing is natural in the context of analyzing rounding algorithms and is informally analogous to first-order methods that obtain a better guess for an optimum by exploiting a nonzero gradient. Such a first-order analysis suffices to prove the existence of a scheme that outperforms Krivine's rounding. However, this technique makes it difficult to derive an explicit improvement.
+
+In the present work, we develop a different high-dimensional rounding mechanism.  Instead of mixing a small low-dimensional perturbation with the hyperplane scheme, we build finite-dimensional schemes from Hermite-chaos reservoirs and analyze their limiting weighted Gaussian correlation model.  The resulting certificate, once the interval-arithmetic module stated below is filled in, gives an explicit improvement over the hyperplane value.
+
+\subsection{The result in certificate-reduction form}
+
+Write
+\[
+  \rhohyp:=\log(1+\sqrt2),
+  \qquad
+  \Khyp:={\pi\over2\rhohyp}={\pi\over2\log(1+\sqrt2)}.
+\]
+The numerical target in this paper is
+\[
+  \gammazero=0.8815624>\rhohyp.
+\]
+This corresponds to the raw correlation value
+\[
+  c_0={2\gammazero\over \pi}=0.5612200543\ldots
+\]
+and to the Grothendieck bound
+\[
+  {1\over c_0}={\pi\over 2\gammazero}=1.7818322637\ldots .
+\]
+The improvement over the hyperplane/Krivine value is
+\[
+  \Khyp-{\pi\over 2\gammazero}=3.817144799\cdot 10^{-4}\ldots .
+\]
+
+\begin{theorem}[Main theorem, conditional on the coefficient certificate]\label{thm:main}
+Assume the coefficient certificate stated in Certificate Module~\ref{ass:certificate}.  Then there is a finite-dimensional Krivine rounding scheme in the Gaussianized third/fifth-chaos family such that
+\[
+  \KG \le {\pi\over 2\gammazero}
+  < {\pi\over 2\log(1+\sqrt2)}-3.81714\cdot 10^{-4}.
+\]
+Equivalently,
+\[
+  \KG \le 1.7818322637\ldots .
+\]
+\end{theorem}
+
+The conditional phrasing is intentional.  The analytic part of the proof is complete in this draft.  What remains is a finite interval-arithmetic certificate for the explicit coefficient inequalities in Certificate Module~\ref{ass:certificate}.  Once that module is replaced by an Arb or comparable outward-rounded certificate, Theorem~\ref{thm:main} becomes unconditional.
+
+\subsection{Overview of the construction}
+
+Let \(H_n\) denote the orthonormal probabilists' Hermite polynomial.  For every reservoir length \(N\), define
+\[
+  P_{3,N}=N^{-1/2}\sum_{j=1}^N H_3(U_j),
+  \qquad
+  P_{5,N}=N^{-1/2}\sum_{j=1}^N H_5(V_j),
+\]
+where the variables are independent standard Gaussians.  The finite rounding pair is
+\begin{align*}
+  f_N &= \sgn\bigl(Z+\eta H_3(X)+s_3P_{3,N}+s_5P_{5,N}\bigr),\\
+  g_N &= \sgn\bigl(Z-\eta H_3(X)-s_3P_{3,N}+s_5P_{5,N}\bigr).
+\end{align*}
+Thus degree \(3\) is anti-aligned between the two sides, while degree \(5\) is aligned.  The sign pattern is not cosmetic: perturbatively, odd degree \(2k+1\) naturally wants relative sign \((-1)^k\), so degrees \(3\) and \(5\) want opposite and equal signs, respectively.
+
+For fixed \(t\in(-1,1)\), the paired reservoirs have asymptotic covariance
+\[
+  \E[P_{3,N}P_{3,N}']=t^3,
+  \qquad
+  \E[P_{5,N}P_{5,N}']=t^5.
+\]
+Hence the limiting model is a four-dimensional Gaussian threshold pair
+\begin{align*}
+  f(z,x,r_3,r_5)&=\sgn\bigl(z+\eta H_3(x)+s_3r_3+s_5r_5\bigr),\\
+  g(z,x,r_3,r_5)&=\sgn\bigl(z-\eta H_3(x)-s_3r_3+s_5r_5\bigr),
+\end{align*}
+but with coordinate correlations
+\[
+  \rho_Z=t,\quad \rho_X=t,
+  \qquad \rho_3=t^3,
+  \qquad \rho_5=t^5.
+\]
+This weighted correlation is the right limiting object for the finite pure-chaos schemes.
+
+The limiting normalized correlation is an odd series
+\[
+  H(t)=\sum_{m\ge1}b_m t^m.
+\]
+For the displayed parameters, the leading coefficients are numerically
+\[
+  b_1=0.8815738220496\ldots,
+  \qquad b_3=3.45\cdot 10^{-9},
+  \qquad b_5=-9.04\cdot 10^{-11}.
+\]
+Since the inverse coefficients satisfy
+\[
+  A_1={1\over b_1},\qquad
+  A_3=-{b_3\over b_1^4},\qquad
+  A_5={3b_3^2-b_1b_5\over b_1^7},
+\]
+the annihilation of \(b_3\) and \(b_5\) removes the first two nonlinear inverse obstructions.
+
+
+
+\subsection{Proof architecture}\label{subsec:architecture}
+
+The proof is organized so that every analytic reduction is separated from the eventual interval-arithmetic certificate.  The section headers below match the rest of the paper.
+
+\paragraph{Section~\ref{sec:krivine}: Krivine preprocessing.}
+This section states the inverse-majorant interface.  A normalized correlation function $H$ is admissible at radius $\gamma$ if its local inverse $G=H^{-1}=\sum A_n\zeta^n$ is holomorphic near $\gamma\overline{\D}$ and satisfies
+\[
+  \sum_{n\ge1}|A_n|\gamma^n\le 1.
+\]
+The conclusion is $\KG\le \pi/(2\gamma)$.  The proof is standard and is placed in Appendix~\ref{app:preprocessing}.
+
+\paragraph{Section~\ref{sec:scheme}: The finite family and the limiting model.}
+Definitions~\ref{def:finite-family} and~\ref{def:finite-35} define genuine finite-dimensional Gaussian rounding schemes built from normalized Hermite reservoirs.  Definition~\ref{def:limiting-model} defines the limiting weighted Gaussian model, where the third and fifth reservoirs retain the correlation powers $t^3$ and $t^5$.
+
+\paragraph{Section~\ref{sec:coefficients}: Coefficients of the limiting model.}
+Definitions~\ref{def:reservoir-normalization}, \ref{def:qk}, and~\ref{def:Cabk} reduce the limiting threshold calculation to explicit one- and two-dimensional Gaussian quantities.  Proposition~\ref{prop:hermite-coefficients} gives the Hermite coefficients of the limiting thresholds, and Theorem~\ref{thm:coefficient-formula} converts them into the weighted-degree formula for $b_m=[t^m]H(t)$.
+
+\paragraph{Section~\ref{sec:transfer}: Finite-dimensional transfer.}
+This is the rigorously delicate part.  Proposition~\ref{prop:loc-unif} proves locally uniform convergence $H_N\to H$ on the unit disk.  Theorem~\ref{thm:finite-transfer} then transfers a strict inverse-majorant certificate from $H$ to $H_N$ using Rouche's theorem and Cauchy estimates.  Fixed-degree coefficient convergence alone would not be enough, because it does not control the inverse tail.
+
+\paragraph{Section~\ref{sec:wiener}: The limiting inverse certificate.}
+Definition~\ref{def:wiener-data} introduces the Wiener-algebra quantities used to control the inverse.  Theorem~\ref{thm:aposteriori} gives an a posteriori inverse-tail certificate from a short inverse head and a small coefficient tail for $H(t)=b_1t+E(t)$.
+
+\paragraph{Section~\ref{sec:certification}: Head/tail certification and proof of Theorem~\ref{thm:main}.}
+Certificate Module~\ref{ass:certificate} states the finite inequalities that remain to be checked by interval arithmetic.  Proposition~\ref{prop:lim-admissible} plugs those inequalities into Theorem~\ref{thm:aposteriori}, and the proof of Theorem~\ref{thm:main} combines this with the finite-dimensional transfer theorem and Krivine preprocessing.
+
+\paragraph{Section~\ref{sec:discussion}: Discussion and future directions.}
+The final section explains why the third/fifth sign pattern cancels the first inverse obstructions, records a possible $7/9$ extension, and discusses how one could extract effective finite dimensions from the collision expansion.
+
+\section{Krivine preprocessing}\label{sec:krivine}
+
+This short section records the analytic interface between a correlation function and an upper bound on the Grothendieck constant.  It is the first step in the proof architecture from Section~\ref{subsec:architecture}; the full preprocessing proof, including the mixed version used in earlier works, is deferred to Appendix~\ref{app:preprocessing}.
+
+Let $f,g:\R^k\to\{-1,1\}$ be odd measurable functions and let
+\[
+  H_{f,g}(t)={\pi\over2}\E\left[f(G_1)g\left(tG_1+\sqrt{1-t^2}G_2\right)\right]
+\]
+be the arcsine-normalized Gaussian correlation, where $G_1,G_2$ are independent standard Gaussian vectors in $\R^k$.  The preprocessing criterion says that if the local inverse
+\[
+  H_{f,g}^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n
+\]
+is holomorphic near $\gamma\overline{\D}$ and satisfies
+\[
+  \sum_{n\ge1}|A_n|\gamma^n\le1,
+\]
+then
+\[
+  \KG\le {\pi\over2\gamma}.
+\]
+This is Theorem~\ref{thm:krivine-criterion} in Appendix~\ref{app:preprocessing}.  For the hyperplane scheme $f=g=\sgn$, one has $H_{f,g}(t)=\arcsin t$ and $H_{f,g}^{-1}(\zeta)=\sin\zeta$, so the largest radius detected by this criterion is $\rho_{\mathrm{hyp}}=\log(1+\sqrt2)$.
+
+The rest of the paper is devoted to constructing a finite-dimensional scheme whose limiting correlation function is admissible at a radius larger than $\rho_{\mathrm{hyp}}$, and then proving that the limiting certificate transfers back to sufficiently high finite dimensions.
+
+\section{The Gaussianized chaos family}\label{sec:scheme}
+
+This section is Section~\ref{sec:scheme} in the proof architecture of Section~\ref{subsec:architecture}.  We first define the genuine finite-dimensional rounding schemes, and then define the limiting weighted model that captures their fixed-degree asymptotics.
+
+\subsection{Hermite normalization}
+
+Throughout the paper, \(H_n\) denotes the orthonormal probabilists' Hermite polynomial, so that
+\[
+  \E[H_m(Z)H_n(Z)]=\delta_{mn},\qquad Z\sim N(0,1).
+\]
+Thus
+\[
+  H_0=1,
+  \qquad H_1(x)=x,
+  \qquad H_3(x)={x^3-3x\over\sqrt6},
+  \qquad H_5(x)={x^5-10x^3+15x\over\sqrt{120}}.
+\]
+If \((X,Y)\) are standard Gaussians with correlation \(t\), then
+\begin{equation}\label{eq:hermite-cov}
+  \E[H_m(X)H_n(Y)]=\delta_{mn}t^n.
+\end{equation}
+
+
+\subsection{Finite-dimensional schemes}\label{subsec:finite-schemes}
+
+\begin{definition}[Finite Gaussianized-chaos family]\label{def:finite-family}
+Let $D\subseteq\{3,5,7,9,\ldots\}$ be a finite set of odd reservoir degrees.  For each $d\in D$, fix a real weight $s_d$, and define the relative sign
+\[
+  \sigma_d=(-1)^{(d-1)/2}.
+\]
+Thus $\sigma_3=-1$, $\sigma_5=+1$, $\sigma_7=-1$, and so on.
+
+For reservoir length $N$, let
+\[
+  P_{d,N}=N^{-1/2}\sum_{j=1}^N H_d(U_{d,j}),
+\]
+where all variables $Z,X,U_{d,j}$ are independent standard Gaussians.  The finite rounding functions are
+\begin{align}
+  f_N&=\sgn\biggl(Z+\eta H_3(X)+\sum_{d\in D}s_dP_{d,N}\biggr),\label{eq:finite-f-general}\\
+  g_N&=\sgn\biggl(Z-\eta H_3(X)+\sum_{d\in D}\sigma_d s_dP_{d,N}\biggr).\label{eq:finite-g-general}
+\end{align}
+They are odd measurable functions on $\R^{2+|D|N}$.  The value of $\sgn(0)$ is immaterial, since every threshold event has probability zero.
+\end{definition}
+
+\begin{definition}[The third/fifth finite scheme]\label{def:finite-35}
+The scheme used for the numerical certificate is the specialization of Definition~\ref{def:finite-family} with $D=\{3,5\}$ and
+\begin{equation}\label{eq:params}
+  \eta=0.136419125,
+  \qquad
+  s_3=0.34101124,
+  \qquad
+  s_5=0.05276111.
+\end{equation}
+Equivalently,
+\begin{align}
+  f_N&=\sgn\bigl(Z+\eta H_3(X)+s_3P_{3,N}+s_5P_{5,N}\bigr),\label{eq:finite-f-35}\\
+  g_N&=\sgn\bigl(Z-\eta H_3(X)-s_3P_{3,N}+s_5P_{5,N}\bigr).\label{eq:finite-g-35}
+\end{align}
+Thus degree $3$ is anti-aligned between the two sides, while degree $5$ is aligned.
+\end{definition}
+
+
+\subsection{The limiting weighted model}\label{subsec:limiting-model}
+
+\begin{definition}[Limiting weighted Gaussian model]\label{def:limiting-model}
+Let $D,\eta,(s_d)_{d\in D}$ be as in Definition~\ref{def:finite-family}.  Let $R_d$, $d\in D$, be independent standard Gaussians.  The limiting threshold pair is
+\begin{align}
+  f(z,x,(r_d))&=\sgn\biggl(z+\eta H_3(x)+\sum_{d\in D}s_dr_d\biggr),\label{eq:lim-f-general}\\
+  g(z,x,(r_d))&=\sgn\biggl(z-\eta H_3(x)+\sum_{d\in D}\sigma_d s_dr_d\biggr).\label{eq:lim-g-general}
+\end{align}
+For the limiting correlation at parameter $t$, the paired coordinates satisfy
+\[
+  \rho_Z=t,
+  \qquad \rho_X=t,
+  \qquad \rho_d=t^d\quad(d\in D),
+\]
+and different coordinate pairs are independent.  The arcsine-normalized limiting correlation is
+\begin{equation}\label{eq:lim-H}
+  H(t)={\pi\over2}\E\bigl[f(Z,X,(R_d))g(Z',X',(R_d'))\bigr].
+\end{equation}
+\end{definition}
+
+Because all degrees in the model are odd, $H$ is an odd function.  For $D=\{3,5\}$, Definition~\ref{def:limiting-model} says that the reservoir coordinates have correlations $t^3$ and $t^5$.  This is the formal memory of the fact that the finite reservoirs came from pure third and fifth Gaussian chaoses.
+
+
+\section{The coefficient formula for the limiting model}\label{sec:coefficients}
+
+This section implements the coefficient step in the proof architecture, namely Section~\ref{sec:coefficients} of the roadmap in Section~\ref{subsec:architecture}.  The point is to reduce the four-dimensional limiting threshold model, with weighted correlations, to explicit two-dimensional Gaussian integrals.
+
+\subsection{Reservoir-direction data}\label{subsec:reservoir-data}
+
+\begin{definition}[Reservoir normalization]\label{def:reservoir-normalization}
+For a finite reservoir set $D$ and weights $(s_d)_{d\in D}$, define
+\[
+  S=\biggl(\sum_{d\in D}s_d^2\biggr)^{1/2},
+  \qquad
+  \alpha_d={s_d\over S}\quad(d\in D).
+\]
+Thus $\sum_{d\in D}\alpha_d^2=1$, and
+\[
+  \sum_{d\in D}s_dr_d=S\sum_{d\in D}\alpha_dr_d.
+\]
+\end{definition}
+
+\begin{definition}[Reservoir threshold coefficients]\label{def:qk}
+Let $R\sim N(0,1)$.  For $u\in\R$ and $k\in\Nzero$, define
+\[
+  q_k(u)=\E_R[\sgn(u+R)H_k(R)].
+\]
+These are the Hermite coefficients of the one-dimensional threshold $R\mapsto \sgn(u+R)$.
+\end{definition}
+
+\begin{lemma}[Closed form for $q_k$]\label{lem:qk}
+For all $u\in\R$,
+\begin{align}
+  q_0(u)&=\operatorname{erf}\left({u\over\sqrt2}\right),\label{eq:q0}\\
+  q_k(u)&=2\varphi(u){H_{k-1}(-u)\over\sqrt{k}},\qquad k\ge1,\label{eq:qk}
+\end{align}
+where $\varphi(u)=(2\pi)^{-1/2}e^{-u^2/2}$.
+\end{lemma}
+
+\begin{proof}
+For $k=0$,
+\[
+  q_0(u)=\Prob[R>-u]-\Prob[R<-u]=\operatorname{erf}\left({u\over\sqrt2}\right).
+\]
+For $k\ge1$, orthogonality to constants gives
+\[
+  q_k(u)=2\int_{-u}^{\infty}H_k(r)\varphi(r)\,dr.
+\]
+The orthonormal Hermite polynomials satisfy
+\[
+  {d\over dr}\left(\varphi(r)H_{k-1}(r)\right)
+  =-\sqrt{k}\,\varphi(r)H_k(r),
+\]
+so integration from $-u$ to $\infty$ gives \eqref{eq:qk}.
+\end{proof}
+
+\begin{definition}[Two-dimensional coefficient integrals]\label{def:Cabk}
+For $a,b,k\in\Nzero$, define
+\begin{equation}\label{eq:C-abk}
+  C_{a,b,k}
+  =\E_{Z,X}\left[H_a(Z)H_b(X)
+    q_k\left({Z+\eta H_3(X)\over S}\right)\right],
+\end{equation}
+where $Z,X$ are independent standard Gaussians.  Equivalently, $C_{a,b,k}$ is the two-dimensional integral
+\[
+  \int_{\R^2}H_a(z)H_b(x)
+  q_k\left({z+\eta H_3(x)\over S}\right)\varphi(z)\varphi(x)\,dz\,dx.
+\]
+\end{definition}
+
+The quantities $C_{a,b,k}$ are the only continuous integrals appearing in the coefficient formula.  Everything else is finite weighted-degree bookkeeping.
+
+\subsection{Hermite coefficients of the limiting thresholds}\label{subsec:threshold-hermite-coefficients}
+
+For a multi-index $\beta=(\beta_d)_{d\in D}\in\Nzero^D$, write
+\[
+  |\beta|=\sum_{d\in D}\beta_d,
+  \qquad
+  \beta!=\prod_{d\in D}\beta_d!,
+  \qquad
+  \alpha^\beta=\prod_{d\in D}\alpha_d^{\beta_d}.
+\]
+
+\begin{proposition}[Hermite coefficients of the limiting thresholds]\label{prop:hermite-coefficients}
+Let $f,g$ be the limiting threshold functions in Definition~\ref{def:limiting-model}.  Write their Hermite expansions in the tensor basis as
+\[
+  f=\sum_{a,b,\beta} A_{a,b,\beta}\,H_a(Z)H_b(X)\prod_{d\in D}H_{\beta_d}(R_d),
+\]
+\[
+  g=\sum_{a,b,\beta} B_{a,b,\beta}\,H_a(Z)H_b(X)\prod_{d\in D}H_{\beta_d}(R_d).
+\]
+Then, for $k=|\beta|$,
+\begin{equation}\label{eq:f-coeff}
+  A_{a,b,\beta}
+  =C_{a,b,k}\sqrt{k!\over \beta!}\,\alpha^\beta,
+\end{equation}
+while
+\begin{equation}\label{eq:g-coeff}
+  B_{a,b,\beta}
+  =(-1)^b\prod_{d\in D}\sigma_d^{\beta_d}\,A_{a,b,\beta}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Set
+\[
+  T(Z,X)=Z+\eta H_3(X),
+  \qquad
+  R_\alpha=\sum_{d\in D}\alpha_dR_d.
+\]
+Then
+\[
+  f=\sgn(T+SR_\alpha).
+\]
+Conditioning on $Z,X$, the coefficient of $H_k(R_\alpha)$ in the $R_\alpha$ direction is
+\[
+  q_k\left({T(Z,X)\over S}\right).
+\]
+Taking the additional inner product against $H_a(Z)H_b(X)$ gives $C_{a,b,k}$.
+
+The multivariate Hermite addition formula gives
+\begin{equation}\label{eq:hermite-addition}
+  H_k\left(\sum_{d\in D}\alpha_dR_d\right)
+  =\sum_{\substack{\beta\in\Nzero^D\\ |\beta|=k}}
+  \sqrt{k!\over \beta!}\,\alpha^\beta
+  \prod_{d\in D}H_{\beta_d}(R_d).
+\end{equation}
+Combining the previous paragraph with \eqref{eq:hermite-addition} proves \eqref{eq:f-coeff}.
+
+Finally,
+\[
+  g(z,x,(r_d))=f(z,-x,(\sigma_dr_d)_{d\in D}).
+\]
+Since $H_b(-x)=(-1)^bH_b(x)$ and $H_{\beta_d}(\sigma_dr_d)=\sigma_d^{\beta_d}H_{\beta_d}(r_d)$, the coefficient relation \eqref{eq:g-coeff} follows.
+\end{proof}
+
+\subsection{The weighted-degree coefficient formula}\label{subsec:weighted-degree-formula}
+
+\begin{theorem}[Weighted-degree coefficient formula]\label{thm:coefficient-formula}
+Let
+\[
+  H(t)=\sum_{m\ge1}b_m t^m
+\]
+be the limiting normalized correlation \eqref{eq:lim-H}.  Then
+\begin{equation}\label{eq:general-bm}
+  b_m={\pi\over2}
+  \sum_{\substack{a,b\in\Nzero,\ \beta\in\Nzero^D\\ a+b+\sum_{d\in D}d\beta_d=m}}
+  (-1)^b\prod_{d\in D}\sigma_d^{\beta_d}
+  {k!\over \beta!}
+  \prod_{d\in D}\alpha_d^{2\beta_d}
+  C_{a,b,k}^2,
+  \qquad k=|\beta|.
+\end{equation}
+Only odd $m$ occur.
+\end{theorem}
+
+\begin{proof}
+Under the weighted correlation model in Definition~\ref{def:limiting-model}, the Hermite covariance identity \eqref{eq:hermite-cov} contributes
+\[
+  t^a t^b\prod_{d\in D}(t^d)^{\beta_d}
+  =t^{a+b+\sum_d d\beta_d}
+\]
+to the tensor basis element indexed by $(a,b,\beta)$.  Multiplying the $f$- and $g$-coefficients from Proposition~\ref{prop:hermite-coefficients} and summing over all indices of weighted degree $m$ gives \eqref{eq:general-bm}.
+
+The functions $f$ and $g$ are odd under simultaneous negation of all coordinates.  Hence their Hermite coefficients vanish unless $a+b+|\beta|$ is odd.  Since all reservoir degrees $d\in D$ are odd, $a+b+\sum_d d\beta_d$ has the same parity as $a+b+|\beta|$.  Thus only odd weighted degrees appear.
+\end{proof}
+
+\subsection{The third/fifth specialization}\label{subsec:third-fifth-coefficients}
+
+\begin{definition}[Third/fifth coefficient data]\label{def:third-fifth-coeff-data}
+For the scheme $D=\{3,5\}$, write
+\[
+  \alpha={s_3\over S},\qquad \beta={s_5\over S},
+  \qquad S=(s_3^2+s_5^2)^{1/2}.
+\]
+With the numerical parameters \eqref{eq:params},
+\[
+  S=0.345068689589145\ldots,
+  \quad
+  \alpha=0.988241617650167\ldots,
+  \quad
+  \beta=0.152900311131734\ldots .
+\]
+\end{definition}
+
+For $D=\{3,5\}$, Theorem~\ref{thm:coefficient-formula} becomes
+\begin{equation}\label{eq:35-bm}
+  b_m={\pi\over2}
+  \sum_{\substack{a,b,\beta_3,\beta_5\in\Nzero\\ a+b+3\beta_3+5\beta_5=m}}
+  (-1)^{b+\beta_3}
+  {k!\over \beta_3!\beta_5!}
+  \alpha^{2\beta_3}\beta^{2\beta_5}
+  C_{a,b,k}^2,
+  \qquad k=\beta_3+\beta_5.
+\end{equation}
+This is the formula used for the numerical head and tail certification in Section~\ref{sec:certification}.
+
+\section{Finite-dimensional realization of the limiting certificate}\label{sec:transfer}
+
+This section is Section~\ref{sec:transfer} in the proof architecture of Section~\ref{subsec:architecture}.
+
+This section is the rigorous replacement for the informal statement that finite schemes approximate the limiting \(b\)-series.  Coefficientwise convergence is true, but it is not strong enough to transfer the inverse-majorant condition, which is an infinite nonlinear condition on the inverse series.  We prove a stronger analytic statement.
+
+\subsection{Locally uniform convergence of finite correlations}
+
+Let \(H_N\) denote the arcsine-normalized correlation function of the finite scheme \((f_N,g_N)\), with coordinatewise Gaussian correlation \(t\):
+\[
+  H_N(t)={\pi\over2}\E[f_N(\mathcal X)g_N(\mathcal Y_t)].
+\]
+Here \(\mathcal X,\mathcal Y_t\in\R^{2+|D|N}\) are standard Gaussian vectors with \(\E[\mathcal X_i\mathcal Y_{t,i}]=t\) coordinatewise.
+
+\begin{proposition}[Local uniform convergence]\label{prop:loc-unif}
+The functions \(H_N\) extend holomorphically to \(\D\), satisfy \(|H_N(z)|\le\pi/2\) on \(\D\), and converge locally uniformly on \(\D\) to the limiting weighted correlation \(H\).  Consequently, if
+\[
+  H_N(z)=\sum_{m\ge1}b_{m,N}z^m,
+  \qquad
+  H(z)=\sum_{m\ge1}b_mz^m,
+\]
+then \(b_{m,N}\to b_m\) for every fixed \(m\).
+\end{proposition}
+
+\begin{proof}
+For fixed \(N\), expand \(f_N\) and \(g_N\) in the orthonormal tensor Hermite basis on \(\R^{2+|D|N}\):
+\[
+  f_N=\sum_\alpha \widehat f_N(\alpha)\mathcal H_\alpha,
+  \qquad
+  g_N=\sum_\alpha \widehat g_N(\alpha)\mathcal H_\alpha.
+\]
+Mehler's formula gives, for real \(t\in(-1,1)\),
+\[
+  {2\over\pi}H_N(t)=\sum_\alpha \widehat f_N(\alpha)\widehat g_N(\alpha)t^{|\alpha|}.
+\]
+The same series is absolutely convergent for \(|z|<1\), since Cauchy-Schwarz gives
+\begin{align*}
+  \sum_\alpha |\widehat f_N(\alpha)\widehat g_N(\alpha)| |z|^{|\alpha|}
+  &\le
+  \left(\sum_\alpha |\widehat f_N(\alpha)|^2 |z|^{|\alpha|}\right)^{1/2}
+  \left(\sum_\alpha |\widehat g_N(\alpha)|^2 |z|^{|\alpha|}\right)^{1/2}\\
+  &\le \|f_N\|_2\|g_N\|_2=1.
+\end{align*}
+Thus \(H_N\) is holomorphic on \(\D\) and \(|H_N(z)|\le \pi/2\).
+
+We next identify the pointwise limit on the real interval.  Fix \(t\in(-1,1)\).  For every reservoir degree \(d\), the Hermite covariance identity gives
+\[
+  \E[H_d(U_{d,j})H_d(U_{d,j}')]=t^d.
+\]
+The multivariate central limit theorem yields
+\[
+  \bigl(P_{d,N},P_{d,N}'\bigr)_{d\in D}
+  \Rightarrow
+  \bigl(R_d,R_d'\bigr)_{d\in D},
+\]
+where \((R_d,R_d')\) is a Gaussian pair with correlation \(t^d\), and the pairs are independent over distinct \(d\).  This convergence is joint with \((Z,Z',X,X')\), which are independent of the reservoirs.
+
+The limiting discontinuity set of the product of signs is contained in the union of the two threshold hypersurfaces
+\begin{align*}
+  z+\eta H_3(x)+\sum_{d\in D}s_dr_d&=0,\\
+  z'-\eta H_3(x')+\sum_{d\in D}\sigma_ds_dr_d'&=0.
+\end{align*}
+This union has limiting probability zero: for example, after conditioning on all variables except \(Z\), the first threshold has probability zero because \(Z\) has a density, and similarly for the second threshold using \(Z'\).  The bounded continuous mapping theorem therefore gives \(H_N(t)\to H(t)\) for every real \(t\in(-1,1)\).
+
+The family \(\{H_N\}\) is locally bounded on \(\D\) and converges pointwise on a set with an accumulation point.  Vitali's theorem gives locally uniform convergence on \(\D\) to the unique holomorphic function agreeing with the real limiting correlation.  Coefficient convergence follows from Cauchy's formula.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:loc-unif} justifies the limiting coefficient formula as the fixed-degree limit of genuine finite-dimensional schemes.  But it does not by itself imply that the finite inverse series satisfy \(\sum_n|A_{n,N}|\gamma^n\le1\).  Tail control for the inverse series requires the inverse-branch stability theorem below.
+\end{remark}
+
+\subsection{Analytic stability of inverse branches}
+
+\begin{theorem}[Finite inverse-majorant transfer]\label{thm:finite-transfer}
+Let \(F_N,F\in\Hol(\D)\), assume \(F_N\to F\) locally uniformly on \(\D\), and assume \(F_N(0)=F(0)=0\).  Suppose that \(G\) is a holomorphic inverse branch of \(F\) on a neighborhood of \(\ol{D(0,R_0)}\), with values in \(\D\):
+\[
+  F(G(\zeta))=\zeta,
+  \qquad |\zeta|\le R_0.
+\]
+Write
+\[
+  G(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+Let \(0<\gamma<R_0\), and assume the strict majorant inequality
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Then, for all sufficiently large \(N\), \(F_N\) has a holomorphic inverse branch at the origin,
+\[
+  G_N(\zeta)=F_N^{-1}(\zeta)=\sum_{n\ge1}A_{n,N}\zeta^n,
+\]
+defined on a neighborhood of \(\gamma\ol\D\), and
+\[
+  \sum_{n\ge1}|A_{n,N}|\gamma^n<1.
+\]
+Moreover \(A_{n,N}\to A_n\) for every fixed \(n\).
+\end{theorem}
+
+\begin{proof}
+Choose nested radii
+\[
+  \gamma<\rho<r<R<R_0.
+\]
+Let
+\[
+  \Omega=G(D(0,R)).
+\]
+Since \(G\) is a conformal inverse branch on a neighborhood of \(\ol{D(0,R)}\), the boundary \(\partial\Omega\) is the image of \(|\zeta|=R\).  For \(t\in\partial\Omega\), we have \(|F(t)|=R\).  Therefore, for all \(|\zeta|\le r\),
+\[
+  |F(t)-\zeta|\ge R-r,
+  \qquad t\in\partial\Omega.
+\]
+The compact contour \(\partial\Omega\) is contained in \(\D\).  By locally uniform convergence, for all large \(N\),
+\[
+  \sup_{t\in\partial\Omega}|F_N(t)-F(t)|<R-r.
+\]
+Rouche's theorem then implies that, for every \(|\zeta|\le r\), the equations \(F_N(t)=\zeta\) and \(F(t)=\zeta\) have the same number of solutions in \(\Omega\), counted with multiplicity.  The equation \(F(t)=\zeta\) has exactly one solution in \(\Omega\), namely \(t=G(\zeta)\).  Hence \(F_N(t)=\zeta\) also has exactly one solution in \(\Omega\).  In particular, since \(F_N(0)=0\), the zero at \(0\) is simple, and these solutions define a holomorphic inverse branch \(G_N\) on \(D(0,r)\), with values in \(\Omega\).
+
+The inverse branches converge uniformly on \(\ol{D(0,r)}\).  Indeed, by the argument-principle formula,
+\[
+  G_N(\zeta)= {1\over 2\pi i}\int_{\partial\Omega}
+  {tF_N'(t)\over F_N(t)-\zeta}\,dt,
+  \qquad |\zeta|\le r.
+\]
+The denominators are uniformly bounded away from zero on \(\partial\Omega\times\ol{D(0,r)}\), and \(F_N'\to F'\) uniformly on \(\partial\Omega\).  Thus \(G_N\to G\) uniformly on \(\ol{D(0,r)}\), which implies fixed inverse-coefficient convergence.
+
+It remains to control the tail.  Put
+\[
+  B=\sup_{t\in\ol\Omega}|t|<\infty.
+\]
+Since \(G_N(D(0,r))\subseteq\Omega\), Cauchy's estimate on the circle \(|\zeta|=\rho\) gives
+\[
+  |A_{n,N}|\le B\rho^{-n},
+  \qquad n\ge1,
+\]
+for all large \(N\).  Let
+\[
+  \delta=1-\sum_{n\ge1}|A_n|\gamma^n>0.
+\]
+Choose \(M\) so large that
+\[
+  B\sum_{n>M}\left({\gamma\over\rho}\right)^n< {\delta\over3}.
+\]
+For all sufficiently large \(N\), fixed-coefficient convergence gives
+\[
+  \sum_{n\le M}|A_{n,N}|\gamma^n
+  \le \sum_{n\le M}|A_n|\gamma^n+{\delta\over3}.
+\]
+Therefore
+\begin{align*}
+  \sum_{n\ge1}|A_{n,N}|\gamma^n
+  &\le \sum_{n\le M}|A_n|\gamma^n+{\delta\over3}
+  +B\sum_{n>M}\left({\gamma\over\rho}\right)^n\\
+  &< \sum_{n\ge1}|A_n|\gamma^n+{2\delta\over3}<1.
+\end{align*}
+\end{proof}
+
+\begin{corollary}[Finite schemes from a limiting certificate]\label{cor:finite-scheme}
+Assume the limiting weighted correlation \(H\) has a holomorphic inverse branch
+\[
+  G(\zeta)=H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n
+\]
+with values in \(\D\) on a neighborhood of \(\ol{D(0,R_0)}\).  Let \(0<\gamma<R_0\), and suppose
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Then, for all sufficiently large reservoir lengths \(N\), the genuine finite-dimensional scheme \((f_N,g_N)\) satisfies the inverse-majorant condition at radius \(\gamma\).  Consequently
+\[
+  \KG\le {\pi\over2\gamma}.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply Proposition~\ref{prop:loc-unif} and Theorem~\ref{thm:finite-transfer} with \(F_N=H_N\) and \(F=H\), then invoke Theorem~\ref{thm:krivine-criterion} for the finite scheme.
+\end{proof}
+
+\begin{corollary}[Endpoint and margin]\label{cor:margin}
+If the limiting inverse branch is holomorphic with values in \(\D\) on a neighborhood of \(\Gamma\ol\D\) and
+\[
+  \sum_{n\ge1}|A_n|\Gamma^n\le1,
+\]
+then every \(\gamma<\Gamma\) transfers to all sufficiently high finite-dimensional schemes.  If the inequality at \(\Gamma\) is strict and the same analytic neighborhood is available, then \(\Gamma\) itself transfers.
+\end{corollary}
+
+\begin{proof}
+For \(\gamma<\Gamma\), the majorant is strict because \(A_1\neq0\):
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<\sum_{n\ge1}|A_n|\Gamma^n\le1.
+\]
+Apply Corollary~\ref{cor:finite-scheme}.  The strict endpoint case is the same argument with \(\gamma=\Gamma\).
+\end{proof}
+
+\section{A Wiener-algebra certificate for the limiting inverse}\label{sec:wiener}
+
+This section is Section~\ref{sec:wiener} in the proof architecture of Section~\ref{subsec:architecture}.
+
+We now turn to the limiting inverse-majorant condition.  This is where the computation enters.  The key point is that the nonlinear part of \(H\) is very small in the Wiener algebra.
+
+
+\subsection{The Wiener algebra}\label{subsec:wiener-algebra}
+
+\begin{definition}[Wiener-algebra data]\label{def:wiener-data}
+Let $\calA$ be the Wiener algebra of absolutely convergent power series on the unit disk:
+\[
+  U(w)=\sum_{n\ge0}u_nw^n,
+  \qquad
+  \|U\|_1=\sum_{n\ge0}|u_n|<\infty.
+\]
+Then $\|UV\|_1\le\|U\|_1\|V\|_1$.  Write
+\begin{equation}\label{eq:H-linear-nonlinear}
+  H(t)=b_1t+E(t),
+  \qquad
+  E(t)=\sum_{m\ge3}b_mt^m,
+\end{equation}
+and define
+\begin{equation}\label{eq:eta-L}
+  \eta_0=\sum_{m\ge3}|b_m|,
+  \qquad
+  L=\sum_{m\ge3}m|b_m|.
+\end{equation}
+\end{definition}
+
+On the unit ball of $\calA$, the nonlinear part is $L$-Lipschitz:
+\begin{equation}\label{eq:E-lipschitz}
+  \|E(U)-E(V)\|_1\le L\|U-V\|_1,
+  \qquad \|U\|_1,\|V\|_1\le1.
+\end{equation}
+This follows from $\|U^m-V^m\|_1\le m\|U-V\|_1$ on the unit ball.
+
+\begin{theorem}[A simple linear-dominance certificate]\label{thm:simple-wiener}
+Assume
+\[
+  L<b_1,
+  \qquad
+  \gamma+\eta_0<b_1.
+\]
+Then the limiting inverse satisfies
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1,
+  \qquad H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+Moreover the inverse branch is holomorphic on a neighborhood of \(\gamma\ol\D\), and maps \(\gamma\D\) into \(\D\).
+\end{theorem}
+
+\begin{proof}
+Seek a solution \(U(w)=H^{-1}(\gamma w)\) in the closed unit ball of \(\calA\) with \(U(0)=0\).  The inverse equation is equivalent to
+\[
+  U=\Phi(U):={\gamma w-E(U)\over b_1}.
+\]
+If \(\|U\|_1\le1\), then \(\|E(U)\|_1\le\eta_0\), hence
+\[
+  \|\Phi(U)\|_1\le {\gamma+\eta_0\over b_1}<1.
+\]
+By \eqref{eq:E-lipschitz}, \(\Phi\) is a contraction with constant \(L/b_1<1\).  Banach's fixed point theorem gives a unique fixed point \(U\in\calA\), and
+\[
+  \|U\|_1=\sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Since \(H(U(w))=\gamma w\) and \(U'(0)=\gamma/b_1\neq0\), this fixed point agrees near zero with the local inverse branch.  It remains to note that the branch has a little analytic room around the closed disk.  Put \(q=\|U\|_1<1\), and choose \(q<q_*<1\).  For \(u,v\in q_*\ol\D\),
+\[
+  |H(u)-H(v)|\ge b_1|u-v|-\sum_{m\ge3}|b_m||u^m-v^m|
+  \ge (b_1-L)|u-v|.
+\]
+Thus \(H\) is injective on \(q_*\D\), and \(H'\) has no zero there.  Since \(U(\ol\D)\subset q\ol\D\subset q_*\D\), the set \(\gamma\ol\D=H(U(\ol\D))\) is contained in the open set \(H(q_*\D)\), on which the inverse branch is holomorphic.
+\end{proof}
+
+The simple criterion is conceptually useful but leaves numerical slack.  The sharper certificate uses a short inverse head plus the same Lipschitz estimate.
+
+
+\subsection{A posteriori inverse-tail certificate}\label{subsec:aposteriori}
+
+\begin{definition}[Inverse head and residual]\label{def:inverse-head-residual}
+Let $G(\zeta)=H^{-1}(\zeta)$, and set $U(w)=G(\gamma w)$.  For an odd cutoff $N$, define the inverse head
+\[
+  P_N(w)=\sum_{1\le n\le N}A_n\gamma^n w^n,
+  \qquad
+  p_N=\|P_N\|_1.
+\]
+For a coefficient cutoff $K$, define
+\[
+  H_{\le K}(t)=\sum_{m\le K}b_mt^m,
+  \qquad
+  \eps_K=\sum_{m>K}|b_m|.
+\]
+Assuming $K\ge N$, the coefficients of $H_{\le K}(P_N)-\gamma w$ through degree $N$ vanish by construction of the inverse head.  The residual tail is
+\begin{equation}\label{eq:rNK}
+  r_{N,K}=\left\|T_{>N}\bigl(H_{\le K}(P_N(w))-\gamma w\bigr)\right\|_1,
+\end{equation}
+where $T_{>N}$ discards coefficients of degree at most $N$.
+\end{definition}
+
+\begin{theorem}[A posteriori inverse-tail certificate]\label{thm:aposteriori}
+Assume \(L<b_1\), \(p_N<1\), and define
+\begin{equation}\label{eq:RN}
+  R_N={r_{N,K}+\eps_K\over b_1-L}.
+\end{equation}
+If
+\[
+  p_N+R_N<1,
+\]
+then the limiting inverse satisfies
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Moreover \(H^{-1}\) has an inverse branch on a neighborhood of \(\gamma\ol\D\), and its values on \(\gamma\D\) lie in \(\D\).
+\end{theorem}
+
+\begin{proof}
+We solve the inverse equation in the form \(U=P_N+Q\).  Since
+\[
+  H(P_N+Q)=b_1(P_N+Q)+E(P_N+Q),
+\]
+the equation \(H(P_N+Q)=\gamma w\) is equivalent to
+\begin{equation}\label{eq:Q-fixed}
+  Q={\gamma w-H(P_N)-E(P_N+Q)+E(P_N)\over b_1}.
+\end{equation}
+Because \(p_N<1\), we have
+\[
+  \|H(P_N)-H_{\le K}(P_N)\|_1\le \eps_K.
+\]
+Also, by the definition of \(P_N\), the coefficients of \(H_{\le K}(P_N)-\gamma w\) up to degree \(N\) vanish; hence
+\[
+  \|H(P_N)-\gamma w\|_1\le r_{N,K}+\eps_K.
+\]
+Consider the right side of \eqref{eq:Q-fixed} on the ball \(\|Q\|_1\le R_N\).  If \(p_N+R_N<1\), then \(\|P_N+Q\|_1\le1\), so by \eqref{eq:E-lipschitz},
+\[
+  \|E(P_N+Q)-E(P_N)\|_1\le L\|Q\|_1.
+\]
+Thus the right side of \eqref{eq:Q-fixed} has norm at most
+\[
+  {r_{N,K}+\eps_K+LR_N\over b_1}=R_N.
+\]
+The same Lipschitz estimate gives contraction constant \(L/b_1<1\).  Hence there is a unique solution \(Q\) in this ball.  Therefore \(U=P_N+Q\) satisfies \(H(U)=\gamma w\) and
+\[
+  \|U\|_1\le p_N+R_N<1.
+\]
+As before, this analytic solution agrees near zero with the local inverse branch, proving the claimed inverse-majorant inequality.  Finally set \(q=p_N+R_N<1\) and choose \(q<q_*<1\).  The same estimate
+\[
+  |H(u)-H(v)|\ge (b_1-L)|u-v|,
+  \qquad u,v\in q_*\ol\D,
+\]
+shows that \(H\) is injective and locally biholomorphic on \(q_*\D\).  Since \(U(\ol\D)\subset q\ol\D\), the disk \(\gamma\ol\D=H(U(\ol\D))\) is contained in the open set \(H(q_*\D)\).  Hence the inverse branch is holomorphic on a neighborhood of \(\gamma\ol\D\).
+\end{proof}
+
+
+\section{Certifying the coefficient head and tail}\label{sec:certification}
+
+This section is the final proof section in the roadmap of Section~\ref{subsec:architecture}.  It records the coefficient inequalities needed for the limiting inverse certificate, proves Theorem~\ref{thm:main} from those inequalities, and then explains how the remaining head and tail computations should be certified.  The interval-arithmetic details will be inserted here in the final version.
+
+\subsection{Certificate module and proof of the main theorem}\label{subsec:certificate}
+
+The following is the only part of the draft that remains to be replaced by a formal interval-arithmetic proof.  The quantities are all finite or explicitly tailed through the coefficient formula \eqref{eq:35-bm}.
+
+\begin{assumption}[Coefficient and inverse-head certificate]\label{ass:certificate}
+For the parameters \eqref{eq:params}, the limiting coefficient sequence \(H(t)=\sum b_mt^m\) satisfies
+\begin{align}
+  b_1&>0.88157380,\label{eq:cert-b1}\\
+  \eps_{41}:=\sum_{m>41}|b_m|&<10^{-8},\label{eq:cert-eps41}\\
+  L:=\sum_{m\ge3}m|b_m|&<1.58\cdot10^{-4}.\label{eq:cert-L}
+\end{align}
+Moreover, for \(\gammazero=0.8815624\), \(N=21\), and \(K=41\), the inverse head and residual defined above satisfy
+\begin{align}
+  p_{21}&<0.9999992590,\label{eq:cert-p21}\\
+  r_{21,41}&<5.574\cdot10^{-7}.\label{eq:cert-r2141}
+\end{align}
+\end{assumption}
+
+\begin{proposition}[Limiting admissibility from the certificate]\label{prop:lim-admissible}
+Assuming Certificate Module~\ref{ass:certificate}, the limiting third/fifth model is admissible at \(\gammazero=0.8815624\):
+\[
+  \sum_{n\ge1}|A_n|\gammazero^n<1,
+  \qquad H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+The inverse branch is holomorphic on a neighborhood of \(\gammazero\ol\D\), and maps \(\gammazero\D\) into \(\D\).
+\end{proposition}
+
+\begin{proof}
+Apply Theorem~\ref{thm:aposteriori} with \(N=21\), \(K=41\), and \(\gamma=\gammazero\).  By the certificate,
+\[
+  R_{21}\le {5.574\cdot10^{-7}+10^{-8}\over 0.88157380-1.58\cdot10^{-4}}
+  <6.45\cdot10^{-7}.
+\]
+Therefore
+\[
+  p_{21}+R_{21}<0.9999992590+0.000000645<1.
+\]
+The conclusion follows.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Proposition~\ref{prop:lim-admissible}, the limiting model satisfies a strict inverse-majorant certificate at \(\gammazero\), with an inverse branch holomorphic on a neighborhood of \(\gammazero\ol\D\) and with values in \(\D\) on \(\gammazero\D\).  Corollary~\ref{cor:finite-scheme} transfers this certificate to all sufficiently high finite-dimensional third/fifth-chaos schemes \eqref{eq:finite-f-35}--\eqref{eq:finite-g-35}.  Applying the Krivine criterion, Theorem~\ref{thm:krivine-criterion}, to such a finite scheme gives
+\[
+  \KG\le {\pi\over2\gammazero}=1.7818322637\ldots .
+\]
+Since
+\[
+  {\pi\over 2\log(1+\sqrt2)}-{\pi\over2\gammazero}
+  =3.817144799\cdot10^{-4}\ldots,
+\]
+the advertised hyperplane-improvement form follows.
+\end{proof}
+
+
+\subsection{Numerical head of the limiting model}\label{subsec:numerical-head}
+
+For the parameters \eqref{eq:params}, one has
+\[
+  S=0.345068689589145\ldots,
+  \quad
+  \alpha=0.988241617650167\ldots,
+  \quad
+  \beta=0.152900311131734\ldots .
+\]
+The following table gives the beginning of the limiting coefficient sequence.  These are floating-point values included to explain the numerics; the rigorous proof uses interval enclosures in Certificate Module~\ref{ass:certificate}.
+
+\begin{center}
+\small
+\begin{tabular}{r r@{\qquad}r r}
+\toprule
+\(m\) & \multicolumn{1}{c}{\(b_m\)} & \(m\) & \multicolumn{1}{c}{\(b_m\)}\\
+\midrule
+1  & \( 8.815738220496\cdot10^{-1}\) & 23 & \( 3.133017408224\cdot10^{-7}\)\\
+3  & \( 3.453873298476\cdot10^{-9}\) & 25 & \( 1.468544711235\cdot10^{-7}\)\\
+5  & \(-9.043545773357\cdot10^{-11}\) & 27 & \( 6.021901119747\cdot10^{-8}\)\\
+7  & \( 1.171432343870\cdot10^{-7}\) & 29 & \( 2.058498871742\cdot10^{-8}\)\\
+9  & \(-1.494586697161\cdot10^{-9}\) & 31 & \( 3.428828624581\cdot10^{-9}\)\\
+11 & \(-5.743183500533\cdot10^{-6}\) & 33 & \(-2.837596359323\cdot10^{-9}\)\\
+13 & \(-1.448951029677\cdot10^{-6}\) & 35 & \(-3.866295291032\cdot10^{-9}\)\\
+15 & \( 9.441806267864\cdot10^{-7}\) & 37 & \(-2.977047658664\cdot10^{-9}\)\\
+17 & \( 1.104203285670\cdot10^{-6}\) & 39 & \(-1.857241836324\cdot10^{-9}\)\\
+19 & \( 8.451950461437\cdot10^{-7}\) & 41 & \(-1.033472390529\cdot10^{-9}\)\\
+21 & \( 5.630558521346\cdot10^{-7}\) & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The cancellation of \(b_3\) and \(b_5\) is the visible reason the scheme beats the hyperplane radius.  If
+\[
+  H(t)=b_1t+b_3t^3+b_5t^5+\cdots,
+  \qquad
+  H^{-1}(\zeta)=A_1\zeta+A_3\zeta^3+A_5\zeta^5+\cdots,
+\]
+then formal series reversion gives
+\begin{equation}\label{eq:low-inverse}
+  A_1={1\over b_1},
+  \qquad
+  A_3=-{b_3\over b_1^4},
+  \qquad
+  A_5={3b_3^2-b_1b_5\over b_1^7}.
+\end{equation}
+Thus killing \(b_3\) and \(b_5\) kills the first two nonlinear inverse coefficients.
+
+For reference, the inverse coefficients begin as follows:
+\begin{center}
+\small
+\begin{tabular}{r r@{\qquad}r r}
+\toprule
+\(m\) & \multicolumn{1}{c}{\(A_m\)} & \(m\) & \multicolumn{1}{c}{\(A_m\)}\\
+\midrule
+1  & \( 1.134334952999\) & 13 & \( 8.461201717465\cdot10^{-6}\)\\
+3  & \(-5.718362197765\cdot10^{-9}\) & 15 & \(-7.094407911980\cdot10^{-6}\)\\
+5  & \( 1.926579003756\cdot10^{-10}\) & 17 & \(-1.067574204152\cdot10^{-5}\)\\
+7  & \(-3.211054870543\cdot10^{-7}\) & 19 & \(-1.051441386906\cdot10^{-5}\)\\
+9  & \( 5.271516751153\cdot10^{-9}\) & 21 & \(-9.006179634605\cdot10^{-6}\)\\
+11 & \( 2.606444408195\cdot10^{-5}\) & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\subsection{What must be certified}
+
+The proof above requires only the inequalities in Certificate Module~\ref{ass:certificate}.  A convenient implementation can be organized as follows.
+
+\begin{enumerate}[label=\textup{C\arabic*.}, leftmargin=2.7em]
+\item Certify the low coefficients through degree \(41\), especially
+\[
+  b_1>0.88157380,
+  \qquad
+  \sum_{3\le m\le41}|b_m|<1.1328\cdot10^{-5},
+  \qquad
+  \sum_{3\le m\le41}m|b_m|<1.574\cdot10^{-4}.
+\]
+
+\item Certify the unweighted coefficient tail
+\[
+  \sum_{m>41}|b_m|<10^{-8}.
+\]
+
+\item Certify the weighted nonlinear mass
+\[
+  \sum_{m\ge3}m|b_m|<1.58\cdot10^{-4}.
+\]
+
+\item Using the enclosed coefficients through degree \(41\), compute the inverse coefficients through degree \(21\) and certify
+\[
+  p_{21}=\sum_{n\le21}|A_n|\gammazero^n<0.9999992590.
+\]
+Then compute the residual polynomial
+\[
+  T_{>21}\bigl(H_{\le41}(P_{21}(w))-\gammazero w\bigr)
+\]
+and certify
+\[
+  r_{21,41}<5.574\cdot10^{-7}.
+\]
+\end{enumerate}
+
+Items C1 and C4 are finite arithmetic once the coefficients are enclosed.  The true analytic tail work is C2 and C3.
+
+\subsection{Why the original coefficient tail is easier than the inverse tail}
+
+The inverse-tail asks for coefficients of \(H^{-1}\), whose branch approaches the unit boundary in the intended application.  A naive Cauchy estimate for the inverse therefore needs many coefficients and a delicate complex-domain bound.  The coefficient tail of \(H\) is more structured.  Formula \eqref{eq:35-bm} expresses every \(b_m\) as a finite weighted-degree sum of explicit real two-dimensional integrals \eqref{eq:C-abk}.  Thus the tail can be attacked directly by Gaussian quadrature with certified remainder, Taylor models on boxes plus Gaussian tails, or Sobolev/Hermite tail estimates for the functions appearing in \eqref{eq:C-abk}.
+
+The observed signed coefficients beyond degree \(41\) are already tiny in floating point:
+\[
+  \sum_{43\le m\le201}|b_m|\approx 9.93\cdot10^{-10},
+  \qquad
+  \sum_{43\le m\le201}m|b_m|\approx 5.22\cdot10^{-8}.
+\]
+A practical route is therefore to enclose all coefficients through degree \(201\), verify the finite sums, and then use a general analytic Hermite-tail estimate for \(m>201\).
+
+\section{Discussion and future directions}\label{sec:discussion}
+
+This discussion section is Section~\ref{sec:discussion} in the proof architecture of Section~\ref{subsec:architecture}.  It explains the parameter choices, nearby extensions, and finite-dimensional effectiveness questions.
+
+\subsection{Why degrees three and five}
+
+The low-order inverse relations \eqref{eq:low-inverse} explain the parameter search.  The hyperplane scheme has \(H(t)=\arcsin t\), so its inverse \(\sin\zeta\) has alternating nonlinear coefficients.  To increase the admissible radius, the first objective is to suppress the cubic inverse obstruction.  An anti-aligned third-chaos reservoir changes \(b_3\) in the correct direction.  Once \(b_3\) is controlled, the next obstruction is quintic, and an aligned fifth-chaos reservoir gives the next degree of freedom.
+
+The small finite perturbation \(\eta H_3(X)\) in the base threshold is also important.  A purely reservoir-Gaussian threshold is too close to a hyperplane after rotation; the \(X\)-dependent cubic term changes the two-dimensional integrals \(C_{a,b,k}\) and gives the higher coefficients the right shape.
+
+\subsection{A degree \texorpdfstring{\(7/9\)}{7/9} extension}
+
+The coefficient formula immediately extends to additional odd reservoirs.  For instance, taking
+\[
+  D=\{3,5,7,9\},
+  \qquad
+  \sigma_d=(-1)^{(d-1)/2},
+\]
+keeps the same formula \eqref{eq:general-bm}.  A preliminary numerical search gives
+\begin{align*}
+  \eta&=0.12569605,&
+  s_3&=0.34199778,&
+  s_5&=0.05153822,\\
+  s_7&=0.00698313,&
+  s_9&=0.00090252.
+\end{align*}
+For the corresponding limiting model, the estimated value is
+\[
+  \gamma\approx0.88157525281,
+  \qquad
+  \KG\lesssim1.78180628572.
+\]
+This extension is not used in the main theorem.  It is included to indicate that the third/fifth scheme is not isolated: the same analytic and finite-transfer machinery applies to a broader weighted-chaos family.
+
+\subsection{Effective dimensions}
+
+Corollary~\ref{cor:finite-scheme} is qualitative: it proves the existence of sufficiently large finite reservoir length \(N\), but it does not give a useful dimension bound.  For the Grothendieck constant as a mathematical constant, qualitative existence of a finite scheme is enough.  For an explicit algorithmic rounding implementation, one should quantify the convergence \(H_N\to H\) on the contour used in Theorem~\ref{thm:finite-transfer}.
+
+The natural route is a collision expansion.  For fixed reservoir degree \(d\) and fixed \(k\), the polynomial \(H_k(P_{d,N})\) has a leading distinct-index component
+\[
+  \sqrt{k!}\,N^{-k/2}
+  \sum_{1\le i_1<\cdots<i_k\le N}
+  H_d(U_{d,i_1})\cdots H_d(U_{d,i_k}),
+\]
+which lies in pure Gaussian chaos degree \(dk\) and has \(L^2\)-norm squared \((N)_k/N^k\to1\).  The remaining collision terms have vanishing \(L^2\)-mass for fixed \(d,k\).  This explains at the coefficient level why a limiting reservoir Hermite mode of order \(k\) contributes correlation power \(t^{dk}\).  Making this expansion uniform to the required degree would produce explicit finite-dimensional estimates.
+
+
+\appendix
+
+\section{Krivine preprocessing and mixed rounding}\label{app:preprocessing}
+
+This appendix contains the standard preprocessing and projection arguments behind Krivine rounding schemes.  The argument is the rounding construction of Krivine and BMMN~\cite{Krivine1977,BMMN2011}, written in the variance-one Gaussian normalization used throughout this paper.  It is included here to keep the body of the paper focused on the new chaos construction.
+
+For a real matrix $A=(a_{ij})\in\R^{m\times n}$, write
+\[
+  \SDP(A):=\sup_{\|x_i\|=\|y_j\|=1}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\ip{x_i}{y_j}\right|
+\]
+and
+\[
+  \OPT(A):=\max_{\eps_i,\delta_j\in\{\pm1\}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\eps_i\delta_j\right|.
+\]
+Thus proving $\SDP(A)\le K\OPT(A)$ for all $A$ proves $\KG\le K$.
+
+\begin{theorem}[Krivine preprocessing and projection]\label{thm:krivine-criterion}
+Let $f,g:\R^k\to\{-1,1\}$ be odd measurable functions, and let $H=H_{f,g}$ be the arcsine-normalized correlation function
+\begin{equation}\label{eq:pure-correlation}
+  H(t)={\pi\over2}\E\left[f(G_1)
+  g\left(tG_1+\sqrt{1-t^2}G_2\right)\right],
+  \qquad -1<t<1,
+\end{equation}
+where $G_1,G_2$ are independent standard Gaussian vectors in $\R^k$.  Suppose that $H$ has a local inverse at the origin,
+\[
+  H^{-1}(\zeta)=\sum_{r\ge1}a_r\zeta^r,
+\]
+which is holomorphic on a neighborhood of $\gamma\ol\D$, and suppose that
+\[
+  \sum_{r\ge1}|a_r|\gamma^r\le1.
+\]
+Then
+\[
+  \KG\le {\pi\over2\gamma}.
+\]
+\end{theorem}
+
+\begin{proof}
+It is enough to prove the conclusion with any $0<\gamma'<\gamma$ in place of $\gamma$, and then let $\gamma'\uparrow\gamma$.  We therefore fix such a $\gamma'$.  Put
+\[
+  M_{\gamma'}:=\sum_{r\ge1}|a_r|(\gamma')^r<1.
+\]
+Let $A=(a_{ij})\in\R^{m\times n}$.  Choose unit vectors $x_1,\ldots,x_m,y_1,\ldots,y_n$ such that
+\[
+  \sum_{i,j}a_{ij}\ip{x_i}{y_j}
+\]
+is arbitrarily close to $\SDP(A)$; if necessary, replace all $y_j$ by $-y_j$ so that this quantity is nonnegative.  We suppress this arbitrarily small error, since it disappears at the end.
+
+Let
+\[
+  \calK:=\left(\bigoplus_{r\ge1}\calH^{\otimes r}\right)\oplus \R e_L\oplus \R e_R,
+\]
+where $\calH$ is the Hilbert space containing the original vectors, and where $e_L,e_R$ are unit vectors orthogonal to each other and to all tensor summands.  Define
+\[
+  I(x):=\bigoplus_{r\ge1}\sqrt{|a_r|}(\gamma')^{r/2}x^{\otimes r}
+  \oplus \sqrt{1-M_{\gamma'}}e_L\oplus0
+\]
+and
+\[
+  J(y):=\bigoplus_{r\ge1}\sgn(a_r)\sqrt{|a_r|}(\gamma')^{r/2}y^{\otimes r}
+  \oplus0\oplus \sqrt{1-M_{\gamma'}}e_R,
+\]
+with the convention that the summand corresponding to $a_r=0$ is zero.  Then $I(x)$ and $J(y)$ are unit vectors whenever $x,y$ are unit vectors.  Moreover,
+\[
+  \ip{I(x)}{J(y)}=\sum_{r\ge1}a_r(\gamma')^r\ip{x}{y}^r
+  =H^{-1}(\gamma'\ip{x}{y}).
+\]
+The first equality uses
+\[
+  \ip{x^{\otimes r}}{y^{\otimes r}}=\ip{x}{y}^r,
+\]
+and the second equality uses the Taylor expansion of the inverse on $\gamma'\D$.
+
+Set
+\[
+  u_i:=I(x_i),\qquad v_j:=J(y_j).
+\]
+The finitely many vectors $u_i,v_j$ span a finite-dimensional subspace of $\calK$.  Identify this subspace with $\R^N$.  Let $\Gamma:\R^N\to\R^k$ be a random Gaussian linear map, i.e. a $k\times N$ matrix whose entries are independent standard Gaussian random variables.  Define random signs
+\[
+  \eps_i:=f(\Gamma u_i),\qquad \delta_j:=g(\Gamma v_j).
+\]
+For each pair $(i,j)$, the vectors $\Gamma u_i$ and $\Gamma v_j$ are standard Gaussian vectors in $\R^k$ with coordinatewise correlation $\ip{u_i}{v_j}$.  Hence, by the definition of $H$,
+\[
+  \E[\eps_i\delta_j]={2\over\pi}H(\ip{u_i}{v_j}).
+\]
+Using the preprocessing identity,
+\[
+  H(\ip{u_i}{v_j})=H\left(H^{-1}(\gamma'\ip{x_i}{y_j})\right)=\gamma'\ip{x_i}{y_j}.
+\]
+Therefore
+\[
+  \E\left[\sum_{i,j}a_{ij}\eps_i\delta_j\right]
+  ={2\over\pi}\sum_{i,j}a_{ij}H(\ip{u_i}{v_j})
+  ={2\gamma'\over\pi}\sum_{i,j}a_{ij}\ip{x_i}{y_j}.
+\]
+Since the maximum over deterministic signs is at least the expectation of the randomized signs, we get
+\[
+  \OPT(A)\ge {2\gamma'\over\pi}\SDP(A).
+\]
+Thus
+\[
+  \SDP(A)\le {\pi\over2\gamma'}\OPT(A).
+\]
+Letting $\gamma'\uparrow\gamma$ gives
+\[
+  \SDP(A)\le {\pi\over2\gamma}\OPT(A).
+\]
+Since $A$ was arbitrary, $\KG\le \pi/(2\gamma)$.
+\end{proof}
+
+\begin{corollary}[Classical Krivine hyperplane bound]\label{cor:hyperplane-bound}
+Let $h:\R\to\{-1,1\}$ be $h(x)=\sgn(x)$.  Then the hyperplane scheme $(h,h)$ gives
+\[
+  \KG\le {\pi\over 2\log(1+\sqrt2)}.
+\]
+\end{corollary}
+
+\begin{proof}
+For the hyperplane scheme, Grothendieck's identity gives
+\[
+  \E[\sgn(X)\sgn(Y)]={2\over\pi}\arcsin(t)
+\]
+whenever $X,Y$ are standard Gaussians with correlation $t$.  In our normalization,
+\[
+  H_{h,h}(t)=\arcsin(t).
+\]
+Thus
+\[
+  H_{h,h}^{-1}(\zeta)=\sin\zeta=\sum_{q\ge0}{(-1)^q\over(2q+1)!}\zeta^{2q+1}.
+\]
+Let
+\[
+  \rho_*:=\arsinh(1)=\log(1+\sqrt2).
+\]
+Then
+\[
+  \sum_{q\ge0}{\rho_*^{2q+1}\over(2q+1)!}=\sinh(\rho_*)=1.
+\]
+Theorem~\ref{thm:krivine-criterion} therefore applies with $\gamma=\rho_*$, giving
+\[
+  \KG\le {\pi\over2\rho_*}={\pi\over2\log(1+\sqrt2)}.
+\]
+\end{proof}
+
+\begin{theorem}[Mixed Krivine preprocessing and projection]\label{thm:mixed-krivine}
+Let $L\in\N$.  For each $\ell\in\{1,\ldots,L\}$, let $f_\ell,g_\ell:\R^{k_\ell}\to\{-1,1\}$ be odd measurable functions, and let $H_\ell$ be the corresponding arcsine-normalized correlation function:
+\[
+  H_\ell(t)={\pi\over2}\E\left[f_\ell(G_1)g_\ell\left(tG_1+\sqrt{1-t^2}G_2\right)\right].
+\]
+Let $\lambda_1,\ldots,\lambda_L\ge0$ satisfy $\sum_{\ell=1}^L\lambda_\ell=1$, and define the mixed function
+\[
+  H_\lambda(t):=\sum_{\ell=1}^L\lambda_\ell H_\ell(t).
+\]
+Suppose that $H_\lambda$ has a local inverse at the origin,
+\[
+  H_\lambda^{-1}(\zeta)=\sum_{r\ge1}a_r\zeta^r,
+\]
+which is holomorphic on a neighborhood of $\gamma\ol\D$, and suppose that
+\[
+  M_\lambda(\gamma):=\sum_{r\ge1}|a_r|\gamma^r\le1.
+\]
+Then
+\[
+  \KG\le {\pi\over2\gamma}.
+\]
+\end{theorem}
+
+\begin{proof}
+The preprocessing is identical to the proof of Theorem~\ref{thm:krivine-criterion}, but using the inverse coefficients of $H_\lambda^{-1}$.  As before, first fix $0<\gamma'<\gamma$, and set
+\[
+  M_{\lambda,\gamma'}:=\sum_{r\ge1}|a_r|(\gamma')^r<1.
+\]
+For unit vectors $x,y$, define
+\[
+  I(x):=\bigoplus_{r\ge1}\sqrt{|a_r|}(\gamma')^{r/2}x^{\otimes r}
+  \oplus \sqrt{1-M_{\lambda,\gamma'}}e_L\oplus0
+\]
+and
+\[
+  J(y):=\bigoplus_{r\ge1}\sgn(a_r)\sqrt{|a_r|}(\gamma')^{r/2}y^{\otimes r}
+  \oplus0\oplus\sqrt{1-M_{\lambda,\gamma'}}e_R.
+\]
+Then $I(x)$ and $J(y)$ are unit vectors and
+\[
+  \ip{I(x)}{J(y)}=H_\lambda^{-1}(\gamma'\ip{x}{y}).
+\]
+Now let $A=(a_{ij})$ be arbitrary, and choose unit vectors $x_i,y_j$ that nearly attain $\SDP(A)$, oriented so that $\sum_{i,j}a_{ij}\ip{x_i}{y_j}\ge0$.  Put
+\[
+  u_i:=I(x_i),\qquad v_j:=J(y_j).
+\]
+Identify the span of the finitely many $u_i,v_j$ with $\R^N$.  For each $\ell$, independently sample a Gaussian linear map
+\[
+  \Gamma_\ell:\R^N\to\R^{k_\ell}.
+\]
+Also sample a single global index $\Lambda\in\{1,\ldots,L\}$, independent of the Gaussian maps, with
+\[
+  \Prob[\Lambda=\ell]=\lambda_\ell.
+\]
+The word ``global'' is important: the same index $\Lambda$ is used for all $i,j$.  Define
+\[
+  \eps_i:=f_\Lambda(\Gamma_\Lambda u_i),
+  \qquad
+  \delta_j:=g_\Lambda(\Gamma_\Lambda v_j).
+\]
+Conditioning on $\Lambda=\ell$, the same rotation-invariance calculation as in the pure case gives
+\[
+  \E[\eps_i\delta_j\mid \Lambda=\ell]={2\over\pi}H_\ell(\ip{u_i}{v_j}).
+\]
+Averaging over $\Lambda$,
+\[
+  \E[\eps_i\delta_j]={2\over\pi}\sum_{\ell=1}^L\lambda_\ell H_\ell(\ip{u_i}{v_j})
+  ={2\over\pi}H_\lambda(\ip{u_i}{v_j}).
+\]
+Since
+\[
+  \ip{u_i}{v_j}=H_\lambda^{-1}(\gamma'\ip{x_i}{y_j}),
+\]
+we obtain
+\[
+  \E[\eps_i\delta_j]={2\gamma'\over\pi}\ip{x_i}{y_j}.
+\]
+Therefore
+\[
+  \OPT(A)\ge
+  \E\left[\sum_{i,j}a_{ij}\eps_i\delta_j\right]
+  ={2\gamma'\over\pi}\sum_{i,j}a_{ij}\ip{x_i}{y_j}.
+\]
+Taking the supremum over the original vectors gives
+\[
+  \OPT(A)\ge {2\gamma'\over\pi}\SDP(A),
+\]
+and hence
+\[
+  \SDP(A)\le {\pi\over2\gamma'}\OPT(A).
+\]
+Letting $\gamma'\uparrow\gamma$ proves
+\[
+  \SDP(A)\le {\pi\over2\gamma}\OPT(A).
+\]
+Since $A$ was arbitrary, $\KG\le \pi/(2\gamma)$.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:krivine-criterion} is the special case $L=1$ of Theorem~\ref{thm:mixed-krivine}.  We separated the two statements because the pure case is the usual Krivine scheme, while the mixed case emphasizes the randomized choice of a common scheme $\Lambda$ before projection.
+\end{remark}
+
+
+\section*{Acknowledgments}
+This draft is a proof-architecture document.  The final version should replace Certificate Module~\ref{ass:certificate} with a reproducible interval-arithmetic certificate and should record the precise code, parameter intervals, and rounding modes used in the computation.
+
+\begin{thebibliography}{99}
+
+\bibitem{AlonNaor2006}
+N.~Alon and A.~Naor.
+Approximating the cut-norm via Grothendieck's inequality.
+\emph{SIAM Journal on Computing}, 35(4):787--803, 2006.
+
+\bibitem{BMMN2011}
+M.~Braverman, K.~Makarychev, Y.~Makarychev, and A.~Naor.
+The Grothendieck constant is strictly smaller than Krivine's bound.
+\emph{Forum of Mathematics, Pi}, 1:e4, 2013.
+Conference version in FOCS 2011.  arXiv:1103.6161.
+
+
+\bibitem{Davie1984}
+A.~M. Davie.
+Matrix norms related to Grothendieck's inequality.
+In \emph{Banach spaces (Columbia, Mo., 1984)}, volume 1166 of Lecture Notes in Mathematics, pages 22--26. Springer, 1985.
+
+\bibitem{Grothendieck1953}
+A.~Grothendieck.
+Resume de la theorie metrique des produits tensoriels topologiques.
+\emph{Boletim da Sociedade de Matematica de Sao Paulo}, 8:1--79, 1953.
+
+\bibitem{Johansson2017}
+F.~Johansson.
+Arb: efficient arbitrary-precision midpoint-radius interval arithmetic.
+\emph{IEEE Transactions on Computers}, 66(8):1281--1292, 2017.
+
+
+\bibitem{KhotNaor2011}
+S.~Khot and A.~Naor.
+Grothendieck-type inequalities in combinatorial optimization.
+\emph{Communications on Pure and Applied Mathematics}, 65(7):992--1035, 2012.
+
+\bibitem{LindenstraussPelczynski1968}
+J.~Lindenstrauss and A.~Pe\l czy\'nski.
+Absolutely summing operators in $L_p$-spaces and their applications.
+\emph{Studia Mathematica}, 29:275--326, 1968.
+
+\bibitem{LindenstraussTzafriri2013}
+J.~Lindenstrauss and L.~Tzafriri.
+\emph{Classical Banach Spaces I: Sequence Spaces}.
+Springer, reprint edition, 2013.
+
+\bibitem{Krivine1977}
+J.-L.~Krivine.
+Sur la constante de Grothendieck.
+\emph{Comptes Rendus de l'Academie des Sciences de Paris, Serie A-B}, 284(8):A445--A446, 1977.
+
+\bibitem{LiSahaXueEtAl2026}
+A.~Li, R.~Saha, A.~Xue, A.~Klivans, P.~K. Kothari, R.~Meka, and S.~Chaudhuri.
+The Grothendieck constant is less than \(\pi/(2\log(1+\sqrt2))-10^{-5}\).
+arXiv:2606.03991, 2026.
+
+\bibitem{NaorRegev2014}
+A.~Naor and O.~Regev.
+Krivine schemes are optimal.
+\emph{Proceedings of the American Mathematical Society}, 142(12):4315--4320, 2014.
+
+
+\bibitem{Reeds1991}
+J.~A. Reeds.
+A new lower bound on the real Grothendieck constant.
+Unpublished manuscript, 1991.
+
+\bibitem{Pisier2012}
+G.~Pisier.
+Grothendieck's theorem, past and present.
+\emph{Bulletin of the American Mathematical Society}, 49(2):237--323, 2012.
+
+\end{thebibliography}
+
+\end{document}

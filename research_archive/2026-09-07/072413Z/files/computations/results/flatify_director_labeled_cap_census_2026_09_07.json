@@ -1,0 +1,103 @@
+{
+  "status": "EXACT FINITE CERTIFICATION; no asymptotic inference",
+  "cpp_sha256": "58f45d29e1bf25bfe075442e590b7a87196539b84fb6fc08642a99bdcbbea4a2",
+  "checker_sha256": "5fccf77c2b8f1e6efa6465c24a3cf3877fca6e0ad84d398519f233257fa18f7e",
+  "reports": [
+    {
+      "n": 3,
+      "M": 3,
+      "minimum_packing": "3",
+      "labeled_signings": 2,
+      "labeled_minimizers": 2,
+      "cap_histogram": {
+        "3": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    },
+    {
+      "n": 4,
+      "M": 4,
+      "minimum_packing": "4",
+      "labeled_signings": 8,
+      "labeled_minimizers": 6,
+      "cap_histogram": {
+        "4": 6,
+        "6": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    },
+    {
+      "n": 5,
+      "M": 4,
+      "minimum_packing": "5",
+      "labeled_signings": 64,
+      "labeled_minimizers": 12,
+      "cap_histogram": {
+        "4": 12,
+        "6": 30,
+        "8": 20,
+        "10": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    },
+    {
+      "n": 6,
+      "M": 5,
+      "minimum_packing": "6",
+      "labeled_signings": 1024,
+      "labeled_minimizers": 12,
+      "cap_histogram": {
+        "5": 12,
+        "7": 180,
+        "9": 590,
+        "11": 210,
+        "13": 30,
+        "15": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    },
+    {
+      "n": 7,
+      "M": 9,
+      "minimum_packing": "68/7",
+      "labeled_signings": 32768,
+      "labeled_minimizers": 3240,
+      "cap_histogram": {
+        "9": 3240,
+        "11": 16884,
+        "13": 9660,
+        "15": 2520,
+        "17": 420,
+        "19": 42,
+        "21": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    },
+    {
+      "n": 8,
+      "M": 10,
+      "minimum_packing": "32/3",
+      "labeled_signings": 2097152,
+      "labeled_minimizers": 4200,
+      "cap_histogram": {
+        "10": 4200,
+        "12": 336840,
+        "14": 938160,
+        "16": 585732,
+        "18": 184464,
+        "20": 40390,
+        "22": 6552,
+        "24": 756,
+        "26": 56,
+        "28": 2
+      },
+      "complete_minimizer_cover": true,
+      "rational_certificates_rechecked": true
+    }
+  ]
+}

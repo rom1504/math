@@ -1,0 +1,466 @@
+{
+  "code_pair_overlap_collision": {
+    "C": [
+      0,
+      3,
+      5,
+      6
+    ],
+    "D": [
+      0,
+      3,
+      5,
+      9
+    ],
+    "covering_radius_C": 2,
+    "covering_radius_D": 3,
+    "ordered_distance_enumerator": {
+      "0": 4,
+      "2": 12
+    },
+    "tensor_powers": [
+      {
+        "covering_radius_C": 2,
+        "covering_radius_D": 3,
+        "dimension": 4,
+        "distance_enumerator": {
+          "0": 4,
+          "2": 12
+        },
+        "normalized_gap": 0.25,
+        "tensor_power": 1
+      },
+      {
+        "covering_radius_C": 4,
+        "covering_radius_D": 6,
+        "dimension": 8,
+        "distance_enumerator": {
+          "0": 16,
+          "2": 96,
+          "4": 144
+        },
+        "normalized_gap": 0.25,
+        "tensor_power": 2
+      },
+      {
+        "covering_radius_C": 6,
+        "covering_radius_D": 9,
+        "dimension": 12,
+        "distance_enumerator": {
+          "0": 64,
+          "2": 576,
+          "4": 1728,
+          "6": 1728
+        },
+        "normalized_gap": 0.25,
+        "tensor_power": 3
+      },
+      {
+        "covering_radius_C": 8,
+        "covering_radius_D": 12,
+        "dimension": 16,
+        "distance_enumerator": {
+          "0": 256,
+          "2": 3072,
+          "4": 13824,
+          "6": 27648,
+          "8": 20736
+        },
+        "normalized_gap": 0.25,
+        "tensor_power": 4
+      },
+      {
+        "covering_radius_C": 10,
+        "covering_radius_D": 15,
+        "dimension": 20,
+        "distance_enumerator": {
+          "0": 1024,
+          "2": 15360,
+          "4": 92160,
+          "6": 276480,
+          "8": 414720,
+          "10": 248832
+        },
+        "normalized_gap": 0.25,
+        "tensor_power": 5
+      }
+    ]
+  },
+  "quadratic_pair_overlap_census": [
+    {
+      "different_response_collisions": [],
+      "exact_pair_energy_overlap_signatures": 3,
+      "order": 4,
+      "root_gauge_unlabeled_graphs": 4,
+      "signature_buckets_with_multiple_root_gauges": 1
+    },
+    {
+      "different_response_collisions": [],
+      "exact_pair_energy_overlap_signatures": 7,
+      "order": 5,
+      "root_gauge_unlabeled_graphs": 11,
+      "signature_buckets_with_multiple_root_gauges": 4
+    },
+    {
+      "different_response_collisions": [],
+      "exact_pair_energy_overlap_signatures": 16,
+      "order": 6,
+      "root_gauge_unlabeled_graphs": 34,
+      "signature_buckets_with_multiple_root_gauges": 11
+    },
+    {
+      "different_response_collisions": [],
+      "exact_pair_energy_overlap_signatures": 54,
+      "order": 7,
+      "root_gauge_unlabeled_graphs": 156,
+      "signature_buckets_with_multiple_root_gauges": 50
+    },
+    {
+      "different_response_collisions": [],
+      "exact_pair_energy_overlap_signatures": 243,
+      "order": 8,
+      "root_gauge_unlabeled_graphs": 1044,
+      "signature_buckets_with_multiple_root_gauges": 237
+    }
+  ],
+  "quadratic_scalar_entropy_collision": {
+    "order": 8,
+    "records": [
+      {
+        "all_minus_one_vertex_cap": 16,
+        "base_cap": 14,
+        "energy_histogram": [
+          [
+            -14,
+            2
+          ],
+          [
+            -12,
+            6
+          ],
+          [
+            -10,
+            8
+          ],
+          [
+            -8,
+            12
+          ],
+          [
+            -6,
+            18
+          ],
+          [
+            -4,
+            22
+          ],
+          [
+            -2,
+            32
+          ],
+          [
+            0,
+            40
+          ],
+          [
+            2,
+            38
+          ],
+          [
+            4,
+            34
+          ],
+          [
+            6,
+            24
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            12,
+            2
+          ]
+        ],
+        "mask": 1466915,
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "one_vertex_response_histogram": [
+          [
+            14,
+            48
+          ],
+          [
+            16,
+            108
+          ],
+          [
+            18,
+            78
+          ],
+          [
+            20,
+            20
+          ],
+          [
+            22,
+            2
+          ]
+        ]
+      },
+      {
+        "all_minus_one_vertex_cap": 20,
+        "base_cap": 14,
+        "energy_histogram": [
+          [
+            -14,
+            2
+          ],
+          [
+            -12,
+            6
+          ],
+          [
+            -10,
+            8
+          ],
+          [
+            -8,
+            12
+          ],
+          [
+            -6,
+            18
+          ],
+          [
+            -4,
+            22
+          ],
+          [
+            -2,
+            32
+          ],
+          [
+            0,
+            40
+          ],
+          [
+            2,
+            38
+          ],
+          [
+            4,
+            34
+          ],
+          [
+            6,
+            24
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            12,
+            2
+          ]
+        ],
+        "mask": 1068688,
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "one_vertex_response_histogram": [
+          [
+            14,
+            58
+          ],
+          [
+            16,
+            110
+          ],
+          [
+            18,
+            68
+          ],
+          [
+            20,
+            18
+          ],
+          [
+            22,
+            2
+          ]
+        ]
+      }
+    ]
+  },
+  "schema": "extremal-information-entropy-overlap-v1"
+}

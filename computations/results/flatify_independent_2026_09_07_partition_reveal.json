@@ -1,0 +1,2940 @@
+{
+  "status": "EXHAUSTIVE SIGNINGS, FLOATING PRESSURES; NOT ASYMPTOTIC",
+  "records": [
+    {
+      "n": 4,
+      "m": 2,
+      "beta": 0.2,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": -6.121177280604684e-07,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 2.812325478037524,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 2.812325478037524,
+          "expected_drift": -0.00017285783454434878,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.00017285783454434878,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 1,
+              "drift": -0.00017285783454434878,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 2.81215262020298,
+          "expected_drift": 0.00017224571681643633,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.0002583685752246545,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 2.812324865919796,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 2.812325478037524,
+          "best_switching_code": 1,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 2.812325478037524,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 2.812325478037524,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 2.812324865919796,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "2,1": {
+          "pressure": 2.8120664973445715,
+          "best_switching_code": 1,
+          "state_probability": "2/3"
+        },
+        "2,2": {
+          "pressure": 2.812324865919796,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "3,1": {
+          "pressure": 2.812324865919796,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "3,2": {
+          "pressure": 2.812324865919796,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "4,2": {
+          "pressure": 2.812324865919796,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 4,
+      "m": 2,
+      "beta": 0.7,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": -0.0008089357696192678,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 3.2279381167264116,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 3.2279381167264116,
+          "expected_drift": -0.019737412606715132,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.019737412606715132,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 1,
+              "drift": -0.019737412606715132,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 3.2082007041196965,
+          "expected_drift": 0.018928476837095566,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.028392715255643353,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 3.2271291809567924,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 3.2279381167264116,
+          "best_switching_code": 1,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 3.2279381167264116,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 3.2279381167264116,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 3.2271291809567924,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "2,1": {
+          "pressure": 3.198736465701149,
+          "best_switching_code": 1,
+          "state_probability": "2/3"
+        },
+        "2,2": {
+          "pressure": 3.2271291809567924,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "3,1": {
+          "pressure": 3.2271291809567924,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "3,2": {
+          "pressure": 3.2271291809567924,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "4,2": {
+          "pressure": 3.2271291809567924,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 4,
+      "m": 2,
+      "beta": 1.5,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": -0.030404716292294687,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 4.51387378055967,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 4.51387378055967,
+          "expected_drift": -0.20936461434867581,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.20936461434867581,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 1,
+              "drift": -0.20936461434867581,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 4.304509166210994,
+          "expected_drift": 0.17895989805638082,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.26843984708457125,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 4.483469064267375,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 4.51387378055967,
+          "best_switching_code": 1,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 4.51387378055967,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 4.51387378055967,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 4.483469064267375,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "2,1": {
+          "pressure": 4.215029217182804,
+          "best_switching_code": 1,
+          "state_probability": "2/3"
+        },
+        "2,2": {
+          "pressure": 4.483469064267375,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "3,1": {
+          "pressure": 4.483469064267375,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "3,2": {
+          "pressure": 4.483469064267375,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "4,2": {
+          "pressure": 4.483469064267375,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 4,
+      "m": 2,
+      "beta": 3.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": -0.29272640307362785,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 7.683972134468979,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 7.683972134468979,
+          "expected_drift": -1.005364428820016,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -1.005364428820016,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 1,
+              "drift": -1.005364428820016,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 6.678607705648963,
+          "expected_drift": 0.712638025746387,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 1.0689570386195806,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 7.391245731395351,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 7.683972134468979,
+          "best_switching_code": 1,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 7.683972134468979,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 7.683972134468979,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 7.391245731395351,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "2,1": {
+          "pressure": 6.32228869277577,
+          "best_switching_code": 1,
+          "state_probability": "2/3"
+        },
+        "2,2": {
+          "pressure": 7.391245731395351,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "3,1": {
+          "pressure": 7.391245731395351,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "3,2": {
+          "pressure": 7.391245731395351,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "4,2": {
+          "pressure": 7.391245731395351,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 4,
+      "m": 2,
+      "beta": 6.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": -1.1652065116109398,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 14.551513161117786,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 14.551513161117786,
+          "expected_drift": -3.0462623055791163,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -3.0462623055791163,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 1,
+              "drift": -3.0462623055791163,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 11.505250855538668,
+          "expected_drift": 1.8810557939681765,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 2.8215836909522647,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 13.386306649506846,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 14.551513161117786,
+          "best_switching_code": 1,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 14.551513161117786,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 14.551513161117786,
+          "best_switching_code": 1,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 13.386306649506846,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "2,1": {
+          "pressure": 10.564722958554581,
+          "best_switching_code": 1,
+          "state_probability": "2/3"
+        },
+        "2,2": {
+          "pressure": 13.386306649506846,
+          "best_switching_code": 0,
+          "state_probability": "1/6"
+        },
+        "3,1": {
+          "pressure": 13.386306649506846,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "3,2": {
+          "pressure": 13.386306649506846,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "4,2": {
+          "pressure": 13.386306649506846,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "m": 3,
+      "beta": 0.2,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.0008034922258675081,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 4.217872963594032,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 4.217872963594032,
+          "expected_drift": 0.00014079434880365227,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.00014079434880365227,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": 0.00014079434880365227,
+              "chance_positive": "2/5"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 4.218013757942836,
+          "expected_drift": 0.00026386594394622875,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.00036841421669731034,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.0001941670954455077,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.00036841421669731034,
+              "chance_positive": "1/4"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 4.218277623886782,
+          "expected_drift": 0.00031572073192061013,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.00035080081324512236,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.00035080081324512236,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 4.218593344618703,
+          "expected_drift": 8.311120119692816e-05,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.00013851866866154694,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 4.2186764558198995,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 4.217872963594032,
+          "best_switching_code": 220,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 4.217872963594032,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 4.217872963594032,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 4.217975681658937,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "2,1": {
+          "pressure": 4.218039142132101,
+          "best_switching_code": 211,
+          "state_probability": "3/5"
+        },
+        "2,2": {
+          "pressure": 4.217975681658937,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "3,0": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "3,1": {
+          "pressure": 4.218233309227546,
+          "best_switching_code": 148,
+          "state_probability": "9/20"
+        },
+        "3,2": {
+          "pressure": 4.218233309227546,
+          "best_switching_code": 154,
+          "state_probability": "9/20"
+        },
+        "3,3": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "4,1": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "4,2": {
+          "pressure": 4.218537937151238,
+          "best_switching_code": 160,
+          "state_probability": "3/5"
+        },
+        "4,3": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "5,2": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "5,3": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "6,3": {
+          "pressure": 4.2186764558198995,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "m": 3,
+      "beta": 0.7,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.07820577164489961,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 4.778198779677553,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 4.778198779677553,
+          "expected_drift": 0.014433219073169745,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.014433219073169745,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": 0.014433219073169745,
+              "chance_positive": "2/5"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 4.792631998750723,
+          "expected_drift": 0.027205501631341278,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.037195205997069714,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.020545698720855654,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.037195205997069714,
+              "chance_positive": "1/4"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 4.819837500382064,
+          "expected_drift": 0.023619771941653055,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.026244191046281173,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.026244191046281173,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 4.843457272323717,
+          "expected_drift": 0.012947278998735533,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.02157879833122589,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 4.856404551322453,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 4.778198779677553,
+          "best_switching_code": 220,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 4.778198779677553,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 4.778198779677553,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 4.788736802875059,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "2,1": {
+          "pressure": 4.795228796001165,
+          "best_switching_code": 211,
+          "state_probability": "3/5"
+        },
+        "2,2": {
+          "pressure": 4.788736802875059,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "3,0": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "3,1": {
+          "pressure": 4.815774494722021,
+          "best_switching_code": 148,
+          "state_probability": "9/20"
+        },
+        "3,2": {
+          "pressure": 4.815774494722021,
+          "best_switching_code": 154,
+          "state_probability": "9/20"
+        },
+        "3,3": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "4,1": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "4,2": {
+          "pressure": 4.834825752991227,
+          "best_switching_code": 160,
+          "state_probability": "3/5"
+        },
+        "4,3": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "5,2": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "5,3": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "6,3": {
+          "pressure": 4.856404551322453,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "m": 3,
+      "beta": 1.5,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.567622027371602,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 6.206909213805722,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 6.206909213805722,
+          "expected_drift": 0.13562342493071977,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.13562342493071977,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": 0.13562342493071977,
+              "chance_positive": "2/5"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 6.342532638736442,
+          "expected_drift": 0.23676560509953928,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.3046478678262048,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.1915107632817623,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.3046478678262048,
+              "chance_positive": "1/4"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 6.57929824383598,
+          "expected_drift": 0.06860742498025162,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.07623047220027956,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.07623047220027956,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 6.647905668816232,
+          "expected_drift": 0.12662557236109126,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.21104262060181878,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 6.774531241177324,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 6.206909213805722,
+          "best_switching_code": 220,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 6.206909213805722,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 6.206909213805722,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 6.3071892089,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "2,1": {
+          "pressure": 6.366094925294069,
+          "best_switching_code": 211,
+          "state_probability": "3/5"
+        },
+        "2,2": {
+          "pressure": 6.3071892089,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "3,0": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "3,1": {
+          "pressure": 6.557605688575832,
+          "best_switching_code": 148,
+          "state_probability": "9/20"
+        },
+        "3,2": {
+          "pressure": 6.557605688575832,
+          "best_switching_code": 154,
+          "state_probability": "9/20"
+        },
+        "3,3": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "4,1": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "4,2": {
+          "pressure": 6.563488620575505,
+          "best_switching_code": 160,
+          "state_probability": "3/5"
+        },
+        "4,3": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "5,2": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "5,3": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "6,3": {
+          "pressure": 6.774531241177324,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "m": 3,
+      "beta": 3.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 1.6698663924317945,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 9.301009721748622,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 9.301009721748622,
+          "expected_drift": 0.6530656691337864,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.6530656691337864,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": 0.6530656691337864,
+              "chance_positive": "2/5"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 9.954075390882409,
+          "expected_drift": 0.8451338783935429,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 1.0220618814547588,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.7271818763527325,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 1.0220618814547588,
+              "chance_positive": "1/4"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 10.799209269275952,
+          "expected_drift": -0.19289860311529283,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": -0.21433178123921515,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": -0.21433178123921337,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 10.60631066616066,
+          "expected_drift": 0.36456544801975566,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.6076090800329261,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 10.970876114180417,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 9.301009721748622,
+          "best_switching_code": 220,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 9.301009721748622,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 9.301009721748622,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 9.805758528638604,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "2,1": {
+          "pressure": 10.052953299044946,
+          "best_switching_code": 211,
+          "state_probability": "3/5"
+        },
+        "2,2": {
+          "pressure": 9.805758528638604,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "3,0": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "3,1": {
+          "pressure": 10.78013517539768,
+          "best_switching_code": 148,
+          "state_probability": "9/20"
+        },
+        "3,2": {
+          "pressure": 10.780135175397678,
+          "best_switching_code": 154,
+          "state_probability": "9/20"
+        },
+        "3,3": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "4,1": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 513,
+          "state_probability": "1/5"
+        },
+        "4,2": {
+          "pressure": 10.36326703414749,
+          "best_switching_code": 160,
+          "state_probability": "3/5"
+        },
+        "4,3": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "5,2": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "5,3": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "6,3": {
+          "pressure": 10.970876114180417,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "m": 3,
+      "beta": 6.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 3.5464015700113602,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 15.909067970374357,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1/2"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 15.909067970374357,
+          "expected_drift": 1.905606018937748,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 1.905606018937748,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": 1.905606018937748,
+              "chance_positive": "2/5"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 17.814673989312105,
+          "expected_drift": 2.0630549868001564,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 2.1416237967615217,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 2.0106757801592465,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 2.1416237967615217,
+              "chance_positive": "1/4"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 19.877728976112262,
+          "expected_drift": -1.0848253173206484,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": -1.2053614636896093,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": -1.2053614636896093,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 18.792903658791612,
+          "expected_drift": 0.6625658815941051,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 1.1042764693235085,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 19.455469540385717,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 15.909067970374357,
+          "best_switching_code": 220,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 15.909067970374357,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "1,1": {
+          "pressure": 15.909067970374357,
+          "best_switching_code": 220,
+          "state_probability": "1/2"
+        },
+        "2,0": {
+          "pressure": 17.665728606729648,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "2,1": {
+          "pressure": 17.91397091103374,
+          "best_switching_code": 195,
+          "state_probability": "3/5"
+        },
+        "2,2": {
+          "pressure": 17.665728606729648,
+          "best_switching_code": 220,
+          "state_probability": "1/5"
+        },
+        "3,0": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "3,1": {
+          "pressure": 19.924646691192986,
+          "best_switching_code": 148,
+          "state_probability": "9/20"
+        },
+        "3,2": {
+          "pressure": 19.924646691192986,
+          "best_switching_code": 154,
+          "state_probability": "9/20"
+        },
+        "3,3": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/20"
+        },
+        "4,1": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "4,2": {
+          "pressure": 18.35119307106221,
+          "best_switching_code": 160,
+          "state_probability": "3/5"
+        },
+        "4,3": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/5"
+        },
+        "5,2": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "5,3": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1/2"
+        },
+        "6,3": {
+          "pressure": 19.455469540385717,
+          "best_switching_code": 0,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 7,
+      "m": 3,
+      "beta": 0.2,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.00036256418350166797,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 4.921301141763972,
+          "expected_drift": -8.881784197001252e-16,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -8.881784197001252e-16,
+              "chance_positive": "3/7"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 4.921301141763971,
+          "expected_drift": -9.483156245515545e-05,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -8.987528708903625e-05,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 1,
+              "drift": -0.00010143992960998105,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 4.921206310201517,
+          "expected_drift": 2.4457799581791206e-05,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 2.186370893042522e-05,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": -1.5957129956944982e-05,
+              "chance_positive": "2/5"
+            },
+            {
+              "r": 2,
+              "drift": 0.00019130569903946792,
+              "chance_positive": "1/5"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 4.921230768001098,
+          "expected_drift": 0.00012447793081236112,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.00012257329314380172,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.00013197099290707115,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.00012424637779417935,
+              "chance_positive": "1/4"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 4.9213552459319105,
+          "expected_drift": 0.0002444099083898976,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.0002655224586645133,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.0002982265160929032,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 4.921599655840302,
+          "expected_drift": 6.40501071720629e-05,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.0001120876875511101,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 6,
+          "expected_pressure": 4.9216637059474735,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 4.921301141763972,
+          "best_switching_code": 691,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 4.921301141763972,
+          "best_switching_code": 691,
+          "state_probability": "4/7"
+        },
+        "1,1": {
+          "pressure": 4.921301141763972,
+          "best_switching_code": 691,
+          "state_probability": "3/7"
+        },
+        "2,0": {
+          "pressure": 4.921197596282983,
+          "best_switching_code": 7040,
+          "state_probability": "2/7"
+        },
+        "2,1": {
+          "pressure": 4.921224936670782,
+          "best_switching_code": 1865,
+          "state_probability": "4/7"
+        },
+        "2,2": {
+          "pressure": 4.921149232161522,
+          "best_switching_code": 7040,
+          "state_probability": "1/7"
+        },
+        "3,0": {
+          "pressure": 4.921285946966556,
+          "best_switching_code": 6663,
+          "state_probability": "4/35"
+        },
+        "3,1": {
+          "pressure": 4.921175135342153,
+          "best_switching_code": 6250,
+          "state_probability": "18/35"
+        },
+        "3,2": {
+          "pressure": 4.921259745838833,
+          "best_switching_code": 6270,
+          "state_probability": "12/35"
+        },
+        "3,3": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 512,
+          "state_probability": "1/35"
+        },
+        "4,0": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 1,
+          "state_probability": "1/35"
+        },
+        "4,1": {
+          "pressure": 4.921323458363775,
+          "best_switching_code": 4202,
+          "state_probability": "12/35"
+        },
+        "4,2": {
+          "pressure": 4.921290754306346,
+          "best_switching_code": 684,
+          "state_probability": "18/35"
+        },
+        "4,3": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 512,
+          "state_probability": "4/35"
+        },
+        "5,1": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 1,
+          "state_probability": "1/7"
+        },
+        "5,2": {
+          "pressure": 4.921551618259922,
+          "best_switching_code": 5280,
+          "state_probability": "4/7"
+        },
+        "5,3": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 512,
+          "state_probability": "2/7"
+        },
+        "6,2": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 32,
+          "state_probability": "3/7"
+        },
+        "6,3": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 512,
+          "state_probability": "4/7"
+        },
+        "7,3": {
+          "pressure": 4.9216637059474735,
+          "best_switching_code": 512,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 7,
+      "m": 3,
+      "beta": 0.7,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.03606425473703556,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 5.620076137650602,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "3/7"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 5.620076137650602,
+          "expected_drift": -0.010533180467462116,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.010057016567220245,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 1,
+              "drift": -0.01116806566778461,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 5.60954295718314,
+          "expected_drift": 0.0027901111618030073,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0035722985035988586,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": -0.0020669962197468195,
+              "chance_positive": "2/5"
+            },
+            {
+              "r": 2,
+              "drift": 0.020654166004410612,
+              "chance_positive": "1/5"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 5.6123330683449435,
+          "expected_drift": 0.014532890084028846,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0120923354488216,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.015634287794259905,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.014905385904087076,
+              "chance_positive": "1/4"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 5.626865958428972,
+          "expected_drift": 0.020335661805355443,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.022727255830202964,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.024390060734722496,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 5.647201620234328,
+          "expected_drift": 0.008938772153309214,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.015642851268291125,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 6,
+          "expected_pressure": 5.656140392387638,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 5.620076137650602,
+          "best_switching_code": 845,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 5.620076137650602,
+          "best_switching_code": 845,
+          "state_probability": "4/7"
+        },
+        "1,1": {
+          "pressure": 5.620076137650602,
+          "best_switching_code": 845,
+          "state_probability": "3/7"
+        },
+        "2,0": {
+          "pressure": 5.60801150454844,
+          "best_switching_code": 7040,
+          "state_probability": "2/7"
+        },
+        "2,1": {
+          "pressure": 5.612026737618324,
+          "best_switching_code": 2762,
+          "state_probability": "4/7"
+        },
+        "2,2": {
+          "pressure": 5.602670740711807,
+          "best_switching_code": 7040,
+          "state_probability": "1/7"
+        },
+        "3,0": {
+          "pressure": 5.619181189432018,
+          "best_switching_code": 6663,
+          "state_probability": "4/35"
+        },
+        "3,1": {
+          "pressure": 5.60651887879872,
+          "best_switching_code": 6250,
+          "state_probability": "18/35"
+        },
+        "3,2": {
+          "pressure": 5.615121035298363,
+          "best_switching_code": 6270,
+          "state_probability": "12/35"
+        },
+        "3,3": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 512,
+          "state_probability": "1/35"
+        },
+        "4,0": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 1,
+          "state_probability": "1/35"
+        },
+        "4,1": {
+          "pressure": 5.62298456904524,
+          "best_switching_code": 4202,
+          "state_probability": "12/35"
+        },
+        "4,2": {
+          "pressure": 5.6213217641407205,
+          "best_switching_code": 684,
+          "state_probability": "18/35"
+        },
+        "4,3": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 512,
+          "state_probability": "4/35"
+        },
+        "5,1": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 1,
+          "state_probability": "1/7"
+        },
+        "5,2": {
+          "pressure": 5.6404975411193465,
+          "best_switching_code": 5280,
+          "state_probability": "4/7"
+        },
+        "5,3": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 512,
+          "state_probability": "2/7"
+        },
+        "6,2": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 32,
+          "state_probability": "3/7"
+        },
+        "6,3": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 512,
+          "state_probability": "4/7"
+        },
+        "7,3": {
+          "pressure": 5.656140392387638,
+          "best_switching_code": 512,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 7,
+      "m": 3,
+      "beta": 1.5,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.26790828753345597,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 7.633231113614875,
+          "expected_drift": -8.881784197001252e-16,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -8.881784197001252e-16,
+              "chance_positive": "3/7"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 7.633231113614874,
+          "expected_drift": -0.09073109572391541,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.08498644326964833,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 1,
+              "drift": -0.09839063232960488,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 7.542500017890959,
+          "expected_drift": 0.018798505176435602,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.02316309726614474,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": -0.024795924194780383,
+              "chance_positive": "2/5"
+            },
+            {
+              "r": 2,
+              "drift": 0.18444703848188126,
+              "chance_positive": "1/5"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 7.5612985230673955,
+          "expected_drift": 0.1286595228402771,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.1266919519468921,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.1456705607982247,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.11452044977117382,
+              "chance_positive": "1/4"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 7.689958045907673,
+          "expected_drift": 0.11311831988707607,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -8.881784197001252e-16,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.10747740281614249,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.14830068679188635,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 7.803076365794749,
+          "expected_drift": 0.09806303535358193,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.1716103118687684,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 6,
+          "expected_pressure": 7.901139401148331,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 7.633231113614875,
+          "best_switching_code": 2777,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 7.633231113614875,
+          "best_switching_code": 2777,
+          "state_probability": "4/7"
+        },
+        "1,1": {
+          "pressure": 7.633231113614875,
+          "best_switching_code": 2777,
+          "state_probability": "3/7"
+        },
+        "2,0": {
+          "pressure": 7.527954351775982,
+          "best_switching_code": 7040,
+          "state_probability": "2/7"
+        },
+        "2,1": {
+          "pressure": 7.568534988914471,
+          "best_switching_code": 1865,
+          "state_probability": "4/7"
+        },
+        "2,2": {
+          "pressure": 7.467451466026871,
+          "best_switching_code": 7040,
+          "state_probability": "1/7"
+        },
+        "3,0": {
+          "pressure": 7.6080342411549475,
+          "best_switching_code": 6680,
+          "state_probability": "4/35"
+        },
+        "3,1": {
+          "pressure": 7.5131729209669125,
+          "best_switching_code": 6250,
+          "state_probability": "18/35"
+        },
+        "3,2": {
+          "pressure": 7.589588280348858,
+          "best_switching_code": 6270,
+          "state_probability": "12/35"
+        },
+        "3,3": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 512,
+          "state_probability": "1/35"
+        },
+        "4,0": {
+          "pressure": 7.901139401148332,
+          "best_switching_code": 1,
+          "state_probability": "1/35"
+        },
+        "4,1": {
+          "pressure": 7.679255123753009,
+          "best_switching_code": 4202,
+          "state_probability": "12/35"
+        },
+        "4,2": {
+          "pressure": 7.638431839777265,
+          "best_switching_code": 4764,
+          "state_probability": "18/35"
+        },
+        "4,3": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 512,
+          "state_probability": "4/35"
+        },
+        "5,1": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 16386,
+          "state_probability": "1/7"
+        },
+        "5,2": {
+          "pressure": 7.729529089279563,
+          "best_switching_code": 5280,
+          "state_probability": "4/7"
+        },
+        "5,3": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 512,
+          "state_probability": "2/7"
+        },
+        "6,2": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 32,
+          "state_probability": "3/7"
+        },
+        "6,3": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 512,
+          "state_probability": "4/7"
+        },
+        "7,3": {
+          "pressure": 7.901139401148331,
+          "best_switching_code": 512,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 7,
+      "m": 3,
+      "beta": 3.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 0.863989712630783,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 12.305420478928403,
+          "expected_drift": -1.7763568394002505e-15,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -1.7763568394002505e-15,
+              "chance_positive": "3/7"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 12.3054204789284,
+          "expected_drift": -0.20998605071408732,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.15690292314010712,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 1,
+              "drift": -0.2807635541460609,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 12.095434428214315,
+          "expected_drift": -0.04211911148767557,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.11071760977321787,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": -0.17627348506513307,
+              "chance_positive": "2/5"
+            },
+            {
+              "r": 2,
+              "drift": 0.6316953793932392,
+              "chance_positive": "1/5"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 12.05331531672664,
+          "expected_drift": 0.47808053571937004,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.5324345264369033,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 0.5411003232846223,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 0.4052729021089281,
+              "chance_positive": "1/4"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 12.531395852446007,
+          "expected_drift": 0.23827068414646121,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -1.7763568394002505e-15,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.15979211444614627,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.35677603176513273,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 12.76966653659247,
+          "expected_drift": 0.39974365496671255,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": -1.7763568394002505e-15,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 0.6995513961917474,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 6,
+          "expected_pressure": 13.169410191559184,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 12.305420478928403,
+          "best_switching_code": 691,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 12.305420478928403,
+          "best_switching_code": 691,
+          "state_probability": "4/7"
+        },
+        "1,1": {
+          "pressure": 12.305420478928403,
+          "best_switching_code": 691,
+          "state_probability": "3/7"
+        },
+        "2,0": {
+          "pressure": 12.119854880874591,
+          "best_switching_code": 700,
+          "state_probability": "2/7"
+        },
+        "2,1": {
+          "pressure": 12.177180230702001,
+          "best_switching_code": 1865,
+          "state_probability": "4/7"
+        },
+        "2,2": {
+          "pressure": 11.719610312943026,
+          "best_switching_code": 7040,
+          "state_probability": "1/7"
+        },
+        "3,0": {
+          "pressure": 12.167355881191797,
+          "best_switching_code": 6680,
+          "state_probability": "4/35"
+        },
+        "3,1": {
+          "pressure": 11.903658197707758,
+          "best_switching_code": 6250,
+          "state_probability": "18/35"
+        },
+        "3,2": {
+          "pressure": 12.146779567530533,
+          "best_switching_code": 6752,
+          "state_probability": "12/35"
+        },
+        "3,3": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 512,
+          "state_probability": "1/35"
+        },
+        "4,0": {
+          "pressure": 13.169410191559189,
+          "best_switching_code": 1,
+          "state_probability": "1/35"
+        },
+        "4,1": {
+          "pressure": 12.543250479651872,
+          "best_switching_code": 684,
+          "state_probability": "12/35"
+        },
+        "4,2": {
+          "pressure": 12.346266562332886,
+          "best_switching_code": 700,
+          "state_probability": "18/35"
+        },
+        "4,3": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 512,
+          "state_probability": "4/35"
+        },
+        "5,1": {
+          "pressure": 13.169410191559187,
+          "best_switching_code": 1,
+          "state_probability": "1/7"
+        },
+        "5,2": {
+          "pressure": 12.469858795367438,
+          "best_switching_code": 5280,
+          "state_probability": "4/7"
+        },
+        "5,3": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 512,
+          "state_probability": "2/7"
+        },
+        "6,2": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 32,
+          "state_probability": "3/7"
+        },
+        "6,3": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 512,
+          "state_probability": "4/7"
+        },
+        "7,3": {
+          "pressure": 13.169410191559185,
+          "best_switching_code": 512,
+          "state_probability": "1"
+        }
+      }
+    },
+    {
+      "n": 7,
+      "m": 3,
+      "beta": 6.0,
+      "normalization": "sqrt(n-1)",
+      "endpoint_difference": 2.198254336067272,
+      "rows": [
+        {
+          "k": 0,
+          "expected_pressure": 22.080993595243367,
+          "expected_drift": -3.552713678800501e-15,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -3.552713678800501e-15,
+              "chance_positive": "3/7"
+            }
+          ]
+        },
+        {
+          "k": 1,
+          "expected_pressure": 22.080993595243363,
+          "expected_drift": -0.1013516219061533,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 0.015093378635636867,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 1,
+              "drift": -0.2566116226285402,
+              "chance_positive": "1/3"
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "expected_pressure": 21.97964197333721,
+          "expected_drift": -0.33305266945956546,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -0.36373180779122194,
+              "chance_positive": "3/5"
+            },
+            {
+              "r": 1,
+              "drift": -0.716315307762116,
+              "chance_positive": "2/5"
+            },
+            {
+              "r": 2,
+              "drift": 1.2613561604139498,
+              "chance_positive": "1/5"
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "expected_pressure": 21.646589303877647,
+          "expected_drift": 1.1861527778166068,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": 1.2832847808428411,
+              "chance_positive": "3/4"
+            },
+            {
+              "r": 1,
+              "drift": 1.300080392523558,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 2,
+              "drift": 1.0817300862321524,
+              "chance_positive": "1/4"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 4,
+          "expected_pressure": 22.832742081694256,
+          "expected_drift": 0.47088184250529763,
+          "conditional": [
+            {
+              "r": 0,
+              "drift": -3.552713678800501e-15,
+              "chance_positive": "1"
+            },
+            {
+              "r": 1,
+              "drift": 0.22470991080264113,
+              "chance_positive": "2/3"
+            },
+            {
+              "r": 2,
+              "drift": 0.7657969754474294,
+              "chance_positive": "1/3"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 5,
+          "expected_pressure": 23.303623924199552,
+          "expected_drift": 0.975624007111085,
+          "conditional": [
+            {
+              "r": 1,
+              "drift": -3.552713678800501e-15,
+              "chance_positive": "1"
+            },
+            {
+              "r": 2,
+              "drift": 1.7073420124443999,
+              "chance_positive": "1/2"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        },
+        {
+          "k": 6,
+          "expected_pressure": 24.279247931310636,
+          "expected_drift": 0.0,
+          "conditional": [
+            {
+              "r": 2,
+              "drift": 0.0,
+              "chance_positive": "1"
+            },
+            {
+              "r": 3,
+              "drift": 0.0,
+              "chance_positive": "0"
+            }
+          ]
+        }
+      ],
+      "states": {
+        "0,0": {
+          "pressure": 22.080993595243367,
+          "best_switching_code": 691,
+          "state_probability": "1"
+        },
+        "1,0": {
+          "pressure": 22.080993595243367,
+          "best_switching_code": 691,
+          "state_probability": "4/7"
+        },
+        "1,1": {
+          "pressure": 22.080993595243367,
+          "best_switching_code": 691,
+          "state_probability": "3/7"
+        },
+        "2,0": {
+          "pressure": 21.960647344668136,
+          "best_switching_code": 700,
+          "state_probability": "2/7"
+        },
+        "2,1": {
+          "pressure": 22.23152660308987,
+          "best_switching_code": 1865,
+          "state_probability": "4/7"
+        },
+        "2,2": {
+          "pressure": 21.01009271166475,
+          "best_switching_code": 7040,
+          "state_probability": "1/7"
+        },
+        "3,0": {
+          "pressure": 21.973759711143618,
+          "best_switching_code": 6680,
+          "state_probability": "4/35"
+        },
+        "3,1": {
+          "pressure": 21.34568608736578,
+          "best_switching_code": 6250,
+          "state_probability": "18/35"
+        },
+        "3,2": {
+          "pressure": 21.769499107270715,
+          "best_switching_code": 6752,
+          "state_probability": "12/35"
+        },
+        "3,3": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 1024,
+          "state_probability": "1/35"
+        },
+        "4,0": {
+          "pressure": 24.279247931310646,
+          "best_switching_code": 1,
+          "state_probability": "1/35"
+        },
+        "4,1": {
+          "pressure": 22.91631001221173,
+          "best_switching_code": 684,
+          "state_probability": "12/35"
+        },
+        "4,2": {
+          "pressure": 22.375222947566943,
+          "best_switching_code": 700,
+          "state_probability": "18/35"
+        },
+        "4,3": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 1024,
+          "state_probability": "4/35"
+        },
+        "5,1": {
+          "pressure": 24.279247931310643,
+          "best_switching_code": 1,
+          "state_probability": "1/7"
+        },
+        "5,2": {
+          "pressure": 22.57190591886624,
+          "best_switching_code": 5280,
+          "state_probability": "4/7"
+        },
+        "5,3": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 1024,
+          "state_probability": "2/7"
+        },
+        "6,2": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 32,
+          "state_probability": "3/7"
+        },
+        "6,3": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 1024,
+          "state_probability": "4/7"
+        },
+        "7,3": {
+          "pressure": 24.27924793131064,
+          "best_switching_code": 1024,
+          "state_probability": "1"
+        }
+      }
+    }
+  ]
+}

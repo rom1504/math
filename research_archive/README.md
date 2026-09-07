@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-07 07:24:13](2026-09-07/072413Z/README.md) | 1,906 research files; 157,456,051 bytes; actual target-contraction surgery, count cleanup, MUB witnesses, exact census, drafts and failed dense operations | All payload hashes verified; no credential or oversized research candidate. Same 14 manually reviewed dynamic/historical flags. Research continues. |
 | [2026-09-07 06:05:13](2026-09-07/060513Z/README.md) | 1,868 research files; 154,968,179 bytes; renewed flatification work, improved ternary certificate, independent replays, MUB drafts and failed experiments | All payload hashes verified; new dynamic filename flag manually resolved; no credential candidate or oversized research output. Campaign continues. |
 | [2026-09-07 04:32:20](2026-09-07/043220Z/README.md) | 1,847 research files; 153,117,802 bytes; final ramp/ETF work, affine-Gaussian gap, exact checks, drafts, failures and outputs | Payloads verified; all remaining research matched the current-work audit. New proof dependencies manually checked; no credential candidate or oversized output. |
 | [2026-09-07 04:02:20](2026-09-07/040220Z/README.md) | 1,839 research files; 153,090,851 bytes; bipartite lower theorem, independent upper replay, midpoint ramp surgery, exact tests and continuing drafts | Preservation only; payload hashes verified. No credential candidate or oversized research output. Later edits will be preserved at the next checkpoint. |

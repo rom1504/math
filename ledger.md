@@ -46549,3 +46549,43 @@ The verified interval is [.4333221116640807,.493608094). Convergence and
 nonconvergence remain open. No power-saving favorable flatification has been
 proved. Preserve this checkpoint, then continue actual constructive work;
 do not count the tighter upper constant as a completed recurrence.
+
+### 10.153. Second flatification checkpoint: actual target contraction, not an all-order solution
+
+2026-09-07 approximately 07:25 UTC. The six-hour campaign continues through
+11:28 UTC. [Checkpoint and proof map](artifacts/flatify_director_checkpoint_two_2026_09_07.md).
+
+**Proved actual operation.** Target contraction and independent rounding give,
+for any full signing A and symmetric perturbation Delta of nuclear norm L,
+an actual signing with cap at most Q(A-offdiag Delta)+O(n sqrt L+n).
+The proof contracts the target itself into the coefficient cube before
+rounding; there is no unpriced Schur bias. Root and construction researcher
+independently reconstructed the probabilities, variance, all-spin union bound
+and edit count. L=o(n) yields subleading error. This is not favorable
+flatification, whose direct discrepancy has Frobenius norm Omega(n).
+
+**Proved optimizer consequence and sharp limitation.** Actual global
+optimality supplies near-ground signed covariance balance. Suboptimal
+bent-Hadamard signings satisfy stronger balance than required, and lowering
+their cap by delta n^(3/2) requires at least delta n^2/2-n/4 edits. Covariance
+balance alone therefore cannot select the optimum or replace dense changes.
+
+**Proved nuisance removal.** Vertex-star contraction removes hidden-partition
+count fluctuations with uniform O_delta(beta^2 sqrt N) absolute-pressure
+error. A separate direct cap proof gives O_delta(N^(5/4)). The two-orientation
+path has exactly the original absolute-pressure endpoints. Its integrated
+signed drift is still unproved; no recurrence is obtained from concentration.
+
+**Verified scoped falsifiers and finite evidence.** Affine MUB packing and
+quadratic plateaued witnesses obstruct transfer of the explicit optimal
+pentagon seed even with arbitrary within-fibre completions. They do not
+obstruct every selectable growing optimal seed. Exhaustive integer sign
+enumeration and rational packing certificates are independently complete
+through n=8. Drafts, alternative proofs and failed experiments are preserved.
+
+#### Updated frontier
+
+The interval remains [.4333221116640807,.493608094). The new same-order
+construction is genuine but does not establish an improved cross-order
+defect. Continue with dense jointly controlled operations, and retain the
+original liminf-to-all-order obligation without renaming it.

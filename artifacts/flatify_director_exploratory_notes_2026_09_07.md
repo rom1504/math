@@ -69,3 +69,40 @@ Keep these notes separate from the verified upper theorem and classification.
 
 These are retained to prevent repeated optimistic reinterpretation. They
 are not an exhaustive literature audit and not evidence of impossibility.
+
+## Second-block independent attempts and their actual gaps
+
+- Small Frobenius distance to the sign cube does not directly give favorable
+  rounding when coefficients exceed one. Clipping the exceptional large
+  entries is unpaid: even a sparse set of edge deletions can increase cap at
+  leading scale. Low-rank exceptional structure might help, but coherent
+  block-diagonal penalties can perform real midpoint centering, so they
+  cannot simply be declared irrelevant. No near-sign stability theorem was
+  proved from this idea.
+- A scalar/nuclear stationary law is not enough to characterize optimality.
+  Bent-convolution Hadamards have a complete Boolean eigenbasis, giving a
+  signed covariance of operator norm exactly 1/n despite their suboptimal
+  asymptotic cap 1/2. The independent researcher wrote the exact counterexample.
+- The root noticed a fixed-nuclear-budget rate improvement via interpolation:
+  complex 1-to-infinity norm is one and complex infinity-to-one norm is at
+  most four times the real bilinear norm, hence ||A||op<=4sqrt(Q(A)). The
+  rank-one Schur envelope then has bias <=2sqrt(Q(A)) Tr|G|. This improves
+  the old mask proof for fixed budgets, but the subsequently discovered
+  target-contraction operation supersedes the entire bias calculation.
+- A self-weave using the seed itself as a row basis looked genuinely dense.
+  Root's exact matching witness kills it: pair opposite diagonal signs,
+  choose partner columns as fibre spins, and average component reversals.
+  Unmatched majority-diagonal fibres use their own columns. The result is a
+  half-floor without any orthogonality assumption. The constructive agent
+  independently checked this and is preserving the full formula.
+- Random orthogonal spin-glass results found in the primary literature
+  cover a different coupling law or strict high temperature. They do not
+  justify rounding Haar coefficients to full signs without leading error.
+  The 2024 Boolean-cube projection/Sidon paper gives order estimates and
+  projection limits, not the required complete-unimodular optimum limit:
+  https://doi.org/10.1093/imrn/rnae083 . No new implication was imported.
+- Root independently reconstructed the adversary's stopped-Brownian Parisi
+  lower test from Auffinger--Chen arXiv:1606.05335, Theorem 1 and Corollary 2.
+  This DOES have an exact application to iid bridges; the full proof and
+  its Bernoulli comparison are being saved separately. It is not a lower
+  bound for adversarial full signings in the original optimization.
