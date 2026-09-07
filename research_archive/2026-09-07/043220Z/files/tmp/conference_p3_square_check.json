@@ -1,0 +1,182 @@
+{
+  "classification": "proved finite-field construction and conference identity; exact exhaustive fixed-signing Gray-code profiles",
+  "conference_identity": "C^2=9I",
+  "conference_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "conference_matrix_sha256": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+  "conference_order": 10,
+  "evaluator_source": "computations/exact_fixed_signing_gray.cpp",
+  "field": "GF(9)=GF(3)[t]/(t^2-2)",
+  "p": 3,
+  "profiles": [
+    {
+      "argmax_gray": 7,
+      "argmin_gray": 245,
+      "cap": 15,
+      "deleted_vertices": [],
+      "elapsed_seconds": 0.0027083158493041992,
+      "matrix_sha256": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+      "max_count": 6,
+      "max_energy": 15,
+      "min_count": 6,
+      "min_energy": -15,
+      "n": 10,
+      "projective_assignments": 512
+    },
+    {
+      "argmax_gray": 28,
+      "argmin_gray": 49,
+      "cap": 12,
+      "deleted_vertices": [
+        0
+      ],
+      "elapsed_seconds": 0.0021064821630716324,
+      "matrix_sha256": "3277f9f382b066d48cb745d0b3c3dea4438febe7377ee18f925f352cf050c727",
+      "max_count": 6,
+      "max_energy": 12,
+      "min_count": 6,
+      "min_energy": -12,
+      "n": 9,
+      "projective_assignments": 256
+    },
+    {
+      "argmax_gray": 14,
+      "argmin_gray": 21,
+      "cap": 10,
+      "deleted_vertices": [
+        0,
+        1
+      ],
+      "elapsed_seconds": 0.001929929479956627,
+      "matrix_sha256": "5f93b58d3814980ee93c020bdb53200da5c553b08d7457a7449e705d235bebd6",
+      "max_count": 4,
+      "max_energy": 10,
+      "min_count": 4,
+      "min_energy": -10,
+      "n": 8,
+      "projective_assignments": 128
+    }
+  ],
+  "q": 9,
+  "schema": "quadratic-signing-prime-square-conference-v1"
+}
