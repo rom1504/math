@@ -1,0 +1,935 @@
+{
+  "status": "FINITE EXACT INPUTS; EIGENVALUES NUMERICAL; SATURATED TRIPLES EXACT; NO ASYMPTOTIC INFERENCE",
+  "records": [
+    {
+      "n": 3,
+      "source": "exact_m3.json",
+      "polarity": 1,
+      "absolute_cap_exact": 3,
+      "positive_cap_exact": 3,
+      "projective_ground_count": 1,
+      "normalized_gram_min_eigenvalue_DISPLAY": 1.0,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 1.0050041680558035,
+        "1.0": 1.5430806348152437,
+        "4.0": 27.308232836016487
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 3,
+      "source": "exact_m3.json",
+      "polarity": -1,
+      "absolute_cap_exact": 3,
+      "positive_cap_exact": 1,
+      "projective_ground_count": 3,
+      "normalized_gram_min_eigenvalue_DISPLAY": -1.0000000000000002,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -1.6024689053196365e-17,
+        "1.0": -2.7383000657611727e-16,
+        "4.0": -7.690140185516189e-15
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 4,
+      "source": "exact_m4.json",
+      "polarity": 1,
+      "absolute_cap_exact": 4,
+      "positive_cap_exact": 4,
+      "projective_ground_count": 1,
+      "normalized_gram_min_eigenvalue_DISPLAY": 1.0,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 1.0050041680558035,
+        "1.0": 1.5430806348152437,
+        "4.0": 27.308232836016487
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 4,
+      "source": "exact_m4.json",
+      "polarity": -1,
+      "absolute_cap_exact": 4,
+      "positive_cap_exact": 4,
+      "projective_ground_count": 1,
+      "normalized_gram_min_eigenvalue_DISPLAY": 1.0,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 1.0050041680558035,
+        "1.0": 1.5430806348152437,
+        "4.0": 27.308232836016487
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 5,
+      "source": "exact_m5.json",
+      "polarity": 1,
+      "absolute_cap_exact": 4,
+      "positive_cap_exact": 4,
+      "projective_ground_count": 5,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.42705098312484224,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0023200424982018518,
+        "1.0": -0.2567651066031352,
+        "4.0": -14.552251255936044
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          4,
+          0
+        ],
+        "spins": [
+          [
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            8,
+            -4,
+            8
+          ],
+          [
+            -4,
+            8,
+            -8
+          ],
+          [
+            8,
+            -8,
+            8
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 5,
+      "source": "exact_m5.json",
+      "polarity": -1,
+      "absolute_cap_exact": 4,
+      "positive_cap_exact": 4,
+      "projective_ground_count": 5,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.4270509831248426,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.002320042498201904,
+        "1.0": -0.2567651066031354,
+        "4.0": -14.552251255936042
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          2,
+          0
+        ],
+        "spins": [
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            8,
+            4,
+            8
+          ],
+          [
+            4,
+            8,
+            8
+          ],
+          [
+            8,
+            8,
+            8
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 6,
+      "source": "exact_m6.json",
+      "polarity": 1,
+      "absolute_cap_exact": 5,
+      "positive_cap_exact": 5,
+      "projective_ground_count": 6,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.34164078649987406,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.00320362799099915,
+        "1.0": 0.35761541657297596,
+        "4.0": 21.751285669050958
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 6,
+      "source": "exact_m6.json",
+      "polarity": -1,
+      "absolute_cap_exact": 5,
+      "positive_cap_exact": 5,
+      "projective_ground_count": 6,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.34164078649987406,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.00320362799099915,
+        "1.0": 0.35761541657297596,
+        "4.0": 21.751285669050958
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 7,
+      "source": "exact_m7.json",
+      "polarity": 1,
+      "absolute_cap_exact": 9,
+      "positive_cap_exact": 7,
+      "projective_ground_count": 9,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.3882568410116209,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0024520630500076464,
+        "1.0": -0.2771815205257676,
+        "4.0": -20.06504265551092
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          3,
+          8,
+          0
+        ],
+        "spins": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            14,
+            -10,
+            14
+          ],
+          [
+            -10,
+            14,
+            -14
+          ],
+          [
+            14,
+            -14,
+            14
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 7,
+      "source": "exact_m7.json",
+      "polarity": -1,
+      "absolute_cap_exact": 9,
+      "positive_cap_exact": 9,
+      "projective_ground_count": 4,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.12088972118167363,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0009897060601229662,
+        "1.0": -0.11890675966617635,
+        "4.0": -10.06414328196532
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          0,
+          1,
+          3
+        ],
+        "spins": [
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            18,
+            14,
+            18
+          ],
+          [
+            14,
+            18,
+            18
+          ],
+          [
+            18,
+            18,
+            18
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 8,
+      "source": "exact_m8.json",
+      "polarity": 1,
+      "absolute_cap_exact": 10,
+      "positive_cap_exact": 10,
+      "projective_ground_count": 4,
+      "normalized_gram_min_eigenvalue_DISPLAY": 0.19999999999999965,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.0018024610250056872,
+        "1.0": 0.20564568851039852,
+        "4.0": 15.021586635472627
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 8,
+      "source": "exact_m8.json",
+      "polarity": -1,
+      "absolute_cap_exact": 10,
+      "positive_cap_exact": 10,
+      "projective_ground_count": 4,
+      "normalized_gram_min_eigenvalue_DISPLAY": 0.19999999999999965,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.0018024610250056872,
+        "1.0": 0.20564568851039852,
+        "4.0": 15.021586635472627
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 9,
+      "source": "exact_m9.json",
+      "polarity": 1,
+      "absolute_cap_exact": 12,
+      "positive_cap_exact": 12,
+      "projective_ground_count": 9,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.27031847137208903,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.00161569741469143,
+        "1.0": -0.17679871221938365,
+        "4.0": -10.122508224637425
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          4,
+          3
+        ],
+        "spins": [
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            24,
+            20,
+            24
+          ],
+          [
+            20,
+            24,
+            24
+          ],
+          [
+            24,
+            24,
+            24
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 9,
+      "source": "exact_m9.json",
+      "polarity": -1,
+      "absolute_cap_exact": 12,
+      "positive_cap_exact": 12,
+      "projective_ground_count": 12,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.42121511809476614,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.002383417425839635,
+        "1.0": -0.25882183453468055,
+        "4.0": -14.575235521620437
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          2,
+          0
+        ],
+        "spins": [
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            24,
+            20,
+            24
+          ],
+          [
+            20,
+            24,
+            24
+          ],
+          [
+            24,
+            24,
+            24
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 10,
+      "source": "exact_m10.json",
+      "polarity": 1,
+      "absolute_cap_exact": 13,
+      "positive_cap_exact": 13,
+      "projective_ground_count": 20,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.5839204565205616,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0024817465943745664,
+        "1.0": -0.24860353826845621,
+        "4.0": -1.7757522767372067
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 10,
+      "source": "exact_m10.json",
+      "polarity": -1,
+      "absolute_cap_exact": 13,
+      "positive_cap_exact": 13,
+      "projective_ground_count": 20,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.5839204565205618,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0024817465943747525,
+        "1.0": -0.24860353826845663,
+        "4.0": -1.775752276737165
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 11,
+      "source": "nested_10_in_11_cap17.json",
+      "polarity": 1,
+      "absolute_cap_exact": 17,
+      "positive_cap_exact": 15,
+      "projective_ground_count": 36,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.945607725671516,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.002753141487631079,
+        "1.0": -0.30131964209689,
+        "4.0": -14.962203106167257
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          5,
+          0
+        ],
+        "spins": [
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            30,
+            26,
+            30
+          ],
+          [
+            26,
+            30,
+            30
+          ],
+          [
+            30,
+            30,
+            30
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 11,
+      "source": "nested_10_in_11_cap17.json",
+      "polarity": -1,
+      "absolute_cap_exact": 17,
+      "positive_cap_exact": 17,
+      "projective_ground_count": 5,
+      "normalized_gram_min_eigenvalue_DISPLAY": 0.3423329477941791,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.004571610923563984,
+        "1.0": 0.49951534136706305,
+        "4.0": 25.53259604110592
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 12,
+      "source": "extension_nested_m11_to_12.json",
+      "polarity": 1,
+      "absolute_cap_exact": 18,
+      "positive_cap_exact": 18,
+      "projective_ground_count": 10,
+      "normalized_gram_min_eigenvalue_DISPLAY": -3.345800465122323e-16,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.004139877801689402,
+        "1.0": 0.4557300351146094,
+        "4.0": 24.67273667561478
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 12,
+      "source": "extension_nested_m11_to_12.json",
+      "polarity": -1,
+      "absolute_cap_exact": 18,
+      "positive_cap_exact": 18,
+      "projective_ground_count": 10,
+      "normalized_gram_min_eigenvalue_DISPLAY": -3.7214236069709344e-16,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": 0.004139877801689948,
+        "1.0": 0.455730035114609,
+        "4.0": 24.67273667561477
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 13,
+      "source": "bridge_6_7_sign1_cap20.json",
+      "polarity": 1,
+      "absolute_cap_exact": 20,
+      "positive_cap_exact": 20,
+      "projective_ground_count": 39,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.5358288392371904,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.002339341351895021,
+        "1.0": -0.24143002889737553,
+        "4.0": -6.569542614740632
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          1,
+          37,
+          0
+        ],
+        "spins": [
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            40,
+            -36,
+            40
+          ],
+          [
+            -36,
+            40,
+            -40
+          ],
+          [
+            40,
+            -40,
+            40
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 13,
+      "source": "bridge_6_7_sign1_cap20.json",
+      "polarity": -1,
+      "absolute_cap_exact": 20,
+      "positive_cap_exact": 20,
+      "projective_ground_count": 39,
+      "normalized_gram_min_eigenvalue_DISPLAY": -0.5358288392371903,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.002339341351895359,
+        "1.0": -0.24143002889737705,
+        "4.0": -6.569542614740628
+      },
+      "exact_three_point_saturated_witness": {
+        "indices": [
+          2,
+          11,
+          0
+        ],
+        "spins": [
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "integer_gram": [
+          [
+            40,
+            36,
+            40
+          ],
+          [
+            36,
+            40,
+            40
+          ],
+          [
+            40,
+            40,
+            40
+          ]
+        ],
+        "weights": [
+          1,
+          1,
+          -2
+        ],
+        "certificate": "2*(cosh(t*abs(G12)/(2P))-cosh(t))<0 for every t>0"
+      }
+    },
+    {
+      "n": 14,
+      "source": "conference_completion_m13.json",
+      "polarity": 1,
+      "absolute_cap_exact": 21,
+      "positive_cap_exact": 21,
+      "projective_ground_count": 78,
+      "normalized_gram_min_eigenvalue_DISPLAY": -1.1245952258616951,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.003830056080276874,
+        "1.0": -0.39698907503284786,
+        "4.0": -10.778223099264018
+      },
+      "exact_three_point_saturated_witness": null
+    },
+    {
+      "n": 14,
+      "source": "conference_completion_m13.json",
+      "polarity": -1,
+      "absolute_cap_exact": 21,
+      "positive_cap_exact": 21,
+      "projective_ground_count": 78,
+      "normalized_gram_min_eigenvalue_DISPLAY": -1.1245952258616985,
+      "cosh_kernel_min_eigenvalues_DISPLAY": {
+        "0.1": -0.0038300560802788154,
+        "1.0": -0.39698907503284825,
+        "4.0": -10.778223099264038
+      },
+      "exact_three_point_saturated_witness": null
+    }
+  ]
+}
