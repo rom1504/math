@@ -1,247 +1,127 @@
 # Active research state
 
-Evidence cutoff: fourth synthesis-to-positive-principle checkpoint,
-2026-09-07. New six-hour campaign active15:24--21:24 UTC.
-Read STEERING and the [current campaign record](artifacts/principle_director_campaign_2026_09_07.md).
-The [preceding synthesis](artifacts/flatify_director_final_synthesis_2026_09_07.md)
-and ledger10.157 retain the previous proof-dependency map.
+Evidence cutoff: 2026-09-07 closing synthesis-to-principle checkpoint.
+The six-hour campaign runs15:24--21:24UTC; final verification is in progress.
+Read [STEERING](STEERING.md) and the
+[current synthesis](artifacts/principle_director_final_synthesis_2026_09_07.md).
+Earlier detailed states remain in Git and the archival ledger.
 
-## Exact problem
+## Exact problem and verified frontier
 
-```math
-H_A(x)=\sum_{i<j}a_{ij}x_ix_j,\quad Q(A)=\max_x|H_A(x)|,\quad
-M_n=\min_{A\text{ hollow symmetric full signing}}Q(A).
-```
+For hollow symmetric full signings,
+H_A(x)=sum_(i<j) a_ij x_i x_j, Q(A)=max_x |H_A(x)|, M_n=min_A Q(A).
+Determine convergence OR nonconvergence of M_n/n^(3/2), without fixing a value.
 
-Determine convergence or nonconvergence of M_n/n^(3/2), without fixing a value.
+    .4333221116640807 <= liminf M_n/n^(3/2)
+       <= limsup M_n/n^(3/2) <= U0-zeta < .493608094.
 
-```math
-0.4333221116640807
-\le\liminf M_n/n^{3/2}
-\le\limsup M_n/n^{3/2}<0.493608094.
-```
-
-Neither convergence nor nonconvergence is proved. Convergence to 1/2 is excluded.
-The preceding exact upper expression U0 is approximately .493608093588748653.
-The new selector/stability theorem improves it to U0-zeta for a fixed explicit
-zeta>0. Its elementary value is tiny; no new displayed decimal is asserted.
-The preceding .494515125 proof and certificates remain preserved.
-
-Fourth-checkpoint additions: complete fixed-temperature independent-port
-pressure is uniformly seed-blind at leading m^2 order for ALL profiles with
-per-row squared norm O(m), even non-integrable spikes. This is a scoped
-construction-law theorem, not a no-go for favorable exact minimizers under
-global rewrites. Uniform low-cap instability has a sharp exponential low-tail
-threshold 1/sqrt(2pi) and normalized L2 fluctuations O_C(n^-1/2).
-Actual sign augmentation around low-factorization-complexity center codes
-has an explicit critical quadratic-log valley bound. Matching actual examples
-exist at every c>1/2, but their enlarged center code admits cheap augmentation.
-See ledger10.161 and the current campaign record. No convergence claim follows.
-
-Latest campaign theorems: the same lower c* extends to every bounded-amplitude
-hollow weighted matrix with uniform row energy n-1+o(n), via a new weighted
-tree factorization and spectral-core variance completion. An independently
-certified all-order skew anti-invariant construction has cap constant<.499,
-disproving a Boolean half-floor in that family without improving the best
-original upper bound. Neither theorem establishes optimal seed transfer.
-See ledger10.159 and `principle_director_weighted_extension_audit_2026_09_07.md`.
-
-The latest positive principle: for EVERY orthogonal basis, a random fixed
-fraction p<1 coordinate selector excludes ALL highly concentrated finite-
-alphabet spectral words with exponentially high probability. This does not
-delete any allowed physical spin word. Every remaining response has light
-mass; reciprocal mass filtering and a convex Talagrand/Finner argument charge
-actual physical local stability at exponential scale. The old row algebra
-survives, giving a strict improvement of any fixed p<1 finite-t row upper
-certificate. See `principle_director_selector_entropy_stability_2026_09_07.md`.
-Both independent audits pass; original scalar certificate replay at70 digits
-and exact finite tilted-edge/stable-max bookkeeping pass. Seed preservation
-and asymptotic optimality remain unproved. The Gaussian annealed threshold
-is not an exact saddle; an independently verified Haar stability gap shows it.
-
-Latest actual operation: arbitrary prescribed total-rank-r subspaces have
-all-order full-sign residual bridges with normalized error
-O((r log(n)/n)^(1/4)+n^(-19/40)). All sublinear-rank scalar residual
-certificates nevertheless fail, by a new uniform actual-child width theorem.
-A Grothendieck/SDP factorization proves tr(A^4)=O(n^3) from Q(A)=O(n^1.5).
-
-New quenched universality compares bounded-spectrum, nondegenerate Gaussian
-sign bridges with their EXACT-covariance Gaussian bridges, retaining all
-actual child offsets. Expected parent-cap error is O(n^(4/3)sqrt(log n))
-for fixed spectral gap. A favorable Gaussian parent bound remains OPEN.
-The p-normalized opposite-spectral law is typically too costly on actual
-additive near-minimizers with p/n diverging; rare selection and other laws
-are not excluded. See the latest synthesis for proofs and exact scope.
-
-Correction to earlier sector emphasis: dephased Hadamards already handle
-all fixed-center quadratic energy windows, without Gaussian-profile
-assumptions. Whole-child coverage remains unpaid.
-
-The regular-support weave gives full square bilinear
-cap constant below .987216188 at all orders. Rank-two Hadamard tiles admit
-an audited finite joint-profile upper certificate with o(N) type overhead
-and O(N^(5/4)) completion cost. Its asymptotic profile bound is unproved;
-its random column phases erase the child seed. No favorable flatification
-or original convergence theorem follows. See checkpoint three.
+U0=[97/20+(24/25)log2-5151/6250]/[(97/10)sqrt(24/25)].
+The new selector/local-stability construction gives explicit zeta>0,
+but it is extremely small; no changed displayed decimal is claimed.
+Convergence remains OPEN. Convergence to1/2 is excluded.
 
 For d=binom(n,2), the AUGMENTED cut code is
-C_n^+={(c+b_i+b_j)_(i<j)}. Then Q(a)=d-2dist(a,C_n^+) and
-M_n=d-2rho(C_n^+). The constant coordinate is essential for absolute energy.
+C_n^+={(c+b_i+b_j)_(i<j)}. Then Q(a)=d-2dist(a,C_n^+),
+M_n=d-2rho(C_n^+). The constant bit is essential for the absolute maximum.
 
-Recorded exact M_3,...,M_14=(3,4,4,5,9,10,12,13,17,18,20,21).
-The n=11,13 lower solver proofs were not rerun here. External witnesses give
-M_15<=27,M_16<=30; their global lower-catalogue completeness was not replayed.
-None of the new asymptotic theorems depends on these finite optima.
+Recorded M_3,...,M_14=(3,4,4,5,9,10,12,13,17,18,20,21).
+External witnesses give M15<=27,M16<=30; their global catalogue completeness
+was not replayed. New asymptotic theorems do not depend on these finite optima.
 
-## Upper theorem: necessary dependencies only
+## Proof dependencies, not inherited verdicts
 
-[Standalone proof](artifacts/decisive_audit_standalone_direct_E_upper_2026_09_07.md)
-and [independent reconstruction](artifacts/decisive_independent_upper_realization_audit_2026_09_07.md).
+Upper: precision-Schur BE<=E; Gaussian-boundary direct stopping with budget
+Phi-G; ternary directed certificate E<=-5151/6250; full-spin/both-polarity
+counting; terminal-uniform Fock bound; H2/H12 all-order realization.
+Fix margin, then finite depth, then large order, then remove margin.
+The selector uncertainty + actual local-stability refinement yields zeta.
+Original certificate replay:70 digits,86,041 boxes,43,021 leaves, PASS.
 
-1. Arithmetic/harmonic precision Schur pivots and information chain rules:
-   the mean-conditional-variance envelope E satisfies BE<=E.
-2. Gaussian-boundary direct stopping controls finite-depth Bellman iterates.
-   Its tail/stopping budget is Phi-G, not an assumed global Phi-E gap.
-3. At p=24/25,t=97/20 the exact ternary reproduction-support reduction and
-   independently replayed interval covers prove E_t(nu_p)<=-5151/6250.
-   This point is not asserted to be in the Gaussian phase. The old Gaussian
-   phase certificate remains valid at its own parameters.
-4. Full-spin and both-polarity counting, independent fibre averages (E Z)^m,
-   a terminal-orthogonal-uniform Fock bound, and O(N) diagonal correction
-   produce actual hollow full sign matrices.
-5. H2/H12 terminal orders and restriction give all orders. Fix desired margin,
-   choose finite depth, send order to infinity, then remove margin.
-
-The new final upper is [97/20+(24/25)log2-5151/6250]/[(97/10)sqrt(24/25)],
-strictly below .493608094. See
-[new proof](artifacts/flatify_independent_2026_09_07_ternary_upper_proof.md)
-and [independent reconstruction](artifacts/flatify_adversary_2026_09_07_ternary_upper_reconstruction.md).
-The director replayed all 86041 nodes; an independent implementation used
-43075 nodes and a rational-only endpoint conversion. H=E is a separately proved certificate
-identity, not a premise equating this ensemble to M_n.
-
-## Lower theorem and new consequences
-
-[Fresh lower reconstruction](artifacts/decisive_audit_fresh_full_lower_chain_2026_09_07.md).
-The actual marked/two-Gaussian response, tree-frame and covariance estimates,
-nonlinear replacements and spectral deletion yield c*=.4333221116640807.
-The 256-cell exact policy certificate was replayed byte-for-byte.
+Lower: marked two-Gaussian response, covariance/tree estimates, nonlinear
+replacement, exact finite policy certificate and spectral deletion.
 Finite approximations precede order; deletion cutoff is removed last.
+See decisive_audit_fresh_full_lower_chain_2026_09_07.md.
+The same c* holds for minimum half-range and fixed bounded-amplitude
+row-energy-regular weighted matrices; unbounded amplitudes are separate.
+Square full-sign bilinear minimum is at least2c* asymptotically.
 
-Writing P=max H_A,R=max(-H_A),W=(P+R)/2, the same asymptotic lower holds
-for min_A W(A). The square bipartite full-sign extension yields
-liminf min_C ||C||_(infinity->1)/m^(3/2)>=2c*>.8666442233281615.
-It retains the complete-bipartite support, not an arbitrary weighted graph.
+## New positive organizing principle and actual construction
 
-## Useful new mechanisms and their actual gaps
+Retain physical rare-packet entropy BEFORE separating algebraically linked
+response channels. A uniform rare-source rate-distortion theorem and exact
+Hadamard clipping inequality make this quantitative, not just terminology.
 
-- Bounded actual cap gives delocalized quadratic Gibbs fluctuations throughout
-  a fixed bridge interpolation. Contracted-temperature gains do not supply
-  same-temperature almost-subadditivity.
-- The actual weighted WIDTH-minimizer log-cosh path has a favorable PSD
-  derivative term plus an uncontrolled signed edge-flip-cost imbalance.
-  Taylor remainders are sublinear; leading integrated payment remains open.
-- Sparse actual sign surgery repairs the midpoint under a proportional
-  semidefinite ramp. It works for trace o(sqrt(n)), or sign-compatible trace
-  o(n) with explicit entrywise feasibility. No such certificate has been
-  obtained for selected width minimizers.
-- Soft-flatness approximates the original optimum within log2/(4tau)
-  uniformly in dimension. Spectral regularization preserves leading outer
-  entropy. The required all-order variational limit is not proved.
-- Scalar-affine Gaussian-sign expected ABSOLUTE energy falls below width by
-  a fixed gap for actual low-cap sequences, using BOTH current endpoints and
-  a cap-only four-sign variance theorem. This is a method restriction,
-  not a limitation of actual Boolean signings.
+Safe same-law model: Sylvester L32, one hole per node group, marked constant
+column, independent recursive children, exact balanced-column sign repair.
+For its actual sign-block bulk B, q/m->p=31/32, N=mq:
 
-## Strongest scoped falsifiers
+- Balanced-face cap <.497761196 N^(3/2), including selector entropy.
+- Near-constant variance coefficient sqrt(p)/2+o_r(1)<.492125493.
+  One common temperature covers constant fibres and densities [r^alpha,r]
+  for alpha<=31/16; at coefficient .499 it covers [r^3,r].
+- A verified mixed-profile entropy cone permits balanced fibres to pay
+  the other rows' costs, including arbitrarily many tiny density scales.
+- Stratified restricted-Gram conditioning controls EVERY outer seed and
+  all biases when o(m/log^4 m) fibres are nonconstant, at relative
+  coefficient sqrt(p)/2+o(1). This modifies the selector law by a uniformly
+  bounded conditional density and preserves all prior strict row exponents.
+  Elementary unconditioned coherence also covers o(sqrt(m/log m)).
+- Actual fair-edge local stability excludes small-minority local maxima
+  unless almost all relevant minority mass is coherent or nearly balanced.
 
-1. Child reversal forbids unpaid bridge cancellation.
-2. Prescribed dense Hadamard stabilization has a half-floor for any full
-   seed; this is not a universal construction obstruction.
-3. Generic bounded-cap temperature payment is scalably false, not a theorem
-   against actual global-minimizer payment.
-4. Sparse variance-one amplitudes disprove two-sided adaptive universality;
-   fixed bounded favorable flatification is not refuted.
-5. Strong high-layer capture is circular. Steiner-frame full-sign matrices
-   force linear trace even for proportional PSD ramps; they are NOT
-   near-minimizers.
-6. Finite skew-lift failures do not imply an asymptotic Boolean floor.
-7. Contracted scalar recurrences allow abstract oscillating slopes; no
-   realizability of those counterprofiles is asserted.
-8. Existing compactness/ultrafilter limits do not supply all-order recovery.
+These regions do NOT yet cover every mixed profile. Bulk diagonal zeros
+are explicit; no full minimax upper bound or ensemble optimality is inferred.
+See principle_director_joint_packet_audit_2026_09_07.md and the synthesis.
 
-## Latest actual construction and limitation
+## New statement about actual liminf families
 
-Arbitrary rank-r subspace localization now has an actual full-sign bridge
-at every order, error O(n^(5/4)sqrt(r)); r<=n^(1/2-2delta) gives power
-saving. It does NOT by itself pay the child energies. A new Gaussian
-witness proves half-width >=[4/(3pi sqrt(3))-o(1)]n^(3/2) near every
-rank-o(sqrt(n)) orthogonal complement. Hence separately optimized energy
-plus residual-norm certificates cannot close the target in this range.
-This does not rule out favorable joint alignment or global old-edge changes.
-Dephased Hadamards already handle all fixed-center quadratic energy windows;
-previous Gaussian-profile assumptions were unnecessary there.
-See `artifacts/flatify_director_checkpoint_five_2026_09_07.md`.
+Hierarchy-aware Gram--Schmidt augmentation preserves all old edges.
+If e(eta) is normalized gamma2-square of the FULL absolute near-level set,
+every liminf-realizing family satisfies
 
-## Exact next construction target
+    limsup_eta e(eta)h(min(e(eta),1/2))/eta >=3c_inf/(40 phi^5).
 
-New verified same-order tool: target contraction and rounding implement any
-symmetric perturbation Delta with cap error O(n sqrt(||Delta||_*)+n).
-No incoherence/Grothendieck premise is needed. This is subleading for nuclear
-budget o(n), but the direct two-child target has distance Omega(n), not o(n).
-Exact suboptimal Hadamards satisfy stronger stationary covariance balance than
-the theorem forces at optimizers; fixed improvement there needs Omega(n^2)
-edits. Stationarity alone is not a convergence architecture.
+This is a real necessary condition, not just a cleaner name for convergence.
+It does not imply that the near-level code has low complexity.
 
-Partition-count fluctuations have a proved O(N^(5/4)) cap cleanup. The two-bit
-reveal path has original absolute-pressure endpoints, but no total drift
-inequality. See the
-[continuing checkpoint](artifacts/flatify_director_checkpoint_two_2026_09_07.md).
+## Strongest scoped boundaries
 
-For comparable N=m+n and selectable actual minimizing children, globally
-round the row-square-normalized weighted block diagonal
-diag(sqrt((N-1)/(m-1)) A_m,sqrt((N-1)/(n-1)) A_n)
-to full signs with extra cap O(N^(3/2-delta)), delta>0.
-Then u_N<=u_m+u_n+O(N^(1-delta)), u_n=M_n/sqrt(n-1), forces convergence.
+1. Child reversal forces max_epsilon|a+b+epsilon c|=|a+b|+|c|.
+2. Local iid profiles coexist with preserved leading cap; random restrictions
+   need not transfer favorable value. Rare chosen restrictions remain open.
+3. Independent-port pressure AND minimum defect are seed-universal at
+   Q=o(m^2/log m), sharply. This includes bounded-cap exact seeds but not
+   correlated placement or global parent rewrites. Querywise is not minmax.
+4. Every specified independent fixed-k orthogonal-frame law has actual cap
+   >.50717387; rare/correlated frames and growing physical fibres are distinct.
+5. Exact block balance plus strict balanced-face cap does not control mixed
+   words: actual macroscopic balanced scars falsify that implication.
+6. Unstratified scalar E has rare coefficient1/(2sqrt p); joint packet
+   stratification escapes it. This is a certificate comparison, not cap lower.
+7. Naive tensor/DC-spine packet iteration has explicit temperature conflicts.
+   It does not prohibit all adaptive hierarchies.
+8. H24 output-permuting automorphisms do not close source-law mixing.
+   H32 translations preserve each fixed channel and give the safe proof.
+9. Spectral/subspace residual certificates, planted near-minimizer failures
+   and particular algebraic floors must not be generalized to all selectable
+   exact children or unrestricted global rewriting.
 
-No such rounding or equivalent original-value recurrence is currently proved.
-The original liminf-to-all-order gap remains. A nonconvergence proof instead
-needs genuinely separated infinite order subsequences, not route falsifiers.
+## Exact remaining original-value gap
 
-## New synthesis checkpoint: original limit still open
+For selectable exact children at comparable N=m+n, an actual full-sign
+replacement of the row-square-normalized weighted block diagonal with
+cap loss O(N^(3/2-delta)) would give summable almost-subadditivity for
+u_n=M_n/sqrt(n-1), hence convergence. This is one sufficient theorem,
+not a mandatory architecture and NOT proved here.
 
-Global monotone balancing gives actual same-order B with polarity gap<=2,
-cap loss O_C(n^(5/4)), and operator increase O_C(sqrt n) for EVERY bounded-cap
-input. It removes a selectable near-minimizer polarity nuisance, not the
-width-to-cap or order-transfer gap.
+The new construction still needs complete intermediate/coherent multiscale
+control AND a separate favorable-seed-value/all-order transfer theorem.
+A genuine nonconvergence proof instead needs two separated infinite
+subsequences. No route falsifier counts as that result.
 
-Every bounded-cap gauge/permutation orbit has iid sampled vertex marginals
-through (1-delta)log_2 n, while retaining the full cap exactly. The signed
-Eulerian compiler gives an all-order independent-balanced-row representation
-of all signings up to one parity bit, with pointwise density distortion
-exp[O(n log n)]. This preserves rare negative-disorder partition functions
-at speed n^2, but does not prove their limit.
+## Preservation
 
-Fixed finite row types can erase favorable seed information even at strong
-coupling; full orthogonal Boolean row-code constraints must not be silently
-replaced by those types. The actual lift and bounded regular variance-profile
-tests in STEERING are open constructive directions. See
-`artifacts/principle_director_first_proof_audit_2026_09_07.md` and the
-individual complete proofs. None changes the original rigorous interval.
-
-## Research preservation
-
-Latest fifth checkpoint: hierarchy-aware actual sign augmentation proves a
-new necessary near-level complexity law for liminf sequences; see
-`artifacts/principle_invent_2026_09_07_hierarchy_complexity_dilution.md`.
-Independent-port minimum-defect universality now extends to diverging
-temperatures, with a sharp Q=o(m^2/log m) threshold and explicit actual-sign
-counterexamples at the boundary. This does not commute a querywise placement
-with a worst-query maximum. Exact balanced-column repair and a one-marked-spine
-recursion are positive actual operations; mixed seed/bulk cap control remains
-open. The biased scalar envelope alone cannot give a strict-subhalf variance
-ratio uniformly near constant slices. Original convergence is still OPEN.
-
-Follow README: never /tmp; preserve research-bearing ignored/untracked files
-in dated tracked archives even when unfinished. Keep canonical proofs in place.
-See research_archive/ for reviewed exclusions, dependency recovery and hashes.
+Follow README: never /tmp; preserve drafts, failures, code and outputs
+in tracked dated archives. Canonical proofs stay in place. Environments,
+caches, credentials and reviewed reproducible builds are excluded.
+See research_archive/README.md for hashes, exclusions and dependency recovery.

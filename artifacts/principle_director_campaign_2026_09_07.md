@@ -248,3 +248,26 @@ reconnaissance is separately labeled and reproducible. This failure does
 not imply that the actual balanced construction fails. Continue through
 the remaining authorized hour with actual local stability or another
 positive mixed-response operation, then independently verify and preserve.
+
+## Closing substantive checkpoint,21:18UTC; verification/publication continues
+
+The scalar certificate failure led to a positive JOINT packet theorem:
+finite rare-source information asymptotics plus exact Hadamard clipping
+prove actual biased-response control for a stratified marked construction.
+The safe Sylvester32 law retains the balanced certificate and pays rare
+event entropy once before combining its channels. The same actual law
+has a cubic minority-density band and mixed entropy cones. A separate
+restricted-isometry conditioning theorem extends relative control to
+o(m/log^4 m) arbitrary-bias active fibres without destroying the prior
+row exponents. Root read the original Rudelson--Vershynin deterministic
+lemma and proof; both agents independently reconstructed its nonidentical
+sampling and conditioning adaptation.
+
+Macroscopic balanced scars and iterated packet falsifiers sharply limit
+endpoint-only or naive multilevel claims. A tempting H24 automorphism
+shortcut was rejected because row permutations mix different child laws.
+These are scoped construction/certificate statements, not universal
+minimizer impossibility. The actual problem remains unresolved; the
+complete positive theorem and dependency/gap map are in the final
+synthesis. Remaining authorized time is active final proof verification,
+dependency and preservation audits, and publication of all research.

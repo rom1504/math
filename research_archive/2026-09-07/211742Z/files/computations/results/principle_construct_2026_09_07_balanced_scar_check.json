@@ -1,0 +1,4663 @@
+{
+  "status": "PASS",
+  "m": 4,
+  "q": 4,
+  "ell": 1,
+  "selected_choices": 256,
+  "balanced_words": 1296,
+  "base_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "base_balanced_cap": 48,
+  "mean_scar_selected_energy": 6.0,
+  "balanced_cap_range": [
+    32,
+    64
+  ],
+  "ferro_gain_range": [
+    0,
+    0
+  ],
+  "records": [
+    {
+      "selected": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        0,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        2,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "switches": 6,
+      "original_selected_energy": -6,
+      "scar_selected_energy": 6,
+      "target_change": 12,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 48,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        3,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        3,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        0,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        0,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        3,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        1,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        0,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 64,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 64,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        2,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        3,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        3,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        2,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        0,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        0,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        1,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        2,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        3,
+        1
+      ],
+      "switches": 0,
+      "original_selected_energy": 6,
+      "scar_selected_energy": 6,
+      "target_change": 0,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 0,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        3,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        0,
+        3,
+        3,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        0,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        2,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        2,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        3,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        0,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        0,
+        2
+      ],
+      "switches": 0,
+      "original_selected_energy": 6,
+      "scar_selected_energy": 6,
+      "target_change": 0,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 0,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        0,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        3,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        3,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "switches": 6,
+      "original_selected_energy": -6,
+      "scar_selected_energy": 6,
+      "target_change": 12,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 48,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        2,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        0,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        0,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        1,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        2,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        2,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        3,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        3,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        3,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        0,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        1,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        1,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        1,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "switches": 0,
+      "original_selected_energy": 6,
+      "scar_selected_energy": 6,
+      "target_change": 0,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 0,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        2,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        2,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        3,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        3,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        0,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        1,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        2,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        3,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        3,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        1,
+        3,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        0,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        0,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        2,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        2,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        3,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        3,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "switches": 6,
+      "original_selected_energy": -6,
+      "scar_selected_energy": 6,
+      "target_change": 12,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 48,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        0,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        0,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        1,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        1,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        2,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        3,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        3,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        2,
+        3,
+        3,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        0,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        0,
+        3
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        1,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        1,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        1,
+        3
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        2,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 56,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        3,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        3,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        0,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        0,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        0,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        1,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        1,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        2,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        3,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        3,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        3,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        1,
+        3,
+        3
+      ],
+      "switches": 6,
+      "original_selected_energy": -6,
+      "scar_selected_energy": 6,
+      "target_change": 12,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 48,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        0,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        0,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        2,
+        0
+      ],
+      "switches": 0,
+      "original_selected_energy": 6,
+      "scar_selected_energy": 6,
+      "target_change": 0,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 0,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        2,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        3,
+        0
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        2,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        0,
+        0
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        0,
+        1
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        0,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        0,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        1,
+        0
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 32,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        1,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        1,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 40,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        2,
+        0
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "switches": 1,
+      "original_selected_energy": 4,
+      "scar_selected_energy": 6,
+      "target_change": 2,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 8,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        2,
+        3
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "switches": 3,
+      "original_selected_energy": 0,
+      "scar_selected_energy": 6,
+      "target_change": 6,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 24,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        3,
+        1
+      ],
+      "switches": 2,
+      "original_selected_energy": 2,
+      "scar_selected_energy": 6,
+      "target_change": 4,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 16,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        3,
+        2
+      ],
+      "switches": 5,
+      "original_selected_energy": -4,
+      "scar_selected_energy": 6,
+      "target_change": 10,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 40,
+      "ferro_completion_gain": 0
+    },
+    {
+      "selected": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "switches": 4,
+      "original_selected_energy": -2,
+      "scar_selected_energy": 6,
+      "target_change": 8,
+      "biased_bulk_energy": 24,
+      "centered_variance": 12,
+      "balanced_cap": 48,
+      "max_balanced_word_energy_change": 32,
+      "ferro_completion_gain": 0
+    }
+  ],
+  "scope": "Exact finite regression only; the asymptotic scar theorem is proved analytically."
+}

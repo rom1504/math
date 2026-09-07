@@ -1,0 +1,23 @@
+{
+  "status": "FLOATING DIAGNOSTIC, not an interval certificate or actual cap lower bound",
+  "formula": "(t*(1-a^2)+p*h((1+a)/2)+E_t(nu_p,a))/(2*t*sqrt(p)*(1-a^2))",
+  "records": [
+    {
+      "p": 0.96875,
+      "bias": 0.0,
+      "t": 4.85,
+      "variance": 1.0,
+      "slice_entropy": 0.671486331167447,
+      "envelope": {
+        "lower": -0.8011455080237345,
+        "upper": -0.7974973521771005,
+        "intervals": 160,
+        "maximum_dual_gap": 0.0035496409940515283,
+        "grid_spacing": 0.013546680213353701,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.494419698163658,
+      "variance_ratio_upper": 0.49480181466331896
+    }
+  ]
+}
