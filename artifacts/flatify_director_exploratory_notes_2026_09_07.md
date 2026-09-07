@@ -5,6 +5,16 @@ Keep these notes separate from the verified upper theorem and classification.
 
 ## Rediscoveries checked against the archive
 
+- Closing audit: deriving a small-coordinate deletion with bounded operator
+  norm from SDP/Grothendieck weights only rediscovers the existing
+  Grothendieck--Pietsch regular-core theorem. At vanishing deleted fraction
+  its operator constant diverges; it does not repair the opposite-spectral
+  normalization loss. No new progress is claimed from this rediscovery.
+- The full quenched comparison suggests possible fourth-order refinements
+  using global sign symmetry. No fourth-cumulant theorem was proved, and
+  improving the transfer exponent would not itself pay the Gaussian parent
+  optimum. This was not promoted over the actual convergence obligation.
+
 - H2 conjugation exposes all clique-flipped child objectives; already proved
   in `decisive_independent_h2_exact_profiles_and_algebra_2026_09_07.md`.
   The new pair-rotation note classifies the proposed additional angle freedom.

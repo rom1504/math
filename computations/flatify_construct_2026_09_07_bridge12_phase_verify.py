@@ -2,6 +2,8 @@
 import json,subprocess
 from pathlib import Path
 import numpy as np
+from flatify_construct_2026_09_07_build_tools import build_tool
+gray = build_tool()
 root=Path(__file__).resolve().parents[1]
 p=json.loads((root/'computations/results/flatify_construct_2026_09_07_bridge12_phase_certificate.json').read_text())
 A=np.array(p['child_matrix'],dtype=np.int16);H=np.array(p['hadamard'],dtype=np.int16)
@@ -17,7 +19,7 @@ for r in p['records']:
     out.append(dict(target=60,polarity=r['polarity'],status='PASS full phase cube excluded',constraint_count=len(r['constraints'])))
   if r['target']==62 and r['witness']:
     B=r['witness']['parent_matrix'];data='24\n'+'\n'.join(' '.join(map(str,row)) for row in B)+'\n'
-    replay=json.loads(subprocess.run([str(root/'tmp/flatify_construct_2026_09_07_gray')],input=data,text=True,capture_output=True,check=True).stdout)
+    replay=json.loads(subprocess.run([str(gray)],input=data,text=True,capture_output=True,check=True).stdout)
     assert replay['cap']==62
     out.append(dict(target=62,polarity=r['polarity'],status='PASS full-parent exhaustive Gray replay',replay=replay))
 (root/'computations/results/flatify_construct_2026_09_07_bridge12_phase_verify.json').write_text(json.dumps(dict(status='PASS independent replay',records=out),indent=2)+'\n')

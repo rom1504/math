@@ -2,6 +2,8 @@
 
 2026-09-07. New actual full-sign bridge operation. The strongest version is Section 6: relative-leverage contraction improves the error exponent to 1/4, with no masking. Sections 1--5 preserve the original random-gauge/masking construction and the director's 1/6 optimization as a separately checked alternate proof. This is not a payment of the internal child energies.
 
+Independent and construction agents separately reconstructed the argument and passed the relative-leverage refinement. The construction audit is preserved in `flatify_construct_2026_09_07_nearlinear_projector_audit.md`.
+
 ## Theorem at Hadamard orders
 
 Let H be any order-n full sign Hadamard. Let P,Q be arbitrary orthogonal projections with total rank r>=1, and set

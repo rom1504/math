@@ -1,4 +1,11 @@
 {
+  "tmp/flatify_replay_build_67tq7oz1/exact_gray": {
+    "sha256": "6611b17f46c5a59a85805c4e0fe73afb606762c762e527b9b8983a105643810a",
+    "source": "computations/exact_fixed_signing_gray.cpp",
+    "source_sha256": "5a08f4e89660efe23319351084d12007b4a44942fdcdc170d3c2fc05346c7586",
+    "recipe": "g++ -O3 -std=c++17 computations/exact_fixed_signing_gray.cpp -o tmp/flatify_replay_build_67tq7oz1/exact_gray",
+    "audit": "research_archive/flatify_closing_publication_audit_2026_09_07.md"
+  },
   "tmp/flatify_director_labeled_cap_census_2026_09_07": {
     "sha256": "e6484da9305b988f5ac01a9d1be787bddce8431d5ef0da1880a389f84e70c698",
     "source": "computations/flatify_director_labeled_cap_census_2026_09_07.cpp",

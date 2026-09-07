@@ -2,6 +2,7 @@
 import ctypes,itertools,json,time
 from pathlib import Path
 import numpy as np
+from flatify_construct_2026_09_07_build_tools import build_tool
 
 root=Path(__file__).resolve().parents[1]
 A=np.array(json.loads((root/'computations/results/extension_nested_m11_to_12.json').read_text())['parent_matrix'],dtype=np.int16)
@@ -14,7 +15,7 @@ residues={i*i%11 for i in range(1,11)}
 Q=np.array([[0 if i==j else(1 if (j-i)%11 in residues else -1) for j in range(11)] for i in range(11)],dtype=np.int16)
 H=np.ones((12,12),dtype=np.int16);H[1:,1:]=-Q-np.eye(11,dtype=np.int16)
 assert np.array_equal(H@H.T,12*np.eye(12,dtype=np.int16))
-lib=ctypes.CDLL(str(root/'tmp/flatify_construct_2026_09_07_bridge12_eval.so'))
+lib=ctypes.CDLL(str(build_tool(shared=True)))
 ev=lib.evaluate;ev.argtypes=[ctypes.c_void_p,ctypes.c_void_p]+[ctypes.c_int]*5;ev.restype=ctypes.c_uint64
 rng=np.random.default_rng(9071029);start=time.monotonic();records=[];best=None;tested=0;restarts=0
 output=root/'computations/results/flatify_construct_2026_09_07_bridge12_probe.json'

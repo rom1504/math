@@ -2,6 +2,8 @@
 
 2026-09-07. Actual same-order symmetric sign recovery around a symmetric Hadamard seed. This may change ALL old edges. It is not a recovery theorem for the original weighted two-child target.
 
+Independent full-proof audit: PASS, recorded in `flatify_independent_2026_09_07_symmetric_global_projector_audit.md`, including the quadratic-chaos constants, symmetric rounding, and all-order padding.
+
 ## 1. Exact compatible-order statement
 
 Let H be a symmetric full sign Hadamard of order n, so H²=nI, and let P be ANY prescribed orthogonal projection of rank r>=1. If a=r log n/n tends to zero, there exists a hollow symmetric full signing C with, simultaneously for every Boolean x,
