@@ -73,3 +73,42 @@ This is a real stronger actual ensemble operation, not a claim that the
 unconditioned law automatically has simultaneous RIP over all fibres.
 It does not control a positive fraction of active fibres or establish
 selected-minimizer cap transfer.
+
+The final assembled canonical Section6 was read completely and passes
+also for general fixed k<L. Order each group uniformly and discard its
+first L-k slots. Each slot separately has independent rows across groups
+and the same aggregate isotropy. Its finitely many dependent companions
+can be handled by a union and the restricted-norm triangle inequality.
+No independence between slots is needed. The canonical proof uses a
+near-one good probability, reducing the whole-array density cost further
+to exp(o(m)). Its explicit warning that conditioning is top-level only
+and need not preserve intra-row child independence is correct.
+
+## Quantitative bounded-density variant (director derivation, audited PASS)
+
+Let theta=s log^4(m)/m tend to zero and use the uniform expectation bound
+B_m=4a^2+2a sqrt(M). Conditioning the restricted deviation to be at most
+4B_m has failure probability at most1/4. Intersecting the excess event
+therefore leaves success probability at least1/2 for all large orders.
+Use density at most2 per fibre rather than the near-one normalization.
+The entire array density costs exp(O(m)), still subleading to each fixed
+accuracy leading certificate.
+
+The restricted Gram error divided by m is O(sqrt(theta)+theta). The
+balanced repair operator error divided by sqrt(m) is
+O(m^(-1/4) log^(5/4)m), including a smaller mean-contraction term.
+Squaring the repaired singular-value bound therefore gives relative
+phase coefficient error
+
+    O(sqrt(theta)+m^(-1/4)log^(5/4)m).
+
+For s=m^(1-eta), fixed eta>0, this is
+O(m^(-eta/2)log^2m+m^(-1/4)log^(5/4)m). These are paid power-saving
+errors for this sparse-active phase, not an original minimax recurrence.
+
+Final assembled canonical Section6.5 read PASS. For d=L-k discarded
+slots, triangle bounds the expected TOTAL restricted deviation by d B_m.
+Condition total deviation<=4d B_m directly. Markov failure is at most1/4,
+without independence between slots; intersecting the excess event gives
+the claimed success probability at least1/2. This makes the fixed-slot
+constant enlargement completely explicit.

@@ -1,7 +1,8 @@
 # Active research state
 
 Evidence cutoff: 2026-09-07 closing synthesis-to-principle checkpoint.
-The six-hour campaign runs15:24--21:24UTC; final verification is in progress.
+The six-hour campaign runs15:24--21:24UTC; mathematical verification is
+complete and closing preservation/publication is being completed.
 Read [STEERING](STEERING.md) and the
 [current synthesis](artifacts/principle_director_final_synthesis_2026_09_07.md).
 Earlier detailed states remain in Git and the archival ledger.

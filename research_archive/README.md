@@ -76,10 +76,11 @@ certificate audit records the remaining completeness and replay boundaries.
 
 ## Checkpoint procedure
 
-Latest publication audit: [2026-09-07 closing report](publication_audit_2026_09_07.md).
-All 1,824 remaining uncommitted research originals matched saved payload hashes
-after the closing mathematical checkpoints were pushed. Working originals
-remain in place intentionally; the tracked archive is their durable copy.
+Latest publication audit: [2026-09-07 synthesis-to-principle campaign](publication_audit_principle_2026_09_07.md).
+The closing snapshot verifies1,896 payloads. Changed canonical proofs/state
+are preserved directly in the publication commits; other research originals
+match saved payloads. Working originals remain in place intentionally.
+The [earlier closing report](publication_audit_2026_09_07.md) is historical.
 
 Run from the repository root with the project venv:
 

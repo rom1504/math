@@ -1,7 +1,8 @@
 # Strategic steering
 
 Evidence cutoff: closing synthesis-to-principle checkpoint,2026-09-07.
-Status: six-hour campaign ACTIVE through21:24UTC; final audits in progress.
+Status: six-hour campaign closing at21:24UTC; mathematics audited and
+final publication being completed. No background research is implied.
 Started15:24:01UTC. Original convergence/nonconvergence remains OPEN.
 
 ## User objectives and authorization
@@ -21,7 +22,7 @@ dated research archives preserve other research-bearing files. Exclude reviewed
 environments, caches, credentials and reproducible build products.
 Write access was verified immediately by the new campaign record. Ordinary
 execution and Git push are available. Three complementary researchers are
-now active: an existing construction thread was successfully reactivated
+used: an existing construction thread was successfully reactivated
 after an earlier new-thread request failed. The main agent also derives
 results and reconstructs proofs independently.
 

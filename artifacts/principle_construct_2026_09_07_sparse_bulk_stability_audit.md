@@ -49,3 +49,14 @@ Summing at most N counts and both polarities gives2^(1-m)N^(-3).
 Hence the mass-good fraction tends to zero along nearconstant local
 maximizers with r tending to zero. The threshold is asserted only when
 eta<=1; the incoming-tail condition remains essential.
+
+The final Section4c mean-weighted rescaling also passes. Write d_i=|a_i|.
+The heavy budget epsilon d_i^2 r_i m makes the aggregate mean at most
+(b/4)d_i|R|, while the minority threshold is at least2b d_i. The same
+light Lipschitz bound gives the conservative penalty
+exp[-c q d_i^2 r_i/rbar], without a lower bound on positive d_i.
+The entropy-adaptive count therefore controls the mean-weighted good
+mass with the same eta_N. Along rbar tending to zero, nearly all minority
+mass must be on nearly balanced fibres or violate this weighted heavy-tail
+budget. A balanced fibre has d_i=0 and gets no leading penalty; the exact
+physical2b/q correction has not been promoted to one.

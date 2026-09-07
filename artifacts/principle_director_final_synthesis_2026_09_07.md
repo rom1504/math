@@ -1,9 +1,9 @@
 # Synthesis-to-principle campaign: rigorous outcome and remaining gap
 
 Campaign started2026-09-07 at15:24:01UTC; authorized endpoint21:24UTC.
-This synthesis is being assembled while final proof audits continue.
-It is not evidence of an earlier stop. Canonical proofs and all exploratory
-work are preserved separately, with their own verification status.
+Final mathematical audits completed at the closing boundary; publication
+continues through the authorized endpoint. Canonical proofs and all
+exploratory work are preserved separately, with their own verification status.
 
 ## 1. Original problem: not solved
 
@@ -101,6 +101,10 @@ primary Rudelson--Vershynin deterministic sparse Rademacher lemma is used
 with independent NONIDENTICALLY distributed missing rows and exact
 aggregate isotropy. Root and both auditors reconstructed this adaptation;
 conditional child independence is neither asserted nor needed.
+For at most m^(1-eta) active fibres, bounded-density conditioning gives
+the explicit relative coefficient error
+O(m^(-eta/2)log^2m+m^(-1/4)log^(5/4)m). This power saving applies to
+that restricted phase, not to an original cross-order defect.
 These are complementary regions, not a claimed covering of all words.
 
 Proof and director reconstruction:

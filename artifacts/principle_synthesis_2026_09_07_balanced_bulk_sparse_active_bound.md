@@ -1,7 +1,8 @@
 # A uniform matching-scale bound for sparsely active balanced bulk
 
 2026-09-07. **Positive actual-construction phase bound; independent
-construction-agent reconstruction PASS.** Arbitrary bias scales and coherent spectra are permitted.
+construction-agent reconstruction PASS, including the primary-backed
+conditioned-RIP extension in Section 6.** Arbitrary bias scales and coherent spectra are permitted.
 The conclusion concerns a restricted set of physical spin words, not the
 whole parent maximum or original convergence.
 
@@ -336,3 +337,29 @@ shows its leading coefficient is sharp in this phase. The conditioned
 law retains the previously paid balanced-face and fixed-band bounds,
 but (14) does not handle macroscopically many active fibres or pay
 their mixed cross interaction. Original convergence is still open.
+
+### 6.5 Quantitative power saving (director derivation, independent audit PASS)
+
+For fixed L,k put theta_m=s log^4(m)/m and
+e_m=m^(-1/4)log^(5/4)m. The exact operator-controlled repair has
+normalized operator error O(e_m). Instead of near-one conditioning,
+condition each selector on restricted deviation at most four times the
+UNIFORM deterministic upper bound B_m=4a^2+2a sqrt(M), and on the
+column-excess event. Markov and the excess estimate give probability
+at least1/2 for all sufficiently large m. The density cost is at most
+2 per fibre, hence exp(O(m)) globally, still subleading for all previous
+fixed-accuracy leading certificates. For multiple discarded slots use
+their fixed finite union, enlarging the constant in B_m as needed.
+
+The restricted Gram error divided by m is
+O(sqrt(theta_m)+theta_m). Squaring the repaired singular-value bound
+adds O(e_m+e_m^2). Consequently, when theta_m tends to zero, uniformly
+all the same words/seeds/masks,
+
+    |H_W(x)| <= [sqrt(p)/2+O(sqrt(theta_m)+e_m)] sqrt(N)
+                                      *sum_i||P_i x_i||^2.
+
+In particular s=floor(m^(1-eta)), fixed0<eta<1, gives coefficient error
+O(m^(-eta/2)log^2(m)+m^(-1/4)log^(5/4)(m)). This is a quantitative
+RELATIVE sparse-phase theorem for a modified actual selector law.
+It is not a complete-parent defect estimate or an original M_n recurrence.

@@ -169,6 +169,16 @@ and coherent spectra at coefficient `sqrt(p)/2+o(1)<1/2`. This does not
 pay the many-active mixed phase; see
 `principle_synthesis_2026_09_07_balanced_bulk_sparse_active_bound.md`.
 
+Its independently audited Section 6 improves that active range to
+`o(m/log^4 m)` under an explicitly conditioned top-selector law.
+The deterministic Rudelson--Vershynin restricted Rademacher lemma,
+read in the original primary paper, applies to independent but
+nonidentically distributed missing rows using aggregate isotropy.
+Per-fibre conditioning has total log-density cost `o(m)` and preserves
+the paid leading certificates; operator-controlled exact balancing
+preserves the restricted upper Gram bound. This is not an assertion
+that recursive children stay independent after the conditioning.
+
 **Operational conclusion.** A new summary is useful if it closes the actual
 queries made by one constructor, or if its loss is separately paid at the
 original scale. Failure of a particular summary is not evidence that all
@@ -342,7 +352,7 @@ obstruction on infinitely many other orders.
 | Complete port pressure and ground theorem | All per-row energy-bounded profiles; independent uniform ports; seed envelope `Q=o(m^2/log m)` | Actual parent maxima; seed-dependent profile laws; unscaled growing-temperature pressure |
 | Fixed-multiplier independent frames | Every fixed bounded-cap seed, every fixed k>=2, then the explicit independent exact Walsh-category frames; typical actual cap above .50717 | Arbitrary orthogonal laws; correlated or rare selected completions; growing k; one simultaneous event for adaptive seeds |
 | Sparse balanced-bulk stability | Every conditionally fixed balanced transform array with bounded operator norm, actual independent outer signs; all local maxima of both ferromagnetic completions | Whole mixed-profile cap; arbitrary seed-conditioned signs; controlling coherent tails by balance alone |
-| Sparse-active balanced bulk | Actual stratified/repaired columns, every seed/mask simultaneously, every word on o(sqrt(m/log m)) active fibres with arbitrary bias scales | Many-active mixed phase; complete variance ratio; selected-child transfer |
+| Sparse-active balanced bulk | Explicitly conditioned stratified selectors plus exact operator-controlled repair, every seed/mask simultaneously, every word on o(m/log^4 m) active fibres with arbitrary bias scales | Many-active mixed phase; unchanged unconditioned selector law; complete variance ratio; selected-child transfer |
 
 ## Positive result and remaining obligation
 
@@ -394,7 +404,9 @@ handles the coherent packet geometry uniformly within bounded-ratio
 near-constant bands, reaching coefficient `sqrt(p)/2` in the one-hole
 case. Uniform column coherence additionally handles every bias scale
 and coherent spectrum when few fibres are nonconstant, at the same
-matching-scale relative coefficient. Neither their union nor separate endpoint bounds pay the full
+matching-scale relative coefficient. A paid primary-backed restricted-
+isometry refinement reaches `o(m/log^4 m)` active fibres under the
+conditioned top-selector law. Neither their union nor separate endpoint bounds pay the full
 mixed cross interaction. The remaining multiscale phase obligation is
 therefore explicit, not silently replaced by the original scalar
 orbital certificate that was already shown to fail near constant bias.
