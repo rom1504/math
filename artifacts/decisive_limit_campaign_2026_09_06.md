@@ -157,3 +157,14 @@ The skew-doubling experiment returned a joint absolute-response identity
 and finite falsifiers, not an asymptotic lossless transfer. See ledger 10.151.7
 and the [closing synthesis](decisive_campaign_final_synthesis_2026_09_07.md).
 Verification and preservation continue through the authorized endpoint.
+
+### Campaign completed — 2026-09-07 04:45 UTC
+
+Six hours of research and independent verification are complete. The strict
+all-order upper improved to .494515125; the lower endpoint was reconstructed
+and preserved. The last covariance audit sharpened affine-Gaussian variance
+to O(n^(5/2)), and a signed-mean robustness corollary was separately checked.
+No convergence or nonconvergence proof was found. The final synthesis states
+the exact constructive gap and recommended next direction. All substantive
+work and unfinished research were preserved and published; no access blocker
+or idle waiting ended the campaign.

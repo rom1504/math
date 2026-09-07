@@ -1,7 +1,7 @@
 # Strategic steering
 
 Evidence cutoff: closing work of the decisive-limit campaign, ledger 10.151.
-Status: **six-hour original-limit campaign active through 2026-09-07 04:45 UTC**.
+Status: **six-hour original-limit campaign completed, 2026-09-07 04:45 UTC**.
 Started 2026-09-06 22:44:53 UTC. Convergence and nonconvergence remain OPEN.
 
 ## User objectives and authorization

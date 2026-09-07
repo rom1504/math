@@ -46487,3 +46487,12 @@ liminf-to-all-order comparison. The closing synthesis separates every
 conditional hypothesis and certificate floor from an actual signing theorem.
 Preserve and publish the closing work; continue verification to the authorized
 04:45 UTC endpoint. No external execution blocker occurred.
+
+Closing status, 2026-09-07 04:45 UTC: campaign completed after the full six
+hours. The final independent covariance reconstruction sharpened variance
+to O(n^(5/2)); Frobenius-small covariance changes cannot remove the SIGNED
+mean gap, without an analogous general absolute-energy claim. The final
+two-child example and balanced-tree implication were checked again, including
+the no-cancellation scope. Original convergence remains OPEN. See the
+[final synthesis](artifacts/decisive_campaign_final_synthesis_2026_09_07.md)
+and research_archive/publication_audit_2026_09_07.md for preservation.

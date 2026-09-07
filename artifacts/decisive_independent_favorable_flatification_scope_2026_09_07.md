@@ -29,7 +29,13 @@ integer, so M_4>=4. A signing of K_4 with exactly one negative edge attains 4.
 Thus an exact finite statement M_n<=Q(B) is false even at bounded amplitude
 and exact row regularity. This does not refute an o(n^{3/2}) error theorem.
 
-There is also a finite example built from two actual optimal children.
+There is also a fully self-contained two-optimal-child example at order
+four: A_2=[[0,1],[1,0]] has M_2=1, and sqrt(3) diag(A_2,A_2) has row
+variance 3 and cap 2sqrt(3)<4=M_4. Thus the exact zero-error two-child
+statement already fails without invoking any higher-order solver result.
+
+A larger finite example built from two actual optimal children is retained
+as additional historical evidence, not as a necessary proof dependency.
 The order-five pentagon Seidel signing has cap M_5=4. Consequently
 B_10=(3/2)diag(A_5,A_5) has exact row variance 9 and Q(B_10)=12, whereas the
 independently stored exact value is M_10=13. This second example uses the

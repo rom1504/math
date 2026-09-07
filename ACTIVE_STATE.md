@@ -1,7 +1,7 @@
 # Active research state
 
 Evidence cutoff: closing work of the six-hour decisive-limit campaign,
-2026-09-06 22:44:53 through 2026-09-07 04:45 UTC (still active).
+2026-09-06 22:44:53 through 2026-09-07 04:45 UTC (completed).
 Read the [closing synthesis](artifacts/decisive_campaign_final_synthesis_2026_09_07.md)
 and STEERING; use ledger 10.151 and proof dependencies as needed.
 

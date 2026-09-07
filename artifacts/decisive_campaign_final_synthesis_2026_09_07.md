@@ -1,7 +1,7 @@
 # Six-hour original-limit campaign: closing synthesis
 
-Campaign started 2026-09-06 22:44:53 UTC. Closing verification is in progress;
-the authorized endpoint is 2026-09-07 04:45 UTC. This document records results,
+Campaign ran from 2026-09-06 22:44:53 UTC through 2026-09-07 04:45 UTC.
+Closing verification and research preservation are complete. This document records results,
 not a proof of convergence. The chronological checkpoints are in
 [the campaign index](decisive_limit_campaign_2026_09_06.md) and ledger 10.151.
 
@@ -192,4 +192,7 @@ derivations, finite failures, parameters, informative outputs, and subagent
 research are retained in dated `research_archive/` snapshots with hashes.
 Reproducible build products, environments, caches and pinned external
 dependencies are excluded under the reviewed manifests, not deleted.
-The final publication audit records the exact snapshot and remaining files.
+The [final publication audit](../research_archive/publication_audit_2026_09_07.md)
+records the exact snapshot and remaining files. The post-publication audit
+matched all 1,824 remaining research originals to saved hashes. The ordinary
+untracked scan executable is a reviewed rebuild product, not lost research.

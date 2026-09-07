@@ -1,7 +1,7 @@
 # Closing publication audit — decisive-limit campaign
 
 The six-hour campaign began 2026-09-06 22:44:53 UTC. Its mathematical
-checkpoint commits through be0d1fe have been pushed normally. The closing
+checkpoint commits through 332d610 have been pushed normally. The closing
 synthesis and compact active/steering state distinguish proved results,
 conditional constructions, finite certificates and unresolved obligations.
 
@@ -12,6 +12,9 @@ research files, totaling 153,117,802 bytes. SHA-256 payload verification
 passed. The post-save current-work audit found no missing or changed research
 file, and no credential candidate needing review. No oversized research
 output needed external storage. Working originals were retained, not deleted.
+After publication of canonical research, 1,824 ignored/untracked research
+originals remained; a second current-work audit matched every one to the
+snapshot. The other saved files are now canonical committed material.
 Missing per-snapshot index pages from four earlier checkpoints were added;
 their manifests and payloads were already committed and were not rewritten.
 
