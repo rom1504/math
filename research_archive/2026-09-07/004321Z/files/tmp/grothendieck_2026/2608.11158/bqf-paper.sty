@@ -1,0 +1,644 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bqf-paper}[2026/05/25 Standardized paper preamble]
+
+% ============================================================
+% Standardized paper style
+% - This is a package, not a document class.
+% - It keeps the old macros intact, but removes the nonstandard
+%   layout/proof/section overrides that were making the paper
+%   look unusual.
+% - Uses a standard Times-like text/math setup with real small caps.
+% ============================================================
+
+% ---------- Fonts and core math ----------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+
+% Load AMS first; newtxmath is happier this way and avoids \Bbbk/openbox clashes.
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{mathdots}
+\RequirePackage{nicefrac}
+\RequirePackage{upgreek}
+\RequirePackage{longtable}
+
+
+% More journal-standard than lmodern, and small caps are more reliable,
+% especially in titles. If your TeX installation lacks newtx, replace
+% these two lines by:
+%   \RequirePackage{lmodern}
+\RequirePackage{lmodern}
+
+% ---------- Language and layout ----------
+\RequirePackage[english]{babel}
+\RequirePackage[top=1in, bottom=1in, left=0.7in, right=0.7in]{geometry}
+
+\RequirePackage{microtype}
+
+% Standard paragraph behavior.
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{10pt}
+
+% ---------- Symbols / blackboard one ----------
+\RequirePackage{bbm}
+\RequirePackage{dsfont}
+\RequirePackage{wasysym}
+
+% ---------- Figures, tables, diagrams ----------
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{adjustbox}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tikz}
+\RequirePackage{tikz-cd}
+\RequirePackage{pgf}
+
+% ---------- Lists and code ----------
+\RequirePackage{enumitem}
+\RequirePackage{listings}
+
+% ---------- Boxes, kept for compatibility ----------
+\RequirePackage{mdframed}
+\RequirePackage[skins]{tcolorbox}
+\RequirePackage{framed}
+
+% ---------- Color, links, references ----------
+\RequirePackage{xcolor}
+
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+\RequirePackage[
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=blue!50!black,
+    urlcolor=blue!50!black,
+    filecolor=webbrown
+]{hyperref}
+\RequirePackage[nameinlink,capitalize,noabbrev]{cleveref}
+
+% ---------- Optional title helper ----------
+% Usage:
+%   \title{\paperTitleSmallCaps{The Grothendieck Constant Is Less Than ...}}
+% This avoids asking LaTeX for a nonexistent bold-small-caps shape.
+\newcommand{\paperTitleSmallCaps}[1]{%
+  {\Large\normalfont\scshape #1}%
+}
+
+% ============================================================
+% Math-operator redeclaration helper
+% Kept from the old style file.
+% ============================================================
+
+\makeatletter
+\newcommand\RedeclareMathOperator{%
+  \@ifstar{\def\rmo@s{m}\rmo@redeclare}{\def\rmo@s{o}\rmo@redeclare}%
+}
+% this is taken from \renew@command
+\newcommand\rmo@redeclare[2]{%
+  \begingroup \escapechar\m@ne\xdef\@gtempa{{\string#1}}\endgroup
+  \expandafter\@ifundefined\@gtempa
+     {\@latex@error{\noexpand#1undefined}\@ehc}%
+     \relax
+  \expandafter\rmo@declmathop\rmo@s{#1}{#2}}
+% This is just \@declmathop without \@ifdefinable
+\newcommand\rmo@declmathop[3]{%
+  \DeclareRobustCommand{#2}{\qopname\newmcodes@#1{#3}}%
+}
+\@onlypreamble\RedeclareMathOperator
+\makeatother
+
+% ============================================================
+% Theorem environments
+% Standard amsthm styling.
+% ============================================================
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{fact}{Fact}
+
+\newcounter{mycounter}
+\renewcommand{\themycounter}{\thesection.\arabic{theorem}}
+
+
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+\newtheorem*{hint}{Hint}
+\newtheorem*{claim}{Claim}
+
+\newenvironment{claimproof}
+  {\par\noindent\emph{Proof of the claim.}\ }
+  {\hfill\(\square\)\par}
+
+% ============================================================
+% Macros
+% These are intentionally kept from the old style file.
+% ============================================================
+
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vs}{\vec{s}}
+
+%undefined macros defined
+%\newcommand{\g}{\gamma}
+\newcommand{\e}{\epsilon}
+\newcommand{\p}{\phi}
+\newcommand{\s}{\sigma}
+\newcommand{\z}{\zeta}
+\newcommand{\w}{\omega}
+% specific to this project
+% \renewcommand{\min}{\text{MIN}}
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\DeclareMathOperator{\minimum}{MIN}
+\DeclareMathOperator{\sign}{sign}
+
+%override already defined macros
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+% \renewcommand{\c}{\chi}
+\renewcommand{\d}{\delta}
+\renewcommand{\t}{\theta}
+\renewcommand{\i}{\infty}
+\renewcommand{\k}{\kappa}
+
+\let\polishl\l
+\renewcommand{\l}{\lambda}
+\DeclareUnicodeCharacter{0142}{\polishl}
+
+\renewcommand{\o}{\omega}
+\renewcommand{\r}{\rho}
+\renewcommand{\t}{\varphi}
+\renewcommand{\u}{\upsilon}
+
+
+% operators 
+\newcommand{\E}{\mathop{\mathbb{E}}}
+
+
+% junior paper specific 
+\newcommand{\mv}{\mathbf{MV}}
+\newcommand{\pg}{\mathbf{PG}}
+
+%define var commands
+\newcommand{\vp}{\varphi}
+
+%define mathbb commands 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\1}{\mathds{1}}
+
+
+% Fonts in math mode
+\newcommand\mbb[1]{\mathbb{#1}}
+\newcommand\mbf[1]{\mathbf{#1}}
+\newcommand\mcal[1]{\mathcal{#1}}
+\newcommand\mrm[1]{\mathrm{#1}}
+\newcommand\msf[1]{\mathsf{#1}}
+
+% Groupings
+\DeclarePairedDelimiter\parens{(}{)}
+\DeclarePairedDelimiter\bracks{[}{]}
+\DeclarePairedDelimiter\braces{\{}{\}}
+\DeclarePairedDelimiter\angles{\langle}{\rangle}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% nice g 
+\newcommand*{\g}{\text{\fontfamily{cmr}\slshape g}}
+
+
+% deine mathbf commands 
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+
+
+
+
+%define mathfrak commands 
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\fD}{\mathfrak{D}}
+
+%define mathcal commands 
+\newcommand{\co}{\mathcal{O}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cQ}{\mathcal{Q}}
+
+
+%define custom commands
+\newcommand{\lcm}{\mbox{lcm}}
+\newcommand{\ord}{\mbox{ord}}
+\newcommand{\sym}{\text{Sym}}
+\newcommand{\tr}{\text{Tr}}
+\newcommand{\diag}{\text{diag}}
+\newcommand{\Emb}{\text{Emb}}
+\newcommand{\limrefine}{\mathrm{\mathbf{lim}_{\mathbf{\mathcal{V} \times \mathcal{V} \times \mathcal{V}}}}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Rad}{\textbf{Rad}}
+\newcommand{\normal}{\unlhd}
+\newcommand{\im}{\text{im }} 
+\newcommand{\x}{\times}
+\newcommand{\union}{\cup}
+\newcommand{\intersect}{\cap}
+\newcommand{\tensor}{\otimes}
+\newcommand{\rep}{\mathcal{R}}
+
+% Here h_n denotes the physicist's Hermite polynomial already used elsewhere.
+\newcommand{\Hermite}{\mathrm{He}_3}
+\newcommand{\Hshort}{H}
+\newcommand{\Mshort}{M}
+\newcommand{\gzero}{\gamma_0}
+\newcommand{\rhostarval}{\rho_*}
+\newcommand{\HermBasis}{\mathrm{He}}
+\newcommand{\HermCoeff}{\mathcal A}
+\newcommand{\ThresholdCoeff}{\mathcal T}
+\newcommand{\OddFactor}{\Phi}
+
+% define custom jp commands 
+\renewcommand{\sp}{\mathbf{span}}
+\DeclareMathOperator{\rank}{\mathbf{rank}}
+\DeclareMathOperator{\colspan}{\mathbf{colspan}}
+\DeclareMathOperator{\colrank}{\mathbf{colrank}}
+
+% legendre symbol 
+\newcommand{\dlegendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+
+
+
+
+% \NeedsTeXFormat{LaTeX2e}
+% \ProvidesClass{bqf-paper}
+
+% \RequirePackage{amsthm, thmtools, amsfonts, amssymb, amsmath, adjustbox,  titlesec, color, graphicx, fullpage, float, wasysym, titling, enumerate, bbm, dsfont, listings, xcolor, mathtools, nicefrac, multirow, lipsum, mathdots, enumitem}
+
+% % \RequirePackage[ruled,vlined]{algorithm2e}
+
+
+% \RequirePackage{upgreek}
+
+% \RequirePackage[T1]{fontenc}
+% \RequirePackage{lmodern}
+% % \RequirePackage[utf8]{inputenc}
+% % \RequirePackage{charter}
+% % \RequirePackage{tgtermes}
+% \RequirePackage[english]{babel}
+
+% \RequirePackage{mdframed}
+% \RequirePackage{lipsum, adjustbox, tikz-cd, tikz, pgf, microtype} 
+% \RequirePackage[skins]{tcolorbox}
+% \RequirePackage[colorlinks=true,
+% linkcolor=webgreen,
+% filecolor=webbrown,
+% citecolor=webgreen]{hyperref}
+% \RequirePackage{cleveref}
+
+
+% \RequirePackage{fullpage}
+% \RequirePackage{float, framed}
+
+% % \setlength{\parindent}{0pt}
+% \setlength{\parskip}{0.3em}
+% % \setlength{\parskip}{0.3em}
+% \setlength{\headheight}{15pt}
+% \setlength{\headsep}{10pt}
+
+% \definecolor{webgreen}{rgb}{0,.5,0}
+% \definecolor{webbrown}{rgb}{.6,0,0}
+
+% \RequirePackage[margin=1in]{geometry}
+
+% % \RequirePackage[left=1 in, right = 1 in]{geometry}
+
+% \titleformat{\section}{\vspace{.1 in}\Large\bf}{\thesection.}{0.5em}{}
+% % \titleformat{\section}	{\vspace{.3 in}\centering\Large\bf}{\thesection.}{1.5em}{}
+
+% % \titleformat{\rsection}{\centering\Large\bf}{\thesection.}{1.5em}{}
+
+
+% \makeatletter
+% \newcommand\RedeclareMathOperator{%
+%   \@ifstar{\def\rmo@s{m}\rmo@redeclare}{\def\rmo@s{o}\rmo@redeclare}%
+% }
+% % this is taken from \renew@command
+% \newcommand\rmo@redeclare[2]{%
+%   \begingroup \escapechar\m@ne\xdef\@gtempa{{\string#1}}\endgroup
+%   \expandafter\@ifundefined\@gtempa
+%      {\@latex@error{\noexpand#1undefined}\@ehc}%
+%      \relax
+%   \expandafter\rmo@declmathop\rmo@s{#1}{#2}}
+% % This is just \@declmathop without \@ifdefinable
+% \newcommand\rmo@declmathop[3]{%
+%   \DeclareRobustCommand{#2}{\qopname\newmcodes@#1{#3}}%
+% }
+% \@onlypreamble\RedeclareMathOperator
+% \makeatother
+
+
+% \renewenvironment{proof}{{\noindent\bfseries Proof.}}{%
+%   \qed\endtrivlist\par
+% }
+
+% % set main font 
+% % \setmainfont{Times}
+% \newtheorem{theorem}{Theorem}[section]
+% % \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{conjecture}[theorem]{Conjecture}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newcounter{mycounter}
+% \renewcommand{\themycounter}{\thesection.\arabic{theorem}}
+
+% %define theorems definitions and remarks
+% % \newtheorem{lemma}{Lemma}
+% % \tcbuselibrary{theorems}
+
+% % \newtheoremstyle{note}{15pt}{15pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+
+% \theoremstyle{plain}
+% % \theoremstyle{note}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem*{remark}{Remark}
+% \newtheorem*{example}{Example}
+
+
+% \theoremstyle{remark}
+% \newtheorem*{hint}{Hint}
+% % \newtheorem*{example}{Example}
+
+% % autoref environment name
+% % \newcommand{\lemmaautorefname}{Lemma}
+
+% \newcommand{\vx}{\vec{x}}
+% \newcommand{\vy}{\vec{y}}
+% \newcommand{\vs}{\vec{s}}
+
+% %undefined macros defined
+% %\newcommand{\g}{\gamma}
+% \newcommand{\e}{\epsilon}
+% \newcommand{\p}{\phi}
+% \newcommand{\s}{\sigma}
+% \newcommand{\z}{\zeta}
+% \newcommand{\w}{\omega}
+% % specific to this project
+% % \renewcommand{\min}{\text{MIN}}
+
+% \newcommand{\defeq}{\vcentcolon=}
+
+% \DeclareMathOperator{\minimum}{MIN}
+% \DeclareMathOperator{\sign}{sign}
+
+% %override already defined macros
+% \renewcommand{\a}{\alpha}
+% \renewcommand{\b}{\beta}
+% \renewcommand{\c}{\chi}
+% \renewcommand{\d}{\delta}
+% \renewcommand{\t}{\theta}
+% \renewcommand{\i}{\infty}
+% \renewcommand{\k}{\kappa}
+% \renewcommand{\l}{\lambda}
+% \renewcommand{\o}{\omega}
+% \renewcommand{\r}{\rho}
+% \renewcommand{\t}{\varphi}
+% \renewcommand{\u}{\upsilon}
+
+
+% % operators 
+% \newcommand{\E}{\mathop{\mathbb{E}}}
+
+
+% % junior paper specific 
+% \newcommand{\mv}{\mathbf{MV}}
+% \newcommand{\pg}{\mathbf{PG}}
+
+% %define var commands
+% \newcommand{\vp}{\varphi}
+
+% %define mathbb commands 
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\C}{\mathbb{C}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\Q}{\mathbb{Q}}
+% \newcommand{\F}{\mathbb{F}}
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\1}{\mathds{1}}
+
+
+% % Fonts in math mode
+% \newcommand\mbb[1]{\mathbb{#1}}
+% \newcommand\mbf[1]{\mathbf{#1}}
+% \newcommand\mcal[1]{\mathcal{#1}}
+% \newcommand\mrm[1]{\mathrm{#1}}
+% \newcommand\msf[1]{\mathsf{#1}}
+
+% % Groupings
+% \RequirePackage{mathtools}
+% \DeclarePairedDelimiter\parens{(}{)}
+% \DeclarePairedDelimiter\bracks{[}{]}
+% \DeclarePairedDelimiter\braces{\{}{\}}
+% \DeclarePairedDelimiter\angles{\langle}{\rangle}
+% \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+% \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+% \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+% \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% % nice g 
+% \newcommand*{\g}{\text{\fontfamily{cmr}\slshape g}}
+
+
+% % deine mathbf commands 
+% \newcommand{\bx}{\mathbf{x}}
+% \newcommand{\by}{\mathbf{y}}
+% \newcommand{\bu}{\mathbf{u}}
+% \newcommand{\bv}{\mathbf{v}}
+% \newcommand{\ba}{\mathbf{a}}
+% \newcommand{\bb}{\mathbf{b}}
+
+
+
+
+% %define mathfrak commands 
+% \newcommand{\fp}{\mathfrak{p}}
+% \newcommand{\fP}{\mathfrak{P}}
+% \newcommand{\fq}{\mathfrak{q}}
+% \newcommand{\fa}{\mathfrak{a}}
+% \newcommand{\fb}{\mathfrak{b}}
+% \newcommand{\fg}{\mathfrak{g}}
+% \newcommand{\fh}{\mathfrak{h}}
+% \newcommand{\fn}{\mathfrak{n}}
+% \newcommand{\fm}{\mathfrak{m}}
+% \newcommand{\fo}{\mathfrak{o}}
+% \newcommand{\fs}{\mathfrak{s}}
+% \newcommand{\fl}{\mathfrak{l}}
+% \newcommand{\fD}{\mathfrak{D}}
+
+% %define mathcal commands 
+% \newcommand{\co}{\mathcal{O}}
+% \newcommand{\cN}{\mathcal{N}}
+% \newcommand{\cA}{\mathcal{A}}
+% \newcommand{\cB}{\mathcal{B}}
+% \newcommand{\cT}{\mathcal{T}}
+% \newcommand{\cX}{\mathcal{X}}
+% \newcommand{\cY}{\mathcal{Y}}
+% \newcommand{\cZ}{\mathcal{Z}}
+% \newcommand{\cP}{\mathcal{P}}
+% \newcommand{\cD}{\mathcal{D}}
+% \newcommand{\cL}{\mathcal{L}}
+% \newcommand{\cK}{\mathcal{K}}
+% \newcommand{\cQ}{\mathcal{Q}}
+
+
+% %define custom commands
+% \newcommand{\lcm}{\mbox{lcm}}
+% \newcommand{\ord}{\mbox{ord}}
+% \newcommand{\sym}{\text{Sym}}
+% \newcommand{\tr}{\text{Tr}}
+% \newcommand{\diag}{\text{diag}}
+% \newcommand{\Emb}{\text{Emb}}
+% \newcommand{\limrefine}{\mathrm{\mathbf{lim}_{\mathbf{\mathcal{V} \times \mathcal{V} \times \mathcal{V}}}}}
+% \newcommand{\Hom}{\text{Hom}}
+% \newcommand{\Rad}{\textbf{Rad}}
+% \newcommand{\normal}{\unlhd}
+% \newcommand{\im}{\text{im }} 
+% \newcommand{\x}{\times}
+% \newcommand{\union}{\cup}
+% \newcommand{\intersect}{\cap}
+% \newcommand{\tensor}{\otimes}
+% \newcommand{\rep}{\mathcal{R}}
+
+% % define custom jp commands 
+% \renewcommand{\sp}{\mathbf{span}}
+% \DeclareMathOperator{\rank}{\mathbf{rank}}
+% \DeclareMathOperator{\colspan}{\mathbf{colspan}}
+% \DeclareMathOperator{\colrank}{\mathbf{colrank}}
+
+% % legendre symbol 
+% \newcommand{\dlegendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+% \endinput
+
+
+\crefname{definition}{Definition}{Definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{theorem}{Theorem}{Theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+% Custom text highlighting
+\let\red\undefined
+\newcommand{\red}[1]{\textbf{\color{red}#1}}
+
+% ==========================================
+% Hide proofs switch
+% ==========================================
+\newif\ifhideproofs
+% \hideproofstrue      % hide proofs
+\hideproofsfalse   % show proofs
+
+\ifhideproofs
+  \usepackage{comment}
+  \excludecomment{proof}
+\fi
+
+
+% commands from GPT for the grothendieck-asymptotics paper
+
+\newcommand{\Nzero}{\mathbb N_0}
+\newcommand{\D}{\mathbb D}
+
+\newcommand{\FrakH}{\mathfrak H}
+\newcommand{\Kr}{K}
+\newcommand{\Dop}{\mathrm D}
+\newcommand{\varphiG}{\varphi}
+
+\newcommand{\Prob}{\mathbb P}
+
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\He}{\operatorname{He}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ol}{\overline}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\KG}{K_G}
+\newcommand{\SDP}{\operatorname{SDP}}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\Khyp}{K_{\mathrm{hyp}}}
+\newcommand{\rhohyp}{\rho_{\mathrm{hyp}}}
+\newcommand{\gammazero}{\gamma_0}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\calA}{\mathcal A}
+\newcommand{\calB}{\mathcal B}
+\newcommand{\calH}{\mathcal H}
+\newcommand{\calK}{\mathcal K}
+\newcommand{\calX}{\mathcal X}
+\newcommand{\calY}{\mathcal Y}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\erf}{erf}
+
+
+% \newcommand{\R}{\mathbb R}
+% \newcommand{\E}{\mathbb E}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cH}{\mathcal H}
+% \newcommand{\He}{\operatorname{He}}
+% \newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\PhiG}{\Phi}
+\newcommand{\Sphere}{\mathbb S}
+
+\endinput

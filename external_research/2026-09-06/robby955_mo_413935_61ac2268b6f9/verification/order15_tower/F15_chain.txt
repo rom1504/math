@@ -1,0 +1,88 @@
+F(15): what has been computed, 2026-08-06
+==========================================
+
+Notation.  T_n(t) = the set of order-n sign matrices with M <= t, one
+representative per switching-and-permutation class, stored as a graph on n-1
+vertices in graph6 (last row of the matrix switched to all +1).
+
+Parity.  M = C(n,2) mod 2, so for a target of 21 the effective per-level
+thresholds are 20 at orders 12 and 13 and 21 at order 14; for a target of 23
+they are 22, 22, 23; for a target of 25 they are 24, 24, 25.
+
+Method.  T_{n+1}(t) is exactly the set of one-vertex extensions of T_n(t): fix
+x_{n+1} = +1, then E(x) = E_B(x) + <v,x> for the new sign row v, so one
+(2^n x 2^n) block gives M for all 2^n rows at once.  v and -v give the same
+class, so only half the rows are enumerated.  Extensions are canonically
+labelled with nauty labelg and deduplicated.
+
+Validation of the expansion step, against complete geng enumerations:
+  expand(T_10(17)) deduped = T_11(17)   both 20 graphs
+  expand(T_11(20)) deduped = T_12(20)   both 2220 graphs
+
+Chain for the bound F(15) >= 23
+-------------------------------
+  |T_12(20)| = 2220        complete geng pass, 1018997864 graphs on 11 vertices
+  |T_13(20)| = 1           the order-14 Paley conference matrix minus a vertex
+  |T_14(21)| = 1           the order-14 Paley conference matrix
+  |T_15(21)| = 0           no order-15 matrix has M <= 21
+Parity at order 15 (C(15,2) = 105 odd) then gives F(15) >= 23.
+
+Chain for the bound F(15) >= 25
+-------------------------------
+  |T_12(22)| = 3396332     complete geng pass, 1018997864 graphs on 11 vertices
+  |T_13(22)| = 338737      from 4081150 raw extensions
+  |T_14(23)| = 4           one with M = 21, three with M = 23
+  |T_15(23)| = 0           no order-15 matrix has M <= 23
+Parity then gives F(15) >= 25.
+
+  T_14(23) members (graph6 on 13 vertices):
+    L}akqXXWomdULJ   M = 21   Paley conference matrix of order 14
+    L?MRL\]lBczHyK   M = 23
+    LoSoCurpp]iuYj   M = 23
+    LrluUGNgQcbNHn   M = 23
+
+Upper bound
+-----------
+  F(15) <= 27.  Extend the order-14 Paley conference matrix by the best of its
+  2^14 sign rows; M = 27, recomputed from scratch.  Stored in seed15.npy.
+  Weaker candidates checked: order-18 Paley minus three vertices gives 29;
+  the Seidel matrices of T(6), GQ(2,2) and the Clebsch two-graph give 35.
+  Simulated annealing at order 15 does not get below 29, and the same annealer
+  only reaches 25 at order 14 where the true value is 21, so local search is
+  not a usable source of upper bounds at this size.
+
+Conclusion so far:  F(15) is 25 or 27.
+
+Sizing of the threshold-25 tower, which decides between them
+------------------------------------------------------------
+  |T_12(24)| = 82502142    complete geng pass, exact
+  raw extensions per order-12 source at threshold 25 = 41.5
+      (20000 uniform random sources out of the 82502142)
+  so raw level 13 = 3.4e9 records, |T_13(24)| about 2.9e8
+  raw extensions per order-13 source at threshold 25 = 0.064
+      (29980 sources)
+  so raw level 14 = 1.8e7 records, |T_14(25)| about 1.4e6
+  level 15 is then 1.4e6 expansions, minutes
+
+  Per-source cost of expand_prune under 16-way contention:
+      order 12 source 0.86 ms, order 13 source 2.57 ms, order 14 source ~4 ms
+  labelg canonical labelling of 12-vertex graphs: 1.3e6 per second per core
+
+  Wall clock on 16 cores:
+      level 12->13   1.2 h per pass, 8 passes to keep the sort inside the free
+                     disk, so about 10 h
+      level 13->14   about 13 h
+      level 14->15   about 6 min
+      total about 24 h, peak disk about 15 GB, final level-13 file 3.8 GB
+
+Files
+-----
+  sample_T.py       geng scan with res/mod splitting, counts and keeps M <= t
+  expand.py         one level of the tower, dense (2^n x 2^n)
+  expand_big.py     same, blocked over v
+  expand_prune.py   same, two-stage: reject v against the K most extreme
+                    energies first.  36x faster, output bit-identical
+  mval.py           M of a graph6 record, graph6 normal form of a matrix
+  tower23.sh        the threshold-23 tower
+  tower25.sh        the threshold-25 tower
+  F15_chain.txt     this file

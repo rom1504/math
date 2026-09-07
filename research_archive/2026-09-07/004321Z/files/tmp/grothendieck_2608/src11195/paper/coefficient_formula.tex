@@ -1,0 +1,137 @@
+% Section 6: insert after the construction of the two-dimensional limiting scheme.
+% This file assumes the paper's existing macros \E, \He, \sgn, \varphi, and \erf.
+
+\section{The Correlation Coefficients}
+\label{sec:coefficients}
+
+The previous section defined our two-dimensional limiting scheme, whose two
+correlation maps are \(\rho(t)\) and \(t\). We now compute its correlation
+function
+\[
+  H(t)=\sum_{m\geq 1} b_m t^m.
+\]
+The key observation is that \(g(w,x)=f(w,-x)\). Thus, the Hermite
+coefficients of \(f\) determine the entire series \(H\).
+
+We use standard facts about Hermite polynomials. See  \cite{Andrews_Askey_Roy_1999} for a reference.  
+
+Let $\mu$ be the standard Gaussian measure on $\R$, so that
+\[
+    d\mu(x):=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\,dx.
+\]
+Let \(\HermBasis_n\) denote the \(n\)-th orthonormal probabilist's Hermite polynomial. Then \(\{\HermBasis_n\}_{n\ge0}\) is an orthonormal basis for \(L^2(\mu)\).
+
+Let \(W,X\) be independent standard Gaussians. For \(a,b\geq 0\), write
+\begin{equation}
+  \mathsf A_{a,b}
+  =
+  \E\!\left[
+    f(W,X)\He_a(W)\He_b(X)
+  \right].
+  \label{eq:mathsfAab}
+\end{equation}
+Then, in \(L_2\) of the standard Gaussian measure on \(\mathbb{R}^2\),
+\[
+  f(w,x)
+  =
+  \sum_{a,b\geq 0}
+  \mathsf A_{a,b}\He_a(w)\He_b(x).
+\]
+Since \(f(-w,-x)=-f(w,x)\), we have \(\mathsf A_{a,b}=0\) whenever
+\(a+b\) is even. For a power series \(P\), we write \([t^m]P(t)\) for the
+coefficient of \(t^m\).
+
+\begin{theorem}[Coefficient formula]
+\label{thm:coefficient-formula}
+For every \(t\in(-1,1)\),
+\begin{equation}
+  H(t)
+  =
+  \frac{\pi}{2}
+  \sum_{a,b\geq 0}
+  \mathsf A_{a,b}^2\rho(t)^a(-t)^b.
+  \label{eq:H-coefficient-formula}
+\end{equation}
+Consequently, for every \(m\geq 1\),
+\begin{equation}
+  b_m
+  =
+  \frac{\pi}{2}
+  \sum_{\substack{a,b\geq 0\\a+b\leq m}}
+  (-1)^b\mathsf A_{a,b}^2
+  [t^{m-b}]\rho(t)^a.
+  \label{eq:bm-coefficient-formula}
+\end{equation}
+In particular, \(b_m=0\) whenever \(m\) is even.
+\end{theorem}
+
+\begin{proof}
+Let \((W,X)\) and \((W',X')\) be the Gaussian inputs used to define the
+correlation function of the scheme. Thus, \(W\) and \(W'\) have correlation
+\(\rho(t)\), while \(X\) and \(X'\) have correlation \(t\); the two
+coordinate pairs are independent.
+
+Since \(g(w,x)=f(w,-x)\), the Hermite expansion of \(g\) is
+\[
+  g(w,x)
+  =
+  \sum_{a,b\geq 0}
+  (-1)^b\mathsf A_{a,b}\He_a(w)\He_b(x).
+\]
+When the two expansions are substituted into the definition of \(H\),
+orthogonality leaves only matching Hermite degrees. The Hermite covariance
+identity then contributes \(\rho(t)^a\) in the first coordinate and \(t^b\)
+in the second. This gives \eqref{eq:H-coefficient-formula}. The series is
+absolutely convergent for \(t\in(-1,1)\), since \(f\in L_2\) and
+\(|\rho(t)|\leq |t|<1\).
+
+Extracting the coefficient of \(t^m\) gives
+\eqref{eq:bm-coefficient-formula}. Finally, \(\rho\) is odd and
+\(\mathsf A_{a,b}\) vanishes unless \(a+b\) is odd. Hence every nonzero
+summand in \eqref{eq:H-coefficient-formula} is odd in \(t\), so only odd
+coefficients occur.
+\end{proof}
+
+\paragraph{Computing the Hermite coefficients.}
+The coefficients in \eqref{eq:mathsfAab} reduce to
+one-dimensional Gaussian integrals. Let \(Z\) be a standard Gaussian and,
+for \(a\geq 0\), set
+\begin{equation}
+  q_a(u)
+  =
+  \E\!\left[\sgn(Z+u)\He_a(Z)\right].
+  \label{eq:threshold-hermite-coefficients}
+\end{equation}
+Conditioning on \(X\) gives
+\begin{equation}
+  \mathsf A_{a,b}
+  =
+  \E\!\left[
+    \He_b(X)q_a\!\left(\vartheta\He_3(X)\right)
+  \right].
+  \label{eq:f-coefficients-one-dimensional}
+\end{equation}
+The threshold coefficients have the closed form
+\begin{equation}
+  q_0(u)
+  =
+  \erf\!\left(\frac{u}{\sqrt{2}}\right),
+  \qquad
+  q_a(u)
+  =
+  \frac{2\varphi(u)}{\sqrt{a}}\He_{a-1}(-u)
+  \quad (a\geq 1),
+  \label{eq:threshold-hermite-closed-form}
+\end{equation}
+where \(\varphi(u)=(2\pi)^{-1/2}e^{-u^2/2}\). This standard identity follows
+by one integration by parts; we include the proof in
+Appendix~\ref{app:coefficient-formulas}.
+
+Theorem~\ref{thm:coefficient-formula} therefore reduces each \(b_m\) to
+finite coefficient extraction from powers of \(\rho\) and one-dimensional
+Gaussian integrals. This is the formula used to compute the coefficient head
+in the next section. A more general formula for schemes built from an
+arbitrary finite set of Hermite degrees is recorded in
+Appendix~\ref{app:coefficient-formulas}; it is not needed for the main
+argument.
+
