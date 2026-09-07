@@ -1,0 +1,91 @@
+{
+  "classification": "exhaustive thermal-child selection and exact finite Gibbs sums on reproducibly sampled fair bridges; numerical evidence only",
+  "exclusions": [
+    "no conference or Paley surrogate",
+    "no ground-state child surrogate",
+    "no asymptotic conclusion from Monte Carlo values"
+  ],
+  "records": [
+    {
+      "N": 8,
+      "beta": 1.0,
+      "child_minimizer_certificate": {
+        "beta": 1.0,
+        "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+        "distinct_absolute_energy_histogram_count": 2,
+        "double_nearest_sorted_histogram_gap": 0.052469120187727813,
+        "minimizing_histogram_count": 1,
+        "minimizing_root_gauged_signing_count": 6,
+        "mp_dps": 80,
+        "mp_gap_to_next_histogram": "0.052469120187727712595586024303875445226318274707022949367144061630181920888748687",
+        "mp_optimum": "0.35406079521640759926174932358611607941981056348392416134438937940986329259217949",
+        "order": 4,
+        "raw_t": 0.35355339059327373,
+        "root_gauged_signing_count": 8,
+        "signed_permutation_global_sign_class_count": 1,
+        "total_parent_order": 8
+      },
+      "left_child_class": 0,
+      "left_child_representative_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "orientation": -1,
+      "paths": [
+        {
+          "complete_cube_reference": {
+            "endpoint_overlap_at_minus_lambda": 0.025570197215997337,
+            "rhohat_path_average": 0.027121342561052513,
+            "uniform_overlap": 0.028863996430684546
+          },
+          "endpoint_importance_effective_fraction": 0.9842871703473124,
+          "endpoint_overlap_at_minus_lambda": 0.025518883892283784,
+          "endpoint_overlap_standard_error": 0.002329614123188861,
+          "lambda": 1.0,
+          "minimum_quadrature_importance_effective_fraction": 0.9843265665314818,
+          "rhohat_path_average": 0.0271144171057687,
+          "rhohat_path_standard_error": 0.0027463735849430205,
+          "sample_minus_reference": {
+            "endpoint_overlap_at_minus_lambda": -5.131332371355324e-05,
+            "rhohat_path_average": -6.9254552838120265e-06,
+            "uniform_overlap": 8.07020943521461e-06
+          },
+          "uniform_overlap": 0.02887206664011976,
+          "uniform_overlap_standard_error": 0.003250113499272702
+        }
+      ],
+      "raw_t": 0.35355339059327373,
+      "right_child_class": 0,
+      "right_child_representative_sha256": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "sample_count": 100,
+      "sample_pointwise_overlap_range": [
+        0.0054257622142580095,
+        0.20668047628778885
+      ],
+      "sample_pressure_range": [
+        1.4615702998394955,
+        2.2203519328175054
+      ],
+      "split": [
+        4,
+        4
+      ]
+    }
+  ],
+  "schema": "actual-child-raw-negative-overlap-sample-v1",
+  "scope": {
+    "betas": [
+      1.0
+    ],
+    "lambdas": [
+      1.0
+    ],
+    "mp_dps_for_child_selection": 80,
+    "orders": [
+      8
+    ],
+    "orientation": -1,
+    "quadrature_order": 32,
+    "sample_counts": [
+      100
+    ],
+    "seed": 123
+  }
+}

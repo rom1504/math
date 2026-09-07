@@ -1,0 +1,61 @@
+{
+  "status": "PASS: EXACT RATIONAL THRESHOLD CERTIFICATE",
+  "nodes": [
+    {
+      "node": "1/8",
+      "argument_upper": "11/56",
+      "cosine_lower": "1079469593647370913484199/1100634958831979121868800",
+      "ordinate_lower": "99/100",
+      "square_margin": "18431762403704403514703/27515873970799478046720000"
+    },
+    {
+      "node": "1/4",
+      "argument_upper": "11/28",
+      "cosine_lower": "992956566403343019719/1074838826984354611200",
+      "ordinate_lower": "961/1000",
+      "square_margin": "200211292453040518103/671774266865221632000000"
+    },
+    {
+      "node": "3/8",
+      "argument_upper": "33/56",
+      "cosine_lower": "11296290369408848964751/13588085911505915084800",
+      "ordinate_lower": "911/1000",
+      "square_margin": "12032826028717757286687/8492553694691196928000000"
+    },
+    {
+      "node": "1/2",
+      "argument_upper": "11/14",
+      "cosine_lower": "741978050804086799/1049647291976908800",
+      "ordinate_lower": "21/25",
+      "square_margin": "33673039629498743/26241182299422720000"
+    },
+    {
+      "node": "5/8",
+      "argument_upper": "55/56",
+      "cosine_lower": "24444733958704452310727/44025398353279164874752",
+      "ordinate_lower": "149/200",
+      "square_margin": "5960773547302391323607/27515873970799478046720000"
+    },
+    {
+      "node": "3/4",
+      "argument_upper": "33/28",
+      "cosine_lower": "5072247838270154671/13269615147954995200",
+      "ordinate_lower": "309/500",
+      "square_margin": "2664589064119427647/8293509467471872000000"
+    },
+    {
+      "node": "7/8",
+      "argument_upper": "11/8",
+      "cosine_lower": "758034218833319/3896394330931200",
+      "ordinate_lower": "441/1000",
+      "square_margin": "162220599680183/2435246456832000000"
+    }
+  ],
+  "integral_lower": "3003/4000",
+  "bridge_lower": "637/1200",
+  "assertions": [
+    "SK constant > 3/4",
+    "iid balanced bridge floor > 53/100"
+  ],
+  "scope": "Depends on the analytic heat-martingale and comparison proofs; not original M_n lower bound"
+}

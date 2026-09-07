@@ -1,0 +1,2660 @@
+{
+  "status": "EXACT INTEGER PHASE SEARCH; BOUNDED PERMUTATION SAMPLE; NO ASYMPTOTIC CLAIM",
+  "records": [
+    {
+      "child_order": 4,
+      "actual_child_cap": 4,
+      "child_representatives": [
+        {
+          "atlas_index": 5,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "atlas_index": 6,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "favorable_weighted_target": 12.220201853215574,
+      "best": {
+        "cap": 10,
+        "row_phase": 0,
+        "column_phase": 5,
+        "child_polarity": 1,
+        "phase_cap_histogram": {
+          "10": 8,
+          "12": 48,
+          "14": 64,
+          "16": 8
+        },
+        "child_indices": [
+          1,
+          1
+        ],
+        "atlas_indices": [
+          6,
+          6
+        ],
+        "row_permutation": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "column_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "kind": "sampled permutations",
+        "parent_matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0
+          ]
+        ],
+        "bridge_matrix": [
+          [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "records": [
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            5,
+            5
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 1,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            1
+          ],
+          "atlas_indices": [
+            5,
+            6
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 3,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            6,
+            5
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 1,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            6,
+            6
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 10,
+          "row_phase": 0,
+          "column_phase": 5,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "10": 8,
+            "12": 48,
+            "14": 64,
+            "16": 8
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            6,
+            6
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            6,
+            5
+          ],
+          "row_permutation": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "column_permutation": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 10,
+          "row_phase": 1,
+          "column_phase": 6,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 48,
+            "14": 64,
+            "10": 8,
+            "16": 8
+          },
+          "child_indices": [
+            0,
+            1
+          ],
+          "atlas_indices": [
+            5,
+            6
+          ],
+          "row_permutation": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "column_permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            6,
+            5
+          ],
+          "row_permutation": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            6,
+            5
+          ],
+          "row_permutation": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "column_permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            5,
+            5
+          ],
+          "row_permutation": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "column_permutation": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            5,
+            5
+          ],
+          "row_permutation": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "column_permutation": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            5,
+            5
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "column_permutation": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 1,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            1
+          ],
+          "atlas_indices": [
+            5,
+            6
+          ],
+          "row_permutation": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "column_permutation": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            5,
+            5
+          ],
+          "row_permutation": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "column_permutation": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 12,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "12": 80,
+            "14": 32,
+            "16": 16
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            6,
+            6
+          ],
+          "row_permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "column_permutation": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 10,
+          "row_phase": 0,
+          "column_phase": 0,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "10": 8,
+            "12": 48,
+            "14": 64,
+            "16": 8
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            6,
+            6
+          ],
+          "row_permutation": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "column_permutation": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "kind": "sampled permutations"
+        }
+      ]
+    },
+    {
+      "child_order": 8,
+      "actual_child_cap": 10,
+      "child_representatives": [
+        {
+          "atlas_index": 580,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              1,
+              1,
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "atlas_index": 722,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              1,
+              1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              1,
+              -1,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "atlas_index": 870,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "atlas_index": 1005,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              1,
+              -1,
+              1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              -1,
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "favorable_weighted_target": 29.277002188455995,
+      "best": {
+        "cap": 30,
+        "row_phase": 71,
+        "column_phase": 75,
+        "child_polarity": 1,
+        "phase_cap_histogram": {
+          "34": 1328,
+          "36": 16416,
+          "38": 11832,
+          "40": 3136,
+          "32": 52,
+          "30": 4
+        },
+        "child_indices": [
+          3,
+          3
+        ],
+        "atlas_indices": [
+          1005,
+          1005
+        ],
+        "row_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "column_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "kind": "all child pairs, identity permutation",
+        "parent_matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "bridge_matrix": [
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "records": [
+        {
+          "cap": 32,
+          "row_phase": 22,
+          "column_phase": 32,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1356,
+            "36": 16719,
+            "38": 11568,
+            "40": 3120,
+            "32": 5
+          },
+          "child_indices": [
+            0,
+            0
+          ],
+          "atlas_indices": [
+            580,
+            580
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 29,
+          "column_phase": 123,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 920,
+            "36": 16843,
+            "38": 11708,
+            "40": 3296,
+            "32": 1
+          },
+          "child_indices": [
+            0,
+            1
+          ],
+          "atlas_indices": [
+            580,
+            722
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 9,
+          "column_phase": 44,
+          "child_polarity": -1,
+          "phase_cap_histogram": {
+            "34": 991,
+            "36": 16760,
+            "38": 11776,
+            "40": 3240,
+            "32": 1
+          },
+          "child_indices": [
+            0,
+            2
+          ],
+          "atlas_indices": [
+            580,
+            870
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 3,
+          "column_phase": 92,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1360,
+            "36": 16704,
+            "38": 11568,
+            "40": 3120,
+            "32": 16
+          },
+          "child_indices": [
+            0,
+            3
+          ],
+          "atlas_indices": [
+            580,
+            1005
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 123,
+          "column_phase": 29,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 920,
+            "36": 16843,
+            "38": 11708,
+            "40": 3296,
+            "32": 1
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            722,
+            580
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 126,
+          "column_phase": 126,
+          "child_polarity": -1,
+          "phase_cap_histogram": {
+            "34": 714,
+            "36": 16899,
+            "38": 11876,
+            "40": 3278,
+            "32": 1
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            722,
+            722
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 95,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 711,
+            "36": 16922,
+            "38": 11857,
+            "40": 3278
+          },
+          "child_indices": [
+            1,
+            2
+          ],
+          "atlas_indices": [
+            722,
+            870
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 27,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1028,
+            "36": 16716,
+            "38": 11784,
+            "40": 3240
+          },
+          "child_indices": [
+            1,
+            3
+          ],
+          "atlas_indices": [
+            722,
+            1005
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 44,
+          "column_phase": 9,
+          "child_polarity": -1,
+          "phase_cap_histogram": {
+            "34": 991,
+            "36": 16760,
+            "38": 11776,
+            "40": 3240,
+            "32": 1
+          },
+          "child_indices": [
+            2,
+            0
+          ],
+          "atlas_indices": [
+            870,
+            580
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 1,
+          "column_phase": 17,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "36": 16922,
+            "38": 11857,
+            "34": 711,
+            "40": 3278
+          },
+          "child_indices": [
+            2,
+            1
+          ],
+          "atlas_indices": [
+            870,
+            722
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 42,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 666,
+            "36": 16944,
+            "38": 11866,
+            "40": 3292
+          },
+          "child_indices": [
+            2,
+            2
+          ],
+          "atlas_indices": [
+            870,
+            870
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 3,
+          "column_phase": 92,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 984,
+            "36": 17000,
+            "38": 11546,
+            "40": 3232,
+            "32": 6
+          },
+          "child_indices": [
+            2,
+            3
+          ],
+          "atlas_indices": [
+            870,
+            1005
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 3,
+          "column_phase": 54,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1360,
+            "36": 16704,
+            "38": 11568,
+            "40": 3120,
+            "32": 16
+          },
+          "child_indices": [
+            3,
+            0
+          ],
+          "atlas_indices": [
+            1005,
+            580
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 21,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1028,
+            "36": 16716,
+            "38": 11784,
+            "40": 3240
+          },
+          "child_indices": [
+            3,
+            1
+          ],
+          "atlas_indices": [
+            1005,
+            722
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 32,
+          "row_phase": 27,
+          "column_phase": 57,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 984,
+            "36": 17000,
+            "38": 11546,
+            "40": 3232,
+            "32": 6
+          },
+          "child_indices": [
+            3,
+            2
+          ],
+          "atlas_indices": [
+            1005,
+            870
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 30,
+          "row_phase": 71,
+          "column_phase": 75,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1328,
+            "36": 16416,
+            "38": 11832,
+            "40": 3136,
+            "32": 52,
+            "30": 4
+          },
+          "child_indices": [
+            3,
+            3
+          ],
+          "atlas_indices": [
+            1005,
+            1005
+          ],
+          "row_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "column_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "all child pairs, identity permutation"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 36,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 972,
+            "36": 16932,
+            "38": 11504,
+            "40": 3360
+          },
+          "child_indices": [
+            1,
+            0
+          ],
+          "atlas_indices": [
+            722,
+            580
+          ],
+          "row_permutation": [
+            0,
+            4,
+            1,
+            5,
+            7,
+            6,
+            3,
+            2
+          ],
+          "column_permutation": [
+            7,
+            5,
+            1,
+            6,
+            3,
+            4,
+            2,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 33,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 738,
+            "36": 16964,
+            "38": 11848,
+            "40": 3218
+          },
+          "child_indices": [
+            1,
+            1
+          ],
+          "atlas_indices": [
+            722,
+            722
+          ],
+          "row_permutation": [
+            6,
+            3,
+            4,
+            2,
+            0,
+            1,
+            5,
+            7
+          ],
+          "column_permutation": [
+            2,
+            7,
+            4,
+            0,
+            3,
+            5,
+            6,
+            1
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 75,
+          "column_phase": 15,
+          "child_polarity": -1,
+          "phase_cap_histogram": {
+            "34": 965,
+            "36": 16832,
+            "38": 11730,
+            "40": 3240,
+            "32": 1
+          },
+          "child_indices": [
+            0,
+            2
+          ],
+          "atlas_indices": [
+            580,
+            870
+          ],
+          "row_permutation": [
+            0,
+            1,
+            7,
+            6,
+            5,
+            3,
+            4,
+            2
+          ],
+          "column_permutation": [
+            5,
+            4,
+            3,
+            2,
+            7,
+            6,
+            0,
+            1
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 20,
+          "column_phase": 42,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1388,
+            "36": 16680,
+            "38": 11576,
+            "40": 3120,
+            "32": 4
+          },
+          "child_indices": [
+            3,
+            3
+          ],
+          "atlas_indices": [
+            1005,
+            1005
+          ],
+          "row_permutation": [
+            2,
+            5,
+            6,
+            3,
+            0,
+            7,
+            4,
+            1
+          ],
+          "column_permutation": [
+            0,
+            6,
+            5,
+            1,
+            3,
+            7,
+            2,
+            4
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 41,
+          "column_phase": 87,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1268,
+            "36": 16584,
+            "38": 11776,
+            "40": 3136,
+            "32": 4
+          },
+          "child_indices": [
+            3,
+            3
+          ],
+          "atlas_indices": [
+            1005,
+            1005
+          ],
+          "row_permutation": [
+            7,
+            6,
+            3,
+            2,
+            1,
+            0,
+            5,
+            4
+          ],
+          "column_permutation": [
+            2,
+            6,
+            4,
+            7,
+            3,
+            1,
+            5,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 102,
+          "column_phase": 19,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1232,
+            "36": 16628,
+            "38": 11768,
+            "40": 3136,
+            "32": 4
+          },
+          "child_indices": [
+            3,
+            0
+          ],
+          "atlas_indices": [
+            1005,
+            580
+          ],
+          "row_permutation": [
+            7,
+            6,
+            5,
+            1,
+            0,
+            3,
+            2,
+            4
+          ],
+          "column_permutation": [
+            3,
+            5,
+            6,
+            1,
+            7,
+            0,
+            2,
+            4
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 94,
+          "column_phase": 37,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1007,
+            "36": 16757,
+            "38": 11762,
+            "40": 3240,
+            "32": 2
+          },
+          "child_indices": [
+            0,
+            1
+          ],
+          "atlas_indices": [
+            580,
+            722
+          ],
+          "row_permutation": [
+            3,
+            4,
+            1,
+            7,
+            6,
+            2,
+            0,
+            5
+          ],
+          "column_permutation": [
+            4,
+            2,
+            5,
+            3,
+            1,
+            7,
+            0,
+            6
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 73,
+          "column_phase": 53,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 986,
+            "36": 17118,
+            "38": 11582,
+            "40": 3080,
+            "32": 2
+          },
+          "child_indices": [
+            1,
+            3
+          ],
+          "atlas_indices": [
+            722,
+            1005
+          ],
+          "row_permutation": [
+            7,
+            2,
+            5,
+            4,
+            3,
+            0,
+            1,
+            6
+          ],
+          "column_permutation": [
+            6,
+            5,
+            7,
+            1,
+            4,
+            2,
+            3,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 54,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 706,
+            "36": 16902,
+            "38": 11868,
+            "40": 3292
+          },
+          "child_indices": [
+            2,
+            1
+          ],
+          "atlas_indices": [
+            870,
+            722
+          ],
+          "row_permutation": [
+            1,
+            0,
+            2,
+            3,
+            7,
+            6,
+            4,
+            5
+          ],
+          "column_permutation": [
+            3,
+            5,
+            0,
+            4,
+            7,
+            2,
+            1,
+            6
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 18,
+          "column_phase": 50,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 1312,
+            "36": 17000,
+            "38": 11440,
+            "40": 3008,
+            "32": 8
+          },
+          "child_indices": [
+            3,
+            3
+          ],
+          "atlas_indices": [
+            1005,
+            1005
+          ],
+          "row_permutation": [
+            0,
+            3,
+            2,
+            5,
+            7,
+            4,
+            1,
+            6
+          ],
+          "column_permutation": [
+            3,
+            0,
+            2,
+            4,
+            1,
+            5,
+            7,
+            6
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 32,
+          "row_phase": 13,
+          "column_phase": 88,
+          "child_polarity": -1,
+          "phase_cap_histogram": {
+            "34": 660,
+            "36": 16948,
+            "38": 11867,
+            "40": 3292,
+            "32": 1
+          },
+          "child_indices": [
+            1,
+            2
+          ],
+          "atlas_indices": [
+            722,
+            870
+          ],
+          "row_permutation": [
+            2,
+            6,
+            1,
+            0,
+            5,
+            4,
+            7,
+            3
+          ],
+          "column_permutation": [
+            5,
+            3,
+            6,
+            1,
+            2,
+            4,
+            7,
+            0
+          ],
+          "kind": "sampled permutations"
+        },
+        {
+          "cap": 34,
+          "row_phase": 0,
+          "column_phase": 43,
+          "child_polarity": 1,
+          "phase_cap_histogram": {
+            "34": 687,
+            "36": 16944,
+            "38": 11859,
+            "40": 3278
+          },
+          "child_indices": [
+            2,
+            1
+          ],
+          "atlas_indices": [
+            870,
+            722
+          ],
+          "row_permutation": [
+            7,
+            0,
+            4,
+            3,
+            1,
+            5,
+            2,
+            6
+          ],
+          "column_permutation": [
+            4,
+            5,
+            7,
+            0,
+            2,
+            1,
+            3,
+            6
+          ],
+          "kind": "sampled permutations"
+        }
+      ]
+    }
+  ]
+}

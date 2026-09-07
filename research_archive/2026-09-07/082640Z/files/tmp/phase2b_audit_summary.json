@@ -1,0 +1,69 @@
+{
+  "search": {
+    "classification": "deterministic nonexhaustive search; discovered pair independently verified exactly",
+    "distinct_codes_checked_before_collision": 555,
+    "enumeration": "odd affine permutation modulo 2^35",
+    "root_gauged_global_negation_representatives": 34359738368,
+    "search_source": "computations/phase2_profile_collision_n8.cpp --sample 10 1000000"
+  },
+  "caps": [
+    19,
+    21
+  ],
+  "oriented_equal": true,
+  "hadamard": {
+    "cap_gap_lower": "cap(S_B(k))-cap(S_A(k)) >= k^(3/2)/8",
+    "dual_positive_definite_leading_minors_after_scaling_by_100": {
+      "diag_y_minus_Q": [
+        345,
+        124550,
+        64522550,
+        30647958400,
+        7235735722400,
+        3019509287908000,
+        496835560311940000,
+        38743496824224380000,
+        109046877631326300000,
+        287107261059861900000
+      ],
+      "diag_y_plus_Q": [
+        545,
+        311550,
+        223739550,
+        161911124400,
+        76720024378400,
+        50095507977108000,
+        18914182870419540000,
+        7567963850794117000000,
+        3259534186283089000000000,
+        1502797682809365200000000000
+      ]
+    },
+    "dual_y_numerators_over_100": [
+      445,
+      490,
+      661,
+      668,
+      436,
+      645,
+      405,
+      427,
+      485,
+      513
+    ],
+    "dual_y_sum": "207/4",
+    "first_cap_upper": "cap(S_A(k)) <= (207/8)*k^(3/2)",
+    "lift_definition": "S_A(k)=A tensor H_k + I_10 tensor (H_k-diag(H_k)); define S_B(k) analogously",
+    "normalized_gap_lower": "1/(8*10^(3/2))",
+    "order_N": "N=10*k",
+    "orders": "k=4^r for every integer r>=1",
+    "positive_boolean_eigenvector_seed_for_H4": [
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    "profile_statement": "S_A(k) and S_B(k) have identical oriented restriction profiles through order 6",
+    "second_cap_lower": "cap(S_B(k)) >= 26*k^(3/2)"
+  }
+}

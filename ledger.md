@@ -46589,3 +46589,25 @@ The interval remains [.4333221116640807,.493608094). The new same-order
 construction is genuine but does not establish an improved cross-order
 defect. Continue with dense jointly controlled operations, and retain the
 original liminf-to-all-order obligation without renaming it.
+
+### 10.154. Third flatification checkpoint: a joint rank-two operation
+
+2026-09-07 approximately 08:40 UTC. [Checkpoint and proof-status map](artifacts/flatify_director_checkpoint_three_2026_09_07.md).
+
+The rank-one reciprocal matching obstruction is now general and permits
+arbitrary internal completions. Rank-two Boolean Hadamard tiles escape that
+particular floor. Their audited finite joint-profile certificate has o(N)
+type overhead and O(N^(5/4)) completion error, but its uniform profile
+hypothesis remains open. Finite transport values are not asymptotic bounds.
+
+An independently reconstructed regular-support version of the direct-E
+weave gives an all-order square bilinear upper constant 2U<.987216188.
+No child-shell alignment theorem follows. Complete solver-free enumeration
+also certifies the cap-30 minimum for optimal order-8 children with any
+Hadamard bridge; the claim is finite and class-specific.
+
+#### Updated frontier
+
+The interval is unchanged at [.4333221116640807,.493608094). The actual new
+operations have not established the selected-child power-saving replacement.
+Continue the campaign; preservation snapshot 082640Z is verified.

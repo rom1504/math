@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: second material checkpoint of the active flatification
+Evidence cutoff: third material checkpoint of the active flatification
 campaign, 2026-09-07, begun at 05:27:43 UTC; continue through 11:28 UTC.
 Read the [closing synthesis](artifacts/decisive_campaign_final_synthesis_2026_09_07.md)
 and STEERING; use ledger 10.151 and proof dependencies as needed.
@@ -23,6 +23,13 @@ Determine convergence or nonconvergence of M_n/n^(3/2), without fixing a value.
 Neither convergence nor nonconvergence is proved. Convergence to 1/2 is excluded.
 The new exact upper expression is approximately .493608093588748653.
 The preceding .494515125 proof and certificates remain preserved.
+
+Latest new operations: the regular-support weave gives full square bilinear
+cap constant below .987216188 at all orders. Rank-two Hadamard tiles admit
+an audited finite joint-profile upper certificate with o(N) type overhead
+and O(N^(5/4)) completion cost. Its asymptotic profile bound is unproved;
+its random column phases erase the child seed. No favorable flatification
+or original convergence theorem follows. See checkpoint three.
 
 For d=binom(n,2), the AUGMENTED cut code is
 C_n^+={(c+b_i+b_j)_(i<j)}. Then Q(a)=d-2dist(a,C_n^+) and

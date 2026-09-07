@@ -1,0 +1,2156 @@
+On the real polynomial Bohnenblust–Hille inequalityThanks: D. Pellegrino was
+supported by CNPq Grant 477124/2012-7 and INCT-Matemática.
+
+   J. R. Campos and P. Jiménez-Rodríguez and G.A. Muñoz-Fernández and D.
+   Pellegrino and J.B. Seoane-Sepúlveda Address: Departamento de Ciências
+   Exatas,
+   Universidade Federal da Paraíba,
+   58.297-000 - Rio Tinto, Brazil. Email address: jamilson@dce.ufpb.br and
+   jamilsonrc@gmail.com Address: Departamento de Análisis Matemático,
+   Facultad de Ciencias Matemáticas,
+   Plaza de Ciencias 3,
+   Universidad Complutense de Madrid,
+   Madrid, 28040, Spain. Email address: pablo$_$jimenez@mat.ucm.es
+   Address: Departamento de Análisis Matemático,
+   Facultad de Ciencias Matemáticas,
+   Plaza de Ciencias 3,
+   Universidad Complutense de Madrid,
+   Madrid, 28040, Spain. Email address: gustavo$_$fernandez@mat.ucm.es
+   Address: Departamento de Matemática,
+   Universidade Federal da Paraíba,
+   58.051-900 - João Pessoa, Brazil. Email address: pellegrino@pq.cnpq.br
+   and dmpellegrino@gmail.com Address: Departamento de Análisis
+   Matemático,
+   Facultad de Ciencias Matemáticas,
+   Plaza de Ciencias 3,
+   Universidad Complutense de Madrid,
+   Madrid, 28040, Spain. Email address: jseoane@mat.ucm.es
+
+Abstract.
+
+   It was recently proved by Bayart et al. that the complex polynomial
+   Bohnenblust–Hille inequality is subexponential. We show that, for real
+   scalars, this does no longer hold. Moreover, we show that, if
+   [MATH:
+   <semantics><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m</mi></mrow><
+   /msub><annotation
+   encoding="application/x-tex">D_{\mathbb{R},m}</annotation></semantics>
+   :MATH]
+   stands for the real Bohnenblust–Hille constant for
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -homogeneous polynomials, then
+   [MATH: <semantics><mrow><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><msubsup><mi>D</mi><mrow><m
+   i>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>m</mi>
+   </mrow></msubsup></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle\lim\sup_{m}D_{\mathbb{R},m}^
+   {1/m}=2.</annotation></semantics> :MATH]
+
+Key words and phrases:
+
+   Bohnenblust–Hille inequality, Absolutely summing operators.
+
+2010 Mathematics Subject Classification
+
+   46G25, 47L22, 47H60.
+
+1. Introduction
+
+   If
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   is a Banach space, real or complex, we say that
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   is a homogeneous polynomial on
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   of degree
+   [MATH:
+   <semantics><mrow><mi>m</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">m\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   if there exists an
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -linear form
+   [MATH: <semantics><mi>L</mi><annotation
+   encoding="application/x-tex">L</annotation></semantics> :MATH]
+   on
+   [MATH: <semantics><msup><mi>E</mi><mi>m</mi></msup><annotation
+   encoding="application/x-tex">E^{m}</annotation></semantics> :MATH]
+   such that
+   [MATH: <semantics><mrow><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁡</m
+   o><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><mi>x</mi><mo
+   stretchy="false">)</mo></mrow></mrow></mrow><annotation
+   encoding="application/x-tex">P(x)=L(x,\ldots,x)</annotation></semantics
+   > :MATH]
+   for all
+   [MATH:
+   <semantics><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow><annotation
+   encoding="application/x-tex">x\in E</annotation></semantics> :MATH]
+   . It is customary to denote by
+   [MATH: <semantics><mover
+   accent="true"><mi>L</mi><mo>^</mo></mover><annotation
+   encoding="application/x-tex">\widehat{L}</annotation></semantics>
+   :MATH]
+   the restriction of
+   [MATH: <semantics><mi>L</mi><annotation
+   encoding="application/x-tex">L</annotation></semantics> :MATH]
+   to the diagonal of
+   [MATH: <semantics><msup><mi>E</mi><mi>m</mi></msup><annotation
+   encoding="application/x-tex">E^{m}</annotation></semantics> :MATH]
+   . An old and widely known algebraic result establishes that for every
+   homogeneous polynomial
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   of degree
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   on
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   there exists a unique symmetric
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -linear form
+   [MATH: <semantics><mi>L</mi><annotation
+   encoding="application/x-tex">L</annotation></semantics> :MATH]
+   on
+   [MATH: <semantics><msup><mi>E</mi><mi>m</mi></msup><annotation
+   encoding="application/x-tex">E^{m}</annotation></semantics> :MATH]
+   , called the polar of
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   , such that
+   [MATH: <semantics><mrow><mi>P</mi><mo>=</mo><mover
+   accent="true"><mi>L</mi><mo>^</mo></mover></mrow><annotation
+   encoding="application/x-tex">P=\widehat{L}</annotation></semantics>
+   :MATH]
+   . We denote by
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{P}}(^{m}E)</annotation></semanti
+   cs> :MATH]
+   ,
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">ℒ</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{L}}(^{m}E)</annotation></semanti
+   cs> :MATH]
+   and
+   [MATH: <semantics><mrow><msup><mi
+   class="ltx_font_mathcaligraphic">ℒ</mi><mi>s</mi></msup><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{L}}^{s}(^{m}E)</annotation></sem
+   antics> :MATH]
+   the spaces of continuous
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -homogeneous polynomials, continuous
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -linear forms and continuous symmetric
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -linear forms on
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   respectively. It is well known that homogeneous polynomials or
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -multilinear forms are continuous on
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   if and only if they are bounded, respectively, over the unit ball
+   [MATH: <semantics><msub><mi>𝖡</mi><mi>E</mi></msub><annotation
+   encoding="application/x-tex">{\mathsf{B}}_{E}</annotation></semantics>
+   :MATH]
+   of
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   or
+   [MATH:
+   <semantics><msubsup><mi>𝖡</mi><mi>E</mi><mi>m</mi></msubsup><annotation
+   encoding="application/x-tex">{\mathsf{B}}_{E}^{m}</annotation></semanti
+   cs> :MATH]
+   . In that case
+   [MATH: <semantics><mrow><mrow><mo stretchy="false">‖</mo><mi>P</mi><mo
+   rspace="0.278em" stretchy="false">‖</mo></mrow><mo
+   rspace="0.278em">:</mo><mphantom></mphantom></mrow><annotation
+   encoding="application/x-tex">\displaystyle\|P\|:</annotation></semantic
+   s> :MATH]
+   [MATH: <semantics><mrow><mrow><mphantom></mphantom><mo
+   rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em"
+   movablelimits="false" rspace="0em">sup</mo><mrow><mo
+   stretchy="false">{</mo><mrow><mo
+   stretchy="false">|</mo><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em"
+   stretchy="false">|</mo></mrow><mo
+   rspace="0.278em">:</mo><mrow><mi>x</mi><mo>∈</mo><msub><mi>𝖡</mi><mi>E<
+   /mi></msub></mrow><mo
+   stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow><annotatio
+   n
+   encoding="application/x-tex">\displaystyle=\sup\{|P(x)|:x\in{\mathsf{B}
+   }_{E}\},</annotation></semantics> :MATH]
+   [MATH: <semantics><mrow><mrow><mo stretchy="false">‖</mo><mi>L</mi><mo
+   rspace="0.278em" stretchy="false">‖</mo></mrow><mo
+   rspace="0.278em">:</mo><mphantom></mphantom></mrow><annotation
+   encoding="application/x-tex">\displaystyle\|L\|:</annotation></semantic
+   s> :MATH]
+   [MATH: <semantics><mrow><mo rspace="0.1389em">=</mo><mo
+   lspace="0.1389em" movablelimits="false" rspace="0em">sup</mo><mrow><mo
+   stretchy="false">{</mo><mo fence="false" rspace="0.167em"
+   stretchy="false">|</mo><mi>L</mi><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>m</mi></msub><
+   mo stretchy="false">)</mo></mrow><mo fence="false" rspace="0.167em"
+   stretchy="false">|</mo><mo
+   rspace="0.278em">:</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><msub><mi>x</mi><mi>m</mi></msub><mo>∈</mo><
+   msub><mi>𝖡</mi><mi>E</mi></msub><mo
+   stretchy="false">}</mo></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle=\sup\{|L(x_{1},\ldots,x_{m})
+   |:x_{1},\ldots x_{m}\in{\mathsf{B}}_{E}\},</annotation></semantics>
+   :MATH]
+
+   define a norm in
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{P}}(^{m}E)</annotation></semanti
+   cs> :MATH]
+   and
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">ℒ</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{L}}(^{m}E)</annotation></semanti
+   cs> :MATH]
+   respectively. If
+   [MATH: <semantics><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">P\in{\mathcal{P}}(^{m}E)</annotation></sem
+   antics> :MATH]
+   , we shall refer to
+   [MATH: <semantics><mrow><mo stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow><annotation
+   encoding="application/x-tex">\|P\|</annotation></semantics> :MATH]
+   as the polynomial norm of
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   in
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   . This norm is very difficult to compute in most cases, for which
+   reason it would be interesting to obtain reasonably good estimates on
+   it. The
+   [MATH: <semantics><msub><mi
+   mathvariant="normal">ℓ</mi><mi>p</mi></msub><annotation
+   encoding="application/x-tex">\ell_{p}</annotation></semantics> :MATH]
+   norm of the coefficients of a given polynomial on
+   [MATH: <semantics><msup><mi>𝕂</mi><mi>n</mi></msup><annotation
+   encoding="application/x-tex">{\mathbb{K}}^{n}</annotation></semantics>
+   :MATH]
+   (
+   [MATH:
+   <semantics><mrow><mi>𝕂</mi><mo>=</mo><mi>ℝ</mi></mrow><annotation
+   encoding="application/x-tex">{\mathbb{K}}={\mathbb{R}}</annotation></se
+   mantics> :MATH]
+   or
+   [MATH: <semantics><mi>ℂ</mi><annotation
+   encoding="application/x-tex">{\mathbb{C}}</annotation></semantics>
+   :MATH]
+   ) has also been widely used in mathematics and is much easier to
+   handle. Observe that an
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -homogeneous polynomial in
+   [MATH: <semantics><msup><mi>𝕂</mi><mi>n</mi></msup><annotation
+   encoding="application/x-tex">{\mathbb{K}}^{n}</annotation></semantics>
+   :MATH]
+   can be written as
+   [MATH: <semantics><mrow><mrow><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><munder><mo
+   movablelimits="false">∑</mo><mrow><mrow><mo>|</mo><mi>α</mi><mo>|</mo><
+   /mrow><mo>=</mo><mi>m</mi></mrow></munder><mrow><msub><mi>a</mi><mi>α</
+   mi></msub><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>x</mi><mi>α</mi></msup></mrow></mrow></mro
+   w><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">P(x)={\sum\limits_{\left|\alpha\right|=m}}
+   a_{\alpha}x^{\alpha},</annotation></semantics> :MATH]
+
+   where
+   [MATH: <semantics><mrow><mi>x</mi><mo>=</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><
+   mo
+   stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>𝕂</mi><mi>n</mi></msu
+   p></mrow><annotation
+   encoding="application/x-tex">x=(x_{1},\ldots,x_{n})\in{\mathbb{K}}^{n}<
+   /annotation></semantics> :MATH]
+   ,
+   [MATH: <semantics><mrow><mi>α</mi><mo>=</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>α</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>α</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo
+   stretchy="false">(</mo><mrow><mi>ℕ</mi><mo>∪</mo><mrow><mo
+   stretchy="false">{</mo><mn>0</mn><mo
+   stretchy="false">}</mo></mrow></mrow><mo
+   stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><annotation
+   encoding="application/x-tex">\alpha=(\alpha_{1},\ldots,\alpha_{n})\in({
+   \mathbb{N}}\cup\{0\})^{n}</annotation></semantics> :MATH]
+   ,
+   [MATH: <semantics><mrow><mrow><mo stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mrow><msub><mi>α</mi><mn>1</mn
+   ></msub><mo>+</mo><mo lspace="0em"
+   rspace="0em">⋯</mo><mo>+</mo><msub><mi>α</mi><mi>n</mi></msub></mrow></
+   mrow><annotation
+   encoding="application/x-tex">|\alpha|=\alpha_{1}+\cdots+\alpha_{n}</ann
+   otation></semantics> :MATH]
+   and
+   [MATH:
+   <semantics><mrow><mi>x</mi><msup><mrow></mrow><mi>α</mi></msup><mo>=</m
+   o><mi>x</mi><msub><mrow></mrow><mn>1</mn></msub><msup><mrow></mrow><msu
+   b><mi>α</mi><mn>1</mn></msub></msup><mo lspace="0em"
+   rspace="0em">⋯</mo><mi>x</mi><msub><mrow></mrow><mi>n</mi></msub><msup>
+   <mrow></mrow><msub><mi>α</mi><mi>n</mi></msub></msup></mrow><annotation
+   encoding="application/x-tex">x^{\alpha}=x_{1}^{\alpha_{1}}\cdots
+   x_{n}^{\alpha_{n}}</annotation></semantics> :MATH]
+   . Thus we define the
+   [MATH: <semantics><msub><mi
+   mathvariant="normal">ℓ</mi><mi>p</mi></msub><annotation
+   encoding="application/x-tex">\ell_{p}</annotation></semantics> :MATH]
+   norm of
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   , with
+   [MATH:
+   <semantics><mrow><mi>p</mi><mo>≥</mo><mn>1</mn></mrow><annotation
+   encoding="application/x-tex">p\geq 1</annotation></semantics> :MATH]
+   , as If
+   [MATH: <semantics><mi>E</mi><annotation
+   encoding="application/x-tex">E</annotation></semantics> :MATH]
+   has finite dimension
+   [MATH: <semantics><mi>n</mi><annotation
+   encoding="application/x-tex">n</annotation></semantics> :MATH]
+   , then the polynomial norm
+   [MATH: <semantics><mrow><mo rspace="0em">∥</mo><mo lspace="0em"
+   rspace="0em">⋅</mo><mo lspace="0em">∥</mo></mrow><annotation
+   encoding="application/x-tex">\|\cdot\|</annotation></semantics> :MATH]
+   and the
+   [MATH: <semantics><msub><mi
+   mathvariant="normal">ℓ</mi><mi>p</mi></msub><annotation
+   encoding="application/x-tex">\ell_{p}</annotation></semantics> :MATH]
+   norm
+   [MATH: <semantics><mrow><mo fence="false" stretchy="false">|</mo><mo
+   lspace="0em" rspace="0em">⋅</mo><mo fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mi>p</mi></msub></mrow><anno
+   tation
+   encoding="application/x-tex">|\cdot|_{p}</annotation></semantics>
+   :MATH]
+   (
+   [MATH:
+   <semantics><mrow><mi>p</mi><mo>≥</mo><mn>1</mn></mrow><annotation
+   encoding="application/x-tex">p\geq 1</annotation></semantics> :MATH]
+   ) are equivalent, and therefore there exist constants
+   [MATH: <semantics><mrow><mrow><mi>k</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mrow><mi>K</mi><m
+   o>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>></mo><mn>0</mn></mrow></mrow>
+   <annotation
+   encoding="application/x-tex">k(m,n),K(m,n)>0</annotation></semantics>
+   :MATH]
+   such that
+   (1.1)
+   [MATH:
+   <semantics><mrow><mrow><mrow><mrow><mrow><mi>k</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo lspace="0em"
+   rspace="0em">​</mo><msub><mrow><mo stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mi>p</mi></msub></mrow><mo>≤</mo><mrow><
+   mo stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>K</mi><mo>⁡</mo><mrow
+   ><mo stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow></mrow><mo
+   fence="false">|</mo><msub><mrow><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mi>p</mi></msub></mrow><mo>,</mo></mrow>
+   <annotation encoding="application/x-tex">k(m,n)|P|_{p}\leq\|P\|\leq
+   K(m,n)|P|_{p},</annotation></semantics> :MATH]
+
+   for all
+   [MATH: <semantics><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><mi>E</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">P\in{\mathcal{P}}(^{m}E)</annotation></sem
+   antics> :MATH]
+   . The latter inequalities may provide a good estimate on
+   [MATH: <semantics><mrow><mo stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow><annotation
+   encoding="application/x-tex">\|P\|</annotation></semantics> :MATH]
+   as long as we know the exact value of the best possible constants
+   [MATH: <semantics><mrow><mi>k</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">k(m,n)</annotation></semantics> :MATH]
+   and
+   [MATH: <semantics><mrow><mi>K</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">K(m,n)</annotation></semantics> :MATH]
+   appearing in (1.1).
+
+   The problem presented above is an extension of the the well known
+   polynomial Bohnenblust-Hille inequality (polynomial BH inequality for
+   short). It was proved in [4] that there exists a constant
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mi>m</mi></msub><mo>≥</mo><mn>1</mn><
+   /mrow><annotation encoding="application/x-tex">D_{m}\geq
+   1</annotation></semantics> :MATH]
+   such that for every
+   [MATH: <semantics><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">P\in{\mathcal{P}}(^{m}\ell_{\infty}^{n})</
+   annotation></semantics> :MATH]
+   we have
+   (1.2)
+   [MATH: <semantics><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≤</mo><mrow><msub><mi>D</mi><mi>m</mi></msub
+   ><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">|P|_{\frac{2m}{m+1}}\leq
+   D_{m}\|P\|.</annotation></semantics> :MATH]
+
+   Observe that (1.2) coincides with the first inequality in (1.1) for
+   [MATH: <semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></mrow><annotation
+   encoding="application/x-tex">p=\frac{2m}{m+1}</annotation></semantics>
+   :MATH]
+   except for the fact that
+   [MATH: <semantics><msub><mi>D</mi><mi>m</mi></msub><annotation
+   encoding="application/x-tex">D_{m}</annotation></semantics> :MATH]
+   in (1.2) can be chosen in such a way that it is independent from the
+   dimension
+   [MATH: <semantics><mi>n</mi><annotation
+   encoding="application/x-tex">n</annotation></semantics> :MATH]
+   . Actually Bohnenblust and Hille showed that
+   [MATH: <semantics><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac><annotation
+   encoding="application/x-tex">\frac{2m}{m+1}</annotation></semantics>
+   :MATH]
+   is optimal in (1.2) in the sense that for
+   [MATH: <semantics><mrow><mi>p</mi><mo><</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></mrow><annotation
+   encoding="application/x-tex">p<\frac{2m}{m+1}</annotation></semantics>
+   :MATH]
+   , any constant
+   [MATH: <semantics><mi>D</mi><annotation
+   encoding="application/x-tex">D</annotation></semantics> :MATH]
+   fitting in the inequality
+   [MATH: <semantics><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mi>p</mi></msub><mo>≤</mo><mrow><mi>D</m
+   i><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow></mrow><mo>,</mo></mrow><annotatio
+   n encoding="application/x-tex">|P|_{p}\leq
+   D\|P\|,</annotation></semantics> :MATH]
+
+   for all
+   [MATH: <semantics><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">P\in{\mathcal{P}}(^{m}\ell_{\infty}^{n})</
+   annotation></semantics> :MATH]
+   depends necessarily on
+   [MATH: <semantics><mi>n</mi><annotation
+   encoding="application/x-tex">n</annotation></semantics> :MATH]
+   .
+
+   The polynomial and multilinear Bohnenblust–Hille inequalities were
+   overlooked for a long period (see [Boas]) and were only rediscovered in
+   the last few years; now these inequalities can be seen as an extension
+   of the successful theory of absolutely summing operators (see [6]) and
+   have fundamental importance in different fields of Mathematics and
+   Physics, such as Operator Theory, Fourier and Harmonic Analysis,
+   Complex Analysis, Analytic Number Theory and Quantum Information Theory
+   (see [1, Boas, 3, 5, 8, 7, 9, 10, 11, 12] and references therein).
+
+   The best constants in (1.2) may depend on whether we consider the real
+   or the complex version of
+   [MATH: <semantics><msubsup><mi mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><annotation
+   encoding="application/x-tex">\ell_{\infty}^{n}</annotation></semantics>
+   :MATH]
+   , which motivates the following definition
+   [MATH:
+   <semantics><mrow><mrow><msub><mi>D</mi><mrow><mi>𝕂</mi><mo>,</mo><mi>m<
+   /mi></mrow></msub><mo rspace="0.1389em">:=</mo><mrow><mo
+   lspace="0.1389em" movablelimits="false"
+   rspace="0em">inf</mo><mrow><mo>{</mo><mrow><mi>D</mi><mo>></mo><mn>0</m
+   n></mrow><mo lspace="0.278em"
+   rspace="0.278em">:</mo><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≤</mo><mrow><mi>D</mi><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow></mrow><mtext>, for
+   all </mtext><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><mtext> and </mt
+   ext><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow></mrow><mo>}</mo></mrow></mrow></m
+   row><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{{\mathbb{K}},m}:=\inf\left\{D>0:\text{$
+   |P|_{\frac{2m}{m+1}}\leq D\|P\|$, for all $n\in{\mathbb{N}}$ and
+   $P\in{\mathcal{P}}(^{m}\ell_{\infty}^{n})$}\right\}.</annotation></sema
+   ntics> :MATH]
+
+   If we restrict attention to
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">{\mathcal{P}}(^{m}\ell_{\infty}^{n})</anno
+   tation></semantics> :MATH]
+   for some
+   [MATH:
+   <semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">n\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   , then we define
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mrow><mi>𝕂</mi><mo>,</mo><mi>m</mi></
+   mrow></msub><mrow><mo stretchy="false">(</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow><mo rspace="0.1389em">:=</mo><mo
+   lspace="0.1389em" movablelimits="false"
+   rspace="0em">inf</mo><mrow><mo>{</mo><mi>D</mi><mo>></mo><mn>0</mn><mo
+   lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≤</mo><mrow><mi>D</mi><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow></mrow><mtext> for
+   all </mtext><mrow><mi>P</mi><mo>∈</mo><mphantom></mphantom></mrow></mro
+   w><mi class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow><mo>}</mo></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{{\mathbb{K}},m}(n):=\inf\left\{D>0:\tex
+   t{$|P|_{\frac{2m}{m+1}}\leq D\|P\|$ for all
+   $P\in$}{\mathcal{P}}(^{m}\ell_{\infty}^{n})\right\}.</annotation></sema
+   ntics> :MATH]
+
+   Note that
+   [MATH:
+   <semantics><mrow><mrow><msub><mi>D</mi><mrow><mi>𝕂</mi><mo>,</mo><mi>m<
+   /mi></mrow></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mi>n</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>≤</mo><msub><mi>D</mi><mrow><m
+   i>𝕂</mi><mo>,</mo><mi>m</mi></mrow></msub></mrow><annotation
+   encoding="application/x-tex">D_{{\mathbb{K}},m}(n)\leq
+   D_{{\mathbb{K}},m}</annotation></semantics> :MATH]
+   for all
+   [MATH:
+   <semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">n\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   .
+
+   It was recently shown in [1] that the complex polynomial
+   Bohnenblust–Hille inequality is, at most, subexponential, i.e., for any
+   [MATH:
+   <semantics><mrow><mi>ε</mi><mo>></mo><mn>0</mn></mrow><annotation
+   encoding="application/x-tex">\varepsilon>0</annotation></semantics>
+   :MATH]
+   , there is a constant
+   [MATH:
+   <semantics><mrow><msub><mi>C</mi><mi>ε</mi></msub><mo>></mo><mn>0</mn><
+   /mrow><annotation
+   encoding="application/x-tex">C_{\varepsilon}>0</annotation></semantics>
+   :MATH]
+   such that
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mrow><mi>ℂ</mi><mo>,</mo><mi>m</mi></
+   mrow></msub><mo>≤</mo><mrow><msub><mi>C</mi><mi>ε</mi></msub><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>
+   ε</mi></mrow><mo>)</mo></mrow><mi>m</mi></msup></mrow></mrow><annotatio
+   n encoding="application/x-tex">D_{{\mathbb{C}},m}\leq
+   C_{\varepsilon}\left(1+\varepsilon\right)^{m}</annotation></semantics>
+   :MATH]
+   for all positive integers
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   . The main motivation of this paper are the following problems:
+     * (I)
+       Is the real polynomial BH inequality subexponential?
+     * (II)
+       What is the optimal growth of the real polynomial BH inequality?
+
+   We provide the final answer to these previous problems by showing that
+   [MATH: <semantics><mrow><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><msubsup><mi>D</mi><mrow><m
+   i>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>m</mi>
+   </mrow></msubsup></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}=2.</ann
+   otation></semantics> :MATH]
+
+2. The upper estimate
+
+   The proof of the subexponentiality of the complex BH inequality given
+   in [1] lies heavily in arguments restricted to complex scalars (it
+   uses, for instance estimates from [2] for complex scalars); so a simple
+   adaptation for the real case does not work. The calculation of the
+   upper estimate of the BH inequality is quite simplified by the use of
+   complexifications of polynomials. In particular we are interested in
+   the following deep result due to Visser [13], which generalizes and old
+   result of Chebyshev:
+
+Theorem 2.1 (Visser, [13], 1946).
+
+   Let
+   [MATH: <semantics><mrow><mi>P</mi><mrow><mo
+   stretchy="false">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow><mo rspace="0.111em">=</mo><munder><mo
+   movablelimits="false">∑</mo><mrow><mrow><mo
+   stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>≤</mo><mi>m</mi></mrow></munder><msub
+   ><mi>a</mi><mi>α</mi></msub><msubsup><mi>y</mi><mn>1</mn><msub><mi>α</m
+   i><mn>1</mn></msub></msubsup><mo lspace="0em"
+   rspace="0em">⋯</mo><msubsup><mi>y</mi><mi>n</mi><msub><mi>α</mi><mi>n</
+   mi></msub></msubsup><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">P(y_{1},\ldots,y_{n})=\sum_{|\alpha|\leq
+   m}a_{\alpha}y_{1}^{\alpha_{1}}\cdots
+   y_{n}^{\alpha_{n}},</annotation></semantics> :MATH]
+
+   with
+   [MATH: <semantics><mrow><mi>α</mi><mo>=</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>α</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>α</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\alpha=(\alpha_{1},\ldots,\alpha_{n})</ann
+   otation></semantics> :MATH]
+   ,
+   [MATH: <semantics><mrow><mrow><mo stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mrow><msub><mi>α</mi><mn>1</mn
+   ></msub><mo>+</mo><mo lspace="0em"
+   rspace="0em">⋯</mo><mo>+</mo><msub><mi>α</mi><mi>n</mi></msub></mrow></
+   mrow><annotation
+   encoding="application/x-tex">|\alpha|=\alpha_{1}+\cdots+\alpha_{n}</ann
+   otation></semantics> :MATH]
+   , be a polynomial of total degree at most
+   [MATH:
+   <semantics><mrow><mi>m</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">m\in\mathbb{N}</annotation></semantics>
+   :MATH]
+   in the variables
+   [MATH: <semantics><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><
+   /mrow><annotation
+   encoding="application/x-tex">y_{1},\ldots,y_{n}</annotation></semantics
+   > :MATH]
+   and with real coefficients
+   [MATH: <semantics><msub><mi>a</mi><mi>α</mi></msub><annotation
+   encoding="application/x-tex">a_{\alpha}</annotation></semantics> :MATH]
+   . Suppose
+   [MATH:
+   <semantics><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>m</mi></mr
+   ow><annotation encoding="application/x-tex">0\leq k\leq
+   m</annotation></semantics> :MATH]
+   and
+   [MATH: <semantics><msub><mi>P</mi><mi>k</mi></msub><annotation
+   encoding="application/x-tex">P_{k}</annotation></semantics> :MATH]
+   is the homogeneous polynomial of degree
+   [MATH: <semantics><mi>k</mi><annotation
+   encoding="application/x-tex">k</annotation></semantics> :MATH]
+   defined by
+   [MATH: <semantics><mrow><msub><mi>P</mi><mi>k</mi></msub><mrow><mo
+   stretchy="false">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow><mo rspace="0.111em">=</mo><munder><mo
+   movablelimits="false">∑</mo><mrow><mrow><mo
+   stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mi>k</mi></mrow></munder><msub
+   ><mi>a</mi><mi>α</mi></msub><msubsup><mi>y</mi><mn>1</mn><msub><mi>α</m
+   i><mn>1</mn></msub></msubsup><mo lspace="0em"
+   rspace="0em">⋯</mo><msubsup><mi>y</mi><mi>n</mi><msub><mi>α</mi><mi>n</
+   mi></msub></msubsup><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">P_{k}(y_{1},\ldots,y_{n})=\sum_{|\alpha|=k
+   }a_{\alpha}y_{1}^{\alpha_{1}}\cdots
+   y_{n}^{\alpha_{n}}.</annotation></semantics> :MATH]
+
+   Then we have
+   [MATH:
+   <semantics><mrow><mrow><mrow><munder><mi>max</mi><mrow><msub><mi>z</mi>
+   <mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>z</mi><mi>n</mi></
+   msub><mo>∈</mo><mi>𝔻</mi></mrow></mrow></munder><mo>⁡</mo><mrow><mo
+   stretchy="false">|</mo><mrow><msub><mi>P</mi><mi>m</mi></msub><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>z</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow></mrow><mo
+   stretchy="false">|</mo></mrow></mrow><mo>≤</mo><mrow><msup><mn>2</mn><m
+   row><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo lspace="0.222em"
+   rspace="0.222em">⋅</mo><mrow><munder><mi>max</mi><mrow><msub><mi>x</mi>
+   <mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>x</mi><mi>n</mi></
+   msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mo
+   lspace="0em">−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn></mrow><mo
+   stretchy="false">]</mo></mrow></mrow></mrow></munder><mo>⁡</mo><mrow><m
+   o stretchy="false">|</mo><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow></mrow><mo
+   stretchy="false">|</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow><an
+   notation
+   encoding="application/x-tex">\max_{z_{1},\ldots,z_{n}\in{\mathbb{D}}}|P
+   _{m}(z_{1},\ldots,z_{n})|\leq
+   2^{m-1}\cdot\max_{x_{1},\ldots,x_{n}\in[-1,1]}|P(x_{1},\ldots,x_{n})|,<
+   /annotation></semantics> :MATH]
+
+   where
+   [MATH: <semantics><mi>𝔻</mi><annotation
+   encoding="application/x-tex">{\mathbb{D}}</annotation></semantics>
+   :MATH]
+   stands for the closed unit disk in
+   [MATH: <semantics><mi>ℂ</mi><annotation
+   encoding="application/x-tex">{\mathbb{C}}</annotation></semantics>
+   :MATH]
+   . In particular, if
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   is homogeneous, then
+   [MATH:
+   <semantics><mrow><mrow><mrow><munder><mi>max</mi><mrow><msub><mi>z</mi>
+   <mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>z</mi><mi>n</mi></
+   msub><mo>∈</mo><mi>𝔻</mi></mrow></mrow></munder><mo>⁡</mo><mrow><mo
+   stretchy="false">|</mo><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>z</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow></mrow><mo
+   stretchy="false">|</mo></mrow></mrow><mo>≤</mo><mrow><msup><mn>2</mn><m
+   row><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo lspace="0.222em"
+   rspace="0.222em">⋅</mo><mrow><munder><mi>max</mi><mrow><msub><mi>x</mi>
+   <mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>x</mi><mi>n</mi></
+   msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mo
+   lspace="0em">−</mo><mn>1</mn></mrow><mo>,</mo><mn>1</mn></mrow><mo
+   stretchy="false">]</mo></mrow></mrow></mrow></munder><mo>⁡</mo><mrow><m
+   o stretchy="false">|</mo><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><
+   mo stretchy="false">)</mo></mrow></mrow><mo
+   stretchy="false">|</mo></mrow></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\max_{z_{1},\ldots,z_{n}\in{\mathbb{D}}}|P
+   (z_{1},\ldots,z_{n})|\leq
+   2^{m-1}\cdot\max_{x_{1},\ldots,x_{n}\in[-1,1]}|P(x_{1},\ldots,x_{n})|.<
+   /annotation></semantics> :MATH]
+
+   Moreover, the constant
+   [MATH:
+   <semantics><msup><mn>2</mn><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><
+   /msup><annotation
+   encoding="application/x-tex">2^{m-1}</annotation></semantics> :MATH]
+   cannot be replaced by any smaller one.
+
+   Let
+   [MATH: <semantics><mrow><mi>P</mi><mo lspace="0.278em"
+   rspace="0.278em">:</mo><mrow><mrow><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mi>ℝ</mi><mo>)</mo></mrow></mrow><m
+   o stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow><annotation
+   encoding="application/x-tex">P:\ell_{\infty}^{n}\left(\mathbb{R}\right)
+   \rightarrow\mathbb{R}</annotation></semantics> :MATH]
+   be an
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -homogeneous polynomial
+   [MATH: <semantics><mrow><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle
+   displaystyle="false"><munder><mo
+   movablelimits="false">∑</mo><mrow><mrow><mo>|</mo><mi>α</mi><mo>|</mo><
+   /mrow><mo>=</mo><mi>m</mi></mrow></munder></mstyle><mrow><msub><mi>a</m
+   i><mi>α</mi></msub><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>x</mi><mi>α</mi></msup></mrow></mrow></mro
+   w><annotation
+   encoding="application/x-tex">P(x)={\textstyle\sum\limits_{\left|\alpha\
+   right|=m}}a_{\alpha}x^{\alpha}</annotation></semantics> :MATH]
+
+   and consider the complexification
+   [MATH: <semantics><mrow><msub><mi>P</mi><mi>ℂ</mi></msub><mo
+   lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mi>ℂ</mi><mo>)</mo></mrow></mrow><m
+   o stretchy="false">→</mo><mi>ℂ</mi></mrow></mrow><annotation
+   encoding="application/x-tex">P_{\mathbb{C}}:\ell_{\infty}^{n}\left(\mat
+   hbb{C}\right)\rightarrow\mathbb{C}</annotation></semantics> :MATH]
+   of
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   given by
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>P</mi><mi>ℂ</mi></msub><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mi>z</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><munder><mo
+   movablelimits="false">∑</mo><mrow><mrow><mo>|</mo><mi>α</mi><mo>|</mo><
+   /mrow><mo>=</mo><mi>m</mi></mrow></munder><mrow><msub><mi>a</mi><mi>α</
+   mi></msub><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>z</mi><mi>α</mi></msup></mrow></mrow></mro
+   w><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">P_{\mathbb{C}}(z)={\sum\limits_{\left|\alp
+   ha\right|=m}}a_{\alpha}z^{\alpha}.</annotation></semantics> :MATH]
+
+   From Theorem 2.1 above we know that
+   (2.1)
+   [MATH:
+   <semantics><mrow><mrow><mrow><mo>‖</mo><msub><mi>P</mi><mi>ℂ</mi></msub
+   ><mo>‖</mo></mrow><mo>≤</mo><mrow><msup><mn>2</mn><mrow><mi>m</mi><mo>−
+   </mo><mn>1</mn></mrow></msup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>‖</mo><mi>P</mi><mo>‖</mo></mrow></mrow></
+   mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\left\|P_{\mathbb{C}}\right\|\leq
+   2^{m-1}\left\|P\right\|.</annotation></semantics> :MATH]
+
+   Thus, since the complex polynomial Bohnenblust–Hille inequality is
+   subexponential, for all
+   [MATH:
+   <semantics><mrow><mi>ε</mi><mo>></mo><mn>0</mn></mrow><annotation
+   encoding="application/x-tex">\varepsilon>0</annotation></semantics>
+   :MATH]
+   there exists
+   [MATH:
+   <semantics><mrow><msub><mi>C</mi><mi>ε</mi></msub><mo>></mo><mn>1</mn><
+   /mrow><annotation
+   encoding="application/x-tex">C_{\varepsilon}>1</annotation></semantics>
+   :MATH]
+   such that
+   (2.2)
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>=</mo><msub><mrow><mo
+   stretchy="false">|</mo><msub><mi>P</mi><mi>ℂ</mi></msub><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≤</mo><mrow><msub><mi>C</mi><mi>ε</mi></msub
+   ><mo lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>
+   ε</mi></mrow><mo>)</mo></mrow><mi>m</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>‖</mo><msub><mi>P</mi><mi>ℂ</mi></msub><mo
+   >‖</mo></mrow></mrow></mrow><annotation
+   encoding="application/x-tex">|P|_{\frac{2m}{m+1}}=|P_{\mathbb{C}}|_{\fr
+   ac{2m}{m+1}}\leq
+   C_{\varepsilon}\left(1+\varepsilon\right)^{m}\left\|P_{\mathbb{C}}\righ
+   t\|</annotation></semantics> :MATH]
+
+   and combining (2.1) and (2.2) we conclude that
+   [MATH: <semantics><mrow><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><msubsup><mi>D</mi><mrow><m
+   i>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>m</mi>
+   </mrow></msubsup></mrow></mrow><mo>≤</mo><mn>2</mn></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}\leq
+   2.</annotation></semantics> :MATH]
+
+   As we mentioned earlier, Bayart et al. proved, recently, that the
+   complex polynomial Bohnenblust–Hille inequality is subexponential (see
+   [1]). The following result shows that the exponential growth of the
+   real polynomial BH inequality is sharp in a very strong way: the
+   exponential bound can not be reduced in any sense, i.e., there is an
+   exponential lower bound for
+   [MATH:
+   <semantics><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m</mi></mrow><
+   /msub><annotation
+   encoding="application/x-tex">D_{\mathbb{R},m}</annotation></semantics>
+   :MATH]
+   which holds for every
+   [MATH:
+   <semantics><mrow><mi>m</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">m\in\mathbb{N}</annotation></semantics>
+   :MATH]
+   .
+
+Theorem 2.2.
+
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m</mi></
+   mrow></msub><mo>></mo><msup><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mroot><mn>3</mn><mn>4</mn></mroot></mrow><msqrt><mn
+   >5</mn></msqrt></mfrac><mo>)</mo></mrow><mi>m</mi></msup><mo>></mo><msu
+   p><mrow><mo>(</mo><mn>1.17</mn><mo>)</mo></mrow><mi>m</mi></msup></mrow
+   ><annotation
+   encoding="application/x-tex">D_{\mathbb{R},m}>\left(\frac{2\sqrt[4]{3}}
+   {\sqrt{5}}\right)^{m}>\left(1.17\right)^{m}</annotation></semantics>
+   :MATH]
+
+   for all positive integers
+   [MATH:
+   <semantics><mrow><mi>m</mi><mo>></mo><mn>1</mn></mrow><annotation
+   encoding="application/x-tex">m>1</annotation></semantics> :MATH]
+   .
+
+Proof.
+
+   Let
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   be an even integer. Consider the
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   -homogeneous polynomial
+   [MATH: <semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>m</mi></msub><
+   mo
+   stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo>(</mo><msubsup><mi>x<
+   /mi><mn>1</mn><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>x</mi><mn>2</m
+   n><mn>2</mn></msubsup><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub><msub>
+   <mi>x</mi><mn>2</mn></msub><mo>)</mo></mrow><mrow><mo>(</mo><msubsup><m
+   i>x</mi><mn>3</mn><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>x</mi><mn>
+   4</mn><mn>2</mn></msubsup><mo>+</mo><msub><mi>x</mi><mn>3</mn></msub><m
+   sub><mi>x</mi><mn>4</mn></msub><mo>)</mo></mrow><mo lspace="0em"
+   rspace="0em">⋯</mo><mrow><mo>(</mo><msubsup><mi>x</mi><mrow><mi>m</mi><
+   mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>x<
+   /mi><mi>m</mi><mn>2</mn></msubsup><mo>+</mo><msub><mi>x</mi><mrow><mi>m
+   </mi><mo>−</mo><mn>1</mn></mrow></msub><msub><mi>x</mi><mi>m</mi></msub
+   ><mo>)</mo></mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">R_{m}(x_{1},\ldots,x_{m})=\left(x_{1}^{2}-
+   x_{2}^{2}+x_{1}x_{2}\right)\left(x_{3}^{2}-x_{4}^{2}+x_{3}x_{4}\right)\
+   cdots\left(x_{m-1}^{2}-x_{m}^{2}+x_{m-1}x_{m}\right).</annotation></sem
+   antics> :MATH]
+
+   Since
+   [MATH:
+   <semantics><mrow><mrow><mrow><mo>‖</mo><msub><mi>R</mi><mn>2</mn></msub
+   ><mo>‖</mo></mrow><mo>=</mo><mrow><mn>5</mn><mo>/</mo><mn>4</mn></mrow>
+   </mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\left\|R_{2}\right\|=5/4,</annotation></se
+   mantics> :MATH]
+   it is simple to see that
+   [MATH:
+   <semantics><mrow><mrow><mrow><mo>‖</mo><msub><mi>R</mi><mi>m</mi></msub
+   ><mo>‖</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mn>5</mn><mo>/
+   </mo><mn>4</mn></mrow><mo>)</mo></mrow><mrow><mi>m</mi><mo>/</mo><mn>2<
+   /mn></mrow></msup></mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\left\|R_{m}\right\|=\left(5/4\right)^{m/2
+   }.</annotation></semantics> :MATH]
+
+   From the BH inequality for
+   [MATH: <semantics><msub><mi>R</mi><mi>m</mi></msub><annotation
+   encoding="application/x-tex">R_{m}</annotation></semantics> :MATH]
+   we have
+   [MATH: <semantics><mrow><mrow><msup><mrow><mo>(</mo><mrow><munder><mo
+   lspace="0em" movablelimits="false"
+   rspace="0em">∑</mo><mrow><mrow><mo>|</mo><mi>α</mi><mo>|</mo></mrow><mo
+   >=</mo><mi>m</mi></mrow></munder><msup><mrow><mo>|</mo><msub><mi>a</mi>
+   <mi>α</mi></msub><mo>|</mo></mrow><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msup></mrow><mo>)</mo></mrow><mfrac><mrow><mi>m</mi><
+   mo>+</mo><mn>1</mn></mrow><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></mfrac></msup><mo>≤</mo><mrow><msu
+   b><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m</mi></mrow></msub><mo
+   lspace="0em"
+   rspace="0em">​</mo><mrow><mo>‖</mo><msub><mi>R</mi><mi>m</mi></msub><mo
+   >‖</mo></mrow></mrow></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\left({\sum\limits_{\left|\alpha\right|=m}
+   }\left|a_{\alpha}\right|^{\frac{2m}{m+1}}\right)^{\frac{m+1}{2m}}\leq
+   D_{\mathbb{R},m}\left\|R_{m}\right\|,</annotation></semantics> :MATH]
+
+   that is,
+   [MATH:
+   <semantics><mrow><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m<
+   /mi></mrow></msub><mo>≥</mo><mfrac><msup><mrow><mo>(</mo><msup><mn>3</m
+   n><mfrac><mi>m</mi><mn>2</mn></mfrac></msup><mo>)</mo></mrow><mfrac><mr
+   ow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></mfrac></msup><msup><mrow><mo>(</m
+   o><mfrac><mn>5</mn><mn>4</mn></mfrac><mo>)</mo></mrow><mfrac><mi>m</mi>
+   <mn>2</mn></mfrac></msup></mfrac><mo>≥</mo><mfrac><msup><mrow><mo>(</mo
+   ><msqrt><mn>3</mn></msqrt><mo>)</mo></mrow><mfrac><mrow><mi>m</mi><mo>+
+   </mo><mn>1</mn></mrow><mn>2</mn></mfrac></msup><msup><mrow><mo>(</mo><m
+   frac><mn>5</mn><mn>4</mn></mfrac><mo>)</mo></mrow><mfrac><mi>m</mi><mn>
+   2</mn></mfrac></msup></mfrac><mo>></mo><msup><mrow><mo>(</mo><mfrac><mr
+   ow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mroot><mn>3</mn><mn>4</mn></mroot></mrow><msqrt><mn
+   >5</mn></msqrt></mfrac><mo>)</mo></mrow><mi>m</mi></msup></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{\mathbb{R},m}\geq\frac{\left(3^{\frac{m
+   }{2}}\right)^{\frac{m+1}{2m}}}{\left(\frac{5}{4}\right)^{\frac{m}{2}}}\
+   geq\frac{\left(\sqrt{3}\right)^{\frac{m+1}{2}}}{\left(\frac{5}{4}\right
+   )^{\frac{m}{2}}}>\left(\frac{2\sqrt[4]{3}}{\sqrt{5}}\right)^{m}.</annot
+   ation></semantics> :MATH]
+
+   Now let us suppose that
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   is odd. Keeping the previous notation, consider the
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   homogeneous polynomial
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>R</mi><mi>m</mi></msub><mo
+   lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo
+   >,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mn>2</mn><m
+   o lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></msub><mo>)</mo></mrow></mrow><mo>
+   =</mo><mrow><mrow><mrow><mo>(</mo><mrow><msub><mi>x</mi><mrow><mn>2</mn
+   ><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></msub><mo>+</mo><msub><mi>x</mi><m
+   row><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow></msub><
+   /mrow><mo>)</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><msub><mi>R</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn>
+   </mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo
+   >,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>m</mi><m
+   o>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow></mrow><mo>+</mo><mrow
+   ><mrow><mo>(</mo><mrow><msub><mi>x</mi><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><m
+   row><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mo>−</mo><mn>1</mn></mrow></msub><
+   /mrow><mo>)</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><msub><mi>R</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn>
+   </mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><msub><mi>x</mi><mi>m</mi></msub><mo
+   >,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mrow><mn>2<
+   /mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mo>−</mo><mn>2</mn></mrow></msub><
+   mo>)</mo></mrow></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">R_{m}\left(x_{1},...,x_{2m}\right)=\left(x
+   _{2m}+x_{2m-1}\right)R_{m-1}\left(x_{1},...,x_{m-1}\right)+\left(x_{2m}
+   -x_{2m-1}\right)R_{m-1}\left(x_{m},...,x_{2m-2}\right).</annotation></s
+   emantics> :MATH]
+
+   So we have
+   [MATH:
+   <semantics><mrow><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mi>m<
+   /mi></mrow></msub><mo>≥</mo><mfrac><msup><mrow><mo>(</mo><mrow><mn>4</m
+   n><mo lspace="0.222em"
+   rspace="0.222em">⋅</mo><msup><mn>3</mn><mfrac><mrow><mi>m</mi><mo>−</mo
+   ><mn>1</mn></mrow><mn>2</mn></mfrac></msup></mrow><mo>)</mo></mrow><mfr
+   ac><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></mfrac></msup><mrow><mn>2</mn><mo
+   lspace="0.222em"
+   rspace="0.222em">⋅</mo><msup><mrow><mo>(</mo><mfrac><mn>5</mn><mn>4</mn
+   ></mfrac><mo>)</mo></mrow><mfrac><mrow><mi>m</mi><mo>−</mo><mn>1</mn></
+   mrow><mn>2</mn></mfrac></msup></mrow></mfrac><mo>></mo><mrow><msup><mn>
+   2</mn><mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mfrac
+   ><mn>1</mn><mi>m</mi></mfrac></mrow></msup><mo lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><mroot><mn>3</mn><mn>4<
+   /mn></mroot><msqrt><mn>5</mn></msqrt></mfrac><mo>)</mo></mrow><mrow><mi
+   >m</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>></mo><msup><mrow><
+   mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mroot><mn>3</mn><mn>4</mn></mroot></mrow><msqrt><mn
+   >5</mn></msqrt></mfrac><mo>)</mo></mrow><mrow><mi>m</mi><mo>−</mo><mn>1
+   </mn></mrow></msup></mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{\mathbb{R},m}\geq\frac{\left(4\cdot
+   3^{\frac{m-1}{2}}\right)^{\frac{m+1}{2m}}}{2\cdot\left(\frac{5}{4}\righ
+   t)^{\frac{m-1}{2}}}>2^{m-1+\frac{1}{m}}\left(\frac{\sqrt[4]{3}}{\sqrt{5
+   }}\right)^{m-1}>\left(\frac{2\sqrt[4]{3}}{\sqrt{5}}\right)^{m-1}.</anno
+   tation></semantics> :MATH]
+
+   ∎
+
+3. The lower estimate
+
+   Using our previous results, in order to show that
+   [MATH: <semantics><mrow><mrow><mo
+   rspace="0.0835em">lim</mo><mrow><msub><mo lspace="0.0835em"
+   rspace="0.167em">sup</mo><mi>m</mi></msub><msubsup><mi>D</mi><mrow><mi>
+   ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>m</mi></
+   mrow></msubsup></mrow></mrow><mo>=</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}=2</anno
+   tation></semantics> :MATH]
+   , we just need the following theorem:
+
+Theorem 3.1.
+
+   If
+   [MATH:
+   <semantics><mrow><mi>k</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">k\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   is fixed, then
+   [MATH: <semantics><mrow><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><mrow><msubsup><mi>D</mi><m
+   row><mi>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>
+   m</mi></mrow></msubsup><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msup><mn>2</mn><mi>k</mi></msup><mo
+   stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>≥</mo><msup><mn>
+   2</mn><mrow><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>k</
+   mi></mrow></msup></mrow></msup></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}(2^{k})\
+   geq 2^{1-2^{-k}}.</annotation></semantics> :MATH]
+
+   Therefore,
+   [MATH: <semantics><mrow><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><msubsup><mi>D</mi><mrow><m
+   i>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>m</mi>
+   </mrow></msubsup></mrow></mrow><mo>≥</mo><mn>2</mn></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}\geq
+   2.</annotation></semantics> :MATH]
+
+Proof.
+
+   Consider the sequence of polynomials (with norm
+   [MATH: <semantics><mn>1</mn><annotation
+   encoding="application/x-tex">1</annotation></semantics> :MATH]
+   ) defined recursively by
+   [MATH: <semantics><mrow><msub><mi>Q</mi><mn>2</mn></msub><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub
+   ><mi>x</mi><mn>2</mn></msub><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\displaystyle
+   Q_{2}(x_{1},x_{2})</annotation></semantics> :MATH]
+   [MATH:
+   <semantics><mrow><mrow><mphantom></mphantom><mo>=</mo><mrow><msubsup><m
+   i>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>x</mi><mn>
+   2</mn><mn>2</mn></msubsup></mrow></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle=x_{1}^{2}-x_{2}^{2},</annota
+   tion></semantics> :MATH]
+   [MATH:
+   <semantics><mrow><msub><mi>Q</mi><msup><mn>2</mn><mi>m</mi></msup></msu
+   b><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   i>k</mi></msup></msub><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\displaystyle
+   Q_{2^{m}}(x_{1},\ldots,x_{2^{k}})</annotation></semantics> :MATH]
+   [MATH:
+   <semantics><mrow><mrow><mphantom></mphantom><mo>=</mo><mrow><mrow><msub
+   ><mi>Q</mi><msup><mn>2</mn><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><
+   /msup></msub><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   row><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup></msub><mo
+   stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><mrow><
+   msub><mi>Q</mi><msup><mn>2</mn><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mr
+   ow></msup></msub><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mrow><msup><mn>2</mn><mrow><mi>
+   m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mn>1</mn></mrow></ms
+   ub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   i>m</mi></msup></msub><mo
+   stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle=Q_{2^{m-1}}(x_{1},\ldots,x_{
+   2^{m-1}})^{2}-Q_{2^{m-1}}(x_{2^{m-1}+1},\ldots,x_{2^{m}})^{2}.</annotat
+   ion></semantics> :MATH]
+
+   Let us show (by induction on
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   ) that
+   (3.1)
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><msubsup><mi>Q</mi><msup><mn>2</mn><mi>m</mi></m
+   sup><mi>n</mi></msubsup><mo stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub><mo>≥</mo><msup><mrow><mo>(</mo><mfra
+   c><msup><mn>2</mn><mi>n</mi></msup><mrow><mi>n</mi><mo>+</mo><mn>1</mn>
+   </mrow></mfrac><mo>)</mo></mrow><mrow><msup><mn>2</mn><mi>m</mi></msup>
+   <mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation
+   encoding="application/x-tex">|Q_{2^{m}}^{n}|_{\infty}\geq\left(\frac{2^
+   {n}}{n+1}\right)^{2^{m}-1}</annotation></semantics> :MATH]
+
+   for every natural number
+   [MATH: <semantics><mi>n</mi><annotation
+   encoding="application/x-tex">n</annotation></semantics> :MATH]
+   . The case
+   [MATH:
+   <semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation
+   encoding="application/x-tex">m=1</annotation></semantics> :MATH]
+   comes from the fact that, since
+   [MATH: <semantics><mrow><mrow><msup><mn>2</mn><mi>n</mi></msup><mo
+   rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false"
+   rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi
+   ></munderover><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow></mrow
+   ><mo>≤</mo><mrow><mrow><mo
+   stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><msub><mtext>max</mtext><mrow><mn>0</mn><mo>≤</mo><m
+   i>k</mi><mo>≤</mo><mi>n</mi></mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow></mrow
+   ></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle
+   2^{n}=\sum_{k=0}^{n}\binom{n}{k}\leq(n+1)\text{max}_{0\leq k\leq
+   n}\binom{n}{k},</annotation></semantics> :MATH]
+
+   the
+   [MATH: <semantics><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><annotation
+   encoding="application/x-tex">2n</annotation></semantics> :MATH]
+   -homogeneous polynomial
+   [MATH:
+   <semantics><msubsup><mi>Q</mi><mn>2</mn><mi>n</mi></msubsup><annotation
+   encoding="application/x-tex">Q_{2}^{n}</annotation></semantics> :MATH]
+   admits the following estimate:
+   (3.2)
+   [MATH: <semantics><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><msubsup><mi>Q</mi><mn>2</mn><mi>n</mi></msubsup
+   ><mo stretchy="false">|</mo></mrow><mfrac><mrow><mn>4</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mrow><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac>
+   </msub><mo>≥</mo><msub><mrow><mo
+   stretchy="false">|</mo><msubsup><mi>Q</mi><mn>2</mn><mi>n</mi></msubsup
+   ><mo stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub><mo>=</mo><mrow><msub><mtext>max</mte
+   xt><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow></msu
+   b><mo lspace="0em" rspace="0em">​</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow></mrow
+   ><mo>≥</mo><mfrac><msup><mn>2</mn><mi>n</mi></msup><mrow><mi>n</mi><mo>
+   +</mo><mn>1</mn></mrow></mfrac></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">|Q_{2}^{n}|_{\frac{4n}{2n+1}}\geq|Q_{2}^{n
+   }|_{\infty}=\text{max}_{0\leq k\leq
+   n}\binom{n}{k}\geq\frac{2^{n}}{n+1}.</annotation></semantics> :MATH]
+
+   Let us now suppose that equation (3.1) holds for some
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   , and notice that
+   (3.3)
+   [MATH:
+   <semantics><mrow><mrow><mrow><msubsup><mi>Q</mi><mrow><msup><mn>2</mn><
+   mi>m</mi></msup><mo>+</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub
+   ><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   row><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msup></msub><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false"
+   rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi
+   ></munderover><mrow><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mo
+   lspace="0em" rspace="0em">​</mo><msup><mrow><mo
+   stretchy="false">(</mo><mrow><mo
+   lspace="0em">−</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mro
+   w></msup><mo lspace="0em"
+   rspace="0em">​</mo><msubsup><mi>Q</mi><msup><mn>2</mn><mi>m</mi></msup>
+   <mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow></msubsup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   i>m</mi></msup></msub><mo stretchy="false">)</mo></mrow><mo
+   lspace="0em"
+   rspace="0em">​</mo><msubsup><mi>Q</mi><msup><mn>2</mn><mi>m</mi></msup>
+   <mrow><mn>2</mn><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo
+   stretchy="false">)</mo></mrow></mrow></msubsup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>x</mi><mrow><msup><mn>2</mn><mi>m</mi>
+   </msup><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><msup><mn>2</mn><m
+   row><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msup></msub><mo
+   stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">Q_{2^{m}+1}^{n}(x_{1},x_{2},\ldots,x_{2^{m
+   +1}})=\sum_{k=0}^{n}\binom{n}{k}(-1)^{n-k}Q_{2^{m}}^{2k}(x_{1},\ldots,x
+   _{2^{m}})Q_{2^{m}}^{2(n-k)}(x_{2^{m}+1},\ldots,x_{2^{m+1}}).</annotatio
+   n></semantics> :MATH]
+
+   The coefficient of maximal absolute value in a product of polynomials
+   in disjoint sets of variables is the product of the respective maximal
+   coefficients, thus
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><msubsup><mi>Q</mi><mrow><msup><mn>2</mn><mi>m</
+   mi></msup><mo>+</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo
+   stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub><mo>=</mo><msub><mrow><mrow><msub><mt
+   ext>max</mtext><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi>
+   </mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">|</mo><msub><mrow><msubsup><mi>Q</mi><msup><mn>2</mn><
+   mi>m</mi></msup><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow></msubsup><mo
+   stretchy="false">|</mo></mrow><mi mathvariant="normal">∞</mi></msub><mo
+   stretchy="false">|</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><msubsup><mi>Q</mi><msup><mn>2</mn><mi>m</mi></msup>
+   <mrow><mn>2</mn><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo
+   stretchy="false">)</mo></mrow></mrow></msubsup></mrow><mo
+   stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub><mo>≥</mo><mrow><msub><mtext>max</mte
+   xt><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow></msu
+   b><mo lspace="0em" rspace="0em">​</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><msup><mn>2</mn><mrow><
+   mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></msup><mrow><mrow><mo
+   stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mrow><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>−</mo><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow><
+   mo
+   stretchy="false">)</mo></mrow></mrow></mfrac><mo>)</mo></mrow><mrow><ms
+   up><mn>2</mn><mi>m</mi></msup><mo>−</mo><mn>1</mn></mrow></msup></mrow>
+   </mrow><annotation
+   encoding="application/x-tex">|Q_{2^{m}+1}^{n}|_{\infty}=\text{max}_{0\l
+   eq k\leq
+   n}\binom{n}{k}|Q_{2^{m}}^{2k}|_{\infty}|Q_{2^{m}}^{2(n-k)}|_{\infty}\ge
+   q\text{max}_{0\leq k\leq
+   n}\binom{n}{k}\left(\frac{2^{2n}}{(2k+1)(2n-2k+1)}\right)^{2^{m}-1}</an
+   notation></semantics> :MATH]
+
+   by the induction hypothesis. However,
+   [MATH: <semantics><mrow><mrow><mrow><mo
+   stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mrow><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>−</mo><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow><
+   mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><msup><mrow><mo
+   stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><annotation
+   encoding="application/x-tex">(2k+1)(2n-2k+1)\leq(n+1)^{2}</annotation><
+   /semantics> :MATH]
+   when
+   [MATH:
+   <semantics><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mr
+   ow><annotation encoding="application/x-tex">0\leq k\leq
+   n</annotation></semantics> :MATH]
+   ; thus
+   [MATH: <semantics><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><msubsup><mi>Q</mi><msup><mn>2</mn><mrow><mi>m</
+   mi><mo>+</mo><mn>1</mn></mrow></msup><mi>n</mi></msubsup><mo
+   stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub><mo>≥</mo><mrow><msup><mrow><mo>(</mo
+   ><mfrac><msup><mn>2</mn><mi>n</mi></msup><mrow><mi>n</mi><mo>+</mo><mn>
+   1</mn></mrow></mfrac><mo>)</mo></mrow><mrow><msup><mn>2</mn><mrow><mi>m
+   </mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>2</mn></mrow></msu
+   p><mo lspace="0em"
+   rspace="0em">​</mo><msub><mtext>max</mtext><mrow><mn>0</mn><mo>≤</mo><m
+   i>k</mi><mo>≤</mo><mi>n</mi></mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow></mrow
+   ><mo>≥</mo><msup><mrow><mo>(</mo><mfrac><msup><mn>2</mn><mi>n</mi></msu
+   p><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow><
+   mrow><msup><mn>2</mn><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msup>
+   <mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">|Q_{2^{m+1}}^{n}|_{\infty}\geq\left(\frac{
+   2^{n}}{n+1}\right)^{2^{m+1}-2}\text{max}_{0\leq k\leq
+   n}\binom{n}{k}\geq\left(\frac{2^{n}}{n+1}\right)^{2^{m+1}-1},</annotati
+   on></semantics> :MATH]
+
+   by equation (3.2). Therefore, the formula given in (3.1) holds for
+   every positive integer
+   [MATH: <semantics><mi>m</mi><annotation
+   encoding="application/x-tex">m</annotation></semantics> :MATH]
+   .
+
+   Next, every
+   [MATH: <semantics><mi>n</mi><annotation
+   encoding="application/x-tex">n</annotation></semantics> :MATH]
+   -homogeneous polynomial
+   [MATH: <semantics><mi>P</mi><annotation
+   encoding="application/x-tex">P</annotation></semantics> :MATH]
+   admits the clear estimate given by
+   [MATH: <semantics><mrow><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≥</mo><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo stretchy="false">|</mo></mrow><mi
+   mathvariant="normal">∞</mi></msub></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">|P|_{\frac{2n}{n+1}}\geq|P|_{\infty},</ann
+   otation></semantics> :MATH]
+
+   from which equation (3.1) yields that
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo>
+   <mrow><mi>n</mi><mo lspace="0em"
+   rspace="0em">​</mo><msup><mn>2</mn><mi>m</mi></msup></mrow></mrow></msu
+   b><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><msup><mn>2</mn><mi>m</mi></msup><mo
+   stretchy="false">)</mo></mrow></mrow><mo>≥</mo><msup><mrow><mo>(</mo><m
+   frac><msup><mn>2</mn><mi>n</mi></msup><mrow><mi>n</mi><mo>+</mo><mn>1</
+   mn></mrow></mfrac><mo>)</mo></mrow><mrow><msup><mn>2</mn><mi>m</mi></ms
+   up><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>,</mo></mrow><annotatio
+   n
+   encoding="application/x-tex">D_{{\mathbb{R}},n2^{m}}(2^{m})\geq\left(\f
+   rac{2^{n}}{n+1}\right)^{2^{m}-1},</annotation></semantics> :MATH]
+
+   and the proof follows straightforwardly. ∎
+
+4. Contractivity in finite dimensions: complex versus real scalars
+
+   We remark that the complex polynomial Bohnenblust-Hille constants for
+   polynomials on
+   [MATH: <semantics><msup><mi>ℂ</mi><mi>n</mi></msup><annotation
+   encoding="application/x-tex">{\mathbb{C}}^{n}</annotation></semantics>
+   :MATH]
+   , with
+   [MATH:
+   <semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">n\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   fixed, are contractive.
+
+Proposition 4.1.
+
+   For all
+   [MATH:
+   <semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">n\geq 2</annotation></semantics> :MATH]
+   the complex polynomial BH inequality is contractive in
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\mathcal{P}(^{m}\ell_{\infty}^{n}).</annot
+   ation></semantics> :MATH]
+   More precisely, for all fixed
+   [MATH:
+   <semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation
+   encoding="application/x-tex">n\in{\mathbb{N}}</annotation></semantics>
+   :MATH]
+   , there are constants
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mi>m</mi></msub><mo>,</mo></mrow><ann
+   otation encoding="application/x-tex">D_{m},</annotation></semantics>
+   :MATH]
+   with
+   [MATH: <semantics><mrow><mrow><msub><mo>lim</mo><mrow><mi>m</mi><mo
+   stretchy="false">→</mo><mi
+   mathvariant="normal">∞</mi></mrow></msub><msub><mi>D</mi><mi>m</mi></ms
+   ub></mrow><mo>=</mo><mn>1</mn></mrow><annotation
+   encoding="application/x-tex">\lim_{m\rightarrow\infty}D_{m}=1</annotati
+   on></semantics> :MATH]
+   , so that
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></msub><mo>≤</mo><mrow><msub><mi>D</mi><mi>m</mi></msub
+   ><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow></mrow><annotation
+   encoding="application/x-tex">|P|_{\frac{2m}{m+1}}\leq
+   D_{m}\|P\|</annotation></semantics> :MATH]
+
+   for all
+   [MATH: <semantics><mrow><mi>P</mi><mo>∈</mo><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">P\in\mathcal{P}(^{m}\ell_{\infty}^{n}).</a
+   nnotation></semantics> :MATH]
+
+Proof.
+
+   Let
+   [MATH: <semantics><mrow><mrow><mi>P</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>z</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><msub><mo>∑</mo><mrow><mrow><mo
+   stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mi>m</mi></mrow></msub><mrow><
+   msub><mi>c</mi><mi>α</mi></msub><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>z</mi><mi>α</mi></msup></mrow></mrow></mro
+   w><annotation
+   encoding="application/x-tex">P(z)=\sum_{|\alpha|=m}c_{\alpha}z^{\alpha}
+   </annotation></semantics> :MATH]
+   and
+   [MATH: <semantics><mrow><mrow><mi>f</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>t</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>P</mi><mo>⁡</m
+   o><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo
+   lspace="0em"
+   rspace="0em">​</mo><msub><mi>t</mi><mn>1</mn></msub></mrow></msup><mo>,
+   </mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msup><mi>e</mi><mrow><mi>i</mi><m
+   o lspace="0em"
+   rspace="0em">​</mo><msub><mi>t</mi><mi>n</mi></msub></mrow></msup><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><msub><mo>∑</mo><mrow><mrow><mo
+   stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mi>m</mi></mrow></msub><mrow><
+   msub><mi>c</mi><mi>α</mi></msub><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>e</mi><mrow><mi>i</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>α</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>t</mi></mrow></msup></mrow></mrow></mrow><annota
+   tion
+   encoding="application/x-tex">f(t)=P(e^{it_{1}},\ldots,e^{it_{n}})=\sum_
+   {|\alpha|=m}c_{\alpha}e^{i\alpha t}</annotation></semantics> :MATH]
+   , where
+   [MATH: <semantics><mrow><mi>t</mi><mo>=</mo><mrow><mo
+   stretchy="false">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><mi
+   mathvariant="normal">…</mi><mo>,</mo><msub><mi>t</mi><mi>n</mi></msub><
+   mo
+   stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msu
+   p></mrow><annotation
+   encoding="application/x-tex">t=(t_{1},\ldots,t_{n})\in{\mathbb{R}}^{n}<
+   /annotation></semantics> :MATH]
+   [MATH: <semantics><mrow><mi>α</mi><mo>∈</mo><msup><mrow><mo
+   stretchy="false">(</mo><mrow><mi>ℕ</mi><mo>∪</mo><mrow><mo
+   stretchy="false">{</mo><mn>0</mn><mo
+   stretchy="false">}</mo></mrow></mrow><mo
+   stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><annotation
+   encoding="application/x-tex">\alpha\in({\mathbb{N}}\cup\{0\})^{n}</anno
+   tation></semantics> :MATH]
+   and
+   [MATH: <semantics><mrow><mrow><mi>α</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>t</mi></mrow><mo>=</mo><mrow><mrow><msub><mi>α</
+   mi><mn>1</mn></msub><mo lspace="0em"
+   rspace="0em">​</mo><msub><mi>t</mi><mn>1</mn></msub></mrow><mo>+</mo><m
+   o lspace="0em"
+   rspace="0em">⋯</mo><mo>+</mo><mrow><msub><mi>α</mi><mi>n</mi></msub><mo
+   lspace="0em"
+   rspace="0em">​</mo><msub><mi>t</mi><mi>n</mi></msub></mrow></mrow></mro
+   w><annotation encoding="application/x-tex">\alpha
+   t=\alpha_{1}t_{1}+\cdots+\alpha_{n}t_{n}</annotation></semantics>
+   :MATH]
+   . . Observe that if
+   [MATH: <semantics><mrow><mo stretchy="false">‖</mo><mi>f</mi><mo
+   stretchy="false">‖</mo></mrow><annotation
+   encoding="application/x-tex">\|f\|</annotation></semantics> :MATH]
+   denotes the sup norm of
+   [MATH: <semantics><mi>f</mi><annotation
+   encoding="application/x-tex">f</annotation></semantics> :MATH]
+   on
+   [MATH: <semantics><mrow><mo stretchy="false">[</mo><mrow><mrow><mo
+   lspace="0em">−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi></mrow><mo
+   stretchy="false">]</mo></mrow><annotation
+   encoding="application/x-tex">[-\pi,\pi]</annotation></semantics> :MATH]
+   , by the Maximum Modulus Principle
+   [MATH: <semantics><mrow><mrow><mo stretchy="false">‖</mo><mi>f</mi><mo
+   stretchy="false">‖</mo></mrow><mo>=</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\|f\|=\|P\|</annotation></semantics>
+   :MATH]
+   . Also, due to the orthogonality of the system
+   [MATH: <semantics><mrow><mo
+   stretchy="false">{</mo><msup><mi>e</mi><mrow><mi>i</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>s</mi></mrow></msup><mo lspace="0.278em"
+   rspace="0.278em">:</mo><mrow><mi>k</mi><mo>∈</mo><mi>ℤ</mi></mrow><mo
+   stretchy="false">}</mo></mrow><annotation
+   encoding="application/x-tex">\{e^{iks}:k\in{\mathbb{Z}}\}</annotation><
+   /semantics> :MATH]
+   in
+   [MATH: <semantics><mrow><msup><mi>L</mi><mn>2</mn></msup><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mo
+   lspace="0em">−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi></mrow><mo
+   stretchy="false">]</mo></mrow><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">L^{2}([-\pi,\pi])</annotation></semantics>
+   :MATH]
+   we have
+   [MATH: <semantics><mrow><mrow><msup><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><m
+   o stretchy="false">‖</mo><mi>f</mi><mo
+   stretchy="false">‖</mo></mrow><mn>2</mn></msup><mo>≥</mo><mrow><mfrac><
+   mn>1</mn><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>π</mi></mrow></mfrac><mo lspace="0em"
+   rspace="0em">​</mo><mrow><msubsup><mo
+   rspace="0em">∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mi>π</mi></msubsup
+   ><mrow><msup><mrow><mo
+   stretchy="false">|</mo><mrow><mi>f</mi><mo>⁡</mo><mrow><mo
+   stretchy="false">(</mo><mi>t</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo
+   stretchy="false">|</mo></mrow><mn>2</mn></msup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo
+   rspace="0.111em">=</mo><mrow><munder><mo movablelimits="false"
+   rspace="0em">∑</mo><mrow><mrow><mo stretchy="false">|</mo><mi>α</mi><mo
+   stretchy="false">|</mo></mrow><mo>=</mo><mi>m</mi></mrow></munder><msup
+   ><mrow><mo stretchy="false">|</mo><msub><mi>c</mi><mi>α</mi></msub><mo
+   stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow><mo>=</mo><msubsu
+   p><mrow><mo stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mrow><mo>
+   ,</mo></mrow><annotation
+   encoding="application/x-tex">\|P\|^{2}=\|f\|^{2}\geq\frac{1}{2\pi}\int_
+   {-\pi}^{\pi}|f(t)|^{2}dt=\sum_{|\alpha|=m}|c_{\alpha}|^{2}=|P|_{2}^{2},
+   </annotation></semantics> :MATH]
+
+   from which
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mn>2</mn></msub><mo>≤</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow><annotation
+   encoding="application/x-tex">|P|_{2}\leq\|P\|</annotation></semantics>
+   :MATH]
+   . On the other hand it is well known that in
+   [MATH: <semantics><msup><mi>𝕂</mi><mi>d</mi></msup><annotation
+   encoding="application/x-tex">{\mathbb{K}}^{d}</annotation></semantics>
+   :MATH]
+   we have
+   (4.1)
+   [MATH: <semantics><mrow><mo fence="false" stretchy="false">|</mo><mo
+   lspace="0em" rspace="0em">⋅</mo><mo fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mi>q</mi></msub><mo
+   lspace="0.167em" rspace="0em">≤</mo><mo fence="false"
+   stretchy="false">|</mo><mo lspace="0em" rspace="0em">⋅</mo><mo
+   fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mi>p</mi></msub><mo
+   lspace="0.167em">≤</mo><mi>d</mi><msup><mrow></mrow><mrow><mfrac><mn>1<
+   /mn><mi>p</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>q</mi></mfrac></mr
+   ow></msup><mo fence="false" stretchy="false">|</mo><mo lspace="0em"
+   rspace="0em">⋅</mo><mo fence="false" rspace="0.167em"
+   stretchy="false">|</mo><msub><mrow></mrow><mi>q</mi></msub><mo>,</mo></
+   mrow><annotation
+   encoding="application/x-tex">|\cdot|_{q}\leq|\cdot|_{p}\leq
+   d^{\frac{1}{p}-\frac{1}{q}}|\cdot|_{q},</annotation></semantics> :MATH]
+
+   for all
+   [MATH:
+   <semantics><mrow><mn>1</mn><mo>≤</mo><mi>p</mi><mo>≤</mo><mi>q</mi></mr
+   ow><annotation encoding="application/x-tex">1\leq p\leq
+   q</annotation></semantics> :MATH]
+   . Since the dimension of
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>n</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\mathcal{P}(^{m}\ell_{\infty}^{n})</annota
+   tion></semantics> :MATH]
+   is
+   [MATH: <semantics><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><m
+   o>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></m
+   frac><mo>)</mo></mrow><annotation
+   encoding="application/x-tex">{\binom{{m+n-1}}{{n-1}}}</annotation></sem
+   antics> :MATH]
+   , the result follows from
+   [MATH: <semantics><mrow><msub><mrow><mo
+   stretchy="false">|</mo><mi>P</mi><mo
+   stretchy="false">|</mo></mrow><mn>2</mn></msub><mo>≤</mo><mrow><mo
+   stretchy="false">‖</mo><mi>P</mi><mo
+   stretchy="false">‖</mo></mrow></mrow><annotation
+   encoding="application/x-tex">|P|_{2}\leq\|P\|</annotation></semantics>
+   :MATH]
+   by setting in (4.1)
+   [MATH: <semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow><mrow><mi>m</mi><mo>+</mo><mn>1</mn
+   ></mrow></mfrac></mrow><annotation
+   encoding="application/x-tex">p=\frac{2m}{m+1}</annotation></semantics>
+   :MATH]
+   ,
+   [MATH:
+   <semantics><mrow><mi>q</mi><mo>=</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">q=2</annotation></semantics> :MATH]
+   and
+   [MATH: <semantics><mrow><mi>d</mi><mo>=</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><m
+   o>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></m
+   frac><mo>)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">d={\binom{{m+n-1}}{{n-1}}}</annotation></s
+   emantics> :MATH]
+   . So
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mi>m</mi></msub><mo>=</mo><msup><mrow
+   ><mo>(</mo><mfrac
+   linethickness="0pt"><mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><m
+   o>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></m
+   frac><mo>)</mo></mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></mfrac></msup></mrow><annotation
+   encoding="application/x-tex">D_{m}={{\binom{{m+n-1}}{{n-1}}}}^{\frac{1}
+   {2m}}</annotation></semantics> :MATH]
+   and since
+   [MATH: <semantics><mrow><mrow><mrow><munder><mo
+   movablelimits="false">lim</mo><mrow><mi>m</mi><mo
+   stretchy="false">→</mo><mi
+   mathvariant="normal">∞</mi></mrow></munder><msup><mrow><mo
+   lspace="0em">(</mo><mfrac
+   linethickness="0pt"><mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><m
+   o>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></m
+   frac><mo>)</mo></mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>m</mi></mrow></mfrac></msup></mrow><mo>=</mo><mn
+   >1</mn></mrow><mo>,</mo></mrow><annotation
+   encoding="application/x-tex">\lim_{m\rightarrow\infty}{{\binom{{m+n-1}}
+   {{n-1}}}}^{\frac{1}{2m}}=1,</annotation></semantics> :MATH]
+
+   the proof is done. ∎
+
+   The next result shows that the real version of Proposition 4.1 is not
+   valid; we stress that Theorem 2.2 cannot be used here since it uses
+   polynomials in a growing number of variables.
+
+Theorem 4.2.
+
+   For all fixed positive integer
+   [MATH:
+   <semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">N\geq 2</annotation></semantics> :MATH]
+   , the exponentiality of the real polynomial Bohnenblust-Hille
+   inequality in
+   [MATH: <semantics><mrow><mi
+   class="ltx_font_mathcaligraphic">𝒫</mi><mrow><msup><mo
+   stretchy="false">(</mo><mi>m</mi></msup><msubsup><mi
+   mathvariant="normal">ℓ</mi><mi
+   mathvariant="normal">∞</mi><mi>N</mi></msubsup><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\mathcal{P}(^{m}\ell_{\infty}^{N})</annota
+   tion></semantics> :MATH]
+   cannot be improved. More precisely,
+   [MATH: <semantics><mrow><mrow><mo movablelimits="false"
+   rspace="0.0835em">lim</mo><mrow><munder><mo lspace="0.0835em"
+   movablelimits="false"
+   rspace="0.167em">sup</mo><mi>m</mi></munder><mrow><msubsup><mi>D</mi><m
+   row><mi>ℝ</mi><mo>,</mo><mi>m</mi></mrow><mrow><mn>1</mn><mo>/</mo><mi>
+   m</mi></mrow></msubsup><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mi>N</mi><mo
+   stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>≥</mo><mroot><mn
+   >27</mn><mn>8</mn></mroot><mo>≈</mo><mn>1.5098</mn></mrow><annotation
+   encoding="application/x-tex">\lim\sup_{m}D_{\mathbb{R},m}^{1/m}(N)\geq\
+   sqrt[8]{27}\approx 1.5098</annotation></semantics> :MATH]
+
+   for all
+   [MATH:
+   <semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">N\geq 2</annotation></semantics> :MATH]
+   .
+
+Proof.
+
+   If suffices to set
+   [MATH:
+   <semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation
+   encoding="application/x-tex">N=2</annotation></semantics> :MATH]
+   and prove that, for
+   [MATH: <semantics><mrow><mi>m</mi><mo>=</mo><mrow><mn>4</mn><mo
+   lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow></mrow><annotation
+   encoding="application/x-tex">m=4n</annotation></semantics> :MATH]
+   ,
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo>
+   <mrow><mn>4</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><m
+   o>≥</mo><mrow><mroot><mfrac><mn>4</mn><mrow><mi>m</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>π</mi></mrow></mfrac><mn>4</mn></mroot><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mroot><mn>27</mn><mn>8</mn></
+   mroot><mo>)</mo></mrow><mi>m</mi></msup></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{{\mathbb{R}},4n}\left(2\right)\geq\sqrt
+   [4]{\frac{4}{m\pi}}\left(\sqrt[8]{27}\right)^{m}.</annotation></semanti
+   cs> :MATH]
+
+   Consider the
+   [MATH: <semantics><mn>4</mn><annotation
+   encoding="application/x-tex">4</annotation></semantics> :MATH]
+   -homogeneous polynomial given by
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>P</mi><mn>4</mn></msub><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo
+   stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x<
+   /mi><mn>3</mn></msup><mo lspace="0em"
+   rspace="0em">​</mo><mi>y</mi></mrow><mo>−</mo><mrow><mi>x</mi><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mi>y</mi><mn>3</mn></msup></mrow></mrow><mo>=
+   </mo><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>y</mi><mo
+   lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo
+   ><msup><mi>y</mi><mn>2</mn></msup></mrow><mo
+   stretchy="false">)</mo></mrow></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">P_{4}(x,y)=x^{3}y-xy^{3}=xy(x^{2}-y^{2}).<
+   /annotation></semantics> :MATH]
+
+   A straightforward calculation shows that
+   [MATH: <semantics><msub><mi>P</mi><mn>4</mn></msub><annotation
+   encoding="application/x-tex">P_{4}</annotation></semantics> :MATH]
+   attains its norm at
+   [MATH: <semantics><mrow><mo>±</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mo
+   lspace="0em">±</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac></
+   mrow><mo>,</mo><mn>1</mn><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\pm(\pm\frac{1}{\sqrt{3}},1)</annotation><
+   /semantics> :MATH]
+   and
+   [MATH: <semantics><mrow><mo>±</mo><mrow><mo
+   stretchy="false">(</mo><mn>1</mn><mo rspace="0em">,</mo><mrow><mo
+   lspace="0em">±</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac></
+   mrow><mo stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\pm(1,\pm\frac{1}{\sqrt{3}})</annotation><
+   /semantics> :MATH]
+   and that
+   [MATH: <semantics><mrow><mrow><mo
+   stretchy="false">‖</mo><msub><mi>P</mi><mn>4</mn></msub><mo
+   stretchy="false">‖</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac></
+   mrow><annotation
+   encoding="application/x-tex">\|P_{4}\|=\frac{2\sqrt{3}}{9}</annotation>
+   </semantics> :MATH]
+   . On the other hand
+   [MATH: <semantics><mrow><mrow><mo
+   stretchy="false">‖</mo><msubsup><mi>P</mi><mn>4</mn><mi>n</mi></msubsup
+   ><mo
+   stretchy="false">‖</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mfrac><m
+   row><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup></mrow><annotation
+   encoding="application/x-tex">\|P_{4}^{n}\|=\left(\frac{2\sqrt{3}}{9}\ri
+   ght)^{n}</annotation></semantics> :MATH]
+   and
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>P</mi><mn>4</mn></msub><mo
+   lspace="0em" rspace="0em">​</mo><msup><mrow><mo
+   stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo
+   stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mo>=</mo><mrow><
+   msup><mi>x</mi><mi>n</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>y</mi><mi>n</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><mrow><munderover><mo movablelimits="false"
+   rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi
+   ></munderover><mrow><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mo
+   lspace="0em" rspace="0em">​</mo><msup><mrow><mo
+   stretchy="false">(</mo><mrow><mo
+   lspace="0em">−</mo><mn>1</mn></mrow><mo
+   stretchy="false">)</mo></mrow><mi>k</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>x</mi><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>k</mi></mrow></msup><mo lspace="0em"
+   rspace="0em">​</mo><msup><mi>y</mi><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo
+   stretchy="false">)</mo></mrow></mrow></msup></mrow></mrow></mrow></mrow
+   ><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">P_{4}(x,y)^{n}=x^{n}y^{n}\sum_{k=0}^{n}{\b
+   inom{{n}}{{k}}}(-1)^{k}x^{2k}y^{2(n-k)}.</annotation></semantics>
+   :MATH]
+
+   Hence, if
+   [MATH: <semantics><mi>𝐚</mi><annotation
+   encoding="application/x-tex">\mathbf{a}</annotation></semantics> :MATH]
+   is the vector of the coefficients of
+   [MATH: <semantics><msub><mi>P</mi><mn>4</mn></msub><annotation
+   encoding="application/x-tex">P_{4}</annotation></semantics> :MATH]
+   , using the fact that
+   [MATH: <semantics><mrow><mo fence="false" stretchy="false">|</mo><mo
+   lspace="0em" rspace="0em">⋅</mo><mo fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mfrac><mrow><mn>8</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mrow><mrow><mn>4</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac>
+   </msub><mo lspace="0.167em" rspace="0em">≥</mo><mo fence="false"
+   stretchy="false">|</mo><mo lspace="0em" rspace="0em">⋅</mo><mo
+   fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mn>2</mn></msub></mrow><anno
+   tation
+   encoding="application/x-tex">|\cdot|_{\frac{8n}{4n+1}}\geq|\cdot|_{2}</
+   annotation></semantics> :MATH]
+   (notice that here
+   [MATH: <semantics><mrow><mo fence="false" stretchy="false">|</mo><mo
+   lspace="0em" rspace="0em">⋅</mo><mo fence="false"
+   stretchy="false">|</mo><msub><mrow></mrow><mn>2</mn></msub></mrow><anno
+   tation
+   encoding="application/x-tex">|\cdot|_{2}</annotation></semantics>
+   :MATH]
+   is the Euclidian norm), we have
+   [MATH:
+   <semantics><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo><mrow><mn>4<
+   /mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo
+   stretchy="false">)</mo></mrow></mrow><annotation
+   encoding="application/x-tex">\displaystyle
+   D_{{\mathbb{R}},4n}(2)</annotation></semantics> :MATH]
+   [MATH: <semantics><mrow><mphantom></mphantom><mo>≥</mo><mstyle
+   displaystyle="true"><mfrac><msub><mrow><mo
+   stretchy="false">|</mo><mi>𝐚</mi><mo
+   stretchy="false">|</mo></mrow><mfrac><mrow><mn>8</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mrow><mrow><mn>4</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac>
+   </msub><msup><mrow><mo
+   stretchy="false">‖</mo><msub><mi>P</mi><mn>4</mn></msub><mo
+   stretchy="false">‖</mo></mrow><mi>n</mi></msup></mfrac></mstyle><mo>=</
+   mo><mstyle
+   displaystyle="true"><mfrac><msup><mrow><mo>[</mo><mrow><msubsup><mo
+   lspace="0em"
+   rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi
+   ></msubsup><msup><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mfrac
+   ><mrow><mn>8</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mrow><mrow><mn>4</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac>
+   </msup></mrow><mo>]</mo></mrow><mfrac><mrow><mrow><mn>4</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow><mrow><m
+   n>8</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></mfrac></msup><msup><mrow><mo>(</m
+   o><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup></mfrac></mstyle></mrow><annotation
+   encoding="application/x-tex">\displaystyle\geq\frac{|\mathbf{a}|_{\frac
+   {8n}{4n+1}}}{\|P_{4}\|^{n}}=\frac{\left[\sum_{k=0}^{n}{\binom{{n}}{{k}}
+   }^{\frac{8n}{4n+1}}\right]^{\frac{4n+1}{8n}}}{\left({\frac{2\sqrt{3}}{9
+   }}\right)^{n}}</annotation></semantics> :MATH]
+   (4.2)
+   [MATH: <semantics><mrow><mrow><mphantom></mphantom><mo>≥</mo><mstyle
+   displaystyle="true"><mfrac><msup><mrow><mo>[</mo><mrow><msubsup><mo
+   lspace="0em"
+   rspace="0em">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi
+   ></msubsup><msup><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mn>2<
+   /mn></msup></mrow><mo>]</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><
+   /msup><msup><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup></mfrac></mstyle><mo>=</mo><mstyle
+   displaystyle="true"><mfrac><msqrt><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mi>n</mi></mfrac><mo>)</mo></mrow>
+   </msqrt><msup><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup></mfrac></mstyle><mo>=</mo><mstyle
+   displaystyle="true"><mfrac><msqrt><mrow><mrow><mo
+   stretchy="false">(</mo><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo
+   stretchy="false">)</mo></mrow><mo>!</mo></mrow></msqrt><mrow><mrow><msu
+   p><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>!</mo></mrow></mfrac></mstyle><
+   /mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\displaystyle\geq\frac{\left[\sum_{k=0}^{n
+   }{\binom{{n}}{{k}}}^{2}\right]^{\frac{1}{2}}}{\left({\frac{2\sqrt{3}}{9
+   }}\right)^{n}}=\frac{\sqrt{\binom{{2n}}{{n}}}}{\left({\frac{2\sqrt{3}}{
+   9}}\right)^{n}}=\frac{\sqrt{(2n)!}}{\left({\frac{2\sqrt{3}}{9}}\right)^
+   {n}n!}.</annotation></semantics> :MATH]
+
+   Above we have used the well known formula
+   [MATH: <semantics><mrow><mrow><mrow><munderover><mo
+   movablelimits="false">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+   <mi>n</mi></munderover><msup><mrow><mo lspace="0em">(</mo><mfrac
+   linethickness="0pt"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mn>2<
+   /mn></msup></mrow><mo>=</mo><mrow><mo>(</mo><mfrac
+   linethickness="0pt"><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mi>n</mi></mfrac><mo>)</mo></mrow>
+   </mrow><mo lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">\sum_{k=0}^{n}{\binom{{n}}{{k}}}^{2}={\bin
+   om{{2n}}{{n}}}.</annotation></semantics> :MATH]
+
+   Using Stirling’s approximation formula
+   [MATH:
+   <semantics><mrow><mrow><mi>n</mi><mo>!</mo></mrow><mo>∼</mo><mrow><msqr
+   t><mrow><mn>2</mn><mo lspace="0em" rspace="0em">​</mo><mi>π</mi><mo
+   lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow></msqrt><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></m
+   frac><mo>)</mo></mrow><mi>n</mi></msup></mrow></mrow><annotation
+   encoding="application/x-tex">n!\sim\sqrt{2\pi
+   n}\left(\frac{n}{e}\right)^{n}</annotation></semantics> :MATH]
+
+   in (4.2) we have, for
+   [MATH: <semantics><mrow><mi>m</mi><mo>=</mo><mrow><mn>4</mn><mo
+   lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow></mrow><annotation
+   encoding="application/x-tex">m=4n</annotation></semantics> :MATH]
+   ,
+   [MATH:
+   <semantics><mrow><mrow><mrow><msub><mi>D</mi><mrow><mi>ℝ</mi><mo>,</mo>
+   <mi>m</mi></mrow></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo
+   stretchy="false">(</mo><mn>2</mn><mo
+   stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>D</mi><m
+   row><mi>ℝ</mi><mo>,</mo><mrow><mn>4</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></mrow></msub><mo lspace="0em"
+   rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo
+   stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mfrac><msqrt><mrow><mro
+   w><mo stretchy="false">(</mo><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo
+   stretchy="false">)</mo></mrow><mo>!</mo></mrow></msqrt><mrow><mrow><msu
+   p><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mo>!</mo></mrow></mfrac><mo>∼</mo>
+   <mfrac><msqrt><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mrow><mi>n</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>π</mi></mrow></msqrt><mo lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo
+   lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow><mi>e</mi></mfrac><mo>)</mo></mrow>
+   <mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></msup></mrow></msqrt><mrow><msup><
+   mrow><mo>(</mo><mfrac><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mn>3</mn></msqrt></mrow><mn>9</mn></mfrac><m
+   o>)</mo></mrow><mi>n</mi></msup><mo lspace="0em"
+   rspace="0em">​</mo><msqrt><mrow><mn>2</mn><mo lspace="0em"
+   rspace="0em">​</mo><mi>π</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>n</mi></mrow></msqrt><mo lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></m
+   frac><mo>)</mo></mrow><mi>n</mi></msup></mrow></mfrac><mo>=</mo><mrow><
+   mroot><mfrac><mn>4</mn><mrow><mi>m</mi><mo lspace="0em"
+   rspace="0em">​</mo><mi>π</mi></mrow></mfrac><mn>4</mn></mroot><mo
+   lspace="0em"
+   rspace="0em">​</mo><msup><mrow><mo>(</mo><mroot><mn>27</mn><mn>8</mn></
+   mroot><mo>)</mo></mrow><mi>m</mi></msup></mrow></mrow><mo
+   lspace="0em">.</mo></mrow><annotation
+   encoding="application/x-tex">D_{{\mathbb{R}},m}(2)=D_{{\mathbb{R}},4n}(
+   2)\geq\frac{\sqrt{(2n)!}}{\left({\frac{2\sqrt{3}}{9}}\right)^{n}n!}\sim
+   \frac{\sqrt{2\sqrt{n\pi}\left(\frac{2n}{e}\right)^{2n}}}{\left({\frac{2
+   \sqrt{3}}{9}}\right)^{n}\sqrt{2\pi
+   n}\left(\frac{n}{e}\right)^{n}}=\sqrt[4]{\frac{4}{m\pi}}\left(\sqrt[8]{
+   27}\right)^{m}.</annotation></semantics> :MATH]
+
+   ∎
+
+References
+
+     * [1] F. Bayart, D. Pellegrino, and J. B. Seoane-Sepúlveda The bohr
+       radius of the
+       [MATH: <semantics><mi>n</mi><annotation
+       encoding="application/x-tex">n</annotation></semantics> :MATH]
+       -dimensional polydisk is equivalent to
+       [MATH: <semantics><msqrt><mrow><mrow><mo
+       stretchy="false">(</mo><mrow><mi>log</mi><mo
+       lspace="0.167em">⁡</mo><mi>n</mi></mrow><mo
+       stretchy="false">)</mo></mrow><mo>/</mo><mi>n</mi></mrow></msqrt><a
+       nnotation encoding="application/x-tex">\sqrt{(\log
+       n)/n}</annotation></semantics> :MATH]
+       . arXiv:1310.2834 [math.FA]. Cited by: §1, §1, §2, §2.
+     * [2] F. Bayart (2002) Hardy spaces of dirichlet series and their
+       composition operators. Monatsh. Math. 136 (), pp. 203–236. Cited
+       by: §2.
+     * [3] H. P. Boas and D. Khavinson (1997) Bohr’s power series theorem
+       in several variables. Proc. Amer. Math. Soc. 125 (10),
+       pp. 2975–2979. Cited by: §1.
+     * [4] H. F. Bohnenblust and E. Hille (1931) On the absolute
+       convergence of dirichlet series. Ann. of Math. (2) 32 (3),
+       pp. 600–622. Cited by: §1.
+     * [5] A. Defant, L. Frerick, J. Ortega-Cerdà, M. Ounaïes, and K. Seip
+       (2011) The bohnenblust-hille inequality for homogeneous polynomials
+       is hypercontractive. Ann. of Math. (2) 174 (1), pp. 485–497. Cited
+       by: §1.
+     * [6] J. Diestel, H. Jarchow, and A. Tonge (1995) Absolutely summing
+       operators. Cambridge Studies in Advanced Mathematics, Vol. 43,
+       Cambridge University Press. Cited by: §1.
+     * [7] D. Diniz, G. A. Muñoz-Fernández, D. Pellegrino, and J. B.
+       Seoane-Sepúlveda (2014) Lower bounds for the constants in the
+       bohnenblust-hille inequality: the case of real scalars. Proc. Amer.
+       Math. Soc. 142, pp. 575–580. Cited by: §1.
+     * [8] D. Diniz, G. A. Muñoz-Fernández, D. Pellegrino, and J. B.
+       Seoane-Sepúlveda (2012) The asymptotic growth of the constants in
+       the bohnenblust-hille inequality is optimal. J. Funct. Anal. 263,
+       pp. 415–428. Cited by: §1.
+     * [9] A. Montanaro (2012) Some applications of hypercontractive
+       inequalities in quantum information theory. J. Math. Physics 53.
+       Cited by: §1.
+     * [10] D. Nuñez-Alarcón (2013) A note on the polynomial
+       bohnenblust-hille inequality. J. Math. Anal. Appl. 407 (1),
+       pp. 179–181. Cited by: §1.
+     * [11] D. Pellegrino and J. B. Seoane-Sepúlveda (2012) New upper
+       bounds for the constants in the bohnenblust-hille inequality. J.
+       Math. Anal. Appl. 386 (1), pp. 300–307. Cited by: §1.
+     * [12] H. Queffélec (1995) H. bohr’s vision of ordinary dirichlet
+       series: old and new results. J. Anal. 3, pp. 43–60. Cited by: §1.
+     * [13] C. Visser (1946) A generalization of tchebychef’s inequality
+       to polynomials in more than one variable. Nederl. Akad. Wetensch.,
+       Proc. 49, pp. 455–456 = Indagationes Math. 8, 310–311 (1946). Cited
+       by: Theorem 2.1, §2.
+
+   ◄ ar5iv homepage Feeling
+   lucky? Conversion
+   report Report
+   an issue View original
+   on arXiv►
+   Copyright Privacy Policy
+   Generated by LaTeXML Mascot Sammy oxide

@@ -1,0 +1,1303 @@
+\section{From Diagrams to Asymptotic GFOM Dynamics}
+\label{sec:dynamics}
+
+
+The traffic distribution captures the limiting behavior of all scalar-valued,
+permutation-invariant polynomials. In this section, we show how to leverage this
+information to derive the limiting empirical laws of vector-valued,
+permutation-invariant polynomials. Our main application is a description of the
+limiting dynamics of GFOM.
+
+
+We will mostly work under the assumption that the input matrices $\bA = \bA^{(n)}$ satisfy the strong cactus property, which we recall is the statement that $\frac{1}{n}\E_\bA z_{\alpha}(\bA) \to 0$ as $n \to \infty$ for all non-cactus $\alpha$ (i.e., all $\alpha \in \cA \setminus \cC$, a statement about \emph{scalar} graph polynomials).
+In~\Cref{sec:dynamics-reg} we will briefly suspend this assumption to discuss punctured matrices, so as to connect to the setting of~\Cref{sec:universality}.
+
+We tackle two tasks in this section:
+\begin{enumerate}
+    \item First, we study the joint asymptotic limit of the empirical distributions of the vector diagrams $\bmz_\al(\bA)$ over $\al \in \calA_1$. 
+    Assuming the strong cactus property, we show that only the small subset of \emph{treelike} $\al \in \cT_1$ are asymptotically nonzero in the $z$-basis, in a sense to be made precise below.
+    We then show that the asymptotic algebra of the treelike diagrams is isomorphic to a \emph{Wick algebra}, an algebra defined by a family of Gaussian random variables.
+    This will give a precise version of \Cref{prop:convergence-distribution}.
+    \item Second, we work with the asymptotic limit of treelike diagrams to identify a generalized Onsager correction, derive a treelike Approximate Message Passing algorithm, and prove its state evolution over arbitrary input matrices having the strong cactus property and a limiting diagonal distribution.
+    This will give a precise version of \Cref{thm:intro-onsager}.
+\end{enumerate}
+
+\subsection{Asymptotic limit of the vector diagrams}
+\label{sec:vector-limit}
+
+In this section, given a family $(X_i)_{i\in I}$ and
+$J\subseteq I$, we will write as a shortcut $X_J = (X_j)_{j\in J}$. 
+
+Recall that $\cC_1$ denotes the set of rooted cactuses and $\cT_1 \subseteq \cA_1$ denotes the set of rooted trees with hanging cactuses.
+We call the diagrams in $\cT_1$ \emph{treelike}, and we call \emph{Gaussian trees} the subset of diagrams $\cG_1 \subseteq \cT_1$ such that the root has degree exactly $1$ after removing hanging cactuses.
+
+\begin{definition}[Type]
+    For each $\tau\in\cT_1$, let
+    $\type(\tau) \in \N^{\cG_1\cup \calC_1}$, where $\type(\tau)_\alpha$ count the
+    number of copies of $\alpha\in \calG_1\cup \calC_1$ attached to the root of $\tau$,
+    with the additional convention that
+    $\type(\tau)_\alpha=0$ for all
+    $\alpha\in\calG_1$ that has cactuses hanging at the root.
+\end{definition}
+
+The following theorem identifies the limiting distribution of $\bz_{\calA_1}(\bA)$ under the strong cactus property.
+We refer the reader to~\Cref{sec:convergence-process} for the definition of convergence in distribution for random elements indexed by countably infinite index sets.
+
+\begin{theorem}
+\label{thm:convergence-distribution}
+    Assume that $\bA=\bA^{(n)}$ satisfies~\cref{eq:tightnessNorm}, has the strong cactus property, and a limiting diagonal distribution.
+    Then,
+    \[
+        \samp(\bmz_{\cA_1}(\bA)) \tod Z_{\cA_1}^{\infty}\,,
+    \]
+    where $Z_{\calA_1}^{\infty} \in \R^{\calA_1}$ is a random variable satisfying the following properties:
+    \begin{enumerate}
+        \item $Z_{\alpha}^\infty = 0$ for all non-treelike $\alpha$.
+
+        \item Conditioned on $Z^\infty_{\calC_1}$, $Z^\infty_{\calG_1}$ is a centered
+        Gaussian process with covariance $\bm \Sigma^\infty$ from~\cref{eq:covariance}.
+        
+        \item Let $\He$ denote the Wick product (\Cref{def:wick}). Then
+        for every $\tau\in\calT_1$,
+        \[
+            Z^\infty_\tau
+            = \He_{\type(\tau)}(Z^\infty_{\calG_1}\,;\,\bm \Sigma^\infty)\cdot \prod_{\sigma\in \calC_1} (Z^\infty_{\sig})^{\type(\tau)_\sigma}\,.
+        \]
+    \end{enumerate}
+\end{theorem}
+
+\Cref{thm:convergence-distribution} shows how
+the limiting algebra $Z^\infty_{\calA_1}$
+of permutation-invariant, vector-valued polynomials in
+$\bA$ can be derived from $Z^\infty_{\calC_1}$.
+Although we have not specified the description of the law of $Z^\infty_{\calC_1}$, it is fully
+determined by the limiting diagonal distribution of $\bA$. For example, when $\bA$ further
+satisfies the
+{\em factorizing} strong cactus property, $Z^\infty_{\calC_1}$ is deterministic:
+
+\begin{proposition}
+    \label{prop:factorizing-deterministic}
+    If $\bA$ satisfies the factorizing strong 
+    cactus property and~\cref{eq:tightnessNorm},
+    then the conclusion of~\Cref{thm:convergence-distribution} holds with the additional property that for every
+    $\sigma\in\calC_1$,
+    \[
+        Z^\infty_{\sigma} = \prod_{\rho\in\cyc(\sigma)} \left(\lim_{n\to\infty} \frac 1n \E z_\rho(\bA)\right)\,.
+    \]
+\end{proposition}
+
+\begin{proof}
+    Let $\sigma\in\calC_1$.
+    The first moment of
+    $\samp(\bz_\sigma(\bA))$ is
+    \begin{align}
+        \E \samp(\bz_\sigma(\bA)) = \frac 1n \sum_{i=1}^n \E_\bA \bz_\sigma(\bA)[i] = \frac 1n \E_\bA z_{\sigma_0}(\bA)\,,\label{eq:first-prop53}
+    \end{align}
+    where $\sigma_0$ is the unrooted version of $\sigma$. As $n\to\infty$,~\cref{eq:first-prop53} converges to the deterministic
+    constant
+    \[
+        \kappa_{\sigma_0} \defeq \lim_{n\to\infty} \frac 1n \E_\bA z_{\sigma_0}(\bA) = \prod_{\rho\in\cyc(\sigma_0)} \left(\lim_{n\to\infty} \frac 1n \E z_\rho(\bA)\right)
+    \]
+    by the factorizing cactus property.
+    
+    We now switch to the second
+    moment,
+    \[
+        \E \samp(\bz_\sigma(\bA))^2 =  \frac 1n \E_\bA \sum_{i=1}^n  \bz_\sigma(\bA)[i]^2\,.
+    \]
+    Expand the scalar polynomial $\sum_{i=1}^n \bz_\sigma(\bA)[i]^2$
+    in the $z$-basis. The support of that
+    expansion is
+    the set of diagrams that can be
+    obtained by grafting two copies
+    of $\sigma$ at the root and merging
+    pairs of vertices across the two
+    different copies. By the strong cactus property, it suffices to find
+    which cactuses can be obtained in
+    this way. By~\Cref{lem:prod-cactus-cactus}, the only
+    cactus that can occur in this way
+    has no merging, and it contributes
+    $\kappa_{\sig_0}^2$ by the factorizing cactus property.
+    Thus,
+    \[
+        \E \samp(z_\sig(\bA))^2 = \kappa_{\sig_0}^2 + o(1) = \left(\E \samp(z_\sig(\bA)\right)^2 + o(1)\,.
+    \]
+
+    We showed that $\samp (z_\sigma(\bA))$
+    converges to the desired 
+    deterministic quantity in expectation,
+    and furthermore that
+    its variance converges to $0$.
+    This implies that it converges to
+    the constant in distribution. By
+    unicity of the limit in distribution,
+    $Z_\sigma^\infty$
+    equals that constant almost surely.
+\end{proof}
+
+However, if we drop the factorizing cactus property assumption,
+the variables $Z^\infty_{\calC_1}$ may no longer be deterministic. 
+For example, this can be the case
+when $\bA$ is a block-structured matrix as
+in~\Cref{sec:wigner-block}:
+ 
+ \begin{example}\label{ex:block-structured}
+    Let $\bm A_1^{(n)}$ and $\bm A_2^{(n)}$
+    be two $n\times n$ matrices
+    satisfying the assumptions of~\Cref{thm:convergence-distribution}. Define
+    the $2n\times 2n$ matrix,
+    \[
+        \bmA^{(2n)} = \begin{bmatrix} \bmA_1^{(n)} & \bm 0\\\bm 0 & \bmA_2^{(n)} \end{bmatrix}
+    \]
+    From the block-diagonal structure, for any $\alpha\in \calA_1$,
+    \[
+        \bmz_{\alpha}(\bmA)[i] = \begin{cases} \bmz_{\alpha}(\bmA_1)[i] & \text{if $i\in [n]$}\\
+        \bmz_{\alpha}(\bmA_2)[i-n] & \text{if $i\in [2n]\setminus [n]$}\end{cases}
+    \]
+    Hence, the law of $Z^\infty_{\calC_1}(\bmA)$ is a
+    uniform mixture of the law of $Z^\infty_{\calC_1}(\bmA_1)$
+    and that of $Z^\infty_{\calC_1}(\bmA_2)$.
+\end{example}
+
+\noindent We will prove a generalization of~\Cref{ex:block-structured} later; see~\Cref{lem:block-matrix-cactus-limits}.
+
+In~\Cref{ex:block-structured}, the randomness of $Z^\infty_{\calC_1}$
+may be viewed as coming solely from the $\samp(\cdot)$ operator,
+but this is not always the case.
+For instance, our model also captures orthogonally invariant distributions
+that do not satisfy the traffic concentration property:
+
+\begin{example}\label{ex:finetti}
+    Let $(\lambda_n)_{n\ge 1}$
+    be an exchangeable sequence of random variables in $[-1,1]$ and consider
+    \[\bA^{(n)} = (\bQ^{(n)})^\top \diag(\lambda_1, \ldots, \lambda_n) \bQ^{(n)}\,,\]
+    for Haar-distributed matrices $\bQ^{(n)} \in O(n)$, independent from $(\lambda_n)$. By de Finetti's
+    theorem, there exists a latent random
+    probability measure $\mu$ almost
+    surely supported on $[-1,1]$ such that
+    conditionally on $\mu$, $\lambda_1,\lambda_2,\ldots$ are i.i.d.\ with common law $\mu$.
+    By~\Cref{thm:moments}, $\bA^{(n)}$ satisfies the strong
+    cactus property conditionally on
+    $\mu$, so it also satisfies the strong
+    cactus property unconditionally.
+
+    Applying~\Cref{thm:convergence-distribution} and \Cref{prop:factorizing-deterministic},
+    we get that conditionally on $\mu$,
+    $\samp(z_{\calC_1}(\bA))$ converges in
+    distribution to
+    \begin{align}
+        \left(\prod_{\rho\in\cyc(\sigma)} \kappa_{|\rho|}(\mu)\right)_{\sigma\in \calC_1}\,,\label{eq:random-cumulants}
+    \end{align}
+    where $(\kappa_q(\mu))_{q\ge 1}$
+    are the free cumulants of $\mu$.
+    Therefore, {unconditionally}, 
+    $\samp(z_{\calC_1}(\bA))$ converges
+    in distribution to the {\em random}
+    quantity~\cref{eq:random-cumulants}.
+\end{example}
+
+\noindent Note that \Cref{ex:block-structured,ex:finetti} do not contradict~\Cref{prop:factorizing-deterministic} because in these
+examples,
+$\bA^{(n)}$
+typically does not 
+satisfy the factorizing
+cactus property.
+
+\subsubsection{Non-treelike diagrams are asymptotically negligible}
+\label{sec:treelike}
+
+The remainder of~\Cref{sec:vector-limit} is dedicated to
+the proof of~\Cref{thm:convergence-distribution}. In the whole proof, we drop the dependence
+of $z_\alpha$ and $w_\alpha$ on $\bA$ 
+to lighten notation.
+We start by proving that
+non-treelike diagrams are negligible.
+
+\begin{lemma}
+    \label{lem:non-treelike}
+    Suppose that $\bA$ satisfies the
+    strong cactus property. Then for each non-treelike $\alpha$,
+    \[
+        \samp(\bz_\alpha)\overset{L^2}{\longrightarrow} 0\,.
+    \]
+\end{lemma}
+
+\begin{proof}
+    By definition, we have
+    \begin{align*}
+        \E \samp(\bz_\alpha)^2 &= \frac 1n \sum_{i=1}^n \E \left[\left(\bz_\alpha^{ 2}\right)[i]\right]
+    \intertext{By~\Cref{claim:only-trees}, we can expand $\bz_\alpha^{ 2}$ in the
+    $\bz$-basis to obtain, for some constant coefficients
+    $c_\beta$}
+        &=  \frac 1 n \sum_{i=1}^n  \sum_{\beta\in \calA_1\setminus \calT_1} c_\beta \E \bz_\beta[i]\\
+        &= \frac 1n \sum_{\beta\in \calA_0\setminus \calT_0} c_\beta' \E z_\beta
+    \end{align*}
+    for some other constant coefficients $c_\beta'$. Since no diagram in
+    $\calA_0\setminus \calT_0$ is a cactus, by the strong
+    cactus property, we get $\E \samp(\bz_\alpha)^2\underset{n\to\infty}\longrightarrow 0$, as desired.
+\end{proof}
+
+
+
+\subsubsection{Asymptotic limit of the treelike diagrams}
+\label{sec:asymptotic-space}
+
+Next, we analyze the treelike diagrams. All results in~\Cref{sec:asymptotic-space} are purely
+combinatorial, meaning that they hold for arbitrary
+$\bA\in\R^{n\times n}_\sym$.
+
+The covariance of treelike diagrams is
+defined in terms of {\em homeomorphic
+matchings} between them. We start by defining this new concept.
+
+\begin{definition}[Core]
+    Let $\tau\in\calT_1$.
+    Define $\textnormal{core}(\tau)$ to be
+    the rooted tree obtained from
+    $\tau$ by
+    \begin{enumerate}
+        \item Removing all hanging cactuses.
+        \item Removing all non-root
+        degree-2 vertices and the two edges they are incident with, and adding back a new edge between their two neighbors.
+    \end{enumerate}
+\end{definition}
+\noindent
+Note that the vertex set $V(\core(\tau))$ may be identified with a subset of $V(\tau)$, even though the second rule may lead to edges being present in $\core(\tau)$ that do not exist in $\tau$.
+
+\begin{definition}[Homeomorphic matchings]\label{def:homeomorphic}
+    Let $\tau_1,\tau_2\in\calT_1$. We
+    say that a partial matching
+    $P\subseteq V(\tau_1)\times V(\tau_2)$ of $\tau_1$ and $\tau_2$ is
+    {\em homeomorphic} if
+    \begin{enumerate}
+        \item $(\textnormal{root}(\tau_1),\textnormal{root}(\tau_2))\in P$.
+        \item Restricted to $V(\textnormal{core}(\tau_1))\times V(\textnormal{core}(\tau_2))$, $P$ is a rooted graph isomorphism between $\textnormal{core}(\tau_1)$ and $\textnormal{core}(\tau_2)$.
+
+        \item Let $\{u,u'\}\in E(\textnormal{core}(\tau_1))$,
+        let $(u=u_1, \ldots, u_k=u')$ be the path between $u$ and $u'$ in $\tau_1$. Let $v=P(u)$,  $v'=P(u')$, and $(v=v_1,\ldots,v_\ell=v')$ be the
+        path between $v$ and $v'$ in $\tau_2$.
+        Then there is no matching edge between
+        $\{u_1, \ldots, u_k,v_1,\ldots,v_\ell\}$
+        and its complement.
+        Moreover,
+        for all $(u_i,v_j)\in P$ and $(u_{i'},v_{j'})\in P$, we have $i\le i' \iff j\le j'$ (the matching restricted to the vertices in the paths is non-crossing).
+
+        \item No inner vertices from the 
+        hanging cactuses are matched.
+    \end{enumerate}
+    We denote by $H(\tau_1,\tau_2)$ the set
+    of homeomorphic matchings between
+    $\tau_1$ and $\tau_2$. 
+\end{definition}
+
+\noindent This definition
+is motivated by the following lemma 
+stating that, when 
+computing the covariance of two treelike
+diagrams, the matchings giving rise to
+cactuses are precisely the homeomorphic ones.
+
+\begin{lemma}
+    \label{lem:homeomorphic}
+    Let $\tau_1,\tau_2\in\calT_1$ and $\tau = \tau_1 \sqcup \tau_2$.
+    For any matching $P\subseteq V(\tau_1)\times V(\tau_2)$ such that $(\roott(\tau_1), \roott(\tau_2)) \in P$, we have $\tau_P\in\calC_1$ if and only
+    if $P\in H(\tau_1,\tau_2)$.
+\end{lemma}
+
+\noindent In particular, if $\tau_1, \tau_2 \in \cC_1$, only the matching $P = \{(\roott(\tau_1), \roott(\tau_2))\}$ creates a cactus $\tau_P$.
+We are now ready to describe the algebra of
+treelike diagrams:
+
+\begin{lemma}\label{lem:product-gaussian}
+    For all $\gamma_1,\ldots,\gamma_\ell\in\calG_1\cup \calC_1$,
+    \begin{align}
+        \prod_{j=1}^\ell \bz_{\gamma_j} - \sum_{M\in\calM(\ell)} \sum_{\substack{P_{uv}\in H(\gamma_u,\gamma_v)\\\forall uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \,\oplus\, \bigoplus_{u\notin M} \gamma_u} \in \spn(\bz_{\calA_1\setminus \calT_1})\,,\label{eq:product-gaussian}
+    \end{align}
+    where $\oplus$ denotes the grafting at the root.
+\end{lemma}
+
+\noindent The proofs of~\Cref{lem:homeomorphic,lem:product-gaussian} are deferred to~\Cref{sec:combinatorics}.
+Note that the error in~\Cref{lem:product-gaussian}
+is measured in terms of
+non-treelike diagrams. 
+
+By inverting \cref{eq:product-gaussian},
+we can formulate the algebra of treelike diagrams in the language of {\em Wick products} (\cref{def:wick}).
+
+\begin{corollary}\label{lem:treelike-hermite}
+    For all $\tau\in\calT_1$,
+    \begin{align}
+        \bz_{\tau} - \He_{\type(\tau)}(\bz_{\calG_1}\,;\bm \Sigma) \prod_{\sigma\in\calC_1} (Z^\infty_{\sigma})^{\type(\tau)_\sigma} \in \spn(\bz_{\calA_1\setminus \calT_1})\,, \label{eq:reformulated-hermite}
+    \end{align}
+    where for all $\gamma,\gamma'\in\cG_1$, we defined
+    the ``finite-$n$'' covariance matrix
+    \begin{align}
+        \bm \Sigma[\gamma,\gamma'] \defeq \sum_{P\in H(\gamma, \gamma')} \bz_{\gamma_P}\,.\label{eq:covariance-finite}
+    \end{align}
+\end{corollary}
+
+\begin{proof}
+    We proceed by induction on the number
+    of vertices of $\tau$. First,~\cref{eq:reformulated-hermite} trivially holds
+    if $\tau$ has one vertex, which proves
+    the base case.
+    Now, suppose that $\tau = \gamma_1\oplus \ldots \oplus \gamma_\ell$ is the
+    grafting at the root of $\gamma_1,\ldots,\gamma_{\ell}\in\calG_1\cup \calC_1$.
+    By~\Cref{lem:product-gaussian},
+    \begin{align*}
+        \bmz_\tau + \sum_{\substack{M\in \calM(\ell)\\M\neq \varnothing}} \sum_{\substack{P_{uv}\in H(\gamma_u,\gamma_v)\\\forall uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \,\oplus\, \bigoplus_{u\notin M} \gamma_u} - \prod_{j=1}^\ell \bmz_{\gamma_j}\in \spn(\bmz_{\calA_1\setminus \calT_1})\,.
+    \end{align*}
+    Applying the induction hypothesis and
+    using additivity of types, we have:
+    \begin{align*}
+        \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \,\oplus\, \bigoplus_{u\notin M} \gamma_u} - \prod_{uv\in M} \bmz_{\gamma_{P_{uv}}} \prod_{\substack{u\notin M\\\gamma_u\in \calC_1}} \bmz_{\gamma_u} \cdot \He_{\sum_{\substack{u\notin M\\\gamma_u\in\calG_1}} \type(\gamma_u)}(\bmz_{\cG_1}\,;\,\bm \Sigma)\in \spn(\bmz_{\calA_1\setminus \calT_1})\,.
+    \end{align*}
+    Since cactuses are not matched
+    by homeomorphic matchings by
+    definition, the
+    product over cactuses $\bmz_{\gamma_u}$ is over all
+    $u$ such that $\gamma_u\in \calC_1$, which is independent of $M$ and can be 
+    factorized out. Therefore,
+    in the rest of the proof
+    we assume that $\gamma_i\in \calG_1$ for all $i\in [\ell]$.
+    Using~\Cref{claim:non-treelike},
+    we obtain
+    \begin{equation}
+         z_\tau + \sum_{\substack{M\in \calM(\ell)\\M\neq \varnothing}} \prod_{uv\in M} \underbrace{\sum_{P\in H(\gamma_u,\gamma_v)} \bmz_{\gamma_P}}_{\bm \Sigma[\gamma_u,\gamma_v]} \cdot  \He_{\sum_{u\notin M} \type(\gamma_u)} (\bmz_{\cG_1}\,;\, \bm \Sigma) - \prod_{j=1}^\ell \bmz_{\gamma_j}\in \spn(\bmz_{\calA_1\setminus \calT_1})\,.\label{eq:summary-wick}
+    \end{equation}
+    By the recursive formula of the
+    Wick products (\Cref{lem:wick-recursion}),
+    \begin{equation}
+        \sum_{\substack{M\in \calM(\ell)\\M\neq \varnothing}} \prod_{uv\in M} \bm \Sigma[\gamma_u,\gamma_v] \cdot  \He_{\sum_{u\notin M} \type(\gamma_j)} (\bmz_{\cG_1}\,;\, \bm \Sigma) + \He_{\type(\tau)}(\bmz_{\cG_1}\,;\,\bm \Sigma)  = 
+         \prod_{j=1}^\ell \bmz_{\gamma_j}\,.\label{eq:wick-application}
+    \end{equation}
+    Combining~\cref{eq:summary-wick,eq:wick-application} concludes the proof.
+\end{proof}
+
+Finally, if we reduce~\Cref{lem:product-gaussian} 
+modulo the larger class of non-cactus diagrams
+(which are the negligible diagrams {\em in expectation} under
+the strong cactus property),
+we deduce that the 
+joint moments of the diagrams in
+$\cG_1$ have an asymptotically Gaussian structure.
+
+\begin{corollary}\label{lem:treelike-gaussian}
+    For all $\gamma_1,\ldots,\gamma_\ell\in \calG_1$ and $\sigma_1,\ldots,\sigma_k\in\calC_1$,
+     \[
+        \prod_{i=1}^k \bmz_{\sigma_i} \left[\prod_{j=1}^\ell \bz_{\gamma_j}  - \sum_{M\in \PM(\ell)} \prod_{xy\in M} \bm \Sigma[\gamma_x,\gamma_y] \right]\in\spn(\bz_{\calA_1\setminus \calC_1})\,,
+     \]
+     where $\bm \Sigma$ is defined in~\cref{eq:covariance-finite}.
+\end{corollary}
+
+\begin{proof}
+    Every non-treelike term in~\cref{eq:product-gaussian}
+    is a fortiori not a cactus. Also, the only
+    cactuses in the subtracted term occur
+    when $M$ is a perfect matching. In other words,
+    \[
+        \prod_{i=1}^k \bmz_{\sigma_i}\left[\prod_{j=1}^\ell \bmz_{\gamma_j} - \sum_{M\in \PM(\ell)} \sum_{\substack{P_{uv}\in H(\gamma_u, \gamma_v)\\\forall uv\in M}} \bmz_{\bigoplus_{uv\in M} \gamma_{P_{uv}}}\right]\in \spn(\bmz_{\calA_1\setminus \calC_1})\,.
+    \]
+    Therefore, by~\Cref{claim:only-trees}, we deduce
+    \[
+        \bmz_{\bigoplus_{uv\in M} \gamma_{P_{uv}}} - \prod_{uv\in M} \bmz_{\gamma_{P_{uv}}}\in \spn(\bmz_{\calA_1\setminus \calC_1})\,,
+    \]
+    and the desired statement follows.
+\end{proof}
+
+
+
+\subsubsection{Proof of~\Cref{thm:convergence-distribution}}
+\label{sec:proof-convergence}
+
+\begin{claim}
+    \label{claim:existence-joint-moments}
+    Suppose that the traffic distribution
+    of $\bA$ exists. Then, for any
+    $\alpha_1, \ldots, \alpha_k\in\calA_1$,
+    the sequence $\E \samp(\bz_{\alpha_1} \cdots \bz_{\alpha_k})$
+    converges as $n\to\infty$.
+\end{claim}
+
+\begin{proof}
+    This is straightforward, as
+    \[
+        \E \samp(\bz_{\alpha_1} \cdots \bz_{\alpha_k}) = \frac 1n \EE \sum_{i=1}^n \bz_{\alpha_1}[i] \cdots \bz_{\alpha_k}[i],
+    \]
+    and the inner polynomial is a scalar polynomial of $\bA$ that can be expanded in the $z$-basis of scalar diagrams as a linear combination of various quotients of the scalar diagram formed by forgetting the identity of the root in $\alpha_1 \oplus \cdots \oplus \alpha_k$.
+\end{proof}
+
+\noindent \Cref{claim:existence-joint-moments}
+implies in particular 
+that the sequence $\samp(\bz_{\calA_1})$ is
+tight. In the rest of the proof, we 
+show that the limit in distribution
+actually exists and characterize it.
+The following lemma is a direct consequence
+of the fundamental theorem of graph
+polynomials.
+
+\begin{lemma}
+    \label{lem:2ec-bounded}
+    If $\|\bA\|\le O(1)$, then for each $\alpha\in\calE_1$, there
+    exists $C_\alpha>0$ such that
+    $|\samp(\bz_\alpha)|\le C_\alpha$.
+\end{lemma}
+
+\begin{proof}
+    By~\Cref{claim:mobius} and~\Cref{lem:contract-2ec}, we can
+    expand for some coefficients $c_\beta = c_\beta(\alpha)\in\R$,
+    \[
+        \bz_\alpha = \sum_{\beta\in\calE_1} c_\beta \bw_\beta\,.
+    \]
+    By~\Cref{thm:fundamental-theorem},
+    it holds for every $\beta\in\calE_1$
+    that $\|\bw_\beta\|_\infty\le \|\bA\|^{|E(\beta)|}$, which is at most
+    $O_\alpha(1)$ by assumption.
+    The lemma follows by the triangle inequality.
+\end{proof}
+
+\begin{lemma}
+    \label{lem:cactus-converge}
+    Suppose that the traffic distribution
+    of $\bA$ exists and that~\cref{eq:tightnessNorm} holds. Then,
+    $\samp(\bz_{\calC_1})$
+    converges in distribution to some
+    stochastic process $Z^\infty_{\calC_1}$.
+\end{lemma}
+
+\begin{proof}    
+    First, assume that $\sup_{n\ge 1} \|\bm A^{(n)}\|\le K$ holds almost surely, for some universal constant $K>0$. All the moments of $\samp(\bz_{\calC_1})$ converge
+    by~\Cref{claim:existence-joint-moments}.
+    Since cactuses are 2-edge-connected, by~\Cref{lem:2ec-bounded}, all random
+    variables $\samp(\bz_\alpha)$
+    for $\alpha\in\calC_1$ are uniformly
+    bounded in $n$. Hence, the moments satisfy the growth condition~\cref{eq:subexp-growth-condition}, so that
+    $\samp(\bz_{\calC_1})$ converges
+    in distribution by~\Cref{cor:bounded-limit-existence}. 
+    Finally, if we assume~\cref{eq:tightnessNorm} rather
+    than uniform boundedness, the result
+    can be deduced from the latter case
+    using~\Cref{lem:truncation}.
+\end{proof}
+
+
+
+
+\begin{proof}[Proof of~\Cref{thm:convergence-distribution}]
+In the rest of the proof, we assume that
+the assumptions of~\Cref{thm:convergence-distribution} are satisfied. 
+We start by analyzing convergence of the subtracted term from~\Cref{lem:treelike-gaussian}. By convergence in distribution of the cactuses (\Cref{lem:cactus-converge}) and the continuous mapping theorem, we have for any 
+$\gamma_1,\ldots,\gamma_\ell\in\calG_1$ and $\sigma_1,\ldots,\sigma_k\in \calC_1$,
+\begin{align}
+    \samp\left(\prod_{i=1}^k \bmz_{\sigma_i} \sum_{M\in \PM(\ell)} \prod_{xy\in M} \bm \Sigma[\gamma_x,\gamma_y]\right) \tod \prod_{i=1}^k Z^\infty_{\sigma_i} \sum_{M\in \PM(k)} \prod_{xy\in M} \bm \Sigma^\infty[\gamma_x,\gamma_y]\,,\label{eq:gaussian-cmt}
+\end{align}
+where we defined, for any $\gamma_1,\gamma_2\in\calG_1$, the ``limiting'' covariance matrix
+\begin{align}
+    \bm \Sigma^\infty[\gamma_1,\gamma_2] \defeq  \sum_{P\in H(\gamma_1, \gamma_2)} Z^\infty_{\gamma_P}\,.\label{eq:covariance}
+\end{align}
+Since all joint moments converge
+by~\Cref{claim:existence-joint-moments},
+the sequence
+of random
+variables on the left-hand side of~\cref{eq:gaussian-cmt} is uniformly
+integrable. So we also get convergence 
+of the mean,
+\[
+    \E \samp\left(\prod_{i=1}^k \bmz_{\sigma_i} \sum_{M\in \PM(\ell)} \prod_{xy\in M} \bm \Sigma[\gamma_x,\gamma_y]\right) \underset{n\to\infty}\longrightarrow \E\left[\prod_{i=1}^k Z^\infty_{\sigma_i} \sum_{M\in \PM(k)} \prod_{xy\in M} \bm \Sigma^\infty[\gamma_x,\gamma_y]\right]\,.
+\]   
+Combining with~\Cref{lem:treelike-gaussian} and the strong cactus property,
+\begin{align}
+    \E \samp\left(\prod_{i=1}^k \bmz_{\sigma_i} \prod_{j=1}^\ell \bz_{\gamma_j}\right) \underset{n\to\infty}\longrightarrow \E\left[ \prod_{i=1}^k Z^\infty_{\sigma_i} \sum_{M\in \PM(\ell)} \prod_{xy\in M} \bm \Sigma^\infty[\gamma_x,\gamma_y]\right]\,.\label{eq:covariance-converge}
+\end{align}
+The right-hand side of~\cref{{eq:covariance-converge}}
+coincides with the moments of $Z^\infty_{\calG_1\cup \calC_1}$. Recall that the law of
+$Z^\infty_{\calG_1}$ satisfies that after sampling
+$Z^\infty_{\calC_1}$ from its marginal
+(which is bounded almost surely by~\Cref{lem:2ec-bounded}), then $Z^\infty_{\calG_1}$
+conditioned on $Z^\infty_{\calC_1}$ is a Gaussian
+process with covariance kernel given by~\cref{eq:covariance}. This
+object satisfies the moment growth
+condition~\cref{eq:subexp-growth-condition}. So~\Cref{cor:bounded-limit-existence}
+applies and we obtain convergence in
+distribution of $\samp(\bz_{\calG_1\cup \calC_1})$
+to $Z^\infty_{\calG_1\cup \calC_1}$.
+
+
+By~\Cref{lem:non-treelike}, the non-treelike diagrams converge in $L^2$ to 0,
+so by Slutsky's lemma, we obtain joint
+convergence in distribution, except for the remaining treelike, non-Gaussian trees. By~\Cref{lem:treelike-hermite}, these are continuous images
+of cactuses and non-treelike diagrams, so
+by the continuous mapping theorem, all
+diagrams
+converge jointly in distribution to $Z^\infty_{\calA_1}$.
+\end{proof}
+
+
+
+\subsection{The treelike AMP algorithm}
+
+Now we turn to studying the dynamics of GFOM operations.
+
+\begin{definition}[Asymptotic state]\label{def:asymptotic-state}
+    Let $(\bm x_i)_{i\in \calI}$ be a
+    family of random vectors,
+    $\bm x_i\in \R^{n}$.
+    We say that a stochastic process $(X_i)_{i\in \calI}$
+    is the asymptotic state of $(\bm x_i)_{i\in \calI}$ if, for any $k\ge 1$, $i_1, \ldots, i_k\in \calI$, and any bounded continuous
+    or polynomial function $\varphi:\R^k\to \R$,
+    \begin{equation}
+        \lim_{n\to\infty} \frac 1n \sum_{j=1}^n \E\varphi(\bm x_{i_1}[j], \ldots, \bm x_{i_k}[j]) = \E\varphi(X_{i_1}, \ldots, X_{i_k})\,.\label{eq:defAsymptoticState}
+    \end{equation}
+\end{definition}
+
+\noindent \Cref{def:asymptotic-state} requires in particular for $(\bm x_i)_{i\in \mathcal I}$ to converge in distribution to $(X_i)_{i\in \calI}$. 
+As with convergence in distribution in general, this suffers from the caveat that the law of the limit in distribution of $(X_i)_{i\in \calI}$ is unique, but the probability space on which the limit $(X_i)_{i\in \calI}$ is realized is not.
+Thus when we speak of ``the asymptotic state'' we refer to a specific law, not a specific collection of random variables.
+Nonetheless, the sampling procedure in \Cref{thm:convergence-distribution} suggests a natural
+way to sample an asymptotic state of the
+iterates of a pGFOM, since, provided we know how to sample from $Z_{\calC_1}^{\infty}$ (which we must address on a case-by-case basis), the other $Z_{\alpha}^{\infty}$ are conditionally Gaussian or deterministic functions thereof.
+
+Translating the limiting variables $Z_{\alpha}^{\infty}$ from \Cref{thm:convergence-distribution} to a construction of an asymptotic state, we find:
+\begin{lemma}\label{claim:cvImpliesState}
+    Assume that $\bA = \bA^{(n)}$ satisfies the assumptions of~\Cref{thm:convergence-distribution}.
+    Let 
+    \begin{equation}
+        \bm x = \sum_{\alpha\in \calA_1} c_\alpha \bmz_\alpha(\bmA)\label{eq:assumeState}
+    \end{equation}
+    for
+    some finitely supported coefficients
+    $(c_\alpha)_{\alpha\in \calA_1}$. Then,
+    \begin{equation}
+        X \defeq \sum_{\alpha\in \calA_1} c_\alpha Z^\infty_\alpha\label{eq:asymptState}
+    \end{equation}
+    is the asymptotic state of $\bm x$.
+    Moreover, if $\bm x_t$ is of the form~\cref{eq:assumeState} for any $t\ge 1$ and $X_t$
+    is correspondingly defined as in~\cref{eq:asymptState}, then $(X_t)_{t\ge 1}$ is the asymptotic
+    state of $(\bm x_t)_{t\ge 1}$. 
+\end{lemma}
+
+\noindent We emphasize that the index set
+$t\ge 1$ is independent of $n$, and so our
+results hold for all fixed iterates $t$
+independent of $n$, in the limit $n\to\infty$.
+
+\begin{proof}
+    The statement for bounded continuous test
+    functions $\varphi$ follows from~\Cref{thm:convergence-distribution} and
+    the continuous mapping theorem.
+    For polynomial $\varphi$, we proceed by a truncation argument.
+    Let $S_n \defeq \samp(\bm x_1, \ldots, \bm x_t)$ and $S \defeq (X_1, \ldots, X_t)$. Fix a cutoff $K>0$ and consider
+    any bounded continuous function $\varphi_K$ such
+    that $|\varphi_K|\le |\varphi|$, $\varphi_K(s) = \varphi(s)$ for all
+    $\|s\|_2\le K$ and $\varphi_K(s)=0$ for all
+    $\|s\|_2>2K$ (standard approximations show that such a function exists). First, $\left|\E \varphi_K(S_n)-\E \varphi_K(S)\right|$ converges to $0$
+    as $n\to\infty$
+    by the bounded continuous case. Next,
+    \begin{align*}
+        \left|\E \varphi(S_n) - \E \varphi_K(S_n)\right|&\le \E \left[|\varphi(S_n)| \mathbf 1_{\|S_n\|_2>K}\right]\tag*{(Definition of the truncated function)}\\
+        &\le (\E \varphi(S_n)^2)^{\frac 12} \Pr(\|S_n\|_2>K)^{\frac 12}\tag*{(Cauchy-Schwarz inequality)}\\
+        &\le (\E \varphi(S_n)^2)^{\frac 12} \frac {(\E \|S_n\|_2^2)^{\frac 12}} {K}\tag*{(Markov inequality)}
+    \end{align*}
+    Note that these quantities are respectively equal to
+    \[
+        \E \varphi(S_n)^2 = \frac 1n \sum_{i=1}^n \varphi(\bm x_1[i], \ldots, \bm x_t[i])^2\quad\text{and} \quad\E \|S_n\|_2^2 = \sum_{s=1}^t \frac 1n  \sum_{i=1}^n \bm x_s[i]^2\,,
+    \]
+    which both converge as $n\to\infty$ by existence
+    of the traffic distribution, and in particular are bounded uniformly in $n$. Hence, there exists $C>0$ independent of $n$ and $K$ such that
+    \[\limsup_{n\to\infty} \left|\E \varphi(S_n) - \E \varphi_K(S_n)\right|\le \frac C K\,,\] and the
+    same holds for $\E \varphi(S)-\E \varphi_K(S)$ 
+    by the same argument, using the fact that all moments exist in the space generated by $Z_{\calA_1}^\infty$. We obtain $\limsup_{n\to\infty} \left|\E \varphi(S_n) - \E \varphi_K(S_n)\right|\le 2C/K$, and the claim
+    follows from taking the limit $K\to\infty$.
+\end{proof}
+
+
+
+By~\Cref{prop:gfom-polynomial}, the iterates
+of a pGFOM are of the form~\cref{eq:assumeState}, so they have an asymptotic state. By definition, these asymptotic states determine the
+limiting distribution of any (bounded continuous or polynomial) observable.
+Motivated by this,
+we introduce a family of approximate message passing algorithms whose
+asymptotic states are conditionally Gaussian.
+
+\begin{theorem}[Treelike AMP]
+\label{thm:full-onsager}
+Assume that $\bA=\bA^{(n)}$ satisfies the assumptions of \Cref{thm:convergence-distribution}. 
+Let $f_t : \R \to \R$ be polynomial functions.\footnote{For ease of exposition $f_t$ is assumed to be ``memoryless'', meaning that it only takes the most recent $\bx_{t}$ as input.} Define:
+\begin{equation}
+    \begin{aligned}
+    \bmx_0 &= \bm{1}\,,\qquad 
+    \bmx_t = \bA \bmf_{t-1}
+      - \sum_{s=0}^{t-1} \bmb_{s,t} \cdot \bmf_s\,,\\
+    \bmb_{s,t}[i]
+    &\defeq \sum_{\substack{i_s,\ldots,i_{t-1}\in[n] \textnormal{ distinct}\\i_s=i}} \left(\prod_{r=s+1}^{t-1} \bm A[i_{r-1}, i_{r}] \bm f'_{r}[i_{r}] \right)\bA[i_{t-1},i_s]\,,\\
+    \bmf_t &\defeq f_t(\bmx_t)\,, \qquad
+    \bmf'_t \defeq f'_t(\bmx_t)\,,\qquad \bm f_0 = \bm 1\,.\label{eq:tree-amp}
+    \end{aligned}
+\end{equation}
+Then $\bx_t \in \linspan(\bmz_{\cG_1 \cup (\cA_1 \setminus \cT_1)}(\bA))$. Therefore, the asymptotic state of $(\bm x_t)_{t\ge 1}$ defined
+in~\cref{eq:asymptState}
+is a centered Gaussian process conditionally on $Z^\infty_{\calC_1}$.
+\end{theorem}
+
+\noindent To prove~\Cref{thm:full-onsager}, motivated by the results in \cref{sec:vector-limit}, we introduce
+the following handy notations:
+\newcommand\gauss{\textnormal{gaussian}}
+
+\begin{definition}[Equality modulo non-treelike diagrams]\label{def:eqinf}
+    For $\bm x,\bm y\in \spn(\bmz_{\calA_1})$, we write $\bm x \eqinf \bm y$ if $\bm x - \bm y\in \spn(\bmz_{\calA_1\setminus \calT_1})$.
+    We denote by $\cactus(\bmx)$ the
+    projection of $\bmx$ onto the span
+    of the cactus diagrams $\cC_1$,
+    and by $\gauss(\bmx)$ the
+    projection of $\bmx$ onto the span
+    of the Gaussian diagrams $\cG_1$.
+\end{definition}
+
+
+The iterates of the treelike AMP
+algorithm~\cref{eq:tree-amp} are engineered to 
+asymptotically generate a self-avoiding walk.
+That is, whenever the algorithm performs a matrix multiplication operation,
+the Onsager correction terms in \cref{eq:tree-amp} (the subtracted terms involving $\bb_{s,t}$) are chosen to subtract
+off the terms in the resulting diagram expansion which (1)~are treelike and (2)~revisit an existing vertex in any diagram.
+
+\begin{example}[Self-avoiding walk]
+For intuition, consider
+the case of~\Cref{thm:full-onsager}
+where $f_t(x) = x$.
+Let $\pi_t$ be the $t$-path
+diagram and $\rho_t$ the $t$-cycle
+diagram. We can expand exactly:
+\begin{align*}
+    \bA \bmz_{\pi_t} &= \bmz_{\pi_{t+1}} + \sum_{s = 0}^t \bmz_{\rho_{s+1} \oplus \pi_{t-s}}\,.
+\end{align*}
+For each term on the right-hand side, we have the approximate factorization (by~\Cref{lem:product-gaussian}) $\bmz_{\rho_{s+1} \oplus \pi_{t-s}} \eqinf \bmz_{\rho_{s+1}} \cdot \bmz_{\pi_{t-s}}$,
+which holds up to non-treelike terms.
+Then, we define a self-avoiding version of power iteration by:
+\[
+    \bmx_0 = \bm{1}, \qquad \bmx_{t+1} = \bA \bmx_t - \sum_{s = 0}^t \bmz_{\rho_{s+1}} \cdot \bmx_{t-s}\,.
+\]
+By construction, we have $\bmx_t \eqinf \bmz_{\pi_t}$ and therefore, assuming the conditions of \cref{thm:convergence-distribution}, the asymptotic state $X_t$ of $\bm x_t$ is Gaussian.
+\end{example}
+
+To analyze a general iteration in the proof of~\Cref{thm:full-onsager}, we separate the diagram expansion of $\bmf_t$ into its linear and nonlinear parts:
+\begin{equation*}\label{eq:linear-nonlinear}
+    \bmf_t = \underbrace{\sum_{\gam \in \cG_1} c_\gam \bmz_\gam(\bA)}_{=: \bmf^1_t} + \underbrace{\sum_{\tau \in \cT_1 \setminus \cG_1} c_\tau \bmz_\tau(\bA)}_{=: \bmf^{\neq 1}_t} + \sum_{\al \in \cA_1 \setminus \cT_1} c_\al \bmz_\al(\bA)\,.
+\end{equation*}
+
+\noindent We call $\bmf^1_t = \gauss(\bmf_t)$ the ``linear part'' since it should be thought of as the degree-1 part of the Hermite expansion
+of $\bmf_t$ with respect to the Gaussian vectors $\bmz_{\cG_1}(\bA)$,
+while $\bmf^{\neq 1}_t$ equals all of the other components of the Hermite expansion.
+More precisely, when $\bmf_t$ is of the form $f_t(\bmx_{t})$ for some Gaussian vector $\bmx_{t}$, which is the situation for AMP, then $\bmf^{1}_t$ has the following simple form.
+
+\begin{lemma}\label{lem:f-linear}
+    Let $\bmx \in \linspan(\bmz_{\cG_1})$ and let $f : \R \to \R$ be a polynomial.
+    Then,
+    \[
+        \gauss(f(\bm x)) \eqinf \cactus(f'(\bm x)) \cdot \bm x\,.
+    \]
+\end{lemma}
+\begin{proof}
+    Suppose that $f(x) = x^\ell$ for some integer $\ell\ge 0$ (the general case follows by linearity). By~\Cref{lem:product-gaussian},
+    the product of
+    diagrams in $\calG_1$
+    yields a diagram in $\calG_1$ only
+    when every diagram except one is matched. Formally, write $\bmx = \sum_{\gamma\in\calG_1} c_\gamma \bmz_{\gamma}$, then by~\Cref{lem:product-gaussian},
+    \begin{align}
+        \bmf^1 \eqinf \ell \sum_{\gamma_1,\ldots,\gamma_\ell\in \calG_1} c_{\gamma_1}\ldots c_{\gamma_{\ell}} \sum_{M\in \PM(\ell-1)} \sum_{\substack{P_{uv}\in H(\gamma_u,\gamma_v)\\\forall uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \oplus \gamma_\ell} \,.\label{eq:l-power}
+    \end{align}
+    Viewing $\bigoplus_{uv\in M}\gamma_{P_{u,v}}$ as a fixed cactus, by~\Cref{lem:product-gaussian},
+    every term on the right-hand side
+    satisfies
+    \begin{align}
+        \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \oplus \gamma_\ell} \eqinf \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}}} \cdot \bmz_{\gamma_\ell}\,.\label{eq:factorize-inter}
+    \end{align}
+    Applying~\Cref{lem:product-gaussian}
+    one last time, it remains to observe 
+    that the cactus part of $f'(\bm x) = \ell \bm x^{\ell-1}$ is
+    \begin{align}
+        \cactus(f'(\bmx)) \eqinf \ell \sum_{\gamma_1,\ldots,\gamma_{\ell-1}\in \calG_1} c_{\gamma_1} \ldots c_{\gamma_{\ell-1}} \sum_{M\in \PM(\ell-1)} \sum_{\substack{P_{uv}\in H(\gamma_u,\gamma_v)\\\forall uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}}}\,.\label{eq:l-power-minus}
+    \end{align}
+    Combining~\cref{eq:l-power,eq:factorize-inter,eq:l-power-minus} yields the desired claim.
+\end{proof}
+
+The next key~\cref{lem:memory-formula} derives an explicit asymptotic formula for the AMP iterates: $\bmx_t$ is generated by taking a self-avoiding walk from each nonlinear term $\bmf_s^{\neq 1}$.
+
+\begin{definition}\label{def:self-avoiding}
+Let $\bmc_t = \cactus(f'_t(\bmx_t))$.
+Define the \emph{self-avoiding walk matrix} $\bmB_{s,t}$ generated by the iteration between time $s$ and $t$ to be:
+\begin{align*}
+    \bmB_{s,t}[i,j] &\defeq \sum_{\substack{i_{s},\dots, i_{t} \in [n] \textnormal{ distinct}\\i_{s} = j,\; i_{t} = i}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t-1},i_t] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t-1}[i_{t-1}]\,.
+\end{align*}
+\end{definition}
+
+\noindent Recalling \Cref{def:open-cactus}, $\bmB_{s,t}$
+is a linear combination of
+open cactus matrices in the $z$-basis (up to non-treelike terms which arise from intersections involving the $\bm c_{s+i}$).
+For example, $\bmB_{t-1,t}$ equals $\bA$ with the diagonal elements set to zero.
+We note the analogy between $\bmb_{s,t}$ and $\bmB_{s,t}$, which contain similar self-avoiding walks that return to the start and do not return to the start, respectively.
+
+\begin{lemma}\label{lem:memory-formula}
+    Define $\bmx_t, \bmf_t$ by \cref{eq:tree-amp} and let $\bmc_t = \cactus(f'_t(\bmx_t))$. Then for $t \geq 1$:
+    \begin{align*}
+        \bmx_t \eqinf \sum_{s = 0}^{t-1} \bmB_{s,t} \bmf_s^{\neq 1} \quad \text{and} \quad \bmf_t \eqinf \bmc_t \cdot \sum_{s=0}^{t-1}  \bmB_{s,t} \bmf_s^{\ne 1} + \bmf_{t}^{\neq 1}\,.
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    First, note that for a fixed $t$, the second equation follows from the first:
+    \begin{align*}
+        \bmf_t &\eqinf \bmf_t^1 + \bmf_t^{\neq 1}\\
+        &\eqinf \bc_t  \cdot \bmx_t + \bmf_t^{\neq 1}  \tag{\cref{lem:f-linear}} \\
+        &\eqinf \bc_{t} \cdot \sum_{s = 0}^{t-1}  \bmB_{s,t} \bmf_s^{\neq 1} + \bmf_{t}^{\neq 1} \tag{first equation and~\Cref{claim:only-trees}}
+    \end{align*}
+    To establish the equations, we use induction on $t$. In the base case $t = 1$ we have $\bmx_1 = \bA \bmf_0 - \bmb_{0,1}\cdot \bmf_0 = \bmB_{0,1} \bmf_0$ as needed.
+    Now, assume that the formulas
+    hold for $0, \ldots, t$.
+    Denote by $\bmC_t$ the diagonal matrix with entries $\bmc_t$.   
+    The equation for $\bmf_t$ implies:
+    \begin{align*}
+        \bA \bmf_{t} &\eqinf \sum_{s = 0}^{t-1} \bA \bmC_{t} \bmB_{s, t} \bmf_s^{\neq 1}  + \bA \bmf_{t}^{\neq 1} \numberthis \label{eq:Af_t}
+    \end{align*}
+    If we expand the matrix product $\bA \bC_{t} \bB_{s,t}$ we can partition the sum based on whether the matrix $\bA$ revisits a vertex already on the walk:
+    \begingroup
+    \begin{align}
+        (\bA\bC_{t} \bB_{s, t})[i,j] &= \sum_{k=1}^n \bmA[i,k] \bm c_t[k] \sum_{\substack{i_{s},\dots, i_{t} \in [n] \textnormal{ distinct}\\i_{s} = j,\; i_{t} = k}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t-1},i_t] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t-1}[i_{t-1}]\nonumber\\
+        &= \sum_{\substack{i_{s},\dots, i_{t+1} \in [n] \textnormal{ distinct}\\i_{s} = j,\; i_{t+1} = i}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t},i_{t+1}] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t}[i_{t}]\label{eq:first-term-gaussian}\\
+    &+ \sum_{r=s}^t \sum_{\substack{i_{s},\dots, i_{t} \in [n] \textnormal{ distinct}\\i_{s} = j,\; i_{r} = i}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t-1},i_t] \cdot \bmA[i_r,i_t] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t}[i_{t}]\,.\label{eq:second-term-gaussian}
+    \end{align}
+
+    The first term~\cref{eq:first-term-gaussian} is self-avoiding and equals $\bmB_{s,t+1}[i,j]$.
+    In the second term~\cref{eq:second-term-gaussian}, the term $r=s$ is diagrammatically a cycle
+    and is equal to $\bmb_{s,t+1}[i]$ when $i=j$, and $0$ otherwise:
+
+    \begin{claim}\label{lem:bst-c}
+    We have:
+    \[
+        \bmb_{s,t} \eqinf \left(\sum_{\substack{i_s,\ldots,i_{t-1}\in[n] \textnormal{ distinct}\\i_s=i}}
+        \bA[i_s,i_{s+1}] \cdots \bA[i_{t-2},i_{t-1}] \bA[i_{t-1},i_s] \cdot \bmc_{s+1}[i_{s+1}] \cdots \bmc_{t-1}[i_{t-1}]\right)_{i\in [n]}\,.
+    \]
+    \end{claim}
+    \begin{proof}
+        The only difference between this formula and the definition of $\bb_{s,t}$ is that the vectors $\bmf'_t$ at the internal vertices of the cycle have been replaced by $\bmc_t$.
+        This holds up to non-treelike terms since placing a non-cactus diagram at any internal vertex of the cycle will create only non-treelike diagrams.
+    \end{proof}    
+    \noindent The remaining terms in~\cref{eq:second-term-gaussian} are a cycle and a path joined together at vertex $r$:
+    
+    \begin{claim}\label{claim:factorize-inside-path-cycle}
+        Let $r\in \{s+1, \ldots, t\}$. For $i\in [n]$, let
+        \[
+            \bm u[i] =         \sum_{\substack{i_{s},\dots, i_{t} \in [n] \textnormal{ distinct}\\i_{r} = i}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t-1},i_t] \cdot \bmA[i_r,i_t] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t}[i_{t}] \bmf_s^{\neq 1}[i_s]\,.
+        \]
+        Then $\bm u \eqinf \bm b_{r,t+1} \cdot \bm C_r \bm B_{s,r} \bmf_s^{\neq 1}$.
+    \end{claim}
+
+    \begin{proof}
+        By expanding definitions, we can conveniently interpret
+        \[
+            \bm b_{r,t+1} \cdot \bm C_r \bm B_{s,r} \bmf_s^{\neq 1}[i] = \sum_{\substack{i_{s},\dots, i_{t} \in [n]\\
+            i_s,\ldots,i_{r} \textnormal{ distinct}\\
+            i_r,\ldots,i_{t}\textnormal{ distinct}\\i_{r} = i}} 
+    \bmA[i_s, i_{s+1}] \cdots \bmA[i_{t-1},i_t] \cdot \bmA[i_r,i_t] \cdot \bm c_{s+1}[i_{s+1}] \cdots \bm c_{t}[i_{t}] \bmf_s^{\neq 1}[i_s]\,.
+        \]
+        Since the diagram induced on
+        $\{i_r, \ldots, i_t\}$ is
+        a cycle, any intersection between the
+        vertices $\{i_s, \ldots, i_r\}$
+        and $\{i_r, \ldots, i_t\}$
+        would create a non-treelike 
+        diagram.
+    \end{proof}
+    
+    Plugging~\Cref{claim:factorize-inside-path-cycle} in to~\cref{eq:Af_t}, we have:
+    \begin{align*}
+        \bA \bmf_t &\eqinf \sum_{s = 0}^{t-1} \bB_{s,t+1} \bmf_s^{\neq 1} + \sum_{s=0}^{t-1}\bmb_{s,t+1} \cdot \bmf_s^{\neq 1} + \sum_{s=0}^{t-1}\sum_{r=s+1}^t \bmb_{r,t+1}\cdot (\bmC_r \bmB_{s,r} \bmf^{\neq 1}_s)+ \underbrace{\bA \bmf_t^{\neq 1}}_{= \bB_{t,t+1} \bmf_t^{\neq 1} + \bmb_{t,t+1} \cdot \bmf_t^{\neq 1}}\\
+        &= \sum_{s = 0}^{t} \bB_{s,t+1} \bmf^{\neq 1}_s + \sum_{r = 0}^t \bmb_{r,t+1} \cdot \left(\bmC_r \sum_{s = 0}^{r-1} \bmB_{s,r}\bmf_s^{\neq 1} + \bmf_r^{\neq 1} \right)\\
+        &\eqinf \sum_{s = 0}^{t} \bB_{s,t+1} \bmf^{\neq 1}_s + \sum_{r = 0}^t \bmb_{r,t+1} \cdot \bmf_r
+    \end{align*}
+    \endgroup
+    The last equality is the inductive formula for $\bmf_r$.
+    The Onsager correction subtracts off the second sum, leaving only the desired first sum for $\bmx_{t+1}$.
+\end{proof}
+
+
+\begin{proof}[Proof of \cref{thm:full-onsager}.]
+    We prove the following purely combinatorial claim about~\cref{eq:tree-amp}:
+    $\bm x_t$ is in
+    the span of non-treelike
+    diagrams and {\em Gaussian} treelike
+    diagrams.  
+    By~\Cref{claim:cvImpliesState}, this will
+    imply
+    that conditioned on $Z^\infty_{\calC_1}$, the asymptotic state of $(\bm x_t)_{t\ge 1}$ is a centered Gaussian process, as desired.
+
+    To show the claim, 
+    we start from the conclusion of~\cref{lem:memory-formula}:
+    \[
+        \bmx_t \eqinf \sum_{s=0}^{t-1}\bB_{s,t}\bmf_s^{\neq 1}\,.
+    \]
+    The diagrams in $\bB_{s,t}\bmf_{s}^{\neq 1}$ are obtained by: (1)~choose a diagram from $\bmf_{s}^{\neq 1}$, (2)~choose a cactus diagram from $\bc_r$ at each internal vertex of $\bB_{s,t}$
+    (i.e.\ each internal vertex along a path of length $t-s$),
+    (3)~multiply these diagrams together.
+    Since none of the diagrams in $\bmf_s^{\neq 1}$ have degree 1 at the root by definition,
+    the only treelike terms in the product are formed by grafting the diagrams together without intersections.
+    In particular, the root is the endpoint of the path in $\bB_{s,t}$ and has degree 1.
+    This concludes the proof.
+\end{proof}
+
+\subsubsection{Covariance structure of treelike AMP}
+
+While~\Cref{thm:full-onsager} shows that the treelike AMP iterates are
+asymptotically Gaussian, it does not identify their covariance. We calculate the covariance ``combinatorially'' by calculating the cactus diagrams appearing in
+the expansion of $\langle \bmx_s, \bmx_t\rangle$.
+
+
+\begin{proposition}\label{lem:cov-cactus}
+    Let $\bm x_t$ follow the iteration~\cref{eq:tree-amp}. Then for any $s,t\ge 1$,
+    \begin{equation}\label{eq:cov-finite}
+        \bm x_s \cdot \bm x_t - \sum_{s'=0}^{s-1} \sum_{t'=0}^{t-1} \bm B_{s'st't} (\bm f_{s'} \cdot \bm f_{t'}) \in \spn(\bm z_{\calA_1\setminus \calC_1})\,,
+    \end{equation}
+    where for $0\le s'\le s, 0\le t'\le t$, we define the matrix $\bmB_{s'st't} \in \R^{n\times n}$ by
+    \begin{equation*}
+        \bm B_{s'st't}[i,j] \defeq \sum_{\substack{i_{s'},\ldots,i_{s}, j_{t'}, \ldots, j_{t}\in [n]\\
+        \textnormal{distinct except}\\
+        i_{s'}=j_{t'}=j,\, i_s=j_t=i}} \prod_{r=s'}^{s-1} \bm A[i_r,i_{r+1}] \prod_{r=t'}^{t-1} \bm A[j_r,j_{r+1}] \prod_{r=s'+1}^{s-1} \bm c_r[i_r] \prod_{r=t'+1}^{t-1} \bm c_r[j_r]\,.
+    \end{equation*}
+\end{proposition}
+
+
+When we apply this lemma, we will average \cref{eq:cov-finite}
+over the coordinates $i \in [n]$ and over $\bA$.
+Since the error terms are all in the span of non-cactus diagrams,
+all error terms converge to 0 by the strong cactus property.
+On the other hand,
+the average of the term $\bmx_s \cdot \bmx_t$ converges to the covariance $\E[X_sX_t]$
+which we want to calculate.
+The subtracted terms involving the $\bB_{s't'st}$ matrices converge to limits depending on the asymptotic values of the cactuses $Z_{\cC_1}^\infty$.
+For some settings (such as \cref{prop:factorizing-deterministic}), the values $Z_{\cC_1}^\infty$ are deterministic.
+For other settings, the values $Z_{\cC_1}^\infty$ are random, and we will condition on them in order to obtain the conditional covariance.
+
+
+\begin{proof}
+    Since $\bm x_s$ and $\bm x_t$ have
+    degree exactly one at the root, in
+    order to form a cactus in $\bm x_s\cdot \bm x_t$, the paths
+    from the root of $\bm x_s$ and $\bm x_t$ in the expansion from~\Cref{lem:memory-formula} must meet at some point. This
+    intersection
+    cannot happen at a vertex from $\bm f_{s'}^{\neq 1}$ or $\bm f_{t'}^{\neq 1}$ (that would create edges in two cycles).
+    Let
+    $s'\in \{0,\ldots,s-1\}$ and $t'\in \{0,\ldots,t-1\}$ denote the integers
+    such that the first intersection
+    corresponds to the indices
+    $i_{s'}$ (for $\bm x_s$) and $i_{t'}$ (for $\bm x_t$) in~\Cref{def:self-avoiding}. Then,
+    we can decompose
+    \[
+        \bm x_s\cdot \bm x_t - \sum_{s'=0}^{s-1} \sum_{t'=0}^{t-1} \bm B_{s'st't} ((\bm c_{s'} \cdot \bm x_{s'} + \bm f_{s'}^{\neq 1}) \cdot (\bm c_{t'} \cdot \bm x_{t'} + \bm f_{t'}^{\neq 1}))\in \spn(\bm z_{\calA_1\setminus \calC_1})\,,
+    \]
+    and the conclusion follows from
+    the equality (\Cref{lem:f-linear}) $\bm f_s\eqinf \bm c_s \cdot \bm x_s + \bm f_s^{\neq 1}$.
+\end{proof}
+
+\noindent The 
+cactus expansion of $\bm B_{s'st't} (\bm f_{s'} \cdot \bm f_{t'})$ can be obtained explicitly by
+combining a cycle of length $s-s'+t-t'$
+along the edges of $\bm B_{s'st't}$,
+a cactus from $\bm c_r$ hanging at every vertex $r$ in the cycle, and a homeomorphic
+matching of the tree components of $\bm f_{s'}$ and $\bm f_{t'}$ (\Cref{def:homeomorphic}). 
+
+\subsection{Examples of state evolution}\label{sec:se-examples}
+
+In this section, we specialize~\cref{thm:full-onsager}
+to obtain a more explicit description
+of the state evolution of the
+treelike AMP algorithm for several concrete matrix models. 
+
+\begin{notation}
+    \label{not:empirical}
+    For a vector $\bm x\in \R^n$, we will use the following notation for empirical averages:
+    \[
+        \langle \bm x \rangle \defeq \frac 1n \sum_{i=1}^n x_i\,.
+    \]
+\end{notation}
+
+Technically, most algorithms in this section are not pGFOM since they
+calculate empirical averages.
+Assuming that the traffic distribution concentrates and the vector $\bm x$ lies in the diagram basis,
+then the empirical average $\langle{\bm x}\rangle$ concentrates,
+and we can replace $\langle{\bm x}\rangle$ by its limit $\E X$ without changing the asymptotic state of the algorithm.
+This is formally proven in \cref{lem:asymptotic-state-empirical-average}.
+
+
+\subsubsection{Orthogonally invariant random matrices}
+\label{sec:treelike-oamp}
+
+In the special case that $\bA$ is drawn from an orthogonally invariant random matrix ensemble,
+the treelike AMP algorithm recovers the orthogonal AMP algorithm of Fan~\cite{fan2022approximate},
+giving a new proof of this result.
+
+\begin{theorem}[State evolution for orthogonally invariant matrices]\label{thm:orthogonal-amp}
+    Let $\bA = \bA^{(n)} \in \R_\sym^{n \times n}$ be an orthogonally invariant random matrix converging in tracial moments in $L^2$ to a probability measure with free cumulants $(\kappa_q)_{q\ge 1}$. Assume $\bm A$ satisfies~\cref{eq:tightnessNorm}.
+    Let $f_t : \R \to \R$ be polynomial functions and define the iteration
+    \begin{alignat*}{2}
+        \bmx_0 &= \bm{1}, \qquad &\bmx_t &= \bA f_{t-1}(\bm x_{t-1}) - \sum_{s = 0}^{t-1} \kappa_{t-s} \left(\prod_{r=s+1}^{t-1} \langle f'_r(\bm x_r)\rangle \right)f_s(\bm x_s)\quad \forall t\ge 1\,. \numberthis\label{eq:rotation-amp}
+    \end{alignat*}
+    Then,
+    the asymptotic state of $(\bm x_t)_{t\ge 1}$ is a centered Gaussian process $(X_t)_{t\ge 1}$ with covariance
+    \begin{align*}
+        \E\left[X_s X_t\right] &= \sum_{s' = 0}^{s-1} \sum_{t' = 0}^{t-1} \kappa_{s-s'+t-t'} \left(\prod_{r = s'+1}^{s-1} \E f'_r(X_r) \right) \left(\prod_{r=t'+1}^{t-1} \E f'_r(X_r)\right) \E\left[f_{s'}(X_{s'}) f_{t'}(X_{t'})\right]\quad \forall s,t\ge 1\,,
+    \end{align*}
+    with $X_0\defeq 1$.
+\end{theorem}
+
+\begin{proof}
+    By~\cref{thm:moments}, $\bA$ satisfies the factorizing strong cactus property and its diagonal distribution exists,
+    so the assumptions of~\Cref{thm:convergence-distribution} and \Cref{thm:full-onsager} are satisfied.
+    Therefore, the treelike AMP algorithm in \cref{eq:tree-amp} has Gaussian asymptotic state.
+    
+    We now specialize the Onsager correction term in~\cref{eq:tree-amp} to
+    this model. The term $\bm b_{s,t}$ is represented by a cycle of length
+    $t-s$, with $f'_r(\bm x_r)$ attached to the $r$th vertex of the cycle for each
+    $s<r<t$. By~\Cref{claim:only-trees}, we
+    only need to look at treelike contributions in $\bm b_{s,t}$.
+    Because
+    of the base cycle, these are only cactuses, obtained by attaching
+    cactuses from $(f'_r(\bm x_r))_{s<r<t}$
+    along the base cycle. 
+    By~\Cref{prop:factorizing-deterministic},
+    $\bm b_{s,t}$ has constant asymptotic
+    state equal to
+    $\kappa_{t-s}\prod_{r=s+1}^{t-1}\E f'_r(X_r)$.
+    The cactuses in $\bm b_{s,t}$ persist until the end of the algorithm,
+    so that they will eventually contribute this value towards the asymptotic state.
+    Hence it does not affect the asymptotic state to replace $\bm b_{s,t}$ immediately by its limiting constant value.
+    
+    Moreover, by~\Cref{lem:asymptotic-state-empirical-average} and \cref{lemma:full-factorization}, we may replace $\E f'_r(X_r)$ by the empirical average
+    $\langle f'_r (\bm x_r)\rangle$ to obtain~\cref{eq:rotation-amp} without affecting the asymptotic state.
+    Now the asymptotic state $X_t$ of~\cref{eq:rotation-amp} matches that of~\cref{eq:tree-amp}, and we may apply~\cref{thm:full-onsager} to deduce that $X_t$ is Gaussian.
+
+    To calculate the covariance $\E\left[X_sX_t\right]$, we average \cref{lem:cov-cactus} over the coordinates $i \in [n]$ and take the limit $n \to \infty$.
+    On the right side of \cref{eq:cov-finite},
+    the cycle of $\bB_{s'st't}$ contributes $\kappa_{s-s'+t-t'}$ and the hanging diagrams $f'_r(\bm x_r)$ inside $\bB_{s'st't}$ contribute
+    $\E f'_r(X_r)$ by the factorizing cactus property.
+    The cactuses in $f_{s'}(\bm x_{s'}) \cdot f_{t'}(\bm x_{t'})$ contribute $\E\left[f_{s'}(X_{s'})f_{t'}(X_{t'})\right]$, which establishes the desired recurrence.
+\end{proof}
+
+\noindent Note that this proof only
+uses the strong factorizing cactus
+property and the concentration of the
+traffic distribution, which explains
+why~\Cref{thm:orthogonal-amp} also holds
+for non-orthogonally invariant matrix
+models such as Wigner matrices (\Cref{sec:traffic-wigner}).
+
+\subsubsection{Punctured random and deterministic matrices}
+\label{sec:dynamics-reg}
+
+The punctured matrices studied in~\Cref{sec:universality} do not satisfy the strong cactus property, so we cannot directly apply~\Cref{thm:full-onsager} to derive an AMP iteration for them. However, a reduction allows us to derive the state evolution of punctured orthogonally invariant random matrices from that of their unpunctured counterparts. These matrices are central because, by~\Cref{thm:universality-new}, they provide an intermediate step in deriving the state evolution of sequences of punctured {\em deterministic} matrices satisfying~\Cref{assumption:punctured}.
+
+Note that a GFOM run on a punctured matrix must be initialized with a random vector $\bmx_0 \sim \calN(\bm{0}, \bI)$, rather than $\bm{x}_0 = \bm{1}$, to avoid triviality.
+
+\begin{theorem}[State evolution for punctured matrices]\label{prop:hadamard-explicit-state}
+    Let $\bH = \bH^{(n)} \in \R_\sym^{n \times n}$ be a sequence of orthogonally invariant random matrices satisfying~\cref{eq:tightnessNorm} and converging in tracial moments in $L^2$ to a probability measure with free cumulants $(\kappa_q)_{q\ge 1}$. 
+    Let $\bA$ denote the puncturing of $\bH$ (\Cref{def:puncturing}).
+    Let $f_t : \R \to \R$ be polynomial functions with $f_0(x)=x$, and consider the pGFOM:
+    \begin{alignat*}{2}
+        \bm x_0 &\sim \calN(\bm 0, \bm I)\,,\quad &\bm x_t &= \bm A { f_{t-1}(\bm x_{t-1})} - \sum_{s=0}^{t-1} \kappa_{t-s} \left(\prod_{r=s+1}^{t-1} \langle f_r'(\bm x_r)\rangle\right) (f_s(\bm x_s) - \langle f_s(\bm x_s)\rangle \bm{1})\quad \forall t\ge 1\,.\label{eq:ampPunctured}
+    \end{alignat*}
+    Then for any $t\ge 1$ and any polynomial $\varphi:\R^t \to \R$, we have
+    \[
+        \lim_{n\to\infty}  \E_{\bm H,\bm x_0} \langle \varphi(\bm x_1, \ldots, \bm x_t)\rangle = \E \varphi(X_1, \ldots, X_t)\,,
+    \]
+    where $(X_t)_{t\ge 1}$ is a centered Gaussian process with covariance given by
+    \begin{align*}
+        \E\left[X_s X_t\right] &= \sum_{s' = 0}^{s-1}\sum_{t'=0}^{t-1} \kappa_{s-s'+t-t'} \left(\prod_{r= s'+1}^{s-1} \E f'_r(X_r) \right) \left(\prod_{r=t'+1}^{t-1} \E f'_r(X_r)\right) \E \left[\overline{F_{s'}} \, \overline{F_{t'}}\right]\quad \forall s,t\ge 1\,,\\
+        \overline{F_0} &\defeq 1\,,\quad \overline{F_t} \defeq f_t(X_t) - \E f_t(X_t)\quad \forall t\ge 1\,.
+    \end{align*}
+\end{theorem}
+
+\noindent By~\Cref{thm:universality-orthogonal}, the conclusion of~\Cref{prop:hadamard-explicit-state} also holds for any sequence of deterministic matrices satisfying the delocalization assumption~\Cref{assumption:punctured} and having a limiting diagonal distribution that factorizes over cycles (that is, matches the diagonal distribution of some orthogonally invariant random matrix ensemble).
+In particular, the conclusion holds for the Walsh-Hadamard matrices and the Discrete Cosine and Sine Transform matrices, for which the $\kappa_q$ are the free cumulants of the \rom  (\cref{eq:freeCumulantROM}).
+
+The proof of~\Cref{prop:hadamard-explicit-state} proceeds by reducing to the following iteration on the original, non-punctured matrix, initialized at the all-ones vector:
+\begin{alignat}{2}
+    \bm u_0 &= \bm 1\,,\qquad
+    \bm u_t
+    = \bm H \overline{\bm f_{t-1}}
+    - \sum_{s=0}^{t-1} \bm b_{s,t} \cdot \overline{\bm f_s} \quad \forall t\ge 1\,,\nonumber\\
+    \text{where } {\bm b}_{s,t}[i]
+    &\defeq \sum_{\substack{i_s,\ldots,i_{t-1}\in[n] \textnormal{ distinct}\\i_s=i}}
+    \left(\prod_{r=s+1}^{t-1} \bm H[i_{r-1}, i_{r}] \bm f'_{r}[i_{r}] \right)
+    \bH[i_{t-1},i_s]\quad \forall t> s\ge 0\,,\label{eq:backtrackPunctured}\\
+    \overline{\bm f_0} &\defeq \bm u_0\,,\quad \overline{\bm f_t} \defeq \bm \Pi f_t(\bm u_t)\quad \forall t\ge 1\,.\nonumber
+\end{alignat}
+
+\begin{lemma}\label{lem:switchInit}
+    For any $t\ge 1$ and any polynomial $\varphi:\R^t \to \R$,
+    \begin{align*}
+        \lim_{n\to\infty} \E_{\bm H,\bm x_0} \langle \varphi(\bm x_1, \ldots, \bm x_t)\rangle &= \lim_{n\to\infty} \E_{\bm H} \langle \varphi(\bm u_1, \ldots, \bm u_t)\rangle\,.
+    \end{align*}
+\end{lemma}
+
+\noindent The proof of~\Cref{lem:switchInit}
+is deferred to~\Cref{appendix:initialization}.
+
+\begin{proof}[Proof of~\Cref{prop:hadamard-explicit-state}]
+    We apply~\Cref{thm:orthogonal-amp} to $\bm u_t$ after replacing iteratively each occurrence of $\bm \Pi f_t(\bm u_t)$ by $f_t(\bm u_t) - \E\left[f_t(U_t)\right] \cdot \bm 1$ (where $U_t$ is the asymptotic state of $\bm u_t$ as predicted by~\cref{thm:orthogonal-amp}). By~\Cref{lem:asymptotic-state-empirical-average}, this transformation does not change the asymptotic state of $\bm u_t$.
+    The state evolution formula for polynomial test functions then transfers to $\bm x_t$ by~\Cref{lem:switchInit}.
+\end{proof}
+
+\subsubsection{Block-structured random matrices}
+
+\newcommand{\Community}{\textnormal{Community}}
+
+Our final example is the class of block-structured matrices whose blocks satisfy the factorizing strong cactus property, which we introduced in~\Cref{sec:wigner-block}.
+As anticipated in~\Cref{ex:block-structured}, these matrices do not
+themselves
+satisfy the factorizing strong
+cactus property.
+Therefore, we start by describing the random
+limit $Z^\infty_{\calC_1}$.
+
+
+\begin{lemma}\label{lem:block-matrix-cactus-limits}
+    Let $q \in \N$. For $r,c\in [q]$, let $\bA_{r,c} = \bA_{r,c}^{(n)} \in \R^{\frac nq \times \frac nq}_\sym$ be a sequence of symmetric random matrices such that $\bm A_{r,c} = \bm A_{c,r}$.
+    Let $\bA \in \R^{n \times n}_\sym$ be the block matrix with blocks $(\bA_{r,c})_{r,c \in [q]}$.
+    Assume that each $\bm A_{r,c}$ satisfies the factorizing strong cactus property,
+    and $(\bm A_{r,c})_{1 \leq r\leq c \leq q}$
+    are asymptotically traffic independent. Let $(\kappa^{\{r,c\}}_\ell)_{\ell\ge 1}$ be the limiting
+    free cumulants of $\bm A_{r,c}$.
+    Then,
+    \[
+        (\block(i), \bmz_{\cC_1}(\bm A)[i]) \tod  (R, Z_{\cC_1}^\infty(R))\,, \qquad i \sim \Unif([n])\,, \quad R \sim \Unif([q])\,,
+    \]
+    where  the (deterministic) sequence $Z_{\cC_1}^\infty(r)$ for $r\in [q]$ is defined recursively by:
+    \begin{enumerate}[(i)]
+        \item For the singleton cactus, $Z^\infty_{\mathrm{singleton}}(r) \defeq 1$.
+        
+        \item Suppose $\sigma \in \mathcal C_1$ is rooted at a vertex $u_1$ of degree $2$. Let $(u_1, \ldots, u_{\ell})$ be
+        the cycle incident to the root.
+        Let
+        $\sigma_2, \dots, \sigma_{\ell} \in \mathcal C_1$ be the rooted cactuses
+        attached to the vertices of the cycle. Then
+        \[
+            Z^\infty_\sigma(r) \defeq
+            \begin{cases}
+                \displaystyle
+                \sum_{c\in [q]} \left[\kappa_\ell^{\{r,c\}}
+                \prod_{\substack{k=2\\k\textnormal{ odd}}}^{\ell} Z^\infty_{\sigma_k}(r) \prod_{\substack{k=2\\k\textnormal{ even}}}^{\ell} Z^\infty_{\sigma_k}(c)\right]
+                & \text{if $\ell$ is even} \\
+                \displaystyle
+                \kappa_\ell^{\{r,r\}}
+                \prod_{k=2}^{\ell} Z^\infty_{\sigma_k}(r)
+                & \text{if $\ell$ is odd}
+            \end{cases}
+        \]
+    
+        \item If $\sigma \in \mathcal C_1$ decomposes as
+        $\sigma = \bigoplus_{k=1}^\ell \sigma_k$, then $Z^\infty_\sigma(r) \defeq \prod_{k=1}^\ell Z^\infty_{\sigma_k}(r)$.
+    \end{enumerate}
+    In particular, the law of the limit $Z_{\calC_1}^{\infty}$ is $\Unif(\{Z_{\calC_1}^{\infty}(r): r \in [q]\})$.
+\end{lemma}
+
+\noindent The proof is deferred to~\Cref{app:block-matrix}. By unicity of the limit in distribution,~\Cref{lem:block-matrix-cactus-limits}, together with~\Cref{thm:convergence-distribution}, determines
+the law of $Z^\infty_{\calA_1}$.
+The joint convergence with $\block(i)$ clarifies the source of the randomness
+of $Z^\infty_{\calC_1}$: it arises because of the random choice of the block an entry belongs to in the $\samp(\cdot)$ operation.
+
+Using~\Cref{lem:block-matrix-cactus-limits},
+we can specialize the treelike
+AMP iteration and its state evolution
+to concrete block-structured models.
+We start with block GOE matrices (\cref{def:blockgoe}).
+A family of AMP iterations for such matrices was derived in~\cite{rangan2011generalized, javanmard2013state}. As we will discuss below, these iterations
+have the same asymptotic state as
+treelike AMP.
+
+\begin{theorem}[State evolution for the block GOE model]\label{thm:block-goe-state}
+    Let $\bA \sim \bGOE(n, \bm\Sigma)$, where  $\bm \Sig \in \R_{\ge 0}^{q \times q}$ is a symmetric matrix.
+    Given polynomial functions $f_t : \R \to \R$, let
+    \begin{alignat}{2}
+        \bmx_0 &= \bm{1}\,,\quad \bm x_1 = \bm A f_0(\bm x_0)\,, \quad &\bmx_t &= \bA f_{t-1}(\bm x_{t-1}) - (\bm A^{\odot 2}  f_{t-1}'(\bm x_{t-1})) \cdot f_{t-2}(\bm x_{t-2})\quad \forall t\ge 2\,.\label{eq:amp-block-goe}
+    \end{alignat}
+    Then the asymptotic state of $(\bm x_t)_{t\ge 1}$
+    is a mixture $\frac 1q\sum_{r \in [q]} \mu_r$ where $\mu_r$ denotes the law of a centered Gaussian process $(X_t)_{t \geq 1}$ with covariance kernel $\bm \Gamma_r$ defined recursively by
+    \[
+        \bm \Gamma_{r}[s,t] = \sum_{c\in  [q]}\bigg[\bSig[r,c] \E_{(X_{T})_{T \ge 1} \sim \mu_c} \left[f_{s-1}(X_{s-1})f_{t-1}(X_{t-1})\right]\bigg]\quad \forall r \in [q]\,,\quad  \forall s,t\ge 1\,,
+    \]
+    with $X_0\defeq 1$.
+\end{theorem}
+
+\begin{proof}
+    By the discussion after~\Cref{thm:male-traffic-independence}, $\bA$ has a traffic distribution and satisfies the strong cactus
+    property\footnote{One can also verify that it satisfies~\cref{eq:tightnessNorm}. But note that this was only needed in the proof of~\Cref{thm:convergence-distribution} to ensure the existence of the limit $Z^\infty_{\calC_1}$, which we established directly in~\Cref{lem:block-matrix-cactus-limits}.}, so it satisfies
+    the assumption of~\Cref{thm:full-onsager}.
+    We consider the treelike AMP iteration $\bm x_t$
+    in~\cref{eq:tree-amp} applied to
+    $\bm A$.
+    We show that this iteration
+    has the same asymptotic state
+    as~\cref{eq:amp-block-goe} by
+    simplifying the Onsager correction term.
+    
+    The free cumulants of the GOE are $0$ except for $\kappa_2$, so by~\cref{lem:block-matrix-cactus-limits}, the only asymptotically non-negligible cactuses are those such that every cycle is a 2-cycle.
+    For any
+    $s < t-2$, $\bm b_{s,t}$ contains an injective cycle
+    of length larger than $2$ that cannot be
+    destroyed by later operations. For $s=t-2$,
+    we have:
+    \begin{align*}
+        \bmb_{t-2,t}[i] &= \sum_{\substack{j = 1\\j \neq i}}^n \bA[i,j]^2 \bmf'_{t-1}[j] = (\bm A^{\odot 2} \bm f_{t-1}')[i] - \bm A[i,i]^2 \bm f_{t-1}'[i]\,.
+    \end{align*}
+    Both $\bm A[i,i]^2 \bm f_{t-1}'[i]$ and
+    $\bm b_{t-1,t}$ contain a self-loop that also
+    cannot be destroyed by later operations.
+    In conclusion, the treelike AMP algorithm from~\cref{eq:tree-amp} and the iteration in~\cref{eq:amp-block-goe} are equal up to negligible diagrams.
+    By~\Cref{thm:full-onsager},
+    the asymptotic state $(X_t)_{t\ge 1}$ of $(\bmx_t)_{t\ge 1}$ in~\cref{eq:amp-block-goe} exists and
+    is Gaussian conditionally on
+    $Z^\infty_{\calC_1}$, and so, in the construction from~\Cref{lem:block-matrix-cactus-limits}, it is Gaussian conditionally on the random variable $R$. 
+
+    Next, we specialize the covariance formula given by~\Cref{lem:cov-cactus}. Since
+    only cactuses of 2-cycles are nonzero in the traffic distribution of $\bm A$ (this may be induced from~\Cref{lem:block-matrix-cactus-limits}), only the term
+    for $s'=s-1$ and $t'=t-1$ is non-negligible
+    in the expansion of $\frac 1 n \E \bm x_s \cdot \bm x_t$ given by~\Cref{lem:cov-cactus}. The expansion into cactuses of that
+    term is obtained by grafting together a 2-cycle at the root, and cactuses of 2-cycles
+    from $\bm f_{s-1}$ and $\bm f_{t-1}$ at the
+    child of the root. 
+    Applying the recursive formula for $Z^\infty_{\calC_1}(r)$ in~\Cref{lem:block-matrix-cactus-limits}, we obtain:
+    \begin{align*}
+        \E \left[X_s X_t\mid R=r\right]
+        &=  \sum_{c\in [q]} \bm \Sigma[r,c] \E\left[f_{s-1}(X_{s-1}) f_{t-1}(X_{t-1})\mid R=c\right]\qquad \forall r\in [q]\,.
+    \end{align*}
+    Thus, we have shown that, conditionally on $R\sim \Unif([q])$, $(X_t)_{t\ge 1}$
+    is a Gaussian process with the required covariance. The result follows by taking $\mu_r$ to be the law of $(X_t)_{t\ge 1}$ conditionally
+    on $R=r$.
+\end{proof}
+
+To illustrate the modularity of
+our approach, we also study a different
+block-structured matrix
+model whose blocks
+are not all GOE.
+
+\begin{theorem}[State evolution for the community model]\label{thm:communitySimple}
+    Let $\bm M\in \R_{\sym}^{\frac n q\times \frac n q}$ be
+    an orthogonally invariant
+    random matrix converging in
+    tracial moments to a probability measure with free cumulants $(\kappa_q)_{q\ge 1}$
+    such that $\kappa_2 = \frac 1 q$.
+    Let $\bm A$ be the random symmetric $n\times n$ matrix with blocks $(\bA_{r,c})_{r,c \in [q]}$ given by $\bA_{1,1} = \bM$ and 
+    for all $1\le r\le c\le q$ with $(r,c)\neq (1,1)$, 
+    $\bA_{r,c}$ are i.i.d. $\frac n q\times \frac n q$ GOE matrices with entries of variance $\frac 1n$ (and we set $\bm A_{r,c} =\bm A_{c,r}$).
+    
+    Let $\bm x_t$ be the treelike AMP iteration~\cref{eq:tree-amp} run
+    on $\bm A$ with arbitrary polynomial
+    nonlinearities.
+    Then the asymptotic state $(X_t)_{t\ge 1}$ of $(\bm x_t)_{t\ge 1}$ is the mixture $(1-\frac 1q)\mu_0 + \frac 1 q \mu_1$, where $\mu_i$ is the law
+    of a centered Gaussian process
+    $(X_t)_{t\ge 1}$ with covariance kernel $\bm \Gamma_i$
+    defined recursively by, for
+    all $s,t\ge 1$:
+    \begin{align*}
+        & \bm \Gamma_0[s,t] = \E\left[F_{s-1}F_{t-1}\right]\,\\
+        & \bm \Gam_1[s,t] = \E\left[F_{s-1}F_{t-1}\right]  + \underset{(s',t') \neq (s-1,t-1)}{\sum_{s'=0}^{s-1} \sum_{\substack{t'=0}}^{t-1}} \kappa_{s-s'+t-t'} 
+        \left(\prod_{r=s'+1}^{s-1} \E_{\mu_1}F'_r\right) \left(\prod_{r=t'+1}^{t-1}\E_{\mu_1} F'_r \right) \E_{\mu_1}\left[F_{s'}F_{t'}\right]\,,\\
+        & F_t := f_t(X_t), \qquad F'_t := f'_t(X_t), \qquad X_0 = 1\,,
+    \end{align*}
+    where $\E_{\mu_1}$ denotes
+    expectation with respect to $(X_t)_{t\ge 1}\sim \mu_1$.
+\end{theorem}
+
+\begin{proof}
+    The assumptions of~\Cref{lem:block-matrix-cactus-limits,thm:communitySimple} are satisfied. All
+    blocks except the one in position $(1,1)$ have the same
+    free cumulants (the GOE free cumulants, normalized so that $\kappa_2 = \frac 1 q$). Therefore, in the construction of~\Cref{lem:block-matrix-cactus-limits}, we have $Z^\infty_{\calC_1}(r) = Z^\infty_{\calC_1}(s)$ for all $r,s>1$. Let $\mu_0$ (resp. $\mu_1$) be
+    the law of the asymptotic state
+    $(X_t)_{t\ge 1}$ of the treelike AMP iteration $(\bm x_t)_{t\ge 1}$ conditioned on $R>1$ (resp. $R=1$). By~\Cref{thm:full-onsager}, both $\mu_0$ and $\mu_1$ are the laws of centered Gaussian processes.
+    It remains to specialize the formula of \Cref{lem:cov-cactus} for their covariance 
+    to the present setting. 
+    
+    Conditionally
+    on $R>1$ (that is, outside the community), only 2-cycles
+    at the root contribute to $Z^\infty_{\calC_1}$. Thus, by
+    combining the strong cactus property,~\Cref{lem:cov-cactus},
+    and~\Cref{lem:block-matrix-cactus-limits}, we obtain
+    \begin{align*}
+        \E \left[X_s X_t\mid R >1\right] &= \frac 1q \left(\E \left[f_{s-1}(X_s) f_{t-1}(X_t) \mid R = 1\right] + (q-1) \E \left[f_{s-1}(X_s) f_{t-1}(X_t) \mid R > 1\right]\right)\\
+        &= \E \left[f_{s-1}(X_s) f_{t-1}(X_t)\right]\,.
+    \end{align*}
+    
+    Conditionally on $R=1$ (that is, inside
+    the community), we also obtain 
+    a contribution of $\E \left[f_{s-1}(X_s) f_{t-1}(X_t)\right]$ from the term
+    $s'=s-1$ and $t'=t-1$ in~\Cref{lem:cov-cactus} (again using the normalization $\kappa_2 = \frac 1q$ inside the community).
+    For all of the remaining terms $s',t'$,
+    when $s-s' + t-t'$ is an even
+    integer larger than $2$, we obtain
+    a contribution only from $c=1$
+    in~\Cref{lem:block-matrix-cactus-limits}, namely
+    \[
+        \kappa_{s-s'+t-t'} \E\left[ F_{s'} F_{t'}\mid R=1\right]\prod_{r=s'+1}^{s-1} \E\left[ F'_{r}\mid R=1\right]\prod_{r=t'+1}^{t-1} \E\left[ F'_{r}\mid R=1\right]\,.
+    \]
+    When $s-s'+t-t'$ is odd,~\Cref{lem:block-matrix-cactus-limits} yields exactly the same expression as the even case.
+    Altogether, we obtain the recursion
+    \begin{align*}
+        &\qquad\E\left[X_s X_t\mid R=1\right] = \E \left[F_{s-1} F_{t-1}\right] + \\
+        &\underset{(s',t') \neq (s-1,t-1)}{\sum_{s'=0}^{s-1} \sum_{\substack{t'=0}}^{t-1}} \kappa_{s-s'+t-t'} \E\left[ F_{s'} F_{t'}\mid R=1\right] \prod_{r=s'+1}^{s-1} \E\left[ F'_{r}\mid R=1\right]\prod_{r=t'+1}^{t-1} \E\left[ F'_{r}\mid R=1\right] \,.
+    \end{align*}
+    These are the desired covariance
+    formulas for $\mu_0$ and $\mu_1$, and the mixing weights
+    of the events $(R=1)$ and $(R>1)$ are indeed $\frac 1q$ and $1-\frac 1 q$, respectively.
+\end{proof}
+
+\subsubsection{Further extensions}
+
+There are several possible technical extensions of the methods we have developed here,
+whose full development is left for future work.
+
+First,~\Cref{lem:block-matrix-cactus-limits} applies to general orthogonally invariant distributions within the blocks, not just the GOE. In principle, one can then derive a corresponding state evolution formula mechanically for non-identically distributed orthogonally invariant blocks with arbitrary free cumulants, although the resulting expression is quite complicated.
+
+Second, for technical reasons, we assumed that the blocks are square and symmetric, so that we could work with undirected graphs. The results of~\cite{male2020traffic,cebron2024traffic} extend to general matrices, and our techniques should also extend to the setting of varying block sizes and asymmetric matrices, leading to non-uniform mixtures in the recursion for the covariance kernel.
+
+One caveat of the treelike AMP algorithm
+is that the Onsager correction term
+in~\cref{eq:tree-amp} is not obviously efficient
+to compute in practice.\footnote{The $\bm b_{s,t}$ can be approximated with high probability to negligible error for all
+$0\le s<t\le T$ in time $2^{O(T)}\poly(n)$ using the color coding
+technique~\cite{colorCoding, heavyTailedWigner}, but the exponential
+dependence on $T$ makes this
+algorithm impractical to implement
+for large $T$.}
+On the other hand,
+the vectors $\bb_{s,t}$ have asymptotically constant entries in many settings,
+so that the Onsager correction can be replaced by a simpler asymptotically equivalent term, like in \Cref{thm:orthogonal-amp,prop:hadamard-explicit-state}.
+This should also hold for block-structured models, as in the generalized AMP algorithm of Javanmard and Montanari~\cite{javanmard2013state}.
+For example, \cref{eq:amp-block-goe} is expected to be asymptotically equivalent to:
+\begin{alignat*}{2}
+    \bmx_0 &= \bm{1}\,, \qquad &\bmx_t &= \bA f_{t-1}(\bm x_{t-1}) - \bmb_{t-2,t} \cdot f_{t-2}(\bm x_{t-2})\,,\\
+     && \bmb_{t-2,t}[i] &= \sum_{c = 1}^q \matSig[\block(i), c] \langle f'(x_{t-1}) \cdot \bm{1}_{\block = c} \rangle\,,
+\end{alignat*}
+where $\bm{1}_{\block = c} \in \{0,1\}^{n}$ indicates the entries in block $c \in [q]$.
+The treelike AMP algorithm for~\cref{thm:communitySimple} is expected to be asymptotically equivalent to:
+\begin{alignat*}{2}
+    \bmx_0 &= \bm{1}\,, \qquad &\bmx_t &= \bA \bmf_{t-1} - \langle \bmf'_{t-1} \rangle \bmf_{t-2}
+    - \sum_{\substack{s = 0\\ s \neq t-2}}^{t-1} \kappa_{t-s} \left(\prod_{r=s+1}^{t-1} \langle \bmf_r' \cdot \bm{1}_{\block = 1} \rangle \right) \bmf_s \cdot \bm{1}_{\block = 1}\,, \\
+    \bmf_{t} &\defeq f_t(\bmx_t)\,, \qquad &\bmf'_t &\defeq f'_t(\bx_t)\,,
+\end{alignat*}
+where $\bm{1}_{\block = 1} \in \{0,1\}^n$ indicates the entries in the first block.
+Because these expressions involve the blockwise indicators
+$\bm{1}_{\block = c}$, they could be represented and analyzed using an extended
+diagram basis in which certain indices are constrained to lie in a prescribed
+block. We leave the full development of this extension to future work.
+
+A final open question is to characterize traffic distributions satisfying the
+(not necessarily factorizing) strong cactus property. Sequences of block matrices with orthogonally invariant
+blocks provide one general construction of matrices with the strong cactus
+property. If a sequence of matrices has the strong cactus property, must its
+traffic distribution arise as the limit (in an appropriate sense) of traffic
+distributions of block matrices with orthogonally invariant blocks (allowing the number of blocks to tend to infinity)?

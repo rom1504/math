@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: second material checkpoint, 2026-09-07 approximately 07:25 UTC.
+Evidence cutoff: third material checkpoint, 2026-09-07 approximately 08:40 UTC.
 Status: **new six-hour constructive campaign ACTIVE**.
 Started 2026-09-07 05:27:43 UTC from fe8fb43; target finish 11:28 UTC.
 The preceding campaign completed at 04:45 UTC. Convergence remains OPEN.
@@ -53,6 +53,18 @@ lower constant for minimum half-range W_n and twice it, .8666442233281615,
 for the square full-sign Gale--Berlekamp norm. Bipartite support is explicit.
 
 ## Agent-authored assessment
+
+Checkpoint 3: rank-two Hadamard tiles are a new actual full-sign operation,
+escaping the universal matching floor of reciprocal rank-one weaves. A
+joint four-coordinate kernel yields a rigorously audited finite typed-profile
+certificate with o(N) type overhead and O(N^(5/4)) fibre completion.
+Its growing-order certificate is OPEN; finite values around .48046 are not
+asymptotic upper bounds. Random column phases erase the input seed, so this
+is not near-optimal seed transfer. The regular-support extension of the
+existing upper construction independently proves a square full-sign
+bilinear upper constant below .987216188 at all orders. Neither theorem
+has paid for actual-child shell alignment or proved convergence.
+See `artifacts/flatify_director_checkpoint_three_2026_09_07.md`.
 
 The campaign removed a real analytic alignment obligation and substantially
 improved the original all-order upper bound. It did not complete any original

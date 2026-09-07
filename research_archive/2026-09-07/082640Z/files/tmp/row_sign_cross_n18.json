@@ -1,0 +1,115 @@
+{
+  "canonical_payload_sha256": "3d99e1a91a360f3106283b8bcc3ef530fe73b1a22335b03c7c11d79420826a18",
+  "classification": "exact finite enumeration through n=14; exact response and cap but sampled shore defects at n=18; reproducible Monte Carlo polynomial shore diagnostics at n=26 and n=98; numerical spectral values are not proofs",
+  "current_doubled_project_constant": 0.672986,
+  "normalization": "doubled Q(A)=max_z |z^T A z|",
+  "records": [
+    {
+      "agreement_size_histogram": {
+        "0,18": 35,
+        "1,17": 301,
+        "10,8": 2749,
+        "11,7": 3059,
+        "12,6": 3419,
+        "13,5": 2158,
+        "14,4": 954,
+        "15,3": 567,
+        "16,2": 357,
+        "17,1": 318,
+        "18,0": 30,
+        "2,16": 345,
+        "3,15": 583,
+        "4,14": 978,
+        "5,13": 2117,
+        "6,12": 3424,
+        "7,11": 3148,
+        "8,10": 2806,
+        "9,9": 5420
+      },
+      "cached_cross_anchor_states": 56760,
+      "cached_shore_subsets": 40878,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 60.0794677734375,
+        "Q_certificate_over_n_to_three_halves": 0.7867147976421537,
+        "exceeds_current_doubled_constant": true,
+        "mean": 0.01300048828125,
+        "mean_over_n_to_three_halves": 0.00017023580411866887,
+        "name": "cross_augmented_exact_face",
+        "standard_error": 0.001541225205241848
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 45.00555269369547,
+        "Q_certificate_over_n_to_three_halves": 0.5893283611251955,
+        "exceeds_current_doubled_constant": false,
+        "mean": 15.08691556802328,
+        "mean_over_n_to_three_halves": 0.19755667232107693,
+        "name": "cross_augmented_weighted_projector",
+        "standard_error": 0.03354336762977719
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 51.90252685546875,
+        "Q_certificate_over_n_to_three_halves": 0.6796412722262749,
+        "exceeds_current_doubled_constant": true,
+        "mean": 8.18994140625,
+        "mean_over_n_to_three_halves": 0.10724376121999747,
+        "name": "cross_aware_sign_h_witness",
+        "standard_error": 0.0452929905578896
+      },
+      "evaluated_X_count": 32768,
+      "exact_expected_bilinear_response": {
+        "decimal": 60.09246826171875,
+        "denominator": 16384,
+        "numerator": 984555
+      },
+      "exact_face": {
+        "Q_certificate": 60.00311279296875,
+        "Q_certificate_over_n_to_three_halves": 0.7857149620038792,
+        "exceeds_current_doubled_constant": true,
+        "mean": 0.08935546875,
+        "mean_over_n_to_three_halves": 0.0011700714423931043,
+        "name": "exact_face",
+        "standard_error": 0.0046445983440349566
+      },
+      "include_exact_face": true,
+      "label": "conference-n18",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "f38a26a0ca989b37571c1774cb49cdea533b62f6af918432bdc713ad41d78252",
+      "mode": "monte_carlo",
+      "n": 18,
+      "nuclear": {
+        "Q_certificate": 41.50114530034856,
+        "Q_certificate_over_n_to_three_halves": 0.5434396531274941,
+        "exceeds_current_doubled_constant": false,
+        "mean": 18.59132296137019,
+        "mean_over_n_to_three_halves": 0.24344538031877824,
+        "name": "nuclear",
+        "standard_error": 0.03793779647421482
+      },
+      "opposite_shore_sign_fraction": 0.9791259765625,
+      "population_size": 131072,
+      "projector": {
+        "Q_certificate": 42.66341539298917,
+        "Q_certificate_over_n_to_three_halves": 0.5586590802400218,
+        "exceeds_current_doubled_constant": false,
+        "mean": 17.429052868729578,
+        "mean_over_n_to_three_halves": 0.2282259532062506,
+        "name": "projector",
+        "standard_error": 0.03565050713525376
+      },
+      "quadratic_cap_Q": 66,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7868850334462724,
+      "sample_or_enumerated_response_mean": 60.10394287109375,
+      "sample_response_standard_error": 0.019355321242832936,
+      "sampling_with_replacement": true,
+      "seed": 26081318,
+      "source": "computations/results/conference_double_p17.json",
+      "source_key": "conference_matrix",
+      "unique_agreement_subsets": 22486,
+      "zero_field_coordinate_fraction": 0.0
+    }
+  ],
+  "schema": "quadratic-signing-row-sign-recoupling-law-audit-v1",
+  "universal_response_identity": "E[X^T A sign(AX)]=n E|S_{n-1}| for every signing A; S_m is a length-m Rademacher sum",
+  "zero_field_tie_rule": "Y_i=X_i when (AX)_i=0"
+}
