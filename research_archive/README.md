@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-07 02:37:17](2026-09-07/023717Z/README.md) | 1,848 research files; 152,919,876 bytes; quadratic fluctuation proofs, width-pressure comparison, soft-flatness reduction, independent audits and continuing failed calculations | Preservation only; canonical status remains explicit. New compiled scan excluded by pinned source/binary hash; no oversized research or credential candidate. |
 | [2026-09-07 01:44:16](2026-09-07/014416Z/README.md) | 1,859 research files; 152,954,617 bytes; exact optimizer counterexamples, interpolation proofs, unsuccessful polarity solver logs and continuing drafts | Preservation only; canonical proof status remains explicit. No oversized research or credential candidate. |
 | [2026-09-07 00:43:21](2026-09-07/004321Z/README.md) | 1,864 research files; 153,049,957 bytes; exact Gaussian phase, transport, counterexamples, code, raw outputs and ongoing drafts | Preservation only; canonical status remains in proofs. Environments, caches and reviewed build/dependency files excluded. |
 | [2026-09-06 23:39:40](2026-09-06/233940Z/README.md) | 1,932 research files; 155,077,507 bytes; new precision proof, exact certificates, independent reconstruction, failed seed comparisons and ongoing drafts | Preservation only; canonical mathematical status is explicit in each artifact. Environments and reviewed dependencies excluded by existing manifest rules. |
