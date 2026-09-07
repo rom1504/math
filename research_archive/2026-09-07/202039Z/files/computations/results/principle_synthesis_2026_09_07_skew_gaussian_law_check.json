@@ -1,0 +1,129 @@
+{
+  "status": "BOUNDED_DIAGNOSTIC",
+  "results": [
+    {
+      "n": 6,
+      "child_cap": 5,
+      "cut_tests": 496,
+      "variance_checks": 30,
+      "laws": {
+        "iid_skew": {
+          "samples": 500,
+          "minimum_cap": 20,
+          "mean_cap": 23.792,
+          "histogram": {
+            "20": 87,
+            "24": 352,
+            "28": 61
+          }
+        },
+        "anticommutator": {
+          "samples": 500,
+          "minimum_cap": 20,
+          "mean_cap": 21.456,
+          "histogram": {
+            "20": 318,
+            "24": 182
+          }
+        },
+        "commutator_control": {
+          "samples": 500,
+          "minimum_cap": 20,
+          "mean_cap": 24.736,
+          "histogram": {
+            "20": 24,
+            "24": 360,
+            "28": 116
+          }
+        }
+      }
+    },
+    {
+      "n": 7,
+      "child_cap": 9,
+      "cut_tests": 2016,
+      "variance_checks": 30,
+      "laws": {
+        "iid_skew": {
+          "samples": 500,
+          "minimum_cap": 24,
+          "mean_cap": 31.52,
+          "histogram": {
+            "24": 1,
+            "28": 144,
+            "32": 274,
+            "36": 76,
+            "40": 5
+          }
+        },
+        "anticommutator": {
+          "samples": 500,
+          "minimum_cap": 24,
+          "mean_cap": 29.488,
+          "histogram": {
+            "24": 15,
+            "28": 297,
+            "32": 175,
+            "36": 13
+          }
+        },
+        "commutator_control": {
+          "samples": 500,
+          "minimum_cap": 28,
+          "mean_cap": 34.136,
+          "histogram": {
+            "28": 23,
+            "32": 238,
+            "36": 188,
+            "40": 51
+          }
+        }
+      }
+    },
+    {
+      "n": 8,
+      "child_cap": 10,
+      "cut_tests": 8128,
+      "variance_checks": 30,
+      "laws": {
+        "iid_skew": {
+          "samples": 500,
+          "minimum_cap": 32,
+          "mean_cap": 38.768,
+          "histogram": {
+            "32": 10,
+            "36": 197,
+            "40": 232,
+            "44": 59,
+            "48": 2
+          }
+        },
+        "anticommutator": {
+          "samples": 500,
+          "minimum_cap": 32,
+          "mean_cap": 36.24,
+          "histogram": {
+            "32": 82,
+            "36": 319,
+            "40": 88,
+            "44": 9,
+            "48": 2
+          }
+        },
+        "commutator_control": {
+          "samples": 500,
+          "minimum_cap": 36,
+          "mean_cap": 41.848,
+          "histogram": {
+            "36": 50,
+            "40": 240,
+            "44": 149,
+            "48": 51,
+            "52": 10
+          }
+        }
+      }
+    }
+  ],
+  "qualification": "Finite exact cap tests; no asymptotic claim"
+}

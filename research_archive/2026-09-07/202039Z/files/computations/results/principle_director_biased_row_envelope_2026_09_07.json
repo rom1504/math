@@ -1,0 +1,686 @@
+{
+  "status": "FLOATING DIAGNOSTIC, not an interval certificate or actual cap lower bound",
+  "formula": "(t*(1-a^2)+p*h((1+a)/2)+E_t(nu_p,a))/(2*t*sqrt(p)*(1-a^2))",
+  "records": [
+    {
+      "p": 0.96,
+      "bias": 0.0,
+      "t": 2.0,
+      "variance": 1.0,
+      "slice_entropy": 0.6654212933375474,
+      "envelope": {
+        "lower": -0.6121783399356959,
+        "upper": -0.6102144626034509,
+        "intervals": 60,
+        "maximum_dual_gap": 0.0001666937921288164,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5238955785207995,
+      "variance_ratio_upper": 0.5243966719980305
+    },
+    {
+      "p": 0.96,
+      "bias": 0.0,
+      "t": 4.85,
+      "variance": 1.0,
+      "slice_entropy": 0.6654212933375474,
+      "envelope": {
+        "lower": -0.8243320723553067,
+        "upper": -0.82238152348108,
+        "intervals": 108,
+        "maximum_dual_gap": 0.0002087121015981186,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4935899883709935,
+      "variance_ratio_upper": 0.4937952224543361
+    },
+    {
+      "p": 0.96,
+      "bias": 0.0,
+      "t": 8.0,
+      "variance": 1.0,
+      "slice_entropy": 0.6654212933375474,
+      "envelope": {
+        "lower": -0.8333654410717205,
+        "upper": -0.8323157069022854,
+        "intervals": 11,
+        "maximum_dual_gap": 0.00016669080080380927,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4995974082039091,
+      "variance_ratio_upper": 0.4996643694820518
+    },
+    {
+      "p": 0.96,
+      "bias": 0.0,
+      "t": 16.0,
+      "variance": 1.0,
+      "slice_entropy": 0.6654212933375474,
+      "envelope": {
+        "lower": -0.8333654410717205,
+        "upper": -0.8327305047077284,
+        "intervals": 6,
+        "maximum_dual_gap": 0.00016666142733035016,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5049538856418689,
+      "variance_ratio_upper": 0.5049741365547715
+    },
+    {
+      "p": 0.96,
+      "bias": 0.0,
+      "t": 32.0,
+      "variance": 1.0,
+      "slice_entropy": 0.6654212933375474,
+      "envelope": {
+        "lower": -0.8333654410717205,
+        "upper": -0.832624247547093,
+        "intervals": 6,
+        "maximum_dual_gap": 0.00016617195767276716,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5076321243608488,
+      "variance_ratio_upper": 0.5076439443213696
+    },
+    {
+      "p": 0.96,
+      "bias": 0.1,
+      "t": 2.0,
+      "variance": 0.99,
+      "slice_entropy": 0.6606132611650448,
+      "envelope": {
+        "lower": -0.6098229663568815,
+        "upper": -0.6078845605401133,
+        "intervals": 61,
+        "maximum_dual_gap": 0.00016416202777083666,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5234006730719931,
+      "variance_ratio_upper": 0.5239002632619684
+    },
+    {
+      "p": 0.96,
+      "bias": 0.1,
+      "t": 4.85,
+      "variance": 0.99,
+      "slice_entropy": 0.6606132611650448,
+      "envelope": {
+        "lower": -0.8090312097742909,
+        "upper": -0.8071163436699246,
+        "intervals": 52,
+        "maximum_dual_gap": 0.00016580673002930535,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4945362888858587,
+      "variance_ratio_upper": 0.49473980362437137
+    },
+    {
+      "p": 0.96,
+      "bias": 0.1,
+      "t": 8.0,
+      "variance": 0.99,
+      "slice_entropy": 0.6606132611650448,
+      "envelope": {
+        "lower": -0.8285574088992179,
+        "upper": -0.8265798360285298,
+        "intervals": 12,
+        "maximum_dual_gap": 0.00016385114401940015,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.49948919653849566,
+      "variance_ratio_upper": 0.49961661774173527
+    },
+    {
+      "p": 0.96,
+      "bias": 0.1,
+      "t": 16.0,
+      "variance": 0.99,
+      "slice_entropy": 0.6606132611650448,
+      "envelope": {
+        "lower": -0.8285574088992179,
+        "upper": -0.8274631597583103,
+        "intervals": 6,
+        "maximum_dual_gap": 0.0001608188827177115,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5048997798091621,
+      "variance_ratio_upper": 0.5049350327559043
+    },
+    {
+      "p": 0.96,
+      "bias": 0.1,
+      "t": 32.0,
+      "variance": 0.99,
+      "slice_entropy": 0.6606132611650448,
+      "envelope": {
+        "lower": -0.8285574088992179,
+        "upper": -0.8278454999445736,
+        "intervals": 6,
+        "maximum_dual_gap": 0.00016002032648632092,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5076050714444955,
+      "variance_ratio_upper": 0.5076165390744553
+    },
+    {
+      "p": 0.96,
+      "bias": 0.25,
+      "t": 2.0,
+      "variance": 0.9375,
+      "slice_entropy": 0.6351007086316628,
+      "envelope": {
+        "lower": -0.5970810659563346,
+        "upper": -0.5952325547288662,
+        "intervals": 63,
+        "maximum_dual_gap": 0.00016672632848124813,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5206579991639952,
+      "variance_ratio_upper": 0.5211611001963401
+    },
+    {
+      "p": 0.96,
+      "bias": 0.25,
+      "t": 4.85,
+      "variance": 0.9375,
+      "slice_entropy": 0.6351007086316628,
+      "envelope": {
+        "lower": -0.7487109126115746,
+        "upper": -0.7467558378172391,
+        "intervals": 28,
+        "maximum_dual_gap": 0.00016635791953190093,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4975595255391967,
+      "variance_ratio_upper": 0.4977789498532906
+    },
+    {
+      "p": 0.96,
+      "bias": 0.25,
+      "t": 8.0,
+      "variance": 0.9375,
+      "slice_entropy": 0.6351007086316628,
+      "envelope": {
+        "lower": -0.7956165330073641,
+        "upper": -0.7936504576355691,
+        "intervals": 25,
+        "maximum_dual_gap": 0.00016648871380031682,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4993886445975325,
+      "variance_ratio_upper": 0.49952241908244227
+    },
+    {
+      "p": 0.96,
+      "bias": 0.25,
+      "t": 16.0,
+      "variance": 0.9375,
+      "slice_entropy": 0.6351007086316628,
+      "envelope": {
+        "lower": -0.8030448563658359,
+        "upper": -0.8019073779725485,
+        "intervals": 7,
+        "maximum_dual_gap": 0.00016648871380031682,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.504596787146005,
+      "variance_ratio_upper": 0.5046354849467966
+    },
+    {
+      "p": 0.96,
+      "bias": 0.25,
+      "t": 32.0,
+      "variance": 0.9375,
+      "slice_entropy": 0.6351007086316628,
+      "envelope": {
+        "lower": -0.8030448563658359,
+        "upper": -0.8022417981462251,
+        "intervals": 6,
+        "maximum_dual_gap": 0.00016648871380031682,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5074535751129169,
+      "variance_ratio_upper": 0.5074672354106377
+    },
+    {
+      "p": 0.96,
+      "bias": 0.5,
+      "t": 2.0,
+      "variance": 0.75,
+      "slice_entropy": 0.539841738834056,
+      "envelope": {
+        "lower": -0.5454385771597978,
+        "upper": -0.5436537625201019,
+        "intervals": 66,
+        "maximum_dual_gap": 0.00017144464402274462,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5084062800144232,
+      "variance_ratio_upper": 0.5090134862856321
+    },
+    {
+      "p": 0.96,
+      "bias": 0.5,
+      "t": 4.85,
+      "variance": 0.75,
+      "slice_entropy": 0.539841738834056,
+      "envelope": {
+        "lower": -0.5967798207606914,
+        "upper": -0.5949513019991006,
+        "intervals": 13,
+        "maximum_dual_gap": 0.00016527640432317803,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5023224336609833,
+      "variance_ratio_upper": 0.5025789593168254
+    },
+    {
+      "p": 0.96,
+      "bias": 0.5,
+      "t": 8.0,
+      "variance": 0.75,
+      "slice_entropy": 0.539841738834056,
+      "envelope": {
+        "lower": -0.6239444083621466,
+        "upper": -0.6220289334487887,
+        "intervals": 18,
+        "maximum_dual_gap": 0.00016601585823250442,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5031572857760183,
+      "variance_ratio_upper": 0.5033202002257693
+    },
+    {
+      "p": 0.96,
+      "bias": 0.5,
+      "t": 16.0,
+      "variance": 0.75,
+      "slice_entropy": 0.539841738834056,
+      "envelope": {
+        "lower": -0.685175479480413,
+        "upper": -0.6831863609218832,
+        "intervals": 33,
+        "maximum_dual_gap": 0.00016601585823250442,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5041299202500794,
+      "variance_ratio_upper": 0.5042145092345638
+    },
+    {
+      "p": 0.96,
+      "bias": 0.5,
+      "t": 32.0,
+      "variance": 0.75,
+      "slice_entropy": 0.539841738834056,
+      "envelope": {
+        "lower": -0.7077858865682292,
+        "upper": -0.7059386782053516,
+        "intervals": 9,
+        "maximum_dual_gap": 0.00016601585823250442,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5067393781211889,
+      "variance_ratio_upper": 0.5067786551866198
+    },
+    {
+      "p": 0.96,
+      "bias": 0.75,
+      "t": 2.0,
+      "variance": 0.4375,
+      "slice_entropy": 0.36169935480617926,
+      "envelope": {
+        "lower": -0.37225795554704905,
+        "upper": -0.3707176265379204,
+        "intervals": 11,
+        "maximum_dual_gap": 0.00016543525720997404,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5041524620767566,
+      "variance_ratio_upper": 0.5050508001977976
+    },
+    {
+      "p": 0.96,
+      "bias": 0.75,
+      "t": 4.85,
+      "variance": 0.4375,
+      "slice_entropy": 0.36169935480617926,
+      "envelope": {
+        "lower": -0.3793355859168524,
+        "upper": -0.3780260383339589,
+        "intervals": 7,
+        "maximum_dual_gap": 0.00016415400357036591,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5060688542720774,
+      "variance_ratio_upper": 0.5063838001112512
+    },
+    {
+      "p": 0.96,
+      "bias": 0.75,
+      "t": 8.0,
+      "variance": 0.4375,
+      "slice_entropy": 0.36169935480617926,
+      "envelope": {
+        "lower": -0.3866318890126193,
+        "upper": -0.3849992123510456,
+        "intervals": 7,
+        "maximum_dual_gap": 0.0001633679780985997,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5066751257702892,
+      "variance_ratio_upper": 0.5069131748617062
+    },
+    {
+      "p": 0.96,
+      "bias": 0.75,
+      "t": 16.0,
+      "variance": 0.4375,
+      "slice_entropy": 0.36169935480617926,
+      "envelope": {
+        "lower": -0.4052371892750678,
+        "upper": -0.4033265686227784,
+        "intervals": 11,
+        "maximum_dual_gap": 0.00016216614129216378,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5071363904918962,
+      "variance_ratio_upper": 0.5072756775660073
+    },
+    {
+      "p": 0.96,
+      "bias": 0.75,
+      "t": 32.0,
+      "variance": 0.4375,
+      "slice_entropy": 0.36169935480617926,
+      "envelope": {
+        "lower": -0.4403172676544287,
+        "upper": -0.43833924491931253,
+        "intervals": 24,
+        "maximum_dual_gap": 0.0001478238181440994,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5074446819619596,
+      "variance_ratio_upper": 0.5075167823548266
+    },
+    {
+      "p": 0.96,
+      "bias": 0.9,
+      "t": 2.0,
+      "variance": 0.18999999999999995,
+      "slice_entropy": 0.19057463361203766,
+      "envelope": {
+        "lower": -0.1940110403249401,
+        "upper": -0.19284096865387437,
+        "intervals": 7,
+        "maximum_dual_gap": 0.00016626795193080968,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.505695536876273,
+      "variance_ratio_upper": 0.5072668518744071
+    },
+    {
+      "p": 0.96,
+      "bias": 0.9,
+      "t": 4.85,
+      "variance": 0.18999999999999995,
+      "slice_entropy": 0.19057463361203766,
+      "envelope": {
+        "lower": -0.19554411930714097,
+        "upper": -0.19426622483643824,
+        "intervals": 5,
+        "maximum_dual_gap": 0.00014119885024962975,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.507558350003987,
+      "variance_ratio_upper": 0.5082660253065612
+    },
+    {
+      "p": 0.96,
+      "bias": 0.9,
+      "t": 8.0,
+      "variance": 0.18999999999999995,
+      "slice_entropy": 0.19057463361203766,
+      "envelope": {
+        "lower": -0.19677348151207852,
+        "upper": -0.1953579371673013,
+        "intervals": 5,
+        "maximum_dual_gap": 0.00010411384221623021,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.508229220762364,
+      "variance_ratio_upper": 0.5087044621758764
+    },
+    {
+      "p": 0.96,
+      "bias": 0.9,
+      "t": 16.0,
+      "variance": 0.18999999999999995,
+      "slice_entropy": 0.19057463361203766,
+      "envelope": {
+        "lower": -0.19985567408151736,
+        "upper": -0.19813703785010803,
+        "intervals": 5,
+        "maximum_dual_gap": 8.797760844084235e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5087523988917568,
+      "variance_ratio_upper": 0.5090408981941426
+    },
+    {
+      "p": 0.96,
+      "bias": 0.9,
+      "t": 32.0,
+      "variance": 0.18999999999999995,
+      "slice_entropy": 0.19057463361203766,
+      "envelope": {
+        "lower": -0.20574910672019053,
+        "upper": -0.20393220809390303,
+        "intervals": 6,
+        "maximum_dual_gap": 8.797760844084235e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.509036729711183,
+      "variance_ratio_upper": 0.5091892267831665
+    },
+    {
+      "p": 0.96,
+      "bias": 0.97,
+      "t": 2.0,
+      "variance": 0.05910000000000004,
+      "slice_entropy": 0.07476720903465255,
+      "envelope": {
+        "lower": -0.0761041025894022,
+        "upper": -0.07493355916058857,
+        "intervals": 5,
+        "maximum_dual_gap": 0.00015212404528377327,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5045385302936751,
+      "variance_ratio_upper": 0.5095921719363028
+    },
+    {
+      "p": 0.96,
+      "bias": 0.97,
+      "t": 4.85,
+      "variance": 0.05910000000000004,
+      "slice_entropy": 0.07476720903465255,
+      "envelope": {
+        "lower": -0.07658591664590288,
+        "upper": -0.07531918385347164,
+        "intervals": 5,
+        "maximum_dual_gap": 0.00014507554411438695,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5070724286285818,
+      "variance_ratio_upper": 0.5093276552102299
+    },
+    {
+      "p": 0.96,
+      "bias": 0.97,
+      "t": 8.0,
+      "variance": 0.05910000000000004,
+      "slice_entropy": 0.07476720903465255,
+      "envelope": {
+        "lower": -0.07665540337660044,
+        "upper": -0.07529321565394621,
+        "intervals": 5,
+        "maximum_dual_gap": 0.00010438384413567758,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5082723657443704,
+      "variance_ratio_upper": 0.5097426248630899
+    },
+    {
+      "p": 0.96,
+      "bias": 0.97,
+      "t": 16.0,
+      "variance": 0.05910000000000004,
+      "slice_entropy": 0.07476720903465255,
+      "envelope": {
+        "lower": -0.07690286939663508,
+        "upper": -0.07522743756091275,
+        "intervals": 5,
+        "maximum_dual_gap": 8.53832777097524e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5091578148408922,
+      "variance_ratio_upper": 0.5100619923243978
+    },
+    {
+      "p": 0.96,
+      "bias": 0.97,
+      "t": 32.0,
+      "variance": 0.05910000000000004,
+      "slice_entropy": 0.07476720903465255,
+      "envelope": {
+        "lower": -0.07676618814801907,
+        "upper": -0.0750867231132956,
+        "intervals": 6,
+        "maximum_dual_gap": 3.1226793908351036e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.509770970230246,
+      "variance_ratio_upper": 0.5102241472668627
+    },
+    {
+      "p": 0.96,
+      "bias": 0.99,
+      "t": 2.0,
+      "variance": 0.01990000000000003,
+      "slice_entropy": 0.03021990330928009,
+      "envelope": {
+        "lower": -0.031101785078036983,
+        "upper": -0.029930042519859895,
+        "intervals": 4,
+        "maximum_dual_gap": 0.00010864398243020518,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.4990029910796326,
+      "variance_ratio_upper": 0.5140269199816285
+    },
+    {
+      "p": 0.96,
+      "bias": 0.99,
+      "t": 4.85,
+      "variance": 0.01990000000000003,
+      "slice_entropy": 0.03021990330928009,
+      "envelope": {
+        "lower": -0.03148131749489749,
+        "upper": -0.03022474170384295,
+        "intervals": 4,
+        "maximum_dual_gap": 9.989447700228804e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5036408015499478,
+      "variance_ratio_upper": 0.5102847807052124
+    },
+    {
+      "p": 0.96,
+      "bias": 0.99,
+      "t": 8.0,
+      "variance": 0.01990000000000003,
+      "slice_entropy": 0.03021990330928009,
+      "envelope": {
+        "lower": -0.031451557750358426,
+        "upper": -0.030100337543664556,
+        "intervals": 4,
+        "maximum_dual_gap": 7.72117995173939e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5063623352845049,
+      "variance_ratio_upper": 0.5106936272083664
+    },
+    {
+      "p": 0.96,
+      "bias": 0.99,
+      "t": 16.0,
+      "variance": 0.01990000000000003,
+      "slice_entropy": 0.03021990330928009,
+      "envelope": {
+        "lower": -0.03145834203663739,
+        "upper": -0.029784384235950877,
+        "intervals": 4,
+        "maximum_dual_gap": 2.1065748576926807e-05,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5083254757789186,
+      "variance_ratio_upper": 0.5110083841113578
+    },
+    {
+      "p": 0.96,
+      "bias": 0.99,
+      "t": 32.0,
+      "variance": 0.01990000000000003,
+      "slice_entropy": 0.03021990330928009,
+      "envelope": {
+        "lower": -0.030789776881703007,
+        "upper": -0.029110311888167272,
+        "intervals": 5,
+        "maximum_dual_gap": 6.574672470061049e-07,
+        "grid_spacing": 0.013608276348795467,
+        "qualification": "finite dual+quantization upper, floating arithmetic not interval certified"
+      },
+      "variance_ratio_lower": 0.5098536853322585,
+      "variance_ratio_upper": 0.5111995527798576
+    }
+  ]
+}

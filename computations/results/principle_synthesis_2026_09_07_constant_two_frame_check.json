@@ -1,0 +1,18 @@
+{
+  "kappa": [
+    {"n": 3, "lambda": "1/2", "kappa": "1/4"},
+    {"n": 4, "lambda": "1/2", "kappa": "1/4"},
+    {"n": 5, "lambda": "3/8", "kappa": "9/64"},
+    {"n": 6, "lambda": "3/8", "kappa": "9/64"},
+    {"n": 7, "lambda": "5/16", "kappa": "25/256"},
+    {"n": 8, "lambda": "5/16", "kappa": "25/256"},
+    {"n": 9, "lambda": "35/128", "kappa": "1225/16384"}
+  ],
+  "repair": [
+    {"n": 4, "input_rows": 16, "balanced_outputs": 6, "status": "PASS"},
+    {"n": 6, "input_rows": 64, "balanced_outputs": 20, "status": "PASS"},
+    {"n": 8, "input_rows": 256, "balanced_outputs": 70, "status": "PASS"}
+  ],
+  "constant": 0.5071738708131547,
+  "status": "PASS"
+}

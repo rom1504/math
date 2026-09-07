@@ -1,0 +1,277 @@
+{
+  "status": "MIXED: LP reconnaissance; integer Gram certificates exact",
+  "records": [
+    {
+      "atlas": 580,
+      "ground_count": 8,
+      "floating_isotropy_feasible": false,
+      "orthogonal_ground_clique": 2
+    },
+    {
+      "atlas": 722,
+      "ground_count": 8,
+      "floating_isotropy_feasible": false,
+      "orthogonal_ground_clique": 4
+    },
+    {
+      "atlas": 870,
+      "ground_count": 8,
+      "floating_isotropy_feasible": false,
+      "orthogonal_ground_clique": 4
+    },
+    {
+      "atlas": 1005,
+      "ground_count": 8,
+      "floating_isotropy_feasible": false,
+      "orthogonal_ground_clique": 2
+    }
+  ],
+  "stored_signings": [
+    {
+      "order": 3,
+      "cap": 3,
+      "ground_count": 1,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 4,
+      "cap": 4,
+      "ground_count": 2,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 5,
+      "cap": 4,
+      "ground_count": 10,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 6,
+      "cap": 5,
+      "ground_count": 12,
+      "exact_uniform_isotropy": true,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "ground_spins": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ]
+      ],
+      "ground_gram": [
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "order": 7,
+      "cap": 9,
+      "ground_count": 4,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 8,
+      "cap": 10,
+      "ground_count": 8,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 9,
+      "cap": 12,
+      "ground_count": 21,
+      "exact_uniform_isotropy": false
+    },
+    {
+      "order": 10,
+      "cap": 13,
+      "ground_count": 40,
+      "exact_uniform_isotropy": false
+    }
+  ]
+}
