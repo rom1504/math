@@ -1,0 +1,50 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 60 log_search_progress: true num_search_workers: 1 log_to_stdout: true
+
+Initial satisfaction model '': (model_fingerprint: 0xb0904b3fdff260a0)
+#Variables: 6 (4 primary variables)
+  - 6 Booleans in [0,1]
+#kLinear1: 1
+#kLinear2: 2
+#kLinear3: 2
+#kLinearN: 39 (#enforced: 4 #multi: 4) (#terms: 220)
+
+Starting presolve at 0.00s
+INFEASIBLE: 'linear: never in domain'
+Unsat after presolving constraint #9 (warning, dump might be inconsistent): linear { vars: 3 vars: 4 vars: 5 coeffs: -2 coeffs: -2 coeffs: -2 domain: 1 domain: 2 }
+  4.18e-04s  0.00e+00d  [PresolveToFixPoint] 
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'enforcement: always false' was applied 1 time.
+  - rule 'enforcement: false literal' was applied 1 time.
+  - rule 'enforcement: true literal' was applied 3 times.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear2: convert ax + by != cte to clauses' was applied 4 times.
+  - rule 'linear: always true' was applied 10 times.
+  - rule 'linear: empty' was applied 1 time.
+  - rule 'linear: enforcement literal in expression' was applied 5 times.
+  - rule 'linear: fixed or dup variables' was applied 8 times.
+  - rule 'linear: reduced variable domains' was applied 1 time.
+  - rule 'presolve: iteration' was applied 1 time.
+Problem closed by presolve.
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 0
+booleans: 0
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+walltime: 0.00284851
+usertime: 0.00284858
+deterministic_time: 0
+gap_integral: 0
+
+status=INFEASIBLE objective=0.0 best_bound=0.0 conflicts=0 branches=0 wall=0.002849s elapsed=0.003068s
+wrote /home/math/quadra/tmp/cpsat_m5_cap2_d0.json

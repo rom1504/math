@@ -1,0 +1,316 @@
+\myparagraph{Weighted automata} Weighted automata generalize finite
+automata with weights on transitions~\cite{Droste:2009:HWA:1667106}. 
+They generalize word languages to partial functions from words to
+values of a semiring. First introduced by Sch\"utzenberger and Chomsky in the 60s,
+they have been studied for long~\cite{Droste:2009:HWA:1667106}, with
+applications in natural language and image processing for
+instance. More recently, they have found new applications in
+computer-aided verification as a measure of system
+quality through quantitative properties~\cite{cdh10}, and in
+system synthesis, as objectives for quantitative games~\cite{conf/concur/FiliotGR12}. 
+In this paper, we consider weighted automata $\calN$ over the semiring
+$(\mathbb{Z}\cup  \{ -\infty \}, \max,+)$, and just
+call them weighted automata (WA). The value of a run is the sum of the weights
+occurring on its transitions, and the value of a word is the maximal value of all
+its accepting runs.  Absent transitions have a weight of $-\infty$ and runs of
+value $-\infty$ are considered non-accepting. This defines a partial function
+denoted $\inter{\calN} : \Sigma^*\rightarrow \mathbb{Z}$ whose domain is denoted
+by $\lang{\calN}$. 
+
+\myparagraph{Determinization problem} Most of the good algorithmic properties of
+finite automata do not transfer to WA. Notably, the
+(quantitative) language inclusion $\inter{\mathcal{A}} \leq \inter{\mathcal{B}}$ is undecidable for
+WA~\cite{Krob:1992:EPR} (see also \cite{dav16} and
+\cite{conf/atva/AlmagorBK11} for different proofs based on reductions
+from the halting problem for two-counter machines). This has triggered 
+research on sub-classes or other formalisms for which this problem becomes
+decidable~\cite{DBLP:conf/fsttcs/FiliotGR14,conf/concur/ChatterjeeDEHR10}.
+This includes the class of deterministic WA (DWA, also known as sequential
+WA in the literature), which are the WA whose underlying (unweighted)
+automaton is deterministic. Another scenario where it is desirable to
+have a DWA is the quantitative synthesis problem,  
+undecidable even for unambiguous WA, yet decidable for
+DWA~\cite{conf/concur/FiliotGR12}. However, and in contrast with finite unweighted
+automata, WA are not determinizable in general. For instance, the function
+which outputs the maximal value between the number of $a$'s and the
+number of $b$'s in a word $\alpha \in\{a,b\}^*$ is not realizable with a DWA. 
+This motivates the determinization problem: given a WA $\calN$, is it
+determinizable? I.e. is there a DWA defining the same
+(partial) function as $\calN$? 
+
+The determinization problem for computational models is
+fundamental in theoretical computer science. For WA in particular, it
+is sometimes more natural (and at least exponentially more succinct)
+to specify a (non-deterministic) WA, even if some equivalent DWA
+exists. If the function is specified in a weighted logic equivalent to
+WA, such as weighted MSO~\cite{journals/tcs/DrosteG07}, the
+logic-to-automata transformation may construct a non-deterministic,
+but determinizable, WA. However, despite many research efforts, the largest class
+for which this problem is known to be decidable is the class of
+polynomially ambiguous WA~\cite{kirsten_et_al:LIPIcs:2009:1850}, and
+the decidability status for the full class of WA is a long-standing
+open problem. Other contributions and approaches to the determinization problem
+%In addition to the contribution on polynomially
+%ambiguous WA mentioned before, there have been other contributions to
+%the determinization problem. These 
+include the identification of sufficient conditions for
+determinizability~\cite{Mohri_FiniteState_CoLing}, approximate determinizability
+(for unambiguous WA) where the DWA is required to produce values %that are at
+at most $t$ times the value of the WA, for a given factor
+$t$~\cite{journals/tcs/AminofKL13}, and (incomplete) approximation algorithms
+when the weights are non-negative~\cite{journals/mst/ColcombetD16}.
+
+\myparagraph{Bounded-delay \& regret determinizers} In this paper, we adopt
+another approach that consists in constraining the class of DWA that can be
+used for determinization. More precisely, we define a \emph{class} of
+DWA $\mathfrak{C}$ as a function from WA to sets of DWA, and
+say that a DWA $\calD$ is a $\mathfrak{C}$-determinizer of a WA $\calN$ if
+\begin{inparaenum}[$(i)$]
+\item $\calD \in \mathfrak{C}(\calN)$ and
+\item $\inter{\calN} =
+\inter{\calD}$.
+\end{inparaenum}
+Then, $\calN$ is said to be $\mathfrak{C}$-deteminizable if it admits a
+${\mathfrak{C}}$-determinizer. If ${\bf DWA}$ denotes the function mapping any
+WA to the whole set of DWA, then obviously the ${\bf DWA}$-determinization
+problem is the general (open) determinization problem. In this paper, we consider
+two restrictions. 
+
+First, given a bound $k\in\mathbb{N}$, we look for the class of $k$-delay DWA
+${\bf Del}_k$, which maintain a strong relation with the sequence of values
+along some accepting run of the non-deterministic automaton. More
+precisely, a DWA $\calD$ belongs to ${\bf Del}_k(\calN)$ if for all words $\alpha \in
+\lang{\calD}$, there is an accepting run $\rho$ of $\calN$ with maximal value
+such that the running sum of the prefixes of $\rho$ and the running sum of the
+prefixes of the unique run $\rho_{\calD}$ of $\calD$ on $\alpha$ are constantly
+close in the following sense: for all lengths $\ell$, the absolute value of the
+difference of the value of the prefix of $\rho$ of length $\ell$ and
+the value of the prefix of $\rho_\calD$ of length $\ell$ is at most $k$.
+Then the ${\bf
+Del}_k$-determinization problem amounts to deciding whether there exists
+${\calD} \in {\bf Del}_k$ such that $\inter{\calN}=\inter{\calD}$.  And if $k$
+is left unspecified, it amounts to decide whether there exists ${\calD} \in
+\bigcup_{k \in {\mathbb{N}}} {\bf Del}_k(\calN)$ such that
+$\inter{\calN}=\inter{\calD}$. We note ${\bf Del}$ the function mapping any WA
+$\calN$ to $\bigcup_k {\bf Del}_k(\calN)$. We will show that the ${\bf
+Del}_k$-determinization problem is  complete for \EXP, and the ${\bf
+Del}$-determinization problem is equivalent to the general ({\it unconstrained})
+determinization problem.
+
+The notion of delay has been central in many works on automata with
+outputs. For instance, it has been a key notion in transducer theory
+(automata with word outputs) for the determinization and the
+functionality problems \cite{journals/tcs/BealCPS03},  and the decomposition of finite-valued
+transducers~\cite{sakarovitch_et_al:LIPIcs:2008:1324}. The notion of delay has been also used in the
+theory of WA, for instance to give sufficient conditions for
+determinizability~\cite{Mohri_FiniteState_CoLing} or for the decomposition of finite-valued group
+automata~\cite{DBLP:conf/fsttcs/FiliotGR14}. 
+
+\begin{example} Let $A = \{a,b\}$ and
+    $k\in\mathbb{N}$. The left automaton of Fig.~\ref{fig:example2}
+    maps any word in $AaA^*$ to $0$, and any word in $AbA^*$ to
+    $1$. It is ${\bf Del}_k$-determinizable by the right automaton of
+    Fig.~\ref{fig:example2}. After one step, the delay of the DWA is
+    $k$ with both transitions of the left WA. After two or more steps,
+    the delay is always $0$. It is not ${\bf Del}_j$-determinizable for
+    any $j<k$.
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[node distance=0.8cm]
+	\node[state,initial left] (si) {};
+	\node[state,above right= of si] (s0) {};
+	\node[state,below right= of si] (s1) {};
+	\node[state,right= of s0,accepting] (s2) {};
+	\node[state,right= of s1] (s3) {};
+
+	\path
+	(si) edge node[el] {$A,-k$} (s0)
+	(si) edge node[el,swap] {$A,k$} (s1)
+	(s0) edge node[el] {$a,k$} (s2)
+	(s1) edge node[el,swap,pos=0.8] {$b,1-k$} (s2)
+	(s0) edge node[el,pos=0.8] {$b,0$} (s3)
+	(s1) edge node[el,swap] {$a,0$} (s3)
+	(s2) edge [loopright] node[el] {$A,0$} (s2)
+	(s3) edge [loopright] node[el] {$A,0$} (s3)
+	;
+
+	\node[state,initial above] at (4,0) (qi) {};
+	\node[state,right= of qi]  (q) {};
+	\node[state,accepting, right= of q] (p) {};
+        
+        \path
+	(qi) edge node[el] {$A,0$} (q)
+	(q) edge node[el] {$a,0$} node[el,below] {$b,1$} (p)
+	(p) edge [loopabove] node[el] {$A,0$} (p)
+        ;
+\end{tikzpicture}
+\end{center}
+%A %complete and
+% \caption{A pair-deterministic automaton with alphabet $A =
+% \{a,b\}$. For all $k \in \mathbb{N}$, the automaton is $k$-delay
+% determinizable but not $k$-regret determinizable.}
+%\vspace{-3mm}
+\caption{A WA (left) and one of its $k$-delay determinizers (right)}
+\label{fig:example2}
+\end{figure}
+\end{example}
+
+
+Second, we consider the class $\mathbf{Hom}$ of so-called homomorphic
+DWA. Intuitively, any DWA $\calD\in \mathbf{Hom}(\calN)$
+maintains a close relation with the structure of $\calN$: the
+existence of an homomorphism from $\calD$ to $\calN$. An alternative definition
+is that of a $0$-\emph{regret game} \cite{hpr15-journal} played on $\calN$:
+\adam chooses input symbols one by one (forming a word $\alpha \in
+\lang{\calN}$), while \eve reacts by choosing transitions of $\calN$, thus
+constructing a run $\rho$ of ${\calN}$ on the fly (\ie without knowing the full
+word $\alpha$ in advance). \eve wins the game if $\rho$ is accepting and its
+value is equal to $\inter{\calN}(\alpha)$, \ie $\rho$ is a maximal accepting run
+on $\alpha$. Then, any (finite memory) winning strategy for \eve can be seen as
+a $\mathbf{Hom}$-determinizer of $\calN$ and conversely.  This generalizes the
+notion of good-for-games automata, which do not need to be determinized prior to
+being used as observers in a game, from the Boolean setting~\cite{hp06} to the
+quantitative one. In some sense, $\mathbf{Hom}$-determinizable WA are ``good for
+quantitative games'': when used as an observer in a quantitative game, Eve's
+strategy can be applied on the fly instead of determinizing the WA and
+constructing the synchronized product of the resulting DWA with the game arena.
+This notion has been first introduced in~\cite{akl10} with motivations coming
+from the analysis of online algorithms.  In~\cite{akl10},  it was shown that the
+$\mathbf{Hom}$-determinization problem is in \P.
+
+\begin{example}\label{ex:regret}
+The following WA maps both $ab$ and $aa$ to $0$. It is not 
+$\mathbf{Hom}$-determinizable because Eve has to choose whether to go
+left or right on reading $a$. If she goes right, then Adam wins by
+choosing letter $b$. If she goes left, Adam wins by picking $a$
+again. However, it is \emph{almost} $\mathbf{Hom}$-determinizable by the DWA
+obtained by removing the right part, in the sense that the function
+realized by this DWA is $1$-close from the original one. This
+motivates approximate determinization. 
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[node distance=0.8cm]
+	\node[state,initial above] (si) {};
+	\node[state,right= of si] (s0) {};
+	\node[state,left= of si] (s1) {};
+	\node[state,right= of s0,accepting] (s2) {};
+	\node[state,left= of s1,accepting] (s3) {};
+
+	\path
+	(si) edge node[el] {$a,0$} (s0)
+	(si) edge node[el,swap] {$a,0$} (s1)
+	(s0) edge node[el] {$a,1$} (s2)
+	(s1) edge node[el,swap,align=left,pos=0.3] {$a,0$\\$b,0$} (s3)
+	;
+\end{tikzpicture}
+\end{center}
+% \caption{A pair-deterministic automaton with alphabet $A =
+% \{a,b\}$. For all $k \in \mathbb{N}$, it is $1$-regret and $k$-delay
+% determinizable, yet for all $0 \le j < k$ it is not $j$-delay determinizable.}
+%\vspace{-2mm}
+\caption{A WA that is $\mathbf{Del}_0$-determinizable and 
+$(1,\mathbf{Hom})$-determinizable, but not $\mathbf{Hom}$-determinizable}
+\label{fig:example3}
+\end{figure}
+
+
+\end{example}
+
+\myparagraph{Approximate determinization} Approximate
+determinization of a WA $\calN$ relaxes the determinization problem
+to determinizers which do not define
+exactly the same function as $\calN$ but approximate it. Precisely, for a class
+$\mathfrak{C}$ of DWA, $\calD$ a DWA and $r\in\mathbb{N}$,
+we say that $\calD$ is an
+$(r,\mathfrak{C})$-determinizer of $\calN$ if
+\begin{inparaenum}[$(i)$]
+\item $\calD\in \mathfrak{C}(\calN)$,
+\item $\lang{\calD} = \lang{\calN}$ and
+\item for all words $\alpha \in \lang{\calN}$, $|\inter{\calN}(\alpha)-\inter{\calD}(\alpha)|\leq r$.
+\end{inparaenum}
+Then, $\calN$ is $(r,\mathfrak{C})$-determinizable if
+it admits some $(r,\mathfrak{C})$-determinizer, and it is 
+\emph{approximately} $\mathfrak{C}$-determinizable if it is 
+$(r,\mathfrak{C})$-determinizable for some $r$. 
+
+
+As Example~\ref{ex:regret} shows, there are WA that are approximately
+$\mathbf{Hom}$-determinizable but not $\mathbf{Hom}$-determinizable, making
+this notion appealing for the class of homomorphic determinizers. However,
+there are classes $\mathfrak{C}$ for which a WA is approximately
+$\mathfrak{C}$-determinizable if and only if it is
+$\mathfrak{C}$-determinizable, making approximate determinization much less
+interesting for such classes. This is the case for classes $\mathfrak{C}$ which
+are \emph{complete for determinization} (Theorem~\ref{thm:rclose}), in the sense
+that any determinizable WA is also $\mathfrak{C}$-determinizable. Obviously, the
+class $\mathbf{DWA}$ is complete for determinization, but we show it is also the
+case for the class of bounded-delay determinizers $\mathbf{Del}$
+(Theorem~\ref{thm:semi-det}).
+%
+Therefore, we study approximate determinization for the class of homomorphic
+determinizers only. We call such determinizers $r$-regret
+determinizers, building on the regret game analogy given above. Indeed, a WA
+$\calN$ is $(r,\mathbf{Hom})$-determinizable if and only if \eve wins the regret game
+previously defined, with the following modified winning condition: the run that she
+constructs on the fly must be such that
+$|\inter{\calN}(\alpha)-\inter{\calD}(\alpha)|\leq r$, for all words $\alpha \in
+\lang{\calN}$ that \adam can play.
+%in the course of the game.
+We say that a WA $\calN$ is approximately $\mathbf{Hom}$-determinizable if
+there exists a $r \in \mathbb{N}$ such that $\calN$ is
+$(r,\mathbf{Hom})$-determinizable.
+
+
+\myparagraph{Contributions} We show that the ${\bf Del}_k$-determinization problem
+problem is \EXP-complete, even when $k$ is fixed
+(Theorems~\ref{thm:kdelay-in-exp}~and~\ref{thm:kdelay-exp-hard}).
+We also show that the class $\mathbf{Del}$ is
+complete for determinization, \ie any determinizable WA $\calN$
+is $k$-delay determinizable for some $k$ (Theorem~\ref{thm:semi-det}). This shows that
+solving the $\mathbf{Del}$-determinization problem would solve the
+(open) general determinization problem. This also gives a new
+(complete) semi-algorithm for determinization, which consists in testing for the
+existence of $k$-delay determinizers for increasing values $k$.  %Furthermore,
+We exhibit a family of bounded-delay determinizable WA, for delays
+which depend exponentially on the WA. Despite our efforts, exponential delays
+are the highest lower bound we have found. Interestingly, finding higher lower
+bounds would lead to a better understanding of the determinization
+problem, and proving that one of these lower bound is also an upper bound would
+immediately give decidability. 
+% Central results for the ${\bf Del}_k$-determinization problem are obtained with
+% the help of a pumping lemma related to the notion of delay that is interesting
+% on its own (Lemma~\ref{}).\todo{Which lemma is that?}
+To decide ${\bf Del}_k$-determinization, we provide
+a reduction to $\mathbf{Hom}$-determinization (\ie $0$-regret determinization),
+which is known to be decidable in polynomial time~\cite{akl10}. 
+
+We show that the approximate $\mathbf{Hom}$-determinization problem is
+decidable in exponential time (Theorem~\ref{thm:existential-regret-prob}), a
+problem which was left open in \cite{akl10}. This result is based on a
+non-trivial extension to the quantitative setting of a game tool proposed by
+Kuperberg and Skrzypczak in~\cite{ks15} for Boolean automata. In particular, our
+quantitative extension is based on energy games~\cite{bflms08} while parity
+games are sufficient for the Boolean case.  If $r$ is given (in
+binary) the $(r,\mathbf{Hom})$-determinization problem is shown to be
+\EXP-complete
+(Theorems~\ref{thm:regret-upper}~and~\ref{thm:regret-lower-bound}). The hardness
+holds even if $r$ is given in unary.  In the course of establishing our results,
+we also show that every WA $A$ that is approximately
+$\mathbf{Hom}$-determinizable is also {\em exactly} determinizable but there
+may not be a homomorphism from a deterministic version of the automaton to the
+original one (Lemma~\ref{lem:joker-nec-regret} and
+Theorem~\ref{thm:win-joker-det}). Hence, the decision procedure for approximate
+$\mathbf{Hom}$-determinizability can also be used as an algorithmically
+verifiable sufficient condition for determinizability. 
+
+\myparagraph{Other related works}
+In transducer theory, a notion close to the notion of $k$-delay
+determinizer has been introduced in \cite{fjlw16}, that of $k$-delay
+uniformizers of a transducer. A uniformizer of a transducer $T$ is an
+(input)-deterministic transducer such that the word-to-word function it defines
+(seen as a binary relation) is included in the relation defined by
+$T$, and any of its accepting runs should be $k$-delay close from some
+accepting run of $T$. While the notion of $k$-delay uniformizer in
+transducer theory is close to the notion of $k$-delay determinizer for
+WA, the presence of a max operation in WA makes the $k$-delay
+determinization problem conceptually harder. 

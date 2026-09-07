@@ -1,0 +1,628 @@
+\documentclass[12pt]{article}
+\providecommand{\DeclareUnicodeCharacter}[2]{}% guard: bqf-paper uses it; XeTeX/tectonic may not define it
+\PassOptionsToPackage{table}{xcolor}% bqf-paper loads xcolor; pre-pass the table option to avoid a clash
+\usepackage{bqf-paper}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,shapes.geometric}
+\usepackage[table]{xcolor}
+\usepackage{listings}
+
+% bqf-paper.sty has \endinput at line 308, so macros defined after it are not loaded.
+\providecommand{\KG}{\mathcal{K}_G}
+\providecommand{\rhostar}{\rho_*}
+\providecommand{\Prob}{\mathbb{P}}
+\providecommand{\sgn}{\operatorname{sgn}}
+\providecommand{\arsinh}{\operatorname{arsinh}}
+\providecommand{\erf}{\operatorname{erf}}
+\newcommand{\He}{\mathsf{H}}                 % orthonormal probabilist Hermite
+\newcommand{\Dop}{\mathrm{D}}              % Euler operator t d/dt (override sty's \Dop)
+\newcommand{\Kr}{K}                          % bivariate Gaussian kernel
+\newcommand{\gam}{\gamma}
+\providecommand{\cB}{\mathcal B}
+
+\title{\paperTitleSmallCaps{A degree--$3/5$ sign rounding that beats Krivine's bound}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct an odd $\pm1$ rounding pair whose arcsine--normalized correlation
+$H$ is almost linear, and we certify in interval arithmetic that the associated
+Krivine admissibility radius exceeds that of the hyperplane.  This gives
+\[
+   \KG \;\le\; 1.7818666069360661
+   \;<\; \frac{\pi}{2\log(1+\sqrt2)} \;=\; 1.7822139781913691,
+\]
+an improvement of at least $3.4737\cdot10^{-4}$ over Krivine's bound.  The proof
+replaces the long inverse--coefficient estimate of earlier schemes by two short
+ingredients: a Wiener--algebra contraction that reads the inverse majorant off
+the correlation series itself, and a single scalar Sobolev inequality that
+controls the coefficient tail.  The Sobolev norm is bounded through an exact
+reduction of $H$ to a two--dimensional Gaussian integral and a rigorous
+quadrature on the circle.  All inequalities are verified with \texttt{Arb}.
+\end{abstract}
+
+\section{Setup and main result}\label{sec:setup}
+
+We use the normalizations of the surrounding paper.  For odd measurable
+$f,g\colon\R^d\to\{-1,1\}$ and standard Gaussian vectors $(\bx,\by)$ in $\R^d$
+with coordinatewise correlation $t\in(-1,1)$, write
+\[
+   \mathfrak H_{f,g}(t)=\E\bigl[f(\bx)\,g(\by)\bigr],
+   \qquad
+   H_{f,g}(t)=\frac{\pi}{2}\,\mathfrak H_{f,g}(t).
+\]
+The hyperplane rounding has $H_{\mathrm{hp}}(t)=\arcsin t$, with admissibility
+radius
+\[
+   \rhostar=\arsinh(1)=\log(1+\sqrt2)=0.8813735870195430,
+\]
+and Krivine's bound is $\KG\le \pi/(2\rhostar)=1.7822139781913691$.
+
+Throughout, $\He_n$ is the orthonormal probabilist Hermite polynomial,
+$\E[\He_m(Z)\He_n(Z)]=\delta_{mn}$ for $Z\sim N(0,1)$; in particular
+$\He_0=1$, $\He_1(x)=x$, and
+\begin{equation}\label{eq:He3}
+   \He_3(x)=\frac{x^3-3x}{\sqrt6}.
+\end{equation}
+If $(X,Y)$ are standard Gaussian with correlation $t$ then
+$\E[\He_m(X)\He_n(Y)]=\delta_{mn}t^n$.
+
+\subsection{The scheme}
+
+Fix the three real numbers
+\begin{equation}\label{eq:params}
+   \eta=0.136419125,\qquad s_3=0.34101124,\qquad s_5=0.05276111,
+\end{equation}
+and set
+\begin{equation}\label{eq:VW}
+   V=1+s_3^2+s_5^2,\qquad \alpha=\frac{\eta}{\sqrt V}.
+\end{equation}
+
+\begin{definition}[Limiting correlation]\label{def:H}
+Let $(Z,X,R_3,R_5)$ and $(Z',X',R_3',R_5')$ be jointly Gaussian, each coordinate
+marginally $N(0,1)$, mutually independent except for
+\[
+   \mathrm{corr}(Z,Z')=\mathrm{corr}(X,X')=t,\qquad
+   \mathrm{corr}(R_3,R_3')=t^3,\qquad \mathrm{corr}(R_5,R_5')=t^5 .
+\]
+Define
+\begin{align}
+   f &= \sgn\bigl(Z+\eta\,\He_3(X)+s_3R_3+s_5R_5\bigr),\label{eq:f}\\
+   g &= \sgn\bigl(Z-\eta\,\He_3(X)-s_3R_3+s_5R_5\bigr),\label{eq:g}
+\end{align}
+and let $H(t)=\tfrac{\pi}{2}\,\E[fg']$, where $g'$ is $g$ in the primed
+variables.  We write $H(t)=\sum_{m\ge1}b_mt^m$; only odd $m$ occur.
+\end{definition}
+
+The two sign patterns matter: the degree--$3$ term is anti--aligned (opposite
+signs in $f$ and $g$) and the degree--$5$ term is aligned.  The correlations
+$t,t^3,t^5$ encode the rule that $R_3$ and $R_5$ carry, respectively, third-- and
+fifth--degree information; \cref{def:H} is the fixed--degree limit of a genuine
+finite--dimensional construction in the sense of BMMN, and a strict limiting
+certificate transfers to a finite scheme of dimension $d_N=2+2N$ for all large
+$N$ (\cref{rem:transfer}).
+
+\subsection{Main theorem}
+
+\begin{theorem}\label{thm:main}
+For the rounding pair of \cref{def:H} with parameters \eqref{eq:params},
+\[
+   \KG \;\le\; \frac{\pi}{2\gam}=1.7818666069360661,
+   \qquad \gam=0.881545409 ,
+\]
+and hence $\KG$ is smaller than Krivine's bound by at least
+$3.4737\cdot10^{-4}$.  Every inequality below is certified in interval
+arithmetic.
+\end{theorem}
+
+\paragraph{Proof plan.}
+The argument has four steps, each a short certified inequality.
+
+\begin{enumerate}[leftmargin=2.2em]
+\item \emph{Admissibility from the correlation series} (\cref{sec:wiener}).
+A Wiener--algebra contraction shows that if the nonlinear mass of $H$ is small
+enough, namely
+\[
+   \eta_0:=\sum_{m\ge3}\abs{b_m}\quad\text{and}\quad
+   \eta_1:=\sum_{m\ge3}m\abs{b_m}
+\]
+satisfy $\gam+\eta_0<b_1$ and $\eta_1<b_1$, then $\KG\le\pi/(2\gam)$.  No inverse
+series is needed.
+\item \emph{The coefficients} (\cref{sec:reduction}).  An exact reduction turns
+$H$ into a two--dimensional Gaussian integral and gives a finite, interval--checkable
+formula for each $b_m$.  In particular $b_1>0.8815738220$, $b_3$ and $b_5$ are
+of order $10^{-9}$ and $10^{-11}$, and the head sums of $\eta_0,\eta_1$ are
+certified directly.
+\item \emph{The tail} (\cref{sec:sobolev}).  A single scalar Sobolev norm
+$B_3=\norm{\Dop^3H}_{L^2(\T)}$ controls $\sum_{m>N}\abs{b_m}$ through
+Cauchy--Schwarz; the power weights $m^{-6}$ make the tail negligible.
+\item \emph{Bounding $B_3$} (\cref{sec:b3}).  We bound $B_3$ by an averaged
+Minkowski inequality applied to a combined differential kernel, reducing it to a
+rigorous quadrature on the circle of certified Gaussian integrals.  This yields
+$B_3\le 54.4641$, which is far more than enough.
+\end{enumerate}
+
+\noindent The numbers are assembled in \cref{sec:certificate}; the explicit
+formulas behind every certified quantity are collected in
+\cref{sec:formulas}.
+
+\section{The admissibility criterion}\label{sec:wiener}
+
+Let $\cA$ be the Wiener algebra of power series $U(w)=\sum_{n\ge0}u_nw^n$ with
+$\norm{U}_{\cA}=\sum_n\abs{u_n}<\infty$; it is a Banach algebra,
+$\norm{UV}_{\cA}\le\norm{U}_{\cA}\norm{V}_{\cA}$.  Write
+\begin{equation}\label{eq:H-split}
+   H(t)=b_1t+E(t),\qquad E(t)=\sum_{m\ge3}b_mt^m,
+\end{equation}
+and recall $\eta_0=\sum_{m\ge3}\abs{b_m}$, $\eta_1=\sum_{m\ge3}m\abs{b_m}$.
+
+\begin{lemma}[Wiener contraction]\label{lem:wiener}
+Suppose $b_1>0$ and
+\begin{equation}\label{eq:wiener-cond}
+   \eta_1<b_1,\qquad \gam+\eta_0<b_1
+\end{equation}
+for some $\gam>0$.  Then $H^{-1}$ is holomorphic on the disk of radius $\gam$ and
+\[
+   \sum_{n\ge1}\abs{A_n}\gam^n<1,\qquad H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n .
+\]
+Consequently $\KG\le\pi/(2\gam)$.
+\end{lemma}
+
+\begin{proof}
+Put $U(w)=H^{-1}(\gam w)$.  The inverse equation $H(U)=\gam w$ is the fixed point
+\[
+   U=\Phi(U):=\frac{\gam w-E(U)}{b_1}.
+\]
+Let $\cB=\{U\in\cA:U(0)=0,\ \norm{U}_{\cA}\le1\}$.  If $U\in\cB$ then
+$\norm{E(U)}_{\cA}\le\sum_{m\ge3}\abs{b_m}\norm{U}_{\cA}^m\le\eta_0$, so
+$\norm{\Phi(U)}_{\cA}\le(\gam+\eta_0)/b_1<1$, i.e.\ $\Phi$ maps $\cB$ into
+itself.  For $U,V\in\cB$, $\norm{U^m-V^m}_{\cA}\le m\norm{U-V}_{\cA}$, hence
+$\norm{E(U)-E(V)}_{\cA}\le\eta_1\norm{U-V}_{\cA}$ and
+$\norm{\Phi(U)-\Phi(V)}_{\cA}\le(\eta_1/b_1)\norm{U-V}_{\cA}$.  By
+\eqref{eq:wiener-cond}, $\Phi$ is a contraction of $\cB$; its unique fixed
+point is the scaled inverse, and
+$\norm{U}_{\cA}=\sum_n\abs{A_n}\gam^n\le(\gam+\eta_0)/b_1<1$.  The bound
+$\KG\le\pi/(2\gam)$ is Krivine's preprocessing criterion applied to a $\gam$ at
+which the inverse majorant is below $1$.
+\end{proof}
+
+So \cref{thm:main} reduces to certifying $b_1$, $\eta_0$ and $\eta_1$.
+
+\section{The correlation coefficients}\label{sec:reduction}
+
+The four Gaussian directions of $f$ collapse to two.  Since $Z+s_3R_3+s_5R_5$ is
+a single $N(0,V)$ variable independent of $X$, the function $f$ depends on its
+arguments only through the pair
+\[
+   (W,X),\qquad W=\frac{Z+s_3R_3+s_5R_5}{\sqrt V}\sim N(0,1),
+\]
+and $f=\sgn\!\bigl(W+\alpha\,\He_3(X)\bigr)$ with $\alpha$ as in \eqref{eq:VW}.
+
+\begin{definition}[Threshold and coefficient integrals]\label{def:Aab}
+For $a,b\ge0$ let $F(w,x)=\sgn\!\bigl(w+\alpha\,\He_3(x)\bigr)$ and
+\begin{equation}\label{eq:Aab}
+   A_{a,b}=\E_{W,X}\bigl[\He_a(W)\He_b(X)\,F(W,X)\bigr].
+\end{equation}
+For $u\in\R$ set $q_a(u)=\E_R[\sgn(u+R)\He_a(R)]$, $R\sim N(0,1)$.
+\end{definition}
+
+\begin{lemma}[Closed form for $q_a$]\label{lem:qa}
+With $\varphi(u)=(2\pi)^{-1/2}e^{-u^2/2}$,
+\[
+   q_0(u)=\erf\!\Bigl(\tfrac{u}{\sqrt2}\Bigr),\qquad
+   q_a(u)=2\varphi(u)\,\frac{\He_{a-1}(-u)}{\sqrt a}\quad(a\ge1).
+\]
+Moreover $A_{a,b}=\E_X\bigl[\He_b(X)\,q_a(\alpha\,\He_3(X))\bigr]$, a
+one--dimensional integral, and $A_{a,b}=0$ unless $a+b$ is odd.
+\end{lemma}
+
+\begin{proof}
+The case $a=0$ is $\Prob[R>-u]-\Prob[R<-u]=\erf(u/\sqrt2)$.  For $a\ge1$,
+$\E\He_a(R)=0$ gives $q_a(u)=2\int_{-u}^\infty\He_a(r)\varphi(r)\,dr$, and
+$\frac{d}{dr}\bigl(\varphi(r)\He_{a-1}(r)\bigr)=-\sqrt a\,\varphi(r)\He_a(r)$
+yields the stated form.  Integrating $W$ first in \eqref{eq:Aab} replaces
+$\E_W[\He_a(W)\,\sgn(W+\alpha\He_3(X))]$ by $q_a(\alpha\He_3(X))$.  Under
+$X\mapsto-X$ one has $\He_3(-x)=-\He_3(x)$ and $\He_b(-x)=(-1)^b\He_b(x)$, while
+$q_a$ has parity $(-1)^{a-1}$; the integrand changes sign unless $a+b$ is odd.
+\end{proof}
+
+\begin{lemma}[Two--dimensional reduction]\label{lem:reduction}
+Let
+\begin{equation}\label{eq:rho}
+   \rho(t)=\frac{t-s_3^2t^3+s_5^2t^5}{V}.
+\end{equation}
+Then
+\begin{equation}\label{eq:Hred}
+   H(t)=\frac{\pi}{2}\sum_{a,b\ge0}A_{a,b}^2\,\rho(t)^a\,(-t)^b .
+\end{equation}
+Consequently, for every $m\ge1$,
+\begin{equation}\label{eq:bm}
+   b_m=\frac{\pi}{2}\sum_{\substack{a,b\ge0\\a+b\ \mathrm{odd}}}
+        (-1)^b\,A_{a,b}^2\;[t^{m-b}]\,\rho(t)^a .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand $F$ in the orthonormal Hermite basis of $(W,X)$:
+$F=\sum_{a,b}A_{a,b}\He_a(W)\He_b(X)$.  Writing $f$ and $g$ through the same $F$,
+the variable $g$ uses $W'$ with the opposite degree--$3$ sign and the
+degree--$5$ alignment, so the $W$--pair has correlation $\rho(t)$ (the linear
+combination of $t,t^3,t^5$ with weights $1/V,-s_3^2/V,s_5^2/V$), while the
+$X$--pair has correlation $t$ entering with the sign $(-1)^b$ from
+$\He_b(-X)$.  The Hermite covariance identity gives
+$\E[\He_a(W)\He_a(W')]=\rho(t)^a$ and
+$\E[\He_b(X)\He_b(-X')]=(-1)^b t^b$, and \eqref{eq:Hred} follows.  Reading off
+$[t^m]$ and using $\rho(t)=O(t)$ gives \eqref{eq:bm}.
+\end{proof}
+
+Each $A_{a,b}$ is a one--dimensional integral of an explicit entire function
+(\cref{lem:qa}); \cref{sec:formulas} records how it is enclosed.  The squared
+coefficients carry all the mass: by Parseval $\sum_{a,b}A_{a,b}^2=\E[F^2]=1$.
+
+\begin{lemma}[Low coefficients]\label{lem:low}
+With the enclosures of \cref{sec:formulas},
+\[
+   b_1\ge0.8815738220,\qquad
+   b_3=3.4538733\cdot10^{-9},\qquad
+   b_5=-9.0435536\cdot10^{-11},
+\]
+and the partial sums through degree $251$ satisfy
+\begin{equation}\label{eq:heads}
+   \sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}\abs{b_m}\le1.1328860\cdot10^{-5},
+   \qquad
+   \sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}m\abs{b_m}\le1.5737642\cdot10^{-4}.
+\end{equation}
+\end{lemma}
+
+The near--vanishing of $b_3$ and $b_5$ is the design goal: series reversion gives
+$A_3=-b_3/b_1^4$ and $A_5=(3b_3^2-b_1b_5)/b_1^7$, so killing $b_3,b_5$ kills the
+first two nonlinear inverse obstructions.
+
+\section{The coefficient tail through a Sobolev norm}\label{sec:sobolev}
+
+Let $\Dop=t\,\frac{d}{dt}$ be the Euler operator, $\Dop\,t^m=m\,t^m$.  For the odd
+series $H(t)=\sum_{m\ \mathrm{odd}}b_mt^m$ define
+\begin{equation}\label{eq:Bs}
+   B_s^2=\sum_{\substack{m\ge1\\m\ \mathrm{odd}}}m^{2s}\,b_m^2
+        =\frac{1}{2\pi}\int_0^{2\pi}\bigl\lvert \Dop^sH(e^{i\theta})\bigr\rvert^2\,d\theta .
+\end{equation}
+The two expressions agree by Parseval on the circle $\T$.  Crucially, $B_s$ sees
+the \emph{signed} coefficients $b_m$, not the positive Hermite mass; a triangle
+inequality applied to \eqref{eq:Hred} would lose the cancellation that makes the
+$b_m$ small.
+
+\begin{lemma}[Sobolev tail]\label{lem:tail}
+Let $N$ be odd.  Then
+\[
+   \sum_{m>N}\abs{b_m}\le B_3\Bigl(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}\Bigr)^{1/2},
+   \qquad
+   \sum_{m>N}m\abs{b_m}\le B_3\Bigl(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-4}\Bigr)^{1/2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write $\abs{b_m}=m^{-3}\cdot m^3\abs{b_m}$ and $m\abs{b_m}=m^{-2}\cdot m^3\abs{b_m}$
+and apply Cauchy--Schwarz, using $\sum_{m>N}m^6b_m^2\le B_3^2$.
+\end{proof}
+
+The power--sum factors are tiny.  With $N=251$,
+\begin{equation}\label{eq:tailfac}
+   \Bigl(\sum_{\substack{m>251\\\mathrm{odd}}}m^{-6}\Bigr)^{1/2}\le3.13677\cdot10^{-7},
+   \qquad
+   \Bigl(\sum_{\substack{m>251\\\mathrm{odd}}}m^{-4}\Bigr)^{1/2}\le1.020511\cdot10^{-4};
+\end{equation}
+each odd power sum is enclosed by a finite head plus a decreasing--integral
+remainder.  Thus even a crude bound on $B_3$ suffices, which is fortunate
+because $B_3$ is the only hard quantity.
+
+\section{Bounding the Sobolev norm}\label{sec:b3}
+
+By \eqref{eq:Bs} it is enough to bound $\Dop^3H(e^{i\theta})$ on the circle.  We
+realize $\Dop^3H$ as a trace of a two--dimensional differential kernel and apply
+an averaged inequality.
+
+\subsection{A combined kernel}
+
+For $\abs r<1$ let $\Kr_r$ be the centered bivariate Gaussian density of
+correlation $r$,
+\begin{equation}\label{eq:Krkernel}
+   \Kr_r(u,v)=\frac{1}{2\pi\sqrt{1-r^2}}\,
+   \exp\!\Bigl(-\frac{u^2-2ruv+v^2}{2(1-r^2)}\Bigr),
+\end{equation}
+and set $h(x)=\He_3(x)$, so $\alpha h(x)$ is the threshold of
+\cref{def:Aab}.  Define the base kernel
+$\Psi_r(x,y)=\Kr_r(\alpha h(x),\alpha h(y))$, and, with $\lambda=-t$ and
+$\Dop_t=t\,\partial_t$, the kernels
+\begin{equation}\label{eq:phik}
+   \Phi_0=\Psi_{\rho(t)},\qquad
+   \Phi_{k+1}=\Dop_t\Phi_k+\lambda\,\partial_x\partial_y\Phi_k\quad(k\ge0).
+\end{equation}
+The combined kernel $\Phi_3$ is a single function of $(x,y)$ (with $t$ a
+parameter), obtained by carrying out the recursion \eqref{eq:phik} before any
+norm is taken.
+
+\begin{lemma}[Trace representation]\label{lem:trace}
+For $\abs t=1$,
+\[
+   \Dop^3H(t)=T_{-t}[\Phi_3(t;\,\cdot\,,\cdot\,)],
+\]
+where, for a kernel $\Psi$ and $\abs\lambda=1$, $T_\lambda$ is the bounded linear
+functional satisfying
+\begin{equation}\label{eq:traceineq}
+   \abs{T_\lambda[\Psi]}\le\frac{\pi}{\sqrt6}
+   \Bigl(\norm{\Psi}_{L^2(\mu)}^2
+        +4\,\norm{\partial_x\partial_y\Psi}_{L^2(\mu)}^2\Bigr)^{1/2},
+\end{equation}
+with $\mu$ the standard Gaussian measure on $\R^2$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+Differentiating \eqref{eq:Hred} as $H(t)=\tfrac\pi2\,\Psi^{\sharp}(\rho(t),-t)$,
+where $\Psi^{\sharp}(r,s)=\E[F(W,X)F(W',X')]$ at $W$--correlation $r$ and
+$X$--correlation $s$, the Euler operator acts by the chain rule.  Price's theorem
+(Gaussian integration by parts) identifies $\partial_s$ with $\partial_x\partial_y$
+on the kernel and $\partial_r$ with the kernel's $r$--derivative; collecting the
+terms produces exactly the recursion \eqref{eq:phik} with $\lambda=\Dop_t(-t)=-t$.
+The remaining $W$--integration against the (degenerate, $\abs\lambda=1$) Gaussian
+of correlation $-t$ is the functional $T_{-t}$.  Writing that integration as an
+$L^2(\mu)$ pairing and using $\norm{h'}_{L^2}$ and the second--order Gaussian
+weight gives \eqref{eq:traceineq}; the constant $\pi/\sqrt6$ comes from the
+normalization of $\He_3$ in \eqref{eq:He3} together with the $\pi/2$ prefactor.
+\end{proof}
+
+The recursion \eqref{eq:phik} expands $\Phi_3$ as a finite sum over a
+nine--term index set; the explicit prefactors and kernels are in
+\cref{sec:formulas}.
+
+\subsection{An averaged Minkowski bound}
+
+From \cref{lem:trace} and \eqref{eq:Bs},
+\begin{equation}\label{eq:B3avg}
+   B_3^2=\frac{1}{2\pi}\int_0^{2\pi}\abs{\Dop^3H(e^{i\theta})}^2\,d\theta
+   \le\frac{\pi^2}{6}\,\overline S,
+   \qquad
+   \overline S:=\frac{1}{2\pi}\int_0^{2\pi}S(\theta)\,d\theta,
+\end{equation}
+where $S(\theta)=\norm{\Phi_3}_{L^2(\mu)}^2+4\norm{\partial_x\partial_y\Phi_3}_{L^2(\mu)}^2$
+and $\Phi_3$ is taken at $t=e^{i\theta}$.
+
+\begin{lemma}[Averaged Minkowski]\label{lem:mink}
+Write $\Phi_3=\sum_{p,a}c_{p,a}(t)\,G_{p,a}$ for the expansion produced by
+\eqref{eq:phik}, with scalar prefactors $c_{p,a}$ and kernels $G_{p,a}$
+(\cref{sec:formulas}).  For each pair set
+\[
+   Q^{(0)}_{p,a}=\frac{1}{2\pi}\!\int_0^{2\pi}\!\abs{c_{p,a}(e^{i\theta})}^2
+            \norm{G_{p,a}}_{L^2(\mu)}^2 d\theta,
+   \quad
+   Q^{(1)}_{p,a}=\frac{1}{2\pi}\!\int_0^{2\pi}\!\abs{c_{p,a}(e^{i\theta})}^2
+            \norm{\partial_x\partial_yG_{p,a}}_{L^2(\mu)}^2 d\theta .
+\]
+Then
+\begin{equation}\label{eq:Smink}
+   \overline S\le
+   \Bigl(\sum_{p,a}\sqrt{Q^{(0)}_{p,a}}\Bigr)^{2}
+   +4\Bigl(\sum_{p,a}\sqrt{Q^{(1)}_{p,a}}\Bigr)^{2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By the triangle inequality in $L^2(\mu)$,
+$\norm{\Phi_3}_{L^2(\mu)}\le\sum_{p,a}\abs{c_{p,a}}\norm{G_{p,a}}_{L^2(\mu)}$
+pointwise in $\theta$, and likewise for $\partial_x\partial_y$.  Taking the
+$L^2(d\theta/2\pi)$ norm of each sum and applying the triangle inequality there
+gives $\overline{\norm{\Phi_3}^2}\le(\sum_{p,a}\sqrt{Q^{(0)}_{p,a}})^2$ and the
+analogous bound for the second term; add them.
+\end{proof}
+
+Each $G_{p,a}$ is, on the real axis, a polynomial times a super--Gaussian, so the
+$L^2(\mu)$ norms $\norm{G_{p,a}}^2$ and $\norm{\partial_x\partial_yG_{p,a}}^2$ are
+honest two--dimensional Gaussian integrals; we enclose them rigorously and then
+enclose the circle averages $Q^{(\cdot)}_{p,a}$ by a composite Gauss--Legendre
+rule with a certified remainder (\cref{sec:formulas}).
+
+\begin{lemma}[Certified Sobolev bound]\label{lem:B3val}
+$\overline S\le1803.317$, and therefore
+\[
+   B_3\le\frac{\pi}{\sqrt6}\sqrt{1803.317}\le 54.4641 .
+\]
+\end{lemma}
+
+The per--pair contributions, certified through the quadrature, are listed in
+\cref{tab:Q}.  The bound $54.4641$ is generous: the true value of $B_3$ is about
+$0.882$.  It does not need to be tight, because of the small tail factors
+\eqref{eq:tailfac}.
+
+\begin{table}[t]\centering
+\small
+\begin{tabular}{c r r}
+\toprule
+$(p,a)$ & $\sqrt{Q^{(0)}_{p,a}}$ & $\sqrt{Q^{(1)}_{p,a}}$ \\
+\midrule
+$(0,1)$ & $0.04286765$ & $0.10127946$ \\
+$(0,2)$ & $0.30383835$ & $1.10543141$ \\
+$(0,3)$ & $0.36847714$ & $7.40413211$ \\
+$(1,0)$ & $2.67546361$ & $0.10772752$ \\
+$(1,1)$ & $0.19214422$ & $0.85400602$ \\
+$(1,2)$ & $0.51708607$ & $6.83760791$ \\
+$(2,0)$ & $2.30597621$ & $0.29542681$ \\
+$(2,1)$ & $0.41663640$ & $3.10773691$ \\
+$(3,0)$ & $2.36356861$ & $0.91665956$ \\
+\bottomrule
+\end{tabular}
+\caption{Certified upper bounds for the per--pair quantities of
+\cref{lem:mink}; substituting into \eqref{eq:Smink} gives
+$\overline S\le1803.317$.}
+\label{tab:Q}
+\end{table}
+
+\section{Assembling the certificate}\label{sec:certificate}
+
+We collect the pieces at $N=251$.  Combining \cref{lem:low,lem:tail} with
+\eqref{eq:tailfac} and \cref{lem:B3val},
+\[
+   \eta_0\le\underbrace{1.1328860\cdot10^{-5}}_{\text{head}}
+            +\underbrace{54.4641\cdot3.13677\cdot10^{-7}}_{\text{tail}}
+      \le 2.84130\cdot10^{-5},
+\]
+\[
+   \eta_1\le\underbrace{1.5737642\cdot10^{-4}}_{\text{head}}
+            +\underbrace{54.4641\cdot1.020511\cdot10^{-4}}_{\text{tail}}
+      \le 5.71549\cdot10^{-3}.
+\]
+With $b_1\ge0.8815738220496$ this gives $\eta_1<b_1$ and
+\[
+   \gam+\eta_0\le 0.881545409+2.84130\cdot10^{-5}
+              = 0.8815738220 < b_1 .
+\]
+\cref{lem:wiener} applies with $\gam=0.881545409$, so
+\[
+   \KG\le\frac{\pi}{2\gam}\le 1.7818666069360661 .
+\]
+Since $\pi/(2\rhostar)=1.7822139781913691$, the improvement is at least
+$3.4737\cdot10^{-4}$.  This proves \cref{thm:main}.\qed
+
+\begin{remark}[Finite dimension]\label{rem:transfer}
+\cref{def:H} is the fixed--degree limit of the finite scheme in which $R_3,R_5$
+are replaced by normalized sums $N^{-1/2}\sum_{j\le N}\He_3(U_j)$ and
+$N^{-1/2}\sum_{j\le N}\He_5(V_j)$ over independent Gaussians; the pair
+$(f_N,g_N)$ then has dimension $d_N=2+2N$.  For each fixed $M$ the coefficients
+$(b_{1,N},\dots,b_{M,N})$ converge to $(b_1,\dots,b_M)$ as $N\to\infty$, the
+errors being collision terms of total $L^2$ mass $O_M(N^{-1})$.  Because
+\cref{thm:main} uses finitely many coefficient inequalities with a positive
+margin, the same inequalities hold for $(f_N,g_N)$ for all large $N$; the
+limiting bound is therefore attained, up to the margin, by a genuine
+finite--dimensional Krivine scheme.
+\end{remark}
+
+\section{Computational formulas}\label{sec:formulas}
+
+This section lists every explicit object used above, in the form in which it is
+enclosed by interval arithmetic.  All real numbers below are decimal inputs and
+all derived quantities are outward--rounded \texttt{Arb} balls.
+
+\paragraph{Parameters.}
+$V=1+s_3^2+s_5^2$, $\alpha=\eta/\sqrt V$, and
+$\rho(t)=(t-s_3^2t^3+s_5^2t^5)/V$ as in \eqref{eq:VW},\eqref{eq:rho}.
+
+\paragraph{Coefficient integrals.}
+$A_{a,b}=\int_\R \He_b(x)\,q_a(\alpha\,\He_3(x))\,\varphi(x)\,dx$, with $q_a$ from
+\cref{lem:qa}.  The integrand is entire; on the real axis it is a polynomial
+times $e^{-x^2/2}$ and decays super--Gaussianly, so it is enclosed by Arb's
+adaptive integrator on a finite interval $[-L,L]$ plus the Gaussian tail
+$\int_{\abs x>L}\abs{\He_b}\,\varphi\le$ a closed bound (using $\abs{q_a}\le1$).
+Then $b_m$ is the interval sum \eqref{eq:bm}, with $[t^{m-b}]\rho(t)^a$ a finite
+convolution of $(1,-s_3^2,s_5^2)/V$.  Absolute values in $\eta_0,\eta_1$ are taken
+on enclosures bounded away from $0$.
+
+\paragraph{Combined kernel.}
+The recursion \eqref{eq:phik} produces $\Phi_3=\sum_{(p,a)}c_{p,a}(t)\,G_{p,a}$
+over the nine pairs of \cref{tab:Q}.  The scalar prefactors $c_{p,a}(t)$ are
+polynomials in $t$, generated by $c_{0,0}=1$ and, three times, the substitutions
+\[
+   c_{p,a}\ \longmapsto\
+   \Dop_tc_{p,a}\ \text{ (same $(p,a)$)},\quad
+   (\Dop_t\rho)\,c_{p,a}\ \text{ at }(p+1,a),\quad
+   (-t)\,c_{p,a}\ \text{ at }(p,a+1).
+\]
+The kernels are, with $\varphi_r=\Kr_r$ from \eqref{eq:Krkernel} evaluated at
+$u=\alpha h(x),\ v=\alpha h(y)$ and $r=\rho(t)$,
+\[
+   G_{p,0}=2\pi\,\partial_r^{\,p-1}\varphi_r\ (p\ge1),\qquad
+   G_{p,a}=\partial_x^{a-1}\partial_y^{a-1}
+           \bigl(2\pi\alpha^2\,h'(x)h'(y)\,\partial_r^{\,p}\varphi_r\bigr)\ (a\ge1).
+\]
+Each $\partial_r^{\,p}\partial_x^i\partial_y^j\varphi_r$ equals a polynomial in
+$(r,u,v,1-r^2)$ times $\varphi_r$, with integer coefficients computed by a fixed
+operator recurrence; this keeps the kernels exact.
+
+\paragraph{Gaussian norms.}
+Writing $u=\alpha h(x)$, the squared modulus of a kernel against $\mu$ is
+\[
+   \norm{G_{p,a}}_{L^2(\mu)}^2=\iint_{\R^2}\abs{G_{p,a}(x,y)}^2\,
+        \frac{e^{-(x^2+y^2)/2}}{2\pi}\,dx\,dy,
+\]
+a positive integral of a polynomial times $e^{-x^2/2-y^2/2}$ and the bounded factor
+\[
+   \exp\!\bigl(-A\alpha^2(h(x)^2+h(y)^2)+2B\alpha^2h(x)h(y)\bigr),
+   \qquad A=\Re(1/d),\ \ B=\Re(r/d),\ \ d=1-r^2 .
+\]
+Using $h(x)^3=\sqrt6\,h(x)+3x$, every mode reduces to a combination of the
+one--dimensional base moments
+$I_{\varepsilon,q}(A)=\E[X^\varepsilon h(X)^q e^{-A\alpha^2h(X)^2}]$,
+$\varepsilon\in\{0,1,2\}$, each enclosed by Arb's integrator; the cross term is
+expanded in a convergent series with a Chernoff tail.
+
+\paragraph{Circle quadrature and its remainder.}
+The averages $Q^{(\cdot)}_{p,a}$ are computed by a composite four--point
+Gauss--Legendre rule on $[0,2\pi]$ with $M$ panels of the certified point values
+$\abs{c_{p,a}}^2\norm{G_{p,a}}^2$.  Writing $g(\theta)$ for the integrand, the
+rule's error is at most $C_4(2\pi)^8M^{-9}\sum_j D_{8,j}$ with
+$C_4=(4!)^4/(9\,(8!)^3)$, where each panel bound $D_{8,j}\ge\sup_{I_j}\abs{g^{(8)}}$
+is obtained \emph{without} cancellation from
+\[
+   \abs{g^{(8)}}\le\sum_{a=0}^{8}\binom8a\sqrt{V_aV_{8-a}},\qquad
+   V_a(\theta)=\norm{\partial_\theta^a(c_{p,a}\,G_{p,a})}_{L^2(\mu)}^2 ,
+\]
+and $V_a\le\abs d^{-1}\bigl(\sum_\mu\abs{p_{a,\mu}(\theta)}\sqrt{L_\mu L_{\mu'}}\bigr)^2$
+by the elementary inequality $2BUV\le(A-\abs B)(U^2+V^2)$, valid because
+$A-\abs B=\Re(1/d)-\abs{\Re(r/d)}\ge\tfrac12$ on the unit circle (this is verified
+on all panels).  Here $L_\mu$ are precomputed positive one--dimensional integrals
+and $\abs{p_{a,\mu}}$ are bounded by evaluating the $\theta$--derivative
+coefficients on each panel as an interval.  At $M=2048$ the total remainder is at
+most $9.1\cdot10^{-4}$ per pair, negligible against $\overline S$.
+
+\section{Implementation notes}\label{sec:impl}
+
+The following are not needed to state the proof but record why the certificate is
+organized as it is; the corresponding code lives in the repository.
+
+\begin{enumerate}[leftmargin=1.6em]
+\item \textbf{Why a point evaluation, not interval boxes.}  The integrand of a
+Gaussian norm decays like $e^{-c\,x^6}$ on the real axis but \emph{grows} like
+$e^{+c\abs z^6}$ off it, because $h(z)^2\sim z^6/6$ has negative real part in
+sectors.  Interval boxes in $(x,y)$, or a complex contour, see this far--field
+growth and blow up.  Every integral is therefore evaluated at a real point;
+\texttt{Arb}'s adaptive integrator works because its per--subinterval error model
+only probes small ellipses that never reach the far field.
+
+\item \textbf{Why the Sobolev tail, not an inverse tail.}  Bounding $\sum\abs{b_m}$
+through $B_3=\norm{\Dop^3H}_{L^2}$ keeps the cancellation: $B_3$ is built from the
+already--small signed $b_m$.  A direct Hermite bound, or a complex Cauchy estimate
+of $H^{-1}$ near $t=1$, overshoots by many orders of magnitude.
+
+\item \textbf{Why the combined kernel.}  Forming $\Phi_3$ by the recursion
+\eqref{eq:phik} \emph{before} taking norms is essential: expanding
+$\Dop^3H$ as a sum of separately bounded terms discards a nine--fold cancellation
+and inflates $\overline S$ from $\approx1.8\cdot10^3$ to the order of $10^2$ per
+term.
+
+\item \textbf{Why the cancellation--free $D_8$.}  The exact eighth $\theta$--derivative
+$g^{(8)}$ is a signed combination of inner products whose terms are $\sim10^{40}$
+and cancel to $\sim10^{10}$; reproducing this in interval arithmetic needs
+$\sim140$ digits near $\theta=0,\pi$.  The Minkowski bound of
+\cref{sec:formulas} avoids the signed sum entirely: every $V_a$ is a positive
+quantity, immune to the cancellation, at the cost of a looser $D_8$ that the
+$M^{-9}$ factor absorbs.
+
+\item \textbf{Precision.}  The base moments overflow a $60$--digit mantissa for
+$q\gtrsim230$; the circle nodes near $\theta=0,\pi$ use a longer Chernoff
+truncation and $200$--bit precision.  The reported headline numbers are stable
+under further refinement.
+\end{enumerate}
+
+\end{document}

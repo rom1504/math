@@ -1,0 +1,96 @@
+A4
+  q_parent 8
+  q_star 6
+  active_selectors 4
+  child_ground_pairs 4
+  weights (Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1))
+  extension_profile {(8, 1): 4}
+  ground_count 2
+  output_support 2
+  output_mass_profile {Fraction(1, 2): 2}
+  ebar 8
+  slope 0
+  constant 0.0
+  mean_finite_h 0.6666666666666666
+ high-temperature
+   theta 1/4
+   row_square_profile {4: 4, 12: 8, 20: 4}
+   parent_entropy_beta4_coefficient 4.0
+   selector_hellinger_beta4_coefficient 13.333333333333334
+A5
+  q_parent 8
+  q_star 8
+  active_selectors 5
+  child_ground_pairs 10
+  weights (Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1))
+  extension_profile {(8, 2): 10}
+  ground_count 10
+  output_support 10
+  output_mass_profile {Fraction(1, 10): 10}
+  ebar 8
+  slope 0
+  constant 4.440892098500626e-16
+  mean_finite_h 0.7499999999999998
+ high-temperature
+   theta 1/5
+   row_square_profile {0: 2, 16: 10, 24: 20}
+   parent_entropy_beta4_coefficient 3.2000000000000006
+   selector_hellinger_beta4_coefficient 28.0
+A6
+  q_parent 10
+  q_star 8
+  active_selectors 6
+  child_ground_pairs 60
+  weights (Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1))
+  extension_profile {(10, 1): 60}
+  ground_count 12
+  output_support 12
+  output_mass_profile {Fraction(1, 12): 12}
+  ebar 10
+  slope 0
+  constant -8.881784197001252e-16
+  mean_finite_h 0.19999999999999987
+ high-temperature
+   theta 1/6
+   row_square_profile {30: 64}
+   parent_entropy_beta4_coefficient 0.0
+   selector_hellinger_beta4_coefficient 48.0
+A8
+  q_parent 20
+  q_star 18
+  active_selectors 8
+  child_ground_pairs 24
+  weights (Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1))
+  extension_profile {(20, 1): 24}
+  ground_count 8
+  output_support 8
+  output_mass_profile {Fraction(1, 8): 8}
+  ebar 20
+  slope 0
+  constant 0.0
+  mean_finite_h 0.7142857142857143
+ high-temperature
+   theta 1/8
+   row_square_profile {8: 4, 32: 32, 40: 24, 56: 64, 64: 96, 72: 36}
+   parent_entropy_beta4_coefficient 6.0
+   selector_hellinger_beta4_coefficient 92.57142857142857
+A9
+  q_parent 24
+  q_star 24
+  active_selectors 9
+  child_ground_pairs 28
+  weights (Fraction(9, 14), Fraction(9, 7), Fraction(9, 14), Fraction(9, 7), Fraction(9, 14), Fraction(9, 14), Fraction(9, 7), Fraction(9, 7), Fraction(9, 7))
+  extension_profile {(24, 2): 28}
+  ground_count 25
+  output_support 25
+  output_mass_profile {Fraction(3, 56): 8, Fraction(1, 28): 15, Fraction(1, 56): 2}
+  ebar 24
+  slope 0
+  constant 0.035686818862212366
+  mean_finite_h 0.8258928571428569
+ high-temperature
+   theta 1/9
+   row_square_profile {16: 4, 24: 6, 32: 16, 40: 30, 48: 36, 56: 70, 64: 80, 72: 62, 80: 54, 88: 44, 96: 52, 104: 20, 112: 22, 120: 8, 128: 8}
+   parent_entropy_beta4_coefficient 13.037037037037038
+   selector_hellinger_beta4_coefficient 118.66666666666667
+PASS matched zero-temperature formula and finite audits

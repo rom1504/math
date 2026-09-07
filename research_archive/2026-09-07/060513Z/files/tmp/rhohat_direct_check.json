@@ -1,0 +1,158 @@
+{
+  "child_minimizer_certificates": [
+    {
+      "beta": 2.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 1,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.43378083048302718702649468490012786335883292844810310342946120729457965768706371",
+      "order": 2,
+      "raw_t": 1.0,
+      "root_gauged_signing_count": 1,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 4
+    }
+  ],
+  "classification": "complete child-signing and bridge enumeration; numerical transcendental evaluation and Gauss-Legendre quadrature",
+  "exclusions": [
+    "no conference or Paley surrogate",
+    "no ground-state child surrogate",
+    "no bridge sampling",
+    "no asymptotic inference from finite values"
+  ],
+  "normalization": "rhohat=(lambda*mn)^-1 int_-lambda^0 E_Pi_s sum_e r_e(B_-e)^2 ds",
+  "records": [
+    {
+      "N": 4,
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 2.1597307275911248e-16,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          6.988354762620396e-32,
+          0.43702806718387444,
+          6.988354762620396e-32
+        ],
+        "maximum_flip_vs_direct_absolute_error": 1.4432899320127035e-15
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.8917930375084889,
+          "endpoint_overlap_at_minus_lambda": 0.17456854769071226,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9592595019239956,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.19251460407819931,
+          "minimum_quadrature_importance_effective_fraction": 0.8919663489167418,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.19386556817647657
+        }
+      ],
+      "pointwise_overlap_maximum": 0.4370280671838759,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 1.0,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.21851403359193794
+    },
+    {
+      "N": 4,
+      "beta": 2.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 2.1597307275911248e-16,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.43702806718387444,
+          6.988354762620396e-32,
+          0.43702806718387444
+        ],
+        "maximum_flip_vs_direct_absolute_error": 1.4432899320127035e-15
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.8917930375084889,
+          "endpoint_overlap_at_minus_lambda": 0.17456854769071226,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9592595019239956,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.19251460407819931,
+          "minimum_quadrature_importance_effective_fraction": 0.8919663489167418,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.19386556817647657
+        }
+      ],
+      "pointwise_overlap_maximum": 0.4370280671838759,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 1.0,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.21851403359193794
+    }
+  ],
+  "schema": "actual-child-raw-negative-overlap-exact-v1",
+  "scope": {
+    "betas": [
+      2.0
+    ],
+    "lambdas": [
+      1.0
+    ],
+    "mp_dps_for_child_selection": 80,
+    "orders": [
+      4,
+      4
+    ],
+    "orientations": [
+      -1,
+      1
+    ],
+    "quadrature_order": 32,
+    "splits": "balanced floor(N/2)+ceil(N/2)"
+  }
+}
