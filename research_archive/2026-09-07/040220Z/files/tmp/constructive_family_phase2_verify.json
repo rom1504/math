@@ -1,0 +1,325 @@
+{
+  "classification": "exact finite arithmetic checks",
+  "cospectral_cap_collision": {
+    "order": 8,
+    "records": [
+      {
+        "cap": 14,
+        "characteristic_coefficients_descending": [
+          1,
+          0,
+          -28,
+          0,
+          222,
+          0,
+          -620,
+          0,
+          425
+        ],
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "matrix_sha256": "904e0744517a0500ad71ddc8170808078e331530a1cc36503630ead3044385b6",
+        "max_energy": 12,
+        "min_energy": -14,
+        "power_traces_1_through_8": [
+          0,
+          56,
+          0,
+          680,
+          0,
+          10328,
+          0,
+          169544
+        ],
+        "root_internal_edge_mask": 6875
+      },
+      {
+        "cap": 12,
+        "characteristic_coefficients_descending": [
+          1,
+          0,
+          -28,
+          0,
+          222,
+          0,
+          -620,
+          0,
+          425
+        ],
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "matrix_sha256": "b15e20b5e4ac01070e19591ced8c3adfaafb86fb00d6529ee65a3cfa5088130c",
+        "max_energy": 12,
+        "min_energy": -12,
+        "power_traces_1_through_8": [
+          0,
+          56,
+          0,
+          680,
+          0,
+          10328,
+          0,
+          169544
+        ],
+        "root_internal_edge_mask": 6887
+      }
+    ]
+  },
+  "deletion_identity": {
+    "conference_order": 26,
+    "deletion_prefix_sizes_checked": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "r": 5,
+    "status": "H_K=H_full-r|D|+H_D exactly"
+  },
+  "hadamard_tensor_composition": [
+    {
+      "conference_child_order": 10,
+      "filled_perturbation_operator_norm": 1.0,
+      "hadamard_order": 2,
+      "missing_cross_edges": 10,
+      "parent_order": 20,
+      "predicted_missing_cross_edges": 10,
+      "proved_operator_norm_bound": 1,
+      "tensor_square_identity": "P0^2=18I"
+    },
+    {
+      "conference_child_order": 10,
+      "filled_perturbation_operator_norm": 3.0000000000000004,
+      "hadamard_order": 4,
+      "missing_cross_edges": 60,
+      "parent_order": 40,
+      "predicted_missing_cross_edges": 60,
+      "proved_operator_norm_bound": 3,
+      "tensor_square_identity": "P0^2=36I"
+    }
+  ],
+  "line_unions": [
+    {
+      "r": 3,
+      "status": "all line-union constant-spin energies match formula",
+      "subsets_checked": 7
+    },
+    {
+      "r": 5,
+      "status": "all line-union constant-spin energies match formula",
+      "subsets_checked": 31
+    },
+    {
+      "r": 7,
+      "status": "all line-union constant-spin energies match formula",
+      "subsets_checked": 127
+    }
+  ],
+  "polynomial_fractional_double": [
+    {
+      "child_cap": 5,
+      "diagonal_invariant_extremizer": {
+        "energy_for_bridge_S_plus_tI_all_t": 18,
+        "x_code": 2,
+        "x_dot_y": 0,
+        "y_code": 12
+      },
+      "double_square_identity_verified": true,
+      "ideal_equal_child_energy_target": 14.142135623730951,
+      "name": "order_6_conference_minimizer",
+      "order": 6,
+      "zero_diagonal_fractional_double_cap": 18
+    },
+    {
+      "child_cap": 14,
+      "diagonal_invariant_extremizer": null,
+      "double_square_identity_verified": true,
+      "ideal_equal_child_energy_target": 39.59797974644666,
+      "name": "order_8_cospectral_cap_14",
+      "order": 8,
+      "zero_diagonal_fractional_double_cap": 40
+    },
+    {
+      "child_cap": 12,
+      "diagonal_invariant_extremizer": {
+        "energy_for_bridge_S_plus_tI_all_t": 44,
+        "x_code": 0,
+        "x_dot_y": 0,
+        "y_code": 30
+      },
+      "double_square_identity_verified": true,
+      "ideal_equal_child_energy_target": 33.941125496954285,
+      "name": "order_8_cospectral_cap_12",
+      "order": 8,
+      "zero_diagonal_fractional_double_cap": 44
+    }
+  ],
+  "schema": "quadratic-signing-constructive-family-audit-v1"
+}
