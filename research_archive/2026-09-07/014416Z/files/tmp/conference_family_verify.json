@@ -1,0 +1,120 @@
+{
+  "classification": "proved/certified fixed-family intervals assembled from explicit certificates; absent endpoints remain open",
+  "records": [
+    {
+      "conference_cap_interval": [
+        5,
+        5
+      ],
+      "conference_order": 6,
+      "evidence": [
+        "symmetric-Hadamard spectral upper bound",
+        "exhaustive parent Boolean profile",
+        "explicit CP-SAT energy witness",
+        "CP-SAT exact fixed-cap optimization",
+        "exact integer-shell upper bound"
+      ],
+      "matrix_sha256": "b002f4c2199bd50f5b8ff21d48f422be4373e9d689fae17cc4c40f5754baa50b",
+      "paley_prime": 5,
+      "parent_cap_interval": [
+        18,
+        18
+      ],
+      "parent_normalized_interval": [
+        0.4330127018922193,
+        0.4330127018922193
+      ],
+      "parent_order": 12,
+      "source": "computations/results/conference_double_p5.json",
+      "two_thirds_defect_interval": [
+        1.0202499788942587,
+        1.0202499788942587
+      ]
+    },
+    {
+      "conference_cap_interval": [
+        21,
+        21
+      ],
+      "conference_order": 14,
+      "evidence": [
+        "symmetric-Hadamard spectral upper bound",
+        "explicit CP-SAT energy witness",
+        "exact integer-shell upper bound"
+      ],
+      "matrix_sha256": "6e5c3e054ffab06eaefeec5bce1b712111f242e65c57273ddb474427a9ce429a",
+      "paley_prime": 13,
+      "parent_cap_interval": [
+        70,
+        72
+      ],
+      "parent_normalized_interval": [
+        0.47245559126153397,
+        0.48595432244043496
+      ],
+      "parent_order": 28,
+      "source": "computations/results/conference_double_p13.json",
+      "two_thirds_defect_interval": [
+        1.7616673003776153,
+        2.0836696216484096
+      ]
+    },
+    {
+      "conference_cap_interval": [
+        33,
+        33
+      ],
+      "conference_order": 18,
+      "evidence": [
+        "symmetric-Hadamard spectral upper bound",
+        "exact integer-shell upper bound",
+        "explicit Boolean Hadamard eigenvector and spectral bound"
+      ],
+      "matrix_sha256": "b19e1f6d07e0817f3312796a50d3ef8c468ef9be99d897d22af97818b1e72c1f",
+      "paley_prime": 17,
+      "parent_cap_interval": [
+        108,
+        108
+      ],
+      "parent_normalized_interval": [
+        0.5,
+        0.5
+      ],
+      "parent_order": 36,
+      "source": "computations/results/conference_double_p17.json",
+      "two_thirds_defect_interval": [
+        2.102025941904163,
+        2.102025941904163
+      ]
+    },
+    {
+      "conference_cap_interval": [
+        455,
+        481
+      ],
+      "conference_order": 98,
+      "evidence": [
+        "symmetric-Hadamard spectral upper bound",
+        "heuristic parent search with explicit energy witness",
+        "heuristic child search with explicit energy witness"
+      ],
+      "matrix_sha256": "668e85690328c89a7870963e8614814e48924984b1c16881f0130c071cd6570d",
+      "paley_prime": 97,
+      "parent_cap_interval": [
+        1284,
+        1372
+      ],
+      "parent_normalized_interval": [
+        0.4679300291545189,
+        0.5
+      ],
+      "parent_order": 196,
+      "source": "computations/results/conference_double_p97.json",
+      "two_thirds_defect_interval": [
+        -4.645258777831344,
+        5.157866219699088
+      ]
+    }
+  ],
+  "schema": "quadratic-signing-conference-double-family-audit-v1"
+}

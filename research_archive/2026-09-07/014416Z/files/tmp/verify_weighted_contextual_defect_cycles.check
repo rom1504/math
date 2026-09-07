@@ -1,0 +1,53 @@
+{
+  "corrected_toll_quotient": {
+    "corrected_entry": "S_A[1,1] += 1/10",
+    "entry_section_and_domination_checks": 40,
+    "finite_word_bound_checks": 20655,
+    "sharp_repeated_A_checks": 40,
+    "uniform_bound": "21/10"
+  },
+  "exact_four_to_two": {
+    "coarsest_strong_blocks": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "contextual_depth_one_blocks": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "exhaustive_aggregation_updates": 4802
+  },
+  "nearby_failed_quotient": {
+    "contextual_singletons_by_depth": 2,
+    "exact_linear_cycle_checks": 40,
+    "exhaustive_upper_bound_checks": 5103,
+    "length_40_cycle_error": "4",
+    "maximum_error_by_length_through_five": {
+      "0": "0",
+      "1": "1/10",
+      "2": "1/5",
+      "3": "3/10",
+      "4": "2/5",
+      "5": "1/2"
+    },
+    "perturbed_entry": "T_A[2,2] += 1/10",
+    "strong_refinement_block_counts": [
+      1,
+      3,
+      4
+    ],
+    "uniform_one_step_block_defect": "1/10"
+  }
+}
