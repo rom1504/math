@@ -45,3 +45,47 @@ Working research originals stay in place; their tracked archive is durable.
 
 This is a steering/publication event. Six-hour research continues through
 approximately21:24 UTC, not a final synthesis.
+
+## Second substantive checkpoint, approximately17:15UTC
+
+The bounded-profile marked lower theorem is now proved and independently
+audited, with the unchanged scalar certificate explicit. The director's
+variance completion and the invention agent's stronger product-deficit
+completion explain how aggregate row energy, rather than a uniform local
+deficit, can suffice for small-cap regularization.
+
+The paired anti-invariant weave is now a complete all-order construction
+with a certified constant below .499. It disproves a BOOLEAN half-floor
+that the archive's spectral bound did not prove. The original best upper
+bound remains smaller; seed transfer is still open. Root launched a full
+independent replay of all twenty point covers at17:11UTC, after reading the
+analytic construction. The construction agent separately reconstructed
+the scalar formulas and continuum chord bound.
+
+An explicit bounded-amplitude example and its near-optimal implantation
+show why common sign-preserving amplitude maps fail. Its localized global
+repair remains easy. No universal obstruction to rewriting all edges is
+inferred. The direct rotation family also has a precise leading cap cost;
+its selectable-exact-minimizer scope must not be broadened without proof.
+
+Next work: actual macroscopic amplitude replacement; a carefully tested
+connection between Gaussian lower response and the upper construction;
+global compatibility that retains seed information at the PARENT leading
+scale. A scalar pressure effect at an inflated temperature is not enough.
+
+Three agents are now active after reactivating an existing construction
+thread. The director continues original derivations and adversarial audits.
+All research-bearing additions are being preserved for the second push.
+
+The complete twenty-cover interval replay at40 decimal digits finished
+successfully:100,466 checked boxes,50,243 accepted leaves, all ten continuum
+chords. A second replay at60 digits preserves full stdout and the complete
+certificate through a tracked harness; it is a replay, not an independent
+implementation of interval arithmetic. The separate chord checker and
+analytic proof reconstruction supply the independent verification.
+
+Second preservation snapshot research_archive/2026-09-07/171307Z contains
+1,879 payloads,155,243,751 bytes, all hashes verified. Environments/caches,
+reviewed binaries and the byte-verified oversized compressed research remain
+excluded for the documented reasons. New scripts use tracked inputs; draft
+files and informative failures remain preserved without implying correctness.
