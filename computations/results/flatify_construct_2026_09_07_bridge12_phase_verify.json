@@ -1,0 +1,49 @@
+{
+  "status": "PASS independent replay",
+  "records": [
+    {
+      "target": 60,
+      "polarity": 1,
+      "status": "PASS full phase cube excluded",
+      "constraint_count": 1092
+    },
+    {
+      "target": 60,
+      "polarity": -1,
+      "status": "PASS full phase cube excluded",
+      "constraint_count": 1087
+    },
+    {
+      "target": 62,
+      "polarity": 1,
+      "status": "PASS full-parent exhaustive Gray replay",
+      "replay": {
+        "n": 24,
+        "projective_assignments": 8388608,
+        "min_energy": -62,
+        "max_energy": 62,
+        "cap": 62,
+        "argmin_gray": 97613,
+        "argmax_gray": 790627,
+        "min_count": 8,
+        "max_count": 11
+      }
+    },
+    {
+      "target": 62,
+      "polarity": -1,
+      "status": "PASS full-parent exhaustive Gray replay",
+      "replay": {
+        "n": 24,
+        "projective_assignments": 8388608,
+        "min_energy": -62,
+        "max_energy": 62,
+        "cap": 62,
+        "argmin_gray": 4153064,
+        "argmax_gray": 1736907,
+        "min_count": 2,
+        "max_count": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,3133 @@
+
+
+===== PAGE 1 =====
+ONE-SIDED LARGE DEVIA TIONS FOR THE GROUND-ST A TE
+ENERGY OF SPIN GLASSES
+HONG-BIN CHEN, ALICE GUIONNET, JUSTIN KO,
+BERTRAND LACROIX-A-CHEZ-TOINE, AND JEAN-CHRISTOPHE MOURRAT
+Abstract. We describe the large deviations above its typical value of the
+maximal energy of a spin glass with ±1 spins. Thanks to the relatively
+explicit description of the rate function we identify, we then show that the
+latter is asymptotically quadratic near its minimum if and only if an external
+magnetic field is present. The proof starts from a Parisi-type formula for the
+fractional moments of the partition function, which we then leverage to obtain
+the limit of the Laplace transform of the maximum energy. Using convex-
+duality arguments, we then rewrite this Laplace transform as a supremum over
+martingales, and thereby deduce the large-deviation principle with explicit
+rate function.
+Contents
+1. Introduction and main results 1
+2. Fractional moments of the partition function 6
+3. Laplace transform of the ground-state energy 12
+4. Un-inverted formula for the Laplace transform 19
+5. Derivation of the large-deviation principle 28
+6. Necessary and sufficient condition for quadratic behavior 38
+References 41
+1.Introduction and main results
+Let (βp)p⩾2 be a sequence of nonnegative real numbers such that the function
+ξ(r)∶= ∑p⩾2 β2
+prp is finite for every r∈R . For every integer N⩾ 1, we let
+(H′
+N(σ))σ∈RN be the centered Gaussian field with covariance such that, for every
+σ, τ∈R N ,
+E[H′
+N(σ)H′
+N(τ)]=N ξ( σ⋅τ
+N ).(1.1)
+For a fixedh∈R, we consider
+(1.2)H N(σ)∶=H ′
+N(σ)+h
+N
+∑
+i=1
+σi.
+Date: March 9, 2026.
+1
+arXiv:2603.06368v1  [math.PR]  6 Mar 2026
+
+===== PAGE 2 =====
+2 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+In order to minimize the number of minus signs, we define the “ground state”
+energyL N as the maximum ofH N over{±1} N , normalized byN −1, that is,
+(1.3)L N ∶=max
+σ∈{−1,1}N
+HN(σ)
+N .
+Our main result is an upper large-deviation principle for LN , with a relatively
+explicit rate function. We also show that this rate function is quadratic near its
+minimum if and only ifh≠0.
+As a preliminary step, we obtain a representation of the large- N limit of LN
+that takes the form of a supremum, in the spirit of the “un-inverted” formulas
+introduced in [41]. We denote this limit by
+gs∶=lim
+N→+∞
+E[LN]=lim
+N→+∞
+LN (a.s.).
+We let P=( Ω,(F t)t∈[0,1], P) be a filtered probability space with complete σ-
+algebras (that is, for every t∈[ 0, 1], the σ-algebra Ft contains every subset of any
+null-measure set). We assume that the probability space P is sufficiently rich
+that one can define a Brownian motion (Wt)t∈[0,1] over P. We denote byEthe
+expectation associated withP, and by Mart the space of bounded martingales
+overP.
+Theorem 1.1(Un-inverted formula for the ground-state energy).We have
+(1.4)gs=sup{E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dW t] ∣α∈Mart,∣α 1∣⩽1,and
+∀t∈[0,1], ∫
+1
+t
+ξ′′(s)(E[α2
+s]−s)ds⩾0}.
+Moreover, the supremum in(1.4)is achieved at a uniqueα∈Mart.
+We now state the large-deviation principle for deviations of LN above its
+typical value; we also refer to Theorem 5.1 for a more general statement. For
+everyr>gs, we set
+(1.5) Λ ∗(r)=inf
+⎧⎪⎪⎨⎪⎪⎩
+(r−E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt])
+2
+2 ∫
+1
+0 ξ′′(t)(E[α2
+t]−t) dt
+∣
+α∈Mart,∣α 1∣⩽1,and∀t∈[0,1], ∫
+1
+t
+ξ′′(s)(E[α2
+s]−s)ds⩾0}.
+We also set Λ ∗(gs)= 0. Later in the paper, we will define Λ to be the limit
+Laplace transform of LN , and show that the convex dual of Λ is given by the
+expression in (1.5), hence the notation Λ ∗ for this quantity.
+Theorem 1.2(Large deviations for the ground-state energy).For every r⩾gs ,
+we have
+lim
+N→∞
+− 1
+N logP[L N ⩾r]=Λ ∗(r).
+Thanks to the relatively explicit description of the large-deviation rate function,
+we can obtain some information on its asymptotic behavior near its minimum.
+At a heuristic level, this information should be related to the fluctuations of the
+ground-state energy, as discussed in more details below.
+
+===== PAGE 3 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 3
+Theorem 1.3(quadratic/non-quadratic behavior near the minimum).If h≠ 0,
+then there exists a constantC∈(0,+∞)such that for everyr⩾gs,
+C−1(r−gs) 2 ⩽Λ ∗(r)⩽C(r−gs) 2.
+Conversely, ifh=0, then
+lim
+r→gs+
+Λ∗(r)
+(r−gs) 2 =+∞.
+In order to prove these results, we first derive a Parisi-type formula for the
+fractional moments of the partition function of the model. In other words, for
+every s∈( 0, 1), we give a variational formula in the form of an infimum for the
+large-Nlimit of
+(1.6) 1
+sN logE
+⎡⎢⎢⎢⎢⎣
+⎛
+⎝
+1
+2N ∑
+σ∈{−1,1}N
+eHN(σ)⎞
+⎠
+s⎤⎥⎥⎥⎥⎦
+.
+This is Theorem 2.1, whose proof occupies Section 2. In Section 3, we obtain the
+asymptotic behavior of the Laplace transform of N LN . The starting point is the
+observation that, for everys>0,
+(1.7)
+Λ(s)∶=lim
+N→∞
+1
+N logE [esN LN]=lim
+β→∞
+lim
+N→∞
+1
+N logE
+⎡⎢⎢⎢⎢⎢⎣
+⎛
+⎝
+1
+2N ∑
+σ∈{−1,1}N
+eβHN(σ)⎞
+⎠
+s
+β⎤⎥⎥⎥⎥⎥⎦
+.
+We use this together with the result of the previous section to obtain a variational
+formula for the limit of this Laplace transform.
+Once this is done, we would only need to assert the C1 regularity of Λ in
+order to be able to state an abstract upper large-deviation principle for LN ,
+with a rate function that is given by the convex dual of Λ. However, this
+representation of the large-deviation rate function would be rather inexplicit.
+Instead, in Section 4 we use convex-duality arguments to obtain a more direct
+“un-inverted” representation of Λ. We use this representation in Section 5 to
+show that Λ is a C1 function and compute an explicit representation of its dual,
+and we thereby deduce a general upper large-deviation principle in Theorem 5.1,
+which in particular implies Theorem 1.2. The proof of Theorem 1.1 is along
+similar lines as those of Theorem 1.2, as it formally amounts to taking s→ 0
+throughout; we obtain it as a consequence of Theorem 4.2. In Section 6, we prove
+Theorem 1.3 by showing that, for α the optimal martingale from Theorem 1.1,
+we have the equivalence
+(1.8)h=0 if and only if ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt=0.
+We stress that our results concern theupperlarge deviations of the ground-state
+energy (which we defined as being the maximum of HN/N ). The phenomenology
+for thelowerlarge deviations can differ substantially. Indeed, for models with
+no external field, the speed of the lower large deviations is expected to be N 2
+rather than N . For spherical models, this was shown in [ 32]. There, the authors
+also obtain a description of the upper large-deviation rate function for 1-RSB
+models, using arguments based on the Kac-Rice formula. These results and more
+were anticipated in [ 37] using the non-rigorous replica method. We also point
+out that, for the spherical SK model, the ground-state energy is nothing but the
+
+===== PAGE 4 =====
+4 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+largest eigenvalue of a GOE random matrix, whose large deviations have been
+extensively studied and are also of speed N 2 and N for the lower and upper large
+deviations respectively [8, 9].
+We now give a brief overview of related works. Results similar to our Theo-
+rem 2.1 deriving a Parisi-type formula for the limit of (1.6) were already obtained
+in [56] in the case when the function ξ in (1.1) is even, i.e. when βp = 0 for every
+odd p⩾ 3, using an approach based on [ 30, 55]. In [ 22], the authors consider the
+SK model (so βp = 0 for all p⩾ 3) with no external field, which they couple with
+general Poisson–Dirichlet cascades. One can transform the fractional moment
+in (1.6) into a free-energy calculation for a system that is coupled with a Poisson–
+Dirichlet process (as in e.g. [ 26, Proposition 5.20]), and our proof of Theorem 2.1
+then follows an approach similar to that in [ 22], leveraging the more recent proof
+of the Parisi formula from [ 45, 46]. In Theorem 2.1, we in fact cover a broader
+class of energy functions than those of the form in (1.2), as we also allow for
+the presence of a random external field. In the absence of a random external
+field, the formula for the limit of (1.6) is almost the same as the classical Parisi
+formula for the limit free energy, the only difference being that the Parisi measure
+is forced to have an atom of mass at least s at 0. The presence of a random
+external field introduces a further modification to the classical Parisi formula,
+where in place of averaging the Parisi PDE Φ ζ(0, h1) over a coordinate h1 of the
+random field, we take the Laplace transform of this quantity with exponents.
+While the justification of (1.7) is not difficult, taking the β→∞ limit in the
+variational formula obtained in Theorem 2.1 is more delicate. In the s→ 0 limit,
+this corresponds to the derivation of a Parisi-type formula for the ground-state
+energy, as was already achieved in [ 6] and for generalized mixed p-spin models
+in [34, 29]. In order to perform this step, one needs to derive some estimates
+on the optimizer in the variational formula from Theorem 2.1. Remarkably, we
+do not know how to derive those directly from the variational formula. Instead,
+and as was done in [6], we go back to the finite-Nspin-glass model, and obtain
+the required estimates in Lemma 3.5. Compared with [ 6], the proof of this
+lemma requires a new argument, as the fractional moment is more delicate to
+manipulate.
+One motivation of our study is to better understand the un-inverted formulas
+for the free energy appearing in [14, 33, 41]; see also [40] for an informal discussion
+where Theorem 1.1 was anticipated for the SK model without external field. For
+classical systems of statistical mechanics such as the Curie–Weiss model, the
+limit free energy naturally takes the form of a supremum of a functional involving
+an energy and an entropy term, and the entropy term can be interpreted as
+a large-deviation rate function. We hence wonder if there could be a simple
+expression for the large-deviation rate function of the random variable HN(σ)
+(with σ sampled uniformly over {−1, 1}N , and for each fixed realization of the
+randomness). While we do not know how to derive a simple expression for
+the large-deviation rate function in this case, Theorem 1.2 demonstrates that
+this is indeed possible for a related large-deviation principle. As discussed in
+[40], a better understanding of the un-inverted formulas from [ 14, 33, 41] could
+potentially help to make progress on the identification of the limit free energy of
+multi-type spin glasses with non-convex covariance structure. At the moment,
+
+===== PAGE 5 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 5
+only partial results have been obtained on this problem, see [ 15, 16, 38, 39], as
+well as [24, 25, 36] for related problems in community detection.
+Heuristically, the asymptotic behavior of the large-deviation rate function
+of LN near its minimum should be related to the fluctuations of LN around its
+typical value. For instance, if
+− 1
+N logP[L N ⩾r]≃ σ2
+2 (r−gs) 2 (N→+∞,thenr→gs +),
+then formally replacing r with gs+x/
+√
+N suggests a CLT-type scaling with a
+Gaussian tail probability. Theorem 1.3 is thus heuristically consistent with the
+results of [ 19], where for even ξ, it is shown that the ground-state energy has
+Gaussian fluctuations of order N−1/2 if h≠ 0, and that these fluctuations are of
+order o(N−1/2) when h= 0. Similar results to those in [ 19] were also proved for
+spherical models in [ 20]. Remarkably, [13, Theorem 8.4] also identifies a class of
+covariance functions ξ for which the fluctuations of the ground-state energy are
+shown to beO(N −5/8+o(1)).
+For the spherical SK model with h= 0, the ground-state energy is the top
+eigenvalue of a GOE matrix, and its fluctuations are known to be of order
+N−2/3 [57]. In the case ξ(r)=r p with p⩾ 3 and h= 0, the fluctuations of the
+ground-state energy were shown to be of orderN −1 in [54].
+A closely related question concerns the scale of the fluctuations of the free
+energy. The free energy of the SK model with h= 0 was shown to have fluctuations
+of order o(N−1/2) at all temperatures in [13]. For even ξ and h≠ 0, the free energy
+was shown to have Gaussian fluctuations of orderN−1/2 at all temperatures in [18].
+For the spherical SK model with h= 0, the fluctuations of the free energy at
+low temperature were found to be of order N−2/3 [7]. We also refer to [ 21] for a
+recent survey concerning the fluctuations of the free energy of the SK model.
+When h= 0, the question of figuring out the exact order of magnitude of
+the fluctuations of LN is debated in the physics literature. Indeed, for the
+SK model, some works suggest that these fluctuations are typically of order
+N−3/4 [10, 12, 35, 42], while others suggest that they are of order N−5/6 instead
+[3, 23, 43, 48, 49, 50]. As can be seen from [ 11, 42, 43], this question is difficult
+to settle using only the results of numerical simulations. Most relevant to the
+present work are the papers [ 48, 49, 50], which argue that the large-deviation
+rate function should be such that
+(1.9) Λ ∗(r)≃(r−gs)
+6
+5 (r→gs +).
+It would be very interesting to investigate whether a more refined analysis of our
+explicit formula for Λ∗ would allow us to bridge the gap between Theorem 1.3
+and the prediction in (1.9). The rate of convergence to zero of E[LN]−gs is also
+a matter of debate in the physics literature [3, 10, 11, 28, 35, 43, 51].
+Our work is inspired by [ 37], which focuses on spherical models. In particular,
+the authors employ non-rigorous arguments to predict the limit of the fractional
+moments of the partition function, they use (1.7) to deduce the limit of the
+Laplace transform of LN , and they then derive and study the corresponding
+large-deviation principle.
+
+===== PAGE 6 =====
+6 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+2.Fractional moments of the partition function
+Throughout this section, we consider the following generalization of the Hamil-
+tonian (1.2) with a random external field:
+(2.1)H N(σ)=H ′
+N(σ)+
+N
+∑
+i=1
+hiσi,
+where H′
+N(σ) is given as in (1.1) and (hi) is a collection of i.i.d. random variables
+satisfying Eeλ∣hi∣ <∞ for all λ⩾ 0. Notice that if h1 is a fixed constant, then
+(2.1) is equivalent to (1.2).
+We denote the uniform measure on {−1, 1} by µ, and set µN ∶=µ ⊗N . We define
+the partition functionZ N associated with the Hamiltonian in (2.1) by
+ZN ∶= ∫ eHN(σ) dµN(σ).(2.2)
+Theorem 2.1(Fractional moments ofZ N ).For everys∈(0,1), we have
+(2.3)
+lim
+N→∞
+1
+sN logE[Z s
+N]=inf
+ζ∈Prs[0,1]
+( 1
+s logE h1 [esΦζ(0,h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)ζ([0, t])dt),
+whereΦ ζ solves
+(2.4)
+⎧⎪⎪⎨⎪⎪⎩
+−∂tΦζ = ξ′′(t)
+2 (∂2
+xΦζ+ζ([0, t])(∂xΦζ)2),for(t, x)∈(0,1)×R
+Φζ(1, x)=log ∫ exσ dµ(σ),forx∈R, .
+and where Prs[0, 1] is the space of probability measures ζ on [0, 1] such that
+ζ({0})⩾s . Moreover, the infimum in (2.3) is achieved at a unique ζ∈Pr s[0, 1].
+Remark2.2.Formally taking s= 0 in (2.3), we recover the Parisi formula for the
+limit free energy, that is,
+lim
+N→∞
+1
+N E[logZ N]=inf
+ζ∈Pr[0,1]
+(E[Φζ(0, h)]− 1
+2 ∫
+1
+0
+tξ′′(t)ζ([0, t])dt).
+As was already mentioned, special cases of Theorem 2.1 were already obtained
+in [56] and in [ 22]. In this section, we provide a direct proof of this result, much
+in the spirit of [22].
+The key observation is that the fractional moments can be accessed by cou-
+pling the Hamiltonian with a Poisson–Dirichlet process. Let (HN(⋅, n))n∈N be
+independent copies of HN(⋅), and (h(n)
+i )i,n∈N be independent copies of h1. We
+define
+ZN(n)= ∫ eHN(σ,n) dµN(σ)= ∫ eH′
+N(σ,n)+∑N
+i=1 h(n)
+i σi dµN(σ)
+to be the partition function associated with independent copies HN(σ, n)of
+HN(σ) and h(n)
+i of hi. Let (vn)n∈N denote the weights of the Poisson–Dirichlet
+process (see [ 46, Section 2.2] or [ 26, Section 5.5]) associated with the parameter
+s∈( 0, 1). By the invariance property of Poisson–Dirichlet processes, see [ 26,
+Proposition 5.20], we have
+1
+N E[log ∑
+n
+vnZN(n)]= 1
+N slogE [eslogZ N]= 1
+N slogE[Z s
+N].
+
+===== PAGE 7 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 7
+It remains to compute the limit of
+(2.5) 1
+sN logE[Z s
+N]= 1
+N E[log ∑
+n
+vnZN(n)].
+In the special case of the SK model without an external field, the identification
+of this limit follows as a special case of the general formula proved for multiscale
+spin glasses in [22, Theorem 2.1].
+Proof of Theorem 2.1 from[22]for the SK model withh i =0. We first show how
+the results in [ 22] can be applied to the current setting. Our setting corresponds
+to the special case when the sequence of γ defined in [ 22, Equation 8] consists of
+the single point γ1 =s . For such models, the set Xβ defined in [ 22, Equation 2.2]
+consists of precisely the space of CDFs corresponding to probability measures
+such thatζ({0})⩾s.
+The result of Theorem 2.1 then follows from representing the recursive definition
+of [22, Equation 3.3] using the Parisi PDE. This is a direct consequence of [ 46,
+Chapter 4].□
+For completeness, a detailed proof of this result using properties of the
+marginals of Poisson–Dirichlet processes and synchronization is described below.
+The proof also includes the case when the external fieldsh i are random.
+2.1.Upper bound on the free energy.This follows from the classical Guerra’s
+interpolation argument. We want to find an upper bound of (2.5).
+Lemma 2.3.For independent copiesH N(σ, n)ofH N(σ)defined in(2.1),
+lim sup
+N→∞
+1
+N Elog ∑
+n
+∫ eHN(σ,n) dµN(σ)vn
+⩽inf
+ζ∈Prs[0,1]
+( 1
+s logE h1 [esΦζ(0,h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)ζ([0, t])dt).(2.6)
+Proof. The proof follows from Guerra’s interpolation argument [ 31], where we
+interpolate the free energy with the usual limiting object with a Poisson–Dirichlet
+cascade corresponding to a CDF in Pr s[0,1].
+We first fix a discrete ζ∈Pr s[0, 1] with r⩾ 1 steps such that ζ({0})=s . Let
+α∈N r−1, and let ̃α=(n, α)∈N r. Let
+0<ζ 0 =s<ζ 1 <⋅⋅⋅<ζ r−1 <1
+and
+0=q 0 <q 1 <⋅⋅⋅<q r =1
+denote the sequences of order parameters, and let vnα denote the weights of the
+Poisson–Dirichlet cascades corresponding to ζ. Notice that we have constrained
+thatζ 0 =sto be equal to thesth moment of the partition function.
+Let Z(̃α) denote Gaussian processes indexed by ̃α with covariance ξ′(q̃α1∧̃α2).
+Likewise, we denote by Y( ̃α) Gaussian processes indexed by ̃α with covariance
+θ(q̃α1∧̃α2)=q ̃α1∧̃α2ξ′(q̃α1∧̃α2)−ξ(q α1∧̃α2). For 1 ⩽i⩽N , we let Zi(α, n)and
+Yi(α, n)denote independent copies of Z(̃α) and Y( ̃α) respectively. We consider
+the interpolating Hamiltonians
+H′
+N(σ, α, n, t)=
+√
+tH′
+N(σ, n)+
+√
+1−t
+N
+∑
+i=1
+Zi(α, n)σi+
+√
+t
+N
+∑
+i=1
+Yi(α, n)
+
+===== PAGE 8 =====
+8 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+which are independent over thencoordinates.
+We define the interpolating free energy
+ϕ(t)= 1
+N Elog ∑
+n
+∑
+α
+∫ eH′
+N(σ,α,n,t)+∑N
+i=1 h(n)
+i σi dµN(σ)vnα
+By Gaussian integration by parts, we have that
+ϕ′(t)=− 1
+2 E⟨ξ(R121(n1 =n 2))−R 12ξ′(̃Q12)+θ( ̃Q12)⟩t
+=− 1
+2 E⟨1(n1 =n 2)(ξ(R1,2)−ξ(Q 1,2)−ξ ′(Q12)(R1,2−Q 1,2))⟩t(2.7)
+where we defined the overlaps R1,2 = σ1⋅σ2
+N , ̃Q1,2 = ̃α1∧̃α2 and Q1,2 =α 1∧α 2. The
+simplification in the second line follows from the fact that ̃Q1,2 =(α 1∧α 2)1(n1 =
+n2)andξ(0)=ξ ′(0)=0. Ifξis convex then the sign ofϕ ′ is negative for allN.
+If ξ is only convex on R+, then the argument is slightly more involved and
+will hold in the limit as N→∞ if we apply Talagrand’s positivity principle as
+in [46, Chapter 3.2]. Since the details of this modification are identical to [ 46,
+Chapter 3.2], we sketch the main ideas of the argument. The usual perturbation
+on the σ coordinates implies that the probability of the event {R1,2 ⩽−ϵ} under
+the perturbed Gibbs measure tends to zero [ 46, Theorem 3.4]. We can repeat
+the interpolation proof with the perturbed Hamiltonian to arrive at (2.7) where
+⟨⋅⟩t is replaced with the perturbed average. We now split (2.7) along the events
+{R1,2 ⩽−ϵ}and{R 1,2 >−ϵ}. On the event{R 1,2 >−ϵ}, the upper bound can be
+uniformly bounded above over N by Lϵ for some constant L depending only on
+ξ using the convexity of ξ on R+. On the other hand, the event {R1,2 ⩽−ϵ} has
+probability 0 in the limit, so it can be made arbitrarily small for each fixed ϵ by
+taking N to infinity. Therefore, taking the limit as N→∞ then taking ϵ→ 0
+implies that lim supN→∞ ϕ′ is negative.
+In either case, we can integrate ϕ′(t) to conclude that lim supN→∞ ϕ(1)⩽
+lim supN→∞ ϕ(0), so
+lim sup
+N→∞
+1
+N Elog ∑
+n
+∑
+α
+∫ eH′
+N(σ,n)+∑N
+i=1 h(n)
+i σi dµ(σ)vnα
+⩽lim sup
+N→∞
+Elog ∑
+n
+∑
+α
+∫ eZ(α,n)σ+ ∑N
+i=1 h(n)
+i σi dµ(σ)vnα−Elog ∑
+n
+∑
+α
+eY(α,n) vnα
+It remains to compute the terms on the right hand side. After summing
+over the α terms and applying the fact about the marginal distribution of the
+Poisson–Dirichlet cascades (see Proposition 2.4 below), the term on the left
+simplifies to
+(2.8) 1
+N Elog ∑
+n
+∑
+α
+∫ eHN(σ,n) dµN(σ)vnα = 1
+N Elog ∑
+n
+∫ eHN(σ,n) dµN(σ)vn.
+The right hand side can also be computed explicitly and follows from the re-
+cursive formulation of averages with respect to the Poisson–Dirichlet cascades
+[46, Theorem 2.9], which is valid because of the integrability assumptions on the
+external field. Consider the function
+(2.9)X r =log ∫ e∑r
+k=1
+√
+ξ′(qk)−ξ′(qk−1)zkσ+h1σ dµ(σ)
+
+===== PAGE 9 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 9
+where the (zk) are independent Gaussians and h1 is a Gaussian random variable
+with the same law ashindependent from(z k). We define fork⩾1,
+Xk = 1
+ζk
+logE zk+1 (expζ kXk+1)andX 0 = 1
+s logE h1Ez1 (expsX 1),
+where the averages are only with respect to the randomness in the subscript.
+Notice that the last step of the recursion requires an average over both h1 and z1
+because they depend on the first index in the Poisson–Dirichlet cascades. Using
+the relation between the recursive formulation and the Parisi PDE [ 46, Bonus
+Chapter A.2], we have that
+1
+s logE z1 (expsX 1)=Φ ζ(0, h1).
+Thus,
+X0 = 1
+s logE h1 (es⋅ 1
+s logE z1(expsX 1))= 1
+s logE h1esΦζ(0,h1).
+Finally, we arrive at the formula
+(2.10)E[log ∑
+n
+∑
+α
+∫ eZ(α,n)σ+h (n)
+1 σ dµ(σ)vnα]= 1
+s logE h1esΦζ(0,h1).
+Similarly, the recursion implies that
+(2.11)E[log ∑
+n
+∑
+α
+eY(α,n) vnα]= 1
+2 ∑
+0⩽k⩽r−1
+ζk(θ(qk+1)−θ(q k)).
+Combining (2.10) and (2.11) explicit computations gives (2.6) for every N and
+finite ζ, provided the covariance ξ in (1.1) is convex. We emphasize that the
+main difference from the usual Parisi formula is that we constrain q1 = 0 and
+ζ1 =s.
+We now extend to the case when ζ is a general measure, which may not
+necessarily be discrete. It is known that the terms appearing on the right hand side
+of (2.6) are Lipschitz functions in ζ [46, Bonus Chapter Lemma A.6]. Furthermore,
+notice that any ζ∈Pr s[0, 1] can be approximated in L1 by discrete ζ∗ so that
+ζ∗({0})⩾s . We can also further approximate the ζ∗ in L1 by splitting the mass
+at 0 to get a measure ζ∗
+δ such that ζ∗
+δ({0})=s and ζ∗
+δ({δ})=ζ ∗({0})−s⩾ 0,
+provided that δ is taken sufficiently small. This implies that we can extend
+the discrete upper bound proved for discrete measures satisfying ζ({0})=s by
+continuity to anyζ∈Pr s[0,1].□
+We now prove that the n marginals of vnα appearing in (2.8) is the Poisson–
+Dirichlet process. We adopt the notation of the Poisson–Dirichlet cascades as in
+[46, Chapter 2].
+Proposition 2.4.Let ̃α=(n, α)∈N r and vnα denote the weights of the Poisson–
+Dirichlet cascades corresponding to some discrete probability measure ζ such
+that ζ({0})=s . Similarly, let vn denote the weights of a Poisson–Dirichlet
+process with parameter s. For any sequence of random variables (F(n)) n∈N that
+is independent of(v nα)and(v n), we have that
+Elog ∑
+n
+∑
+α
+F(n)v nα =Elog ∑
+n
+F(n)v n.
+
+===== PAGE 10 =====
+10 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Proof. This proof follows from the characterization of the Poisson–Dirichlet
+cascades by the Ghirlanda–Guerra identities [ 26, Chapter 5.6]. Consider i.i.d.
+̃αℓ =(n ℓ, αℓ) sampled according to the weights vnα. By construction, the corre-
+sponding overlap array ̃Rℓ,ℓ′ = ̃αℓ∧ ̃αℓ′
+satisfies the Ghirlanda–Guerra identities
+[26, Theorem 5.28] or [ 46, Theorem 2.10]: for any n⩾ 1, bounded and measur-
+able function f of the overlaps ̃R⩽n =( ̃Rℓ,ℓ′)ℓ,ℓ′⩽n and any bounded measurable
+functionψ∶R→R,
+E⟨f( ̃R⩽n)ψ(̃R1,n+1)⟩= 1
+n E⟨f( ̃R⩽n)⟩E⟨ψ(̃R1,n+1)⟩+ 1
+n
+n
+∑
+ℓ=2
+E⟨f( ̃R⩽n)ψ(̃R1,ℓ)⟩.
+We now consider the distribution of the marginal overlaps Sℓ,ℓ′ = 1(nℓ =n ℓ′
+). It
+follows that the S overlaps inherit the Ghirlanda–Guerra identities satisfied by the
+full overlaps ̃R, by taking f(S⩽n)=f( 1(̃R⩽n ⩾ 0)) and ψ(Sℓ,ℓ′)=ψ( 1(̃Rℓ,ℓ′ ⩾ 0)),
+for some functions f and ψ. Furthermore, we have that the overlap array Sℓ,ℓ′
+takes values 0 or 1, and
+E⟨S1,2 =0⟩=E⟨1(n ℓ ≠n ℓ′
+)⟩=E⟨1( ̃R1,2 =0)⟩=s
+and E⟨S1,2 = 1⟩= 1−E⟨S 1,2 = 0⟩= 1−s . Since the overlaps S takes values 0
+or 1, and they satisfy the Ghirlanda–Guerra identities, it must be the overlaps
+corresponding to samples according to a Poisson–Dirichlet point process with
+parameters, see [26, Exercise 5.10] or [46, Theorem 2.8].
+In particular, if F(n) is a function that only depends on the first coordinate
+of ̃α=(n, α)∈N r independent of ṽα, then the average of Elog ∑n ∑α F(n)v nα
+only depends on paths in the first level corresponding to n [26, Theorem 5.25].
+Since the n level is determined by a Poisson–Dirichlet process with parameter s,
+its average is equivalent toElog ∑n F(n)v n.□
+Remark2.5.The validity of (2.8) can also be observed from the recursive
+representation of the Poisson–Dirichlet cascades [ 46, Theorem 2.9]. Notice that
+the left hand side of (2.8) can be computed recursively starting at
+Xr(ωr, . . . , ω1)=log ∫ eH′
+N(σ,ω1) dµN(σ)
+where the ω1, . . . , ωr are independent uniform random variables encoding the
+randomness at each level of the RPC. The random variableH′
+N(σ, ω)is a Gaussian
+process with covariance
+E[H′
+N(σ1, ω1)H′
+N(σ2, ω2)]=N ξ(σ1⋅σ 2
+N 1(ω1 =ω 2)).
+Since the right hand side of Xr(ωr, . . . , ω1) does not depend on ωr, . . . , ω2, we
+have that the recursive terms given in (2.9) satisfy
+Xr =X k =⋅⋅⋅=X 1.
+Next, notice that the right hand side
+1
+N Elog ∑
+n
+∫ eHN(σ,n) dµN(σ)vn
+of (2.8) can be computed recursively starting at X1. These observations imply
+that both the left and right hand side of (2.8) give the same value when computing
+the average over the RPC.
+
+===== PAGE 11 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 11
+Yet another proof of (2.8) involves explicitly computing the marginals using the
+invariance of the Poisson–Dirichlet process [ 46, Theorem 2.6]. This computation
+is direct, but also tedious.
+2.2.Lower bound on the free energy.We now prove the matching lower
+bound.
+Lemma 2.6.For independent copiesH N(σ, n)ofH N(σ)defined in(2.1),
+lim inf
+N→∞
+1
+N Elog ∑
+n
+∫ eHN(σ,n) dµN(σ)vn
+⩾inf
+ζ∈Prs[0,1]
+( 1
+s logE h1 [esΦζ(0,h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)ζ([0, t])dt).
+Proof. The proof of the lower bound is mostly identical to the usual proof of the
+lower bound for the mixed p-spin models in [ 46, Chapter 3]. The main challenge
+is that we have to justify why the lower bound can be written in terms of the
+infimum over a single order parameter characterized by the Poisson–Dirichlet
+cascades. To simplify the presentation, we will focus on the key modifications
+and explain where synchronization [ 47] and the structure of the covariance of
+HN(σ, n)plays its critical role.
+The starting point is the Aizenman–Sims–Starr scheme [ 1]. We define the
+cavity fields Z(σ, n)and Y(σ, n)to be Gaussian processes indexed by points in
+ΣN ×Nwith covariance
+E[Z(σ 1, n1)Z(σ 2, n2)]=ξ ′( σ1⋅σ 2
+N 1(n1 =n 2))=ξ ′(R12S12)
+and
+E[Y(σ 1, n1)Y(σ 2, n2)]=θ( σ1⋅σ 2
+N 1(n1 =n 2))=θ(R 12S12).
+We use the notation Rℓℓ′ = σℓ⋅σℓ′
+N and Sℓℓ′ = 1(nℓ =n ℓ′
+) to denote the two overlaps.
+The appearance of the S overlap Sℓℓ′ = 1(nℓ =n ℓ′
+) terms in these cavity fields is
+the only difference with the usual cavity fields in [46, Equation 3.60].
+To understand the distribution of the arrays
+Cℓℓ′ =ξ ′(Rℓℓ′Sℓℓ′)andD ℓℓ′ =θ(R ℓℓ′Sℓℓ′),
+it suffices to understand the limiting behavior of Rℓℓ′Sℓℓ′, since both Cℓℓ′ and
+Dℓℓ′ are continuous functions of this array.
+We now argue that we can synchronize the overlaps R12 and S12 to recover
+the distribution of Rℓℓ′Sℓℓ′, without changing the limit of the free energy. This
+is achieved by adding a perturbation Hamiltonian with covariances given by
+monomials Rn
+12Sm
+12 and apply [ 46, Theorem 4] or [ 38, Section 5] to conclude that
+the limiting joint law of (R12, S12) along any converging subsequence can be
+written as (F−1
+R (U), F−1
+S (U)) where F−1
+R and F−1
+S are the quantile transforms of
+the marginal distributions of R12 and S12 and U is uniform on [0, 1]. Furthermore,
+both the marginals distribution of Rℓℓ′ and Sℓℓ′ satisfy the Ghirlanda–Guerra
+identities in the limit, so their distributions are encoded by their corresponding
+order parameters (the distribution of the first off diagonal entry) by [ 46, The-
+orem 2.14 and Theorem 2.15]. We conclude that the limiting distribution of
+Rℓℓ′Sℓℓ′ can be encoded by one order parameter.
+
+===== PAGE 12 =====
+12 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+It remains to argue that the order parameter of Cℓℓ′ and Dℓℓ′ has a point mass
+of at least s at 0, i.e. it lives in the space Prs[0, 1]. By the properties of the
+Poisson–Dirichlet process [46, Equation 2.34] we have that
+E[⟨1(S12 =0)⟩ ′]=sandE [⟨1(S12 =1)⟩ ′]=1−s
+where ⟨⋅⟩′ is the average with respect to the perturbed Gibbs measure that will
+arise from the cavity computations. Therefore, we have that
+E[⟨1(R12S12 =0)⟩ ′]⩾E [⟨1(S12 =0)⟩ ′]=s
+so the distribution ofR 12S12 belongs to Pr s[0,1].
+We have shown that the limiting joint behavior of the overlaps (R12, S12)
+is encoded by an order parameter ζ∈Pr s[0, 1]. This gives us a complete
+characterization of all possible limit points of the distribution of Rℓℓ′Sℓℓ′ under
+the perturbed Gibbs measure. The rest of the proof is now a standard application
+of the Aizenman–Sims–Starr scheme [ 46, Chapter 3]. By the Aizenman–Sims–
+Starr representation [46, Theorem 3.6], we can express the lower bound as
+lim inf
+N→∞
+1
+N E[log ∑
+n
+vnZN(n)]
+⩾lim inf
+N→∞
+(E[log⟨ ∫ eZ(σ,n)ϵ+h(n)ϵdµ(ϵ)⟩
+′
+]−E[log⟨e Y(σ,n)⟩′])
+where the ⟨⋅⟩′ is a Gibbs average with respect to the bulk measure plus a pertur-
+bation term that enforces the Ghirlanda–Guerra identities and synchronization.
+From above, we have shown that the covariance of the cavity fields Z(σ, n), h(n)
+and Y(σ, n)are encoded by an order parameter ζ∈Pr s[0, 1]. The simplifica-
+tion of these cavity fields using the recursive computation along the levels of
+the Poisson–Dirichlet cascades is identical to the computations in the proof of
+Lemma 2.3, which gives us the matching lower bound.□
+Proof of Theorem 2.1. Lemmas 2.3 and 2.6 yield (2.3). To see the uniqueness of
+minimizers, we recall from [ 5, Theorem 4] that, for distinct probability measures
+ζ0, ζ1 on[0,1],
+Φζλ(0, x)<(1−λ)Φ ζ0(0, x)+λΦζ1(0, x)(2.12)
+for every λ∈( 0, 1) and x∈R , where we have set ζλ =( 1−λ)ζ 0+λζ 1. Applying
+this and H¨ older’s inequality, we can get
+logE h1 [esΦζλ(0,h1)]<(1−λ)logE h1 [esΦζ0(0,h1)]+λlogE h1 [esΦζ1(0,h1)](2.13)
+implying the strict convexity of the functional inside the infimum in (2.3). There-
+fore, the minimizer must be unique.□
+3.Laplace transform of the ground-state energy
+Compared with the previous section, we now slightly restrict the class of admis-
+sible distributions for the random external field, by specializing to Hamiltonians
+of the form
+HN(σ)=H ′
+N(σ)+
+N
+∑
+i=1
+giσi+
+N
+∑
+i=1
+hiσi,(3.1)
+
+===== PAGE 13 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 13
+where H′
+N(σ) is given as in (1.1), (gi) is a collection of i.i.d. centered Gaussian
+random variables, and (hi) is a collection of i.i.d. bounded random variables.
+Here, the variance of gi is not necessarily one. We assume (H′
+N(σ))σ∈ΣN , (gi)i∈N,
+and (hi)i∈N are independent from each other. The goal of this section is to prove
+the following result.
+Theorem 3.1(Laplace transform of the ground-state energy).For every s⩾ 0,
+we have
+lim
+N→∞
+1
+sN logE[exp(sN LN)]
+=inf
+γ∈Ms
+( 1
+s logE g1,h1 [esΨγ(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt),
+(3.2)
+whereΨ γ solves
+(3.3)
+⎧⎪⎪⎨⎪⎪⎩
+−∂tΨγ = ξ′′(t)
+2 (∂2
+xΨγ+γ(t)(∂ xΨγ)2),for(t, x)∈(0,1)×R
+Ψγ(1, x)=∣x∣,forx∈R, .
+and where
+(3.4)M s∶= {γ∶[0,1)→R∣γis right-continuous, nondecreasing,
+integrable, andγ(0)⩾s }.
+When s= 0, 1
+sN logE[exp(sN LN)] and 1
+s logE g1,h1 [esΨγ(0,g1+h1)] are understood
+as E[L N] and Eg1,h1 [Ψγ(0, g1+h 1)], respectively. Moreover, the infimum in
+(3.2)is achieved at a uniqueγ∈M s.
+Remark3.2.For future reference, we rewrite explicitly the Parisi-type variational
+formula for the ground-state energy, namely
+(3.5)gs=inf
+γ∈M0
+(Eg1,h1 [Ψγ(0, g1+h 1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt).
+Remark3.3 (Deterministic external fields).As mentioned in the introduction,
+our main focus is on the case where the external field is deterministic. Let h∈R
+and we set gi = 0 and hi =h in Theorem 3.1 to recover the results needed in
+Sections 1, 4, and 5. In particular, we have 1
+s logE g1,h1 [esΨγ(0,g1+h1)]= Ψγ(0, h).
+The well-posedness of the PDE (3.3) has been established in [6, 19].
+Let β⩾ 0 be the inverse temperature (unrelated to the coefficients (βp)p⩾2
+introduced above (1.1)) and set
+ZN(β)∶= ∫ eβHN(σ) dµN(σ).
+In particular, we have ZN(1)=Z N as defined in (2.2). Using logZ N(β)⩽
+βN LN ⩽log (2N ZN(β)), we get
+1
+N logE[e sN(L N− log 2
+β )]⩽ 1
+N logE[e sN( 1
+N βlogZ N(β))]⩽ 1
+N logE [esN LN] ,
+which implies
+lim
+N→∞
+1
+sN logE [esN LN]=lim
+β→∞
+lim
+N→∞
+1
+sN logE[Z N(β)
+s
+β].(3.6)
+
+===== PAGE 14 =====
+14 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Henceforth, let β⩾s⩾ 0. Recall Ms from (3.4) and set Mβ
+s ∶={γ∈M s ∶
+γ(1)=β} . For each γ∈M β
+s and β> 0, we consider the solution Ψ γ,β of the
+equation
+⎧⎪⎪⎨⎪⎪⎩
+−∂tΨγ,β = ξ′′(t)
+2 (∂2
+xΨγ,β +γ(t)(∂ xΨγ,β)2) ,for(t, x)∈(0,1)×R
+Ψγ,β(1, x)= 1
+β log ∫ eβxσ dµ(σ),forx∈R.(3.7)
+Then, applying Theorem 2.1 with s, ξsubstituted by s
+β , β2ξ and rewriting the
+variational formula in (2.3) via the relation
+γ=βζ([0,⋅])and Ψ γ,β(⋅,⋅)= 1
+β Φζ(⋅, β⋅),(3.8)
+we get
+lim
+N→∞
+1
+sN logE[Z N(β)
+s
+β]=inf
+γ∈Mβ
+s
+( 1
+s logE[e sΨγ,β(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt).
+(3.9)
+Moreover, this theorem also ensures that the infimum in (3.9) admits a unique
+minimizerγ P,β .
+Taking the limit β→∞ , we see that Ψ γ,β(1,⋅) converges pointwise to Ψ γ(1,⋅) ,
+and thus we expect Ψ γ,β to converge pointwise to Ψ γ. Combining this with (3.9)
+and (3.6) gives Theorem 3.1, heuristically.
+To justify this rigorously, we can follow the strategy from [ 6], which carries
+over with only minor adjustments, except for the proof of Lemma 3.5 below. The
+following is a modification of [6, Lemma 2].
+Lemma 3.4(Upper bound).For everys∈(0,1), we have
+(3.10)
+lim
+N→∞
+1
+sN logE [esN LN]⩽inf
+γ∈Ms
+( 1
+s logE g1,h1 [esΨγ(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt).
+Proof. We first consider γ∈M s satisfying γ(1−)<∞ . For β>γ( 1−), we consider
+γβ(s)=γ(s)1 [0,1)(s)+β1 {1}(s) which belongs to Mβ
+s defined above (3.7). Then,
+we see that Ψ γβ ,β solves
+−∂tΨγβ ,β = ξ′′(t)
+2 (∂2
+xΨγβ ,β+γ β(t)(∂xΨγβ ,β)2)
+for (t, x)∈( 0, 1)×R with terminal condition Ψ γβ ,β(1, x)= 1
+β log ∫ eβxσ dµ(σ).
+Since this terminal condition converges to Ψγ(1,⋅)=∣⋅∣ (in (3.3)) pointwise, we can
+deduce that Ψγβ ,β converges pointwise to Ψγ given in (3.3). We recall that Ψγ(0,⋅)
+is Lipschitz as proved in [ 19, Proposition 2 (ii)] and that Ψ γβ ,β(0,⋅) is 1-Lipschitz
+as proved in [ 4, Proposition 2] 1. Therefore, we can find a linear growth bound
+uniformly for Ψ γ and Ψγβ ,β, which allows us to use the dominated convergence
+theorem to get limN→∞ Eg1,h1 [esΨγβ ,β(0,g1+h1)]=E g1,h1 [esΨγ(0,g1+h1)]. On the
+1The 1-Lipschitzness is proved for Φ ζ(0,⋅) in (2.4) and the same property for Ψ γβ ,β(0,⋅) can
+be deduced from (3.8).
+
+===== PAGE 15 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 15
+other hand, we also have ∫
+1
+0 tξ′′(t)γβ(t)dt= ∫
+1
+0 tξ′′(t)γ(t)dt. Hence, we obtain
+( 1
+s logE g1,h1 [esΨγ(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt)
+=lim
+β→∞
+( 1
+s logE g1,h1 [esΨγβ ,β(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γβ(t)dt)
+(3.6)(3.9)
+⩾lim
+N→∞
+1
+sN logE [esN LN] .
+For γ∈M s with γ(1−)=∞ , we can still have the bound as in the display
+(without the second line) by approximation using the following continuity of Ψ γ
+inγ. For everyγ, γ ′ ∈M 0,t∈[0,1], andx∈R, we have
+∣Ψγ(t, x)−Ψγ′(t, x)∣⩽2ξ′′(1)∥γ−γ ′∥L1
+which is proved in [6, Corollary 2]. Then, we can deduce (3.10).□
+To show the lower bound, we need more preparation. For each β, we take
+γP,β to be the unique minimizer of the right-hand side in (3.9), which is given
+by Theorem 2.1 and (3.8) as aforementioned. To adapt the argument in [ 6], the
+only significant modification is to control the behavior of γP,β uniformly in β,
+which parallels the estimate [ 6, (3.2)] and the displayed one above it. This is
+done in the next lemma. We define
+ξ(r)∶=ξ(r)+E[g 2
+1]r,∀r∈R,
+which is the covariance of the Gaussian part in HN(σ) as in (3.1). Notice that
+ξ′′ = ξ
+′′
+.
+Lemma 3.5(Uniform control on γP,β ).Let s⩾ 0. Then, there is a constant C
+depending only on ξ,s, and∥h 1∥L∞ such that
+∫
+1
+0
+ξ
+′
+(t)γP,β(t)dt⩽C,∀β⩾s(3.11)
+and consequently
+γP,β(t)⩽ C
+ξ(1)− ξ(t)
+,∀t∈[0,1),∀β⩾s.(3.12)
+Proof. Define H N(σ)=H ′
+N(σ)+ ∑N
+i=1 giσi. For each n∈N , let (H N(σ, n))σ∈ΣN
+and (h(n)
+i )i∈N be independent copies of (H N(σ))σ∈ΣN and (hi)i∈N, respectively.
+Let (νn)n∈N be the random weights of the Poisson–Dirichlet cascade with param-
+eter s
+β , independent from other randomness. Similarly as in (2.5), we have
+logE[Z N(β)
+s
+β]= s
+β Elog ∑
+n∈N
+νn ∫ eβH N(σ,n)+β ∑N
+i=1 h(n)
+i σidµN(σ).(3.13)
+For ℓ, ℓ′ ∈N , we denote the spin overlap and the cascade overlap by Rℓ,ℓ′ = σℓ⋅σℓ′
+N
+andS ℓ,ℓ′ =1 nℓ=nℓ′ , respectively. Then, due to ξ(0)=0, we have
+E[H N(σ1, n1)H N(σ2, n2)]=N ξ(R1,2S1,2).
+
+===== PAGE 16 =====
+16 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Let ⟨⋅⟩β be the (tensorized) Gibbs measure associated with the right-hand side
+of (3.13), with canonical random variables (σℓ, nℓ)ℓ∈N (where (σ1, n1)∶=(σ, n)).
+Gaussian integration by parts gives
+E⟨ H N(σ, n)
+N ⟩
+β
+=β( ξ(1)−E ⟨ξ(R1,2S1,2)⟩β).(3.14)
+Then, writingM N(n)=max σ∈ΣN
+H N(σ,n)
+N andM N =max σ∈ΣN
+H N(σ)
+N , we have
+E⟨ H N(σ, n)
+N ⟩
+β
+⩽E⟨M N(n)⟩β =
+E[M N ZN(β)
+s
+β]
+E[Z N(β)
+s
+β]
+,(3.15)
+where the equality follows from the invariance property of the Poisson–Dirichlet
+process (e.g., see [26, Theorem 5.19]). We claim that
+r.h.s. in (3.15)⩽C(3.16)
+for a constant C only depending on ξ, s, and ∥h1∥L∞. Let us first use this to
+finish the proof.
+Next, by using the same argument as in [ 44] (or [ 46, Section 3.7]) for proving
+the differentiability of the Parisi formula and then extracting properties of the
+Parisi measure, we can have that the function
+λ↦lim
+N→∞
+Elog ∑
+n∈N
+νn ∫ eλH N(σ,n)+β ∑N
+i=1 hiσidµN(σ)
+is differentiable and, as a further result,
+lim
+N→∞
+E⟨ξ(R1,2S1,2)⟩β = ∫
+1
+0
+ξ(t)β−1dγP,β(t).(3.17)
+This was also done in [18] between displays (3.1) and (3.2) therein. We recall that
+β−1γP,β corresponds to the usual Parisi measure αP,β as in [6]. Then, integrating
+by parts, we have
+∫
+1
+0
+ξ
+′
+(t)γP,β(t)dt=β ξ(1)− ∫
+1
+0
+ξ(t)dγP,β(t)
+(3.17)
+=lim
+N→∞
+β( ξ(1)−E ⟨ξ(R1,2S1,2)⟩β)
+(3.14)(3.15)(3.16)
+⩽C
+which gives (3.11). Since ∫
+1
+0 ξ
+′
+(t)γP,β(t)dt⩾γ P,β(t) ∫
+1
+t ξ
+′
+(r)dr for every t, as
+γP,β is increasing, the above inequality implies the desired bound in (3.12).
+It remains to verify (3.16). Forβ⩾1 anda⩾0, consider the function
+χN(β, a)∶= 1
+N logE[ (2N ZN(β))
+a
+].
+This function is clearly convex in a. By 2 N ZN(β)⩾e βHN(σ) and Jensen’s
+inequality, we getχ N(β, a)⩾−aβ∥h 1∥L∞. For everyβ⩾1, we have
+χN (β, s
+β)= 1
+N logE
+⎡⎢⎢⎢⎢⎢⎣
+⎛
+⎝ ∑
+σ∈ΣN
+eβHN(σ)⎞
+⎠
+s
+β⎤⎥⎥⎥⎥⎥⎦
+⩽ 1
+N logE
+⎡⎢⎢⎢⎢⎣
+⎛
+⎝ ∑
+σ∈ΣN
+eHN(σ)⎞
+⎠
+s⎤⎥⎥⎥⎥⎦
+,
+where we used that for ℓp norms on sequences and for β⩾ 1, we have ∥⋅∥ ℓβ ⩽
+∥⋅∥ ℓ1. Notice that the right-hand side is now independent of β. By Jensen’s
+inequality, we can raise the power s to an integer value and then perform explicit
+
+===== PAGE 17 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 17
+Gaussian integration to see that the right-hand side is bounded by some constant
+C(s)=C( ξ, s,∥h1∥L∞)independent ofN. We also observe that
+∂aχN(β, a)= 1
+N
+E[log(2N ZN(β)) ZN(β)a]
+E[ZN(β)a] .
+SinceβN MN ⩽log (2N ZN(β))+βN∥h 1∥L∞, we deduce that
+E[M N ZN(β)
+s
+β]
+E[Z N(β)
+s
+β]
+⩽ 1
+β ∂aχN (β, s
+β)+ ∥h1∥L∞
+β .
+Meanwhile, we use the convexity ofχ N inato get
+∂aχN (β, s
+β)⩽β(χ N (β, s+1
+β )−χ N (β, s
+β))⩽βC(s+1)+βs∥h 1∥L∞,
+which along with the previous display verifies (3.16) and completes the proof. □
+From the two estimates in Lemma 3.5, we can use Helly’s selection theorem
+and a diagonalization argument to pass γP,β to the limit along a subsequence.
+Without loss of generality, we assume that the entire sequence converges to some
+γ0 vaguely on[0,1)and that
+L0∶=lim
+β→∞ ∫
+1
+0
+ξ′′(t)γP,β(t)dt(3.18)
+exists. We define
+dν0(t)∶=1 [0,1)(t)γ0(t)dt+ 1
+ξ′′(1) (L0− ∫
+1
+0
+ξ′′(t)γ0(t)dt)dδ 1(t)(3.19)
+where δ1 is the Dirac measure at 1. The following lemma is a restatement of [ 6,
+Lemma 1], with the same proof but based now on the bounds from Lemma 3.5.
+Lemma 3.6([ 6]).If ϕ is any measurable function with ∣ϕ∣⩽ 1and limt→1− ϕ(t)=
+ϕ(1), then
+lim
+β→∞ ∫
+1
+0
+ξ′′(t)γP,β(t)ϕ(t)dt= ∫
+1
+0
+ξ′′(t)ϕ(t)dν0(t).(3.20)
+The last ingredient for the lower bound is the following variational repre-
+sentation of Parisi PDE solutions. Let W=(W t)t∈[0,1] be the Wiener process.
+Let Prog1 be the collection of progressively measurable processes α=(α t)t∈[0,1]
+adapted to the filtration generated by W and satisfying supt∈[0,1]∣α(t)∣⩽ 1. Then,
+for everyx∈R, we have
+Ψγ,β(0, x)=sup
+α∈Prog1
+( 1
+β Elog coshβ(x+ ∫
+1
+0
+ξ′′(t)γ(t)αtdt+ ∫
+1
+0
+√
+ξ′′(t)dWt)
+− 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)E[α2
+t]dt)(3.21)
+for everyγ∈M β
+s , and we have
+Ψγ(0, x)=sup
+α∈Prog1
+(E∣x+ ∫
+1
+0
+ξ′′(t)γ(t)αtdt+ ∫
+1
+0
+√
+ξ′′(t)dWt∣
+− 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)E[α2
+t]dt)
+(3.22)
+
+===== PAGE 18 =====
+18 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+for every γ∈M s. We also take W independent from g1 and h1. These two
+representations can be found in [ 6, Corollaries 1 and 2]. The following lemma is
+a modification of [6, Lemma 3].
+Lemma 3.7(Lower bound).For everys∈(0,1), we have
+(3.23)
+lim
+N→∞
+1
+sN logE [esN LN]⩾inf
+γ∈Ms
+( 1
+s logE[e sΨγ(0,g1+h1)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ(t)dt).
+Proof.For eachn∈N, let sign n∶R→[−1,1]be defined by
+signn(x)=
+⎧⎪⎪⎪⎪⎨⎪⎪⎪⎪⎩
+1,ifx⩾0,
+2nx+1,if− 1
+n ⩽x<0,
+−1,ifx<− 1
+n .
+We view(sign n)n∈N as approximations of the sign function, namely,
+lim
+n→∞
+signn(x)=sign(x)∶=
+⎧⎪⎪⎨⎪⎪⎩
+1,ifx⩾0,
+−1,ifx<0.
+Let γ0 be given as above (3.18). We write h=g 1+h 1 for brevity and recall that
+h is independent from the Wiener process W . Fix any α∈Prog 1. For every
+τ∈(0,1)andn∈N, define
+ϕτ,n(t)=α t1[0,τ)(t)+sign n(h+ ∫
+t
+0
+ξ′′(r)γ0(r)αrdr+ ∫
+t
+0
+√
+ξ′′(r)dWr)1[τ,1](t)
+for every t∈[ 0, 1]. Then, we have ϕτ,n ∈Prog 1 and limt→1− ϕτ,n(t)=ϕ τ,n(1),
+sinceg n is continuous. We also have
+ϕn(t)∶=lim
+τ→1−
+ϕτ,n(t)=α t1[0,1)(t)+sign n(X)1{1}(t),
+lim
+n→∞
+ϕn(t)=α t1[0,1)(t)+sign(X)1 {1}(t)(3.24)
+for everyt∈[0,1], where we have set
+X∶= h+ ∫
+1
+0
+ξ′′(t)γ0(t)αtdt+ ∫
+1
+0
+√
+ξ′′(t)dWt.(3.25)
+Recall that γP,β is the minimizer of (3.9). We write ♠=lim N→∞ 1
+sN logE [esN LN]
+for brevity. Then, we have
+♠
+(3.6)(3.9)
+=lim
+β→∞
+( 1
+s logE[e ΨγP,β ,β(0,h)]− 1
+2 ∫
+1
+0
+tξ′′(t)γP,β(t)dt)
+(3.21)
+⩾lim
+β→∞
+( 1
+s logE h[e
+s
+β EW log coshβ(h+∫
+1
+0 ξ′′(t)γP,β(t)ϕτ,n(t)dt+∫
+1
+0
+√
+ξ′′(t)dWt)]
+− 1
+2 ∫
+1
+0
+ξ′′(t)γP,β(t)(E[ϕ2
+τ,n(t)]+t ) dt)
+(Fatou’s lemma)(3.20)
+⩾ 1
+s logE h[esEW∣h+∫
+1
+0 ξ′′(t)ϕτ,n(t)dν0(t)+∫
+1
+0
+√
+ξ′′(t)dWt∣]
+− 1
+2 ∫
+1
+0
+ξ′′(t)(E[ϕ2
+τ,n(t)]+t ) dν0(t)
+
+===== PAGE 19 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 19
+where EW averages over ϕτ,n and W and Eh averages over h. Using (3.19), (3.24),
+and (3.25) together with the dominated convergence theorem, we send τ→ 1−
+and thenn→∞to get
+♠⩾ 1
+s logE h[esEW∣X+sign(X)ξ′′(1)ν0(1)∣]
+− 1
+2 ∫
+1
+0
+ξ′′(t)(E[α2
+t]+t ) γ0(t)dt− 1
+2 (E[sign(X) 2]+1) ξ′′(1)ν0(1).
+Since
+∣X+sign(X)ξ ′′(1)ν0(1)∣
+= (X+ξ ′′(1)ν0(1)) 1X>0 −(X−ξ ′′(1)ν0(1)) 1X<0 +ξ ′′(1)ν0(1)1X=0
+=∣X∣+ξ ′′(1)ν0(1)
+and (E[sign(X) 2]+1) ξ′′(1)ν0(1)=2ξ ′′(1)ν0(1), we obtain
+♠⩾ 1
+s logE h[esEW∣X∣]− 1
+2 ∫
+1
+0
+ξ′′(t)(E[α2
+t]+t ) γ0(t)dt.
+Recall the expression of X in (3.25) and that α∈Prog 1 is chosen arbitrarily.
+Using these combined with (3.22), we get
+♠⩾ 1
+s logE h[esΨγ0(0,h)]− 1
+2 ∫
+1
+0
+tξ′′(t)γ0(t)dt
+which implies (3.23).□
+Proof of Theorem 3.1. Lemmas 3.4 and 3.7 together gives (3.2). Recalling from
+[19, Lemma 5] that γ↦ Ψγ is strictly convex in the sense in as (2.12), we can
+conclude the uniqueness of minimizers as in (2.13) and the ensuing lines there. □
+4.Un-inverted formula for the Laplace transform
+From now on, we exclusively focus on the case in which the external field is
+deterministic, as in (1.2). The goal of this section is to derive an “un-inverted”
+variational representation (i.e. one that takes the form of a supremum) of the
+limit of the Laplace transform of LN . This representation involves martingales
+defined over a probability space, and in order to clarify that the representation
+does not depend on the choice of probability space, we introduce the following
+definition.
+Definition 4.1(Admissible ambient probability spaces).A filtered probability
+space P=( Ω,(F t)t∈[0,1], P) is said to beadmissibleif the following holds. First,
+the σ-algebras (Ft)t∈[0,1] are complete: namely, they contain every subset of any
+null-measure set. Second, P is sufficiently rich that one can define a Brownian
+motion (Wt)t∈[0,1] over it (in particular, the process W is adapted and has
+independent increments with respect to the filtration (Ft)t∈[0,1]). We denote by
+Martthe space of bounded martingales overP.
+We define
+G={g∈L 1([0,1])∶ ∫
+1
+r
+ξ′′(t)(g(t)−t)dt⩾0,∀r∈[0,1]}.(4.1)
+
+===== PAGE 20 =====
+20 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+We consider the solution Ψ γ of (3.3) with γ∈M 0. By [ 19, Proposition 2 (i)], for
+everyγ, ρ∈M 0,t∈[0,1]andx∈R, we have
+∣Ψγ(t, x)−Ψρ(t, x)∣⩽2ξ′′(1)∥γ−ρ∥ L1.
+This ensures that even for unbounded γ∈L 1([0, 1]), the function Ψ γ is still well-
+defined. Moreover, regularity properties of Ψ γ are also given in [19, Proposition 2].
+Given an admissible probability space P, we denote by Mart1 the space of
+martingales over P that take values in [−1, 1]. We recall that from now on, we
+only consider the case of a deterministic external field, as in (1.2).
+Theorem 4.2.Let P be admissible as in Definition 4.1. Then, for every s⩾ 0,
+we have
+lim
+N→∞
+1
+sN logE[exp(sN LN)]
+=sup
+α∈Mart1
+{E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]+ s
+2 ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt
+(4.2)
+∣E [α2
+●]∈G}
+where the left-hand side is understood as limN→+∞ E[LN] when s= 0. Moreover,
+there is a unique α∈Mart 1 that realizes the supremum in (4.2), and this optimal
+martingale can be characterized as follows. Let γ∈M s be the unique minimizer
+of the infimum in (3.2) given by Theorem 3.1 (also see Remark 3.3) and let
+(Xt)t∈[0,1) be the strong solution to
+(4.3){ X0 =h,
+dXt =ξ ′′(t)γ(t)∂xΨγ(t, Xt)dt+
+√
+ξ′′(t)dW t.
+This unique maximizerα∈Mart 1 must satisfy, for everyt∈[0,1),
+(4.4)α t =∂ xΨγ(t, Xt)=∂ xΨγ(0, h)+∫
+t
+0
+√
+ξ′′(s)∂2
+xΨγ(s, Xs)dW s.
+Let Prog1 be the space of progressively measurable processes u adapted to the
+filtration of P that also satisfy ∣ut∣⩽ 1 almost surely for every t∈[ 0, 1]. We start
+with the following mild extension of (3.22), where here we allow for a general
+admissible probability space, and we specify what the optimal processes are.
+Lemma 4.3(Variational representation of Ψ γ).For every h∈R and γ∈M 0,
+we have
+(4.5) Ψ γ(0, h)=sup
+α∈Prog1
+E[∣h+ ∫
+1
+0
+ξ′′(t)γ(t)αt dt+ ∫
+1
+0
+√
+ξ′′(t)dW t∣
+− 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)α2
+t dt].
+Moreover, let (Xt)t∈[0,1) be the strong solution to (4.3). When γ is not constantly
+zero on [0, 1), a stochastic process α∈Prog 1 achieves the supremum in (4.5) if
+and only if it satisfies(4.4)for almost everyt∈[0,1)withγ(t)>0.
+Notice that although γ is not bounded, the integrals in (4.5) make sense since
+∣αt∣⩽ 1 holds uniformly in t and γ is integrable (see (3.4)). When γ is constantly
+zero, the variational problem in (4.5) is independent ofα.
+
+===== PAGE 21 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 21
+We exclude t= 1 in (4.4) since both ∂xΨγ(1,⋅) and ∂2
+xΨγ(1,⋅) have a singularity
+at 0 (recall that Ψ γ(1,⋅)=∣⋅∣ ). It should be noted that αt given as in (4.4) indeed
+satisfies∣α t∣⩽1 a.s. due to
+ess sup
+(t,x)∈[0,1]×R
+∣∂xΨγ(t, x)∣⩽1,(4.6)
+as proven in [ 19, Lemma 11] (the bound is proven for the case when γ is a step
+function there, and the general case follows from approximations given in [ 19,
+Proposition 2 (iii)]).
+If the underlying probability space P is the Wiener space, then the represen-
+tation in (4.5) and the fact that α given in (4.4) achieves the supremum both
+follow from [ 19, Theorem 5]. Now, for more general P, one can repeat the same
+argument used in [41, Lemma 2.1] to get the result (replacing ϕ there by ∣⋅∣ ). The
+uniqueness follows from the same reasoning as explained below [ 41, (2.8)]. Since
+there is some technicality at t= 1 due to the non-differentiability of Ψ (1,⋅)=∣⋅∣
+at 0, we give a detailed proof below, modifying the argument in [ 41, Lemma 2.1].
+Proof of Lemma 4.3. Since P is richer than the Wiener space, [ 19, Theorem 5]
+(which proves (4.5) for the Wiener space) implies “⩽” in (4.5). It remains to show
+Ψγ(0, h)⩾E[∣h+ ∫
+1
+0
+ξ′′(t)γ(t)αt dt+ ∫
+1
+0
+√
+ξ′′(t)dW t∣
+− 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)α2
+t dt]
+(4.7)
+for anyα∈Prog 1. Henceforth, we write Ψ=Ψ γ for brevity. Fix anyα∈Prog 1
+and set
+Yt∶=h+ ∫
+t
+0
+ξ′′(r)γ(r)α rdr+ ∫
+t
+0
+√
+ξ′′(r)dWr,∀t∈[0,1].(4.8)
+The regularity of Ψ on [0, 1)×R from [19, Proposition 2] allows us to apply Itˆ o’s
+formula to get, fort∈[0,1),
+Ψ(t, Yt)=Ψ(0, h)+ ∫
+t
+0
+∂tΨ(r, Yr)dr+ ∫
+t
+0
+∂xΨ(r, Yr)dYr
++ 1
+2 ∫
+t
+0
+∂2
+xΨ(r, Yr)d⟨Y⟩ r .
+Taking the expectation, we get, fort∈[0,1),
+E[Ψ(t, Yt)]=Ψ(0, h)+E ∫
+t
+0
+(∂tΨ(r, Yr)
++ ξ′′(r)
+2 (2γ(r)α r∂xΨ(r, Yr)+∂ 2
+xΨ(r, Yr)))dr.
+(4.9)
+It is well known that when γ is a step function (and thus bounded), Ψ can be
+obtained by solving (3.3) using the Cole–Hopf transformation (see the proof
+of [19, Lemma 11]) on I∶=[ 0, 1)∖{discontinuity points ofγ} . In particular, Ψ
+is smooth onI×Rand we have
+−∂tΨ(t, x)= ξ′′(t)
+2 (∂2
+xΨ(t, x)+γ(t)(∂xΨ(t, x))2)
+= ξ′′(t)
+2 sup
+a∈R
+(∂2
+xΨ(t, x)+2aγ(t)∂xΨ(t, x)−a2γ(t))
+
+===== PAGE 22 =====
+22 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+for every (t, x)∈I×R . Substituting (t, x)with (r, Yr) in the above and setting
+ato beα r, we thus obtain
+E ∫
+t
+0
+(∂tΨ(r, Yr)+ ξ′′(r)
+2 (2γ(r)α r∂xΨ(r, Yr)+∂ 2
+xΨ(r, Yr)))dr
+⩽ 1
+2 E ∫
+t
+0
+ξ′′(r)γ(r)α 2
+rdr
+(4.10)
+for everyt∈[0,1), where “⩽” becomes an equality if and only if
+for almost everyr∈[0,1)such thatγ(r)>0,α r =∂ xΨ(r, Yr)a.s.(4.11)
+Recall that we have assumed that γ is a step function. The general case of (4.10)
+follows by approximations enabled by [ 19, Proposition 2 (iii)]. Inserting (4.10)
+into (4.9) and sendingt↗1, we get
+E[Ψ(0, h)]⩾E[Ψ(1, Y1)]− 1
+2 E ∫
+1
+0
+ξ′′(t)γ(t)α2
+t dt,(4.12)
+which together with (4.8) and Ψ(1,⋅)=∣⋅∣gives (4.7) and thus implies (4.5).
+The fact that (4.4) is sufficient for maximality is already proved in [ 19, The-
+orem 5]. Then, we show the necessity. Let α be a maximizer and thus (4.12)
+is an equality, which requires (4.10) to be also an equality. Then, inserting the
+equality condition (4.11) into (4.8), we see that Y must satisfy the SDE (4.3),
+which gives thatαsatisfies (4.4).□
+The following lemma corresponds to [ 41, Lemma 2.2] which considers spin
+glasses at finite temperature.
+Lemma 4.4(Supremum of affine functionals).For everyγ∈M 0, we have
+(4.13) Ψ γ(0, h)=sup
+α∈Mart1
+E[hα 0+ 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)α2
+t dt+α 1 ∫
+1
+0
+√
+ξ′′(t)dW t].
+Moreover, there exists a unique maximizer to the variational problem in (4.13).
+This unique maximizer α∈Mart 1 must satisfy (4.4) for every t∈[ 0, 1) with
+(Xt)t∈[0,1] solving(4.3).
+Let α be a martingale satisfying (4.4) for every t∈[ 0, 1). The boundedness of
+α allows us to apply Doob’s martingale convergence theorem to see that there is
+some α1 ∈L ∞(P) such that αt converges to α1 a.s. and in any Lp for p∈[ 1,∞) .
+Therefore,α 1 and thus(α t)t∈[0,1] are uniquely determined.
+Notice that Lemma 4.3 only gives a characterization of the maximizer when γ
+is not constantly zero on [0, 1). Hence, accordingly, the proof of Lemma 4.4 is
+divided into two cases.
+Proof of Lemma 4.4 whenγis constantly zero. Setting γ= 0 on [0, 1), we di-
+rectly verify the claims. The equation in (3.3) becomes a heat equation and can
+be solved as Ψ γ(t, x)=E[∣x+σ(t)Z∣] where Z is a standard Gaussian variable
+and σ(t)∶=( ∫
+1
+t ξ′′(r)dr)
+1
+2 . Let Xt =h+ ∫
+t
+0
+√
+ξ′′(r)dWr be given as in (4.3)
+and thus we have Ψ γ(0, h)=E[∣X1∣] as X1
+d=σ( 0)Z. Since α∈Mart 1 satisfies
+α1X1 ⩽∣X 1∣, we have Ψ γ(0, h)=supα∈Mart1 E[α1X1] verifying (4.13) with the
+maximum achieved at α1 satisfying α1 = 1 if X1 > 0 and α1 =− 1 when X1 < 0.
+Since X1 is Gaussian and thus X1 ≠ 0 a.s., this relation uniquely determines α1
+
+===== PAGE 23 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 23
+a.s. Since α is a martingale, α is uniquely determined by α1. It remains to verify
+thatαsatisfies (4.4).
+Whent<1, we haveσ(t)>0 and we can directly compute
+∂xΨγ(t, x)=P{x+σ(t)Z>0}−P{x+σ(t)Z<0}= 2√π ∫
+x
+σ(t)
+0
+e− u2
+2 du.
+Since X1 ≠ 0 a.s. and Xt converges to X1 a.s. (due to Xt =h+ ∫
+t
+0
+√
+ξ′′(r)dWr),
+we can see from the above integral together with limt→1 σ(t)= 0 that ∂xΨγ(t, Xt)
+converges to α1 a.s. Since (∂xΨγ(t, Xt))t∈[0,1) is also a martingale evident from
+the second equality in (4.4), we must have αt =∂ xΨγ(t, Xt) for every t∈[ 0, 1) as
+expected in (4.4). This completes the proof in this special case.□
+The second half of the proof uses arguments from the proof [ 41, Lemma 2.2].
+Due to the non-differentiability of Ψ γ(1,⋅) at 0, some modification is needed. In
+the proof, we need to consider the convex conjugate of Ψ γ(t,⋅) , which is given as
+follows. For each(t, x)∈[0,1]×R, we define
+Ψ∗
+γ(t, x)=sup
+y∈R
+{xy−Ψ γ(t, y)}.(4.14)
+To proceed, we need the following lemma, the proof of which requires additional
+inputs from convex analysis.
+Lemma 4.5(Convergence of Ψ ∗
+γ(t,⋅) ).Let γ∈M 0 and letΨ γ solve (3.3). Then,
+for everyx∈R, we have
+lim
+t↗1
+Ψ∗
+γ(t, x)=Ψ∗
+γ(1, x)=
+⎧⎪⎪⎨⎪⎪⎩
+0,ifx∈[−1,1],
++∞,otherwise.(4.15)
+Proof. We will need some inputs from convex analysis, which we briefly recall
+when needed.
+Step 1.We show that (Ψ∗
+γ(t,⋅)) t∈[0,1] isequi-l.s.c.(equi-lower-semicontinuous).
+We recall (see the paragraph following [ 52, 7.9 Exercise]) that a family (fi)i∈I of
+extended-real-valued functions on R is said to be equi-l.s.c. if, for every x∈R
+and every finiteρ, ε>0, there isδ>0 such that
+inf
+x∶∣x− x∣⩽δ
+fi(x)⩾min{f i(x)−ε, ρ},∀i∈I.
+Due to the bound in (4.6), we can see that the supremum in (4.14) can be
+restricted toy∈[−1,1]. From this, we can deduce that
+Ψ∗
+γ(t, x)⩽Ψ∗
+γ(t, x′)+∣x−x ′∣,∀t∈[0,1],∀x, x ′ ∈R(4.16)
+which implies that(Ψ ∗
+γ(t,⋅)) t∈[0,1] is equi-l.s.c.
+Step 2.We show that Ψ γ(t,⋅) converges pointwise to Ψ γ(1,⋅) on R as t↗ 1 and
+that (Ψγ(t,⋅)) t∈[0,1] is equi-l.s.c. By [ 19, Proposition 2], Ψ γ is a weak solution
+(see [ 19, Definition 1]), which is continuous in particular. Hence, we get the
+pointwise convergence. Due to (4.6), Ψ γ(t,⋅) is 1-Lipschitz for every t, which
+implies equi-l.s.c.
+Step 3.We use results from convex analysis to conclude. We recall that [ 52,
+7.10 Theorem] states that, under the condition of equi-l.s.c., pointwise convergence
+is equivalent toepi-convergenceas in [ 52, 7.1 Definition]. Since we will not need
+
+===== PAGE 24 =====
+24 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+the precise definition of epi-convergence, we choose to omit it here. But we
+mention that heuristically it means the convergence of epigraphs of convex
+functions. By [ 52, 7.10 Theorem] and Step 2, Ψ γ(t,⋅) epi-converges to Ψγ(1,⋅)
+on R. Next, [ 52, 11.34 Theorem] shows that the action of convex conjugation
+preserves epi-convergence. Hence, Ψ ∗
+γ(t,⋅) epi-converges to Ψ∗
+γ(1,⋅) on R. Lastly,
+using [ 52, 7.10 Theorem] again and Step 1, we deduce the convergence part
+in (4.15). The second equality in (4.15) follows from Ψ(1,⋅)=∣⋅∣.□
+We also need [18, Lemma 4] restated below, which is also useful later.
+Lemma 4.6([ 18]).For every γ∈M 0 and t∈[ 0, 1), ∂xΨγ(t,⋅) is odd and strictly
+increasing.
+Now, we are ready to complete the other half of the proof.
+Proof of Lemma 4.4 whenγis not constantly zero. For brevity, we introduce the
+following notation. Fort∈[0,1]andα∈Prog 1, we define
+Ct(α)=h+ ∫
+t
+0
+ξ′′(r)γ(r)α rdr+ ∫
+t
+0
+√
+ξ′′(r)dWr,
+Lt(α)= 1
+2 ∫
+t
+0
+ξ′′(r)γ(r)α 2
+rdr,
+Bt(α)=hα t+ 1
+2 ∫
+t
+0
+ξ′′(r)γ(r)α 2
+rdr+α t ∫
+t
+0
+√
+ξ′′(r)dWr.
+In this notation, we have
+Ψγ(0, h)L.4.3=sup
+α∈Prog1
+E[∣C 1(α)∣−L 1(α)]
+⩾sup
+α∈Mart1
+E[α 1C1(α)−L 1(α)]
+=sup
+α∈Mart1
+E[B 1(α)](4.17)
+where the inequality follows fromMart1 ⊆Prog 1 and ∣C1(α)∣⩾α 1C1(α), and the
+last equality follows fromE [α1C1(α)]= E[B1(α)+L 1(α)] due to the martingale
+property.
+Let α∈Mart 1 satisfy (4.4) for everyt∈[0,1). We claim that
+Ψγ(0, h)=E[B 1(α)](4.18)
+and postpone the verification after we complete the main objective. Using this
+and (4.17), we obtain (4.13).
+Now, we show the uniqueness of maximizers and the characterization. Let α
+be any maximizer of (4.13). Then, we have
+Ψγ(0, h)=E[B 1(α)]=E[α 1C1(α)−L 1(α)]
+⩽E[∣C 1(α)∣−L 1(α)]
+L.4.3
+⩽Ψ γ(0, h),
+where the second equality is due to the martingale property and the third is due
+to ∣α1∣⩽ 1. So, the last inequality must be an equality and α is a maximizer
+of (4.5). Since γ is not constantly zero, Lemma 4.3 implies that αt satisfies (4.4)
+for all t sufficiently close to 1. Due to ∣αt∣⩽ 1, we can see that αt converges a.s.
+to some α1 as t↗ 1. Since α is a martingale (so that αt = E[α1∣F t]), we obtain
+the desired uniqueness of maximizers and the characterization.
+
+===== PAGE 25 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 25
+It remains to verify the claim in (4.18). Fix any t∈( 0, 1), we can apply the
+same argument as in the proof of [ 41, Lemma 2.2] (with [0, 1] and ϕ therein
+substituted with[0, t]and Ψ γ(t,⋅+h), respectively) to get 2
+Ψγ(0, h)=E[Bt(α)−Ψ ∗
+γ(t, αt) ∣ F0]
+where Ψ∗
+γ(t,⋅) is defined as in (4.14) and α is given as before. It is important to
+point out that a key property used in [ 41, Lemma 2.2] is the strict convexity of
+ϕ therein, which corresponds here to the strict convexity of Ψ γ(t,⋅) implied by
+Lemma 4.6. Using (4.16) in the above display, we get
+Ψγ(0, h)⩽E[B t(α)]−E [Ψ∗
+γ(t, α1)]+E[∣ αt− α1∣].
+Sending t↗ 1, the first term on the right converges toE [B1(α)], as is clear from
+the definition of Bt. Due to ∣α1∣⩽ 1 and Lemma 4.5, the second term vanishes in
+the limit. The martingale convergence also nullifies the last term in the limit.
+Therefore, together with (4.17), we obtain (4.18) as claimed, completing the
+proof.□
+We need the following observation that, for each bounded measurable function
+f∶[0,1]→R, we have
+inf
+γ∈Ms
+∫
+1
+0
+f(t)γ(t)dt=s ∫
+1
+0
+f(t)dt+inf
+γ∈M0
+∫
+1
+0
+f(t)γ(t)dt
+=s ∫
+1
+0
+f(t)dt+
+⎧⎪⎪⎨⎪⎪⎩
+0,if ∫
+1
+r f(t)dt⩾0,∀r∈[0,1],
+−∞,otherwise.(4.19)
+Here, the first equality follows from the fact that γ↦s+γ is a bijection from
+M0 to Ms, and the second equality follows from the fact that if γ′∶[ 0, 1]→R +
+is a nonnegative bounded measurable function, thent↦ ∫
+t
+0 γ′ ∈M 0 and
+∫
+1
+0
+f(t) ∫
+t
+0
+γ′(r)drdt= ∫
+1
+0
+γ′(r) ∫
+1
+r
+f(t)dtdr.
+Lemma 4.7(Interchanging inf and sup).Let
+K0∶={(E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt], (E[α2
+t])t∈[0,1]) ∣α∈Mart 1}
+and letKbe the closure of the convex hull ofK 0 with respect to the topology of
+the spaceR×L 1([0,1]). Then,
+lim
+N→∞
+1
+sN logE[exp(sN LN)]=sup
+(χ,g)∈K
+inf
+γ∈Ms
+(χ+ 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)(g(t)−t)dt)
+=sup
+(χ,g)∈K
+{χ+ s
+2 ∫
+1
+0
+ξ′′(t)(g(t)−t)dt∣g∈G}.(4.20)
+Proof. Write G(γ, χ, g)=χ+1
+2 ∫
+1
+0 ξ′′(t)γ(t)(g(t)−t) dt. Combining Theorem 3.1
+and Lemma 4.4, we get
+lim
+N→∞
+1
+sN logE[exp(sN LN)]=inf
+γ∈Ms
+sup
+(χ,g)∈K0
+G(γ, χ, g).
+2Settingϕ=Ψ γ(t,⋅ +h), we haveϕ ∗(x)=Ψ ∗
+γ(t, x)−hxfor everyx∈R.
+
+===== PAGE 26 =====
+26 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Since G(γ,⋅,⋅) is affine for each fixed γ, settingK 1 to be the convex hull ofK 0,
+we have
+lim
+N→∞
+1
+sN logE[exp(sN LN)]=inf
+γ∈Ms
+sup
+(χ,g)∈K1
+G(γ, χ, g).(4.21)
+To further replaceK 1 by its closureK, we show that G is continuous on
+Ms×R×{g∈L 1 ∶∣g∣⩽ 1} in the topology of L1×R×L 1 where L1 =L 1([0, 1]).
+The continuity in χ is obvious and we focus on that in γ and g. For any γ,̃γ∈M s
+andg, ̃g∈L 1 bounded by 1, we have
+∣∫
+1
+0
+ξ′′(t)γ(t)(g(t)−t)dt− ∫
+1
+0
+ξ′′(t)̃γ(t)(̃g(t)−t)dt∣
+⩽∣ ∫
+1
+0
+ξ′′(t)(γ(t)− ̃γ(t))(̃g(t)−t)dt∣+∣ ∫
+1
+0
+ξ′′(t)γ(t)(g(t)− ̃g(t))dt∣.(4.22)
+The first term on the right is bounded by 2 ξ′′(1)∥γ− ̃γ∥L1 and the second term
+is bounded by, for anyδ∈(0,1),
+ξ′′(1)(γ(1−δ) ∫
+1−δ
+0
+∣g(t)− ̃g(t)∣dt+2 ∫
+1
+1−δ
+γ(t)dt).(4.23)
+Fixing γ and g, we consider ̃γ and ̃g approaching them. Due to γ∈L 1, we can
+choose δ sufficiently close to 1 to make ∫
+1
+1−δ γ(t)dt sufficiently small and then
+letting ̃g tend to g in L1 to make ∫
+1−δ
+0 ∣g(t)− ̃g(t)∣ dt arbitrarily small. From this
+and the bound on the first term (4.22), we get the announced continuity of G.
+In particular, from (4.21), this continuity yields
+lim
+N→∞
+1
+sN logE[exp(sN LN)]=inf
+γ∈Ms
+sup
+(χ,g)∈K
+G(γ, χ, g).(4.24)
+Then, we show thatKis compact. As α∈Mart 1, given any sequence
+(χ(n), g(n))n∈N inK 0, we have that χ(n) and ∥g(n)∥L∞ are bounded uniformly
+over n. We can thus extract a subsequence along which χ(n) and g(n)(t) converge
+for every t∈Q∩[ 0, 1]. By this and the monotonicity of g(n), this subsequence
+converges in R×L 1. Hence,K 0 is pre-compact and its closed convex hullKis
+compact by [2, Theorem 5.35].
+Recall the continuity of G. Also, notice that G(γ,⋅,⋅) is affine for each fixed
+γ and that G(⋅, χ, g)is affine for each fixed (χ, g). These together with the
+convexity of Ms and the compactness and convexity ofKallow us to apply the
+minimax theorem [ 27, 53] to interchange inf and sup in (4.24) and get the first
+equality in (4.20). The second equality there follows from (4.19).□
+Lemma 4.8(Existence of maximizing martingale).There exists an admissible
+probability space P (see Definition 4.1) such that (4.2) is valid and the supremum
+therein is achieved.
+Proof. Notice that “⩾” in (4.2) is an immediate consequence of Lemma 4.7. It
+remains to show the reverse inequality.
+We start with choosing the standard Wiener space W as underlying probability
+space. To emphasize this, we write Mart1(W) ,K (W) , andK 0(W) . Later, we
+will consider probability spaces other than W and extend this notation in the
+obvious way.
+
+===== PAGE 27 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 27
+Let (χn, gn)∈ K(W) be a maximizing sequence for (4.20), where we can
+assume that gn ∈ Gfor each n. As shown in the proof of Lemma 4.7,K (W)
+is compact in the topology of R×L 1([0, 1]). Since the functional (χ, g)↦
+χ+ s
+2 ∫
+1
+0 ξ′′(t)(g(t)−t) dt is continuous and the setG(see (4.1)) is closed in
+L1([0, 1]), we can extract a convergent subsequence from (χn, gn)n∈N with some
+limit(χ, g)∈K(W)such thatg∈Gand the supremum in (4.20) is achieved:
+lim
+N→∞
+1
+sN logE[exp(sN LN)]=χ+ s
+2 ∫
+1
+0
+ξ′′(t)(g(t)−t)dt.(4.25)
+SinceK (W) is the closed convex hullK 0(W) , we can find, for n∈N , weights
+(c(n)
+i )
+1⩽i⩽mn
+with ∑mn
+i=1 c(n)
+i = 1 for some mn ∈N and martingales (α(n),i)1⩽i⩽mn
+on W such that (χn, gn) from the convex hull ofK 0(W) converges to (χ, g)where
+χn =
+mn
+∑
+i=1
+c(n)
+i E[hα(n),i
+0 +α (n),i
+1 ∫
+1
+0
+√
+ξ′′(t)dWt]
+gn(t)=
+mn
+∑
+i=1
+c(n)
+i E[(α(n),i
+t )
+2
+].
+(4.26)
+Let (Ft)t∈[0,1] be the natural filtration associated with W and let W be a richer
+probability space with an augmented filtration (F t)t∈[0,1] such that the Wiener
+process W is still supported on W and that there is a F 0-measurable random
+variable distributed uniformly over [0, 1]. Then, for each n, we can define a F 0-
+measurable random variable N(n) with lawP (N(n) =i)=c (n)
+i for i∈{ 1, . . . , mn}.
+On W, we consider the martingaleα (n) =α (n),N (n)
+∈Mart 1(W ) and we have
+χn =E[hα (n)
+0 +α (n)
+1 ∫
+1
+0
+√
+ξ′′(t)dWt]andg n(t)=E[(α (n)
+t )
+2
+].(4.27)
+Since α(n) takes values in[−1, 1], the family of random variables, by Prokhorov’s
+theorem and passing to a subsequence, we have that (h, W,(α(n)
+t )t∈Q∩[0,1]) con-
+verges in law to some (h, W,(αt)t∈Q∩[0,1]) on some probability space P in the
+following sense. For every ℓ∈N , t1,⋯, tℓ ∈Q∩[ 0, 1], and bounded continuous
+functionG∶R×C([0,1])×R ℓ→R, we have
+lim
+n→∞
+E[G(h, W, α(n)
+t1 , . . . , α(n)
+tℓ )]=E[G(h, W, αt1, . . . , αtℓ)].(4.28)
+We then extend α by setting αt = E[α1∣F t] for t∈[ 0, 1], turning it into a
+martingale in P. By Skorokhod’s representation theorem, we may assume that
+the convergence is also pointwise a.s. By this and the boundedness of these
+martingales, recalling the convergence of(χ n, gn)to(χ, g), we can get
+χ=E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]andg(t)=E [(αt)2](4.29)
+for t∈Q∩[ 0, 1]. Since both sides are monotone, this identity can be extended to
+almost every t∈[ 0, 1]. This along with (4.25) gives “⩽” in (4.2) with Mart1 =
+Mart1(P). As commented in beginning, this completes the proof.□
+Proof of Theorem 4.2. Let P be the probability space in Lemma 4.8 which is in
+general different from P. For clarity, we write Mart1(P) and Mart1(P) for
+the corresponding spaces of martingales.
+
+===== PAGE 28 =====
+28 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Let α∈Mart 1(P) maximize (4.2) allowed by Lemma 4.8. Let γ∈M s be the
+unique minimizer of (3.2) prescribed by Theorem 3.1. For brevity, we write
+Γ(γ, α)∶=E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dW t+ 1
+2 ∫
+1
+0
+ξ′′(t)γ(t)(α2
+t −t) dt]
+and ℓ∶=lim N→∞ 1
+sN logE[exp(sN LN)]. Then, Theorem 3.1 together with
+Lemma 4.4 yields
+ℓ=inf
+γ∈Ms
+sup
+α∈Mart1(P)
+Γ(γ, α)=sup
+α∈Mart1(P)
+Γ(γ, α),
+while Lemma 4.8 along with (4.19) gives
+ℓ=sup
+α∈Mart1(P)
+inf
+γ∈Ms
+Γ(γ, α)=inf
+γ∈Ms
+Γ(γ, α).
+Hence, for everyγ∈M s andα∈Mart 1(P), we have
+Γ(γ, α)⩽ℓandℓ⩽Γ(γ, α).
+From this, we can deduceℓ=Γ( γ, α)and
+Γ(γ, α)⩽Γ(γ, α)⩽Γ(γ, α).(4.30)
+The first optimality in (4.30) and Lemma 4.4 imply that α is specified by (4.4)
+with this γ and W on P and, in particular, that α is measurable with respect to
+the filtration generated by the Wiener process.
+Now, we turn to the probability space P as in the statement of the theorem.
+We let ̂α be given by the same relation in (4.4) but with W on P. Since α
+and ̂α have the same law, ℓ=inf γ∈Ms Γ(γ, α) together with the computation
+in (4.19) implies that “⩽” holds in (4.2). The reverse inequality “ ⩾” follows from
+Lemma 4.7. Therefore, we have verified (4.2).
+Lastly, by the same argument above over the probability space P leading
+to the fact that α satisfies (4.4), we can see that ̂α also satisfies (4.4) with the
+same γ. This completes the uniqueness part.□
+5.Derivation of the large-deviation principle
+For s⩾ 0 and α∈Mart 1 with some fixed underlying probability space P, we
+consider the functional
+g(s, α)∶=sE[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]+ s2
+2 ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt.(5.1)
+For eachs⩾0, we define the limiting cumulant generating function ofL N by
+Λ(s)∶=lim
+N→∞
+1
+N logE[exp(sN LN)]
+=sup
+α∈Mart1
+{g(s, α)∣ E[α2
+●]∈G }
+(5.2)
+whereGis defined in (4.1) and the second equality follows from Theorem 4.2.
+We also define
+Λ∗(r)∶=sup
+s∈R+
+{sr−Λ(s)},∀r∈R.(5.3)
+
+===== PAGE 29 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 29
+Theorem 5.1.For every Borel measurable subsetA⊆[gs,∞), we have
+−inf
+A○
+Λ∗ ⩽lim inf
+N→∞
+1
+N logP{L N ∈A}⩽lim sup
+N→∞
+1
+N logP{L N ∈A}⩽−inf
+A
+Λ∗(5.4)
+where A○ and A are the interior (relative to [gs,∞) ) and the closure of A,
+respectively, andΛ ∗ given as in(5.3)is continuous and increasing on[gs,∞).
+Moreover, we haveΛ ∗(gs)=0and, for everyr>gs,
+0<Λ ∗(r)=inf
+α∈Mart1
+⎧⎪⎪⎪⎪⎨⎪⎪⎪⎪⎩
+(r−E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt])
+2
+2 ∫
+1
+0 ξ′′(t)(E[α2
+t]−t) dt
+⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪⌟⟨rro⟪⟪⟩r⟪
+E[α2
+●]∈G
+⎫⎪⎪⎪⎪⎬⎪⎪⎪⎪⎭
+(5.5)
+where the probability space P underlying Mart1 can be chosen to be any admis-
+sible one (see Definition 4.1). For every r>gs , there is a unique maximizer s
+of (5.3), and this maximizer satisfies r= Λ′(s) and s> 0. The infimum in (5.5)
+is achieved at a unique α that is also the unique maximizer of Λ(s)
+s given by
+Theorem 4.2 at thiss. Lastly, for the said optimalsandα, we have
+Λ∗(r)= s2
+2 ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt.(5.6)
+5.1.Analytic properties ofΛandΛ ∗.
+Lemma 5.2(Basic properties).The functionΛ ∶R + →R is convex, locally
+Lipschitz, and grows super-linearly. The functionΛ ∗ ∶R→R is convex and
+continuous onRand is increasing onR +.
+Proof. Since g(⋅, α)is convex for each α, Λ is convex. Due to ∣αt∣⩽ 1, g(⋅, α)
+is locally Lipschitz uniformly over α∈Mart 1, which implies that Λ is also
+locally Lipschitz. Fix1to be the martingale constantly equal to 1. Then,
+Λ(s)
+s ⩾ g(s,1)
+s =h+ s
+2 ∫
+1
+0 ξ′′(t)(1−t) dt, where the last integral is strictly positive.
+Hence, Λ grows super-linearly as s tends to +∞, which implies that Λ∗ is finite
+everywhere. The convexity of Λ∗ is clear from the definition. Since any convex
+function that is finite everywhere is continuous (e.g., see [ 26, Proposition 2.9]),
+we deduce the continuity of Λ∗. Since the supremum in Λ ∗ is taken over s∈R +,
+we see that Λ∗ is increasing onR +.□
+Lemma 5.3(Continuous differentiability of Λ).Let P be admissible as in
+Definition 4.1. The functionΛ ∶R +→R is continuously differentiable, and at
+everys∈R + its derivative is given by
+Λ′(s)=∂ sg(s, α)=E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]+s ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt
+(5.7)
+whereαis the maximizer given by Theorem 4.2 ats.
+In view of the variational formula in (5.2), this lemma follows from the envelope
+theorem (see, e.g., [ 26, Theorem 2.21]) adapted to our setting. However, since
+the space Mart1 is infinite-dimensional and compactness issues are delicate, we
+provide a complete proof for clarity.
+Proof. We first show that Λ is differentiable by providing an upper and then a
+lower bound. After this, we show that the derivative is continuous.
+
+===== PAGE 30 =====
+30 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Step 1.We show the upper bound in the definition of differentiability. Fix any
+s∈R + and letαbe the maximizer for Λ(s)as in (5.2). Due to∣α t∣⩽1 and that
+g(⋅, α)is quadratic, we can find a constant C depending only on ξ′′ such that,
+for everys ′ ∈R +,
+∣g(s′, α)−g(s, α)−(s′−s)∂ sg(s, α)∣⩽C∣s ′−s∣ 2.
+Using this,g(s ′, α)⩽Λ(s′)andg(s, α)=Λ(s), we get
+Λ(s′)⩾Λ(s)+(s ′−s)∂ sg(s, α)−C∣s′−s∣ 2.
+Step 2.We derive a matching lower bound and deduce the differentiability. Fix
+any s∈R + and let α be the maximizer for Λ (s). It suffices to show that for
+every sequence (sn)n∈N in R+∖{s} converging to s, we can always extract a
+subsequence(s nk)k∈N such that
+lim sup
+k→∞
+1
+∣snk −s∣ (Λ(snk)−Λ(s)−(s nk −s)∂ sg(s, α))=0.(5.8)
+Indeed, this along with the first step implies that Λ is differentiable with the
+announced derivative. Now, let us verify this. For each n, let α(n) be the
+maximizer for Λ(sn). Since α(n) takes values in [−1, 1], using the same argument
+as around the display (4.28), we get that (W,(α(n)
+t )t∈Q∩[0,1]) converges along
+a subsequence (nk)k∈N in law to some (W,( αt)t∈Q∩[0,1]) in a possibly different
+probability space P, where αt is a martingale. For convenience, we denote the
+subsequence(n k)k∈N still by(n) n∈N.
+Let g be the corresponding functional as g but with underlying probability
+space P. We also writeE P andE P as expectations with respect to the ambient
+probability spaces displayed. Using Skorokhod’s representation, we may turn
+the convergence in law to a.s. convergence on another common probability space.
+Using this and the boundedness of these martingales, we can show that
+lim
+n→∞
+EP [hα(n)
+0 +α (n)
+1 ∫
+1
+0
+√
+ξ′′(t)dWt]=E P [hα0+ α1 ∫
+1
+0
+√
+ξ′′(t)dWt],
+lim
+n→∞ ∫
+1
+0
+ξ′′(t)(E P [(α(n)
+t )
+2
+]−t)dt= ∫
+1
+0
+ξ′′(t)(EP [α2
+t]−t) dt.
+(5.9)
+Then, we use this to show
+α d= α.(5.10)
+First, from (5.9) and the definition of g in (5.1), we have limn→∞ g(sn, α(n))=
+g(s, α). The continuity of Λ by Lemma 5.2 together with g(sn, α(n))= Λ(sn)
+implies limn→∞ g(sn, α(n))= Λ(s). Hence, we have Λ (s)= g(s, α) and recall
+Λ(s)=g(s, α) . The characterization of the unique maximizer in Theorem 4.2
+ensures thatαand αhave the same law, verifying (5.10).
+Now, let us return to proving (5.8) and recall the shorthand (n)n∈N for (nk)k∈N.
+We start with
+g(s n, α(n))−g(s, α(n))= ∫
+1
+0
+(sn−s)∂ sg(ts n+(1−t)s, α(n))dt.
+
+===== PAGE 31 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 31
+Then, using Λ(sn)=g (sn, α(n)) and Λ(s)⩾g (s, α(n)) on the left-hand side and
+comparing the right-hand side with(s n−s)∂ sg(s, α), we get
+Λ(sn)−Λ(s)⩽(s n−s)∂ sg(s, α)
++∣s n−s∣ ∫
+1
+0
+∣∂sg(ts n+(1−t)s, α(n))−∂ sg(s, α)∣dt.
+Due to (5.9) and (5.1), the integral vanishes as n→∞ . Using (5.10), we also
+have ∂sg(s, α)=∂ sg(s, α). These together yield (5.8), completing the proof of
+differentiability with derivative as in (5.7).
+Step 3.We show that the derivative is continuous in s. Again, fix any s and let α
+be the maximizer for Λ(s). It suffices to show that for any (sn)n∈N converging to s
+we can extract subsequence(snk)k∈N such that limk→∞ ∂sg(snk , α(nk))=∂ sg(s, α),
+where α(n) is the maximizer for Λ (sn). We argue as in Step 2. Writing (nk)k∈N
+still as(n)n∈N, we extract a subsequential limitα on a possibly different probability
+space P as before. Then, we still have (5.9) and (5.10). In view of the definition
+of g in (5.1), these two imply the desired convergence. Now, the proof is
+complete.□
+Using Lemma 5.3 and Theorem 4.2, we can compute that
+Λ′(0)=gs=lim
+N→∞
+E[LN]⩾0 (5.11)
+where the inequality is due to E[LN]⩾N −1E[HN(σ)]=N −1h ∑N
+i=1 σi ⩾ 0 for a
+suitable σ. In the next lemma, we show that to the right of zero, the function
+Λ may have a flat piece, and is then strictly convex. We will also show in
+Corollary 6.5 below that the flat piece is necessarily absent whenh≠0.
+Lemma 5.4(Strict convexity of Λ after some linear portion).Let s∶=sup{s∈
+R+∶ Λ(s)=sgs} . Then, we have thatΛ (s)=sgs for every s∈[ 0, s] and thatΛ
+is strictly convex on(s ,∞)and satisfiesΛ(s)>sgsfor everys>s .
+Moreover, the following holds, where we denote by αs the unique optimizer of
+Λ(s)
+s (given by Theorem 4.2) for each s⩾ 0. For every s∈( 0, s], we have αs =α 0
+and
+∫
+1
+0
+ξ′′(t)(E[(αs
+t)2]−t) dt= ∫
+1
+0
+ξ′′(t)(E[ (α0
+t)
+2
+]−t)dt=0.(5.12)
+For everys>s , we have
+∫
+1
+0
+ξ′′(t)(E[(αs
+t)2]−t) dt>0.(5.13)
+Since Λ(0)= 0 and Λ grows super-linearly, we haves∈[ 0,∞) . In view of (5.12),
+we can see that if ∫
+1
+0 ξ′′(t)(E[ (α0
+t)
+2
+]−t) dt> 0, then s= 0 and thus Λ is strictly
+convex onR +.
+Proof. We first give a characterization of the condition Λ(s)=sgs and then prove
+the statement on different intervals. Throughout, let αs be the unique optimizer
+for Λ(s)and we expressgin (5.1) asg(s, α)=sg 1(α)+ s2
+2 g2(α)where
+g1(α)∶=E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]andg 2(α)∶= ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt.
+
+===== PAGE 32 =====
+32 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+We often use that g2(α)⩾ 0 ifE [α2
+●]∈ G. In particular, we have g2(αs)⩾ 0 for
+everys⩾0.
+Step 1. Fors>0, we show that
+∫
+1
+0
+ξ′′(t)(E[(αs
+t)2]−t) dt=0⇐⇒Λ(s)=sgs.(5.14)
+We notice that the l.h.s. is equivalent to g2(αs)= 0. To see “/Leftr⫯g⊸tl⫯ne⇒”, we start with
+sgs=sg 1(α0)⩽sg 1(α0)+ s2
+2 g2(α0)⩽Λ(s)=sg 1(αs)+ s2
+2 g2(αs)=sg 1(αs)⩽sgs
+yielding the r.h.s. Next, to show “⇐/Leftr⫯g⊸tl⫯ne”, we start with
+sgs=sg 1(α0)⩽sg 1(α0)+ s2
+2 g2(α0)⩽Λ(s)=sgs
+which implies that α0 is a maximizer for Λ (s). By the uniqueness of maximizers
+given by Theorem 4.2, we must have αs =α 0. Using this, s> 0, and that the
+first inequality in the above display is in fact an equality, we can get g2(α0)=
+g2(αs)=0. Hence, we have verified (5.14).
+Notice that in the proof of “⇐/Leftr⫯g⊸tl⫯ne”, we have also shown
+Λ(s)=sgs/Leftr⫯g⊸tl⫯ne⇒αs =α 0(5.15)
+which will be needed below.
+Step 2. We show that Λ(s)=sgs for s∈[ 0, s]. By continuity, we have Λ(s)=s gs.
+Then, convexity implies Λ(s)⩽ s
+s Λ(s)+ s−s
+s Λ(0)=sgs . By convexity and (5.11),
+we have Λ(s)⩾ Λ(0)+s Λ′(0)=sgs . These give the desired result, which along
+with (5.14) and (5.15) also implies the “moreover” part fors∈(0, s ]and (5.12).
+Step 3. We show that Λ is strictly convex on(s,∞) and Λ(s)>sgs for every s>s .
+First, the latter must hold, because otherwise (namely, Λ (s)=sgs ) the same
+argument as in Step 2 would imply Λ (s′)=s ′gs for every s′ ∈[ 0, s]contradicting
+the definition of s. Now, fix any distinct s0, s1 >s and any λ∈( 0, 1). Set
+sλ =( 1−λ)s 0+λs 1 and we have Λ(sλ)=s λg1(αsλ)+ s2
+λ
+2 g2(αsλ). Due to (5.14),
+we haveg 2(αsλ)>0. Using the strict convexity of the functions↦ s2
+2 , we have
+Λ(sλ)<(1−λ)g(s 0, αsλ)+λg(s 1, αsλ)⩽(1−λ)Λ(s 0)+λΛ(s 1),
+verifying the strict convexity.
+Due to Λ(s)>sgsfor everys>s , using (5.14), we get (5.13).□
+Lemma 5.5(Maximizers of Λ∗).Let s be given as in Lemma 5.4. The maximizers
+ofΛ ∗(gs) are exactly the real numbers in [0, s] and we haveΛ ∗(gs)= 0. For
+every r>gs ,Λ ∗(r) admits a unique maximizer s∈(s ,∞) , and this maximizer is
+such thatr=Λ ′(s). We also haveΛ ∗(r)>0for everyr>gs.
+Proof. Recall Λ∗(gs)=sup s∈R+{sgs− Λ(s)}. Lemma 5.4 implies that sgs− Λ(s)= 0
+for s∈[ 0, s] and sgs− Λ(s)> 0 for s>s , which yields the first part of the lemma.
+Then, let r>gs . Since Λ grows super-linearly (see Lemma 5.4), Λ ∗(r) admits
+maximizers. Let s be any such maximizer. If s= 0, then Λ∗(r)= 0− Λ(0)= 0⩾
+s′r− Λ(s′) for every s′ ∈R +, implying r⩽ Λ′(0)=gs due to (5.11), which is not
+possible. Hence, we must have s> 0. Then, the maximality condition implies
+that r= Λ′(s). Since r>gs , we must have s>s , because otherwise we would have
+
+===== PAGE 33 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 33
+Λ′(s)=gs<r (see Lemma 5.4). Hence, Λ ∗(r) achieves the maximum over (s,∞) .
+Then, the strict convexity in Lemma 5.4 implies the uniqueness of maximizers.
+Let r>gs and suppose that Λ∗(r)⩽ 0. Then, we have sr− Λ(s)⩽ 0 for every
+s∈R +. Due to (5.11), we must have r⩽ Λ′(0)=gs , reaching a contradiction.
+Hence, the last part of this lemma is verified.□
+5.2.Inverting variations insideΛ ∗.In view of (5.2) and (5.3), Λ∗ admits a
+sup inf formula. We want to invert the order. We first record
+χ<r, a⩾0/Leftr⫯g⊸tl⫯ne⇒sup
+s∈R+
+{sr−sχ− s2
+2 a}= (r−χ) 2
+2a .(5.16)
+Indeed, if a= 0, then the supremum is equal to +∞ as r−χ> 0; if a> 0, then the
+maximum is achieved at s= r−χ
+a . To invert Λ∗, we follow similar arguments as in
+Lemmas 4.7 and 4.8.
+Lemma 5.6(Interchanging sup and inf).Let
+K0∶={(E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt], (E[α2
+t])t∈[0,1]) ∣α∈Mart 1}
+and letKbe the closure of the convex hull ofK 0 with respect to the topology of
+the spaceR×L 1([0,1]). Then, for everyr>gs, we have
+Λ∗(r)=inf
+(χ,g)∈K
+sup
+s∈R+
+{sr−sχ− s2
+2 ∫
+1
+0
+ξ′′(t)(g(t)−t)dt∣g∈G}
+=inf
+(χ,g)∈K
+⎧⎪⎪⎨⎪⎪⎩
+(r−χ) 2
+2 ∫
+1
+0 ξ′′(t)(g(t)−t)dt
+∣g∈G
+⎫⎪⎪⎬⎪⎪⎭
+.(5.17)
+Proof. Write G(s, χ, g)=sr−sχ− s2
+2 ∫
+1
+0 ξ′′(t)(g(t)−t) dt. From (5.2) and (5.3),
+we get
+Λ∗(r)=sup
+s∈R+
+inf
+(χ,g)∈K0
+{G(s, χ, g)∣ g∈G } .
+Since for each fixed s, G(s,⋅,⋅) is affine, settingK 1 to be the convex hull ofK 0,
+we have
+Λ∗(r)=sup
+s∈R+
+inf
+(χ,g)∈K1
+{G(s, χ, g)∣ g∈G } .
+To further replaceK 1 by its closureK, we can use the same arguments
+around (4.22) and (4.23) to see thatGis continuous on R+×[ 0,gs]×{g∈L 1 ∶
+∣g∣⩽ 1} in the topology of R×R×L 1 where L1 =L 1([0, 1]). This continuity
+together with the obvious closedness ofGinL 1 yields
+Λ∗(r)=sup
+s∈R+
+inf
+(χ,g)∈K
+{G(s, χ, g)∣ g∈G } .(5.18)
+Due to the formula forgsgiven in Theorem 4.2 (ats=0), we have
+E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]⩽gs(5.19)
+and thus
+χ⩽gs<r,∀(χ, g)∈K.(5.20)
+In particular, we can seeK⊆[0,gs]×{∣g∣⩽1}.
+
+===== PAGE 34 =====
+34 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+As argued below (4.24),Kis compact under the norm topology of R×L 1,
+which implies thatK ∩(R× G) is compact. Also, notice that G(s,⋅,⋅) is affine for
+each fixed s and that G(⋅, χ, g)is concave for each fixed (χ, g). These together
+with the convexity of R+ and the compactness and convexity ofK ∩(R× G) allow
+us to apply the minimax theorem [ 27, 53] to interchange sup and inf in (5.18)
+and get the first equality in (5.17). The second equality there follows from (5.20),
+g∈G, and (5.16).□
+The following uses a similar argument as in Lemma 4.8.
+Lemma 5.7(Existence of minimizing martingale).There is an admissible
+probability space P (see Definition 4.1) such that, for every r>gs , (5.5) is valid
+and the supremum therein is achieved.
+Proof. Notice that “⩽” in (5.5) is an immediate consequence of Lemma 5.6. It
+remains to show the reverse inequality.
+We start with choosing the standard Wiener space W as underlying probability
+space. To emphasize this, we write Mart1(W) ,K (W) , andK 0(W) . Later, we
+will consider probability spaces other than W and extend this notation in the
+obvious way.
+Let (χn, gn)∈ K(W) be a minimizing sequence for (5.17), where we can assume
+thatg n ∈Gfor eachn. Hence, for sufficiently largen, we have
+(r−χ n)2
+2 ∫
+1
+0 ξ′′(t)(gn(t)−t)dt
+⩽Λ ∗(r)+1
+which along with (5.20) implies
+∫
+1
+0
+ξ′′(t)(gn(t)−t)dt⩾ (r−gs) 2
+2Λ∗(r)+2 =∶c 0 >0.
+Then, we takeG 0 =G∩{ ∫
+1
+0 ξ′′(t)(g(t)−t)dt⩾c 0}.
+As shown in the proof of Lemma 4.7,K (W) is compact in the topology of
+R×L 1 (where L1 =L 1([0, 1]). Since the functional (χ, g)↦ (r−χ)2
+2 ∫
+1
+0 ξ′′(t)(g(t)−t)dt is
+continuous on R× G0 equipped with the R×L 1-topology and the setG 0 is closed
+in L1, we can extract a convergent subsequence from (χn, gn)n∈N with some limit
+(χ, g)∈K(W)such thatg∈G 0 and the infimum in (5.17) is achieved:
+Λ∗(r)= (r−χ) 2
+2 ∫
+1
+0 ξ′′(t)(g(t)−t)dt
+.(5.21)
+By the same argument around (4.26) and (4.27), we can find an enriched
+probability space WfromWand martingalesα (n) ∈Mart 1(W)such that
+χn =E[hα (n)
+0 +α (n)
+1 ∫
+1
+0
+√
+ξ′′(t)dWt]andg n(t)=E[(α (n)
+t )
+2
+].
+Then, by the same argument around (4.28) and (4.29), we can pass the above
+equations to the limit and find a probability space P and a martingale α∈
+Mart1(P)such that
+χ=E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt]andg(t)=E [(αt)2] .
+
+===== PAGE 35 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 35
+This along with (5.21) gives “⩾” in (5.5) with Mart1 =Mart 1(P). As com-
+mented in the beginning, this completes the proof.□
+5.3.One-sided large-deviation principle.Since we only consider Λ (s) for
+s⩾ 0, we cannot derive the most general form of the LDP with testing sets
+being arbitrary subsets of R. Instead, we need a “one-sided” version, stated
+in the following proposition, whose proof is elementary but included here for
+completeness. The setting is general and independent of the rest of the paper.
+Proposition 5.8(One-sided LDP).Let (LN)N∈N be a sequence of random
+variables and, for eachN∈N, denote byΛ N ∶R +→Rthe function:
+ΛN(s)∶= 1
+N logEexp(sN LN),∀s∈R +.(5.22)
+Suppose that there exists a continuously differentiable functionΛ ∶R +→R such
+thatΛ N converges pointwise toΛon R+, and that m∶= Λ′(0)⩾ 0. Then, for
+every Borel measurable subsetA⊆[m,∞), we have
+−inf
+A○R
+Λ∗ ⩽lim inf
+N→∞
+1
+N logP{L N ∈A}⩽lim sup
+N→∞
+1
+N logP{L N ∈A}⩽−inf
+A
+Λ∗(5.23)
+where A○R and A are the interior relative to R and the closure of A, respectively,
+andΛ ∗∶R→R∪{+∞}is given as in(5.3).
+If, in addition,Λ ∗ is right-continuous at m (i.e. limr↘m Λ∗(r)= Λ∗(m)), then
+the lower bound in (5.23) can be improved to −inf A○ Λ∗, where A○ is the interior
+relative to[m,∞)ofA.
+Proof. Upper bound.For anyx, s⩾0, Chebyshev’s inequality gives
+P{L N ⩾x}⩽e −sN xEesN LN =e −sN x+NΛN(s).
+Sincescan be taken arbitrary overR +, we have
+lim sup
+N→∞
+1
+N logP{L N ⩾x}⩽inf
+s∈R+
+{−sx+Λ(s)}=−Λ ∗(x),∀x⩾0.(5.24)
+Let A⊆[ 0,∞) and set xA =infA∈ A⊆[ 0,∞) . Notice that P{L N ∈A}⩽
+P{L N ⩾x A} and that inf A Λ∗ ⩾ Λ∗(xA) since Λ∗ is increasing on R+ (due to (5.3)).
+Using these and (5.24), we get the desired upper bound
+lim sup
+N→∞
+1
+N logP{L N ∈A}⩽−Λ ∗(xA)⩽−inf
+A
+Λ∗.
+Notice that this upper bound holds for any Borel measurable A⊆[ 0,∞) . Due to
+m⩾0, this clearly holds for anyA⊆[m,∞).
+Lower bound.Since Λ ′ is continuous and increasing and Λ ′(0)=m , the image
+of Λ′(R+) is an interval with endpoint m⩽d⩽∞ . Fix any x∈(m, d) and let
+s∈R + be such that x= Λ′(s). Notice that we must have s> 0. For every ε> 0
+andµ∈(0, s], we have
+EesN LN 1{LN>x+ε} ⩽e −N µ(x+ε)Ee(s+µ)N LN =e −N µ(x+ε)+NΛN(s+µ)(5.25)
+and similarly
+EesN LN 1{LN<x−ε} ⩽e −N µ(x−ε)Ee(s−µ)N LN =e −N µ(x−ε)+NΛN(s−µ).(5.26)
+Since Λ is continuously differentiable, we have, for sufficiently smallµ,
+∣Λ(s+µ)−Λ(s)−µΛ ′(s)∣+∣Λ(s−µ)−Λ(s)+µΛ ′(s)∣⩽ εµ
+4 .
+
+===== PAGE 36 =====
+36 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Fix any suchµ. Recall that Λ ′(s)=x. ForNsufficiently large, we have
+∣ΛN(s+µ)−Λ N(s)−µx∣+∣Λ N(s−µ)−Λ N(s)+µx∣⩽ εµ
+2 .
+Using this in (5.25) and (5.26), we get
+EesN LN 1{LN/∈[x−ε,x+ε]}⩽2e −N εµ/2EesN LN .
+Hence, for sufficiently largeN, we have
+EesN LN 1{LN∈[x−ε,x+ε]} ⩾ 1
+2 EesN LN
+and thus
+P{LN ∈[x−ε, x+ε]}⩾ 1
+2 e−sN(x+ε) EesN LN = 1
+2 e−sN(x+ε)+NΛ N(s).
+Notice that the left-hand side gets smaller as ε decreases. Hence, letting N tend
+to infinity and thenεto zero on the right, we get
+lim inf
+N→∞
+1
+N logP{L N ∈[x−ε, x+ε]}⩾−sx+Λ(s)⩾−Λ ∗(x)(5.27)
+forx∈(m, d)and everyε>0.
+We want to extend (5.27) to every x∈(m,∞) . Due to d=sup R+ Λ′, we can
+verify that Λ∗(x)=∞ if x/∈(m, d]and thus (5.27) holds at x∈(d,∞) . It remains
+to verify (5.27) at x=d when d<∞ . In this case, for every ε> 0, we can find
+x∈(m, d) and ε′ > 0 such that [x−ε ′, x+ε′]⊆[d−ε, d+ε] . Since Λ∗ is increasing
+on R+ (due to (5.3)), we have Λ∗(d)⩾ Λ∗(x). Using these and (5.27) at x, we
+get (5.27) atd.
+For any A⊆[m,∞) , let x∈A ○R (taken relative to R and thus m/∈A○R). We can
+find sufficiently small ε so that [x−ε, x+ε]⊆A . Now, using the extended (5.27),
+we get
+lim inf
+N→∞
+1
+N logP{L N ∈A}⩾−Λ ∗(x).
+Optimizing over x∈A ○R, we obtain the desired lower bound. Notice that the
+lower bound holds trivially whenA ○R =∅.
+The additional part.We always have inf A○ Λ∗ ⩽inf A○R Λ∗. They differ only
+when A○ ∖A ○R ={m} and inf A○ Λ∗ = Λ∗(m). However, in this case, we can
+find a sequence in A○R converging to m from the right, which along with the
+right-continuity of Λ∗ at m ensures that inf A○R Λ∗ = Λ∗(m). Therefore, under
+the additional assumption, we must have inf A○ Λ∗ =inf A○R Λ∗.□
+5.4.Proof of Theorem 5.1.Clearly, the theorem can be divided into three
+parts and we prove each of them separately.
+Proof of(5.4)and the regularity ofΛ ∗. Let ΛN be defined as in (5.22) with LN
+given as in (1.3). Theorem 4.2 implies that ΛN converges to Λ as in(5.2) pointwise
+on R+. Lemma 5.3 ensures that Λ is continuously differentiable and (5.11) gives
+Λ′(0)=gs⩾ 0. Hence, we can apply Proposition 5.8 with m=gs to get (5.4).
+Lemma 5.2 gives that Λ∗ is continuous and increasing on [gs,∞) . This continuity
+also allows us to use the additional part in Proposition 5.8 so that A○ in (5.4) is
+taken relative to[gs,∞).□
+
+===== PAGE 37 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 37
+Proof of(5.5)and the uniqueness of minimizers. Fix any r>gs . Lemma 5.5
+gives Λ∗(r)>0 in (5.5) and we focus on the equality in (5.5).
+We follow similar steps as in the proof of Theorem 4.2. LetP be the probability
+space in Lemma 4.8 which is in general different from P in the statement of
+the theorem to prove. For clarity, we write Mart1(P) and Mart1(P) for
+the corresponding spaces of martingales. RecallGfrom (4.1) and we write
+Mart1,G(P) to be the subcollection of martingales α satisfyingE [α2
+●]∈ Gand
+similarly forMart 1,G(P).
+Let α∈Mart 1,G(P) minimize (5.5), allowed by Lemma 5.7. Let s∈R + be
+the unique maximizer of (5.3) given by Lemma 5.5, which satisfies r= Λ′(s) and
+s>0 as desired in Theorem 5.1.
+In the following, we write Γ (s, α)=rs−g(s, α) for g(s, α)appearing in (5.1).
+Then, the definition of Λ ∗(r)as in (5.3) along with (5.2) gives
+Λ∗(r)=sup
+s∈R+
+inf
+α∈Mart1,G(P)
+Γ(s, α)=inf
+α∈Mart1,G(P)
+Γ(s, α),
+while Lemma 5.7 along with (5.16) (allowed by (5.19)) gives
+Λ∗(r)=inf
+α∈Mart1,G(P)
+sup
+s∈R+
+Γ(s, α)=sup
+s∈R+
+Γ(s, α).
+Hence, for everys∈R + andα∈Mart 1,G(P), we have
+Λ∗(r)⩽Γ( s, α)and Γ(s, α)⩽Λ ∗(r).
+From this, we can deduce Λ∗(r)=Γ( s, α)and
+Γ(s, α)⩽Γ( s, α)⩽Γ( s, α).(5.28)
+The second optimality in (5.28) implies that α maximizes Λ(s), which by Theo-
+rem 4.2 gives that α is the unique maximizer satisfying (4.4) as described therein.
+In particular, α is measurable with respect to the filtration generated by the
+Wiener process.
+Now, we turn to the probability space P as in the statement of Theorem 5.1.
+We let ̂α be given by the same relation in (4.4) but with W now on P. Now
+since α and ̂α have the same law, Λ ∗(r)=sup s∈R+ Γ(s, α) together with the
+computation in (5.16) implies that “⩾” holds in (5.5). The reverse inequality “ ⩽”
+follows from Lemma 5.6. Therefore, we have verified the equality in (5.5).
+Lastly, applying the same argument above (leading to (5.28)) to P and ̂α, we
+can see that ̂α is uniquely determined via (4.4) given by Theorem 4.2 at s. This
+gives the uniqueness of minimizers.□
+Proof of(5.6). Fix any r>gs and let s and α be the optimizers as described
+in Theorem 5.1. By r= Λ′(s) and maximality, we have Λ ∗(r)=s Λ′(s)−
+Λ(s). Since α is the maximizer given in Theorem 4.2 at s, we can see that
+α maximizes (5.2). Hence, we have Λ (s)=g(s, α) and Λ′(s)=∂ sg(s, α)by
+Lemma 5.3. Using the expression of g(s, α)in (5.1), we can thus compute
+sΛ′(s)−Λ(s)and verify (5.6).□
+Now, the proof of Theorem 5.1 is complete.
+
+===== PAGE 38 =====
+38 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+6.Necessary and sufficient condition for quadratic behavior
+The main goal of this section is to prove Theorem 1.3. To understand the
+effect of the external field on the Parisi measure, namely the minimizer γ for gs
+given in (3.5)3, we recall [ 18, Proposition 3] as follows. We view d γ as a finite
+positive measure on[0,1]and denote its support by supp dγ.
+Proposition 6.1([ 18]).Let h∈R , let γ be the minimizer of the right-hand side
+in(3.5), and letXbe the solution to(4.3). For everyq∈supp dγ, we have
+E(∂ xΨγ(q, Xq))2 =q,(6.1)
+ξ′′(q)E(∂2
+xΨγ(q, Xq))
+2
+⩽1.(6.2)
+This proposition allows one to deduce the following well-known result. Heuris-
+tically, when h= 0, the spin distribution is balanced, and hence 0 belongs to the
+support of dγ.
+Proposition 6.2.Let h= 0and let γ be the minimizer of the right-hand side
+in(3.5). Then, we have0∈supp dγ.
+Such a result has been established for mixed-p spin models at finite temperature
+in [ 4]. At zero temperature, it is proved at the beginning of [ 19, Section 3.2]
+using [ 17, Theorem 5]. Although both works are formulated for mixed even
+spin models, the argument in fact applies to general mixed- p spin models. For
+completeness and clarity, we choose to reproduce the proof here. We begin with
+an analytic result, which is a simplification of [17, Theorem 5].
+Lemma 6.3.Let h∈R , let γ be the minimizer of the right-hand side in (3.5),
+and let q=inf supp dγ. For each u∈[ 0, q], let χ1(u) and χ2(u) be two centered
+jointly Gaussian random variables with covariances
+Eχ2
+1(u)=Eχ 2
+2(u)=ξ ′(q)andEχ 1(u)χ2(u)=ξ ′(u)
+and define
+ψ(u)=E∂ xΨγ(q, h+χ1(u))∂xΨγ(q, h+χ2(u)).
+Then,∣ψ ′(u)∣<1for everyu∈[0, q).
+Proof. We can realize χ1 and χ2 by choosing g0, g1, g2 to be i.i.d. standard
+Gaussian and set, fori∈{1,2},
+χi(u)=
+√
+ξ′(u)g0+
+√
+ξ′(q)−ξ ′(u)gi.
+As a consequence of q=inf supp dγ, we have γ= 0 on [0, q]and thus Xq =
+h+ ∫
+q
+0
+√
+ξ′′(t)dWt in view of (4.3). Hence, we have
+h+χ 1(u) d=h+χ 2(u) d=X q,∀u∈[0, q].(6.3)
+For brevity, we write F=∂ xΨγ(q,⋅) and often omit u in writing χ1 and χ2. Then,
+using the symmetry between χ1 and χ2 and Gaussian integration by parts, we
+3Recall that in this section we take h∈R to be deterministic, so that we have Ψ γ(0, h)
+instead ofE g1,h1 Ψγ(0, g1 +h 1)in (3.5).
+
+===== PAGE 39 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 39
+can differentiateψand compute
+ψ′(u)=2E [F′(h+χ 1)F(h+χ 2)χ′
+2]
+=ξ ′′(u)E[F ′(h+χ 1)F(h+χ 2)( g0√
+ξ′(u) − g1√
+ξ′(q)−ξ′(u))]
+=ξ ′′(u)E[F′(h+χ 1)F′(h+χ 2)] .
+For i∈{ 1, 2}, we define Zi =
+√
+ξ′′(q)F′(h+χ i). Since F′ =∂ 2
+xΨγ(q,⋅)> 0 due to
+Lemma 4.6, we have Zi > 0. By (6.2) and (6.3), we also have EZ2
+i ⩽ 1. Using
+this,ξ ′′(u)⩽ξ ′′(q), and the Cauchy–Schwarz inequality, we get
+∣ψ′(u)∣⩽EZ 1Z2 ⩽ (EZ2
+1)
+1
+2 (EZ2
+2)
+1
+2 ⩽1.
+Suppose that∣ψ ′(u)∣=1 for someu∈[0, q). Then, we haveEZ 1Z2 =1 and thus
+E(Z1−Z 2)2 =EZ 2
+1 +EZ 2
+2 −2EZ 1Z2 ⩽0,
+implying that Z1 =Z 2 a.s. However, since F′ is not constant, we can find open
+intervals O1 and O2 such that supO1 F′ <inf O2 F′. Due to u<q , χ1(u) and
+χ2(u) are not identical and the event that h+χ 1(u)∈O 1 and h+χ 2(u)∈O 2
+has positive probability. This implies Z1(u)≠Z 2(u) and reaches a contradiction.
+Therefore, we must have∣ψ ′(u)∣<1 for everyu∈[0, q).□
+Proof of Proposition 6.2. Set q=inf supp dγ. Let χ1, χ2, and ψ be given as in
+Lemma 6.3 at this q and h= 0. Notice that χ1(q)=χ 2(q) a.s. By this, (6.3),
+and (6.1), we get q=ψ(q) . On the other hand, due to ξ′(0)= 0, χ1(0) and
+χ2(0) are independent and thus we have ψ(0)=(E∂ xΨγ(q, χ1(0)))2 = 0 since
+∂xΨγ(q,⋅) is odd by Lemma 4.6. Therefore, both 0 and q are fixed points of ψ on
+[0, q]. Suppose q≠ 0. Then, the mean value theorem gives some u∈( 0, q)such
+thatψ ′(u)=1, which contradicts Lemma 6.3. Hence, we must haveq=0.□
+As announced in (1.8), we now show the following equivalence.
+Lemma 6.4.Letαbe the optimal martingale from Theorem 1.1. We have
+h=0if and only if ∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt=0.(6.4)
+Proof. Recall that Theorem 1.1 is derived from Theorem 4.2 at s= 0. Let γ∈M 0
+be the unique minimizer of the Parisi formula (3.2) (recall Remark 3.3) given
+by this theorem at s= 0, whose relation with α is described by (4.3) and (4.4).
+So, γ is the Parisi measure as often called in the spin glass literature. We recall
+a useful property of γ from [18, Proposition 4]. Denote the functional over M0
+inside the inf in (3.5) byP. Then, for everyγ ′ ∈M 0, we have
+dP(γ+λ(γ ′−γ))
+λ ∣
+λ=0
+= 1
+2 ∫
+1
+0
+ξ′′(t)(γ′(t)−γ(t))(E[α 2
+t]−t)dt⩾0.(6.5)
+Now, we are ready to derive “/Leftr⫯g⊸tl⫯ne⇒” in (6.4). When h= 0, Proposition 6.2 gives
+0 ∈supp dγ. Hence, there is a vanishing sequence (δn)n∈N of positive numbers
+such that γ(δn)> 0. For each n, substituting (γ(⋅)−γ(δ n))1[δn,1) ∈M 0 for γ′
+in (6.5), we get
+γ(δn) ∫
+1
+δn
+ξ′′(t)(E[α2
+t]−t)dt⩽− ∫
+δn
+0
+ξ′′(t)γ(t)(E[α2
+t]−t)dt⩽2ξ ′′(1)γ(δn)δn
+
+===== PAGE 40 =====
+40 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+Divide both sides by γ(δn) and send n→∞ to get ∫
+1
+0 ξ′′(t)(E[α2
+t]−t) dt⩽ 0. On
+the other hand, the condition on α in (1.4) requires this integral to be nonnegative.
+Therefore, we have verified “/Leftr⫯g⊸tl⫯ne⇒” in (6.4).
+Next, we turn to “ ⇐/Leftr⫯g⊸tl⫯ne”. It is equivalent to assuming h≠ 0 and showing
+∫
+1
+0 ξ′′(t)(E[α2
+t]−t) dt> 0. Since ∂xΨγ(0,⋅) (recall the PDE (3.3)) is odd and
+strictly increasing by Lemma 4.6, we have ∂xΨγ(0, h)≠0 when h≠ 0. Due to
+α0 =∂ xΨγ(0, h)in (4.4), this impliesE [α2
+0]> 0 and, by continuity, there is δ> 0
+such that ∫
+δ
+0 ξ′′(t)(E[α2
+t]−t ) dt> 0. Meanwhile, the condition on α in (1.4) gives
+∫
+1
+δ ξ′′(t)(E[α2
+t]−t ) dt⩾ 0. Combined, they yield ∫
+1
+0 ξ′′(t)(E[α2
+t]−t ) dt> 0 as
+desired.□
+We record an immediate corollary on Λ defined in (5.2).
+Corollary 6.5(Strict convexity of Λ at h≠ 0).Let s be given as in Lemma 5.4.
+If h≠ 0, then s= 0and thusΛis strictly convex on [0,∞) and satisfiesΛ (s)>sgs
+for everys>0.
+Proof. Suppose s > 0. Then, (5.12) from Lemma 5.4 implies ∫
+1
+0 ξ′′(t)(E[α2
+t]−
+t)dt= 0 for the optimal martingale α from Theorem 1.1. By Lemma 6.4, this
+implies h= 0, reaching a contradiction. Now with s= 0, the properties of Λ follow
+from Lemma 5.4.□
+We conclude by proving Theorem 1.3, treating the two distinct cases separately.
+Proof of Theorem 1.3 in the caseh≠0. Let α be the unique maximizer given in
+Theorem 1.1, which satisfies gs= E[hα0+ α1 ∫
+1
+0
+√
+ξ′′(t)dW t]. Lemma 6.4 gives
+c0∶= ∫
+1
+0 ξ′′(t)(E[α2
+t]−t)dt>0. Using these and (1.5), we get Λ ∗(r)⩽ (r−gs)2
+2c0
+.
+On the other hand, we set c1 = ∫
+1
+0 ξ′′(t)(1−t)dt> 0. Then, for any α admissible
+in the variational formula for Λ∗(r)in (1.5), we have
+(r−E[hα 0+α 1 ∫
+1
+0
+√
+ξ′′(t)dWt])
+2
+2 ∫
+1
+0 ξ′′(t)(E[α2
+t]−t) dt
+(1.4)
+⩾ (r−gs) 2
+2c1
+implying Λ∗(r)⩾ (r−gs)2
+2c1
+and completing the proof.□
+Proof of Theorem 1.3 in the caseh=0. It suffices to show that for any sequence
+(rn)n∈N satisfying rn >gs and limn→∞ rn =gs , we can extract a subsequence
+(rnk)k∈N such
+Λ∗(rnk)
+(rnk−gs)2 diverges to +∞. For each n, we invoke Theorem 5.1 to
+get sn satisfying rn = Λ′(sn) and minimizing Λ∗(rn), and α(n) maximizing Λ(sn)
+sn
+.
+First, we identify the limit of sn. Let s be given in Lemma 5.4, which gives
+that Λ is strictly convex on (s,∞) . Hence, Λ ′ is strictly increasing and bijective
+from (s,∞) to (Λ′(s), Λ′(∞)) where Λ′(∞)∶=lim s→∞ Λ′(s). The definition of s
+in Lemma 5.4 also gives Λ ′(s)=gs . This along with Λ ′(sn)=r n→gs and the
+continuity of Λ′ due to Lemma 5.3 implies
+lim
+n→∞
+sn =s .(6.6)
+Next, we turn to α(n). By a similar argument used in Step 2 of the proof of
+Lemma 5.3, we can extract a subsequence (W,(α(nk)
+t )t∈Q∩[0,1]) that converges
+
+===== PAGE 41 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 41
+in law to (W,( αt)t∈Q∩[0,1]) for some martingale α defined on a possibly larger
+probability space. Recall the expression of Λ(s)
+s from (5.1) and (5.2) which is
+exactly the left-hand side in (4.2) of Theorem 4.2. The choice of α(n) ensures
+Λ(sn)
+sn
+= g(sn,α(n))
+sn
+. At s= 0, we understand Λ(0)
+0 = Λ′(0)=gs (see (5.11)). Then,
+using the continuity of (s, α)↦ g(s,α)
+s , the aforementioned convergence of α(nk),
+and (6.6), we can pass nk to the limit to get Λ(s)
+s = g(s,α)
+s . In other words, α is
+the unique optimizer of Λ(s)
+s . Ifs >0, we invoke Lemma 5.4 to see
+∫
+1
+0
+ξ′′(t)(E[α2
+t]−t) dt=0.(6.7)
+If s = 0, then α is the optimizer of Λ(0)
+0 =gs , which by Lemma 6.4 and the
+assumption h= 0 also implies (6.7). Then, the convergence of α(nk) and (6.7)
+yield
+lim
+k→∞ ∫
+1
+0
+ξ′′(t)(E[(α (nk)
+t )
+2
+]−t)dt=0.
+Recall that α(n) is the optimizer for Λ ∗(rn) in (1.5) which along with (1.4)
+gives
+Λ∗(rnk)⩾ (rnk −gs) 2
+2 ∫
+1
+0 ξ′′(t)(E[(α (nk)
+t )
+2
+]−t)dt
+.
+Combining the above two displays, we have that
+Λ∗(rnk)
+(rnk−gs)2 diverges to +∞ as
+k→∞. As explained in the beginning, this gives the desired result.□
+Acknowledgements.HBC acknowledges funding from the NYU Shanghai Start-
+Up Fund and support from the NYU–ECNU Institute of Mathematical Sciences
+at NYU Shanghai. AG acknowledges funding from the European Research
+Council (ERC) under the European Union Horizon 2020 research and innovation
+program (grant agreement No. 884584). JK acknowledges support from the
+Natural Sciences and Engineering Research Council of Canada and the Canada
+Research Chairs programme (RGPIN-2020-04597, DGECR-2020 00199). JCM
+acknowledges the support of the ERC MSCA grant SLOHD (101203974).
+References
+[1] Michael Aizenman, Robert Sims, and Shannon L. Starr. Extended variational principle for
+the Sherrington-Kirkpatrick spin-glass model.Phys. Rev. B, 68(21):214403, 2003.
+[2] Charalambos D. Aliprantis and Kim C. Border.Infinite dimensional analysis. A hitchhiker’s
+guide. Springer, Berlin, third edition, 2006.
+[3] Timo Aspelmeier, Alain Billoire, Enzo Marinari, and Michael Arthur Moore. Finite-size
+corrections in the Sherrington-Kirkpatrick model.J. Phys. A, 41(32):324008, 21, 2008.
+[4] Antonio Auffinger and Wei-Kuo Chen. On properties of Parisi measures.Probab. Theory
+Related Fields, 161(3-4):817–850, 2015.
+[5] Antonio Auffinger and Wei-Kuo Chen. The Parisi formula has a unique minimizer.Comm.
+Math. Phys., 335(3):1429–1444, 2015.
+[6] Antonio Auffinger and Wei-Kuo Chen. Parisi formula for the ground state energy in the
+mixedp-spin model.Ann. Probab., 45(6B):4617–4631, 2017.
+[7] Jinho Baik and Ji Oon Lee. Fluctuations of the free energy of the spherical Sherrington-
+Kirkpatrick model.J. Stat. Phys., 165(2):185–224, 2016.
+
+===== PAGE 42 =====
+42 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+[8] G´ erard Ben Arous, Amir Dembo, and Alice Guionnet. Aging of spherical spin glasses.
+Probab. Theory Related Fields, 120(1):1–67, 2001.
+[9] G´ erard Ben Arous and Alice Guionnet. Large deviations for Wigner’s law and Voiculescu’s
+non-commutative entropy.Probab. Theory Related Fields, 108(4):517–542, 1997.
+[10] Stefan Boettcher. Extremal optimization for Sherrington-Kirkpatrick spin glasses.Eur.
+Phys. J. B, 46(4):501–505, 2005.
+[11] Stefan Boettcher. Simulations of ground state fluctuations in mean-field Ising spin glasses.
+J. Stat. Mech. Theory Exp., 2010(7):P07002, 2010.
+[12] Jean-Philippe Bouchaud, Florent Krzakala, and Olivier Martin. Energy exponents and
+corrections to scaling in Ising spin glasses.Phys. Rev. B, 68(22):224404, 2003.
+[13] Sourav Chatterjee.Superconcentration and related topics. Springer Monographs in Mathe-
+matics. Springer, Cham, 2014.
+[14] Hong-Bin Chen, Victor Issa, and Jean-Christophe Mourrat. The convex structure of the
+Parisi formula for multi-species spin glasses.Preprint, arXiv:2508.06397, 2025.
+[15] Hong-Bin Chen and Jean-Christophe Mourrat. On the free energy of vector spin glasses
+with nonconvex interactions.Probab. Math. Phys., 6(1):1–80, 2025.
+[16] Hong-Bin Chen and Jiaming Xia. Hamilton-Jacobi equations from mean-field spin glasses.
+Probab. Theory Related Fields, 192(3-4):803–873, 2025.
+[17] Wei-Kuo Chen. Chaos in the mixed even-spin models.Comm. Math. Phys., 328(3):867–901,
+2014.
+[18] Wei-Kuo Chen, Partha Dey, and Dmitry Panchenko. Fluctuations of the free energy in the
+mixed p-spin models with external field.Probab. Theory Related Fields, 168(1-2):41–53,
+2017.
+[19] Wei-Kuo Chen, Madeline Handschy, and Gilad Lerman. On the energy landscape of the
+mixed evenp-spin model.Probab. Theory Related Fields, 171(1-2):53–95, 2018.
+[20] Wei-Kuo Chen and Arnab Sen. Parisi formula, disorder chaos and fluctuation for the ground
+state energy in the spherical mixed p-spin models.Comm. Math. Phys., 350(1):129–173,
+2017.
+[21] Elizabeth Collins-Woodfin and Han Gia Le. Free energy fluctuations in SK and related
+spin glass models: A literature survey.Preprint, arXiv:2510.26960, 2025.
+[22] Pierluigi Contucci and Emanuele Mingione. A multi-scale spin-glass mean-field model.
+Comm. Math. Phys., 368(3):1323–1344, 2019.
+[23] Andrea Crisanti, Giovanni Paladin, Angelo Vulpiani, and Hans-Jurgen Sommers. Replica
+trick and fluctuations in disordered systems.J. Phys. I, 2(7):1325–1332, 1992.
+[24] Tomas Dominguez and Jean-Christophe Mourrat. Infinite-dimensional Hamilton-Jacobi
+equations for statistical inference on sparse graphs.SIAM J. Math. Anal., 56(4):4530–4593,
+2024.
+[25] Tomas Dominguez and Jean-Christophe Mourrat. Mutual information for the sparse
+stochastic block model.Ann. Probab., 52(2):434–501, 2024.
+[26] Tomas Dominguez and Jean-Christophe Mourrat.Statistical mechanics of mean-field
+disordered systems: a Hamilton-Jacobi approach. Zurich Lectures in Advanced Mathematics.
+European Mathematical Society (EMS), Z¨ urich, 2024.
+[27] Ky Fan. Minimax theorems.Proc. Nat. Acad. Sci. USA, 39:42–47, 1953.
+[28] Silvio Franz, Giorgio Parisi, and Federico Ricci-Tersenghi. Overlap locking and non-
+perturbative effects in spin glasses.Preprint, arXiv:2602.18399, 2026.
+[29] Curtis Grant, Aukosh Jagannath, and Justin Ko. Pseudo-maximum likelihood theory for
+high-dimensional rank one inference, 2025.
+[30] Francesco Guerra. Sum rules for the free energy in the mean field spin glass model.Fields
+Inst. Commun., 30:161–170, 2001.
+[31] Francesco Guerra. Broken replica symmetry bounds in the mean field spin glass model.
+Comm. Math. Phys., 233(1):1–12, 2003.
+[32] Brice Huang and Mark Sellke. A constructive proof of the spherical Parisi formula.Preprint,
+arXiv:2311.15495, 2023.
+[33] Victor Issa. A Hopf-like formula for mean-field spin glass models.Preprint,
+arXiv:2410.08754, 2024.
+[34] Aukosh Jagannath and Subhabrata Sen. On the unbalanced cut problem and the generalized
+Sherrington-Kirkpatrick model.Ann. Inst. Henri Poincar´ e D, 8(1), 2021.
+
+===== PAGE 43 =====
+LARGE DEVIATIONS FOR THE GROUND-STATE ENERGY 43
+[35] Seung-Yeon Kim, Sung Jong Lee, and Jooyoung Lee. Ground-state energy and energy
+landscape of the sherrington-kirkpatrick spin glass.Phys. Rev. B, 76:184412, 2007.
+[36] Anastasia Kireeva and Jean-Christophe Mourrat. Breakdown of a concavity property of
+mutual information for non-Gaussian channels.Inf. Inference, 13(2):Paper No. iaae008, 21,
+2024.
+[37] Bertrand Lacroix-A-Chez-Toine, Yan V. Fyodorov, and Pierre Le Doussal. Replica-
+symmetry breaking transitions in the large deviations of the ground-state of a spherical
+spin-glass.J. Stat. Phys., 191(2):Paper No. 11, 76, 2024.
+[38] Jean-Christophe Mourrat. Nonconvex interactions in mean-field spin glasses.Probab. Math.
+Phys., 2(2):281–339, 2021.
+[39] Jean-Christophe Mourrat. Free energy upper bound for mean-field vector spin glasses.Ann.
+Inst. Henri Poincar´ e Probab. Stat., 59(3):1143–1182, 2023.
+[40] Jean-Christophe Mourrat. Spin glasses and the parisi formula.Preprint, arXiv:2510.01054,
+2025.
+[41] Jean-Christophe Mourrat. Un-inverting the Parisi formula.Ann. Inst. Henri Poincar´ e
+Probab. Stat., 61(4):2709–2720, 2025.
+[42] Matteo Palassini. Ground-state energy fluctuations in the Sherrington-Kirkpatrick model.
+Preprint, arXiv:cond-mat/0307713, 2003.
+[43] Matteo Palassini. Ground-state energy fluctuations in the Sherrington-Kirkpatrick model.
+J. Stat. Mech. Theory Exp., 2008(10):P10005, 2008.
+[44] Dmitry Panchenko. On differentiability of the Parisi formula.Electron. Commun. Probab.,
+13:241–247, 2008.
+[45] Dmitry Panchenko. The Parisi ultrametricity conjecture.Ann. of Math. (2), 177(1):383–393,
+2013.
+[46] Dmitry Panchenko.The Sherrington-Kirkpatrick model. Springer Monographs in Mathe-
+matics. Springer, New York, 2013.
+[47] Dmitry Panchenko. The free energy in a multi-species Sherrington-Kirkpatrick model.Ann.
+Probab., 43(6):3494–3513, 2015.
+[48] Giorgio Parisi and Tommaso Rizzo. Large deviations in the free energy of mean-field spin
+glasses.Phys. Rev. Lett., 101(11):117205, 2008.
+[49] Giorgio Parisi and Tommaso Rizzo. Phase diagram and large deviations in the free energy
+of mean-field spin glasses.Phys. Rev. B, 79(13):134205, 2009.
+[50] Giorgio Parisi and Tommaso Rizzo. Universality and deviations in disordered systems.
+Phys. Rev. B, 81(9):094201, 2010.
+[51] Giorgio Parisi, Leopoldo Sarra, and Lorenzo Talamanca. Study of longitudinal fluctuations
+of the sherrington–kirkpatrick model.J. Stat. Mech. Theory Exp., 2019(3):033302, 2019.
+[52] R. Tyrrell Rockafellar and Roger J.-B. Wets.Variational analysis, volume 317 of
+Grundlehren der Mathematischen Wissenschaften. Springer-Verlag, Berlin, 1998.
+[53] Maurice Sion. On general minimax theorems.Pacific J. Math., 8:171–176, 1958.
+[54] Eliran Subag and Ofer Zeitouni. The extremal process of critical points of the pure p-spin
+spherical spin glass model.Probab. Theory Related Fields, 168(3-4):773–820, 2017.
+[55] Michel Talagrand. The Parisi formula.Ann. of Math. (2), 163(1):221–263, 2006.
+[56] Michel Talagrand. Large deviations, Guerra’s and A.S.S. schemes, and the Parisi hypothesis.
+J. Stat. Phys., 126(4-5):837–894, 2007.
+[57] Craig A. Tracy and Harold Widom. On orthogonal and symplectic matrix ensembles.
+Comm. Math. Phys., 177(3):727–754, 1996.
+
+===== PAGE 44 =====
+44 H.-B. CHEN, A. GUIONNET, J. KO, B. LACROIX-A-CHEZ-TOINE, AND J.-C. MOURRAT
+(Hong-Bin Chen)NYU-ECNU Institute of Mathematical Sciences, NYU Shanghai,
+Shanghai, China
+(Alice Guionnet)Department of Mathematics, ENS Lyon and CNRS, Lyon, France
+(Justin Ko)Department of Mathematics, Syracuse University, New York, United
+States
+(Bertrand Lacroix-A-Chez-Toine)Department of Mathematics, King’s College, Lon-
+don, United Kingdom
+(Jean-Christophe Mourrat)Department of Mathematics, ENS Lyon and CNRS, Lyon,
+France
