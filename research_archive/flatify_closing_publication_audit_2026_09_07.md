@@ -35,3 +35,9 @@ caches, reviewed software dependencies and regenerable products are
 excluded. The original exact-range executable is also a reviewed build
 product, not unpreserved mathematics. Archived source whitespace is left
 unchanged deliberately; canonical new files passed the scoped diff check.
+
+Final post-commit audit: all 1,852 remaining research working originals
+match the saved snapshot; no missing or changed research payload remains.
+The only normally visible untracked paths are the reviewed exact-range
+build executable and the losslessly compressed large witness original.
+All canonical proofs, audits, verifier sources and outputs are committed.
