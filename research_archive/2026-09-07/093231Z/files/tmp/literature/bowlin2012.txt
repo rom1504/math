@@ -1,0 +1,715 @@
+Maximum Frustration
+in Bipartite Signed Graphs
+Garry Bowlin
+gsbowlin@gmail.com
+Submitted: April 3, 2012; Accepted: Oct 11, 2012; Published: Oct 25, 2012
+Mathematics Subject Classiﬁcation: 05C22, 91D30
+Abstract
+A signed graph is a graph where each edge is labeled as either positive or negative.
+A circle is positive if the product of edge labels is positive. The frustration index
+is the least number of edges that need to be removed so that every remaining
+circle is positive. The maximum frustration of a graph is the maximum frustration
+index over all possible sign labellings. We prove two results about the maximum
+frustration of a complete bipartite graphKl,r, with l left vertices and r right vertices.
+First, it is bounded above by
+lr
+2
+(
+1− 1
+2l−1
+( l− 1
+⌊l−1
+2 ⌋
+))
+.
+Second, there is a unique family of signed Kl,r that reach this bound. Using this
+fact, exact formulas for the maximum frustration of Kl,r are found for l ⩽ 7.
+1 Introduction
+In 1954, Harary published “On the notion of balance of a signed graph”, introducing the
+notion of a signed graph [6]. In his paper, Harary deﬁned a signed graph as a graph whose
+edge set has been partitioned into positive and negative edges. He called a circle positive
+if it had an even number of negative edges, and he called a signed graph balanced if every
+circle was positive. He then gave both necessary and suﬃcient conditions for balance.
+Four years after Harary’s paper, Abelson and Rosenberg, [1], proposed a measure
+of imbalance, called frustration index (which they called “complexity” and which Harary
+called the “line index of balance”). They also gave an upper bound on the frustration index
+for simple graphs on n vertices, which Petersdorf proved in [8]. In addition, Petersdorf
+proved that for eachn, the signed graph that obtain this bound is unique (up to switching).
+In [10], Sol´ e and Zaslavsky discovered that the covering radius of the cutset code
+of a graph is equal its maximum frustration index. In particular, they showed that the
+the electronic journal of combinatorics 19(4) (2012), #P10 1
+covering radius of the Gale–Berlekamp codes were equal to the maximum frustration index
+of complete bipartite graphs.
+In [5], Graham and Sloane show that the covering radius of the l×r rectangular
+Gale–Berlekamp code is bounded above by
+lr
+(1
+2− 1
+2l
+(l− 1
+⌊l−1
+2⌋
+))
+,
+but, they do not prove that the bound is sharp. The goal of this paper is to provide a new
+proof of this result, showing that the bound is indeed sharp and that the signed graphs
+that meet this bound are unique (up to switching).
+2 Preliminaries
+A signed graph, Σ, is a pair ( G,σ ) where G is a graph, and σ :E(G)→{ +,−}. We call
+σ the sign function of Σ. The graph G is called the underlying graph of Σ, and is written
+|Σ|. A signed graph ( G,σ ) is called bipartite if its underlying graph is bipartite. In this
+paper the bipartition of the vertices is chosen in advance and will be denoted by the pair
+(L,R ). An edge is positive ifσ(e) = +, and negative otherwise. The set of negative edges
+of Σ is denoted E−(Σ), and the set of positive edges is E+(Σ). The set E−
+v is the set
+of negative edges incident to vertex v, and E+
+v is the set of positive edges incident to v.
+Similarly, we partition the neighbors of v, Nv, into N +
+v and N−
+v . If Nv =N +
+v , v is called
+all positive. If every vertex of (G,σ ) is all positive, then the signed graph is the all positive
+signed graph +G. A circle in Σ is positive if the product of its edge labels is positive. A
+signed graph Σ is said to be balanced if every circle in Σ is positive.
+IfU⊆V (Σ), the graph obtained by negating the edges in the cut [U,U c] is a switching
+of Σ and is denoted Σ U. A signed graph Σ ′ is switching equivalent to Σ if Σ′ = ΣU for
+some U⊆ V . The set of signed graphs switching equivalent to Σ is called the switching
+class of Σ, written [Σ]. It is well known that the switching class [Σ] contains + G if and
+only if Σ = (G,σ ) is balanced.
+The frustration index of a signed graph Σ, f(Σ), is the minimum number of edges
+whose deletion yields a balanced signed graph. If Σ is balanced then f(Σ) = 0. It is easy
+to show that
+f(Σ) = min
+Σ′∈[Σ]
+|E−(Σ′)|. (1)
+For more information on signed graphs, one can refer to [11].
+3 Graph Cuts and Frustration Index
+Let us consider an arbitrary signed graph Σ and a cut [ U,U c] of the underlying graph
+of Σ. The weight of [U,U c], written ω[U,U c], is equal to the number of positive edges
+in [U,U c] minus the number of negative edges in [ U,U c]. A cut is said to be negative if
+ω[U,U c] is negative.
+the electronic journal of combinatorics 19(4) (2012), #P10 2
+Lemma 1. LetU⊆V . The number of negative edges in ΣU is|E−(Σ)| +ω[U,U c].
+Proof. The edges of [U,U c] are the only edges of Σ that change signs when switching U.
+Therefore the number of negative edges of Σ U is equal to the number of negative edges
+of Σ not in [ U,U c] plus the number of positive edges of Σ in [ U,U c]. This is the same
+as the number of negative edges of Σ minus the number of negative edges in [ U,U c] plus
+the number of positive edges in [ U,U c]. Therefore the number of negative edges of Σ U is
+equal to the number of negative edges of Σ plus ω[U,U c].
+Theorem 2. The frustration index of Σ is|E−(Σ)| + min
+U⊆V
+ω[U,U c].
+By equation (1), the frustration index of Σ is the minimum over U⊆V of the number
+of negative edges of ΣU. By Lemma 1, we know that the number of negative edges in Σ U
+is equal to the number of negative edges in Σ plusω[U,U c]. Thus to minimize the number
+of negative edges in ΣU we must minimize ω[U,U c].
+It is important to note that computing the minimum weight of a cut is NP-hard when
+you allow negative weights, so using this theorem to ﬁnd frustration index is not much of
+an improvement over checking all 2|V| switchings.
+Deﬁnition 3. A signed graph Σ is said to be reduced if no switching of Σ has fewer
+negative edges.
+Note that when Σ is reduced, its frustration index is equal to the number of negative
+edges of Σ.
+Lemma 4. A signed graph Σ is reduced if and only if ω[U,U c] is non-negative for each
+U⊆V (Σ).
+Proof. If there is a U ⊆ V such that ω[U,U c] is negative, then Σ U has fewer negative
+edges, and Σ is not reduced. Alternatively if ω[U,U c] is always non-negative, then every
+switching of Σ has at least as many negative edges, and Σ is reduced.
+Deﬁnition 5. For a graph G, the maximum frustration of G, denoted Fmax(G), is the
+maximum value of f(G,σ ) over all signings σ of G.
+In order to determine the value of Fmax(G) for a graph G, we need only look at those
+signings of G that are reduced.
+From here on we consider an arbitrary signed bipartite graph Σ.
+Deﬁnition 6. Let G = (L,R,E ) be a bipartite graph and let S⊆L. An S-cut is a cut
+of G of the form [S∪T, (S∪T )c] where T⊆R.
+Lemma 7. Let Σ = (L,R,E,σ ) be a signed bipartite graph. For each S⊆L, the set
+T :={v∈R||S∩N +
+v|−| S∩N−
+v| ⩽|Sc∩N +
+v|−| Sc∩N−
+v|}
+minimizes the weight of an S-cut. The weight of this minimum S-cut is given by
+w(S) =
+∑
+v∈R
+min
+(
+|S∩N +
+v|−| S∩N−
+v|,|Sc∩N +
+v|−| Sc∩N−
+v|
+)
+. (2)
+the electronic journal of combinatorics 19(4) (2012), #P10 3
+Proof. Let v ∈ R be a vertex with type ( N +
+v ,N−
+v ). For any T ⊆ R, if v ∈ T , then
+Ev contributes|S∩N +
+v|−| S∩N−
+v| to the weight of the cut. Otherwise Ev contributes
+|Sc∩N +
+v|−|Sc∩N−
+v| to the weight of the cut. To minimize the weight of theS-cut,T must
+be a set of verticesv such that for eachv∈T ,|S∩N +
+v|−|S∩N−
+v| ⩽|Sc∩N +
+v|−|Sc∩N−
+v|.
+Since replacing S by Sc in equation (2) does not change the sum, w(S) is equal to
+w(Sc).
+Let (P,N ) be a pair of disjoint subsets of L and let T(L) be the collection of all such
+pairs. If we deﬁne
+wS(P,N ) := min
+(
+|S∩P|−| S∩N|,|Sc∩P|−| Sc∩N|
+)
+, (3)
+then we only need to count the number of right vertices such that ( P,N ) = (N +
+v ,N−
+v ) in
+order to compute w(S). If xΣ(P,N ) is the number of such vertices, then we can rewrite
+w(S) as follows:
+w(S) =
+∑
+(P,N)
+xΣ(P,N )wS(P,N ) = xΣ· wS.
+Observe that if S ⊆ L, then wS(P,N ) = wS∩(P∪N)(P,N ) because the formula for
+wS(P,N ) depends only on the intersection of S∩P and S∩N.
+Remark 8. If we are given a positive integer vector x∈ RT(L), we can construct a signed
+graph so that xΣ = x. Start with Σ = ((L, ∅, ∅),σ ). For each (P,M ) such that x(P,M )
+is non-zero, add x(P,M ) new vertices to R and new edges signed so that N +
+v = P and
+N−
+v =M. Now we have a signed Kl,r and xΣ = x. Such a signed bipartite graph is called
+the corresponding signed graph of x.
+Theorem 9. Let Σ be a signed bipartite graph with underlying bipartite graph (L,R,E ).
+Then Σ is reduced if and only if wS· xΣ is non-negative for all S⊆L.
+Proof. The value of w(S) is the minimum over all T⊆R of ω[S∪T, (S∪T )c]. Let T be
+any set that minimizes the value of w(S) . If we switch the cut [ S∪T, (S∪T )c], the size
+of E− will increase by w(S). Therefore |E−(ΣS∪T )| =|E−(Σ)| +w(S). If Σ is reduced,
+every switching of Σ will have more negative edges. Thus w(S) ⩾ 0 for all S. Since
+wS· xΣ =w(S), Σ is reduced if and only if wS· xΣ is non-negative for all S⊆L.
+Lemma 10. LetS⊆P∪N for some type (P,N ). Then
+wS(P,N ) =
+{
+|S∆N|−| N| if|S∆N| ⩽ 1
+2|P∪N|,
+|Sc∆N|−| N| if|S∆N| ⩾ 1
+2|P∪N|. (4)
+Proof. This is just separating the two possibilities from equation (3) and replacing |S|−
+2|S∩N| by|S∆N|−| N|.
+Lemma 11. LetS⊆P∪N for some type (P,N ) such that|N| ⩽|P|. Then
+wS(P,N ) =
+{
+−wS(P ∆S,N ∆S) if|S∆N| ⩽ 1
+2|P∪N|,
+−wS(N∆S,P ∆S) if|S∆N| ⩾ 1
+2|P∪N|. (5)
+the electronic journal of combinatorics 19(4) (2012), #P10 4
+Proof. If|N| ⩽|P| then|N| ⩽ 1
+2|P∪N|. By equation 4,
+wS(P ∆S,N ∆S) =|N|−| S∆N| =−wS(P,N ). (6)
+If|N| ⩾|P|, then|P| ⩾ 1
+2|P∪N|. By equation 4,
+wS(N∆S,P ∆S) =|P|−| S∆P| =|P|−| Sc∆N| =−wS(P,N ). (7)
+Let L be a ﬁnite set. The set B(L) := {{S,Sc}| S⊆ L} is the set of bipartitions
+of L. If {S,Sc} and{T,T c} are two elements of B(L), then the symmetric diﬀerence
+{S,Sc}∆{T,T c} is deﬁned to be {S∆T,S c∆T}. Note that the symmetric diﬀerence of
+two bipartitions is commutative so B(L) is an abelian group.
+Theorem 12. For each bipartition{P,N}∈ B(L), let (P,N ) be ordered so that |P| ⩾
+|N|. Then for any S⊆L the following holds:
+∑
+{P,N}∈B(L)
+wS(P,N ) = 0. (8)
+Proof. By equation (5), if|S∆N| ⩽ 1
+2|P∪N|, then wS(P,N ) and wS(P ∆S,N ∆S) cancel.
+Otherwise,|S∆N|> 1
+2|P∪N| and wS(P,N ) will cancel with wS(N∆S,P ∆S). Since only
+one of the latter two can appear in the sum, the sum is zero.
+4 A Cone of Reduced Conﬁgurations
+For a complete bipartite graph Kl,r = (L,R,E ) and signing σ, each vertexv∈R satisﬁes
+N +
+v ∪N−
+v =L, so we need only consider the pairs in B(L). Since wS(P,N ) = wSc(P,N ),
+we only need to check one cut for each bipartition {S,Sc} of L to determine if a signed
+complete bipartite graph is reduced. Let Kl be the B(L)× B(L) matrix whose entry in
+the ({S,Sc},{P,N}) position is the weight contributed by a vertex of type ( P,N ) to a
+minimumS-cut. That is (KL){S,Sc},{P,N} = wS(P,N ).
+Theorem 13. Let Σ be a signed complete bipartite graph with left vertex set L. Then
+KL· xΣ ⩾ 0 if and only if Σ is reduced.
+Proof. By Theorem 9, Σ is reduced if and only if wS· xΣ ⩾ 0 for all S⊆L.
+Let l =|L|, deﬁne Pl to be the set of vectors in the ﬁrst orthant of RB(L) satisfying
+KL· x ⩾ 0. Also, deﬁne f∈ RB(L) as the vector such that
+f(P,N ) := min(|P|,|N|). (9)
+In order translate frustration index of a bipartite graph to a geometric setting, we
+need the following deﬁnition.
+Deﬁnition 14. The frustration of a vector x∈ Pl is f· x.
+the electronic journal of combinatorics 19(4) (2012), #P10 5
+For an integer vector x in Pl, the frustration of x is the frustration index of the
+corresponding signed graph. Let Pl,r be the set of vectors of x∈ Pl such that x· 1 =
+r. Here the integer vectors correspond to reduced signings of Kl,r. We are looking to
+maximize f·x subject toKL·x ⩾ 0 and x·1 =r where x is a non-negative integer vector.
+That is, we have the integer linear program:
+max{f· x| x ⩾ 0,KL· x ⩾ 0, x∈ ZB(L)}. (10)
+Let ˜KL be the matrix obtained from KL by replacing the zero row with the all ones
+vector. Since the only row of KL that is all zero is the row corresponding to ∅, this is
+well deﬁned.
+Lemma 15. If the matrix ˜KL is invertible, then r
+2l−11 is the unique vertex that maximizes
+f· x in Pl,r.
+Proof. If ˜KL is invertible, then r
+2l−11 is the only vertex of Pl,r that satisﬁes ˜KLx =re∅.
+The columns of ˜K−1
+L give the directions in which we can travel inPl,r by violating a single
+hyperplane equality. This means ˜K−1
+l · f gives the change in frustration from traveling in
+each of these directions away from v. Deﬁne b∈ RB(L) by letting b(∅,L ) = 2l−1− 1 and
+b(S,Sc) = −1 otherwise. Using equation (5) we can see that ˜Kl· b = 2l−1f, and thus
+˜K−1
+l · f = 1
+2l−1b. This means that traveling along any edge of Pl,r incident to the point
+r
+2l−11 will reduce the frustration of the resulting vector. Since r
+2l−11 is the only vertex
+satisfying
+˜KLx =
+{
+r if{S,Sc} ={∅,L}
+0 otherwise, (11)
+it must maximize f· x in Pl,r.
+LetSL be the B(L)× B(L) matrix such that
+(SL){S,Sc},{P,M} = min(|S∆M|,|Sc∆M|).
+Note thatSL =KL + 1Tf. This is because the ({S,Sc},{P,M}) entry ofKL is
+min(|S∆M|−| M|,|Sc∆M|−| M|), (12)
+where|P| ⩽|M|. Thus the ﬁrst row of SL is f.
+Lemma 16. IfSL is invertible, then the null space of KL is spanned by 1.
+Proof. Let y be a non-zero element in the null space of SL. By equation (4), we know
+thatSL− 1Tf =KL. We also know that f is the ﬁrst row of SL, which means f· y = 0.
+Therefore, y is in the null space ofKL. IfSL is invertible, then the only way to be in the
+null space of KL is to be a solution of SL = c1 for some constant c. If SL is invertible,
+then there can only be one solution to this equation. This proves that KL has nullity 1.
+Deﬁnition 17. Let G be a group, and let M be a G× G matrix. M is said to be
+G-invariant if there is a class function f : G→ C such thatMg,h =f(hg−1).
+the electronic journal of combinatorics 19(4) (2012), #P10 6
+Since (SL){S,Sc},{P,N} = f({S,Sc}∆{P,N}),SL is B(L)-invariant.
+Let χ be a character of G. Deﬁne λχ by
+λχ :=
+∑
+g∈G
+χ(g)f(g). (13)
+Theorem 18 (Eigenvalues of Invariant Matrices [2]). IfM is a G-invariant matrix, then
+the eigenvectors of M are the characters of G. Furthermore, if χ is a character of G,
+then λχ is the eigenvalue of χ.
+Deﬁnition 19. Let 0 ⩽i ⩽l. Deﬁne
+λi(l) :=
+∑
+T⊆[l−1]
+(−1)|T∩[i]| min(|T|,l−|T|). (14)
+Theorem 20. Let 0 ⩽ i ⩽ l. Then λi(l) is an eigenvalue of SL. Furthermore, the
+multiplicity of λi(l) is
+(l−1
+i
+)
+.
+Proof. Since B(L) is isomorphic to the power set of [ l− 1], χS(T ) = ( −1)|T∩S| is a
+character of B(L) for each S⊆ [l− 1]. By equation (13),
+λS(l) =
+∑
+T⊆[l−1]
+(−1)|T∩S| min(|T|,l−|t|).
+Furthermore, the value of λS(l) depends only on the size of S. Therefore,
+λS(l) =
+∑
+T⊆[l−1]
+(−1)|T∩{1,2,...,|S|}| min(|T|,l−|t|).
+Since λS(l) =λi(l), λi(l) is an eigenvalue ofSL. To prove that the multiplicity of λi(l) is(l−1
+i
+)
+, note that there are
+(l−1
+i
+)
+subsets of [l− 1] of size i.
+Lemma 21. If l is odd and 0<i<l , then λi(l) = 1
+2λi(l + 1).
+Proof. Let us compute the value of λi(l + 1) by breaking the summation into two parts.
+The ﬁrst part is over those subsets such that l̸∈ T , and the second part is over subsets
+such that l∈T .
+λi(l + 1) =
+∑
+T⊆[l−1]
+(−1)|T∩[i]| min(|T|,l + 1−|T|)
++
+∑
+T⊆[l−1]
+(−1)|(T∪{l})∩[i]| min(|T∪{l}|,l + 1−|T∪{l}|).
+Since i < l, (−1)|(T∪{l})∩[i]| = (−1)|T∩[i]|. So except for the +1 that appears on diﬀerent
+sides to the two minimums, each term looks like the corresponding term in λi(l). We will
+move the +1 from the minimum in the ﬁrst term into a new sum when l + 1−|T|<|T|.
+the electronic journal of combinatorics 19(4) (2012), #P10 7
+Similarly, we will move the +1 from the minimum in the ﬁrst term into a new sum when
+l + 1−|T| ⩾|T|. Thus
+λi(l + 1) = 2λi(l) +
+∑
+T⊆[l−1]
+l<2|T|
+(−1)|T∩[i]| +
+∑
+T⊆[l−1]
+l>2|T|
+(−1)|T∩[i]|.
+Since l is odd, the two remaining pieces cancel, and we are done.
+Lemma 22. If i is even and 0<i ⩽l, then λi(l) =λi−1(l).
+Proof. We will show that λi(l)−λi−1(l) = 0 when i is even. Note that
+λi(l)−λi−1(l) =
+∑
+T⊆[l−1]
+min(|T|,l−|T|)
+(
+(−1)|T∩[i]|− (−1)|T∩[i−1]|)
+.
+If i̸∈T , then
+(
+(−1)|T∩[i]|− (−1)|T∩[i−1]|)
+is zero. If i∈T , then this diﬀerence is equal to
+−2(−1)|T∩[i−1]|. Thus the only non-zero terms left in the sum are when i∈T . Therefore,
+λi(l)−λi−1(l) =−2
+∑
+T⊆[l−1]
+i∈T
+min(|T|,l−|T|)(−1)|T∩[i−1]|.
+Because i− 1 is odd, the parities of T∩ [i] and ([l− 1]\T )∩ [i− 1] are diﬀerent. Also,
+min(|T|,l−|T|) = min(|([l− 1]\T )∪{i}|,l−| ([l− 1]\T )∪{i}|). Thus the remaining
+terms in the sum pair up and cancel.
+Lemma 23. If 0<i ⩽l is odd and l = 2k, then
+λi(l) = (−1)k 2k−1
+(k− 1)!
+k∏
+t=1
+(2(k +t)−i). (15)
+In particular, λi(l)̸= 0.
+Theorem 24. Let 0<i ⩽l, if i is even, then
+λi(l) = (−1)⌈l/2⌉ 2⌊l/2⌋−1
+(⌈l/2⌉− 1)!
+⌈l/2⌉∏
+t=1
+(2(⌈l/2⌉ +t) + (i− 1)). (16)
+If i is odd, then
+λi(l) = (−1)⌈l/2⌉ 2⌊l/2⌋−1
+(⌈l/2⌉− 1)!
+⌈l/2⌉∏
+t=1
+(2(⌈l/2⌉ +t) +i). (17)
+Proof. By Lemma 23, the formula is correct when l is even and 0 < i ⩽ l is odd. By
+Lemma 21, if l is odd then λi(l) = 1
+2λi(l + 1). By Lemma 22, λi(l) = λi−1(l) when i is
+even (except for when i = 0). Thus formula (17) is correct.
+the electronic journal of combinatorics 19(4) (2012), #P10 8
+Lemma 25. The matrixSL is invertible.
+Proof. By Theorem 24, the eigenvalues are given by equations (16) and (17). Because
+each factor in each of the products is odd, the eigenvalues are never zero. The only value
+not accounted for by Theorem 24 is when i = 0, but equation (14) shows λ0(l) is positive.
+ThereforeSL is invertible.
+Theorem 26. The matrix ˜KL is invertible.
+Proof. By lemma 16, the null space of KL is spanned by 1 and the rank of ˜KL is one
+greater than the rank of KL. Therefore ˜KL is invertible.
+Theorem 27. Given l,r ⩾ 0,
+Fmax(Kl,r) ⩽ lr
+2
+(
+1− 1
+2l−1
+(l− 1
+⌊l−1
+2⌋
+))
+, (18)
+with equality if and only if r is a positive integer multiple of 2l−1.
+Proof. Combining Lemma 15 and Theorem 26, r
+2l−11 is the unique vertex that maximizes
+f· x in Pl,r. Therefore, f· r
+2l−11 is the maximum value of f· x over Pl,r. Whenever r
+2l−1
+is an integer, we have an integral solution to the linear program max {f· x| x∈ Pl,r}.
+Because non-negative integral vectors in Pl,r correspond to signed complete bipartite
+graphs, we have a signed Kl,r with maximum frustration. If r
+2l−1 is not an integer, the
+optimal solution to the linear program is not integer, so the solution to the integer program
+is strictly smaller than the solution to the linear program.
+It remains to be shown that the maximum frustration index of Kl,r is bounded by the
+expression in inequality (18). To do this, we need only compute the value of f· r
+2l−11.
+Note that
+f· 1 =
+∑
+{P,N}∈B(L)
+min(|P|,|N|).
+By convention,|N| ⩽|P| so we can use binomial coeﬃcients to write the sum over the
+size of N. If l is even, we add up the sizes of each set of size less than l/2 and half the
+sets of size l/2.
+f· 1 =
+1
+2l
+∑
+i=0
+(l
+i
+)
+i− 1
+2
+(l
+1
+2l
+)
+(19)
+=
+⌊ l−1
+2 ⌋∑
+i=0
+( l
+i + 1
+)
+(i + 1)− 1
+2
+(l
+1
+2l
+)
+1
+2l. (20)
+the electronic journal of combinatorics 19(4) (2012), #P10 9
+Now replace
+( l
+i+1
+)
+(i + 1) byl
+(l−1
+i
+)
+and
+( l
+l/2
+)
+(l/2) by l
+( l−1
+⌊ l−1
+2 ⌋
+)
+:
+f· 1 =l
+
+
+⌊ l−1
+2 ⌋∑
+i=0
+(l− 1
+i
+)
+− 1
+2
+(l− 1
+⌊l−1
+2⌋
+)
+ (21)
+=l
+(
+2l−2− 1
+2
+(l− 1
+⌊l−1
+2⌋
+))
+. (22)
+If l− 1 is odd, we have no sets of size 1
+2l so instead
+f· 1 =
+⌊ 1
+2l⌋
+∑
+i=0
+(l
+i
+)
+i =
+l−1
+2∑
+i=0
+(l
+i
+)
+i. (23)
+Now replace
+(l
+i
+)
+i byl
+(l−1
+i−1
+)
+, so
+f· 1 =l
+l−1
+2 −1∑
+i=0
+(l− 1
+i
+)
+=l
+(
+2l−2− 1
+2
+(l− 1
+⌊l−1
+2⌋
+))
+. (24)
+Multiplying equations (22) and (24) by r
+2l−1 gives the desired bound.
+Perhaps the most interesting thing about this theorem is that the bound is a linear
+function of r. Since the bound is achieved periodically (with period 2 l−1), it is also the
+best linear upper bound.
+Using Stirling’s formula, you can show that the maximum frustration of a signed Kl,r
+is bounded above by
+lr
+2
+(
+1−
+√
+2
+πl
+)
+. (25)
+Corollary 28. The maximum frustration of Kn,n is bounded above by
+n2
+2
+(
+1− 1
+2n−1
+(n− 1
+⌊n−1
+2 ⌋
+))
+. (26)
+Proof. Let l =r =n in Theorem 27.
+Note that this bound is a strict upper bound, even if (26) is an integer. This is because
+the only way the bound of Theorem 27 can be obtained is when r = 2l−1.
+5 Maximum Frustration of Complete Bipartite Graphs
+Let C ˜KL be the set of points in RB(L) that satisfy ˜KLx ⩾ 0.
+Theorem 29. Let r be a positive integer, and let x0 ∈ C ˜KL be an integer point that
+maximizes the value of f· x over all x∈ C ˜KL such that x· 1 = r. Then x0 +n1 is an
+integer point that maximizes f· x over all x∈ C ˜KL such that x· 1 =r +n2l−1.
+the electronic journal of combinatorics 19(4) (2012), #P10 10
+Proof. Since ˜KL is invertible, the cone C ˜KL must be simple (and simplicial). This is
+because the only way to get a generating ray is by taking the intersection of all but
+one of the deﬁning hyperplanes. Because C ˜KL is simple, every integer point in the cone is
+equal to an integer linear combination of generating vectors plus some integer point in the
+fundamental parallelepiped. Thus the columns of ˜K−1
+L are the generating vectors of the
+cone C ˜KL. By Lemma 15, each generating vector except the ﬁrst has negative frustration.
+Thus, maximum integer solutions must be integer multiples of 1 plus an integer point
+from inside the fundamental domain.
+Deﬁnition 30. Letεl,r be the diﬀerence between the bound in Theorem 27 andFmax(Kl,r).
+By Theorem 27, for any positive integer k there is a signed graphs that attain the
+bound with equality when r =k2l−1. Therefore, εl,k2l−1 is zero for every positive integer
+k.
+Theorem 31. The maximum frustration of K5,r is equal to ⌊ 25
+16r⌋− εr, where
+εr =
+{
+1 if r≡ 2, 4, 9, 13 (mod 16) ,
+0 otherwise, . (27)
+except for r = 1, 3, where ε5,1 =ε5,3 = 1.
+Proof. By Theorem 29, if we have a set of solutions to
+max{f· x| x∈ C ˜K[5]
+∩ ZB([5]), x· 1 =r} (28)
+for 0 ⩽r ⩽ 16, adding k1 to any of these solutions will give a solution to
+max{f· x| x∈ C ˜K[5]
+∩ ZB([5]), x· 1 = 16k +r}. (29)
+So long as one of the solutions xmax is positive, we have a signed graph with frustration
+index f· xmax. Using GLPK, [7], we can construct a list of integer solutions to (28) when
+0 ⩽ r ⩽ 16. Since the least entry of any of these solutions is −1, adding k1 with k ⩾ 1
+will give a non-negative integer optimum solution. The only r for which there are no
+non-negative optima to the integer program of (28) are 1 and 3.
+In [10], Sol´ e and Zaslavsky computedFmax(Kl,r) when l ⩽ 5. My method provides
+another proof of their results. It also corrects their formula for Fmax(K5,r) when r = 15.
+In [10], they say Fmax(K5,15) = 22, when in fact there is a signed K5,15 which achieves the
+bound of 23 from Theorem 27.
+Example 32. By ﬁnding a solution to the integer programming problem
+max{f· x| x∈ C ˜K[5]
+, x· 1 = 15}, (30)
+the electronic journal of combinatorics 19(4) (2012), #P10 11
+one can construct a reduced signed K5,15 whose frustration index is 23. Its bipartite
+adjacency matrix is
+
+
+1 -1 1 1 1 1 -1 -1 -1 -1 1 1 1 1 1
+1 1 -1 1 1 1 -1 1 1 1 -1 -1 -1 1 1
+1 1 1 -1 1 1 1 -1 1 1 -1 1 1 -1 -1
+1 1 1 1 -1 1 1 1 -1 1 1 -1 1 -1 1
+1 1 1 1 1 -1 1 1 1 -1 1 1 -1 1 -1
+
+
+.
+The frustration index is the number of negative entries since the graph is reduced. One
+can check that the corresponding signed graph is reduced by checking that the weights of
+the 16 minimum S-cuts are all non-negative. The weights of these cuts are all either 0 , 1,
+or 2.
+Theorem 33. The maximum frustration of K6,r is equal to ⌊ 66
+32r⌋− ε6,r, where
+ε6,r =
+
+
+
+0 if r≡ 6, 12, 14 (mod 16) ,
+0 if r≡ 0, 8, 26, 31 (mod 32) ,
+1 if r≡ 5 (mod 8) ,
+1 if r≡ 2, 4, 7, 9, 11 (mod 16) ,
+1 if r≡ 10, 15, 16, 24 (mod 32) ,
+2 if r≡ 1, 3, 17, 19 (mod 32) .
+(31)
+The only exception is when r = 6, where ε6,6 = 1.
+Theorem 34. The maximum frustration of K7,r is equal to⌊ 154
+64r⌋− εr, where
+εr =
+
+
+
+0 if r≡ 7, 12, 14, 16, 17, 22,
+24, 26, 27 (mod 32) ,
+0 if r≡ 3, 8, 18, 34, 36, 38,
+43, 51, 63 (mod 64) ,
+1 otherwise.
+(32)
+With exceptions when r∈{ 3, 14, 17, 18, 36, 49} orr∈{ 1, 2, 5, 10, 26}, where εr is 1 in the
+ﬁrst case, and 2 in the second.
+While the methods of integer programming are capable of producing results for l ⩽ 7
+quickly, computational time increases exponentially, so in general this is not a great
+method for arriving at new formulas. Hopefully further examination of the cone C ˜KL will
+yield better results. In particular, it would be nice to show that εl,r is bounded above by
+a linear term in l.
+the electronic journal of combinatorics 19(4) (2012), #P10 12
+References
+[1] R. Abelson and M. Rosenberg, Symbolic psycho-logic: a model of attitudinal cogni-
+tion. Behavioral Sci, 3 (1958) 1–13.
+[2] P. Diaconis, Group Representations in Probability and Statistics. Institute of Math-
+ematical Statistics, 1988.
+[3] J. Carlson and D. Stolarski, The correct solution to Berlekamp’s switching game,
+Discrete Math., Vol. 287 (2004).
+[4] P. C. Fishburn and N. J. A. Sloane, The solution to Berlekamp’s switching game,
+Discrete Math., 74 (1989), 263-290..
+[5] R. Graham and N. J. A. Sloane, On the covering radius of codes. IEEE Trans. Inform.
+Theory, IT-31 (1985) 385–401.
+[6] F. Harary, On the notion of balance of a signed graph. Michigan Math. Journal, 2
+(1953–54) 143–146.
+[7] A. Makhorin, GNU Linear Programming Kit 4.33. GNU Software Foundation, http:
+//www.gnu.org/software/glpk/glpk.html
+[8] M. Petersdorf, Einige bemerkungen ¨ uber vollst¨ angidge bigraphen. Wiss. Z. Techn.
+Hochsch. Ilmenau, 12 (1966) 257–260.
+[9] N. J. A. Sloane and S. Plouﬀe, The Encyclopedia of Integer Sequences, Academic
+Press, 1995
+[10] P. Sol´ e and T. Zaslavsky, A coding approach to signed graphs. SIAM J. Discrete
+Math. 4 (1994) 544–553.
+[11] T. Zaslavsky, Signed graphs. Discrete Appl. Math. 4 (1982) 47–74.
+the electronic journal of combinatorics 19(4) (2012), #P10 13

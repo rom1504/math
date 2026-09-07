@@ -12,6 +12,7 @@ import argparse
 from collections import Counter
 from datetime import datetime, timezone
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import re
@@ -34,6 +35,8 @@ TMP_REF = re.compile(r"(?:/home/math/quadra/)?(?:computations/)?tmp/[A-Za-z0-9_.
 REVIEWED_BUILDS = json.loads((ROOT / "research_archive" / "reviewed_build_products.json").read_text())
 EXTERNAL_MANIFEST = ROOT / "research_archive" / "reviewed_external_dependencies.json"
 REVIEWED_EXTERNAL = json.loads(EXTERNAL_MANIFEST.read_text()) if EXTERNAL_MANIFEST.exists() else {}
+COMPRESSED_MANIFEST = ROOT / "research_archive" / "reviewed_compressed_research.json"
+REVIEWED_COMPRESSED = json.loads(COMPRESSED_MANIFEST.read_text()) if COMPRESSED_MANIFEST.exists() else {}
 
 
 def git(*args):
@@ -109,6 +112,15 @@ def inventory():
                 record["evidence_status"] = "ARCHIVAL SNAPSHOT: status inherited from source; not newly verified"
                 if len(data) > 25 * 1024 * 1024:
                     record.update(category="oversized_research", reason="requires reviewed durable storage; no silent omission")
+                    compressed = REVIEWED_COMPRESSED.get(name)
+                    if compressed and record["sha256"] == compressed["sha256"]:
+                        packed = ROOT / compressed["compressed_path"]
+                        if (packed.is_file()
+                                and hashlib.sha256(packed.read_bytes()).hexdigest() == compressed["compressed_sha256"]
+                                and gzip.decompress(packed.read_bytes()) == data):
+                            record.update(category="preserved_compressed_research",
+                                          compressed_path=compressed["compressed_path"],
+                                          reason="lossless byte-verified compressed research; durable path and hashes in reviewed_compressed_research.json")
         records.append(record)
     return records
 

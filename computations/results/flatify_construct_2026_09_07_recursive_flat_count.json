@@ -1,0 +1,114 @@
+{
+  "status": "exact exhaustive permutation averages and direct Boolean checks",
+  "records": [
+    {
+      "k": 2,
+      "near_count": 4,
+      "support_counts": {
+        "1": 2,
+        "2": 2
+      },
+      "parent_flat_distribution": {
+        "8": 2
+      },
+      "average": "8",
+      "predicted": "8",
+      "direct_checks": [
+        {
+          "permutation": [
+            0,
+            1
+          ],
+          "predicted": 8,
+          "actual": 8
+        }
+      ]
+    },
+    {
+      "k": 8,
+      "near_count": 112,
+      "support_counts": {
+        "85": 8,
+        "51": 8,
+        "153": 8,
+        "15": 8,
+        "165": 8,
+        "195": 8,
+        "150": 8,
+        "105": 8,
+        "60": 8,
+        "90": 8,
+        "240": 8,
+        "102": 8,
+        "204": 8,
+        "170": 8
+      },
+      "parent_flat_distribution": {
+        "896": 1344,
+        "384": 9408,
+        "128": 18816,
+        "0": 10752
+      },
+      "average": "896/5",
+      "predicted": "896/5",
+      "direct_checks": [
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "predicted": 896,
+          "actual": 896
+        },
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            6
+          ],
+          "predicted": 384,
+          "actual": 384
+        },
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            5
+          ],
+          "predicted": 128,
+          "actual": 128
+        },
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            4,
+            3,
+            6,
+            7,
+            5
+          ],
+          "predicted": 0,
+          "actual": 0
+        }
+      ]
+    }
+  ]
+}

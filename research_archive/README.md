@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-07 09:32:31](2026-09-07/093231Z/README.md) | 1,905 research payloads; 176,506,678 bytes; actual center-conditioned bridges, recursive frame counts, profile-sector proofs, failed kernel extensions and witness experiments | Hash verified; one oversized original retained as byte-verified tracked gzip with both hashes. Same 14 reviewed historical/dynamic reference flags. Research continues. |
 | [2026-09-07 08:26:40](2026-09-07/082640Z/README.md) | 1,909 research files; 160,794,972 bytes; actual rank-two tiles, complete finite Hadamard-bridge obstruction, correlated-support weave, failed trades and continuing drafts | All payload hashes verified; no credential or oversized research candidate; same 14 reviewed historical/dynamic dependency flags. Canonical later proofs are committed separately. Research continues. |
 | [2026-09-07 07:24:13](2026-09-07/072413Z/README.md) | 1,906 research files; 157,456,051 bytes; actual target-contraction surgery, count cleanup, MUB witnesses, exact census, drafts and failed dense operations | All payload hashes verified; no credential or oversized research candidate. Same 14 manually reviewed dynamic/historical flags. Research continues. |
 | [2026-09-07 06:05:13](2026-09-07/060513Z/README.md) | 1,868 research files; 154,968,179 bytes; renewed flatification work, improved ternary certificate, independent replays, MUB drafts and failed experiments | All payload hashes verified; new dynamic filename flag manually resolved; no credential candidate or oversized research output. Campaign continues. |
@@ -40,6 +41,12 @@ initial inventory exceeds the 25 MiB per-file review threshold. Oversized
 research must have a checksum manifest and independently durable storage
 location before it can be omitted from a snapshot. An ignored local path is
 not such a location.
+
+Oversized originals may instead have a LOSSLESS tracked compressed copy.
+`reviewed_compressed_research.json` pins original and compressed hashes and
+the durable path. The utility verifies decompression byte-for-byte before
+classifying an original as preserved_compressed_research. This is preserved
+research, not a build-product exclusion; local originals are not deleted.
 
 The [build-product audit](build_product_audit_2026_09_06.md) maps all 27
 existing research executables and 50 bytecode files to preserved or vendor
