@@ -1,0 +1,1245 @@
+\section{Preliminaries}
+
+We first state Vitali's theorem, which lets us convert pointwise convergence to uniform convergence. See~\cite{schiff1993normal} for a reference. 
+
+\begin{fact}[Vitali's convergence theorem]
+Let \(h_1,h_2,\ldots\) be holomorphic functions on a connected open set
+\(\Omega\). Suppose that:
+\begin{enumerate}
+    \item the sequence \((h_N)_{N\geq 1}\) is locally bounded on \(\Omega\); and
+    \item \(h_N(z)\) converges for every \(z\) in some subset of \(\Omega\)
+    having an accumulation point in \(\Omega\).
+\end{enumerate}
+Then \((h_N)_{N\geq 1}\) converges locally uniformly on \(\Omega\) to a
+holomorphic function.
+\end{fact}
+
+
+\section{Limiting Krivine Schemes}
+
+In this section, we extend classical Krivine schemes by allowing them to have arbitrary correlations among variables (up to some criteria). We will show that we can state asymptotic statements about regular Krivine schemes using this extended class of schemes, that we call \textit{limiting Krivine schemes}. This gives us analytic machinery for searching and analyzing limits of high dimensional schemes that were previously inaccessible via standard techniques. It is first instructive for us to start with a motivating example. 
+
+\paragraph{Motivating example.}
+Consider the two-dimensional classical Krivine rounding scheme
+\[
+f(X_1,X_2)=\operatorname{sgn}(X_1+\lambda X_2),
+\qquad
+g(Y_1,Y_2)=\operatorname{sgn}(y_1+\lambda y_2),
+\]
+where \(X_1,X_2,Y_1,Y_2\) are standard Gaussians, \(X_1\) is independent of \(X_2\), \(Y_1\) is independent of \(Y_2\), and
+\[
+\operatorname{corr}(X_1,Y_1)
+=
+\operatorname{corr}(X_2,Y_2)
+=
+t.
+\]
+In a classical Krivine scheme, every pair of corresponding coordinates has correlation \(t\). Suppose instead that we would like the first pair to have correlation \(t\), but the second pair to have correlation \(t^3\). To obtain this from a classical high-dimensional scheme, define
+\[
+U_N=\frac{1}{\sqrt N}\sum_{j=1}^N \mathrm{He}_3(X_{2,j}),
+\qquad
+V_N=\frac{1}{\sqrt N}\sum_{j=1}^N \mathrm{He}_3(Y_{2,j}),
+\]
+where the pairs \((X_{2,j},Y_{2,j})\) are independent standard Gaussian pairs with correlation \(t\). The Hermite identity gives
+\[
+\mathbb{E}[U_NV_N]
+=
+\mathbb{E}[\mathrm{He}_3(X_{2,1})\mathrm{He}_3(Y_{2,1})]
+=
+t^3.
+\]
+Moreover, by the central limit theorem, \((U_N,V_N)\) converges in distribution to a standard Gaussian pair \((U,V)\) with correlation \(t^3\). Thus, the classical rounding schemes
+\[
+F_N=\operatorname{sgn}(X_1+\lambda U_N),
+\qquad
+G_N=\operatorname{sgn}(Y_1+\lambda V_N)
+\]
+converge to the fixed-dimensional Gaussian rounding scheme
+\[
+f(X_1,U)=\operatorname{sgn}(X_1+\lambda U),
+\qquad
+g(Y_1,V)=\operatorname{sgn}(Y_1+\lambda V),
+\]
+in which the two coordinate pairs have correlations \(t\) and \(t^3\), respectively.
+
+To use this construction, we need to carefully handle the following analytic hurdles:
+\begin{enumerate}
+    \item Pointwise convergence of the correlation functions must be strengthened to locally uniform convergence;
+    \item An inverse-majorant $\gamma$-admissibility proved for the limiting scheme must remain valid for all sufficiently large finite-dimensional approximations.
+\end{enumerate}
+
+We now generalize this construction and prove both properties. First, we define the notion of allowable correlation maps.  
+\begin{definition}[Allowable correlation map]
+\label{def:allowable-correlation-map}
+A function \(\rho:(-1,1)\to\mathbb{R}\) is an \emph{allowable correlation map}
+if it admits an expansion
+\[
+\rho(t)
+=
+\sum_{\substack{d\geq 1\\ d\ \mathrm{odd}}} c_d t^d,
+\qquad
+\sum_{\substack{d\geq 1\\ d\ \mathrm{odd}}}|c_d|
+\leq 1.
+\]
+\end{definition}
+
+We can now state the definition of limiting Krivine schemes. 
+
+\begin{definition}[Limiting Krivine Schemes]
+A $k$-dimensional \emph{limiting Krivine scheme} is a tuple $\mathcal{S} = (f, g, \rho)$, where  \(f,g:\mathbb{R}^k\to\{-1,1\}\) are odd measurable functions and \(\rho = (\rho_1,\ldots,\rho_k)\) is a tuple of allowable correlation maps.  
+
+The arcsine-normalized correlation function of this scheme is given by 
+\[
+H_{f, g, \rho}(t)
+=
+\frac{\pi}{2}\mathbb{E}[f(X)g(Y)].
+\]
+where \(X,Y\in\mathbb{R}^k\) are jointly Gaussian such that
+\[
+\mathbb{E}[X_iX_j]
+=
+\mathbb{E}[Y_iY_j]
+=
+\delta_{ij},
+\qquad
+\mathbb{E}[X_iY_j]
+=
+\delta_{ij}\rho_i(t).
+\]
+\end{definition}
+
+\begin{remark}
+    This is a generalization of the usual high dimensional Krivine schemes with $\rho_i(t) = t$ for all $i$. 
+
+    At this stage, \(H_{f, g, \rho}\) is defined only on \((-1,1)\); in particular, we do not assume that it extends holomorphically to the strip associated with classical Krivine schemes.
+\end{remark}
+
+The motivation for this definition is that every limiting Krivine scheme can be approximated arbitrarily well by ordinary finite-dimensional Krivine schemes, as we will show below. This allows us to use the usual projection scheme to round the vectors, and get the inverse-majorant machinery for free. We make this precise in the following theorem.  
+
+\begin{theorem}[Finite-dimensional approximation of limiting schemes]
+Let \(\mathcal S=(f,g,\rho_1,\ldots,\rho_k)\) be a limiting Krivine scheme. Then there exists a sequence of ordinary finite-dimensional Krivine schemes
+\(
+\mathcal S_1,\mathcal S_2,\ldots,
+\)
+of increasing dimension, whose correlation functions $H_{\mathcal S_1}, H_{\mathcal S_2}, \ldots$ converge to the correlation function $H_{\mathcal S}$ of \(\mathcal S\), uniformly on every compact subset of \((-1,1)\).
+\end{theorem}
+
+We dedicate the rest of the section to proving this theorem. First, we prove an equivalence condition on allowability of a function. 
+
+\begin{lemma}[Allowable function criteria]
+A map \(\rho\) is allowable if and only if there are odd functions
+\(p,q: \R^3 \to \R\), such that
+\(\|p\|_2=\|q\|_2=1\) and
+\[
+\rho(t)=\mathbb{E}[p(U)q(V)],
+\]
+where \(U,V\in\mathbb{R}^m\) are standard Gaussian vectors with
+\(\mathbb{E}[U_iV_j]=t\delta_{ij}\).
+\end{lemma}
+
+\begin{proof}
+Suppose first that \(p\) and \(q\) are odd and have \(L_2\)-norm one. Write
+their Hermite expansions by degree as
+\[
+p=\sum_{\substack{d\geq 1\\ d\text{ odd}}}p_d,
+\qquad
+q=\sum_{\substack{d\geq 1\\ d\text{ odd}}}q_d.
+\]
+Here \(p_d\) and \(q_d\) are the degree-\(d\) Hermite components.
+
+Different Hermite degrees are orthogonal, while degree \(d\) contributes a
+factor \(t^d\). Hence
+\[
+\mathbb{E}[p(U)q(V)]
+=
+\sum_{\substack{d\geq 1\\ d\text{ odd}}}
+\langle p_d,q_d\rangle t^d.
+\]
+Set \(c_d=\langle p_d,q_d\rangle\). Then
+\[
+\sum_d|c_d|
+\leq
+\sum_d\|p_d\|_2\|q_d\|_2
+\leq
+\left(\sum_d\|p_d\|_2^2\right)^{1/2}
+\left(\sum_d\|q_d\|_2^2\right)^{1/2}
+=
+1.
+\]
+Thus the resulting correlation map is allowable.
+
+Conversely, suppose that
+\[
+\rho(t)=\sum_{d\text{ odd}}c_dt^d,
+\qquad
+s:=\sum_{d\text{ odd}}|c_d|\leq 1.
+\]
+For \(x=(x_1,x_2,x_3)\in\mathbb{R}^3\), define
+\[
+p(x)
+=
+\sum_{d\text{ odd}}
+\sqrt{|c_d|}\operatorname{He}_d(x_1)
++
+\sqrt{1-s}\,x_2
+\]
+and
+\[
+q(x)
+=
+\sum_{d\text{ odd}}
+\operatorname{sgn}(c_d)\sqrt{|c_d|}
+\operatorname{He}_d(x_1)
++
+\sqrt{1-s}\,x_3.
+\]
+Both functions are odd. Orthogonality gives \(\|p\|_2=\|q\|_2=1\).
+
+Let \(U,V\in\mathbb{R}^3\) be standard Gaussian vectors with
+\(\mathbb{E}[U_iV_j]=t\delta_{ij}\). The terms involving \(U_2\) and \(V_3\)
+have zero cross-correlation. Therefore
+\[
+\mathbb{E}[p(U)q(V)]
+=
+\sum_{d\text{ odd}}c_dt^d
+=
+\rho(t).
+\]
+\end{proof}
+
+We are now ready to prove our theorem, which follows as a direct corollary of the stronger statement we prove below. 
+
+\begin{theorem}[Finite-dimensional approximation of limiting schemes]
+Let \((f,g,\rho_1,\ldots,\rho_k)\) be a limiting Krivine scheme, and suppose
+that the discontinuity sets of \(f\) and \(g\) have Gaussian measure zero.
+Then its correlation function extends holomorphically to the unit disk and is
+the locally uniform limit there of the correlation functions of ordinary
+finite-dimensional Krivine schemes.
+\end{theorem}
+
+\begin{proof}
+By the above lemma, for each \(i\in\{1,\ldots,k\}\), there exist odd measurable functions 
+\(
+p_i,q_i:\mathbb{R}^3\to\mathbb{R}
+\)
+with $\|p\|_2 = \|q\|_2 = 1$ such that, whenever \(U,V\in\mathbb{R}^3\) are joint standard Gaussian vectors with
+\(
+\mathbb{E}[U_aV_b]=t\delta_{ab},
+\)
+we have
+\[
+\mathbb{E}[p_i(U)q_i(V)]
+=
+\rho_i(t).
+\]
+We combine these functions into vector-valued maps. Write
+\(u\in\mathbb{R}^{3k}\) in \(k\) blocks as
+\[
+u=\bigl(u^{(1)},\ldots,u^{(k)}\bigr),
+\qquad
+u^{(i)}\in\mathbb{R}^3,
+\]
+and define
+\[
+P(u)
+=
+\bigl(
+p_1(u^{(1)}),\ldots,p_k(u^{(k)})
+\bigr),
+\]
+\[
+Q(u)
+=
+\bigl(
+q_1(u^{(1)}),\ldots,q_k(u^{(k)})
+\bigr).
+\]
+For each positive integer \(N\), define functions on
+\(\bigl(\mathbb{R}^{3k}\bigr)^N\) by
+\[
+F_N(u_1,\ldots,u_N)
+=
+f\left(
+\frac{1}{\sqrt{N}}\sum_{r=1}^N P(u_r)
+\right)
+\]
+and
+\[
+G_N(v_1,\ldots,v_N)
+=
+g\left(
+\frac{1}{\sqrt{N}}\sum_{r=1}^N Q(v_r)
+\right).
+\]
+Since \(P\), \(Q\), \(f\), and \(g\) are odd, the functions \(F_N\) and
+\(G_N\) are odd. They therefore define an ordinary finite-dimensional
+Krivine scheme.
+
+Let \(H_N\) denote the correlation function of this scheme. Fix
+\(t\in(-1,1)\), and let
+\[
+(U_1,V_1),\ldots,(U_N,V_N)
+\]
+be independent pairs of standard Gaussian vectors in \(\mathbb{R}^{3k}\)
+satisfying
+\[
+\mathbb{E}[(U_r)_a(V_r)_b]
+=
+t\delta_{ab}.
+\]
+Define
+\[
+A_N
+=
+\frac{1}{\sqrt{N}}\sum_{r=1}^N P(U_r),
+\qquad
+B_N
+=
+\frac{1}{\sqrt{N}}\sum_{r=1}^N Q(V_r).
+\]
+By the definition of the correlation function,
+\[
+H_N(t)
+=
+\frac{\pi}{2}\,
+\mathbb{E}\bigl[f(A_N)g(B_N)\bigr].
+\]
+
+\begin{claim}
+As \(N \rightarrow \infty\), we have \[
+(A_N,B_N)
+\xrightarrow{d}
+(X,Y),
+\]
+where \((X,Y)\) is jointly Gaussian and satisfies
+\[
+\mathbb{E}[X_iX_j]
+=
+\mathbb{E}[Y_iY_j]
+=
+\delta_{ij},
+\qquad
+\mathbb{E}[X_iY_j]
+=
+\delta_{ij}\rho_i(t).
+\]
+\end{claim}
+
+\begin{claimproof}
+The random vectors
+\[
+\bigl(P(U_r),Q(V_r)\bigr)\in\mathbb{R}^{2k}
+\]
+are independent, identically distributed, and centered. Because the
+\(k\) Gaussian blocks are independent, their covariance matrix is
+\[
+\begin{pmatrix}
+I_k & D(t)\\
+D(t) & I_k
+\end{pmatrix},
+\qquad
+D(t)
+=
+\operatorname{diag}\bigl(
+\rho_1(t),\ldots,\rho_k(t)
+\bigr).
+\]
+By the multivariate central limit theorem, we have
+\(
+(A_N,B_N)
+\xrightarrow[N\to\infty]{d}
+(X,Y),
+\)
+where \((X,Y)\) is jointly Gaussian satisfying
+\(
+\mathbb{E}[X_iX_j]
+=
+\mathbb{E}[Y_iY_j]
+=
+\delta_{ij}\) and 
+\(
+\mathbb{E}[X_iY_j]
+=
+\delta_{ij}\rho_i(t),
+\)
+as desired. 
+\end{claimproof}
+
+Returning to the proof of the theorem, since the function
+\(
+(x,y)\longmapsto f(x)g(y)
+\)
+ is bounded and has discontinuity set with measure 0, it follows that
+\[
+\mathbb{E}\bigl[f(X_N)g(Y_N)\bigr]
+\longrightarrow
+\mathbb{E}\bigl[f(X(t))g(Y(t))\bigr].
+\]
+Consequently,
+\[
+H_N(t)\longrightarrow H(t)
+\]
+for every \(t\in(-1,1)\), where
+\[
+H(t)
+=
+\frac{\pi}{2}\,
+\mathbb{E}\bigl[f(X(t))g(Y(t))\bigr]
+\]
+is the correlation function of the limiting scheme.
+
+It remains to convert this pointwise convergence to locally uniform
+convergence on the unit disk. For each \(N\), the Hermite expansions of
+\(F_N\) and \(G_N\) give a holomorphic extension of \(H_N\) to
+\[
+\mathbb{D}
+=
+\{z\in\mathbb{C}:|z|<1\}.
+\]
+More explicitly, if
+\[
+F_N=\sum_{\alpha}\widehat{F_N}(\alpha)\operatorname{He}_{\alpha},
+\qquad
+G_N=\sum_{\alpha}\widehat{G_N}(\alpha)\operatorname{He}_{\alpha},
+\]
+then
+\[
+H_N(z)
+=
+\frac{\pi}{2}
+\sum_{\alpha}
+\widehat{F_N}(\alpha)\widehat{G_N}(\alpha)z^{|\alpha|}.
+\]
+For \(z\) in the unit disk, the Cauchy--Schwarz inequality gives
+\[
+\begin{aligned}
+|H_N(z)|
+&\leq
+\frac{\pi}{2}
+\sum_{\alpha}
+\bigl|
+\widehat{F_N}(\alpha)\widehat{G_N}(\alpha)
+\bigr|
+|z|^{|\alpha|} \\
+&\leq
+\frac{\pi}{2}
+\left(
+\sum_{\alpha}
+|\widehat{F_N}(\alpha)|^2
+\right)^{1/2}
+\left(
+\sum_{\alpha}
+|\widehat{G_N}(\alpha)|^2
+\right)^{1/2} \\
+&\leq
+\frac{\pi}{2}
+\|F_N\|_2\|G_N\|_2
+=
+\frac{\pi}{2}.
+\end{aligned}
+\]
+Here the second inequality uses \(|z|<1\), and the third follows from
+the orthonormality of the Hermite polynomials.
+% For \(z\in\mathbb{D}\), the Cauchy--Schwarz inequality and Parseval's identity
+% give
+% \[
+% \begin{aligned}
+% |H_N(z)|
+% &\leq
+% \frac{\pi}{2}
+% \sum_{\alpha}
+% \bigl|\widehat{F_N}(\alpha)\widehat{G_N}(\alpha)\bigr|
+% |z|^{|\alpha|} \\
+% &\leq
+% \frac{\pi}{2}
+% \left(
+% \sum_{\alpha}
+% |\widehat{F_N}(\alpha)|^2|z|^{|\alpha|}
+% \right)^{1/2}
+% \left(
+% \sum_{\alpha}
+% |\widehat{G_N}(\alpha)|^2|z|^{|\alpha|}
+% \right)^{1/2} \\
+% &\leq
+% \frac{\pi}{2}\|F_N\|_2\|G_N\|_2
+% =
+% \frac{\pi}{2}.
+% \end{aligned}
+% \]
+Thus, the family \((H_N)_{N\geq 1}\) is locally bounded on \(\mathbb{D}\).
+Since it converges pointwise on the interval \((-1,1)\), which has an
+accumulation point in \(\mathbb{D}\). Vitali's theorem implies that
+\((H_N)\) converges locally uniformly on \(\mathbb{D}\) to a holomorphic
+function. On \((-1,1)\), this function agrees with \(H\). It is therefore
+the holomorphic extension of the correlation function of the limiting
+scheme.
+\end{proof}
+
+\begin{corollary}[Upper bound from a limiting Krivine scheme]
+Let
+\(
+\mathcal{S}=(f,g,\rho_1,\ldots,\rho_k)
+\)
+be a limiting Krivine scheme. Let \(H\) be its correlation
+function. Suppose that \(H'(0)\neq 0\), so that \(H\) has a local holomorphic inverse
+at the origin. Write
+\[
+H^{-1}(z)
+=
+\sum_{j=0}^{\infty}a_{2j+1}z^{2j+1},
+\]
+and define its majorant by
+\[
+M(r)
+=
+\sum_{j=0}^{\infty}|a_{2j+1}|r^{2j+1}.
+\]
+If there exists \(\gamma>0\), within the radius of convergence of
+\(H^{-1}\), such that
+\(
+M(\gamma)=1,
+\)
+then
+\(
+K_G
+\leq
+\frac{\pi}{2\gamma}.
+\)
+\end{corollary}
+% \begin{theorem}[Finite-dimensional approximation of limiting schemes]
+% Let
+% \[
+% \mathcal{S}=(f,g,\rho_1,\ldots,\rho_k)
+% \]
+% be a limiting Krivine scheme, and suppose that the discontinuity sets of
+% \(f\) and \(g\) have Gaussian measure zero. Then the correlation function of
+% \(\mathcal{S}\) extends holomorphically to the unit disk and is the locally
+% uniform limit there of the correlation functions of ordinary
+% finite-dimensional Krivine schemes.
+% \end{theorem}
+
+% \begin{proof}
+% For each \(i\in\{1,\ldots,k\}\), there exist odd functions
+% \(
+% p_i,q_i: \R^3 \to \R 
+% \)
+% such that
+% \(
+% \|p_i\|_2=\|q_i\|_2=1
+% \)
+% and
+% \[
+% \rho_i(t)=\mathbb{E}[p_i(U)q_i(V)]
+% \]
+% for every \(t\in(-1,1)\), where \(U,V\in\mathbb{R}^{3}\) are standard
+% Gaussian vectors satisfying
+% \[
+% \mathbb{E}[U_aV_b]=t\delta_{ab}.
+% \]
+
+% For each positive integer \(N\), identify
+% \[
+% \mathbb{R}^{3N}
+% =
+% \prod_{i=1}^k \bigl(\mathbb{R}^{3}\bigr)^N.
+% \]
+% Thus, a point \(u\in\mathbb{R}^{3N}\) can be written as
+% \[
+% u=(u_{i,r})_{\substack{1\leq i\leq k\\1\leq r\leq N}},
+% \qquad
+% u_{i,r}\in\mathbb{R}^{3}.
+% \]
+% Define
+% \[
+% F_N(u)
+% =
+% f\left(
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N p_1(u_{1,r}),
+% \ldots,
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N p_k(u_{k,r})
+% \right).
+% \]
+% Similarly, for
+% \[
+% v=(v_{i,r})_{\substack{1\leq i\leq k\\1\leq r\leq N}}
+% \in\mathbb{R}^{3N},
+% \]
+% define
+% \[
+% G_N(v)
+% =
+% g\left(
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N q_1(v_{1,r}),
+% \ldots,
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N q_k(v_{k,r})
+% \right).
+% \]
+% Because \(p_i,q_i,f\), and \(g\) are odd, both \(F_N\) and \(G_N\) are odd.
+% Hence \((F_N,G_N)\) is an ordinary finite-dimensional Krivine scheme.
+
+% Let \(H_N\) denote its correlation function. Fix \(t\in(-1,1)\), and let
+% \(U^{(N)},V^{(N)}\in\mathbb{R}^{3N}\) be standard Gaussian vectors satisfying
+% \[
+% \mathbb{E}\bigl[U^{(N)}_aV^{(N)}_b\bigr]
+% =
+% t\delta_{ab}.
+% \]
+% Write these vectors in blocks as
+% \[
+% U^{(N)}=(U_{i,r})_{i,r},
+% \qquad
+% V^{(N)}=(V_{i,r})_{i,r},
+% \]
+% where the pairs \((U_{i,r},V_{i,r})\) are independent over \(i\) and \(r\),
+% and each pair is a standard Gaussian pair in \(\mathbb{R}^3\) satisfying
+% \[
+% \mathbb{E}\bigl[(U_{i,r})_a(V_{i,r})_b\bigr]
+% =
+% t\delta_{ab}.
+% \]
+
+% Define
+% \[
+% X_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N p_i(U_{i,r}),
+% \qquad
+% Y_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N q_i(V_{i,r}),
+% \]
+% and set
+% \[
+% X_N=(X_{1,N},\ldots,X_{k,N}),
+% \qquad
+% Y_N=(Y_{1,N},\ldots,Y_{k,N}).
+% \]
+% Then
+% \[
+% H_N(t)
+% =
+% \frac{\pi}{2}\,
+% \mathbb{E}\bigl[f(X_N)g(Y_N)\bigr].
+% \]
+
+% For each \(r\), consider the \(2k\)-dimensional random vector
+% \[
+% Z_r
+% =
+% \bigl(
+% p_1(U_{1,r}),\ldots,p_k(U_{k,r}),
+% q_1(V_{1,r}),\ldots,q_k(V_{k,r})
+% \bigr).
+% \]
+% The vectors \(Z_1,Z_2,\ldots\) are independent and identically distributed,
+% and
+% \[
+% (X_N,Y_N)
+% =
+% \frac{1}{\sqrt{N}}\sum_{r=1}^N Z_r.
+% \]
+% Since the functions \(p_i\) and \(q_i\) are odd, all coordinates of \(Z_r\)
+% have mean zero. Moreover,
+% \[
+% \mathbb{E}[X_{i,N}X_{j,N}]
+% =
+% \mathbb{E}[Y_{i,N}Y_{j,N}]
+% =
+% \delta_{ij}
+% \]
+% and
+% \[
+% \mathbb{E}[X_{i,N}Y_{j,N}]
+% =
+% \delta_{ij}\rho_i(t).
+% \]
+% Indeed, coordinates with different values of \(i\) are independent, while
+% for \(i=j\),
+% \[
+% \mathbb{E}[X_{i,N}Y_{i,N}]
+% =
+% \mathbb{E}[p_i(U)q_i(V)]
+% =
+% \rho_i(t).
+% \]
+
+% The multivariate central limit theorem therefore gives
+% \[
+% (X_N,Y_N)
+% \xrightarrow[N\to\infty]{d}
+% (X(t),Y(t)),
+% \]
+% where \((X(t),Y(t))\) is jointly Gaussian and satisfies
+% \[
+% \mathbb{E}[X_i(t)X_j(t)]
+% =
+% \mathbb{E}[Y_i(t)Y_j(t)]
+% =
+% \delta_{ij},
+% \qquad
+% \mathbb{E}[X_i(t)Y_j(t)]
+% =
+% \delta_{ij}\rho_i(t).
+% \]
+% This is precisely the Gaussian pair appearing in the definition of the
+% limiting scheme.
+
+% The function
+% \[
+% (x,y)\longmapsto f(x)g(y)
+% \]
+% is bounded, and its discontinuity set is contained in
+% \[
+% \bigl(\operatorname{Disc}(f)\times\mathbb{R}^k\bigr)
+% \cup
+% \bigl(\mathbb{R}^k\times\operatorname{Disc}(g)\bigr).
+% \]
+% Because \(X(t)\) and \(Y(t)\) are standard Gaussian vectors, the assumed
+% Gaussian-nullity of the discontinuity sets implies that this union has
+% probability zero under the law of \((X(t),Y(t))\). It follows that
+% \[
+% \mathbb{E}\bigl[f(X_N)g(Y_N)\bigr]
+% \longrightarrow
+% \mathbb{E}\bigl[f(X(t))g(Y(t))\bigr].
+% \]
+% Consequently,
+% \[
+% H_N(t)\longrightarrow H(t)
+% \]
+% for every \(t\in(-1,1)\), where
+% \[
+% H(t)
+% =
+% \frac{\pi}{2}\,
+% \mathbb{E}\bigl[f(X(t))g(Y(t))\bigr]
+% \]
+% is the correlation function of the limiting scheme.
+
+% It remains to upgrade this pointwise convergence to locally uniform
+% convergence on the unit disk. For each \(N\), the Hermite expansions of
+% \(F_N\) and \(G_N\) give a holomorphic extension of \(H_N\) to
+% \[
+% \mathbb{D}
+% =
+% \{z\in\mathbb{C}:|z|<1\}.
+% \]
+% More explicitly, if
+% \[
+% F_N=\sum_{\alpha}\widehat{F_N}(\alpha)\operatorname{He}_{\alpha},
+% \qquad
+% G_N=\sum_{\alpha}\widehat{G_N}(\alpha)\operatorname{He}_{\alpha},
+% \]
+% then
+% \[
+% H_N(z)
+% =
+% \frac{\pi}{2}
+% \sum_{\alpha}
+% \widehat{F_N}(\alpha)\widehat{G_N}(\alpha)z^{|\alpha|}.
+% \]
+% For \(z\in\mathbb{D}\), the Cauchy--Schwarz inequality and Parseval's identity
+% give
+% \[
+% \begin{aligned}
+% |H_N(z)|
+% &\leq
+% \frac{\pi}{2}
+% \sum_{\alpha}
+% \bigl|\widehat{F_N}(\alpha)\widehat{G_N}(\alpha)\bigr|
+% |z|^{|\alpha|} \\
+% &\leq
+% \frac{\pi}{2}
+% \left(
+% \sum_{\alpha}
+% |\widehat{F_N}(\alpha)|^2|z|^{|\alpha|}
+% \right)^{1/2}
+% \left(
+% \sum_{\alpha}
+% |\widehat{G_N}(\alpha)|^2|z|^{|\alpha|}
+% \right)^{1/2} \\
+% &\leq
+% \frac{\pi}{2}\|F_N\|_2\|G_N\|_2
+% =
+% \frac{\pi}{2}.
+% \end{aligned}
+% \]
+% Thus, the family \((H_N)_{N\geq 1}\) is locally bounded on \(\mathbb{D}\).
+% Since it converges pointwise on the interval \((-1,1)\), which has an
+% accumulation point in \(\mathbb{D}\), Vitali's theorem implies that
+% \((H_N)\) converges locally uniformly on \(\mathbb{D}\) to a holomorphic
+% function. On \((-1,1)\), this function agrees with \(H\). It is therefore
+% the holomorphic extension of the correlation function of the limiting
+% scheme.
+% \end{proof}
+
+
+% \begin{lemma}
+% Let \(\rho_1,\ldots,\rho_k\) be allowable correlation functions. 
+% For every \(t\in(-1,1)\), there is a sequence \(\left\{\left(X^{(N)},Y^{(N)}\right)\right\}_{N \ge 1}\) of pairs of finite-dimensional random vectors in \(\mathbb{R}^k\), constructed from coordinatewise
+% \(t\)-correlated Gaussians, such that
+% \[
+% \left(X^{(N)},Y^{(N)}\right)
+% \longrightarrow
+% (X,Y), \qquad N \rightarrow \infty 
+% \]
+% where \(X,Y \in \R^k\) are standard Gaussian vectors satisfying
+% \[
+% \mathbb{E}[X_iY_j]
+% =
+% \delta_{ij}\rho_i(t).
+% \]
+% \end{lemma}
+
+% \begin{proof}
+% For each \(i\), choose odd variance-one functions \(p_i,q_i\) such that
+% \[
+% \rho_i(t)=\mathbb{E}[p_i(U)q_i(V)].
+% \]
+% For \(N\geq 1\), define
+% \[
+% X_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N p_i(U_{i,j}),
+% \qquad
+% Y_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N q_i(V_{i,j}),
+% \]
+% where the pairs \((U_{i,j},V_{i,j})\) are independent over \(i\) and \(j\),
+% and each pair has coordinatewise correlation \(t\).
+
+% For every \(i\),
+% \[
+% \mathbb{E}[X_{i,N}^2]
+% =
+% \mathbb{E}[Y_{i,N}^2]
+% =
+% 1
+% \]
+% and
+% \[
+% \mathbb{E}[X_{i,N}Y_{i,N}]
+% =
+% \mathbb{E}[p_i(U)q_i(V)]
+% =
+% \rho_i(t).
+% \]
+% Coordinates with different values of \(i\) are independent. The multivariate
+% central limit theorem therefore gives the claimed convergence.
+% \end{proof}
+
+% For example, taking \(p=q=\operatorname{He}_3\) gives the correlation \(t^3\),
+% while taking \(p=q=\operatorname{He}_5\) gives \(t^5\). The theorem allows
+% arbitrary allowable correlations in place of these individual powers.
+
+
+% \begin{theorem}
+% Suppose that the discontinuity sets of \(f\) and \(g\) have Gaussian measure
+% zero. Then the correlation function of a limiting Krivine scheme is the locally
+% uniform limit on the unit disk of correlation functions of ordinary
+% finite-dimensional Krivine schemes.
+% \end{theorem}
+
+% \begin{proof}
+% For each \(i\), choose odd variance-one functions \(p_i,q_i\) such that
+% \[
+% \rho_i(t)=\mathbb{E}[p_i(U)q_i(V)].
+% \]
+% For \(N\geq 1\), define
+% \[
+% X_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N p_i(U_{i,j}),
+% \qquad
+% Y_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N q_i(V_{i,j}),
+% \]
+% where the pairs \((U_{i,j},V_{i,j})\) are independent over \(i\) and \(j\),
+% and each pair has coordinatewise correlation \(t\).
+
+% For every \(i\),
+% \[
+% \mathbb{E}[X_{i,N}^2]
+% =
+% \mathbb{E}[Y_{i,N}^2]
+% =
+% 1
+% \]
+% and
+% \[
+% \mathbb{E}[X_{i,N}Y_{i,N}]
+% =
+% \mathbb{E}[p_i(U)q_i(V)]
+% =
+% \rho_i(t).
+% \]
+% Coordinates with different values of \(i\) are independent. By the multivariate central limit theorem, this implies that 
+
+
+% Define finite-dimensional rounding functions by
+% \[
+% f_N
+% =
+% f(X_{1,N},\ldots,X_{k,N}),
+% \qquad
+% g_N
+% =
+% g(Y_{1,N},\ldots,Y_{k,N}).
+% \]
+% Since the functions \(p_i,q_i,f,g\) are odd, the functions \(f_N\) and \(g_N\)
+% are odd. They therefore define ordinary finite-dimensional Krivine schemes.
+
+% Let
+% \[
+% H_N(t)
+% =
+% \frac{\pi}{2}\mathbb{E}[f_Ng_N]
+% \]
+% be their correlation functions. For every fixed \(t\in(-1,1)\), the previous
+% theorem gives
+% \[
+% \bigl(X^{(N)},Y^{(N)}\bigr)
+% \Longrightarrow
+% (X,Y).
+% \]
+% The discontinuity assumption then implies
+% \[
+% H_N(t)\longrightarrow H(t).
+% \]
+
+% For each \(N\), the Hermite expansion of \(f_N\) and \(g_N\) shows that \(H_N\)
+% is holomorphic on the unit disk and satisfies
+% \[
+% |H_N(z)|
+% \leq
+% \frac{\pi}{2}.
+% \]
+% The family \((H_N)\) is therefore locally bounded. Since it converges pointwise
+% on the real interval \((-1,1)\), Vitali's theorem gives locally uniform
+% convergence on the unit disk.
+% \end{proof}
+
+
+
+
+% \section{Limiting Krivine Schemes}
+
+% The construction in this paper starts from a simple observation. A normalized
+% average of degree-\(d\) Hermite polynomials converges to a Gaussian coordinate,
+% while its correlation with the corresponding coordinate on the other side is
+% \(t^d\). The degrees \(3\) and \(5\) used in our construction therefore produce
+% the correlations \(t^3\) and \(t^5\).
+
+% In this section, we first determine which correlation functions can be produced
+% in this way. We then use them to define limiting Krivine schemes and show that
+% these limiting schemes arise from ordinary finite-dimensional Krivine schemes.
+
+% \subsection{Correlation functions}
+
+% Let \((\operatorname{He}_d)_{d\geq 0}\) denote the orthonormal probabilist
+% Hermite polynomials. If \(U,V\) are standard Gaussians with correlation \(t\),
+% then
+% \[
+% \mathbb{E}
+% \left[
+% \operatorname{He}_d(U)\operatorname{He}_e(V)
+% \right]
+% =
+% \mathbf{1}_{\{d=e\}}t^d.
+% \]
+
+% Thus a degree-\(d\) Hermite function produces the correlation \(t^d\). More
+% generally, suppose that \(p\) and \(q\) are odd functions of a standard Gaussian
+% vector. Writing their Hermite expansions by degree suggests that their
+% correlation must have the form
+% \[
+% \sum_{\substack{d\geq 1\\ d\text{ odd}}} c_dt^d.
+% \]
+% Cauchy--Schwarz will force \(\sum_d |c_d|\leq 1\). This motivates the following
+% definition.
+
+% \begin{definition}
+% A function \(\rho:(-1,1)\to\mathbb{R}\) is an allowable correlation function
+% if
+% \[
+% \rho(t)
+% =
+% \sum_{\substack{d\geq 1\\ d\text{ odd}}}c_dt^d
+% \qquad\text{and}\qquad
+% \sum_{\substack{d\geq 1\\ d\text{ odd}}}|c_d|
+% \leq 1.
+% \]
+% \end{definition}
+
+% The coefficient condition implies that \(|\rho(t)|\leq |t|\) for
+% \(t\in(-1,1)\). In particular, \(\rho(t)\in[-1,1]\). The functions \(t\),
+% \(t^3\), and \(t^5\) are the simplest examples.
+
+% The next theorem shows that this is exactly the class produced by odd Gaussian
+% functions.
+
+% \begin{theorem}
+% A function \(\rho\) is allowable if and only if there are odd functions
+% \(p,q\in L_2(\gamma_m)\), for some \(m\), such that
+% \(\|p\|_2=\|q\|_2=1\) and
+% \[
+% \rho(t)=\mathbb{E}[p(U)q(V)],
+% \]
+% where \(U,V\in\mathbb{R}^m\) are standard Gaussian vectors with
+% \(\mathbb{E}[U_iV_j]=t\delta_{ij}\).
+% \end{theorem}
+
+% \begin{proof}
+% Suppose first that \(p\) and \(q\) are odd and have \(L_2\)-norm one. Write
+% their Hermite expansions by degree as
+% \[
+% p=\sum_{\substack{d\geq 1\\ d\text{ odd}}}p_d,
+% \qquad
+% q=\sum_{\substack{d\geq 1\\ d\text{ odd}}}q_d.
+% \]
+% Here \(p_d\) and \(q_d\) are the degree-\(d\) Hermite components.
+
+% Different Hermite degrees are orthogonal, while degree \(d\) contributes a
+% factor \(t^d\). Hence
+% \[
+% \mathbb{E}[p(U)q(V)]
+% =
+% \sum_{\substack{d\geq 1\\ d\text{ odd}}}
+% \langle p_d,q_d\rangle t^d.
+% \]
+% Set \(c_d=\langle p_d,q_d\rangle\). Then
+% \[
+% \sum_d|c_d|
+% \leq
+% \sum_d\|p_d\|_2\|q_d\|_2
+% \leq
+% \left(\sum_d\|p_d\|_2^2\right)^{1/2}
+% \left(\sum_d\|q_d\|_2^2\right)^{1/2}
+% =
+% 1.
+% \]
+% Thus the resulting correlation function is allowable.
+
+% Conversely, suppose that
+% \[
+% \rho(t)=\sum_{d\text{ odd}}c_dt^d,
+% \qquad
+% s:=\sum_{d\text{ odd}}|c_d|\leq 1.
+% \]
+% For \(x=(x_1,x_2,x_3)\in\mathbb{R}^3\), define
+% \[
+% p(x)
+% =
+% \sum_{d\text{ odd}}
+% \sqrt{|c_d|}\operatorname{He}_d(x_1)
+% +
+% \sqrt{1-s}\,x_2
+% \]
+% and
+% \[
+% q(x)
+% =
+% \sum_{d\text{ odd}}
+% \operatorname{sgn}(c_d)\sqrt{|c_d|}
+% \operatorname{He}_d(x_1)
+% +
+% \sqrt{1-s}\,x_3.
+% \]
+% Both functions are odd. Orthogonality gives \(\|p\|_2=\|q\|_2=1\).
+
+% Let \(U,V\in\mathbb{R}^3\) be standard Gaussian vectors with
+% \(\mathbb{E}[U_iV_j]=t\delta_{ij}\). The terms involving \(U_2\) and \(V_3\)
+% have zero cross-correlation. Therefore
+% \[
+% \mathbb{E}[p(U)q(V)]
+% =
+% \sum_{d\text{ odd}}c_dt^d
+% =
+% \rho(t).
+% \]
+% \end{proof}
+
+% If the same function is used on both sides, then the coefficients are
+% nonnegative. Indeed, if \(\rho(t)=\mathbb{E}[p(U)p(V)]\), then
+% \[
+% \rho(t)=\sum_{d\text{ odd}}\|p_d\|_2^2t^d.
+% \]
+% Thus \(c_d\geq 0\) and \(\sum_dc_d=1\). Allowing different functions on the two
+% sides gives the signed coefficients in the theorem.
+
+
+% \subsection{Central limit realization}
+
+% We now explain why allowable correlation functions occur as limits of ordinary
+% finite-dimensional Gaussian constructions. The idea is the same as in the
+% degree-\(3\) and degree-\(5\) averages used in this paper: take many independent
+% copies of the functions \(p\) and \(q\), and normalize their sums.
+
+% \begin{theorem}
+% Let \(\rho_1,\ldots,\rho_k\) be allowable correlation functions. For every
+% \(t\in(-1,1)\), there are finite-dimensional random vectors
+% \(X^{(N)},Y^{(N)}\in\mathbb{R}^k\), constructed from coordinatewise
+% \(t\)-correlated Gaussian inputs, such that
+% \[
+% \bigl(X^{(N)},Y^{(N)}\bigr)
+% \Longrightarrow
+% (X,Y),
+% \]
+% where \(X,Y\) are standard Gaussian vectors satisfying
+% \[
+% \mathbb{E}[X_iY_j]
+% =
+% \delta_{ij}\rho_i(t).
+% \]
+% \end{theorem}
+
+% \begin{proof}
+% For each \(i\), choose odd variance-one functions \(p_i,q_i\) such that
+% \[
+% \rho_i(t)=\mathbb{E}[p_i(U)q_i(V)].
+% \]
+% For \(N\geq 1\), define
+% \[
+% X_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N p_i(U_{i,j}),
+% \qquad
+% Y_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N q_i(V_{i,j}),
+% \]
+% where the pairs \((U_{i,j},V_{i,j})\) are independent over \(i\) and \(j\),
+% and each pair has coordinatewise correlation \(t\).
+
+% For every \(i\),
+% \[
+% \mathbb{E}[X_{i,N}^2]
+% =
+% \mathbb{E}[Y_{i,N}^2]
+% =
+% 1
+% \]
+% and
+% \[
+% \mathbb{E}[X_{i,N}Y_{i,N}]
+% =
+% \mathbb{E}[p_i(U)q_i(V)]
+% =
+% \rho_i(t).
+% \]
+% Coordinates with different values of \(i\) are independent. The multivariate
+% central limit theorem therefore gives the claimed convergence.
+% \end{proof}
+
+% For example, taking \(p=q=\operatorname{He}_3\) gives the correlation \(t^3\),
+% while taking \(p=q=\operatorname{He}_5\) gives \(t^5\). The theorem allows
+% arbitrary allowable correlations in place of these individual powers.
+
+% \subsection{Limiting schemes}
+
+% We can now package several allowable correlations into a Krivine scheme. The
+% only change from the usual definition is that the \(i\)-th pair of Gaussian
+% coordinates has correlation \(\rho_i(t)\), rather than \(t\).
+
+% \begin{definition}
+% A limiting Krivine scheme consists of odd measurable functions
+% \(f,g:\mathbb{R}^k\to\{-1,1\}\) and allowable correlation functions
+% \(\rho_1,\ldots,\rho_k\).
+
+% For \(t\in(-1,1)\), let \(X,Y\in\mathbb{R}^k\) be jointly Gaussian with
+% \[
+% \mathbb{E}[X_iX_j]
+% =
+% \mathbb{E}[Y_iY_j]
+% =
+% \delta_{ij},
+% \qquad
+% \mathbb{E}[X_iY_j]
+% =
+% \delta_{ij}\rho_i(t).
+% \]
+% The correlation function of the scheme is
+% \[
+% H(t)
+% =
+% \frac{\pi}{2}\mathbb{E}[f(X)g(Y)].
+% \]
+% \end{definition}
+
+% The usual Krivine scheme is the special case
+% \(\rho_1(t)=\cdots=\rho_k(t)=t\). The limiting scheme used in this paper has
+% correlations
+% \[
+% (t,t,t^3,t^5).
+% \]
+
+% The point of the definition is that these limiting objects do not enlarge the
+% theory artificially. They are limits of ordinary finite-dimensional Krivine
+% schemes.
+
+% \begin{theorem}
+% Suppose that the discontinuity sets of \(f\) and \(g\) have Gaussian measure
+% zero. Then the correlation function of a limiting Krivine scheme is the locally
+% uniform limit on the unit disk of correlation functions of ordinary
+% finite-dimensional Krivine schemes.
+% \end{theorem}
+
+% \begin{proof}
+% For each \(\rho_i\), choose functions \(p_i,q_i\) as above and form the
+% normalized sums
+% \[
+% X_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N p_i(U_{i,j}),
+% \qquad
+% Y_{i,N}
+% =
+% \frac{1}{\sqrt{N}}\sum_{j=1}^N q_i(V_{i,j}).
+% \]
+% Define finite-dimensional rounding functions by
+% \[
+% f_N
+% =
+% f(X_{1,N},\ldots,X_{k,N}),
+% \qquad
+% g_N
+% =
+% g(Y_{1,N},\ldots,Y_{k,N}).
+% \]
+% Since the functions \(p_i,q_i,f,g\) are odd, the functions \(f_N\) and \(g_N\)
+% are odd. They therefore define ordinary finite-dimensional Krivine schemes.
+
+% Let
+% \[
+% H_N(t)
+% =
+% \frac{\pi}{2}\mathbb{E}[f_Ng_N]
+% \]
+% be their correlation functions. For every fixed \(t\in(-1,1)\), the previous
+% theorem gives
+% \[
+% \bigl(X^{(N)},Y^{(N)}\bigr)
+% \Longrightarrow
+% (X,Y).
+% \]
+% The discontinuity assumption then implies
+% \[
+% H_N(t)\longrightarrow H(t).
+% \]
+
+% For each \(N\), the Hermite expansion of \(f_N\) and \(g_N\) shows that \(H_N\)
+% is holomorphic on the unit disk and satisfies
+% \[
+% |H_N(z)|
+% \leq
+% \frac{\pi}{2}.
+% \]
+% The family \((H_N)\) is therefore locally bounded. Since it converges pointwise
+% on the real interval \((-1,1)\), Vitali's theorem gives locally uniform
+% convergence on the unit disk.
+% \end{proof}
+
+% The boundary assumption is automatic for the threshold functions used in this
+% paper. It can also be removed for general odd measurable functions by a
+% standard approximation argument.

@@ -1,0 +1,64 @@
+{
+  "repeated_rounding": {
+    "exact_depth_checks": 144,
+    "representative": {
+      "K": 2,
+      "depth_16_absolute_error": "8/5",
+      "local_projective_rounding_error": "1/10",
+      "local_sup_rounding_error": "1/5",
+      "mesh": 1,
+      "s": "1/10",
+      "two_step_reward_holonomy": "1/5"
+    }
+  },
+  "seven_to_two_quotient": {
+    "coarsest_weighted_residual_states": 2,
+    "column_span_bounds": [
+      8,
+      6
+    ],
+    "quotient": {
+      "A": {
+        "c0": [
+          "A",
+          3
+        ],
+        "c1": [
+          "B",
+          3
+        ]
+      },
+      "B": {
+        "c0": [
+          "A",
+          1
+        ],
+        "c1": [
+          "B",
+          3
+        ]
+      }
+    },
+    "reachable_normalized_states": 7,
+    "universal_lattice_state_bound": 2465
+  },
+  "strict_width3_cube": {
+    "base_minimum_margin": 2,
+    "base_response": [
+      18,
+      28,
+      18,
+      28,
+      20,
+      24,
+      20,
+      24
+    ],
+    "certificate_boundary_tie_incidents": 32,
+    "certificate_closed_cube_radius": "1/2",
+    "feature_determinant": -1024,
+    "inverse_infinity_norm": 2,
+    "unique_cube_minimum_margin": "3/2",
+    "unique_cube_radius": "1/8"
+  }
+}
