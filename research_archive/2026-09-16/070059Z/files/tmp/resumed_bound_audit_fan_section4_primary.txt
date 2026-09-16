@@ -1,0 +1,230 @@
+16 APPROXIMATE MESSAGE PASSING ALGORITHMS FOR ROTATIONALLY INVARIANT MATRICES
+4.1. Debiasing coeﬃcients and limit covariance. Deﬁne the t×t matrices
+∆t =
+
+
+⟨u2
+1⟩ ⟨ u1u2⟩ ··· ⟨ u1ut⟩
+⟨u2u1⟩ ⟨ u2
+2⟩ ··· ⟨ u2ut⟩
+... ... ... ...
+⟨utu1⟩ ⟨utu2⟩ ··· ⟨ u2
+t⟩
+
+, Φt =
+
+
+0 0 ··· 0 0
+⟨∂1u2⟩ 0 ··· 0 0
+⟨∂1u3⟩ ⟨∂2u3⟩ ··· 0 0
+... ... ... ... ...
+⟨∂1ut⟩ ⟨∂2ut⟩ ··· ⟨ ∂t−1ut⟩ 0
+
+
+(4.4)
+where usus′ ∈ Rn, u2
+s∈ Rn, and ∂s′us∈ Rn denote the entrywise product, square, and partial
+derivative with respect to zs′. For each j≥ 0, deﬁne
+Θ(j)
+t =
+j∑
+i=0
+Φi
+t∆t(Φj−i
+t )⊤. (4.5)
+For example,
+Θ(0)
+t = ∆t, Θ(1)
+t = Φt∆t + ∆tΦ⊤
+t , Θ(2)
+t = Φ2
+t∆t + Φt∆tΦ⊤
+t + ∆t(Φ2
+t )⊤.
+Let{κk}k≥1 be the free cumulants of the empirical eigenvalue distribution of W. These are the
+free cumulants as deﬁned in Section 2.3 corresponding to the empirical moments
+mk = 1
+n
+n∑
+i=1
+λk
+i, (4.6)
+where (λ1,...,λ n) =λλλ are the eigenvalues of W. Then deﬁne two matrices Bt and Σt by
+Bt =
+
+
+∞∑
+j=0
+κj+1Φj
+t
+
+
+⊤
+, Σt =
+∞∑
+j=0
+κj+2Θ(j)
+t . (4.7)
+Here, Bt may be interpreted as the R-transform applied to Φ⊤
+t . Note that we write these as inﬁnite
+series for convenience, but in fact the series are ﬁnite because Φj
+t = 0 for all j≥t, and hence also
+Θ(j)
+t = 0 for all j≥ 2t− 1. So for example,
+B1 =κ1Id1×1, B2 =κ1Id2×2 +κ2Φ⊤
+2,
+Σ1 =κ2Θ(0)
+1 , Σ2 =κ2Θ(0)
+2 +κ3Θ(1)
+2 +κ4Θ(2)
+2 .
+Each matrix Bt is upper-triangular, which we may write entrywise as
+Bt =
+
+
+b11 b21 ··· bt1
+b22 ··· bt2
+... ...
+btt
+
+.
+The debiasing coeﬃcients in (4.2) are deﬁned to be the last column of Bt. Note that the diagonal
+entries b11,b 22,...,b tt are all equal to κ1, corresponding to the subtraction of κ1ut in (4.2) when
+the eigenvalue distribution of W has mean κ1. If κ1 = 0, then the debiasing for Wut depends only
+on the previous iterates u1,..., ut−1.
+Under the conditions to be imposed in Assumption 4.2, all of the matrices ∆t, Φt, Bt, and Σt
+will converge to deterministic t×t matrices in the n→∞ limit, which we denote as
+(∆∞
+t , Φ∞
+t , B∞
+t , Σ∞
+t ) = lim
+n→∞
+(∆t, Φt, Bt, Σt).
+This matrix Σ∞
+t is the covariance deﬁning the state evolution of the iterates (z1,..., zt). All of our
+results will hold equally if the debiasing coeﬃcients in (4.2) are replaced by their limits b∞
+ts , or by
+any consistent estimates of these limits.
+We make two observations regarding this construction:
+
+APPROXIMATE MESSAGE PASSING ALGORITHMS FOR ROTATIONALLY INVARIANT MATRICES 17
+(1) From the lower-triangular form of Φt, one may check that the upper-left ( t− 1)× (t− 1)
+submatrix of (Φj
+t)⊤ is (Φj
+t−1)⊤, and similarly the upper-left ( t− 1)× (t− 1) submatrix of
+Θ(j)
+t is Θ(j)
+t−1. Thus, the upper-left submatrices of Bt and Σt coincide with Bt−1 and Σt−1.
+(2) For each iteration t≥ 1, Bt depends on λλλ only via its ﬁrst t free cumulants κ1,...,κ t, and
+Σt depends on λλλ only via its ﬁrst 2t free cumulants κ1,...,κ 2t.
+Remark 4.1. In the Gaussian setting of W∼ GOE(n), where W has independent N (0, 1/n)
+entries above the diagonal andN (0, 2/n) entries on the diagonal, the limit spectral distribution of
+W is the Wigner semicircle law. The limits of the free cumulants κ1,κ 2,... in this case are
+κ∞
+1 = 0, κ ∞
+2 = 1, κ ∞
+j = 0 for all j≥ 2.
+This yields simply
+B∞
+t = (Φ∞
+t )⊤, Σ∞
+t = ∆∞
+t .
+If we further specialize to an algorithm where each ut depends only on the previous iterate zt−1,
+then⟨∂sut⟩ = 0 for s̸=t− 1, and this yields the Gaussian AMP algorithm
+zt = Wut−⟨∂t−1ut⟩ut−1
+ut+1 =ut+1(zt, E)
+as studied in [Bol14] and [BM11a, Section 4]. Furthermore, the state evolution is such that each
+iterate zt has the empirical limit N (0,σ∞
+tt ), where σ∞
+tt = limn→∞⟨u2
+t⟩.
+Note that outside of this Gaussian setting, we do not in general have the identity Σ∞
+t = ∆∞
+t , i.e.
+the empirical second moments of z1,..., zt do not coincide with those of u1,..., ut in the large-n
+limit, even if W is scaled so that κ2 = 1.
+4.2. Main result. We impose the following assumptions on the model (4.1) and the AMP iterates
+(4.2–4.3). Note that here, we do not require the functions ut+1(·) to be Lipschitz, but instead
+impose only the assumption (2.1) of polynomial growth.
+Assumption 4.2.
+(a) O∈ Rn×n is a random and Haar-uniform orthogonal matrix.
+(b) λλλ∈ Rn is independent of O and satisﬁesλλλ W→ Λ almost surely as n→∞ , for a random variable
+Λ having ﬁnite moments of all orders.
+(c) u1∈ Rn and E∈ Rn×k are independent of O and satisfy ( u1, E) W→ (U1,E ) almost surely as
+n→∞ , for a random vector (U1,E )≡ (U1,E 1,...,E k) having ﬁnite moments of all orders.
+(d) Each function ut+1 : Rt+k→ R satisﬁes (2.1) for some C >0 and p≥ 1. Writing its argument
+as (z,e ) where z∈ Rt and e∈ Rk, ut+1 is weakly diﬀerentiable in z and continuous in e. For
+each s = 1,...,t , ∂sut+1 also satisﬁes (2.1) for some C > 0 and p≥ 1, and ∂sut+1(z,e ) is
+continuous at Lebesgue-a.e. z∈ Rt for every e∈ Rk.
+(e) Var[Λ] > 0 and E[U 2
+1 ] > 0. Letting ( Z1,...,Z t)∼N (0, Σ∞
+t ) be independent of ( U1,E ), each
+function ut+1 is such that there do not exist constants α1,...,α t,β 1,...,β t for which
+ut+1(Z1,...,Z t,E ) =
+t∑
+s=1
+αsZs +β1U1 +
+t∑
+s=2
+βsUs(Z1,...,Z s−1,E )
+with probability 1 over (U1,E,Z 1,...,Z t).
+We clarify that Theorem 4.3 below establishes the existence of the limit Σ∞
+t provided that
+condition (e) holds for the functions u2,...,u t, and this limit Σ∞
+t then deﬁnes condition (e) for the
+next function ut+1. This condition (e) is a non-degeneracy assumption that holds if each function
+ut+1 has a non-linear dependence on the preceding iterate zt.
+
+18 APPROXIMATE MESSAGE PASSING ALGORITHMS FOR ROTATIONALLY INVARIANT MATRICES
+Theorem 4.3. Under Assumption 4.2, for each ﬁxed t≥ 1, almost surely as n→∞ : Σt→ Σ∞
+t
+for a deterministic non-singular matrix Σ∞
+t , and
+(u1,..., ut+1, z1,..., zt, E) W→ (U1,...,U t+1,Z 1,...,Z t,E )
+where (Z1,...,Z t) ∼ N(0, Σ∞
+t ), this vector (Z1,...,Z t) is independent of (U1,E ), and Us =
+us(Z1,...,Z s−1,E ) for each s = 2,...,t + 1.
+The proof of this result is provided in Appendix A. The limit Σ∞
+t is given by replacing⟨usus′⟩,
+⟨∂s′us⟩, and κk in the deﬁnitions (4.4) and (4.7) with E[UsUs′], E[∂s′us(Z1,...,Z s−1,E )], and the
+free cumulants κ∞
+k of the limit spectral distribution Λ.
+4.3. Removing the non-degeneracy assumption. The following corollary provides a version of
+Theorem 4.3 without the non-degeneracy condition of Assumption 4.2(e), under the stronger condi-
+tion that each functionut+1 is continuously-diﬀerentiable and Lipschitz. Note that the convergence
+established is only in W2, rather than in Wp for every order p≥ 1 as in Theorem 4.3.
+The proof follows the idea of [BMN20] by studying a perturbed AMP sequence and then taking
+the limit of this perturbation to 0. We provide this proof in Appendix D.
+Corollary 4.4. Suppose Assumption 4.2(a–c) holds, lim supn→∞∥λλλ∥∞ <∞, each function ut+1 :
+Rt+k→ R is continuously-diﬀerentiable, and
+|ut+1(z,e )−ut+1(z′,e )|≤ C∥z−z′∥
+for a constant C > 0 and all z,z′∈ Rt and e∈ Rk. Then for each ﬁxed t≥ 1, almost surely as
+n→∞ : Σt→ Σ∞
+t for a deterministic (possibly singular) matrix Σ∞
+t , and
+(u1,..., ut+1, z1,..., zt, E) W2
+→ (U1,...,U t+1,Z 1,...,Z t,E )
+where (U1,...,U t+1,Z 1,...,Z t,E ) is as deﬁned in Theorem 4.3.
+5. AMP algorithm for rectangular matrices
+In this section, we describe the form of the general AMP algorithm for a rectangular matrix
+W = O⊤ΛΛΛQ∈ Rm×n, ΛΛΛ = diag(λλλ) (5.1)
+and state a formal theorem for its state evolution. We denote
+λλλ = (λ1,...,λ min(m,n))∈ Rmin(m,n) (5.2)
+as the diagonal entries of ΛΛΛ, which are the singular values of W.
+We consider an initialization u1∈ Rm, and two matrices of side information
+E∈ Rm×k and F∈ Rn×ℓ
+for ﬁxed dimensions k,ℓ≥ 0, all independent of W. (We may take k,ℓ = 0 if there is no such side
+information.) Starting from this initialization, the AMP algorithm takes the form
+zt = W⊤ut−bt1v1−bt2v2−... −bt,t−1vt−1 (5.3)
+vt =vt(z1,..., zt, F) (5.4)
+yt = Wvt−at1u1−at2u2−... −attut (5.5)
+ut+1 =ut+1(y1,..., yt, E) (5.6)
+for functions vt : Rt+ℓ→ R and ut+1 : Rt+k → R. In the ﬁrst iteration t = 1, (5.3) is simply
+z1 = W⊤u1. The debiasing coeﬃcients at1,...,a tt and bt1,...,b t,t−1 are deﬁned to ensure that
+(y1,..., yt) W→N (0, Σ∞
+t ) and ( z1,..., zt) W→N (0, Ω∞
+t )
+as m,n→∞ . We describe these debiasing coeﬃcients and state evolution in the next section, in
+terms of the rectangular free cumulants of W—these were also derived recently in [C ¸ O20].

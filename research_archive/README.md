@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-16 07:00:59](2026-09-16/070059Z/README.md) | 1,888 research payloads;157,463,634 bytes; actual-class power/filter barriers, planted sharpness, Bohr/Chebyshev comparison, frame/orbit proofs, fresh refinement audit and failures | All payload hashes verified. No credential, concurrent-write or unpreserved oversized candidate. Same14 reviewed historical/dynamic references; new-code dependencies manually checked. |
 | [2026-09-16 06:02:07](2026-09-16/060207Z/README.md) | 1,877 research payloads;154,816,421 bytes; primary BH proof reconstruction, exact power/entropy identities, nonlinear-filter barriers, joint-field and actual-port investigations | All payload hashes verified. No credential or unpreserved oversized candidate. Canonical proofs/scripts committed separately; ongoing and failed work remains explicitly labeled. |
 | [2026-09-07 21:17:42](2026-09-07/211742Z/README.md) | 1,896 research payloads; 155,432,715 bytes; joint rare-packet derivations, actual stratified selectors, scar/iteration falsifiers, primary RIP retrieval and final audits | All payload hashes verified. No credential or unpreserved oversized candidate. Canonical proofs and scripts are committed separately; draft status is unchanged by preservation. |
 | [2026-09-07 20:20:39](2026-09-07/202039Z/README.md) | 1,888 research payloads; 155,344,293 bytes; sharp port threshold, hierarchy dilution, actual frame obstructions, marked balanced recursion and exploratory scalar tests | Hash verification accompanies publication; no credential or unpreserved oversized candidate. Canonical work is committed separately; unfinished and failed calculations remain labeled. |
@@ -77,8 +78,8 @@ certificate audit records the remaining completeness and replay boundaries.
 
 ## Checkpoint procedure
 
-Latest publication audit: [2026-09-07 synthesis-to-principle campaign](publication_audit_principle_2026_09_07.md).
-The closing snapshot verifies1,896 payloads. Changed canonical proofs/state
+Latest publication audit: [2026-09-16 bounded BH-paper investigation](publication_audit_bh_2026_09_16.md).
+The closing snapshot verifies1,888 payloads. Changed canonical proofs/state
 are preserved directly in the publication commits; other research originals
 match saved payloads. Working originals remain in place intentionally.
 The [earlier closing report](publication_audit_2026_09_07.md) is historical.

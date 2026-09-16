@@ -1,0 +1,80 @@
+{
+  "classification": "exact finite exhaustive computation; not asymptotic evidence",
+  "content_sha256_without_digest": "826e3fd2ba9b09f85fb3c3a18b973a4a810065a2a6f0ba42efc7e3fa9872732b",
+  "elapsed_seconds": 6.142544269561768,
+  "m1_k3_extensions": {
+    "all_collisions_listed": true,
+    "collision_classes": [],
+    "exposed_log2_classes": 3.0,
+    "largest_collision": 1,
+    "orbit_states": 8,
+    "semantic_classes": 8
+  },
+  "m1_k3_nested": {
+    "graphs": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    },
+    "omega_roots": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    },
+    "signed_weights": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 3.0,
+      "largest_collision": 1,
+      "orbit_states": 8,
+      "semantic_classes": 8
+    }
+  },
+  "m1_k4_nested": {
+    "graphs": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    },
+    "omega_roots": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    },
+    "signed_weights": {
+      "all_collisions_listed": true,
+      "collision_classes": [],
+      "exposed_log2_classes": 4.0,
+      "largest_collision": 1,
+      "orbit_states": 16,
+      "semantic_classes": 16
+    }
+  },
+  "query_families_frozen_before_search": {
+    "extensions": "append one block labelled 0, omega, or a repeated base label",
+    "graphs": "all labelled unweighted simple graphs on existing blocks",
+    "omega_roots": "all unweighted graphs and all subsets of fields q*s_omega",
+    "signed_weights": "all existing edge weights in {-1,0,1}"
+  },
+  "raw_signature_sha256": {
+    "m1_k3_extensions": "03659f6546534d757dd85d962100f31bd59694fd1037fdd81f6a3b1026da41bb",
+    "m1_k4": "dbbe45595349bfbffc6f203a8f949352bad3c64f377981b2c5ecb8a20f2a0052"
+  },
+  "schema": "linear-label-walsh-semantic-wind-tunnel-v1",
+  "software": {
+    "numpy": "2.0.2",
+    "python": "3.9.2"
+  }
+}

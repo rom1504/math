@@ -1,0 +1,4436 @@
+{
+  "betas": [
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "global_negation_policy": "retained as a distinct class because K_+(A) can distinguish A and -A",
+  "max_child_order": 8,
+  "normalization": {
+    "candidate_defect": "phi_K(t)-2 P_r(beta)",
+    "child_raw_temperature": "s=beta/sqrt(r)",
+    "energy": "H_A(x)=sum_{i<j} a_ij x_i x_j",
+    "parent_raw_temperature": "t=beta/sqrt(2r)",
+    "pressure": "phi_A(t)=log E_x cosh(t H_A(x))"
+  },
+  "orders": [
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "0": 1
+          },
+          "root_gauge_code_count": 1
+        }
+      ],
+      "distinct_absolute_energy_histograms": 1,
+      "grid": [
+        {
+          "P_r_beta": 0.0,
+          "beta": 0.5,
+          "child_raw_temperature": 0.5,
+          "core_defect_range": [
+            0.0,
+            0.0
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.061239736504030806,
+            0.061239736504030806
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.0,
+          "beta": 1.0,
+          "child_raw_temperature": 1.0,
+          "core_defect_range": [
+            0.0,
+            0.0
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.23158132220834587,
+            0.23158132220834587
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.0,
+          "beta": 2.0,
+          "child_raw_temperature": 2.0,
+          "core_defect_range": [
+            0.0,
+            0.0
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.7784912985576696,
+            0.7784912985576696
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.0,
+          "beta": 4.0,
+          "child_raw_temperature": 4.0,
+          "core_defect_range": [
+            0.0,
+            0.0
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            2.138767345404153,
+            2.138767345404153
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.0,
+          "beta": 8.0,
+          "child_raw_temperature": 8.0,
+          "core_defect_range": [
+            0.0,
+            0.0
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            4.963719273325286,
+            4.963719273325286
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.0,
+              "core_defect_vs_2P_r": 0.0,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.0,
+              "core_pressure": 0.0,
+              "integral_plus_I_defect_vs_2P_r": 0.061239736504030806,
+              "integral_plus_I_pressure": 0.061239736504030806,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.3535533905932738,
+              "matching_pressure_difference": 0.061239736504030806
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.0,
+              "core_defect_vs_2P_r": 0.0,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.0,
+              "core_pressure": 0.0,
+              "integral_plus_I_defect_vs_2P_r": 0.23158132220834587,
+              "integral_plus_I_pressure": 0.23158132220834587,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.7071067811865476,
+              "matching_pressure_difference": 0.23158132220834587
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 0.0,
+              "core_defect_vs_2P_r": 0.0,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.0,
+              "core_pressure": 0.0,
+              "integral_plus_I_defect_vs_2P_r": 0.7784912985576696,
+              "integral_plus_I_pressure": 0.7784912985576696,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.4142135623730951,
+              "matching_pressure_difference": 0.7784912985576696
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 0.0,
+              "core_defect_vs_2P_r": 0.0,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.0,
+              "core_pressure": 0.0,
+              "integral_plus_I_defect_vs_2P_r": 2.138767345404153,
+              "integral_plus_I_pressure": 2.138767345404153,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.8284271247461903,
+              "matching_pressure_difference": 2.138767345404153
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 0.0,
+              "core_defect_vs_2P_r": 0.0,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.0,
+              "core_pressure": 0.0,
+              "integral_plus_I_defect_vs_2P_r": 4.963719273325286,
+              "integral_plus_I_pressure": 4.963719273325286,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 5.656854249492381,
+              "matching_pressure_difference": 4.963719273325286
+            }
+          ],
+          "canonical_root_code": 0,
+          "child_cap": 0,
+          "child_signed_energy_histogram_projective": {
+            "0": 1
+          },
+          "core_cap": 0,
+          "core_signed_energy_histogram_projective": {
+            "0": 2
+          },
+          "full_root_gauge_permutation_orbit_size": 1,
+          "global_negation_root_code": 0,
+          "integral_plus_I_cap": 1,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-1": 1,
+            "1": 1
+          },
+          "matrix": [
+            [
+              0
+            ]
+          ],
+          "matrix_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "max_core_orbit_identity_abs_error": 0.0,
+          "selected_root_code_count": 1,
+          "selected_root_code_examples": [
+            0
+          ]
+        }
+      ],
+      "r": 1,
+      "root_gauge_signings_enumerated": 1
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "1": 2
+          },
+          "root_gauge_code_count": 1
+        }
+      ],
+      "distinct_absolute_energy_histograms": 1,
+      "grid": [
+        {
+          "P_r_beta": 0.061239736504030806,
+          "beta": 0.5,
+          "child_raw_temperature": 0.35355339059327373,
+          "core_defect_range": [
+            -0.0023649660497840896,
+            -0.0023649660497840896
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.0594946411905386,
+            0.0594946411905386
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.23158132220834587,
+          "beta": 1.0,
+          "child_raw_temperature": 0.7071067811865475,
+          "core_defect_range": [
+            -0.029381813933664458,
+            -0.029381813933664458
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.2108471999828906,
+            0.2108471999828906
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.7784912985576696,
+          "beta": 2.0,
+          "child_raw_temperature": 1.414213562373095,
+          "core_defect_range": [
+            -0.23197984975747477,
+            -0.23197984975747477
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.6355818112085794,
+            0.6355818112085794
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 2.138767345404153,
+          "beta": 4.0,
+          "child_raw_temperature": 2.82842712474619,
+          "core_defect_range": [
+            -0.9703464649953553,
+            -0.9703464649953553
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            1.6796590297203737,
+            1.6796590297203737
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 4.963719273325286,
+          "beta": 8.0,
+          "child_raw_temperature": 5.65685424949238,
+          "core_defect_range": [
+            -2.620585614675349,
+            -2.620585614675349
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            3.993790836950552,
+            3.993790836950552
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 1,
+          "switching_permutation_class_count": 1
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.061239736504030806,
+              "core_defect_vs_2P_r": -0.0023649660497840896,
+              "core_orbit_identity_abs_error": 1.1102230246251565e-16,
+              "core_orbit_identity_pressure": 0.12011450695827741,
+              "core_pressure": 0.12011450695827752,
+              "integral_plus_I_defect_vs_2P_r": 0.0594946411905386,
+              "integral_plus_I_pressure": 0.1819741141986002,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.5,
+              "matching_pressure_difference": 0.06185960724032269
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.23158132220834587,
+              "core_defect_vs_2P_r": -0.029381813933664458,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.4337808304830273,
+              "core_pressure": 0.4337808304830273,
+              "integral_plus_I_defect_vs_2P_r": 0.2108471999828906,
+              "integral_plus_I_pressure": 0.6740098443995823,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.0,
+              "matching_pressure_difference": 0.24022901391655505
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 0.7784912985576696,
+              "core_defect_vs_2P_r": -0.23197984975747477,
+              "core_orbit_identity_abs_error": 2.220446049250313e-16,
+              "core_orbit_identity_pressure": 1.3250027473578643,
+              "core_pressure": 1.3250027473578645,
+              "integral_plus_I_defect_vs_2P_r": 0.6355818112085794,
+              "integral_plus_I_pressure": 2.1925644083239186,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.0,
+              "matching_pressure_difference": 0.8675616609660541
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 2.138767345404153,
+              "core_defect_vs_2P_r": -0.9703464649953553,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 3.3071882258129506,
+              "core_pressure": 3.3071882258129506,
+              "integral_plus_I_defect_vs_2P_r": 1.6796590297203737,
+              "integral_plus_I_pressure": 5.95719372052868,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 4.0,
+              "matching_pressure_difference": 2.650005494715729
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 4.963719273325286,
+              "core_defect_vs_2P_r": -2.620585614675349,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 7.306852931975223,
+              "core_pressure": 7.306852931975223,
+              "integral_plus_I_defect_vs_2P_r": 3.993790836950552,
+              "integral_plus_I_pressure": 13.921229383601124,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 8.0,
+              "matching_pressure_difference": 6.614376451625901
+            }
+          ],
+          "canonical_root_code": 0,
+          "child_cap": 1,
+          "child_signed_energy_histogram_projective": {
+            "-1": 1,
+            "1": 1
+          },
+          "core_cap": 2,
+          "core_signed_energy_histogram_projective": {
+            "-2": 4,
+            "2": 4
+          },
+          "full_root_gauge_permutation_orbit_size": 1,
+          "global_negation_root_code": 0,
+          "integral_plus_I_cap": 4,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-2": 2,
+            "-4": 1,
+            "0": 2,
+            "2": 2,
+            "4": 1
+          },
+          "matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "max_core_orbit_identity_abs_error": 2.220446049250313e-16,
+          "selected_root_code_count": 1,
+          "selected_root_code_examples": [
+            0
+          ]
+        }
+      ],
+      "r": 2,
+      "root_gauge_signings_enumerated": 1
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "1": 3,
+            "3": 1
+          },
+          "root_gauge_code_count": 2
+        }
+      ],
+      "distinct_absolute_energy_histograms": 1,
+      "grid": [
+        {
+          "P_r_beta": 0.12330151879278006,
+          "beta": 0.5,
+          "child_raw_temperature": 0.2886751345948129,
+          "core_defect_range": [
+            -0.003253657034743007,
+            -0.003253657034743007
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.04140061029572373,
+            0.07593539671488325
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 3,
+              "3": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 2,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 0.4744657796598879,
+          "beta": 1.0,
+          "child_raw_temperature": 0.5773502691896258,
+          "core_defect_range": [
+            -0.043581323015381646,
+            -0.043581323015381646
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            0.015571595180398523,
+            0.35525580667528356
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 3,
+              "3": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 2,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 1.6687374567241864,
+          "beta": 2.0,
+          "child_raw_temperature": 1.1547005383792517,
+          "core_defect_range": [
+            -0.405589306385167,
+            -0.40558930638516655
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            -0.6450800563664094,
+            1.0195812654376848
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 3,
+              "3": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 2,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 4.878210491631717,
+          "beta": 4.0,
+          "child_raw_temperature": 2.3094010767585034,
+          "core_defect_range": [
+            -2.03353833945327,
+            -2.03353833945327
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            -3.203769958186946,
+            1.5831912596982747
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 3,
+              "3": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 2,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 11.777256835979506,
+          "beta": 8.0,
+          "child_raw_temperature": 4.618802153517007,
+          "core_defect_range": [
+            -6.038030910431342,
+            -6.038030910431342
+          ],
+          "gap_to_next_distinct_histogram": null,
+          "integral_plus_I_defect_range": [
+            -8.896134542792227,
+            2.3779862167139676
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 3,
+              "3": 1
+            }
+          ],
+          "minimizing_root_gauge_code_count": 2,
+          "switching_permutation_class_count": 2
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.12330151879278006,
+              "core_defect_vs_2P_r": -0.003253657034743007,
+              "core_orbit_identity_abs_error": 2.220446049250313e-16,
+              "core_orbit_identity_pressure": 0.24334938055081734,
+              "core_pressure": 0.24334938055081712,
+              "integral_plus_I_defect_vs_2P_r": 0.07593539671488325,
+              "integral_plus_I_pressure": 0.3225384343004434,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.6123724356957945,
+              "matching_pressure_difference": 0.07918905374962626
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.4744657796598879,
+              "core_defect_vs_2P_r": -0.043581323015381646,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.9053502363043942,
+              "core_pressure": 0.9053502363043942,
+              "integral_plus_I_defect_vs_2P_r": 0.35525580667528356,
+              "integral_plus_I_pressure": 1.3041873659950594,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.224744871391589,
+              "matching_pressure_difference": 0.3988371296906652
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 1.6687374567241866,
+              "core_defect_vs_2P_r": -0.405589306385167,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 2.9318856070632067,
+              "core_pressure": 2.9318856070632062,
+              "integral_plus_I_defect_vs_2P_r": 1.0195812654376848,
+              "integral_plus_I_pressure": 4.357056178886058,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.449489742783178,
+              "matching_pressure_difference": 1.4251705718228518
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 4.878210491631717,
+              "core_defect_vs_2P_r": -2.03353833945327,
+              "core_orbit_identity_abs_error": 8.881784197001252e-16,
+              "core_orbit_identity_pressure": 7.722882643810163,
+              "core_pressure": 7.722882643810164,
+              "integral_plus_I_defect_vs_2P_r": 1.5831912596982747,
+              "integral_plus_I_pressure": 11.339612242961708,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 4.898979485566356,
+              "matching_pressure_difference": 3.6167295991515447
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 11.777256835979506,
+              "core_defect_vs_2P_r": -6.038030910431342,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 17.51648276152767,
+              "core_pressure": 17.51648276152767,
+              "integral_plus_I_defect_vs_2P_r": 2.3779862167139676,
+              "integral_plus_I_pressure": 25.93249988867298,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 9.797958971132712,
+              "matching_pressure_difference": 8.41601712714531
+            }
+          ],
+          "canonical_root_code": 0,
+          "child_cap": 3,
+          "child_signed_energy_histogram_projective": {
+            "-1": 3,
+            "3": 1
+          },
+          "core_cap": 6,
+          "core_signed_energy_histogram_projective": {
+            "-2": 12,
+            "-6": 4,
+            "2": 12,
+            "6": 4
+          },
+          "full_root_gauge_permutation_orbit_size": 1,
+          "global_negation_root_code": 1,
+          "integral_plus_I_cap": 9,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-1": 12,
+            "-7": 3,
+            "-9": 1,
+            "1": 12,
+            "7": 3,
+            "9": 1
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "max_core_orbit_identity_abs_error": 8.881784197001252e-16,
+          "selected_root_code_count": 1,
+          "selected_root_code_examples": [
+            0
+          ]
+        },
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.12330151879278006,
+              "core_defect_vs_2P_r": -0.003253657034743007,
+              "core_orbit_identity_abs_error": 2.220446049250313e-16,
+              "core_orbit_identity_pressure": 0.24334938055081734,
+              "core_pressure": 0.24334938055081712,
+              "integral_plus_I_defect_vs_2P_r": 0.04140061029572373,
+              "integral_plus_I_pressure": 0.28800364788128385,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.6123724356957945,
+              "matching_pressure_difference": 0.044654267330466735
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.4744657796598879,
+              "core_defect_vs_2P_r": -0.043581323015381646,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.9053502363043942,
+              "core_pressure": 0.9053502363043942,
+              "integral_plus_I_defect_vs_2P_r": 0.015571595180398523,
+              "integral_plus_I_pressure": 0.9645031545001743,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.224744871391589,
+              "matching_pressure_difference": 0.05915291819578017
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 1.6687374567241864,
+              "core_defect_vs_2P_r": -0.40558930638516655,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 2.9318856070632067,
+              "core_pressure": 2.9318856070632062,
+              "integral_plus_I_defect_vs_2P_r": -0.6450800563664094,
+              "integral_plus_I_pressure": 2.6923948570819634,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.449489742783178,
+              "matching_pressure_difference": -0.23949074998124287
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 4.878210491631717,
+              "core_defect_vs_2P_r": -2.03353833945327,
+              "core_orbit_identity_abs_error": 8.881784197001252e-16,
+              "core_orbit_identity_pressure": 7.722882643810163,
+              "core_pressure": 7.722882643810164,
+              "integral_plus_I_defect_vs_2P_r": -3.203769958186946,
+              "integral_plus_I_pressure": 6.552651025076488,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 4.898979485566356,
+              "matching_pressure_difference": -1.170231618733676
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 11.777256835979506,
+              "core_defect_vs_2P_r": -6.038030910431342,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 17.51648276152767,
+              "core_pressure": 17.51648276152767,
+              "integral_plus_I_defect_vs_2P_r": -8.896134542792227,
+              "integral_plus_I_pressure": 14.658379129166784,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 9.797958971132712,
+              "matching_pressure_difference": -2.8581036323608853
+            }
+          ],
+          "canonical_root_code": 1,
+          "child_cap": 3,
+          "child_signed_energy_histogram_projective": {
+            "-3": 1,
+            "1": 3
+          },
+          "core_cap": 6,
+          "core_signed_energy_histogram_projective": {
+            "-2": 12,
+            "-6": 4,
+            "2": 12,
+            "6": 4
+          },
+          "full_root_gauge_permutation_orbit_size": 1,
+          "global_negation_root_code": 0,
+          "integral_plus_I_cap": 5,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-3": 10,
+            "-5": 6,
+            "3": 10,
+            "5": 6
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "matrix_sha256": "105b1b22f0881901759691af96eca3101a1be5ebe141c0661464a553a0ba9f20",
+          "max_core_orbit_identity_abs_error": 8.881784197001252e-16,
+          "selected_root_code_count": 1,
+          "selected_root_code_examples": [
+            1
+          ]
+        }
+      ],
+      "r": 3,
+      "root_gauge_signings_enumerated": 2
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "0": 2,
+            "2": 4,
+            "4": 2
+          },
+          "root_gauge_code_count": 6
+        },
+        {
+          "histogram": {
+            "0": 4,
+            "2": 3,
+            "6": 1
+          },
+          "root_gauge_code_count": 2
+        }
+      ],
+      "distinct_absolute_energy_histograms": 2,
+      "grid": [
+        {
+          "P_r_beta": 0.18197411419860043,
+          "beta": 0.5,
+          "child_raw_temperature": 0.25,
+          "core_defect_range": [
+            -0.003176251341366454,
+            -0.003176251341366454
+          ],
+          "gap_to_next_distinct_histogram": 0.014341516239700924,
+          "integral_plus_I_defect_range": [
+            0.058597613965690076,
+            0.058597613965690076
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 2,
+              "2": 4,
+              "4": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 6,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.6740098443995821,
+          "beta": 1.0,
+          "child_raw_temperature": 0.5,
+          "core_defect_range": [
+            -0.029719373671628357,
+            -0.029719373671628357
+          ],
+          "gap_to_next_distinct_histogram": 0.17490655724045379,
+          "integral_plus_I_defect_range": [
+            0.19907942977060866,
+            0.19907942977060866
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 2,
+              "2": 4,
+              "4": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 6,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 2.1925644083239186,
+          "beta": 2.0,
+          "child_raw_temperature": 1.0,
+          "core_defect_range": [
+            -0.08733548949380321,
+            -0.08733548949380321
+          ],
+          "gap_to_next_distinct_histogram": 1.1079016486257296,
+          "integral_plus_I_defect_range": [
+            0.519897414770238,
+            0.519897414770238
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 2,
+              "2": 4,
+              "4": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 6,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 5.95719372052868,
+          "beta": 4.0,
+          "child_raw_temperature": 2.0,
+          "core_defect_range": [
+            0.25225757611698363,
+            0.25225757611698363
+          ],
+          "gap_to_next_distinct_histogram": 3.2712728794089623,
+          "integral_plus_I_defect_range": [
+            1.0195297879382625,
+            1.0195297879382625
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 2,
+              "2": 4,
+              "4": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 6,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 13.921229383601124,
+          "beta": 8.0,
+          "child_raw_temperature": 4.0,
+          "core_defect_range": [
+            1.246807318396332,
+            1.246807318396332
+          ],
+          "gap_to_next_distinct_histogram": 7.306182232066609,
+          "integral_plus_I_defect_range": [
+            1.9467829428862267,
+            1.9467829428862267
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 2,
+              "2": 4,
+              "4": 2
+            }
+          ],
+          "minimizing_root_gauge_code_count": 6,
+          "switching_permutation_class_count": 1
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.1819741141986002,
+              "core_defect_vs_2P_r": -0.003176251341366454,
+              "core_orbit_identity_abs_error": 2.220446049250313e-16,
+              "core_orbit_identity_pressure": 0.36077197705583375,
+              "core_pressure": 0.36077197705583397,
+              "integral_plus_I_defect_vs_2P_r": 0.058597613965690076,
+              "integral_plus_I_pressure": 0.4225458423628905,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.7071067811865476,
+              "matching_pressure_difference": 0.06177386530705653
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.6740098443995823,
+              "core_defect_vs_2P_r": -0.029719373671628357,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 1.3183003151275368,
+              "core_pressure": 1.3183003151275363,
+              "integral_plus_I_defect_vs_2P_r": 0.19907942977060866,
+              "integral_plus_I_pressure": 1.5470991185697733,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.4142135623730951,
+              "matching_pressure_difference": 0.22879880344223702
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 2.1925644083239186,
+              "core_defect_vs_2P_r": -0.08733548949380321,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 4.297793327154034,
+              "core_pressure": 4.297793327154034,
+              "integral_plus_I_defect_vs_2P_r": 0.519897414770238,
+              "integral_plus_I_pressure": 4.905026231418075,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.8284271247461903,
+              "matching_pressure_difference": 0.6072329042640412
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 5.95719372052868,
+              "core_defect_vs_2P_r": 0.25225757611698363,
+              "core_orbit_identity_abs_error": 1.7763568394002505e-15,
+              "core_orbit_identity_pressure": 12.166645017174341,
+              "core_pressure": 12.166645017174343,
+              "integral_plus_I_defect_vs_2P_r": 1.0195297879382625,
+              "integral_plus_I_pressure": 12.933917228995622,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 5.656854249492381,
+              "matching_pressure_difference": 0.7672722118212789
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 13.921229383601124,
+              "core_defect_vs_2P_r": 1.246807318396332,
+              "core_orbit_identity_abs_error": 3.552713678800501e-15,
+              "core_orbit_identity_pressure": 29.089266085598577,
+              "core_pressure": 29.08926608559858,
+              "integral_plus_I_defect_vs_2P_r": 1.9467829428862267,
+              "integral_plus_I_pressure": 29.789241710088476,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 11.313708498984761,
+              "matching_pressure_difference": 0.6999756244898947
+            }
+          ],
+          "canonical_root_code": 1,
+          "child_cap": 4,
+          "child_signed_energy_histogram_projective": {
+            "-2": 2,
+            "-4": 1,
+            "0": 2,
+            "2": 2,
+            "4": 1
+          },
+          "core_cap": 12,
+          "core_signed_energy_histogram_projective": {
+            "-12": 1,
+            "-4": 31,
+            "-8": 14,
+            "0": 36,
+            "12": 1,
+            "4": 31,
+            "8": 14
+          },
+          "full_root_gauge_permutation_orbit_size": 6,
+          "global_negation_root_code": 6,
+          "integral_plus_I_cap": 12,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-10": 4,
+            "-12": 2,
+            "-2": 16,
+            "-4": 14,
+            "-6": 12,
+            "-8": 6,
+            "0": 20,
+            "10": 4,
+            "12": 2,
+            "2": 16,
+            "4": 14,
+            "6": 12,
+            "8": 6
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "f7784662ba4f5b4f87ae8a32442379aae6bc430e6ccf0d8ad6e6bc23e5d7cd7d",
+          "max_core_orbit_identity_abs_error": 3.552713678800501e-15,
+          "selected_root_code_count": 6,
+          "selected_root_code_examples": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "r": 4,
+      "root_gauge_signings_enumerated": 8
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "2": 13,
+            "6": 3
+          },
+          "root_gauge_code_count": 30
+        },
+        {
+          "histogram": {
+            "10": 1,
+            "2": 15
+          },
+          "root_gauge_code_count": 2
+        },
+        {
+          "histogram": {
+            "0": 6,
+            "4": 10
+          },
+          "root_gauge_code_count": 12
+        },
+        {
+          "histogram": {
+            "0": 9,
+            "4": 6,
+            "8": 1
+          },
+          "root_gauge_code_count": 20
+        }
+      ],
+      "distinct_absolute_energy_histograms": 4,
+      "grid": [
+        {
+          "P_r_beta": 0.23674464928592598,
+          "beta": 0.5,
+          "child_raw_temperature": 0.22360679774997896,
+          "core_defect_range": [
+            -0.002744548282646919,
+            -0.002744548282646919
+          ],
+          "gap_to_next_distinct_histogram": 0.008742833558612828,
+          "integral_plus_I_defect_range": [
+            0.05856013048466013,
+            0.05856013048466013
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 6,
+              "4": 10
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.8315149888878688,
+          "beta": 1.0,
+          "child_raw_temperature": 0.4472135954999579,
+          "core_defect_range": [
+            -0.014604982818217982,
+            -0.014604982818217982
+          ],
+          "gap_to_next_distinct_histogram": 0.09986391906233427,
+          "integral_plus_I_defect_range": [
+            0.20075691893392755,
+            0.20075691893392755
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 6,
+              "4": 10
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 2.448290744957494,
+          "beta": 2.0,
+          "child_raw_temperature": 0.8944271909999159,
+          "core_defect_range": [
+            0.028238175927262965,
+            0.028238175927262965
+          ],
+          "gap_to_next_distinct_histogram": 0.6684661953487776,
+          "integral_plus_I_defect_range": [
+            0.5553818586659984,
+            0.5553818586659984
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 6,
+              "4": 10
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 5.993203636787605,
+          "beta": 4.0,
+          "child_raw_temperature": 1.7888543819998317,
+          "core_defect_range": [
+            0.3681869924772716,
+            0.3681869924772716
+          ],
+          "gap_to_next_distinct_histogram": 2.376178666870322,
+          "integral_plus_I_defect_range": [
+            1.3628812577745517,
+            1.3628812577745517
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 6,
+              "4": 10
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 13.147684977440836,
+          "beta": 8.0,
+          "child_raw_temperature": 3.5777087639996634,
+          "core_defect_range": [
+            1.225448932714876,
+            1.225448932714876
+          ],
+          "gap_to_next_distinct_histogram": 5.951446633040568,
+          "integral_plus_I_defect_range": [
+            3.3623410878376774,
+            3.3623410878376774
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 6,
+              "4": 10
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.2367446492859262,
+              "core_defect_vs_2P_r": -0.002744548282646919,
+              "core_orbit_identity_abs_error": 2.220446049250313e-16,
+              "core_orbit_identity_pressure": 0.47074475028920526,
+              "core_pressure": 0.4707447502892055,
+              "integral_plus_I_defect_vs_2P_r": 0.05856013048466013,
+              "integral_plus_I_pressure": 0.5320494290565125,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.7905694150420949,
+              "matching_pressure_difference": 0.06130467876730705
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.8315149888878689,
+              "core_defect_vs_2P_r": -0.014604982818217982,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 1.6484249949575198,
+              "core_pressure": 1.6484249949575198,
+              "integral_plus_I_defect_vs_2P_r": 0.20075691893392755,
+              "integral_plus_I_pressure": 1.8637868967096654,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.5811388300841898,
+              "matching_pressure_difference": 0.21536190175214553
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 2.4482907449574944,
+              "core_defect_vs_2P_r": 0.028238175927262965,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 4.924819665842252,
+              "core_pressure": 4.924819665842252,
+              "integral_plus_I_defect_vs_2P_r": 0.5553818586659984,
+              "integral_plus_I_pressure": 5.451963348580987,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 3.1622776601683795,
+              "matching_pressure_difference": 0.5271436827387355
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 5.993203636787606,
+              "core_defect_vs_2P_r": 0.3681869924772716,
+              "core_orbit_identity_abs_error": 1.7763568394002505e-15,
+              "core_orbit_identity_pressure": 12.354594266052485,
+              "core_pressure": 12.354594266052484,
+              "integral_plus_I_defect_vs_2P_r": 1.3628812577745517,
+              "integral_plus_I_pressure": 13.349288531349764,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 6.324555320336759,
+              "matching_pressure_difference": 0.9946942652972801
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 13.14768497744084,
+              "core_defect_vs_2P_r": 1.225448932714876,
+              "core_orbit_identity_abs_error": 3.552713678800501e-15,
+              "core_orbit_identity_pressure": 27.52081888759656,
+              "core_pressure": 27.520818887596555,
+              "integral_plus_I_defect_vs_2P_r": 3.3623410878376774,
+              "integral_plus_I_pressure": 29.657711042719356,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 12.649110640673518,
+              "matching_pressure_difference": 2.1368921551228013
+            }
+          ],
+          "canonical_root_code": 13,
+          "child_cap": 4,
+          "child_signed_energy_histogram_projective": {
+            "-4": 5,
+            "0": 6,
+            "4": 5
+          },
+          "core_cap": 12,
+          "core_signed_energy_histogram_projective": {
+            "-12": 30,
+            "-4": 130,
+            "-8": 60,
+            "0": 72,
+            "12": 30,
+            "4": 130,
+            "8": 60
+          },
+          "full_root_gauge_permutation_orbit_size": 12,
+          "global_negation_root_code": 50,
+          "integral_plus_I_cap": 13,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-11": 40,
+            "-13": 20,
+            "-3": 100,
+            "-5": 96,
+            "11": 40,
+            "13": 20,
+            "3": 100,
+            "5": 96
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "e928f9ce775404893cd4b22c10d5b8ab5d354478555a2beead193877076a117c",
+          "max_core_orbit_identity_abs_error": 3.552713678800501e-15,
+          "selected_root_code_count": 12,
+          "selected_root_code_examples": [
+            13,
+            14,
+            19,
+            22,
+            26,
+            28,
+            35,
+            37
+          ]
+        }
+      ],
+      "r": 5,
+      "root_gauge_signings_enumerated": 64
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "3": 20,
+            "5": 12
+          },
+          "root_gauge_code_count": 12
+        },
+        {
+          "histogram": {
+            "1": 12,
+            "3": 8,
+            "5": 8,
+            "7": 4
+          },
+          "root_gauge_code_count": 180
+        },
+        {
+          "histogram": {
+            "1": 12,
+            "3": 10,
+            "5": 6,
+            "7": 3,
+            "9": 1
+          },
+          "root_gauge_code_count": 390
+        },
+        {
+          "histogram": {
+            "1": 12,
+            "3": 12,
+            "5": 4,
+            "7": 2,
+            "9": 2
+          },
+          "root_gauge_code_count": 180
+        },
+        {
+          "histogram": {
+            "1": 14,
+            "11": 1,
+            "3": 8,
+            "5": 7,
+            "7": 2
+          },
+          "root_gauge_code_count": 90
+        },
+        {
+          "histogram": {
+            "1": 14,
+            "11": 1,
+            "3": 10,
+            "5": 5,
+            "7": 1,
+            "9": 1
+          },
+          "root_gauge_code_count": 120
+        },
+        {
+          "histogram": {
+            "1": 14,
+            "13": 1,
+            "3": 11,
+            "5": 4,
+            "7": 2
+          },
+          "root_gauge_code_count": 30
+        },
+        {
+          "histogram": {
+            "1": 15,
+            "15": 1,
+            "3": 10,
+            "5": 6
+          },
+          "root_gauge_code_count": 2
+        },
+        {
+          "histogram": {
+            "1": 24,
+            "7": 6,
+            "9": 2
+          },
+          "root_gauge_code_count": 20
+        }
+      ],
+      "distinct_absolute_energy_histograms": 9,
+      "grid": [
+        {
+          "P_r_beta": 0.28800364788128396,
+          "beta": 0.5,
+          "child_raw_temperature": 0.20412414523193154,
+          "core_defect_range": [
+            -0.001205697623109403,
+            -0.001205697623109403
+          ],
+          "gap_to_next_distinct_histogram": 0.011327421741224253,
+          "integral_plus_I_defect_range": [
+            0.05959140984558431,
+            0.05959140984558431
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "3": 20,
+              "5": 12
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 0.9645031545001741,
+          "beta": 1.0,
+          "child_raw_temperature": 0.4082482904638631,
+          "core_defect_range": [
+            0.02690190369237566,
+            0.02690190369237566
+          ],
+          "gap_to_next_distinct_histogram": 0.11392293486797556,
+          "integral_plus_I_defect_range": [
+            0.2304174176977951,
+            0.2304174176977951
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "3": 20,
+              "5": 12
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 2.692394857081963,
+          "beta": 2.0,
+          "child_raw_temperature": 0.8164965809277261,
+          "core_defect_range": [
+            0.4706741044649281,
+            0.4706741044649281
+          ],
+          "gap_to_next_distinct_histogram": 0.652236272843707,
+          "integral_plus_I_defect_range": [
+            0.8731729380256388,
+            0.8731729380256388
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "3": 20,
+              "5": 12
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 6.552651025076486,
+          "beta": 4.0,
+          "child_raw_temperature": 1.6329931618554523,
+          "core_defect_range": [
+            2.444721542638142,
+            2.444721542638142
+          ],
+          "gap_to_next_distinct_histogram": 2.1821214625917715,
+          "integral_plus_I_defect_range": [
+            2.717572032471171,
+            2.717572032471171
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "3": 20,
+              "5": 12
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        },
+        {
+          "P_r_beta": 14.658379129166782,
+          "beta": 8.0,
+          "child_raw_temperature": 3.2659863237109046,
+          "core_defect_range": [
+            6.931302890608993,
+            6.931302890608993
+          ],
+          "gap_to_next_distinct_histogram": 5.433848680876107,
+          "integral_plus_I_defect_range": [
+            6.965953185619494,
+            6.965953185619494
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "3": 20,
+              "5": 12
+            }
+          ],
+          "minimizing_root_gauge_code_count": 12,
+          "switching_permutation_class_count": 1
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.28800364788128385,
+              "core_defect_vs_2P_r": -0.001205697623109403,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 0.5748015981394587,
+              "core_pressure": 0.5748015981394583,
+              "integral_plus_I_defect_vs_2P_r": 0.05959140984558431,
+              "integral_plus_I_pressure": 0.635598705608152,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.8660254037844386,
+              "matching_pressure_difference": 0.06079710746869371
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 0.9645031545001743,
+              "core_defect_vs_2P_r": 0.02690190369237566,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 1.9559082126927247,
+              "core_pressure": 1.9559082126927243,
+              "integral_plus_I_defect_vs_2P_r": 0.2304174176977951,
+              "integral_plus_I_pressure": 2.1594237266981438,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.7320508075688772,
+              "matching_pressure_difference": 0.20351551400541945
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 2.6923948570819634,
+              "core_defect_vs_2P_r": 0.4706741044649281,
+              "core_orbit_identity_abs_error": 1.7763568394002505e-15,
+              "core_orbit_identity_pressure": 5.855463818628857,
+              "core_pressure": 5.855463818628855,
+              "integral_plus_I_defect_vs_2P_r": 0.8731729380256388,
+              "integral_plus_I_pressure": 6.2579626521895655,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 3.4641016151377544,
+              "matching_pressure_difference": 0.4024988335607107
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 6.552651025076488,
+              "core_defect_vs_2P_r": 2.444721542638142,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 15.550023592791117,
+              "core_pressure": 15.550023592791117,
+              "integral_plus_I_defect_vs_2P_r": 2.717572032471171,
+              "integral_plus_I_pressure": 15.822874082624146,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 6.928203230275509,
+              "matching_pressure_difference": 0.2728504898330293
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 14.658379129166784,
+              "core_defect_vs_2P_r": 6.931302890608993,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 36.24806114894256,
+              "core_pressure": 36.24806114894256,
+              "integral_plus_I_defect_vs_2P_r": 6.965953185619494,
+              "integral_plus_I_pressure": 36.28271144395306,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 13.856406460551018,
+              "matching_pressure_difference": 0.03465029501050054
+            }
+          ],
+          "canonical_root_code": 220,
+          "child_cap": 5,
+          "child_signed_energy_histogram_projective": {
+            "-3": 10,
+            "-5": 6,
+            "3": 10,
+            "5": 6
+          },
+          "core_cap": 18,
+          "core_signed_energy_histogram_projective": {
+            "-10": 264,
+            "-14": 90,
+            "-18": 10,
+            "-2": 300,
+            "-6": 360,
+            "10": 264,
+            "14": 90,
+            "18": 10,
+            "2": 300,
+            "6": 360
+          },
+          "full_root_gauge_permutation_orbit_size": 12,
+          "global_negation_root_code": 803,
+          "integral_plus_I_cap": 18,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-10": 120,
+            "-12": 100,
+            "-14": 66,
+            "-16": 36,
+            "-18": 10,
+            "-2": 180,
+            "-4": 156,
+            "-6": 136,
+            "-8": 120,
+            "0": 200,
+            "10": 120,
+            "12": 100,
+            "14": 66,
+            "16": 36,
+            "18": 10,
+            "2": 180,
+            "4": 156,
+            "6": 136,
+            "8": 120
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              -1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "bb3cba9a1a887f6d68e7c69aec039cb485023810e718c57c43104131d8314603",
+          "max_core_orbit_identity_abs_error": 1.7763568394002505e-15,
+          "selected_root_code_count": 12,
+          "selected_root_code_examples": [
+            220,
+            234,
+            316,
+            358,
+            425,
+            453,
+            570,
+            598
+          ]
+        }
+      ],
+      "r": 6,
+      "root_gauge_signings_enumerated": 1024
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "1": 15,
+            "3": 21,
+            "5": 15,
+            "7": 9,
+            "9": 4
+          },
+          "root_gauge_code_count": 1680
+        },
+        {
+          "histogram": {
+            "1": 17,
+            "11": 1,
+            "3": 15,
+            "5": 20,
+            "7": 10,
+            "9": 1
+          },
+          "root_gauge_code_count": 504
+        },
+        {
+          "histogram": {
+            "1": 17,
+            "11": 1,
+            "3": 23,
+            "5": 12,
+            "7": 6,
+            "9": 5
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 18,
+            "15": 1,
+            "3": 21,
+            "5": 15,
+            "7": 6,
+            "9": 3
+          },
+          "root_gauge_code_count": 210
+        },
+        {
+          "histogram": {
+            "1": 19,
+            "11": 2,
+            "3": 17,
+            "5": 17,
+            "7": 7,
+            "9": 2
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 19,
+            "11": 1,
+            "13": 1,
+            "3": 20,
+            "5": 14,
+            "7": 7,
+            "9": 2
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 19,
+            "13": 2,
+            "3": 23,
+            "5": 11,
+            "7": 7,
+            "9": 2
+          },
+          "root_gauge_code_count": 1260
+        },
+        {
+          "histogram": {
+            "1": 19,
+            "11": 1,
+            "13": 1,
+            "3": 28,
+            "5": 6,
+            "7": 3,
+            "9": 6
+          },
+          "root_gauge_code_count": 210
+        },
+        {
+          "histogram": {
+            "1": 20,
+            "13": 1,
+            "17": 1,
+            "3": 26,
+            "5": 9,
+            "7": 5,
+            "9": 2
+          },
+          "root_gauge_code_count": 210
+        },
+        {
+          "histogram": {
+            "1": 21,
+            "3": 13,
+            "5": 15,
+            "7": 12,
+            "9": 3
+          },
+          "root_gauge_code_count": 840
+        },
+        {
+          "histogram": {
+            "1": 21,
+            "11": 3,
+            "3": 19,
+            "5": 14,
+            "7": 4,
+            "9": 3
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 21,
+            "3": 21,
+            "5": 7,
+            "7": 8,
+            "9": 7
+          },
+          "root_gauge_code_count": 720
+        },
+        {
+          "histogram": {
+            "1": 21,
+            "11": 2,
+            "13": 1,
+            "3": 22,
+            "5": 11,
+            "7": 4,
+            "9": 3
+          },
+          "root_gauge_code_count": 1260
+        },
+        {
+          "histogram": {
+            "1": 21,
+            "21": 1,
+            "3": 35,
+            "9": 7
+          },
+          "root_gauge_code_count": 2
+        },
+        {
+          "histogram": {
+            "1": 22,
+            "11": 2,
+            "15": 1,
+            "3": 17,
+            "5": 17,
+            "7": 4,
+            "9": 1
+          },
+          "root_gauge_code_count": 840
+        },
+        {
+          "histogram": {
+            "1": 23,
+            "11": 1,
+            "3": 15,
+            "5": 12,
+            "7": 9,
+            "9": 4
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "1": 23,
+            "13": 1,
+            "3": 18,
+            "5": 9,
+            "7": 9,
+            "9": 4
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 24,
+            "17": 1,
+            "3": 21,
+            "5": 7,
+            "7": 7,
+            "9": 4
+          },
+          "root_gauge_code_count": 210
+        },
+        {
+          "histogram": {
+            "1": 25,
+            "11": 1,
+            "13": 1,
+            "3": 12,
+            "5": 14,
+            "7": 10,
+            "9": 1
+          },
+          "root_gauge_code_count": 630
+        },
+        {
+          "histogram": {
+            "1": 25,
+            "11": 2,
+            "3": 17,
+            "5": 9,
+            "7": 6,
+            "9": 5
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "1": 26,
+            "11": 1,
+            "15": 1,
+            "3": 15,
+            "5": 12,
+            "7": 6,
+            "9": 3
+          },
+          "root_gauge_code_count": 1260
+        },
+        {
+          "histogram": {
+            "1": 27,
+            "11": 3,
+            "3": 11,
+            "5": 14,
+            "7": 7,
+            "9": 2
+          },
+          "root_gauge_code_count": 1260
+        },
+        {
+          "histogram": {
+            "1": 27,
+            "15": 2,
+            "3": 13,
+            "5": 15,
+            "7": 6,
+            "9": 1
+          },
+          "root_gauge_code_count": 140
+        },
+        {
+          "histogram": {
+            "1": 27,
+            "11": 1,
+            "13": 2,
+            "3": 17,
+            "5": 8,
+            "7": 7,
+            "9": 2
+          },
+          "root_gauge_code_count": 840
+        },
+        {
+          "histogram": {
+            "1": 29,
+            "11": 3,
+            "13": 1,
+            "3": 16,
+            "5": 8,
+            "7": 4,
+            "9": 3
+          },
+          "root_gauge_code_count": 420
+        },
+        {
+          "histogram": {
+            "1": 30,
+            "11": 3,
+            "15": 1,
+            "3": 19,
+            "5": 6,
+            "9": 5
+          },
+          "root_gauge_code_count": 70
+        },
+        {
+          "histogram": {
+            "1": 31,
+            "11": 2,
+            "19": 1,
+            "3": 10,
+            "5": 15,
+            "7": 5
+          },
+          "root_gauge_code_count": 42
+        }
+      ],
+      "distinct_absolute_energy_histograms": 27,
+      "grid": [
+        {
+          "P_r_beta": 0.3557796007396985,
+          "beta": 0.5,
+          "child_raw_temperature": 0.1889822365046136,
+          "core_defect_range": [
+            -0.0028358731522808434,
+            -0.0028358731522803993
+          ],
+          "gap_to_next_distinct_histogram": 0.00013952857834675925,
+          "integral_plus_I_defect_range": [
+            0.05684074100643244,
+            0.06011755562937626
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 21,
+              "3": 13,
+              "5": 15,
+              "7": 12,
+              "9": 3
+            }
+          ],
+          "minimizing_root_gauge_code_count": 840,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 1.260062388344374,
+          "beta": 1.0,
+          "child_raw_temperature": 0.3779644730092272,
+          "core_defect_range": [
+            -0.012808345585018088,
+            -0.012808345585018088
+          ],
+          "gap_to_next_distinct_histogram": 0.004690146275953211,
+          "integral_plus_I_defect_range": [
+            0.19583910002415728,
+            0.20935026818700964
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 21,
+              "3": 13,
+              "5": 15,
+              "7": 12,
+              "9": 3
+            }
+          ],
+          "minimizing_root_gauge_code_count": 840,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 3.8349402778572177,
+          "beta": 2.0,
+          "child_raw_temperature": 0.7559289460184544,
+          "core_defect_range": [
+            0.07800037815796745,
+            0.07800037815796834
+          ],
+          "gap_to_next_distinct_histogram": 0.060164286893817476,
+          "integral_plus_I_defect_range": [
+            0.4816056016673631,
+            0.6968230508853095
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 21,
+              "3": 13,
+              "5": 15,
+              "7": 12,
+              "9": 3
+            }
+          ],
+          "minimizing_root_gauge_code_count": 840,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 10.041308126874608,
+          "beta": 4.0,
+          "child_raw_temperature": 1.5118578920369088,
+          "core_defect_range": [
+            0.6305341386670982,
+            0.6305341386670982
+          ],
+          "gap_to_next_distinct_histogram": 0.21201025093523285,
+          "integral_plus_I_defect_range": [
+            1.1734767808634992,
+            1.6067518311377889
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 21,
+              "3": 13,
+              "5": 15,
+              "7": 12,
+              "9": 3
+            }
+          ],
+          "minimizing_root_gauge_code_count": 840,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 23.469463094814238,
+          "beta": 8.0,
+          "child_raw_temperature": 3.0237157840738176,
+          "core_defect_range": [
+            1.4341887790379602,
+            1.4341887790379602
+          ],
+          "gap_to_next_distinct_histogram": 0.28356871061983924,
+          "integral_plus_I_defect_range": [
+            0.8301547706934258,
+            3.570411361078861
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "1": 21,
+              "3": 13,
+              "5": 15,
+              "7": 12,
+              "9": 3
+            }
+          ],
+          "minimizing_root_gauge_code_count": 840,
+          "switching_permutation_class_count": 2
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.35577960073969894,
+              "core_defect_vs_2P_r": -0.0028358731522808434,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 0.7087233283271175,
+              "core_pressure": 0.708723328327117,
+              "integral_plus_I_defect_vs_2P_r": 0.06011755562937626,
+              "integral_plus_I_pressure": 0.7716767571087741,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.9354143466934853,
+              "matching_pressure_difference": 0.0629534287816571
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 1.260062388344374,
+              "core_defect_vs_2P_r": -0.012808345585018088,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 2.50731643110373,
+              "core_pressure": 2.50731643110373,
+              "integral_plus_I_defect_vs_2P_r": 0.19583910002415728,
+              "integral_plus_I_pressure": 2.7159638767129053,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.8708286933869707,
+              "matching_pressure_difference": 0.20864744560917536
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 3.8349402778572177,
+              "core_defect_vs_2P_r": 0.07800037815796834,
+              "core_orbit_identity_abs_error": 8.881784197001252e-16,
+              "core_orbit_identity_pressure": 7.747880933872403,
+              "core_pressure": 7.747880933872404,
+              "integral_plus_I_defect_vs_2P_r": 0.4816056016673631,
+              "integral_plus_I_pressure": 8.151486157381798,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 3.7416573867739413,
+              "matching_pressure_difference": 0.40360522350939476
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 10.041308126874606,
+              "core_defect_vs_2P_r": 0.6305341386670982,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 20.71315039241631,
+              "core_pressure": 20.71315039241631,
+              "integral_plus_I_defect_vs_2P_r": 1.6067518311377889,
+              "integral_plus_I_pressure": 21.689368084887,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 7.483314773547883,
+              "matching_pressure_difference": 0.9762176924706907
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 23.469463094814234,
+              "core_defect_vs_2P_r": 1.4341887790379602,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 48.37311496866643,
+              "core_pressure": 48.37311496866643,
+              "integral_plus_I_defect_vs_2P_r": 3.570411361078861,
+              "integral_plus_I_pressure": 50.50933755070733,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 14.966629547095765,
+              "matching_pressure_difference": 2.136222582040901
+            }
+          ],
+          "canonical_root_code": 1749,
+          "child_cap": 9,
+          "child_signed_energy_histogram_projective": {
+            "-1": 21,
+            "-5": 15,
+            "-9": 3,
+            "3": 13,
+            "7": 12
+          },
+          "core_cap": 26,
+          "core_signed_energy_histogram_projective": {
+            "-10": 840,
+            "-14": 522,
+            "-18": 242,
+            "-2": 1284,
+            "-22": 60,
+            "-26": 6,
+            "-6": 1142,
+            "10": 840,
+            "14": 522,
+            "18": 242,
+            "2": 1284,
+            "22": 60,
+            "26": 6,
+            "6": 1142
+          },
+          "full_root_gauge_permutation_orbit_size": 420,
+          "global_negation_root_code": 31018,
+          "integral_plus_I_cap": 27,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-11": 694,
+            "-13": 580,
+            "-19": 236,
+            "-21": 138,
+            "-27": 6,
+            "-3": 1296,
+            "-5": 1146,
+            "11": 694,
+            "13": 580,
+            "19": 236,
+            "21": 138,
+            "27": 6,
+            "3": 1296,
+            "5": 1146
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0,
+              1,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              -1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "cbee65e7c700db32846a60fda7df654026768f19c94a14956fcf8974437cc980",
+          "max_core_orbit_identity_abs_error": 8.881784197001252e-16,
+          "selected_root_code_count": 420,
+          "selected_root_code_examples": [
+            1749,
+            1750,
+            1753,
+            1754,
+            1869,
+            1878,
+            1900,
+            1908
+          ]
+        },
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.3557796007396987,
+              "core_defect_vs_2P_r": -0.0028358731522803993,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 0.7087233283271175,
+              "core_pressure": 0.708723328327117,
+              "integral_plus_I_defect_vs_2P_r": 0.05684074100643244,
+              "integral_plus_I_pressure": 0.7683999424858299,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 0.9354143466934853,
+              "matching_pressure_difference": 0.05967661415871284
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 1.260062388344374,
+              "core_defect_vs_2P_r": -0.012808345585018088,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 2.50731643110373,
+              "core_pressure": 2.50731643110373,
+              "integral_plus_I_defect_vs_2P_r": 0.20935026818700964,
+              "integral_plus_I_pressure": 2.7294750448757576,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.8708286933869707,
+              "matching_pressure_difference": 0.22215861377202772
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 3.834940277857218,
+              "core_defect_vs_2P_r": 0.07800037815796745,
+              "core_orbit_identity_abs_error": 8.881784197001252e-16,
+              "core_orbit_identity_pressure": 7.747880933872403,
+              "core_pressure": 7.747880933872404,
+              "integral_plus_I_defect_vs_2P_r": 0.6968230508853095,
+              "integral_plus_I_pressure": 8.366703606599746,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 3.7416573867739413,
+              "matching_pressure_difference": 0.618822672727342
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 10.041308126874606,
+              "core_defect_vs_2P_r": 0.6305341386670982,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 20.71315039241631,
+              "core_pressure": 20.71315039241631,
+              "integral_plus_I_defect_vs_2P_r": 1.1734767808634992,
+              "integral_plus_I_pressure": 21.25609303461271,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 7.483314773547883,
+              "matching_pressure_difference": 0.542942642196401
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 23.469463094814234,
+              "core_defect_vs_2P_r": 1.4341887790379602,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 48.37311496866643,
+              "core_pressure": 48.37311496866643,
+              "integral_plus_I_defect_vs_2P_r": 0.8301547706934258,
+              "integral_plus_I_pressure": 47.769080960321894,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 14.966629547095765,
+              "matching_pressure_difference": -0.6040340083445344
+            }
+          ],
+          "canonical_root_code": 1880,
+          "child_cap": 9,
+          "child_signed_energy_histogram_projective": {
+            "-3": 13,
+            "-7": 12,
+            "1": 21,
+            "5": 15,
+            "9": 3
+          },
+          "core_cap": 26,
+          "core_signed_energy_histogram_projective": {
+            "-10": 840,
+            "-14": 522,
+            "-18": 242,
+            "-2": 1284,
+            "-22": 60,
+            "-26": 6,
+            "-6": 1142,
+            "10": 840,
+            "14": 522,
+            "18": 242,
+            "2": 1284,
+            "22": 60,
+            "26": 6,
+            "6": 1142
+          },
+          "full_root_gauge_permutation_orbit_size": 420,
+          "global_negation_root_code": 30887,
+          "integral_plus_I_cap": 25,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-1": 1220,
+            "-15": 450,
+            "-17": 314,
+            "-23": 63,
+            "-25": 27,
+            "-7": 1077,
+            "-9": 945,
+            "1": 1220,
+            "15": 450,
+            "17": 314,
+            "23": 63,
+            "25": 27,
+            "7": 1077,
+            "9": 945
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "313a0dedb043d1580db59fc1c9e3191370eca4f415bc57d5c7b2c60ca67ed3d4",
+          "max_core_orbit_identity_abs_error": 8.881784197001252e-16,
+          "selected_root_code_count": 420,
+          "selected_root_code_examples": [
+            1880,
+            1883,
+            1913,
+            1914,
+            1940,
+            1943,
+            1973,
+            1974
+          ]
+        }
+      ],
+      "r": 7,
+      "root_gauge_signings_enumerated": 32768
+    },
+    {
+      "all_absolute_energy_histogram_fibres": [
+        {
+          "histogram": {
+            "10": 8,
+            "12": 6,
+            "2": 32,
+            "4": 58,
+            "6": 24
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "10": 8,
+            "12": 3,
+            "2": 32,
+            "20": 1,
+            "4": 60,
+            "6": 24
+          },
+          "root_gauge_code_count": 210
+        },
+        {
+          "histogram": {
+            "10": 7,
+            "12": 6,
+            "14": 1,
+            "2": 35,
+            "4": 58,
+            "6": 21
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "10": 5,
+            "12": 6,
+            "18": 1,
+            "2": 35,
+            "4": 58,
+            "6": 23
+          },
+          "root_gauge_code_count": 1344
+        },
+        {
+          "histogram": {
+            "10": 6,
+            "12": 6,
+            "14": 2,
+            "2": 38,
+            "4": 58,
+            "6": 18
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "10": 4,
+            "12": 3,
+            "14": 4,
+            "2": 44,
+            "20": 1,
+            "4": 60,
+            "6": 12
+          },
+          "root_gauge_code_count": 420
+        },
+        {
+          "histogram": {
+            "14": 8,
+            "2": 56,
+            "28": 1,
+            "4": 63
+          },
+          "root_gauge_code_count": 2
+        },
+        {
+          "histogram": {
+            "0": 12,
+            "10": 8,
+            "2": 32,
+            "4": 32,
+            "6": 24,
+            "8": 20
+          },
+          "root_gauge_code_count": 4200
+        },
+        {
+          "histogram": {
+            "0": 12,
+            "10": 9,
+            "14": 1,
+            "2": 39,
+            "4": 32,
+            "6": 15,
+            "8": 20
+          },
+          "root_gauge_code_count": 3360
+        },
+        {
+          "histogram": {
+            "0": 15,
+            "10": 5,
+            "14": 1,
+            "16": 1,
+            "2": 31,
+            "4": 32,
+            "6": 27,
+            "8": 16
+          },
+          "root_gauge_code_count": 4032
+        },
+        {
+          "histogram": {
+            "0": 15,
+            "10": 7,
+            "14": 1,
+            "16": 1,
+            "2": 35,
+            "4": 32,
+            "6": 21,
+            "8": 16
+          },
+          "root_gauge_code_count": 13440
+        },
+        {
+          "histogram": {
+            "0": 15,
+            "10": 3,
+            "14": 3,
+            "16": 1,
+            "2": 37,
+            "4": 32,
+            "6": 21,
+            "8": 16
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 6,
+            "12": 2,
+            "2": 28,
+            "4": 30,
+            "6": 30,
+            "8": 16
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 5,
+            "12": 2,
+            "14": 1,
+            "2": 31,
+            "4": 30,
+            "6": 27,
+            "8": 16
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 8,
+            "12": 2,
+            "2": 32,
+            "4": 30,
+            "6": 24,
+            "8": 16
+          },
+          "root_gauge_code_count": 80640
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 4,
+            "12": 2,
+            "14": 2,
+            "2": 34,
+            "4": 30,
+            "6": 24,
+            "8": 16
+          },
+          "root_gauge_code_count": 45360
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 2,
+            "12": 2,
+            "14": 1,
+            "18": 1,
+            "2": 34,
+            "4": 30,
+            "6": 26,
+            "8": 16
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 7,
+            "12": 2,
+            "14": 1,
+            "2": 35,
+            "4": 30,
+            "6": 21,
+            "8": 16
+          },
+          "root_gauge_code_count": 100800
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 10,
+            "12": 2,
+            "2": 36,
+            "4": 30,
+            "6": 18,
+            "8": 16
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 6,
+            "12": 2,
+            "14": 2,
+            "2": 38,
+            "4": 30,
+            "6": 18,
+            "8": 16
+          },
+          "root_gauge_code_count": 70560
+        },
+        {
+          "histogram": {
+            "0": 16,
+            "10": 9,
+            "12": 2,
+            "14": 1,
+            "2": 39,
+            "4": 30,
+            "6": 15,
+            "8": 16
+          },
+          "root_gauge_code_count": 60480
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 8,
+            "16": 2,
+            "2": 32,
+            "4": 32,
+            "6": 24,
+            "8": 12
+          },
+          "root_gauge_code_count": 5670
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 6,
+            "14": 2,
+            "16": 2,
+            "2": 38,
+            "4": 32,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 9,
+            "14": 1,
+            "16": 2,
+            "2": 39,
+            "4": 32,
+            "6": 15,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 7,
+            "16": 2,
+            "18": 1,
+            "2": 39,
+            "4": 32,
+            "6": 17,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 4,
+            "14": 4,
+            "16": 2,
+            "2": 44,
+            "4": 32,
+            "6": 12,
+            "8": 12
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "10": 7,
+            "14": 3,
+            "16": 2,
+            "2": 45,
+            "4": 32,
+            "6": 9,
+            "8": 12
+          },
+          "root_gauge_code_count": 560
+        },
+        {
+          "histogram": {
+            "0": 18,
+            "14": 8,
+            "16": 2,
+            "2": 56,
+            "4": 32,
+            "8": 12
+          },
+          "root_gauge_code_count": 70
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 5,
+            "12": 2,
+            "14": 1,
+            "16": 1,
+            "2": 31,
+            "4": 30,
+            "6": 27,
+            "8": 12
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 8,
+            "12": 2,
+            "16": 1,
+            "2": 32,
+            "4": 30,
+            "6": 24,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 4,
+            "12": 2,
+            "14": 2,
+            "16": 1,
+            "2": 34,
+            "4": 30,
+            "6": 24,
+            "8": 12
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 7,
+            "12": 2,
+            "14": 1,
+            "16": 1,
+            "2": 35,
+            "4": 30,
+            "6": 21,
+            "8": 12
+          },
+          "root_gauge_code_count": 100800
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 5,
+            "12": 2,
+            "16": 1,
+            "18": 1,
+            "2": 35,
+            "4": 30,
+            "6": 23,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 10,
+            "12": 2,
+            "16": 1,
+            "2": 36,
+            "4": 30,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 3,
+            "12": 2,
+            "14": 3,
+            "16": 1,
+            "2": 37,
+            "4": 30,
+            "6": 21,
+            "8": 12
+          },
+          "root_gauge_code_count": 26880
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 6,
+            "12": 2,
+            "14": 2,
+            "16": 1,
+            "2": 38,
+            "4": 30,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 100800
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 4,
+            "12": 2,
+            "14": 1,
+            "16": 1,
+            "18": 1,
+            "2": 38,
+            "4": 30,
+            "6": 20,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 9,
+            "12": 2,
+            "14": 1,
+            "16": 1,
+            "2": 39,
+            "4": 30,
+            "6": 15,
+            "8": 12
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 7,
+            "12": 2,
+            "16": 1,
+            "18": 1,
+            "2": 39,
+            "4": 30,
+            "6": 17,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 4,
+            "12": 2,
+            "14": 4,
+            "16": 1,
+            "2": 44,
+            "4": 30,
+            "6": 12,
+            "8": 12
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 19,
+            "10": 5,
+            "12": 2,
+            "14": 2,
+            "16": 1,
+            "18": 1,
+            "2": 45,
+            "4": 30,
+            "6": 11,
+            "8": 12
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 6,
+            "12": 4,
+            "2": 28,
+            "4": 28,
+            "6": 30,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 5,
+            "12": 4,
+            "14": 1,
+            "2": 31,
+            "4": 28,
+            "6": 27,
+            "8": 12
+          },
+          "root_gauge_code_count": 60480
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 8,
+            "12": 4,
+            "2": 32,
+            "4": 28,
+            "6": 24,
+            "8": 12
+          },
+          "root_gauge_code_count": 85680
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 4,
+            "12": 4,
+            "14": 2,
+            "2": 34,
+            "4": 28,
+            "6": 24,
+            "8": 12
+          },
+          "root_gauge_code_count": 60480
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 7,
+            "12": 4,
+            "14": 1,
+            "2": 35,
+            "4": 28,
+            "6": 21,
+            "8": 12
+          },
+          "root_gauge_code_count": 181440
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 5,
+            "12": 4,
+            "18": 1,
+            "2": 35,
+            "4": 28,
+            "6": 23,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 10,
+            "12": 4,
+            "2": 36,
+            "4": 28,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 80640
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 3,
+            "12": 4,
+            "14": 3,
+            "2": 37,
+            "4": 28,
+            "6": 21,
+            "8": 12
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 3,
+            "12": 1,
+            "14": 3,
+            "2": 37,
+            "20": 1,
+            "4": 30,
+            "6": 21,
+            "8": 12
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 6,
+            "12": 4,
+            "14": 2,
+            "2": 38,
+            "4": 28,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 141120
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 4,
+            "12": 4,
+            "14": 1,
+            "18": 1,
+            "2": 38,
+            "4": 28,
+            "6": 20,
+            "8": 12
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 6,
+            "12": 1,
+            "14": 2,
+            "2": 38,
+            "20": 1,
+            "4": 30,
+            "6": 18,
+            "8": 12
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 4,
+            "12": 1,
+            "14": 1,
+            "18": 1,
+            "2": 38,
+            "20": 1,
+            "4": 30,
+            "6": 20,
+            "8": 12
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 9,
+            "12": 4,
+            "14": 1,
+            "2": 39,
+            "4": 28,
+            "6": 15,
+            "8": 12
+          },
+          "root_gauge_code_count": 70560
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 7,
+            "12": 4,
+            "18": 1,
+            "2": 39,
+            "4": 28,
+            "6": 17,
+            "8": 12
+          },
+          "root_gauge_code_count": 25200
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 9,
+            "12": 1,
+            "14": 1,
+            "2": 39,
+            "20": 1,
+            "4": 30,
+            "6": 15,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 4,
+            "12": 4,
+            "14": 4,
+            "2": 44,
+            "4": 28,
+            "6": 12,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 4,
+            "14": 4,
+            "2": 44,
+            "24": 1,
+            "4": 32,
+            "6": 12,
+            "8": 11
+          },
+          "root_gauge_code_count": 420
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 7,
+            "12": 4,
+            "14": 3,
+            "2": 45,
+            "4": 28,
+            "6": 9,
+            "8": 12
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 5,
+            "12": 1,
+            "14": 2,
+            "18": 1,
+            "2": 45,
+            "20": 1,
+            "4": 30,
+            "6": 11,
+            "8": 12
+          },
+          "root_gauge_code_count": 1680
+        },
+        {
+          "histogram": {
+            "0": 20,
+            "10": 5,
+            "14": 2,
+            "18": 1,
+            "2": 45,
+            "24": 1,
+            "4": 32,
+            "6": 11,
+            "8": 11
+          },
+          "root_gauge_code_count": 336
+        },
+        {
+          "histogram": {
+            "0": 22,
+            "10": 4,
+            "12": 2,
+            "14": 2,
+            "16": 2,
+            "2": 34,
+            "4": 30,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 22,
+            "10": 5,
+            "12": 2,
+            "16": 2,
+            "18": 1,
+            "2": 35,
+            "4": 30,
+            "6": 23,
+            "8": 8
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 22,
+            "10": 3,
+            "12": 2,
+            "16": 2,
+            "2": 36,
+            "22": 1,
+            "4": 30,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 1680
+        },
+        {
+          "histogram": {
+            "0": 22,
+            "10": 6,
+            "12": 2,
+            "14": 2,
+            "16": 2,
+            "2": 38,
+            "4": 30,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 22,
+            "10": 9,
+            "12": 2,
+            "14": 1,
+            "16": 2,
+            "2": 39,
+            "4": 30,
+            "6": 15,
+            "8": 8
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 4,
+            "12": 4,
+            "14": 2,
+            "16": 1,
+            "2": 34,
+            "4": 28,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 2,
+            "12": 4,
+            "14": 1,
+            "16": 1,
+            "18": 1,
+            "2": 34,
+            "4": 28,
+            "6": 26,
+            "8": 8
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 7,
+            "12": 4,
+            "14": 1,
+            "16": 1,
+            "2": 35,
+            "4": 28,
+            "6": 21,
+            "8": 8
+          },
+          "root_gauge_code_count": 40320
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 6,
+            "12": 4,
+            "14": 2,
+            "16": 1,
+            "2": 38,
+            "4": 28,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 13440
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 4,
+            "12": 4,
+            "14": 1,
+            "16": 1,
+            "18": 1,
+            "2": 38,
+            "4": 28,
+            "6": 20,
+            "8": 8
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 9,
+            "12": 4,
+            "14": 1,
+            "16": 1,
+            "2": 39,
+            "4": 28,
+            "6": 15,
+            "8": 8
+          },
+          "root_gauge_code_count": 20160
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 7,
+            "12": 4,
+            "16": 1,
+            "18": 1,
+            "2": 39,
+            "4": 28,
+            "6": 17,
+            "8": 8
+          },
+          "root_gauge_code_count": 6720
+        },
+        {
+          "histogram": {
+            "0": 23,
+            "10": 5,
+            "12": 4,
+            "16": 1,
+            "2": 40,
+            "22": 1,
+            "4": 28,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 3360
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 8,
+            "12": 6,
+            "2": 32,
+            "4": 26,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 16800
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 4,
+            "12": 6,
+            "14": 2,
+            "2": 34,
+            "4": 26,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 2,
+            "12": 6,
+            "14": 1,
+            "18": 1,
+            "2": 34,
+            "4": 26,
+            "6": 26,
+            "8": 8
+          },
+          "root_gauge_code_count": 2520
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 3,
+            "12": 6,
+            "2": 36,
+            "22": 1,
+            "4": 26,
+            "6": 24,
+            "8": 8
+          },
+          "root_gauge_code_count": 840
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 6,
+            "12": 6,
+            "14": 2,
+            "2": 38,
+            "4": 26,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 15120
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 4,
+            "12": 6,
+            "14": 1,
+            "18": 1,
+            "2": 38,
+            "4": 26,
+            "6": 20,
+            "8": 8
+          },
+          "root_gauge_code_count": 1680
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 6,
+            "12": 3,
+            "14": 2,
+            "2": 38,
+            "20": 1,
+            "4": 28,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 9,
+            "12": 6,
+            "14": 1,
+            "2": 39,
+            "4": 26,
+            "6": 15,
+            "8": 8
+          },
+          "root_gauge_code_count": 10080
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 7,
+            "12": 3,
+            "18": 1,
+            "2": 39,
+            "20": 1,
+            "4": 28,
+            "6": 17,
+            "8": 8
+          },
+          "root_gauge_code_count": 3360
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 5,
+            "12": 3,
+            "2": 40,
+            "20": 1,
+            "22": 1,
+            "4": 28,
+            "6": 18,
+            "8": 8
+          },
+          "root_gauge_code_count": 560
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 5,
+            "12": 6,
+            "14": 2,
+            "18": 1,
+            "2": 45,
+            "4": 26,
+            "6": 11,
+            "8": 8
+          },
+          "root_gauge_code_count": 3360
+        },
+        {
+          "histogram": {
+            "0": 24,
+            "10": 7,
+            "12": 3,
+            "14": 3,
+            "2": 45,
+            "20": 1,
+            "4": 28,
+            "6": 9,
+            "8": 8
+          },
+          "root_gauge_code_count": 1120
+        },
+        {
+          "histogram": {
+            "0": 30,
+            "10": 2,
+            "12": 6,
+            "14": 1,
+            "16": 2,
+            "18": 1,
+            "2": 34,
+            "4": 26,
+            "6": 26
+          },
+          "root_gauge_code_count": 840
+        },
+        {
+          "histogram": {
+            "0": 30,
+            "12": 6,
+            "16": 2,
+            "2": 36,
+            "26": 1,
+            "4": 26,
+            "6": 27
+          },
+          "root_gauge_code_count": 56
+        },
+        {
+          "histogram": {
+            "0": 30,
+            "10": 6,
+            "12": 6,
+            "14": 2,
+            "16": 2,
+            "2": 38,
+            "4": 26,
+            "6": 18
+          },
+          "root_gauge_code_count": 1120
+        },
+        {
+          "histogram": {
+            "0": 36,
+            "10": 7,
+            "14": 1,
+            "2": 35,
+            "6": 21,
+            "8": 28
+          },
+          "root_gauge_code_count": 5760
+        },
+        {
+          "histogram": {
+            "0": 39,
+            "10": 8,
+            "16": 1,
+            "2": 32,
+            "6": 24,
+            "8": 24
+          },
+          "root_gauge_code_count": 3360
+        },
+        {
+          "histogram": {
+            "0": 39,
+            "10": 6,
+            "14": 2,
+            "16": 1,
+            "2": 38,
+            "6": 18,
+            "8": 24
+          },
+          "root_gauge_code_count": 5040
+        },
+        {
+          "histogram": {
+            "0": 39,
+            "10": 4,
+            "14": 1,
+            "16": 1,
+            "18": 1,
+            "2": 38,
+            "6": 20,
+            "8": 24
+          },
+          "root_gauge_code_count": 1680
+        },
+        {
+          "histogram": {
+            "0": 45,
+            "10": 6,
+            "14": 2,
+            "16": 3,
+            "2": 38,
+            "6": 18,
+            "8": 16
+          },
+          "root_gauge_code_count": 560
+        },
+        {
+          "histogram": {
+            "0": 45,
+            "10": 5,
+            "16": 3,
+            "2": 40,
+            "22": 1,
+            "6": 18,
+            "8": 16
+          },
+          "root_gauge_code_count": 112
+        }
+      ],
+      "distinct_absolute_energy_histograms": 96,
+      "grid": [
+        {
+          "P_r_beta": 0.40989003872410024,
+          "beta": 0.5,
+          "child_raw_temperature": 0.17677669529663687,
+          "core_defect_range": [
+            -0.0024061036573486128,
+            -0.0009065536257346629
+          ],
+          "gap_to_next_distinct_histogram": 0.0033675205853915813,
+          "integral_plus_I_defect_range": [
+            0.05869159024405457,
+            0.060123060995695976
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 12,
+              "10": 8,
+              "2": 32,
+              "4": 32,
+              "6": 24,
+              "8": 20
+            }
+          ],
+          "minimizing_root_gauge_code_count": 4200,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 1.4222311892386976,
+          "beta": 1.0,
+          "child_raw_temperature": 0.35355339059327373,
+          "core_defect_range": [
+            -0.003805669917647414,
+            0.05595941035541241
+          ],
+          "gap_to_next_distinct_histogram": 0.039339110600797866,
+          "integral_plus_I_defect_range": [
+            0.2084102869079194,
+            0.2592686334546288
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 12,
+              "10": 8,
+              "2": 32,
+              "4": 32,
+              "6": 24,
+              "8": 20
+            }
+          ],
+          "minimizing_root_gauge_code_count": 4200,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 4.226005643767731,
+          "beta": 2.0,
+          "child_raw_temperature": 0.7071067811865475,
+          "core_defect_range": [
+            0.16646100592482505,
+            1.5826221720330267
+          ],
+          "gap_to_next_distinct_histogram": 0.3180304674704413,
+          "integral_plus_I_defect_range": [
+            0.6624187750675041,
+            1.7680625619451398
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 12,
+              "10": 8,
+              "2": 32,
+              "4": 32,
+              "6": 24,
+              "8": 20
+            }
+          ],
+          "minimizing_root_gauge_code_count": 4200,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 10.824062489787483,
+          "beta": 4.0,
+          "child_raw_temperature": 1.414213562373095,
+          "core_defect_range": [
+            1.5657408935224737,
+            7.959683657115619
+          ],
+          "gap_to_next_distinct_histogram": 1.4838965173065333,
+          "integral_plus_I_defect_range": [
+            1.9862039791499626,
+            7.967889534184074
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 12,
+              "10": 8,
+              "2": 32,
+              "4": 32,
+              "6": 24,
+              "8": 20
+            }
+          ],
+          "minimizing_root_gauge_code_count": 4200,
+          "switching_permutation_class_count": 2
+        },
+        {
+          "P_r_beta": 24.82726761490703,
+          "beta": 8.0,
+          "child_raw_temperature": 2.82842712474619,
+          "core_defect_range": [
+            5.338579158474559,
+            19.948258639094036
+          ],
+          "gap_to_next_distinct_histogram": 4.272350800071003,
+          "integral_plus_I_defect_range": [
+            5.409820801720635,
+            19.948282356950173
+          ],
+          "minimizing_absolute_energy_histograms": [
+            {
+              "0": 12,
+              "10": 8,
+              "2": 32,
+              "4": 32,
+              "6": 24,
+              "8": 20
+            }
+          ],
+          "minimizing_root_gauge_code_count": 4200,
+          "switching_permutation_class_count": 2
+        }
+      ],
+      "minimizer_classes": [
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.4098900387241009,
+              "core_defect_vs_2P_r": -0.0009065536257346629,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 0.8188735238224671,
+              "core_pressure": 0.8188735238224671,
+              "integral_plus_I_defect_vs_2P_r": 0.060123060995695976,
+              "integral_plus_I_pressure": 0.8799031384438978,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.0,
+              "matching_pressure_difference": 0.06102961462143064
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 1.4222311892386972,
+              "core_defect_vs_2P_r": 0.05595941035541241,
+              "core_orbit_identity_abs_error": 8.881784197001252e-16,
+              "core_orbit_identity_pressure": 2.9004217888328077,
+              "core_pressure": 2.9004217888328068,
+              "integral_plus_I_defect_vs_2P_r": 0.2592686334546288,
+              "integral_plus_I_pressure": 3.103731011932023,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.0,
+              "matching_pressure_difference": 0.2033092230992164
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 4.2260056437677305,
+              "core_defect_vs_2P_r": 1.5826221720330267,
+              "core_orbit_identity_abs_error": 1.7763568394002505e-15,
+              "core_orbit_identity_pressure": 10.034633459568486,
+              "core_pressure": 10.034633459568488,
+              "integral_plus_I_defect_vs_2P_r": 1.7680625619451398,
+              "integral_plus_I_pressure": 10.2200738494806,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 4.0,
+              "matching_pressure_difference": 0.1854403899121131
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 10.824062489787483,
+              "core_defect_vs_2P_r": 7.959683657115619,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 29.607808636690585,
+              "core_pressure": 29.607808636690585,
+              "integral_plus_I_defect_vs_2P_r": 7.967889534184074,
+              "integral_plus_I_pressure": 29.61601451375904,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 8.0,
+              "matching_pressure_difference": 0.008205877068455436
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 24.827267614907022,
+              "core_defect_vs_2P_r": 19.948258639094036,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 69.60279386890808,
+              "core_pressure": 69.60279386890808,
+              "integral_plus_I_defect_vs_2P_r": 19.948282356950173,
+              "integral_plus_I_pressure": 69.60281758676422,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 16.0,
+              "matching_pressure_difference": 2.371785613775046e-05
+            }
+          ],
+          "canonical_root_code": 44280,
+          "child_cap": 10,
+          "child_signed_energy_histogram_projective": {
+            "-10": 4,
+            "-2": 16,
+            "-4": 16,
+            "-6": 12,
+            "-8": 10,
+            "0": 12,
+            "10": 4,
+            "2": 16,
+            "4": 16,
+            "6": 12,
+            "8": 10
+          },
+          "core_cap": 40,
+          "core_signed_energy_histogram_projective": {
+            "-12": 2904,
+            "-16": 1860,
+            "-20": 984,
+            "-24": 315,
+            "-28": 48,
+            "-32": 14,
+            "-4": 4256,
+            "-40": 1,
+            "-8": 3812,
+            "0": 4380,
+            "12": 2904,
+            "16": 1860,
+            "20": 984,
+            "24": 315,
+            "28": 48,
+            "32": 14,
+            "4": 4256,
+            "40": 1,
+            "8": 3812
+          },
+          "full_root_gauge_permutation_orbit_size": 1680,
+          "global_negation_root_code": 2052871,
+          "integral_plus_I_cap": 40,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-10": 1656,
+            "-12": 1336,
+            "-14": 1184,
+            "-16": 952,
+            "-18": 704,
+            "-2": 2184,
+            "-20": 552,
+            "-22": 360,
+            "-24": 209,
+            "-26": 120,
+            "-28": 56,
+            "-30": 20,
+            "-32": 6,
+            "-34": 4,
+            "-4": 2152,
+            "-40": 1,
+            "-6": 1960,
+            "-8": 1870,
+            "0": 2116,
+            "10": 1656,
+            "12": 1336,
+            "14": 1184,
+            "16": 952,
+            "18": 704,
+            "2": 2184,
+            "20": 552,
+            "22": 360,
+            "24": 209,
+            "26": 120,
+            "28": 56,
+            "30": 20,
+            "32": 6,
+            "34": 4,
+            "4": 2152,
+            "40": 1,
+            "6": 1960,
+            "8": 1870
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              -1,
+              1,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              0,
+              -1,
+              1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              -1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "ff485ae335dc2e0d31e0ff56cc1b42e0df2273ac17abbe1d37daf957bea20b75",
+          "max_core_orbit_identity_abs_error": 1.7763568394002505e-15,
+          "selected_root_code_count": 1680,
+          "selected_root_code_examples": [
+            44280,
+            44838,
+            46452,
+            46762,
+            51960,
+            53014,
+            54132,
+            54938
+          ]
+        },
+        {
+          "beta_records": [
+            {
+              "beta": 0.5,
+              "child_pressure": 0.4098900387241007,
+              "core_defect_vs_2P_r": -0.0024061036573486128,
+              "core_orbit_identity_abs_error": 4.440892098500626e-16,
+              "core_orbit_identity_pressure": 0.8173739737908532,
+              "core_pressure": 0.8173739737908527,
+              "integral_plus_I_defect_vs_2P_r": 0.05869159024405457,
+              "integral_plus_I_pressure": 0.8784716676922559,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 1.0,
+              "matching_pressure_difference": 0.06109769390140318
+            },
+            {
+              "beta": 1.0,
+              "child_pressure": 1.4222311892386976,
+              "core_defect_vs_2P_r": -0.003805669917647414,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 2.840656708559748,
+              "core_pressure": 2.840656708559748,
+              "integral_plus_I_defect_vs_2P_r": 0.2084102869079194,
+              "integral_plus_I_pressure": 3.0528726653853147,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 2.0,
+              "matching_pressure_difference": 0.21221595682556682
+            },
+            {
+              "beta": 2.0,
+              "child_pressure": 4.2260056437677305,
+              "core_defect_vs_2P_r": 0.16646100592482505,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 8.618472293460286,
+              "core_pressure": 8.618472293460286,
+              "integral_plus_I_defect_vs_2P_r": 0.6624187750675041,
+              "integral_plus_I_pressure": 9.114430062602965,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 4.0,
+              "matching_pressure_difference": 0.4959577691426791
+            },
+            {
+              "beta": 4.0,
+              "child_pressure": 10.824062489787483,
+              "core_defect_vs_2P_r": 1.5657408935224737,
+              "core_orbit_identity_abs_error": 3.552713678800501e-15,
+              "core_orbit_identity_pressure": 23.213865873097436,
+              "core_pressure": 23.21386587309744,
+              "integral_plus_I_defect_vs_2P_r": 1.9862039791499626,
+              "integral_plus_I_pressure": 23.63432895872493,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 8.0,
+              "matching_pressure_difference": 0.4204630856274889
+            },
+            {
+              "beta": 8.0,
+              "child_pressure": 24.827267614907022,
+              "core_defect_vs_2P_r": 5.338579158474559,
+              "core_orbit_identity_abs_error": 0.0,
+              "core_orbit_identity_pressure": 54.9931143882886,
+              "core_pressure": 54.9931143882886,
+              "integral_plus_I_defect_vs_2P_r": 5.409820801720635,
+              "integral_plus_I_pressure": 55.06435603153468,
+              "matching_absolute_bound_beta_sqrt_r_over_2": 16.0,
+              "matching_pressure_difference": 0.07124164324607563
+            }
+          ],
+          "canonical_root_code": 111980,
+          "child_cap": 10,
+          "child_signed_energy_histogram_projective": {
+            "-10": 4,
+            "-2": 16,
+            "-4": 16,
+            "-6": 12,
+            "-8": 10,
+            "0": 12,
+            "10": 4,
+            "2": 16,
+            "4": 16,
+            "6": 12,
+            "8": 10
+          },
+          "core_cap": 32,
+          "core_signed_energy_histogram_projective": {
+            "-12": 2904,
+            "-16": 1804,
+            "-20": 984,
+            "-24": 366,
+            "-28": 48,
+            "-32": 4,
+            "-4": 4256,
+            "-8": 3762,
+            "0": 4512,
+            "12": 2904,
+            "16": 1804,
+            "20": 984,
+            "24": 366,
+            "28": 48,
+            "32": 4,
+            "4": 4256,
+            "8": 3762
+          },
+          "full_root_gauge_permutation_orbit_size": 2520,
+          "global_negation_root_code": 1985171,
+          "integral_plus_I_cap": 32,
+          "integral_plus_I_signed_energy_histogram_projective": {
+            "-10": 1640,
+            "-12": 1336,
+            "-14": 1168,
+            "-16": 928,
+            "-18": 688,
+            "-2": 2224,
+            "-20": 552,
+            "-22": 376,
+            "-24": 228,
+            "-26": 136,
+            "-28": 56,
+            "-30": 16,
+            "-32": 4,
+            "-4": 2152,
+            "-6": 1944,
+            "-8": 1852,
+            "0": 2168,
+            "10": 1640,
+            "12": 1336,
+            "14": 1168,
+            "16": 928,
+            "18": 688,
+            "2": 2224,
+            "20": 552,
+            "22": 376,
+            "24": 228,
+            "26": 136,
+            "28": 56,
+            "30": 16,
+            "32": 4,
+            "4": 2152,
+            "6": 1944,
+            "8": 1852
+          },
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              -1,
+              1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              0,
+              1,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "matrix_sha256": "ccfdf94157d2f36afc5d9909aa85526110e5057126a1882144945df0c1cb6f96",
+          "max_core_orbit_identity_abs_error": 3.552713678800501e-15,
+          "selected_root_code_count": 2520,
+          "selected_root_code_examples": [
+            111980,
+            111986,
+            111989,
+            112042,
+            112051,
+            112052,
+            112234,
+            112237
+          ]
+        }
+      ],
+      "r": 8,
+      "root_gauge_signings_enumerated": 2097152
+    }
+  ],
+  "schema": "quadratic-signing-universal-double-minimizers-v1",
+  "status": "exhaustive switching-gauge enumeration; floating-point evaluation of exact integer energy histograms"
+}

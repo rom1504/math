@@ -1,0 +1,751 @@
+{
+  "canonical_payload_sha256": "fb3515822214c59cf5fec15f83c7e7fbc441c7c10b108748e97fa41e8fbd4612",
+  "classification": "exact finite enumeration through n=14; exact response and cap but sampled shore defects at n=18; reproducible Monte Carlo polynomial shore diagnostics on conference and held-out random families through n=98; deterministic augmented coordinate ascent is a rigorous samplewise certificate, while Monte Carlo averages and numerical spectral values are not asymptotic proofs",
+  "cross_field_zero_tie_rule": "use the corresponding original free-shore X coordinate; this makes augmented initialization switching covariant",
+  "current_doubled_project_constant": 0.672986728863,
+  "greedy_algorithm": "initialize w=(sign(sigma*h),1), using the declared zero tie; repeatedly flip the smallest-index coordinate among those with maximum positive gain -4*sigma*w_i*(Ew)_i",
+  "normalization": "doubled Q(A)=max_z |z^T A z|",
+  "records": [
+    {
+      "agreement_size_histogram": {
+        "0,10": 20,
+        "1,9": 10,
+        "10,0": 20,
+        "2,8": 50,
+        "3,7": 75,
+        "4,6": 60,
+        "5,5": 82,
+        "6,4": 60,
+        "7,3": 75,
+        "8,2": 50,
+        "9,1": 10
+      },
+      "cached_cross_anchor_states": 799,
+      "cached_cross_tied_witness_states": 904,
+      "cached_shore_subsets": 564,
+      "cross_augmented_cached_boolean_candidates": 50912,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 23.7734375,
+        "Q_certificate_over_n_to_three_halves": 0.7517821031165921,
+        "exact_integer_histogram": {
+          "0": 360,
+          "14": 2,
+          "2": 120,
+          "4": 20,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.8359375,
+          "denominator": 128,
+          "numerator": 107
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 14.0,
+        "mean": 0.8359375,
+        "mean_over_n_to_three_halves": 0.026434664815470046,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 2.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 3,
+        "mean": 0.9336283185840708
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 23.7734375,
+        "Q_certificate_over_n_to_three_halves": 0.7517821031165921,
+        "exact_integer_histogram": {
+          "0": 360,
+          "14": 2,
+          "2": 120,
+          "4": 20,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 0.8359375,
+          "denominator": 128,
+          "numerator": 107
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 14.0,
+        "mean": 0.8359375,
+        "mean_over_n_to_three_halves": 0.026434664815470046,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 2.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 22.4609375,
+        "Q_certificate_over_n_to_three_halves": 0.7102772088268821,
+        "exact_integer_histogram": {
+          "0": 290,
+          "12": 10,
+          "2": 50,
+          "20": 2,
+          "4": 70,
+          "6": 80,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 2.1484375,
+          "denominator": 128,
+          "numerator": 275
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 20.0,
+        "mean": 2.1484375,
+        "mean_over_n_to_three_halves": 0.06793955910518003,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.43359375,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 6.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 9,
+      "cross_augmented_state_order_histogram": {
+        "3": 100,
+        "4": 122,
+        "5": 120,
+        "6": 158,
+        "7": 85,
+        "8": 138,
+        "9": 76
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 20.38808392603813,
+        "Q_certificate_over_n_to_three_halves": 0.6447278233294841,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 17.119717994522443,
+        "mean": 4.2212910739618685,
+        "mean_over_n_to_three_halves": 0.13348894460257804,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 4.362675853621571,
+          "0.9": 8.925294632464604,
+          "0.99": 10.362675853621571
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 21.9140625,
+        "Q_certificate_over_n_to_three_halves": 0.6929835028728363,
+        "exact_integer_histogram": {
+          "0": 295,
+          "12": 10,
+          "16": 20,
+          "2": 50,
+          "30": 2,
+          "4": 40,
+          "6": 70,
+          "8": 25
+        },
+        "exact_mean": {
+          "decimal": 2.6953125,
+          "denominator": 128,
+          "numerator": 345
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 30.0,
+        "mean": 2.6953125,
+        "mean_over_n_to_three_halves": 0.08523326505922585,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.423828125,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 8.0,
+          "0.99": 16.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 512,
+      "exact_expected_bilinear_response": {
+        "decimal": 24.609375,
+        "denominator": 64,
+        "numerator": 1575
+      },
+      "exact_face": {
+        "Q_certificate": 23.296875,
+        "Q_certificate_over_n_to_three_halves": 0.7367118736423521,
+        "exact_integer_histogram": {
+          "0": 360,
+          "16": 2,
+          "4": 140,
+          "8": 10
+        },
+        "exact_mean": {
+          "decimal": 1.3125,
+          "denominator": 16,
+          "numerator": 21
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 16.0,
+        "mean": 1.3125,
+        "mean_over_n_to_three_halves": 0.04150489428970998,
+        "name": "exact_face",
+        "positive_fraction": 0.296875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 4.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "exact-n10",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "2cb0ba2fbcb6c763ec6735e0704d883b1235fda4283c4809e5adff7c1195f33f",
+      "mode": "exact",
+      "n": 10,
+      "nuclear": {
+        "Q_certificate": 18.578024325454688,
+        "Q_certificate_over_n_to_three_halves": 0.5874887129445009,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 19.270422048691767,
+        "mean": 6.031350674545311,
+        "mean_over_n_to_three_halves": 0.19072805498756124,
+        "name": "nuclear",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 5.816901138162093,
+          "0.9": 11.54366159342693,
+          "0.99": 11.54366159342693
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.8828125,
+      "population_size": 512,
+      "projector": {
+        "Q_certificate": 19.033951896224266,
+        "Q_certificate_over_n_to_three_halves": 0.6019064086614956,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 18.88468137848347,
+        "mean": 5.575423103775733,
+        "mean_over_n_to_three_halves": 0.17631035927056649,
+        "name": "projector",
+        "positive_fraction": 0.8828125,
+        "quantiles": {
+          "0.5": 5.442340689241736,
+          "0.9": 11.159173581135605,
+          "0.99": 11.163511033862605
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 26,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7782167679320621,
+      "sample_or_enumerated_response_mean": 24.609375,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "computations/results/exact_m10.json",
+      "source_key": "matrix",
+      "unique_agreement_subsets": 338,
+      "zero_field_coordinate_fraction": 0.0
+    },
+    {
+      "agreement_size_histogram": {
+        "0,10": 16,
+        "1,9": 60,
+        "10,0": 16,
+        "4,6": 90,
+        "5,5": 180,
+        "6,4": 90,
+        "9,1": 60
+      },
+      "cached_cross_anchor_states": 444,
+      "cached_cross_tied_witness_states": 720,
+      "cached_shore_subsets": 262,
+      "cross_augmented_cached_boolean_candidates": 13728,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 24.609375,
+        "Q_certificate_over_n_to_three_halves": 0.7782167679320621,
+        "exact_integer_histogram": {
+          "0": 512
+        },
+        "exact_mean": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_over_n_to_three_halves": 0.0,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.0,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 2,
+        "mean": 1.8972222222222221
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 24.515625,
+        "Q_certificate_over_n_to_three_halves": 0.7752521326256543,
+        "exact_integer_histogram": {
+          "0": 504,
+          "6": 8
+        },
+        "exact_mean": {
+          "decimal": 0.09375,
+          "denominator": 32,
+          "numerator": 3
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 6.0,
+        "mean": 0.09375,
+        "mean_over_n_to_three_halves": 0.002964635306407856,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.015625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 6.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 16.875,
+        "Q_certificate_over_n_to_three_halves": 0.5336343551534141,
+        "exact_integer_histogram": {
+          "0": 152,
+          "10": 180,
+          "12": 180
+        },
+        "exact_mean": {
+          "decimal": 7.734375,
+          "denominator": 64,
+          "numerator": 495
+        },
+        "exceeds_current_doubled_constant": false,
+        "maximum": 12.0,
+        "mean": 7.734375,
+        "mean_over_n_to_three_halves": 0.2445824127786481,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.0,
+          "0.9": 12.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 7,
+      "cross_augmented_state_order_histogram": {
+        "5": 126,
+        "6": 270,
+        "7": 48
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 18.076419693895332,
+        "Q_certificate_over_n_to_three_halves": 0.5716265817383295,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 10.362675853621571,
+        "mean": 6.532955306104668,
+        "mean_over_n_to_three_halves": 0.20659018619373268,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 8.219952572631708,
+          "0.9": 10.362675853621571,
+          "0.99": 10.362675853621571
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 12.65625,
+        "Q_certificate_over_n_to_three_halves": 0.4002257663650605,
+        "exact_integer_histogram": {
+          "0": 152,
+          "10": 180,
+          "24": 180
+        },
+        "exact_mean": {
+          "decimal": 11.953125,
+          "denominator": 64,
+          "numerator": 765
+        },
+        "exceeds_current_doubled_constant": false,
+        "maximum": 24.0,
+        "mean": 11.953125,
+        "mean_over_n_to_three_halves": 0.3779910015670016,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.0,
+          "0.9": 24.0,
+          "0.99": 24.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 512,
+      "exact_expected_bilinear_response": {
+        "decimal": 24.609375,
+        "denominator": 64,
+        "numerator": 1575
+      },
+      "exact_face": {
+        "Q_certificate": 24.609375,
+        "Q_certificate_over_n_to_three_halves": 0.7782167679320621,
+        "exact_integer_histogram": {
+          "0": 512
+        },
+        "exact_mean": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_over_n_to_three_halves": 0.0,
+        "name": "exact_face",
+        "positive_fraction": 0.0,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "conference-n10",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "69c77bbe402b2dd55c14b2ac444814be522ea2169754adbb0aaa3bb38fa9be9b",
+      "mode": "exact",
+      "n": 10,
+      "nuclear": {
+        "Q_certificate": 16.714480774831888,
+        "Q_certificate_over_n_to_three_halves": 0.5285582915556474,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 11.54366159342693,
+        "mean": 7.894894225168113,
+        "mean_over_n_to_three_halves": 0.24965847637641472,
+        "name": "nuclear",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 10.912926424829035,
+          "0.9": 11.54366159342693,
+          "0.99": 11.54366159342693
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.703125,
+      "population_size": 512,
+      "projector": {
+        "Q_certificate": 17.231380039759784,
+        "Q_certificate_over_n_to_three_halves": 0.5449040815360369,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 11.163511033862605,
+        "mean": 7.377994960240214,
+        "mean_over_n_to_three_halves": 0.23331268639602518,
+        "name": "projector",
+        "positive_fraction": 0.703125,
+        "quantiles": {
+          "0.5": 9.822785741931778,
+          "0.9": 11.163511033862605,
+          "0.99": 11.163511033862605
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 30,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7782167679320621,
+      "sample_or_enumerated_response_mean": 24.609375,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "computations/results/conference_order10_gf9.json",
+      "source_key": "conference_matrix",
+      "unique_agreement_subsets": 142,
+      "zero_field_coordinate_fraction": 0.0
+    },
+    {
+      "agreement_size_histogram": {
+        "0,14": 5,
+        "1,13": 42,
+        "10,4": 687,
+        "11,3": 409,
+        "12,2": 154,
+        "13,1": 56,
+        "14,0": 13,
+        "2,12": 174,
+        "3,11": 332,
+        "4,10": 680,
+        "5,9": 1028,
+        "6,8": 1265,
+        "7,7": 1294,
+        "8,6": 1154,
+        "9,5": 899
+      },
+      "cached_cross_anchor_states": 14012,
+      "cached_cross_tied_witness_states": 15372,
+      "cached_shore_subsets": 9234,
+      "cross_augmented_cached_boolean_candidates": 4738292,
+      "cross_augmented_exact_face": {
+        "Q_certificate": 41.055908203125,
+        "Q_certificate_over_n_to_three_halves": 0.7837609295864056,
+        "exact_integer_histogram": {
+          "0": 8190,
+          "2": 1,
+          "4": 1
+        },
+        "exact_mean": {
+          "decimal": 0.000732421875,
+          "denominator": 4096,
+          "numerator": 3
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 4.0,
+        "mean": 0.000732421875,
+        "mean_over_n_to_three_halves": 1.398199856545189e-05,
+        "name": "cross_augmented_exact_face",
+        "positive_fraction": 0.000244140625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_greedy_cached_flip_count": {
+        "maximum": 9,
+        "mean": 1.5100182149362478
+      },
+      "cross_augmented_greedy_coordinate_ascent": {
+        "Q_certificate": 41.051025390625,
+        "Q_certificate_over_n_to_three_halves": 0.783667716262636,
+        "exact_integer_histogram": {
+          "0": 8179,
+          "2": 5,
+          "4": 7,
+          "8": 1
+        },
+        "exact_mean": {
+          "decimal": 0.005615234375,
+          "denominator": 4096,
+          "numerator": 23
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 8.0,
+        "mean": 0.005615234375,
+        "mean_over_n_to_three_halves": 0.00010719532233513115,
+        "name": "cross_augmented_greedy_coordinate_ascent",
+        "positive_fraction": 0.0015869140625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 0.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_initial_aligned_sign_h": {
+        "Q_certificate": 40.396484375,
+        "Q_certificate_over_n_to_three_halves": 0.7711724702113105,
+        "exact_integer_histogram": {
+          "0": 7248,
+          "10": 32,
+          "12": 53,
+          "14": 15,
+          "16": 22,
+          "18": 9,
+          "2": 226,
+          "20": 5,
+          "4": 328,
+          "6": 84,
+          "8": 170
+        },
+        "exact_mean": {
+          "decimal": 0.66015625,
+          "denominator": 256,
+          "numerator": 169
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 20.0,
+        "mean": 0.66015625,
+        "mean_over_n_to_three_halves": 0.012602441373660636,
+        "name": "cross_augmented_initial_aligned_sign_h",
+        "positive_fraction": 0.115234375,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 2.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "cross_augmented_largest_state_order": 13,
+      "cross_augmented_state_order_histogram": {
+        "10": 1653,
+        "11": 1033,
+        "12": 521,
+        "13": 164,
+        "3": 261,
+        "4": 658,
+        "5": 1163,
+        "6": 1743,
+        "7": 2229,
+        "8": 2361,
+        "9": 2226
+      },
+      "cross_augmented_weighted_projector": {
+        "Q_certificate": 35.183365868390844,
+        "Q_certificate_over_n_to_three_halves": 0.6716535754746672,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 24.474436395648794,
+        "mean": 5.873274756609159,
+        "mean_over_n_to_three_halves": 0.11212133611030399,
+        "name": "cross_augmented_weighted_projector",
+        "positive_fraction": 0.83447265625,
+        "quantiles": {
+          "0.5": 4.954322190645161,
+          "0.9": 12.352093799371893,
+          "0.99": 17.302804118958655
+        },
+        "standard_error": 0.0
+      },
+      "cross_aware_sign_h_witness": {
+        "Q_certificate": 40.520263671875,
+        "Q_certificate_over_n_to_three_halves": 0.7735354279688719,
+        "exact_integer_histogram": {
+          "0": 7473,
+          "10": 20,
+          "12": 38,
+          "14": 7,
+          "16": 19,
+          "18": 5,
+          "2": 154,
+          "20": 12,
+          "24": 4,
+          "26": 2,
+          "28": 2,
+          "4": 256,
+          "6": 65,
+          "8": 135
+        },
+        "exact_mean": {
+          "decimal": 0.536376953125,
+          "denominator": 4096,
+          "numerator": 2197
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 28.0,
+        "mean": 0.536376953125,
+        "mean_over_n_to_three_halves": 0.010239483616099268,
+        "name": "cross_aware_sign_h_witness",
+        "positive_fraction": 0.0877685546875,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 12.0
+        },
+        "standard_error": 0.0
+      },
+      "evaluated_X_count": 8192,
+      "exact_expected_bilinear_response": {
+        "decimal": 41.056640625,
+        "denominator": 512,
+        "numerator": 21021
+      },
+      "exact_face": {
+        "Q_certificate": 40.60400390625,
+        "Q_certificate_over_n_to_three_halves": 0.7751340364715219,
+        "exact_integer_histogram": {
+          "0": 7518,
+          "12": 17,
+          "4": 438,
+          "8": 219
+        },
+        "exact_mean": {
+          "decimal": 0.45263671875,
+          "denominator": 2048,
+          "numerator": 927
+        },
+        "exceeds_current_doubled_constant": true,
+        "maximum": 12.0,
+        "mean": 0.45263671875,
+        "mean_over_n_to_three_halves": 0.008640875113449268,
+        "name": "exact_face",
+        "positive_fraction": 0.082275390625,
+        "quantiles": {
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 8.0
+        },
+        "standard_error": 0.0
+      },
+      "include_exact_face": true,
+      "label": "random-sweep-worst-n14-seed9407",
+      "law": "X uniform projectively; Y_i=sign((AX)_i), with Y_i=X_i at zero",
+      "matrix_sha256": "a5438201cbd558bc11200eaffd7029b784647df9fed33c20b59bfe53d619a736",
+      "mode": "exact",
+      "n": 14,
+      "nuclear": {
+        "Q_certificate": 31.971909628923054,
+        "Q_certificate_over_n_to_three_halves": 0.6103465909812696,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 28.997182503956605,
+        "mean": 9.084730996076946,
+        "mean_over_n_to_three_halves": 0.17342832060370147,
+        "name": "nuclear",
+        "positive_fraction": 0.936767578125,
+        "quantiles": {
+          "0.5": 8.375217738327972,
+          "0.9": 16.375217738327972,
+          "0.99": 21.115562657908473
+        },
+        "standard_error": 0.0
+      },
+      "opposite_shore_sign_fraction": 0.938232421875,
+      "population_size": 8192,
+      "projector": {
+        "Q_certificate": 32.869615328167654,
+        "Q_certificate_over_n_to_three_halves": 0.6274838724135534,
+        "exceeds_current_doubled_constant": false,
+        "maximum": 27.862499494153887,
+        "mean": 8.187025296832346,
+        "mean_over_n_to_three_halves": 0.15629103917141768,
+        "name": "projector",
+        "positive_fraction": 0.9288330078125,
+        "quantiles": {
+          "0.5": 7.228652059773859,
+          "0.9": 15.285077055430717,
+          "0.99": 19.787373756433627
+        },
+        "standard_error": 0.0
+      },
+      "quadratic_cap_Q": 74,
+      "quadratic_cap_classification": "exact exhaustive recomputation",
+      "response_over_n_to_three_halves": 0.7837749115849711,
+      "sample_or_enumerated_response_mean": 41.056640625,
+      "sample_response_standard_error": 0.0,
+      "sampling_with_replacement": false,
+      "seed": null,
+      "source": "generated by random_signing in this auditor",
+      "source_key": "numpy-default_rng-seed=9407",
+      "unique_agreement_subsets": 5665,
+      "zero_field_coordinate_fraction": 0.0
+    }
+  ],
+  "schema": "quadratic-signing-row-sign-recoupling-law-audit-v1",
+  "universal_response_identity": "E[X^T A sign(AX)]=n E|S_{n-1}| for every signing A; S_m is a length-m Rademacher sum",
+  "zero_field_tie_rule": "Y_i=X_i when (AX)_i=0"
+}
