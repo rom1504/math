@@ -1,6 +1,6 @@
 # Polynomial Boolean BH: focused transfer audit
 
-2026-09-16. Closing synthesis under final audit; authorized session
+2026-09-16. Final synthesis after independent audits; authorized session
 05:13:45--07:13:45 UTC. This is a bounded paper investigation, not a
 restart of the autonomous original-problem loop.
 
@@ -94,6 +94,9 @@ from a selected positive diagram class over the complete moment.
 Both the older exp(O(sqrt(m log m))) BH bound and the new polynomial bound
 have root loss 1+o(1) in the linear-degree regime. Even an elementary
 dimension-dependent coefficient/L2 comparison is already enough there.
+Both old and new root losses are also summable on geometric degree scales,
+with vanishing total overhead as the starting degree grows; the new bound
+does not repair a hidden geometric-accumulation problem in this comparison.
 The missing LINEAR-degree optimized signed-moment estimate did not get easier.
 See [powers and flattening](bh_2026_09_16_power_analysis.md).
 
@@ -211,3 +214,11 @@ All finite diagnostic norms/quadratures are distinguished from exact
 integer/rational certificates and analytic proofs. Proofs, counterexamples,
 primary downloads, failed calculations and replay outputs are preserved;
 preservation itself is not verification.
+
+Publication: substantive checkpoint `3bdaf9e` and closing proof/archive
+commit `430aa44` were pushed normally. The closing snapshot has1,888
+hash-verified payloads; the post-publication audit matched all1,863
+remaining research working files. See the
+[preservation and dependency audit](../research_archive/publication_audit_bh_2026_09_16.md).
+The only intentionally untracked ordinary working originals are a reviewed
+compiled build and older raw research already preserved losslessly.

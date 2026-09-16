@@ -1,7 +1,7 @@
 # Active research state
 
-Evidence cutoff: 2026-09-16 bounded BH-paper investigation, closing audit.
-Authorization is ONLY05:13:45--07:13:45UTC; do not restart the general loop.
+Evidence cutoff: 2026-09-16 completed bounded BH-paper investigation.
+The05:13:45--07:13:45UTC campaign is closed; do not restart the general loop.
 Read [STEERING](STEERING.md), the
 [paper investigation](artifacts/bh_2026_09_16_final_synthesis.md), and the
 [last original-problem synthesis](artifacts/principle_director_final_synthesis_2026_09_07.md).

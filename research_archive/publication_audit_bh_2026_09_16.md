@@ -79,5 +79,14 @@ is a new missing input to the canonical BH replay programs.
 The fresh, separately initialized refinement reviewer also completed a
 standalone reconstruction and reran all31 exact checks without finding
 a gap. Its artifact and the director's failed-escape scratch note are
-included in the snapshot. Normal publication push and the post-commit
-current-work audit are the remaining operational checks.
+included in the snapshot. Publication commit
+`430aa44ce825ebf8171f257a780428b926bac3ea` was pushed normally. The
+post-commit current-work audit matched all1,863 remaining research working
+files: no missing payload, changed payload, or credential candidate.
+
+The archive intentionally retains historical/source whitespace verbatim;
+the full archival diff therefore has formatting warnings. No payload was
+rewritten to silence them. The new canonical proof/code/state diff passed
+its separately scoped whitespace check. Hash preservation has priority over
+formatting archived research. Later canonical closing edits are committed
+directly. The closing hash replay again verified all1,888 payloads.

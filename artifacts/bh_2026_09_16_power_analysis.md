@@ -471,6 +471,31 @@ The new factor is `exp[-O(log k/k)]`. The old bound from
 Defant--Mastylo--Perez gives `exp[-O(sqrt(log k/k))]`.
 **Both tend to one whenever `k` tends to infinity.** A smaller vanishing
 factor is a finite-size improvement, not a new asymptotic constant.
+
+The older overhead is already SUMMABLE on geometric scales, not merely
+pointwise vanishing. If `k_j>=2^j k_0` with `k_0>=2`, then
+
+```math
+\sum_{j\ge0}\sqrt{\frac{\log(1+k_j)}{k_j}}
+ =O\!\left(\sqrt{\frac{\log(1+k_0)}{k_0}}\right),
+\qquad
+\sum_{j\ge0}\frac{\log(1+k_j)}{k_j}
+ =O\!\left(\frac{\log(1+k_0)}{k_0}\right).
+```
+
+Indeed `log(1+x)/x` decreases, and
+`log(1+2^j k_0)<=log(1+k_0)+j log2`. For the square-root sum use
+`sqrt(a+b)<=sqrt(a)+sqrt(b)` and convergence of both
+`sum 2^(-j/2)` and `sum sqrt(j)2^(-j/2)`; the second sum is a direct
+geometric-series calculation. Consequently both BH bounds already give
+vanishing total multiplicative root loss along geometric degree scales.
+No actual cross-order/composition inequality is supplied by this observation;
+it only shows that the older BH overhead would not be its summability
+obstruction in this regime.
+The two series estimates were independently checked by the proof verifier.
+They make no assertion about recurrences that further amplify the overhead
+or use a nongrowing/subgeometric degree schedule.
+
 For bounded `k>=2`, (4.1) shows that the entire coefficient lower-bound
 route is lower order. For `k=1`, the problem is the sharp degree-two
 constant, which `K m^27` does not determine or improve numerically.

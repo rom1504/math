@@ -1,6 +1,6 @@
 # Polynomial Boolean Bohnenblust--Hille investigation
 
-Status: CLOSING AUDIT until the bounded endpoint; proofs below are not
+Status: COMPLETED AND STOPPED at the bounded endpoint; proofs below are not
 implied by this operational record.
 Authorized by the user for two hours, starting2026-09-16 at05:13:45UTC,
 ending about07:13:45UTC. Target paper: arXiv2609.12427v1,

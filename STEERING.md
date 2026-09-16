@@ -1,7 +1,8 @@
 # Strategic steering
 
-Evidence cutoff: 2026-09-16 bounded BH-paper investigation, closing audit.
-Status: authorized ONLY05:13:45--07:13:45UTC; no automatic general loop.
+Evidence cutoff: 2026-09-16 completed bounded BH-paper investigation.
+Status: STOPPED after the authorized05:13:45--07:13:45UTC session;
+no automatic general loop.
 Original convergence remains OPEN. Mathematical judgments below are agent-owned.
 
 ## User objectives and authorization
@@ -109,7 +110,7 @@ power/filter variants are not justified by the evidence here.
 
 The analytic refinement and Bohr corollary could warrant separate external
 novelty checking; that is not a reason to restart the original research loop.
-Stop at the bounded endpoint. A new campaign requires user authorization.
+The bounded campaign is complete. A new campaign requires user authorization.
 
 [Paper synthesis](artifacts/bh_2026_09_16_final_synthesis.md) records exact
 theorems, limitations and dependencies. [Campaign record](artifacts/bh_polynomial_campaign_2026_09_16.md)
