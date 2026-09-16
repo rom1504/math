@@ -1,0 +1,202 @@
+{
+  "boundary_kernel_moduli": [
+    {
+      "kernels_checked": 2,
+      "latent_bits": 1,
+      "minimizing_pairs": 1,
+      "pairwise_modulus": "1",
+      "q": 1
+    },
+    {
+      "kernels_checked": 16,
+      "latent_bits": 4,
+      "minimizing_pairs": 120,
+      "pairwise_modulus": "1/4",
+      "q": 2
+    },
+    {
+      "kernels_checked": 512,
+      "latent_bits": 9,
+      "minimizing_pairs": 130816,
+      "pairwise_modulus": "1/9",
+      "q": 3
+    }
+  ],
+  "maxcut_moduli": [
+    {
+      "graphs_checked": 2,
+      "inverse_hamming_modulus": "1/2",
+      "order": 2
+    },
+    {
+      "graphs_checked": 8,
+      "inverse_hamming_modulus": "1/4",
+      "order": 3
+    },
+    {
+      "graphs_checked": 64,
+      "inverse_hamming_modulus": "1/4",
+      "order": 4
+    }
+  ],
+  "outer_spectrum_collision": {
+    "code_a": {
+      "inner": {
+        "0": 4,
+        "1": 8,
+        "2": 4
+      },
+      "outer": {
+        "0": 4,
+        "1": 8,
+        "2": 4
+      },
+      "radius": 2
+    },
+    "code_b": {
+      "inner": {
+        "0": 4,
+        "1": 6,
+        "2": 4,
+        "3": 2
+      },
+      "outer": {
+        "0": 4,
+        "1": 8,
+        "2": 4
+      },
+      "radius": 2
+    }
+  },
+  "radius_is_strictly_coarser": {
+    "code_a": {
+      "inner": {
+        "0": 2,
+        "1": 2
+      },
+      "outer": {
+        "0": 2,
+        "1": 2
+      },
+      "radius": 1
+    },
+    "code_b": {
+      "inner": {
+        "0": 3,
+        "1": 4,
+        "2": 2
+      },
+      "outer": {
+        "0": 3,
+        "1": 1
+      },
+      "radius": 1
+    }
+  },
+  "rare_matching_fibres": [
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "1/4",
+      "matching_edges": 2,
+      "states": 4
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "2/9",
+      "matching_edges": 3,
+      "states": 6
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "3/16",
+      "matching_edges": 4,
+      "states": 8
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "4/25",
+      "matching_edges": 5,
+      "states": 10
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "5/36",
+      "matching_edges": 6,
+      "states": 12
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "6/49",
+      "matching_edges": 7,
+      "states": 14
+    },
+    {
+      "best_uniform_constant_error": "1/2",
+      "conditional_variance": "7/64",
+      "matching_edges": 8,
+      "states": 16
+    }
+  ],
+  "rooted_code_moduli": [
+    {
+      "anchored_codes_checked": 2,
+      "dimension": 1,
+      "inverse_hamming_modulus": "1/2"
+    },
+    {
+      "anchored_codes_checked": 8,
+      "dimension": 2,
+      "inverse_hamming_modulus": "1/4"
+    },
+    {
+      "anchored_codes_checked": 128,
+      "dimension": 3,
+      "inverse_hamming_modulus": "1/8"
+    }
+  ],
+  "schema": "extremal-information-phase2-response-geometry-v1",
+  "shifted_quadratic_moduli": [
+    {
+      "inverse_hamming_modulus_for_a_1": "4",
+      "order": 2,
+      "signings_checked": 2
+    },
+    {
+      "inverse_hamming_modulus_for_a_1": "4",
+      "order": 3,
+      "signings_checked": 8
+    },
+    {
+      "inverse_hamming_modulus_for_a_1": "4",
+      "order": 4,
+      "signings_checked": 64
+    }
+  ],
+  "tropical_rank_resonances": [
+    {
+      "distinguished_diagonal_cells": 2,
+      "normalized_rank_one_mse": "1/2",
+      "order": 2
+    },
+    {
+      "distinguished_diagonal_cells": 4,
+      "normalized_rank_one_mse": "1/4",
+      "order": 4
+    },
+    {
+      "distinguished_diagonal_cells": 8,
+      "normalized_rank_one_mse": "1/8",
+      "order": 8
+    },
+    {
+      "distinguished_diagonal_cells": 16,
+      "normalized_rank_one_mse": "1/16",
+      "order": 16
+    },
+    {
+      "distinguished_diagonal_cells": 32,
+      "normalized_rank_one_mse": "1/32",
+      "order": 32
+    }
+  ]
+}

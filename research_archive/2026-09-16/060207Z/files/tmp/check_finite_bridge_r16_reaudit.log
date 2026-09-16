@@ -1,0 +1,35 @@
+A9 wall: Q(A),Q(C),Q(D),q6,X = 24 22 22 10 12
+order-six labelled minimizers / optimal completions = 384 40
+active oriented-state count per completion: [(21, 24), (25, 16)]
+active orientation histogram (sigma,count): [(-1, 408), (1, 496)]
+persistent-state count per completion: [(4, 2), (5, 4), (6, 6), (7, 6), (8, 8), (9, 6), (10, 4), (11, 2), (13, 2)]
+aggregate active profile (cross,G,deltaG,D,deltaD,Aenergy,point_gain):
+  36 (14, 10, 0, -14, 36, 0, 36)
+  156 (14, 10, 0, -6, 28, 8, 28)
+  216 (14, 10, 0, 2, 20, 16, 20)
+  168 (14, 10, 0, 10, 12, 24, 12)
+  64 (18, 6, 4, -10, 32, 8, 28)
+  120 (18, 6, 4, -2, 24, 16, 20)
+  144 (18, 6, 4, 6, 16, 24, 12)
+persistent (cross,D,G) profile: [((14, 10, 10), 168), ((18, 6, 6), 144)]
+old response score range on hybrid-active states: -22 2
+max accessible endpoint residual over all / persistent active states: [(8, 712), (16, 192)] [(8, 248), (16, 64)]
+completions whose every persistent state has only residual 8: 8
+endpoint (+grounds,-grounds,oriented-shore rows) per completion: [((12, 9, 216), 24), ((13, 12, 312), 16)]
+endpoint pair |cross-Gram| histogram: [(0, 1944), (4, 1152), (8, 1896), (16, 96)]
+original A9 endpoint pair |cross-Gram| histogram: [(0, 56), (4, 36), (8, 46), (12, 4), (16, 8)]
+aggregate endpoint/deletion profile (|b|,m,QX,|h|,sign(centered)):
+  1824 (0, 4, 8, 0, 1)
+  120 (0, 4, 12, 0, 1)
+  1032 (0, 5, 8, 0, -1)
+  912 (0, 5, 16, 0, 1)
+  1152 (4, 3, 6, 2, 1)
+  288 (4, 6, 14, 2, 1)
+  864 (4, 6, 18, 2, 1)
+  1368 (8, 4, 8, 4, 1)
+  528 (8, 4, 12, 4, 1)
+  1896 (8, 5, 12, 4, 1)
+  96 (16, 4, 8, 8, 1)
+  96 (16, 5, 8, 8, -1)
+A8 response counterexample (Delta, original residual, captured excess) = 8 0 8
+A5/A7/A8 timing checks: {'a5_residual': 0, 'a5_demand': '8-64*sqrt(5)/25 > 0', 'a7_residuals': (0, 0), 'a7_x1': '10-108*sqrt(42)/49 < 0', 'a7_x2': '(108*sqrt(42)-90*sqrt(35))/49-2 > 0', 'a8_endpoint_demand': '8-5*sqrt(2) > 0'}

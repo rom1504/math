@@ -1,0 +1,1414 @@
+{
+  "status": "PASS",
+  "scope": "Finite verification only; asymptotic theorem is proved in artifact.",
+  "seed": 20260916,
+  "primary_contraction_constant": 0.6742048108733384,
+  "exact_checks": [
+    {
+      "family": "Sylvester",
+      "n": 2,
+      "cap": 1,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 2,
+      "cap": 1,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 2,
+      "cap": 1,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 2,
+      "cap": 1,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 3,
+      "cap": 3,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 3,
+      "cap": 3,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 3,
+      "cap": 3,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 3,
+      "cap": 3,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 4,
+      "cap": 4,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 4,
+      "cap": 6,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 4,
+      "cap": 6,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 4,
+      "cap": 4,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 5,
+      "cap": 6,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 5,
+      "cap": 8,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 5,
+      "cap": 6,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 5,
+      "cap": 6,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 6,
+      "cap": 7,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 6,
+      "cap": 7,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 6,
+      "cap": 9,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 6,
+      "cap": 9,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 7,
+      "cap": 9,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 7,
+      "cap": 9,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 7,
+      "cap": 11,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 7,
+      "cap": 13,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 8,
+      "cap": 10,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 8,
+      "cap": 14,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 8,
+      "cap": 14,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 8,
+      "cap": 16,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 9,
+      "cap": 16,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 9,
+      "cap": 16,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 9,
+      "cap": 14,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 9,
+      "cap": 18,
+      "identities": "PASS"
+    },
+    {
+      "family": "Sylvester",
+      "n": 10,
+      "cap": 17,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 0,
+      "n": 10,
+      "cap": 21,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 1,
+      "n": 10,
+      "cap": 19,
+      "identities": "PASS"
+    },
+    {
+      "family": "random",
+      "sample": 2,
+      "n": 10,
+      "cap": 19,
+      "identities": "PASS"
+    }
+  ],
+  "numerical_norm_checks": [
+    {
+      "family": "Sylvester",
+      "n": 6,
+      "cap": 7,
+      "rows": [
+        {
+          "k": 1,
+          "moment_over_cap": 0.5532833351724882,
+          "power_functional_over_cap": 1.088855888902746,
+          "functional_over_moment": 1.9679896712654306,
+          "entropy_formula_ratio": 1.9679896712654306,
+          "support_upper_factor": 2.0,
+          "weighted_root_over_cap": 0.03402674652821081
+        },
+        {
+          "k": 2,
+          "moment_over_cap": 0.6676234070412896,
+          "power_functional_over_cap": 0.7753649773239959,
+          "functional_over_moment": 1.161380756196349,
+          "entropy_formula_ratio": 1.161380756196349,
+          "support_upper_factor": 1.2393960447517904,
+          "weighted_root_over_cap": 0.11017419081590352
+        },
+        {
+          "k": 3,
+          "moment_over_cap": 0.7366180360551513,
+          "power_functional_over_cap": 0.7951185298086857,
+          "functional_over_moment": 1.0794176776702686,
+          "entropy_formula_ratio": 1.0794176776702684,
+          "support_upper_factor": 1.1010567954531432,
+          "weighted_root_over_cap": 0.28257873003296874
+        },
+        {
+          "k": 4,
+          "moment_over_cap": 0.7836495204267946,
+          "power_functional_over_cap": 0.817248949642968,
+          "functional_over_moment": 1.0428755819283528,
+          "entropy_formula_ratio": 1.0428755819283526,
+          "support_upper_factor": 1.0556451783605572,
+          "weighted_root_over_cap": 0.32672891470617754
+        },
+        {
+          "k": 8,
+          "moment_over_cap": 0.8786280503467188,
+          "power_functional_over_cap": 0.8882438419338946,
+          "functional_over_moment": 1.0109440981122573,
+          "entropy_formula_ratio": 1.0109440981122573,
+          "support_upper_factor": 1.0136300849514894,
+          "weighted_root_over_cap": 0.5617455250167269
+        },
+        {
+          "k": 16,
+          "moment_over_cap": 0.9370850517296503,
+          "power_functional_over_cap": 0.9396324874176608,
+          "functional_over_moment": 1.0027184679590273,
+          "entropy_formula_ratio": 1.0027184679590273,
+          "support_upper_factor": 1.0033902416308227,
+          "weighted_root_over_cap": 0.7467019553385809
+        },
+        {
+          "k": 32,
+          "moment_over_cap": 0.9680308967595918,
+          "power_functional_over_cap": 0.9686872542154596,
+          "functional_over_moment": 1.0006780335814331,
+          "entropy_formula_ratio": 1.0006780335814334,
+          "support_upper_factor": 1.0008464849957674,
+          "weighted_root_over_cap": 0.8639964193810882
+        },
+        {
+          "k": 64,
+          "moment_over_cap": 0.9838856116165879,
+          "power_functional_over_cap": 0.9840522359753152,
+          "functional_over_moment": 1.0001693533849463,
+          "entropy_formula_ratio": 1.0001693533849463,
+          "support_upper_factor": 1.000211554106763,
+          "weighted_root_over_cap": 0.9295137716853448
+        }
+      ]
+    },
+    {
+      "family": "Sylvester",
+      "n": 8,
+      "cap": 10,
+      "rows": [
+        {
+          "k": 1,
+          "moment_over_cap": 0.5291502622129177,
+          "power_functional_over_cap": 1.2172184414459761,
+          "functional_over_moment": 2.300326633791208,
+          "entropy_formula_ratio": 2.3003266337912063,
+          "support_upper_factor": 2.320595787106084,
+          "weighted_root_over_cap": 0.038038076295186754
+        },
+        {
+          "k": 2,
+          "moment_over_cap": 0.6300703649796461,
+          "power_functional_over_cap": 0.7657762644206153,
+          "functional_over_moment": 1.2153821334627493,
+          "entropy_formula_ratio": 1.21538213346275,
+          "support_upper_factor": 1.332684049048963,
+          "weighted_root_over_cap": 0.08982467928914557
+        },
+        {
+          "k": 3,
+          "moment_over_cap": 0.6955661255909414,
+          "power_functional_over_cap": 0.770612704837273,
+          "functional_over_moment": 1.1078928034089832,
+          "entropy_formula_ratio": 1.1078928034089828,
+          "support_upper_factor": 1.144034159713953,
+          "weighted_root_over_cap": 0.27997517230063584
+        },
+        {
+          "k": 4,
+          "moment_over_cap": 0.742147266803813,
+          "power_functional_over_cap": 0.786591548628246,
+          "functional_over_moment": 1.059886068186763,
+          "entropy_formula_ratio": 1.0598860681867626,
+          "support_upper_factor": 1.0787607977571199,
+          "weighted_root_over_cap": 0.2996875746797544
+        },
+        {
+          "k": 8,
+          "moment_over_cap": 0.8445198014142344,
+          "power_functional_over_cap": 0.8578448566327578,
+          "functional_over_moment": 1.0157782626247593,
+          "entropy_formula_ratio": 1.0157782626247593,
+          "support_upper_factor": 1.019133996077738,
+          "weighted_root_over_cap": 0.5402078907303463
+        },
+        {
+          "k": 16,
+          "moment_over_cap": 0.9170607554497697,
+          "power_functional_over_cap": 0.9206441533567731,
+          "functional_over_moment": 1.0039074814680582,
+          "entropy_formula_ratio": 1.003907481468058,
+          "support_upper_factor": 1.0047495543507072,
+          "weighted_root_over_cap": 0.7298138695237637
+        },
+        {
+          "k": 32,
+          "moment_over_cap": 0.9576033041789199,
+          "power_functional_over_cap": 0.9585359285375816,
+          "functional_over_moment": 1.0009739151427233,
+          "entropy_formula_ratio": 1.0009739151427233,
+          "support_upper_factor": 1.0011852795904375,
+          "weighted_root_over_cap": 0.8535802109292681
+        },
+        {
+          "k": 64,
+          "moment_over_cap": 0.9785720620877076,
+          "power_functional_over_cap": 0.9788101884865322,
+          "functional_over_moment": 1.000243340687978,
+          "entropy_formula_ratio": 1.000243340687978,
+          "support_upper_factor": 1.0002961882803774,
+          "weighted_root_over_cap": 0.923882645213624
+        }
+      ]
+    },
+    {
+      "family": "Sylvester",
+      "n": 10,
+      "cap": 17,
+      "rows": [
+        {
+          "k": 1,
+          "moment_over_cap": 0.3946002313234924,
+          "power_functional_over_cap": 1.0220225164308263,
+          "functional_over_moment": 2.590020064111352,
+          "entropy_formula_ratio": 2.590020064111353,
+          "support_upper_factor": 2.604290687140218,
+          "weighted_root_over_cap": 0.03193820363846332
+        },
+        {
+          "k": 2,
+          "moment_over_cap": 0.49407512456327113,
+          "power_functional_over_cap": 0.6378669817075994,
+          "functional_over_moment": 1.291032375433656,
+          "entropy_formula_ratio": 1.2910323754336595,
+          "support_upper_factor": 1.4142135623730951,
+          "weighted_root_over_cap": 0.07951622481021706
+        },
+        {
+          "k": 3,
+          "moment_over_cap": 0.5618032171382539,
+          "power_functional_over_cap": 0.6416223407895549,
+          "functional_over_moment": 1.1420766581898345,
+          "entropy_formula_ratio": 1.1420766581898354,
+          "support_upper_factor": 1.1861014341346163,
+          "weighted_root_over_cap": 0.2311706678270523
+        },
+        {
+          "k": 4,
+          "moment_over_cap": 0.6123328788113931,
+          "power_functional_over_cap": 0.6600946754251257,
+          "functional_over_moment": 1.0779997257479357,
+          "entropy_formula_ratio": 1.0779997257479352,
+          "support_upper_factor": 1.1023489088791654,
+          "weighted_root_over_cap": 0.2542740789500315
+        },
+        {
+          "k": 8,
+          "moment_over_cap": 0.7350463271132254,
+          "power_functional_over_cap": 0.7508202439169707,
+          "functional_over_moment": 1.0214597586871765,
+          "entropy_formula_ratio": 1.021459758687176,
+          "support_upper_factor": 1.0246677928971357,
+          "weighted_root_over_cap": 0.469695557046778
+        },
+        {
+          "k": 16,
+          "moment_over_cap": 0.8432452223410992,
+          "power_functional_over_cap": 0.8478768038716689,
+          "functional_over_moment": 1.005492567770157,
+          "entropy_formula_ratio": 1.005492567770157,
+          "support_upper_factor": 1.006110708558573,
+          "weighted_root_over_cap": 0.665597076582927
+        },
+        {
+          "k": 32,
+          "moment_over_cap": 0.9170278130310775,
+          "power_functional_over_cap": 0.9182711838921923,
+          "functional_over_moment": 1.0013558703928565,
+          "entropy_formula_ratio": 1.0013558703928565,
+          "support_upper_factor": 1.0015241888698057,
+          "weighted_root_over_cap": 0.8103238575946325
+        },
+        {
+          "k": 64,
+          "moment_over_cap": 0.9576032848211127,
+          "power_functional_over_cap": 0.9579274414728016,
+          "functional_over_moment": 1.000338508291301,
+          "entropy_formula_ratio": 1.000338508291301,
+          "support_upper_factor": 1.00038082961542,
+          "weighted_root_over_cap": 0.8997393858626637
+        }
+      ]
+    },
+    {
+      "family": "Sylvester",
+      "n": 12,
+      "cap": 20,
+      "rows": [
+        {
+          "k": 1,
+          "moment_over_cap": 0.40620192023179674,
+          "power_functional_over_cap": 1.1577850995607657,
+          "functional_over_moment": 2.850269882771806,
+          "entropy_formula_ratio": 2.8502698827717974,
+          "support_upper_factor": 2.861005552576305,
+          "weighted_root_over_cap": 0.03618078436127393
+        },
+        {
+          "k": 2,
+          "moment_over_cap": 0.5057017273560485,
+          "power_functional_over_cap": 0.6800287910220737,
+          "functional_over_moment": 1.344723093151088,
+          "entropy_formula_ratio": 1.3447230931511036,
+          "support_upper_factor": 1.4854516473130785,
+          "weighted_root_over_cap": 0.0768167198490172
+        },
+        {
+          "k": 3,
+          "moment_over_cap": 0.5747376570876298,
+          "power_functional_over_cap": 0.671309557914238,
+          "functional_over_moment": 1.1680277943087414,
+          "entropy_formula_ratio": 1.1680277943087416,
+          "support_upper_factor": 1.2249310222396175,
+          "weighted_root_over_cap": 0.24329825448910863
+        },
+        {
+          "k": 4,
+          "moment_over_cap": 0.6262969845942165,
+          "power_functional_over_cap": 0.6845447845906397,
+          "functional_over_moment": 1.0930034814620138,
+          "entropy_formula_ratio": 1.0930034814620107,
+          "support_upper_factor": 1.1259362973804814,
+          "weighted_root_over_cap": 0.24989345953519196
+        },
+        {
+          "k": 8,
+          "moment_over_cap": 0.748131011512917,
+          "power_functional_over_cap": 0.7671834602604722,
+          "functional_over_moment": 1.0254667276912184,
+          "entropy_formula_ratio": 1.0254667276912175,
+          "support_upper_factor": 1.030231637686041,
+          "weighted_root_over_cap": 0.46439251067668225
+        },
+        {
+          "k": 16,
+          "moment_over_cap": 0.8503214123841217,
+          "power_functional_over_cap": 0.8559479838195334,
+          "functional_over_moment": 1.0066169937078686,
+          "entropy_formula_ratio": 1.006616993707869,
+          "support_upper_factor": 1.0074737067491204,
+          "weighted_root_over_cap": 0.6609300557445285
+        },
+        {
+          "k": 32,
+          "moment_over_cap": 0.9202745792675161,
+          "power_functional_over_cap": 0.9217963461084063,
+          "functional_over_moment": 1.0016536008656258,
+          "entropy_formula_ratio": 1.0016536008656258,
+          "support_upper_factor": 1.0018632128726943,
+          "weighted_root_over_cap": 0.8063123292889501
+        },
+        {
+          "k": 64,
+          "moment_over_cap": 0.9592741767666118,
+          "power_functional_over_cap": 0.9596700805624857,
+          "functional_over_moment": 1.0004127118246928,
+          "entropy_formula_ratio": 1.0004127118246926,
+          "support_upper_factor": 1.0004654781124969,
+          "weighted_root_over_cap": 0.8971182529457262
+        }
+      ]
+    }
+  ],
+  "stored_witness_checks": [
+    {
+      "source": "computations/results/exact_m6.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 6,
+      "cap": 5,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 6,
+        "cap": 5,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.8217528342788757,
+            "power_functional_over_cap": 0.8966245382424017,
+            "functional_over_moment": 1.091112194373177,
+            "entropy_formula_ratio": 1.0911121943731767,
+            "support_upper_factor": 1.2393960447517904,
+            "weighted_root_over_cap": 0.02060267129437446
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.8598556609115542,
+            "power_functional_over_cap": 0.9278209766437657,
+            "functional_over_moment": 1.079042703120847,
+            "entropy_formula_ratio": 1.0790427031208467,
+            "support_upper_factor": 1.1010567954531432,
+            "weighted_root_over_cap": 0.33081668385166824
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.8598556609115542,
+            "power_functional_over_cap": 0.9278209766437657,
+            "functional_over_moment": 1.079042703120847,
+            "entropy_formula_ratio": 1.0790427031208467,
+            "support_upper_factor": 1.1010567954531432,
+            "weighted_root_over_cap": 0.33081668385166824
+          },
+          {
+            "k": 6,
+            "moment_over_cap": 0.9217935579222711,
+            "power_functional_over_cap": 0.9364589875290358,
+            "functional_over_moment": 1.015909668147194,
+            "entropy_formula_ratio": 1.0159096681471942,
+            "support_upper_factor": 1.0243595729468724,
+            "weighted_root_over_cap": 0.29296750678883654
+          },
+          {
+            "k": 12,
+            "moment_over_cap": 0.9599562615062313,
+            "power_functional_over_cap": 0.9639156583515546,
+            "functional_over_moment": 1.0041245596326553,
+            "entropy_formula_ratio": 1.0041245596326553,
+            "support_upper_factor": 1.0060350405273122,
+            "weighted_root_over_cap": 0.5433254622848143
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/exact_m7.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "1b64bd7ae64b52b5853dbd784d1056b5c66eb33bf539dea1c36c372240c1365d",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 7,
+      "cap": 9,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 7,
+        "cap": 9,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.6121000262301503,
+            "power_functional_over_cap": 0.7318671554971768,
+            "functional_over_moment": 1.1956659436933172,
+            "entropy_formula_ratio": 1.1956659436933164,
+            "support_upper_factor": 1.2874850015928887,
+            "weighted_root_over_cap": 0.10068269158724748
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6823920378569382,
+            "power_functional_over_cap": 0.7485812105185591,
+            "functional_over_moment": 1.096995816172605,
+            "entropy_formula_ratio": 1.0969958161726048,
+            "support_upper_factor": 1.122462048309373,
+            "weighted_root_over_cap": 0.266507388430732
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6823920378569382,
+            "power_functional_over_cap": 0.7485812105185591,
+            "functional_over_moment": 1.096995816172605,
+            "entropy_formula_ratio": 1.0969958161726048,
+            "support_upper_factor": 1.122462048309373,
+            "weighted_root_over_cap": 0.266507388430732
+          },
+          {
+            "k": 7,
+            "moment_over_cap": 0.8241831230572783,
+            "power_functional_over_cap": 0.838937529686715,
+            "functional_over_moment": 1.01790185483865,
+            "entropy_formula_ratio": 1.0179018548386503,
+            "support_upper_factor": 1.0214455105227194,
+            "weighted_root_over_cap": 0.5394151208040178
+          },
+          {
+            "k": 14,
+            "moment_over_cap": 0.9057875817762803,
+            "power_functional_over_cap": 0.9098127753867091,
+            "functional_over_moment": 1.004443860449638,
+            "entropy_formula_ratio": 1.004443860449638,
+            "support_upper_factor": 1.005318792631739,
+            "weighted_root_over_cap": 0.726588064895245
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/exact_m8.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 8,
+      "cap": 10,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 8,
+        "cap": 10,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.6300703649796462,
+            "power_functional_over_cap": 0.7657762644206153,
+            "functional_over_moment": 1.215382133462749,
+            "entropy_formula_ratio": 1.21538213346275,
+            "support_upper_factor": 1.332684049048963,
+            "weighted_root_over_cap": 0.08982467928914557
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6955661255909416,
+            "power_functional_over_cap": 0.7706127048372731,
+            "functional_over_moment": 1.1078928034089832,
+            "entropy_formula_ratio": 1.1078928034089828,
+            "support_upper_factor": 1.144034159713953,
+            "weighted_root_over_cap": 0.27997517230063584
+          },
+          {
+            "k": 4,
+            "moment_over_cap": 0.742147266803813,
+            "power_functional_over_cap": 0.786591548628246,
+            "functional_over_moment": 1.059886068186763,
+            "entropy_formula_ratio": 1.0598860681867623,
+            "support_upper_factor": 1.0787607977571199,
+            "weighted_root_over_cap": 0.2996875746797544
+          },
+          {
+            "k": 8,
+            "moment_over_cap": 0.8445198014142344,
+            "power_functional_over_cap": 0.8578448566327578,
+            "functional_over_moment": 1.0157782626247593,
+            "entropy_formula_ratio": 1.0157782626247593,
+            "support_upper_factor": 1.019133996077738,
+            "weighted_root_over_cap": 0.5402078907303463
+          },
+          {
+            "k": 16,
+            "moment_over_cap": 0.9170607554497697,
+            "power_functional_over_cap": 0.9206441533567731,
+            "functional_over_moment": 1.0039074814680582,
+            "entropy_formula_ratio": 1.0039074814680582,
+            "support_upper_factor": 1.0047495543507072,
+            "weighted_root_over_cap": 0.7298138695237637
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/exact_m9.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "a221ec52f46b2c3af3682ed10c7c1dc805dca7736a05d1cd559afab863c5adf5",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 9,
+      "cap": 12,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 9,
+        "cap": 12,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.6117414483193654,
+            "power_functional_over_cap": 0.7711656908591944,
+            "functional_over_moment": 1.2606072270855841,
+            "entropy_formula_ratio": 1.2606072270855841,
+            "support_upper_factor": 1.374870283712891,
+            "weighted_root_over_cap": 0.09833399762930206
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6879050430672945,
+            "power_functional_over_cap": 0.7763750549819427,
+            "functional_over_moment": 1.1286078839023623,
+            "entropy_formula_ratio": 1.1286078839023626,
+            "support_upper_factor": 1.165369920457975,
+            "weighted_root_over_cap": 0.27879827818384695
+          },
+          {
+            "k": 4,
+            "moment_over_cap": 0.7425856966865336,
+            "power_functional_over_cap": 0.794797973834704,
+            "functional_over_moment": 1.0703114500873703,
+            "entropy_formula_ratio": 1.0703114500873698,
+            "support_upper_factor": 1.0905077326652577,
+            "weighted_root_over_cap": 0.3101940920118475
+          },
+          {
+            "k": 9,
+            "moment_over_cap": 0.8703988822861523,
+            "power_functional_over_cap": 0.8833047674246188,
+            "functional_over_moment": 1.0148275525177244,
+            "entropy_formula_ratio": 1.014827552517724,
+            "support_upper_factor": 1.017262041564032,
+            "weighted_root_over_cap": 0.6236388930283014
+          },
+          {
+            "k": 18,
+            "moment_over_cap": 0.9328950249696037,
+            "power_functional_over_cap": 0.93629208630692,
+            "functional_over_moment": 1.0036414186445328,
+            "entropy_formula_ratio": 1.0036414186445326,
+            "support_upper_factor": 1.0042878529470518,
+            "weighted_root_over_cap": 0.7694488444382326
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/exact_m10.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "96da214caa8aaf7bd70d9d0bc99b76e8741ac9c433bde20628a6f65dc0442620",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 10,
+      "cap": 13,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 10,
+        "cap": 13,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.6397748051573379,
+            "power_functional_over_cap": 0.8192484357716807,
+            "functional_over_moment": 1.2805262557505768,
+            "entropy_formula_ratio": 1.2805262557505739,
+            "support_upper_factor": 1.4142135623730951,
+            "weighted_root_over_cap": 0.09128579251255607
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.7177704452340266,
+            "power_functional_over_cap": 0.8181381076003282,
+            "functional_over_moment": 1.1398325370356774,
+            "entropy_formula_ratio": 1.139832537035677,
+            "support_upper_factor": 1.1861014341346163,
+            "weighted_root_over_cap": 0.2979449876763278
+          },
+          {
+            "k": 5,
+            "moment_over_cap": 0.800130475057935,
+            "power_functional_over_cap": 0.8407619486764003,
+            "functional_over_moment": 1.0507810599459086,
+            "entropy_formula_ratio": 1.0507810599459086,
+            "support_upper_factor": 1.0643701824533598,
+            "weighted_root_over_cap": 0.46465695789378103
+          },
+          {
+            "k": 10,
+            "moment_over_cap": 0.8833338337269878,
+            "power_functional_over_cap": 0.8944381055584514,
+            "functional_over_moment": 1.012570866650281,
+            "entropy_formula_ratio": 1.0125708666502808,
+            "support_upper_factor": 1.0157180609309646,
+            "weighted_root_over_cap": 0.5935136880864958
+          },
+          {
+            "k": 20,
+            "moment_over_cap": 0.9383112570817813,
+            "power_functional_over_cap": 0.9413474146481048,
+            "functional_over_moment": 1.0032357680283686,
+            "entropy_formula_ratio": 1.0032357680283686,
+            "support_upper_factor": 1.0039065636956468,
+            "weighted_root_over_cap": 0.7621660331756399
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/nested_10_in_11_cap17.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "ce3786267e251f80a1712033fd846815f61309b5857734d3fcff1414a07f23e7",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 11,
+      "cap": 17,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 11,
+        "cap": 17,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.5342667059905272,
+            "power_functional_over_cap": 0.7022986735083528,
+            "functional_over_moment": 1.3145095242390137,
+            "entropy_formula_ratio": 1.3145095242390075,
+            "support_upper_factor": 1.450980936436698,
+            "weighted_root_over_cap": 0.07898772486728621
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.5982101025159161,
+            "power_functional_over_cap": 0.6894277127391704,
+            "functional_over_moment": 1.152484235621593,
+            "entropy_formula_ratio": 1.1524842356215936,
+            "support_upper_factor": 1.2059917287715702,
+            "weighted_root_over_cap": 0.2517395117810374
+          },
+          {
+            "k": 5,
+            "moment_over_cap": 0.6799977283404132,
+            "power_functional_over_cap": 0.7194336378859845,
+            "functional_over_moment": 1.057994178365592,
+            "entropy_formula_ratio": 1.0579941783655937,
+            "support_upper_factor": 1.0717734625362931,
+            "weighted_root_over_cap": 0.3897963543110686
+          },
+          {
+            "k": 11,
+            "moment_over_cap": 0.7996914921196548,
+            "power_functional_over_cap": 0.8099731227078266,
+            "functional_over_moment": 1.0128569963410756,
+            "entropy_formula_ratio": 1.012856996341076,
+            "support_upper_factor": 1.0144242627479223,
+            "weighted_root_over_cap": 0.592809941713599
+          },
+          {
+            "k": 22,
+            "moment_over_cap": 0.8866556821116977,
+            "power_functional_over_cap": 0.8895454797346487,
+            "functional_over_moment": 1.0032592106284917,
+            "entropy_formula_ratio": 1.0032592106284917,
+            "support_upper_factor": 1.0035867226350377,
+            "weighted_root_over_cap": 0.7256175787657635
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/extension_nested_m11_to_12.json",
+      "source_key": "parent_matrix",
+      "matrix_sha256_int8_row_major": "ecd56b2807f35fef074e1d71fa04b4f9158d10ce65f4712e8a9cec4e5c6c2850",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 12,
+      "cap": 18,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 12,
+        "cap": 18,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.5512843281792801,
+            "power_functional_over_cap": 0.7361511249422481,
+            "functional_over_moment": 1.3353383858625645,
+            "entropy_formula_ratio": 1.3353383858625745,
+            "support_upper_factor": 1.4854516473130785,
+            "weighted_root_over_cap": 0.07045713113733436
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6157401263664357,
+            "power_functional_over_cap": 0.7150702442928752,
+            "functional_over_moment": 1.1613182472167272,
+            "entropy_formula_ratio": 1.1613182472167234,
+            "support_upper_factor": 1.2249310222396175,
+            "weighted_root_over_cap": 0.26335387203117283
+          },
+          {
+            "k": 6,
+            "moment_over_cap": 0.7284888725559818,
+            "power_functional_over_cap": 0.7605494591688196,
+            "functional_over_moment": 1.0440097135600022,
+            "entropy_formula_ratio": 1.044009713560002,
+            "support_upper_factor": 1.0543755995613882,
+            "weighted_root_over_cap": 0.346476628497195
+          },
+          {
+            "k": 12,
+            "moment_over_cap": 0.831720525611232,
+            "power_functional_over_cap": 0.8414332671048826,
+            "functional_over_moment": 1.0116778908233781,
+            "entropy_formula_ratio": 1.0116778908233777,
+            "support_upper_factor": 1.0133251851424638,
+            "weighted_root_over_cap": 0.5364768920699362
+          },
+          {
+            "k": 24,
+            "moment_over_cap": 0.9083067464525572,
+            "power_functional_over_cap": 0.9109800795971106,
+            "functional_over_moment": 1.002943205205724,
+            "entropy_formula_ratio": 1.0029432052057243,
+            "support_upper_factor": 1.0033147782016747,
+            "weighted_root_over_cap": 0.6934875869613766
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/conference_completion_m13.json",
+      "source_key": "conference_matrix",
+      "matrix_sha256_int8_row_major": "5f26778aa40f358fc71f39b086ee76b017f26f0052188514d7fc996fd6c82aa7",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 13,
+      "cap": 20,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 13,
+        "cap": 20,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.5381158283412716,
+            "power_functional_over_cap": 0.7317172154105351,
+            "functional_over_moment": 1.359776421492813,
+            "entropy_formula_ratio": 1.359776421492844,
+            "support_upper_factor": 1.5178846930837075,
+            "weighted_root_over_cap": 0.06422217462218915
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6061466727109073,
+            "power_functional_over_cap": 0.7150182387096427,
+            "functional_over_moment": 1.1796125771206865,
+            "entropy_formula_ratio": 1.179612577120684,
+            "support_upper_factor": 1.2428976908468905,
+            "weighted_root_over_cap": 0.2602902085621151
+          },
+          {
+            "k": 6,
+            "moment_over_cap": 0.7346717900741122,
+            "power_functional_over_cap": 0.769758447626433,
+            "functional_over_moment": 1.0477582752276104,
+            "entropy_formula_ratio": 1.0477582752275982,
+            "support_upper_factor": 1.0594630943592953,
+            "weighted_root_over_cap": 0.3441272830029844
+          },
+          {
+            "k": 13,
+            "moment_over_cap": 0.8590866539204213,
+            "power_functional_over_cap": 0.8685099605241213,
+            "functional_over_moment": 1.0109689826523285,
+            "entropy_formula_ratio": 1.010968982652331,
+            "support_upper_factor": 1.0123803982343567,
+            "weighted_root_over_cap": 0.6625970595455322
+          },
+          {
+            "k": 26,
+            "moment_over_cap": 0.9266554392250271,
+            "power_functional_over_cap": 0.9292025566428426,
+            "functional_over_moment": 1.0027487211643042,
+            "entropy_formula_ratio": 1.0027487211643036,
+            "support_upper_factor": 1.0030808329963152,
+            "weighted_root_over_cap": 0.7724460825433257
+          }
+        ]
+      }
+    },
+    {
+      "source": "computations/results/heuristic_m14_from_conference.json",
+      "source_key": "matrix",
+      "matrix_sha256_int8_row_major": "46c729229419cd6a79eccb3114d480f8970f5ce311ff65e8851cb68193fe92c2",
+      "scope": "Stored minimum-cap witness, cap rechecked exhaustively; global optimality not reproved.",
+      "n": 14,
+      "cap": 21,
+      "identities": "PASS",
+      "norm_checks": {
+        "n": 14,
+        "cap": 21,
+        "rows": [
+          {
+            "k": 2,
+            "moment_over_cap": 0.5524008300003576,
+            "power_functional_over_cap": 0.7590158753896077,
+            "functional_over_moment": 1.3740310190864782,
+            "entropy_formula_ratio": 1.3740310190864726,
+            "support_upper_factor": 1.5485090937166974,
+            "weighted_root_over_cap": 0.02217806672693757
+          },
+          {
+            "k": 3,
+            "moment_over_cap": 0.6226122288445133,
+            "power_functional_over_cap": 0.7390528750950239,
+            "functional_over_moment": 1.1870195297426285,
+            "entropy_formula_ratio": 1.1870195297425723,
+            "support_upper_factor": 1.2599210498948732,
+            "weighted_root_over_cap": 0.270465603660043
+          },
+          {
+            "k": 7,
+            "moment_over_cap": 0.7788668171474458,
+            "power_functional_over_cap": 0.8081720046110842,
+            "functional_over_moment": 1.0376254153065179,
+            "entropy_formula_ratio": 1.0376254153065019,
+            "support_upper_factor": 1.047047237310052,
+            "weighted_root_over_cap": 0.5132699264993593
+          },
+          {
+            "k": 14,
+            "moment_over_cap": 0.8721991456390047,
+            "power_functional_over_cap": 0.8804947438767273,
+            "functional_over_moment": 1.0095111285985554,
+            "entropy_formula_ratio": 1.0095111285985572,
+            "support_upper_factor": 1.0115598161098756,
+            "weighted_root_over_cap": 0.5482107097192656
+          },
+          {
+            "k": 28,
+            "moment_over_cap": 0.9318527574487446,
+            "power_functional_over_cap": 0.9341156589171736,
+            "functional_over_moment": 1.0024283895179154,
+            "entropy_formula_ratio": 1.002428389517916,
+            "support_upper_factor": 1.0028775100879015,
+            "weighted_root_over_cap": 0.7334650033788983
+          }
+        ]
+      }
+    }
+  ],
+  "conference_cancellation_checks": [
+    {
+      "family": "Paley symmetric conference",
+      "prime": 5,
+      "n": 6,
+      "conference_identity": "PASS",
+      "cap": 5,
+      "hafnian_rows": [
+        {
+          "boundary_size": 4,
+          "number_of_matching_terms_per_minor": 3,
+          "hafnian_histogram": {
+            "-1": 5,
+            "1": 10
+          },
+          "sum_squared_hafnians": 15,
+          "random_sign_expected_sum_squared_hafnians": 45,
+          "max_hafnian_abs_over_total_matching_terms": 0.3333333333333333
+        },
+        {
+          "boundary_size": 6,
+          "number_of_matching_terms_per_minor": 15,
+          "hafnian_histogram": {
+            "5": 1
+          },
+          "sum_squared_hafnians": 25,
+          "random_sign_expected_sum_squared_hafnians": 15,
+          "max_hafnian_abs_over_total_matching_terms": 0.3333333333333333
+        }
+      ],
+      "pairing_rows": [
+        {
+          "k": 3,
+          "moment": "6315",
+          "positive_exact_pairing_contribution": "40950",
+          "pairing_to_full_moment_ratio": 6.484560570071259,
+          "remaining_eulerian_sum": "-34635"
+        },
+        {
+          "k": 6,
+          "moment": "91884885",
+          "positive_exact_pairing_contribution": "37459422000",
+          "pairing_to_full_moment_ratio": 407.67773720345843,
+          "remaining_eulerian_sum": "-37367537115"
+        },
+        {
+          "k": 12,
+          "moment": "22351918309231785",
+          "positive_exact_pairing_contribution": "68921880563628892800000",
+          "pairing_to_full_moment_ratio": 3083488.3883394827,
+          "remaining_eulerian_sum": "-68921858211710583568215"
+        }
+      ]
+    },
+    {
+      "family": "Paley symmetric conference",
+      "prime": 13,
+      "n": 14,
+      "conference_identity": "PASS",
+      "cap": 21,
+      "hafnian_rows": [
+        {
+          "boundary_size": 4,
+          "number_of_matching_terms_per_minor": 3,
+          "hafnian_histogram": {
+            "-3": 78,
+            "-1": 429,
+            "1": 390,
+            "3": 104
+          },
+          "sum_squared_hafnians": 2457,
+          "random_sign_expected_sum_squared_hafnians": 3003,
+          "max_hafnian_abs_over_total_matching_terms": 1.0
+        },
+        {
+          "boundary_size": 6,
+          "number_of_matching_terms_per_minor": 15,
+          "hafnian_histogram": {
+            "-5": 338,
+            "-3": 468,
+            "-1": 598,
+            "1": 676,
+            "3": 624,
+            "5": 299
+          },
+          "sum_squared_hafnians": 27027,
+          "random_sign_expected_sum_squared_hafnians": 45045,
+          "max_hafnian_abs_over_total_matching_terms": 0.3333333333333333
+        },
+        {
+          "boundary_size": 8,
+          "number_of_matching_terms_per_minor": 105,
+          "hafnian_histogram": {
+            "-19": 52,
+            "-9": 312,
+            "-7": 65,
+            "-3": 624,
+            "-1": 624,
+            "1": 468,
+            "3": 468,
+            "7": 26,
+            "9": 234,
+            "19": 130
+          },
+          "sum_squared_hafnians": 125307,
+          "random_sign_expected_sum_squared_hafnians": 315315,
+          "max_hafnian_abs_over_total_matching_terms": 0.18095238095238095
+        }
+      ],
+      "pairing_rows": [
+        {
+          "k": 7,
+          "moment": "98074239220257391",
+          "positive_exact_pairing_contribution": "5512658076201276000",
+          "pairing_to_full_moment_ratio": 56.209032259947705,
+          "remaining_eulerian_sum": "-5414583836981018609"
+        },
+        {
+          "k": 14,
+          "moment": "228759240750311269352230641189457669",
+          "positive_exact_pairing_contribution": "198780451063926967189986891951611520000000",
+          "pairing_to_full_moment_ratio": 868950.4756701571,
+          "remaining_eulerian_sum": "-198780222304686216878717539720970330542331"
+        },
+        {
+          "k": 28,
+          "moment": "2126811533299691649022538383366272655096268921784606426911786537170144489",
+          "positive_exact_pairing_contribution": "592418068992030638300394451017407228990957476598506541830943002584810484531200000000000000",
+          "pairing_to_full_moment_ratio": 2.7854751571377354e+17,
+          "remaining_eulerian_sum": "-592418068992030636173582917717715579968419093232233886734674080800204057619413462829855511"
+        }
+      ]
+    }
+  ],
+  "coefficient_sign_averaging_checks": [
+    {
+      "n": 4,
+      "all_signings_enumerated": 64,
+      "max_k": 8,
+      "average_z": "888774719/2533202100",
+      "best_z": "639130781/2955402450",
+      "best_control_matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "averaged_moments": [
+        {
+          "k": 2,
+          "averaged_moment": "96",
+          "independent_sign_moment": "96",
+          "gaussian_upper_moment": "108"
+        },
+        {
+          "k": 3,
+          "averaged_moment": "2256",
+          "independent_sign_moment": "2256",
+          "gaussian_upper_moment": "3240"
+        },
+        {
+          "k": 4,
+          "averaged_moment": "64896",
+          "independent_sign_moment": "64896",
+          "gaussian_upper_moment": "136080"
+        },
+        {
+          "k": 5,
+          "averaged_moment": "2086656",
+          "independent_sign_moment": "2086656",
+          "gaussian_upper_moment": "7348320"
+        },
+        {
+          "k": 6,
+          "averaged_moment": "71172096",
+          "independent_sign_moment": "71172096",
+          "gaussian_upper_moment": "484989120"
+        },
+        {
+          "k": 7,
+          "averaged_moment": "2499219456",
+          "independent_sign_moment": "2499219456",
+          "gaussian_upper_moment": "37829151360"
+        },
+        {
+          "k": 8,
+          "averaged_moment": "88965021696",
+          "independent_sign_moment": "88965021696",
+          "gaussian_upper_moment": "3404623622400"
+        }
+      ],
+      "scope": "Finite check of the coefficient-sign averaging and simultaneous-moment argument."
+    },
+    {
+      "n": 5,
+      "all_signings_enumerated": 1024,
+      "max_k": 8,
+      "average_z": "9007075718/22623046875",
+      "best_z": "24916296542/158361328125",
+      "best_control_matrix": [
+        [
+          0,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "averaged_moments": [
+        {
+          "k": 2,
+          "averaged_moment": "280",
+          "independent_sign_moment": "280",
+          "gaussian_upper_moment": "300"
+        },
+        {
+          "k": 3,
+          "averaged_moment": "12160",
+          "independent_sign_moment": "12160",
+          "gaussian_upper_moment": "15000"
+        },
+        {
+          "k": 4,
+          "averaged_moment": "686080",
+          "independent_sign_moment": "686080",
+          "gaussian_upper_moment": "1050000"
+        },
+        {
+          "k": 5,
+          "averaged_moment": "46063360",
+          "independent_sign_moment": "46063360",
+          "gaussian_upper_moment": "94500000"
+        },
+        {
+          "k": 6,
+          "averaged_moment": "3490554880",
+          "independent_sign_moment": "3490554880",
+          "gaussian_upper_moment": "10395000000"
+        },
+        {
+          "k": 7,
+          "averaged_moment": "288162242560",
+          "independent_sign_moment": "288162242560",
+          "gaussian_upper_moment": "1351350000000"
+        },
+        {
+          "k": 8,
+          "averaged_moment": "25277763911680",
+          "independent_sign_moment": "25277763911680",
+          "gaussian_upper_moment": "202702500000000"
+        }
+      ],
+      "scope": "Finite check of the coefficient-sign averaging and simultaneous-moment argument."
+    }
+  ]
+}

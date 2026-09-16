@@ -1,0 +1,362 @@
+{
+  "classification": "reproducible heuristic cap comparison with exact witness checks; no exact cap or scaling claim",
+  "results": {
+    "orbit_K4_555_K5_0_paley": {
+      "matrix_sha256": "10cc7d43786fd869c1a91372640d954726e0254607c706e9d2eab1d7995e4c61",
+      "orbit": {
+        "a": [
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "c": [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "clique_counts": {
+          "4": 555,
+          "5": 0
+        },
+        "is_prime_paley_nonsplit_torus_orbit": true,
+        "natural_orbit_raw_size": 171
+      },
+      "root0_negative_graph_degree_histogram": {
+        "18": 37
+      },
+      "search": {
+        "batch_size": 512,
+        "best_certified_lower_bound": 109,
+        "classification": "heuristic search; retained witnesses and local-field identities verified exactly; no cap upper bound",
+        "distinct_best_energy_field_signatures": [
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": 109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "38d1ae998c"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": -109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "09291af02e"
+          }
+        ],
+        "pair_climb_total_steps": 44347,
+        "pair_flip_local_optima_sampled": 10000,
+        "pair_flip_starts_per_sign": 5000,
+        "random_single_flip_starts_per_sign": 200000,
+        "seed": 20260731,
+        "single_flip_local_optima_sampled": 400000,
+        "single_flip_terminal_energy_histogram": {
+          "101": 205523,
+          "109": 84946,
+          "85": 3220,
+          "93": 106311
+        }
+      }
+    },
+    "orbit_K4_610_K5_48_nonpaley": {
+      "matrix_sha256": "5df10f2f59d2a0bdc081565d55b835c50d2d44a06c6c4af17035801b8e93c02a",
+      "orbit": {
+        "a": [
+          0,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "c": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "clique_counts": {
+          "4": 610,
+          "5": 48
+        },
+        "is_prime_paley_nonsplit_torus_orbit": false,
+        "natural_orbit_raw_size": 114
+      },
+      "root0_negative_graph_degree_histogram": {
+        "18": 37
+      },
+      "search": {
+        "batch_size": 512,
+        "best_certified_lower_bound": 109,
+        "classification": "heuristic search; retained witnesses and local-field identities verified exactly; no cap upper bound",
+        "distinct_best_energy_field_signatures": [
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": 109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "23c1ce7398"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": 109,
+            "oriented_local_field_histogram": {
+              "1": 1,
+              "13": 1,
+              "5": 30,
+              "9": 6
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "052f62804b"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": -109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "3759a9c58f"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": -109,
+            "oriented_local_field_histogram": {
+              "1": 1,
+              "13": 1,
+              "5": 30,
+              "9": 6
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "0569057c85"
+          }
+        ],
+        "pair_climb_total_steps": 44307,
+        "pair_flip_local_optima_sampled": 10000,
+        "pair_flip_starts_per_sign": 5000,
+        "random_single_flip_starts_per_sign": 200000,
+        "seed": 20260733,
+        "single_flip_local_optima_sampled": 400000,
+        "single_flip_terminal_energy_histogram": {
+          "101": 269671,
+          "107": 42039,
+          "109": 16525,
+          "77": 12,
+          "85": 1803,
+          "93": 68313,
+          "99": 1637
+        }
+      }
+    },
+    "orbit_K4_615_K5_65_nonpaley": {
+      "matrix_sha256": "90669dcaca2412ecbabd27e7a58ec02fef9db3ade5ee7ffd0a63f3b72851982c",
+      "orbit": {
+        "a": [
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "c": [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "clique_counts": {
+          "4": 615,
+          "5": 65
+        },
+        "is_prime_paley_nonsplit_torus_orbit": false,
+        "natural_orbit_raw_size": 342
+      },
+      "root0_negative_graph_degree_histogram": {
+        "18": 37
+      },
+      "search": {
+        "batch_size": 512,
+        "best_certified_lower_bound": 109,
+        "classification": "heuristic search; retained witnesses and local-field identities verified exactly; no cap upper bound",
+        "distinct_best_energy_field_signatures": [
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": 109,
+            "oriented_local_field_histogram": {
+              "1": 1,
+              "13": 1,
+              "5": 30,
+              "9": 6
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "0891fc9299"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": 109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "1fb501b5b5"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": -109,
+            "oriented_local_field_histogram": {
+              "1": 2,
+              "5": 27,
+              "9": 9
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "3d95b607ea"
+          },
+          {
+            "absolute_energy": 109,
+            "deficit_from_114": 5,
+            "energy": -109,
+            "oriented_local_field_histogram": {
+              "1": 1,
+              "13": 1,
+              "5": 30,
+              "9": 6
+            },
+            "penalty_sum": 120,
+            "spin_positive_bits_little_endian": "19adb7e244"
+          }
+        ],
+        "pair_climb_total_steps": 44099,
+        "pair_flip_local_optima_sampled": 10000,
+        "pair_flip_starts_per_sign": 5000,
+        "random_single_flip_starts_per_sign": 200000,
+        "seed": 20260732,
+        "single_flip_local_optima_sampled": 400000,
+        "single_flip_terminal_energy_histogram": {
+          "101": 291528,
+          "107": 37620,
+          "109": 4711,
+          "77": 4,
+          "85": 1727,
+          "93": 62814,
+          "99": 1596
+        }
+      }
+    }
+  },
+  "schema": "quadratic-signing-order38-local-field-comparison-v1",
+  "universal_exact_upper_bound": 113
+}

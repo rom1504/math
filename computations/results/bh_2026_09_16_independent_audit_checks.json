@@ -1,0 +1,151 @@
+{
+  "all_checks_passed": true,
+  "bh_degree_exponent": 5.5,
+  "checks": [
+    {
+      "check": "p_8 = 91/128 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_9 = 105/128 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_10 = 21/32 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_11 = 99/128 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_12 = 1749/2048 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_13 = 3003/4096 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_14 = 6721/8192 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_15 = 14443/16384 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_16 = 25883/32768 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_17 = 28067/32768 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_18 = 14807/16384 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_19 = 54587/65536 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_20 = 115957/131072 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_21 = 60401/65536 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_22 = 227069/262144 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_23 = 7429/8192 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_24 = 7852453/8388608 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_25 = 14969435/16777216 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_26 = 31020445/33554432 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_27 = 63603165/67108864 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_28 = 122519505/134217728 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_29 = 125972955/134217728 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_30 = 513906825/536870912 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "p_31 = 997768635/1073741824 >= 21/32",
+      "passed": true
+    },
+    {
+      "check": "sum_{j=0}^5 (16/9)^j/j! > 64/11",
+      "passed": true
+    },
+    {
+      "check": "c_5 < 9/10",
+      "passed": true
+    },
+    {
+      "check": "c_6 < 9/10",
+      "passed": true
+    },
+    {
+      "check": "c_7 < 9/10",
+      "passed": true
+    },
+    {
+      "check": "9/10 < c_4 < 1",
+      "passed": true
+    },
+    {
+      "check": "c_tail < c_4",
+      "passed": true
+    },
+    {
+      "check": "H6 energy distribution",
+      "passed": true
+    }
+  ],
+  "date": "2026-09-16",
+  "direct_B2_asymptotic_ceiling": 0.3900578865534527,
+  "h6_B2_lower_bound": 1.5243982444638442,
+  "h6_histogram": {
+    "-5": 12,
+    "-3": 20,
+    "3": 20,
+    "5": 12
+  },
+  "level_flat_influence_degree_exponent": 11,
+  "method": "Exact rational finite checks plus analytic Hoeffding tail; exhaustive H6 enumeration",
+  "original_contraction": 0.6742048108733384,
+  "refined_contraction": 0.9789865455507591,
+  "refined_reciprocal_gap": 47.588558198060895,
+  "refined_tail_contraction": 0.9670892389224398,
+  "schema": "bh-independent-proof-audit-v1",
+  "source": "https://arxiv.org/html/2609.12427v1",
+  "tail_taylor_lower_bound": "5189207/885735",
+  "transcript": "Finite balance probabilities for the analytic r >= 32 tail:\nPASS: p_8 = 91/128 >= 21/32\nPASS: p_9 = 105/128 >= 21/32\nPASS: p_10 = 21/32 >= 21/32\nPASS: p_11 = 99/128 >= 21/32\nPASS: p_12 = 1749/2048 >= 21/32\nPASS: p_13 = 3003/4096 >= 21/32\nPASS: p_14 = 6721/8192 >= 21/32\nPASS: p_15 = 14443/16384 >= 21/32\nPASS: p_16 = 25883/32768 >= 21/32\nPASS: p_17 = 28067/32768 >= 21/32\nPASS: p_18 = 14807/16384 >= 21/32\nPASS: p_19 = 54587/65536 >= 21/32\nPASS: p_20 = 115957/131072 >= 21/32\nPASS: p_21 = 60401/65536 >= 21/32\nPASS: p_22 = 227069/262144 >= 21/32\nPASS: p_23 = 7429/8192 >= 21/32\nPASS: p_24 = 7852453/8388608 >= 21/32\nPASS: p_25 = 14969435/16777216 >= 21/32\nPASS: p_26 = 31020445/33554432 >= 21/32\nPASS: p_27 = 63603165/67108864 >= 21/32\nPASS: p_28 = 122519505/134217728 >= 21/32\nPASS: p_29 = 125972955/134217728 >= 21/32\nPASS: p_30 = 513906825/536870912 >= 21/32\nPASS: p_31 = 997768635/1073741824 >= 21/32\nPASS: sum_{j=0}^5 (16/9)^j/j! > 64/11\nTaylor lower bound = 5189207/885735\nPASS: c_5 < 9/10\nc_5 upper bound = 0.868107950729711\nPASS: c_6 < 9/10\nc_6 upper bound = 0.892901184699018\nPASS: c_7 < 9/10\nc_7 upper bound = 0.862858461812393\nPASS: 9/10 < c_4 < 1\nPASS: c_tail < c_4\nc_4 = 0.978986545550759\nc_tail = 0.967089238922440\n1/(1-c_4) = 47.588558198060895\nPaper's displayed contraction c = 0.674204810873338\nPASS: H6 energy distribution\nH6 histogram = {-5: 12, -3: 20, 3: 20, 5: 12}\nB_2 >= 1.524398244463844\nDirect asymptotic BH-constant ceiling = 0.390057886553453\n",
+  "weighted_degree_exponent": 3,
+  "weighted_denominator_exponent": 5
+}
