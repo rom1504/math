@@ -1,6 +1,6 @@
 # Six-hour paper-combination campaign: final mathematical synthesis
 
-2026-09-17,16:42:21--22:42:21UTC. Closing proof audit. The user authorized
+2026-09-17,16:42:21--22:42:21UTC. Completed; paused for assessment. The user authorized
 this bounded campaign, not an automatic extension. Original convergence
 and nonconvergence both remain unproved. No original extremal constant
 improves in this campaign. Results below mean proved here with independent
@@ -166,6 +166,13 @@ independent field variances(v,10000,10000,10000) give F''(1/4)>.3024.
 An independent proof and exhaustive rational enumeration verify the claim.
 It remains an unequal-field finite example, not an isotropic bridge or
 an asymptotic minimizing-sequence obstruction.
+It can moreover be embedded in TWO centered exactly isotropic Gaussian
+mixture field laws with common proxy10000: split one variance only in a
+rare hot phase and compensate covariance by an unchanged cold phase.
+The full absolute value increases. This rules out universal monotonicity
+from global isotropy alone, but the fields are not physical sign columns
+or unconditionally independent coordinates. The embedding was independently
+reconstructed; it is still not an asymptotic obstruction.
 
 The useful formal change is concrete: retain the joint variance phase,
 its tail budget and information cost, and compare affine-offset responses

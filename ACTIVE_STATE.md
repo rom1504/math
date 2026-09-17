@@ -1,7 +1,8 @@
 # Active research state
 
 Evidence cutoff: 2026-09-17 closing paper-combination audit.
-Campaign16:42:21--22:42:21UTC; final verification/publication, then stop.
+Campaign16:42:21--22:42:21UTC: COMPLETE, final publication then assessment.
+No autonomous extension is active.
 Read [STEERING](STEERING.md) and the [current campaign](artifacts/paper_portfolio_campaign_2026_09_17.md).
 Closing [synthesis](artifacts/paper_portfolio_final_synthesis_2026_09_17.md)
 states the theorem dependencies, finite certificates and remaining gaps.

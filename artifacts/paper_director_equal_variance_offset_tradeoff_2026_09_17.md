@@ -215,6 +215,33 @@ unrestricted assertion that actual-child absolute maxima are concave in
 every Gaussian field variance. The two-spin identity in Section5 remains
 true and is not contradicted.
 
+There is also an EXACTLY ISOTROPIC Gaussian-mixture version. Put
+p=1/20000. With probability p take the preceding hot covariance
+diag(1/4,10000,10000,10000); otherwise take the positive cold covariance
+
+    diag((1-p/4)/(1-p), (1-10000p)/(1-p),
+         (1-10000p)/(1-p), (1-10000p)/(1-p)).
+
+The resulting field law is centered with covariance I. Compare it with
+the law that, only in the hot phase, replaces the first variance by
+1/4+-epsilon with equal probabilities. Both laws are exactly isotropic
+and have common subGaussian proxy10000. Yet for every D the latter has
+strictly LARGER expected full absolute child cap for sufficiently small
+epsilon>0, by the positive curvature just proved and finiteness of the
+64-child class. The gap is the positive conditional gap multiplied by p.
+
+Thus unconditional covariance normalization alone does not rescue a
+universal conditional-variance-mixing monotonicity claim. These are
+Gaussian-mixture FIELD laws, not laws on actual sign columns; their
+coordinates are independent conditional on phase, not unconditionally.
+No physical-sign or asymptotic impossibility claim follows.
+The Bernoulli researcher independently reconstructed this final isotropic
+embedding, including both cold variances, the common MGF bound and the
+strict conditional-value inequality: PASS. The cold variances are
+79999/79996 and10000/19999. Uniformly over the64 children, for sufficiently
+small epsilon the expected increase exceeds(189/25000000)epsilon^2,
+by continuity of the curvature and the fixed hot-phase probability.
+
 ## 7. Verification and diagnostic
 
 The director's stop-loss proof received independent full reconstructions

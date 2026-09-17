@@ -168,3 +168,7 @@ directly in the closing commit, together with the standalone standard-library
 verifier and tracked rational output. All64 signings and512 external sign
 patterns pass, with M_4=4 and analytic curvature bound189/625. No ignored
 input or fresh unarchived scratch dependency is introduced.
+The last exact-isotropy Gaussian-mixture corollary, its independent audit
+and final assessment are also canonical in the closing commit. The
+post-publication audit found no new or changed ignored research payload;
+the final state/status edits have no additional mathematical dependencies.

@@ -47579,6 +47579,14 @@ signings and512 external patterns and independently recovers M_4=4.
 This is unequal-field, finite-order evidence: it does NOT rule out
 isotropic mixtures or asymptotic near-minimizer constructions.
 Canonical extension: equal_variance_offset_tradeoff, Section6.
+An independently verified final corollary embeds the same failure into
+two EXACTLY ISOTROPIC Gaussian-mixture field laws, with common proxy10000.
+The hot phase has probability1/20000; a positive cold covariance restores
+I and is left unchanged when the hot first variance is split. The full
+absolute value increases by more than(189/25000000)epsilon^2 for small
+epsilon. The fields share a latent phase and are not physical sign columns;
+global isotropy alone is insufficient, but no asymptotic signing no-go
+is inferred. The proof is canonical and independently reconstructed.
 
 #### Updated frontier and end assessment
 

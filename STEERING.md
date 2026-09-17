@@ -1,7 +1,8 @@
 # Strategic steering
 
 Evidence cutoff: 2026-09-17 closing paper-combination audit.
-Status: closing verification/publication until22:42:21UTC; then STOP for assessment.
+Status: research COMPLETE; final publication at the22:42:21UTC endpoint,
+then PAUSED for assessment. No automatic continuation.
 Original convergence remains OPEN. Judgments below are agent-authored.
 
 ## User objectives and authorization
@@ -83,6 +84,9 @@ a declared subexponential old code, with subleading error. It does not
 bound the comparator's value or old-state escape. Equal-variance offset
 loss and a positive unimodal-offset averaging criterion are independently
 proved; actual child fields are not known to satisfy that criterion.
+A four-spin full-absolute counterexample, including an exactly isotropic
+Gaussian-mixture embedding, rules out unrestricted variance-mixing
+monotonicity. Physical sign-column and asymptotic claims remain distinct.
 See artifacts/paper_portfolio_final_synthesis_2026_09_17.md.
 
 ## Quantitative boundaries, with their precise scope
