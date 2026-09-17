@@ -1,6 +1,6 @@
 # Strategic steering
 
-Evidence cutoff: 2026-09-17 new paper-mechanism campaign; prior proofs retained.
+Evidence cutoff: 2026-09-17 second paper-mechanism checkpoint,18:35UTC.
 Status: ACTIVE, six-hour authorization16:42:21--22:42:21UTC.
 Stop for assessment at the endpoint; no automatic extension.
 Original convergence remains OPEN. Mathematical judgments below are agent-owned.
@@ -54,20 +54,23 @@ biased Gram--Schmidt rounding (BDGL; Harshaw et al.), and Bernoulli
 decomposition (Bednorz--Latala; Liu--Zadik2608.11031). Van Handel's
 2512.18588 convex-order refinement is the verified offset-preserving link.
 
-First checkpoint: cumulative precision plus sharp rounding produces actual
-full-sign extensions with slope tau>9K/8; exact new-spin maximization gives
-stronger actual-entropy criteria. These are conditional landscape theorems,
-not improved M_n constants. Fixed-law comparisons retain margins but pay
-a genuine universal noise factor. Information/replacement/transport and
-growing-block universality quantify what recovery may discard; a full-sign
-linear-block counterexample shows that covariance alone can miss leading
-pinned responses. All scopes and audits are in the campaign artifacts.
+Verified combinations: cumulative precision plus sharp rounding; support-free
+small-response entropy via an importance channel; flat-diagonal Gaussian
+information; common-Gibbs fourth-order maximum replacement and truncation;
+and a capped-fourth-mass Laplace envelope. Exact sign realizations and all
+offsets are retained where claimed. No external novelty claim is established.
 
-Main next construction: use tensor-column laws to lower absolute response
-on large structured center codes without reducing variance. Prove its
-full near-level/complete-sign implication, then test actual optimizer
-applicability. Do not assume a favorable center cover. The campaign
-continues through22:42UTC; this checkpoint is not a stopping event.
+Decisive correction: every bounded positive-cap actual signing has full
+nearlevel entropy at least order eta log(1/eta), and EVERY isotropic sign
+law has response at least sqrt(2eta/(pi c)) somewhere in that nearlevel
+code. Thus direct finite-entropy-slope and mu^2=o(eta) applications are
+VACUOUS, not live missing lemmas. General finite tools remain proved.
+Center-cover criteria with vanishing residual variance are not excluded.
+
+Next: anchored center/increment control, critical-dimensional support-free
+realization, and a fourth-mass hybrid certificate retaining actual child
+offsets. Test these against real nearlevel clouds before pursuing another
+conditional profile. The campaign continues to22:42UTC after publication.
 
 ## Preserved BH campaign conclusions
 

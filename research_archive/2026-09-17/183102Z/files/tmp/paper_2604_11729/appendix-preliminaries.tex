@@ -1,0 +1,148 @@
+\section{Convergence of Stochastic Processes}
+\label{sec:convergence-process}
+
+In~\Cref{sec:dynamics}, we deal
+with convergence in distribution of
+stochastic processes indexed by countably
+infinite set, intended as weak convergence in the
+product topology. Equivalently, this
+means that every finite-dimensional
+marginal converges in distribution.
+
+\begin{definition}
+    Let $\calA$ be a countable
+    set. For random variables $(\bx^{(n)})_{n\ge 1}$ and
+    $\bx^\infty$ taking values in $\R^\calA$, we say
+    that $\bx^{(n)}$ converges in distribution to
+    $\bx^\infty$ and write
+    \[
+        \bx^{(n)}\tod \bx^\infty
+    \]
+    if, for every $k\ge 1$ and $\alpha_1, \ldots,\alpha_k\in \calA$, we have
+    \[
+        (x^{(n)}_{\alpha_1},\ldots,x^{(n)}_{\alpha_k})\tod (X^\infty_{\alpha_1},\ldots X^{\infty}_{\alpha_k})\,.
+    \]
+\end{definition}
+
+\noindent To show convergence in distribution, we will use the method of moments~\cite[Theorems 29.4, 30.1, 30.2]{billingsleyProbabilityBook}.
+The following theorem follows from
+Carleman's conditions on 
+moment-determinacy of a distribution on
+$\R$, combined with~\cite{petersenEquivalence}.
+
+\begin{theorem}[Method of moments]\label{cor:bounded-limit-existence}
+    Let $(\bx^{(n)})_{n\ge 1}$ be a sequence
+    of stochastic processes indexed by a
+    countable set $\calA$. Assume
+    that 
+    \begin{enumerate}
+        \item All joint moments converge: for any
+        $k\ge 1$ and $\alpha_1, \ldots, \alpha_k\in \calA$,
+        the limit of the joint moments
+    \begin{align}
+        \lim_{n\to\infty} \E \left[\prod_{i=1}^k x^{(n)}_{\alpha_i}\right]\label{eq:joint-moments}
+    \end{align} 
+    exists.
+        \item All marginals are subexponential: for every $\alpha\in\calA$, there exists $C_\alpha>0$ such that
+        for all $p\ge 1$,
+        \begin{align}
+            \lim_{n\to\infty} \E \left(x^{(n)}_\alpha\right)^{2p}\le (C_\alpha p)^{2p}\,.\label{eq:subexp-growth-condition}
+        \end{align}
+    \end{enumerate}
+    Then $\bx^{(n)}$ converges in distribution to the unique law on $\R^{\cal A}$ with
+    moments given by~\cref{eq:joint-moments}.
+\end{theorem}
+
+
+
+\begin{lemma}[Truncation]\label{lem:truncation}
+    Let $(x_n)_{n\ge 1}$ and $(y_n)_{n\ge 1}$
+    be sequences of random variables such that
+    \begin{enumerate}
+        \item For any $K>0$, conditionally
+        on $|x_n|\le K$, $(y_n)_{n\ge 1}$ converges
+        in distribution.
+        \item $(x_n)_{n\ge 1}$ is tight, i.e., $\sup_{n\ge 1} \Pr(|x_n|>K)\underset{K\to\infty} \longrightarrow 0$.
+    \end{enumerate}
+    Then, $(y_n)_{n\ge 1}$ converges in distribution.
+\end{lemma}
+
+\begin{proof}
+    First, we prove:
+
+    \begin{claim}\label{claim:y-tight}
+        $(y_n)_{n\ge 1}$ is tight.
+    \end{claim} 
+
+    \begin{proof}
+        For any $K,L>0$, we have $\Pr(|y_n|>L)\le \Pr(|y_n|>L \mid |x_n|\le K) + \Pr(|x_n|> K)$. Pick $K$ large enough so that the second term is bounded by $\eps$ uniformly in $n$. $(y_n)_{n\ge 1}$ is tight conditionally on $|x_n|\le K$, so there exists $L>0$ large enough so 
+        that the first term is also bounded by $\varepsilon$ uniformly in $n$.
+    \end{proof}
+
+    \noindent By~\Cref{claim:y-tight} and Prokhorov's
+    theorem, it remains to show that
+    every subsequence of $(y_n)_{n\ge 1}$ that converges in distribution, converges
+    to the same limit.
+    Fix $f:\R\to \R$ to be a bounded continuous
+    function and $\eps>0$. Then, by the law of total
+    expectations, for any $n\ge 1$,
+    \begin{align*}
+        \left|\E f(y_n) - \E \left[f(y_n) \mid |x_n|\le K\right]\right| &=  \Pr(|x_n|> K)\left(\E \left[f(y_n) \mid |x_n|> K\right] - \E \left[f(y_n) \mid |x_n|\le K\right]\right)\\
+        &\le 2 \|f\|_\infty \Pr(|x_n|> K)\\
+        &\le \varepsilon
+    \end{align*}
+    by setting $K = K(\eps)$ to be a large enough constant (with the second assumption). By the first assumption, there exists $N\ge 1$ such that
+    for any $n,m\ge N$,
+    \[
+        \left|\E \left[f(y_n) \mid |x_n|\le K\right] - \E \left[f(y_m) \mid |x_m|\le K\right]\right|\le \eps\,.
+    \]
+    In turn, this implies $\left|\E f(y_n) - \E f(y_m)\right|\le 3\eps$ by the triangle inequality, so $(\E f(y_n))_{n\ge 1}$
+    is a Cauchy sequence, so it converges
+    as $n\to\infty$. This implies
+    that every weak subsequential limit of
+    $(y_n)_{n\ge 1}$ converges to the same limit,
+    which concludes the proof.
+\end{proof}
+
+
+\subsection{Connection with convergence of the empirical distribution}
+
+Let us also remark on certain details concerning modes of convergence that are important to the use and interpretation of~\Cref{thm:convergence-distribution}.
+
+Recall that we ``stack'' the $\bz_{\alpha}(\bA)$ for $\alpha\in\calA_1$ into a single vector with more complicated entries, $\bz_{\cA_1}(\bA) \in (\R^{\cA_1})^n$.
+Using our notation from~\Cref{sec:intro}, we then sample a random coordinate of this vector, forming a further random countably infinite vector $\samp(\bz_{\cA_1}(\bA)) \in \R^{\cA_1}$.
+This contains the $i$th entry of each $\bz_{\alpha}(\bA)$, for a single shared randomly chosen $i \sim \Unif([n])$.
+Define the infinite random vector $Z_{\cA_1}^{\infty}$ similarly. \Cref{thm:convergence-distribution} states that:
+\begin{equation}
+\samp(\bz_{\cA_1}(\bA^{(n)})) \xrightarrow[n \to \infty]{\text{(d)}} Z_{\cA_1}^{\infty}\,,
+\label{eq:samp-conv-d}
+\end{equation}
+By the Cram\'{e}r-Wold theorem, this is equivalent to: for any bounded continuous function $\varphi$ and any finitely supported vector of coefficients $c_{\alpha}$,
+\[ \lim_{n \to \infty} \E_{\bA} \frac{1}{n}\sum_{i = 1}^n \varphi\left(\sum_{\alpha \in \cA_1} c_{\alpha} \bz_{\alpha}(\bA)[i]\right) = \E_{\bA} \varphi\left(\sum_{\alpha \in \cA_1} c_{\alpha} Z_{\alpha}^{\infty} \right). \]
+
+Alternatively, we may also make sense of this statement in terms of empirical distributions, which are just the laws of the random variables $\samp(\bx)$ discussed above.
+\begin{definition}[Empirical distribution]
+    For $\bm x \in \R^n$, we write $\ed(\bm x) \colonequals \frac{1}{n} \sum_{i = 1}^n \delta_{\bmx[i]}$ for the \emph{empirical distribution} of the entries of $\bm x$.
+\end{definition}
+\noindent
+Then, $\ed(\bz_{\cA_1}(\bA))$ is a random probability measure on the space $\R^{\cA_1}$, and the random variable $\samp(\bz_{\cA_1}(\bA^{(n)}))$ is a single draw from this random probability measure.
+Its law is a \emph{deterministic} probability measure on the space $\R^{\cA_1}$, which is the expectation of the random measure $\ed(\bz_{\cA_1}(\bA))$ (if $\mu$ is a random measure, then its expectation takes values $(\EE \mu)(A) = \EE[\mu(A)]$).
+Thus, the above~\cref{eq:samp-conv-d} is further equivalent to the weak convergence of probability measures
+\begin{equation*}
+\EE \ed(\bz_{\cA_1}(\bA^{(n)})) \xrightarrow[n \to \infty]{\text{(w)}} \Law(Z_{\cA_1}^{\infty})\,.
+\end{equation*}
+Again by the Cram\'{e}r-Wold theorem, this is equivalent to, for any finitely supported coefficient vector of $c_{\alpha}$, having
+\[ \EE \ed\left(\sum_{\alpha \in \cA_1} c_{\alpha} \bz_{\alpha}(\bA^{(n)})\right) \xrightarrow[n \to \infty]{\text{(w)}} \Law\left(\sum_{\alpha \in \cA_1} c_{\alpha} Z_{\alpha}^{\infty}\right). \]
+In particular, since the output $\bx_t$ of a GFOM can be viewed in the above way, we see that the empirical distributions of $\bx_t = \bx_t(\bA)$ are related to the asymptotic states $X_t^{\infty}$ by
+\[ \EE \ed(\bx_t(\bA^{(n)})) \xrightarrow[n \to \infty]{\text{(w)}} \Law(X_t^{\infty})\,. \]
+
+Thus our results, interpreted in terms of convergence of the random empirical distributions of GFOM iterates, give convergence of the expectations of random measures.
+Often it is desirable to prove stronger modes of convergence in such situations, by proving that not only do we have
+\[ \lim_{n \to \infty} \E_{\bA} \frac{1}{n} \sum_{i = 1}^n \varphi(\bx_t(\bA^{(n)})[i]) = \EE \varphi(X_t^{\infty})\,, \]
+but also that the random variable inside the expectation \emph{concentrates} over the randomness in $\bA$.
+We do not pursue this here, because it would require introducing additional assumptions on the matrices $\bA$ involved, which may vary from application to application.
+As the example discussed in~\Cref{rem:cdm-factorization} shows, this kind of concentration does not follow automatically from the convergence in expectation that we show.
+An instructive example is the argument in \cite{bayati2015universality}, which uses similar proof techniques to ours, but, to show that the above kind of convergence also happens in $L^2$ uses a trick involving the entrywise independence of the Wigner matrices they work with (see their Proposition~5).
+
+In our much more general setting, it seems reasonable to ask instead for the convergence in the definition of the traffic distribution in~\cref{eq:traffic-conv} to happen in a stronger mode such as $L^2$.
+We leave the exploration of such conditions and the determination of which random matrix distributions they hold for to future work.

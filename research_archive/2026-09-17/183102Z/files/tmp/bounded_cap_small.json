@@ -1,0 +1,1345 @@
+{
+  "classification": "exact finite integer maxima and distances; seeded finite experiment; greedy packing sizes are certified lower bounds, not maxima",
+  "falsifiable_scaling_conjecture": "For some fixed epsilon,c,C>0, a bounded-cap sequence Q(A_n)<=C n^(3/2) and dense sign bridges B_n admit at least exp(c n) switching-orbit children with pairwise projective response distance at least epsilon n^(3/2).",
+  "orders": [
+    {
+      "absolute_cap": 4,
+      "bridges": [
+        {
+          "bridge": "seeded Rademacher",
+          "bridge_sha256_int8": "152cbe43190be6f5252484da56718ccb4ec7636e75a3d3e8c4be809006e34329",
+          "full_orbit_probe": {
+            "distinct_response_rows": 6,
+            "family": "complete projective switching orbit",
+            "family_size": 8,
+            "metric_scope": "every projective Boolean query; exact response metric",
+            "normalized_projective_distance": {
+              "maximum": 0.75,
+              "median": 0.375,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.25,
+              "q90": 0.5
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.025,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 0.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.05,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 0.4
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.075,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 0.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.1,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 0.8
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.125,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 1.0
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.15,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 1.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.2,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 1.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.25,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.646240625180289,
+                "threshold": 2.0
+              }
+            ],
+            "projective_distance": {
+              "maximum": 6.0,
+              "median": 3.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 2.0,
+              "q90": 4.0
+            },
+            "query_count": 8
+          },
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 6.0,
+              "median": 4.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 5.800000000000001
+            },
+            "distinct_family_size": 4,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.75,
+              "median": 0.4375,
+              "minimum": 0.375,
+              "q01": 0.37499999999999994,
+              "q10": 0.375,
+              "q90": 0.625
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.025,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.05,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.4
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.075,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.1,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.8
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.125,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.0
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.15,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.2,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.25,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.0
+              }
+            ],
+            "projective_distance": {
+              "maximum": 6.0,
+              "median": 3.5,
+              "minimum": 3.0,
+              "q01": 2.9999999999999996,
+              "q10": 3.0,
+              "q90": 5.0
+            },
+            "query_count": 4,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 4
+          },
+          "operator_norm_over_sqrt_n": 1.414213562373095
+        },
+        {
+          "bridge": "A plus identity",
+          "bridge_sha256_int8": "b16a38b230fef502e40bd618e6120e3f95293bac20ec81b7835478c55a058ba9",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 2.0,
+              "median": 1.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 2.0
+            },
+            "distinct_family_size": 4,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.25,
+              "median": 0.125,
+              "minimum": 0.125,
+              "q01": 0.125,
+              "q10": 0.125,
+              "q90": 0.1875
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.025,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.05,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.4
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.075,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.1,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.8
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.125,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.0
+              },
+              {
+                "certified_greedy_packing_lower_bound": 2,
+                "epsilon": 0.15,
+                "packing_bits": 1.0,
+                "packing_bits_per_vertex": 0.25,
+                "threshold": 1.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 2,
+                "epsilon": 0.2,
+                "packing_bits": 1.0,
+                "packing_bits_per_vertex": 0.25,
+                "threshold": 1.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 2,
+                "epsilon": 0.25,
+                "packing_bits": 1.0,
+                "packing_bits_per_vertex": 0.25,
+                "threshold": 2.0
+              }
+            ],
+            "projective_distance": {
+              "maximum": 2.0,
+              "median": 1.0,
+              "minimum": 1.0,
+              "q01": 1.0,
+              "q10": 1.0,
+              "q90": 1.5
+            },
+            "query_count": 4,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 4
+          },
+          "operator_norm_over_sqrt_n": 1.6180339887498947
+        },
+        {
+          "bridge": "Sylvester Hadamard",
+          "bridge_sha256_int8": "14edb060b895542e36542bfe57c990c3ab60c74c6ded991c127ff28bf669f4aa",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 6.0,
+              "median": 4.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 5.800000000000001
+            },
+            "distinct_family_size": 4,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.75,
+              "median": 0.4375,
+              "minimum": 0.375,
+              "q01": 0.37499999999999994,
+              "q10": 0.375,
+              "q90": 0.625
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.025,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.05,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.4
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.075,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.1,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.8
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.125,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.0
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.15,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.2
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.2,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.6
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.25,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.0
+              }
+            ],
+            "projective_distance": {
+              "maximum": 6.0,
+              "median": 3.5,
+              "minimum": 3.0,
+              "q01": 2.9999999999999996,
+              "q10": 3.0,
+              "q90": 5.0
+            },
+            "query_count": 4,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 4
+          },
+          "operator_norm_over_sqrt_n": 1.0
+        }
+      ],
+      "matrix_sha256_int8": "ff2edc0524c08ada666d45b0c8c808b9227470dcd7d2832e9cf95af40136e22f",
+      "negative_cap": 4,
+      "normalized_absolute_cap": 0.5,
+      "order": 4,
+      "positive_cap": 4,
+      "projective_spin_count": 8,
+      "source": "computations/results/exact_m4.json",
+      "source_classification": "exact minimizer"
+    },
+    {
+      "absolute_cap": 5,
+      "bridges": [
+        {
+          "bridge": "seeded Rademacher",
+          "bridge_sha256_int8": "44d884dc9b404afbe2d67c33d0c88939049db6b5f75c4c876115c976335f9bd2",
+          "full_orbit_probe": {
+            "distinct_response_rows": 32,
+            "family": "complete projective switching orbit",
+            "family_size": 32,
+            "metric_scope": "every projective Boolean query; exact response metric",
+            "normalized_projective_distance": {
+              "maximum": 0.47628965973854065,
+              "median": 0.34020692110061646,
+              "minimum": 0.13608276844024658,
+              "q01": 0.20412413775920868,
+              "q10": 0.27216553688049316,
+              "q90": 0.40824827551841736
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.025,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.8333333333333334,
+                "threshold": 0.3674234614174767
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.05,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.8333333333333334,
+                "threshold": 0.7348469228349535
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.075,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.8333333333333334,
+                "threshold": 1.1022703842524302
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.1,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.8333333333333334,
+                "threshold": 1.469693845669907
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.125,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.8333333333333334,
+                "threshold": 1.8371173070873836
+              },
+              {
+                "certified_greedy_packing_lower_bound": 29,
+                "epsilon": 0.15,
+                "packing_bits": 4.857980995127572,
+                "packing_bits_per_vertex": 0.8096634991879287,
+                "threshold": 2.2045407685048604
+              },
+              {
+                "certified_greedy_packing_lower_bound": 29,
+                "epsilon": 0.2,
+                "packing_bits": 4.857980995127572,
+                "packing_bits_per_vertex": 0.8096634991879287,
+                "threshold": 2.939387691339814
+              },
+              {
+                "certified_greedy_packing_lower_bound": 18,
+                "epsilon": 0.25,
+                "packing_bits": 4.169925001442312,
+                "packing_bits_per_vertex": 0.6949875002403854,
+                "threshold": 3.6742346141747673
+              }
+            ],
+            "projective_distance": {
+              "maximum": 7.0,
+              "median": 5.0,
+              "minimum": 2.0,
+              "q01": 3.0,
+              "q10": 4.0,
+              "q90": 6.0
+            },
+            "query_count": 32
+          },
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 6.0,
+              "median": 0.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 4.0
+            },
+            "distinct_family_size": 8,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.40824827551841736,
+              "median": 0.27216553688049316,
+              "minimum": 0.06804138422012329,
+              "q01": 0.08641255795955657,
+              "q10": 0.18371172696352006,
+              "q90": 0.34020692110061646
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 8,
+                "epsilon": 0.025,
+                "packing_bits": 3.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.3674234614174767
+              },
+              {
+                "certified_greedy_packing_lower_bound": 8,
+                "epsilon": 0.05,
+                "packing_bits": 3.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.7348469228349535
+              },
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.075,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.4678924870096007,
+                "threshold": 1.1022703842524302
+              },
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.1,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.4678924870096007,
+                "threshold": 1.469693845669907
+              },
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.125,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.4678924870096007,
+                "threshold": 1.8371173070873836
+              },
+              {
+                "certified_greedy_packing_lower_bound": 5,
+                "epsilon": 0.15,
+                "packing_bits": 2.321928094887362,
+                "packing_bits_per_vertex": 0.3869880158145604,
+                "threshold": 2.2045407685048604
+              },
+              {
+                "certified_greedy_packing_lower_bound": 5,
+                "epsilon": 0.2,
+                "packing_bits": 2.321928094887362,
+                "packing_bits_per_vertex": 0.3869880158145604,
+                "threshold": 2.939387691339814
+              },
+              {
+                "certified_greedy_packing_lower_bound": 4,
+                "epsilon": 0.25,
+                "packing_bits": 2.0,
+                "packing_bits_per_vertex": 0.3333333333333333,
+                "threshold": 3.6742346141747673
+              }
+            ],
+            "projective_distance": {
+              "maximum": 6.0,
+              "median": 4.0,
+              "minimum": 1.0,
+              "q01": 1.27,
+              "q10": 2.7,
+              "q90": 5.0
+            },
+            "query_count": 8,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 8
+          },
+          "operator_norm_over_sqrt_n": 1.4789132060186216
+        },
+        {
+          "bridge": "A plus identity",
+          "bridge_sha256_int8": "bd25ab9e4cfb58535e48cc2b8a37f96deefcc31aa049129f007898c568e99061",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 10.0,
+              "median": 0.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 5.0
+            },
+            "distinct_family_size": 8,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.47628965973854065,
+              "median": 0.20412413775920868,
+              "minimum": 0.0,
+              "q01": 0.01837117373943329,
+              "q10": 0.11567035317420961,
+              "q90": 0.47628965973854065
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.025,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.4678924870096007,
+                "threshold": 0.3674234614174767
+              },
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.05,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.4678924870096007,
+                "threshold": 0.7348469228349535
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.075,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.430827083453526,
+                "threshold": 1.1022703842524302
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.1,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.430827083453526,
+                "threshold": 1.469693845669907
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.125,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.430827083453526,
+                "threshold": 1.8371173070873836
+              },
+              {
+                "certified_greedy_packing_lower_bound": 5,
+                "epsilon": 0.15,
+                "packing_bits": 2.321928094887362,
+                "packing_bits_per_vertex": 0.3869880158145604,
+                "threshold": 2.2045407685048604
+              },
+              {
+                "certified_greedy_packing_lower_bound": 5,
+                "epsilon": 0.2,
+                "packing_bits": 2.321928094887362,
+                "packing_bits_per_vertex": 0.3869880158145604,
+                "threshold": 2.939387691339814
+              },
+              {
+                "certified_greedy_packing_lower_bound": 3,
+                "epsilon": 0.25,
+                "packing_bits": 1.584962500721156,
+                "packing_bits_per_vertex": 0.26416041678685936,
+                "threshold": 3.6742346141747673
+              }
+            ],
+            "projective_distance": {
+              "maximum": 7.0,
+              "median": 3.0,
+              "minimum": 0.0,
+              "q01": 0.27,
+              "q10": 1.7000000000000002,
+              "q90": 7.0
+            },
+            "query_count": 8,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 8
+          },
+          "operator_norm_over_sqrt_n": 1.3211192196391401
+        }
+      ],
+      "matrix_sha256_int8": "ed98c75aa55bd5285209caf95aab9871bab1733abe8b887493f3561587571968",
+      "negative_cap": 5,
+      "normalized_absolute_cap": 0.34020690871988585,
+      "order": 6,
+      "positive_cap": 5,
+      "projective_spin_count": 32,
+      "source": "computations/results/exact_m6.json",
+      "source_classification": "exact minimizer"
+    },
+    {
+      "absolute_cap": 10,
+      "bridges": [
+        {
+          "bridge": "seeded Rademacher",
+          "bridge_sha256_int8": "bb294ebb6d0ae1c3eb6df35ce188b4516378707949183ce3f9937524102ee637",
+          "full_orbit_probe": {
+            "distinct_response_rows": 128,
+            "family": "complete projective switching orbit",
+            "family_size": 128,
+            "metric_scope": "every projective Boolean query; exact response metric",
+            "normalized_projective_distance": {
+              "maximum": 0.6187184453010559,
+              "median": 0.3535533845424652,
+              "minimum": 0.13258253037929535,
+              "q01": 0.22097086906433105,
+              "q10": 0.30935922265052795,
+              "q90": 0.4419417381286621
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 128,
+                "epsilon": 0.025,
+                "packing_bits": 7.0,
+                "packing_bits_per_vertex": 0.875,
+                "threshold": 0.5656854249492381
+              },
+              {
+                "certified_greedy_packing_lower_bound": 128,
+                "epsilon": 0.05,
+                "packing_bits": 7.0,
+                "packing_bits_per_vertex": 0.875,
+                "threshold": 1.1313708498984762
+              },
+              {
+                "certified_greedy_packing_lower_bound": 128,
+                "epsilon": 0.075,
+                "packing_bits": 7.0,
+                "packing_bits_per_vertex": 0.875,
+                "threshold": 1.697056274847714
+              },
+              {
+                "certified_greedy_packing_lower_bound": 128,
+                "epsilon": 0.1,
+                "packing_bits": 7.0,
+                "packing_bits_per_vertex": 0.875,
+                "threshold": 2.2627416997969525
+              },
+              {
+                "certified_greedy_packing_lower_bound": 128,
+                "epsilon": 0.125,
+                "packing_bits": 7.0,
+                "packing_bits_per_vertex": 0.875,
+                "threshold": 2.8284271247461903
+              },
+              {
+                "certified_greedy_packing_lower_bound": 127,
+                "epsilon": 0.15,
+                "packing_bits": 6.9886846867721655,
+                "packing_bits_per_vertex": 0.8735855858465207,
+                "threshold": 3.394112549695428
+              },
+              {
+                "certified_greedy_packing_lower_bound": 105,
+                "epsilon": 0.2,
+                "packing_bits": 6.714245517666122,
+                "packing_bits_per_vertex": 0.8392806897082653,
+                "threshold": 4.525483399593905
+              },
+              {
+                "certified_greedy_packing_lower_bound": 54,
+                "epsilon": 0.25,
+                "packing_bits": 5.754887502163468,
+                "packing_bits_per_vertex": 0.7193609377704335,
+                "threshold": 5.656854249492381
+              }
+            ],
+            "projective_distance": {
+              "maximum": 14.0,
+              "median": 8.0,
+              "minimum": 3.0,
+              "q01": 5.0,
+              "q10": 7.0,
+              "q90": 10.0
+            },
+            "query_count": 128
+          },
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 14.0,
+              "median": 4.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 8.0
+            },
+            "distinct_family_size": 16,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.48613592982292175,
+              "median": 0.2651650607585907,
+              "minimum": 0.0883883461356163,
+              "q01": 0.09678524114191532,
+              "q10": 0.1767766922712326,
+              "q90": 0.39774757623672485
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.025,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.5656854249492381
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.05,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.1313708498984762
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.075,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.697056274847714
+              },
+              {
+                "certified_greedy_packing_lower_bound": 14,
+                "epsilon": 0.1,
+                "packing_bits": 3.807354922057604,
+                "packing_bits_per_vertex": 0.4759193652572005,
+                "threshold": 2.2627416997969525
+              },
+              {
+                "certified_greedy_packing_lower_bound": 14,
+                "epsilon": 0.125,
+                "packing_bits": 3.807354922057604,
+                "packing_bits_per_vertex": 0.4759193652572005,
+                "threshold": 2.8284271247461903
+              },
+              {
+                "certified_greedy_packing_lower_bound": 12,
+                "epsilon": 0.15,
+                "packing_bits": 3.584962500721156,
+                "packing_bits_per_vertex": 0.4481203125901445,
+                "threshold": 3.394112549695428
+              },
+              {
+                "certified_greedy_packing_lower_bound": 7,
+                "epsilon": 0.2,
+                "packing_bits": 2.807354922057604,
+                "packing_bits_per_vertex": 0.3509193652572005,
+                "threshold": 4.525483399593905
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.25,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.3231203125901445,
+                "threshold": 5.656854249492381
+              }
+            ],
+            "projective_distance": {
+              "maximum": 11.0,
+              "median": 6.0,
+              "minimum": 2.0,
+              "q01": 2.19,
+              "q10": 4.0,
+              "q90": 9.0
+            },
+            "query_count": 16,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 16
+          },
+          "operator_norm_over_sqrt_n": 1.7422663299145948
+        },
+        {
+          "bridge": "A plus identity",
+          "bridge_sha256_int8": "cea5d36cdb78b6e9d9a12e616b09da3f47ae9c169edb873a8cea42783cc192b6",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 18.0,
+              "median": 4.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 8.0
+            },
+            "distinct_family_size": 16,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.6187184453010559,
+              "median": 0.30935922265052795,
+              "minimum": 0.1767766922712326,
+              "q01": 0.1767766922712326,
+              "q10": 0.21655145138502122,
+              "q90": 0.4419417381286621
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.025,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.5656854249492381
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.05,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.1313708498984762
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.075,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.697056274847714
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.1,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.2627416997969525
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.125,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.8284271247461903
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.15,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 3.394112549695428
+              },
+              {
+                "certified_greedy_packing_lower_bound": 10,
+                "epsilon": 0.2,
+                "packing_bits": 3.321928094887362,
+                "packing_bits_per_vertex": 0.4152410118609203,
+                "threshold": 4.525483399593905
+              },
+              {
+                "certified_greedy_packing_lower_bound": 9,
+                "epsilon": 0.25,
+                "packing_bits": 3.169925001442312,
+                "packing_bits_per_vertex": 0.396240625180289,
+                "threshold": 5.656854249492381
+              }
+            ],
+            "projective_distance": {
+              "maximum": 14.0,
+              "median": 7.0,
+              "minimum": 4.0,
+              "q01": 4.0,
+              "q10": 4.9,
+              "q90": 10.0
+            },
+            "query_count": 16,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 16
+          },
+          "operator_norm_over_sqrt_n": 1.6283082689914699
+        },
+        {
+          "bridge": "Sylvester Hadamard",
+          "bridge_sha256_int8": "7c99a8eda1a433afd28577a0d930873985123e34c4999f5e6a60e393c505a36d",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 14.0,
+              "median": 4.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 8.0
+            },
+            "distinct_family_size": 16,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.4419417381286621,
+              "median": 0.2651650607585907,
+              "minimum": 0.13258253037929535,
+              "q01": 0.13258253037929535,
+              "q10": 0.1767766922712326,
+              "q90": 0.3535533845424652
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.025,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.5656854249492381
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.05,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.1313708498984762
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.075,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.697056274847714
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.1,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.2627416997969525
+              },
+              {
+                "certified_greedy_packing_lower_bound": 16,
+                "epsilon": 0.125,
+                "packing_bits": 4.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.8284271247461903
+              },
+              {
+                "certified_greedy_packing_lower_bound": 14,
+                "epsilon": 0.15,
+                "packing_bits": 3.807354922057604,
+                "packing_bits_per_vertex": 0.4759193652572005,
+                "threshold": 3.394112549695428
+              },
+              {
+                "certified_greedy_packing_lower_bound": 10,
+                "epsilon": 0.2,
+                "packing_bits": 3.321928094887362,
+                "packing_bits_per_vertex": 0.4152410118609203,
+                "threshold": 4.525483399593905
+              },
+              {
+                "certified_greedy_packing_lower_bound": 6,
+                "epsilon": 0.25,
+                "packing_bits": 2.584962500721156,
+                "packing_bits_per_vertex": 0.3231203125901445,
+                "threshold": 5.656854249492381
+              }
+            ],
+            "projective_distance": {
+              "maximum": 10.0,
+              "median": 6.0,
+              "minimum": 3.0,
+              "q01": 3.0,
+              "q10": 4.0,
+              "q90": 8.0
+            },
+            "query_count": 16,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 16
+          },
+          "operator_norm_over_sqrt_n": 1.0000000000000004
+        }
+      ],
+      "matrix_sha256_int8": "ce853c77df6700ec17d43c5cba7cef88bd7aa2b91b470283854fa368661a42a9",
+      "negative_cap": 10,
+      "normalized_absolute_cap": 0.44194173824159216,
+      "order": 8,
+      "positive_cap": 10,
+      "projective_spin_count": 128,
+      "source": "computations/results/exact_m8.json",
+      "source_classification": "exact minimizer"
+    },
+    {
+      "absolute_cap": 15,
+      "bridges": [
+        {
+          "bridge": "seeded Rademacher",
+          "bridge_sha256_int8": "dd7c9b8de47682031906b6b4c67e12d7082b8f66054a12bf606cde1b0e40edef",
+          "full_orbit_probe": {
+            "distinct_response_rows": 512,
+            "family": "complete projective switching orbit",
+            "family_size": 512,
+            "metric_scope": "every projective Boolean query; exact response metric",
+            "normalized_projective_distance": {
+              "maximum": 0.6957011222839355,
+              "median": 0.41109609603881836,
+              "minimum": 0.15811388194561005,
+              "q01": 0.2529822289943695,
+              "q10": 0.3162277638912201,
+              "q90": 0.47434166073799133
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.025,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 0.7905694150420949
+              },
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.05,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 1.5811388300841898
+              },
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.075,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 2.3717082451262845
+              },
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.1,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 3.1622776601683795
+              },
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.125,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 3.952847075210474
+              },
+              {
+                "certified_greedy_packing_lower_bound": 512,
+                "epsilon": 0.15,
+                "packing_bits": 9.0,
+                "packing_bits_per_vertex": 0.9,
+                "threshold": 4.743416490252569
+              },
+              {
+                "certified_greedy_packing_lower_bound": 353,
+                "epsilon": 0.2,
+                "packing_bits": 8.46352437327118,
+                "packing_bits_per_vertex": 0.8463524373271181,
+                "threshold": 6.324555320336759
+              },
+              {
+                "certified_greedy_packing_lower_bound": 204,
+                "epsilon": 0.25,
+                "packing_bits": 7.672425341971495,
+                "packing_bits_per_vertex": 0.7672425341971495,
+                "threshold": 7.905694150420948
+              }
+            ],
+            "projective_distance": {
+              "maximum": 22.0,
+              "median": 13.0,
+              "minimum": 5.0,
+              "q01": 8.0,
+              "q10": 10.0,
+              "q90": 15.0
+            },
+            "query_count": 512
+          },
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 20.0,
+              "median": 6.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 10.0
+            },
+            "distinct_family_size": 32,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.5692099928855896,
+              "median": 0.2846049964427948,
+              "minimum": 0.12649111449718475,
+              "q01": 0.15811388194561005,
+              "q10": 0.22135944664478302,
+              "q90": 0.3478505611419678
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.025,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.7905694150420949
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.05,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.5811388300841898
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.075,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.3717082451262845
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.1,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 3.1622776601683795
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.125,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 3.952847075210474
+              },
+              {
+                "certified_greedy_packing_lower_bound": 31,
+                "epsilon": 0.15,
+                "packing_bits": 4.954196310386875,
+                "packing_bits_per_vertex": 0.49541963103868747,
+                "threshold": 4.743416490252569
+              },
+              {
+                "certified_greedy_packing_lower_bound": 17,
+                "epsilon": 0.2,
+                "packing_bits": 4.087462841250339,
+                "packing_bits_per_vertex": 0.4087462841250339,
+                "threshold": 6.324555320336759
+              },
+              {
+                "certified_greedy_packing_lower_bound": 12,
+                "epsilon": 0.25,
+                "packing_bits": 3.584962500721156,
+                "packing_bits_per_vertex": 0.3584962500721156,
+                "threshold": 7.905694150420948
+              }
+            ],
+            "projective_distance": {
+              "maximum": 18.0,
+              "median": 9.0,
+              "minimum": 4.0,
+              "q01": 5.0,
+              "q10": 7.0,
+              "q90": 11.0
+            },
+            "query_count": 32,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 32
+          },
+          "operator_norm_over_sqrt_n": 1.540867182068407
+        },
+        {
+          "bridge": "A plus identity",
+          "bridge_sha256_int8": "7ceada363b73606348998e755af6dc45fe7dfd4b940cca43b32da5c5a4dfded6",
+          "linked_probe": {
+            "diagonal_exposure_identity_verified": true,
+            "directed_exposure_deficit": {
+              "maximum": 22.0,
+              "median": 6.0,
+              "minimum": 0.0,
+              "q01": 0.0,
+              "q10": 0.0,
+              "q90": 14.0
+            },
+            "distinct_family_size": 32,
+            "family": "query-linked switching orbit",
+            "metric_scope": "displayed linked queries; hence a lower bound for all futures",
+            "normalized_projective_distance": {
+              "maximum": 0.6324555277824402,
+              "median": 0.37947332859039307,
+              "minimum": 0.15811388194561005,
+              "q01": 0.18973666429519653,
+              "q10": 0.2529822289943695,
+              "q90": 0.44271889328956604
+            },
+            "packing_lower_bounds": [
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.025,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 0.7905694150420949
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.05,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 1.5811388300841898
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.075,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 2.3717082451262845
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.1,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 3.1622776601683795
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.125,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 3.952847075210474
+              },
+              {
+                "certified_greedy_packing_lower_bound": 32,
+                "epsilon": 0.15,
+                "packing_bits": 5.0,
+                "packing_bits_per_vertex": 0.5,
+                "threshold": 4.743416490252569
+              },
+              {
+                "certified_greedy_packing_lower_bound": 26,
+                "epsilon": 0.2,
+                "packing_bits": 4.700439718141092,
+                "packing_bits_per_vertex": 0.4700439718141092,
+                "threshold": 6.324555320336759
+              },
+              {
+                "certified_greedy_packing_lower_bound": 21,
+                "epsilon": 0.25,
+                "packing_bits": 4.392317422778761,
+                "packing_bits_per_vertex": 0.4392317422778761,
+                "threshold": 7.905694150420948
+              }
+            ],
+            "projective_distance": {
+              "maximum": 20.0,
+              "median": 12.0,
+              "minimum": 5.0,
+              "q01": 6.0,
+              "q10": 8.0,
+              "q90": 14.0
+            },
+            "query_count": 32,
+            "selection_rule": "s_y = u_star coordinatewise-times sign(B y)",
+            "target_family_size": 32
+          },
+          "operator_norm_over_sqrt_n": 1.264911064067352
+        }
+      ],
+      "matrix_sha256_int8": "84154719705e7ece77761771dba8c0787e1550f47bad1d7533f7f15017dc8f6b",
+      "negative_cap": 15,
+      "normalized_absolute_cap": 0.4743416490252569,
+      "order": 10,
+      "positive_cap": 15,
+      "projective_spin_count": 512,
+      "source": "computations/results/conference_order10_gf9.json",
+      "source_classification": "conference"
+    }
+  ],
+  "schema": "bounded-cap-switching-response-v1",
+  "seed": 20260817,
+  "warning": "Finite packing ratios do not establish the scaling conjecture; failure of these particular bridges would not disprove it."
+}

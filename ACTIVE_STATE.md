@@ -1,6 +1,6 @@
 # Active research state
 
-Evidence cutoff: 2026-09-17 first paper-combination checkpoint.
+Evidence cutoff: 2026-09-17 second paper-combination checkpoint,18:35UTC.
 Six-hour campaign ACTIVE16:42:21--22:42:21UTC; stop for assessment then.
 Read [STEERING](STEERING.md), the
 [current campaign](artifacts/paper_portfolio_campaign_2026_09_17.md), the
@@ -40,10 +40,20 @@ The original construction facts and gaps below are retained unchanged.
   Actual full-sign, covariance-I row laws at b=n have a leading gap for
   a pinned Boolean response. This sharpness is NOT about unrestricted Q.
 
-Live positive test: tensor-column sign laws can reduce absolute responses
-on a full Hadamard dictionary without reducing covariance. Determine an
-actual near-level cover criterion giving profitable full-sign extension.
-Do not substitute this proposed criterion for a theorem about optimizers.
+New general tools: support-free isotropic response entropy
+O(delta^2 log^2(1/delta))n; flat-diagonal information improves one logarithm
+at vanishing covariance-label cost; common-Gibbs/truncation replacement
+error8 W4^(1/4)log(2K)^(3/4); capped-fourth-mass Laplace envelope.
+
+IMPORTANT CORRECTION: every actual positive-cap child has full nearlevel
+entropy at least order eta log(1/eta), and isotropic sign response at least
+sqrt(2eta/(pi c)) somewhere in that code. Consequently the new direct
+finite-entropy-slope and mu^2=o(eta) applications are VACUOUS. Their finite
+tools remain valid, but are not convergence reductions. The precise proofs
+are paper_discrepancy_nearlevel_entropy_floor_2026_09_17.md and
+paper_director_nearlevel_response_rigidity_2026_09_17.md in artifacts/.
+Next test anchored low-response CENTER codes plus correlated neighborhoods;
+do not charge their unavoidable local entropy using constant variance.
 
 ## Exact problem and verified frontier
 

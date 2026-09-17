@@ -1,0 +1,128 @@
+\section{The Cubic--Quintic Scheme}
+\label{sec:scheme}
+
+The previous section lets us work directly with fixed-dimensional limiting
+Krivine schemes. We now define the two-dimensional scheme used for our upper
+bound. Its first coordinate combines the correlation powers \(t,t^3,t^5\),
+while its second coordinate keeps correlation \(t\). In the next two sections,
+we compute its correlation function and certify its inverse majorant.
+
+We first describe the general form of the construction. Let
+\(D\subseteq\{3,5,7,\ldots\}\) be finite, choose weights
+\((s_d)_{d\in D}\), and set
+\[
+    \sigma_d=(-1)^{(d-1)/2},
+    \qquad
+    V_D=1+\sum_{d\in D}s_d^2.
+\]
+A degree-\(d\) Hermite direction contributes the correlation \(t^d\).
+After combining these directions into one normalized Gaussian coordinate,
+the resulting correlation map is
+\begin{equation}
+    \rho_D(t)
+    =
+    \frac{t+\sum_{d\in D}\sigma_d s_d^2 t^d}{V_D}.
+    \label{eq:general-hermite-correlation-map}
+\end{equation}
+The map \(\rho_D\) is allowable, since the absolute values of its
+coefficients sum to one. Thus, for any \(\eta\in\mathbb{R}\), the partitions
+\[
+    \operatorname{sgn}\left(
+        w+\frac{\eta}{\sqrt{V_D}}\He_3(x)
+    \right)
+    \qquad\text{and}\qquad
+    \operatorname{sgn}\left(
+        w-\frac{\eta}{\sqrt{V_D}}\He_3(x)
+    \right)
+\]
+together with the correlation maps \(\rho_D(t)\) and \(t\) define a
+two-dimensional limiting Krivine scheme.
+
+For the scheme used in our proof, we take \(D=\{3,5\}\). The cubic
+direction is anti-aligned between the two sides, while the quintic direction
+is aligned. We use the parameters
+\begin{equation}
+    \eta=0.136419125,
+    \qquad
+    s_3=0.34101124,
+    \qquad
+    s_5=0.05276111.
+    \label{eq:params}
+\end{equation}
+Set
+\[
+    V=1+s_3^2+s_5^2,
+    \qquad
+    \vartheta=\frac{\eta}{\sqrt V},
+\]
+and define
+\begin{equation}
+    \rho(t)
+    =
+    \frac{t-s_3^2t^3+s_5^2t^5}{V}.
+    \label{eq:rho-collapsed}
+\end{equation}
+
+\begin{definition}[Cubic--quintic limiting scheme]
+\label{def:cubic-quintic-scheme}
+Define \(f,g:\mathbb{R}^2\to\{-1,1\}\) by
+\begin{equation}
+    f(w,x)
+    =
+    \sgn\bigl(w+\vartheta\He_3(x)\bigr),
+    \qquad
+    g(w,x)
+    =
+    \sgn\bigl(w-\vartheta\He_3(x)\bigr).
+    \label{eq:cubic-quintic-partitions}
+\end{equation}
+Our construction is the limiting Krivine scheme
+\[
+    \mathcal{S}=(f,g,\rho_1,\rho_2),
+    \qquad
+    \rho_1(t)=\rho(t),
+    \qquad
+    \rho_2(t)=t.
+\]
+We write \(H\) for its correlation function.
+\end{definition}
+
+The map \(\rho\) is allowable because the absolute values of its
+coefficients sum to \((1+s_3^2+s_5^2)/V=1\). The partitions are odd and
+satisfy \(g(w,x)=f(w,-x)\). Their threshold boundaries also have Gaussian
+measure zero, so the approximation theorem from the previous section
+applies.
+
+More explicitly, let \((W,X)\) and \((W',X')\) be standard Gaussian vectors.
+Assume that the two coordinate pairs are independent and that
+\(\operatorname{corr}(W,W')=\rho(t)\) and
+\(\operatorname{corr}(X,X')=t\). Then
+\begin{equation}
+    H(t)
+    =
+    \frac{\pi}{2}
+    \E\bigl[f(W,X)g(W',X')\bigr].
+    \label{eq:lim-H}
+\end{equation}
+
+The signs and weights in \(\rho\) are chosen to make the cubic and quintic
+coefficients of \(H\) nearly vanish. This in turn suppresses the first two
+nonlinear coefficients of \(H^{-1}\). Section~\ref{sec:coefficients} makes
+this relation explicit.
+
+\begin{theorem}[Cubic--quintic upper bound]
+\label{thm:cubic-quintic-upper-bound}
+Let \(M\) be the inverse majorant of \(H\). At
+\(\gamma=0.881545409\), we have \(M(\gamma)<1\). Consequently,
+\[
+    K_G
+    \leq
+    \frac{\pi}{2\gamma}
+    \leq
+    1.7818666069360661
+    <
+    \frac{\pi}{2\log(1+\sqrt{2})}
+    -
+    3.4737\cdot 10^{-4}.
+\]
+\end{theorem}

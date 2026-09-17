@@ -1,0 +1,3510 @@
+
+=== PAGE 1 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SIAM J. C OMPUT. c⃝ 2013 Society for I ndustrial and Applied Mathematics
+Vol. 42, No. 1, pp. 112–137
+SHERALI–ADAMS RELAXA TIONS AND INDISTINGUISHABILITY
+IN COUNTING LOGICS ∗
+ALBERT ATSERIAS† AND ELITZA MANEVA‡
+Abstract. Two graphs with adjacency matricesA and B are isomorphic if there exists a per-
+mutation matrixP for which the identityPTAP = B holds. Multiplying through byP and relaxing
+the permutation matrix to a doubly stochastic matrix leads to the linear programming relaxation
+known as fractional isomorphism. We show that the levels of the Sherali–Adams (SA) hierarchy of
+linear programming relaxations applied to fractional isomorphism interleave in power with the levels
+of a well-known color-reﬁnement heuristic for graph isomorphism called the Weisfeiler–Lehman algo-
+rithm, or, equivalently, with the levels of indistinguishability in a logic with counting quantiﬁers and
+a bounded number of variables. This tight connection has quite striking consequences. For example,
+it follows immediately from a deep result of Grohe in the context of logics with counting quantiﬁers
+that a ﬁxed number of levels of SA suﬃce to determine isomorphism of planar and minor-free graphs.
+We also oﬀer applications in both ﬁnite model theory and polyhedral combinatorics. First, we show
+that certain properties of graphs, such as that of having a ﬂow circulation of a prescribed value,
+are deﬁnable in the inﬁnitary logic with counting with a bounded number of variables. Second, we
+exploit a lower bound construction due to Cai, F¨urer, and Immerman in the context of counting
+logics to give simple explicit instances that show that the SA relaxations of the vertex-cover and cut
+polytopes do not reach their integer hulls for up to Ω(n) levels, wheren is the number of vertices in
+the graph.
+Key words. ﬁrst-order logic, counting quantiﬁers, linear programming, Weisfeiler–Lehman
+algorithm, graph isomorphism, combinatorial optimization
+AMS subject classiﬁcations. 68Q17, 68Q19, 52B12, 05C60, 05C72, 03C80
+DOI. 10.1137/120867834
+1. Introduction. Let A and B be the adjacency matrices of two labeled graphs
+on {1,...,n }. The two graphs being isomorphic is equivalent to the existence of a
+permutation matrix P for which the relation PTAP = B holds. Multiplying both
+sides by P gives the equivalent conditionAP = PB. At this point a linear program-
+ming relaxation suggests itself: relax the condition thatP is a permutation matrix to
+a doubly stochastic matrix. How much coarser is this than actual isomorphism?
+The concept of fractional isomorphism as deﬁned in thepreceding paragraph falls
+within the framework of linear programming relaxations of combinatorial problems.
+Other types of relaxations of isomorphism include the color-reﬁnement method called
+the Weisfeiler–Lehman (WL) algorithm. In this algorithm the vertices of the graphs
+are classiﬁed according to their degree, then according to the multiset of degrees of
+their neighbors, and so on until a ﬁxed point is achieved. If the two graphs get
+partitions with diﬀerent parameters, the graphs are deﬁnitely not isomorphic. As
+it turns out, fractional isomorphism and color reﬁnement yield one and the same
+relaxation: it was shown by Ramana, Scheinerman, and Ullman [31] that two graphs
+∗Received by the editors February 28, 2012; accepted for publication (in revised form) Septem-
+ber 24, 2012; published electronically January 17, 2013. A preliminary version of this paper appeared
+inProceedings of the3rd Innovations in Theoretical Computer Science Conference(ITCS 2012). This
+research was partially supported by CICYT TIN2010-20967-C04-04 (TASSAT).
+http://www.siam.org/journals/sicomp/42-1/86783.html
+†Universitat Polit`ecnica de Catalunya, 08034 Barcelona, Spain (atserias@lsi.upc.edu).
+‡Universitat de Barcelona, 08007 Barcelona, Spain (elitza.maneva@gmail.com). This author’s
+research was supported in part by MICINN Ramon y Cajal.
+112
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 2 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 113
+are fractionally isomorphic if and only if they are not distinguished by the color-
+reﬁnement algorithm.
+Despite its simplicity, the color-reﬁnementalgorithm is known to behave very well
+in practice and is in fact one of the most commonly used heuristics for isomorphism
+testing. An example adding support to this claim is a classical result of Babai, Erd˝os,
+and Selkow [4] showing that the color-reﬁnement algorithm will end up distinguishing
+a randomly chosen graph from any other graph with high probability. That said, one
+obvious limitation of the method is that it will fail badly on regular graphs, as in
+such a case the algorithm cannot even start. To remedy this, the WL algorithm has
+been extended to reﬁnement of colorings ofk-tuples of vertices (thek-WL algorithm)
+for k =1 ,2,3,..., thus yielding a hierarchy of increasingly powerful relaxations of
+isomorphism. The power of the resulting algorithms has also been studied in depth.
+For example, Kucera [22] shows that the algorithm fork = 2 decides isomorphism
+almost surely on random regular graphs. Another example of a quite diﬀerent nature
+is the result of Grohe showing that there exists a ﬁxed constantk for which thek-WL
+algorithm is able to distinguish any pair of nonisomorphic planar graphs [13]. This
+was extended recently to any nontrivialminor-closed class of graphs [15].
+Hierarchies of relaxations such as thek-WL algorithm can also be considered in
+the context of fractional isomorphism through linear programming. The theory of
+lift-and-project methods in the mathematical programming literature provides such
+a framework. These are methods by which an initial relaxation P of an integral
+polytope P
+Z is tightened into sharper and sharper polytopes, thus forming a hierarchy
+of relaxations:
+P = P1 ⊇ P2 ⊇···⊇ P Z.
+Examples of these include the hierarchy of linear programming relaxations proposed
+by Sherali and Adams [35], that by Lov´asz and Schrijver [27], and their semideﬁ-
+nite programming versions, including the hierarchy of Lasserre [23]. See [24] for a
+survey and comparison. These have been applied for studying classical polytopes of
+combinatorial optimization such as the stable-set polytope, the cut polytope, and the
+matching polytope, among others [27, 24, 36, 28].
+In this paper we show that fork ≥ 2, the kth level of the Sherali–Adams (SA)
+hierarchy relaxation of graph isomorphism is sandwiched between the (k − 1)-tuple
+version of the WL algorithm and itsk-tuple version. What this means is that if two
+graphs are distinguishable by the (k − 1)-WL algorithm, then the kth level of SA
+vanishes, and that if thekth level of SA vanishes, then they are distinguishable by
+the k-WL algorithm. Thus, thek-WL algorithm provides a combinatorial characteri-
+zation of the power of this lift-and-project method applied to graph isomorphism. We
+call this sandwiching property the Transfer Lemma.
+1.1. Consequences. The Transfer Lemma, in combination with the above-
+mentioned strong results about the power of the WL algorithm, already has con-
+sequences for the graph isomorphism problem itself. For example, it follows directly
+from Grohe’s results that there exists a ﬁxed level of SA relaxations that becomes
+empty on any pair of nonisomorphic planar graphs. Quite remarkably, the proof of
+Grohe’s result relies on the interpretation of thek-WL algorithm as deciding indistin-
+guishability in a certain counting logic called C
+k+1
+∞ω , which does not seem to be related
+to linear programming relaxations.
+Less immediate applications of the Transfer Lemma arise from the link it sets be-
+tween two diﬀerent areas: polyhedral combinatorics through lift-and-project methods
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 3 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+114 ALBERT ATSERIAS AND ELITZA MANEVA
+and ﬁnite model theory through the counting logics Ck
+∞ω. We oﬀer applications going
+in both directions.
+First, we exploit known results in polyhedral combinatorics to show that several
+properties of graphs are deﬁnable in the logic Ck
+∞ω, the inﬁnitary logic with counting
+quantiﬁers andk variables, for an appropriate constantk. These properties include
+“having a matching of a given size in bipartite graphs” and “having anst-ﬂow of
+a given value in networks with unit capacities.” While the deﬁnability of the ﬁrst
+follows also from a result by Blass, Gurevich, and Shelah [6] and is not strictly new,
+the second strengthens it and is new; see thesection on related work for more on this.
+As a second application we export the inexpressibility results due to Cai, F¨urer,
+and Immerman [7] in the context of counting logics to get instances with fractional
+solutions in the context of SA relaxations. From the existence of two nonisomorphic
+n-vertex graphs of bounded degree that remain indistinguishable by the logic C
+k
+∞ω
+up tok =Ω (n), we get explicit instances of the max-cut and vertex-cover problems
+whose linear programming relaxations do not reach their integer hulls after Ω(n)
+levels of SA. Let us note that in both cases stronger results are known: Schoenebeck
+[33] proved that a nontrivial integrality gap for vertex-cover resists Ω(n) levels of
+the Lasserre hierarchy, and hence of the SA hierarchy, and similar techniques would
+apply to max-cut. At any rate, the point we are trying to make is not to get the
+strongest possible results, but to illustrate the power that the Transfer Lemma gives
+for exporting methods from one ﬁeld into the other.
+Both these applications of the Transfer Lemma make use of a general statement
+we prove about the preservation of solutions betweenk-local linear programs:i ft w o
+graphs have a nonemptyk-level SA polytope of fractional isomorphisms, our result
+implies that solutions to the linear program of one graph translate to solutions of
+the linear program of the other. As it turns out, the relaxations of vertex-cover and
+max-cut and their SA levels are all local in our sense.
+1.2. Related work. For the origins of fractional isomorphism see the refer-
+ences in the monograph [32]. The connection between fractional isomorphism and the
+color-reﬁnement algorithm for vertices was made in [31]. The extension to the levels
+of the SA hierarchy and to the tuple version of the WL algorithm and the logic with
+counting quantiﬁers is, to our knowledge, new. A subsequent work of Grohe and Otto
+[16] improves our result by showing, among other things, that a mixture of thekth
+and (k+1)st levels exactly captures thek-WL algorithm, and that neither of the pure
+levels does. This shows that the gap in our Transfer Lemma cannot be avoided.
+The logics C
+k
+∞ω are well studied in ﬁnite model theory [9, 26]. The connection
+between indistinguishability in these logics and the tuple version of the WL algorithm
+is from [18]. Despite the negative results from [7], the expressive power of these
+logics is still the object of study. Somewhatunexpectedly, it was shown in [6] that the
+property of having a perfect matching in bipartite graphs is expressible in the uniform
+version of Ck
+∞ω called IFP+C. Here we revisit matchings in bipartite graphs and
+consider the more general problems ofst-ﬂows in networks with unit capacities. Our
+results show that the existence of such ﬂows with prescribed values is expressible in
+C3
+∞ω. Our techniques and those in [6] are completely diﬀerent. The open problem
+from [6] about the deﬁnability of perfect matchings in general graphs in Ck
+∞ω,f o r
+some k ≥ 0, stays open.
+Lift-and-project methods for combinatorial optimization problems have been the
+object of intense study. An optimal integrality gap of 2 for vertex-cover was shown
+to resist Ω(logn) levels of the Lov´asz–Schrijver (LS) hierarchy in [1]. This was later
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 4 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 115
+improved in [37, 34, 12] to more levels and to the semideﬁnite version LS+. For the
+SA hierarchy, it was shown in [8] that optimal gaps of 2 for vertex-cover and max-cut
+resist nΩ(1) levels. For vertex-cover, a gap of 7/6r e s i s t sΩ (n) levels of Lasserre and
+hence of SA [33], and a gap of 1.36 resistsnΩ(1) levels of Lasserre [38]. For max-cut,
+we could not ﬁnd any published lowerbound on the SA rank, but Schoenebeckinforms
+us that his methods would yield a nontrivial gap for up to Ω(n) levels of Lasserre and
+hence SA. See also [25] for related results.
+2. Preliminaries. In this section we deﬁne SA relaxations of 0-1 integer linear
+programs and the basic deﬁnitions about counting logics and their corresponding
+pebble games.
+2.1. SA relaxations and fr actional isomorphism. Let P ⊆ [0,1]
+n be a
+polytope of the form
+{x ∈ Rn : Ax ≥ b, 0 ≤ x ≤ 1}
+for a matrix A ∈ Rm×n and a column vectorb ∈ Rm.W ew r i t eP Z for the convex
+hull of the 0-1 vectors inP. The sequence of SA relaxations of P Z is a sequence
+of polytopes P1 ⊇ P2 ⊇··· starting at P1 = P and each containingP Z.T h ekth
+polytope Pk is deﬁned in three steps.
+In the ﬁrst step, each deﬁning inequalityaTx ≥ b of P is multiplied by all possible
+terms of the form
+∏
+i∈I
+xi
+∏
+j∈J
+(1−xj),
+where I and J are subsets of [n] such that|I ∪J|≤ k−1a n dI ∩J = ∅.T h i sl e a v e s
+a system of polynomial inequalities, each of degree at mostk. In the second step,
+the system is linearized and hence relaxed: each square x2
+i is replaced byxi,e a c h
+resulting monomial of the form∏
+i∈K xi is replaced by a new variableyK,a n dt h e
+constraint y∅ = 1 is added. The result is a system of linear inequalities deﬁning a
+polytope Pk
+L in Rnk for nk = ∑k
+i=0
+(n
+i
+)
+. In the third step, the polytope is projected
+back ton dimensions by deﬁning
+Pk := {x ∈ Rn :t h e r e e x i s t sy ∈ Pk
+L such thaty{i} = xi for everyi ∈ [n]}.
+The polytopePk is called thekth level SA relaxation ofP Z. It is not hard to see that
+Pk ⊇ P Z. Indeed, the integer hull ofP is achieved not later than aftern steps [35]:
+P = P1 ⊇ P2 ⊇···⊇ Pn = P Z.
+Thus, the SA hierarchy provides a sequence of tighter and tighter relaxations of the
+integral polytopeP Z. The smallestk for whichPk = P Z is called the SArank of the
+polytope P.
+Let us specialize this construction to the polytope deﬁning fractional isomor-
+phisms. Let A =( A,E A,C A
+1 ,...,C A
+r )a n dB =( B,E B,C B
+1 ,...,C B
+r ) be colored
+directed graphs, i.e., EA ⊆ A2 and CA
+i ⊆ A for i ∈ [r], and the same for B.A l -
+though it is not a very important point, note that we do not require the color classes
+given by C1,...,C r to be disjoint. Let (Aa,a′)a,a′∈A and (Bb,b′)b,b′∈B be the adja-
+cency matrices of A and B, which we also denote byA and B.L e t(Ca,c)a∈A,c∈[r]
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 5 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+116 ALBERT ATSERIAS AND ELITZA MANEVA
+and (Db,d)b∈B,d∈[r] be the 0-1 matrices that encode the colors, which we write asC
+and D. For every pair (a,b) ∈ A×B,l e tXa,b be a variable. LetX bethe |A|×|B| ma-
+trix (Xa,b)a∈A,b∈B. The fractional relaxation of isomorphism is the following system
+of linear equalities and inequalities:
+(1)
+AX = XB, C = XD,
+BXT = XTA, D = XTC,
+Xe =1 , XTe =1 ,
+X ≥ 0.
+We write F(A, B) for this linear program. Note that if A and B are undirected
+graphs, then A = AT and B = BT, and the equationsAX = XB and BXT = XTA
+in F(A, B) become equivalent. In the general case of colored directed graphs, the
+equation BXT = XTA is added for symmetry purposes.
+For every integerk ≥ 0, letRk denote the collection of all subsetsp ⊆ A×B with
+|p|≤ k.F o rp ∈ Rk and (a,b) ∈ A×B, we use the notationp∪ab as an abbreviation
+for p ∪{ (a,b)}. For every p ∈ Rk,l e tXp be a variable. If A = {a1,...,a n} and
+B = {b1,...,b n},t h ekth level of SA applied onF(A, B)i se q u i v a l e n tt ot h es y s t e m
+given by the following equalities and inequalities:
+Aa,a1Xq∪a1b +··· +Aa,anXq∪anb = Xq∪ab1Bb1,b +··· +Xq∪abnBbn,b,(2)
+Bb,b1Xq∪ab1 +··· +Bb,bnXq∪abn = Xq∪a1bAa1,a +··· +Xq∪anbAan,a(3)
+together with
+Xq∪ab1Db1,c +··· +Xq∪abnDbn,c = XqCa,c,(4)
+Xq∪a1bCa1,c +··· +Xq∪anbCan,c = XqDb,c,(5)
+Xq∪ab1 +··· +Xq∪abn = Xq,(6)
+Xq∪a1b +··· +Xq∪anb = Xq,(7)
+Xq∪ab ≥ 0,(8)
+X∅ =1(9)
+for a ∈ A, b ∈ B, c ∈ [r], and q an element ofRk−1. We obtained these inequalities
+by multiplying each equation in (1) by a term of the form∏
+ab∈I Xab for I ⊆ A×B
+with |I|≤ k −1 and linearizing. Note that the factors of the form∏
+ab∈J(1− Xab)
+that appear to be missing here are really implicit, as the resulting equations can be
+obtained as linear combinations of those given. This holds in this special case since all
+relevant constraints are equalities instead of inequalities. We writeFk(A, B)f o rt h i s
+system. Note thatk =1g i v e sF(A, B). IfFk(A, B) is satisﬁable, we writeA ≡k
+SA B.
+2.2. Counting logics and pebble games. A counting quantiﬁer has the form
+∃≥mxφ,w h e r em is a nonnegative integer. The meaning is that “there exist at least
+m distinct x satisfying φ.” For example, the formula
+∀x(∃≥dy(E(x,y))∧¬∃≥d+1y(E(x,y)))
+says of a graph that it isd-regular, and it does so using exactly two variables. For
+the rest of the paper, let Ck
+∞ω denote the collection of all formulas made from atomic
+formulas and equalities by means of ﬁnitary and inﬁnitary conjunctions, negations,
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 6 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 117
+and standard and counting quantiﬁers, using at mostk diﬀerent variables. For more
+background on Ck
+∞ω we refer the reader to [29, 7, 9].
+An essential concept from logic is that of indistinguishability by the formulas of
+a logical language. We say that two structuresA and B are Ck
+∞ω-indistinguishable if
+every Ck
+∞ω-sentence that is true inA is also true inB, and vice versa. This deﬁnes
+an equivalence relation on the class of structures that we write asA ≡k
+C B.T h i s
+indistinguishability relation has an alternative interpretation in terms of a two-player
+game. For ﬁrst-order logic these sorts of games go back to Ehrenfeucht [10] and
+Fra¨ıss´e [11]. For the logic Ck
+∞ω we follow [7, 17], but see also [20].
+We deﬁne the game for≡k
+C.L e tA and B be colored directed graphs as before.
+Let (a, b)b eap a i ro fk-tuples, where a =( a1,...,a k)h a sai ∈ A ∪{ ⋆},a n db =
+(b1,...,b k)h a sbi ∈ B∪{⋆}.W es a yt h a t(a, b) deﬁnes a partialk-isomorphism from
+A to B if the following conditions hold for everyi ∈ [k], every j ∈ [k], and every
+c ∈ [r]:
+1. ai = ⋆if and only ifbi = ⋆;
+2. ai = aj if and only ifbi = bj;
+3. (ai,aj) ∈ EA if and only if (bi,bj) ∈ EB;
+4. ai ∈ CA
+c if and only ifbi ∈ CB
+c .
+The game is played by two players: Spoiler and Duplicator. The goal of Spoiler
+is to show a diﬀerence betweenA and B. The goal of Duplicator is to hide such a
+diﬀerence. There are 2k pebbles matched in pairs, initially oﬀ the board. In each
+round, Spoiler can remove a pair of matched pebbles oﬀ the board or choose such a
+pair of pebbles to play. Let us say he chooses theith pair to play. Then he chooses
+a structure, A or B, and a subsetX of the universe of that structure. In response,
+Duplicator must choose a subsetY of the universe of the other structure such that
+|Y| = |X|; if she cannot even do that, she loses immediately. To complete the round,
+Spoiler places one of the pebbles of theith pair over an element ofY, and in response
+Duplicator places the other pebble of theith pair over an element ofX.A tt h ee n d
+of the round the setsX and Y are forgotten, but the pebbles are retained on the
+board. Spoiler wins if at any round the correspondence between pebblesai ↦→ bi for
+i =1 ,...,k is not a partial isomorphism betweenA and B (if the pairi is oﬀ the
+board, thenai = bi = ⋆). We say that Duplicator has a winning strategy if she has a
+strategy to keep playing forever.
+Formally, winning strategies are deﬁned through back-and-forth systems as fol-
+lows. For ak-tuple a =( a1,...,a k), an indexi ∈ [k] ,an dane l e m e n ta,w ew r i t ea[i/a]
+for the result of replacing theith component ofa bya.A winning strategy for the Du-
+plicator in the k-pebble game on A and B is a nonemptyF⊆ (A∪{⋆})k ×(B∪{⋆})k
+such that every (a, b)i nF deﬁnes a partialk-isomorphism fromA to B and for every
+i ∈ [k] the following properties are satisﬁed:
+1. (a[i/⋆], b[i/⋆]) belongs toF;
+2. for everyX ⊆ A there existsY ⊆ B with |Y| = |X| such that for everyb ∈ Y
+there existsa ∈ X such that (a[i/a], b[i/b]) belongs toF;
+3. for everyY ⊆ B there existsX ⊆ A with |X| = |Y| such that for everya ∈ X
+there existsb ∈ Y such that (a[i/a], b[i/b]) belongs toF.
+The ﬁrst is called thesubtuple property, the second is theforth property, and the third
+is the back property. If there exists such a strategy, we writeA ≡k
+C B.I ti sat h e o r e m
+that this notion agrees with indistinguishability by the logic Ck
+∞ω [7]. A way to decide
+whether such a strategy exists is by running thek-dimensional WL algorithm (see the
+next section), which runs in time polynomial in|A|k +|B|k. For the statement and a
+proof of correctness see [7, 30].
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 7 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+118 ALBERT ATSERIAS AND ELITZA MANEVA
+2.3. WL algorithm. One way to determine whether A ≡k+1
+C B is by run-
+ning thek-tuple WL algorithm on each structure and checking whether the resulting
+parameters match. Let us now give the details of the algorithm. This exposition
+follows [7].
+The k-WL algorithm run onA starts with allk-tuples of elements ofA classiﬁed
+into bags labeled by the isomorphism type that the tuples induce onA,w h e r et h ei s o -
+morphismtypeinduced bya k-tuple(a1,...,a k)isthe collectionofallatomicformulas
+on the variablesx1,...,x k that are satisﬁed by the assignmentx1 = a1,...,x k = ak.
+(The atomic formulas are the formulas of the formxi = xj or E(xi,xj)o r Cc(xi)
+for some c ∈ [r].) At each iteration, the algorithm cycles through all possible k-
+tuples (a1,...,a k) and counts, for each isomorphism type of (k + 1)-tuplesT and
+each k-tuple of bags (B1,...,B k), the number ofa ∈ A for which the (k + 1)-tuple
+(a1,...,a k,a) induces on A a substructure of isomorphism typeT,a n dt h ek-tuple
+(a1,...,a i−1,a,a i+1,...,a k) belongs to the bag Bi for every i ∈ [k]. Once these
+counts are over, it reﬁnes each bag of tuples into subbags labeled by the outcomes of
+these counts. When no further splitting is possible, the algorithm stops. To avoid the
+size of the labels increasing exponentially, after each iteration the bags are ordered
+in some standard way (lexicographically bytheir labels, say) and relabeled by their
+position in this order. The parameters of the output are the counts that result at the
+ﬁnal collection of bags. Note, by the way, that the splitting process must ﬁnish after
+no more than|A|
+k iterations since whenever a bag contains a single tuple it cannot
+split any further. When thek-WL algorithm is run on bothA and B,w es a yt h a t
+the parameters match if the parameters of their outputs are the same. The claim is
+that fork ≥ 1, it holds thatA ≡k+1
+C B if and only if the parameters match when the
+k-WL algorithm is run onA and B. For a proof see [7, 30].
+There is one subtle diﬀerence between our deﬁnition of thek-WL algorithm and
+the deﬁnition in [7] that is nonetheless relevant only ifk = 1. The diﬀerence is
+that we introduce isomorphism types of (k + 1)-tuples into the counts. In the case
+k ≥ 2 it can be seen that these counts are redundant since the maximum arity of the
+relations in A is 2. The good news is that our deﬁnition uniﬁes the algorithm and its
+proof of correctness for the casesk =1a n dk> 1. In contrast the deﬁnition in [7]
+required splitting into cases. Also the generality of working with isomorphism types
+is necessary for dealing with directed graphs (in the casek = 1). Our deﬁnition of
+k-WL appeared ﬁrst in [14].
+3. T ransfer Lemma. At this point we have provided all the necessary back-
+ground to state the main result.
+Theorem 1 ( Transfer Lemma). Let A and B be colored directed graphs, and let
+k ≥ 1.T h e n
+A ≡k+1
+SA B =⇒ A ≡k+1
+C B =⇒ A ≡k
+SA B.
+Fork = 1thesecondimplicationcanbereversed; thatis, A ≡1
+SA Bisequivalentto
+A ≡2
+C B. Indeed, ≡1
+SA is just fractional isomorphism as discussed in the introduction
+and ≡2
+C is known to be equivalent to 1-WL (see [18]). Thus, the equivalence between
+≡1
+SA and ≡2
+C is the result from [31], which was the starting point for our work. For
+k> 1 we cannot show such an equivalence, and indeed subsequent work [16] shows
+that, in general, it does not hold.
+The proof will proceed by showing a longer chain of implications that involves two
+more notions of indistinguishability:≡k
+EP is an equivalence relation that extends the
+combinatorial notion known as “equitable partitions” (see [32]) tok-tuples, while≡k
+CS
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 8 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 119
+is another pebble game that we call the sliding game. The complete statement that
+we will prove is the following:
+A ≡k+1
+SA B =⇒ A ≡k+1
+C B =⇒ A ≡k
+CS B =⇒ A ≡k
+EP B =⇒ A ≡k
+SA B.
+We deﬁne≡k
+CS and ≡k
+EP in the beginning of the next section and then proceed to the
+proof.
+4 . P r o o fo ft h eT r a n s f e rL e m m a .For this section, letA and B be colored
+directed graphs, and letk ≥ 1 be a natural number. To prove the Transfer Lemma
+we will prove the longer chain of implications referred to at the end of the previous
+section. Before that, we need to deﬁne the two new notions of indistinguishability.
+4.1. F ormal deﬁnition of the sliding game. Intuitively, the sliding game is a
+variant of the pebble game in which the Spoiler is allowed to slide pebbles forward or
+backwardalong the edges of one of the directed graphs, and the Duplicator is required
+to slide the corresponding matched pebble in the same direction along the edges of
+the other graph. To formalize this we need some notation.
+For a in A∪{⋆}, deﬁneN
++(a)a n dN−(a) as follows:
+1. N+(a)= {a′∈ A :( a,a′) ∈ EA} if a ̸= ⋆;
+2. N−(a)= {a′∈ A :( a′,a) ∈ EA} if a ̸= ⋆;
+3. N+(a)= N−(a)= A if a = ⋆.
+For b in B ∪{⋆}, deﬁneN+(b)a n dN−(b) analogously.
+A winning strategy for the Duplicator in the k-pebble sliding game on A and B is
+an o n e m p t yF⊆ (A∪{⋆})k ×(B∪{⋆})k such that every (a, b)i nF deﬁnes a partial
+k-isomorphism from A to B and for everyi ∈ [k] and everyo ∈{ +,−}, the following
+properties are satisﬁed:
+1. (a[i/⋆], b[i/⋆]) belongs toF;
+2. for everyX ⊆ No(ai)t h e r ee x i s t sY ⊆ No(bi) with|Y| = |X| such that for
+every b ∈ Y there existsa ∈ X such that (a[i/a], b[i/b]) belongs toF;
+3. for everyY ⊆ No(bi)t h e r ee x i s t sX ⊆ No(ai) with|X| = |Y| such that for
+every a ∈ X there existsb ∈ Y such that (a[i/a], b[i/b]) belongs toF.
+If there exists such a strategy, we writeA ≡k
+CS B.
+4.2. Analogue of equitable partition for tuples. For an integerk ≥ 1, we
+write Sk for the set of all permutations on [k]. For a permutationπ ∈ Sk,w ew r i t e
+a◦π for the tuple (aπ(1),...,a π(k)).
+Let a =( a1,...,a k)a n da′=( a′
+1,...,a ′
+k) be tuples in (A ∪{ ⋆})k. For every
+i ∈ [k]a n do ∈{ +,−}, deﬁne
+do
+i(a, a′)=
+{ 1i f a ̸= a′and there existsa ∈ No(ai)∪{⋆} such that a′= a[i/a],
+0o t h e r w i s e .
+Note that d+
+i (a, a′)= d−
+i (a′, a). Let S and T be subsets of (A ∪{ ⋆})k. For every
+i ∈ [k]a n do ∈{ +,−}, deﬁne
+do
+i(S,T )=
+∑
+a∈S
+∑
+a′∈T
+do
+i(a, a′).
+Note that d+
+i (S,T )= d−
+i (T,S ). If S is a singleton {a},w ew r i t edo
+i(a,T )i n s t e a d
+of do
+i({a},T ). We call d+
+i (a,T )t h eout-degree of a in T on its ith component and
+d−
+i (a,T )t h ein-degree of a in T on its ith component.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 9 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+120 ALBERT ATSERIAS AND ELITZA MANEVA
+Let (P1,...,P s) be a partition of (A ∪{ ⋆})k into nonempty parts. For every
+a ∈ (A ∪{ ⋆})k,l e tc(a) be the unique m ∈ [s] such that a belongs to Pm.T h e
+partition (P1,...,P s) is called ak-equitable partition of A if for everym ∈ [s]a n d
+every a, a′∈ Pm, the following conditions hold:
+1. (a, a′) deﬁnes a partialk-isomorphism from A to A;
+2. c(a[i/⋆]) =c(a′[i/⋆]) for everyi ∈ [k];
+3. do
+i(a,Pn)= do
+i(a′,Pn) for everyi ∈ [k], o ∈{ +,−},a n dn ∈ [s];
+4. |Pc(a)| = |Pc(a◦π)| for every permutationπ ∈ Sk;
+5. c(a◦π)= c(a′◦π) for every permutationπ ∈ Sk.
+By 3, we note that the following identity holds for everym,n ∈ [s], a ∈ Pm, a′∈ Pn,
+and i ∈ [k]:
+(10) |Pm|d+
+i (a,Pn)= d+
+i (Pm,Pn)= d−
+i (Pn,Pm)= |Pn|d−
+i (a′,Pm).
+We say that A and B have a common k-equitable partition if there exist a
+k-equitable partition (P1,...,P s)o f A and a k-equitable partition (Q1,...,Q t)o f
+B such that the following conditions are satisﬁed:
+1. s = t and |Pm| = |Qm| for everym ∈ [s];
+and, for everym ∈ [s], a ∈ Pm,a n db ∈ Qm, the following hold:
+2. (a, b) deﬁnes a partialk-isomorphism from A to B;
+3. c(a[i/⋆]) =c(b[i/⋆]) for everyi ∈ [k];
+4. do
+i(a,Pn)= do
+i(b,Qn) for everyi ∈ [k], o ∈{ +,−},a n dn ∈ [s];
+5. c(a◦π)= c(b◦π) for every permutationπ ∈ Sk.
+If there exists a commonk-equitable partition, we writeA ≡k
+EP B.
+4.3. F rom SA to pebble game. We show the ﬁrst implication in the Transfer
+Lemma.
+Lemma 1. Let k ≥ 2.I f A ≡k
+SA B,t h e n A ≡k
+C B.
+Proof.L e t(Xp)p∈Rk be a feasible solution forFk(A, B). Let F be the collection
+of all pairs ofk-tuples (a, b) ∈ (A∪{ ⋆})k ×(B ∪{ ⋆})k for which the following two
+conditions are satisﬁed:
+1. ai = ⋆if and only ifbi = ⋆for everyi ∈ [k];
+2. p = {(ai,bi): i ∈ [k],a i ̸= ⋆, bi ̸= ⋆} satisﬁes Xp ̸=0 .
+Note thatF is nonempty as the pair ofk-tuples (⋆k,⋆k) satisﬁes the two conditions
+since in this casep = ∅ and X∅ ̸= 0 by (9). We proceed to show that each (a, b)i nF
+deﬁnes apartialk-isomorphismfrom Ato Bandthat the subtuple and back-and-forth
+properties are satisﬁed. We start with the subtuple property.
+Claim 1. Let p,q ∈ Rk.I f q ⊆ p,t h e nXp ≤ Xq.
+Proof. Assumeq ⊆ p. We proceed by induction on the cardinalityofthe diﬀerence
+|p−q|.I f|p−q| =0 ,t h e np = q and we aredone. Assume|p−q| > 0. Let (a,b) ∈ p−q,
+and deﬁnep′= p−{(a,b)}.T h e nq ⊆ p′and |p′−q| < |p−q|.B y( 6 )w i t hp′∈ Rk−1
+we have
+Xp′=
+∑
+b′∈B
+Xp′∪ab′.
+Since each term in the sum is nonnegative by (8), we get Xp′∪ab ≤ Xp′.S i n c e
+p′∪ ab = p, the inequality Xp ≤ Xq follows from the induction hypothesisXp′ ≤
+Xq.
+Before we continue we need a deﬁnition. Letp = {(a1,b1),..., (as,bs)}∈ Rk,
+with s ≤ k and (ah,bh) ̸=( aℓ,bℓ) for every h,ℓ∈ [s], h ̸= ℓ.W e s a y t h a tp is a
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 10 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 121
+partial (k-)isomorphism fromA to B if the following conditions are satisﬁed for every
+h,ℓ∈ [s]a n dc ∈ [r]:
+1. if ah = aℓ,t h e nbh = bℓ(and henceh = ℓ);
+2. if bh = bℓ,t h e nah = aℓ(and henceh = ℓ);
+3. if Aah,aℓ =1 ,t h e nBbh,bℓ =1 ;
+4. if Bbh,bℓ =1 ,t h e nAah,aℓ =1 ;
+5. if Cah,c =1 ,t h e nDbh,c =1 ;
+6. if Dbh,c =1 ,t h e nCah,c =1 .
+With this deﬁnition we are ready to state the second property of the solutions to
+F
+k(A, B).
+Claim 2. Let p ∈ Rk.I f Xp ̸=0 ,t h e np is a partial isomorphism from A to B.
+Proof. Assume Xp ̸=0 .L e tp = {(a1,b1),..., (as,bs)}, withs ≤ k and (ah,bh) ̸=
+(aℓ,bℓ) for everyh,ℓ∈ [s], h ̸= ℓ. We need to check all six conditions in the deﬁnition
+of partialk-isomorphism above.
+For 1, assume for contradiction thatah = aℓand bh ̸= bℓ.L e tq = p−{(aℓ,bℓ)},
+and note thatq ∈ Rk−1.F r o m( 6 )f o rt h i sq and a = ah we get
+Xq∪ahbh = Xq −
+n∑
+b∈B
+b̸=bh
+Xq∪ahb.
+Since (ah,bh) belongs toq,w eh a v eq ∪ahbh = q and therefore
+n∑
+b∈B
+b̸=bh
+Xq∪ahb =0 .
+Each term in the sum is nonnegative by (8), and hence each is 0. In particular, either
+h = ℓand then we are done, orXq∪ahbℓ =0 .B u tah = aℓand q∪aℓbℓ= p, and hence
+Xp = 0, a contradiction.
+For 2, argue as in 1 using (7) forq = p−{(ah,bh)} and b = bℓ.
+For3, assumeforcontradictionthat Aah,aℓ =1a n dBbh,bℓ =0 .L e tq = {(ah,bh)}.
+Note thatq ∈ R1 ⊆ Rk−1 since k ≥ 2. From (2) for thisq, a = ah,a n db = bℓwe get
+(11) Xq∪aℓbℓ =
+∑
+b∈B
+Xq∪ahbBb,bℓ −
+∑
+a∈A
+a̸=aℓ
+Aah,aXq∪abℓ.
+Since (ah,bh) belongs toq, by part 1 of this lemma we haveXq∪ahb = 0 whenever
+b ̸= bh. Moreover, whenever b = jh we haveBb,bℓ = 0 by assumption. Both things
+together mean that the ﬁrst sum in (11) vanishes. Since every term in the second sum
+in that same equation is nonnegative by (8), we getXq∪aℓbℓ ≤ 0. Since q ∪aℓbℓ⊆ p,
+by Claim 1 we getXp ≤ 0. But alsoXp ≥ 0b y( 8 ) ,s oXp = 0, a contradiction.
+For 4, argue as in 3 using part 2 of this lemma.
+For 5, assume for contradiction thatCah,c =1a n d Dbh,c =0 . L e tq = p −
+{(ah,bh)}.N o t et h a tq ∈ Rk−1.F r o m( 4 )f o rt h i sq and a = ah we get
+(12) XqCah,c =
+∑
+b∈B
+Xq∪ahbDb,c ≤ Xq∪ahbhDbh,c.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 11 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+122 ALBERT ATSERIAS AND ELITZA MANEVA
+But then the conditionsCah,c =1a n dDbh,c = 0 imply thatXq ≤ 0. Since q ⊆ p,w e
+get Xp ≤ 0 from Claim 1, and henceXp = 0, a contradiction.
+For 6, argue as in 5 using (5) for the sameq and b = bh.
+The next claim states the forth property.
+Claim 3. Let q ∈ Rk−1.I f Xq ̸=0 , then for every X ⊆ A there exists Y ⊆ B
+with |Y| = |X| such that for every b ∈ Y there exists a ∈ X such that Xq∪ab ̸=0 .
+Proof. Assume Xq ̸= 0. For every (a,b) ∈ A × B, deﬁne Ya,b = Xq∪ab/Xq and
+let Y be the |A|×| B| matrix (Ya,b)a∈A,b∈B. Equations (6), (8), and (9) imply that
+Y is a doubly stochastic matrix. Therefore, by the Birkhoﬀ–von Neumann theorem,
+Y is the convex combination of one or more permutation matrices:Y = ∑r
+t=1 αtΠt,
+with r ≥ 1a n dαt > 0 for everyt ∈{ 1,...,r }.L e tπ be the permutation underlying
+Π1 interpreted like a bijection fromA to B. For every X ⊆ A, deﬁne Y = π(X).
+Obviously |Y| = |X|. Moreover, for everyb ∈ Y,c h o o s ea = π−1(b) ∈ X and check
+that
+Ya,b =
+r∑
+t=1
+αtΠt(a,b) ≥ α1Π1(a,b)= α1 > 0.
+This impliesXq∪ab ̸= 0, and we are done.
+The ﬁnal claim states the back property.
+Claim 4. Let q ∈ Rk−1.I f Xq ̸=0 , then for every Y ⊆ B there exists X ⊆ A
+with |X| = |Y| such that for every a ∈ X there exists b ∈ Y such that xq∪ab ̸=0 .
+Proof. This proof is as in Claim 3; reversethe roles ofX and Y,a n da and b.
+These claims complete the proof of the lemma.
+4.4. F rom pebble game to sliding game. We show that if the Duplicator
+has a winning strategy in the nonsliding game withk+1 pebbles, then she also has a
+winning strategy in the sliding game withk pebbles. Intuitively, the idea is that the
+Duplicator can use her strategy in the nonsliding game to simulate the moves of the
+sliding game by pretending that the Spoiler makes restricted use of pebblek +1.
+More precisely, if Spoiler slides pebblei ∈ [k]f r o ma to a′in the sliding game,
+then Duplicator pretends that Spoiler actually does the following: place pebblek+1
+on a′to force the sliding condition on the Duplicator side, then move pebblei from
+a to a′to actually get the move done, and ﬁnally remove pebblek +1 oﬀ the board
+to leave it free for the next move. We make this argument formal in the next lemma.
+Lemma 2. Let k ≥ 1.I f A ≡k+1
+C B,t h e n A ≡k
+CS B.
+Proof.L e tF be a winning strategy witnessing thatA ≡k+1
+C B.L e tH be the
+collection of all pairs ofk-tuples (a′, b′), with a′=( a′
+1,...,a ′
+k) ∈ (A∪{⋆})k and b′=
+(b′
+1,...,b ′
+k) ∈ (B ∪{⋆})k, for which there exists (a, b)i nF, with a =( a1,...,a k+1)
+and b =( b1,...,b k+1), such thatai = a′
+i and bi = b′
+i for everyi ∈ [k]. In words, a′
+and b′are the projections on the ﬁrstk components of some pair of tuples (a, b)t h a t
+belongs toF. We claim thatH is a winning strategy in thek-pebble sliding game.
+First, H is nonempty sinceF is nonempty. Second, every (a′, b′)i nH is a partial
+k-isomorphism since the corresponding (a, b)i nF is a partial (k + 1)-isomorphism.
+Third, for every (a′, b′)i nH and everyi ∈ [k], the pair (a′[i/⋆], b′[i/⋆]) belongs toH
+by the closure under subtuples ofF. Next we argue that the back and forth properties
+are satisﬁed. By symmetry, it suﬃces to check the forth property with +-orientation.
+Fix (a′, b′)i nH, witha′=( a′
+1,...,a ′
+k)a n db′=( b′
+1,...,b ′
+k). Let the correspond-
+ing pair of tuples inF be a =( a′
+1,...,a ′
+k,ak+1)a n db =( b′
+1,...,b ′
+k,bk+1). Fixi ∈ [k]
+and X ⊆ N+(a′
+i). By the closure under subtuples ofF and the forth property ofF
+applied to the pair (a[k+1/⋆], b[k+1/⋆]), componentk+1,andset X ⊆ N+(⋆)= A,
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 12 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 123
+there exists Y ⊆ N+(⋆)= B with |Y| = |X| such that for everyb ∈ Y there exists
+a ∈ X such that (a[k+1/a], b[k+1/b]) belongs toF. Now let us show the following.
+Claim 5. Y ⊆ N+(b′
+i).
+Proof.I f b′
+i = ⋆, there is nothing to show since in that caseN+(b′
+i)= B and it is
+obvious thatY ⊆ B. Assume then thatb′
+i ̸= ⋆. Fix an arbitrary elementb ∈ Y.W e
+want to show that (b′
+i,b)i sa ne d g ei nB. By the choice ofY,t h e r ee x i s t sa ∈ X such
+that (a[k +1/a], b[k +1/b]) belongs toF. In particular, (a[k +1/a], b[k +1/b]) is a
+partial (k +1)-isomorphism, and since (a′
+i,a)i sa ne d g ei nA,( b′
+i,b) must also be an
+edge in B. This shows thatY ⊆ N+(b′
+i).
+Next we show the following.
+Claim 6. For every b ∈ Y ,t h e r ei sa ∈ X such that (a′[i/a], b′[i/b]) is in H.
+Proof. In the proof of the previous claim we argued that for everyb ∈ Y there
+exists a ∈ X such that (a[k +1 /a], b[k +1 /b]) belongs toF. By the forth property
+of F applied to the pair of tuples (a[k +1 /a], b[k +1 /b]), component i,a n ds e t
+X′= {a}⊆ N+(a′
+i), there existsY′⊆ N+(b′
+i) with |Y′| = |X′| such that for every
+b′∈ Y′there existsa′∈ X′such that (a[k +1/a,i/a′], b[k +1/b,i/b′]) belongs toF.
+But since the members ofF deﬁne partial (k+1)-isomorphisms and the onlya′in X′
+is a, necessarilyY′= {b} since otherwise the componentsi and k+1wouldbeequal
+in a[k +1/a,i/a′] and diﬀerent ina[k +1/b,i/b′].
+The previous paragraph shows that for everyb ∈ Y there exists a ∈ X such
+that the pair (a[k +1 /a,i/a], b[k +1 /b,i/b]) belongs toF. Since (a′[i/a], b′[i/b]) is
+precisely the pair of projections on the ﬁrstk components of the tuples in (a[k +
+1/a,i/a], b[k+1/b,i/b]), this shows that for everyb ∈ Y there existsa ∈ X such that
+(a′[i/a], b′[i/b]) belongs toH.
+The forth property ofH is proved, which proves the lemma.
+4.5. F rom sliding game to common equitable partition. Let a and b be
+k-tuples in (A∪{ ⋆})k and (B ∪{ ⋆})k, respectively. Deﬁne (a, A) ≡ (b, B)i f( a, b)
+belongs to some winning strategy for the Duplicator in thek-pebble sliding game on
+A and B.
+Lemma 3. ≡ is an equivalence relation.
+Proof. The symmetry of the relation follows from the symmetry of the game, and
+its reﬂexivityis clear. The onlypropertythat requirescheckingistransitivity. Assume
+(a, A) ≡ (b, B)a n d(b, B) ≡ (c, C). Let F and F′be the two winning strategies
+witnessing these facts. Let G be the collection of all pairs ofk-tuples (a′, c′) with
+a′∈ (A∪{⋆})k and c′∈ (C∪{⋆})k for which thereexists ak-tuple b′∈ (B∪{⋆})k such
+that (a′, b′) belongs toF and (b′, c′) belongs toF′. Clearly, each (a′, c′)i nG deﬁnes
+a partialk-isomorphism from A to C.M o r e o v e r ,(a′[i/⋆], c′[i/⋆]) belongs toG by the
+closure under subtuples properties ofF and F′. Indeed, (a′[i/⋆], b′[i/⋆]) belongs toF
+and (b′[i/⋆], c′[i/⋆]) belongs toF′for the b′that witnesses that (a′, c′) belongs toG.
+The back and forth properties ofG are also easily derived from the back and forth
+properties of F and F′. Finally, G contains the pair (a, c) by construction, which
+means that it is nonempty and hence a winning strategy witnessing that (a, A) ≡
+(c, C).
+In restriction to a single structureA, the equivalence relation≡ can be thought
+as an equivalence relation on (A∪{⋆})k.
+Lemma 4. The sequence of equivalence classes of ≡ on (A∪{⋆})k is a k-equitable
+partition of A.
+Proof.L e t(P1,...,P s) be the equivalence classes of≡ on (A∪{⋆})k.T h i sf o r m s
+a partition of (A ∪{ ⋆})k. Fix an index m ∈ [s], and ﬁx tuples a =( a1,...,a k)
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 13 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+124 ALBERT ATSERIAS AND ELITZA MANEVA
+and a′=( a′
+1,...,a ′
+k)i n Pm.S i n c ea ≡ a′, the pair (a, a′) belongs to some winning
+strategy F. In particular it deﬁnes a partialk-isomorphism from A to A.
+To argue thatc(a[i/⋆]) = c(a′[i/⋆]) for everyi ∈ [k], note that (a[i/⋆], a′[i/⋆])
+also belongs toF by the closure under subtuples property in the deﬁnition of winning
+strategy.
+Next we want to show thatdo
+i(a,Pn)= do
+i(a′,Pn) for everyi ∈ [k], o ∈{ +,−},
+and n ∈ [s]. First we consider the case that a[i/⋆] lands in Pn.I n t h i s c a s e
+do
+i(a,Pn) = 1 since every tuple inPn must be equivalent toa[i/⋆] and hence have⋆
+in theith component, anddo
+i(a,Pn) is precisely the number ofa ∈ No(ai)∪{⋆} such
+that a[i/a] belongs toPn. Also a′[i/⋆] lands inPn by the previous paragraph, and
+hence do
+i(a′,Pn) = 1 by the same argument.
+Next we consider the case wherea[i/⋆] does not land inPn.L e tX be the set of
+all a ∈ No(ai) such that a[i/a] belongs toPn.T h e n|X| = do
+i(a,Pn). Similarly, let
+X′be the set of alla′∈ No(a′
+i) such that a′[i/a′] belongs toPn.S i n c ea′[i/⋆]d o e s
+not land inPn either because c(a[i/⋆]) =c(a′[i/⋆]), we have|X′| = do
+i(a′,Pn). We
+show that|X| = |X′|.
+Let Y ⊆ No(a′
+i) be the set guaranteed to exist by the forth property ofF for
+the pair of tuples (a, a′), index i,a n ds e tX.T h e n|Y| = |X|. We claim that
+Y ⊆ X′. To show this, observe that for eacha′∈ Y there exists somea ∈ X such
+that (a[i/a], a′[i/a′]) belongs toF. Hence a[i/a] ≡ a′[i/a′], which means thata′[i/a′]
+belongs to the equivalence classPn of a[i/a]. This shows that Y ⊆ X′. Therefore
+|Y|≤| X′| and hence |X|≤| X′| because |Y| = |X|. The symmetric argument
+exchanging the roles ofa, X and a′, X′would show that|X′|≤| X|.T h u s|X| = |X′|,
+as was to be shown.
+To argue thatc(a◦π)= c(a′◦π) for every permutationπ ∈ Sk,n o t et h a tF◦ π
+deﬁned as{(c◦π, c′◦π):( c, c′) ∈F} is also a winning strategy. The same argument
+shows that|Pc(a)| = |Pc(a◦π)|.
+Lemma 5. Let k ≥ 1.I f A ≡k
+CS B,t h e n A ≡k
+EP B.
+Proof.L e t(P1,...,P s)b et h ek-equitable partition given by≡ on A. Similarly,
+let (Q1,...,Q t)b et h ek-equitable partition given by≡ on B.
+By hypothesis there exists a winning strategy for the Duplicator onA and B.
+Let F be such a strategy. By the forth property ofF, for everya in Ak there exists
+b = b(a)i n Bk such that (a, b) belongs to F, and therefore (a, A) ≡ (b(a), B).
+Moreover, by the transitivity of the equivalence relation and the fact that (a, A) ≡
+(b(a), B) for every a ∈ (A ∪{ ⋆})k it follows that (a, A) ≡ (a′, A) if and only if
+(b(a), B) ≡ (b(a′), B). This means that there exists a well-deﬁned injective mapping
+α : {1,...,s }→{ 1,...,t } that takesm ∈ [s] to the uniquen ∈ [t] such that everya
+in Pm is equivalent to everyb in Qn.
+Claim 7. s = t.
+Proof. The injective mapping α : {1,...,s }→{ 1,...,t } shows that s ≤ t.B y
+symmetry we also gett ≤ s and hences = t.
+Since α is indeed a bijection, we may assume that it is the identity by rearranging
+the partitions. In other words, from now on we assume that (a, A) ≡ (b, B)i fa n d
+only ifc(a)= c(b).
+Claim 8. c(a[i/⋆]) =c(b[i/⋆]) for every i ∈ [k], m ∈ [s], a ∈ Pm,a n d b ∈ Qm.
+Proof. Since (a, A) ≡ (b, B), the pair (a, b) belongs to some winning strategyF,
+but then the pair (a[i/⋆], b[i/⋆]) also belongs toF by the closure under subtuples of
+winning strategies. This shows thatc(a[i/⋆]) =c(b[i/⋆]).
+Next we show that the degrees are the same.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 14 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 125
+Claim 9. do
+i(a,Pn)= do
+i(b,Qn) for every i ∈ [k], o ∈{ +,−}, m,n ∈ [s], a ∈ Pm,
+and b ∈ Qm.
+Proof.L e t a =( a1,...,a k)a n db =( b1,...,b k). First we consider the case
+that a[i/⋆] lands inPn.I nt h i sc a s edo
+i(a,Pn) = 1 since every tuple inPn must be
+equivalent toa[i/⋆] and hence have⋆in theith component, anddo
+i(a,Pn) is precisely
+the number ofa ∈ No(ai)∪{⋆} for which a[i/a] lands inPn. By Claim 8,b[i/⋆] also
+lands inQn. Hence do
+i(b,Qn) = 1 by the same argument, which completes this case.
+Next we consider the case that a[i/⋆] does not land inPn.L e tX be the set
+{a ∈ No(ai): a[i/a] ∈ Pn}.T h u s|X| = do
+i(a,Pn). By the deﬁnition of winning
+strategy for the Duplicator there exists a setY ⊆ No(bi) with |Y| = |X| such that
+for everyb ∈ Y there existsa ∈ X such that (a[i/a], b[i/b]) belongs toF. Since this
+implies (a[i/a], A) ≡ (b[i/b], B), we can conclude thatb[i/b] ∈ Qn for everyb ∈ Y.
+Thus do
+i(b,Qn) ≥| Y| = |X| = do
+i(a,Pn).
+The symmetric condition for winning strategy implies the opposite inequality, and
+putting the two together we havedo
+i(a,Pn)= do
+i(b,Qn).
+Next we show that the classes have the same sizes.
+Claim 10. |Pm| = |Qm| for every m ∈ [s].
+Proof. First notice that the fact that there is a winning strategyfor the Duplicator
+implies that|A| = |B|. To see this note ﬁrst that the pair ofk-tuples (⋆k,⋆k) belongs
+to the winning strategy by the closure under subtuples of winning strategies, and
+that the forth property applied to this pair of tuples and anyi ∈ [k], o ∈{ +,−}
+requires that for everyX ⊆ N
+o(⋆)= A there must exist aY ⊆ No(⋆)= B such that
+|Y| = |X|, among other properties. In particular, choosingX = A we get|B|≥| A|.
+By the symmetric condition we also get|A|≥| B|. Using the equality between the
+sizes ofA and B the statement of this claim follows from the previous one, as we show
+next.
+For every m,n ∈ [s], a ∈ Pm, a′∈ Pn, b ∈ Qm,a n db′∈ Qn we have the
+identities
+|Pm|d+
+i (a,Pn)= d+
+i (Pm,Pn)= d−
+i (Pn,Pm)= |Pn|d−
+i (a′,Pm),
+|Qm|d+
+i (b,Qn)= d+
+i (Qm,Qn)= d−
+i (Qn,Qm)= |Qn|d−
+i (b′,Qm).
+Therefore
+|Pm|
+|Pn| = d−
+i (a′,Pm)
+d+
+i (a,Pn) = d−
+i (b′,Qm)
+d+
+i (b,Qn) = |Qm|
+|Qn|,
+where the second equality follows from the previous claim. This means that the ratio
+r = |Pm|/|Qm| does not depend onm, and since|A| = ∑s
+m=1 |Pm| = r ∑s
+m=1 |Qm| =
+r|B|, it follows thatr =1 .
+Claim 11. c(a◦π)= c(b ◦π) for every permutation π ∈ Sk, m ∈ [s], a ∈ Pm,
+and b ∈ Qm.
+Proof. Since (a, A) ≡ (b, B), the pair (a, b) belongs to some winning strategyF.
+But then the pair (a◦π, b◦π) belongs toF◦ π deﬁned by{(c◦π, c′◦π):( c, c′) ∈F} ,
+which is again a winning strategy. This shows thatc(a◦π)= c(b◦π).
+These claims show that (P1,...,P s)a n d(Q1,...,Q s)w i t n e s st h a tA and B have
+a commonk-equitable partition.
+4.6. F rom common equitable partition to SA. We prove the last implica-
+tion of the Transfer Lemma.
+Lemma 6. Let k ≥ 1.I f A ≡k
+EP B,t h e n A ≡k
+SA B.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 15 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+126 ALBERT ATSERIAS AND ELITZA MANEVA
+Proof.L e t(P1,...,P s)a n d(Q1,...,Q s) be the commonk-equitable partition of
+A and B.
+For everyq ⊆ A×B with |q|≤ k,i fq is not a partial mapping, deﬁneXq =0 .
+If q is a partial mapping, deﬁne Xq as follows. Let a1,...,a r be an enumeration
+without repetitions of Dom(q). In particular, r ≤ k.L e t a =( a1,...,a r,⋆,...,⋆)
+be thek-tuple that starts witha1,...,a r and is padded to lengthk by adding stars.
+Let b =( b1,...,b k)b et h ek-tuple deﬁned bybi = q(ai) for everyi ∈{ 1,...,r } and
+bi = ⋆for every i ∈{ r +1 ,...,k }.L e tm = c(a)a n dn = c(b). If m ̸= n, deﬁne
+Xq =0 . I fm = n, deﬁne Xq =1 /|Pm| =1 /|Qm|.S i n c ec(a ◦ π)= c(b ◦ π)a n d
+|Pc(a)| = |Pc(a◦π)| hold for every permutationπ ∈ Sk, this deﬁnition does not depend
+on the choice of the enumerationa1,...,a r and is hence well deﬁned.
+Claim 12. If |q| <k and a ∈ A,t h e nXq = ∑
+b∈B Xq∪ab.
+Proof.I f q is not a partial mapping, thenXq =0a n dXq∪ab =0f o re v e r yb ∈ B,
+and the identity is obvious. Assume then thatq is a partial mapping and that|q| <k .
+Let a1,...,a r be an enumeration without repetitions of Dom(q). In particular,r<k .
+Let a =( a1,...,a r,⋆,...,⋆)b et h ek-tuple that starts witha1,...,a r and is padded
+to lengthk by adding stars. Letb =( b1,...,b k)b et h ek-tuple deﬁned bybi = q(ai)
+for everyi ∈{ 1,...,r } and bi = ⋆for everyi ∈{ r +1,...,k }. Setting i = r +1f o r
+the rest of the proof, in particular,ai = bi = ⋆.
+Let m = c(a)a n dn = c(b). If m ̸= n,w eh a v eXq = 0 by deﬁnition, and
+also Xq∪ab =0f o re v e r yb ∈ B since otherwise c(a[i/a]) = c(b[i/b]), which implies
+c(a)= c(b), and hencem = n, by the deﬁnition of common equitable partition. Since
+this makes the identity obvious, we may assume thatm = n.
+Recall i = r + 1, and let a′= a[i/a]a n dm′= c(a′). Note that none of the
+tuples b′in Qm′ can have⋆in theith component since (a′, b′) must deﬁne a partial
+k-isomorphism; a′does not have it. We claim that
+∑
+b∈B
+Xq∪ab = d+
+i (b,Qm′)
+|Qm′| = d−
+i (Qm′,Qm)
+|Qm||Qm′| = 1
+|Qm| = Xq.
+The ﬁrst equality follows from the deﬁnition ofXq∪ab that sets Xq∪ab =0i f b[i/b]
+does not belong toQm′,a n dXq∪ab =1 /|Qm′| if b[i/b] belongs toQm′, together with
+the fact thatN+(bi)= B since bi = ⋆,a n dt h a tb[i/⋆] does not land inQm′ since
+no tuple inQm′ has ⋆in the ith component. The second equality follows from the
+identity
+|Qm|d+
+i (b,Qm′)= d+
+i (Qm,Qm′)= d−
+i (Qm′,Qm).
+For the third equality, letb ∈ B be such that b[i/b] lands inQm′. Such a b must
+exist since d+
+i (b,Qm′)= d+
+i (a,Pm′)a n dd+
+i (a,Pm′) ≥ 1a s a[i/a] lands inPm′ and
+a ∈ N+(ai)= N+(⋆)= A. Again we are using the fact that no tuple inQm′ has
+⋆in theith component to make sure that the countd+
+i (b,Qm′) does not include⋆.
+Now we haved−
+i (b[i/b],Qm)=1s i n c ed−
+i (b[i/b],Qm) is precisely the number ofb′
+in N−(b) ∪{ ⋆} such that b[i/b′] belongs toQm, but the only suchb′is ⋆. Indeed,
+every tuple b′in Qm has ⋆in the ith component since (b, b′) must deﬁne a partial
+k-isomorphism, and b has it. This together with the identity
+d−(Qm′,Qm)= |Qm′|d−
+i (b[i/b],Qm)
+proves the third equality and the claim.
+Claim 13. If |q| <k and b ∈ B,t h e nXq = ∑
+a∈A Xq∪ab.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 16 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 127
+Proof. As above, exchange the roles ofa and b,a n dA and B.
+Claim 14. If |q| <k , a ∈ A,a n d b ∈ B,t h e n
+∑
+a′∈A
+Aa,a′Xq∪a′b =
+∑
+b′∈B
+Xq∪ab′Bb′,b.
+Proof.I f q is not a partial mapping, then Xq =0a n d Xq∪a′b =0f o re v e r y
+b ∈ B, and the identity is obvious. Assume then thatq is a partial mapping and
+that |q| <k .L e ta1,...,a r be an enumeration without repetitions of Dom(q). In
+particular, r<k since we are assuming|q| <k .L e ta =( a1,...,a r,a,⋆,...,⋆)b e
+the k-tuple that starts witha1,...,a r, follows witha, and is padded to lengthk by
+adding stars. Similarly, letb =( q(a1),...,q (ar),b,⋆,...,⋆)b et h ek-tuple that starts
+with q(a1),...,q (ar), follows withb, and is padded to lengthk by adding stars.
+Set i = r + 1 for the rest of the proof, and letm = c(a)a n dn = c(b). By the
+same argument as in Claim 12, note that none of the tuples inQm or Pn has ⋆in the
+ith component since neithera nor b has it. We claim that
+∑
+a′∈A
+Aa,a′Xq∪a′b =
+∑
+a′∈N +(a)
+Xq∪a′b = d+
+i (a,Pn)
+|Pn| .(13)
+The ﬁrst equality is obvious. The second equality follows from the deﬁnition ofXq∪a′b
+that setsXq∪a′b =0i f a[i/a′]d o e sn o tb e l o n gt oPn,a n dXq∪a′b =1 /|Pn| if a[i/a′]
+belongs to Pn, together with the fact thata[i/⋆] does not land inPn s i n c en o n eo f
+the tuples inPn has ⋆in theith component.
+At the same time we claim that
+(14)
+∑
+b′∈B
+Xq∪ab′Bb′,b =
+∑
+b′∈N−(b)
+Xq∪ab′ = d−
+i (b,Qm)
+|Qm| .
+Again the ﬁrst equality is obvious, and the second equality follows from the deﬁnition
+of Xq∪ab′, together with the fact that the tuples inQm do not have ⋆in the ith
+component.
+Fix a′∈ Pn and b′∈ Qm. From the deﬁnition of common equitable partition we
+have d−
+i (a′,Pm)= d−
+i (b,Qm)a n dd+
+i (b′,Qn)= d+
+i (a,Pn). Moreover, |Pm| = |Qm|
+and |Pn| = |Qn|. These, together with either of the two identities
+|Pn|d−
+i (a′,Pm)= d−
+i (Pn,Pm)= d+
+i (Pm,Pn)= |Pm|d+
+i (a,Pn),
+|Qm|d+
+i (b′,Qn)= d+
+i (Qm,Qn)= d−
+i (Qn,Qm)= |Qn|d−
+i (b,Qm),
+give the identity
+d−
+i (b,Qm)
+|Qm| = d+
+i (a,Pn)
+|Pn| .
+This shows the equality between (13) and (14).
+Claim 15. If |q| <k , a ∈ A,a n d c ∈ [r],t h e nXqCa,c = ∑
+b∈B Xq∪abDb,c.
+Proof. First assume thatCa,c = 0, so that the left-hand side is 0. Then for every
+b ∈ B we have eitherDb,c =0o r Db,c =1a n dt h e nXq∪ab =0s i n c eq∪ab cannot be
+a partial isomorphism in this case. Thus, each term in the right-hand side is 0.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 17 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+128 ALBERT ATSERIAS AND ELITZA MANEVA
+Next assume thatCa,c = 1, so that the left-hand side isXq.T h e nXq∪ab =0
+whenever Db,c =0s i n c eq ∪ab cannot be a partial isomorphism in this case. Thus,
+the right-hand side can be written as
+∑
+b∈B
+Xq∪ab,
+which equalsXq by (6).
+Claim 16. If |q| <k , b ∈ B,a n d c ∈ [r],t h e nXqDb,c = ∑
+a∈A Xq∪abCa,c.
+Proof. This proof is the same as in the previous claim, exchanging the roles ofa
+and b,a n dC and D.
+These claims show that the proposed assignment satisﬁes all the equations of
+Fk(A, B). Since the components are nonnegative, the lemma follows.
+5. Preservation of local linear programs. Manyofthelinearprograms(LPs)
+that appear in the combinatorial optimization literature are composed of linear in-
+equalities that are in some senselocal: the variables involved in the inequality talk
+about some smallneighborhood of the graph or hypergraph, or whatever combinato-
+rial structure the LP refers to. In this section we isolate one such deﬁnition oflocal
+LP and show that its polytope of feasible solutions is preserved by the SA levels of
+fractional isomorphism. This will be of use in the applications of sections 6.
+5.1. Local LPs. Let A =( A,E A,C A
+1 ,...,C A
+r ) be a coloreddirected graph. Let
+the size of a tuplea ∈ Ak, denoted by|a|, be the number of distinct elements in the
+tuple. For a tuplea =( a1,...,a k) ∈ Ak, let us temporarily deﬁneγ : {a1,...,a k}→
+{1,..., |a|} to be the unique bijective map such thatγ(ai) ≤| (a1,...,a i)| for every
+i ∈ [k]. We will denote by [A, a] the generic colored directed graph isomorphic to the
+subgraph of A induced by {a1,...,a k} together with the tuple corresponding toa,
+which we refer to as itsorder-tuple. Thus, in [A, a],
+1. the vertices are{1,..., |a|},
+2. the edges are{(γ(a),γ(a′)) : (a,a′) ∈ EA},
+3. the ith color is{γ(a): a ∈ CA
+i },a n d
+4. the order-tuple is (γ(a1),γ(a2),...,γ (ak)).
+For two tuplesa =( a1,...,a m)a n db =( b1,...,b n), we write ab for the con-
+catenation tuple (a1,...,a m,b1,...,b n). If m = n,w ew r i t ea ↦→ b for the tuple of
+pairs ((a1,b1),..., (am,bm)), which we think of as a partial mapping.
+A basic k-local LP is speciﬁed by rational numbersd[C,c] and M[C,c]
+r for every
+generic colored digraph C of size at mostk with order-tuple c of length at most 2k
+and for everyr ≤ k. The instantiation of the system onA is the system of inequalities
+that has one variablexa for every tuplea ∈ A≤k and one inequality of the form
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+M[A,aa′]
+r xa ≤ d[A,a′]
+for every a′∈ A≤k. In words, the coeﬃcient of the variable indexed by a in the
+inequality indexed by a′depends only on [A, aa′]a n dt h el e n g t ho fa.A k-local
+LP is a union of basic k-local LPs. If L is a k-local LP, its instantiation on A,
+denoted byL(A), is the union of the instantiations of the basick-local systems that
+compose L.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 18 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 129
+5.2. Examples. Before we go on to show that the feasible solutions to local LPs
+are preserved by the SA levels of fractional isomorphism, let us give a few examples
+of local LPs. These examples will actually play a role later in the paper.
+Typical constraints. All four examples discussed contain two types of constraints
+for which it is easy to check the condition ofk-locality. One special case that satisﬁes
+the condition is an LP consisting of a single inequality with the same coeﬃcient for all
+xa in whicha induces a particular colored directed subgraph or one in a set of colored
+directed subgraphs on the structure. We call such a basic local LPhomogeneous.T h e
+objective functions of many natural LPs are homogeneous local LPs, as we will see.
+Another special case is when the coeﬃcient in front of variablexa in the inequality
+indexed by a′is nonzero only if the elements ina are contained within a′.I n t h i s
+case we haveM[C,c]
+r ̸= 0 only if the ﬁrstr elements ofc are included in the lasts−r,
+where s is the length of c. The nonzero coeﬃcients are allowed to all be diﬀerent
+since in the case thata1 and a2 are contained in a′,w eh a v e[A, a1a′] ̸=[ A, a2a′]
+whenever a1 ̸= a2, because they have diﬀerent order-tuples. We call such a basic
+k-local LP bounded. In particular, any inequality in an LP that mentions only the
+variables indexed by tuples over up tok points ofA is a boundedk-local LP. We see
+examples below.
+Matchings in bipartite graphs. We write the fractional matching polytope for
+general graphs which, for bipartite graphs, is known to coincide with its integer hull.
+Let G =( V,E ) be an undirected graph. The classical way of writing the frac-
+tional matching polytope has one variablexe for each edgee ∈ E and two types of
+constraints:
+∑
+e∈δ(u) xe ≤ 1f o r u ∈ V,
+0 ≤ xe ≤ 1f o r e ∈ E,
+where δ(u) denotes the set of edges ofG that are incident onu. The classical objective
+function is
+maximize ∑
+e∈E xe.
+In order to write this LP as a local LP, we introduce one variablexuv for every pair
+of verticesu,v ∈ V, and we add constraints that force these variables to 0 if{u,v} is
+not an edge of the graph and forcexuv = xvu for everyu,v ∈ V.W ea l s oi n c o r p o r a t e
+the objective function as one additional constraint:
+1
+2
+∑
+u̸=v xuv ≥ W,(15)
+∑
+v̸=u xuv ≤ 1f o r u ∈ V,(16)
+0 ≤ xuv ≤ 1f o r u,v ∈ V,(17)
+xuv =0 f o r u,v ∈ V such that{u,v} ̸∈ E,(18)
+xuv = xvu for u,v ∈ V with u ̸= v.(19)
+We check that this is a 2-local LP. First, inequality (15) is a basic homogeneous
+2-local system: set d[C,c] = −W if C is the empty graph andc is the empty tuple,
+and d[C,c] = 0 otherwise; setM[C,c]
+r = −1/2i fr =2a n dC is a graph on{1,2} and
+c =( 1,2), andM[C,c]
+r = 0 otherwise. Second, inequality (16) is a basic 2-local LP: set
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 19 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+130 ALBERT ATSERIAS AND ELITZA MANEVA
+d[C,c] =1i f C is a graph on{1} and c =( 1 ) ,a n dd[C,c] = 0 otherwise; setM[C,c]
+r =1
+if r =2a n dC is a graph on{1,2} and c =( 1,2,1), andM[C,c]
+r = 0 otherwise. The
+remaining inequalities are basic bounded 2-local systems. Thus, the result is a union
+of basic 2-local LPs and hence a 2-local LP.
+Maximum ﬂows. A network is a directed graph without self-loops, and with
+two distinguished verticess and t. We code these as colored directed graphsG =
+(V,E,S,T ), with colorS set to{s} and colorT set to{t}. Our networks have unit
+capacities at every edge.
+The classical LP forst-ﬂows has one variablexe for everye ∈ E and two types
+of constraints:
+∑
+e∈δ−(u) xe − ∑
+e∈δ+(u) xe =0 f o r u ∈ V \{s,t},
+0 ≤ xe ≤ 1f o r e ∈ E,
+where δ−(u) denotes the set of edges ofG entering u,a n dδ+(u) denotes the set of
+edges of G leaving u. The objective is to maximize the ﬂow going out ofs:
+maximize ∑
+e∈δ+(s) xe.
+In order to write this LP as a local LP, we introduce one variablexuv for every pair
+of verticesu,v ∈ V and add constraints that forcexuv to be nonzero only on edges
+(u,v) ∈ E. We also incorporate the objective function as a constraint:
+∑
+v̸=s xsv ≥ W,(20)
+∑
+v̸=u xvu − ∑
+v̸=u xuv =0 f o r u ∈ V \{s,t},(21)
+0 ≤ xuv ≤ 1f o r u,v ∈ V,(22)
+xuv =0 f o r u,v ∈ V such that (u,v) ̸∈ E.(23)
+Inequality (20) is a basic homogeneous 2-local LP: setd[C,c] = −W if C is the
+empty graph and c is the empty tuple, andd[C,c] = 0 otherwise; setM[C,c]
+r = −1
+if r =2a n d C is a graph on{1,2} with color S on vertex 1 and c =( 1,2), and
+M[C,c]
+r = 0 otherwise. Equation (21) is a union of two basic 2-local LPs with opposite
+signs: one for ≤ and one for≥. In the ﬁrst, setd[C,c] =0f o re v e r yC and c,a n d
+M[C,c]
+r =1i f r =2a n d C is a graph on{1,2} where 2 is not coloredS or T and
+c =( 1,2,2), and setM[C,c]
+r = −1i fr =2a n dC is a graph on{1,2} where 1 is not
+colored S or T and c =( 1,2,1), andM[C,c]
+r = 0 otherwise. The remaining inequalities
+are basic bounded 2-local LPs.
+SA levels of vertex-cover. Let G =( V,E ) be an undirected graph. The vanilla
+LP for vertex cover is
+0 ≤ xu ≤ 1f o r u ∈ V,(24)
+xu +xv ≥ 1f o r {u,v}∈ E.(25)
+The objective function is
+minimize ∑
+u∈V xu.
+Thecorresponding t-levelSAsystemisdeﬁnedonthe variables yI forevery I ⊆ V with
+|I|≤ t.F o rI,J ⊆ V,l e tS(I,J )= ∑
+J′⊆J(−1)|J′|yI∪J′, which is the linearization of
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 20 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 131
+the extended monomial ∏
+i∈I xi
+∏
+j∈J(1−xj). In particular, S(I,J )=0i f I and J
+are not disjoint. In the following deﬁnitionI and J range over all disjoint subsets ofV
+such that|I ∪J|≤ t−1. We also incorporate the objective function as a constraint:
+∑
+u∈V y{u} ≤ W,(26)
+y∅ =1 ,(27)
+0 ≤ S(I ∪{u},J ) ≤ S(I,J )f o r u ∈ V,(28)
+S(I ∪{u},J )+ S(I ∪{v},J ) ≥ S(I,J )f o r {u,v}∈ E.(29)
+Inequalities (28) and (29) come from multiplying (24) and (25) by the extended
+monomial ∏
+i∈I xi
+∏
+j∈J(1−xj) and linearizing.
+To put it in the form of a local LP we need the variables to be indexed by tuples,
+so we replaceyI for I = {v1,...,v r}, r ≤ t,b yya for a =( v1,...,v r), and for every
+permutation π :[ r] → [r] we add the constraintya = ya◦π. Constraints should also
+be indexed by tuples, so (29) is really a pair of (equivalent) constraints: one for (u,v)
+and one for (v,u).
+Inequality (26), whichcomesfromtheobjectivefunction, isahomogeneous1-local
+LP, which implies it is also a homogeneous (t+1)-local LP. The remaining constraints
+are bounded (t+1)-local LPs.
+SA levels of max-cut. Again, let G =( V,E ) be an undirected graph. The LP
+relaxation for max-cut known as the metric polytope has one variablexuv for every
+pair of verticesu,v ∈ V and the constraints below:
+0 ≤ xuv ≤ 1f o r u,v ∈ V,(30)
+xuv = xvu for u,v ∈ V,(31)
+xuw ≤ xuv +xvw for u,v,w ∈ V,(32)
+xuv +xvw ≤ 2−xuw for u,v,w ∈ V.(33)
+The objective function is
+maximize 1
+2
+∑
+{u,v}∈E xuv.
+The corresponding t-level SA system is deﬁned on the variables yI for every
+I ⊆ V2 with |I|≤ t. In the following systemI and J range over all disjoint subsets
+of V2 such that |I ∪ J|≤ t − 1. We also incorporate the objective function as a
+constraint:
+1
+2
+∑
+{u,v}∈E y{uv} ≥ W,(34)
+y∅ =1 ,(35)
+0 ≤ S(I ∪{uv},J ) ≤ S(I,J ),(36)
+S(I ∪{uv},J )= S(I ∪{vu},J ),(37)
+S(I ∪{uw},J ) ≤ S(I ∪{uv},J )+ S(I ∪{vw},J ),(38)
+S(I ∪{uv},J )+ S(I ∪{vw},J ) ≤ 2S(I,J )−S(I ∪{uw},J ).(39)
+Toput itin the formrequiredbyTheorem2weneedthe variablestobe indexedby
+tuples, so we replaceyI for I = {(v1,v′
+1),..., (vr,v′
+r)}, r ≤ t,b yya for a =( a1,...,a r)
+with ai =( vi,v′
+i), and for every permutation π :[ r] → [r]w ea d dt h ec o n s t r a i n t
+ya = ya◦π.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 21 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+132 ALBERT ATSERIAS AND ELITZA MANEVA
+Similarly to the case of vertex-cover, the ﬁrst constraint, which comes from the
+objectivefunction, isahomogeneous2-localLP,whichimplies itis alsoahomogeneous
+(2t+1)-local LP. The remaining constraints are bounded (2t+1)-local LPs.
+5.3. Preservation of feasible solutions. Next we show that local LPs have
+the good feature that their polyhedra of feasible solutions are preserved by suﬃciently
+high levels of the SA relaxation of fractional isomorphism. More precisely, to preserve
+k-local LPs,k levels suﬃce. The full statement is the following.
+Theorem 2. Let L be a k-local LP, and let A and B be colored digraphs such
+that A ≡
+k
+SA B.T h e nL(A) is feasible if and only if L(B) is feasible. Furthermore, if
+xa is a solution of L(A),t h e nxb = ∑
+a∈Ar Xa↦→b xa is a solution of L(B),w h e r e
+X denotes the solution witnessing A ≡k
+SA B,a n d r is the length of b.
+The rest of this section is devoted to the proof of Theorem 2. Let us ﬁxA and
+B such that A ≡k
+SA B, and letX be a solution ofFk(A, B) witnessing this fact. We
+start with a straightforward lemma about the properties ofX that we will use several
+times.
+Lemma 7. Let 0 ≤ r,s ≤ k be integers, let a ∈ Ar and a′∈ As be such that
+|aa′|≤ k,a n dl e t b ∈ Br .T h e n
+Xa↦→b =
+∑
+b′∈Bs
+[A,aa′]=[B,bb′]
+Xaa′↦→bb′.
+Proof. The proof is a simple induction ons.F o rs = 0 the statement trivially
+holds. Next, for s ≥ 1, suppose a′= a′′a,w h e r ea′′∈ As−1 and a ∈ A. Applying
+Claim 2 from section 4 we have∑
+b′′∈Bs−1,b∈B
+[A,aa′′a]=[B,bb′′b]
+Xaa′′a ↦→ bb′′b =
+∑
+b′′∈Bs−1
+[A,aa′′]=[B,bb′′]
+∑
+b∈B
+Xaa′′a ↦→ bb′′b.
+Equation (6) of the SA system shows that the right-hand side is
+∑
+b′′∈Bs−1
+[A,aa′′]=[B,bb′′]
+Xaa′′↦→bb′′,
+and the induction hypothesis gives that this is preciselyXa↦→b.
+We proceed with the proof of the theorem. It is suﬃcient to prove the statement
+for a basick-local LPL given byM[C,c]
+r and d[C,c].L e txa be a feasible solution for
+L(A). Thus for everya′∈ A≤k we have
+(40)
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+M[A,aa′]
+r xa ≤ d[A,a′].
+We need to show that for everyb′∈ B≤k it holds that
+(41)
+k∑
+r=1
+∑
+b∈Br
+|bb′|≤k
+M[B,bb′]
+r
+∑
+a∈Ar
+Xa↦→b xa ≤ d[B,b′].
+In the following, let 0≤ s ≤ k be such that b′∈ Bs. Using Lemma 7 the left-hand
+side of (41) becomes
+k∑
+r=1
+∑
+b∈Br
+|bb′|≤k
+M[B,bb′]
+r
+∑
+a∈Ar
+∑
+a′∈As
+[A,aa′]=[B,bb′]
+Xaa′↦→bb′ xa.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 22 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 133
+Rearranging the sums with care we can rewrite this as
+∑
+a′∈As
+[A,a′]=[B,b′]
+k∑
+r=1
+∑
+b∈Br
+|bb′|≤k
+∑
+a∈Ar
+[A,aa′]=[B,bb′]
+M[B,bb′]
+r Xaa′↦→bb′ xa
+=
+∑
+a′∈As
+[A,a′]=[B,b′]
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+∑
+b∈Br
+[A,aa′]=[B,bb′]
+M[B,bb′]
+r Xaa′↦→bb′ xa
+=
+∑
+a′∈As
+[A,a′]=[B,b′]
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+M[A,aa′]
+r xa
+∑
+b∈Br
+[A,aa′]=[B,bb′]
+Xaa′↦→bb′.
+In the last line we used the fact that the condition [ A, aa′]=[ B, bb′] implies
+M[A,aa′]
+r = M[B,bb′]
+r . Using again Lemma 7 the last expression becomes
+∑
+a′∈As
+[A,a′]=[B,b′]
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+M[A,aa′]
+r xa Xa′↦→b′
+=
+∑
+a′∈As
+[A,a′]=[B,b′]
+Xa′↦→b′
+k∑
+r=1
+∑
+a∈Ar
+|aa′|≤k
+M[A,aa′]
+r xa
+≤
+∑
+a′∈As
+[A,a′]=[B,b′]
+Xa′↦→b′ d[A,a′] = d[B,b′].
+In the last line we used (40), together with the fact that the condition [A, a′]=[ B, b′]
+implies d[A,a′] = d[B,b′], another application of Lemma 7, andX∅ = 1 by (9). This
+completes the proof of Theorem 2.
+6. Applications. In this section we highlight some applications of the Transfer
+Lemma. First, we use known results from polyhedral combinatorics to get new de-
+ﬁnability results in ﬁnite model theory. Second, we use known constructions in ﬁnite
+model theory to get instances of high SA rank.
+In the following, letMAX-FLOW denote the LP forst-ﬂows, as discussed in sec-
+tion 5. Similarly, letBIPARTITE-MATCHINGdenote the standard LP for matchings in
+bipartite graphs. For every integert ≥ 1, let VERTEX-COVERt denote thetth level of
+SA of the standard linear programming relaxation of vertex-cover, and letMAX-CUTt
+denote thetth level of SA of the metric polytope relaxation of max-cut.
+6.1. New deﬁnability results. For a local LPL,w es a yt h a tL is preserved
+by an equivalence≡ if, whenever A ≡ B and L(A) has a solution,L(B)a l s oh a s
+a solution. More generally, ifL is a local LP with an associated objective function
+max cTx for which the constraintcTx ≥ W is also a local LP for every valueW,
+then we say thatthe optimum value of L is preserved by ≡ if the expanded local LP
+L∪{ cTx ≥ W} is preserved by≡ for everyW.
+The examples mentioned are allk-local LPs, for appropriatek, with the objective
+function incorporated as a constraint. A corollary to Theorem 2 is that the opti-
+mum value ofMAX-FLOW is preserved by≡2
+SA. Similarly, the optimum value of the
+LP BIPARTITE-MATCHING is preserved by≡2
+SA,t h eo p t i m u mo fVERTEX-COVERt is
+preserved by ≡t+1
+SA , and the optimum of MAX-CUTt is preserved by≡2t+1
+SA .B y t h e
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 23 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+134 ALBERT ATSERIAS AND ELITZA MANEVA
+Transfer Lemma, the optimum values of these LPs are also preserved by≡3
+C in the
+ﬁrst two cases and by≡t+2
+C and ≡2t+2
+C in the last two.
+Oneconsequenceofthisis, forexample,thattheclassofbipartitegraphsthathave
+a perfect matching is deﬁnable by a sentence of the logic C3
+∞ω. Indeed, by a standard
+result of ﬁnite model theory, each≡3
+C-equivalence class is deﬁnable by a C3
+∞ω-sentence
+(see Lemma 1.39 in [29]), and therefore it suﬃces to take the (inﬁnitary) disjunction
+of the sentences that deﬁne the equivalence classes of the bipartite graphs that have
+a perfect matching. The preservation by≡3
+C guarantees the correctness. The same
+sort of argument carries over toMAX-FLOW on st-networks. Thus, for example, the
+class of saturable networks is C3
+∞ω-deﬁnable, where a saturable network is one in
+which enough ﬂow can be pushed through it to ﬁll the capacity of all arcs leaving the
+source. Obviously, the same would work for networks on which a 1/3-fraction of the
+capacity, say, can be ﬁlled.
+A less direct application concerns the max-cut problem onK5-minor-free graphs.
+A nontrivial result in polyhedral combinatorics states that for graphs G that do
+not have K5 as a minor, optimizing over the projection of the metric polytope to
+the edges of G yields the integral optimal cut ofG [5]. Since this is what the LP
+MAX-CUT1 is and the optimum of MAX-CUT1 is preserved by ≡4
+C, we get that the
+class of K5-minor-free graphs that have a partition that cuts at least half the edges
+is C4
+∞ω-deﬁnable by the same argument as before. Obviously, the choice to cut half
+the edges is arbitrary. Let us note that from the results in [15] on counting logics
+being able to express all polynomial-time properties on classes of minor-free graphs,
+this deﬁnability result would follow for Ck
+∞ω replacing C4
+∞ω for some k (that is very
+likely big). This is because optimizing a linear function over the metric polytope can
+be done in polynomial time by linear programming. Our argument shows thatk =4
+is enough, and it is interesting that the two proofs are very diﬀerent.
+It should be noted that the method outlined here yields deﬁnability results for
+inﬁnitary logic only, and it is not clear how to apply it to obtain deﬁnability results
+in its uniform fragment IFP+C (inﬂationary ﬁxed-point logic plus counting).
+6.2. SA rank lower bounds. In this subsection we showhow to build instances
+of high rank from the methods for proving inexpressibility results for counting logics.
+Supposeweareaskedtoshowthat thepropertyofhavingavertex-coverofatmost
+a third of the vertices is not deﬁnable in the logic C
+k
+∞ω.H e r ek could be a function
+of the number of verticesn. The way to do so is by exhibiting twon-vertex graphsG
+and H, one of which has a vertex-cover of size at mostn/3 and the other does not,
+and yet G and H are indistinguishable by the logic in the sense thatG ≡k
+C H.A s
+a matter of fact, this is a complete method in the sense that if the property is really
+not deﬁnable in the logic, then such graphsG and H are guaranteed to exist (see
+[9]). Let us now see what this tells us about the SA levels of the LP-relaxation for
+vertex-cover.
+Since G ≡k
+C H, by the Transfer Lemma we getG ≡k−1
+SA H. On the other hand,
+VERTEX-COVERk−2 is a (k−1)-local LP, so its optimum value is preservedby≡k−1
+SA by
+Theorem 2. ThereforeG and H give the same optimum value ofVERTEX-COVERk−2,
+w h i c hm u s tb ea tm o s tn/3 since the integral optimum is always an upper bound on
+the relaxation of a minimization problem. We conclude thatH is a graph on which
+the optimum ofVERTEX-COVERk−2 is strictly smaller than the minimum vertex-cover
+since, by construction, H does not have a vertex-cover of size at mostn/3. If we
+manage to aﬀordk =Ω (n), wheren is the number of vertices inH, we get an optimal
+rank lower bound, up to constant factors.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 24 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 135
+The sketched plan can be carried out for many LPs, includingVERTEX-COVER
+and MAX-CUT, to get SA rank lower bounds. In the rest of this section we outline the
+ingredients that are needed for this.
+A well-known construction due to Cai, F¨urer, and Immerman [7] gives explicit
+pairs of nonisomorphicn-vertex graphs G and H such that G ≡Ω(n)
+C H. It was later
+observed in [2] that such graphs can be thought of as systems of linear equations over
+GF(2), call themS and T,t h a tr e m a i n≡Ω(n)
+C -indistinguishable, yet one is satisﬁable
+and the other is not. This timen refers to the number of variables in the systems.
+At this point an approach suggests itself: apply the standard reduction from the
+solvability of linear equations over GF(2) to vertex-cover to get pairs of graphs, call
+them G′and H′, and hope that they stay≡Ω(n)
+C -indistinguishable, where nown is
+the number of vertices in these graphs. Andindeed, if done with care, this actually
+works. One easy way to guarantee thatG′and H′are ≡Ω(n)
+C -indistinguishable is by
+showing that the reduction is deﬁnable in the logic Ck
+∞ω for a ﬁxed constantk.
+7. Discussion and open problems. Isomorphism is the ﬁnest of all binary
+relations on ﬁnite structures. There are other interesting relations such as embeddings
+andhomomorphismsthatcouldbephrasedas0-1LPsandthenrelaxed. TheSAlevels
+of these would then yield tighter and tighter approximations. On the combinatorial
+side, embeddings and homomorphisms also admit relaxations through corresponding
+pebble games. In the case of homomorphisms, this is the existentialk-pebble game
+popularized by Kolaitis and Vardi in the context of constraint satisfaction problems
+[21]. Does a version of the Transfer Lemma apply in this case too? One of the
+directions is easy, and a version of this was actually anticipated in [3], but it seems
+that the lack of counting in the homomorphism game could be a serious obstacle for
+the other.
+On a diﬀerent line of thought, the most promising outcome of our main result
+is the connection it sets between polyhedral combinatorics and ﬁnite model theory.
+In section 6 we have shown how rather elementary arguments are able to exploit the
+knowledge in one ﬁeld to get results in the other. We hope that more sophisticated
+arguments could lead to strongerresults. Let us point out two interesting possibilities.
+In the direction from polyhedral combinatorics to ﬁnite model theory, it would be
+interesting to exploit the sophisticated constructionsof integralitygapinstances in the
+worldoflift-and-projectmethods. Oneofthe admittedbottlenecksofthe pebble-game
+technique forprovinginexpressibilityresultsisthe lackofgeneralmethods forbuilding
+pairs of structures with diﬀerent properties that stay suﬃciently indistinguishable.
+Perhaps the methods for building integrality gap instances, say as in [8] through
+metric-embedding arguments from functional analysis, could be of use for building
+such objects. A concrete example where this could be applied is to the problem of
+perfect matchings on general graphs. In short, the question reduces to building, for
+every constant k ≥ 2, a pair of≡
+k
+C-equivalent (or ≡k
+SA-equivalent) graphs G0 and
+G1 in which G0 has a perfect matching butG1 does not. This would show that the
+class of general graphs having a perfect matching is not deﬁnable in the logic Ck
+∞ω
+for anyk, thus solving a problem in [6]. The recent progress in understanding the SA
+levels of the matching polytope could perhaps be also useful here [28].
+In the direction from ﬁnite model theory to polyhedral combinatorics, new results
+could follow if the construction in [7] were strengthened to a pair of indistinguishable
+instances of the unique-games problem with a large gap in their optimal values. With
+such a lower bound in hand one would likely be able to exploit the reductions from
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 25 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+136 ALBERT ATSERIAS AND ELITZA MANEVA
+unique-games to vertex-cover in [19] to get instances where an optimal integrality gap
+of 2 could resist up to Ω(n)l e v e l so fS A ,w h i c hi sc u r r e n t l yn o tk n o w n .A ta n yr a t e ,
+exploring the gap-creating reductions underlying PCP constructions in the context
+of ﬁnite model theory appears to be an attractive line of research worth pursuing in
+itself.
+Acknowledgments. We are grateful to Grant Schoenebeck for discussions on
+the integrality gap instances for vertex-cover and max-cut in lift-and-project hierar-
+chies. We are also grateful to Martin Grohe for references on the WL algorithm.
+REFERENCES
+[1] S. Arora, B. Bollob ´as, L. Lov ´asz, and I. Tourlakis , Proving integrality gaps without
+knowing the linear program, Theory Comput., 2 (2006), pp. 19–51.
+[2] A. Atserias, A. A. Bulatov, and A. Daw ar , Aﬃne systems of equations and counting in-
+ﬁnitary logic, Theoret. Comput. Sci., 410 (2009), pp. 1666–1683.
+[3] A. Atserias, P. G. Kolaitis, and M. Y. V ardi , Linear Programming and the Existential
+Pebble Game, manuscript, 2006.
+[4] L. Babai, P. Erd ˝os, and S. M. Selkow , Random graph isomorphism, SIAM J. Comput.,
+9 (1980), pp. 628–635.
+[5] F. Barahona and A. Mahjoub , On the cut polytope, Math. Programming, 36 (1986), pp. 157–
+173.
+[6] A. Blass, Y. Gurevich, and S. Shelah , On polynomial time computation over unordered
+structures, J. Symbolic Logic, 67 (2002), pp. 1093–1125.
+[7] J. Cai, M. F ¨urer, and N. Immerman , An optimal lower bound on the number of variables for
+graph identiﬁcation, Combinatorica, 12 (1992), pp. 389–410.
+[8] M. Charikar, K. Makarychev, and Y. Makarychev , Integrality gaps for Sherali-Adams
+relaxations, in Proceedings of the 41st Annual ACM Symposium on Theory of Computing
+(STOC), 2009, pp. 283–292.
+[9] H. Ebbinghaus and J. Flum , Finite Model Theory, Springer-Verlag, Berlin, 1995.
+[10] A. Ehrenfeucht, An application of games to the completeness problem for formalized theories,
+Fund. Math., 49 (1961), pp. 129–141.
+[11] R. Fra ¨ıss´e, Sur une nouvelle classiﬁcation des syst`emes de relations, Comptes Rendus, 230
+(1950), pp. 1022–1024.
+[12] K .G e o r g i o u ,A .M a g e n ,T .P i t a s s i ,a n dI .T o u r l a k i s, Integrality gaps of2 − o(1) for vertex
+cover SDPs in the Lov´asz-Schrijver hierarchy, in Proceedings of the 48th Annual IEEE
+Symposium on Foundations of Computer Science (FOCS), 2007, pp. 702–712.
+[13] M. Grohe , Fixed-point logics on planar graphs, in Proceedings of the 13th Annual IEEE
+Symposium on Logic in Computer Science (LICS), 1998, pp. 6–15.
+[14] M. Grohe, Isomorphism testing for embeddable graphs through deﬁnability, in Proceedings of
+the 32nd Annual ACM Symposium on the Theory of Computing (STOC), 2000, pp. 63–72.
+[15] M. Grohe, Fixed-point deﬁnability and polynomial time on graphs with excluded minors,i n
+Proceedings of the 25th Annual IEEE Symposium on Logic in Computer Science (LICS),
+2010, pp. 179–188.
+[16] M. Grohe and M. Otto , Pebble games and linear equations, in Proceedings of the 21st Annual
+Conference of the European Association for Computer Science Logic (CSL), LIPIcs 16,
+Schloss Dagstuhl - Leibniz-Zentrum fuer Informatik, Wadern, Germany, 2012, pp. 289–
+304.
+[17] N. Immerman, Descriptive Complexity, Springer-Verlag, New York, 1999.
+[18] N. Immerman and E. Lander , Describing graphs: A ﬁrst-order approach to graph canoniza-
+tion, in Complexity Theory Retrospective, Springer-Verlag, New York, 1990, pp. 59–81.
+[19] S. Khot and O. Regev , Vertex cover might be hard to approximate to within2-epsilon,J .C o m -
+put. System Sci., 74 (2008), pp. 335–349.
+[20] P. G. Kolaitis and J. A. V ¨a¨an¨anen, Generalized quantiﬁers and pebble games on ﬁnite
+structures, Ann. Pure Appl. Logic, 74 (1995), pp. 23–75.
+[21] P. G. Kolaitis and M. Y. V ardi , Conjunctive-query containment and constraint satisfaction,
+J. Comput. System Sci., 61 (2000), pp. 302–332.
+[22] L. Kucera , Canonical labeling of regular graphs in linear average time, in Proceedings of
+the 28th Annual IEEE Symposium on Foundations of Computer Science (FOCS), 1987,
+pp. 271–279.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+
+=== PAGE 26 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SA RELAXATIONS AND INDISTINGUISHABILITY 137
+[23] J. B. Lasserre , Global optimization with polynomials and the problem of moments,S I A MJ .
+Optim., 11 (2011), pp. 796–817.
+[24] M. Laurent, A comparison of the Sherali-Adams, Lov´asz-Schrijver and Lasserre relaxations
+for 0-1 programming, Math. Oper. Res., 28 (2001), pp. 470–496.
+[25] M. Laurent, Lower bound for the number of iterations in semideﬁnite hierarchies for the cut
+polytope, Math. Oper. Res., 28 (2003), pp. 871–883.
+[26] L. Libkin, Elements of Finite Model Theory, Springer-Verlag, Berlin, 2004.
+[27] L. Lov´asz and A. Schrijver , Cones of matrices and set-functions and0-1 optimization,S I A M
+J. Optim., 1 (1991), pp. 166–190.
+[28] C. Mathieu and A. Sinclair , Sherali-Adams relaxations of the matching polytope,i nP r o -
+ceedings of the 41st Annual ACM Symposium on Theory of Computing (STOC), 2009,
+pp. 293–302.
+[29] M. Otto, Bounded Variable Logics and Counting: A Study in Finite Models, Lecture Notes
+Logic 9, Springer-Verlag, Berlin, 1997.
+[30] O. Pikhurko and O. Verbitsky , Logical complexity of graphs: A survey, in Model Theoretic
+Methods in Finite Combinatorics, Contemp. Math. 558, American Mathematical Society,
+Providence, RI, 2011, pp. 129–179.
+[31] M. V. Ramana, E. R. Scheinerman, and D. Ullman , Fractional isomorphism of graphs,
+Discrete Math., 132 (1994), pp. 247–265.
+[32] E. R. Scheinerman and D. H. Ullman , Fractional Graph Theory, Wiley-Interscience, New
+York, 1997.
+[33] G. Schoenebeck , Linear level Lasserre lower bounds for certain k-CSPs, in Proceedings of
+the 49th Annual IEEE Symposium on Foundations of Computer Science (FOCS), 2008,
+pp. 593–602.
+[34] G. Schoenebeck, L. Trevisan, and M. Tulsiani , Tight integrality gaps for Lovasz-Schrijver
+LP relaxations of vertex cover and max cut, in Proceedings of the 39th Annual ACM
+Symposium on Theory of Computing (STOC), 2007, pp. 302–310.
+[35] H. D. Sherali and W. P. Adams , A hierarchy of relaxations between the continuous and
+convex hull representations for zero-one programming problems, SIAM J. Discrete Math.,
+3 (1990), pp. 411–430.
+[36] T. Stephen and L. Tunc ¸el, On a representation of the matching polytope via semi-deﬁnite
+liftings, Math. Oper. Res., 24 (1999), pp. 1–7.
+[37] I. Tourlakis, New lower bounds for vertex cover in the Lovasz-Schrijver hierarchy,i nP r o -
+ceedings of the 21st Annual IEEE Conference on Computational Complexity (CCC), 2006,
+pp. 170–182.
+[38] M. Tulsiani
+, CSP gaps and reductions in the Lasserre hierarchy, in Proceedings of the 41st
+Annual ACM Symposium on Theory of Computing (STOC), 2009, pp. 303–312.
+Downloaded 02/19/13 to 161.116.164.20. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php

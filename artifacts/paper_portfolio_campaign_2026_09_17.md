@@ -54,3 +54,36 @@ near-level implication is being derived, not assumed.
 
 Preserve sources, exact replays, raw data and failed probes at publication.
 Continue after the checkpoint. The operational deadline is unchanged.
+
+## Second material checkpoint, approximately18:35UTC
+
+The shared mechanisms produced three independently audited general tools:
+
+- Small response to ANY isotropic sign law forces entropy
+  O(delta^2 log^2(1/delta))n. An importance-weighted information channel
+  proves this without a support-size/aspect-ratio hypothesis. Walsh graph
+  codes prove sharpness in the endpoint regime. The flat-diagonal Gaussian
+  channel improves a logarithm when its covariance-label cost vanishes.
+- Common-Gibbs fourth-order replacement, then querywise truncation,
+  gives all-offset sign/Gaussian maximum error
+  8 W4^(1/4)[log(2K)]^(3/4), without a largest-coefficient hypothesis.
+- A capped fourth-mass Laplace envelope retains many bounded spikes,
+  recovering an extensive pressure correction missed by an uncapped
+  one-spike bound. Its full-parent hybrid certificate is under audit.
+
+An important adversarial correction changes the direction. Every actual
+bounded positive-cap child has forced nearlevel entropy of order at least
+eta log(1/eta). Moreover its full nearlevel code has response at least
+sqrt(2eta/(pi c)) to EVERY isotropic sign law. The root's latter theorem
+has now been independently reconstructed by all three researchers.
+Consequently the attempted finite-entropy-slope/whole-code response
+applications are VACUOUS, not just missing optimizer hypotheses. Their
+finite tools survive; their original-problem interpretation is corrected
+prominently in the proof files. This is a scoped but actual-class result.
+
+Next: preserve the general tools, then develop anchored center/increment
+control that respects these unavoidable local clouds. A critical-dimension
+support-free mode realization is being proved for that purpose. In parallel
+test the fourth-mass hybrid certificate against actual child energies.
+No original bound or convergence result has been obtained. Continue to
+22:42UTC after this preservation checkpoint.

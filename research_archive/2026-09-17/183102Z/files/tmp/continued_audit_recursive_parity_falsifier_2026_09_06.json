@@ -1,0 +1,39 @@
+{
+  "p": "15/16",
+  "records": [
+    {
+      "depth": 1,
+      "constant_lower_rational": "54288477752453/204800000000000",
+      "constant_upper_rational": "271442388765273/1024000000000000",
+      "constant_lower": 0.2650804577756494,
+      "constant_upper": 0.2650804577785869,
+      "shared_odd_mass": "15/128"
+    },
+    {
+      "depth": 2,
+      "constant_lower_rational": "56862931477853677/209715200000000000",
+      "constant_upper_rational": "56862931478574573/209715200000000000",
+      "constant_lower": 0.2711435865299877,
+      "constant_upper": 0.2711435865334252,
+      "shared_odd_mass": "1695/8192"
+    },
+    {
+      "depth": 3,
+      "constant_lower_rational": "215368907033087011477927/1099511627776000000000000",
+      "constant_upper_rational": "43073781407483267702459/219902325555200000000000",
+      "constant_lower": 0.19587687987321897,
+      "constant_upper": 0.1958768798771565,
+      "shared_odd_mass": "11012415/33554432"
+    },
+    {
+      "depth": 4,
+      "constant_lower_rational": "32578016028115198239532528573901867/604462909807314587353088000000000000",
+      "constant_upper_rational": "6515603206159500480360497411056239/120892581961462917470617600000000000",
+      "constant_lower": 0.053895806507797364,
+      "constant_upper": 0.05389580651223487,
+      "shared_odd_mass": "248242046141055/562949953421312"
+    }
+  ],
+  "proved_statement": "parity-relaxed exponent >= listed lower constant + t(1-sqrt(p)) for every t>=0",
+  "method": "iid pair policies, identity signed leaf transport, exact rational logarithm enclosures"
+}

@@ -1,0 +1,1815 @@
+{
+  "betas": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "max_total_order": 7,
+  "normalization": "Zbar=2^{-n} sum_x cosh(t H_A(x))",
+  "records": [
+    {
+      "N": 2,
+      "actual_same_beta_defect": 0.015544291591047893,
+      "actual_same_beta_defect_per_N": 0.0077721457955239465,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.015544291591047883,
+      "interface_defect": 0.015544291591047893,
+      "interface_defect_per_N": 0.0077721457955239465,
+      "joint_compensation": -1.0408340855860843e-17,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.17677669529663687,
+      "reverse_kl": -1.0408340855860843e-17,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 0.015597800493979824,
+      "actual_same_beta_defect_per_N": 0.005199266831326608,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.020761394723351683,
+      "interface_defect": 0.015597800493979824,
+      "interface_defect_per_N": 0.005199266831326608,
+      "joint_compensation": 0.005163594229371859,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.14433756729740646,
+      "reverse_kl": -1.8388068845354155e-16,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 0.005163594229372043
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.015372190172930233,
+      "actual_same_beta_defect_per_N": 0.0038430475432325584,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.023376717956694843,
+      "interface_defect": 0.015611258084499622,
+      "interface_defect_per_N": 0.0039028145211249055,
+      "joint_compensation": 0.007765459872195221,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.125,
+      "reverse_kl": 8.574386232973463e-08,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 0.007765374128332891
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.015425699075862165,
+      "actual_same_beta_defect_per_N": 0.003856424768965541,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.031168957275593125,
+      "interface_defect": 0.015664766987431574,
+      "interface_defect_per_N": 0.0039161917468578935,
+      "joint_compensation": 0.015504190288161551,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.125,
+      "reverse_kl": 8.574386239912357e-08,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 0.015504104544299152
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.015096804341260261,
+      "actual_same_beta_defect_per_N": 0.0030193608682520523,
+      "best_low_child_pair_indices": [
+        0,
+        2
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.024948089621644156,
+      "interface_defect": 0.01570216296221617,
+      "interface_defect_per_N": 0.003140432592443234,
+      "joint_compensation": 0.009245926659427986,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.11180339887498948,
+      "reverse_kl": 9.216611591977841e-08,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 0.009245834493312066
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.014924702923142602,
+      "actual_same_beta_defect_per_N": 0.0029849405846285202,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.03742213443246623,
+      "interface_defect": 0.015683663345173612,
+      "interface_defect_per_N": 0.0031367326690347223,
+      "joint_compensation": 0.02173847108729262,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.11180339887498948,
+      "reverse_kl": 1.7703286101650173e-07,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 0.021738294054431603
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.014815994937270649,
+      "actual_same_beta_defect_per_N": 0.0024693324895451083,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.02599658063076188,
+      "interface_defect": 0.0158489265925843,
+      "interface_defect_per_N": 0.0026414877654307167,
+      "joint_compensation": 0.010147654038177578,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.10206207261596577,
+      "reverse_kl": 5.3878448369459875e-08,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 0.010147600159729209
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.014368507687483018,
+      "actual_same_beta_defect_per_N": 0.0023947512812471697,
+      "best_low_child_pair_indices": [
+        0,
+        6
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.041594529009219006,
+      "interface_defect": 0.015823956553469867,
+      "interface_defect_per_N": 0.002637326092244978,
+      "joint_compensation": 0.02577057245574914,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.10206207261596577,
+      "reverse_kl": 1.918406463269351e-07,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 0.02577038061510281
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.014142897366433427,
+      "actual_same_beta_defect_per_N": 0.002357149561072238,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.04679384513537138,
+      "interface_defect": 0.015705300152038026,
+      "interface_defect_per_N": 0.002617550025339671,
+      "joint_compensation": 0.031088544983333355,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 0.10206207261596577,
+      "reverse_kl": 2.5757019184169394e-07,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 0.031088287413141513
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.016024415456882213,
+      "actual_same_beta_defect_per_N": 0.0022892022081260305,
+      "best_low_child_pair_indices": [
+        0,
+        234
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.026745949239378487,
+      "interface_defect": 0.016029096003823372,
+      "interface_defect_per_N": 0.0022898708576890533,
+      "joint_compensation": 0.010716853235555115,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.0944911182523068,
+      "reverse_kl": 3.4216102173800778e-12,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 0.010716853232133505
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.015296118803104969,
+      "actual_same_beta_defect_per_N": 0.0021851598290149954,
+      "best_low_child_pair_indices": [
+        0,
+        19
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.04457658206563082,
+      "interface_defect": 0.016064824465483955,
+      "interface_defect_per_N": 0.002294974923640565,
+      "joint_compensation": 0.02851175760014686,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.0944911182523068,
+      "reverse_kl": 1.49831661952482e-07,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 0.02851160776848491
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.014795122650385406,
+      "actual_same_beta_defect_per_N": 0.002113588950055058,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 0.25,
+      "bridge_annealed": 0.053491898478756975,
+      "interface_defect": 0.0158753903491161,
+      "interface_defect_per_N": 0.002267912907016586,
+      "joint_compensation": 0.037616508129640874,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 0.0944911182523068,
+      "reverse_kl": 2.7661955390168025e-07,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 0.03761623151008697
+    },
+    {
+      "N": 2,
+      "actual_same_beta_defect": 0.061239736504030806,
+      "actual_same_beta_defect_per_N": 0.030619868252015403,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.061239736504030855,
+      "interface_defect": 0.061239736504030806,
+      "interface_defect_per_N": 0.030619868252015403,
+      "joint_compensation": 4.85722573273506e-17,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.35355339059327373,
+      "reverse_kl": 4.85722573273506e-17,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 0.062061782288749257,
+      "actual_same_beta_defect_per_N": 0.02068726076291642,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.08220101252852005,
+      "interface_defect": 0.062061782288749257,
+      "interface_defect_per_N": 0.02068726076291642,
+      "joint_compensation": 0.020139230239770795,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.2886751345948129,
+      "reverse_kl": 8.326672684688674e-17,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 0.02013923023977071
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.05867259540582015,
+      "actual_same_beta_defect_per_N": 0.014668148851455037,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.09278941086048416,
+      "interface_defect": 0.06225797446574545,
+      "interface_defect_per_N": 0.015564493616436362,
+      "joint_compensation": 0.03053143639473871,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.25,
+      "reverse_kl": 1.932846244295794e-05,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 0.03051210793229575
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.0594946411905386,
+      "actual_same_beta_defect_per_N": 0.01487366029763465,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.12371921448064555,
+      "interface_defect": 0.06308002025046389,
+      "interface_defect_per_N": 0.01577000506261597,
+      "joint_compensation": 0.06063919423018166,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.25,
+      "reverse_kl": 1.9328462442791405e-05,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 0.06061986576773887
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.05477053508732599,
+      "actual_same_beta_defect_per_N": 0.010954107017465197,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.09917761181529558,
+      "interface_defect": 0.06360667008305304,
+      "interface_defect_per_N": 0.012721334016610608,
+      "joint_compensation": 0.03557094173224254,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.22360679774997896,
+      "reverse_kl": 1.9939854925016265e-05,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 0.03555100187731752
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.05220339398911533,
+      "actual_same_beta_defect_per_N": 0.010440678797823066,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.14876641772294336,
+      "interface_defect": 0.06336203839497984,
+      "interface_defect_per_N": 0.012672407678995967,
+      "joint_compensation": 0.08540437932796352,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.22360679774997896,
+      "reverse_kl": 4.073584644820327e-05,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 0.08536364348151532
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.051258998595357874,
+      "actual_same_beta_defect_per_N": 0.008543166432559646,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.10345122427722994,
+      "interface_defect": 0.06568410991190962,
+      "interface_defect_per_N": 0.010947351651984938,
+      "joint_compensation": 0.03776711436532032,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.20412414523193154,
+      "reverse_kl": 1.076829154433856e-05,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 0.03775634607377598
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.04478979717865306,
+      "actual_same_beta_defect_per_N": 0.007464966196442176,
+      "best_low_child_pair_indices": [
+        0,
+        6
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.1655219588435679,
+      "interface_defect": 0.06545207021598887,
+      "interface_defect_per_N": 0.010908678369331478,
+      "joint_compensation": 0.10006988862757904,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.20412414523193154,
+      "reverse_kl": 4.323267489170224e-05,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 0.10002665595268734
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.04140061029572395,
+      "actual_same_beta_defect_per_N": 0.006900101715953992,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.1862122036990139,
+      "interface_defect": 0.06369037650981016,
+      "interface_defect_per_N": 0.010615062751635027,
+      "joint_compensation": 0.12252182718920374,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 0.20412414523193154,
+      "reverse_kl": 6.0258736319485084e-05,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 0.12246156845288425
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.06777595285841465,
+      "actual_same_beta_defect_per_N": 0.00968227897977352,
+      "best_low_child_pair_indices": [
+        0,
+        234
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.10651111080049946,
+      "interface_defect": 0.06802766741514721,
+      "interface_defect_per_N": 0.009718238202163887,
+      "joint_compensation": 0.038483443385352256,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.1889822365046136,
+      "reverse_kl": 1.0488339974301653e-08,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 0.03848343289701228
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.05779521494974171,
+      "actual_same_beta_defect_per_N": 0.008256459278534531,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.17751851800083246,
+      "interface_defect": 0.0688835165503629,
+      "interface_defect_per_N": 0.009840502364337558,
+      "joint_compensation": 0.10863500145046956,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.1889822365046136,
+      "reverse_kl": 3.245825375952638e-05,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 0.10860254319671003
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.050503967748318446,
+      "actual_same_beta_defect_per_N": 0.007214852535474063,
+      "best_low_child_pair_indices": [
+        1,
+        4
+      ],
+      "beta": 0.5,
+      "bridge_annealed": 0.21302222160099893,
+      "interface_defect": 0.06623185590475328,
+      "interface_defect_per_N": 0.00946169370067904,
+      "joint_compensation": 0.14679036569624565,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 0.1889822365046136,
+      "reverse_kl": 6.398514560462809e-05,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 0.14672638055064102
+    },
+    {
+      "N": 2,
+      "actual_same_beta_defect": 0.23158132220834587,
+      "actual_same_beta_defect_per_N": 0.11579066110417294,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.23158132220834585,
+      "interface_defect": 0.23158132220834587,
+      "interface_defect_per_N": 0.11579066110417294,
+      "joint_compensation": -2.7755575615628914e-17,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.7071067811865475,
+      "reverse_kl": -2.7755575615628914e-17,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 0.24288445745154202,
+      "actual_same_beta_defect_per_N": 0.08096148581718067,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.3163105197732587,
+      "interface_defect": 0.24288445745154214,
+      "interface_defect_per_N": 0.08096148581718071,
+      "joint_compensation": 0.07342606232171656,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.5773502691896258,
+      "reverse_kl": 5.551115123125783e-17,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 0.0734260623217165
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.19954406473969444,
+      "actual_same_beta_defect_per_N": 0.04988601618492361,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.36034352087483235,
+      "interface_defect": 0.24327070404980777,
+      "interface_defect_per_N": 0.06081767601245194,
+      "joint_compensation": 0.11707281682502457,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.5,
+      "reverse_kl": 0.002950558039969353,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 0.11412225878505522
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.2108471999828906,
+      "actual_same_beta_defect_per_N": 0.05271179999572265,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.4804580278331098,
+      "interface_defect": 0.25457383929300376,
+      "interface_defect_per_N": 0.06364345982325094,
+      "joint_compensation": 0.22588418854010606,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 0.5,
+      "reverse_kl": 0.002950558039969353,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 0.2229336305001367
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.15750514448828656,
+      "actual_same_beta_defect_per_N": 0.03150102889765731,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.3873372256545396,
+      "interface_defect": 0.2600629376040839,
+      "interface_defect_per_N": 0.05201258752081678,
+      "joint_compensation": 0.1272742880504557,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.4472135954999579,
+      "reverse_kl": 0.0027792762700710183,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 0.12449501178038469
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.12546788701963507,
+      "actual_same_beta_defect_per_N": 0.025093577403927016,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.5810058384818094,
+      "interface_defect": 0.2559731445319503,
+      "interface_defect_per_N": 0.05119462890639006,
+      "joint_compensation": 0.3250326939498591,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.4472135954999579,
+      "reverse_kl": 0.006322817736165387,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 0.31870987621369373
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.13298816561230542,
+      "actual_same_beta_defect_per_N": 0.02216469426871757,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.40558230091802866,
+      "interface_defect": 0.2837118717304458,
+      "interface_defect_per_N": 0.0472853119550743,
+      "joint_compensation": 0.12187042918758284,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.4082482904638631,
+      "reverse_kl": 0.0012379057716291886,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 0.12063252341595365
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.058911987892246165,
+      "actual_same_beta_defect_per_N": 0.009818664648707695,
+      "best_low_child_pair_indices": [
+        0,
+        3
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.6489316814688458,
+      "interface_defect": 0.28196435836028233,
+      "interface_defect_per_N": 0.04699405972671372,
+      "joint_compensation": 0.3669673231085635,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.4082482904638631,
+      "reverse_kl": 0.0065089491529171095,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 0.3604583739556464
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.015571595180398523,
+      "actual_same_beta_defect_per_N": 0.002595265863399754,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.7300481416524516,
+      "interface_defect": 0.25816045957420486,
+      "interface_defect_per_N": 0.043026743262367474,
+      "joint_compensation": 0.4718876820782467,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 0.4082482904638631,
+      "reverse_kl": 0.009654883860105157,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 0.46223279821814156
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.2955592338441997,
+      "actual_same_beta_defect_per_N": 0.04222274769202853,
+      "best_low_child_pair_indices": [
+        0,
+        220
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.41873996064194074,
+      "interface_defect": 0.3047825864965864,
+      "interface_defect_per_N": 0.043540369499512344,
+      "joint_compensation": 0.11395737414535434,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.3779644730092272,
+      "reverse_kl": 1.714213309567114e-05,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 0.11394023201225867
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.1969660772481593,
+      "actual_same_beta_defect_per_N": 0.028138011035451327,
+      "best_low_child_pair_indices": [
+        0,
+        26
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.6978999344032345,
+      "interface_defect": 0.3211979635710064,
+      "interface_defect_per_N": 0.045885423367286626,
+      "joint_compensation": 0.3767019708322281,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.3779644730092272,
+      "reverse_kl": 0.004584977431967507,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 0.3721169934002606
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.11158676428490377,
+      "actual_same_beta_defect_per_N": 0.015940966326414823,
+      "best_low_child_pair_indices": [
+        0,
+        6
+      ],
+      "beta": 1.0,
+      "bridge_annealed": 0.8374799212838815,
+      "interface_defect": 0.2898074969423158,
+      "interface_defect_per_N": 0.041401070991759395,
+      "joint_compensation": 0.5476724243415657,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 0.3779644730092272,
+      "reverse_kl": 0.010189088159236359,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 0.5374833361823294
+    },
+    {
+      "N": 2,
+      "actual_same_beta_defect": 0.7784912985576696,
+      "actual_same_beta_defect_per_N": 0.3892456492788348,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 0.7784912985576696,
+      "interface_defect": 0.7784912985576696,
+      "interface_defect_per_N": 0.3892456492788348,
+      "joint_compensation": 0.0,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 1.414213562373095,
+      "reverse_kl": 0.0,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 0.890246158166517,
+      "actual_same_beta_defect_per_N": 0.296748719388839,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.1124916378161243,
+      "interface_defect": 0.8902461581665174,
+      "interface_defect_per_N": 0.2967487193888391,
+      "joint_compensation": 0.22224547964960684,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 1.1547005383792517,
+      "reverse_kl": -6.661338147750939e-16,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 0.2222454796496075
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.523826951599732,
+      "actual_same_beta_defect_per_N": 0.130956737899933,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.3013424914490814,
+      "interface_defect": 0.8008023637561634,
+      "interface_defect_per_N": 0.20020059093904086,
+      "joint_compensation": 0.500540127692918,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 1.0,
+      "reverse_kl": 0.13314516241781282,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 0.3673949652751052
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 0.6355818112085795,
+      "actual_same_beta_defect_per_N": 0.15889545280214487,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.7351233219321085,
+      "interface_defect": 0.912557223365011,
+      "interface_defect_per_N": 0.22813930584125275,
+      "joint_compensation": 0.8225660985670975,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 1.0,
+      "reverse_kl": 0.13314516241781282,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 0.6894209361492847
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.2557263366335758,
+      "actual_same_beta_defect_per_N": 0.05114526732671516,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.4233848791677115,
+      "interface_defect": 0.9420711750415791,
+      "interface_defect_per_N": 0.18841423500831583,
+      "joint_compensation": 0.4813137041261324,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.8944271909999159,
+      "reverse_kl": 0.12370538743178372,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 0.35760831669434867
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.0010619896756383085,
+      "actual_same_beta_defect_per_N": 0.00021239793512766169,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 2.1350773187515673,
+      "interface_defect": 0.8496142548133865,
+      "interface_defect_per_N": 0.16992285096267729,
+      "joint_compensation": 1.2854630639381808,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 0.8944271909999159,
+      "reverse_kl": 0.2616191878240359,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 1.0238438761141448
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.24410411212446892,
+      "actual_same_beta_defect_per_N": 0.040684018687411484,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.508917060507324,
+      "interface_defect": 1.1634535638166505,
+      "interface_defect_per_N": 0.1939089273027751,
+      "joint_compensation": 0.34546349669067355,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.8164965809277261,
+      "reverse_kl": 0.04617333537462187,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 0.2992901613160517
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -0.2786608497996248,
+      "actual_same_beta_defect_per_N": -0.046443474966604135,
+      "best_low_child_pair_indices": [
+        0,
+        4
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 2.4142672968117185,
+      "interface_defect": 1.057943133249979,
+      "interface_defect_per_N": 0.17632385554166316,
+      "joint_compensation": 1.3563241635617396,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 0.8164965809277261,
+      "reverse_kl": 0.26791389533894794,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 1.0884102682227916
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -0.6450800563664099,
+      "actual_same_beta_defect_per_N": -0.10751334272773498,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 2.7160507089131833,
+      "interface_defect": 0.7972314753738674,
+      "interface_defect_per_N": 0.13287191256231123,
+      "joint_compensation": 1.918819233539316,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 0.8164965809277261,
+      "reverse_kl": 0.392044792699731,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 1.526774440839585
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 1.1425454207752543,
+      "actual_same_beta_defect_per_N": 0.1632207743964649,
+      "best_low_child_pair_indices": [
+        0,
+        220
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 1.5722539240531406,
+      "interface_defect": 1.294602858047313,
+      "interface_defect_per_N": 0.18494326543533043,
+      "joint_compensation": 0.27765106600582756,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.7559289460184544,
+      "reverse_kl": 0.007165614985633173,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 0.2704854510201944
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 0.6081582343420537,
+      "actual_same_beta_defect_per_N": 0.08687974776315054,
+      "best_low_child_pair_indices": [
+        0,
+        35
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 2.620423206755234,
+      "interface_defect": 1.3781559119000615,
+      "interface_defect_per_N": 0.19687941598572306,
+      "joint_compensation": 1.2422672948551725,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 0.7559289460184544,
+      "reverse_kl": 0.19702933497197073,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 1.0452379598832018
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": -0.026361587190887548,
+      "actual_same_beta_defect_per_N": -0.0037659410272696497,
+      "best_low_child_pair_indices": [
+        0,
+        5
+      ],
+      "beta": 2.0,
+      "bridge_annealed": 3.144507848106281,
+      "interface_defect": 1.0377592633851673,
+      "interface_defect_per_N": 0.14825132334073818,
+      "joint_compensation": 2.106748584721114,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 0.7559289460184544,
+      "reverse_kl": 0.42184425840433004,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 1.684904326316784
+    },
+    {
+      "N": 2,
+      "actual_same_beta_defect": 2.138767345404153,
+      "actual_same_beta_defect_per_N": 1.0693836727020765,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 2.138767345404153,
+      "interface_defect": 2.138767345404153,
+      "interface_defect_per_N": 1.0693836727020765,
+      "joint_compensation": 0.0,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 2.82842712474619,
+      "reverse_kl": 0.0,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 2.739443146227564,
+      "actual_same_beta_defect_per_N": 0.9131477154091879,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 3.2521403277544776,
+      "interface_defect": 2.7394431462275644,
+      "interface_defect_per_N": 0.9131477154091882,
+      "joint_compensation": 0.5126971815269132,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 2.3094010767585034,
+      "reverse_kl": -8.881784197001252e-16,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 0.5126971815269141
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 1.0789832288969627,
+      "actual_same_beta_defect_per_N": 0.2697458072242407,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 3.9750082420735935,
+      "interface_defect": 1.896801448749204,
+      "interface_defect_per_N": 0.474200362187301,
+      "joint_compensation": 2.0782067933243895,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 2.0,
+      "reverse_kl": 1.1750045437662662,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 0.9032022495581233
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 1.6796590297203737,
+      "actual_same_beta_defect_per_N": 0.41991475743009343,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 5.300010989431458,
+      "interface_defect": 2.4974772495726176,
+      "interface_defect_per_N": 0.6243693123931544,
+      "joint_compensation": 2.8025337398588404,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 2.0,
+      "reverse_kl": 1.1750045437662635,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 1.6275291960925768
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": 0.036009916258926467,
+      "actual_same_beta_defect_per_N": 0.0072019832517852935,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 4.493054608182858,
+      "interface_defect": 2.438244060573698,
+      "interface_defect_per_N": 0.48764881211473965,
+      "joint_compensation": 2.0548105476091596,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 1.7888543819998317,
+      "reverse_kl": 1.2294860336386613,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 0.8253245139704983
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": -1.0237742002482637,
+      "actual_same_beta_defect_per_N": -0.20475484004965275,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 6.739581912274287,
+      "interface_defect": 1.8711659830748921,
+      "interface_defect_per_N": 0.37423319661497845,
+      "joint_compensation": 4.8684159291993945,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 1.7888543819998317,
+      "reverse_kl": 2.3444927003463825,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 2.523923228853012
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 0.5594473882888815,
+      "actual_same_beta_defect_per_N": 0.09324123138148026,
+      "best_low_child_pair_indices": [
+        0,
+        14
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 4.88647601177201,
+      "interface_defect": 3.8051836114718602,
+      "interface_defect_per_N": 0.6341972685786433,
+      "joint_compensation": 1.0812924003001498,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 1.6329931618554523,
+      "reverse_kl": 0.45865854959159336,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 0.6226338507085565
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -1.543310040856345,
+      "actual_same_beta_defect_per_N": -0.25721834014272416,
+      "best_low_child_pair_indices": [
+        0,
+        3
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 7.818361618835216,
+      "interface_defect": 2.866912988933275,
+      "interface_defect_per_N": 0.47781883148887916,
+      "joint_compensation": 4.951448629901941,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 1.6329931618554523,
+      "reverse_kl": 2.3616673856357036,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 2.589781244266238
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -3.203769958186946,
+      "actual_same_beta_defect_per_N": -0.5339616596978244,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 8.795656821189619,
+      "interface_defect": 1.4921966262984014,
+      "interface_defect_per_N": 0.24869943771640024,
+      "joint_compensation": 7.303460194891217,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 1.6329931618554523,
+      "reverse_kl": 3.410810425754196,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 3.892649769137021
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 3.4886571017981183,
+      "actual_same_beta_defect_per_N": 0.4983795859711598,
+      "best_low_child_pair_indices": [
+        0,
+        220
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 5.197115612122225,
+      "interface_defect": 4.299572451248435,
+      "interface_defect_per_N": 0.6142246358926335,
+      "joint_compensation": 0.8975431608737905,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 1.5118578920369088,
+      "reverse_kl": 0.30813174223120043,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 0.5894114186425901
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 1.9093371446828469,
+      "actual_same_beta_defect_per_N": 0.2727624492404067,
+      "best_low_child_pair_indices": [
+        0,
+        13
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 8.661859353537041,
+      "interface_defect": 4.363482468631806,
+      "interface_defect_per_N": 0.6233546383759723,
+      "joint_compensation": 4.2983768849052355,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 1.5118578920369088,
+      "reverse_kl": 1.9197108638178406,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 2.378666021087395
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": -0.7940960852857906,
+      "actual_same_beta_defect_per_N": -0.11344229789797008,
+      "best_low_child_pair_indices": [
+        0,
+        3
+      ],
+      "beta": 4.0,
+      "bridge_annealed": 10.39423122424445,
+      "interface_defect": 2.452982566051811,
+      "interface_defect_per_N": 0.35042608086454446,
+      "joint_compensation": 7.941248658192639,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 1.5118578920369088,
+      "reverse_kl": 3.7697038624358274,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 4.1715447957568115
+    },
+    {
+      "N": 2,
+      "actual_same_beta_defect": 4.963719273325286,
+      "actual_same_beta_defect_per_N": 2.481859636662643,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 4.963719273325286,
+      "interface_defect": 4.963719273325286,
+      "interface_defect_per_N": 2.481859636662643,
+      "joint_compensation": 0.0,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 5.65685424949238,
+      "reverse_kl": 0.0,
+      "split": [
+        1,
+        1
+      ],
+      "thermal_gap": 0.0
+    },
+    {
+      "N": 3,
+      "actual_same_beta_defect": 6.813537562654219,
+      "actual_same_beta_defect_per_N": 2.2711791875514065,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 7.85150455731967,
+      "interface_defect": 6.8135375626542185,
+      "interface_defect_per_N": 2.271179187551406,
+      "joint_compensation": 1.0379669946654513,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 4.618802153517007,
+      "reverse_kl": 0.0,
+      "split": [
+        1,
+        2
+      ],
+      "thermal_gap": 1.0379669946654513
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 2.143972547621619,
+      "actual_same_beta_defect_per_N": 0.5359931369054047,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 9.921564677438852,
+      "interface_defect": 3.97051810563827,
+      "interface_defect_per_N": 0.9926295264095675,
+      "joint_compensation": 5.951046571800582,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 4.0,
+      "reverse_kl": 4.095354413259928,
+      "split": [
+        1,
+        3
+      ],
+      "thermal_gap": 1.8556921585406538
+    },
+    {
+      "N": 4,
+      "actual_same_beta_defect": 3.9937908369505513,
+      "actual_same_beta_defect_per_N": 0.9984477092376378,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 13.228752903251802,
+      "interface_defect": 5.82033639496721,
+      "interface_defect_per_N": 1.4550840987418026,
+      "joint_compensation": 7.408416508284592,
+      "low_child_minimizer_counts": [
+        1,
+        1
+      ],
+      "raw_t": 4.0,
+      "reverse_kl": 4.095354413259921,
+      "split": [
+        2,
+        2
+      ],
+      "thermal_gap": 3.313062095024671
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": -0.7735444061602852,
+      "actual_same_beta_defect_per_N": -0.15470888123205703,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 11.541367609867011,
+      "interface_defect": 5.204242132358884,
+      "interface_defect_per_N": 1.0408484264717768,
+      "joint_compensation": 6.337125477508128,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 3.5777087639996634,
+      "reverse_kl": 4.648850855652839,
+      "split": [
+        1,
+        4
+      ],
+      "thermal_gap": 1.6882746218552889
+    },
+    {
+      "N": 5,
+      "actual_same_beta_defect": -3.5932911318639515,
+      "actual_same_beta_defect_per_N": -0.7186582263727903,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 17.312051414800518,
+      "interface_defect": 3.5478930911149966,
+      "interface_defect_per_N": 0.7095786182229993,
+      "joint_compensation": 13.764158323685521,
+      "low_child_minimizer_counts": [
+        1,
+        2
+      ],
+      "raw_t": 3.5777087639996634,
+      "reverse_kl": 8.564549824247738,
+      "split": [
+        2,
+        3
+      ],
+      "thermal_gap": 5.199608499437783
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": 1.510694151725943,
+      "actual_same_beta_defect_per_N": 0.25178235862099047,
+      "best_low_child_pair_indices": [
+        0,
+        14
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 12.87147107301694,
+      "interface_defect": 9.821888287106628,
+      "interface_defect_per_N": 1.636981381184438,
+      "joint_compensation": 3.049582785910312,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 3.2659863237109046,
+      "reverse_kl": 1.8026948378881968,
+      "split": [
+        1,
+        5
+      ],
+      "thermal_gap": 1.2468879480221151
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -4.226569527759628,
+      "actual_same_beta_defect_per_N": -0.7044282546266046,
+      "best_low_child_pair_indices": [
+        0,
+        1
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 20.594353716827104,
+      "interface_defect": 6.599165088259495,
+      "interface_defect_per_N": 1.0998608480432492,
+      "joint_compensation": 13.99518862856761,
+      "low_child_minimizer_counts": [
+        1,
+        6
+      ],
+      "raw_t": 3.2659863237109046,
+      "reverse_kl": 8.67195020262725,
+      "split": [
+        2,
+        4
+      ],
+      "thermal_gap": 5.3232384259403585
+    },
+    {
+      "N": 6,
+      "actual_same_beta_defect": -8.896134542792229,
+      "actual_same_beta_defect_per_N": -1.4826890904653716,
+      "best_low_child_pair_indices": [
+        0,
+        0
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 23.168647931430492,
+      "interface_defect": 2.5506624289823705,
+      "interface_defect_per_N": 0.4251104048303951,
+      "joint_compensation": 20.61798550244812,
+      "low_child_minimizer_counts": [
+        2,
+        2
+      ],
+      "raw_t": 3.2659863237109046,
+      "reverse_kl": 12.509237118109436,
+      "split": [
+        3,
+        3
+      ],
+      "thermal_gap": 8.108748384338686
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 8.811083965647452,
+      "actual_same_beta_defect_per_N": 1.2587262808067787,
+      "best_low_child_pair_indices": [
+        0,
+        316
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 13.997578437810397,
+      "interface_defect": 10.841488440161994,
+      "interface_defect_per_N": 1.548784062880285,
+      "joint_compensation": 3.1560899976484027,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 3.0237157840738176,
+      "reverse_kl": 1.9462454906743218,
+      "split": [
+        1,
+        6
+      ],
+      "thermal_gap": 1.2098445069740809
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": 5.358058844048109,
+      "actual_same_beta_defect_per_N": 0.7654369777211585,
+      "best_low_child_pair_indices": [
+        0,
+        14
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 23.32929739635066,
+      "interface_defect": 10.971732200169248,
+      "interface_defect_per_N": 1.5673903143098926,
+      "joint_compensation": 12.357565196181413,
+      "low_child_minimizer_counts": [
+        1,
+        12
+      ],
+      "raw_t": 3.0237157840738176,
+      "reverse_kl": 7.510809717322903,
+      "split": [
+        2,
+        5
+      ],
+      "thermal_gap": 4.84675547885851
+    },
+    {
+      "N": 7,
+      "actual_same_beta_defect": -2.229023124766396,
+      "actual_same_beta_defect_per_N": -0.318431874966628,
+      "best_low_child_pair_indices": [
+        0,
+        3
+      ],
+      "beta": 8.0,
+      "bridge_annealed": 27.995156875620793,
+      "interface_defect": 5.105247386914314,
+      "interface_defect_per_N": 0.7293210552734735,
+      "joint_compensation": 22.88990948870648,
+      "low_child_minimizer_counts": [
+        2,
+        6
+      ],
+      "raw_t": 3.0237157840738176,
+      "reverse_kl": 14.210361943018434,
+      "split": [
+        3,
+        4
+      ],
+      "thermal_gap": 8.679547545688044
+    }
+  ],
+  "status": "exhaustive enumeration with floating-point evaluation"
+}

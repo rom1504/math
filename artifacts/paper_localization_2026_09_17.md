@@ -658,3 +658,37 @@ finite biased-row enumerations, and a 20,000-sample anisotropic Gaussian
 posterior diagnostic. The latter is numerical only; the samplewise quadratic
 identity had error below 1.7e-15. The sharper information lower constant in
 (19) is 0.011748360567219888 nats per spin. No simulation is a proof input.
+
+## 10. Later joint extensions from the same primary mechanism
+
+The original reconstruction and scalar-noise work above remain frozen.
+Subsequent independently audited results are maintained separately:
+
+- [Bounded-cap critical-block embedding](paper_localization_bounded_cap_embedding_2026_09_17.md):
+  matching block covariance and a uniform subGaussian bound do not force
+  o(N^(3/2)) cap universality at linear block size, even for actual full
+  sign parents with expected cap O(N^(3/2)). The family is not minimizing.
+- [Balanced mode construction](paper_localization_balanced_modes_2026_09_17.md):
+  exact full-sign bridges with controlled scalar responses on an intrinsic
+  low-effective-mode code, plus an all-order near-level-cover extension.
+- [Symmetric frame universality](paper_symmetric_frame_universality_2026_09_17.md):
+  common-Gibbs fourth-moment comparison, strengthened by explicit querywise
+  truncation to an unconditional O(W4^(1/4)log(K)^(3/4)) all-offset bound.
+- [Anisotropic flat-mode entropy](paper_localization_anisotropic_entropy_2026_09_17.md):
+  a paid coarse mode-energy revelation and Gaussian noise with constant
+  physical diagonal give the entropy envelope Psi(theta)~theta log(1/theta).
+- [General sign-frame information](paper_director_flat_diagonal_information_2026_09_17.md):
+  the director's extension to any isotropic sign-mode law, combined with
+  the support-free deterministic realization in Bernoulli Section 22.
+- [Critical support-free realization](paper_localization_critical_realization_2026_09_17.md):
+  nuclear-norm empirical control simultaneously for every response matrix,
+  sharp aggregate covariance, and an anchored center-cover extension for
+  arbitrary isotropic sign laws with k=O(sqrt(n)).
+
+These are proved finite tools and conditional extension results. None
+establishes favorable full near-level response control for an actual
+minimizing sequence, a new cap constant, or convergence of M_n/n^(3/2).
+Moreover the finite whole-nearlevel entropy-slope shortcut is now ruled
+out universally by a fixed-radius flip count. The center-cover versions,
+which retain and pay correlated deviations, are not subject to that
+particular obstruction. The entropy theorems remain valid as finite tools.

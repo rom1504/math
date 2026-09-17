@@ -47213,3 +47213,62 @@ all-order favorable-seed-value preservation. Next: an actual tensor-column
 completion whose mean-absolute geometry protects a maximally complex
 Hadamard dictionary; derive its near-level cover criterion and test its
 scope. Continue the authorized campaign after preservation and publication.
+
+### 10.166 Support-free response information and an actual-class correction
+
+2026-09-17, second active paper checkpoint about18:35UTC. The campaign
+continues to22:42UTC; this is not a final synthesis.
+
+VERIFIED GENERAL TOOLS: an importance-weighted information channel proves
+log|C|/n<=O(delta^2 log^2(1/delta)) whenever an arbitrary isotropic sign
+law has E|h.x|<=delta sqrt(n) throughout C. No atom-count/aspect-ratio
+condition is needed. Explicit Walsh graph codes attain the double-log
+scale at delta=Theta(n^(-1/2)); a slab amplification falsifies a proposed
+single-log estimate with an additive O(log^2 n) repair. A flat-diagonal
+Gaussian-channel construction improves one logarithm when k^2=o(n).
+All finite constants, proofs and exact replays are in the paper artifacts.
+
+VERIFIED TRANSFER COMBINATION: common-Gibbs fourth-order replacement
+and querywise truncation give all-offset sign/Gaussian expected-maximum
+error<=8 W4^(1/4)log(2K)^(3/4), without a largest-coefficient hypothesis.
+It transfers diffuse sectors at critical frame dimension k=Theta(sqrt n).
+An explicit coherent sector has a leading sign/Gaussian response gap;
+this is not asserted as a full-parent cap gap. The capped-fourth-mass
+Laplace envelope keeps the physical coefficient cap and yields an
+extensive negative pressure correction on coherent sectors. A finite
+hybrid certificate retaining BOTH children and all witnesses is under audit.
+
+VERIFIED REALIZATION/FINITE EVIDENCE: arbitrary isotropic mode laws can
+be sampled into one deterministic label list with controlled covariance
+and uniform mean response, with no support-size requirement when k^2=o(n).
+Exact rational mode-law certificates were computed on stored small-child
+ground codes through14; the cap and code were enumerated, original
+optimality is imported, and no new M_n value is claimed. The original
+bounded-block universality falsifier now embeds in bounded-normalized-cap
+FULL sign parents, still not asserted for actual asymptotic minimizers.
+
+DECISIVE ACTUAL-CLASS CORRECTION: for any Q(A_n)/n^(3/2)->c>0, random
+rho-fraction flips of an actual ground word force full-nearlevel entropy
+s(eta)>=h((1-sqrt(1-eta/c))/2). Thus s(eta)/eta diverges. Furthermore,
+for EVERY varying isotropic law on full signs, its largest normalized
+absolute response on that code is at least sqrt(2eta/(pi c)), eta<c.
+Proof: product flips give nonnegative expected deficit4rho(1-rho)Q;
+the response is convex1-Lipschitz and has product variance<=4; its mean
+has a uniform Gaussian lower limit. Markov and concentration intersect.
+All three researchers independently reconstructed the latter proof.
+
+Consequently the direct finite-entropy-slope and whole-code
+mu(eta)^2 log(1/mu(eta)^2)=O(eta) applications proposed earlier in this
+campaign are VACUOUS, not missing optimizer lemmas. The finite information
+and transfer inequalities remain correct. This correction is prominent
+in their canonical files; drafts/failures are preserved, not erased.
+
+#### Updated frontier
+
+No original constant or convergence result is proved; the reported interval
+is unchanged. Positive next target: low-response CENTER codes with anchored
+increment control, respecting the unavoidable local near-ground cloud.
+Critical-dimensional support-free realization and the all-child fourth-mass
+hybrid certificate are being developed. Do not replace a disproved whole-code
+hypothesis with another conditional profile before testing nonvacuity.
+Continue mathematical work after preserving and pushing this checkpoint.

@@ -1,0 +1,1027 @@
+\documentclass[11pt,letterpaper,reqno]{amsart}
+\usepackage[foot]{amsaddr}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{hyperref}
+
+\allowdisplaybreaks
+
+\def\eps{\varepsilon}
+\def\E{\mathbb{E}}
+\def\P{\mathbb{P}}
+\def\R{\mathbb{R}}
+\def\CC{\mathbb{C}}
+\def\DD{\mathbb{D}}
+\def\N{\mathbb{N}}
+\def\OO{\mathbb{O}}
+\def\d{\mathrm{d}}
+\def\btheta{\boldsymbol{\theta}}
+\def\bphi{\boldsymbol{\varphi}}
+\def\bxi{\boldsymbol{\xi}}
+\def\bLambda{\boldsymbol{\Lambda}}
+\def\bPi{\boldsymbol{\Pi}}
+\def\X{\mathbf{X}}
+\def\W{\mathbf{W}}
+\def\M{\mathbf{M}}
+\def\H{\mathbf{H}}
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\S{\mathbf{S}}
+\def\D{\mathbf{D}}
+\def\Id{\mathrm{Id}}
+\def\J{\mathbf{J}}
+\def\O{\mathbf{O}}
+\def\a{\mathbf{a}}
+\def\b{\mathbf{b}}
+\def\e{\mathbf{e}}
+\def\g{\mathbf{g}}
+\def\u{\mathbf{u}}
+\def\w{\mathbf{w}}
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\z{\mathbf{z}}
+\def\cD{\mathcal{D}}
+\def\cE{\mathcal{E}}
+\def\cG{\mathcal{G}}
+\def\cH{\mathcal{H}}
+\def\cR{\mathcal{R}}
+\def\cF{\mathcal{F}}
+\def\cM{\mathcal{M}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cP{\mathcal{P}}
+\def\cS{\mathcal{S}}
+\def\cT{\mathcal{T}}
+\def\cZ{\mathcal{Z}}
+\def\GP{\operatorname{GP}}
+\def\GOE{\operatorname{GOE}}
+\def\PSD{\mathrm{PSD}}
+\def\diag{\operatorname{diag}}
+\def\sign{\operatorname{sign}}
+\def\sp{\operatorname{span}}
+\def\Haar{\operatorname{Haar}}
+\def\Proj{\operatorname{Proj}}
+\def\Poisson{\operatorname{Poisson}}
+\def\Tr{\operatorname{Tr}}
+\def\Gibbs{\mathrm{Gibbs}}
+\def\Ising{\mathrm{Ising}}
+\def\Law{\operatorname{Law}}
+\def\Var{\operatorname{Var}}
+\def\Cov{\operatorname{Cov}}
+\def\op{\mathrm{op}}
+\def\Lip{\mathrm{Lip}}
+\def\tti{\mathrm{tti}}
+\def\1{\mathbf{1}}
+\def\I{\mathrm{I}}
+\def\II{\mathrm{II}}
+\def\III{\mathrm{III}}
+\def\IV{\mathrm{IV}}
+\def\id{\operatorname{id}}
+\def\DKL{D_{\mathrm{KL}}}
+\def\val{\operatorname{val}}
+\def\v{\mathbf{v}}
+\def\V{\mathbf{V}}
+\def\Z{\mathbf{Z}}
+\def\G{\mathbf{G}}
+\def\beps{\boldsymbol{\varepsilon}}
+\def\pre{\mathrm{pre}}
+
+\def\C{\mathbf{C}}
+\def\bR{\mathbf{R}}
+\def\bE{\mathbf{E}}
+\def\bPhi{\boldsymbol{\Phi}}
+\def\bDelta{\boldsymbol{\Delta}}
+\def\bSigma{\boldsymbol{\Sigma}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
+
+\newcommand{\zf}[1]{{\color{red}[ZF: #1]}}
+\newcommand{\TODO}[1]{{\color{red}[TODO: #1]}}
+\newcommand{\gw}[1]{{\color{blue}[GW: #1]}}
+\newcommand{\lw}[1]{{\color{violet}[LW: #1]}}
+
+\newcommand{\tm}[1]{{\color{blue}[TM: #1]}}
+
+\begin{document}
+
+\title[DMFT for the orthogonally-invariant SK model]{Dynamical mean-field limit and replica-symmetric free energy for the orthogonally-invariant SK model}
+
+\author{Zhou Fan}
+\author{Theodor Misiakiewicz}
+\author{Leda Wang}
+\author{Garrett G.\ Wen}
+\address{Yale University, Department of Statistics and Data Science}
+\email{zhou.fan@yale.edu}
+\email{theodor.misiakiewicz@yale.edu} \email{leda.wang@yale.edu} \email{gang.wen@yale.edu}
+
+\begin{abstract}
+We study a class of diffusion processes on $\R^n$ interacting through a
+symmetric matrix $\X \in \R^{n \times n}$. When eigenvectors of
+$\X$ are random and uniformly distributed on the orthogonal group, we derive a
+dynamical mean-field limit for the empirical law of sample paths,
+extending a classical characterization due to Sompolinsky and Zippelius for
+$\X \sim \GOE$. This limit takes the form of a generalized Langevin equation
+with correlated Gaussian noise and memory, whose correlation and response
+kernels relate to those of the original diffusion process through a system of
+convolution equations depending on $\X$ via the free cumulants of its eigenvalue
+distribution.
+
+Specializing to the overdamped Langevin diffusion $\{\btheta^t\}_{t \geq 0}$
+for a Gibbs measure
+\[\mu(\btheta) \propto \exp\Big(\frac{1}{2}\btheta^\top \X\btheta\Big)
+\prod_{i=1}^n \nu(\d\theta_i),\]
+we analyze this mean-field limit under an assumption that the dynamics are rapidly
+mixing. In this regime, the correlation/response kernels admit
+time-translation-invariant approximants which satisfy a
+fluctuation-dissipation relation. The generalized Langevin equation admits a
+Markovian approximation with coupling to an auxiliary multivariate OU-process,
+and converges in time to a replica-symmetric prediction for the
+empirical law of coordinates under $\mu$. The correlation structure of
+the auxiliary process may be understood through the infinitesimal generator of a
+Markov semigroup for the lifted process of path histories
+$\bxi^t=\{\btheta^s\}_{s:s \leq t}$.
+
+Consequently, we show that the free energy of the Gibbs measure
+converges to a replica-symmetric limit under an explicit
+high-temperature condition, which for an Ising model is
+\[\|\X\|_\op<1/2.\]
+By recent dynamical universality results, this implies that the same characterization of the free energy holds in fully deterministic models without random disorder, as long as
+$\X$ satisfies a set of deterministic delocalization conditions.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+Let $\X \in \R^{n \times n}$ be a (deterministic or random) symmetric matrix. 
+Consider a diffusion process or gradient flow in $\R^n$ interacting through $\X$,
+\begin{equation}\label{eq:dynamicsintro}
+\d\btheta^t=[f(\btheta^t)+\X\btheta^t]\d t+\sqrt{2\gamma}\,\d\b^t
+\end{equation}
+where $f$ is a scalar function applied coordinate-wise. Under suitable mean-field
+assumptions for $\X$ to be specified, the first goal of our work is to obtain
+an asymptotic characterization of the empirical distribution of coordinates of
+\eqref{eq:dynamicsintro} in the limit $n \to \infty$. Applying this
+characterization to study Langevin dynamics for the Gibbs measure
+\begin{equation}\label{eq:gibbsmeasureintro}
+\mu(\d\btheta)=\frac{1}{\cZ}\exp\Big(\frac{1}{2}\btheta^\top \X\btheta\Big)
+\prod_{i=1}^n \nu(\d\theta_i),
+\end{equation}
+the second goal of our work is to obtain an asymptotic characterization of the
+free energy and replica overlaps of \eqref{eq:gibbsmeasureintro}
+in a regime where these dynamics are rapidly mixing.
+
+For models where $\X$ has
+independent Gaussian entries up to transposition symmetry, such
+questions are richly studied in the physics and mathematics literatures on spin
+glasses and disordered systems. A dynamical mean-field limit for a prototypical
+example of \eqref{eq:dynamicsintro} was first derived by Sompolinsky and
+Zippelius in \cite{sompolinsky1982relaxational},
+and is given by the law of a scalar generalized
+Langevin equation
+\begin{equation}\label{eq:sompolinskydmft}
+\d\theta^t=\left[f(\theta^t)+\int_0^t R_\theta(t,s)\theta^s \d s+g^t\right]\d t
++\sqrt{2\gamma}\,\d b^t,
+\qquad \{g^t\} \sim \GP(0,C_\theta),
+\end{equation}
+with correlated Gaussian noise $\{g^t\}$ and self-consistently defined
+correlation and response kernels $(C_\theta,R_\theta)$.
+Convergence in empirical law of the sample paths of \eqref{eq:dynamicsintro} to
+\eqref{eq:sompolinskydmft}, and an associated annealed large deviations
+principle, was first proved mathematically by Ben Arous and Guionnet
+in \cite{arous1997symmetric,guionnet1997averaged}. The Ising case of the Gibbs measure \eqref{eq:gibbsmeasureintro}
+with $\nu(\d\theta)$ supported on $\{\pm 1\}$ corresponds to the classical
+Sherrington-Kirkpatrick (S-K) model \cite{sherrington1975solvable}, for which the form of the asymptotic
+free energy was famously conjectured by Parisi in \cite{parisi1979infinite}
+and proved by
+Guerra and Talagrand \cite{guerra2003broken,talagrand2006parisi}; we refer to
+\cite{talagrand2010mean,talagrand2011mean,panchenko2013sherrington} for textbook treatments
+of this model and its rich history. Universality over classes of random 
+matrices $\X$ having independent non-Gaussian entries (up to symmetry)
+has been shown for the free energy of the S-K model in \cite{carmona2006universality} and for
+dynamics similar to \eqref{eq:dynamicsintro} in
+\cite{dembo2021diffusions,dembo2021universality}.
+
+Arguably, this universality class of disorder matrices with independent entries remains quite limited, raising a question of whether analogous results hold under more general mean-field structure. In this work, we aim to extend some of these developments to a class of disorder
+matrices $\X \in \R^{n \times n}$ that are orthogonally-invariant in law ---
+i.e.\ whose matrix of eigenvectors is uniformly distributed on the orthogonal
+group --- and to an associated universality class that encompasses examples of
+deterministic matrices $\X$. Our contributions are threefold:
+\begin{enumerate}[1.]
+\item For the dynamics \eqref{eq:dynamicsintro} with 
+orthogonally-invariant $\X \in \R^{n \times n}$ having a compactly supported
+asymptotic spectral law $\Lambda$, we develop an extension of the
+mean-field limit \eqref{eq:sompolinskydmft}.
+
+This extension has the same structural form as \eqref{eq:sompolinskydmft},
+\begin{equation}\label{eq:dmftintro}
+\d\theta^t=\left[f(\theta^t)+\int_0^t R_g(t,s)\theta^s \d s+g^t\right]\d t
++\sqrt{2\gamma}\,\d b^t,
+\qquad \{g^t\} \sim \GP(0,C_g),
+\end{equation}
+with correlation and response kernels $(C_g,R_g)$ now defined from the kernels $(C_\theta,R_\theta)$ which characterize the correlation and response of $\{\btheta^t\}_{t \geq 0}$ via convolution equations and the free cumulants of
+$\Lambda$ (cf.\ Definition \ref{def:DMFT}). We establish almost-sure
+convergence of the empirical law of sample paths of \eqref{eq:dynamicsintro} to this limit, when $f$  has bounded derivatives up to $3^\text{rd}$ order.  \\
+
+\item We carry out an analysis of this mean-field limit \eqref{eq:dmftintro}
+for the overdamped Langevin dynamics of the Gibbs measure
+\eqref{eq:gibbsmeasureintro} when $\nu(\d\theta)=e^{-U(\theta)}\d\theta$
+has a smooth potential,
+under an assumption that these dynamics converge at an
+exponential dimension-free rate from both an equilibrium and an independent
+random initialization (cf.\ Assumption \ref{assump:convergence}).
+
+In this dynamical regime, we prove that the preceding kernels $(C_g,R_g)$ have
+time-translation-invariant limits $(c_g,r_g)$ as $t \to \infty$,
+which satisfy a fluctuation-dissipation relation
+\begin{equation}\label{eq:rgfdtintro}
+r_g(t)={-}c_g'(t).
+\end{equation}
+In contrast to the mean-field limit of Sompolinsky-Zippelius in
+\eqref{eq:sompolinskydmft}, the correlation kernel $c_g(\cdot)$ may not have a
+mixture-of-exponentials form. We instead establish a sequence of approximations
+$c_g(t) \approx u_m^\top e^{-tA_m}u_m$ with non-diagonal, asymmetric matrices
+$A_m \in \R^{m \times m}$, leading to a sequence of Markovian
+approximations of \eqref{eq:dmftintro},
+\begin{equation}\label{eq:markovapproxintro}
+\begin{aligned}
+\d\theta^t&=[f(\theta^t)+u_m^\top x^t+z]\d t+\sqrt{2}\,\d b^t\\
+\d x^t&={-}A_m[x^t-u_m\theta^t]\d t+\Sigma_m\,\d b_x^t.
+\end{aligned}
+\end{equation} 
+Via these approximations, we show that
+$\{\theta^t\}_{t \geq 0}$ in \eqref{eq:dmftintro} converges to an equilibrium
+law that coincides with a replica-symmetric prediction for the empirical distribution of coordinates under the Gibbs measure
+\eqref{eq:gibbsmeasureintro}.\\
+
+\item A sufficient condition ensuring Assumption \ref{assump:convergence}
+is a log-Sobolev inequality for the Gibbs measure, which
+may be verified under an explicit high-temperature condition
+\cite{bauerschmidt2019very}. From this, we prove replica-symmetric
+limits for the overlaps and free energy of \eqref{eq:gibbsmeasureintro}.
+
+Concretely, for the Ising model with $\nu(\d\theta) \propto e^h
+\delta_{\theta=1}+e^{-h}\delta_{\theta=-1}$ where $h \in \R$ is an external field,
+we establish this result under the high-temperature assumption  
+\begin{equation}\label{eq:hightempintro}
+\|\X\|_\op<1/2.
+\end{equation}
+(In the setting of the classical S-K model where $\X=\beta\J$ and $\J \sim \GOE(n)$, this corresponds to the assumption $\beta<1/4$, which is a subset of the full replica-symmetric regime \cite{lopatto2026replica}.)
+Leveraging the dynamical universality results of
+\cite{dudeja2023universality,wang2024universality}, we deduce
+that the same conclusion holds when $h=0$ for a general class of
+purely deterministic matrices $\X \in \R^{n \times n}$ satisfying delocalization
+conditions (cf.\ Assumption \ref{assump:X-universal}), and for arbitrary $h \in
+\R$ when $\X$ is a ``semi-random'' matrix conjugated by a diagonal matrix of
+random $\{\pm 1\}$ signs.
+\end{enumerate}
+These results are presented in Section \ref{sec:results}.
+
+\subsection{Existing literature} \emph{Dynamics.}
+The form of the mean-field limit \eqref{eq:dmftintro} for the
+diffusion equation \eqref{eq:dynamicsintro} with orthogonally-invariant $\X$
+may be anticipated from the analysis of Opper,
+\c{C}akmak, and Winther \cite{opper2016theory}, who computed the dynamical mean-field
+equations for an analogous class of discrete-time dynamics.
+The mean-field limit \eqref{eq:dmftintro} and convolutional structure of its
+correlation and response kernels may be understood as a passage of this
+result to continuous time.
+
+A particular class of discrete-time dynamics --- analogous
+to Approximate Message Passing (AMP) algorithms \cite{kabashima2003cdma,donoho2009message} and TAP iterations
+\cite{bolthausen2014iterative} in models with Gaussian disorder $\X$ --- was highlighted in
+\cite{opper2016theory} as having purely Gaussian limiting dynamics. For this AMP class,
+convergence to the mean-field limit was proved mathematically in
+\cite{fan2022approximate},
+extending an approach of iterative conditioning of Haar-orthogonal matrices
+previously developed in \cite{ma2017orthogonal,takeuchi2019rigorous,rangan2019vector} to analyze a simpler family of divergence-free
+``vector-AMP'' algorithms. Alternative proofs and extensions of
+the result of \cite{fan2022approximate} have since been obtained in \cite{liu2024unifying,gorini2026universality}, and universality
+over semi-random and deterministic disorder matrices $\X$ has been shown
+in increasingly general contexts in
+\cite{dudeja2023universality,wang2024universality,gorini2026universality}.
+
+It was shown by Celentano, Cheng, and Montanari \cite{celentano2021high}, in an analogous
+statistical model with i.i.d.\ Gaussian disorder, that the
+mean-field limit of  general discrete-time iterative algorithms may be
+deduced from that of AMP, and also that the mean-field limit of
+continuous-time gradient flow dynamics may be proved using an approach different
+from \cite{arous1997symmetric,guionnet1997averaged}. This approach relies on a reduction to AMP dynamics via
+time-discretization, and a passage to the continuous-time limit through
+verifying contractivity of the dynamical
+fixed-point equations in a suitably defined Banach metric.
+The approach has been extended to derive mean-field limits for
+broad families of discrete-time iterative algorithms in
+\cite{gerbelot2024rigorous,han2025entrywise,celentano2025state,dandi2025sequential}
+and for continuous-time Langevin diffusions and stochastic gradient dynamics 
+in \cite{fan2025dynamicalI,fan2026high,nishiyama2026high}. We apply a similar proof strategy in our work, to pass the
+characterization of AMP in \cite{fan2022approximate} to continuous time.
+
+Mathematical analysis of aging in the dynamical mean-field limit of a
+spherical 2-spin model was carried out in \cite{arous2001aging},
+of convergence in time of the Cugliandolo-Kurchan/Crisanti-Horner-Sommers
+equations of the spherical p-spin model to an FDT equilibrium in \cite{dembo2007limiting},
+and of convergence in time of these equations under disorder-dependent initial
+conditions in \cite{dembo2019dynamics,dembo2025dynamics}. An analysis of the
+dynamical mean-field limit for a non-spherical model with Gaussian disorder
+was carried out in \cite{fan2025dynamicalII}
+under a convergence assumption similar to our work; we build upon several ideas
+of \cite{fan2025dynamicalII}, discussed in Section \ref{sec:proof}.\\
+
+\emph{Free energy.} The Ising case of the model \eqref{eq:gibbsmeasureintro}
+was introduced by Marinari, Parisi, and Ritort \cite{marinari1994replica} as a model which may
+exhibit similar mean-field phenomena as models with deterministic disorder.
+Replica-symmetric and 1-RSB predictions for the asymptotic
+free energy of this model were computed in
+\cite{marinari1994replica,cherrier2003role}.
+TAP equations for the magnetization were derived in \cite{parisi1995mean} using a
+high-temperature expansion and in \cite{opper2001adaptive} using an alternative
+cavity method. \cite{maillard2019high} extended the former analysis to a broad class of
+statistical models with orthogonally-invariant random disorder, and discussed its
+connection to dynamical algorithms.
+
+Mathematical proofs of such predictions remain scarce in the
+literature, even in high temperature. For a
+high-temperature regime of the Ising model without external field, where
+quenched and annealed free energies coincide, a replica-symmetric limit for the free
+energy was proved in \cite{bhattacharya2016high} using the second-moment method. This was extended to an Ising
+model with external field $h \in \R$ in \cite{fan2024replica} via a conditional
+second-moment method analogous to that of \cite{bolthausen2018morita} for the S-K model and
+\cite{ding2019capacity} for the Ising perceptron, conditioning on the filtration of a
+TAP iteration for computing the magnetization. This result of
+\cite{fan2024replica}
+showed, for $\X=\beta\J$ where the asymptotic spectral law of $\J$ converges to
+$\bar \Lambda$, that the free energy converges to its replica-symmetric prediction
+under a high-temperature condition of the form
+$\beta \in (0,\beta_0)$ for some
+\[\beta_0 \equiv \beta_0(\Law(\bar\Lambda),h).\]
+As the analysis of the second-moment variational problem in \cite{fan2024replica} was
+perturbative around $\beta=0$, it is difficult to glean a more explicit bound for
+$\beta_0$, and we believe that this bound would be substantially smaller than
+our explicit guarantee in \eqref{eq:hightempintro}. For an analogous statistical
+model where
+the disorder matrix $\X$ is alternatively representable using Gaussian rather than
+Haar-orthogonal randomness, the asymptotic free energy was proved in
+\cite{barbier2018mutual} via a Gaussian interpolation approach. A
+replica-symmetric limit for the ground state energy of a Gibbs measure with
+orthogonally-invariant $\X$ and convex
+potential was also proved in \cite{gerbelot2022asymptotic}
+via analysis of a vector-AMP algorithm for convex optimization.
+
+One perspective on the challenge of using a dynamical approach to prove
+properties of the Gibbs measure is in certifying the optimality of the dynamics.
+For example, in the
+context of \eqref{eq:gibbsmeasureintro} and related statistical models,
+AMP algorithms/TAP iterations that conjecturally converge to the magnetization
+are known \cite{opper2016theory,rangan2019vector,ccakmak2019memory}, but this convergence has thus far only been
+certified in high-temperature regimes analogous to that of
+\cite{fan2024replica}, relying on a-priori understanding of the asymptotic free
+energy and structure of the Gibbs measure \cite{fan2022tap,li2023random}.
+Likewise, while mean-field characterizations
+of the ground state energy in convex landscapes may be established
+by certifying optimality of optimization algorithms through a
+first-order condition \cite{bayati2011lasso,donoho2016high,gerbelot2022asymptotic}, certifying global optimality of
+such algorithms in non-convex landscapes remains challenging. In this work, we
+take an approach of analyzing the standard overdamped Langevin dynamics, which
+has a more complex dynamical mean-field limit than AMP-type algorithms, but
+whose convergence to the Gibbs measure may be certified through
+entropy-decay arguments external to the mean-field theory.
+
+As a benefit of our dynamical approach to analyzing the free energy, our results inherit the aforementioned universality over semi-random and deterministic matrices $\X$ \cite{dudeja2023universality,wang2024universality,gorini2026universality}, which has been shown for algorithm dynamics but not yet for static properties of the Gibbs measure. Our results confirm that spin-glass/disordered-systems characterizations of the Gibbs measure can hold for systems without random disorder, as originally anticipated by \cite{marinari1994replica}.
+
+
+\subsection{Proof ideas}\label{sec:proof}
+We describe briefly the main ideas of our analyses.
+
+As discussed in the preceding section, \eqref{eq:dmftintro} is obtained by
+passing a characterization of a discrete-time AMP algorithm in
+\cite{opper2016theory,fan2022approximate} to
+continuous time. An important distinction between these discrete-time
+and continuous-time characterizations is that the correlation/response kernels
+of the former are defined iteratively/inductively over time. The first contribution of our work is to formalize a sense in which the continuous-time kernels
+$C_\theta,R_\theta,C_g,R_g$ may instead be understood as the fixed points of a
+contractive map.
+
+An obstacle to this formalization is that the convolutional
+equations mapping
+\begin{equation}\label{eq:convolution}
+(C_\theta,R_\theta) \mapsto (C_g,R_g)
+\end{equation}
+do not, in general, ensure that $C_g$ remains a positive-semidefinite (p.s.d.)
+kernel, which is needed to define the process \eqref{eq:dmftintro}; thus, it
+is a bit unclear on what domain such a contractive map should be defined.
+A related issue is that even when $C_g$ is p.s.d., it seems challenging to
+analyze contractivity of \eqref{eq:convolution} under a Wasserstein-coupling
+metric for $C_\theta,C_g$ as used in the arguments of
+\cite{celentano2021high,fan2025dynamicalI,fan2026high}. We resolve these issues by
+formalizing the fixed-point interpretation of the dynamical mean-field limit
+via a sequence of mappings
+\[(C_\theta,R_\theta) \mapsto (C_g,R_g) \mapsto \cP(C_g,R_g) \mapsto (C_\theta,R_\theta),\]
+where $\cP$ projects $C_g$ under an alternative weighted $L^2$ metric onto a subset of the p.s.d.\ cone. We then
+develop different arguments to
+establish contractivity in this metric, and leverage results of \cite{fan2022approximate} to show that at the fixed point of these mappings, $C_g$ is in fact p.s.d., and thus is also a fixed point without projection by $\cP$.
+
+Turning to the analysis of the overdamped
+Langevin equation, from the
+assumed convergence condition in Assumption \ref{assump:convergence} and an
+identification of $(C_\theta,R_\theta)$ as the limits of
+coordinate-wise correlation and response functions of
+$\{\btheta^t\}_{t \geq 0}$, one may deduce the existence of
+time-translation-invariant limits $c_\theta,r_\theta$ for these kernels at
+large times, together with their fluctuation-dissipation relation
+\begin{equation}\label{eq:crthetaFDTintro}
+r_\theta(t)={-}c_\theta'(t)
+\end{equation}
+(Lemma \ref{lemma:tti}). 
+These arguments are similar to \cite{fan2025dynamicalII} which analyzed a statistical model with Gaussian disorder.
+Interestingly, we are able to verify that \eqref{eq:crthetaFDTintro}
+implies also the fluctuation-dissipation relation
+$r_g(t)={-}c_g'(t)$ corresponding to the kernels
+$C_g,R_g$ appearing in the generalized Langevin
+equation \eqref{eq:dmftintro}. This verification is a short
+calculation in the Fourier domain (Lemma \ref{lemma:ttig}).
+
+We show that $c_g(\cdot)$ may be interpreted as
+the large-$n$ limit of the correlation function of coordinates of
+\[\g^t=\X \btheta^t - \int_{-\infty}^t r_g(t-s)\btheta^s\d s\]
+at equilibrium, which are observables of the full path history
+$\bxi^t:=\{\btheta^s\}_{s:s \leq t}$.
+As this ``lifted'' process $\{\bxi^t\}_{t \in \R}$ remains Markovian over this
+space of path histories, writing $\nu$ for its stationary measure
+and $\{P_t\}_{t \geq 0}$ for its
+$L^2(\nu)$-semigroup, this implies a representation
+\[c_g(t)=\lim_{n \to \infty} \frac{1}{n}\,\E_\nu[f^\top P_t f]\]
+where $f$ is the function for which $\g^t=f(\bxi^t)$.
+An important distinction with the setting of Gaussian disorder is that here
+$\{P_t\}_{t \geq 0}$ is irreversible, and its infinitesimal generator is not
+self-adjoint on $L^2(\nu)$. Thus, we do not obtain from this representation a
+mixture-of-exponentials form for $c_g(\cdot)$, and in general, we do not expect
+such a form to hold true. Instead, we establish an approximation
+\[c_g(t) \approx u_m^\top e^{-tA_m}u_m\]
+where ${-}A_m \in \R^{m \times m}$ is a (non-diagonal, asymmetric)
+matrix that constitutes a finite-dimensional 
+approximation for the generator of $\{P_t\}_{t \geq 0}$.
+Together with the fluctuation-dissipation
+relation \eqref{eq:rgfdtintro}, this leads to the previously stated Markov
+approximation \eqref{eq:markovapproxintro} for \eqref{eq:dmftintro}.
+
+Finally, we show convergence of \eqref{eq:dmftintro} to an equilibrium law
+characterized by replica-symmetric fixed point equations, by analyzing 
+convergence of the Markovian system \eqref{eq:markovapproxintro} together with
+its approximation error for \eqref{eq:dmftintro}. The primary technical
+challenge is that the generator ${-}A$ for the above semigroup
+$\{P_t\}_{t \geq 0}$ has non-trivial (in fact, dense)
+null space in $L^2(\nu)$, and thus the spectral gap of its approximant ${-}A_m$ must vanish with the
+approximation error. Thus, it seems challenging to prove convergence to
+equilibrium of the Markovian
+system \eqref{eq:markovapproxintro} over a fixed time horizon that is
+independent of this error and the dimension $m$; on the other hand,
+the accumulated approximation error over a $m$-dependent time horizon may not be
+small under a naive coupling and Gr\"onwall argument.
+We circumvent this issue by using a careful
+construction of ${-}A_m$ that instead approximates a slightly damped version of
+${-}A$, and that allows for a stable coupling of
+\eqref{eq:dmftintro} and \eqref{eq:markovapproxintro} over an arbitrarily long
+time horizon on which \eqref{eq:markovapproxintro} is guaranteed to converge
+(Corollary \ref{cor:semigroupapprox}, Lemma \ref{lemma:thetacoupling}). 
+This implies the replica-symmetric characterization of the Gibbs measure
+\eqref{eq:gibbsmeasureintro} under Assumption \ref{assump:convergence}, for
+laws $\nu$ having a smooth potential. The concrete implication for the Ising
+model is then deduced by verifying Assumption \ref{assump:convergence} using the
+log-Sobolev inequality of \cite{bauerschmidt2019very} for a
+sequence of double-well potentials that converge to the Ising law.
+
+\section{Main results}\label{sec:results}
+
+\subsection{Dynamical mean-field limit}
+
+Let $\{\btheta^t\}_{t \geq 0}$ be a diffusion process on $\R^n$ taking the form
+\begin{equation}\label{eq:dynamics}
+\d\btheta^t=[f(\btheta^t)+\X\btheta^t]\d t+\sqrt{2\gamma}\,\d \b^t
+\end{equation}
+where $\X \in \R^{n \times n}$ is a symmetric matrix, $f:\R \to \R$ is a
+Lipschitz-continuous function applied coordinate-wise, and $\{\b^t\}_{t \geq 0}$
+is a standard Brownian motion on $\R^n$. The case $\gamma=0$ corresponds to gradient flow.  
+
+Our first main result establishes a deterministic limit, as $n \to \infty$,
+of the empirical distribution of coordinate sample paths
+\[\{(\theta_i^t)_{t \in [0,T]}\}_{i=1}^n\]
+for any fixed time horizon $T>0$ independent of $n$. For expositional clarity, let us first state
+this result for the following class of random disorder matrices $\X$ that 
+are orthogonally invariant in law; we discuss universality over the disorder in
+Section \ref{subsec:universality}.
+
+\begin{assumption}\label{assump:X}
+$\X=\O\bLambda\O^\top$, where $\O \sim \Haar(\OO(n))$ is a Haar-uniform
+random matrix on the orthogonal group, and
+$\bLambda=\diag(\lambda_1,\ldots,\lambda_n)$ is a (deterministic or random)
+diagonal matrix independent of $\O$. There exists a constant $\Lambda_{\max}>0$
+such that almost surely for all large $n$,
+\[\|\X\|_\op \leq \Lambda_{\max}.\]
+Furthermore, there exists a random variable $\Lambda$ (supported on
+$[-\Lambda_{\max},\Lambda_{\max}]$) with $\E[\Lambda]=0$ and $\Var[\Lambda]>0$
+such that almost surely as $n \to \infty$,
+\[\frac{1}{n}\sum_{i=1}^n \delta_{\lambda_i} \to \Law(\Lambda)
+\text{ weakly.}\]
+Throughout, we denote by
+$\{\kappa_p\}_{p \geq 2}$ the free cumulants of this random variable $\Lambda$.
+\end{assumption}
+ 
+
+We impose, in addition, the following assumptions on the
+dynamics \eqref{eq:dynamics}.
+
+\begin{assumption}\label{assump:dynamics}
+\begin{enumerate}[(a)]
+\item $f:\R \to \R$ is fixed for all $n$, and three-times continuously-differentiable
+with uniformly bounded first, second, and third derivatives.  
+\item $\gamma \geq 0$ is a fixed scalar parameter, and
+the Brownian motion $\{\b^t\}_{t \geq 0}$ is independent of $\X$.
+\item The initial state
+$\btheta^0=(\theta_1^0,\ldots,\theta_n^0)$ is independent of $\X$ and
+$\{\b^t\}_{t \geq 0}$. There exists a random variable $\theta^0$ with
+$\Var[\theta^0]>0$ and finite moments of all orders,
+such that for each fixed $p \geq 1$, almost surely as $n \to \infty$,
+\[\frac{1}{n}\sum_{i=1}^n \delta_{\theta_i^0} \to \Law(\theta^0) \text{ weakly
+and in Wasserstein-$p$.}\]
+\end{enumerate}
+\end{assumption}
+
+Under these assumptions, we will show that the limit as $n \to \infty$ of
+the dynamics \eqref{eq:dynamics} admits the following mean-field
+characterization:
+
+\begin{definition}\label{def:DMFT}
+Let $\theta^0$, $\{b^t\}_{t \geq 0}$, and $\{g^t\}_{t \geq 0}$
+be mutually independent scalar variables/processes on a filtered
+probability space $(\Omega,\cF,\{\cF_t\}_{t \geq 0},\P)$, where
+$\Law(\theta^0)$ is given by Assumption \ref{assump:dynamics}(c),
+$\{b^t\}_{t \geq 0}$ is a standard $\cF_t$-adapted Brownian motion, and
+\[\{g^t\}_{t \geq 0} \sim \GP(0,C_g)\]
+is a continuous, mean-zero, $\cF_t$-adapted Gaussian process with a symmetric
+positive-semidefinite covariance kernel $C_g:[0,\infty) \times [0,\infty)
+\to \R$. Let $\{\theta^t\}_{t \geq 0}$ be the solution of the SDE
+\begin{equation}\label{eq:dmft-theta}
+\d\theta^t=\left[f(\theta^t)+\int_0^t R_g(t,s)\theta^s ds+g^t\right]
+\d t+\sqrt{2 \gamma}\,\d b^t, \qquad \theta^t|_{t=0}=\theta^0,
+\end{equation}
+where $R_g:[0,\infty) \times [0,\infty) \to \R$
+is a response kernel satisfying $R_g(t,s)=0$ for $s>t$. Let
+$\{\frac{\d\theta^t}{\d g^s}\}_{t \geq s \geq 0}$ be the solution of the
+response equation
+\begin{equation}\label{eq:dmft-response}
+\frac{\d}{\d t} \frac{\d\theta^t}{\d g^s}=\left[f'(\theta^t)\frac{\d\theta^t}{\d g^s}
++\int_s^t R_g(t,r)\frac{\d \theta^r}{\d g^s}\d r\right],
+\qquad \frac{\d\theta^t}{\d g^s}\bigg|_{t=s}=1.
+\end{equation}
+These kernels $C_g,R_g$, in conjunction with a pair of auxiliary kernels
+$C_\theta,R_\theta:[0,\infty) \times [0,\infty) \to \R$,
+are self-consistently defined from the laws of the above processes by the
+fixed point conditions
+\begin{align}
+C_\theta(t,s)&=\E[\theta^t \theta^s]\label{eq:dmft-Ctheta}\\
+R_\theta(t,s)&=\E\left[\frac{\d\theta^t}{\d g^s}\right]
+\text{ for } s \in [0,t],
+\quad R_\theta(t,s)=0 \text{ for } s>t,
+\label{eq:dmft-Rtheta}\\
+C_g(t,s)&=\sum_{p,q \geq 0} \kappa_{p+q+2}\,
+R_\theta^{\ast p} * C_\theta * \bar R_\theta^{\ast q}(t,s),
+\quad
+\text{ where } \bar R_\theta(t,s)=R_\theta(s,t) \text{ for all } s,t \geq 0,\label{eq:dmft-Cg}\\
+R_g(t,s)&=\sum_{p \geq 1} \kappa_{p+1}\,R_\theta^{\ast p}(t,s).\label{eq:dmft-Rg}
+\end{align}
+Here, $A*B$ denotes the standard convolution for kernels defined over
+$[0,\infty)$,
+\[[A \ast B](t,s)=\int_0^\infty A(t,r)B(r,s)\d r,
+\quad A^{\ast p}=\underbrace{A \ast \ldots \ast A}_{p \text{
+times}}, \quad A^{\ast 0}*B=B*A^{\ast 0}=B.\]
+\end{definition}
+
+\begin{theorem}\label{thm:dmft-approx}
+Suppose Assumptions \ref{assump:X} and \ref{assump:dynamics} hold. Then:
+\begin{enumerate}[(a)]
+\item There exist domains $\cS_\theta^+$ for $(C_\theta,R_\theta)$ and 
+$\cS_g^+$ for $(C_g,R_g)$ for which the kernels and processes of
+Definition \ref{def:DMFT} are well-defined and unique.
+That is, (\ref{eq:dmft-theta}--\ref{eq:dmft-response}) have unique
+$\cF_t$-adapted solutions for any $(C_g,R_g) \in \cS_g^+$,
+the series (\ref{eq:dmft-Cg}--\ref{eq:dmft-Rg}) are absolutely convergent for
+any $(C_\theta,R_\theta) \in \cS_\theta^+$, and there exists a
+unique fixed point $(C_\theta,R_\theta,C_g,R_g) \in \cS_\theta^+
+\times \cS_g^+$ satisfying (\ref{eq:dmft-Ctheta}--\ref{eq:dmft-Rg}).
+\item Fix any $T>0$ not depending on $n$. Define
+\[\g^t=\X\btheta^t-\int_0^t R_g(t,s)\btheta^s\d s.\]
+Let $\frac{1}{n}\sum_{i=1}^n \delta_{\{(\theta_i^t,g_i^t,b_i^t)\}_{t \in
+[0,T]}}$ be the empirical measure of sample paths
+$(\theta_i^t,g_i^t,b_i^t)_{t \in [0,T]}$ and let
+$\Law(\{(\theta^t,g^t,b^t)\}_{t \in [0,T]})$ be the joint law of these 
+processes in Definition \ref{def:DMFT}, as probability measures on
+$C([0,T],\R^3)$. Then almost surely
+as $n \to \infty$,
+\[\frac{1}{n}\sum_{i=1}^n \delta_{\{(\theta_i^t,g_i^t,b_i^t)\}_{t \in [0,T]}}
+\to \Law(\{(\theta^t,g^t,b^t)\}_{t \in [0,T]}) \text{ weakly and in
+Wasserstein-2.}\]
+\item Write $\langle \cdot \rangle$ for the expectation over $\{\b^t\}_{t \geq
+0}$, conditional on $\X$ and $\btheta^0$. Then for any fixed $s,t \geq 0$
+with $s \leq t$, almost surely as $n \to \infty$,
+\[\frac{1}{n}\sum_{i=1}^n \langle \theta_i^t\theta_i^s \rangle
+\to C_\theta(t,s), \quad
+\frac{1}{n}\sum_{i=1}^n \langle g_i^t g_i^s \rangle
+\to C_g(t,s), \quad
+\frac{1}{n}\sum_{i=1}^n \langle \theta_i^tb_i^s
+\rangle \to \sqrt{2\gamma}\int_0^s R_\theta(t,\tau) \d \tau.\]
+\end{enumerate}
+\end{theorem}
+
+We refer to the proof of Theorem \ref{thm:dmft-approx} in Section \ref{sec:dmft-approx} for an explicit definition of the domains $\cS_\theta^+,\cS_g^+$. The third claim of Theorem \ref{thm:dmft-approx}(c) will lead to an interpretation of $R_\theta$ as an averaged coordinate-wise response function for the dynamics $\{\btheta^t\}_{t \geq 0}$ (cf.\ \eqref{eq:response} and \eqref{eq:Rthetarepr} in Section \ref{sec:corrresponse}).
+
+\subsection{Langevin dynamics and replica-symmetric free energy}
+
+Now let $U:\R \to \R$ be a scalar confining potential, and consider the Gibbs
+measure having Lebesgue density on $\R^n$ given by
+\begin{equation}\label{eq:gibbsmeasure}
+\mu_\Gibbs(\btheta)=\frac{1}{\cZ}\exp\left(\frac{1}{2}\btheta^\top \X\btheta
+-\sum_{i=1}^n U(\theta_i)\right)
+\end{equation}
+where $\cZ$ is the partition function
+\begin{equation}\label{eq:partition}
+\cZ=\int_{\R^n} \exp\left(\frac{1}{2}\btheta^\top \X\btheta
+-\sum_{i=1}^n U(\theta_i)\right)\d\btheta.
+\end{equation}
+We will assume
+\begin{equation}\label{eq:Uconvexity}
+\liminf_{|x| \to \infty} U''(x) \geq \alpha
+\end{equation}
+for a sufficiently large constant $\alpha>0$ so that $\cZ<\infty$.
+%We will assume also (without loss of generality, by absorbing an additive
+%perturbation $c\,\Id$ of $\X$ into a quadratic term of $U(\cdot)$), that
+%\[\kappa_1=\E[\Lambda]=0.\]
+We write
+\[\langle f(\btheta) \rangle=\E_{\btheta \sim \mu_\Gibbs}
+[f(\btheta) \mid \X], \qquad
+\langle f(\btheta,\btheta') \rangle=\E_{\btheta,\btheta' \overset{iid}{\sim}
+\mu_\Gibbs}[f(\btheta,\btheta') \mid \X]\]
+for the average over independent replicas from this Gibbs measure.
+
+We will analyze the preceding dynamical mean-field limit for the overdamped
+Langevin diffusion
+\begin{equation}\label{eq:langevin}
+\d\btheta^t=\big[\X\btheta^t-U'(\btheta^t)\big]\d t+\sqrt{2}\,\d\b^t
+\end{equation}
+having $\mu_\Gibbs$ as stationary law. We carry out this analysis under
+a condition that these dynamics
+\eqref{eq:langevin} exhibit dimension-free convergence in the following sense,
+both from the given initial state $\btheta^0$ (independent of $\X$) satisfying
+Assumption \ref{assump:dynamics} as well as from an equilibrium initialization.
+
+\begin{assumption}\label{assump:convergence}
+Let $\{\btheta^t\}_{t \geq 0}$ be the solution of \eqref{eq:langevin}
+with the given initial state $\btheta^0$. Let $\{\tilde\btheta^t\}_{t \in \R}$
+denote a stationary process also satisfying \eqref{eq:langevin} with
+equilibrium initial state
+\[\tilde\btheta^0 \sim \mu_\Gibbs.\]
+Let
+$\Law(\btheta^t \mid \btheta^s)$ denote the law of $\btheta^t$
+conditional on $(\X,\btheta^s)$, and define similarly $\Law(\tilde \btheta^t \mid \tilde \btheta^s)$.
+Then for some constants $C,c>0$, almost surely (over $(\X,\btheta^0)$)
+for all large $n$,
+\[\begin{aligned}
+\E\left[\frac{1}{n}W_2(\Law(\btheta^t \mid \btheta^s),\,\mu_\Gibbs)^2 \;\bigg|\; \X,\btheta^0\right] &\leq
+Ce^{-c(t-s)}
+ \text{ for all } t \geq s \geq 0,\\
+\E\left[\frac{1}{n}W_2(\Law(\tilde \btheta^\tau \mid \tilde \btheta^0),\,\mu_\Gibbs)^2 \;\bigg|\; \X\right]
+&\leq Ce^{-c\tau}
+\text{ for all } \tau \geq 0.
+\end{aligned}\]
+\end{assumption}
+
+Under this condition, assuming that the potential $U(\cdot)$ is
+suitably confining, our second main result is the following theorem establishing
+deterministic limits for the free energy and
+replica overlaps of the above Gibbs measure.
+
+\begin{theorem}\label{thm:replica}
+Suppose there exists a (deterministic or random) initial state $\btheta^0$ for
+which Assumptions \ref{assump:X} and \ref{assump:dynamics} hold with $f=-U'$.
+Suppose that the bound $\alpha>0$ in
+\eqref{eq:Uconvexity} satisfies
+\begin{equation}\label{eq:alphacondition}
+\alpha>\Lambda_{\max},
+\qquad \alpha>\sum_{p \geq 1}|\kappa_{p+1}|
+\left(\frac{1}{n}\langle \|\btheta\|_2^2 \rangle
+-\frac{1}{n}\langle \btheta^\top \btheta' \rangle+\eps\right)^p
+\end{equation}
+almost surely for all large $n$ and some constant $\eps>0$.
+Suppose that Assumption \ref{assump:convergence} holds for this initial state
+$\btheta^0$.
+
+For any $v \geq q \geq 0$ such that the R-transform series
+\begin{equation}\label{eq:Rtransform}
+\cR_\Lambda(x)=\sum_{p \geq 1} \kappa_{p+1}x^p
+\end{equation}
+is absolutely convergent in a neighborhood of $v-q$ and $q\cR_\Lambda'(v-q) \geq 0$, define
+the probability density on $\R$
+\begin{equation}\label{eq:replicalaw}
+\mu(\theta \mid v,q,\xi)
+\propto
+\exp\left(-U(\theta)+\frac{1}{2}\cR_\Lambda(v-q)\theta^2+\sqrt{q\cR_\Lambda'(v-q)}\,\xi\theta\right).
+\end{equation}
+Then:
+\begin{enumerate}[(a)]
+\item There exist deterministic almost-sure limits
+\begin{equation}\label{eq:vstardef}
+v_*=\lim_{n \to \infty}\frac{1}{n}\langle \|\btheta\|_2^2 \rangle,
+\qquad q_*=\lim_{n \to \infty}\frac{1}{n}\langle \btheta^\top \btheta' \rangle
+\end{equation}
+satisfying the above conditions.
+These solve the fixed-point equations
+\begin{equation}\label{eq:replicafixedpoint}
+v_*=\E_{\xi \sim \cN(0,1)}
+\langle \theta^2 \rangle_{v_*,q_*,\xi},
+\qquad q_*=\E_{\xi \sim \cN(0,1)} \langle \theta \rangle_{v_*,q_*,\xi}^2
+\end{equation}
+where $\langle \cdot \rangle_{v,q,\xi}$ denotes the expectation under
+$\mu(\cdot \mid v,q,\xi)$. Furthermore, almost surely
+\begin{equation}\label{eq:thetaXthetalimit}
+\lim_{n \to \infty} \frac{1}{n}\langle \btheta^\top \X\btheta\rangle
+=v_*\cR_\Lambda(v_*-q_*)+q_*(v_*-q_*)\cR_\Lambda'(v_*-q_*).
+\end{equation}
+For any function $f:\R \to \R$ satisfying
+$|f(x)-f(y)| \leq C(1+|x|+|y|)|x-y|$ for some $C>0$, almost surely
+\begin{equation}\label{eq:pseudoliptest}
+\lim_{n \to \infty} \frac{1}{n}\sum_{i=1}^n \langle f(\theta_i) \rangle
+=\E_{\xi \sim \cN(0,1)} \langle f(\theta) \rangle_{v_*,q_*,\xi}.
+\end{equation}
+\item Suppose, in addition, that almost surely over $(\X,\btheta^0)$ for all
+large $n$, for every $\beta \in [0,1]$,
+the condition \eqref{eq:alphacondition} and Assumption
+\ref{assump:convergence} hold for the Gibbs measure, dynamics, and free
+cumulants associated to $\beta \X$, with some constants $C,c,\eps>0$
+that are uniform over $\beta \in [0,1]$.
+
+Let $\cZ$ be
+the partition function \eqref{eq:partition} (for $\beta=1$). Then almost surely
+\begin{align}
+\lim_{n \to \infty} \frac{1}{n}\log \cZ
+&=\E_{\xi \sim \cN(0,1)} \log \int \exp\Big({-}U(\theta)
++\frac{1}{2}\cR_\Lambda(v_*-q_*)\theta^2+\sqrt{q_*\cR_\Lambda'(v_*-q_*)}\,\xi\theta\Big)\notag\\
+&\hspace{0.2in}+\frac{1}{2}\int_0^{v_*-q_*} \cR_\Lambda(s)\d s
+-\frac{1}{2}(v_*-q_*)\cR_\Lambda(v_*-q_*)-\frac{1}{2}q_*(v_*-q_*)\cR_\Lambda'(v_*-q_*).\label{eq:freeenergylimit}
+\end{align}
+\end{enumerate}
+\end{theorem}
+
+It may be checked that the free energy limit \eqref{eq:freeenergylimit} coincides with the formula predicted by the replica method under an ansatz of replica symmetry, and that \eqref{eq:replicafixedpoint} are the fixed-point equations arising from this replica calculation. We note that the first condition of \eqref{eq:alphacondition} ensures that the Gibbs measure \eqref{eq:gibbsmeasure} is well-defined, and the second condition of \eqref{eq:alphacondition} ensures that $U''(x) \geq \cR_\Lambda(v_*-q_*)$ for all large $|x|$, hence the scalar law \eqref{eq:replicalaw} is well-defined at $(v_*,q_*)$.
+
+All conditions of Theorem \ref{thm:replica} may be checked in a
+``high-temperature'' regime of sufficiently small $\Lambda_{\max}$ depending on
+$U(\cdot)$, where Assumption \ref{assump:convergence} (in a stronger form,
+uniformly over all deterministic initial states $\btheta^0 \in \R^n$) is
+implied by a log-Sobolev inequality for $\mu_\Gibbs$
+\cite{bauerschmidt2019very}. The following corollary gives a concrete
+statement of such a result with explicit bounds for $\Lambda_{\max}$,
+restricting to a class of potentials $U(x)$ where $e^{-U(x)}$
+is a convolution of a Gaussian law with a compactly supported probability
+measure.
+
+\begin{corollary}\label{cor:hightemp}
+Suppose $U:\R \to \R$ is any potential taking the form
+\[e^{-U(x)}=\int_{-M}^M \sqrt{\frac{\alpha}{2\pi}}
+e^{-\frac{\alpha}{2}(x-y)^2} \d\nu(y)\]
+for some $\alpha,M>0$ and probability measure $\nu$ supported
+on $[-M,M]$. Suppose $\X$ satisfies Assumption \ref{assump:X} where,
+%$\kappa_1=\E[\Lambda]=0$ and,
+for some $\eps>0$,
+\begin{equation}\label{eq:sufficientalphacondition}
+\begin{gathered}
+\Lambda_{\max}<\alpha, \qquad
+2\Lambda_{\max}\left(M^2+\frac{1}{\alpha+\Lambda_{\max}}\right)<1,\\
+\sum_{p \geq 1} |\kappa_{p+1}|
+\left[\frac{1}{\alpha-\Lambda_{\max}}
++\frac{\alpha^2M^2}{(\alpha-\Lambda_{\max})^2}+\eps\right]^p<\alpha.
+\end{gathered}
+\end{equation}
+Then all conclusions of Theorem \ref{thm:replica} hold.
+\end{corollary}
+
+Specializing to $\nu$ supported on $\{\pm 1\}$, applying a growth estimate
+$\limsup_{p \to \infty} |\kappa_p|^{1/p} \leq 2\Lambda_{\max}$ for the free
+cumulants (Proposition \ref{prop:freecumulants}),
+and taking the limit $\alpha \to \infty$,
+we obtain the following consequence for the classical Ising model
+of \cite{marinari1994replica} with an external field.
+
+\begin{corollary}\label{cor:ising}
+Fix a constant $h \in \R$, and consider the Gibbs measure
+\begin{equation}\label{eq:ising}
+\mu_\Ising=\frac{1}{\cZ}\exp\left(\frac{1}{2}\btheta^\top\X\btheta
++h\sum_{i=1}^n \theta_i\right) \text{ for } \btheta \in \{\pm 1\}^n,
+\end{equation}
+with partition function
+\[\cZ_\Ising=\sum_{\btheta \in \{\pm 1\}^n}
+\exp\left(\frac{1}{2}\btheta^\top\X\btheta
++h\sum_{i=1}^n \theta_i\right)\]
+and associated Gibbs average $\langle \cdot \rangle_{\Ising}$.
+Suppose $\X$ satisfies Assumption \ref{assump:X} with 
+%$\kappa_1=\E[\Lambda]=0$ and
+$\Lambda_{\max}<1/2$. Then there exists a deterministic almost sure limit
+\[q_*=\lim_{n \to \infty} \frac{1}{n}\langle \btheta^\top \btheta'
+\rangle_\Ising,\]
+which satisfies the fixed point equation
+\[q_*=\E_{\xi \sim \cN(0,1)}
+\tanh\left(h+\sqrt{q_*\cR_\Lambda'(1-q_*)}\,\xi\right)^2.\]
+Furthermore,
+\begin{align}
+\lim_{n \to \infty} \frac{1}{n}\log \cZ_\Ising
+&=\E_{\xi \sim \cN(0,1)} \log 2\cosh\Big(
+h+\sqrt{q_*\cR_\Lambda'(1-q_*)}\,\xi\Big)\notag\\
+&\hspace{0.2in}+\frac{1}{2}\int_0^{1-q_*} \cR_\Lambda(s)\d s
++\frac{1}{2}q_*\cR_\Lambda(1-q_*)-\frac{1}{2}q_*(1-q_*)\cR_\Lambda'(1-q_*).\label{eq:freeenergylimitising}
+\end{align}
+\end{corollary}
+This limit \eqref{eq:freeenergylimitising} coincides with the replica formula first computed in \cite{marinari1994replica}, and proved previously under a less explicit high temperature assumption in \cite{fan2024replica}.
+
+\subsection{Universality over the disorder}\label{subsec:universality}
+
+Orthogonal invariance of the disorder matrix $\X$ in Assumption
+\ref{assump:X} underlies a mean-field characterization of a discrete-time
+AMP algorithm in
+\cite{fan2022approximate}, from which the dynamical mean-field limit in
+Theorem \ref{thm:dmft-approx} and results for the Gibbs measure in Theorem
+\ref{thm:replica} and Corollaries \ref{cor:hightemp} and \ref{cor:ising}
+are derived.
+
+It has been shown, in increasing generality in
+\cite{dudeja2023universality,wang2024universality,gorini2026universality}, that 
+this characterization holds more broadly over universality classes of
+(possibly deterministic) matrices $\X \in \R^{n \times n}$.
+This implies, as a consequence, that our preceding results carry over to such
+universality classes.
+
+We provide here a concrete statement of universality for one such class of
+deterministic disorder matrices $\X$ studied in
+\cite{dudeja2023universality,wang2024universality}.
+
+\begin{assumption}\label{assump:X-universal}
+Let $\X \in \R^{n \times n}$ be a deterministic symmetric matrix such that
+$\|\X\|_\op \leq \Lambda_{\max}$
+for a constant $\Lambda_{\max}>0$, and
+there exists a random variable $\Lambda$ with $\E[\Lambda]=0$ and $\Var[\Lambda]>0$
+such that as $n \to \infty$, the empirical eigenvalue distribution of $\X$
+satisfies
+\[\frac{1}{n}\sum_{i=1}^n \delta_{\lambda_i(\X)}\to \Law(\Lambda)
+\text{ weakly}.\]
+Furthermore, for each fixed integer $k \geq 1$, any
+constant $\eps>0$, and all large $n \geq n_0(\eps,k)$,
+\[\max_{i=1}^n \left|(\X^k)_{ii}-\frac{1}{n}\Tr \X^k\right|<n^{-1/2+\eps},
+\qquad \max_{i \neq j} \left|(\X^k)_{ij}\right|<n^{-1/2+\eps}.\]
+\end{assumption}
+
+For example, one may take $\X=\beta\M$ where $\beta \in \R$ and $\M$
+is a Hadamard matrix (with $n$ a power of 2) or the sine transform
+\[\M=\left(\sqrt{\frac{2}{n+1}}\sin\frac{\pi ij}{n+1}\right)_{i,j=1}^n.\]
+In either case, $\M$ is orthogonal, and Assumption \ref{assump:X-universal}
+holds with $\Lambda_{\max}=|\beta|$ and
+$\Lambda=\frac{1}{2}\delta_{\beta}+\frac{1}{2}\delta_{-\beta}$.
+
+\begin{corollary}\label{cor:universality}
+Suppose $\X$ satisfies Assumption \ref{assump:X-universal}.
+% with $\kappa_1=\E[\Lambda]=0$.
+\begin{enumerate}[(a)]
+\item If Assumption \ref{assump:dynamics} holds,
+$f:\R \to \R$ is odd, and $\theta^0$ is
+sign invariant in law (i.e.\ $f(x)={-}f(-x)$ for all $x \in \R$, and
+$\Law(\theta^0)=\Law({-}\theta^0)$),
+then Theorem \ref{thm:dmft-approx} holds for the dynamics
+$\{\btheta^t\}_{t \geq 0}$.
+\item If $U(\cdot)$ and $\Lambda$ satisfy all conditions of
+Corollary \ref{cor:hightemp}, and $U:\R \to \R$ is even
+(i.e.\ $U(x)=U(-x)$ for all $x \in \R$),
+then all statements of Theorem \ref{thm:replica} hold for $\mu_\Gibbs$.
+\item If $h=0$ in the Ising model \eqref{eq:ising} and $\Lambda_{\max}<1/2$,
+then all statements of Corollary \ref{cor:ising} hold.
+\item If $f(\cdot)$ is not odd, $\theta^0$ is not sign-invariant in law,
+$U(\cdot)$ is not even, or $h \neq 0$, then the
+same conclusions hold for the dynamics and Gibbs measures defined with
+$\S\X\S$ in place of $\X$, where $\S$ is a
+diagonal matrix of i.i.d.\ Rademacher $\pm 1$ signs
+independent of $\btheta^0$ and $\{\b^t\}_{t \geq 0}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}
+Let $\X=(\Id-\frac{1}{n}\1\1^\top)\H(\Id-\frac{1}{n}\1\1^\top)$ be a 
+``puncturing'' of a deterministic matrix $\H$ satisfying the conditions of
+Assumption \ref{assump:X-universal}, and let
+$\tilde \X=(\Id-\frac{1}{n}\1\1^\top)\tilde \H(\Id-\frac{1}{n}\1\1^\top)$
+be a similar puncturing of an orthogonally-invariant random matrix $\tilde\H$
+satisfying Assumption \ref{assump:X} with the same spectral limit $\Law(\Lambda)$.
+One may also verify using \cite[Proposition 2.7, Lemma
+B.1]{wang2024universality} and the recent result of
+\cite[Theorem 5.3]{gorini2026universality} that, even if
+$f(\cdot)$ is not odd / $U(\cdot)$ is not even,
+the mean-field limits for the dynamics
+$\{\btheta^t\}_{t \geq 0}$ and Gibbs measure $\mu_\Gibbs$ coincide for
+$\X$ and $\tilde\X$.
+
+However, without further assumptions for $f(\cdot)$ / $U(\cdot)$
+such as the sign symmetry conditions in Corollary \ref{cor:universality} above,
+these limits would, in general, be different from
+those stated in Theorems \ref{thm:dmft-approx} and \ref{thm:replica}
+for the unpunctured orthogonally-invariant matrix $\tilde \H$. It is possible to derive analogues of
+our results for this puncturing of $\tilde \H$, but for brevity we will not do
+so in the current work.
+\end{remark}
+
+The remainder of this paper proves the preceding results. Section \ref{sec:dmft-approx} proves Theorem \ref{thm:dmft-approx} on the dynamical mean-field limit, Section \ref{sec:corrresponse} analyzes the kernels $C_\theta,R_\theta,C_g,R_g$ for the overdamped Langevin diffusion at equilibrium, Section \ref{sec:replica} proves Theorem \ref{thm:replica} and Corollaries \ref{cor:hightemp} and \ref{cor:ising} on the Gibbs measure, and Section \ref{sec:universality} proves Corollary \ref{cor:universality} on universality over the disorder.
+
+\section{Dynamical mean-field limit}\label{sec:dmft-approx}
+
+\input{dmft-approx}
+
+\section{Analyses of correlation and response}\label{sec:corrresponse}
+
+\input{correlation-response}
+
+\section{Replica-symmetric overlaps and free energy}\label{sec:replica}
+
+\input{replica_proof}
+
+\section{Universality over the disorder}\label{sec:universality}
+
+\input{universality}
+
+\appendix
+
+\section{Free cumulant bound}
+
+\begin{proposition}\label{prop:freecumulants}
+Suppose $\Lambda$ is a random variable with $|\Lambda| \leq K$
+for a constant $K>0$. Let $\{\kappa_p\}_{p \geq 1}$ be the free
+cumulants of $\Lambda$. Then
+\[\limsup_{p \to \infty} |\kappa_p|^{1/p} \leq 2K.\]
+\end{proposition}
+\begin{proof}
+By rescaling $\Lambda$, assume without loss of generality $K=1$.
+For $z \in \CC$ outside the support of $\Lambda$, define the Cauchy transform
+$\cG_\Lambda(z)=\E[1/(z-\Lambda)]$. It is shown in \cite[Theorem
+17]{mingo2017free} that $\cG_\Lambda$ is univalent over $\{z:|z|>4\}$, that
+$\{w:|w| \in (0,1/6)\} \subset \cG_\Lambda(\{z:|z|>4\})$, and that
+$\cR_\Lambda(w)$ defined by \eqref{eq:Rtransform} is absolutely
+convergent for $|w|<1/6$ and given by
+\begin{equation}\label{eq:cauchyR}
+\cR_\Lambda(w)=\cG_\Lambda^{-1}(w)-\frac{1}{w} \text{ for } |w| \in (0,1/6)
+\end{equation}
+where $\cG_\Lambda^{-1}(w)$ denotes the unique inverse in $\{z:|z|>4\}$.
+
+We check that $\cR_\Lambda$ extends analytically to $|w|<1/2$:
+Define, on the open disk
+$\DD=\{z:|z|<1\}$, the analytic function
+\[H(z)=\cG_\Lambda(1/z)=\E[z/(1-z\Lambda)].\]
+For any $z \in \DD$ and $|\Lambda| \leq 1$, note that
+$|1-z\Lambda|^2 \leq 1+\Lambda^2-2\Re[z]\Lambda \leq (2+\eps)(1-\Re[z]\Lambda)$.
+Then $\Re[1/(1-z\Lambda)]=(1-\Re[z]\Lambda)/|1-z\Lambda|^2 \geq 1/(2+\eps)$.
+This implies $\E[1/(1-z\Lambda)] \neq 0$,
+so $z=0$ is the unique simple root of $H(z)$ on $\DD$. Furthermore,
+\[|H(z)| \geq |z| \cdot \Re\,\E[1/(1-z\Lambda)] \geq \frac{1-\eps}{2+\eps}
+\text{ for } |z|=1-\eps.\]
+Then by Rouch\'e's theorem, for each $w \in \CC$ with $|w|<(1-\eps)/(2+\eps)$,
+$H(z)=w$ also has a unique simple root $z$ in the disk $\{z:|z|<1-\eps\}$.
+Since $H'(z) \neq 0$ at this root,
+the inverse function theorem implies that there exists an analytic
+inverse $H^{-1}$ on $\{w:|w|<(1-\eps)/(2+\eps)\}$.
+Since $H^{-1}(0)=0$, we have $|H^{-1}(w)|<1/4$ on some neighborhood $\cO$
+of $w=0$, and $\cG_\Lambda(1/H^{-1}(w))=H(H^{-1}(w))=w$. Then the
+above univalence implies $1/H^{-1}(w)=\cG_\Lambda^{-1}(w)$ for all $w \in \cO$.
+Then the right side of \eqref{eq:cauchyR} has an analytic extension
+to $\{w:|w| \in (0,(1-\eps)/(2+\eps))\}$. Since $\eps>0$ is arbitrary, this
+implies $\cR_\Lambda(w)$ extends analytically to $|w|<1/2$, as claimed. Then
+$\cR_\Lambda(w)$ is given by the convergent series \eqref{eq:Rtransform}
+for all $|w|<1/2$, so the root test implies that $\limsup_{p \to \infty}
+|\kappa_p|^{1/p} \leq 2$.
+\end{proof}
+
+\subsection*{Acknowledgments}
+Z.F.\ would like to thank Rishabh Dudeja for helpful conversations about the dynamical approach to free energy universality. This research was supported in part by NSF DMS-2142476 and a Sloan Research Fellowship.
+
+\bibliographystyle{plain}
+\bibliography{main}
+
+\end{document}

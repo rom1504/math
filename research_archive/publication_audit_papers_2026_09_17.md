@@ -29,3 +29,19 @@ compiled programs, the already losslessly archived oversized output, and
 ongoing campaign work produced after the snapshot. They are not discarded
 to make Git status empty. The campaign continues; the next substantive
 checkpoint must preserve its later drafts and results again.
+
+## Second checkpoint
+
+Snapshot `2026-09-17/183102Z` preserves1,936 research payloads,
+161,764,515 bytes, verified against SHA-256. Previously reviewed build
+products are excluded automatically. No credential candidate or unresolved
+oversized research output was reported. Canonical proofs, corrections,
+and scripts are committed directly; later scratch work remains live and
+will be preserved at the next substantive checkpoint.
+
+This checkpoint explicitly preserves FAILED applications as well as proved
+tools: the whole-nearlevel entropy-slope/response shortcut is now known
+to be impossible for actual bounded positive-cap signings. Corrected status
+is prominent in the canonical files; archiving earlier versions does not
+reinstate their applicability. New scalar information/rigidity scripts use
+explicit finite constructions; the mode LP reads tracked witness data.

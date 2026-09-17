@@ -1,0 +1,326 @@
+
+
+% \subsection{Main Points}
+% \begin{itemize}
+%     \item Krivine's rounding scheme involves $f,g:\R^k \rightarrow \{1,-1\}$ for some $k$ and we look at $E[f(X) g(Y)]$ where the coordiantes of $X, Y$ are (a) Independent, standard Gaussian and (b) are $t$-correlated.
+
+%     \item The key observation now is that we can study functions $f,g:\R^k \rightarrow \{1,-1\}$, where the coordinates are
+%     (a) Independent, standard Gaussian and
+%     (b) $X_i, Y_i$ are $p_i(t)$-correlated for any $p_i :\R \to \R$ that are mean $0$ polynomials with variance $1$. 
+
+%     The idea for this is to replace each $X_i$ as $(1/\sqrt{N})\sum_{j=1}^N p_i(X_{i,j})$ where $X_{i,j}$ are independent $N(0,1)$ variables. If we do the same for $Y_i = (1/\sqrt{N})\sum_{j=1}^N p_i(Y_{i,j})$, then $\E[X_i Y_i] = p_i(t)$. Further, in the limit, by the central limit theorem, $X_i, Y_i$ approach $N(0,1)$. 
+
+%     \item One way to use it is now is to consider rounding schemes of the form $f(X) = \sign(P(X))$, where $P(X) = \sum_i q_i(X_i)$ (make sure $P$ is odd still). We can choose a few of the correlations, for example say $X_3, X_4$ so that they cancel out some terms coming from the first two. 
+%     \item Concretely, for instance we can take $P(X_1,X_2,X_3,X_4) = X_1 + \eta \He_3(X_2) + s_3 X_3 + s_4 X_4$, where the correlation between $X_3, Y_3$ is $t^3$, and correlation between $X_4, Y_4$ is $t^5$. A form of this gives a bound like $3.4 \times 10^{-4}$. 
+%     \item We now have a different search space: choose the correlations $p_i(t)$ in a way to cancel out the lower-order terms or even try other things and do similar computations as before. 
+% \end{itemize}
+
+% \subsection{Paper structure}
+
+
+\section{Introduction}
+
+The Grothendieck inequality~\cite{Gro53,LP68} states that there exists a universal constant $K<\infty$ such that for every $m,n\in\N$ and every matrix $A=(a_{ij})\in\R^{m\times n}$,
+\begin{equation}\label{eq:grothendieck-ineq}
+  \max_{\eps_i,\delta_j\in\{\pm1\}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\eps_i\delta_j\right|
+  \le
+  \sup_{u_i,v_j\in S^{m+n-1}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\ip{u_i}{v_j}\right|
+  \le
+  K\max_{\eps_i,\delta_j\in\{\pm1\}}
+  \left|\sum_{i=1}^m\sum_{j=1}^n a_{ij}\eps_i\delta_j\right|.
+\end{equation}
+Here $S^{m+n-1}$ denotes the unit sphere in $\R^{m+n}$.  The Grothendieck constant $\KG$ is the infimum of $K$ for which this inequality holds.
+
+The inequality is equivalent to the statement that the integrality gap of the canonical semidefinite relaxation for maximizing the bilinear form $x^\top Ay$ over $x\in\{-1,1\}^m$ and $y\in\{-1,1\}^n$ is bounded by an absolute constant.
+This connection leads to efficient algorithms for approximating combinatorial problems, such as matrix cut norms~\cite{AN06}.  Beyond this algorithmic role, Grothendieck's inequality is central in the geometry of Banach spaces, operator spaces, harmonic analysis, and quantum information; see, for example, the surveys and monographs~\cite{KN11,pisier2011grothendieckstheorempastpresent,DFS08}.
+
+However, the exact value of $\KG$ is still unknown.
+% On the lower bound, one seeks matrices for which the vector optimum is large relative to the sign optimum.
+On the lower bound, existing strategies aim to construct matrices for which the vector optimum is large relative to the sign optimum.
+While Grothendieck's original work implies that $\KG \geq \pi/2$~\cite{Gro53}, this was substantially improved by Davie~\cite{Davie1984LowerBoundKG} and Reeds~\cite{Reeds1991LowerBoundKG}, who independently used a high-dimensional Gaussian-operator construction to prove
+\[
+\KG
+\geq K_{\mathrm{DR}} = 1.6769\ldots
+\]
+The Davie--Reeds inequality was the best-known result for more than four decades, until two recent works by
+Heilman~\cite{heilman2026lowerboundgrothendiecksconstant} and Jones and Malavolta~\cite{jones2026grothendieckconstantstrictlylarger} independently showed that $\KG \geq K_{\mathrm{DR}}+10^{-26}$
+and $\KG \geq K_{\mathrm{DR}}+10^{-12}$, respectively.
+
+
+% Broadly speaking, lower-bound approaches involve constructing matrices for which the vector optimum is large relative to the sign optimum.
+
+
+% Heilman proved $\KG \geq K_{\mathrm{DR}}+10^{-26}$ ~\cite{heilman2026lowerboundgrothendiecksconstant}, while Jones and Malavolta proved $\KG \geq K_{\mathrm{DR}}+10^{-12}$~\cite{jones2026grothendieckconstantstrictlylarger}.
+
+
+% Heilman 
+% Heilman
+
+% Two recent works established that it is not optimal: Heilman proved $\KG \geq K_{\mathrm{DR}}+10^{-26}$ ~\cite{heilman2026lowerboundgrothendiecksconstant}, while Jones and Malavolta proved $\KG \geq K_{\mathrm{DR}}+10^{-12}$~\cite{jones2026grothendieckconstantstrictlylarger}.
+
+
+
+On the upper bound, Krivine's seminal result~\cite{Kri77} proved that
+\begin{equation}\label{eq:krivine-bound-intro}
+  \KG\le {\pi\over 2\log(1+\sqrt2)}=1.7822\ldots
+\end{equation}
+The proof is constructive: it gives a rounding scheme that maps input vectors $u_i,v_j$ to signs $\eps_i,\delta_j\in\{\pm1\}$ after an infinite-dimensional preprocessing step and a random hyperplane rounding step.
+Krivine also conjectured that this bound was tight, and this stood for over three decades until it was disproven by Braverman, Makarychev, Makarychev, and Naor in 2011; specifically, they ``mixed'' the hyperplane rounding scheme with a non-hyperplane one to establish the strict inequality $\KG < \tfrac{\pi}{2\log(1+\sqrt2)}$~\cite{braverman2011grothendieckconstantstrictlysmaller}.
+Interestingly, however, Naor and Regev subsequently showed that mixed Krivine schemes (\cref{sec:krivine-rounding-scheme}) are in fact optimal: in the limit of dimension, there exists such a scheme that yields arbitrarily good approximations of $K_G$~\cite{naor2014krivine}.
+This thus opened a strategy for attacking the strict inequality's unspecified numerical gap, and was leveraged in recent works by Heilman~\cite{heilman2026upperboundgrothendiecksconstant} and Li et al.~\cite{LiSahaXueChaudhuriKlivansKothariMeka2026} to independently arrive at explicit numerical improvements on the order of $10^{-5}$.
+
+
+% Interestingly, however, Naor and Regev subsequently showed that such ``Krivine schemes'' (\cref{sec:krivine-rounding-scheme}) are, in fact, optimal: in the limit of dimension, oblivious Krivine schemes yield arbitrarily good approximations of $K_G$~\cite{naor2014krivine}.
+% Based on these developments, recent works by Heilman~\cite{heilman2026upperboundgrothendiecksconstant} and Li et al.~\cite{LiSahaXueChaudhuriKlivansKothariMeka2026} independently gave the first explicit numerical improvement of order $10^{-5}$.
+
+% using a certified computer-assisted implementation of related Krivine preprocessing ideas. 
+
+
+
+% Krivine further conjectured this bound to be optimal, and this stood for over three decades until its disproof by Braverman, Makarychev, Makarychev, and Naor, who showed that it is, in fact, strict, by mixing the hyperplane scheme with a non-hyperplane two-dimensional rounding scheme~\cite{braverman2011grothendieckconstantstrictlysmaller}.
+
+% Braverman, Makarychev, Makarychev, and Naor later disproved Krivine's conjectured optimality of \eqref{eq:krivine-bound-intro}, proving that $\KG<\pi/(2\log(1+\sqrt2))$ by mixing the hyperplane scheme with a non-hyperplane two-dimensional rounding scheme~\cite{braverman2011grothendieckconstantstrictlysmaller}.
+
+
+% Naor and Regev showed that Krivine schemes are optimal, where in the limit of dimension oblivious Krivine schemes yield arbitrarily good approximations of $K_G$~\cite{naor2014krivine}.
+
+% Krivine also conjectured that this bound was optimal. This conjecture stood for over three decades, until Braverman, Makarychev, Makarychev, and Naor disproved it by mixing the hyperplane scheme with a non-hyperplane scheme~\cite{braverman2011grothendieckconstantstrictlysmaller}.
+% Specifically, they used this mixed rounding scheme to establish the strict inequality
+% $\KG< \tfrac{\pi}{2\log(1+\sqrt2)}$, but did not quantify the gap.
+% Krivine also conjectured that this bound was optimal, a conjecture that stood for over three decades until Braverman, Makarychev, Makarychev, and Naor disproved it by mixing the hyperplane scheme with a non-hyperplane one~\cite{braverman2011grothendieckconstantstrictlysmaller}.
+
+
+%Our work significantly extends their approach for an upper bound and finds a surprising new approach to improve the lower bounds at the same time. 
+
+
+\paragraph{This work.}
+In this paper, we make the following contribution:
+% In this paper, we make two main mathematical contributions:
+% In this paper, we make two main mathematical contributions and an AI contribution:
+\begin{enumerate}
+    \item \textbf{Upper bound.} We introduce \emph{limiting Krivine schemes}, an analytic framework for constructing and studying asymptotic families of increasingly high-dimensional rounding schemes. Using this framework, we construct a new ``cubic--quintic'' scheme that yields
+    \[
+        % K_G \le 1.7818666069,
+        K_G
+        \le {\pi\over 2\log(1+\sqrt2)} - 3.47 \times 10^{-4}
+        = 1.7818 \ldots.
+    \]
+    % improving Krivine's classical upper bound by  \(>3.47 \cdot 10^{-4}\).
+    This differs from previous works, which only considered one- or two-dimensional rounding schemes, and in particular positively answers a question posed by Braverman et al.~\cite{braverman2011grothendieckconstantstrictlysmaller} about whether increasing dimension can lead to improved bounds on $K_G$.
+
+    \item \textbf{Lower bound.} We find a new approach to proving lower bounds on $K_G$ and show:
+    \[
+        K_G \ge \frac{6\pi}{11}=1.7135\ldots.
+    \]
+    Together with our upper bound, this determines the tenths digit of \(K_G\) to be 7.
+    Notably, our approach is to show a fundamental limitation of Krivine schemes and then apply a result from Naor and Regev~\cite{naor2014krivine}.
+    
+    % In particular, unlike all previous work that relied on explicit construction of gap instances, our approach shows a limitation on Krivine schemes, and then invokes the result from Naor and Regev~\cite{naor2014krivine} to prove a lower bound.
+
+    \item \textbf{AI methodology.}
+    We further detail our use of AI in mathematics research in a companion paper~\cite{lisaha2026longhorizon}.
+    Because mathematics research is a long-horizon task that comprises complex goals, persistent memory, and delayed rewards, it is often unclear how to effectively use AI.
+    Our work thus provides an extensive case study on how to develop and interact with emerging AI systems.    
+    Critically, this system is also highly collaborative with human interaction, which allows it to effectively explore promising proof strategies.
+
+\end{enumerate}
+
+
+
+
+% Our proof for the upper bound... (say something in one line). The proof combines a universal constraint on the first and third coefficients of Gaussian correlation functions with an optimality result for the inverse-majorant method on Krivine schemes. 
+
+% \paragraph{Technical overview of the Lower Bound}. We prove the following theorem:
+
+% \begin{theorem}\label{thm:lower-bound}
+% The Grothendieck constant satisfies
+% \[
+%         K_G\ge\frac{6\pi}{11} \approx 1.7136.
+% \]
+% \end{theorem}
+
+% A sketch of the proof is as follows. 
+
+% First, recall the inverse-series step in Krivine's rounding argument. If
+% \[
+%         H^{-1}(z)=\sum_{j\ge0}a_{2j+1}z^{2j+1},
+% \]
+% define the absolute-coefficient majorant $M_H(s):=\sum_{j\ge0}|a_{2j+1}|s^{2j+1}$. The standard tensor preprocessing gives the implication
+% \begin{equation}
+%         M_H(\gamma)\le1
+%         \quad\Longrightarrow\quad
+%         K_G\le\frac{\pi}{2\gamma}.
+%         \label{eq:inverse-majorant-bound}
+% \end{equation}
+% We refer to~\eqref{eq:inverse-majorant-bound} as the \emph{inverse-majorant bound}.
+
+% The conceptual starting point is the theorem of Naor and Regev that Krivine schemes are optimal \cite{naor2014krivine}. By reworking the construction in their proof, we show that the inverse-majorant bound is itself asymptotically optimal after allowing mixtures and increasing dimension: there are limiting mixed correlation functions with admissible parameters converging to $\pi/(2K_G)$. This transfer is established in Section~\ref{sec:majorant_optimal}.
+
+% It therefore remains to prove a universal upper bound on such admissible parameters. For arbitrary odd measurable sign functions $f,g:\R^d\to\{\pm1\}$, write
+% \[
+%         H_{f,g}(t)=b_1t+b_3t^3+b_5t^5+\cdots.
+% \]
+% The technical core of the argument is the affine inequality
+% \[
+%         b_3\ge 2b_1-\frac{11}{6}.
+% \]
+% Section~\ref{sec:preliminaries} sets up the Gaussian--Hermite formulation, and Section~\ref{sec:affine-strip} proves this inequality by decomposing $f$ and $g$ into their agreement and disagreement parts and reducing the required estimates to one-dimensional inequalities. Its linearity in $(b_1,b_3)$ is essential, because it makes the inequality invariant under mixtures and coefficientwise limits.
+
+% Section~\ref{sec:strip_majorant} then shows that the affine inequality controls the inverse-majorant bound: every admissible value must satisfy $\gamma\le11/12$. Applying this barrier to the asymptotically optimal sequence constructed in Section~\ref{sec:majorant_optimal} gives
+% \[
+%         \frac{\pi}{2K_G}\le\frac{11}{12},
+% \]
+% which is exactly Theorem~\ref{thm:lower-bound}.
+
+
+% \paragraph{Technical overview of the Upper Bound}. (Give references to sections of the technical part)
+
+% - Recall classical Krivine schemes... (standard correlation)
+
+% - Define Limiting Krivine schemes... (arbitrary correlation)
+
+% - Show that these schemes can be arbitrarily approximated by classical (finite) Krivine schemes, in a specific sense
+
+% - Therefore inverse-majorant bound on Limiting Krivine schemes translates to upper bounds on $K_G$, so this is a new search space
+
+% - We then study a specific instantiation of limiting Krivine schemes: the cubic--quintic scheme...
+
+% - We show how to derive the inverse-majorant bound on this by bounding the tail of the taylor expansion of $H$... 
+
+
+
+
+% This paper studies a different way to build high-dimensional rounding schemes.  The construction starts with \emph{Gaussianized Hermite-chaos averages}, defined formally in Definition~\ref{def:gaussianized-chaos}.  This is our terminology for normalized finite averages of Hermite polynomials that converge to Gaussian coordinates while preserving the covariance powers of the corresponding Wiener chaos.  The underlying standard objects are Hermite polynomials and Wiener chaos; for background, see Janson's treatment of Gaussian Hilbert spaces~\cite{Janson1997GaussianHilbertSpaces}.  The reason these averages are useful is simple: if $(X,Y)$ are standard Gaussians with correlation $t$, then the orthonormal probabilist Hermite polynomials satisfy
+% \[
+%   \E[\He_m(X)\He_n(Y)]=\delta_{mn}t^n.
+% \]
+% Thus a degree-$d$ Hermite coordinate contributes a covariance factor $t^d$.  By combining degree $3$ and degree $5$ averages with opposite relative signs, we obtain a limiting correlation function whose cubic and quintic coefficients are nearly zero.  This removes the first two nonlinear obstructions in the inverse-majorant condition used by Krivine preprocessing.
+
+% \subsection{The result}
+
+% % Write
+% % \[
+% %   \rhohyp:=\log(1+\sqrt2),
+% %   \qquad
+% %   \Khyp:={\pi\over2\rhohyp}={\pi\over2\log(1+\sqrt2)}.
+% % \]
+% % The certified radius in this paper is
+% % \begin{equation}\label{eq:gamma-main}
+% %   \gamma=0.881545409>\rhohyp.
+% % \end{equation}
+% % This corresponds to the raw correlation value
+% % \[
+% %   c={2\gamma\over \pi}=0.5612090874\ldots
+% % \]
+% % and to the Grothendieck bound
+% % \[
+% %   {1\over c}={\pi\over 2\gamma}=1.7818666069360661\ldots .
+% % \]
+% % The improvement over the hyperplane/Krivine value is
+% % \[
+% %   \Khyp-{\pi\over 2\gamma}=3.473712553\cdot10^{-4}\ldots .
+% % \]
+
+% \begin{theorem}[Main theorem]\label{thm:main}
+% There is a finite-dimensional Krivine rounding family such that
+% \[
+%   \KG < {\pi\over 2\log(1+\sqrt2)}-3.4737\cdot 10^{-4}.
+% \]
+% \end{theorem}
+
+% The computation in this draft is rigorous.  The inequalities used in the proof are interval enclosures, organized in Sections~\ref{sec:sobolev-tail}--\ref{sec:assembly}.  The implementation uses Arb, the rigorous interval-arithmetic library of Johansson~\cite{johansson2017arb}.
+
+% \subsection{Overview of the construction}
+
+% For the moment, write $\He_n$ for the orthonormal probabilist Hermite polynomial.  For every length $N$, define
+% \[
+%   P_{3,N}=N^{-1/2}\sum_{j=1}^N \He_3(U_j),
+%   \qquad
+%   P_{5,N}=N^{-1/2}\sum_{j=1}^N \He_5(V_j),
+% \]
+% where the variables are independent standard Gaussians.  The finite rounding pair is
+% \begin{align*}
+%   f_N &= \sgn\bigl(Z+\eta \He_3(X)+s_3P_{3,N}+s_5P_{5,N}\bigr),\\
+%   g_N &= \sgn\bigl(Z-\eta \He_3(X)-s_3P_{3,N}+s_5P_{5,N}\bigr).
+% \end{align*}
+% Thus degree $3$ is anti-aligned between the two sides, while degree $5$ is aligned.  The relative signs are chosen so that degree $2k+1$ has sign $(-1)^k$.
+
+% For fixed $t\in(-1,1)$, paired inputs with coordinatewise Gaussian correlation $t$ satisfy
+% \[
+%   \E[P_{3,N}P_{3,N}']=t^3,
+%   \qquad
+%   \E[P_{5,N}P_{5,N}']=t^5.
+% \]
+% Hence, as $N\to\infty$, the relevant limiting model is a four-dimensional Gaussian threshold pair
+% \begin{align*}
+%   f(z,x,r_3,r_5)&=\sgn\bigl(z+\eta \He_3(x)+s_3r_3+s_5r_5\bigr),\\
+%   g(z,x,r_3,r_5)&=\sgn\bigl(z-\eta \He_3(x)-s_3r_3+s_5r_5\bigr),
+% \end{align*}
+% with coordinate correlations
+% \[
+%   \rho_Z=t,
+%   \qquad
+%   \rho_X=t,
+%   \qquad
+%   \rho_3=t^3,
+%   \qquad
+%   \rho_5=t^5.
+% \]
+% These powers record the Hermite degrees used in the finite averages: a degree-$d$ Hermite coordinate contributes covariance $t^d$.
+
+% The limiting normalized correlation is an odd series
+% \[
+%   H(t)=\sum_{m\ge1}b_m t^m.
+% \]
+% For the displayed parameters, the leading coefficients are certified as
+% \[
+%   b_1\ge0.8815738220,
+%   \qquad b_3=3.4538733\cdot 10^{-9},
+%   \qquad b_5=-9.0435536\cdot 10^{-11}.
+% \]
+% Since the inverse coefficients satisfy
+% \[
+%   A_1={1\over b_1},\qquad
+%   A_3=-{b_3\over b_1^4},\qquad
+%   A_5={3b_3^2-b_1b_5\over b_1^7},
+% \]
+% the near-vanishing of $b_3$ and $b_5$ removes the first two nonlinear inverse obstructions.
+
+% \subsection{Proof architecture}\label{subsec:architecture}
+
+% The proof is organized so that every analytic reduction is separated from the interval-arithmetic estimates.  The headers below match the section titles.
+
+% \paragraph{Section~\ref{sec:krivine}: Krivine Rounding Scheme.}
+% This section copies the Krivine-rounding interface from the reference format used in the companion paper~\cite{LiSahaXueChaudhuriKlivansKothariMeka2026}.  It defines the arcsine-normalized Gaussian correlation function, the local inverse, the inverse majorant, and $\gamma$-admissibility.  The proof is deferred to Appendix~\ref{app:preprocessing}.
+
+% \paragraph{Section~\ref{sec:scheme}: The finite Gaussianized Hermite-chaos family.}
+% Definitions~\ref{def:Hermite}, \ref{def:gaussianized-chaos}, \ref{def:finite-family}, and~\ref{def:finite-35} define the actual finite-dimensional schemes.  Definition~\ref{def:limiting-model} defines the limiting model, where the covariance powers $t^3$ and $t^5$ record the Hermite degrees in the finite construction.
+
+% \paragraph{Section~\ref{sec:coefficients}: Coefficients of the limiting model.}
+% Definitions~\ref{def:degree-normalization}, \ref{def:qk}, and~\ref{def:Cabk} give the general weighted-degree formula for $b_m=[t^m]H(t)$.  The specialized collapsed formula in Proposition~\ref{prop:collapsed-coefficients} is the one used by the certificate.
+
+% \paragraph{Section~\ref{sec:transfer}: Finite-dimensional realization of the limiting certificate.}
+% This is the delicate analytic transfer step.  Proposition~\ref{prop:loc-unif} proves locally uniform convergence $H_N\to H$ on the unit disk.  Theorem~\ref{thm:finite-transfer} then transfers a strict inverse-majorant certificate from $H$ to $H_N$ using Rouche's theorem and Cauchy estimates.  Fixed-degree coefficient convergence alone would not control the inverse tail.
+
+% \paragraph{Section~\ref{sec:wiener}: A Wiener-algebra certificate for the limiting inverse.}
+% Definition~\ref{def:wiener-data} introduces the Wiener-algebra quantities used to control the inverse.  Theorem~\ref{thm:simple-wiener} proves that it is enough to show $\gamma+\eta_0<b_1$ and $\eta_1<b_1$ for the nonlinear masses $\eta_0=\sum_{m\ge3}|b_m|$ and $\eta_1=\sum_{m\ge3}m|b_m|$.
+
+% \paragraph{Section~\ref{sec:sobolev-tail}: The coefficient tail through a Sobolev norm.}
+% The tail of $\eta_0$ and $\eta_1$ is reduced to the single scalar norm $B_3=\norm{\Dop^3H}_{L^2(\T)}$ by Cauchy-Schwarz.
+
+% \paragraph{Section~\ref{sec:sobolev-norm}: Bounding the Sobolev norm.}
+% The norm $B_3$ is bounded by representing $\Dop^3H$ as a trace of a two-dimensional differential kernel and applying an averaged Minkowski inequality before the certified circle quadrature.
+
+% \paragraph{Section~\ref{sec:assembly}: Assembling the certificate and proving the main theorem.}
+% This section combines the certified head sums, the Sobolev tail, and the Wiener criterion to prove limiting admissibility at $\gamma=0.881545409$.  The finite-transfer theorem then gives an actual finite-dimensional Krivine rounding scheme and proves Theorem~\ref{thm:main}.
+
+% \paragraph{Section~\ref{sec:formulas}: Computational formulas.}
+% This section records the exact integrals, kernels, and quadrature remainders used by the interval certificate.
+
+% \paragraph{Section~\ref{sec:impl}: Implementation notes.}
+% This section explains several numerical choices in the certificate, including the use of real-axis integration, the Sobolev tail, and the cancellation-free quadrature remainder.
+
+% \paragraph{Section~\ref{sec:discussion}: Discussion and future directions.}
+% The final section explains why the third/fifth sign pattern cancels the first inverse obstructions, records a possible $7/9$ extension, and discusses how one could extract explicit finite dimensions from the collision expansion.
