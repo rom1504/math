@@ -47566,6 +47566,20 @@ obstruction. Algebra and rational bounds prove the claim; finite-grid
 and quadrature replays are labeled diagnostic. Independent proof:
 paper_bernoulli_two_spin_offset_curvature_2026_09_17.md.
 
+FINAL INDEPENDENT EXTENSION: a distinct four-spin example DOES disprove
+unrestricted variance concavity of the FULL absolute cap. For ANY actual
+order-four signing D, with independent Gaussian external field variances
+(v,10000,10000,10000), the full-cap expectation has
+F_D''(1/4)>189/625=.3024. This includes every finite exact minimizer.
+On the event that the last three field magnitudes exceed3, parity fixes
+the cavity offset magnitude to1 or3; at least3/4 of sign patterns give1.
+An explicit bad-event bound proves the positive curvature. Independent
+reconstruction PASS; a standalone rational enumeration checks all64
+signings and512 external patterns and independently recovers M_4=4.
+This is unequal-field, finite-order evidence: it does NOT rule out
+isotropic mixtures or asymptotic near-minimizer constructions.
+Canonical extension: equal_variance_offset_tradeoff, Section6.
+
 #### Updated frontier and end assessment
 
 The campaign reconstructs localization, sharp biased rounding and Bernoulli

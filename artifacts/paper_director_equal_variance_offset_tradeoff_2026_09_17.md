@@ -163,7 +163,59 @@ shortcut. In fact for this very example the full absolute cap is exactly
 1+|g_1|+|g_2|, whose expected value IS concave in v. It must not be
 advertised as a counterexample to concavity of the absolute parent.
 
-## 6. Verification and diagnostic
+## 6. Four actual spins falsify unrestricted absolute-cap concavity too
+
+A distinct four-spin construction shows that the two-spin absolute
+identity is not a general rescue. Let D be ANY hollow full signing on
+four vertices, including an exact minimizer. Take independent Gaussian
+fields g_1~N(0,v) and g_2,g_3,g_4~N(0,10000). Then
+
+    F_D(v)=E max_y |H_D(y)+sum_i g_i y_i|
+
+satisfies F_D''(1/4)>.3024.
+
+Proof. Fix y_1=1, write z=(y_2,y_3,y_4), and put
+w_z=|H_D(1,z)| in[0,6]. Global spin reversal preserves H_D, so
+the conditional absolute maximum is exactly
+
+    max_z [w_z+|g_1+g_other.z|]
+       =(a_++a_-)/2+|g_1+S|,
+    a_+=max_z(w_z+g_other.z),
+    a_-=max_z(w_z-g_other.z),   S=(a_+-a_-)/2.
+
+The quantities a_+,a_- depend only on the other three fields. On the
+event E that each |g_i|>3, their maximizing words are respectively
+z=sign(g_other) and -z: losing any aligned coordinate costs more than6,
+the entire range of w. Write H_D(1,z)=h(z)+b(z), where h is the internal
+three-spin energy and b is the three-edge row sum. Both are odd integers
+in{+-1,+-3}. Thus on E,
+
+    S=(|h+b|-|h-b|)/2,
+    |S|=min(|h|,|b|) in{1,3}.
+
+Signs of the three Gaussian fields are uniform and independent of E.
+Exactly six of the eight patterns have |b|=1, so at least3/4 of the
+conditional mass on E has |S|=1. The other good-event contributions to
+the curvature numerator at v=1/4 are nonnegative. The bad event has
+probability less than3*6*phi(0)/100<.072. For every possible S its
+curvature numerator is at least-v phi(0)>-.1. Therefore
+
+    E[phi(2S)(S^2-1/4)]
+       >(.75)(.928)(.05)(.75)-(.072)(.1)=.0189.
+
+Division by2(1/4)^(5/2)=1/16 proves the claim. The offset is bounded
+by3, so all derivatives and conditional expectations are justified.
+
+This falsifier concerns the FULL absolute cap and even permits choosing
+a finite exact minimizing D. Nevertheless the field variances are grossly
+unequal. It is not an unconditional isotropic bridge law, a scalable
+obstruction for minimizing sequences, or a proof that some useful joint
+variance-mixture law cannot improve a parent. It rules out only the
+unrestricted assertion that actual-child absolute maxima are concave in
+every Gaussian field variance. The two-spin identity in Section5 remains
+true and is not contradicted.
+
+## 7. Verification and diagnostic
 
 The director's stop-loss proof received independent full reconstructions
 from all three campaign researchers. The Bernoulli researcher independently
@@ -171,6 +223,12 @@ reconstructed the positive complement, including both derivatives, finite
 first moment, independence and the exact strong-Jensen constant: PASS.
 The same researcher independently checked the two-spin signed-branch
 falsifier and the contrasting absolute-cap identity: PASS.
+The four-spin FULL absolute falsifier also received a separate independent
+reconstruction, including the good-event maximizers, parity, uniform sign
+count, tail estimate and exact curvature constant: PASS. Its standalone
+script `computations/paper_director_four_spin_absolute_curvature_2026_09_17.py`
+enumerates all64 signings, all8 external sign patterns, rational field
+tests and the rational curvature bound. It independently confirms M_4=4.
 `computations/paper_director_equal_variance_offset_check_2026_09_17.py`
 checks explicit variance-one three-point laws against a Gaussian. Its
 floating-point outputs illustrate the tradeoff; they are not the proof.

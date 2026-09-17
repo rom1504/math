@@ -161,3 +161,10 @@ losslessly in a tracked compressed payload and checksum manifest.
 Environments, caches, reviewed dependencies and reproducible build products
 are excluded for the existing documented reasons. No research file was
 deleted, and unfinished/failed material was not omitted for lack of polish.
+
+The final few minutes added a canonical four-spin FULL absolute-curvature
+falsifier and its independent audit after the snapshot. These are preserved
+directly in the closing commit, together with the standalone standard-library
+verifier and tracked rational output. All64 signings and512 external sign
+patterns pass, with M_4=4 and analytic curvature bound189/625. No ignored
+input or fresh unarchived scratch dependency is introduced.

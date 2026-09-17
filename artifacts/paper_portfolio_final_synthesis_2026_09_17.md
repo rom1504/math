@@ -160,6 +160,12 @@ actual optimizing-child cavity fields are NOT proved to have that shape.
 Indeed one actual sign edge with unequal Gaussian field variances already
 has a nonconcave SIGNED-branch value. Its full absolute cap is concave,
 so the counterexample is not promoted to an absolute-parent obstruction.
+A separate final proof does falsify unrestricted FULL absolute variance
+concavity: for EVERY order-four signing, including exact minimizers,
+independent field variances(v,10000,10000,10000) give F''(1/4)>.3024.
+An independent proof and exhaustive rational enumeration verify the claim.
+It remains an unequal-field finite example, not an isotropic bridge or
+an asymptotic minimizing-sequence obstruction.
 
 The useful formal change is concrete: retain the joint variance phase,
 its tail budget and information cost, and compare affine-offset responses

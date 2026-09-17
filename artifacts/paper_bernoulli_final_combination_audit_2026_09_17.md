@@ -108,3 +108,30 @@ subtracting |s| before the small physical repair removes dependence
 on offset size. Thus the all-offset rate is genuinely uniform. It
 does not allow selecting the offset after observing the same column,
 and it does not itself compare a joint maximum over query words.
+
+## 5. The final FULL absolute four-spin falsifier
+
+The director's final extension in
+[offset tradeoff, Section6](paper_director_equal_variance_offset_tradeoff_2026_09_17.md)
+passes independent reconstruction. For EVERY actual order4 signing,
+global reversal rewrites its full absolute field maximum as
+max_y[|H_D(y)|+g.y], hence exactly constant+|g1+S|. If the other
+three independent Gaussian fields, each of variance10000, all have
+absolute value greater than3, their unique maximizers are the aligned
+sign vectors. The resulting offset has absolute value1 or3, and at
+least6 of8 equally probable field-sign patterns give absolute value1.
+
+The bad event has probability less than9/125. At Var(g1)=1/4,
+the exact Gaussian curvature numerator therefore exceeds
+(3/4)(116/125)(3/80)-(9/125)(1/10)=189/10000. Division by1/16
+gives strict positive curvature greater than189/625=.3024. Unlike the
+two-spin signed-branch example, BOTH absolute polarities are retained.
+Unequal field variances remain an explicit limitation; no isotropic
+asymptotic-parent obstruction is asserted.
+
+The complete independent proof is in
+[four-spin absolute curvature](paper_bernoulli_four_spin_absolute_curvature_2026_09_17.md).
+The independent exact replay enumerates64 children,512 sign patterns
+and3584 full absolute identities; all pass. Full-cube enumeration finds
+48 children with cap4 and16 with cap6, so the falsifier includes every
+order4 minimizer. The rational curvature check and compilation pass.
