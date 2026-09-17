@@ -1,0 +1,2086 @@
+{
+  "classification": "complete finite bridge enumeration; numerical, not interval-certified",
+  "parameters": {
+    "all_contracted_temperature_minimizer_classes": true,
+    "all_relative_orientations": true,
+    "balanced_split_only": true,
+    "betas": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "interaction_path_gauss_legendre_order": 12,
+    "lambda": 1.0,
+    "orders": [
+      4,
+      5
+    ]
+  },
+  "records": [
+    {
+      "CC2_upper_bound": 0.007648075941427015,
+      "CC2_upper_bound_per_parent_vertex": 0.0019120189853567538,
+      "Efron_Stein_variance_upper_bound": 0.011472113912140522,
+      "IC15_rhs_quadrature": 0.00556995098400786,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.000941576001476,
+      "IC7_curvature_quadrature": 0.002783664975935,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 0.9999999999999335,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 0.005736056956070261,
+      "beta": 1.0,
+      "bound_to_J_ratio": 2.747484344396584,
+      "canonical_J": 0.002783664975935185,
+      "canonical_J_per_parent_vertex": 0.0006959162439837963,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.005736056956070261,
+          "curvature_per_parent_vertex": 0.0014340142390175652,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.005736056956070261,
+          "tilted_average_influence_per_parent_vertex": 0.0014340142390175652
+        },
+        {
+          "K_s": 2.437242123676242e-07,
+          "curvature_Var_qs_h": 0.005731431092373145,
+          "curvature_per_parent_vertex": 0.0014328577730932863,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.00573297390046722,
+          "tilted_average_influence_per_parent_vertex": 0.001433243475116805
+        },
+        {
+          "K_s": 6.582588208736695e-06,
+          "curvature_Var_qs_h": 0.005711982935239624,
+          "curvature_per_parent_vertex": 0.001427995733809906,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.005720030568898702,
+          "tilted_average_influence_per_parent_vertex": 0.0014300076422246754
+        },
+        {
+          "K_s": 3.78343108109469e-05,
+          "curvature_Var_qs_h": 0.005678203976636878,
+          "curvature_per_parent_vertex": 0.0014195509941592195,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.0056976193488953416,
+          "tilted_average_influence_per_parent_vertex": 0.0014244048372238354
+        },
+        {
+          "K_s": 0.00012137484939511722,
+          "curvature_Var_qs_h": 0.0056321096296969185,
+          "curvature_per_parent_vertex": 0.0014080274074242296,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.005667175124884935,
+          "tilted_average_influence_per_parent_vertex": 0.0014167937812212337
+        },
+        {
+          "K_s": 0.0002838937012636933,
+          "curvature_Var_qs_h": 0.005576501683804408,
+          "curvature_per_parent_vertex": 0.001394125420951102,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.005630649401029468,
+          "tilted_average_influence_per_parent_vertex": 0.001407662350257367
+        },
+        {
+          "K_s": 0.0005416392328774222,
+          "curvature_Var_qs_h": 0.005514815241937063,
+          "curvature_per_parent_vertex": 0.0013787038104842659,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.0055903752588092595,
+          "tilted_average_influence_per_parent_vertex": 0.0013975938147023149
+        },
+        {
+          "K_s": 0.0008928666969376664,
+          "curvature_Var_qs_h": 0.0054509157606692,
+          "curvature_per_parent_vertex": 0.0013627289401673,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.005548910607158327,
+          "tilted_average_influence_per_parent_vertex": 0.0013872276517895817
+        },
+        {
+          "K_s": 0.0013145722197362986,
+          "curvature_Var_qs_h": 0.0053888511300872405,
+          "curvature_per_parent_vertex": 0.0013472127825218101,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.005508868741964494,
+          "tilted_average_influence_per_parent_vertex": 0.0013772171854911236
+        },
+        {
+          "K_s": 0.0017644459650871802,
+          "curvature_Var_qs_h": 0.005332579400859238,
+          "curvature_per_parent_vertex": 0.0013331448502148094,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.0054727497814226434,
+          "tilted_average_influence_per_parent_vertex": 0.0013681874453556609
+        },
+        {
+          "K_s": 0.0021876468623895917,
+          "curvature_Var_qs_h": 0.005285698849684224,
+          "curvature_per_parent_vertex": 0.001321424712421056,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.005442785830466987,
+          "tilted_average_influence_per_parent_vertex": 0.0013606964576167468
+        },
+        {
+          "K_s": 0.00252684873886988,
+          "curvature_Var_qs_h": 0.005251205592337022,
+          "curvature_per_parent_vertex": 0.0013128013980842556,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.005420809549014838,
+          "tilted_average_influence_per_parent_vertex": 0.0013552023872537096
+        },
+        {
+          "K_s": 0.0027333415364330094,
+          "curvature_Var_qs_h": 0.00523129241187516,
+          "curvature_per_parent_vertex": 0.00130782310296879,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.005408148654931346,
+          "tilted_average_influence_per_parent_vertex": 0.0013520371637328365
+        },
+        {
+          "K_s": 0.002783664975935185,
+          "curvature_Var_qs_h": 0.005226550102855174,
+          "curvature_per_parent_vertex": 0.0013066375257137935,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.005405136235683781,
+          "tilted_average_influence_per_parent_vertex": 0.0013512840589209453
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.005736056956070261,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.0014340142390175652,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 1.9949319973733282e-17,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 0.06118460753141612,
+      "projective_Delta_squared_per_parent_vertex": 0.01529615188285403,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        0.03059230376570806,
+        0.03059230376570806
+      ],
+      "row_conditional_variance_terms": [
+        0.005736056956070261,
+        0.005736056956070261
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        0.17490655724045356,
+        0.17490655724045356
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 0.06118460753141612,
+      "sum_average_projective_squared_per_parent_vertex": 0.01529615188285403
+    },
+    {
+      "CC2_upper_bound": 0.007648075941427015,
+      "CC2_upper_bound_per_parent_vertex": 0.0019120189853567538,
+      "Efron_Stein_variance_upper_bound": 0.011472113912140522,
+      "IC15_rhs_quadrature": 0.00556995098400786,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.000941576001476,
+      "IC7_curvature_quadrature": 0.002783664975935,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 0.9999999999999335,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 0.005736056956070261,
+      "beta": 1.0,
+      "bound_to_J_ratio": 2.747484344396584,
+      "canonical_J": 0.002783664975935185,
+      "canonical_J_per_parent_vertex": 0.0006959162439837963,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.005736056956070261,
+          "curvature_per_parent_vertex": 0.0014340142390175652,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.005736056956070261,
+          "tilted_average_influence_per_parent_vertex": 0.0014340142390175652
+        },
+        {
+          "K_s": 2.437242123676242e-07,
+          "curvature_Var_qs_h": 0.005731431092373145,
+          "curvature_per_parent_vertex": 0.0014328577730932863,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.00573297390046722,
+          "tilted_average_influence_per_parent_vertex": 0.001433243475116805
+        },
+        {
+          "K_s": 6.582588208736695e-06,
+          "curvature_Var_qs_h": 0.005711982935239624,
+          "curvature_per_parent_vertex": 0.001427995733809906,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.005720030568898702,
+          "tilted_average_influence_per_parent_vertex": 0.0014300076422246754
+        },
+        {
+          "K_s": 3.78343108109469e-05,
+          "curvature_Var_qs_h": 0.005678203976636878,
+          "curvature_per_parent_vertex": 0.0014195509941592195,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.0056976193488953416,
+          "tilted_average_influence_per_parent_vertex": 0.0014244048372238354
+        },
+        {
+          "K_s": 0.00012137484939511722,
+          "curvature_Var_qs_h": 0.0056321096296969185,
+          "curvature_per_parent_vertex": 0.0014080274074242296,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.005667175124884935,
+          "tilted_average_influence_per_parent_vertex": 0.0014167937812212337
+        },
+        {
+          "K_s": 0.0002838937012636933,
+          "curvature_Var_qs_h": 0.005576501683804408,
+          "curvature_per_parent_vertex": 0.001394125420951102,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.005630649401029468,
+          "tilted_average_influence_per_parent_vertex": 0.001407662350257367
+        },
+        {
+          "K_s": 0.0005416392328774222,
+          "curvature_Var_qs_h": 0.005514815241937063,
+          "curvature_per_parent_vertex": 0.0013787038104842659,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.0055903752588092595,
+          "tilted_average_influence_per_parent_vertex": 0.0013975938147023149
+        },
+        {
+          "K_s": 0.0008928666969376664,
+          "curvature_Var_qs_h": 0.0054509157606692,
+          "curvature_per_parent_vertex": 0.0013627289401673,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.005548910607158327,
+          "tilted_average_influence_per_parent_vertex": 0.0013872276517895817
+        },
+        {
+          "K_s": 0.0013145722197362986,
+          "curvature_Var_qs_h": 0.0053888511300872405,
+          "curvature_per_parent_vertex": 0.0013472127825218101,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.005508868741964494,
+          "tilted_average_influence_per_parent_vertex": 0.0013772171854911236
+        },
+        {
+          "K_s": 0.0017644459650871802,
+          "curvature_Var_qs_h": 0.005332579400859238,
+          "curvature_per_parent_vertex": 0.0013331448502148094,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.0054727497814226434,
+          "tilted_average_influence_per_parent_vertex": 0.0013681874453556609
+        },
+        {
+          "K_s": 0.0021876468623895917,
+          "curvature_Var_qs_h": 0.005285698849684224,
+          "curvature_per_parent_vertex": 0.001321424712421056,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.005442785830466987,
+          "tilted_average_influence_per_parent_vertex": 0.0013606964576167468
+        },
+        {
+          "K_s": 0.00252684873886988,
+          "curvature_Var_qs_h": 0.005251205592337022,
+          "curvature_per_parent_vertex": 0.0013128013980842556,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.005420809549014838,
+          "tilted_average_influence_per_parent_vertex": 0.0013552023872537096
+        },
+        {
+          "K_s": 0.0027333415364330094,
+          "curvature_Var_qs_h": 0.00523129241187516,
+          "curvature_per_parent_vertex": 0.00130782310296879,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.005408148654931346,
+          "tilted_average_influence_per_parent_vertex": 0.0013520371637328365
+        },
+        {
+          "K_s": 0.002783664975935185,
+          "curvature_Var_qs_h": 0.005226550102855174,
+          "curvature_per_parent_vertex": 0.0013066375257137935,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.005405136235683781,
+          "tilted_average_influence_per_parent_vertex": 0.0013512840589209453
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.005736056956070261,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.0014340142390175652,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 1.9949319973733282e-17,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 0.06118460753141612,
+      "projective_Delta_squared_per_parent_vertex": 0.01529615188285403,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        0.03059230376570806,
+        0.03059230376570806
+      ],
+      "row_conditional_variance_terms": [
+        0.005736056956070261,
+        0.005736056956070261
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        0.17490655724045356,
+        0.17490655724045356
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 0.06118460753141612,
+      "sum_average_projective_squared_per_parent_vertex": 0.01529615188285403
+    },
+    {
+      "CC2_upper_bound": 0.3068615157569026,
+      "CC2_upper_bound_per_parent_vertex": 0.07671537893922566,
+      "Efron_Stein_variance_upper_bound": 0.46029227363535397,
+      "IC15_rhs_quadrature": 0.19066733816196368,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.034245104869254,
+      "IC7_curvature_quadrature": 0.09372879290975043,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.000000000000001,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 0.23014613681767698,
+      "beta": 2.0,
+      "bound_to_J_ratio": 3.273930093737297,
+      "canonical_J": 0.09372879290975034,
+      "canonical_J_per_parent_vertex": 0.023432198227437584,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.23014613681767698,
+          "curvature_per_parent_vertex": 0.057536534204419246,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.23014613681767698,
+          "tilted_average_influence_per_parent_vertex": 0.057536534204419246
+        },
+        {
+          "K_s": 9.76484179959769e-06,
+          "curvature_Var_qs_h": 0.22896924746979266,
+          "curvature_per_parent_vertex": 0.057242311867448166,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.22936290900319403,
+          "tilted_average_influence_per_parent_vertex": 0.05734072725079851
+        },
+        {
+          "K_s": 0.00026213242788530877,
+          "curvature_Var_qs_h": 0.2239970892460435,
+          "curvature_per_parent_vertex": 0.055999272311510875,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.2260824816912309,
+          "tilted_average_influence_per_parent_vertex": 0.05652062042280773
+        },
+        {
+          "K_s": 0.0014905471536641457,
+          "curvature_Var_qs_h": 0.21529347312781588,
+          "curvature_per_parent_vertex": 0.05382336828195397,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.22043821116274742,
+          "tilted_average_influence_per_parent_vertex": 0.055109552790686855
+        },
+        {
+          "K_s": 0.004710675651055762,
+          "curvature_Var_qs_h": 0.20336255140722584,
+          "curvature_per_parent_vertex": 0.05084063785180646,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.2128637290800857,
+          "tilted_average_influence_per_parent_vertex": 0.05321593227002142
+        },
+        {
+          "K_s": 0.010816085345739523,
+          "curvature_Var_qs_h": 0.18904539715715868,
+          "curvature_per_parent_vertex": 0.04726134928928967,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.20395519218256683,
+          "tilted_average_influence_per_parent_vertex": 0.05098879804564171
+        },
+        {
+          "K_s": 0.020206684779313644,
+          "curvature_Var_qs_h": 0.17347131908380053,
+          "curvature_per_parent_vertex": 0.043367829770950134,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.19440806137899455,
+          "tilted_average_influence_per_parent_vertex": 0.04860201534474864
+        },
+        {
+          "K_s": 0.0325778250287323,
+          "curvature_Var_qs_h": 0.15788972518300615,
+          "curvature_per_parent_vertex": 0.03947243129575154,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.1849292516498059,
+          "tilted_average_influence_per_parent_vertex": 0.04623231291245147
+        },
+        {
+          "K_s": 0.04692431312450962,
+          "curvature_Var_qs_h": 0.14345338872388422,
+          "curvature_per_parent_vertex": 0.035863347180971054,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.1761501538357799,
+          "tilted_average_influence_per_parent_vertex": 0.04403753845894497
+        },
+        {
+          "K_s": 0.061729111398918235,
+          "curvature_Var_qs_h": 0.13105383817593252,
+          "curvature_per_parent_vertex": 0.03276345954398313,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.16856839051903094,
+          "tilted_average_influence_per_parent_vertex": 0.042142097629757735
+        },
+        {
+          "K_s": 0.07525408846515136,
+          "curvature_Var_qs_h": 0.12126603700527429,
+          "curvature_per_parent_vertex": 0.030316509251318572,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.16253078118242864,
+          "tilted_average_influence_per_parent_vertex": 0.04063269529560716
+        },
+        {
+          "K_s": 0.0858452152878133,
+          "curvature_Var_qs_h": 0.1143919137188362,
+          "curvature_per_parent_vertex": 0.02859797842970905,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.15825077142901153,
+          "tilted_average_influence_per_parent_vertex": 0.03956269285725288
+        },
+        {
+          "K_s": 0.09219278261233299,
+          "curvature_Var_qs_h": 0.11055192786653029,
+          "curvature_per_parent_vertex": 0.02763798196663257,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.15584232705954723,
+          "tilted_average_influence_per_parent_vertex": 0.03896058176488681
+        },
+        {
+          "K_s": 0.09372879290975034,
+          "curvature_Var_qs_h": 0.10965138155794556,
+          "curvature_per_parent_vertex": 0.02741284538948639,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.15527547062961372,
+          "tilted_average_influence_per_parent_vertex": 0.03881886765740343
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.23014613681767698,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.057536534204419246,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 2.1597307275911248e-16,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 2.454892126055221,
+      "projective_Delta_squared_per_parent_vertex": 0.6137230315138053,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        1.2274460630276105,
+        1.2274460630276105
+      ],
+      "row_conditional_variance_terms": [
+        0.23014613681767698,
+        0.23014613681767698
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        1.10790164862573,
+        1.10790164862573
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 2.454892126055221,
+      "sum_average_projective_squared_per_parent_vertex": 0.6137230315138053
+    },
+    {
+      "CC2_upper_bound": 0.3068615157569026,
+      "CC2_upper_bound_per_parent_vertex": 0.07671537893922566,
+      "Efron_Stein_variance_upper_bound": 0.46029227363535397,
+      "IC15_rhs_quadrature": 0.19066733816196368,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.034245104869254,
+      "IC7_curvature_quadrature": 0.09372879290975043,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.000000000000001,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 0.23014613681767698,
+      "beta": 2.0,
+      "bound_to_J_ratio": 3.273930093737297,
+      "canonical_J": 0.09372879290975034,
+      "canonical_J_per_parent_vertex": 0.023432198227437584,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.23014613681767698,
+          "curvature_per_parent_vertex": 0.057536534204419246,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.23014613681767698,
+          "tilted_average_influence_per_parent_vertex": 0.057536534204419246
+        },
+        {
+          "K_s": 9.76484179959769e-06,
+          "curvature_Var_qs_h": 0.22896924746979266,
+          "curvature_per_parent_vertex": 0.057242311867448166,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.22936290900319403,
+          "tilted_average_influence_per_parent_vertex": 0.05734072725079851
+        },
+        {
+          "K_s": 0.00026213242788530877,
+          "curvature_Var_qs_h": 0.2239970892460435,
+          "curvature_per_parent_vertex": 0.055999272311510875,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.2260824816912309,
+          "tilted_average_influence_per_parent_vertex": 0.05652062042280773
+        },
+        {
+          "K_s": 0.0014905471536641457,
+          "curvature_Var_qs_h": 0.21529347312781588,
+          "curvature_per_parent_vertex": 0.05382336828195397,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.22043821116274742,
+          "tilted_average_influence_per_parent_vertex": 0.055109552790686855
+        },
+        {
+          "K_s": 0.004710675651055762,
+          "curvature_Var_qs_h": 0.20336255140722584,
+          "curvature_per_parent_vertex": 0.05084063785180646,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.2128637290800857,
+          "tilted_average_influence_per_parent_vertex": 0.05321593227002142
+        },
+        {
+          "K_s": 0.010816085345739523,
+          "curvature_Var_qs_h": 0.18904539715715868,
+          "curvature_per_parent_vertex": 0.04726134928928967,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.20395519218256683,
+          "tilted_average_influence_per_parent_vertex": 0.05098879804564171
+        },
+        {
+          "K_s": 0.020206684779313644,
+          "curvature_Var_qs_h": 0.17347131908380053,
+          "curvature_per_parent_vertex": 0.043367829770950134,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.19440806137899455,
+          "tilted_average_influence_per_parent_vertex": 0.04860201534474864
+        },
+        {
+          "K_s": 0.0325778250287323,
+          "curvature_Var_qs_h": 0.15788972518300615,
+          "curvature_per_parent_vertex": 0.03947243129575154,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.1849292516498059,
+          "tilted_average_influence_per_parent_vertex": 0.04623231291245147
+        },
+        {
+          "K_s": 0.04692431312450962,
+          "curvature_Var_qs_h": 0.14345338872388422,
+          "curvature_per_parent_vertex": 0.035863347180971054,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.1761501538357799,
+          "tilted_average_influence_per_parent_vertex": 0.04403753845894497
+        },
+        {
+          "K_s": 0.061729111398918235,
+          "curvature_Var_qs_h": 0.13105383817593252,
+          "curvature_per_parent_vertex": 0.03276345954398313,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.16856839051903094,
+          "tilted_average_influence_per_parent_vertex": 0.042142097629757735
+        },
+        {
+          "K_s": 0.07525408846515136,
+          "curvature_Var_qs_h": 0.12126603700527429,
+          "curvature_per_parent_vertex": 0.030316509251318572,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.16253078118242864,
+          "tilted_average_influence_per_parent_vertex": 0.04063269529560716
+        },
+        {
+          "K_s": 0.0858452152878133,
+          "curvature_Var_qs_h": 0.1143919137188362,
+          "curvature_per_parent_vertex": 0.02859797842970905,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.15825077142901153,
+          "tilted_average_influence_per_parent_vertex": 0.03956269285725288
+        },
+        {
+          "K_s": 0.09219278261233299,
+          "curvature_Var_qs_h": 0.11055192786653029,
+          "curvature_per_parent_vertex": 0.02763798196663257,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.15584232705954723,
+          "tilted_average_influence_per_parent_vertex": 0.03896058176488681
+        },
+        {
+          "K_s": 0.09372879290975034,
+          "curvature_Var_qs_h": 0.10965138155794556,
+          "curvature_per_parent_vertex": 0.02741284538948639,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.15527547062961372,
+          "tilted_average_influence_per_parent_vertex": 0.03881886765740343
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.23014613681767698,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.057536534204419246,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 2.1597307275911248e-16,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 2.454892126055221,
+      "projective_Delta_squared_per_parent_vertex": 0.6137230315138053,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        1.2274460630276105,
+        1.2274460630276105
+      ],
+      "row_conditional_variance_terms": [
+        0.23014613681767698,
+        0.23014613681767698
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        1.10790164862573,
+        1.10790164862573
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 2.454892126055221,
+      "sum_average_projective_squared_per_parent_vertex": 0.6137230315138053
+    },
+    {
+      "CC2_upper_bound": 2.675306562889151,
+      "CC2_upper_bound_per_parent_vertex": 0.6688266407222877,
+      "Efron_Stein_variance_upper_bound": 4.012959844333727,
+      "IC15_rhs_quadrature": 1.2086649041947202,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.227093838614611,
+      "IC7_curvature_quadrature": 0.542709464342366,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 0.9999999999999992,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 2.0064799221668634,
+      "beta": 4.0,
+      "bound_to_J_ratio": 4.9295373282848125,
+      "canonical_J": 0.5427094643423664,
+      "canonical_J_per_parent_vertex": 0.1356773660855916,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 2.0064799221668634,
+          "curvature_per_parent_vertex": 0.5016199805417159,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 2.0064799221668634,
+          "tilted_average_influence_per_parent_vertex": 0.5016199805417159
+        },
+        {
+          "K_s": 8.484850829448831e-05,
+          "curvature_Var_qs_h": 1.9761137391877788,
+          "curvature_per_parent_vertex": 0.4940284347969447,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 1.9863379850600926,
+          "tilted_average_influence_per_parent_vertex": 0.49658449626502316
+        },
+        {
+          "K_s": 0.0022450519225136745,
+          "curvature_Var_qs_h": 1.8468419857644078,
+          "curvature_per_parent_vertex": 0.46171049644110196,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 1.902552553942223,
+          "tilted_average_influence_per_parent_vertex": 0.47563813848555575
+        },
+        {
+          "K_s": 0.012433575658091556,
+          "curvature_Var_qs_h": 1.6214761978752397,
+          "curvature_per_parent_vertex": 0.4053690494688099,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 1.7617058463127993,
+          "tilted_average_influence_per_parent_vertex": 0.4404264615781998
+        },
+        {
+          "K_s": 0.037831079828425374,
+          "curvature_Var_qs_h": 1.3273982835430238,
+          "curvature_per_parent_vertex": 0.33184957088575595,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 1.5824143489234448,
+          "tilted_average_influence_per_parent_vertex": 0.3956035872308612
+        },
+        {
+          "K_s": 0.08283049096207229,
+          "curvature_Var_qs_h": 1.0138165830272345,
+          "curvature_per_parent_vertex": 0.25345414575680864,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 1.3899914650634777,
+          "tilted_average_influence_per_parent_vertex": 0.3474978662658694
+        },
+        {
+          "K_s": 0.14670659094659166,
+          "curvature_Var_qs_h": 0.7316658676061938,
+          "curvature_per_parent_vertex": 0.18291646690154845,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 1.2087880574620584,
+          "tilted_average_influence_per_parent_vertex": 0.3021970143655146
+        },
+        {
+          "K_s": 0.22399779156417354,
+          "curvature_Var_qs_h": 0.5107627604145677,
+          "curvature_per_parent_vertex": 0.12769069010364192,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 1.0548022958715777,
+          "tilted_average_influence_per_parent_vertex": 0.2637005739678944
+        },
+        {
+          "K_s": 0.30660123982071186,
+          "curvature_Var_qs_h": 0.3550636900769916,
+          "curvature_per_parent_vertex": 0.0887659225192479,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.933804484898565,
+          "tilted_average_influence_per_parent_vertex": 0.23345112122464126
+        },
+        {
+          "K_s": 0.38593320594447267,
+          "curvature_Var_qs_h": 0.25318823593993245,
+          "curvature_per_parent_vertex": 0.06329705898498311,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.8443667859185356,
+          "tilted_average_influence_per_parent_vertex": 0.2110916964796339
+        },
+        {
+          "K_s": 0.4543139311523121,
+          "curvature_Var_qs_h": 0.19019515310460486,
+          "curvature_per_parent_vertex": 0.047548788276151215,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.7820126467835558,
+          "tilted_average_influence_per_parent_vertex": 0.19550316169588894
+        },
+        {
+          "K_s": 0.5056214223789477,
+          "curvature_Var_qs_h": 0.15380299858121863,
+          "curvature_per_parent_vertex": 0.038450749645304656,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.7420807433818002,
+          "tilted_average_influence_per_parent_vertex": 0.18552018584545005
+        },
+        {
+          "K_s": 0.53555194530552,
+          "curvature_Var_qs_h": 0.1359757963959594,
+          "curvature_per_parent_vertex": 0.03399394909898985,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.7210420271950904,
+          "tilted_average_influence_per_parent_vertex": 0.1802605067987726
+        },
+        {
+          "K_s": 0.5427094643423664,
+          "curvature_Var_qs_h": 0.13203695095259335,
+          "curvature_per_parent_vertex": 0.03300923773814834,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.7162328353382668,
+          "tilted_average_influence_per_parent_vertex": 0.1790582088345667
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 2.0064799221668634,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.5016199805417159,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 4.371503159461554e-16,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 21.402452503113206,
+      "projective_Delta_squared_per_parent_vertex": 5.350613125778302,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        10.701226251556603,
+        10.701226251556603
+      ],
+      "row_conditional_variance_terms": [
+        2.0064799221668634,
+        2.0064799221668634
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        3.2712728794089623,
+        3.2712728794089623
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 21.402452503113206,
+      "sum_average_projective_squared_per_parent_vertex": 5.350613125778302
+    },
+    {
+      "CC2_upper_bound": 2.675306562889151,
+      "CC2_upper_bound_per_parent_vertex": 0.6688266407222877,
+      "Efron_Stein_variance_upper_bound": 4.012959844333727,
+      "IC15_rhs_quadrature": 1.2086649041947202,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.227093838614611,
+      "IC7_curvature_quadrature": 0.542709464342366,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 0.9999999999999992,
+      "N": 4,
+      "actual_variance_h_under_canonical_product": 2.0064799221668634,
+      "beta": 4.0,
+      "bound_to_J_ratio": 4.9295373282848125,
+      "canonical_J": 0.5427094643423664,
+      "canonical_J_per_parent_vertex": 0.1356773660855916,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 2.0064799221668634,
+          "curvature_per_parent_vertex": 0.5016199805417159,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 2.0064799221668634,
+          "tilted_average_influence_per_parent_vertex": 0.5016199805417159
+        },
+        {
+          "K_s": 8.484850829448831e-05,
+          "curvature_Var_qs_h": 1.9761137391877788,
+          "curvature_per_parent_vertex": 0.4940284347969447,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 1.9863379850600926,
+          "tilted_average_influence_per_parent_vertex": 0.49658449626502316
+        },
+        {
+          "K_s": 0.0022450519225136745,
+          "curvature_Var_qs_h": 1.8468419857644078,
+          "curvature_per_parent_vertex": 0.46171049644110196,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 1.902552553942223,
+          "tilted_average_influence_per_parent_vertex": 0.47563813848555575
+        },
+        {
+          "K_s": 0.012433575658091556,
+          "curvature_Var_qs_h": 1.6214761978752397,
+          "curvature_per_parent_vertex": 0.4053690494688099,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 1.7617058463127993,
+          "tilted_average_influence_per_parent_vertex": 0.4404264615781998
+        },
+        {
+          "K_s": 0.037831079828425374,
+          "curvature_Var_qs_h": 1.3273982835430238,
+          "curvature_per_parent_vertex": 0.33184957088575595,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 1.5824143489234448,
+          "tilted_average_influence_per_parent_vertex": 0.3956035872308612
+        },
+        {
+          "K_s": 0.08283049096207229,
+          "curvature_Var_qs_h": 1.0138165830272345,
+          "curvature_per_parent_vertex": 0.25345414575680864,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 1.3899914650634777,
+          "tilted_average_influence_per_parent_vertex": 0.3474978662658694
+        },
+        {
+          "K_s": 0.14670659094659166,
+          "curvature_Var_qs_h": 0.7316658676061938,
+          "curvature_per_parent_vertex": 0.18291646690154845,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 1.2087880574620584,
+          "tilted_average_influence_per_parent_vertex": 0.3021970143655146
+        },
+        {
+          "K_s": 0.22399779156417354,
+          "curvature_Var_qs_h": 0.5107627604145677,
+          "curvature_per_parent_vertex": 0.12769069010364192,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 1.0548022958715777,
+          "tilted_average_influence_per_parent_vertex": 0.2637005739678944
+        },
+        {
+          "K_s": 0.30660123982071186,
+          "curvature_Var_qs_h": 0.3550636900769916,
+          "curvature_per_parent_vertex": 0.0887659225192479,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.9338044848985652,
+          "tilted_average_influence_per_parent_vertex": 0.2334511212246413
+        },
+        {
+          "K_s": 0.38593320594447267,
+          "curvature_Var_qs_h": 0.25318823593993245,
+          "curvature_per_parent_vertex": 0.06329705898498311,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.8443667859185358,
+          "tilted_average_influence_per_parent_vertex": 0.21109169647963394
+        },
+        {
+          "K_s": 0.4543139311523121,
+          "curvature_Var_qs_h": 0.19019515310460486,
+          "curvature_per_parent_vertex": 0.047548788276151215,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.7820126467835558,
+          "tilted_average_influence_per_parent_vertex": 0.19550316169588894
+        },
+        {
+          "K_s": 0.5056214223789477,
+          "curvature_Var_qs_h": 0.15380299858121863,
+          "curvature_per_parent_vertex": 0.038450749645304656,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.7420807433818002,
+          "tilted_average_influence_per_parent_vertex": 0.18552018584545005
+        },
+        {
+          "K_s": 0.53555194530552,
+          "curvature_Var_qs_h": 0.1359757963959594,
+          "curvature_per_parent_vertex": 0.03399394909898985,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.7210420271950904,
+          "tilted_average_influence_per_parent_vertex": 0.1802605067987726
+        },
+        {
+          "K_s": 0.5427094643423664,
+          "curvature_Var_qs_h": 0.13203695095259335,
+          "curvature_per_parent_vertex": 0.03300923773814834,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.7162328353382668,
+          "tilted_average_influence_per_parent_vertex": 0.1790582088345667
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 2.0064799221668634,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.5016199805417159,
+      "pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 4.371503159461554e-16,
+        "rank_one_character_count": 4
+      },
+      "projective_Delta_squared": 21.402452503113206,
+      "projective_Delta_squared_per_parent_vertex": 5.350613125778302,
+      "right_class": 0,
+      "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "row_average_projective_squared": [
+        10.701226251556603,
+        10.701226251556603
+      ],
+      "row_conditional_variance_terms": [
+        2.0064799221668634,
+        2.0064799221668634
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        3.2712728794089623,
+        3.2712728794089623
+      ],
+      "split": [
+        2,
+        2
+      ],
+      "sum_average_projective_squared": 21.402452503113206,
+      "sum_average_projective_squared_per_parent_vertex": 5.350613125778302
+    },
+    {
+      "CC2_upper_bound": 0.03288288574622894,
+      "CC2_upper_bound_per_parent_vertex": 0.006576577149245788,
+      "Efron_Stein_variance_upper_bound": 0.013478782869964578,
+      "IC15_rhs_quadrature": 0.006567837206731557,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 1.9908322026463254,
+      "IC7_curvature_quadrature": 0.0032990410733768926,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.000000000000009,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 0.006765913608684613,
+      "beta": 1.0,
+      "bound_to_J_ratio": 9.967407199501876,
+      "canonical_J": 0.0032990410733768627,
+      "canonical_J_per_parent_vertex": 0.0006598082146753725,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.006765913608684613,
+          "curvature_per_parent_vertex": 0.0013531827217369227,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.006739391434982289,
+          "tilted_average_influence_per_parent_vertex": 0.0013478782869964577
+        },
+        {
+          "K_s": 2.874928295426571e-07,
+          "curvature_Var_qs_h": 0.006761175793350406,
+          "curvature_per_parent_vertex": 0.0013522351586700812,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.006736090540699815,
+          "tilted_average_influence_per_parent_vertex": 0.001347218108139963
+        },
+        {
+          "K_s": 7.765872369169813e-06,
+          "curvature_Var_qs_h": 0.006741316936725859,
+          "curvature_per_parent_vertex": 0.0013482633873451717,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.006722270152662999,
+          "tilted_average_influence_per_parent_vertex": 0.0013444540305325998
+        },
+        {
+          "K_s": 4.4647312547496654e-05,
+          "curvature_Var_qs_h": 0.0067070510811415695,
+          "curvature_per_parent_vertex": 0.0013414102162283138,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.006698482515812304,
+          "tilted_average_influence_per_parent_vertex": 0.0013396965031624607
+        },
+        {
+          "K_s": 0.00014328534907903645,
+          "curvature_Var_qs_h": 0.006660742821473798,
+          "curvature_per_parent_vertex": 0.0013321485642947596,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.006666454019179073,
+          "tilted_average_influence_per_parent_vertex": 0.0013332908038358145
+        },
+        {
+          "K_s": 0.0003353006234849687,
+          "curvature_Var_qs_h": 0.00660554238864647,
+          "curvature_per_parent_vertex": 0.001321108477729294,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.006628454915263191,
+          "tilted_average_influence_per_parent_vertex": 0.0013256909830526382
+        },
+        {
+          "K_s": 0.0006400693389023715,
+          "curvature_Var_qs_h": 0.006545120868875083,
+          "curvature_per_parent_vertex": 0.0013090241737750165,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.006587086750517995,
+          "tilted_average_influence_per_parent_vertex": 0.0013174173501035989
+        },
+        {
+          "K_s": 0.0010557514457758543,
+          "curvature_Var_qs_h": 0.0064833884437960725,
+          "curvature_per_parent_vertex": 0.0012966776887592146,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.0065450655617654485,
+          "tilted_average_influence_per_parent_vertex": 0.0013090131123530897
+        },
+        {
+          "K_s": 0.0015553249037676409,
+          "curvature_Var_qs_h": 0.006424220805158318,
+          "curvature_per_parent_vertex": 0.0012848441610316635,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.006505023841890995,
+          "tilted_average_influence_per_parent_vertex": 0.0013010047683781989
+        },
+        {
+          "K_s": 0.0020887737988655175,
+          "curvature_Var_qs_h": 0.006371217276146554,
+          "curvature_per_parent_vertex": 0.0012742434552293108,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.006469349326204187,
+          "tilted_average_influence_per_parent_vertex": 0.0012938698652408373
+        },
+        {
+          "K_s": 0.002591028176047949,
+          "curvature_Var_qs_h": 0.00632750476162287,
+          "curvature_per_parent_vertex": 0.001265500952324574,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.006440068338350397,
+          "tilted_average_influence_per_parent_vertex": 0.0012880136676700796
+        },
+        {
+          "K_s": 0.002993876413587948,
+          "curvature_Var_qs_h": 0.006295591334383687,
+          "curvature_per_parent_vertex": 0.0012591182668767373,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.006418771509811823,
+          "tilted_average_influence_per_parent_vertex": 0.0012837543019623646
+        },
+        {
+          "K_s": 0.003239233036576472,
+          "curvature_Var_qs_h": 0.0062772609508545164,
+          "curvature_per_parent_vertex": 0.0012554521901709033,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.006406569936088086,
+          "tilted_average_influence_per_parent_vertex": 0.0012813139872176172
+        },
+        {
+          "K_s": 0.0032990410733768627,
+          "curvature_Var_qs_h": 0.006272905506911097,
+          "curvature_per_parent_vertex": 0.0012545811013822193,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.006403674066462827,
+          "tilted_average_influence_per_parent_vertex": 0.0012807348132925654
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.006739391434982289,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.0013478782869964577,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 5.1011712215442984e-17,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 0.2630630859698315,
+      "projective_Delta_squared_per_parent_vertex": 0.0526126171939663,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        0.07121277699222539,
+        0.07121277699222539
+      ],
+      "row_conditional_variance_terms": [
+        0.006739391434982289,
+        0.00673939143498229
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        0.3626727767353317,
+        0.3626727767353317
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 0.14242555398445078,
+      "sum_average_projective_squared_per_parent_vertex": 0.028485110796890156
+    },
+    {
+      "CC2_upper_bound": 0.03288288574622894,
+      "CC2_upper_bound_per_parent_vertex": 0.006576577149245788,
+      "Efron_Stein_variance_upper_bound": 0.013478782869964578,
+      "IC15_rhs_quadrature": 0.006567837206731557,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 1.9908322026463254,
+      "IC7_curvature_quadrature": 0.0032990410733768926,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.000000000000009,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 0.006765913608684613,
+      "beta": 1.0,
+      "bound_to_J_ratio": 9.967407199501876,
+      "canonical_J": 0.0032990410733768627,
+      "canonical_J_per_parent_vertex": 0.0006598082146753725,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": 0.0,
+          "curvature_Var_qs_h": 0.006765913608684613,
+          "curvature_per_parent_vertex": 0.0013531827217369227,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.006739391434982289,
+          "tilted_average_influence_per_parent_vertex": 0.0013478782869964577
+        },
+        {
+          "K_s": 2.874928295426571e-07,
+          "curvature_Var_qs_h": 0.006761175793350406,
+          "curvature_per_parent_vertex": 0.0013522351586700812,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.006736090540699815,
+          "tilted_average_influence_per_parent_vertex": 0.001347218108139963
+        },
+        {
+          "K_s": 7.765872369169813e-06,
+          "curvature_Var_qs_h": 0.006741316936725859,
+          "curvature_per_parent_vertex": 0.0013482633873451717,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.006722270152662999,
+          "tilted_average_influence_per_parent_vertex": 0.0013444540305325998
+        },
+        {
+          "K_s": 4.4647312547496654e-05,
+          "curvature_Var_qs_h": 0.0067070510811415695,
+          "curvature_per_parent_vertex": 0.0013414102162283138,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.006698482515812304,
+          "tilted_average_influence_per_parent_vertex": 0.0013396965031624607
+        },
+        {
+          "K_s": 0.00014328534907903645,
+          "curvature_Var_qs_h": 0.006660742821473798,
+          "curvature_per_parent_vertex": 0.0013321485642947596,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.006666454019179073,
+          "tilted_average_influence_per_parent_vertex": 0.0013332908038358145
+        },
+        {
+          "K_s": 0.0003353006234849687,
+          "curvature_Var_qs_h": 0.00660554238864647,
+          "curvature_per_parent_vertex": 0.001321108477729294,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.006628454915263191,
+          "tilted_average_influence_per_parent_vertex": 0.0013256909830526382
+        },
+        {
+          "K_s": 0.0006400693389023715,
+          "curvature_Var_qs_h": 0.006545120868875083,
+          "curvature_per_parent_vertex": 0.0013090241737750165,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.006587086750517995,
+          "tilted_average_influence_per_parent_vertex": 0.0013174173501035989
+        },
+        {
+          "K_s": 0.0010557514457758543,
+          "curvature_Var_qs_h": 0.0064833884437960725,
+          "curvature_per_parent_vertex": 0.0012966776887592146,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.0065450655617654485,
+          "tilted_average_influence_per_parent_vertex": 0.0013090131123530897
+        },
+        {
+          "K_s": 0.0015553249037676409,
+          "curvature_Var_qs_h": 0.006424220805158318,
+          "curvature_per_parent_vertex": 0.0012848441610316635,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.006505023841890995,
+          "tilted_average_influence_per_parent_vertex": 0.0013010047683781989
+        },
+        {
+          "K_s": 0.0020887737988655175,
+          "curvature_Var_qs_h": 0.006371217276146554,
+          "curvature_per_parent_vertex": 0.0012742434552293108,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.006469349326204187,
+          "tilted_average_influence_per_parent_vertex": 0.0012938698652408373
+        },
+        {
+          "K_s": 0.002591028176047949,
+          "curvature_Var_qs_h": 0.00632750476162287,
+          "curvature_per_parent_vertex": 0.001265500952324574,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.006440068338350397,
+          "tilted_average_influence_per_parent_vertex": 0.0012880136676700796
+        },
+        {
+          "K_s": 0.002993876413587948,
+          "curvature_Var_qs_h": 0.006295591334383687,
+          "curvature_per_parent_vertex": 0.0012591182668767373,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.006418771509811823,
+          "tilted_average_influence_per_parent_vertex": 0.0012837543019623646
+        },
+        {
+          "K_s": 0.003239233036576472,
+          "curvature_Var_qs_h": 0.0062772609508545164,
+          "curvature_per_parent_vertex": 0.0012554521901709033,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.006406569936088086,
+          "tilted_average_influence_per_parent_vertex": 0.0012813139872176172
+        },
+        {
+          "K_s": 0.0032990410733768627,
+          "curvature_Var_qs_h": 0.006272905506911097,
+          "curvature_per_parent_vertex": 0.0012545811013822193,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.006403674066462827,
+          "tilted_average_influence_per_parent_vertex": 0.0012807348132925654
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.006739391434982289,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.0013478782869964577,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 7.39425881635114e-17,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 0.2630630859698315,
+      "projective_Delta_squared_per_parent_vertex": 0.0526126171939663,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        0.07121277699222539,
+        0.07121277699222539
+      ],
+      "row_conditional_variance_terms": [
+        0.006739391434982289,
+        0.00673939143498229
+      ],
+      "row_product_log_probability_normalization_error": 0.0,
+      "row_projective_diameters": [
+        0.3626727767353317,
+        0.3626727767353317
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 0.14242555398445078,
+      "sum_average_projective_squared_per_parent_vertex": 0.028485110796890156
+    },
+    {
+      "CC2_upper_bound": 0.6672953539167733,
+      "CC2_upper_bound_per_parent_vertex": 0.13345907078335467,
+      "Efron_Stein_variance_upper_bound": 0.4671402389259576,
+      "IC15_rhs_quadrature": 0.22065119433509622,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 1.9364638781969652,
+      "IC7_curvature_quadrature": 0.11394542228205401,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.0000000000000044,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 0.244434900275258,
+      "beta": 2.0,
+      "bound_to_J_ratio": 5.856271718094925,
+      "canonical_J": 0.11394542228205351,
+      "canonical_J_per_parent_vertex": 0.022789084456410702,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": -8.881784197001252e-16,
+          "curvature_Var_qs_h": 0.24443490027525822,
+          "curvature_per_parent_vertex": 0.04888698005505164,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.2335701194629788,
+          "tilted_average_influence_per_parent_vertex": 0.046714023892595755
+        },
+        {
+          "K_s": 1.0383340688591147e-05,
+          "curvature_Var_qs_h": 0.24404905646819186,
+          "curvature_per_parent_vertex": 0.04880981129363837,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.2333060063069504,
+          "tilted_average_influence_per_parent_vertex": 0.046661201261390076
+        },
+        {
+          "K_s": 0.00028012774251306993,
+          "curvature_Var_qs_h": 0.2423927662739461,
+          "curvature_per_parent_vertex": 0.04847855325478922,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.23220445656681035,
+          "tilted_average_influence_per_parent_vertex": 0.04644089131336207
+        },
+        {
+          "K_s": 0.0016068378180555953,
+          "curvature_Var_qs_h": 0.23939042899544763,
+          "curvature_per_parent_vertex": 0.047878085799089524,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.23032535005419263,
+          "tilted_average_influence_per_parent_vertex": 0.046065070010838524
+        },
+        {
+          "K_s": 0.005139742286820237,
+          "curvature_Var_qs_h": 0.23505523161808772,
+          "curvature_per_parent_vertex": 0.04701104632361754,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.22783135622894632,
+          "tilted_average_influence_per_parent_vertex": 0.04556627124578926
+        },
+        {
+          "K_s": 0.01197598075306816,
+          "curvature_Var_qs_h": 0.22949801472719875,
+          "curvature_per_parent_vertex": 0.04589960294543975,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.22492995130596538,
+          "tilted_average_influence_per_parent_vertex": 0.04498599026119308
+        },
+        {
+          "K_s": 0.02274468321540013,
+          "curvature_Var_qs_h": 0.22297236480783145,
+          "curvature_per_parent_vertex": 0.04459447296156629,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.2218459413992401,
+          "tilted_average_influence_per_parent_vertex": 0.044369188279848024
+        },
+        {
+          "K_s": 0.03730313777943328,
+          "curvature_Var_qs_h": 0.21588003216248622,
+          "curvature_per_parent_vertex": 0.04317600643249724,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.2187947278859069,
+          "tilted_average_influence_per_parent_vertex": 0.04375894557718138
+        },
+        {
+          "K_s": 0.05463285713653265,
+          "curvature_Var_qs_h": 0.20873199499078832,
+          "curvature_per_parent_vertex": 0.041746398998157665,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.21596295838768215,
+          "tilted_average_influence_per_parent_vertex": 0.04319259167753643
+        },
+        {
+          "K_s": 0.07296057429900893,
+          "curvature_Var_qs_h": 0.20208041212360905,
+          "curvature_per_parent_vertex": 0.04041608242472181,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.21349993730821232,
+          "tilted_average_influence_per_parent_vertex": 0.04269998746164246
+        },
+        {
+          "K_s": 0.09006465853206391,
+          "curvature_Var_qs_h": 0.19644590435819748,
+          "curvature_per_parent_vertex": 0.0392891808716395,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.2115180724230197,
+          "tilted_average_influence_per_parent_vertex": 0.042303614484603944
+        },
+        {
+          "K_s": 0.10368427298820482,
+          "curvature_Var_qs_h": 0.19226032094216108,
+          "curvature_per_parent_vertex": 0.038452064188432215,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.21009762778024993,
+          "tilted_average_influence_per_parent_vertex": 0.042019525556049986
+        },
+        {
+          "K_s": 0.1119380886486403,
+          "curvature_Var_qs_h": 0.1898323673484708,
+          "curvature_per_parent_vertex": 0.03796647346969416,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.2092913093881271,
+          "tilted_average_influence_per_parent_vertex": 0.04185826187762542
+        },
+        {
+          "K_s": 0.11394542228205351,
+          "curvature_Var_qs_h": 0.18925313286885037,
+          "curvature_per_parent_vertex": 0.03785062657377007,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.20910071065146932,
+          "tilted_average_influence_per_parent_vertex": 0.041820142130293864
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.2335701194629788,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.046714023892595755,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 1.2685165418080402e-16,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 5.338362831334186,
+      "projective_Delta_squared_per_parent_vertex": 1.0676725662668374,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        2.617039667678124,
+        2.617039667678124
+      ],
+      "row_conditional_variance_terms": [
+        0.23357011946297881,
+        0.2335701194629788
+      ],
+      "row_product_log_probability_normalization_error": 8.881784197001252e-16,
+      "row_projective_diameters": [
+        1.6337629618971943,
+        1.6337629618971943
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 5.234079335356248,
+      "sum_average_projective_squared_per_parent_vertex": 1.0468158670712495
+    },
+    {
+      "CC2_upper_bound": 0.6672953539167733,
+      "CC2_upper_bound_per_parent_vertex": 0.13345907078335467,
+      "Efron_Stein_variance_upper_bound": 0.4671402389259576,
+      "IC15_rhs_quadrature": 0.22065119433509622,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 1.9364638781969652,
+      "IC7_curvature_quadrature": 0.11394542228205401,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.0000000000000044,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 0.244434900275258,
+      "beta": 2.0,
+      "bound_to_J_ratio": 5.856271718094925,
+      "canonical_J": 0.11394542228205351,
+      "canonical_J_per_parent_vertex": 0.022789084456410702,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": -8.881784197001252e-16,
+          "curvature_Var_qs_h": 0.24443490027525822,
+          "curvature_per_parent_vertex": 0.04888698005505164,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 0.2335701194629788,
+          "tilted_average_influence_per_parent_vertex": 0.046714023892595755
+        },
+        {
+          "K_s": 1.0383340688591147e-05,
+          "curvature_Var_qs_h": 0.24404905646819186,
+          "curvature_per_parent_vertex": 0.04880981129363837,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 0.2333060063069504,
+          "tilted_average_influence_per_parent_vertex": 0.046661201261390076
+        },
+        {
+          "K_s": 0.00028012774251306993,
+          "curvature_Var_qs_h": 0.2423927662739461,
+          "curvature_per_parent_vertex": 0.04847855325478922,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 0.23220445656681035,
+          "tilted_average_influence_per_parent_vertex": 0.04644089131336207
+        },
+        {
+          "K_s": 0.0016068378180555953,
+          "curvature_Var_qs_h": 0.23939042899544763,
+          "curvature_per_parent_vertex": 0.047878085799089524,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 0.23032535005419263,
+          "tilted_average_influence_per_parent_vertex": 0.046065070010838524
+        },
+        {
+          "K_s": 0.005139742286820237,
+          "curvature_Var_qs_h": 0.23505523161808772,
+          "curvature_per_parent_vertex": 0.04701104632361754,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 0.22783135622894632,
+          "tilted_average_influence_per_parent_vertex": 0.04556627124578926
+        },
+        {
+          "K_s": 0.01197598075306816,
+          "curvature_Var_qs_h": 0.22949801472719875,
+          "curvature_per_parent_vertex": 0.04589960294543975,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 0.22492995130596538,
+          "tilted_average_influence_per_parent_vertex": 0.04498599026119308
+        },
+        {
+          "K_s": 0.02274468321540013,
+          "curvature_Var_qs_h": 0.22297236480783145,
+          "curvature_per_parent_vertex": 0.04459447296156629,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 0.2218459413992401,
+          "tilted_average_influence_per_parent_vertex": 0.044369188279848024
+        },
+        {
+          "K_s": 0.03730313777943328,
+          "curvature_Var_qs_h": 0.21588003216248622,
+          "curvature_per_parent_vertex": 0.04317600643249724,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 0.2187947278859069,
+          "tilted_average_influence_per_parent_vertex": 0.04375894557718138
+        },
+        {
+          "K_s": 0.05463285713653265,
+          "curvature_Var_qs_h": 0.20873199499078832,
+          "curvature_per_parent_vertex": 0.041746398998157665,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 0.21596295838768215,
+          "tilted_average_influence_per_parent_vertex": 0.04319259167753643
+        },
+        {
+          "K_s": 0.07296057429900893,
+          "curvature_Var_qs_h": 0.20208041212360905,
+          "curvature_per_parent_vertex": 0.04041608242472181,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 0.21349993730821232,
+          "tilted_average_influence_per_parent_vertex": 0.04269998746164246
+        },
+        {
+          "K_s": 0.09006465853206391,
+          "curvature_Var_qs_h": 0.19644590435819748,
+          "curvature_per_parent_vertex": 0.0392891808716395,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 0.2115180724230197,
+          "tilted_average_influence_per_parent_vertex": 0.042303614484603944
+        },
+        {
+          "K_s": 0.10368427298820482,
+          "curvature_Var_qs_h": 0.19226032094216108,
+          "curvature_per_parent_vertex": 0.038452064188432215,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 0.21009762778024993,
+          "tilted_average_influence_per_parent_vertex": 0.042019525556049986
+        },
+        {
+          "K_s": 0.1119380886486403,
+          "curvature_Var_qs_h": 0.1898323673484708,
+          "curvature_per_parent_vertex": 0.03796647346969416,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 0.2092913093881271,
+          "tilted_average_influence_per_parent_vertex": 0.04185826187762542
+        },
+        {
+          "K_s": 0.11394542228205351,
+          "curvature_Var_qs_h": 0.18925313286885037,
+          "curvature_per_parent_vertex": 0.03785062657377007,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 0.20910071065146932,
+          "tilted_average_influence_per_parent_vertex": 0.041820142130293864
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 0.2335701194629788,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.046714023892595755,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 2.92300905702092e-16,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 5.338362831334186,
+      "projective_Delta_squared_per_parent_vertex": 1.0676725662668374,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        2.617039667678124,
+        2.617039667678124
+      ],
+      "row_conditional_variance_terms": [
+        0.23357011946297881,
+        0.2335701194629788
+      ],
+      "row_product_log_probability_normalization_error": 8.881784197001252e-16,
+      "row_projective_diameters": [
+        1.6337629618971943,
+        1.6337629618971943
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 5.234079335356248,
+      "sum_average_projective_squared_per_parent_vertex": 1.0468158670712495
+    },
+    {
+      "CC2_upper_bound": 7.053231031840624,
+      "CC2_upper_bound_per_parent_vertex": 1.4106462063681247,
+      "Efron_Stein_variance_upper_bound": 5.490329691044726,
+      "IC15_rhs_quadrature": 2.3881507589082887,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.3115477856327686,
+      "IC7_curvature_quadrature": 1.0331392557625845,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.0,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 2.771710359032528,
+      "beta": 4.0,
+      "bound_to_J_ratio": 6.826989674915089,
+      "canonical_J": 1.0331392557625845,
+      "canonical_J_per_parent_vertex": 0.2066278511525169,
+      "epsilon": -1,
+      "interaction_path_profile": [
+        {
+          "K_s": 4.440892098500626e-16,
+          "curvature_Var_qs_h": 2.771710359032527,
+          "curvature_per_parent_vertex": 0.5543420718065054,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 2.745164845522363,
+          "tilted_average_influence_per_parent_vertex": 0.5490329691044726
+        },
+        {
+          "K_s": 0.0001176270956522174,
+          "curvature_Var_qs_h": 2.7592860963395758,
+          "curvature_per_parent_vertex": 0.5518572192679152,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 2.7371483664656893,
+          "tilted_average_influence_per_parent_vertex": 0.5474296732931379
+        },
+        {
+          "K_s": 0.0031596381612626345,
+          "curvature_Var_qs_h": 2.7014974091557273,
+          "curvature_per_parent_vertex": 0.5402994818311455,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 2.7040967873004704,
+          "tilted_average_influence_per_parent_vertex": 0.5408193574600941
+        },
+        {
+          "K_s": 0.01796512693489083,
+          "curvature_Var_qs_h": 2.5820089047723656,
+          "curvature_per_parent_vertex": 0.5164017809544731,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 2.6493021657405116,
+          "tilted_average_influence_per_parent_vertex": 0.5298604331481023
+        },
+        {
+          "K_s": 0.05664441057189196,
+          "curvature_Var_qs_h": 2.3880309784844576,
+          "curvature_per_parent_vertex": 0.4776061956968915,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 2.5798016865975417,
+          "tilted_average_influence_per_parent_vertex": 0.5159603373195083
+        },
+        {
+          "K_s": 0.12930251477970245,
+          "curvature_Var_qs_h": 2.123899408792753,
+          "curvature_per_parent_vertex": 0.42477988175855064,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 2.5028226606995125,
+          "tilted_average_influence_per_parent_vertex": 0.5005645321399025
+        },
+        {
+          "K_s": 0.2392215234324686,
+          "curvature_Var_qs_h": 1.8169412845393162,
+          "curvature_per_parent_vertex": 0.36338825690786325,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 2.4232475748216933,
+          "tilted_average_influence_per_parent_vertex": 0.48464951496433867
+        },
+        {
+          "K_s": 0.3807131602978755,
+          "curvature_Var_qs_h": 1.5077592057983522,
+          "curvature_per_parent_vertex": 0.30155184115967043,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 2.3435910272300666,
+          "tilted_average_influence_per_parent_vertex": 0.46871820544601334
+        },
+        {
+          "K_s": 0.5403820009559088,
+          "curvature_Var_qs_h": 1.232756779832907,
+          "curvature_per_parent_vertex": 0.24655135596658143,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 2.2662376611096695,
+          "tilted_average_influence_per_parent_vertex": 0.4532475322219339
+        },
+        {
+          "K_s": 0.7006049117123254,
+          "curvature_Var_qs_h": 1.012687943311462,
+          "curvature_per_parent_vertex": 0.20253758866229238,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 2.1950264519859206,
+          "tilted_average_influence_per_parent_vertex": 0.4390052903971841
+        },
+        {
+          "K_s": 0.8433082613413105,
+          "curvature_Var_qs_h": 0.85257064207322,
+          "curvature_per_parent_vertex": 0.170514128414644,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 2.134808354148068,
+          "tilted_average_influence_per_parent_vertex": 0.42696167082961356
+        },
+        {
+          "K_s": 0.9528158036791343,
+          "curvature_Var_qs_h": 0.7482202476755817,
+          "curvature_per_parent_vertex": 0.14964404953511634,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 2.0901129469712383,
+          "tilted_average_influence_per_parent_vertex": 0.41802258939424763
+        },
+        {
+          "K_s": 1.017565954341756,
+          "curvature_Var_qs_h": 0.6930112980468788,
+          "curvature_per_parent_vertex": 0.13860225960937575,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 2.064221776020485,
+          "tilted_average_influence_per_parent_vertex": 0.412844355204097
+        },
+        {
+          "K_s": 1.0331392557625845,
+          "curvature_Var_qs_h": 0.6803915052513794,
+          "curvature_per_parent_vertex": 0.13607830105027588,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 2.0580508342702526,
+          "tilted_average_influence_per_parent_vertex": 0.4116101668540505
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 2.745164845522363,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.5490329691044726,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 5.204170427930421e-16,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 56.42584825472499,
+      "projective_Delta_squared_per_parent_vertex": 11.285169650944997,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        27.9152869461655,
+        27.915286946165505
+      ],
+      "row_conditional_variance_terms": [
+        2.745164845522363,
+        2.7451648455223636
+      ],
+      "row_product_log_probability_normalization_error": 4.440892098500626e-16,
+      "row_projective_diameters": [
+        5.311583956539,
+        5.311583956539
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 55.830573892331,
+      "sum_average_projective_squared_per_parent_vertex": 11.1661147784662
+    },
+    {
+      "CC2_upper_bound": 7.053231031840624,
+      "CC2_upper_bound_per_parent_vertex": 1.4106462063681247,
+      "Efron_Stein_variance_upper_bound": 5.490329691044726,
+      "IC15_rhs_quadrature": 2.3881507589082887,
+      "IC15_rhs_quadrature_to_exact_J_ratio": 2.3115477856327686,
+      "IC7_curvature_quadrature": 1.0331392557625845,
+      "IC7_curvature_quadrature_to_exact_J_ratio": 1.0,
+      "N": 5,
+      "actual_variance_h_under_canonical_product": 2.771710359032528,
+      "beta": 4.0,
+      "bound_to_J_ratio": 6.826989674915089,
+      "canonical_J": 1.0331392557625845,
+      "canonical_J_per_parent_vertex": 0.2066278511525169,
+      "epsilon": 1,
+      "interaction_path_profile": [
+        {
+          "K_s": 4.440892098500626e-16,
+          "curvature_Var_qs_h": 2.771710359032527,
+          "curvature_per_parent_vertex": 0.5543420718065054,
+          "s": 0.0,
+          "tilted_average_influence_A_s": 2.745164845522363,
+          "tilted_average_influence_per_parent_vertex": 0.5490329691044726
+        },
+        {
+          "K_s": 0.0001176270956522174,
+          "curvature_Var_qs_h": 2.7592860963395758,
+          "curvature_per_parent_vertex": 0.5518572192679152,
+          "s": 0.009219682876640378,
+          "tilted_average_influence_A_s": 2.7371483664656893,
+          "tilted_average_influence_per_parent_vertex": 0.5474296732931379
+        },
+        {
+          "K_s": 0.0031596381612626345,
+          "curvature_Var_qs_h": 2.7014974091557273,
+          "curvature_per_parent_vertex": 0.5402994818311455,
+          "s": 0.0479413718147626,
+          "tilted_average_influence_A_s": 2.7040967873004704,
+          "tilted_average_influence_per_parent_vertex": 0.5408193574600941
+        },
+        {
+          "K_s": 0.01796512693489083,
+          "curvature_Var_qs_h": 2.5820089047723656,
+          "curvature_per_parent_vertex": 0.5164017809544731,
+          "s": 0.11504866290284765,
+          "tilted_average_influence_A_s": 2.6493021657405116,
+          "tilted_average_influence_per_parent_vertex": 0.5298604331481023
+        },
+        {
+          "K_s": 0.05664441057189196,
+          "curvature_Var_qs_h": 2.3880309784844576,
+          "curvature_per_parent_vertex": 0.4776061956968915,
+          "s": 0.20634102285669126,
+          "tilted_average_influence_A_s": 2.5798016865975417,
+          "tilted_average_influence_per_parent_vertex": 0.5159603373195083
+        },
+        {
+          "K_s": 0.12930251477970245,
+          "curvature_Var_qs_h": 2.123899408792753,
+          "curvature_per_parent_vertex": 0.42477988175855064,
+          "s": 0.31608425050090994,
+          "tilted_average_influence_A_s": 2.5028226606995125,
+          "tilted_average_influence_per_parent_vertex": 0.5005645321399025
+        },
+        {
+          "K_s": 0.2392215234324686,
+          "curvature_Var_qs_h": 1.8169412845393162,
+          "curvature_per_parent_vertex": 0.36338825690786325,
+          "s": 0.43738329574426554,
+          "tilted_average_influence_A_s": 2.4232475748216933,
+          "tilted_average_influence_per_parent_vertex": 0.48464951496433867
+        },
+        {
+          "K_s": 0.3807131602978755,
+          "curvature_Var_qs_h": 1.5077592057983522,
+          "curvature_per_parent_vertex": 0.30155184115967043,
+          "s": 0.5626167042557344,
+          "tilted_average_influence_A_s": 2.3435910272300666,
+          "tilted_average_influence_per_parent_vertex": 0.46871820544601334
+        },
+        {
+          "K_s": 0.5403820009559088,
+          "curvature_Var_qs_h": 1.232756779832907,
+          "curvature_per_parent_vertex": 0.24655135596658143,
+          "s": 0.6839157494990901,
+          "tilted_average_influence_A_s": 2.2662376611096695,
+          "tilted_average_influence_per_parent_vertex": 0.4532475322219339
+        },
+        {
+          "K_s": 0.7006049117123254,
+          "curvature_Var_qs_h": 1.012687943311462,
+          "curvature_per_parent_vertex": 0.20253758866229238,
+          "s": 0.7936589771433087,
+          "tilted_average_influence_A_s": 2.1950264519859206,
+          "tilted_average_influence_per_parent_vertex": 0.4390052903971841
+        },
+        {
+          "K_s": 0.8433082613413105,
+          "curvature_Var_qs_h": 0.85257064207322,
+          "curvature_per_parent_vertex": 0.170514128414644,
+          "s": 0.8849513370971523,
+          "tilted_average_influence_A_s": 2.134808354148068,
+          "tilted_average_influence_per_parent_vertex": 0.42696167082961356
+        },
+        {
+          "K_s": 0.9528158036791343,
+          "curvature_Var_qs_h": 0.7482202476755817,
+          "curvature_per_parent_vertex": 0.14964404953511634,
+          "s": 0.9520586281852375,
+          "tilted_average_influence_A_s": 2.0901129469712383,
+          "tilted_average_influence_per_parent_vertex": 0.41802258939424763
+        },
+        {
+          "K_s": 1.017565954341756,
+          "curvature_Var_qs_h": 0.6930112980468788,
+          "curvature_per_parent_vertex": 0.13860225960937575,
+          "s": 0.9907803171233596,
+          "tilted_average_influence_A_s": 2.064221776020485,
+          "tilted_average_influence_per_parent_vertex": 0.412844355204097
+        },
+        {
+          "K_s": 1.0331392557625845,
+          "curvature_Var_qs_h": 0.6803915052513794,
+          "curvature_per_parent_vertex": 0.13607830105027588,
+          "s": 1.0,
+          "tilted_average_influence_A_s": 2.0580508342702526,
+          "tilted_average_influence_per_parent_vertex": 0.4116101668540505
+        }
+      ],
+      "interaction_path_quadrature_order": 12,
+      "lambda": 1.0,
+      "left_class": 0,
+      "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "maximum_row_marginal_log_spread": 0.0,
+      "maximum_tilted_average_influence": 2.745164845522363,
+      "maximum_tilted_average_influence_per_parent_vertex": 0.5490329691044726,
+      "pressure_audit": {
+        "bridge_cube_size": 64,
+        "bridge_sign_count": 6,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          21,
+          63
+        ],
+        "maximum_direct_log_pressure_error": 8.283304597789254e-16,
+        "rank_one_character_count": 8
+      },
+      "projective_Delta_squared": 56.42584825472499,
+      "projective_Delta_squared_per_parent_vertex": 11.285169650944997,
+      "right_class": 0,
+      "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+      "row_average_projective_squared": [
+        27.9152869461655,
+        27.915286946165505
+      ],
+      "row_conditional_variance_terms": [
+        2.745164845522363,
+        2.7451648455223636
+      ],
+      "row_product_log_probability_normalization_error": 4.440892098500626e-16,
+      "row_projective_diameters": [
+        5.311583956539,
+        5.311583956539
+      ],
+      "split": [
+        2,
+        3
+      ],
+      "sum_average_projective_squared": 55.830573892331,
+      "sum_average_projective_squared_per_parent_vertex": 11.1661147784662
+    }
+  ],
+  "schema": "actual-child-projective-synchronization-v1"
+}

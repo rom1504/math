@@ -1,0 +1,30 @@
+{
+  "question": "Does an order-11 cap-17 signing have polarity gap >=6?",
+  "imported_minimum_scope": "M11=17 from existing separate proof",
+  "cases": [
+    {
+      "n": 11,
+      "positive_cap": 17,
+      "reverse_cap_upper": 11,
+      "fixed_max_negative_degree": 4,
+      "seconds": 23.713432764052413,
+      "seed": 20260907,
+      "workers": 1,
+      "status": "INFEASIBLE",
+      "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 113\nbooleans: 45\nconflicts: 6452\nbranches: 81076\npropagations: 32369\ninteger_propagations: 542145\nrestarts: 47\nlp_iterations: 378799\nwalltime: 23.7129\nusertime: 23.7129\ndeterministic_time: 27.4622\ngap_integral: 0\n",
+      "scope": "witness discovery; UNSAT is not independently certified"
+    },
+    {
+      "n": 11,
+      "positive_cap": 17,
+      "reverse_cap_upper": 11,
+      "fixed_max_negative_degree": 5,
+      "seconds": 8.782859495957382,
+      "seed": 20260907,
+      "workers": 1,
+      "status": "INFEASIBLE",
+      "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 113\nbooleans: 45\nconflicts: 3061\nbranches: 21491\npropagations: 8744\ninteger_propagations: 142495\nrestarts: 11\nlp_iterations: 155296\nwalltime: 8.78265\nusertime: 8.78265\ndeterministic_time: 9.53318\ngap_integral: 0\n",
+      "scope": "witness discovery; UNSAT is not independently certified"
+    }
+  ]
+}

@@ -1,0 +1,940 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hypertexnames=false]{hyperref}
+\usepackage{microtype}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Input}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\He}{\operatorname{He}}
+\newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\PhiG}{\Phi}
+
+\title{The lower bound proof in 2D}
+\author{}
+% \date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent This is an expository note on how the proof of the lower bound
+\[
+        K_G\ge \frac{6\pi}{11}
+\]
+works. This bound has to be proved for \textbf{all} schemes in any dimension. However, it is first instructive to see how the proof works by specializing in the simplest nontrivial setting: two dimensional schemes.  The point of this note is not that the true theorem is two-dimensional, but that the general case is the same proof with minor changes. 
+\end{abstract}
+
+\tableofcontents
+
+\section*{Proof idea}
+\addcontentsline{toc}{section}{Proof idea}
+
+\begin{enumerate}
+    \item Naor and Regev show that Krivine rounding schemes are optimal: That is, if we can show that over all high-dimensional functions, the value of Krivine rounding scheme value.  For every $f,g$, we have some $\gamma(f,g)$ that we get and we know the upper bound $K_G \leq \pi/2\gamma(f,g)$. Naor and Regev should say the following: $K_G > (1-O(1)/k) \pi/2\gamma(f,g)$ ($k$ is the dimension of the scheme). NEED TO CHECK THIS. 
+    \item Claim 1: The Taylor coefficients $b_1, b_3$ of $H_{f,g}(t)$ satisfy $b_3 \geq 2 b_1 - 11/6$. 
+    \item Claim 2: From claim 1 alone, we get that $\gamma(f,g) \leq 11/12$. 
+\end{enumerate}
+
+ Recall that for a rounding scheme $(f, g)$, we have \[H_{f,g}(t) = b_1 t + b_3 t^3 + b_5 t^5 + \ldots\]
+We are going to prove a linear tradeoff between $b_3$ and $b_1$, so that we cannot significantly change one without changing the other. 
+\[
+        b_3 \ge 2b_1 -\frac{11}{6}.
+\]
+The fact that this is linear matters because the inequality is valid even for mixed schemes (where you merely average the coefficients of $H$). We call this the \textbf{Affine Strip}. 
+
+\section{Preliminary facts about hermites and gaussians}
+
+Let
+\[
+        (S,T)\sim N(0,I_2)
+\]
+with $S,T$ independent standard Gaussians. We define the \textit{inner product} as the Gaussian expectation:
+\[
+        \ip{F}{G}=\E[F(S,T)G(S,T)].
+\]
+We use the orthonormal 1D Hermites
+\[
+        \psi_0=1,\qquad
+        \psi_1(s)=s,\qquad
+        \psi_2(s)=\frac{s^2-1}{\sqrt2},\qquad
+        \psi_3(s)=\frac{s^3-3s}{\sqrt6}.
+\]
+Any square integrable function has a hermite expansion, written as 
+\[F = P_1  F + P_2 F + P_3 F + \ldots \]
+where $P_i F$ are projections of $F$ on the $i$-th hermite polynomial $\psi_i$. In our case, we only care about odd functions, so the even hermites of the expansion disappear. 
+
+In two dimensions, the hermites span
+\[
+        \cH_1=\operatorname{span}\{\psi_1(S),\psi_1(T)\} = \operatorname{span}(S, T).
+\]
+Here, 
+\[
+        P_1F=aS+bT,
+        \qquad
+        a=\E[F(S,T)S],\quad b=\E[F(S,T)T].
+\]
+Its norm is
+\[
+        \norm{P_1F}^2=a^2+b^2.
+\]
+
+Similarly, the total degree-three hermite span is
+\[
+        \cH_3=\operatorname{span}\{\psi_3(S),\ \psi_2(S)\psi_1(T),\ \psi_1(S)\psi_2(T),\ \psi_3(T)\}.
+\]
+So $P_3F$ is the projection onto this four-dimensional space.  If
+\[
+        P_3F
+        =c_{30}\psi_3(S)
+         +c_{21}\psi_2(S)\psi_1(T)
+         +c_{12}\psi_1(S)\psi_2(T)
+         +c_{03}\psi_3(T),
+\]
+then
+\[
+        \norm{P_3F}^2=c_{30}^2+c_{21}^2+c_{12}^2+c_{03}^2.
+\]
+
+
+For signs $f,g:\R^2\to\{\pm1\}$, if
+\[
+        H_{f,g}(t)=\frac\pi2\E[f(X)g(Y_t)]
+\]
+with $(X,Y_t)$ a pair of correlated standard Gaussian vectors, then Mehler's identity gives
+\[
+        H_{f,g}(t)=\frac\pi2\sum_{m\ge0}\ip{P_mf}{P_mg}t^m,
+\]
+Here $b_1=[t]H_{f,g} = \frac\pi2\ip{P_1f}{P_1g}$ and $b_3=[t^3]H_{f,g} = \frac\pi2\ip{P_3f}{P_3g}$.
+
+For the rest of the paper, we will use the shorthand
+\[
+\nu := \sqrt{\frac{2}{\pi}}.
+\]
+
+We want to prove 
+\begin{equation}
+        b_3 \ge 2b_1 -\frac{11}{6}.
+        \tag{Strip}
+\end{equation}
+
+For example, the hyperplane partitions lie on this line.  For $f=g=\sgn(S)$,
+\[
+        \norm{P_1f}=\nu,
+        \qquad
+        \norm{P_3f}^2=\frac{\nu^2}{6}.
+\]
+Thus
+\[
+        (b_1,b_3)=\left(1,\frac16\right),
+\]
+and this point lies exactly on the line since $1/6=2-11/6$.
+
+Instead of proving the strip directly, it suffices to prove
+\begin{equation}
+        B_1(f,g)
+        :=\norm{P_1f}\norm{P_1g}
+          +\ip{P_1f}{P_1g}
+          -\ip{P_3f}{P_3g}
+        \le \frac{11}{6}\nu^2.
+        \tag{A1}
+\end{equation}
+Indeed, by Cauchy--Schwarz,
+\[
+        \norm{P_1f}\norm{P_1g}\ge \ip{P_1f}{P_1g}.
+\]
+So (A1) implies
+\[
+        2\ip{P_1f}{P_1g}-\ip{P_3f}{P_3g}\le \frac{11}{6}\nu^2.
+\]
+Multiplying by $\pi/2$ and using $\nu^2=2/\pi$ gives (Strip).
+
+\section{Change of Variables: Agreement and disagreement}
+
+We define a change of variables based on where $f$ and $g$ agree or disagree. Set the functions $h, k$ to be
+\[
+        h=\frac{f+g}{2},\qquad k=\frac{f-g}{2}.
+\]
+Then
+\[
+        f=h+k,
+        \qquad
+        g=h-k.
+\]
+Since $f,g$ are signs,
+\[
+        h,k\in\{-1,0,1\},
+        \qquad
+        hk=0,
+        \qquad
+        h^2+k^2=1.
+\]
+Think of $h$ as the agreement part and $k$ as the disagreement part between $f$ and $g$. This change of variables considerably simplifies the proof, and allows us to reduce the problem to a finite dimensional problem. 
+
+Let
+\[
+        u=P_1h,\qquad v=P_1k.
+\]
+Then
+\[
+        P_1f=u+v,
+        \qquad
+        P_1g=u-v.
+\]
+Hence
+\[
+        \ip{P_1f}{P_1g}=\norm{u}^2-\norm{v}^2.
+\]
+Also
+\[
+        \norm{P_1f}\norm{P_1g}
+        =\norm{u+v}\norm{u-v}
+        \le \norm{u}^2+\norm{v}^2,
+\]
+using $ab\le(a^2+b^2)/2$ after expanding $\norm{u\pm v}^2$.
+
+For degree three,
+\[
+        P_3f=P_3h+P_3k,
+        \qquad
+        P_3g=P_3h-P_3k,
+\]
+so
+\[
+        \ip{P_3f}{P_3g}=\norm{P_3h}^2-\norm{P_3k}^2.
+\]
+Putting these together,
+\begin{align*}
+        B_1(f,g)
+        &\le
+        \bigl(\norm{u}^2+\norm{v}^2\bigr)
+        +\bigl(\norm{u}^2-\norm{v}^2\bigr)
+        -\bigl(\norm{P_3h}^2-\norm{P_3k}^2\bigr)\\
+        &=2\norm{P_1h}^2-\norm{P_3h}^2+\norm{P_3k}^2.
+\end{align*}
+
+So it is enough to prove
+\begin{equation}
+\boxed{\displaystyle
+        D_1(h,k):=2\norm{P_1h}^2-\norm{P_3h}^2+\norm{P_3k}^2
+        \le \frac{11}{6}\nu^2
+}
+\tag{HK1}
+\end{equation}
+
+In order to prove this, we have to handle each of the three expressions $\norm{P_1h}^2, \norm{P_3h}^2, \norm{P_3k}^2$ carefully. In particular, we need to prove upper bounds on  $\norm{P_1h}^2, \norm{P_3k}^2$ and lower bound on $\norm{P_3h}^2$. 
+
+\begin{remark}
+    Note that in the inequality before (HK1) the term $\norm{v}^2 = \norm{P_1k}^2$ conveniently cancels. This is a result of our choice of $11\pi/6$, which leads to the equation $b_3 \geq 2b_1 - \frac{11}{6}$, where the term $2b_1$ gives rise to the cancellation. We can prove stronger lower bounds with the same method in the paper, but this is more complicated because we in addition have to bound $\norm{v}^2 = \norm{P_1k}^2$.
+\end{remark}
+
+\section{Change of Variable: Rotation}
+
+The linear part of $h$ has the form
+\[
+        P_1h(S,T)=aS+bT.
+\]
+The coefficient vector is $(a,b)$, and
+\[
+        \norm{P_1h}=\sqrt{a^2+b^2}.
+\]
+If $(a,b)\neq0$, rotate coordinates so the first coordinate points in the $(a,b)$ direction. After this rotation, and after renaming the coordinates, we have
+\[
+        P_1h(S,T)=\norm{P_1h}\,S.
+\]
+If $P_1h=0$, choose any direction as $S$.
+
+Define
+\[
+        x:=\frac{\norm{P_1h}}{\nu}\in[0,1].
+\]
+Let $Z \sim N(0,1)$, so that $\mathbb{E}|Z| = \nu$. The bound $x\le1$ follows from
+\[
+        \norm{P_1h}=\sup_{\alpha^2+\beta^2=1}\E[h(S,T)(\alpha S+\beta T)]
+        \le \E|Z|=\nu.
+\]
+After rotation,
+\[
+        \ip{h}{S}=\norm{P_1h}=\nu x.
+\]
+
+\section{The agreement part}
+
+The agreement part of $D_1$ is $2\norm{P_1h}^2-\norm{P_3h}^2$.
+
+The helpful negative term is
+\[
+        -\norm{P_3h}^2.
+\]
+To use it, we only need a lower bound on $\norm{P_3h}^2$.
+
+In two dimensions,
+\[
+        \norm{P_3h}^2
+        \ge \ip{h}{\psi_3(S)}^2,
+\]
+because $\psi_3(S)$ is one of the four orthonormal degree-three basis elements.
+
+The trick we will use is to condition on one variable, so define
+\[
+        A(s):=\E_T[h(s,T)].
+\]
+This is the average value of $h$ along the horizontal slice $S=s$.  Since $h\in[-1,1]$,
+\[
+        |A(s)|\le1.
+\]
+Also, for every function $\varphi$ depending only on $S$, it is a straightforward conditioning to show that 
+\[
+        \E[h(S,T)\varphi(S)]=\E[A(S)\varphi(S)].
+\]
+In particular,
+\[
+        \E[A(S)S]=\ip{h}{S}=\nu x
+\]
+and
+\[
+        \ip{h}{\psi_3(S)}=\E[A(S)\psi_3(S)].
+\]
+
+This is the clever trick. Note that the problem is now a variational problem in the one variable function $A$, even though we were originally working in two dimensions. Now in order to bound the agreement part, it is sufficient to relax $A$, and answer the following question
+
+\begin{quote}
+``Among all $A:\R\to[-1,1]$ with $\E[A(S)S]=\nu x$, how small can the cubic coefficient be?''
+\end{quote}
+
+The answer is the rearrangement lemma.
+
+Define
+\[
+        W(S):=S^3-3S=\sqrt6\,\psi_3(S).
+\]
+Also define
+\[
+        \Delta(x):=x+2(1+x)\log\frac{1+x}{2},
+        \qquad
+        \Delta_+(x):=\max\{\Delta(x),0\}.
+\]
+
+\begin{lemma}[One-dimensional rearrangement]
+Let $S\sim N(0,1)$ and $x\in[0,1]$.  Then
+\[
+        \sup_{\substack{|A|\le1\\ \E[A(S)S]=\nu x}}
+        \E[A(S)(S^3-3S)]
+        =-\nu\Delta(x).
+\]
+\end{lemma}
+
+We delegate the proof to Appendix~\ref{app:rearrangement_lemma}, which uses standard variational techniques. Using this rearrangement lemma then gives us the desired bound on the agreement part, that we state below. 
+
+\begin{corollary}[Diagonal bound]
+For the two-dimensional ternary $h$ above,
+\[
+        \norm{P_3h}^2\ge \frac{\nu^2}{6}\Delta_+(x)^2.
+\]
+Consequently
+\[
+        2\norm{P_1h}^2-\norm{P_3h}^2
+        \le
+        \nu^2\left(2x^2-\frac16\Delta_+(x)^2\right).
+\]
+\end{corollary}
+
+\section{The disagreement part}
+
+Now we have to bound the disagreement term
+\[
+        \norm{P_3k}^2.
+\]
+
+Define the one-dimensional fibers (think "slices" across one variable) 
+\[
+        u_t(s):=k(s,t).
+\]
+Since $k\in\{-1,0,1\}$,
+\[
+        u_t:\R\to\{-1,0,1\}.
+\]
+
+For $j=0,1,2,3$, define
+\[
+        K_j(t):=\E_S[k(S,t)\psi_j(S)].
+\]
+Thus $K_j$ is the $j$th Hermite coefficient of the $S$-fiber, as a function of $t$.
+
+The four degree-three basis elements are
+\[
+        \psi_3(S),\qquad
+        \psi_2(S)\psi_1(T),\qquad
+        \psi_1(S)\psi_2(T),\qquad
+        \psi_3(T).
+\]
+Their coefficients in $k$ are, respectively,
+\[
+        \E_T[K_3(T)],
+\]
+\[
+        \E_T[K_2(T)\psi_1(T)],
+\]
+\[
+        \E_T[K_1(T)\psi_2(T)],
+\]
+\[
+        \E_T[K_0(T)\psi_3(T)].
+\]
+Equivalently,
+\begin{equation}
+        \norm{P_3k}^2
+        =\norm{\Pi_0K_3}^2+
+          \norm{\Pi_1K_2}^2+
+          \norm{\Pi_2K_1}^2+
+          \norm{\Pi_3K_0}^2,
+        \tag{3}
+\end{equation}
+where $\Pi_j$ is the one-dimensional projection in the $T$ variable onto Hermite degree $j$. Since $\Pi_j$ are orthogonal projections onto a closed subspace, it decreases norm, so we get the simpler upper bound 
+\[
+        \norm{P_3k}^2
+        \le \sum_{j=0}^3\norm{K_j}^2
+        =\E_T\sum_{j=0}^3\left(\E_S[k(S,T)\psi_j(S)]\right)^2.
+\]
+For a one dimensional ternary function $u$, define
+\[
+        V(u):=\sum_{j=0}^3\left(\E[u(Z)\psi_j(Z)]\right)^2.
+\]
+Then the previous inequality becomes
+\begin{equation}
+        \boxed{\norm{P_3k}^2\le \E_T V(u_T).}
+        \tag{4}
+\end{equation}\[p_a(Z) = \sum\limits_{j=0}^3 a_j \psi_j(Z), \qquad ||a||_2 = 1\] 
+
+For a ternary function $u:\R\to\{-1,0,1\}$, define its weighted support budget
+\[
+        \beta(u):=\E[|Z|u(Z)^2].
+\]
+Since $u^2=\one_{u\neq0}$,
+\[
+        \beta(u)=\E[|Z|\one_{u(Z)\neq0}].
+\]
+So $\beta(u)$ is the $|Z|$-weighted Gaussian size of the support of the fiber.
+
+\begin{theorem}[Fiber inequality]
+For every ternary $u:\R\to\{-1,0,1\}$,
+\begin{equation}
+        V(u)\le 3\nu\beta(u)-\beta(u)^2.
+        \tag{FQ1}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+    We are optimizing over infinitely many $u$ functions, and our approach of dealing with this by eliminating $u$ entirely. We will then verify the remaining steps in Arb. 
+
+    Recall that the Euclidean norm has a dual, that is, one can write  $||x||_2 = \sup\limits_{\lVert a \rVert_2 = 1} a \cdot x$. Then, write $V(u) = \sum_{j=0}^3 m_i^2$, where $m_i = \E[u(Z)\psi_j(Z)]$. Using the dual form, we get \[\sqrt{V(u)} = \sup\limits_{\lVert a \rVert_2 = 1} \sum\limits_{j=0}^3 a_j m_j.\]
+    The nice thing about this form is that it linearizes the expression. Since \[\sum\limits_{j=0}^3 a_j m_j =\mathbb{E}\left[u(Z) \sum\limits_{j=0}^3 a_j \psi_j(Z) \right],\]
+    define the cubic polynomial
+    \[p_a(Z) = \sum\limits_{j=0}^3 a_j \psi_j(Z), \qquad \lVert a \rVert_2 = 1,\] which gives \[\sqrt{V(u)} = \sup\limits_{\lVert a \rVert_2 = 1} \mathbb{E}[u(Z) p_a(Z)].\]
+    Recall here one more time that $u$ is a ternary function taking values in $\{-1, 0, 1\}$, so at each point $Z=z_0$, the best value of $u$ to take is $\sgn(p_a(z_0))$. However, recall that we cannot do this arbitrarily, since we have a weighted budget constraint of $\beta(u) = \mathbb{E}[|Z| u(Z)^2]$. So, any time we set $u$ to be $\sgn(p_a(z_0))$, we gain $|p_a(Z)|$ in the expectation but lose $|z|$ in the budget. Our goal is to find a set $E$ of points maximizing our objective, so that for any point $z_0 \in E$ ,we choose $u$ to be $\sgn(p_a(z_0))$, and otherwise set $u$ to $0$.    
+
+    By a standard Lagrange multipliers argument, the right set here is to  choose a threshold value $\tau$ and take points in the set $E = \{z : |p(z)| \ge \tau  |z|\}$. Then for each $a$, the best function $u$ is \[u(z) = \begin{cases}
+        \sgn(p(z_0)) & \text{if } |p(z)| \ge \tau |z| \\
+        0 & \text{else} \\  
+    \end{cases}\]
+    Thus for each $a$, the best $u$ is fixed! We can only worry about $a$  and $\tau$ now. Let $m = \mathbb{E}[|p_a(Z)| \mathbb{1}_{E}]$ and $\beta$ the resulting budget $\mathbb{E}[|Z| 1_{E}]$. The required inequality to prove is \[m^2 \le 3 \nu \beta - \beta^2.\]
+    This is now a problem over finite dimensional parameters $a$ and $\tau$. That is a numerical problem that can be checked with Arb. Below we explain how. 
+
+For fixed \(a,\tau\), the set
+\[
+E_{a,\tau}
+=
+{|p_a(z)|\ge \tau |z|}
+\]
+
+is defined by a one-dimensional polynomial inequality. Since \(p_a\) is cubic, the boundary points come from equations like
+\[
+p_a(z)=\tau z
+\]
+or
+\[
+p_a(z)=-\tau z,
+\]
+with sign changes around \(0\). These are polynomial root problems in one variable.
+
+Once the roots are enclosed, \(E_{a,\tau}\) is a union of intervals. Then the needed integrals are Gaussian moments over intervals:
+
+\[
+\int_I |p_a(z)|,d\gamma(z),
+\qquad
+\int_I |z|,d\gamma(z),
+\qquad
+\int_I \psi_j(z),d\gamma(z).
+\]
+
+These can be computed rigorously with Arb.    
+\end{proof}
+
+ 
+
+Apply (FQ1) to each fiber $u_T$.  From (4),
+\[
+        \norm{P_3k}^2
+        \le
+        \E_T\left[3\nu\beta(u_T)-\beta(u_T)^2\right].
+\]
+We now prove the following bound. Note that this step reduces the dimension down to 1.
+
+\begin{theorem}[Fiber Residual Bound \#1]
+We have the fiber bound 
+\begin{equation}
+        \norm{P_3k}^2
+        \le
+        \nu^2\left(3(1-x)-(1-x)^2\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We do this by relating the average budget to $x$.
+Since
+\[
+        \nu x=\E[hS]
+\]
+and
+\[
+        hS\le |S|h^2,
+\]
+we get
+\begin{align*}
+        \nu x
+        &\le \E[|S|h^2]\\
+        &=\E[|S|(1-k^2)]\\
+        &=\nu-\E[|S|k^2].
+\end{align*}
+Therefore
+\[
+        \E[|S|k^2]\le \nu(1-x).
+\]
+But
+\[
+        \E[|S|k^2]
+        =\E_T\E_S[|S|k(S,T)^2]
+        =\E_T\beta(u_T).
+\]
+Let
+\[
+        b:=\E_T\beta(u_T).
+\]
+Then
+\[
+        b\le \nu(1-x).
+\]
+
+The function
+\[
+        \phi(t)=3\nu t-t^2
+\]
+is concave, so Jensen gives
+\[
+        \E_T\phi(\beta(u_T))\le \phi(\E_T\beta(u_T))=3\nu b-b^2.
+\]
+On $[0,\nu]$, $\phi$ is increasing.  Hence, using $b\le \nu(1-x)$,
+\begin{equation}
+        \norm{P_3k}^2
+        \le
+        \nu^2\left(3(1-x)-(1-x)^2\right).
+        \tag{5}
+\end{equation}
+\end{proof}
+
+
+This is our first fiber residual bound. But this bound is not best for small $x$.  We also use a second cruder bound. 
+
+\begin{theorem}[Fiber Residual Bound \#2]
+    \begin{equation}
+        \norm{P_3k}^2
+        \le
+        2\PhiG(\sqrt{-2\log x})-1.
+        \tag{6}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+
+Let
+\[
+        \rho(s):=\E_T[k(s,T)^2].
+\]
+Then $0\le\rho\le1$ and
+\[
+        \norm{k}^2_2=\E\rho(S).
+\]
+Also
+\[
+        \E[|S|\rho(S)]=\E[|S|k(S,T)^2]\le \nu(1-x).
+\]
+Since $P_3$ is a projection,
+\[
+        \norm{P_3k}^2\le \norm{k}^2_2=\E\rho(S).
+\]
+
+Given a budget on $\E[|S|\rho(S)]$, the way to maximize $\E\rho(S)$ is to spend the budget where $|S|$ is smallest.  Thus the extremal support is centered around zero.
+
+Let
+\[
+        r_x:=\sqrt{-2\log x}
+\]
+for $x\in(0,1]$, with the convention $r_0=\infty$.  Then
+\[
+        \E[|S|\one_{|S|\le r_x}]=\nu(1-e^{-r_x^2/2})=\nu(1-x).
+\]
+Therefore the bathtub principle gives
+\begin{equation}
+        \norm{P_3k}^2
+        \le
+        \mathbb P(|S|\le r_x)
+        =2\PhiG(\sqrt{-2\log x})-1.
+        \tag{6}
+\end{equation}
+\end{proof}
+
+Combining the two fiber residual bounds, define
+\begin{equation}
+        R(x):=
+        \min\left\{
+        3(1-x)-(1-x)^2,
+        \frac{1}{\nu^2}\left(2\PhiG(\sqrt{-2\log x})-1\right)
+        \right\}.
+        \tag{7}
+\end{equation}
+Then
+\[
+        \norm{P_3k}^2\le \nu^2R(x).
+\]
+
+\section{Putting it together}
+
+From the diagonal bound and the residual bound,
+\[
+        D_1(h,k)
+        \le
+        \nu^2\left(2x^2-\frac16\Delta_+(x)^2+R(x)\right).
+\]
+So it remains to prove the scalar inequality
+\begin{equation}
+        E_1(x):=2x^2-\frac16\Delta_+(x)^2+R(x)
+        \le \frac{11}{6}
+        \qquad(0\le x\le1).
+        \tag{8}
+\end{equation}
+
+Let
+\[
+        r_-:=\frac{1-1/\sqrt3}{2},
+        \qquad
+        r_+:=\frac{1+1/\sqrt3}{2}.
+\]
+These are the roots of
+\[
+        x^2-x+\frac16=0.
+\]
+
+Now we do some simple casework based on the range in which $x$ lies. Everything is simple algebra.  
+
+\subsection*{Low range: $0\le x\le r_-$}
+
+Use the crude bound $R(x)\le 1/\nu^2=\pi/2$ and drop the negative term:
+\[
+        E_1(x)\le 2x^2+\frac\pi2
+        \le 2r_-^2+\frac\pi2.
+\]
+Now
+\[
+        2r_-^2+\frac\pi2
+        =\frac23-\frac1{\sqrt3}+\frac\pi2
+        <\frac{11}{6}.
+\]
+
+\subsection*{Middle range: $r_-\le x\le r_+$}
+
+Use the fiber branch of $R$ and again drop the negative term:
+\begin{align*}
+        E_1(x)
+        &\le 2x^2+3(1-x)-(1-x)^2\\
+        &=x^2-x+2.
+\end{align*}
+Since $x\in[r_-,r_+]$,
+\[
+        x^2-x+\frac16\le0.
+\]
+Therefore
+\[
+        x^2-x+2\le \frac{11}{6}.
+\]
+
+\subsection*{High range: $r_+\le x\le1$}
+
+Use the fiber branch again.  We need the cubic correction.
+It suffices to show
+\begin{equation}
+        \Delta(x)^2\ge 6x^2-6x+1.
+        \tag{9}
+\end{equation}
+Indeed, then
+\begin{align*}
+        E_1(x)
+        &\le 2x^2+3(1-x)-(1-x)^2-\frac16(6x^2-6x+1)\\
+        &=\frac{11}{6}.
+\end{align*}
+
+To prove (9), first note that
+\[
+        \Delta(x)-(3x-2)
+        =2\left((1-x)+(1+x)\log\frac{1+x}{2}\right).
+\]
+Writing $t=(1+x)/2$, the bracket becomes
+\[
+        2\bigl((1-t)+t\log t\bigr)\ge0
+\]
+for $0<t\le1$.  Hence
+\[
+        \Delta(x)\ge 3x-2.
+\]
+For $x\ge r_+$, both sides needed below are nonnegative, and
+\[
+        (3x-2)^2-(6x^2-6x+1)=3(1-x)^2\ge0.
+\]
+Thus
+\[
+        \Delta(x)^2\ge (3x-2)^2\ge 6x^2-6x+1.
+\]
+This proves the high range.
+
+Combining the three ranges proves (8).
+
+We have thus shown
+\[
+        D_1(h,k)\le \frac{11}{6}\nu^2.
+\]
+As explained earlier, this implies the affine inequality
+\[
+        b_3 \ge 2b_1 -\frac{11}{6}.
+\]
+Since this is affine, it is preserved under mixtures. 
+
+\section{How the strip gives $6\pi/11$}
+
+Here we briefly mention the analytic nuisances that need to be cleared up in order to convert everything into a proof. 
+
+\begin{assumption}[Standard closure/transfer lemma]
+If an affine coefficient inequality
+\[
+        b_3\ge 2b_1-\frac{11}{6}
+\]
+holds for all atom kernels in every dimension, then it also holds for the ideal spherical kernel $c/K$ for every $K>K_G$, where
+\[
+        c(\theta,\phi)=\ip{\theta}{\phi}.
+\]
+\end{assumption}
+
+The reason this is true is that, for $K>K_G$, the kernel $c/K$ lies in the weak-* closed convex hull of sign atom kernels.  Since the strip is affine and weak-* closed, it survives the passage to this limit.
+
+For the ideal kernel $c/K$, the first coefficient tends to
+\[
+        b_1(c/K)\longrightarrow \frac{\pi}{2K}
+\]
+as the sphere dimension goes to infinity, while the third coefficient tends to
+\[
+        b_3(c/K)\longrightarrow 0.
+\]
+Applying the strip gives
+\[
+        0\ge 2\cdot\frac{\pi}{2K}-\frac{11}{6}
+        =\frac\pi K-\frac{11}{6}.
+\]
+Thus
+\[
+        K\ge \frac{6\pi}{11}.
+\]
+Since this holds for every $K>K_G$,
+\[
+        K_G\ge \frac{6\pi}{11}.
+\]
+
+
+\section{What changes in higher dimensions}
+
+In higher dimensions, write the Gaussian input as
+\[
+        X=(S,Y),
+\]
+where $S$ is the spine coordinate and $Y$ is the transverse Gaussian vector.
+
+Nothing changes in the agreement part.  Define
+\[
+        A(s):=\E_Y[h(s,Y)].
+\]
+Then
+\[
+        \E[A(S)S]=\nu x,
+        \qquad
+        \ip{h}{\psi_3(S)}=\E[A(S)\psi_3(S)].
+\]
+The same rearrangement lemma gives the same lower bound on $\norm{P_3h}^2$.
+
+For the disagreement part, the only change is notation.  In two dimensions, total degree three decomposed as
+\[
+        3=3+0=2+1=1+2=0+3.
+\]
+In general this becomes the orthogonal decomposition
+\[
+        \cH_3(S,Y)
+        =\bigoplus_{j=0}^3 \cH_j(S)\otimes \cH_{3-j}(Y).
+\]
+For each fiber define
+\[
+        u_Y(s):=k(s,Y),
+        \qquad
+        K_j(Y):=\E_S[k(S,Y)\psi_j(S)].
+\]
+Then
+\[
+        P_3k
+        =\sum_{j=0}^3 \psi_j(S)\,\Pi_{3-j}^Y K_j(Y),
+\]
+where $\Pi_{3-j}^Y$ projects onto transverse Hermite degree $3-j$.  Therefore
+\[
+        \norm{P_3k}^2
+        =\sum_{j=0}^3\norm{\Pi_{3-j}^Y K_j}^2
+        \le \sum_{j=0}^3\norm{K_j}^2
+        =\E_Y V(u_Y).
+\]
+This is the exact higher-dimensional version of the two-dimensional calculation.
+
+The budget calculation is also identical:
+\[
+        \E_Y\beta(u_Y)=\E[|S|k(S,Y)^2]\le \nu(1-x).
+\]
+Then the same fiber inequality, Jensen step, bathtub bound, and scalar inequality finish the proof.
+
+\appendix 
+
+\section{Proof of rearrangement lemma}
+\label{app:rearrangement_lemma}
+
+
+\begin{lemma}[One-dimensional rearrangement]
+Let $S\sim N(0,1)$ and $x\in[0,1]$.  Then
+\[
+        \sup_{\substack{|A|\le1\\ \E[A(S)S]=\nu x}}
+        \E[A(S)(S^3-3S)]
+        =-\nu\Delta(x).
+\]
+\end{lemma}
+
+\begin{proof}
+Fix $r\ge0$ by
+\[
+        e^{-r^2/2}=\frac{1+x}{2},
+\]
+and put
+\[
+        \mu=r^2-3.
+\]
+Then
+\[
+        W-\mu S=S^3-3S-(r^2-3)S=S(S^2-r^2).
+\]
+
+For any feasible $A$,
+\begin{align*}
+        \E[AW]
+        &=\E[A(W-\mu S)]+\mu\E[AS]\\
+        &=\E[A(W-\mu S)]+\mu\nu x\\
+        &\le \E|W-\mu S|+\mu\nu x,
+\end{align*}
+using $|A|\le1$.
+
+Equality is attained by
+\[
+        A_*(S)=\sgn(W-\mu S)=\sgn(S)\sgn(S^2-r^2),
+\]
+provided $A_*$ has the right first moment.  It does, because
+\[
+        A_*(S)S=|S|\sgn(S^2-r^2),
+\]
+so
+\begin{align*}
+        \E[A_*(S)S]
+        &=2\E[|S|\one_{|S|>r}]-\E|S|\\
+        &=2\nu e^{-r^2/2}-\nu\\
+        &=\nu x.
+\end{align*}
+Thus $A_*$ is feasible and attains the dual upper bound.
+
+It remains to compute its value.  Since
+\[
+        \sgn(S)(S^3-3S)=|S|^3-3|S|,
+\]
+we get
+\begin{align*}
+        \E[A_*W]
+        &=\E[(|S|^3-3|S|)\sgn(S^2-r^2)]\\
+        &=2\E[(|S|^3-3|S|)\one_{|S|>r}]
+          -\E[|S|^3-3|S|].
+\end{align*}
+The Gaussian tail moments are
+\[
+        \E[|S|\one_{|S|>r}]=\nu e^{-r^2/2},
+        \qquad
+        \E[|S|^3\one_{|S|>r}]=\nu(r^2+2)e^{-r^2/2}.
+\]
+Also
+\[
+        \E|S|=\nu,
+        \qquad
+        \E|S|^3=2\nu.
+\]
+Therefore
+\begin{align*}
+        \E[A_*W]
+        &=2\nu(r^2-1)e^{-r^2/2}+\nu\\
+        &=\nu\left(1+(1+x)(r^2-1)\right)\\
+        &=\nu\left((1+x)r^2-x\right).
+\end{align*}
+Since $r^2=-2\log((1+x)/2)$,
+\[
+        \E[A_*W]
+        =-\nu\left(x+2(1+x)\log\frac{1+x}{2}\right)
+        =-\nu\Delta(x).
+\]
+This proves the lemma.
+\end{proof}
+
+\end{document}

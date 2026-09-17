@@ -1,0 +1,98 @@
+\section{The Asymptotic Family}
+\label{sec:scheme}
+
+This section implements Section~\ref{sec:scheme} of the proof architecture.  There is one minor change in convention from this section onwards to keep in mind: any partition $F$ defined below corresponds to the partition $x\mapsto F(\sqrt2 x)$ in Definition~\ref{def:gaussian-correlation-function}.  This change of variables is harmless and keeps the Hermite covariance identity in its usual probabilist normalization.
+
+\subsection{Hermite notation}
+
+\begin{definition}[Orthonormal probabilist Hermite polynomials]\label{def:Hermite}
+Let $(\He_n)_{n\ge0}$ denote the orthonormal probabilist Hermite polynomials.  Thus, for $Z\sim N(0,1)$,
+\[
+  \E[\He_m(Z)\He_n(Z)]=\delta_{mn}.
+\]
+In particular,
+\[
+  \He_0=1,
+  \qquad \He_1(x)=x,
+  \qquad \He_3(x)={x^3-3x\over\sqrt6},
+  \qquad \He_5(x)={x^5-10x^3+15x\over\sqrt{120}}.
+\]
+If $(X,Y)$ are standard Gaussians with correlation $t$, then
+\begin{equation}\label{eq:hermite-cov}
+  \E[\He_m(X)\He_n(Y)]=\delta_{mn}t^n.
+\end{equation}
+We use this as our normalization throughout the coefficient computation.  Standard references for these identities include~\cite[Sec.~6.1]{AAR99}.
+\end{definition}
+
+\begin{definition}[Gaussianized Hermite-chaos average]\label{def:gaussianized-chaos}
+Fix an odd integer $d\ge3$.  A length-$N$ \emph{Gaussianized degree-$d$ Hermite-chaos average} is the random variable
+\[
+  P_{d,N}=N^{-1/2}\sum_{j=1}^N \He_d(U_{d,j}),
+\]
+where the $U_{d,j}$ are independent standard Gaussians.  The word ``Gaussianized'' refers to the fact that, for fixed $d$, the variable $P_{d,N}$ converges in distribution to a Gaussian as $N\to\infty$, while paired copies retain the covariance power of the degree-$d$ Wiener chaos.  Specifically, if $(U_{d,j},U_{d,j}')$ are paired with correlation $t$, then \eqref{eq:hermite-cov} gives
+\[
+  \E[P_{d,N}P_{d,N}']=t^d.
+\]
+For background on Hermite polynomials and Wiener chaos, see Janson's book on Gaussian Hilbert spaces~\cite{Janson1997GaussianHilbertSpaces}.
+\end{definition}
+
+\subsection{Finite-dimensional schemes}\label{subsec:finite-schemes}
+
+\begin{definition}[Finite Hermite-average family]\label{def:finite-family}
+Let $D\subseteq\{3,5,7,9,\ldots\}$ be a finite set of odd degrees.  For each $d\in D$, fix a real weight $s_d$, and define the relative sign
+\[
+  \sigma_d=(-1)^{(d-1)/2}.
+\]
+% Thus $\sigma_3=-1$, $\sigma_5=+1$, $\sigma_7=-1$, and so on.
+
+For length $N$, let
+\[
+  P_{d,N}=N^{-1/2}\sum_{j=1}^N \He_d(U_{d,j}),
+\]
+where all variables $Z,X,U_{d,j}$ are independent standard Gaussians.  The finite rounding functions are
+\begin{align}
+  f_N&=\sgn\biggl(Z+\eta \He_3(X)+\sum_{d\in D}s_dP_{d,N}\biggr),\label{eq:finite-f-general}\\
+  g_N&=\sgn\biggl(Z-\eta \He_3(X)+\sum_{d\in D}\sigma_d s_dP_{d,N}\biggr).\label{eq:finite-g-general}
+\end{align}
+They are odd measurable functions on $\R^{2+|D|N}$.  
+% The value of $\sgn(0)$ is immaterial, since every threshold event has probability zero.
+\end{definition}
+
+\begin{definition}[The third/fifth finite scheme]\label{def:finite-35}
+The scheme used for the numerical certificate is the specialization of Definition~\ref{def:finite-family} with $D=\{3,5\}$ and
+\begin{equation}\label{eq:params}
+  \eta=0.136419125,
+  \qquad
+  s_3=0.34101124,
+  \qquad
+  s_5=0.05276111.
+\end{equation}
+Equivalently,
+\begin{align}
+  f_N&=\sgn\bigl(Z+\eta \He_3(X)+s_3P_{3,N}+s_5P_{5,N}\bigr),\label{eq:finite-f-35}\\
+  g_N&=\sgn\bigl(Z-\eta \He_3(X)-s_3P_{3,N}+s_5P_{5,N}\bigr).\label{eq:finite-g-35}
+\end{align}
+Thus degree $3$ is anti-aligned between the two sides, while degree $5$ is aligned.
+\end{definition}
+
+\subsection{The limiting model}\label{subsec:limiting-model}
+
+\begin{definition}[Limiting model]\label{def:limiting-model}
+Let $D,\eta,(s_d)_{d\in D}$ be as in Definition~\ref{def:finite-family}.  Let $R_d$, $d\in D$, be independent standard Gaussians.  The limiting threshold pair is
+\begin{align}
+  f(z,x,(r_d))&=\sgn\biggl(z+\eta \He_3(x)+\sum_{d\in D}s_dr_d\biggr),\label{eq:lim-f-general}\\
+  g(z,x,(r_d))&=\sgn\biggl(z-\eta \He_3(x)+\sum_{d\in D}\sigma_d s_dr_d\biggr).\label{eq:lim-g-general}
+\end{align}
+For the limiting correlation at parameter $t$, the paired coordinates satisfy
+\[
+  \rho_Z=t,
+  \qquad \rho_X=t,
+  \qquad \rho_d=t^d\quad(d\in D),
+\]
+and different coordinate pairs are independent.  The arcsine-normalized limiting correlation is
+\begin{equation}\label{eq:lim-H}
+  H(t)={\pi\over2}\E\bigl[f(Z,X,(R_d))g(Z',X',(R_d'))\bigr].
+\end{equation}
+\end{definition}
+
+Because all degrees in the model are odd, $H$ is an odd function.  For $D=\{3,5\}$, Definition~\ref{def:limiting-model} implies that the extra coordinates have correlations $t^3$ and $t^5$, which come from the finite Hermite averages through \eqref{eq:hermite-cov}.

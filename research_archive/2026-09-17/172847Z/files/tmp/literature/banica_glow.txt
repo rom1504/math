@@ -1,0 +1,1386 @@
+arXiv:1403.2108v3  [math.CO]  11 Aug 2014
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND
+FLUCTUATIONS
+TEODOR BANICA
+Abstract. The glow of an Hadamard matrix H ∈ MN(C) is the probability measure
+µ ∈ P (C) describing the distribution of ϕ (a, b ) =< a, Hb > , where a, b ∈ TN are random.
+We prove that ϕ/N becomes complex Gaussian with N → ∞, and that the universality
+holds as well at order 2. In the case of a Fourier matrix, FG ∈ MN(C) with |G| = N,
+the universality holds up to order 4, and the ﬂuctuations are encod ed by certain subtle
+integrals, which appear in connection with several Hadamard-relat ed questions. In the
+Walsh matrix case, G = Zn
+2 , we conjecture that the glow is polynomial in N = 2n.
+Contents
+Introduction 1
+1. The binary glow 4
+2. Complex matrices 7
+3. Fourier matrices 12
+4. Concluding remarks 17
+References 18
+Introduction
+A complex Hadamard matrix is a matrix H ∈ MN (T), whose rows are pairwise or-
+thogonal. The basic example is the Fourier matrix, FN = ( wij) with w = e2πi/N . More
+generally, associated to a ﬁnite abelian group G = ZN1 × . . . × ZNk is its Fourier matrix
+FG = FN1 ⊗ . . . ⊗ FNk , which is a complex Hadamard matrix. In general, the complex
+Hadamard matrices are known to appear in connection with a wide arr ay of questions,
+mainly coming from operator algebras and quantum physics. See [5], [1 0], [11], [14].
+Two such matrices H, K ∈ MN (T) are called equivalent if one can pass from one to
+the other by permuting rows and columns, or by multiplying the rows a nd columns by
+numbers z ∈ T. In the case where both Hadamard matrices are binary, H, K ∈ MN (±1),
+it is customary to use for the equivalence relation binary scalars only , z ∈ {±1}.
+2000 Mathematics Subject Classiﬁcation. 15B34 (60B15).
+Key words and phrases. Hadamard matrix, Random matrix.
+1
+2 TEODOR BANICA
+The glow is an analytic invariant introduced in [1], inspired from the Gale -Berlekamp
+game [8], [12], and from the notion of numerical range [6], [7]. The glow of H ∈ MN (T)
+is by deﬁnition the complex probability measure µ ∈ P (C) describing the distribution of
+the total sum of the entries, Ω = ∑
+ij Hij, over the equivalence class of H.
+In order to understand this notion, let us ﬁrst consider a binary ma trix H ∈ MN (±1),
+and deﬁne µ as above, but with respect to the usual equivalence relation for bin ary
+matrices. It is useful to think of µ as being the “glow” of the matrix, in the following way.
+Assume that we have a square city, with N horizontal streets and N vertical streets, and
+with street lights at each crossroads. When evening comes the light s are switched on at
+the positions ( i, j ) where Hij = 1, and then, all night long, they are randomly switched
+on and oﬀ, with the help of 2 N master switches, one at the end of each street:
+→ ♦ ♦ ♦ ♦
+→ ♦ × ♦ ×
+→ ♦ ♦ × ×
+→ ♦ × × ♦
+↑ ↑ ↑ ↑
+With this picture in mind, µ describes indeed the glow of the city.
+Now back to the complex case, all the scalars will now belong to T instead of ±1,
+but the above interpretation will somehow subsist, and this is why we call our invariant
+“glow”. Observe that the glow is by construction rotationally invaria nt, so we are in fact
+basically interested in computing a probability measure supported by R+.
+As already mentioned, there are some obvious connections with the Gale-Berlekamp
+game [8], [12], and with the notion of numerical range [6], [7]. Yet anothe r motivation
+comes from the operator algebra problematics in [10], [11]. Indeed, t he spectral measure
+η of the subfactor associated to H ∈ MN (T) depends as well only on the equivalence class
+of H, and one may wonder whether is there is a deeper relation between µ, η .
+In order to further discuss the motivations, we will need the explicit formula of the
+moments of Ω = ∑
+ij Hij. This formula, obtained by M¨ obius inversion, is as follows:
+∫
+TN ×TN
+|Ω |2p =
+∑
+π ∈P (p)
+K(π)N |π |I(π)
+Here P (p) is the set of partitions of {1, . . . , p }, and for π ∈ P (p) we denote by |π| the
+number of blocks, and we set K(π) =∑
+σ ∈P (p) µ(π, σ )
+(r
+σ
+)
+, where µ is the M¨ obius function.
+Regarding now I(π), which is the key quantity in the above formula, this is:
+I(π) = 1
+N |π |
+∑
+[i]=[j]
+< H π (i), H π (j) >
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 3
+Here [i] is the set with repetitions associated to a multi-index i, and we use the notation
+Hπ (i) = ⨂
+β ∈π
+∏
+r∈β Hir , where Hx ∈ TN are the rows of H. As a basic example, in the
+Fourier matrix case H = FG, with |G| = N, these quantities are as follows:
+I(π) =
+∫
+TN
+(∏
+β ∈π
+∑
+Σ xi=Σ yi
+ax1 . . . a x|β |
+ay1 . . . a y|β |
+)
+da
+With these formulae in hand, we can now explain our precise motivation s for investi-
+gating the glow. We have in fact two main motivations, as follows:
+(1) Invariant theory. The moment formula shows that µ depends only on the quantities
+< H π (i), H π (j) >, and the same is known from [3] to hold for the spectral measure
+η. Thus, we have evidence for a deeper relation between µ, η .
+(2) Counting problems. In the Fourier matrix case, H = FG with |G| = N, the
+above quantities I(π) are those coming from the work in [2], [4], which control the
+number of G-patterned complex Hadamard matrices.
+Summarizing, we have reasons to believe that µ is an interesting invariant, and that its
+exact computation for the Fourier matrices FG is of particular interest. In this paper we
+will perform an asymptotic study of µ, our conclusions being as follows:
+(1) Ω /N becomes complex Gaussian in the N → ∞ limit.
+(2) A universality result holds as well at order 2.
+(3) Within the class {FG}, the universality holds up to order 4.
+Perhaps the most surprising ﬁnding in this series is the last one. Here is the result, and
+we refer to the body of the paper for the precise statement:
+Theorem. For a Fourier matrix FG, with |G| = N, we have
+1
+p!
+∫
+TN ×TN
+(|Ω |
+N
+)2p
+= 1 + K1N −1 + K2N −2 + K3N −3 + O(N −4)
+with K1, K 2, K 3 being certain polynomials in p, independent of N and G.
+Regarding now the proof, this is based on the moment formula given a bove, and on
+a number of computations and estimates regarding the integrals I(π). We believe that
+these computations and estimates can be of use in connection with t he above-mentioned
+motivations, but for the moment we have no further results. Let u s mention however that
+our computer simulations suggest to ﬁrst look in detail at the Walsh m atrix case.
+The paper is organized as follows: 1 is a preliminary section, in 2-3 we st ate and prove
+our main results, and 4 contains a few concluding remarks.
+Acknowledgements. I would like to thank Ion Nechita and Jean-Marc Schlenker for
+interesting discussions and recent joint work on related questions , and Beno ˆ ıt Collins for
+some help with a number of analytic issues.
+4 TEODOR BANICA
+1. The binary glow
+An Hadamard matrix is a square matrix H ∈ MN (±1), whose rows are pairwise or-
+thogonal. The size of such a matrix must be N = 2 or N ∈ 4N. See [13].
+These matrices are usually taken under the following equivalence rela tion:
+Deﬁnition 1.1. H, K ∈ MN (±1) are called equivalent if one can pass from one to the
+other by permuting rows and columns, or switching signs on ro ws and columns.
+As explained in the introduction, we are interested in the total sum o f the entries.
+Since this number is invariant under permutations of rows and column s, we can restrict
+attention to the matrices ˜H ≃ H obtained by switching signs on rows and columns. More
+precisely, let ( a, b ) ∈ ZN
+2 × ZN
+2 , and consider the following matrix:
+˜Hij = aibjHij
+We will regard the sum of entries of ˜H as a random variable, as follows:
+Deﬁnition 1.2. Let H ∈ MN (±1) be an Hadamard matrix.
+(1) We deﬁne ϕ : ZN
+2 × ZN
+2 → Z by ϕ (a, b ) =∑
+ij aibjHij.
+(2) We let µ be the probability measure on Z given by µ({k}) = P (ϕ = k).
+In this deﬁnition P denotes the probability with respect to the uniform measure on the
+group ZN
+2 × ZN
+2 . In other words, we regard ϕ as a random variable over this group, and
+we denote by µ the distribution of this random variable:
+µ({k}) = 1
+4N #
+{
+(a, b ) ∈ ZN
+2 × ZN
+2
+⏐
+⏐
+⏐ϕ (a, b ) = k
+}
+As explained in the introduction, µ can be thought of as being the “glow” of the matrix.
+In order to compute the glow, it is useful to have in mind the following p icture:
+b1 . . . b N
+↓ ↓
+(a1) → H11 . . . H 1N ⇒ S1
+.
+.
+. .
+.
+. .
+.
+. .
+.
+.
+(aN ) → HN 1 . . . H N N ⇒ SN
+Here the columns of H have been multiplied by the entries of the horizontal switching
+vector b, the resulting sums on rows are denoted S1, . . . , S N , and the vertical switching
+vector a still has to act on these sums, and produce the glow component at b.
+Proposition 1.3. The glow of a matrix H ∈ MN (±1) is given by
+µ = 1
+2N
+∑
+b∈ZN
+2
+β1(c1) ∗ . . . ∗ βN (cN )
+where βr(c) =
+(
+δr+δ−r
+2
+)∗c
+, and cr = #{r ∈ |S1|, . . . , |SN |}, with S = Hb.
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 5
+Proof. We use the interpretation of the glow which was explained above. So, consider the
+decomposition of the glow over b components:
+µ = 1
+2N
+∑
+b∈ZN
+2
+µ b
+With the notation S = Hb, the numbers S1, . . . , S N are the sums on the rows of the
+matrix ˜Hij = Hijaibj. Thus the glow components are given by:
+µ b = law (±S1 ± S2 . . . ± SN )
+By permuting now the sums on the right, we have the following formula :
+µ b = law
+(
+±0 . . . ± 0
+ 
+c0
+±1 . . . ± 1  
+c1
+. . . . . . ±N . . . ± N  
+cN
+)
+Now since the ± variables each follow a Bernoulli law, and these Bernoulli laws are
+independent, we obtain a convolution product as in the statement. □
+We will need the following elementary lemma:
+Lemma 1.4. Let H ∈ MN (±1) be an Hadamard matrix of order N ≥ 4.
+(1) The sums of entries on rows S1, . . . , S N are even, and equal modulo 4.
+(2) If the sums on the rows S1, . . . , S N are all 0 modulo 4, then the number of rows
+whose sum is 4 modulo 8 is odd for N = 4(8), and even for N = 0(8).
+Proof. (1) Let us pick two rows of our matrix, and then permute the column s such that
+these two rows look as follows:
+
++ . . . + + . . . + − . . . − − . . . −
++ . . . +
+ 
+a
+− . . . −  
+b
++ . . . +  
+c
+− . . . −  
+d
+
+
+We have a + b + c + d = N, and by orthogonality a + d = b + c, so a + d = b + c = N
+2 .
+Now since N/ 2 is even, we conclude that b = c(2), and this gives the result.
+(2) In the case where H is “row-dephased”, in the sense that its ﬁrst row consists of
+1 entries only, the row sums are N, 0, . . . , 0, and so the result holds. In general now, by
+permuting the columns we can assume that our matrix looks as follows :
+H =
+
+
++ . . . + − . . . −
+.
+.
+.
+x
+.
+.
+.
+y
+
+
+We have x + y = N = 0(4), and since the ﬁrst row sum S1 = x − y is by assumption 0
+modulo 4, we conclude that x, y are even. In particular, since y is even, the passage from
+H to its row-dephased version ˜H can be done via y/ 2 double sign switches.
+Now, in view of the above, it is enough to prove that the conclusion in t he statement is
+stable under a double sign switch. So, let H ∈ MN (±1) be Hadamard, and let us perform
+6 TEODOR BANICA
+to it a double sign switch, say on the ﬁrst two columns. Depending on t he values of the
+entries on these ﬁrst two columns, the total sums on the rows cha nge as follows:
+(+ + . . . . . . )
+: S → S − 4(+ − . . . . . . )
+: S → S(− + . . . . . . )
+: S → S(− − . . . . . . )
+: S → S + 4
+We can see that the changes modulo 8 of the row sum S occur precisely in the ﬁrst
+and in the fourth case. But, since the ﬁrst two columns of our matr ix H ∈ MN (±1) are
+orthogonal, the total number of these cases is even, and this ﬁnis hes the proof. □
+Observe that Proposition 1.3 and Lemma 1.4 (1) show that the glow of an Hadamard
+matrix of order N ≥ 4 is supported by 4 Z. With this remark in hand, we have:
+Proposition 1.5. Let H ∈ MN (±1) be an Hadamard matrix of order N ≥ 4, and denote
+by µ even, µ odd the mass one-rescaled restrictions of µ ∈ P (4Z) to 8Z, 8Z + 4.
+(1) At N = 0(8) we have µ = 3
+4 µ even + 1
+4µ odd.
+(2) At N = 4(8) we have µ = 1
+4 µ even + 3
+4µ odd.
+Proof. We use the glow decomposition over b components, from Proposition 1.3:
+µ = 1
+2N
+∑
+b∈ZN
+2
+µ b
+The idea is that the decomposition formula in the statement will occur over averages
+of the following type, over truncated sign vectors c ∈ ZN −1
+2 :
+µ ′
+c = 1
+2(µ +c + µ −c)
+Indeed, we know from Lemma 1.4 (1) that modulo 4, the sums on rows are either
+0, . . . , 0 or 2 , . . . , 2. Now since these two cases are complementary when pairing switch
+vectors (+ c, −c), we can assume that we are in the case 0 , . . . , 0 modulo 4.
+Now by looking at this sequence modulo 8, and letting x be the number of 4 components,
+so that the number of 0 components is N − x, we have:
+1
+2 (µ +c + µ −c) = 1
+2
+
+law(±0 . . . ± 0
+ 
+N −x
+±4 . . . ± 4  
+x
+) + law(±2 . . . ± 2  
+N
+)
+
+
+Now by using Lemma 1.4 (2), the ﬁrst summand splits 1 − 0 or 0 − 1 on 8 Z, 8Z + 4,
+depending on the class of N modulo 8. As for the second summand, since N is even this
+always splits 1
+2 − 1
+2 on 8 Z, 8Z + 4. So, by making the average we obtain either a 3
+4 − 1
+4 or
+a 1
+4 − 3
+4 splitting on 8 Z, 8Z + 4, depending on the class of N modulo 8, as claimed. □
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 7
+Our various computer simulations suggest that the measures µ even, µ odd don’t have
+further general algebraic properties. Analytically speaking now, w e have:
+Theorem 1.6. The binary glow moments of H ∈ MN (±1) are given by:
+∫
+ZN
+2 ×ZN
+2
+( Ω
+N
+)2p
+= (2p)!! + O(N −1)
+In particular the variable Ω /N becomes Gaussian in the N → ∞ limit.
+Proof. Let Peven(r) ⊂ P (r) be the set of partitions of {1, . . . , r } having all blocks of even
+size. The moments of the variable Ω = ∑
+ij aibjHij are then given by:
+∫
+ZN
+2 ×ZN
+2
+Ω r =
+∑
+ix
+Hi1x1 . . . H irxr
+∫
+ZN
+2
+ai1 . . . a ir
+∫
+ZN
+2
+bx1 . . . b xr
+=
+∑
+π,σ ∈Peven(r)
+∑
+ker i=π, ker x=σ
+Hi1x1 . . . H irxr
+Thus the moments decompose over partitions π ∈ Peven(r), with the contributions being
+obtained by integrating the following quantities:
+C(σ) =
+∑
+ker x=σ
+∑
+i
+Hi1x1 . . . H irxr · ai1 . . . a ir
+Now by M¨ obius inversion, we obtain a formula as follows:
+∫
+ZN
+2 ×ZN
+2
+Ω r =
+∑
+π ∈Peven(r)
+K(π)N |π |I(π)
+Here K(π) = ∑
+σ ∈Peven (r) µ(π, σ ), where µ is the M¨ obius function of Peven(r), and
+I(π) =∑
+i
+∏
+b∈π
+1
+N
+⟨∏
+r∈b Hir, 1
+⟩
+, where H1, . . . , H N ∈ ZN
+2 are the rows of H.
+With this formula in hand, the ﬁrst assertion follows, because the big gest elements of
+the lattice Peven(2p) are the (2 p)!! partitions consisting of p copies of a 2-block.
+As for the second assertion, this follows from the formula in the sta tement, and from
+the fact that the glow of H ∈ MN (±1) is real, and symmetric with respect to 0. □
+2. Complex matrices
+In this section and in the next one we discuss the complex case, which is the one that
+we are truly interested in. We will use inspiration from section 1.
+We recall that a complex Hadamard matrix is a matrix H ∈ MN (T), where T is the
+unit circle in the complex plane, whose rows are pairwise orthogonal. T wo such matrices
+H, K are called equivalent if one can pass from one to the other by permut ing the rows
+and columns, or by multiplying the rows and columns by numbers in T. See [14].
+As explained in the introduction, we are interested in the following inva riant:
+8 TEODOR BANICA
+Deﬁnition 2.1. The glow of H ∈ MN (T) is the probability measure µ ∈ P (C) given by:
+∫
+C
+ϕ (x)dµ(x) =
+∫
+TN ×TN
+ϕ
+(∑
+ij
+aibjHij
+)
+d(a, b )
+That is, µ is the law of the variable Ω = ∑
+ij Hij, over the equivalence class of H.
+As a ﬁrst observation, since µ is invariant under rotations, we are in fact interested in
+computing a certain measure µ + supported by R+. More precisely, if we denote by ×
+the multiplicative convolution, and by ε the uniform measure on T, then the probability
+distributions µ, µ + of Ω , |Ω | over TN × TN are related by the formula µ = ε × µ +.
+We develop now some moment machinery. Let P (p) be the set of partitions of {1, . . . , p },
+with its standard order relation ≤, which is such that ⊓⊓ . . . ≤ π ≤ | | . . . |, for any
+π ∈ P (p). We denote by µ(π, σ ) the associated M¨ obius function, given by:
+µ(π, σ ) =
+
+
+
+
+
+1 if π = σ
+−∑
+π ≤τ <σ µ(π, τ ) if π < σ
+0 if π ̸≤σ
+For π ∈ P (p) we set
+(p
+π
+)
+=
+( p
+b1...b |π |
+)
+= p!
+b1!...b |π |! , where b1, . . . , b |π | are the block lenghts.
+Finally, we use the following notation, where H1, . . . , H N ∈ TN are the rows of H:
+Hπ (i) =
+⨂
+β ∈π
+∏
+r∈β
+Hir
+With these notations, we have the following result:
+Proposition 2.2. The glow moments of a matrix H ∈ MN (T) are given by
+∫
+TN ×TN
+|Ω |2p =
+∑
+π ∈P (p)
+K(π)N |π |I(π)
+where K(π) =∑
+σ ∈P (p) µ(π, σ )
+(p
+σ
+)
+and I(π) = 1
+N |π |
+∑
+[i]=[j] < H π (i), H π (j) >.
+Proof. The moments are given by the following formula:
+∫
+TN ×TN
+|Ω |2p =
+∫
+TN ×TN
+⏐
+⏐
+⏐
+∑
+ij
+Hixaibx
+⏐
+⏐
+⏐
+2p
+=
+∫
+TN ×TN
+(∑
+ijxy
+Hix
+Hjy
+· aibx
+ajby
+)p
+=
+∑
+ijxy
+Hi1x1 . . . H ipxp
+Hj1y1 . . . H jpyp
+∫
+TN
+ai1 . . . a ip
+aj1 . . . a jp
+da
+∫
+TN
+bx1 . . . b xp
+by1 . . . b yp
+db
+=
+∑
+[i]=[j], [x]=[y]
+Hi1x1 . . . H ipxp
+Hj1y1 . . . H jpyp
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 9
+With σ = ker x, ρ = ker y, we deduce that the moments of |Ω |2 decompose over parti-
+tions,
+∫
+TN ×TN |Ω |2p =
+∫
+TN
+∑
+σ,ρ ∈P (p) C(σ, ρ ), with the contributions being as follows:
+C(σ, ρ ) =
+∑
+ker x=σ, ker y=ρ
+δ[x], [y]
+∑
+ij
+Hi1x1 . . . H ipxp
+Hj1y1 . . . H jpyp
+· ai1 . . . a ip
+aj1 . . . a jp
+We have C(σ, ρ ) = 0 unless σ ∼ ρ, in the sense that σ, ρ must have the same block
+structure. The point now is that the sums of type ∑
+ker x=σ can be computed by using the
+M¨ obius inversion formula. We obtain a formula as follows:
+C(σ, ρ ) = δσ ∼ρ
+∑
+π ≤σ
+µ(π, σ )
+∏
+β ∈π
+C|β |(a)
+Here the functions on the right are by deﬁnition given by:
+Cr(a) =
+∑
+x
+∑
+ij
+Hi1x . . . H irx
+Hj1x . . . H jrx
+· ai1 . . . a ir
+aj1 . . . a jr
+=
+∑
+ij
+< H i1 . . . H ir , H j1 . . . H jr > · ai1 . . . a ir
+aj1 . . . a jr
+Now since there are
+(p
+σ
+)
+partitions having the same block structure as σ, we obtain:
+∫
+TN ×TN
+|Ω |2p =
+∫
+TN
+∑
+π ∈P (p)
+(∑
+σ ∼ρ
+∑
+µ ≤σ
+µ(π, σ )
+)∏
+β ∈π
+C|β |(a)
+=
+∑
+π ∈P (p)
+
+ ∑
+σ ∈P (p)
+µ(π, σ )
+(p
+σ
+)
+
+∫
+TN
+∏
+β ∈π
+C|β |(a)
+But this gives the formula in the statement, and we are done. □
+Let us discuss now the asymptotic behavior of the glow. For this pur pose, we ﬁrst
+study the coeﬃcients K(π) in Proposition 2.2. We have here:
+Lemma 2.3. K(π) =∑
+π ≤σ µ(π, σ )
+(p
+σ
+)
+has the following properties:
+(1) ˜K(π) = K(π )
+p! is multiplicative: ˜K(ππ ′) = ˜K(π)˜K(π ′).
+(2) K(⊓ ⊓. . . ⊓) =∑
+σ ∈P (p)(−1)|σ |−1(|σ| − 1)!
+(p
+σ
+)
+.
+(3) K(⊓ ⊓. . . ⊓) =∑ p
+r=1(−1)r−1(r − 1)!Cpr, where Cpr =∑
+p=a1+... +ar
+( p
+a1,...,a r
+)2
+.
+Proof. (1) We use the fact that µ(ππ ′, σσ ′) = µ(π, σ )µ(π ′, σ ′), which is a well-known
+property of the M¨ obius function, which can be proved by recurre nce. Now if b1, . . . , b s
+10 TEODOR BANICA
+and c1, . . . , c t are the block lengths of σ, σ ′, we obtain, as claimed:
+˜K(ππ ′) =
+∑
+ππ ′≤σσ ′
+µ(ππ ′, σσ ′) · 1
+b1! . . . b s! · 1
+c1! . . . c t!
+=
+∑
+π ≤σ,π ′≤σ ′
+µ(π, σ )µ(π ′, σ ′) · 1
+b1! . . . b s! · 1
+c1! . . . c t!
+= ˜K(π)˜K(π ′)
+(2) We use here the formula µ(⊓⊓ . . . ⊓, σ ) = ( −1)|σ |−1(|σ| − 1)!, which once again is
+well-known, and can be proved by recurrence on |σ|. We obtain, as claimed:
+K(⊓ ⊓. . . ⊓) =
+∑
+σ ∈P (p)
+µ(⊓ ⊓. . . ⊓, σ )
+(p
+σ
+)
+=
+∑
+σ ∈P (p)
+(−1)|σ |−1(|σ| − 1)!
+(p
+σ
+)
+(3) By using the formula in (2), and summing over r = |σ|, we obtain:
+K(⊓ ⊓. . . ⊓) =
+p∑
+r=1
+(−1)r−1(r − 1)!
+∑
+|σ |=r
+(p
+σ
+)
+Now if we denote by a1, . . . , a r with ai ≥ 1 the block lengths of σ, then
+(p
+σ
+)
+=
+( p
+a1,...,a r
+)
+.
+On the other hand, given a1, . . . , a r ≥ 1 with a1 + . . . + ar = p, there are exactly
+( p
+a1,...,a r
+)
+partitions σ having these numbers as block lengths, and this gives the result. □
+Now let us take a closer look at the integrals I(π). We have here:
+Lemma 2.4. Consider the one-block partition ⊓ ⊓. . . ⊓ ∈ P (p).
+(1) I(⊓ ⊓. . . ⊓) = # {i, j ∈ {1, . . . , N }p|[i] = [ j]}.
+(2) I(⊓ ⊓. . . ⊓) =
+∫
+TN |∑
+i ai|2pda.
+(3) I(⊓ ⊓. . . ⊓) =∑
+σ ∈P (p)
+(p
+σ
+) N !
+(N −|σ |)! .
+(4) I(⊓ ⊓. . . ⊓) =∑ p−1
+r=1 Cpr
+N !
+(N −r)! , where Cpr =∑
+p=b1+... +br
+( p
+b1,...,b r
+)2
+.
+Proof. (1) This follows indeed from the following computation:
+I(⊓ ⊓. . . ⊓) =
+∑
+[i]=[j]
+1
+N < H i1 . . . H ir , H j1 . . . H jr >=
+∑
+[i]=[j]
+1
+(2) This follows from the following computation:
+∫
+TN
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+i
+ai
+⏐
+⏐
+⏐
+⏐
+⏐
+2p
+=
+∫
+TN
+∑
+ij
+ai1 . . . a ip
+aj1 . . . a jp
+da = #
+{
+i, j
+⏐
+⏐
+⏐[i] = [ j]
+}
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 11
+(3) If we let σ = ker i in the above formula of I(⊓ ⊓. . . ⊓), we obtain:
+I(⊓ ⊓. . . ⊓) =
+∑
+σ ∈P (p)
+#
+{
+i, j
+⏐
+⏐
+⏐ker i = σ, [i] = [ j]
+}
+Now since there are N !
+(N −|σ |)! choices for i, and then
+(p
+σ
+)
+for j, this gives the result.
+(4) If we set r = |σ|, the formula in (3) becomes:
+I(⊓ ⊓. . . ⊓) =
+p−1∑
+r=1
+N!
+(N − r)!
+∑
+σ ∈P (p), |σ |=r
+(p
+σ
+)
+Now since there are exactly
+( p
+b1,...,b r
+)
+permutations σ ∈ P (p) having b1, . . . , b r as block
+lengths, the sum on the right equals ∑
+p=b1+... +br
+( p
+b1,...,b r
+)2
+, as claimed. □
+In general, the integrals I(π) can be estimated as follows:
+Lemma 2.5. Let H ∈ MN (T), having its rows pairwise orthogonal.
+(1) I(| | . . . |) = N p.
+(2) I(| | . . . | π) = N aI(π), for any π ∈ P (p − a).
+(3) |I(π)| ≲ p!N p, for any π ∈ P (p).
+Proof. (1) Since the rows of H are pairwise orthogonal, we have:
+I(| | . . . |) =
+∑
+[i]=[j]
+p∏
+r=1
+δir,j r =
+∑
+[i]=[j]
+δij =
+∑
+i
+1 = N p
+(2) This follows by the same computation as the above one for (1).
+(3) We have indeed the following estimate:
+|I(π)| ≤
+∑
+[i]=[j]
+∏
+β ∈π
+1 =
+∑
+[i]=[j]
+1 = #
+{
+i, j ∈ {1, . . . , N }
+⏐
+⏐
+⏐[i] = [ j]
+}
+≃ p!N p
+Thus we have obtained the formula in the statement, and we are don e. □
+We have now all needed ingredients for a universality result:
+Theorem 2.6. The glow of a complex Hadamard matrix H ∈ MN (T) is given by:
+1
+p!
+∫
+TN ×TN
+(|Ω |
+N
+)2p
+= 1 −
+(p
+2
+)
+N −1 + O(N −2)
+In particular, Ω /N becomes complex Gaussian in the N → ∞ limit.
+Proof. We use the moment formula in Proposition 2.2. By using Lemma 2.5 (3), w e
+conclude that only the p-block and ( p − 1)-block partitions contribute at order 2, so:
+∫
+TN ×TN
+|Ω |2p = K(| | . . . |)N pI(| | . . . |) +
+(p
+2
+)
+K(⊓| . . . |)N p−1I(⊓| . . . |) + O(N 2p−2)
+12 TEODOR BANICA
+Now by dividing by N 2p and then by using the various formulae in Lemma 2.3, Lemma
+2.4 and Lemma 2.5 above, we obtain, as claimed:
+∫
+TN ×TN
+(|Ω |
+N
+)2p
+= p! −
+(p
+2
+)p!
+2 · 2N − 1
+N 2 + O(N −2)
+Finally, since the law of Ω is invariant under centered rotations in the c omplex plane,
+this moment formula gives as well the last assertion. □
+3. Fourier matrices
+In this section we study the glow of an arbitrary Fourier matrix, F = FG. We use the
+standard formulae FixFiy = Fi,x +y, F ix = Fi, −x and∑
+x Fix = N δi0. We ﬁrst have:
+Proposition 3.1. For a Fourier matrix FG we have
+I(π) = #
+{
+i, j
+⏐
+⏐
+⏐[i] = [ j],
+∑
+r∈β
+ir =
+∑
+r∈β
+jr, ∀β ∈ π
+}
+with all the indices, and with the sums at right, taken inside G.
+Proof. The basic components of the integrals I(π) are given by:
+1
+N
+⟨∏
+r∈β
+Fir ,
+∏
+r∈β
+Fjr
+⟩
+= 1
+N
+⣨
+F∑
+r∈β ir , F ∑
+r∈β ir
+⟩
+= δ∑
+r∈β ir, ∑
+r∈β jr
+But this gives the formula in the statement, and we are done. □
+We have the following interpretation of the above integrals:
+Proposition 3.2. For any partition π we have the formula
+I(π) =
+∫
+TN
+∏
+b∈π
+(
+1
+N 2
+∑
+ij
+|Hij|2|β |
+)
+da
+where H = F AF ∗, with F = FG and A = diag(a0, . . . , a N −1).
+Proof. We have the following computation:
+H = F ∗AF =⇒ | Hxy|2 =
+∑
+ij
+FiyFjx
+FixFjy
+· ai
+aj
+=⇒ | Hxy|2p =
+∑
+ij
+Fj1x . . . F jpx
+Fi1x . . . F ipx
+· Fi1y . . . F ipy
+Fj1y . . . F jpy
+· ai1 . . . a ip
+aj1 . . . a jp
+=⇒
+∑
+xy
+|Hxy|2p =
+∑
+ij
+⏐
+⏐< H i1 . . . H ip, H j1 . . . H jp >
+⏐
+⏐2
+· ai1 . . . a ip
+aj1 . . . a jp
+But this gives the formula in the statement, and we are done. □
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 13
+The above formula is interesting in connection with the consideration s in [2], [4], and
+with the general counting problematics for circulant Hadamard mat rices [9]. See [4].
+Regarding now the glow estimates, we ﬁrst have the following result:
+Lemma 3.3. For FG we have the estimate
+I(π) = b1! . . . b |π |!N p + O(N p−1)
+where b1, . . . , b |π | with b1 + . . . + b|π | = p are the block lengths of π.
+Proof. With σ = ker i we obtain:
+I(π) =
+∑
+σ ∈P (p)
+#
+{
+i, j
+⏐
+⏐
+⏐ker i = σ, [i] = [ j],
+∑
+r∈β
+ir =
+∑
+r∈β
+jr, ∀β ∈ π
+}
+Since there are N !
+(N −|σ |)! ≃ N |σ | choices for i satisfying ker i = σ, and then there are(p
+σ
+)
+= O(1) choices for j satisfying [ i] = [ j], we conclude that the main contribution
+comes from σ = | | . . . |, and so we have:
+I(π) = #
+{
+i, j
+⏐
+⏐
+⏐ker i = | | . . . |, [i] = [ j],
+∑
+r∈β
+ir =
+∑
+r∈β
+jr, ∀β ∈ π
+}
++ O(N p−1)
+Now the condition ker i = | | . . . | tells us that i must have distinct entries, and there
+are N !
+(N −p)! ≃ N p choices for such multi-indices i. Regarding now the indices j, the main
+contribution comes from those obtained from i by permuting the entries over the blocks
+of π, and since there are b1! . . . b |π |! choices here, this gives the result. □
+At the second order now, the estimate is as follows:
+Lemma 3.4. For FG we have the formula
+I(π)
+b1! . . . b s!N p = 1 +
+(∑
+i<j
+∑
+c≥2
+(bi
+c
+)(bj
+c
+)
+− 1
+2
+∑
+i
+(bi
+2
+))
+N −1 + O(N −2)
+where b1, . . . , b s being the block lengths of π ∈ P (p).
+Proof. Let us deﬁne the “non-arithmetic” part of I(π) as follows:
+I ◦(π) = #
+{
+i, j
+⏐
+⏐
+⏐[ir|r ∈ β ] = [ jr|r ∈ β ], ∀β ∈ π
+}
+We then have the following formula:
+I ◦(π) =
+∏
+β ∈π
+{
+i, j ∈ I |β |
+⏐
+⏐
+⏐[i] = [ j]
+}
+=
+∏
+β ∈π
+I(β )
+Also, Lemma 3.3 shows that we have the following estimate:
+I(π) = I ◦(π) + O(N p−1)
+14 TEODOR BANICA
+Our claim now is that we have the folowing formula:
+I(π) − I ◦(π)
+b1! . . . b s!N p =
+∑
+i<j
+∑
+c≥2
+(bi
+c
+)(bj
+c
+)
+N −1 + O(N −2)
+Indeed, according to Lemma 3.3, we have a formula of the following ty pe:
+I(π) = I ◦(π) + I 1(π) + O(N p−2)
+More precisely, this formula holds indeed, with I 1(π) coming from i1, . . . , i p distinct,
+[i] = [ j], and with one constraint of type ∑
+r∈β ir =∑
+j∈β jr, with [ ir|r ∈ β ] ̸= [jr|r ∈ β ].
+Now observe that for a two-block partition π = ( a, b ) this constraint is implemented, up
+to permutations which leave invariant the blocks of π, as follows:
+i1 . . . i c k1 . . . k a−c j1 . . . j c l1 . . . l a−c
+j1 . . . j c  
+c
+k1 . . . k a−c  
+a−c
+i1 . . . i c  
+c
+l1 . . . l a−c  
+b−c
+Let us compute now I 1(a, b ). We cannot have c = 0, 1, and once c ≥ 2 is given, we have(a
+c
+)
+,
+(b
+c
+)
+choices for the positions of the i, j variables in the upper row, then N p−1+O(N p−2)
+choices for the variables in the upper row, and then ﬁnally we have a!b! permutations which
+can produce the lower row. We therefore obtain:
+I 1(a, b ) = a!b!
+∑
+c≥2
+(a
+c
+)(b
+c
+)
+N p−1 + O(N p−2)
+In the general case now, a similar discussion applies. Indeed, the co nstraint of type∑
+r∈β ir =∑
+r∈β jr with [ ir|r ∈ β ] ̸= [ jr|r ∈ β ] cannot aﬀect ≤ 1 blocks, because we are
+not in the non-arithmetic case, and cannot aﬀect either ≥ 3 blocks, because aﬀecting ≥ 3
+blocks would require ≥ 2 constraints. Thus this condition aﬀects exactly 2 blocks, and if
+we let i < j be the indices in {1, . . . , s } corresponding to these 2 blocks, we obtain:
+I 1(π) = b1! . . . b s!
+∑
+i<j
+∑
+c≥2
+(bi
+c
+)(bj
+c
+)
+N p−1 + O(N p−2)
+But this proves the above claim. Let us estimate now I(⊓ ⊓. . . ⊓). We have:
+I(⊓ ⊓. . . ⊓) = p! N!
+(N − p)! +
+(p
+2
+)p!
+2 · N!
+(N − p + 1)! + O(N p−2)
+= p!N r
+(
+1 −
+(p
+2
+)
+N −1 + O(N −2)
+)
++
+(p
+2
+)p!
+2 N p−1 + O(N p−2)
+= p!N p
+(
+1 − 1
+2
+(p
+2
+)
+N −1 + O(N −2)
+)
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 15
+Now by using the formula I ◦(π) =∏
+β ∈π I(β ), we obtain:
+I ◦(π) = b1! . . . b s!N p
+(
+1 − 1
+2
+∑
+i
+(bi
+2
+)
+N −1 + O(N −2)
+)
+By plugging this quantity into the above estimate, we obtain the resu lt. □
+In order to estimate glow, we will need the explicit formula of I(⊓⊓):
+Lemma 3.5. For FG with G = ZN1 × . . . × ZNk we have the formula
+I(⊓⊓) = N(4N 3 − 11N + 2e + 7)
+where e ∈ {0, 1, . . . , k } is the number of even numbers among N1, . . . , N k.
+Proof. We use the fact that, when dealing with the conditions ∑
+r∈β ir =∑
+r∈β jr deﬁning
+the quantities I(π), one can always erase some of the variables ir, j r, as to reduce to the
+“purely arithmetic” case, {ir|r ∈ β } ∩ {jr|r ∈ β } = ∅. We have:
+I(⊓⊓) = I ◦(⊓⊓) + I ari(⊓⊓)
+Let us compute now I ari(⊓⊓). There are 3 contributions to this quantity, namely:
+(1) Case ( iijj
+jjii )
+, with i ̸= j, 2i = 2j. Since 2( i1, . . . , i k) = 2( j1, . . . , j k) corresponds to the
+collection of conditions 2 ir = 2jr, inside ZNr , which each have 1 or 2 solutions, depending
+on whether Nr is odd or even, the contribution here is:
+I ari
+1 (⊓⊓) = # {i ̸= j|2i = 2j}
+= # {i, j |2i = 2j} − #{i, j |i = j}
+= 2 eN − N
+= (2 e − 1)N
+(2) Case ( iijk
+jkii)
+, with i, j, k distinct, 2 i = j + k. The contribution here is:
+I ari
+2 (⊓⊓) = 4# {i, j, k distinct|2i = j + k}
+= 4# {i ̸= j|2i − j ̸= i, j }
+= 4# {i ̸= j|2i ̸= 2j}
+= 4(# {i, j |i ̸= j} − #{i ̸= j|2i = 2j})
+= 4( N(N − 1) − (2e − 1)N)
+= 4 N(N − 2e)
+16 TEODOR BANICA
+(3) Case ( ijkl
+klij)
+, with i, j, k, l distinct, i + j = k + l. The contribution here is:
+I ari
+3 (⊓⊓) = 4# {i, j, k, l distinct|i + j = k + l}
+= 4# {i, j, k distinct|i + j − k ̸= i, j, k }
+= 4# {i, j, k distinct|i + j − k ̸= k}
+= 4# {i, j, k distinct|i ̸= 2k − j}
+We can split this quantity over two cases, 2 j ̸= 2k and 2 j = 2k, and we obtain:
+I ari
+3 (⊓⊓) = 4(# {i, j, k distinct|2j ̸= 2k, i ̸= 2k − j}
++#{i, j, k distinct|2j = 2k, i ̸= 2k − j})
+The point now is that in the ﬁrst case, 2 j ̸= 2 k, the numbers j, k, 2k − j are distinct,
+while in the second case, 2 j = 2k, we simply have 2 k − j = j. Thus, we obtain:
+I ari
+3 (⊓⊓) = 4
+( ∑
+j̸=k, 2j̸=2k
+#{i|i ̸= j, k, 2k − j} +
+∑
+j̸=k, 2j=2k
+#{i|i ̸= j, k }
+)
+= 4( N(N − 2e)(N − 3) + N(2e − 1)(N − 2))
+= 4 N(N(N − 3) − 2e(N − 3) + 2e(N − 2) − (N − 2))
+= 4 N(N 2 − 4N + 2e + 2)
+We can now compute the arithmetic part. This is given by:
+I ari(⊓⊓) = (2 e − 1)N + 4N(N − 2e) + 4N(N 2 − 4N + 2e + 2)
+= N(2e − 1 + 4(N − 2e) + 4(N 2 − 4N + 2e + 2))
+= N(4N 2 − 12N + 2e + 7)
+Thus the integral to be computed is given by:
+I(⊓⊓) = N 2(2N − 1)2 + N(4N 2 − 12N + 2e + 7)
+= N(4N 3 − 4N 2 + N + 4N 2 − 12N + 2e + 7)
+= N(4N 3 − 11N + 2e + 7)
+Thus we have reached to the formula in the statement, and we are d one. □
+We have the following asymptotic result:
+Theorem 3.6. The glow of FG, with |G| = N, is given by
+1
+p!
+∫
+TN ×TN
+(|Ω |
+N
+)2p
+= 1 − K1N −1 + K2N −2 − K3N −3 + O(N −4)
+with K1 =
+(p
+2
+)
+, K2 =
+(p
+2
+)3p2+p−8
+12 , K3 =
+(p
+3
+)p3+4p2+p−18
+8 .
+THE GLOW OF FOURIER MATRICES: UNIVERSALITY AND FLUCTUATION S 17
+Proof. We use the quantities ˜K(π) = K(π )
+p! , ˜I(π) = I(π )
+N p , which are such that ˜K(π| . . . |) =
+˜K(π), ˜I(π| . . . |) = ˜I(π). In terms of J(σ) =
+(p
+σ
+)˜K(σ)˜I(σ), we have:
+1
+p!
+∫
+TN ×TN
+|Ω |2p = J(∅) + N −1J(⊓) + N −2 (J(⊓ ⊓) + J(⊓⊓))
++N −3 (J(⊓ ⊓ ⊓) + J(⊓ ⊓ ⊓) + J(⊓ ⊓ ⊓)) + O(N −4)
+We have ˜K0 = ˜K1 = 1, ˜K2 = 1
+2 − 1 = − 1
+2 , ˜K3 = 1
+6 − 3
+2 + 2 = 2
+3 and:
+˜K4 = 1
+24 − 4
+6 − 3
+4 + 12
+2 − 6 = −11
+8
+Regarding now the numbers Cpr in Lemma 2.3, these are given by:
+Cp1 = 1, C p2 = 1
+2
+(2p
+p
+)
+− 1, . . . , C p,p −1 = p!
+2
+(p
+2
+)
+, C pp = p!
+We deduce that I(|) = N, I(⊓) = N(2N − 1), I(⊓ ⊓) = N(6N 2 − 9N + 4) and:
+I(⊓ ⊓ ⊓) = N(24N 3 − 72N 2 + 82N − 33)
+By using as well Lemma 3.4 and Lemma 3.5, we obtain the following formula :
+1
+p!
+∫
+TN ×TN
+|Ω |2p = 1 − 1
+2
+(p
+2
+)
+(2N −1 − N −2) + 2
+3
+(p
+3
+)
+(6N −2 − 9N −3) + 3
+(p
+4
+)
+N −2
+−33
+(p
+4
+)
+N −3 − 40
+(p
+5
+)
+N −3 − 15
+(p
+6
+)
+N −3 + O(N −4)
+But this gives the formulae of K1, K 2, K 3 in the statement, and we are done. □
+4. Concluding remarks
+We have seen in this paper that the glow of the Fourier matrices, an in variant which is
+related to a wide array of Hadamard matrix questions, is complex Gau ssian in the N → ∞
+limit, and that the universality holds in fact up to order 4. Any potent ial application,
+however, would require a much deeper understanding of the glow.
+We believe that the formula in Theorem 3.6 should appear as truncatio n of the N −1
+expansion of the moment formula for some “universal” measure µ N . However, we do not
+know for the moment on how to approach µ N . One problem here is that we have two
+natural candidates for this measure, one coming from the Fourier matrix FN , and the
+other one coming from the Walsh matrix WN (deﬁned only for values N = 2 n):
+(1) Regarding FN , the formula in Lemma 3.5 shows that the next term K4 depends
+on the parity of N. One could conjecture then that K4 might be polynomial both
+in N odd, and in N even, but we have computer-assisted results showing that it
+is not so. It is not clear on how to advance in this direction.
+18 TEODOR BANICA
+(2) Regarding WN , where N = 2 n and the underlying group is G = Zn
+2 , here the
+numbers CI(J1, . . . , J r) = #
+{
+(ai)i∈I ∈ G distinct
+⏐
+⏐
+⏐
+∑
+j∈Js aj = 0, ∀s
+}
+are polyno-
+mial in N = 2 n, and this suggests that the integrals I(π), and hence the glow,
+should be polynomial in N. However, we don’t have a full proof of this fact.
+As a conclusion, the results in the present paper, along with the dat a coming from
+some extra computer simulations and computations, suggest the f ollowing key problem,
+that we would like to raise here: what is the glow of the Walsh matrices?
+References
+[1] T. Banica, First order deformations of the Fourier matrix, J. Math. Phys. 55 (2014), 1–22.
+[2] T. Banica, B. Collins and J.-M. Schlenker, On orthogonal matrices maximizing the 1-norm, Indiana
+Univ. Math. J. 59 (2010), 839–856.
+[3] T. Banica, U. Franz and A. Skalski, Idempotent states and the in ner linearity property, Bull. Pol.
+Acad. Sci. Math. 60 (2012), 123–132.
+[4] T. Banica, I. Nechita and J.-M. Schlenker, Analytic aspects of th e circulant Hadamard conjecture,
+Ann. Math. Blaise Pascal 21 (2014), 25–59.
+[5] I. Bengtsson, Three ways to look at mutually unbiased bases, AIP Conf. Proc. 889 (2007), 40–51.
+[6] B. Collins, P. Gawron, A.E. Litvak and K. ˙Zyczkowski, Numerical range for random matrices, J.
+Math. Anal. Appl. 418 (2014) 516–533.
+[7] C.F. Dunkl, P. Gawron, J.A. Holbrook, J. Miszczak, Z. Pucha/suppress la and K. ˙Zyczkowski, Numerical
+shadow and geometry of quantum states, J. Phys. A 44 (2011), 1–19.
+[8] P.C. Fishburn and N.J.A. Sloane, The solution to Berlekamp’s switchin g game, Discrete Math. 74
+(1989), 263–290.
+[9] U. Haagerup, Cyclic p-roots of prime lengths p and related complex Hadamard matrices, arxiv:
+0803.2629.
+[10] V.F.R. Jones and V.S. Sunder, Introduction to subfactors, Ca mbridge Univ. Press (1997).
+[11] S. Popa, Orthogonal pairs of ∗-subalgebras in ﬁnite von Neumann algebras, J. Operator Theory 9
+(1983), 253–268.
+[12] R. Roth and K. Viswanathan, On the hardness of decoding the G ale-Berlekamp code, IEEE Trans.
+Inform. Theory 54 (2008), 1050–1060.
+[13] J. Seberry and M. Yamada, Hadamard matrices, sequences, a nd block designs, Wiley (1992).
+[14] W. Tadej and K. ˙Zyczkowski, A concise guide to complex Hadamard matrices, Open Syst. Inf. Dyn.
+13 (2006), 133–177.
+T.B.: Department of Mathematics, Cergy-Pontoise Universi ty, 95000 Cergy-Pontoise,
+France. teo.banica@gmail.com

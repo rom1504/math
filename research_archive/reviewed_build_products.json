@@ -1,4 +1,11 @@
 {
+  "tmp/paper_portfolio_2026_09_17/discrepancy/exact_fixed_signing_gray": {
+    "sha256": "6611b17f46c5a59a85805c4e0fe73afb606762c762e527b9b8983a105643810a",
+    "source": "computations/exact_fixed_signing_gray.cpp",
+    "source_sha256": "5a08f4e89660efe23319351084d12007b4a44942fdcdc170d3c2fc05346c7586",
+    "recipe": "g++ -O3 -std=c++17 computations/exact_fixed_signing_gray.cpp -o tmp/paper_portfolio_2026_09_17/discrepancy/exact_fixed_signing_gray",
+    "audit": "research_archive/publication_audit_papers_2026_09_17.md"
+  },
   "tmp/flatify_replay_build_67tq7oz1/exact_gray": {
     "sha256": "6611b17f46c5a59a85805c4e0fe73afb606762c762e527b9b8983a105643810a",
     "source": "computations/exact_fixed_signing_gray.cpp",
