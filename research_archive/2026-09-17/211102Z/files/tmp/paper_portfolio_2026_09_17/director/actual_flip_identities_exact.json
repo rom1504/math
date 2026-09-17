@@ -1,0 +1,98 @@
+{
+  "status": "PASS exact full-sign anchors and modal conditioning",
+  "results": [
+    {
+      "n": 4,
+      "edges": 6,
+      "actual_cap": 4,
+      "tests": [
+        {
+          "window": 0,
+          "escaping_flip_sets": 60,
+          "all_flip_sets": 64,
+          "conditioning_counts_checked": 7
+        },
+        {
+          "window": 1,
+          "escaping_flip_sets": 60,
+          "all_flip_sets": 64,
+          "conditioning_counts_checked": 7
+        },
+        {
+          "window": 2,
+          "escaping_flip_sets": 48,
+          "all_flip_sets": 64,
+          "conditioning_counts_checked": 7
+        },
+        {
+          "window": 4,
+          "escaping_flip_sets": 32,
+          "all_flip_sets": 64,
+          "conditioning_counts_checked": 7
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "edges": 10,
+      "actual_cap": 4,
+      "tests": [
+        {
+          "window": 0,
+          "escaping_flip_sets": 883,
+          "all_flip_sets": 1024,
+          "conditioning_counts_checked": 11
+        },
+        {
+          "window": 1,
+          "escaping_flip_sets": 883,
+          "all_flip_sets": 1024,
+          "conditioning_counts_checked": 11
+        },
+        {
+          "window": 2,
+          "escaping_flip_sets": 883,
+          "all_flip_sets": 1024,
+          "conditioning_counts_checked": 11
+        },
+        {
+          "window": 4,
+          "escaping_flip_sets": 586,
+          "all_flip_sets": 1024,
+          "conditioning_counts_checked": 11
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "edges": 15,
+      "actual_cap": 9,
+      "tests": [
+        {
+          "window": 0,
+          "escaping_flip_sets": 32452,
+          "all_flip_sets": 32768,
+          "conditioning_counts_checked": 16
+        },
+        {
+          "window": 1,
+          "escaping_flip_sets": 32452,
+          "all_flip_sets": 32768,
+          "conditioning_counts_checked": 16
+        },
+        {
+          "window": 2,
+          "escaping_flip_sets": 31464,
+          "all_flip_sets": 32768,
+          "conditioning_counts_checked": 16
+        },
+        {
+          "window": 4,
+          "escaping_flip_sets": 29356,
+          "all_flip_sets": 32768,
+          "conditioning_counts_checked": 16
+        }
+      ]
+    }
+  ]
+}

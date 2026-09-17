@@ -1,0 +1,769 @@
+Long-Horizon AI Research for Grothendieck Constant:
+A Case Study in Human–AI Mathematical Collaboration
+Alan Li∗ Rahul Saha∗ Anton Xue
+alanli@cs.utexas.edu rahul.saha@utexas.edu anton.xue@utexas.edu
+Swarat Chaudhuri Adam Klivans Pravesh K. Kothari
+swarat@cs.utexas.edu klivans@cs.utexas.edu kothari@cs.princeton.edu
+Raghu Meka
+raghum@cs.ucla.edu
+Abstract
+AI agents are increasingly used in mathematics research, but it is often unclear how to use
+them effectively. Towards this, we present an extensive case study of how AI was used to improve
+bounds on the Grothendieck constantKG, which captures the hardness between combinatorial
+problems and their continuous relaxations. Specifically, while the precise value ofKG is not
+known, we recently tightened the best known bounds to
+6π
+11 ≤K G ≤ π
+2 log(1 +
+√
+2)−10−4.
+Crucially, these improvements were achieved using an AI research system that could arrive at
+insights deemed novel by domain experts. We give a detailed discussion of our experience using
+AI for mathematics research, particularly touching upon its strengths and weaknesses, as well
+as our experience with creating ideal conditions for AI to arrive at breakthrough insights. The
+mathematical results are presented and proved in a companion paper [SLX+26].
+∗Equal contribution.
+1
+arXiv:2608.11195v1  [cs.AI]  11 Aug 2026
+
+Contents
+1 Introduction 3
+2 The Grothendieck Constant 4
+3 The Results of the Companion Paper 6
+4 AI Methodology and Analysis 7
+5 Results 8
+6 Case study: from a failed upper-bound search to a lower bound 9
+7 Discussion 10
+7.1 Performance across research functionalities . . . . . . . . . . . . . . . . . . . . . 11
+7.2 Origins of the capability profile . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+7.3 Human collaboration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+7.4 Relation to recent work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+7.5 Future directions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+A Case study: the lower bound 17
+2
+
+1 Introduction
+The mathematical capabilities of AI systems have grown at a remarkable pace. Within a few
+years, they have progressed from solving grade-school word problems to matching the best human
+performers on competition and advanced mathematics benchmarks [H+26, LL25, GEB+24].
+Mathematics research, however, is along-horizontask. Its goals are often not clearly defined
+and evolve over time. Success is judged not only by whether a statement is proved, but also
+by whether the right statement was chosen in the first place. It requires building a body of
+knowledge whose significance may be apparent only later; that is, in research, rewards are sparse,
+and often delayed. It is still an open question how to use AI effectively at this horizon.
+Existing systems occupy well-specified corners of this space. Evaluator-guided searches such
+as FunSearch and AlphaEvolve explore spaces of programs or constructions, but require a fixed
+objective and an automatic scoring function [RPBN+24, NVE+25]. Formal-proof systems such
+as AlphaProof obtain a similarly clear correctness signal from a proof assistant, but require
+a fixed formal statement [H+26]. Interactive use of frontier models provides broad technical
+assistance, but leaves agenda-setting, memory, and verification with the human expert [BCE+25].
+In this work, we provide a detailed case study of our experience using AI operating at
+the level of a researchprogram: deciding what to attempt next, retaining what failed and
+why, and converting an accumulation of failures into new mathematics. We engineered an AI
+research system asynchronously steered by human operators. We directed it at a concrete open
+problem: the Grothendieck constantKG, which quantifies the hardness threshold between hard
+combinatorial optimization problems and their efficient continuous relaxations, and whose value
+has been open since 1953.
+The collaboration tightened the best known bounds on both sides,
+1.7135...= 6π
+11 ≤K G ≤ π
+2 log(1 +
+√
+2)−3.47×10 −4 = 1.7818...,
+The upper bound comes from a new asymptotic framework for rounding algorithms, and the
+lower bound from the first argument that boundsKG from below without constructing a hard
+instance. Central steps of this mathematics originated with the AI system and were judged
+novel by domain experts; all results stated as theorems have been independently verified by the
+authors, and complete proofs appear in the companion paper [SLX+26]. Our contributions are
+as follows.
+(1) Novel approaches for a longstanding open problem.We give an expository account
+of the Grothendieck constant and of the results in Section 2 and Section 3. The upper bound
+introduceslimiting Krivine schemes, which enlarge the space of rounding algorithms studied
+since Krivine’s work. The lower bound converts obstructions on all rounding schemes into
+lower bounds onKG; it is the first lower bound on the constant that does not proceed by
+constructing a hard instance.
+(2) A methodology for long-horizon AI research.We document the system in Section 4:
+its division of labor between a reasoning model and a coding agent, its file-based memory,
+its calibrated internal verification protocol, and its channel for asynchronous human steering.
+The run and its outcomes are quantified in Section 5.
+(3) A case study with an analysis of capabilities.We reconstruct how the lower bound was
+found in Section 6 and analyze the full record in Section 7. The record shows a consistent
+asymmetry: the system was strong at technical execution, but substantially less reliable at
+research judgement and at maintaining an accurate research state.
+3
+
+2 The Grothendieck Constant
+We first describe the mathematical problem at a high level. The exposition here is deliberately
+informal; precise definitions and full proofs appear in the companion paper [SLX+26].
+A hard optimization problem and its relaxation.Consider the following discrete
+optimization problem: given a matrixA = (aij)∈R m×n, find sign vectors maximizing the
+bilinear form
+OPT(A) := max
+x∈{±1}m,y∈{±1} n
+∑
+i,j
+aijxiyj.
+Intuitively, we are looking for the best pair of±1labelings of the rows and columns ofA; this
+quantity is closely related to thecut normof the matrix, a basic primitive in combinatorial
+optimization, and the problem is NP-hard in general. A standard way to make it tractable is to
+relax each sign to a unit vector and each product to an inner product:
+SDP(A) := max
+ui,vj∈Sd−1
+∑
+i,j
+aij⟨ui,vj⟩,
+where the maximum now runs over unit vectors in any dimensiond. This relaxation is a
+semidefinite program (SDP) and can be solved in polynomial time. Since every sign is a one-
+dimensional unit vector, OPT(A)≤SDP (A): the relaxation can only overshoot. The basic
+question is by how much.
+Grothendieck’s inequality [Gro53, LP68] answers this question: the overshoot is bounded by
+a universal constant. That is, there existsK <∞, independent ofA, m, n, and the dimensiond,
+such that
+OPT(A)≤SDP(A)≤K·OPT(A)for every matrixA.
+TheGrothendieck constant KG is the smallest suchK. In modern language,KG is exactly the
+worst-case integrality gap of the canonical SDP relaxation of the bilinear optimization problem
+above. Figure 1 illustrates the two optimization problems and the rounding step that connects
+them.
+Grothendieck’s inequality is a foundational result well beyond this algorithmic reading: it
+originated in functional analysis, where it is central to the geometry of Banach spaces and
+harmonic analysis [Pis11, KN11], it underlies constant-factor approximation algorithms for cut
+norms [AN06], and it governs the maximal advantage of quantum over classical correlations in
+Bell-type experiments [Tsi85, CHTW04]. Despite this breadth of connections, and more than
+seventy years of study, the exact value ofKG remains unknown.
+Rounding schemes as partitions.Every upper bound onKG is, at heart, an algorithm: a
+rounding schemethat converts the unit vectors of an SDP solution back into signs while provably
+retaining a1/K fraction of the objective. The schemes relevant to this paper have a simple
+geometric description. AKrivine schemeis a pair of partitions ofRk into a+1region and a −1
+region, encoded by odd sign functionsf,g : Rk→{± 1} (see Figure 2). To round, the algorithm
+maps each SDP vector to a random Gaussian point inRk, arranged so that the points ofui
+and vj are correlated according to the inner product⟨ui,vj⟩, and then labels each vector by the
+region its point lands in:xi =f(Xi)and yj =g(Yj). The simplest instance takes both partitions
+to be the same half-space,f(z) =g(z) = sgn(z2). This is called the random hyperplane rounding:
+label each vector by the side of a random hyperplane it falls on.
+4
+
+1. Combinatorial Problem
+(Hard)
+2. Continuous Problem
+(Easy)
+3. Continuous Solution 4. Combinatorial Solution
+(a) (b) (c) (d)
+Relaxation Solve
+Rounding
+Scheme
+Figure 1:From a hard combinatorial problem to a rounded solution.(a)An
+instance of the bilinear optimization problem, drawn as a weighted graph: every node
+carries an unknown sign, every edge a weightaij (an orange+2edge rewards giving its
+endpoints equal signs; a dark−2edge rewards opposite signs), and the goal is to choose
+the signs maximizing the total reward.(b)The SDP relaxation replaces signs by unit
+vectors; its feasible set is a slice of a convex cone, and the relaxed problem is solvable in
+polynomial time.(c)The optimal vectors u⋆
+i,v⋆
+j spread out over a unit sphere in ways that
+signs cannot.(d)A rounding scheme converts the vectors back into signs (orange= +1,
+dark= −1); in this instance the rounded signs satisfy every−2edge. The Grothendieck
+constantKG is the worst-case ratio between the relaxed and the combinatorial optimum.
+The normalized correlation function.The quality of a Krivine scheme is governed by
+a single analytic object. LetX,Y be standard Gaussian points inRk whose coordinates are
+pairwise correlated: E[XiYi] =t for eachi. Thenormalized correlation functionof the scheme is
+H(t) := π
+2 E
+[
+f(X)g(Y)
+]
+,
+which measures how correlated the two output labels are when the underlying inputs have
+correlation t. This function is the central object in the analysis of Krivine schemes: the entire
+performance of a scheme can be read off from it, and, speaking informally, the closerH is to a
+straight line with a large slope, the better the scheme rounds.
+For the half-space partition, a classical identity of Grothendieck givesH(t) = arcsint, and
+Krivine’s analysis of this arcsine nonlinearity yields his celebrated bound [Kri77]
+KG ≤ π
+2 log(1 +
+√
+2) = 1.7822...
+Krivine conjectured that this value is optimal. The conjecture stood for over three decades, until
+Braverman, Makarychev, Makarychev, and Naor disproved it in 2011 by mixing hyperplane
+rounding with a carefully chosen two-dimensional scheme; their argument establishes the strict
+inequalityKG<π/ (2 log(1 +
+√
+2))but does not quantify the gap [BMMN11]. Naor and Regev
+later proved a striking converse: such mixed Krivine schemes are asymptoticallyoptimal, meaning
+that as the dimension of the scheme grows, they achieve approximation ratios arbitrarily close
+to the true value ofKG [NR14]. The search forKG can therefore, in principle, be carried out
+entirely within this one family of partitions. Building on this, recent works of Heilman [Hei26b]
+and of a subset of the authors [LSX+26] independently obtained the first explicit numerical
+improvements over Krivine’s bound, on the order of10−5.
+5
+
+4
+ 3
+ 2
+ 1
+ 0 1 2 3 4
+z1
+4
+3
+2
+1
+0
+1
+2
+3
+4
+z2
+sgn(z2)
++1
+1
+4
+ 3
+ 2
+ 1
+ 0 1 2 3 4
+z1
+4
+3
+2
+1
+0
+1
+2
+3
+4
+z2
+sgn(z2 (z3
+1 3z1))
++1
+1
+Figure 2:Krivine schemes are partitions of space.A scheme labels the points of
+Rk with±1(orange is+1, dark is −1; shown here fork = 2), and each SDP vector is
+rounded to the label of a correlated random Gaussian point.Left:the half-space partition
+underlying hyperplane rounding and Krivine’s classical bound.Right:a partition with a
+cubic boundary, of the kind used by the cubic–quintic scheme of the companion paper;
+the dashed line marks the half-space boundary for comparison. The extra freedom in
+the shape of the boundary, combined with the enriched correlation structure of limiting
+schemes, is what suppresses the nonlinearity of the correlation functionH.
+Limiting Krivine schemes.The companion paper enlarges the space of previously known
+schemes. Alimiting Krivine schemeis obtained as a limit of classical Krivine schemes of growing
+dimension; it is again described by a pair of partitions, and it inherits the rounding guarantees of
+the schemes converging to it. This enlarged search space is where both of the main results live.
+Lower bounds are hard instances.Lower bounds onKG have historically come from the
+complementary direction: exhibiting an explicit matrixA for whichSDP(A)provably exceeds
+OPT(A)by a large factor. Grothendieck’s own work impliesKG≥π/ 2, and a high-dimensional
+Gaussian construction found independently by Davie and Reeds givesKG≥ 1.6769... [Dav84,
+Ree91]. That bound stood for more than four decades, until two recent works improved it by
+10−26 and10−12, respectively [Hei26a, JM26]. The state of the art entering this work was thus
+1.6769...≤K G ≤1.7822...,
+an interval wide enough that even the tenths digit ofKG was unknown.
+3 The Results of the Companion Paper
+The companion paper [SLX+26] proves two results, one for lower bound and one for upper bound.
+We state them here in abridged form; the rest of this paper needs only the statements and the
+shape of the arguments.
+6
+
+Theorem 3.1(Upper bound, abridged).There is an explicit limiting Krivine scheme, the
+cubic–quintic scheme, which can be used to show
+KG ≤ π
+2 log(1 +
+√
+2)−3.47×10 −4.
+The scheme’s partitions have cubic boundaries of the kind shown in Figure 2 (right). All
+previous constructions, including the two recent10−5-scale improvements, were fixed low-
+dimensional schemes; this is the first improvement obtained by letting the dimension grow, and
+it answers affirmatively a question of Braverman et al. [BMMN11] on whether higher dimension
+helps.
+Theorem 3.2(Lower bound, abridged).The correlation function H(t) =b1t +b3t3 +··· of
+every Krivine scheme satisfies the constraint
+b3 ≥2b 1− 11
+6 .(1)
+Combined with the optimality theorem of Naor and Regev [NR14], this implies
+KG ≥ 6π
+11 = 1.7135...
+The interesting feature of Theorem 3.2 is the reversal of strategy. Instead of constructing
+a hard instance, the proof establishes a ceiling on the performance ofeveryscheme. This is
+the first lower bound onKG that does not proceed by constructing a gap instance. The proof
+reduces the constraint on high-dimensional partitions to a small set of one-dimensional Gaussian
+inequalities.
+Together, the two theorems give
+6π
+11 ≤K G ≤ π
+2 log(1 +
+√
+2)−3.47×10 −4,
+determining the tenths digit ofKG to be7. The remainder of this paper concerns how these
+results were found: the AI research system and its methodology, the run itself, and what the
+record shows about current AI systems as mathematical collaborators.
+4 AI Methodology and Analysis
+The lower bound results in this paper were obtained in collaboration with an AI research system.
+The cubic–quintic construction and its certificate (Theorem 3.1) predate the current system and
+werefound through conversationwith GPT-5.5-Pro. The lower boundKG≥ 6π/11was discovered
+and first proved by the system; we have since verified the argument ourselves, and the proof in the
+companion paper [SLX+26] is our revision of the system’s write-up. The system also produced
+further improvements on both sides of the problem, which we report in Section 5 but do not state
+as theorems, because their certificates have not yet been human-verified. This section documents
+the methodology (Section 4), quantifies the run and its outcomes (Section 5), reconstructs how
+the lower bound was found (Section 6), and discusses what the record shows about the strengths
+and weaknesses of current AI systems as mathematical collaborators (Section 7).
+7
+
+AI models and compute.The run used two frontier language models: a reasoning model
+(OpenAI GPT-5.5-Pro at maximal reasoning effort, replaced mid-run by GPT-5.6-Sol) and a
+coding agent (Anthropic Claude Code, running Claude Opus and later Claude Fable 5). Floating-
+point searches ran on a single four-GPU node, and every Arb-certified computation was redone
+in interval arithmetic on CPU.
+The AI research system.The AI research system is organized as a harness coupling two
+agents in distinct roles: (1) thereasoning agentserves as the brain that selects directions, develops
+arguments, specifies experiments, and audits the resulting claims, and (2) thecoding agentserves
+as the executor that maintains the project repository, implements and runs experiments, retrieves
+literature, and drives the reasoning model through a scripted interface.
+The agents run in bounded sessions, and no agent context survives from one session to the next.
+Continuity is instead carried by files, principally a problem statement, a single summary file that
+serves as working memory and into which finished work is merged, and append-only transcripts
+and experiment logs. The harness was adjusted repeatedly over the run in response to observed
+failures; we describe its final form, to the extent needed to interpret the record.
+Run configuration.Work is organized intosessionsof a few hours, of which two to five run
+concurrently on mutually distinct directions. A session passes through fixed phases: orientation
+from the problem statement and summary files, selection of a focus, a research loop in which
+the reasoning model requests computations, literature, or further reasoning time, and a closing
+audit that produces a calibrated summary in which every claim is tagged as proven, numerically
+supported, conjectural, or heuristic. We reserve the word theorem, here and in the rest of the
+paper, for statements that we have additionally checked ourselves.
+The run was initialized with our prior work on the constant: the cubic–quintic scheme, the
+coefficient formulas and certification machinery, several months of accumulated notes, and a
+problem statement listing candidate directions for both bounds. The search space the run explored
+is a generalization of the cubic–quintic scheme, and the possibility of converting obstructions
+into lower bounds was raised, as a suggestion, in the problem statement. The system therefore
+operated downstream of the mathematical framework it was given, a point quantified in Section 6.
+Human collaboration.Human operators (the authors) steered the run asynchronously
+through text files read at the start of, and during, every session. Steering consisted of priorities,
+targets, audits of the run’s own claims, and occasional mathematical pointers; about forty
+directives were issued over the run.
+5 Results
+The run spanned June 16 to July 24, 2026. It comprised roughly 240 research sessions. The
+reasoning model was called 2,091 times, consuming about 152 million tokens at an estimated
+$5,400 in API cost; the coding agent ran on a flat-rate subscription (Claude Max). Table 1
+collects these figures, and Table 2 gives the timeline of the bounds.
+The run’s principal outcome, and the one this paper states as a theorem, is the lower bound
+8
+
+Duration June 16 – July 24, 2026 (main phase through July 4)
+Research sessions≈240
+Reasoning model GPT-5.5-Pro, later GPT-5.6-Sol; maximal effort
+Usage and cost 2,091 calls;≈152M tokens;≈$5,400
+Coding agent Claude Code (Opus, later Fable 5); subscription
+Human steering≈40dated directives
+Table 1:The run at a glance.Aggregates computed from the harness telemetry. Dollar
+figures are list-price estimates; coding-agent usage was only partially metered.
+Sessions Event
+1 run begins from the interval1.6769566742≤K G≤ 1.7818666070(the upper end is
+the cubic–quintic bound of this paper)
+18 upper-bound search plateaus; the operators direct a pivot to the lower bound
+44 numerical upper bound1.7802243recorded (later withdrawn)
+55–57 affine reframe;K G≥6π/11derived
+58–646π/11proof system-tested; first L ATEX write-up
+92, 117 lower bounds27π/49≈1.7311and51π/92≈1.7415machine-verified
+follow-up the session-44 value found unsupported by internal audit and withdrawn
+follow-up upper bound1.781801841033system-tested
+follow-up upper bound1.7813319810625639system-tested; adversarial review passed
+Table 2:Timeline of the bounds produced during the run.Machine-verified means
+accepted by the verification protocol of Section 4. The last three events fall in the short
+follow-up phases, whose sessions we do not cite individually. Of the run’s results, only
+KG≥ 6π/11has additionally been verified by the authors; it is the result stated as a
+theorem in this paper.
+KG≥ 6π/11, whose discovery Section 6 reconstructs. Beyond it, the run produced system-tested
+upper bounds of1.781801841033and then1 .7813319810625639, improving on the cubic–quintic
+value, together with the two stronger lower bounds listed in Table 2. We report these as
+machine-verified claims rather than theorems: each passed the full internal protocol, but we have
+not yet verified their certificates ourselves.
+6 Case study: from a failed upper-bound search to a
+lower bound
+The lower bound is the run’s main discovery. We reconstruct it here in outline, highlighting the
+human interventions that shaped it and the mathematical contributions of the AI system once it
+had the right framing.
+The lower bound began with a plateauing search for a better upper bound. The system explored
+several variants of the limiting Krivine schemes. Although the constructions differed, they
+repeatedly encountered the same tradeoff: suppressing the unwanted nonlinear terms in the
+9
+
+inverse majorant series also weakened the leading term. The run recorded this pattern, but
+continued to search for further constructions rather than treating the repeated failures as evidence
+of a general obstruction.
+The key human intervention was to recognize that the repeated failures likely reflected a general
+analytic obstruction, and that proving such an obstruction for mixed and limiting schemes would
+itself be mathematically valuable: by the optimality theorem of Naor and Regev [NR14], it would
+imply a lower bound onKG. The operators therefore redirected the system away from searching
+for new limiting Krivine schemes and asked it instead to synthesize the accumulated failures,
+identify their common structure, and attempt to prove a universal obstruction.
+After further program-level directives, the system found the central mathematical reframe and
+developed a complete proof (see [SLX+26, Part 1]). It expressed the obstruction as an affine
+inequality between the two leading coefficients of a scheme’s correlation function. Because this
+inequality is preserved under averaging and limits, it extends to mixed and limiting schemes.
+The system then reduced the required high-dimensional estimates to one-dimensional inequalities
+and produced the computer-assisted certificate, yielding
+KG≥ 6π
+11.
+The authors subsequently revised the exposition and independently verified the proof.
+This illustrates the different roles of the human operators and the AI system throughout the
+run. The system was effective at technical execution: drawing from its wealth of mathematical
+knowledge and its competence in problem-solving to propose lemmas and construct proofs. The
+human input was primarily of research judgement and mathematical taste: judging when a
+research direction has been somewhat exhausted, understanding that mathematical understanding
+and discoveries frequently come from synthesizing failures, and recognizing that a new lower-
+bound mechanism is much more interesting than a small numerical improvement to a known
+upper-bound method. Appendix A gives the detailed chronology.
+7 Discussion
+Motivated by mathematical problem-solving frameworks such as [CB05, Sch83a], we present the
+following decomposition of long-horizon mathematical research in the harness (see Figure 3).
+At any point in time, a research program has anactive represented state. This is a compact
+representation of the complete history of the run for the purpose of choosing the next step,
+including current objectives, established and conjectural claims, evidence, failed approaches,
+open proof obligations, and unresolved choices. From this state, the researcher usesresearch
+judgementto select a high-level action. Such an action might be to prove an auxiliary lemma,
+test a new construction, compare several failures, search for a counterexample, reformulate the
+target, or audit an earlier claim.Technical executiontakes the high-level action, and then plans
+and executes the steps needed to produce results. Finally, those results must be distilled and
+incorporated into an updated active represented state, in a way that is efficient and preserves all
+important information. The cycle then repeats.
+The components of this research cycle have familiar precedents. Newell and Simon model problem
+solving as the application of operators to states in a problem space [NS72]; Pólya separates
+understanding and planning from execution and looking back [Pól57]; Schoenfeld emphasizes
+10
+
+Research state
+objectives, claims,
+evidence, and failures
+High-level action
+the direction or mode of
+inquiry to pursue next
+Results
+proofs, computations,
+counterexamples, or
+informative failures
+Research
+judgement
+T echnical execution
+Research-state
+representation
+Figure 3: A simplified research cycle modelling the process of long-horizon mathematical
+research. The decomposition is intended as a systems-level description.
+control, the executive decisions that select and monitor mathematical strategies [Sch83a, Sch85];
+and Schön describes professional inquiry as a reflective conversation in which action changes the
+situation and may require it to be reframed [Sch83b]. Figure 3 is a minimal synthesis of these
+ideas, adapted to the architecture of the harness.
+7.1 Performance across research functionalities
+The system consistently exhibited an asymmetry in its capabilities between its local and global
+functionalities. It was exceptionally strong at technical execution, and substantially less reliable
+at research judgement and research-state representation, the two functionalities that operate
+over the research program as a whole.
+(1) Technical execution: strong.Once a sufficiently well-specified high-level action was
+fixed, the system was usually effective at thinking creatively and devising the mathematics and
+computations necessary to advancing the action. It drew upon its vast range of mathematical
+knowledge and problem-solving skills to develop lemmas and proofs, and it also effectively ran
+and interpreted experiments. A prominent example of this was how the system found and
+developed the current lower bound, as detailed in the case study. After the upper-bound failures
+were reframed as evidence for a universal obstruction, the system developed the central proof of
+the lower bound with comparatively little further intervention. This required a lengthy argument
+with many intermediate results, involving creative application of areas such as Gaussian harmonic
+analysis, geometric and functional inequalities, variational arguments, and finite-dimensional
+optimization.
+(2) Research judgement: limited autonomy.Long-horizon research requires repeated
+decisions about what the program should do next [Tao07, Thu94]. These decisions combine
+mathematical valuation — the expected significance, generality, explanatory value, and down-
+stream use of a result — with estimates of difficulty, probability of success, information gained
+from failure, verification cost, and opportunity cost.
+11
+
+The system did not reliably make these decisions at the program level. The initial upper-bound
+search in the case study is a clear example: several distinct approaches had failed for the same
+structural reason, yet the run opened another variation rather than asking whether the common
+obstruction was universal, and could be proven as a theorem. Other failings of the system
+included not recognizing the value of a theoretical result over numerical evidence, and prioritizing
+a sharper restricted result that is not inherently interesting over a general result. The relevant
+limitation was not an inability to perform the required reasoning. Once prompted to step back,
+synthesize, or reframe, the system often did so effectively. It was the failure to recognize, from
+the evolving state of the project, when such a change in reasoning mode was called for. This
+resembles the distinction made by Mason and Spence [MS99] between possessing a strategy and
+knowing toactivate it in the appropriate situation.
+(3) Research-state representation: fragile.This functionality became more difficult as
+the run grew. The project produced far more intermediate mathematics than could be placed in
+a model’s context at once, so the harness maintained an archive of transcripts and experiments
+together with a much smaller curated summary, rewritten at every merge, that each new session
+read as its working memory. The withdrawn upper bound in session 44 (see Table 2) is a clear
+case of failure. A fast numerical evaluator built in session 4 carried an explicit caveat that
+its score was safe only for exploration; the caveat did not survive later representations of the
+research state, and by session 44 the uncertified score had set the record. A feasibility criterion
+that would have invalidated the record was lost even earlier: the run proved it in session 8, but
+it disappeared in a later handoff and was eventually reproved from scratch by the audit that
+withdrew the record 25 days later. In both failures, the archive retained the original facts; it was
+the compressed state governing decisions that failed.
+7.2 Origins of the capability profile
+We hypothesize the following explanation for the AI system’s performance in each of these
+functionalities. There is a plausible asymmetry in both the training data and feedback received
+by the base model, where it has a lot more experience with local, technical execution over global,
+long-horizon reasoning and planning. Mathematical papers, textbooks, and solved problems
+provide many examples of technical execution where definitions are used and results are proven.
+Moreover, AI models can be trained effectively on problems where the final answer or proof can
+be scored automatically [SWZ+24, H+26], which roughly corresponds to the skills required for
+strong technical execution we see in the run.
+The training data and feedback available for research judgement is much rarer. Finished mathe-
+matical papers rarely record the full process of discovery, including the abandoned approaches, the
+experiments performed, and decisions to pivot directions. Instead, they represent a polished final
+state, written for expositional clarity, rigor, and brevity. Lakatos’s contrast between deductive
+exposition and the process of proofs, criticism, and revision makes this explicit [Lak76]; Thurston
+likewise argues that mathematical progress and understanding are not captured by formal proofs
+alone [Thu94]. Moreover, it is computationally much more difficult to run long-horizon mathe-
+matical research projects in the same training environments as the more elementary mathematical
+problems AI models are trained on. The reward design for this would also be more difficult, as
+reward signals are very sparse and success can be open-ended.
+12
+
+The weakness in research-state representation fits the same asymmetry. Curation is a global
+functionality: deciding what the program will later need to know is a prediction about its
+future, of the same kind as the judgements above. The record that would teach the model
+this prediction (what was kept, what was dropped, and which omission later mattered) is what
+finished exposition omits. The hypothesis also predicts the direction of the failure we observed.
+The active state was rewritten roughly two hundred times over the run, and each rewrite draws
+on a training genre, the finished mathematical paper, that states results and omits caveats,
+scope, and doubt. Therefore, iterated rewriting regresses toward that genre, and headline values
+survive retelling more reliably than their evidential status, a bias documented in both human and
+language-model retelling [Bar32, AS23, MGVS25]. The corpus records mathematics as product
+rather than process, and both global functionalities need the process view.
+7.3 Human collaboration
+The decomposition is also instructive in classifying the human contribution in the run, which
+entered in three areas. First, the operators supplied the initial research state, including the
+cubic–quintic framework and its certification machinery, and a problem statement with candidate
+directions for both bounds (Section 4). Second, through about forty directives, they supplied
+program-level research judgement: selecting and redirecting the high-level action (the lower bound
+pivot of Section 6 is the crucial instance) and fixing priorities such as generality over numerical
+sharpness. Third, they intervened in research-state representation, continuously changing the
+structure of the research-state representation, and changing the guidelines for what information
+to store and how. The technical execution was left almost entirely to the system.
+This contribution is itself mathematically significant. Recognizing when to switch to another
+approach, or when a common obstruction might be able to be generalized to a useful theorem
+are instances of the higher-level, largely intuitive judgement that mathematicians acquire with
+experience [Tao07, Thu94]. The same holds for research-state representation: deciding which
+information may matter to future directions requires foresight and experience with mathematical
+research.
+7.4 Relation to recent work
+Recent successes of AI in mathematics, including on open problems, vary in method and in
+the role of the human. Evaluator-guided search has produced record constructions on problems
+whose candidate solutions can be scored automatically [RPBN+24, NVE+25, CEWW24], and
+formal provers have reached medal-level performance on olympiad problems [H+26]. Frontier
+reasoning models have resolved open questions with varying degrees of human involvement: an
+internal OpenAI model disproved the Erdős unit-distance conjecture [Ope26a], a mathematician
+working with Claude Fable 5 found a counterexample to the Jacobian conjecture [Alp26], and
+OpenAI has announced solutions to ten open problems [Ope26b].
+To the best of our knowledge, this work is the first in-depth case study of a long-horizon human–
+AI collaboration on a mathematical research program: over several weeks, we accumulated
+intermediate results, explored and shelved various directions, and steered at the program level
+(Section 4). We expect this collaborative mode, rather than full autonomy, to be the likeliest
+source of strongest results and thus the prevailing near-term form of AI-assisted mathematics:
+13
+
+reasoning models are already entering mathematicians’ working practice [BCE+25], but the
+weaknesses we document show the current limitations of full autonomy. This report is thus a
+useful case study of a successful human–AI collaboration in mathematics.
+7.5 Future directions
+Our analysis suggests two complementary directions. For AI research, improving research
+judgement and research-state representation may require training and evaluation on records
+of mathematics as a process, including failed approaches, strategic decisions, and evolving
+assessments of evidence. For mathematical practice, while these limitations persist, human
+expertise is likely to remain most valuable in these global functionalities: deciding when to persist
+or reframe a direction, and maintaining an accurate representation of accumulated progress.
+References
+[Alp26] Levent Alpöge,A counterexample to the Jacobian conjecture, Announcement
+on X (formerly Twitter), July 2026, Counterexample in dimension three,
+found with Anthropic’s Claude Fable 5. https://x.com/__alpoge__/status/
+2079028340955197566.
+[AN06] Noga Alon and Assaf Naor,Approximating the cut-norm via grothendieck’s inequality,
+SIAM Journal on Computing35(2006), no. 4, 787–803.
+[AS23] Alberto Acerbi and Joseph M. Stubbersfield,Large language models show human-
+like content biases in transmission chain experiments, Proceedings of the National
+Academy of Sciences120(2023), no. 44, e2313790120.
+[Bar32] Frederic C. Bartlett,Remembering: A study in experimental and social psychology,
+Cambridge University Press, Cambridge, 1932.
+[BCE+25] Sébastien Bubeck, Christian Coester, Ronen Eldan, Timothy Gowers, Yin Tat Lee,
+Alexandru Lupsasca, Mehtaab Sawhney, Robert Scherrer, Mark Sellke, Brian K.
+Spears, Derya Unutmaz, Kevin Weil, Steven Yin, and Nikita Zhivotovskiy,Early
+science acceleration experiments with GPT-5, 2025.
+[BMMN11] Mark Braverman, Konstantin Makarychev, Yury Makarychev, and Assaf Naor,The
+grothendieck constant is strictly smaller than krivine’s bound, Proceedings of the
+2011 IEEE 52nd Annual Symposium on Foundations of Computer Science (2011),
+453–462.
+[CB05] M.P. Carlson and I Bloom,The cyclic nature of problem solving: An emergent
+multidimensional problem-solving framework, Educ Stud Math58(2005), 45—-75.
+[CEWW24] FrançoisCharton, JordanS.Ellenberg, AdamZsoltWagner, andGeordieWilliamson,
+Patternboost: Constructions in mathematics with a little help from ai, 2024.
+[CHTW04] Richard Cleve, Peter Hoyer, Ben Toner, and John Watrous,Consequences and
+limits of nonlocal strategies, Proceedings of the 19th Annual IEEE Conference on
+Computational Complexity, 2004, pp. 236–249.
+[Dav84] A. M. Davie,A lower bound forK G, Unpublished manuscript, 1984.
+14
+
+[GEB+24] Elliot Glazer, Ege Erdil, Tamay Besiroglu, Diego Chicharro, Evan Chen, Alex
+Gunning, Caroline Falkman Olsson, Jean-Stanislas Denain, Anson Ho, Emily
+de Oliveira Santos, Olli Järviniemi, Matthew Barnett, Robert Sandler, Matej Vrzala,
+Jaime Sevilla, Qiuyu Ren, Elizabeth Pratt, Lionel Levine, Grant Barkley, Natalie
+Stewart, Bogdan Grechuk, Tetiana Grechuk, Shreepranav Varma Enugandla, and
+Mark Wildon,FrontierMath: A benchmark for evaluating advanced mathematical
+reasoning in AI, 2024.
+[Gro53] Alexandre Grothendieck,Résumé de la théorie métrique des produits tensoriels
+topologiques, Boletim da Sociedade de Matemática de São Paulo8(1953), 1–79.
+[H+26] Thomas Hubert et al.,Olympiad-level formal mathematical reasoning with reinforce-
+ment learning, Nature651(2026), 607–613.
+[Hei26a] Steven Heilman,A lower bound for grothendieck’s constant, 2026.
+[Hei26b] ,An upper bound on grothendieck’s constant, 2026.
+[JM26] Chris Jones and Giulio Malavolta,The grothendieck constant is strictly larger than
+davie-reeds’ bound, 2026.
+[KN11] Subhash Khot and Assaf Naor,Grothendieck-type inequalities in combinatorial
+optimization.
+[Kri77] Jean-Louis Krivine,Sur la constante de Grothendieck, Comptes Rendus de
+l’Académie des Sciences de Paris, Série A-B284(1977), no. 8, A445–A446.
+[Lak76] Imre Lakatos,Proofs and refutations: The logic of mathematical discovery, Cam-
+bridge University Press, Cambridge, 1976, Edited by John Worrall and Elie Zahar.
+[LL25] Thang Luong and Edward Lockhart,Advanced version of Gemini with Deep Think
+officially achieves gold-medal standard at the International Mathematical Olympiad,
+https://goo.gle/imo-gold, July 2025.
+[LP68] Joram Lindenstrauss and Aleksander Pełczyński,Absolutely summing operators in
+Lp-spaces and their applications, Studia Mathematica29(1968), 275–326.
+[LSX+26] Alan Li, Rahul Saha, Anton Xue, Swarat Chaudhuri, Adam Klivans, Pravesh K.
+Kothari, and Raghu Meka,The grothendieck constant is less than π
+2 log(1+
+√
+2)− 10−5,
+2026.
+[MGVS25] Amr Mohamed, Mingmeng Geng, Michalis Vazirgiannis, and Guokan Shang,LLM
+as a broken telephone: Iterative generation distorts information, Proceedings of the
+63rd Annual Meeting of the Association for Computational Linguistics (Volume 1:
+Long Papers), 2025, ACL Anthology 2025.acl-long.371.
+[MS99] John Mason and Mary Spence,Beyond mere knowledge of mathematics: The
+importance of knowing-to act in the moment, Educational Studies in Mathematics
+38(1999), no. 1–3, 135–161.
+[NR14] Assaf Naor and Oded Regev,Krivine schemes are optimal, Proceedings of the
+American Mathematical Society142(2014), no. 12, 4315–4320.
+[NS72] Allen Newell and Herbert A. Simon,Human problem solving, Prentice-Hall, Engle-
+wood Cliffs, NJ, 1972.
+[NVE+25] Alexander Novikov, Ngân V˜ u, Marvin Eisenberger, Emilien Dupont, Po-Sen Huang,
+Adam Zsolt Wagner, Sergey Shirobokov, Borislav Kozlovskii, Francisco J. R. Ruiz,
+15
+
+Abbas Mehrabian, M. Pawan Kumar, Abigail See, Swarat Chaudhuri, George
+Holland, Alex Davies, Sebastian Nowozin, Pushmeet Kohli, and Matej Balog,
+AlphaEvolve: A coding agent for scientific and algorithmic discovery, 2025.
+[Ope26a] OpenAI,Planar point sets with many unit distances,https://cdn.openai.com/
+pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-proof.pdf ,
+May 2026, Accessed: 2026-06-04.
+[Ope26b] ,Ten advances in mathematics and theoretical computer sci-
+ence, Announcement, August 2026, https://openai.com/index/
+ten-advances-in-mathematics/.
+[Pis11] Gilles Pisier,Grothendieck’s theorem, past and present, 2011.
+[Pól57] George Pólya,How to solve it: A new aspect of mathematical method, 2 ed.,
+Princeton University Press, Princeton, NJ, 1957.
+[Ree91] J. A. Reeds,A new lower bound on the real Grothendieck constant, Unpublished
+manuscript, 1991.
+[RPBN+24] Bernardino Romera-Paredes, Mohammadamin Barekatain, Alexander Novikov,
+Matej Balog, M. Pawan Kumar, Emilien Dupont, Francisco J. R. Ruiz, Jordan S.
+Ellenberg, Pengming Wang, Omar Fawzi, Pushmeet Kohli, and Alhussein Fawzi,
+Mathematical discoveries from program search with large language models, Nature
+625(2024), 468–475.
+[Sch83a] Alan H. Schoenfeld,Episodes and executive decisions in mathematical problem
+solving, Acquisition of Mathematics Concepts and Processes (Richard Lesh and
+Marsha Landau, eds.), Academic Press, New York, 1983, pp. 345–395.
+[Sch83b] Donald A. Schön,The reflective practitioner: How professionals think in action,
+Basic Books, New York, 1983.
+[Sch85] Alan H. Schoenfeld,Mathematical problem solving, Academic Press, Orlando, FL,
+1985.
+[SLX+26] Rahul Saha, Alan Li, Anton Xue, Swarat Chaudhuri, Adam Klivans, Pravesh K.
+Kothari, and Raghu Meka,New upper and lower bounds for the grothendieck
+constant, 2026.
+[SWZ+24] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei
+Zhang, Mingchuan Zhang, Y. K. Li, Y. Wu, and Daya Guo,DeepSeekMath: Pushing
+the limits of mathematical reasoning in open language models, 2024.
+[Tao07] Terence Tao,What is good mathematics?, Bulletin of the American Mathematical
+Society44(2007), no. 4, 623–634.
+[Thu94] William P. Thurston,On proof and progress in mathematics, Bulletin of the Ameri-
+can Mathematical Society30(1994), no. 2, 161–177.
+[Tsi85] Boris S. Tsirelson,Quantum analogues of Bell’s inequalities. The case of two
+spatially divided domains, Zapiski Nauchnykh Seminarov Leningradskogo Otdeleniya
+Matematicheskogo Instituta im. V. A. Steklova (LOMI)142(1985), 174–194,
+Problems of the theory of probability distributions, IX.
+16
+
+A Case study: the lower bound
+This is a more detailed chronology of the lower bound case study.
+The plateau.The run began on the upper bound, searching the limiting-scheme space of our
+preprint for schemes whose correlation function admits a large inverse-majorant parameterγ,
+since an admissibleγ givesKG≤π/ (2γ). From the hyperplane valueγ = log(1 +
+√
+2)≈ 0.8814
+it reachedγ≈ 0.882, and there it stalled: in sessions 12 through 17 it opened six mechanically
+distinct escape routes, and each failed against the same obstruction, namely that cubic coefficient
+mass cannot be cancelled without also reducing the linear coefficient. Each failure was recorded
+and tagged, and the run’s response was to begin a seventh variation of the same search.
+First intervention: turn the failures into a theorem.The operators redirected the
+run in session 18. Instead of attempting another escape, it was to synthesize the accumulated
+failures into a proof that no scheme in the class does much better: a ceilingγ≤ Γvalid for the
+full class, with mixtures and arbitrary dimension, converts through the optimality theorem of
+Naor and Regev [NR14] into the lower boundKG≥π/ (2Γ). The intervention supplied no new
+mathematics: the problem statement had suggested this dualization from the outset, and the
+run had accumulated exactly the required evidence without making the connection. Session 18
+identified the Naor–Regev theorem as the correct transfer, proved a first ingredient valid in every
+dimension, and located the difficulty precisely: the ceilings it could prove covered too narrow a
+class of schemes.
+Progress in two dimensions.Within days the run had proved a cubic ceiling of strength
+Γ≈ 0.8866for two-dimensional schemes, with the inequality certified in interval arithmetic, and
+had sharpened the constant numerically toΓ≈ 0.8846. The extension to arbitrary dimension
+and to mixtures, which the duality requires, did not follow: fourteen sessions in the range
+32–51 attacked it, each reducing the gap to a sub-lemma, proving the sub-lemma in a restricted
+setting, and leaving the global assembly open, while the restricted results accumulated in
+memory as apparent progress. Two useful facts emerged alongside this loop: the run verified
+the normalization of the Naor–Regev transfer against the original paper, and it computed that
+improving the Davie–Reeds [Dav84, Ree91] bound1.6769566742requires a universal ceiling only
+atΓ ≤ 0.93669, far above the two-dimensional value, so a general ceiling could be far from sharp
+and still give a new lower bound.
+Second intervention: the general bound, through theory.The operators ended
+this loop with a second redirection, on two grounds: refinements of the two-dimensional result
+were not the object of interest, since only a ceiling for the full class dualizes; and the gap was
+conceptual, so further implementation would not close it. The run was to spend several sessions
+on theory alone. Session 55 mapped the dependency structure of the preceding weeks and
+identified the recurring error, restricted closures recorded as global progress. Session 56 then
+produced the decisive reframe. Every failed transport had been nonlinear in quantities that do
+not average when schemes are mixed; the Hermite coefficients(b1,b 3)of the correlation function,
+by contrast, are linear functionals of the scheme, so a constraint that is affine in(b1,b 3)passes
+to mixtures and to coefficientwise limits with no further argument. Choosing the constraint for
+17
+
+transportability, and requiring equality at the extremal hyperplane point(b1,b 3) = (1, 1
+6), gives
+the one-parameter family of affine constraints
+b3 ≥(1 +λ)b 1−
+(
+λ+ 5
+6
+)
+, λ≥ 1
+2,
+whereλ indexes the slope of the line through the hyperplane point. Each member forces a barrier
+Γλ = (λ + 5
+6)/(1 +λ)on the admissible parameter, hence a boundKG≥π/ (2Γλ)conditional on
+proving that member, and everyΓλ below0.93669improves on Davie–Reeds.
+Third intervention: one certified rung before a better one.The tangent member
+λ = 1
+2, worthKG≥ 9π/16≈ 1.767, requires a sharp chaos inequality that remains open, and
+once the family existed the run’s inclination was to work toward its strongest provable member.
+The operators set the priority differently: what mattered was to establish that the method
+yields any new lower bound at all, so the run was to select a rung whose proof closes, certify
+it completely, and write it up, with improvements inside the family treated as secondary. At
+λ = 1the proof collapses to elementary structure: session 57 found that the decomposition
+h = (f +g)/2,k = (f−g )/2reduces the constraint, fiber by one-dimensional fiber, to the ternary
+inequality, whose closing case analysis is short, givingΓ1 = 11
+12 and
+KG ≥ 6π
+11 ≈1.7136.
+Sessions 58–64 then subjected the chain to adversarial review, which found and repaired the one
+substantive gap (the passage from finitely many schemes to measurable mixtures, closed by a
+weak-∗ lemma), a Jensen inequality applied in the wrong direction, and a small defect in the
+interval certificate’s coverage, after which the run produced the first complete write-up, about a
+day after the reframe. The stronger rungs27π/49and51 π/92of Table 2 followed within a week
+by the same method at smaller values ofλ.
+18

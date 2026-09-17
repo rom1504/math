@@ -1,0 +1,190 @@
+{
+  "equal_block_constants": {
+    "1": {
+      "beta": 0.6366197723675812,
+      "cap_threshold_two_beta_over_three": 0.4244131815783874
+    },
+    "16": {
+      "beta": 0.7855224609375001,
+      "cap_threshold_two_beta_over_three": 0.5236816406250001
+    },
+    "2": {
+      "beta": 0.7071067811865475,
+      "cap_threshold_two_beta_over_three": 0.4714045207910316
+    },
+    "3": {
+      "beta": 0.7351051938957228,
+      "cap_threshold_two_beta_over_three": 0.4900701292638152
+    },
+    "4": {
+      "beta": 0.7500000000000003,
+      "cap_threshold_two_beta_over_three": 0.5000000000000002
+    },
+    "64": {
+      "beta": 0.794774029983738,
+      "cap_threshold_two_beta_over_three": 0.5298493533224921
+    },
+    "8": {
+      "beta": 0.7733980419227865,
+      "cap_threshold_two_beta_over_three": 0.515598694615191
+    }
+  },
+  "exact_dictionary_cases": [
+    {
+      "code_size": 8,
+      "eta": "1",
+      "independent_rank_one_mean": "1",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "1",
+      "physical_switching_classes": 2,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "code_size": 16,
+      "eta": "5/6",
+      "independent_rank_one_mean": "3/2",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "3/2",
+      "physical_switching_classes": 4,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "code_size": 32,
+      "eta": "2/3",
+      "independent_rank_one_mean": "9/4",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "9/4",
+      "physical_switching_classes": 16,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "code_size": 64,
+      "eta": "7/12",
+      "independent_rank_one_mean": "9/4",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "9/4",
+      "physical_switching_classes": 64,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "code_size": 128,
+      "eta": "1/2",
+      "independent_rank_one_mean": "9/4",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "9/4",
+      "physical_switching_classes": 512,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "code_size": 256,
+      "eta": "9/20",
+      "independent_rank_one_mean": "45/16",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "45/16",
+      "physical_switching_classes": 4096,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "code_size": 64,
+      "eta": "1/2",
+      "independent_rank_one_mean": "7/4",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "7/4",
+      "physical_switching_classes": 4,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "code_size": 256,
+      "eta": "5/12",
+      "independent_rank_one_mean": "39/16",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "39/16",
+      "physical_switching_classes": 16,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "code_size": 128,
+      "eta": "7/16",
+      "independent_rank_one_mean": "17/8",
+      "minimum_classes": 1,
+      "minimum_exact_mean": "17/8",
+      "physical_switching_classes": 2,
+      "rank_one_is_finite_minimizer": true,
+      "shapes": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  ],
+  "spectral_audit": {
+    "exact_sign_law_row_moment_checks": 480,
+    "pointwise_spectral_max_certificates": 960
+  },
+  "status": "PASS"
+}

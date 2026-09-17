@@ -89,3 +89,25 @@ be preserved again at the next checkpoint. No research is removed because
 it is unfinished or negative. Previously excluded environments, reviewed
 build products and losslessly archived oversized raw data remain excluded
 for the documented reasons above.
+
+## Fifth checkpoint
+
+Snapshot `2026-09-17/211102Z` preserves1,982 research payloads,
+166,773,868 bytes. No credential candidate or unresolved oversized
+output was found; the same14 historical dynamic-reference flags remain.
+Sources now include Dirksen's mixed-tail chaining paper and the primary
+Krivine/Grothendieck reconstruction. The frozen lower certificate was
+replayed with target43/100 and again returns the certified lower
+.4333221116640807534..., including its explicit projection-tail penalty.
+
+New canonical results include actual cloned-block regularization,
+physical sign-noise stability, the actual low-cap uniform-response
+theorem and three independent reconstructions. An earlier bounded-op
+claim is explicitly labeled valid but redundant; failed scope extensions
+and high-energy counterexamples remain preserved. New code uses tracked
+matrix inputs or explicit witness arguments. The derivative/constant
+certificates distinguish exact rational checks from finite diagnostics.
+
+Live research continues after this snapshot. Further versions and the
+sharp paired-law floor will be canonical or preserved at the final
+checkpoint. No unfinished derivation is discarded for being unpolished.

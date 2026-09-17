@@ -1,0 +1,1252 @@
+{
+  "child_minimizer_certificates": [
+    {
+      "beta": 1.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 1,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.12011450695827752463176337350967907383977995131009312059838350534380127953949251",
+      "order": 2,
+      "raw_t": 0.5,
+      "root_gauged_signing_count": 1,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 4
+    },
+    {
+      "beta": 4.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 1,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "1.3250027473578644309377511968295773166866487396033259215568544655976545834660283",
+      "order": 2,
+      "raw_t": 2.0,
+      "root_gauged_signing_count": 1,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 4
+    },
+    {
+      "beta": 1.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 2,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.2433493805508170231231421920811301252278122874030056078720666884426946962744301",
+      "order": 3,
+      "raw_t": 0.4082482904638631,
+      "root_gauged_signing_count": 2,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 6
+    },
+    {
+      "beta": 4.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 2,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "2.93188560706320550686041736496843840154917123365381686459108485233663030114979",
+      "order": 3,
+      "raw_t": 1.6329931618554523,
+      "root_gauged_signing_count": 2,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 6
+    }
+  ],
+  "classification": "finite exhaustive child-signing selection; exact integer energies; high-precision numerical pressure comparison; floating-point Gibbs summaries",
+  "definitions": {
+    "child_augmented_projective": "(s,[x]) with weight proportional to exp(t s H_A(x))",
+    "child_projective": "[x] with weight proportional to cosh(t H_A(x))",
+    "effective_collision_atom_count": "1/sum_atom p(atom)^2",
+    "pair_augmented_projective": "(s,[x],[y]) with weight proportional to exp(t s(H_A(x)+epsilon H_D(y)))",
+    "pair_projective_rank_one": "[Q]=[xy^T], equivalently ([x],[y]), conditional on epsilon, with weight proportional to cosh(t(H_A(x)+epsilon H_D(y)))",
+    "signed_Q_fibre": "conditional on [Q], Q and -Q have equal mass; signed max is half the projective max and signed collision is half the projective collision"
+  },
+  "environment": {
+    "elapsed_seconds": 0.01613926887512207,
+    "numpy": "2.0.2",
+    "python": "3.9.2"
+  },
+  "parameters": {
+    "all_class_pairs": true,
+    "all_relative_orientations": true,
+    "all_thermal_minimizer_classes": true,
+    "betas": [
+      1.0,
+      4.0
+    ],
+    "mp_dps": 80,
+    "orders": [
+      2,
+      3
+    ],
+    "parent_order_rule": "N=2m",
+    "raw_temperature_rule": "t=beta/sqrt(N)",
+    "surrogate_signings": false
+  },
+  "records": [
+    {
+      "aggregate": {
+        "child_augmented_projective_max_atom": {
+          "maximum": 0.36552928931500245,
+          "minimum": 0.36552928931500245
+        },
+        "child_projective_effective_collision_count": {
+          "maximum": 2.0,
+          "minimum": 2.0
+        },
+        "child_projective_max_atom": {
+          "maximum": 0.5,
+          "minimum": 0.5
+        },
+        "pair_augmented_projective_max_atom": {
+          "maximum": 0.26722332269426147,
+          "minimum": 0.26722332269426147
+        },
+        "pair_projective_effective_collision_count": {
+          "maximum": 3.825537982404017,
+          "minimum": 3.825537982404017
+        },
+        "pair_projective_max_atom": {
+          "maximum": 0.30338806675851815,
+          "minimum": 0.30338806675851815
+        },
+        "pair_projective_renyi2_entropy_nats": {
+          "maximum": 1.341699106382871,
+          "minimum": 1.341699106382871
+        },
+        "pair_projective_shannon_entropy_nats": {
+          "maximum": 1.3633155199221454,
+          "minimum": 1.3633155199221454
+        }
+      },
+      "beta": 1.0,
+      "child_order": 2,
+      "children": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.3655292893150025,
+            "augmented_max_from_projective_max": 0.36552928931500245,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.5
+          },
+          "augmented_projective_gibbs_s_xclass": {
+            "atom_count": 4,
+            "collision_probability": 0.30338806675851815,
+            "effective_collision_atom_count": 3.296108547327771,
+            "effective_collision_fraction_of_full": 0.8240271368319427,
+            "effective_shannon_atom_count": 3.5799552110274613,
+            "maximum_atom": 0.36552928931500245,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 1.0064088680781682,
+            "minimum_atom": 0.13447071068499755,
+            "renyi2_entropy_deficit_nats": 0.19355181656647202,
+            "renyi2_entropy_fraction_of_full": 0.8603818770422502,
+            "renyi2_entropy_nats": 1.1927425445534185,
+            "shannon_entropy_deficit_nats": 0.11094407167172737,
+            "shannon_entropy_fraction_of_full": 0.9199707689915846,
+            "shannon_entropy_nats": 1.2753502894481632,
+            "top_mass": {
+              "1": 0.36552928931500245,
+              "16": 1.0,
+              "2": 0.7310585786300049,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "beta": 1.0,
+          "class_id": 0,
+          "energy_histogram_projective": {
+            "1": 2
+          },
+          "order": 2,
+          "parent_order": 4,
+          "projective_cosh_gibbs": {
+            "atom_count": 2,
+            "collision_probability": 0.5,
+            "effective_collision_atom_count": 2.0,
+            "effective_collision_fraction_of_full": 1.0,
+            "effective_shannon_atom_count": 2.0,
+            "maximum_atom": 0.5,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.6931471805599453,
+            "minimum_atom": 0.5,
+            "renyi2_entropy_deficit_nats": 0.0,
+            "renyi2_entropy_fraction_of_full": 1.0,
+            "renyi2_entropy_nats": 0.6931471805599453,
+            "shannon_entropy_deficit_nats": 0.0,
+            "shannon_entropy_fraction_of_full": 1.0,
+            "shannon_entropy_nats": 0.6931471805599453,
+            "top_mass": {
+              "1": 0.5,
+              "16": 1.0,
+              "2": 1.0,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "raw_t": 0.5,
+          "representative_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "root_gauged_member_count": 1,
+          "shell_bound": {
+            "absolute_cap": 1,
+            "non_top_to_top_weight_ratio_bound": 0.0,
+            "projective_max_atom_shell_lower_bound": 0.5,
+            "second_absolute_level": null,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": null
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.2672233226942615,
+            "augmented_max_from_projective_max": 0.26722332269426147,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.30338806675851815,
+            "signed_collision_half_projective_collision": 0.13070057134442398,
+            "signed_max_half_projective_max": 0.15169403337925907
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 8,
+            "collision_probability": 0.18408863810294204,
+            "effective_collision_atom_count": 5.432165777883596,
+            "effective_collision_fraction_of_full": 0.6790207222354495,
+            "effective_shannon_atom_count": 6.40803965648134,
+            "maximum_atom": 0.26722332269426147,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 1.3196705555963912,
+            "minimum_atom": 0.03616474406425663,
+            "renyi2_entropy_deficit_nats": 0.3871036331329436,
+            "renyi2_entropy_fraction_of_full": 0.8138425027230005,
+            "renyi2_entropy_nats": 1.6923379085468921,
+            "shannon_entropy_deficit_nats": 0.2218881433434543,
+            "shannon_entropy_fraction_of_full": 0.8932943586554464,
+            "shannon_entropy_nats": 1.8575533983363814,
+            "top_mass": {
+              "1": 0.26722332269426147,
+              "16": 0.9999999999999999,
+              "2": 0.5344466453885229,
+              "4": 0.7310585786300048,
+              "8": 0.9999999999999999
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 2,
+            "2": 2
+          },
+          "epsilon": -1,
+          "left_class_id": 0,
+          "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "projective_rank_one_qclass": {
+            "atom_count": 4,
+            "collision_probability": 0.26140114268884795,
+            "effective_collision_atom_count": 3.825537982404017,
+            "effective_collision_fraction_of_full": 0.9563844956010042,
+            "effective_shannon_atom_count": 3.909132646782726,
+            "maximum_atom": 0.30338806675851815,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 1.1927425445534185,
+            "minimum_atom": 0.19661193324148182,
+            "renyi2_entropy_deficit_nats": 0.04459525473701964,
+            "renyi2_entropy_fraction_of_full": 0.9678313235718609,
+            "renyi2_entropy_nats": 1.341699106382871,
+            "shannon_entropy_deficit_nats": 0.02297884119774518,
+            "shannon_entropy_fraction_of_full": 0.983424269879319,
+            "shannon_entropy_nats": 1.3633155199221454,
+            "top_mass": {
+              "1": 0.30338806675851815,
+              "16": 1.0,
+              "2": 0.6067761335170363,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "shell_bound": {
+            "absolute_cap": 2,
+            "non_top_to_top_weight_ratio_bound": 0.6480542736638855,
+            "projective_max_atom_shell_lower_bound": 0.30338806675851815,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": 2
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 8,
+            "collision_probability": 0.13070057134442398,
+            "effective_collision_atom_count": 7.651075964808034,
+            "maximum_atom": 0.15169403337925907,
+            "renyi2_entropy_nats": 2.034846286942816,
+            "shannon_entropy_nats": 2.056462700482091
+          },
+          "two_word_common_sign_mass": 0.30338806675851815
+        },
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.2672233226942615,
+            "augmented_max_from_projective_max": 0.26722332269426147,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.30338806675851815,
+            "signed_collision_half_projective_collision": 0.13070057134442398,
+            "signed_max_half_projective_max": 0.15169403337925907
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 8,
+            "collision_probability": 0.18408863810294204,
+            "effective_collision_atom_count": 5.432165777883596,
+            "effective_collision_fraction_of_full": 0.6790207222354495,
+            "effective_shannon_atom_count": 6.40803965648134,
+            "maximum_atom": 0.26722332269426147,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 1.3196705555963912,
+            "minimum_atom": 0.03616474406425663,
+            "renyi2_entropy_deficit_nats": 0.3871036331329436,
+            "renyi2_entropy_fraction_of_full": 0.8138425027230005,
+            "renyi2_entropy_nats": 1.6923379085468921,
+            "shannon_entropy_deficit_nats": 0.2218881433434543,
+            "shannon_entropy_fraction_of_full": 0.8932943586554464,
+            "shannon_entropy_nats": 1.8575533983363814,
+            "top_mass": {
+              "1": 0.26722332269426147,
+              "16": 0.9999999999999999,
+              "2": 0.5344466453885229,
+              "4": 0.7310585786300048,
+              "8": 0.9999999999999999
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 2,
+            "2": 2
+          },
+          "epsilon": 1,
+          "left_class_id": 0,
+          "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "projective_rank_one_qclass": {
+            "atom_count": 4,
+            "collision_probability": 0.26140114268884795,
+            "effective_collision_atom_count": 3.825537982404017,
+            "effective_collision_fraction_of_full": 0.9563844956010042,
+            "effective_shannon_atom_count": 3.909132646782726,
+            "maximum_atom": 0.30338806675851815,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 1.1927425445534185,
+            "minimum_atom": 0.19661193324148182,
+            "renyi2_entropy_deficit_nats": 0.04459525473701964,
+            "renyi2_entropy_fraction_of_full": 0.9678313235718609,
+            "renyi2_entropy_nats": 1.341699106382871,
+            "shannon_entropy_deficit_nats": 0.02297884119774518,
+            "shannon_entropy_fraction_of_full": 0.983424269879319,
+            "shannon_entropy_nats": 1.3633155199221454,
+            "top_mass": {
+              "1": 0.30338806675851815,
+              "16": 1.0,
+              "2": 0.6067761335170363,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "shell_bound": {
+            "absolute_cap": 2,
+            "non_top_to_top_weight_ratio_bound": 0.6480542736638855,
+            "projective_max_atom_shell_lower_bound": 0.30338806675851815,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": 2
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 8,
+            "collision_probability": 0.13070057134442398,
+            "effective_collision_atom_count": 7.651075964808034,
+            "maximum_atom": 0.15169403337925907,
+            "renyi2_entropy_nats": 2.034846286942816,
+            "shannon_entropy_nats": 2.056462700482091
+          },
+          "two_word_common_sign_mass": 0.30338806675851815
+        }
+      ],
+      "parent_order": 4,
+      "raw_t": 0.5,
+      "thermal_minimizer_class_count": 1
+    },
+    {
+      "aggregate": {
+        "child_augmented_projective_max_atom": {
+          "maximum": 0.4910068950189542,
+          "minimum": 0.4910068950189542
+        },
+        "child_projective_effective_collision_count": {
+          "maximum": 2.0,
+          "minimum": 2.0
+        },
+        "child_projective_max_atom": {
+          "maximum": 0.5,
+          "minimum": 0.5
+        },
+        "pair_augmented_projective_max_atom": {
+          "maximum": 0.48217554191230866,
+          "minimum": 0.48217554191230866
+        },
+        "pair_projective_effective_collision_count": {
+          "maximum": 2.1462798198703776,
+          "minimum": 2.1462798198703776
+        },
+        "pair_projective_max_atom": {
+          "maximum": 0.4823372937867089,
+          "minimum": 0.4823372937867089
+        },
+        "pair_projective_renyi2_entropy_nats": {
+          "maximum": 0.7637360270737984,
+          "minimum": 0.7637360270737984
+        },
+        "pair_projective_shannon_entropy_nats": {
+          "maximum": 0.8459394180718484,
+          "minimum": 0.8459394180718482
+        }
+      },
+      "beta": 4.0,
+      "child_order": 2,
+      "children": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.4910068950189542,
+            "augmented_max_from_projective_max": 0.4910068950189542,
+            "maximum_identity_residual": 0.0,
+            "projective_max_cosh_tK_over_sum_cosh": 0.5
+          },
+          "augmented_projective_gibbs_s_xclass": {
+            "atom_count": 4,
+            "collision_probability": 0.4823372937867089,
+            "effective_collision_atom_count": 2.073237986947373,
+            "effective_collision_fraction_of_full": 0.5183094967368432,
+            "effective_shannon_atom_count": 2.188555962142781,
+            "maximum_atom": 0.4910068950189542,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.7112971084777551,
+            "minimum_atom": 0.008993104981045778,
+            "renyi2_entropy_deficit_nats": 0.6571827310972216,
+            "renyi2_entropy_fraction_of_full": 0.5259428664440866,
+            "renyi2_entropy_nats": 0.729111630022669,
+            "shannon_entropy_deficit_nats": 0.6030524127937694,
+            "shannon_entropy_fraction_of_full": 0.5649896373331523,
+            "shannon_entropy_nats": 0.7832419483261212,
+            "top_mass": {
+              "1": 0.4910068950189542,
+              "16": 1.0,
+              "2": 0.9820137900379085,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "beta": 4.0,
+          "class_id": 0,
+          "energy_histogram_projective": {
+            "1": 2
+          },
+          "order": 2,
+          "parent_order": 4,
+          "projective_cosh_gibbs": {
+            "atom_count": 2,
+            "collision_probability": 0.5,
+            "effective_collision_atom_count": 2.0,
+            "effective_collision_fraction_of_full": 1.0,
+            "effective_shannon_atom_count": 2.0,
+            "maximum_atom": 0.5,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.6931471805599453,
+            "minimum_atom": 0.5,
+            "renyi2_entropy_deficit_nats": 0.0,
+            "renyi2_entropy_fraction_of_full": 1.0,
+            "renyi2_entropy_nats": 0.6931471805599453,
+            "shannon_entropy_deficit_nats": 0.0,
+            "shannon_entropy_fraction_of_full": 1.0,
+            "shannon_entropy_nats": 0.6931471805599453,
+            "top_mass": {
+              "1": 0.5,
+              "16": 1.0,
+              "2": 1.0,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "raw_t": 2.0,
+          "representative_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "root_gauged_member_count": 1,
+          "shell_bound": {
+            "absolute_cap": 1,
+            "non_top_to_top_weight_ratio_bound": 0.0,
+            "projective_max_atom_shell_lower_bound": 0.5,
+            "second_absolute_level": null,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": null
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.48217554191230866,
+            "augmented_max_from_projective_max": 0.4821755419123087,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.48233729378670887,
+            "signed_collision_half_projective_collision": 0.23296123616826298,
+            "signed_max_half_projective_max": 0.24116864689335446
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 8,
+            "collision_probability": 0.4652985299549719,
+            "effective_collision_atom_count": 2.149157875260798,
+            "effective_collision_fraction_of_full": 0.26864473440759973,
+            "effective_shannon_atom_count": 2.394888599715357,
+            "maximum_atom": 0.48217554191230866,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.7294470363955649,
+            "minimum_atom": 0.0001617518744002208,
+            "renyi2_entropy_deficit_nats": 1.3143654621944432,
+            "renyi2_entropy_fraction_of_full": 0.3679238219254488,
+            "renyi2_entropy_nats": 0.7650760794853926,
+            "shannon_entropy_deficit_nats": 1.2061048255875386,
+            "shannon_entropy_fraction_of_full": 0.41998618311086994,
+            "shannon_entropy_nats": 0.8733367160922971,
+            "top_mass": {
+              "1": 0.48217554191230866,
+              "16": 1.0,
+              "2": 0.9643510838246173,
+              "4": 0.9820137900379083,
+              "8": 1.0
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 2,
+            "2": 2
+          },
+          "epsilon": -1,
+          "left_class_id": 0,
+          "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "projective_rank_one_qclass": {
+            "atom_count": 4,
+            "collision_probability": 0.46592247233652595,
+            "effective_collision_atom_count": 2.1462798198703776,
+            "effective_collision_fraction_of_full": 0.5365699549675944,
+            "effective_shannon_atom_count": 2.3301657865494043,
+            "maximum_atom": 0.4823372937867089,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.729111630022669,
+            "minimum_atom": 0.017662706213291118,
+            "renyi2_entropy_deficit_nats": 0.6225583340460922,
+            "renyi2_entropy_fraction_of_full": 0.5509190894038041,
+            "renyi2_entropy_nats": 0.7637360270737984,
+            "shannon_entropy_deficit_nats": 0.5403549430480423,
+            "shannon_entropy_fraction_of_full": 0.6102163016723755,
+            "shannon_entropy_nats": 0.8459394180718482,
+            "top_mass": {
+              "1": 0.4823372937867089,
+              "16": 1.0,
+              "2": 0.9646745875734178,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "shell_bound": {
+            "absolute_cap": 2,
+            "non_top_to_top_weight_ratio_bound": 0.03661899347368653,
+            "projective_max_atom_shell_lower_bound": 0.4823372937867089,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": 2
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 8,
+            "collision_probability": 0.23296123616826298,
+            "effective_collision_atom_count": 4.292559639740755,
+            "maximum_atom": 0.24116864689335446,
+            "renyi2_entropy_nats": 1.4568832076337437,
+            "shannon_entropy_nats": 1.5390865986317936
+          },
+          "two_word_common_sign_mass": 0.4823372937867089
+        },
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.48217554191230866,
+            "augmented_max_from_projective_max": 0.4821755419123087,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.48233729378670887,
+            "signed_collision_half_projective_collision": 0.23296123616826298,
+            "signed_max_half_projective_max": 0.24116864689335446
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 8,
+            "collision_probability": 0.4652985299549719,
+            "effective_collision_atom_count": 2.149157875260798,
+            "effective_collision_fraction_of_full": 0.26864473440759973,
+            "effective_shannon_atom_count": 2.3948885997153573,
+            "maximum_atom": 0.48217554191230866,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.7294470363955649,
+            "minimum_atom": 0.0001617518744002208,
+            "renyi2_entropy_deficit_nats": 1.3143654621944432,
+            "renyi2_entropy_fraction_of_full": 0.3679238219254488,
+            "renyi2_entropy_nats": 0.7650760794853926,
+            "shannon_entropy_deficit_nats": 1.2061048255875386,
+            "shannon_entropy_fraction_of_full": 0.41998618311087,
+            "shannon_entropy_nats": 0.8733367160922972,
+            "top_mass": {
+              "1": 0.48217554191230866,
+              "16": 1.0,
+              "2": 0.9643510838246173,
+              "4": 0.9820137900379083,
+              "8": 1.0
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 2,
+            "2": 2
+          },
+          "epsilon": 1,
+          "left_class_id": 0,
+          "left_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "projective_rank_one_qclass": {
+            "atom_count": 4,
+            "collision_probability": 0.46592247233652595,
+            "effective_collision_atom_count": 2.1462798198703776,
+            "effective_collision_fraction_of_full": 0.5365699549675944,
+            "effective_shannon_atom_count": 2.3301657865494048,
+            "maximum_atom": 0.4823372937867089,
+            "maximum_tie_count": 2,
+            "min_entropy_nats": 0.729111630022669,
+            "minimum_atom": 0.017662706213291118,
+            "renyi2_entropy_deficit_nats": 0.6225583340460922,
+            "renyi2_entropy_fraction_of_full": 0.5509190894038041,
+            "renyi2_entropy_nats": 0.7637360270737984,
+            "shannon_entropy_deficit_nats": 0.5403549430480422,
+            "shannon_entropy_fraction_of_full": 0.6102163016723756,
+            "shannon_entropy_nats": 0.8459394180718484,
+            "top_mass": {
+              "1": 0.4823372937867089,
+              "16": 1.0,
+              "2": 0.9646745875734178,
+              "4": 1.0,
+              "8": 1.0
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+          "shell_bound": {
+            "absolute_cap": 2,
+            "non_top_to_top_weight_ratio_bound": 0.03661899347368653,
+            "projective_max_atom_shell_lower_bound": 0.4823372937867089,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 2,
+            "top_shell_gap": 2
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 8,
+            "collision_probability": 0.23296123616826298,
+            "effective_collision_atom_count": 4.292559639740755,
+            "maximum_atom": 0.24116864689335446,
+            "renyi2_entropy_nats": 1.4568832076337437,
+            "shannon_entropy_nats": 1.5390865986317936
+          },
+          "two_word_common_sign_mass": 0.4823372937867089
+        }
+      ],
+      "parent_order": 4,
+      "raw_t": 2.0,
+      "thermal_minimizer_class_count": 1
+    },
+    {
+      "aggregate": {
+        "child_augmented_projective_max_atom": {
+          "maximum": 0.3335221327239827,
+          "minimum": 0.3335221327239827
+        },
+        "child_projective_effective_collision_count": {
+          "maximum": 3.747840251734343,
+          "minimum": 3.747840251734343
+        },
+        "child_projective_max_atom": {
+          "maximum": 0.36231764310264,
+          "minimum": 0.36231764310264
+        },
+        "pair_augmented_projective_max_atom": {
+          "maximum": 0.22172932272221235,
+          "minimum": 0.09865984691974779
+        },
+        "pair_projective_effective_collision_count": {
+          "maximum": 12.853111172258465,
+          "minimum": 11.097720037278142
+        },
+        "pair_projective_max_atom": {
+          "maximum": 0.2233821344009299,
+          "minimum": 0.1024246355557487
+        },
+        "pair_projective_renyi2_entropy_nats": {
+          "maximum": 2.553585896608869,
+          "minimum": 2.4067396851733847
+        },
+        "pair_projective_shannon_entropy_nats": {
+          "maximum": 2.655328586477948,
+          "minimum": 2.6342755739806494
+        }
+      },
+      "beta": 1.0,
+      "child_order": 3,
+      "children": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.3335221327239827,
+            "augmented_max_from_projective_max": 0.3335221327239827,
+            "maximum_identity_residual": 0.0,
+            "projective_max_cosh_tK_over_sum_cosh": 0.36231764310264
+          },
+          "augmented_projective_gibbs_s_xclass": {
+            "atom_count": 8,
+            "collision_probability": 0.1899888169945864,
+            "effective_collision_atom_count": 5.26346769151415,
+            "effective_collision_fraction_of_full": 0.6579334614392688,
+            "effective_shannon_atom_count": 6.352407476543775,
+            "maximum_atom": 0.3335221327239827,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 1.098046050839064,
+            "minimum_atom": 0.028795510378657324,
+            "renyi2_entropy_deficit_nats": 0.4186514752027597,
+            "renyi2_entropy_fraction_of_full": 0.7986711976213766,
+            "renyi2_entropy_nats": 1.660790066477076,
+            "shannon_entropy_deficit_nats": 0.23060767046254216,
+            "shannon_entropy_fraction_of_full": 0.889101152477578,
+            "shannon_entropy_nats": 1.8488338712172936,
+            "top_mass": {
+              "1": 0.3335221327239827,
+              "16": 1.0,
+              "2": 0.48093137019704446,
+              "4": 0.775749845143168,
+              "8": 1.0
+            }
+          },
+          "beta": 1.0,
+          "class_id": 0,
+          "energy_histogram_projective": {
+            "1": 3,
+            "3": 1
+          },
+          "order": 3,
+          "parent_order": 6,
+          "projective_cosh_gibbs": {
+            "atom_count": 4,
+            "collision_probability": 0.26682033726950927,
+            "effective_collision_atom_count": 3.747840251734343,
+            "effective_collision_fraction_of_full": 0.9369600629335858,
+            "effective_shannon_atom_count": 3.8779463068173476,
+            "maximum_atom": 0.36231764310264,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 1.015233984771234,
+            "minimum_atom": 0.21256078563245331,
+            "renyi2_entropy_deficit_nats": 0.06511461992145495,
+            "renyi2_entropy_fraction_of_full": 0.9530297303749736,
+            "renyi2_entropy_nats": 1.3211797411984356,
+            "shannon_entropy_deficit_nats": 0.030988649981318783,
+            "shannon_entropy_fraction_of_full": 0.9776464141740537,
+            "shannon_entropy_nats": 1.3553057111385718,
+            "top_mass": {
+              "1": 0.36231764310264,
+              "16": 0.9999999999999999,
+              "2": 0.5748784287350933,
+              "4": 0.9999999999999999,
+              "8": 0.9999999999999999
+            }
+          },
+          "raw_t": 0.4082482904638631,
+          "representative_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "root_gauged_member_count": 2,
+          "shell_bound": {
+            "absolute_cap": 3,
+            "non_top_to_top_weight_ratio_bound": 0.5866697073104926,
+            "projective_max_atom_shell_lower_bound": 0.36231764310264,
+            "second_absolute_level": 1,
+            "top_absolute_shell_count": 1,
+            "top_shell_gap": 2
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.09865984691974779,
+            "augmented_max_from_projective_max": 0.0986598469197478,
+            "maximum_identity_residual": 1.3877787807814457e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.10242463555574868,
+            "signed_collision_half_projective_collision": 0.0389010873164449,
+            "signed_max_half_projective_max": 0.05121231777787435
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 32,
+            "collision_probability": 0.06591630357647205,
+            "effective_collision_atom_count": 15.170753603315475,
+            "effective_collision_fraction_of_full": 0.4740860501036086,
+            "effective_shannon_atom_count": 20.47679940692384,
+            "maximum_atom": 0.09865984691974779,
+            "maximum_tie_count": 6,
+            "min_entropy_nats": 2.3160772347716287,
+            "minimum_atom": 0.0037647886360008894,
+            "renyi2_entropy_deficit_nats": 0.7463664334605355,
+            "renyi2_entropy_fraction_of_full": 0.7846441695521006,
+            "renyi2_entropy_nats": 2.719369469339191,
+            "shannon_entropy_deficit_nats": 0.4464433938000454,
+            "shannon_entropy_fraction_of_full": 0.8711836659454072,
+            "shannon_entropy_nats": 3.019292508999681,
+            "top_mass": {
+              "1": 0.09865984691974779,
+              "16": 0.7846851748512407,
+              "2": 0.19731969383949557,
+              "4": 0.39463938767899115,
+              "8": 0.6305043001850374
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 10,
+            "4": 6
+          },
+          "epsilon": -1,
+          "left_class_id": 0,
+          "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "projective_rank_one_qclass": {
+            "atom_count": 16,
+            "collision_probability": 0.0778021746328898,
+            "effective_collision_atom_count": 12.853111172258465,
+            "effective_collision_fraction_of_full": 0.8033194482661541,
+            "effective_shannon_atom_count": 14.22966096541201,
+            "maximum_atom": 0.1024246355557487,
+            "maximum_tie_count": 6,
+            "min_entropy_nats": 2.2786280137127335,
+            "minimum_atom": 0.03854521866655079,
+            "renyi2_entropy_deficit_nats": 0.21900282563091222,
+            "renyi2_entropy_fraction_of_full": 0.9210114273804031,
+            "renyi2_entropy_nats": 2.553585896608869,
+            "shannon_entropy_deficit_nats": 0.11726013576183325,
+            "shannon_entropy_fraction_of_full": 0.9577073459106091,
+            "shannon_entropy_nats": 2.655328586477948,
+            "top_mass": {
+              "1": 0.1024246355557487,
+              "16": 1.0,
+              "2": 0.2048492711114974,
+              "4": 0.4096985422229948,
+              "8": 0.6916382506675938
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "shell_bound": {
+            "absolute_cap": 4,
+            "non_top_to_top_weight_ratio_bound": 0.3763276135414807,
+            "projective_max_atom_shell_lower_bound": 0.1024246355557487,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 6,
+            "top_shell_gap": 4
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 32,
+            "collision_probability": 0.0389010873164449,
+            "effective_collision_atom_count": 25.70622234451693,
+            "maximum_atom": 0.05121231777787435,
+            "renyi2_entropy_nats": 3.2467330771688143,
+            "shannon_entropy_nats": 3.3484757670378933
+          },
+          "two_word_common_sign_mass": 0.1024246355557487
+        },
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.22172932272221232,
+            "augmented_max_from_projective_max": 0.2217293227222123,
+            "maximum_identity_residual": 5.551115123125783e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.22338213440092985,
+            "signed_collision_half_projective_collision": 0.04505429929034607,
+            "signed_max_half_projective_max": 0.11169106720046496
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 32,
+            "collision_probability": 0.07838134052919117,
+            "effective_collision_atom_count": 12.758138521853617,
+            "effective_collision_fraction_of_full": 0.39869182880792553,
+            "effective_shannon_atom_count": 19.882873871180085,
+            "maximum_atom": 0.22172932272221235,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 1.506297908037694,
+            "minimum_atom": 0.001652811678717548,
+            "renyi2_entropy_deficit_nats": 0.9195665193924407,
+            "renyi2_entropy_fraction_of_full": 0.7346691885410002,
+            "renyi2_entropy_nats": 2.546169383407286,
+            "shannon_entropy_deficit_nats": 0.47587715109467066,
+            "shannon_entropy_fraction_of_full": 0.8626908788086701,
+            "shannon_entropy_nats": 2.989858751705056,
+            "top_mass": {
+              "1": 0.22172932272221235,
+              "16": 0.8714317216170149,
+              "2": 0.26504281598186585,
+              "4": 0.35166980250117286,
+              "8": 0.5249237755397869
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "2": 15,
+            "6": 1
+          },
+          "epsilon": 1,
+          "left_class_id": 0,
+          "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "projective_rank_one_qclass": {
+            "atom_count": 16,
+            "collision_probability": 0.09010859858069215,
+            "effective_collision_atom_count": 11.097720037278142,
+            "effective_collision_fraction_of_full": 0.6936075023298839,
+            "effective_shannon_atom_count": 13.93321522261208,
+            "maximum_atom": 0.2233821344009299,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 1.4988713668925882,
+            "minimum_atom": 0.05177452437327135,
+            "renyi2_entropy_deficit_nats": 0.3658490370663965,
+            "renyi2_entropy_fraction_of_full": 0.8680478521275768,
+            "renyi2_entropy_nats": 2.4067396851733847,
+            "shannon_entropy_deficit_nats": 0.13831314825913177,
+            "shannon_entropy_fraction_of_full": 0.9501140767292027,
+            "shannon_entropy_nats": 2.6342755739806494,
+            "top_mass": {
+              "1": 0.2233821344009299,
+              "16": 1.0,
+              "2": 0.27515665877420126,
+              "4": 0.37870570752074395,
+              "8": 0.5858038050138293
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "shell_bound": {
+            "absolute_cap": 6,
+            "non_top_to_top_weight_ratio_bound": 0.23177558273458693,
+            "projective_max_atom_shell_lower_bound": 0.2233821344009299,
+            "second_absolute_level": 2,
+            "top_absolute_shell_count": 1,
+            "top_shell_gap": 4
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 32,
+            "collision_probability": 0.04505429929034607,
+            "effective_collision_atom_count": 22.195440074556284,
+            "maximum_atom": 0.11169106720046496,
+            "renyi2_entropy_nats": 3.09988686573333,
+            "shannon_entropy_nats": 3.3274227545405948
+          },
+          "two_word_common_sign_mass": 0.2233821344009299
+        }
+      ],
+      "parent_order": 6,
+      "raw_t": 0.4082482904638631,
+      "thermal_minimizer_class_count": 1
+    },
+    {
+      "aggregate": {
+        "child_augmented_projective_max_atom": {
+          "maximum": 0.89373348525886,
+          "minimum": 0.89373348525886
+        },
+        "child_projective_effective_collision_count": {
+          "maximum": 1.2459367130153205,
+          "minimum": 1.2459367130153205
+        },
+        "child_projective_max_atom": {
+          "maximum": 0.8937831454646306,
+          "minimum": 0.8937831454646306
+        },
+        "pair_augmented_projective_max_atom": {
+          "maximum": 0.9785944533608872,
+          "minimum": 0.16586126279760682
+        },
+        "pair_projective_effective_collision_count": {
+          "maximum": 6.058300817226593,
+          "minimum": 1.0441926812868738
+        },
+        "pair_projective_max_atom": {
+          "maximum": 0.9785944563822561,
+          "minimum": 0.16586161447594144
+        },
+        "pair_projective_renyi2_entropy_nats": {
+          "maximum": 1.801429367566769,
+          "minimum": 0.043244033050842
+        },
+        "pair_projective_shannon_entropy_nats": {
+          "maximum": 1.8248048516803355,
+          "minimum": 0.1614272438735409
+        }
+      },
+      "beta": 4.0,
+      "child_order": 3,
+      "children": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.89373348525886,
+            "augmented_max_from_projective_max": 0.89373348525886,
+            "maximum_identity_residual": 2.220446049250313e-16,
+            "projective_max_cosh_tK_over_sum_cosh": 0.8937831454646303
+          },
+          "augmented_projective_gibbs_s_xclass": {
+            "atom_count": 8,
+            "collision_probability": 0.80225392060219,
+            "effective_collision_atom_count": 1.2464881433666006,
+            "effective_collision_fraction_of_full": 0.15581101792082508,
+            "effective_shannon_atom_count": 1.6039799638300836,
+            "maximum_atom": 0.89373348525886,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 0.11234766317668535,
+            "minimum_atom": 4.9660205770353605e-05,
+            "renyi2_entropy_deficit_nats": 1.859111429683751,
+            "renyi2_entropy_fraction_of_full": 0.10595638664508712,
+            "renyi2_entropy_nats": 0.22033011199608474,
+            "shannon_entropy_deficit_nats": 1.6069535236912844,
+            "shannon_entropy_fraction_of_full": 0.22721870681051282,
+            "shannon_entropy_nats": 0.4724880179885514,
+            "top_mass": {
+              "1": 0.89373348525886,
+              "16": 0.9999999999999999,
+              "2": 0.927837710776795,
+              "4": 0.996046161812665,
+              "8": 0.9999999999999999
+            }
+          },
+          "beta": 4.0,
+          "class_id": 0,
+          "energy_histogram_projective": {
+            "1": 3,
+            "3": 1
+          },
+          "order": 3,
+          "parent_order": 6,
+          "projective_cosh_gibbs": {
+            "atom_count": 4,
+            "collision_probability": 0.802608984512445,
+            "effective_collision_atom_count": 1.2459367130153205,
+            "effective_collision_fraction_of_full": 0.3114841782538301,
+            "effective_shannon_atom_count": 1.576524999362057,
+            "maximum_atom": 0.8937831454646306,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 0.11229209982703053,
+            "minimum_atom": 0.03540561817845651,
+            "renyi2_entropy_deficit_nats": 1.1664067341671285,
+            "renyi2_entropy_fraction_of_full": 0.15861539447879616,
+            "renyi2_entropy_nats": 0.21988762695276215,
+            "shannon_entropy_deficit_nats": 0.9310713037342003,
+            "shannon_entropy_fraction_of_full": 0.32837402369432367,
+            "shannon_entropy_nats": 0.45522305738569024,
+            "top_mass": {
+              "1": 0.8937831454646306,
+              "16": 1.0000000000000002,
+              "2": 0.9291887636430871,
+              "4": 1.0000000000000002,
+              "8": 1.0000000000000002
+            }
+          },
+          "raw_t": 1.6329931618554523,
+          "representative_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "root_gauged_member_count": 2,
+          "shell_bound": {
+            "absolute_cap": 3,
+            "non_top_to_top_weight_ratio_bound": 0.03961320859328916,
+            "projective_max_atom_shell_lower_bound": 0.8937831454646306,
+            "second_absolute_level": 1,
+            "top_absolute_shell_count": 1,
+            "top_shell_gap": 2
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.16586126279760682,
+            "augmented_max_from_projective_max": 0.16586126279760682,
+            "maximum_identity_residual": 2.7755575615628914e-17,
+            "projective_max_cosh_tK_over_sum_cosh": 0.16586161447594147,
+            "signed_collision_half_projective_collision": 0.08253139206595111,
+            "signed_max_half_projective_max": 0.08293080723797072
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 32,
+            "collision_probability": 0.16506091757789645,
+            "effective_collision_atom_count": 6.0583693261493865,
+            "effective_collision_fraction_of_full": 0.18932404144216833,
+            "effective_shannon_atom_count": 6.222567765070016,
+            "maximum_atom": 0.16586126279760682,
+            "maximum_tie_count": 6,
+            "min_entropy_nats": 1.7966036063524256,
+            "minimum_atom": 3.516783346356509e-07,
+            "renyi2_entropy_deficit_nats": 1.6642952270233613,
+            "renyi2_entropy_fraction_of_full": 0.519785905879645,
+            "renyi2_entropy_nats": 1.8014406757763652,
+            "shannon_entropy_deficit_nats": 1.6375532572707672,
+            "shannon_entropy_fraction_of_full": 0.527502007308779,
+            "shannon_entropy_nats": 1.8281826455289594,
+            "top_mass": {
+              "1": 0.16586126279760682,
+              "16": 0.9975827333578164,
+              "2": 0.33172252559521365,
+              "4": 0.6634450511904273,
+              "8": 0.995650608100076
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "0": 10,
+            "4": 6
+          },
+          "epsilon": -1,
+          "left_class_id": 0,
+          "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "projective_rank_one_qclass": {
+            "atom_count": 16,
+            "collision_probability": 0.16506278413190223,
+            "effective_collision_atom_count": 6.058300817226593,
+            "effective_collision_fraction_of_full": 0.37864380107666207,
+            "effective_shannon_atom_count": 6.201584672182088,
+            "maximum_atom": 0.16586161447594144,
+            "maximum_tie_count": 6,
+            "min_entropy_nats": 1.7966014860384,
+            "minimum_atom": 0.0004830313144351136,
+            "renyi2_entropy_deficit_nats": 0.9711593546730122,
+            "renyi2_entropy_fraction_of_full": 0.6497283037750798,
+            "renyi2_entropy_nats": 1.801429367566769,
+            "shannon_entropy_deficit_nats": 0.9477838705594457,
+            "shannon_entropy_fraction_of_full": 0.6581592275273351,
+            "shannon_entropy_nats": 1.8248048516803355,
+            "top_mass": {
+              "1": 0.16586161447594144,
+              "16": 0.9999999999999998,
+              "2": 0.3317232289518829,
+              "4": 0.6634464579037658,
+              "8": 0.9961357494845189
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "shell_bound": {
+            "absolute_cap": 4,
+            "non_top_to_top_weight_ratio_bound": 0.0029122549901694,
+            "projective_max_atom_shell_lower_bound": 0.16586161447594147,
+            "second_absolute_level": 0,
+            "top_absolute_shell_count": 6,
+            "top_shell_gap": 4
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 32,
+            "collision_probability": 0.08253139206595111,
+            "effective_collision_atom_count": 12.116601634453186,
+            "maximum_atom": 0.08293080723797072,
+            "renyi2_entropy_nats": 2.4945765481267146,
+            "shannon_entropy_nats": 2.517952032240281
+          },
+          "two_word_common_sign_mass": 0.16586161447594144
+        },
+        {
+          "atom_identities": {
+            "augmented_max_exp_tK_over_2_sum_cosh": 0.9785944533608871,
+            "augmented_max_from_projective_max": 0.9785944533608871,
+            "maximum_identity_residual": 2.220446049250313e-16,
+            "projective_max_cosh_tK_over_sum_cosh": 0.9785944563822558,
+            "signed_collision_half_projective_collision": 0.478838828274294,
+            "signed_max_half_projective_max": 0.48929722819112803
+          },
+          "augmented_projective_gibbs_s_xclass_yclass": {
+            "atom_count": 32,
+            "collision_probability": 0.9576775619343602,
+            "effective_collision_atom_count": 1.0441927844484056,
+            "effective_collision_fraction_of_full": 0.032631024514012674,
+            "effective_shannon_atom_count": 1.1754625779229986,
+            "maximum_atom": 0.9785944533608872,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 0.02163796807605297,
+            "minimum_atom": 3.0213686576015155e-09,
+            "renyi2_entropy_deficit_nats": 3.4224917709533953,
+            "renyi2_entropy_fraction_of_full": 0.012477618912450101,
+            "renyi2_entropy_nats": 0.04324413184633119,
+            "shannon_entropy_deficit_nats": 3.304074149337835,
+            "shannon_entropy_fraction_of_full": 0.046645722004177,
+            "shannon_entropy_nats": 0.16166175346189143,
+            "top_mass": {
+              "1": 0.9785944533608872,
+              "16": 0.9999688730324636,
+              "2": 0.9800194146723257,
+              "4": 0.9828693372952025,
+              "8": 0.9885691825409563
+            }
+          },
+          "combined_energy_histogram_projective_pairs": {
+            "2": 15,
+            "6": 1
+          },
+          "epsilon": 1,
+          "left_class_id": 0,
+          "left_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "projective_rank_one_qclass": {
+            "atom_count": 16,
+            "collision_probability": 0.957677656548588,
+            "effective_collision_atom_count": 1.0441926812868738,
+            "effective_collision_fraction_of_full": 0.06526204258042961,
+            "effective_shannon_atom_count": 1.1751869529973356,
+            "maximum_atom": 0.9785944563822561,
+            "maximum_tie_count": 1,
+            "min_entropy_nats": 0.021637964988595437,
+            "minimum_atom": 0.001427036241182937,
+            "renyi2_entropy_deficit_nats": 2.729344689188939,
+            "renyi2_entropy_fraction_of_full": 0.015596988007622046,
+            "renyi2_entropy_nats": 0.043244033050842,
+            "shannon_entropy_deficit_nats": 2.61116147836624,
+            "shannon_entropy_fraction_of_full": 0.05822257105018269,
+            "shannon_entropy_nats": 0.1614272438735409,
+            "top_mass": {
+              "1": 0.9785944563822561,
+              "16": 1.0,
+              "2": 0.980021492623439,
+              "4": 0.9828755651058048,
+              "8": 0.9885837100705366
+            }
+          },
+          "right_class_id": 0,
+          "right_sha256": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+          "shell_bound": {
+            "absolute_cap": 6,
+            "non_top_to_top_weight_ratio_bound": 0.0014582508943066321,
+            "projective_max_atom_shell_lower_bound": 0.9785944563822558,
+            "second_absolute_level": 2,
+            "top_absolute_shell_count": 1,
+            "top_shell_gap": 4
+          },
+          "signed_rank_one_Q": {
+            "atom_count": 32,
+            "collision_probability": 0.478838828274294,
+            "effective_collision_atom_count": 2.0883853625737476,
+            "maximum_atom": 0.48929722819112803,
+            "renyi2_entropy_nats": 0.7363912136107873,
+            "shannon_entropy_nats": 0.8545744244334862
+          },
+          "two_word_common_sign_mass": 0.9785944563822561
+        }
+      ],
+      "parent_order": 6,
+      "raw_t": 1.6329931618554523,
+      "thermal_minimizer_class_count": 1
+    }
+  ],
+  "schema": "actual-child-projective-atom-entropy-v1"
+}

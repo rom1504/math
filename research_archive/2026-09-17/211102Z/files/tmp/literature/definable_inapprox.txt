@@ -1,0 +1,1409 @@
+
+=== PAGE 1 ===
+Deﬁnable Inapproximability:
+New Challenges for Duplicator
+Albert Atserias
+Departament de Ci` encies de la Computaci´ o
+Universitat Polit` ecnica de Catalunya
+Anuj Dawar
+Department of Computer Science and Technology
+University of Cambridge
+Abstract
+We consider the hardness of approximation of optimization problems from the
+point of view of deﬁnability. For many NP-hard optimization problems it is known
+that, unless P = NP, no polynomial-time algorithm can give an approximate solu-
+tion guaranteed to be within a ﬁxed constant factor of the optimum. We show, in
+several such instances and without any complexity theoretic assumption, that no al-
+gorithm that is expressible in ﬁxed-point logic with counting (FPC) can compute an
+approximate solution. Since important algorithmic techniques for approximation
+algorithms (such as linear or semideﬁnite programming) are expressible in FPC,
+this yields lower bounds on what can be achieved by such methods. The results are
+established by showing lower bounds on the number of variables required in ﬁrst-
+order logic with counting to separate instances with a high optimum from those
+with a low optimum for ﬁxed-size instances.
+1 Introduction
+Twenty years ago, the PCP theorem [4] transformed the landscape of complexity theory.
+It showed that if P ̸= NP then not only is it impossible to eﬃciently solve NP-hard
+problems exactly but for some of them it is also impossible to approximate the solution
+to within a constant factor. Consider for instance the problem MAX 3SAT. Here we
+are given a Boolean formula in 3CNF and we are asked to determine m∗, the maximum
+number of clauses that can be simultaneously satisﬁed by an assignment of Boolean values
+to its variables. It is a consequence of the PCP theorem that there is a constantc< 1 such
+that, assuming P̸= NP, no polynomial-time algorithm can be guaranteed to produce an
+assignment that satisﬁes at leastcm∗ clauses, or indeed determine the value ofm∗ up to a
+factor of c. The proof of the PCP theorem introduced sophisticated new techniques into
+complexity theory such as the probabilistically checkable proofs that gave the theorem its
+name. Over the years, stronger results were proved, improving the constant c and, by
+reductions, proving inapproximability results for a host of other NP-hard problems.
+1
+=== PAGE 2 ===
+A structural theory of hardness of approximation was introduced by Papadimitriou
+and Yannakakis [26] who deﬁned the class MAX SNP of approximation problems, with
+a deﬁnition rooted in descriptive complexity theory. They showed that for every problem
+in this class, there is a constant d and a polynomial-time algorithm can ﬁnd approximate
+solutions within a factor d of the optimum. At the same time, for all problems that
+are MAX SNP -hard, under approximation-preserving reductions deﬁned in [26], there
+is a constantc such that no polynomial-time algorithm can approximate solutions within a
+factorc. This makes it a challenge, for each MAX SNP -complete problem, to determine
+the exact approximation ratio that is achievable by an eﬃcient algorithm. In some cases,
+this has been pinned down exactly. For instance, for MAX 3SAT we know that there
+is a polynomial-time algorithm that will produce an assignment satisfying 7 /8 of the
+clauses in any formula but, unless P = NP, there is no polynomial-time algorithm that
+is guaranteed to produce a solution within 7 /8 +ϵ of the optimal, for any ϵ > 0 [19].
+Another interesting case is MAX 3XOR , where we are given a formula which is the
+conjunction of clauses, each of which is the XOR of three literals. Here, satisﬁability
+is decidable in polynomial time as the problem is essentially that of solving a system of
+linear equations over the two-element ﬁeld. However, determining, for an unsatisﬁable
+system, how many of its clauses can be simultaneously satisﬁed is MAX SNP -hard, and
+the exact approximation ratio that is achievable eﬃciently is known: unless P = NP, no
+polynomial-time algorithm can achieve an approximation ratio bounded above 1 /2 [19].
+To give a problem of another ﬂavour, consider minimum vertex cover, the problem of
+ﬁnding, in a graph G, a minimum set S of vertices such that every edge is incident on
+a vertex in S. Let vc( G) denote the size of a minimum size vertex cover in G. There
+are algorithms that are guaranteed to ﬁnd a vertex cover no larger than 2vc( G) (this
+being a minimization problem, the approximation ratio is expressed as a number c≥ 1).
+It has been proved, by means of rather sophisticated reductions starting at the PCP
+theorem, that, unless P = NP, no polynomial-time algorithm can achieve a ratio better
+than 1.36 [15]. Very recent results announced in [23] improve this lower bound to
+√
+2. It
+is conjectured that indeed no such algorithm could achieve a ratio of 2 −ϵ for arbitrarily
+small ϵ > 0 but, as of our current knowledge, the right threshold constant could be
+somewhere between
+√
+2 and 2.
+We approach these questions on the hardness of approximability from the point of
+view of deﬁnability. Our aim is to show that the tools of descriptive complexity can
+be brought to bear in showing lower bounds on the deﬁnability of approximations and
+that these deﬁnability lower bounds have consequences on understanding commonly used
+techniques in approximation algorithms.
+A reference logic in descriptive complexity is ﬁxed-point logic with counting, FPC.
+The class of problems deﬁnable in this logic form a proper subclass of the complexity
+class P. However, FPC is very expressive and many natural problems in P are expressible
+in this logic. For instance, any polynomial-time decidable problem on a proper-minor
+closed class of graphs is expressible in FPC [18]. Also, problems that can be formulated
+as linear programming or semideﬁnite programming problems are in FPC [2, 8, 14].
+At the same time, for many problems we are able to prove categorically, i.e., without
+complexity theoretic assumptions, that they are not deﬁnable in FPC. Among these
+are NP-complete problems like 3SAT, graph 3-colourability and Hamiltonicity (see [11]).
+We can also prove that certain problems in P are not in FPC, such as 3XOR [6, 10].
+2
+=== PAGE 3 ===
+A particularly interesting class of problems is the class of optimization problems known
+as MAX CSP or constraint maximization problems, where we are given a collection of
+constraints and the problem is to ﬁnd the maximum number of constraints that can be
+simultaneously satisﬁed. When it comes to ﬁnding exact solutions, deﬁnability in FPC
+turns out to be an excellent guide to the tractability of such problems. It is known that
+each such problem is either in P and deﬁnable in FPC or it is NP-complete and provably
+not deﬁnable in FPC [13]. We would like to extend such results also to theapproximability
+of such problems. This paper develops the methodology for doing so.
+For MAX 3SAT, we prove, without any complexity theoretic assumption, that no
+algorithm expressible in FPC can achieve an approximation ratio of 7 /8 +ϵ. The ques-
+tion seems ill-posed at ﬁrst sight as FPC is a formalism for deﬁning problems rather
+than expressing algorithms. We return to the precise formulation shortly, but ﬁrst note
+that there is a sense in which FPC can express, say the ellipsoid method for solving
+linear programs [2]. This is the basis for showing that many commonly used algorithmic
+techniques for approximation problems, such as semideﬁnite programming relaxations,
+are also expressible in FPC. Thus, on the one hand, reductions from MAX SNP -hard
+problems show inapproximability by any polynomial-time algorithm, assuming P̸= NP.
+On the other hand, our results show, without the assumption, inapproximability by the
+most commonly used polynomial-time methods.
+Undeﬁnability of a class of structures C in FPC is typically established by showing
+that structures in C cannot be distinguished from structures not in C in Ck—ﬁrst-
+order logic with counting and just k variables—for any ﬁxed k. In the terminology
+of [14], C has unbounded counting width. On the other hand, hardness of approximation
+for a maximization problem is typically established by showing that every class that
+includes all instances with an optimum m∗ and excludes all instances with an optimum
+less than cm∗, is NP-hard. Our method combines these two. We aim to show that any
+class separating instances with an optimum m∗ from instances with an optimum less
+than cm∗ has unbounded counting width. In general, we not only show that counting
+width is unbounded, but establish stronger bounds on how it grows with the size of
+instances, as such bounds are directly tied to lower bounds on semideﬁnite programming
+hierarchies [14, 8]. This methodology poses new challenges for Spoiler-Duplicator games
+in ﬁnite model theory. Such games are typically played on pairs of structures that are
+minimally diﬀerent. In the new setting, we need to show Duplicator winning strategies
+in games on pairs of structures that diﬀer substantially, on some numeric parameters.
+The PCP theorem is the fons et origo of results on hardness of approximation. It
+established the ﬁrst provably NP-hard constant gap between the fully satisﬁable instances
+of MAX 3SAT, i.e., those in which all clauses can be satisﬁed, and the less satisﬁable
+ones, those where no more than 1 −ϵ0 can be satisﬁed, for some explicit ϵ0 > 0. The
+gap between 1 and 1 −ϵ0 was then ampliﬁed and also transferred to other problems by
+means of reductions. For us, the starting point is the problem MAX 3XOR . We are
+able to establish a deﬁnability gap between the satisﬁable instances of this and instances
+in which little more than 1/2 of the clauses can be satisiﬁed. The constant 1 /2 is easily
+seen to be optimal since in every 3XOR instance at least half of the equations can be
+satisﬁed.
+The methods for establishing this optimal initial gap are very diﬀerent from that
+for the PCP theorem. We construct a k-locally satisﬁable instance of MAX 3XOR
+3
+=== PAGE 4 ===
+which, by a random construction is at the same time highly unsatisﬁable. We can then
+combine this with a construction adapted from [6] to obtain an optimal gap that defeats
+any ﬁxed counting width. This shows that no algorithm that is expressible in FPC can
+approximate MAX 3XOR within a constant above 1/2, even on satisﬁable instances. It
+should be pointed out that, although the inapproximability of MAX 3XOR above 1/2
+matches algorithmic lower bounds and is tight, thetype of deﬁnability gap that we obtain,
+which applies to satisﬁable instances, cannot have an analogue in the algorithmic setting.
+The satisﬁable instances of MAX 3XOR are distinguished from unsatisﬁable ones by a
+polynomial-time algorithm. To show inapproximability for any constant greater than 1/2
+one has to show that it is the almost satisifable ones that are indistinguishable from those
+that are highly unsatisﬁable. This distinction supports our claim that our methods are
+very diﬀerent from that for the PCP theorem.
+With such an optimal initial gap for MAX 3XOR in hand, we can then transfer it
+to other problems by means of reductions, just as in classical inapproximability. Our
+reductions have to preserve FPC deﬁnability and we mostly rely on ﬁrst-order deﬁnable
+reductions. For one, the standard direct reduction from 3XOR to 3SAT is trivially ﬁrst-
+order deﬁnable and gives an optimal undeﬁnability gap for MAX 3SAT: no algorithm
+expressible in FPC can achieve an approximation ratio of 7 /8 +ϵ, even on satisﬁable
+instances. Again this matches known algorithm lower bounds and is tight. For other
+problems we need to rely on more sophisticated constructions, without leaving the realm
+of ﬁrst-order deﬁnable reductions. It turns out that many of the reductions used in
+the classical theory of approximability are ﬁrst-order reductions but this requires close
+examination and proof.
+We show that the long-code reductions from [19] are deﬁnable in ﬁrst-order logic.
+Such reductions have the merit of providing diﬀerent constructions of optimal gaps
+for MAX 3XOR and MAX 3SAT starting at any initial gap whatsoever. In addition,
+the techniques that are involved in them have applications elsewhere. For the vertex
+cover problem, we are able to show that the reduction from [15], which is based on the
+same long-code reduction techniques as in [19], is ﬁrst-order deﬁnable, showing that FPC
+cannot give an approximation better than 1.36. It is possible that this could be improved
+to
+√
+2 using the recent breakthrough of [23] but we leave this to future work.
+2 Preliminaries
+We use F2 to denote the 2-element ﬁeld. For any positive integer n, let [n] :={1,...,n }.
+2.1 Logics and games
+We assume familiarity with ﬁrst-order logic FO. All our vocabularies are ﬁnite and
+relational, and all structures are ﬁnite. For a structure A, we write A to denote its
+universe, and we often write|A| and|A| interchangeably to mean the number of elements
+in the universe. We refer to ﬁxed-point logic FP and ﬁxed-point logic with counting FPC
+but the deﬁnitions of these are not required for the technical development in the paper.
+For this it suﬃces to consider the bounded variable fragments of ﬁrst-order logic.
+For a ﬁxed positive integer k, we write Lk to denote the fragment of ﬁrst-order logic
+in which every formula has at most k variables, free or bound. We also write ∃Lk,+ for
+4
+=== PAGE 5 ===
+the existential positive fragment ofLk. This consists of those formulas of Lk formed using
+only the positive Boolean connectives∧ and∨, and existential quantiﬁcation. FOC is the
+extension of ﬁrst-order logic withcounting quantiﬁers. For each natural numberi, we have
+a quantiﬁer∃i where A|=∃ixφ if, and only if, there are at least i distinct elementsa∈A
+such that A|=φ[a/x]. While the extension of ﬁrst-order logic with counting quantiﬁers
+is no more expressive than FO itself, the presence of these quantiﬁers does aﬀect the
+number of variables that are necessary to express a query. Let Ck denote the k-variable
+fragment of FOC in which no more than k variables appear, free or bound.
+For two structures A and B, we write A≡Ck B to denote that they are not distin-
+guished by any sentence of Ck. All that we need to know about FPC is that for every
+formula φ of FPC there is a k such that if A≡Ck B then A|= φ if, and only if, B|= φ.
+We also write A⇒k B to denote that every sentence of ∃Lk,+ that is true in A is also
+true in B. While ≡Ck is an equivalence relation, ⇒k is reﬂexive and transitive but not
+symmetric. These relations have well established characterizations in terms of two-player
+pebble games. The relation ⇒k is characterized by the existential k-pebble game [24]
+and≡Ck by the k-pebble bijective game [20].
+Both versions of the game are played on a pair of structures A and B by two players,
+Spoiler and Duplicator, using k pairs of pebbles (a1,b 1),..., (ak,bk). In a game position,
+some (or all) of the pebbles a1,...,a k are placed on elements of A while the matching
+pebbles among b1,...,b k are placed on elements of B. Where it causes no confusion, we
+do not distinguish notationally between the pebble ai (or bi) and the element on which
+it is placed. In the existential k-pebble game, at each move Spoiler chooses a pebble ai
+(which might or might not already be on an element of A) and places it on any element
+of A. Duplicator has to respond by placing bi on an element of B. If the resulting partial
+map from A to B given by ai↦→ bi is not a partial homomorphism, then Spoiler has
+won the game. In the k-pebble bijective game Spoiler chooses a pair of pebbles ( ai,bi)
+and Duplicator has to respond by giving a bijection f : A → B which agrees with
+the map aj↦→ bj for all j̸= i. Spoiler chooses a pair ( a,f (a)) on which to place the
+pebbles (ai,bi). Again, if the resulting partial map from A to B given byai↦→bi is not a
+partial isomorphism, then Spoiler has won the game. In both games, we say Duplicator
+has a winning strategy if, no matter how Spoiler plays, it can play forever without losing.
+The following summarises the connection between these games and the relations ≡Ck,
+and⇒k. For any two structures A and B, the following hold: A⇒k B if, and only if,
+Duplicator has a winning strategy in the existentialk-pebble game played onA and B [24];
+and A≡Ck B if, and only if, Duplicator has a winning strategy in the k-pebble bijective
+game played on A and B [20].
+For undirected graphs, the relation ≡C2 has a simple combinatorial characterization
+in terms of vertex reﬁnement (see [22]). For any graph G, there is a coarsest parti-
+tion C1,...,C m of the vertices of G such that for each 1≤i,j ≤m there exists δij such
+that eachv∈Ci has exactlyδij neighbours inCj. Let H be another graph andD1,...D m′
+be the corresponding partition of H with constants γij. Then G≡C2 H if, and only
+if,m =m′ and there is a permutationh∈ Symm such that|Ci| =|Dh(i)| andδij =γh(i)h(j)
+for all i and j.
+All classes of structures we consider in this paper are assumed to be closed under
+isomorphism. Let C be such a class of structures and for any n∈ N, let Cn denote the
+structures in C with at most n elements. The counting width of C [14] is the function k :
+5
+=== PAGE 6 ===
+N→ N where k(n) is the smallest value such that for any A∈ Cn and any B̸∈ C , we
+have A̸≡Ck(n) B. Note that k(n)≤n. Because A̸≡C1 B whenever A and B have diﬀerent
+numbers of elements, k(n) is also the smallest value such that Cn is a union of ≡Ck(n)-
+classes. In particular, it follows that the counting width of C is the same as that of its
+complement. Fork : N→ N, we say that two disjoint classes C and D areCk-separable if
+whenever A∈ Cn and B∈ Dn, then we have A̸≡Ck(n) B. Equivalently C and D are Ck-
+separable if there is a class E of counting width k such that C⊆ E and D⊆ E . To see
+that the two conditions are equivalent, ﬁrst suppose that whenever A∈ Cn and B∈ Dn
+we have A̸≡Ck(n) B. Then, if we deﬁne E to be the set that contains, for every n, all
+structures of size n that are≡Ck(n)-equivalent to some structure in A , it witnesses the
+second condition. In the other direction, if for some n, we have A∈ Cn and B∈ Dn
+and A≡Ck(n) B, then any E with counting width k that contains A must also contain B.
+2.2 Interpretations
+Consider two vocabulariesσ andτ. A d-ary FO-interpretation of τ inσ is a sequence of
+ﬁrst-order formulas in vocabularyσ consisting of: (i) a formulaδ(x); (ii) a formulaε(x,y);
+(iii) for each relation symbol R∈τ of arityk, a formula φR(x1,..., xk); and (iv) for each
+constant symbolc∈τ, a formulaγc(x), where eachx,y orxi is ad-tuple of variables. We
+calld the dimension of the interpretation. If d = 1, we say that the interpretaion islinear.
+We say that an interpretation Θ associates a τ-structure B to a σ-structure A if there is
+a map h from{a∈ Ad| A|= δ[a]} to the universe B of B such that: (i) h is surjective
+ontoB; (ii) h(a1) = h(a2) if, and only if, A|=ε[a1,a2]; (iii) RB(h(a1),...,h (ak)) if, and
+only if, A|= φR[a1,..., ak]; and (iv) h(a) = cB if, and only if, A|= γc[a]. Note that an
+interpretation Θ associates a τ-structure with A only if ε deﬁnes an equivalence relation
+onAd that is a congruence with respect to the relations deﬁned by the formulaeφR andγc.
+In such cases, however, B is uniquely deﬁned up to isomorphism and we write Θ( A) = B.
+It is also worth noting that the size of B is at most nd, if A is of size n. But, it may in
+fact be smaller. We call an interpretation p-bounded, for a polynomial p, if|B|≤ p(|A|),
+and say the interpretation is linearly bounded ifp is linear. Every linear interpretation is
+linearly bounded, but the converse is not necessarily the case.
+For a class of structures C and an interpretation Θ, we write Θ( C ) to denote the
+class{Θ(A) | A ∈ C}. We mainly use interpretations to deﬁne reductions between
+classes of structures. These allow us to transfer bounds on separability, by the following
+lemma.
+Lemma 1. Let Θ be ap-bounded interpretation of dimensiond and let t be the maximum
+number of variables appearing in any formula of Θ. If C and D are two disjoint classes of
+structures such that Θ(C ) and Θ(D) areCk(n)-separable, then C and D are Cdk(p(n))+t-
+separable.
+Proof. Let A∈ Cn and B∈ Dn be two structures. Then, since Θ( A) and Θ( B) have size
+at most p(n), there is a formula φ∈ Ck(p(n)) such that Θ( A)|= φ and Θ( B)̸|= φ. We
+composeφ with the interpretation Θ to obtainφ′. That is to say, we replace every relation
+symbol by its deﬁning formula, including replacing all occurrences of equality by ε, and
+we relativize all quantiﬁers to δ. Note that this involves replacing quantiﬁcation over
+elements with quantiﬁcation over tuples. That is to say, we need assertions of the form
+6
+=== PAGE 7 ===
+“there existi tuplesx such that . . . ”. It is well known that such counting quantiﬁers over
+tuples can be replaced by a series of counting quantiﬁers over single elements without
+increasing the total number of variables. Then A|= φ′ and B̸|= φ′. It is also easy to
+check thatφ′ has at most dk(p(n)) +t variables. The multiplicative factor d comes from
+the fact that every variable in φ is replaced by a d-tuple and the additive t accounts for
+any other variables that may appear in the formulas of Θ.
+When we wish to deﬁne a reduction from a class C by a ﬁrst-order interpretation, it
+suﬃces to give an interpretation Θ for all structures in C with at least two elements (or,
+indeed, at leastk elements for any ﬁxedk). This is because we can deﬁne an arbitrary map
+on a ﬁnite set of structures by a ﬁrst-order formula, so we just need to take the disjunction
+of Θ with the formula that deﬁnes the required interpretation on the structures with one
+element. With this in mind, we deﬁne the method of ﬁnite expansions which gives us
+interpretations Θ that take a structure A with universe A to a structure with a universe
+consisting of l labelled disjoint copies of S for some deﬁnable subset S ofA. Note that Θ
+would not, in general, be linear, but it is linearly bounded.
+So, ﬁx a value l, and let t be the least integer such that l≤ 2t. In a structure A
+with at least two elements, we say that a t + 1-tuple of elements (a1,...,a t+1) codes an
+integer i∈ [2t] if b1··· bt is the binary representation of i− 1 and for all j ∈ [t] we
+havebj = 1 if, and only if, aj+1̸= a1. For each i, we can clearly deﬁne a formula γi(y)
+witht + 1 free variables that deﬁnes those tuples that code i. Now, for any formula φ(x),
+let δ(x,y) be the formula φ(x)∧⋁
+i≤lγi(y) and let ϵ(x1,y1,x 2,y2) be the formula
+x1 =x2∧
+⋁
+i
+γi(y1)∧γi(y2).
+In other words, δ picks out those t + 2 tuples (s,a) where s satisﬁes φ and a codes an
+integer in [l], andϵ identiﬁes distinct tuples which have the sames and the same integerl.
+An interpretation using these can be seen to yield a structure with l disjoint copies of
+the set of elements of A satisfying φ.
+3 The Basic Gap Construction
+The problems 3SAT and 3XOR both ask to decide if a formula consisting of the con-
+junction of Boolean constraints each on exactly three Boolean variables is satisﬁable.
+In 3SAT the constraints are disjunctions of literals on three distinct variables. In 3XOR
+the constraints are parities of three distinct variables. Both problems are known to have
+unbounded counting width [6]: the class of satisﬁable instances cannot be separated inCk,
+for bounded k, from the class of unsatisﬁable ones. Our aim is to show that this result
+can be strengthened to show that the class of satisﬁable instances is not Ck-separable
+from the class of instances that are highly unsatisﬁable, meaning that no assignment to
+the variables can satisfy more than a fractions of the constraints for some ﬁxeds∈ (0, 1).
+We give a basic construction for 3XOR, based on that in [6], that establishes this for
+anys> 1/2, with a lower bound on the value ofk that is linear in the number of variables
+in the system. Then we use this construction to get one for 3SAT for any s> 7/8, also
+for a value ofk that is linear in the number of variables. In both cases, the constants 1 /2
+and 7/8 are known to be optimal.
+7
+=== PAGE 8 ===
+3.1 Systems of constraints
+Let Γ be a ﬁnite set of relations over a ﬁnite domain D, also called a constraint lan-
+guage. Let I = {c1,...,c m} be a collection (multi-set) of constraints, each of the
+form R(xi1,...,x ik), where R is a k-ary relation in Γ, and xi1,...,x ik are k distinct D-
+valued variables from a set x1,...,x n of n variables. For c∈ [0, 1], we say that the
+system I is c-satisﬁable if there is an assignment f :{x1,...,x n}→ D that satisﬁes
+at least cm constraints; i.e., that satisﬁes ( f(xi1),...,f (xik))∈ R for at least cm con-
+straints R(xi1,...,x ik) from I. Note that, as we are counting the number of satisﬁed
+constraints, multiplicities matter and this is why we have multi-sets rather than sets of
+constraints.
+We think of a system I ={c1,...,c m} over the constraint language Γ as a ﬁnite
+structure in two ways. In the ﬁrst encoding, the universe is the disjoint union ofx1,...,x n
+and c1,...,c m. The vocabulary includes binary relations E1,E 2,... such that Ei(x,c )
+holds if the constraintc has arityi or more andx is theith variable inc. The vocabulary
+also includes a unary relationZR for each relationR in Γ such thatZR(c) holds ifc is anR-
+constraint: a constraint of the formR(xi1,...,x ik) for some variablesxi1,...,x ik, wherek
+is the arity ofR. In the second encoding, the universe is just the set of variablesx1,...,x n,
+and the vocabulary includes a k-ary relation symbol R for each k-ary relation R in Γ,
+such thatR(xi1,...,x ik) holds if this is one of the constraints in the collection c1,...,c m.
+Note that in this second encoding the collection of constraints is treated as a set. In
+particular, the multiplicity of constraints is lost, which could aﬀect its c-satisﬁability.
+The constraint language Γ is also encoded as a ﬁnite structure in two ways. In the ﬁrst
+encoding the domain isD≤r =D∪D2∪D3∪···∪ Dr, wherer is the maximal arity of a re-
+lation in Γ. The relations E1,E 2,... are interpreted by the projections: Ei(b, (b1,...,b k))
+holds forb∈D and (b1,...,b k)∈Dk if, and only if,i≤k andb =bi. The relations ZR are
+interpreted by the relation R itself as a unary relation over the universe: ZR((b1,...,b k))
+holds if k is the arity of R and (b1,...,b k) belongs to R. In the second encoding, the
+universe is just D, and the relation symbol R is interpreted by R itself. Where it causes
+no confusion, we do not distinguish between a constraint language Γ and the structure
+that encodes it, and similarly between an instance I and its encoding structure.
+It is easily seen that, in both encodings as ﬁnite structures, a system I over Γ is
+satisﬁable if, and only if, there is a homomorphism from the structure that encodes I to
+the structure that encodes Γ. We say that the system is k-locally satisﬁable if I⇒k Γ.
+For 3SAT, the constraint language is denoted Γ 3SAT. It has domain D ={0, 1} and
+the relations are the eight relations R1,...,R 8⊆{ 0, 1}3 deﬁned by the eight possible
+clauses on three variables. For 3XOR, the constraint language is denoted Γ 3XOR. It also
+has domain D ={0, 1} and the relations are the two relations R0,R 1⊆{ 0, 1}3 deﬁned
+by the two possible linear equations x +y +z =b with three variables over F2 ={0, 1}.
+Accordingly, 3XOR instancesI can be identiﬁed with systems of linear equationsAx =b
+over F2. In the following, A and b are referred to as the left-hand side matrix of I and
+right-hand side vector of I, respectively.
+It is probably useful to spell out, in simple words, what it means for a3SAT or 3XOR
+instance to be k-locally satisﬁable. Intuitively, what this means is that every set of less
+thank variables induces a satisﬁable subformula and that, in addition, at least one of the
+satisfying assignments that exists can be extended to any other variable, still satisfying the
+8
+=== PAGE 9 ===
+resulting induced subformula, and itself satisfying the same type of extension property.
+Strictly speaking this description is accurate only in the second encoding; in the ﬁrst
+encoding one has to consider sets of less than k variables and clauses, and then the
+correspondence with satisfying assignments with the extension property is not as direct.
+However, what is true and useful (and easy to see) is that if a 3SAT or 3XOR instance
+isk-locally satisﬁable in the ﬁrst encoding then it is alsok-locally satisﬁable in the second
+encoding, while if it is 3k-locally satisﬁable in the second encoding, then it is alsok-locally
+satisﬁable in the ﬁrst encoding. We use the second of these claims in the proof of Lemma 5
+below (where we also spell out the easy proof of it).
+3.2 Gap construction
+We now focus on 3XOR and hence on systems of linear equations over F2.
+A starting point for us is the following construction which allows us to convert any k-
+locally satisﬁable system of equations into a pair of systems that are≡Ck-indistinguishable.
+See [1, Prop. 32] for a related construction, which is inspired by the proof in [6] that sat-
+isﬁability of systems of linear equations over F2 is not invariant under≡Ck for any k.
+For any instance I of 3XOR we deﬁne another instance G(I) of 3XOR which has
+two variables x0
+j and x1
+j for each variable xj of I. For each equation xj +xk +xl = b
+in I, we have eight equations in G(I) given by the eight possible values of a1,a 2,a 3∈
+{0, 1} in xa1
+j + xa2
+k + xa3
+l = b + a1 + a2 + a3. If I is the system Ax = b, then the
+homogeneous companion of I is the system Ax = 0, which we denote I 0. Note that
+the system G(I 0) is satisﬁable for any I by setting each variable xa
+j to a. We show
+that, despite this, as long as I is locally satisﬁable, G(I) is hard to distinguish from its
+homogeneous companion G(I 0).
+Lemma 2. For every 3XOR instanceI and every integer k≥ 3, if I is k-locally satisﬁ-
+able, then G(I)≡Ck G(I 0).
+Proof. We describe a strategy for Duplicator in the k-pebble bijective game played
+onG(I) andG(I 0), given a strategy in the existentialk-pebble game onI and Γ = Γ3XOR.
+Suppose we have a position in the existential k-pebble game on I and Γ with pebbles
+on x1,...,x k′, for some k′≤ k in I, and corresponding pebbles on v1,...,v k′∈{ 0, 1}
+in Γ. Suppose further that this is a winning position for Duplicator, i.e. she has a strategy
+to play forever from this position. Then, we claim that the position in the bijective
+game where the pebbles in G(I) are on xa1
+1 ,...,x
+ak′
+k′ , for some a1,...,a k′∈{ 0, 1} and
+the matching pebbles in G(I 0) are on xa1+v1
+1 ,...,x
+ak′ +vk′
+k′ is a winning position in the
+bijective game on these two structures. To see this, note ﬁrst that, if xr +xs +xt =
+bi is an equation in I, for 1 ≤ r,s,t ≤ k′, then by assumption that the position is
+winning in the existential game, vr +vs +vt = bi. Hence, xar
+r +xas
+s +xat
+t = bi is an
+equation in G(I) if, and only if, xar
+r +xas
+s +xat
+t = 0 is an equation in G(I 0) if, and only
+if, xar+vr
+r +xas+vs
+s +xat+vt
+t =vr +vs +vt is an equation in G(I 0), but this last equation
+is xar+vr
+r +xas+vs
+s +xat+vt
+t = bi. Thus, the map from xa1
+1 ,...,x
+ak′
+k′ to xa1+v1
+1 ,...,x
+ak′ +vk′
+k′
+is a partial isomorphism. To see that Duplicator can maintain the condition, suppose
+Spoiler moves the pebbles on ( x
+aj
+j ,x
+aj +vj
+j ). By assumption, Duplicator has a response
+in the existential game whenever Spoiler moves the pebble from xj to xl. This response
+9
+=== PAGE 10 ===
+deﬁnes a function f from the variables in x to{0, 1}. We use this to deﬁne the bijection
+taking xa
+l to xa+f (xl)
+l . This is a winning move in the bijective game.
+As far as the degree of satisﬁability is concerned, the construction preserves a gap in
+the following quantiﬁable terms:
+Lemma 3. For every 3XOR instanceI and every c,s∈ [0, 1], the following hold:
+1. if I is c-satisﬁable, then G(I) is c-satisﬁable,
+2. if I is not s-satisﬁable, then G(I) is not (1/2 +s/2)-satisﬁable.
+Proof. For proving 1, let h :{x1,...,x n}→{ 0, 1} be an assignment of values to the
+variables of I that satisﬁes at least cm of the m equations in I. Deﬁne the assignment g
+on the variables of G(I) by g(xa) = h(x) +a. For each equation e satisﬁed by h, all
+eight equations arising from e are satisﬁed by g and so g satisﬁes at least 8cm of the 8m
+equations in G(I).
+For proving 2, suppose g is an assignment of values in {0, 1} to the variables xa
+i
+in G(I). Let h :{x1,...,x n}→{ 0, 1} be the assignment deﬁned by h(xj) = g(x0
+j). We
+claim that if ei is an equation xj +xk +xl = b in I that is not satisﬁed by h then at
+least four of the eight equations in G(I) arising from ei are falsiﬁed by g. To see this,
+consider two cases. First, suppose that g(x0
+t ) =g(x1
+t ) for some t∈{j,k,l}. Without loss
+of generality, we assume t =j. Then consider the four pairs of equations
+x0
+j +xa1
+j +xa2
+k =bi +a1 +a2,
+x1
+j +xa1
+j +xa2
+k =bi +a1 +a2 + 1
+obtained by taking the four possible values of a1 and a2. Since g(x0
+j) = g(x1
+j), if one
+equation in a pair is satisﬁed by g the other is necessarily falsiﬁed. Thus, at least four
+equations are falsiﬁed. For the second case, suppose that for each t∈{j,k,l} occurring
+inei we haveg(x0
+t )̸=g(x1
+t ). But then, since we assume that h falsiﬁesei, it follows thatg
+falsiﬁesx0
+j +x0
+k +x0
+l =b and hence it falsiﬁes all eight equations arising from ei. In either
+case, g falsiﬁes at least four of the equations arising from ei.
+Now, suppose that g satisifes at least (1/2 +s/2)· 8m of the 8m equations in G(I).
+We claim that h satisﬁes at least sm equations in I. Suppose for contradiction that h
+falsiﬁes a proportion ϵ> 1−s of the equations. By the above argument, then g falsiﬁes
+at least 4ϵm of the equations in G(I). But 4 ϵm > (1/2−s/2)· 8m contradicting the
+assumption that g satisﬁes at least (1/2 +s/2)· 8m equations.
+The extreme cases of Lemma 3 are given by c = 1 for point 1, and s = 1/2 + ϵ
+with ϵ > 0 for point 2. Indeed, every 3XOR instance is 1/2-satisﬁable, as witnessed
+by the all-zero assignment, or the all-one assignment, whichever satisﬁes more equations.
+Note also that point 1 of Lemma 3 preserves its extremality: if I is satisﬁable, then so
+isG(I). However, point 2 does not preserve its extremality, since even ifI is not (1/2+ϵ)-
+satisﬁable, the best that can be claimed aboutG(I) is that it is not (3/4+ϵ/2)-satisﬁable.
+In the following we show that if the vector b is chosen uniformly at random, then both
+instances Ax =b and G(Ax =b) are at most (1/2 +ϵ)-satisﬁable, with high probability,
+provided the matrix A has at least a constant-factor more rows than columns.
+10
+=== PAGE 11 ===
+Lemma 4. For every two reals ϵ >0 and δ >0 there exists an integer c >0 such that
+for every suﬃciently large integer n and every matrix A∈{ 0, 1}m×n, where m = cn
+and each row of A has exactly three ones, if b is chosen uniformly at random in {0, 1}m
+then, with probability at least 1−δ, both 3XOR instancesAx =b and G(Ax =b) are at
+most (1/2 +ϵ)-satisﬁable.
+Proof. Fixϵ> 0 andδ >0 and letc be any integer bigger than 1/ϵ2. Let n be suﬃciently
+large, let m =cn, and let A∈{ 0, 1}U×V be any matrix with U = [m] and V = [n] that
+has exactly three ones in each row. For each b = (bu)u∈U∈{ 0, 1}U, the instance Ax =b
+has one variable xv for each v∈ V and one equation eu : xv1(u) +xv2(u) +xv3(u) = bu
+for each u∈ U, where v1(u),v 2(u),v 3(u)∈ V are the three columns of A that have
+ones in row u. The instance G(Ax =b) has three variables xa
+v for each v∈V and eight
+equations ea1,a2,a3
+u for each u∈U.
+For each assignmentf :{xv :v∈V}→{ 0, 1} for the variables ofAx =b and eachu∈
+U, let Xf,u be the indicator random variable for the event that f(xv1(u)) +f(xv2(u)) +
+f(xv3(u)) =bu; i.e., for the event that f satisﬁes the equation xv1(u) +xv2(u) +xv3(u) =bu.
+The probability of this event is 1 /2, and all such events, as u ranges over U, are
+mutually independent. Thus, setting Xf = ∑
+u∈UXf,u, we have that Xf is a bino-
+mial random variable with expectation E[Xf] = m/2. By Hoeﬀding’s inequality, the
+probability that Xf− E[Xf] ≥ t is at most e−2t2/m. In particular, the probability
+that Xf ≥ (1/2 + ϵ)m is at most e−2ϵ2m. By the union bound, the probability that
+some f satisﬁes Xf≥ (1/2 +ϵ)m is at most 2ne−2ϵ2m.
+Similarly, for each assignment f :{xa
+v :v∈V, a∈{ 0, 1}}→{ 0, 1} for the variables
+of G(Ax =b) and each u∈U, let Yf,u∈ [0, 1] be the fraction of equations of G(Ax =b)
+among those that come from u that are satisﬁed by f; i.e., precisely, Yf,u is 1/8-th of
+the number of triples ( a1,a 2,a 3)∈{ 0, 1}3 for which the equality f(xa1
+v1(u)) +f(xa2
+v2(u)) +
+f(xa3
+v3(u)) = bu + a1 + a2 + a3 holds. We claim that the expectation of the random
+variable Yf,u is 1/2. To see this, consider two cases: 1) f(x0
+vj (u))̸= f(x1
+vj (u)) for all j∈
+{1, 2, 3}, and 2) f(x0
+vj (u)) = f(x1
+vj (u)) for some j∈{ 1, 2, 3}. In case 1), either all eight
+equations that come from u are satisﬁed, or none is, and each possibility happens with
+probability 1/2 according to the outcome of the random choice of bu. The expectation
+of Yf,u is thus 1/2 in this case. In case 2), exactly half of the eight equations that come
+from u are satisﬁed, and which half depends on the outcome of the random choice of bu.
+The expectation of Yf,u is thus 1/2 also in this case. This shows that the expectation
+of Yf,u is 1 /2 in either case. Moreover, the random variables Yf,u, as u ranges over U,
+are mutually independent. Thus, setting Yf = (1/m)∑
+u∈UYf,u, we have that Yf is
+the average of m independent random variables with range in [0 , 1]. By Hoeﬀding’s
+inequality, the probability that Yf− E[Yf] ≥ t is at most e−2t2m. In particular, the
+probability that Yf≥ 1/2 +ϵ is at most e−2ϵ2m. By the union bound, the probability
+that some f satisﬁes Yf≥ 1/2 +ϵ is at most 2ne−2ϵ2m.
+Since m = cn and c > 1/ϵ2, twice 2 ne−2ϵ2m is at most 2 n+1e−2n and is less than δ
+for all suﬃciently large values of n. Thus, for any large enough n, the probability that
+both Ax =b and G(Ax =b) are at most (1/2 +ϵ)-satisﬁable is at least 1−δ.
+The next step is to show that an appropriate choice of the matrix A will give a
+locally satisﬁable instance Ax = b for any right-hand side b. Entirely analogous claims
+have been known and proved in the context of the proof complexity of propositional
+11
+=== PAGE 12 ===
+resolution; indeed, our proof builds on the methods for resolution width [9], and their
+relationship to existential pebble games from [5, 7].
+In the proof, we need the notion of a graph G that is a bipartite unique-neighbour
+expander graph with parameters (m,n,d,s,β ) where m,n,d ands are integer parameters
+with s < nand β is a positive real number. What this means is that G is a bipartite
+graph with parts U and V with m and n vertices respectively; each u∈U has exactly d
+neighbours in V ; and for every T ⊆ U with|T|≤ s we have|∂T|≥ β|T|, where ∂T
+denotes the set of vertices in V that are unique neighbours ofT ; i.e., they are neighbours
+of a single vertex in T .
+Lemma 5. For every integer r >0 there is a real γ >0 such that for every suﬃciently
+large integer n there is a matrix A∈{ 0, 1}m×n, where m =rn, such that each row of A
+has exactly three ones and, for every vector b∈{ 0, 1}m, the 3XOR instance Ax = b
+is k-locally satisﬁable for k≤γn.
+Proof. Fix an integer r > 0 and reals α > 0 and β > 0, and let n0 be suﬃciently
+large that for every n≥ n0 there exists a graph G that is a bipartite unique-neighbour
+expander graph with parameters ( rn,n, 3,αn,β ). For the existence of such graphs with
+these parameters see [29, Chapter 4]. Let A∈{ 0, 1}U×V be the incidence matrix of G,
+where U = [m] and V = [n] are the two sides of G, for m =cn. For each b = (bu :u∈
+U)∈{ 0, 1}U, the 3XOR instance Ax = b has one variable xv for each v∈ V , and one
+equation eu :xv1(u) +xv2(u) +xv3(u) =bu for eachu∈U, where v1(u),v 2(u),v 3(u) are the
+three neighbours of u in G. We claim that every choice of b∈{ 0, 1}U gives that Ax =b
+is k-locally satisﬁable for k≤γn with γ =αβ/9.
+Claim 6. For every b∈ {0, 1}U, every set of at most αn equations from Ax = b is
+satisﬁable.
+Proof. For eachT⊆U, let eT be the set of equations that are indexed by vertices in T ,
+and let vT be the set of variables that appear in eT . We prove, by induction on t≤αn,
+that ifT⊆U and|T| =t, then there exists an assignment that sets all the variables invR
+and that satisﬁes all the equations in eT . For t = 0 the claim is obvious. Assume now
+that 1≤t≤αn and letT be a subset ofU of cardinalityt. Then|∂T|≥ β|T|> 0. Let v0
+be some element in ∂T and letu0∈T be the unique neighbour of v0 inT . The induction
+hypothesis applied to S =T\{u0} gives an assignmentg that sets all the variables in vS
+and satisﬁes all the equations in eS. The assignment g may assign some of the variables
+of the equation eu0, but not all, since v0 is not a neighbour of any vertex in S. Let f be
+the unique extension of g that ﬁrst sets all the variables in vT\ (vS∪{xv0}) to 0, and
+then sets xv0 to the unique value that satisﬁes the equation eu0. This assignment sets all
+the variables in vT and satisﬁes all the equations in eT . The proof is complete.
+Claim 7. For every b∈{ 0, 1}U and k≤γn, the instance I is k-locally satisﬁable.
+Proof. If I is satisﬁable, then Duplicator certainly has a winning strategy and there
+is nothing to prove. Assume then that I is unsatisﬁable and let I′ be a minimally
+unsatisﬁable subsystem; a subset of the equations of I that is unsatisﬁable and every
+proper subset of it is satisﬁable. For each equation eu :xv1(u) +xv2(u) +xv3(u) =bu of I,
+letFu be the four clauses{x(a1)
+v1(u),x (a2)
+v2(u),x (a3)
+v3(u)} witha1,a 2,a 3∈ F2 witha1 +a2 +a3 =bu,
+12
+=== PAGE 13 ===
+where z(a) stands for the negative literal ¬z if a = 0 and the positive literal z if a = 1.
+Let F be the 3CNF formula that is the union of all the Fu as u ranges over U. Observe
+that F is an unsatisﬁable 3CNF. We intend to apply Theorem 5.9 from [9] to it.
+Let A be the collection of all Boolean functions fu :{0, 1}V→{ 0, 1} deﬁned by
+fu(xv :v∈V ) =xv1(u) +xv2(u) +xv3(u) +bu mod 2,
+for u∈ U. Each function in A is sensitive in the sense of Deﬁnition 5.5 from [9], and
+compatible with F in the sense of Deﬁnition 5.3 from [9]. Moreover, if A0⊆ A is the set
+of functions that corresponds to the minimally unsatisﬁable subsystem I′ of I, then its
+cardinality m0 satisﬁes m0 > αnby Claim 6. It follows that the expansion e(A ) in the
+sense of Deﬁnition 5.8 from [9] is at least αβn/3. By Theorem 5.9 in [9], every resolution
+refutation ofF requires width at leasteαn/3, and hence at least 3k sincek≤γn =eαn/9.
+By Theorem 2 in [7], Duplicator has a winning strategy for the existential 3k-pebble game
+played on the structures F and the constraint language Γ 3SAT of 3SAT, in the second
+encoding discussed in Section 3.1. We use this winning strategy to design a winning
+strategy for Duplicator in the existential k-pebble game played on I and Γ3XOR.
+While playing the game on I, Duplicator plays the game on F on the side and keeps
+the invariant that each pebbled variable in the game on I is also pebbled in the side
+game, and each pebbled equation in the game on I has its three variables pebbled in the
+side game. Whenever a new variable is pebbled in the game on I, Duplicator pebbles the
+same variable in the side game, and copies the answer from its strategy on it. Whenever
+a new equation is pebbled in the game on I, Duplicator pebbles its three variables in the
+side game, and answers the pebbled equation accordingly from its strategy. Since at each
+position of the game on I there are no more than k pebbles on the board, at each time
+during the simulation the side game has no more than 3 k pebbles on the board. This
+shows that the simulation can be carried on forever and the proof is complete.
+This completes the proof of Lemma 5.
+We can now prove our ﬁrst two gap theorems.
+Theorem 8. For every real ϵ > 0, if C is the collection of 3XOR instances that are
+satisﬁable and D is the collection of 3XOR instances that are not (1/2 +ϵ)-satisﬁable,
+then C and D are not Ck-separable for any k =k(n) such that k(n) =o(n).
+Proof. By combining Lemma 5 with Lemma 4, there is a family of systems ( Sk)k≥1
+with O(k) variables and equations such that G(Sk) is not (1 /2 +ϵ)-satisﬁable but Sk
+is k-locally satisﬁable. Let I 1
+k = G(Sk) and I 0
+k = G(S0
+k). Then I 0
+k≡Ck I 1
+k by Lemma 2.
+Moreover, by the ﬁrst part of Lemma 3, the instance I 0
+k is satisﬁable while, by choice,
+the instance I 1
+k is not (1/2 +ϵ)-satisﬁable. Since I 0
+k and I 1
+k have two variables for each
+variable inSk and eight equations for each equation in Sk, they also have O(k) variables
+and equations and the result follows.
+Theorem 9. For every real ϵ > 0, if C is the collection of 3SAT instances that are
+satisﬁable and D is the collection of 3SAT instances that are not (7/8 +ϵ)-satisﬁable,
+then C and D are not Ck-separable for any k =k(n) such that k(n) =o(n).
+13
+=== PAGE 14 ===
+Proof. Consider the reduction Θ from 3XOR to 3SAT that translates each equation into
+a conjunction of four clauses. Thus x +y +z = d becomes four clauses {x(a),y (b),z (c)}
+with a,b,c ∈ F2 and a +b +c =d, where z(e) stands for the negative literal ¬z if e = 0
+and the positive literal z if e = 1. This is easily deﬁned in ﬁrst-order logic. As the set of
+variables inI is the same as in Θ(I), it is linearly bounded. We claim that applying Θ to
+Theorem 8 with ϵ reset to ϵ/4 gives the theorem through Lemma 1. First, it is clear that
+if I is a 3XOR instance that is satisﬁable, then Θ( I) is also satisﬁable. Now, suppose
+that I is a system of m equations that is not (1 /2 +ϵ/4)-satisﬁable, and let g be an
+assignment of truth values to the variables X of Θ(I). Applied to I, the assignment g
+falsiﬁes at least (1/2−ϵ/4)m of the equations. For each equation, g must falsify at least
+one of the four corresponding clauses in Θ( I). Thus, g falsiﬁes at least (1 /2−ϵ/4)m
+clauses in Θ(I) and so satisﬁes at most 4 m− (1/2−ϵ/4)m = (7/8 +ϵ)· 4m of the 4m
+clauses.
+To formulate the consequences of these two theorems for FPC deﬁnability, it is useful
+to introduce some terminology. Say that a term η of FPCδ-approximates MAX 3XOR ,
+where 0 < δ≤ 1, if whenever I is an instance of 3XOR in which a maximum of m∗
+clauses are simultaneously satisﬁable, then the interpretation of ηI of η in I is a value
+such that m∗≥ηI≥δm∗. The notion of a term of FPC δ-approximating MAX 3SAT
+is deﬁned similarly.
+Corollary 10. For any ϵ> 0,
+1. there is no term of FPC that (1/2 +ϵ)-approximates MAX 3XOR ; and
+2. there is no term of FPC that (7/8 +ϵ)-approximates MAX 3SAT.
+Proof. If there were such a term in case (1), we would obtain an FPC sentence deﬁning
+a class E of counting width bounded by a constant which separates the class of 3XOR
+instances that are satisﬁable from those that are not (1 /2 +ϵ)-satisﬁable, constradicting
+Theorem 8. The analogous situation holds in case (2) and Theorem 9.
+4 Long Code Reductions
+In this section we show that certain reductions from the theory of inapproximability
+of MAX 3XOR and MAX 3SAT can be expressed as FO-interpretations. While no
+reduction can provide an improvement on the already optimal inapproximability results
+that are implied by Theorems 8 and 9, these FO-interpretations have the merit of pro-
+viding optimal gap pairs starting at any initial gap pair, provided the initial gap pair
+exhibits any constant gap separation whatsoever. In addition, the details of the FO-
+interpretations that we work out here will also be useful when we discuss the reductions
+to the vertex-cover problem in the next section.
+4.1 Parallel repetition
+We begin by deﬁning the LABEL COVER problem, a standard problem in the study
+of hardness of approximation. Indeed, it is described in the textbook [3, p. 494] as being
+14
+=== PAGE 15 ===
+“ubiquitous” in the PCP literature. For a full discussion of the problem, see [3, Chap. 22],
+where it is called 2 CSPW with the projection property.
+An instance I of the LABEL COVER problem is given by two disjoint sets of
+variables U and V with domains of values A and B, respectively, a predicate P :
+U×V×A×B→{ 0, 1}, and an assignment of weights W : U×V → N. If all the
+non-zero weightsW (u,v ) are equal, then the instance is said to have uniform weights. If
+for all u∈ U the sums W (u) := ∑
+v∈V W (u,v ) of incident weights are equal, then the
+instance is called left-regular. A right-regular instance is deﬁned analogously in terms
+of W (v) :=∑
+u∈UW (u,v ). The instance is a projection game if for every (u,v )∈U×V
+with W (u,v ) ̸= 0 it holds that for every a ∈ A there is exactly one b ∈ B satisfy-
+ing P (u,v,a,b ) = 1. It is called a unique game if|A| = |B| and it is a projection
+game both ways: from A to B, and from B to A. The instance is said to have parame-
+ters (m,n,p,q ) if|U| =m,|V| =n,|A| =p and|B| =q. Its domain size is p +q.
+A value-assignment for an instanceI is a pair of functions f :U→A andg :V→B.
+The weight v(f,g ) of the value-assignment (f,g ) is the total weight of the pairs ( u,v )∈
+U×V satisfying the constraint P (u,v,f (u),g (v)) = 1; i.e.,
+v(f,g ) =
+∑
+(u,v)∈U×V
+W (u,v )P (u,v,f (u),g (v)). (1)
+Forc∈ [0, 1], we say that the instance is c-satisﬁable if there is a value-assignment whose
+weight is at leastc·W0, whereW0 =∑
+(u,v)∈U×V W (u,v ) is the maximum possible weight.
+We call it satisﬁable if it is 1-satisﬁable.
+The bipartite reduction takes an instanceI of 3XOR and produces a projection game
+instance L(I) of LABEL COVER deﬁned as follows. The sets U and V are the set of
+equations in I and the set of variables in I, respectively. The weight W (u,v ) is 1 if v is
+one of the variables in the equationu, and 0 otherwise. The domains of values associated
+to U and V are A ={(a1,a 2,a 3)∈ F3
+2 : a1 +a2 +a3 = 0} and B = F2, respectively.
+The predicate P associates to the pair ( u,v ), where u is the equation v1 +v2 +v3 = b
+and v =vi for i∈{ 1, 2, 3}, the set of pairs ((a1,a 2,a 3),a )∈A×B satisfying a =ai +b.
+In other words, P (u,v, (a1,a 2,a 3),a ) = 1 if, and only if, v appears in the equation u,
+and if u is v1 +v2 +v3 =b and v =vi, then the (partial) assignment {v1↦→a1 +b,v 2↦→
+a2 +b,v 3↦→a3 +b}, which satisﬁes the equation v1 +v2 +v3 =b by construction, agrees
+with the (partial) assignment{vi↦→a}. Clearly, this deﬁnes a projection game.
+Lemma 11. For every instance I of 3XOR and every c,s∈ [0, 1], the following hold:
+1. if I is c-satisﬁable, then L(I) is c-satisﬁable,
+2. if I is not s-satisﬁable, then L(I) is not (s + 2)/3-satisﬁable.
+Moreover,L(I) is a left-regular projection game that has uniform weights.
+Proof. Let m be the number of equations in I, so L(I) has exactly 3 m pairs (u,v ) of
+unit weight. Such pairs are called constraints. For proving 1, let h be an assignment
+for I that satisﬁes at least cm of the m equations in I. For each equation u in I,
+sayv1+v2+v3 =b, deﬁnef(u) = (h(v1)+b,h (v2)+b,h (v3)+b) ifh satisﬁesv1+v2+v3 =b,
+and deﬁne f(u) = (0, 0, 0) otherwise. For each variable v in I, deﬁne g(v) = h(v). Each
+equation inI gives rise to exactly three constraints inL(I), and if the equation is satisﬁed
+15
+=== PAGE 16 ===
+by h, then all three constraints associated to it inL(I) are satisﬁed by (f,g ). Thus (f,g )
+satisﬁes at least 3cm of the 3m constraints inL(I), soL(I) is c-satisﬁable. For proving 2,
+let (f,g ) be an assigment for L(I) that satisﬁes at least ( s + 2)m of the 3m constraints
+inL(I). For each variablev inI, deﬁneh(v) =g(v). Let t be the number of equations ofI
+that are satisﬁed by h. In terms of t, the assignment (f,g ) satisﬁes at most 3t + 2(m−t)
+of the 3m constraints of L(I). Thus t≥sm, so I is s-satisﬁable.
+The parallel repetition reduction takes an instance I of LABEL COVER , and an
+integer t≥ 1, and produces another instance R(I,t ) of LABEL COVER deﬁned as
+follows. Let U andV be the sets of variables in I and let W :U×V→ N be the weight
+assignment. The sets of variables of R(I,t ) are Ut and Vt. For u = (u1,...,u t)∈ Ut
+and v = (v1,...,v t)∈ Vt, the weight W (u,v) is deﬁned as ∏t
+i=1W (ui,vi). If A and B
+are the domains of values associated to U and V , then the domains of values associated
+to Ut and Vt are At and Bt respectively. For u = (u1,...,u t)∈ Ut, v = (v1,...,v t)∈
+Vt, a = (a1,...,a t)∈ At and b = (b1,...,b t)∈ Bt, the predicate P (u,v,a,b) is deﬁned
+as∏t
+i=1P (ui,vi,ai,bi). Observe that this deﬁnition guarantees that if I is a projection
+game, then so is R(I,t ).
+Theorem 12 (Parallel Repetition Theorem [27, 21]) . There exists a constant α > 0
+such that for every instance I of LABEL COVER with domain size at most d≥ 1,
+every s∈ [0, 1] and every t≥ 1 the following hold:
+1. if I is satisﬁable, then R(I,t ) is satisﬁable,
+2. if I is not s-satisﬁable, then R(I,t ) is not (1− (1−s)3)αt/d-satisﬁable.
+Moreover, if I is a projection game, left-regular, right-regular, or has uniform weights,
+then so is R(I,t ).
+Although it is the case that the bipartite and the parallel repetition reductions are
+both FO-interpretations, we do not need to formulate this. Instead, we show the FO-
+deﬁnability of the composition of these reductions with the long-code reductions that we
+discuss next.
+4.2 First long-code reduction
+The ﬁrst long-code reduction takes a projection game instanceI of LABEL COVER and
+a rational ϵ∈ [0, 1] and produces an instance C(I,ϵ ) of 3XOR deﬁned as follows. Let U
+and V be the sets of variables of sizes m and n, respectively, with associated domains
+of values A = [p] and B = [q], let W : U×V → N be the weight assignment, let P :
+U×V×A×B→{ 0, 1} be the predicate ofI, and for each (u,v )∈U×V withW (u,v )̸= 0
+and each a∈ A let πu,v(a) be the unique value b∈ B that satisﬁes P (u,v,a,b ) = 1.
+The existence of such a function πu,v : A → B is guaranteed from the assumption
+thatI is a projection game. The set of variables of C(I,ϵ ) includes one variable u(a) for
+eachu∈U and a∈ Fp−1
+2 , and one variable v(b) for each v∈V and b∈ Fq−1
+2 , for a total
+of m2p−1 +n2q−1 variables. Before we are able to deﬁne the set of equations of C(I,ϵ )
+we need a piece of notation. For a vector z = (z1,...,z d)∈ Fd
+2 of dimension d≥ 2, we
+write S(z) =zd and F (z) = (z1 +S(z),...,z d−1 +S(z)). Note that S(z) is a single ﬁeld
+element, andF (z) is a vector of dimensiond−1. With this notation, the set of equations
+16
+=== PAGE 17 ===
+ofC(I,ϵ ) includesW (u,v )·Mq·ϵD·(1−ϵ)q−D copies of the equationv(F (x))+u(F (y))+
+u(F (z)) = S(x) +S(y) +S(z) for each (u,v )∈U×V , each x∈ Fq
+2 and each y,z ∈ Fp
+2,
+where M is the denominator of ϵ = N/M reduced to lowest terms, D is the number of
+positions i∈ [p] such that zi̸=xπ(i) +yi, and π =πu,v if W (u,v )̸= 0.
+Theorem 13 (H˚ astad 3-Query Linear Test [19]). For every s,ϵ ∈ [0, 1] with ϵ > 0
+and s > 0 and every projection game instance I of LABEL COVER , the following
+hold:
+1. if I is satisﬁable, then C(I,ϵ ) is (1−ϵ)-satisﬁable,
+2. if I is not s-satisﬁable, then C(I,ϵ ) is not (1/2 + (s/ϵ)1/2/4)-satisﬁable.
+The proof of Theorem 13 follows from Lemmas 5.1 and 5.2 in [19]. In order to see this,
+we need to explain how our notation matches the one in [19]. Besides the obvious and
+minor correspondance between multiplicative and additive notation for F2, with−1↔
+1 and +1 ↔ 0, there are three other noticeable diﬀerences between the statement of
+Theorem 13 and the statements of Lemmas 5.1 and 5.2 in [19].
+The ﬁrst diﬀerence is that Theorem 13 applies to arbitrary projection game instances
+of LABEL COVER , while the statements in [19] are phrased only for the special cases
+of the problem that result from applying the parallel repetition construction to a suitable
+bipartite reduction applied to a 3SAT instance. We chose to formulate Theorem 13
+in this more general and modular form because this is what the proofs of Lemmas 5.1
+and 5.2 in [19] show, and also because this is how more recent expositions of these results
+are presented (see, e.g., [3]).
+The second diﬀerence is that the conclusion of our statement is phrased in terms of
+thec-satisﬁability of a 3XOR instance, while the statements of Lemmas 5.1 and 5.2 in [19]
+are phrased in terms of the acceptance rate of a probabilistic test that has the following
+form: given access to certain tablesAu andAv, with F2 entries{Au(x)}x∈I and{Av(y)}y∈J
+for certain index sets I and J, respectively, choose a random 3-variables parity test on
+theAu(x) andAv(y) entries under a well-designed special-purpose distribution, and check
+if it is satisﬁed. This diﬀerence is only notational and minor: our instance of XOR is built
+by viewing the Au(x) and Av(y) entries as variables u(x) and v(y), and assigning weight
+to each 3-variable parity equation on these variables proportionally to the probability
+that it is checked by the probabilistic test on the Au andAv tables. With this change, c-
+satisﬁability of the instance translates into the probability of acceptance of the test being
+at least c, and vice-versa.
+The third diﬀerence in the notation is that our variablesu(x) andv(y), and the corre-
+sponding entries Au(x) and Av(y) of the tables Au andAv, are indexed by Fp−1
+2 and Fq−1
+2
+instead of the more natural Fp
+2 and Fq
+2, respectively. This is due to the fact that we
+implement the operations of folding over true and conditioning uponh from [19] directly
+in our construction. In other words, our tables Au and Av are what [19] calls AW,h,true
+and AU,true, respectively. Folding over true as in AU,true is achieved for Av through the
+notation S(z) and F (z) deﬁned above: we chose to partition Fp
+2 into 2p−1 pairs of the
+form (z, 0), (F ((z, 1)), 1), as z ranges over Fp−1
+2 , and view an arbitrary Av : Fp−1
+2 → F2
+as representing the function A′
+v : Fp
+2→ F2 deﬁned by A′
+v(z) = Av(F (z)) +S(z) for ev-
+eryz∈ Fp
+2. It is straightfoward to see that A′
+v is folded over true, in the deﬁnition of [19],
+by construction.
+17
+=== PAGE 18 ===
+Conditioning upon h as in AW,h,true for Au is achieved through the same mechanism
+as folding over true with the additional observation that the operation of conditioning
+uponh is necessary only if the instance of LABEL COVER fails to satisfy the property
+that for every (u,v )∈ U×V and every a∈ A there is at least one b∈ B that satisﬁes
+the predicate P (u,v,a,b ). When this is the case, one deﬁnes h = hu,v : A→{ 0, 1}
+as the predicate indicating if a given a has at least one b that satisﬁes P (u,v,a,b ), and
+conditions the table Au uponh. In our case we do not require this since the given instance
+of LABEL COVER is a projection game instance, and, in particular, for every a there
+is exactly one b, and hence at least one b, such that P (u,v,a,b ) = 1; i.e., h =hu,v is the
+constant 1 predicate. It should be added that the reason why we can assume that I is a
+projection game instance is that our bipartite reduction is designed in such a way that the
+valuesa inA are partial assignments that always satisfy the corresponding constraints u
+in U. In constrast, in [19] the values are taken as arbitrary truth assignments to the
+variables of a collection of clauses, and not all such assignments satisfy all the clauses.
+Our exposition is again more modular and also matches more recent expositions of the
+results in [19] (again, see, e.g., [3]).
+With this notational correspondence, it is now easy to see that Lemma 5.1 in [19]
+gives the ﬁrst claim in Theorem 13, and Lemma 5.2 in [19] applied with δ = (s/ϵ)1/2/4
+gives the second claim in Theorem 13.
+Next, by composing Lemma 11, Theorem 12, and Theorem 13 with the appropriate
+parameters we get the following:
+Theorem 14. For every s,ϵ ∈ [0, 1] with 0 < s < 1 and ϵ > 0, there is an FO-
+interpretation Θ that maps instances of 3XOR to instances of 3XOR in such a way
+that, for every 3XOR instanceI the following hold:
+1. if I is satisﬁable, then Θ(I) is (1−ϵ)-satisﬁable,
+2. if I is not s-satisﬁable, then Θ(I) is not (1/2 +ϵ)-satisﬁable.
+Proof. First we deﬁne Θ(I) and then check that this deﬁnition is an FO-interpretation. In
+anticipation for the proof, let t be a large enough integer so that the following inequality
+holds:
+(1− (1− (s + 2)/3)3)αt/6≤ 16ϵ3, (2)
+where α is the constant in Theorem 12. Such a t exists because s< 1 and ϵ> 0. Apply
+the bipartite reduction to I to obtain the instance I′ = L(I) from Lemma 11. Observe
+that the domain size d ofI′ is|A| +|B| = 6. Next apply the parallel repetition reduction
+toI′ with parametert to obtain a new instanceI′′. Finally apply the long-code reduction
+to I′′ with parameter ϵ to obtain the system I′′′. The parameters were chosen in a way
+that the system I′′′ satisﬁes properties 1 and 2, through Theorem 13.
+It remains to argue that I′′′ can be produced from I by an FO-interpretation. To
+deﬁne I′ from I there is no diﬃculty at all: the FO-interpretation is even linear. To
+deﬁne I′′ from I′ we note that t is a constant, and that the weights W (u,v ) of I′ are 0
+or 1, so again there is no diﬃculty. In this case the FO-interpretation has dimension t,
+and it is nt-bounded. To deﬁne I′′′ from I′′ we note that the domain sizes p and q
+of the instance I′′ are constants, indeed p = 4t and q = 2t. This means that there
+are|U|· 2p−1 variables of type u(a), and|V|· 2q−1 variables of type v(b), and these are
+constant multiples of |U| and|V|, respectively. Such domains are FO-deﬁnable by the
+18
+=== PAGE 19 ===
+method of ﬁnite expansions (see Section 2). Finally, since the weights W (u,v ) of I′′ are
+still zeros or ones and both ϵ andq are constants, the multiplicities of the equations ofI′′′
+are also constants, and hence FO-deﬁnable.
+It is useful to compare Theorem 14 with Lemma 3. Both statements are reductions
+that take 3XOR instances to 3XOR instances, and they both preserve gaps. But the
+reductions diﬀer in what happens to satisﬁable instances. For statement 1, in which the
+extreme case is c = 1, the reduction in Lemma 3 preserves this extremality exactly. In
+contrast, the reduction in Theorem 14 incurs a vanishing ϵ loss as it produces instances
+that are only (1−ϵ)-satisﬁable.
+4.3 Second long-code reduction
+The second long-code reduction takes a projection game instance I of LABEL COVER
+and a rational δ∈ [0, 1] and produces an instance D(I,δ ) of 3SAT deﬁned as follows.
+Before we deﬁne D(I,δ ), let us deﬁne an intermediate instance D′(I,ϵ ) of 3SAT that
+takes a diﬀerent parameter ϵ∈ [0, 1]. Let U, V , m, n, A, B, p, q, W , P , and πu,v(a) be
+as in the ﬁrst long-code reduction. The set of variables of D(I,ϵ ) is deﬁned as in the ﬁrst
+long-code reduction: a variableu(a) for eachu∈U and eacha∈ Fp−1
+2 , and a variablev(b)
+for eachv∈V and eachb∈ Fq−1
+2 . We also use the folding notationF (z) andS(z) from the
+ﬁrst long-code reduction. Now the instanceD′(I,ϵ ) includesW (u,v )·Mq·ϵD·(1−ϵ)E−D·H
+copies of the clause {v(F (x))(S(x)),u (F (y))(S(y)),u (F (z))(S(z))} for each (u,v )∈ U×V ,
+each x∈ Fq
+2 and each y,z ∈ Fp
+2, where M is the denominator of ϵ = N/M reduced to
+lowest terms, E is the number of positions i∈ [p] with xπ(i) = 1 and D is the number of
+positions i∈ [p] with xπ(i) = 1 and zi̸=yi for π =πu,v if W (u,v )̸= 0, while H∈{ 0, 1}
+is the indicator for the event that in each position i∈ [p] with xπ(i) = 0 we have zi̸=yi.
+Finally, to deﬁne the instance D(I,δ ), set t =⌈δ−1⌉ and ϵ1 = δ, and ϵi+1 = δ712−35ϵi
+for i = 1,...,t − 1, and let the instance be ⋃t
+i=1D′(I,ϵ i).
+Theorem 15 (H˚ astad 3-Query Disjunction Test [19]). There exists s0 > 0 such that for
+everys∈ [0, 1] with 0<s<s 0 and every projection game instanceI of LABEL COVER
+the following hold:
+1. if I is satisﬁable, then C(I,ϵ ) is satisﬁable,
+2. if I is not s-satisﬁable, then C(I,ϵ ) is not (7/8 + log2(1/s)−1/2)-satisﬁable.
+For the proof of Theorem 15, see Lemmas 6.12 and 6.13 in [19]. As in the ﬁrst long-code
+reduction, some explanation is needed for seeing this.
+Besides the notational diﬀerences that were already pointed out in the ﬁrst long-code
+reduction, the second long-code reduction adds the following. First, the constants 71
+and 35 in the deﬁnition ofϵi+1 come from settingc = 1/35 in the deﬁnition of Test F3Sδ(u)
+in [19]. According to Lemma 6.9 in [19], this is an acceptable setting of c. Second, the
+constants0 > 0 in Theorem 15 is meant to be chosen small enough so as to ensure that,
+for each s satisfyings<s 0, we have 2−64δ−2/25 < 2−dδ−1 log2(δ−1) forδ = 8 log2(1/s)−1/2/5,
+whered is the constant hidden in the asymptoticO-notation of Lemma 6.13 in [19]. Such
+an s0 exists because N log2(N) = o(N 2) as N→ +∞. With this notation, Lemma 6.12
+in [19] gives point 1, and Lemma 6.13 in [19] with δ = 8 log2(1/s)−1/2/5 gives point 2 in
+Theorem 15.
+19
+=== PAGE 20 ===
+By composing Lemma 11, Theorem 12, and Theorem 15 with the appropriate param-
+eters we get the following:
+Theorem 16. For every s,ϵ ∈ [0, 1] with 0 < s < 1 and ϵ > 0, there is an FO-
+interpretation Θ that maps instances of 3XOR to instances of 3SAT in such a way that,
+for every 3XOR instanceI the following hold:
+1. if I is satisﬁable, then Θ(I) is satisﬁable,
+2. if I is not s-satisﬁable, then Θ(I) is not (7/8 +ϵ)-satisﬁable.
+Proof. First we deﬁne Θ(I) and then check that this deﬁnition is an FO-interpretation.
+Let t be a large enough integer so that the following inequality holds:
+(1− (1− (s + 2)/3)3)αt/6≤ min{2−1/ϵ2
+,s 0} (3)
+whereα is the constant in Theorem 12 ands0 > 0 is small enough as in Theorem 15. Such
+a t exists because s <1 and ϵ >0 as well as s0 > 0. Apply the bipartite reduction to I
+to obtain the instance I′ = L(I) from Lemma 11. Observe that the domain size d of I′
+is|A| +|B| = 6. Next apply the parallel repetition reduction to I′ with parameter t to
+obtain a new instanceI′′. Finally apply the second long-code reduction toI′′ to obtain the
+systemI′′′. The parameters were chosen so that the systemI′′′ satisﬁes properties 1 and 2,
+through Theorem 15. As in the proof of Theorem 14 this reduction is FO-deﬁnable.
+This gives us another route to Theorem 9.
+5 Vertex Cover
+We investigate gap inexpressibility results for the vertex cover problem VC on graphs.
+Recall that a set X ⊆ V of vertices in a graph G = (V,E ) is a vertex cover if every
+edge in E has at least one of its endpoints in X. If the graph comes with a weight
+function w : V → R+, then the weight of X is the sum of the weights of the vertices
+in X. If the weights of the vertices are omitted in the speciﬁcation of the graph, then
+all the vertices are assumed to have unit weight. The problem of ﬁnding the minimum
+weight vertex cover in a graph is a classic NP-complete problem.
+In the following we write vc( G) for the weight of a minimum weight vertex cover,
+and vcd(G) := vc(G)/W0, where W0 :=∑
+v∈V w(v), for the vertex cover density . Analo-
+gously, we write IS(G) for the weight of a maximum weight independent set, and isd(G) :=
+IS(G)/W0. Clearly vcd(G) = 1− isd(G) holds for all weighted graphs.
+5.1 Direct reductions
+The standard reduction that proves the NP-completeness of the vertex cover problem
+(see, e.g. [25, Thm. 9.4]) takes an instance I of 3SAT withn variables andm clauses and
+gives a graphG with 3m vertices in which the minimum vertex cover has size exactly 2cm,
+if cm is the maximum number of clauses in I that can be simultaneously satisﬁed. It
+is also easy to see that this reduction can be given as an FO-interpretation. This
+interpretation is linearly bounded and therefore it follows from Theorem 9 and Lemma 1
+20
+=== PAGE 21 ===
+that for anyϵ> 0 the collection of graphsG with vcd(G)≤ 7/12+ϵ and the collection of
+graphs G with vcd(G)≥ 2/3 cannot be separated in Ck for any k =o(n). This has the
+consequence that no approximation algorithm for the vertex cover problem expressible
+in FPC can achieve an approximation ratio better than 8 /7.
+We can improve on this by considering instead the so-called FGLSS reduction (see
+[16], and [17] for what by now became standard terminology) from3XOR to vertex-cover,
+which we describe next.
+Theorem 17. There is a linearly-bounded ﬁrst-order reductionG that takes an instanceI
+of 3XOR withm equations to a graphG(I) with 4m vertices so that ifm∗ is the maximum
+number of equations of I that can be simultaneously satisﬁed, then vc(G) = 4m−m∗.
+Proof. For each equation x +y +z = b in I, the graph G(I) has a 4-clique of vertices,
+each labelled with a distinct assignment of values to the three variables that make the
+equation true. In addition, we have an edge between any pair of vertices that are labelled
+by inconsistent assignments. It is easily seen that the largest independent set in G(I)
+is obtained by taking an assignment g of values to the variables of I that satisﬁes m∗
+equations and, for each satisﬁed equation, selecting the vertex in its 4-clique that is
+the projection of g. This yields an independent set of size exactly m∗ and the result
+follows.
+From this, and Theorem 8, we immediately get the following result.
+Corollary 18. For anyϵ> 0, if C is the collection of graphsG with vcd(G)≤ 3/4 and D
+is the collection of graphs G with vcd(G)≥ 7/8−ϵ then C and D are not Ck-separable
+for any k =k(n) such that k(n) =o(n).
+This improves the FPC inapproximability ratio from 8/7 to 7/6. Better lower bounds
+on the approximation ratio are known under the assumption that P ̸= NP. One such
+lower bound was achieved by Dinur and Safra [15] who showed that, under this as-
+sumption, no polynomial-time algorithm for approximating vertex cover can achieve an
+approximation ratio better than 1 .36. In the next section we argue that this reduction
+is also an FO-interpretation, so we get the same inapproximability ratio for algorithms
+that are expressible in FPC, giving a strengthening of Corollary 18.
+5.2 Dinur-Safra reduction
+As in the long-code reductions from Section 4, this reduction is also composed of several
+steps: we start with the bipartite reduction, continue with the parallel repetition reduc-
+tion, then we apply an intermediate reduction to a technical variant of the independent
+set problem, and end with a long-code reduction that is specially tailored for the vertex
+cover problem.
+The intermediate reduction takes a projection game instance I of LABEL COVER
+as input and produces an undirected graph G(I) deﬁned as follows. Let U, V , A, B, W
+andπu,v determine the projection game instance I. The set of vertices of the graph G(I)
+is U×A. There is an edge between ( u1,a 1)∈ U×A and (u2,a 2)∈ U×A in G(I)
+if, and only, if either u1 = u2 and a1̸= a2, or u1̸= u2 and there exists v∈ V such
+that W (u1,v )> 0 and W (u2,v )> 0 and πu1,v(a1)̸=πu2,v(a2). This deﬁnes G(I). In the
+21
+=== PAGE 22 ===
+terminology of [15], the graph G(I) is ( m,p )-co-partite: its edge-set is the complement
+of an m-partite graph with all its parts of size p.
+For an undirected (unweighted) graph G, recall that IS( G) denotes the size of a
+largest independent set in G. For an integer h≥ 2, let ISh(G) denote the size of a largest
+subset of vertices of G that does not contain any h-clique. Note that IS h(G)≥ IS(G),
+and IS2(G) = IS(G).
+Lemma 19. For every integer h≥ 2, every s∈ [0, 1] with s >0 and every instance I
+of LABEL COVER that is a left-regular projection game with uniform weights and
+parameters (m,n,p,q ), the following hold:
+1. if I is satisﬁable, then IS(G(I)) =m,
+2. if I is not s-satisﬁable, then ISh(G(I))≤sh3m.
+Moreover,G(I) is an (m,p )-co-partite graph.
+Note that, in the statement of Lemma 19, the completeness case (point 1 ) is about IS(G)
+but the soundness case (point 2 ) is about IS h(G). For the proof of Lemma 19, see the
+proof of Theorem 2.1 in [15].
+The vertex-cover long-code reduction inputs a graph G = (V,E ), two rational pa-
+rameters ϵ > 0 and p satisfying 0 < p < pmax := (3−
+√
+5)/2, and two integer param-
+eters h ≥ 2 and r ≥ 2, and, if G is an ( m,r )-co-partite graph for some m, then it
+produces a (weighted) graph H(G,ϵ,p,h ;r) deﬁned as follows. Let the vertex-set V ofG
+be [m]× [r], so that{(u,a ) :a∈ [r]} forms an r-clique for each u∈ [m]. In abstract, the
+set of vertices of H(G,ϵ,p,h ;r) is
+W :={(B, P(P≥l1(B))) :B∈ P=l(V )}, (4)
+where l = 2l1·r, and l1 is an integer that depends only on h, ϵ, and p, and is indepen-
+dent of r, that is set as in Deﬁnition 2.3 of [15]. Here, and in the following, P=k(X)
+and P≥k(X) denote the collections of subsets of X of size exactly k and size at least k,
+respectively, and P(X) denotes the collection of all subsets of X. Thus, if n = mp is
+the number of vertices of G, then H(G,ϵ,p,h ;r) has
+(n
+l
+)
+· 2
+∑l
+i=l1 (l
+i) vertices. Since we
+want to be able to show that for ﬁxed r, h, ϵ and p the graph H(G,ϵ,p,h ;r) can be
+produced from G by an FO-interpretation, we give an alternative presentation of the set
+of vertices W .
+Let Vl,̸= denote the set of l-tuples of pairwise distinct elements from V . Formally,
+Vl,̸= :={(u1,...,u l)∈Vl :ui̸=uj for i,j ∈ [l] with i̸=j}. (5)
+For eachu = (u1,...,u l)∈Vl,̸=, letσu :{1,...,l }→{ u1,...,u l} be the natural bijection
+deﬁned by σu(i) =ui for i = 1,...,l . The set
+W′ :=Vl,̸=× P(P≥l1([l])) (6)
+is a good proxy for the set W through the identiﬁcation of {1,...,l } and{u1,...,u l}
+given by σu. Now, turning W′ into a faithful copy of W is only a matter of taking a
+quotient with the appropriate equivalence relation, as we do next.
+22
+=== PAGE 23 ===
+Let∼ be the equivalence relation on Vl deﬁned by (u1,...,u l)∼ (v1,...,v l) if and
+only if for eachi∈ [l] there existsj∈ [l] withvj =ui and for eachj∈ [l] there existsi∈ [l]
+with ui = vj. Restricted to Vl,̸=⊆ Vl, this is still an equivalence relation. Moreover,
+wheneveru = (u1,...,u l) and v = (v1,...,v l) are∼-equivalent tuples in Vl,̸=, there is
+a unique permutation π∈Sl that sends u to v; i.e., that satisﬁes π·u =v, or uπ(i) =vi
+for each i∈ [l]. Now we extend this equivalence relation ∼ from the set Vl,̸= to the
+set Vl,̸=× P(P≥l1([l])) as follows: (u,S )∼ (v,T ) if, and only if, u∼ v and the unique
+permutation π∈ Sl that sends u to v also sends S to T ; i.e., it satisﬁes π·S = T ,
+where π·S denotes the natural action of π on S. It is not hard to see that the set of
+equivalence classes
+W′′ := (Vl,̸=× P(P≥l1([l])))/∼ (7)
+is an alternative presentation of the same set W . This alternative presentation of W is
+useful when we argue that the reduction is an FO-interpretation in Theorem 21 below.
+We still need to deﬁne the vertex-weights and the edge-set of H(G,ϵ,p,h ;r). The
+weight of a vertex (B,S ) in W is deﬁned as
+w(B,S ) :=Mq·p|S|· (1−p)|P≥l1 (B)\S|, (8)
+where M is the denominator of p = N/M reduced to lowest terms, and q =|P≥l1(B)|.
+Next we deﬁne the edge-set: two vertices (B1,S 1) and (B2,S 2) in W are adjacent if, and
+only if, either B1 = B2 and S1∩S2 =∅, or there exist an edge {v1,v 2}∈ E of G and
+an (l− 1)-element subset ˆB of V such that B1 = ˆB∪{v1} and B2 = ˆB∪{v2} and, for
+all (A1,A 2)∈S1×S2, either A1∩ ˆB̸=A2∩ ˆB, or (v1,v 2)∈A1×A2.
+Theorem 20 (Dinur-Safra Vertex-Cover Test [15]). For any two rationals ϵ and p sat-
+isfying 0 < ϵ≤ 1 and 0 < p < pmax = (3−
+√
+5)/2, any small enough s0 > 0, any large
+enough integer h, and any (m,r )-co-partite graphG, the following hold:
+1. if IS(G) =m, then isd(H(G,ϵ,p,h ;r))≥p−ϵ,
+2. if ISh(G)≤s0m, then isd(H(G,ϵ,p,h ;r))≤p• +ϵ, where p• = max(p2, 4p3− 3p4).
+For the proof of Theorem 20, see Theorem 2.2 in [15].
+The reduction described above produces aweighted graphH(G,ϵ,p,h ;r). The weights,
+as deﬁned in (8) are non-negative integers with a maximum value of Mq. This value de-
+pends on ϵ,p,h andr but is independent of the number of vertices of G. In other words,
+ﬁxing the other parameters, H gives us a traslation from G to a weighted graph, with
+integer weights bounded by a constant. This can be easily modiﬁed to get an unweighted
+graph. Indeed, let H = (V,E,W ) be a graph with a weight function W : V → N. We
+deﬁne from this an unweighted graph H′ with vcd(H′) = vcd(H). This is obtained by
+replacing each vertex v by the set of vertices v∗ :={v}× [W (v)] and having an edge be-
+tween (u,i ) and (v,j ) if, and only if,{u,v}∈ E. To see that this has the right property,
+it is suﬃcient to observe that S⊆V is a minimum weight vertex cover in H if, and only
+if, S∗ :=⋃
+v∈Sv∗ is a minimum vertex cover of H′. The direction from right to left is
+obvious. For the other direction, suppose that H′ has a minimum vertex cover X that is
+not of this form. In particular, for some v∈V ,v∗∩X̸=∅ andv∗̸⊆X. But then X\v∗
+is still a vertex cover, contradicting the minimality of X.
+By composing Lemma 11, Theorem 12 and Theorem 20 with the appropriate param-
+eters and combining it with the observation above we get the following.
+23
+=== PAGE 24 ===
+Theorem 21. For every s,ϵ,p with 0 < s,ϵ <1, and 1/3 < p < pmax = (3−
+√
+5)/2,
+there is an FO-interpretation Θ that maps instances of 3XOR to undirected graphs in
+such a way that, for every 3XOR instanceI the following hold:
+1. if I is satisﬁable, then vcd(Θ(I))≥ 1−p +ϵ,
+2. if I is not s-satisﬁable, then vcd(Θ(I))≤ 1−p•−ϵ, where p• = max(p2, 4p3− 3p4).
+Proof. Firt we deﬁne Θ( I) and then check that it is an FO-interpretation. Let t be a
+large enough integer so that the following inequality holds:
+(1− (1− (s + 2)/3)3)αt/6≤s0/h3 (9)
+when s0 is small enough, and h is large enough, so that Theorem 20 applies. Such a t
+exists because s < 1 and s0 > 0. Apply the bipartite reduction to I to obtain the
+instance I′ = L(I) from Lemma 11. The domain size of I′ is 6. Apply the parallel
+repetition reduction of Theorem 12 to I′ with parameter t to get another instance I′′.
+Next apply the intermediate reduction of Lemma 19 to get a graph G. Finally, apply the
+Dinur-Safra long-code reduction of Theorem 20 to get a weighted graph H and convert
+it to an unweighted graph that is the output of Θ. The parameters were chosen in such
+a way that the points 1 and 2 hold via the relationship vcd( H) = 1− isd(H).
+We still need to check that Θ is an FO-interpretation. As in the proof of Theorem 14,
+producing I′ from I and I′′ from I′ is straightforward. Producing G =G(I′′) from I′′ is
+equally straightforward: the deﬁnition of the intermediate reduction is explicit enough
+that this can be checked directly, especially because the weights of I′′ are still zeros
+and ones. On the other hand, producing H = H(G,ϵ,p,h ;r) from G requires some
+explanation.
+In the description of the vertex-cover long-code reduction we already described W′′
+as an alternative presentation (7) of W in (4). This alternative presentation suggests
+that the vertex-set of H be deﬁned by an FO-interpretation of dimension l through the
+method of ﬁnite expansions from Section 2 to produce W′ in (6), followed by a quotient
+by an FO-deﬁnable equivalence relation. The method of ﬁnite expansions produces a set
+of the form Vl,̸=×A for some bounded set A that codes P(Pl1([l])). The eﬀect of the
+quotient on Vl,̸=×A can be achieved through the equality-deﬁning formula ϵ(x,y) of
+the FO-interpretation, which in this case can be designed as follows. Let ( u,a) and (v,b)
+be two elements of the expanded domainVl,̸=×A. We wantϵ(x,y) to tell ifu andv involve
+exactly the same elements from V and, in such a case, whether the unique permutation
+that takes u to v also takes the set of subsets of [l] coded by a to the set of subsets of [l]
+coded by b. The ﬁrst part can be stated by means of a simple quantiﬁer-free formula.
+The second part can also be stated by a quantiﬁer-free formula (that depends on l) by
+taking a disjunction over all l! potential permutations of [l].
+Once the domain is deﬁned as W′′ in equation (7), deﬁning the edge-set is easy.
+Deﬁning the weights is also straightforward given thath,ϵ,p andl are all ﬁxed constants
+independent ofG, and as noted above, we can replace the weights with sets of unweighted
+vertices.
+Now we can state the improved version of Corollary 18. Composing Theorem 8,
+Theorem 21, and Lemma 1 we get the following.
+24
+=== PAGE 25 ===
+Theorem 22. For any ϵ> 0 there is a δ >0 such that if C is the collection of graphs G
+with vcd(G)≤ 1− 4p3
+max + 3p4
+max−ϵ and D is the collection of graphs G with vcd(G)≥
+1−pmax +ϵ then C and D are not Ck-separable for any k =k(n) such that k(n) =o(nδ),
+wherepmax = (3−
+√
+5)/2.
+In terms of algorithms, Theorem 22 says that no algorithm that can be expressed in FPC,
+or even Ck for k = no(1), can achieve an approximation ratio better than (1 − 4p3
+max +
+3p4
+max)/(1−pmax)≈ 1.36. In particular, this means that nO(1) levels of the Lasserre
+hierarchy are necessary to give an approximation algorithm for vertex cover with an
+approximation better than 1 .36. This result was previously known from the work of
+Tulsiani [28].
+5.3 Tight lower and upper bounds for C2
+There are straightforward polynomial-time algorithms that yield a vertex cover in a graph
+with guaranteed approximation ratio 2. It is conjectured that no polynomial-time algo-
+rithm can achieve an approximation ratio of 2 −ϵ for any ϵ >0; it is even conjectured
+that achieving such an approximation ratio is NP-hard. It would be interesting to prove a
+version of this conjecture for algorithms expressible in FPC, and without the assumption
+that P̸= NP. This could be established by a strengthened version of Theorem 22 with
+better ratios. We next show that we can at least do this for the special case of k = 2.
+Theorem 23. For anyϵ> 0, if C is the collection of graphs G with vcd(G)≤ 1/2 and D
+is the collection of graphs G with vcd(G)≥ 1−ϵ then C and D are not C 2-separable.
+Proof. Let (Gn)n∈N be a family of 3-regular expander graphs on n vertices, so that the
+largest independent set in Gn has size o(n). For the existence of such graphs see [29,
+Chapter 4]. It follows that the smallest vertex cover in Gn has size n−o(n). Hence, we
+can choose a value m such that G2m has no vertex cover smaller than 2 m(1−ϵ).
+Let Hm be a 3-regular bipartite graph on two sets of m vertices. Now, each part of
+a bipartite graph is a vertex cover, so Hm has a vertex cover of size m. However, it is
+known that G≡C2 H holds for any pair G and H of d-regular graphs with the same
+number of vertices, for any d. Thus, G2m≡C2 Hm and the result follows.
+Essentially, Theorem 23 tells us that no algorithm that is invariant under ≡C2 can
+determine vc(G) to an approximation better than 2, and Theorem 22 tells us that no
+algorithm that is invariant under ≡Ck for constant or even slowly growing k can deter-
+mine vc(G) to an approximation better than 1 .36. A legitimate question at this point is
+whether there is any algorithm that is invariant under≡Ck, such as one expressible in FPC
+would be, that does achieve an approximation ratio of 2. The natural polynomial-time
+algorithms that give a vertex cover with size at most 2vc(G) are not expressible in FPC.
+Indeed, we cannot expect a formula of FPC to deﬁne an actual vertex cover in a graph G
+as this is not invariant under automorphisms of G. We can only ask for an estimate of
+the size, i.e. of vc( G), and this we can get up to a factor of 2. For this, it turns out
+that k = 2 is enough, showing that the lower bound of Theorem 23 is tight:
+Theorem 24. For any δ, if C is the collection of graphs G with vcd(G)≤ δ and D is
+the collection of graphs G with vcd(G)> 2δ then C and D are≡C2-separable.
+25
+=== PAGE 26 ===
+The proof of Theorem 24 proceeds through a series of lemmas.
+Lemma 25. If G is a d-regular graph on n vertices, for any d≥ 1, then vc(G)≥n/2.
+Proof. Let S be any set of vertices in G. Then the number of edges incident on vertices
+inS is at most d|S|. Since the number of edges in G isdn/2, ifS is a vertex coverd|S|≥
+dn/2 and so|S|≥ n/2.
+LetG be a graph and C1,...,C m be the partition of the vertices of G given by vertex
+reﬁnement. So, there are constants δij such that each v∈Ci has exactly δij neighbours
+in Cj. Since the graph is undirected, the number of edges from Ci to Cj is the same as
+in the other direction and so δij|Ci| = δji|Cj|, for all i and j. Also, δij = 0 if, and only
+if, δji = 0.
+Let X ={i|δii = 0} and Y ={i|δii > 0}. Consider the undirected graph XG with
+verticesX and edges{(i,j )|δij > 0}. Consider the instance ( XG,w ) of weighted vertex
+cover obtained by taking the graph XG and giving each vertex i the weight w(i) =|Ci|.
+Let pG denote the value of the minimum weighted vertex cover of this instance. Also,
+let qG =∑
+i∈Y|Ci|. Finally, deﬁne vG =pG +qG.
+Lemma 26. If G≡C2 H then vG =vH.
+Proof. The valuevG is determined entirely by the sizes ofCi in the vertex reﬁnement ofG
+and the corresponding values ofδij. Since G≡C2 H, these values are the same forH.
+Lemma 27. vc(G)≤vG.
+Proof. LetZ⊆X be a minimum-weight vertex cover in (XG,w ). Take the set S⊆V (G)
+deﬁned by S =⋃
+i∈Y∪ZCi. Note that the sets Y and Z are disjoint, ∑
+i∈Y|Ci| = qG
+by deﬁnition, and ∑
+i∈Z|Ci| = pG by construction. So S has exactly vG vertices. We
+claim that S is a vertex cover in G. Let e be any edge of G with endpoints in Ci andCj.
+If either i or j is in Y , then the corresponding endpoint of e is in S since Ci⊆ S for
+all i∈Y . If both i and j are not in Y then both are in X and δij > 0. Thus, since Z is
+a vertex cover for the graph XG then one of i or j must be in Z and again at least one
+endpoint of e is in S.
+For the proof of the next lemma, we need the notion of a fractional vertex cover of
+a graph G = (V,E ). This is a function f : V → [0, 1] satisfying the condition that
+for every ( u,v ) ∈ E, f(u) + f(v) ≥ 1. It is known that if f is a fractional vertex
+cover of G, then ∑
+v∈V f(v)≥ vc(G)/2 (see [30, Thm. 14.2]). More generally, suppose
+we have an instance of weighted vertex cover , i.e. G along with a weight function w :
+V → N where vc(G,w ) is deﬁned as the value of the minimum weighted vertex cover.
+Then∑
+v∈V f(v)w(v)≥ vc(G,w )/2.
+Lemma 28. vG≤ 2vc(G).
+Proof. Let S be any vertex cover of G. Let UX =⋃
+i∈XCi and UY =⋃
+i∈Y Ci and note
+that these sets are disjoint. We claim that |S∩UX|≥ pG/2 and|S∩UY|≥ qG/2, and
+therefore|S| =|S∩UX| +|S∩UY|≥ vG/2, establishing the result.
+First, consider S∩UY . Note that for any i∈ Y , the subgraph of G induced by Ci
+is δii-regular. Since δii > 0 by deﬁnition of Y , by Lemma 25 we have |S∩Ci|≥| Ci|/2
+and therefore|S∩UY|≥ qG/2.
+26
+=== PAGE 27 ===
+Secondly, consider the function f : X→ [0, 1] deﬁned by f(i) =|S∩Ci|/|Ci|. We
+claim that this is a fractional vertex cover of the graph XG. To verify this, we need to
+check that f(i) +f(j)≥ 1 wheneverδij > 0. There are δij|Ci| edges betweenCi andCj.
+Each element of S∩Ci can cover at most δij of these edges and similarly each element
+ofS∩Cj covers at mostδji of them. Thus, sinceS is a vertex cover|S∩Ci|δij+|S∩Cj|δji≥
+δij|Ci|. Substituting for δji using the identity δij|Ci| = δji|Cj| gives|S∩Ci|δij +|S∩
+Cj|δij|Ci|/|Cj|≥ δij|Ci|. Now dividing through by δij|Ci| givesf(i) +f(j)≥ 1.
+Thus, we have that the weighted vertex cover instance ( Xg,w ) admits the fractional
+solution f whose total weight is
+∑
+i∈X
+f(i)|Ci| =
+∑
+i∈X
+|S∩Ci| =|S∩UX|.
+SincepG is the value of the minimum weight vertex cover of (Xg,w ), we have|S∩UX|≥
+pG/2, as was to be shown.
+Proof of Theorem 24. Suppose for contradiction that there is a G∈ C and H∈ D such
+thatG≡C2 H. Since G andH must have the same number of vertices, we have 2vc(G)<
+vc(H). But, by Lemma 28 we have vG≤ 2vc(G), by Lemma 27 we have vc(H)≤vH and
+by Lemma 26 we have vG =vH, giving a contradiction.
+6 Conclusions
+This paper introduces a new method for studying the hardness of approximability of NP-
+hard optimization problems by showing that the approximation cannot be deﬁned in a
+suitable logic such as FPC. This is done by showing that no class of bounded counting
+width can separate instances of the problem with a high optimum from those with a low
+one. This raises a large number of new challenges in the application of this method.
+A clear demonstration of the power of this method would be to derive a lower bound
+stronger than one for which NP-hardness is known. For instance, can we improve, in the
+context of inexpressibility, on the
+√
+2-inapproximability for vertex cover from the NP-
+hardness result of Khot et al. [23]? In other words, can we show that the class of graphs
+that have a vertex cover of density δ is not separable from the class of graphs that do
+not have a vertex cover of density cδ, for some δ∈ (0, 1) and some constant c greater
+than
+√
+2? If this were achieved forCk, for unboundedk, it would have major consequences
+in the study of semideﬁnite programming hierarchies of relaxations of vertex cover. A
+version of this question, with δ being 1 − ϵ and c being 2 − ϵ for arbitrary small ϵ,
+was stated as Open Problem 4.1 in [12]. Indeed, similar questions can be posed for
+any optimization problem for which the exact inapproximability factor is not known,
+including MAX CUT , sparsest cut, etc.
+Acknowledgments. The research reported here was initiated at the Simons Institute for
+the Theory of Computing during the programme on Logical Structures in Computation
+in autumn 2016. The ﬁrst author was partially funded by European Research Council
+(ERC) under the European Union’s Horizon 2020 research and innovation programme,
+27
+=== PAGE 28 ===
+grant agreement ERC-2014-CoG 648276 (AUTAR) and MICCIN grant TIN2016-76573-
+C2-1P (TASSAT3). The second author was partially supported by a Fellowship of the
+Alan Turing Institute under the EPSRC grant EP/N510129/1 and by the EPSRC grant
+EP/S03238X/1
+References
+[1] S. Abramsky, A. Dawar, and P. Wang. The pebbling comonad in ﬁnite model theory.
+In Proc. of the 32nd IEEE Symp. on Logic in Computer Science (LICS). , 2017.
+[2] M. Anderson, A. Dawar, and B. Holm. Solving linear programs without breaking
+abstractions. J. ACM, 62, 2015.
+[3] S. Arora and B. Barak. Computational Complexity: A Modern Approach. Cambridge
+University Press, 2009.
+[4] S. Arora, C. Lund, R. Motwani, M. Sudan, and M. Szegedy. Proof veriﬁcation and
+the hardness of approximation problems. J. ACM, 45(3):501–555, 1998.
+[5] A. Atserias. On suﬃcient conditions for unsatisﬁability of random formulas. J. ACM,
+51:281–311, 2004.
+[6] A. Atserias, A. Bulatov, and A. Dawar. Aﬃne systems of equations and counting
+inﬁnitary logic. Theoretical Computer Science, 410(18):1666–1683, 2009.
+[7] A. Atserias and V. Dalmau. A combinatorial characterization of resolution width.
+J. Comput. Syst. Sci. , 74:323–334, 2008.
+[8] A. Atserias and J. Ochremiak. Deﬁnable ellipsoid method, sums-of-squares proofs,
+and the isomorphism problem. arxiv 1802.02388.
+[9] E. Ben-Sasson and A. Wigderson. Short proofs are narrow - resolution made simple.
+J. ACM, 48:149–169, 2001.
+[10] J-Y. Cai, M. F¨ urer, and N. Immerman. An optimal lower bound on the number of
+variables for graph identiﬁcation. Combinatorica, 12(4):389–410, 1992.
+[11] A. Dawar. The nature and power of ﬁxed-point logic with counting. ACM SIGLOG
+News, pages 8–21, 2015.
+[12] A. Dawar, E. Gr¨ adel, Ph. G. Kolaitis, and T. Schwentick. Finite and Algorithmic
+Model Theory (Dagstuhl Seminar 17361). Dagstuhl Reports, 7:1–25, 2018.
+[13] A. Dawar and P. Wang. A deﬁnability dichotomy for ﬁnite valued CSPs. In 24th
+EACSL Annual Conference on Computer Science Logic, CSL 2015 , pages 60–77,
+2015.
+[14] A. Dawar and P. Wang. Deﬁnability of semideﬁnite programming and Lasserre lower
+bounds for CSPs. In 32nd Annual ACM/IEEE Symposium on Logic in Computer
+Science, LICS, 2017.
+28
+=== PAGE 29 ===
+[15] I. Dinur and S. Safra. On the hardness of approximating minimum vertex cover.
+Annals of Mathematics , 162:439485, 2005.
+[16] U. Feige, S. Goldwasser, L. Lov´ asz, S. Safra, and M. Szegedy. Interactive proofs and
+the hardness of approximating cliques. J. ACM, 43(2):268–292, March 1996.
+[17] Oded Goldreich. Using the FGLSS-Reduction to Prove Inapproximability Results for
+Minimum Vertex Cover in Hypergraphs , pages 88–97. Springer Berlin Heidelberg,
+Berlin, Heidelberg, 2011.
+[18] Martin Grohe. Descriptive Complexity, Canonisation, and Deﬁnable Graph Structure
+Theory, volume 47 of Lecture Notes in Logic. Cambridge University Press, 2017.
+[19] J. H˚ astad. Some optimal inapproximability results.J. ACM, 48(4):798–859, 2001.
+[20] Lauri Hella. Logical hierarchies in PTIME. Information and Computation, 129(1):1–
+19, 1996.
+[21] T. Holenstein. Parallel repetition: Simpliﬁcations and the no-signaling case. In
+Proceedings of the Thirty-ninth Annual ACM Symposium on Theory of Computing ,
+STOC ’07, pages 411–419, New York, NY, USA, 2007. ACM.
+[22] N. Immerman and E. S. Lander. Describing graphs: A ﬁrst-order approach to graph
+canonization. In A. Selman, editor, Complexity Theory Retrospective . Springer-
+Verlag, 1990.
+[23] S. Khot, D. Minzer, and M. Safra. Pseudorandom sets in Grassmann graph have
+near-perfect expansion. Technical Report TR18-006, Electronic Colloquium on Com-
+putational Complexity (ECCC), 2018.
+[24] Phokion G Kolaitis and Moshe Y Vardi. On the expressive power of Datalog: Tools
+and a case study. In Proceedings of the ninth ACM SIGACT-SIGMOD-SIGART
+Symposium on Principles of Database Systems , pages 61–71. ACM, 1990.
+[25] Ch. H. Papadimitriou. Computational Complexity. Addison-Wesley, 1994.
+[26] Ch. H. Papadimitriou and M. Yannakakis. Optimization, approximation, and com-
+plexity classes. J. Comput. Syst. Sci. , 43(3):425–440, 1991.
+[27] R. Raz. A parallel repetition theorem. SIAM J. Comput. , 27(3):763–803, 1998.
+[28] M. Tulsiani. CSP gaps and reductions in the lasserre hierarchy. In Proceedings of
+the Forty-ﬁrst Annual ACM Symposium on Theory of Computing , pages 303–312.
+ACM, 2009.
+[29] S. Vadhan. Pseudorandomness, volume 7:1–3 of Foundations and Trends in Theo-
+retical Computer Science. Now Foundations and Trends, December 2012.
+[30] V. V. Vazirani. Approximation Algorithms. Springer, 2003.
+29

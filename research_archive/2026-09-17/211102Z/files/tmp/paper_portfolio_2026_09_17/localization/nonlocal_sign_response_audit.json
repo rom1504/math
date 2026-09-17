@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "seed": 2026091719,
+  "cases": [
+    {
+      "p": 4,
+      "n": 16,
+      "matching_law_atoms": 12,
+      "identity_atoms": 16,
+      "tested_queries": 32768,
+      "all_projective_queries": true,
+      "maximum_eigen_response": {
+        "-1": 0.25,
+        "1": 0.5625
+      },
+      "largest_jensen_slack": 2.1622776601683795
+    },
+    {
+      "p": 8,
+      "n": 64,
+      "matching_law_atoms": 1680,
+      "identity_atoms": 256,
+      "tested_queries": 1550,
+      "all_projective_queries": false,
+      "maximum_eigen_response": {
+        "-1": 0.37916666666666665,
+        "1": 0.37916666666666665
+      },
+      "largest_jensen_slack": 3.8125
+    }
+  ],
+  "matching_characteristic_tests": 2080,
+  "matching_exponential_moment_tests": 1600,
+  "exact_identity_block_tests": 20,
+  "portable_hadamard_kernel_tests": 24,
+  "arbitrary_sign_kernel_witness_tests": 80,
+  "sharpness_cases": [
+    {
+      "p": 4,
+      "n": 16,
+      "exact_response": 0.5625,
+      "limiting_response": 0.5641895835477563
+    },
+    {
+      "p": 16,
+      "n": 256,
+      "exact_response": 0.5617904663085938,
+      "limiting_response": 0.5641895835477563
+    },
+    {
+      "p": 64,
+      "n": 4096,
+      "exact_response": 0.5634712097034581,
+      "limiting_response": 0.5641895835477563
+    }
+  ],
+  "mixed_tail_tests": 240,
+  "centered_increment_tests": 180,
+  "rare_jump_cases": [
+    {
+      "p": 4,
+      "hamming_distance": 8,
+      "jump": 16,
+      "each_jump_probability": 0.08333333333333333
+    },
+    {
+      "p": 8,
+      "hamming_distance": 16,
+      "jump": 32,
+      "each_jump_probability": 0.03571428571428571
+    }
+  ],
+  "jensen_threshold": 0.4982728791224398,
+  "gaussian_response_threshold": 0.46294013108487486,
+  "window": [
+    {
+      "c": 0.433322111664,
+      "required_tau": 1.0903394175418086,
+      "energy_feasibility_ceiling": 0.866644223328,
+      "spectral_norm_ceiling": 0.9171456006373863
+    },
+    {
+      "c": 0.46,
+      "required_tau": 0.9440074108020976,
+      "energy_feasibility_ceiling": 0.92,
+      "spectral_norm_ceiling": 1.0593137178344045
+    },
+    {
+      "c": 0.48,
+      "required_tau": 0.8101327619167495,
+      "energy_feasibility_ceiling": 0.96,
+      "spectral_norm_ceiling": 1.2343655842704477
+    },
+    {
+      "c": 0.493608094,
+      "required_tau": 0.7005851572120115,
+      "energy_feasibility_ceiling": 0.987216188,
+      "spectral_norm_ceiling": 1.4273782276226263
+    },
+    {
+      "c": 0.5,
+      "required_tau": 0.6414726944744708,
+      "energy_feasibility_ceiling": 1.0,
+      "spectral_norm_ceiling": 1.5589128089376498
+    }
+  ],
+  "assertions": [
+    "exact both-pole covariances",
+    "exact isotropic corrected mixture",
+    "exact Boolean eigensectors",
+    "uniform finite Jensen response",
+    "Fourier symmetry of all tested eigenqueries",
+    "finite signed-matching characteristic comparison",
+    "all-query uniform exponential moment",
+    "exact deterministic aggregate isotropy",
+    "exact identity-column full-bridge reduction"
+  ]
+}

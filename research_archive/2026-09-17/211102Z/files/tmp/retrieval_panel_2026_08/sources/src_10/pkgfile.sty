@@ -1,0 +1,342 @@
+%\usepackage{amssymb}
+%\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{stmaryrd}
+
+\numberwithin{equation}{section}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+\newcommand{\cyan}[1]{{\color{cyan} #1}}
+\newcommand{\hdiv}{\vskip\baselineskip\hrule\vskip\baselineskip}
+\newcommand{\doublehdiv}{\vskip\baselineskip\hrule\vskip1mm\hrule\vskip\baselineskip}
+
+\definecolor{purple}{rgb}{0.9,0,0.8}
+\newcommand{\purple}[1]{{\color{purple} #1}}
+\definecolor{gray}{rgb}{0.7,0.7,0.7}
+\newcommand{\gray}[1]{{\color{gray} #1}}
+
+\newcommand{\hl}[1]{\emph{\purple{#1}}}
+\newcommand{\td}[1]{{\red{\bf [#1]}}}
+\newcommand{\note}[1]{{\blue{\textup{[#1]}}}}
+
+
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+% ----- ALPHABETS -----
+
+% Greek
+\newcommand{\al}{\alpha} \newcommand{\Al}{\Alpha}
+\newcommand{\be}{\beta} \newcommand{\Be}{\Beta}
+\newcommand{\gam}{\gamma} \newcommand{\Gam}{\Gamma}
+\newcommand{\ep}{\epsilon} \newcommand{\Ep}{\Epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\de}{\delta} \newcommand{\De}{\Delta}
+\newcommand{\iot}{\iota} \newcommand{\Io}{\Iota}
+\newcommand{\lm}{\lambda} \newcommand{\Lm}{\Lambda}
+\newcommand{\ka}{\kappa} \newcommand{\Ka}{\Kappa}
+\newcommand{\vpi}{\varpi} \newcommand{\vph}{\varphi}
+\newcommand{\om}{\omega} \newcommand{\Om}{\Omega}
+\newcommand{\si}{\sigma} \newcommand{\Si}{\Sigma}
+\newcommand{\thet}{\theta} \newcommand{\Thet}{\Theta}
+\newcommand{\ze}{\zeta} \newcommand{\Ze}{\Zeta}
+
+% mathbb
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+%\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+%\newcommand{\G}{\mathbb{G}}
+%\let\doubleacute\H renewcommand{\H}{\mathbb{H}}
+\newcommand{\bI}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+%\let\Lstroke\L \renewcommand{\L}{\mathbb{L}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bO}{\mathbb{O}}
+%\let\Oslash\O
+%	\renewcommand{\O}{\mathbb{O}}
+\let\para\P
+	\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+%\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\co}{\scriptsize$\cO$\normalsize}
+
+% textbf
+\newcommand{\bB}{\mathbf{B}}
+
+% mathfrak
+\newcommand{\ga}{\mathfrak{a}}    \newcommand{\gA}{\mathfrak{A}}
+\newcommand{\gb}{\mathfrak{b}}    \newcommand{\gB}{\mathfrak{B}}
+\newcommand{\gc}{\mathfrak{c}}    \newcommand{\gC}{\mathfrak{C}}
+\newcommand{\gd}{\mathfrak{d}}    \newcommand{\gD}{\mathfrak{D}}
+\newcommand{\gE}{\mathfrak{E}}
+\newcommand{\gf}{\mathfrak{f}}    \newcommand{\gF}{\mathfrak{F}}
+\newcommand{\gh}{\mathfrak{h}}    \newcommand{\gH}{\mathfrak{H}}
+\newcommand{\gi}{\mathfrak{i}}    \newcommand{\gI}{\mathfrak{I}}
+\newcommand{\gj}{\mathfrak{j}}    \newcommand{\gJ}{\mathfrak{J}}
+\newcommand{\gk}{\mathfrak{k}}    \newcommand{\gK}{\mathfrak{K}}
+\newcommand{\gl}{\mathfrak{l}}    \newcommand{\gL}{\mathfrak{L}}
+\newcommand{\gm}{\mathfrak{m}}    \newcommand{\gM}{\mathfrak{M}}
+\newcommand{\gn}{\mathfrak{n}}    \newcommand{\gN}{\mathfrak{N}}
+\newcommand{\go}{\mathfrak{o}}    \newcommand{\gO}{\mathfrak{O}}
+\newcommand{\gp}{\mathfrak{p}}    \newcommand{\gP}{\mathfrak{P}}
+\newcommand{\gq}{\mathfrak{q}}    \newcommand{\gQ}{\mathfrak{Q}}
+\newcommand{\gr}{\mathfrak{r}}    \newcommand{\gR}{\mathfrak{R}}
+\newcommand{\gs}{\mathfrak{s}}    \newcommand{\gS}{\mathfrak{S}}
+\newcommand{\gt}{\mathfrak{t}}    \newcommand{\gT}{\mathfrak{T}}
+\newcommand{\gu}{\mathfrak{u}}    \newcommand{\gU}{\mathfrak{U}}
+\newcommand{\gv}{\mathfrak{v}}    \newcommand{\gV}{\mathfrak{V}}
+\newcommand{\gw}{\mathfrak{w}}    \newcommand{\gW}{\mathfrak{W}}
+\newcommand{\gx}{\mathfrak{x}}    \newcommand{\gX}{\mathfrak{X}}
+\newcommand{\gy}{\mathfrak{y}}    \newcommand{\gY}{\mathfrak{Y}}
+\newcommand{\gz}{\mathfrak{z}}    \newcommand{\gZ}{\mathfrak{Z}}
+
+% mathrsfs
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+% ----- SYMBOLS -----
+
+% over/underline
+\newcommand{\ol}{\overline}
+\renewcommand{\t}{\tilde}
+\newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+
+\let\oldvec\vec  \renewcommand{\vec}[1]{\underline{#1}}
+
+\renewcommand{\d}{\ d}
+%\let\caron\v
+%\renewcommand{\v}[1]{\underline{#1}}
+
+% arrows
+\newcommand{\decto}{\downarrow}
+\newcommand{\incto}{\uparrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\lla}{\longleftarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\Lla}{\Longleftarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\iffa}{\Leftrightarrow}
+\newcommand{\hra}{\hookrightarrow}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\bij}{\leftrightarrow}
+\newcommand{\longbij}{\longleftrightarrow}
+\newcommand{\dirlim}{\lim_{\lra}}
+\newcommand{\invlim}{\lim_{\lla}}
+\newcommand{\cra}{\stackrel{\sim}{\ra}}
+
+% trigonometric functions
+\DeclareMathOperator{\atan}{atan}
+\DeclareMathOperator{\atanh}{atanh}
+
+% linear algebra
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\tr}{tr}
+
+% complex analysis
+\DeclareMathOperator{\imag}{Im} % imaginary part
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\res}{res} % residue
+
+% general math operators
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\area}{area}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\df}{df}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\DeclareMathOperator{\im}{im} % image
+%\DeclareMathOperator{\length}{length}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\logit}{logit}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\vol}{vol}
+
+% delimiters
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+\newcommand{\ls}{\left\{}
+\newcommand{\rs}{\right\}}
+
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\absb}[1]{\left|#1\right|}
+\newcommand{\angl}[1]{\langle#1\rangle}
+\newcommand{\anglb}[1]{\left\langle#1\right\rangle}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\ceilb}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\flr}[1]{\lfloor #1 \rfloor}
+\newcommand{\flrb}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\ipb}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\nrm}[1]{\|#1\|}
+\newcommand{\nrmb}[1]{\left\|#1\right\|}
+
+% notational conventions
+\newcommand{\ann}[3]{A\left(#1;#2,#3\right)}
+\newcommand{\ball}[2]{B_{#1}(#2)}
+\newcommand{\ballmet}[3]{B_{#1,#2}(#3)}
+\newcommand{\ballzero}[1]{B_{#1}}
+\newcommand{\circl}[2]{C_{#1}(#2)}
+\newcommand{\circlzero}[1]{C_{#1}}
+\newcommand{\clos}[1]{\ol{#1}}
+\newcommand{\dunion}{\biguplus}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand\d[1]{\ d #1}
+\newcommand{\f}{\frac}
+\newcommand{\fdir}{(\La)}
+\newcommand{\defeq}{:=}
+\newcommand{\defeqr}{=:}
+\newcommand{\grad}{\nabla}
+\newcommand{\I}{\mathbf{1}}
+\newcommand{\io}[1]{#1 \ i.o.}
+\newcommand{\inter}[1]{#1^\circ}
+\newcommand{\One}{\vec 1}
+\newcommand{\pd}{\partial}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\setb}[1]{\left\{#1\right\}}
+\renewcommand{\setminus}{\backslash}
+\newcommand{\symdiff}{\triangle}
+\newcommand{\Zero}{\mathbf{0}}
+
+% ----- PROBABILITY -----
+
+% probability distributions
+\DeclareMathOperator{\dBer}{Ber}
+\DeclareMathOperator{\dBet}{Beta}
+\DeclareMathOperator{\dBin}{Bin}
+\DeclareMathOperator{\dCauchy}{Cauchy}
+\DeclareMathOperator{\dEF}{EF}
+\DeclareMathOperator{\dExp}{Exp}
+\DeclareMathOperator{\dGam}{Gam}
+\DeclareMathOperator{\dGeo}{Geo}
+\DeclareMathOperator{\dHGeo}{HGeo}
+\DeclareMathOperator{\dIGam}{IGam}
+\DeclareMathOperator{\dIG}{IG}
+\DeclareMathOperator{\dLN}{Lognormal}
+\DeclareMathOperator{\dN}{\mathcal{N}}
+\DeclareMathOperator{\dNBin}{NegBin}
+\DeclareMathOperator{\dNEF}{NET}
+\DeclareMathOperator{\dPareto}{Pareto}
+\DeclareMathOperator{\dPois}{Pois}
+\DeclareMathOperator{\dU}{Unif}
+\DeclareMathOperator{\dWeib}{Weib}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Cov}{Cov}
+
+% convergence for random variables
+\newcommand{\asto}{\stackrel{a.s.}{\to}}
+\newcommand{\dto}{\stackrel{D}{\to}}
+\newcommand{\Lpto}[1]{\stackrel{L^{#1}}{\to}}
+\newcommand{\pto}{\stackrel{P}{\to}}
+\newcommand{\wkto}{\Ra}
+\newcommand{\aslra}{\stackrel{a.s.}{\lra}}
+\newcommand{\dlra}{\stackrel{d}{\lra}}
+\newcommand{\Lplra}[1]{\stackrel{L^{#1}}{\lra}}
+\newcommand{\plra}{\stackrel{p}{\lra}}
+\newcommand{\wklra}{\stackrel{wk}{\lra}}
+
+% general symbols
+\newcommand{\diid}{\stackrel{i.i.d.}{\sim}}
+\newcommand{\dind}{\stackrel{ind.}{\sim}}
+\newcommand{\disteq}{\stackrel{\text{\tiny $d$}}{=}}
+\newcommand{\ev}[1]{#1 \ a.a.}
+\newcommand{\Ind}[1]{\I\{#1\}}
+\newcommand{\Indb}[1]{\I\left\{#1\right\}}
+\newcommand{\Lp}[2]{{\|#1\|}_{#2}}
+\newcommand{\mk}[1]{\|#1\|_{\text{\textup{MK}}}}
+\newcommand{\OmFP}{(\Om, \cF, \P)} % general probability triple
+\newcommand{\SF}{\text{\textup{SF}}}
+\newcommand{\tv}[1]{{\left\|#1\right\|}_{\text{\textup{TV}}}}
+
+% stochastic processes
+\newcommand{\cadlag}{c\`adl\`ag}
+\newcommand{\caglad}{c\`agl\`ad}
+
+
+
+\newcommand{\intv}{\overline{Q}_n(u)}
+\newcommand{\intp}{ [\overline{\alpha}_n,\overline{\beta}_n]}
+\newcommand{\q}{ \overline{Q}_n(u)}
