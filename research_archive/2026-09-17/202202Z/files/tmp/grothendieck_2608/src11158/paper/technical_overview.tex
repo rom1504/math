@@ -1,0 +1,395 @@
+\section{Technical Overview}
+
+Here, we provide the background and exposition of the main ideas in our work.
+
+\subsection{The upper bound}
+
+\paragraph{Classical Krivine rounding schemes.}
+A classical Krivine scheme consists of odd sign functions \(f,g:\mathbb R^k\to\{-1,1\}\). Its normalized correlation function is
+\(
+    H_{f,g}(t):=\frac{\pi}{2}\mathbb E[f(X)g(Y)],
+\)
+where \(X,Y\) are standard Gaussian vectors with coordinatewise correlation \(t\). Suppose \(H^{-1}(z)=\sum_{n\geq 1}a_nz^n\), and let its \emph{majorant} series be  \(M(s):=\sum_{n\geq 1}|a_n|s^n\). Krivine's tensor preprocessing
+(\cref{app:krivine-preprocessing})
+gives
+\(
+    M(\gamma)\leq 1
+    \implies 
+    K_G\leq\frac{\pi}{2\gamma}.
+\)
+The upper-bound problem is therefore to construct a correlation function whose inverse has a large admissible  $\gamma$ so that $M(\gamma) = 1$.
+
+
+\paragraph{Limiting Krivine rounding schemes.}
+In ordinary Krivine schemes, we need individual Gaussian coordinates $X_i, Y_i$ to have coordinate-wise correlation $t$. We enlarge the search space by allowing $X_i, Y_i$ to have coordinate-wise correlation
+\[
+    \rho_i(t)=\sum_{\substack{d\geq 1\\ d\ \mathrm{odd}}}c_{i,d}t^d,
+    \qquad
+    \sum_d|c_{i,d}|\leq 1.
+\]
+This gives us more degrees of freedom in designing \(H\) whose associated \(M\) has larger \(\gamma\) satisfying $M(\gamma) = 1$.
+
+% This flexibility in correlation structure allows us to find correlation functions \(H\) whose corresponding inverse majorants \(M\) have larger radii \(\gamma\).
+
+% In our construction, we use the central limit theorem to realize arbitrary correlations as above.  
+% In our construction, the powers \(t^d\) arise from Hermite polynomials: if \(U,V\) are correlated standard Gaussians, then \(\mathbb E[\operatorname{He}_d(U)\operatorname{He}_d(V)]=t^d\). 
+
+% A limiting scheme is thus a fixed-dimensional model of a family of high-dimensional schemes built from normalized sums of Hermite polynomials.
+
+% \rnote{The previous sentence is too vague and terse. You can just state the idea; we come up with an intermediate function and use central-limit theorem to realize arbitrary correlations as above.}
+
+
+\paragraph{Approximation of limiting schemes using classical schemes.}
+% While we may design the correlation function \(H\) to admit any \(\rho\) of the above structure, it is not immediately 
+While we may design the correlations between variables to admit any \(\rho\) of the above structure, it is not immediately clear how the rounding algorithm works. 
+Here, we show that any limiting scheme can in fact be approximated arbitrarily well by classical Krivine schemes, whose rounding algorithm is established. 
+Therefore, it suffices to find a limiting scheme whose inverse majorant $M$ admits a high $\gamma$ with $M(\gamma) = 1$.
+% In order to use limiting schemes, we show that every limiting scheme can be approximated by classical Krivine schemes.
+
+More precisely, we construct a sequence $\mathcal{S}_1, \mathcal{S}_2, \ldots$ of classical Krivine schemes of increasing dimension \(k\), whose correlation functions $H_{\mathcal{S}_1}, H_{\mathcal{S}_2}, \dots$ converge to the correlation function $H_{\mathcal{S}}$ of a limiting scheme $\mathcal{S}$.
+The main idea is to use the central limit theorem to collapse the increasing number of Gaussian random variables in the classical schemes \(\mathcal{S}_k = (f_k, g_k)\), where \(f_k, g_k : \mathbb{R}^k \to \{\pm 1\}\).
+
+  
+% Therefore, it suffices to find a limiting rounding scheme that gives a good upper bound on \(K_G\), and a way to generate a sequence of classical rounding schemes that asymptotically approximates it.
+
+% The main idea of the proof is to use the central limit theorem to collapse the increasing dimensions.
+
+% This lets us search for the upper-bound construction entirely within the class of limiting schemes.
+
+% \rnote{Reads a bit like bullet points. No need for putting Vitali's theorem here. Need less jargon here.}
+
+
+% 
+
+\paragraph{The cubic--quintic scheme.}
+A limiting Krivine scheme that attains the paper's stated upper bound on \(K_G\) is defined as follows.
+% Our construction is a two-dimensional limiting scheme.
+For suitable parameters \(s_3,s_5,\vartheta>0\), set
+\[
+    \rho(t):=
+    \frac{t-s_3^2t^3+s_5^2t^5}{1+s_3^2+s_5^2},
+\]
+and use the partitions
+\[
+    f(w,x)=\operatorname{sgn}\!\left(w+\vartheta\operatorname{He}_3(x)\right),
+    \qquad
+    g(w,x)=\operatorname{sgn}\!\left(w-\vartheta\operatorname{He}_3(x)\right).
+\]
+We set the first coordinate \(w\) to have correlation \(\rho(t)\), and set the second coordinate \(x\) to have correlation \(t\).
+
+% This limiting Krivine scheme gives our stated upper bound on \(K_G\).
+% , and we show how to approximate it by classical schemes.
+
+% The first Gaussian coordinate pair has correlation \(\rho(t)\), while the second has correlation \(t\). 
+% The cubic direction is anti-aligned between the two sides and the quintic direction is aligned. 
+% The parameters are chosen to cancel out the first nonlinear coefficients of the resulting correlation function. 
+% \rnote{Could explicitly spell out, the final form $H_{f,g}$.}
+
+
+\paragraph{Deriving the upper bound.}
+In order to prove the upper bound (which we denote as $K_G^{UB}$), one needs to show that the inverse majorant $M(\gamma) \leq 1$ holds, for $\gamma=\frac{\pi}{2K_G^{UB}}$.
+Doing this is non-trivial, and requires both an analytic step and a computational step. 
+
+For the analytic step, write
+\(H(t)=b_1t+\sum_{m\geq 3}b_mt^m\), and let
+\(\Delta_H:=\sum_{m\geq 3}|b_m|\) denote its total nonlinear coefficient mass. We prove that it is sufficient to show 
+\[
+    \gamma+\Delta_H<b_1.
+\]
+Thus, rather than computing the inverse series \(H^{-1}\), it is enough to certify a lower bound on the linear coefficient \(b_1\) and an upper bound on \(\Delta_H\).
+We then compute the first terms of $\{b_n\}$ using a formula involving the Hermite coefficients of $f$ and $g$, which are one-dimensional Gaussian integrals. Finally, we bound the tail of $\Delta_H$ through a single boundary-norm estimate for \(D^3H\), where \(D=t\frac{d}{dt}\). Rigorous interval arithmetic verifies the resulting finite collection of inequalities, yielding the claimed upper bound on \(K_G\).
+
+
+
+% The computational verification is reduced to a simple criterion on the coefficients of the correlation function. 
+% \rnote{What computational verification; this is a big jump from above. This is almost assuming familiarity with our previous paper.}
+% Write
+% \(H(t)=b_1t+\sum_{m\geq 3}b_mt^m\), and let
+% \(\Delta_H:=\sum_{m\geq 3}|b_m|\) denote its total nonlinear coefficient mass. We show that
+% \[
+%     \gamma+\Delta_H<b_1
+%     \qquad\Longrightarrow\qquad
+%     M_H(\gamma)<1.
+% \]
+% Thus, rather than computing the inverse series \(H^{-1}\), it is enough to certify a lower bound on the linear coefficient \(b_1\) and an upper bound on \(\Delta_H\). We reduce these two estimates to a finite computer-assisted calculation. The initial coefficients of \(H\) are enclosed directly using one-dimensional Gaussian integrals, while the remaining coefficient tail is bounded through a single boundary-norm estimate for \(D^3H\), where \(D=t\frac{d}{dt}\). Rigorous interval arithmetic verifies the resulting finite collection of inequalities, yielding the claimed upper bound on \(K_G\).
+
+
+\subsection{The lower bound}
+
+\paragraph{Mixed Krivine schemes are optimal.}
+Naor and Regev~\cite{naor2014krivine} proved that mixed Krivine schemes are asymptotically optimal. We use a quantitative consequence of their construction: there exist limiting mixed correlation functions \(H_k\) with admissible inverse-majorant parameters \(\gamma_k\) satisfying
+\[
+    \gamma_k\longrightarrow\frac{\pi}{2K_G}.
+\]
+Consequently, any universal upper bound on the admissible parameter of a Krivine correlation function gives a lower bound on \(K_G\).
+
+
+\paragraph{The affine coefficient inequality.}
+To obtain this upper bound, we ask which Taylor coefficients can actually arise from a Krivine correlation function. For odd sign functions \(f,g:\mathbb R^d\to\{-1,1\}\), write
+\[
+    H_{f,g}(t)=b_1t+b_3t^3+\cdots.
+\]
+
+Surprisingly, we show that there is the clean constraint on the first two coefficients:
+\begin{equation}
+    b_3\geq 2b_1-\frac{11}{6}.
+    \label{eq:affine-coefficient-inequality}
+\end{equation}
+Its affine form is important, since it is preserved under mixtures and coefficientwise limits. 
+
+Pushing the affine inequality to the inverse series $H^{-1}$ yields bounds on the inverse coefficients $a_1$ and $a_3$, which in turn gives $\gamma \leq \frac{11}{12}$. This results in the desired $K_G \geq \frac{6\pi}{11}$ .
+
+
+% It also gives the desired barrier on the inverse majorant. Indeed, if
+% \[
+%     H^{-1}(z)=a_1z+a_3z^3+\cdots,
+% \]
+% then
+% \[
+%     a_1=\frac{1}{b_1},
+%     \qquad
+%     a_3=-\frac{b_3}{b_1^4}.
+% \]
+% Combining these identities with \eqref{eq:affine-coefficient-inequality}, the bound \(b_1\leq 1\), and the first two terms of the inverse majorant shows that every admissible parameter satisfies
+% \[
+%     \gamma\leq\frac{11}{12}.
+% \]
+% Since the asymptotically optimal family above has
+% \(\gamma_k\to\pi/(2K_G)\), this yields
+% \[
+%     K_G\geq\frac{6\pi}{11}.
+% \]
+
+% \paragraph{Agreement and disagreement.}
+% We prove \eqref{eq:affine-coefficient-inequality} using the Hermite expansions of \(f\) and \(g\). Let \(P_iF\) denote the projection of a function \(F\) onto Hermite degree \(i\). Mehler's identity gives
+% \[
+%     b_1=\frac{\pi}{2}\langle P_1f,P_1g\rangle,
+%     \qquad
+%     b_3=\frac{\pi}{2}\langle P_3f,P_3g\rangle.
+% \]
+% Writing
+% \[
+%     \nu:=\mathbb E|Z|=\sqrt{\frac{2}{\pi}},
+% \]
+% the affine inequality is therefore equivalent to
+% \[
+%     2\langle P_1f,P_1g\rangle
+%     -\langle P_3f,P_3g\rangle
+%     \leq \frac{11}{6}\nu^2.
+% \]
+
+% The useful change of variables is
+% \[
+%     h:=\frac{f+g}{2},
+%     \qquad
+%     k:=\frac{f-g}{2}.
+% \]
+% Here \(h\) is supported where \(f\) and \(g\) agree, while \(k\) is supported where they disagree. Moreover,
+% \[
+%     h,k\in\{-1,0,1\},
+%     \qquad
+%     h^2+k^2=1.
+% \]
+% Substituting \(f=h+k\) and \(g=h-k\), the left-hand side above becomes
+% \[
+%     2\|P_1h\|^2-2\|P_1k\|^2
+%     -\|P_3h\|^2+\|P_3k\|^2.
+% \]
+% After dropping the nonpositive term \(-2\|P_1k\|^2\), it is enough to prove
+% \begin{equation}
+%     2\|P_1h\|^2-\|P_3h\|^2+\|P_3k\|^2
+%     \leq \frac{11}{6}\nu^2.
+%     \label{eq:agreement-disagreement-reduction}
+% \end{equation}
+% The first two terms involve the agreement function \(h\), while the final term measures the degree-three contribution of the disagreement function \(k\). We bound these two contributions separately.
+
+
+
+
+
+
+
+
+
+% \paragraph{The affine coefficient inequality.}
+% We can ask 
+
+
+
+% Pushing the affine inequality to the inverse series $H^{-1}$ yields bounds on the inverse coefficients $a_1$ and $a_3$, which in turn gives $\gamma \leq \frac{11}{12}$. This results in the desired $K_G \leq \frac{6\pi}{11}$ .
+
+
+
+
+% \paragraph{The affine coefficient inequality.}
+% For a square-integrable function \(F\) on Gaussian space, let \(P_iF\) denote its orthogonal projection onto the Hermite polynomials of total degree \(i\). If
+% \(H_{f,g}(t)=b_1t+b_3t^3+\cdots\) is the normalized correlation function of \(f\) and \(g\), then the basic orthogonality properties of Hermite polynomials give
+% \(b_1=\frac{\pi}{2}\langle P_1f,P_1g\rangle\) and
+% \(b_3=\frac{\pi}{2}\langle P_3f,P_3g\rangle\).
+% Our main coefficient estimate is
+% \begin{equation}
+%     b_3\geq 2b_1-\frac{11}{6}.
+%     \label{eq:affine-coefficient-inequality}
+% \end{equation}
+% Since \(\nu:=\mathbb E|Z|=\sqrt{2/\pi}\), this is equivalent to
+% \[
+%     2\langle P_1f,P_1g\rangle-\langle P_3f,P_3g\rangle
+%     \leq \frac{11}{6}\nu^2.
+% \]
+
+% \rnote{Talking about $P_i F$ here seems a bit odd. I don't think that'll help in understanding yet. It might help to motivate the general approach. Something like ... We can ask what sets of coeffecients $(b_1, b_3, \cdots)$ can in fact be realized as Taylor-coefficients of a correlation function. Surprisingly, we show that there are some non-trivial clean constraints: ...}
+
+\paragraph{Hermite expansion.} The approach to proving this is by looking at Hermite expansions of $f, g$. For a square-integrable function \(F\) on Gaussian space, let \(P_iF\) denote its orthogonal projection onto the Hermite polynomials of total degree \(i\).  If
+\(H_{f,g}(t)=b_1t+b_3t^3+\cdots\) is the normalized correlation function of \(f\) and \(g\), then the basic orthogonality properties of Hermite polynomials give
+\(b_1=\frac{\pi}{2}\langle P_1f,P_1g\rangle\) and
+\(b_3=\frac{\pi}{2}\langle P_3f,P_3g\rangle\).
+Our affine coefficient inequality is
+\begin{equation*}
+    b_3\geq 2b_1-\frac{11}{6}.
+\end{equation*}
+Since \(\nu:=\mathbb E|Z|=\sqrt{2/\pi}\), this is equivalent to
+\[
+    2\langle P_1f,P_1g\rangle-\langle P_3f,P_3g\rangle
+    \leq \frac{11}{6}\nu^2.
+\]
+
+\paragraph{Agreement and disagreement.}
+In order to prove the inequality, we make a key substitution. The substitution is to write
+\(h:=(f+g)/2\) and \(k:=(f-g)/2\). The function \(h\) can be thought of as the \textit{agreement part}, where \(f\) and \(g\) agree, while \(k\) is the corresponding \textit{disagreement part}. Moreover,
+\(h,k\in\{-1,0,1\}\) and \(h^2+k^2=1\).
+
+% \rnote{This section seems like its jumping. After stating the inequality clearly for $b_3, b_1$, you can then say we approach proving this by looking at Hermite expansions of $f,g$. In particualr $b_3 = blah $ .. }
+Substituting \(f=h+k\) and \(g=h-k\) into the preceding inequality, and discarding a nonpositive term, it suffices to prove
+\begin{equation}
+    2\|P_1h\|^2-\|P_3h\|^2+\|P_3k\|^2
+    \leq \frac{11}{6}\nu^2.
+    \label{eq:agreement-disagreement-reduction}
+\end{equation}
+The first two terms depend only on the agreement function \(h\), while the final term measures the degree-three contribution of the disagreement function \(k\). We bound these two parts separately.
+
+
+\paragraph{Agreement terms.}
+Rotate coordinates so that \(P_1h\) lies in a single Gaussian direction \(S\), and write
+\(x:=\|P_1h\|/\nu\in[0,1]\). The positive agreement term is then
+\(2\|P_1h\|^2=2\nu^2x^2\).
+
+To control the helpful negative term \(-\|P_3h\|^2\), average \(h\) over all coordinates transverse to \(S\). Namely, writing the Gaussian input as \((S,T)\), set
+\(A(s):=\mathbb E_T[h(s,T)]\). Then \(|A|\leq1\) and
+\(\mathbb E[A(S)S]=\nu x\). A one-dimensional rearrangement inequality shows that this prescribed linear moment forces a cubic Hermite moment:
+\[
+    \|P_3h\|^2
+    \geq
+    \frac{\nu^2}{6}\Delta_+(x)^2
+\]
+for an explicit function \(\Delta\). Thus, a large linear agreement term necessarily creates a compensating cubic agreement term.
+
+\paragraph{Disagreement term.}
+For each fixed transverse vector \(t\), consider the one-dimensional slice
+\(u_t(s):=k(s,t)\). Since \(k\in\{-1,0,1\}\), each \(u_t\) is a ternary function on the Gaussian line. The degree-three Hermite decomposition implies
+\[
+    \|P_3k\|^2
+    \leq
+    \mathbb E_T V(u_T),
+    \qquad
+    V(u):=
+    \sum_{j=0}^3
+    \bigl(\mathbb E[u(Z)\psi_j(Z)]\bigr)^2.
+\]
+We control these first four Hermite moments through the weighted support
+\(\beta(u):=\mathbb E[|Z|u(Z)^2]\). The key one-dimensional estimate is
+\begin{equation}
+    V(u)\leq 3\nu\beta(u)-\beta(u)^2.
+    \label{eq:one-dimensional-support-inequality}
+\end{equation}
+Conceptually, this says that a ternary function cannot have both a support concentrated cheaply near the origin and a large projection onto all Hermite degrees at most three. The inequality admits an exact finite-dimensional dual reduction. After introducing a support price \(c\), the optimizing ternary function has the threshold form
+\(
+    u(z)=\operatorname{sgn}(p(z))
+    \mathbf 1_{\{|p(z)|\geq c|z|\}},
+\)
+where \(p\) is a unit cubic Hermite polynomial. The resulting one-dimensional Gaussian integral inequalities are verified using outward-rounded interval arithmetic. Finally, \(h^2+k^2=1\) relates the average weighted support of the slices \(u_T\) to the agreement parameter \(x\). Combining this relation with
+\eqref{eq:one-dimensional-support-inequality} gives an explicit upper bound on
+\(\|P_3k\|^2\) in terms of \(x\). Together with the agreement estimate, this reduces
+\eqref{eq:agreement-disagreement-reduction} to an elementary scalar inequality on
+\(x\in[0,1]\), proving \eqref{eq:affine-coefficient-inequality}.
+
+
+
+
+% \section{Technical Overview}
+
+% Here, we provide an exposition of the main ideas in our work. 
+
+% \paragraph{Classical Krivine schemes.} ... 
+
+% \paragraph{Limiting Krivine schemes.} ... 
+
+% \paragraph{Approximation of limiting schemes with classical schemes.} ...
+
+% \paragraph{The cubic-quintic scheme.} ...
+
+% \paragraph{Deriving the upper bound.} ...
+
+% \paragraph{Krivine schemes are optimal.} ... 
+
+% \paragraph{Affine inequality.} ... 
+
+% \paragraph{Deriving the lower bound.} ... 
+
+% \paragraph{Technical overview of the Lower Bound.} We prove the following theorem:
+
+% \begin{theorem}\label{thm:lower-bound}
+% The Grothendieck constant satisfies
+% \[
+%         K_G\ge\frac{6\pi}{11} \approx 1.7136.
+% \]
+% \end{theorem}
+
+% A sketch of the proof is as follows. 
+
+% First, recall the inverse-series step in Krivine's rounding argument. If
+% \[
+%         H^{-1}(z)=\sum_{j\ge0}a_{2j+1}z^{2j+1},
+% \]
+% define the absolute-coefficient majorant $M_H(s):=\sum_{j\ge0}|a_{2j+1}|s^{2j+1}$. The standard tensor preprocessing gives the implication
+% \begin{equation}
+%         M_H(\gamma)\le1
+%         \quad\Longrightarrow\quad
+%         K_G\le\frac{\pi}{2\gamma}.
+%         \label{eq:inverse-majorant-bound}
+% \end{equation}
+% We refer to~\eqref{eq:inverse-majorant-bound} as the \emph{inverse-majorant bound}.
+
+% The conceptual starting point is the theorem of Naor and Regev that Krivine schemes are optimal \cite{naor2014krivine}. By reworking the construction in their proof, we show that the inverse-majorant bound is itself asymptotically optimal after allowing mixtures and increasing dimension: there are limiting mixed correlation functions with admissible parameters converging to $\pi/(2K_G)$. This transfer is established in Section~\ref{sec:majorant_optimal}.
+
+% It therefore remains to prove a universal upper bound on such admissible parameters. For arbitrary odd measurable sign functions $f,g:\R^d\to\{\pm1\}$, write
+% \[
+%         H_{f,g}(t)=b_1t+b_3t^3+b_5t^5+\cdots.
+% \]
+% The technical core of the argument is the affine inequality
+% \[
+%         b_3\ge 2b_1-\frac{11}{6}.
+% \]
+% Section~\ref{sec:preliminaries} sets up the Gaussian--Hermite formulation, and Section~\ref{sec:affine-strip} proves this inequality by decomposing $f$ and $g$ into their agreement and disagreement parts and reducing the required estimates to one-dimensional inequalities. Its linearity in $(b_1,b_3)$ is essential, because it makes the inequality invariant under mixtures and coefficientwise limits.
+
+% Section~\ref{sec:strip_majorant} then shows that the affine inequality controls the inverse-majorant bound: every admissible value must satisfy $\gamma\le11/12$. Applying this barrier to the asymptotically optimal sequence constructed in Section~\ref{sec:majorant_optimal} gives
+% \[
+%         \frac{\pi}{2K_G}\le\frac{11}{12},
+% \]
+% which is exactly Theorem~\ref{thm:lower-bound}.
+
+
+% \paragraph{Technical overview of the Upper Bound}. (Give references to sections of the technical part)
+
+% - Recall classical Krivine schemes... (standard correlation)
+
+% - Define Limiting Krivine schemes... (arbitrary correlation)
+
+% - Show that these schemes can be arbitrarily approximated by classical (finite) Krivine schemes, in a specific sense
+
+% - Therefore inverse-majorant bound on Limiting Krivine schemes translates to upper bounds on $K_G$, so this is a new search space
+
+% - We then study a specific instantiation of limiting Krivine schemes: the cubic--quintic scheme...
+
+% - We show how to derive the inverse-majorant bound on this by bounding the tail of the taylor expansion of $H$... 
+
+

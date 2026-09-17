@@ -66,3 +66,26 @@ diagnostics are distinguished from exact integer energy enumeration.
 Some live researchers continued editing during the snapshot. Later
 versions will be canonical in this commit or preserved at the next
 checkpoint; a snapshot is not a reason to discard ongoing work.
+
+## Fourth checkpoint
+
+Snapshot `2026-09-17/202202Z` preserves1,968 research payloads,
+165,942,747 bytes; all1,968 SHA-256 payload checks pass. No credential
+candidate or unresolved oversized output was found. The14 historical
+dynamic-reference flags are unchanged. Primary PDFs, exact physical-column
+primal/dual witnesses, source reconstruction and failed response probes
+are preserved, not only polished proofs.
+
+The new independent certificate replay takes an explicit `--witness` path:
+either the live JSON or its manifest-located archived copy. It imports only
+the tracked matrix-input module, exhaustively recomputes actual caps, then
+checks integer/rational primal responses and every physical-column dual
+inequality without a solver. All42 endpoints match exactly. This does NOT
+re-prove global minimization of the imported signing witnesses.
+
+New work after the snapshot, including the adaptive actual-energy response
+extension, remains labeled with its current proof/audit status and will
+be preserved again at the next checkpoint. No research is removed because
+it is unfinished or negative. Previously excluded environments, reviewed
+build products and losslessly archived oversized raw data remain excluded
+for the documented reasons above.

@@ -1,0 +1,25 @@
+row-sum identities
+  n=12, m= 7: all ell exact
+  n=14, m= 8: all ell exact
+  n=16, m=10: all ell exact
+mixture spectrum
+  n=8, m=5, weights=[(2, 0.4), (4, 0.6)], max error=4.163e-16
+  degree 0: Lambda=1.000000000000
+  degree 1: Lambda=0.440000000000
+  degree 2: Lambda=0.188000000000
+  degree 3: Lambda=0.060000000000
+rearrangement capacity
+  brute force agrees with filling intersection shells for r=1,2,3
+extraction convexity
+  ell=2: excess=0.652380952, D=2.357142857, ratio=0.276767677
+  ell=4: excess=0.617777778, D=3.400000000, ratio=0.181699346
+  mixture ratio=0.211749681
+tuned one-threshold capacity
+  n   ell  best_s  max B_s K_ell(s)  lambda2-h   ratio   sqrt(n)*max
+   100    36      45     0.256258046979 0.137711864  1.8608   2.5625805
+   200    72      90     0.184419973624 0.139176537  1.3251   2.6080923
+   400   144     180     0.131647580127 0.139902781  0.9410   2.6329516
+   800   288     360     0.093551378819 0.140264392  0.6670   2.6460326
+  1600   576     720     0.066318935571 0.140444821  0.4722   2.6527574
+  3200  1152    1440     0.046954880970 0.140534942  0.3341   2.6561692
+
