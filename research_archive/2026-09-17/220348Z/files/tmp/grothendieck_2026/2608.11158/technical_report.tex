@@ -1,0 +1,1058 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={A Gaussianized Third- and Fifth-Chaos Krivine Scheme},
+  pdfauthor={OpenAI GPT-5.5 Pro}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{claim}[theorem]{Claim}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\He}{\mathsf{He}}
+\newcommand{\hh}{\mathsf h}
+\newcommand{\Herm}{\mathsf H}
+\newcommand{\var}{\operatorname{Var}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\asinh}{\operatorname{arsinh}}
+\newcommand{\erf}{\operatorname{erf}}
+\newcommand{\ol}{\overline}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+
+\title{A Gaussianized Third- and Fifth-Chaos Krivine Scheme\\
+\large Construction, Coefficients, Asymptotics, and a Wiener-Algebra Tail Certificate}
+\author{Technical note prepared from the transcript and the attached papers}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note formalizes a high-dimensional Krivine rounding scheme built from an anti-aligned third-chaos reservoir and an aligned fifth-chaos reservoir.  In the limiting model, the correlation function is an odd power series
+\[
+        H(t)=b_1t+b_3t^3+b_5t^5+\cdots
+\]
+in the arcsine normalization.  Numerically, with
+\[
+\eta=0.136419125,\qquad s_3=0.34101124,
+        \qquad s_5=0.05276111,
+\]
+one obtains
+\[
+        b_1=0.8815738220496\ldots,\qquad
+        b_3\approx 3.45\cdot 10^{-9},\qquad
+        b_5\approx -9.04\cdot 10^{-11}.
+\]
+Thus the first two nonlinear inverse obstructions are almost annihilated.  The main point of this note is not the numerical search, but the proof architecture: rather than bounding hundreds of coefficients of the inverse series by a Cauchy estimate, one can prove admissibility by showing that \(H\) is nearly linear in the Wiener algebra.  This gives a short formal tail argument for the inverse-majorant condition
+\[
+        \sum_{n\ge 1}\abs{A_n}\gamma^n\le 1,
+        \qquad H^{-1}(\zeta)=\sum_{n\ge 1}A_n\zeta^n.
+\]
+A conservative certificate should reach roughly
+\[
+        \gamma=0.8815624,
+        \qquad
+        K_G\le {\pi\over 2\gamma}=1.7818322638\ldots,
+\]
+assuming the explicit finite coefficient inequalities stated below are certified.  The same method also applies to a small degree \(7/9\) reservoir extension, which numerically improves the reciprocal constant to about \(1.781806286\).
+\end{abstract}
+
+\tableofcontents
+
+\section{Normalizations and goal}
+
+Let \(f,g:\R^d\to\{-1,1\}\) be odd measurable functions.  For correlated standard Gaussian vectors \((X,Y)\) in \(\R^d\), with coordinatewise correlation \(t\in(-1,1)\), write
+\[
+        \mathfrak H_{f,g}(t)=\E[f(X)g(Y)].
+\]
+The arcsine-normalized correlation is
+\[
+        H_{f,g}(t):={\pi\over 2}\mathfrak H_{f,g}(t).
+\]
+With this convention the hyperplane scheme satisfies
+\[
+        H_{\rm hp}(t)=\arcsin t,
+        \qquad
+        H_{\rm hp}^{-1}(\zeta)=\sin\zeta.
+\]
+The hyperplane admissibility radius is
+\[
+        \rho_*:=\asinh(1)=\log(1+\sqrt2)=0.8813735870195429\ldots,
+\]
+because
+\[
+        \sum_{j\ge0}{\rho_*^{2j+1}\over (2j+1)!}=\sinh(\rho_*)=1.
+\]
+The corresponding raw correlation value is
+\[
+        c_*={2\rho_*\over \pi}=0.5610998523391801\ldots,
+\]
+and Krivine's bound is
+\[
+        K_G\le {\pi\over 2\rho_*}=1.7822139781913693\ldots.
+\]
+
+The goal is to find \(H\) for which the local inverse
+\[
+        H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n
+\]
+satisfies
+\begin{equation}\label{eq:majorant-condition}
+        M_H(\gamma):=\sum_{n\ge1}\abs{A_n}\gamma^n\le 1
+\end{equation}
+for some \(\gamma>\rho_*\).  Then the usual Krivine preprocessing gives
+\[
+        K_G\le {\pi\over 2\gamma}.
+\]
+In the raw normalization, the same statement is
+\[
+        c={2\gamma\over\pi},\qquad K_G\le {1\over c}.
+\]
+
+\section{Krivine admissibility}
+
+The following is the standard inverse-majorant criterion.  It is included to fix notation.
+
+\begin{theorem}[Krivine preprocessing criterion]\label{thm:krivine}
+Let \(f,g:\R^d\to\{-1,1\}\) be odd measurable functions, and suppose that their arcsine-normalized correlation \(H=H_{f,g}\) has a local inverse at the origin,
+\[
+        H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+If \(H^{-1}\) is holomorphic on a neighborhood of \(\gamma\D\) and
+\[
+        \sum_{n\ge1}\abs{A_n}\gamma^n\le 1,
+\]
+then
+\[
+        K_G\le {\pi\over 2\gamma}.
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+For \(0<\gamma'<\gamma\), define Hilbert-space embeddings
+\[
+ I(x)=\bigoplus_{n\ge1}\sqrt{\abs{A_n}(\gamma')^n}\,x^{\otimes n}\oplus
+       \sqrt{1-M_H(\gamma')}\,e_L,
+\]
+\[
+ J(y)=\bigoplus_{n\ge1}\operatorname{sgn}(A_n)
+       \sqrt{\abs{A_n}(\gamma')^n}\,y^{\otimes n}\oplus
+       \sqrt{1-M_H(\gamma')}\,e_R.
+\]
+Then \(I(x)\) and \(J(y)\) are unit vectors and
+\[
+        \ip{I(x)}{J(y)}=H^{-1}(\gamma'\ip{x}{y}).
+\]
+Apply a Gaussian projection and the rounding pair \((f,g)\).  The expected rounded product is
+\[
+        {2\over\pi}H(\ip{I(x)}{J(y)})={2\gamma'\over\pi}\ip{x}{y}.
+\]
+Taking the deterministic signs at least as good as the expectation and then letting \(\gamma'\uparrow\gamma\) gives the result.
+\end{proof}
+
+This is the same analytic mechanism used in BMMN's Krivine schemes and in the attached two-dimensional certificate paper.  The novelty here is the construction of \(H\) and the proposed tail proof for \eqref{eq:majorant-condition}.
+
+\section{The Gaussianized \texorpdfstring{\(3/5\)}{3/5} construction}
+
+\subsection{Hermite notation}
+
+Let \(\Herm_n\) denote the orthonormal probabilists' Hermite polynomial:
+\[
+        \E[\Herm_m(Z)\Herm_n(Z)]=\delta_{mn},
+        \qquad Z\sim N(0,1).
+\]
+Thus
+\[
+        \Herm_0=1,
+        \qquad
+        \Herm_1(x)=x,
+\]
+\[
+        \Herm_3(x)={x^3-3x\over\sqrt6},
+        \qquad
+        \Herm_5(x)={x^5-10x^3+15x\over\sqrt{120}}.
+\]
+The Hermite covariance identity is
+\begin{equation}\label{eq:hermite-cov}
+        \E[\Herm_m(X)\Herm_n(Y)]=\delta_{mn}t^n
+\end{equation}
+whenever \((X,Y)\) are standard Gaussians with correlation \(t\).
+
+\subsection{Finite-dimensional pure-chaos approximants}
+
+For each \(N\), take independent standard Gaussians
+\[
+        Z,X,U_1,\ldots,U_N,V_1,\ldots,V_N.
+\]
+Define the pure third- and fifth-chaos reservoir variables
+\[
+        P_{3,N}={1\over\sqrt N}\sum_{j=1}^N\Herm_3(U_j),
+        \qquad
+        P_{5,N}={1\over\sqrt N}\sum_{j=1}^N\Herm_5(V_j).
+\]
+The actual finite-dimensional rounding functions are
+\begin{equation}\label{eq:finite-fN}
+        f_N=\sgn\left(Z+\eta\Herm_3(X)+s_3P_{3,N}+s_5P_{5,N}\right),
+\end{equation}
+\begin{equation}\label{eq:finite-gN}
+        g_N=\sgn\left(Z-\eta\Herm_3(X)-s_3P_{3,N}+s_5P_{5,N}\right).
+\end{equation}
+The ambient dimension is
+\[
+        d_N=2+2N.
+\]
+Both functions are odd.  The sign pattern is important: degree \(3\) is anti-aligned, and degree \(5\) is aligned.
+
+The parameters used below are
+\begin{equation}\label{eq:params}
+        \eta=0.136419125,
+        \qquad
+        s_3=0.34101124,
+        \qquad
+        s_5=0.05276111.
+\end{equation}
+
+\subsection{The limiting model}
+
+As \(N\to\infty\), the variables \(P_{3,N}\) and \(P_{5,N}\) converge in distribution to independent standard Gaussians.  The limiting functions are therefore
+\begin{equation}\label{eq:limit-f}
+        f(z,x,r_3,r_5)=\sgn\left(z+\eta\Herm_3(x)+s_3r_3+s_5r_5\right),
+\end{equation}
+\begin{equation}\label{eq:limit-g}
+        g(z,x,r_3,r_5)=\sgn\left(z-\eta\Herm_3(x)-s_3r_3+s_5r_5\right).
+\end{equation}
+For the limiting weighted correlation, the paired variables have correlations
+\begin{equation}\label{eq:weighted-correlations}
+        \rho_Z=t,
+        \qquad \rho_X=t,
+        \qquad \rho_3=t^3,
+        \qquad \rho_5=t^5.
+\end{equation}
+This is the formal way in which the limiting reservoir remembers that \(r_3\) came from pure third chaos and \(r_5\) came from pure fifth chaos.
+
+Equivalently, the arcsine-normalized limiting correlation is
+\begin{equation}\label{eq:Hlim-def}
+        H(t)={\pi\over2}\E[f(Z,X,R_3,R_5)g(Z',X',R_3',R_5')],
+\end{equation}
+where each coordinate pair is jointly Gaussian with correlations \eqref{eq:weighted-correlations}.  The expansion is
+\[
+        H(t)=\sum_{m\ge1}b_m t^m.
+\]
+Only odd powers occur.
+
+\begin{remark}[Why the \(3/5\) sign pattern is natural]
+BMMN's perturbative calculation imposes an alternating condition on the two sides of a Hermite perturbation.  In the usual indexing, degree \(2k+1\) wants relative sign \((-1)^k\).  Thus degree \(3\) wants opposite signs and degree \(5\) wants the same sign.  The construction above implements exactly this rule.
+\end{remark}
+
+\section{Coefficient formula}
+
+The coefficient formula is the central computational object.  It turns the limiting four-dimensional problem into a family of two-dimensional Gaussian integrals.
+
+\subsection{Threshold coefficients in the reservoir direction}
+
+Put
+\begin{equation}\label{eq:S-alpha-beta}
+        S=\sqrt{s_3^2+s_5^2},
+        \qquad
+        \alpha={s_3\over S},
+        \qquad
+        \beta={s_5\over S}.
+\end{equation}
+For the parameters \eqref{eq:params},
+\[
+        S=0.345068689589145\ldots,
+        \qquad
+        \alpha=0.988241617650167\ldots,
+        \qquad
+        \beta=0.152900311131734\ldots.
+\]
+Let \(R\sim N(0,1)\).  For \(u\in\R\), define
+\[
+        q_k(u)=\E_R[\sgn(u+R)\Herm_k(R)].
+\]
+Equivalently, for a threshold \(T+SR\), we will use \(u=T/S\).  The coefficients are explicit:
+\begin{equation}\label{eq:q0}
+        q_0(u)=\erf\left({u\over\sqrt2}\right),
+\end{equation}
+\begin{equation}\label{eq:qk}
+        q_k(u)=2\varphi(u){\Herm_{k-1}(-u)\over\sqrt{k}},\qquad k\ge1,
+\end{equation}
+where \(\varphi(u)=(2\pi)^{-1/2}e^{-u^2/2}\).
+
+\begin{proof}
+For \(k=0\), \(q_0(u)=\Prob[R>-u]-\Prob[R<-u]=\erf(u/\sqrt2)\).  For \(k\ge1\), use \(\E\Herm_k(R)=0\) and
+\[
+        q_k(u)=2\int_{-u}^\infty \Herm_k(r)\varphi(r)\,dr.
+\]
+The identity
+\[
+        {d\over dr}\bigl(\varphi(r)\Herm_{k-1}(r)\bigr)
+        =-\sqrt{k}\,\varphi(r)\Herm_k(r)
+\]
+gives \eqref{eq:qk}.
+\end{proof}
+
+\subsection{The two-dimensional integrals}
+
+Let
+\[
+        T(z,x)=z+\eta\Herm_3(x).
+\]
+For integers \(a,b,k\ge0\), define
+\begin{equation}\label{eq:C-def}
+        C_{a,b,k}
+        =\E_{Z,X}\left[
+            \Herm_a(Z)\Herm_b(X)
+            q_k\left({Z+\eta\Herm_3(X)\over S}\right)
+          \right].
+\end{equation}
+This is only a two-dimensional integral against independent standard Gaussians \((Z,X)\).  It is well suited to Gauss-Hermite quadrature or to interval Taylor quadrature.
+
+\subsection{Reservoir rotation}
+
+Since
+\[
+        s_3r_3+s_5r_5=S(\alpha r_3+\beta r_5),
+\]
+the function \(f\) depends on \((r_3,r_5)\) only through \(R=\alpha r_3+\beta r_5\).  The Hermite addition formula gives
+\begin{equation}\label{eq:hermite-addition}
+        \Herm_k(\alpha r_3+\beta r_5)
+        =\sum_{\beta_3+\beta_5=k}
+        \sqrt{\binom{k}{\beta_3}}\,
+        \alpha^{\beta_3}\beta^{\beta_5}
+        \Herm_{\beta_3}(r_3)\Herm_{\beta_5}(r_5).
+\end{equation}
+Therefore the Hermite coefficient of \(f\) indexed by
+\[
+        (a,b,\beta_3,\beta_5),\qquad k=\beta_3+\beta_5,
+\]
+is
+\begin{equation}\label{eq:A-coeff}
+        A_{a,b,\beta_3,\beta_5}
+        =C_{a,b,k}\sqrt{\binom{k}{\beta_3}}\,
+          \alpha^{\beta_3}\beta^{\beta_5}.
+\end{equation}
+Moreover
+\begin{equation}\label{eq:g-transform}
+        g(z,x,r_3,r_5)=f(z,-x,-r_3,r_5).
+\end{equation}
+Thus the corresponding coefficient of \(g\) is
+\begin{equation}\label{eq:B-coeff}
+        B_{a,b,\beta_3,\beta_5}
+        =(-1)^{b+\beta_3}A_{a,b,\beta_3,\beta_5}.
+\end{equation}
+The finite \(X\)-coordinate sign \((-1)^b\) is essential.
+
+\subsection{Weighted-degree coefficient formula}
+
+\begin{theorem}[Coefficient formula]\label{thm:coeff-formula}
+The coefficient \(b_m=[t^m]H(t)\) of the arcsine-normalized limiting correlation \eqref{eq:Hlim-def} is
+\begin{align}\label{eq:b-m-formula}
+        b_m={\pi\over2}
+        \sum_{\substack{a,b,\beta_3,\beta_5\ge0\\
+        a+b+3\beta_3+5\beta_5=m}}
+        &(-1)^{b+\beta_3}
+        \binom{k}{\beta_3}
+        \alpha^{2\beta_3}\beta^{2\beta_5}
+        C_{a,b,k}^2,        \\
+        &\hspace{1.1in} k=\beta_3+\beta_5. \nonumber
+\end{align}
+Only odd \(m\) appear.
+\end{theorem}
+
+\begin{proof}
+Expand \(f\) and \(g\) in the orthonormal Hermite tensor basis in the variables \((Z,X,R_3,R_5)\).  The coefficient of \(f\) is \eqref{eq:A-coeff}; by \eqref{eq:g-transform}, the coefficient of \(g\) is \eqref{eq:B-coeff}.  Under the weighted correlation model \eqref{eq:weighted-correlations}, the Hermite covariance identity \eqref{eq:hermite-cov} contributes
+\[
+        t^a t^b (t^3)^{\beta_3}(t^5)^{\beta_5}
+        =t^{a+b+3\beta_3+5\beta_5}.
+\]
+Multiplying the two coefficients and summing over all indices with weighted degree \(m\) gives \eqref{eq:b-m-formula}.  Oddness of \(f\) and \(g\) eliminates even weighted degrees.
+\end{proof}
+
+\subsection{Low-order coefficients}
+
+Using \eqref{eq:b-m-formula}, the beginning of the normalized correlation series is as follows.  These numbers are floating-point evaluations, not interval enclosures.
+
+\begin{center}
+\begin{tabular}{r r}
+\toprule
+\(m\) & \(b_m=[t^m]H(t)\) \\
+\midrule
+1  & \(\phantom{-}8.815738220496\cdot10^{-1}\) \\
+3  & \(\phantom{-}3.453873298476\cdot10^{-9}\) \\
+5  & \(-9.043545773357\cdot10^{-11}\) \\
+7  & \(\phantom{-}1.171432343870\cdot10^{-7}\) \\
+9  & \(-1.494586697161\cdot10^{-9}\) \\
+11 & \(-5.743183500533\cdot10^{-6}\) \\
+13 & \(-1.448951029677\cdot10^{-6}\) \\
+15 & \(\phantom{-}9.441806267864\cdot10^{-7}\) \\
+17 & \(\phantom{-}1.104203285670\cdot10^{-6}\) \\
+19 & \(\phantom{-}8.451950461437\cdot10^{-7}\) \\
+21 & \(\phantom{-}5.630558521346\cdot10^{-7}\) \\
+23 & \(\phantom{-}3.133017408224\cdot10^{-7}\) \\
+25 & \(\phantom{-}1.468544711235\cdot10^{-7}\) \\
+27 & \(\phantom{-}6.021901119747\cdot10^{-8}\) \\
+29 & \(\phantom{-}2.058498871742\cdot10^{-8}\) \\
+31 & \(\phantom{-}3.428828624581\cdot10^{-9}\) \\
+33 & \(-2.837596359323\cdot10^{-9}\) \\
+35 & \(-3.866295291032\cdot10^{-9}\) \\
+37 & \(-2.977047658664\cdot10^{-9}\) \\
+39 & \(-1.857241836324\cdot10^{-9}\) \\
+41 & \(-1.033472390529\cdot10^{-9}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The headline cancellation is
+\[
+        b_3\approx0,
+        \qquad b_5\approx0.
+\]
+For
+\[
+        H(t)=b_1t+b_3t^3+b_5t^5+\cdots,
+        \qquad
+        H^{-1}(\zeta)=A_1\zeta+A_3\zeta^3+A_5\zeta^5+\cdots,
+\]
+series reversion gives
+\begin{equation}\label{eq:inverse-low}
+        A_1={1\over b_1},
+        \qquad
+        A_3=-{b_3\over b_1^4},
+        \qquad
+        A_5={3b_3^2-b_1b_5\over b_1^7}.
+\end{equation}
+Hence killing \(b_3\) and \(b_5\) kills the first two nonlinear inverse coefficients.
+
+The normalized inverse coefficients begin
+\begin{center}
+\begin{tabular}{r r}
+\toprule
+\(m\) & \(A_m=[\zeta^m]H^{-1}(\zeta)\) \\
+\midrule
+1  & \(\phantom{-}1.134334952999\) \\
+3  & \(-5.718362197765\cdot10^{-9}\) \\
+5  & \(\phantom{-}1.926579003756\cdot10^{-10}\) \\
+7  & \(-3.211054870543\cdot10^{-7}\) \\
+9  & \(\phantom{-}5.271516751153\cdot10^{-9}\) \\
+11 & \(\phantom{-}2.606444408195\cdot10^{-5}\) \\
+13 & \(\phantom{-}8.461201717465\cdot10^{-6}\) \\
+15 & \(-7.094407911980\cdot10^{-6}\) \\
+17 & \(-1.067574204152\cdot10^{-5}\) \\
+19 & \(-1.051441386906\cdot10^{-5}\) \\
+21 & \(-9.006179634605\cdot10^{-6}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In the raw BMMN normalization, the inverse coefficient of degree \(m\) is \(A_m(\pi/2)^m\).  Thus the raw linear inverse coefficient is
+\[
+        A_1{\pi\over2}=1.781809177526\ldots.
+\]
+
+\section{Asymptotic realization by finite pure-chaos schemes}
+
+The limiting coefficient formula is not merely a heuristic.  It is the fixed-degree limit of the finite-dimensional schemes \eqref{eq:finite-fN}--\eqref{eq:finite-gN}.
+
+\begin{proposition}[Fixed-degree convergence]\label{prop:fixed-degree-convergence}
+Let \(H_N(t)=\sum_{m\ge1}b_{m,N}t^m\) be the arcsine-normalized correlation of the finite scheme \((f_N,g_N)\).  Let \(H(t)=\sum_{m\ge1}b_mt^m\) be the limiting weighted correlation defined by \eqref{eq:Hlim-def}.  For each fixed \(M\),
+\[
+        (b_{1,N},b_{2,N},\ldots,b_{M,N})\longrightarrow
+        (b_1,b_2,
+        \ldots,b_M)
+\]
+as \(N\to\infty\).
+\end{proposition}
+
+\begin{proof}[Proof idea]
+The ordinary CLT gives
+\[
+        (P_{3,N},P_{5,N})\Rightarrow (\Gamma_3,\Gamma_5),
+\]
+with independent standard Gaussian limits.  For coefficients, one needs slightly more structure.  For fixed \(r\) and fixed \(k\), the polynomial \(\Herm_k(P_{r,N})\) has a leading distinct-index component
+\[
+        N^{-k/2}\sum_{i_1,\ldots,i_k\text{ distinct}}
+        \Herm_r(U_{i_1})\cdots\Herm_r(U_{i_k}),
+\]
+which lies in pure chaos degree \(rk\).  All terms with repeated indices are collision terms.  Their total \(L^2\)-mass is \(O_{r,k}(N^{-1})\) after normalization.  Consequently, the leading component behaves as an orthonormal Gaussian Hermite mode of degree \(k\), but it contributes correlation power \(t^{rk}\) because each \(\Herm_r\)-block has covariance \(t^r\).  Applying this separately to the third- and fifth-chaos reservoirs yields precisely the weighted-degree rule
+\[
+        a+b+3\beta_3+5\beta_5.
+\]
+Since only finitely many indices occur for coefficients of degree at most \(M\), the collision errors vanish uniformly for \(m\le M\).
+\end{proof}
+
+\begin{corollary}[Finite-dimensional transfer]\label{cor:finite-transfer}
+Suppose a strict limiting certificate proves
+\[
+        M_H(\gamma)\le 1-\delta
+\]
+using only finitely many coefficient inequalities for \(H\), with positive margin \(\delta\).  Then, after replacing each limiting coefficient by the corresponding finite-\(N\) coefficient, the same inequalities hold for all sufficiently large \(N\).  Hence a genuine finite-dimensional Krivine scheme exists with the same \(\gamma\), up to the chosen margin.
+\end{corollary}
+
+\begin{remark}
+For an explicit dimension bound, one should not use a distributional Berry-Esseen theorem.  The collision expansion in the proof of Proposition~\ref{prop:fixed-degree-convergence} is sharper and tailored to the coefficient calculation.  It produces explicit \(O_{M}(N^{-1})\) or \(O_M(N^{-1/2})\) bounds depending on how the collision terms are organized.
+\end{remark}
+
+\section{The inverse tail without a long inverse series}
+
+The main proof mechanism is a Wiener-algebra contraction.  It controls the inverse majorant through the correlation series itself.
+
+\subsection{The Wiener algebra}
+
+Let \(\mathcal A\) be the Wiener algebra of absolutely convergent power series on the unit disk:
+\[
+        U(w)=\sum_{n\ge0}u_nw^n,
+        \qquad
+        \norm{U}_1=\sum_{n\ge0}\abs{u_n}<\infty.
+\]
+Then
+\[
+        \norm{UV}_1\le \norm{U}_1\norm{V}_1.
+\]
+Write
+\begin{equation}\label{eq:H-linear-plus-E}
+        H(t)=b_1t+E(t),
+        \qquad
+        E(t)=\sum_{m\ge3}b_mt^m.
+\end{equation}
+Define
+\begin{equation}\label{eq:eta0-eta1}
+        \eta_0=\sum_{m\ge3}\abs{b_m},
+        \qquad
+        \eta_1=\sum_{m\ge3}m\abs{b_m}.
+\end{equation}
+
+\subsection{A simple linear-dominance certificate}
+
+\begin{theorem}[Wiener contraction certificate]\label{thm:wiener-simple}
+Assume
+\begin{equation}\label{eq:simple-conditions}
+        \eta_1<b_1,
+        \qquad
+        \gamma+\eta_0<b_1.
+\end{equation}
+Then \(H^{-1}\) is holomorphic on \(\gamma\D\) and
+\[
+        \sum_{n\ge1}\abs{A_n}\gamma^n<1,
+        \qquad
+        H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+Consequently \(K_G\le \pi/(2\gamma)\), once the limiting certificate is transferred to finite dimension.
+\end{theorem}
+
+\begin{proof}
+Set
+\[
+        U(w)=H^{-1}(\gamma w).
+\]
+The inverse equation \(H(U)=\gamma w\) is equivalent to
+\begin{equation}\label{eq:fixed-point-U}
+        U=\Phi(U):={\gamma w-E(U)\over b_1}.
+\end{equation}
+Consider the closed unit ball
+\[
+        \mathcal B=\{U\in\mathcal A: U(0)=0,
+        \norm{U}_1\le1\}.
+\]
+If \(U\in\mathcal B\), then
+\[
+        \norm{E(U)}_1
+        \le \sum_{m\ge3}\abs{b_m}\norm{U}_1^m
+        \le \eta_0.
+\]
+Therefore
+\[
+        \norm{\Phi(U)}_1\le {\gamma+\eta_0\over b_1}<1.
+\]
+For \(U,V\in\mathcal B\),
+\[
+        \norm{U^m-V^m}_1\le m\norm{U-V}_1,
+\]
+and hence
+\[
+        \norm{E(U)-E(V)}_1\le \eta_1\norm{U-V}_1.
+\]
+Thus
+\[
+        \norm{\Phi(U)-\Phi(V)}_1
+        \le {\eta_1\over b_1}\norm{U-V}_1.
+\]
+By \eqref{eq:simple-conditions}, \(\Phi\) is a contraction from \(\mathcal B\) to itself.  Its unique fixed point is the inverse branch scaled by \(\gamma\), and
+\[
+        \norm{U}_1=\sum_{n\ge1}\abs{A_n}\gamma^n
+        \le {\gamma+\eta_0\over b_1}<1.
+\]
+\end{proof}
+
+\subsection{Numerical size of the nonlinear part}
+
+The computed coefficient mass is very small:
+\begin{center}
+\begin{tabular}{l r r}
+\toprule
+range & \(\sum \abs{b_m}\) & \(\sum m\abs{b_m}\) \\
+\midrule
+\(3\le m\le41\), odd & \(1.1327912165\cdot10^{-5}\) & \(1.5733308370\cdot10^{-4}\) \\
+\(43\le m\le201\), odd & \(9.9318183188\cdot10^{-10}\) & \(5.2189346119\cdot10^{-8}\) \\
+\(3\le m\le201\), odd & \(1.1328905347\cdot10^{-5}\) & \(1.5738527304\cdot10^{-4}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The following clean certificate is therefore plausible with comfortable margins:
+\begin{equation}\label{eq:target-basic-coeff-bounds}
+        b_1>0.88157380,
+        \qquad
+        \eta_0<1.1338\cdot10^{-5},
+        \qquad
+        \eta_1<1.58\cdot10^{-4}.
+\end{equation}
+Taking
+\[
+        \gamma=0.8815620
+\]
+gives
+\[
+        \gamma+\eta_0<0.881573338<0.88157380<b_1,
+\]
+and \(\eta_1\ll b_1\).  Theorem~\ref{thm:wiener-simple} would then prove
+\[
+        K_G\le {\pi\over2\cdot0.8815620}
+        =1.7818330722\ldots,
+\]
+or in raw correlation language,
+\[
+        c={2\gamma\over\pi}=0.5612197998\ldots.
+\]
+
+\subsection{A sharper a posteriori certificate with only 21 inverse coefficients}
+
+The simple criterion above is intentionally blunt.  A sharper proof uses a short inverse head and the same Wiener Lipschitz estimate.
+
+Let
+\[
+        G(\zeta)=H^{-1}(\zeta),
+        \qquad
+        U(w)=G(\gamma w).
+\]
+Let
+\[
+        P_N(w)=\sum_{n\le N}A_n\gamma^n w^n
+\]
+be the inverse head.  Let
+\[
+        H_{\le K}(t)=\sum_{m\le K}b_mt^m,
+        \qquad
+        \eps_K=\sum_{m>K}\abs{b_m},
+        \qquad
+        L=\sum_{m\ge3}m\abs{b_m}.
+\]
+Define the residual tail
+\begin{equation}\label{eq:residual-tail}
+        r_{N,K}:=\norm{T_{>N}\left(H_{\le K}(P_N(w))-\gamma w\right)}_1,
+\end{equation}
+where \(T_{>N}\) discards coefficients of degree at most \(N\).
+
+\begin{theorem}[A posteriori inverse-tail certificate]\label{thm:aposteriori}
+Assume
+\[
+        L<b_1,
+        \qquad
+        p_N:=\norm{P_N}_1<1,
+\]
+and set
+\begin{equation}\label{eq:R-bound}
+        R_N={r_{N,K}+\eps_K\over b_1-L}.
+\end{equation}
+If
+\[
+        p_N+R_N<1,
+\]
+then
+\[
+        \sum_{n\ge1}\abs{A_n}\gamma^n<1.
+\]
+\end{theorem}
+
+\begin{proof}
+Write \(U=P_N+R\).  Since \(U\) is the exact scaled inverse,
+\[
+        b_1R+E(P_N+R)-E(P_N)
+        =\gamma w-H(P_N).
+\]
+The coefficients of \(H(P_N)-\gamma w\) up to degree \(N\) vanish by construction of the inverse head.  Moreover
+\[
+        \norm{H(P_N)-H_{\le K}(P_N)}_1\le \eps_K
+\]
+provided \(\norm{P_N}_1\le1\).  Hence
+\[
+        \norm{\gamma w-H(P_N)}_1\le r_{N,K}+\eps_K.
+\]
+On the unit ball of \(\mathcal A\), the nonlinear part is \(L\)-Lipschitz:
+\[
+        \norm{E(U)-E(V)}_1\le L\norm{U-V}_1.
+\]
+Consider the fixed-point equation for \(R\).  On the ball \(\norm{R}\le R_N\), the total series \(P_N+R\) remains in the unit ball because \(p_N+R_N<1\).  The same contraction estimate gives
+\[
+        \norm{R}_1\le {r_{N,K}+\eps_K\over b_1-L}=R_N.
+\]
+Therefore
+\[
+        \norm{U}_1\le p_N+R_N<1.
+\]
+But \(\norm{U}_1=\sum\abs{A_n}\gamma^n\), as required.
+\end{proof}
+
+For the two-reservoir parameters and
+\[
+        \gamma=0.8815624,
+        \qquad N=21,
+        \qquad K=41,
+\]
+floating-point arithmetic gives
+\begin{equation}\label{eq:p21-r21-values}
+        p_{21}<0.9999992590,
+        \qquad
+        r_{21,41}<5.574\cdot10^{-7}.
+\end{equation}
+If one certifies
+\begin{equation}\label{eq:aposteriori-targets}
+        b_1>0.88157380,
+        \qquad
+        \eps_{41}<10^{-8},
+        \qquad
+        L<1.58\cdot10^{-4},
+\end{equation}
+then
+\[
+        R_{21}< {5.574\cdot10^{-7}+10^{-8}\over 0.88157380-1.58\cdot10^{-4}}
+        <6.45\cdot10^{-7}.
+\]
+Thus
+\[
+        p_{21}+R_{21}<0.999999904<1.
+\]
+Theorem~\ref{thm:aposteriori} then proves
+\begin{equation}\label{eq:main-gamma-certificate}
+        K_G\le {\pi\over 2\cdot0.8815624}
+        =1.7818322638\ldots.
+\end{equation}
+Equivalently,
+\[
+        c={2\gamma\over\pi}=0.5612200544\ldots.
+\]
+
+The numerical root for the same two-reservoir parameters appears to be slightly higher:
+\[
+        \gamma\approx0.8815624951,
+        \qquad
+        c\approx0.56122011493,
+        \qquad
+        1/c\approx1.78183207159.
+\]
+The certified value \eqref{eq:main-gamma-certificate} leaves a small safety margin.
+
+\section{How to control the remaining coefficient tail}
+
+The proof above moves the difficult tail from the inverse series to the original correlation series.  The required inequalities are only
+\[
+        \eps_K=\sum_{m>K}\abs{b_m}\quad\text{and}\quad
+        L=\sum_{m\ge3}m\abs{b_m}.
+\]
+For the present scheme, the target bounds are \eqref{eq:aposteriori-targets}.
+
+\subsection{What must be certified}
+
+A practical certificate can be organized as follows.
+
+\begin{enumerate}[label=\textbf{C\arabic*.}, leftmargin=0.8in]
+\item Certify the low coefficient table through degree \(41\), especially
+\[
+        b_1>0.88157380,
+        \qquad
+        \sum_{3\le m\le41}\abs{b_m}<1.1328\cdot10^{-5},
+\]
+\[
+        \sum_{3\le m\le41}m\abs{b_m}<1.574\cdot10^{-4}.
+\]
+\item Certify the correlation tail
+\[
+        \sum_{m>41}\abs{b_m}<10^{-8}.
+\]
+\item Certify the weighted nonlinear mass
+\[
+        \sum_{m\ge3}m\abs{b_m}<1.58\cdot10^{-4}.
+\]
+\item Certify the short inverse-head quantities
+\[
+        p_{21}<0.9999992590,
+        \qquad
+        r_{21,41}<5.574\cdot10^{-7}.
+\]
+\end{enumerate}
+
+Items C1 and C4 are finite arithmetic once the coefficients \(b_m\) are enclosed.  Items C2 and C3 are the only true tail estimates.
+
+\subsection{Why the coefficient tail is easier than the inverse tail}
+
+The inverse tail asks for coefficients of \(H^{-1}\), a function whose relevant branch runs close to the boundary point \(t=1\).  A naive complex Cauchy proof then needs many coefficients.
+
+The coefficient tail asks for \(H\) itself.  Here one has the explicit formula \eqref{eq:b-m-formula}; the entire problem reduces to controlled two-dimensional integrals \eqref{eq:C-def}, plus finite weighted-degree bookkeeping.  In particular, no branch of an inverse function appears in the tail estimate.
+
+\subsection{A direct Arb route}
+
+For each fixed \((a,b,k)\), the integral \(C_{a,b,k}\) is
+\[
+        C_{a,b,k}=\iint_{\R^2}
+        \Herm_a(z)\Herm_b(x)
+        q_k\left({z+\eta\Herm_3(x)\over S}\right)
+        \varphi(z)\varphi(x)\,dz\,dx.
+\]
+The functions \(q_k\) are explicit combinations of \(\erf\), exponentials, and Hermite polynomials.  Arb can enclose these integrals by either:
+\begin{itemize}[leftmargin=0.35in]
+\item rigorous Gauss-Hermite quadrature with a certified remainder, or
+\item subdivision plus Taylor models on finite boxes, with a Gaussian tail outside the box.
+\end{itemize}
+
+The coefficient formula \eqref{eq:b-m-formula} is then an interval sum.  The absolute values are handled by taking interval hulls away from zero, or by splitting terms whose intervals contain zero.
+
+\subsection{Moderate cutoff strategy}
+
+The observed signed coefficients beyond degree \(41\) are already tiny:
+\[
+        \sum_{43\le m\le201}\abs{b_m}\approx9.93\cdot10^{-10},
+        \qquad
+        \sum_{43\le m\le201}m\abs{b_m}\approx5.22\cdot10^{-8}.
+\]
+Thus a reasonable implementation strategy is:
+\begin{enumerate}[label=\textbf{T\arabic*.}, leftmargin=0.8in]
+\item Enclose every \(b_m\) for \(m\le201\) using \eqref{eq:b-m-formula}.
+\item Verify the displayed sums through degree \(201\).
+\item Bound the residual \(m>201\) by a general analytic Hermite-tail estimate.  At that point the allowed budget is still roughly \(9\cdot10^{-9}\) for \(\eps_{41}\), and the weighted budget is roughly \(6\cdot10^{-7}\) for \(L\).
+\end{enumerate}
+
+The last step can be done using the same coefficient formula together with Gaussian Sobolev tails for the two-dimensional integrals \(C_{a,b,k}\) and a separate truncation of the reservoir total degree \(k\).  This is expected to be substantially easier than bounding hundreds of inverse coefficients because all objects are explicit real integrals and polynomial recurrences.
+
+\begin{remark}[Alternative analytic route]
+One can also certify \(H-b_1t\) directly in the Wiener algebra by computing a Chebyshev or Taylor model for the signed function \(H(t)-b_1t\) on subintervals of \([-1,1]\), combined with endpoint asymptotics.  The coefficient formula route is cleaner because it preserves the weighted-degree decomposition and avoids fitting near \(t=\pm1\).
+\end{remark}
+
+\section{A small degree \texorpdfstring{\(7/9\)}{7/9} extension}
+
+The construction extends verbatim to more Gaussianized reservoirs.  Let \(D\subset\{3,5,7,9,\ldots\}\) be a finite set of odd degrees and put
+\[
+        S=\left(\sum_{d\in D}s_d^2\right)^{1/2}.
+\]
+The limiting functions are
+\[
+        f=\sgn\left(Z+\eta\Herm_3(X)+\sum_{d\in D}s_dR_d\right),
+\]
+\[
+        g=\sgn\left(Z-\eta\Herm_3(X)+\sum_{d\in D}\sigma_d s_dR_d\right),
+        \qquad
+        \sigma_d=(-1)^{(d-1)/2}.
+\]
+Thus \(\sigma_3=-1\), \(\sigma_5=+1\), \(\sigma_7=-1\), \(\sigma_9=+1\).
+
+The coefficient formula becomes
+\begin{align}\label{eq:general-D-coeff}
+        b_m={\pi\over2}
+        \sum_{\substack{a,b\ge0,\;\boldsymbol\beta\in\N^D\\
+        a+b+\sum_{d\in D}d\beta_d=m}}
+        &(-1)^b\left(\prod_{d\in D}\sigma_d^{\beta_d}\right)
+        {k!\over\prod_{d\in D}\beta_d!}
+        \prod_{d\in D}\left({s_d\over S}\right)^{2\beta_d}
+        C_{a,b,k}^2,
+\end{align}
+where
+\[
+        k=\sum_{d\in D}\beta_d,
+\]
+and \(C_{a,b,k}\) is still the same two-dimensional integral \eqref{eq:C-def}, with the new value of \(S\).
+
+A quick numerical search gives the following degree \(3,5,7,9\) parameters:
+\begin{align*}
+        \eta&=0.12569605,\qquad
+        s_3=0.34199778,
+        \qquad
+        s_5=0.05153822,\\
+        s_7&=0.00698313,
+        \qquad
+        s_9=0.00090252.
+\end{align*}
+For this extended limiting model, the estimated value is
+\[
+        c\approx0.56122823677,
+        \qquad
+        \gamma={\pi c\over2}\approx0.88157525281,
+\]
+and hence
+\[
+        K_G\lesssim 1.78180628572.
+\]
+This is a modest but genuine improvement over the two-reservoir numerical value.  The proof architecture is identical; only the coefficient formula and the finite-dimensional realization have more reservoir blocks.  The finite dimension for a common block length \(N\) becomes
+\[
+        d_N=2+4N.
+\]
+
+\section{Arb certification checklist}
+
+The current note is not an Arb certificate.  It is a formal proof blueprint whose inequalities are explicit enough to certify.  A complete certificate should contain the following pieces.
+
+\subsection*{1. Parameter intervals}
+Use rational or decimal intervals for
+\[
+        \eta,\\quad s_3,
+        \quad s_5
+\]
+and compute outward-rounded intervals for \(S,\alpha,\beta\).  The parameters do not need to be exact roots of any equations; they only need to satisfy the final inequalities.
+
+\subsection*{2. Certified coefficient integrals}
+For all triples \((a,b,k)\) required by \(m\le201\), enclose \(C_{a,b,k}\) from \eqref{eq:C-def}.  Then use \eqref{eq:b-m-formula} to enclose \(b_m\).  Verify:
+\[
+        b_1>0.88157380,
+\]
+\[
+        \sum_{3\le m\le41}\abs{b_m}<1.1328\cdot10^{-5},
+        \qquad
+        \sum_{3\le m\le41}m\abs{b_m}<1.574\cdot10^{-4},
+\]
+and the corresponding bounds through degree \(201\).
+
+\subsection*{3. Certified coefficient tail}
+Prove
+\[
+        \sum_{m>41}\abs{b_m}<10^{-8},
+        \qquad
+        \sum_{m\ge3}m\abs{b_m}<1.58\cdot10^{-4}.
+\]
+A convenient split is
+\[
+        43\le m\le201
+        \qquad\text{and}\qquad
+        m>201.
+\]
+The first part is finite.  The second part should use a Hermite-tail or Gaussian-Sobolev tail estimate for the explicit coefficient formula.
+
+\subsection*{4. Certified short inverse head}
+Using the enclosed \(b_m\) through degree \(41\), compute the inverse coefficients \(A_n\) through \(n=21\), then certify
+\[
+        p_{21}=\sum_{n\le21}\abs{A_n}\gamma^n<0.9999992590
+\]
+for \(\gamma=0.8815624\).  Then compute the residual polynomial
+\[
+        T_{>21}\left(H_{\le41}(P_{21}(w))-\gamma w\right)
+\]
+and certify
+\[
+        r_{21,41}<5.574\cdot10^{-7}.
+\]
+
+\subsection*{5. Apply the a posteriori theorem}
+With
+\[
+        b_1>0.88157380,
+        \qquad
+        L<1.58\cdot10^{-4},
+        \qquad
+        \eps_{41}<10^{-8},
+\]
+Theorem~\ref{thm:aposteriori} gives
+\[
+        \sum_{n\ge1}\abs{A_n}\gamma^n<1.
+\]
+The finite-dimensional transfer is then handled by Proposition~\ref{prop:fixed-degree-convergence} and an explicit collision bound for sufficiently large \(N\).
+
+\section{Conclusion}
+
+The construction is conceptually simple:
+\[
+        \text{anti-aligned degree }3
+        \quad +\quad
+        \text{aligned degree }5.
+\]
+The degree \(3\) layer removes the cubic inverse obstruction.  The degree \(5\) layer removes the quintic inverse obstruction.  The small finite \(\eta\Herm_3(X)\) term prevents the reservoir from becoming too Gaussian and gives the higher coefficients the right shape.
+
+The key proof point is the Wiener-algebra tail argument.  Once
+\[
+        H(t)=b_1t+E(t)
+\]
+is known to have
+\[
+        \sum_{m\ge3}\abs{b_m}\ll b_1-\gamma,
+        \qquad
+        \sum_{m\ge3}m\abs{b_m}\ll b_1,
+\]
+the inverse majorant follows from a contraction.  This avoids the main inefficiency of a long Cauchy tail for \(H^{-1}\).
+
+The strongest conservative two-reservoir target in this note is
+\[
+        \gamma=0.8815624,
+        \qquad
+        c=0.5612200544\ldots,
+        \qquad
+        K_G\le1.7818322638\ldots.
+\]
+The same proof template extends to the degree \(3,5,7,9\) reservoir scheme, whose numerical value is approximately
+\[
+        K_G\lesssim1.7818062857.
+\]
+
+\begin{thebibliography}{9}
+
+\bibitem{BMMN}
+M. Braverman, K. Makarychev, Y. Makarychev, and A. Naor.
+\newblock The Grothendieck constant is strictly smaller than Krivine's bound.
+\newblock \emph{Forum of Mathematics, Pi}, 1:e4, 2013.  arXiv:1103.6161.
+
+\bibitem{Krivine1977}
+J.-L. Krivine.
+\newblock Sur la constante de Grothendieck.
+\newblock \emph{C. R. Acad. Sci. Paris Ser. A-B}, 284(8):A445--A446, 1977.
+
+\bibitem{LiSahaXueEtAl}
+A. Li, R. Saha, A. Xue, A. Klivans, P. Kothari, R. Meka, and S. Chaudhuri.
+\newblock The Grothendieck constant is less than \(\pi/(2\log(1+\sqrt2))-10^{-5}\).
+\newblock arXiv:2606.03991, 2026.
+
+\bibitem{NaorRegev}
+A. Naor and O. Regev .
+\newblock Krivine schemes are optimal.
+\newblock \emph{Proceedings of the American Mathematical Society}, 142(12):4315--4320, 2014.
+
+\end{thebibliography}
+
+\end{document}

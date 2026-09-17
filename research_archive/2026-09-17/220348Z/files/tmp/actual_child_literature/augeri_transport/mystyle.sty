@@ -1,0 +1,151 @@
+
+
+\ProvidesPackage{mystyle}
+
+
+
+\addtolength\topmargin{-.5in}
+\addtolength\textheight{1.in} 
+\addtolength\oddsidemargin{-.045\textwidth} 
+\addtolength\textwidth{.09\textwidth} 
+\linespread{1.09}
+
+
+
+\tolerance=1414 
+\setlength\emergencystretch{1.5em} 
+\hbadness=1414 
+\setlength\hfuzz{.3pt} 
+\widowpenalty=10000 
+\raggedbottom 
+\setlength\vfuzz{.3pt} 
+
+
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{textcomp} 
+\usepackage[english]{babel}
+\usepackage[autolanguage]{numprint} 
+\usepackage[colorlinks=true]{hyperref} 
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage[all]{xy}
+\usepackage{dsfont}
+\usepackage{amsmath,amssymb,amsthm} 
+\usepackage{lmodern}
+\usepackage{ tipa }
+\usepackage{latexsym}
+\usepackage{mathtools}
+\usepackage{relsize}
+\usepackage{exscale}
+\usepackage[nottoc]{tocbibind}
+\usepackage{tocloft}
+
+
+
+\usepackage[intoc]{nomentbl}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        %\huge\bfseries \@chapapp\space \thechapter
+        \Huge\bfseries \thechapter.\space%
+        %\par\nobreak
+        %\vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+
+\makenomenclature
+\renewcommand{\nomname}{List of Abbreviations and Symbols}
+
+\setlength{\nomitemsep}{-\parsep}
+
+
+
+
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of contents}%
+}
+
+
+\renewenvironment{displaymath}{\begin{equation}}{\end{equation}} 
+\renewcommand\epsilon\varespilon 
+\renewcommand\phi\varphi 
+
+
+\newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
+
+
+\newcommand\NN{\mathbb{N}} 
+\newcommand\ZZ{\mathbb{Z}} 
+\newcommand\QQ{\mathbb{Q}} 
+\newcommand\RR{\mathbb{R}} 
+\newcommand\CC{\mathbb{C}} 
+\newcommand\PP{\mathbb{P}}
+\newcommand\EE{\mathbb{E}}
+\newcommand\MM{\mathbb{M}}
+\newcommand\tr{\mathrm{tr}}
+\newcommand\Car{\mathds{1}}
+\newcommand\bornesupalphap{\limsup_{n\to +\infty}n^{-\alpha(\frac{1}{2}+\frac{1}{p}) }\log }
+\newcommand\borneinfalphap{\liminf_{n\to +\infty} n^{-\alpha(\frac{1}{2}+\frac{1}{p}) } \log}
+\newcommand\bornexpoalphap{\lim_{n\to +\infty} n^{-\alpha(\frac{1}{2}+\frac{1}{p}) } \log}
+\newcommand\bornesup{\limsup_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\bornesupalpha{\limsup_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\borneinf{\liminf_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\borneinfalpha{\liminf_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\bornexpo{\lim_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\bornexpoalpha{\lim_{n\to +\infty} \frac{1}{n^{\alpha/2}} \log}
+\newcommand\eps{\varepsilon}
+\newcommand\veps{\varepsilon}
+\newcommand\Var{\mathrm{Var}}
+\newcommand\Res{\mathrm{Res}}
+\newcommand\Card{\mathrm{Card}}
+\newcommand\Ent{\mathrm{Ent}}
+\newcommand\rk{\mathrm{rank}}
+\newcommand\C{\mathrm{Cap}}
+\newcommand\sg{\mathrm{sg}}
+\newcommand\diag{\mathrm{diag}}
+\newcommand\M{\mathcal{M}}
+\newcommand\supp{\mathrm{supp}}
+
+\swapnumbers 
+\theoremstyle{definition} 
+\newtheorem{Def}{Definition}[section] 
+\newtheorem{Deffr}{Définition}[section] 
+\theoremstyle{plain} 
+\newtheorem{Pro}[Def]{Proposition} 
+\newtheorem{Fact}[Def]{Fact}
+\newtheorem{proposition}[Def]{Proposition} 
+\newtheorem{Lem}[Def]{Lemma}  
+\newtheorem{Lemfr}[Def]{Lemme} 
+\newtheorem{lemma}[Def]{Lemma} 
+\newtheorem{claim}[Def]{Claim} 
+\newtheorem{The}[Def]{Theorem} 
+\newtheorem{Themeta}[Def]{Meta-Theorem} 
+\newtheorem{TheWigner}[Def]{Théorème de Wigner} 
+\newtheorem{Thefr}[Def]{Théorème} 
+\newtheorem{theorem}[Def]{Theorem}
+\newtheorem{Main}[Def]{Main result} 
+\newtheorem{Cor}[Def]{Corollary} 
+\newtheorem{corollary}[Def]{Corollary} 
+\newtheorem{Hypo}[Def]{Assumption} 
+\theoremstyle{remark} 
+\newtheorem{Not}[Def]{Notation}
+\newtheorem{Exe}[Def]{Example} 
+\newtheorem{Rem}[Def]{Remark} 
+\newtheorem{Rems}[Def]{Remarks} 
+\newtheorem{Remfr}[Def]{Remarque} 
+\newtheorem{remark}[Def]{Remark}

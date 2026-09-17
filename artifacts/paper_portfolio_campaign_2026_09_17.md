@@ -208,3 +208,40 @@ larger cap shows why the LOW-CAP budget is essential to this proof.
 Continue after this checkpoint. The final portion tests full-parent
 consequences and quantitative ceilings, not merely optimizes the tiny
 constant. No original interval improvement or convergence is claimed.
+
+## Sixth material checkpoint, approximately22:10UTC
+
+A constructive escape from the bounded-band Gaussian response floor is
+now rigorous. Arbitrary diffuse real feature spaces of rank o(sqrt(n))
+admit non-Gaussian physical sign laws retaining all Boolean scalar
+responses, exact isotropy, a fixed subGaussian proxy and information O(r).
+The combination is substantive: hot/cold Gaussian transforms supply
+the law, positive convex auxiliary measures control operator covariance,
+a Fourier-modulus/determinant argument controls every real test direction,
+and a paid covariance repair restores exact physical isotropy. An adaptive
+covariance-capture minimax corollary is uniform over the whole query code.
+No such capture property is asserted for original minimizing ground codes.
+
+The strongest independent benchmark combines information AND tail budgets.
+For block-constant query codes, physical common-phase laws have sharp
+relative-entropy cost r log(1/epsilon)+O(r), at every rank. For fixed
+linear subGaussian proxy K>1, their optimal growing-rank response floor
+is kappa/sqrt(K), and approaching this floor within delta costs
+(1-1/K+o(1))r log(1/delta). Lower and upper proofs are independently
+reconstructed. Independent blocks with exactly the same marginals and
+covariance return to response kappa; the common phase is essential.
+
+Talagrand convex-distance concentration plus entropy duality supplies
+the matching broad limitation: against a query covariance of norm L,
+a physical response discount Delta costs KL>=Delta^2/(64L)-2.
+Hypercontractivity then rules out ALL sublinear-degree positive Walsh
+density rewrites on bounded-covariance duals. This does not claim that
+every original minimizing ground code has such a dual.
+
+Actual-parent tests remain negative: the paired [1/2,3/2] Gaussian class
+has an explicit wrong-slope floor, and known full-spin fluctuation bounds
+do not turn the low-cap uniform discount into a profitable recurrence.
+The original interval and convergence question remain unchanged.
+
+Preserve and publish now, then continue verification and the final
+original-problem assessment to22:42UTC. The endpoint is not extended.

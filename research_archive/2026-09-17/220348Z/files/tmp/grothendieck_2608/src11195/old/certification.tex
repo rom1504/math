@@ -1,0 +1,734 @@
+\section{New Certification Section}
+
+Write
+\[
+H(t)
+=
+b_1t
++
+\sum_{\substack{m\ge 3\\ m\ \mathrm{odd}}} b_m t^m,
+\qquad
+B_3^2
+:=
+\sum_{\substack{m\ge 1\\ m\ \mathrm{odd}}} m^6 b_m^2.
+\]
+The certificate reduces to a single comparison between the linear
+coefficient and the total nonlinear coefficient mass.
+
+\begin{proposition}[Head--tail inverse certificate]
+\label{prop:head-tail-certificate}
+Let \(N\) be odd. If
+\begin{equation}
+\gamma
++
+\sum_{\substack{3\le m\le N\\m\ \mathrm{odd}}}|b_m|
++
+\frac{B_3}{\sqrt{10N^5}}
+<
+b_1,
+\label{eq:head-tail-condition}
+\end{equation}
+then the local inverse
+\[
+G(z)=H^{-1}(z)=\sum_{n\ge1}a_nz^n
+\]
+extends holomorphically to a neighborhood of
+\(\gamma\overline{\mathbb D}\), maps this neighborhood into
+\(\mathbb D\) after shrinking it if necessary, and satisfies
+\[
+\sum_{n\ge1}|a_n|\gamma^n<1.
+\]
+\end{proposition}
+
+\begin{proof}
+By Cauchy--Schwarz,
+\[
+\sum_{\substack{m>N\\m\ \mathrm{odd}}}|b_m|
+\le
+B_3
+\left(
+\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}
+\right)^{1/2}.
+\]
+Since \(N\) is odd and \(x\mapsto x^{-6}\) is decreasing,
+\[
+\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}
+\le
+\frac12\int_N^\infty x^{-6}\,dx
+=
+\frac{1}{10N^5}.
+\]
+Consequently, if
+\[
+\eta:=\sum_{m\ge3}|b_m|,
+\]
+then \eqref{eq:head-tail-condition} implies
+\[
+\gamma+\eta<b_1.
+\]
+
+Set
+\[
+\widehat E(u):=\sum_{m\ge3}|b_m|u^m.
+\]
+Let
+\[
+G(z)=\sum_{n\ge1}a_nz^n
+\]
+be the formal inverse of \(H\), and let
+\[
+V(z)=\sum_{n\ge1}v_nz^n
+\]
+be the unique formal power series with nonnegative coefficients
+satisfying
+\[
+b_1V(z)=z+\widehat E(V(z)).
+\]
+Comparing coefficients in
+\[
+b_1G(z)=z-E(G(z))
+\]
+and inducting on the degree gives
+\[
+|a_n|\le v_n
+\qquad (n\ge1).
+\]
+
+Equivalently, \(V\) is obtained coefficientwise from the Picard
+iteration
+\[
+V_0(z)=0,
+\qquad
+V_{k+1}(z)
+=
+\frac{z+\widehat E(V_k(z))}{b_1}.
+\]
+Put
+\[
+q:=\frac{\gamma+\eta}{b_1}<1.
+\]
+If \(V_k(\gamma)\le1\), then
+\[
+V_{k+1}(\gamma)
+\le
+\frac{\gamma+\widehat E(1)}{b_1}
+=
+q.
+\]
+Thus the iterates are bounded by \(q\), and monotone convergence gives
+\[
+\sum_{n\ge1}|a_n|\gamma^n
+\le
+V(\gamma)
+\le q
+<1.
+\]
+
+Since the inequality \(\gamma+\eta<b_1\) is strict, it remains true
+with \(\gamma\) replaced by some
+\(\widetilde\gamma>\gamma\). Repeating the argument at
+\(\widetilde\gamma\) shows that \(G\) converges absolutely there and
+satisfies
+\[
+\sup_{|z|\le\widetilde\gamma}|G(z)|<1.
+\]
+The formal identity \(H(G(z))=z\) therefore holds analytically on
+\(\widetilde\gamma\mathbb D\), proving the claimed extension and
+mapping property.
+\end{proof}
+
+\begin{proposition}[Certified numerical data]
+\label{prop:certified-data}
+For the cubic--quintic scheme and \(N=251\), interval arithmetic
+certifies
+\[
+b_1\ge 0.881573822049,
+\]
+\[
+\sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}|b_m|
+\le 1.1328860\cdot10^{-5},
+\]
+and
+\[
+B_3\le36.
+\]
+\end{proposition}
+
+\begin{proof}
+The coefficient-head computation and the certified Sobolev estimate
+are proved in Appendix~\ref{app:numerical-certificate}.
+\end{proof}
+
+We now take
+\[
+\gamma=0.881545409.
+\]
+Proposition~\ref{prop:certified-data} gives
+\[
+\gamma
++
+\sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}|b_m|
++
+\frac{B_3}{\sqrt{10\cdot251^5}}
+\le
+0.881568143462
+<
+0.881573822049
+\le b_1.
+\]
+Hence Proposition~\ref{prop:head-tail-certificate} gives
+\[
+\sum_{n\ge1}|a_n|\gamma^n<1.
+\]
+The finite-dimensional transfer theorem and the classical Krivine
+criterion therefore imply
+\[
+K_G
+\le
+\frac{\pi}{2\gamma}
+\le
+1.7818666069360661.
+\]
+
+
+
+
+\section{Certification}
+\label{sec:certification}
+
+This section contains the complete limiting certificate and the final proof of Theorem~\ref{thm:main}.  The analytic estimates are grouped with the interval-arithmetic quantities that certify them: the Wiener-algebra inverse criterion, the Sobolev tail bound, the bound on the Sobolev norm, the assembly of the numerical inequalities, the formal finite-dimensional proof, and the computational formulas used by the certificate.
+
+
+\subsection{A Wiener-algebra certificate for the limiting inverse}\label{sec:wiener}
+
+This subsection implements the inverse-majorant step of the proof architecture.  The point is that the nonlinear part of $H$ is small in the Wiener algebra, so the inverse majorant can be certified without computing a long inverse series.
+
+\begin{definition}[Wiener-algebra data]\label{def:wiener-data}
+Let $\calA$ be the Wiener algebra of absolutely convergent power series on the unit disk:
+\[
+  U(w)=\sum_{n\ge0}u_nw^n,
+  \qquad
+  \|U\|_1=\sum_{n\ge0}|u_n|<\infty.
+\]
+Then $\|UV\|_1\le\|U\|_1\|V\|_1$.  Write
+\begin{equation}\label{eq:H-linear-nonlinear}
+  H(t)=b_1t+E(t),
+  \qquad
+  E(t)=\sum_{m\ge3}b_mt^m,
+\end{equation}
+and define
+\begin{equation}\label{eq:eta0eta1}
+  \eta_0=\sum_{m\ge3}|b_m|,
+  \qquad
+  \eta_1=\sum_{m\ge3}m|b_m|.
+\end{equation}
+\end{definition}
+
+On the unit ball of $\calA$, the nonlinear part is $\eta_1$-Lipschitz:
+\begin{equation}\label{eq:E-lipschitz-simple}
+  \|E(U)-E(V)\|_1\le \eta_1\|U-V\|_1,
+  \qquad \|U\|_1,\|V\|_1\le1.
+\end{equation}
+This follows from $\|U^m-V^m\|_1\le m\|U-V\|_1$ on the unit ball.
+
+\begin{theorem}[Wiener contraction certificate]\label{thm:simple-wiener}
+Assume
+\begin{equation}\label{eq:simple-wiener-cond}
+  \eta_1<b_1,
+  \qquad
+  \gamma+\eta_0<b_1.
+\end{equation}
+Then $H^{-1}$ is holomorphic on the disk of radius $\gamma$ and
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1,
+  \qquad H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+Moreover the inverse branch is holomorphic on a neighborhood of $\gamma\overline\D$, and it maps $\gamma\D$ into $\D$.
+\end{theorem}
+
+\begin{proof}
+We first construct the inverse branch as a fixed point in the Wiener algebra, rather than assuming it exists.  The equation $H(U)=\gamma w$ is equivalent, as an identity in $\calA$, to
+\[
+  U=\Phi(U):={\gamma w-E(U)\over b_1}.
+\]
+Consider the closed unit ball
+\[
+  \calB=\{U\in\calA: U(0)=0,\ \|U\|_1\le1\}.
+\]
+If $U\in\calB$, then
+\[
+  \|E(U)\|_1\le\sum_{m\ge3}|b_m|\|U\|_1^m\le\eta_0,
+\]
+so
+\[
+  \|\Phi(U)\|_1\le{\gamma+\eta_0\over b_1}<1.
+\]
+For $U,V\in\calB$, \eqref{eq:E-lipschitz-simple} gives
+\[
+  \|\Phi(U)-\Phi(V)\|_1\le{\eta_1\over b_1}\|U-V\|_1.
+\]
+Thus $\Phi$ is a contraction from $\calB$ to itself.  Let $U$ be its unique fixed point.  Then $H(U(w))=\gamma w$ as a power-series identity in $\calA$, and
+\[
+  \|U\|_1=\sum_{n\ge1}|A_n|\gamma^n\le {\gamma+\eta_0\over b_1}<1.
+\]
+
+It remains to record the analytic room needed for the finite-dimensional transfer and to identify the fixed point with a holomorphic inverse branch.  Put $q=\|U\|_1<1$, and choose $q<q_*<1$.  For $u,v\in q_*\overline\D$,
+\[
+  |H(u)-H(v)|\ge b_1|u-v|-\sum_{m\ge3}|b_m||u^m-v^m|
+  \ge \left(b_1-\sum_{m\ge3}m|b_m|q_*^{m-1}\right)|u-v|
+  \ge (b_1-\eta_1)|u-v|.
+\]
+Hence $H$ is injective on $q_*\D$ and $H'$ has no zero there.  Since $U(\overline\D)\subset q\overline\D\subset q_*\D$, the compact set $\gamma\overline\D=H(U(\overline\D))$ lies in the open set $H(q_*\D)$, on which the inverse branch is holomorphic.  In particular, it is holomorphic on a neighborhood of $\gamma\overline\D$; after shrinking this neighborhood to a slightly larger disk if necessary, it has the form required for the finite-dimensional transfer theorem.
+\end{proof}
+
+
+
+\subsection{The coefficient tail through a Sobolev norm}\label{sec:sobolev-tail}
+
+This subsection controls the tail of the original correlation series $H$, not the tail of the inverse series.  The advantage is that the coefficients $b_m$ are signed and have substantial cancellation; the Sobolev norm below sees this cancellation.
+
+Let
+\[
+  \Dop=t{d\over dt}
+\]
+be the Euler operator, so that $\Dop t^m=mt^m$.  For the odd series $H(t)=\sum_{m\ \mathrm{odd}}b_mt^m$, define
+\begin{equation}\label{eq:B-s}
+  B_s^2=\sum_{\substack{m\ge1\\m\ \mathrm{odd}}}m^{2s}b_m^2
+  ={1\over2\pi}\int_0^{2\pi}\left|\Dop^sH(e^{i\theta})\right|^2\,d\theta.
+\end{equation}
+The equality is Parseval on the unit circle.
+
+\begin{lemma}[Sobolev tail]\label{lem:sobolev-tail}
+Let $N$ be odd.  Then
+\[
+  \sum_{m>N}|b_m|\le B_3\left(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-6}\right)^{1/2},
+\]
+and
+\[
+  \sum_{m>N}m|b_m|\le B_3\left(\sum_{\substack{m>N\\m\ \mathrm{odd}}}m^{-4}\right)^{1/2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write $|b_m|=m^{-3}\cdot m^3|b_m|$ and $m|b_m|=m^{-2}\cdot m^3|b_m|$, then apply Cauchy-Schwarz and use $\sum_{m>N}m^6b_m^2\le B_3^2$.
+\end{proof}
+
+The power-sum factors are tiny.  With $N=251$,
+\begin{equation}\label{eq:tail-factors}
+  \left(\sum_{\substack{m>251\\m\ \mathrm{odd}}}m^{-6}\right)^{1/2}\le3.13677\cdot10^{-7},
+  \qquad
+  \left(\sum_{\substack{m>251\\m\ \mathrm{odd}}}m^{-4}\right)^{1/2}\le1.020511\cdot10^{-4}.
+\end{equation}
+Each odd power sum is enclosed by a finite head plus a decreasing-integral remainder.  Thus even a crude bound on $B_3$ suffices.
+
+
+
+\subsection{Bounding the Sobolev norm}\label{sec:sobolev-norm}
+
+By \eqref{eq:B-s}, it is enough to bound $\Dop^3H(e^{i\theta})$ on the circle.  We realize $\Dop^3H$ as a trace of a two-dimensional differential kernel and apply an averaged inequality.
+
+
+\subsubsection{A combined kernel}
+
+For real $|r|<1$, let $\Kr_r$ be the centered bivariate Gaussian density of correlation $r$,
+\begin{equation}\label{eq:Kr-kernel}
+  \Kr_r(u,v)={1\over2\pi\sqrt{1-r^2}}
+  \exp\left(-{u^2-2ruv+v^2\over2(1-r^2)}\right).
+\end{equation}
+We use the same formula by analytic continuation for the complex values $r=\rho(e^{i\theta})$ that occur below; on this compact curve $1-r^2$ is bounded away from zero, and the square-root branch is fixed continuously from $r=0$.  Set $h(x)=\He_3(x)$ and let $\vartheta=\eta/\sqrt V$ be as in Definition~\ref{def:collapsed-data}.  For fixed real $x,y$, define the threshold-covariance kernel
+\begin{equation}\label{eq:threshold-cov-kernel}
+  \mathcal C_r(x,y)
+  ={\pi\over2}\,\E\bigl[\sgn(W+\vartheta h(x))\sgn(W'+\vartheta h(y))\bigr],
+\end{equation}
+where $(W,W')$ is a centered standard Gaussian pair of correlation $r$.  Equivalently, for $|r|<1$,
+\begin{equation}\label{eq:C-Hermite-expansion}
+  \mathcal C_r(x,y)
+  ={\pi\over2}\sum_{a\ge0}r^a q_a(\vartheta h(x))q_a(\vartheta h(y)),
+\end{equation}
+with $q_a$ as in Definition~\ref{def:qk}.  This formula gives the analytic continuation in $r$ used in the differentiated kernels.
+
+The two first derivative identities are
+\begin{equation}\label{eq:C-first-derivatives}
+  \partial_r\mathcal C_r(x,y)=2\pi\Kr_r(\vartheta h(x),\vartheta h(y)),
+  \qquad
+  \partial_x\partial_y\mathcal C_r(x,y)
+  =2\pi\vartheta^2h'(x)h'(y)\Kr_r(\vartheta h(x),\vartheta h(y)).
+\end{equation}
+Indeed, the first identity is Price's theorem in the $W,W'$ variables, or follows by differentiating \eqref{eq:C-Hermite-expansion} and using the Mehler expansion of $\Kr_r$.  For the second, one uses $q_a'(u)=2\varphi(u)\He_a(-u)$ and then the same Mehler expansion.  Thus after one correlation derivative every kernel is a polynomial differential operator applied to $\Kr_r$; no discontinuous sign kernel remains.
+
+We next define the boundary trace in the $x,y$ variables.  Let $\mu$ be the product standard Gaussian measure on $\R^2$.  If a kernel $\Psi$ satisfies $\Psi,\partial_x\partial_y\Psi\in L^2(\mu)$, write its Hermite coefficients as
+\[
+  \widehat\Psi_{i,j}=\iint_{\R^2}\Psi(x,y)\He_i(x)\He_j(y)\,d\mu(x,y).
+\]
+For $|\lambda|\le1$ set
+\begin{equation}\label{eq:Tlambda-definition}
+  T_\lambda[\Psi]
+  =\widehat\Psi_{0,0}+\sum_{n\ge1}\lambda^n\widehat\Psi_{n,n}.
+\end{equation}
+For $|\lambda|<1$, this is exactly the correlated Gaussian expectation $\E[\Psi(X,Y)]$ with $\operatorname{corr}(X,Y)=\lambda$.  For $|\lambda|=1$, \eqref{eq:Tlambda-definition} is the Sobolev boundary trace of that expectation.
+
+The series in \eqref{eq:Tlambda-definition} converges absolutely on $|\lambda|=1$.  Moreover
+\begin{equation}\label{eq:Tlambda-bound}
+  |T_\lambda[\Psi]|
+  \le {\pi\over\sqrt6}
+  \left(\|\Psi\|_{L^2(\mu)}^2+4\|\partial_x\partial_y\Psi\|_{L^2(\mu)}^2\right)^{1/2}.
+\end{equation}
+To see this, note that
+\[
+  |\widehat\Psi_{0,0}|\le\|\Psi\|_{L^2(\mu)}
+\]
+and, since the coefficient of $\He_{n-1}(x)\He_{n-1}(y)$ in $\partial_x\partial_y\Psi$ is $n\widehat\Psi_{n,n}$,
+\[
+  \sum_{n\ge1}|\widehat\Psi_{n,n}|
+  \le\left(\sum_{n\ge1}{1\over n^2}\right)^{1/2}
+      \left(\sum_{n\ge1}n^2|\widehat\Psi_{n,n}|^2\right)^{1/2}
+  \le {\pi\over\sqrt6}\|\partial_x\partial_y\Psi\|_{L^2(\mu)}.
+\]
+The displayed estimate follows from the elementary inequality
+\[
+  A+{\pi\over\sqrt6}B
+  \le {\pi\over\sqrt6}\sqrt{A^2+4B^2}\qquad(A,B\ge0),
+\]
+using $\pi^2/6>4/3$.
+
+With $\lambda=-t$ and $\Dop_t=t\partial_t$, define recursively
+\begin{equation}\label{eq:Phi-recursion}
+  \Phi_0(t;x,y)=\mathcal C_{\rho(t)}(x,y),
+  \qquad
+  \Phi_{k+1}=\Dop_t\Phi_k+\lambda\,\partial_x\partial_y\Phi_k\quad(k\ge0),
+\end{equation}
+where $\rho$ is the polynomial in \eqref{eq:rho-collapsed}.  Here $\Dop_t$ differentiates all explicit $t$-dependence of $\Phi_k$, including the dependence through $\rho(t)$ and through scalar prefactors created at earlier steps.  The combined kernel $\Phi_3$ is obtained by carrying out this recursion before any norm is taken.  By \eqref{eq:C-first-derivatives}, $\Phi_3$ is a finite sum of smooth $\Kr_r$-derivative kernels.
+
+\begin{lemma}[Trace representation]\label{lem:trace-rep}
+For $|t|=1$,
+\[
+  \Dop^3H(t)=T_{-t}\bigl[\Phi_3(t;\cdot,\cdot)\bigr],
+\]
+and $T_{-t}$ satisfies the bound \eqref{eq:Tlambda-bound}.
+\end{lemma}
+
+\begin{proof}
+First assume $|t|<1$, and put $\lambda(t)=-t$.  The collapsed representation of Proposition~\ref{prop:collapsed-coefficients} is equivalently
+\begin{equation}\label{eq:H-as-trace-C}
+  H(t)=T_{\lambda(t)}\bigl[\mathcal C_{\rho(t)}\bigr].
+\end{equation}
+Indeed, for $|\lambda|<1$, the trace is the correlated expectation in the $X,Y$ variables, and \eqref{eq:threshold-cov-kernel} is precisely the conditional $W,W'$ expectation multiplied by the normalizing factor $\pi/2$.
+
+We use the following differentiation identity.  If $\Psi(t)$ is a smooth family of kernels with enough decay, then
+\begin{equation}\label{eq:trace-differentiation}
+  \Dop_t\,T_{\lambda(t)}[\Psi(t)]
+  =T_{\lambda(t)}\bigl[\Dop_t\Psi(t)+\lambda(t)\partial_x\partial_y\Psi(t)\bigr].
+\end{equation}
+For $|\lambda|<1$ this is Price's theorem in the outer Gaussian variables.  Equivalently, it follows directly from the Hermite definition of $T_\lambda$: differentiating
+\[
+  T_{\lambda(t)}[\Psi(t)]
+  =\sum_{n\ge0}\lambda(t)^n\widehat\Psi_{n,n}(t)
+\]
+gives the term $\sum_n\lambda^n\Dop_t\widehat\Psi_{n,n}$ plus
+\[
+  \sum_{n\ge1} n\lambda^n\widehat\Psi_{n,n}
+  =\lambda\sum_{m\ge0}(m+1)\lambda^m\widehat\Psi_{m+1,m+1},
+\]
+and the latter is $\lambda T_\lambda[\partial_x\partial_y\Psi]$ because
+\[
+  \partial_x\partial_y\Psi
+  =\sum_{i,j\ge1}\sqrt{ij}\,\widehat\Psi_{i,j}\He_{i-1}(x)\He_{j-1}(y)
+  \quad\text{in the Hermite sense.}
+\]
+
+Starting from \eqref{eq:H-as-trace-C} and applying \eqref{eq:trace-differentiation} three times gives
+\[
+  \Dop^3H(t)=T_{\lambda(t)}[\Phi_3(t;\cdot,\cdot)]
+  \qquad(|t|<1),
+\]
+with $\Phi_k$ exactly as in \eqref{eq:Phi-recursion}.  The identities \eqref{eq:C-first-derivatives} show that every term in $\Phi_3$ is a smooth kernel of the form used in Subsection~\ref{sec:formulas}; in particular $\Phi_3$ and $\partial_x\partial_y\Phi_3$ lie in $L^2(\mu)$ uniformly for radial limits $t=re^{i\theta}$, $0<r\le1$.
+
+Letting $r\uparrow1$ in the identity for $re^{i\theta}$ gives the asserted boundary identity for $|t|=1$, with $\Dop^3H(e^{i\theta})$ understood as the radial boundary value.  The right-hand side has this limit because $\Phi_3$ is an explicit finite sum of the smooth kernels listed in Subsection~\ref{sec:formulas}, and because $T_\lambda$ is continuous for the Sobolev trace norm appearing in \eqref{eq:Tlambda-bound}.  Finally, the bound for $T_{-t}$ is \eqref{eq:Tlambda-bound}.
+\end{proof}
+
+The recursion \eqref{eq:Phi-recursion} expands $\Phi_3$ as a finite sum over a nine-term index set; the explicit prefactors and kernels are recorded in Subsection~\ref{sec:formulas}.
+
+\subsubsection{An averaged Minkowski bound}
+
+From Lemma~\ref{lem:trace-rep} and \eqref{eq:B-s},
+\begin{equation}\label{eq:B3-avg}
+  B_3^2={1\over2\pi}\int_0^{2\pi}|\Dop^3H(e^{i\theta})|^2\,d\theta
+  \le {\pi^2\over6}\,\overline S,
+\end{equation}
+where
+\[
+  \overline S={1\over2\pi}\int_0^{2\pi}S(\theta)\,d\theta,
+  \qquad
+  S(\theta)=\|\Phi_3\|_{L^2(\mu)}^2+4\|\partial_x\partial_y\Phi_3\|_{L^2(\mu)}^2,
+\]
+and $\Phi_3$ is taken at $t=e^{i\theta}$.
+
+\begin{lemma}[Averaged Minkowski]\label{lem:averaged-minkowski}
+Write $\Phi_3=\sum_{p,a}c_{p,a}(t)G_{p,a}$ for the expansion produced by \eqref{eq:Phi-recursion}, with scalar prefactors $c_{p,a}$ and kernels $G_{p,a}$ as in Subsection~\ref{sec:formulas}.  For each pair set
+\[
+  Q^{(0)}_{p,a}={1\over2\pi}\int_0^{2\pi}|c_{p,a}(e^{i\theta})|^2\|G_{p,a}\|_{L^2(\mu)}^2\,d\theta,
+\]
+and
+\[
+  Q^{(1)}_{p,a}={1\over2\pi}\int_0^{2\pi}|c_{p,a}(e^{i\theta})|^2\|\partial_x\partial_yG_{p,a}\|_{L^2(\mu)}^2\,d\theta.
+\]
+Then
+\begin{equation}\label{eq:S-minkowski}
+  \overline S\le
+  \left(\sum_{p,a}\sqrt{Q^{(0)}_{p,a}}\right)^2
+  +4\left(\sum_{p,a}\sqrt{Q^{(1)}_{p,a}}\right)^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By the triangle inequality in $L^2(\mu)$,
+\[
+  \|\Phi_3\|_{L^2(\mu)}\le\sum_{p,a}|c_{p,a}|\|G_{p,a}\|_{L^2(\mu)}
+\]
+pointwise in $\theta$, and likewise for $\partial_x\partial_y\Phi_3$.  Taking the $L^2(d\theta/2\pi)$ norm of each sum and applying the triangle inequality there gives the two terms in \eqref{eq:S-minkowski}.
+\end{proof}
+
+Each $G_{p,a}$ is, on the real axis, a polynomial times a super-Gaussian, so the $L^2(\mu)$ norms are two-dimensional Gaussian integrals.  We enclose these integrals and then enclose the circle averages $Q^{(\cdot)}_{p,a}$ by a composite Gauss-Legendre rule with a certified remainder, as described in Subsection~\ref{sec:formulas}.
+
+\begin{lemma}[Certified Sobolev bound]\label{lem:B3-certified}
+The interval computation gives
+\[
+  \overline S\le1803.317.
+\]
+Consequently,
+\[
+  B_3\le{\pi\over\sqrt6}\sqrt{1803.317}\le54.4641.
+\]
+\end{lemma}
+
+The per-pair contributions, certified through the quadrature, are listed in Table~\ref{tab:Q}.  The bound $54.4641$ is intentionally generous; it is already far more than enough because of the small tail factors in \eqref{eq:tail-factors}.
+
+\begin{table}[t]\centering
+\small
+\begin{tabular}{c r r}
+\toprule
+$(p,a)$ & $\sqrt{Q^{(0)}_{p,a}}$ & $\sqrt{Q^{(1)}_{p,a}}$ \\
+\midrule
+$(0,1)$ & $0.04286765$ & $0.10127946$ \\
+$(0,2)$ & $0.30383835$ & $1.10543141$ \\
+$(0,3)$ & $0.36847714$ & $7.40413211$ \\
+$(1,0)$ & $2.67546361$ & $0.10772752$ \\
+$(1,1)$ & $0.19214422$ & $0.85400602$ \\
+$(1,2)$ & $0.51708607$ & $6.83760791$ \\
+$(2,0)$ & $2.30597621$ & $0.29542681$ \\
+$(2,1)$ & $0.41663640$ & $3.10773691$ \\
+$(3,0)$ & $2.36356861$ & $0.91665956$ \\
+\bottomrule
+\end{tabular}
+\caption{Certified upper bounds for the per-pair quantities of Lemma~\ref{lem:averaged-minkowski}; substituting into \eqref{eq:S-minkowski} gives $\overline S\le1803.317$.}
+\label{tab:Q}
+\end{table}
+
+
+
+\subsection{Assembling the certificate}\label{sec:assembly}
+
+This subsection combines the certified coefficient head, the Sobolev tail, and the Wiener-algebra criterion.  The cutoff is $N=251$.
+
+\begin{lemma}[Certified coefficient head]\label{lem:certified-head}
+Using the coefficient formula of Proposition~\ref{prop:collapsed-coefficients} and the interval enclosures described in Subsection~\ref{sec:formulas}, the first coefficients are certified with
+\[
+  b_1\ge0.881573822049,
+  \qquad
+  b_3\approx3.4538733\cdot10^{-9},
+  \qquad
+  b_5\approx-9.0435536\cdot10^{-11}.
+\]
+Here ``$\approx$'' means that the displayed decimal lies in the corresponding outward-rounded interval enclosure.
+Moreover the partial sums through degree $251$ satisfy
+\begin{equation}\label{eq:certified-head-sums}
+  \sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}|b_m|\le1.1328860\cdot10^{-5},
+  \qquad
+  \sum_{\substack{3\le m\le251\\m\ \mathrm{odd}}}m|b_m|\le1.5737642\cdot10^{-4}.
+\end{equation}
+\end{lemma}
+
+The near-vanishing of $b_3$ and $b_5$ is the design goal.  If
+\[
+  H(t)=b_1t+b_3t^3+b_5t^5+\cdots,
+  \qquad
+  H^{-1}(\zeta)=A_1\zeta+A_3\zeta^3+A_5\zeta^5+\cdots,
+\]
+then formal series reversion gives
+\begin{equation}\label{eq:low-inverse}
+  A_1={1\over b_1},
+  \qquad
+  A_3=-{b_3\over b_1^4},
+  \qquad
+  A_5={3b_3^2-b_1b_5\over b_1^7}.
+\end{equation}
+Thus making $b_3$ and $b_5$ small makes the first two nonlinear inverse coefficients small.
+
+\begin{proposition}[Limiting admissibility]\label{prop:limiting-admissibility}
+For $\gamma=0.881545409$, the limiting third/fifth model satisfies
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1,
+  \qquad H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+The inverse branch is holomorphic on a neighborhood of $\gamma\overline\D$ and maps $\gamma\D$ into $\D$.
+\end{proposition}
+
+\begin{proof}
+By Lemmas~\ref{lem:sobolev-tail} and~\ref{lem:B3-certified}, together with \eqref{eq:tail-factors},
+\[
+  \sum_{m>251}|b_m|
+  \le 54.4641\cdot3.13677\cdot10^{-7},
+\]
+and
+\[
+  \sum_{m>251}m|b_m|
+  \le 54.4641\cdot1.020511\cdot10^{-4}.
+\]
+Combining these inequalities with \eqref{eq:certified-head-sums},
+\[
+  \eta_0=\sum_{m\ge3}|b_m|
+  \le1.1328860\cdot10^{-5}+54.4641\cdot3.13677\cdot10^{-7}
+  \le2.84130\cdot10^{-5},
+\]
+and
+\[
+  \eta_1=\sum_{m\ge3}m|b_m|
+  \le1.5737642\cdot10^{-4}+54.4641\cdot1.020511\cdot10^{-4}
+  \le5.71550\cdot10^{-3}.
+\]
+With $b_1\ge0.881573822049$, we have $\eta_1<b_1$ and
+\[
+  \gamma+\eta_0\le0.881573821996<0.881573822049\le b_1.
+\]
+Theorem~\ref{thm:simple-wiener} applies and proves the claim.
+\end{proof}
+
+\subsection{Formal proof of Theorem~\ref{thm:main}}\label{subsec:formal-proof-main}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Proposition~\ref{prop:limiting-admissibility}, the limiting model satisfies a strict inverse-majorant certificate at $\gamma=0.881545409$, with inverse branch holomorphic on a neighborhood of $\gamma\overline\D$ and with values in $\D$ on a slightly larger closed disk around $\gamma\overline\D$.  Corollary~\ref{cor:finite-scheme} transfers this certificate to all sufficiently high finite-dimensional third/fifth Gaussianized-chaos schemes \eqref{eq:finite-f-35}--\eqref{eq:finite-g-35}.  Applying the Krivine criterion, Lemma~\ref{lem:local-inverse-expansion} or equivalently Theorem~\ref{thm:krivine-criterion}, to such a finite scheme gives
+\[
+  \KG\le {\pi\over2\gamma}\le1.7818666069360661.
+\]
+Since
+\[
+  {\pi\over 2\log(1+\sqrt2)}-{\pi\over2\gamma}
+  =3.473712553\cdot10^{-4}\ldots,
+\]
+the hyperplane-improvement form follows.
+\end{proof}
+
+
+
+\subsection{Computational formulas}\label{sec:formulas}
+
+This subsection lists the explicit objects used in the interval certificate.  All real inputs are decimal intervals and all derived quantities are outward-rounded Arb balls.
+
+\paragraph{Parameters.}
+The parameters are $\eta,s_3,s_5$ from \eqref{eq:params}.  We set
+\[
+  V=1+s_3^2+s_5^2,
+  \qquad
+  \vartheta={\eta\over\sqrt V},
+  \qquad
+  \rho(t)={t-s_3^2t^3+s_5^2t^5\over V}.
+\]
+
+\paragraph{Coefficient integrals.}
+The collapsed coefficients are
+\[
+  \mathsf A_{a,b}=\int_\R \He_b(x)q_a(\vartheta\He_3(x))\varphi(x)\,dx,
+\]
+where $q_a$ is given by Lemma~\ref{lem:qk}.  The integrand is entire.  For $a\ge1$ it contains the extra factor $e^{-(\vartheta\He_3(x))^2/2}$ and is super-Gaussian on the real axis; for $a=0$ it has the ordinary Gaussian tail from $\varphi(x)$.  It is enclosed by Arb's adaptive integrator on a finite interval $[-L,L]$, plus a closed Gaussian-tail bound outside the interval using $|q_a|\le1$.  The coefficient $b_m$ is then the interval sum \eqref{eq:bm-collapsed}, with $[t^{m-b}]\rho(t)^a$ computed by a finite convolution of $(1,-s_3^2,s_5^2)/V$.  Absolute values in $\eta_0$ and $\eta_1$ are taken on enclosures bounded away from zero.
+
+\paragraph{Combined kernel.}
+The recursion \eqref{eq:Phi-recursion} produces
+\[
+  \Phi_3=\sum_{(p,a)}c_{p,a}(t)G_{p,a}
+\]
+over the nine pairs in Table~\ref{tab:Q}.  The scalar prefactors $c_{p,a}(t)$ are polynomials in $t$, generated from the formal seed $c_{0,0}=1$ for the threshold-covariance kernel $\mathcal C_{\rho(t)}$ by applying three times the substitutions
+\[
+  c_{p,a}\longmapsto \Dop_tc_{p,a}\quad\text{at the same }(p,a),
+\]
+\[
+  c_{p,a}\longmapsto (\Dop_t\rho)c_{p,a}\quad\text{at }(p+1,a),
+  \qquad
+  c_{p,a}\longmapsto (-t)c_{p,a}\quad\text{at }(p,a+1).
+\]
+The first time a substitution moves from the formal seed to either $(p+1,a)$ or $(p,a+1)$, the identities \eqref{eq:C-first-derivatives} supply the displayed $2\pi$ factors.  The kernels are, with $\varphi_r=\Kr_r$ from \eqref{eq:Kr-kernel} evaluated at $u=\vartheta h(x)$, $v=\vartheta h(y)$, and $r=\rho(t)$,
+\[
+  G_{p,0}=2\pi\,\partial_r^{p-1}\varphi_r\quad(p\ge1),
+\]
+and
+\[
+  G_{p,a}=\partial_x^{a-1}\partial_y^{a-1}
+  \left(2\pi\vartheta^2h'(x)h'(y)\partial_r^p\varphi_r\right)
+  \quad(a\ge1).
+\]
+Each derivative $\partial_r^p\partial_x^i\partial_y^j\varphi_r$ equals a polynomial in $(r,u,v,1-r^2)$ times $\varphi_r$, with integer coefficients computed by a fixed operator recurrence.
+
+\paragraph{Gaussian norms.}
+Writing $u=\vartheta h(x)$, the squared modulus of a kernel against $\mu$ is
+\[
+  \|G_{p,a}\|_{L^2(\mu)}^2=
+  \iint_{\R^2}|G_{p,a}(x,y)|^2{e^{-(x^2+y^2)/2}\over2\pi}\,dx\,dy.
+\]
+This is a positive integral of a polynomial times $e^{-x^2/2-y^2/2}$ and the bounded factor
+\[
+  \exp\left(-A\vartheta^2(h(x)^2+h(y)^2)+2B\vartheta^2h(x)h(y)\right),
+\]
+where
+\[
+  A=\Re(1/d),\qquad B=\Re(r/d),\qquad d=1-r^2.
+\]
+Using the identity $x^3=\sqrt6\,h(x)+3x$, every mode reduces to a combination of one-dimensional base moments
+\[
+  I_{\varepsilon,q}(A)=\E\bigl[X^\varepsilon h(X)^q e^{-A\vartheta^2h(X)^2}\bigr],
+  \qquad \varepsilon\in\{0,1,2\},
+\]
+each enclosed by Arb's integrator; the cross term is expanded in a convergent series with a Chernoff tail.
+
+\paragraph{Circle quadrature and its remainder.}
+The averages $Q^{(\cdot)}_{p,a}$ are computed by a composite four-point Gauss-Legendre rule on $[0,2\pi]$ with $M$ panels of the certified point values $|c_{p,a}|^2\|G_{p,a}\|^2$.  For an integrand $g(\theta)$, the rule's error is at most
+\[
+  C_4(2\pi)^8M^{-9}\sum_jD_{8,j},
+  \qquad
+  C_4={(4!)^4\over9(8!)^3},
+\]
+where each panel bound $D_{8,j}\ge\sup_{I_j}|g^{(8)}|$ is obtained without cancellation from
+\[
+  |g^{(8)}|\le\sum_{j=0}^{8}\binom8j\sqrt{V_jV_{8-j}},
+  \qquad
+  V_j(\theta)=\|\partial_\theta^j(c_{p,a}G_{p,a})\|_{L^2(\mu)}^2.
+\]
+The estimate
+\[
+  V_j\le |d|^{-1}\left(\sum_\nu |p_{j,\nu}(\theta)|\sqrt{L_\nu L_{\nu'}}\right)^2
+\]
+uses $2|B|\,|UV|\le |B|(U^2+V^2)$ to absorb the mixed term in the exponent, giving the residual decay
+\[
+  -A(U^2+V^2)+2BUV\le -(A-|B|)(U^2+V^2).
+\]
+The required positivity margin
+\[
+  A-|B|=\Re(1/d)-|\Re(r/d)|\ge {1\over2}
+\]
+on the unit circle is verified on all panels.  Here $L_\nu$ are precomputed positive one-dimensional integrals and $|p_{j,\nu}|$ are bounded by evaluating the $\theta$-derivative coefficients on each panel as intervals.  At $M=2048$ the total remainder is at most $9.1\cdot10^{-4}$ per pair, negligible compared with the final value of $\overline S$.
+
+
+
+\subsection{Implementation notes}\label{sec:impl}
+
+The following comments are not needed for the logical proof, but they explain why the certificate is organized in the form used above.
+
+\begin{enumerate}[label=\textbf{I\arabic*.},leftmargin=*]
+\item \textbf{Why real-axis integration.}  The integrand of a Gaussian norm decays like $e^{-c x^6}$ on the real axis but can grow like $e^{c|z|^6}$ off the real axis, because $\He_3(z)^2\sim z^6/6$ has negative real part in some complex sectors.  Interval boxes in $(x,y)$, or a complex contour, see this far-field growth and produce much worse bounds.  The certificate therefore evaluates every integral at real points; Arb's adaptive integrator is effective because the local error model only probes small neighborhoods of the real subintervals.
+
+\item \textbf{Why the Sobolev tail.}  Bounding $\sum|b_m|$ through $B_3=\|\Dop^3H\|_{L^2(\T)}$ keeps the cancellation in the signed coefficients $b_m$.  A direct Hermite-mass bound, or a complex Cauchy estimate of $H^{-1}$ near $t=1$, overshoots by many orders of magnitude.
+
+\item \textbf{Why the combined kernel.}  Forming $\Phi_3$ by the recursion \eqref{eq:Phi-recursion} before taking norms is essential.  Expanding $\Dop^3H$ as a sum of separately bounded terms discards a nine-fold cancellation and gives a much looser estimate.
+
+\item \textbf{Why the cancellation-free eighth-derivative bound.}  The exact eighth $\theta$-derivative of the quadrature integrand is a signed combination of inner products whose terms can be enormous near $\theta=0$ and $\theta=\pi$ before cancellation.  The Minkowski bound in Subsection~\ref{sec:formulas} avoids this signed sum entirely: every $V_a$ is a positive quantity, at the cost of a looser derivative bound that is absorbed by the $M^{-9}$ factor in the quadrature remainder.
+
+\item \textbf{Precision.}  The base moments require higher precision for large powers and for circle nodes near $\theta=0,\pi$.  The reported headline inequalities are stable under further refinement of precision and panel count.
+\end{enumerate}

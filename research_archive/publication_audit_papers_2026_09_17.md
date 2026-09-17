@@ -111,3 +111,21 @@ certificates distinguish exact rational checks from finite diagnostics.
 Live research continues after this snapshot. Further versions and the
 sharp paired-law floor will be canonical or preserved at the final
 checkpoint. No unfinished derivation is discarded for being unpolished.
+
+## Sixth checkpoint
+
+Snapshot `2026-09-17/220348Z` preserves1,987 research payloads,
+165,971,551 bytes; all1,987 SHA-256 payload checks pass. No credential
+candidate or unresolved oversized research output was reported. The same
+14 historical dynamic-reference flags remain. New canonical feature-law,
+sharp block-code, response-information and scope proofs are committed
+directly with their scripts; live revisions after the snapshot remain
+eligible for the final preservation pass.
+
+Finite computations are labeled by evidentiary status: integer/rational
+physical games are exact; binomial, Gaussian quadrature and MGF grids are
+diagnostics of analytic theorems, not replacements for their proofs.
+The new standalone scripts use explicit parameters or tracked matrix
+witness modules. No ignored mathematical input is required without a
+manifest-restoration path. Original compiled executables and the previously
+losslessly archived oversized raw result remain intentionally untracked.

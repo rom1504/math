@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "seed": 2026091726,
+  "frames": [
+    {
+      "k": 4,
+      "n": 16,
+      "q": 4,
+      "tested": 200,
+      "plateau_tail": 8,
+      "ground_fourth": 256,
+      "global_fourth": 1024,
+      "largest_tail_ratio": 0.25
+    },
+    {
+      "k": 16,
+      "n": 256,
+      "q": 16,
+      "tested": 200,
+      "plateau_tail": 256,
+      "ground_fourth": 65536,
+      "global_fourth": 1048576,
+      "largest_tail_ratio": 0.375
+    },
+    {
+      "k": 64,
+      "n": 4096,
+      "q": 64,
+      "tested": 200,
+      "plateau_tail": 8192,
+      "ground_fourth": 16777216,
+      "global_fourth": 1073741824,
+      "largest_tail_ratio": 0.375
+    }
+  ],
+  "exact_zero_margin": {
+    "n": 16,
+    "exact_cap": 42,
+    "old_deficit": 0,
+    "coefficients_per_column": 1,
+    "coefficient_magnitude": 4,
+    "tail_at_cap_1": 12
+  },
+  "interpolation": {
+    "cases": 30,
+    "max_interpolation_increase": -1.368993387984574e-06,
+    "max_final_violation": -2.8050769062906373,
+    "note": "Gauss-Hermite numerical diagnostic, not certified integration"
+  }
+}

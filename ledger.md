@@ -47450,3 +47450,70 @@ response alone does not control maximization over all old words. The
 reported interval and convergence status remain unchanged. Next quantify
 the exact ceiling of this paired-law class and combine preparation with
 full-parent fluctuation bounds before judging whether to pursue it further.
+
+### 10.170 Non-Gaussian physical realization and a sharp information/tail frontier
+
+2026-09-17, sixth paper-combination checkpoint. The six-hour user
+authorization remains active until22:42UTC; this is not an extension.
+
+VERIFIED: for diffuse real orthonormal features with rank r=o(sqrt(n)),
+a fixed Gaussian variance-mixture profile with mean variance one has an
+actual full-support, centered, EXACTLY isotropic physical-sign realization.
+Every Boolean scalar query is approximated uniformly, with fixed linear
+subGaussian control and information O(r). The original entrywise proof
+only reached r=o(n^(1/3)); operator covariance via positive convex
+auxiliary measures and a matrix score inequality removes that artificial
+rank factor. A separate Fourier-modulus/quartic-interpolation argument
+supplies every-real-direction MGF control. Covariance convergence alone
+was not used as a concentration claim. The adaptive covariance-capture
+corollary is uniform over query laws and retains a common information
+budget under minimax. Efficient sampling or minimax computation is open.
+Canonical: paper_director_growing_rank_variance_realization_2026_09_17.md.
+
+VERIFIED BENCHMARK: block-constant codes with r blocks admit exact physical
+common-phase laws of response<=epsilon and KL<=r log(1/epsilon)+24r,
+for every r and block size>=4096 epsilon^(-2). A matching finite lower
+bound is r log(1/epsilon)-Cr. With FIXED linear subGaussian proxy K>1,
+the optimal growing-rank response floor is kappa/sqrt(K). The minimum
+information per block to approach within delta has asymptotic coefficient
+
+    J_K(delta)/log(1/delta) -> 1-1/K,   delta down to0.
+
+The lower proof converts near-equality in the norm/tail inequality into
+small-ball mass, then uses the finite binomial reference cost. The upper
+uses actual hot/cold Gibbs blocks with exact finite variance weights.
+The physical order limits precede delta->0. Independent discrepancy and
+localization reconstructions PASS. This is not a theorem about original
+minimizing ground-code geometry.
+Canonical: paper_director_block_response_information_tail_frontier_2026_09_17.md.
+
+VERIFIED COMPOSITION DISCRIMINATOR: replacing the common phase by
+independent phases preserves EVERY physical block marginal and exact
+global covariance, but restores response kappa as rank grows. Before
+full-support repair its total correlation is exactly(r-1)h(pi).
+No claim that covariance alone predicts composition survives this example.
+
+VERIFIED LIMITATION: for any query law of covariance norm<=L, ANY physical
+law with response discount Delta below the independent mean obeys
+KL>=Delta^2/(64L)-2. Combining Talagrand convex concentration with
+hypercontractivity rules out ALL o(n)-degree positive Walsh densities
+for fixed normalized discounts against bounded-covariance query duals.
+This dual hypothesis is not asserted for every exact minimizer.
+
+SCOPED NEGATIVE RESULTS: paired Gaussian latent spectra[1/2,3/2] impose
+response floor .786393873897..., too large for the desired slope below
+.75. Smooth bounded functions of finitely many actual central energies
+have response kappa+O(n^(-1/4)). Neither fact excludes non-Gaussian
+extensive-information laws or uncontrolled growing-dimensional energy
+conditioning. Actual full-parent estimates still pay too much fluctuation
+error; restricted/querywise statements are not promoted to recurrences.
+
+#### Updated frontier
+
+Two obligations are now solved in meaningful general classes: exact sign
+realization of non-Gaussian diffuse-feature laws, and the joint information
+and tail price of reusable block responses. For the original problem,
+actual near-minimizer feature capture and favorable FULL parent control
+remain unproved. The low-cap uniform response theorem from10.169 remains
+the strongest actual-class result; its discount is quantitatively
+insufficient. No original interval improvement or convergence is claimed.

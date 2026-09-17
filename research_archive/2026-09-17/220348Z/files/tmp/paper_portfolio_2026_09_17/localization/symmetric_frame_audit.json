@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "seed": 2026091705,
+  "trapezoid": {
+    "degrees_checked": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "derivative_kernel_mass": "u**2/6",
+    "integrated_cumulant_constant": "19/12"
+  },
+  "balanced_fourth_sums": [
+    {
+      "k": 2,
+      "p": 3,
+      "q": 4,
+      "queries_enumerated": 64,
+      "exact_max_second_sum": 24,
+      "exact_max_fourth_sum": 96,
+      "claimed_fourth_upper_bound": 144
+    },
+    {
+      "k": 4,
+      "p": 2,
+      "q": 8,
+      "queries_enumerated": 256,
+      "exact_max_second_sum": 64,
+      "exact_max_fourth_sum": 1024,
+      "claimed_fourth_upper_bound": 1536
+    },
+    {
+      "k": 4,
+      "p": 2,
+      "q": 7,
+      "queries_enumerated": 256,
+      "exact_max_second_sum": 64,
+      "exact_max_fourth_sum": 1024,
+      "claimed_fourth_upper_bound": 1408
+    },
+    {
+      "k": 4,
+      "p": 3,
+      "q": 9,
+      "queries_enumerated": 4096,
+      "exact_max_second_sum": 144,
+      "exact_max_fourth_sum": 2304,
+      "claimed_fourth_upper_bound": 2496
+    }
+  ],
+  "quadrature_diagnostics": [
+    {
+      "tau": 0.04,
+      "B": 2,
+      "W4": 48,
+      "softmax_sign_minus_gaussian_quadrature": 4.436894974446659e-05,
+      "analytic_softmax_comparison_bound": 0.006698349445730097,
+      "absolute_gap_over_bound": 0.006623863102984249
+    },
+    {
+      "tau": 0.08,
+      "B": 2,
+      "W4": 48,
+      "softmax_sign_minus_gaussian_quadrature": 0.0003502043070895411,
+      "analytic_softmax_comparison_bound": 0.07379586397551427,
+      "absolute_gap_over_bound": 0.004745581774145772
+    },
+    {
+      "tau": 0.16,
+      "B": 2,
+      "W4": 48,
+      "softmax_sign_minus_gaussian_quadrature": 0.0026237920671245973,
+      "analytic_softmax_comparison_bound": 1.1196195600108152,
+      "absolute_gap_over_bound": 0.0023434675141788806
+    },
+    {
+      "tau": 0.32,
+      "B": 2,
+      "W4": 48,
+      "softmax_sign_minus_gaussian_quadrature": 0.01637566301919602,
+      "analytic_softmax_comparison_bound": 32.214945496474385,
+      "absolute_gap_over_bound": 0.0005083250263759775
+    }
+  ],
+  "querywise_truncation": {
+    "queries_tested": 9000,
+    "explicit_universal_constant": 7.876630915286452,
+    "maximum_l1_tail_bound_ratio": 0.7586743228050871,
+    "maximum_l2_squared_tail_bound_ratio": 0.8318300474045216
+  },
+  "scope": "Exact algebra plus non-certified Gaussian quadrature diagnostics; proof is analytic."
+}

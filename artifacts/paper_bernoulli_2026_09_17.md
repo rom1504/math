@@ -2695,3 +2695,144 @@ chaining proof was read, not only its statement.
 These are selectable near-minimizer preparation and stability results.
 The preparation cost is not free, their useful windows are subleading,
 and neither supplies the missing leading parent-value recurrence.
+
+## 35. The low-cap range budget closes the thin-covariance obstruction
+
+The director's [low-cap uniform-response theorem](paper_director_low_cap_uniform_response_2026_09_17.md)
+is now proved at the stated imported-theorem scope, and this track's
+[complete independent reconstruction](paper_bernoulli_low_cap_response_audit_2026_09_17.md)
+records the full argument and half-range dependency. For sufficiently
+large actual full signings with Q(A)<=.5 n^(3/2), one centered exactly
+isotropic (3/2)-subGaussian physical law gives response at most
+(kappa-2^(-67))sqrt(n) at EVERY word with |H_A(x)|>=.30 n^(3/2).
+There is no actual-A operator-norm or dual-covariance hypothesis.
+
+The composition is substantive: failure of all paired response gains
+forces marked energy into a subspace of vanishing covariance mass;
+Grothendieck turns that mass condition into energy on a negligible
+coordinate set; exact half-range superadditivity and the universal
+.433322... complementary lower bound leave insufficient parent range.
+The signed Gram vectors, both cross terms, complete code quantifier,
+and fixed limit order have all been independently checked. The range
+lemma itself is explicitly attributed to the archive, not renamed.
+
+This is an original-signing STRUCTURAL theorem, not an improved
+extremal bound. The output class has the sharper, independently audited
+response floor kappa*f(1/3)=.786393873897... at EVERY query, asymptotically.
+That exceeds the target3c/2 for c<=.5. The [full-parent composition](paper_localization_low_cap_parent_2026_09_17.md)
+also pays an explicit selection/preparation cost rather than hiding
+old-word escape. Both that complete upper certificate and the matching
+class floor/independent-deployment lower theorem were audited PASS.
+
+## 36. Exact stronger-slope and nonlocal physical-law discriminators
+
+The [ground-slope test](paper_bernoulli_ground_response_slope_test_2026_09_17.md)
+independently replays the frozen finite full-column games. The literal
+all-order target beta<=3Q/(2n) fails at orders6,10,14, including for
+unrestricted columns. At order14 the ratio is392/351; order12 instead
+has ratio4/5, but its deficit2 game exceeds the target. All42,576
+pointwise physical-column lower checks and1,716 complete-code upper
+checks pass without an LP solver. Fixed-order failures are not asserted
+to falsify an asymptotic exact-minimizer statement.
+
+The [nonlocal ground-sample tests](paper_bernoulli_nonlocal_ground_sample_tests_2026_09_17.md)
+then probe physical operations beyond narrow Gaussian pairs. Products
+and independently centered majority preserve exact isotropy but lose
+the cheap order12/order14 overlap laws. More sharply, exhaustive integer
+enumeration proves that the ENTIRE two-pole signed-perfect-matching
+mixture class has order12 game exactly9/4, whereas the unrestricted
+isotropic physical game is9/5. All332,640 signed matchings are included;
+uniformly mixing the105 dual minimizers certifies the matching upper
+bound as well. Thus the failure is not due to selecting one poor
+matching from signed covariance. This is a finite class discriminator,
+not an asymptotic prohibition of other nonlocal physical mechanisms.
+
+The same artifact now proves an asymptotic discriminator on an actual
+full-sign family with cap tending to1/2. Its exact negative-eigen
+ground law forces EVERY mixture of signed physical-coordinate matchings
+to have normalized response kappa+O(n^(-1/2)); iid signs attain the
+leading value. The proof uses the independently audited involution
+fourth-moment bound, not finite extrapolation. The successful nonlocal
+Hadamard-column matching law instead has response at most kappa/sqrt(2)
+on this ground sector. The distinction between physical-coordinate
+matching and latent-column matching is therefore a leading-order
+mathematical distinction. This is not an asymptotic-minimizer example.
+
+A final classical Fourier equality test shows that nontrivial odd
+coordinatewise recombination of independent samples cannot preserve
+their nonzero nonsaturated conditional correlations: equality forces
+a common signed dictator on each connected correlation component.
+Majority tends to lose the2/pi factor in the small-correlation regime.
+This identifies why preserving the mixed law's isotropy while
+Gaussianizing its sectors does not preserve the useful marked covariance.
+
+## 37. Hot feature laws and the information cost of protecting isotropic duals
+
+The director's hot quadratic-feature proposal is independently proved
+in the [hot-feature reconstruction](paper_bernoulli_hot_feature_laws_2026_09_17.md).
+For an orthonormal n-by-r frame of leverage O(r/n), the ACTUAL cube
+tilt exp[(1-1/v)||U^Th||^2/2], fixed v>1, has covariance
+I+(v-1)(UU^T-diag(UU^T))+O_F(r^3/n), and ALL Boolean queries have
+normalized response kappa sqrt(1+(v-1)||U^Tx||^2/n)+O(r^2/n+n^(-1/2)).
+Thus r=o(n^(1/3)) suffices for both errors to vanish. Hubbard's
+representation is used with its exact tilted Gaussian density; the
+unbounded observable comparison and tiny conditional variance are
+explicitly paid. Independent discrepancy proof audit and six-frame
+finite replay both PASS. Cold pairing and exact covariance repair are
+separate work, not inferred from this hot-only theorem.
+
+The [response-information barrier](paper_bernoulli_response_information_barrier_2026_09_17.md)
+gives a complementary exact scope test. For ANY query law with
+second-moment operator norm at most L and ANY physical column law nu,
+
+    D(nu||Uniform)>=((mu_n-E_mu E_nu|h.x|)_+)^2/(64L)-2.
+
+It follows from Talagrand's primary convex-distance theorem (the full
+Section4.1 induction proof was read), the convex sqrt(L)-Lipschitz
+response function, and entropy duality. Therefore a fixed normalized
+discount against an isotropic query dual requires order-n information.
+All bounded-L2 rewrites and all fixed-degree positive polynomial
+densities fail at leading order against such a dual, even when they
+are not polynomials in the signing energy. This is a classical
+concentration application, not an all-ground-geometry theorem.
+
+The localization track's positive quartic-feature laws and its smooth
+finite-central-energy-witness extension were independently reconstructed
+in full. Their scope is consistent: low-rank covered query codes can
+benefit from a bounded-information law but cannot simultaneously carry
+an isotropic query measure concentrated near that low-rank space.
+
+The hot result was subsequently sharpened: strong logconcavity plus
+the latent Fisher-score identity gives covariance operator error
+O(p_max), and a trace-sensitive refinement gives Frobenius error
+O(sqrt(r)p_max). Directional Stein comparison gives ALL-query response
+error O(p_max+n^(-1/2)), even in the hot-only diffuse r=o(n) range;
+this is not Gaussian-vector total-variation convergence. The hot law
+is exactly v-subGaussian, and its entropy has additive error O(sum p_i^2).
+All strengthened hot proofs were independently audited PASS.
+
+The cold operator/Frobenius extension and its separate all-real-direction
+MGF proof were also fully read and audited PASS. They extend the combined
+physical realization to r=o(sqrt(n)); the remaining cold Fourier tail
+condition is not erased by the stronger hot range. The exact covariance
+repair, finite information sublevel, and adaptive-capture minimax in the
+director's combined theorem were checked separately.
+
+The information barrier also has a finite growing-degree corollary:
+every normalized positive Walsh density of degree D has KL at most
+2D log3. Against a query law of covariance norm at most L, a raw
+response deficit delta sqrt(n) therefore requires
+D>=delta^2 n/(128L log3)-1/log3. Thus ALL sublinear degrees fail for a
+fixed discount on bounded-covariance query duals. This is not an
+extrapolation of fixed-degree approximation errors, nor a statement
+that every actual ground code has such a dual.
+
+Finally the [shared-phase composition test](paper_bernoulli_shared_phase_block_composition_2026_09_17.md)
+proves a finite physical distinction invisible to covariance and even
+to every whole-block marginal. A common hot/cold label keeps all
+block-code responses arbitrarily cheap, while independent copies of
+the IDENTICAL block marginal have normalized response tending to kappa.
+Before support repair their total correlation is exactly(r-1)h(pi),
+despite the shared label's constant entropy. The full-support comparison
+uses exactly matching repaired marginals and a separately correct
+three-phase entropy identity. Independent localization audit: PASS.

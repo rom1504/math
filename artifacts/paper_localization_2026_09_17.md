@@ -739,10 +739,57 @@ Subsequent independently audited results are maintained separately:
   proof and verified that the archived scalar Gaussian-sign comparison
   applies without flat off-diagonals. The spectral hypothesis remains
   substantive; the explicit discount is not a convergence slope.
+- [Operator-free low-cap response](paper_director_low_cap_uniform_response_2026_09_17.md):
+  the thin signed-energy alternative, Grothendieck coordinate localization,
+  and the inherited complementary half-range budget remove that spectral
+  hypothesis for sufficiently low-cap actual signings. This track's
+  [explicit quantitative audit](paper_localization_low_cap_response_quantitative_2026_09_17.md)
+  gives a sixth-power margin-to-discount formula. One isotropic uniformly
+  subGaussian physical law protects the entire macroscopic energy code.
+- [Its full-parent deployment cost](paper_localization_low_cap_parent_2026_09_17.md):
+  a global affine response envelope and centered absolute-increment
+  chaining give actual-sign iid-parent certificates with every old word,
+  new spin, and child cap paid. The current Gaussian-pair class has a
+  sharp response floor0.786393873897, above the required parent slope;
+  the cloned preparation also retains a non-negligible extension cost.
+- [Exact quartic physical laws](paper_localization_quartic_isotropic_laws_2026_09_17.md):
+  pure degree-four densities are exactly isotropic. A fixed-rank feature
+  law gives a fixed scalar-response discount at information cost below
+  log3, while a true marked-energy quartic changes energy variance but
+  not leading responses. An isotropic query dual obstructs the entire
+  convex mixture class of these quartic feature laws.
+- [Smooth finite energy witnesses](paper_localization_smooth_energy_witnesses_2026_09_17.md):
+  any bounded-Lipschitz likelihood of a fixed finite list of normalized
+  cap-bounded actual quadratic energies leaves all leading Boolean
+  responses at kappa. Rare, nonsmooth, and growing-complexity likelihoods
+  are explicitly outside the proved scope.
+- [Growing-rank cold feature tilts](paper_localization_growing_rank_cold_tilt_2026_09_17.md):
+  a direct Fourier proof, strengthened by a positive convex extension,
+  gives operator covariance error O(r/n), Frobenius error O(r^(3/2)/n),
+  all-query response error O((r^2/n)^(1/4)), and Gaussian variance-change
+  information cost with o(1) error for rank r=o(sqrt(n)). A separately
+  audited external-field argument yields actual cold proxy1+o(1).
+- [Sharp block-code information price](paper_director_block_code_response_information_2026_09_17.md):
+  the director's entropy lower bound and this track's exact shared-phase
+  construction (AppendixA) show cost r log(1/epsilon)+O(r) for all
+  2^r block-constant queries, with exact isotropy, full physical support,
+  and proxy O(epsilon^(-2)). The finite upper law has NO rank restriction
+  when block size b>=4096 epsilon^(-2).
+- [Sharp block-code subGaussian tradeoff](paper_localization_block_code_subgaussian_tradeoff_2026_09_17.md):
+  exact isotropy and fixed proxy K force leading large-rank response at
+  least kappa/sqrt(K). An actual common-phase slice law attains this
+  bound for K>=2, and the director's physical Gibbs construction extends
+  sharpness to K>1. The
+  [joint information/tail frontier](paper_director_block_response_information_tail_frontier_2026_09_17.md)
+  has leading per-feature price (1-1/K)log(1/delta) for approaching this
+  floor within delta. This track independently audited the full theorem.
 
-These are proved finite tools and conditional extension results. None
-establishes favorable full near-level response control for an actual
-minimizing sequence, a new cap constant, or convergence of M_n/n^(3/2).
+These are proved finite tools, unconditional structural results, and
+conditional extension certificates. The low-cap theorem now DOES give
+a fixed uniform response discount on macroscopic high-energy codes of
+actual nearoptimal signings. None establishes a response below the needed
+parent slope, a favorable full-parent recurrence, a new cap constant,
+or convergence of M_n/n^(3/2).
 Moreover the finite whole-nearlevel entropy-slope shortcut is now ruled
 out universally by a fixed-radius flip count. The center-cover versions,
 which retain and pay correlated deviations, are not subject to that

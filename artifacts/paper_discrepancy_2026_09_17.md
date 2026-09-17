@@ -1872,3 +1872,113 @@ sandwich reduces the remaining restricted value question to the
 actual column-mean profile, up to the child cap and a small old-code
 selection fluctuation. Thus actual quadratic energy geometry, not
 entropy or universality alone, is needed for that step.
+
+## 24. Exact finite games and the actual low-cap energy theorem
+
+The later full-column experiments were upgraded from numerical LP outputs
+to frozen rational primal/dual certificates. See
+[the complete physical-column games](paper_discrepancy_full_column_games_2026_09_17.md)
+and [the exact ground-dual geometry](paper_discrepancy_actual_ground_dual_geometry_2026_09_17.md).
+All projective physical columns are paid, and the covariance-constrained
+and unrestricted games are kept separate. The 42 frozen game certificates
+were independently replayed without a solver. Caps and complete ground
+codes were re-enumerated; global-optimum labels for the imported matrices
+are imported labels, not a new proof of their global optimality.
+
+At order 12, the complete ground-code game has value 9/5, attained by
+uniform isotropic ground mass on two orthogonal six-dimensional sectors;
+the endpoint-radial subclass instead costs 9/4. At order 14, the full
+value is 98/39, with uniform isotropic ground mass again optimal. These
+are actual finite signing examples, not asymptotic evidence for bounded
+ground covariance. Order-8 examples and the separately constructed
+near-minimizer covariance spikes show why that qualification matters.
+
+The [signed-energy concentration alternative](paper_discrepancy_signed_energy_concentration_alternative_2026_09_17.md)
+then isolated the precise obstruction to adaptive Gaussian-sign discounts:
+without a fixed discount, essentially all signed high energy must live
+on a covariance subspace carrying o(n) trace mass. The director closed
+that alternative for low-cap signings using coordinate localization,
+Grothendieck's inequality, and the archived universal HALF-RANGE bound.
+The full theorem is in
+[low-cap uniform physical response](paper_director_low_cap_uniform_response_2026_09_17.md).
+Our [independent constant and minimax audit](paper_discrepancy_low_cap_response_audit_2026_09_17.md)
+gives an explicit eventual corollary: Q(A)<=n^(3/2)/2 admits ONE centered,
+exactly isotropic, full-support law of physical signs, with proxy 3/2,
+whose normalized absolute response is at most kappa-2^(-67) on EVERY
+query with |H_A(x)|>=0.3 n^(3/2). No operator bound on A is assumed.
+
+This is a genuine all-query response theorem, but its mechanism has a
+sharp [spectral-band response floor](paper_discrepancy_paired_spectral_band_response_floor_2026_09_17.md).
+Even arbitrary isotropic mixtures of Gaussian-sign laws whose latent
+covariances lie in [1/2,3/2] have asymptotic response at least
+(sqrt(2)+1)/sqrt(3pi)=0.7863938738 at every Boolean query. Independent
+deployment therefore has the wrong linear parent slope at the reported
+cap range, even with an adaptively selected child of bounded normalized
+cap. Improving the tiny discount inside this spectral band cannot repair
+that mismatch. The restriction is to the stated law/deployment class,
+not to every possible physical bridge.
+
+## 25. Non-Gaussian variance allocation and its exact physical costs
+
+The [kernel-slice repair](paper_discrepancy_kernel_slice_repair_2026_09_17.md)
+provides an exact elementary escape from the Gaussian-band floor. A
+shared three-level magnetization phase can give centered isotropic
+physical signs with response 1/sqrt(3) on a declared block-constant code,
+while retaining a fixed matrix subGaussian bound. It also shows precisely
+why low-energy rounding in a cube section does not automatically preserve
+isotropy: the missing projected variance has to be restored and paid.
+
+The director's
+[diffuse-feature realization](paper_director_diffuse_feature_law_realization_2026_09_17.md)
+extends finite-rank non-Gaussian target laws to arbitrary diffuse real
+features, with exact physical covariance repair and asymptotically optimal
+relative-entropy cost. Our rank-scope audit there proves that a code
+carrying a bounded-covariance query law cannot obtain a leading discount
+from a fixed-rank feature realization.
+
+The subsequent [growing-rank theorem](paper_director_growing_rank_variance_realization_2026_09_17.md)
+uses actual cold/hot quadratic cube densities. Independent branch proofs,
+operator covariance estimates, and exact Gaussian-sign repair give an
+exactly isotropic, full-support physical law for diffuse rank
+r=o(sqrt(n)). Its complete Boolean scalar response profile and O(r)
+information budget are proved, with a common finite subGaussian proxy.
+The discrepancy track's
+[cold-feature concentration theorem](paper_discrepancy_cold_feature_subgaussian_2026_09_17.md)
+closes the delicate tail step: every cold component has proxy
+1+O(r/sqrt(n)), uniformly over ALL real linear directions. Section 8
+uses a convex truncated-quartic interpolation and a fully paid Fourier
+tail, rather than inferring concentration from covariance convergence.
+Hot components have exact proxy v. Both branch proofs and their
+composition were independently reconstructed.
+
+Appendix A of the growing-rank theorem supplies a useful adaptive
+version. For s_r(C)=inf_mu sum_(j<=r)lambda_j(E_mu xx^T)/n, one law
+simultaneously has response at most kappa sqrt(1-s_r(C))+theta,
+relative entropy at most B_theta r, exact isotropy, full support, and
+a common finite proxy. Large covariance eigenvectors are automatically
+diffuse after the explicit eigenvalue cutoff; the compact minimax class
+pays both its information and MGF budgets. No such covariance-capture
+premise has been proved for original minimizing nearcodes.
+
+The [sharp scalar subGaussian price](paper_discrepancy_scalar_response_subgaussian_price_2026_09_17.md)
+shows that isotropy and mean response epsilon->0 force
+liminf K epsilon^2 log(1/epsilon)>=1/4. Generalized magnetization slices
+attain that leading constant in actual physical signs. For an entire
+growing-rank block code, the stronger sharp floor is instead
+kappa/sqrt(K); see
+[the block-code tail benchmark](paper_localization_block_code_subgaussian_tradeoff_2026_09_17.md).
+The [block-code information theorem](paper_director_block_code_response_information_2026_09_17.md)
+has an exact finite all-r shared-phase construction matching the
+r log(1/epsilon) information lower bound up to O(r), with exact isotropy,
+full support, and fixed tail control. Finally the
+[joint information/tail frontier](paper_director_block_response_information_tail_frontier_2026_09_17.md)
+proves that, at a fixed proxy K>1, approaching the best block-code response
+within delta has optimal leading information cost
+(1-1/K)r log(1/delta). These are explicit physical realization and
+composition benchmarks, not assertions about actual minimizer geometry.
+
+None of these results establishes convergence of M_n/n^(3/2), a favorable
+complete-parent value for all minimizing children, or an efficient sampler
+for every cold or minimax law. Those obligations remain separate. In
+particular, microscopic regularity, small code entropy, a covariance
+certificate, and an all-query scalar response law are not interchangeable.

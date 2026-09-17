@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "scope": "Floating exact-cube sums and Gaussian quadrature; proof is in the artifact.",
+  "frames": [
+    {
+      "n": 8,
+      "r": 1,
+      "v": 2.0,
+      "delta2": 0.12499999999999994,
+      "relative_partition": 0.9758697814330322,
+      "quadrature_partition_error": 1.1102230246251565e-16,
+      "quadrature_covariance_error": 8.881784197001252e-16,
+      "covariance_frobenius_error": 0.2249086065738854,
+      "all_query_response_max_error": 0.09057847639405825,
+      "queries": 256
+    },
+    {
+      "n": 8,
+      "r": 2,
+      "v": 2.0,
+      "delta2": 0.4999999999999998,
+      "relative_partition": 0.9204503207897459,
+      "quadrature_partition_error": 6.661338147750939e-16,
+      "quadrature_covariance_error": 1.6653345369377348e-15,
+      "covariance_frobenius_error": 0.44922156030192095,
+      "all_query_response_max_error": 0.16547075172586678,
+      "queries": 256
+    },
+    {
+      "n": 8,
+      "r": 3,
+      "v": 2.0,
+      "delta2": 1.1249999999999993,
+      "relative_partition": 0.8480406118613124,
+      "quadrature_partition_error": 5.551115123125783e-16,
+      "quadrature_covariance_error": 5.551115123125783e-16,
+      "covariance_frobenius_error": 0.6241347383076351,
+      "all_query_response_max_error": 0.21824572662717068,
+      "queries": 256
+    },
+    {
+      "n": 6,
+      "r": 1,
+      "v": 2.0,
+      "delta2": 0.4126325224813015,
+      "relative_partition": 0.9459987860067428,
+      "quadrature_partition_error": 1.1102230246251565e-16,
+      "quadrature_covariance_error": 1.3877787807814457e-16,
+      "covariance_frobenius_error": 0.3183343944531091,
+      "all_query_response_max_error": 0.12612604853778298,
+      "queries": 64
+    },
+    {
+      "n": 8,
+      "r": 2,
+      "v": 2.0,
+      "delta2": 0.6521999613225928,
+      "relative_partition": 0.9061973176843137,
+      "quadrature_partition_error": 4.440892098500626e-16,
+      "quadrature_covariance_error": 3.3306690738754696e-16,
+      "covariance_frobenius_error": 0.4787369234946823,
+      "all_query_response_max_error": 0.15703393751085426,
+      "queries": 256
+    },
+    {
+      "n": 10,
+      "r": 3,
+      "v": 2.0,
+      "delta2": 1.424040419747826,
+      "relative_partition": 0.830337656020205,
+      "quadrature_partition_error": 4.440892098500626e-16,
+      "quadrature_covariance_error": 2.42861286636753e-16,
+      "covariance_frobenius_error": 0.5858291842022049,
+      "all_query_response_max_error": 0.17485913080804283,
+      "queries": 1024
+    }
+  ],
+  "rank_one_sequence": [
+    {
+      "n": 16,
+      "relative_partition": 0.9865027782342841,
+      "aligned_response": 1.077870973778566,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.1400800955671605
+    },
+    {
+      "n": 32,
+      "relative_partition": 0.9927820208853264,
+      "aligned_response": 1.1013468622914868,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.0799531600489829
+    },
+    {
+      "n": 64,
+      "relative_partition": 0.9962522385544541,
+      "aligned_response": 1.1143216975466492,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.04310019716304453
+    },
+    {
+      "n": 128,
+      "relative_partition": 0.9980879088592326,
+      "aligned_response": 1.121198545065524,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.02244526605514979
+    },
+    {
+      "n": 256,
+      "relative_partition": 0.9990338861840757,
+      "aligned_response": 1.1247483925257784,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.011463996218622697
+    },
+    {
+      "n": 512,
+      "relative_partition": 0.9995143556616298,
+      "aligned_response": 1.1265533186803849,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.005794804408360154
+    },
+    {
+      "n": 1024,
+      "relative_partition": 0.9997565217598525,
+      "aligned_response": 1.1274635820261354,
+      "aligned_response_limit": 1.1283791670955126,
+      "covariance_frobenius_error": 0.002913431534527105
+    }
+  ],
+  "total_complete_queries": 2112
+}
