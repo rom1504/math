@@ -1,0 +1,2247 @@
+{
+  "observable_freeze": "extremal_information/experiments/nearmin_radial_response_observable_freeze.md",
+  "parameters": {
+    "input": "/home/math/quadra/extremal_information/experiments/nearmin_blind_structural_results.json",
+    "max_order": 11,
+    "min_order": 11,
+    "output": "/home/math/quadra/tmp/radial_n11_test.json",
+    "per_class": 1,
+    "solver_seconds": 2.0
+  },
+  "records": [
+    {
+      "M_n": 17,
+      "cap": 17,
+      "cap_excess": 0,
+      "edge_count": 55,
+      "label": "exact minimizer",
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "matrix_sha256": "0f78e79dcc696b6bf2ef1a0c85a455eb082603e60a0a3cd806cb9dbeb329c11e",
+      "n": 11,
+      "radii": [
+        {
+          "context_count": 56,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 24,
+              "greedy_packing_lower_bound": 24
+            },
+            "4": {
+              "greedy_cover_upper_bound": 1,
+              "greedy_packing_lower_bound": 1
+            },
+            "diameter": 4
+          },
+          "exposed_fraction_of_rs_shell": 0.4528301886792453,
+          "exposed_witness_count": 24,
+          "normalized": {
+            "log2_exposed": 4.584962500721156,
+            "log2_exposed_over_n": 0.41681477279283236,
+            "log2_rs_shell": 5.727920454563199,
+            "log2_rs_shell_over_n": 0.5207200413239271,
+            "optimizer_mutual_information_bits": 1.5837992861102452,
+            "optimizer_mutual_information_over_n": 0.14398175328274956
+          },
+          "optimizer_information": {
+            "H_Z_bits": 4.575846177878626,
+            "H_Z_given_F_bits": 2.9920468917683807,
+            "I_F_Z_bits": 1.5837992861102452,
+            "effective_support": 23.848823259017287,
+            "max_tie_count": 24,
+            "mean_tie_count": 8.571428571428571
+          },
+          "radius": 1,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 6,
+              "log2_lower_bound_over_n": 0.21108437226248747,
+              "log2_upper_bound_over_n": 0.21108437226248747,
+              "lower_bound": 5,
+              "optimum": 5,
+              "reduced_constraint_count": 48,
+              "selected_candidate_indices": [
+                3,
+                9,
+                13,
+                15,
+                17
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 5
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 6,
+              "log2_lower_bound_over_n": 0.21108437226248747,
+              "log2_upper_bound_over_n": 0.21108437226248747,
+              "lower_bound": 5,
+              "optimum": 5,
+              "reduced_constraint_count": 48,
+              "selected_candidate_indices": [
+                3,
+                9,
+                13,
+                15,
+                17
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 5
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 1,
+              "log2_lower_bound_over_n": 0.0,
+              "log2_upper_bound_over_n": 0.0,
+              "lower_bound": 1,
+              "optimum": 1,
+              "reduced_constraint_count": 1,
+              "selected_candidate_indices": [
+                4
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 1
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 0.1292337748458849,
+            "normalized_entropy_by_log_contexts": 0.02225346592043596,
+            "response_minus_base_cap_histogram": {
+              "0": 1,
+              "2": 55
+            }
+          },
+          "rs_shell_size": 53,
+          "rs_shell_width": 2
+        },
+        {
+          "context_count": 1541,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 53,
+              "greedy_packing_lower_bound": 53
+            },
+            "4": {
+              "greedy_cover_upper_bound": 53,
+              "greedy_packing_lower_bound": 53
+            },
+            "diameter": 10
+          },
+          "exposed_fraction_of_rs_shell": 0.452991452991453,
+          "exposed_witness_count": 53,
+          "normalized": {
+            "log2_exposed": 5.727920454563199,
+            "log2_exposed_over_n": 0.5207200413239271,
+            "log2_rs_shell": 6.870364719583405,
+            "log2_rs_shell_over_n": 0.6245786108712186,
+            "optimizer_mutual_information_bits": 3.5814361012025575,
+            "optimizer_mutual_information_over_n": 0.3255851001093234
+          },
+          "optimizer_information": {
+            "H_Z_bits": 5.054773419137355,
+            "H_Z_given_F_bits": 1.4733373179347975,
+            "I_F_Z_bits": 3.5814361012025575,
+            "effective_support": 33.23827069599706,
+            "max_tie_count": 24,
+            "mean_tie_count": 3.481505515898767
+          },
+          "radius": 2,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 38,
+              "log2_lower_bound_over_n": 0.4770843194039623,
+              "log2_upper_bound_over_n": 0.4770843194039623,
+              "lower_bound": 38,
+              "optimum": 38,
+              "reduced_constraint_count": 54,
+              "selected_candidate_indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                19,
+                21,
+                22,
+                26,
+                28,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                41,
+                44,
+                47,
+                48,
+                49
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 38
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 28,
+              "log2_lower_bound_over_n": 0.41681477279283236,
+              "log2_upper_bound_over_n": 0.41681477279283236,
+              "lower_bound": 24,
+              "optimum": 24,
+              "reduced_constraint_count": 193,
+              "selected_candidate_indices": [
+                3,
+                5,
+                7,
+                8,
+                10,
+                11,
+                12,
+                14,
+                15,
+                16,
+                21,
+                22,
+                23,
+                26,
+                30,
+                31,
+                33,
+                35,
+                38,
+                44,
+                47,
+                48,
+                49,
+                52
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 24
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 5,
+              "log2_lower_bound_over_n": 0.18181818181818182,
+              "log2_upper_bound_over_n": 0.18181818181818182,
+              "lower_bound": 4,
+              "optimum": 4,
+              "reduced_constraint_count": 867,
+              "selected_candidate_indices": [
+                10,
+                15,
+                17,
+                20
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 4
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 0.5820706376720469,
+            "normalized_entropy_by_log_contexts": 0.054965987983807675,
+            "response_minus_base_cap_histogram": {
+              "0": 1,
+              "2": 210,
+              "4": 1330
+            }
+          },
+          "rs_shell_size": 117,
+          "rs_shell_width": 4
+        },
+        {
+          "context_count": 27776,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 117,
+              "greedy_packing_lower_bound": 117
+            },
+            "4": {
+              "greedy_cover_upper_bound": 117,
+              "greedy_packing_lower_bound": 117
+            },
+            "diameter": 16
+          },
+          "exposed_fraction_of_rs_shell": 0.5518867924528302,
+          "exposed_witness_count": 117,
+          "normalized": {
+            "log2_exposed": 6.870364719583405,
+            "log2_exposed_over_n": 0.6245786108712186,
+            "log2_rs_shell": 7.727920454563199,
+            "log2_rs_shell_over_n": 0.702538223142109,
+            "optimizer_mutual_information_bits": 4.726241014903272,
+            "optimizer_mutual_information_over_n": 0.42965827408211565
+          },
+          "optimizer_information": {
+            "H_Z_bits": 5.865232431869379,
+            "H_Z_given_F_bits": 1.1389914169661066,
+            "I_F_Z_bits": 4.726241014903272,
+            "effective_support": 58.292260029974344,
+            "max_tie_count": 24,
+            "mean_tie_count": 3.1464573732718892
+          },
+          "radius": 3,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 69,
+              "log2_lower_bound_over_n": 0.5534057128409399,
+              "log2_upper_bound_over_n": 0.5534057128409399,
+              "lower_bound": 68,
+              "optimum": 68,
+              "reduced_constraint_count": 79,
+              "selected_candidate_indices": [
+                0,
+                1,
+                4,
+                5,
+                6,
+                8,
+                9,
+                14,
+                15,
+                18,
+                19,
+                24,
+                25,
+                27,
+                31,
+                36,
+                38,
+                40,
+                41,
+                44,
+                46,
+                52,
+                53,
+                54,
+                56,
+                57,
+                58,
+                59,
+                61,
+                62,
+                64,
+                65,
+                66,
+                67,
+                70,
+                71,
+                72,
+                73,
+                75,
+                77,
+                80,
+                81,
+                83,
+                84,
+                85,
+                89,
+                90,
+                92,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                106,
+                107,
+                108,
+                109,
+                111,
+                112,
+                114,
+                115,
+                116
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 68
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 31,
+              "log2_lower_bound_over_n": 0.45038148276244316,
+              "log2_upper_bound_over_n": 0.45038148276244316,
+              "lower_bound": 31,
+              "optimum": 31,
+              "reduced_constraint_count": 41,
+              "selected_candidate_indices": [
+                1,
+                5,
+                6,
+                8,
+                9,
+                14,
+                18,
+                19,
+                24,
+                31,
+                36,
+                40,
+                41,
+                46,
+                53,
+                54,
+                58,
+                62,
+                70,
+                75,
+                80,
+                81,
+                83,
+                84,
+                85,
+                89,
+                91,
+                100,
+                101,
+                107,
+                112
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 31
+            },
+            "4": {
+              "exact": false,
+              "greedy_upper_bound": 22,
+              "log2_lower_bound_over_n": 0.3790840910402102,
+              "log2_upper_bound_over_n": 0.3929025540806693,
+              "lower_bound": 18,
+              "optimum": null,
+              "reduced_constraint_count": 7756,
+              "selected_candidate_indices": null,
+              "status": "FEASIBLE",
+              "upper_bound": 20
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 1.4719168036371981,
+            "normalized_entropy_by_log_contexts": 0.09971288115046241,
+            "response_minus_base_cap_histogram": {
+              "0": 1,
+              "2": 4494,
+              "4": 10540,
+              "6": 12741
+            }
+          },
+          "rs_shell_size": 212,
+          "rs_shell_width": 6
+        }
+      ],
+      "source": "[{\"classification\": \"solver-certified computation; no standalone proof object\", \"file\": \"computations/results/bridge_grid_4_7_sign-1_cap17.json\", \"keypath\": \"parent_matrix\"}]"
+    },
+    {
+      "M_n": 17,
+      "cap": 19,
+      "cap_excess": 2,
+      "edge_count": 55,
+      "label": "one-step near-minimizer",
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "matrix_sha256": "0ac65307f67817bad89e3feac1fb38c6aafbc2a48bead9c6eaa157a12d39cc6b",
+      "n": 11,
+      "radii": [
+        {
+          "context_count": 56,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 39,
+              "greedy_packing_lower_bound": 39
+            },
+            "4": {
+              "greedy_cover_upper_bound": 3,
+              "greedy_packing_lower_bound": 3
+            },
+            "diameter": 8
+          },
+          "exposed_fraction_of_rs_shell": 0.6610169491525424,
+          "exposed_witness_count": 39,
+          "normalized": {
+            "log2_exposed": 5.285402218862249,
+            "log2_exposed_over_n": 0.480491110805659,
+            "log2_rs_shell": 5.882643049361842,
+            "log2_rs_shell_over_n": 0.5347857317601674,
+            "optimizer_mutual_information_bits": 2.0894702308949027,
+            "optimizer_mutual_information_over_n": 0.18995183917226388
+          },
+          "optimizer_information": {
+            "H_Z_bits": 3.5877859170552227,
+            "H_Z_given_F_bits": 1.4983156861603197,
+            "I_F_Z_bits": 2.0894702308949027,
+            "effective_support": 12.023507511961919,
+            "max_tie_count": 24,
+            "mean_tie_count": 3.8214285714285716
+          },
+          "radius": 1,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 9,
+              "log2_lower_bound_over_n": 0.2881750001311193,
+              "log2_upper_bound_over_n": 0.2881750001311193,
+              "lower_bound": 9,
+              "optimum": 9,
+              "reduced_constraint_count": 12,
+              "selected_candidate_indices": [
+                4,
+                14,
+                24,
+                25,
+                27,
+                28,
+                33,
+                35,
+                38
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 9
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 6,
+              "log2_lower_bound_over_n": 0.21108437226248747,
+              "log2_upper_bound_over_n": 0.21108437226248747,
+              "lower_bound": 5,
+              "optimum": 5,
+              "reduced_constraint_count": 33,
+              "selected_candidate_indices": [
+                10,
+                27,
+                29,
+                33,
+                38
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 5
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 1,
+              "log2_lower_bound_over_n": 0.0,
+              "log2_upper_bound_over_n": 0.0,
+              "lower_bound": 1,
+              "optimum": 1,
+              "reduced_constraint_count": 43,
+              "selected_candidate_indices": [
+                26
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 1
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 0.6175235405223873,
+            "normalized_entropy_by_log_contexts": 0.10633473393831983,
+            "response_minus_base_cap_histogram": {
+              "-2": 1,
+              "0": 6,
+              "2": 49
+            }
+          },
+          "rs_shell_size": 59,
+          "rs_shell_width": 4
+        },
+        {
+          "context_count": 1541,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 59,
+              "greedy_packing_lower_bound": 59
+            },
+            "4": {
+              "greedy_cover_upper_bound": 59,
+              "greedy_packing_lower_bound": 59
+            },
+            "diameter": 12
+          },
+          "exposed_fraction_of_rs_shell": 0.4957983193277311,
+          "exposed_witness_count": 59,
+          "normalized": {
+            "log2_exposed": 5.882643049361842,
+            "log2_exposed_over_n": 0.5347857317601674,
+            "log2_rs_shell": 6.894817763307944,
+            "log2_rs_shell_over_n": 0.6268016148461767,
+            "optimizer_mutual_information_bits": 3.574298284637491,
+            "optimizer_mutual_information_over_n": 0.32493620769431736
+          },
+          "optimizer_information": {
+            "H_Z_bits": 4.781718008137181,
+            "H_Z_given_F_bits": 1.2074197234996904,
+            "I_F_Z_bits": 3.574298284637491,
+            "effective_support": 27.506830497908226,
+            "max_tie_count": 24,
+            "mean_tie_count": 3.1836469824789098
+          },
+          "radius": 2,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 24,
+              "log2_lower_bound_over_n": 0.41681477279283236,
+              "log2_upper_bound_over_n": 0.41681477279283236,
+              "lower_bound": 24,
+              "optimum": 24,
+              "reduced_constraint_count": 28,
+              "selected_candidate_indices": [
+                5,
+                9,
+                12,
+                13,
+                14,
+                15,
+                17,
+                19,
+                20,
+                21,
+                26,
+                28,
+                30,
+                33,
+                36,
+                37,
+                39,
+                41,
+                43,
+                45,
+                46,
+                51,
+                57,
+                58
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 24
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 11,
+              "log2_lower_bound_over_n": 0.3144937835124816,
+              "log2_upper_bound_over_n": 0.3144937835124816,
+              "lower_bound": 11,
+              "optimum": 11,
+              "reduced_constraint_count": 23,
+              "selected_candidate_indices": [
+                5,
+                13,
+                28,
+                30,
+                33,
+                36,
+                37,
+                40,
+                45,
+                51,
+                57
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 11
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 6,
+              "log2_lower_bound_over_n": 0.21108437226248747,
+              "log2_upper_bound_over_n": 0.21108437226248747,
+              "lower_bound": 5,
+              "optimum": 5,
+              "reduced_constraint_count": 771,
+              "selected_candidate_indices": [
+                5,
+                19,
+                36,
+                40,
+                51
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 5
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 1.4525324697399422,
+            "normalized_entropy_by_log_contexts": 0.13716528048405,
+            "response_minus_base_cap_histogram": {
+              "-2": 1,
+              "0": 217,
+              "2": 656,
+              "4": 667
+            }
+          },
+          "rs_shell_size": 119,
+          "rs_shell_width": 6
+        },
+        {
+          "context_count": 27776,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 119,
+              "greedy_packing_lower_bound": 119
+            },
+            "4": {
+              "greedy_cover_upper_bound": 119,
+              "greedy_packing_lower_bound": 119
+            },
+            "diameter": 18
+          },
+          "exposed_fraction_of_rs_shell": 0.5891089108910891,
+          "exposed_witness_count": 119,
+          "normalized": {
+            "log2_exposed": 6.894817763307944,
+            "log2_exposed_over_n": 0.6268016148461767,
+            "log2_rs_shell": 7.658211482751795,
+            "log2_rs_shell_over_n": 0.6962010438865268,
+            "optimizer_mutual_information_bits": 4.274092004607809,
+            "optimizer_mutual_information_over_n": 0.38855381860070987
+          },
+          "optimizer_information": {
+            "H_Z_bits": 5.35601846077275,
+            "H_Z_given_F_bits": 1.081926456164941,
+            "I_F_Z_bits": 4.274092004607809,
+            "effective_support": 40.9564413196224,
+            "max_tie_count": 24,
+            "mean_tie_count": 2.7502880184331797
+          },
+          "radius": 3,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 71,
+              "log2_lower_bound_over_n": 0.5590679199549711,
+              "log2_upper_bound_over_n": 0.5590679199549711,
+              "lower_bound": 71,
+              "optimum": 71,
+              "reduced_constraint_count": 72,
+              "selected_candidate_indices": [
+                0,
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                11,
+                14,
+                15,
+                17,
+                20,
+                21,
+                27,
+                30,
+                31,
+                35,
+                38,
+                39,
+                41,
+                42,
+                44,
+                46,
+                48,
+                49,
+                50,
+                55,
+                57,
+                58,
+                59,
+                60,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                77,
+                78,
+                81,
+                82,
+                83,
+                85,
+                86,
+                88,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                101,
+                102,
+                103,
+                104,
+                105,
+                108,
+                110,
+                111,
+                112,
+                114,
+                116
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 71
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 43,
+              "log2_lower_bound_over_n": 0.4902106747980692,
+              "log2_upper_bound_over_n": 0.4902106747980692,
+              "lower_bound": 42,
+              "optimum": 42,
+              "reduced_constraint_count": 70,
+              "selected_candidate_indices": [
+                0,
+                7,
+                13,
+                14,
+                15,
+                20,
+                23,
+                27,
+                31,
+                35,
+                38,
+                39,
+                41,
+                42,
+                45,
+                47,
+                48,
+                50,
+                55,
+                57,
+                62,
+                63,
+                64,
+                65,
+                67,
+                70,
+                73,
+                74,
+                75,
+                81,
+                82,
+                84,
+                86,
+                88,
+                90,
+                92,
+                93,
+                95,
+                102,
+                111,
+                112,
+                116
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 42
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 20,
+              "log2_lower_bound_over_n": 0.3715875310227581,
+              "log2_upper_bound_over_n": 0.3715875310227581,
+              "lower_bound": 17,
+              "optimum": 17,
+              "reduced_constraint_count": 1059,
+              "selected_candidate_indices": [
+                7,
+                20,
+                27,
+                31,
+                41,
+                48,
+                63,
+                65,
+                66,
+                72,
+                73,
+                74,
+                81,
+                86,
+                92,
+                102,
+                116
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 17
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 1.647964482979744,
+            "normalized_entropy_by_log_contexts": 0.11163897730190277,
+            "response_minus_base_cap_histogram": {
+              "-2": 1,
+              "0": 1176,
+              "2": 13554,
+              "4": 8528,
+              "6": 4517
+            }
+          },
+          "rs_shell_size": 202,
+          "rs_shell_width": 8
+        }
+      ],
+      "source": "blind audit one-edge neighborhood; edge=[0, 1]"
+    },
+    {
+      "M_n": 17,
+      "cap": 25,
+      "cap_excess": 8,
+      "edge_count": 55,
+      "label": "uniform random",
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          0,
+          1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "matrix_sha256": "34ae8183768bd0ee0e9cadd0aef710c0fb7a36fdb1e3ce061e57af2bf004261b",
+      "n": 11,
+      "radii": [
+        {
+          "context_count": 56,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 5,
+              "greedy_packing_lower_bound": 5
+            },
+            "4": {
+              "greedy_cover_upper_bound": 3,
+              "greedy_packing_lower_bound": 3
+            },
+            "diameter": 8
+          },
+          "exposed_fraction_of_rs_shell": 0.07936507936507936,
+          "exposed_witness_count": 5,
+          "normalized": {
+            "log2_exposed": 2.321928094887362,
+            "log2_exposed_over_n": 0.21108437226248747,
+            "log2_rs_shell": 5.977279923499917,
+            "log2_rs_shell_over_n": 0.5433890839545379,
+            "optimizer_mutual_information_bits": 1.2498050737276258,
+            "optimizer_mutual_information_over_n": 0.1136186430661478
+          },
+          "optimizer_information": {
+            "H_Z_bits": 1.5533765022990544,
+            "H_Z_given_F_bits": 0.30357142857142855,
+            "I_F_Z_bits": 1.2498050737276258,
+            "effective_support": 2.9350325482638926,
+            "max_tie_count": 2,
+            "mean_tie_count": 1.3035714285714286
+          },
+          "radius": 1,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 3,
+              "log2_lower_bound_over_n": 0.14408750006555965,
+              "log2_upper_bound_over_n": 0.14408750006555965,
+              "lower_bound": 3,
+              "optimum": 3,
+              "reduced_constraint_count": 3,
+              "selected_candidate_indices": [
+                0,
+                3,
+                4
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 3
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 1,
+              "log2_lower_bound_over_n": 0.0,
+              "log2_upper_bound_over_n": 0.0,
+              "lower_bound": 1,
+              "optimum": 1,
+              "reduced_constraint_count": 1,
+              "selected_candidate_indices": [
+                0
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 1
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 1,
+              "log2_lower_bound_over_n": 0.0,
+              "log2_upper_bound_over_n": 0.0,
+              "lower_bound": 1,
+              "optimum": 1,
+              "reduced_constraint_count": 1,
+              "selected_candidate_indices": [
+                0
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 1
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 1.562641815818306,
+            "normalized_entropy_by_log_contexts": 0.2690797853396304,
+            "response_minus_base_cap_histogram": {
+              "-2": 23,
+              "0": 18,
+              "2": 15
+            }
+          },
+          "rs_shell_size": 63,
+          "rs_shell_width": 10
+        },
+        {
+          "context_count": 1541,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 26,
+              "greedy_packing_lower_bound": 26
+            },
+            "4": {
+              "greedy_cover_upper_bound": 26,
+              "greedy_packing_lower_bound": 26
+            },
+            "diameter": 16
+          },
+          "exposed_fraction_of_rs_shell": 0.23423423423423423,
+          "exposed_witness_count": 26,
+          "normalized": {
+            "log2_exposed": 4.700439718141092,
+            "log2_exposed_over_n": 0.42731270164919016,
+            "log2_rs_shell": 6.794415866350106,
+            "log2_rs_shell_over_n": 0.6176741696681914,
+            "optimizer_mutual_information_bits": 2.38247863967557,
+            "optimizer_mutual_information_over_n": 0.21658896724323365
+          },
+          "optimizer_information": {
+            "H_Z_bits": 3.01135429043096,
+            "H_Z_given_F_bits": 0.62887565075539,
+            "I_F_Z_bits": 2.38247863967557,
+            "effective_support": 8.063209966288941,
+            "max_tie_count": 8,
+            "mean_tie_count": 1.8416612589227774
+          },
+          "radius": 2,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 16,
+              "log2_lower_bound_over_n": 0.36363636363636365,
+              "log2_upper_bound_over_n": 0.36363636363636365,
+              "lower_bound": 16,
+              "optimum": 16,
+              "reduced_constraint_count": 16,
+              "selected_candidate_indices": [
+                0,
+                1,
+                4,
+                5,
+                6,
+                8,
+                9,
+                10,
+                11,
+                14,
+                15,
+                17,
+                19,
+                20,
+                21,
+                24
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 16
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 5,
+              "log2_lower_bound_over_n": 0.21108437226248747,
+              "log2_upper_bound_over_n": 0.21108437226248747,
+              "lower_bound": 5,
+              "optimum": 5,
+              "reduced_constraint_count": 5,
+              "selected_candidate_indices": [
+                4,
+                6,
+                13,
+                14,
+                15
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 5
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 3,
+              "log2_lower_bound_over_n": 0.14408750006555965,
+              "log2_upper_bound_over_n": 0.14408750006555965,
+              "lower_bound": 3,
+              "optimum": 3,
+              "reduced_constraint_count": 7,
+              "selected_candidate_indices": [
+                4,
+                14,
+                16
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 3
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 1.8630096962476783,
+            "normalized_entropy_by_log_contexts": 0.17592739085279716,
+            "response_minus_base_cap_histogram": {
+              "-2": 603,
+              "-4": 50,
+              "0": 587,
+              "2": 196,
+              "4": 105
+            }
+          },
+          "rs_shell_size": 111,
+          "rs_shell_width": 12
+        },
+        {
+          "context_count": 27776,
+          "contextual_affine_metric": {
+            "2": {
+              "greedy_cover_upper_bound": 62,
+              "greedy_packing_lower_bound": 62
+            },
+            "4": {
+              "greedy_cover_upper_bound": 62,
+              "greedy_packing_lower_bound": 62
+            },
+            "diameter": 22
+          },
+          "exposed_fraction_of_rs_shell": 0.3522727272727273,
+          "exposed_witness_count": 62,
+          "normalized": {
+            "log2_exposed": 5.954196310386875,
+            "log2_exposed_over_n": 0.5412905736715341,
+            "log2_rs_shell": 7.459431618637297,
+            "log2_rs_shell_over_n": 0.6781301471488452,
+            "optimizer_mutual_information_bits": 3.06393593994335,
+            "optimizer_mutual_information_over_n": 0.2785396309039409
+          },
+          "optimizer_information": {
+            "H_Z_bits": 3.7731215764019406,
+            "H_Z_given_F_bits": 0.7091856364585905,
+            "I_F_Z_bits": 3.06393593994335,
+            "effective_support": 13.67170792517069,
+            "max_tie_count": 14,
+            "mean_tie_count": 2.0516993087557602
+          },
+          "radius": 3,
+          "response_cover": {
+            "0": {
+              "exact": true,
+              "greedy_upper_bound": 31,
+              "log2_lower_bound_over_n": 0.45038148276244316,
+              "log2_upper_bound_over_n": 0.45038148276244316,
+              "lower_bound": 31,
+              "optimum": 31,
+              "reduced_constraint_count": 31,
+              "selected_candidate_indices": [
+                2,
+                3,
+                5,
+                6,
+                7,
+                9,
+                10,
+                11,
+                12,
+                13,
+                19,
+                21,
+                22,
+                23,
+                25,
+                26,
+                29,
+                31,
+                32,
+                33,
+                38,
+                43,
+                44,
+                45,
+                46,
+                47,
+                52,
+                53,
+                55,
+                60,
+                61
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 31
+            },
+            "2": {
+              "exact": true,
+              "greedy_upper_bound": 18,
+              "log2_lower_bound_over_n": 0.3790840910402102,
+              "log2_upper_bound_over_n": 0.3790840910402102,
+              "lower_bound": 18,
+              "optimum": 18,
+              "reduced_constraint_count": 18,
+              "selected_candidate_indices": [
+                2,
+                3,
+                9,
+                11,
+                13,
+                19,
+                21,
+                22,
+                23,
+                26,
+                32,
+                33,
+                38,
+                43,
+                45,
+                46,
+                47,
+                55
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 18
+            },
+            "4": {
+              "exact": true,
+              "greedy_upper_bound": 7,
+              "log2_lower_bound_over_n": 0.25521408382341854,
+              "log2_upper_bound_over_n": 0.25521408382341854,
+              "lower_bound": 7,
+              "optimum": 7,
+              "reduced_constraint_count": 21,
+              "selected_candidate_indices": [
+                3,
+                9,
+                11,
+                13,
+                23,
+                32,
+                33
+              ],
+              "status": "OPTIMAL",
+              "upper_bound": 7
+            }
+          },
+          "response_distribution": {
+            "entropy_bits": 2.114797519880834,
+            "normalized_entropy_by_log_contexts": 0.1432639081475876,
+            "response_minus_base_cap_histogram": {
+              "-2": 7997,
+              "-4": 3151,
+              "0": 10409,
+              "2": 4705,
+              "4": 1059,
+              "6": 455
+            }
+          },
+          "rs_shell_size": 176,
+          "rs_shell_width": 14
+        }
+      ],
+      "source": "seed=20260817; order-local draw=0"
+    }
+  ],
+  "schema": "nearmin-radial-response-roof-audit-v1",
+  "seed": 20260817,
+  "status": "EXACT FINITE ENUMERATION; COVER OPTIMALITY LABELLED PER ENTRY",
+  "summary": [
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.4528301886792453,
+        "median": 0.4528301886792453,
+        "min": 0.4528301886792453
+      },
+      "label": "exact minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.41681477279283236,
+        "median": 0.41681477279283236,
+        "min": 0.41681477279283236
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.5207200413239271,
+        "median": 0.5207200413239271,
+        "min": 0.5207200413239271
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.14398175328274956,
+        "median": 0.14398175328274956,
+        "min": 0.14398175328274956
+      },
+      "n": 11,
+      "radius": 1,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.02225346592043596,
+        "median": 0.02225346592043596,
+        "min": 0.02225346592043596
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.41681477279283236,
+        "median": 0.41681477279283236,
+        "min": 0.41681477279283236
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.18181818181818182,
+        "median": 0.18181818181818182,
+        "min": 0.18181818181818182
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.4770843194039623,
+        "median": 0.4770843194039623,
+        "min": 0.4770843194039623
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.452991452991453,
+        "median": 0.452991452991453,
+        "min": 0.452991452991453
+      },
+      "label": "exact minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.5207200413239271,
+        "median": 0.5207200413239271,
+        "min": 0.5207200413239271
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.6245786108712186,
+        "median": 0.6245786108712186,
+        "min": 0.6245786108712186
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.3255851001093234,
+        "median": 0.3255851001093234,
+        "min": 0.3255851001093234
+      },
+      "n": 11,
+      "radius": 2,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.054965987983807675,
+        "median": 0.054965987983807675,
+        "min": 0.054965987983807675
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.45038148276244316,
+        "median": 0.45038148276244316,
+        "min": 0.45038148276244316
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.3929025540806693,
+        "median": 0.3929025540806693,
+        "min": 0.3929025540806693
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.5534057128409399,
+        "median": 0.5534057128409399,
+        "min": 0.5534057128409399
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.5518867924528302,
+        "median": 0.5518867924528302,
+        "min": 0.5518867924528302
+      },
+      "label": "exact minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.6245786108712186,
+        "median": 0.6245786108712186,
+        "min": 0.6245786108712186
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.702538223142109,
+        "median": 0.702538223142109,
+        "min": 0.702538223142109
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.42965827408211565,
+        "median": 0.42965827408211565,
+        "min": 0.42965827408211565
+      },
+      "n": 11,
+      "radius": 3,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.09971288115046241,
+        "median": 0.09971288115046241,
+        "min": 0.09971288115046241
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 2.0,
+        "median": 2.0,
+        "min": 2.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.2881750001311193,
+        "median": 0.2881750001311193,
+        "min": 0.2881750001311193
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.6610169491525424,
+        "median": 0.6610169491525424,
+        "min": 0.6610169491525424
+      },
+      "label": "one-step near-minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.480491110805659,
+        "median": 0.480491110805659,
+        "min": 0.480491110805659
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.5347857317601674,
+        "median": 0.5347857317601674,
+        "min": 0.5347857317601674
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.18995183917226388,
+        "median": 0.18995183917226388,
+        "min": 0.18995183917226388
+      },
+      "n": 11,
+      "radius": 1,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.10633473393831983,
+        "median": 0.10633473393831983,
+        "min": 0.10633473393831983
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 2.0,
+        "median": 2.0,
+        "min": 2.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.3144937835124816,
+        "median": 0.3144937835124816,
+        "min": 0.3144937835124816
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.41681477279283236,
+        "median": 0.41681477279283236,
+        "min": 0.41681477279283236
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.4957983193277311,
+        "median": 0.4957983193277311,
+        "min": 0.4957983193277311
+      },
+      "label": "one-step near-minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.5347857317601674,
+        "median": 0.5347857317601674,
+        "min": 0.5347857317601674
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.6268016148461767,
+        "median": 0.6268016148461767,
+        "min": 0.6268016148461767
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.32493620769431736,
+        "median": 0.32493620769431736,
+        "min": 0.32493620769431736
+      },
+      "n": 11,
+      "radius": 2,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.13716528048405,
+        "median": 0.13716528048405,
+        "min": 0.13716528048405
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 2.0,
+        "median": 2.0,
+        "min": 2.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.4902106747980692,
+        "median": 0.4902106747980692,
+        "min": 0.4902106747980692
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.3715875310227581,
+        "median": 0.3715875310227581,
+        "min": 0.3715875310227581
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.5590679199549711,
+        "median": 0.5590679199549711,
+        "min": 0.5590679199549711
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.5891089108910891,
+        "median": 0.5891089108910891,
+        "min": 0.5891089108910891
+      },
+      "label": "one-step near-minimizer",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.6268016148461767,
+        "median": 0.6268016148461767,
+        "min": 0.6268016148461767
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.6962010438865268,
+        "median": 0.6962010438865268,
+        "min": 0.6962010438865268
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.38855381860070987,
+        "median": 0.38855381860070987,
+        "min": 0.38855381860070987
+      },
+      "n": 11,
+      "radius": 3,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.11163897730190277,
+        "median": 0.11163897730190277,
+        "min": 0.11163897730190277
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 8.0,
+        "median": 8.0,
+        "min": 8.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.14408750006555965,
+        "median": 0.14408750006555965,
+        "min": 0.14408750006555965
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.07936507936507936,
+        "median": 0.07936507936507936,
+        "min": 0.07936507936507936
+      },
+      "label": "uniform random",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.5433890839545379,
+        "median": 0.5433890839545379,
+        "min": 0.5433890839545379
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.1136186430661478,
+        "median": 0.1136186430661478,
+        "min": 0.1136186430661478
+      },
+      "n": 11,
+      "radius": 1,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.2690797853396304,
+        "median": 0.2690797853396304,
+        "min": 0.2690797853396304
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 8.0,
+        "median": 8.0,
+        "min": 8.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.21108437226248747,
+        "median": 0.21108437226248747,
+        "min": 0.21108437226248747
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.14408750006555965,
+        "median": 0.14408750006555965,
+        "min": 0.14408750006555965
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.36363636363636365,
+        "median": 0.36363636363636365,
+        "min": 0.36363636363636365
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.23423423423423423,
+        "median": 0.23423423423423423,
+        "min": 0.23423423423423423
+      },
+      "label": "uniform random",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.42731270164919016,
+        "median": 0.42731270164919016,
+        "min": 0.42731270164919016
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.6176741696681914,
+        "median": 0.6176741696681914,
+        "min": 0.6176741696681914
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.21658896724323365,
+        "median": 0.21658896724323365,
+        "min": 0.21658896724323365
+      },
+      "n": 11,
+      "radius": 2,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.17592739085279716,
+        "median": 0.17592739085279716,
+        "min": 0.17592739085279716
+      }
+    },
+    {
+      "cap_excess": {
+        "count": 1,
+        "max": 8.0,
+        "median": 8.0,
+        "min": 8.0
+      },
+      "cover2_log2_over_n": {
+        "count": 1,
+        "max": 0.3790840910402102,
+        "median": 0.3790840910402102,
+        "min": 0.3790840910402102
+      },
+      "cover4_log2_over_n": {
+        "count": 1,
+        "max": 0.25521408382341854,
+        "median": 0.25521408382341854,
+        "min": 0.25521408382341854
+      },
+      "exact_cover0_log2_over_n": {
+        "count": 1,
+        "max": 0.45038148276244316,
+        "median": 0.45038148276244316,
+        "min": 0.45038148276244316
+      },
+      "exposed_fraction_shell": {
+        "count": 1,
+        "max": 0.3522727272727273,
+        "median": 0.3522727272727273,
+        "min": 0.3522727272727273
+      },
+      "label": "uniform random",
+      "log2_exposed_over_n": {
+        "count": 1,
+        "max": 0.5412905736715341,
+        "median": 0.5412905736715341,
+        "min": 0.5412905736715341
+      },
+      "log2_shell_over_n": {
+        "count": 1,
+        "max": 0.6781301471488452,
+        "median": 0.6781301471488452,
+        "min": 0.6781301471488452
+      },
+      "matrix_count": 1,
+      "mutual_information_over_n": {
+        "count": 1,
+        "max": 0.2785396309039409,
+        "median": 0.2785396309039409,
+        "min": 0.2785396309039409
+      },
+      "n": 11,
+      "radius": 3,
+      "response_entropy_normalized": {
+        "count": 1,
+        "max": 0.1432639081475876,
+        "median": 0.1432639081475876,
+        "min": 0.1432639081475876
+      }
+    }
+  ]
+}

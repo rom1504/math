@@ -1,0 +1,46 @@
+\section{Discussion and Future Directions}
+\label{sec:discussion}
+
+This section explains the parameter choices, nearby extensions, and finite-dimensional effectiveness questions.
+
+\subsection{Why degrees three and five}
+
+The low-order inverse relations \eqref{eq:low-inverse} explain the parameter search.  The hyperplane scheme has $H(t)=\arcsin t$, so its inverse $\sin\zeta$ has alternating nonlinear coefficients.  To increase the admissible radius, the first objective is to suppress the cubic inverse obstruction.  An anti-aligned third-chaos average changes $b_3$ in the correct direction.  Once $b_3$ is controlled, the next obstruction is quintic, and an aligned fifth-chaos average gives the next degree of freedom.
+
+The small two-dimensional perturbation $\eta \He_3(X)$ in the base threshold is also important.  A threshold depending only on the linear combination $Z+\sum_ds_dR_d$ would reduce to a hyperplane after rotation.  The $X$-dependent cubic term changes the coefficient integrals $\mathsf A_{a,b}$ and gives the higher coefficients the needed shape.
+
+\subsection{A degree \texorpdfstring{$7/9$}{7/9} extension}
+
+The coefficient formula immediately extends to additional odd degrees.  For instance, taking
+\[
+  D=\{3,5,7,9\},
+  \qquad
+  \sigma_d=(-1)^{(d-1)/2},
+\]
+keeps the same formula \eqref{eq:general-bm}.  A preliminary numerical search gives
+\begin{align*}
+  \eta&=0.12569605,&
+  s_3&=0.34199778,&
+  s_5&=0.05153822,\\
+  s_7&=0.00698313,&
+  s_9&=0.00090252.
+\end{align*}
+For the corresponding limiting model, the estimated value is
+\[
+  \gamma\approx0.88157525281,
+  \qquad
+  \KG\lesssim1.78180628572.
+\]
+This extension is not used in the main theorem.  It is included to indicate that the third/fifth scheme is not isolated: the same analytic and finite-transfer machinery applies to a broader family of Gaussianized Hermite-chaos averages.
+
+\subsection{Effective dimensions}
+
+Corollary~\ref{cor:finite-scheme} is qualitative: it proves the existence of sufficiently large finite length $N$, but it does not give a useful dimension bound.  For the Grothendieck constant as a mathematical constant, qualitative existence of a finite scheme is enough.  For an explicit algorithmic implementation, one should quantify the convergence $H_N\to H$ on the contour used in Theorem~\ref{thm:finite-transfer}.
+
+The natural route is a collision expansion, by which we mean an expansion separating terms with distinct indices from terms in which some indices repeat.  For fixed degree $d$ and fixed $k$, the polynomial $\He_k(P_{d,N})$ has a leading distinct-index component
+\[
+  \sqrt{k!}\,N^{-k/2}
+  \sum_{1\le i_1<\cdots<i_k\le N}
+  \He_d(U_{d,i_1})\cdots \He_d(U_{d,i_k}),
+\]
+which is homogeneous of total Hermite degree $dk$ and has $L^2$-norm squared $(N)_k/N^k\to1$.  The remaining collision terms have vanishing $L^2$ mass for fixed $d,k$.  This explains at the coefficient level why a limiting Hermite mode of order $k$ contributes correlation power $t^{dk}$.  Making this expansion uniform to the required degree would produce explicit finite-dimensional estimates.

@@ -45,3 +45,24 @@ to be impossible for actual bounded positive-cap signings. Corrected status
 is prominent in the canonical files; archiving earlier versions does not
 reinstate their applicability. New scalar information/rigidity scripts use
 explicit finite constructions; the mode LP reads tracked witness data.
+
+## Third checkpoint
+
+Snapshot `2026-09-17/192858Z` preserves1,946 research payloads,
+163,025,136 bytes. The independent snapshot verifier checks SHA-256.
+No credential candidate or unresolved oversized output was found; the
+same14 historical dynamic-reference flags remain, with no new hidden
+mathematical input. The source PDF for the focused Chatterjee--Ray
+stability comparison is preserved alongside the earlier primary papers.
+
+New canonical proofs cover same-order actual-sign regularization,
+favorable frame selection, codewise scalar-field universality, Gaussian
+perturbation stability, and scoped full-sign counterexamples. Their
+independent audit status is stated in each file. The corresponding
+exploratory and superseded proofs remain preserved. Numerical scripts
+use explicit examples/seeds or tracked witness files; floating-point
+diagnostics are distinguished from exact integer energy enumeration.
+
+Some live researchers continued editing during the snapshot. Later
+versions will be canonical in this commit or preserved at the next
+checkpoint; a snapshot is not a reason to discard ongoing work.
