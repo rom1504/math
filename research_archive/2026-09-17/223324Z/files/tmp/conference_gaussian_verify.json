@@ -1,0 +1,94 @@
+{
+  "classification": "proved exact Gaussian expectation and sharp universal pointwise barrier for one-flip local improvement",
+  "finite_exact_audits": [
+    {
+      "conference_multiplier": 5,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "exhaustive_local_maximum_audit": {
+        "energy_histogram": {
+          "5": 6
+        },
+        "minimum_positive_local_maximum_energy": 5,
+        "order": 6,
+        "projective_spin_count": 32,
+        "strict_positive_local_maximum_count": 6
+      },
+      "gaussian_rounding_expected_energy": 4.427508529512998,
+      "gaussian_rounding_expected_normalized_energy": 0.3012537980313089,
+      "k": 1,
+      "order": 6,
+      "root_trap": {
+        "exact_energy": 5,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 5,
+          "5": 1
+        },
+        "normalized_energy": 0.34020690871988585,
+        "positive_bit_hex_little_endian": "1f",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    },
+    {
+      "conference_multiplier": 17,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "exhaustive_local_maximum_audit": {
+        "energy_histogram": {
+          "17": 18,
+          "33": 102
+        },
+        "minimum_positive_local_maximum_energy": 17,
+        "order": 18,
+        "projective_spin_count": 131072,
+        "strict_positive_local_maximum_count": 120
+      },
+      "gaussian_rounding_expected_energy": 23.861613895475013,
+      "gaussian_rounding_expected_normalized_energy": 0.3124575739915839,
+      "k": 2,
+      "order": 18,
+      "root_trap": {
+        "exact_energy": 17,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 17,
+          "17": 1
+        },
+        "normalized_energy": 0.22260769037354272,
+        "positive_bit_hex_little_endian": "12fcf",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    },
+    {
+      "conference_multiplier": 37,
+      "exact_gaussian_rounding_expectation_formula": "N*(N-1)/pi*asin(1/sqrt(N-1))",
+      "gaussian_rounding_expected_energy": 73.91125013602233,
+      "gaussian_rounding_expected_normalized_energy": 0.31552600091096866,
+      "k": 3,
+      "order": 38,
+      "root_trap": {
+        "exact_energy": 37,
+        "fixed_by_synchronous_sign_Sx": true,
+        "is_sign_of_top_projection_P_plus_x": true,
+        "local_field_histogram": {
+          "1": 37,
+          "37": 1
+        },
+        "normalized_energy": 0.15795243636416353,
+        "positive_bit_hex_little_endian": "9c57fa65f",
+        "root": 0,
+        "strict_one_flip_local_maximum": true
+      }
+    }
+  ],
+  "schema": "quadratic-signing-conference-gaussian-local-rounding-v1",
+  "universal_results": {
+    "asymptotic_expected_constant": "1/pi",
+    "gaussian_expectation": "E H(sign(g))=N*(N-1)/pi*asin(1/sqrt(N-1)) for g~N(0,P_plus)",
+    "sharp_local_maximum_lower_bound": "every positive one-flip local maximum has H>=N-1",
+    "sharp_root_trap": "x=e_r+S e_r has H=N-1, local fields {N-1,1,...,1}, x=sign(P_plus x), and sign(Sx)=x"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "exact_all_query_walsh_and_cap_checks": 81600,
+  "exact_fourier_coefficient_checks": 16,
+  "exact_matrices": 80,
+  "exact_orders": [
+    {
+      "all_queries_per_matrix": 32,
+      "matrices": 10,
+      "order": 5
+    },
+    {
+      "all_queries_per_matrix": 64,
+      "matrices": 10,
+      "order": 6
+    },
+    {
+      "all_queries_per_matrix": 128,
+      "matrices": 10,
+      "order": 7
+    },
+    {
+      "all_queries_per_matrix": 256,
+      "matrices": 10,
+      "order": 8
+    },
+    {
+      "all_queries_per_matrix": 512,
+      "matrices": 10,
+      "order": 9
+    },
+    {
+      "all_queries_per_matrix": 1024,
+      "matrices": 10,
+      "order": 10
+    },
+    {
+      "all_queries_per_matrix": 2048,
+      "matrices": 10,
+      "order": 11
+    },
+    {
+      "all_queries_per_matrix": 4096,
+      "matrices": 10,
+      "order": 12
+    }
+  ],
+  "finite_diagnostics": [
+    {
+      "normalized_cap": 0.44194173824159216,
+      "order": 8,
+      "power_responses_float_diagnostic_only": [
+        {
+          "maximum_deviation_from_kappa": 0.1743872633286374,
+          "maximum_normalized_response": 0.9722718241315028,
+          "minimum_normalized_response": 0.6692260607658396,
+          "power": 1
+        },
+        {
+          "maximum_deviation_from_kappa": 0.3049507616314834,
+          "maximum_normalized_response": 1.1028353224343488,
+          "minimum_normalized_response": 0.6290378852941241,
+          "power": 2
+        },
+        {
+          "maximum_deviation_from_kappa": 0.4017893275665406,
+          "maximum_normalized_response": 1.199673888369406,
+          "minimum_normalized_response": 0.6230391976363243,
+          "power": 3
+        },
+        {
+          "maximum_deviation_from_kappa": 0.4700162095619821,
+          "maximum_normalized_response": 1.2679007703648475,
+          "minimum_normalized_response": 0.6256330511349016,
+          "power": 4
+        }
+      ]
+    },
+    {
+      "normalized_cap": 0.4811252243246881,
+      "order": 12,
+      "power_responses_float_diagnostic_only": [
+        {
+          "maximum_deviation_from_kappa": 0.11378463246619941,
+          "maximum_normalized_response": 0.877370117880731,
+          "minimum_normalized_response": 0.684099928336666,
+          "power": 1
+        },
+        {
+          "maximum_deviation_from_kappa": 0.1933434057631811,
+          "maximum_normalized_response": 0.9421840231881854,
+          "minimum_normalized_response": 0.6045411550396843,
+          "power": 2
+        },
+        {
+          "maximum_deviation_from_kappa": 0.26297695846382996,
+          "maximum_normalized_response": 0.9920541549867554,
+          "minimum_normalized_response": 0.5349076023390354,
+          "power": 3
+        },
+        {
+          "maximum_deviation_from_kappa": 0.32414952858207624,
+          "maximum_normalized_response": 1.0340084398034828,
+          "minimum_normalized_response": 0.47373503222078917,
+          "power": 4
+        }
+      ]
+    },
+    {
+      "normalized_cap": 0.5,
+      "order": 16,
+      "power_responses_float_diagnostic_only": [
+        {
+          "maximum_deviation_from_kappa": 0.0668615329471346,
+          "maximum_normalized_response": 0.86474609375,
+          "minimum_normalized_response": 0.74443359375,
+          "power": 1
+        },
+        {
+          "maximum_deviation_from_kappa": 0.11509180446712053,
+          "maximum_normalized_response": 0.9129763652699859,
+          "minimum_normalized_response": 0.7298154255785414,
+          "power": 2
+        },
+        {
+          "maximum_deviation_from_kappa": 0.14563224614777948,
+          "maximum_normalized_response": 0.9435168069506449,
+          "minimum_normalized_response": 0.7148504901635133,
+          "power": 3
+        },
+        {
+          "maximum_deviation_from_kappa": 0.17647367558471594,
+          "maximum_normalized_response": 0.9743582363875813,
+          "minimum_normalized_response": 0.6768971253691751,
+          "power": 4
+        }
+      ]
+    }
+  ],
+  "status": "PASS"
+}

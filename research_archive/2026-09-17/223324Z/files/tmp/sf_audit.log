@@ -1,0 +1,83 @@
+{
+  "claim": "SF.4 exact on every audited center and integer threshold",
+  "audits": [
+    {
+      "ambient_dimension": 4,
+      "subspaces_total": 67,
+      "grassmannian_size": 35,
+      "center_threshold_pairs_checked": 175,
+      "minimum_symmetric_radius_one_ball": 10,
+      "systematic_deformation_lower_bound": 4
+    },
+    {
+      "ambient_dimension": 5,
+      "subspaces_total": 374,
+      "grassmannian_size": 155,
+      "center_threshold_pairs_checked": 930,
+      "minimum_symmetric_radius_one_ball": 13,
+      "systematic_deformation_lower_bound": 4
+    }
+  ],
+  "rooted_lift_counterexample": {
+    "quotient_leader_weights": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    "common_sparse_flat_spectrum_at_one": {
+      "0": 1,
+      "1": 3
+    },
+    "symmetric_radius_one_ball_sizes": [
+      5,
+      7
+    ],
+    "direct_sum_kernel_diameters": [
+      {
+        "blocks": 1,
+        "weight_two": 2,
+        "weight_one": 1
+      },
+      {
+        "blocks": 2,
+        "weight_two": 4,
+        "weight_one": 2
+      },
+      {
+        "blocks": 3,
+        "weight_two": 6,
+        "weight_one": 3
+      },
+      {
+        "blocks": 4,
+        "weight_two": 8,
+        "weight_one": 4
+      },
+      {
+        "blocks": 5,
+        "weight_two": 10,
+        "weight_one": 5
+      },
+      {
+        "blocks": 6,
+        "weight_two": 12,
+        "weight_one": 6
+      },
+      {
+        "blocks": 7,
+        "weight_two": 14,
+        "weight_one": 7
+      },
+      {
+        "blocks": 8,
+        "weight_two": 16,
+        "weight_one": 8
+      }
+    ]
+  }
+}

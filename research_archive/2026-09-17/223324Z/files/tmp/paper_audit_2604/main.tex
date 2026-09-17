@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8, applemac]{inputenc}
+\usepackage{fontenc}
+\usepackage[italian,english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{physics}
+\usepackage{comment}
+\usepackage{amsfonts}
+\usepackage{layout}
+\usepackage{booktabs,array}
+\usepackage{epsfig}	
+\usepackage{dsfont}	
+\usepackage{slashed}
+\usepackage{amssymb}
+\usepackage{tensor}
+\usepackage{fancyhdr} 
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+\usepackage{colonequals}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+
+\usepackage{jones}
+\usepackage{xcolor}
+
+\usetikzlibrary{calc,fit,backgrounds,positioning}
+
+\renewcommand\chris[1]{\textsf{\small\color{YellowOrange}{[Chris: #1]}}}
+\newcommand\lucas[1]{\textsf{\small\color{purple}{[Lucas: #1]}}}
+\newcommand\nicola[1]{\textsf{\small\color{RubineRed}{[Nicola: #1]}}}
+\newcommand\tim[1]{\textsf{\small\color{TealBlue}{[Tim: #1]}}}
+
+\newcommand{\GUE}{\textnormal{GUE}}
+\newcommand{\eqinf}{\overset{\infty}{=}}
+\newcommand{\eqcactus}{\overset{\textnormal{cactus}}{=}}
+\newcommand{\PM}{\mathcal{M}_{\textnormal{perf}}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\into}{\hookrightarrow}
+\renewcommand{\vector}{\textnormal{vector}}
+\newcommand{\reg}{\textnormal{reg}}
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\nonloc}{\mathrm{nonloc}}
+
+\newcommand{\samp}{\mathrm{samp}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\newcommand{\Loc}{\mathrm{Loc}}
+
+\DeclareMathOperator{\CC}{CC}
+\DeclareMathOperator{\GCC}{GCC}
+
+\DeclareMathOperator{\type}{type}
+\DeclareMathOperator{\cactus}{cactus}
+
+\newcommand{\cyc}{\mathrm{cyc}}
+
+\newcommand{\mf}{\mathbf}
+\newcommand{\scalar}{\textnormal{scalar}}
+\newcommand{\rt}{\mathrm{root}}
+\newcommand{\NC}{\mathrm{NC}}
+\newcommand{\SAW}{\textnormal{SAW}}
+
+\newcommand{\core}{\textnormal{core}}
+\newcommand{\roott}{\textnormal{root}}
+\newcommand{\conn}{\mathrm{conn}}
+
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\cycles}{cycles}
+\DeclareMathOperator{\route}{route}
+\newcommand{\rrom}{\textsf{\upshape r-ROM}\xspace}
+\newcommand{\rom}{\textsf{\upshape ROM}\xspace}
+\newcommand{\goe}{\textsf{\upshape GOE}\xspace}
+\newcommand{\GOE}\goe
+\newcommand{\bGOE}{\textsf{\upshape BlockGOE}\xspace}
+
+\DeclareMathOperator{\block}{block}
+
+\title{Universality of first-order methods on random and \\ deterministic matrices}
+\author{Nicola Gorini\thanks{Bocconi University. \texttt{nicola.gorini@phd.unibocconi.it}}
+\and Chris Jones\thanks{UC Davis. \texttt{chijones@ucdavis.edu}}
+\and Dmitriy Kunisky\thanks{Johns Hopkins University. \texttt{kunisky@jhu.edu}}
+\and Lucas Pesenti\thanks{ETH Z{\"u}rich. \texttt{lpesenti@ethz.ch}}}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+    General first-order methods (GFOM) are a flexible class of iterative algorithms which update a state vector by matrix-vector multiplications and entrywise nonlinearities.
+    A long line of work has sought to understand the large-$n$ dynamics of GFOM, mostly focusing on ``very random'' input matrices and the approximate message passing (AMP) special case of GFOM whose state is asymptotically Gaussian.
+    Yet, it has long remained unknown how to construct iterative algorithms that retain this Gaussianity for more structured inputs, or why existing AMP algorithms can be as effective for some deterministic matrices as they are for random matrices.
+    
+    We analyze diagrammatic expansions of GFOM via the limiting \emph{traffic distribution} of the input matrix, the collection of all limiting values of permutation-invariant polynomials in the matrix entries, to obtain the following results:
+    \begin{enumerate}
+    \item We calculate the traffic distribution for the first non-trivial deterministic matrices,
+    including (minor variants of) the Walsh--Hadamard and discrete sine and cosine transform matrices.
+    This determines the limiting dynamics of GFOM on these inputs, resolving parts of longstanding conjectures of Marinari, Parisi, and Ritort (1994).
+    \item We design a new AMP iteration which unifies several previous AMP variants and generalizes to new input types,
+    whose limiting dynamics are Gaussian conditional on some latent random variables.
+    The asymptotic dynamics hold for a large and natural class of traffic distributions (encompassing both random and deterministic input matrices) and the algorithm's analysis gives a simple combinatorial interpretation of the Onsager correction, answering questions posed recently by Wang, Zhong, and Fan (2022).
+    \end{enumerate}
+\end{abstract}
+
+\clearpage
+
+\setcounter{tocdepth}{2}
+\pagestyle{empty}
+\tableofcontents
+
+\clearpage
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\input{intro}
+
+\input{prelim}
+
+\input{traffic-dist}
+
+\input{universality}
+
+\input{state-evolution}
+
+\bibliographystyle{alpha}
+{\footnotesize\bibliography{references}}
+
+\appendix
+
+\input{feynman-diagrams-physics}
+
+\input{appendix-weingarten-calculus}
+
+\input{appendix-preliminaries}
+
+\input{appendix-omitted}
+
+\end{document}

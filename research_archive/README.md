@@ -10,6 +10,12 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-17 22:33:24](2026-09-17/223324Z/README.md) | 1,977 research payloads;167,603,147 bytes; final feature realization, complete-child comparison, offset proofs/falsifiers, primary sources, all drafts and diagnostics | All payload hashes verified. Same14 historical/dynamic flags; no credential or unresolved oversized candidate. Canonical closing state and audit are committed separately. |
+| [2026-09-17 22:03:48](2026-09-17/220348Z/README.md) | 1,987 research payloads;165,971,551 bytes; non-Gaussian signs and sharp information/tail theorem | Hash verified; canonical status and limitations remain explicit. |
+| [2026-09-17 21:11:02](2026-09-17/211102Z/README.md) | 1,982 research payloads;166,773,868 bytes; operator-free actual-sign response and mixed-tail stability | Hash verified; independent proofs and lower-certificate replay preserved. |
+| [2026-09-17 20:22:02](2026-09-17/202202Z/README.md) | 1,968 research payloads;165,942,747 bytes; exact physical games and signed-covariance work | Hash verified; finite optimality labels distinguished from replayed response certificates. |
+| [2026-09-17 19:28:58](2026-09-17/192858Z/README.md) | 1,946 research payloads;163,025,136 bytes; actual-sign preparation and stability | Hash verified; continuing failures and drafts retained. |
+| [2026-09-17 18:31:02](2026-09-17/183102Z/README.md) | 1,936 research payloads;161,764,515 bytes; scope corrections and information/rounding proofs | Hash verified; vacuous applications explicitly corrected, not discarded. |
 | [2026-09-17 17:28:47](2026-09-17/172847Z/README.md) | 1,911 research payloads;161,017,043 bytes; reconstructed papers, cumulative rounding, information tradeoff, block universality, exact noise/geometry checks and ongoing failures | Hash verified; same14 historical/dynamic references; new standalone scripts manually checked. One rebuilt exact-cap executable excluded by reviewed source and binary hashes. Campaign continues. |
 | [2026-09-16 07:00:59](2026-09-16/070059Z/README.md) | 1,888 research payloads;157,463,634 bytes; actual-class power/filter barriers, planted sharpness, Bohr/Chebyshev comparison, frame/orbit proofs, fresh refinement audit and failures | All payload hashes verified. No credential, concurrent-write or unpreserved oversized candidate. Same14 reviewed historical/dynamic references; new-code dependencies manually checked. |
 | [2026-09-16 06:02:07](2026-09-16/060207Z/README.md) | 1,877 research payloads;154,816,421 bytes; primary BH proof reconstruction, exact power/entropy identities, nonlinear-filter barriers, joint-field and actual-port investigations | All payload hashes verified. No credential or unpreserved oversized candidate. Canonical proofs/scripts committed separately; ongoing and failed work remains explicitly labeled. |
@@ -82,7 +88,7 @@ certificate audit records the remaining completeness and replay boundaries.
 Latest publication audit: [2026-09-17 paper-combination campaign](publication_audit_papers_2026_09_17.md).
 The prior [2026-09-16 bounded BH-paper investigation](publication_audit_bh_2026_09_16.md)
 is historical.
-The closing snapshot verifies1,888 payloads. Changed canonical proofs/state
+The latest closing snapshot verifies1,977 payloads. Changed canonical proofs/state
 are preserved directly in the publication commits; other research originals
 match saved payloads. Working originals remain in place intentionally.
 The [earlier closing report](publication_audit_2026_09_07.md) is historical.

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "exact_signed_identity_cases": 123,
+  "float_diagnostics": "PSD, arcsine trace, and concavity; no finite CLT claim",
+  "isotropic_high_energy_cases": [
+    {
+      "n": 4,
+      "support": 4,
+      "covariance_norm": 1.0,
+      "average_energy_normalized": 0.375,
+      "signed_variance_statistic": 0.1196792630243047,
+      "guaranteed_statistic": 0.1193662073189215,
+      "gaussian_mixture_mean_factor": 0.9975785652087765
+    },
+    {
+      "n": 16,
+      "support": 16,
+      "covariance_norm": 1.0,
+      "average_energy_normalized": 0.46875,
+      "signed_variance_statistic": 0.1493050707696657,
+      "guaranteed_statistic": 0.1492077591486519,
+      "gaussian_mixture_mean_factor": 0.9969992285789011
+    },
+    {
+      "n": 64,
+      "support": 64,
+      "covariance_norm": 1.0,
+      "average_energy_normalized": 0.4921875,
+      "signed_variance_statistic": 0.15669365769128224,
+      "guaranteed_statistic": 0.15666814710608448,
+      "gaussian_mixture_mean_factor": 0.9968559386042829
+    }
+  ],
+  "largest_signed_variance_statistic": 0.2694055838188038
+}

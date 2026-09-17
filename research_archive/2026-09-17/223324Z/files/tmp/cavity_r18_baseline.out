@@ -1,0 +1,180 @@
+margin=max_i kappa_i-(q_r-q_{r-1}); softdrop=max_i(Phi_parent-Phi_child)
+beta 0.025
+  A2: margin=-1.950020819 softdrop=-0.689436472
+  A4: margin=-1.850311628 softdrop=+0.163298284
+  A5: margin=+0.198923139 softdrop=+0.291596591
+  A6: margin=-1.752574239 softdrop=+0.041293510
+  A7: margin=-7.700126764 softdrop=-0.285781498
+  A8: margin=-1.653834872 softdrop=+0.093073578
+  A9: margin=-3.602153722 softdrop=-0.000247233
+  named fixed-beta coefficient c required: 0.929066495
+beta 0.05
+  A2: margin=-1.900166224 softdrop=-0.671810211
+  A4: margin=-1.702472340 softdrop=+0.171690104
+  A5: margin=+0.391536552 softdrop=+0.298249614
+  A6: margin=-1.519907787 softdrop=+0.046637448
+  A7: margin=-7.401053930 softdrop=-0.279784218
+  A8: margin=-1.329306806 softdrop=+0.097402555
+  A9: margin=-3.216926895 softdrop=+0.004292784
+  named fixed-beta coefficient c required: 1.155084018
+beta 0.1
+  A2: margin=-1.801319282 softdrop=-0.636862540
+  A4: margin=-1.419145865 softdrop=+0.187104208
+  A5: margin=+0.736716473 softdrop=+0.308504940
+  A6: margin=-1.140545930 softdrop=+0.052652506
+  A7: margin=-6.809458170 softdrop=-0.266163375
+  A8: margin=-0.799152550 softdrop=+0.102267936
+  A9: margin=-2.526567055 softdrop=+0.011910133
+  named fixed-beta coefficient c required: 1.572043560
+beta 0.2
+  A2: margin=-1.610232573 softdrop=-0.569303186
+  A4: margin=-0.935999625 softdrop=+0.208831041
+  A5: margin=+1.197096911 softdrop=+0.312119680
+  A6: margin=-0.764693530 softdrop=+0.045764756
+  A7: margin=-5.691478884 softdrop=-0.232383043
+  A8: margin=-0.205926433 softdrop=+0.099255817
+  A9: margin=-1.605806177 softdrop=+0.017818222
+  named fixed-beta coefficient c required: 2.227848301
+beta 0.3
+  A2: margin=-1.432882377 softdrop=-0.506600423
+  A4: margin=-0.588154384 softdrop=+0.216424837
+  A5: margin=+1.378726302 softdrop=+0.297078404
+  A6: margin=-0.680126987 softdrop=+0.028800721
+  A7: margin=-4.726344485 softdrop=-0.196369212
+  A8: margin=+0.056545326 softdrop=+0.090831932
+  A9: margin=-1.242547396 softdrop=+0.011643155
+  named fixed-beta coefficient c required: 2.638435743
+beta 0.5
+  A2: margin=-1.132438339 softdrop=-0.400377414
+  A4: margin=-0.217556166 softdrop=+0.201954682
+  A5: margin=+1.332707383 softdrop=+0.247735962
+  A6: margin=-0.658008999 softdrop=+0.004069516
+  A7: margin=-3.336053530 softdrop=-0.138830948
+  A8: margin=+0.257889866 softdrop=+0.075197226
+  A9: margin=-1.334585234 softdrop=-0.016396278
+  named fixed-beta coefficient c required: 2.985311115
+beta 1.0
+  A2: margin=-0.674997253 softdrop=-0.238647567
+  A4: margin=-0.017814522 softdrop=+0.134359061
+  A5: margin=+0.880058056 softdrop=+0.151351422
+  A6: margin=-0.481158612 softdrop=-0.007854330
+  A7: margin=-1.780206569 softdrop=-0.073031053
+  A8: margin=+0.261149326 softdrop=+0.047619095
+  A9: margin=-2.239883887 softdrop=-0.077384973
+  named fixed-beta coefficient c required: 4.520286359
+beta 2.0
+  A2: margin=-0.346405887 softdrop=-0.122472976
+  A4: margin=-0.000167647 softdrop=+0.070074369
+  A5: margin=+0.457809971 softdrop=+0.077905484
+  A6: margin=-0.255133405 softdrop=-0.004913139
+  A7: margin=-0.895781745 softdrop=-0.036614874
+  A8: margin=+0.143589601 softdrop=+0.024732407
+  A9: margin=-3.084380058 softdrop=-0.125506325
+  named fixed-beta coefficient c required: 13.107189708
+beta 4.0
+  A2: margin=-0.173286767 softdrop=-0.061266124
+  A4: margin=-0.000000028 softdrop=+0.035064620
+  A5: margin=+0.229072627 softdrop=+0.038973698
+  A6: margin=-0.127706359 softdrop=-0.002466071
+  A7: margin=-0.447939851 softdrop=-0.018308120
+  A8: margin=+0.071920476 softdrop=+0.012375044
+  A9: margin=-3.541854747 softdrop=-0.151126692
+  named fixed-beta coefficient c required: 30.589539731
+A9 restriction census beta 0.05
+  r=3: worst cavity margin=-3.800332447; worst selected softdrop=-0.425251270
+       fixed-beta coefficient c required=0.857012278
+  r=4: worst cavity margin=-1.702472340; worst selected softdrop=+0.171690104
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+0.391536552; worst selected softdrop=+0.298249614
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-1.519907787; worst selected softdrop=+0.046637448
+       fixed-beta coefficient c required=0.693147181
+  r=7: worst cavity margin=-7.409021336; worst selected softdrop=-0.280536473
+       fixed-beta coefficient c required=1.156326027
+  r=8: worst cavity margin=-1.314476138; worst selected softdrop=+0.098057259
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-3.216926895; worst selected softdrop=+0.004292784
+       fixed-beta coefficient c required=0.693147181
+  all A9 restrictions coefficient c required: 1.156326027
+A9 restriction census beta 0.1
+  r=3: worst cavity margin=-3.602638563; worst selected softdrop=-0.403129633
+       fixed-beta coefficient c required=1.003828800
+  r=4: worst cavity margin=-1.419145865; worst selected softdrop=+0.187104208
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+0.736716473; worst selected softdrop=+0.308504940
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-1.140545930; worst selected softdrop=+0.052652506
+       fixed-beta coefficient c required=0.693147181
+  r=7: worst cavity margin=-6.871953469; worst selected softdrop=-0.271807429
+       fixed-beta coefficient c required=1.590680754
+  r=8: worst cavity margin=-0.702280479; worst selected softdrop=+0.106530469
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-2.526567055; worst selected softdrop=+0.011910133
+       fixed-beta coefficient c required=0.693147181
+  all A9 restrictions coefficient c required: 1.590680754
+A9 restriction census beta 0.2
+  r=3: worst cavity margin=-3.220465146; worst selected softdrop=-0.360365024
+       fixed-beta coefficient c required=1.248595255
+  r=4: worst cavity margin=-0.935999625; worst selected softdrop=+0.208831041
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+1.197096911; worst selected softdrop=+0.312119680
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-0.764693530; worst selected softdrop=+0.045764756
+       fixed-beta coefficient c required=0.693147181
+  r=7: worst cavity margin=-6.128393574; worst selected softdrop=-0.268122994
+       fixed-beta coefficient c required=2.463881632
+  r=8: worst cavity margin=+0.226408922; worst selected softdrop=+0.118066808
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-1.605806177; worst selected softdrop=+0.017818222
+       fixed-beta coefficient c required=0.693147181
+  all A9 restrictions coefficient c required: 2.463881632
+A9 restriction census beta 0.3
+  r=3: worst cavity margin=-2.865764755; worst selected softdrop=-0.320674603
+       fixed-beta coefficient c required=1.434554140
+  r=4: worst cavity margin=-0.588154384; worst selected softdrop=+0.216424837
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+1.378726302; worst selected softdrop=+0.297078404
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-0.680126987; worst selected softdrop=+0.028800721
+       fixed-beta coefficient c required=0.693147181
+  r=7: worst cavity margin=-5.861022919; worst selected softdrop=-0.283291167
+       fixed-beta coefficient c required=3.499509037
+  r=8: worst cavity margin=+0.857773276; worst selected softdrop=+0.125277833
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-1.242547396; worst selected softdrop=+0.011643155
+       fixed-beta coefficient c required=0.693147181
+  all A9 restrictions coefficient c required: 3.499509037
+A9 restriction census beta 0.5
+  r=3: worst cavity margin=-2.264876678; worst selected softdrop=-0.253436165
+       fixed-beta coefficient c required=1.669730789
+  r=4: worst cavity margin=-0.217556166; worst selected softdrop=+0.201954682
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+1.332707383; worst selected softdrop=+0.247735962
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-0.658008999; worst selected softdrop=+0.004069516
+       fixed-beta coefficient c required=0.693147181
+  r=7: worst cavity margin=-6.031231929; worst selected softdrop=-0.333419411
+       fixed-beta coefficient c required=6.198057713
+  r=8: worst cavity margin=+1.341071341; worst selected softdrop=+0.108943851
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-1.334585234; worst selected softdrop=-0.016396278
+       fixed-beta coefficient c required=1.098593054
+  all A9 restrictions coefficient c required: 6.198057713
+A9 restriction census beta 1.0
+  r=3: worst cavity margin=-1.349994505; worst selected softdrop=-0.151062278
+       fixed-beta coefficient c required=1.857345230
+  r=4: worst cavity margin=-0.017814522; worst selected softdrop=+0.134359061
+       fixed-beta coefficient c required=0.693147181
+  r=5: worst cavity margin=+0.880058056; worst selected softdrop=+0.151351422
+       fixed-beta coefficient c required=0.693147181
+  r=6: worst cavity margin=-0.481158612; worst selected softdrop=-0.093579691
+       fixed-beta coefficient c required=3.094762945
+  r=7: worst cavity margin=-6.781630027; worst selected softdrop=-0.420906647
+       fixed-beta coefficient c required=14.591878656
+  r=8: worst cavity margin=+0.708569377; worst selected softdrop=+0.039453863
+       fixed-beta coefficient c required=0.693147181
+  r=9: worst cavity margin=-2.239883887; worst selected softdrop=-0.077384973
+       fixed-beta coefficient c required=4.520286359
+  all A9 restrictions coefficient c required: 14.591878656
+A9 cavity-good beta interval on grid: None
+A9 best cavity margin/grid beta: -1.196917008232651 0.3620516344014527

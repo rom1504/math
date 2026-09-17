@@ -1,0 +1,67 @@
+{
+  "status": "floating-point diagnostic PASS; analytic proof is separate",
+  "examples": [
+    {
+      "proxy": 2.0,
+      "discount": 0.09077777961631794,
+      "radius": 5.985838142071664,
+      "theorem_loss_lower": 0.00017208545145393716,
+      "diagnostic_max_loss": 0.07155363581833374,
+      "diagnostic_offset": 0.6744897602190151,
+      "stop_loss_integral_x": 1.0000000000000002,
+      "stop_loss_integral_gaussian": 0.999999999999985
+    },
+    {
+      "proxy": 4.0,
+      "discount": 0.2978845608028654,
+      "radius": 7.628435623999098,
+      "theorem_loss_lower": 0.001454020456133145,
+      "diagnostic_max_loss": 0.0882929396567127,
+      "diagnostic_offset": 1.150349348991279,
+      "stop_loss_integral_x": 1.0,
+      "stop_loss_integral_gaussian": 0.999999999999985
+    },
+    {
+      "proxy": 9.0,
+      "discount": 0.4645512274695321,
+      "radius": 11.381295732069933,
+      "theorem_loss_lower": 0.002370202919156109,
+      "diagnostic_max_loss": 0.10907675725207211,
+      "diagnostic_offset": 1.5932188044303532,
+      "stop_loss_integral_x": 0.9999999999999996,
+      "stop_loss_integral_gaussian": 0.999999999999985
+    },
+    {
+      "proxy": 13.0,
+      "discount": 0.5205344626902508,
+      "radius": 13.811175701238836,
+      "theorem_loss_lower": 0.0024523267670101745,
+      "diagnostic_max_loss": 0.11041703408021109,
+      "diagnostic_offset": 1.7688250280958415,
+      "stop_loss_integral_x": 1.0000000000000009,
+      "stop_loss_integral_gaussian": 0.999999999999985
+    }
+  ],
+  "uniform_offset_examples": [
+    {
+      "offset_radius": 0.0,
+      "actual_averaged_gain": 0.15957691216057313,
+      "curvature_lower": 0.028050629090725733
+    },
+    {
+      "offset_radius": 0.5,
+      "actual_averaged_gain": 0.13838939290473073,
+      "curvature_lower": 0.017013566567752266
+    },
+    {
+      "offset_radius": 2.0,
+      "actual_averaged_gain": 0.02725185900105842,
+      "curvature_lower": 9.4099377490935e-06
+    },
+    {
+      "offset_radius": 5.0,
+      "actual_averaged_gain": 0.00019188771181399833,
+      "curvature_lower": 5.410264659402951e-24
+    }
+  ]
+}

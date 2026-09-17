@@ -1,0 +1,34 @@
+A10,m6 level-two shell atlas
+lambda2=1/70, active_caps=[10, 42, 74, 106, 138]
+cap= 10 shell_scaled=2/3 prefix_gap=1/75
+cap= 42 shell_scaled=3574/105 prefix_gap=911/43050
+cap= 74 shell_scaled=32348/21 prefix_gap=27564/471275
+cap=106 shell_scaled=1507256/105 prefix_gap=5227/42105
+cap=138 shell_scaled=1549132/105 prefix_gap=268481/1664950
+row10 center=(1, 1, -1, -1, 1, -1, 1, 1, -1, 1) family_size=5 adjacent_pairs=0 ordered_intersections={2: 10, 4: 10, 6: 5}
+row10 center=(1, 1, -1, 1, -1, -1, -1, -1, 1, 1) family_size=5 adjacent_pairs=0 ordered_intersections={2: 10, 4: 10, 6: 5}
+row10-incidence one-flip row histogram={42: 40}
+number of adjacent favorable selectors to seed after one outside flip={1: 40}
+maximal-selector qstar=22, port_checks=3840, equality_pairs=0, strict_pairs=3840, incidences_without_any_equality=160
+threshold=4qstar/m=14.666667, minimum assigned near-ground star=12
+maximal-ground incidence row histogram={106: 80, 138: 80}
+stored exact-minimizer level-two shell scan
+name m mincap first_nonnegative_prefix negative_shells min_prefix_gap h2-lambda2 automatic
+A6 3 30 30 0 5/24 1/12 True
+A6 4 30 30 0 49/144 5/36 True
+A6 5 30 30 0 59/80 1/4 True
+A8 4 32 32 0 11/75 0 True
+A8 5 32 32 0 53/300 3/100 True
+A8 6 40 40 0 88/675 14/225 True
+A8 7 64 64 0 52/147 1/6 True
+A9 5 16 16 0 16421/107975 0 True
+A9 6 16 16 0 74/2625 2/105 True
+A9 7 56 56 0 500/5733 20/441 True
+A9 8 80 80 0 1/7 1/7 True
+A10 5 10 10 0 121/980 -1/56 False
+A10 6 10 10 0 1/75 0 True
+A10 7 74 74 0 145/3528 5/392 True
+A10 8 74 74 0 27/784 27/784 True
+A10 9 74 74 0 2/9 1/8 True
+self-loop crossover witness n=12,m=7: h2=1/252<lambda2=2/189
+PASS: exact level-two shells and maximal-selector exchange identities

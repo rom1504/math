@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "local_binomial_checks": 40137,
+  "cases": [
+    {
+      "epsilon": 0.9,
+      "block_size": 5057,
+      "hot_probability": 0.045539803764954846,
+      "cold_variance": 0.016696980418902628,
+      "hot_variance": 21.608863355492264,
+      "variance": 0.9999999999999999,
+      "full_support_response_bound": 0.4098352114333369,
+      "entropy_upper_per_block": 1.9327302947554295
+    },
+    {
+      "epsilon": 0.9,
+      "block_size": 5058,
+      "hot_probability": 0.04520492849209046,
+      "cold_variance": 0.018837637159220398,
+      "hot_variance": 21.72360292646732,
+      "variance": 1.0,
+      "full_support_response_bound": 0.4157939510521364,
+      "entropy_upper_per_block": 1.881989016537863
+    },
+    {
+      "epsilon": 0.5,
+      "block_size": 16384,
+      "hot_probability": 0.015100130250706677,
+      "cold_variance": 0.005845796764495273,
+      "hot_variance": 65.84330459543803,
+      "variance": 1.0,
+      "full_support_response_bound": 0.2479671384191658,
+      "entropy_upper_per_block": 2.560509913902093
+    },
+    {
+      "epsilon": 0.5,
+      "block_size": 16385,
+      "hot_probability": 0.015082474784684694,
+      "cold_variance": 0.005177041596481559,
+      "hot_variance": 65.96404470790935,
+      "variance": 1.0,
+      "full_support_response_bound": 0.24377844654079894,
+      "entropy_upper_per_block": 2.616546980533328
+    },
+    {
+      "epsilon": 0.25,
+      "block_size": 65536,
+      "hot_probability": 0.003872307346465894,
+      "cold_variance": 0.001463994565283565,
+      "hot_variance": 257.86736049837504,
+      "variance": 0.9999999999999999,
+      "full_support_response_bound": 0.12841222905852379,
+      "entropy_upper_per_block": 3.3271463332208984
+    },
+    {
+      "epsilon": 0.25,
+      "block_size": 65537,
+      "hot_probability": 0.0038711373911534887,
+      "cold_variance": 0.0012963124621056489,
+      "hot_variance": 257.98844236937566,
+      "variance": 1.0,
+      "full_support_response_bound": 0.12622939129674193,
+      "entropy_upper_per_block": 3.3856585297775754
+    },
+    {
+      "epsilon": 0.125,
+      "block_size": 262144,
+      "hot_probability": 0.000974422893333438,
+      "cold_variance": 0.0003661578549616763,
+      "hot_variance": 1025.8730637146164,
+      "variance": 1.0,
+      "full_support_response_bound": 0.0651652896222864,
+      "entropy_upper_per_block": 4.065779143957964
+    },
+    {
+      "epsilon": 0.125,
+      "block_size": 262145,
+      "hot_probability": 0.0009743487383664294,
+      "cold_variance": 0.00032420647268157135,
+      "hot_variance": 1025.9941538935227,
+      "variance": 1.0,
+      "full_support_response_bound": 0.06405398084974445,
+      "entropy_upper_per_block": 4.1254004078148885
+    },
+    {
+      "epsilon": 0.0625,
+      "block_size": 1048576,
+      "hot_probability": 0.00024400661109951768,
+      "cold_variance": 9.154941655856408e-05,
+      "hot_variance": 4097.874514204426,
+      "variance": 1.0,
+      "full_support_response_bound": 0.03280154321159288,
+      "entropy_upper_per_block": 4.786458139681472
+    },
+    {
+      "epsilon": 0.0625,
+      "block_size": 1048577,
+      "hot_probability": 0.00024400195998844422,
+      "cold_variance": 8.105964209375924e-05,
+      "hot_variance": 4097.995607018785,
+      "variance": 1.0,
+      "full_support_response_bound": 0.032241193231206285,
+      "entropy_upper_per_block": 4.846594950057612
+    }
+  ]
+}

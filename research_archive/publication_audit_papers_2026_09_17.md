@@ -129,3 +129,35 @@ The new standalone scripts use explicit parameters or tracked matrix
 witness modules. No ignored mathematical input is required without a
 manifest-restoration path. Original compiled executables and the previously
 losslessly archived oversized raw result remain intentionally untracked.
+
+## Final preservation and publication
+
+Snapshot `2026-09-17/223324Z` preserves1,977 research payloads,
+167,603,147 bytes. Every payload SHA-256 independently verifies. No
+credential candidate or unresolved oversized research output was found.
+The same14 reviewed historical/dynamic references remain; this is not
+a claim that a literal-reference scan establishes arbitrary program closure.
+
+Final canonical additions include complete-child physical-to-mixture
+comparison, explicit preparation/replacement exponents, the equal-variance
+offset identity, its positive averaged-offset complement and a scoped
+actual two-spin signed-branch falsifier. Three independent final synthesis
+audits document corrections rather than merely issuing a verdict.
+The lower half-range certificate and all42 exact response games replay;
+global optimality of imported signing witnesses remains an inherited fact.
+
+The new root offset diagnostic and the two-spin companion import only
+the standard library and the declared scipy installation. They read no
+ignored data. The root JSON is tracked; the companion's parameters,
+81 identity checks and numerical outputs are recorded in its canonical
+proof. Earlier finite witnesses have explicit archived restoration paths.
+Gaussian/MGF/quadrature calculations remain diagnostics, not analytic proofs.
+
+Canonical closing state/index edits after the snapshot are preserved in
+the publication commit. Working scratch originals remain in place.
+The only intentionally untracked ordinary files are the reviewed exact-range
+executable and the176,489,665-byte raw rank-two output already preserved
+losslessly in a tracked compressed payload and checksum manifest.
+Environments, caches, reviewed dependencies and reproducible build products
+are excluded for the existing documented reasons. No research file was
+deleted, and unfinished/failed material was not omitted for lack of polish.
