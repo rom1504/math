@@ -85,6 +85,14 @@ certificate audit records the remaining completeness and replay boundaries.
 
 ## Checkpoint procedure
 
+The separate [2026-09-18 BH boundedness campaign](../artifacts/bh_boundedness_campaign_2026_09_18.md)
+has a live first checkpoint at [052513Z](2026-09-18/052513Z/manifest.json):
+1,979 research payloads, including drafts, primary-source downloads,
+exploratory phase searches and exact tangent certificates. This is
+preservation, not a verification upgrade; canonical status is in the
+campaign proofs. Agents continue working, so later changes need a closing
+snapshot. No credential or unpreserved oversized-output flag was raised.
+
 Latest publication audit: [2026-09-17 paper-combination campaign](publication_audit_papers_2026_09_17.md).
 The prior [2026-09-16 bounded BH-paper investigation](publication_audit_bh_2026_09_16.md)
 is historical.

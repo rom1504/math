@@ -1,0 +1,157 @@
+{
+  "base_before_switch_gain": 4.8384938793174594,
+  "beta": 4.0,
+  "bridge_gauge_mask": 494,
+  "child_order": 4,
+  "classification": "exact finite quotient enumeration with floating-point transcendental evaluation",
+  "epsilon": -1,
+  "full_certificate": -1.0903249512701851,
+  "full_convolution_minimum": 0.0026616239616206183,
+  "parent_order": 8,
+  "profiles": [
+    {
+      "basis_masks": [],
+      "certificate": 4.8384938793174594,
+      "log_gain": -1.1102230246251565e-16,
+      "minimum_quotient_convolution": 0.9999999999999999,
+      "quotient_dimension": 0,
+      "rref_pivots": [],
+      "subspaces_checked": 1
+    },
+    {
+      "basis_masks": [
+        72
+      ],
+      "certificate": 3.0318348513444104,
+      "log_gain": -1.806659027973049,
+      "minimum_quotient_convolution": 0.16420181507531473,
+      "quotient_dimension": 1,
+      "rref_pivots": [
+        3
+      ],
+      "subspaces_checked": 127
+    },
+    {
+      "basis_masks": [
+        4,
+        72
+      ],
+      "certificate": 1.4993998470743226,
+      "log_gain": -3.339094032243137,
+      "minimum_quotient_convolution": 0.03546907701001867,
+      "quotient_dimension": 2,
+      "rref_pivots": [
+        2,
+        3
+      ],
+      "subspaces_checked": 2667
+    },
+    {
+      "basis_masks": [
+        4,
+        72,
+        48
+      ],
+      "certificate": 0.6388699923565389,
+      "log_gain": -4.199623886960921,
+      "minimum_quotient_convolution": 0.015001217913226172,
+      "quotient_dimension": 3,
+      "rref_pivots": [
+        2,
+        3,
+        4
+      ],
+      "subspaces_checked": 11811
+    },
+    {
+      "basis_masks": [
+        2,
+        4,
+        72,
+        96
+      ],
+      "certificate": 0.2510645828016793,
+      "log_gain": -4.58742929651578,
+      "minimum_quotient_convolution": 0.010178991938196047,
+      "quotient_dimension": 4,
+      "rref_pivots": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "subspaces_checked": 11811
+    },
+    {
+      "basis_masks": [
+        81,
+        2,
+        4,
+        72,
+        96
+      ],
+      "certificate": -0.05651404267634241,
+      "log_gain": -4.895007921993802,
+      "minimum_quotient_convolution": 0.007483849936650966,
+      "quotient_dimension": 5,
+      "rref_pivots": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "subspaces_checked": 2667
+    },
+    {
+      "basis_masks": [
+        1,
+        2,
+        4,
+        72,
+        80,
+        96
+      ],
+      "certificate": -1.0903249512701851,
+      "log_gain": -5.928818830587645,
+      "minimum_quotient_convolution": 0.0026616239616206183,
+      "quotient_dimension": 6,
+      "rref_pivots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "subspaces_checked": 127
+    },
+    {
+      "basis_masks": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "certificate": -1.0903249512701851,
+      "log_gain": -5.928818830587645,
+      "minimum_quotient_convolution": 0.0026616239616206183,
+      "quotient_dimension": 7,
+      "rref_pivots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "subspaces_checked": 1
+    }
+  ],
+  "quotient_family": "all binary linear subspaces",
+  "switch_coordinate_dimension": 7
+}

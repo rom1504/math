@@ -1,0 +1,196 @@
+{
+  "status": "PASS exhaustive integer signed-matching response test",
+  "global_minimality_imported": true,
+  "cases": [
+    {
+      "case": "n6_class0",
+      "n": 6,
+      "cap": 5,
+      "ground_code_size": 12,
+      "perfect_matchings_exhausted": 15,
+      "signed_matching_laws_exhausted_up_to_pole_exchange": 60,
+      "exact_uniform_ground_dual_lower_for_ALL_matching_mixtures": "7/4",
+      "exact_best_single_matching_max_response": "2",
+      "exact_target_3Q_over_2n": "5/4",
+      "exact_dual_minus_target": "1/2",
+      "uniform_dual_optimal_law_count": 10,
+      "exact_uniform_mixture_of_dual_minimizers_min_response": "7/4",
+      "exact_uniform_mixture_of_dual_minimizers_max_response": "7/4",
+      "exact_matching_class_game_certified": "7/4",
+      "one_minimizing_matching": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "edge_signs": [
+          1,
+          -1,
+          -1
+        ]
+      },
+      "its_exact_ground_response_histogram": {
+        "3/2": 6,
+        "2": 6
+      }
+    },
+    {
+      "case": "n8_class0",
+      "n": 8,
+      "cap": 10,
+      "ground_code_size": 8,
+      "perfect_matchings_exhausted": 105,
+      "signed_matching_laws_exhausted_up_to_pole_exchange": 840,
+      "exact_uniform_ground_dual_lower_for_ALL_matching_mixtures": "7/4",
+      "exact_best_single_matching_max_response": "2",
+      "exact_target_3Q_over_2n": "15/8",
+      "exact_dual_minus_target": "-1/8",
+      "uniform_dual_optimal_law_count": 72,
+      "exact_uniform_mixture_of_dual_minimizers_min_response": "7/4",
+      "exact_uniform_mixture_of_dual_minimizers_max_response": "7/4",
+      "exact_matching_class_game_certified": "7/4",
+      "one_minimizing_matching": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "edge_signs": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "its_exact_ground_response_histogram": {
+        "3/2": 4,
+        "2": 4
+      }
+    },
+    {
+      "case": "n8_class1",
+      "n": 8,
+      "cap": 10,
+      "ground_code_size": 8,
+      "perfect_matchings_exhausted": 105,
+      "signed_matching_laws_exhausted_up_to_pole_exchange": 840,
+      "exact_uniform_ground_dual_lower_for_ALL_matching_mixtures": "27/16",
+      "exact_best_single_matching_max_response": "2",
+      "exact_target_3Q_over_2n": "15/8",
+      "exact_dual_minus_target": "-3/16",
+      "uniform_dual_optimal_law_count": 32,
+      "exact_uniform_mixture_of_dual_minimizers_min_response": "27/16",
+      "exact_uniform_mixture_of_dual_minimizers_max_response": "27/16",
+      "exact_matching_class_game_certified": "27/16",
+      "one_minimizing_matching": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "edge_signs": [
+          1,
+          1,
+          -1,
+          1
+        ]
+      },
+      "its_exact_ground_response_histogram": {
+        "2": 3,
+        "3/2": 5
+      }
+    },
+    {
+      "case": "n12_stored",
+      "n": 12,
+      "cap": 18,
+      "ground_code_size": 20,
+      "perfect_matchings_exhausted": 10395,
+      "signed_matching_laws_exhausted_up_to_pole_exchange": 332640,
+      "exact_uniform_ground_dual_lower_for_ALL_matching_mixtures": "9/4",
+      "exact_best_single_matching_max_response": "5/2",
+      "exact_target_3Q_over_2n": "9/4",
+      "exact_dual_minus_target": "0",
+      "uniform_dual_optimal_law_count": 105,
+      "exact_uniform_mixture_of_dual_minimizers_min_response": "9/4",
+      "exact_uniform_mixture_of_dual_minimizers_max_response": "9/4",
+      "exact_matching_class_game_certified": "9/4",
+      "one_minimizing_matching": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "edge_signs": [
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ]
+      },
+      "its_exact_ground_response_histogram": {
+        "15/8": 8,
+        "5/2": 12
+      }
+    }
+  ],
+  "scope": "Finite exact class obstruction; no asymptotic impossibility for arbitrary physical laws."
+}

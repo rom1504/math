@@ -1,0 +1,528 @@
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+
+\section{AI Methodology and Analysis}
+% \label{sec:ai}
+\label{sec:ai-methodology}
+
+The lower bound results in this paper were obtained in collaboration with an AI research system. The cubic--quintic
+construction and its certificate (Theorem~\ref{thm:cubic-quintic-upper-bound})
+predate the current system and were found through conversation with GPT-5.5-Pro. The lower bound $\KG\ge6\pi/11$ was
+discovered and first proved by the system; we have since verified the
+argument ourselves, and the proof in the companion paper~\cite{saha2026new} is our revision of the
+system's write-up. The system also produced further improvements on both
+sides of the problem, which we report in Section~\ref{sec:ai-results} but do
+not state as theorems, because their certificates have not yet been human-verified. This section documents the methodology
+(Section~\ref{sec:ai-methodology}), quantifies the run and its outcomes
+(Section~\ref{sec:ai-results}), reconstructs how the lower bound was found
+(Section~\ref{sec:ai-case-study}), and discusses what the record shows about
+the strengths and weaknesses of current AI systems as mathematical
+collaborators (Section~\ref{sec:ai-discussion}).
+
+% \section{Methodology}
+
+\paragraph{AI models and compute.}
+The run used two frontier language models: a reasoning model (OpenAI
+GPT-5.5-Pro at maximal reasoning effort, replaced mid-run by GPT-5.6-Sol)
+and a coding agent (Anthropic Claude Code, running Claude Opus and later
+Claude Fable~5). Floating-point searches
+ran on a single four-GPU node, and every Arb-certified computation was redone in interval arithmetic on CPU.
+
+% \paragraph{The AI research system.}
+% The AI research system is designed as a harness. The 
+% harness couples the two models in distinct roles: (1) The \textit{reasoning model}
+% serves as the brain that selects directions, develops arguments, specifies
+% experiments, and audits the resulting claims; (2) The \textit{coding agent} serves as
+% the executor that maintains the project repository, implements and runs
+% experiments, retrieves literature, and drives the reasoning model through
+% a scripted interface. The models run in bounded sessions, and no model
+% context survives from one session to the next; continuity is carried by
+% files, principally a problem statement, a single summary file that serves
+% as working memory and into which finished work is merged, and append-only
+% transcripts and experiment logs. The harness was adjusted repeatedly over
+% the run in response to observed failures; we describe its final form, to
+% the extent needed to interpret the record.
+
+\paragraph{The AI research system.}
+The AI research system is organized as a harness coupling two agents in distinct roles: (1) the \textit{reasoning agent} serves as the brain that selects directions, develops arguments, specifies experiments, and audits the resulting claims, and (2) the \textit{coding agent} serves as the executor that maintains the project repository, implements and runs experiments, retrieves literature, and drives the reasoning model through a scripted interface.
+
+The agents run in bounded sessions, and no agent context survives from one session to the next. Continuity is instead carried by files, principally a problem statement, a single summary file that serves as working memory and into which finished work is merged, and append-only transcripts and experiment logs. The harness was adjusted repeatedly over the run in response to observed failures; we describe its final form, to the extent needed to interpret the record.
+
+\paragraph{Run configuration.}
+Work is organized into \emph{sessions} of a few hours, of which two to
+five run concurrently on mutually distinct directions. A session passes
+through fixed phases: orientation from the problem statement and summary
+files, selection of a focus, a research loop in which the reasoning model
+requests computations, literature, or further reasoning time, and a
+closing audit that produces a calibrated summary in which every claim is
+tagged as proven, numerically supported, conjectural, or heuristic. We
+reserve the word theorem, here and in the rest of the paper, for
+statements that we have additionally checked ourselves.
+
+The run was initialized with our prior work on the constant: the
+cubic--quintic scheme, the coefficient formulas and certification
+machinery, several months of accumulated notes, and a problem statement
+listing candidate directions for both bounds. The search space the run
+explored is a generalization of the cubic--quintic scheme, and the
+possibility of converting obstructions into lower bounds was raised, as a
+suggestion, in the problem statement. The system therefore operated
+downstream of the mathematical framework it was given, a point quantified
+in Section~\ref{sec:ai-case-study}.
+
+\paragraph{Human collaboration.}
+Human operators (the authors) steered the run asynchronously
+through text files read at the start of, and during, every session.
+Steering consisted of priorities, targets, audits of the run's own claims,
+and occasional mathematical pointers; about forty directives were
+issued over the run. 
+% The operator contributed no proof steps through this channel.
+
+\section{Results}
+\label{sec:ai-results}
+
+The run spanned June~16 to July~24, 2026. It comprised
+roughly 240 research sessions. The reasoning model was called 2{,}091
+times, consuming about 152 million tokens at an estimated \$5{,}400 in
+API cost; the coding agent ran on a flat-rate subscription (Claude Max).
+Table~\ref{tab:run} collects these figures, and
+Table~\ref{tab:timeline} gives the timeline of the bounds.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Duration & June 16 -- July 24, 2026 (main phase through July 4)\\
+Research sessions & $\approx240$\\
+Reasoning model & GPT-5.5-Pro, later GPT-5.6-Sol; maximal effort\\
+Usage and cost & 2{,}091 calls; $\approx152$M tokens; $\approx\$5{,}400$\\
+Coding agent & Claude Code (Opus, later Fable 5); subscription\\
+Human steering  $\approx40$ dated directives\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{The run at a glance.} Aggregates computed from the harness
+telemetry. Dollar figures are list-price estimates; coding-agent usage was
+only partially metered.
+}
+\label{tab:run}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lp{0.76\textwidth}@{}}
+\toprule
+Sessions & Event\\
+\midrule
+1 & run begins from the interval $1.6769566742\le\KG\le1.7818666070$
+(the upper end is the cubic--quintic bound of this paper)\\
+18 & upper-bound search plateaus; the operators direct a pivot to the
+lower bound\\
+44 & numerical upper bound $1.7802243$ recorded (later withdrawn)\\
+55--57 & affine reframe; $\KG\ge6\pi/11$ derived\\
+58--64 & $6\pi/11$ proof system-tested; first \LaTeX{} write-up\\
+92, 117 & lower bounds $27\pi/49\approx1.7311$ and
+$51\pi/92\approx1.7415$ machine-verified\\
+follow-up & the session-44 value found unsupported by internal audit and
+withdrawn\\
+follow-up & upper bound $1.781801841033$ system-tested\\
+follow-up & upper bound $1.7813319810625639$ system-tested;
+adversarial review passed\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Timeline of the bounds produced during the run.}
+Machine-verified means accepted by the verification protocol of
+Section~\ref{sec:ai-methodology}. The last three events fall in the short
+follow-up phases, whose sessions we do not cite individually. Of the
+run's results, only $\KG\ge6\pi/11$ has additionally been verified by the
+authors; it is the result stated as a theorem in this paper.}
+\label{tab:timeline}
+\end{table}
+
+The run's principal outcome, and the one this paper states as a theorem,
+is the lower bound $\KG\ge6\pi/11$, whose discovery
+Section~\ref{sec:ai-case-study} reconstructs. Beyond it, the run produced
+system-tested upper bounds of $1.781801841033$ and then
+$1.7813319810625639$, improving on the cubic--quintic value, together with
+the two stronger lower bounds listed in Table~\ref{tab:timeline}. We
+report these as machine-verified claims rather than theorems: each passed
+the full internal protocol, but we have not yet verified their
+certificates ourselves.
+%% TODO: reconcile with the main paper's discussion of concurrent work
+%% (e.g. Heilman's computer-assisted improvement of Krivine's bound,
+%% arXiv:2606.00247).
+
+\section{Case study: from a failed upper-bound search to a lower bound}
+\label{sec:ai-case-study}
+
+The lower bound is the run's main discovery. We reconstruct it here in
+outline, highlighting the human interventions that shaped it and the
+mathematical contributions of the AI system once it had the right framing.
+
+The lower bound began with a plateauing search for a better upper bound.
+The system explored several variants of the limiting Krivine schemes.
+Although the constructions differed, they repeatedly encountered the same
+tradeoff: suppressing the unwanted nonlinear terms in the inverse majorant
+series also weakened the leading term. The run recorded this pattern, but
+continued to search for further constructions rather than treating the
+repeated failures as evidence of a general obstruction.
+
+
+The key human intervention was to recognize that the repeated failures likely reflected a general analytic obstruction, and that proving such an obstruction for mixed and limiting schemes would itself be mathematically valuable: by the optimality theorem of Naor and Regev~\cite{naor2014krivine}, it would imply a lower bound on $K_G$. The operators therefore redirected the system away from searching for new limiting Krivine schemes and asked it instead to synthesize the accumulated failures, identify their common structure, and attempt to prove a universal obstruction.
+
+After further program-level directives, the system found the central
+mathematical reframe and developed a complete proof
+(see \cite[Part~1]{saha2026new}). It expressed the obstruction as an affine
+inequality between the two leading coefficients of a scheme's correlation
+function. Because this
+inequality is preserved under averaging and limits, it extends to mixed and
+limiting schemes. The system then reduced the required high-dimensional
+estimates to one-dimensional inequalities and produced the computer-assisted
+certificate, yielding
+\[
+    \KG \geq \frac{6\pi}{11}.
+\]
+The authors subsequently revised the exposition and independently verified
+the proof.
+
+This illustrates the different roles of the human operators and the AI system throughout the run. The system was effective at technical execution: drawing from its wealth of mathematical knowledge and its competence in problem-solving to propose lemmas and construct proofs. The human input was primarily of research judgement and mathematical taste: judging when a research direction has been somewhat exhausted, understanding that mathematical understanding and discoveries frequently come from synthesizing failures, 
+and recognizing that a new lower-bound mechanism is much more interesting than a small numerical improvement to a
+known upper-bound method.
+Appendix~\ref{app:ai-case-study} gives the
+detailed chronology.
+
+
+\section{Discussion}
+\label{sec:ai-discussion}
+Motivated by mathematical problem-solving frameworks such as~\cite{carlson2005problemsolving, schoenfeld1983episodes}, we present the following decomposition of long-horizon mathematical
+research in the harness (see Figure~\ref{fig:research-cycle}). At any point in time, a research program has an \emph{active represented state}. This is a compact representation of the complete history of the run for the purpose of choosing the next step, including current objectives, established and conjectural claims, evidence, failed approaches, open proof obligations, and unresolved choices. From this state, the
+researcher uses \emph{research judgement} to select a high-level action. Such
+an action might be to prove an auxiliary lemma, test a new construction,
+compare several failures, search for a counterexample, reformulate the target,
+or audit an earlier claim. \emph{Technical execution} takes the high-level action, and then plans and executes the steps needed to produce results. Finally, those results must be distilled and incorporated into
+an updated active represented state, in a way that is efficient and preserves all important information. The cycle then repeats.
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[
+      box/.style={
+        draw,
+        rounded corners=2pt,
+        align=center,
+        minimum height=1.1cm,
+        text width=0.245\textwidth,
+        inner sep=6pt
+      },
+      flow/.style={-{Latex[length=2.2mm]}, thick},
+      process/.style={font=\small\bfseries, align=center}
+    ]
+    \node[box] (state) {
+      \textbf{Research state}\\[-1mm]
+      \footnotesize objectives, claims, evidence, and failures
+    };
+    \node[box, below left=2.0cm and 0.9cm of state] (action) {
+      \textbf{High-level action}\\[-1mm]
+      \footnotesize the direction or mode of inquiry to pursue next
+    };
+    \node[box, below right=2.0cm and 0.9cm of state] (results) {
+      \textbf{Results}\\[-1mm]
+      \footnotesize proofs, computations, counterexamples, or informative failures
+    };
+
+    \draw[flow] (state) -- node[process, midway, left=14pt] {
+      Research\\judgement
+    } (action);
+    \draw[flow] (action) -- node[process, midway, below=5pt] {
+      Technical execution
+    } (results);
+    \draw[flow] (results) -- node[process, midway, right=14pt] {
+      Research-state\\representation
+    } (state);
+  \end{tikzpicture}
+  \caption{A simplified research cycle modelling the process of long-horizon
+  mathematical research. The decomposition is intended as a systems-level
+  description.}
+  \label{fig:research-cycle}
+\end{figure}
+
+The components of this research cycle have familiar precedents. Newell and Simon model problem
+solving as the application of operators to states in a problem
+space~\cite{newell1972human}; P\'olya separates understanding and planning
+from execution and looking back~\cite{polya1957solve}; Schoenfeld emphasizes
+\emph{control}, the executive decisions that select and monitor mathematical
+strategies~\cite{schoenfeld1983episodes,schoenfeld1985mathematical}; and
+Sch\"on describes professional inquiry as a reflective conversation in which
+action changes the situation and may require it to be reframed
+~\cite{schon1983reflective}. Figure~\ref{fig:research-cycle} is a minimal synthesis of these ideas, adapted to the architecture of the harness.
+
+\subsection{Performance across research functionalities}
+
+The system consistently exhibited an asymmetry in its capabilities between its local and global functionalities. It was exceptionally strong at
+technical execution, and substantially less reliable at research judgement and research-state representation, the two functionalities that operate over the research program as a whole.
+
+\paragraph{(1) Technical execution: strong.}
+Once a sufficiently well-specified high-level action was fixed, the system was
+usually effective at thinking creatively and devising the mathematics and computations necessary to advancing the action. It drew upon its vast range of
+mathematical knowledge and problem-solving skills to develop lemmas and proofs, and it also effectively ran and interpreted experiments. A prominent example of this was how the system found and developed the current lower bound, as detailed in the case study. After the upper-bound failures were reframed as evidence for a
+universal obstruction, the system developed the central proof of the lower
+bound with comparatively little further intervention. This required a lengthy argument with many intermediate results, involving creative application of areas such as Gaussian harmonic analysis, geometric and functional inequalities, variational arguments, and finite-dimensional optimization. 
+
+
+\paragraph{(2) Research judgement: limited autonomy.}
+Long-horizon research requires repeated decisions about what the program
+should do next~\cite{tao2007good,thurston1994proof}. These decisions combine mathematical valuation --- the
+expected significance, generality, explanatory value, and downstream use of
+a result --- with estimates of difficulty, probability of success, information
+gained from failure, verification cost, and opportunity cost.
+% Mathematical value is itself multidimensional, rather than reducible to the numerical strength of a bound~\cite{tao2007good,thurston1994proof}.
+
+The system did not reliably make these decisions at the program level. The initial
+upper-bound search in the case study is a clear example: several distinct approaches had
+failed for the same structural reason, yet the run opened another variation
+rather than asking whether the common obstruction was universal, and could be proven as a theorem. Other failings of the system included not recognizing the value of a theoretical result over numerical evidence, and prioritizing a sharper restricted result that is not inherently interesting over a general result. The relevant limitation was not an inability to perform the required
+reasoning. Once prompted to step back, synthesize, or reframe, the system
+often did so effectively. It was the failure to recognize, from the evolving
+state of the project, when such a change in reasoning mode was called for.
+This resembles the distinction made by Mason and Spence~\cite{mason1999beyond} between possessing a strategy and
+\emph{knowing to} activate it in the appropriate situation. 
+% In the terminology of AI, it is also a form of metareasoning: selecting which computations or lines of inquiry are worth performing under limited resources~\cite{russell1991metareasoning}.
+
+
+
+
+\paragraph{(3) Research-state representation: fragile.}
+
+
+This functionality became more difficult as the run grew. The project produced
+far more intermediate mathematics than could be placed in a model's context
+at once, so the harness maintained an archive of transcripts and experiments
+together with a much smaller curated summary, rewritten at every merge, that
+each new session read as its working memory. The withdrawn upper bound in session 44 (see Table~\ref{tab:timeline}) is a
+clear case of failure. A fast numerical evaluator built in session~4 carried
+an explicit caveat that its score was safe only for exploration; the caveat
+did not survive later representations of the research state, and by
+session~44 the uncertified score had set the record.
+A feasibility criterion that would have invalidated the record was lost even earlier: the run proved it in session~8, but it disappeared in a later handoff and was eventually reproved from scratch by the audit that withdrew the record 25 days later.
+In both failures, the archive retained the original facts; it was the compressed state governing decisions that
+failed.
+
+
+% This function became more difficult as the run grew. The project produced
+% far more intermediate mathematics than could be placed in a model's context
+% at once, so the harness maintained an archive of transcripts and experiments
+% together with a much smaller curated summary that each new session read as
+% its working memory. The withdrawn upper bound is a clear case of failure. A
+% fast numerical evaluator built in session~4 carried an explicit caveat that
+% its score was safe only for exploration; the caveat did not survive later
+% representations of the research state, and by session~44 the uncertified
+% score had set the record. A feasibility criterion that would have
+% invalidated the record fared worse: it was proven by the run in session~8 and lost in a handoff, and was subsequently reproven from scratch by the
+% audit that withdrew the record twenty-five days later.
+
+% Two features make this function difficult. First, deciding what to keep
+% requires the same research judgement whose limits we have just described:
+% which details matter depends on decisions not yet taken. Second, the active
+% state was rewritten roughly two hundred times over the run, and iterated
+% rewriting acts as a transmission chain: headline values survive retelling
+% more reliably than their evidential status, scope, and caveats, a bias
+% documented in both human and language-model
+% retelling~\cite{bartlett1932remembering,acerbi2023transmission,mohamed2025broken}.
+% The archive retained the original caveats throughout; it was the compressed
+% state governing decisions that failed. More context alone is unlikely to
+% solve the problem, as language models do not use all positions in long contexts
+% equally reliably~\cite{liu2024lost,hsieh2024ruler}.
+% and an unstructured
+% archive does not by itself determine which information should govern the
+% next decision. We return to this in Section~\ref{sec:ai-future}.
+
+
+
+
+
+
+% The archive retained the
+% original caveats, 
+% but repeated compression preserved the headline value more
+% reliably than its evidential status and assumptions. The active state thus
+% came to represent a conditional numerical observation as an established
+% result. This is better described as a failure of research-state management
+% than as ordinary forgetting: the system needed to preserve not only claims,
+% but also their provenance, dependencies, scope, counterevidence, and current
+% status. More context alone is unlikely to solve the problem. Language models
+% do not use all positions in long contexts equally reliably
+% ~\cite{liu2024lost}, and an unstructured archive does not by itself determine
+% which information should govern the next decision.
+
+% The classical AI literature on truth maintenance is directly relevant here.
+% Truth-maintenance systems record why a belief is held and revise dependent
+% beliefs when a justification fails~\cite{doyle1979truth,dekleer1986atms}; the
+% data-provenance literature similarly represents where a result came from and
+% how it was derived~\cite{buneman2001why}. A research state for this setting
+% would ideally combine these ideas with retrieval: claims would be stored as
+% structured objects carrying their status, assumptions, evidence,
+% dependencies, counterevidence, and revision history, while the active context
+% would contain only the portion relevant to the current action.
+
+\subsection{Origins of the capability profile}
+\label{sec:ai-origins}
+
+We hypothesize the following explanation for the AI system's performance in each of these functionalities. There is a plausible asymmetry in both the training data and feedback received by the base model, where it has a lot more experience with local, technical execution over global, long-horizon reasoning and planning. Mathematical papers, textbooks, and solved problems provide many
+examples of technical execution where definitions are used and results are proven. Moreover, AI models can be trained effectively on problems where the final answer or proof can be scored automatically~\cite{shao2024deepseekmath,hubert2026alphaproof}, which roughly corresponds to the skills required for strong technical execution we see in the run.
+
+
+The training data and feedback available for research judgement is much rarer. Finished
+mathematical papers rarely record the full process of discovery, including the abandoned approaches, the experiments performed, and decisions to pivot directions. Instead, they represent a polished final state, written for expositional clarity, rigor, and brevity. Lakatos's contrast between deductive exposition and the process of proofs,
+criticism, and revision makes this explicit~\cite{lakatos1976proofs}; Thurston likewise argues that mathematical progress
+and understanding are not captured by formal proofs alone~\cite{thurston1994proof}. Moreover, it is computationally much more difficult to run long-horizon mathematical research projects in the same training environments as the more elementary mathematical problems AI models are trained on. The reward design for this would also be more difficult, as reward signals are very sparse and success can be open-ended.
+
+The weakness in research-state representation fits the same asymmetry.
+Curation is a global functionality: deciding what the program will later need to
+know is a prediction about its future, of the same kind as the judgements
+above. The record that would teach the model this prediction (what was kept, what was dropped,
+and which omission later mattered) is what finished exposition
+omits. The hypothesis also predicts the direction of the failure we
+observed. The active state was rewritten roughly two hundred times over the
+run, and each rewrite draws on a training genre, the finished mathematical paper, that
+states results and omits caveats, scope, and doubt. Therefore, iterated rewriting regresses toward that genre, and headline values survive retelling
+more reliably than their evidential status, a bias documented in both human
+and language-model
+retelling~\cite{bartlett1932remembering,acerbi2023transmission,mohamed2025broken}.
+The corpus records mathematics as product rather than process, and both
+global functionalities need the process view.
+
+% On the other hand, it is possible that a different representation of the state can significantly improve the performance here.
+
+\subsection{Human collaboration}
+
+The decomposition is also instructive in classifying the human contribution in the run, which entered in three areas. First, the operators supplied the initial
+research state, including the cubic--quintic framework and its certification
+machinery, and a problem statement with candidate directions for both
+bounds (Section~\ref{sec:ai-methodology}). Second, through about forty directives, they supplied
+program-level research judgement: selecting and redirecting the
+high-level action (the lower bound pivot of Section~\ref{sec:ai-case-study} is the
+crucial instance) and fixing priorities such as generality over
+numerical sharpness. Third, they
+intervened in research-state representation, continuously changing the structure of the research-state representation, and changing the guidelines for what information to store and how. The technical execution was left almost entirely
+to the system.
+
+This contribution is itself mathematically significant. Recognizing when to switch to another approach, or when a common obstruction might be able to be generalized to a useful theorem are instances of the higher-level, largely intuitive
+judgement that mathematicians acquire with
+experience~\cite{tao2007good,thurston1994proof}.
+The same holds for research-state representation: deciding which information may matter to future directions requires foresight and experience with mathematical research.
+
+
+\subsection{Relation to recent work}
+
+Recent successes of AI in mathematics, including on open problems, vary
+in method and in the role of the human. Evaluator-guided search has
+produced record constructions on problems whose candidate solutions can
+be scored
+automatically~\cite{funsearch,novikov2025alphaevolvecodingagentscientific,charton2024patternboostconstructionsmathematicslittle},
+and formal provers have reached medal-level performance on olympiad
+problems~\cite{hubert2026alphaproof}. Frontier reasoning models have
+resolved open questions with varying degrees of human involvement: an
+internal OpenAI model disproved the Erd\H{o}s unit-distance
+conjecture~\cite{openai2026planarpointsets}, a mathematician working with
+Claude Fable~5 found a counterexample to the Jacobian
+conjecture~\cite{jacobian}, and OpenAI has announced solutions to ten
+open problems~\cite{openai2026ten}.
+
+
+To the best of our knowledge, this work is the first in-depth case study of a long-horizon human--AI collaboration on a mathematical research program:
+% The work reported here is, to the best of our knowledge, the first
+% sustained human--AI collaboration on a mathematical research program:
+over several weeks, we accumulated intermediate results, explored and shelved various directions, and steered at the program level (Section~\ref{sec:ai-methodology}).
+We expect this collaborative mode, rather than
+full autonomy,
+to be the likeliest source of strongest results and thus the prevailing near-term form of AI-assisted mathematics:
+% to be both the prevailing near-term form of AI-assisted mathematics and the likeliest source of its strongest results:
+% reasoning models are already entering mathematicians' working practice~\cite{bubeck2025science}, while the weaknesses documented in this section leave current systems some distance from carrying a research program alone.
+reasoning models are already entering mathematicians' working practice~\cite{bubeck2025science}, but the weaknesses we document show the current limitations of full autonomy.
+This report is thus a useful case study of a successful human--AI collaboration in mathematics.
+
+% We hope the experience recorded here proves useful to mathematicians and AI researchers pursuing such collaborations research.
+
+\subsection{Future directions}
+Our analysis suggests two complementary directions. For AI research, improving research judgement and research-state representation may require training and evaluation on records of mathematics as a process, including failed approaches, strategic decisions, and evolving assessments of evidence. For mathematical practice, while these limitations persist, human expertise is likely to remain most valuable in these global functionalities: deciding when to persist or reframe a direction, and maintaining an accurate representation of accumulated progress.
+
+
+
+
+
+% \section{Future directions}
+% \label{sec:ai-future}
+
+% We see two directions: for AI research, addressing the weaknesses
+% documented in Section~\ref{sec:ai-discussion}; for mathematical practice,
+% accounting for them while they persist.
+
+
+
+
+% \paragraph{For AI research.}
+% On the hypothesis of Section~\ref{sec:ai-origins}, what the two global
+% functions (research judgement and research-state representation) lack is training data that records research as a process.
+% Collaborative research programs between humans and AI produce such data as a byproduct, as every human intervention is a labelled instance of when the human's research judgement differed from the AI system, given the state. We hope our work and experience serves as a starting point, for 
+% Comparable records across problems, systems, and research
+% groups would test whether the capability profile we observed is general.
+
+
+% \paragraph{For mathematical practice.}
+% With the current capabilities of AI, mathematicians working with AI systems should plan to use their expertise to perform
+% the global functions themselves. In particular, mathematicians should be aware of these AI systems' tendency to persist on an approach rather than reframing the goal, and to inaccurately summarize previous progress in long-context situations.
+
+
+% We see two complementary directions: for AI research, addressing the
+% weaknesses documented in Section~\ref{sec:ai-discussion}; for mathematical
+% practice, accounting for them while they persist.
+
+% \paragraph{For AI research.}
+% The two unreliable global functions are concrete targets. For research
+% judgement, an evaluation could present a partially developed research
+% program, with its accumulated claims and failures, and score the choice of
+% the next high-level action rather than the final answer. For research-state
+% representation, the target is a representation under which a claim's
+% evidential status, assumptions, and caveats survive repeated compression as
+% reliably as its headline value.
+
+% Both directions need the same raw material: records of research as it
+% happened, retaining the failed approaches, the decisions taken, and the
+% reasons for them. Collaborative runs produce such records as a byproduct.
+% Each of the about forty directives in ours is an instance of research
+% judgement, captured at the decision point together with the project state
+% that prompted it, and the amount of steering a run requires is itself a
+% measure of the reliability of these functions. Beyond the record released
+% with this work, comparable records across problems, systems, and research
+% groups would test whether the capability profile we observed is general,
+% and would begin to supply the process data that, on the hypothesis of
+% Section~\ref{sec:ai-origins}, these functions currently lack.
+
+% \paragraph{For mathematical practice.}
+% In the near term, mathematicians working with such systems should plan to
+% supply the global functions themselves, and our record indicates where.
+% Judgement is needed at the moments the system does not reliably flag: when
+% repeated failures call for synthesis into a common obstruction, and when a
+% general mechanism is worth more than a sharper number. The system's summary
+% of its own progress needs periodic auditing against the primary record,
+% since caveats and evidential status erode under repeated summarization, as
+% with the withdrawn upper bound.
+
+% Independent verification remains the final safeguard, and in our run it was
+% the bottleneck: the system produced results faster than we have been able
+% to verify them, which is why the improved bounds of
+% Section~\ref{sec:ai-results} are reported as machine-verified claims rather
+% than as theorems. A natural remedy is formal verification. Had the system
+% delivered its results as formal proofs in a proof assistant, human checking
+% would reduce to auditing the formal statements, and the distinction this
+% paper maintains between machine-verified claims and theorems would largely
+% collapse.

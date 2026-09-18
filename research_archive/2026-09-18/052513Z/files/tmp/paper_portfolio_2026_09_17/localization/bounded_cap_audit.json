@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "seed": 2026091703,
+  "symbolic_checks": {
+    "negative_threshold_slack": "2*C + C_A + 3*slack/16 + 3",
+    "pinning_hypothesis_slack": "12*C + 16*C_A + slack + 16",
+    "completed_square_identity": "exactly zero",
+    "random_error_coefficient": "256*(K + 1)/K**2",
+    "rational_lower_bound_for_exp3": "92/5",
+    "child_net_failure_bound_at_m1": 0.3296814999972152
+  },
+  "finite_checks": [
+    {
+      "n": 2,
+      "m": 8,
+      "rho": 0.9,
+      "right_edge_flipped": false,
+      "trials": 60,
+      "exact_left_cap": 1,
+      "exact_right_baseline": 28,
+      "numerical_C": 0.24748737341529156,
+      "lambda": 2.5455844122715714,
+      "actual_negative_threshold": 19.599999999999998,
+      "required_negative_threshold": 3.6000000000000005,
+      "minimum_inequality_slacks": {
+        "lower": 0.0,
+        "positive_upper": 11.066666666666663,
+        "negative_gap_upper": 8.88888888888889,
+        "absolute_upper": 19.95555555555555
+      }
+    },
+    {
+      "n": 3,
+      "m": 12,
+      "rho": 0.95,
+      "right_edge_flipped": true,
+      "trials": 60,
+      "exact_left_cap": 3,
+      "exact_right_baseline": 64,
+      "numerical_C": 0.5688792594772094,
+      "lambda": 3.2908965343808667,
+      "actual_negative_threshold": 40.47606663055977,
+      "required_negative_threshold": 8.55,
+      "minimum_inequality_slacks": {
+        "lower": 2.0,
+        "positive_upper": 31.96037946756465,
+        "negative_gap_upper": 12.631578947368425,
+        "absolute_upper": 45.61466670467394
+      }
+    },
+    {
+      "n": 4,
+      "m": 12,
+      "rho": 0.95,
+      "right_edge_flipped": false,
+      "trials": 60,
+      "exact_left_cap": 4,
+      "exact_right_baseline": 66,
+      "numerical_C": 0.1587713240271473,
+      "lambda": 3.2908965343808667,
+      "actual_negative_threshold": 48.99999999999999,
+      "required_negative_threshold": 8.55,
+      "minimum_inequality_slacks": {
+        "lower": 0.0,
+        "positive_upper": 22.085511754029753,
+        "negative_gap_upper": 20.81182754350343,
+        "absolute_upper": 42.89733929753318
+      }
+    },
+    {
+      "n": 4,
+      "m": 12,
+      "rho": 0.95,
+      "right_edge_flipped": true,
+      "trials": 60,
+      "exact_left_cap": 4,
+      "exact_right_baseline": 64,
+      "numerical_C": 0.5688792594772094,
+      "lambda": 3.2908965343808667,
+      "actual_negative_threshold": 38.47606663055977,
+      "required_negative_threshold": 8.55,
+      "minimum_inequality_slacks": {
+        "lower": 0.0,
+        "positive_upper": 38.05551107679709,
+        "negative_gap_upper": 21.70400226686,
+        "absolute_upper": 59.75951334365709
+      }
+    }
+  ],
+  "scope": "Finite tests audit pointwise inequalities; weak-spike asymptotics follow from the proof."
+}

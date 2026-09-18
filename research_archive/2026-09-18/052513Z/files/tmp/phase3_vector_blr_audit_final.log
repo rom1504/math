@@ -1,0 +1,664 @@
+{
+  "all_cycle_contractive_maps_on_F2_3": {
+    "admissible_by_coordinate_count": {
+      "1": 15,
+      "2": 120,
+      "3": 680,
+      "4": 1358,
+      "5": 427,
+      "6": 35,
+      "7": 1
+    },
+    "admissible_multisets": 2636,
+    "largest_optimal_uniform_distance": 2,
+    "maximum_nonlinear_coordinates_for_a_cycle_contractive_map": 7,
+    "minimum_nonzero_triple_syndrome_weight": 3,
+    "nonlinear_scalar_classes": 15,
+    "witness": {
+      "coordinate_class_indices": [
+        6,
+        6
+      ],
+      "coordinate_tables": [
+        7,
+        7
+      ]
+    }
+  },
+  "claim": "Pointwise vector-Hamming additive defect delta admits one linear map with average error at most delta and uniform error at most 3 delta; a dense geodesic transversal therefore has an all-future linear-graph word-profile approximation with directional errors 11 and 9.",
+  "dense_geodesic_future_responses": {
+    "1": {
+      "appended_support_profiles_checked": 2,
+      "dense_geodesic_transversal_cases": 1,
+      "maximum_BLR_selected_average_error": 0.0,
+      "maximum_BLR_selected_uniform_error": 0,
+      "maximum_graph_minus_source_profile": 0,
+      "maximum_source_minus_graph_profile": 0,
+      "worst_witness": null
+    },
+    "2": {
+      "appended_support_profiles_checked": 120,
+      "dense_geodesic_transversal_cases": 15,
+      "maximum_BLR_selected_average_error": 0.0,
+      "maximum_BLR_selected_uniform_error": 0,
+      "maximum_graph_minus_source_profile": 1,
+      "maximum_source_minus_graph_profile": 0,
+      "worst_witness": {
+        "appended": [],
+        "basis": [
+          1
+        ],
+        "graph": [
+          1,
+          2
+        ],
+        "graph_minus_source": 1,
+        "source_minus_graph": 0,
+        "support": [
+          1,
+          2,
+          3
+        ],
+        "transversal": {
+          "1": 2
+        }
+      }
+    },
+    "3": {
+      "appended_support_profiles_checked": 146944,
+      "dense_geodesic_transversal_cases": 1148,
+      "maximum_BLR_selected_average_error": 0.25,
+      "maximum_BLR_selected_uniform_error": 1,
+      "maximum_graph_minus_source_profile": 2,
+      "maximum_source_minus_graph_profile": 1,
+      "worst_witness": {
+        "appended": [],
+        "basis": [
+          2,
+          3
+        ],
+        "graph": [
+          2,
+          3,
+          4
+        ],
+        "graph_minus_source": 2,
+        "source_minus_graph": 0,
+        "support": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "transversal": {
+          "1": 4
+        }
+      }
+    }
+  },
+  "joint_average_sharpness": {
+    "2": {
+      "coordinate_distances_to_linear": [
+        1,
+        0
+      ],
+      "formula": 0.25,
+      "minimum_average_vector_error": 0.25,
+      "pointwise_defect": 1
+    },
+    "4": {
+      "coordinate_distances_to_linear": [
+        6,
+        5
+      ],
+      "formula": 0.6875,
+      "minimum_average_vector_error": 0.6875,
+      "pointwise_defect": 1
+    },
+    "6": {
+      "coordinate_distances_to_linear": [
+        28,
+        27
+      ],
+      "formula": 0.859375,
+      "minimum_average_vector_error": 0.859375,
+      "pointwise_defect": 1
+    },
+    "8": {
+      "coordinate_distances_to_linear": [
+        120,
+        119
+      ],
+      "formula": 0.93359375,
+      "minimum_average_vector_error": 0.93359375,
+      "pointwise_defect": 1
+    }
+  },
+  "partial_projection_and_fibre_stripping": {
+    "1": {
+      "future_profiles_checked": 0,
+      "largest_fibre_stripping_gap": 0,
+      "largest_partial_graph_minus_source": 0,
+      "largest_partial_section_error": 0,
+      "largest_quotient_diameter": 0,
+      "largest_source_minus_partial_graph": 0,
+      "selected_transversals_checked": 0,
+      "worst_witness": null
+    },
+    "2": {
+      "future_profiles_checked": 96,
+      "largest_fibre_stripping_gap": 1,
+      "largest_partial_graph_minus_source": 1,
+      "largest_partial_section_error": 0,
+      "largest_quotient_diameter": 1,
+      "largest_source_minus_partial_graph": 0,
+      "selected_transversals_checked": 12,
+      "worst_witness": {
+        "appended": [],
+        "basis": [
+          1
+        ],
+        "graph_minus_source": 1,
+        "h": 1,
+        "selected_lifts": {
+          "1": 2
+        },
+        "source_minus_graph": 0,
+        "stripping_gap": 1,
+        "support": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "3": {
+      "future_profiles_checked": 186368,
+      "largest_fibre_stripping_gap": 2,
+      "largest_partial_graph_minus_source": 2,
+      "largest_partial_section_error": 1,
+      "largest_quotient_diameter": 2,
+      "largest_source_minus_partial_graph": 1,
+      "selected_transversals_checked": 1456,
+      "worst_witness": {
+        "appended": [],
+        "basis": [
+          2,
+          3
+        ],
+        "graph_minus_source": 2,
+        "h": 1,
+        "selected_lifts": {
+          "1": 4
+        },
+        "source_minus_graph": 0,
+        "stripping_gap": 2,
+        "support": [
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    }
+  },
+  "scalar_blr": {
+    "1": {
+      "distance_rejection_profiles": {
+        "0,0": 2
+      },
+      "truth_tables_checked": 2,
+      "worst_distance_over_rejection_ratio": 0.0,
+      "worst_witness": null
+    },
+    "2": {
+      "distance_rejection_profiles": {
+        "0,0": 4,
+        "1,6": 4
+      },
+      "truth_tables_checked": 8,
+      "worst_distance_over_rejection_ratio": 0.6666666666666666,
+      "worst_witness": {
+        "distance_count": 1,
+        "nearest_linear_alpha": 0,
+        "rejection_count_ordered_pairs": 6,
+        "table": 1
+      }
+    },
+    "3": {
+      "distance_rejection_profiles": {
+        "0,0": 8,
+        "1,18": 56,
+        "2,24": 56,
+        "3,42": 8
+      },
+      "truth_tables_checked": 128,
+      "worst_distance_over_rejection_ratio": 0.6666666666666666,
+      "worst_witness": {
+        "distance_count": 2,
+        "nearest_linear_alpha": 0,
+        "rejection_count_ordered_pairs": 24,
+        "table": 3
+      }
+    },
+    "4": {
+      "distance_rejection_profiles": {
+        "0,0": 16,
+        "1,42": 240,
+        "2,72": 1680,
+        "3,114": 560,
+        "3,90": 6720,
+        "4,120": 6720,
+        "4,96": 7280,
+        "5,114": 6720,
+        "5,138": 1680,
+        "5,90": 448,
+        "6,120": 448,
+        "6,168": 240,
+        "7,210": 16
+      },
+      "truth_tables_checked": 32768,
+      "worst_distance_over_rejection_ratio": 0.8888888888888888,
+      "worst_witness": {
+        "distance_count": 5,
+        "nearest_linear_alpha": 0,
+        "rejection_count_ordered_pairs": 90,
+        "table": 428
+      }
+    }
+  },
+  "sharp_fibre_stripping_selector_family": {
+    "1": {
+      "ambient_dimension": 3,
+      "largest_selector_response_distance": 2,
+      "projected_zero_subsets_checked": 2,
+      "selector_root_values_checked": 4,
+      "sharp_gap": 2,
+      "source_target_length": 1,
+      "stripped_target_length": 3
+    },
+    "2": {
+      "ambient_dimension": 6,
+      "largest_selector_response_distance": 4,
+      "projected_zero_subsets_checked": 4,
+      "selector_root_values_checked": 16,
+      "sharp_gap": 4,
+      "source_target_length": 2,
+      "stripped_target_length": 6
+    },
+    "3": {
+      "ambient_dimension": 9,
+      "largest_selector_response_distance": 6,
+      "projected_zero_subsets_checked": 8,
+      "selector_root_values_checked": 64,
+      "sharp_gap": 6,
+      "source_target_length": 3,
+      "stripped_target_length": 9
+    },
+    "4": {
+      "ambient_dimension": 12,
+      "largest_selector_response_distance": 8,
+      "projected_zero_subsets_checked": 16,
+      "selector_root_values_checked": 256,
+      "sharp_gap": 8,
+      "source_target_length": 4,
+      "stripped_target_length": 12
+    },
+    "5": {
+      "ambient_dimension": 15,
+      "largest_selector_response_distance": 10,
+      "projected_zero_subsets_checked": 32,
+      "selector_root_values_checked": 1024,
+      "sharp_gap": 10,
+      "source_target_length": 5,
+      "stripped_target_length": 15
+    }
+  },
+  "vector_blr_modulo_linear_coordinates": [
+    {
+      "D": 1,
+      "coordinate_coset_classes": 2,
+      "k": 2,
+      "vector_maps_modulo_coordinatewise_linear_addition": 2,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            1
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.25,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 2,
+      "coordinate_coset_classes": 2,
+      "k": 2,
+      "vector_maps_modulo_coordinatewise_linear_addition": 4,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            1
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            0,
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.25,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 3,
+      "coordinate_coset_classes": 2,
+      "k": 2,
+      "vector_maps_modulo_coordinatewise_linear_addition": 8,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            1
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            0,
+            0,
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.25,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 4,
+      "coordinate_coset_classes": 2,
+      "k": 2,
+      "vector_maps_modulo_coordinatewise_linear_addition": 16,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.25,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 1,
+      "coordinate_coset_classes": 16,
+      "k": 3,
+      "vector_maps_modulo_coordinatewise_linear_addition": 16,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            7
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.375,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 2,
+      "coordinate_coset_classes": 16,
+      "k": 3,
+      "vector_maps_modulo_coordinatewise_linear_addition": 256,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            7
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            0,
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.375,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    },
+    {
+      "D": 3,
+      "coordinate_coset_classes": 16,
+      "k": 3,
+      "vector_maps_modulo_coordinatewise_linear_addition": 4096,
+      "witnesses": {
+        "average": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            7
+          ]
+        },
+        "optimal_uniform": {
+          "delta": 1,
+          "optimal_uniform_error": 1,
+          "tables": [
+            0,
+            0,
+            1
+          ]
+        },
+        "uniform_for_fourier_choice": {
+          "delta": 1,
+          "errors": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tables": [
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "worst_average_ratio": 0.375,
+      "worst_optimal_uniform_ratio": 1.0,
+      "worst_uniform_ratio_for_fourier_choice": 1.0
+    }
+  ]
+}

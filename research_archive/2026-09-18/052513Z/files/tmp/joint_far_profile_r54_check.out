@@ -1,0 +1,18 @@
+Huber/exact K-functional checks=3400
+A6 m=4 q=10 H=2 negative=210/240 partner>=0=30 both<0=180 both-branch K>=r=60 K<r=120 min(K/r|fail)=0.322796
+A6 m=5 q=10 H=1 negative=132/192 partner>=0=60 both<0=72 both-branch K>=r=72 K<r=0 min(K/r|fail)=inf
+A8 m=5 q=20 H=3 negative=800/1792 partner>=0=800 both<0=0 both-branch K>=r=0 K<r=0 min(K/r|fail)=inf
+A8 m=6 q=20 H=2 negative=1296/1792 partner>=0=496 both<0=800 both-branch K>=r=488 K<r=312 min(K/r|fail)=0
+A8 m=7 q=20 H=1 negative=784/1024 partner>=0=240 both<0=544 both-branch K>=r=328 K<r=216 min(K/r|fail)=0.239598
+A9 m=5 q=24 H=3 negative=2295/4032 partner>=0=1245 both<0=1050 both-branch K>=r=210 K<r=840 min(K/r|fail)=0.0812732
+A9 m=6 q=24 H=3 negative=4108/5376 partner>=0=1268 both<0=2840 both-branch K>=r=609 K<r=2231 min(K/r|fail)=0
+A9 m=7 q=24 H=2 negative=3843/4608 partner>=0=765 both<0=3078 both-branch K>=r=659 K<r=2419 min(K/r|fail)=0.120223
+A9 m=8 q=24 H=1 negative=2200/2304 partner>=0=104 both<0=2096 both-branch K>=r=440 K<r=1656 min(K/r|fail)=0
+A10_seed0 m=6 q=26 H=3 negative=10750/13440 partner>=0=2690 both<0=8060 both-branch K>=r=1730 K<r=6330 min(K/r|fail)=0
+A10_seed0 m=7 q=26 H=3 negative=12810/15360 partner>=0=2550 both<0=10260 both-branch K>=r=2110 K<r=8150 min(K/r|fail)=0.115644
+A10_seed0 m=8 q=26 H=2 negative=10380/11520 partner>=0=1140 both<0=9240 both-branch K>=r=2150 K<r=7090 min(K/r|fail)=0
+A10_seed0 m=9 q=26 H=1 negative=4270/5120 partner>=0=850 both<0=3420 both-branch K>=r=2410 K<r=1010 min(K/r|fail)=0.235238
+TOTAL negative/partner>=0/both<0/K-success/K-failure= 53878 12238 41640 11266 30374
+TOTAL pair identity checks= 53878
+TOTAL pair-window checks= 133600
+PASS Wave 54 orientation-pair finite audit

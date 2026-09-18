@@ -1,0 +1,113 @@
+{
+  "claim": "Cycle contraction is equivalent to geodesicity; it yields uniform BLR synchronization and an all-raw-future quotient. The average constant three and the fibre-stripping factor two have explicit sharp families.",
+  "exhaustive_equivalence": {
+    "1": {
+      "geodesic_size_histogram": {
+        "1": 1
+      },
+      "geodesic_subfamilies": 1,
+      "independent_subfamilies_checked": 1,
+      "pointwise_section_checks": 1,
+      "spanning_supports": 1
+    },
+    "2": {
+      "geodesic_size_histogram": {
+        "1": 9,
+        "2": 3
+      },
+      "geodesic_subfamilies": 12,
+      "independent_subfamilies_checked": 15,
+      "pointwise_section_checks": 12,
+      "spanning_supports": 4
+    },
+    "3": {
+      "geodesic_size_histogram": {
+        "1": 378,
+        "2": 315,
+        "3": 28
+      },
+      "geodesic_subfamilies": 721,
+      "independent_subfamilies_checked": 1456,
+      "pointwise_section_checks": 721,
+      "spanning_supports": 92
+    }
+  },
+  "sharp_bent_example": {
+    "D": 6,
+    "cayley_diameter": 6,
+    "coordinate_distances_to_linear": [
+      6,
+      5,
+      6,
+      5,
+      6,
+      5
+    ],
+    "coordinate_linear_masks": [
+      0,
+      6,
+      0,
+      5,
+      0,
+      5
+    ],
+    "cycle_size_histogram": {
+      "0": 1,
+      "3": 35,
+      "4": 105,
+      "5": 168,
+      "6": 280,
+      "7": 435,
+      "8": 435,
+      "9": 280,
+      "10": 168,
+      "11": 105,
+      "12": 35,
+      "15": 1
+    },
+    "diametral_target_distance": 6,
+    "generic_triple_defect_weights": [
+      3
+    ],
+    "k": 4,
+    "largest_sampled_forward_gap": 4,
+    "largest_sampled_reverse_gap": 3,
+    "maximum_cycle_defect_weight": 4,
+    "maximum_synchronized_point_error": 4,
+    "raw_future_samples_checked": 40,
+    "support_size": 21,
+    "theorem_formula": 33,
+    "total_distance_to_linear_section": 33,
+    "zero_sum_cycles_checked": 2048
+  },
+  "sharp_fibre_stripping": {
+    "1": {
+      "ambient_dimension": 3,
+      "bound": 2,
+      "full_distance": 1,
+      "gap": 2,
+      "transversal_distance": 3
+    },
+    "2": {
+      "ambient_dimension": 6,
+      "bound": 4,
+      "full_distance": 2,
+      "gap": 4,
+      "transversal_distance": 6
+    },
+    "3": {
+      "ambient_dimension": 9,
+      "bound": 6,
+      "full_distance": 3,
+      "gap": 6,
+      "transversal_distance": 9
+    },
+    "4": {
+      "ambient_dimension": 12,
+      "bound": 8,
+      "full_distance": 4,
+      "gap": 8,
+      "transversal_distance": 12
+    }
+  }
+}

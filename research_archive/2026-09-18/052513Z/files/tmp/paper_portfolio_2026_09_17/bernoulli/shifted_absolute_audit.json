@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "orders_checked": 517,
+  "real_threshold_candidates": 99080,
+  "largest_q_times_error": 0.20442252894472024,
+  "examples": [
+    {
+      "q": 1,
+      "candidates": 3,
+      "maximum_error": 0.2021154391971346,
+      "q_times_error": 0.2021154391971346,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": 1
+    },
+    {
+      "q": 2,
+      "candidates": 3,
+      "maximum_error": 0.09077777961631794,
+      "q_times_error": 0.1815555592326359,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 3,
+      "candidates": 5,
+      "maximum_error": 0.06814084298157341,
+      "q_times_error": 0.20442252894472024,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": 1
+    },
+    {
+      "q": 4,
+      "candidates": 5,
+      "maximum_error": 0.047884560802865295,
+      "q_times_error": 0.19153824321146118,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 8,
+      "candidates": 9,
+      "maximum_error": 0.024486518880079244,
+      "q_times_error": 0.19589215104063396,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 16,
+      "candidates": 16,
+      "maximum_error": 0.012362099865365628,
+      "q_times_error": 0.19779359784585004,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 64,
+      "candidates": 51,
+      "maximum_error": 0.003110530819130486,
+      "q_times_error": 0.1990739724243511,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 256,
+      "candidates": 176,
+      "maximum_error": 0.0007788018246230877,
+      "q_times_error": 0.19937326710351044,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 1024,
+      "candidates": 629,
+      "maximum_error": 0.00019477222751917989,
+      "q_times_error": 0.1994467609796402,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    },
+    {
+      "q": 10000,
+      "candidates": 5384,
+      "maximum_error": 1.994686465034423e-05,
+      "q_times_error": 0.19946864650344232,
+      "maximizing_threshold": 0.0,
+      "sign_at_maximum": -1
+    }
+  ],
+  "scope": "Finite candidates exhaust real thresholds; floating-point special functions"
+}

@@ -1,0 +1,660 @@
+
+===PAGE 1===
+arXiv:2102.05432v1  [math.CO]  10 Feb 2021
+On strongly regular graph with parameters
+(65,32,15, 16)
+Oleg Gritsenko
+February 11, 2021
+Abstract
+We construct a strongly regular graph with the parameters (65, 32, 15, 16).
+The idea is to search for an adjacency matrix that consists of circulant
+blocks. Equations with such matrices can be reduced to congr uences with
+polynomials matrices of smaller orders. We can consider the se congru-
+ences over diﬀerent moduli for a more eﬃcient computational approach.
+1 Introduction
+A strongly regular graph (SRG) with parameters (v, k, λ, µ ) is an undirected
+graph with v vertices, each one has k edges and every two adjacent or non-
+adjacent vertices have λ or µ common neighbours respectively. A special subset
+of SRG are conference graphs with parameters k = v− 1
+2 , λ = v− 5
+4 and µ = v− 1
+4 .
+Conference graphs are related to symmetric conference matr ices, i.e., matrices
+C with 0 on the diagonal and ± 1 oﬀ the diagonal such that C2 = ( n − 1)In,
+where n is the order of C and In is the identity matrix of order n.
+An existence of a SRG for given parameters is a question of a gr eat inter-
+est. There are several necessary conditions, however, for m any parameters it is
+unknown whether there is such a SRG. All feasible sets with v ⩽ 1300 with con-
+structions for known graphs are tracked at Andries Brouwer’ s website [1]. Until
+recently, the smallest unknown case was a conference graph w ith the parameters
+(65, 32, 15, 16).
+Denote Jn a matrix of order n consisting of ones, cn(x) = 1 + x + x2 + . . . +
+xn− 1. It is well known that if A is an adjacency matrix of a SRG with the
+parameters (v, k, λ, µ ), it must satisfy the equations
+A2 + (µ − λ)A = (k − µ )In + µJ n, AJ n = kJn, (1)
+where n = v. Also denote Mn(R) a ring of matrices of order n over a ring R.
+1
+===PAGE 2===
+2 Circulant matrices and matrix blocks
+Suppose we a trying to ﬁnd some solution of a matrix equation, but iterating
+over all possible matrices would take too much time. We can tr y to search for
+a matrix with some speciﬁc structure, for example, we can sup pose it consists
+of circulant blocks. In this section we’ll see how to represe nt such matrices as
+polynomial matrices of a smaller order. It might be easier to search for solutions
+having this speciﬁc form, but there is no guarantee that such a solution would
+exist, even if there is a solution of the original equation.
+Suppose we have two circulant matrices B, C ∈ Mm(Z), i.e. Bij = b(i− j) mod m
+and Cij = c(i− j) mod m. There is a one-to-one correspondence between such ma-
+trices and polynomials in Z[x]/ (xm − 1), namely, B and C correspond to b(x) =
+m− 1∑
+i=0
+bixi and c(x) =
+m− 1∑
+i=0
+cixi respectively. Note that the product BC is also a
+circulant matrix with the corresponding polynomial b(x)c(x) (mod xm − 1).
+Now, if a matrix B ∈ Mlm(Z) can be split into l × l blocks, where each
+block Bij ∈ Mm(Z) is circulant, we consider the matrix B(x) ∈ Ml(Z[x]/ (xm −
+1)) consisting of the polynomials bij(x) corresponding to these blocks Bij. If
+another matrix C ∈ Mlm(Z) has the same structure and corresponds to C(x) ∈
+Ml(Z[x]/ (xm − 1)), their product BC also has the same structure, i.e., consists
+of l × l circulant blocks, and its corresponding polynomial matrix is B(x) ·C(x)
+(mod xm − 1).
+For example, consider the adjacency matrix B of the Petersen graph, a SRG
+with the parameters (10, 3, 0, 1).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1 0 0 1
+1 0 0 0 0
+1 0 1 0 0 0 1 0 0 0
+0 1 0 1 0 0 0 1 0 0
+0 0 1 0 1 0 0 0 1 0
+1 0 0 1 0 0 0 0 0 1
+1 0 0 0 0 0 0 1 1 0
+0 1 0 0 0 0 0 0 1 1
+0 0 1 0 0 1 0 0 0 1
+0 0 0 1 0 1 1 0 0 0
+0 0 0 0 1 0 1 1 0 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note that B2 + B = 2I10 + J10, and that B consists of 4 blocks 5 × 5, each
+one is a circulant matrix corresponding to the polynomials x + x4, 1, 1, and
+x2 + x3 respectively. So the matrix B can be ‘compacted’ to
+B(x) =
+(x + x4 1
+1 x2 + x3
+)
+such that B2(x) + B(x) ≡ 2I2 + c5(x)J2 (mod x5 − 1).
+Note that if a ‘compacted’ matrix can be split into circulant blocks too,
+we can repeat this procedure, using a diﬀerent polynomial va riable. To illus-
+trate this, consider the Hoﬀman–Singleton graph, a SRG with the parameters
+2
+===PAGE 3===
+(50, 7, 0, 1). For brevity we won’t write its adjacency matrix here, but no te it
+can be compacted to
+B(x, y ) =
+( x + x4 1 + x(y + y4) + x4(y2 + y3)
+1 + x4(y + y4) + x(y2 + y3) x2 + x3
+)
+such that B2(x, y ) +B(x, y ) ≡ 6I2 + c5(x)c5(y)J2 (mod x5 − 1, y 5 − 1). Taking
+its y-coeﬃcients, we can expand it to the larger matrix B(x) ∈ M10(Z[x]/ (x5 −
+1)) such that B2(x) + B(x) ≡ 6I10 + c5(x)J10 (mod x5 − 1). B(x) in turn can
+be expanded to B ∈ M50(Z) such that B2 + B = 6 I50 + J50. Since B is also
+a symmetric matrix consisting of zeros and ones and BJ50 = 7 J50, it is the
+adjacency matrix of a SRG with the parameters (50, 7, 0, 1).
+So if we a searching for some solution of some matrix equation , say, A2+pA =
+qIn + rJn, where n = ml, we can try to search for a matrix consisting of
+l × l circulant blocks, and to reduce this matrix equation to A2(x) + pA(x) ≡
+qIl + r cm(x)Jl (mod xm − 1). We can also consider this congruence modulo
+some factors of xm − 1, for example, x − 1.
+Of course if we want A to consist only of zeros and ones, polynomial coef-
+ﬁcients of A(x) must also be zeros and ones. Furthermore, if we are looking
+for a symmetric matrix, A(x) must satisfy the congruence AT (x) ≡ A(xm− 1)
+(mod xm − 1), in other words, Aji(x) ≡ Aij(xm− 1) (mod xm − 1).
+3 Searching for srg(65,32, 15,16)
+Now let’s search for a SRG with the parameters (65, 32, 15, 16). Its adjacency
+matrix A ∈ M65(Z) must satisfy the equations A2 + A = 16 I65 + 16J65 and
+AJ65 = 32J65, according to (1).
+Keeping the previous section in mind, we can suppose that A can be split
+into 5 × 5 circulant blocks; or in 13 × 13 circulant blocks; or that the whole A
+is circulant. Unfortunately, neither approach works.
+In the ﬁrst case A is reduced to a matrix A5(x) ∈ M5(Z[x]/ (x13 − 1)) such
+that
+A2
+5(x) + A5(x) ≡ 16I5 + 16c13(x)J5 (mod x13 − 1).
+By taking x = ζ13 = e2πi/ 13, we get A2
+5(ζ13) + A5(ζ13) = 16 I5. The eigenvalues
+of A5(ζ13) are the solutions of the equation λ 2 + λ = 16 , i.e., − 1±
+√
+65
+2 . Thus
+tr(A5(ζ13)) = k − 1+
+√
+65
+2 + (5 − k) − 1−
+√
+65
+2 , where 0 ⩽ k ⩽ 5, and for any such k
+tr(A5(ζ13)) ∈ Q(
+√
+65)\ Q. On the other hand, tr(A5(x)) ∈ Z[x], so tr(A5(ζ13)) ∈
+Z[ζ13]. However, one can easily check that
+√
+65 /∈ Q(ζ13).
+Similarly, A can’t consist of 13 × 13 circulant blocks, as
+√
+65 /∈ Q(ζ5). If A
+itself is circulant, it corresponds to a polynomial a(x) ∈ Z[x]/ (x65 − 1), where
+a2(x) + a(x) ≡ 16 + 16 c65(x) (mod x65 − 1). Once again we can take x = ζ5
+and conclude there is no such matrix.
+Instead, let’s try the following modiﬁcation. The ﬁrst row o f A has 32 ones,
+so without loss of generality we may assume A1j = 1 for 2 ⩽ j ⩽ 33 and
+3
+===PAGE 4===
+A1j = 0 for 34 ⩽ j ⩽ 65. Denote B = (1 1 . . . 1 0 0 . . . 0) = ( A1j ), 2 ⩽ j ⩽ 65,
+C = (Aij) ∈ M64(Z), i, j ⩾ 2. Then the matrix A can be written as
+( 0 B
+BT C
+)
+The equality A2 + A = 16I65 + 16J65 holds iﬀ the following 3 equalities hold:
+
+
+
+
+
+02 + BB T + 0 = 32
+0B + BC + B = 16J1, 64
+BT B + C2 + C = 16I64 + 16J64
+(2)
+Here J1, 64 is the matrix of size 1 × 64 consisting of ones.
+The ﬁrst equality of (2) obviously holds. The second is equiv alent to
+32∑
+i=1
+Cij =
+{
+15, j ⩽ 32,
+16, j ⩾ 33. (3)
+Since we also need AJ65 = 32J65, it follows from (3) that
+65∑
+i=33
+Cij = 16 ∀j (4)
+Denote H64 = 16 J64 − BT B, the matrix consisting of 4 blocks 15J32, 16J32,
+16J32, and 16J32. Also denote H2n ∈ M2n(Z) the matrix consisting of 4 blocks
+15Jn, 16Jn, 16Jn, and 16Jn.
+The last equation of (2) can be rewritten as
+C2 + C = 16I64 + H64,
+and now we’ll apply the method described in the previous sect ion to this equa-
+tion. Suppose C consists of 4 × 4 circulant blocks of order 16, i.e. it can be
+‘compacted’ to C(x) ∈ M4(Z[x]/ (x16 − 1)) such that
+C2(x) + C(x) ≡ 16I4 + c16(x)H4 (mod x16 − 1). (5)
+Let’s take this congruence modulo x − 1 ﬁrst:
+C2(1) + C(1) = 16 I4 + 16H4
+As all polynomial coeﬃcients of C(x) must be zeros or ones, elements of C(1)
+must be non-negative integers. By a simple brute-force one c an ﬁnd there are
+just four such matrices, two of them are
+C(1) =
+
+
+
+
+7 8 6 10
+8 7 10 6
+6 10 8 8
+10 6 8 8
+
+
+
+ ,
+
+
+
+
+9 6 7 9
+6 9 9 7
+7 9 6 10
+9 7 10 6
+
+
+
+ , (6)
+4
+===PAGE 5===
+and the other two are obtained from these two by permuting the third and the
+fourth rows and columns, so we won’t consider them. Note that if we successfully
+expand such matrices into C ∈ M64(Z), the equalities (3) and (4) will hold.
+Next, we consider the congruence (5) modulo x + 1.
+C2(− 1) + C(− 1) = 16 I4.
+If f (x) ∈ Z[x] is any polynomial with non-negative coeﬃcients and f (1) = a is
+known, f (− 1) must be a value from − a to a of the same parity, i.e. f (− 1) ∈
+{− a, − a + 2, − a + 4, . . . , a − 2, a }. So if we know the matrix C(1), we can
+search for the matrix C(− 1) ≡ C(1) (mod 2) with coeﬃcients less or equal to
+those of C(1) in absolute values. Using a brute-force approach, we ﬁnd tha t
+each matrix in (6) produces 32 possible matrices C(− 1); we can keep only 10
+of them for the ﬁrst and 10 for the second, the rest will be thei r permutations.
+For brevity we won’t list them all, just one of them obtained f rom the second
+matrix (6):
+C(− 1) =
+
+
+
+
+1 − 2 − 3 − 1
+− 2 1 − 1 − 3
+− 3 − 1 − 2 2
+− 1 − 3 2 − 2
+
+
+
+ (7)
+Next, we consider the congruence (5) modulo x2 + 1, trying to ﬁnd possible
+values of C(i).
+C2(i) + C(i) = 16 I4.
+Again, if f (x) ∈ Z[x] has non-negative coeﬃcients and we know f (1) = a
+and f (− 1) = b ≡ a (mod 2) , possible values of f (i) have the real part in
+{− a+b
+2 , − a+b
+2 + 2, . . . , a+b
+2 − 2, a+b
+2 } and the imaginary part in {− a− b
+2 , − a− b
+2 +
+2, . . . , a− b
+2 − 2, a− b
+2 }. Again, we use brute-force to ﬁnd possible matrices C(i),
+given C(1) and C(− 1). Recall that in order for the ﬁnal matrix C to be sym-
+metric, we need CT (x) ≡ C(x15) (mod x16 − 1), therefore C(i) = CT (− i). It
+turns out there are 1422 possible values of C(i) for the ﬁrst matrix in (6) and
+1224 for the second. One of C(i) corresponding to (7) is
+C(i) =
+
+
+
+
+1 − 2 − i − 3i
+− 2 1 − 3i − i
+i 3i − 2 2
+3i i 2 − 2
+
+
+
+ (8)
+Similarly, given C(1), C(− 1) and C(i), we ﬁnd possible matrices C(ζ8), where
+ζ8 =
+√
+2(1+i)
+2 , such that
+C2(ζ8) + C(ζ8) = 16 I4
+and CT (ζ8) = C(− ζ3
+8 ). One of possible values corresponding to (7) and (8) is
+C(ζ8) =
+
+
+
+
+− 1 − 2ζ8 + 2ζ3
+8 2ζ2
+8 − 1 + ζ2
+8 − ζ3
+8 ζ8
+− 2ζ2
+8 − 1 + 2ζ8 − 2ζ3
+8 − ζ8 1 − ζ2
+8 − ζ3
+8
+− 1 + ζ8 − ζ2
+8 ζ3
+8 2ζ8 − 2ζ3
+8 − 2ζ2
+8
+− ζ3
+8 1 + ζ8 + ζ2
+8 2ζ2
+8 − 2ζ8 + 2ζ3
+8
+
+
+
+
+5
+===PAGE 6===
+Given C(1), C(− 1), C(i) and C(ζ8) (the values of C(x) modulo x − 1, x + 1,
+x2 + 1 and x4 + 1), we can calculate C(x) (mod x8 − 1):
+C11(x) ≡ 1 + x2 + 2x3 + 2x4 + 2x5 + x6 (mod x8 − 1),
+C12(x) ≡ x + 2x2 + x3 + x5 + x7 (mod x8 − 1),
+C13(x) ≡ x + x2 + x3 + x4 + x5 + 2x7 (mod x8 − 1),
+C14(x) ≡ 1 + x + x2 + 2x3 + x4 + x6 + 2x7 (mod x8 − 1),
+C22(x) ≡ 1 + 2x + x2 + 2x4 + x6 + 2x7 (mod x8 − 1),
+C23(x) ≡ 1 + x2 + 2x3 + x4 + x5 + x6 + 2x7 (mod x8 − 1),
+C24(x) ≡ 1 + x + x3 + x5 + x6 + 2x7 (mod x8 − 1),
+C33(x) ≡ 2x + x2 + x6 + 2x7 (mod x8 − 1),
+C34(x) ≡ 2 + x + x3 + 2x4 + x5 + 2x6 + x7 (mod x8 − 1),
+C44(x) ≡ x2 + 2x3 + 2x5 + x6 (mod x8 − 1).
+(9)
+(The rest Cij(x) can be calculated from Cij(x) ≡ Cji(x7) (mod x8 − 1)). Note
+that this C(x) satisﬁes the congruence
+C2(x) + C(x) ≡ 16I4 + c16(x)H4 (mod x8 − 1).
+The next step would be to lift the last congruence to (mod x16 − 1), or,
+equivalently, givenC(1), C(− 1), C(i) and C(ζ8) to ﬁnd possible values of C(ζ16),
+ζ16 = e2πi/ 16. Unfortunately, a brute-force doesn’t yield any such matri ces.
+Another approach could be to introduce a new variable y and try to ﬁnd a
+matrix C(x, y ) such that
+C2(x, y ) + C(x, y ) ≡ 16I4 + c8(x)c2(y)H4 (mod x8 − 1, y 2 − 1)
+We could then expand C(x, y ) into C(x) ∈ M8(Z[x]/ (x8 − 1)) and then into
+C ∈ M64(Z). However, a brute-force doesn’t ﬁnd any such matrices eithe r.
+4 Last step
+Consider again the calculated matrices C(x) (mod x8 − 1) such that C2(x) +
+C(x) ≡ 16I4 + 2c8(x)H4 (mod x8 − 1) (one of them is (9)). Let’s expand them
+into symmetric matrices D ∈ M32(Z) consisting of 4× 4 circulant blocks of order
+8 such that
+D2 + D = 16I32 + 2H32. (10)
+Suppose now that C consists of 32 × 32 circulant blocks of order 2, therefore
+it can be compacted into ˜C(x) ∈ M32(Z[x]/ (x2 − 1)) such that
+˜C2(x) + ˜C(x) ≡ 16I32 + c2(x)H32 (mod x2 − 1) (11)
+Furthermore, suppose that ˜C(1) is one of the matrices D we just found.
+Denote E = ˜C(0), so that ˜C(x) = E + (D − E)x. Then (11) is equivalent
+to the two same congruences modulo x − 1 and x + 1, where the ﬁrst one holds
+because of (10) and the second is
+(2E − D)2 + (2E − D) = 16 I32.
+6
+===PAGE 7===
+After simple transformations we obtain
+2E2 − ED − DE + E − D + H32 = 0. (12)
+We can take this equation modulo 2 to get rid of the square term E2:
+ED + DE + E + D + H32 ≡ 0 (mod 2) . (13)
+This is a linear equation with respect to E. We can solve it as a system of linear
+equations of Eij.
+There are several requirements for the ﬁnal matrix C, they impose restric-
+tions on E. First, C must be symmetric, so must be E. Second, all elements
+of C must be 0 or 1, so must be the elements of E and D − E (and therefore,
+ﬁnding E (mod 2) is enough to ﬁnd E). Thus, Dij = 0 implies Eij = 0, Dij = 2
+means Eij = 1 , and for Dij = 1 Eij can be either 0 or 1. Finally, C can have
+only zeros on the main diagonal because it is an adjacency mat rix of a graph,
+thus Eii = 0. We can iterate over all solutions of (13) with such restrict ions and
+check if they also satisfy (12).
+Unfortunately, there are too many solutions, so it may be inf easible to try
+them all. For example, for the matrix D constructed from (9) the solutions
+of (13) form an aﬃne space of dimension 62, giving 262 ≈ 4. 6 ·1018 possible
+matrices to check. So we need to reduce the set of solutions so mehow.
+Note that if we multiply some rows and columns of C(x) with the same
+indices by x (mod x2 − 1), the congruence (11) will still hold. In the matrix C
+that would mean a permutation of some pairs of rows and column s, or in the
+ﬁnal graph it would be a permutation of some vertices pairs, a nd in the matrix
+E that corresponds to adding 1 (mod 2) to some rows and columns. Therefore,
+if for every row i we denote g(i) = min {j : Dij = 1 }, we may assume without
+loss of generality that Ei,g (i) = 0 if 1 ⩽ g(i) < i . This additional restriction
+can reduce the dimension of solutions of (13). For example, f or the matrix D
+obtained from (9) there would be just 232 ≈ 4. 3 ·109 solutions, so it is now
+feasible on a modern computer to iterate over all of them, che cking whether
+(12) holds.
+And luckily one of such matrices indeed satisﬁes this equati on.
+7
+===PAGE 8===
+E =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00011100001000000000000100010001
+00001110000100001000110010101000
+00000111010010010100101011110110
+10000011101011100010111100100110
+11000011000101101001011010010011
+11100001000010110100101011001001
+01111000110101011100010101000111
+00111100010010101001101001110110
+00010010011010011011101101000001
+00100011101101011101100010000000
+10010000110110101100010011100101
+01001010011011010011001000101010
+00110101101101101101001100111000
+00011010010110101110110000111100
+00011101001011010110010001000110
+00100110110100100011011100100011
+01001011111011000100000111011010
+00100110011011101010000111001101
+00010000100101110101000011110010
+00001001110110010010110011011001
+01110101110001000001011011101100
+01011010001001110001101111110100
+00111101100110010000110100111011
+10010010100010011100011000011111
+01101100011000001111110000010110
+00100111101000101111110000001011
+01110001001111010010111000001101
+10101001000011001011011110000110
+01000100000111001101101101100011
+00110011001001100100110110110001
+00111011000100111010001111011000
+10001110101000010101001101101100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From this matrix and from D we can construct C(x) ∈ M32(Z[x]/ (x2 − 1)),
+then we can expand C(x) to C ∈ M64(Z). Then by adding a row and a column
+of B (32 ones followed by 32 zeros) we ﬁnally obtain the adjacent m atrix A of a
+SRG with the parameters (65, 32, 15, 16), we also write this matrix below. One
+can easily check that it consists only of zeros and ones, that it is symmetric,
+that each row has 32 ones, and each two rows i, j have 15 or 16 common ones,
+depending on Aij.
+Note that we can also construct a symmetric conference matri x of order 66
+from it by replacing all 1 with − 1, then all 0 with 1, keeping zeros on the main
+diagonal and adding a row and a column of ones. A square of such matrix is
+equal to 65I66.
+One can also compute the automorphism group of this SRG. It co nsists of
+8
+===PAGE 9===
+32 elements, thus the graph is not vertex-transitive. In fac t, its vertex orbits
+are {1}, {2, 3, . . . , 33}, and {34, 35, . . . , 65}.
+Here is the adjacency matrix of the SRG:
+01111111111111111111111111111111100000000000000000000000000000000
+10100011111110100000111010001000100010101010100110101011101000111
+11000101111111000001011100010001000101010101000111010101110001011
+10001000111111101010001110100010011000101101001001101100111010001
+10010001011111110100010111000100011001010010110001110011011100010
+10100010001111111001000011101001000110001100110011011101001111000
+11000100010111111000100101110000100110010011001100111010110110100
+11101000100011111100010001011100001001100101010100001110101101101
+11110001000101111010001000111010010001100010101010010111010011110
+11111010001001011000100100010110110010011001010011000011101011011
+11111100010000111001000010001111001100011000101100100101110100111
+11111110100010010010001001000101101100100110010011110000111010110
+11111111000100001100010000100011110011000110001101101001011101001
+10111111110000100111000100010001010100101001100100111010001111010
+11011111101001000110100010001000101011010001100011011100010110101
+10001111111100001011101001000100010010110100011000110111000101101
+10010111111010010101110000100010001101001010011001001110100011110
+10001001000011101011110001100011110001011100110110110000100010111
+10010000100101110101101001100101101000111011001111001001000101011
+10100100001001011110111100011001011100010110101011101010001000101
+11000010010000111111011010011000111010001111010101110100010001010
+11101001000010001101101111000110010110100011101011011100100100010
+11110000100100010011110110100110001111000101110100111011000010001
+10111010010001000001011011110001101011110000111010101110110001000
+11011100001000100000111101101001110101101001011101010111001000100
+10001111000100010110010110111100010100111010010110001101110010001
+10010110100010001110001111011010001011011100001110010011101100010
+10100011110001000001100101101110111101001111000010100101011100100
+11000101101000100001100011110111011010110110100101000010111011000
+10001001011100010010011001011011101111001011101000010000101111001
+10010000111010001100011000111101110110110101110000001001010110110
+10100100001111000111000110001110100011110011011100100100001011110
+11000010010110100110100110010111000101101100111011000010010101101
+00011000110011010101110011011010000110100000001111110001011011101
+00011001001100101011101100111100000111000000010111101000111101110
+00100110001101001001011011010110111001101000000101011010010110111
+01000110010010110000111100101111011001110000000010111100001111011
+00101001100010101100001110110101101110011010000001110111000011101
+01010001100101010010010111001011110110011100000001101110100101110
+00101010011000110111000101101011000011100111000001011011110000111
+01010100011001001110100011110100100101100110100000111101101001011
+00110101000110010101101000111010100000111001110001110110111100001
+9
+===PAGE 10===
+01001010100110001011110001011101000001011001101001101111011010010
+00110011010001100010111010010111000000010110011101011101101110100
+01001100101001100101011100001110100000001110011010111011110111000
+00001101010100011100101111000011101000000101100110001111011011110
+00010010101010011011010110100101110000000011100110010110111101101
+01100011001011000110101011101001011100000001011000100011110111011
+01100100110100100111010101110000111010000000111001000101101110111
+00111100010110101011110010001000111101110111000010000011100111000
+01011010001111010101101100010001011011101110100100000101100110100
+00101110100101110100111010100100010111011101101000000000111001110
+01010111000011101011011101000010001110111011110000000001011001101
+00110101101000111000110111010001000011101111011010100000010110011
+01001011110001011001001110101000100101110110111101000000001110011
+01101100111010010010001011110010010001011011110111101000000101100
+01110011011100001100010101101100001000111101101111110000000011100
+00111010101110100000100101011010111100010110111100011100000001011
+01011101010111000001000010111101011010001111011010011010000000111
+00001111001011110010010000110110101110100101101111100111000000010
+00010110110101101100001001001111010111000011110111100110100000001
+00100101110011011010100100001101111011101000111101011001110000000
+01000011101100111101000010010011111101110001011010111001101000000
+01101000111101001110110000100011001110111010010110010110011100000
+01110001011010110111001001000100110111011100001110001110011010000
+References
+[1] A. E. Brouwer. Parameters of Strongly Regular Graphs.
+http://www.win.tue.nl/~aeb/graphs/srg/srgtab.html
+10

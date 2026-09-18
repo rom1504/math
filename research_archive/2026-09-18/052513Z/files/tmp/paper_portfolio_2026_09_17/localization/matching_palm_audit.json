@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "seed": 2026091720,
+  "cases": [
+    {
+      "p": 6,
+      "matchings": 15,
+      "exact_palm_edges": 15,
+      "weighted_switch_checks": 725,
+      "exact_light_variance_checks": 160,
+      "maximum_weighted_bound_ratio": 0.08277689234710484,
+      "maximum_variance_bound_ratio": 0.6857941770613295
+    },
+    {
+      "p": 8,
+      "matchings": 105,
+      "exact_palm_edges": 28,
+      "weighted_switch_checks": 1295,
+      "exact_light_variance_checks": 160,
+      "maximum_weighted_bound_ratio": 0.06570412464679333,
+      "maximum_variance_bound_ratio": 0.711641620234292
+    },
+    {
+      "p": 10,
+      "matchings": 945,
+      "exact_palm_edges": 45,
+      "weighted_switch_checks": 1826,
+      "exact_light_variance_checks": 160,
+      "maximum_weighted_bound_ratio": 0.06424099060670493,
+      "maximum_variance_bound_ratio": 0.6837862941468692
+    }
+  ],
+  "assertions": [
+    "each conditional matching has exactly p-1 preimages",
+    "exact light variance bounded by tau^2 v+2v^2/(p-3)",
+    "weighted reduced-Palm switch bound",
+    "finite total weighted Poisson error bound"
+  ]
+}
