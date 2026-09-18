@@ -1,0 +1,126 @@
+{
+  "exact_status": "PASS",
+  "base_degree": 2,
+  "a_degree": 1,
+  "b_degree": 3,
+  "F_degree": 4,
+  "h_degree": 4,
+  "F_support": 256,
+  "h_support": 60,
+  "new_support": 36,
+  "h_squared_degree": 8,
+  "C_F_times_h_squared_degree": 8,
+  "C_coefficient_mask503": "3/4",
+  "normalization_idempotence_and_absorption": "PASS",
+  "h_squared_L2": 18,
+  "C_squared_L2": 864,
+  "outside_coefficient_squared_numerator_counts_denominator256": {
+    "48": 24,
+    "144": 12
+  },
+  "outside_squared_mass": "45/4",
+  "certified_degree4_ratio_lower_bound": "2 + 2^(-18), strictly",
+  "b_denominator": 16,
+  "b_numerators": {
+    "0": [
+      4,
+      -4
+    ],
+    "3": [
+      -4,
+      -4
+    ],
+    "4": [
+      -4,
+      0
+    ],
+    "7": [
+      4,
+      -8
+    ],
+    "8": [
+      0,
+      -4
+    ],
+    "11": [
+      0,
+      -12
+    ],
+    "17": [
+      -4,
+      -4
+    ],
+    "18": [
+      -12,
+      12
+    ],
+    "21": [
+      12,
+      0
+    ],
+    "22": [
+      4,
+      -8
+    ],
+    "25": [
+      8,
+      -4
+    ],
+    "26": [
+      -8,
+      4
+    ]
+  },
+  "z_histogram_denominator4": {
+    "(0, -8)": 3,
+    "(8, -8)": 5,
+    "(-8, 0)": 3,
+    "(0, 8)": 5,
+    "(8, 0)": 5,
+    "(0, 0)": 8,
+    "(-8, 8)": 3
+  },
+  "tangent_ratio_histogram_denominator256": {
+    "(0, 0)": 640,
+    "(-1024, 2048)": 192,
+    "(1024, -2048)": 192
+  },
+  "outside_q_mass_diagnostic": 13.862641300706063,
+  "ratio_diagnostics_not_certificates": [
+    {
+      "epsilon": 0.0001,
+      "ratio": 2.0000018507870956,
+      "convexity_lower_ratio": 2.0000017956621514
+    },
+    {
+      "epsilon": 0.001,
+      "ratio": 2.0000481063260356,
+      "convexity_lower_ratio": 2.000042594110438
+    },
+    {
+      "epsilon": 0.01,
+      "ratio": 1.9993626395727515,
+      "convexity_lower_ratio": 1.998813325452516
+    },
+    {
+      "epsilon": 0.02,
+      "ratio": 1.9940609739488584,
+      "convexity_lower_ratio": 1.9918843849671133
+    },
+    {
+      "epsilon": 0.04,
+      "ratio": 1.9675493769031027,
+      "convexity_lower_ratio": 1.9591415825143428
+    },
+    {
+      "epsilon": 0.05,
+      "ratio": 1.9470833945775787,
+      "convexity_lower_ratio": 1.9342657573807944
+    },
+    {
+      "epsilon": 0.1,
+      "ratio": 1.8030513777563144,
+      "convexity_lower_ratio": 1.7595990774025805
+    }
+  ]
+}

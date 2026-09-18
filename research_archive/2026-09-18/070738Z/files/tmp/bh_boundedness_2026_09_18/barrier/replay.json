@@ -1,0 +1,447 @@
+{
+  "scope": "Exact finite identities; asymptotics require artifact proofs",
+  "exact": {
+    "assertions": 7048,
+    "enumeration_cases": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "exact_chebyshev_clt_diagnostics": [
+      {
+        "k": 1,
+        "sqrt_n_abs_a1": 1.0,
+        "full_q_k_norm_diagnostic": 1.0,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "1",
+        "exact_denominator": "1"
+      },
+      {
+        "k": 3,
+        "sqrt_n_abs_a1": 0.588477366255144,
+        "full_q_k_norm_diagnostic": 1.1811470036117047,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "143",
+        "exact_denominator": "243"
+      },
+      {
+        "k": 5,
+        "sqrt_n_abs_a1": 0.603587072,
+        "full_q_k_norm_diagnostic": 1.0914390930427766,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "1178881",
+        "exact_denominator": "1953125"
+      },
+      {
+        "k": 7,
+        "sqrt_n_abs_a1": 0.6052781911245845,
+        "full_q_k_norm_diagnostic": 1.010486460840046,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "58644804959",
+        "exact_denominator": "96889010407"
+      },
+      {
+        "k": 9,
+        "sqrt_n_abs_a1": 0.6058283677168069,
+        "full_q_k_norm_diagnostic": 0.9528306765638226,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "10103509767225601",
+        "exact_denominator": "16677181699666569"
+      },
+      {
+        "k": 15,
+        "sqrt_n_abs_a1": 0.6062961785318584,
+        "full_q_k_norm_diagnostic": 0.8568250963372928,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "7750528962822241877300031665601983",
+        "exact_denominator": "12783403948858939111232757568359375"
+      },
+      {
+        "k": 21,
+        "sqrt_n_abs_a1": 0.6064135065749795,
+        "full_q_k_norm_diagnostic": 0.8098007335617108,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "985734484101553817446738327850171315272533909983278081",
+        "exact_denominator": "1625515384162495488635310116741260158419511738394408821"
+      },
+      {
+        "k": 31,
+        "sqrt_n_abs_a1": 0.6064775317676495,
+        "full_q_k_norm_diagnostic": 0.7685952191824281,
+        "full_q_k_norm_limit": 0.6575198539828996,
+        "exact_numerator": "5700041794148284361841700606780311498664402484761648531366981356146419090243419952009852799",
+        "exact_denominator": "9398603403385527029991230571625665906303885153111379831603689142618629334120036414236028831"
+      }
+    ]
+  },
+  "clt_diagnostics": [
+    {
+      "k": 31,
+      "n": 480,
+      "lambda": 0.5,
+      "retained_probability": 0.9999999999998228,
+      "sqrt_n_abs_a1": 0.51944437102873,
+      "limit": 0.520260095022889
+    },
+    {
+      "k": 101,
+      "n": 5100,
+      "lambda": 0.5,
+      "retained_probability": 1.0000000000096638,
+      "sqrt_n_abs_a1": 0.52018356122934,
+      "limit": 0.520260095022889
+    },
+    {
+      "k": 301,
+      "n": 45300,
+      "lambda": 0.5,
+      "retained_probability": 0.9999999999765234,
+      "sqrt_n_abs_a1": 0.5202514811156853,
+      "limit": 0.520260095022889
+    },
+    {
+      "k": 1001,
+      "n": 501000,
+      "lambda": 0.5,
+      "retained_probability": 1.0000000004307608,
+      "sqrt_n_abs_a1": 0.5202593164040107,
+      "limit": 0.520260095022889
+    },
+    {
+      "k": 31,
+      "n": 961,
+      "lambda": 1.0,
+      "retained_probability": 1.00000000000014,
+      "sqrt_n_abs_a1": 0.6064775317677822,
+      "limit": 0.6065306597126334
+    },
+    {
+      "k": 101,
+      "n": 10201,
+      "lambda": 1.0,
+      "retained_probability": 0.9999999999973503,
+      "sqrt_n_abs_a1": 0.6065257001724351,
+      "limit": 0.6065306597126334
+    },
+    {
+      "k": 301,
+      "n": 90601,
+      "lambda": 1.0,
+      "retained_probability": 0.9999999998855367,
+      "sqrt_n_abs_a1": 0.6065301017094825,
+      "limit": 0.6065306597126334
+    },
+    {
+      "k": 1001,
+      "n": 1002001,
+      "lambda": 1.0,
+      "retained_probability": 0.9999999989696564,
+      "sqrt_n_abs_a1": 0.60653060882965,
+      "limit": 0.6065306597126334
+    },
+    {
+      "k": 31,
+      "n": 1922,
+      "lambda": 2.0,
+      "retained_probability": 1.0000000000016387,
+      "sqrt_n_abs_a1": 0.5507490048598678,
+      "limit": 0.5506953149031838
+    },
+    {
+      "k": 101,
+      "n": 20402,
+      "lambda": 2.0,
+      "retained_probability": 1.0000000000135756,
+      "sqrt_n_abs_a1": 0.5507003756616503,
+      "limit": 0.5506953149031838
+    },
+    {
+      "k": 301,
+      "n": 181202,
+      "lambda": 2.0,
+      "retained_probability": 0.9999999998438427,
+      "sqrt_n_abs_a1": 0.5506958846498866,
+      "limit": 0.5506953149031838
+    },
+    {
+      "k": 1001,
+      "n": 2004002,
+      "lambda": 2.0,
+      "retained_probability": 0.9999999999082412,
+      "sqrt_n_abs_a1": 0.5506953663549562,
+      "limit": 0.5506953149031838
+    }
+  ],
+  "contraction_diagnostics": {
+    "critical_s": 1.4426950408889634,
+    "central": [
+      {
+        "d": 2,
+        "D_d_d": 2.9999999999999996,
+        "s0_factor": 2.9999999999999996,
+        "s1_factor": 1.4999999999999998,
+        "s_critical_factor": 1.1036383235143268
+      },
+      {
+        "d": 3,
+        "D_d_d": 2.82842712474619,
+        "s0_factor": 2.82842712474619,
+        "s1_factor": 1.414213562373095,
+        "s_critical_factor": 1.0405201900457777
+      },
+      {
+        "d": 5,
+        "D_d_d": 2.7556759606310757,
+        "s0_factor": 2.7556759606310757,
+        "s1_factor": 1.3778379803155378,
+        "s_critical_factor": 1.0137565324465376
+      },
+      {
+        "d": 10,
+        "D_d_d": 2.727412826635506,
+        "s0_factor": 2.727412826635506,
+        "s1_factor": 1.363706413317753,
+        "s_critical_factor": 1.003359106506494
+      },
+      {
+        "d": 100,
+        "D_d_d": 2.718372444800634,
+        "s0_factor": 2.718372444800634,
+        "s1_factor": 1.359186222400317,
+        "s_critical_factor": 1.0000333358891047
+      },
+      {
+        "d": 1000,
+        "D_d_d": 2.7182827345536826,
+        "s0_factor": 2.7182827345536826,
+        "s1_factor": 1.3591413672768413,
+        "s_critical_factor": 1.000000333333589
+      },
+      {
+        "d": 100000,
+        "D_d_d": 2.718281828549655,
+        "s0_factor": 2.718281828549655,
+        "s1_factor": 1.3591409142748274,
+        "s_critical_factor": 1.0000000000333336
+      }
+    ],
+    "grid_minimum_critical_factor_minus_1": 5.3333987564130325e-06,
+    "multi_color_thresholds": [
+      {
+        "colors": 2,
+        "threshold": 1.4426950408889634
+      },
+      {
+        "colors": 3,
+        "threshold": 1.8204784532536746
+      },
+      {
+        "colors": 4,
+        "threshold": 2.1640425613334453
+      },
+      {
+        "colors": 5,
+        "threshold": 2.4853397382384474
+      },
+      {
+        "colors": 6,
+        "threshold": 2.7905531327562363
+      },
+      {
+        "colors": 7,
+        "threshold": 3.0833900542185044
+      },
+      {
+        "colors": 8,
+        "threshold": 3.3662884287409147
+      },
+      {
+        "colors": 9,
+        "threshold": 3.6409569065073493
+      },
+      {
+        "colors": 10,
+        "threshold": 3.908650337129266
+      }
+    ]
+  },
+  "torsion_nondensity_exact": {
+    "proper_subsets_exactly_checked": 254,
+    "proper_subsum_modulus_lower_bound": "1/15",
+    "minimum_subsum_attaining_masks": [
+      61,
+      62,
+      193,
+      194
+    ],
+    "torsion_ratios_exactly_checked": 210,
+    "distance_of_z3_to_mu210_lower_bound": "1/200",
+    "uniform_distance_from_degree2_torsion_polynomials_lower_bound": "1/400",
+    "diagnostic_minimum_root_distance_lower_bound": 0.006878361991474618
+  }
+}

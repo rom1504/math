@@ -1,0 +1,423 @@
+% ============================================================================
+% AI SECTION -- draft to be merged into the main paper as a single section.
+% No abstract and no title: the \section below is the section itself.
+% Style: anton_style.md. Items needing author confirmation are marked %% TODO.
+% ============================================================================
+
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+
+\part{AI Methodology and Analysis}
+\label{sec:ai}
+
+
+The results in this paper were obtained in collaboration with an autonomous
+AI research system. The cubic--quintic
+construction and its certificate (Theorem~\ref{thm:cubic-quintic-upper-bound})
+predate the current system and were found through conversation with GPT-5.5-Pro. The lower bound $\KG\ge6\pi/11$ was
+discovered and first proved by the system; we have since verified the
+argument ourselves, and the proof in this paper is our revision of the
+system's write-up. The system also produced further improvements on both
+sides of the problem, which we report in Section~\ref{sec:ai-results} but do
+not state as theorems, because their certificates have not yet been human-verified. This section documents the methodology
+(Section~\ref{sec:ai-methodology}), quantifies the run and its outcomes
+(Section~\ref{sec:ai-results}), reconstructs how the lower bound was found
+(Section~\ref{sec:ai-case-study}), and discusses what the record shows about
+the strengths and weaknesses of current AI systems as mathematical
+collaborators (Sections~\ref{sec:ai-discussion} and~\ref{sec:ai-future}).
+
+\section{Methodology}
+\label{sec:ai-methodology}
+
+\paragraph{AI models and compute.}
+The run used two frontier language models: a reasoning model (OpenAI
+GPT-5.5-Pro at maximal reasoning effort, replaced mid-run by GPT-5.6-Sol)
+and a coding agent (Anthropic Claude Code, running Claude Opus and later
+Claude Fable~5). Floating-point searches
+ran on a single four-GPU node, and every Arb-certified computation was redone in interval arithmetic on CPU.
+
+% \paragraph{The AI research system.}
+% The AI research system is designed as a harness. The 
+% harness couples the two models in distinct roles: (1) The \textit{reasoning model}
+% serves as the brain that selects directions, develops arguments, specifies
+% experiments, and audits the resulting claims; (2) The \textit{coding agent} serves as
+% the executor that maintains the project repository, implements and runs
+% experiments, retrieves literature, and drives the reasoning model through
+% a scripted interface. The models run in bounded sessions, and no model
+% context survives from one session to the next; continuity is carried by
+% files, principally a problem statement, a single summary file that serves
+% as working memory and into which finished work is merged, and append-only
+% transcripts and experiment logs. The harness was adjusted repeatedly over
+% the run in response to observed failures; we describe its final form, to
+% the extent needed to interpret the record.
+
+\paragraph{The AI research system.}
+The AI research system is organized as a harness coupling two agents in distinct roles: (1) the \textit{reasoning agent} serves as the brain that selects directions, develops arguments, specifies experiments, and audits the resulting claims, and (2) the \textit{coding agent} serves as the executor that maintains the project repository, implements and runs experiments, retrieves literature, and drives the reasoning model through a scripted interface.
+
+The agents run in bounded sessions, and no agent context survives from one session to the next. Continuity is instead carried by files, principally a problem statement, a single summary file that serves as working memory and into which finished work is merged, and append-only transcripts and experiment logs. The harness was adjusted repeatedly over the run in response to observed failures; we describe its final form, to the extent needed to interpret the record.
+
+\paragraph{Run configuration.}
+Work is organized into \emph{sessions} of a few hours, of which two to
+five run concurrently on mutually distinct directions. A session passes
+through fixed phases: orientation from the problem statement and summary
+files, selection of a focus, a research loop in which the reasoning model
+requests computations, literature, or further reasoning time, and a
+closing audit that produces a calibrated summary in which every claim is
+tagged as proven, numerically supported, conjectural, or heuristic. We
+reserve the word theorem, here and in the rest of the paper, for
+statements that we have additionally checked ourselves.
+
+The run was initialized with our prior work on the constant: the
+cubic--quintic scheme, the coefficient formulas and certification
+machinery, several months of accumulated notes, and a problem statement
+listing candidate directions for both bounds. The search space the run
+explored is a generalization of the cubic--quintic scheme, and the
+possibility of converting obstructions into lower bounds was raised, as a
+suggestion, in the problem statement. The system therefore operated
+downstream of the mathematical framework it was given, a point quantified
+in Section~\ref{sec:ai-case-study}.
+
+\paragraph{Human collaboration.}
+Human operators (the authors) steered the run asynchronously
+through text files read at the start of, and during, every session.
+Steering consisted of priorities, targets, audits of the run's own claims,
+and occasional mathematical pointers; about forty directives were
+issued over the run. 
+% The operator contributed no proof steps through this
+channel.
+
+\section{Results}
+\label{sec:ai-results}
+
+The run spanned June~16 to July~24, 2026. It comprised
+roughly 240 research sessions. The reasoning model was called 2{,}091
+times, consuming about 152 million tokens at an estimated \$5{,}400 in
+API cost; the coding agent ran on a flat-rate subscription (Claude Max).
+Table~\ref{tab:run} collects these figures, and
+Table~\ref{tab:timeline} gives the timeline of the bounds.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Duration & June 16 -- July 24, 2026 (main phase through July 4)\\
+Research sessions & $\approx240$\\
+Reasoning model & GPT-5.5-Pro, later GPT-5.6-Sol; maximal effort\\
+Usage and cost & 2{,}091 calls; $\approx152$M tokens; $\approx\$5{,}400$\\
+Coding agent & Claude Code (Opus, later Fable 5); subscription\\
+Human steering  $\approx40$ dated directives\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{The run at a glance.} Aggregates computed from the harness
+telemetry. Dollar figures are list-price estimates; coding-agent usage was
+only partially metered.
+}
+\label{tab:run}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lp{0.76\textwidth}@{}}
+\toprule
+Sessions & Event\\
+\midrule
+1 & run begins from the interval $1.6769566742\le\KG\le1.7818666070$
+(the upper end is the cubic--quintic bound of this paper)\\
+18 & upper-bound search plateaus; the operators direct a pivot to the
+lower bound\\
+44 & numerical upper bound $1.7802243$ recorded (later withdrawn)\\
+55--57 & affine reframe; $\KG\ge6\pi/11$ derived\\
+58--64 & $6\pi/11$ proof machine-audited; first \LaTeX{} write-up\\
+92, 117 & lower bounds $27\pi/49\approx1.7311$ and
+$51\pi/92\approx1.7415$ machine-verified\\
+follow-up & the session-44 value found unsupported by internal audit and
+withdrawn\\
+follow-up & upper bound $1.781801841033$ machine-certified\\
+follow-up & upper bound $1.7813319810625639$ machine-certified;
+adversarial review passed\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Timeline of the bounds produced during the run.}
+Machine-verified means accepted by the verification protocol of
+Section~\ref{sec:ai-methodology}. The last three events fall in the short
+follow-up phases, whose sessions we do not cite individually. Of the
+run's results, only $\KG\ge6\pi/11$ has additionally been verified by the
+authors; it is the result stated as a theorem in this paper.}
+\label{tab:timeline}
+\end{table}
+
+The run's principal outcome, and the one this paper states as a theorem,
+is the lower bound $\KG\ge6\pi/11$, whose discovery
+Section~\ref{sec:ai-case-study} reconstructs. Beyond it, the run produced
+machine-certified upper bounds of $1.781801841033$ and then
+$1.7813319810625639$, improving on the cubic--quintic value, together with
+the two stronger lower bounds listed in Table~\ref{tab:timeline}. We
+report these as machine-verified claims rather than theorems: each passed
+the full internal protocol, but we have not yet verified their
+certificates ourselves.
+%% TODO: reconcile with the main paper's discussion of concurrent work
+%% (e.g. Heilman's computer-assisted improvement of Krivine's bound,
+%% arXiv:2606.00247).
+
+\section{Case study: from a failed upper-bound search to a lower bound}
+\label{sec:ai-lower-bound-case-study}
+
+The lower bound is the run's main discovery. We reconstruct it here in
+outline, highlighting the human interventions that shaped it, and the ingenuity of the AI system once it had the right framing.
+
+The lower bound began with a plateauing search for a better upper bound. The system explored several variants of the limiting Krivine schemes developed in Section~\ref{sec:LimitingKrivine}. Although the constructions differed, they repeatedly encountered
+the same tradeoff: suppressing the unwanted nonlinear terms in the inverse majorant series also weakened
+the leading term. The run recorded this pattern, but continued to search
+for further constructions rather than treating the repeated failures as
+evidence of a general obstruction.
+
+The important human contribution was in identifying there was likely an analytic obstruction, and in recognizing that proving the generality of this obstruction for all mixed and limiting schemes is mathematically valuable as the optimality theorem of Naor and Regev~\cite{naor2014krivine} would imply a lower bound for $K_G$. Thus, the operators asked the system to stop searching for new limiting Krivine schemes, and instead synthesize the its failures so far, search for patterns, and attempt to generalize and prove these for all schemes.
+
+Once this objective was fixed, and with a bit more high-level human guidance, the system developed the central argument
+and produced a complete proof (see all of Part~\ref{part:LowerBound}). It expressed the obstruction as an
+affine inequality between the two leading coefficients of a scheme's
+correlation function (see Equation~\ref{eq:affine-coefficient-inequality}). Because this inequality is preserved under averaging
+and limits, it extends to mixed and limiting schemes. The system then
+cleverly reduced the high-dimensional terms it needed to bound to one-dimensional estimates and produced
+the required computer-assisted certificate, yielding
+\[
+    \KG \geq \frac{6\pi}{11}.
+\]
+The authors subsequently revised the exposition and independently verified
+the proof.
+
+This episode illustrates the different roles of the human operators and the AI system throughout the run. The system was effective at technical execution: drawing from its wealth of mathematical knowledge and its competence in problem-solving to propose lemmas and construct proofs. The human input was primarily of research judgement and mathematical taste: judging when a research direction has been somewhat exhausted, understanding that mathematical understanding and discoveries frequently come from synthesizing failures, 
+and recoginizing that a new lower-bound mechanism is much more interesting than a small numerical improvement to a
+known upper-bound method. Appendix~\ref{app:ai-case-study} gives the
+detailed chronology.
+
+
+\section{Discussion}
+\label{sec:ai-discussion}
+
+The record supports a consistent capability profile: strong technical
+execution, with persistent failures in the judgement that directs it. We
+summarize the strengths, then the weaknesses, exemplified by Section~\ref{sec:ai-case-study} 
+
+make concrete, describe
+the human operator's involvement, and close by relating the run to recent
+AI results in mathematics.
+
+\subsection{Strengths}
+
+Three strengths carried the run. The first is technical range with effective
+recall: given a one-word pointer to Naor's work, the system identified the
+relevant theorem, verified its normalization against the paper, and computed
+the slack available for a lossy transfer; given a plateau, it produced six
+structurally distinct escape mechanisms in two days. The second is local
+invention: the affine family, the fiber reduction, the closure lemma, and
+the certificate architecture were machine products, several arriving within
+hours once the question was well posed. The third is speed and reliability
+of execution: from the reframe to a machine-audited, interval-certified
+proof took about a day, and most individual technical errors were caught by
+the system's own verification passes. In one representative episode
+(sessions p44 and p49), a claimed bound of $\KG\ge1.7754518$
+was refuted within five hours by an adversarial session that computed its
+true margin to be approximately $-8\times10^{-8}$, and the record was
+corrected to the defensible value.
+
+\subsection{Weaknesses}
+
+Each intervention of Section~\ref{sec:ai-case-study} was needed because a
+specific capability was absent. The paragraphs below name these
+capabilities and add further instances from the record.
+
+\paragraph{Poor judgement of what is interesting.}
+The system did not reliably rank work by mathematical interest. The second
+and third interventions are the clearest cases: the run treated refinements
+of the two-dimensional ceiling as progress when only the general bound
+mattered, and, once the family of rungs existed, it valued improvements
+within the family over establishing the first certified rung. The same
+tendency appeared at smaller scales throughout, from sessions spent on
+$10^{-5}$-sized improvements to mechanisms the run already understood, down
+to reported values tuned to the edges of their enclosures. The implication
+for collaboration is that the objective of the research cannot yet be
+delegated. The operator's judgements of interest were few, but each
+redirected weeks of machine effort, and between them the system optimized,
+competently, whatever was in front of it. On a problem of this size the
+space of possible intermediate constructions is unbounded, and a ranking by
+expected interest is what makes the search tractable; supplying that
+ranking was the human's principal ongoing contribution.
+
+\paragraph{Lack of high-level research skills.}
+The system managed individual arguments well and the research process
+poorly: it did not decide when to persist, when to switch, or what a
+sequence of failures implied. The first intervention is the sharpest case,
+since the dualization of failures into a lower bound was suggested in the
+problem statement the system re-read at every session, the six failures
+were in its memory, and the step was taken only when ordered. The record
+contains three further episodes of the same shape, of fourteen, roughly two
+dozen, and about a dozen sessions respectively (the two-dimensional
+extension, near-sharp variants of the lower bound, and the July
+certification effort), in each of which the run circled a target without
+progress until the operator ended the loop. The implication is that
+autonomous running time does not by itself convert into progress. Once the
+accessible directions were exhausted, additional sessions multiplied
+execution, not judgement, and the run's rate of real progress was set by
+the frequency of strategic correction; additional compute would not have
+changed it. Oversight of such systems is accordingly most valuable at the
+level of strategy, which is precisely the level at which the system did not
+correct itself.
+
+\paragraph{Unreliable memory.}
+The harness's file-based memory preserved statements more reliably than
+their qualifications. The withdrawn upper bound of Table~\ref{tab:timeline}
+is the clearest case. In session 44 the run recorded a numerical upper
+bound of $1.7802243$, with caveats attached; over the nineteen days the
+value stood in working memory, re-summarization detached the caveats from
+the headline number, and a note defending the value was written three days
+before the internal audit that refuted it, finding the score inflated by a
+finite truncation window and the underlying correlation profile
+infeasible. A related failure occurred inside verification, where a
+dedicated replay of the $51\pi/92$ certificate (session p95) passed it
+because the replay inherited the framing of the argument it was checking;
+the invalidating error was found the same day by a session that rebuilt the
+argument from scratch (session p102). We attribute both failures to scale.
+The run produced hundreds of sessions and tens of millions of tokens of
+intermediate mathematics, and each new session could be shown only a small
+distillate of it. What to retain, at what resolution, and with which
+qualifications attached was itself decided by the models, through repeated
+summarization, and repeated summarization is exactly where caveats detach
+and inherited framings go unquestioned. Unlike the previous two weaknesses,
+this one looks amenable to engineering: memory for such systems plausibly
+needs more structure than prose summaries provide, for instance a graph of
+claims carrying provenance and qualifications, so that important
+information remains retrievable without being repeatedly re-serialized
+through a model's context window.
+
+\paragraph{Origins of the weaknesses.}
+We believe these gaps have a common origin in how current systems are
+produced. Models are trained and evaluated on problems selected for being
+small enough to pose, sandbox, and score, and nothing in that regime
+exercises the allocation of weeks of effort across an open-ended search.
+The corpus they learn mathematics from is, moreover, made of finished
+mathematics: the literature records definitions, theorems, and polished
+proofs, while the process that produced them, the dead ends, the decisions
+to abandon or reframe, the judgement of what was worth attempting, is
+largely absent from the written record. A system trained this way can be
+expected to acquire technique and the form of finished mathematics while
+remaining weak at exactly the process skills described above, and that is
+what we observe.
+
+\subsection{Human operator involvement}
+
+A useful summary of the collaboration is obtained by counting who caught
+which errors. Errors in individual claims, such as wrong constants, broken
+certificates, and invalid steps, were caught almost entirely by the system
+itself. Failure patterns spanning many sessions, such as the three circling
+episodes and the detachment of caveats from claims, were caught by the
+operator in every recorded instance and by the system in none. The system
+reliably falsifies a claim once the claim is specified; deciding which
+claims to distrust remained a human function throughout. Consistent with
+this, the operator's leverage came less from mathematical suggestions, most
+of which the system correctly tested and discarded, than from calibration:
+setting targets, ending loops, and auditing the run's own reporting. We also
+note a regularity with design consequences: every overclaiming incident in
+the record sits at a target with nearly zero margin, whereas the results
+that survived verification all carry slack. This suggests that systems of
+this kind are most productive when aimed at robust targets, with sharp
+constants attempted only from a secured base.
+
+\subsection{Relation to recent work}
+
+Recent successes of AI in mathematics, including on open problems, are of
+a different kind from the work reported here. Evaluator-guided search has
+produced record
+constructions~\cite{funsearch,novikov2025alphaevolvecodingagentscientific, charton2024patternboostconstructionsmathematicslittle},
+and formal provers have shown proficiency at solving olympiad-level
+problems \cite{novikov2025alphaevolvecodingagentscientific}.
+%% TODO: the formal-provers citation should probably point to AlphaProof
+%% (Hubert et al., Nature 651:607--613, 2026) rather than AlphaEvolve.
+In recent and concurrent work, frontier models have gone further: an
+internal reasoning model at OpenAI has disproved the Erd\H{o}s
+unit-distance conjecture \cite{openai2026planarpointsets}, a counterexample to the Jacobian conjecture using Claude Fable 5
+\cite{jacobian}, and OpenAI has announced solutions to ten open problems in mathematics and theoretical computer
+science \cite{openai2026ten}. Most of these results involved resolving a
+single well-posed statement by construction. Moreover, none explicitly
+required significant long-horizon reasoning. Finally, all of the recent
+results with frontier models were found fully autonomously, without
+sustained human intervention.
+
+Our work is an extensive case study of how humans and AI can collaborate
+on mathematical research. The problem is more open-ended, requiring a
+research program where over the course of weeks intermediate results
+accumulate and directions are opened and abandoned. Moreover, humans were
+consistently steering the system and providing feedback. We hope that our
+experiences outlined in this section will be useful to future AI and mathematics researchers alike.
+
+\section{Future directions}
+\label{sec:ai-future}
+
+\paragraph{Mathematics.}
+The immediate items are the machine-verified claims of
+Table~\ref{tab:timeline}: human verification of the two certified upper
+bounds and of the lower bounds $27\pi/49$ and $51\pi/92$ would upgrade each
+to a theorem. Beyond them, the run's internal analysis identifies the
+tangent case $\lambda=\tfrac12$ of the affine family, equivalent to a sharp
+degree-three chaos inequality, as the natural boundary of the method and
+worth $\KG\ge9\pi/16$ if resolved.
+% {\color{red}AX: If you're brave, conjecture that \(K_G = \sqrt{\pi}\)}
+
+\paragraph{Toward AI systems for long-horizon research.}
+If the diagnosis of Section~\ref{sec:ai-discussion} is right, the
+requirements for progress follow from it. First, mathematical
+interestingness needs to become an object of study in its own right: the
+judgement that selects which questions, intermediate constructions, and
+targets are worth pursuing was the most consequential input the human
+supplied, and there is at present no training signal or benchmark that
+rewards it. Second, the process of research mathematics needs data. What
+humans actually do between problem statement and finished paper,
+how they allocate effort, learn from repeated failure, and decide to
+reframe, is barely recorded anywhere; records of long runs such as ours,
+which preserve every step including the unsuccessful ones, are one way to
+begin creating such data, and we release ours in that spirit. Third,
+evaluation must move to horizons where these capabilities matter, treating
+a weeks-long research program rather than a single problem as the unit of
+assessment, with memory and calibration measured alongside correctness.
+These conclusions carry the usual caution that they derive from one run on
+one problem; replications on other open problems, successful or not, would
+be the most useful follow-up work.
+
+\paragraph{Human--AI collaboration.}
+The run also suggests where collaboration of this kind is heading. Within
+it, the contributions that required a human were not technical: the system
+supplied the arguments, the computations, the certificates, and the first
+write-up, while the human supplied the problem, the taste, and the
+strategic corrections. If the technical abilities of these systems continue
+to improve, this division will sharpen, and the human's role in
+such collaborations will concentrate into choosing what to work on, judging
+which objects and targets matter, and deciding what to trust: directing
+research that one does not personally execute. A similar shift is already
+under way in software engineering. We expect working modes of this kind to
+become common in mathematics, and the run documented here, with its
+weaknesses as much as its results, is an early picture of what they will
+require of the human operator.
+
+\paragraph{Statement on AI use.}
+Large language models were used extensively in the research reported in
+this paper, in the roles described in this section: GPT-5.5-Pro and
+GPT-5.6-Sol (OpenAI) as the reasoning model, and Claude Opus and Claude
+Fable~5 (Anthropic) as the coding agent. AI assistance was also used in
+preparing parts of this manuscript. All results stated as theorems have been
+verified by the authors independently of these systems, and the account of
+the run given in this section reflects the authors' own reading of the
+record. The authors take full responsibility for the contents of this
+paper.
+

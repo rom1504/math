@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "seed": 2026091709,
+  "C0": 33.06185083297994,
+  "cases": [
+    {
+      "k": 2,
+      "q": 500,
+      "delta": 0.15796613086404956,
+      "gram_eigenvalues": [
+        0.9199999999999999,
+        1.08
+      ],
+      "max_nuclear_ratio": 0.999999976855214
+    },
+    {
+      "k": 3,
+      "q": 895,
+      "delta": 0.15807557717252474,
+      "gram_eigenvalues": [
+        0.9649124484967332,
+        0.983080853350351,
+        1.052006698152916
+      ],
+      "max_nuclear_ratio": 0.9844486472018371
+    },
+    {
+      "k": 4,
+      "q": 1331,
+      "delta": 0.15810453290775217,
+      "gram_eigenvalues": [
+        0.948314729243404,
+        0.9899245211547821,
+        1.011807060103626,
+        1.0499536894981887
+      ],
+      "max_nuclear_ratio": 0.9656546450709658
+    },
+    {
+      "k": 8,
+      "q": 3328,
+      "delta": 0.15809265561870656,
+      "gram_eigenvalues": [
+        0.9413436154791612,
+        0.9623443572771914,
+        0.9750967916498509,
+        0.9811048745327031,
+        0.9990453280492843,
+        1.0265618033989428,
+        1.0513028658234804,
+        1.063200363789384
+      ],
+      "max_nuclear_ratio": 0.9262696394934398
+    }
+  ],
+  "scalar_matrix_mgf_max_error": 4.440892098500626e-16,
+  "nuclear_tests": 600,
+  "gaussian_increment_tests": 600,
+  "centered_absolute_mgf_tests": 128,
+  "max_sampled_empirical_error_fraction_of_bound": 0.026633339996390937,
+  "exact_flip_identity_tests": 45,
+  "scope": "Finite diagnostics, not proof of uniform claims or optimizer geometry"
+}

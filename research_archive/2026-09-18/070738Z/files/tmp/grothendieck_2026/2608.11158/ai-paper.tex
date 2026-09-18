@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage{bqf-paper}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,shapes.geometric}
+% Captions are trimmed to the body-text width: the body runs inside the
+% abstract's quotation block (see paper/ai_paper_abstract.tex), which indents
+% it by \leftmargini = 30pt on each side, while floats keep full column width.
+\usepackage{caption}
+\captionsetup{margin=30pt}
+\usepackage[table]{xcolor}
+% \usepackage{shortcuts}
+% \usepackage[most]{tcolorbox}
+\usepackage{listings}
+
+
+% \usepackage[sort]{natbib}
+
+
+
+\newcommand{\Heta}{H_{\eta}}
+\newcommand{\HzeroP}{H_0'}
+\newcommand{\HzeroPP}{H_0''}
+\newcommand{\HetaP}{H_{\eta}'}
+\newcommand{\HetaPP}{H_{\eta}''}
+\newcommand{\Phizz}{\Phi}
+\newcommand{\Fmap}{F}
+\newcommand{\Finvmap}{F^{-1}}
+\newcommand{\Om}{\Omega}
+\newcommand{\dOm}{\partial\Omega}
+\newcommand{\Curv}{\mathcal C}
+\newcommand{\abslb}[1]{\underline{|#1|}}
+\newcommand{\absub}[1]{\overline{|#1|}}
+\newcommand{\ub}[1]{\overline{\abs{#1}}}
+\newcommand{\lb}[1]{\underline{\abs{#1}}}
+% \DeclareMathOperator{\sgn}{sgn}
+
+% \newcommand{\C}{\mathbb C}
+% \newcommand{\R}{\mathbb R}
+% \newcommand{\E}{\mathbb E}
+% \newcommand{\sgn}{\operatorname{sign}}
+
+
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\rhostar}{\rho_*}
+\newcommand{\Ncap}{N_{\mathrm{cap}}}
+\newcommand{\nq}{n_q}
+\newcommand{\Hphys}{\mathsf{H}}
+\newcommand{\simplex}{\Delta}
+\newcommand{\todo}[1]{{\color{red}\textsc{[todo: #1]}}}
+\newcommand{\rnote}[1]{{\color{magenta}\textsc{[Raghu: #1]}}}
+
+
+% \newcommand{\R}{\mathbb R}
+% \newcommand{\E}{\mathbb E}
+\newcommand{\K}{\mathcal K}
+\newcommand{\U}{\mathcal U}
+\newcommand{\ph}{\varphi}
+\newcommand{\wt}{\widehat}
+% \newcommand{\abs}[1]{\left|#1\right|}
+% \newcommand{\norm}[1]{\left\|#1\right\|}
+% \DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\Arg}{Arg}
+
+\newcommand{\source}[1]{{\color{blue}\textsc{#1}}}
+
+\newcommand{\ignore}[1]{{}}
+
+
+
+\title{\paperTitleSmallCaps{
+Long-Horizon AI Research for Grothendieck Constant: \\ A Case Study in Human--AI Mathematical Collaboration
+}}
+
+
+
+\author{
+  \normalsize
+  \setlength{\tabcolsep}{15pt}
+  \begin{tabular}{ccc}
+    Alan Li\thanks{Equal contribution.} & Rahul Saha\footnotemark[1] & Anton Xue \\
+    \small\texttt{alanli@cs.utexas.edu} & \small\texttt{rahul.saha@utexas.edu} & \small\texttt{anton.xue@utexas.edu} \\[3ex]
+    Swarat Chaudhuri & Adam Klivans & Pravesh K. Kothari \\
+    \small \texttt{swarat@cs.utexas.edu} & \small\texttt{klivans@cs.utexas.edu} & \small\texttt{kothari@cs.princeton.edu} \\[3ex]
+     & Raghu Meka &  \\
+     & \small\texttt{raghum@cs.ucla.edu} & \\[3ex]
+  \end{tabular}
+}
+
+\date{}
+\begin{document}
+
+\maketitle
+
+
+% Paper outline (for reference):
+%   Abstract
+%   Introduction -- core contributions, theorem statements
+%   Background on the Grothendieck constant + high-level companion results
+%   AI methodology
+%   Case study
+%   Discussion
+%   Future Work
+%   Conclusion
+
+\input{paper/ai_paper_abstract}
+
+\input{paper/ai_paper_introduction}
+
+\input{paper/ai_paper_grothendieck}
+
+\input{paper/ai_section_revised}
+
+
+\bibliographystyle{amsalpha}
+\bibliography{references}
+
+\input{paper/ai_paper_appendix}
+
+
+\end{document}

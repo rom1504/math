@@ -1,0 +1,657 @@
+\newpage
+\section{Preliminaries}
+\label{sec:prelims}
+
+\subsection{Matrix notation}
+
+Given matrices
+$\bA, \bB \in \R^{n\times n}$, we will use:
+\begin{itemize}
+    \item $\bA \in \R^{n\times n}_\sym$ to
+    specify that $\bA$ is symmetric.
+    \item $\bA \in O(n) \subseteq \R^{n \times n}$ to specify that $\bA$ is orthogonal.
+    \item $\bA[i,j]$ to denote its $(i,j)$-th
+    entry for $i,j\in [n] \defeq \{1,\ldots,n\}$.
+    \item $\|\bA\| \defeq \max_{\|\bm x\|_2=1} \|\bA \bm x\|_2$ to denote its spectral or operator
+    norm.
+    \item $\|\bA\|^2_\frob \defeq \sum_{i,j=1}^n \bA[i,j]^2$ to denote its
+    Frobenius norm.
+    \item $\Tr(\bm A) \defeq \sum_{i=1}^n \bm A[i,i]$ to denote its trace.
+    \item $\lambda_1(\bA)\ge \ldots \ge \lambda_n(\bA)$ to
+    denote its eigenvalues when $\bm A$ is symmetric.
+    \item $\bA \odot \bB$ to denote the entrywise or Hadamard product with entries $(\bm A[i,j]\bm B[i,j])_{i,j\in [n]}$.
+\end{itemize}
+
+\begin{definition}[Puncturing]\label{def:puncturing}
+    Let $\bH\in \R_\sym^{n\times n}$ and $\bm \Pi \defeq \bm I - \frac 1n \bm 1 \bm 1^\top$ be
+    the projection orthogonal to the all-ones
+    direction. The {puncturing} of $\bH$ is
+    the matrix $\bA = \bm \Pi \bmH \bm \Pi$.
+\end{definition}
+
+\begin{definition}[\goe]
+\label{def:goe}
+    The (normalized) {Gaussian Orthogonal Ensemble} \goe
+    is the distribution of random matrices $\bA\in\R_\sym^{n\times n}$
+    with $\bA[i,j]=\bA[j,i]\sim \calN(0,1/n)$ independently for all $1\le i<j\le n$, and
+    $\bA[i, i]\sim \calN(0,2/n)$ independently
+    for all $i\in [n]$.
+\end{definition}
+
+\begin{definition}[Hadamard matrices]
+    \label{def:hadamard}
+    When $n$ is a power of $2$, the (normalized) Walsh--Hadamard matrix $\bH_{\textnormal{had}}^{(n)}\in\R_\sym^{n\times n}$ is defined 
+    recursively by
+    \[
+        \bH_{\textnormal{had}}^{(1)}=\begin{bmatrix}1\end{bmatrix}\,,\qquad 
+        \bH_{\textnormal{had}}^{(2n)} \defeq \frac{1}{\sqrt{2}}
+        \begin{bmatrix}
+        \bH_{\textnormal{had}}^{(n)} & \bH_{\textnormal{had}}^{(n)}\\
+        \bH_{\textnormal{had}}^{(n)} & -\bH_{\textnormal{had}}^{(n)}
+        \end{bmatrix}.
+    \]
+\end{definition}
+\noindent
+$\bH_{\textnormal{had}}^{(n)}$ is a 
+symmetric orthogonal matrix with entries in $\pm 1/\sqrt n$.
+
+
+\begin{definition}[DST and DCT matrices]
+    \label{def:dst}
+    The discrete sine transform matrices
+    $\bH_{\sin}^{(n)}\in\R^{n\times n}_\sym$ are
+    \[
+        \bH_{\sin}^{(n)}[i,j] \defeq \sqrt{\frac 2 {n+1}} \sin\left(\frac {\pi ij}{n+1}\right)\quad \forall i,j\in [n]\,.
+    \]
+    The discrete cosine transform matrices
+    $\bH_{\cos}^{(n)}\in\R^{n\times n}_\sym$ are 
+    \[
+        \bH_{\cos}^{(n)}[i,j]\defeq \sqrt{\frac 2n}\cos\left(\frac{\pi(i-\tfrac12)(j-\tfrac12)}{n}\right)\quad \forall i,j\in [n]\,.
+    \]
+\end{definition}
+\noindent
+$\bH_{\cos}^{(n)}$ and $\bH_{\sin}^{(n)}$ are
+symmetric orthogonal matrices with entries
+at most $O(1/\sqrt n)$ in magnitude.
+
+\begin{definition}[\rom and \rrom]
+\label{def:rom}
+    The {Random Orthogonal Model} \rom is the
+    distribution of random matrices $\bH = \bm Q \bm D \bm Q^\top$, where $\bm Q\in O(n)$ is
+    Haar-distributed, and $\bm D$ is a diagonal
+    matrix with i.i.d. $\textnormal{Unif}(\{-1,1\})$ entries, independent from $\bm Q$.
+    The {Regular Random Orthogonal Model} \rrom is the distribution of the puncturing of
+    $\bH$, when $\bH$ is sampled from the \rom.
+\end{definition}
+\noindent
+Random matrices from the \rom are symmetric orthogonal matrices, satisfying $\bH^2 = \bm I$.
+They are a special case of the
+orthogonally invariant models we discuss in~\Cref{sec:rot-inv}.
+
+\subsection{Modes of convergence}
+\label{sec:prelim-modes}
+
+We will use a few standard modes of convergence from scalar-valued probability theory.
+\begin{definition}[Modes of convergence: scalars]
+    For a sequence of random variables $x^{(n)}\in \R$, we say that:
+    \begin{itemize}
+        \item $x^{(n)}$ \emph{converge in expectation} if, for some $c \in \R$, $\lim_{n \to \infty} \EE x^{(n)} = c$.
+        \item $x^{(n)}$ \emph{converge in probability} if, for some $c \in \R$, for all $\varepsilon > 0$, $\lim_{n \to \infty} \PP[|x^{(n)} - c| > \varepsilon] = 0$.
+        \item $x^{(n)}$ \emph{converge in $L^2$} if they converge in expectation and $\lim_{n \to \infty} \EE(x^{(n)} - c)^2 = 0$, or equivalently if they converge in expectation and $\lim_{n \to \infty} \Var x^{(n)} = 0$.
+    \end{itemize}
+    We write a symbol $\cM \in \{\EE, \PP, L^2\}$ to indicate these modes of convergence, and in this notation say that the $x^{(n)}$ \emph{converge in $\cM$}.
+\end{definition}
+
+Moreover, we say a sequence of random vectors
+$\bx^{(n)}\in\R^d$ in fixed dimension
+$d\ge 1$ {\em converges in distribution} to a random vector
+$\bx\in\R^d$ if for every bounded continuous
+function $\varphi \colon \R^d\to \R$,
+\[
+    \E \varphi(\bx^{(n)})\underset{n\to\infty}\longrightarrow \E \varphi(\bx)\,,
+\]
+in which case we write $\bx^{(n)}\tod \bx$.
+See~\Cref{sec:convergence-process} for a
+generalization to random variables
+indexed by a countably infinite index
+set.
+
+\begin{definition}[Modes of convergence: tracial moments]
+    For a mode of convergence $\cM$, we say that a sequence of random matrices $\bA \in \R^{n \times n}$ \emph{converges in tracial moments in $\cM$} if, for every $k \geq 1$, $\frac{1}{n}\Tr \bA^k$ converges in $\cM$.
+    We say that it converges in tracial moments in $\cM$ to a probability measure $\mu$ over $\R$ if \[\frac{1}{n}\Tr \bA^k \to \int x^k\, \d\mu(x)\]in the mode of convergence $\cM$.
+\end{definition}
+
+\subsection{Matchings and Wick calculus}
+
+Given a set $S$, let $\calM(S)$ denote the set of matchings on $S$.
+Let $\PM(S)$ denote the subset of perfect matchings.
+The elements of $M \in \calM(S)$ are written as pairs $\{i,j\} \subseteq S$.
+For several sets $S_1, \dots, S_k$, denote by $\calM(S_1, \dots, S_k)$ the set of matchings on the disjoint union $S_1 \sqcup \cdots \sqcup S_k$ that do not match any two elements of the same $S_i$.
+For two sets $S_1, S_2$ of the same size, denote by $\PM(S_1, S_2)$ the bipartite perfect matchings of $S_1 \sqcup S_2$ that only match elements of $S_1$ to ones of $S_2$.
+We will abbreviate $\calM(\{1,2,\dots, q\})$ as $\calM(q)$.
+
+\begin{lemma}[Wick lemma]\label{lem:wick}
+    Let $X_1, \dots, X_q$ be jointly Gaussian random variables with mean zero. Then:
+    \begin{equation*}
+        \E[X_1\cdots X_{q}] = \sum_{M \in \PM(q)} \prod_{ij \in M} \E[X_iX_j]\,.
+    \end{equation*}
+\end{lemma}
+
+The Wick products are the multivariate generalization of the Hermite polynomials to correlated Gaussians~\cite[Chapter 3]{Janson:GaussianHilbertSpaces}.
+
+\begin{definition}[Wick product]
+\label{def:wick}
+    Let $I$ be an index set, $\bX = (X_i)_{i \in I}$ be formal variables, and $\matSig \in \R_{\sym}^{I \times I}$. The {\em Wick products} are defined by, for each finitely supported $\alpha \in \N^I$,
+    \[
+       \He_{\al}(\bX\,;\, \matSig) \defeq \sum_{M \in \calM(\al)} (-1)^{|M|} \prod_{uv \in M}\matSig[u,v] \prod_{u\notin M} X_u\,,
+    \]
+    where $\calM(\al)$ denotes the set of matchings on a collection consisting of $\al_i$ copies of each $i \in I$.
+\end{definition}
+
+\noindent When $|I| = 1$, $X\sim \calN(0,1)$, and $\Sig = 1$, then $\He_{(p)}(X\,;\, \Sig)$ equals the $p$th
+Hermite polynomial.
+
+When the $X_i$ are mean-zero Gaussian random variables and $\matSig$
+is their covariance matrix, the Wick products satisfy the
+(partial) orthogonality property that for each
+finitely supported $\alpha, \beta\in\N^I$ with $\sum_i \alpha_i \neq \sum_i \beta_i$,
+\[
+    \E\left[\He_{\al}(\bX\,;\, \matSig) \He_{\beta}(\bX\,;\, \matSig)\right] = 0\,.
+\]
+In general, we have
+\[ \E\left[\He_{\al}(\bX\,;\, \matSig) \He_{\beta}(\bX\,;\, \matSig)\right] = \sum_{M \in \PM(\alpha, \beta)} \prod_{uv \in M} \bm\Sigma[u, v]\,. \]
+Since by the Wick lemma $\E\left[\prod_{i\in \alpha}X_i \cdot \prod_{j\in \beta} X_j\right]$ equals the same sum over all matchings of $\alpha \sqcup \beta$, the Wick products achieve a general ``partial orthogonalization'' that removes all terms from this covariance where any pairs within $\alpha$ or within $\beta$ are matched.
+
+For each choice of $\matSig \in \R^{I \times I}_\sym$,
+the Wick products are a basis for polynomials in the $X_i$.
+Multiplication of polynomials gives an algebra structure to this space
+which we call the {\em Wick algebra} of $\bX$.
+Below is a combinatorial formula for multiplication in the Wick algebra.
+
+\begin{proposition}[{\cite[Theorem 3.15]{Janson:GaussianHilbertSpaces}}]
+\label{prop:wick}
+    Let $I$ be an index set, $\bX = (X_i)_{i \in I}$ be formal variables, and $\matSig \in \R_\sym^{I \times I}$.
+    Let $\al^1,\dots, \al^k \in \N^I$. Then:
+    \begin{align*}
+        \prod_{j=1}^k \He_{\al^j}(\bX; \matSig) = \sum_{M \in \calM( \al^1, \dots,  \al^k)} \prod_{uv \in M} \matSig[u, v] \He_{U(M)}(\bX\,;\, \matSig)\,,
+    \end{align*}
+     where $\al^j$ is a multiset of size $|\alpha^j|$ with $\al^j_{i}$ copies of each $i \in I$.
+     Here $U(M) \in \N^I$ for $M$ a matching of $\al^1 \sqcup \cdots \sqcup \al^k$ counts the number of unmatched elements of each type.
+\end{proposition}
+
+\noindent In the special case where each
+group $\alpha^j$ consists of a
+single element, we obtain:
+
+\begin{corollary}\label{lem:wick-recursion}
+    For every $i_1, \ldots, i_k\in I$,
+    \[
+        \prod_{j=1}^k X_{i_j} = \sum_{M\in \calM(k)} \prod_{uv\in M} \bm \Sigma[i_u,i_v] \He_{U(M)}(\bm X\,;\,\bm \Sigma)\,.
+    \]
+\end{corollary}
+
+\section{Diagrams and the \texorpdfstring{$w$- and $z$-Bases}{w- and z-Bases} of Polynomials}
+\label{sec:diagrams}
+
+All graphs considered in this paper are {\em multigraphs} (loops and multiedges are allowed) and will be
+denoted by Greek letters ($\alpha, \beta, \gamma,\ldots$). 
+We use the terms {\em graphs} and {\em diagrams}
+interchangeably in this paper.
+Given a diagram $\alpha$, we use $V(\alpha)$
+to denote its vertex set and $E(\alpha)$ to denote
+its edge set. We 
+denote by $\alpha[S]$ the subgraph of $\alpha$
+induced by $S\subseteq V(\alpha)$.
+We count self-loops as contributing 2 to the degree of a vertex.
+
+\subsection{Classes of diagrams}
+
+Each diagram can have either $0$, $1$, or an ordered pair of $2$ special vertices called its \emph{root(s)}. With the exception of the class of graphs defined in~\Cref{def:open-cactus}, the roots of a graph can be arbitrary vertices (in particular, they might be equal if there are two of them).
+
+\begin{notation}
+    Let $\calA=\calA_0$ (resp.\ $\calA_1$ or $\calA_2$) be the set of all connected graphs with no 
+    root (resp.\ $1$ root or $2$ roots). We also
+    refer to such graphs as scalar (resp. vector or matrix) diagrams.
+\end{notation}
+
+Given $\alpha\in\calA$, an edge
+$e\in E(\alpha)$ is a {\em bridge} of $\alpha$ if deleting $e$
+would disconnect the graph. $\alpha\in\calA$ is {\em 2-edge-connected} if it contains no bridge. In general, $\alpha\in\calA$ can be decomposed into 
+a tree of 2-edge-connected components connected by
+bridges.
+
+\begin{notation}
+    Let $\calE=\calE_0\subseteq\calA$ (resp.\ $\calE_1\subseteq \calA_1$ or $\calE_2\subseteq \calA_2$) be the set of all 2-edge-connected
+    scalar  (resp.\ vector or matrix) diagrams.
+\end{notation}
+
+Given $\alpha\in\calA$, a vertex $u\in V(\alpha)$ 
+is an {\em articulation point} of $\alpha$ if removing $u$ and its incident edges
+disconnects the graph. 
+$\alpha$ is 
+{\em 2-vertex-connected} if it has no articulation point.
+Any $\alpha\in\calA$ decomposes into its 2-vertex-connected components
+(blocks), which refine the 2-edge-connected components. The block-cut
+graph (whose vertices are the articulation points and the blocks, with edges for
+incidence) is a tree.
+
+A connected graph is a {\em cactus} if every edge
+lies on exactly one simple cycle.
+Thus, cactuses are in a sense the minimal 2-edge-connected graphs.
+
+\begin{notation}
+    Let $\calC=\calC_0\subseteq \calA$ (resp. $\calC_1\subseteq \calA_1$) be
+    the set of all scalar (resp. vector) cactus diagrams.
+\end{notation}
+
+\noindent For a cactus $\sigma$, we will denote
+by $\cyc(\sigma)$ the set of (unrooted)
+cycles of $\sigma$. 
+
+Finally, as in~\Cref{def:treelike}, we will denote the treelike diagrams by $\calT_1$ and the treelike diagrams such that the root has degree 1 after deleting all hanging cactuses by $\calG_1$.
+
+\subsection{Graph polynomials}
+\label{sec:polynomial-definitions}
+
+Each diagram represents different scalar-, vector-, or matrix-valued polynomials 
+in a matrix input, depending on whether it is viewed
+in the $w$-basis or the $z$-basis. In the following
+definitions,
+we fix $\bA\in \R_\sym^{n\times n}$, $\alpha$ to be a scalar, vector, or matrix diagram, and
+$i,j\in [n]$.
+
+\begin{definition}
+    \label{def:w-basis}
+    Define $w_\alpha(\bA)
+    \in \R$, $\bw_\alpha(\bA)\in \R^n$, and $\bW_\alpha(\bA)\in \R^{n\times n}$ by
+    \begin{alignat*}{2}
+        w_\alpha(\bA) &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] \quad&& \text{if $\alpha$ is a scalar diagram,}\\[2mm]
+        \bw_\alpha(\bA)[i] &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(r) = i}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] \quad&&\text{if $\alpha$ is a vector diagram with root $r$,}\\
+        \bW_\alpha(\bA)[i,j] &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(r_1)=i,\varphi(r_2)=j}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] \quad&&\text{if $\alpha$ is a matrix diagram with roots $(r_1,r_2)$.}
+    \end{alignat*}   
+\end{definition}
+
+\begin{definition}
+    \label{def:z-basis}
+    Define $z_\alpha(\bA)
+    \in \R$, $\bz_\alpha(\bA)\in \R^n$, and $\bZ_\alpha(\bA)\in \R^{n\times n}$ by
+    \begin{alignat*}{2}
+        z_\alpha(\bA) &= \sum_{\substack{\varphi\colon V(\alpha)\hookrightarrow [n]}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] &&\text{if $\alpha$ is a scalar diagram,}\\[2mm]
+        \bz_\alpha(\bA)[i] &= \sum_{\substack{\varphi\colon V(\alpha)\hookrightarrow [n]\\\varphi(r) = i}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] && \text{if $\alpha$ is a vector diagram with root $r$,}\\
+        \bZ_\alpha(\bA)[i,j] &= \sum_{\substack{\varphi\colon V(\alpha)\hookrightarrow [n]\\\varphi(r_1)=i,\varphi(r_2)=j}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] \quad&& \text{if $\alpha$ is a matrix diagram with roots $(r_1,r_2)$.}
+    \end{alignat*}    
+\end{definition}
+
+\noindent The only difference between the $w$- and $z$-bases
+is the summation domain: \Cref{def:z-basis} sums over injective embeddings $\varphi$, whereas \Cref{def:w-basis} sums over all
+embeddings.
+
+Finally, we define two extensions of~\Cref{def:w-basis}
+that we will need in the proofs.
+The following allows us to use a different matrix on
+each edge of the graph:
+
+\begin{definition}
+    \label{def:non-uniform-label}
+    Let $\alpha$ be a matrix diagram with roots $(r_1,r_2)$ and $\bm \calA = (\bmA_e)_{e\in E(\alpha)}$ be
+    such that $\bmA_e\in \R_\sym^{n\times n}$ for
+    all $e\in E(\alpha)$. Define $\bW_\alpha(\bm \calA)\in \R^{n\times n}$ by
+    \[
+        \bW_\alpha(\bm \calA)[i,j] = \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(r_1)=i,\varphi(r_2)=j}} \prod_{e=\{u,v\}\in E(\alpha)} \bA_e[\varphi(u),\varphi(v)]\,.
+    \]
+\end{definition}
+
+The following is an intermediate quantity
+between~\Cref{def:w-basis} and~\Cref{def:z-basis} which only restricts the sum
+over injective labelings on two vertices:
+
+\begin{definition}
+    Let $\bA\in \R_\sym^{n\times n}$, $\alpha$ be a scalar/vector/matrix diagram,
+    $i,j\in [n]$, and $s,t\in V(\alpha)$. Define $w_\alpha^{s\neq t}\in \R$, $\bw_\alpha^{s\neq t}\in \R^n$, and $\bW_\alpha^{s\neq t}\in \R^{n\times n}$ by
+    \begin{alignat*}{2}
+        w_\alpha^{s\neq t}(\bA) &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(s)\neq \varphi(t)}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] && \text{if $\alpha$ is a scalar diagram,}\\
+        \bw^{s\neq t}_\alpha(\bA)[i] &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(s)\neq \varphi(t)\\\varphi(r) = i}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] && \text{if $\alpha$ is a vector diagram with root $r$,}\\
+        \bW^{s\neq t}_\alpha(\bA)[i,j] &= \sum_{\substack{\varphi\colon V(\alpha)\to [n]\\\varphi(s)\neq \varphi(t)\\\varphi(r_1)=i\\\varphi(r_2)=j}} \prod_{\{u,v\}\in E(\alpha)} \bA[\varphi(u),\varphi(v)] \quad && \text{if $\alpha$ is a matrix diagram with roots $(r_1, r_2)$.}
+    \end{alignat*}
+\end{definition}
+
+\subsection{Partitions, change of basis, and M{\"o}bius inversion}
+\label{sec:mobius}
+
+While $(z_\alpha(\bA))_{\alpha\in \cA}$ and
+$(w_\alpha(\bA))_{\alpha\in \cA}$ span the
+same space of $S_n$-invariant polynomials in the entries of $\bm A$, some
+properties are better expressed in one basis
+than the other. 
+Here we take a closer look at these bases and derive
+change-of-basis formulas.
+
+Given a set $S$, let $\calP(S)$ denote the set of all \emph{partitions} of $S$, sets of non-empty disjoint subsets of $S$ whose union is all of $S$.
+We call the parts of a partition \emph{blocks}.
+Each block is a set, and $P$ is the set of blocks, so we denote the blocks by $b \in P$.
+
+For a (scalar, vector, or matrix) diagram $\al$ and a partition $P \in \calP(V(\al))$,
+we define a new diagram $\al_P$
+by identifying the vertices within each block of $P$ into a single vertex.
+The vertices of $\al_P$ may thus be identified with the blocks of $P$.
+$\al_P$ retains all edges of $\al$, which may become multiedges or self-loops.
+The status of being one of the (0, 1, or 2) roots of $\al$ is inherited by the block containing that root. 
+
+To change from the $w$- to the $z$-basis, we then simply sum over all partitions:
+
+\begin{claim}
+    \label{claim:wtoz}
+    For all (scalar, vector, or matrix) diagrams $\alpha$, 
+    \[
+        w_{\alpha}(\bA) = \sum_{P \in \calP(V(\alpha))} z_{\alpha_P}(\bA)\,.
+    \]
+\end{claim}
+
+Define the relation $\al \psdleq \beta$ on scalar diagrams if there exists a partition $P \in \calP(V(\beta))$
+such that $\al = \beta_P$.
+It is easy to check that this relation gives a partial ordering, inherited from the standard partial ordering on partitions.
+We write $\alpha\prec \beta$ as a shorthand for
+$\alpha\preceq \beta$ and $\alpha\neq \beta$.
+
+\begin{lemma}
+    \label{claim:mobius}
+    There exist $(c_{\alpha, \beta})_{\alpha, \beta \in \calA}$ and $(c'_{\alpha, \beta})_{\alpha,\beta\in\calA}$ not depending on $n$ such that $c_{\alpha, \beta} \in \N$, $c'_{\al,\beta} \in \Z$ and for any $\alpha,\beta\in\calA$, 
+    \[
+        w_\beta(\bA) = \sum_{\al \preceq \beta} c_{\alpha, \beta} z_\alpha(\bA)\,,\qquad 
+        z_{\beta}(\bA) = \sum_{\alpha \preceq \beta} c'_{\alpha,\beta} w_{\alpha}(\bA)\,.
+    \]
+\end{lemma}
+\begin{proof}
+    The coefficients in the left equation count symmetries in \cref{claim:wtoz}, i.e.,
+    $c_{\al,\beta}$ equals the number of ways to choose a partition $P \in \calP(V(\beta))$
+    such that $\beta_P$ is isomorphic to $\alpha$.
+    Reciprocally, since $\preceq$ is a partial ordering, this
+    transformation can be inverted using M{\"obius} inversion~\cite{Rota-1964-Foundations} on this poset.
+    Although an explicit formula for $c'_{\al, \beta}$
+    is available in terms of the
+    combinatorial structure of the graphs, we will not need it in this paper.
+\end{proof}
+
+
+\subsection{The example of cycles: Moments versus free cumulants}
+\label{sec:moments-free-cumulants}
+
+The difference
+between the $w$- and $z$-bases is illustrated nicely by the
+special case of the diagrams $\sigma_q$ which are cycles of length $q\ge 1$.
+In this case, $\frac 1n w_{\sigma_q}(\bA)$ and $\frac 1n z_{\sigma_q}(\bA)$ are versions of the limiting spectral moments and free cumulants, respectively, for finite-dimensional matrices.
+
+
+Let $\calP(q)$ denote the set of partitions of $\{1,2,\dots, q\}$
+and let $\textnormal{NC}(q)$ denote the subset of non-crossing partitions (partitions such that there does not exist $i < j < k < \el$ with $i,k$ in the same block and $j, \el$ in the same block, different from the one $i,k$ are in).
+It is convenient to view these as partitions of the vertices of the $q$-cycle
+so that the term \emph{non-crossing} may be interpreted visually: in a non-crossing partition, the blocks do not intersect one another when drawn as ``blobs'' inside the cycle.
+
+In the $w$-basis, we have
+\begin{align}
+    \frac 1n w_{\sigma_q}(\bA) = \frac 1n \sum_{i_1,\ldots,i_q=1}^n \bA[i_1, i_2] \bA[i_2, i_3] \ldots \bA[i_q,i_1] = \frac 1n \Tr(\bA^q) = \frac 1n \sum_{i=1}^n \lambda_i(\bA)^q\,.\label{eq:empiricalDist}
+\end{align}
+Suppose that the expression in~\cref{eq:empiricalDist} converges as
+$n\to\infty$ to the $q$th moment
+$m_q\in \R$ of a limiting spectral distribution, $m_q = \int \lambda^q\,\d \mu(\lambda)$.
+
+The free cumulants
+are defined from the moments by a formula similar to
+the classical cumulants vis-{\`a}-vis the moments of a random variable:
+
+\begin{definition}[Free cumulant]\label{def:free-cumulant}    
+    The free cumulants $(\kappa_q)_{q\ge 1}$ corresponding to $(m_q)_{q\ge 1}$ are defined implicitly by:
+\begin{equation}\label{eq:free-cumulant}
+    m_q = \sum_{\sig \in \textnormal{NC}(q)} \prod_{b \in \sig} \kappa_{|b|}\,.
+\end{equation}
+\end{definition}
+\noindent The $\kappa_q$ can be computed explicitly in terms of the $m_q$ by applying M{\"o}bius inversion to~\cref{eq:free-cumulant}; see~\cref{eq:free-cumulant-explicit}.
+
+Analogous to \cref{eq:empiricalDist} which is in the $w$-basis,
+it appears to be folklore\footnote{This is for example explicitly stated in \cite[Theorem 1 and Appendix D.1]{MFCKMZ-2019-PlefkaExpansionOrthogonalIsing}.} that if $\bA$ is drawn
+from an orthogonally invariant matrix ensemble
+with free
+cumulants $(\kappa_q)_{q\ge 1}$, then
+\begin{align}
+    \frac 1n \E z_{\sigma_q}(\bA) \underset{n\to\infty}{\longrightarrow} \kappa_q\,.\label{eq:freeCumulantRelation}
+\end{align}
+The quantity $\frac 1n z_{\sigma_q}(\bA)$ has also been called the $q$th \emph{injective trace} of $\bA$.
+Below in \cref{lem:diagonal-w-z}, we prove \cref{eq:freeCumulantRelation} using a change of basis from $w$ to $z$.
+
+For example, below are the parameters $m_q$ and $\kappa_q$
+for the \goe and the \rom, whose limiting empirical spectral distribution
+are the Wigner semicircle distribution and the Rademacher distribution, respectively.
+
+\begin{claim}\label{claim:rom-cumulants}
+    Let $\textnormal{Cat}(k) \colonequals \frac{1}{k + 1}\binom{2k}{k}$ be the $k$th Catalan number.
+    For the \goe, the limiting spectral moments and free cumulants are:
+    \begin{align*}
+        m_q = \left\{\begin{array}{ll}
+            \textnormal{Cat}(q/2) & \textnormal{if $q$\text{ is even}}\\
+            0 & \textnormal{if $q$\text{ is odd}}
+        \end{array}
+        \right\}, \qquad 
+        \kappa_q = \left\{\begin{array}{ll}
+            1 & \textnormal{if $q = 2$}\\
+            0 & \textnormal{otherwise}
+        \end{array}\right\}.
+    \end{align*}        
+    For the \rom, the limiting spectral moments and free cumulants are:
+    \begin{align}
+    m_q = \left\{\begin{array}{ll}
+        1 & \textnormal{ if $q$ is even}\\
+        0 & \textnormal{ if $q$ is odd}
+    \end{array}\right\}, \qquad
+    \kappa_q = \left\{\begin{array}{ll}
+        (-1)^{q/2-1} \textnormal{Cat}(q/2 - 1) & \textnormal{ if $q$ is even}\\
+        0 & \textnormal{ if $q$ is odd}
+    \end{array}\right\}.\label{eq:freeCumulantROM}
+\end{align}
+\end{claim}
+
+
+\subsection{Solving equations in the traffic distribution}
+
+The traffic distribution is defined as the limiting values of all $w$-basis polynomials, but we show now how it can be derived from various combinations of limits of $w$- and $z$-basis polynomials.
+In our other arguments, we will also find it convenient to describe
+the traffic distribution of sequences of matrices (random or deterministic)
+using the two bases simultaneously.
+While~\Cref{claim:mobius} shows
+that we could in principle express all these results
+in a single basis, this would involve
+precisely tracking 
+very complicated combinatorial coefficients
+(in fact, this was a major technical obstacle in
+previous diagrammatic analyses of AMP).
+
+As we have discussed, when a matrix satisfies the strong cactus property,
+its traffic distribution is determined by its values on the cactus diagrams (equivalently, by the diagonal distribution),
+and when it satisfies the factorizing strong cactus property,
+its traffic distribution is determined by the spectral distribution.
+We show that one can use either the $w$-basis or $z$-basis for these determinations.
+
+\begin{lemma}
+    \label{lem:diagonal-w-z}
+    Suppose that $\bA = \bA^{(n)}$ satisfies the
+    weak cactus property, i.e., for all $\alpha\in \calE\setminus \calC$,
+    \[
+        \frac 1n \E_{\bmA} z_\alpha(\bmA)\underset{n\to\infty}{\longrightarrow} 0\,.
+    \]
+    Then the following are equivalent:
+    \begin{enumerate}[(i)]
+        \item For all $\sigma \in \calC$ there exists $m_\sigma \in \R$ such that $\frac 1n \E_\bA w_\sigma(\bA) \underset{n\to\infty}{\longrightarrow} m_\sigma$.
+        \item For all $\sigma \in \calC$ there exists $k_\sigma \in \R$
+        such that $\frac 1n \E_\bA z_\sigma(\bA) \underset{n\to\infty}{\longrightarrow} k_\sigma$.
+    \end{enumerate}
+    Furthermore, when they exist, $(m_\sigma)_{\sigma \in \calC}$ and $(k_\sigma)_{\sigma \in \cC}$ determine each other.
+    The following are also equivalent:
+    \begin{enumerate}[(i)]
+        \item There exist real numbers $(m_q)_{q \in \N}$ such that for all $\sig \in \calC$, $\frac 1n \E_\bA w_\sig(\bA) \underset{n\to\infty}{\longrightarrow} \prod_{\rho \in \cyc(\sig)} m_{|\rho|}$.
+        \item There exist real numbers $(\kappa_q)_{q \in \N}$ such that for all $\sig \in \calC$, $\frac 1n \E_\bA z_\sig(\bA) \underset{n \to \infty}{\longrightarrow} \prod_{\rho \in \cyc(\sig)} \kappa_{|\rho|}$.
+    \end{enumerate}
+    Furthermore, when they exist, $(m_q)_{q \in \N}$ and $(\kappa_q)_{q \in \N}$ are related by \cref{eq:free-cumulant}.
+\end{lemma}
+
+We use the
+following observation which will be used repeatedly in \cref{sec:universality}:
+
+\begin{lemma}\label{lem:contract-2ec}
+    If $\al \in \calE$ and $\beta \psdleq \al$, then $\beta\in\calE$.
+\end{lemma}
+
+\begin{proof}[Proof of~\Cref{lem:contract-2ec}]
+    By Menger's theorem, a graph is 2-edge-connected 
+    if and only if there exist two edge-disjoint 
+    paths between every pair of distinct vertices.
+    These paths are maintained when $\al$ is contracted into $\beta$.
+\end{proof}
+
+\begin{proof}[Proof of~\Cref{lem:diagonal-w-z}]
+    {\em (ii)} $\implies$ {\em (i)}. Using \Cref{claim:wtoz},
+    \[
+        \frac 1n \E_{\bA} w_\sigma(\bA) = \frac 1n \sum_{\beta \psdleq \sigma} c_{\beta, \sigma} \E_{\bA} z_\beta(\bA)\,.
+    \]
+    Every diagram $\beta \psdleq \sigma$ remains 2-edge-connected by \cref{lem:contract-2ec}.
+    There are only finitely many terms in the
+    sum, so we can directly
+    take the $n\to\infty$ limit
+    and use the assumptions
+    to obtain that $\frac 1n \E_\bA w_\sigma(\bA)$ converges to $\sum_{\beta \psdleq \sig} c_{\beta, \sig} k_\beta$.
+
+    Note that by the weak cactus property,
+    the only asymptotically nonzero $\beta \preceq \sig$ are when $\beta$ is a cactus.
+    Assuming furthermore that $k_\beta = \prod_{\rho \in \cyc(\beta)} \kappa_{|\rho|}$ factors over the cycles of each cactus $\beta$ we will derive the second part of the lemma.
+
+    Using the more specific result of \Cref{claim:wtoz}, we have
+    \begin{align*}
+        \lim_{n \to \infty} \frac{1}{n} \E_{\bA} w_{\sigma}(\bA)
+        &= \sum_{P \in \calP(V(\sigma))} \lim_{n \to \infty} \frac{1}{n} \E_{\bA} z_{\sigma_P}(\bA)
+        \intertext{Since $\bA$ has the weak cactus property and $\sigma$ is a cactus, only the terms where $\sigma_P$ is a cactus contribute. These are precisely the terms where $P$ restricted to each cycle of $\sigma$ is non-crossing. Given $P_{\rho} \in \NC(V(\rho))$ for each $\rho \in \cyc(\sigma)$, let us write $P(P_{\rho}: \rho \in \cyc(\sigma))$ for the partition obtained by composing these partitions of each cycle, and let us write, following our previous notation, $\cyc(\rho_{P_{\rho}})$ for the set of cycles created when the single cycle $\rho$ is contracted according to $P_{\rho}$. Then, we have}
+        &= \sum_{\substack{P_{\rho} \in \NC(V(\rho)) \\ \text{for each } \rho \in \cyc(\sigma)}} \lim_{n \to \infty} \frac{1}{n} \E_{\bA} z_{\sigma_{P(P_{\rho}: \rho \in \cyc(\sigma))}}(\bA) \\
+        &= \sum_{\substack{P_{\rho} \in \NC(V(\rho)) \\ \text{for each } \rho \in \cyc(\sigma)}} \prod_{\rho \in \cyc(\sigma)} \prod_{\pi \in \cyc(\rho_{P_{\rho}})} \kappa_{|\pi|} \\
+        &= \prod_{\rho \in \cyc(\sigma)} \left(\sum_{P \in \NC(V(\rho))} \prod_{\pi \in \cyc(\rho_P)} \kappa_{|\pi|}\right) \\
+        &= \prod_{\rho \in \cyc(\sigma)} m_{|\rho|}.
+    \end{align*}
+    Thus we have the claimed factorization.
+    Further, the coefficients $m_q$ and $\kappa_q$ indeed have the relation between moments and free cumulants from~\cref{eq:free-cumulant}:
+    \[
+        m_q = \sum_{\sig \in \NC(q)} \prod_{b \in \sig} \kappa_{|b|}\,.
+    \]
+    
+    \noindent {\em (i) $\implies$ (ii)}. This direction uses a recursive change of basis technique that will be very useful in~\Cref{sec:universality}.
+    Using~\Cref{claim:mobius} in both directions, we get
+    \begin{align*}
+        \frac 1n \E_{\bmA} z_\sigma(\bmA) &= \frac 1n \sum_{\substack{\beta\preceq \sigma\\\beta\in\calC}} c'_{\beta,\sigma} \E_{\bmA} w_\beta(\bmA) + \frac 1n \sum_{\substack{\beta\prec \sigma\\\beta\in\calE\setminus\calC}} c'_{\beta,\sigma} \E_{\bmA} w_\beta(\bmA)\\
+        &= \frac 1n \sum_{\substack{\beta\preceq \sigma\\\beta\in\calC}} c'_{\beta,\sigma} \E_{\bmA} w_\beta(\bmA) + \frac 1n \sum_{\substack{\beta\prec \sigma\\\beta\in\calE\setminus\calC}} c'_{\beta,\sigma} 
+        \sum_{\alpha\preceq \beta} c_{\alpha,\beta} \E_{\bmA} z_\alpha(\bmA)\\
+        &= \frac 1n \sum_{\substack{\beta\preceq \sigma\\\beta\in\calC}} c'_{\beta,\sigma} \E_{\bmA} w_\beta(\bmA) +  \frac 1n  \sum_{\alpha\prec \sigma}\left(\sum_{\substack{\beta\in\calE\setminus\calC\\ \alpha \preceq \beta \prec \sigma}} c'_{\beta,\sigma} c_{\alpha,\beta}\right) \E_{\bmA} z_\alpha(\bmA)
+    \end{align*}
+    Note that every diagram in this expansion
+    remains 2-edge-connected by~\Cref{lem:contract-2ec}.
+    
+    Every contraction identifying
+    a non-empty subset of vertices decreases
+    the number of vertices in the graph, and
+     the $w$ and $z$ bases coincide for 1-vertex
+    graphs. Therefore, we can
+    apply the same steps inductively on terms
+    for which $\alpha\in\calC$ to finally obtain
+    \[
+        \frac 1n \E_{\bmA} z_\sigma(\bmA) = \frac 1n \sum_{\substack{\beta\preceq \sigma\\\beta\in \calC}} c''_{\beta,\sigma} \E_{\bmA} w_\beta(\bmA) + \frac 1n \sum_{\substack{\beta\preceq \sigma\\\beta\in \calE\setminus \calC}} c''_{\beta,\sigma} \E_{\bmA} z_\beta(\bmA)\,.
+    \]
+    for some coefficients $\{c''_{\alpha,\beta}\}$ independent of $n$.
+    Take the $n\to\infty$ limit
+    to obtain
+    \[
+        \lim_{n\to\infty} \frac 1n \E_{\bmA} z_\sigma(\bmA) = \sum_{\substack{\beta\preceq \sigma\\\beta\in \calC}} c''_{\beta,\sigma} m_\beta\,,
+    \]
+    which finishes the proof of the first equivalence.
+    Assuming furthermore that $m_\beta$ factors over the cycles of each cactus $\beta$,
+    then $\frac 1n \E_\bA z_\sig(\bA)$
+    also asymptotically factors over its cycles: $\frac 1n \E_\bA z_\sig(\bA) \longrightarrow \prod_{\rho \in \cyc(\sig)} \kappa_{|\rho|}$ for some numbers $\kappa_q$.
+    This is because the cactuses $\beta \psdleq \sig$ still only arise by contracting a separate non-crossing partition for each cycle of $\sig$, and so we can perform the above recursive analysis separately inside each cycle.
+\end{proof}
+
+The following lemma shows that the properties
+of graph polynomials
+we will establish for delocalized deterministic matrices
+in~\Cref{sec:universality} characterize their traffic distribution.
+We emphasize our use of a combination of assumptions on limits of the $w$- and $z$-bases that makes this formulation convenient.
+
+\begin{lemma}
+    \label{lem:eqDiffMobius}
+    Suppose that $\bA = \bA^{(n)}$ satisfies:
+    \begin{enumerate}
+        \item The weak cactus property, i.e., that for all $\alpha\in \calE\setminus \calC$, $\frac 1n \E_{\bmA} z_\alpha(\bmA)\underset{n\to\infty}{\longrightarrow} 0$.
+        \item For all $\alpha\in \calA\setminus \calE$, $\frac 1n \E_{\bmA} w_\alpha(\bmA)\underset{n\to\infty}{\longrightarrow} 0$.
+        \item For all $\sigma\in \calC$,
+        there exists $m_\sigma\in \R $ such that
+        $\frac 1n \E_{\bmA} w_\sigma(\bmA)\underset{n\to\infty}{\longrightarrow} m_\sigma$.
+    \end{enumerate}
+    Then the traffic distribution of $\bmA$
+    exists
+    and only depends on $\{m_\sigma : \sigma\in\calC\}$.
+\end{lemma}
+
+\begin{proof}
+    We want to show that for every $\alpha\in \calA$, $ \lim_{n\to\infty} \frac 1n \E_{\bmA} w_\alpha(\bmA)$ exists and
+    only depends on $\{m_\sigma : \sigma\in\calC\}$. By assumption, it suffices to prove it for $\alpha\in \calE\setminus \calC$. By~\Cref{claim:mobius},
+    \[
+        \frac 1n \E_{\bmA} w_\alpha(\bmA) = \frac 1n \sum_{\beta\preceq \alpha} c_{\beta,\alpha} \E_{\bmA} z_\beta(\bmA)\,.
+    \]
+    By~\Cref{lem:contract-2ec}, every $\beta$
+    in the support of the sum is 2-edge-connected. If $\beta\in\calC$, then the value of $\lim_{n\to\infty} \frac 1n  \E_{\bmA} z_\beta(\bmA)$ exists and only
+    depends on $\{m_\sigma : \sigma\in\calC\}$
+    by~\Cref{lem:diagonal-w-z}. Otherwise,
+    $\beta\in\calE\setminus \calC$, and $\lim_{n\to\infty} \frac 1n  \E_{\bmA} z_\beta(\bmA) = 0$ by assumption. This
+    implies that $\lim_{n\to\infty}\frac 1n \E_{\bmA} w_\alpha(\bmA)$ exists and 
+    only depends on $\{m_\sigma : \sigma\in\calC\}$, which concludes the proof.
+\end{proof}
+\noindent
+Note that, more generally, by~\Cref{lem:diagonal-w-z}, the same statement will hold with Condition~3 of~\Cref{lem:eqDiffMobius} taken in terms of either the $w$- or $z$-basis.
+
+
+\subsection{Products and concentration of traffic observables}
+
+Recall that the traffic distribution specifies the limits of $\frac 1n \E_\bA w_\al(\bA)$
+for all $\al \in \calA$.
+In all of the random matrix models we consider,
+these expectations are highly concentrated.
+We say that {\em the traffic distribution concentrates for $\bA$} if the
+following property holds, studied in~\cite{male2020traffic}.
+
+\begin{definition}\label{def:traffic-concentration}
+    Let $\bA = \bA^{(n)} \in \R^{n \times n}_\sym$ and assume that the traffic distribution of $\bA$ exists. We say that the traffic distribution concentrates for $\bA$
+    if for all $k \geq 2$ and $\al_1, \dots, \al_k \in \calA$,
+    \[
+        \lim_{n \to \infty} \E_{\bA} \left[ \prod_{j=1}^k \frac 1n w_{\alpha_j}(\bA)\right] = \prod_{j=1}^k \lim_{n \to \infty} \frac 1n \E_{\bA} w_{\alpha_j}(\bA)\,.
+    \]
+\end{definition}
+\noindent
+The case $k = 2$ and $\alpha_1 = \alpha_2 = \alpha$ of the definition specializes to the statement:
+\begin{lemma}\label{lem:traffic-l2}
+    Let $\bA = \bA^{(n)} \in \R^{n \times n}_{\sym}$ have traffic distribution $\calD$. 
+    If the traffic distribution concentrates for $\bA$, then $\frac 1n \E_{\bA} w_\al(\bA)$ converges to $\calD(\al)$ in $L^2$.
+\end{lemma}
+The full condition may be viewed as a strengthening of this straightforward notion of concentration.
+We note that the product of several $w$-basis polynomials is equivalent to taking the disjoint union of their diagrams:
+\[ w_{\alpha_1}(\bA) \cdots w_{\alpha_k}(\bA) = w_{\alpha_1 \sqcup \cdots \sqcup \alpha_k}(\bA).\]
+Therefore, \cref{def:traffic-concentration} says that the values of disconnected diagrams asymptotically factor over the components.
+This justifies defining
+$\cA$ and the traffic distribution to include only connected diagrams.
+The following shows that concentration may equally well be considered in the $z$-basis.
+
+\begin{lemma}[{\cite[Lemma 2.9]{male2020traffic}}] \label{lem:concentration-z}
+    Let $\bA = \bA^{(n)} \in \R^{n \times n}_\sym$ and assume that the traffic distribution of $\bA$ exists. The traffic distribution concentrates for $\bA$ if and only if, for all $k \geq 2$ and $\al_1, \dots, \al_k \in \calA$,
+    \[
+        \lim_{n \to \infty} \E_{\bA} \left[ \prod_{j=1}^k \frac 1n z_{\alpha_j}(\bA)\right] = \prod_{j=1}^k \lim_{n \to \infty} \frac 1n \E_{\bA} z_{\alpha_j}(\bA)\,.
+    \]
+\end{lemma}
+
+
+For vector diagrams, the componentwise or Hadamard product is
+\[
+    \bmw_{\al_1}(\bA) \cdots \bmw_{\al_k}(\bA) = \bw_{\al_1 \oplus \cdots \oplus \al_k}(\bA)\,,
+\]
+where $\al_1 \oplus \cdots \oplus \al_k$ is the diagram formed by taking the disjoint union of $\al_1$ through $\al_k$ and then identifying the roots together into a single root.
+We sometimes refer to this operation as \emph{grafting} $\al_1, \dots, \al_k$ at the root.

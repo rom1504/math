@@ -1,0 +1,599 @@
+
+=== PAGE 1 ===
+arXiv:1911.08828v2  [math.CO]  10 Jan 2020
+Almost supplementary diﬀerence sets and quaternary
+sequences with optimal autocorrelation
+J. A. Armario and D. L. Flannery
+1 Departamento de Matem´ atica Aplicada I, Universidad de Sev illa, Avda. Reina Mercedes s/n,
+41012 Sevilla, Spain
+armario@us.es
+2 School of Mathematics, Statistics and Applied Mathematics , National University of
+Ireland Galway, Galway H91TK33, Ireland
+dane.flannery@nuigalway.ie
+Abstract. We introduce almost supplementary diﬀerence sets (ASDS). For odd
+m, certain ASDS in Zm that have amicable incidence matrices are equivalent to
+quaternary sequences of odd length m with optimal autocorrelation. As one con-
+sequence, if 2 m − 1 is a prime power, or m ≡ 1 mod 4 is prime, then ASDS of
+this kind exist. We also explore connections to optimal bina ry sequences and group
+cohomology.
+Mathematics Subject Classiﬁcation : 05B10 · 05B20 · 94A55
+1 Introduction
+A sequence φ = (φ(0),...,φ (n − 1)) with all entries in {±1} or {±1, ±i}, where i = √
+−1,
+is called binary or quaternary, respectively. For a non-negative integer w, the periodic
+autocorrelation of φ at shift w is
+Rφ (w) =
+n−1∑
+k=0
+φ(k)
+φ(k +w), (1)
+reading arguments modulo n; the overline denotes complex conjugate as usual. It is easy
+to see that
+max
+0<w<n
+|Rφ (w)| ≥
+
+
+
+
+
+0 n ≡ 0 mod 4
+1 n ≡ 1 mod 2
+2 n ≡ 2 mod 4
+(2)
+when φ is binary, and
+max
+0<w<n
+|Rφ (w)| ≥
+{
+0 n even
+1 n odd (3)
+=== PAGE 2 ===
+2 J. A. Armario and D. L. Flannery
+when φ is quaternary. A complex sequence φ such that Rφ (w) = 0 for 0 < w < nis said
+to be perfect. Existence of a perfect binary (resp., quaternary) sequence is e quivalent to
+existence of a Menon-Hadamard diﬀerence set in a cyclic group [8] (r esp., a semi-regular
+relative diﬀerence set in a cyclic group with forbidden subgroup of siz e 2 [1]). No perfect
+binary (resp., quaternary) sequences of length n> 4 (resp., n> 16) are known; see [2,13].
+Furthermore, if p is an odd prime and s >2 then there do not exist perfect sequences of
+length ps overpth roots of unity [12].
+Setting aside perfect sequences, we enlarge the notion of optimalit y consistent with (2)
+and (3); cf. [3, p. 2940] and [11]. A binary sequence φ of lengthn has optimal autocorrelation
+if, for all w, 0 <w<n :
+Rφ (w) ∈ {0, ±4} (n ≡ 0 mod 4)
+Rφ (w) ∈ {1, −3} (n ≡ 1 mod 4)
+Rφ (w) ∈ {2, −2} (n ≡ 2 mod 4)
+Rφ (w) = −1 ( n ≡ 3 mod 4).
+A quaternary sequence φ of length n has optimal autocorrelation—we say that φ is an
+OQS ( optimal quaternary sequence )—if
+|Rφ (w)| = 1 for all w, 0 <w<n (n odd)
+max0<w<n |Rφ (w)| = 2 (n even).
+Actually, we will see that if n is odd and φ is an OQS then Rφ (w) is real.
+Table 1 records some existence data, extracted from Tables II an d IV of [11], about odd
+length sequences with optimal autocorrelation. There are inﬁnite f amilies in all cases bar
+one, namely binary sequences φ of length n ≡ 1 mod 4 with |Rφ (w)| = 1 for 0 <w <n .
+Here examples are known only for n = 5 and n = 13.
+Table 1. Optimal sequences of odd length n (p, q, r, q + 4, r + 2 are prime)
+n mod 4 Binary Quaternary
+max |Rφ (w)| n max |Rφ (w)| n
+1 1
+3
+5, 13
+p, q(q + 4)
+1 pa+1
+2 , p
+3 1
+p
+2a − 1
+r(r + 2)
+1 pa+1
+2
+Binary sequences of length 2 m with optimal ‘odd autocorrelation’ ﬁnd practical appli-
+cations in communication systems. The paper [14] gives a procedure to construct such a
+=== PAGE 3 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 3
+binary sequence from an OQS of odd length m. More is true: we demonstrate that these
+binary and quaternary sequences are equivalent.
+Optimal binary sequences of (even or odd) length n may be characterized in terms of
+diﬀerence sets and almost diﬀerence sets in Zn; see [3]. A similar result for quaternary
+sequences was lacking until now. We explain how to characterize qua ternary sequences of
+odd length n with optimal autocorrelation as almost supplementary diﬀerence sets in Zn.
+This paper is a natural successor to [4,5], which initiated the theory o f quasi-orthogonal
+cocycles and their applications in design theory. We obtain new existe nce results for such
+cocycles from a connection to optimal quaternary sequences.
+2 Quasi-orthogonal cocycles and optimal sequences
+Let G and U be ﬁnite groups, with U abelian. A map ψ :G ×G →U such that
+ψ (g,h )ψ (gh,k ) = ψ (g,hk )ψ (h,k ) ∀g,h,k ∈G (4)
+is a cocycle overG. The set of cocycles under pointwise multiplication is an abelian group,
+denotedZ 2(G,U ). Given any map φ :G →U , the coboundary∂φ ∈Z 2(G,U ) is deﬁned by
+∂φ (g,h ) = φ(g)−1φ(h)−1φ(gh). The coboundaries form a subgroup B2(G,U ) of Z 2(G,U ).
+All cocycles are assumed to be normalized, i.e., ψ (1, 1) = 1.
+We display ψ ∈Z 2(G,U ) as a cocyclic matrix Mψ = [ψ (g,h )]g,h ∈G. If U = ⟨−1⟩ ∼
+= Z2
+and Mψ is a Hadamard matrix then ψ is orthogonal; in that event of course |G| = 2 or
+|G| ≡ 0 mod 4.
+The row excessRE(M ) of a cocyclic matrix M indexed byG is the sum of the absolute
+values of all row sums, apart from the row indexed by 1 G. Using (4), it may be shown that
+ψ is orthogonal precisely when RE(Mψ ) is least, i.e., RE(Mψ ) = 0.
+Henceforth we will treat mainly the case |G| ≡ 2 mod 4.
+Proposition 1 ([4, Proposition 1]). Let |G| = 4t + 2 > 2. If ψ ∈ Z 2(G, Z2) then
+RE(Mψ ) ≥ 4t, whereas RE(Mψ ) ≥ 8t + 2 if ψ ∈B2(G, Z2).
+By analogy with orthogonal cocycles, we call ψ quasi-orthogonal if the row excess
+of Mψ is least possible: either ψ ̸∈B2(G, Z2) and RE(Mψ ) = 4t, or ψ ∈ B2(G, Z2) and
+RE(Mψ ) = 8t+2. The existence problem for quasi-orthogonal cocycles is open; in contrast
+to the situation for orthogonal cocycles, we do not know of any gr oup over which they do
+not exist.
+2.1 Generalized optimal binary arrays and optimal quaterna ry sequences
+Let G be the additive abelian group Zs1 × · · · × Zsr where si > 1 for all i, and put
+s = (s1,...,s r). A (binary or quaternary) s-array is simply a map φ : G → C where
+C = {±1} or {±1, ±i}. So a binary or quaternary sequence is an s-array with r = 1.
+=== PAGE 4 ===
+4 J. A. Armario and D. L. Flannery
+For a type vector z = (z1,...,z r) ∈ {0, 1}r, let
+E = Z(z1+1)s1 × · · · × Z(zr +1)sr,
+H = {(h1,...,h r) ∈E |hi = 0 if zi = 0, and hi = 0 or si if zi = 1},
+K = {h ∈H |h has even weight }.
+Then K is a subgroup of the elementary abelian 2-subgroup H of E, and E/H ∼
+=G. The
+expansion of a binary s-arrayφ with respect to z is the map φ ′ on E deﬁned by
+φ ′(x) =
+{
+φ(˜x) x ∈ ˜x +K
+−φ(˜x) x /∈ ˜x +K
+where ˜x denotes the projection of x inG (theith component of ˜x is the ith component of
+x reduced modulo si).
+We extend the deﬁnition of periodic autocorrelation given in (1) to ar bitrary arrays
+ϕ :A →C, i.e.,
+Rϕ (a) :=
+∑
+b∈A
+ϕ (b)
+ϕ (a +b).
+A binary s-arrayφ is a generalized perfect binary array (GPBA(s)) of type z if
+Rφ ′(x) = 0 ∀x ∈E \H.
+When z = 0, this condition becomes Rφ (x) = 0 for all x ∈G \ {0}, and if it holds then φ is
+a perfect binary array. A GPBA( s) is equivalent to a relative diﬀerence set in E/K relative
+toH/K , thus equivalent to a cocyclic Hadamard matrix over G: see [7, Theorem 5.3] and
+[8, Theorem 3.2]. In particular, a binary array φ is perfect if and only if ∂φ is orthogonal.
+Now we assume that |G| ≡ 2 mod 4. In particular, we assume that s1/ 2,s 2,...,s r are
+odd. A generalized optimal binary array of type z is a binary s-arrayφ such that
+• Rφ ′ (x) ∈ {0, ±2|H|} ∀x ∈E \H
+•
+⏐
+⏐{x ∈E | Rφ ′(x) = 0 }
+⏐
+⏐ = |E|/ 2 if z1 = 1.
+We write GOBA(s) for short. A generalized optimal binary sequence (GOBS) is a GOBA( s)
+with r =z1 = 1.
+Since the abelian group G does not have a canonical form as a direct product of cyclic
+groups, the same array is a GOBA( s) for various s. The following lemma reﬂects this fact
+(elements of Z2 × Zm and of Z4 × Zm are denoted as ordered pairs; context will indicate
+which direct product is meant).
+Lemma 1. Letϕ be a binary sequence of length 2m, m> 1 odd. Deﬁne the (2,m )-array
+φ as follows. For m ≡ 1 mod 4 :
+φ(a,k ) =
+
+
+
+
+
+
+
+
+
+ϕ (k +am) k ≡ 0 mod 4
+(−1)1−aϕ (k + (1 −a)m) k ≡ 1 mod 4
+−ϕ (k +am) k ≡ 2 mod 4
+(−1)aϕ (k + (1 −a)m) k ≡ 3 mod 4
+=== PAGE 5 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 5
+and for m ≡ 3 mod 4 :
+φ(a,k ) =
+
+
+
+
+
+
+
+
+
+(−1)aϕ (k +am) k ≡ 0 mod 4
+ϕ (k + (1 −a)m) k ≡ 1 mod 4
+(−1)1−aϕ (k +am) k ≡ 2 mod 4
+−ϕ (k + (1 −a)m) k ≡ 3 mod 4 .
+Then ϕ is a GOBS if and only if φ is a GOBA (2,m ) of type (1, 0).
+Proof. The identiﬁcation is based on the isomorphism Z4 × Zm → Z4m deﬁned by (1, 1) ↦→
+1. Signs are allocated so that |Rϕ ′| always agrees with |Rφ ′ |. □
+Recall that f : Zm → {± 1, ±i} of odd length m is an OQS if |Rf (w)| = 1 for all w,
+1 ≤w ≤m − 1. We proceed to establish the link between these quaternary sequ ences and
+binary arrays with optimal autocorrelation.
+Remark 1. There is a one-to-one correspondence between the set of binary (2,m )-arrays
+φ and the set of quaternary sequences f on Zm, given by
+f (k) = 1 − i
+2 (φ(0,k ) + iφ(1,k )),
+φ(a,k ) =
+{
+Re(f (k)) − Im(f (k)) if a = 0
+Re(f (k)) + Im(f (k)) if a = 1 .
+Translating between additive and multiplicative versions of Z2 × Z2, we also observe that
+f (k) = iΦ −1( 1−φ (1,k )
+2 , 1−φ (0,k )
+2 )
+where Φ −1: Z2 × Z2 → Z4 is the inverse Gray mapping, i.e., Φ −1(0, 0) = 0, Φ −1(0, 1) = 1,
+Φ −1(1, 1) = 2, and Φ −1(1, 0) = 3.
+Lemma 2. Forf , φ as in Remark 1 and 0 ≤w ≤m − 1,
+Rf (w) = 1
+4 (Rφ ′ (0,w ) − iRφ ′ (1,w ))
+whereφ ′ is the expansion of φ with respect to z = (1, 0).
+Proof. Routine. □
+Theorem 1. A quaternary sequence f of odd length m is an OQS if and only if its cor-
+responding binary array φ is a GOBA (2,m ) of type (1, 0).
+Proof. We have
+Rφ ′ (2,w ) = −Rφ ′(0,w ), R φ ′ (3,w ) = −Rφ ′(1,w ), and Rφ ′ (0,w ) +Rφ ′ (1,w ) ≡ 4 mod 8 .
+=== PAGE 6 ===
+6 J. A. Armario and D. L. Flannery
+Thus, if φ is a GOBA(2 ,m ) of type (1 , 0) then Rφ ′ (0,w ) and Rφ ′ (1,w ) cannot both be
+non-zero; so f is an OQS by Lemma 2.
+Suppose that f is an OQS. By Lemma 2, again just one of Rφ ′(0,w ) or Rφ ′(1,w ) for
+1 ≤w ≤m − 1 is zero, while the other is ±4. This also implies that the number of x ∈E
+such that Rφ ′ (x) = 0 is 2 m, as required. □
+Corollary 1. A quaternary sequence of odd length m is an OQS if and only if the binary
+sequence to which it corresponds via Lemma 1 and Remark 1 is a GOBS of length 2m.
+Previously, GOBS have appeared under other names. They are binary sequences with
+optimal odd autocorrelation in [14] (elsewhere, ‘negaperiodic’ replaces ‘odd’). Corollary 1
+furnishes a method to construct GOBS of length 2 m from OQS of length m that is simpler
+than the one in [14, Construction A, p. 389].
+Example 1. Let f = (−1, 1, i, 1, −i, 1, i, 1, −1). We calculate that
+Rf = (9, −1, −1, −1, 1, 1, −1, −1, −1),
+so f is an OQS of length 9. By Theorem 1,
+[
+− 1 1 − 1 1 1 1 − 1 1 − 1
+− 1 1 1 1 − 1 1 1 1 − 1
+]
+is a GOBA(2, 9) of type (1 , 0). Then by Lemma 1,
+(−1, 1, 1, −1, 1, 1, 1, −1, −1, −1, −1, −1, 1, −1, −1, −1, 1, −1)
+is a GOBS of length 18.
+The next result was mentioned in the Introduction.
+Corollary 2. If f is an OQS of odd length m then Rf (w) = ±1 for 1 ≤w ≤m − 1.
+Proof. We appeal to Lemma 2 once more. The GOBS ϕ corresponding to f hasRϕ ′ (u) = 0
+if u ∈ Z4m is odd; i.e., Rφ ′ (1,w ) = 0 for all w ̸≡0 mod m. □
+We need the next result in Section 3, to prove the equivalence betwe en OQS and almost
+supplementary diﬀerence sets. Denote the periodic cross-corre lation ∑ n−1
+k=0a(k)b(k +w) of
+binary sequences a and b of length n byRa,b (w).
+Corollary 3. A quaternary sequence f of odd length m is an OQS if and only if
+Rφ (1, −)(w) = Rφ (0, −)(w) = ±1 and Rφ (1, −),φ (0, −)(w) = Rφ (0, −),φ (1, −)(w)
+for 1 ≤w ≤m − 1, where φ is as in Remark 1.
+Proof. By [10, (6)], we have
+Rf (w) = 1
+2 (Rφ (1, −)(w) +Rφ (0, −)(w)) + i
+2 (Rφ (1, −),φ (0, −)(w) −Rφ (0, −),φ (1, −)(w)).
+The claim is then obvious from Corollary 2. □
+=== PAGE 7 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 7
+2.2 Quasi-orthogonal cocycles over Z2 × Zm
+We now return the discussion to quasi-orthogonal cocycles, with a focus on indexing group
+G = Z2 × Zm, m odd.
+Deﬁne λ ∈Z 2(G, ⟨−1⟩) by
+λ((a,u ), (b,w )) =
+{
+−1 a =b = 1
+1 otherwise .
+Order the elements of G as g1 = (0, 0),g 2 = (0, 1),...,g m = (0,m − 1),g m+1 = (1, 0),...,
+g2m = (1,m − 1). For 1 ≤i ≤m, and with rows and columns indexed by G under this or-
+dering, deﬁne the coboundary matrices M∂ i andM∂ i+m to be the respective normalizations
+of [
+Ci J
+J Ci
+]
+and
+[
+J Ci
+Ci J
+]
+, (5)
+whereCi is the m ×m back circulant {±1}-matrix whose ﬁrst row is 1s except in position
+i, and J is the m ×m all 1s matrix. Then {λ,∂ 2,...,∂ 2m−1} is a basis of Z 2(G, ⟨−1⟩).
+Proposition 2 ([5, Theorem 2]). A normalized binary (2,m )-arrayφ is a GOBA (2,m )
+of type (1, 0) if and only if λ∂φ is quasi-orthogonal.
+Remark 2. ∂φ = ∏ 2m−1
+i=2 ∂ei
+i = ∂2m
+∏ m
+i=2∂ei
+i · ∏ 2m−1
+i=m+1∂ 1−ei
+i where ei = δφ (gi), −1 (Kro-
+necker delta).
+Corollary 4. There exists an OQS of length m if and only if there exists a quasi-orthogonal
+cocycle over Z2 × Zm that is not a coboundary.
+Proof. Immediate from Theorem 1 and Proposition 2. □
+Remark 3. Corollary 4 and Table 1 provide new inﬁnite families of quasi-orthogona l co-
+cycles.
+Example 2. φ 1 =
+[
+1 − 1 1
+1 1 1
+]
+is a GOBA(2, 3), andφ 2 =
+[
+1 − 1 1 1 1
+1 − 1 1 1 1
+]
+is a GOBA(2, 5),
+both of type (1 , 0). The corresponding OQS are f1 = (1, i, 1) and f2 = (1, −1, 1, 1, 1), with
+Rf1 = (3, 1, 1) and Rf2 = (5, 1, 1, 1, 1); their GOBS are ϕ 1 = (1, 1, −1, −1, −1, 1) and
+ϕ 2 = (1, −1, −1, −1, 1, 1, 1, −1, 1, 1). The quasi-orthogonal cocycles λ∂φi have matrices
+Mλ ◦M∂ 2 =
+
+
+
+
+
+
+
+
+1 1 1 1 1 1
+1 1 − 1 − 1 − 1 − 1
+1 − 1 − 1 1 1 1
+1 − 1 1 − 1 1 − 1
+1 − 1 1 1 − 1 − 1
+1 − 1 1 − 1 − 1 1
+
+
+
+
+
+
+
+
+,
+=== PAGE 8 ===
+8 J. A. Armario and D. L. Flannery
+Mλ ◦M∂ 2 ◦M∂ 7 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 1 1 1 1 1 1 1 1 1
+1 1 − 1 − 1 − 1 1 1 − 1 − 1 − 1
+1 − 1 1 1 − 1 1 − 1 1 1 − 1
+1 − 1 1 − 1 1 1 − 1 1 − 1 1
+1 − 1 − 1 1 1 1 − 1 − 1 1 1
+1 1 1 1 1 − 1 − 1 − 1 − 1 − 1
+1 1 − 1 − 1 − 1 − 1 − 1 1 1 1
+1 − 1 1 1 − 1 − 1 1 − 1 − 1 1
+1 − 1 1 − 1 1 − 1 1 − 1 1 − 1
+1 − 1 − 1 1 1 − 1 1 1 − 1 − 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+where ◦ denotes Hadamard (componentwise) product.
+3 Almost supplementary diﬀerence sets
+Let B = {x1,...,x k1 } and D = {y1,...,y k2 } be subsets of Zm. Suppose that the congru-
+ences
+xi −xj ≡a mod m, y i′ −yj′ ≡a mod m
+have exactly µ solutions for t values a ̸≡0 mod m, and exactly µ + 1 solutions for the
+remaining m − 1 −t valuesa ̸≡0 mod m. Then we call B and D almost supplementary
+diﬀerence sets (ASDS); in more detail, B and D are 2- {m;k1,k 2;µ ;t} ASDS. Clearly
+k1(k1 − 1) +k2(k2 − 1) = tµ + (m − 1 −t)(µ + 1), (6)
+so that t = (m − 1)(µ + 1) −k1(k1 − 1) −k2(k2 − 1). We may therefore drop ‘ t’ in the
+speciﬁcation of the parameters of ASDS.
+Example 3. B = {1, 4, 5, 6, 7} and D = {0, 2} are 2- {9; 5, 2; 2; 2} ASDS.
+Remark 4. If t = m − 1 then B, D are 2- {m;k1,k 2;µ } supplementary diﬀerence sets
+(SDS) [9]. Another extreme is k1 ≤ 1<k 2; then D is an almost diﬀerence set [3].
+Sometimes we can obtain ASDS from SDS by enlarging or reducing one o f the supple-
+mentary sets. This places further constraints on the parameter s, according to (6).
+Lemma 3. Suppose that B, D are 2-{m;k1,k 2;µ } SDS.
+(i) If B \ {b} for some b ∈ B and D are 2-{m;k1 − 1,k 2;µ − 1; m−1
+2 } ASDS then k1 =
+(m + 3)/ 4 and µ = (m + 3)/ 16 + (k2
+2 −k2)/ (m − 1).
+(ii) If B ∪ {b} for some b ∈ Zm \ (B ∪D) and D are 2-{m;k1 + 1,k 2;µ ; m−1
+2 } ASDS then
+k1 = (m − 1)/ 4 and µ = (m − 5)/ 16 + (k2
+2 −k2)/ (m − 1).
+Example 4. (i) B = {1, 2, 4, 8, 11, 16}, D = {0, 5, 9, 10, 13, 15, 17, 18, 19, 20} are 2- {21; 6,
+10; 6} SDS. Also B \ {1},D are 2- {21; 5, 10; 5; 10} ASDS.
+=== PAGE 9 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 9
+(ii) {7, 8}, {3, 6, 8} are 2- {9; 2, 3; 1} SDS, and {4, 7, 8}, {3, 6, 8} are 2- {9; 3, 3; 1; 4} ASDS.
+Let S be a subset of Zm, with characteristic function χS : Zm → { 0, 1}. Then Sc will
+denote the (circulant) matrix indexed by Zm whose (i,j )th entry is 1 − 2χS(j −i). We
+now present a formulation of ASDS using incidence matrices of the su pplementary sets;
+this may be compared with the Appendix of [6].
+Theorem 2. (i) Suppose that B and D are 2-{m;k,r ;µ } ASDS. Let A be the set of all
+a ∈ Zm \ {0} such that there are exactly µ solutions of
+b −b′ ≡a mod m, d −d′ ≡a mod m
+for b,b ′ ∈B and d,d ′ ∈D. Then [Bc(Bc)⊤ +Dc(Dc)⊤]i,j is equal to
+[4(k +r −µ )Im + 2(m − 2(k +r −µ ))Jm]i,j
+if j −i ∈A, and
+[4(k +r −µ − 1)Im + 2(m − 2(k +r −µ − 1))Jm]i,j
+otherwise.
+(ii) Let Bc and Dc be m ×m circulant {±1}-matrices such that Bc(Bc)⊤ +Dc(Dc)⊤ is
+as described in (i). Then the subsets B, D of Zm determined by the ﬁrst rows of Bc
+and Dc are 2-{m;k,r ;µ } ASDS, where k (resp.,r) is the number of −1s in each row
+of Bc (resp.,Dc).
+Proof. (i) Choose any two diﬀerent rows i andi +a modulom in the concatenated matrix
+[Bc |Dc]. Put ¯µ = µ if a ∈ A and ¯µ = µ + 1 if a /∈ A. From the deﬁnition of ASDS, we
+deduce that in these two rows the column [ −1, −1]⊤ appears ¯µ times, and [−1, 1]⊤, [1, −1]⊤
+appear k +r − ¯µ times each. Hence the inner product of the rows is 2 m − 4(k +r − ¯µ ).
+(ii) Since each row of Bc hask −1s and each row of Dc hasr −1s, the inner product
+of rowsi andj of [Bc |Dc] is 2m−4(k+r)+4s wheres is the number of columns [ −1, −1]⊤.
+Thus, with a ≡j −i mod m, we have s = ¯µ as in part (i). □
+We set down a few auxiliary facts to prepare for Theorem 3 below.
+Lemma 4 ([8, Lemma 3.1]). For any array ϕ :A → {±1},
+Rϕ (x) = |A| + 4(dϕ (x) − |Nϕ |)
+whereNϕ = {a ∈A |ϕ (a) = −1} and dϕ (x) = |Nϕ ∩ (x +Nϕ )|.
+Proposition 3. LetB, D be 2-{m;k,r ;µ } ASDS. Denote the complement of X ⊆ Zm by
+X. Then (i) B, D, (ii) B, D, and (iii) B, D are also ASDS, with parameters {m;m −
+k,r ;m − 2k +µ } in case (i), {m;k,m −r;m − 2r +µ } in case (ii), and {m;m −k,m −
+r; 2m − 2k − 2r +µ } in case (iii).
+=== PAGE 10 ===
+10 J. A. Armario and D. L. Flannery
+Proof. WritedX fordχ X . Subsets B andD of Zm are 2- {m; |B|, |D|;µ } ASDS if and only
+ifdB(w) +dD(w) = µ orµ + 1 for all w, 1 ≤w ≤m − 1. Then the result follows from the
+identityd
+X (w) = m − 2|X| +dX (w). □
+For the 2- {m;k,r ;µ } ASDS of most interest to us, µ is determined by m,k, and r.
+Theorem 3. Letf be a quaternary sequence of odd length m, with corresponding (2,m )-
+arrayφ as in Remark 1. Then f is an OQS if and only if
+B = {j ∈ Zm |φ(0,j ) = −1}, D = {j ∈ Zm |φ(1,j ) = −1}
+are 2-{m; |B|, |D|; |B| + |D| −m+1
+2 } ASDS such that the multiset B −D of diﬀerences x −y
+modulom as (x,y ) ranges over B ×D is symmetric, i.e., closed under negation.
+Proof. First we deal with a technicality. Although possibly |B| + |D|< m+1
+2 , by Proposi-
+tion 3 we can take complements if necessary to arrange that |B| + |D| ≥ m+1
+2 .
+By Lemma 4,
+dφ (0, −)(w) = Rφ (0, −)(w) −m
+4 + |B| and dφ (1, −)(w) = Rφ (1, −)(w) −m
+4 + |D|.
+Putd(w) = dφ (0, −)(w) +dφ (1, −)(w). By Corollary 3, f is an OQS if and only if, ﬁrstly, for
+1 ≤w ≤m − 1 either
+d(w) = |B| + |D| − m + 1
+2 or d(w) = |B| + |D| − m − 1
+2 ;
+secondly,
+Rφ (0, −),φ (1, −)(w) = Rφ (0, −),φ (1, −)(m −w), (7)
+using that Rb,a (w) = Ra,b (n −w) for binary sequences a, b of length n.
+Now deﬁne
+Zl = {(j,j +l) ∈ Zm × Zm |φ(0,j ) = φ(1,j +l) = −1}
+and, for X,Y ⊆ Zm,
+[X ×Y ]w = {(x,y ) ∈X ×Y |x −y ≡w mod m}.
+Since Rφ (0, −),φ (1, −)(w) = m − 2(|B| + |D| − 2|Zw|), the requirement (7) is equivalent to
+|Zw| = |Zm−w|. We also verify that |[B ×D]w| = |Zm−w| and |[D ×B]w| = |Zw|. Finally,
+B −D =D −B if and only if |[B ×D]w| = |[D ×B]w| for 1 ≤w ≤m − 1. □
+Example 5. The 2- {9; 5, 6; 6} ASDS associated to the OQS (1 , −1, −i, −1, i, −1, −i, −1, 1)
+of length 9 are {1, 3, 4, 5, 7}, {1, 2, 3, 5, 6, 7}. For both OQS (1 , i, 1) and (1, −1, 1, 1, 1), we
+must take complements to get the ASDS {1}, {0, 1, 2} ⊆ Z3 and {1}, {0, 2, 3, 4} ⊆ Z5.
+=== PAGE 11 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 11
+Remark 5. Table 1 yields 2- {m; |B|, |D|; |B| + |D| − m+1
+2 } ASDS for any prime m ≡
+1 mod 4 or m = (pa + 1)/ 2,p prime.
+Next we state an equivalence between ASDS and quasi-orthogonal cocycles. This result
+follows from Proposition 2 and Theorems 1 and 3.
+Theorem 4. Letψ =λ ∏ 2m−1
+j=2 ∂j
+kj wherekj ∈ {0, 1} and {λ,∂ 2,...,∂ 2m−1} is the basis
+of Z 2(G, ⟨−1⟩) deﬁned in Section 2.2. Then ψ is quasi-orthogonal if and only if
+B = {j − 1 | 2 ≤j ≤m, kj = 1}, D = {j −m − 1 |m + 1 ≤j ≤ 2m − 1, kj = 1}
+are 2-{m; |B|, |D|; |B| + |D| −m+1
+2 } ASDS such that the multiset B −D of diﬀerences x −y
+modulom as (x,y ) ranges over B ×D is symmetric.
+Remark 6. Since ψ is normalized, the ASDS in Theorem 4 are ‘normalized’ too (0 /∈B).
+Also m − 1 ̸∈D because of the particular basis of Z 2(G, ⟨−⟩) chosen.
+Example 6. 1. The ASDS in Example 3 satisfy the stipulations of Theorem 4, so the
+cocycle λ∂ 2∂5∂6∂7∂8∂10∂12 ∈Z 2(Z2 × Z9, ⟨−1⟩) is quasi-orthogonal.
+2. B = {1, 2} and D = {0, 2} are 2- {7; 2, 2; 0} ASDS, but B −D ̸= D −B. Hence
+λ∂ 2∂3∂8∂10 ∈Z 2(Z2 × Z7, ⟨−1⟩) is not quasi-orthogonal. Indeed, two rows in the lower
+half of Mψ sum to 4.
+Remark 7. We deﬁne an equivalence relation ∼ on the set of GOBA(2 ,m ) by φ ∼ φ ′ ⇔
+φ and φ ′ have the same ﬁrst row and their second rows are negations of eac h other.
+Equivalence relations such as this carry over to compatible equivalen ce relations on sets
+of ASDS and OQS.
+We derive bounds on the size of the ASDS in Theorem 4.
+Corollary 5. Suppose that B and D are 2-{m;k,r ;k +r − m+1
+2 } ASDS where m is odd,
+0 ̸∈B, and m − 1 ̸∈D. Then
+(m − 1)2
+2 ≤ (k +r)m − (k2 +r2) ≤ m2 − 1
+2 .
+Proof. There exists ψ = ∏
+i∈B∂i+1
+∏
+i∈D∂i+m+1 such that the number of −1s in row j of
+Mψ for 2 ≤j ≤m ism±1. Alternatively, counting in Mψ before row normalization reveals
+that the total number of −1s in these rows is 2 k(m −k) + 2r(m −r). The inequalities
+follow by comparing the counts. □
+Our ultimate result is an accompaniment to Theorem 2.
+Lemma 5. For any nonempty subsets B, D of Zm, the multiset B −D is symmetric if
+and only if Bc and Dc are amicable, i.e., Bc(Dc)⊤ is symmetric.
+=== PAGE 12 ===
+12 J. A. Armario and D. L. Flannery
+Proof. Note that Bc(Dc)⊤ and Dc(Bc)⊤ are circulant. If u = (u0,u 1,...,u m−1) and v =
+(v0,v 1,...,v m−1) are the ﬁrst rows of Bc(Dc)⊤ and Dc(Bc)⊤, then
+u0 =v0, u 1 =vm−1, ..., u i =vm−i, ..., u m−1 =v1.
+ConsequentlyBc(Dc)⊤ =Dc(Bc)⊤ if and only if
+u1 =um−1, u 2 =um−2, ..., u m−1
+2
+=u m+1
+2
+.
+Let (b0,b 1,...,b m−1) and (d0,d 1,...,d m−1) be the respective ﬁrst rows of Bc andDc.
+Then
+ui =b0d[−i]m +b1d[1−i]m + · · · +bm−1d[−1−i]m
+um−i =d0b[−i]m +d1b[1−i]m + · · · +dm−1b[−1−i]m.
+We check that ui = um−i if and only if the number of summands bjdk in ui with bj =
+dk = −1 is equal to the number of summands bj′dk′ in um−i with bj′ = dk′ = −1. Since
+j −k ≡i ≡k′ −j′ mod m, the proof is complete. □
+In conclusion, and with reference to Remark 5 and the existence pr oblem for quasi-
+orthogonal cocycles, we pose the open problem of constructing n ew OQS from new ASDS
+(cf. the construction in [3] of optimal binary sequences from almos t diﬀerence sets).
+Acknowledgments. The ﬁrst author thanks Kristeen Cheng for reading the manuscrip t,
+and V ´ ıctor´Alvarez for assistance with computations. This research was part ially supported
+by project FQM-016 funded by JJAA (Spain).
+References
+1. Arasu, K. T. and de Launey, W.: Two-dimensional perfect qu aternary arrays. IEEE Trans.
+Inform. Theory 47 (2001), no. 4, 1482–1493.
+2. Arasu, K. T., de Launey, W., and Ma, S. L.: On circulant comp lex Hadamard matrices, Des.
+Codes Cryptogr. 25 (2002), no. 2, 123–142.
+3. Arasu, K. T., Ding, C., Helleseth, T., Kumar, P. V., and Mar tinsen, H.: Almost diﬀerence
+sets and their sequences with optimal autocorrelation. IEE E Trans. Inform. Theory 47 (2001),
+no. 7, 2934–2943.
+4. Armario, J. A. and Flannery, D. L.: On quasi-orthogonal co cycles. J. Combin. Des. 26 (2018),
+no. 8, 401–411.
+5. Armario, J. A. and Flannery, D. L.: Generalized binary arr ays from quasi-orthogonal cocycles.
+Des. Codes Cryptogr. 87 (2019), no. 10, 2405–2417.
+6. Chadjipantelis, T. and Kounias, S.: Supplementary diﬀer ence sets and D-optimal designs for
+n ≡ 2 mod 4. Discrete Math. 57 (1985), no. 3, 211–216.
+=== PAGE 13 ===
+Almost supplementary diﬀerence sets and quaternary sequen ces 13
+7. Hughes, G.: Non-splitting abelian (4 t,2,4t,2t) relative diﬀerence sets and Hadamard cocycles.
+European J. Combin. 21 (2000), no. 3, 323–331.
+8. Jedwab, J.: Generalized perfect arrays and Menon diﬀeren ce sets. Des. Codes Cryptogr. 2
+(1992), no. 1, 19–68.
+9. Koukouvinos, C., Kounias, S., and Seberry, J.: Supplemen tary diﬀerence sets and optimal
+designs. Discrete Math. 88 (1991), no. 1, 49–58.
+10. Krone, S. M. and Sarwate, D. V.: Quadriphase sequences fo r spread-spectrum multiple-access
+communication. IEEE Trans. Inform. Theory, vol. IT-30 (198 4), no. 3, 520–529.
+11. L¨ uke, H. D., Schotten, H. D., and Hadinejad-Mahram, H.: Binary and quadriphase sequences
+with optimal autocorrelation properties: a survey. IEEE Tr ans. Inform. Theory 49 (2003),
+no. 12, 3271–3282.
+12. Ma, S. L. and Ng, W. S.: On non-existence of perfect and nea rly perfect sequences. Int. J.
+Inf. Coding Theory 1 (2009), no. 1, 15–38.
+13. Schmidt, B.: Towards Ryser’s conjecture, European Cong ress of Mathematics, Vol. I
+(Barcelona, 2000), Progr. Math., 201, 533–541, Birkh¨ ause r, Basel, 2001.
+14. Yang, Y. and Tang, X.: Generic construction of binary seq uences of period 2 N with optimal
+odd correlation magnitude based on quaternary sequences of odd period N . IEEE Trans.
+Inform. Theory 64 (2018), no. 1, 384–392.

@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-18 07:07:38](2026-09-18/070738Z/README.md) | 1,983 research payloads;169,063,859 bytes; BH proofs, independent audits, exact certificates, compiler falsifiers, primary sources and exploratory failures | All payload hashes verified; no credential or unresolved oversized candidate. Canonical closing state is committed separately. |
 | [2026-09-17 22:33:24](2026-09-17/223324Z/README.md) | 1,977 research payloads;167,603,147 bytes; final feature realization, complete-child comparison, offset proofs/falsifiers, primary sources, all drafts and diagnostics | All payload hashes verified. Same14 historical/dynamic flags; no credential or unresolved oversized candidate. Canonical closing state and audit are committed separately. |
 | [2026-09-17 22:03:48](2026-09-17/220348Z/README.md) | 1,987 research payloads;165,971,551 bytes; non-Gaussian signs and sharp information/tail theorem | Hash verified; canonical status and limitations remain explicit. |
 | [2026-09-17 21:11:02](2026-09-17/211102Z/README.md) | 1,982 research payloads;166,773,868 bytes; operator-free actual-sign response and mixed-tail stability | Hash verified; independent proofs and lower-certificate replay preserved. |
@@ -100,12 +101,16 @@ exact normalized-seed inheritance ranks, control-phase calculations and
 updated drafts. No credential or unpreserved oversized-output flag was
 raised. This remains an intermediate snapshot; research continues.
 
-Latest publication audit: [2026-09-17 paper-combination campaign](publication_audit_papers_2026_09_17.md).
+Latest publication audit: [2026-09-18 Boolean BH boundedness campaign](publication_audit_bh_boundedness_2026_09_18.md).
+Its closing snapshot is [070738Z](2026-09-18/070738Z/README.md), with
+1,983 hash-verified payloads. Later canonical status edits are committed directly.
+The [2026-09-17 paper-combination audit](publication_audit_papers_2026_09_17.md)
+is historical.
 The prior [2026-09-16 bounded BH-paper investigation](publication_audit_bh_2026_09_16.md)
 is historical.
-The latest closing snapshot verifies1,977 payloads. Changed canonical proofs/state
-are preserved directly in the publication commits; other research originals
-match saved payloads. Working originals remain in place intentionally.
+Changed canonical proofs/state are preserved directly in the publication
+commits; other research originals match saved payloads. Working originals
+remain in place intentionally.
 The [earlier closing report](publication_audit_2026_09_07.md) is historical.
 
 Run from the repository root with the project venv:

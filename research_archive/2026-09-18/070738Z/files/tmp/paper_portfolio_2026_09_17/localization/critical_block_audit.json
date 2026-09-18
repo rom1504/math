@@ -1,0 +1,167 @@
+{
+  "exact_finite_audits": [
+    {
+      "n": 100,
+      "status": "exact rational identities passed",
+      "cell_probabilities": [
+        0.07958923738717877,
+        0.09694859325286151,
+        0.021687733423275974
+      ],
+      "cell_conditional_second_moments": [
+        0.0,
+        1.0,
+        4.0
+      ],
+      "cell_conditional_absolute_first_moments": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "delta": 0.012118574156607689,
+      "density_weights": [
+        1.456791944028348,
+        0.5,
+        1.5587755031884356
+      ],
+      "density_upper_bound": 1.5587755031884356,
+      "unbiased_normalized_absolute_mean": 0.7958923738717876,
+      "weighted_normalized_absolute_mean": 0.7716552255585722,
+      "mean_change": -0.024237148313215377,
+      "interval_certified_upper_bound_on_change": -0.0056714927052923985,
+      "gaussian_normalized_absolute_mean": 0.7978845608028654,
+      "weighted_minus_gaussian": -0.02622933524429316,
+      "exact_normalization_error": "0",
+      "exact_second_moment_error": "0"
+    },
+    {
+      "n": 400,
+      "status": "exact rational identities passed",
+      "cell_probabilities": [
+        0.11921119641910223,
+        0.14524043113273225,
+        0.03275218628141446
+      ],
+      "cell_conditional_second_moments": [
+        0.0066555740432612314,
+        0.9933995583163084,
+        3.953762757733022
+      ],
+      "cell_conditional_absolute_first_moments": [
+        0.06655574043261231,
+        0.9933664733955881,
+        1.9867657857608436
+      ],
+      "delta": 0.01839833888130716,
+      "density_weights": [
+        1.456884646666392,
+        0.5,
+        1.5542973545570196
+      ],
+      "density_upper_bound": 1.5542973545570196,
+      "unbiased_normalized_absolute_mean": 0.7973860392758586,
+      "weighted_normalized_absolute_mean": 0.7649412017228728,
+      "mean_change": -0.03244483755298576,
+      "interval_certified_upper_bound_on_change": -0.00861042259645175,
+      "gaussian_normalized_absolute_mean": 0.7978845608028654,
+      "weighted_minus_gaussian": -0.032943359079992574,
+      "exact_normalization_error": "0",
+      "exact_second_moment_error": "0"
+    },
+    {
+      "n": 1000,
+      "status": "exact rational identities passed",
+      "cell_probabilities": [
+        0.0755743558597197,
+        0.0907446488316433,
+        0.019616350338362395
+      ],
+      "cell_conditional_second_moments": [
+        0.002664890073284477,
+        1.0212163130419525,
+        4.076892809667673
+      ],
+      "cell_conditional_absolute_first_moments": [
+        0.042135611727759884,
+        1.009235780188793,
+        2.0184770536310053
+      ],
+      "delta": 0.011136422731190428,
+      "density_weights": [
+        1.4502758218588305,
+        0.5,
+        1.5782430994542263
+      ],
+      "density_upper_bound": 1.5782430994542263,
+      "unbiased_normalized_absolute_mean": 0.7976851146277163,
+      "weighted_normalized_absolute_mean": 0.7762232110017755,
+      "mean_change": -0.021461903625940824,
+      "interval_certified_upper_bound_on_change": -0.005211845838197121,
+      "gaussian_normalized_absolute_mean": 0.7978845608028654,
+      "weighted_minus_gaussian": -0.021661349801089913,
+      "exact_normalization_error": "0",
+      "exact_second_moment_error": "0"
+    },
+    {
+      "n": 10000,
+      "status": "exact rational identities passed",
+      "cell_probabilities": [
+        0.08758990679469132,
+        0.10646861276315579,
+        0.02389941465564463
+      ],
+      "cell_conditional_second_moments": [
+        0.003993763745743031,
+        0.9960194620433186,
+        3.972170597315131
+      ],
+      "cell_conditional_absolute_first_moments": [
+        0.054490933111385635,
+        0.9960097366213742,
+        1.9920380037335184
+      ],
+      "delta": 0.013415305974077134,
+      "density_weights": [
+        1.4558285259779298,
+        0.5,
+        1.556847457084741
+      ],
+      "density_upper_bound": 1.556847457084741,
+      "unbiased_normalized_absolute_mean": 0.7978646139382154,
+      "weighted_normalized_absolute_mean": 0.773529025955758,
+      "mean_change": -0.024335587982457416,
+      "interval_certified_upper_bound_on_change": -0.006278363195868099,
+      "gaussian_normalized_absolute_mean": 0.7978845608028654,
+      "weighted_minus_gaussian": -0.024355534847107396,
+      "exact_normalization_error": "0",
+      "exact_second_moment_error": "0"
+    }
+  ],
+  "normal_limit": {
+    "status": "numerical normal integrals, not interval certified",
+    "cell_probabilities": [
+      0.07965567455405798,
+      0.09678812880075371,
+      0.021704278506370578
+    ],
+    "a": [
+      0.0033288910066997524,
+      0.9966799683201433,
+      3.976786028939547
+    ],
+    "b": [
+      0.049958347237912634,
+      0.9966733206609664,
+      1.9933598610891368
+    ],
+    "delta": 0.01217933470034948,
+    "density_weights": [
+      1.4556575455298137,
+      0.5,
+      1.5574179875180871
+    ],
+    "absolute_mean_change": -0.022303423493318417,
+    "weighted_absolute_mean": 0.775581137309547,
+    "interval_proof_guaranteed_decrease": 0.005699928639763557
+  }
+}
