@@ -1,0 +1,28 @@
+m=1: count=9, min=0, max=0, F=0, eps=0, J_9m=0
+m=2: count=36, min=2, max=2, F=2, eps=0, J_9m=4/3
+m=3: count=84, min=6, max=6, F=6, eps=0, J_9m=4
+m=4: count=126, min=8, max=12, F=184/21, eps=16/21, J_9m=100/21
+m=5: count=126, min=8, max=16, F=248/21, eps=80/21, J_9m=36/7
+m=6: count=84, min=10, max=22, F=118/7, eps=48/7, J_9m=48/7
+m=7: count=36, min=18, max=22, F=21, eps=3, J_9m=7
+m=8: count=9, min=24, max=24, F=24, eps=4, J_9m=16/3
+m=9: count=1, min=24, max=24, F=24, eps=0, J_9m=0
+all two-level cocycles: PASS
+conditional 8->7 data:
+  missing=8 mean=43/2 var=7/4
+  missing=7 mean=22 var=0
+  missing=6 mean=21 var=3
+  missing=5 mean=20 var=4
+  missing=4 mean=20 var=4
+  missing=3 mean=43/2 var=7/4
+  missing=2 mean=21 var=3
+  missing=1 mean=21 var=3
+  missing=0 mean=21 var=3
+flat order-8 child restriction profile:
+  m=2 min=2 max=2 mean=2 eps=0 var=0
+  m=3 min=6 max=6 mean=6 eps=0 var=0
+  m=4 min=8 max=12 mean=44/5 eps=4/5 var=64/25
+  m=5 min=8 max=16 mean=12 eps=4 var=80/7
+  m=6 min=10 max=22 mean=120/7 eps=50/7 var=468/49
+  m=7 min=22 max=22 mean=22 eps=4 var=0
+  m=8 min=24 max=24 mean=24 eps=4 var=0

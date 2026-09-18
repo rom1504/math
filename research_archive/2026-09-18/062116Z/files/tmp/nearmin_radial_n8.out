@@ -1,0 +1,825 @@
+{
+  "status": "exact finite computation",
+  "n": 8,
+  "minimizer_root_gauged_count": 4200,
+  "minimizer_switching_closed_count": 537600,
+  "saved_unique_cap12_count": 89,
+  "distance_distribution": {
+    "1": 41,
+    "2": 40,
+    "3": 8
+  },
+  "certified_response_distance_witness": {
+    "matrix_sha256": "20bb81c068b556af607a07e73d10497887d9599c099b4b90d8bc050c493d8e11",
+    "upper_triangle_encoding": "+-+++++/--++-+/+-+--/+-++/-+-/-+/-",
+    "distance_to_minimizers_in_edge_Hamming_metric": 3,
+    "distance_to_minimizers_in_d_square": 6,
+    "proof_note": "All exact minimizers at Hamming radius <=4 were checked. Beyond radius 4, character orthogonality gives d_square >=2*sqrt(5), and even integrality makes d_square>=6."
+  },
+  "records": [
+    {
+      "matrix_sha256": "0003c830070685595c5ceb517d1f558b78e914982b767ff4f2171bd781ffa3c9",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "01dbaed2191096d71ab9db567ed098ada0d60601b951cafce49fc0e33c8586b2",
+      "sources": [
+        "cap_constrained_adversarial_samples",
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "059f5205b05a3b4778599b221a38cb0435a021e15ac785d47301dc1a3a9a1421",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "05ea59a3a405545ea810309173644e9d24b302ee50183a2c8a0b09d772ff46ad",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "0842fd1f66527adbd6ea120685cc34e42d04ba283f847d7036efb81170ff9538",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "0b09f6e8d410c506846cf53a629abbb255b2feaef7d51f22371a79d6d872fc96",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "0e5494010665b2bc482acffb08c1396c3b75c461c591e86c71e5a77226bdd467",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "147a526c9873732652f72c5940a40ce3813ed5380a2b4f5fcb59c3651ce393a0",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "18b8cea377d29e65b03083586f2c2e0a614074646e2702d6f558a514520bb234",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "1ba8c0047ccfa74f2cd394989f135ed10e23dc2517c738b503e9453b8d8ae42b",
+      "sources": [
+        "repository_one_step_near_representatives"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "1bc89247e224cd1b27eb27665449c90f154866b57f1df14bcf3f8747dc1e267c",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "1c3016bbd4c5303fee94f0c888a87efcc5c73d6bfec3b339aec428f965d6cf83",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "20bb81c068b556af607a07e73d10497887d9599c099b4b90d8bc050c493d8e11",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "258ee7a312a2b118be8b529eae3eb8410651fd49915699d758e27fe5a130ecb1",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "2fe7697610dc29c16a90114f1d76309b9827b3ca313c09a8d131da6fc021024a",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "320734ccc0fc53f10c8b6d8d8102344c26462c7d4bf8fecf096a5c8ece53259c",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "3cf8e314d896ed8ea042c4854b381a9a3a7dcad35409a318e908455ca24dce08",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "3e5185ca2dcc3065edd95b2d6db557e13664b15e72d24095f2aaaa870609a2c0",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "40fdafacd70cde3e6539bf3902dcfe1bd2e98b6a98f79d2fbd05d2a789cc12b7",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "45650a97786457d03805e9d3d83810e1e38cf5fb73ad9a18abae7966d8fbbff8",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "4719163ab8224c8145061ce1cc5be43588560728ce8b30415a0e2d5178d126f4",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "49747ee037fc49cf3bf96a533cb182db4ee7b76f59baf15acdc3406429a92083",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "49ce9fcb2f538c8aea5c0ffc2ed8e3008849a7b1dacd3558a83a823d6f9f767c",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "49ddb6dd3c362120fecfa298246347f0eadcc2e1b2dbc2702b605c66263358cc",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "4e3bc5e23dc1542b94ba008f0f5c27f01b03393f467edea5898d8ef5b0624286",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "4f2516b3bf82fa91bcf339713bcfd6f2639fcf097c8e3e0e1fb1a0461d846cff",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "4f712f90e8f96be3d56eb3fc6d9415ed4d28c0750376ea0ccd027248af3d2688",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "50435e678d39e00cd750118f21c4814e68cb112b0b2637bd92e43e3625f026ef",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "51171e00d2b05d9a20e557c0a5524060e83c1c24d7a89835901b72397be253a9",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "515b648b7efa6dd9df38070540b76ceb7143c0b8b449d838c53fb0ea88e7e0c7",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "58a289dd4d878a4c9e07765841550079ca016edc12afdf6ff19039b913379f5d",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "5b36d36ac91ae22ec6563ad7e94a1d1502d1a38233949d059b4a3620284d1cf6",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "5cbcf146a71fc6c77bb6d1322fba8b7dc56ea123447d5be0e52e047ff5e16c92",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "5d33339441da6bc04717bc1961f4ff8116a8a5042ea5712db07c466cac4359cd",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "613dc037ae89e9ff4e60e8bb684368a77d82bfea94f5ea44c14c3ac2de1a490e",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "6510855f69fb7d0a81e9e84c94c1aa17440163d398454ed3f08795fc9ed7cf28",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "651d0f068b72c6a3db6669b0f508fd6b844424f88e9af1ab66309f809740060a",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "65325bf6d81faf48e2df30bea6e2bc34ca765922368daf0f86df5f583f1a2d5e",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "66975b6f59e5c5d5410d01c85b9b5fd44c31b0853ab3460fe24e3880c4de3708",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "6ff3daef2c2a4a69ae7511f4b9fe246768fdc6fda8a5a0fbee12e42d7501e6fa",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "70ecdd7db98c5042a381ee7216e2cfa4bae6a9102c2a986873642bce72e7f400",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "7259b3e259d374f67382c226889dfb0c618d30a2350b93e9d105b2b8f31a1448",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "75a1b07e58112e36bfff98a9b5d2ed92db32f7d09651110ca274213520ae72ee",
+      "sources": [
+        "control_extremes",
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "81e82defc827402273c1712e2f3c6d279a7ed1ba24f26fc89fd724c7718aaf33",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "82f802578ca7b6b297e294401d8d8607a81fd3c2ed94c960946c3963317d3ad8",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "867c238d455e17255f66bbd2e07dbe696b793e93979739dda94f524057d8dfd1",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "8978c74db54d3678c72bdfb6b22c9ad8c10f3700a5ec20b681c0e786209a2f2b",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "8dc1b7e4e93d083b45e59a03b0281336f9a5702d55836bce82b5433671579027",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "8f8bb53583a23095cb162aeb5a18e0cfff6f2d9bc7547f76d852f8b4b4f90c0a",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "907b76f4cc7a08e0745dd30f84262d16a2a925a70f56567c67212770fefb2a57",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "9196942f3e618b21fe805eebdbd7319bb398563c0c5edd538e9600815cc823a6",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "93a244f70704868136bfd1a86951e3355a75c95ddadaf7b9dc2b90d241c71245",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "942e3443470f49838299534d481d7424b4b6fae6bfe65ecb52b92536197644bc",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "94caa49ed5eb95ffd82164fb2d93882dbcefa2bf564be7856b2dfbe998b6cd6a",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "99ef01700c9196a0eb26ba5e266e8e77366bece21010206cc2a31c6cb3b0400f",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "9d562ccf6cc49751ebbbfe3a68786600a0e0cbec607d4f32e80748c3a9e5581e",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "9e3d00eb74df7e136a43c3a57b19f3e6b07200fa07265b9d41ba2ba2de654f0f",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "a0a2006930009aec1e615bfa8a09899503bef0e388787f162ceed7a99ad93e48",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "a1028e2c754e3de8a4d865b5cfba1c9b51d4caddf1183924607a44df9d071f53",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "a3c18d4fb6e85415d57a1b4d287858fb00233389906ec3a5dbefbce17b61b378",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "a5401137342b9472403eaff775854f9024cea278c2cb9e154d6af508502d19b2",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "a881bc5f444e89e1981548a739b5167f4e7883320c85a9ab4408cd4bcc7425cd",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "a8a985b2a5b40a26ca80c488859d1d81fa1a7b8cd2afe481e11e1cda3c9ba6f7",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "a8c2818641dafff0b8361feee48eb3301903406d09aa248bfae8f4c25d3339fe",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "ab2abc983e689657c6cef12b9dfcca864b2dafcc811793b3293dad49ed23e1dc",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "ae046046f9d0a91e4420970db4ab83adccbdb9112a2a7a6ccff9bebc88716d44",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "b9b80245a1ac83ab74d6a11e204c3b500dc0030b1f10898a8b52acbc4da76e00",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "bd5a0f87978f1b37506216e92817a6bf573299f552988af049035064c90ef158",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "c52c40fb47928b35f1dfcd2b59d1e89d281eb2730fbd0432531830267c2a896c",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "ca5c6179550aabd8d02716e9ed5d76d4158300e0a893122425c01a2538459d20",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "cbb1a2537c05f6299c54166acc82c1d495b2808c5729cf6e5049f4346cb7b130",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "cc1b83335980b65d1b3adc8de788d6c5c14bc43fce705c2f36392f658a475f33",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "cc5e7562fa17e562c6ef6d5f32bb7d070fa6446c9e0d88debfdead326c05a60d",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "d2edb9fdc6a2c74dafb52fc2dd1b2c18922e2f0df64ed9b25778f48663a51f08",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "d4d3cf2fd5a5b844adace1ede86c39827ba3a4bafc285d0d9a7d6e141d8bf715",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "d66ab95bd22d59ecc37d26a0b46d8c771985f9f8181e7640be6ddfc6e876b7c6",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "da5c926963332b2dcc35c9266c3aa757c9f01b9f2cbdc22eb791717d04bda8b1",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "db8156cc7bd632f437628e18f6a2835c7dd15b73360f1a7fa39f7e0765069eb9",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "dd196a7251f58ea78153737a7e5ed6e045bf5c0413fa5ba266d2377ccfee0fe4",
+      "sources": [
+        "cap_constrained_adversarial_samples",
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "e5341aceb3815ffcc6929056b9cc30dbee59eb7d3a4f08e733155a8a0679bc33",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "e761b75aa1e708761e11b7ea3ece11068b5d900ee4e7b127f564762505168f04",
+      "sources": [
+        "random_draws_that_are_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "ea13d2dade37f64c9ac2b9d62242ea2be7778a63f12e6512eb444f52390bb2c4",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "ead0b5500394759c78b164b6abe0a210cf80253a4b19f89d5829fe6837cbe4ee",
+      "sources": [
+        "cyclic_distance_low_cap_controls"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 2
+    },
+    {
+      "matrix_sha256": "eb0ffe709f5aa3e0d050045c0d02feaef7cad44923d5bc509ed0f3799c60c885",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "eb218f9527a05f406831d3b395b05f55ff3640b454f1f9287538fcd44342ea88",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "ec5407369cd8e654d66277cdabf0aec939e78367faba2d85ddc86d386f08950b",
+      "sources": [
+        "independently_generated_greedy_low_cap"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    },
+    {
+      "matrix_sha256": "ef0b5aab049c6f07e68f17e1a1fd975921df7ba624f9085a9e7a0ee5a5f8cc2c",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "f30add1f85a3508b7ab9648874e222d4457519f8e0167f445695b13d6afd69cf",
+      "sources": [
+        "one_edge_low_cap_neighborhood"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 1
+    },
+    {
+      "matrix_sha256": "feaf25e0aad2fb86813b3acef2c2c88a862478b8677bf78c9b4060e17333ca55",
+      "sources": [
+        "cap_constrained_adversarial_samples"
+      ],
+      "cap": 12,
+      "excess": 2,
+      "distance_to_switching_closed_minimizer_set": 3
+    }
+  ]
+}

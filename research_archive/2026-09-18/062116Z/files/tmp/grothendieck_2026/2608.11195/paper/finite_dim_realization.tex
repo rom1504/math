@@ -1,0 +1,190 @@
+\section{Finite-Dimensional Realization}
+\label{sec:transfer}
+
+This section is proves that finite schemes approximate the limiting $b$-series.  Coefficientwise convergence is true, but it is not strong enough to transfer the inverse-majorant condition, which is an infinite nonlinear condition on the inverse series.  We prove a stronger analytic statement.
+
+\subsection{Locally uniform convergence of finite correlations}
+
+Let $H_N$ denote the arcsine-normalized correlation function of the finite scheme $(f_N,g_N)$, in the standard-normal coordinates of Section~\ref{sec:scheme}:
+\[
+  H_N(t)={\pi\over2}\E[f_N(\calX)g_N(\calY_t)].
+\]
+Here $\calX,\calY_t\in\R^{2+|D|N}$ are standard Gaussian vectors with $\E[\calX_i\calY_{t,i}]=t$ coordinatewise.
+
+\begin{proposition}[Local uniform convergence]\label{prop:loc-unif}
+The functions $H_N$ extend holomorphically to $\D$, satisfy $|H_N(z)|\le\pi/2$ on $\D$, and converge locally uniformly on $\D$ to the limiting correlation $H$.  Consequently, if
+\[
+  H_N(z)=\sum_{m\ge1}b_{m,N}z^m,
+  \qquad
+  H(z)=\sum_{m\ge1}b_mz^m,
+\]
+then $b_{m,N}\to b_m$ for every fixed $m$.
+\end{proposition}
+
+\begin{proof}
+For fixed $N$, expand $f_N$ and $g_N$ in the orthonormal tensor Hermite basis on $\R^{2+|D|N}$:
+\[
+  f_N=\sum_\alpha \widehat f_N(\alpha)\He_\alpha,
+  \qquad
+  g_N=\sum_\alpha \widehat g_N(\alpha)\He_\alpha.
+\]
+Mehler's formula gives, for real $t\in(-1,1)$,
+\[
+  {2\over\pi}H_N(t)=\sum_\alpha \widehat f_N(\alpha)\widehat g_N(\alpha)t^{|\alpha|}.
+\]
+The same series is absolutely convergent for $|z|<1$, since Cauchy-Schwarz gives
+\begin{align*}
+  \sum_\alpha |\widehat f_N(\alpha)\widehat g_N(\alpha)| |z|^{|\alpha|}
+  &\le
+  \left(\sum_\alpha |\widehat f_N(\alpha)|^2 |z|^{|\alpha|}\right)^{1/2}
+  \left(\sum_\alpha |\widehat g_N(\alpha)|^2 |z|^{|\alpha|}\right)^{1/2}\\
+  &\le \|f_N\|_2\|g_N\|_2=1.
+\end{align*}
+Thus $H_N$ is holomorphic on $\D$ and $|H_N(z)|\le \pi/2$.
+
+We next identify the pointwise limit on the real interval.  Fix $t\in(-1,1)$.  For every degree $d\in D$, the Hermite covariance identity gives
+\[
+  \E[\He_d(U_{d,j})\He_d(U_{d,j}')]=t^d.
+\]
+The multivariate central limit theorem yields
+\[
+  \bigl(P_{d,N},P_{d,N}'\bigr)_{d\in D}
+  \Rightarrow
+  \bigl(R_d,R_d'\bigr)_{d\in D},
+\]
+where $(R_d,R_d')$ is a Gaussian pair with correlation $t^d$, and the pairs are independent over distinct $d$.  This convergence is joint with $(Z,Z',X,X')$, which are independent of the Hermite averages.
+
+The limiting discontinuity set of the product of signs is contained in the union of the two threshold hypersurfaces
+\begin{align*}
+  z+\eta \He_3(x)+\sum_{d\in D}s_dr_d&=0,\\
+  z'-\eta \He_3(x')+\sum_{d\in D}\sigma_ds_dr_d'&=0.
+\end{align*}
+This union has limiting probability zero: after conditioning on all variables except $Z$, the first threshold has probability zero because $Z$ has a density, and similarly for the second threshold using $Z'$.  The bounded continuous mapping theorem therefore gives $H_N(t)\to H(t)$ for every real $t\in(-1,1)$.
+
+The family $\{H_N\}$ is locally bounded on $\D$ and converges pointwise on a set with an accumulation point.  Vitali's theorem gives locally uniform convergence on $\D$ to the unique holomorphic function agreeing with the real limiting correlation.  Coefficient convergence follows from Cauchy's formula.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:loc-unif} justifies the limiting coefficient formula as the fixed-degree limit of genuine finite-dimensional schemes.  But it does not by itself imply that the finite inverse series satisfy $\sum_n|A_{n,N}|\gamma^n\le1$.  Tail control for the inverse series requires the inverse-branch stability theorem below.
+\end{remark}
+
+\subsection{Analytic stability of inverse branches}
+
+\begin{theorem}[Finite inverse-majorant transfer]\label{thm:finite-transfer}
+Let $F_N,F\in\Hol(\D)$, assume $F_N\to F$ locally uniformly on $\D$, and assume $F_N(0)=F(0)=0$.  Suppose that $G$ is a holomorphic inverse branch of $F$ on a neighborhood of $\ol{D(0,R_0)}$, with values in $\D$:
+\[
+  F(G(\zeta))=\zeta,
+  \qquad |\zeta|\le R_0.
+\]
+Write
+\[
+  G(\zeta)=\sum_{n\ge1}A_n\zeta^n.
+\]
+Let $0<\gamma<R_0$, and assume the strict majorant inequality
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Then, for all sufficiently large $N$, $F_N$ has a holomorphic inverse branch at the origin,
+\[
+  G_N(\zeta)=F_N^{-1}(\zeta)=\sum_{n\ge1}A_{n,N}\zeta^n,
+\]
+defined on a neighborhood of $\gamma\ol\D$, and
+\[
+  \sum_{n\ge1}|A_{n,N}|\gamma^n<1.
+\]
+Moreover $A_{n,N}\to A_n$ for every fixed $n$.
+\end{theorem}
+
+\begin{proof}
+Choose nested radii
+\[
+  \gamma<\rho<r<R<R_0.
+\]
+Let
+\[
+  \Omega=G(D(0,R)).
+\]
+Since $G$ is a conformal inverse branch on a neighborhood of $\ol{D(0,R)}$, the boundary $\partial\Omega$ is the image of $|\zeta|=R$.  For $t\in\partial\Omega$, we have $|F(t)|=R$.  Therefore, for all $|\zeta|\le r$,
+\[
+  |F(t)-\zeta|\ge R-r,
+  \qquad t\in\partial\Omega.
+\]
+The compact contour $\partial\Omega$ is contained in $\D$.  By locally uniform convergence, for all large $N$,
+\[
+  \sup_{t\in\partial\Omega}|F_N(t)-F(t)|<R-r.
+\]
+Rouche's theorem then implies that, for every $|\zeta|\le r$, the equations $F_N(t)=\zeta$ and $F(t)=\zeta$ have the same number of solutions in $\Omega$, counted with multiplicity.  The equation $F(t)=\zeta$ has exactly one solution in $\Omega$, namely $t=G(\zeta)$.  Hence $F_N(t)=\zeta$ also has exactly one solution in $\Omega$.  In particular, since $F_N(0)=0$, the zero at $0$ is simple, and these solutions define a holomorphic inverse branch $G_N$ on $D(0,r)$, with values in $\Omega$.
+
+The inverse branches converge uniformly on $\ol{D(0,r)}$.  Indeed, by the argument-principle formula,
+\[
+  G_N(\zeta)= {1\over 2\pi i}\int_{\partial\Omega}
+  {tF_N'(t)\over F_N(t)-\zeta}\,dt,
+  \qquad |\zeta|\le r.
+\]
+The denominators are uniformly bounded away from zero on $\partial\Omega\times\ol{D(0,r)}$, and $F_N'\to F'$ uniformly on $\partial\Omega$.  Thus $G_N\to G$ uniformly on $\ol{D(0,r)}$, which implies fixed inverse-coefficient convergence.
+
+It remains to control the tail.  Put
+\[
+  B=\sup_{t\in\ol\Omega}|t|<\infty.
+\]
+Since $G_N(D(0,r))\subseteq\Omega$, Cauchy's estimate on the circle $|\zeta|=\rho$ gives
+\[
+  |A_{n,N}|\le B\rho^{-n},
+  \qquad n\ge1,
+\]
+for all large $N$.  Let
+\[
+  \delta=1-\sum_{n\ge1}|A_n|\gamma^n>0.
+\]
+Choose $M$ so large that
+\[
+  B\sum_{n>M}\left({\gamma\over\rho}\right)^n< {\delta\over3}.
+\]
+For all sufficiently large $N$, fixed-coefficient convergence gives
+\[
+  \sum_{n\le M}|A_{n,N}|\gamma^n
+  \le \sum_{n\le M}|A_n|\gamma^n+{\delta\over3}.
+\]
+Therefore
+\begin{align*}
+  \sum_{n\ge1}|A_{n,N}|\gamma^n
+  &\le \sum_{n\le M}|A_n|\gamma^n+{\delta\over3}
+  +B\sum_{n>M}\left({\gamma\over\rho}\right)^n\\
+  &< \sum_{n\ge1}|A_n|\gamma^n+{2\delta\over3}<1.
+\end{align*}
+\end{proof}
+
+\begin{corollary}[Finite schemes from a limiting certificate]\label{cor:finite-scheme}
+Assume the limiting correlation $H$ has a holomorphic inverse branch
+\[
+  G(\zeta)=H^{-1}(\zeta)=\sum_{n\ge1}A_n\zeta^n
+\]
+with values in $\D$ on a neighborhood of $\ol{D(0,R_0)}$.  Let $0<\gamma<R_0$, and suppose
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<1.
+\]
+Then, for all sufficiently large lengths $N$, the genuine finite-dimensional scheme $(f_N,g_N)$ satisfies the inverse-majorant condition at radius $\gamma$.  Consequently
+\[
+  \KG\le {\pi\over2\gamma}.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply Proposition~\ref{prop:loc-unif} and Theorem~\ref{thm:finite-transfer} with $F_N=H_N$ and $F=H$, then invoke Theorem~\ref{thm:krivine-criterion} for the finite scheme after the scaling convention stated at the start of Section~\ref{sec:scheme}.
+\end{proof}
+
+\begin{corollary}[Endpoint and margin]\label{cor:margin}
+If the limiting inverse branch is holomorphic with values in $\D$ on a neighborhood of $\Gamma\ol\D$ and
+\[
+  \sum_{n\ge1}|A_n|\Gamma^n\le1,
+\]
+then every $\gamma<\Gamma$ transfers to all sufficiently high finite-dimensional schemes.  If the inequality at $\Gamma$ is strict and the same analytic neighborhood is available, then $\Gamma$ itself transfers.
+\end{corollary}
+
+\begin{proof}
+For $\gamma<\Gamma$, the majorant is strict because $A_1\neq0$:
+\[
+  \sum_{n\ge1}|A_n|\gamma^n<\sum_{n\ge1}|A_n|\Gamma^n\le1.
+\]
+Apply Corollary~\ref{cor:finite-scheme}.  The strict endpoint case is the same argument with $\gamma=\Gamma$.
+\end{proof}

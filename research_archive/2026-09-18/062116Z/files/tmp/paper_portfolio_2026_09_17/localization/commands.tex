@@ -1,0 +1,318 @@
+%\newcommand{\be}{\begin{equation}}
+%\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\V}{{\mathbb V}}
+
+
+\def\PL{{\rm PL}}
+
+\def\Vol{{\rm Vol}}
+\def\Info{{\rm I}}
+\def\sTV{\mbox{\tiny \rm TV}}
+\def\sinit{\mbox{\tiny \rm init}}
+\def\seq{\mbox{\tiny \rm eq}}
+\def\Proj{{\sf P}}
+\def\Unif{{\sf Unif}}
+\def\BI{{\rm I}}
+\def\oF{{\overline F}}
+\def\eps{{\varepsilon}}
+\def\normeq{\cong}
+\def\rE{{\rm E}}
+\def\id{{\boldsymbol{I}}}
+\def\bh{\boldsymbol{h}}
+\def\Psp{{\mathfrak{P}}}
+\def\diver{{\rm div}}
+\def\supp{{\rm supp}}
+\def\Cont{\mathscrsfs{C}}
+\def\Lp{\mathscrsfs{L}}
+\def\cuA{\mathscrsfs{A}}
+\def\cuC{\mathscrsfs{C}}
+\def\cuD{\mathscrsfs{D}}
+\def\cuP{\mathscrsfs{P}}
+\def\cuF{\mathscrsfs{F}}
+\def\oDelta{\overline{\Delta}}
+
+\def\Law{{\rm Law}}
+\def\hx{\hat{x}}
+\def\hf{\hat{f}}
+\def\hrho{\hat{\rho}}
+
+\def\cond{{\sf c}}
+\def\bcond{\underline{\sf c}}
+\def\ro{\overline{{\sf c}}}
+
+\def\btheta{{\boldsymbol{\theta}}}
+\def\bt{{\boldsymbol{\theta}}}
+\def\btau{{\boldsymbol{\tau}}}
+\def\bsigma{{\boldsymbol{\sigma}}}
+\def\bsm{{\boldsymbol{\sigma}}_{\rm M}}
+\def\bxi{{\boldsymbol{\xi}}}
+\def\bfe{{\boldsymbol{e}}}
+\def\bap{\overline{p}}
+\def\oR{\overline{R}}
+
+\def\muc{\mu_{\bx_0,\bz,t}}
+\def\mus{\mu_{t}}
+
+
+\def\bZ{{\boldsymbol{Z}}}
+\def\bSigma{{\boldsymbol{\Sigma}}}
+\def\bP{{\boldsymbol{P}}}
+\def\bN{{\boldsymbol{N}}}
+\def\tbN{\tilde{\boldsymbol{N}}}
+\def\bPhi{{\boldsymbol{\Phi}}}
+\def\tbPhi{\tilde{\boldsymbol{\Phi}}}
+\def\bPp{{\boldsymbol{P}}_{\perp}}
+
+\def\rN{{\rm N}}
+
+\def\hgamma{\widehat{\gamma}}
+
+\def\tmu{\tilde{\mu}}
+\def\dc{{\Delta{\sf c}}}
+\def\bC{{\boldsymbol{C}}}
+\def\bQ{{\boldsymbol{Q}}}
+\def\bM{{\boldsymbol{M}}}
+\def\obM{\overline{\boldsymbol{M}}}
+\def\bV{{\boldsymbol{V}}}
+\def\obV{\overline{\boldsymbol{V}}}
+
+\def\Mde{M^{\delta}}
+\def\Ude{U^{\delta}}
+\def\Xde{X^{\delta}}
+\def\Zde{Z^{\delta}}
+
+\def\dert{\frac{\de\phantom{t}}{\de t}}
+
+\def\info{{\rm I}}
+\def\KL{{\rm D}}
+\def\tsb{\tilde{\sf b}}
+\def\sb{{\sf b}}
+\def\GOE{{\sf GOE}}
+\def\hq{{\widehat{q}}}
+\def\hQ{{\widehat{Q}}}
+\def\hbQ{{\boldsymbol{\widehat{Q}}}}
+\def\hbu{{\boldsymbol{\widehat{u}}}}
+\def\bmu{{\boldsymbol{\mu}}}
+\def\bg{{\boldsymbol{g}}}
+\def\hnu{\widehat{\nu}}
+\def\bzero{{\mathbf 0}}
+\def\bone{{\mathbf 1}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cT{{\mathcal T}}
+\def\cC{{\mathcal C}}
+\def\cX{{\mathcal X}}
+\def\hcC{\widehat{\mathcal C}}
+\def\blambda{{\boldsymbol \lambda}}
+
+\def\tz{\tilde{z}}
+\def\tbz{\tilde{\boldsymbol z}}
+\def\tH{\tilde{H}}
+\def\hy{\hat{y}}
+\def\cO{{\mathcal O}}
+\def\s{\sigma}
+\def\Z{{\mathbb Z}}
+\def\RS{\mbox{\tiny\rm RS}}
+
+\def\opt{\mbox{\tiny\rm opt}}
+\def\sUB{\mbox{\tiny\rm UB}}
+\def\op{\mbox{\tiny\rm op}}
+\def\sLip{\mbox{\tiny\rm Lip}}
+\def\good{\mbox{\tiny\rm good}}
+\def\relu{\mbox{\tiny\rm ReLU}}
+\def\unif{\mbox{\tiny\rm unif}}
+
+
+\def\mmse{{\rm mmse}}
+\def\naturals{{\mathbb N}}
+\def\reals{{\mathbb R}}
+\def\complex{{\mathbb C}}
+\def\integers{{\mathbb Z}}
+\def\Z{{\mathbb Z}}
+
+\def\sg{s_{\mathfrak G}}
+\def\normal{{\sf N}}
+\def\cnormal{{\sf CN}}
+\def\sT{{\sf T}}
+\def\Group{{\mathfrak G}}
+\def\sg{s_{{\mathfrak G}}}
+
+\def\oh{\overline{h}}
+\def\bv{{\boldsymbol{v}}}
+\def\bz{{\boldsymbol{z}}}
+\def\bx{{\boldsymbol{x}}}
+\def\ba{{\boldsymbol{a}}}
+\def\bb{{\boldsymbol{b}}}
+\def\tbb{\tilde{\boldsymbol{b}}}
+\def\bA{\boldsymbol{A}}
+\def\bB{\boldsymbol{B}}
+\def\bJ{\boldsymbol{J}}
+\def\bH{\boldsymbol{H}}
+
+\def\bxz{\boldsymbol{x_0}}
+\def\hbx{\boldsymbol{\hat{x}}}
+
+\def\Par{{\sf P}}
+\def\de{{\rm d}}
+\def\tbX{\tilde{\boldsymbol{X}}}
+\def\bX{\boldsymbol{X}}
+\def\bY{\boldsymbol{Y}}
+\def\bW{\boldsymbol{W}}
+\def\prob{{\mathbb P}}
+\def\E{{\mathbb E}}
+\def\MSE{{\rm MSE}}
+\def\Ove{{\rm Overlap}}
+\def\<{\langle}
+\def\>{\rangle}
+\def\Tr{{\rm Tr}}
+\def\T{{\sf T}}
+\def\Ball{{\sf B}}
+\def\argmax{{\arg\!\max}}
+\def\sign{{\rm sign}}
+\def\rank{{\rm rank}}
+\def\diag{{\rm diag}}
+\def\ed{\stackrel{{\rm d}}{=}}
+\def\Poisson{{\rm Poisson}}
+\def\cH{{\cal H}}
+\def\cM{{\cal M}}
+\def\cN{{\cal N}}
+\def\usigma{{\underline{\bsigma}}}
+\def\Pp{{\sf P}^{\perp}}
+\def\obv{{\boldsymbol{\overline{v}}}}
+\def\di{{\partial i}}
+\def\conv{{\rm conv}}
+\def\cY{{\cal Y}}
+\def\cV{{\cal V}}
+\def\cL{{\cal L}}
+
+\def\cv{{*}}
+\def\by{{\boldsymbol{y}}}
+\def\bw{{\boldsymbol{w}}}
+\def\P{{\sf P}}
+\def\cP{{\mathcal P}}
+\def\cE{{\mathcal E}}
+
+\def\txi{\tilde{\xi}}
+
+\def\cov{{\rm Cov}}
+% NOTE TO ANDREA:
+% Please algorithm and [noend]{algorithmic} in the beginning of the file, instead the following two below.
+%\newcommand{\algorithmicrequire}{\textbf{Input:}}
+%\newcommand{\algorithmicensure}{\textbf{Output:}}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\def\hp{\hat{p}}
+\def\toW{\stackrel{W_2}{\longrightarrow}}
+\def\toWl{\stackrel{W_\ell}{\longrightarrow}}
+\def\toP{\stackrel{p}{\longrightarrow}}
+\def\toLtwo{\stackrel{L_2}{\longrightarrow}}
+\def\eqP{\stackrel{p}{=}}
+\def\tol {{\tt tol}}
+\def\maxiter{{\tt maxiter}}
+\def\be{{\boldsymbol{e}}}
+\def\blambda{{\boldsymbol{\lambda}}}
+\def\bD{{\boldsymbol{D}}}
+\def\deltaMax{\delta_\text{max}}
+\def\DeltaMax{\Delta_\text{max}}
+\def\mRS{m_\text{\tiny RSB}}
+
+\def\cD{{\cal D}}
+\def\hcD{\widehat{\cal D}}
+
+\def\bphi{{\boldsymbol{\varphi}}}
+\def\obphi{\overline{\boldsymbol{\varphi}}}
+\def\bu{{\boldsymbol{u}}}
+\def\b0{{\boldsymbol{0}}}
+
+\def\hG{\widehat{G}}
+
+\def\bhSigma{{\bf\widehat{\Sigma}}} 
+\def\Bind{{\sf Bind}}
+\def\Var{{\rm Var}}
+
+\def\enter{\mbox{\tiny\rm enter}}
+\def\exit{\mbox{\tiny\rm exit}}
+\def\return{\mbox{\tiny\rm return}}
+\def\sBL{\mbox{\tiny\rm BL}}
+\def\rad{\overline{\rho}}
+\def\ov{\overline{v}}
+\def\ou{\overline{u}}
+\def\bfone{{\boldsymbol 1}}
+\def\bff{{\boldsymbol f}}
+\def\bgg{{\boldsymbol g}}
+\def\bF{{\boldsymbol F}}
+\def\bG{{\boldsymbol G}}
+\def\bR{{\boldsymbol R}}
+\def\tbA{\tilde{\boldsymbol A}}
+\def\bm{{\boldsymbol m}}
+\def\tg{\tilde{g}}
+\def\tbg{\tilde{\boldsymbol g}}
+
+
+\def\obw{\overline{\boldsymbol w}}
+\def\hbw{\hat{\boldsymbol w}}
+\def\onu{\overline{\nu}}
+\def\orh{\overline{\rho}}
+
+\def\obtheta{\overline{\boldsymbol \theta}}
+\def\tbtheta{\tilde{\boldsymbol \theta}}
+\def\tbx{\tilde{\boldsymbol x}}
+\def\bs{{\boldsymbol s}}
+\def\Lip{{\rm Lip}}
+
+\def\rP{{\rm P}}
+
+\DeclareMathOperator*{\plim}{p-lim}
+\DeclareMathOperator*{\plimsup}{p-limsup}
+
+\def\tcF{\tilde{\mathcal F}}
+\def\oW{\overline{W}}
+\def\oq{q}
+\def\oQ{\overline{Q}}
+\def\oM{\overline{M}}
+\def\obX{\overline{\boldsymbol X}}
+\def\bdelta{{\boldsymbol \delta}}
+\def\ocD{{\overline {\mathscrsfs{P}}}}
+\def\cD{{{\mathcal D}}}
+\def\tcL{{\tilde {\mathcal L}}}
+\def\ent{{\rm Ent}}
+
+\def\hg{\widehat{g}}
+\def\trho{\tilde{\rho}}
+
+\def\esssup{{\rm esssup}}
+\def\essinf{{\rm essinf}}
+
+\def\tU{\tilde{U}}
+\def\tV{\tilde{V}}
+\def\cA{{\mathcal A}}
+\def\cI{{\mathcal I}}
+\def\cS{{\mathcal S}}
+\def\bn{{\boldsymbol n}}
+\def\cP{{\mathcal P}}
+\def\cB{{\mathcal B}}
+\def\br{{\boldsymbol r}}
+\def\argmin{{\rm arg\,min}}
+\def\db{{\bar d}}
+\def\cK{{\mathcal K}}
+\def\ess{{\rm ess}}
+\renewcommand{\l}{\vert}
+\def\bgamma{{\boldsymbol \gamma}}
+\def\balpha{{\boldsymbol \alpha}}
+\def\setE{{E}}
+\def\setS{{S}}
+
+\def\err{{\sf err}}
+\def\berr{{\bf err}}
+\def\cut{{\sf CUT}}
+\def\lambdaknot{\lambda_0}
+\def\barR{\overline R}
+\def\star{*}
+\def\rhon{\rho^\infty}
+\def\bfzero{\boldsymbol{0}}

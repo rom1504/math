@@ -93,6 +93,13 @@ preservation, not a verification upgrade; canonical status is in the
 campaign proofs. Agents continue working, so later changes need a closing
 snapshot. No credential or unpreserved oversized-output flag was raised.
 
+The same campaign's second live checkpoint is
+[062116Z](2026-09-18/062116Z/manifest.json): 1,984 research payloads,
+individually hash-verified. It preserves uniform-compiler diagnostics,
+exact normalized-seed inheritance ranks, control-phase calculations and
+updated drafts. No credential or unpreserved oversized-output flag was
+raised. This remains an intermediate snapshot; research continues.
+
 Latest publication audit: [2026-09-17 paper-combination campaign](publication_audit_papers_2026_09_17.md).
 The prior [2026-09-16 bounded BH-paper investigation](publication_audit_bh_2026_09_16.md)
 is historical.

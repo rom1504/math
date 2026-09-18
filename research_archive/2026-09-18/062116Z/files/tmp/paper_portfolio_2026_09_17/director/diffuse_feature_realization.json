@@ -1,0 +1,132 @@
+{
+  "status": "PASS finite binomial floating diagnostics; analytic proof separate",
+  "target": {
+    "v_exact": "1/16",
+    "k": 64,
+    "p_exact": "15/128",
+    "exact_variance_identity": true,
+    "absolute_mean": 0.5081999212494555,
+    "KL_quadrature": 0.9845492797956177,
+    "quadrature_error_reported": 4.528200947936164e-09
+  },
+  "cases": [
+    {
+      "n": 16,
+      "normalization": 0.9733341881129746,
+      "tilted_feature_variance": 0.8242462082137155,
+      "covariance_frobenius_error": 0.1815177356322895,
+      "repair_mass": 0.42064953684074474,
+      "tilted_query_response": 0.3650942926421784,
+      "exact_isotropy_repaired_response_upper": 0.6803222486068862,
+      "tilt_KL": 1.016134804090064,
+      "repaired_KL_upper": 0.6019211883424764,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 32,
+      "normalization": 0.9890272882957424,
+      "tilted_feature_variance": 0.9670444831990825,
+      "covariance_frobenius_error": 0.033482838552587435,
+      "repair_mass": 0.11811240046679654,
+      "tilted_query_response": 0.4644300452663911,
+      "exact_isotropy_repaired_response_upper": 0.541420640414223,
+      "tilt_KL": 0.9967693752123068,
+      "repaired_KL_upper": 0.8827087949524479,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 64,
+      "normalization": 0.9937502978381644,
+      "tilted_feature_variance": 0.9783201526354177,
+      "covariance_frobenius_error": 0.021851232224199536,
+      "repair_mass": 0.0803793753128127,
+      "tilted_query_response": 0.485836302303276,
+      "exact_isotropy_repaired_response_upper": 0.5365814448401136,
+      "tilt_KL": 0.9857842448397848,
+      "repaired_KL_upper": 0.9090311841348963,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 128,
+      "normalization": 0.9968915540365384,
+      "tilted_feature_variance": 0.9893516812776944,
+      "covariance_frobenius_error": 0.01069015903563523,
+      "repair_mass": 0.04100714455498081,
+      "tilted_query_response": 0.49730949054775214,
+      "exact_isotropy_repaired_response_upper": 0.5227456820119222,
+      "tilt_KL": 0.9851791884386437,
+      "repaired_KL_upper": 0.9460433585255638,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 256,
+      "normalization": 0.9984504411871951,
+      "tilted_feature_variance": 0.9947204211184539,
+      "covariance_frobenius_error": 0.005289920867718898,
+      "repair_mass": 0.02072122882775276,
+      "tilted_query_response": 0.5028215648169847,
+      "exact_isotropy_repaired_response_upper": 0.5155649925486012,
+      "tilt_KL": 0.9848679687651136,
+      "repaired_KL_upper": 0.9650978922939726,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 512,
+      "normalization": 0.999226375758818,
+      "tilted_feature_variance": 0.9973712289316197,
+      "covariance_frobenius_error": 0.0026313419942450367,
+      "repair_mass": 0.01041573849655194,
+      "tilted_query_response": 0.5055267998403054,
+      "exact_isotropy_repaired_response_upper": 0.5119053767141845,
+      "tilt_KL": 0.9847095432108985,
+      "repaired_KL_upper": 0.9747733393832536,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 1024,
+      "normalization": 0.9996134753341521,
+      "tilted_feature_variance": 0.9986883534117962,
+      "covariance_frobenius_error": 0.0013122875101029049,
+      "repair_mass": 0.005221740341884994,
+      "tilted_query_response": 0.5068672987937562,
+      "exact_isotropy_repaired_response_upper": 0.5100583674150685,
+      "tilt_KL": 0.9846296395173679,
+      "repaired_KL_upper": 0.9796486668287814,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 4096,
+      "normalization": 0.9999034225884399,
+      "tilted_feature_variance": 0.9996726002050841,
+      "covariance_frobenius_error": 0.00032743976803063953,
+      "repair_mass": 0.001308045847207426,
+      "tilted_query_response": 0.5078674960753216,
+      "exact_isotropy_repaired_response_upper": 0.5086656039689236,
+      "tilt_KL": 0.9845694122895419,
+      "repaired_KL_upper": 0.9833217470918999,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    },
+    {
+      "n": 16384,
+      "normalization": 0.9999758590050343,
+      "tilted_feature_variance": 0.99991818198383,
+      "covariance_frobenius_error": 8.18205131720258e-05,
+      "repair_mass": 0.00032717497419096185,
+      "tilted_query_response": 0.5081168603458016,
+      "exact_isotropy_repaired_response_upper": 0.5083164088502163,
+      "tilt_KL": 0.9845543155700061,
+      "repaired_KL_upper": 0.9842422475939969,
+      "target_response": 0.5081999212494555,
+      "target_KL_quadrature": 0.9845492797956177
+    }
+  ],
+  "scope": "One diffuse feature, no original-signing optimizer assertion."
+}

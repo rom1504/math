@@ -1,0 +1,332 @@
+\documentclass{article}[11pt]
+\usepackage{titling}
+\usepackage{ amssymb }
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{setspace}
+\usepackage[normalem]{ulem}
+
+\usepackage{float}
+
+\usepackage[utf8]{inputenc}
+
+\newcommand{\xui}{X^{\leq d-i}}
+\newcommand{\xdi}{X^{\geq i}}
+
+\def\showauthornotes{0}
+\def\showtableofcontents{1}
+\def\showkeys{0}
+\def\showdraftbox{0}
+\def\showcolorlinks{1}
+\def\usemicrotype{1}
+\def\showfixme{0}
+\def\showdefine{0}
+
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+maxcitenames=50,
+maxbibnames=99,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bib_for_stoc.bib}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\title{Agreement theorems for high dimensional expanders in the low acceptance regime: the role of covers}
+\author{Yotam Dikstein\thanks{Weizmann Institute of Science, ISRAEL. email: yotam.dikstein@weizmann.ac.il.} \;and Irit Dinur\thanks{Weizmann Institute of Science, ISRAEL. email: irit.dinur@weizmann.ac.il. Both authors are supported by Irit Dinur's ERC grant 772839, and ISF grant 2073/21.}}
+\date{\today}
+
+
+\input{macros.tex}
+
+
+\begin{document}\clearpage\thispagestyle{empty}
+
+\maketitle
+\begin{abstract}
+Let $X$ be a family of $k$-element subsets of $[n]$ and let $\sett{f_s:s\to\Sigma}{s\in X}$ be an ensemble of local functions, each defined over a subset $s\subset [n]$. Is there a global function $G:[n]\to\Sigma$ such that $f_s = G|_s$ for all $s\in X$ ? An agreement test is a randomized property tester for this question. 
+%
+One such test is the V-test, that chooses a random pair of sets $s_1,s_2\in X$ with prescribed intersection size and accepts if $f_{s_1},f_{s_2}$ agree on the elements in $s_1\cap s_2$. 
+
+The low acceptance (or $1\%$) regime is concerned with the situation that the test succeeds with low but non-negligible probability $\agr (\set{f_s}) \geq \eps>0$. A ``classical'' low acceptance agreement theorem says  
+   \begin{equation*} \tag{$*$}
+    \agr (\set{f_s}) > \eps  \quad \Longrightarrow \quad \exists G:[n]\to\Sigma,\quad \Pr_s[f_s\overset{0.99}{\approx} G|_s]\geq\poly(\eps).
+\end{equation*}
+Such statements are motivated by PCP questions. The case $X=\binom{[n]}k$ is well-studied and known as ``direct product testing'', which is related to the parallel repetition theorem. Finding sparser families $X$ that satisfy $(*)$ is known as derandomized direct product testing. Prior to this work, the sparsest family satisfying $(*)$ had $|X|\approx  n^{25}$, and we show $X$ with $|X|\approx n^2$. 
+
+%
+We study the general behavior of high dimensional expanders with respect to agreement tests in the low acceptance regime. High dimensional expanders, even  very sparse ones with $|X|=O(n)$, are known to satisfy the high acceptance variant (where $\epsilon =1-o(1)$). It has been an open challenge to analyze the low acceptance regime. 
+%
+Surprisingly, topological covers of $X$ play an important role. We show that:
+\begin{enumerate}
+    \item If $X$ has no connected covers, then $(*)$ holds, provided that $X$ satisfies an additional expansion property, called swap cosystolic expansion.  
+    %
+    \item If $X$ {\em has} a connected cover, then $(*)$  fails. 
+    \item If $X$ has a connected cover (and swap-cosystolic-expansion), 
+    we replace $(*)$ by a statement that takes covers into account:
+    \begin{align*}\tag{$**$}
+        \agr(\set{f_s})> \eps\Longrightarrow \quad &\exists \hbox{ cover }\rho:Y\twoheadrightarrow X,\hbox{ and }G:Y(0)\to\Sigma, \hbox{ such that }\\ 
+   &\Pr_{{\tilde s\twoheadrightarrow s}}[f_s \overset{0.99}{\approx} G|_{\tilde s}] \geq\poly(\eps),
+    \end{align*} where ${\tilde s\twoheadrightarrow s}$ means that $\rho(\tilde s)=s$. 
+    \end{enumerate} 
+    The property of swap-cosystolic-expansion holds for quotients of the Bruhat Tits buildings. As a corollary we derive $(*)$ for $X$ being a spherical building, yielding a derandomized family with $|X| \approx n^2$.
+    We also derive $(**)$ for LSV complexes $X$, for which $|X|=O(n)$. 
+\end{abstract}
+
+% Given a family $X$ of subsets of $[n]$ and an ensemble of local functions $\{f_s:s\to\Sigma\; | \; s\in X\}$, an agreement test is a randomized property tester that is supposed to test whether there is some global function $G:[n]\to\Sigma$ such that $f_s=G|_s$ for many sets $s$.
+%   A ``classical'' small-soundness agreement theorem is a list-decoding $(LD)$ statement, saying that \[\tag{$LD$}
+%   Agree(\{f_s\}) > \varepsilon \quad \Longrightarrow \quad \exists G^1,\dots, G^\ell,\quad P_s[f_s\overset{0.99}{\approx}G^i|_s]\geq poly(\varepsilon),\;i=1,\dots,\ell. \] Such a statement is motivated by PCP questions and has been shown in the case where $X=\binom{[n]}k$, or where $X$ is a collection of low dimensional subspaces of a vector space.
+%   In this work we study small the case of on high dimensional expanders $X$. It has been an open challenge to analyze their small soundness behavior.
+%   Surprisingly, the small soundness behavior turns out to be governed by the topological covers of $X$.We show that: 1. If $X$ has no connected covers, then $(LD)$ holds, provided that $X$ satisfies an additional expansion property. 2. If $X$ has a connected cover, then $(LD)$ necessarily fails. 3. If $X$ has a connected cover (and assuming the additional expansion property), we replace the $(LD)$ by a weaker statement we call lift-decoding:
+%   \[ \tag{$LFD$}
+%   Agree(\{f_s\})> \varepsilon \Longrightarrow \quad \exists\text{ cover }\rho:Y\twoheadrightarrow X,\text{ and }G:Y(0)\to\Sigma,\text{ such that }\]
+%   \[P_{{\tilde s\twoheadrightarrow s}}[f_s \overset{0.99}{\approx} G|_{\tilde s}] \geq poly(\varepsilon),
+%   \] where ${\tilde s\twoheadrightarrow s}$ means that $\rho(\tilde s)=s$.
+%   The additional expansion property is cosystolic expansion of a complex derived from $X$ holds for the spherical building and for quotients of the Bruhat-Tits building.
+
+\newpage
+\tableofcontents
+    
+\newpage\pagestyle{plain}
+\setcounter{page}{1}
+
+\section{Introduction}
+Let $G:[n]\to\Sigma$ be a function. We often specify $G$ as a length $n$ string over an alphabet $\Sigma$. Alternatively, $G$ can be specified by providing its restrictions to a pre-determined family of subsets of $[n]$. Namely, given a family of subsets $X= \set{s\subset [n]}$, the function $G$ is represented by a table with $|X|$ entries, where the $s$-th entry specifies the local function $G|_s$. Formally, we have  an ensemble of ``local functions'' $\sett{f_s:s\to\Sigma}{s\in X}$ such that $f_s = G|_s$. Such a representation has built-in redundancy which  potentially can be used for amplifying distances while providing local testability. This is why such encodings are prevalent within PCP reductions, where a global PCP proof is broken up into many possibly-overlapping pieces and each piece is further encoded by an inner PCP gadget (see below for more details and references). The PCP verifier is tasked, among other things, with testing whether the ensemble of pieces corresponds to a coherent global proof. 
+
+The agreement testing question is as follows. Given an ensemble $\sett{f_s}{s\in X}$, test whether there is some global function $G:[n]\to\Sigma$ such that $f_s = G|_s$ for most $s$.
+The PCP setting imposes a stringent requirement that the number of queries be as small as possible, with two queries being the golden standard, as dictated by applications to tight hardness of approximation. 
+The natural two-query test is to select a pair of overlapping subsets $s_1,s_2$ according to a pre-specified distribution\footnote{Throughout the introduction we suppress the precise distribution of the two-query test. For concreteness, think of the distribution given by selecting two $k$-sets that intersect on some $k'$ elements, and for example $k'=\sqrt k$. The distributions we use are precisely defined in \pref{sec:agreement-tests}.} and to check whether $f_{s_1},f_{s_2}$ agree. Namely, accept iff $f_{s_1}(v) = f_{s_2}(v)$ for all $v\in s_1\cap s_2$. Such a test is called an \emph{agreement test} and we denote the success probability of the test by $\agr(\set{f_s})$. 
+
+Where agreement tests are concerned, there are two main regimes of interest. The ``$99\%$'' or high acceptance regime which is natural in the world of property testing, and the ``$1\%$'' or low acceptance regime which is the regime of interest in the world of PCPs.
+\begin{itemize}
+    \item \textit{The ``$99\%$'' \textbf{H}igh \textbf{A}cceptance regime}. We are given an ensemble $\set{f_s}_{s\in X}$ that passes the agreement test with probability $1-\epsilon$, for small $\epsilon>0$. We want to conclude that there is a function $G:[n]\to\Sigma$ such that $\set{G|_s}_s \approx \set{f_s}_s$. Formally, an agreement testing theorem describes a distribution $\calD$ over pairs of subsets from $X$ for which
+    \begin{equation}\label{eq:99p}\tag{$HA$}
+        \agr (\set{f_s})> 1-\epsilon \quad \Longrightarrow  \quad \exists G:[n]\to\Sigma,\quad \prob{f_s = G|_s} \geq 1-O(\varepsilon) .
+    \end{equation}
+    %
+    \item \textit{The ``$1\%$'' \textbf{L}ow \textbf{A}cceptance regime}. Here we assume that the test succeeds with much smaller probability $\epsilon>0$ for a small positive constant $\eps$, say $\eps=0.01$, or even $\eps = o_k(1)$. The hope is that even this modest success probability implies that the ensemble $\set{f_s}$ has some global structure.
+    The $1\%$ regime, also called the small-soundness regime, is especially important in PCP settings, where small $\eps$ translates to a larger gap between completeness and soundness of the PCP.  
+    We say that $X$ satisfies \eqref{eq:LA} if for any ensemble $\set{f_s}_{s\in X}$, \eqref{eq:LA} holds,
+    namely, for every ensemble $\set{f_s}_{s\in X}$, 
+    \begin{equation}\label{eq:LA}\tag{$LA$}
+    \agr (\set{f_s}) > \eps  \quad \Longrightarrow \quad \exists G:[n]\to\Sigma,\quad \Pr_s[f_s\overset{0.99}{\approx} G|_s]\geq\poly(\eps).
+\end{equation}
+In words, \eqref{eq:LA} says that $\epsilon$ agreement implies global structure. 
+%
+{Of course, to be completely formal we must equip \eqref{eq:LA} with parameters. This is omitted in the introduction and is done in \pref{def:distribution-soundness}.} 
+
+Note that the conclusion allows approximate equality between $f_s$ and $G|_s$ (meaning that they are equal on almost\footnote{The notation \(f_s \overset{1-\zeta}{\approx} G|_s\) throughout the paper means that \(f(v)=G(v)\) on a \(1-\zeta\)-fraction of \(v\in s\).} all of $s$). This is unavoidable, see discussion in \cite{DinurG2008}. 
+\end{itemize}
+
+Proving that \eqref{eq:LA} holds is quite non-trivial even when $X=\binom{[n]}{k}$, where we think of $k$ as a sufficiently large constant while $n\to\infty$. This is known as the (symmetrized version of the) ``direct product testing question''. In this case the function $G:[n]\to\Sigma$ is represented by its restriction to all possible $k$-element subsets. The ensemble $\set{G|_s}_s$ is called the (symmetrized) direct product encoding of $G$. This encoding has been studied both in the context of hardness amplification (see, e.g. \cite{IJKW08}), and as a generalization of PCP low degree tests, as initiated by \cite{GolSaf97}. Following a sequence of works, \cite{GolSaf97,DinurR06, DinurG2008,ImpagliazzoKW2012, DinurS14, DinurL2017}, it is known, by now, that $\binom{[n]}k$ satisfies \eqref{eq:LA}. Moreover, the tradeoffs between $k,\epsilon$ and $1-\zeta$, as well as the significant difference between two and three queries, have all been relatively well studied, see further discussion below. 
+
+Goldreich and Safra \cite{GolSaf97} and later Impagliazzo et. al \cite{ImpagliazzoKW2012} studied derandomized direct products. Namely, finding smaller families $X\subset \binom{[n]}k$, such that $|X| \ll n^k$ yet $X$ still satisfies \eqref{eq:99p} or \eqref{eq:LA}. The motivation for this question is that the number of subsets in $X$ controls the efficiency of the encoding. Impagliazzo et. al \cite{ImpagliazzoKW2012} showed that for every $\epsilon>0$ there exists $k$ and a sequence of families $\set{X_n}$ that satisfy \eqref{eq:LA}, where $|X_n|\leq O(n^{c})$ for $c\geq 25$ an absolute constant independent of $k,\epsilon$. It is natural to ask about the limits of such derandomization. Can the same hold true when $|X_n| = O(n)$? 
+
+The recent ``discovery'' of bounded-degree high dimensional expanders by the theoretical computer science community has lead to a hope that these might provide a path towards such results.
+In \cite{DinurK2017} (and later improved in \cite{DiksteinD2019}) it was shown that if $X$ is a spectral high dimensional expander (see \pref{sec:preliminaries} for precise definitions), then it supports a $99\%$ agreement theorem as in \eqref{eq:99p}. This gave the first sequence $\set{X_n}$ of linear-size families satisfying \eqref{eq:99p}. 
+
+In this paper we address the same question for \eqref{eq:LA}. Are there families $X_n$ that satisfy \eqref{eq:LA} and whose size is linear in $n$ ? This has been mentioned as an open question in \cite{DinurK2017}. We conjecture the following: 
+\begin{conjecture}\label{conj:1}
+    For every $\epsilon>0$ there exists an integer $k(\epsilon)$, such that for all $k>k(\epsilon)$, there is a sequence $\set{X_n}_{n\to\infty}$ of families of $k$-element subsets of $n$ that satisfy \eqref{eq:LA} and such that $|X_n| \leq O_{k,\epsilon}(n)$.
+\end{conjecture}
+%
+It turns out that as far as \eqref{eq:LA} is concerned, the story is more complicated. 
+%
+Our first result is that spectral high dimensional expansion is not enough.  
+We show that many complexes $X$ that satisfy \eqref{eq:99p}, fail to satisfy \eqref{eq:LA} in quite a strong way. In fact, as long as a complex has a connected topological cover, it fails to satisfy \eqref{eq:LA}. We remark that many known sparse high dimensional expanders fall under this category as the constructions of both \cite{LubotzkySV2005a} and \cite{KaufmanO181} give a sequence of high dimensional expanders $\set{X^{(i)}}_{i\to \infty}$ where $X^{(i)}$ is covered by $X^{(i+1)}$. 
+\begin{lemma}\torestate{\label{lem:cex}
+    Let 
+    \(\zeta < \frac{1}{2}\), $k\in \mathbb{N}$, and let \(\lambda \leq \frac{0.99}{k}\). Let \(X\) be a $k$-dimensional \(\lambda\)-two-sided high dimensional expander, and assume $X$ has a connected \(\ell\)-cover for some $\ell>1$ (e.g. $\ell=2$). Then there exists an ensemble of functions \(\mathcal{F} = \sett{f_r:r \to \set{0,1}}{r \in X(k)}\) such that \(Agree(\mathcal{F}) \geq \frac{1}{\ell}\), and yet for every \(G:X(0) \to \set{0,1}\) it holds that 
+    \[\Prob[r \in X(k)]{f_r \overset{1-\zeta}{\approx} G|_r} \leq\exp(-\Omega_\zeta(k)).\]}
+\end{lemma}
+(We are using standard notation where $X(0)$ are the vertices of $X$, and $X(k)$ are the $k$-faces of $X$). This lemma reveals connected $2$-covers (and more generally connected $\ell$-covers) to be an obstruction to $1\%$ agreement theorems.  The notion of a connected cover is a basic notion in topology, generalizing the more familiar lift of a graph to higher dimensions. In a nutshell, a complex $Y$ is a $\ell$-cover of a complex $X$ whenever there is a $\ell$-to-$1$ homomorphism $\rho: Y \twoheadrightarrow X$ such that the preimage of every face of $X$ is $\ell$ pairwise disjoint faces in $Y$,  (see \pref{sec:preliminaries} for details). 
+
+\pref{lem:cex} shows that high dimensional expanders $X$ that have connected covers necessarily fail to satisfy \eqref{eq:LA}. In contrast, previous works \cite{DinurG2008, ImpagliazzoKW2012, DinurS14, DinurL2017} show that the complete complex $X = \binom{[n]}k$, which is known to be a superb high dimensional expander, does satisfy \eqref{eq:LA}. This seeming contradiction is resolved by observing that the complete complex \emph{has no connected covers}. This suggests that sparser high dimensional expanders that are cover-free might satisfy \eqref{eq:LA}, as we show further below in \pref{cor:spherical-building-list-agreement}.
+\\
+
+Our main result is concerned with the more general case. We introduce a new variant of (LA) that {\em is} satisfied by high dimensional expanders, as long as we extend the definition of a global function to allow covers.  We essentially show that the obstruction uncovered in \pref{lem:cex} is the only possible obstruction. Our theorem has an additional condition, however, which is that $X$ is also required to have swap-coboundary-expansion (see \pref{def:swapce}). In a companion paper we prove that many familiar complexes, including spherical buildings as well as the Ramanujan complexes of \cite{LubotzkySV2005b}, have this property (see \pref{thm:DD-faces} below). 
+
+\begin{theorem}[Main Theorem, see \pref{thm:main} for a formal statement]\label{thm:abstract-general} Let $k\in \mathbb{N}$, and let $\eps >\Omega(1/\log k)$. Let $d>k$ be sufficiently large and let $X$ be a $d$-dimensional high dimensional expander with sufficiently good swap-cosystolic-expansion. 
+    Let $\sett{f_s:s\to\Sigma}{s\in X(k)}$ be an ensemble of local functions on $X(k)$. 
+\begin{equation}\label{eq:CLA}\tag{$CLA$}
+    \agr (\set{f_s}) > \eps  \quad \Longrightarrow \quad \exists Y\xrightarrowdbl{\rho} X, \exists G:Y(0)\to\Sigma,\quad \Pr_s[f_s\hbox{ is explained by }G]\geq\poly(\eps).
+\end{equation} 
+where $\rho:Y\to X$ is a $\ell=\poly(1/\epsilon)$ covering map. 
+\end{theorem}
+Here the phrase ``$f_s$ is explained by $G$'' informally means that $G|_{s'}\approx f_s$ for some $s'\in Y$ that covers $s$. More formally, the covering map $\rho$ gives a bijection from $s'\in Y(k)$ to $s\in X(k)$, and by $G|_{s'}\approx f_s$ we mean that for (almost) every $v\in s'$, $G(v) = f_s(\rho(v))$. 
+
+This theorem should be viewed as a new type of structure theorem, replacing \eqref{eq:LA} with its cover version, \eqref{eq:CLA}: Every $\epsilon$-agreeing ensemble on $X$ comes from a global function $G$, perhaps not on the vertices of $X$, but on the vertices of a cover $Y$ of $X$, which is not much larger than $X$.
+
+One might wonder whether any progress has been made by replacing the quest for complexes that satisfy $1\%$ agreement theorems with complexes having swap-coboundary-expansion. In a companion paper \cite{DiksteinD2023b}
+we show that there are important families of complexes that have swap-coboundary-expansion.
+
+\begin{theorem}[Main theorem in \cite{DiksteinD2023b}]\label{thm:DD-faces}
+    Let $X$ be a \(d\)-dimensional simplicial whose links are spherical buildings for a sufficiently large prime \(q\). Then for every \(d_1 \leq d\), \(X\) is a \(\exp(-\sqrt{d_1})\)-swap cosystolic expander. 
+\end{theorem}
+
+The bounded-degree high dimensional expanders of \cite{LubotzkySV2005a, LubotzkySV2005b} satisfy the requirement of \pref{thm:DD-faces} and therefore also of \pref{thm:abstract-general}. Thus, we get the following lift-decoding theorem.
+
+\begin{corollary}\label{cor:general} Let $k\in \mathbb{N}$, and let $\eps >\Omega( 1/\log k)$. Let $d>k$ be sufficiently large and let $X$ be a $d$-dimensional $\lambda=\frac{1}{d^2}$ high dimensional expander, whose vertex links are spherical buildings.
+
+For any ensemble $\set{f_s}_{s\in X(k)}$ that satisfies 
+   $\agr(\set{f_s})> \eps$, there must exist a $\poly(1/\eps)$-cover $\rho:Y\twoheadrightarrow X$, and a global function $G:Y(0)\to\Sigma$, such that 
+   \[\Pr_{s}[f_s\hbox{ is explained by }G]\geq\poly(\eps).\]
+\end{corollary}
+As a special case of this corollary, we get a new $1\%$ agreement theorem for spherical buildings. These are relatively sparse simplicial complexes that are known to have no connected covers. The only possible $\ell$-cover of such a complex $X$ consists of $\ell$ disjoint isomorphic copies of $X$. In this case, the global function on $Y(0) = X(0)\times [\ell]$ can be interpreted as a list of $\ell$ global functions on $X(0)$.
+%
+\begin{corollary}[Agreement for spherical buildings]\label{cor:spherical-building-list-agreement}
+    Let $\epsilon>0$, and let $k>\exp(\poly(1/\epsilon))$ be an integer. Let $d>k$ be sufficiently large and let $X$ be a $d$-dimensional spherical building that is a $\frac{1}{d^2}$ high dimensional expander. Then $X$ satisfies \eqref{eq:LA}.
+\end{corollary}
+This puts spherical buildings as the current best known derandomized direct product encoding that satisfies \eqref{eq:LA}, improving the size of the family from $|X_n| \leq O(n^{25})$ in \cite{ImpagliazzoKW2012} to $|X_n| = O(n^2)$.
+
+Finally, we revisit \pref{conj:1}. There is still some hope for a positive answer via high dimensional expanders. Even when $X$ has connected covers,  there is a quantitative aspect connecting the agreement parameter $\eps$ and the size $\ell$ of the cover, which may allow us to move from \eqref{eq:CLA} to \eqref{eq:LA}. 
+I.e., if $X$ has the additional property that all of its $\ell$-covers for $\ell < \poly(1/\eps)$ are necessarily disconnected, then we immediately get conclusion a la \eqref{eq:LA}. 
+This motivates the study and construction of complexes that are free of connected $\ell$-covers for \emph{small} $\ell$.  A construction of such a family of complexes would give a linear-size family of complexes supporting \eqref{eq:LA}. %
+\subsection*{Covers and Agreement} 
+Let us describe how topological covers give rise to the counter-example driving \pref{lem:cex}. 
+\begin{enumerate}
+    \item Let $X$ be a simplicial complex, and let $Y\xrightarrowdbl{\rho} X$ be a $\ell$-cover with $\ell=2$. Explicitly, $Y$ is a simplicial complex and we have a $2$-to-$1$ map $\rho:Y(0)\to X(0)$ such that the image of each $Y$-face is a $X$-face, and the preimage of each $X$-face is two disjoint $Y$-faces. 
+    
+    \item Fix a global function $H:Y(0)\to\bits$ with the property that every pair of vertices  $(v,0),(v,1)\in Y(0)$ that map to the same $v\in X(0)$, are given distinct values $H(v,0)\neq H(v,1)$. 
+
+    \item Every face $s\in X(k)$ is covered by two faces $s_1, s_2 \in Y(k)$, i.e. \(\rho({s}_i)=s\).
+    Thus, we naturally get two possible assignments to $f_s$ that biject down from either $H|_{s_1}$ or $H|_{s_2}$. By construction, these two assignments are negations of one another. 
+
+    \begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{images/cover-intro.png}
+    \caption{Possible ways two intersecting sets $s,s'\in X$ are covered by $Y$.}
+    \label{fig:cover-intro}
+\end{figure}
+    Moreover, suppose, as in Figure \ref{fig:cover-intro},  that $s,s'\in X(k)$ intersect, and let $s_1,s_2\in Y(k)$ cover $s$ and $s'_1,s'_2\in Y(k)$ cover $s'$. Then $s_1$ intersects exactly one of $s'_1,s'_2$, and similarly for $s_2$. Namely, the intersection pattern gives a bijection between $\set{s_1,s_2}$ and $\set{s'_1,s'_2}$.
+%   
+    \item Our final ensemble for $X$ is obtained by choosing, for each $s$ independently at random, one of the two possible assignments. For any fixed pair of intersecting sets $s,s'\in X(k)$, the probability that $f_{s}$ agrees with $f_{s'}$ is exactly $1/2$. Thus, in total, the average agreement probability of the entire ensemble $\set{f_s}$ is about $1/2$. Moreover, sampling arguments (relying on the high dimensional expansion of $X,Y$) will show that no global function $G:X(0)\to\bits$ can agree with more than $\exp(-\Omega(k))$ of the subsets.
+\end{enumerate}
+%
+What this construction shows is that whenever a complex has a connected cover, it cannot satisfy \eqref{eq:LA}, but it could still possibly satisfy \eqref{eq:CLA}.
+More details can be found in \pref{sec:proof-of-counterexample}.
+
+\subsection*{Proof of main theorem - Overview}
+
+We next turn to describing the technical ingredients that go into the proof of our main theorem,  \pref{thm:abstract-general}, which essentially reverses the construction described just above. 
+%
+Like many proofs in the world of high dimensional expansion, our proof has a local-to-global structure. We essentially show how to ``lift'' agreement theorems from the complete complex to high dimensional expanders. 
+
+An agreement test on the complete complex is a distribution over $k$-element subsets of $[n]$. Let us focus for concreteness on the \(V\)-test distribution from \cite{ImpagliazzoKW2012}, in which two $k$-sets are sampled uniformly, conditioned on their intersection size being $\sqrt k$. 
+
+Moving to a high dimensional expander $X$, the corresponding distribution $\mathcal{D}_X$ is obtained by selecting a face of size $2k-\sqrt k$, and inside it two faces $r_1,r_2$ whose sizes are $k$ and such that they intersect on a set of size $\sqrt k$. Our proof goes through the following steps.
+
+\subsubsection*{Step 1 - Constructing a local list for every face}
+Fix \(k \ll d_1 \ll d\). 
+Here we treat every \(s \in X(d_1)\) as a ground set whose set of $k$-element subsets form a copy of the complete complex on $d_1+1$ vertices. We describe \(\mathcal{D}_X\) in an equivalent local way:
+\begin{enumerate}
+    \item Choose $s\in X(d_1)$ at random.
+    \item Choose $r_1,r_2\subset s$ according to the original test distribution $\mathcal{D}$ on the complete complex on \(|s|\)-vertices.
+\end{enumerate} 
+Given an ensemble with $\agr(\set{f_s})>\eps$, a standard sampling argument will show that for a typical face $s\in X(d_1)$ the success of the test conditioned on the two faces being contained in $s$, is still about $\eps$ for nearly all sets $s\in X(d_1)$. So for each of these local ensembles, we can use the previous agreement theorem from \cite{ImpagliazzoKW2012}. We obtain a global function $g_s$ for each $s$ that agrees with about $\epsilon$ of the local functions in \(\set{f_r}_{r \subseteq s}\).
+
+An important complication is that there could be several equally valid choices for $g_s$, each supported on a different $\epsilon$ fraction of the local functions $\set{f_r}_{r\subset s}$. Therefore, we must take into account an entire \textbf{list} of functions for $s$, which we denote by $\bar L(s)$.
+
+Similarly to all $s\in X(d_1)$, we find such lists for faces $t \in X(2d_1+1)$ and $u \in X(3d_1+2)$.
+
+\subsubsection*{Step 2 - Showing these lists match each other}
+Next, we carefully modify the previous argument so that the obtained lists will be compatible with each other. More precisely, we show that one can take lists such that there is some integer \(\ell\) so that \(\abs{\overline{L}(s)}=\ell\) for nearly all \(s\). Moreover, denoting \(\overline{L}(s)=\set{L_s^1,L_s^2,\dots,L_s^\ell}\), for most pairs $s \subseteq t$, there is a permutation \(\pi_{s,t}:[\ell] \to [\ell]\) where \(\pi_{s,t}(i)=j\) if and only if \(L_s^i \approx L_t^j|_s\).
+
+We remark that these two steps are similar to \cite{DinurHKLT2018}, where lists of assignments were derived for every face. However, while it is easy to see that a noticeable fraction of the lists match (which was what \cite{DinurHKLT2018} showed), this is not enough for us, and we must show that they match with probability $99\%$ for the next steps to work. This causes significant technical complications but turns out to be possible.
+
+\subsubsection*{Step 3 - Unique games on the \emph{faces} complex}Before stating the next steps, we shift our point of view from \(X\) to its \emph{faces complex}.
+\begin{definition}[The Faces Complex] \torestate{\label{def:face-complex-intro}
+        Let \(X\) be a \(d\)-dimensional simplicial complex. Let \(d_1 \leq d\). We denote by \(\FX{d_1}X\) the simplicial complex whose vertices are \(\FX{d_1}X(0)=X(d_1)\) and whose faces are all \(\sett{\set{s_0,s_1,...,s_j}}{s_0\dunion s_1 \dunion \dots \dunion s_j \in X}\). }
+\end{definition}  
+
+The $1$-skeleton of $\FX{d_1}X$ is a graph whose vertices are the $d_1$-sets. Each vertex $s_1 \in \FX{d_1}X$ has a list of assignments, and (almost) every edge between $s_1$ and $s_2$ carries a bijection between the assignments of $s_1$ and the assignments of $s_2$. The bijection is just the composition \(\psi(s_1,s_2) = \pi_{t,s_2}^{-1} \circ \pi_{t,s_1}\) where \(t=s_1 \dunion s_2\). This can be viewed as a unique games instance over $\FX{d_1}X$. We show that for most triangles $s_1 s_2 s_3\in \FX{d_1}X$, there are no local contradictions. Namely, if we denote by $\psi_{s_i,s_j}$ the permutation from the list of $s_i$ to the list of $s_j$, then 
+    \begin{equation} \label{eq:no-local-contradictions}
+        \psi(s_2, s_3)\circ \psi(s_1, s_2)=\psi(s_1, s_3)
+    \end{equation}
+nearly always. In topological language this collection of bijections gives us a $1$-cochain in $C^1(\FX{d_1},Sym(\ell))$ where $Sym(\ell)$ is the groups of permutations over $\ell$ elements. The consistency implies that this $1$-cochain is nearly a cocycle.
+
+\subsubsection*{Step 4 - Swap cosystolic expansion}
+At this point, we wish to tweak the collection of bijections that are nearly consistent, and create a new collection that is consistent everywhere. This is possible if and only if the faces complex is a cosystolic expander (and this is precisely our definition of swap cosystolic expansion, see \pref{def:swapce}). 
+
+It remains an open question to characterize complexes with sufficiently strong swap cosystolic expansion. We don't know if cosystolic expansion implies swap cosystolic expansion. Nevertheless, as stated above, we prove in a companion paper \cite{DiksteinD2023b} that every high dimensional expander whose links are spherical buildings, has \(\FX{d_1}X\) has swap-cosystolic expansion (\pref{thm:DD-faces}).  
+
+\subsubsection*{Step 5 - Constructing the cover}
+It is well known that any collection of permutations \(\set{\pi_{uv}}_{uv \in \FX{d_1}X(1)}\) with \emph{no} local contradictions\footnote{I.e. \eqref{eq:no-local-contradictions} holds for every triangle.} corresponds to a cover \(\rho_{\FX{d_1}X}:\widetilde{\FX{d_1}X} \to \FX{d_1}X\) (see e.g. \cite{Surowski1984}). Let us describe the underlying graph of the cover. Its vertices are pairs \((s,i)\) for every \(s \in \FX{d_1}X(0)\) and \(i \in [\ell]\). We connect \((s_1,i)\) to \((s_2,j)\) by an edge in \(\widetilde{\FX{d_1}X}\) if \(s_1 s_2 \in \FX{d_1}X(1)\) and \(\pi_{s_1,s_2}(i)=j\). The fact that \eqref{eq:no-local-contradictions} holds for every triangle is the reason that this underlying graph is indeed a graph skeleton of a cover \(\rho_{\FX{d_1}X}:\widetilde{\FX{d_1}X} \to \FX{d_1}X\) (see \pref{def:induced-cover} for the formal construction).
+    
+The cover we get from this step is a cover of the faces complex \(\FX{d_1}X\). The next step is to construct a cover $Y$ of $X$ from the cover \(\widetilde{\FX{d_1}X}\) of \(\FX{d_1}X\). Moreover, the complex $Y$ is such that its faces complex is isomorphic to \(\widetilde{\FX{d_1}X}\), \(\iota:\FX{d_1}Y \overset{\sim}{\to} \widetilde{\FX{d_1}X}\). This complex \(Y\) is the cover on which we define the global function. 
+
+The use of cosystolic expansion for constructing covers from permutations with \emph{few local contradictions} was developed in \cite{DinurM2019}. Here we instantiate this idea, using the permutations defined by the first two steps.
+
+
+\subsubsection*{Step 6 - From a cover to a global function via \(99\%\)-agreement}
+We are nearly done, but we still need to construct the global function \(G:Y(0) \to \Sigma\). We define an ensemble of functions \(\set{h_{\tilde{s}}}_{\tilde{s} \in Y(d_1)}\), where \(h_{\tilde{s}}\) colors the vertices according to \(L_s^i \in \overline{L}(s)\), such that \(\iota(\tilde{s})=(s,i)\). Opening up the definition of the isomorphism \(\iota\) and the permutations \(\pi_{s_1,t}\) above, we show that there is a agreement distribution \(\mathcal{D}_Y\) where \[\agr_{\mathcal{D}_Y} (\set{h_{\tilde{s}}}) \geq 99\%.\] 
+Then all that remains is to use a known \(99\%\)-agreement theorem a la \eqref{eq:99p} to obtain a global function \(G:Y(0) \to \Sigma\) that agrees with most \(h_{\tilde{s}}\). This is (finally!) the global function that explains the original distribution \(\set{f_r}\). 
+
+Note that the quantitative cosystolic expansion needed in \pref{thm:abstract-general} is rather modest; it is allowed to decay to zero exponentially in \(d_1/k\). The local spectral expansion required is inverse polynomial in the dimension \(d\).
+
+
+
+\subsection*{Related work}
+\subsubsection*{PCPs and agreement tests} Agreement tests in the low acceptance ``$1\%$'' regime appear in several PCP constructions, such as in the plane-versus-plane \cite{RaSa} and line-versus-line low degree tests \cite{ArSu}. Analysis in the low acceptance regime translates to a PCP with perfect completeness and small soundness $\epsilon$. The fact that the test makes only two queries is essential for getting a two-query PCP such as label cover, which is an essential feature for downstream applications for hardness of approximation. 
+
+The most popular large-gap PCP (also known as label cover) used in hardness of approximation reductions is the based on the parallel repetition theorem \cite{Raz-parrep}. Parallel repetition is essentially the direct product encoding, and the analysis is highly related to analysis of agreement tests on $X=\binom{[n]}k$, as can be seen both in \cite{ImpagliazzoKW2012} who give a black-box conversion from an agreement-test theorem to a parallel repetition theorem, see also \cite{DinurS14, DinurS14-parrep}.
+
+A major motivation for studying derandomized agreement tests is towards construction of more length-efficient PCPs that still have a large gap between the completeness and soundness cases. The length parameter is important for various reasons ranging from practical implementations of PCPs to theoretical implications for hardness of approximation. An agreement test can often be transformed into a PCP construction, although such a transformation is not automatic. Indeed, Impagliazzo et. al  \cite{ImpagliazzoKW2012} constructed a derandomized family $X$ that satisfies \eqref{eq:LA}, but it took more work \cite{DinurM11} to transform it into an length-efficient PCP theorem with a large gap. Moshkovitz and Raz \cite{MR10} constructed a label cover PCP with nearly-linear length $n \cdot 2^{(\log n)^{0.99}}$, motivated by applications to hardness of approximation (efficient-length reductions give a much stronger connection between exponential hardness assumptions on exact and approximation problems). Getting the length further down (possibly to $n\cdot\poly\log n$) is an open question. 
+Agreement tests for highly derandomized  families $X$ may lead to progress in this direction. 
+\\
+
+
+
+More recently agreement tests appear in the proof of the 2:2 theorem \cite{DKKMS,KMS}, where $X$ is the collection of all $\ell$-dimensional subspaces of a vector space (the Grassmannian), and the agreement test compares two subspaces that overlap on an $\ell-1$ dimensional subspace. This test constitutes the 2:2 inner verifier. It was shown \cite{BarakKS19} that in this setting agreement follows from small set expansion of the underlying complex, which was then proven in \cite{KMS}. Interestingly, the 2:2 agreement test cannot satisfy \eqref{eq:LA}, but rather a weakened version of it, that takes into account ``zoom-ins'' and ``zoom-outs''. 
+
+Here as well as in other low degree tests the local functions $f_s$ are not arbitrary but rather restricted to having additional structure, namely being linear or having low degree. This gives the theorems a slightly different flavor (for example, it is much easier to get separation between list elements). 
+
+\subsubsection*{Bogdanov's counter-example}
+The gap amplification proof of the PCP theorem \cite{Dinur07} is based on repeated applications of an agreement test in the high acceptance regime. Once the soundness has reached some constant $1-\zeta$, it is natural to wonder if one (or a few) additional steps can lead to arbitrarily small soundness $\epsilon>0$. Bogdanov shows \cite{Bogdanov-comment05} an example of a PCP instance where the soundness cannot drop below $1/2$. We revisit his example in \pref{sec:bog} and show that it is a special case of our \pref{lem:cex}. This suggests, perhaps, high dimensional expanders as candidates for gap amplification with soundness below $1/2$. 
+
+
+\subsubsection*{Parameters of Agreement tests}
+Direct product tests, or agreement tests for the complete complex $\binom{[n]}{k}$, have been relatively well studied. For two queries, $\eqref{eq:LA}$ holds for $\eps = \poly(1/k)$, and fails when $\epsilon\ll 1/k$ \cite{DinurG2008}. For three queries, $\eqref{eq:LA}$ holds for $\eps$ even exponentially small in $k$ \cite{ImpagliazzoKW2012,DinurS14, DinurL2017}, and beyond that it necessarily fails. The parameters we get for our main theorem are significantly weaker, with $\eps = \Omega(1/\log k)$; and further investigation of this tradeoff is left for future work. 
+
+\subsubsection*{List-agreement and cosystolic expansion}
+The idea behind the last step in our proof of \pref{thm:abstract-general} is close in spirit to the list decoding argument in \cite{GotlibK2022}. Their work builds upon \cite{DinurM2019} to list-decode ensembles of functions that have a \(99\%\)-regime list-agreement guarantee, using a closely related notion of coboundary expansion. They derive a complex similar (but not identical) to the faces complex, which they call the representation complex. Then they use their list-agreement test to construct permutations that have almost no local contradictions, and use coboundary expansion to transform this to a list of global functions on \(X\). Unfortunately, we could not have adapted their framework to our purposes; the notion of \(99\%\)-regime list-agreement they require is too strong to hold in our case. In addition, coboundary expansion does not capture complexes that are not simply connected, and we require a method to deal with such complexes.
+
+\subsubsection*{Comparison with \cite{BafnaM2023}}
+Independent work by Bafna and Minzer \cite{BafnaM2023} also gave a theorem characterizing low acceptance agreement in high dimensional expanders. 
+
+In their work they give a necessary and sufficient condition for a complex satisfying \eqref{eq:LA}, that is similar to the swap-cosystolic expansion condition. Let us explain the condition by explaining the ``sufficient'' part of their proof. The first part of their proof resembles steps \(1-3\) of ours. Both works construct lists of functions on faces (using previous works on agreement tests) together with permutations on edges of the faces complex. 
+
+The two proofs diverge in step four. Roughly, in their work, the condition they impose on \(X\) is that the faces complex is a swap-coboundary expander with respect to permutations \emph{that also come with lists of functions as in step \(3\)} (see \cite[Definitions 1.7,1.8]{BafnaM2023}). Let us call this condition $(\star)$. Using $(\star)$, they are able to construct local functions with \(99\%\) agreement on \(X\). Then they patch them up to a global function in a way similar to our step \(6\).
+
+In our proof, step \(4\) uses swap-cosystolic expansion to do almost the same thing - but instead of constructing local functions on \(X\) we do so on a cover \(Y\) of \(X\). In the special case where \(X\) is a swap-{\em coboundary} expander (which is strictly stronger than being a swap-{\em cosystolic} expander), the only possible covers of \(X\) are disjoint copies of \(X\). That is, in the swap-coboundary expander case, our proof gives the same construction as theirs and shows \eqref{eq:LA}. We also mention, that in retrospect, our proof works {\em as is}, if we replace our assumptions by $(\star)$.
+
+Our proof applies to a more general situation. It is common for a high dimensional expander to have covers (and not be a swap-coboundary expander) especially as known constructions of sparse high dimensional expanders are attained via families of complexes that cover one another. In this case, we manage to derive a structural characterization that is necessarily weaker than \eqref{eq:LA} yet still encapsulates the global structure hiding behind functions that pass the agreement test, i.e. \eqref{eq:CLA}.
+
+In addition, the work of \cite{BafnaM2023} shows that $(\star)$ is a necessary condition for satisfying \eqref{eq:LA}. They show that if an ensemble fails $(\star)$, it must give rise to a counter example. %
+
+Thus, their condition $(\star)$ is a {\em characterization} of complexes satisfying \eqref{eq:LA}. In contrast, our condition of swap-cosystolic expansion is not equivalent, and even swap-coboundary expansion seems to be stronger than \eqref{eq:LA}, so in any case not a characterization. Nevertheless, our condition applies to well-known constructions, allowing us to derive concrete corollaries (\pref{cor:general} and \pref{cor:spherical-building-list-agreement}) from our abstract theorem (for these derivations we rely on \pref{thm:DD-faces} from the companion paper). 
+
+In terms of concrete examples of complexes that fail \eqref{eq:LA}, both works point to the same issue. Their work also observes that the \cite{LubotzkySV2005b} complexes sometimes fail to satisfy \eqref{eq:LA}. The counterexample they give is in fact the same counterexample we give in \pref{sec:proof-of-counterexample} - they use a cocycle that comes from a cover to produce the counterexample.
+
+
+We remark that the work of \cite{BafnaM2023} raises an interesting open question: Does swap-coboundary expansion follow from their (a priori) weaker variant of $(\star)$?
+
+\subsection*{Acknowledgements}
+We thank Roy Meshulam and Amitay Kamber for insightful early discussions on the topic.
+
+% Sections
+\input{sections/preliminaries}
+\input{sections/theorem-proof}
+\input{sections/list-ag-2}
+\input{sections/cover-construction}
+\input{sections/agreement-on-glob-func}
+\input{sections/counterexample}
+\printbibliography
+
+%\appendix
+%\input{material/cover_procedure}
+\end{document}
