@@ -1,0 +1,191 @@
+{
+  "kind": "best",
+  "r": 4,
+  "calls": 1,
+  "count": 1,
+  "elapsed": 3.2788e-05,
+  "cap": 10,
+  "score": 10.1493,
+  "top_profiles": 4,
+  "near_profiles": 12,
+  "p": [
+    1,
+    0,
+    3,
+    2
+  ],
+  "s": [
+    1,
+    -1,
+    1,
+    -1
+  ],
+  "d": [
+    1,
+    1,
+    -1,
+    -1
+  ],
+  "child_matrix": [
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "bridge_hollow_matrix": [
+    [
+      0,
+      -1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      0,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      0,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "child_cap": 4,
+  "independent_verification": {
+    "n": 8,
+    "projective_assignments": 128,
+    "min_energy": -10,
+    "max_energy": 10,
+    "cap": 10,
+    "argmin_gray": 59,
+    "argmax_gray": 21,
+    "min_count": 4,
+    "max_count": 4
+  },
+  "matrix_sha256": "4423eb02019d2cdb5573a4a8eeb50bdaa395031068b63c6cb47eab9aa901d014",
+  "ratio_to_child": 0.8838834764831843,
+  "normalized_cap": 0.44194173824159216,
+  "label": "m4_class0",
+  "source": "computations/results/m4_minimizer_orbits.json",
+  "command": [
+    "/home/math/quadra/tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+    "matching",
+    "10",
+    "20260918"
+  ],
+  "random_seed": 20260918,
+  "search_source": "computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+  "search_source_sha256": "195cf41de233f391fe198b786d51baf3b4ed47baf36407cf7de1e2eee1468e45",
+  "evidence": "exact fixed-witness cap; ongoing family enumeration or search",
+  "sign_convention": "B[i,j]=s[i]*s[j]*A[p[i],p[j]]; p maps destination to source"
+}

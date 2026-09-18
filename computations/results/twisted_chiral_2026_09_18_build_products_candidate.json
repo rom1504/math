@@ -1,0 +1,113 @@
+{
+  "compiler": "g++ (Debian 10.2.1-6) 10.2.1 20210110",
+  "records": [
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/search",
+      "sha256": "e6aa49ac4f8291109a1ae2913f8c45c4abe750391556aec2c8b96f6466bd6d24",
+      "source": "computations/twisted_chiral_search_2026_09_18.cpp",
+      "source_sha256": "e79f22aa4374851fcf8093462d8e1e46645b72b362608f7023214837f84e1813",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/search",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789752290.0120573
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/search_frozen",
+      "sha256": "8a3be2687628c55942dcced2679e16e004c9ecb7779fda9eab9b4d3bf8a969d7",
+      "source": "computations/twisted_chiral_search_frozen_2026_09_18.cpp",
+      "source_sha256": "e79f22aa4374851fcf8093462d8e1e46645b72b362608f7023214837f84e1813",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/search_frozen",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789752911.8611531
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/search_bound_initial_frozen",
+      "sha256": "0b6c5e01613682be58dcae8dbcbc051a9497467cba9bbc3799d351eca1b8bdc4",
+      "source": "computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp",
+      "source_sha256": "c55b3d47a44c5a67b07a69352e00a876bcb5d55455c6c2e0baf68c059bc7db7e",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/search_bound_initial_frozen",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789752993.1226828
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/verify",
+      "sha256": "4cac8a43c9a428563ea5effe4b70121a7eb41ecb64838fce345392eeb414b061",
+      "source": "computations/exact_fixed_signing_gray.cpp",
+      "source_sha256": "5a08f4e89660efe23319351084d12007b4a44942fdcdc170d3c2fc05346c7586",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/exact_fixed_signing_gray.cpp -o tmp/twisted_chiral_2026_09_18/verify",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789751677.4628482
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/classify9",
+      "sha256": "5614eb6745092730c0f0a8e6768b236fa1e16622ae100e35a2f6b351b497f042",
+      "source": "computations/twisted_chiral_classify9_2026_09_18.cpp",
+      "source_sha256": "a1ed865a60c1a6a216b2c861a0df306d1abd785f16938d381126e52e69fb9a54",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_classify9_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/classify9",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789752585.3950777
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/classify9_independent",
+      "sha256": "134fcef3b6e0abacadfe70f6afcc3aee5c560a53f8c9ce535321ff1fef3ffd3c",
+      "source": "computations/twisted_chiral_classify9_independent_2026_09_18.cpp",
+      "source_sha256": "76ac18f82db0a117ec6c9cd476d249b969f3492708a429333f06a4cb6334f2b4",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_classify9_independent_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/classify9_independent",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789753263.8904517
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/classify10",
+      "sha256": "96d093fbf1470d19481e9c4f4729796c18a021bc3ccc5e5d9eb16a2138844da4",
+      "source": "computations/twisted_chiral_classify10_2026_09_18.cpp",
+      "source_sha256": "f67d43082913a92c986fdd459b36f9cf457d55218238ff2205c4e33aa8d4ba3a",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_classify10_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/classify10",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789752845.0871832
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+      "sha256": "6866054d1aee8b1c325ce6603134e6e41fa22808377e70f06506fe09269728c4",
+      "source": "computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+      "source_sha256": "195cf41de233f391fe198b786d51baf3b4ed47baf36407cf7de1e2eee1468e45",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789753420.6336656
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/search_extreme_order_frozen",
+      "sha256": "b84fbcd06e4a7c5cd8bfe9ccc8823b690be095e83046fe656eee50da00d35aed",
+      "source": "computations/twisted_chiral_search_extreme_order_frozen_2026_09_18.cpp",
+      "source_sha256": "db8e3efb415102b7c049fc25a2e94a68c870edd660baff6efa4968a5c63ca0fd",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_extreme_order_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/search_extreme_order_frozen",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789753581.460741
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/running_initial_bound_elf",
+      "sha256": "5e8230e276a475f870dfcc9b455e367e4a2aff267be4d4fcab5d0bfc50ff06e1",
+      "source": "computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp",
+      "source_sha256": "c55b3d47a44c5a67b07a69352e00a876bcb5d55455c6c2e0baf68c059bc7db7e",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/running_initial_bound_elf",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789753094.7115946
+    },
+    {
+      "path": "tmp/twisted_chiral_2026_09_18/rebuilt_initial_bound_elf",
+      "sha256": "0b6c5e01613682be58dcae8dbcbc051a9497467cba9bbc3799d351eca1b8bdc4",
+      "source": "computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp",
+      "source_sha256": "c55b3d47a44c5a67b07a69352e00a876bcb5d55455c6c2e0baf68c059bc7db7e",
+      "build_command": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp -o tmp/twisted_chiral_2026_09_18/rebuilt_initial_bound_elf",
+      "classification": "rebuildable generated ELF; source and build command retained",
+      "mtime_utc_epoch": 1789753094.7355938
+    }
+  ],
+  "initial_bound_section_replay": {
+    "note": "Initial bound source was reconstructed by removing later width diagnostics. Entire .text and .rodata match the captured running ELF byte for byte; ELF filenames/symbol labels differ.",
+    "text_sha256": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+    "rebuilt_text_sha256": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+    "rodata_sha256": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133",
+    "rebuilt_rodata_sha256": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133",
+    "section_dump_recipe": "objcopy --dump-section .text=OUTPUT_TEXT --dump-section .rodata=OUTPUT_RODATA INPUT_ELF OUTPUT_COPY_ELF"
+  },
+  "note": "Candidate for root-owned reviewed_build_products manifest; does not mutate that shared manifest."
+}

@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Generate candidate build-product provenance for the root archive manifest."""
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+
+ROOT=Path(__file__).resolve().parents[1]
+SCRATCH=ROOT/'tmp/twisted_chiral_2026_09_18'
+PAIRS=[
+    ('search','computations/twisted_chiral_search_2026_09_18.cpp'),
+    ('search_frozen','computations/twisted_chiral_search_frozen_2026_09_18.cpp'),
+    ('search_bound_initial_frozen','computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp'),
+    ('verify','computations/exact_fixed_signing_gray.cpp'),
+    ('classify9','computations/twisted_chiral_classify9_2026_09_18.cpp'),
+    ('classify10','computations/twisted_chiral_classify10_2026_09_18.cpp'),
+    ('running_initial_bound_elf','computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp'),
+    ('rebuilt_initial_bound_elf','computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp'),
+]
+
+
+def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main():
+    records=[]
+    for name,source in PAIRS:
+        binary=SCRATCH/name;src=ROOT/source
+        if not binary.exists():continue
+        records.append(dict(path=str(binary.relative_to(ROOT)),sha256=digest(binary),
+            source=source,source_sha256=digest(src),
+            build_command=f'g++ -O3 -march=native -std=c++17 {source} -o {binary.relative_to(ROOT)}',
+            classification='rebuildable generated ELF; source and build command retained',mtime_utc_epoch=binary.stat().st_mtime))
+    result=dict(compiler=subprocess.check_output(['g++','--version'],text=True).splitlines()[0],records=records,
+        initial_bound_section_replay=dict(
+            note='Initial bound source was reconstructed by removing later width diagnostics. Entire .text and .rodata match the captured running ELF byte for byte; ELF filenames/symbol labels differ.',
+            text_sha256=digest(SCRATCH/'running_bound_text.bin'),
+            rebuilt_text_sha256=digest(SCRATCH/'rebuilt_bound_text.bin'),
+            rodata_sha256=digest(SCRATCH/'running_bound_rodata.bin'),
+            rebuilt_rodata_sha256=digest(SCRATCH/'rebuilt_bound_rodata.bin'),
+            section_dump_recipe='objcopy --dump-section .text=OUTPUT_TEXT --dump-section .rodata=OUTPUT_RODATA INPUT_ELF OUTPUT_COPY_ELF'),
+        note='Candidate for root-owned reviewed_build_products manifest; does not mutate that shared manifest.')
+    output=ROOT/'computations/results/twisted_chiral_2026_09_18_build_products_candidate.json'
+    output.write_text(json.dumps(result,indent=2)+'\n');print(output)
+
+
+if __name__=='__main__':main()

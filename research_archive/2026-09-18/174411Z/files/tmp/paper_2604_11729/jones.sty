@@ -1,0 +1,760 @@
+\NeedsTeXFormat{LaTeX2e}
+%%%% NOTES %%%%%
+% should really use \providecommand instead of \newcommand. This only defines if keyword not yet defined
+
+%% AMS-LaTeX packages for mathematical writing
+\RequirePackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{microtype}      %
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage{lmodern}
+\linespread{1.03} % just to put the figures in the intro at a better place
+
+
+%% Enable easy use of page numbering, headers, references
+\RequirePackage{fancyhdr, fancyref}
+
+\RequirePackage[dvipsnames]{xcolor}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.35,0}
+\definecolor{darkblue}{rgb}{0,0,0.55}
+\RequirePackage[pdfusetitle,colorlinks,linkcolor=darkblue,filecolor=darkred,citecolor=darkgreen,urlcolor=darkred,pagebackref]{hyperref}
+\RequirePackage[pdfusetitle,pagebackref]{hyperref}
+\hypersetup{bookmarksnumbered}
+
+
+%% Enumerate lists in various ways, multiple column simultaneously
+\RequirePackage{enumerate, multicol}
+
+%% blackboard and bold numbers
+\RequirePackage{bbm, bm}
+
+%% Paired delimiters
+\RequirePackage{mathtools}
+
+%% strikethrough text, among other things
+\RequirePackage[normalem]{ulem}
+
+%% block comments
+\RequirePackage{comment}
+
+%% Fancy restatable theorem environments
+\RequirePackage{thmtools, thm-restate}
+\RequirePackage[capitalise,nameinlink]{cleveref}
+
+% floating images, environments, etc
+\RequirePackage{float}
+
+% Fix subtle issue with trailing spaces after defined textmode commands
+\RequirePackage{xspace}
+
+%\RequirePackage{environ} %%commented this package out because it was making the author list vertical instead of horizontal
+
+\RequirePackage{algpseudocode}
+
+\algrenewcommand{\algorithmiccomment}[1]{\hskip3em// #1}
+
+%% How to change margins: use
+%
+%	geometry{margin=<yourSize>in}
+%
+%% before \begin{document}
+%% More options for page-to-page variation in geometry package
+\RequirePackage[margin=1in]{geometry}
+\setlength{\parskip}{4pt plus 1pt}
+
+%% Uncomment for double spaced text
+%\RequirePackage[doublespacing]{setspace}
+
+%% Drawing pictures, including images, boxing things
+\RequirePackage{tikz, framed, caption}
+
+%% For auto-resizing paired delimiters
+\RequirePackage{mleftright,xparse}
+
+%% For frameboxed align environments
+\RequirePackage{empheq}
+
+\RequirePackage{comment}
+
+% Use \begin{tabular}{L C R} to get math-mode columns
+\RequirePackage{array}
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
+
+% TODO figure out how to make these turn-off-able
+\definecolor{niceish}{HTML}{1cb5bd} 
+\newcommand\TODO[1]{\textcolor{red}{TODO: {#1}}}
+\newcommand\chris[1]{\textsf{\small\color{niceish}{[Chris: #1]}}}
+
+% \newcommand\chris[1]{}
+
+%% Single-letter commands for common sets/functions
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+
+\newcommand{\PP}{\mathbb{P}}
+% \renewcommand{\H}{\mathbb{H}} already defined
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\0}{\emptyset}
+\newcommand{\w}{\omega}
+\newcommand{\el}{\ell}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\al}{\alpha}
+\newcommand{\ph}{\varphi}
+\newcommand{\kap}{\kappa}
+\newcommand{\gam}{\gamma}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\sig}{\sigma}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\del}{\delta}
+\newcommand{\Om}{\Omega}
+\newcommand{\om}{\om}
+
+\newcommand{\Cat}{\mathrm{Cat}}
+
+\newcommand{\Id}{\textnormal{Id}}
+\newcommand{\id}{\textnormal{id}}
+\newcommand{\restrict}{\upharpoonright}
+\newcommand{\pset}[1]{\mathcal{P}({#1})}
+\newcommand{\prop}{\propto}
+\newcommand{\bone}{\mathbbm{1}}
+\let\1\bone
+\let\one\bone
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\symdiff}{\triangle}
+
+\newcommand{\pmone}{\{-1,+1\}}
+
+\newcommand{\defeq}{:=}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\argmin}{argmin}
+\newcommand{\sleq}{{\scriptstyle \le}}
+\let\sle\sleq
+\newcommand{\ssleq}{{\scriptscriptstyle \le}}
+\let\ssle\ssleq
+% \newcommand{\sgeq}{{\scriptstyle \ge}} % looks ugly
+% \let\sge\sgeq
+\newcommand{\sgt}{\raisebox{1pt}{$\scriptstyle >$}}
+\let\sg\sgt
+\newcommand{\slt}{\raisebox{1pt}{$\scriptstyle <$}}
+\let\sl\slt
+\newcommand{\sneq}{{\scriptstyle \neq}}
+\newcommand{\seq}{{\scriptstyle =}}
+\let\turnstile\vdash
+\let\partitions\vdash
+\let\partition\partitions
+
+%% Paired delimiters
+% From https://tex.stackexchange.com/questions/94410/easily-change-behavior-of-declarepaireddelimiter
+% \paren{\frac{1}{2}} or \paren[\Big]{\frac{1}{2}} or \paren*{\frac{1}{2}}
+\NewDocumentCommand\xDeclarePairedDelimiter{mmm}
+ {%
+  \NewDocumentCommand#1{som}{%
+   \IfNoValueTF{##2}
+    {\IfBooleanTF{##1}{#2##3#3}{\mleft#2##3\mright#3}}
+    {\mathopen{##2#2}##3\mathclose{##2#3}}%
+  }%
+ }
+\xDeclarePairedDelimiter{\paren}{(}{)}
+\let\parens=\paren
+% \xDeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+% \xDeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\xDeclarePairedDelimiter{\bkt}{[}{]}
+\let\bracket=\bkt
+\let\brackets=\bkt
+\let\squarebracket=\bkt
+\let\squarebrackets=\bkt
+\xDeclarePairedDelimiter{\set}{\lbrace}{\rbrace}
+
+%% Geometry
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\conv}{conv} %Convex hull
+
+
+%% Probability
+\newcommand{\toas}{\overset{\textnormal{a.s.}}{\longrightarrow}}
+\newcommand{\topr}{\overset{\textnormal{p}}{\longrightarrow}}
+\newcommand{\tod}{\overset{\textnormal{(d)}}{\longrightarrow}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\Var}{Var}
+\DeclareMathOperator*{\Cov}{Cov}
+\DeclareMathOperator{\ed}{ed}
+\DeclareMathOperator{\Law}{Law}
+\newcommand{\unif}{\in_{\textnormal{R}}}
+\DeclareMathOperator*{\pseudoE}{\widetilde{\mathbb{E}}}
+\let\pE=\pseudoE
+\DeclareMathOperator*{\pseudoPr}{\widetilde{\Pr}}
+\let\pPr=\pseudoPr
+\RequirePackage[outline]{contour} % used to define a less-bold \xsos
+\contourlength{0.1pt}
+\contournumber{10}%
+\newcommand{\xsos}{\textnormal{\textsf{\contour{black}{X}}}}
+\let\Xsos=\xsos
+
+%Distributions
+\DeclareMathOperator{\Bernoulli}{Bernoulli}
+\let\bernoulli\Bernoulli
+\let\Ber\Bernoulli
+\let\ber\Bernoulli
+\DeclareMathOperator{\Bin}{Bin}
+\let\bin\Bin
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Geo}{Geo}
+\DeclareMathOperator{\Poisson}{Poisson}
+\let\poisson\Poisson
+\DeclareMathOperator{\erfc}{erfc}
+\newcommand{\gaussian}{{\calN(0,\textnormal{Id})}} % shorthand
+\let\Gaussian\gaussian
+
+%% Matrices and linear algebra
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\per}{per}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Gr}{Gr}
+
+\DeclareMathOperator{\linspan}{span}
+\let\Span\linspan
+\let\spn\linspan
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\nullspace}{null}
+\let\rank\relax
+\DeclareMathOperator{\rank}{rank}
+% \DeclarePairedDelimiter{\ip}{\langle}{\rangle}
+% \let\innerproduct=\ip
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\spec}{spec}
+
+\newcommand{\T}{\intercal}
+%\renewcommand{\l}{\ell} %overlaps with Hungarian style slashed "l"
+% which might screw up the bibliography
+\newcommand{\linf}{\ell_\infty}
+\newcommand{\lp}{\ell_p}
+\newcommand{\Fr}{{\textnormal{Fr}}}
+\let\fr\Fr
+\newcommand{\pperp}{\coprod}
+
+\newcommand{\psdleq}{\preceq}
+\newcommand{\psdl}{\prec}
+\let\psdlt\psdl
+\newcommand{\psdgeq}{\succeq}
+\newcommand{\psdg}{\succ}
+\let\psdgt\psdg
+
+%% Analysis
+\renewcommand{\d}{ {\textnormal d}}
+\newcommand{\dt}{ {\textnormal d} t}
+\newcommand{\ds}{ {\textnormal d} s}
+\newcommand{\ddt}{\dd{}{t}}
+\newcommand{\dx}{ {\textnormal d} x}
+\newcommand{\ddx}{\dd{}{x}}
+\newcommand{\dX}{ {\textnormal d} X}
+\newcommand{\dB}{ {\textnormal d} B}
+% \newcommand{\dd}[2]{\frac{\d{#1}}{\d{#2}}}
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% \newcommand{\grad}{\nabla}
+% \let\gradient\grad
+
+\DeclareMathOperator{\He}{He}
+
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\sgn}{sgn}
+\let\sign\sgn
+\DeclareMathOperator{\osc}{osc}
+
+\DeclareMathOperator{\MaxInf}{\bf MaxInf}
+\DeclareMathOperator{\Inf}{\bf Inf}
+\DeclareMathOperator{\Stab}{\bf Stab}
+\DeclareMathOperator{\sens}{sens}
+
+\newcommand{\Maj}{\text{MAJ}}
+
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+
+\newcommand{\sym}{\mathrm{sym}}
+
+%% Complexity theory
+\newcommand{\true}{\textsf{True}}
+\newcommand{\false}{\textsf{False}}
+\newcommand{\xor}{\oplus}
+\newcommand{\classfont}[1]{\textsf{#1}}
+\newcommand{\coclass}[1]{\classfont{co\mbox{-}}{#1}}
+\renewcommand{\P}{\classfont{P}}
+\newcommand{\NP}{\classfont{NP}}
+\newcommand{\PH}{\classfont{PH}}
+\newcommand{\sharpP}{{\#\classfont{P}}}
+\newcommand{\PSPACE}{\classfont{PSPACE}}
+\newcommand{\BPP}{\classfont{BPP}}
+\newcommand{\PPA}{\classfont{PPA}}
+\newcommand{\PPAD}{\classfont{PPAD}}
+\DeclareMathOperator{\poly}{poly}
+\DeclareMathOperator{\polylog}{polylog}
+
+\DeclareMathOperator{\bigO}{{O}}
+\let\bigo=\bigO
+\newcommand{\bigtheta}{{\Theta}}
+\let\bigTheta=\bigtheta
+\newcommand{\bigomega}{{\Omega}}
+\let\bigOmega=\bigomega
+\DeclareMathOperator{\littleo}{{o}}
+\let\littleO=\littleo
+\let\littleoh=\littleo
+\let\littleOh=\littleo
+\let\smalloh=\littleo
+\let\smallOh=\littleo
+\let\smallO=\littleo
+\let\smallo=\littleo
+\DeclareMathOperator{\littleomega}{{\omega}}
+\let\littleOmega=\littleomega
+\DeclareMathOperator{\softO}{\widetilde{O}}
+\let\softo=\softO
+\let\softOh=\softO
+\let\softoh=\softO
+\DeclareMathOperator{\softomega}{\widetilde{\Omega}}
+\let\softOmega=\softomega
+
+\DeclareMathOperator{\val}{val}
+\newcommand{\OPT}{\textnormal{\textsf{OPT}}\xspace}
+\newcommand{\ALG}{\textnormal{\textsf{ALG}}\xspace}
+\newcommand{\VAL}{\textnormal{\textsf{VAL}}\xspace}
+\newcommand{\INT}{\textnormal{\textsf{INT}}\xspace}
+\newcommand{\FRAC}{\textnormal{\textsf{FRAC}}\xspace}
+
+%% Quantum computing
+% \newcommand{\bra}{\langle}
+% \newcommand{\ket}{\rangle}
+\newcommand{\qbit}[1]{|#1\ket}
+\newcommand{\bitq}[1]{\bra #1|}
+\newcommand{\qbq}[2]{\bra #1|#2\ket}
+%\renewcommand{\0}{\qbit{0}}
+%\newcommand{\1}{\qbit{1}}
+\newcommand{\+}{\qbit{+}}
+\renewcommand{\-}{\qbit{-}}
+
+% \newcommand{\cross}{\times}
+
+%% Cryptography
+\DeclareMathOperator{\Enc}{Enc}
+\DeclareMathOperator{\Dec}{Dec}
+
+%% Number theory, algebra
+\let\mod\relax
+\DeclareMathOperator{\mod}{mod}
+\newcommand{\pcon}{\equiv_p}
+\newcommand{\ncon}{\equiv_n}
+\newcommand{\divides}{\mid}
+\newcommand{\dnd}{\nmid}
+\xDeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\xDeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\let\ceiling=\ceil
+\DeclareMathOperator{\lcm}{lcm}
+% \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{im}
+% \newcommand{\tensor}{\otimes}
+
+\newcommand{\embeds}{\hookrightarrow}
+\newcommand{\normal}{\lhd}
+\newcommand{\minnormal}{\overset{\min}{\lhd}}
+\newcommand{\lamron}{\rhd}
+\newcommand{\semidir}{\rtimes}
+\newcommand{\actson}{\curvearrowright}
+\DeclareMathOperator{\charsub}{char}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\dom}{dom}
+\newcommand{\we}{\prec}
+\newcommand{\weq}{\preceq}
+
+%% Logic
+\newcommand{\deduce}{\vdash}
+\newcommand{\deduces}{\vdash}
+\newcommand{\model}{\vDash}
+\DeclareMathOperator{\ult}{Ult}
+
+%% Discrete math/graph theory
+\newcommand{\stir}[2]{{{#1} \brace {#2}}}
+\DeclareMathOperator{\diam}{diam}
+\let\choose=\binom
+% Multiset from https://tex.stackexchange.com/questions/5816/multiset-notation-in-latex
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+\let\multichoose=\multiset
+\newcommand{\Gbip}{G^{\text{bip}}}
+
+%% Symbols
+\newcommand{\uprightarrow}{\nearrow}
+\newcommand{\downrightarrow}{\searrow}
+
+%% caligraphic abbreviations
+\newcommand{\calA}{{\cal A}}
+\newcommand{\calB}{{\cal B}}
+\newcommand{\calC}{{\cal C}}
+\newcommand{\calD}{{\cal D}}
+\newcommand{\calE}{{\cal E}}
+\newcommand{\calF}{{\cal F}}
+\newcommand{\calG}{{\cal G}}
+\newcommand{\calH}{{\cal H}}
+\newcommand{\calI}{{\cal I}}
+\newcommand{\calJ}{{\cal J}}
+\newcommand{\calK}{{\cal K}}
+\newcommand{\calL}{{\cal L}}
+\newcommand{\calM}{{\cal M}}
+\newcommand{\calN}{{\cal N}}
+\newcommand{\calO}{{\cal O}}
+\newcommand{\calP}{{\cal P}}
+\newcommand{\calQ}{{\cal Q}}
+\newcommand{\calR}{{\cal R}}
+\newcommand{\calS}{{\cal S}}
+\newcommand{\calT}{{\cal T}}
+\newcommand{\calU}{{\cal U}}
+\newcommand{\calV}{{\cal V}}
+\newcommand{\calW}{{\cal W}}
+\newcommand{\calX}{{\cal X}}
+\newcommand{\calY}{{\cal Y}}
+\newcommand{\calZ}{{\cal Z}}
+\let\cA\calA
+\let\cB\calB
+\let\cC\calC
+\let\cD\calD
+\let\cE\calE
+\let\cF\calF
+\let\cG\calG
+\let\cH\calH
+\let\cI\calI
+\let\cJ\calJ
+\let\cK\calK
+\let\cL\calL
+\let\cM\calM
+\let\cN\calN
+\let\cO\calO
+\let\cP\calP
+\let\cQ\calQ
+\let\cR\calR
+\let\cS\calS
+\let\cT\calT
+\let\cU\calU
+\let\cV\calV
+\let\cW\calW
+\let\cX\calX
+\let\cY\calY
+\let\cZ\calZ
+
+%% bold abbreviations
+\newcommand{\boldA}{{\bm A}}
+\newcommand{\boldB}{{\bm B}}
+\newcommand{\boldC}{{\bm C}}
+\newcommand{\boldD}{{\bm D}}
+\newcommand{\boldE}{{\bm E}}
+\newcommand{\boldF}{{\bm F}}
+\newcommand{\boldG}{{\bm G}}
+\newcommand{\boldH}{{\bm H}}
+\newcommand{\boldI}{{\bm I}}
+\newcommand{\boldJ}{{\bm J}}
+\newcommand{\boldK}{{\bm K}}
+\newcommand{\boldL}{{\bm L}}
+\newcommand{\boldM}{{\bm M}}
+\newcommand{\boldN}{{\bm N}}
+\newcommand{\boldO}{{\bm O}}
+\newcommand{\boldP}{{\bm P}}
+\newcommand{\boldQ}{{\bm Q}}
+\newcommand{\boldR}{{\bm R}}
+\newcommand{\boldS}{{\bm S}}
+\newcommand{\boldT}{{\bm T}}
+\newcommand{\boldU}{{\bm U}}
+\newcommand{\boldV}{{\bm V}}
+\newcommand{\boldW}{{\bm W}}
+\newcommand{\boldX}{{\bm X}}
+\newcommand{\boldY}{{\bm Y}}
+\newcommand{\boldZ}{{\bm Z}}
+\newcommand{\bolda}{{\bm a}}
+\newcommand{\boldb}{{\bm b}}
+\newcommand{\boldc}{{\bm c}}
+\newcommand{\boldd}{{\bm d}}
+\newcommand{\bolde}{{\bm e}}
+\newcommand{\boldf}{{\bm f}}
+\newcommand{\boldg}{{\bm g}}
+\newcommand{\boldh}{{\bm h}}
+\newcommand{\boldi}{{\bm i}}
+\newcommand{\boldj}{{\bm j}}
+\newcommand{\boldk}{{\bm k}}
+\newcommand{\boldl}{{\bm l}}
+\newcommand{\boldm}{{\bm m}}
+\newcommand{\boldn}{{\bm n}}
+\newcommand{\boldo}{{\bm o}}
+\newcommand{\boldp}{{\bm p}}
+\newcommand{\boldq}{{\bm q}}
+\newcommand{\boldr}{{\bm r}}
+\newcommand{\bolds}{{\bm s}}
+\newcommand{\boldt}{{\bm t}}
+\newcommand{\boldu}{{\bm u}}
+\newcommand{\boldv}{{\bm v}}
+\newcommand{\boldw}{{\bm w}}
+\newcommand{\boldx}{{\bm x}}
+\newcommand{\boldy}{{\bm y}}
+\newcommand{\boldz}{{\bm z}}
+\let\bA\boldA
+\let\bB\boldB
+\let\bC\boldC
+\let\bD\boldD
+\let\bE\boldE
+\let\bF\boldF
+\let\bG\boldG
+\let\bH\boldH
+\let\bI\boldI
+\let\bJ\boldJ
+\let\bK\boldK
+\let\bL\boldL
+\let\bM\boldM
+\let\bN\boldN
+\let\bO\boldO
+\let\bP\boldP
+\let\bQ\boldQ
+\let\bR\boldR
+\let\bS\boldS
+\let\bT\boldT
+\let\bU\boldU
+\let\bV\boldV
+\let\bW\boldW
+\let\bX\boldX
+\let\bY\boldY
+\let\bZ\boldZ
+\let\ba\bolda
+\let\bb\boldb
+\let\bc\boldc
+\let\bd\boldd
+\let\be\bolde
+% \let\bf\boldf % already defined
+\let\bg\boldg
+\let\bh\boldh
+\let\bi\boldi
+\let\bj\boldj
+\let\bk\boldk
+\let\bl\boldl
+% \let\bm\boldm % already defined
+\let\bn\boldn
+\let\bo\boldo
+\let\bp\boldp
+\let\bq\boldq
+\let\br\boldr
+\let\bs\bolds
+\let\bt\boldt
+\let\bu\boldu
+\let\bv\boldv
+\let\bw\boldw
+\let\bx\boldx
+\let\by\boldy
+\let\bz\boldz
+\newcommand{\bmA}{{\bm A}}
+\newcommand{\bmB}{{\bm B}}
+\newcommand{\bmC}{{\bm C}}
+\newcommand{\bmD}{{\bm D}}
+\newcommand{\bmE}{{\bm E}}
+\newcommand{\bmF}{{\bm F}}
+\newcommand{\bmG}{{\bm G}}
+\newcommand{\bmH}{{\bm H}}
+\newcommand{\bmI}{{\bm I}}
+\newcommand{\bmJ}{{\bm J}}
+\newcommand{\bmK}{{\bm K}}
+\newcommand{\bmL}{{\bm L}}
+\newcommand{\bmM}{{\bm M}}
+\newcommand{\bmN}{{\bm N}}
+\newcommand{\bmO}{{\bm O}}
+\newcommand{\bmP}{{\bm P}}
+\newcommand{\bmQ}{{\bm Q}}
+\newcommand{\bmR}{{\bm R}}
+\newcommand{\bmS}{{\bm S}}
+\newcommand{\bmT}{{\bm T}}
+\newcommand{\bmU}{{\bm U}}
+\newcommand{\bmV}{{\bm V}}
+\newcommand{\bmW}{{\bm W}}
+\newcommand{\bmX}{{\bm X}}
+\newcommand{\bmY}{{\bm Y}}
+\newcommand{\bmZ}{{\bm Z}}
+\newcommand{\bma}{{\bm a}}
+\newcommand{\bmb}{{\bm b}}
+\newcommand{\bmc}{{\bm c}}
+\newcommand{\bmd}{{\bm d}}
+\newcommand{\bme}{{\bm e}}
+\newcommand{\bmf}{{\bm f}}
+\newcommand{\bmg}{{\bm g}}
+\newcommand{\bmh}{{\bm h}}
+\newcommand{\bmi}{{\bm i}}
+\newcommand{\bmj}{{\bm j}}
+\newcommand{\bmk}{{\bm k}}
+\newcommand{\bml}{{\bm l}}
+\newcommand{\bmm}{{\bm m}}
+\newcommand{\bmn}{{\bm n}}
+\newcommand{\bmo}{{\bm o}}
+\newcommand{\bmp}{{\bm p}}
+\newcommand{\bmq}{{\bm q}}
+\newcommand{\bmr}{{\bm r}}
+\newcommand{\bms}{{\bm s}}
+\newcommand{\bmt}{{\bm t}}
+\newcommand{\bmu}{{\bm u}}
+\newcommand{\bmv}{{\bm v}}
+\newcommand{\bmw}{{\bm w}}
+\newcommand{\bmx}{{\bm x}}
+\newcommand{\bmy}{{\bm y}}
+\newcommand{\bmz}{{\bm z}}
+
+%%% deprecated
+\newcommand{\matA}{\mathbf{A}}
+\newcommand{\matB}{\mathbf{B}}
+\newcommand{\matC}{\mathbf{C}}
+\newcommand{\matD}{\mathbf{D}}
+\newcommand{\matE}{\mathbf{E}}
+\newcommand{\matF}{\mathbf{F}}
+\newcommand{\matG}{\mathbf{G}}
+\newcommand{\matH}{\mathbf{H}}
+\newcommand{\matI}{\mathbf{I}}
+\newcommand{\matJ}{\mathbf{J}}
+\newcommand{\matK}{\mathbf{K}}
+\newcommand{\matL}{\mathbf{L}}
+\newcommand{\matM}{\mathbf{M}}
+\newcommand{\matN}{\mathbf{N}}
+\newcommand{\matP}{\mathbf{P}}
+\newcommand{\matQ}{\mathbf{Q}}
+\newcommand{\matR}{\mathbf{R}}
+\newcommand{\matS}{\mathbf{S}}
+\newcommand{\matT}{\mathbf{T}}
+\newcommand{\matU}{\mathbf{U}}
+\newcommand{\matV}{\mathbf{V}}
+\newcommand{\matW}{\mathbf{W}}
+\newcommand{\matX}{\mathbf{X}}
+\newcommand{\matY}{\mathbf{Y}}
+\newcommand{\matZ}{\mathbf{Z}}
+
+\newcommand{\frob}{\textnormal{F}}
+\newcommand{\bmzero}{{\bm 0}}
+\let\bzero\bmzero
+\newcommand{\matId}{\mathbf{Id}}
+\newcommand{\matSigma}{\mathbf{\Sigma}}
+\newcommand{\matPi}{\mathbf{\Pi}}
+\let\matSig\matSigma
+
+\newcommand{\bSigma}{\mathbf{\Sigma}}
+\let\bSig\bSigma
+\newcommand{\bPi}{\mathbf{\Pi}}
+
+%% Typesetting
+\newcommand{\ftab}{\phantom{0000}}
+\let\emph\textit
+
+
+%% names
+\newcommand{\erdos}{Erd\H{o}s\xspace}
+\let\Erdos\erdos
+\newcommand{\renyi}{R{\'e}nyi\xspace}
+\let\Renyi\renyi
+\newcommand{\lovasz}{Lov{\'a}sz\xspace}
+\let\Lovasz\lovasz
+\newcommand{\ito}{It\^{o}\xspace}
+\let\Ito\ito
+\newcommand{\Mobius}{M{\"o}bius\xspace}
+\let\mobius\Mobius
+\newcommand{\Holder}{H{\"o}lder\xspace}
+\let\holder\Holder
+
+%% Question environment, for question titles
+%\newcounter{questionCounter}
+%\newenvironment{question}[2][\arabic{questionCounter}]{%
+%    \vspace{.25in} \hrule \vspace{0.5em}%
+%        \noindent{\bf #2}%
+%    \vspace{0.8em} \hrule \vspace{.10in}%
+%    \addtocounter{questionCounter}{1}%
+%}{}
+
+%%%%%% Draftbox
+\newcommand{\draftbox}{\begin{center}
+  \fbox{%
+    \begin{minipage}{2in}%
+      \begin{center}%
+        \begin{Large}%
+          \textsc{Working Draft}%
+        \end{Large}\\
+        Please do not distribute%
+      \end{center}%
+    \end{minipage}%
+  }%
+\end{center}
+\vspace{0.2cm}}
+
+%% Formatting Theorem, Lemma, Remark environments
+
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\providecommand{\algorithmname}{Algorithm}
+\floatname{algorithm}{\protect\algorithmname}
+
+  \theoremstyle{plain}
+  \setlength\topsep{0.2cm}
+  \newtheorem{ctr}{Counter}[section]
+
+  \newtheorem{proposition}[ctr]{Proposition}
+  \newtheorem{lemma}[ctr]{Lemma}
+  \newtheorem{corollary}[ctr]{Corollary}
+  \newtheorem{example}[ctr]{Example}
+  \newtheorem{conjecture}[ctr]{Conjecture}
+  \newtheorem{question}[ctr]{Question}
+  \newtheorem{fact}[ctr]{Fact}
+  \newtheorem{definition}[ctr]{Definition}
+  \newtheorem{remark}[ctr]{Remark}
+  \newtheorem{claim}[ctr]{Claim}
+  \newtheorem{observation}[ctr]{Observation}
+  \newtheorem{hypothesis}[ctr]{Hypothesis}
+  \newtheorem{assumption}[ctr]{Assumption}
+  \newtheorem{bound}[ctr]{Bound}
+  \newtheorem{warn}[ctr]{Warning}
+  \newtheorem{problem}[ctr]{Problem}
+  \newtheorem{notation}[ctr]{Notation}
+  
+  % using unnumbered environments is not advised
+  \newtheorem*{conjecture*}{Conjecture}
+  \newtheorem*{example*}{Example}
+  \newtheorem*{question*}{Question}
+
+% @ is normally not allowed in command names to distinguish user-defined commands from built-in commands
+% change it an allowable letter to do some hacking
+\makeatletter
+  % Allow citations in theorem label
+  \def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont(#3)}}}
+\let\thmhead\thmhead@plain
+% make @ back to a non-letter i.e. "done hacking" 
+\makeatother
+ 
+  \newtheorem{theorem}[ctr]{Theorem}
+  \newtheorem*{theorem*}{Theorem}
+% \NewEnviron{theoryproblem}[1]{
+% \begin{center}\fbox{\parbox{0.8\textwidth}{
+%     {\centering\scshape #1\par}
+%     \parskip=1ex
+%     \everypar{\hangindent=1em}
+%     \BODY
+% }}\end{center}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+
+\endinput

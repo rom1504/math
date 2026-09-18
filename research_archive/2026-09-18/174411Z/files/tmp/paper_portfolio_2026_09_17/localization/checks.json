@@ -1,0 +1,291 @@
+{
+  "seed": 20260917,
+  "gamma": 0.5319230405352436,
+  "gap_above_one_half": 0.03192304053524364,
+  "simple_required_information_per_spin": 0.001600767932835105,
+  "sharper_required_information_per_spin": 0.011748360567219888,
+  "posterior_entropy_checks": [
+    {
+      "n": 4,
+      "random_posteriors": 300,
+      "max_bias_to_bound_ratio": 0.732169425153056,
+      "min_entropy_inequality_slack": 0.0022235104049124696,
+      "min_row_mutual_information_slack": -4.440892098500626e-16,
+      "sample_records": [
+        {
+          "divergence": 0.05125430485786353,
+          "squared_bias": 0.07765273322213073,
+          "ratio": 0.3787620056377426
+        },
+        {
+          "divergence": 1.4044112896781933,
+          "squared_bias": 3.1093099928527304,
+          "ratio": 0.5534899241598231
+        },
+        {
+          "divergence": 1.0868355574075785,
+          "squared_bias": 2.506335192195956,
+          "ratio": 0.5765212536324953
+        }
+      ],
+      "exact_revelation_channels": [
+        {
+          "revealed_relative_spins": 0,
+          "information_nats": 0.0,
+          "squared_bias_exact": 0.0,
+          "bound": 0.0
+        },
+        {
+          "revealed_relative_spins": 1,
+          "information_nats": 0.6931471805599453,
+          "squared_bias_exact": 1.0,
+          "bound": 2.772588722239781
+        },
+        {
+          "revealed_relative_spins": 2,
+          "information_nats": 1.3862943611198906,
+          "squared_bias_exact": 3.0,
+          "bound": 5.545177444479562
+        },
+        {
+          "revealed_relative_spins": 3,
+          "information_nats": 2.0794415416798357,
+          "squared_bias_exact": 6.0,
+          "bound": 8.317766166719343
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "random_posteriors": 300,
+      "max_bias_to_bound_ratio": 0.7207428759721303,
+      "min_entropy_inequality_slack": 0.01832507444839526,
+      "min_row_mutual_information_slack": 0.002688035628162956,
+      "sample_records": [
+        {
+          "divergence": 2.996256388968983,
+          "squared_bias": 11.218789407726298,
+          "ratio": 0.6240448052125641
+        },
+        {
+          "divergence": 1.692118415701739,
+          "squared_bias": 2.8141629522263645,
+          "ratio": 0.27718341361463383
+        },
+        {
+          "divergence": 0.19918055815473767,
+          "squared_bias": 0.23863357676264974,
+          "ratio": 0.19967944242267371
+        }
+      ],
+      "exact_revelation_channels": [
+        {
+          "revealed_relative_spins": 0,
+          "information_nats": 0.0,
+          "squared_bias_exact": 0.0,
+          "bound": 0.0
+        },
+        {
+          "revealed_relative_spins": 1,
+          "information_nats": 0.6931471805599453,
+          "squared_bias_exact": 1.0,
+          "bound": 4.1588830833596715
+        },
+        {
+          "revealed_relative_spins": 2,
+          "information_nats": 1.3862943611198906,
+          "squared_bias_exact": 3.0,
+          "bound": 8.317766166719343
+        },
+        {
+          "revealed_relative_spins": 3,
+          "information_nats": 2.0794415416798357,
+          "squared_bias_exact": 6.0,
+          "bound": 12.476649250079014
+        },
+        {
+          "revealed_relative_spins": 4,
+          "information_nats": 2.772588722239781,
+          "squared_bias_exact": 10.0,
+          "bound": 16.635532333438686
+        },
+        {
+          "revealed_relative_spins": 5,
+          "information_nats": 3.4657359027997265,
+          "squared_bias_exact": 15.0,
+          "bound": 20.79441541679836
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "random_posteriors": 300,
+      "max_bias_to_bound_ratio": 0.5502009068830633,
+      "min_entropy_inequality_slack": 0.033594120121367574,
+      "min_row_mutual_information_slack": 0.004018765271486256,
+      "sample_records": [
+        {
+          "divergence": 2.690118353333641,
+          "squared_bias": 4.498779204586948,
+          "ratio": 0.20904188095534829
+        },
+        {
+          "divergence": 0.17323366368593174,
+          "squared_bias": 0.07552961089116726,
+          "ratio": 0.05449980771931585
+        },
+        {
+          "divergence": 1.260909295997375,
+          "squared_bias": 1.0244429759799898,
+          "ratio": 0.10155795694741657
+        }
+      ],
+      "exact_revelation_channels": [
+        {
+          "revealed_relative_spins": 0,
+          "information_nats": 0.0,
+          "squared_bias_exact": 0.0,
+          "bound": 0.0
+        },
+        {
+          "revealed_relative_spins": 1,
+          "information_nats": 0.6931471805599453,
+          "squared_bias_exact": 1.0,
+          "bound": 5.545177444479562
+        },
+        {
+          "revealed_relative_spins": 2,
+          "information_nats": 1.3862943611198906,
+          "squared_bias_exact": 3.0,
+          "bound": 11.090354888959125
+        },
+        {
+          "revealed_relative_spins": 3,
+          "information_nats": 2.0794415416798357,
+          "squared_bias_exact": 6.0,
+          "bound": 16.635532333438686
+        },
+        {
+          "revealed_relative_spins": 4,
+          "information_nats": 2.772588722239781,
+          "squared_bias_exact": 10.0,
+          "bound": 22.18070977791825
+        },
+        {
+          "revealed_relative_spins": 5,
+          "information_nats": 3.4657359027997265,
+          "squared_bias_exact": 15.0,
+          "bound": 27.725887222397812
+        },
+        {
+          "revealed_relative_spins": 6,
+          "information_nats": 4.1588830833596715,
+          "squared_bias_exact": 21.0,
+          "bound": 33.27106466687737
+        },
+        {
+          "revealed_relative_spins": 7,
+          "information_nats": 4.852030263919617,
+          "squared_bias_exact": 28.0,
+          "bound": 38.816242111356935
+        }
+      ]
+    }
+  ],
+  "biased_row_checks": {
+    "max_k": 10,
+    "samples_per_k": 50,
+    "minimum_uniform_greedy_row_slack": 1.7680899623989164,
+    "worst_record": {
+      "k": 1,
+      "bias": [
+        0.6301658371838297
+      ],
+      "shift": -0.34161666852862466,
+      "exact_absolute_expectation": 0.3876158637271115,
+      "lower_bound": -1.380474098671805
+    },
+    "max_smoothed_abs_scaled_third_derivative": 0.8586501033599192
+  },
+  "hadamard_switching_checks": [
+    {
+      "n": 2,
+      "exact_cap": 1,
+      "normalized_cap": 0.35355339059327373,
+      "all_switch_caps_match": true
+    },
+    {
+      "n": 4,
+      "exact_cap": 4,
+      "normalized_cap": 0.5,
+      "all_switch_caps_match": true
+    },
+    {
+      "n": 8,
+      "exact_cap": 10,
+      "normalized_cap": 0.44194173824159216,
+      "all_switch_caps_match": true
+    },
+    {
+      "n": 16,
+      "exact_cap": 32,
+      "normalized_cap": 0.5,
+      "all_switch_caps_match": true
+    }
+  ],
+  "gaussian_localization_diagnostic": {
+    "dimension": 4,
+    "samples": 20000,
+    "min_eigenvalue_Linv_minus_Ecov": 0.3545223383560621,
+    "min_eigenvalue_Sigma_minus_ECLC": 0.5366252247577962,
+    "estimated_mutual_information": 1.4326001409727502,
+    "information_upper_bound": 1.8799983832755345,
+    "max_samplewise_energy_identity_error": 1.609823385706477e-15,
+    "precision": [
+      [
+        0.8053062508553398,
+        -0.2240400917821801,
+        -0.1004461686344636,
+        -0.37492905925477577
+      ],
+      [
+        -0.22404009178218007,
+        0.44304202138887705,
+        0.02965458081702486,
+        -0.07198674101253927
+      ],
+      [
+        -0.10044616863446362,
+        0.02965458081702486,
+        1.9249782881817923,
+        0.24265876430466501
+      ],
+      [
+        -0.3749290592547757,
+        -0.07198674101253928,
+        0.24265876430466501,
+        0.7266734395739914
+      ]
+    ]
+  },
+  "unbiased_greedy_simulation": [
+    {
+      "n": 64,
+      "samples": 200,
+      "normalized_greedy_mean": 0.52970703125,
+      "normalized_greedy_standard_error": 0.003814272981076558
+    },
+    {
+      "n": 256,
+      "samples": 200,
+      "normalized_greedy_mean": 0.52720458984375,
+      "normalized_greedy_standard_error": 0.0019451723297109638
+    },
+    {
+      "n": 1024,
+      "samples": 200,
+      "normalized_greedy_mean": 0.5290737915039062,
+      "normalized_greedy_standard_error": 0.0009214065480890773
+    }
+  ]
+}

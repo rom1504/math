@@ -1,0 +1,18 @@
+{
+  "order": 16,
+  "cap_target": 28,
+  "variables": 49,
+  "distinct_cap_rows": 16320,
+  "absolute_energy_orbit_reps": 16384,
+  "gauge": "d=+1, A0i=+1, sorted B0i, at most three negative B0i",
+  "scope": "all symmetric chiral doubles with arbitrary independent A,B; no B~A restriction",
+  "seconds": 600.0,
+  "workers": 8,
+  "seed": 20260918,
+  "hint_cap": 30,
+  "solver_proof_object": false,
+  "status": "UNKNOWN",
+  "model_stats": "satisfaction model '': (model_fingerprint: 0x33adec50aa99221f)\n#Variables: 49 (49 primary variables)\n  - 49 Booleans in [0,1]\n#kLinear2: 6\n#kLinearN: 16'321 (#terms: 400'071)",
+  "elapsed_seconds": 603.3700098991394,
+  "response_stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 0\nbest_bound: 0\nintegers: 601\nbooleans: 47\nconflicts: 61724\nbranches: 92624\npropagations: 264524\ninteger_propagations: 9890570\nrestarts: 410\nlp_iterations: 0\nwalltime: 600.088\nusertime: 600.088\ndeterministic_time: 434.932\ngap_integral: 0\n"
+}

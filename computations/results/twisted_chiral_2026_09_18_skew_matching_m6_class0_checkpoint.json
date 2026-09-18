@@ -1,0 +1,333 @@
+{
+  "kind": "best",
+  "r": 6,
+  "calls": 5,
+  "count": 5,
+  "elapsed": 0.00212459,
+  "cap": 18,
+  "score": 18.2182,
+  "top_profiles": 10,
+  "near_profiles": 26,
+  "p": [
+    1,
+    0,
+    4,
+    5,
+    2,
+    3
+  ],
+  "s": [
+    1,
+    -1,
+    1,
+    1,
+    -1,
+    -1
+  ],
+  "d": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "child_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "bridge_hollow_matrix": [
+    [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      0,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      0,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      0,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "child_cap": 5,
+  "independent_verification": {
+    "n": 12,
+    "projective_assignments": 2048,
+    "min_energy": -18,
+    "max_energy": 18,
+    "cap": 18,
+    "argmin_gray": 70,
+    "argmax_gray": 986,
+    "min_count": 10,
+    "max_count": 10
+  },
+  "matrix_sha256": "ea94d933bb01a1f32ecac6a6d20dfe70843ed3bfd8197fabdc9a589d0d7c77ae",
+  "ratio_to_child": 1.2727922061357855,
+  "normalized_cap": 0.4330127018922193,
+  "label": "m6_class0",
+  "source": "computations/results/m6_minimizer_orbits.json",
+  "command": [
+    "/home/math/quadra/tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+    "matching",
+    "10",
+    "20260918"
+  ],
+  "random_seed": 20260918,
+  "search_source": "computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+  "search_source_sha256": "195cf41de233f391fe198b786d51baf3b4ed47baf36407cf7de1e2eee1468e45",
+  "evidence": "exact fixed-witness cap; ongoing family enumeration or search",
+  "sign_convention": "B[i,j]=s[i]*s[j]*A[p[i],p[j]]; p maps destination to source"
+}

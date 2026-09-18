@@ -101,7 +101,12 @@ exact normalized-seed inheritance ranks, control-phase calculations and
 updated drafts. No credential or unpreserved oversized-output flag was
 raised. This remains an intermediate snapshot; research continues.
 
-Latest publication audit: [2026-09-18 Boolean BH boundedness campaign](publication_audit_bh_boundedness_2026_09_18.md).
+Latest in-progress preservation: [2026-09-18 twisted chiral checkpoint](2026-09-18/174411Z/README.md),
+with 2,115 hash-verified research payloads. Exact witness caps, scoped
+obstructions, unfinished searches, and failed Gaussian comparisons are kept
+separate. This is not the end of the bounded three-hour campaign.
+
+Latest completed publication audit: [2026-09-18 Boolean BH boundedness campaign](publication_audit_bh_boundedness_2026_09_18.md).
 Its closing snapshot is [070738Z](2026-09-18/070738Z/README.md), with
 1,983 hash-verified payloads. Later canonical status edits are committed directly.
 The [2026-09-17 paper-combination audit](publication_audit_papers_2026_09_17.md)

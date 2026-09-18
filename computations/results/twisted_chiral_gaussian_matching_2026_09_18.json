@@ -1,0 +1,311 @@
+{
+  "description": "Equal-variance matching-twist Gaussian process versus sqrt(2) times the sum of two independent child processes",
+  "n": 4,
+  "g": [
+    [
+      0,
+      -1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "states": 256,
+  "covariance_entries_checked": 65536,
+  "common_variance": 24,
+  "minimum_covariance_difference": -48,
+  "maximum_covariance_difference": 24,
+  "witnesses": [
+    {
+      "kind": "negative",
+      "x": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "xp": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "yp": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "parent_coefficients": [
+        -2,
+        2,
+        -2,
+        -2,
+        2,
+        -2
+      ],
+      "parent_prime_coefficients": [
+        2,
+        -2,
+        2,
+        2,
+        -2,
+        2
+      ],
+      "replications": [
+        {
+          "n": 4,
+          "parent_covariance": -24,
+          "reference_covariance": 24,
+          "difference": -48
+        },
+        {
+          "n": 8,
+          "parent_covariance": -112,
+          "reference_covariance": 112,
+          "difference": -224
+        },
+        {
+          "n": 16,
+          "parent_covariance": -480,
+          "reference_covariance": 480,
+          "difference": -960
+        },
+        {
+          "n": 32,
+          "parent_covariance": -1984,
+          "reference_covariance": 1984,
+          "difference": -3968
+        },
+        {
+          "n": 64,
+          "parent_covariance": -8064,
+          "reference_covariance": 8064,
+          "difference": -16128
+        }
+      ]
+    },
+    {
+      "kind": "positive",
+      "x": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "xp": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "yp": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "parent_coefficients": [
+        -2,
+        2,
+        -2,
+        -2,
+        2,
+        -2
+      ],
+      "parent_prime_coefficients": [
+        -2,
+        2,
+        2,
+        -2,
+        2,
+        -2
+      ],
+      "replications": [
+        {
+          "n": 4,
+          "parent_covariance": 16,
+          "reference_covariance": -8,
+          "difference": 24
+        },
+        {
+          "n": 8,
+          "parent_covariance": 64,
+          "reference_covariance": -16,
+          "difference": 80
+        },
+        {
+          "n": 16,
+          "parent_covariance": 256,
+          "reference_covariance": -32,
+          "difference": 288
+        },
+        {
+          "n": 32,
+          "parent_covariance": 1024,
+          "reference_covariance": -64,
+          "difference": 1088
+        },
+        {
+          "n": 64,
+          "parent_covariance": 4096,
+          "reference_covariance": -128,
+          "difference": 4224
+        }
+      ]
+    }
+  ],
+  "iid_core_comparison": {
+    "minimum_covariance_difference": -24,
+    "maximum_covariance_difference": 24,
+    "balanced_nonchiral_witnesses": [
+      {
+        "kind": "negative",
+        "x": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "y": [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "xp": [
+          1,
+          1,
+          1,
+          -1
+        ],
+        "yp": [
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "replications": [
+          {
+            "n": 4,
+            "parent_covariance": -16,
+            "reference_covariance": 4,
+            "difference": -20
+          },
+          {
+            "n": 8,
+            "parent_covariance": -64,
+            "reference_covariance": 24,
+            "difference": -88
+          },
+          {
+            "n": 16,
+            "parent_covariance": -256,
+            "reference_covariance": 112,
+            "difference": -368
+          },
+          {
+            "n": 32,
+            "parent_covariance": -1024,
+            "reference_covariance": 480,
+            "difference": -1504
+          },
+          {
+            "n": 64,
+            "parent_covariance": -4096,
+            "reference_covariance": 1984,
+            "difference": -6080
+          }
+        ]
+      },
+      {
+        "kind": "positive",
+        "x": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "y": [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "xp": [
+          1,
+          -1,
+          1,
+          1
+        ],
+        "yp": [
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "replications": [
+          {
+            "n": 4,
+            "parent_covariance": 16,
+            "reference_covariance": -4,
+            "difference": 20
+          },
+          {
+            "n": 8,
+            "parent_covariance": 64,
+            "reference_covariance": -8,
+            "difference": 72
+          },
+          {
+            "n": 16,
+            "parent_covariance": 256,
+            "reference_covariance": -16,
+            "difference": 272
+          },
+          {
+            "n": 32,
+            "parent_covariance": 1024,
+            "reference_covariance": -32,
+            "difference": 1056
+          },
+          {
+            "n": 64,
+            "parent_covariance": 4096,
+            "reference_covariance": -64,
+            "difference": 4160
+          }
+        ]
+      }
+    ]
+  }
+}

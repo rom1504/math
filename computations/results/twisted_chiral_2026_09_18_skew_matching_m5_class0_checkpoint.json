@@ -1,0 +1,256 @@
+{
+  "kind": "best",
+  "r": 5,
+  "calls": 1,
+  "count": 1,
+  "elapsed": 3.4069e-05,
+  "cap": 15,
+  "score": 15.1472,
+  "top_profiles": 4,
+  "near_profiles": 9,
+  "p": [
+    0,
+    2,
+    1,
+    4,
+    3
+  ],
+  "s": [
+    1,
+    1,
+    -1,
+    1,
+    -1
+  ],
+  "d": [
+    -1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "child_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "bridge_hollow_matrix": [
+    [
+      0,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      0,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      0,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "child_cap": 4,
+  "independent_verification": {
+    "n": 10,
+    "projective_assignments": 512,
+    "min_energy": -15,
+    "max_energy": 15,
+    "cap": 15,
+    "argmin_gray": 38,
+    "argmax_gray": 212,
+    "min_count": 4,
+    "max_count": 4
+  },
+  "matrix_sha256": "405d15266dc6ca51915a89f559958b6f34f6097ba250cd676852e6984c089605",
+  "ratio_to_child": 1.3258252147247764,
+  "normalized_cap": 0.4743416490252569,
+  "label": "m5_class0",
+  "source": "computations/results/m5_minimizer_orbits.json",
+  "command": [
+    "/home/math/quadra/tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+    "matching",
+    "10",
+    "20260918"
+  ],
+  "random_seed": 20260918,
+  "search_source": "computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+  "search_source_sha256": "195cf41de233f391fe198b786d51baf3b4ed47baf36407cf7de1e2eee1468e45",
+  "evidence": "exact fixed-witness cap; ongoing family enumeration or search",
+  "sign_convention": "B[i,j]=s[i]*s[j]*A[p[i],p[j]]; p maps destination to source"
+}

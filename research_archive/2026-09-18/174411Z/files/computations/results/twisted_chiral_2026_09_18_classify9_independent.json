@@ -1,0 +1,27 @@
+{
+  "schema": "twisted-chiral-independent-order9-half-edge-census-v1",
+  "source": "computations/twisted_chiral_classify9_independent_2026_09_18.cpp",
+  "method": "Every root-gauged signing; direct addition of independently precomputed signed half-edge energy tables; not popcount energy identity",
+  "comparison": "All counts and minimum exactly match popcount census",
+  "census": {
+    "kind": "complete",
+    "order": 9,
+    "root_signings_checked": 268435456,
+    "projective_spins": 256,
+    "energy_checks": 3689097510,
+    "global_minimum": 12,
+    "minimizer_count": 1607760,
+    "class_counts": [
+      362880,
+      362880,
+      362880,
+      120960,
+      181440,
+      45360,
+      120960,
+      45360,
+      5040
+    ],
+    "elapsed": 77.2258
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "python": "3.9.2 (default, May 14 2026, 03:00:00) \n[GCC 10.2.1 20210110]",
+  "started_utc": "2026-09-18 06:50:58",
+  "elapsed_seconds": 23.946943759918213,
+  "records": [
+    {
+      "script": "computations/bh_boundedness_barrier_2026_09_18.py",
+      "evidence_type": "exact_and_analytic_certificate_checks",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"Exact finite identities; asymptotics require artifact proofs\",\n  \"exact\": {\n    \"assertions\": 7048,\n    \"enumeration_cases\": [\n      [\n        1,\n        1\n      ],\n      [\n        2,\n        1\n      ],\n      [\n        2,\n        2\n      ],\n      [\n        3,\n        1\n      ],\n      [\n        3,\n        2\n      ],\n      [\n        3,\n        3\n      ],\n      [\n        4,\n        1\n      ],\n      [\n        4,\n        2\n      ],\n      [\n        4,\n        3\n      ],\n      [\n        4,\n        4\n      ],\n      [\n        5,\n        1\n      ],\n      [\n        5,\n        2\n      ],\n      [\n        5,\n        3\n      ],\n      [\n        5,\n        4\n      ],\n      [\n        5,\n        5\n      ],\n      [\n        6,\n        1\n      ],\n      [\n        6,\n        2\n      ],\n      [\n        6,\n        3\n      ],\n      [\n        6,\n        4\n      ],\n      [\n        6,\n        5\n      ],\n      [\n        6,\n        6\n      ],\n      [\n        7,\n        1\n      ],\n      [\n        7,\n        2\n      ],\n      [\n        7,\n        3\n      ],\n      [\n        7,\n        4\n      ],\n      [\n        7,\n        5\n      ],\n      [\n        7,\n        6\n      ],\n      [\n        7,\n        7\n      ],\n      [\n        8,\n        1\n      ],\n      [\n        8,\n        2\n      ],\n      [\n        8,\n        3\n      ],\n      [\n        8,\n        4\n      ],\n      [\n        8,\n        5\n      ],\n      [\n        8,\n        6\n      ],\n      [\n        8,\n        7\n      ],\n      [\n        9,\n        1\n      ],\n      [\n        9,\n        2\n      ],\n      [\n        9,\n        3\n      ],\n      [\n        9,\n        4\n      ],\n      [\n        9,\n        5\n      ],\n      [\n        9,\n        6\n      ],\n      [\n        9,\n        7\n      ]\n    ],\n    \"exact_chebyshev_clt_diagnostics\": [\n      {\n        \"k\": 1,\n        \"sqrt_n_abs_a1\": 1.0,\n        \"full_q_k_norm_diagnostic\": 1.0,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"1\",\n        \"exact_denominator\": \"1\"\n      },\n      {\n        \"k\": 3,\n        \"sqrt_n_abs_a1\": 0.588477366255144,\n        \"full_q_k_norm_diagnostic\": 1.1811470036117047,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"143\",\n        \"exact_denominator\": \"243\"\n      },\n      {\n        \"k\": 5,\n        \"sqrt_n_abs_a1\": 0.603587072,\n        \"full_q_k_norm_diagnostic\": 1.0914390930427766,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"1178881\",\n        \"exact_denominator\": \"1953125\"\n      },\n      {\n        \"k\": 7,\n        \"sqrt_n_abs_a1\": 0.6052781911245845,\n        \"full_q_k_norm_diagnostic\": 1.010486460840046,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"58644804959\",\n        \"exact_denominator\": \"96889010407\"\n      },\n      {\n        \"k\": 9,\n        \"sqrt_n_abs_a1\": 0.6058283677168069,\n        \"full_q_k_norm_diagnostic\": 0.9528306765638226,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"10103509767225601\",\n        \"exact_denominator\": \"16677181699666569\"\n      },\n      {\n        \"k\": 15,\n        \"sqrt_n_abs_a1\": 0.6062961785318584,\n        \"full_q_k_norm_diagnostic\": 0.8568250963372928,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"7750528962822241877300031665601983\",\n        \"exact_denominator\": \"12783403948858939111232757568359375\"\n      },\n      {\n        \"k\": 21,\n        \"sqrt_n_abs_a1\": 0.6064135065749795,\n        \"full_q_k_norm_diagnostic\": 0.8098007335617108,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"985734484101553817446738327850171315272533909983278081\",\n        \"exact_denominator\": \"1625515384162495488635310116741260158419511738394408821\"\n      },\n      {\n        \"k\": 31,\n        \"sqrt_n_abs_a1\": 0.6064775317676495,\n        \"full_q_k_norm_diagnostic\": 0.7685952191824281,\n        \"full_q_k_norm_limit\": 0.6575198539828996,\n        \"exact_numerator\": \"5700041794148284361841700606780311498664402484761648531366981356146419090243419952009852799\",\n        \"exact_denominator\": \"9398603403385527029991230571625665906303885153111379831603689142618629334120036414236028831\"\n      }\n    ]\n  },\n  \"clt_diagnostics\": [\n    {\n      \"k\": 31,\n      \"n\": 480,\n      \"lambda\": 0.5,\n      \"retained_probability\": 0.9999999999998228,\n      \"sqrt_n_abs_a1\": 0.51944437102873,\n      \"limit\": 0.520260095022889\n    },\n    {\n      \"k\": 101,\n      \"n\": 5100,\n      \"lambda\": 0.5,\n      \"retained_probability\": 1.0000000000096638,\n      \"sqrt_n_abs_a1\": 0.52018356122934,\n      \"limit\": 0.520260095022889\n    },\n    {\n      \"k\": 301,\n      \"n\": 45300,\n      \"lambda\": 0.5,\n      \"retained_probability\": 0.9999999999765234,\n      \"sqrt_n_abs_a1\": 0.5202514811156853,\n      \"limit\": 0.520260095022889\n    },\n    {\n      \"k\": 1001,\n      \"n\": 501000,\n      \"lambda\": 0.5,\n      \"retained_probability\": 1.0000000004307608,\n      \"sqrt_n_abs_a1\": 0.5202593164040107,\n      \"limit\": 0.520260095022889\n    },\n    {\n      \"k\": 31,\n      \"n\": 961,\n      \"lambda\": 1.0,\n      \"retained_probability\": 1.00000000000014,\n      \"sqrt_n_abs_a1\": 0.6064775317677822,\n      \"limit\": 0.6065306597126334\n    },\n    {\n      \"k\": 101,\n      \"n\": 10201,\n      \"lambda\": 1.0,\n      \"retained_probability\": 0.9999999999973503,\n      \"sqrt_n_abs_a1\": 0.6065257001724351,\n      \"limit\": 0.6065306597126334\n    },\n    {\n      \"k\": 301,\n      \"n\": 90601,\n      \"lambda\": 1.0,\n      \"retained_probability\": 0.9999999998855367,\n      \"sqrt_n_abs_a1\": 0.6065301017094825,\n      \"limit\": 0.6065306597126334\n    },\n    {\n      \"k\": 1001,\n      \"n\": 1002001,\n      \"lambda\": 1.0,\n      \"retained_probability\": 0.9999999989696564,\n      \"sqrt_n_abs_a1\": 0.60653060882965,\n      \"limit\": 0.6065306597126334\n    },\n    {\n      \"k\": 31,\n      \"n\": 1922,\n      \"lambda\": 2.0,\n      \"retained_probability\": 1.0000000000016387,\n      \"sqrt_n_abs_a1\": 0.5507490048598678,\n      \"limit\": 0.5506953149031838\n    },\n    {\n      \"k\": 101,\n      \"n\": 20402,\n      \"lambda\": 2.0,\n      \"retained_probability\": 1.0000000000135756,\n      \"sqrt_n_abs_a1\": 0.5507003756616503,\n      \"limit\": 0.5506953149031838\n    },\n    {\n      \"k\": 301,\n      \"n\": 181202,\n      \"lambda\": 2.0,\n      \"retained_probability\": 0.9999999998438427,\n      \"sqrt_n_abs_a1\": 0.5506958846498866,\n      \"limit\": 0.5506953149031838\n    },\n    {\n      \"k\": 1001,\n      \"n\": 2004002,\n      \"lambda\": 2.0,\n      \"retained_probability\": 0.9999999999082412,\n      \"sqrt_n_abs_a1\": 0.5506953663549562,\n      \"limit\": 0.5506953149031838\n    }\n  ],\n  \"contraction_diagnostics\": {\n    \"critical_s\": 1.4426950408889634,\n    \"central\": [\n      {\n        \"d\": 2,\n        \"D_d_d\": 2.9999999999999996,\n        \"s0_factor\": 2.9999999999999996,\n        \"s1_factor\": 1.4999999999999998,\n        \"s_critical_factor\": 1.1036383235143268\n      },\n      {\n        \"d\": 3,\n        \"D_d_d\": 2.82842712474619,\n        \"s0_factor\": 2.82842712474619,\n        \"s1_factor\": 1.414213562373095,\n        \"s_critical_factor\": 1.0405201900457777\n      },\n      {\n        \"d\": 5,\n        \"D_d_d\": 2.7556759606310757,\n        \"s0_factor\": 2.7556759606310757,\n        \"s1_factor\": 1.3778379803155378,\n        \"s_critical_factor\": 1.0137565324465376\n      },\n      {\n        \"d\": 10,\n        \"D_d_d\": 2.727412826635506,\n        \"s0_factor\": 2.727412826635506,\n        \"s1_factor\": 1.363706413317753,\n        \"s_critical_factor\": 1.003359106506494\n      },\n      {\n        \"d\": 100,\n        \"D_d_d\": 2.718372444800634,\n        \"s0_factor\": 2.718372444800634,\n        \"s1_factor\": 1.359186222400317,\n        \"s_critical_factor\": 1.0000333358891047\n      },\n      {\n        \"d\": 1000,\n        \"D_d_d\": 2.7182827345536826,\n        \"s0_factor\": 2.7182827345536826,\n        \"s1_factor\": 1.3591413672768413,\n        \"s_critical_factor\": 1.000000333333589\n      },\n      {\n        \"d\": 100000,\n        \"D_d_d\": 2.718281828549655,\n        \"s0_factor\": 2.718281828549655,\n        \"s1_factor\": 1.3591409142748274,\n        \"s_critical_factor\": 1.0000000000333336\n      }\n    ],\n    \"grid_minimum_critical_factor_minus_1\": 5.3333987564130325e-06,\n    \"multi_color_thresholds\": [\n      {\n        \"colors\": 2,\n        \"threshold\": 1.4426950408889634\n      },\n      {\n        \"colors\": 3,\n        \"threshold\": 1.8204784532536746\n      },\n      {\n        \"colors\": 4,\n        \"threshold\": 2.1640425613334453\n      },\n      {\n        \"colors\": 5,\n        \"threshold\": 2.4853397382384474\n      },\n      {\n        \"colors\": 6,\n        \"threshold\": 2.7905531327562363\n      },\n      {\n        \"colors\": 7,\n        \"threshold\": 3.0833900542185044\n      },\n      {\n        \"colors\": 8,\n        \"threshold\": 3.3662884287409147\n      },\n      {\n        \"colors\": 9,\n        \"threshold\": 3.6409569065073493\n      },\n      {\n        \"colors\": 10,\n        \"threshold\": 3.908650337129266\n      }\n    ]\n  },\n  \"torsion_nondensity_exact\": {\n    \"proper_subsets_exactly_checked\": 254,\n    \"proper_subsum_modulus_lower_bound\": \"1/15\",\n    \"minimum_subsum_attaining_masks\": [\n      61,\n      62,\n      193,\n      194\n    ],\n    \"torsion_ratios_exactly_checked\": 210,\n    \"distance_of_z3_to_mu210_lower_bound\": \"1/200\",\n    \"uniform_distance_from_degree2_torsion_polynomials_lower_bound\": \"1/400\",\n    \"diagnostic_minimum_root_distance_lower_bound\": 0.006878361991474618\n  }\n}\n\n",
+      "stderr": "",
+      "elapsed_seconds": 1.9733433723449707
+    },
+    {
+      "script": "computations/bh_boundedness_counterexamples_2026_09_18_tangent.py",
+      "evidence_type": "exact_Eisenstein_and_rational_certificate",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_lower_bound\": \"2 + 2^(-18)\",\n  \"degree\": 4,\n  \"variables\": 10,\n  \"epsilon\": \"1/1024\",\n  \"old_support\": 256,\n  \"new_support\": 36,\n  \"outside_squared_mass\": \"45/4\",\n  \"rational_q_mass_gain\": \"33/1310768\",\n  \"radial_normalization_degree\": 8,\n  \"radial_normalization_top_coefficient\": {\n    \"503\": \"3/4\"\n  },\n  \"quotient_histogram\": {\n    \"(0, 0)\": 640,\n    \"(4, -8)\": 192,\n    \"(-4, 8)\": 192\n  },\n  \"diagnostic_ratio_only\": 2.0000467013452567\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.3300049304962158
+    },
+    {
+      "script": "computations/bh_boundedness_barrier_2026_09_18_tangent.py",
+      "evidence_type": "independent_exact_Eisenstein_certificate",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_status\": \"PASS\",\n  \"base_degree\": 2,\n  \"a_degree\": 1,\n  \"b_degree\": 3,\n  \"F_degree\": 4,\n  \"h_degree\": 4,\n  \"F_support\": 256,\n  \"h_support\": 60,\n  \"new_support\": 36,\n  \"h_squared_degree\": 8,\n  \"C_F_times_h_squared_degree\": 8,\n  \"C_coefficient_mask503\": \"3/4\",\n  \"normalization_idempotence_and_absorption\": \"PASS\",\n  \"h_squared_L2\": 18,\n  \"C_squared_L2\": 864,\n  \"outside_coefficient_squared_numerator_counts_denominator256\": {\n    \"48\": 24,\n    \"144\": 12\n  },\n  \"outside_squared_mass\": \"45/4\",\n  \"certified_degree4_ratio_lower_bound\": \"2 + 2^(-18), strictly\",\n  \"b_denominator\": 16,\n  \"b_numerators\": {\n    \"0\": [\n      4,\n      -4\n    ],\n    \"3\": [\n      -4,\n      -4\n    ],\n    \"4\": [\n      -4,\n      0\n    ],\n    \"7\": [\n      4,\n      -8\n    ],\n    \"8\": [\n      0,\n      -4\n    ],\n    \"11\": [\n      0,\n      -12\n    ],\n    \"17\": [\n      -4,\n      -4\n    ],\n    \"18\": [\n      -12,\n      12\n    ],\n    \"21\": [\n      12,\n      0\n    ],\n    \"22\": [\n      4,\n      -8\n    ],\n    \"25\": [\n      8,\n      -4\n    ],\n    \"26\": [\n      -8,\n      4\n    ]\n  },\n  \"z_histogram_denominator4\": {\n    \"(0, -8)\": 3,\n    \"(8, -8)\": 5,\n    \"(-8, 0)\": 3,\n    \"(0, 8)\": 5,\n    \"(8, 0)\": 5,\n    \"(0, 0)\": 8,\n    \"(-8, 8)\": 3\n  },\n  \"tangent_ratio_histogram_denominator256\": {\n    \"(0, 0)\": 640,\n    \"(-1024, 2048)\": 192,\n    \"(1024, -2048)\": 192\n  },\n  \"outside_q_mass_diagnostic\": 13.862641300706063,\n  \"ratio_diagnostics_not_certificates\": [\n    {\n      \"epsilon\": 0.0001,\n      \"ratio\": 2.0000018507870956,\n      \"convexity_lower_ratio\": 2.0000017956621514\n    },\n    {\n      \"epsilon\": 0.001,\n      \"ratio\": 2.0000481063260356,\n      \"convexity_lower_ratio\": 2.000042594110438\n    },\n    {\n      \"epsilon\": 0.01,\n      \"ratio\": 1.9993626395727515,\n      \"convexity_lower_ratio\": 1.998813325452516\n    },\n    {\n      \"epsilon\": 0.02,\n      \"ratio\": 1.9940609739488584,\n      \"convexity_lower_ratio\": 1.9918843849671133\n    },\n    {\n      \"epsilon\": 0.04,\n      \"ratio\": 1.9675493769031027,\n      \"convexity_lower_ratio\": 1.9591415825143428\n    },\n    {\n      \"epsilon\": 0.05,\n      \"ratio\": 1.9470833945775787,\n      \"convexity_lower_ratio\": 1.9342657573807944\n    },\n    {\n      \"epsilon\": 0.1,\n      \"ratio\": 1.8030513777563144,\n      \"convexity_lower_ratio\": 1.7595990774025805\n    }\n  ]\n}\n\n",
+      "stderr": "",
+      "elapsed_seconds": 0.28785133361816406
+    },
+    {
+      "script": "computations/bh_boundedness_counterexamples_2026_09_18_normalization.py",
+      "evidence_type": "rational_checks_plus_labeled_high_precision_diagnostics",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"rational_constant_checks\": 11,\n  \"R_degree_exact\": 8,\n  \"entropy_diagnostics\": [\n    {\n      \"epsilon_exponent\": 10,\n      \"entropy_minus_degree_budget_over_epsilon_squared_diagnostic\": \"-422.273991775666999\"\n    },\n    {\n      \"epsilon_exponent\": 20,\n      \"entropy_minus_degree_budget_over_epsilon_squared_diagnostic\": \"-266.324947735679701\"\n    },\n    {\n      \"epsilon_exponent\": 64,\n      \"entropy_minus_degree_budget_over_epsilon_squared_diagnostic\": \"419.890761015059735\"\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"entropy_minus_degree_budget_over_epsilon_squared_diagnostic\": \"1043.72322351901051\"\n    }\n  ],\n  \"theorem\": \"liminf B_m > 2 + 2^(-207)\"\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.8717734813690186
+    },
+    {
+      "script": "computations/bh_boundedness_counterexamples_2026_09_18_inheritance.py",
+      "evidence_type": "exact_finite_field_rank_certificate",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"prime\": 1009,\n  \"zeta\": 375,\n  \"square_degree_exact\": 8,\n  \"reports\": [\n    {\n      \"epsilon_exponent\": 10,\n      \"low_degree\": 0,\n      \"other_degree\": 8,\n      \"columns\": 1,\n      \"rows\": 11,\n      \"modular_rank\": 0,\n      \"kernel_dimension_upper_bound\": 1\n    },\n    {\n      \"epsilon_exponent\": 10,\n      \"low_degree\": 1,\n      \"other_degree\": 7,\n      \"columns\": 11,\n      \"rows\": 56,\n      \"modular_rank\": 11,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 10,\n      \"low_degree\": 2,\n      \"other_degree\": 6,\n      \"columns\": 56,\n      \"rows\": 176,\n      \"modular_rank\": 56,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 10,\n      \"low_degree\": 3,\n      \"other_degree\": 5,\n      \"columns\": 176,\n      \"rows\": 386,\n      \"modular_rank\": 176,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 10,\n      \"low_degree\": 4,\n      \"other_degree\": 4,\n      \"columns\": 386,\n      \"rows\": 638,\n      \"modular_rank\": 385,\n      \"kernel_dimension_upper_bound\": 1\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"low_degree\": 0,\n      \"other_degree\": 8,\n      \"columns\": 1,\n      \"rows\": 11,\n      \"modular_rank\": 0,\n      \"kernel_dimension_upper_bound\": 1\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"low_degree\": 1,\n      \"other_degree\": 7,\n      \"columns\": 11,\n      \"rows\": 56,\n      \"modular_rank\": 11,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"low_degree\": 2,\n      \"other_degree\": 6,\n      \"columns\": 56,\n      \"rows\": 176,\n      \"modular_rank\": 56,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"low_degree\": 3,\n      \"other_degree\": 5,\n      \"columns\": 176,\n      \"rows\": 386,\n      \"modular_rank\": 176,\n      \"kernel_dimension_upper_bound\": 0\n    },\n    {\n      \"epsilon_exponent\": 104,\n      \"low_degree\": 4,\n      \"other_degree\": 4,\n      \"columns\": 386,\n      \"rows\": 638,\n      \"modular_rank\": 385,\n      \"kernel_dimension_upper_bound\": 1\n    }\n  ]\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 2.2020468711853027
+    },
+    {
+      "script": "computations/bh_boundedness_positive_2026_09_18_blockunit.py",
+      "evidence_type": "exact_Gaussian_integer_certificate",
+      "returncode": 0,
+      "stdout": "{\"exact_certificate\": \"PASS\", \"blocks\": 1, \"variables\": 2, \"degree\": 1, \"support\": 2, \"unnormalized_modulus_squared\": 2, \"critical_ratio\": \"2^(1-1/(2*1))\"}\n{\"exact_certificate\": \"PASS\", \"blocks\": 2, \"variables\": 6, \"degree\": 2, \"support\": 8, \"unnormalized_modulus_squared\": 8, \"critical_ratio\": \"2^(1-1/(2*2))\"}\n{\"exact_certificate\": \"PASS\", \"blocks\": 3, \"variables\": 12, \"degree\": 3, \"support\": 32, \"unnormalized_modulus_squared\": 32, \"critical_ratio\": \"2^(1-1/(2*3))\"}\n{\"exact_certificate\": \"PASS\", \"blocks\": 4, \"variables\": 22, \"degree\": 4, \"support\": 128, \"unnormalized_modulus_squared\": 128, \"critical_ratio\": \"2^(1-1/(2*4))\"}\n{\"exact_certificate\": \"PASS\", \"blocks\": 5, \"variables\": 40, \"degree\": 5, \"support\": 512, \"unnormalized_modulus_squared\": 512, \"critical_ratio\": \"2^(1-1/(2*5))\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.24869775772094727
+    },
+    {
+      "script": "computations/bh_boundedness_positive_2026_09_18_bilinear.py",
+      "evidence_type": "exact_Gaussian_integer_certificate",
+      "returncode": 0,
+      "stdout": "{\"exact_certificate\": \"PASS\", \"variables\": 6, \"degree\": 2, \"support\": 8, \"vertices_checked\": 64, \"unnormalized_modulus_squared\": 8, \"critical_ratio\": \"2^(3/4)\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.028124570846557617
+    },
+    {
+      "script": "computations/bh_boundedness_barrier_2026_09_18_velocity_converse.py",
+      "evidence_type": "exact_symbolic_spectral_certificate",
+      "returncode": 0,
+      "stdout": "Values: [I, 1, -I, 1, 1, -I, 1, I]\nCharacteristic polynomial: lambda**4*(lambda**2 - 3)**2\nPASS: A^3=3A and tr(A^2)=12, so v(f)=sqrt(3).\nPASS: x3=x1 restricts f to i*x1*x2; tensor uniform degree rate=2.\n",
+      "stderr": "",
+      "elapsed_seconds": 0.34824442863464355
+    },
+    {
+      "script": "computations/bh_boundedness_barrier_2026_09_18_velocity_exact.py",
+      "evidence_type": "exact_algebraic_root_certificate",
+      "returncode": 0,
+      "stdout": "Characteristic polynomial of C C*: x**16 - 100*x**15 + 4498*x**14 - 120318*x**13 + 2132319*x**12 - 26403192*x**11 + 234732258*x**10 - 1515915552*x**9 + 7112558643*x**8 - 23995411096*x**7 + 56948285089*x**6 - 91663372696*x**5 + 94480461243*x**4 - 57080829672*x**3 + 17638228008*x**2 - 2109823200*x + 874800\nFactorization: (1, [(x**16 - 100*x**15 + 4498*x**14 - 120318*x**13 + 2132319*x**12 - 26403192*x**11 + 234732258*x**10 - 1515915552*x**9 + 7112558643*x**8 - 23995411096*x**7 + 56948285089*x**6 - 91663372696*x**5 + 94480461243*x**4 - 57080829672*x**3 + 17638228008*x**2 - 2109823200*x + 874800, 1)])\nExact isolating intervals and multiplicities: [((5/12017, 978/2350525), 1), ((54938/166805, 46053/139828), 1), ((75577/171188, 87977/199275), 1), ((142106/148989, 125837/131932), 1), ((383346/162787, 262069/111287), 1), ((913448/295653, 988037/319795), 1), ((434667/100361, 807149/186364), 1), ((1224194/265303, 1592657/345155), 1), ((1242931/185609, 761111/113658), 1), ((1248662/184319, 1037563/153158), 1), ((195269/25758, 2944917/388465), 1), ((120116/11845, 8819009/869669), 1), ((1812440/149991, 1075071/88969), 1), ((832442/65223, 2954127/231460), 1), ((1753402/125981, 2001003/143771), 1), ((1816813/130444, 2027612/145579), 1)]\nPASS: largest positive velocity is simple; 1.865 < v(f) < 1.867.\n",
+      "stderr": "",
+      "elapsed_seconds": 3.0054144859313965
+    },
+    {
+      "script": "computations/bh_boundedness_director_2026_09_18_quadratic_phase.py",
+      "evidence_type": "numerical_diagnostics_only",
+      "returncode": 0,
+      "stdout": "{\"checks\": 225, \"status\": \"PASS_DIAGNOSTICS\", \"maximum_observed_ratio\": 1.1533645918912732}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.278580904006958
+    },
+    {
+      "script": "computations/bh_boundedness_director_2026_09_18_flat_witness.py",
+      "evidence_type": "numerical_diagnostics_only",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS_DIAGNOSTICS\", \"cases\": 20, \"finite_checks\": 100}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.33986639976501465
+    },
+    {
+      "script": "computations/bh_boundedness_counterexamples_2026_09_18_phase_l2_compiler.py",
+      "evidence_type": "numerical_diagnostics_only",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"complex_evaluation_cases\": 400,\n  \"maximum_correlation_over_bound_diagnostic\": 0.9447522055370386,\n  \"dyadic_sum\": 4.507279597976545,\n  \"entropy_degree_constant\": 64\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.2772510051727295
+    },
+    {
+      "script": "computations/bh_boundedness_counterexamples_2026_09_18_checks.py",
+      "evidence_type": "finite_census_and_labeled_tensor_checks",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"sixth_root_extremizer_exact\": 32,\n    \"boolean_n4_exact\": 65536,\n    \"four_phase_n3_exact\": 65536,\n    \"generic_coded_products\": 240,\n    \"changing_seed_tensors\": 200,\n    \"shared_variable_selectors\": 200,\n    \"tensor_entropy_identities\": 8\n  },\n  \"sixth_root_histogram\": {\n    \"(-4, 4)\": 3,\n    \"(0, 4)\": 9,\n    \"(-4, 0)\": 3,\n    \"(4, -4)\": 9,\n    \"(4, 0)\": 5,\n    \"(0, -4)\": 3\n  },\n  \"worst_generic_ratio\": 1.4126347094326086,\n  \"worst_selector_ratio\": 1.258899384164187,\n  \"tensor_examples\": [\n    [\n      [\n        1,\n        1.189207115002721\n      ],\n      [\n        2,\n        1.1892071150027212\n      ],\n      [\n        3,\n        1.1892071150027217\n      ],\n      [\n        4,\n        1.1892071150027212\n      ]\n    ],\n    [\n      [\n        1,\n        0.9117897381626308\n      ],\n      [\n        2,\n        0.5917308668130941\n      ],\n      [\n        3,\n        0.3843682971564389\n      ],\n      [\n        4,\n        0.24974719953578556\n      ]\n    ]\n  ]\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 13.748149633407593
+    }
+  ],
+  "source_sha256": {
+    "computations/bh_boundedness_2026_09_18_replay_campaign.py": "a22d680e80e3ffb610366b79fa50104dc4f99ece9d4f37ae8940d1714fbe4def",
+    "computations/bh_boundedness_barrier_2026_09_18.py": "106febc02b8ff37d2b25ad2f626795b3dfc49c9c0e9750b0c79395bd02f080f9",
+    "computations/bh_boundedness_barrier_2026_09_18_tangent.py": "c13edb7e83b068a900b01ae13c04fd87605a0f2c08bf7cc9649d576d1ee41b78",
+    "computations/bh_boundedness_barrier_2026_09_18_velocity.py": "86d15ba93a286d56464813e57a0dfa3c0ed5b85d9a5774920bd8819eb4eb373a",
+    "computations/bh_boundedness_barrier_2026_09_18_velocity_converse.py": "a0ed92e364ef992b8735800e50104116daf632aaf8e801df9ee4e1537f74d82b",
+    "computations/bh_boundedness_barrier_2026_09_18_velocity_exact.py": "0af39c6abe4bbf7f45776be285a68d7aad74c10bc5af59ecf616a13e934fd02c",
+    "computations/bh_boundedness_barrier_2026_09_18_velocity_restrictions.py": "bfba97303a75952376195dc47a7130e603d6a86ca772f6b110913cc7aa3b8fa7",
+    "computations/bh_boundedness_counterexamples_2026_09_18_address_tangents.py": "89876ea47b10f9b0a621bad0f7ea327bb8e4d952f799aba95b0868ea465a8a30",
+    "computations/bh_boundedness_counterexamples_2026_09_18_checks.py": "3934e7234270ecab28ca52d5cfcb4e15d68689122d9d6be8a2339382b5d84490",
+    "computations/bh_boundedness_counterexamples_2026_09_18_hamiltonian.py": "ae66933786c83ff8848c1fdf0ad3d5bf96f9e4e1c16f35701622cb4123b55e1a",
+    "computations/bh_boundedness_counterexamples_2026_09_18_inheritance.py": "bda838e65654e58232eb73b6bd8273aed6abea9a2d6ce98f940d09683135ba51",
+    "computations/bh_boundedness_counterexamples_2026_09_18_normalization.py": "bd05eade3880c5eb55da45ee1d18dd8285d5f15f0db6ccc3b243761c922c7ecb",
+    "computations/bh_boundedness_counterexamples_2026_09_18_phase_l2_compiler.py": "e5cb062a5426cc21d30ccc122408d0921653be5f8d86c6a58ad3955a97835e00",
+    "computations/bh_boundedness_counterexamples_2026_09_18_skew_coupling.py": "2cbed198122e5de2b8f93c69805860109cf9a79b02cf3c7a4bc9c610143507f8",
+    "computations/bh_boundedness_counterexamples_2026_09_18_tangent.py": "071942f78f3ba9b9dfc9f8972847d38f8d1d3ed0c1d8b10195e172a2e9c2198e",
+    "computations/bh_boundedness_counterexamples_2026_09_18_unimodular_search.py": "e09fd425ea09d8004aafbe3840608d055072ef81399522d101bf819605050814",
+    "computations/bh_boundedness_director_2026_09_18_flat_witness.py": "82a32235fe277496adabf65d5c60f2f50f5abbb1d6e879ec39794fc30f243965",
+    "computations/bh_boundedness_director_2026_09_18_phase_control.py": "3f0ed07265943f5767523c4bf9f7c0992fb190a7e9954de4fc44dd5609850c1e",
+    "computations/bh_boundedness_director_2026_09_18_quadratic_phase.py": "4631dbcebc4547fe875bde4042440fa9f084808d26bbcca681a596945ab378b8",
+    "computations/bh_boundedness_positive_2026_09_18_bilinear.py": "305f8be3c5cb1ad27cb8d1fdd609733c4ff3a4fd27e8d6b51446773fccaa1055",
+    "computations/bh_boundedness_positive_2026_09_18_blockunit.py": "2cc345b2193615a5ae6b5149880235c4c1efa17b4d45e200073e94de94953b3a",
+    "computations/bh_boundedness_positive_2026_09_18_entropy.py": "07f6b943887871f31c4e03d4a2d02898b2d6954c10ffc57abab2a5d2e42012ab",
+    "computations/bh_boundedness_positive_2026_09_18_orbits.py": "1485591daec323ab744f41216d48e95ed83037f8fbd4a9110d1f0361588a78e0",
+    "computations/bh_boundedness_positive_2026_09_18_rounding.py": "d57eeb399f0570e6136a6be2fd3ca3411c53468f283819ba60890b55c2e14f5a",
+    "computations/bh_boundedness_positive_2026_09_18_symmetry.py": "65f2c01cacbe7b56ecb1453a6a01ff41964063c6925949e8b50653a3a73036dc",
+    "computations/bh_boundedness_positive_2026_09_18_unitary.py": "d51a58c50b7a209b58b1bbe5290961b2e315ac4b2322c6e00c8e8c69edb0d486"
+  }
+}
