@@ -1,8 +1,8 @@
 # Strategic steering
 
-Evidence cutoff: 2026-09-17 closing paper-combination audit.
+Evidence cutoff: 2026-09-18 bounded BH audit; original frontier remains Sept17.
 Status: signing-convergence research PAUSED. A separate bounded Boolean
-BH campaign is ACTIVE2026-09-18,04:27:50--07:27:50UTC; stop at three hours.
+BH campaign is in FINAL VERIFICATION,04:27:50--07:27:50UTC; stop at three hours.
 Original convergence remains OPEN. Judgments below are agent-authored.
 
 ## User objectives and authorization
@@ -32,6 +32,15 @@ Write/execution access and normal Git push were verified at campaign start.
 
 Only these objectives and workflow requirements are user directives.
 The mathematical priorities below are the director's judgments.
+
+## Agent-authored assessment: separate BH campaign
+
+Boundedness/divergence remains OPEN. Verified complex lower bounds are
+B_4>2+2^-18 and liminf B_m>2+2^-207: constant gains, not divergence.
+Sharp unitary subclasses and a flat-diagonal L2/degree certificate survive
+audit; fixed quadratic-phase compilers cannot supply divergence in their
+proved scope. No external novelty claim. No automatic extension is justified
+on the tested mechanisms. Evidence: artifacts/bh_boundedness_final_synthesis_2026_09_18.md.
 
 ## Reported original frontier, unchanged
 
@@ -137,9 +146,5 @@ while retaining an all-energy fluctuation bound? Work must test both
 obligations, not merely improve feature constants or count more ground states.
 No automatic new campaign is authorized after the present endpoint.
 
-Initial reconstructed portfolio: stochastic localization
-(El Alaoui--Montanari/Eldan), sharp biased Gram--Schmidt rounding
-(BDGL/Harshaw et al.), and Bernoulli decomposition (Bednorz--Latala).
-Convex-order comparison, Grothendieck localization, Talagrand concentration,
-and Brascamp--Lieb enter only with their precise hypotheses checked.
-The earlier BH transfer remains archived; generic power variants are not revived.
+The original paper portfolio and hypotheses remain archived in its synthesis.
+Earlier BH-to-signing power transfers are not revived by this separate campaign.

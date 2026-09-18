@@ -58,3 +58,43 @@ No research-bearing file is omitted for being unfinished, negative or unpolished
 The post-publication current-work audit must confirm that remaining ignored
 research matches its saved payload; final canonical status edits are committed
 directly rather than duplicating the snapshot.
+
+First post-publication audit after commit10953d4: all1,970 remaining current
+research originals match the closing snapshot; no new or changed research
+payload and no credential candidate. The normal push to main succeeded.
+
+## Final mathematical scope review
+
+The director additionally reread the rare-AND compiler, including the exact
+search invariant, verification-query count, cap-one polynomial output and
+Chernoff-to-L2 exponent. Its conclusion is an obstruction to a proposed
+velocity lower bound, not a BH counterexample. The independent-phase
+complex-evaluation theorem retains its distinct nonvanishing-error and
+subexponential-cap hypotheses; the later flat-diagonal result does not
+subsume those hypotheses. The rare-marker entropy identity was checked
+including its empty coefficient and the restriction p<=1/4.
+
+The fixed-level Chebyshev obstruction was checked through its whole-norm
+limit, not only one level: the auxiliary norm grows linearly while the
+requested full critical norm stays bounded. Its weighted scalar-budget
+closure barrier is not generalized to all possible uses of the papers.
+
+A further limited search for unimodular Boolean juntas, sphere-valued
+low-degree cube polynomials and symmetric Boolean BH constants returned
+mostly unrelated uses of "unimodular". No new theorem was imported, and
+no failure to find an antecedent is presented as proof of novelty.
+
+The final director physical-cube verifier is a 27th standalone campaign
+program. It deliberately imports neither old tangent certificate, uses
+Z[sqrt(-3)] rather than their Eisenstein-coordinate implementation, and
+recovers the Fourier coefficients from all1,024 physical vertex values.
+Its exact rational output is tracked directly at
+`computations/results/bh_boundedness_director_2026_09_18_physical_audit.json`.
+It independently verifies the cap histogram, new mass45/4, degree-eight
+normalization term and rational finite B_4 improvement. The earlier
+thirteen-program report's 26 hashes describe that report's actual cutoff;
+they are not claimed to include this later program.
+The barrier researcher independently read and replayed the new program:
+PASS. Its suggested coefficient-label clarification was incorporated:
+3/4 is the top coefficient of C=F|h|^2; the corresponding FR=C/48
+coefficient is1/64. This was a label correction, not a changed proof.

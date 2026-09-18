@@ -48,6 +48,10 @@ Two separately coded Eisenstein-integer replays verify the seed and tangent.
 Eleven rational checks verify the analytic margins used for normalization;
 500-digit calculations are supplementary diagnostics. Both other researchers
 and the director reconstructed the entire proof, including the order of limits.
+The director's final independent physical-cube verifier works instead in
+Z[sqrt(-3)], evaluates all 1,024 vertices, and transforms back to coefficients.
+It again certifies the degree-eight normalization term and rational B_4 margin;
+its source and exact JSON output are tracked in computations/.
 
 ## 2. Strongest positive class theorems
 
