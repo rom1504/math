@@ -137,3 +137,23 @@ diagnostics retain separate labels. Full outputs and source hashes are in
 tmp/bh_boundedness_2026_09_18/director_closing_replay.json and will be
 included in the dated closing preservation snapshot. Remaining work is
 proof/scope review, source attribution, dependency audit and publication.
+
+## Authorized endpoint: 07:27 UTC
+
+Research and independent verification are complete; no automatic extension.
+The final synthesis records the exact scope of the strict complex constant
+lower bounds, the sharp structured subclasses, and the flat-diagonal L2
+certificate. Neither boundedness nor divergence is proved. The original
+signing problem remains paused.
+
+A third independent verifier reconstructs the ten-bit tangent directly from
+physical cube values in Z[sqrt(-3)], without importing either earlier
+certificate. All exact checks passed and a separate researcher replayed it.
+The 07:07:38 dated archive preserves 1,983 research payloads, including drafts,
+failed attempts, sources, parameters and outputs. Later canonical proofs and
+the physical verifier are tracked directly. The publication audit documents
+the two intentionally untracked working/build files and ignored originals.
+
+See bh_boundedness_final_synthesis_2026_09_18.md for dependencies, remaining
+obstacles and the conditional admission test for any future campaign. No
+explicit growing-degree family currently justifies continuing these routes.

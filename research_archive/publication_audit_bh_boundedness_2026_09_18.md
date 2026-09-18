@@ -98,3 +98,10 @@ The barrier researcher independently read and replayed the new program:
 PASS. Its suggested coefficient-label clarification was incorporated:
 3/4 is the top coefficient of C=F|h|^2; the corresponding FR=C/48
 coefficient is1/64. This was a label correction, not a changed proof.
+
+The final independent director challenge endorsed stopping the tested
+construction families. It isolated a future conditional gate: an explicit
+unbounded phase-entropy/degree/cap ratio would imply BH divergence through
+the already-proved Taylor compiler and typical-set transfer. No candidate
+family was supplied; this is recorded as an admission criterion, not an
+additional theorem resolving boundedness or a reason to extend the run.

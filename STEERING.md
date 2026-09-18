@@ -2,7 +2,7 @@
 
 Evidence cutoff: 2026-09-18 bounded BH audit; original frontier remains Sept17.
 Status: signing-convergence research PAUSED. A separate bounded Boolean
-BH campaign is in FINAL VERIFICATION,04:27:50--07:27:50UTC; stop at three hours.
+BH campaign is COMPLETE,04:27:50--07:27:50UTC; no automatic extension.
 Original convergence remains OPEN. Judgments below are agent-authored.
 
 ## User objectives and authorization

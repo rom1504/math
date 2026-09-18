@@ -1,7 +1,7 @@
 # Boolean BH boundedness: closing synthesis
 
-Campaign: 2026-09-18, 04:27:50--07:27:50 UTC. This synthesis is being
-checked during the final verification period. The original quadratic-signing
+Campaign: 2026-09-18, 04:27:50--07:27:50 UTC. Independent reconstruction and
+the final verification period are complete. The original quadratic-signing
 convergence problem remains paused and its reported bounds are unchanged.
 
 ## Outcome
@@ -51,7 +51,10 @@ and the director reconstructed the entire proof, including the order of limits.
 The director's final independent physical-cube verifier works instead in
 Z[sqrt(-3)], evaluates all 1,024 vertices, and transforms back to coefficients.
 It again certifies the degree-eight normalization term and rational B_4 margin;
-its source and exact JSON output are tracked in computations/.
+its [standalone source](../computations/bh_boundedness_director_2026_09_18_physical_audit.py)
+and [exact output](../computations/results/bh_boundedness_director_2026_09_18_physical_audit.json)
+are tracked. Its independent reviewer checked the denominators and the
+distinction between the top coefficients of C=F|h|^2 and FR=C/48.
 
 ## 2. Strongest positive class theorems
 
@@ -169,6 +172,11 @@ passed. Diagnostic eigenvalues, searches and floating-point checks remain
 explicitly separate from exact certificates and analytic proofs. New code
 uses explicit seeds/constants or tracked sibling modules, not ignored input data.
 
+The [closing archive](../research_archive/2026-09-18/070738Z/README.md)
+preserves the full replay report, source hashes, drafts, failures and primary
+sources. The [publication audit](../research_archive/publication_audit_bh_boundedness_2026_09_18.md)
+records exclusions, dependencies and remaining working originals.
+
 ## 6. Remaining obstacle and continuation judgment
 
 The successful tangent step is not yet a scalable amplification operation.
@@ -192,3 +200,22 @@ normalized-seed or fixed quadratic-phase constructions is not justified by
 the present evidence. A new campaign needs a concrete growing-degree
 operation or a genuine extension beyond those proved classes. The original
 signing problem has not been reopened, solved, or improved by these results.
+
+One precise admission test for a FUTURE counterexample campaign is to find
+real nonconstant P and t!=0 for which
+
+    H(|widehat(exp(itP))|^2)/[|t| deg(P)||P||_infinity]
+
+is unbounded along an explicit family. Put a=|t|||P||_infinity and d=deg(P).
+The degree-(ceil(4ak)-1) Taylor polynomial in t sum_i P_i approximates
+exp(it sum_i P_i) uniformly, with error at most
+(eak/ceil(4ak))^ceil(4ak), and has Walsh degree at most d(ceil(4ak)-1).
+Its cap tends to one. The proved typical-set transfer therefore gives
+liminf critical ratio at least exp[H/(8ad)] for each fixed seed.
+An unbounded family of the displayed entropy/cost ratios would give BH
+divergence by choosing a sufficiently large tensor order for each seed.
+This is a CONDITIONAL admission criterion, not new progress on the target:
+no plausible explicit growing-degree family was found. Proving a universal
+bound for that ratio alone would not establish unrestricted BH boundedness.
+The independent closing director challenge agreed that this possibility
+does not justify automatically extending the tested constructions.
