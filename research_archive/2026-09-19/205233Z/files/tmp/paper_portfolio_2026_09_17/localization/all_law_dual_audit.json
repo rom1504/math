@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "seed": 2026091710,
+  "cases": [
+    {
+      "p": 4,
+      "n": 16,
+      "law_atoms": 24,
+      "matching_count": 3,
+      "physical_sign_queries": 32768,
+      "all_projective_queries_exhausted": true,
+      "Cp": "6",
+      "squared_cover_constant": "1/144",
+      "exact_dual_squared_slack_min": 0,
+      "exact_exceptional_chirp_overlap": 0,
+      "identity_law_atoms": 16,
+      "all_sign_laws_pointwise_constant": 0.7454306864031921,
+      "minimum_tested_mixed_response": 0.9683428667784535
+    },
+    {
+      "p": 8,
+      "n": 64,
+      "law_atoms": 3360,
+      "matching_count": 105,
+      "physical_sign_queries": 722,
+      "all_projective_queries_exhausted": false,
+      "Cp": "18/5",
+      "squared_cover_constant": "5/432",
+      "exact_dual_squared_slack_min": 0,
+      "exact_exceptional_chirp_overlap": 0,
+      "identity_law_atoms": 256,
+      "all_sign_laws_pointwise_constant": 1.7097652357355573,
+      "minimum_tested_mixed_response": 2.290341160352388
+    }
+  ],
+  "assertions": [
+    "both exact Boolean eigensectors",
+    "exact cap and nearlevel deficits",
+    "column Parseval and quadratic dual for every tested query",
+    "matching first and second moments",
+    "isotropic cancellation of the quadratic correction",
+    "exceptional chirp invalidates uncorrected pointwise constant"
+  ],
+  "scope": "Uniform proof is analytic; finite tests do not certify original minimizer applicability"
+}

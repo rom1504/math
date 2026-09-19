@@ -1,0 +1,1169 @@
+We proceed to prove Theorem \ref{thm:replica} on the replica-symmetric limit
+for the overlaps and free energy of the Gibbs measure $\mu_\Gibbs$,
+by specializing the preceding dynamical mean-field limit to the overdamped
+Langevin equation \eqref{eq:langevin}. Our analysis relies on several
+important structural
+properties of the kernels $C_\theta,R_\theta,C_g,R_g$ at large times.
+We collect these properties in the following two lemmas.
+
+First, under Assumption \ref{assump:convergence}, we have the following
+properties for $C_\theta,R_\theta$, including the existence of
+time-translation-invariant limits $c_\theta,r_\theta:\R \to \R$ for these
+kernels as $t \to \infty$, and a fluctuation-dissipation relation between
+these limits.
+
+\begin{lemma}\label{lemma:tti}
+Suppose Assumptions \ref{assump:X} and \ref{assump:dynamics} hold with $f=-U'$,
+the lower bound $\alpha>0$ in \eqref{eq:Uconvexity} satisfies
+$\alpha>\Lambda_{\max}$, and Assumption \ref{assump:convergence} holds. Then:
+\begin{enumerate}[(a)]
+\item The Gibbs measure $\mu_\Gibbs$ is well-defined, and there exist deterministic almost sure limits
+\begin{equation}\label{eq:vstardef-thm}
+v_*=\lim_{n \to \infty}\frac{1}{n}\langle \|\btheta\|_2^2 \rangle,
+\qquad q_*=\lim_{n \to \infty}\frac{1}{n}\langle \btheta^\top \btheta' \rangle.
+\end{equation}
+\item For each fixed $\tau \in \R$, there exists a limit
+$c_\theta(\tau)=\lim_{s \to \infty} C_\theta(s+\tau,s)$. This defines a
+symmetric positive-semidefinite function
+$c_\theta:\R \to \R$ satisfying, for some $C,c>0$ and
+all $s,t \geq 0$ and $\tau \in \R$,
+\begin{equation}\label{eq:cthetabound}
+\begin{gathered}
+c_\theta(0)=v_*, \qquad \lim_{\tau \to \infty} c_\theta(\tau)=q_*,\\
+|C_\theta(t,s)-c_\theta(t-s)|\leq Ce^{-c\min(s,t)},
+\qquad |c_\theta(\tau)-q_*| \leq Ce^{-c|\tau|}.
+\end{gathered}
+\end{equation}
+\item For each fixed $\tau \geq 0$, there exists a limit
+$r_\theta(\tau)=\lim_{s \to \infty} R_\theta(s+\tau,s)$. This defines a
+function $r_\theta:[0,\infty) \to \R$ satisfying, for some $C,c>0$
+and all $t \geq s \geq 0$ and $\tau \geq 0$,
+\begin{equation}\label{eq:rthetabound}
+\begin{gathered}
+|R_\theta(t,s)| \leq Ce^{-c(t-s)}, \qquad
+|r_\theta(\tau)| \leq Ce^{-c\tau},\\
+|R_\theta(t,s)-r_\theta(t-s)| \leq Ce^{-cs}, \qquad
+\int_0^t |R_\theta(t,s)-r_\theta(t-s)| \d s \leq Ce^{-ct}.
+\end{gathered}
+\end{equation}
+\item $c_\theta$ is continuous on $\R$, smooth on $(0,\infty)$,
+and has a right derivative $c_\theta'(0^+)=\lim_{\tau \to 0^+} c_\theta'(\tau)$
+at $\tau=0$. We have the fluctuation-dissipation relation
+\begin{equation}\label{eq:crthetaFDT}
+r_\theta(\tau)={-}c_\theta'(\tau) \text{ for } \tau>0,
+\qquad r_\theta(0)={-}c_\theta'(0^+)=1.
+\end{equation}
+Furthermore, for all $\tau>0$, we have
+\[c_\theta(\tau) \geq 0,
+\qquad r_\theta(\tau) \geq 0, \qquad r_\theta'(\tau) \leq 0.\]
+\end{enumerate}
+\end{lemma}
+
+We may then define time-translation-invariant limits for $C_g,R_g$ as $t \to
+\infty$ by
+\begin{align*}
+r_g(\tau)&=\sum_{p \geq 1} \kappa_{p+1}\,r_\theta^{\ast p}(\tau) \text{ for } \tau \geq 0,
+\qquad \text{ where } r_\theta(\tau)=0 \text{ for } \tau<0,\\
+c_g(\tau)&=\sum_{p,q \geq 0} \kappa_{p+q+2}\,
+r_\theta^{\ast p} * c_\theta * \bar r_\theta^{\ast q},
+\qquad \text{ where } \bar r_\theta(\tau)=r_\theta(-\tau) \text{ for all } \tau
+\in \R.
+\end{align*}
+Here, for integrable functions $a,b:\R \to \R$, we use the convolution notation
+\[[a*b](\tau)=\int_\R a(\tau-s)b(s)\d s,
+\qquad a^{*p}=\underbrace{a*\ldots*a}_{p \text{ times}},
+\qquad a^{*0}*b=b*a^{*0}=b.\]
+These definitions of $r_g,c_g$ are alternatively expressed in the Fourier
+domain (c.f.\ \eqref{eq:Fouriercalculations}) as
+\begin{equation}\label{eq:Fourierrgcg}
+\cF[r_g](\omega)=\cR_\Lambda(\cF[r_\theta](\omega)),
+\qquad
+\cF[c_g^0](\omega)=\cF[c_\theta^0](\omega)
+\frac{\cR_\Lambda(\cF[r_\theta](\omega))
+-\overline{\cR_\Lambda(\cF[r_\theta](\omega))}}
+{\cF[r_\theta](\omega)-\overline{\cF[r_\theta](\omega)}},
+\end{equation}
+where $\cF[f](\omega)=\int_\R f(\tau)e^{-i\omega\tau}\d\tau$ is the Fourier
+transform of $f$, $\cR_\Lambda$ is the R-transform \eqref{eq:Rtransform}, and $c_\theta^0(\tau)=c_\theta(\tau)-\lim_{s \to \infty} c_\theta(s)$ and $c_g^0(\tau)=c_g(\tau)-\lim_{s \to \infty} c_g(s)$.
+
+When $v_*-q_*$ of Lemma \ref{lemma:tti}
+is within the radius of convergence of \eqref{eq:Rtransform},
+we have the following properties for $C_g,R_g$, including
+importantly a fluctuation-dissipation relation between $c_g$ and $r_g$.
+
+\begin{lemma}\label{lemma:ttig}
+In addition to the conditions of Lemma \ref{lemma:tti}, suppose that
+\begin{equation}\label{eq:Rdomain}
+\sum_{p \geq 1} |\kappa_{p+1}|(v_*-q_*+\eps)^p<\alpha
+\end{equation}
+for some constant $\eps>0$ and the limits $v_*,q_*$ defined in Lemma
+\ref{lemma:tti}. Then:
+\begin{enumerate}[(a)]
+\item $r_g:[0,\infty) \to \R$ is continuous on $[0,\infty)$ and
+continuously-differentiable on $(0,\infty)$, with
+\begin{equation}\label{eq:intrgbound}
+\int_0^\infty |r_g(\tau)| \d \tau<\alpha
+\end{equation}
+and $\int_0^\infty |r_g'(\tau)|\d\tau<\infty$.
+Furthermore, for some $C,c>0$ and all $t \geq s \geq 0$ and $\tau \geq 0$,
+\begin{equation}\label{eq:rgbounds}
+\begin{gathered}
+|R_g(t,s)| \leq Ce^{-c(t-s)}, \qquad |r_g(\tau)| \leq Ce^{-c\tau},\\
+|R_g(t,s)-r_g(t-s)| \leq Ce^{-cs}, \qquad
+\int_0^t |R_g(t,s)-r_g(t-s)| \d s \leq Ce^{-ct}.
+\end{gathered}
+\end{equation}
+\item $c_g:\R \to \R$ is continuous, symmetric, and positive-semidefinite on
+$\R$, twice continuously-differentiable on $(0,\infty)$, and has
+a right derivative $c_g'(0^+)=\lim_{\tau \to 0^+} c_g'(\tau)$ at $\tau=0$.
+We have the fluctuation-dissipation relation
+\begin{equation}\label{eq:cgrgFDT}
+r_g(\tau)={-}c_g'(\tau) \text{ for all } \tau>0,
+\qquad r_g(0)={-}c_g'(0^+).
+\end{equation}
+Furthermore $\cR_\Lambda(v_*-q_*) \geq 0$ and
+$q_*\cR_\Lambda'(v_*-q_*) \geq 0$, and we have
+\begin{equation}\label{eq:cgbounds}
+\begin{gathered}
+c_g(0)=\cR_\Lambda(v_*-q_*)+q_*\cR_\Lambda'(v_*-q_*),
+\qquad
+\lim_{\tau \to \infty} c_g(\tau)=q_*\cR_\Lambda'(v_*-q_*),\\
+\qquad |C_g(t,s)-c_g(t-s)| \leq Ce^{-c\min(s,t)},
+\qquad |c_g(\tau)-q_*\cR_\Lambda'(v_*-q_*)| \leq Ce^{-c\tau}.
+\end{gathered}
+\end{equation}
+\end{enumerate}
+\end{lemma}
+
+The remainder of this section proves Lemmas \ref{lemma:tti}
+and \ref{lemma:ttig}. In these proofs and in our subsequent proof of Theorem
+\ref{thm:replica}, to ease the exposition of statements that hold almost
+surely for all large $n$, let us assume the following additional condition.
+\begin{assumption}\label{assump:as}
+For some constants $C,c>0$, with probability 1 over $(\X,\btheta^0)$
+(for every $n \geq 1$), we have
+$\|\X\|_\op \leq \Lambda_{\max}$, $\frac{1}{n}\|\btheta^0\|_2^2 \leq C$,
+and the statements of Assumption \ref{assump:convergence} hold.
+\end{assumption}
+This is without loss of generality: Indeed, letting $\cE_n$ be the
+$(\X,\btheta^0)$-dependent event where the statements of Assumption
+\ref{assump:as} hold, Assumptions \ref{assump:X}, \ref{assump:dynamics}, and
+\ref{assump:convergence} ensure that $\cE_n$ holds a.s.\ for all large $n$.
+We may define $(\tilde \X,\tilde \btheta^0)=(\X,\btheta^0)$ on $\cE_n$ and
+define $(\tilde \X,\tilde \btheta^0)$ arbitrarily on $\cE_n^c$ (e.g., setting $\tilde \X=0$ and $\tilde\btheta^0=0$) to satisfy
+Assumption \ref{assump:as}. Then Lemmas \ref{lemma:tti},
+\ref{lemma:ttig}, and Theorem \ref{thm:replica} for $(\tilde \X,\tilde
+\btheta^0)$ imply the corresponding results for $(\X,\btheta^0)$, since
+$(\tilde \X,\tilde \btheta^0)=(\X,\btheta^0)$ a.s.\ for all large $n$.
+
+\begin{proof}[Proof of Lemma \ref{lemma:tti}]
+Throughout, $\{\tilde\btheta^t\}_{t \in \R}$ denotes a stationary
+process satisfying \eqref{eq:langevin} with equilibrium initial state
+$\tilde\btheta^0 \sim \mu_\Gibbs$.
+To ease notation, we will use consistently the convention that
+\[\langle f(\btheta^t) \rangle=\E[f(\btheta^t) \mid \X,\btheta^0]\]
+denotes an expectation conditional on $\btheta^0$
+(the given initial condition satisfying Assumptions \ref{assump:dynamics} and
+\ref{assump:convergence}), while
+\[\langle f(\tilde \btheta^t) \rangle=\E[f(\tilde \btheta^t) \mid \X]\]
+denotes an expectation marginalizing over $\tilde\btheta^0 \sim \mu_\Gibbs$.
+The notation
+$\langle f(\btheta,\btheta') \rangle$ without time index continues to denote
+``static'' expectations over $\btheta,\btheta' \overset{iid}{\sim} \mu_\Gibbs$.
+(We will write these expectations more explicitly under couplings of these
+components.) We assume without loss of generality that Assumption
+\ref{assump:as} holds.
+Constants $C,C',c,c'>0$ depend on $\Lambda_{\max}$ and the potential $U(\cdot)$
+but do not depend on $n$, and may change from instance to instance.\\
+
+{\bf Parts (a) and (b):} Since $f=-U'$ satisfies Assumption
+\ref{assump:dynamics} and $U(\cdot)$ also satisfies \eqref{eq:Uconvexity} with
+$\alpha>\Lambda_{\max}$, there are constants $C,\eps>0$ such that
+\[Cx^2+C \geq U(x) \geq \frac{\Lambda_{\max}+\eps}{2}\,x^2-C \text{ for all } x \in \R.\]
+Then
+\begin{align*}
+\cZ&=\int \exp\left(\frac{1}{2}\btheta^\top \X\btheta-\sum_{i=1}^n
+U(\theta_i)\right)\d \btheta
+\geq \int \exp\left({-}\Big(\frac{\Lambda_{\max}}{2}+C\Big)\|\btheta\|_2^2
+-Cn\right)\d\btheta \geq e^{-C'n},\\
+\cZ&\leq \int\exp\left({-}\Big(\frac{\Lambda_{\max}+\eps}{2}-\frac{\Lambda_{\max}}{2}\Big)\|\btheta\|_2^2
++Cn\right)\d\btheta \leq e^{C'n},
+\end{align*}
+so $\mu_\Gibbs$ is well-defined.
+Also for any $M>0$, by a chi-squared tail bound,
+\begin{align*}
+\int_{\|\btheta\|_2^2 \geq Mn}
+\|\btheta\|_2^2 \exp\left(\frac{1}{2}\btheta^\top \X\btheta-\sum_{i=1}^n
+U(\theta_i)\right)\d \btheta
+&\leq \int_{\|\btheta\|_2^2 \geq Mn}
+\|\btheta\|_2^2
+\exp\left({-}\Big(\frac{\eps}{2}\Big)\|\btheta\|_2^2
++Cn\right)\d\btheta\\
+&\leq e^{C'n} \cdot e^{-cMn}
+\end{align*}
+Thus for $M>0$ large enough, we have
+$\langle \1\{\|\btheta\|_2^2 \geq Mn\} \cdot \frac{1}{n}\|\btheta\|_2^2 \rangle
+\leq 1$, implying for $C=M+1$ that
+\begin{equation}\label{eq:thetanormbound}
+\frac{1}{n}\langle \|\btheta\|_2^2 \rangle \leq C.
+\end{equation}
+
+Assumption \ref{assump:convergence} implies that for every $s \geq 0$, 
+there exists a coupling of $(\btheta^0,\btheta^s)$
+with $\tilde \btheta^0$ having law $\mu_\Gibbs$ conditional on $\btheta^0$
+(i.e.\ $\tilde \btheta^0$ is independent of $\btheta^0$), such that
+\begin{equation}\label{eq:thetatthetacouple}
+\frac{1}{n}\,\E[\|\btheta^s-\tilde \btheta^0\|_2^2 \mid \X,\btheta^0]
+\leq Ce^{-cs}.
+\end{equation}
+Combined with \eqref{eq:thetanormbound} to bound $\frac{1}{n}\langle
+\|\tilde \btheta^0\|_2^2 \rangle$, this implies also
+\begin{equation}\label{eq:thetatnormbound}
+\frac{1}{n}\langle \|\btheta^s\|_2^2 \rangle \leq C \text{ for all } s \geq 0.
+\end{equation}
+Denote
+\[P_t f(\btheta)=\E[f(\btheta^t) \mid \X,\,\btheta^0=\btheta]\]
+for any $f:\R^n \to \R^m$ and $m \geq 1$ for which this expectation exists.
+Let $\id:\R^n \to \R^n$ be the identity map. Then for any fixed
+$s,\tau \geq 0$,
+\[\frac{1}{n} \sum_{i=1}^n \langle \theta_i^{s+\tau}\theta_i^s \rangle
+=\frac{1}{n}\E[\btheta^{s\top} \E[\btheta^{s+\tau} \mid \X,\btheta^s] \mid
+\X,\btheta^0]=\frac{1}{n}\langle \btheta^{s\top} P_\tau\id(\btheta^s) \rangle,\]
+so Theorem \ref{thm:dmft-approx}(c) implies that
+\begin{equation}\label{eq:Cthetainterp}
+C_\theta(s+\tau,s)=\lim_{n \to \infty}
+\frac{1}{n}\langle \btheta^{s\top} P_\tau\id(\btheta^s) \rangle \text{ a.s.}
+\end{equation}
+Let us bound $P_t(\btheta)-P_t(\btheta')$ for any $\btheta,\btheta' \in \R^n$:
+For two diffusions
+$\{\btheta^t\}_{t \geq 0}$ and $\{{\btheta'}^t\}_{t \geq 0}$ 
+satisfying \eqref{eq:langevin} with
+initial conditions $\btheta$ and $\btheta'$, coupling these by
+the same Brownian motion, we have
+\[\frac{\d}{\d t} \|\btheta^t-{\btheta'}^t\|_2^2
+=2(\btheta^t-{\btheta'}^t)^\top[\X\btheta^t-\X{\btheta'}^t-U'(\btheta^t)+U'({\btheta'}^t)] \leq C\|\btheta^t-{\btheta'}^t\|_2^2,\]
+and thus for all $t \geq 0$,
+\begin{equation}\label{eq:thetainitcoupling}
+\|\btheta^t-{\btheta'}^t\|_2 \leq e^{C't}\|\btheta-{\btheta'}\|_2.
+\end{equation}
+Then also by Jensen's inequality, for all $t \geq 0$,
+\begin{equation}\label{eq:Ptaudiff}
+\|P_t\id(\btheta)-P_t\id({\btheta'})\|_2
+\leq e^{C't} \|\btheta-{\btheta'}\|_2.
+\end{equation}
+Let $(\btheta^0,\btheta^s)$ and $\tilde\btheta^0$ be coupled as in \eqref{eq:thetatthetacouple}.
+Then by this bound \eqref{eq:Ptaudiff}
+applied to $\btheta=\btheta^s$ and $\btheta'=\tilde \btheta^0$ and
+Cauchy-Schwarz,
+\begin{equation}\label{eq:Cthetacompare}
+\left|\frac{1}{n}\langle \btheta^{s\top} P_\tau\id(\btheta^s) \rangle
+-\frac{1}{n}\langle \tilde \btheta^{0\top} P_\tau\id(\tilde \btheta^0)
+\rangle\right| \leq Ce^{C\tau} \cdot e^{-cs}.
+\end{equation}
+Then by the existence a.s.\ of the limit \eqref{eq:Cthetainterp} for any fixed
+$s,\tau \geq 0$,
+\[\limsup_{n \to \infty}
+\frac{1}{n}\langle \tilde \btheta^{0\top} P_\tau\id(\tilde \btheta^0)
+\rangle-\liminf_{n \to \infty}
+\frac{1}{n}\langle \tilde \btheta^{0\top} P_\tau\id(\tilde \btheta^0)
+\rangle \leq 2Ce^{C\tau} \cdot e^{-cs} \text{ a.s.}\]
+Since $s \geq 0$ is arbitrary, this implies that for each fixed $\tau \geq 0$,
+there exists a (possibly random) almost sure limit
+\begin{equation}\label{eq:cthetadef}
+c_\theta(\tau):=\lim_{n \to \infty} 
+\frac{1}{n}\langle \tilde \btheta^{0\top} \tilde \btheta^\tau
+\rangle=\lim_{n \to \infty} 
+\frac{1}{n}\langle \tilde \btheta^{0\top} P_\tau\id(\tilde
+\btheta^0)\rangle \text{ a.s.}
+\end{equation}
+Taking $n \to \infty$ followed by $s \to \infty$
+in \eqref{eq:Cthetacompare} shows that $c_\theta(\tau)$ is deterministic and
+given by
+\begin{equation}\label{eq:cthetaqualitative}
+c_\theta(\tau)=\lim_{s \to \infty} C_\theta(s+\tau,s).
+\end{equation}
+Defining $c_\theta(\tau)=c_\theta(-\tau)$ for $\tau \leq 0$, and noting that
+$\langle \tilde \btheta^{0\top} \tilde \btheta^\tau \rangle
+=\langle \tilde \btheta^{0\top} \tilde \btheta^{-\tau} \rangle$ by
+reversibility, \eqref{eq:cthetaqualitative} and
+the first equality of \eqref{eq:cthetadef} then also hold for all $\tau \in \R$.
+Since $\tau \mapsto \frac{1}{n}\langle \tilde \btheta^{0\top} \tilde \btheta^\tau \rangle$ is symmetric positive-semidefinite for each $n$,
+this implies by \eqref{eq:cthetadef}
+that $c_\theta(\tau)$ is also symmetric positive-semidefinite.
+
+To show part (a), define $v_*=c_\theta(0)$.
+Then by \eqref{eq:cthetadef},
+\[v_*=c_\theta(0)=\lim_{n \to \infty}
+\frac{1}{n} \langle \|\tilde \btheta^0\|_2^2 \rangle
+=\lim_{n \to \infty} \frac{1}{n} \langle \|\btheta\|_2^2 \rangle \text{ a.s.}\]
+For any fixed $\tau \geq 0$, Assumption \ref{assump:convergence} implies
+there exists a coupling of
+$(\tilde\btheta^0,\tilde \btheta^\tau)$ with $\btheta$ having law
+$\mu_\Gibbs$ conditional on $\tilde \btheta^0$ (i.e.\ $\btheta$ is independent
+of $\tilde \btheta^0$), such that
+\begin{equation}\label{eq:thetaequilibriumcoupling}
+\frac{1}{n}\,\E[\|\tilde \btheta^\tau-\btheta\|_2^2 \mid \X]
+\leq Ce^{-c\tau}.
+\end{equation}
+Then by \eqref{eq:thetanormbound} and Cauchy-Schwarz,
+\begin{equation}\label{eq:cthetacompare}
+\left|\frac{1}{n}\langle \tilde \btheta^{0\top}\tilde \btheta^\tau
+\rangle-\frac{1}{n} \langle \btheta^\top \btheta' \rangle\right|
+=\left|\frac{1}{n}\E[\tilde \btheta^{0\top}\tilde \btheta^\tau\mid \X]
+-\frac{1}{n}\E[\tilde \btheta^{0\top}\btheta \mid \X]\right|
+\leq Ce^{-c\tau}.
+\end{equation}
+Thus, since the limit \eqref{eq:cthetadef} exists a.s.,
+\[\limsup_{n \to \infty} \frac{1}{n} \langle \btheta^\top \btheta' \rangle
+-\liminf_{n \to \infty} \frac{1}{n} \langle \btheta^\top \btheta' \rangle
+\leq 2Ce^{-c\tau} \text{ a.s.}\]
+Here $\tau \geq 0$ is arbitrary, so there exists an almost sure limit
+\[q_*=\lim_{n \to \infty} \frac{1}{n} \langle \btheta^\top \btheta' \rangle
+\text{ a.s.}\]
+Taking the limit $n \to \infty$ followed by $\tau \to \infty$
+in \eqref{eq:cthetacompare} shows that
+$q_*$ is deterministic and given by $q_*=\lim_{\tau \to \infty} c_\theta(\tau)$.
+This proves part (a).
+
+To check the bounds \eqref{eq:cthetabound} in part (b), similarly by Assumption
+\ref{assump:convergence}, there exists a coupling of
+$(\btheta^s,\btheta^{s+\tau})$ with $\btheta$ having law $\mu_\Gibbs$
+conditional on $\btheta^s$ (i.e.\ $\btheta$ is independent of $\btheta^s$)
+such that
+\begin{equation}\label{eq:thetascoupling}
+\E\left[\frac{1}{n}\,\E[\|\btheta^{s+\tau}-\btheta\|_2^2 \mid \X,\btheta^s] \;\bigg|\;
+\X,\btheta^0\right]
+\leq Ce^{-c\tau}.
+\end{equation}
+By this, \eqref{eq:thetatnormbound},
+and Cauchy-Schwarz,
+\[\E\left[\left|\frac{1}{n}\E[\btheta^{s\top}\btheta^{s+\tau} \mid \X,\btheta^s]
+-\frac{1}{n}\,\E[\btheta^{s\top} \btheta \mid \X,\btheta^s]\right| \;\bigg|\; \X,\btheta^0\right]
+\leq Ce^{-c\tau}.\]
+Then coupling $(\btheta^0,\btheta^s)$ with $\tilde \btheta^0$ via
+\eqref{eq:thetatthetacouple} (where $\tilde\btheta^0$ is independent of
+$\btheta^0$, and all $(\btheta^0,\btheta^s,\tilde \btheta^0)$ are
+independent of the above $\btheta \sim \mu_\Gibbs$)
+and applying Cauchy-Schwarz again,
+\begin{equation}\label{eq:Cthetastauqstar}
+\left|\frac{1}{n} \langle \btheta^{s\top}\btheta^{s+\tau} \rangle
+-\frac{1}{n}\langle \btheta^\top \btheta' \rangle\right|
+=\left|\frac{1}{n}\E[\btheta^{s\top}\btheta^{s+\tau} \mid \X,\btheta^0]
+-\frac{1}{n}\E[\tilde \btheta^{0\top} \btheta \mid \X,\btheta^0]\right|
+\leq Ce^{-c\tau}+Ce^{-cs}.
+\end{equation}
+Taking the limit $n \to \infty$ in \eqref{eq:Cthetacompare},
+\eqref{eq:cthetacompare}, and \eqref{eq:Cthetastauqstar} shows
+\[|C_\theta(s+\tau,s)-c_\theta(\tau)| \leq Ce^{C\tau} \cdot e^{-cs},
+\quad |c_\theta(\tau)-q_*| \leq Ce^{-c\tau},
+\quad |C_\theta(s+\tau,s)-q_*| \leq Ce^{-c\tau}+Ce^{-cs}.\]
+Choosing a constant $\iota>0$ small enough, the first bound is at most
+$C'e^{-c's}$ when $\tau \leq \iota s$. Applying this bound for $\tau
+\leq \iota s$ and the latter two bounds for $\tau>\iota s$, also
+\[|C_\theta(s+\tau,s)-c_\theta(\tau)| \leq C''e^{-c''\iota}.\]
+This shows all statements of part (b).\\
+
+{\bf Part (c):} In light of the last statement of Theorem
+\ref{thm:dmft-approx}(c), we first compute a simple form for
+$\frac{\d}{\d s}\frac{1}{n}\langle\btheta^{t\top} \b^s \rangle$
+over $s \in (0,t)$. Since
+$\{\btheta^t\}_{t \geq 0}$ solves \eqref{eq:langevin}, we have
+\[\sqrt{2}\,\b^s=\btheta^s-\btheta^0-\int_0^s [\X\btheta^r-U'(\btheta^r)]\d r.\]
+Then
+\begin{equation}\label{eq:thetabderiv}
+\sqrt{2}\,\frac{\d}{\d s}
+\left[\frac{1}{n}\langle\btheta^{t\top} \b^s \rangle\right]
+=\frac{\d}{\d s}\left[\frac{1}{n}\langle \btheta^{t\top} \btheta^s
+\rangle\right]-\frac{1}{n}\langle \btheta^{t\top}[\X\btheta^s-U'(\btheta^s)]
+\rangle.
+\end{equation}
+Define $e_i:\R^n \to \R$ by $e_i(\btheta)=\theta_i$. Then
+\[\frac{1}{n}\langle \btheta^{t\top}\btheta^s \rangle
+=\frac{1}{n}\sum_{i=1}^n P_s(e_i \cdot P_{t-s} e_i)(\btheta^0).\]
+Letting
+$-A f(\btheta)=\nabla f(\btheta)^\top [\X\btheta-U'(\btheta)]
++\Tr \nabla^2 f(\btheta)$
+be the generator of the diffusion, we have
+\[\partial_\tau P_\tau e_i={-}AP_\tau e_i={-}P_\tau Ae_i,
+\qquad \partial_s P_s(e_i \cdot P_\tau e_i)
+={-}P_sA(e_i \cdot P_\tau e_i)\]
+as equalities pointwise on $\R^n$.
+Then by the chain rule and dominated convergence,
+\begin{equation}\label{eq:semigroupderiv}
+\frac{\d}{\d s}P_s(e_i \cdot P_{t-s} e_i)
+={-}P_s A(e_i \cdot P_{t-s} e_i)
++P_s(e_i \cdot P_{t-s} Ae_i).
+\end{equation}
+Here, using $\nabla e_i(\btheta)=\e_i$ (the $i^\text{th}$ standard basis
+vector in $\R^n$) and $\nabla^2 e_i(\btheta)=0$, we have
+\begin{align*}
+{-}A(e_i \cdot P_{t-s}e_i)(\btheta)
+&=[P_{t-s}e_i(\btheta) \cdot \nabla e_i(\btheta)
++e_i(\btheta) \cdot \nabla P_{t-s}e_i(\btheta)]^\top[\X\btheta-U'(\btheta)]\\
+&\qquad+\Tr[\nabla P_{t-s}e_i(\btheta) \cdot \nabla e_i(\btheta)^\top
++\nabla e_i(\btheta) \cdot \nabla P_{t-s}e_i(\btheta)^\top
++e_i(\btheta) \cdot \nabla^2 P_{t-s}e_i(\btheta)]\\
+&=P_{t-s}e_i(\btheta) \cdot \e_i^\top[\X\btheta-U'(\btheta)]
++2\e_i^\top \nabla P_{t-s}e_i(\btheta)-(e_i \cdot AP_{t-s}e_i)(\btheta)
+\end{align*}
+Applying $P_s$ to this function,
+the last term cancels the second term of \eqref{eq:semigroupderiv}, and thus
+\[\frac{\d}{\d s}P_s(e_i \cdot P_{t-s} e_i)(\btheta^0)
+=\langle P_{t-s}e_i(\btheta^s) \cdot
+\e_i^\top[\X\btheta^s-U'(\btheta^s)] \rangle
++2\langle \e_i^\top \nabla P_{t-s}e_i(\btheta^s) \rangle.\]
+Then
+\begin{align*}
+\frac{\d}{\d s}\left[\frac{1}{n}\langle \btheta^{t\top}\btheta^s
+\rangle\right]
+&=\frac{1}{n}\sum_{i=1}^n \frac{\d}{\d s}P_s(e_i \cdot P_{t-s} e_i)(\btheta^0)\\
+&=\frac{1}{n} \langle \btheta^{t\top}[\X\btheta^s-U'(\btheta^s)] \rangle
++\frac{2}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_{t-s}e_i(\btheta^s) \rangle.
+\end{align*}
+Applying this to \eqref{eq:thetabderiv}, for all $s \in (0,t)$ we have
+\begin{equation}\label{eq:response}
+\frac{1}{\sqrt{2}}\,\frac{\d}{\d s}
+\left[\frac{1}{n}\langle\btheta^{t\top} \b^s \rangle\right]
+=\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_{t-s}e_i(\btheta^s)\rangle.
+\end{equation}
+We note that $\e_i^\top \nabla P_{t-s}e_i(\btheta^s)$ is a standard form of a
+response function for the Markov diffusion, see e.g.\ \cite{dembo2010markovian}.
+
+We now check that for any fixed $t \geq 0$, the right side of
+\eqref{eq:response} as a function
+of $s \in [0,t]$ is uniformly bounded and equicontinuous
+for all $n$. Given $\{\btheta^t\}_{t \geq 0}$,
+define a process $\{\J^{t,s}\}_{t \geq s \geq 0}$ by
+\[\frac{\d}{\d t}\J^{t,s}=[\X-\diag(U''(\btheta^t))]\J^{t,s} \text{ for } t \geq
+s, \qquad \J^{s,s}=\Id.\]
+By Assumptions \ref{assump:as} and \ref{assump:dynamics} for $f=-U'$,
+we have $\|\X-\diag(U''(\btheta))\|_\op \leq C$ for a constant $C>0$ and any
+$\btheta \in \R^n$, and thus
+\begin{equation}\label{eq:Jopbound}
+\|\J^{t,s}\|_\op \leq e^{C(t-s)} \text{ for all } t \geq s \geq 0.
+\end{equation}
+For any $s \geq 0$, conditional on $\btheta^s$, there
+exists a modification of $\{\btheta^t\}_{t \geq s}$ 
+and $\{\J^{t,s}\}_{t:\,t \geq s}$ where $\btheta^t$ is
+continuously-differentiable in $\btheta^s$ 
+with Jacobian $\frac{\d \btheta^t}{\d \btheta^s}=\J^{t,s}$
+\cite[Theorem II.3.1]{kunita2006stochastic}.
+Then by dominated convergence,
+\[\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_{t-s} e_i(\btheta^s)
+=\frac{1}{n}\sum_{i=1}^n \frac{\partial}{\partial \theta_i^s}
+\E[\theta_i^t \mid \X,\btheta^s]
+=\frac{1}{n}\sum_{i=1}^n 
+\E\left[\frac{\partial \theta_i^t}{\partial \theta_i^s}\,\bigg|\,
+\X,\btheta^s\right]
+=\E\left[\frac{1}{n}\Tr \J^{t,s}\,\bigg|\,\X,\btheta^s\right]\]
+Thus, \eqref{eq:response} is equivalently 
+$\frac{1}{n} \langle \Tr \J^{t,s} \rangle$, where $\langle \cdot \rangle$
+here and below denotes the expectation over both
+$\{\btheta^t\}_{t \geq 0}$ and $\{\J^{t,s}\}_{t \geq s \geq 0}$
+conditional on $(\X,\btheta^0)$. For any $s,s' \in [0,t]$ with
+$s \leq s'$, we have
+\[\|\J^{s',s}-\J^{s',s'}\|_\op
+=\|\J^{s',s}-\J^{s,s}\|_\op
+\leq \int_s^{s'}
+\left\|\frac{\d}{\d r}\J^{r,s}\right\|_\op \d r
+\leq \int_s^{s'} Ce^{C(r-s)}\d r \leq C(t)|s'-s|\]
+for some constant $C(t)>0$ not depending on $n$. Then by Gr\"onwall's
+inequality, for a (different) constant $C(t)>0$, also
+\[\left|\frac{1}{n}\Tr \J^{t,s}-\frac{1}{n}\Tr \J^{t,s'}\right|
+\leq \|\J^{t,s}-\J^{t,s'}\|_\op \leq C(t)|s'-s|.\]
+This and \eqref{eq:Jopbound} imply
+the uniform boundedness and equicontinuity of \eqref{eq:response} in the form
+$\frac{1}{n} \langle \Tr \J^{t,s} \rangle$ over
+$s \in [0,t]$, as claimed. This uniform boundedness, Arzel\`a-Ascoli, and
+Theorem \ref{thm:dmft-approx}(c) imply that
+\[\lim_{n \to \infty}
+\sup_{s \in [0,t]}
+\left|\frac{1}{\sqrt{2}} \cdot \frac{1}{n}\langle \btheta^{t\top}\b^s \rangle
+-\int_0^s R_\theta(t,\tau)\d \tau\right|=0 \text{ a.s.}\]
+Then this uniform equicontinuity, the
+continuity of $s \mapsto R_\theta(t,s)$ over $s \in [0,t]$ ensured by the domain $\cS_\theta^+$ of
+Theorem \ref{thm:dmft-approx}, and
+\eqref{eq:response} and Arzel\`a-Ascoli imply that for any $t \geq 0$,
+\begin{equation}\label{eq:Rthetarepr}
+\lim_{n \to \infty} \sup_{s \in [0,t]}
+\left|R_\theta(t,s)-\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla
+P_{t-s}e_i(\btheta^s) \rangle\right|=0 \text{ a.s.}
+\end{equation}
+
+We now apply arguments analogous to part (b).
+To define $r_\theta(\tau)$, let us establish the bound
+\begin{align}
+\left|\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_t e_i(\btheta)
+-\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_t e_i({\btheta'})\right|
+&\leq
+\frac{Ce^{Ct}}{\sqrt{n}}\|\btheta-{\btheta'}\|_2\label{eq:gradRbound}
+\end{align}
+for any $\btheta,{\btheta'} \in \R^n$ and $t \geq 0$.
+Let $\{\btheta^t\}_{t \geq 0}$ and
+$\{{\btheta'}^t\}_{t \geq 0}$ be two diffusions with initial states
+$\btheta,\btheta'$ coupled by the same Brownian motion, and define
+correspondingly $\{{\J}^{t,0}\}_{t \geq 0}$ and $\{{\J'}^{t,0}\}_{t \geq 0}$
+(restricting the above Jacobian processes to $s=0$).
+The above arguments show the representations
+$\frac{1}{n}\sum_{i=1}^n (\e_i^\top \nabla P_\tau e_i)(\btheta)
+=\frac{1}{n}\E[\Tr \J^{\tau,0} \mid \X,\btheta^0=\btheta]$,
+$\frac{1}{n}\sum_{i=1}^n (\e_i^\top \nabla P_\tau e_i)({\btheta'})
+=\frac{1}{n}\E[\Tr {\J'}^{\tau,0} \mid \X,{\btheta^0}'=\btheta']$.
+Under this coupling,
+\[\frac{\d}{\d t}(\J^{t,0}-{\J'}^{t,0})
+=\diag(U''(\btheta^t)-U''({\btheta'}^t))\J^{t,0}
++\diag(U''({\btheta'}^t))(\J^{t,0}-{\J'}^{t,0}).\]
+Since $U''(\cdot)$ is bounded and Lipschitz under Assumption
+\ref{assump:dynamics} for $f=-U'$,
+the right side is bounded in Frobenius norm as
+\begin{align*}
+&\|\diag(U''(\btheta^t)-U''({\btheta'}^t))\J^{t,0}
++\diag(U''({\btheta'}^t))(\J^{t,0}-{\J'}^{t,0})\|_F\\
+&\leq \|\diag(U''(\btheta^t)-U''({\btheta'}^t))\|_F \|\J^{t,0}\|_\op
++\|\diag(U''({\btheta'}^t))\|_\op\|\J^{t,0}-{\J'}^{t,0}\|_F\\
+&\leq e^{Ct}\|\btheta^t-{\btheta'}^t\|_2+C\|\J^{t,0}-{\J'}^{t,0}\|_F.
+\end{align*}
+Then Gr\"onwall's inequality and \eqref{eq:thetainitcoupling} imply
+\begin{align*}
+&\left|\frac{1}{n}\E[\Tr \J^{t,0} \mid \X,\btheta^0=\btheta]-
+\frac{1}{n}\E[\Tr {\J'}^{t,0} \mid \X,{\btheta^0}'=\btheta']\right|\\
+&\leq \frac{1}{\sqrt{n}} \|\J^{t,0}-{\J'}^{t,0}\|_F
+\leq \frac{Ce^{Ct}}{\sqrt{n}} \sup_{s \in [0,t]} \|\btheta^s-{\btheta'}^s\|_2
+\leq \frac{Ce^{C't}}{\sqrt{n}}\|\btheta-{\btheta'}\|_2,
+\end{align*}
+which shows \eqref{eq:gradRbound}. Then, recalling the coupling of
+$(\btheta^0,\btheta^s)$ and $\tilde\btheta^0$ which 
+gives \eqref{eq:thetatthetacouple}, let us apply \eqref{eq:gradRbound}
+with $\btheta=\btheta^s$ and $\btheta'=\tilde\btheta^0$. This shows
+\begin{equation}\label{eq:Rrcompare}
+\left|\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau
+e_i(\btheta^s)\rangle-\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau
+e_i(\tilde \btheta^0) \rangle\right|
+\leq \frac{Ce^{C\tau}}{\sqrt{n}}\,
+\E[\|\btheta^s-\tilde \btheta^0\|_2 \mid \X,\btheta^0]
+\leq Ce^{C\tau} \cdot e^{-cs}.
+\end{equation}
+By the existence of the almost sure limit
+$R_\theta(s+\tau,s)$ in \eqref{eq:Rthetarepr}, we then have
+\[\limsup_{n \to \infty} \frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau
+e_i(\tilde \btheta^0) \rangle
+-\liminf_{n \to \infty} \frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau
+e_i(\tilde \btheta^0) \rangle \leq 2Ce^{C\tau} \cdot e^{-cs} \text{ a.s.}\]
+Since $s \geq 0$ is arbitrary, this shows that for each fixed $\tau \geq 0$,
+there exists a limit
+\begin{equation}\label{eq:rthetadef}
+r_\theta(\tau)=\lim_{n \to \infty}
+\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau
+e_i(\tilde \btheta^0) \rangle \text{ a.s.}
+\end{equation}
+Taking the limit $n \to \infty$ followed by $s \to \infty$ in
+\eqref{eq:Rrcompare} shows that $r_\theta(\tau)$ is deterministic, with
+$r_\theta(\tau)=\lim_{s \to \infty} R_\theta(s+\tau,s)$.
+
+To bound $R_\theta(s+\tau,s)$, $r_\theta(\tau)$, and their difference, let us
+check that
+\begin{align}
+\left\langle \left|\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau
+e_i(\btheta^s)  \right|\right\rangle,
+\left\langle\left|\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau e_i(\tilde
+\btheta^0)\right| \right \rangle
+&\leq Ce^{-c\tau}.\label{eq:Rbound}
+\end{align}
+Define as above $\{\J^{t,s}\}_{t \geq s \geq 0}$ from
+$\{\btheta^t\}_{t \geq 0}$. Recalling the representation
+$\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau e_i(\btheta^s)
+=\frac{1}{n}\langle \Tr \J^{s+\tau,s} \rangle$,
+if $\tau \leq 1$ then the first statement of
+\eqref{eq:Rbound} follows immediately from
+the operator norm bound \eqref{eq:Jopbound}, which implies
+$|\frac{1}{n}\langle \Tr \J^{s+\tau,s} \rangle| \leq \|\J^{s+\tau,s}\|_\op
+\leq C$. For $\tau \geq 1$, we apply
+a Bismut-Elworthy-Li representation for $\nabla P_t$: 
+For any $f:\R^n \to \R$ with uniformly bounded first and second derivatives,
+\[\nabla P_t f(\btheta^0)
+=\frac{1}{t \sqrt{2}}\left \langle f(\btheta^t)\int_0^t (\J^{r,0})^\top
+\d \b^r \right \rangle\]
+where $\{\b^t\}_{t \geq 0}$ is the Brownian motion defining
+$\{\btheta^t,\J^{t,0}\}_{t \geq 0}$ \cite[Lemma 4.2]{fan2025dynamicalII}.
+Applying this with $t=1$ and $f_i=P_{\tau-1}e_i$, with the needed regularity of $f_i$ ensured by  \cite[Proposition A.2(c)]{fan2025dynamicalI},  we get
+\[\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau e_i(\btheta^0)
+=\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_1 f_i(\btheta^0)
+=\frac{1}{\sqrt{2}}\,\frac{1}{n}\left \langle 
+P_{\tau-1}\id(\btheta^1)^\top\int_0^1 (\J^{r,0})^\top
+\d \b^r \right \rangle.\]
+Thus, noting that $\langle \int_0^1 (\J^{r,0})^\top \d \b^r \rangle=0$ and
+applying Cauchy-Schwarz, Jensen's inequality, and the It\^o isometry, we have
+\begin{align}
+\sqrt{2} 
+\left|\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau e_i(\btheta^0)\right|
+&=\left|\frac{1}{n}\left \langle 
+\Big(P_{\tau-1}\id(\btheta^1)-\langle \btheta \rangle\Big)^\top\int_0^1
+(\J^{r,0})^\top \d \b^r \right \rangle\right|\notag\\
+&\leq \left\langle \frac{1}{n}\|P_{\tau-1}\id(\btheta^1)-\langle \btheta
+\rangle\|_2^2 \right\rangle^{1/2} \cdot
+\left\langle \frac{1}{n}\left\|\int_0^1 (\J^{r,0})^\top \d \b^r\right\|_2^2
+\right\rangle^{1/2}\notag\\
+&\leq \left\langle \frac{1}{n}\|\btheta^\tau-\langle \btheta
+\rangle\|_2^2 \right\rangle^{1/2} \cdot
+\left\langle \frac{1}{n}\int_0^1 \|\J^{r,0}\|_F^2\d r \right\rangle^{1/2}\notag\\
+&\leq C\left\langle \frac{1}{n}\|\btheta^\tau-\langle \btheta
+\rangle\|_2^2 \right\rangle^{1/2}\label{eq:responsebound},
+\end{align}
+the last inequality applying \eqref{eq:Jopbound}.
+Applying this bound with $\btheta^s$ in place of $\btheta^0$ shows
+\[\left|\frac{1}{n}\sum_{i=1}^n \e_i^\top \nabla P_\tau e_i(\btheta^s)\right|
+\leq C\,\E\left[\frac{1}{n}\|\btheta^{s+\tau}-\langle \btheta
+\rangle\|_2^2 \,\bigg|\,\X,\btheta^s\right]^{1/2}.\]
+Then applying the coupling bound \eqref{eq:thetascoupling}, 
+we obtain the first statement of
+\eqref{eq:Rbound}. The second statement of \eqref{eq:Rbound}
+follows similarly, applying the above
+bound \eqref{eq:responsebound}
+with $\tilde\btheta^0$ in place of $\btheta^0$ and using instead
+the coupling \eqref{eq:thetaequilibriumcoupling}.
+
+Taking the $n \to \infty$ limit in \eqref{eq:Rrcompare} and 
+\eqref{eq:Rbound}, we have
+\begin{equation}\label{eq:Rrcompare2}
+|R_\theta(s+\tau,s)-r_\theta(\tau)| \leq Ce^{C\tau} \cdot e^{-cs},
+\qquad R_\theta(s+\tau,s) \leq Ce^{-c\tau},
+\qquad r_\theta(\tau) \leq Ce^{-c\tau}.
+\end{equation}
+Then, choosing a small enough constant $\iota>0$ such that the first bound
+satisfies
+$Ce^{C\tau} \cdot e^{-cs} \leq C'e^{-c's}$ when 
+$\tau \leq \iota s/(1-\iota)$ (i.e.\ $s \geq (1-\iota)(s+\tau)$), we may write
+\[\int_0^t |R_\theta(t,s)-r_\theta(t-s)| \d s
+=\int_{(1-\iota)t}^t |R_\theta(t,s)-r_\theta(t-s)| \d s
++\int_0^{(1-\iota)t} |R_\theta(t,s)-r_\theta(t-s)| \d s.\]
+Applying the first bound of \eqref{eq:Rrcompare2} for the first integral
+and the latter two bounds of \eqref{eq:Rrcompare2} for the second integral,
+this shows
+\[\int_0^t |R_\theta(t,s)-r_\theta(t-s)| \d s \leq Ce^{-ct}.\]
+Applying the first bound of \eqref{eq:Rrcompare2} when $\tau \leq \iota
+s/(1-\iota)$ and the latter two bounds of \eqref{eq:Rrcompare2}
+when $\tau \geq \iota s/(1-\iota)$, we have also
+\[|R_\theta(s+\tau,s)-r_\theta(\tau)| \leq C'e^{-c's}.\]
+This shows all statements of part (c).\\
+
+{\bf Part (d).} Let
+$L^2(\mu_\Gibbs)$ be the space of functions $f:\R^n \to \R$ for which
+$\langle f(\btheta)^2 \rangle<\infty$. Since
+$\{\tilde\btheta^t\}_{t \in \R}$ is reversible, for each fixed $n$, there is a
+family $\{E_a\}_{a \geq 0}$ of orthogonal projections onto increasing closed
+linear subspaces of $L^2(\mu_\Gibbs)$ (corresponding to the spectral
+decomposition of the generator) such that for all $f,g \in
+L^2(\mu_\Gibbs)$ and $\tau \geq 0$,
+\[\langle f(\tilde\btheta^0) P_\tau g(\tilde\btheta^0) \rangle
+=\int_0^\infty e^{-a \tau} \d \langle f(\btheta)E_a g(\btheta)\rangle\]
+\cite[Theorem A.4.2]{bakry2014analysis}. Applying this with the coordinate
+functions $f=g=e_i$ and averaging over $i=1,\ldots,n$, there is
+then a positive measure $\mu_n$ (depending on $n$ and $\X$) for which
+\begin{equation}\label{eq:Ptaurepr}
+\frac{1}{n}\langle {\tilde \btheta}^{0\top} P_\tau\id(\tilde
+\btheta^0)\rangle=\int_0^\infty e^{-a\tau} \mu_n(\d a).
+\end{equation}
+The bound \eqref{eq:thetanormbound} implies
+$\int_0^\infty \mu_n(\d a)=\frac{1}{n}\,\langle \|\tilde\btheta^0\|_2^2 \rangle \leq C$. For any $M,\tau>0$, we have also
+\[\int_0^M \mu_n(\d a)+e^{-M\tau}\int_M^\infty \mu_n(\d a)
+\geq \int_0^\infty e^{-a\tau} \mu_n(\d a)=
+\frac{1}{n}\langle {\tilde \btheta}^{0\top} P_\tau \id(\tilde \btheta^0)
+\rangle\]
+so
+\begin{equation}\label{eq:tightnessbound}
+\int_M^\infty \mu_n(\d a)
+\leq \frac{1}{1-e^{-M\tau}}\left(\frac{1}{n}\,\langle \|\tilde\btheta^0\|_2^2
+\rangle-\frac{1}{n}\langle {\tilde \btheta}^{0\top} P_\tau
+\id(\tilde \btheta^0) \rangle\right).
+\end{equation}
+By It\^o's lemma, Cauchy-Schwarz, and \eqref{eq:thetanormbound},
+\begin{align*}
+\frac{\d}{\d t}\,\frac{1}{n}\langle \|\tilde\btheta^t-\tilde\btheta^0\|_2^2 \rangle
+&=\frac{2}{n}\langle (\tilde\btheta^t-\tilde\btheta^0)^\top[\X\tilde\btheta^t-U'(\tilde\btheta^t)]
+\rangle+2
+\leq C\left(\frac{1}{n}\langle \|\tilde\btheta^t-\tilde\btheta^0\|_2^2 \rangle+1\right),
+\end{align*}
+and hence Gr\"onwall's inequality shows
+\begin{equation}\label{eq:thetatildeequicontinuous}
+\frac{1}{n}\langle \|\tilde\btheta^t-\tilde\btheta^0\|_2^2 \rangle
+\leq C(e^{Ct}-1).
+\end{equation}
+Then by Jensen's inequality, also
+$\frac{1}{n}\langle \|\tilde\btheta^0-P_t \id(\tilde\btheta^0)\|_2^2 \rangle
+\leq C(e^{Ct}-1)$. Applying this to \eqref{eq:tightnessbound}, for all $n$,
+\[\int_M^\infty \mu_n(\d a) \leq \frac{C'(e^{C\tau}-1)^{1/2}}{1-e^{-M\tau}}.\]
+Taking $\tau=1/M$ and $M \to \infty$ shows that the sequence of measures
+$\{\mu_n\}_{n=1}^\infty$ is uniformly tight, and hence converges weakly along a
+subsequence of $n$ to a positive finite measure $\mu$ on $[0,\infty)$. Then
+\eqref{eq:cthetadef} and \eqref{eq:Ptaurepr}
+show that $c_\theta(\tau)$ admits a representation
+\begin{equation}\label{eq:cthetarepr}
+c_\theta(\tau)=\int_0^\infty e^{-a|\tau|} \mu(\d a) \text{ for all } \tau \in
+\R.
+\end{equation}
+From this representation and dominated convergence, we see that
+$c_\theta:\R \to \R$ is continuous, and its restriction to $(0,\infty)$ is
+smooth where derivatives may be computed under the integral. Since
+$\mu$ is a positive measure, this implies also for all $\tau>0$ that
+\[c_\theta(\tau) \geq 0,
+\qquad c_\theta'(\tau) \leq 0, \qquad c_\theta''(\tau) \geq 0.\]
+
+By the fluctuation-dissipation relation for the diffusion
+$\{\tilde \btheta^t\}_{t \in \R}$ (c.f.\ \cite[Lemma
+4.1]{fan2025dynamicalII} applied with the coordinate functions $A=B=e_i$),
+for any $\tau>0$ we have
+\begin{equation}\label{eq:diffusionFDT}
+\frac{1}{n}\sum_{i=1}^n \langle \e_i^\top \nabla P_\tau e_i(\tilde \btheta^0)
+\rangle={-}\frac{\d}{\d \tau}
+\left[\frac{1}{n}\langle \tilde \btheta^{0\top}\tilde \btheta^\tau
+\rangle\right].
+\end{equation}
+As a function of $\tau$, the left side is uniformly equicontinuous 
+on any compact interval of $[0,\infty)$ for all $n$, by the same argument as
+above that established the equicontinuity of \eqref{eq:response}. Then
+by Arzel\`a-Ascoli and the identities \eqref{eq:cthetadef}
+and \eqref{eq:rthetadef}, we have
+\[r_\theta(\tau)=-c_\theta'(\tau) \text{ for } \tau>0.\]
+Thus for all $\tau>0$,
+$r_\theta(\tau) \geq 0$ and $r_\theta'(\tau)={-}c_\theta''(\tau) \leq 0$.
+Since the equicontinuity of the left side of \eqref{eq:diffusionFDT}
+includes $\tau=0$, the identity
+\eqref{eq:rthetadef} implies that $r_\theta:[0,\infty) \to \R$ is continuous at
+0, so there exists a right derivative $c_\theta'(0^+)={-}r_\theta(0)$. Since
+$\nabla P_\tau e_i=\e_i$ at $\tau=0$, \eqref{eq:rthetadef} shows that
+$r_\theta(0)=1$, and hence $c_\theta'(0^+)=-1$.
+\end{proof}
+
+We now turn to Lemma \ref{lemma:ttig} on the analysis of $R_g,C_g$.
+
+\begin{proof}[Proof of Lemma \ref{lemma:ttig}]
+We extend the definitions of $R_\theta,C_\theta$ to $\R^2$ by setting
+$R_\theta(t,s)=0$ for all $t<0$ or $s \notin [0,t]$, and
+$C_\theta(t,s)=0$ for all $s<0$ or $t<0$. We also extend $r_\theta,r_\theta'$ to
+$\R$ by setting $r_\theta(\tau)=0$ for $\tau<0$
+and $r_\theta'(\tau)=0$ for $\tau \leq 0$.
+
+We will apply the following convolution bound: If
+$A_1,\ldots,A_p:\R^2 \to \R^2$ satisfy
+$|A_k(t,s)| \leq C_0e^{-c_0|t-s|}$ for each $k=1,\ldots,p$ and all $s,t \in \R$,
+then
+\[\int e^{(c_0/2)|t-s|}|A_k(t,s)| \d s \leq C_0\int e^{-(c_0/2)|t-s|}
+\d r=4C_0/c_0,\]
+and hence
+\begin{align*}
+\sup_{s,t}e^{(c_0/2)|t-s|} |A_1*\ldots*A_p(t,s)| 
+&\leq \sup_{s,t}\int e^{(c_0/2)|t-r|}|A_1(t,r)|e^{(c_0/2)|r-s|} |A_2*\ldots*A_p(r,s)| \d r\\
+&\leq (4C_0/c_0)\sup_{r,s} e^{(c_0/2)|r-s|}|A_2*\ldots*A_p(r,s)|\\
+&\leq \ldots \leq (4C_0/c_0)^{p-1} \cdot C_0.
+\end{align*}
+Thus for all $s,t \in \R$,
+\begin{equation}\label{eq:convolutionbound}
+|A_1*\ldots*A_p(t,s)| \leq
+\left(\frac{4C_0}{c_0}\right)^{p-1}C_0e^{-(c_0/2)|t-s|}.
+\end{equation}
+We will apply also the basic identity, if $a_1,\ldots,a_k:\R \to \R$ are
+integrable, then
+\begin{equation}\label{eq:integralconvolution}
+\int a_1*\ldots*a_k(\tau)\d \tau
+=\prod_{i=1}^k \int a_i(\tau)\d \tau.
+\end{equation}\\
+
+{\bf Part (a):} We have
+\[r_g(\tau)=\sum_{p \geq 1} \kappa_{p+1}\,r_\theta^{*p}(\tau).\]
+By the fluctuation-dissipation relation \eqref{eq:crthetaFDT} of
+Lemma \ref{lemma:tti},
+\[\int r_\theta(\tau)\d \tau
+=\int_0^\infty r_\theta(\tau)\d \tau=c_\theta(0)
+-\lim_{\tau \to \infty} c_\theta(\tau)=v_*-q_*.\]
+Then by \eqref{eq:integralconvolution}, for each $p \geq 1$,
+\begin{equation}\label{eq:rthetapintegral}
+\int_0^\infty r_\theta^{*p}(\tau)\d \tau
+=\int r_\theta^{*p}(\tau)\d \tau=(v_*-q_*)^p.
+\end{equation}
+Lemma \ref{lemma:tti} implies $0 \leq r_\theta(\tau) \leq
+r_\theta(0)=1$ for all $\tau \in \R$. Then also for each $p \geq 1$,
+\begin{equation}
+0 \leq r_\theta^{*p}(\tau)
+\leq \int r_\theta^{*(p-1)}(s) \d s
+=(v_*-q_*)^{p-1}.\label{eq:rthetapbound1}
+\end{equation}
+The condition \eqref{eq:Rdomain} then implies that the above series defining
+$r_g(\tau)$ is absolutely and uniformly convergent over $\tau \in [0,\infty)$.
+Since each summand is continuous in $\tau$, this shows $r_g(\tau)$ is continuous
+on $[0,\infty)$. The bound \eqref{eq:intrgbound} follows from
+\eqref{eq:rthetapintegral} and \eqref{eq:Rdomain},
+\[\int_0^\infty |r_g(\tau)| \d \tau
+\leq \sum_{p \geq 1} |\kappa_{p+1}| \int_0^\infty r_\theta^{*p}(\tau) \d \tau
+<\alpha.\]
+
+For any integrable $a:\R \to \R$ that is continuous and supported on
+$[0,\infty)$ and continuously-differentiable on $(0,\infty)$,
+we have $[a*b]'(\tau)=a(0)b(\tau)+[a'*b](\tau)$. Thus
+the derivative of $r_g$ exists on $(0,\infty)$ and is given by 
+\begin{equation}\label{eq:rgderiv}
+r_g'(\tau)=\kappa_2r_\theta'(\tau)+\sum_{p \geq 2} \kappa_{p+1}
+\Big(r_\theta^{*(p-1)}(\tau)+[r_\theta'*r_\theta^{*(p-1)}](\tau)\Big)
+\end{equation}
+provided that this series converges absolutely and uniformly over
+compact subsets of $(0,\infty)$. Note that by Lemma \ref{lemma:tti},
+\[\int r_\theta'(\tau)\d \tau
+=\int_0^\infty r_\theta'(\tau)\d \tau={-}r_\theta(0)=-1.\]
+Then since $r_\theta'(\tau) \leq 0$ and $r_\theta(\tau) \geq 0$,
+for any $p \geq 1$, \eqref{eq:integralconvolution} implies
+\begin{align*}
+0 \leq {-}[r_\theta'*r_\theta^{*p}](\tau)
+\leq -\int r_\theta'*r_\theta^{*(p-1)}(\tau)\d\tau
+=(v_*-q_*)^{p-1}.
+\end{align*}
+Then \eqref{eq:rgderiv} is absolutely
+and uniformly convergent on $(0,\infty)$ as claimed.
+Each summand is continuous in $\tau$, implying 
+that $r_g'$ is continuous. Furthermore, from the
+signs of $r_\theta$ and $r_\theta'$ and the above calculations, we have
+\[\int_0^\infty |r_g'(\tau)|\,\d \tau
+\leq \kappa_2+\sum_{p \geq 2} |\kappa_{p+1}|
+\left(\int_0^\infty r_\theta^{*(p-1)}(\tau)\d\tau
+-\int_0^\infty r_\theta'*r_\theta^{*(p-1)}(\tau)\d \tau\right)<\infty.\]
+
+To establish exponential decay of $r_g(\tau)$, note that the convergence
+condition of \eqref{eq:Rdomain} implies
+$\limsup_{p \to \infty} |\kappa_{p+1}|^{1/p}(v_*-q_*+\eps) \leq 1$.
+Thus, for some $p_0>0$, we have
+\begin{equation}\label{eq:p0def}
+|\kappa_{p+1}| \leq \left(\frac{1}{v_*-q_*+\eps/2}\right)^p \text{ for all }
+p \geq p_0.
+\end{equation}
+Then, letting $\delta>0$ be a small enough constant to be determined,
+the bound \eqref{eq:rthetapbound1} implies
+\[\sum_{p \geq \max(\delta\tau,p_0)} |\kappa_{p+1}|
+\cdot r_\theta^{*p}(\tau) \leq \sum_{p \geq \delta\tau}
+\left(\frac{1}{v_*-q_*+\eps/2}\right)^p
+\cdot (v_*-q_*)^{p-1} \leq Ce^{-c\delta\tau}\]
+for some constants $C,c>0$ depending on $v_*,q_*,\eps$. For
+$p<\max(\delta\tau,p_0)$, we have by Lemma \ref{lemma:tti} and
+\eqref{eq:convolutionbound} applied to $A_k(t,s)=r_\theta(t-s)$
+that $r_\theta^{*p}(\tau) \leq C^p e^{-c\tau}$
+for some $C,c>0$, any $p \geq 1$, and all $\tau \geq 0$.
+We also have $|\kappa_p| \leq C^p$ for a constant $C>0$ and all
+$p \geq 1$, by Proposition \ref{prop:freecumulants}. Thus
+\begin{align*}
+\sum_{p=1}^{\max(\delta\tau,p_0)}
+|\kappa_{p+1}| \cdot r_\theta^{*p}(\tau)
+\leq \sum_{p=1}^{\max(\delta\tau,p_0)}
+C^{p+1} \cdot C^pe^{-c\tau}
+&\leq C'e^{-c\tau} \cdot e^{C'\max(\delta \tau,p_0)}
+\end{align*}
+for some constants $C',c>0$ not depending on $\delta$. Choosing $\delta$
+small enough ensures this is at most $C''e^{-(c/2)\tau}$ for all $\tau \geq 0$
+and a constant $C''>0$ (depending on $p_0$, in the case $\delta\tau<p_0$). Combining the above two statements, for some $C,c>0$,
+\begin{equation}\label{eq:rgdecayproof}
+|r_g(\tau)|\leq \sum_{p \geq 1} |\kappa_{p+1}| \cdot r_\theta^{*p}(\tau)
+\leq Ce^{-c\tau}.
+\end{equation}
+
+To bound $R_g(t,s)$, recall that
+$R_g(t,s)=\sum_{p \geq 1} \kappa_{p+1}R_\theta^{*p}(t,s)$ where
+\[R_\theta^{*p}(t,s)
+=\int_s^t \d t_1 \int_s^{t_1} \d t_2 \ldots \int_s^{t_{p-2}} \d t_{p-1}
+R_\theta(t,t_1)R_\theta(t_1,t_2)\ldots R_\theta(t_{p-1},s).\]
+We establish analogues of \eqref{eq:rthetapintegral} and
+\eqref{eq:rthetapbound1} for $R_\theta$:
+Letting $\eps>0$ be the constant in \eqref{eq:Rdomain}, Lemma
+\ref{lemma:tti} ensures there exists $s_0>0$ such that if $t \geq
+s_0$, then $\int_0^t |R_\theta(t,s)-r_\theta(t-s)|\d s<\eps/4$.
+Hence
+\[\int_0^t |R_\theta(t,s)|\d s \leq v_*-q_*+\eps/4 \text{ for } t \geq s_0.\]
+Then
+\begin{align*}
+\int_0^t |R_\theta^{*p}(t,s)| \d s
+&\leq \int_0^t \d t_1
+\ldots \int_0^{t_{p-2}}\d t_{p-1}
+\int_0^{t_{p-1}}\d s\,
+|R_\theta(t,t_1)| \ldots |R_\theta(t_{p-1},s)|\\
+&\leq \sum_{k=0}^{p-1} \int_{s_0}^t \d t_1
+\ldots \int_{s_0}^{t_{k-1}} \d t_k
+\int_0^{s_0} \d t_{k+1} \ldots \int_0^{t_{p-1}}\d t_p\,
+|R_\theta(t,t_1)| \ldots |R_\theta(t_{p-1},t_p)|,
+\end{align*}
+where we set $t_p=s$ and
+stratify the domain of integration $t \geq t_1 \geq \ldots \geq t_p \geq 0$ by
+the largest index $k$ for which $t_k>s_0$, with $k=0$ if $t_1\leq s_0$.
+Bounding $|R_\theta(t_j,t_{j+1})| \leq C$ for all $j \geq k$, this gives
+\begin{align}
+\int_0^t |R_\theta^{*p}(t,s)|\d s
+&\leq \sum_{k=0}^{p-1} \int_{s_0}^t \d t_1
+\ldots \int_{s_0}^{t_{k-1}} \d t_k\,|R_\theta(t,t_1)|\ldots
+|R_\theta(t_{k-1},t_k)| \cdot \frac{(Cs_0)^{p-k}}{(p-k)!}\notag\\
+&\leq \sum_{k=0}^{p-1} (v_*-q_*+\eps/4)^k \cdot \frac{(Cs_0)^{p-k}}{(p-k)!}\notag\\
+&=\sum_{k=0}^{p-1} \frac{[Cs_0/(v_*-q_*+\eps/4)]^{p-k}}{(p-k)!}
+(v_*-q_*+\eps/4)^p\notag\\
+&\leq C'(v_*-q_*+\eps/4)^p\label{eq:Rthetapintegral}
+\end{align}
+for a constant $C'>0$ depending on $v_*,q_*,\eps,s_0$, which is an analogue of
+\eqref{eq:rthetapintegral}.
+Similarly, first bounding $|R_\theta(t_{p-1},s)| \leq C$ and applying the same
+argument, we have
+\begin{equation}\label{eq:Rthetapbound1}
+|R_\theta^{*p}(t,s)| \leq C''(v_*-q_*+\eps/4)^{p-1}
+\end{equation}
+which is an analogue of \eqref{eq:rthetapbound1}.
+
+Choosing a small enough constant $\delta>0$, and
+applying \eqref{eq:Rthetapbound1} for $p \geq \max(\delta(t-s),p_0)$
+and \eqref{eq:convolutionbound} for $p<\max(\delta(t-s),p_0)$,
+the same argument as for $r_g(\tau)$ above shows
+\begin{equation}\label{eq:Rgdecayproof}
+|R_g(t,s)| \leq Ce^{-c(t-s)}.
+\end{equation}
+To bound $|R_g(t,s)-r_g(t-s)|$, again fix a constant $\delta>0$ small
+enough. Observe that \eqref{eq:rthetapbound1} and \eqref{eq:Rthetapbound1} imply
+\[\sum_{p \geq \max(\delta s,p_0)}
+|\kappa_{p+1}| \cdot |R^{*p}_\theta(t,s)-r_\theta(t-s)^{*p}|
+\leq Ce^{-c\delta s}.\]
+For the summands $p<\max(\delta s,p_0)$, identify $r_\theta(t,s) \equiv
+r_\theta(t-s)$ and write
+\begin{align*}
+R_\theta^{*p}(t,s)-r_\theta^{*p}(t-s)
+&=\sum_{k=0}^{p-1} R_\theta^{*k} * (R_\theta-r_\theta)
+* r_\theta^{*(p-1-k)}(t,s)\\
+&=\sum_{k=0}^{p-1} \int_s^t \d t_1
+\int_s^{t_1} \d t_2\,R_\theta^{*k}(t,t_1)
+[R_\theta-r_\theta](t_1,t_2)
+r_\theta^{*(p-1-k)}(t_2,s).
+\end{align*}
+By Lemma \ref{lemma:tti}, we have $|[R_\theta-r_\theta](t_1,t_2)|
+\leq Ce^{-ct_2} \leq Ce^{-cs}$. Then,
+together with \eqref{eq:rthetapintegral} and \eqref{eq:Rthetapintegral},
+this gives
+\begin{align*}
+|R_\theta^{*p}(t,s)-r_\theta^{*p}(t-s)|
+&\leq \sum_{k=0}^{p-1}
+Ce^{-cs} \int_s^t \d t_1 \int_s^{t_1} \d t_2 \, |R_\theta^{*k}(t,t_1)|
+\cdot r_\theta^{*(p-1-k)}(t_2-s)\\
+&\leq C'pe^{-cs}(v_*-q_*+\eps/4)^{p-1}.
+\end{align*}
+Applying again $|\kappa_p| \leq C^p$, we then have
+\[\sum_{p=1}^{\max(\delta s,p_0)}
+|\kappa_{p+1}| \cdot |R_\theta(t,s)^{*p}-r_\theta(t-s)^{*p}|
+\leq Ce^{-cs} \cdot e^{C\max(\delta s,p_0)}.\]
+This is at most $C'e^{-(c/2)s}$ for $\delta>0$ small enough, and combining with
+the above yields
+\[|R_g(t,s)-r_g(t-s)| \leq Ce^{-cs}.\]
+By this bound, \eqref{eq:rgdecayproof}, and \eqref{eq:Rgdecayproof},
+also $\int_0^t |R_g(t,s)-r_g(t-s)|\d s \leq Ce^{-ct}$ by
+the same argument as following \eqref{eq:Rrcompare2}, 
+showing all statements of part (a).\\
+
+{\bf Part (b):} Recall that
+\[c_g(\tau)=\sum_{p,q \geq 0} \kappa_{p+q+2}\,
+r_\theta^{*p}*c_\theta*\bar r_\theta^{*q}(\tau).\]
+Bounding $0 \leq c_\theta(\tau) \leq C$ shows that
+$0 \leq r_\theta^{*p}*c_\theta*\bar r_\theta^{*q}(\tau) \leq
+C\int r_\theta^{*p}*\bar r_\theta^{*q}(s)\d s=C(v_*-q_*)^{p+q}$,
+so by \eqref{eq:Rdomain}, the above series defining
+$c_g(\tau)$ is absolutely and uniformly convergent over $\tau \in \R$.
+Since each summand is continuous, $c_g:\R \to \R$ is continuous.
+
+Write $c_\theta(\tau)=c_\theta^0(\tau)+q_*$. Note that
+for the constant function $q_*(\tau) \equiv q_*$, we have
+\begin{align*}
+\sum_{p,q \geq 0} \kappa_{p+q+2}\,r_\theta^{*p}
+*q_* *\bar r_\theta^{*q}(\tau)
+&=\sum_{p,q \geq 0} \kappa_{p+q+2}
+\cdot q_*\int r_\theta^{*p}*\bar r_\theta^{*q}(s)\d s\\
+&=q_*\sum_{p,q \geq 0} \kappa_{p+q+2}(v_*-q_*)^{p+q}\\
+&=q_*\sum_{k \geq 0} \kappa_{k+2} (k+1)(v_*-q_*)^k
+=q_*\cR_\Lambda'(v_*-q_*),
+\end{align*}
+where the last identity holds since \eqref{eq:Rdomain} implies
+$\cR_\Lambda(x)=\sum_{p \geq 0} \kappa_{p+1} x^p$ is absolutely convergent in a
+neighborhood of $v_*-q_*$. Thus
+\[c_g(\tau)=c_g^0(\tau)+q_*\cR_\Lambda'(v_*-q_*),
+\qquad c_g^0(\tau):=\sum_{p,q \geq 0} \kappa_{p+q+2}\,r_\theta^{*p}
+*c_\theta^0*\bar r_\theta^{*q}(\tau).\]
+
+To show exponential decay of $c_g^0(\tau)$, fix a constant $\delta>0$,
+and recall $p_0$ for which \eqref{eq:p0def} holds. Then, for summands where $p+q
+\geq \max(\delta\tau,p_0)$,
+bounding $|c_\theta^0(\tau)| \leq C$ for all $\tau \in \R$, we have as above
+\[\sum_{p,q:\,p+q \geq \max(\delta\tau,p_0)}
+|\kappa_{p+q+2}| \cdot |[r_\theta^{*p}*c_\theta^0
+*\bar r_\theta^{*q}](\tau)|
+\leq C\sum_{p,q:\,p+q \geq \max(\delta\tau,p_0)}
+|\kappa_{p+q+2}| \cdot (v_*-q_*)^{p+q} \leq C'e^{-c\delta\tau}.\]
+For $p+q \leq \max(\delta\tau,p_0)$, 
+applying the bounds $|r_\theta(\tau)|,|c_\theta^0(\tau)| \leq Ce^{-c\tau}$ from
+Lemma \ref{lemma:tti} together with \eqref{eq:convolutionbound},
+\begin{align*}
+&\sum_{p,q:\,p+q<\max(\delta\tau,p_0)}
+|\kappa_{p+q+2}| \cdot |[r_\theta^{*p}*c_\theta^0 *\bar r_\theta^{*q}](\tau)|
+\leq \sum_{p,q:\,p+q<\max(\delta\tau,p_0)}
+C^{p+q+1}e^{-c\tau}
+\leq C'e^{-c\tau} \cdot e^{C'\max(\delta\tau,p_0)}.
+\end{align*}
+Choosing $\delta>0$ small enough and combining with the above shows
+$\lim_{\tau \to \infty} c_g(\tau)=q_*\cR_\Lambda'(v_*-q_*)$ and
+\[|c_g(\tau)-q_*\cR_\Lambda'(v_*-q_*)|
+=|c_g^0(\tau)| \leq Ce^{-c\tau}.\]
+
+To bound $|C_g(t,s)-c_g(t-s)|$, identify $r_\theta(t,s) \equiv r_\theta(t-s)$
+and $c_\theta(t,s) \equiv c_\theta(t-s)$, and note that
+\[C_g(t,s)-c_g(t-s)=\sum_{p,q \geq 0}
+\kappa_{p+q+2} \big(R_\theta^{*p} * C_\theta * \bar R_\theta^{*q}
+-r_\theta^{*p} * c_\theta * \bar r_\theta^{*q}\big)(t,s).\]
+Fixing a small constant $\delta>0$, for summands where $p+q \geq
+\max(\delta\min(s,t),p_0)$, we may bound $|C_\theta(t,s)|,|c_\theta(t,s)| \leq
+C$ and apply \eqref{eq:rthetapintegral} and \eqref{eq:Rthetapintegral} to get
+\[\sum_{p,q:\,p+q \geq \max(\delta\min(s,t),p_0)}
+|\kappa_{p+q+2}| \cdot \big|\big(R_\theta^{*p} * C_\theta * \bar R_\theta^{*q}
+-r_\theta^{*p} * c_\theta * \bar r_\theta^{*q}\big)(t,s)\big|
+\leq Ce^{-c\delta\min(s,t)}.\]
+For the summands where $p+q<\max(\delta \min(s,t),p_0)$, write
+\[\big(R_\theta^{*p} * C_\theta * \bar R_\theta^{*q}
+-r_\theta^{*p} * c_\theta * \bar r_\theta^{*q}\big)(t,s)=\I+\II+\III\]
+where
+\begin{align*}
+\I&=R_\theta^{*p}*(C_\theta-c_\theta)*\bar R_\theta^{*q}(t,s),\\
+\II&=\sum_{k=0}^{p-1} R_\theta^{*k} * (R_\theta-r_\theta)
+*r_\theta^{*(p-1-k)}*c_\theta*\bar R_\theta^{*q}(t,s),\\
+\III&=\sum_{k=0}^{q-1} r_\theta^{*p}*c_\theta*\bar r_\theta^{*(q-1-k)}
+*(\bar R_\theta-\bar r_\theta)*\bar R_\theta^{*k}(t,s).\\
+\end{align*}
+For $\I$, applying $|C_\theta(t',s')-c_\theta(t',s')| \leq Ce^{-c\min(s',t')}$
+from Lemma \ref{lemma:tti}, and \eqref{eq:convolutionbound} to bound
+$|R_\theta^{*p}|$ and $|R_\theta^{*q}|$, we have
+\begin{align*}
+|\I|& \leq \int_0^t \d t' \int_0^s \d s'\,
+|R_\theta^{*p}(t,t')| \cdot |C_\theta(t',s')-c_\theta(t',s')|
+\cdot |R_\theta^{*q}(s,s')|\\
+&\leq \int_0^t\d t' \int_0^s\d s'
+\,Ce^{-c\min(s',t')} \cdot C^{p+q}e^{-c(t-t')-c(s-s')}.
+\end{align*}
+Considering separately the regions of integration where $\min(s',t') \geq
+\frac{1}{2}\min(s,t)$, where
+$s' \leq t'$ and $s' \leq \frac{1}{2}\min(s,t)$ in which
+case $s-s' \geq \frac{1}{2}\min(s,t)$,
+and where $t' \leq s'$ and $t' \leq \frac{1}{2}\min(s,t)$ in which
+case $t-t' \geq \frac{1}{2}\min(s,t)$, we get
+\[|\I|\leq C^{p+q} \cdot C'e^{-(c/2)\min(s,t)}\]
+For $\II$, let us apply from Lemma \ref{lemma:tti} that
+$|(R_\theta-r_\theta)(t,s)| \leq Ce^{-cs}$ when $s \geq 0$,
+and $|(R_\theta-r_\theta)(t,s)|=|r_\theta(t-s)| \leq C$ when $s<0$.
+Let us also apply \eqref{eq:convolutionbound} to bound
+$r_\theta^{*(p-1-k)}*c_\theta*\bar R_\theta^{*q}$.
+Then each term of $\II$ is bounded similarly as
+\begin{align*}
+&|R_\theta^{*k} * (R_\theta-r_\theta)
+*r_\theta^{*(p-1-k)}*c_\theta*\bar R_\theta^{*q}(t,s)|\\
+&\leq \int_0^t \d t_1 \int_{-\infty}^{t_1} \d t_2\,
+|R_\theta^{*k}(t,t_1)| \cdot |(R_\theta-r_\theta)(t_1,t_2)|
+\cdot |r_\theta^{*(p-1-k)}*c_\theta*\bar R_\theta^{*q}(t_2,s)|\\
+&\leq \int_0^t \d t_1 \int_{-\infty}^{t_1} \d t_2\,
+C^k e^{-c(t-t_1)} \cdot Ce^{-c\max(t_2,0)}
+\cdot C^{p+q-k}e^{-c|t_2-s|}\\
+&\leq C^{p+q}\int_{-\infty}^\infty
+C'e^{-c\max(t_2,0)-c|t_2-s|}\d t_2.
+\end{align*}
+Considering separately the regions where $t_2 \leq s/2$ and $t_2>s/2$, this is
+at most $C^{p+q} \cdot C''e^{-(c/2)s}$. Thus
+\[|\II| \leq C^{p+q} \cdot p \cdot C''e^{-(c/2)s}.\]
+Similarly, we have $|\III| \leq C^{p+q} \cdot q \cdot C''e^{-(c/2)t}$. Combining
+these bounds, for some constants $C,c>0$,
+\[|\I+\II+\III| \leq C^{p+q+1} \cdot (p+q+1) \cdot e^{-c\min(s,t)}.\]
+Thus
+\begin{align*}
+&\sum_{p,q:\,p+q<\max(\delta\min(s,t),p_0)}
+|\kappa_{p+q+2}| \cdot \big|\big(R_\theta^{*p} * C_\theta * \bar R_\theta^{*q}
+-r_\theta^{*p} * c_\theta * \bar r_\theta^{*q}\big)(t,s)\big|\\
+&\hspace{2in}\leq C'e^{-c\min(s,t)} \cdot e^{C'\max(\delta\min(s,t),p_0))},
+\end{align*}
+which is at most $C''e^{-(c/2)\min(s,t)}$ for small enough $\delta>0$. This
+establishes
+\[|C_g(t,s)-c_g(t-s)| \leq Ce^{-c\min(s,t)},\]
+showing both bounds of \eqref{eq:cgbounds}.
+Theorem \ref{thm:dmft-approx} implies $C_g$ is a positive-semidefinite kernel.
+Since $c_g(\tau)=\lim_{s \to \infty} C_g(s+\tau,s)$ for each fixed $\tau
+\in \R$, this implies that $c_g$ is symmetric positive-semidefinite
+on $\R$. Since $q_*\cR_\Lambda'(v_*-q_*)=\lim_{\tau \to \infty}
+c_g(\tau)$, we then have
+\[q_*\cR_\Lambda'(v_*-q_*) \geq 0.\]
+
+Finally, let us check the differentiability of $c_g^0(\tau)=c_g(\tau)-q_*\cR_{\Lambda}'(v_*-q_*)$,
+the fluctuation-dissipation relation \eqref{eq:cgrgFDT}, and the value of
+$c_g(0)$. Analogously to \eqref{eq:rgderiv}, $c_g^0$ is continuously-differentiable
+on $\R \setminus \{0\}$, with derivative
+\begin{align}
+{c_g^0}'(\tau)&=
+\sum_{p,q \geq 0} \kappa_{p+q+2} (r_\theta^{*p}*c_\theta^0*\bar r_\theta^{*q})'(\tau)\notag\\
+&=\sum_{p \geq 1,\,q \geq 0}
+\kappa_{p+q+2} \left(r_\theta^{*(p-1)}*c_\theta^0*\bar r_\theta^{*q}(\tau)
++r_\theta'*r_\theta^{*(p-1)}*c_\theta^0*\bar r_\theta^{*q}(\tau)\right)\notag\\
+&\hspace{0.5in}+\sum_{q \geq 1} \kappa_{q+2}
+\left(c_\theta^0 * \bar r_\theta^{*(q-1)}(\tau)
++c_\theta^0*\bar r_\theta^{*(q-1)} * \bar r_\theta'(\tau)\right)
++\kappa_2 c_\theta'(\tau).\label{eq:cgderiv}
+\end{align}
+This holds since the bound $0 \leq c_\theta(\tau) \leq C$
+and \eqref{eq:rthetapintegral}
+imply that \eqref{eq:cgderiv} is absolutely and uniformly convergent over
+$\tau \in \R \setminus \{0\}$.
+From the existence of $c_\theta'(0^+)$ in Lemma \ref{lemma:tti},
+this shows also the existence of $c_g'(0^+)={c_g^0}'(0^+)$. 
+Setting $r_g(\tau)=0$ for $\tau<0$ and $\bar r_g(\tau)=r_g(-\tau)$,
+and applying \eqref{eq:integralconvolution} and
+\eqref{eq:rthetapintegral}, both the series \eqref{eq:cgderiv} and
+\[r_g(\tau)=\sum_{p \geq 1} \kappa_{p+1} r_\theta^{*p}(\tau),
+\qquad \bar r_g(\tau)=\sum_{p \geq 1} \kappa_{p+1} \bar r_\theta^{*p}(\tau)\]
+are also absolutely convergent in $L^1(\R)$. Then, writing
+$\cF[f](\omega)=\int f(t) e^{-i\omega t} \d t$ for the Fourier transform
+and applying $\cF[f'](\omega)=i\omega \cF[f](\omega)$ on the Sobolev space $f
+\in W^{1,1}$, we have 
+\begin{equation}\label{eq:Fouriercalculations}
+\begin{aligned}
+\cF[c_g^0](\omega)
+&=\sum_{p,q \geq 0} \kappa_{p+q+2}
+\cF[(r_\theta^{*p}*c_\theta^0*\bar r_\theta^{*q})](\omega)\\
+&=\sum_{p,q \geq 0} \kappa_{p+q+2}
+\cF[r_\theta](\omega)^p\cF[c_\theta^0](\omega)\cF[\bar r_\theta](\omega)^q\\
+&=\cF[c_\theta^0](\omega)
+\sum_{k \geq 0} \kappa_{k+2} \frac{\cF[r_\theta](\omega)^{k+1}
+-\cF[\bar r_\theta](\omega)^{k+1}}{\cF[r_\theta](\omega)-\cF[\bar r_\theta](\omega)},\\
+\cF[{c_g^0}'](\omega)&=
+i\omega \cF[c_\theta^0](\omega)
+\sum_{k \geq 0} \kappa_{k+2} \frac{\cF[r_\theta](\omega)^{k+1}
+-\cF[\bar r_\theta](\omega)^{k+1}}{\cF[r_\theta](\omega)-\cF[\bar r_\theta](\omega)},\\
+\cF[r_g](\omega)&=\sum_{p \geq 1} \kappa_{p+1}\cF[r_\theta](\omega)^p,
+\qquad \cF[\bar r_g](\omega)=\sum_{p \geq 1} \kappa_{p+1}\cF[\bar r_\theta](\omega)^p.
+\end{aligned}
+\end{equation}
+Applying the fluctuation-dissipation relation
+$c_\theta'(\tau)={c_\theta^0}'(\tau)={-}r_\theta(\tau)$ from \eqref{eq:crthetaFDT}
+for $\tau>0$, we have
+\[\cF[r_\theta](\omega)=\int_0^\infty r_\theta(\tau)e^{-i\omega \tau}
+\d\tau=\int_0^\infty {-}{c_\theta^0}'(\tau)e^{-i\omega \tau}
+\d\tau=c_\theta^0(0)-\int_0^\infty i\omega c_\theta^0(\tau)e^{-i\omega \tau}
+\d \tau,\]
+and likewise
+\[\cF[\bar r_\theta](\omega)=\int_{-\infty}^0 r_\theta(-\tau)
+e^{-i\omega\tau}\d \tau=\int_{-\infty}^0 {c_\theta^0}'(\tau)e^{-i\omega \tau}\d \tau
+=c_\theta^0(0)+\int_{-\infty}^0 i\omega c_\theta^0(\tau)e^{-i\omega \tau}\d \tau.\]
+Thus
+\[\cF[r_\theta](\omega)-\cF[\bar r_\theta](\omega)
+={-}i\omega \int c_\theta^0(\tau)e^{-i\omega \tau}\d \tau
+={-}i\omega \cF[c_\theta^0](\omega).\]
+Applying this above shows
+\[\cF[{c_g^0}'](\omega)=-(\cF[r_g](\omega)-\cF[\bar r_g](\omega))
+=-\int \sign(\tau)r_g(|\tau|) e^{-i\omega\tau} \d \tau.\]
+Thus $c_g'(\tau)={c_g^0}'(\tau)={-}\sign(\tau)r_g(|\tau|)$ for a.e.\ $\tau \in \R$.
+The continuity of both functions restricted to $(0,\infty)$, and also
+from the right at $\tau=0$, implies ${-}c_g'(\tau)=r_g(\tau)$ for $\tau>0$ and
+${-}c_g'(0^+)=r_g(0)$, verifying \eqref{eq:cgrgFDT}. Finally, 
+recalling that $\lim_{\tau \to \infty} c_g(\tau)=q_*\cR_\Lambda'(v_*-q_*)$,
+this implies that
+\[c_g(0)-q_*\cR_\Lambda'(v_*-q_*)=\int_0^\infty r_g(\tau) \d \tau
+=\sum_{p \geq 1} \kappa_{p+1} \int_0^\infty r_\theta^{*p}(\tau) \d \tau
+=\sum_{p \geq 1} \kappa_{p+1} (v_*-q_*)^p=\cR_\Lambda(v_*-q_*).\]
+Since $c_g:\R \to \R$ is positive-semidefinite, we must have
+$\cR_\Lambda(v_*-q_*)=c_g(0)-\lim_{\tau \to \infty} c_g(\tau) \geq 0$.
+This shows all statements of part (b).
+\end{proof}

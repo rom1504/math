@@ -1,0 +1,4107 @@
+{
+  "status": "exact finite identity checks; no asymptotic conclusion",
+  "seed": 2026091917,
+  "case_count": 46,
+  "sector_permutations_checked": 2256,
+  "permutation_matching_pairs_checked": 120672,
+  "all_pass": true,
+  "cases": [
+    {
+      "n": 2,
+      "trial": 0,
+      "matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1
+      ],
+      "y": [
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        2,
+        0
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 1,
+      "matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1
+      ],
+      "z": [
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        2
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 2
+      },
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 2,
+      "matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1
+      ],
+      "y": [
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        1,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 4,
+      "sector_permutations": 1,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 3,
+      "matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        2,
+        0
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 4,
+      "matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1
+      ],
+      "y": [
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        1
+      ],
+      "w": [
+        -1,
+        -1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        2
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 2
+      },
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 5,
+      "matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        1
+      ],
+      "w": [
+        1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        1,
+        1
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 1
+      },
+      "probability_denominator": 4,
+      "sector_permutations": 1,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 6,
+      "matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1
+      ],
+      "y": [
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        2
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 2
+      },
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 7,
+      "matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1
+      ],
+      "z": [
+        1,
+        1
+      ],
+      "w": [
+        -1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        0,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 8,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 8,
+      "matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1
+      ],
+      "y": [
+        1,
+        -1
+      ],
+      "z": [
+        1,
+        1
+      ],
+      "w": [
+        1,
+        -1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        1,
+        1
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 1
+      },
+      "probability_denominator": 4,
+      "sector_permutations": 1,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 2,
+      "trial": 9,
+      "matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        -1
+      ],
+      "z": [
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        -1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        1,
+        1
+      ],
+      "row_margins": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "2": 1
+      },
+      "probability_denominator": 4,
+      "sector_permutations": 1,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 0,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        3,
+        0
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          0
+        ],
+        [
+          -4,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 48,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 1,
+      "matrix": [
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        1
+      ],
+      "w": [
+        1,
+        -1,
+        -1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        3
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          -2
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "3": 2
+      },
+      "probability_denominator": 48,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 2,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        -1
+      ],
+      "base_energy": 6,
+      "sector_sizes": [
+        2,
+        1
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "-1": 2,
+        "1": 4,
+        "3": 2
+      },
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 3,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        2,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          0,
+          0
+        ],
+        [
+          -4,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 4,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        -1,
+        1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        1,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -4
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 5,
+      "matrix": [
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        1,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 6,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        2,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          -2
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 7,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        1,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -4
+        ],
+        [
+          -2,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 16,
+      "sector_permutations": 2,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 8,
+      "matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1,
+        -1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        3
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 48,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 3,
+      "trial": 9,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        -1,
+        1
+      ],
+      "w": [
+        1,
+        1,
+        -1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        0,
+        3
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 48,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 0,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "y": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        4,
+        0
+      ],
+      "row_margins": [
+        [
+          -2,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          0,
+          -4,
+          -2,
+          -2
+        ],
+        [
+          0,
+          -4,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 24,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 1,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        1,
+        1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        0,
+        4
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -4,
+          0
+        ],
+        [
+          -4,
+          -4,
+          -6,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          0
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 24,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 2,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "y": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": 0,
+      "sector_sizes": [
+        3,
+        1
+      ],
+      "row_margins": [
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 96,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 3,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "w": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "base_energy": 4,
+      "sector_sizes": [
+        2,
+        2
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "4": 4
+      },
+      "probability_denominator": 64,
+      "sector_permutations": 4,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 4,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "base_energy": -8,
+      "sector_sizes": [
+        3,
+        1
+      ],
+      "row_margins": [
+        [
+          -4,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -4,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -4,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 96,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 5,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "base_energy": 0,
+      "sector_sizes": [
+        2,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          0,
+          0,
+          -4
+        ],
+        [
+          -2,
+          0,
+          0,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 64,
+      "sector_permutations": 4,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 6,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "base_energy": 4,
+      "sector_sizes": [
+        0,
+        4
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          2,
+          0
+        ],
+        [
+          -4,
+          -2,
+          0,
+          -2
+        ],
+        [
+          -2,
+          0,
+          2,
+          0
+        ],
+        [
+          -2,
+          0,
+          2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 24,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 7,
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        3,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          -4,
+          -4,
+          -2
+        ],
+        [
+          -2,
+          -6,
+          -4,
+          -2
+        ],
+        [
+          -2,
+          -6,
+          -4,
+          -2
+        ],
+        [
+          0,
+          -4,
+          -2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 96,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 8,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "y": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        1,
+        1,
+        1,
+        -1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        3,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -4,
+          -2
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          -2
+        ],
+        [
+          0,
+          0,
+          -2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 96,
+      "sector_permutations": 6,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 4,
+      "trial": 9,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "y": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        0,
+        4
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 24,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 0,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "base_energy": 8,
+      "sector_sizes": [
+        5,
+        0
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          2
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "5": 24
+      },
+      "probability_denominator": 3840,
+      "sector_permutations": 120,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 1,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "base_energy": 8,
+      "sector_sizes": [
+        0,
+        5
+      ],
+      "row_margins": [
+        [
+          2,
+          2,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          2,
+          2,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          0,
+          0,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          0,
+          0,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          0,
+          0,
+          -4,
+          -4,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 3840,
+      "sector_permutations": 120,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 2,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "w": [
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_energy": 12,
+      "sector_sizes": [
+        2,
+        3
+      ],
+      "row_margins": [
+        [
+          -2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          -2,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          -2,
+          2,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          -2,
+          2,
+          0,
+          0
+        ],
+        [
+          -2,
+          2,
+          0,
+          2,
+          4
+        ]
+      ],
+      "stable_matching_sum_numerator": {
+        "-1": 4,
+        "1": 12,
+        "3": 12,
+        "5": 4
+      },
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 3,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        2,
+        3
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2,
+          -2
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -6
+        ],
+        [
+          -4,
+          -6,
+          0,
+          -6,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 4,
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": -8,
+      "sector_sizes": [
+        2,
+        3
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -2,
+          -4,
+          -2
+        ],
+        [
+          -6,
+          -6,
+          -6,
+          -6,
+          -4
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -2,
+          0
+        ],
+        [
+          -6,
+          -6,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -4,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 5,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "base_energy": 8,
+      "sector_sizes": [
+        5,
+        0
+      ],
+      "row_margins": [
+        [
+          4,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          -4,
+          0,
+          -4,
+          -4
+        ],
+        [
+          4,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          -2,
+          2,
+          -2,
+          -2
+        ],
+        [
+          2,
+          -2,
+          2,
+          -2,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 3840,
+      "sector_permutations": 120,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 6,
+      "matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_energy": 4,
+      "sector_sizes": [
+        2,
+        3
+      ],
+      "row_margins": [
+        [
+          0,
+          0,
+          -2,
+          -4,
+          2
+        ],
+        [
+          0,
+          0,
+          -2,
+          -4,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          -4,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          -4,
+          2
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -8,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 7,
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "w": [
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        2,
+        3
+      ],
+      "row_margins": [
+        [
+          -4,
+          -2,
+          -4,
+          -8,
+          -6
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -6,
+          -4
+        ],
+        [
+          -2,
+          0,
+          0,
+          -4,
+          -2
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -6,
+          -4
+        ],
+        [
+          0,
+          2,
+          0,
+          -4,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 8,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "w": [
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        4,
+        1
+      ],
+      "row_margins": [
+        [
+          -2,
+          -4,
+          -4,
+          -8,
+          -6
+        ],
+        [
+          2,
+          0,
+          0,
+          -4,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -4,
+          -2
+        ],
+        [
+          0,
+          -2,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -6,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 768,
+      "sector_permutations": 24,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 5,
+      "trial": 9,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "z": [
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "base_energy": -4,
+      "sector_sizes": [
+        3,
+        2
+      ],
+      "row_margins": [
+        [
+          2,
+          0,
+          -2,
+          2,
+          2
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -2,
+          -4
+        ],
+        [
+          -4,
+          -6,
+          -8,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          0,
+          -2
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 384,
+      "sector_permutations": 12,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 0,
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "w": [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "base_energy": 6,
+      "sector_sizes": [
+        6,
+        0
+      ],
+      "row_margins": [
+        [
+          0,
+          -2,
+          -2,
+          -2,
+          -2,
+          -4
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          -2
+        ],
+        [
+          -2,
+          -4,
+          -4,
+          -4,
+          -4,
+          -6
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          -2,
+          -2,
+          -2,
+          -2,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 46080,
+      "sector_permutations": 720,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 1,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "w": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        0,
+        6
+      ],
+      "row_margins": [
+        [
+          -4,
+          -4,
+          -2,
+          -4,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          -2,
+          0,
+          2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          -2,
+          0,
+          2
+        ],
+        [
+          -4,
+          -4,
+          -2,
+          -4,
+          -2,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          -2,
+          0,
+          2
+        ],
+        [
+          -4,
+          -4,
+          -2,
+          -4,
+          -2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 46080,
+      "sector_permutations": 720,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 2,
+      "matrix": [
+        [
+          0,
+          -1,
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "y": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "w": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_energy": -6,
+      "sector_sizes": [
+        2,
+        4
+      ],
+      "row_margins": [
+        [
+          -4,
+          0,
+          0,
+          -4,
+          0,
+          0
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -4,
+          -6,
+          -6
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -4,
+          -6,
+          -6
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -4,
+          -6,
+          -6
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 3072,
+      "sector_permutations": 48,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 3,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "z": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "w": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "base_energy": 2,
+      "sector_sizes": [
+        3,
+        3
+      ],
+      "row_margins": [
+        [
+          0,
+          -6,
+          0,
+          -4,
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -8,
+          -2,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          2,
+          -4,
+          2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          2,
+          0,
+          2,
+          -2
+        ],
+        [
+          -2,
+          -8,
+          -2,
+          -6,
+          -4,
+          -4
+        ],
+        [
+          -2,
+          -4,
+          0,
+          -2,
+          0,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 2304,
+      "sector_permutations": 36,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 4,
+      "matrix": [
+        [
+          0,
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "x": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "w": [
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "base_energy": -2,
+      "sector_sizes": [
+        4,
+        2
+      ],
+      "row_margins": [
+        [
+          -4,
+          -6,
+          -2,
+          -2,
+          0,
+          -4
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          4,
+          -2
+        ],
+        [
+          -2,
+          -4,
+          -4,
+          -4,
+          0,
+          -6
+        ],
+        [
+          -2,
+          -4,
+          -4,
+          -4,
+          0,
+          -6
+        ],
+        [
+          -6,
+          -8,
+          -2,
+          -2,
+          -2,
+          -4
+        ],
+        [
+          -4,
+          -6,
+          -2,
+          -2,
+          0,
+          -4
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 3072,
+      "sector_permutations": 48,
+      "exact_identity_pass": true
+    },
+    {
+      "n": 6,
+      "trial": 5,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "x": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "y": [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "z": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "w": [
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "base_energy": -10,
+      "sector_sizes": [
+        4,
+        2
+      ],
+      "row_margins": [
+        [
+          -2,
+          -2,
+          -2,
+          -6,
+          -2,
+          0
+        ],
+        [
+          -8,
+          -6,
+          -6,
+          -6,
+          -6,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          -4,
+          -6,
+          -4,
+          -2
+        ],
+        [
+          -6,
+          -4,
+          -4,
+          -6,
+          -4,
+          -2
+        ],
+        [
+          -2,
+          0,
+          0,
+          -2,
+          0,
+          2
+        ],
+        [
+          -4,
+          -2,
+          -2,
+          -4,
+          -2,
+          0
+        ]
+      ],
+      "stable_matching_sum_numerator": {},
+      "probability_denominator": 3072,
+      "sector_permutations": 48,
+      "exact_identity_pass": true
+    }
+  ]
+}

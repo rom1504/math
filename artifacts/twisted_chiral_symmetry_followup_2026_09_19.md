@@ -1111,3 +1111,602 @@ bound, would falsify native `4beta/3+o(n^(3/2))` for every twist. This is
 an exclusion of **these candidate low-beta counterattacks**, not a
 proof of the native inequality and not an exclusion of all Hadamard or
 conference constructions. The finite-to-asymptotic native gap remains.
+
+## 16. Actual insertion preserving a chosen same-child twisted parent
+
+This is an insertion operation on the actual signing and its chosen
+parent, not a reformulation of their joint norm. No cap hypothesis on
+the input is needed.
+
+Let A be any order-n full signing, n>=1, and fix any allowed parent
+
+```math
+D=\begin{pmatrix}A&G^T A G+\operatorname{diag}(d)\\
+G^T A G+\operatorname{diag}(d)&-A\end{pmatrix},
+```
+
+where G is a signed permutation. For any integer r>=1 set
+
+```math
+N=n+r,\qquad L=nr+\binom r2,\qquad V=8nr+4\binom r2.
+```
+
+There is a full-sign extension A' on N vertices and an allowed parent
+D' of A' such that A and D are their respective induced submatrices,
+and **simultaneously**
+
+```math
+Q(A')\le Q(A)+\sqrt{2L(N+2)\log2},
+```
+
+```math
+\beta(A')\le\beta(A)+\sqrt{8L(2N+1)\log2},
+```
+
+```math
+Q(D')\le Q(D)+r+\sqrt{2V(2N+1)\log2}.             \tag{35}
+```
+
+In particular, starting with a minimizing allowed parent gives
+
+```math
+F(A')\le F(A)+r+\sqrt{2V(2N+1)\log2}.
+```
+
+The added matching signs can be prescribed arbitrarily. The r=0 case
+is the unchanged input. For r=o(n), all displayed errors are
+`O((n+r)sqrt(r))=o(n^(3/2))`. This does not bridge a fixed proportional
+order gap or provide the missing native doubling bound.
+
+### Construction and exact coefficient variance
+
+Independently choose the L child edges incident to the r new vertices
+as fair signs. Write `A'=A direct-sum 0_r+E` and extend the signed
+permutation by `G'=G direct-sum I_r`. Retain d on old vertices and use
+the prescribed new matching signs. The old child and old parent are
+then induced submatrices **exactly**, and the bridge remains the
+signed-permutation copy `G'^T A' G'`. Parent entries are correlated;
+the independent variables used below are the new **child** edges.
+
+Temporarily omit the r new matching edges. At a fixed parent spin
+(x,y), put u=Gx and v=Gy on the old coordinates. The coefficient of
+the random old-new child edge (i,j) is
+
+```math
+c_{ij}=x_j(x_i+v_i)+y_j(u_i-y_i).
+```
+
+For fixed new spins `a=x_j,b=y_j`, its entire old-coordinate vector is
+
+```math
+c_{\cdot j}=(aI+bG)x+(aG-bI)y.
+```
+
+The concatenated matrix T=[aI+bG, aG-bI] satisfies `TT^T=4I` because
+G is orthogonal and a,b are signs. Therefore
+
+```math
+\sum_{i=1}^n c_{ij}^2\le4(\|x\|_2^2+\|y\|_2^2)=8n.
+```
+
+For a new-new child edge the coefficient is
+`x_i x_j-y_i y_j+x_i y_j+x_j y_i`, always +2 or -2. Hence the total
+squared coefficient sum is at most V. This improves the bound16L
+obtained by separately bounding every coefficient by4.
+
+The constant8 in the old-new square sum is sharp for this uniform
+coefficient method: take n even, G a direct sum of signed quarter-turns,
+y=-Gx, and all new x_j=y_j=1. Then
+`c_(.j)=2(I+G)x` and its squared norm is8n. The new-new coefficients
+still have squared magnitude4, so V itself is attained.
+
+### One completion controls all three norms
+
+A Rademacher sum with coefficient square sum at most s has one-sided
+tail at most `exp(-t^2/(2s))`. For the child quadratic increment the
+square sum is L. Modulo overall sign there are `2^(N-1)` spin words;
+using both tails gives
+
+```math
+\Pr\{Q(E)>t\}\le2^N\exp[-t^2/(2L)].
+```
+
+For the child bilinear increment each coefficient is
+`x_i y_j+x_j y_i`, of magnitude at most2, so the square sum is at most
+4L. Its absolute maximum equals its positive maximum, and simultaneous
+overall reversal of x,y leaves the value unchanged. Thus there are at
+most `2^(2N-1)` one-sided tests and
+
+```math
+\Pr\{\beta(E)>t\}\le2^{2N-1}\exp[-t^2/(8L)].
+```
+
+The matching-free parent increment is chiral. Its negative and positive
+extrema therefore agree in absolute value, and overall spin reversal
+also preserves its energy. Again there are at most `2^(2N-1)`
+one-sided tests, now with coefficient square sum V:
+
+```math
+\Pr\{Q(\text{parent core increment})>t\}
+\le2^{2N-1}\exp[-t^2/(2V)].
+```
+
+At the three respective thresholds in (35), before adding the matching
+r, each failure probability is at most1/4. The union bound leaves
+success probability at least1/4 for the **same** random child extension.
+Triangle inequalities and the deterministic matching cost r prove all
+claims. This also gives a finite randomized realization with exact norm
+verification if desired; no polynomial-time verification claim is made.
+
+Restriction monotonicity additionally gives `Q(A')>=Q(A)`,
+`beta(A')>=beta(A)`, and `Q(D')>=Q(D)` for this chosen parent. It does
+not give `F(A')>=F(A)`, since another optimizing extended permutation
+may mix old and new vertices.
+
+### Archive attribution and exact scope
+
+The concentration mechanism is elementary and already archived.
+`minimal_all_order_action_recovery.md`, Section7.2, equation(AR.13),
+proves random completion of any signing with `O(N sqrt(r))` cap cost.
+`flatify_director_variance_budget_cap_comparison_2026_09_07.md`, Section2,
+and its independent audit give the broader simultaneous variance-budget
+insertion principle. `cut_triangle_midpoint_balancing.md`, Section7,
+already controls a random chiral matrix by a Rademacher coefficient
+square sum and a Boolean union bound.
+
+Those statements do not impose the coupled same-child bridge relation
+or retain a prescribed old parent: ordinary independent parent-edge
+completion would break that relation. A targeted search of the chiral,
+dependent-lift, padding, and insertion artifacts did not find this exact
+`G direct-sum I_r` extension with its coefficient variance V. The scoped
+addition here is its explicit constraint-preserving realization and
+simultaneous Q/beta/parent accounting, not a new concentration principle
+or an externally established novelty claim. Together with the audited
+cycle-repair deletion theorem it supplies two-sided **near-order**
+operations inside the same-child twisted family, not fixed-ratio
+scale transfer.
+
+### Corollary: a relative-order modulus for the optimized family
+
+Define the finite-family optimum
+
+```math
+T_n=\min_{A\text{ an order-}n\text{ full signing}}F(A).
+```
+
+Then there is an absolute constant C such that, for every integer
+`1<=r<=n/4`,
+
+```math
+|T_{n+r}-T_n|\le Cn\sqrt r.                         \tag{36}
+```
+
+First this family has a uniform crude cap bound. Choose the child
+edges independently as fair signs and use the identity twist. Each
+child edge has parent-core coefficient exactly +/-2 at every parent
+spin, so the variance proxy is `4 binom(n,2)`. The same one-sided
+projective union bound gives
+
+```math
+T_n\le n+\sqrt{4n(n-1)(2n+1)\log2}
+\le K_0 n^{3/2},\qquad K_0=1+\sqrt{8\log2}.         \tag{37}
+```
+
+This bound is only used to put optimizing seeds in a bounded-cap
+class; it is not a competitive original minimax upper bound.
+
+For every seed let U=max H_A and V=-min H_A. Reversing a whole parent
+half proves `Q(parent)>=U+V>=Q(A)`, hence `Q(A)<=F(A)` and
+`beta(A)<=4Q(A)<=4F(A)`. An optimizing seed for T_n therefore satisfies
+the bounded-cap hypothesis uniformly.
+
+Applying (35) to such a seed gives
+`T_(n+r)<=T_n+O(n sqrt(r))`. For the reverse direction choose an
+optimizing seed at N=n+r. The independently audited deletion theorem
+in `twisted_chiral_near_order_2026_09_19.md` supplies an n-vertex
+restriction C with
+
+```math
+F(A[C])\le T_N+
+300\left[\frac rN\beta(A)+N\sqrt r\right]+r.
+```
+
+Here r<=n/4 implies r<=N/4, so that theorem applies; also
+`beta(A)<=4K_0 N^(3/2)` by (37). Since `r sqrt(N)<=N sqrt(r)` and
+`N<=5n/4`, its error is `O(n sqrt(r))`. As `T_n<=F(A[C])`, this is
+the other half of (36).
+
+Equivalently, `T_n/n^(3/2)` has an absolute relative-order modulus
+`O(sqrt(r/n))` in this range. Such a modulus allows bounded slow
+oscillation and does **not** imply existence of a limit, a favorable
+doubling inequality, or passage across a proportional gap at vanishing
+cost. The proof combines the archived elementary random-padding
+mechanism with the exact orbit-preserving insertion and audited cycle
+repair; it does not assume the chosen child minimizes Q(A).
+
+## 17. Audit of the local-stability-filtered random-twist first moment
+
+The director's closing conditional-permanent derivation passes. This
+section records its exact normalization and a degree-only upper bound;
+it does not assert that the resulting first moment is asymptotically
+small.
+
+Fix parent spins x,y and write `t_i=x_i y_i`, with k plus coordinates.
+Choose a uniformly random signed permutation specified by
+`g e_i=s_i e_(pi(i))`, independently of uniform matching signs d, and
+put z=gx,w=gy. Then v=z*w is uniform among masks with k plus
+coordinates, and z is an independent uniform spin word. Conditional
+on z,w, pi is uniform over the `k!(n-k)!` bijections taking each
+t-sector to its corresponding v-sector. All signs are forced by
+`s_i=z_(pi(i)) x_i`.
+
+Define
+
+```math
+\alpha_i=x_i(Ax)_i,\quad \gamma_i=y_i(Ay)_i,\quad
+b_j=z_j(Aw)_j,\quad c_j=w_j(Az)_j,
+\qquad u_i=d_i t_i.
+```
+
+The two signed local fields at the parent coordinates paired with i
+are exactly
+
+```math
+\alpha_i+b_{\pi(i)}+u_i,\qquad
+-\gamma_i+c_{\pi(i)}+u_i.
+```
+
+The u_i remain independent fair signs after this conditioning. The
+parent energy is
+
+```math
+E_0+\sum_i u_i,\qquad
+E_0=H_A(x)-H_A(y)+z^T A w,
+```
+
+and E0 is independent of the remaining sector bijection pi. Set
+`m_ij=min(alpha_i+b_j,-gamma_i+c_j)`. It is even: each of its two
+summands before taking the minimum is a sum or difference of two
+integers congruent to n-1 modulo2. A parent has odd degree2n-1, so
+single-spin local maximality is strict positivity of these fields.
+Thus u=+1 is allowed exactly when m>=0, and u=-1 exactly when m>=2.
+
+Use a scalar indeterminate q, distinct from the product mask t, and
+form the two sector matrices with entries
+
+```math
+K_{ij}(q)=\frac12\left(q\,1_{m_{ij}\ge0}
+                         +q^{-1}1_{m_{ij}\ge2}\right).
+```
+
+The exact conditional Laurent generating polynomial for positive
+local stability, weighted by `q^(sum u_i)`, is
+
+```math
+P(q)=\frac{\operatorname{per}K_+(q)\,
+              \operatorname{per}K_-(q)}{k!(n-k)!}.          \tag{38}
+```
+
+Empty-sector permanents and 0! equal1. Consequently the conditional
+probability of a locally stable parent with energy greater than L is
+the sum of coefficients `[q^h]P(q)` over `h>L-E0`. For any lambda>=0
+it is at most `exp[-lambda(L-E0)]P(exp(lambda))`. The strict-tail
+condition and any lattice improvement should be retained in exact
+computations.
+
+### A coefficientwise Brégman bound, not just a Chernoff estimate
+
+Within each row's own sector, let d_i^0 and d_i^2 be its numbers of
+columns satisfying m>=0 and m>=2. Define `phi(0)=0` and
+`phi(a)=(a!)^(1/a)` for positive integers a. The Brégman permanent
+inequality is `per(M)<=product_i phi(rowdegree_i)` for a zero-one
+matrix. A primary proof is
+[Radhakrishnan, An Entropy Proof of Bregman's Theorem](https://doi.org/10.1006/jcta.1996.2727).
+
+Expand a sector permanent row-by-row, selecting either its
+`q 1_(m>=0)/2` row or its `q^(-1)1_(m>=2)/2` row. Apply Brégman's
+inequality separately to each resulting zero-one permanent. All
+coefficients are nonnegative, so this gives the **coefficientwise**
+Laurent inequality
+
+```math
+\operatorname{per}K_\pm(q)
+\preceq \prod_{i\text{ in that sector}}
+\frac{\phi(d_i^0)q+\phi(d_i^2)q^{-1}}2.                \tag{39}
+```
+
+Multiplying the sector bounds and dividing by `k!(n-k)!` preserves
+coefficientwise domination. Therefore the appropriate coefficient tail
+of this simple n-factor product bounds (38)'s high-energy tail
+directly; using Chernoff is optional. This still needs the actual
+conditional field-degree data, not only Q or beta of the seed.
+
+The director's alternative auxiliary-edge argument also passes:
+`K(e^lambda)/cosh(lambda)` has entries1 on m>=2, entries
+`p=e^lambda/(2cosh(lambda))` on m=0, and zero otherwise. Independent
+Bernoulli(p) weak edges preserve the expected permanent. Applying
+Brégman and independence of row degrees gives
+
+```math
+\operatorname{per}K_\pm(e^\lambda)
+\le\cosh(\lambda)^{|\text{sector}|}
+\prod_i \mathbb E\phi\bigl(d_i^2+
+                 \operatorname{Bin}(d_i^0-d_i^2,p)\bigr).
+```
+
+One may instead correlate all weak auxiliary edges within each row,
+independently between rows. A permanent monomial uses one entry per
+row, so its expectation is still correct. This gives (39) evaluated
+at e^lambda with only two phi values per row, avoiding binomial sums.
+No unproved comparison between these two bounds is required.
+
+For completeness, the standard entropy proof of Brégman is short.
+Choose a uniform allowed perfect matching and reveal its rows in an
+independent uniform order. The entropy contribution of a row is at
+most the expected logarithm of its number of still-available allowed
+columns. Conditional on the matching, the row's position among the
+rows matched to its r allowed columns is uniform, so that expectation
+is `(log(r!))/r`. Summing the entropy chain rule and exponentiating
+proves the inequality. A zero row makes the permanent zero.
+
+### First-moment cutoff and scope
+
+Summing (38)'s conditional tails over x,y and averaging z,v with weight
+`1/(2^n binom(n,k))` gives the exact expected number of positive
+locally stable violations for a random allowed twist and matching.
+If all spins x,y are counted, a violation has at least its two global
+sign copies. Thus expectation less than2 suffices to exhibit cap<=L.
+Equivalently restrict to projective representatives x_1=+1 and use
+cutoff1. The old eightfold bad-pair multiplicity cannot be reused:
+the chiral quarter-turn sends a positive local maximum to a negative
+local minimum, not another positive locally stable violation.
+
+This is a valid filtered sufficient certificate with an exact
+conditional identity and an optional explicit row-degree relaxation.
+It neither proves a uniform first-moment bound nor turns failure of
+the certificate into failure of an actual matrix or twist.
+
+The completed stability wind-tunnel source was also independently
+audited: `twisted_chiral_stability_histogram_2026_09_19.cpp` and its
+Python driver preserve the Gray energy and field recurrences exactly,
+check strict stability in **all** coordinates including the fixed
+projective coordinate, and use exact integer strict-threshold tests.
+The matching is present, so all fields are odd. Known minimizing
+parents are excluded from random-sample aggregates. The result contains
+151 exact per-matrix histograms and six independent direct NumPy
+replays; the reported sample averages remain Monte Carlo diagnostics,
+not population expectations or existence certificates. Source audit:
+**PASS**.
+
+## 18. Direct tensor-Gram proof simplification and completion audit
+
+The complete fixed-seed even-power classification is already proved in
+`transfer_seed_tensor_power_instability_2026_09_06.md`. The director's
+closing observation gives a substantially shorter direct Boolean proof;
+it is preserved as a **proof simplification**, not a newly discovered
+classification or an unrestricted tensor no-go theorem.
+
+Let H be a symmetric full sign matrix, including its diagonal, of
+fixed order q>=2. Under either consistent vectorization convention,
+
+```math
+(H\otimes H)\operatorname{vec}(H)=\operatorname{vec}(H^3),
+\qquad
+\operatorname{vec}(H)^T(H\otimes H)\operatorname{vec}(H)
+=\operatorname{tr}(H^4).                              \tag{40}
+```
+
+The vector is itself Boolean. Its k-fold tensor therefore has full
+quadratic value `(tr H^4)^k` on `H^(tensor 2k)`. Hollowing subtracts
+the spin-independent trace `(tr H)^(2k)`. Set
+`rho=tr(H^4)/q^3` and `tau=(tr H)^2/q^3`. This gives
+
+```math
+\frac{Q(\operatorname{hollow}(H^{\otimes2k}))}{q^{3k}}
+\ge\frac12(\rho^k-\tau^k).                          \tag{41}
+```
+
+Since `tr H^2=q^2`, Cauchy--Schwarz on the squared eigenvalues gives
+`tr H^4>=q^3`, with equality exactly when `H^2=qI`. Also
+`tau<=1/q`. A fixed non-Hadamard seed thus has rho>1 and divergent
+normalized even-power caps. In the Hadamard case the spectral upper
+is `(1+tau^k)/2`, matching (41) asymptotically at one half.
+
+For heterogeneous paired tensors `tensor_j(H_j tensor H_j)` of total
+order `N=product_j q_j^2`, the same explicit product spin gives
+
+```math
+\frac{Q(\operatorname{hollow}(\bigotimes_j(H_j\otimes H_j)))}{N^{3/2}}
+\ge\frac12\prod_j\frac{\operatorname{tr}(H_j^4)}{q_j^3}
+       -\frac1{2\sqrt N}\ge\frac12-\frac1{2\sqrt N}. \tag{42}
+```
+
+Thus these literal paired families cannot be asymptotically sub-half,
+even when their seeds vary. No statement about arbitrary external
+Hadamard padding, unpaired heterogeneous tensors, optimized subsequent
+restrictions, or non-tensor constructions is being inferred.
+
+Non-Hadamard **odd** powers also diverge by appending one fixed spin
+v with `w=v^T H v!=0` to the paired witness. For power2k+1 the lower
+bound becomes
+
+```math
+\frac12\left[
+\frac{|w|}{q^{3/2}}\rho^k-
+\frac{|\operatorname{tr}H|}{q^{3/2}}\tau^k\right].
+```
+
+Such v is explicit: use the all-ones spin unless its value is zero.
+In that case q is even, and flipping coordinate1 changes the value by
+minus four times an odd off-diagonal row sum, hence makes it nonzero.
+This proves non-Hadamard divergence along all powers, but does not
+classify the odd-power Hadamard branch.
+
+### Exact optimization over all sign diagonals
+
+For a hollow order-q full signing D, put
+`c_i=(D^3)_ii` and `Omega0=sum_(i!=j)((D^2)_ij)^2`. For any sign
+diagonal h and `H=D+diag(h)`, the off-diagonal squared-Gram defect is
+
+```math
+\Omega(H)=\Omega_0+2q(q-2)+2\left(\sum_i h_i\right)^2
+                     +4\sum_i c_i h_i.                  \tag{43}
+```
+
+Indeed `(H^2)_ij=(D^2)_ij+D_ij(h_i+h_j)` off the diagonal.
+The cross term sums to `4 sum_i c_i h_i`, while the remaining square
+sum is `2q(q-2)+2(sum h)^2`. Also `tr H^4=q^3+Omega(H)` exactly.
+
+If exactly k entries of h are plus, the linear term is minimized by
+choosing the k smallest c_i. Sorting c and sweeping its prefix sums
+therefore finds the exact best diagonal in `O(q log q)` additional
+time, **after** the matrix quantities c and Omega0 are computed.
+No enumeration of all `2^q` diagonals is needed.
+
+### Chiral seeds remove the diagonal correction entirely
+
+If D anticommutes with a signed quarter-turn, the diagonal of D^3 has
+paired opposite entries. Choose `h_i=-sign(c_i)` on nonzero pairs and
+opposite signs on each zero pair. This simultaneously attains zero
+sum and the smallest possible linear term. Thus
+
+```math
+\Omega_*:=\min_h\Omega(D+\operatorname{diag}h)
+=\Omega_0+2q(q-2)-4\|c\|_1.                           \tag{44}
+```
+
+For **every** h, writing s=sum h gives
+`Omega(H)>=Omega_*+2s^2`. Set `a=q^3+Omega_*`, t=s^2. The exact
+even-tensor witness is at least
+`(a+2t)^k-t^k>=a^k`, by binomial expansion. Therefore, for every
+completion and every k>=1,
+
+```math
+\frac{Q(\operatorname{hollow}(H^{\otimes2k}))}{q^{3k}}
+\ge\frac12\left(1+\frac{\Omega_*}{q^3}\right)^k.      \tag{45}
+```
+
+There is no diagonal correction in this chiral bound. A positive
+defect for each fixed seed does not alone give a uniform positive
+normalized defect for a growing sequence of seeds; that quantifier
+distinction remains essential.
+
+The source `twisted_chiral_tensor_gram_2026_09_19.py` was independently
+audited. In addition, both saved order20 parents were reconstructed by
+plain Python integer sums, without importing that verifier or NumPy.
+The cubic pairing, balanced minimizing diagonal, Gram defect, and
+full four-index quadratic expression in (40) all agree. The original
+Hadamard-completable witness (hash beginning `d327680f`) has Omega*=0
+and square witness4000. The new witness (hash beginning `247d887a`)
+has Omega*=960; **every** sign-diagonal completion therefore has
+order400 tensor-square cap at least4480, normalized0.56. These are
+actual Boolean tensor witnesses, not only spectral certificates, and
+they do not assert the exact cap of the tensor-square matrices.
+
+## 19. Final exact-average audit and sharp projective multiplicity
+
+The complete small-order average in
+`computations/twisted_chiral_stable_average_2026_09_19.py` passes source
+audit and arithmetic replay. The sector permanent numerators count
+sector bijections and matching words without dividing by their
+probabilities; summing over image sectors and z then covers every
+signed permutation and matching exactly once for each projective
+parent spin. Hence its common denominator `4^n n!` is correct.
+Factorial-root upper approximations are certified by integer powers,
+and their n-factor products use denominator `SCALE^n` as required.
+
+A separate scalar implementation,
+`computations/twisted_chiral_stable_average_adversary_2026_09_19.py`,
+does not use the conditional fields, permanents, or NumPy. It directly
+forms all distinct bridges with their exact signed-permutation
+multiplicities, then all matching words and all projective spins.
+Every local field is recomputed by integer sums. Its complete raw and
+stable energy histograms agree with the archived JSON. Separately,
+the original permanent/Brégman calculation was rerun in memory and
+its entire returned records agree with the saved data.
+
+The exact outcomes are:
+
+| child order | complete group/matching denominator | L at the known family minimum | expected projective stable tail | first L certified by either exact stable or Brégman tail |
+| --- | ---: | ---: | ---: | ---: |
+| 3 | 384 | 5 | 5/4 | 7 |
+| 4 | 6144 | 10 | 4/3 | 12 |
+
+At the first successful L, the exact stable tails are respectively
+1/2 and13/32; the rational Brégman upper bounds are approximately
+0.5000003162 and0.4251483286, both strictly below1. Thus the filtered
+criterion fails to certify the already known best caps5 and10 on
+these two examples. This is a limitation of this particular sufficient
+first-moment certificate, not a failure of the optimizing matrices.
+
+### Chirality cannot improve the universal cutoff above one
+
+There is an explicit counterexample at every child order m>=1. Set
+`A=J_m-I_m`, choose the identity bridge and all-positive matching, so
+
+```math
+D_m=\begin{pmatrix}J_m-I_m&J_m\\J_m&-J_m+I_m\end{pmatrix}.
+```
+
+For a parent spin (x,y), let u=sum x and v=sum y. Its signed local
+fields are `x_i(u+v)-1` and `y_i(u-v)+1`. Strict positivity of the
+first group forces x to be constant, say x=a1. Since u-v is even,
+the second condition is `y_i(u-v)>=0`. If y had both signs, this
+would force v=u=am, impossible for a mixed word. Thus y is constant;
+the opposite choice y=-a1 has negative second-block fields, while
+y=a1 has all fields positive. Therefore **exactly one** positive
+stable state exists modulo global reversal, namely both blocks
+constant with the same sign, of energy m^2.
+
+In particular the actual order-three child used in the average has a
+parent with just one projective stable violation above L=5 (and L=7).
+The quarter-turn supplies a negative local minimum, not another
+positive maximum. No universal projective positive-stability
+multiplicity larger than1 follows from chirality.
+
+There is also a tail-specific witness inside the precise order-four
+optimal-child family used above. For
+
+```math
+A_4=\begin{pmatrix}0&1&1&1\\1&0&1&1\\1&1&0&-1\\1&1&-1&0\end{pmatrix},
+```
+
+take identity permutation, switch `(1,-1,-1,-1)`, and matching
+`(-1,-1,-1,-1)`. Exact enumeration of128 projective parent spins gives
+positive stable energies `[10,10,14]`. Consequently its stable tail
+above L=10 contains **one** state, represented by
+`(1,1,1,1; -1,1,-1,-1)`. A cutoff2 would therefore also be invalid
+for that fixed child's L=10 test. The actual matrices, stable words,
+and signed local fields are retained in the adversarial replay JSON.
+
+## 20. Final audit: cheap dominance-support feasibility
+
+The conditional weak support in Section17 is exactly the two-coordinate
+dominance relation `b_j>=-alpha_i` and `c_j>=gamma_i`. Given these
+thresholds and column coordinates, a perfect matching is decided and
+constructed in `O(n log n)` time as follows: process rows in decreasing
+order of `a_i=-alpha_i`, insert all columns with `b_j>=a_i`, and take
+the available column of smallest c_j satisfying `c_j>=gamma_i`.
+
+The exchange proof passes. In any feasible matching extending the
+previous greedy choices, let j serve the current row and h be the
+greedy choice. Then `c_h<=c_j`. If h instead serves a later row ell,
+exchange these two columns. Column j is feasible for ell because
+`b_j>=a_i>=a_ell` and `c_j>=c_h>=gamma_ell`. Earlier choices are
+untouched. Failure to find h therefore certifies infeasibility.
+Ties and duplicate coordinates cause no problem if column identities
+and multiplicities are retained.
+
+The strong support uses thresholds `(2-alpha_i,2+gamma_i)` and the
+same proof. More generally any specified row-wise choice of weak or
+strong threshold is handled after sorting its resulting first
+thresholds. A balanced successor multiset or coordinate-compressed
+Fenwick tree supplies the advertised running time; ordinary linear
+deletion from a Python sorted list would not. This cost is for the
+matching test **after** the fields are available.
+
+This is an imported elementary dominance-matching mechanism applied
+to the actual support, not a novel general matching algorithm. It
+can eliminate conditional terms with a genuine Hall obstruction that
+row degrees alone miss. It neither counts the remaining perfect
+matchings nor estimates the averaged stable high-energy tail.

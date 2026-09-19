@@ -1,0 +1,126 @@
+{
+  "N": 6,
+  "beta": 1.0,
+  "bridge_amplitude_checks": [
+    {
+      "additive_variance_over_u4": 0.2552499758485022,
+      "cross_variance_over_u4": 0.7666277212240916,
+      "u": 0.1
+    },
+    {
+      "additive_variance_over_u4": 0.26257377418388733,
+      "cross_variance_over_u4": 0.7877780018469668,
+      "u": 0.05
+    },
+    {
+      "additive_variance_over_u4": 0.26442410912336334,
+      "cross_variance_over_u4": 0.7932758992322559,
+      "u": 0.025
+    },
+    {
+      "additive_variance_over_u4": 0.2648878600313172,
+      "cross_variance_over_u4": 0.7946638037975727,
+      "u": 0.0125
+    }
+  ],
+  "classification": "complete finite enumeration; numerical transcendental evaluation; the tiny-lambda row-product optimizer is obtained by coordinate best responses from the uniform law",
+  "disorder_temperature_checks": [
+    {
+      "G": 0.0009415213617245399,
+      "G_over_lambda_half_variance": 0.987564372999879,
+      "I_left_over_lambda2_half_cross": 0.9858204518260056,
+      "TC_over_lambda2_half_cross": 0.9786436220848697,
+      "candidate_I_left": 7.510684710307914e-05,
+      "lambda": 0.1,
+      "product_gain_over_lambda_half_additive": 0.994502252627022,
+      "row_product_gain": 0.0001904528906937486,
+      "row_total_correlation": 7.456006492478906e-05
+    },
+    {
+      "G": 0.00047370303223193133,
+      "G_over_lambda_half_variance": 0.9937368540579882,
+      "I_left_over_lambda2_half_cross": 0.9928555852862189,
+      "TC_over_lambda2_half_cross": 0.9892177788185366,
+      "candidate_I_left": 1.891070846151699e-05,
+      "lambda": 0.05,
+      "product_gain_over_lambda_half_additive": 0.9972428248262126,
+      "row_product_gain": 9.548886300159154e-05,
+      "row_total_correlation": 1.8841419938020465e-05
+    },
+    {
+      "G": 0.0002375951795114961,
+      "G_over_lambda_half_variance": 0.9968569764674672,
+      "I_left_over_lambda2_half_cross": 0.9964139879677056,
+      "TC_over_lambda2_half_cross": 0.9945825715752182,
+      "candidate_I_left": 4.744621149510575e-06,
+      "lambda": 0.025,
+      "product_gain_over_lambda_half_additive": 0.9986193272741362,
+      "row_product_gain": 4.781033353107311e-05,
+      "row_total_correlation": 4.73590050020789e-06
+    },
+    {
+      "G": 0.00011898452729508513,
+      "G_over_lambda_half_variance": 0.9984256109038642,
+      "I_left_over_lambda2_half_cross": 0.9982035245974544,
+      "TC_over_lambda2_half_cross": 0.9972846689993763,
+      "candidate_I_left": 1.188285595021821e-06,
+      "lambda": 0.0125,
+      "product_gain_over_lambda_half_additive": 0.9993091416985913,
+      "row_product_gain": 2.392167969333947e-05,
+      "row_total_correlation": 1.1871917671157917e-06
+    }
+  ],
+  "epsilon": 1,
+  "left_sha": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+  "mixed_response_lower_bound_residual": 0.00021150913868628676,
+  "mixed_response_upper_bound_residual": 0.030263349427682856,
+  "overlap_coefficients": {
+    "K_additive": 0.2650425463746443,
+    "K_cross": 0.7951276391239326,
+    "same_column_lower_bound": 0.26504254637464436
+  },
+  "physical_mixed_row_response": {
+    "J2": 0.015448938421870858,
+    "pair_masses": [
+      {
+        "quarter_mean_squared_mixed_difference": 0.005149646140623619,
+        "rows": [
+          0,
+          1
+        ]
+      },
+      {
+        "quarter_mean_squared_mixed_difference": 0.005149646140623619,
+        "rows": [
+          0,
+          2
+        ]
+      },
+      {
+        "quarter_mean_squared_mixed_difference": 0.005149646140623619,
+        "rows": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  "physical_row_anova": {
+    "additive_variance": 0.003830114817551369,
+    "cross_variance": 0.015237429283184572,
+    "orthogonality_residual": -3.2959746043559335e-17,
+    "row_component_variances": [
+      0.0012767049391837896,
+      0.0012767049391837896,
+      0.0012767049391837896
+    ],
+    "total_variance": 0.019067544100735908
+  },
+  "raw_t": 0.4082482904638631,
+  "right_sha": "f71efe16fa6b412d486f6d4f29d78174c49117aed7862ace6cebb9c67e762995",
+  "schema": "actual-child-row-anova-infinitesimal-verifier-v1",
+  "split": [
+    3,
+    3
+  ]
+}

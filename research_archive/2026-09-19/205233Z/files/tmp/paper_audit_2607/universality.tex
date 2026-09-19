@@ -1,0 +1,80 @@
+We now prove Corollary \ref{cor:universality} on universality over the
+disorder $\X$, using the results of \cite{wang2024universality}.
+
+\begin{proof}[Proof of Corollary \ref{cor:universality}]
+Let $\tilde \X \in \R^{n \times n}$ satisfy Assumption \ref{assump:X-universal}.
+Let $\X \in \R^{n \times n}$ be an orthogonally-invariant matrix
+satisfying Assumption \ref{assump:X} with the same bound $\Lambda_{\max}$ and
+asymptotic eigenvalue distribution $\Lambda$ as $\tilde\X$.
+Let $\S \in \R^{n \times n}$ be
+a random diagonal sign matrix as in Corollary \ref{cor:universality}(d),
+and let $\bPi \in \R^{n \times n}$ be a uniformly random permutation matrix,
+where $(\S,\bPi)$ are independent of each other and of $\btheta^0,\{\b^t\}_{t
+\geq 0}$. Then \cite[Proposition 2.7, Theorem 2.8]{wang2024universality}
+implies that the AMP algorithm \eqref{eq:discreteAMP} applied with $\tilde\X$ has the
+same dynamical mean-field limit \eqref{eq:AMPconvergence} (in the sense of almost-sure
+Wasserstein-2 convergence of the coordinatewise empirical distribution of its
+iterates) as applied with the matrix
+\[\W=\bPi\S\tilde\X\S\bPi^\top.\]
+As \eqref{eq:AMPconvergence} and the bound $\|\X\|_\op \leq \Lambda_{\max}$ are the only
+properties of $\X$ used in all preceding proofs, this implies that
+Theorems \ref{thm:dmft-approx}, \ref{thm:replica} and Corollaries
+\ref{cor:hightemp}, \ref{cor:ising} hold equally with $\W$ in place of
+$\X$.
+
+The dynamics \eqref{eq:dynamics} driven by $\W$ have the form
+\[\d\btheta^t=[f(\btheta^t)+\bPi\S\tilde\X\S\bPi^\top\btheta^t]\d t
++\sqrt{2\gamma}\,\d\b^t.\]
+Define $\g^t=\W\btheta^t-\int_0^t r_g(t-s)\btheta^s \d s$ as in Theorem
+\ref{thm:dmft-approx}, and let
+\[\tilde\btheta^t=\bPi^\top \btheta^t,
+\qquad \tilde\g^t=\bPi^\top \g^t,
+\qquad \tilde\b^t=\bPi^\top \b^t.\]
+The conclusion of Theorem \ref{thm:dmft-approx} 
+for $\{(\btheta^t,\g^t,\b^t)\}_{t \geq 0}$ implies the same convergence for
+$\{(\tilde\btheta^t,\tilde\g^t,\tilde\b^t)\}_{t \geq 0}$, since this has the
+same empirical distribution of sample paths.
+Multiplying the above dynamics by $\bPi^\top$ and noting that
+$\bPi^\top f(\btheta^t)=f(\tilde\btheta^t)$ since $f:\R \to \R$ is applied
+entrywise, the dynamics of $\{(\tilde\btheta^t,\tilde\g^t,\tilde\b^t)\}_{t \geq
+0}$ are given by
+\begin{equation}\label{eq:permutedprocess}
+\d\tilde\btheta^t=[f(\tilde\btheta^t)+\S\tilde\X\S\tilde\btheta^t]\d t
++\sqrt{2\gamma}\,\d\tilde \b^t,
+\qquad \tilde \g^t=\S\tilde\X\S\tilde\btheta^t-\int_0^t
+r_g(t-s)\tilde\btheta^s\d s,
+\end{equation}
+coinciding with the dynamics \eqref{eq:dynamics} driven by $\S\tilde\X\S$.
+This shows Corollary \ref{cor:universality}(d) for the dynamics.
+Since the Gibbs measures $\mu_\Gibbs$ and $\mu_{\text{Ising}}$ defined by
+$\W$ are also identical to those defined by $\S\tilde\X\S$,
+Corollary \ref{cor:universality}(d) holds also for the Gibbs measures.
+
+If $f(\cdot)$ is odd and $\theta^0$ is sign-invariant in law, then 
+the joint law of $\{(\theta^t,g^t,b^t)\}_{t \geq 0}$ in the dynamical
+mean-field limit of Definition \ref{def:DMFT} is also invariant under
+multiplication by a single sign $s \in \{\pm 1\}$. Setting
+\[\tilde\btheta^t=\S\bPi^\top \btheta^t,
+\qquad \tilde\g^t=\S\bPi^\top \g^t,
+\qquad \tilde\b^t=\S\bPi^\top \b^t,\]
+the conclusion of Theorem \ref{thm:dmft-approx} 
+for $\{(\btheta^t,\g^t,\b^t)\}_{t \geq 0}$ implies that the empirical
+distribution of sample paths of
+$\{(\tilde\btheta^t,\tilde\g^t,\tilde\b^t)\}_{t \geq 0}$ converges to
+the law of $\{(s\theta^t,sg^t,sb^t)\}_{t \geq 0}$ where $s \in \{\pm 1\}$ is
+an independent and uniformly random sign. This is the same law as
+that of $\{(\theta^t,g^t,b^t)\}_{t \geq 0}$, so Theorem \ref{thm:dmft-approx} 
+holds also for $\{(\tilde\btheta^t,\tilde\g^t,\tilde\b^t)\}_{t \geq 0}$.
+Since $\S\bPi^\top f(\btheta^t)=f(\S\bPi^\top\btheta^t)=f(\tilde\btheta^t)$ when
+$f(\cdot)$ is odd, we have
+\[\d\tilde\btheta^t=[f(\tilde\btheta^t)+\tilde\X\tilde\btheta^t]\d t
++\sqrt{2\gamma}\,\d\tilde \b^t,
+\qquad \tilde \g^t=\tilde\X\tilde\btheta^t-\int_0^t
+r_g(t-s)\tilde\btheta^s\d s\]
+coinciding with the dynamics \eqref{eq:dynamics} driven by $\tilde\X$.
+This shows
+Corollary \ref{cor:universality}(a). If $U(\cdot)$ is even and $h=0$ in the
+Ising model, then the Gibbs measures $\mu_\Gibbs$ and $\mu_\text{Ising}$ defined
+by $\W$ are also identical to those defined by $\tilde \X$, implying
+Corollary \ref{cor:universality}(b--c).
+\end{proof}

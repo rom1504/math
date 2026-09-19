@@ -1,0 +1,457 @@
+{
+  "status": "integer certificates; not a convergence theorem",
+  "seed": 2026091918,
+  "diagonal_formula_checks": 6096,
+  "random_hollow_inputs": 84,
+  "tensor_identity_cases": [
+    {
+      "q": 2,
+      "H": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "trace4": 8,
+      "trace": 0,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 3,
+      "H": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "trace4": 33,
+      "trace": 1,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 4,
+      "H": [
+        [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1
+        ]
+      ],
+      "trace4": 64,
+      "trace": 0,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 5,
+      "H": [
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "trace4": 177,
+      "trace": -1,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 6,
+      "H": [
+        [
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "trace4": 264,
+      "trace": 0,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 7,
+      "H": [
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ]
+      ],
+      "trace4": 481,
+      "trace": 3,
+      "integer_vector_identity_pass": true
+    },
+    {
+      "q": 8,
+      "H": [
+        [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ]
+      ],
+      "trace4": 736,
+      "trace": -4,
+      "integer_vector_identity_pass": true
+    }
+  ],
+  "order20_parents": [
+    {
+      "source": "computations/results/twisted_chiral_2026_09_19_joint_target38.json",
+      "matrix_sha256": "d327680f7a7cc108e09847a45a8364a0374707ce71dc2ef3c71c6605f26fd895",
+      "parent_cap": 40,
+      "order": 20,
+      "triangle_row_sums_c": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18,
+        -18
+      ],
+      "omega0": 720,
+      "minimum_diagonal_gram_defect": 0,
+      "minimizing_diagonal": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rho_lower_numerator": 8000,
+      "rho_lower_denominator": 8000,
+      "tensor_square_hollow_witness_energy_numerator": 8000,
+      "tensor_square_hollow_witness_energy_denominator": 2,
+      "all_diagonals_covered_by_sorted_prefix_proof": true,
+      "chiral_linear_formula_pass": true,
+      "scope": "ordinary full-sign diagonal completions and literal tensor powers only"
+    },
+    {
+      "source": "computations/results/twisted_chiral_2026_09_19_joint_target38.json",
+      "matrix_sha256": "247d887ac5d9e763965db14ce01f0576751609570a90ad3e4f16384de6cd319c",
+      "parent_cap": 40,
+      "order": 20,
+      "triangle_row_sums_c": [
+        6,
+        6,
+        -6,
+        -6,
+        -6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        -6,
+        -6,
+        6,
+        6,
+        6,
+        -6,
+        -6,
+        -6,
+        -6,
+        -6
+      ],
+      "omega0": 720,
+      "minimum_diagonal_gram_defect": 960,
+      "minimizing_diagonal": [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rho_lower_numerator": 8960,
+      "rho_lower_denominator": 8000,
+      "tensor_square_hollow_witness_energy_numerator": 8960,
+      "tensor_square_hollow_witness_energy_denominator": 2,
+      "all_diagonals_covered_by_sorted_prefix_proof": true,
+      "chiral_linear_formula_pass": true,
+      "scope": "ordinary full-sign diagonal completions and literal tensor powers only"
+    }
+  ]
+}

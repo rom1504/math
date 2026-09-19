@@ -1,0 +1,193 @@
+{
+  "classification": "exact finite actual-pressure theorem and modular certificate",
+  "finite_field_evaluation": "formal z evaluated at 2 in F_p",
+  "finite_field_prime": 1000003,
+  "logical_certificate": "Distinct residues at z=2 imply distinct Q(z)-valued response functions; a nonzero rational function cannot vanish at the transcendental actual point z=exp(3). Order 3 is handled by a separate exact all-z cancellation certificate.",
+  "negative_disorder_lambda": 1,
+  "order_9_ground_state_only_diagnostic": {
+    "eligible_as_actual_pressure_child": false,
+    "projective_spin_count": 256,
+    "reason": "The repository stores one certified cap minimizer, but no exhaustive thermal-pressure-minimizer classification at order 9.",
+    "rooted_energy_absolute_overlap_profile_count": 116,
+    "rooted_profiles_equal_spin_orbits": false,
+    "signed_automorphism_group_order_projective": 2,
+    "spin_automorphism_orbit_count": 144
+  },
+  "pressure_certificate": {
+    "actual_class_ids": {
+      "3": [
+        0
+      ],
+      "4": [
+        0
+      ],
+      "5": [
+        0
+      ],
+      "6": [
+        0
+      ],
+      "7": [
+        2
+      ],
+      "8": [
+        0,
+        1
+      ]
+    },
+    "nonminimal_cap_exclusion": "cosh((M+2)t)/(2^(n-1)cosh(Mt)) >= exp(2t)/2^n > 1 for n<=8 and t>=3",
+    "order_7_class_0_minus_class_2_partition_sum": "cosh(9t)-3cosh(7t)+8cosh(3t)-6cosh(t)>0 for t>=3",
+    "order_7_class_1_minus_class_2_partition_sum": "4cosh(9t)-4cosh(7t)-8cosh(5t)+8cosh(3t)>0 for t>=3",
+    "order_7_projective_absolute_histograms": [
+      {
+        "1": 15,
+        "3": 21,
+        "5": 15,
+        "7": 9,
+        "9": 4
+      },
+      {
+        "1": 21,
+        "3": 21,
+        "5": 7,
+        "7": 8,
+        "9": 7
+      },
+      {
+        "1": 21,
+        "3": 13,
+        "5": 15,
+        "7": 12,
+        "9": 3
+      }
+    ],
+    "positivity_reason": "cosh(9t)/cosh(7t)>=exp(2t)/2>9 and cosh(7t)>=cosh(5t)>=cosh(t)",
+    "raw_temperature_range": "t>=3"
+  },
+  "raw_actual_temperature": 3,
+  "records": [
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 2,
+      "inverse_escort_normalizer_residue": 440100,
+      "order": 2,
+      "projective_spin_count": 2,
+      "response_residue_sha256": "f2ce4a2fc53a5f52dc426ec76210e2572b56ceb793007f17e4bc7502d3561081",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 2,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 2,
+      "simultaneous_signed_similarity_orbit_count": 2,
+      "spin_automorphism_orbit_count": 2
+    },
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 3,
+      "exact_nonsaturation_identity": {
+        "certificate": "For every output-denominator type, every C_k(z) coefficient in the numerator difference is exactly zero. Therefore the two response rational functions agree for every z and every t.",
+        "denominator_types": 6,
+        "simultaneous_orbit_representative_indices": [
+          0,
+          6
+        ]
+      },
+      "inverse_escort_normalizer_residue": 960833,
+      "order": 3,
+      "projective_spin_count": 4,
+      "response_residue_sha256": "c1a152e7d9123388b56f3036456fcf644614b6e04d1b5316d066fdffa3f2df91",
+      "response_saturates_simultaneous_quotient": false,
+      "rooted_energy_absolute_overlap_profile_count": 2,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 6,
+      "simultaneous_signed_similarity_orbit_count": 4,
+      "spin_automorphism_orbit_count": 2
+    },
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 5,
+      "inverse_escort_normalizer_residue": 70989,
+      "order": 4,
+      "projective_spin_count": 8,
+      "response_residue_sha256": "4d471c57f800c7bec6254f85800636d4c7099bc33c446b96ab70df82b1304828",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 5,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 4,
+      "simultaneous_signed_similarity_orbit_count": 5,
+      "spin_automorphism_orbit_count": 5
+    },
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 4,
+      "inverse_escort_normalizer_residue": 4116,
+      "order": 5,
+      "projective_spin_count": 16,
+      "response_residue_sha256": "540ee9837531ab35a7e89679221f4a6b8ebd4688b1e7e143ee2591b1c2eef1aa",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 4,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 10,
+      "simultaneous_signed_similarity_orbit_count": 4,
+      "spin_automorphism_orbit_count": 4
+    },
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 4,
+      "inverse_escort_normalizer_residue": 934626,
+      "order": 6,
+      "projective_spin_count": 32,
+      "response_residue_sha256": "77841e6133aee6fe43fa764fd5ceaf4398fc944d3373aaa8597224cfa4494165",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 4,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 60,
+      "simultaneous_signed_similarity_orbit_count": 4,
+      "spin_automorphism_orbit_count": 4
+    },
+    {
+      "class_id": 2,
+      "distinct_negative_posterior_response_functions": 26,
+      "inverse_escort_normalizer_residue": 580165,
+      "order": 7,
+      "projective_spin_count": 64,
+      "response_residue_sha256": "2ec8c3e021b84237eb8c65287bbf241c11d1733316213dc67aafb193dab17ae5",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 13,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 12,
+      "simultaneous_signed_similarity_orbit_count": 26,
+      "spin_automorphism_orbit_count": 13
+    },
+    {
+      "class_id": 0,
+      "distinct_negative_posterior_response_functions": 19,
+      "inverse_escort_normalizer_residue": 431332,
+      "order": 8,
+      "projective_spin_count": 128,
+      "response_residue_sha256": "2865ec1d90548756777b363a16cf926423e59dfb410c48b62ca7cf1ea0700b3c",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 19,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 24,
+      "simultaneous_signed_similarity_orbit_count": 19,
+      "spin_automorphism_orbit_count": 19
+    },
+    {
+      "class_id": 1,
+      "distinct_negative_posterior_response_functions": 22,
+      "inverse_escort_normalizer_residue": 833738,
+      "order": 8,
+      "projective_spin_count": 128,
+      "response_residue_sha256": "bc9f892f51f3bd4738c86e83dfe3a87acbfc57a716cdd89fb776cf62615f43f5",
+      "response_saturates_simultaneous_quotient": true,
+      "rooted_energy_absolute_overlap_profile_count": 22,
+      "rooted_profiles_equal_spin_orbits": true,
+      "signed_automorphism_group_order_projective": 16,
+      "simultaneous_signed_similarity_orbit_count": 22,
+      "spin_automorphism_orbit_count": 22
+    }
+  ],
+  "right_child_order": 2,
+  "schema": "actual-child-orbit-scaling-v1",
+  "scope": "The actual finite response usually saturates its full available simultaneous symmetry quotient. This is not an all-order orbit bound and gives no row-product-regret or recurrence theorem."
+}

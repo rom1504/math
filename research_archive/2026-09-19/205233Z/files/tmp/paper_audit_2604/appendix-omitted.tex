@@ -1,0 +1,607 @@
+\section{Omitted Proofs}
+\label{sec:omitted}
+
+\subsection{Combinatorial lemmas}
+\label{sec:combinatorics}
+
+We gather here lemmas involving only
+graph combinatorics.
+
+
+\begin{lemma}
+    \label{lem:prod-cactus-cactus}
+    For all $\sigma,\sigma'\in \calC_1$ and $\bA\in\R_\sym^{n\times n}$,
+    \[
+        \bz_{\sigma}(\bA) \cdot \bz_{\sigma'}(\bA) - \bz_{\sigma\oplus \sigma'}(\bA)\in \spn(\bz_{\calA_1\setminus \calC_1}(\bA))\,,
+    \]
+    where $\sigma\oplus \sigma'\in\calC_1$ is the grafting
+    of $\sigma$ and $\sigma'$ at the root.
+\end{lemma}
+
+\begin{proof}
+    In the $z$-basis expansion of
+    $\bz_\sigma(\bA)\cdot \bz_{\sigma'}(\bA)$, we sum over all possible partial
+    matchings of the vertices of $\sigma$
+    and $\sigma'$. The empty matching 
+    contributes exactly $z_{\sigma\oplus \sigma'}(\bA)$.
+    Any other matching that merges some
+    vertices $u\in V(\sigma)$ and $v\in V(\sigma')$ creates 4 edge-disjoint paths
+    between the root and the merged vertex.
+    Merging additional vertices of $\sigma$ and
+    $\sigma'$ can only increase the
+    number of edge-disjoint paths, so the
+    resulting graphs cannot be cactuses.
+\end{proof}
+
+\begin{lemma}
+    \label{lem:prod-cactus-other}
+    For all $\sigma\in\calC_1$, $\alpha\in \calA_1\setminus \calC_1$ and $\bA\in\R_\sym^{n\times n}$,
+    \[
+        \bz_{\sigma}(\bA) \cdot \bz_{\alpha}(\bA) \in \spn(\bz_{\calA_1\setminus \calC_1}(\bA))\,.
+    \]
+\end{lemma}
+
+\begin{proof}
+    The proof is similar to~\Cref{lem:prod-cactus-cactus}.
+    In this case, the graph corresponding
+    to the empty matching is not a cactus
+    because $\alpha$ is not.
+    All other matchings create at least
+    3 edge-disjoint paths between the root
+    and the merged vertex.
+\end{proof}
+
+\begin{lemma}\label{claim:only-trees}
+    For each $\al \in \calA_1 \setminus \calT_1$ and $\beta \in \calA_1$,
+    \[
+        \bz_{\alpha}(\bA) \cdot \bz_{\beta}(\bA) \in \spn(\bz_{\calA_1\setminus \calT_1})\,.
+    \]
+\end{lemma}
+
+\begin{proof}
+    The non-treelike diagrams $\calA_1 \setminus \calT_1$ can be characterized as:
+    \begin{claim}\label{claim:non-treelike}
+    Let $\al \in \cA_1$. Then $\al \in \cA_1 \setminus \cT_1$ if and only if one of the following holds:
+    \begin{enumerate}[(i)]
+    \item there exists a bridge edge which does not have a path to the root using only bridge edges,
+    \item or there exist a pair of vertices with three edge-disjoint paths between them.
+    \end{enumerate}
+    \end{claim}
+    \begin{proof}[Proof of~\Cref{claim:non-treelike}]
+        It is clear that either structure forbids $\al$ from being treelike. Conversely, if there are at most two edge-disjoint paths between all pairs of vertices, then the bridge edges of $\al$ go between cactuses.
+        Then condition {\em (i)} characterizes whether all bridge edges are connected to the root.
+    \end{proof}
+
+    Using the claim, if $\al$ has a structure of type {\em (ii)} then this is preserved in the product terms with any $\beta$.
+    Suppose then that $\al$ has a structure of type {\em (i)} and call the bridge edge $e$.
+    Note that both $\al, \beta$ are connected by definition of $\cA_1$\,.
+    If no descendants of $e$ intersect with $\beta$, then the type {\em (i)} structure is preserved.
+    Conversely, if any descendant of $e$ intersects with $\beta$,
+    then we obtain a new path from the descendant to the root through $\beta$ which is disjoint from the other edges of $\al$.
+    Edge $e$ has at least one ancestor which is not a bridge edge, hence there were already two edge-disjoint paths containing this ancestor.
+    Together with the new path we obtain a structure of type {\em (ii)}.
+    In all cases, the product terms remain in $\calA_1 \setminus \cT_1$.
+\end{proof}
+
+\begin{proof}[Proof of~\Cref{lem:homeomorphic}]
+    First, if $P$ matches an internal vertex of a hanging cactus, then it creates three edge-disjoint paths from the root to that vertex. These paths cannot be eliminated by merging other vertices, so $\tau_P$ cannot be a cactus.
+    Therefore, we may assume without loss of generality that $\tau_1$ and $\tau_2$
+    contain no hanging cactuses.
+
+    It is straightforward to check that any homeomorphic matching yields a cactus. We focus on the converse. Specifically, suppose that we are
+    given a matching $P$ between the vertices
+    of $\tau_1$ and $\tau_2$ such that
+    $\tau_P\in \calC_1$. We prove 
+    $P\in H(\tau_1, \tau_2)$ by induction
+    on $|V(\tau_1)|+|V(\tau_2)|$.
+
+    For the base case, suppose that $\tau_1$
+    or $\tau_2$ has only one vertex. Then
+    $\tau_P$ can be a cactus only if both
+    $\tau_1$ and $\tau_2$ consist of a single
+    vertex.
+
+    For the inductive step, let $u^1_1, \ldots, u^1_k$
+    be the children of the root of $\tau_1$,
+    and let $u^2_1, \ldots, u^2_\ell$ be the children
+    of the root of $\tau_2$. A necessary
+    condition for $\tau_P$ to be a cactus is
+    that $k=\ell$ (and this is also necessary for
+    $P$ to be a homeomorphic matching).
+    Moreover, after reordering $u^2_1, \ldots, u^2_k$ if necessary, we may assume that
+    for all $i\in [k]$, $u^1_i$ and $u^2_i$ lie on the
+    same cycle in $\tau_P$, and that these form
+    exactly $k$ distinct cycles in $\tau_P$
+    incident to the root. 
+    
+    For each $i\in [k]$
+    and $j\in \{1,2\}$,
+    let $S^j_i$ denote the non-root 
+    vertices of $\tau_j$ that
+    are mapped under $P$
+    to the same cycle of $\tau_P$ as $u^1_i,u^2_i$.
+    
+    \begin{claim}\label{claim:inductive-number-mappings}
+        For every $i\in [k]$, there is exactly
+        one vertex $v^1_i\in S^1_i$ and exactly one vertex 
+        $v^2_i\in S^2_i$ that
+        are mapped to the same vertex of $\tau_P$.
+    \end{claim}
+
+    \begin{proof}
+        Since $\tau_1$ and $\tau_2$ are acyclic,
+        creating a cycle in $\tau_P$ requires
+        identifying two other vertices than the
+        root. Conversely, 
+        identifying more than one pair of vertices
+        would create
+        three edge-disjoint paths to the root
+        in $\tau_P$, contradicting the fact
+        that the
+        latter is a cactus.
+    \end{proof}
+
+    \begin{claim}\label{claim:allows-induction}
+        For each $i\in[k]$ and $j\in\{1,2\}$, every pair in $P$ incident to a vertex
+        in the subtree rooted at $v_i^j$ has its other endpoint in the subtree
+        rooted at $v_i^{3-j}$.
+    \end{claim}
+
+    \begin{proof}
+        Suppose for contradiction that there is a pair of $P$ between a vertex $w^1$
+        in the subtree rooted at $v_i^1$ and a vertex $w^2$ in the subtree rooted at
+        $v_{i'}^{2}$ for some $i'\neq i$.
+        Then in $\tau_P$ there are three edge-disjoint paths from the image of
+        $v_i^1$ to the root: two lie on the cycle formed by
+        $S_i^1\cup S_i^2$, and the third is obtained by concatenating the path from
+        $v_i^1$ to $w^1$ with the path from $w^2$
+        to the root. This contradicts the fact that $\tau_P$ is a cactus.
+    \end{proof}
+
+    By~\Cref{claim:allows-induction}, we may apply the induction hypothesis for each
+    $i\in[k]$ to the subtree of $\tau_1$ rooted at $v_i^1$ and the subtree of $\tau_2$
+    rooted at $v_i^2$. Thus, the restriction of $P$ to these subtrees is a
+    homeomorphic matching. In particular, $v_i^1$ and $v_i^2$ have the same degree.
+
+
+    \begin{claim}\label{claim:both-core}
+        Let $i\in[k]$. Then $v_i^1$ and $v_i^2$ are either both in the core of their
+        respective trees or both outside of it. Moreover, for each $j\in\{1,2\}$, no
+        vertex in $S_i^j\setminus\{v_i^j\}$ lies in the core of $\tau_j$.
+    \end{claim}
+
+    \begin{proof}
+        For the first part, since $v_i^1$ and $v_i^2$ have the same degree, they are
+        either both in the core or both outside the core.
+
+        For the second part, suppose for contradiction that some
+        $w\in S_i^j\setminus\{v_i^j\}$ lies in the core of $\tau_j$. Since $w$ has
+        degree greater than $2$, its image in the cactus $\tau_P$ is an articulation
+        vertex. Let $\rho$ be a cycle of $\tau_P$ incident to $w$ that is distinct
+        from the cycle induced by $S_i^1\cup S_i^2$. Then the two neighbors of $w$ in
+        $\rho$ are images of vertices of $\tau_j$. Since $\tau_j$ is acyclic, the
+        cycle $\rho$ must contain a vertex $w'$ that is the image of a vertex of
+        $\tau_{3-j}$. But then $\tau_P$ contains three edge-disjoint paths from $w$
+        to the root: two through the cycle induced by $S_i^1\cup S_i^2$, and a third
+        obtained by following $\rho$ from $w$ to $w'$ and then the path from $w'$ to
+        the root. This contradicts the fact that $\tau_P$ is a cactus.      
+    \end{proof}
+
+    Let $i\in[k]$. For $j\in\{1,2\}$, let $w_i^j$ be the first descendant of
+    $u_i^j$ that lies in the core of $\tau_j$. By~\Cref{claim:both-core}, there are
+    only two cases:
+    
+    \begin{enumerate}
+        \item Either $v_i^j = w_i^j$ for both $j\in\{1,2\}$. In this case, there are no
+        non-core vertices to match on the path from $u_i^j$ to $v_i^j$, so the
+        induced matching is empty (and hence trivially order-preserving).
+        
+        \item Or $v_i^j \neq w_i^j$ for both $j\in\{1,2\}$. In this case, by induction,
+        the matching between $v_i^j$ and $w_i^j$ is order-preserving. Matching
+        $v_i^1$ to $v_i^2$ and adding the matching from $v_i^j$ to $w_i^j$
+        yields an order-preserving matching from $u_i^j$ to $w_i^j$.
+    \end{enumerate}
+
+    By induction, the restriction of $P$ induces an isomorphism between the cores of
+    $\tau_1$ and $\tau_2$ within each subtree rooted at $v_i^j$. Since there is no
+    core vertex on the path from $u_i^j$ to $v_i^j$ by~\Cref{claim:both-core}, these
+    local isomorphisms extend to an isomorphism between the cores of $\tau_1$ and
+    $\tau_2$ globally. This concludes the proof. 
+\end{proof}
+
+
+\begin{proof}[Proof of~\Cref{lem:product-gaussian}]
+    Given $\gamma_1,\ldots,\gamma_\ell\in \calG_1$,
+    we can expand
+    \[
+        \prod_{j=1}^\ell \bz_{\gamma_j} = \sum_P \bz_{\gamma_P}\,,
+    \]
+    where $P$ ranges over all partitions of
+    $V(\gamma_1)\cup \ldots \cup V(\gamma_\ell)$
+    such that all roots are in the same block,
+    but no two vertices of the same
+    $\gamma_i$ are in the same block. Suppose that ${\gamma_P}$ is treelike.
+
+    \begin{claim}\label{claim:hanging-own}
+        Every internal vertex of a hanging cactus forms a singleton block.
+    \end{claim}
+
+    \begin{proof}
+        Suppose for contradiction that an internal vertex $u$ of a hanging cactus in
+        $\gamma_1$ lies in the same block as some vertex $v$ of $\gamma_2$. Let $u'$
+        be the attachment vertex of the cycle containing $u$. In ${\gamma_P}$,
+        there are three edge-disjoint paths between the images of $u$ and~$u'$: two
+        are inherited from $\gamma_1$, while the third is obtained by following the
+        path in $\tau_2$ from $v$ to the root and then the path in $\tau_1$ from the
+        root to~$u'$. This contradicts \Cref{claim:only-trees}, since ${\gamma_P}$
+        is assumed to be treelike.
+    \end{proof}
+
+    By~\Cref{claim:hanging-own}, we may temporarily delete the hanging cactuses from
+    $\gamma_1,\ldots,\gamma_\ell$ and then reattach them in ${\gamma_P}$; this
+    does not affect whether ${\gamma_P}$ is treelike. Hence, we may assume
+    without loss of generality that none of $\gamma_1,\ldots,\gamma_\ell$ contains a
+    hanging cactus.
+
+    \begin{claim}\label{claim:graph-is-matching}
+        Let $M$ be the graph on $[\ell]$ with an edge between $i,j\in [\ell]$ if there exist
+        $u\in V(\gamma_i)$ and $v\in V(\gamma_j)$ that lie in the same block of $P$.
+        Then $M$ is a matching.
+    \end{claim}
+
+    \begin{proof}
+        Suppose for contradiction that $M$ is not a matching. Then there exist
+        non-root vertices $u\in V(\gamma_1)$, $v,v'\in V(\gamma_2)$, and
+        $w\in V(\gamma_3)$ such that $u$ and $v$ (resp. $w$ and $v'$) lie in the same block of $P$. Let $v''$ be the lowest common
+        ancestor of $v$ and $v'$ in $\gamma_2$. Since $\gamma_2\in\calG_1$, $v''$ is
+        not the root of $\gamma_2$. In ${\gamma_P}$, there are three edge-disjoint paths from the image of
+        $v''$ to the root: one is the inherited path from $v''$ to the root inside
+        $\gamma_2$; the second follows the path in $\gamma_2$ from $v''$ to $v$ and
+        then the path in $\gamma_1$ from $u$ to the root; and the third follows the
+        path in $\gamma_2$ from $v''$ to $v'$ and then the path in $\gamma_3$ from
+        $w$ to the root. This contradicts~\Cref{claim:only-trees}, since
+        ${\gamma_P}$ is treelike by assumption.
+    \end{proof}
+
+    By~\Cref{claim:graph-is-matching}, it follows that
+    \[
+        \prod_{j=1}^\ell \bz_{\gamma_j} - \sum_{M\in\calM(\ell)} \sum_{\substack{P_{u,v}\\\forall  uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \,\oplus\, \bigoplus_{u\notin M} \gamma_u}\in \spn(\bz_{\calA_1\setminus \calT_1})\,,
+    \]
+    where for each edge $uv\in M$, the sum over $P_{u,v}$ ranges over all partial
+    matchings between $V(\gamma_u)$ and $V(\gamma_v)$ that fix the roots.
+
+
+    Finally, note that unless $P_{u,v}$ is empty, ${\gamma_{P_{u,v}}}$ cannot
+    be a treelike diagram that is not a cactus. Indeed, no vertices in the
+    hanging cactuses can be matched; otherwise it would create three edge-disjoint paths. Moreover, if we
+    match two tree vertices, that would
+    create two edge-disjoint paths to the root, and thus would force the diagram to
+    be a cactus.
+    Since the grafting of non-treelike diagrams is again non-treelike, the only treelike contributions arise when each factor
+    ${\gamma_{P_{u,v}}}$ is a cactus. By~\Cref{lem:homeomorphic}, this forces
+    $P_{u,v}$ to be a homeomorphic matching. Hence,
+    \[
+        \prod_{j=1}^\ell \bz_{\gamma_j} - \sum_{M\in\calM(\ell)} \sum_{\substack{P_{uv}\in H(\gamma_u,\gamma_v)\\\forall uv\in M}} \bz_{\bigoplus_{uv\in M}\gamma_{P_{u,v}} \,\oplus\, \bigoplus_{u\notin M} \gamma_u} \in \spn(\bz_{\calA_1\setminus \calT_1})\,,
+    \]
+    as desired.
+\end{proof}
+
+\subsection{Handling empirical averages}
+\label{sec:empirical-averages}
+
+To represent expressions involving empirical averages,
+we allow the coefficients in a diagram representation
+to be formal polynomials in the quantities 
+$\{\langle \bmz_\al(\bA)\rangle : \al \in \cA_1\}$.
+Another approach would be to use disconnected diagrams, as in \cite{jones2025fourier}.
+
+\begin{lemma}\label{lem:asymptotic-state-empirical-average}
+    Assume that $\bA = \bA^{(n)}$ satisfies the assumptions of \cref{thm:convergence-distribution},
+    and furthermore, the traffic distribution concentrates for $\bA$ (\cref{def:traffic-concentration}).
+    Let
+    \begin{equation}\label{eq:asea-1}
+        \bmx = \sum_{\al \in \cA_1} c_\al \bmz_\al(\bA)
+    \end{equation}
+    for some finitely supported coefficients $(c_\al)_{\al \in \cA_1}$ which are polynomials $c_\al \in \R[\calV]$ with $\calV := \{\langle{\bmz_\al(\bA)}\rangle : \al \in \cA_1\}$. Then,
+    \begin{equation}\label{eq:asea-2}
+        X := \sum_{\al \in \cA_1} c_\al(\E Z^\infty_{\calA_1}) \cdot Z_\al^\infty
+    \end{equation}
+    is the asymptotic state of $\bmx$.
+    Moreover, if $\bmx_t$ is of the form \cref{eq:asea-1} for any $t \geq 1$ and $X_t$ is correspondingly defined as in \cref{eq:asea-2}, then $(X_t)_{t \geq 1}$ is the asymptotic state of $(\bmx_t)_{t \geq 1}$.
+\end{lemma}
+\begin{proof}
+    For polynomial test functions, the convergence in~\cref{eq:defAsymptoticState} follows
+    directly from the concentration of the traffic distribution.
+    Moreover,~\Cref{lem:traffic-l2} implies that $\frac 1n z_{\alpha}(\bm A)$ converges 
+    in $L^2$ to a deterministic limit for any $\alpha\in \calA_1$. So we can
+    combine~\Cref{claim:cvImpliesState} with
+    Slutsky's lemma to obtain that~\cref{eq:defAsymptoticState} also holds
+    for bounded continuous functions.
+\end{proof}
+
+
+\subsection{\texorpdfstring{Proof of~\Cref{lem:switchInit}}{Proof of the puncturing lemma}}
+\label{appendix:initialization}
+
+
+In this section, we prove~\Cref{lem:switchInit}. We assume throughout that $\bm H$ satisfies the assumptions of~\Cref{prop:hadamard-explicit-state}.
+We will prove that $\bm x_t$ and $\bm u_t$ have the same state evolution by relating them to the following intermediate iteration:
+\begin{alignat}{2}
+    \bm y_0 &\sim \calN(\bm 0, \bm I)\,,\quad &\bm y_t &= \bm H \bm \Pi f_{t-1}(\bm y_{t-1}) - \sum_{s=0}^{t-1} \bm b_{s,t} \cdot (\bm \Pi  f_s(\bm y_s))\quad \forall t\ge 1\,,\label{eq:ampUnpunctured}
+\end{alignat}
+where $\bm b_{s,t}$ is defined in~\cref{eq:backtrackPunctured}.
+Unless specified otherwise, all expectations in this section are taken with respect to both $\bm H$ and $\bm y_0$.
+
+\Cref{thm:full-onsager} does not apply 
+to $\bm y_t$ because of the Gaussian initialization $\by_0 \sim \calN(\bzero, \bI)$ (instead of $\by_0 = \bm{1}$).
+To analyze this initialization, we extend the class of diagrams to {\em generalized diagrams}, that is, graphs $\alpha = (V(\alpha),E(\alpha))$ together with an additional label $p(v) \in \N$ assigned to each vertex.
+The $z$-polynomial associated with a graph $\alpha$ is
+\[
+    z_\al(\bA, \by_0) \defeq \sum_{i : V(\al) \hookrightarrow [n]} \prod_{\{u,v\} \in E(\al)} \bA[i(u),i(v)] \prod_{v \in V(\al)} \by_0[i(v)]^{p(v)}\,.
+\]
+The collection of generalized vector diagrams $\calA_1(\bm y_0)$ is defined analogously.
+Definitions such as $\mathcal T_1$, $\mathcal G_1$, and $\eqinf$ extend to generalized diagrams by simply ignoring the labels $p(v)$.
+
+As in the proof of~\Cref{thm:orthogonal-amp}, one caveat is that $\bm y_t$ cannot be directly expanded as a linear combination of {\em connected} generalized vector diagrams, because the iteration involves the scalar quantity $\langle f_t(\bm y_t)\rangle$. 
+We therefore proceed as in~\Cref{lem:asymptotic-state-empirical-average}, viewing the coefficients in the diagram expansion as formal polynomials in these variables whenever necessary.
+
+Our first observation is that taking
+expectation over $\bm y_0$ in the $z$-basis
+turns (up to a
+scaling factor) a
+generalized diagram $\alpha$
+into the same diagram $\alpha$ where
+the labels are ignored.
+
+\begin{lemma}\label{lem:initialization-expectation}
+    For any generalized scalar diagram $\al$ (not necessarily connected) and any $\bmH\in \R^{n\times n}_\sym$,
+    \begin{align*}
+        \E_{\by_0} z_{\al}(\bmH, \bmy_0) &= \begin{cases}
+            \left(\prod_{v \in V(\al)} (p(v) - 1)!!\right) z_{\al}(\bH) & \text{if $p(v)$ is even for every $v\in V(\alpha)$}\\
+            0 & \text{otherwise}
+        \end{cases}
+    \end{align*}
+\end{lemma}
+    
+\begin{proof}        
+    In the $z$-basis, all vertices are assigned distinct labels.
+    Therefore, we may take the expectation over $\by_0$ separately at each vertex, since the coordinates of $\by_0$ are independent. For each vertex $v$, we have $\E_{Z \sim \calN(0,1)} Z^{p(v)} = (p(v)-1)!!$ if $p(v)$ is even or $0$ if $p(v)$ is odd.
+\end{proof}
+
+Next, we describe structural properties of the labels $p(v)$ appearing in the diagram expansion of the iterates of the AMP iteration~\cref{eq:ampUnpunctured}.
+
+\begin{lemma}\label{claim:initialization-structure}
+    We have
+    $\bmy_t \eqinf \sum_{\tau} c_\tau \bmz_\tau(\bH, \bm y_0)$ and $f_t(\bm y_t) \eqinf \sum_{\tau} c'_\tau \bmz_\tau(\bH, \bm y_0)$,
+    where $c_\tau$ and $c'_\tau$ are supported on (generalized) treelike diagrams $\tau$ such that,
+    for all $v \in V(\tau)$: 
+    \[
+        p(v) = \begin{cases}
+            1 & \text{if $v$ is a leaf vertex of $\tau$}\\
+            0\text{ or } 2 & \text{if $v$ is in a hanging cactus}\\
+            0 & \text{otherwise}\\
+        \end{cases}\,.
+    \] 
+    Leaves of treelike diagrams are defined after
+    removing hanging cactuses.
+\end{lemma}
+
+\begin{proof}
+    First, the proof of~\Cref{lem:memory-formula} still goes through with the nonlinearities $g_t(y) = f_t(y) - \langle f_t(\bm y_t)\rangle$, after extending the coefficient field from $\R$ to the ring of formal polynomials in $\{\langle \bm z_{\alpha}(\bm A)\rangle : \alpha\in \calA_1\}$. Therefore, we obtain
+    \begin{align}
+         \bm y_t \eqinf \sum_{s=0}^{t-1} \bm B_{s,t} (\bm \Pi  f_s(\bm y_s))^{\neq 1}\,.\label{eq:extensionRandomInit}
+    \end{align}
+    We now argue by induction on $t$. The base case is $f_0(\bm y_0)=\bm y_0$ which is the singleton with $p(v) = 1$.
+    
+    Now, suppose that the claim holds for $\bm y_t$.
+    The treelike diagrams appearing in $f_t(\bm y_t)$ are obtained by considering all possible products of treelike diagrams $\gam_1, \dots, \gam_\ell \in \calG_1 \cup \cC_1$ appearing in $\bm y_t$. 
+    By~\Cref{lem:product-gaussian}, each such product can be written as a sum over matchings among the $\gam_i$, where each $\gam_i$ is either paired into a cactus or does not intersect any other $\gam_j$. 
+    In the second case, the values $p(v)$ within $\gam_i$ are unchanged.
+    In the first case, the values $p(v)$ at the leaves are updated from 1 to 2, while all other values $p(v)$ within $\gam_i$ remain unchanged.
+
+    Moreover, no non-trivial intersection between $\bm B_{s,t}$ and $(\bm \Pi f_s(\bm y_s))^{\neq 1}$ can produce a treelike diagram. Hence, the decomposition of $\bm y_{t+1}$ given by~\cref{eq:extensionRandomInit}, together with the induction hypothesis, shows that in every treelike diagram appearing in $\bm y_{t+1}$, the condition on $p(v)$ is inherited directly from the corresponding property of $f_s(\bm y_s)$.
+    This completes the induction.
+\end{proof}
+
+\begin{lemma}\label{lem:puncToUnpunc}
+    For any $t\ge 1$ and any polynomial $\varphi:\R^t \to \R$,
+    \begin{align*}
+        \lim_{n\to\infty} \E_{\bm H,\bm x_0} \langle \varphi(\bm x_1, \ldots, \bm x_t)\rangle &= \lim_{n\to\infty} \E_{\bm H,\bm y_0} \langle \varphi(\bm y_1, \ldots, \bm y_t)\rangle\,.
+    \end{align*}
+\end{lemma}
+
+\begin{proof}[Proof of~\Cref{lem:puncToUnpunc}]
+    An iteration involving $\bm A$ can be reduced to one involving $\bm H$ by expanding
+    \begin{align}
+        \bm Af_{t}(\bm y_{t}) = \bm H f_{t}(\bm y_{t}) - \langle f_{t}(\bm y_{t})\rangle \bm H \bm 1 - \langle \bm H \bm \Pi f_{t}(\bm y_{t})\rangle \bm 1\,.\label{eq:decompositionPunctured}
+    \end{align}
+    Set $\delta_t\defeq \langle \bm H \bm \Pi f_{t}({\bm y}_{t})\rangle$ and $m_t \defeq \langle f_t(\bm y_t)\rangle$. 
+    We first compare $\bm y_t$ with the following modified iteration, which differs from $\bm x_t$ only in the formula for the Onsager correction term:
+    \[
+        \tilde {\bm y}_0 = \bm y_0\,,\quad \tilde {\bm y}_t = \bm A f_{t-1}(\tilde {\bm y}_{t-1}) - \sum_{s=0}^{t-1} {\bm b}_{s,t} \cdot (\bm \Pi f_s(\tilde {\bm y}_s))\,,
+    \]
+    where $\bm b_{s,t}$ is defined in~\cref{eq:backtrackPunctured}.
+
+    \begin{claim}\label{claim:divisibility}
+        For any $t\in \N$, we have
+        \begin{align}
+            \tilde {\bm y}_t-\bm y_t = \sum_{\alpha} c_{t,\alpha}(\delta_0, \ldots, \delta_{t-1}, m_0, \ldots, m_{t-1}) \bm z_{\alpha}(\bm H, \bm y_0)\,,\label{eq:idealDifference}
+        \end{align}
+        where the sum runs over finitely
+        many generalized vector diagrams, and each $c_{t,\alpha}$ is a polynomial in $\delta_0, \ldots, \delta_{t-1}, m_0, \ldots, m_{t-1}$ that is divisible by $\delta_s$ for some $s \in \{0, \ldots, t-1\}$.
+    \end{claim}
+
+    \begin{proof}[Proof of~\Cref{claim:divisibility}]
+        We argue by induction on $t$.
+        For $t=0$, $\bm y_0-\tilde{\bm y}_0=0$, establishing the base case. Let $t\ge 1$ and suppose that~\cref{eq:idealDifference}
+        holds for all $s< t$. 
+        First, one easily verifies from the induction hypothesis that the same property~\cref{eq:idealDifference} holds for $\bm \Delta_s \defeq f_s(\tilde{\bm y}_s) - f_s(\bm y_s)$ for every $s < t$.
+        By~\cref{eq:decompositionPunctured}, we can then write
+        \[
+            \bm A f_{t-1}(\tilde {\bm y}_{t-1}) - \bm H \bm \Pi f_{t-1}(\bm y_{t-1}) = \bm H \bm \Pi \bm \Delta_{t-1} - \delta_{t-1} \bm 1 - \langle \bm H \bm \Pi \bm \Delta_{t-1}\rangle \bm 1\,,
+        \]
+        and each of the three terms on the right-hand side satisfies a decomposition of the form~\cref{eq:idealDifference} by the induction hypothesis.
+        Finally,  the correction terms differ by
+        \[
+            \sum_{s=0}^{t-1} \bm b_{s,t} \cdot (\bm \Pi f_s(\tilde {\bm y}_s)) - \sum_{s=0}^{t-1} \bm b_{s,t} \cdot (\bm \Pi f_s({\bm y}_s)) = \sum_{s=0}^{t-1} \bm b_{s,t} \cdot \bm \Pi \bm \Delta_s\,,
+        \]
+        which again satisfies the property~\cref{eq:idealDifference} by the induction hypothesis. Combining these observations, we conclude that $\tilde{\bm y}_t-\bm y_t$ satisfies~\cref{eq:idealDifference}, completing the induction.
+    \end{proof}
+
+    Next, fix any polynomial $\varphi:\R^t\to \R$. By~\Cref{claim:divisibility}, we have
+    \begin{equation}
+        \langle \varphi (\bm y_1, \ldots, \bm y_t)\rangle - \langle \varphi(\tilde {\bm y}_1, \ldots, \tilde{\bm y}_t)\rangle = \sum_{\alpha} c_{\alpha}(\delta_0, \ldots, \delta_{t-1},m_0,\ldots,m_{t-1}) \langle \bm z_{\alpha}(\bm H, \bm y_0)\rangle\,,\label{eq:divisibilityFinal}
+    \end{equation}
+    where the sum runs over finitely many generalized scalar diagrams, and each $c_\alpha$ is a polynomial in $\delta_0,\ldots,\delta_{t-1},m_0,\ldots,m_{t-1}$ that is divisible by some $\delta_s$. 
+    In the remainder of the proof, we show that each term on the right-hand side of~\cref{eq:divisibilityFinal} converges to $0$ in expectation.
+    The reason is that each coefficient $c_\alpha$ contains a factor $\delta_s$, and these quantities converge to $0$ in $L^2$:
+    \begin{claim}\label{lem:correctionNegligible}
+        $\langle \bm H \bm \Pi f_t(\bm y_{t})\rangle \overset{L^2}\longrightarrow 0$ for any $t\ge 1$.
+    \end{claim}
+    
+    \begin{proof}[Proof of~\Cref{lem:correctionNegligible}]
+        The claim is equivalent to the statement that $\frac{1}{n^2}\E \langle \bm H \bm 1, \bm \Pi f_t(\bm y_t)\rangle^2$ converges to $0$.
+        This quantity can be expanded as a linear combination of terms of the form
+        \[\frac{1}{n^2} \E \left[z_\alpha (\bm H, \bm y_0) z_\beta (\bm H, \bm y_0)\right]\,
+        \]
+        where $\alpha,\beta\in\calA$ both belong to the support of the expansion of
+        $\langle \bm H \bm 1, \bm \Pi f_t(\bm y_t)\rangle$.
+        As in the proof of~\Cref{lemma:full-factorization},
+        \[
+            \frac 1 {n^2} \E \left[z_\alpha (\bm H, \bm y_0) z_\beta (\bm H, \bm y_0)\right] = \frac 1{n^2} \E \left[z_{\alpha\sqcup \beta} (\bm H, \bm y_0)\right]+o(1)\,.
+        \]
+        Indeed, each identification of vertices across the two copies yields a connected diagram whose expectation, after normalization by $1/n^2$, converges to $0$ by the existence of the traffic distribution. This holds for every realization of $\bm y_0$, and therefore also after taking expectation over $\bm y_0$.
+        
+        Taking expectation over $\bm y_0$ and using~\Cref{lem:initialization-expectation}, each term either vanishes or becomes a constant multiple of $\E_{\bm H} \left[z_{\alpha\sqcup \beta} (\bm H)\right]$, where $\alpha\sqcup\beta$ is viewed as an ordinary scalar diagram obtained by ignoring the labels $p(v)$. By~\Cref{lemma:full-factorization} and the strong cactus property, the only terms that contribute to the limit are those for which both $\alpha$ and $\beta$ are cactuses.
+        Viewing $\bm H\bm 1$ as a rooted tree with one edge, the cactuses in the $z$-basis expansion of $\langle \bm H \bm 1, \bm \Pi f_t(\bm y_t)\rangle$ arise when the child of $\bm H\bm 1$ is merged with a leaf of a diagram from $\bm \Pi f_t(\bm y_t)$. By~\Cref{claim:initialization-structure}, such leaves satisfy $p(v)=1$. Applying~\Cref{lem:initialization-expectation} once again, we find that each of these cactus terms has expectation $0$ over $\bm y_0$, which concludes the proof.
+    \end{proof}
+
+    After taking expectation over $\bm H$ and $\bm y_0$, any monomial appearing on the right-hand side of~\cref{eq:divisibilityFinal} has the following form for some $p_i,q_i\in \N$:
+    \begin{equation}
+        \E \left[\delta_s \prod_{i=0}^{t-1} \delta_i^{p_i} m_i^{q_i} \langle z_{\alpha}(\bm H, \bm z_0)\rangle\right] \le \left(\E \delta_s^2\right)^{\frac 12} \cdot \left(\E \left[\prod_{i=0}^{t-1} \delta_i^{2p_i} m_i^{2q_i} \langle z_{\alpha}(\bm H, \bm z_0)\rangle^2\right]\right)^{\frac 12}\,,\label{eq:anyTerm}
+    \end{equation}
+    where the inequality follows from Cauchy-Schwarz.
+    
+    The first factor on the right-hand side
+    of~\cref{eq:anyTerm} converges to $0$ as $n\to\infty$
+    by~\Cref{lem:correctionNegligible}.
+    The second factor can be expanded in the $z$-basis as a finite linear combination of products of generalized $z$-diagrams. 
+    Taking expectation over $\bm y_0$ and using~\Cref{lem:initialization-expectation}, each such term either vanishes or becomes a constant multiple of a product of ordinary scalar $z$-diagrams.
+    By~\Cref{lemma:full-factorization}, the normalized expectation of each of these terms has a finite limit as $n\to\infty$ and in particular, is uniformly bounded in $n$. 
+    Therefore, the second factor on the right-hand side of~\cref{eq:anyTerm} is bounded, and hence the right-hand side of~\cref{eq:divisibilityFinal} converges to $0$ in expectation.
+    In summary, we have shown:
+    \begin{equation}
+        \lim_{n\to\infty} \E \langle \varphi(\bm y_1, \ldots, \bm y_t)\rangle - \E \langle \varphi(\tilde{\bm y}_1, \ldots, \tilde{\bm y}_t)\rangle = 0\,.\label{eq:semiConclusion}
+    \end{equation}
+    Finally, as in the proof of~\Cref{thm:orthogonal-amp}, we may use the traffic concentration property (\Cref{lemma:full-factorization}) to replace ${\bm b}_{s,t}$ by $\kappa_{t-s} \prod_{s<r<t} \langle f_r'(\tilde{\bm y}_r)\rangle$ in the iteration for $\tilde{\bm y}_t$ without affecting the asymptotic state. This yields
+    \[
+        \lim_{n\to\infty} \E \langle \varphi (\bm x_1, \ldots, \bm x_t)\rangle - \E \langle \varphi(\tilde {\bm y}_1, \ldots, \tilde{\bm y}_t)\rangle = 0\,.
+    \]
+    Combining this with~\cref{eq:semiConclusion} completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of~\Cref{lem:switchInit}]
+    First, we can replace every
+    occurrence of $\bm \Pi f_0(\bm y_0)$
+    in $\bm y_t$ by $f_0(\bm y_0)$ using
+    the traffic concentration property,
+    since $\langle f_0(\bm y_0)\rangle = \langle \bm y_0\rangle$, which converges to $0$ as $n\to\infty$.
+    After this update, the iterates $\bm y_t$ and $\bm u_t$ have the same generalized diagram expansion as functions of their initializations $\bm y_0$ and $\bm u_0$. 
+    Note that this expansion is formal in the variables $\langle \bm z_{\alpha}(\bm A)\rangle$ for $\alpha\in \calA_1(\bm y_0)$, because the puncturing operation introduces terms of the form $\langle f_t(\bm y_t)\rangle$.
+    
+    First, by the strong cactus property and~\Cref{lem:initialization-expectation}, all non-cactus terms in the generalized diagram expansions of $\langle\varphi(\bm y_1,\ldots,\bm y_t)\rangle$ and $\langle\varphi(\bm u_1,\ldots,\bm u_t)\rangle$ converge to $0$ in expectation.
+    Second, using~\Cref{claim:initialization-structure} and extending the same argument one further step to $\varphi$,
+    all cactus diagrams in the generalized diagram expansions of $\bm y_t$ and $\bm u_t$ satisfy $p(v) \in \{0,2\}$, since they have no non-root leaves (the iterates for $t\ge 1$ have no singleton component).
+    Therefore, by~\Cref{lem:initialization-expectation}, the expectations of the cactus terms remain unchanged as $n\to\infty$ if we replace $\bm y_0$ by $\bm u_0=\bm 1$.
+
+    Combining these facts with the traffic concentration property for $\bm H$ (\Cref{lemma:full-factorization}) shows that $\langle \varphi(\bm y_1, \ldots, \bm y_t)\rangle - \langle \varphi(\bm u_1, \ldots, \bm u_t)\rangle$ converges to $0$ in expectation, as desired.
+\end{proof}
+
+
+\subsection{\texorpdfstring{Proof of~\Cref{lem:block-matrix-cactus-limits}}{Proof of block matrix limits}}
+\label{app:block-matrix}
+
+In this section, we prove the auxiliary lemmas for block matrices.
+
+\begin{definition}
+    Let $\al \in \cC_1$ be a cactus diagram.
+    For a {coloring} $\chi:V(\al)\to [q]$
+    of the vertices of $\al$ with $q$ colors, we say that $\chi$ is {valid} if for every cycle $\rho =(u_1, \ldots, u_k, u_1)\in \cyc(\al)$, there exist $r,c\in [q]$ such that $\chi(u_i) = r$ when $i$ is even and $\chi(u_i) = c$ when $i$ is odd, with $r=c$ if $k$ is odd. 
+    We write
+    $\chi(\rho)=\{r,c\}$ in this case.
+\end{definition}
+
+Our main diagrammatic calculation for block models is the following, which gives the traffic distribution on each block:
+
+\begin{lemma}\label{claim:insideBlock}
+    Let $\bA$ be as in the setting of \cref{lem:block-matrix-cactus-limits}.
+    Then for all $\al \in \cA_1$ and $r \in [q]$:
+    \[
+        \frac qn \sum_{\substack{i\in [n]\\\block(i)=r}} \E \bm z_\sigma(\bm A)[i] \underset{n\to\infty}{\longrightarrow} \begin{cases}\displaystyle
+        \sum_{\substack{\chi:V(\al)\to [q]\\\chi \textnormal{ valid}\\\chi(\textnormal{root})=r}} \prod_{\rho \in \cyc(\al)} \kappa_{|\rho|}^{\chi(\rho)} & \text{ if }\al \in \cC_1\\
+        0 &\text{ if } \al \in \cA_1 \setminus \cC_1
+        \end{cases}
+    \]
+\end{lemma}
+\begin{proof}
+    We partition the sum defining $\bmz_\al(\bA)$ according to the block of each vertex, as in the proof of~\Cref{prop:block-matrix-strong-cactus}:
+    \begin{align*}
+        \bmz_\al(\bA) &= \sum_{\chi : V(\al) \setminus \{\text{root}\} \to [q]} \bmz_{\al_\chi}((\bA_{r,c})_{r,c \in [q]})\\
+        \intertext{where $\al_\chi$ is a diagram whose edges are colored by the matrices $\bA_{r,c}$. For a fixed $r' \in [q]$, we get}
+        \frac qn \sum_{\substack{i \in [n]\\ \block(i) = r'}} \E\bmz_\al(\bA)[i] &= \sum_{\chi : V(\al) \setminus \{\text{root}\} \to [q]} \frac qn \sum_{\substack{i \in [n]\\ \block(i) = r'}}\E\bmz_{\al_\chi}((\bA_{r,c})_{r,c \in [q]})[i]\,.
+    \end{align*}
+    By the definition of traffic independence (\Cref{def:traffic independence}), the limit as $n\to\infty$ exists for each term indexed by $\chi$ on the right-hand side.
+    Hence, the limit of the left-hand side also exists.
+    Arguing as in the proof of~\Cref{prop:block-matrix-strong-cactus}, we find that the limit is zero for all $\al \in \cA_1 \setminus \cC_1$.
+    
+    For cactus diagrams $\al \in \cC_1$, asymptotic traffic independence and the strong factorizing cactus property of the individual blocks imply that the only nonzero contributions arise when every cycle of $\al_\chi$ is monochromatic, in the sense that it involves only a single matrix $\bm A_{r,c}$. 
+    This
+    happens if and only if $\chi$ is a valid coloring, in which case the corresponding term contributes asymptotically
+    \[\prod_{\rho\in \cyc(\sigma)} \kappa_{|\rho|}^{\chi(\rho)}\,,\] as desired.
+\end{proof}
+
+
+\begin{proof}[Proof of \cref{lem:block-matrix-cactus-limits}.]    
+    Let $\calL_{\cC_1}(r)$ denote the values from \cref{claim:insideBlock}:
+    \[
+        \mathcal L_{\sigma}(r) := \sum_{\substack{\chi:V(\sig)\to [q]\\\chi \textnormal{ valid}\\\chi(\textnormal{root})=r}} \prod_{\rho \in \cyc(\sig)} \kappa_{|\rho|}^{\chi(\rho)}\,.
+    \]
+    We first prove that all joint moments
+    of
+    $\bm z_{\calC_1}(\bm A)[i]$ conditioned on $\block(i)=r$ converge to the moments
+    of the deterministic sequence $Z^\infty_{\calC_1}(r)$.
+    For any $\sig_1, \ldots, \sig_k\in \cC_1$, we have
+    \begin{align*}
+        &\frac qn \sum_{\substack{i\in[n]\\\block(i) = r}} \E \left[\bm z_{\sigma_1}(\bA)[i]\cdots \bm z_{\sigma_k}(\bA)[i]\right]\\
+        =\;&\frac qn \sum_{\substack{i\in [n]\\\block(i) = r}} \E \bm z_{\sigma_1\oplus \ldots \oplus\sigma_k}(\bm A)[i] + o(1)\tag*{\textnormal{(by~\Cref{lem:prod-cactus-cactus,claim:insideBlock})}}\\
+        =\;& \mathcal L_{\sig_1 \oplus \ldots \oplus \sig_k}(r) + o(1) = \prod_{j = 1}^k \mathcal L_{\sigma_j}(r) + o(1)\,. \tag*{\textnormal{(by \cref{claim:insideBlock})}}
+    \end{align*}
+
+    So it remains to prove that $\mathcal L_{\mathcal C_1}(r)$ satisfies the same recursion as $Z^\infty_{\calC_1}(r)$.
+    First, one readily checks that $\mathcal L_{\textnormal{singleton}}(r) = 1$, as in {\em (i)}. Next, suppose that $\sigma$ is rooted at a vertex of degree 2, and let $\ell$ and $\sigma_1, \ldots, \sigma_{\ell-1}$ be as in {\em (ii)}. Then, by decomposing according to the value of cycle containing the root, we have
+    \[
+        \mathcal L_\sigma(r) =
+        \begin{cases}
+            \displaystyle
+            \sum_{c\in [q]} \left[\kappa_\ell^{\{r,c\}}
+            \prod_{\substack{k=2\\k\textnormal{ odd}}}^{\ell} \mathcal L_{\sigma_k}(r) \prod_{\substack{k=2\\k\textnormal{ even}}}^{\ell} \mathcal L_{\sigma_k}(c)\right]
+            & \text{if $\ell$ is even} \\
+            \displaystyle
+            \kappa_\ell^{\{r,r\}}
+            \prod_{k=2}^{\ell} \mathcal L_{\sigma_k}(r)
+            & \text{if $\ell$ is odd}
+        \end{cases}
+    \]
+    just like the recursion in {\em (ii)}. Similarly, {\em (iii)} follows from the
+    fact that the definition of $\mathcal L_\sigma(r)$
+    factorizes over graftings at the root.
+    Together, this shows that $\mathcal L_{\calC_1}(r) = Z^\infty_{\calC_1}(r)$.
+
+    Since the limit is deterministic, 
+    we have shown that
+    conditionally on $\block(i)=r$,
+    $\bm z_{\calC_1}(\bm A)[i]$ converges
+    to $Z^\infty_{\calC_1}(r)$ in $L^2$.
+    Since $\block(i)\sim \Unif([q])$, it follows that $(\block(i),\bm z_{\calC_1}(\bm A)[i])$ converges in distribution
+    to $(R, Z^\infty_{\calC_1}(R))$, where $R\sim \Unif([q])$.
+\end{proof}

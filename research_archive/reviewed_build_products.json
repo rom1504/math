@@ -484,5 +484,21 @@
         "sha256": "e79f22aa4374851fcf8093462d8e1e46645b72b362608f7023214837f84e1813"
       }
     ]
+  },
+  "tmp/twisted_chiral_2026_09_18/stability_histogram_2026_09_19": {
+    "sha256": "582b132cb6fdd044fb0403f45ba231aecd3266c011fbb619b0418806e9b1a048",
+    "source": "computations/twisted_chiral_stability_histogram_2026_09_19.cpp",
+    "source_sha256": "788c9c2662fec8f1d5f3c248df635f362a2ec95bdfb68ab7270f95cca3024b38",
+    "recipe": "g++ -O3 -march=native -std=c++17 computations/twisted_chiral_stability_histogram_2026_09_19.cpp -o tmp/twisted_chiral_2026_09_18/stability_histogram_2026_09_19",
+    "audit": "artifacts/twisted_chiral_computation_2026_09_18.md",
+    "executable_section_replay": "computations/results/twisted_chiral_build_replay_2026_09_19.json"
+  },
+  "tmp/twisted_chiral_2026_09_18/provenance_rebuild_stability_histogram_2026_09_19": {
+    "sha256": "582b132cb6fdd044fb0403f45ba231aecd3266c011fbb619b0418806e9b1a048",
+    "source": "computations/twisted_chiral_stability_histogram_2026_09_19.cpp",
+    "source_sha256": "788c9c2662fec8f1d5f3c248df635f362a2ec95bdfb68ab7270f95cca3024b38",
+    "recipe": "g++ -O3 -march=native -std=c++17 /home/math/quadra/computations/twisted_chiral_stability_histogram_2026_09_19.cpp -o /home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_stability_histogram_2026_09_19",
+    "audit": "artifacts/twisted_chiral_computation_2026_09_18.md",
+    "executable_section_replay": "computations/results/twisted_chiral_build_replay_2026_09_19.json"
   }
 }
