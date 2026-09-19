@@ -1,7 +1,7 @@
 # Strategic steering
 
 Evidence cutoff: 2026-09-19 closing twisted-chiral audits.
-Status: bounded three-active-hour experiment in final audit/publication,
+Status: bounded three-active-hour experiment COMPLETE at closing publication,
 with no automatic extension. It was interrupted after about50 active minutes.
 Resumed 2026-09-19 18:58:29UTC; remaining allocation approximately 2h10,
 ending 21:08:29UTC. Earlier bounded BH campaign is COMPLETE.
@@ -22,12 +22,8 @@ as research time. Write/execution access was rechecked on resumption.
 The preceding BH campaign is complete, with boundedness unresolved.
 
 Determine whether M_n/n^(3/2) converges, without presuming its value.
-The preceding completed authorization was SIX active hours,16:42:21--22:42:21UTC:
-select roughly three complementary primary papers, reconstruct decisive
-proofs, extract precise tools, test losses, and attempt extensions and
-combinations. Original convergence is central; independent useful mathematics
-also counts when its relationship is stated honestly. Use parallel
-researchers and independent verification. At six hours synthesize and stop.
+Earlier paper-portfolio and BH campaigns are complete; their bounded
+authorizations remain in their campaign records and Git history.
 
 Preserve and push proofs, drafts, failed derivations, scripts, seeds,
 sources and outputs. Never use /tmp; use /home/math/quadra/tmp.
@@ -47,7 +43,7 @@ audit; fixed quadratic-phase compilers cannot supply divergence in their
 proved scope. No external novelty claim. No automatic extension is justified
 on the tested mechanisms. Evidence: artifacts/bh_boundedness_final_synthesis_2026_09_18.md.
 
-## Agent-authored assessment: closing twisted-chiral experiment
+## Agent-authored assessment: completed twisted-chiral experiment
 
 The exact shared-pair/cut identity is independently verified. Optimal-child
 families reproduce recorded global values through14; order16 cap30 and
@@ -108,10 +104,8 @@ centered, exactly isotropic, (3/2)-subGaussian physical sign law nu with
     sup_(|H_A(x)|>=.30n^(3/2)) E_nu|h.x|/sqrt(n)
        <=sqrt(2/pi)-2^(-67).
 
-There is no operator-norm or query-covariance assumption. Signed covariance,
-Grothendieck coordinate localization and the full-sign half-range budget
-exclude concentrated energy. Three independent reconstructions and a
-fresh rational lower-certificate replay support the proof.
+No operator-norm or query-covariance assumption. Proof dependencies and
+independent reconstructions are preserved, not newly proved at this checkpoint.
 Canonical: paper_director_low_cap_uniform_response_2026_09_17.md.
 
 This removes a real structural hypothesis, but its discount is NOT enough
@@ -134,24 +128,12 @@ or convergence claim is inferred from these tools.
 
 ## Quantitative boundaries, with their precise scope
 
-- A fixed Gaussian latent spectral band [1/2,3/2] has response floor
-  .786393873897... even for arbitrary exactly-isotropic mixtures.
-  It cannot reach the original parent slope below .75. Non-Gaussian
-  laws escape the class; this is not a universal sign-law impossibility.
-- If a query law has covariance norm<=L, ANY physical response discount
-  Delta below the independent mean costs KL>=Delta^2/(64L)-2.
-  Hence all o(n)-degree positive Walsh densities fail to give a fixed
-  normalized discount on bounded-covariance query duals. Such a dual
-  has not been proved to exist for every minimizing ground code.
-- Fixed lists of bounded-Lipschitz central-energy witnesses leave each
-  scalar response at kappa+O(n^(-1/4)) for actual bounded-cap signings.
-  Rare conditioning, growing lists and extensive Gibbs tilts are distinct.
-- Whole nearlevel entropy is at least order eta log(1/eta); finite
-  full-code entropy slope and whole-code response^2=o(eta) shortcuts
-  are VACUOUS. Anchored-center mechanisms are not thereby excluded.
-- Hadamard, matching, coordinate-product and finite-order failures retain
-  their stated family scopes. They do not rule out favorable exact
-  minimizer selection or unrestricted global internal-edge rewrites.
+The earlier portfolio records a .786393873897 Gaussian spectral-band response
+floor, a KL>=Delta²/(64L)-2 query-discount bound, failure of fixed central
+witness lists, and a vacuous whole-nearlevel response shortcut. Each retains
+its stated class and hypotheses; non-Gaussian laws, growing lists and anchored
+centers are distinct. These boundaries do not exclude favorable exact
+minimizer selection or unrestricted global internal-edge rewrites.
 
 ## Exact remaining original-value obligations and next judgment
 

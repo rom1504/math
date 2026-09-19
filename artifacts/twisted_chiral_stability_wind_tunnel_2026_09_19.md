@@ -34,6 +34,16 @@ All144 sampled twists violate the2√2Q threshold. Filtering is material,
 especially the roughly37-fold reduction for both optimal order10 classes,
 but every corresponding sample mean remains well above1.
 
+For the five OPTIMAL-child groups this zero-defect2sqrt2Q threshold is
+already below their exhaustive fixed-child family minima. Therefore their
+true stable-count expectation is necessarily at least1, without sampling:
+every allowed parent has a violating global maximum. Those rows cannot
+falsify an asymptotic2sqrt2Q+O(n) statement. The conference threshold is
+above its certified family minimum40, so the same deterministic observation
+does not apply there. The exact small averages in the separate permanent
+artifact test thresholds AT known family minima and are a distinct
+calibration of the sufficient first-moment certificate.
+
 | Child group | Mean raw above4β/3 | Mean stable above4β/3 | Draws with violation | Mean stable above family minimum |
 |---|---:|---:|---:|---:|
 | Optimal6, class0 |28.167|6.875|24/24|4.708|

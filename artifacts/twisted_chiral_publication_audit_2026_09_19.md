@@ -53,6 +53,24 @@ current-work check all2,012 originals matched, with no missing/changed research
 or credential flags. Canonical additions after that snapshot are committed
 directly; publication is followed by another current-work check.
 
+The main publication commit8ccc43f was pushed normally. Its subsequent
+current-work audit found1,976 remaining ignored/untracked research originals,
+all matching their preserved payloads, with no missing/changed research or
+credential flags. The lower count reflects canonical files now committed.
+A final full wind-tunnel replay reproduced ALL151 histograms and summaries;
+only its timestamp and elapsed time changed. The final scope note explains
+that several zero-defect sample thresholds already lie below known family
+minima and cannot falsify an asymptotic theorem with a subleading defect.
+
+The final coverage audit checks that the parity-rounded oscillatory scalar
+countermodel respects cap monotonicity, a summable doubling defect and the
+proved near-order modulus. It still fails to converge. The director caught
+and corrected a proposed additional signing-density monotonicity:5/15<9/21
+at orders6 and7 refutes it. The analytic scalar example may obey that extra
+hypothetical property, but it is not a theorem about M_n. This failed
+inference is explicitly retained in the uniform artifact; no proved transfer
+or convergence criterion depends on it.
+
 Two old untracked originals intentionally remain:
 
 1. `computations/decisive_independent_exact_range_scan_2026_09_07`: reviewed

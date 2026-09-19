@@ -141,3 +141,9 @@ conditional examples show why a pointwise stability penalty is unavailable.
 The new tensor witness quantifies the loss of both finite cap40 parents
 under literal self-tensoring. Neither upper bounds nor convergence improve.
 No further research loop is authorized after this three-active-hour endpoint.
+
+Closing publication: all three researchers have finished, no research process
+remains running, and the main theorem/certificate/archive commit8ccc43f was
+pushed. Final scope corrections and replay metadata are committed separately.
+The post-publication archive audit found no missing research. The bounded
+campaign is complete; convergence remains unresolved.

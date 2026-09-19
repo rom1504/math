@@ -270,6 +270,30 @@ two. Hence parity and the elementary one-vertex extension bound do not repair
 the coverage gap. This is a countermodel to a proposed implication, **not** a
 claim that the actual M_n behaves this way.
 
+The same example even respects an additional HYPOTHETICAL density monotonicity.
+Put omega=2pi/log2. If
+`rho sqrt((1/2)^2+omega^2)<c/2`, which holds for the displayed constants,
+then differentiating F(t)/t² shows that this ratio is strictly decreasing
+with derivative at most `-a t^(-3/2)` for some a>0. Hence F(t)/[t(t-1)]
+is decreasing for t>1 as well: it is the product of F(t)/t² with the
+positive decreasing factor t/(t-1). The adjacent-integer decrease is
+Omega(n^(-3/2)), whereas rounding F by less than two changes adjacent
+ratios by only O(n^(-2)). Thus the parity-rounded ratio is eventually
+decreasing too. Its normalized relative-order
+modulus is O(r/n)+O(n^(-3/2)), stronger than the new near-order Hölder
+modulus. Consequently doubling, a summable defect, even these two
+monotonicity requirements and near-order continuity still do not supply all-order
+coverage. This strengthens the scalar implication countermodel only;
+it constructs no nonconvergent sequence of actual optimal signings.
+
+Scope correction from the closing director audit: M_n/binom(n,2) itself is
+NOT in general nonincreasing. The exact values M6=5
+and M7=9 give5/15<9/21. A briefly proposed inference from averaging principal
+restrictions was therefore false: averaging a fixed parent's restricted
+caps cannot be interchanged with minimizing over children. Only the scalar
+compatibility example has the extra decreasing-density property; none of
+the signing theorems or convergence criteria above assumes it.
+
 ### Why two multipliers with only o(n^{3/2}) error are insufficient
 
 For large t let
