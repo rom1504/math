@@ -1,0 +1,151 @@
+{
+  "code_checks": {
+    "all_boolean_codes_orders_1_to_3": 273,
+    "max_entropy_over_width_bound": 0.6931471805599453
+  },
+  "graph_cases": [
+    {
+      "added_vertices": 2,
+      "base_order": 0,
+      "base_signs": [],
+      "increment_bound": 3.3548200450309493,
+      "information": {
+        "information_sum_over_entropy": 1.0,
+        "mean_cap": "3",
+        "mean_row_response": "2",
+        "optimizer_entropy": 2.0794415416798357,
+        "parent_order": 3,
+        "random_graphs": 8,
+        "row_mutual_information": [
+          0.6931471805599453,
+          0.6931471805599453,
+          0.6931471805599453
+        ]
+      },
+      "mean_conditional_increment": "2",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 2
+    },
+    {
+      "added_vertices": 2,
+      "base_order": 1,
+      "base_signs": [],
+      "increment_bound": 4.830218444630791,
+      "information": {
+        "information_sum_over_entropy": 0.33840379447845065,
+        "mean_cap": "9/2",
+        "mean_row_response": "9/4",
+        "optimizer_entropy": 2.772588722239781,
+        "parent_order": 4,
+        "random_graphs": 64,
+        "row_mutual_information": [
+          0.3127515147113669,
+          0.31275151471136703,
+          0.31275151471136703
+        ]
+      },
+      "mean_conditional_increment": "3/2",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 16
+    },
+    {
+      "added_vertices": 1,
+      "base_order": 2,
+      "base_signs": [
+        1
+      ],
+      "increment_bound": 5.578667960675236,
+      "information": {
+        "information_sum_over_entropy": 0.5,
+        "mean_cap": "9/2",
+        "mean_row_response": "9/4",
+        "optimizer_entropy": 2.772588722239781,
+        "parent_order": 4,
+        "random_graphs": 32,
+        "row_mutual_information": [
+          0.6931471805599453,
+          0.6931471805599453
+        ]
+      },
+      "mean_conditional_increment": "3/2",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 8
+    },
+    {
+      "added_vertices": 2,
+      "base_order": 2,
+      "base_signs": [
+        -1
+      ],
+      "increment_bound": 5.7992935250959405,
+      "information": {
+        "information_sum_over_entropy": 0.42015911595371497,
+        "mean_cap": "51/8",
+        "mean_row_response": "51/20",
+        "optimizer_entropy": 3.4657359027997248,
+        "parent_order": 5,
+        "random_graphs": 512,
+        "row_mutual_information": [
+          0.48538684434979273,
+          0.4853868443497936,
+          0.4853868443497962
+        ]
+      },
+      "mean_conditional_increment": "15/8",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 96
+    },
+    {
+      "added_vertices": 1,
+      "base_order": 3,
+      "base_signs": [
+        1,
+        1,
+        1
+      ],
+      "increment_bound": 6.765537695468319,
+      "information": {
+        "information_sum_over_entropy": 0.47559298241984643,
+        "mean_cap": "51/8",
+        "mean_row_response": "51/20",
+        "optimizer_entropy": 3.2931790380022696,
+        "parent_order": 5,
+        "random_graphs": 128,
+        "row_mutual_information": [
+          0.7831064201630089,
+          0.7831064201630114
+        ]
+      },
+      "mean_conditional_increment": "15/8",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 24
+    },
+    {
+      "added_vertices": 2,
+      "base_order": 3,
+      "base_signs": [
+        1,
+        1,
+        -1
+      ],
+      "increment_bound": 7.140537695468319,
+      "information": {
+        "information_sum_over_entropy": 0.6663524906667437,
+        "mean_cap": "585/64",
+        "mean_row_response": "195/64",
+        "optimizer_entropy": 4.019302983497821,
+        "parent_order": 6,
+        "random_graphs": 4096,
+        "row_mutual_information": [
+          0.8927575179326803,
+          0.8927575179326822,
+          0.8927575179326843
+        ]
+      },
+      "mean_conditional_increment": "177/64",
+      "minimum_exact_width_slack": "0",
+      "windows_checked": 296
+    }
+  ],
+  "status": "PASS"
+}

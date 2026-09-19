@@ -1,0 +1,10 @@
+A5 project optimizer: slacks (0,0); empty layers k=1,2,3,4 are 1/5, 0/10, 0/10, 1/5.
+A6 project optimizer: slacks (0,0,0); empty layers are 6/6, 0/15, 20/20, 0/15, 6/6.
+A8 project optimizer: slacks (0,0); empty layers are 5/8, 6/28, 31/56, 16/70, 31/56, 6/28, 5/8.
+A8 Pareto types: (40,1/14,(0,0)); (72,3/14,(0,0,0,0,0,0)).
+A8: every Pareto column has an empty column on every nontrivial layer; all robust-slack counts are zero.
+A9 project representative: slacks (4,4); empty layers are 4/9, 23/36, 48/84, 70/126, 70/126, 48/84, 23/36, 4/9.
+A9 Pareto types: (56,1/36,(4)); (72,1/18,(4,4)); (88,1/12,(4,4,4)).
+A9: every Pareto column has an empty column on every nontrivial layer; all robust-slack counts are zero.
+Exact mean/variance and Cantelli checks passed for every active selector of each representative and every nontrivial k.
+PASS noncentral_slack_r46_check

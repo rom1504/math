@@ -1,0 +1,1259 @@
+{
+  "canonical_payload_sha256": "50b3c54b90bb40e040341e3c3b1128f51760614ac3030cb3d0a1d0946282ef92",
+  "dynamics": "largest strictly positive one-flip gain, least coordinate on ties; augmented zero cross-fields start at switched spin +1",
+  "full_row_sign_experiment": [
+    {
+      "N": 32,
+      "all": {
+        "count": 32768,
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 9.912938769762278e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.002784542753575409
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0517578125e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.005524187433679761
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.99969482421875,
+          "minimum": 0.0,
+          "standard_deviation": 0.017466615270067022
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.322052001953125,
+          "minimum": 0.0,
+          "standard_deviation": 0.07607369943032626
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.875,
+          "minimum": 1.0,
+          "standard_deviation": 1.109264959331178
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0849609375,
+          "minimum": 1.0,
+          "standard_deviation": 0.45565929058795795
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803619384765625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929286817322795
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 8.296966552734375e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0022559506118038533
+        },
+        "outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394094467163086,
+          "minimum": 0.0,
+          "standard_deviation": 0.07043267491481778
+        },
+        "selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26442432403564453,
+          "minimum": 0.0,
+          "standard_deviation": 0.05873742028925993
+        }
+      },
+      "both_input_blocks_bent": {
+        "count": 448,
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 0.0033540221205835127,
+          "minimum": 0.0,
+          "standard_deviation": 0.01849006519894035
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 0.002232142857142857,
+          "minimum": 0.0,
+          "standard_deviation": 0.04719280024970083
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.35044642857142855,
+          "minimum": 0.25,
+          "standard_deviation": 0.09124523855343619
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.29464285714285715,
+          "minimum": 0.0,
+          "standard_deviation": 0.08328017011686437
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.375,
+          "minimum": 0.375,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 0.0025111607142857145,
+          "minimum": 0.0,
+          "standard_deviation": 0.013620530410110406
+        },
+        "outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.2569056919642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.05837240124961616
+        },
+        "selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2598353794642857,
+          "minimum": 0.125,
+          "standard_deviation": 0.06623571142638672
+        }
+      },
+      "diffuse_count": 32,
+      "diffuse_only": {
+        "count": 32,
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 0.0801019400562886,
+          "minimum": 0.06629126073623882,
+          "standard_deviation": 0.026921970218926165
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.3359375,
+          "minimum": 0.1875,
+          "standard_deviation": 0.11020887484113973
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.25,
+          "mean": 0.109375,
+          "minimum": 0.0,
+          "standard_deviation": 0.09757809372497497
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 1.9375,
+          "mean": 1.46875,
+          "minimum": 1.0,
+          "standard_deviation": 0.46875
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 1.5,
+          "mean": 1.25,
+          "minimum": 1.0,
+          "standard_deviation": 0.25
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.34375,
+          "minimum": 0.3125,
+          "standard_deviation": 0.03125
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 0.06640625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.015128841196122723
+        },
+        "outside_over_N": {
+          "maximum": 0.375,
+          "mean": 0.267578125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.042026239826855494
+        },
+        "selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.236328125,
+          "minimum": 0.1875,
+          "standard_deviation": 0.03399784215923674
+        }
+      },
+      "diffuse_probability": 0.0009765625,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 1,
+      "explicit_native_bad_core_probability": 3.0517578125e-05,
+      "hard_branch_only": {
+        "count": 32758,
+        "defect_over_N32": {
+          "maximum": 0.17677669529663687,
+          "mean": 9.915964882092017e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.002784967199625863
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0526894193784724e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0055250305250302105
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.3220396544355577,
+          "minimum": 0.0,
+          "standard_deviation": 0.07607763823333773
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23940335185298248,
+          "minimum": 0.0,
+          "standard_deviation": 0.05694774801864295
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.8749427620733865,
+          "minimum": 1.0,
+          "standard_deviation": 1.1094003992421047
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.084895292752915,
+          "minimum": 1.0,
+          "standard_deviation": 0.45569324556257257
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23938808840588557,
+          "minimum": 0.0,
+          "standard_deviation": 0.05696165569532157
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803605226204286,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929863068749
+        },
+        "kappa_over_N": {
+          "maximum": 0.125,
+          "mean": 8.299499358935222e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0022562944555266414
+        },
+        "outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2394825309847976,
+          "minimum": 0.03125,
+          "standard_deviation": 0.07031908458261896
+        },
+        "selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.26450504456926555,
+          "minimum": 0.0625,
+          "standard_deviation": 0.05856438130426951
+        }
+      },
+      "k": 2,
+      "m_per_block": 16,
+      "mode": "exact_X2_equals_X1_slice_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 32736,
+        "defect_over_N32": {
+          "maximum": 0.06629126073623882,
+          "mean": 2.0925271697045088e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0008888732652616883
+        },
+        "explicit_native_bad_core": {
+          "maximum": 1.0,
+          "mean": 3.0547409579667644e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.005526886685597563
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 0.9996945259042033,
+          "minimum": 0.0,
+          "standard_deviation": 0.017475147535100904
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.3220384286412512,
+          "minimum": 0.0,
+          "standard_deviation": 0.07603159385543297
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23950696480938416,
+          "minimum": 0.0,
+          "standard_deviation": 0.0567580220741615
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.876374633431085,
+          "minimum": 1.0,
+          "standard_deviation": 1.1088380404274825
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.085777126099707,
+          "minimum": 1.0,
+          "standard_deviation": 0.45506603903976534
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.23927785923753667,
+          "minimum": 0.0,
+          "standard_deviation": 0.05688325487997067
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8034274193548387,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20930501237935797
+        },
+        "kappa_over_N": {
+          "maximum": 0.03125,
+          "mean": 1.8137524437927665e-05,
+          "minimum": 0.0,
+          "standard_deviation": 0.0007526411288871364
+        },
+        "outside_over_N": {
+          "maximum": 0.65625,
+          "mean": 0.2393819113514174,
+          "minimum": 0.0,
+          "standard_deviation": 0.07044932956817378
+        },
+        "selected_over_N": {
+          "maximum": 0.5,
+          "mean": 0.2644517885508309,
+          "minimum": 0.0,
+          "standard_deviation": 0.05874993438095057
+        }
+      },
+      "samples_after_global_sign_quotient": 32768,
+      "seed": null
+    },
+    {
+      "N": 32,
+      "all": {
+        "count": 100,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.3296875,
+          "minimum": 0.1875,
+          "standard_deviation": 0.05596717090178845
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.34375,
+          "mean": 0.2384375,
+          "minimum": 0.15625,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.96875,
+          "mean": 2.8740625,
+          "minimum": 1.9375,
+          "standard_deviation": 0.7532151787296575
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.0925,
+          "minimum": 1.5,
+          "standard_deviation": 0.3095460385790798
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.2384375,
+          "minimum": 0.125,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.783125,
+          "minimum": 0.4375,
+          "standard_deviation": 0.1450902197772133
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.40625,
+          "mean": 0.235,
+          "minimum": 0.09375,
+          "standard_deviation": 0.07480182150188594
+        },
+        "selected_over_N": {
+          "maximum": 0.46875,
+          "mean": 0.2578125,
+          "minimum": 0.125,
+          "standard_deviation": 0.062245575897006536
+        }
+      },
+      "both_input_blocks_bent": {
+        "count": 0
+      },
+      "diffuse_count": 0,
+      "diffuse_only": {
+        "count": 0
+      },
+      "diffuse_probability": 0.0,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 0,
+      "explicit_native_bad_core_probability": 0.0,
+      "hard_branch_only": {
+        "count": 100,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.3296875,
+          "minimum": 0.1875,
+          "standard_deviation": 0.05596717090178845
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.34375,
+          "mean": 0.2384375,
+          "minimum": 0.15625,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.96875,
+          "mean": 2.8740625,
+          "minimum": 1.9375,
+          "standard_deviation": 0.7532151787296575
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.0925,
+          "minimum": 1.5,
+          "standard_deviation": 0.3095460385790798
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.2384375,
+          "minimum": 0.125,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.783125,
+          "minimum": 0.4375,
+          "standard_deviation": 0.1450902197772133
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.40625,
+          "mean": 0.235,
+          "minimum": 0.09375,
+          "standard_deviation": 0.07480182150188594
+        },
+        "selected_over_N": {
+          "maximum": 0.46875,
+          "mean": 0.2578125,
+          "minimum": 0.125,
+          "standard_deviation": 0.062245575897006536
+        }
+      },
+      "k": 2,
+      "m_per_block": 16,
+      "mode": "uniform_monte_carlo_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 100,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.4375,
+          "mean": 0.3296875,
+          "minimum": 0.1875,
+          "standard_deviation": 0.05596717090178845
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.34375,
+          "mean": 0.2384375,
+          "minimum": 0.15625,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 5.96875,
+          "mean": 2.8740625,
+          "minimum": 1.9375,
+          "standard_deviation": 0.7532151787296575
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.0925,
+          "minimum": 1.5,
+          "standard_deviation": 0.3095460385790798
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.2384375,
+          "minimum": 0.125,
+          "standard_deviation": 0.038693254822384796
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.783125,
+          "minimum": 0.4375,
+          "standard_deviation": 0.1450902197772133
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.40625,
+          "mean": 0.235,
+          "minimum": 0.09375,
+          "standard_deviation": 0.07480182150188594
+        },
+        "selected_over_N": {
+          "maximum": 0.46875,
+          "mean": 0.2578125,
+          "minimum": 0.125,
+          "standard_deviation": 0.062245575897006536
+        }
+      },
+      "samples_after_global_sign_quotient": 100,
+      "seed": 20260836
+    },
+    {
+      "N": 128,
+      "all": {
+        "count": 20,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.34296875,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.021944643601856606
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.340625,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.015108655942041985
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 3.654296875,
+          "mean": 2.98515625,
+          "minimum": 2.388671875,
+          "standard_deviation": 0.3008924561061671
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.125,
+          "mean": 2.65,
+          "minimum": 2.375,
+          "standard_deviation": 0.21139418156609754
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3515625,
+          "mean": 0.334375,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.013212136347881884
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.881640625,
+          "minimum": 0.7421875,
+          "standard_deviation": 0.06103132800494254
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.2890625,
+          "mean": 0.232421875,
+          "minimum": 0.1640625,
+          "standard_deviation": 0.031237790583632387
+        },
+        "selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.26015625,
+          "minimum": 0.2265625,
+          "standard_deviation": 0.02252114891468707
+        }
+      },
+      "both_input_blocks_bent": {
+        "count": 0
+      },
+      "diffuse_count": 0,
+      "diffuse_only": {
+        "count": 0
+      },
+      "diffuse_probability": 0.0,
+      "diffuse_threshold_kappa_over_N": 0.05,
+      "explicit_native_bad_core_count": 0,
+      "explicit_native_bad_core_probability": 0.0,
+      "hard_branch_only": {
+        "count": 20,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.34296875,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.021944643601856606
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.340625,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.015108655942041985
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 3.654296875,
+          "mean": 2.98515625,
+          "minimum": 2.388671875,
+          "standard_deviation": 0.3008924561061671
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.125,
+          "mean": 2.65,
+          "minimum": 2.375,
+          "standard_deviation": 0.21139418156609754
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3515625,
+          "mean": 0.334375,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.013212136347881884
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.881640625,
+          "minimum": 0.7421875,
+          "standard_deviation": 0.06103132800494254
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.2890625,
+          "mean": 0.232421875,
+          "minimum": 0.1640625,
+          "standard_deviation": 0.031237790583632387
+        },
+        "selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.26015625,
+          "minimum": 0.2265625,
+          "standard_deviation": 0.02252114891468707
+        }
+      },
+      "k": 3,
+      "m_per_block": 64,
+      "mode": "uniform_monte_carlo_global_sign_quotient",
+      "nondiffuse_only": {
+        "count": 20,
+        "defect_over_N32": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "explicit_native_bad_core": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "hard_branch": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0,
+          "standard_deviation": 0.0
+        },
+        "input_block_mean_distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.34296875,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.021944643601856606
+        },
+        "input_block_mean_distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.340625,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.015108655942041985
+        },
+        "input_block_mean_fourth_ratio": {
+          "maximum": 3.654296875,
+          "mean": 2.98515625,
+          "minimum": 2.388671875,
+          "standard_deviation": 0.3008924561061671
+        },
+        "input_block_mean_max_abs_over_sqrt_m": {
+          "maximum": 3.125,
+          "mean": 2.65,
+          "minimum": 2.375,
+          "standard_deviation": 0.21139418156609754
+        },
+        "input_block_mean_rm1_distance_fraction": {
+          "maximum": 0.3515625,
+          "mean": 0.334375,
+          "minimum": 0.3046875,
+          "standard_deviation": 0.013212136347881884
+        },
+        "input_block_mean_support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.881640625,
+          "minimum": 0.7421875,
+          "standard_deviation": 0.06103132800494254
+        },
+        "kappa_over_N": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "standard_deviation": 0.0
+        },
+        "outside_over_N": {
+          "maximum": 0.2890625,
+          "mean": 0.232421875,
+          "minimum": 0.1640625,
+          "standard_deviation": 0.031237790583632387
+        },
+        "selected_over_N": {
+          "maximum": 0.3125,
+          "mean": 0.26015625,
+          "minimum": 0.2265625,
+          "standard_deviation": 0.02252114891468707
+        }
+      },
+      "samples_after_global_sign_quotient": 20,
+      "seed": 20260837
+    }
+  ],
+  "local_experiment": [
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": 8,
+      "bad_energy_shell_probability": 0.12548828125,
+      "bad_orbit_landings": 286,
+      "bad_orbit_probability": 0.00872802734375,
+      "flip_count_histogram": {
+        "0": 102,
+        "1": 840,
+        "2": 3316,
+        "3": 7172,
+        "4": 9794,
+        "5": 7742,
+        "6": 3256,
+        "7": 530,
+        "8": 16
+      },
+      "initial_walsh_metrics_all": {
+        "count": 32768,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.322052001953125,
+          "minimum": 0.0,
+          "standard_deviation": 0.07607369943032626
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.875,
+          "minimum": 1.0,
+          "standard_deviation": 1.109264959331178
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0849609375,
+          "minimum": 1.0,
+          "standard_deviation": 0.45565929058795795
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393798828125,
+          "minimum": 0.0,
+          "standard_deviation": 0.056957411323494744
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.803619384765625,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20929286817322795
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 286,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.3125,
+          "mean": 0.1667395104895105,
+          "minimum": 0.0,
+          "standard_deviation": 0.05998479829368275
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2178758741258741,
+          "minimum": 0.0,
+          "standard_deviation": 0.06605328278135732
+        },
+        "fourth_ratio": {
+          "maximum": 5.5,
+          "mean": 2.793050699300699,
+          "minimum": 1.0,
+          "standard_deviation": 0.8356154446757377
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.0,
+          "mean": 2.075174825174825,
+          "minimum": 1.0,
+          "standard_deviation": 0.42694942159112664
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.24060314685314685,
+          "minimum": 0.125,
+          "standard_deviation": 0.05336867769889077
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8138111888111889,
+          "minimum": 0.25,
+          "standard_deviation": 0.20423142471188258
+        }
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 32482,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.5,
+          "mean": 0.3234195092666708,
+          "minimum": 0.0625,
+          "standard_deviation": 0.07478115307242851
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2395692229542516,
+          "minimum": 0.0,
+          "standard_deviation": 0.05683473937085572
+        },
+        "fourth_ratio": {
+          "maximum": 16.0,
+          "mean": 2.8757215534757714,
+          "minimum": 1.0,
+          "standard_deviation": 1.1113483661858528
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 4.0,
+          "mean": 2.0850471030108984,
+          "minimum": 1.0,
+          "standard_deviation": 0.45590311506649267
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.2393691121236377,
+          "minimum": 0.0,
+          "standard_deviation": 0.056987889383311584
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.8035296471892125,
+          "minimum": 0.0625,
+          "standard_deviation": 0.20933468632024868
+        }
+      },
+      "k": 2,
+      "m": 16,
+      "mode": "exact_global_sign_quotient",
+      "samples_after_quotient": 32768,
+      "seed": null,
+      "terminal_energy_histogram": {
+        "48": 4112,
+        "60": 10148,
+        "80": 18508
+      }
+    },
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": 448,
+      "bad_energy_shell_probability": 0.0,
+      "bad_orbit_landings": 0,
+      "bad_orbit_probability": 0.0,
+      "flip_count_histogram": {
+        "10": 3,
+        "11": 4,
+        "12": 5,
+        "13": 11,
+        "14": 13,
+        "15": 12,
+        "16": 17,
+        "17": 7,
+        "18": 13,
+        "19": 6,
+        "20": 3,
+        "21": 2,
+        "23": 1,
+        "8": 2,
+        "9": 1
+      },
+      "initial_walsh_metrics_all": {
+        "count": 100,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.390625,
+          "mean": 0.3284375,
+          "minimum": 0.25,
+          "standard_deviation": 0.028639393215464607
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.390625,
+          "mean": 0.339375,
+          "minimum": 0.265625,
+          "standard_deviation": 0.024415031230781016
+        },
+        "fourth_ratio": {
+          "maximum": 4.90234375,
+          "mean": 2.9734375,
+          "minimum": 2.08984375,
+          "standard_deviation": 0.5742904929671904
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.62,
+          "minimum": 2.0,
+          "standard_deviation": 0.3682390527904384
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.33625,
+          "minimum": 0.265625,
+          "standard_deviation": 0.023014940799402476
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.89796875,
+          "minimum": 0.703125,
+          "standard_deviation": 0.10244698991277175
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 0
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 100,
+        "distance_to_bad_plateaued_orbit_fraction": {
+          "maximum": 0.390625,
+          "mean": 0.3284375,
+          "minimum": 0.25,
+          "standard_deviation": 0.028639393215464607
+        },
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.390625,
+          "mean": 0.339375,
+          "minimum": 0.265625,
+          "standard_deviation": 0.024415031230781016
+        },
+        "fourth_ratio": {
+          "maximum": 4.90234375,
+          "mean": 2.9734375,
+          "minimum": 2.08984375,
+          "standard_deviation": 0.5742904929671904
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 2.62,
+          "minimum": 2.0,
+          "standard_deviation": 0.3682390527904384
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.375,
+          "mean": 0.33625,
+          "minimum": 0.265625,
+          "standard_deviation": 0.023014940799402476
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.89796875,
+          "minimum": 0.703125,
+          "standard_deviation": 0.10244698991277175
+        }
+      },
+      "k": 3,
+      "m": 64,
+      "mode": "monte_carlo_global_sign_quotient",
+      "samples_after_quotient": 100,
+      "seed": 20260817,
+      "terminal_energy_histogram": {
+        "448": 18,
+        "464": 1,
+        "480": 9,
+        "492": 8,
+        "496": 1,
+        "512": 40,
+        "576": 23
+      }
+    },
+    {
+      "affine_orthogonal_bad_orbit_size_including_global_sign": null,
+      "bad_energy_shell_probability": 0.0,
+      "bad_orbit_landings": null,
+      "bad_orbit_probability": null,
+      "flip_count_histogram": {
+        "51": 1,
+        "56": 1,
+        "59": 2,
+        "60": 1,
+        "63": 1,
+        "64": 1,
+        "66": 2,
+        "68": 1,
+        "69": 1,
+        "71": 3,
+        "75": 2,
+        "77": 3,
+        "78": 1
+      },
+      "initial_walsh_metrics_all": {
+        "count": 20,
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.4037109375,
+          "minimum": 0.38671875,
+          "standard_deviation": 0.008758627861243377
+        },
+        "fourth_ratio": {
+          "maximum": 3.663818359375,
+          "mean": 2.97713623046875,
+          "minimum": 2.640625,
+          "standard_deviation": 0.27243981802519124
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 3.01875,
+          "minimum": 2.5,
+          "standard_deviation": 0.33136790354528983
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.4056640625,
+          "minimum": 0.3828125,
+          "standard_deviation": 0.010355246985791731
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9439453125,
+          "minimum": 0.8515625,
+          "standard_deviation": 0.05244095160999294
+        }
+      },
+      "initial_walsh_metrics_bad_basin": {
+        "count": 0
+      },
+      "initial_walsh_metrics_other_basins": {
+        "count": 20,
+        "distance_to_explicit_bent_affine_orbit_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.4037109375,
+          "minimum": 0.38671875,
+          "standard_deviation": 0.008758627861243377
+        },
+        "fourth_ratio": {
+          "maximum": 3.663818359375,
+          "mean": 2.97713623046875,
+          "minimum": 2.640625,
+          "standard_deviation": 0.27243981802519124
+        },
+        "max_abs_over_sqrt_m": {
+          "maximum": 3.75,
+          "mean": 3.01875,
+          "minimum": 2.5,
+          "standard_deviation": 0.33136790354528983
+        },
+        "rm1_distance_fraction": {
+          "maximum": 0.421875,
+          "mean": 0.4056640625,
+          "minimum": 0.3828125,
+          "standard_deviation": 0.010355246985791731
+        },
+        "support_fraction": {
+          "maximum": 1.0,
+          "mean": 0.9439453125,
+          "minimum": 0.8515625,
+          "standard_deviation": 0.05244095160999294
+        }
+      },
+      "k": 4,
+      "m": 256,
+      "mode": "monte_carlo_global_sign_quotient",
+      "samples_after_quotient": 20,
+      "seed": 20260818,
+      "terminal_energy_histogram": {
+        "3776": 1,
+        "3808": 3,
+        "3824": 2,
+        "3840": 2,
+        "3888": 1,
+        "3904": 1,
+        "3936": 1,
+        "3948": 1,
+        "3968": 1,
+        "4044": 3,
+        "4048": 1,
+        "4076": 1,
+        "4172": 1,
+        "4224": 1
+      }
+    }
+  ],
+  "normalization": "Q(A)=max_z |z^T A z|; defects divided by N^(3/2)",
+  "schema": "regular-hadamard-walsh-basin-audit-v1"
+}

@@ -1,0 +1,915 @@
+{
+  "D_diagonal": [
+    -1,
+    -1,
+    -1,
+    1
+  ],
+  "H": [
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1
+    ]
+  ],
+  "HK": [
+    [
+      2,
+      2,
+      2,
+      2
+    ],
+    [
+      2,
+      2,
+      -2,
+      -2
+    ],
+    [
+      2,
+      -2,
+      2,
+      -2
+    ],
+    [
+      -2,
+      2,
+      2,
+      -2
+    ]
+  ],
+  "HK_characteristic_coefficients": [
+    1,
+    -4,
+    0,
+    -64,
+    256
+  ],
+  "HK_characteristic_polynomial": "(lambda-4)^2*(lambda^2+4*lambda+16)",
+  "HK_plus_or_minus_4_boolean_vectors": [],
+  "H_boolean_extremal_vectors": [
+    [
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1
+    ]
+  ],
+  "H_boolean_transport_domain": [
+    [
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1
+    ]
+  ],
+  "K_boolean_extremal_vectors": [
+    [
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "K_boolean_transport_domain": [
+    [
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "K_equals_DHD": [
+    [
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "all_balanced_product_partition_audits": [
+    {
+      "balanced_partition_count": 252,
+      "base_order": 10,
+      "minimum_limiting_absolute_normalized_energy": 0.5692099788303083,
+      "minimum_over_partitions_of_worst_depth_1_energy": {
+        "depth_1_witness_positive_tail_code": 55,
+        "limit_witness_positive_tail_code": 294,
+        "maximum_absolute_depth_1_product_energy": 126,
+        "maximum_absolute_limit_coefficient": 18,
+        "second_half": [
+          0,
+          1,
+          2,
+          4,
+          7
+        ]
+      },
+      "minimum_over_partitions_of_worst_limit": {
+        "depth_1_witness_positive_tail_code": 55,
+        "limit_witness_positive_tail_code": 294,
+        "maximum_absolute_depth_1_product_energy": 126,
+        "maximum_absolute_limit_coefficient": 18,
+        "second_half": [
+          0,
+          1,
+          2,
+          4,
+          7
+        ]
+      },
+      "source": "computations/results/exact_m10.json",
+      "worst_depth_1_energy_histogram": {
+        "126": 21,
+        "134": 105,
+        "142": 111,
+        "150": 15
+      },
+      "worst_limit_histogram": {
+        "18": 35,
+        "20": 177,
+        "22": 40
+      }
+    },
+    {
+      "balanced_partition_count": 3432,
+      "base_order": 14,
+      "minimum_limiting_absolute_normalized_energy": 0.5536125725328791,
+      "minimum_over_partitions_of_worst_depth_1_energy": {
+        "depth_1_witness_positive_tail_code": 2104,
+        "limit_witness_positive_tail_code": 3580,
+        "maximum_absolute_depth_1_product_energy": 206,
+        "maximum_absolute_limit_coefficient": 29,
+        "second_half": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          10
+        ]
+      },
+      "minimum_over_partitions_of_worst_limit": {
+        "depth_1_witness_positive_tail_code": 2104,
+        "limit_witness_positive_tail_code": 3580,
+        "maximum_absolute_depth_1_product_energy": 206,
+        "maximum_absolute_limit_coefficient": 29,
+        "second_half": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          10
+        ]
+      },
+      "source": "computations/results/heuristic_m14_from_conference.json",
+      "worst_depth_1_energy_histogram": {
+        "206": 182,
+        "214": 1716,
+        "222": 1456,
+        "238": 78
+      },
+      "worst_limit_histogram": {
+        "29": 806,
+        "31": 2548,
+        "35": 78
+      }
+    }
+  ],
+  "classification": "exact generator algebra and exhaustive order-12 cap",
+  "det_HK_plus_4I": 1024,
+  "exact_minimizer_balanced_split_audits": [
+    {
+      "balanced_splits": [
+        {
+          "fiber_bits": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "lifted_cap": 42
+        },
+        {
+          "fiber_bits": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "lifted_cap": 42
+        },
+        {
+          "fiber_bits": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "lifted_cap": 42
+        },
+        {
+          "fiber_bits": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "lifted_cap": 48
+        },
+        {
+          "fiber_bits": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "lifted_cap": 42
+        },
+        {
+          "fiber_bits": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "lifted_cap": 42
+        }
+      ],
+      "base_cap": 4,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "lifted_cap_multiset": {
+        "42": 5,
+        "48": 1
+      },
+      "order": 4,
+      "root_gauged_code": 1
+    },
+    {
+      "balanced_splits": [
+        {
+          "fiber_bits": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "lifted_cap": 56
+        },
+        {
+          "fiber_bits": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "lifted_cap": 56
+        }
+      ],
+      "base_cap": 4,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "lifted_cap_multiset": {
+        "56": 10
+      },
+      "order": 5,
+      "root_gauged_code": 13
+    }
+  ],
+  "n14_heuristic_search_exact_witness": {
+    "absolute_normalized_energy": 0.5679301390639018,
+    "exact_energy": 238,
+    "fiber_type_counts": {
+      "+++-": 5,
+      "+--+": 1,
+      "+---": 1,
+      "-++-": 1,
+      "---+": 2,
+      "----": 4
+    },
+    "order": 56,
+    "positive_bit_hex_little_endian": "07810007778967",
+    "source": "computations/results/heuristic_m14_from_conference.json"
+  },
+  "off_domain_bilinear_maximum": {
+    "H": 4,
+    "K": 4
+  },
+  "recursive_n10_heuristic_search_exact_witnesses": {
+    "base_cap": 13,
+    "first_depth": {
+      "absolute_normalized_energy": 0.6719840027857806,
+      "exact_energy": -170,
+      "fiber_type_counts": {
+        "++--": 1,
+        "+---": 2,
+        "-+++": 6,
+        "-+-+": 1
+      },
+      "order": 40,
+      "positive_bit_hex_little_endian": "e13ae1eeee",
+      "ratio_to_8_times_base_cap": 1.6346153846153846
+    },
+    "second_depth": {
+      "absolute_normalized_energy": 0.7352295559891482,
+      "exact_energy": 1488,
+      "fiber_type_counts": {
+        "+++-": 15,
+        "+--+": 3,
+        "-++-": 1,
+        "---+": 21
+      },
+      "order": 160,
+      "positive_bit_hex_little_endian": "7889877787767889788987777888788878887888"
+    },
+    "source": "computations/results/exact_m10.json"
+  },
+  "recursively_aligned_product_channel_audits": [
+    {
+      "base_cap": 13,
+      "base_full_energy_F": 11,
+      "base_order": 10,
+      "base_second_half_energy_R0": -6,
+      "base_spin": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "depth_1_exact_product_energy": 142,
+      "depth_1_formula": 142,
+      "depth_1_second_half_energy": -14,
+      "depth_2_exact_product_energy": 1312,
+      "depth_2_formula": 1312,
+      "exhaustive_best_positive_tail_code": 311,
+      "limit_coefficient_F_minus_R0_plus_n_over_2": 22,
+      "limiting_absolute_normalized_energy": 0.6957010852370434,
+      "source": "computations/results/exact_m10.json"
+    },
+    {
+      "base_cap": 21,
+      "base_full_energy_F": 19,
+      "base_order": 14,
+      "base_second_half_energy_R0": -5,
+      "base_spin": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "depth_1_exact_product_energy": 214,
+      "depth_1_formula": 214,
+      "depth_1_second_half_energy": -6,
+      "depth_2_exact_product_energy": 1904,
+      "depth_2_formula": 1904,
+      "exhaustive_best_positive_tail_code": 7946,
+      "limit_coefficient_F_minus_R0_plus_n_over_2": 31,
+      "limiting_absolute_normalized_energy": 0.5917927499489397,
+      "source": "computations/results/heuristic_m14_from_conference.json"
+    }
+  ],
+  "schema": "quadratic-signing-edge-twisted-hadamard-audit-v1",
+  "transport_domains_partition_boolean_cube": true,
+  "triangle": {
+    "edge_color_rule": "tau_ij=b_i*b_j",
+    "exact_energy_profile": {
+      "cap": 20,
+      "histogram": {
+        "-10": 120,
+        "-12": 73,
+        "-14": 60,
+        "-16": 18,
+        "-18": 12,
+        "-2": 168,
+        "-20": 9,
+        "-4": 174,
+        "-6": 152,
+        "-8": 192,
+        "0": 92,
+        "10": 120,
+        "12": 73,
+        "14": 60,
+        "16": 18,
+        "18": 12,
+        "2": 168,
+        "20": 9,
+        "4": 174,
+        "6": 152,
+        "8": 192
+      },
+      "maximum": 20,
+      "minimum": -20,
+      "witness": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ]
+    },
+    "fiber_bits": [
+      0,
+      1,
+      1
+    ],
+    "half_threshold_at_order_12": 20.784609690826528,
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        0,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        0,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "normalized_cap": 0.4811252243246881,
+    "order": 12,
+    "seed": "all-negative order-three signing"
+  }
+}

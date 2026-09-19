@@ -1,0 +1,19 @@
+cap-10 spectral-excess table
+ell | lambda1 | lambda2 | P | P-lambda2 | denominator | degree bound
+1 | 2/27 | 0 | 1/42 | 1/42 | 5/3 | 1/70
+2 | 1/6 | 1/70 | 29/1050 | 1/75 | 33/14 | 14/2475
+3 | 2/7 | 2/35 | 1/25 | -3/175 | 3 | 0
+4 | 4/9 | 4/25 | 17/225 | -19/225 | 17/5 | 0
+5 | 2/3 | 2/5 | 1/5 | -1/5 | 3 | 0
+actual degree=1/42
+K0 endpoint bounds: tautology=1/42, pure=14/2475; grid PASS
+singleton fixed-density audit
+n=20, m=12, degree=1/C(n,m)=1/125970, only positive scale ell=1 with excess=1/75582
+n=30, m=18, degree=1/C(n,m)=1/86493225, only positive scale ell=1 with excess=1/51895935
+n=40, m=24, degree=1/C(n,m)=1/62852101650, only positive scale ell=1 with excess=1/37711260990
+n=50, m=30, degree=1/C(n,m)=1/47129212243960, only positive scale ell=1 with excess=1/28277527346376
+n=100, m=60, degree=1/C(n,m)=1/13746234145802811501267369720, only positive scale ell=1 with excess=1/8247740487481686900760421832
+n=200, m=120, degree=1/C(n,m)=1/1647278652451762678788128833110870712983038446517480945400, only positive scale ell=1 with excess=1/988367191471057607272877299866522427789823067910488567240
+exhausted n=20,25,...,300: sizes=57, every ell PASS
+strong-target optimum: theta*=25/171, kappa_max=160/7007
+PASS: exact spectral-excess and repair identities reproduced

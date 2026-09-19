@@ -1,0 +1,306 @@
+{
+  "schema": "twisted-chiral-independent-order10-census-v1",
+  "complete": true,
+  "classification": "complete integer enumeration of all root-gauged order10 signings",
+  "classes": [
+    {
+      "kind": "class",
+      "class": 0,
+      "canonical_code": 225334962,
+      "root_orbit_size": 362880,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "enumerated_count": 362880
+    },
+    {
+      "kind": "class",
+      "class": 1,
+      "canonical_code": 1294879660,
+      "root_orbit_size": 362880,
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          0,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "enumerated_count": 362880
+    }
+  ],
+  "shard_summaries": [
+    {
+      "kind": "complete_shard",
+      "order": 10,
+      "shard": 0,
+      "shards": 2,
+      "begin": 0,
+      "end": 34359738368,
+      "root_signings_checked": 34359738368,
+      "projective_spins": 512,
+      "energy_checks": 114546375777,
+      "minimum_feasible_cap_seen": 13,
+      "minimizer_count": 362880,
+      "class_counts": [
+        181440,
+        181440
+      ],
+      "elapsed": 1747.3
+    },
+    {
+      "kind": "complete_shard",
+      "order": 10,
+      "shard": 1,
+      "shards": 2,
+      "begin": 34359738368,
+      "end": 68719476736,
+      "root_signings_checked": 34359738368,
+      "projective_spins": 512,
+      "energy_checks": 116150543220,
+      "minimum_feasible_cap_seen": 13,
+      "minimizer_count": 362880,
+      "class_counts": [
+        181440,
+        181440
+      ],
+      "elapsed": 1693.87
+    }
+  ],
+  "source": "computations/twisted_chiral_classify10_independent_2026_09_18.cpp",
+  "method": "signed half-edge energy tables; no popcount identity in evaluation",
+  "comparison": "Every class count agrees with separate popcount census"
+}

@@ -1,0 +1,334 @@
+{
+  "kind": "best",
+  "r": 6,
+  "calls": 1,
+  "count": 0,
+  "elapsed": 4.6133e-05,
+  "cap": 18,
+  "score": 18.2182,
+  "top_profiles": 10,
+  "near_profiles": 26,
+  "p": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "s": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "d": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "profile_radius": 16,
+  "child_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "bridge_hollow_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "parent_matrix": [
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      0,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      0,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      0,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      0,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      0
+    ]
+  ],
+  "child_cap": 5,
+  "independent_verification": {
+    "n": 12,
+    "projective_assignments": 2048,
+    "min_energy": -18,
+    "max_energy": 18,
+    "cap": 18,
+    "argmin_gray": 478,
+    "argmax_gray": 103,
+    "min_count": 10,
+    "max_count": 10
+  },
+  "matrix_sha256": "23a4dd38ffe3b7ac4c8258cb7de722d12c1c9eef41a6028b66450b7ba0877cc4",
+  "ratio_to_child": 1.2727922061357855,
+  "normalized_cap": 0.4330127018922193,
+  "label": "m6_class0",
+  "source": "computations/results/m6_minimizer_orbits.json",
+  "command": [
+    "/home/math/quadra/tmp/twisted_chiral_2026_09_18/search_width_frozen",
+    "width",
+    "10",
+    "20260918"
+  ],
+  "random_seed": 20260918,
+  "search_source": "computations/twisted_chiral_profile_width_frozen_2026_09_18.cpp",
+  "search_source_sha256": "827f277114d11e8d7f3ff40f41fa28744310a8a6d850798f28af87e6c4119f98",
+  "evidence": "exact fixed-witness cap; ongoing family enumeration or search",
+  "sign_convention": "B[i,j]=s[i]*s[j]*A[p[i],p[j]]; p maps destination to source"
+}

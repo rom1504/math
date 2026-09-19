@@ -1,0 +1,182 @@
+[
+  {
+    "n": 3,
+    "edge_dimension": 3,
+    "number_signings": 8,
+    "minimum_cap": 3,
+    "minimizer_count": 8,
+    "mean_random_cap_exact": "3",
+    "nonzero_four_cycle_coefficient_numerators": [],
+    "four_cycle_denominator": 8,
+    "four_cycle_all_degree4_coefficients": [],
+    "forbidden_fourier_support_exactly_zero": true,
+    "minimizer_noise_polynomials": [
+      {
+        "numerator_coefficients_t": [
+          24,
+          0,
+          0,
+          0
+        ],
+        "denominator": 8,
+        "polynomial_q": "3",
+        "derivative_roots_in_unit_interval": [],
+        "derivative_nonpositive_exact_root_audit": true,
+        "derivative_test_signs": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "first_nonminimizer_increasing_noise_curve_grid_witness": null
+  },
+  {
+    "n": 4,
+    "edge_dimension": 6,
+    "number_signings": 64,
+    "minimum_cap": 4,
+    "minimizer_count": 48,
+    "mean_random_cap_exact": "9/2",
+    "nonzero_four_cycle_coefficient_numerators": [
+      32
+    ],
+    "four_cycle_denominator": 64,
+    "four_cycle_all_degree4_coefficients": [
+      0,
+      32
+    ],
+    "forbidden_fourier_support_exactly_zero": true,
+    "minimizer_noise_polynomials": [
+      {
+        "numerator_coefficients_t": [
+          288,
+          0,
+          0,
+          0,
+          -32,
+          0,
+          0
+        ],
+        "denominator": 64,
+        "polynomial_q": "9/2 - q**2/2",
+        "derivative_roots_in_unit_interval": [],
+        "derivative_nonpositive_exact_root_audit": true,
+        "derivative_test_signs": [
+          0,
+          -1,
+          -1
+        ]
+      }
+    ],
+    "first_nonminimizer_increasing_noise_curve_grid_witness": {
+      "edge_mask": 0,
+      "cap": 6,
+      "t": 0.001,
+      "derivative": 6.000000000000001e-09
+    }
+  },
+  {
+    "n": 5,
+    "edge_dimension": 10,
+    "number_signings": 1024,
+    "minimum_cap": 4,
+    "minimizer_count": 192,
+    "mean_random_cap_exact": "51/8",
+    "nonzero_four_cycle_coefficient_numerators": [
+      384
+    ],
+    "four_cycle_denominator": 1024,
+    "four_cycle_all_degree4_coefficients": [
+      0,
+      384
+    ],
+    "forbidden_fourier_support_exactly_zero": true,
+    "minimizer_noise_polynomials": [
+      {
+        "numerator_coefficients_t": [
+          6528,
+          0,
+          0,
+          0,
+          -1920,
+          0,
+          -640,
+          0,
+          0,
+          0,
+          128
+        ],
+        "denominator": 1024,
+        "polynomial_q": "q**5/8 - 5*q**3/8 - 15*q**2/8 + 51/8",
+        "derivative_roots_in_unit_interval": [],
+        "derivative_nonpositive_exact_root_audit": true,
+        "derivative_test_signs": [
+          0,
+          -1,
+          -1
+        ]
+      }
+    ],
+    "first_nonminimizer_increasing_noise_curve_grid_witness": {
+      "edge_mask": 0,
+      "cap": 10,
+      "t": 0.001,
+      "derivative": 2.2499988750000002e-08
+    }
+  },
+  {
+    "n": 6,
+    "edge_dimension": 15,
+    "number_signings": 32768,
+    "minimum_cap": 5,
+    "minimizer_count": 384,
+    "mean_random_cap_exact": "585/64",
+    "nonzero_four_cycle_coefficient_numerators": [
+      6656
+    ],
+    "four_cycle_denominator": 32768,
+    "four_cycle_all_degree4_coefficients": [
+      0,
+      6656
+    ],
+    "forbidden_fourier_support_exactly_zero": true,
+    "minimizer_noise_polynomials": [
+      {
+        "numerator_coefficients_t": [
+          299520,
+          0,
+          0,
+          0,
+          -99840,
+          0,
+          -71680,
+          0,
+          7680,
+          0,
+          30720,
+          0,
+          -2560,
+          0,
+          0,
+          0
+        ],
+        "denominator": 32768,
+        "polynomial_q": "-5*q**6/64 + 15*q**5/16 + 15*q**4/64 - 35*q**3/16 - 195*q**2/64 + 585/64",
+        "derivative_roots_in_unit_interval": [],
+        "derivative_nonpositive_exact_root_audit": true,
+        "derivative_test_signs": [
+          0,
+          -1,
+          -1
+        ]
+      }
+    ],
+    "first_nonminimizer_increasing_noise_curve_grid_witness": {
+      "edge_mask": 0,
+      "cap": 15,
+      "t": 0.001,
+      "derivative": 3.6562494374971876e-08
+    }
+  }
+]

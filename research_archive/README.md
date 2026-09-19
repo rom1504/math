@@ -10,6 +10,7 @@ proofs, certificates, and scripts remain in their original locations.
 
 | UTC checkpoint | Scope | Status / audit |
 |---|---|---|
+| [2026-09-19 19:31:14](2026-09-19/193114Z/README.md) | 2,082 research payloads;170,201,181 bytes; resumed chiral censuses, exact family minima, near-order repair, Hadamard20 proof, live searches and failed transfers | Hash verification accompanies publication; no credential or unresolved oversized candidate. Twenty-six new/rebuilt executables have reviewed source provenance. Research continues. |
 | [2026-09-18 07:07:38](2026-09-18/070738Z/README.md) | 1,983 research payloads;169,063,859 bytes; BH proofs, independent audits, exact certificates, compiler falsifiers, primary sources and exploratory failures | All payload hashes verified; no credential or unresolved oversized candidate. Canonical closing state is committed separately. |
 | [2026-09-17 22:33:24](2026-09-17/223324Z/README.md) | 1,977 research payloads;167,603,147 bytes; final feature realization, complete-child comparison, offset proofs/falsifiers, primary sources, all drafts and diagnostics | All payload hashes verified. Same14 historical/dynamic flags; no credential or unresolved oversized candidate. Canonical closing state and audit are committed separately. |
 | [2026-09-17 22:03:48](2026-09-17/220348Z/README.md) | 1,987 research payloads;165,971,551 bytes; non-Gaussian signs and sharp information/tail theorem | Hash verified; canonical status and limitations remain explicit. |

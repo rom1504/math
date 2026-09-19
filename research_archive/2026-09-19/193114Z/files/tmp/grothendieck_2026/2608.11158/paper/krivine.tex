@@ -1,0 +1,90 @@
+\section{Rounding Schemes}
+
+In this section, we will define a new class of rounding schemes. But first, we recall classical Krivine schemes ~\cite{krivine1977constante}. 
+
+\subsection{Classical Krivine rounding schemes}
+\label{sec:krivine-rounding-scheme}
+
+% \rnote{First sentence is repeating.}
+A Krivine rounding scheme is a pair of partitions of $\R^d$, $f,g: \R^d \rightarrow \{-1,1\}$, such that $f,g$ are odd functions. We will work with $f,g$ that satisfy some additional properties. To describe these, we first introduce some basic setup~\cite{braverman2011grothendieckconstantstrictlysmaller}. 
+
+% First, we introduce $H_{f,g}$, which measures the scaled correlation between $f$ and $g$ evaluated on correlated Gaussian vectors. 
+
+\begin{definition}[Gaussian correlation function]\label{def:gaussian-correlation}
+Let $f,g:\mathbb{R}^k\to\{-1,1\}$ be odd measurable functions.
+Let $X, Y$ be standard jointly Gaussian vectors in $\mathbb{R}^k$ satisfying
+\[
+\mathbb{E}[X_iX_j]
+=
+\mathbb{E}[Y_iY_j]
+=
+\delta_{ij},
+\qquad
+\mathbb{E}[X_iY_j]
+=
+\delta_{ij}t.
+\]
+The \emph{arcsine-normalized correlation function} associated to $(f,g)$ is
+\[
+H_{f,g}(t)
+:=
+\frac{\pi}{2}\,
+\mathbb{E}\left[
+f\left(X\right)
+g\left(
+Y
+\right)
+\right],
+\qquad -1<t<1.
+\]
+\end{definition}
+
+We will use the following basic properties of the Gaussian correlation function and its inverse $H_{f,g}^{-1}$ in our analysis (see \cite{braverman2011grothendieckconstantstrictlysmaller}).
+
+\begin{lemma}\label[lemma]{lemma:correlation-profile-analytic}
+Let $f,g:\mathbb{R}^k\to\{-1,1\}$ be odd measurable functions. Then $H_{f,g}$ is odd and
+extends holomorphically to the strip
+\[
+S:=\{z\in\mathbb{C}: |\operatorname{Re}z|<1\}.
+\]
+In particular, if $H_{f,g}'(0)\neq 0$, then $H_{f,g}$ has a unique \textbf{local inverse branch} at
+the origin, i.e., there are open neighborhoods
+$U,V\subset\C$ of $0$ such that
+\(
+    H_{f,g}:U\to V
+\)
+is biholomorphic. We write
+\(
+    H_{f,g}^{-1}:V\to U
+\)
+for this local inverse, chosen so that $H_{f,g}^{-1}(0)=0$. This inverse is
+unique when restricted to this branch, and is an odd function.
+\end{lemma}
+
+% The next lemma develops 
+
+\begin{lemma}[Local Inverse Expansion]\label[lemma]{lemma:local-inverse-expansion}
+
+Let $f,g:\mathbb{R}^k\to\{-1,1\}$ be odd and measurable functions with $H'_{f,g}(0) \neq 0$. Let $H^{-1}_{f,g}$ be the unique local inverse branch of $H_{f,g}$ at the origin. Then,
+\begin{itemize}
+\item $H^{-1}_{f,g}$ is odd. 
+    \item $H^{-1}_{f,g}$ has a Taylor-series expansion at the origin: $H^{-1}_{f,g}(\zeta) = \sum_{n\geq 1} a_n \zeta^n$. 
+\end{itemize}
+Further, if $\gamma > 0$ is such that $\sum_{n \geq 1} |a_n| \gamma^n \leq 1$, then the Grothendieck constant 
+$$ K_G \leq \frac{\pi}{2\gamma}.$$ 
+\end{lemma}
+
+% For completeness, we give a proof of this  in~\cref{app:krivine-preprocessing}.
+
+With the above notation, we define the \textbf{inverse majorant series} for the rounding scheme $(f,g)$ as 
+\[
+M_{f,g}(s):=\sum_{n\ge 1}|a_n|s^n.
+\]
+
+We are now ready to define Krivine schemes. 
+
+\begin{definition}[$\gamma$-admissible Krivine Rounding Scheme]
+\label[definition]{def:gamma-admissible}
+    For $f,g:\mathbb{R}^k\to\{-1,1\}$ odd and measurable functions with $H'_{f,g}(0) \neq 0$, and $\gamma > 0$, we say $(f,g)$ is a $\gamma$-admissible Krivine rounding scheme if the conditions of \cref{lemma:local-inverse-expansion} hold. 
+\end{definition}
+We note that Krivine~\cite{Kri77} used a $\gamma$-admissible Krivine rounding scheme to show that \(K_G \le \frac{\pi}{2\gamma}.\)

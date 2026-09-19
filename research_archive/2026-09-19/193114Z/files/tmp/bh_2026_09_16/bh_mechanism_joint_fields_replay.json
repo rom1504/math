@@ -1,0 +1,387 @@
+{
+  "bootstrap": {
+    "current_half_range_constant": 0.4333221116640807,
+    "numeric_bootstrap_critical_value": 0.3142961430858171,
+    "numeric_critical_alpha_t": [
+      0.7011962438130993,
+      0.4050494263394664
+    ],
+    "numeric_updated_alpha_t": [
+      0.999999899999999,
+      7.985670045560397
+    ],
+    "numeric_updated_value_with_boundary_cutoff": 0.433322046665764,
+    "qualification": "Optimizer decimals are diagnostics. The analytic ceiling has a written proof.",
+    "rigorous_analytic_critical_upper": 0.3989422804014327,
+    "sample_minimum_ceiling_slack": 0.0018108646470731404
+  },
+  "coefficient_soft_reserve": {
+    "largest_sample_interior_excess": -0.30392078320044913,
+    "p_values": [
+      1,
+      1.3333333333333333,
+      2
+    ]
+  },
+  "field_lemmas": {
+    "hard_tests": 1984,
+    "minimum_hard_slack": 0.9897801496333187,
+    "minimum_soft_slack": 1.5864457737484798,
+    "soft_tests": 1600
+  },
+  "paley": [
+    {
+      "exact_matrix_identities": true,
+      "exhaustive_curve": [
+        {
+          "field_t": 0.0,
+          "normalized_norm": 0.35777087639996635,
+          "spectral_upper": 0.5
+        },
+        {
+          "field_t": 0.2,
+          "normalized_norm": 0.3977708763999664,
+          "spectral_upper": 0.52
+        },
+        {
+          "field_t": 0.4,
+          "normalized_norm": 0.4377708763999663,
+          "spectral_upper": 0.5800000000000001
+        },
+        {
+          "field_t": 0.6,
+          "normalized_norm": 0.6,
+          "spectral_upper": 0.6799999999999999
+        },
+        {
+          "field_t": 0.8,
+          "normalized_norm": 0.8,
+          "spectral_upper": 0.8200000000000001
+        },
+        {
+          "field_t": 1.0,
+          "normalized_norm": 1.0,
+          "spectral_upper": 1.0
+        },
+        {
+          "field_t": 1.2,
+          "normalized_norm": 1.2,
+          "spectral_upper": 1.2
+        }
+      ],
+      "order": 5
+    },
+    {
+      "exact_matrix_identities": true,
+      "exhaustive_curve": [
+        {
+          "field_t": 0.0,
+          "normalized_norm": 0.4266924586347916,
+          "spectral_upper": 0.5
+        },
+        {
+          "field_t": 0.2,
+          "normalized_norm": 0.442077074019407,
+          "spectral_upper": 0.52
+        },
+        {
+          "field_t": 0.4,
+          "normalized_norm": 0.49520012075398717,
+          "spectral_upper": 0.5800000000000001
+        },
+        {
+          "field_t": 0.6,
+          "normalized_norm": 0.5999999999999999,
+          "spectral_upper": 0.6799999999999999
+        },
+        {
+          "field_t": 0.8,
+          "normalized_norm": 0.8,
+          "spectral_upper": 0.8200000000000001
+        },
+        {
+          "field_t": 1.0,
+          "normalized_norm": 0.9999999999999999,
+          "spectral_upper": 1.0
+        },
+        {
+          "field_t": 1.2,
+          "normalized_norm": 1.1999999999999997,
+          "spectral_upper": 1.2
+        }
+      ],
+      "order": 13
+    },
+    {
+      "exact_matrix_identities": true,
+      "exhaustive_curve": [
+        {
+          "field_t": 0.0,
+          "normalized_norm": 0.45653764712721506,
+          "spectral_upper": 0.5
+        },
+        {
+          "field_t": 0.2,
+          "normalized_norm": 0.468302353009568,
+          "spectral_upper": 0.52
+        },
+        {
+          "field_t": 0.4,
+          "normalized_norm": 0.5171175000598426,
+          "spectral_upper": 0.5800000000000001
+        },
+        {
+          "field_t": 0.6,
+          "normalized_norm": 0.6,
+          "spectral_upper": 0.6799999999999999
+        },
+        {
+          "field_t": 0.8,
+          "normalized_norm": 0.8,
+          "spectral_upper": 0.8200000000000001
+        },
+        {
+          "field_t": 1.0,
+          "normalized_norm": 1.0,
+          "spectral_upper": 1.0
+        },
+        {
+          "field_t": 1.2,
+          "normalized_norm": 1.2,
+          "spectral_upper": 1.2
+        }
+      ],
+      "order": 17
+    },
+    {
+      "exact_matrix_identities": true,
+      "order": 29
+    },
+    {
+      "exact_matrix_identities": true,
+      "order": 37
+    },
+    {
+      "exact_matrix_identities": true,
+      "order": 101
+    }
+  ],
+  "square_paley_parabola": [
+    {
+      "curves": [
+        {
+          "row_witness_lower": 0.4444444444444444,
+          "spectral_upper": 0.5,
+          "t": 0.0
+        },
+        {
+          "row_witness_lower": 0.5111111111111111,
+          "spectral_upper": 0.52,
+          "t": 0.2
+        },
+        {
+          "row_witness_lower": 0.5777777777777777,
+          "spectral_upper": 0.5800000000000001,
+          "t": 0.4
+        },
+        {
+          "row_witness_lower": 0.6444444444444444,
+          "spectral_upper": 0.6799999999999999,
+          "t": 0.6
+        },
+        {
+          "row_witness_lower": 0.8,
+          "spectral_upper": 0.8200000000000001,
+          "t": 0.8
+        },
+        {
+          "row_witness_lower": 1.0,
+          "spectral_upper": 1.0,
+          "t": 1.0
+        },
+        {
+          "row_witness_lower": 1.2,
+          "spectral_upper": 1.2,
+          "t": 1.2
+        }
+      ],
+      "exact_matrix_and_row_witness_identities": true,
+      "nonsquare": 2,
+      "order": 9,
+      "prime": 3
+    },
+    {
+      "curves": [
+        {
+          "row_witness_lower": 0.48,
+          "spectral_upper": 0.5,
+          "t": 0.0
+        },
+        {
+          "row_witness_lower": 0.52,
+          "spectral_upper": 0.52,
+          "t": 0.2
+        },
+        {
+          "row_witness_lower": 0.56,
+          "spectral_upper": 0.5800000000000001,
+          "t": 0.4
+        },
+        {
+          "row_witness_lower": 0.6799999999999999,
+          "spectral_upper": 0.6799999999999999,
+          "t": 0.6
+        },
+        {
+          "row_witness_lower": 0.8,
+          "spectral_upper": 0.8200000000000001,
+          "t": 0.8
+        },
+        {
+          "row_witness_lower": 1.0,
+          "spectral_upper": 1.0,
+          "t": 1.0
+        },
+        {
+          "row_witness_lower": 1.2,
+          "spectral_upper": 1.2,
+          "t": 1.2
+        }
+      ],
+      "exact_matrix_and_row_witness_identities": true,
+      "nonsquare": 2,
+      "order": 25,
+      "prime": 5
+    },
+    {
+      "curves": [
+        {
+          "row_witness_lower": 0.4897959183673469,
+          "spectral_upper": 0.5,
+          "t": 0.0
+        },
+        {
+          "row_witness_lower": 0.5183673469387755,
+          "spectral_upper": 0.52,
+          "t": 0.2
+        },
+        {
+          "row_witness_lower": 0.5795918367346939,
+          "spectral_upper": 0.5800000000000001,
+          "t": 0.4
+        },
+        {
+          "row_witness_lower": 0.673469387755102,
+          "spectral_upper": 0.6799999999999999,
+          "t": 0.6
+        },
+        {
+          "row_witness_lower": 0.8163265306122449,
+          "spectral_upper": 0.8200000000000001,
+          "t": 0.8
+        },
+        {
+          "row_witness_lower": 1.0,
+          "spectral_upper": 1.0,
+          "t": 1.0
+        },
+        {
+          "row_witness_lower": 1.2,
+          "spectral_upper": 1.2,
+          "t": 1.2
+        }
+      ],
+      "exact_matrix_and_row_witness_identities": true,
+      "nonsquare": 3,
+      "order": 49,
+      "prime": 7
+    },
+    {
+      "curves": [
+        {
+          "row_witness_lower": 0.49586776859504134,
+          "spectral_upper": 0.5,
+          "t": 0.0
+        },
+        {
+          "row_witness_lower": 0.5173553719008265,
+          "spectral_upper": 0.52,
+          "t": 0.2
+        },
+        {
+          "row_witness_lower": 0.578512396694215,
+          "spectral_upper": 0.5800000000000001,
+          "t": 0.4
+        },
+        {
+          "row_witness_lower": 0.6793388429752065,
+          "spectral_upper": 0.6799999999999999,
+          "t": 0.6
+        },
+        {
+          "row_witness_lower": 0.8198347107438018,
+          "spectral_upper": 0.8200000000000001,
+          "t": 0.8
+        },
+        {
+          "row_witness_lower": 1.0,
+          "spectral_upper": 1.0,
+          "t": 1.0
+        },
+        {
+          "row_witness_lower": 1.2,
+          "spectral_upper": 1.2,
+          "t": 1.2
+        }
+      ],
+      "exact_matrix_and_row_witness_identities": true,
+      "nonsquare": 2,
+      "order": 121,
+      "prime": 11
+    },
+    {
+      "curves": [
+        {
+          "row_witness_lower": 0.4982698961937716,
+          "spectral_upper": 0.5,
+          "t": 0.0
+        },
+        {
+          "row_witness_lower": 0.5197231833910034,
+          "spectral_upper": 0.52,
+          "t": 0.2
+        },
+        {
+          "row_witness_lower": 0.5799307958477509,
+          "spectral_upper": 0.5800000000000001,
+          "t": 0.4
+        },
+        {
+          "row_witness_lower": 0.6788927335640138,
+          "spectral_upper": 0.6799999999999999,
+          "t": 0.6
+        },
+        {
+          "row_witness_lower": 0.8193771626297578,
+          "spectral_upper": 0.8200000000000001,
+          "t": 0.8
+        },
+        {
+          "row_witness_lower": 1.0,
+          "spectral_upper": 1.0,
+          "t": 1.0
+        },
+        {
+          "row_witness_lower": 1.2,
+          "spectral_upper": 1.2,
+          "t": 1.2
+        }
+      ],
+      "exact_matrix_and_row_witness_identities": true,
+      "nonsquare": 3,
+      "order": 289,
+      "prime": 17
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,383 @@
+{
+  "all_executable_sections_match": true,
+  "records": [
+    {
+      "source": "computations/twisted_chiral_search_2026_09_18.cpp",
+      "source_sha256": "e79f22aa4374851fcf8093462d8e1e46645b72b362608f7023214837f84e1813",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search",
+      "rebuilt_sha256": "e6aa49ac4f8291109a1ae2913f8c45c4abe750391556aec2c8b96f6466bd6d24",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_search_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search"
+      ],
+      "rebuilt_sections": {
+        ".text": "dca753e81adc8a223fab30444a2877c5040d4bdfe3da4d5f8be25e099db74690",
+        ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search",
+          "sha256": "e6aa49ac4f8291109a1ae2913f8c45c4abe750391556aec2c8b96f6466bd6d24",
+          "sections": {
+            ".text": "dca753e81adc8a223fab30444a2877c5040d4bdfe3da4d5f8be25e099db74690",
+            ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_search_frozen_2026_09_18.cpp",
+      "source_sha256": "e79f22aa4374851fcf8093462d8e1e46645b72b362608f7023214837f84e1813",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_frozen",
+      "rebuilt_sha256": "8a3be2687628c55942dcced2679e16e004c9ecb7779fda9eab9b4d3bf8a969d7",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_search_frozen_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_frozen"
+      ],
+      "rebuilt_sections": {
+        ".text": "dca753e81adc8a223fab30444a2877c5040d4bdfe3da4d5f8be25e099db74690",
+        ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search_frozen",
+          "sha256": "8a3be2687628c55942dcced2679e16e004c9ecb7779fda9eab9b4d3bf8a969d7",
+          "sections": {
+            ".text": "dca753e81adc8a223fab30444a2877c5040d4bdfe3da4d5f8be25e099db74690",
+            ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp",
+      "source_sha256": "c55b3d47a44c5a67b07a69352e00a876bcb5d55455c6c2e0baf68c059bc7db7e",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_bound_initial_frozen",
+      "rebuilt_sha256": "0b6c5e01613682be58dcae8dbcbc051a9497467cba9bbc3799d351eca1b8bdc4",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_search_bound_initial_frozen_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_bound_initial_frozen"
+      ],
+      "rebuilt_sections": {
+        ".text": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+        ".rodata": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search_bound_initial_frozen",
+          "sha256": "0b6c5e01613682be58dcae8dbcbc051a9497467cba9bbc3799d351eca1b8bdc4",
+          "sections": {
+            ".text": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+            ".rodata": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133"
+          },
+          "executable_code_and_readonly_data_match": true
+        },
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/running_initial_bound_elf",
+          "sha256": "5e8230e276a475f870dfcc9b455e367e4a2aff267be4d4fcab5d0bfc50ff06e1",
+          "sections": {
+            ".text": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+            ".rodata": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133"
+          },
+          "executable_code_and_readonly_data_match": true
+        },
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/rebuilt_initial_bound_elf",
+          "sha256": "0b6c5e01613682be58dcae8dbcbc051a9497467cba9bbc3799d351eca1b8bdc4",
+          "sections": {
+            ".text": "c015f201ac510267c804e120cffa5a8d47c49a73d4bb67d62e8132c1175fa008",
+            ".rodata": "486a00a3afbb6e0a0a10d99dbc2ed07cb46ad676b938f3e5375988a693485133"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/exact_fixed_signing_gray.cpp",
+      "source_sha256": "5a08f4e89660efe23319351084d12007b4a44942fdcdc170d3c2fc05346c7586",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_verify",
+      "rebuilt_sha256": "4cac8a43c9a428563ea5effe4b70121a7eb41ecb64838fce345392eeb414b061",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/exact_fixed_signing_gray.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_verify"
+      ],
+      "rebuilt_sections": {
+        ".text": "6ee18ca6874c174392cb43e76c83915409cbc4916847511d9cba20362e1b81ed",
+        ".rodata": "f46fe5c4ff48ea2d1fb3bc20331e84a4f78fc3c0616d09c79c0bd8c3ff94bcbe"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/verify",
+          "sha256": "4cac8a43c9a428563ea5effe4b70121a7eb41ecb64838fce345392eeb414b061",
+          "sections": {
+            ".text": "6ee18ca6874c174392cb43e76c83915409cbc4916847511d9cba20362e1b81ed",
+            ".rodata": "f46fe5c4ff48ea2d1fb3bc20331e84a4f78fc3c0616d09c79c0bd8c3ff94bcbe"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_classify9_2026_09_18.cpp",
+      "source_sha256": "a1ed865a60c1a6a216b2c861a0df306d1abd785f16938d381126e52e69fb9a54",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify9",
+      "rebuilt_sha256": "5614eb6745092730c0f0a8e6768b236fa1e16622ae100e35a2f6b351b497f042",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_classify9_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify9"
+      ],
+      "rebuilt_sections": {
+        ".text": "534f98d614f2c7571ed260840b4d3efcd025fab0a7ce8f77a009a271af4c5652",
+        ".rodata": "e1867b33a7c409968def8c1404a166a014e23b5fdb688761e8d8f5d5e5e88945"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/classify9",
+          "sha256": "5614eb6745092730c0f0a8e6768b236fa1e16622ae100e35a2f6b351b497f042",
+          "sections": {
+            ".text": "534f98d614f2c7571ed260840b4d3efcd025fab0a7ce8f77a009a271af4c5652",
+            ".rodata": "e1867b33a7c409968def8c1404a166a014e23b5fdb688761e8d8f5d5e5e88945"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_classify9_independent_2026_09_18.cpp",
+      "source_sha256": "76ac18f82db0a117ec6c9cd476d249b969f3492708a429333f06a4cb6334f2b4",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify9_independent",
+      "rebuilt_sha256": "134fcef3b6e0abacadfe70f6afcc3aee5c560a53f8c9ce535321ff1fef3ffd3c",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_classify9_independent_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify9_independent"
+      ],
+      "rebuilt_sections": {
+        ".text": "9b0f44254c4aade223dacc105b757a39b6f9b51403ae078dbce1a653d3e13913",
+        ".rodata": "9aa5b04c1e6e02c1b652855a7f33d1c50bd97cb645f10827a2b4c383c9d41070"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/classify9_independent",
+          "sha256": "134fcef3b6e0abacadfe70f6afcc3aee5c560a53f8c9ce535321ff1fef3ffd3c",
+          "sections": {
+            ".text": "9b0f44254c4aade223dacc105b757a39b6f9b51403ae078dbce1a653d3e13913",
+            ".rodata": "9aa5b04c1e6e02c1b652855a7f33d1c50bd97cb645f10827a2b4c383c9d41070"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_classify10_2026_09_18.cpp",
+      "source_sha256": "f67d43082913a92c986fdd459b36f9cf457d55218238ff2205c4e33aa8d4ba3a",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify10",
+      "rebuilt_sha256": "96d093fbf1470d19481e9c4f4729796c18a021bc3ccc5e5d9eb16a2138844da4",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_classify10_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify10"
+      ],
+      "rebuilt_sections": {
+        ".text": "33614107fd0314a5aae3bcc97230f268e77700e8bec35f18cc865b5375e396ab",
+        ".rodata": "584520476feb67108dc75bf79de550493fcf342fca3a623cc47c987cbc9e2821"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/classify10",
+          "sha256": "96d093fbf1470d19481e9c4f4729796c18a021bc3ccc5e5d9eb16a2138844da4",
+          "sections": {
+            ".text": "33614107fd0314a5aae3bcc97230f268e77700e8bec35f18cc865b5375e396ab",
+            ".rodata": "584520476feb67108dc75bf79de550493fcf342fca3a623cc47c987cbc9e2821"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_classify10_independent_2026_09_18.cpp",
+      "source_sha256": "f58374de678960cabbee8e0ba7ea574adac7dc28c9b3d1a862b67fad6f35a7c3",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify10_independent",
+      "rebuilt_sha256": "9a7205f56a17499605d1fedcc3e39085c9bb09a02e2514a4a283cf113c4d0d81",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_classify10_independent_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_classify10_independent"
+      ],
+      "rebuilt_sections": {
+        ".text": "009a26a85c9c252a7f61150458512af534befc681ba1493670ae3c76d1070281",
+        ".rodata": "2e1a5facfdafd55a1f046d841ef396b07183cbe5166664cfff3b6c8416c925ce"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/classify10_independent",
+          "sha256": "9a7205f56a17499605d1fedcc3e39085c9bb09a02e2514a4a283cf113c4d0d81",
+          "sections": {
+            ".text": "009a26a85c9c252a7f61150458512af534befc681ba1493670ae3c76d1070281",
+            ".rodata": "2e1a5facfdafd55a1f046d841ef396b07183cbe5166664cfff3b6c8416c925ce"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+      "source_sha256": "195cf41de233f391fe198b786d51baf3b4ed47baf36407cf7de1e2eee1468e45",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_matching_frozen",
+      "rebuilt_sha256": "6866054d1aee8b1c325ce6603134e6e41fa22808377e70f06506fe09269728c4",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_structured_matching_frozen_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_matching_frozen"
+      ],
+      "rebuilt_sections": {
+        ".text": "0bf1a572cca4950b778a05554dcf41f31805d849dc929faa318736153d092a58",
+        ".rodata": "a09b82d2a9e828f58be773548d1fb2fded3209d9cf0d5cdb9825b3e46c6b0525"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search_matching_frozen",
+          "sha256": "6866054d1aee8b1c325ce6603134e6e41fa22808377e70f06506fe09269728c4",
+          "sections": {
+            ".text": "0bf1a572cca4950b778a05554dcf41f31805d849dc929faa318736153d092a58",
+            ".rodata": "a09b82d2a9e828f58be773548d1fb2fded3209d9cf0d5cdb9825b3e46c6b0525"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_search_extreme_order_frozen_2026_09_18.cpp",
+      "source_sha256": "db8e3efb415102b7c049fc25a2e94a68c870edd660baff6efa4968a5c63ca0fd",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_extreme_order_frozen",
+      "rebuilt_sha256": "b84fbcd06e4a7c5cd8bfe9ccc8823b690be095e83046fe656eee50da00d35aed",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_search_extreme_order_frozen_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_extreme_order_frozen"
+      ],
+      "rebuilt_sections": {
+        ".text": "61c77f20369612c9091f7aed82a8a13d0400de61aad19f7ca5a3e679a5c9c626",
+        ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search_extreme_order_frozen",
+          "sha256": "b84fbcd06e4a7c5cd8bfe9ccc8823b690be095e83046fe656eee50da00d35aed",
+          "sections": {
+            ".text": "61c77f20369612c9091f7aed82a8a13d0400de61aad19f7ca5a3e679a5c9c626",
+            ".rodata": "6ee397272fcf1589524f5dd4052863e2bb2f49a5817a9cb5ffa3edbcd25e1cb8"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_profile_width_frozen_2026_09_18.cpp",
+      "source_sha256": "827f277114d11e8d7f3ff40f41fa28744310a8a6d850798f28af87e6c4119f98",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_width_frozen",
+      "rebuilt_sha256": "eb210d45e2dd874cf455a946c4b6eb05d39a2975d979e93a339ad35f63231a82",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_profile_width_frozen_2026_09_18.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_search_width_frozen"
+      ],
+      "rebuilt_sections": {
+        ".text": "1ccac8e1f138237bba88ba556e46becf5dcd40fb013b488276f0aa013ee55bd4",
+        ".rodata": "c0285f135ee055b366d09a20c2fb5a566520424aa3b86ba4f6c26dac7dfd62b6"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/search_width_frozen",
+          "sha256": "eb210d45e2dd874cf455a946c4b6eb05d39a2975d979e93a339ad35f63231a82",
+          "sections": {
+            ".text": "1ccac8e1f138237bba88ba556e46becf5dcd40fb013b488276f0aa013ee55bd4",
+            ".rodata": "c0285f135ee055b366d09a20c2fb5a566520424aa3b86ba4f6c26dac7dfd62b6"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    },
+    {
+      "source": "computations/twisted_chiral_joint_search_2026_09_19.cpp",
+      "source_sha256": "e495d6287338910cc4796ce255dd53ac4fc0ef79cea77984641a5d98aa5a9cd7",
+      "rebuilt_path": "tmp/twisted_chiral_2026_09_18/provenance_rebuild_joint_search_2026_09_19",
+      "rebuilt_sha256": "5ffb69ead2e152ca653b9ad5359783ef81f5ee4a1f72912ca2d05032e7687e7b",
+      "build_command": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "/home/math/quadra/computations/twisted_chiral_joint_search_2026_09_19.cpp",
+        "-o",
+        "/home/math/quadra/tmp/twisted_chiral_2026_09_18/provenance_rebuild_joint_search_2026_09_19"
+      ],
+      "rebuilt_sections": {
+        ".text": "45bc29a3b810322e259224cd3c7492f57953cd51b10a4a06ed1c7c38e30b48b0",
+        ".rodata": "8d2a33625596433f92fed07e22858a89a2953a7a0b02f9123808b0aca720a621"
+      },
+      "comparisons": [
+        {
+          "original": "tmp/twisted_chiral_2026_09_18/joint_search_2026_09_19",
+          "sha256": "5ffb69ead2e152ca653b9ad5359783ef81f5ee4a1f72912ca2d05032e7687e7b",
+          "sections": {
+            ".text": "45bc29a3b810322e259224cd3c7492f57953cd51b10a4a06ed1c7c38e30b48b0",
+            ".rodata": "8d2a33625596433f92fed07e22858a89a2953a7a0b02f9123808b0aca720a621"
+          },
+          "executable_code_and_readonly_data_match": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "exact_deleted_slice_response_checks": 4800,
+  "exact_full_parent_cases": 12,
+  "finite_parents": [
+    {
+      "n": 10,
+      "m": 4,
+      "cap": 21,
+      "mean_cap": "7",
+      "retained_balanced_fraction": 0.9
+    },
+    {
+      "n": 10,
+      "m": 4,
+      "cap": 19,
+      "mean_cap": "7",
+      "retained_balanced_fraction": 1.0
+    },
+    {
+      "n": 10,
+      "m": 4,
+      "cap": 21,
+      "mean_cap": "7",
+      "retained_balanced_fraction": 1.0
+    },
+    {
+      "n": 12,
+      "m": 4,
+      "cap": 28,
+      "mean_cap": "20/3",
+      "retained_balanced_fraction": 0.8
+    },
+    {
+      "n": 12,
+      "m": 4,
+      "cap": 30,
+      "mean_cap": "20/3",
+      "retained_balanced_fraction": 0.8
+    },
+    {
+      "n": 12,
+      "m": 4,
+      "cap": 28,
+      "mean_cap": "20/3",
+      "retained_balanced_fraction": 0.8
+    },
+    {
+      "n": 14,
+      "m": 6,
+      "cap": 43,
+      "mean_cap": "17",
+      "retained_balanced_fraction": 0.9428571428571428
+    },
+    {
+      "n": 14,
+      "m": 6,
+      "cap": 35,
+      "mean_cap": "17",
+      "retained_balanced_fraction": 0.8857142857142857
+    },
+    {
+      "n": 14,
+      "m": 6,
+      "cap": 35,
+      "mean_cap": "17",
+      "retained_balanced_fraction": 0.8571428571428571
+    },
+    {
+      "n": 16,
+      "m": 6,
+      "cap": 42,
+      "mean_cap": "33/2",
+      "retained_balanced_fraction": 0.8412698412698413
+    },
+    {
+      "n": 16,
+      "m": 6,
+      "cap": 48,
+      "mean_cap": "33/2",
+      "retained_balanced_fraction": 0.8174603174603174
+    },
+    {
+      "n": 16,
+      "m": 6,
+      "cap": 48,
+      "mean_cap": "33/2",
+      "retained_balanced_fraction": 0.8412698412698413
+    }
+  ],
+  "monte_carlo_greedy_diagnostics_not_proof": [
+    {
+      "n": 128,
+      "m": 38,
+      "ell": 90,
+      "mean_pair_cross_coefficient": 0.20847608278147095,
+      "mean_bulk_witness_coefficient": 0.21374654554841824,
+      "asymptotic_target": 0.19947114020071635
+    },
+    {
+      "n": 256,
+      "m": 64,
+      "ell": 192,
+      "mean_pair_cross_coefficient": 0.1891611477667182,
+      "mean_bulk_witness_coefficient": 0.1974304875597988,
+      "asymptotic_target": 0.19947114020071635
+    },
+    {
+      "n": 512,
+      "m": 106,
+      "ell": 406,
+      "mean_pair_cross_coefficient": 0.19252693977884422,
+      "mean_bulk_witness_coefficient": 0.19362709372043763,
+      "asymptotic_target": 0.19947114020071635
+    },
+    {
+      "n": 1024,
+      "m": 180,
+      "ell": 844,
+      "mean_pair_cross_coefficient": 0.19881020723679954,
+      "mean_bulk_witness_coefficient": 0.20386738261961163,
+      "asymptotic_target": 0.19947114020071635
+    }
+  ],
+  "scope": "actual high-energy counterexample, explicitly NOTground"
+}

@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "finite_physical": {
+    "physical_order": 16,
+    "complete_words": 65536,
+    "all_covariance_and_marginal_checks": "exact integer PASS",
+    "shared_response": {
+      "numerator": 5600,
+      "denominator": 22400,
+      "value": 0.25
+    },
+    "product_response": {
+      "numerator": 12000,
+      "denominator": 25600,
+      "value": 0.46875
+    },
+    "shared_fullsupport_response": {
+      "numerator": 24274252800,
+      "denominator": 93952409600,
+      "value": 0.25836753845214844
+    },
+    "product_fullsupport_response": {
+      "numerator": 3276669542400,
+      "denominator": 6871947673600,
+      "value": 0.47681817412376404
+    },
+    "total_correlation": 0.3767701612564336,
+    "exact_formula_phase_entropy": 0.37677016125643675
+  },
+  "scalar_fft_sequence": [
+    {
+      "blocks": 1,
+      "product_response": 0.3535533905932738,
+      "shared_response": 0.35355339059327373,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 2,
+      "product_response": 0.4687500000000001,
+      "shared_response": 0.24999999999999992,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 4,
+      "product_response": 0.5902339074406269,
+      "shared_response": 0.2651650429449553,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 16,
+      "product_response": 0.749008886296199,
+      "shared_response": 0.27772412945162606,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 64,
+      "product_response": 0.7867413114735723,
+      "shared_response": 0.28099505305624317,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 256,
+      "product_response": 0.7951435751525857,
+      "shared_response": 0.28181944374816464,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 1024,
+      "product_response": 0.797201920936902,
+      "shared_response": 0.2820259293926143,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    },
+    {
+      "blocks": 4096,
+      "product_response": 0.7977140611935793,
+      "shared_response": 0.28207757459949145,
+      "product_limit": 0.7978845608028654,
+      "shared_limit": 0.28209479177387814
+    }
+  ],
+  "scope": "Exact integer finite physical identities; FFT limits are numerical replay."
+}

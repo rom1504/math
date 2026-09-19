@@ -1,0 +1,13 @@
+exhaustive weighted-neighbor/entropy identities: 1023 families
+A10,m=6,row=10 exact-ground family
+  ell=2: a=1/42 h=1/70 p=29/1050 lambda2=1/70 p-lambda2=1/75 off_weighted_degree=14 overlap_partners=4 threshold=0 K_eff=1125/29
+  ell=3: a=1/42 h=1/35 p=1/25 lambda2=2/35 p-lambda2=-3/175 off_weighted_degree=8 overlap_partners=2 threshold=20 K_eff=500/7
+  ell=4: a=1/42 h=1/15 p=17/225 lambda2=4/25 p-lambda2=-19/225 off_weighted_degree=2 overlap_partners=2 threshold=21 K_eff=1125/17
+  ell=5: a=1/42 h=1/5 p=1/5 lambda2=2/5 p-lambda2=-1/5 off_weighted_degree=0 overlap_partners=0 threshold=6 K_eff=30
+  ordered intersections={2: 10, 4: 10, 6: 5}
+linear limits p=3/5,alpha=3/10,beta=9/20: lambda2->0.081632653061, I_rho=0.194975993719, I_Gamma=0.129456932603, I_rho-I_Gamma=0.065519061116
+  n=100: lambda2=0.0793767765 -log(rho)/n=0.1933039491 -log(rho/Gamma)/n=0.0658512010 -log(h)/n=0.4546016750
+  n=200: lambda2=0.0805099018 -log(rho)/n=0.1941373924 -log(rho/Gamma)/n=0.0656883360 -log(h)/n=0.4645949822
+  n=400: lambda2=0.0810725694 -log(rho)/n=0.1945560483 -log(rho/Gamma)/n=0.0656045003 -log(h)/n=0.4704511879
+  n=800: lambda2=0.0813529336 -log(rho)/n=0.1947658598 -log(rho/Gamma)/n=0.0655619812 -log(h)/n=0.4738107871
+PASS: linear-core weighted collision and finite obstruction checks

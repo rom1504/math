@@ -1,0 +1,992 @@
+{
+  "normalization": "Q(A)=max_x |sum_(i<j) A_ij x_i x_j|; hollow matrices",
+  "identity_integer_checks": 4400,
+  "hollow_diamond_bound_checks": 1400,
+  "all_checks_pass": true,
+  "clone_records": [
+    {
+      "base_order": 2,
+      "trial": 0,
+      "base_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 4,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 36
+    },
+    {
+      "base_order": 2,
+      "trial": 1,
+      "base_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 4,
+      "parent_cap": 10,
+      "base_bound": 28,
+      "child_bound": 36
+    },
+    {
+      "base_order": 2,
+      "trial": 2,
+      "base_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 6,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 44
+    },
+    {
+      "base_order": 2,
+      "trial": 3,
+      "base_matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1
+      ],
+      "parent_matching": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "base_cap": 1,
+      "child_cap": 4,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 36
+    },
+    {
+      "base_order": 2,
+      "trial": 4,
+      "base_matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 6,
+      "parent_cap": 10,
+      "base_bound": 28,
+      "child_bound": 44
+    },
+    {
+      "base_order": 2,
+      "trial": 5,
+      "base_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 4,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 36
+    },
+    {
+      "base_order": 2,
+      "trial": 6,
+      "base_matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 6,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 44
+    },
+    {
+      "base_order": 2,
+      "trial": 7,
+      "base_matrix": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "base_cap": 1,
+      "child_cap": 4,
+      "parent_cap": 12,
+      "base_bound": 28,
+      "child_bound": 36
+    },
+    {
+      "base_order": 3,
+      "trial": 0,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        -1,
+        1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "base_cap": 3,
+      "child_cap": 13,
+      "parent_cap": 30,
+      "base_bound": 66,
+      "child_bound": 82
+    },
+    {
+      "base_order": 3,
+      "trial": 1,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "base_cap": 3,
+      "child_cap": 15,
+      "parent_cap": 26,
+      "base_bound": 66,
+      "child_bound": 90
+    },
+    {
+      "base_order": 3,
+      "trial": 2,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_cap": 3,
+      "child_cap": 15,
+      "parent_cap": 30,
+      "base_bound": 66,
+      "child_bound": 90
+    },
+    {
+      "base_order": 3,
+      "trial": 3,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 3,
+      "child_cap": 13,
+      "parent_cap": 28,
+      "base_bound": 66,
+      "child_bound": 82
+    },
+    {
+      "base_order": 3,
+      "trial": 4,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_cap": 3,
+      "child_cap": 13,
+      "parent_cap": 28,
+      "base_bound": 66,
+      "child_bound": 82
+    },
+    {
+      "base_order": 3,
+      "trial": 5,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "base_cap": 3,
+      "child_cap": 13,
+      "parent_cap": 26,
+      "base_bound": 66,
+      "child_bound": 82
+    },
+    {
+      "base_order": 3,
+      "trial": 6,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        1,
+        1
+      ],
+      "parent_matching": [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "base_cap": 3,
+      "child_cap": 9,
+      "parent_cap": 20,
+      "base_bound": 66,
+      "child_bound": 66
+    },
+    {
+      "base_order": 3,
+      "trial": 7,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1,
+        1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "base_cap": 3,
+      "child_cap": 11,
+      "parent_cap": 24,
+      "base_bound": 66,
+      "child_bound": 74
+    },
+    {
+      "base_order": 4,
+      "trial": 0,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "base_cap": 4,
+      "child_cap": 18,
+      "parent_cap": 38,
+      "base_bound": 88,
+      "child_bound": 112
+    },
+    {
+      "base_order": 4,
+      "trial": 1,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "base_cap": 4,
+      "child_cap": 16,
+      "parent_cap": 38,
+      "base_bound": 88,
+      "child_bound": 104
+    },
+    {
+      "base_order": 4,
+      "trial": 2,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "base_cap": 6,
+      "child_cap": 24,
+      "parent_cap": 52,
+      "base_bound": 120,
+      "child_bound": 136
+    },
+    {
+      "base_order": 4,
+      "trial": 3,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "base_cap": 4,
+      "child_cap": 18,
+      "parent_cap": 38,
+      "base_bound": 88,
+      "child_bound": 112
+    },
+    {
+      "base_order": 4,
+      "trial": 4,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 4,
+      "child_cap": 18,
+      "parent_cap": 36,
+      "base_bound": 88,
+      "child_bound": 112
+    },
+    {
+      "base_order": 4,
+      "trial": 5,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      "base_cap": 6,
+      "child_cap": 20,
+      "parent_cap": 42,
+      "base_bound": 120,
+      "child_bound": 120
+    },
+    {
+      "base_order": 4,
+      "trial": 6,
+      "base_matrix": [
+        [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "parent_matching": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      "base_cap": 6,
+      "child_cap": 24,
+      "parent_cap": 50,
+      "base_bound": 120,
+      "child_bound": 136
+    },
+    {
+      "base_order": 4,
+      "trial": 7,
+      "base_matrix": [
+        [
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "twin_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "parent_matching": [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "base_cap": 6,
+      "child_cap": 20,
+      "parent_cap": 38,
+      "base_bound": 120,
+      "child_bound": 120
+    }
+  ],
+  "sharpness_family": [
+    {
+      "block_size": 2,
+      "seed_cap": 2,
+      "diamond_value": 4,
+      "ratio": 2.0
+    },
+    {
+      "block_size": 4,
+      "seed_cap": 8,
+      "diamond_value": 24,
+      "ratio": 3.0
+    },
+    {
+      "block_size": 8,
+      "seed_cap": 32,
+      "diamond_value": 112,
+      "ratio": 3.5
+    },
+    {
+      "block_size": 16,
+      "seed_cap": 128,
+      "diamond_value": 480,
+      "ratio": 3.75
+    },
+    {
+      "block_size": 64,
+      "seed_cap": 2048,
+      "diamond_value": 8064,
+      "ratio": 3.9375
+    }
+  ]
+}

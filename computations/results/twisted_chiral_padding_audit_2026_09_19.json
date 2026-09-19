@@ -1,0 +1,218 @@
+{
+  "method": "exact integer/fraction exhaustive small principal-block audit",
+  "records": [
+    {
+      "label": "random6",
+      "n": 6,
+      "m": 3,
+      "Q": 9,
+      "beta": 18,
+      "tr4": 278,
+      "subsets": 20,
+      "exact_expected_tr4": "18",
+      "trace_upper": "189/2",
+      "disjoint_pairs": 20,
+      "simultaneous_good_pairs": 20,
+      "exact_expected_deficit": "18",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "patched_Q": 9,
+      "patched_beta": 18,
+      "all_checks_pass": true
+    },
+    {
+      "label": "random7",
+      "n": 7,
+      "m": 3,
+      "Q": 11,
+      "beta": 22,
+      "tr4": 470,
+      "subsets": 35,
+      "exact_expected_tr4": "18",
+      "trace_upper": "4428/49",
+      "disjoint_pairs": 140,
+      "simultaneous_good_pairs": 140,
+      "exact_expected_deficit": "22",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "patched_Q": 11,
+      "patched_beta": 22,
+      "all_checks_pass": true
+    },
+    {
+      "label": "random8",
+      "n": 8,
+      "m": 4,
+      "Q": 18,
+      "beta": 36,
+      "tr4": 872,
+      "subsets": 70,
+      "exact_expected_tr4": "2172/35",
+      "trace_upper": "272",
+      "disjoint_pairs": 70,
+      "simultaneous_good_pairs": 70,
+      "exact_expected_deficit": "36",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "patched_Q": 14,
+      "patched_beta": 28,
+      "all_checks_pass": true
+    },
+    {
+      "label": "random9",
+      "n": 9,
+      "m": 4,
+      "Q": 16,
+      "beta": 32,
+      "tr4": 840,
+      "subsets": 126,
+      "exact_expected_tr4": "1220/21",
+      "trace_upper": "18560/81",
+      "disjoint_pairs": 630,
+      "simultaneous_good_pairs": 630,
+      "exact_expected_deficit": "32",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "patched_Q": 14,
+      "patched_beta": 28,
+      "all_checks_pass": true
+    },
+    {
+      "label": "random10",
+      "n": 10,
+      "m": 4,
+      "Q": 23,
+      "beta": 46,
+      "tr4": 1674,
+      "subsets": 210,
+      "exact_expected_tr4": "2124/35",
+      "trace_upper": "6144/25",
+      "disjoint_pairs": 3150,
+      "simultaneous_good_pairs": 3150,
+      "exact_expected_deficit": "2024/45",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "patched_Q": 19,
+      "patched_beta": 38,
+      "all_checks_pass": true
+    },
+    {
+      "label": "min10class0",
+      "n": 10,
+      "m": 4,
+      "Q": 13,
+      "beta": 40,
+      "tr4": 1130,
+      "subsets": 210,
+      "exact_expected_tr4": "1220/21",
+      "trace_upper": "1152/5",
+      "disjoint_pairs": 3150,
+      "simultaneous_good_pairs": 3150,
+      "exact_expected_deficit": "352/9",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "patched_Q": 17,
+      "patched_beta": 40,
+      "all_checks_pass": true
+    },
+    {
+      "label": "min10class1",
+      "n": 10,
+      "m": 4,
+      "Q": 13,
+      "beta": 34,
+      "tr4": 1130,
+      "subsets": 210,
+      "exact_expected_tr4": "1220/21",
+      "trace_upper": "5376/25",
+      "disjoint_pairs": 3150,
+      "simultaneous_good_pairs": 3150,
+      "exact_expected_deficit": "1496/45",
+      "selected_blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "patched_Q": 19,
+      "patched_beta": 38,
+      "all_checks_pass": true
+    }
+  ]
+}
