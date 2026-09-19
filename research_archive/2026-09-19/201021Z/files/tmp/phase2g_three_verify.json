@@ -1,0 +1,378 @@
+{
+  "classification": "exact finite pooled-witness minimax when status is OPTIMAL; one common template only, not a cap computation",
+  "result": {
+    "active_constraint_count": 3545,
+    "chosen_columns": [
+      0,
+      1,
+      3,
+      4,
+      7,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "chosen_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "maximum_energy": 90,
+    "minimum_energy": -88,
+    "objective": 90,
+    "objective_lower_bound": 90,
+    "rounds": [
+      {
+        "active_constraints": 256,
+        "active_objective": 38,
+        "active_objective_lower_bound": 38,
+        "chosen_columns": [
+          1,
+          2,
+          4,
+          7,
+          8,
+          13
+        ],
+        "full_objective": 182,
+        "full_violations": 34591,
+        "round": 1,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 1280,
+        "active_objective": 40,
+        "active_objective_lower_bound": 40,
+        "chosen_columns": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "full_objective": 126,
+        "full_violations": 9192,
+        "round": 2,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 2304,
+        "active_objective": 66,
+        "active_objective_lower_bound": 66,
+        "chosen_columns": [
+          0,
+          1,
+          3,
+          4,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "full_objective": 114,
+        "full_violations": 1404,
+        "round": 3,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3328,
+        "active_objective": 80,
+        "active_objective_lower_bound": 80,
+        "chosen_columns": [
+          1,
+          3,
+          4,
+          5,
+          8,
+          9,
+          11,
+          12,
+          14,
+          15
+        ],
+        "full_objective": 108,
+        "full_violations": 39,
+        "round": 4,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3367,
+        "active_objective": 80,
+        "active_objective_lower_bound": 80,
+        "chosen_columns": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          7,
+          11,
+          12,
+          14,
+          15
+        ],
+        "full_objective": 110,
+        "full_violations": 55,
+        "round": 5,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3422,
+        "active_objective": 82,
+        "active_objective_lower_bound": 82,
+        "chosen_columns": [
+          0,
+          1,
+          3,
+          4,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15
+        ],
+        "full_objective": 92,
+        "full_violations": 33,
+        "round": 6,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3455,
+        "active_objective": 84,
+        "active_objective_lower_bound": 84,
+        "chosen_columns": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          14
+        ],
+        "full_objective": 104,
+        "full_violations": 8,
+        "round": 7,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3463,
+        "active_objective": 84,
+        "active_objective_lower_bound": 84,
+        "chosen_columns": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          8,
+          9,
+          10,
+          11,
+          14
+        ],
+        "full_objective": 122,
+        "full_violations": 40,
+        "round": 8,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3503,
+        "active_objective": 86,
+        "active_objective_lower_bound": 86,
+        "chosen_columns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          9,
+          10,
+          11,
+          14
+        ],
+        "full_objective": 106,
+        "full_violations": 25,
+        "round": 9,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3528,
+        "active_objective": 88,
+        "active_objective_lower_bound": 88,
+        "chosen_columns": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          11,
+          12,
+          13
+        ],
+        "full_objective": 104,
+        "full_violations": 11,
+        "round": 10,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3539,
+        "active_objective": 90,
+        "active_objective_lower_bound": 90,
+        "chosen_columns": [
+          1,
+          4,
+          5,
+          6,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15
+        ],
+        "full_objective": 106,
+        "full_violations": 6,
+        "round": 11,
+        "solver_status": "OPTIMAL"
+      },
+      {
+        "active_constraints": 3545,
+        "active_objective": 90,
+        "active_objective_lower_bound": 90,
+        "chosen_columns": [
+          0,
+          1,
+          3,
+          4,
+          7,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "full_objective": 90,
+        "full_violations": 0,
+        "round": 12,
+        "solver_status": "OPTIMAL"
+      }
+    ],
+    "status": "OPTIMAL"
+  },
+  "rounds": [
+    {
+      "current_positions": [],
+      "path": "computations/results/phase2e_all_diagonal_family_audit.json",
+      "record_hash": "760daa2b18a0e355f857f9e65b355f3e9bd0f7b33cb8b3c731357377120ad9e0",
+      "saved_minimum_absolute_energy": 210
+    },
+    {
+      "current_positions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "path": "computations/results/phase2f_corrected_micro_pair_all_diagonal_audit.json",
+      "record_hash": "f24a16404257c693c1a82f70bf290fee00e276b2d95d8557e3253c1eeb607b89",
+      "saved_minimum_absolute_energy": 230
+    },
+    {
+      "current_positions": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "path": "computations/results/phase2g_minimax_template_all_diagonal_audit.json",
+      "record_hash": "33cec568dafd3d6d504a0f837c18c844d93e90c6f65a91c21347cb630718f8a0",
+      "saved_minimum_absolute_energy": 210
+    }
+  ],
+  "schema": "quadratic-signing-common-micro-template-minimax-v1",
+  "witness_count": 49152
+}

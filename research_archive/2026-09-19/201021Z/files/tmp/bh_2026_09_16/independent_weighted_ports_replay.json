@@ -1,0 +1,51 @@
+{
+  "actual_sign_frame_checks": [
+    {
+      "computed_global_column_cap": 16.623299669854504,
+      "m": 8,
+      "minimum_energy_slack": 120.00000227677583,
+      "positive_deficit_cases": 44,
+      "q": 6,
+      "weighted_checks": 480
+    },
+    {
+      "computed_global_column_cap": 35.42933121169786,
+      "m": 16,
+      "minimum_energy_slack": 673.8794033087233,
+      "positive_deficit_cases": 4,
+      "q": 12,
+      "weighted_checks": 480
+    },
+    {
+      "computed_global_column_cap": 65.27694306058551,
+      "m": 32,
+      "minimum_energy_slack": 7259.968961457234,
+      "positive_deficit_cases": 0,
+      "q": 24,
+      "weighted_checks": 480
+    },
+    {
+      "computed_global_column_cap": 126.61113844072709,
+      "m": 64,
+      "minimum_energy_slack": 50646.3931530032,
+      "positive_deficit_cases": 0,
+      "q": 48,
+      "weighted_checks": 480
+    }
+  ],
+  "potential_optimization": {
+    "largest_error": 4.416023102749023e-12,
+    "numeric_checks": 500
+  },
+  "rational_phase": {
+    "certified_less_than": "497237/1000000",
+    "core_variance_fraction": "999/1000",
+    "decimal_upper": 0.49723661580914424,
+    "eventual_actual_coefficient": "498/1000",
+    "exact_rational_coefficient_upper": "24470281425801171212998204592506199543457280520284554628919472579742496102507751/49212549212573818873031465305075049148005000000000000000000000000000000000000000",
+    "numeric_threshold_for_point_499": 0.9980469950928259,
+    "p": "31/32",
+    "threshold_qualification": "The threshold is diagnostic; the 999/1000 certificate is rational."
+  },
+  "status": "PASS"
+}

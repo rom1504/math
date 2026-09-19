@@ -107,6 +107,13 @@ with 2,115 hash-verified research payloads. Exact witness caps, scoped
 obstructions, unfinished searches, and failed Gaussian comparisons are kept
 separate. This is not the end of the bounded three-hour campaign.
 
+Later preservation: [2026-09-19 joint-resource checkpoint](2026-09-19/201021Z/README.md),
+with2,015 hash-verified research payloads. This includes exploratory rational
+certificates, exact finite orbit searches, completed first-pass joint search,
+and scoped failed native-transfer mechanisms. No credential or unpreserved
+oversized-output flag was raised. The current20-minute continuation and
+later proof audits will be captured again before the bounded campaign ends.
+
 Latest completed publication audit: [2026-09-18 Boolean BH boundedness campaign](publication_audit_bh_boundedness_2026_09_18.md).
 Its closing snapshot is [070738Z](2026-09-18/070738Z/README.md), with
 1,983 hash-verified payloads. Later canonical status edits are committed directly.

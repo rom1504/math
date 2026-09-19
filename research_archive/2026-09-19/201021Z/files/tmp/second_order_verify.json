@@ -1,0 +1,993 @@
+{
+  "classification": "proved finite histogram certificate plus exhaustive switching audit",
+  "criterion": "sum_{e+z<g} N_eta(e)N_zeta(z)<2^(m+n-2) implies a bridge switching with parent cap <= M_A+M_D+L_W-g",
+  "records": [
+    {
+      "best_switch": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "bridge_cap": 13,
+      "bridge_deficit_histogram": {
+        "0": 4,
+        "10": 62,
+        "12": 72,
+        "2": 7,
+        "4": 10,
+        "6": 38,
+        "8": 63
+      },
+      "child_caps": [
+        4,
+        4
+      ],
+      "exhaustive_best_switching_gain": 8,
+      "exhaustive_best_switching_parent_cap": 13,
+      "expectation_table": [
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 0,
+          "gain": 0
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 200,
+          "gain": 1
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 200,
+          "gain": 2
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 550,
+          "gain": 3
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 550,
+          "gain": 4
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 1530,
+          "gain": 5
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 1530,
+          "gain": 6
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 4270,
+          "gain": 7
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 4270,
+          "gain": 8
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 8964,
+          "gain": 9
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 8964,
+          "gain": 10
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 17226,
+          "gain": 11
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 17226,
+          "gain": 12
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 29246,
+          "gain": 13
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 29246,
+          "gain": 14
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 39954,
+          "gain": 15
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 39954,
+          "gain": 16
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 54012,
+          "gain": 17
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 54012,
+          "gain": 18
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 59344,
+          "gain": 19
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 59344,
+          "gain": 20
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 65536,
+          "gain": 21
+        },
+        {
+          "expected_bad_pair_denominator": 256,
+          "expected_bad_pair_numerator": 65536,
+          "gain": 22
+        }
+      ],
+      "histogram_certified_parent_cap": 19,
+      "histogram_first_moment_certified_gain": 2,
+      "independent_amalgamation_cap": 21,
+      "internal_sum_deficit_histogram": {
+        "0": 50,
+        "4": 120,
+        "8": 86
+      },
+      "orders": [
+        5,
+        5
+      ],
+      "projective_pair_count": 256,
+      "source": "computations/results/bridge_5_5_sign1.json"
+    },
+    {
+      "best_switch": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "bridge_cap": 16,
+      "bridge_deficit_histogram": {
+        "0": 6,
+        "12": 648,
+        "16": 130,
+        "4": 120,
+        "8": 120
+      },
+      "child_caps": [
+        5,
+        5
+      ],
+      "exhaustive_best_switching_gain": 8,
+      "exhaustive_best_switching_parent_cap": 18,
+      "expectation_table": [
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 0,
+          "gain": 0
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 432,
+          "gain": 1
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 432,
+          "gain": 2
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 1872,
+          "gain": 3
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 1872,
+          "gain": 4
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 11712,
+          "gain": 5
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 11712,
+          "gain": 6
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 40512,
+          "gain": 7
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 40512,
+          "gain": 8
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 74592,
+          "gain": 9
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 74592,
+          "gain": 10
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 105024,
+          "gain": 11
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 105024,
+          "gain": 12
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 204480,
+          "gain": 13
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 204480,
+          "gain": 14
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 392640,
+          "gain": 15
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 392640,
+          "gain": 16
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 560400,
+          "gain": 17
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 560400,
+          "gain": 18
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 624240,
+          "gain": 19
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 624240,
+          "gain": 20
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 805760,
+          "gain": 21
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 805760,
+          "gain": 22
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 982016,
+          "gain": 23
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 982016,
+          "gain": 24
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 1013216,
+          "gain": 25
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 1013216,
+          "gain": 26
+        },
+        {
+          "expected_bad_pair_denominator": 1024,
+          "expected_bad_pair_numerator": 1048576,
+          "gain": 27
+        }
+      ],
+      "histogram_certified_parent_cap": 24,
+      "histogram_first_moment_certified_gain": 2,
+      "independent_amalgamation_cap": 26,
+      "internal_sum_deficit_histogram": {
+        "0": 72,
+        "10": 272,
+        "2": 240,
+        "4": 200,
+        "8": 240
+      },
+      "orders": [
+        6,
+        6
+      ],
+      "projective_pair_count": 1024,
+      "source": "computations/results/bridge_6_6_sign1_cap18.json"
+    },
+    {
+      "best_switch": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "bridge_cap": 16,
+      "bridge_deficit_histogram": {
+        "0": 12,
+        "10": 352,
+        "12": 408,
+        "14": 432,
+        "16": 212,
+        "2": 48,
+        "4": 104,
+        "6": 192,
+        "8": 288
+      },
+      "child_caps": [
+        5,
+        9
+      ],
+      "exhaustive_best_switching_gain": 10,
+      "exhaustive_best_switching_parent_cap": 20,
+      "expectation_table": [
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 0,
+          "gain": 0
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 288,
+          "gain": 1
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 288,
+          "gain": 2
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2568,
+          "gain": 3
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2568,
+          "gain": 4
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 11736,
+          "gain": 5
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 11736,
+          "gain": 6
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 38072,
+          "gain": 7
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 38072,
+          "gain": 8
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 99080,
+          "gain": 9
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 99080,
+          "gain": 10
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 218432,
+          "gain": 11
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 218432,
+          "gain": 12
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 424256,
+          "gain": 13
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 424256,
+          "gain": 14
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 744560,
+          "gain": 15
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 744560,
+          "gain": 16
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 1191056,
+          "gain": 17
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 1191056,
+          "gain": 18
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 1746344,
+          "gain": 19
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 1746344,
+          "gain": 20
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2362904,
+          "gain": 21
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2362904,
+          "gain": 22
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2968088,
+          "gain": 23
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 2968088,
+          "gain": 24
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 3494536,
+          "gain": 25
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 3494536,
+          "gain": 26
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 3899344,
+          "gain": 27
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 3899344,
+          "gain": 28
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 4130704,
+          "gain": 29
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 4130704,
+          "gain": 30
+        },
+        {
+          "expected_bad_pair_denominator": 2048,
+          "expected_bad_pair_numerator": 4194304,
+          "gain": 31
+        }
+      ],
+      "histogram_certified_parent_cap": 28,
+      "histogram_first_moment_certified_gain": 2,
+      "independent_amalgamation_cap": 30,
+      "internal_sum_deficit_histogram": {
+        "0": 24,
+        "10": 354,
+        "12": 480,
+        "14": 300,
+        "2": 94,
+        "4": 180,
+        "6": 276,
+        "8": 340
+      },
+      "orders": [
+        6,
+        7
+      ],
+      "projective_pair_count": 2048,
+      "source": "computations/results/bridge_6_7_sign1_cap20.json"
+    },
+    {
+      "best_switch": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "bridge_cap": 8,
+      "bridge_deficit_histogram": {
+        "0": 4,
+        "4": 48,
+        "8": 12
+      },
+      "child_caps": [
+        4,
+        4
+      ],
+      "exhaustive_best_switching_gain": 4,
+      "exhaustive_best_switching_parent_cap": 12,
+      "expectation_table": [
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 0,
+          "gain": 0
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 8,
+          "gain": 1
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 8,
+          "gain": 2
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 40,
+          "gain": 3
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 40,
+          "gain": 4
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 200,
+          "gain": 5
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 200,
+          "gain": 6
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 680,
+          "gain": 7
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 680,
+          "gain": 8
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 1528,
+          "gain": 9
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 1528,
+          "gain": 10
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 2776,
+          "gain": 11
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 2776,
+          "gain": 12
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 3640,
+          "gain": 13
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 3640,
+          "gain": 14
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 3928,
+          "gain": 15
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 3928,
+          "gain": 16
+        },
+        {
+          "expected_bad_pair_denominator": 64,
+          "expected_bad_pair_numerator": 4096,
+          "gain": 17
+        }
+      ],
+      "histogram_certified_parent_cap": 12,
+      "histogram_first_moment_certified_gain": 4,
+      "independent_amalgamation_cap": 16,
+      "internal_sum_deficit_histogram": {
+        "0": 2,
+        "2": 8,
+        "4": 16,
+        "6": 24,
+        "8": 14
+      },
+      "orders": [
+        4,
+        4
+      ],
+      "projective_pair_count": 64,
+      "source": "structured Sylvester bridge with exact_m4 children"
+    },
+    {
+      "best_switch": [
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          1
+        ]
+      ],
+      "bridge_cap": 20,
+      "bridge_deficit_histogram": {
+        "0": 64,
+        "12": 6912,
+        "16": 2688,
+        "20": 4032,
+        "4": 1344,
+        "8": 1344
+      },
+      "child_caps": [
+        10,
+        10
+      ],
+      "exhaustive_best_switching_gain": 8,
+      "exhaustive_best_switching_parent_cap": 32,
+      "expectation_table": [
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 0,
+          "gain": 0
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 2048,
+          "gain": 1
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 2048,
+          "gain": 2
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 12288,
+          "gain": 3
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 12288,
+          "gain": 4
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 80384,
+          "gain": 5
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 80384,
+          "gain": 6
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 342528,
+          "gain": 7
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 342528,
+          "gain": 8
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 988160,
+          "gain": 9
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 988160,
+          "gain": 10
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 2294784,
+          "gain": 11
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 2294784,
+          "gain": 12
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 4763136,
+          "gain": 13
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 4763136,
+          "gain": 14
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 9168384,
+          "gain": 15
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 9168384,
+          "gain": 16
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 16449024,
+          "gain": 17
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 16449024,
+          "gain": 18
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 27676160,
+          "gain": 19
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 27676160,
+          "gain": 20
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 43730944,
+          "gain": 21
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 43730944,
+          "gain": 22
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 65069056,
+          "gain": 23
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 65069056,
+          "gain": 24
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 89906176,
+          "gain": 25
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 89906176,
+          "gain": 26
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 118727680,
+          "gain": 27
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 118727680,
+          "gain": 28
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 151095808,
+          "gain": 29
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 151095808,
+          "gain": 30
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 186374656,
+          "gain": 31
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 186374656,
+          "gain": 32
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 213912064,
+          "gain": 33
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 213912064,
+          "gain": 34
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 232577536,
+          "gain": 35
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 232577536,
+          "gain": 36
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 248727040,
+          "gain": 37
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 248727040,
+          "gain": 38
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 261629440,
+          "gain": 39
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 261629440,
+          "gain": 40
+        },
+        {
+          "expected_bad_pair_denominator": 16384,
+          "expected_bad_pair_numerator": 268435456,
+          "gain": 41
+        }
+      ],
+      "histogram_certified_parent_cap": 36,
+      "histogram_first_moment_certified_gain": 4,
+      "independent_amalgamation_cap": 40,
+      "internal_sum_deficit_histogram": {
+        "0": 32,
+        "10": 1600,
+        "12": 2016,
+        "14": 2496,
+        "16": 2880,
+        "18": 3200,
+        "2": 160,
+        "20": 1688,
+        "4": 392,
+        "6": 736,
+        "8": 1184
+      },
+      "orders": [
+        8,
+        8
+      ],
+      "projective_pair_count": 16384,
+      "source": "structured Sylvester bridge with exact_m8 children"
+    }
+  ],
+  "schema": "quadratic-signing-second-order-amalgamation-histogram-v1"
+}

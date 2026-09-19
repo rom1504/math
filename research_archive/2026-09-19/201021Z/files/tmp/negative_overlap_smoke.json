@@ -1,0 +1,283 @@
+{
+  "child_minimizer_certificates": [
+    {
+      "beta": 1.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 1,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "0.12011450695827752463176337350967907383977995131009312059838350534380127953949251",
+      "order": 2,
+      "raw_t": 0.5,
+      "root_gauged_signing_count": 1,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 4
+    },
+    {
+      "beta": 4.0,
+      "classification": "exact signing/energy/histogram enumeration; high-precision numerical comparison of transcendental histogram pressures",
+      "distinct_absolute_energy_histogram_count": 1,
+      "double_nearest_sorted_histogram_gap": Infinity,
+      "minimizing_histogram_count": 1,
+      "minimizing_root_gauged_signing_count": 1,
+      "mp_dps": 80,
+      "mp_gap_to_next_histogram": null,
+      "mp_optimum": "1.3250027473578644309377511968295773166866487396033259215568544655976545834660283",
+      "order": 2,
+      "raw_t": 2.0,
+      "root_gauged_signing_count": 1,
+      "signed_permutation_global_sign_class_count": 1,
+      "total_parent_order": 4
+    }
+  ],
+  "classification": "complete child-signing and bridge enumeration; numerical transcendental evaluation and Gauss-Legendre quadrature",
+  "exclusions": [
+    "no conference or Paley surrogate",
+    "no ground-state child surrogate",
+    "no bridge sampling",
+    "no asymptotic inference from finite values"
+  ],
+  "normalization": "rhohat=(lambda*mn)^-1 int_-lambda^0 E_Pi_s sum_e r_e(B_-e)^2 ds",
+  "records": [
+    {
+      "N": 4,
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 1.9949319973733282e-17,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          4.982195195208655e-33,
+          0.03563178701681126,
+          4.982195195208655e-33
+        ],
+        "maximum_flip_vs_direct_absolute_error": 5.551115123125783e-17
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.994787425259684,
+          "endpoint_overlap_at_minus_lambda": 0.017071319306113164,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9986302822914316,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.017434950374425336,
+          "minimum_quadrature_importance_effective_fraction": 0.9948009434888831,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.017437836565263803
+        }
+      ],
+      "pointwise_overlap_maximum": 0.0356317870168112,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 0.5,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.0178158935084056
+    },
+    {
+      "N": 4,
+      "beta": 1.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 1.9949319973733282e-17,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.03563178701681126,
+          4.982195195208655e-33,
+          0.03563178701681126
+        ],
+        "maximum_flip_vs_direct_absolute_error": 5.551115123125783e-17
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.994787425259684,
+          "endpoint_overlap_at_minus_lambda": 0.017071319306113164,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.9986302822914316,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.017434950374425336,
+          "minimum_quadrature_importance_effective_fraction": 0.9948009434888831,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.017437836565263803
+        }
+      ],
+      "pointwise_overlap_maximum": 0.0356317870168112,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 0.5,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.0178158935084056
+    },
+    {
+      "N": 4,
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 4.371503159461554e-16,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.0,
+          0.9243776715239534,
+          0.0
+        ],
+        "maximum_flip_vs_direct_absolute_error": 1.1657341758564144e-14
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": -1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.7687299087006544,
+          "endpoint_overlap_at_minus_lambda": 0.3158257118820791,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.8399497147990342,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.3457064100370531,
+          "minimum_quadrature_importance_effective_fraction": 0.7688127564157474,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.35995166805873796
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9243776715239651,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 2.0,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.46218883576198255
+    },
+    {
+      "N": 4,
+      "beta": 4.0,
+      "bridge_pressure_audit": {
+        "bridge_cube_size": 16,
+        "bridge_sign_count": 4,
+        "convolution_dtype": "float128",
+        "direct_check_masks": [
+          0,
+          5,
+          15
+        ],
+        "maximum_direct_log_pressure_error": 4.371503159461554e-16,
+        "rank_one_character_count": 4
+      },
+      "cavity_direct_audit": {
+        "checked_bridge_masks": [
+          0,
+          5,
+          15
+        ],
+        "direct_normalized_cavity_square_values": [
+          0.9243776715239534,
+          0.0,
+          0.9243776715239534
+        ],
+        "maximum_flip_vs_direct_absolute_error": 1.1657341758564144e-14
+      },
+      "left_child_class": 0,
+      "left_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "orientation": 1,
+      "paths": [
+        {
+          "endpoint_importance_effective_fraction": 0.7687299087006544,
+          "endpoint_overlap_at_minus_lambda": 0.3158257118820791,
+          "lambda": 1.0,
+          "midpoint_importance_effective_fraction": 0.8399497147990342,
+          "midpoint_overlap_at_minus_lambda_over_2": 0.3457064100370531,
+          "minimum_quadrature_importance_effective_fraction": 0.7688127564157474,
+          "quadrature_order": 32,
+          "rhohat_path_average": 0.35995166805873796
+        }
+      ],
+      "pointwise_overlap_maximum": 0.9243776715239651,
+      "pointwise_overlap_minimum": 0.0,
+      "raw_t": 2.0,
+      "right_child_class": 0,
+      "right_child_sha256": "d5e2d2ac07b741be58f6b9e50ede5fdcf16f3e8053ecef9350e7744b0d8bd90c",
+      "split": [
+        2,
+        2
+      ],
+      "uniform_overlap": 0.46218883576198255
+    }
+  ],
+  "schema": "actual-child-raw-negative-overlap-exact-v1",
+  "scope": {
+    "betas": [
+      1.0,
+      4.0
+    ],
+    "lambdas": [
+      1.0
+    ],
+    "mp_dps_for_child_selection": 80,
+    "orders": [
+      4,
+      4
+    ],
+    "orientations": [
+      -1,
+      1
+    ],
+    "quadrature_order": 32,
+    "splits": "balanced floor(N/2)+ceil(N/2)"
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "canonical_payload_sha256": "91a59d3ac500f8f7adeb4c1e3caf460875e1fbfd251e4c1f8017e81bced086d5",
+  "classification": "exact rational certificates for each saved LP optimum; exhaustive floating-point LP comparison over all R for k=2,3,4",
+  "definition": "L(R)=min sum_h |c_h| subject to K_R=sum_h c_h h h^T, h in {-1,0,1}^{2^(k-1)} modulo sign",
+  "orders": [
+    {
+      "antipodal_type_count": 2,
+      "certificate": {
+        "dual_support": [
+          {
+            "coefficient": "-1",
+            "pair": [
+              1,
+              1
+            ]
+          }
+        ],
+        "maximum_absolute_dual_atom_pairing": "1",
+        "objective": "4",
+        "primal_support": [
+          {
+            "atom": [
+              0,
+              1
+            ],
+            "atom_index": 0,
+            "coefficient": "-4"
+          }
+        ]
+      },
+      "full_sign_matrix_count": 8,
+      "k": 2,
+      "kernel_diagonal_range": 4,
+      "minimizing_R": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "minimizing_R_upper_triangle": [
+        -1,
+        -1,
+        -1
+      ],
+      "minimum_L": 4,
+      "objective_histogram": {
+        "4.0": 4,
+        "6.0": 4
+      },
+      "ternary_atom_count": 4,
+      "universal_range_bound": {
+        "exact_energy_range_lower_bound": "4",
+        "exact_rademacher_absolute_mean": "1",
+        "ratio_to_k_to_three_halves": 1.414213562373095,
+        "split": [
+          1,
+          1
+        ],
+        "strictly_exceeds_k_to_three_halves": true
+      }
+    },
+    {
+      "antipodal_type_count": 4,
+      "certificate": {
+        "dual_support": [
+          {
+            "coefficient": "1",
+            "pair": [
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "pair": [
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": "-1",
+            "pair": [
+              1,
+              1
+            ]
+          }
+        ],
+        "maximum_absolute_dual_atom_pairing": "1",
+        "objective": "9",
+        "primal_support": [
+          {
+            "atom": [
+              0,
+              1,
+              -1,
+              -1
+            ],
+            "atom_index": 4,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              0,
+              1,
+              -1,
+              1
+            ],
+            "atom_index": 6,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "atom_index": 12,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "atom_index": 26,
+            "coefficient": "2"
+          },
+          {
+            "atom": [
+              1,
+              1,
+              1,
+              -1
+            ],
+            "atom_index": 37,
+            "coefficient": "1"
+          }
+        ]
+      },
+      "full_sign_matrix_count": 64,
+      "k": 3,
+      "kernel_diagonal_range": 8,
+      "minimizing_R": [
+        [
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1
+        ]
+      ],
+      "minimizing_R_upper_triangle": [
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "minimum_L": 9,
+      "objective_histogram": {
+        "11.0": 32,
+        "13.0": 24,
+        "9.0": 8
+      },
+      "ternary_atom_count": 40,
+      "universal_range_bound": {
+        "exact_energy_range_lower_bound": "8",
+        "exact_rademacher_absolute_mean": "1",
+        "ratio_to_k_to_three_halves": 1.539600717839002,
+        "split": [
+          2,
+          1
+        ],
+        "strictly_exceeds_k_to_three_halves": true
+      }
+    },
+    {
+      "antipodal_type_count": 8,
+      "certificate": {
+        "dual_support": [
+          {
+            "coefficient": "1",
+            "pair": [
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "-1",
+            "pair": [
+              3,
+              3
+            ]
+          }
+        ],
+        "maximum_absolute_dual_atom_pairing": "1",
+        "objective": "16",
+        "primal_support": [
+          {
+            "atom": [
+              0,
+              1,
+              -1,
+              -1,
+              1,
+              1,
+              -1,
+              -1
+            ],
+            "atom_index": 436,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              0,
+              1,
+              -1,
+              1,
+              -1,
+              1,
+              -1,
+              1
+            ],
+            "atom_index": 546,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              0,
+              1,
+              1,
+              1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "atom_index": 1012,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "atom_index": 1092,
+            "coefficient": "-2"
+          },
+          {
+            "atom": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "atom_index": 2186,
+            "coefficient": "4"
+          },
+          {
+            "atom": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              -1
+            ],
+            "atom_index": 3184,
+            "coefficient": "4"
+          }
+        ]
+      },
+      "full_sign_matrix_count": 1024,
+      "k": 4,
+      "kernel_diagonal_range": 16,
+      "minimizing_R": [
+        [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1
+        ]
+      ],
+      "minimizing_R_upper_triangle": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "minimum_L": 16,
+      "objective_histogram": {
+        "16.0": 64,
+        "18.0": 256,
+        "20.0": 400,
+        "22.0": 256,
+        "24.0": 48
+      },
+      "ternary_atom_count": 3280,
+      "universal_range_bound": {
+        "exact_energy_range_lower_bound": "12",
+        "exact_rademacher_absolute_mean": "1",
+        "ratio_to_k_to_three_halves": 1.5,
+        "split": [
+          3,
+          1
+        ],
+        "strictly_exceeds_k_to_three_halves": true
+      }
+    }
+  ],
+  "range_bound_audit_sha256": "f7675ab0f800b60e597559bffdcb2c81192f1805f4b0d238a603062054311ffe",
+  "range_bound_audit_through": 256,
+  "range_bound_minimum_ratio": {
+    "exact_energy_range_lower_bound": "374606902236028199511433275/75557863725914323419136",
+    "exact_rademacher_absolute_mean": "4407140026306214111899215/604462909807314587353088",
+    "k": 253,
+    "ratio_to_k_to_three_halves": 1.2320130919860801,
+    "split": [
+      170,
+      83
+    ],
+    "strictly_exceeds_k_to_three_halves": true
+  },
+  "schema": "quadratic-signing-finite-fibre-cut-decomposition-v1"
+}

@@ -1,0 +1,109 @@
+{
+  "base_before_switch_gain": 0.9923335529638848,
+  "beta": 4.0,
+  "bridge_gauge_mask": 13,
+  "child_order": 3,
+  "classification": "exact finite quotient enumeration with floating-point transcendental evaluation",
+  "epsilon": -1,
+  "full_certificate": -3.2037699581869594,
+  "full_convolution_minimum": 0.015054120902455614,
+  "parent_order": 6,
+  "profiles": [
+    {
+      "basis_masks": [],
+      "certificate": 0.9923335529638846,
+      "log_gain": -2.2204460492503136e-16,
+      "minimum_quotient_convolution": 0.9999999999999998,
+      "quotient_dimension": 0,
+      "rref_pivots": [],
+      "subspaces_checked": 1
+    },
+    {
+      "basis_masks": [
+        25
+      ],
+      "certificate": 0.6374929588365524,
+      "log_gain": -0.3548405941273324,
+      "minimum_quotient_convolution": 0.7012852232821418,
+      "quotient_dimension": 1,
+      "rref_pivots": [
+        0
+      ],
+      "subspaces_checked": 31
+    },
+    {
+      "basis_masks": [
+        25,
+        14
+      ],
+      "certificate": -1.2724195806874175,
+      "log_gain": -2.2647531336513023,
+      "minimum_quotient_convolution": 0.10385566984642614,
+      "quotient_dimension": 2,
+      "rref_pivots": [
+        0,
+        1
+      ],
+      "subspaces_checked": 155
+    },
+    {
+      "basis_masks": [
+        25,
+        2,
+        12
+      ],
+      "certificate": -1.6079145429087793,
+      "log_gain": -2.600248095872664,
+      "minimum_quotient_convolution": 0.07425515353176926,
+      "quotient_dimension": 3,
+      "rref_pivots": [
+        0,
+        1,
+        2
+      ],
+      "subspaces_checked": 155
+    },
+    {
+      "basis_masks": [
+        1,
+        2,
+        20,
+        24
+      ],
+      "certificate": -3.2037699581869594,
+      "log_gain": -4.196103511150844,
+      "minimum_quotient_convolution": 0.015054120902455614,
+      "quotient_dimension": 4,
+      "rref_pivots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "subspaces_checked": 31
+    },
+    {
+      "basis_masks": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "certificate": -3.2037699581869594,
+      "log_gain": -4.196103511150844,
+      "minimum_quotient_convolution": 0.015054120902455614,
+      "quotient_dimension": 5,
+      "rref_pivots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "subspaces_checked": 1
+    }
+  ],
+  "quotient_family": "all binary linear subspaces",
+  "switch_coordinate_dimension": 5
+}

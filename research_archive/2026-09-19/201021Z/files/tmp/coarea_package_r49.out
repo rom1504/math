@@ -1,0 +1,46 @@
+Command: .venv/bin/python tmp/coarea_package_r49_check.py
+
+Exact full-class coarea verdicts (all positive-degree centers are below the
+diagnostic cap 2n(n-1)):
+
+A6,m=5: ell 1--4 PASS.
+A8,m=6: ell 1--5 PASS.
+A9,m=7: ell 1--5 PASS; ell=6 FAIL.
+  ell=6 (coarea,cubic,triple) =
+  (10154/9891, 10541/9489, 12925/13188).
+A10 sample seed 0,m=8: ell 1--4 PASS; ell 5--7 FAIL.
+  ell=5 (coarea,cubic,triple) =
+  (11369/11200, 16025/14504, 10693/11200).
+
+Row-threshold phase checks:
+
+A8,ell=3: cap 40 PASS, cap 56 FAIL, cap 64 PASS.
+A9,ell=3: cap 56 FAIL, 72 PASS, 80 FAIL, 88 PASS.
+
+Order-ten deterministic MILP sample (nonexhaustive across matrices):
+
+sampled=12; distinct normalized matrices=12.
+Every matrix has coarea success pattern ell=1..7
+(True, True, True, True, False, False, False).
+Joint-P profiles:
+  (P,Delta,G_int,G_ext,min_row)=(105,2,80,0,74): 7 matrices;
+  (P,Delta,G_int,G_ext,min_row)=(113,2,88,0,74): 5 matrices.
+
+Lower-ratio exhaustive-within-matrix mass diagnostics:
+
+A6,m=4: q=10, incidences=30, best_P=29 (Delta=2),
+  best_Gtot=20 (Delta=2), exact_min_row=30 (Delta=2).
+A8,m=4: q=20, incidences=130, best_P=100 (Delta=8),
+  best_Gtot=28 (Delta=12), exact_min_row=32 (Delta=12).
+A8,m=5: q=20, incidences=280, best_P=96 (Delta=8),
+  best_Gtot=27 (Delta=12), exact_min_row=32 (Delta=8).
+A9,m=5: q=24, incidences=595, best_P=136 (Delta=8),
+  best_Gtot=28 (Delta=16), exact_min_row=16 (Delta=16).
+A9,m=6: q=24, incidences=208, best_P=109 (Delta=2),
+  best_Gtot=34 (Delta=14), exact_min_row=16 (Delta=14).
+A10 seed 0,m=6: q=26, incidences=520, best_P=134 (Delta=4),
+  best_Gtot=38 (Delta=16), exact_min_row=10 (Delta=16).
+
+PASS: cubic/triple equivalence, row-cap phase diagrams, and completion
+Pareto/box formulas. The checker prints the complete exact rational phase
+diagram and asserts all values summarized here.

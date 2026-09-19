@@ -1,0 +1,378 @@
+{
+  "normalization": "H=x^T A x/2; core means no bridge matching",
+  "root_gauged_seed_counts": {
+    "3": 2,
+    "4": 8,
+    "5": 64,
+    "6": 1024
+  },
+  "records": [
+    {
+      "order": 3,
+      "worst": {
+        "order": 3,
+        "matrix": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0
+          ]
+        ],
+        "beta": 6,
+        "seed_cap": 3,
+        "bilinear_ground_product_count": 1,
+        "ground_product_core_minimum": 6,
+        "unrestricted_switch_core_minimum": 6,
+        "ground_product_best_switch": [
+          1,
+          1,
+          1
+        ],
+        "unrestricted_best_switch": [
+          1,
+          -1,
+          -1
+        ]
+      },
+      "three_halves_failures": [],
+      "three_halves_failure_count": 0
+    },
+    {
+      "order": 4,
+      "worst": {
+        "order": 4,
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0
+          ]
+        ],
+        "beta": 8,
+        "seed_cap": 4,
+        "bilinear_ground_product_count": 1,
+        "ground_product_core_minimum": 12,
+        "unrestricted_switch_core_minimum": 12,
+        "ground_product_best_switch": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "unrestricted_best_switch": [
+          1,
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "three_halves_failures": [],
+      "three_halves_failure_count": 0
+    },
+    {
+      "order": 5,
+      "worst": {
+        "order": 5,
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0
+          ]
+        ],
+        "beta": 8,
+        "seed_cap": 4,
+        "bilinear_ground_product_count": 16,
+        "ground_product_core_minimum": 12,
+        "unrestricted_switch_core_minimum": 12,
+        "ground_product_best_switch": [
+          1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        "unrestricted_best_switch": [
+          1,
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "three_halves_failures": [],
+      "three_halves_failure_count": 0
+    },
+    {
+      "order": 6,
+      "worst": {
+        "order": 6,
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0
+          ]
+        ],
+        "beta": 12,
+        "seed_cap": 5,
+        "bilinear_ground_product_count": 10,
+        "ground_product_core_minimum": 22,
+        "unrestricted_switch_core_minimum": 18,
+        "ground_product_best_switch": [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "unrestricted_best_switch": [
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "three_halves_failures": [
+        {
+          "order": 6,
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              -1,
+              -1,
+              0
+            ]
+          ],
+          "beta": 18,
+          "seed_cap": 9,
+          "bilinear_ground_product_count": 1,
+          "ground_product_core_minimum": 30,
+          "unrestricted_switch_core_minimum": 22,
+          "ground_product_best_switch": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "unrestricted_best_switch": [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ]
+        }
+      ],
+      "three_halves_failure_count": 212
+    }
+  ],
+  "bipolar_ground_rule_asymptotic_counterfamily_checks": [
+    {
+      "half_order": 2,
+      "beta": 8,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 12,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 3,
+      "beta": 18,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 30,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 4,
+      "beta": 32,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 56,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 5,
+      "beta": 50,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 90,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 6,
+      "beta": 72,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 132,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 7,
+      "beta": 98,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 182,
+      "spectral_integer_upper_pass": true
+    },
+    {
+      "half_order": 8,
+      "beta": 128,
+      "bilinear_maximizing_second_spin_count": 4,
+      "all_ground_products_constant": true,
+      "untwisted_core_cap": 240,
+      "spectral_integer_upper_pass": true
+    }
+  ]
+}
